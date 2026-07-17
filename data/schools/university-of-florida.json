@@ -1,0 +1,3093 @@
+{
+  "college_id": "university-of-florida",
+  "college_name": "University of Florida",
+  "city": "Gainesville",
+  "state": "FL",
+  "housing_url": "https://housing.ufl.edu",
+  "data_collected": "2026-07-14",
+  "campus_notes": "UF Housing publishes no room dimensions, square footage, or floor plans for its residence halls - not on the current site nor in archived generations of it. Room inventory per hall is taken from the official 2026-27 rental-rate table (https://housing.ufl.edu/rates-payments-agreements/residence-hall-rental-rates/); rates shown are per person per semester (Fall 2026/Spring 2027). All rooms are fully furnished (bed, desk, chair, dresser per resident) and provided furniture may not be removed from the room. Beds are Twin XL (36\" x 80\") everywhere except Cypress Hall and Keys Residential Complex, which have Full XL (54\" x 80\") beds; bed height is adjustable on request, and some buildings' beds loft high enough to fit a desk underneath. Traditional halls generally do not include in-room refrigerators (students bring their own); each traditional floor has a shared restroom and community kitchen.",
+  "dorms": [
+    {
+      "dorm_id": "beaty-towers",
+      "dorm_name": "Beaty Towers",
+      "hall_url": "https://housing.ufl.edu/beaty-towers/",
+      "building_type": "Apartment Style",
+      "address": "11 Beaty Towers, Gainesville, FL 32612-1101",
+      "phone": "352-392-6111",
+      "features": [],
+      "rooms": [
+        {
+          "room_type": "apartment_double",
+          "room_type_official": "Apartment Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "bathroom within apartment",
+          "rate_2026_27_per_semester": 4222,
+          "data_source": "https://housing.ufl.edu/beaty-towers/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Beaty Towers is a centrally located apartment style building. Located on the corner of Museum Road and 13th Street, Beaty Towers is close to the College of Music, Design Construction and Planning, and a short walk to the Warrington College of Business. Each apartment features double room suites with a semi-private bathroom, built in desks, and a kitchenette complete with a refrigerator, oven, and garbage disposal."
+    },
+    {
+      "dorm_id": "broward-hall",
+      "dorm_name": "Broward Hall",
+      "hall_url": "https://housing.ufl.edu/broward-hall/",
+      "building_type": "Traditional Hall",
+      "address": "680 Broward Dr., Gainesville, FL 32612",
+      "phone": "352-392-6051",
+      "features": [
+        "Fully Furnished",
+        "Twin XL Beds",
+        "Passenger Elevator",
+        "High-Speed WiFi",
+        "Laundry Room",
+        "Study Lounge",
+        "Game Room"
+      ],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/broward-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/broward-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_triple",
+          "room_type_official": "Traditional Triple",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3465,
+          "data_source": "https://housing.ufl.edu/broward-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Broward Hall is a fully furnished traditional style hall located near various colleges and libraries. Students living in Broward Hall will be steps away from the Broward Dining Hall, Century Tower, and the Plaza of the Americas. Broward Hall offers a range of room styles including single, double, and triple options. Each floor has a shared restroom and community kitchen, that offers a microwave, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "buckman-hall",
+      "dorm_name": "Buckman Hall",
+      "hall_url": "https://housing.ufl.edu/buckman-hall/",
+      "building_type": "Traditional Style",
+      "address": "132 Buckman Dr., Gainesville, FL 32612",
+      "phone": "352-392-6091",
+      "features": [
+        "Fully Furnished",
+        "Twin XL Beds",
+        "High-Speed WiFi",
+        "Laundry Room",
+        "Study Lounge",
+        "Game Room"
+      ],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/buckman-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/buckman-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_triple",
+          "room_type_official": "Traditional Triple",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3465,
+          "data_source": "https://housing.ufl.edu/buckman-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Buckman Hall is located in the University's historic district. Buckman Hall is unique in that no two rooms have the same layout, so you can guarantee you will have a unique picturesque room. This hall is located near on-campus and off-campus dining locations, the Student Recreation Center, the Hub, Newell Hall, and Library West. Each floor has a shared restroom and a community kitchen, that offers a stove, oven, and microwave."
+    },
+    {
+      "dorm_id": "cypress-hall",
+      "dorm_name": "Cypress Hall",
+      "hall_url": "https://housing.ufl.edu/cypress-hall/",
+      "building_type": "Suite Style",
+      "address": "1310 Museum Rd., Gainesville, FL 32612",
+      "phone": "352-392-6101",
+      "features": [
+        "Fully Furnished",
+        "Full XL Beds",
+        "Passenger Elevators",
+        "High-Speed WiFi",
+        "Laundry Room",
+        "Study Lounge"
+      ],
+      "rooms": [
+        {
+          "room_type": "suite_single",
+          "room_type_official": "Suite Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 4.5,
+              "movable": false,
+              "notes": "Full XL bed (54\" x 80\") per housing FAQ - only Cypress Hall and Keys have these. Height adjustable via GatorWorks request."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "suite bathroom shared within suite",
+          "rate_2026_27_per_semester": 5614,
+          "data_source": "https://housing.ufl.edu/cypress-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "suite_double",
+          "room_type_official": "Suite Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 4.5,
+              "movable": false,
+              "notes": "Full XL bed (54\" x 80\") per housing FAQ - only Cypress Hall and Keys have these. Height adjustable via GatorWorks request."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "suite bathroom shared within suite",
+          "rate_2026_27_per_semester": 5304,
+          "data_source": "https://housing.ufl.edu/cypress-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "One of the newest residence halls on campus, Cypress Hall and offers universally designed single, double and super suite style rooms. Cypress hosts a limited number of rooms with SureHands Lift system for students with physical impairments and approved housing accommodations. Located on the east side of campus, Cypress Hall is near the Broward Dining Hall, the College of Education, and the College of the Arts."
+    },
+    {
+      "dorm_id": "east-hall",
+      "dorm_name": "East Hall",
+      "hall_url": "https://housing.ufl.edu/east-hall/",
+      "building_type": "Traditional Hall",
+      "address": "1310 Museum Rd., Gainesville, FL 32612",
+      "phone": "352-392-6031",
+      "features": [],
+      "rooms": [
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/east-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_triple",
+          "room_type_official": "Traditional Triple",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3465,
+          "data_source": "https://housing.ufl.edu/east-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "East Hall is located directly across the street from the Herbert Wertheim College of Engineering, making it the ideal location for the Engineering Living Learning Community. Students living in East hall will have easy access to athletic events, a swimming pool, Flavet Field, and the Reitz Union.\u00a0 East Hall offers double and triple style rooms options. Each floor has a shared restroom and a community kitchen, that offers a microwave, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "fletcher-hall",
+      "dorm_name": "Fletcher Hall",
+      "hall_url": "https://housing.ufl.edu/fletcher-hall/",
+      "building_type": "Traditional Style",
+      "address": "72 Buckman Dr., Gainesville, FL 32612",
+      "phone": "352-392-6091",
+      "features": [],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/fletcher-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_large_single",
+          "room_type_official": "Traditional Large Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4510,
+          "data_source": "https://housing.ufl.edu/fletcher-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/fletcher-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_large_double",
+          "room_type_official": "Traditional Large Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4510,
+          "data_source": "https://housing.ufl.edu/fletcher-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Fletcher Hall is is located in the University's historic district. Being in the historic district means that no two rooms are alike so you're guaranteed to have a unique, picturesque room. This hall is located near on and off campus dining locations, the Student Recreation Center, the Hub, Newell Hall, and Library West. Each floor has a shared restroom and community kitchen that offers a stove and microwave. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "honors-village",
+      "dorm_name": "Honors Village",
+      "hall_url": "https://housing.ufl.edu/honors-village/",
+      "building_type": "Traditional & Suite Style",
+      "address": "1512 Museum Rd., Gainesville, FL 32612",
+      "phone": "352-846-4987",
+      "features": [
+        "Fully Furnished",
+        "Dual Passenger Elevators in Each Building",
+        "High-Speed WiFi",
+        "Laundry Rooms on Every Residential Floor",
+        "Classroom/Study Spaces",
+        "Makers Space",
+        "Meditation Space",
+        "Ensemble and Private Music Practice Rooms",
+        "Centrally located Private Bathrooms",
+        "Package Lockers",
+        "Printer Stations"
+      ],
+      "rooms": [
+        {
+          "room_type": "suite_single",
+          "room_type_official": "Suite Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 6176,
+          "data_source": "https://housing.ufl.edu/honors-village/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "suite_double",
+          "room_type_official": "Suite Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 5835,
+          "data_source": "https://housing.ufl.edu/honors-village/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 5614,
+          "data_source": "https://housing.ufl.edu/honors-village/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 5304,
+          "data_source": "https://housing.ufl.edu/honors-village/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Currently under construction, the brand-new Honors Village will serve honors residents. Located on the east side of campus and spanning five buildings, four Residence Halls and a Learning Commons, the village will feature four room types. Each floor includes a kitchen, lounge, social space, study space, a centrally located laundry room with washers/dryers, folding tables and various seating locations. Additionally, the first floor of each building will feature a unique programming space based on the building theme such as a meditation space, library, ensemble and private music practice rooms, "
+    },
+    {
+      "dorm_id": "hume-hall",
+      "dorm_name": "Hume Hall",
+      "hall_url": "https://housing.ufl.edu/hume-hall/",
+      "building_type": "Suite Style",
+      "address": "19 Hume Honors Residential College, Gainesville, FL 32612",
+      "phone": "352-392-6011",
+      "features": [],
+      "rooms": [
+        {
+          "room_type": "suite_single",
+          "room_type_official": "Suite Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "suite bathroom shared within suite",
+          "rate_2026_27_per_semester": 5614,
+          "data_source": "https://housing.ufl.edu/hume-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "suite_double",
+          "room_type_official": "Suite Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "suite bathroom shared within suite",
+          "rate_2026_27_per_semester": 5304,
+          "data_source": "https://housing.ufl.edu/hume-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Students living in Hume Hall can expect short travel times to the Reitz Union, Flavet Field, fraternity row, athletic venues and outdoor recreation fields. Each floor has options for single or double suites, a community kitchen that offers a microwave, oven and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "infinity-hall",
+      "dorm_name": "Infinity Hall",
+      "hall_url": "https://housing.ufl.edu/infinity-hall/",
+      "building_type": "Suite Style",
+      "address": "978 SW 2nd Ave., Gainesville, FL 32601",
+      "phone": "352-392-9675",
+      "features": [],
+      "rooms": [
+        {
+          "room_type": "suite_single",
+          "room_type_official": "Suite Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "suite bathroom shared within suite",
+          "rate_2026_27_per_semester": 5858,
+          "data_source": "https://housing.ufl.edu/infinity-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "suite_double",
+          "room_type_official": "Suite Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "suite bathroom shared within suite",
+          "rate_2026_27_per_semester": 5534,
+          "data_source": "https://housing.ufl.edu/infinity-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "suite_large_double",
+          "room_type_official": "Suite Large Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "suite bathroom shared within suite",
+          "rate_2026_27_per_semester": 5698,
+          "data_source": "https://housing.ufl.edu/infinity-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Located in the heart of Innovation Square, Infinity Hall is the ideal location for students who want to make their ideas come to life. Home to the Maker Space Studio, Infinity Hall students have the opportunity to collaborate with local professionals in various fields as well as collaborate with like-minded individuals. This hall is located between downtown Gainesville and main campus making it close to local businesses, the Warrington College of Business, the College of Education and Library West. Each floor has a community kitchen with a microwave, hot plate, and toaster oven, while the kitc"
+    },
+    {
+      "dorm_id": "jennings-hall",
+      "dorm_name": "Jennings Hall",
+      "hall_url": "https://housing.ufl.edu/jennings-hall/",
+      "building_type": "Traditional Style",
+      "address": "1509 Museum Rd., Gainesville, FL 32612",
+      "phone": "352-392-6061",
+      "features": [],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/jennings-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/jennings-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_triple",
+          "room_type_official": "Traditional Triple",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3465,
+          "data_source": "https://housing.ufl.edu/jennings-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Jennings Hall is a traditional-style residence hall that offers double and triple rooms. Located near on-campus dining options, sorority row, the College of Music, College of Design Construction and Planning, and a short walk to the Warrington College of Business. Each floor has a shared restroom and community kitchen equipped with a microwave, range, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "keys-residential-complex",
+      "dorm_name": "Keys Residential Complex",
+      "hall_url": "https://housing.ufl.edu/keys-residential-complex/",
+      "building_type": "Apartment Style",
+      "address": "44 Keys Residential College, Gainesville, FL 32612",
+      "phone": "352-392-8107",
+      "features": [],
+      "rooms": [
+        {
+          "room_type": "apartment_single",
+          "room_type_official": "Apartment Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 4.5,
+              "movable": false,
+              "notes": "Full XL bed (54\" x 80\") per housing FAQ - only Cypress Hall and Keys have these. Height adjustable via GatorWorks request."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "bathroom within apartment",
+          "rate_2026_27_per_semester": 4709,
+          "data_source": "https://housing.ufl.edu/keys-residential-complex/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Keys Residential Complex is an ideal living option for students who love apartment style living. Located near athletic venues, Flavet Field, Gator Corner Dining, and fraternity row means you will always have somewhere to go or something to do. Each apartment is fully furnished with full-size beds, a couch in the living room, a kitchen with a stove, oven, refrigerator, and microwave."
+    },
+    {
+      "dorm_id": "lakeside-residential-complex",
+      "dorm_name": "Lakeside Residential Complex",
+      "hall_url": "https://housing.ufl.edu/lakeside-residential-complex/",
+      "building_type": "Apartment Style",
+      "address": "51 Lakeside Complex, Gainesville, FL 32612",
+      "phone": "352-392-1453",
+      "features": [],
+      "rooms": [
+        {
+          "room_type": "apartment_single",
+          "room_type_official": "Apartment Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "bathroom within apartment",
+          "rate_2026_27_per_semester": 5086,
+          "data_source": "https://housing.ufl.edu/lakeside-residential-complex/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "apartment_double",
+          "room_type_official": "Apartment Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "bathroom within apartment",
+          "rate_2026_27_per_semester": 4222,
+          "data_source": "https://housing.ufl.edu/lakeside-residential-complex/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Lakeside Residential Complex is perfect for active students. Located near Florida Field, Katie Seashole Pressley Stadium, Lake Alice, and the UF Bat Houses. With plenty of outdoor recreational spaces there is plenty to do. Lakeside offers private fully furnished bedrooms, shared common spaces, and no need for a mini fridge, you will have a full kitchen with full size appliances exclusively for you and your roommates."
+    },
+    {
+      "dorm_id": "mallory-hall",
+      "dorm_name": "Mallory Hall",
+      "hall_url": "https://housing.ufl.edu/mallory-hall/",
+      "building_type": "Traditional Style",
+      "address": "1367 Inner Rd., Gainesville, FL 32612",
+      "phone": "352-392-6101",
+      "features": [],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/mallory-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/mallory-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "is a fully furnished, traditional style hall located near various colleges and libraries. Mallory Hall offers a range of room styles including single, double, and triple options. Each floor has a shared restroom and community kitchen, that offers a microwave, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "murphree-hall",
+      "dorm_name": "Murphree Hall",
+      "hall_url": "https://housing.ufl.edu/murphree-hall/",
+      "building_type": "Traditional Hall",
+      "address": "110 Flectcher Dr., Gainesville, FL 32612",
+      "phone": "352-392-6091",
+      "features": [],
+      "rooms": [
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4177,
+          "data_source": "https://housing.ufl.edu/murphree-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_large_double",
+          "room_type_official": "Traditional Large Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4510,
+          "data_source": "https://housing.ufl.edu/murphree-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_triple",
+          "room_type_official": "Traditional Triple",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3642,
+          "data_source": "https://housing.ufl.edu/murphree-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_large_triple",
+          "room_type_official": "Traditional Large Triple",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4510,
+          "data_source": "https://housing.ufl.edu/murphree-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Murphree Hall is is located in the University's historic district. Being in the historic district means that no two rooms are alike so you're guaranteed to have a unique picturesque room. Murphree Hall is located near on and off campus dining locations, the Student Recreation Center, the Hub, Newell Hall, and Library West. Each floor has a shared restroom and community kitchen that offers a stove and microwave. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "north-hall",
+      "dorm_name": "North Hall",
+      "hall_url": "https://housing.ufl.edu/north-hall/",
+      "building_type": "Traditional Style",
+      "address": "2063 Stadium Rd., Gainesville, FL 32612",
+      "phone": "352-392-6031",
+      "features": [
+        "Laundry Room",
+        "Twin XL Beds",
+        "Passenger Elevator - Fall 2025",
+        "High-Speed Internet",
+        "Social Lounges",
+        "Private Study Room"
+      ],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/north-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/north-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_triple",
+          "room_type_official": "Traditional Triple",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3465,
+          "data_source": "https://housing.ufl.edu/north-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "North Hall is home to the Pre-Health Living Learning Community and is a great space for like minded students to learn and study together. Located directly across the street from the Stephen C. O'Connell Center, James G. Pressley Stadium, and Ben Hill Griffin Stadium makes this hall perfect for students who are interested in attending athletic events. North Hall offers single, double and triple style rooms options. Each floor has a shared restroom and a community kitchen, that offers a microwave, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "rawlings-hall",
+      "dorm_name": "Rawlings Hall",
+      "hall_url": "https://housing.ufl.edu/rawlings-hall/",
+      "building_type": "Traditional Style",
+      "address": "651 Newell Dr.., Gainesville, FL 32612",
+      "phone": "352-392-6051",
+      "features": [
+        "Fully Furnished",
+        "Twin XL Beds",
+        "Freight Elevator",
+        "High-Speed Internet",
+        "Laundry Room",
+        "Study Lounge"
+      ],
+      "rooms": [
+        {
+          "room_type": "suite_double",
+          "room_type_official": "Suite Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4066,
+          "data_source": "https://housing.ufl.edu/rawlings-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/rawlings-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Rawlings Hall is a fully furnished, traditional style hall located near various colleges and libraries. Rawlings Hall is steps away from the Broward Dining Hall, Century Tower, and the Plaza of the Americas.  This hall offers a range of room styles including single, double, and triple options. Each floor has a shared restroom and community kitchen, that offers a microwave, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "reid-hall",
+      "dorm_name": "Reid Hall",
+      "hall_url": "https://housing.ufl.edu/reid-hall/",
+      "building_type": "Traditional Style",
+      "address": "1316 Museum Rd., Gainesville, FL 32612",
+      "phone": "352-392-6101",
+      "features": [
+        "Fully Furnished",
+        "Twin XL Beds",
+        "Freight Elevator",
+        "High-Speed Internet",
+        "Laundry Room",
+        "Study Lounge"
+      ],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/reid-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/reid-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "is a fully furnished, traditional style hall located near various colleges and libraries. Reid Hall offers a range of room styles including single, double, and triple options. Each floor has a shared restroom and community kitchen, that offers a microwave, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "riker-hall",
+      "dorm_name": "Riker Hall",
+      "hall_url": "https://housing.ufl.edu/riker-hall/",
+      "building_type": "Traditional Style",
+      "address": "2069 Stadium Rd., Gainesville, FL 32612",
+      "phone": "352-392-6031",
+      "features": [
+        "Laundry Room",
+        "Twin XL Bed",
+        "Passenger Elevator",
+        "High-Speed Internet",
+        "Social Lounges",
+        "Private Study Room"
+      ],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/riker-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/riker-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_triple",
+          "room_type_official": "Traditional Triple",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3465,
+          "data_source": "https://housing.ufl.edu/riker-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Riker Hall is located directly across the street from the Stephen C. O'Connell Center, James G. Pressley Stadium, and Ben Hill Griffin Stadium making it perfect for students who are interested in attending athletic events. Riker Hall offers single, double and triple style rooms options. Each floor has a shared restroom and a community kitchen, that offers a microwave, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "sledd-hall",
+      "dorm_name": "Sledd Hall",
+      "hall_url": "https://housing.ufl.edu/sledd-hall/",
+      "building_type": "Traditional Style",
+      "address": "191 Fletcher Dr., Gainesville, FL 32612",
+      "phone": "352-392-6091",
+      "features": [
+        "Fully Furnished",
+        "Twin XL Beds",
+        "High-Speed WiFi",
+        "Laundry Room",
+        "Study Lounge",
+        "Game Room"
+      ],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/sledd-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_large_single",
+          "room_type_official": "Traditional Large Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4510,
+          "data_source": "https://housing.ufl.edu/sledd-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/sledd-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_large_double",
+          "room_type_official": "Traditional Large Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4510,
+          "data_source": "https://housing.ufl.edu/sledd-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_triple",
+          "room_type_official": "Traditional Triple",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3465,
+          "data_source": "https://housing.ufl.edu/sledd-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Sledd Hall is in the University's historic district. Being in the historic district means that no two rooms are alike so you're guaranteed to have a unique picturesque room. Sledd Hall is also home to one of the most photographed buildings on campus. The iconic archway is a graduation photoshoot staple. Sledd Hall is located near on and off campus dining locations, the Student recreation Center, the Hub, Newell Hall, and Library West. Each floor has a shared restroom and community kitchen that offers a stove and microwave. It is recommended for students to supply their own in-room refrigerator"
+    },
+    {
+      "dorm_id": "springs-residential-complex",
+      "dorm_name": "Springs Residential Complex",
+      "hall_url": "https://housing.ufl.edu/springs-residential-complex/",
+      "building_type": "Suite Style",
+      "address": "45 Springs Residential Complex, Gainesville, FL 32612",
+      "phone": "352-392-0459",
+      "features": [],
+      "rooms": [
+        {
+          "room_type": "suite_single",
+          "room_type_official": "Suite Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "suite bathroom shared within suite",
+          "rate_2026_27_per_semester": 4871,
+          "data_source": "https://housing.ufl.edu/springs-residential-complex/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "suite_double",
+          "room_type_official": "Suite Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "suite bathroom shared within suite",
+          "rate_2026_27_per_semester": 4540,
+          "data_source": "https://housing.ufl.edu/springs-residential-complex/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Each suite has a semi-private restroom shared with their suitemates and a kitchen on each floor that offers a microwave, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "thomas-hall",
+      "dorm_name": "Thomas Hall",
+      "hall_url": "https://housing.ufl.edu/thomas-hall/",
+      "building_type": "Traditional Style",
+      "address": "133 Flectcher Dr., Gainesville, FL 32612",
+      "phone": "352-392-6091",
+      "features": [
+        "Fully Furnished",
+        "Twin XL Beds",
+        "High-Speed WiFi",
+        "Laundry Room",
+        "Study Lounge",
+        "Game Room"
+      ],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/thomas-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/thomas-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_triple",
+          "room_type_official": "Traditional Triple",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3465,
+          "data_source": "https://housing.ufl.edu/thomas-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_quad",
+          "room_type_official": "Traditional Quad",
+          "occupants": 4,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 4,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 4,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 4,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 4,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3319,
+          "data_source": "https://housing.ufl.edu/thomas-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Thomas Hall is is located in the University's historic district. Being in the historic district means that no two rooms are alike so you're guaranteed to have a unique picturesque room. Thomas Hall is located near on and off campus dining locations, the Student Recreation Center, the Hub, Newell Hall, and Library West. Each floor has a shared restroom and community kitchen that offers a stove and microwave. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "tolbert-hall",
+      "dorm_name": "Tolbert Hall",
+      "hall_url": "https://housing.ufl.edu/tolbert-hall/",
+      "building_type": "Traditional Style",
+      "address": "2087 Stadium Rd., Gainesville, FL 32612",
+      "phone": "352-392-6031",
+      "features": [
+        "Fully Furnished",
+        "Twin XL Beds",
+        "Passenger Elevator",
+        "High-Speed Internet",
+        "Maritime Skills Simulator",
+        "Laundry Room",
+        "Social Lounges",
+        "Private Study Room",
+        "Game Room"
+      ],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/tolbert-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/tolbert-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_triple",
+          "room_type_official": "Traditional Triple",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3465,
+          "data_source": "https://housing.ufl.edu/tolbert-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Tolbert Hall is located directly across the street from Van Fleet Hall. Making it the ideal location for the ROTC Living Learning Community. Students living in Tolbert Hall will have easy access to athletic events, a swimming pool, Flavet Field, and the Reitz Union.\u00a0 Tolbert Hall offers single, double and triple style rooms options. Each floor has a shared restroom and a community kitchen, that offers a microwave, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "weaver-hall",
+      "dorm_name": "Weaver Hall",
+      "hall_url": "https://housing.ufl.edu/weaver-hall/",
+      "building_type": "Traditional Style",
+      "address": "562 Gale Lemerand Dr., Gainesville, FL 32612",
+      "phone": "352-392-6031",
+      "features": [
+        "Fully Furnished",
+        "Twin XL Beds",
+        "Freight Elevator",
+        "High-Speed Internet",
+        "Laundry Room",
+        "Study Lounge",
+        "RENTAL RATE",
+        "VIEW RATE",
+        "-->"
+      ],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/weaver-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/weaver-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Weaver Hall is located directly across the street from the Stephen C. O'Connell Center, James G. Pressley Stadium, and Ben Hill Griffin Stadium making perfect for students who are interested in attending athletic events. Weaver Hall offers single, double and triple-style rooms options. Each floor has a shared restroom and a community kitchen, that offers a microwave, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    },
+    {
+      "dorm_id": "yulee-hall",
+      "dorm_name": "Yulee Hall",
+      "hall_url": "https://housing.ufl.edu/yulee-hall/",
+      "building_type": "Traditional Style",
+      "address": "1367 Inner Rd., Gainesville, FL 32612",
+      "phone": "352-392-6101",
+      "features": [
+        "Fully Furnished",
+        "Twin XL Beds",
+        "Freight Elevator",
+        "High-Speed Internet",
+        "Laundry Room",
+        "Study Lounge",
+        "RENTAL RATE",
+        "VIEW RATE",
+        "-->"
+      ],
+      "rooms": [
+        {
+          "room_type": "traditional_single",
+          "room_type_official": "Traditional Single",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 4161,
+          "data_source": "https://housing.ufl.edu/yulee-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        },
+        {
+          "room_type": "traditional_double",
+          "room_type_official": "Traditional Double",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": false,
+              "notes": "Twin XL bed (36\" x 80\"). Height adjustable via GatorWorks request; some buildings' beds loft high enough to fit a desk underneath (not all)."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": false
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": false,
+              "notes": "Dimensions not published."
+            }
+          ],
+          "bathroom": "community bathroom per floor",
+          "rate_2026_27_per_semester": 3929,
+          "data_source": "https://housing.ufl.edu/yulee-hall/",
+          "data_confidence": "low",
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+        }
+      ],
+      "notes": "Yulee Hall is a fully furnished, traditional style hall located near various colleges and libraries. Yulee Hall offers a range of room styles including single, double, and triple options. Each floor has a shared restroom and community kitchen that boasts a microwave, oven, and stove. It is recommended for students to supply their own in-room refrigerator."
+    }
+  ]
+}

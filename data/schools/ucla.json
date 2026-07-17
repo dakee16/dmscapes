@@ -1,0 +1,2979 @@
+{
+  "college_id": "ucla",
+  "college_name": "University of California, Los Angeles (UCLA)",
+  "city": "Los Angeles",
+  "state": "CA",
+  "housing_url": "https://housing.ucla.edu",
+  "data_collected": "2026-07-14",
+  "campus_notes": "All undergraduate on-campus housing is on 'the Hill' and falls into four building types: Classic residence halls (community bathrooms, no A/C), Deluxe residence halls (community bathrooms, A/C), Plaza residences (private or shared-between-two-rooms bathrooms, A/C), and Suites (two bedrooms sharing a bathroom plus a furnished living room, no A/C). Room dimensions (https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing) are published per building group and are explicitly approximate; door/window positions and ceiling heights are not published. Closet, desk, drawer, and bed dimensions are exact published values from the Ask Housing knowledge base. All beds take Twin XL (36\" x 80\") linens. Room-type availability per building taken from the 2026-27 rate pages (https://housing.ucla.edu/2026-2027-academic-year-rates). All resident mail goes to a central address (Hall Name + Room #, 330 De Neve Dr., Los Angeles, CA 90024); individual buildings do not have published street addresses.",
+  "dorms": [
+    {
+      "dorm_id": "dykstra-hall",
+      "dorm_name": "Dykstra Hall",
+      "building_type": "classic",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/classic-residence-hall",
+      "air_conditioning": false,
+      "bathroom_configuration": "Community bathroom on each floor (4-6 shower stalls, toilets, sinks)",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Classic Single",
+          "occupants": 1,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 10.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.42,
+            "depth_ft": 2.04,
+            "height_ft": 6.33,
+            "notes": "Plus a second closet with 4 built-in drawers: 70\"H x 23\"L x 20\"D (34\" hanging height between drawers and top, 36\" above drawers); each drawer approx. 5.5\"H x 26.5\"W x 19\"D."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Singles are offered only in Dykstra Hall (2026-27 rate pages). Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Classic Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 10.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.42,
+            "depth_ft": 2.04,
+            "height_ft": 6.33,
+            "notes": "Plus a second closet with 4 built-in drawers: 70\"H x 23\"L x 20\"D (34\" hanging height between drawers and top, 36\" above drawers); each drawer approx. 5.5\"H x 26.5\"W x 19\"D."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet (approx. 5.5\"H x 26.5\"W x 19\"D per drawer); no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Classic Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 10.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.42,
+            "depth_ft": 2.04,
+            "height_ft": 6.33,
+            "notes": "Plus a second closet with 4 built-in drawers: 70\"H x 23\"L x 20\"D (34\" hanging height between drawers and top, 36\" above drawers); each drawer approx. 5.5\"H x 26.5\"W x 19\"D."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "One of the four original high-rise halls; study lounges on every floor, laundry on the ground floor. No air conditioning."
+    },
+    {
+      "dorm_id": "sproul-hall",
+      "dorm_name": "Sproul Hall",
+      "building_type": "classic",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/classic-residence-hall",
+      "air_conditioning": false,
+      "bathroom_configuration": "Community bathroom on each floor (4-6 shower stalls, toilets, sinks)",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Classic Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 10.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 2.75,
+            "depth_ft": 2.17,
+            "height_ft": 6.79,
+            "notes": "Plus a second closet with 4 built-in drawers: 70\"H x 23\"L x 20\"D (34\" hanging height between drawers and top, 36\" above drawers); each drawer approx. 5.5\"H x 26.5\"W x 19\"D."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet (approx. 5.5\"H x 26.5\"W x 19\"D per drawer); no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Classic Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 10.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 2.75,
+            "depth_ft": 2.17,
+            "height_ft": 6.79,
+            "notes": "Plus a second closet with 4 built-in drawers: 70\"H x 23\"L x 20\"D (34\" hanging height between drawers and top, 36\" above drawers); each drawer approx. 5.5\"H x 26.5\"W x 19\"D."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "One of the four original high-rise halls; study lounges on every floor, laundry on the ground floor. No air conditioning."
+    },
+    {
+      "dorm_id": "hedrick-hall",
+      "dorm_name": "Hedrick Hall",
+      "building_type": "classic",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/classic-residence-hall",
+      "air_conditioning": false,
+      "bathroom_configuration": "Community bathroom on each floor (4-6 shower stalls, toilets, sinks)",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Classic Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 10.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 2.75,
+            "depth_ft": 2.17,
+            "height_ft": 6.79,
+            "notes": "Plus a second closet with 4 built-in drawers: 70\"H x 23\"L x 20\"D (34\" hanging height between drawers and top, 36\" above drawers); each drawer approx. 5.5\"H x 26.5\"W x 19\"D."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet (approx. 5.5\"H x 26.5\"W x 19\"D per drawer); no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Classic Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 10.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 2.75,
+            "depth_ft": 2.17,
+            "height_ft": 6.79,
+            "notes": "Plus a second closet with 4 built-in drawers: 70\"H x 23\"L x 20\"D (34\" hanging height between drawers and top, 36\" above drawers); each drawer approx. 5.5\"H x 26.5\"W x 19\"D."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "One of the four original high-rise halls; study lounges on every floor, laundry on the ground floor. No air conditioning."
+    },
+    {
+      "dorm_id": "rieber-hall",
+      "dorm_name": "Rieber Hall",
+      "building_type": "classic",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/classic-residence-hall",
+      "air_conditioning": false,
+      "bathroom_configuration": "Community bathroom on each floor (4-6 shower stalls, toilets, sinks)",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Classic Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 10.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 2.75,
+            "depth_ft": 2.17,
+            "height_ft": 6.79,
+            "notes": "Plus a second closet with 4 built-in drawers: 70\"H x 23\"L x 20\"D (34\" hanging height between drawers and top, 36\" above drawers); each drawer approx. 5.5\"H x 26.5\"W x 19\"D."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet (approx. 5.5\"H x 26.5\"W x 19\"D per drawer); no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Classic Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 10.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 2.75,
+            "depth_ft": 2.17,
+            "height_ft": 6.79,
+            "notes": "Plus a second closet with 4 built-in drawers: 70\"H x 23\"L x 20\"D (34\" hanging height between drawers and top, 36\" above drawers); each drawer approx. 5.5\"H x 26.5\"W x 19\"D."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "One of the four original high-rise halls; study lounges on every floor, laundry on the ground floor. No air conditioning."
+    },
+    {
+      "dorm_id": "de-neve-gardenia",
+      "dorm_name": "De Neve Gardenia",
+      "building_type": "deluxe",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/deluxe-residence-hall",
+      "air_conditioning": true,
+      "bathroom_configuration": "Community bathroom on each floor (4-6 shower stalls, toilets, sinks)",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Deluxe Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 11.17,
+            "width_ft": 12.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.29,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Deluxe Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 11.17,
+            "width_ft": 12.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.29,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "High-rise deluxe hall with air conditioning; study lounges on every floor, ground-floor laundry."
+    },
+    {
+      "dorm_id": "de-neve-holly",
+      "dorm_name": "De Neve Holly",
+      "building_type": "deluxe",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/deluxe-residence-hall",
+      "air_conditioning": true,
+      "bathroom_configuration": "Community bathroom on each floor (4-6 shower stalls, toilets, sinks)",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Deluxe Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 11.17,
+            "width_ft": 12.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.29,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Deluxe Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 11.17,
+            "width_ft": 12.5
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.29,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "High-rise deluxe hall with air conditioning; study lounges on every floor, ground-floor laundry."
+    },
+    {
+      "dorm_id": "sproul-cove",
+      "dorm_name": "Sproul Cove",
+      "building_type": "deluxe",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/deluxe-residence-hall",
+      "air_conditioning": true,
+      "bathroom_configuration": "Community bathroom on each floor (4-6 shower stalls, toilets, sinks)",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Deluxe Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 13.5,
+            "width_ft": 12.83
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.33,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Deluxe Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 13.5,
+            "width_ft": 12.83
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.33,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "High-rise deluxe hall with air conditioning; study lounges on every floor, ground-floor laundry."
+    },
+    {
+      "dorm_id": "sproul-landing",
+      "dorm_name": "Sproul Landing",
+      "building_type": "deluxe",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/deluxe-residence-hall",
+      "air_conditioning": true,
+      "bathroom_configuration": "Community bathroom on each floor (4-6 shower stalls, toilets, sinks)",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Deluxe Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 13.5,
+            "width_ft": 12.83
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.33,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Deluxe Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 13.5,
+            "width_ft": 12.83
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.33,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "High-rise deluxe hall with air conditioning; study lounges on every floor, ground-floor laundry."
+    },
+    {
+      "dorm_id": "olympic-hall",
+      "dorm_name": "Olympic Hall",
+      "building_type": "deluxe",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/deluxe-residence-hall",
+      "air_conditioning": true,
+      "bathroom_configuration": "Community bathroom on each floor (4-6 shower stalls, toilets, sinks)",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Deluxe Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 14.17,
+            "width_ft": 12.17
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.33,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Deluxe Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 14.17,
+            "width_ft": 12.17
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.33,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "Olympic & Centennial are listed as Deluxe buildings on the category page and in the dimensions/closet articles, but do not appear on the 2026-27 deluxe rate pages; room-type list inferred from the category page (double & triple occupancy). High-rise deluxe hall with air conditioning; study lounges on every floor, ground-floor laundry."
+    },
+    {
+      "dorm_id": "centennial-hall",
+      "dorm_name": "Centennial Hall",
+      "building_type": "deluxe",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/deluxe-residence-hall",
+      "air_conditioning": true,
+      "bathroom_configuration": "Community bathroom on each floor (4-6 shower stalls, toilets, sinks)",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Deluxe Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 14.17,
+            "width_ft": 12.17
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.33,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Deluxe Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 14.17,
+            "width_ft": 12.17
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.33,
+            "depth_ft": 1.92,
+            "height_ft": 6.58
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Drawer storage is built into the closet; no freestanding dresser. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "See Olympic Hall note: not on 2026-27 deluxe rate pages; room types from the category page. High-rise deluxe hall with air conditioning; study lounges on every floor, ground-floor laundry."
+    },
+    {
+      "dorm_id": "de-neve-plaza",
+      "dorm_name": "De Neve Plaza",
+      "building_type": "plaza",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/plaza-residences",
+      "air_conditioning": true,
+      "bathroom_configuration": "Private bathroom in room",
+      "rooms": [
+        {
+          "room_type": "double_private_bath",
+          "room_type_official": "Plaza Double, Private Bath",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 8.0,
+            "depth_ft": 1.67,
+            "height_ft": 7.42,
+            "notes": "One large closet shared by the room's occupants."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple_private_bath",
+          "room_type_official": "Plaza Triple, Private Bath",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 8.0,
+            "depth_ft": 1.67,
+            "height_ft": 7.42,
+            "notes": "One large closet shared by the room's occupants."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "Comprises six low-rise buildings (Acacia, Birch, Cedar, Dogwood, Evergreen, Fir) around courtyards. 2026-27 rate pages list De Neve Plaza under private-bath rooms only."
+    },
+    {
+      "dorm_id": "canyon-point",
+      "dorm_name": "Canyon Point (Sunset Village)",
+      "building_type": "plaza",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/plaza-residences",
+      "air_conditioning": true,
+      "bathroom_configuration": "Private bathroom or bathroom shared with adjoining room (varies by room)",
+      "rooms": [
+        {
+          "room_type": "double_private_bath",
+          "room_type_official": "Plaza Double, Private Bath",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 8.0,
+            "depth_ft": 1.67,
+            "height_ft": 7.42,
+            "notes": "One large closet shared by the room's occupants."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple_private_bath",
+          "room_type_official": "Plaza Triple, Private Bath",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 8.0,
+            "depth_ft": 1.67,
+            "height_ft": 7.42,
+            "notes": "One large closet shared by the room's occupants."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "double_shared_bath",
+          "room_type_official": "Plaza Double, Shared Bath",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 4.33,
+            "depth_ft": 1.67,
+            "height_ft": 7.42,
+            "count": 2,
+            "notes": "Two closets per room."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple_shared_bath",
+          "room_type_official": "Plaza Triple, Shared Bath",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 4.33,
+            "depth_ft": 1.67,
+            "height_ft": 7.42,
+            "count": 2,
+            "notes": "Two closets per room."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "One of three Sunset Village buildings; each building is divided into eight 'houses' with a lounge and separate entrance."
+    },
+    {
+      "dorm_id": "delta-terrace",
+      "dorm_name": "Delta Terrace (Sunset Village)",
+      "building_type": "plaza",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/plaza-residences",
+      "air_conditioning": true,
+      "bathroom_configuration": "Private bathroom or bathroom shared with adjoining room (varies by room)",
+      "rooms": [
+        {
+          "room_type": "double_private_bath",
+          "room_type_official": "Plaza Double, Private Bath",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 6.0,
+            "depth_ft": 1.92,
+            "height_ft": 7.08,
+            "notes": "One closet shared by the room's occupants."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple_private_bath",
+          "room_type_official": "Plaza Triple, Private Bath",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 6.0,
+            "depth_ft": 1.92,
+            "height_ft": 7.08,
+            "notes": "One closet shared by the room's occupants."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "double_shared_bath",
+          "room_type_official": "Plaza Double, Shared Bath",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.38,
+            "depth_ft": 1.92,
+            "height_ft": 7.33,
+            "count": 2,
+            "notes": "Two closets per room."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple_shared_bath",
+          "room_type_official": "Plaza Triple, Shared Bath",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.38,
+            "depth_ft": 1.92,
+            "height_ft": 7.33,
+            "count": 2,
+            "notes": "Two closets per room."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "One of three Sunset Village buildings; houses the central Housing Mail Center."
+    },
+    {
+      "dorm_id": "courtside",
+      "dorm_name": "Courtside (Sunset Village)",
+      "building_type": "plaza",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/plaza-residences",
+      "air_conditioning": true,
+      "bathroom_configuration": "Private or shared bathroom (Sunset Village offers both; per-room split not published for Courtside)",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Plaza Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 2.92,
+            "depth_ft": 1.62,
+            "height_ft": 7.33,
+            "count": 2,
+            "notes": "Two closets per room."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Sunset Village appears on both the private-bath and shared-bath 2026-27 rate pages; UCLA does not publish which Courtside rooms have which bath type. Published closet spec (two closets, 88\"H x 35\"L x 19.5\"D) has no bath-type variant. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Plaza Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 12.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 2.92,
+            "depth_ft": 1.62,
+            "height_ft": 7.33,
+            "count": 2,
+            "notes": "Two closets per room."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. See double note: bath-type split not published for Courtside. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "One of three Sunset Village buildings."
+    },
+    {
+      "dorm_id": "rieber-terrace",
+      "dorm_name": "Rieber Terrace",
+      "building_type": "plaza",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/plaza-residences",
+      "air_conditioning": true,
+      "bathroom_configuration": "Bathroom shared with one adjoining room",
+      "rooms": [
+        {
+          "room_type": "double_shared_bath",
+          "room_type_official": "Plaza Double, Shared Bath",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 12.83
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.75,
+            "depth_ft": 2.08,
+            "height_ft": 6.0
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple_shared_bath",
+          "room_type_official": "Plaza Triple, Shared Bath",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 12.83
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.75,
+            "depth_ft": 2.08,
+            "height_ft": 6.0
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "single_pod",
+          "room_type_official": "Plaza Single, Pod/Shared Bath",
+          "occupants": 1,
+          "dimensions": {
+            "length_ft": 11.42,
+            "width_ft": 9.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.75,
+            "depth_ft": 2.08,
+            "height_ft": 6.0
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Pod/single-share rooms: private sleeping room plus a connected shared living space furnished with a couch and table; bathroom shared within the pod. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "High-rise plaza building; study lounges on every floor, ground-floor laundry."
+    },
+    {
+      "dorm_id": "rieber-vista",
+      "dorm_name": "Rieber Vista",
+      "building_type": "plaza",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/plaza-residences",
+      "air_conditioning": true,
+      "bathroom_configuration": "Bathroom shared with one adjoining room",
+      "rooms": [
+        {
+          "room_type": "double_shared_bath",
+          "room_type_official": "Plaza Double, Shared Bath",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 12.83
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.75,
+            "depth_ft": 2.08,
+            "height_ft": 6.0
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple_shared_bath",
+          "room_type_official": "Plaza Triple, Shared Bath",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 12.83
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.75,
+            "depth_ft": 2.08,
+            "height_ft": 6.0
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "single_pod",
+          "room_type_official": "Plaza Single, Pod/Shared Bath",
+          "occupants": 1,
+          "dimensions": {
+            "length_ft": 11.42,
+            "width_ft": 9.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.75,
+            "depth_ft": 2.08,
+            "height_ft": 6.0
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Pod/single-share rooms: private sleeping room plus a connected shared living space furnished with a couch and table; bathroom shared within the pod. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "High-rise plaza building; study lounges on every floor, ground-floor laundry."
+    },
+    {
+      "dorm_id": "hedrick-summit",
+      "dorm_name": "Hedrick Summit",
+      "building_type": "plaza",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/plaza-residences",
+      "air_conditioning": true,
+      "bathroom_configuration": "Bathroom shared with one adjoining room",
+      "rooms": [
+        {
+          "room_type": "double_shared_bath",
+          "room_type_official": "Plaza Double, Shared Bath",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 12.83
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.75,
+            "depth_ft": 2.08,
+            "height_ft": 6.0
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple_shared_bath",
+          "room_type_official": "Plaza Triple, Shared Bath",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 12.42,
+            "width_ft": 12.83
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.75,
+            "depth_ft": 2.08,
+            "height_ft": 6.0
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "single_pod",
+          "room_type_official": "Plaza Single, Pod/Shared Bath",
+          "occupants": 1,
+          "dimensions": {
+            "length_ft": 11.42,
+            "width_ft": 9.0
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "reach_in",
+            "wall": null,
+            "width_ft": 3.75,
+            "depth_ft": 2.08,
+            "height_ft": 6.0
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Pod/single-share rooms: private sleeping room plus a connected shared living space furnished with a couch and table; bathroom shared within the pod. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "High-rise plaza building; study lounges on every floor, ground-floor laundry."
+    },
+    {
+      "dorm_id": "saxon-suites",
+      "dorm_name": "Saxon Suites",
+      "building_type": "suites",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/suites",
+      "air_conditioning": false,
+      "bathroom_configuration": "One bathroom shared by the suite's two bedrooms",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Suite Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 14.42,
+            "width_ft": 11.25
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "wardrobe",
+            "wall": null,
+            "width_ft": 3.5,
+            "depth_ft": 1.92,
+            "height_ft": 6.67,
+            "notes": "Freestanding armoire, wall-secured for earthquake safety; must not be moved."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Bedroom within a two-bedroom suite; the two bedrooms share one bathroom. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Suite Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 14.42,
+            "width_ft": 11.25
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "wardrobe",
+            "wall": null,
+            "width_ft": 3.5,
+            "depth_ft": 1.92,
+            "height_ft": 6.67,
+            "notes": "Freestanding armoire, wall-secured for earthquake safety; must not be moved."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Bedroom within a two-bedroom suite; the two bedrooms share one bathroom. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "Low-rise suite complex with outside entrances to each unit; recently renovated. No air conditioning.",
+      "shared_unit_spaces": [
+        {
+          "space": "living_room",
+          "dimensions": null,
+          "notes": "Furnished with a couch, chairs, coffee table, and multipurpose table. Dimensions not published."
+        }
+      ]
+    },
+    {
+      "dorm_id": "hitch-suites",
+      "dorm_name": "Hitch Suites",
+      "building_type": "suites",
+      "hall_url": "https://portal.housing.ucla.edu/new-students/suites",
+      "air_conditioning": false,
+      "bathroom_configuration": "One bathroom shared by the suite's two bedrooms",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Suite Double",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 14.42,
+            "width_ft": 11.25
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "wardrobe",
+            "wall": null,
+            "width_ft": 3.5,
+            "depth_ft": 1.92,
+            "height_ft": 6.67,
+            "notes": "Freestanding armoire, wall-secured for earthquake safety; must not be moved."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": false,
+              "loftable": false,
+              "notes": "Singles/doubles may not loft or bunk; bed height can be raised to approx. 35\" on request ($35, first two weeks of Fall quarter). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Bedroom within a two-bedroom suite; the two bedrooms share one bathroom. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Suite Triple",
+          "occupants": 3,
+          "dimensions": {
+            "length_ft": 14.42,
+            "width_ft": 11.25
+          },
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "wardrobe",
+            "wall": null,
+            "width_ft": 3.5,
+            "depth_ft": 1.92,
+            "height_ft": 6.67,
+            "notes": "Freestanding armoire, wall-secured for earthquake safety; must not be moved."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "notes": "Triple rooms come with one set of bunk beds and one elevated loft-style bed (installed by certified staff only; may not sit directly in front of a window). Twin XL 36\" x 80\" mattress."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.58,
+              "width_ft": 2.08,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Depth extends to 36\" when fully extended."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "length_ft": 1.5,
+              "width_ft": 1.5,
+              "height_ft": 2.67,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 2.58,
+              "width_ft": 2.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "3-drawer chest 2'6\"H x 2'7\"W x 2'0\"D; each drawer 5-3/8\" high."
+            },
+            {
+              "type": "wardrobe",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 2.08,
+              "height_ft": 4.67,
+              "movable": true,
+              "notes": "Additional wardrobe provided in triple rooms (56\"H x 36\"L x 25\"D)."
+            }
+          ],
+          "data_source": "https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing",
+          "data_confidence": "medium",
+          "notes": "UCLA states all room measurements are approximate and may vary by room and building layout. Bedroom within a two-bedroom suite; the two bedrooms share one bathroom. Closet and furniture dimensions are exact published values (https://ask.housing.ucla.edu/app/answers/detail/a_id/518/~/residential-hall-closets)."
+        }
+      ],
+      "notes": "Low-rise suite complex with outside entrances to each unit; recently renovated. No air conditioning.",
+      "shared_unit_spaces": [
+        {
+          "space": "living_room",
+          "dimensions": null,
+          "notes": "Furnished with a couch, chairs, coffee table, and multipurpose table. Dimensions not published."
+        }
+      ]
+    }
+  ]
+}
