@@ -5,7 +5,7 @@
  "state": "NJ",
  "housing_url": "https://ruoncampus.rutgers.edu/living-on-campus",
  "data_collected": "2026-07-18",
- "campus_notes": "Covers the College Avenue and Busch campuses (33 buildings) from ruoncampus.rutgers.edu; Livingston and Cook/Douglass campuses not yet collected. Rutgers publishes a single hall-wide 'Average Room Size' per building rather than per-room-type dimensions; that figure is recorded on the hall's standard double (or suite/apartment bedroom) and singles are left null per honest-data rules. Published sizes normalized so length is the longer side. Beds are Twin XL except Sojourner Truth Apartments (full-size). Traditional halls have communal bathrooms; suites and apartments have private bathrooms.",
+ "campus_notes": "Covers all four New Brunswick residential campuses (College Avenue, Busch, Cook/Douglass, Livingston; 51 buildings) from ruoncampus.rutgers.edu. Rutgers publishes a single hall-wide 'Average Room Size' per building rather than per-room-type dimensions; that figure is recorded on the hall's standard double (or suite/apartment bedroom) and singles are left null per honest-data rules. Published sizes normalized so length is the longer side. Beds are Twin XL except Sojourner Truth Apartments (full-size). Traditional halls have communal bathrooms; suites and apartments have private bathrooms.",
  "dorms": [
   {
    "dorm_id": "brett-hall",
@@ -2322,6 +2322,1416 @@
     }
    ],
    "notes": "Continuing students. Air-cooled."
+  },
+  {
+   "dorm_id": "helyar-house",
+   "dorm_name": "Helyar House",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/helyar-house",
+   "air_conditioning": null,
+   "capacity": 40,
+   "year_built": 1968,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 12.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/helyar-house",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/helyar-house",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year and continuing students; small co-op style house. Communal bathrooms. AC not mentioned."
+  },
+  {
+   "dorm_id": "henderson-apartments",
+   "dorm_name": "Henderson Apartments",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/henderson-apartments",
+   "air_conditioning": true,
+   "capacity": 274,
+   "year_built": 1974,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Bedroom in multi-bedroom apartment",
+     "occupants": null,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/henderson-apartments",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement. Rutgers does not publish bedroom counts or occupancy per bedroom; private bathroom in apartment."
+    }
+   ],
+   "notes": "Continuing students. Air-cooled."
+  },
+  {
+   "dorm_id": "jameson-hall",
+   "dorm_name": "Jameson Hall",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/jameson-hall",
+   "air_conditioning": false,
+   "capacity": 280,
+   "year_built": 1927,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/jameson-hall",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/jameson-hall",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "Continuing students; Global Village LLC and SAS Honors housing. Multiple buildings (A-H, W) around a courtyard. Average room size listed as 'varies'; no dimensions published."
+  },
+  {
+   "dorm_id": "katzenbach-hall",
+   "dorm_name": "Katzenbach Hall",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/katzenbach-hall",
+   "air_conditioning": false,
+   "capacity": 236,
+   "year_built": 1963,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 11.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/katzenbach-hall",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/katzenbach-hall",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year students. Communal bathrooms. AC in lounges only."
+  },
+  {
+   "dorm_id": "lippincott-hall",
+   "dorm_name": "Lippincott Hall",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/lippincott-hall",
+   "air_conditioning": null,
+   "capacity": 238,
+   "year_built": 1962,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 11.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/lippincott-hall",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/lippincott-hall",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year students. Communal bathrooms. AC not mentioned."
+  },
+  {
+   "dorm_id": "new-gibbons",
+   "dorm_name": "New Gibbons",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/new-gibbons",
+   "air_conditioning": null,
+   "capacity": 442,
+   "year_built": 1968,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 13.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/new-gibbons",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/new-gibbons",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year and continuing students; Mason Gross and Rainbow Perspective communities. Communal bathrooms incl. gender-neutral options. AC not mentioned."
+  },
+  {
+   "dorm_id": "newell-apartments",
+   "dorm_name": "Newell Apartments",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/newell-apartments",
+   "air_conditioning": true,
+   "capacity": 982,
+   "year_built": 1973,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Double bedroom in two-bedroom apartment",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.0,
+      "width_ft": 11.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/newell-apartments",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement. Private bathroom in apartment."
+    }
+   ],
+   "notes": "Continuing students. Air-cooled."
+  },
+  {
+   "dorm_id": "nicholas-hall",
+   "dorm_name": "Nicholas Hall",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/nicholas-hall",
+   "air_conditioning": null,
+   "capacity": 230,
+   "year_built": 1960,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 11.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/nicholas-hall",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/nicholas-hall",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year and transfer students. Communal bathrooms. AC not mentioned."
+  },
+  {
+   "dorm_id": "perry-hall",
+   "dorm_name": "Perry Hall",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/perry-hall",
+   "air_conditioning": true,
+   "capacity": 174,
+   "year_built": 1986,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18.0,
+      "width_ft": 11.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/perry-hall",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/perry-hall",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year students. Communal bathrooms. Air-cooled."
+  },
+  {
+   "dorm_id": "starkey-apartments",
+   "dorm_name": "Starkey Apartments",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/starkey-apartments",
+   "air_conditioning": true,
+   "capacity": 384,
+   "year_built": 1979,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Double bedroom in two-bedroom garden apartment",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18.0,
+      "width_ft": 11.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/starkey-apartments",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement. Full kitchen and living area per unit; private bathroom; Seeing-Eye Puppy Raisers community."
+    }
+   ],
+   "notes": "Continuing and graduate students. Air-cooled."
+  },
+  {
+   "dorm_id": "voorhees-residence-hall",
+   "dorm_name": "Voorhees Residence Hall",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/voorhees-residence-hall",
+   "air_conditioning": true,
+   "capacity": 222,
+   "year_built": 1976,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 11.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/voorhees-residence-hall",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/voorhees-residence-hall",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year students. Communal bathrooms. Air-cooled."
+  },
+  {
+   "dorm_id": "woodbury-bunting-cobb-hall",
+   "dorm_name": "Woodbury Bunting-Cobb Hall",
+   "campus": "Cook/Douglass",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/woodbury-bunting-cobb-hall",
+   "air_conditioning": false,
+   "capacity": 228,
+   "year_built": 1959,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 11.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/woodbury-bunting-cobb-hall",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/cookdouglass/woodbury-bunting-cobb-hall",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year and continuing students; Douglass Residential College Sciences LLC. Communal bathrooms. AC in lounges only."
+  },
+  {
+   "dorm_id": "livingston-apartments",
+   "dorm_name": "Livingston Apartments",
+   "campus": "Livingston",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/livingston-apartments",
+   "air_conditioning": true,
+   "capacity": 1488,
+   "year_built": 2012,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Bedroom in two-bedroom apartment",
+     "occupants": null,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/livingston-apartments",
+     "data_confidence": "low",
+     "notes": "2-bedroom (some 2-bath) units across buildings A/B/C; occupancy per bedroom and dimensions not published. Full-size refrigerator and kitchen island per unit."
+    }
+   ],
+   "notes": "Continuing students and single graduate students. Air conditioning."
+  },
+  {
+   "dorm_id": "lynton-towers-north",
+   "dorm_name": "Lynton Towers North",
+   "campus": "Livingston",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/lynton-towers-north",
+   "air_conditioning": false,
+   "capacity": 343,
+   "year_built": 1972,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/lynton-towers-north",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/lynton-towers-north",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year and continuing students; SAS Honors housing. Average room size listed as 'varies'; no dimensions published. Corridor and main lounge air-cooled only."
+  },
+  {
+   "dorm_id": "lynton-towers-south",
+   "dorm_name": "Lynton Towers South",
+   "campus": "Livingston",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/lynton-towers-south",
+   "air_conditioning": false,
+   "capacity": 343,
+   "year_built": 1972,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/lynton-towers-south",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/lynton-towers-south",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year and continuing students. Average room size listed as 'varies'; no dimensions published. Corridor and main lounge air-cooled only."
+  },
+  {
+   "dorm_id": "quad-i",
+   "dorm_name": "Quad I",
+   "campus": "Livingston",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/quad-i",
+   "air_conditioning": false,
+   "capacity": 468,
+   "year_built": 1968,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 14.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/quad-i",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/quad-i",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year and continuing students; ten houses around central courtyards. Communal bathrooms. AC in lounges only. Rooms include ceiling fan and microfridge."
+  },
+  {
+   "dorm_id": "quad-ii",
+   "dorm_name": "Quad II",
+   "campus": "Livingston",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/quad-ii",
+   "air_conditioning": false,
+   "capacity": 505,
+   "year_built": 1968,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 14.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/quad-ii",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/quad-ii",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year and continuing students; ten houses around a central courtyard. Communal bathrooms. AC in lounges only."
+  },
+  {
+   "dorm_id": "quad-iii",
+   "dorm_name": "Quad III",
+   "campus": "Livingston",
+   "hall_url": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/quad-iii",
+   "air_conditioning": false,
+   "capacity": 494,
+   "year_built": 1968,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 14.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/quad-iii",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall-wide 'Average Room Size' published by Rutgers Residence Life, not a per-room-type measurement."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/livingston/quad-iii",
+     "data_confidence": "low",
+     "notes": "Rutgers publishes only a hall-wide average room size; single dimensions are not published separately."
+    }
+   ],
+   "notes": "First-year and continuing students. Communal bathrooms. AC in lounges only."
   }
  ]
 }
