@@ -60,7 +60,7 @@ function devMockProfile(): Profile | null {
     const p = JSON.parse(raw) as Partial<Profile>;
     return {
       id: "dev-mock",
-      email: p.email ?? "dev@dormscape.com",
+      email: p.email ?? "dev@dormscape.us",
       username: p.username ?? null,
       auth_provider: p.auth_provider ?? "email",
       created_at: new Date().toISOString(),
