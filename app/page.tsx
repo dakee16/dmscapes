@@ -55,7 +55,7 @@ export default function Home() {
                 className="rise mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-wide text-ink-soft"
                 style={{ animationDelay: "320ms" }}
               >
-                <li>11 schools preloaded, more weekly</li>
+                <li>12 schools preloaded, more weekly</li>
                 <li>$200–$1,500 budgets</li>
                 <li>Live Amazon links</li>
               </ul>

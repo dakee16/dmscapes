@@ -11,7 +11,7 @@ const SCHOOLS = [
   { name: "University of Georgia", hall: "Creswell Hall", dims: "12'6\" × 11'10\"" },
   { name: "Alabama", hall: "Tutwiler Hall", dims: "14'0\" × 12'2\"" },
   { name: "UCLA", hall: "Sproul Hall", dims: "13'6\" × 10'8\"" },
-  { name: "UC Berkeley", hall: "Unit 1", dims: "12'8\" × 10'6\"" },
+  { name: "Georgia Tech", hall: "Armstrong", dims: "15'0\" × 11'0\"" },
   { name: "Wisconsin", hall: "Sellery Hall", dims: "13'2\" × 11'0\"" },
   { name: "Indiana", hall: "Briscoe Quad", dims: "14'4\" × 11'6\"" },
 ];
