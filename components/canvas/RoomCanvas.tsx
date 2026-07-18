@@ -25,7 +25,7 @@ interface RoomCanvasProps {
   roomW: number;
   templateId: string | null;
   furniture: FurnitureItem[];
-  /** Optional closet footprint (ft) — rendered as a hatched block when present. */
+  /** Optional closet footprint (ft), rendered as a hatched block when present. */
   closet?: { width_ft: number; depth_ft: number } | null;
   onMove: (id: string, xFt: number, yFt: number) => void;
   onReset: () => void;

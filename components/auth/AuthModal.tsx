@@ -67,7 +67,7 @@ export default function AuthModal() {
   // Signup isn't finished until a username exists.
   const needsUsername = Boolean(user && profile && profile.username === null);
 
-  // OAuth return path: the redirect landed us back with a session — record it.
+  // OAuth return path: the redirect landed us back with a session; record it.
   useEffect(() => {
     if (!user || typeof window === "undefined") return;
     if (window.localStorage.getItem(OAUTH_PENDING_KEY)) {
@@ -77,7 +77,7 @@ export default function AuthModal() {
   }, [user]);
 
   // Reopen on the username step after an OAuth redirect (once per session).
-  // Part of a signup the user initiated — never fires for logged-out users.
+  // Part of a signup the user initiated; never fires for logged-out users.
   useEffect(() => {
     if (!needsUsername || modalOpen) return;
     if (window.sessionStorage.getItem(PROMPTED_KEY)) return;
@@ -159,7 +159,7 @@ export default function AuthModal() {
       setError(err.message);
       setBusy(false);
     }
-    // On success the browser navigates away — no state to restore.
+    // On success the browser navigates away; no state to restore.
   }
 
   async function handleCredentials(e: React.FormEvent) {
@@ -212,7 +212,7 @@ export default function AuthModal() {
     const supabase = getBrowserClient();
     const value = username.trim();
     if (!USERNAME_RE.test(value)) {
-      setUError("3–20 characters — letters, numbers, underscore, period.");
+      setUError("3–20 characters; letters, numbers, underscore, period.");
       return;
     }
     if (!supabase || !user || busy) return;
@@ -227,7 +227,7 @@ export default function AuthModal() {
         setUError(
           err.code === "23505"
             ? "That username is taken."
-            : "Couldn't save that — try again."
+            : "Couldn't save that. Try again."
         );
         return;
       }
@@ -256,10 +256,10 @@ export default function AuthModal() {
       case "available":
         return { text: `@${username.trim()} is available`, tone: "good" };
       case "taken":
-        return { text: "Taken — try another.", tone: "bad" };
+        return { text: "Taken. Try another.", tone: "bad" };
       case "invalid":
         return {
-          text: "3–20 characters — letters, numbers, underscore, period.",
+          text: "3–20 characters; letters, numbers, underscore, period.",
           tone: "bad",
         };
       case "unknown":
@@ -309,7 +309,7 @@ export default function AuthModal() {
         {!configured ? (
           <div className="mt-4 space-y-4">
             <p className="rounded-xl border border-ink/10 bg-white px-4 py-3.5 text-sm leading-relaxed text-ink-soft">
-              Accounts aren&apos;t live quite yet — your designs still work
+              Accounts aren&apos;t live quite yet. Your designs still work
               without one.
             </p>
             <button
@@ -346,7 +346,7 @@ export default function AuthModal() {
         ) : needsUsername ? (
           <form onSubmit={handleClaim} className="mt-4 space-y-3" noValidate>
             <p className="text-sm leading-relaxed text-ink-soft">
-              One last thing — pick the name your designs live under.
+              One last thing: pick the name your designs live under.
             </p>
             <div>
               <label htmlFor="auth-username" className="mb-1.5 block text-sm font-medium">
@@ -415,7 +415,7 @@ export default function AuthModal() {
             <p className="text-sm leading-relaxed text-ink-soft">
               {saveDesign
                 ? "Create a free account to keep this room."
-                : "Save designs and pick up where you left off — free."}
+                : "Save designs and pick up where you left off. Free."}
             </p>
             <div className="mt-4 grid grid-cols-2 rounded-xl border border-ink/10 bg-white p-1 text-sm font-semibold">
               {(["signup", "login"] as const).map((m) => (

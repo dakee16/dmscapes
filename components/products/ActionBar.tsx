@@ -61,7 +61,7 @@ export default function ActionBar({
     if (!res.ok) {
       showToast(
         res.status === 503
-          ? "Sharing links come online soon — download the PNG for now."
+          ? "Sharing links come online soon. Download the PNG for now."
           : "Couldn't save right now. Try again in a minute."
       );
       return null;
@@ -74,7 +74,7 @@ export default function ActionBar({
     const url = getPng();
     setMenuOpen(false);
     if (!url) {
-      showToast("Canvas isn't ready yet — try again in a second.");
+      showToast("Canvas isn't ready yet. Try again in a second.");
       return;
     }
     const a = document.createElement("a");
@@ -91,7 +91,7 @@ export default function ActionBar({
       const url = await saveRoom();
       if (url) {
         await navigator.clipboard.writeText(url);
-        showToast("Link copied — send it to your roommate.");
+        showToast("Link copied. Send it to your roommate.");
         track("share_clicked", { type: "link" });
       }
     } finally {
@@ -103,7 +103,7 @@ export default function ActionBar({
     e.preventDefault();
     setBusy("save");
     try {
-      // Signed-in users don't need to type an email — use the account's.
+      // Signed-in users don't need to type an email; use the account's.
       const saveEmail = user?.email ?? email.trim();
       if (saveEmail) {
         await fetch("/api/waitlist", {
@@ -194,7 +194,7 @@ export default function ActionBar({
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@school.edu (optional — we'll email you the link)"
+                    placeholder="you@school.edu (optional, we'll email you the link)"
                     className="h-11 flex-1 rounded-xl border border-ink/15 bg-white px-4 text-sm text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
                   />
                 )}

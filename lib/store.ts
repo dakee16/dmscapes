@@ -12,7 +12,7 @@ export interface PlannerState {
   // Step 2
   style: StyleId | null;
   budget: number;
-  // Step 3 — canvas layout
+  // Step 3: canvas layout
   templateId: string | null;
   /** Current furniture positions (template copy, mutated by drag). */
   furniture: FurnitureItem[] | null;

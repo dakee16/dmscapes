@@ -47,7 +47,7 @@ export default function PlannerHeader() {
                   {done ? "✓" : i + 1}
                 </span>
                 {/* At 375px only the active step's label fits alongside the
-                    wordmark and profile icon — the rest keep their number. */}
+                    wordmark and profile icon; the rest keep their number. */}
                 <span
                   className={`text-xs font-medium sm:text-sm ${
                     active ? "text-ink" : "hidden text-ink-soft sm:inline"

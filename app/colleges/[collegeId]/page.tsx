@@ -15,9 +15,32 @@ export async function generateMetadata(props: {
   const { collegeId } = await props.params;
   const school = getSchool(collegeId);
   if (!school) return {};
+  const title = `${school.name} Dorm Room Planner`;
+  const description = `Plan your ${school.name} dorm room before move-in. ${school.dorms.length} residence halls with real room dimensions, layout templates, and a shoppable list. Free.`;
   return {
-    title: `${school.name} Dorm Room Planner — Design Your Room Free | Dormscape`,
-    description: `Plan your ${school.name} dorm room before move-in. ${school.dorms.length} residence halls with real room dimensions, layout templates, and a shoppable list — free.`,
+    title,
+    description,
+    openGraph: {
+      title: `${title} | Dormscape`,
+      description,
+      siteName: "Dormscape",
+      type: "website",
+      url: `/colleges/${school.id}`,
+      images: [
+        {
+          url: "/og.png",
+          width: 1200,
+          height: 630,
+          alt: "Dormscape, the free AI dorm room planner",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | Dormscape`,
+      description,
+      images: ["/og.png"],
+    },
   };
 }
 
@@ -61,7 +84,7 @@ export default async function CollegePage(props: {
               href="/plan"
               className="mt-7 inline-block rounded-lg bg-cobalt px-6 py-3 font-semibold text-white transition-colors hover:bg-cobalt-deep"
             >
-              Design your room — it&rsquo;s free
+              Design your room for free
             </Link>
           </div>
         </section>

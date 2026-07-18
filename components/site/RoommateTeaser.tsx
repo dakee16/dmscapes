@@ -75,7 +75,7 @@ export default function RoommateTeaser({
           your budgets stay separate. We&rsquo;re building it now.
         </p>
 
-        {/* Split-room sketch — locked on purpose, not broken */}
+        {/* Split-room sketch, locked on purpose, not broken */}
         <div className="grid-paper relative mt-5 overflow-hidden rounded-xl border border-dashed border-ink/25 bg-white">
           <svg viewBox="0 0 300 150" className="block w-full" aria-hidden="true">
             <rect

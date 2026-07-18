@@ -1,15 +1,25 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Children, useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
-// Scroll-reveal wrapper. Server markup renders children fully visible (no-JS
-// safe); on mount, wrappers still below the fold get hidden and animate in
-// when they intersect. Elements already on screen never flash.
+// Ease-out-expo. Every reveal on the site shares this curve; nothing bouncy.
+export const REVEAL_EASE = [0.16, 1, 0.3, 1] as const;
+
+const HIDDEN = { opacity: 0, y: 18, transition: { duration: 0 } };
+
+/**
+ * Scroll-reveal wrapper (framer-motion). Server markup renders children fully
+ * visible (no-JS safe); on mount, wrappers still below the fold arm (snap to
+ * hidden) and rise in when they intersect. Elements already on screen never
+ * flash. Arms only when prefers-reduced-motion is off.
+ */
 export default function Reveal({
   children,
   className,
   delay = 0,
   stagger = false,
+  itemClassName,
 }: {
   children: React.ReactNode;
   className?: string;
@@ -17,39 +27,67 @@ export default function Reveal({
   delay?: number;
   /** animate direct children one-by-one instead of the wrapper */
   stagger?: boolean;
+  /** classes for the per-child wrappers in stagger mode; they become the layout children */
+  itemClassName?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [phase, setPhase] = useState<"ssr" | "waiting" | "in">("ssr");
+  const [armed, setArmed] = useState(false);
+  const inView = useInView(ref, {
+    once: true,
+    amount: 0.12,
+    margin: "0px 0px -6% 0px",
+  });
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || typeof IntersectionObserver === "undefined") return;
+    if (!el) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     if (el.getBoundingClientRect().top < window.innerHeight * 0.9) return;
-    setPhase("waiting");
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          setPhase("in");
-          io.disconnect();
-        }
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
-    );
-    io.observe(el);
-    return () => io.disconnect();
+    setArmed(true);
   }, []);
 
-  const base = stagger ? "reveal-stagger" : "reveal";
+  const state = armed && !inView ? "hidden" : "shown";
+
+  const container = stagger
+    ? {
+        hidden: {},
+        shown: {
+          transition: { staggerChildren: 0.09, delayChildren: delay / 1000 },
+        },
+      }
+    : {
+        hidden: HIDDEN,
+        shown: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.55, ease: REVEAL_EASE, delay: delay / 1000 },
+        },
+      };
+
+  const item = {
+    hidden: HIDDEN,
+    shown: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.55, ease: REVEAL_EASE },
+    },
+  };
+
   return (
-    <div
+    <motion.div
       ref={ref}
-      className={[className, phase === "ssr" ? "" : base, phase === "in" ? "is-in" : ""]
-        .filter(Boolean)
-        .join(" ")}
-      style={delay ? ({ "--reveal-delay": `${delay}ms` } as React.CSSProperties) : undefined}
+      className={className}
+      initial={false}
+      animate={state}
+      variants={container}
     >
-      {children}
-    </div>
+      {stagger
+        ? Children.map(children, (child) => (
+            <motion.div className={itemClassName} variants={item}>
+              {child}
+            </motion.div>
+          ))
+        : children}
+    </motion.div>
   );
 }

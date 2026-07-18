@@ -4,7 +4,7 @@ import Nav from "@/components/Nav";
 import { SCHOOLS } from "@/lib/schools";
 
 export const metadata: Metadata = {
-  title: "Supported Colleges — Dorm Room Planner | Dormscape",
+  title: "Supported Colleges",
   description:
     "Browse the colleges with dorm room dimensions preloaded in Dormscape. Pick your school and design your exact room for free.",
 };
@@ -55,12 +55,12 @@ export default function CollegesPage() {
           </ul>
 
           <div className="mt-12 rounded-xl border border-dashed border-ink/20 bg-card/60 p-6 text-center">
-            <p className="font-medium">Don&rsquo;t see your school?</p>
+            <p className="font-medium">Don&rsquo;t see your school? It takes 30 seconds.</p>
             <Link
               href="/add-school"
               className="mt-3 inline-block rounded-lg bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
             >
-              Request it — takes 30 seconds
+              Add my school
             </Link>
           </div>
         </div>

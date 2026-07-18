@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 // Cursor-reactive graph paper: a stronger copy of the 28px grid, masked to a
 // soft halo that follows the pointer. Must be rendered inside a .grid-paper
-// background layer — it inherits that layer's fade mask and grid origin, so
+// background layer; it inherits that layer's fade mask and grid origin, so
 // the base texture stays untouched and perfectly aligned.
 export default function CursorGrid() {
   const ref = useRef<HTMLDivElement>(null);

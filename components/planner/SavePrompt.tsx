@@ -65,7 +65,7 @@ export default function SavePrompt() {
         </button>
       </div>
       <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-        Save your design free — pick up where you left off on any device.
+        Save your design free and pick up where you left off on any device.
       </p>
       <button
         type="button"

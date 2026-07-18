@@ -1,4 +1,4 @@
-// CLIENT-SIDE Supabase — uses the anon (publishable) key only, which is safe
+// CLIENT-SIDE Supabase: uses the anon (publishable) key only, which is safe
 // to ship in the bundle because RLS governs every table it can touch.
 // The service-role key lives exclusively in lib/supabase-server.ts.
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";

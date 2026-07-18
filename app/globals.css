@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Dormscape tokens — graph-paper direction */
+  /* Dormscape tokens, graph-paper direction */
   --color-paper: #fafaf8;
   --color-ink: #17172b;
   --color-ink-soft: #4c4f63;
   --color-cobalt: #2b4eff;
   --color-cobalt-deep: #1e3ad6;
   --color-grid: #e4e9f4;
-  /* Grid lines under the cursor halo — see .cursor-grid */
+  /* Grid lines under the cursor halo; see .cursor-grid */
   --color-grid-strong: #c7d1ea;
   --color-highlight: #ffd84d;
-  /* Wordmark yellow — highlight is too pale for text on paper */
+  /* Wordmark yellow; highlight is too pale for text on paper */
   --color-amber: #f0b100;
   --color-card: #ffffff;
 
@@ -31,7 +31,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Graph paper — the page's throughline */
+/* Graph paper, the page's throughline */
 .grid-paper {
   background-image: linear-gradient(var(--color-grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
@@ -43,7 +43,7 @@ body {
   mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
 }
 
-/* Highlighter underline — school-supplies accent */
+/* Highlighter underline, school-supplies accent */
 .hl {
   background-image: linear-gradient(to top, var(--color-highlight) 0.32em, transparent 0.32em);
 }
@@ -82,37 +82,7 @@ body {
   animation: snap-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
-/* Scroll reveal — classes are added client-side only (components/site/Reveal),
-   so content stays visible without JS. Reuses the rise keyframes. */
-.reveal:not(.is-in),
-.reveal-stagger:not(.is-in) > * {
-  opacity: 0;
-}
-
-.reveal.is-in {
-  animation: rise 0.32s ease-out both;
-  animation-delay: var(--reveal-delay, 0ms);
-}
-
-.reveal-stagger.is-in > * {
-  animation: rise 0.32s ease-out both;
-}
-
-.reveal-stagger.is-in > *:nth-child(2) {
-  animation-delay: 70ms;
-}
-.reveal-stagger.is-in > *:nth-child(3) {
-  animation-delay: 140ms;
-}
-.reveal-stagger.is-in > *:nth-child(4) {
-  animation-delay: 210ms;
-}
-.reveal-stagger.is-in > *:nth-child(5) {
-  animation-delay: 280ms;
-}
-.reveal-stagger.is-in > *:nth-child(n + 6) {
-  animation-delay: 340ms;
-}
+/* Scroll reveals live in components/site/Reveal.tsx (framer-motion). */
 
 /* Cursor-reactive grid: a stronger copy of the graph paper, masked to a soft
    halo around the pointer (components/site/CursorGrid). Rendered inside a
@@ -154,14 +124,6 @@ body {
   .snap-in {
     animation: none;
   }
-  .reveal:not(.is-in),
-  .reveal-stagger:not(.is-in) > * {
-    opacity: 1;
-  }
-  .reveal.is-in,
-  .reveal-stagger.is-in > * {
-    animation: none;
-  }
   .cursor-grid {
     display: none;
   }
@@ -178,7 +140,7 @@ body {
 }
 
 /* For inputs whose wrapper already shows focus (focus-within border): mutes
-   the global ring above, which — being unlayered — beats layered utilities
+   the global ring above, which (being unlayered) beats layered utilities
    like focus-visible:outline-none. */
 .focus-quiet:focus-visible {
   outline: none;

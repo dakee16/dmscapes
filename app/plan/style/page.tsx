@@ -24,7 +24,7 @@ export default function PlanStylePage() {
 
   useEffect(() => setMounted(true), []);
 
-  // Store hydrates from sessionStorage on mount — only then can we trust `room`.
+  // Store hydrates from sessionStorage on mount; only then can we trust `room`.
   useEffect(() => {
     if (mounted && !room) router.replace("/plan");
   }, [mounted, room, router]);
@@ -66,8 +66,8 @@ export default function PlanStylePage() {
         What&apos;s your <span className="hl">vibe</span>?
       </h1>
       <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-        Every style is a complete plan — bedding, lighting, storage, decor — arranged to
-        your {room.lengthFt} × {room.widthFt} ft room.
+        Every style is a complete plan: bedding, lighting, storage, and decor, arranged
+        to your {room.lengthFt} × {room.widthFt} ft room.
       </p>
 
       <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">

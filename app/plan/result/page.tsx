@@ -7,6 +7,7 @@ import { matchTemplate, ALL_TEMPLATES } from "@/templates/template-matcher";
 import { productsFor, productById, tierForBudget, totalFor } from "@/lib/catalog";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
+import { roomTypeLabel } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
 import { fitTemplateToRoom } from "@/lib/layout-fit";
 import type RoomCanvasType from "@/components/canvas/RoomCanvas";
@@ -16,7 +17,7 @@ import ProductPanel from "@/components/products/ProductPanel";
 import ActionBar from "@/components/products/ActionBar";
 import SavePrompt from "@/components/planner/SavePrompt";
 
-// react-konva can't render on the server — load the canvas client-side only.
+// react-konva can't render on the server, so load the canvas client-side only.
 const RoomCanvas = dynamic(() => import("@/components/canvas/RoomCanvas"), {
   ssr: false,
   loading: () => <div className="aspect-[4/3] w-full animate-pulse rounded-xl bg-ink/5" />,
@@ -84,7 +85,7 @@ export default function ResultPage() {
   );
 
   // Adopt the matched template's layout (once, or when the room changed),
-  // refit to the actual room size — templates are authored at nominal dims.
+  // refit to the actual room size: templates are authored at nominal dims.
   useEffect(() => {
     if (!hydrated || !match || !room) return;
     if (templateId !== match.template_id || !furniture) {
@@ -136,7 +137,7 @@ export default function ResultPage() {
           Your room, <span className="hl">planned.</span>
         </h1>
         <p className="mt-1.5 font-mono text-xs uppercase tracking-[0.14em] text-ink-soft">
-          {[college?.name, dorm?.name, room.type, dims].filter(Boolean).join(" — ")}
+          {[college?.name, dorm?.name, roomTypeLabel(room), dims].filter(Boolean).join(" · ")}
         </p>
       </header>
 
@@ -159,7 +160,7 @@ export default function ResultPage() {
           </div>
           {match && !match.exact_match && (
             <p className="mt-2 text-xs text-ink-soft">
-              Closest layout for your room size — drag anything to make it yours.
+              Closest layout for your room size. Drag anything to make it yours.
             </p>
           )}
           <p className="mt-2 hidden text-xs text-ink-soft lg:block">

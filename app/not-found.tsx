@@ -13,7 +13,7 @@ export default function NotFound() {
         />
         <div className="mx-auto max-w-xl px-5 py-20 sm:px-8 sm:py-28">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-            404 — off the map
+            404: off the map
           </p>
           <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             This page isn&rsquo;t <span className="hl">built yet.</span>

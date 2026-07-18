@@ -43,7 +43,7 @@ export default function ProductPanel({ products }: { products: Product[] }) {
     return (
       <div className="rounded-xl border border-ink/10 bg-white p-6 text-center">
         <p className="text-sm text-ink-soft">
-          No products found for this style and budget — try nudging the budget slider.
+          No products found for this style and budget. Try nudging the budget slider.
         </p>
       </div>
     );

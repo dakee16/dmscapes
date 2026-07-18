@@ -61,7 +61,7 @@ export default function SwapModal({
 
         {alternatives.length === 0 ? (
           <p className="mt-5 rounded-xl border border-ink/10 bg-paper p-4 text-sm text-ink-soft">
-            No alternatives for this one yet — it&apos;s the best pick at every budget.
+            No alternatives for this one yet. It&apos;s the best pick at every budget.
           </p>
         ) : (
           <ul className="mt-4 space-y-2.5">

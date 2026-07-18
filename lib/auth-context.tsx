@@ -25,7 +25,7 @@ export interface Profile {
   created_at: string;
 }
 
-/** What prompted the modal — copy inside adapts ("save your design" vs generic). */
+/** What prompted the modal; copy inside adapts ("save your design" vs generic). */
 export type AuthModalReason = "profile" | "save-design";
 
 interface AuthContextValue {

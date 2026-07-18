@@ -5,7 +5,7 @@ export interface StyleMeta {
   name: string;
   emoji: string;
   keywords: string[];
-  /** Four swatches shown as palette preview dots. */
+  /** Reference palette for the style (thumbnails now come from StyleScene). */
   palette: [string, string, string, string];
 }
 

@@ -106,7 +106,7 @@ export default function StaticRoomView({
         strokeWidth={3}
       />
 
-      {/* door: gap + swing arc — all templates put it at the bottom of the left wall */}
+      {/* door: gap + swing arc; all templates put it at the bottom of the left wall */}
       <line x1={x(0)} y1={y(widthFt) - doorLen} x2={x(0)} y2={y(widthFt)} stroke="#fafaf8" strokeWidth={5} />
       <path
         d={`M ${x(0)} ${y(widthFt) - doorLen} A ${doorLen} ${doorLen} 0 0 1 ${x(0) + doorLen} ${y(widthFt)}`}

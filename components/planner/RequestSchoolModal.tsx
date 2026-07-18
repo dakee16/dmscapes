@@ -69,7 +69,7 @@ export default function RequestSchoolModal({
       });
       if (res.status === 503) {
         setStatus("error");
-        setMessage("Requests aren't open just yet — check back soon.");
+        setMessage("Requests aren't open just yet. Check back soon.");
         return;
       }
       if (!res.ok) {
@@ -101,7 +101,7 @@ export default function RequestSchoolModal({
       <div className="snap-in w-full max-w-md rounded-t-2xl bg-white p-5 shadow-2xl sm:rounded-2xl sm:p-6">
         <div className="flex items-start justify-between gap-4">
           <h2 id="request-school-title" className="font-display text-xl font-bold tracking-tight">
-            Request your school
+            Add your school
           </h2>
           <button
             type="button"
@@ -117,9 +117,9 @@ export default function RequestSchoolModal({
 
         {status === "success" ? (
           <div className="mt-4 rounded-xl border border-ink/10 bg-paper px-4 py-4 text-sm leading-relaxed">
-            <p className="font-semibold">Got it — {collegeName.trim()} is on the list. 🎉</p>
+            <p className="font-semibold">Got it. {collegeName.trim()} is on the list. 🎉</p>
             <p className="mt-1 text-ink-soft">
-              We add schools by request volume{email ? " — we'll email you when yours is live" : ""}.
+              We add schools by request volume{email ? ", and we'll email you when yours is live" : ""}.
               Meanwhile, you can still plan your room with manual measurements.
             </p>
             <button
@@ -133,7 +133,7 @@ export default function RequestSchoolModal({
         ) : (
           <form onSubmit={handleSubmit} className="mt-4 space-y-3" noValidate>
             <p className="text-sm leading-relaxed text-ink-soft">
-              We&apos;ll collect the floor plans and dimensions — you plan the room.
+              We&apos;ll collect the floor plans and dimensions. You plan the room.
             </p>
             <div>
               <label htmlFor="req-college" className="mb-1.5 block text-sm font-medium">
@@ -174,7 +174,7 @@ export default function RequestSchoolModal({
               disabled={status === "loading"}
               className="h-12 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
             >
-              {status === "loading" ? "Sending…" : "Request my school"}
+              {status === "loading" ? "Sending…" : "Add my school"}
             </button>
           </form>
         )}

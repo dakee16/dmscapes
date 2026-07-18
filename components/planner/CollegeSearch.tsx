@@ -102,7 +102,7 @@ export default function CollegeSearch({
         >
           {results.length === 0 ? (
             <li className="px-4 py-3 text-sm text-ink-soft">
-              No matches —{" "}
+              No matches yet.{" "}
               <button
                 type="button"
                 className="font-semibold text-cobalt underline-offset-2 hover:underline"
@@ -111,9 +111,9 @@ export default function CollegeSearch({
                   onNoMatches?.();
                 }}
               >
-                request your school
+                Add my school
               </button>{" "}
-              and we&apos;ll add it.
+              and we&apos;ll measure it.
             </li>
           ) : (
             results.map((school, i) => (

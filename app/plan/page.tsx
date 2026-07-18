@@ -8,6 +8,7 @@ import RoomPicker, { roomKey } from "@/components/planner/RoomPicker";
 import ManualEntry, { type ManualEntryValues } from "@/components/planner/ManualEntry";
 import RequestSchoolModal from "@/components/planner/RequestSchoolModal";
 import { track } from "@/lib/analytics";
+import { roomTypeLabel } from "@/lib/format";
 import { getSchool, formatDims } from "@/lib/schools";
 import { usePlannerStore } from "@/lib/store";
 import type { RoomSummary, SchoolSummary } from "@/lib/types";
@@ -160,9 +161,7 @@ export default function PlanSelectPage() {
               <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <span className="text-sm font-semibold text-ink">
-              {college?.name}
-              {dorm ? ` — ${dorm.name}` : ""} —{" "}
-              <span className="capitalize">{room.type.replaceAll("_", " ")}</span>
+              {[college?.name, dorm?.name, roomTypeLabel(room)].filter(Boolean).join(" · ")}
             </span>
             {confirmDims && (
               <span className="font-mono text-sm font-semibold text-cobalt">{confirmDims}</span>
@@ -179,21 +178,21 @@ export default function PlanSelectPage() {
             }}
             className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-4 transition-colors hover:text-cobalt"
           >
-            My school isn&apos;t listed
+            Enter my room size manually
           </button>
           <button
             type="button"
             onClick={() => setRequestOpen(true)}
             className="text-ink-soft underline-offset-4 transition-colors hover:text-cobalt hover:underline"
           >
-            Request my school
+            Add my school
           </button>
         </div>
 
         {manualOpen && <ManualEntry mode="school" onSubmit={handleManual} />}
       </div>
 
-      {/* Next — sticky on mobile, inline on desktop */}
+      {/* Next: sticky on mobile, inline on desktop */}
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/8 bg-paper/92 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
         <button
           type="button"

@@ -52,7 +52,7 @@ export default function AddSchoolForm() {
         <p className="text-3xl" aria-hidden>
           🎉
         </p>
-        <h2 className="mt-2 font-display text-xl font-bold">Got it — thank you!</h2>
+        <h2 className="mt-2 font-display text-xl font-bold">Got it, thank you!</h2>
         <p className="mt-2 text-ink-soft">
           Your school is in the queue. If you left an email, we&rsquo;ll ping you the
           moment it&rsquo;s live.
@@ -98,7 +98,7 @@ export default function AddSchoolForm() {
             Room type
           </label>
           <select id="room_type" name="room_type" className={input} defaultValue="">
-            <option value="">—</option>
+            <option value="">Pick one</option>
             {ROOM_TYPES.map((t) => (
               <option key={t} value={t}>
                 {t[0].toUpperCase() + t.slice(1)}
@@ -141,7 +141,7 @@ export default function AddSchoolForm() {
       </div>
       <div>
         <label className={label} htmlFor="email">
-          Email <span className="font-normal text-ink-soft">(optional — we&rsquo;ll tell you when it&rsquo;s live)</span>
+          Email <span className="font-normal text-ink-soft">(optional, we&rsquo;ll tell you when it&rsquo;s live)</span>
         </label>
         <input
           id="email"

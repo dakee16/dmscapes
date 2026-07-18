@@ -5,7 +5,7 @@ import type { UsernameCheckResponse } from "@/lib/api-types";
 const USERNAME_RE = /^[A-Za-z0-9._]{3,20}$/;
 
 /**
- * Pre-flight username availability check. Advisory only — the unique index
+ * Pre-flight username availability check. Advisory only; the unique index
  * in 0002_profiles.sql is the real gate against races.
  */
 export async function GET(request: Request) {
@@ -25,7 +25,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ available: null } satisfies UsernameCheckResponse);
   }
 
-  // Escape LIKE wildcards — usernames may contain "_".
+  // Escape LIKE wildcards; usernames may contain "_".
   const escaped = u.replace(/([\\%_])/g, "\\$1");
   const { data, error } = await supabase
     .from("profiles")

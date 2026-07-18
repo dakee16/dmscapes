@@ -70,12 +70,12 @@ export default function ManualEntry({
     >
       {mode === "dims-only" ? (
         <p className="mb-4 text-sm leading-relaxed text-ink-soft">
-          Your school doesn&apos;t publish this room&apos;s size — grab a tape measure, ask
+          Your school doesn&apos;t publish this room&apos;s size. Grab a tape measure, ask
           your RA, or estimate. Close is good enough.
         </p>
       ) : (
         <p className="mb-4 text-sm leading-relaxed text-ink-soft">
-          No problem — tell us about your room and we&apos;ll plan around your exact
+          No problem. Tell us about your room and we&apos;ll plan around your exact
           measurements.
         </p>
       )}

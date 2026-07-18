@@ -5,14 +5,15 @@ import Nav from "@/components/Nav";
 import StaticRoomView from "@/components/room/StaticRoomView";
 import type { SaveRoomRequest } from "@/lib/api-types";
 import { CATEGORY_LABELS, CATEGORY_ORDER, productById, totalFor } from "@/lib/catalog";
+import { formatRoomType } from "@/lib/format";
 import { getSchool } from "@/lib/schools";
 import { styleById } from "@/lib/styles";
 import { getServiceClient } from "@/lib/supabase-server";
 import type { Product } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "A Dormscape Room Design",
-  description: "A dorm room designed with Dormscape — free AI dorm room planner.",
+  title: { absolute: "A Dormscape Room Design" },
+  description: "A dorm room designed with Dormscape, the free AI dorm room planner.",
   robots: { index: false }, // share pages shouldn't compete with the planner in search
 };
 
@@ -53,11 +54,11 @@ export default async function SharedRoomPage(props: {
     <div>
       <Nav />
       <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
-        {/* CTA first — this page exists to convert viewers */}
+        {/* CTA first: this page exists to convert viewers */}
         <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-cobalt p-6 sm:flex-row sm:items-center">
           <div>
             <p className="font-display text-xl font-extrabold tracking-tight text-white">
-              Design your own room — it&rsquo;s free
+              Design your own room. It&rsquo;s free.
             </p>
             <p className="mt-1 text-sm text-white/80">
               Your exact dorm, your style, your budget. Two minutes.
@@ -77,7 +78,7 @@ export default async function SharedRoomPage(props: {
           </h1>
           <p className="font-mono text-sm text-ink-soft">
             {school ? `${school.name} · ` : ""}
-            {dims.room_type} · {dims.length_ft} × {dims.width_ft} ft
+            {formatRoomType(dims.room_type)} · {dims.length_ft} × {dims.width_ft} ft
           </p>
         </div>
 

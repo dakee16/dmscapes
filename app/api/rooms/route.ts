@@ -98,7 +98,7 @@ export async function POST(request: Request) {
     !products
   ) {
     return NextResponse.json(
-      { error: "That design couldn't be saved — some fields look off." },
+      { error: "That design couldn't be saved. Some fields look off." },
       { status: 400 }
     );
   }

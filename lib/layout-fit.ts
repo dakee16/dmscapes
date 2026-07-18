@@ -37,7 +37,7 @@ function fitAxis(pos: number, size: number, tplExtent: number, roomExtent: numbe
   const gapFar = tplExtent - (pos + size);
   let next: number;
   if (gapNear <= WALL_HUG_FT && gapNear <= gapFar) {
-    next = gapNear; // anchored to near wall — keep the exact clearance
+    next = gapNear; // anchored to near wall; keep the exact clearance
   } else if (gapFar <= WALL_HUG_FT) {
     next = roomExtent - size - gapFar; // anchored to far wall
   } else {

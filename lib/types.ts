@@ -1,5 +1,5 @@
-// Shared planner types. The layout/template types live with the matcher —
-// re-exported here so UI code has one import point.
+// Shared planner types. The layout/template types live with the matcher and
+// are re-exported here so UI code has one import point.
 export type {
   FurnitureItem,
   LayoutTemplate,
@@ -56,7 +56,7 @@ export interface RoomSummary {
   type: string;
   label: string;
   occupants: number | null;
-  /** null when the school doesn't publish dimensions — user enters them manually. */
+  /** null when the school doesn't publish dimensions; user enters them manually. */
   length_ft: number | null;
   width_ft: number | null;
   sqft: number | null;

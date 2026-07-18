@@ -59,7 +59,7 @@ export default function Schools() {
             href="/add-school"
             className="rounded-lg border border-ink px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white"
           >
-            Request your school
+            Add my school
           </Link>
         </div>
       </Reveal>

@@ -40,7 +40,7 @@ export async function POST(request: Request) {
 
   const supabase = getServiceClient();
   if (!supabase) {
-    // Unconfigured env: swallow silently — clicks are fire-and-forget.
+    // Unconfigured env: swallow silently; clicks are fire-and-forget.
     return NextResponse.json({ ok: true }, { status: 202 });
   }
 

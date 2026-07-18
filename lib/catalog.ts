@@ -5,7 +5,7 @@ export const CATALOG = rawCatalog as Product[];
 
 export const AFFILIATE_TAG = "dailyama09e85-20";
 
-/** Display order for product groups — big-ticket room-definers first. */
+/** Display order for product groups; big-ticket room-definers first. */
 export const CATEGORY_ORDER: ProductCategory[] = [
   "bedding",
   "rug",
@@ -84,7 +84,7 @@ export function totalFor(products: Product[]): number {
 }
 
 /**
- * "Your $500 budget covers: bedding, rug, ..." — walk the category order
+ * "Your $500 budget covers: bedding, rug, ..." Walk the category order
  * accumulating prices until the budget runs out.
  */
 export function categoriesCovered(style: StyleId, budget: number): string[] {

@@ -2,7 +2,8 @@ import Link from "next/link";
 
 const COLUMNS: {
   heading: string;
-  links: { label: string; href: string; external?: boolean }[];
+  // placeholder routes 404 on purpose; skip prefetch so they don't spam the console
+  links: { label: string; href: string; external?: boolean; placeholder?: boolean }[];
 }[] = [
   {
     heading: "Product",
@@ -10,23 +11,23 @@ const COLUMNS: {
       { label: "How it works", href: "/#how-it-works" },
       { label: "Vibes & styles", href: "/#vibes" },
       { label: "Colleges", href: "/colleges" },
-      { label: "Pricing", href: "/pricing" },
+      { label: "Pricing", href: "/pricing", placeholder: true },
     ],
   },
   {
     heading: "Company",
     links: [
-      { label: "About", href: "/about" },
+      { label: "About", href: "/about", placeholder: true },
       { label: "Contact", href: "mailto:hello@dormscape.com", external: true },
-      { label: "Blog", href: "/blog" },
+      { label: "Blog", href: "/blog", placeholder: true },
     ],
   },
   {
     heading: "Legal",
     links: [
-      { label: "Terms of Service", href: "/terms" },
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Cookie Policy", href: "/cookies" },
+      { label: "Terms of Service", href: "/terms", placeholder: true },
+      { label: "Privacy Policy", href: "/privacy", placeholder: true },
+      { label: "Cookie Policy", href: "/cookies", placeholder: true },
     ],
   },
 ];
@@ -79,6 +80,7 @@ export default function Footer() {
                     ) : (
                       <Link
                         href={link.href}
+                        prefetch={link.placeholder ? false : undefined}
                         className="text-sm font-medium text-ink-soft transition-colors hover:text-ink"
                       >
                         {link.label}
