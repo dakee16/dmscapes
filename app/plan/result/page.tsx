@@ -14,6 +14,7 @@ import type { RoomCanvasHandle } from "@/components/canvas/RoomCanvas";
 import BudgetTracker from "@/components/products/BudgetTracker";
 import ProductPanel from "@/components/products/ProductPanel";
 import ActionBar from "@/components/products/ActionBar";
+import SavePrompt from "@/components/planner/SavePrompt";
 
 // react-konva can't render on the server — load the canvas client-side only.
 const RoomCanvas = dynamic(() => import("@/components/canvas/RoomCanvas"), {
@@ -177,6 +178,7 @@ export default function ResultPage() {
       </div>
 
       <ActionBar products={products} getPng={() => canvasRef.current?.exportPNG() ?? null} />
+      <SavePrompt />
     </div>
   );
 }

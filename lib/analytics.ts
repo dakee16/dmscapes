@@ -14,7 +14,11 @@ export type AnalyticsEvent =
   | "product_swapped"
   | "layout_edited"
   | "share_clicked"
-  | "school_submitted";
+  | "school_submitted"
+  | "auth_modal_opened"
+  | "auth_completed"
+  | "username_set"
+  | "save_prompt_shown";
 
 let initialized = false;
 

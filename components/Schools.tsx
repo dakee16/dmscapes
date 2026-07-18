@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Reveal from "@/components/site/Reveal";
+
 const SCHOOLS = [
   { name: "University of Michigan", hall: "Mosher-Jordan", dims: "15'6\" × 12'0\"" },
   { name: "Ohio State", hall: "Morrill Tower", dims: "14'2\" × 11'8\"" },
@@ -16,18 +19,21 @@ const SCHOOLS = [
 export default function Schools() {
   return (
     <section id="schools" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-      <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-        Supported schools
-      </p>
-      <h2 className="mt-3 max-w-xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
-        We already know your room
-      </h2>
-      <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-        Floor plans and dimensions for 50+ schools, sourced from official housing
-        documents. A few of them:
-      </p>
+      <Reveal stagger>
+        <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
+          Supported schools
+        </p>
+        <h2 className="mt-3 max-w-xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
+          We already know your room
+        </h2>
+        <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-soft">
+          Floor plans and dimensions sourced from official housing documents.
+          A few of them:
+        </p>
+      </Reveal>
 
-      <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <Reveal>
+        <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {SCHOOLS.map((s) => (
           <li
             key={s.name}
@@ -42,20 +48,21 @@ export default function Schools() {
             </span>
           </li>
         ))}
-      </ul>
+        </ul>
 
-      <div className="mt-8 flex flex-col items-start gap-3 rounded-xl border border-dashed border-ink/25 bg-white px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-ink-soft">
-          <span className="font-semibold text-ink">Don&apos;t see your school?</span> Tell
-          us and we&apos;ll add its floor plans before launch.
-        </p>
-        <a
-          href="#waitlist"
-          className="rounded-lg border border-ink px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white"
-        >
-          Request your school
-        </a>
-      </div>
+        <div className="mt-8 flex flex-col items-start gap-3 rounded-xl border border-dashed border-ink/25 bg-white px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-ink-soft">
+            <span className="font-semibold text-ink">Don&apos;t see your school?</span>{" "}
+            Tell us and we&apos;ll add its floor plans.
+          </p>
+          <Link
+            href="/add-school"
+            className="rounded-lg border border-ink px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white"
+          >
+            Request your school
+          </Link>
+        </div>
+      </Reveal>
     </section>
   );
 }

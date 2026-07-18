@@ -1,9 +1,12 @@
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import RoomPlanner from "@/components/RoomPlanner";
-import WaitlistForm from "@/components/WaitlistForm";
 import HowItWorks from "@/components/HowItWorks";
 import Vibes from "@/components/Vibes";
 import Schools from "@/components/Schools";
+import Footer from "@/components/Footer";
+import Reveal from "@/components/site/Reveal";
+import CursorGrid from "@/components/site/CursorGrid";
 
 export default function Home() {
   return (
@@ -11,7 +14,10 @@ export default function Home() {
       <Nav />
       <main>
         {/* ——— Hero ——— */}
-        <section className="grid-paper grid-paper-fade relative overflow-hidden">
+        <section className="relative overflow-hidden">
+          <div className="grid-paper grid-paper-fade absolute inset-0 -z-10" aria-hidden="true">
+            <CursorGrid />
+          </div>
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-14 sm:px-8 sm:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-28">
             <div>
               <p className="rise font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
@@ -33,18 +39,22 @@ export default function Home() {
                 exact room and hands you a layout plus a shoppable list from Amazon and
                 Target — before you ever get the keys.
               </p>
-              <div id="waitlist" className="rise mt-8 max-w-md scroll-mt-24" style={{ animationDelay: "240ms" }}>
-                <WaitlistForm id="waitlist-hero" source="hero" />
+              <div className="rise mt-8" style={{ animationDelay: "240ms" }}>
+                <Link
+                  href="/plan"
+                  className="inline-flex h-14 items-center rounded-xl bg-cobalt px-8 text-lg font-semibold text-white shadow-[0_14px_32px_-14px_rgba(43,78,255,0.6)] transition-all hover:-translate-y-0.5 hover:bg-cobalt-deep"
+                >
+                  Plan my room — free
+                </Link>
                 <p className="mt-3 text-sm text-ink-soft">
-                  Free for students. The first 1,000 signups get their room plan on
-                  launch day.
+                  No account needed. Most rooms take under a minute.
                 </p>
               </div>
               <ul
                 className="rise mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-wide text-ink-soft"
                 style={{ animationDelay: "320ms" }}
               >
-                <li>50+ schools preloaded</li>
+                <li>10 schools preloaded — more weekly</li>
                 <li>$200–$1,500 budgets</li>
                 <li>Amazon + Target links</li>
               </ul>
@@ -56,6 +66,41 @@ export default function Home() {
         </section>
 
         <HowItWorks />
+
+        {/* ——— Mid-scroll CTA — the obvious next action ——— */}
+        <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-2xl bg-ink px-6 py-12 text-center sm:px-12 sm:py-16">
+              <div
+                className="pointer-events-none absolute inset-0 opacity-[0.07]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
+                  backgroundSize: "28px 28px",
+                }}
+                aria-hidden="true"
+              />
+              <p className="relative font-mono text-xs font-medium uppercase tracking-[0.18em] text-highlight">
+                That&rsquo;s the whole thing
+              </p>
+              <h2 className="relative mx-auto mt-3 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                Three steps between you and a room that actually works.
+              </h2>
+              <div className="relative mt-8">
+                <Link
+                  href="/plan"
+                  className="inline-flex h-14 items-center rounded-xl bg-highlight px-8 text-lg font-semibold text-ink transition-all hover:-translate-y-0.5 hover:bg-white"
+                >
+                  Plan my room — free
+                </Link>
+              </div>
+              <p className="relative mt-4 font-mono text-[11px] uppercase tracking-wide text-white/60">
+                Free · No account · Under a minute
+              </p>
+            </div>
+          </Reveal>
+        </section>
+
         <Vibes />
         <Schools />
 
@@ -71,7 +116,7 @@ export default function Home() {
               }}
               aria-hidden="true"
             />
-            <div className="relative mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-24">
+            <Reveal className="relative mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-24">
               <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-highlight">
                 Move-in is in August
               </p>
@@ -79,40 +124,23 @@ export default function Home() {
                 Everyone else is winging it.
               </h2>
               <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-white/80">
-                Show up with a plan instead of three carts of guesses. Join the waitlist
-                and get your room the day we launch.
+                Show up with a plan instead of three carts of guesses. Pick your
+                school, set your budget, and see your exact room — free.
               </p>
-              <div className="mx-auto mt-8 max-w-md">
-                <WaitlistForm id="waitlist-bottom" source="bottom-cta" variant="dark" />
+              <div className="mt-8">
+                <Link
+                  href="/plan"
+                  className="inline-flex h-14 items-center rounded-xl bg-white px-8 text-lg font-semibold text-ink transition-colors hover:bg-highlight"
+                >
+                  Plan my room — free
+                </Link>
               </div>
-            </div>
+            </Reveal>
           </div>
         </section>
       </main>
 
-      {/* ——— Footer ——— */}
-      <footer className="border-t border-ink/8 bg-paper">
-        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <div>
-            <p className="font-display text-lg font-bold tracking-tight">dormscape</p>
-            <p className="mt-1 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
-              Made for freshmen. Free forever.
-            </p>
-          </div>
-          <div className="flex items-center gap-6 text-sm font-medium text-ink-soft">
-            <a href="https://instagram.com" className="transition-colors hover:text-ink">
-              Instagram
-            </a>
-            <a href="https://tiktok.com" className="transition-colors hover:text-ink">
-              TikTok
-            </a>
-            <a href="mailto:hello@dormscape.com" className="transition-colors hover:text-ink">
-              Contact
-            </a>
-          </div>
-          <p className="text-xs text-ink-soft">© 2026 Dormscape</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

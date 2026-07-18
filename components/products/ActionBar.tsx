@@ -6,6 +6,7 @@ import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
 import { cartUrl, totalFor } from "@/lib/catalog";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
+import { useAuth } from "@/lib/auth-context";
 
 type Busy = null | "link" | "save";
 
@@ -16,6 +17,7 @@ export default function ActionBar({
   products: Product[];
   getPng: () => string | null;
 }) {
+  const { user } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const [savePanel, setSavePanel] = useState(false);
   const [email, setEmail] = useState("");
@@ -101,11 +103,13 @@ export default function ActionBar({
     e.preventDefault();
     setBusy("save");
     try {
-      if (email.trim()) {
+      // Signed-in users don't need to type an email — use the account's.
+      const saveEmail = user?.email ?? email.trim();
+      if (saveEmail) {
         await fetch("/api/waitlist", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: email.trim(), source: "save-design" }),
+          body: JSON.stringify({ email: saveEmail, source: "save-design" }),
         }).catch(() => {});
       }
       const url = await saveRoom();
@@ -185,13 +189,15 @@ export default function ActionBar({
               </p>
             ) : (
               <form onSubmit={handleSave} className="flex flex-col gap-2 sm:flex-row">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@school.edu (optional — we'll email you the link)"
-                  className="h-11 flex-1 rounded-xl border border-ink/15 bg-white px-4 text-sm text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
-                />
+                {!user && (
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@school.edu (optional — we'll email you the link)"
+                    className="h-11 flex-1 rounded-xl border border-ink/15 bg-white px-4 text-sm text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
+                  />
+                )}
                 <button
                   type="submit"
                   disabled={busy === "save"}

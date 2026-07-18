@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ProfileButton from "@/components/auth/ProfileButton";
 
 const STEPS = [
   { href: "/plan", label: "Room" },
@@ -21,19 +22,10 @@ export default function PlannerHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-ink/8 bg-paper/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <Link href="/" className="flex items-center gap-2" aria-label="Dormscape home">
-          <span
-            className="grid h-7 w-7 grid-cols-2 grid-rows-2 gap-[3px] rounded-[6px] border border-ink/15 bg-white p-[4px]"
-            aria-hidden="true"
-          >
-            <span className="rounded-[2px] bg-cobalt" />
-            <span className="rounded-[2px] bg-highlight" />
-            <span className="rounded-[2px] bg-ink/15" />
-            <span className="rounded-[2px] bg-ink" />
-          </span>
-          <span className="hidden font-display text-lg font-bold tracking-tight sm:inline">
-            dormscape
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-8">
+        <Link href="/" className="shrink-0" aria-label="Dormscape home">
+          <span className="font-display text-base font-bold tracking-tight sm:text-lg">
+            dorm<span className="text-amber">scape</span>
           </span>
         </Link>
 
@@ -54,9 +46,11 @@ export default function PlannerHeader() {
                 >
                   {done ? "✓" : i + 1}
                 </span>
+                {/* At 375px only the active step's label fits alongside the
+                    wordmark and profile icon — the rest keep their number. */}
                 <span
                   className={`text-xs font-medium sm:text-sm ${
-                    active ? "text-ink" : "text-ink-soft"
+                    active ? "text-ink" : "hidden text-ink-soft sm:inline"
                   }`}
                 >
                   {step.label}
@@ -81,6 +75,8 @@ export default function PlannerHeader() {
             );
           })}
         </ol>
+
+        <ProfileButton />
       </div>
     </header>
   );

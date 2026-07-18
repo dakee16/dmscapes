@@ -1,36 +1,58 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import ProfileButton from "@/components/auth/ProfileButton";
+import RoommateTeaser from "@/components/site/RoommateTeaser";
+
+const LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/colleges", label: "Colleges" },
+  { href: "/plan", label: "Plan my room" },
+] as const;
+
 export default function Nav() {
+  const [teaserOpen, setTeaserOpen] = useState(false);
+
   return (
+    <>
     <header className="sticky top-0 z-50 border-b border-ink/8 bg-paper/85 backdrop-blur-md">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="/" className="flex items-center gap-2" aria-label="Dormscape home">
-          <span className="grid h-7 w-7 grid-cols-2 grid-rows-2 gap-[3px] rounded-[6px] border border-ink/15 bg-white p-[4px]" aria-hidden="true">
-            <span className="rounded-[2px] bg-cobalt" />
-            <span className="rounded-[2px] bg-highlight" />
-            <span className="rounded-[2px] bg-ink/15" />
-            <span className="rounded-[2px] bg-ink" />
-          </span>
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 sm:px-8">
+        <Link href="/" className="shrink-0" aria-label="Dormscape home">
           <span className="font-display text-lg font-bold tracking-tight">
-            dormscape
+            dorm<span className="text-amber">scape</span>
           </span>
-        </a>
+        </Link>
         <div className="hidden items-center gap-7 text-sm font-medium text-ink-soft md:flex">
-          <a href="/#how-it-works" className="transition-colors hover:text-ink">
-            How it works
-          </a>
-          <a href="/#vibes" className="transition-colors hover:text-ink">
-            Vibes
-          </a>
-          <a href="/colleges" className="transition-colors hover:text-ink">
-            Colleges
-          </a>
+          {LINKS.map((link) => (
+            <Link key={link.href} href={link.href} className="transition-colors hover:text-ink">
+              {link.label}
+            </Link>
+          ))}
+          <button
+            type="button"
+            onClick={() => setTeaserOpen(true)}
+            className="flex cursor-pointer items-center gap-1.5 transition-colors hover:text-ink"
+          >
+            Room in 3D
+            <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
+              Soon
+            </span>
+          </button>
         </div>
-        <a
-          href="/plan"
-          className="rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
-        >
-          Plan my room
-        </a>
+        <div className="flex shrink-0 items-center gap-2.5">
+          <a
+            href="/plan"
+            className="rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
+          >
+            Plan my room
+          </a>
+          <ProfileButton />
+        </div>
       </nav>
     </header>
+    {/* Outside <header>: its backdrop-filter would trap fixed positioning. */}
+    <RoommateTeaser open={teaserOpen} onClose={() => setTeaserOpen(false)} />
+    </>
   );
 }

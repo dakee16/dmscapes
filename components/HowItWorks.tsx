@@ -1,3 +1,5 @@
+import Reveal from "@/components/site/Reveal";
+
 const STEPS = [
   {
     n: "1",
@@ -64,13 +66,15 @@ const STEPS = [
 export default function HowItWorks() {
   return (
     <section id="how-it-works" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-      <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-        How it works
-      </p>
-      <h2 className="mt-3 max-w-xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
-        From acceptance letter to move-in cart in three steps
-      </h2>
-      <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-6 lg:gap-10">
+      <Reveal stagger>
+        <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
+          How it works
+        </p>
+        <h2 className="mt-3 max-w-xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
+          From acceptance letter to move-in cart in three steps
+        </h2>
+      </Reveal>
+      <Reveal stagger className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-6 lg:gap-10">
         {STEPS.map((step) => (
           <div key={step.n} className="flex flex-col">
             <div className="flex items-center gap-3">
@@ -83,7 +87,7 @@ export default function HowItWorks() {
             <div className="mt-5">{step.mock}</div>
           </div>
         ))}
-      </div>
+      </Reveal>
     </section>
   );
 }

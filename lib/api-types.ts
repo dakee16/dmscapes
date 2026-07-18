@@ -52,3 +52,11 @@ export interface ProductClickRequest {
   product_price?: number;
   affiliate_url?: string;
 }
+
+// GET /api/username?u={candidate}  (pre-flight availability check; the
+// unique index in 0002_profiles.sql is the real gate against races)
+export interface UsernameCheckResponse {
+  /** null when the server can't check (Supabase not configured). */
+  available: boolean | null;
+  error?: string;
+}
