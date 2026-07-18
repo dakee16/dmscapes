@@ -23,7 +23,7 @@ const DESCRIPTION =
   "Free AI dorm room planner. Pick your school, choose a vibe, set a budget, and get a room layout that fits your exact dorm, with a shoppable Amazon list.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us"),
   title: {
     default: "Dormscape",
     template: "%s | Dormscape",

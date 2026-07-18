@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SCHOOLS } from "@/lib/schools";
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.com";
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const statics: MetadataRoute.Sitemap = [
