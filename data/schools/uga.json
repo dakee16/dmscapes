@@ -1,0 +1,2561 @@
+{
+ "college_id": "uga",
+ "college_name": "University of Georgia",
+ "city": "Athens",
+ "state": "GA",
+ "housing_url": "https://housing.uga.edu/halls-information/",
+ "data_collected": "2026-07-19",
+ "campus_notes": "All UGA residences from housing.uga.edu, including the four expanded-housing overflow communities and the graduate/family communities (Brandon Oaks, Rogers Road, University Village). UGA publishes no dimensions in page text; dims here were read from the official room-plan images served by the floor-plan-search tool (housing.uga.edu/floor-plan-search/), which UGA caveats as 'may not be exact, differ slightly from room to room, and may be mirrored'. Students can look up their exact room's plan by room number in that tool. IMPORTANT for bedding - bed sizes vary: most halls have Twin XL (80x36) on 17-position adjustable frames, but Creswell and Soule have STANDARD twin (75x36), the East Village halls (Busbee, McWhorter, Rooker, Vandiver) have FULL-SIZE beds, and University Village East plans show standard twins. AC recorded only where the official plan shows an AC/fan-coil unit; otherwise null. Rate-table room types without a matching plan image carry null dims.",
+ "dorms": [
+  {
+   "dorm_id": "black-diallo-miller-hall",
+   "dorm_name": "Black-Diallo-Miller Hall",
+   "hall_url": "https://housing.uga.edu/black-diallo-miller-hall/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.08,
+      "width_ft": 11.25
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/blackdiallomiller_typical_1.png",
+     "data_source": "https://housing.uga.edu/black-diallo-miller-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 193 x 135 in with entry closets."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/blackdiallomiller_216.png",
+     "data_source": "https://housing.uga.edu/black-diallo-miller-hall/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Opened 2022, 6 floors, 535 residents, first-year only. Twin XL beds (80x36). AC/heat unit in each room."
+  },
+  {
+   "dorm_id": "boggs-hall",
+   "dorm_name": "Boggs Hall",
+   "hall_url": "https://housing.uga.edu/boggs-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 14.29
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/boggs_typ.png",
+     "data_source": "https://housing.uga.edu/boggs-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 180 x 171.5 in. In-room sink; built-in desks and closet."
+    }
+   ],
+   "notes": "Renovated 2024, 4 floors, 160 residents, first-year only. Twin XL beds (80x36)."
+  },
+  {
+   "dorm_id": "brandon-oaks",
+   "dorm_name": "Brandon Oaks",
+   "hall_url": "https://housing.uga.edu/brandon-oaks/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Bedroom in 2-bedroom, 2-bath apartment",
+     "occupants": null,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/brandon-oaks/",
+     "data_confidence": "low",
+     "notes": "Family housing; dimensions not published."
+    }
+   ],
+   "notes": "Housing for students with dependent children. 2 floors, 35 residents, renovated 1994. Full kitchen with washer/dryer; fees charged monthly."
+  },
+  {
+   "dorm_id": "brown-hall",
+   "dorm_name": "Brown Hall",
+   "hall_url": "https://housing.uga.edu/brown-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in suite with bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.25,
+      "width_ft": 11.75
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/brown_1_floor2_typ.png",
+     "data_source": "https://housing.uga.edu/brown-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Two double rooms share a connecting bathroom; plan shows 195 x 141 in per room."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/brown_204_240_304_340.png",
+     "data_source": "https://housing.uga.edu/brown-hall/",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/brown-hall/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Renovated 2012, 3 floors, 190 residents. Twin XL beds (80x36); microwave/mini-fridge combo provided."
+  },
+  {
+   "dorm_id": "brumby-hall",
+   "dorm_name": "Brumby Hall",
+   "hall_url": "https://housing.uga.edu/brumby-hall/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.36,
+      "width_ft": 11.7
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/brumby_typical_even_1largebmp.png",
+     "data_source": "https://housing.uga.edu/brumby-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 14'4 3/8\" x 11'8 3/8\"; several closet-configuration variants exist."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/brumby-hall/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Renovated 2020, 9 floors, 940 residents, first-year only. Twin XL beds (80x36). Fan coil AC unit in each room."
+  },
+  {
+   "dorm_id": "building-1516",
+   "dorm_name": "Building 1516",
+   "hall_url": "https://housing.uga.edu/building-1516/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.25,
+      "width_ft": 11.33
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/building1516_1br_typ_v3.png",
+     "data_source": "https://housing.uga.edu/building-1516/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Main room area from the official plan (147 x 136 in), excluding entry and bathroom."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with bath",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 14.67,
+      "width_ft": 13.58
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/building1516_203_typ.png",
+     "data_source": "https://housing.uga.edu/building-1516/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). L-shaped room recorded as its bounding extent (176 x 163 in); the private bathroom occupies one corner."
+    }
+   ],
+   "notes": "Opened 2010, 6 floors, 555 residents. Twin XL beds (80x36); dressers, wardrobes, and mobile pedestals provided."
+  },
+  {
+   "dorm_id": "building-2266",
+   "dorm_name": "Building 2266",
+   "hall_url": "https://housing.uga.edu/building-2266/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.08,
+      "width_ft": 11.08
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/2266_typical_1.png",
+     "data_source": "https://housing.uga.edu/building-2266/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 193 x 133 in including the entry closet area."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/building-2266/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Opened 2026, 6 floors, 565 residents, first-year only. Twin XL beds (80x36). AC/heat unit under the window ledge."
+  },
+  {
+   "dorm_id": "busbee-hall",
+   "dorm_name": "Busbee Hall",
+   "hall_url": "https://housing.uga.edu/busbee-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_single",
+     "room_type_official": "Private bedroom in 2- to 4-bedroom apartment",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.42,
+      "width_ft": 10.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/busbee_5_typ.png",
+     "data_source": "https://housing.uga.edu/busbee-hall/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the community's official 4-bedroom plan (149 x 128 in); layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds."
+    }
+   ],
+   "notes": "East Village community, opened 2004, 5 floors, 370 residents. Apartments with living room, full kitchen, and full-size beds (NOT twin). Year-round contract."
+  },
+  {
+   "dorm_id": "church-hall",
+   "dorm_name": "Church Hall",
+   "hall_url": "https://housing.uga.edu/church-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 14.29
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/church_typ.png",
+     "data_source": "https://housing.uga.edu/church-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 180 x 171.5 in. In-room sink; built-in desks and closet."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/church-hall/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Renovated 2024, 4 floors, 160 residents, first-year only. Twin XL beds (80x36)."
+  },
+  {
+   "dorm_id": "creswell-hall",
+   "dorm_name": "Creswell Hall",
+   "hall_url": "https://housing.uga.edu/creswell-hall/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.58,
+      "width_ft": 11.5
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/creswell_typ.png",
+     "data_source": "https://housing.uga.edu/creswell-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 175 x 138 in. STANDARD twin mattresses (75x36), not Twin XL."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/creswell-hall/",
+     "data_confidence": "low",
+     "notes": "Standard twin mattresses (75x36), not Twin XL."
+    }
+   ],
+   "notes": "Opened 1963, 9 floors, 955 residents, first-year only. STANDARD twin beds (75x36 - regular twin sheets, not Twin XL). Window AC unit; built-in desk, closet and storage."
+  },
+  {
+   "dorm_id": "expanded-busbee-hall",
+   "dorm_name": "Expanded Busbee Hall",
+   "hall_url": "https://housing.uga.edu/expanded-busbee-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Expanded double bedroom (4 beds, 2 baths)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/busbee_4_exp.png",
+     "data_source": "https://housing.uga.edu/expanded-busbee-hall/",
+     "data_confidence": "low",
+     "notes": "Converted apartment housing four residents, two per bedroom (single-occupancy option available). Twin XL beds in expanded bedrooms."
+    }
+   ],
+   "notes": "Expanded (overflow) housing inside Busbee Hall; 24 residents, first-year only."
+  },
+  {
+   "dorm_id": "expanded-mcwhorter-hall",
+   "dorm_name": "Expanded McWhorter Hall",
+   "hall_url": "https://housing.uga.edu/expanded-mcwhorter-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Expanded double bedroom (4 beds, 2 baths)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/mcwhorter_21_exp.png",
+     "data_source": "https://housing.uga.edu/expanded-mcwhorter-hall/",
+     "data_confidence": "low",
+     "notes": "Converted apartment housing four residents, two per bedroom (single-occupancy option available). Twin XL beds in expanded bedrooms."
+    }
+   ],
+   "notes": "Expanded (overflow) housing inside McWhorter Hall; 30 residents, first-year only."
+  },
+  {
+   "dorm_id": "expanded-rooker-hall",
+   "dorm_name": "Expanded Rooker Hall",
+   "hall_url": "https://housing.uga.edu/expanded-rooker-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Expanded double bedroom (4 beds, 2 baths)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/expanded-rooker-hall/",
+     "data_confidence": "low",
+     "notes": "Converted apartment housing four residents, two per bedroom (single-occupancy option available). Twin XL beds in expanded bedrooms."
+    }
+   ],
+   "notes": "Expanded (overflow) housing inside Rooker Hall; 20 residents, first-year only."
+  },
+  {
+   "dorm_id": "expanded-vandiver-hall",
+   "dorm_name": "Expanded Vandiver Hall",
+   "hall_url": "https://housing.uga.edu/expanded-vandiver-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Expanded double bedroom (4 beds, 2 baths)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/vandiver_3_exp.png",
+     "data_source": "https://housing.uga.edu/expanded-vandiver-hall/",
+     "data_confidence": "low",
+     "notes": "Converted apartment housing four residents, two per bedroom (single-occupancy option available). Twin XL beds in expanded bedrooms."
+    }
+   ],
+   "notes": "Expanded (overflow) housing inside Vandiver Hall; 20 residents, first-year only."
+  },
+  {
+   "dorm_id": "hill-hall",
+   "dorm_name": "Hill Hall",
+   "hall_url": "https://housing.uga.edu/hill-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 14.29
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/hill_typ.png",
+     "data_source": "https://housing.uga.edu/hill-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 180 x 171.5 in. In-room sink; built-in desks and closet."
+    }
+   ],
+   "notes": "Renovated 2024, 4 floors, 165 residents, first-year only. Twin XL beds (80x36)."
+  },
+  {
+   "dorm_id": "lipscomb-hall",
+   "dorm_name": "Lipscomb Hall",
+   "hall_url": "https://housing.uga.edu/lipscomb-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 14.29
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/lipscomb_typ.png",
+     "data_source": "https://housing.uga.edu/lipscomb-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 180 x 171.5 in. In-room sink; built-in desks and closet."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/lipscomb-hall/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Renovated 2023, 4 floors, 160 residents, first-year only. Twin XL beds (80x36)."
+  },
+  {
+   "dorm_id": "mary-lyndon-hall",
+   "dorm_name": "Mary Lyndon Hall",
+   "hall_url": "https://housing.uga.edu/mary-lyndon-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.25,
+      "width_ft": 12.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/marylyndon_typ.png",
+     "data_source": "https://housing.uga.edu/mary-lyndon-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows the main room at 171 x 144 in plus a closet alcove."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in suite with bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/mary_lyndon_301_317_318_334.png",
+     "data_source": "https://housing.uga.edu/mary-lyndon-hall/",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single with community bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/mary_lyndon_202.png",
+     "data_source": "https://housing.uga.edu/mary-lyndon-hall/",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/mary-lyndon-hall/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Renovated 2011, 3 floors, 130 residents; home of the Spanish language community. Twin XL beds (80x36); 4-drawer dressers."
+  },
+  {
+   "dorm_id": "mcwhorter-hall",
+   "dorm_name": "McWhorter Hall",
+   "hall_url": "https://housing.uga.edu/mcwhorter-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_single",
+     "room_type_official": "Private bedroom in 2- to 4-bedroom apartment",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.42,
+      "width_ft": 10.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/mcwhorter_5_typ.png",
+     "data_source": "https://housing.uga.edu/mcwhorter-hall/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the East Village community's official plans; layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds."
+    }
+   ],
+   "notes": "East Village community, opened 2004, 6 floors, 250 residents. Apartments with living room, full kitchen, and full-size beds (NOT twin). Year-round contract."
+  },
+  {
+   "dorm_id": "mell-hall",
+   "dorm_name": "Mell Hall",
+   "hall_url": "https://housing.uga.edu/mell-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 14.29
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/mell_typ.png",
+     "data_source": "https://housing.uga.edu/mell-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 180 x 171.5 in. In-room sink; built-in desks and closet."
+    }
+   ],
+   "notes": "Renovated 2024, 4 floors, 160 residents, first-year only. Twin XL beds (80x36)."
+  },
+  {
+   "dorm_id": "morris-hall",
+   "dorm_name": "Morris Hall",
+   "hall_url": "https://housing.uga.edu/morris-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 12.58
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/morris_typ.png",
+     "data_source": "https://housing.uga.edu/morris-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 186 x 151 in including a closet/storage area. In-room sink."
+    }
+   ],
+   "notes": "Renovated 2011, 4 floors, 140 residents, first-year only. Twin XL beds (80x36)."
+  },
+  {
+   "dorm_id": "myers-hall",
+   "dorm_name": "Myers Hall",
+   "hall_url": "https://housing.uga.edu/myers-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.04,
+      "width_ft": 12.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/myers_typ.png",
+     "data_source": "https://housing.uga.edu/myers-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 204.5 x 144 in; corner rooms are similar."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in suite with bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/myers_268__320_370.png",
+     "data_source": "https://housing.uga.edu/myers-hall/",
+     "data_confidence": "low",
+     "notes": "Myers also offers super-suite and quad configurations; see the floor plan search."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single with community bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/myers-hall/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Renovated 2003, 4 floors, 410 residents; hosts the Honors Magnet Program. Twin XL beds (80x36)."
+  },
+  {
+   "dorm_id": "oglethorpe-house",
+   "dorm_name": "Oglethorpe House",
+   "hall_url": "https://housing.uga.edu/oglethorpe-house/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in suite with bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.25,
+      "width_ft": 11.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/oglethorpe_typ.png",
+     "data_source": "https://housing.uga.edu/oglethorpe-house/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Two double rooms share a central bathroom; the room wraps the bath, so the 17'3\" x 11'8\" plan footprint is partly irregular."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single in suite with bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/oglethorpe-house/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Updated 2015, 9 floors, 500 residents. Twin XL beds (80x36); 4-drawer dressers."
+  },
+  {
+   "dorm_id": "payne-hall",
+   "dorm_name": "Payne Hall",
+   "hall_url": "https://housing.uga.edu/payne-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.33,
+      "width_ft": 10.75
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/payne_typ.png",
+     "data_source": "https://housing.uga.edu/payne-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 148 x 129 in."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double (rooms 101-159)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 10.33
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/payne_101_159.png",
+     "data_source": "https://housing.uga.edu/payne-hall/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). First-floor variant; plan shows 185 x 124 in main area plus a closet nook."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single with community bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/payne-hall/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Renovated 1998, 3 floors, 200 residents. Twin XL beds (80x36); microwave/mini-fridge combo and dehumidifier provided."
+  },
+  {
+   "dorm_id": "reed-hall",
+   "dorm_name": "Reed Hall",
+   "hall_url": "https://housing.uga.edu/reed-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 12.83
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/reed_1_2.png",
+     "data_source": "https://housing.uga.edu/reed-hall/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan for rooms x01-x02 shows a 168 x 154 in bedroom with private bathroom; other Reed layouts vary."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in suite with bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/reed-hall/",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single in suite with bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/reed-hall/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Renovated 1996, 3 floors, 295 residents. Twin XL beds (80x36); microwave/mini-fridge combo provided."
+  },
+  {
+   "dorm_id": "rogers-road",
+   "dorm_name": "Rogers Road",
+   "hall_url": "https://housing.uga.edu/rogers-road/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Bedroom in 2-bedroom apartment",
+     "occupants": null,
+     "dimensions": {
+      "length_ft": 11.33,
+      "width_ft": 11.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/rogers_road_2bedroom.png",
+     "data_source": "https://housing.uga.edu/rogers-road/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Larger bedroom shown (136 x 132 in); the second bedroom is 136 x 106 in. Unfurnished."
+    },
+    {
+     "room_type": "one_bedroom_apartment",
+     "room_type_official": "1-bedroom apartment",
+     "occupants": null,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/rogers_road_1bedroom.png",
+     "data_source": "https://housing.uga.edu/rogers-road/",
+     "data_confidence": "low",
+     "notes": "Unfurnished."
+    }
+   ],
+   "notes": "Graduate/family community (students with domestic partners), renovated 2010-2014, 265 residents. Full kitchens; fees charged monthly."
+  },
+  {
+   "dorm_id": "rooker-hall",
+   "dorm_name": "Rooker Hall",
+   "hall_url": "https://housing.uga.edu/rooker-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_single",
+     "room_type_official": "Private bedroom in 2- to 4-bedroom apartment",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.42,
+      "width_ft": 10.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/rooker_3_typ.png",
+     "data_source": "https://housing.uga.edu/rooker-hall/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the East Village community's official plans; layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds."
+    }
+   ],
+   "notes": "East Village community, opened 2004, 5 floors, 235 residents. Apartments with living room, full kitchen, and full-size beds (NOT twin). Year-round contract."
+  },
+  {
+   "dorm_id": "russell-hall",
+   "dorm_name": "Russell Hall",
+   "hall_url": "https://housing.uga.edu/russell-hall/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double with community bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.45,
+      "width_ft": 11.7
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/russell_typ_fcu_ceiling_odd_typ.png",
+     "data_source": "https://housing.uga.edu/russell-hall/",
+     "data_confidence": "high",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 173.4 x 140.4 in; odd/even floors differ only in fan-coil placement. ADA variants exist."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/russell-hall/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Renovated 2019, 10 floors, 995 residents, first-year only. Twin XL beds (80x36). Fan coil AC unit in each room."
+  },
+  {
+   "dorm_id": "rutherford-hall",
+   "dorm_name": "Rutherford Hall",
+   "hall_url": "https://housing.uga.edu/rutherford-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.83,
+      "width_ft": 13.38
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/rutherford_5_typ.png",
+     "data_source": "https://housing.uga.edu/rutherford-hall/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom area from the official plan (160.6 x 166 in), excluding the private bathroom; room shape is slightly irregular."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/rutherford_15_typ.png",
+     "data_source": "https://housing.uga.edu/rutherford-hall/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Opened 2013, 4 floors, 260 residents; hosts the Franklin Residential College. Twin XL beds (80x36); wardrobes and dressers provided."
+  },
+  {
+   "dorm_id": "soule-hall",
+   "dorm_name": "Soule Hall",
+   "hall_url": "https://housing.uga.edu/soule-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_shared_bath",
+     "room_type_official": "Double with shared bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 10.42
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/soule_101_104.png",
+     "data_source": "https://housing.uga.edu/soule-hall/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom in a two-bedroom suite (plan shows ~144 x 125 in); STANDARD twin mattresses (75x36)."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in super suite with bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 11.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/soule_201_206_301_306.png",
+     "data_source": "https://housing.uga.edu/soule-hall/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom in a super suite with living room (plan shows ~144 x 140 in); STANDARD twin mattresses (75x36)."
+    },
+    {
+     "room_type": "single_shared_bath",
+     "room_type_official": "Single with shared bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/soule-hall/",
+     "data_confidence": "low",
+     "notes": "Standard twin mattresses (75x36)."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single in super suite with bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
+     "data_source": "https://housing.uga.edu/soule-hall/",
+     "data_confidence": "low",
+     "notes": "Standard twin mattresses (75x36)."
+    }
+   ],
+   "notes": "All-female hall, renovated 2006, 3 floors, 90 residents. STANDARD twin beds (75x36 - regular twin sheets, not Twin XL); 5-drawer dressers."
+  },
+  {
+   "dorm_id": "university-village",
+   "dorm_name": "University Village",
+   "hall_url": "https://housing.uga.edu/university-village/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Bedroom A in 2-bedroom apartment",
+     "occupants": null,
+     "dimensions": {
+      "length_ft": 12.25,
+      "width_ft": 11.33
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/uv_2br_typ_v1.png",
+     "data_source": "https://housing.uga.edu/university-village/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Unfurnished; several building variants exist."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Bedroom B in 2-bedroom apartment",
+     "occupants": null,
+     "dimensions": {
+      "length_ft": 9.17,
+      "width_ft": 8.08
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/uv_2br_typ_v1.png",
+     "data_source": "https://housing.uga.edu/university-village/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Unfurnished; several building variants exist."
+    },
+    {
+     "room_type": "one_bedroom_apartment",
+     "room_type_official": "1-bedroom apartment",
+     "occupants": null,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/uv_1br_typ_v1.png",
+     "data_source": "https://housing.uga.edu/university-village/",
+     "data_confidence": "low",
+     "notes": "Unfurnished."
+    }
+   ],
+   "notes": "Graduate/family community (students with domestic partners), renovated 2010-2014, 525 residents across buildings A-V. Full kitchens; fees charged monthly."
+  },
+  {
+   "dorm_id": "university-village-east",
+   "dorm_name": "University Village East",
+   "hall_url": "https://housing.uga.edu/university-village-east/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "1-bedroom apartment (double occupancy)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.25,
+      "width_ft": 10.58
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/uveast_1br_typ_v2.png",
+     "data_source": "https://housing.uga.edu/university-village-east/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Two residents share the bedroom (plan shows 171 x 127 in) with living room and full kitchen. Plan shows STANDARD twin mattresses (75x36)."
+    }
+   ],
+   "notes": "Undergraduate apartment community (buildings J-L), renovated 2007, 195 residents. Full-size refrigerator and kitchen; open over breaks."
+  },
+  {
+   "dorm_id": "vandiver-hall",
+   "dorm_name": "Vandiver Hall",
+   "hall_url": "https://housing.uga.edu/vandiver-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_single",
+     "room_type_official": "Private bedroom in 2- to 4-bedroom apartment",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.42,
+      "width_ft": 10.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/vandiver_9_typ.png",
+     "data_source": "https://housing.uga.edu/vandiver-hall/",
+     "data_confidence": "medium",
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the East Village community's official plans; layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds."
+    }
+   ],
+   "notes": "East Village community, opened 2004, 6 floors, 295 residents. Apartments with living room, full kitchen, and full-size beds (NOT twin). Year-round contract."
+  }
+ ]
+}
