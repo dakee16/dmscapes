@@ -148,7 +148,11 @@ export function matchTemplate(room: RoomInput): MatchResult {
   const pool = filterByRoomType(occupantPool, room.room_type);
 
   // 3. Exact range containment → confidence 1.0, aspect-ratio tiebreak.
-  const contained = pool.filter((t) => {
+  //    If the room-type filter left only templates the room cannot fit
+  //    (e.g. a 12x12 bedroom whose rate name says "suite" matching only the
+  //    25x15 suite template), retry containment on the occupancy pool:
+  //    real dimensions beat the name heuristic.
+  const containsRoom = (t: LayoutTemplate): boolean => {
     const c = t.room_constraints;
     return (
       length >= c.min_length_ft &&
@@ -156,7 +160,11 @@ export function matchTemplate(room: RoomInput): MatchResult {
       width >= c.min_width_ft &&
       width <= c.max_width_ft
     );
-  });
+  };
+  let contained = pool.filter(containsRoom);
+  if (contained.length === 0 && pool.length !== occupantPool.length) {
+    contained = occupantPool.filter(containsRoom);
+  }
   if (contained.length > 0) {
     let best = contained[0];
     let bestDiff = Math.abs(templateAspect(best.room_constraints) - aspect);
@@ -175,10 +183,12 @@ export function matchTemplate(room: RoomInput): MatchResult {
     };
   }
 
-  // 4. Nearest template by distance to the range box.
-  let best = pool[0];
+  // 4. Nearest template by distance to the range box. The type filter has
+  //    already proven unhelpful for this room's size, so search the whole
+  //    occupancy pool rather than letting a name token force a distant fit.
+  let best = occupantPool[0];
   let bestDist = distanceToTemplate(length, width, best.room_constraints);
-  for (const t of pool.slice(1)) {
+  for (const t of occupantPool.slice(1)) {
     const d = distanceToTemplate(length, width, t.room_constraints);
     if (
       d < bestDist ||
