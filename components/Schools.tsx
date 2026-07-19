@@ -13,7 +13,7 @@ const SCHOOLS = [
   { name: "UCLA", hall: "Sproul Hall", dims: "13'6\" × 10'8\"" },
   { name: "Georgia Tech", hall: "Armstrong", dims: "15'0\" × 11'0\"" },
   { name: "Wisconsin", hall: "Sellery Hall", dims: "16'5\" × 12'0\"" },
-  { name: "Indiana", hall: "Briscoe Quad", dims: "14'4\" × 11'6\"" },
+  { name: "Purdue", hall: "Cary Quadrangle", dims: "16'0\" × 14'0\"" },
 ];
 
 export default function Schools() {
