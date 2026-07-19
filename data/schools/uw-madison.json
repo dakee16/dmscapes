@@ -1,0 +1,3118 @@
+{
+ "college_id": "uw-madison",
+ "college_name": "University of Wisconsin-Madison",
+ "city": "Madison",
+ "state": "WI",
+ "housing_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/rooms/",
+ "data_collected": "2026-07-19",
+ "campus_notes": "All 19 undergraduate residence halls (the Humphrey and Jorns pages redirect to the Kronshage complex page, so they are covered under Kronshage). Each hall page publishes 'Typical Dimensions' per room type with the caveat that rooms vary slightly; normalized here so length is the longer side. Some units are two-room or irregular (Adams/Tripp triples, Lowell singles and Triple Type A, Dejope quad); the main or large room is recorded with confidence medium and the remainder noted. Bedding: Twin XL sheets fit ALL beds (mattresses are 33x80 or 36x80). All provided furniture can be lofted or bunked. Every room includes a compact 3.1 cu ft refrigerator (two in triples and quads). AC recorded per hall from the 'Air Conditioning in Resident Rooms' feature line. Housing partners with Roomie for to-scale 3D room models once students receive an assignment.",
+ "dorms": [
+  {
+   "dorm_id": "adams",
+   "dorm_name": "Adams Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/adams/",
+   "air_conditioning": false,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Type A",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.08,
+      "width_ft": 9.5
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/adams/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Type B",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.08,
+      "width_ft": 9.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/adams/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Type A",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.75,
+      "width_ft": 9.58
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/adams/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Type B",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.75,
+      "width_ft": 9.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/adams/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple (two-room)",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 13.83,
+      "width_ft": 11.54
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/adams/",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Two-room triple; the large room (13'10\" x 11'6 1/2\") is shown. The small room is 10'5\" x 8'9 1/2\"."
+    }
+   ],
+   "notes": "Lakeshore neighborhood, opened 1926, 247 residents. Common bathrooms shared by floors. No carpeting in resident rooms."
+  },
+  {
+   "dorm_id": "barnard",
+   "dorm_name": "Barnard Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/barnard/",
+   "air_conditioning": false,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 14.88,
+      "width_ft": 11.5
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/barnard/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Type A",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.04,
+      "width_ft": 10.71
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/barnard/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Type B",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.33,
+      "width_ft": 13.79
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/barnard/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bathroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18.42,
+      "width_ft": 13.5
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/barnard/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Includes a bathroom with shower."
+    }
+   ],
+   "notes": "Southeast neighborhood, opened 1913, 142 residents. Common bathrooms shared by floor wings."
+  },
+  {
+   "dorm_id": "bradley",
+   "dorm_name": "Bradley Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/bradley/",
+   "air_conditioning": false,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.79,
+      "width_ft": 10.38
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/bradley/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad Room",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 23.54,
+      "width_ft": 14.08
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/bradley/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    }
+   ],
+   "notes": "Lakeshore neighborhood, opened 1959, 246 residents. Common bathrooms shared by floor wings."
+  },
+  {
+   "dorm_id": "chadbourne",
+   "dorm_name": "Chadbourne Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/chadbourne/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.29,
+      "width_ft": 10.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/chadbourne/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 24.58,
+      "width_ft": 16.75
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/chadbourne/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    }
+   ],
+   "notes": "Southeast neighborhood, opened 1959, 580 residents. Common bathrooms shared by floor wings."
+  },
+  {
+   "dorm_id": "cole",
+   "dorm_name": "Cole Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/cole/",
+   "air_conditioning": false,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 14.5,
+      "width_ft": 10.25
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/cole/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.88,
+      "width_ft": 10.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/cole/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad Room",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 29.25,
+      "width_ft": 18.42
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/cole/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    }
+   ],
+   "notes": "Lakeshore neighborhood, opened 1958. Common bathrooms shared by floors."
+  },
+  {
+   "dorm_id": "dejope",
+   "dorm_name": "Dejope Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/dejope/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.45,
+      "width_ft": 11.29
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/dejope/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Published as 13'5 3/8\" x 11'3 1/2\". Walk-in closet."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 13.49,
+      "width_ft": 12.48
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/dejope/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Published as 12'5 3/4\" x 13'5 7/8\". Walk-in closet."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad Room",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 19.33,
+      "width_ft": 18.08
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/dejope/",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Irregular footprint published as ~18'1\" x 19'4\" x 16'6\"; recorded as the 19'4\" x 18'1\" bounding extent."
+    }
+   ],
+   "notes": "Lakeshore neighborhood, opened 2012, 589 residents. Common bathrooms shared throughout floors. Home to Four Lakes Market dining."
+  },
+  {
+   "dorm_id": "kronshage",
+   "dorm_name": "Kronshage Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/kronshage/",
+   "air_conditioning": false,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.08,
+      "width_ft": 12.17
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/kronshage/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Two built-in dressers and two built-in closets."
+    }
+   ],
+   "notes": "Lakeshore neighborhood complex of houses, opened 1938, 760 residents; the Humphrey and Jorns hall pages redirect here. Common bathrooms shared by floors."
+  },
+  {
+   "dorm_id": "leopold",
+   "dorm_name": "Leopold Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/leopold/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.25,
+      "width_ft": 12.46
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/leopold/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Walk-in closet."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 13.25,
+      "width_ft": 12.42
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/leopold/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Walk-in closet."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad Room",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 18.17,
+      "width_ft": 14.21
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/leopold/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    }
+   ],
+   "notes": "Lakeshore neighborhood, opened 2013, 213 residents. Common bathrooms spaced throughout floors."
+  },
+  {
+   "dorm_id": "lowell",
+   "dorm_name": "Lowell Center",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/lowell/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bathroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.67,
+      "width_ft": 10.42
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/lowell/",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). L-shaped: main area 11'8\" x 10'5\" (shown) plus a 13'8\" x 3'4\" entry. Private bathroom with shower or tub."
+    },
+    {
+     "room_type": "single_shared_bath",
+     "room_type_official": "Single with Shared Bathroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.67,
+      "width_ft": 10.42
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/lowell/",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). L-shaped: main area 11'8\" x 10'5\" (shown) plus a 13'8\" x 3'4\" entry. Bathroom shared with one neighboring room."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bathroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.08,
+      "width_ft": 10.83
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/lowell/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Private bathroom with shower or tub."
+    },
+    {
+     "room_type": "double_shared_bath",
+     "room_type_official": "Double with Shared Bathroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.33,
+      "width_ft": 14.33
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/lowell/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Bathroom shared with one neighboring room."
+    },
+    {
+     "room_type": "triple_private_bath",
+     "room_type_official": "Triple Type A with Bathroom",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 17.42,
+      "width_ft": 11.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/lowell/",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Two rooms separated by a closet with kitchenette; the large room (17'5\" x 11'0\") is shown. The other room is 19'7\" x 7'11\". Private bathroom with shower."
+    },
+    {
+     "room_type": "triple_private_bath",
+     "room_type_official": "Triple Type B with Bathroom",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 25.33,
+      "width_ft": 10.25
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/lowell/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Private bathroom with shower or tub."
+    }
+   ],
+   "notes": "Southeast neighborhood, opened 1961, 321 residents. All rooms have private or shared private bathrooms. Windows in Lowell do not open (building is air conditioned)."
+  },
+  {
+   "dorm_id": "merit",
+   "dorm_name": "Merit Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/merit/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Type A",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.0,
+      "width_ft": 8.83
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/merit/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 17.17,
+      "width_ft": 14.92
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/merit/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Private bathroom with shower or tub."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.67,
+      "width_ft": 17.54
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/merit/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Private bathroom with shower."
+    },
+    {
+     "room_type": "triple_private_bath",
+     "room_type_official": "Triple with Bath",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/merit/",
+     "data_confidence": "low",
+     "notes": "Dimensions not published for this room type."
+    }
+   ],
+   "notes": "Southeast neighborhood, opened 1986, 68 residents. Small community above the Grand Central dining market."
+  },
+  {
+   "dorm_id": "ogg",
+   "dorm_name": "Ogg Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/ogg/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.08,
+      "width_ft": 12.33
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/ogg/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Built-in closet; bathroom with shower."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 15.08,
+      "width_ft": 12.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/ogg/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Walk-in closet."
+    }
+   ],
+   "notes": "Southeast neighborhood, opened 2007, 863 residents. Doubles include semi-private bathrooms; common bathrooms are spaced throughout floors."
+  },
+  {
+   "dorm_id": "phillips",
+   "dorm_name": "Phillips Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/phillips/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 16.5,
+      "width_ft": 7.5
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/phillips/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Private bathroom with shower, toilet, and vanity."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 10.08
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/phillips/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Private bathroom with shower, toilet, and vanity."
+    }
+   ],
+   "notes": "Lakeshore neighborhood, opened 1959, 141 residents. All rooms have private bathrooms."
+  },
+  {
+   "dorm_id": "sellery",
+   "dorm_name": "Sellery Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/sellery/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/sellery/",
+     "data_confidence": "low",
+     "notes": "Dimensions not published for singles."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Two-Window Double (floors 2-10)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.42,
+      "width_ft": 12.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/sellery/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Three-Window Double (floors 2-10)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.33,
+      "width_ft": 12.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/sellery/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double (floor 11)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 10.58
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/sellery/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Two- and three-window rooms on floor 11 share these dimensions."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/sellery/",
+     "data_confidence": "low",
+     "notes": "Dimensions not published for triples."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad Room",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 18.42,
+      "width_ft": 17.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/sellery/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    }
+   ],
+   "notes": "Southeast neighborhood tower, opened 1963, 1,329 residents. Common bathrooms shared by floor wings. A few corner doubles (rooms ending -74/-76/-78) have no published dimensions."
+  },
+  {
+   "dorm_id": "slichter",
+   "dorm_name": "Slichter Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/slichter/",
+   "air_conditioning": false,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.33,
+      "width_ft": 12.5
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/slichter/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.33,
+      "width_ft": 12.5
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/slichter/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Private bathroom with shower or tub."
+    }
+   ],
+   "notes": "Lakeshore neighborhood, opened 1947, 200 residents. Common bathrooms shared by floor wings."
+  },
+  {
+   "dorm_id": "smith",
+   "dorm_name": "Smith Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/smith/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Type A",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.58,
+      "width_ft": 10.25
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/smith/",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Published as 10'7\" x 10'3\" or 14'2\" x 12' depending on the room; the smaller layout is shown. Double-door closet."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Type B",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13.83,
+      "width_ft": 9.5
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/smith/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Wardrobe."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 17.75,
+      "width_ft": 11.42
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/smith/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Private bathroom with shower."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Type A",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.83,
+      "width_ft": 10.83
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/smith/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Walk-in closet."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Type B",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.58,
+      "width_ft": 12.25
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/smith/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Double-door closet."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.83,
+      "width_ft": 10.75
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/smith/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Private bathroom with shower and vanity."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.25,
+      "width_ft": 12.5
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/smith/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Walk-in closet."
+    }
+   ],
+   "notes": "Southeast neighborhood, opened 2006, 576 residents. Common bathrooms spaced throughout floors."
+  },
+  {
+   "dorm_id": "sullivan",
+   "dorm_name": "Sullivan Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/sullivan/",
+   "air_conditioning": false,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.92,
+      "width_ft": 10.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/sullivan/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad Room",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 31.42,
+      "width_ft": 18.75
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/sullivan/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    }
+   ],
+   "notes": "Lakeshore neighborhood, opened 1958, 252 residents. Common bathrooms shared by floor wings."
+  },
+  {
+   "dorm_id": "tripp",
+   "dorm_name": "Tripp Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/tripp/",
+   "air_conditioning": false,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Type A",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.33,
+      "width_ft": 10.17
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/tripp/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Type B",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.08,
+      "width_ft": 9.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/tripp/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Type B",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.75,
+      "width_ft": 9.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/tripp/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple (two-room)",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.83,
+      "width_ft": 9.75
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/tripp/",
+     "data_confidence": "medium",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Two-room triple; the large room (16'10\" x 9'9\") is shown. The small room is 13'4\" x 8'9\"."
+    }
+   ],
+   "notes": "Lakeshore neighborhood, opened 1926, 258 residents. Common bathrooms shared by floors. No carpeting in resident rooms."
+  },
+  {
+   "dorm_id": "waters",
+   "dorm_name": "Waters Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/waters/",
+   "air_conditioning": false,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 17.75,
+      "width_ft": 11.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/waters/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Built-in closet."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.83,
+      "width_ft": 11.67
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/waters/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Private bathroom with shower."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.5,
+      "width_ft": 11.5
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/waters/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Two built-in closets."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.92,
+      "width_ft": 12.08
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/waters/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Private bathroom with shower."
+    }
+   ],
+   "notes": "Lakeshore neighborhood, opened 1940, 498 residents. Common bathrooms shared by floor wings. Building-block style furniture (desk, dresser, hutch, and bookcase stack into the lofting unit)."
+  },
+  {
+   "dorm_id": "witte",
+   "dorm_name": "Witte Residence Hall",
+   "hall_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/witte/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 12.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/witte/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double (rooms -20/-70)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 10.75
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/witte/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Window Double (floors 2-10)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.83,
+      "width_ft": 12.0
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/witte/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Two- and three-window rooms on floors 2-10 share these dimensions."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double (floor 11)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 10.58
+     },
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/witte/",
+     "data_confidence": "high",
+     "notes": "Dimensions are the hall's published 'Typical Dimensions' (rooms vary slightly). Two- and three-window rooms on floor 11 share these dimensions."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad Room",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.wisc.edu/undergraduate/residence-halls/witte/",
+     "data_confidence": "low",
+     "notes": "Dimensions not published for quads."
+    }
+   ],
+   "notes": "Southeast neighborhood tower, opened 1964, 1,326 residents. Common bathrooms shared by floor wings."
+  }
+ ]
+}
