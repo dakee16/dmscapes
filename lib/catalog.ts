@@ -1,5 +1,5 @@
 import rawCatalog from "@/data/product-catalog.json";
-import type { BudgetTier, Product, ProductCategory, StyleId } from "./types";
+import type { BedSize, BudgetTier, Product, ProductCategory, StyleId } from "./types";
 
 export const CATALOG = rawCatalog as Product[];
 
@@ -55,17 +55,56 @@ export function tierForBudget(budget: number): BudgetTier {
   return "premium";
 }
 
-/** The default product per category for a style + tier (catalog has exactly one). */
-export function productsFor(style: StyleId, tier: BudgetTier): Product[] {
+/**
+ * Bedding pick for a style, honoring the room's mattress size. Full / Full XL
+ * beds get a full-size set (the catalog's Twin XL sets are too narrow); a
+ * missing style falls back to any full-size set. Twin / Twin XL get the normal
+ * style+tier Twin XL pick. Full-size sets are style-matched but not tiered, so
+ * tier is ignored when a full bed is requested.
+ */
+export function beddingFor(
+  style: StyleId,
+  tier: BudgetTier,
+  bedSize?: BedSize
+): Product | undefined {
+  if (bedSize === "full" || bedSize === "full_xl") {
+    return (
+      CATALOG.find(
+        (x) =>
+          x.active &&
+          x.category === "bedding" &&
+          x.bed_size === "full" &&
+          x.style_tags.includes(style)
+      ) ?? CATALOG.find((x) => x.active && x.category === "bedding" && x.bed_size === "full")
+    );
+  }
+  return CATALOG.find(
+    (x) =>
+      x.active &&
+      x.category === "bedding" &&
+      (x.bed_size ?? "twin_xl") === "twin_xl" &&
+      x.budget_tier === tier &&
+      x.style_tags.includes(style)
+  );
+}
+
+/**
+ * The default product per category for a style + tier (catalog has exactly
+ * one). Bedding additionally depends on the room's bed size.
+ */
+export function productsFor(style: StyleId, tier: BudgetTier, bedSize?: BedSize): Product[] {
   const picks: Product[] = [];
   for (const cat of CATEGORY_ORDER) {
-    const p = CATALOG.find(
-      (x) =>
-        x.active &&
-        x.category === cat &&
-        x.budget_tier === tier &&
-        x.style_tags.includes(style)
-    );
+    const p =
+      cat === "bedding"
+        ? beddingFor(style, tier, bedSize)
+        : CATALOG.find(
+            (x) =>
+              x.active &&
+              x.category === cat &&
+              x.budget_tier === tier &&
+              x.style_tags.includes(style)
+          );
     if (p) picks.push(p);
   }
   return picks;
@@ -87,11 +126,11 @@ export function totalFor(products: Product[]): number {
  * "Your $500 budget covers: bedding, rug, ..." Walk the category order
  * accumulating prices until the budget runs out.
  */
-export function categoriesCovered(style: StyleId, budget: number): string[] {
+export function categoriesCovered(style: StyleId, budget: number, bedSize?: BedSize): string[] {
   const tier = tierForBudget(budget);
   let remaining = budget;
   const covered: string[] = [];
-  for (const p of productsFor(style, tier)) {
+  for (const p of productsFor(style, tier, bedSize)) {
     if (p.price <= remaining) {
       covered.push(CATEGORY_LABELS[p.category]);
       remaining -= p.price;

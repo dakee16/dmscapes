@@ -55,7 +55,7 @@ export default function PlanStylePage() {
   }
 
   const tier = tierForBudget(budget);
-  const covered = style ? categoriesCovered(style, budget) : null;
+  const covered = style ? categoriesCovered(style, budget, room?.bedSize) : null;
 
   return (
     <div className="mx-auto max-w-3xl px-5 pb-36 sm:px-8 sm:pb-24">

@@ -110,11 +110,11 @@ export default function ResultPage() {
 
   const products = useMemo(() => {
     if (!style) return [];
-    return productsFor(style, tierForBudget(budget)).map((p) => {
+    return productsFor(style, tierForBudget(budget), room?.bedSize).map((p) => {
       const swapId = swaps[p.category];
       return (swapId && productById(swapId)) || p;
     });
-  }, [style, budget, swaps]);
+  }, [style, budget, swaps, room?.bedSize]);
 
   if (!hydrated || !room || !style || !furniture || !templateId) {
     return <Skeleton />;

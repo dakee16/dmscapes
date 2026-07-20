@@ -22,7 +22,8 @@
       "min-prem-bedding-01"
     ],
     "description": "Crisp all-season white comforter set with two shams. Clean minimalist base layer.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "min-mid-bedding-01",
@@ -47,7 +48,8 @@
       "min-prem-bedding-01"
     ],
     "description": "5-piece white bed-in-a-bag with sheets and pillowcases, sized for dorm Twin XL beds.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "min-prem-bedding-01",
@@ -72,7 +74,8 @@
       "min-mid-bedding-01"
     ],
     "description": "Breathable washed-cotton duvet cover set with a soft matte linen look.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "min-budget-rug-01",
@@ -855,7 +858,8 @@
       "coz-prem-bedding-01"
     ],
     "description": "Soft solid beige comforter and pillowcase set, light but warm.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "coz-mid-bedding-01",
@@ -880,7 +884,8 @@
       "coz-prem-bedding-01"
     ],
     "description": "Bedsure's dorm-favorite beige comforter set with sheets included.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "coz-prem-bedding-01",
@@ -905,7 +910,8 @@
       "coz-mid-bedding-01"
     ],
     "description": "Oversized velvet quilt set. The plush top layer of a cozy bed.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "coz-budget-rug-01",
@@ -1690,7 +1696,8 @@
       "gam-prem-bedding-01"
     ],
     "description": "Dark grey bed-in-a-bag that hides everything and matches every setup.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "gam-mid-bedding-01",
@@ -1715,7 +1722,8 @@
       "gam-prem-bedding-01"
     ],
     "description": "Reversible black comforter set with sheets and pillowcase.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "gam-prem-bedding-01",
@@ -1740,7 +1748,8 @@
       "gam-mid-bedding-01"
     ],
     "description": "3D-printed outer-space comforter set. The full nebula.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "gam-budget-rug-01",
@@ -2520,7 +2529,8 @@
       "boh-prem-bedding-01"
     ],
     "description": "Tufted vintage-washed comforter set with boho texture.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "boh-mid-bedding-01",
@@ -2545,7 +2555,8 @@
       "boh-prem-bedding-01"
     ],
     "description": "5-piece shabby-chic tufted set with sheets for dorm beds.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "boh-prem-bedding-01",
@@ -2570,7 +2581,8 @@
       "boh-mid-bedding-01"
     ],
     "description": "Soft cotton duvet set in a vintage wildflower print.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "boh-budget-rug-01",
@@ -3323,7 +3335,8 @@
       "pre-prem-bedding-01"
     ],
     "description": "Reversible pink comforter set. Bright, soft, budget-friendly.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "pre-mid-bedding-01",
@@ -3348,7 +3361,8 @@
       "pre-prem-bedding-01"
     ],
     "description": "Striped comforter set with sheets included. Classic prep.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "pre-prem-bedding-01",
@@ -3373,7 +3387,8 @@
       "pre-mid-bedding-01"
     ],
     "description": "Textured seersucker bed-in-a-bag in blush.",
-    "active": true
+    "active": true,
+    "bed_size": "twin_xl"
   },
   {
     "id": "pre-budget-rug-01",
@@ -4474,5 +4489,120 @@
     ],
     "description": "Hotel-weight Turkish cotton towel set.",
     "active": true
+  },
+  {
+    "id": "min-full-bedding-01",
+    "name": "CozyLux Full Size 7-Piece Comforter Set - White",
+    "category": "bedding",
+    "style_tags": [
+      "minimalist"
+    ],
+    "budget_tier": "mid",
+    "price": 38.87,
+    "amazon_asin": "B0BNQTKVPH",
+    "affiliate_url": "https://www.amazon.com/dp/B0BNQTKVPH?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81xcL-Lv2mL._AC_SL1500_.jpg",
+    "width_ft": 6.33,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "white",
+    "rating": 4.5,
+    "review_count": 10702,
+    "alternative_ids": [],
+    "description": "Crisp white 7-piece full-size bed-in-a-bag with a soft seersucker texture. Sized for full and Full XL dorm beds.",
+    "active": true,
+    "bed_size": "full"
+  },
+  {
+    "id": "coz-full-bedding-01",
+    "name": "Full Size 7-Piece Comforter Set - Beige",
+    "category": "bedding",
+    "style_tags": [
+      "cozy"
+    ],
+    "budget_tier": "premium",
+    "price": 49.49,
+    "amazon_asin": "B0CBPQ6XHK",
+    "affiliate_url": "https://www.amazon.com/dp/B0CBPQ6XHK?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81uw2e6qF3L._AC_SL1500_.jpg",
+    "width_ft": 6.33,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "beige",
+    "rating": 4.4,
+    "review_count": 6254,
+    "alternative_ids": [],
+    "description": "Warm beige 7-piece full-size comforter set, soft and all-season. Fits full and Full XL dorm beds.",
+    "active": true,
+    "bed_size": "full"
+  },
+  {
+    "id": "gam-full-bedding-01",
+    "name": "CozyLux Full Size 7-Piece Comforter Set - Dark Grey",
+    "category": "bedding",
+    "style_tags": [
+      "gamer"
+    ],
+    "budget_tier": "mid",
+    "price": 38.87,
+    "amazon_asin": "B0C4GJYZFC",
+    "affiliate_url": "https://www.amazon.com/dp/B0C4GJYZFC?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71QrfUqSx9L._AC_SL1500_.jpg",
+    "width_ft": 6.33,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "grey",
+    "rating": 4.6,
+    "review_count": 8242,
+    "alternative_ids": [],
+    "description": "Dark grey 7-piece full-size comforter set with a clean box-stitch. Fits full and Full XL dorm beds.",
+    "active": true,
+    "bed_size": "full"
+  },
+  {
+    "id": "pre-full-bedding-01",
+    "name": "JOLLYVOGUE Full Size 7-Piece Comforter Set - Pink",
+    "category": "bedding",
+    "style_tags": [
+      "preppy"
+    ],
+    "budget_tier": "premium",
+    "price": 49.49,
+    "amazon_asin": "B0DR8YV463",
+    "affiliate_url": "https://www.amazon.com/dp/B0DR8YV463?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71uLbvHs8fL._AC_SL1500_.jpg",
+    "width_ft": 6.33,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "pink",
+    "rating": 4.5,
+    "review_count": 1482,
+    "alternative_ids": [],
+    "description": "Blush pink 7-piece full-size pintuck comforter set. Fits full and Full XL dorm beds.",
+    "active": true,
+    "bed_size": "full"
+  },
+  {
+    "id": "boh-full-bedding-01",
+    "name": "Drucon Full Size 7-Piece Boho Comforter Set - Blue",
+    "category": "bedding",
+    "style_tags": [
+      "boho"
+    ],
+    "budget_tier": "premium",
+    "price": 45.14,
+    "amazon_asin": "B0FDQF4GM8",
+    "affiliate_url": "https://www.amazon.com/dp/B0FDQF4GM8?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81ZiKx7yzLL._AC_SL1500_.jpg",
+    "width_ft": 6.33,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "blue",
+    "rating": 4.5,
+    "review_count": 324,
+    "alternative_ids": [],
+    "description": "Blue boho 7-piece full-size comforter set with tufted detail. Fits full and Full XL dorm beds.",
+    "active": true,
+    "bed_size": "full"
   }
 ]

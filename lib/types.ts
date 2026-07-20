@@ -28,6 +28,8 @@ export interface Product {
   alternative_ids: string[];
   description: string;
   active: boolean;
+  /** Bedding only: which mattress size this set fits. Absent = twin_xl. */
+  bed_size?: BedSize;
 }
 
 export type StyleId = "minimalist" | "cozy" | "gamer" | "boho" | "preppy";
