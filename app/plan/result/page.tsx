@@ -15,7 +15,9 @@ import type { RoomCanvasHandle } from "@/components/canvas/RoomCanvas";
 import BudgetTracker from "@/components/products/BudgetTracker";
 import ProductPanel from "@/components/products/ProductPanel";
 import ActionBar from "@/components/products/ActionBar";
+import PurchaseSurvey from "@/components/products/PurchaseSurvey";
 import SavePrompt from "@/components/planner/SavePrompt";
+import { signalBuyIntent } from "@/lib/purchase-intent";
 
 // react-konva can't render on the server, so load the canvas client-side only.
 const RoomCanvas = dynamic(() => import("@/components/canvas/RoomCanvas"), {
@@ -179,9 +181,10 @@ export default function ResultPage() {
             href={cartUrl(products)}
             target="_blank"
             rel="noopener sponsored"
-            onClick={() =>
-              track("product_clicked", { product_id: "buy_all", price: total, category: "cart" })
-            }
+            onClick={() => {
+              signalBuyIntent();
+              track("product_clicked", { product_id: "buy_all", price: total, category: "cart" });
+            }}
             className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-cobalt px-4 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-cobalt-deep"
           >
             <svg
@@ -210,6 +213,7 @@ export default function ResultPage() {
       </div>
 
       <ActionBar products={products} getPng={() => canvasRef.current?.exportPNG() ?? null} />
+      <PurchaseSurvey cartTotal={total} />
       <SavePrompt />
     </div>
   );

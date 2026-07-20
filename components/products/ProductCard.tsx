@@ -2,6 +2,7 @@
 
 import type { Product } from "@/lib/types";
 import { track, sessionId } from "@/lib/analytics";
+import { signalBuyIntent } from "@/lib/purchase-intent";
 import type { ProductClickRequest } from "@/lib/api-types";
 
 export function logProductClick(p: Product): void {
@@ -78,6 +79,7 @@ export default function ProductCard({
         rel="noopener sponsored"
         onClick={(e) => {
           e.stopPropagation();
+          signalBuyIntent();
           logProductClick(product);
         }}
         className="shrink-0 self-center rounded-full bg-cobalt px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-cobalt-deep"

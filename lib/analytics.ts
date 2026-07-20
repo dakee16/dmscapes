@@ -18,7 +18,13 @@ export type AnalyticsEvent =
   | "auth_modal_opened"
   | "auth_completed"
   | "username_set"
-  | "save_prompt_shown";
+  | "save_prompt_shown"
+  | "purchase_prompt_shown"
+  | "purchase_prompt_yes"
+  | "purchase_prompt_still_deciding"
+  | "purchase_prompt_no"
+  | "share_link_copied"
+  | "share_link_shared";
 
 let initialized = false;
 

@@ -53,6 +53,35 @@ export interface ProductClickRequest {
   affiliate_url?: string;
 }
 
+// POST /api/purchase-surveys  (post-buy return-to-tab confirmation prompt)
+export type PurchaseSurveyResponse = "yes" | "still_deciding" | "no";
+export interface PurchaseSurveyRequest {
+  session_id: string;
+  /** Present only when the user is signed in. */
+  user_id?: string | null;
+  response: PurchaseSurveyResponse;
+  /** saved_rooms.id when the design was shared/saved this session, else null. */
+  saved_room_id?: string | null;
+  /** The session's design at prompt time (used when there's no saved_room_id). */
+  room_snapshot?: {
+    college_id?: string | null;
+    dorm_id?: string | null;
+    style?: string | null;
+    budget?: number | null;
+    room_dimensions?: {
+      length_ft: number;
+      width_ft: number;
+      room_type: string;
+      occupants: number;
+    } | null;
+  } | null;
+  /** Cart total shown to the user when the prompt appeared. */
+  cart_total?: number | null;
+}
+export interface PurchaseSurveyResponseBody {
+  ok: true;
+}
+
 // GET /api/username?u={candidate}  (pre-flight availability check; the
 // unique index in 0002_profiles.sql is the real gate against races)
 export interface UsernameCheckResponse {
