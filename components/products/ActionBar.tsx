@@ -3,7 +3,6 @@
 import { useState } from "react";
 import type { Product } from "@/lib/types";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
-import { cartUrl, totalFor } from "@/lib/catalog";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
 import { useAuth } from "@/lib/auth-context";
@@ -122,8 +121,6 @@ export default function ActionBar({
     }
   }
 
-  const total = totalFor(products);
-
   return (
     <>
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-ink/10 bg-white/95 px-4 py-3 backdrop-blur lg:static lg:z-auto lg:mt-6 lg:rounded-2xl lg:border lg:px-5 lg:py-4">
@@ -156,18 +153,6 @@ export default function ActionBar({
               </div>
             )}
           </div>
-
-          <a
-            href={cartUrl(products)}
-            target="_blank"
-            rel="noopener sponsored"
-            onClick={() =>
-              track("product_clicked", { product_id: "buy_all", price: total, category: "cart" })
-            }
-            className="rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
-          >
-            Buy all <span className="font-mono">(${total.toFixed(0)})</span>
-          </a>
 
           <button
             type="button"

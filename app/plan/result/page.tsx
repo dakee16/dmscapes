@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { matchTemplate, ALL_TEMPLATES } from "@/templates/template-matcher";
-import { productsFor, productById, tierForBudget, totalFor } from "@/lib/catalog";
+import { cartUrl, productsFor, productById, tierForBudget, totalFor } from "@/lib/catalog";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
@@ -121,6 +121,7 @@ export default function ResultPage() {
   }
 
   const dims = formatDims(room.lengthFt, room.widthFt);
+  const total = totalFor(products);
 
   function handleReset() {
     const t = ALL_TEMPLATES.find((x) => x.template_id === templateId);
@@ -171,7 +172,37 @@ export default function ResultPage() {
 
         {/* Products panel */}
         <section className="rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
-          <BudgetTracker total={totalFor(products)} budget={budget} />
+          <BudgetTracker total={total} budget={budget} />
+          {/* Prominent "Buy all" — always visible above the first category, in
+              sync with the tracker above (same product total). */}
+          <a
+            href={cartUrl(products)}
+            target="_blank"
+            rel="noopener sponsored"
+            onClick={() =>
+              track("product_clicked", { product_id: "buy_all", price: total, category: "cart" })
+            }
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-cobalt px-4 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-cobalt-deep"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              aria-hidden="true"
+            >
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Buy all {products.length} items{" "}
+            <span className="font-mono">(${total.toFixed(0)})</span>
+          </a>
           <div className="lg:max-h-[68vh] lg:overflow-y-auto lg:pr-1">
             <ProductPanel products={products} bedSize={room.bedSize} />
           </div>

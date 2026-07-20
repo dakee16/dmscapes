@@ -24,12 +24,21 @@ export function logProductClick(p: Product): void {
 export default function ProductCard({
   product,
   onSwapClick,
+  active = false,
 }: {
   product: Product;
   onSwapClick?: (p: Product) => void;
+  /** Cross-highlight: true when the matching canvas item is hovered/selected. */
+  active?: boolean;
 }) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-ink/10 bg-white p-2.5">
+    <div
+      className={`flex items-center gap-3 rounded-xl border bg-white p-2.5 transition-all ${
+        active
+          ? "border-cobalt bg-cobalt/[0.04] ring-2 ring-cobalt/25"
+          : "border-ink/10"
+      }`}
+    >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={product.image_url}
@@ -53,7 +62,10 @@ export default function ProductCard({
         {onSwapClick && (
           <button
             type="button"
-            onClick={() => onSwapClick(product)}
+            onClick={(e) => {
+              e.stopPropagation();
+              onSwapClick(product);
+            }}
             className="mt-1 cursor-pointer font-mono text-[11px] font-medium uppercase tracking-wide text-cobalt hover:text-cobalt-deep"
           >
             ⇄ Swap
@@ -64,7 +76,10 @@ export default function ProductCard({
         href={product.affiliate_url}
         target="_blank"
         rel="noopener sponsored"
-        onClick={() => logProductClick(product)}
+        onClick={(e) => {
+          e.stopPropagation();
+          logProductClick(product);
+        }}
         className="shrink-0 self-center rounded-full bg-cobalt px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-cobalt-deep"
       >
         Buy

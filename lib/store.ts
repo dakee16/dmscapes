@@ -19,6 +19,13 @@ export interface PlannerState {
   /** Product overrides from the swap modal: category -> product id. */
   swaps: Partial<Record<ProductCategory, string>>;
 
+  // Result-page cross-highlighting (transient UI, not persisted). Both the
+  // canvas and the product list read/write these so either can light the other.
+  /** Category under the cursor right now; clears on mouse-leave. */
+  hoveredCategory: ProductCategory | null;
+  /** Category pinned by a click; persists until toggled off or cleared. */
+  selectedCategory: ProductCategory | null;
+
   setCollege: (college: PlannerState["college"]) => void;
   setDorm: (dorm: PlannerState["dorm"]) => void;
   setRoom: (room: SelectedRoom | null) => void;
@@ -32,6 +39,11 @@ export interface PlannerState {
   swapProduct: (category: ProductCategory, productId: string) => void;
   /** Update a furniture item's footprint (e.g. swapped rug with new dims). */
   resizeItem: (id: string, widthFt: number, lengthFt: number) => void;
+  setHoveredCategory: (category: ProductCategory | null) => void;
+  /** Click behavior: same category toggles off, a new one replaces it. */
+  toggleSelectedCategory: (category: ProductCategory) => void;
+  /** Clear the pinned selection (e.g. clicking empty canvas). */
+  clearSelectedCategory: () => void;
   resetPlanner: () => void;
 }
 
@@ -44,6 +56,8 @@ const initial = {
   templateId: null,
   furniture: null,
   swaps: {},
+  hoveredCategory: null,
+  selectedCategory: null,
 } satisfies Partial<PlannerState>;
 
 export const usePlannerStore = create<PlannerState>()(
@@ -72,11 +86,28 @@ export const usePlannerStore = create<PlannerState>()(
               f.id === id ? { ...f, width_ft: widthFt, length_ft: lengthFt } : f
             ) ?? null,
         })),
+      setHoveredCategory: (category) => set({ hoveredCategory: category }),
+      toggleSelectedCategory: (category) =>
+        set((s) => ({
+          selectedCategory: s.selectedCategory === category ? null : category,
+        })),
+      clearSelectedCategory: () => set({ selectedCategory: null }),
       resetPlanner: () => set({ ...initial }),
     }),
     {
       name: "dormscape-planner",
       storage: createJSONStorage(() => sessionStorage),
+      // Persist only the design data; the highlight fields are transient UI.
+      partialize: (s) => ({
+        college: s.college,
+        dorm: s.dorm,
+        room: s.room,
+        style: s.style,
+        budget: s.budget,
+        templateId: s.templateId,
+        furniture: s.furniture,
+        swaps: s.swaps,
+      }),
     }
   )
 );

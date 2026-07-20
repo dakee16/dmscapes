@@ -13,6 +13,8 @@ import Konva from "konva";
 import type { KonvaEventObject } from "konva/lib/Node";
 import type { FurnitureItem } from "@/lib/types";
 import { CATEGORY_COLORS } from "@/lib/styles";
+import { usePlannerStore } from "@/lib/store";
+import { furnitureCategory } from "@/lib/highlight";
 import { clamp, footprint, invalidItems, layerOf, snapHalfFt } from "./geometry";
 
 export interface RoomCanvasHandle {
@@ -50,6 +52,17 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const [zoom, setZoom] = useState(1);
   const [stagePos, setStagePos] = useState({ x: 0, y: 0 });
   const lastPinch = useRef<number | null>(null);
+  // Suppresses the click that Konva fires right after a drag/pan release.
+  const dragGuard = useRef(0);
+
+  // Shared cross-highlight state (result page). Hover wins over the pinned
+  // click-selection visually, without clearing it.
+  const hoveredCategory = usePlannerStore((s) => s.hoveredCategory);
+  const selectedCategory = usePlannerStore((s) => s.selectedCategory);
+  const setHoveredCategory = usePlannerStore((s) => s.setHoveredCategory);
+  const toggleSelectedCategory = usePlannerStore((s) => s.toggleSelectedCategory);
+  const clearSelectedCategory = usePlannerStore((s) => s.clearSelectedCategory);
+  const activeCategory = readOnly ? null : hoveredCategory ?? selectedCategory;
 
   useEffect(() => {
     const el = containerRef.current;
@@ -111,7 +124,19 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     xFt = clamp(xFt, 0, Math.max(0, roomL - fp.w));
     yFt = clamp(yFt, 0, Math.max(0, roomW - fp.h));
     node.position({ x: PAD + xFt * pxFt, y: PAD + yFt * pxFt });
+    dragGuard.current = Date.now();
     onMove(f.id, xFt, yFt);
+  }
+
+  // True for a beat after any drag/pan, so a furniture drag doesn't also
+  // register as a click that toggles the selection.
+  const justDragged = () => Date.now() - dragGuard.current < 250;
+
+  function handleItemClick(f: FurnitureItem) {
+    if (readOnly || justDragged()) return;
+    const cat = furnitureCategory(f);
+    if (cat) toggleSelectedCategory(cat);
+    else clearSelectedCategory();
   }
 
   useImperativeHandle(ref, () => ({
@@ -170,7 +195,19 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           draggable={zoom > 1}
           onDragEnd={(e) => {
             if (e.target === stageRef.current) {
+              dragGuard.current = Date.now();
               setStagePos({ x: e.target.x(), y: e.target.y() });
+            }
+          }}
+          onClick={(e) => {
+            // A click on empty canvas (not a furniture node) clears the pin.
+            if (!readOnly && e.target === e.target.getStage() && !justDragged()) {
+              clearSelectedCategory();
+            }
+          }}
+          onTap={(e) => {
+            if (!readOnly && e.target === e.target.getStage() && !justDragged()) {
+              clearSelectedCategory();
             }
           }}
           onTouchMove={handleTouchMove}
@@ -279,6 +316,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               const draggable = !readOnly && f.movable;
               const labelSize = Math.max(9, Math.min(13, h * 0.35, w * 0.16));
               const showLabel = w >= 34 && h >= 15;
+              const linkable = !readOnly && furnitureCategory(f) !== null;
+              const highlighted =
+                activeCategory !== null && furnitureCategory(f) === activeCategory;
               return (
                 <Group
                   key={f.id}
@@ -286,13 +326,20 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                   y={PAD + fp.y * pxFt}
                   draggable={draggable}
                   onDragEnd={(e) => handleDragEnd(f, e)}
+                  onClick={() => handleItemClick(f)}
+                  onTap={() => handleItemClick(f)}
                   onMouseEnter={(e) => {
-                    if (draggable) {
-                      const stage = e.target.getStage();
-                      if (stage) stage.container().style.cursor = "grab";
-                    }
+                    if (!readOnly) setHoveredCategory(furnitureCategory(f));
+                    const stage = e.target.getStage();
+                    if (stage)
+                      stage.container().style.cursor = draggable
+                        ? "grab"
+                        : linkable
+                          ? "pointer"
+                          : "default";
                   }}
                   onMouseLeave={(e) => {
+                    if (!readOnly) setHoveredCategory(null);
                     const stage = e.target.getStage();
                     if (stage) stage.container().style.cursor = "default";
                   }}
@@ -323,6 +370,25 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                       listening={false}
                       wrap="word"
                       ellipsis
+                    />
+                  )}
+                  {/* Cross-highlight ring — cobalt glow, distinct from the red
+                      collision flag; sits outside the item so small unlabeled
+                      pieces are easy to spot. */}
+                  {highlighted && (
+                    <Rect
+                      x={-3.5}
+                      y={-3.5}
+                      width={w + 7}
+                      height={h + 7}
+                      cornerRadius={Math.min(7, (w + 7) / 3, (h + 7) / 3)}
+                      stroke={COBALT}
+                      strokeWidth={2.5}
+                      fillEnabled={false}
+                      shadowColor={COBALT}
+                      shadowBlur={12}
+                      shadowOpacity={0.9}
+                      listening={false}
                     />
                   )}
                 </Group>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { BedSize, Product, ProductCategory } from "@/lib/types";
 import { CATEGORY_LABELS } from "@/lib/catalog";
 import { beddingAdvisory } from "@/lib/bedding";
@@ -32,6 +32,24 @@ export default function ProductPanel({
   const resizeItem = usePlannerStore((s) => s.resizeItem);
   const furniture = usePlannerStore((s) => s.furniture);
 
+  // Cross-highlight state shared with the canvas. Hover takes visual priority
+  // over the pinned click-selection, without clearing it.
+  const hoveredCategory = usePlannerStore((s) => s.hoveredCategory);
+  const selectedCategory = usePlannerStore((s) => s.selectedCategory);
+  const setHoveredCategory = usePlannerStore((s) => s.setHoveredCategory);
+  const toggleSelectedCategory = usePlannerStore((s) => s.toggleSelectedCategory);
+  const activeCategory = hoveredCategory ?? selectedCategory;
+
+  // Bring the active tile into view when the canvas lights one up (no-op when
+  // it's already visible, so hovering within the list doesn't jump the scroll).
+  const tileRefs = useRef(new Map<ProductCategory, HTMLDivElement | null>());
+  useEffect(() => {
+    if (!activeCategory) return;
+    tileRefs.current
+      .get(activeCategory)
+      ?.scrollIntoView({ block: "nearest", inline: "nearest" });
+  }, [activeCategory]);
+
   function handlePick(next: Product) {
     if (!swapTarget) return;
     swapProduct(swapTarget.category, next.id);
@@ -59,12 +77,27 @@ export default function ProductPanel({
 
   return (
     <div className="space-y-3">
-      {products.map((p) => (
-        <div key={p.id}>
-          <p className="mb-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-ink-soft">
+      {products.map((p) => {
+        const isActive = activeCategory === p.category;
+        return (
+        <div
+          key={p.id}
+          ref={(el) => {
+            tileRefs.current.set(p.category, el);
+          }}
+          onMouseEnter={() => setHoveredCategory(p.category)}
+          onMouseLeave={() => setHoveredCategory(null)}
+          onClick={() => toggleSelectedCategory(p.category)}
+          className="cursor-pointer scroll-mt-2"
+        >
+          <p
+            className={`mb-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.16em] transition-colors ${
+              isActive ? "text-cobalt" : "text-ink-soft"
+            }`}
+          >
             {CATEGORY_LABELS[p.category] ?? p.category}
           </p>
-          <ProductCard product={p} onSwapClick={setSwapTarget} />
+          <ProductCard product={p} onSwapClick={setSwapTarget} active={isActive} />
           {p.category === "bedding" && advisory && (
             <div
               className={`mt-1.5 flex gap-2 rounded-lg border px-3 py-2.5 text-xs leading-relaxed ${
@@ -95,7 +128,8 @@ export default function ProductPanel({
             </div>
           )}
         </div>
-      ))}
+        );
+      })}
       {swapTarget && (
         <SwapModal
           product={swapTarget}
