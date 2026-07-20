@@ -198,7 +198,7 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
     }
   }
 
-  const title = step === "ask" ? "Did you grab everything?" : "Nice — your room's happening.";
+  const title = step === "ask" ? "Did you grab everything?" : "Nice. Your room's happening.";
 
   return (
     <div
@@ -210,7 +210,20 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
         if (e.target === e.currentTarget) dismiss();
       }}
     >
-      <div className="snap-in w-full max-w-md rounded-t-2xl border border-ink/10 bg-paper p-5 shadow-2xl sm:rounded-2xl sm:p-6">
+      <div className="snap-in relative w-full max-w-lg overflow-hidden rounded-t-2xl border border-ink/10 bg-paper p-6 shadow-2xl sm:rounded-2xl sm:p-7">
+        {/* Graph-paper wash across the top, fading toward the middle — the same
+            grid the rest of the site is built on. */}
+        <div
+          aria-hidden
+          className="grid-paper pointer-events-none absolute inset-x-0 top-0 h-1/2"
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 48%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 48%, transparent 100%)",
+          }}
+        />
+        <div className="relative z-10">
         <div className="flex items-start justify-between gap-4">
           <h2 id="purchase-survey-title" className="font-display text-xl font-bold tracking-tight">
             {title}
@@ -268,7 +281,7 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
           <div className="mt-1">
             <p className="text-sm leading-relaxed text-ink-soft">
               Everything&apos;s on its way. If Dormscape made this easier, send it to a
-              roommate — it&apos;s free for them too.
+              roommate. It&apos;s free for them too.
             </p>
 
             <div className="mt-5">
@@ -325,6 +338,7 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
             </button>
           </div>
         )}
+        </div>
       </div>
     </div>
   );
