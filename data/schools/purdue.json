@@ -1103,7 +1103,11 @@
           "room_type": "double_w_shrd_bath_ac",
           "room_type_official": "Double w/shrd bath & AC",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17.0,
+            "width_ft": 15.0,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -1146,14 +1150,18 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 6996,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "high",
+          "notes": "Double Suite room footprint from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. This rate tier is the suite double with a shared bath and AC."
         },
         {
           "room_type": "large_dbl_priv_bath_w_ac",
           "room_type_official": "Large Dbl priv bath w/AC",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 16.0,
+            "width_ft": 14.0,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -1196,14 +1204,18 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 7975,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "high",
+          "notes": "Large Double room footprint from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. This rate tier is the Large Double with a private suite bath and AC."
         },
         {
           "room_type": "large_dbl_shrd_bath_w_ac",
           "room_type_official": "Large Dbl shrd bath w/AC",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 16.0,
+            "width_ft": 14.0,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -1246,8 +1258,8 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 8000,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "high",
+          "notes": "Large Double room footprint from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. This rate tier is the Large Double with a shared suite bath and AC."
         },
         {
           "room_type": "quad_plus",
@@ -1303,7 +1315,11 @@
           "room_type": "single_w_priv_bath_ac",
           "room_type_official": "Single w/priv bath & AC",
           "occupants": 1,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 13.33,
+            "width_ft": 8.0,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -1346,14 +1362,18 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 11500,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "high",
+          "notes": "Single room footprint from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. This rate tier is the Single with a private suite bath and AC."
         },
         {
           "room_type": "single_w_shrd_bath_ac",
           "room_type_official": "Single w/shrd bath & AC",
           "occupants": 1,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 13.33,
+            "width_ft": 8.0,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -1396,14 +1416,18 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 11000,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "high",
+          "notes": "Single room footprint from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. This rate tier is the Single with a shared suite bath and AC."
         },
         {
           "room_type": "small_dbl_shrd_bath_w_ac",
           "room_type_official": "Small Dbl shrd bath w/AC",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 18.75,
+            "width_ft": 8.33,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -1446,8 +1470,8 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 6996,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "high",
+          "notes": "Small Double room footprint from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. This rate tier is the Small Double with a shared suite bath and AC."
         },
         {
           "room_type": "small_double",
@@ -1563,7 +1587,11 @@
           "room_type": "standard_single",
           "room_type_official": "Standard Single",
           "occupants": 1,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 13.33,
+            "width_ft": 8.0,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -1606,8 +1634,8 @@
           "air_conditioning": false,
           "rate_2026_27_academic_year": 8650,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "high",
+          "notes": "Single room footprint from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20."
         },
         {
           "room_type": "triple",
@@ -2830,7 +2858,11 @@
           "room_type": "double_w_shrd_bath_ac",
           "room_type_official": "Double w/shrd bath & AC",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 16.08,
+            "width_ft": 12.5,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -2861,8 +2893,8 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 6754,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/hawkins.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "high",
+          "notes": "Double room footprint from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. Same room as the standard double, shared bath."
         },
         {
           "room_type": "single_w_ac",
@@ -2916,7 +2948,11 @@
           "room_type": "single_w_bath_ac",
           "room_type_official": "Single w/bath & AC",
           "occupants": 1,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 9.5,
+            "width_ft": 13.08,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -2947,14 +2983,18 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 8650,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/hawkins.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "medium",
+          "notes": "Purdue publishes one Hawkins single size (13'1\" x 9'6\"), from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. This tier adds an in-room bath and may differ slightly."
         },
         {
           "room_type": "single_w_priv_bath_ac",
           "room_type_official": "Single w/priv bath & AC",
           "occupants": 1,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 9.5,
+            "width_ft": 13.08,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -2985,14 +3025,18 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 8650,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/hawkins.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "medium",
+          "notes": "Purdue publishes one Hawkins single size (13'1\" x 9'6\"), from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. This tier adds a private bath and may differ slightly."
         },
         {
           "room_type": "single_w_shower_ac",
           "room_type_official": "Single w/shower & AC",
           "occupants": 1,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 9.5,
+            "width_ft": 13.08,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -3023,14 +3067,18 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 8650,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/hawkins.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "medium",
+          "notes": "Purdue publishes one Hawkins single size (13'1\" x 9'6\"), from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. This tier adds an in-room shower and may differ slightly."
         },
         {
           "room_type": "single_w_shower_bath_ac",
           "room_type_official": "Single w/shower bath & AC",
           "occupants": 1,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 9.5,
+            "width_ft": 13.08,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -3061,8 +3109,8 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 8650,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/hawkins.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "medium",
+          "notes": "Purdue publishes one Hawkins single size (13'1\" x 9'6\"), from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. This tier adds an in-room shower and bath and may differ slightly."
         },
         {
           "room_type": "small_single_w_ac",
@@ -7035,7 +7083,11 @@
           "room_type": "double_w_shrd_bath_ac",
           "room_type_official": "Double w/shrd bath & AC",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 16.0,
+            "width_ft": 14.0,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -7072,8 +7124,8 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 6996,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/windsor.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "high",
+          "notes": "Double room footprint from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. Same room as the standard double, shared bath."
         },
         {
           "room_type": "large_double_w_ac",
@@ -7285,7 +7337,11 @@
           "room_type": "single_w_shrd_bath_ac",
           "room_type_official": "Single w/shrd bath & AC",
           "occupants": 1,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 16.0,
+            "width_ft": 14.0,
+            "ceiling_height_ft": null
+          },
           "floor_area_sqft": null,
           "door": null,
           "window": null,
@@ -7322,8 +7378,8 @@
           "air_conditioning": true,
           "rate_2026_27_academic_year": 11000,
           "data_source": "https://www.housing.purdue.edu/my-housing/options/residence-halls/windsor.html",
-          "data_confidence": "low",
-          "notes": "No dimensions published for this specific rate tier (hall page illustrates only representative layouts)."
+          "data_confidence": "high",
+          "notes": "Single room footprint from Purdue Residences floor plans (housing.purdue.edu), supplied 2026-07-20. Same room as the standard single, shared bath."
         },
         {
           "room_type": "small_double_w_ac",
