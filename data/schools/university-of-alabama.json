@@ -55,7 +55,8 @@
      "floor_plan_url": null,
      "data_source": "https://housing.sl.ua.edu/halls/blount/",
      "data_confidence": "high",
-     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Two double bedrooms share a bathroom (four residents per unit)."
+     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Two double bedrooms share a bathroom (four residents per unit).",
+     "bed_size": "twin"
     }
    ],
    "notes": "Home primarily to the Blount Scholars Program and Honors College. Standard twin beds (36x75)."
@@ -108,7 +109,8 @@
      "floor_plan_url": null,
      "data_source": "https://housing.sl.ua.edu/halls/bryant/",
      "data_confidence": "high",
-     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Living room, kitchenette, and bathrooms in each suite; 2-, 3-, and 4-bedroom configurations."
+     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Living room, kitchenette, and bathrooms in each suite; 2-, 3-, and 4-bedroom configurations.",
+     "bed_size": "full_xl"
     }
    ],
    "notes": "Home to student-athletes and freshman engineering students. Full-size XL beds (54x80)."
@@ -161,7 +163,8 @@
      "floor_plan_url": null,
      "data_source": "https://housing.sl.ua.edu/halls/bryce-lawn/",
      "data_confidence": "high",
-     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Occupancy per bedroom not published."
+     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Occupancy per bedroom not published.",
+     "bed_size": "twin"
     },
     {
      "room_type": "apartment_bedroom",
@@ -205,7 +208,8 @@
      "floor_plan_url": null,
      "data_source": "https://housing.sl.ua.edu/halls/bryce-lawn/",
      "data_confidence": "high",
-     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Occupancy per bedroom not published."
+     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Occupancy per bedroom not published.",
+     "bed_size": "twin"
     }
    ],
    "notes": "3-bedroom, 1.5-bath apartments with private kitchen and washer/dryer. Standard twin beds (36x75)."
@@ -258,7 +262,8 @@
      "floor_plan_url": null,
      "data_source": "https://housing.sl.ua.edu/halls/burke/",
      "data_confidence": "high",
-     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Community bathrooms."
+     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Community bathrooms.",
+     "bed_size": "twin"
     },
     {
      "room_type": "single",
@@ -302,7 +307,8 @@
      "floor_plan_url": null,
      "data_source": "https://housing.sl.ua.edu/halls/burke/",
      "data_confidence": "high",
-     "notes": "Dimensions are the hall's published 'Approx. room dimensions'."
+     "notes": "Dimensions are the hall's published 'Approx. room dimensions'.",
+     "bed_size": "twin"
     },
     {
      "room_type": "double_suite",
@@ -346,7 +352,8 @@
      "floor_plan_url": null,
      "data_source": "https://housing.sl.ua.edu/halls/burke/",
      "data_confidence": "high",
-     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Suites available with or without a private bathroom."
+     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Suites available with or without a private bathroom.",
+     "bed_size": "twin"
     }
    ],
    "notes": "Burke East and West; most rooms are double-occupancy with community bathrooms. Standard twin beds (36x75). Published dims 15'10\" x 10'2\"."
@@ -396,7 +403,8 @@
      "floor_plan_url": null,
      "data_source": "https://housing.sl.ua.edu/halls/east-edge/",
      "data_confidence": "low",
-     "notes": "Private bedroom and private bathroom; no dimensions published."
+     "notes": "Private bedroom and private bathroom; no dimensions published.",
+     "bed_size": "full_xl"
     },
     {
      "room_type": "studio",
@@ -437,7 +445,8 @@
      "floor_plan_url": null,
      "data_source": "https://housing.sl.ua.edu/halls/east-edge/",
      "data_confidence": "low",
-     "notes": "Single studios; no dimensions published."
+     "notes": "Single studios; no dimensions published.",
+     "bed_size": "full_xl"
     }
    ],
    "notes": "Master-leased apartment complex near campus; fully furnished with kitchens. XL full beds."
@@ -746,7 +755,8 @@
      "floor_plan_url": null,
      "data_source": "https://housing.sl.ua.edu/halls/parham-east/",
      "data_confidence": "high",
-     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Community bathrooms."
+     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Community bathrooms.",
+     "bed_size": "twin"
     },
     {
      "room_type": "double_suite",
@@ -790,7 +800,8 @@
      "floor_plan_url": null,
      "data_source": "https://housing.sl.ua.edu/halls/parham-east/",
      "data_confidence": "high",
-     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Suites available with or without a private bathroom."
+     "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Suites available with or without a private bathroom.",
+     "bed_size": "twin"
     }
    ],
    "notes": "Mostly double-occupancy rooms with community bathrooms. Standard twin beds (36x75). Published dims 15'10\" x 10'2\"."

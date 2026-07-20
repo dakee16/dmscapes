@@ -52,6 +52,12 @@ export type ProductCategory =
 
 // ---- Compact schools index (lib/schools-index.json, built by scripts/build-schools-index.mjs)
 
+/**
+ * Provided mattress size. "twin_xl" (36"×80") is the near-universal US dorm
+ * default; the others are documented exceptions that change which bedding fits.
+ */
+export type BedSize = "twin_xl" | "twin" | "full" | "full_xl";
+
 export interface RoomSummary {
   type: string;
   label: string;
@@ -60,6 +66,8 @@ export interface RoomSummary {
   length_ft: number | null;
   width_ft: number | null;
   sqft: number | null;
+  /** Provided mattress size; defaults to "twin_xl" in the index builder. */
+  bed_size: BedSize;
   closet: { width_ft: number; depth_ft: number; wall: string | null } | null;
 }
 
@@ -84,6 +92,8 @@ export interface SelectedRoom {
   occupants: number;
   lengthFt: number;
   widthFt: number;
+  /** Provided mattress size; "twin_xl" unless the school documents otherwise. */
+  bedSize: BedSize;
   /** "catalog" = picked from a school's data, "manual" = typed in. */
   source: "catalog" | "manual";
 }

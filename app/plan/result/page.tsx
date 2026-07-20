@@ -173,7 +173,7 @@ export default function ResultPage() {
         <section className="rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
           <BudgetTracker total={totalFor(products)} budget={budget} />
           <div className="lg:max-h-[68vh] lg:overflow-y-auto lg:pr-1">
-            <ProductPanel products={products} />
+            <ProductPanel products={products} bedSize={room.bedSize} />
           </div>
         </section>
       </div>

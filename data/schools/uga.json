@@ -617,7 +617,8 @@
      "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/busbee_5_typ.png",
      "data_source": "https://housing.uga.edu/busbee-hall/",
      "data_confidence": "medium",
-     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the community's official 4-bedroom plan (149 x 128 in); layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds."
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the community's official 4-bedroom plan (149 x 128 in); layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds.",
+     "bed_size": "full_xl"
     }
    ],
    "notes": "East Village community, opened 2004, 5 floors, 370 residents. Apartments with living room, full kitchen, and full-size beds (NOT twin). Year-round contract."
@@ -749,7 +750,8 @@
      "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/creswell_typ.png",
      "data_source": "https://housing.uga.edu/creswell-hall/",
      "data_confidence": "high",
-     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 175 x 138 in. STANDARD twin mattresses (75x36), not Twin XL."
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Plan shows 175 x 138 in. STANDARD twin mattresses (75x36), not Twin XL.",
+     "bed_size": "twin"
     },
     {
      "room_type": "double_private_bath",
@@ -785,7 +787,8 @@
      "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
      "data_source": "https://housing.uga.edu/creswell-hall/",
      "data_confidence": "low",
-     "notes": "Standard twin mattresses (75x36), not Twin XL."
+     "notes": "Standard twin mattresses (75x36), not Twin XL.",
+     "bed_size": "twin"
     }
    ],
    "notes": "Opened 1963, 9 floors, 955 residents, first-year only. STANDARD twin beds (75x36 - regular twin sheets, not Twin XL). Window AC unit; built-in desk, closet and storage."
@@ -1301,7 +1304,8 @@
      "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/mcwhorter_5_typ.png",
      "data_source": "https://housing.uga.edu/mcwhorter-hall/",
      "data_confidence": "medium",
-     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the East Village community's official plans; layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds."
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the East Village community's official plans; layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds.",
+     "bed_size": "full_xl"
     }
    ],
    "notes": "East Village community, opened 2004, 6 floors, 250 residents. Apartments with living room, full kitchen, and full-size beds (NOT twin). Year-round contract."
@@ -2006,7 +2010,8 @@
      "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/rooker_3_typ.png",
      "data_source": "https://housing.uga.edu/rooker-hall/",
      "data_confidence": "medium",
-     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the East Village community's official plans; layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds."
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the East Village community's official plans; layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds.",
+     "bed_size": "full_xl"
     }
    ],
    "notes": "East Village community, opened 2004, 5 floors, 235 residents. Apartments with living room, full kitchen, and full-size beds (NOT twin). Year-round contract."
@@ -2222,7 +2227,8 @@
      "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/soule_101_104.png",
      "data_source": "https://housing.uga.edu/soule-hall/",
      "data_confidence": "medium",
-     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom in a two-bedroom suite (plan shows ~144 x 125 in); STANDARD twin mattresses (75x36)."
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom in a two-bedroom suite (plan shows ~144 x 125 in); STANDARD twin mattresses (75x36).",
+     "bed_size": "twin"
     },
     {
      "room_type": "double_suite",
@@ -2261,7 +2267,8 @@
      "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/soule_201_206_301_306.png",
      "data_source": "https://housing.uga.edu/soule-hall/",
      "data_confidence": "medium",
-     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom in a super suite with living room (plan shows ~144 x 140 in); STANDARD twin mattresses (75x36)."
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom in a super suite with living room (plan shows ~144 x 140 in); STANDARD twin mattresses (75x36).",
+     "bed_size": "twin"
     },
     {
      "room_type": "single_shared_bath",
@@ -2297,7 +2304,8 @@
      "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
      "data_source": "https://housing.uga.edu/soule-hall/",
      "data_confidence": "low",
-     "notes": "Standard twin mattresses (75x36)."
+     "notes": "Standard twin mattresses (75x36).",
+     "bed_size": "twin"
     },
     {
      "room_type": "single_suite",
@@ -2333,7 +2341,8 @@
      "floor_plan_url": "https://housing.uga.edu/floor-plan-search/",
      "data_source": "https://housing.uga.edu/soule-hall/",
      "data_confidence": "low",
-     "notes": "Standard twin mattresses (75x36)."
+     "notes": "Standard twin mattresses (75x36).",
+     "bed_size": "twin"
     }
    ],
    "notes": "All-female hall, renovated 2006, 3 floors, 90 residents. STANDARD twin beds (75x36 - regular twin sheets, not Twin XL); 5-drawer dressers."
@@ -2504,7 +2513,8 @@
      "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/uveast_1br_typ_v2.png",
      "data_source": "https://housing.uga.edu/university-village-east/",
      "data_confidence": "medium",
-     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Two residents share the bedroom (plan shows 171 x 127 in) with living room and full kitchen. Plan shows STANDARD twin mattresses (75x36)."
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Two residents share the bedroom (plan shows 171 x 127 in) with living room and full kitchen. Plan shows STANDARD twin mattresses (75x36).",
+     "bed_size": "twin"
     }
    ],
    "notes": "Undergraduate apartment community (buildings J-L), renovated 2007, 195 residents. Full-size refrigerator and kitchen; open over breaks."
@@ -2552,7 +2562,8 @@
      "floor_plan_url": "https://housing.uga.edu/sa_images/roomplans/vandiver_9_typ.png",
      "data_source": "https://housing.uga.edu/vandiver-hall/",
      "data_confidence": "medium",
-     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the East Village community's official plans; layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds."
+     "notes": "Dimensions read from the official room plan (typical layout; UGA notes dimensions may not be exact and plans may be mirrored). Bedroom dims from the East Village community's official plans; layouts vary by suite type (2 bed/1 bath up to 4 bed/2 bath). FULL-SIZE beds.",
+     "bed_size": "full_xl"
     }
    ],
    "notes": "East Village community, opened 2004, 6 floors, 295 residents. Apartments with living room, full kitchen, and full-size beds (NOT twin). Year-round contract."

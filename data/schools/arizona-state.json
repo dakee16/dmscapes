@@ -466,7 +466,8 @@
           "rate_2026_27_total": 13060,
           "data_source": "https://housing.asu.edu/housing-communities/residential-colleges/barrett-residential-complex",
           "data_confidence": "low",
-          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: some 4-bedroom plans (Willow building) use full-size beds (53\" x 78\") instead of Twin XL; confirm your building before buying Twin XL bedding."
+          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: some 4-bedroom plans (Willow building) use full-size beds (53\" x 78\") instead of Twin XL; confirm your building before buying Twin XL bedding.",
+          "bed_size": "full"
         },
         {
           "room_type": "private_room_shared_bath_3_bed",
@@ -564,7 +565,8 @@
           "rate_2026_27_total": 15000,
           "data_source": "https://housing.asu.edu/housing-communities/residential-colleges/barrett-residential-complex",
           "data_confidence": "low",
-          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: the studio plan has full-size beds (53\" x 78\"), not Twin XL; buy full-size bedding."
+          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: the studio plan has full-size beds (53\" x 78\"), not Twin XL; buy full-size bedding.",
+          "bed_size": "full"
         }
       ]
     },
@@ -2375,7 +2377,8 @@
           "rate_2026_27_total": 12224,
           "data_source": "https://housing.asu.edu/housing-communities/residential-colleges/vista-del-sol",
           "data_confidence": "low",
-          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: shared-room bookings have standard twin beds (38\" x 75\"), shorter than Twin XL; standard twin bedding fits."
+          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: shared-room bookings have standard twin beds (38\" x 75\"), shorter than Twin XL; standard twin bedding fits.",
+          "bed_size": "twin"
         },
         {
           "room_type": "private_room_private_bath_4_bed",
@@ -2424,7 +2427,8 @@
           "rate_2026_27_total": 13872,
           "data_source": "https://housing.asu.edu/housing-communities/residential-colleges/vista-del-sol",
           "data_confidence": "low",
-          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: private-room bookings have full-size beds (54\" x 75\"), not Twin XL; buy full-size bedding."
+          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: private-room bookings have full-size beds (54\" x 75\"), not Twin XL; buy full-size bedding.",
+          "bed_size": "full"
         },
         {
           "room_type": "private_room_private_bath_3_bed",
@@ -2473,7 +2477,8 @@
           "rate_2026_27_total": 13872,
           "data_source": "https://housing.asu.edu/housing-communities/residential-colleges/vista-del-sol",
           "data_confidence": "low",
-          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: private-room bookings have full-size beds (54\" x 75\"), not Twin XL; buy full-size bedding."
+          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: private-room bookings have full-size beds (54\" x 75\"), not Twin XL; buy full-size bedding.",
+          "bed_size": "full"
         },
         {
           "room_type": "private_room_private_bath_2_bed",
@@ -2522,7 +2527,8 @@
           "rate_2026_27_total": 14262,
           "data_source": "https://housing.asu.edu/housing-communities/residential-colleges/vista-del-sol",
           "data_confidence": "low",
-          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: private-room bookings have full-size beds (54\" x 75\"), not Twin XL; buy full-size bedding."
+          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: private-room bookings have full-size beds (54\" x 75\"), not Twin XL; buy full-size bedding.",
+          "bed_size": "full"
         },
         {
           "room_type": "private_room_private_bath_studio",
@@ -2571,7 +2577,8 @@
           "rate_2026_27_total": 22108,
           "data_source": "https://housing.asu.edu/housing-communities/residential-colleges/vista-del-sol",
           "data_confidence": "low",
-          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: private-room bookings have full-size beds (54\" x 75\"), not Twin XL; buy full-size bedding."
+          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: private-room bookings have full-size beds (54\" x 75\"), not Twin XL; buy full-size bedding.",
+          "bed_size": "full"
         },
         {
           "room_type": "private_room_private_bath_1_bed",
@@ -2620,7 +2627,8 @@
           "rate_2026_27_total": 24378,
           "data_source": "https://housing.asu.edu/housing-communities/residential-colleges/vista-del-sol",
           "data_confidence": "low",
-          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: private-room bookings have full-size beds (54\" x 75\"), not Twin XL; buy full-size bedding."
+          "notes": "ASU publishes no room dimensions for this community. Furnishings per resident from the community amenities list and housing FAQ; all rooms air-conditioned. Bedding note: private-room bookings have full-size beds (54\" x 75\"), not Twin XL; buy full-size bedding.",
+          "bed_size": "full"
         }
       ]
     }

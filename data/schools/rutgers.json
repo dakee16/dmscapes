@@ -998,7 +998,8 @@
      "floor_plan_url": null,
      "data_source": "https://ruoncampus.rutgers.edu/living-on-campus/college-ave/sojourner-truth-apartments",
      "data_confidence": "low",
-     "notes": "Every resident gets their own bedroom with a FULL-size bed (not Twin XL). 2-bedroom/1-bath, 3-bedroom/1.5-bath, and 4-bedroom/2-bath units. No dimensions published."
+     "notes": "Every resident gets their own bedroom with a FULL-size bed (not Twin XL). 2-bedroom/1-bath, 3-bedroom/1.5-bath, and 4-bedroom/2-bath units. No dimensions published.",
+     "bed_size": "full"
     }
    ],
    "notes": "Continuing students. Opened Fall 2016; 14 stories."

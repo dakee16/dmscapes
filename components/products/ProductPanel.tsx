@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import type { Product, ProductCategory } from "@/lib/types";
+import type { BedSize, Product, ProductCategory } from "@/lib/types";
 import { CATEGORY_LABELS } from "@/lib/catalog";
+import { beddingAdvisory } from "@/lib/bedding";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
 import ProductCard from "./ProductCard";
@@ -18,8 +19,15 @@ const CATEGORY_TO_FURNITURE_TYPE: Partial<Record<ProductCategory, string>> = {
   mirror: "mirror",
 };
 
-export default function ProductPanel({ products }: { products: Product[] }) {
+export default function ProductPanel({
+  products,
+  bedSize,
+}: {
+  products: Product[];
+  bedSize?: BedSize;
+}) {
   const [swapTarget, setSwapTarget] = useState<Product | null>(null);
+  const advisory = beddingAdvisory(bedSize);
   const swapProduct = usePlannerStore((s) => s.swapProduct);
   const resizeItem = usePlannerStore((s) => s.resizeItem);
   const furniture = usePlannerStore((s) => s.furniture);
@@ -57,6 +65,35 @@ export default function ProductPanel({ products }: { products: Product[] }) {
             {CATEGORY_LABELS[p.category] ?? p.category}
           </p>
           <ProductCard product={p} onSwapClick={setSwapTarget} />
+          {p.category === "bedding" && advisory && (
+            <div
+              className={`mt-1.5 flex gap-2 rounded-lg border px-3 py-2.5 text-xs leading-relaxed ${
+                advisory.level === "warning"
+                  ? "border-amber/40 bg-amber/10 text-ink"
+                  : "border-ink/10 bg-paper text-ink-soft"
+              }`}
+              role="note"
+            >
+              <svg
+                className={`mt-0.5 h-4 w-4 shrink-0 ${
+                  advisory.level === "warning" ? "text-amber" : "text-ink-soft"
+                }`}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                aria-hidden="true"
+              >
+                <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span>
+                <span className="font-semibold">
+                  {advisory.level === "warning" ? "Bed size: " : "Heads up: "}
+                </span>
+                {advisory.message}
+              </span>
+            </div>
+          )}
         </div>
       ))}
       {swapTarget && (

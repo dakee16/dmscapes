@@ -24,6 +24,9 @@ for (const file of fs.readdirSync(SRC).sort()) {
         length_ft: dim.length_ft ?? null,
         width_ft: dim.width_ft ?? null,
         sqft: r.floor_area_sqft ?? null,
+        // Twin XL is the near-universal US dorm default; only exceptions carry
+        // bed_size in the source data (see lib/bedding.ts for how it's used).
+        bed_size: r.bed_size ?? "twin_xl",
         closet:
           closet.width_ft && closet.depth_ft
             ? { width_ft: closet.width_ft, depth_ft: closet.depth_ft, wall: closet.wall ?? null }
