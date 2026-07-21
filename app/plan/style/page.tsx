@@ -70,7 +70,7 @@ export default function PlanStylePage() {
         to your {room.lengthFt} × {room.widthFt} ft room.
       </p>
 
-      <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {STYLES.map((s) => (
           <StyleCard
             key={s.id}

@@ -32,7 +32,7 @@ export interface Product {
   bed_size?: BedSize;
 }
 
-export type StyleId = "minimalist" | "cozy" | "gamer" | "boho" | "preppy";
+export type StyleId = "minimalist" | "cozy" | "gamer" | "boho" | "preppy" | "team_spirit";
 export type BudgetTier = "budget" | "mid" | "premium";
 
 export type ProductCategory =

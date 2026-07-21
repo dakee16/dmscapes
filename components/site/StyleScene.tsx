@@ -14,7 +14,11 @@ const WALLS: Record<StyleId, string> = {
   gamer: "#eceafb",
   boho: "#f4eddd",
   preppy: "#e9eef9",
+  team_spirit: "#eef1f9",
 };
+
+const TEAM_NAVY = "#0b1f3a";
+const TEAM_RED = "#c8102e";
 
 function Frame({
   id,
@@ -195,12 +199,41 @@ function Preppy() {
   );
 }
 
+function TeamSpirit() {
+  return (
+    <Frame id="team_spirit">
+      {/* scoreboard */}
+      <rect x="20" y="18" width="58" height="28" rx="4" fill={INK} stroke={STROKE} />
+      <rect x="26" y="24" width="20" height="16" rx="2" fill={TEAM_RED} opacity="0.85" />
+      <rect x="52" y="24" width="20" height="16" rx="2" fill="#ffffff" opacity="0.55" />
+      <line x1="49" y1="24" x2="49" y2="40" stroke="#ffffff" strokeOpacity="0.4" />
+      {/* pennant on a pole */}
+      <line x1="150" y1="16" x2="150" y2="54" stroke={STROKE} strokeWidth="1.5" />
+      <path d="M150 20 L208 30 L150 40 Z" fill={TEAM_NAVY} />
+      <path d="M150 26 L190 30 L150 34" fill="none" stroke={TEAM_RED} strokeWidth="2" />
+      {/* varsity-striped bed */}
+      <rect x="20" y="86" width="100" height="26" rx="4" fill="#eef1f7" stroke={STROKE} />
+      <rect x="20" y="92" width="100" height="4" fill={TEAM_NAVY} opacity="0.8" />
+      <rect x="20" y="99" width="100" height="4" fill={TEAM_RED} opacity="0.7" />
+      {/* jersey-number pillow */}
+      <rect x="26" y="76" width="24" height="12" rx="2" fill="#ffffff" stroke={STROKE} />
+      <path d="M35 79 L35 85 M35 79 L40 79 L40 82 L35 82" fill="none" stroke={TEAM_NAVY} strokeWidth="1.1" />
+      {/* mini hoop over the door */}
+      <rect x="196" y="70" width="36" height="24" rx="2" fill="#ffffff" stroke={STROKE} />
+      <rect x="206" y="78" width="16" height="10" rx="1" fill="none" stroke={STROKE} />
+      <path d="M205 94 Q214 104 223 94" fill="none" stroke={TEAM_RED} strokeWidth="1.5" />
+      <path d="M207 95 L209 101 M214 96 L214 102 M221 95 L219 101" stroke={STROKE} strokeWidth="0.7" />
+    </Frame>
+  );
+}
+
 const SCENES: Record<StyleId, () => React.ReactNode> = {
   minimalist: Minimalist,
   cozy: Cozy,
   gamer: Gamer,
   boho: Boho,
   preppy: Preppy,
+  team_spirit: TeamSpirit,
 };
 
 export default function StyleScene({

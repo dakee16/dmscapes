@@ -4,7 +4,7 @@ import { getServiceClient } from "@/lib/supabase-server";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
 import type { FurnitureItem, StyleId } from "@/lib/types";
 
-const STYLE_IDS: StyleId[] = ["minimalist", "cozy", "gamer", "boho", "preppy"];
+const STYLE_IDS: StyleId[] = ["minimalist", "cozy", "gamer", "boho", "preppy", "team_spirit"];
 
 function isFeet(value: unknown): value is number {
   return typeof value === "number" && Number.isFinite(value) && value >= 4 && value <= 60;

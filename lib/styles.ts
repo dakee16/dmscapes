@@ -45,6 +45,13 @@ export const STYLES: StyleMeta[] = [
     keywords: ["pink & green", "gingham", "gold", "bows"],
     palette: ["#ffd1dc", "#ff7ba9", "#7fb069", "#f5c451"],
   },
+  {
+    id: "team_spirit",
+    name: "Team Spirit",
+    emoji: "🏆",
+    keywords: ["varsity stripes", "color-block", "game day"],
+    palette: ["#f4f6fb", "#c8102e", "#0b1f3a", "#f5f5f5"],
+  },
 ];
 
 export const styleById = (id: StyleId): StyleMeta =>

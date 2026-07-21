@@ -33,6 +33,12 @@ const VIBES: { id: StyleId; name: string; line: string; from: number }[] = [
     line: "Stripes, monograms, made-bed energy.",
     from: 350,
   },
+  {
+    id: "team_spirit",
+    name: "Team Spirit",
+    line: "Varsity stripes, color-block, game-day ready.",
+    from: 300,
+  },
 ];
 
 export default function Vibes() {
@@ -54,7 +60,7 @@ export default function Vibes() {
 
         <Reveal
           stagger
-          className="-mx-5 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-5"
+          className="-mx-5 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-3"
           itemClassName="w-64 shrink-0 snap-start sm:w-auto"
         >
           {VIBES.map((vibe) => (

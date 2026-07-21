@@ -89,8 +89,8 @@
     "amazon_asin": "B0DPFRTTSY",
     "affiliate_url": "https://www.amazon.com/dp/B0DPFRTTSY?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/81rifC2LZsL._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "grey",
     "rating": 4.5,
@@ -114,8 +114,8 @@
     "amazon_asin": "B0DY61RLYC",
     "affiliate_url": "https://www.amazon.com/dp/B0DY61RLYC?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/91qsodJnB0L._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "beige",
     "rating": 4.5,
@@ -139,8 +139,8 @@
     "amazon_asin": "B018B3FH1Y",
     "affiliate_url": "https://www.amazon.com/dp/B018B3FH1Y?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/A1X1fOA5MkL._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "cream",
     "rating": 4.5,
@@ -824,7 +824,7 @@
     "image_url": "https://m.media-amazon.com/images/I/61EzBS5dqHL._AC_SL1500_.jpg",
     "width_ft": 1.33,
     "length_ft": 1.33,
-    "height_ft": 5.0,
+    "height_ft": 5,
     "color": "green",
     "rating": 4.5,
     "review_count": 5717,
@@ -925,8 +925,8 @@
     "amazon_asin": "B08FBVR5NB",
     "affiliate_url": "https://www.amazon.com/dp/B08FBVR5NB?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/71gXz0bkb9L._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "beige",
     "rating": 4.3,
@@ -950,8 +950,8 @@
     "amazon_asin": "B086MJW3JZ",
     "affiliate_url": "https://www.amazon.com/dp/B086MJW3JZ?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/91-9NY2PHjL._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "cream",
     "rating": 4.4,
@@ -975,8 +975,8 @@
     "amazon_asin": "B0051HED64",
     "affiliate_url": "https://www.amazon.com/dp/B0051HED64?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/91FYY+YLZfL._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "ivory",
     "rating": 4.5,
@@ -1403,7 +1403,7 @@
       "cozy"
     ],
     "budget_tier": "mid",
-    "price": 28.0,
+    "price": 28,
     "amazon_asin": "B07D6HBQH3",
     "affiliate_url": "https://www.amazon.com/dp/B07D6HBQH3?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/51iBhWQF2rS._AC_SL1080_.jpg",
@@ -1763,8 +1763,8 @@
     "amazon_asin": "B0F5492G1F",
     "affiliate_url": "https://www.amazon.com/dp/B0F5492G1F?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/81fCO7NrzQL._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "black/grey",
     "rating": 4.2,
@@ -1788,8 +1788,8 @@
     "amazon_asin": "B0F8ZCT3WQ",
     "affiliate_url": "https://www.amazon.com/dp/B0F8ZCT3WQ?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/81cY64yfXOL._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "dark grey",
     "rating": 4.4,
@@ -1813,8 +1813,8 @@
     "amazon_asin": "B08CZHP5QH",
     "affiliate_url": "https://www.amazon.com/dp/B08CZHP5QH?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/A1KZQDf+QkL._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "grey/black",
     "rating": 4.6,
@@ -2596,8 +2596,8 @@
     "amazon_asin": "B0CD7BQ9GY",
     "affiliate_url": "https://www.amazon.com/dp/B0CD7BQ9GY?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/91BawfVMSsL._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "multicolor",
     "rating": 4.5,
@@ -2621,8 +2621,8 @@
     "amazon_asin": "B0BCPS4BQW",
     "affiliate_url": "https://www.amazon.com/dp/B0BCPS4BQW?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/911U3dswH4L._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "multicolor",
     "rating": 4.5,
@@ -2646,8 +2646,8 @@
     "amazon_asin": "B0CG3LKFHS",
     "affiliate_url": "https://www.amazon.com/dp/B0CG3LKFHS?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/91n2om8h9TL._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "natural",
     "rating": 4.4,
@@ -2949,9 +2949,9 @@
     "amazon_asin": "B077V3BYL6",
     "affiliate_url": "https://www.amazon.com/dp/B077V3BYL6?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/81wnSdAFf0L._AC_SL1500_.jpg",
-    "width_ft": 1.0,
-    "length_ft": 1.0,
-    "height_ft": 1.0,
+    "width_ft": 1,
+    "length_ft": 1,
+    "height_ft": 1,
     "color": "natural",
     "rating": 4.6,
     "review_count": 3264,
@@ -3299,8 +3299,8 @@
     "amazon_asin": "B07ZVNDQTR",
     "affiliate_url": "https://www.amazon.com/dp/B07ZVNDQTR?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/71w3oOgm9SL._AC_SL1500_.jpg",
-    "width_ft": 2.0,
-    "length_ft": 2.0,
+    "width_ft": 2,
+    "length_ft": 2,
     "height_ft": 4.5,
     "color": "green",
     "rating": 4.5,
@@ -3346,7 +3346,7 @@
       "preppy"
     ],
     "budget_tier": "mid",
-    "price": 35.0,
+    "price": 35,
     "amazon_asin": "B01947QQCU",
     "affiliate_url": "https://www.amazon.com/dp/B01947QQCU?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/81ZKLDzd7FL._AC_SL1500_.jpg",
@@ -3402,8 +3402,8 @@
     "amazon_asin": "B0CF193H9F",
     "affiliate_url": "https://www.amazon.com/dp/B0CF193H9F?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/913yd1ifVuL._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "pink",
     "rating": 4.4,
@@ -3427,8 +3427,8 @@
     "amazon_asin": "B0DRD6W6MW",
     "affiliate_url": "https://www.amazon.com/dp/B0DRD6W6MW?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/919pCGIfmrL._AC_SL1500_.jpg",
-    "width_ft": 4.0,
-    "length_ft": 6.0,
+    "width_ft": 4,
+    "length_ft": 6,
     "height_ft": 0.03,
     "color": "pink",
     "rating": 4.5,
@@ -3452,8 +3452,8 @@
     "amazon_asin": "B0FKBQRRBF",
     "affiliate_url": "https://www.amazon.com/dp/B0FKBQRRBF?tag=dailyama09e85-20",
     "image_url": "https://m.media-amazon.com/images/I/91E49SwJd8L._AC_SL1500_.jpg",
-    "width_ft": 6.0,
-    "length_ft": 9.0,
+    "width_ft": 6,
+    "length_ft": 9,
     "height_ft": 0.03,
     "color": "pink/green",
     "rating": 4.6,
@@ -4151,7 +4151,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "budget",
     "price": 12.99,
@@ -4180,7 +4181,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "mid",
     "price": 22.94,
@@ -4209,7 +4211,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "premium",
     "price": 34.99,
@@ -4238,7 +4241,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "budget",
     "price": 9.98,
@@ -4267,7 +4271,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "mid",
     "price": 26.97,
@@ -4296,7 +4301,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "premium",
     "price": 34.99,
@@ -4325,7 +4331,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "budget",
     "price": 11.99,
@@ -4354,7 +4361,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "mid",
     "price": 44.99,
@@ -4383,7 +4391,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "premium",
     "price": 53.99,
@@ -4412,7 +4421,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "budget",
     "price": 9.99,
@@ -4441,7 +4451,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "mid",
     "price": 29.99,
@@ -4470,7 +4481,8 @@
       "cozy",
       "gamer",
       "boho",
-      "preppy"
+      "preppy",
+      "team_spirit"
     ],
     "budget_tier": "premium",
     "price": 39.99,
@@ -4604,5 +4616,860 @@
     "description": "Blue boho 7-piece full-size comforter set with tufted detail. Fits full and Full XL dorm beds.",
     "active": true,
     "bed_size": "full"
+  },
+  {
+    "id": "team-budget-bedding-01",
+    "name": "Amazon Basics Twin/Twin XL Size Ultra-Soft Lightweight Microfiber Reversible 2-Piece Beddi",
+    "category": "bedding",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "budget",
+    "price": 35.99,
+    "amazon_asin": "B08FCP1WJY",
+    "affiliate_url": "https://www.amazon.com/dp/B08FCP1WJY?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/91hVbCBYdHL._AC_SX569_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "navy",
+    "rating": 4.6,
+    "review_count": 7330,
+    "alternative_ids": [
+      "team-mid-bedding-01",
+      "team-prem-bedding-01"
+    ],
+    "description": "Reversible microfiber comforter in bold navy, a clean color-block base.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "team-mid-bedding-01",
+    "name": "VM VOUGEMARKET Striped Comforter Set Twin XL Ticking Vertical Stripes Bedding Set Washed C",
+    "category": "bedding",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "mid",
+    "price": 63.99,
+    "amazon_asin": "B0GVJ56PDH",
+    "affiliate_url": "https://www.amazon.com/dp/B0GVJ56PDH?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/813gaRQ1VKL._AC_SX569_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "navy",
+    "rating": 4.2,
+    "review_count": 71,
+    "alternative_ids": [
+      "team-budget-bedding-01",
+      "team-prem-bedding-01"
+    ],
+    "description": "Vertical ticking-stripe comforter set, varsity through and through.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "team-prem-bedding-01",
+    "name": "Nautica - Twin/Twin XL Comforter Set, Reversible Bedding with Matching Sham, Stripe Room D",
+    "category": "bedding",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 73,
+    "amazon_asin": "B08KHWN7VQ",
+    "affiliate_url": "https://www.amazon.com/dp/B08KHWN7VQ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/91SyMlrBrcL._AC_SX569_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "navy",
+    "rating": 4.3,
+    "review_count": 152,
+    "alternative_ids": [
+      "team-budget-bedding-01",
+      "team-mid-bedding-01"
+    ],
+    "description": "Reversible nautical-stripe comforter in navy and red, game-day sharp.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "team-full-bedding-01",
+    "name": "Chezmoi Collection Loft 8-Piece Luxury Striped Comforter Set (Full, Navy/Gray/Blue)",
+    "category": "bedding",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 64.3,
+    "amazon_asin": "B09B31GJCR",
+    "affiliate_url": "https://www.amazon.com/dp/B09B31GJCR?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81HQNihV0CL._AC_SX569_.jpg",
+    "width_ft": 6.33,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "navy",
+    "rating": 4.3,
+    "review_count": 4746,
+    "alternative_ids": [
+      "team-budget-bedding-01",
+      "team-mid-bedding-01",
+      "team-prem-bedding-01"
+    ],
+    "description": "Eight-piece navy varsity-stripe set sized for a full bed.",
+    "active": true,
+    "bed_size": "full"
+  },
+  {
+    "id": "team-budget-rug-01",
+    "name": "SAFAVIEH Montauk Collection Accent Rug - 2'6\" x 4', Ivory & Light Blue, Handmade Stripe Co",
+    "category": "rug",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "budget",
+    "price": 31.16,
+    "amazon_asin": "B073HCBW8H",
+    "affiliate_url": "https://www.amazon.com/dp/B073HCBW8H?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/919nQ8heOBS._AC_SY879_.jpg",
+    "width_ft": 4,
+    "length_ft": 6,
+    "height_ft": 0.03,
+    "color": "navy",
+    "rating": 4.4,
+    "review_count": 374,
+    "alternative_ids": [
+      "team-mid-rug-01",
+      "team-prem-rug-01"
+    ],
+    "description": "Reversible cotton stripe accent rug, locker-room clean.",
+    "active": true
+  },
+  {
+    "id": "team-mid-rug-01",
+    "name": "JONATHAN Y Aarhus High-Low Striped Blue Indoor/Outdoor Area Rug 3x5, Minimalist Geometric,",
+    "category": "rug",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "mid",
+    "price": 56.99,
+    "amazon_asin": "B0C9542SLN",
+    "affiliate_url": "https://www.amazon.com/dp/B0C9542SLN?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/91+Oz1vJWlL._AC_SX522_.jpg",
+    "width_ft": 4,
+    "length_ft": 6,
+    "height_ft": 0.03,
+    "color": "blue",
+    "rating": 4.4,
+    "review_count": 124,
+    "alternative_ids": [
+      "team-budget-rug-01",
+      "team-prem-rug-01"
+    ],
+    "description": "High-low striped blue rug that anchors the room like a field.",
+    "active": true
+  },
+  {
+    "id": "team-prem-rug-01",
+    "name": "JONATHAN Y Khalil Modern Berber Stripe Cream/Navy Indoor Area Rug, 3x5, Contemporary, Bohe",
+    "category": "rug",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 58.99,
+    "amazon_asin": "B0CLFGS8FL",
+    "affiliate_url": "https://www.amazon.com/dp/B0CLFGS8FL?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/91K6qXycx9L._AC_SX522_.jpg",
+    "width_ft": 4,
+    "length_ft": 6,
+    "height_ft": 0.03,
+    "color": "cream",
+    "rating": 4.5,
+    "review_count": 1670,
+    "alternative_ids": [
+      "team-budget-rug-01",
+      "team-mid-rug-01"
+    ],
+    "description": "Plush berber-stripe rug, broad and bold underfoot.",
+    "active": true
+  },
+  {
+    "id": "team-budget-desklamp-01",
+    "name": "Globe Electric 5698601 28\" Heavy Base Top Moving Spring Balanced Swing Arm Desk Lamp, Blac",
+    "category": "desk_lamp",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "budget",
+    "price": 18.89,
+    "amazon_asin": "B00RXSRQCC",
+    "affiliate_url": "https://www.amazon.com/dp/B00RXSRQCC?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/51pVeNSDE3L._AC_SX679_.jpg",
+    "width_ft": 0.39,
+    "length_ft": 0.38,
+    "height_ft": 1.33,
+    "color": "black",
+    "rating": 4.1,
+    "review_count": 6629,
+    "alternative_ids": [
+      "team-mid-desklamp-01",
+      "team-prem-desklamp-01"
+    ],
+    "description": "Spring-balanced swing-arm lamp in matte black, bench-ready focus light.",
+    "active": true
+  },
+  {
+    "id": "team-mid-desklamp-01",
+    "name": "Globe Electric 56963 31.5\" Multi-Joint Desk Lamp with Metal Clamp, Black, On/Off Rotary Sw",
+    "category": "desk_lamp",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "mid",
+    "price": 24.99,
+    "amazon_asin": "B00HX2EVPS",
+    "affiliate_url": "https://www.amazon.com/dp/B00HX2EVPS?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/51vsLXXdogL._AC_SX522_.jpg",
+    "width_ft": 0.39,
+    "length_ft": 0.38,
+    "height_ft": 1.33,
+    "color": "black",
+    "rating": 4.3,
+    "review_count": 11339,
+    "alternative_ids": [
+      "team-budget-desklamp-01",
+      "team-prem-desklamp-01"
+    ],
+    "description": "Clamp-on multi-joint metal lamp, all business.",
+    "active": true
+  },
+  {
+    "id": "team-prem-desklamp-01",
+    "name": "LEPOWER Metal Adjustable Desk Lamp with Clamp, Swing Arm for Home Office | Gooseneck, Arch",
+    "category": "desk_lamp",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 44.99,
+    "amazon_asin": "B07R56PTMS",
+    "affiliate_url": "https://www.amazon.com/dp/B07R56PTMS?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/618URISGWXL._AC_SX522_.jpg",
+    "width_ft": 0.39,
+    "length_ft": 0.38,
+    "height_ft": 1.33,
+    "color": "black",
+    "rating": 4.5,
+    "review_count": 4320,
+    "alternative_ids": [
+      "team-budget-desklamp-01",
+      "team-mid-desklamp-01"
+    ],
+    "description": "Full-metal adjustable clamp lamp with a long reach.",
+    "active": true
+  },
+  {
+    "id": "team-budget-ambient-01",
+    "name": "Basketball Neon Sign, LED Basketball Wall Art for Bedroom, Room, Basketball Room & Sports ",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "budget",
+    "price": 8.88,
+    "amazon_asin": "B0GF7XVR2Y",
+    "affiliate_url": "https://www.amazon.com/dp/B0GF7XVR2Y?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81Adta5hGVL._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "red",
+    "rating": 5,
+    "review_count": 2,
+    "alternative_ids": [
+      "team-mid-ambient-01",
+      "team-prem-ambient-01"
+    ],
+    "description": "LED basketball neon sign, stadium glow on the wall.",
+    "active": true
+  },
+  {
+    "id": "team-mid-ambient-01",
+    "name": "Govee RGBIC LED Strip Lights, Smart LED Lights for Bedroom, Bluetooth LED Lights APP Contr",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "mid",
+    "price": 13.49,
+    "amazon_asin": "B0991Q94KP",
+    "affiliate_url": "https://www.amazon.com/dp/B0991Q94KP?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71tjdZg28vL._AC_SX679_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multicolor",
+    "rating": 4.4,
+    "review_count": 25658,
+    "alternative_ids": [
+      "team-budget-ambient-01",
+      "team-prem-ambient-01"
+    ],
+    "description": "App-controlled RGBIC strip, light the room in your colors.",
+    "active": true
+  },
+  {
+    "id": "team-prem-ambient-01",
+    "name": "Basketball Neon Sign Dimmable LED Sports Light for Game Room Man Cave Decor | Basketball T",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 15.28,
+    "amazon_asin": "B0FWQ1JKNG",
+    "affiliate_url": "https://www.amazon.com/dp/B0FWQ1JKNG?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71KK+gL9jEL._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "red",
+    "rating": 4.7,
+    "review_count": 44,
+    "alternative_ids": [
+      "team-budget-ambient-01",
+      "team-mid-ambient-01"
+    ],
+    "description": "Dimmable basketball LED sign for full game-day mood.",
+    "active": true
+  },
+  {
+    "id": "team-budget-walldecor-01",
+    "name": "12 Colors Pennant Banner Flags - 4 Sets Flag Banner Felt Garland Banners for Carnival Birt",
+    "category": "wall_decor",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "budget",
+    "price": 5.59,
+    "amazon_asin": "B0FVXG8YRH",
+    "affiliate_url": "https://www.amazon.com/dp/B0FVXG8YRH?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61DkHIflaML._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multicolor",
+    "rating": 4.6,
+    "review_count": 9,
+    "alternative_ids": [
+      "team-mid-walldecor-01",
+      "team-prem-walldecor-01"
+    ],
+    "description": "Felt pennant banner set to string up above the bed.",
+    "active": true
+  },
+  {
+    "id": "team-mid-walldecor-01",
+    "name": "6Pcs Vintage Boys Sports Room Wall Decor,Nursery Ball Themed Wall art | Football Baseball ",
+    "category": "wall_decor",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "mid",
+    "price": 9.99,
+    "amazon_asin": "B0FYDXNC7P",
+    "affiliate_url": "https://www.amazon.com/dp/B0FYDXNC7P?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71Z+RTTwHaL._AC_SX679_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "navy",
+    "rating": 4.8,
+    "review_count": 5,
+    "alternative_ids": [
+      "team-budget-walldecor-01",
+      "team-prem-walldecor-01"
+    ],
+    "description": "Vintage sports print set, framed-gallery energy.",
+    "active": true
+  },
+  {
+    "id": "team-prem-walldecor-01",
+    "name": "AIYISU Sports Room Decor for Boys Bedroom Basketball Room Decor Rustic Football Soccer Bas",
+    "category": "wall_decor",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 15.24,
+    "amazon_asin": "B0B48GCSLR",
+    "affiliate_url": "https://www.amazon.com/dp/B0B48GCSLR?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81jz5H9UEML._AC_SX679_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "navy",
+    "rating": 4.8,
+    "review_count": 399,
+    "alternative_ids": [
+      "team-budget-walldecor-01",
+      "team-mid-walldecor-01"
+    ],
+    "description": "Rustic sports wall-art set for a full feature wall.",
+    "active": true
+  },
+  {
+    "id": "team-budget-storage-01",
+    "name": "Household Essentials Fabric Storage Bins in Strong Poly-Woven Fabric, Sturdy Chipboard Sid",
+    "category": "storage",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "budget",
+    "price": 14.3,
+    "amazon_asin": "B0756P72MW",
+    "affiliate_url": "https://www.amazon.com/dp/B0756P72MW?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81hLDtd2JdL._AC_SX522_PIbundle-6,TopRight,0,0_SH20_.jpg",
+    "width_ft": 0.9,
+    "length_ft": 0.9,
+    "height_ft": 0.92,
+    "color": "navy",
+    "rating": 4.8,
+    "review_count": 19708,
+    "alternative_ids": [
+      "team-mid-storage-01",
+      "team-prem-storage-01"
+    ],
+    "description": "Collapsible fabric bins for under-bed and shelf gear.",
+    "active": true
+  },
+  {
+    "id": "team-mid-storage-01",
+    "name": "SONGMICS Storage Cubes, Set of 6 Foldable Fabric Storage Boxes, Cube Organizer Boxes with ",
+    "category": "storage",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "mid",
+    "price": 21.95,
+    "amazon_asin": "B0GQSM6463",
+    "affiliate_url": "https://www.amazon.com/dp/B0GQSM6463?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71jPfu3y3OL._AC_SX522_PIbundle-6,TopRight,0,0_SH20_.jpg",
+    "width_ft": 0.9,
+    "length_ft": 0.9,
+    "height_ft": 0.92,
+    "color": "gray",
+    "rating": 4.6,
+    "review_count": 98,
+    "alternative_ids": [
+      "team-budget-storage-01",
+      "team-prem-storage-01"
+    ],
+    "description": "Six foldable fabric cubes to corral the whole kit.",
+    "active": true
+  },
+  {
+    "id": "team-prem-storage-01",
+    "name": "SONGMICS MAZIE Collection - 30 Inches Folding Storage Ottoman Bench, Ottoman Foot Rest, En",
+    "category": "storage",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 33.99,
+    "amazon_asin": "B07JNC1PB3",
+    "affiliate_url": "https://www.amazon.com/dp/B07JNC1PB3?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/811dmkslUGL._AC_SX569_.jpg",
+    "width_ft": 0.9,
+    "length_ft": 0.9,
+    "height_ft": 0.92,
+    "color": "navy",
+    "rating": 4.6,
+    "review_count": 28029,
+    "alternative_ids": [
+      "team-budget-storage-01",
+      "team-mid-storage-01"
+    ],
+    "description": "Folding storage ottoman that doubles as a bench.",
+    "active": true
+  },
+  {
+    "id": "team-budget-throw-01",
+    "name": "Eddie Bauer - Sherpa Throw Blanket for Couch 50x60 - Ultra Soft Reversible Fleece & Plush ",
+    "category": "throw",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "budget",
+    "price": 14.77,
+    "amazon_asin": "B01HTQQGHS",
+    "affiliate_url": "https://www.amazon.com/dp/B01HTQQGHS?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71-bxs-0qvL._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "navy",
+    "rating": 4.6,
+    "review_count": 9633,
+    "alternative_ids": [
+      "team-mid-throw-01",
+      "team-prem-throw-01"
+    ],
+    "description": "Ultra-soft sherpa stadium throw for the couch or bed.",
+    "active": true
+  },
+  {
+    "id": "team-mid-throw-01",
+    "name": "Bedsure GentleSoft Sherpa Fleece Throw Blanket for Couch, Non-Heated, Thick & Warm Cozy Bl",
+    "category": "throw",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "mid",
+    "price": 18.99,
+    "amazon_asin": "B0158EQJSY",
+    "affiliate_url": "https://www.amazon.com/dp/B0158EQJSY?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/91h2n60bxLL._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "navy",
+    "rating": 4.7,
+    "review_count": 97375,
+    "alternative_ids": [
+      "team-budget-throw-01",
+      "team-prem-throw-01"
+    ],
+    "description": "GentleSoft sherpa fleece throw, tailgate-warm.",
+    "active": true
+  },
+  {
+    "id": "team-prem-throw-01",
+    "name": "Eddie Bauer - Blanket, Super Soft Reversible Sherpa & Brushed Fleece Bedding, Throw Blanke",
+    "category": "throw",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 27.99,
+    "amazon_asin": "B09D1B5HV4",
+    "affiliate_url": "https://www.amazon.com/dp/B09D1B5HV4?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81oklu6jsvL._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "red",
+    "rating": 4.4,
+    "review_count": 2959,
+    "alternative_ids": [
+      "team-budget-throw-01",
+      "team-mid-throw-01"
+    ],
+    "description": "Reversible sherpa-and-fleece blanket, oversized.",
+    "active": true
+  },
+  {
+    "id": "team-budget-curtains-01",
+    "name": "MYSKY HOME Navy Blue Curtains 84 Inches Long Blackout Curtains for Living Room Bedroom Blu",
+    "category": "curtains",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "budget",
+    "price": 13.95,
+    "amazon_asin": "B016Y1Q3TU",
+    "affiliate_url": "https://www.amazon.com/dp/B016Y1Q3TU?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71DMWQZs9qL._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "navy",
+    "rating": 4.6,
+    "review_count": 11764,
+    "alternative_ids": [
+      "team-mid-curtains-01",
+      "team-prem-curtains-01"
+    ],
+    "description": "Navy blackout panels, solid color-block on the window.",
+    "active": true
+  },
+  {
+    "id": "team-mid-curtains-01",
+    "name": "CUCRAF Navy Blue Blackout Curtains 84 inch Length 2 Panels Set, Room Darkening Drapes for ",
+    "category": "curtains",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "mid",
+    "price": 16.18,
+    "amazon_asin": "B0D2T88GKZ",
+    "affiliate_url": "https://www.amazon.com/dp/B0D2T88GKZ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/618joc5zoQL._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "navy",
+    "rating": 4.7,
+    "review_count": 2453,
+    "alternative_ids": [
+      "team-budget-curtains-01",
+      "team-prem-curtains-01"
+    ],
+    "description": "Navy blackout curtains that kill the morning glare.",
+    "active": true
+  },
+  {
+    "id": "team-prem-curtains-01",
+    "name": "Lush Decor Alexander Color Block Light Filtering Window Curtain Panel Pair, 52\"W x 84\"L, N",
+    "category": "curtains",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 30.68,
+    "amazon_asin": "B0B99BSYJK",
+    "affiliate_url": "https://www.amazon.com/dp/B0B99BSYJK?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71yOvyNmMvL._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "navy",
+    "rating": 4.4,
+    "review_count": 271,
+    "alternative_ids": [
+      "team-budget-curtains-01",
+      "team-mid-curtains-01"
+    ],
+    "description": "Color-block light-filtering panels with a varsity edge.",
+    "active": true
+  },
+  {
+    "id": "team-budget-deskacc-01",
+    "name": "M&G Mesh Pen Holder Desk Organizers Pencil Holder for Desk Black, 3 Compartments Metal Off",
+    "category": "desk_accessories",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B0CQP9LYXC",
+    "affiliate_url": "https://www.amazon.com/dp/B0CQP9LYXC?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71Yp3uUlCbL._AC_SX522_.jpg",
+    "width_ft": 1.03,
+    "length_ft": 0.38,
+    "height_ft": 0.62,
+    "color": "black",
+    "rating": 4.8,
+    "review_count": 892,
+    "alternative_ids": [
+      "team-mid-deskacc-01",
+      "team-prem-deskacc-01"
+    ],
+    "description": "Black mesh pen-and-supply caddy, three compartments.",
+    "active": true
+  },
+  {
+    "id": "team-mid-deskacc-01",
+    "name": "SUPEASY Pen Holder for Desk, 6 Piece Mesh Desk Organizer Set for Office Organization with ",
+    "category": "desk_accessories",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "mid",
+    "price": 13.99,
+    "amazon_asin": "B0DN5K9Y9C",
+    "affiliate_url": "https://www.amazon.com/dp/B0DN5K9Y9C?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/814KiOkZkXL._AC_SX522_.jpg",
+    "width_ft": 1.03,
+    "length_ft": 0.38,
+    "height_ft": 0.62,
+    "color": "black",
+    "rating": 4.4,
+    "review_count": 139,
+    "alternative_ids": [
+      "team-budget-deskacc-01",
+      "team-prem-deskacc-01"
+    ],
+    "description": "Six-piece mesh desk set to organize the whole desktop.",
+    "active": true
+  },
+  {
+    "id": "team-prem-deskacc-01",
+    "name": "Desk Organizers Caddy and Accessories with 7 Compartments + Pen Holder / 72 Clips Set, Dra",
+    "category": "desk_accessories",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 21.99,
+    "amazon_asin": "B09TWHT3LR",
+    "affiliate_url": "https://www.amazon.com/dp/B09TWHT3LR?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/713U9lGDdEL._AC_SX522_PIbundle-72,TopRight,0,0_SH20_.jpg",
+    "width_ft": 1.03,
+    "length_ft": 0.38,
+    "height_ft": 0.62,
+    "color": "black",
+    "rating": 4.6,
+    "review_count": 1378,
+    "alternative_ids": [
+      "team-budget-deskacc-01",
+      "team-mid-deskacc-01"
+    ],
+    "description": "Seven-compartment desk caddy with a pen tower.",
+    "active": true
+  },
+  {
+    "id": "team-budget-mirror-01",
+    "name": "Mirror Full Length, 14x12 Inchx4PCS Wall Mirror Tiles,Full Body Mirror,Acrylic Shatterproo",
+    "category": "mirror",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B0DDKML34Q",
+    "affiliate_url": "https://www.amazon.com/dp/B0DDKML34Q?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61Ck3pYABhL._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "silver",
+    "rating": 3.7,
+    "review_count": 142,
+    "alternative_ids": [
+      "team-mid-mirror-01",
+      "team-prem-mirror-01"
+    ],
+    "description": "Stick-on full-length mirror tiles for a quick fit-check.",
+    "active": true
+  },
+  {
+    "id": "team-mid-mirror-01",
+    "name": "Sweetcrispy Bathroom Wall Mirror, 36x24 Inch Mirror for Over Sink, Black | Modern Wall Mou",
+    "category": "mirror",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "mid",
+    "price": 32.96,
+    "amazon_asin": "B0GVN11V7Z",
+    "affiliate_url": "https://www.amazon.com/dp/B0GVN11V7Z?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81MzsaOfB3L._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "silver",
+    "rating": 4.6,
+    "review_count": 324,
+    "alternative_ids": [
+      "team-budget-mirror-01",
+      "team-prem-mirror-01"
+    ],
+    "description": "Framed wall mirror, clean and sizable.",
+    "active": true
+  },
+  {
+    "id": "team-prem-mirror-01",
+    "name": "35 Inches Mango Wood Framed Wall Mirror, Matte Black",
+    "category": "mirror",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 125.49,
+    "amazon_asin": "B0CFT1XG18",
+    "affiliate_url": "https://www.amazon.com/dp/B0CFT1XG18?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61mUe2czlML._AC_SX569_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "black",
+    "rating": 5,
+    "review_count": 4,
+    "alternative_ids": [
+      "team-budget-mirror-01",
+      "team-mid-mirror-01"
+    ],
+    "description": "Mango-wood framed mirror in matte black, statement-grade.",
+    "active": true
+  },
+  {
+    "id": "team-budget-accent-01",
+    "name": "ArtCreativity Mini Over-the-Door Basketball Hoop Game - Easy to Hang, No Assembly Required",
+    "category": "accent",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "budget",
+    "price": 16.99,
+    "amazon_asin": "B081S854G1",
+    "affiliate_url": "https://www.amazon.com/dp/B081S854G1?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81UT1DBqyZL._AC_SX522_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "red",
+    "rating": 3.8,
+    "review_count": 1442,
+    "alternative_ids": [
+      "team-mid-accent-01",
+      "team-prem-accent-01"
+    ],
+    "description": "Over-the-door mini basketball hoop for instant game breaks.",
+    "active": true
+  },
+  {
+    "id": "team-mid-accent-01",
+    "name": "AND1 Over the Door Mini Basketball Hoop: 18x12 Shatterproof Backboard, 2 Mini Basketballs,",
+    "category": "accent",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "mid",
+    "price": 33.39,
+    "amazon_asin": "B089P1HPZW",
+    "affiliate_url": "https://www.amazon.com/dp/B089P1HPZW?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71Q5uYPMPQL._AC_SX522_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "red",
+    "rating": 4.5,
+    "review_count": 2907,
+    "alternative_ids": [
+      "team-budget-accent-01",
+      "team-prem-accent-01"
+    ],
+    "description": "Shatterproof over-the-door hoop with a steel-look rim.",
+    "active": true
+  },
+  {
+    "id": "team-prem-accent-01",
+    "name": "SKLZ Pro Mini Indoor Basketball Hoop with Ball, Over the Door, Shatter-Proof Backboard, Sp",
+    "category": "accent",
+    "style_tags": [
+      "team_spirit"
+    ],
+    "budget_tier": "premium",
+    "price": 44.99,
+    "amazon_asin": "B0BCXBPJ75",
+    "affiliate_url": "https://www.amazon.com/dp/B0BCXBPJ75?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/712Og7eTPGL._AC_SX522_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "red",
+    "rating": 4.2,
+    "review_count": 245,
+    "alternative_ids": [
+      "team-budget-accent-01",
+      "team-mid-accent-01"
+    ],
+    "description": "Pro-grade over-the-door hoop with a breakaway feel.",
+    "active": true
   }
 ]

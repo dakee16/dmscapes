@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type VibeKey = "minimalist" | "cozy" | "gamer" | "boho" | "preppy";
+type VibeKey = "minimalist" | "cozy" | "gamer" | "boho" | "preppy" | "team_spirit";
 
 type Vibe = {
   label: string;
@@ -73,6 +73,18 @@ const VIBES: Record<VibeKey, Vibe> = {
       { name: "Acrylic desk organizer", store: "Amazon", price: 21 },
     ],
     total: 445,
+  },
+  team_spirit: {
+    label: "Team Spirit",
+    bed: "#dbe3f2",
+    rug: "#cdd7ea",
+    accent: "#c8102e",
+    items: [
+      { name: "Varsity-stripe comforter, navy/red", store: "Amazon", price: 64 },
+      { name: "Felt pennant banner set", store: "Amazon", price: 12 },
+      { name: "Over-the-door mini hoop", store: "Amazon", price: 33 },
+    ],
+    total: 421,
   },
 };
 

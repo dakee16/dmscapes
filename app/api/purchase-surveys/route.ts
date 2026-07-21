@@ -10,7 +10,7 @@ import type {
 // we validate strictly and log DB failures loudly.
 
 const RESPONSES: PurchaseSurveyResponse[] = ["yes", "still_deciding", "no"];
-const STYLE_IDS = ["minimalist", "cozy", "gamer", "boho", "preppy"];
+const STYLE_IDS = ["minimalist", "cozy", "gamer", "boho", "preppy", "team_spirit"];
 
 function cleanId(value: unknown, max: number): string | null {
   if (typeof value !== "string") return null;
