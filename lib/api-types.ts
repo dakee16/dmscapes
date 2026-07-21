@@ -80,6 +80,25 @@ export interface PurchaseSurveyRequest {
 }
 export interface PurchaseSurveyResponseBody {
   ok: true;
+  /** Inserted row id; absent when Supabase isn't configured. The client keeps
+   * it for the session so /thank-you feedback can link back to this record. */
+  id?: string;
+}
+
+// POST /api/feedback  (confirmation-page rating + optional write-up)
+export interface FeedbackRequest {
+  session_id: string;
+  /** Present only when the user is signed in. */
+  user_id?: string | null;
+  /** 1-5, required. */
+  rating: number;
+  /** Optional free-text; null/absent when left empty. */
+  feedback_text?: string | null;
+  /** purchase_surveys.id from the "yes" that led here, when known. */
+  purchase_survey_id?: string | null;
+}
+export interface FeedbackResponseBody {
+  ok: true;
 }
 
 // GET /api/username?u={candidate}  (pre-flight availability check; the

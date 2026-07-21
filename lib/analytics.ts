@@ -24,7 +24,9 @@ export type AnalyticsEvent =
   | "purchase_prompt_still_deciding"
   | "purchase_prompt_no"
   | "share_link_copied"
-  | "share_link_shared";
+  | "share_link_shared"
+  | "confirmation_page_viewed"
+  | "feedback_submitted";
 
 let initialized = false;
 

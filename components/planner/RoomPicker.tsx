@@ -33,14 +33,19 @@ export default function RoomPicker({
                 type="button"
                 onClick={() => onSelect(room, key)}
                 aria-pressed={selected}
-                className={`flex w-full flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-lg border px-3.5 py-3 text-left transition-colors ${
+                className={`flex w-full items-start justify-between gap-3 rounded-lg border px-3.5 py-3 text-left transition-colors ${
                   selected
                     ? "border-cobalt bg-cobalt/5"
                     : "border-transparent hover:border-ink/10 hover:bg-paper"
                 }`}
               >
-                <span className="min-w-0">
-                  <span className="block truncate text-[15px] font-medium text-ink">
+                {/* Label column wraps; dims stay pinned top-right so long
+                    labels never collide with or displace the size. */}
+                <span className="min-w-0 flex-1">
+                  <span
+                    className="block text-[15px] font-medium leading-snug text-ink"
+                    title={room.label}
+                  >
                     {room.label}
                   </span>
                   {room.occupants != null && (
@@ -50,11 +55,11 @@ export default function RoomPicker({
                   )}
                 </span>
                 {dims ? (
-                  <span className="shrink-0 font-mono text-sm font-medium text-cobalt">
+                  <span className="shrink-0 whitespace-nowrap pt-0.5 font-mono text-sm font-medium text-cobalt">
                     {dims}
                   </span>
                 ) : (
-                  <span className="shrink-0 rounded-full bg-highlight/40 px-2.5 py-0.5 font-mono text-[11px] font-medium text-ink">
+                  <span className="shrink-0 whitespace-nowrap rounded-full bg-highlight/40 px-2.5 py-0.5 font-mono text-[11px] font-medium text-ink">
                     size not published
                   </span>
                 )}

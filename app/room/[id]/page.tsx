@@ -76,9 +76,13 @@ export default async function SharedRoomPage(props: {
           <h1 className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
             {style.emoji} {style.name} room
           </h1>
-          <p className="font-mono text-sm text-ink-soft">
+          <p className="min-w-0 font-mono text-sm text-ink-soft">
             {school ? `${school.name} · ` : ""}
-            {formatRoomType(dims.room_type)} · {dims.length_ft} × {dims.width_ft} ft
+            {formatRoomType(dims.room_type)}
+            <span aria-hidden="true"> · </span>
+            <span className="whitespace-nowrap">
+              {dims.length_ft} × {dims.width_ft} ft
+            </span>
           </p>
         </div>
 

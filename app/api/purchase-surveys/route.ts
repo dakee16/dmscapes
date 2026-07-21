@@ -81,15 +81,20 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true }, { status: 202 });
   }
 
-  const { error } = await supabase.from("purchase_surveys").insert({
-    session_id: sessionId,
-    user_id: userId,
-    response,
-    saved_room_id: savedRoomId,
-    room_snapshot: snapshot,
-    cart_total: cartTotal,
-  });
+  const { data, error } = await supabase
+    .from("purchase_surveys")
+    .insert({
+      session_id: sessionId,
+      user_id: userId,
+      response,
+      saved_room_id: savedRoomId,
+      room_snapshot: snapshot,
+      cart_total: cartTotal,
+    })
+    .select("id")
+    .single();
   if (error) console.error("purchase_surveys insert failed:", error.message);
 
-  return NextResponse.json({ ok: true }, { status: 201 });
+  // id lets the client link later /thank-you feedback back to this record.
+  return NextResponse.json({ ok: true, ...(data?.id ? { id: data.id } : {}) }, { status: 201 });
 }

@@ -140,7 +140,14 @@ export default function ResultPage() {
           Your room, <span className="hl">planned.</span>
         </h1>
         <p className="mt-1.5 font-mono text-xs uppercase tracking-[0.14em] text-ink-soft">
-          {[college?.name, dorm?.name, roomTypeLabel(room), dims].filter(Boolean).join(" · ")}
+          {/* Text segments wrap at word boundaries; dims never split mid-string. */}
+          {[college?.name, dorm?.name, roomTypeLabel(room)].filter(Boolean).join(" · ")}
+          {dims && (
+            <>
+              <span aria-hidden="true"> · </span>
+              <span className="whitespace-nowrap">{dims}</span>
+            </>
+          )}
         </p>
       </header>
 

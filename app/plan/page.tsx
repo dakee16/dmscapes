@@ -165,11 +165,13 @@ export default function PlanSelectPage() {
             <svg className="h-5 w-5 shrink-0 text-cobalt" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
               <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <span className="text-sm font-semibold text-ink">
+            <span className="min-w-0 text-sm font-semibold text-ink">
               {[college?.name, dorm?.name, roomTypeLabel(room)].filter(Boolean).join(" · ")}
             </span>
             {confirmDims && (
-              <span className="font-mono text-sm font-semibold text-cobalt">{confirmDims}</span>
+              <span className="whitespace-nowrap font-mono text-sm font-semibold text-cobalt">
+                {confirmDims}
+              </span>
             )}
           </div>
         )}

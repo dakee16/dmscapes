@@ -106,8 +106,8 @@ export default async function CollegePage(props: {
                       key={`${r.type}-${i}`}
                       className="flex items-baseline justify-between gap-3 text-sm"
                     >
-                      <span className="text-ink-soft">{r.label}</span>
-                      <span className="shrink-0 font-mono text-xs text-ink">
+                      <span className="min-w-0 text-ink-soft">{r.label}</span>
+                      <span className="shrink-0 whitespace-nowrap font-mono text-xs text-ink">
                         {formatDims(r.length_ft, r.width_ft) ??
                           (r.sqft ? `${r.sqft} sq ft` : "size varies")}
                       </span>

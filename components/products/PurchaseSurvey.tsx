@@ -1,43 +1,30 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { track, sessionId } from "@/lib/analytics";
-import { BUY_INTENT_EVENT } from "@/lib/purchase-intent";
+import { BUY_INTENT_EVENT, SURVEY_ID_KEY } from "@/lib/purchase-intent";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
-import type { PurchaseSurveyRequest, PurchaseSurveyResponse } from "@/lib/api-types";
+import PanelGrid from "@/components/site/PanelGrid";
+import type {
+  PurchaseSurveyRequest,
+  PurchaseSurveyResponse,
+  PurchaseSurveyResponseBody,
+} from "@/lib/api-types";
 
 const DONE_KEY = "dormscape-purchase-survey-done";
 /** Minimum time away (ms) before a return counts — filters accidental switches. */
 const AWAY_MS = 3500;
 
-const SHARE_URL = "https://dormscape.us";
-const SHARE_LABEL = "dormscape.us";
-
-type Step = "ask" | "thanks";
-
-/** White graph-paper overlay for cobalt panels — same as the home page CTA. */
-function PanelGrid() {
-  return (
-    <div
-      aria-hidden="true"
-      className="pointer-events-none absolute inset-0 opacity-[0.12]"
-      style={{
-        backgroundImage:
-          "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
-        backgroundSize: "28px 28px",
-      }}
-    />
-  );
-}
-
 /**
  * Post-purchase confirmation. Arms on the first buy click of the session, then
  * shows a one-time prompt when the user returns to the tab (after being away
- * long enough to have actually visited Amazon). "Yes" transitions in-place to a
- * thank-you + share state. Result page only.
+ * long enough to have actually visited Amazon). "Yes, all set" hands off to the
+ * /thank-you confirmation page; the two not-yet answers just close.
  */
 export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
+  const router = useRouter();
   const { user } = useAuth();
   const college = usePlannerStore((s) => s.college);
   const dorm = usePlannerStore((s) => s.dorm);
@@ -46,9 +33,6 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
   const budget = usePlannerStore((s) => s.budget);
 
   const [open, setOpen] = useState(false);
-  const [step, setStep] = useState<Step>("ask");
-  const [copied, setCopied] = useState(false);
-  const [canShare, setCanShare] = useState(false);
 
   // Detection state kept in refs so listeners always see the latest without
   // re-subscribing: armed = a buy click happened; leftAt = when the tab hid;
@@ -90,22 +74,24 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
       keepalive: true,
-    }).catch(() => {});
+    })
+      .then((res) => (res.ok ? (res.json() as Promise<PurchaseSurveyResponseBody>) : null))
+      .then((data) => {
+        if (data?.id) window.sessionStorage.setItem(SURVEY_ID_KEY, data.id);
+      })
+      .catch(() => {});
   }, []);
 
   // Wire up detection once.
   useEffect(() => {
     if (typeof window === "undefined") return;
     doneRef.current = window.sessionStorage.getItem(DONE_KEY) === "1";
-    setCanShare(typeof navigator !== "undefined" && typeof navigator.share === "function");
 
     function reveal() {
       if (doneRef.current) return;
       doneRef.current = true;
       window.sessionStorage.setItem(DONE_KEY, "1");
       armedRef.current = false;
-      setStep("ask");
-      setCopied(false);
       setOpen(true);
       track("purchase_prompt_shown");
     }
@@ -140,23 +126,21 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
     };
   }, []);
 
-  // Focus the primary action when the ask step opens (parity with AuthModal).
+  // Focus the primary action when the prompt opens (parity with AuthModal).
   useEffect(() => {
-    if (!open || step !== "ask") return;
+    if (!open) return;
     const t = setTimeout(() => yesBtnRef.current?.focus(), 60);
     return () => clearTimeout(t);
-  }, [open, step]);
+  }, [open]);
 
   const close = useCallback(() => setOpen(false), []);
 
-  // Backdrop / Escape / X on the ask step reads as the neutral "still deciding".
+  // Backdrop / Escape / X read as the neutral "still deciding".
   const dismiss = useCallback(() => {
-    if (step === "ask") {
-      postSurvey("still_deciding");
-      track("purchase_prompt_still_deciding");
-    }
+    postSurvey("still_deciding");
+    track("purchase_prompt_still_deciding");
     close();
-  }, [step, postSurvey, close]);
+  }, [postSurvey, close]);
 
   useEffect(() => {
     if (!open) return;
@@ -172,8 +156,8 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
   function handleYes() {
     postSurvey("yes");
     track("purchase_prompt_yes");
-    setCopied(false);
-    setStep("thanks");
+    close();
+    router.push("/thank-you");
   }
 
   function handleStillDeciding() {
@@ -187,42 +171,6 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
     track("purchase_prompt_no");
     close();
   }
-
-  async function handleCopy() {
-    try {
-      await navigator.clipboard.writeText(SHARE_URL);
-      setCopied(true);
-      track("share_link_copied");
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      setCopied(false);
-    }
-  }
-
-  async function handleShare() {
-    if (typeof navigator === "undefined" || typeof navigator.share !== "function") return;
-    try {
-      await navigator.share({
-        title: "Dormscape",
-        text: "Plan your dorm room for free with Dormscape.",
-        url: SHARE_URL,
-      });
-      track("share_link_shared");
-    } catch {
-      // User cancelled the share sheet — nothing to do.
-    }
-  }
-
-  const title =
-    step === "ask" ? (
-      <>
-        Did you grab <span className="hl">everything?</span>
-      </>
-    ) : (
-      <>
-        Nice. Your room&apos;s <span className="hl">happening.</span>
-      </>
-    );
 
   return (
     <div
@@ -248,33 +196,32 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
           }}
         />
         <div className="relative z-10">
-        <div className="flex items-start justify-between gap-4">
-          <h2
-            id="purchase-survey-title"
-            className="font-display text-xl font-bold tracking-tight sm:text-2xl"
-          >
-            {title}
-          </h2>
-          <button
-            type="button"
-            onClick={dismiss}
-            aria-label="Close"
-            className="grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-ink"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              aria-hidden="true"
+          <div className="flex items-start justify-between gap-4">
+            <h2
+              id="purchase-survey-title"
+              className="font-display text-xl font-bold tracking-tight sm:text-2xl"
             >
-              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-            </svg>
-          </button>
-        </div>
+              Did you grab <span className="hl">everything?</span>
+            </h2>
+            <button
+              type="button"
+              onClick={dismiss}
+              aria-label="Close"
+              className="grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-ink"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
+                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+              </svg>
+            </button>
+          </div>
 
-        {step === "ask" ? (
           <div className="mt-2">
             <p className="text-sm leading-relaxed text-ink-soft">
               You just headed to Amazon. Did everything you wanted make it into your cart?
@@ -313,73 +260,6 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
               </button>
             </div>
           </div>
-        ) : (
-          <div className="mt-2">
-            <p className="text-sm leading-relaxed text-ink-soft">
-              Everything&apos;s on its way. If Dormscape made this easier, send it to a
-              roommate. It&apos;s free for them too.
-            </p>
-
-            {/* Cobalt share panel — a pocket-size echo of the home page CTA. */}
-            <div className="relative mt-6 overflow-hidden rounded-2xl bg-cobalt p-4 sm:p-5">
-              <PanelGrid />
-              <div className="relative">
-                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-highlight">
-                  Share Dormscape
-                </p>
-                {canShare && (
-                  <button
-                    type="button"
-                    onClick={handleShare}
-                    className="mt-3 flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-white text-sm font-semibold text-ink transition-colors hover:bg-highlight"
-                  >
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="h-4 w-4"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      aria-hidden="true"
-                    >
-                      <circle cx="18" cy="5" r="3" />
-                      <circle cx="6" cy="12" r="3" />
-                      <circle cx="18" cy="19" r="3" />
-                      <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" strokeLinecap="round" />
-                    </svg>
-                    Share
-                  </button>
-                )}
-                <div className={`flex items-center gap-2 ${canShare ? "mt-2" : "mt-3"}`}>
-                  <input
-                    type="text"
-                    readOnly
-                    value={SHARE_LABEL}
-                    aria-label="Dormscape link"
-                    onFocus={(e) => e.currentTarget.select()}
-                    className="h-11 min-w-0 flex-1 rounded-xl bg-white/15 px-4 font-mono text-sm text-white outline-none"
-                  />
-                  <button
-                    type="button"
-                    onClick={handleCopy}
-                    className={`h-11 shrink-0 cursor-pointer rounded-xl px-4 text-sm font-semibold text-ink transition-colors ${
-                      copied ? "bg-highlight" : "bg-white hover:bg-highlight"
-                    }`}
-                  >
-                    {copied ? "Copied!" : "Copy"}
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={close}
-              className="mt-3 h-12 w-full cursor-pointer rounded-xl border border-ink/15 bg-white text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
-            >
-              Done
-            </button>
-          </div>
-        )}
         </div>
       </div>
     </div>
