@@ -16,6 +16,21 @@ const SHARE_LABEL = "dormscape.us";
 
 type Step = "ask" | "thanks";
 
+/** White graph-paper overlay for cobalt panels — same as the home page CTA. */
+function PanelGrid() {
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 opacity-[0.12]"
+      style={{
+        backgroundImage:
+          "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
+        backgroundSize: "28px 28px",
+      }}
+    />
+  );
+}
+
 /**
  * Post-purchase confirmation. Arms on the first buy click of the session, then
  * shows a one-time prompt when the user returns to the tab (after being away
@@ -198,7 +213,16 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
     }
   }
 
-  const title = step === "ask" ? "Did you grab everything?" : "Nice. Your room's happening.";
+  const title =
+    step === "ask" ? (
+      <>
+        Did you grab <span className="hl">everything?</span>
+      </>
+    ) : (
+      <>
+        Nice. Your room&apos;s <span className="hl">happening.</span>
+      </>
+    );
 
   return (
     <div
@@ -210,7 +234,7 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
         if (e.target === e.currentTarget) dismiss();
       }}
     >
-      <div className="snap-in relative w-full max-w-lg overflow-hidden rounded-t-2xl border border-ink/10 bg-paper p-6 shadow-2xl sm:rounded-2xl sm:p-7">
+      <div className="snap-in relative w-full max-w-xl overflow-hidden rounded-t-2xl border border-ink/10 bg-paper p-6 shadow-2xl sm:rounded-2xl sm:p-8">
         {/* Graph-paper wash across the top, fading toward the middle — the same
             grid the rest of the site is built on. */}
         <div
@@ -225,7 +249,10 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
         />
         <div className="relative z-10">
         <div className="flex items-start justify-between gap-4">
-          <h2 id="purchase-survey-title" className="font-display text-xl font-bold tracking-tight">
+          <h2
+            id="purchase-survey-title"
+            className="font-display text-xl font-bold tracking-tight sm:text-2xl"
+          >
             {title}
           </h2>
           <button
@@ -248,23 +275,32 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
         </div>
 
         {step === "ask" ? (
-          <div className="mt-1">
+          <div className="mt-2">
             <p className="text-sm leading-relaxed text-ink-soft">
               You just headed to Amazon. Did everything you wanted make it into your cart?
             </p>
-            <div className="mt-5 space-y-2.5">
-              <button
-                ref={yesBtnRef}
-                type="button"
-                onClick={handleYes}
-                className="h-12 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep"
-              >
-                Yes, all set
-              </button>
+            {/* Cobalt action panel — a pocket-size echo of the home page CTA. */}
+            <div className="relative mt-6 overflow-hidden rounded-2xl bg-cobalt p-4 sm:p-5">
+              <PanelGrid />
+              <div className="relative">
+                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-highlight">
+                  {Number.isFinite(cartTotal) ? `The $${cartTotal.toFixed(0)} plan` : "The plan"}
+                </p>
+                <button
+                  ref={yesBtnRef}
+                  type="button"
+                  onClick={handleYes}
+                  className="mt-3 h-12 w-full cursor-pointer rounded-xl bg-white text-base font-semibold text-ink transition-colors hover:bg-highlight"
+                >
+                  Yes, all set
+                </button>
+              </div>
+            </div>
+            <div className="mt-3 space-y-2">
               <button
                 type="button"
                 onClick={handleStillDeciding}
-                className="h-12 w-full cursor-pointer rounded-xl border border-ink/15 bg-white text-sm font-semibold text-ink transition-colors hover:border-ink/30"
+                className="h-12 w-full cursor-pointer rounded-xl border border-ink/15 bg-white text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
               >
                 Still deciding
               </button>
@@ -278,61 +314,67 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
             </div>
           </div>
         ) : (
-          <div className="mt-1">
+          <div className="mt-2">
             <p className="text-sm leading-relaxed text-ink-soft">
               Everything&apos;s on its way. If Dormscape made this easier, send it to a
               roommate. It&apos;s free for them too.
             </p>
 
-            <div className="mt-5">
-              <p className="mb-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink-soft">
-                Share Dormscape
-              </p>
-              {canShare && (
-                <button
-                  type="button"
-                  onClick={handleShare}
-                  className="mb-2 flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-cobalt text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
+            {/* Cobalt share panel — a pocket-size echo of the home page CTA. */}
+            <div className="relative mt-6 overflow-hidden rounded-2xl bg-cobalt p-4 sm:p-5">
+              <PanelGrid />
+              <div className="relative">
+                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-highlight">
+                  Share Dormscape
+                </p>
+                {canShare && (
+                  <button
+                    type="button"
+                    onClick={handleShare}
+                    className="mt-3 flex h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-white text-sm font-semibold text-ink transition-colors hover:bg-highlight"
                   >
-                    <circle cx="18" cy="5" r="3" />
-                    <circle cx="6" cy="12" r="3" />
-                    <circle cx="18" cy="19" r="3" />
-                    <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" strokeLinecap="round" />
-                  </svg>
-                  Share
-                </button>
-              )}
-              <div className="flex items-center gap-2">
-                <input
-                  type="text"
-                  readOnly
-                  value={SHARE_LABEL}
-                  aria-label="Dormscape link"
-                  onFocus={(e) => e.currentTarget.select()}
-                  className="h-11 flex-1 rounded-xl border border-ink/15 bg-white px-4 font-mono text-sm text-ink outline-none"
-                />
-                <button
-                  type="button"
-                  onClick={handleCopy}
-                  className="h-11 shrink-0 cursor-pointer rounded-xl border border-ink/15 bg-white px-4 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
-                >
-                  {copied ? "Copied!" : "Copy"}
-                </button>
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      aria-hidden="true"
+                    >
+                      <circle cx="18" cy="5" r="3" />
+                      <circle cx="6" cy="12" r="3" />
+                      <circle cx="18" cy="19" r="3" />
+                      <path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4" strokeLinecap="round" />
+                    </svg>
+                    Share
+                  </button>
+                )}
+                <div className={`flex items-center gap-2 ${canShare ? "mt-2" : "mt-3"}`}>
+                  <input
+                    type="text"
+                    readOnly
+                    value={SHARE_LABEL}
+                    aria-label="Dormscape link"
+                    onFocus={(e) => e.currentTarget.select()}
+                    className="h-11 min-w-0 flex-1 rounded-xl bg-white/15 px-4 font-mono text-sm text-white outline-none"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleCopy}
+                    className={`h-11 shrink-0 cursor-pointer rounded-xl px-4 text-sm font-semibold text-ink transition-colors ${
+                      copied ? "bg-highlight" : "bg-white hover:bg-highlight"
+                    }`}
+                  >
+                    {copied ? "Copied!" : "Copy"}
+                  </button>
+                </div>
               </div>
             </div>
 
             <button
               type="button"
               onClick={close}
-              className="mt-5 h-11 w-full cursor-pointer rounded-xl bg-ink text-sm font-semibold text-white transition-colors hover:bg-cobalt"
+              className="mt-3 h-12 w-full cursor-pointer rounded-xl border border-ink/15 bg-white text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
             >
               Done
             </button>
