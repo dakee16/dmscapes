@@ -42,3 +42,6 @@ next-env.d.ts
 
 # keep the env template tracked
 !.env.example
+
+# Local research source files (PDFs, DOCX, screenshots) — not committed
+research/

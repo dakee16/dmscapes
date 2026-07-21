@@ -164,144 +164,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/atherton-hall",
           "data_confidence": "high",
           "notes": "Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "triple",
-          "room_type_official": "Triple Room",
-          "occupants": 3,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.67,
-            "height_ft": 6.58
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.17,
-            "height_ft": 4.83
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.17,
-            "depth_ft": 1.67,
-            "height_ft": 7.5
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 3,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.0,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 3,
-              "length_ft": 3.67,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 3,
-              "length_ft": 1.5,
-              "width_ft": 1.75,
-              "height_ft": 3.67,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.5,
-              "width_ft": 1.58,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 3,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/atherton-hall",
-          "data_confidence": "low",
-          "notes": "Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Quad Room",
-          "occupants": 4,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.67,
-            "height_ft": 6.58
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.17,
-            "height_ft": 4.83
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.17,
-            "depth_ft": 1.67,
-            "height_ft": 7.5
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.0,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 3.67,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 4,
-              "length_ft": 1.5,
-              "width_ft": 1.75,
-              "height_ft": 3.67,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.5,
-              "width_ft": 1.58,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 4,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/atherton-hall",
-          "data_confidence": "low",
-          "notes": "Source table notes measurements are approximate."
         }
       ]
     },
@@ -467,72 +329,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/beam-hall",
           "data_confidence": "high",
           "notes": "Published as a generic 'Room' size; this hall offers: Supplemental, Suite 1 Bedroom/1 Person, Suite 2 Bedroom/2 Person, Suite 2 Bedroom/4 Person. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 5.08,
-            "height_ft": 4.5
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 3.0,
-            "depth_ft": 2.08,
-            "height_ft": 6.5
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.0,
-              "width_ft": 3.08,
-              "height_ft": 3.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 1.83,
-              "width_ft": 3.58,
-              "height_ft": 5.0
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.75,
-              "width_ft": 1.5,
-              "height_ft": 2.0
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.75,
-              "width_ft": 2.67,
-              "height_ft": 1.83
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/beam-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
         }
       ]
     },
@@ -549,9 +345,9 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room Furnishing & Dimensions: Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
             "length_ft": 15.17,
             "width_ft": 11.83,
@@ -605,72 +401,19 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/beaver-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 6' x 9'. Published as a generic 'Room' size; this hall offers: Single, Double, Quad, Supplemental. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.33,
-              "width_ft": 3.0,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/beaver-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.09.42 AM.png (liveon.psu.edu/university-park/housing/beaver-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15.17,
+            "width_ft": 11.83,
+            "ceiling_height_ft": 7.42
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -719,123 +462,9 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/beaver-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Quad",
-          "occupants": 4,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 6.33,
-              "width_ft": 3.0,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 4,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/beaver-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.33,
-              "width_ft": 3.0,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/beaver-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.09.42 AM.png (liveon.psu.edu/university-park/housing/beaver-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -1295,124 +924,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/brumbaugh-hall",
           "data_confidence": "high",
           "notes": "Width varies: 11'9\" to 12'4\" (low end used). Recommended rug size 6' x 9'. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Quad",
-          "occupants": 4,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 6.83,
-            "height_ft": 4.33
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 6.92,
-              "width_ft": 3.25,
-              "height_ft": 3.33,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.42,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 4,
-              "length_ft": 3.0,
-              "width_ft": 1.92,
-              "height_ft": 1.33,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 4,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/brumbaugh-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 6.83,
-            "height_ft": 4.33
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.92,
-              "width_ft": 3.25,
-              "height_ft": 3.33,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.42,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 1.92,
-              "height_ft": 1.33,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/brumbaugh-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
         }
       ]
     },
@@ -1429,12 +940,12 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room",
-          "occupants": null,
+          "room_type": "double",
+          "room_type_official": "Double",
+          "occupants": 2,
           "dimensions": {
-            "length_ft": 15.0,
-            "width_ft": 12.0,
+            "length_ft": 15,
+            "width_ft": 12,
             "ceiling_height_ft": 7.25
           },
           "door": {
@@ -1453,7 +964,7 @@
           "built_in_furniture": [
             {
               "type": "bed_frame",
-              "count": 1,
+              "count": 2,
               "length_ft": 7.08,
               "width_ft": 3.29,
               "height_ft": 4.67,
@@ -1462,7 +973,7 @@
             },
             {
               "type": "desk",
-              "count": 1,
+              "count": 2,
               "length_ft": 3.0,
               "width_ft": 2.0,
               "height_ft": 2.5,
@@ -1477,7 +988,7 @@
             },
             {
               "type": "wardrobe",
-              "count": 1,
+              "count": 2,
               "length_ft": 2.0,
               "width_ft": 3.33,
               "height_ft": 6.33,
@@ -1485,7 +996,7 @@
             },
             {
               "type": "desk_chair",
-              "count": 1,
+              "count": 2,
               "length_ft": 1.5,
               "width_ft": 1.5,
               "height_ft": 2.0,
@@ -1493,88 +1004,16 @@
             },
             {
               "type": "dresser",
-              "count": 1,
+              "count": 2,
               "length_ft": 1.58,
               "width_ft": 2.5,
               "height_ft": 1.25,
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/chace-hall",
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.10.04 AM.png (liveon.psu.edu/university-park/housing/chace-hall)",
           "data_confidence": "high",
-          "notes": "Recommended rug size 9' x 12'. Published as a generic 'Room' size; this hall offers: Double. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "double",
-          "room_type_official": "Double",
-          "occupants": 2,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.5,
-            "height_ft": 4.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.67,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.75,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 2,
-              "length_ft": 2.0,
-              "width_ft": 3.33,
-              "height_ft": 6.33,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 2,
-              "length_ft": 1.5,
-              "width_ft": 1.5,
-              "height_ft": 2.0,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 2,
-              "length_ft": 1.58,
-              "width_ft": 2.5,
-              "height_ft": 1.25,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/chace-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "notes": null
         }
       ]
     },
@@ -1591,12 +1030,12 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
-            "length_ft": 15.0,
-            "width_ft": 12.0,
+            "length_ft": 15,
+            "width_ft": 12,
             "ceiling_height_ft": 7.25
           },
           "door": {
@@ -1662,87 +1101,19 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/cooper-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 9' x 12'. Published as a generic 'Room' size; this hall offers: Single, Double. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.5,
-            "height_ft": 4.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.67,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.75,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.33,
-              "height_ft": 6.33,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.5,
-              "width_ft": 1.5,
-              "height_ft": 2.0,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 2.5,
-              "height_ft": 1.25,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/cooper-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.09.57 AM.png (liveon.psu.edu/university-park/housing/cooper-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15,
+            "width_ft": 12,
+            "ceiling_height_ft": 7.25
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -1806,9 +1177,9 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/cooper-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.09.57 AM.png (liveon.psu.edu/university-park/housing/cooper-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -1825,12 +1196,12 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
-            "length_ft": 15.0,
-            "width_ft": 12.0,
+            "length_ft": 15,
+            "width_ft": 12,
             "ceiling_height_ft": 7.25
           },
           "door": {
@@ -1896,87 +1267,19 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/cross-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 9' x 12'. Published as a generic 'Room' size; this hall offers: Single, Double. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.5,
-            "height_ft": 4.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.67,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.75,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.33,
-              "height_ft": 6.33,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.5,
-              "width_ft": 1.5,
-              "height_ft": 2.0,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 2.5,
-              "height_ft": 1.25,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/cross-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.09.50 AM.png (liveon.psu.edu/university-park/housing/cross-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15,
+            "width_ft": 12,
+            "ceiling_height_ft": 7.25
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -2040,9 +1343,9 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/cross-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.09.50 AM.png (liveon.psu.edu/university-park/housing/cross-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -2712,19 +2015,6 @@
       ]
     },
     {
-      "dorm_id": "eastview-terrace",
-      "dorm_name": "Eastview Terrace",
-      "hall_url": "https://liveon.psu.edu/university-park/housing/eastview-terrace",
-      "housing_area": null,
-      "building_type": null,
-      "population": null,
-      "air_conditioning": false,
-      "bathroom_configuration": null,
-      "recommended_rug_size": null,
-      "shared_unit_spaces": null,
-      "rooms": []
-    },
-    {
       "dorm_id": "ewing-hall",
       "dorm_name": "Ewing Hall",
       "hall_url": "https://liveon.psu.edu/university-park/housing/ewing-hall",
@@ -2737,12 +2027,12 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
-            "length_ft": 15.0,
-            "width_ft": 12.0,
+            "length_ft": 15,
+            "width_ft": 12,
             "ceiling_height_ft": 7.25
           },
           "door": {
@@ -2808,87 +2098,19 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/ewing-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 9' x 12'. Published as a generic 'Room' size; this hall offers: Single, Double. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.5,
-            "height_ft": 4.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.67,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.75,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.33,
-              "height_ft": 6.33,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.5,
-              "width_ft": 1.5,
-              "height_ft": 2.0,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 2.5,
-              "height_ft": 1.25,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/ewing-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.10.32 AM.png (liveon.psu.edu/university-park/housing/ewing-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15,
+            "width_ft": 12,
+            "ceiling_height_ft": 7.25
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -2952,9 +2174,9 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/ewing-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.10.32 AM.png (liveon.psu.edu/university-park/housing/ewing-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -3397,12 +2619,12 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
-            "length_ft": 15.0,
-            "width_ft": 12.0,
+            "length_ft": 15,
+            "width_ft": 12,
             "ceiling_height_ft": 7.25
           },
           "door": {
@@ -3468,87 +2690,19 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/haller-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 9' x 12'. Published as a generic 'Room' size; this hall offers: Single, Double. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.5,
-            "height_ft": 4.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.67,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.75,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.33,
-              "height_ft": 6.33,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.5,
-              "width_ft": 1.5,
-              "height_ft": 2.0,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 2.5,
-              "height_ft": 1.25,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/haller-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.10.24 AM.png (liveon.psu.edu/university-park/housing/haller-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15,
+            "width_ft": 12,
+            "ceiling_height_ft": 7.25
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -3612,9 +2766,9 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/haller-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.10.24 AM.png (liveon.psu.edu/university-park/housing/haller-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -3753,122 +2907,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/hamilton-hall",
           "data_confidence": "high",
           "notes": "Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "triple",
-          "room_type_official": "Triple",
-          "occupants": 3,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.67,
-            "height_ft": 5.17
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.0,
-            "depth_ft": 1.83,
-            "height_ft": 7.0
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 3,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 3,
-              "length_ft": 2.67,
-              "width_ft": 3.67,
-              "height_ft": 2.42
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 3,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hamilton-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Quad",
-          "occupants": 4,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.67,
-            "height_ft": 5.17
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.0,
-            "depth_ft": 1.83,
-            "height_ft": 7.0
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 2.67,
-              "width_ft": 3.67,
-              "height_ft": 2.42
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 4,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hamilton-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
         }
       ]
     },
@@ -4064,9 +3102,9 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room Furnishing & Dimensions: Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
             "length_ft": 15.17,
             "width_ft": 11.83,
@@ -4120,72 +3158,19 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hartranft-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 6' x 9'. Published as a generic 'Room' size; this hall offers: Single, Double, Small Double, Supplemental. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.33,
-              "width_ft": 3.0,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hartranft-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.10.40 AM.png (liveon.psu.edu/university-park/housing/hartranft-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15.17,
+            "width_ft": 11.83,
+            "ceiling_height_ft": 7.42
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -4234,123 +3219,9 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hartranft-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "small double",
-          "room_type_official": "Small Double",
-          "occupants": 2,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 6.33,
-              "width_ft": 3.0,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 2,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hartranft-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.33,
-              "width_ft": 3.0,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hartranft-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.10.40 AM.png (liveon.psu.edu/university-park/housing/hartranft-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -4650,150 +3521,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/hibbs-hall",
           "data_confidence": "high",
           "notes": "Recommended rug size 9' x 12'. Published as a generic 'Room' size; this hall offers: Single, Double. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.5,
-            "height_ft": 4.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.67,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.75,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.33,
-              "height_ft": 6.33,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.5,
-              "width_ft": 1.5,
-              "height_ft": 2.0,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 2.5,
-              "height_ft": 1.25,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hibbs-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "double",
-          "room_type_official": "Double",
-          "occupants": 2,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.5,
-            "height_ft": 4.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.67,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.75,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 2,
-              "length_ft": 2.0,
-              "width_ft": 3.33,
-              "height_ft": 6.33,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 2,
-              "length_ft": 1.5,
-              "width_ft": 1.5,
-              "height_ft": 2.0,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 2,
-              "length_ft": 1.58,
-              "width_ft": 2.5,
-              "height_ft": 1.25,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hibbs-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
         }
       ]
     },
@@ -4810,9 +3537,9 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room Furnishing & Dimensions: Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
             "length_ft": 15.17,
             "width_ft": 11.83,
@@ -4866,72 +3593,19 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hiester-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 6' x 9'. Published as a generic 'Room' size; this hall offers: Single, Double, Quad, Supplemental. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.33,
-              "width_ft": 3.0,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hiester-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.10.54 AM.png (liveon.psu.edu/university-park/housing/hiester-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15.17,
+            "width_ft": 11.83,
+            "ceiling_height_ft": 7.42
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -4980,123 +3654,9 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hiester-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Quad",
-          "occupants": 4,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 6.33,
-              "width_ft": 3.0,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 4,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hiester-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.33,
-              "width_ft": 3.0,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hiester-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.10.54 AM.png (liveon.psu.edu/university-park/housing/hiester-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -5262,72 +3822,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/holmes-hall",
           "data_confidence": "high",
           "notes": "Unit configurations: Suite 2 Bedroom/2 Person; Suite 2 Bedroom/4 Person. Dimensions are for this bedroom; see shared_unit_spaces for the rest of the unit. Published as a generic 'Room' size; this hall offers: Supplemental, Suite 2 Bedroom/2 Person, Suite 2 Bedroom/4 Person. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 5.08,
-            "height_ft": 4.5
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 3.0,
-            "depth_ft": 2.08,
-            "height_ft": 6.5
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.0,
-              "width_ft": 3.08,
-              "height_ft": 3.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 1.83,
-              "width_ft": 3.58,
-              "height_ft": 5.0
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.75,
-              "width_ft": 1.5,
-              "height_ft": 2.0
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.75,
-              "width_ft": 2.67,
-              "height_ft": 1.83
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/holmes-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
         }
       ]
     },
@@ -5418,150 +3912,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/hoyt-hall",
           "data_confidence": "high",
           "notes": "Recommended rug size 9' x 12'. Published as a generic 'Room' size; this hall offers: Single, Double. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.5,
-            "height_ft": 4.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.67,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.75,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.33,
-              "height_ft": 6.33,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.5,
-              "width_ft": 1.5,
-              "height_ft": 2.0,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 2.5,
-              "height_ft": 1.25,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hoyt-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "double",
-          "room_type_official": "Double",
-          "occupants": 2,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.5,
-            "height_ft": 4.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.67,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.75,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 2,
-              "length_ft": 2.0,
-              "width_ft": 3.33,
-              "height_ft": 6.33,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 2,
-              "length_ft": 1.5,
-              "width_ft": 1.5,
-              "height_ft": 2.0,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 2,
-              "length_ft": 1.58,
-              "width_ft": 2.5,
-              "height_ft": 1.25,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/hoyt-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
         }
       ]
     },
@@ -5649,282 +3999,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/irvin-hall",
           "data_confidence": "high",
           "notes": "Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "triple",
-          "room_type_official": "Triple Room",
-          "occupants": 3,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.75,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.67,
-            "height_ft": 5.58
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 3.75,
-            "depth_ft": 3.0,
-            "height_ft": 8.0
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 3,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 3,
-              "length_ft": 2.0,
-              "width_ft": 3.75,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 3,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 3,
-              "length_ft": 1.67,
-              "width_ft": 3.0,
-              "height_ft": 4.0,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/irvin-hall",
-          "data_confidence": "low",
-          "notes": "Only ceiling height published (9'). Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Quad Room",
-          "occupants": 4,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.75,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.67,
-            "height_ft": 5.58
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 3.75,
-            "depth_ft": 3.0,
-            "height_ft": 8.0
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 2.0,
-              "width_ft": 3.75,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 4,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 4,
-              "length_ft": 1.67,
-              "width_ft": 3.0,
-              "height_ft": 4.0,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/irvin-hall",
-          "data_confidence": "low",
-          "notes": "Only ceiling height published (9'). Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.75,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.67,
-            "height_ft": 5.58
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 3.75,
-            "depth_ft": 3.0,
-            "height_ft": 8.0
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.75,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 3.0,
-              "height_ft": 4.0,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/irvin-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "small double",
-          "room_type_official": "Small Double",
-          "occupants": 2,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.75,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.67,
-            "height_ft": 5.58
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 3.75,
-            "depth_ft": 3.0,
-            "height_ft": 8.0
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "length_ft": 2.0,
-              "width_ft": 3.75,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 2,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 2,
-              "length_ft": 1.67,
-              "width_ft": 3.0,
-              "height_ft": 4.0,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/irvin-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
         }
       ]
     },
@@ -5941,12 +4015,12 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
-            "length_ft": 20.0,
-            "width_ft": 11.0,
+            "length_ft": 20,
+            "width_ft": 11,
             "ceiling_height_ft": 9.17
           },
           "door": {
@@ -6009,84 +4083,19 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/jordan-hall",
-          "data_confidence": "high",
-          "notes": "Published as a generic 'Room' size; this hall offers: Single, Double, Triple. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.83,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.75,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.67,
-            "depth_ft": 2.17,
-            "height_ft": 8.0
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.75,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 3.0,
-              "height_ft": 4.0,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/jordan-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.16.55 AM.png (liveon.psu.edu/university-park/housing/jordan-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 20,
+            "width_ft": 11,
+            "ceiling_height_ft": 9.17
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -6147,78 +4156,9 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/jordan-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "triple",
-          "room_type_official": "Triple",
-          "occupants": 3,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.83,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.75,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.67,
-            "depth_ft": 2.17,
-            "height_ft": 8.0
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 3,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 3,
-              "length_ft": 2.0,
-              "width_ft": 3.75,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 3,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 3,
-              "length_ft": 1.67,
-              "width_ft": 3.0,
-              "height_ft": 4.0,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/jordan-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.16.55 AM.png (liveon.psu.edu/university-park/housing/jordan-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -6384,72 +4324,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/leete-hall",
           "data_confidence": "high",
           "notes": "Unit configurations: Suite 1 Bedroom/1 Person; Suite 2 Bedroom/2 Person; Suite 2 Bedroom/4 Person. Dimensions are for this bedroom; see shared_unit_spaces for the rest of the unit. Published as a generic 'Room' size; this hall offers: Supplemental, Suite 1 Bedroom/1 Person, Suite 2 Bedroom/2 Person, Suite 2 Bedroom/4 Person. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 5.08,
-            "height_ft": 4.5
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 3.0,
-            "depth_ft": 2.08,
-            "height_ft": 6.5
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.0,
-              "width_ft": 3.08,
-              "height_ft": 3.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 1.83,
-              "width_ft": 3.58,
-              "height_ft": 5.0
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.75,
-              "width_ft": 1.5,
-              "height_ft": 2.0
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.75,
-              "width_ft": 2.67,
-              "height_ft": 1.83
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/leete-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
         }
       ]
     },
@@ -6466,12 +4340,12 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
-            "length_ft": 15.0,
-            "width_ft": 12.0,
+            "length_ft": 15,
+            "width_ft": 12,
             "ceiling_height_ft": 7.25
           },
           "door": {
@@ -6537,87 +4411,19 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/lyons-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 9' x 12'. Published as a generic 'Room' size; this hall offers: Single, Double. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.5,
-            "height_ft": 4.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.67,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.75,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.33,
-              "height_ft": 6.33,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.5,
-              "width_ft": 1.5,
-              "height_ft": 2.0,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 2.5,
-              "height_ft": 1.25,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/lyons-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.17.08 AM.png (liveon.psu.edu/university-park/housing/lyons-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15,
+            "width_ft": 12,
+            "ceiling_height_ft": 7.25
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -6681,9 +4487,9 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/lyons-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.17.08 AM.png (liveon.psu.edu/university-park/housing/lyons-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -7039,201 +4845,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/mcelwain-hall",
           "data_confidence": "high",
           "notes": "Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "triple",
-          "room_type_official": "Triple Room",
-          "occupants": 3,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 3.08,
-            "height_ft": 6.92
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.17,
-            "height_ft": 4.67
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.17,
-            "depth_ft": 2.0,
-            "height_ft": 7.33
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 3,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 3,
-              "length_ft": 2.5,
-              "width_ft": 3.5,
-              "height_ft": 4.92
-            },
-            {
-              "type": "dresser",
-              "count": 3,
-              "length_ft": 2.17,
-              "width_ft": 4.92,
-              "height_ft": 7.33
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 3,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/mcelwain-hall",
-          "data_confidence": "low",
-          "notes": "Only ceiling height published (8'). Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Quad Room",
-          "occupants": 4,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 3.08,
-            "height_ft": 6.92
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.17,
-            "height_ft": 4.67
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.17,
-            "depth_ft": 2.0,
-            "height_ft": 7.33
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 2.5,
-              "width_ft": 3.5,
-              "height_ft": 4.92
-            },
-            {
-              "type": "dresser",
-              "count": 4,
-              "length_ft": 2.17,
-              "width_ft": 4.92,
-              "height_ft": 7.33
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 4,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/mcelwain-hall",
-          "data_confidence": "low",
-          "notes": "Only ceiling height published (8'). Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental Room",
-          "occupants": null,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 3.08,
-            "height_ft": 6.92
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.17,
-            "height_ft": 4.67
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.17,
-            "depth_ft": 2.0,
-            "height_ft": 7.33
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 2.5,
-              "width_ft": 3.5,
-              "height_ft": 4.92
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 2.17,
-              "width_ft": 4.92,
-              "height_ft": 7.33
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/mcelwain-hall",
-          "data_confidence": "low",
-          "notes": "Only ceiling height published (8'). Source table notes measurements are approximate."
         }
       ]
     },
@@ -7654,9 +5265,9 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room Furnishing & Dimensions: Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
             "length_ft": 15.17,
             "width_ft": 11.83,
@@ -7710,72 +5321,19 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/mifflin-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 6' x 9'. Published as a generic 'Room' size; this hall offers: Single, Double, Small Double, Supplemental. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/mifflin-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.17.32 AM.png (liveon.psu.edu/university-park/housing/mifflin-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15.17,
+            "width_ft": 11.83,
+            "ceiling_height_ft": 7.42
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -7824,123 +5382,9 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/mifflin-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "small double",
-          "room_type_official": "Small Double",
-          "occupants": 2,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 2,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/mifflin-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/mifflin-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.17.32 AM.png (liveon.psu.edu/university-park/housing/mifflin-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -9939,65 +7383,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/pinchot-hall",
           "data_confidence": "high",
           "notes": "Width varies: 22' to 30' (low end used). Recommended rug size 6' x 9'. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 6.83,
-            "height_ft": 4.33
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.92,
-              "width_ft": 3.25,
-              "height_ft": 3.33,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.42,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 1.92,
-              "height_ft": 1.33,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/pinchot-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
         }
       ]
     },
@@ -10014,9 +7399,9 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room Furnishing & Dimensions: Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
             "length_ft": 15.17,
             "width_ft": 11.83,
@@ -10070,72 +7455,19 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/porter-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 6' x 9'. Published as a generic 'Room' size; this hall offers: Single, Double, Small Double, Supplemental. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/porter-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.18.11 AM.png (liveon.psu.edu/university-park/housing/porter-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15.17,
+            "width_ft": 11.83,
+            "ceiling_height_ft": 7.42
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -10184,123 +7516,9 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/porter-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "small double",
-          "room_type_official": "Small Double",
-          "occupants": 2,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 2,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/porter-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/porter-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.18.11 AM.png (liveon.psu.edu/university-park/housing/porter-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -10317,9 +7535,9 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room Furnishing & Dimensions: Room",
-          "occupants": null,
+          "room_type": "double",
+          "room_type_official": "Double",
+          "occupants": 2,
           "dimensions": {
             "length_ft": 15.17,
             "width_ft": 11.83,
@@ -10341,18 +7559,18 @@
           "built_in_furniture": [
             {
               "type": "bed_frame",
-              "count": 1,
+              "count": 2,
               "movable": true,
               "height_adjustable": true
             },
             {
               "type": "dresser",
-              "count": 1,
+              "count": 2,
               "movable": true
             },
             {
               "type": "desk",
-              "count": 1,
+              "count": 2,
               "movable": true
             },
             {
@@ -10364,75 +7582,18 @@
             },
             {
               "type": "wardrobe",
-              "count": 1,
+              "count": 2,
               "movable": true
             },
             {
               "type": "desk_chair",
-              "count": 1,
+              "count": 2,
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/ritner-hall",
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.18.03 AM.png (liveon.psu.edu/university-park/housing/ritner-hall)",
           "data_confidence": "high",
-          "notes": "Recommended rug size 6' x 9'. Published as a generic 'Room' size; this hall offers: Double. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "double",
-          "room_type_official": "Double",
-          "occupants": 2,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "dresser",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 2,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/ritner-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "notes": null
         }
       ]
     },
@@ -10449,73 +7610,14 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Table 1: Room",
-          "occupants": null,
-          "dimensions": {
-            "length_ft": 15.5,
-            "width_ft": 11.83,
-            "ceiling_height_ft": 9.0
-          },
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 5.17,
-            "height_ft": 5.75
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.92,
-              "width_ft": 3.25,
-              "height_ft": 3.33,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.42,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 1.92,
-              "height_ft": 1.33,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 3.33,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/robinson-hall",
-          "data_confidence": "high",
-          "notes": "Published as a generic 'Room' size; this hall offers: Double, Triple, Supplemental. Source table notes measurements are approximate."
-        },
-        {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15.5,
+            "width_ft": 11.83,
+            "ceiling_height_ft": 9
+          },
           "door": null,
           "window": {
             "wall": null,
@@ -10566,127 +7668,9 @@
               "height_ft": 3.67
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/robinson-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "triple",
-          "room_type_official": "Triple",
-          "occupants": 3,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 5.17,
-            "height_ft": 5.75
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 3,
-              "length_ft": 6.92,
-              "width_ft": 3.25,
-              "height_ft": 3.33,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 3,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.42,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 3,
-              "length_ft": 3.0,
-              "width_ft": 1.92,
-              "height_ft": 1.33,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 3,
-              "length_ft": 3.33,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/robinson-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 5.17,
-            "height_ft": 5.75
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.92,
-              "width_ft": 3.25,
-              "height_ft": 3.33,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.42,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 1.92,
-              "height_ft": 1.33,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 3.33,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/robinson-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.17.39 AM.png (liveon.psu.edu/university-park/housing/robinson-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -10852,72 +7836,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/runkle-hall",
           "data_confidence": "high",
           "notes": "Unit configurations: Suite 1 Bedroom/1 Person; Suite 2 Bedroom/2 Person; Suite 2 Bedroom/4 Person. Dimensions are for this bedroom; see shared_unit_spaces for the rest of the unit. Published as a generic 'Room' size; this hall offers: Supplemental, Suite 1 Bedroom/1 Person, Suite 2 Bedroom/2 Person, Suite 2 Bedroom/4 Person. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 5.08,
-            "height_ft": 4.5
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 3.0,
-            "depth_ft": 2.08,
-            "height_ft": 6.5
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.0,
-              "width_ft": 3.08,
-              "height_ft": 3.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 1.83,
-              "width_ft": 3.58,
-              "height_ft": 5.0
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.75,
-              "width_ft": 1.5,
-              "height_ft": 2.0
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.75,
-              "width_ft": 2.67,
-              "height_ft": 1.83
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/runkle-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
         }
       ]
     },
@@ -10934,9 +7852,9 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room Furnishing & Dimensions: Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
             "length_ft": 15.17,
             "width_ft": 11.83,
@@ -10990,72 +7908,19 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/shulze-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 6' x 9'. Published as a generic 'Room' size; this hall offers: Single, Double, Quad, Supplemental. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/shulze-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.18.39 AM.png (liveon.psu.edu/university-park/housing/shulze-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15.17,
+            "width_ft": 11.83,
+            "ceiling_height_ft": 7.42
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -11104,123 +7969,9 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/shulze-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Quad",
-          "occupants": 4,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 4,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/shulze-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/shulze-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.18.39 AM.png (liveon.psu.edu/university-park/housing/shulze-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -11237,9 +7988,9 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room Furnishing & Dimensions: Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
             "length_ft": 15.17,
             "width_ft": 11.83,
@@ -11293,72 +8044,19 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/shunk-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 6' x 9'. Published as a generic 'Room' size; this hall offers: Single, Double, Small Double, Supplemental. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/shunk-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.18.33 AM.png (liveon.psu.edu/university-park/housing/shunk-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15.17,
+            "width_ft": 11.83,
+            "ceiling_height_ft": 7.42
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -11407,123 +8105,9 @@
               "height_ft": 2.5
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/shunk-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "small double",
-          "room_type_official": "Small Double",
-          "occupants": 2,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 2,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/shunk-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 2.42,
-            "depth_ft": 4.08,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.25,
-              "width_ft": 2.92,
-              "height_ft": 1.0
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 10.92,
-              "width_ft": 2.42,
-              "height_ft": 2.5
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/shunk-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.18.33 AM.png (liveon.psu.edu/university-park/housing/shunk-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -11676,201 +8260,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/simmons-hall",
           "data_confidence": "high",
           "notes": "Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "triple",
-          "room_type_official": "Triple Room",
-          "occupants": 3,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 3.08,
-            "height_ft": 6.92
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.17,
-            "height_ft": 4.67
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.17,
-            "depth_ft": 2.0,
-            "height_ft": 7.33
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 3,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 3,
-              "length_ft": 2.5,
-              "width_ft": 3.5,
-              "height_ft": 4.92
-            },
-            {
-              "type": "dresser",
-              "count": 3,
-              "length_ft": 2.17,
-              "width_ft": 4.92,
-              "height_ft": 7.33
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 3,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/simmons-hall",
-          "data_confidence": "low",
-          "notes": "Only ceiling height published (8'). Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Quad Room",
-          "occupants": 4,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 3.08,
-            "height_ft": 6.92
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.17,
-            "height_ft": 4.67
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.17,
-            "depth_ft": 2.0,
-            "height_ft": 7.33
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 2.5,
-              "width_ft": 3.5,
-              "height_ft": 4.92
-            },
-            {
-              "type": "dresser",
-              "count": 4,
-              "length_ft": 2.17,
-              "width_ft": 4.92,
-              "height_ft": 7.33
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 4,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/simmons-hall",
-          "data_confidence": "low",
-          "notes": "Only ceiling height published (8'). Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental Room",
-          "occupants": null,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 3.08,
-            "height_ft": 6.92
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.17,
-            "height_ft": 4.67
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.17,
-            "depth_ft": 2.0,
-            "height_ft": 7.33
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 2.5,
-              "width_ft": 3.5,
-              "height_ft": 4.92
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 2.17,
-              "width_ft": 4.92,
-              "height_ft": 7.33
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/simmons-hall",
-          "data_confidence": "low",
-          "notes": "Only ceiling height published (8'). Source table notes measurements are approximate."
         }
       ]
     },
@@ -12015,67 +8404,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/snyder-hall",
           "data_confidence": "high",
           "notes": "Recommended rug size 6' x 9'. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Room - Quad",
-          "occupants": 4,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 6.08,
-            "height_ft": 4.42
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.08,
-            "depth_ft": 2.0,
-            "height_ft": 7.42
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 6.17,
-              "width_ft": 2.75,
-              "height_ft": 1.0,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 2.83,
-              "width_ft": 4.75,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 4,
-              "length_ft": 1.58,
-              "width_ft": 1.5,
-              "height_ft": 2.5,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/snyder-hall",
-          "data_confidence": "low",
-          "notes": "Only ceiling height published (7' 5\"). Recommended rug size 6' x 9'. Source table notes measurements are approximate."
         }
       ]
     },
@@ -12216,65 +8544,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/sproul-hall",
           "data_confidence": "high",
           "notes": "Width varies: 22' to 30' (low end used). Recommended rug size 6' x 9'. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 6.83,
-            "height_ft": 4.33
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.92,
-              "width_ft": 3.25,
-              "height_ft": 3.33,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.42,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 1.92,
-              "height_ft": 1.33,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/sproul-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
         }
       ]
     },
@@ -12291,12 +8560,12 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
-            "length_ft": 15.0,
-            "width_ft": 12.0,
+            "length_ft": 15,
+            "width_ft": 12,
             "ceiling_height_ft": 7.25
           },
           "door": {
@@ -12362,87 +8631,19 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/stephens-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 9' x 12'. Published as a generic 'Room' size; this hall offers: Single, Double. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.5,
-            "height_ft": 4.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.08,
-              "width_ft": 3.29,
-              "height_ft": 4.67,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.75,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.33,
-              "height_ft": 6.33,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.5,
-              "width_ft": 1.5,
-              "height_ft": 2.0,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 2.5,
-              "height_ft": 1.25,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/stephens-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.21.56 AM.png (liveon.psu.edu/university-park/housing/stephens-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 15,
+            "width_ft": 12,
+            "ceiling_height_ft": 7.25
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -12506,9 +8707,9 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/stephens-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.21.56 AM.png (liveon.psu.edu/university-park/housing/stephens-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
@@ -13000,11 +9201,11 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room",
-          "occupants": null,
+          "room_type": "double",
+          "room_type_official": "Double",
+          "occupants": 2,
           "dimensions": {
-            "length_ft": 14.0,
+            "length_ft": 14,
             "width_ft": 11.75,
             "ceiling_height_ft": 7.33
           },
@@ -13019,7 +9220,7 @@
           "built_in_furniture": [
             {
               "type": "bed_frame",
-              "count": 1,
+              "count": 2,
               "length_ft": 6.92,
               "width_ft": 3.25,
               "height_ft": 3.33,
@@ -13028,7 +9229,7 @@
             },
             {
               "type": "desk",
-              "count": 1,
+              "count": 2,
               "length_ft": 3.0,
               "width_ft": 2.0,
               "height_ft": 2.42,
@@ -13036,7 +9237,7 @@
             },
             {
               "type": "dresser",
-              "count": 1,
+              "count": 2,
               "length_ft": 3.0,
               "width_ft": 1.92,
               "height_ft": 1.33,
@@ -13044,7 +9245,7 @@
             },
             {
               "type": "wardrobe",
-              "count": 1,
+              "count": 2,
               "length_ft": 3.0,
               "width_ft": 2.0,
               "height_ft": 6.5,
@@ -13058,186 +9259,9 @@
               "height_ft": 3.67
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/tener-hall",
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.22.09 AM.png (liveon.psu.edu/university-park/housing/tener-hall)",
           "data_confidence": "high",
-          "notes": "Width varies: 11'9\" to 12'4\" (low end used). Recommended rug size 6' x 9'. Published as a generic 'Room' size; this hall offers: Double, Quad, Supplemental. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "double",
-          "room_type_official": "Double",
-          "occupants": 2,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 6.83,
-            "height_ft": 4.33
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 6.92,
-              "width_ft": 3.25,
-              "height_ft": 3.33,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.42,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 2,
-              "length_ft": 3.0,
-              "width_ft": 1.92,
-              "height_ft": 1.33,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 2,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/tener-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Quad",
-          "occupants": 4,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 6.83,
-            "height_ft": 4.33
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 6.92,
-              "width_ft": 3.25,
-              "height_ft": 3.33,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.42,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 4,
-              "length_ft": 3.0,
-              "width_ft": 1.92,
-              "height_ft": 1.33,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 4,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/tener-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "supplemental",
-          "room_type_official": "Supplemental",
-          "occupants": null,
-          "dimensions": null,
-          "door": null,
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 6.83,
-            "height_ft": 4.33
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.92,
-              "width_ft": 3.25,
-              "height_ft": 3.33,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 2.42,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 1.92,
-              "height_ft": 1.33,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 3.0,
-              "width_ft": 2.0,
-              "height_ft": 6.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/tener-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published. Supplemental rooms are temporary expanded-occupancy assignments."
+          "notes": "Published width ranges 11'9\"-12'4\"; the lower bound is recorded."
         }
       ]
     },
@@ -13376,122 +9400,6 @@
           "data_source": "https://liveon.psu.edu/university-park/housing/thompson-hall",
           "data_confidence": "high",
           "notes": "Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "triple",
-          "room_type_official": "Triple",
-          "occupants": 3,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.67,
-            "height_ft": 5.17
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.0,
-            "depth_ft": 1.83,
-            "height_ft": 7.0
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 3,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 3,
-              "length_ft": 2.67,
-              "width_ft": 3.67,
-              "height_ft": 2.42
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 3,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/thompson-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "quad",
-          "room_type_official": "Quad",
-          "occupants": 4,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.5,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.67,
-            "height_ft": 5.17
-          },
-          "closet": {
-            "type": "built-in",
-            "width_ft": 4.0,
-            "depth_ft": 1.83,
-            "height_ft": 7.0
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 4,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 4,
-              "length_ft": 2.67,
-              "width_ft": 3.67,
-              "height_ft": 2.42
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 4,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/thompson-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
         }
       ]
     },
@@ -13508,12 +9416,12 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room Furnishing & Dimensions: Room",
-          "occupants": null,
+          "room_type": "single",
+          "room_type_official": "Single",
+          "occupants": 1,
           "dimensions": {
-            "length_ft": 24.0,
-            "width_ft": 12.0,
+            "length_ft": 24,
+            "width_ft": 12,
             "ceiling_height_ft": 7.5
           },
           "door": {
@@ -13579,87 +9487,19 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/watts-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 10' x 12'. Published as a generic 'Room' size; this hall offers: Single, Double, Triple. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "Single",
-          "occupants": 1,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.75,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 3.08,
-            "height_ft": 5.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.75,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 1,
-              "length_ft": 2.0,
-              "width_ft": 3.0,
-              "height_ft": 6.67,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 1,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 3.0,
-              "height_ft": 4.0,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/watts-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.22.20 AM.png (liveon.psu.edu/university-park/housing/watts-hall)",
+          "data_confidence": "medium",
+          "notes": "Hall publishes one uniform room size; single rooms are the same physical room type assigned to one student."
         },
         {
           "room_type": "double",
           "room_type_official": "Double",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 24,
+            "width_ft": 12,
+            "ceiling_height_ft": 7.5
+          },
           "door": {
             "wall": null,
             "position_from_left_ft": null,
@@ -13723,96 +9563,11 @@
               "movable": true
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/watts-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
-        },
-        {
-          "room_type": "triple",
-          "room_type_official": "Triple",
-          "occupants": 3,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.75,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 3.08,
-            "height_ft": 5.0
-          },
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 3,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "height_ft": 3.0,
-              "movable": true,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 3,
-              "length_ft": 2.0,
-              "width_ft": 3.75,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "wardrobe",
-              "count": 3,
-              "length_ft": 2.0,
-              "width_ft": 3.0,
-              "height_ft": 6.67,
-              "movable": true
-            },
-            {
-              "type": "desk_chair",
-              "count": 3,
-              "length_ft": 1.58,
-              "width_ft": 1.58,
-              "height_ft": 2.5,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 3,
-              "length_ft": 1.67,
-              "width_ft": 3.0,
-              "height_ft": 4.0,
-              "movable": true
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/watts-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.22.20 AM.png (liveon.psu.edu/university-park/housing/watts-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
-    },
-    {
-      "dorm_id": "white-course-undergraduate-apartments",
-      "dorm_name": "White Course Apartments",
-      "hall_url": "https://liveon.psu.edu/university-park/housing/white-course-undergraduate-apartments",
-      "housing_area": null,
-      "building_type": null,
-      "population": null,
-      "air_conditioning": false,
-      "bathroom_configuration": null,
-      "recommended_rug_size": null,
-      "shared_unit_spaces": null,
-      "rooms": []
     },
     {
       "dorm_id": "wolf-hall",
@@ -13827,9 +9582,9 @@
       "shared_unit_spaces": null,
       "rooms": [
         {
-          "room_type": "standard_room",
-          "room_type_official": "Room Furnishing & Dimensions: Room",
-          "occupants": null,
+          "room_type": "double",
+          "room_type_official": "Double",
+          "occupants": 2,
           "dimensions": {
             "length_ft": 15.17,
             "width_ft": 11.83,
@@ -13853,52 +9608,6 @@
           "built_in_furniture": [
             {
               "type": "bed_frame",
-              "count": 1,
-              "height_adjustable": true
-            },
-            {
-              "type": "desk",
-              "count": 1
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "length_ft": 1.67,
-              "width_ft": 1.5,
-              "height_ft": 3.67
-            },
-            {
-              "type": "desk_chair",
-              "count": 1
-            }
-          ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/wolf-hall",
-          "data_confidence": "high",
-          "notes": "Recommended rug size 6' x 9'. Published as a generic 'Room' size; this hall offers: Double. Source table notes measurements are approximate."
-        },
-        {
-          "room_type": "double",
-          "room_type_official": "Double",
-          "occupants": 2,
-          "dimensions": null,
-          "door": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 2.17,
-            "height_ft": 7.08
-          },
-          "window": {
-            "wall": null,
-            "position_from_left_ft": null,
-            "width_ft": 4.25,
-            "height_ft": 4.75
-          },
-          "closet": {
-            "type": "built-in"
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
               "count": 2,
               "height_adjustable": true
             },
@@ -13918,9 +9627,9 @@
               "count": 2
             }
           ],
-          "data_source": "https://liveon.psu.edu/university-park/housing/wolf-hall",
-          "data_confidence": "low",
-          "notes": "Room type listed for this hall but dimensions are not published."
+          "data_source": "research/PennState/Screenshot 2026-07-21 at 11.22.29 AM.png (liveon.psu.edu/university-park/housing/wolf-hall)",
+          "data_confidence": "high",
+          "notes": null
         }
       ]
     },
