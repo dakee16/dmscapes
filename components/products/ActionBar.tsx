@@ -1,13 +1,23 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { Product } from "@/lib/types";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
 import { useAuth } from "@/lib/auth-context";
+import { getBrowserClient } from "@/lib/supabase-browser";
 
 type Busy = null | "link" | "save";
+
+/** Current session's access token, so the API can attribute the save to a user. */
+async function accessToken(): Promise<string | null> {
+  const supabase = getBrowserClient();
+  if (!supabase) return null;
+  const { data } = await supabase.auth.getSession();
+  return data.session?.access_token ?? null;
+}
 
 export default function ActionBar({
   products,
@@ -16,10 +26,11 @@ export default function ActionBar({
   products: Product[];
   getPng: () => string | null;
 }) {
-  const { user } = useAuth();
+  const { user, openAuthModal } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const [savePanel, setSavePanel] = useState(false);
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [nameError, setNameError] = useState("");
   const [busy, setBusy] = useState<Busy>(null);
   const [toast, setToast] = useState("");
   const [savedUrl, setSavedUrl] = useState("");
@@ -49,12 +60,18 @@ export default function ActionBar({
     };
   }
 
-  async function saveRoom(): Promise<string | null> {
+  // `designName` set = a named "Save design" (needs the auth token); omitted =
+  // the anonymous "copy share link" flow.
+  async function saveRoom(designName?: string): Promise<string | null> {
     const body = buildSaveRequest();
     if (!body) return null;
+    if (designName) body.name = designName;
+    const headers: Record<string, string> = { "Content-Type": "application/json" };
+    const token = await accessToken();
+    if (token) headers.Authorization = `Bearer ${token}`;
     const res = await fetch("/api/rooms", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers,
       body: JSON.stringify(body),
     });
     if (!res.ok) {
@@ -98,23 +115,28 @@ export default function ActionBar({
     }
   }
 
+  // "Save design": signed-out users sign in first; signed-in users name it.
+  function handleSaveClick() {
+    if (!user) {
+      openAuthModal("save-design");
+      return;
+    }
+    setSavePanel((v) => !v);
+  }
+
   async function handleSave(e: React.FormEvent) {
     e.preventDefault();
+    const trimmed = name.trim();
+    if (!trimmed) {
+      setNameError("Give your design a name to save it.");
+      return;
+    }
     setBusy("save");
     try {
-      // Signed-in users don't need to type an email; use the account's.
-      const saveEmail = user?.email ?? email.trim();
-      if (saveEmail) {
-        await fetch("/api/waitlist", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email: saveEmail, source: "save-design" }),
-        }).catch(() => {});
-      }
-      const url = await saveRoom();
+      const url = await saveRoom(trimmed);
       if (url) {
         setSavedUrl(url);
-        track("share_clicked", { type: "save" });
+        track("design_saved");
       }
     } finally {
       setBusy(null);
@@ -156,41 +178,62 @@ export default function ActionBar({
 
           <button
             type="button"
-            onClick={() => setSavePanel((v) => !v)}
+            onClick={handleSaveClick}
+            aria-expanded={savePanel}
             className="ml-auto cursor-pointer rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
           >
             Save design
           </button>
         </div>
 
-        {savePanel && (
+        {savePanel && user && (
           <div className="mx-auto mt-3 max-w-6xl">
             {savedUrl ? (
-              <p className="rounded-xl border border-ink/10 bg-paper px-4 py-3 text-sm text-ink">
-                Saved!{" "}
-                <a href={savedUrl} className="font-medium text-cobalt underline">
-                  {savedUrl.replace(/^https?:\/\//, "")}
-                </a>
-              </p>
+              <div className="rounded-xl border border-ink/10 bg-paper px-4 py-3 text-sm text-ink">
+                <p>
+                  Saved!{" "}
+                  <a href={savedUrl} className="font-medium text-cobalt underline">
+                    {savedUrl.replace(/^https?:\/\//, "")}
+                  </a>
+                </p>
+                <Link
+                  href="/account"
+                  className="mt-1 inline-block font-medium text-cobalt underline decoration-highlight decoration-2 underline-offset-2"
+                >
+                  See it in your designs →
+                </Link>
+              </div>
             ) : (
-              <form onSubmit={handleSave} className="flex flex-col gap-2 sm:flex-row">
-                {!user && (
+              <>
+                <form onSubmit={handleSave} className="flex flex-col gap-2 sm:flex-row">
                   <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@school.edu (optional, we'll email you the link)"
+                    type="text"
+                    value={name}
+                    autoFocus
+                    maxLength={60}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      setNameError("");
+                    }}
+                    aria-label="Design name"
+                    aria-invalid={Boolean(nameError)}
+                    placeholder="Name this design (e.g. Cozy corner)"
                     className="h-11 flex-1 rounded-xl border border-ink/15 bg-white px-4 text-sm text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
                   />
+                  <button
+                    type="submit"
+                    disabled={busy === "save"}
+                    className="h-11 shrink-0 cursor-pointer rounded-xl bg-cobalt px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
+                  >
+                    {busy === "save" ? "Saving…" : "Save my design"}
+                  </button>
+                </form>
+                {nameError && (
+                  <p className="mt-1.5 text-sm text-[#c2321e]" role="alert">
+                    {nameError}
+                  </p>
                 )}
-                <button
-                  type="submit"
-                  disabled={busy === "save"}
-                  className="h-11 shrink-0 cursor-pointer rounded-xl bg-cobalt px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
-                >
-                  {busy === "save" ? "Saving…" : "Save my design"}
-                </button>
-              </form>
+              </>
             )}
           </div>
         )}

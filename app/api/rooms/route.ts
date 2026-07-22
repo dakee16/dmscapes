@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { nanoid } from "nanoid";
 import { getServiceClient } from "@/lib/supabase-server";
+import { getUserId } from "@/lib/supabase-auth";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
 import type { FurnitureItem, StyleId } from "@/lib/types";
 
@@ -103,6 +104,30 @@ export async function POST(request: Request) {
     );
   }
 
+  // A `name` marks a "Save design" (owned, named); its absence is the anonymous
+  // "copy share link" flow. When present it must be non-empty and belong to a
+  // signed-in user, so the account library never collects orphaned rows.
+  const userId = await getUserId(request);
+  let name: string | null = null;
+  if (body.name !== undefined && body.name !== null) {
+    if (typeof body.name !== "string") {
+      return NextResponse.json({ error: "That name looks off." }, { status: 400 });
+    }
+    name = body.name.trim().slice(0, 80);
+    if (!name) {
+      return NextResponse.json(
+        { error: "Give your design a name to save it." },
+        { status: 400 }
+      );
+    }
+    if (!userId) {
+      return NextResponse.json(
+        { error: "Log in to save a design to your account." },
+        { status: 401 }
+      );
+    }
+  }
+
   const supabase = getServiceClient();
   if (!supabase) {
     return NextResponse.json(
@@ -114,6 +139,8 @@ export async function POST(request: Request) {
   const id = nanoid(10);
   const { error } = await supabase.from("saved_rooms").insert({
     id,
+    user_id: userId,
+    name,
     college_id: cleanId(body.college_id, 80),
     dorm_id: cleanId(body.dorm_id, 80),
     room_dimensions: {

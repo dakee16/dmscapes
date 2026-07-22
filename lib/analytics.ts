@@ -19,6 +19,8 @@ export type AnalyticsEvent =
   | "auth_completed"
   | "username_set"
   | "save_prompt_shown"
+  | "design_saved"
+  | "account_viewed"
   | "purchase_prompt_shown"
   | "purchase_prompt_yes"
   | "purchase_prompt_still_deciding"

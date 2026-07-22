@@ -33,6 +33,9 @@ export interface SaveRoomRequest {
   furniture_positions: FurnitureItem[];
   /** category -> product id (defaults + swaps resolved). */
   selected_products: Partial<Record<ProductCategory, string>>;
+  /** Required for a named "Save design" (needs an authed caller); absent for
+   * the anonymous "copy share link" flow. */
+  name?: string | null;
 }
 export interface SaveRoomResponse {
   /** Short id used in the share URL: /room/[id] */
@@ -43,6 +46,21 @@ export interface SaveRoomResponse {
 export interface SavedRoomResponse extends SaveRoomRequest {
   id: string;
   created_at: string;
+}
+
+// GET /api/account/rooms  (the signed-in user's named designs, newest first)
+export interface AccountRoomSummary {
+  id: string;
+  name: string;
+  college_id: string | null;
+  dorm_id: string | null;
+  style: StyleId;
+  budget: number;
+  room_type: string;
+  created_at: string;
+}
+export interface AccountRoomsResponse {
+  rooms: AccountRoomSummary[];
 }
 
 // POST /api/product-clicks
