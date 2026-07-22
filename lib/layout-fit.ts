@@ -36,7 +36,8 @@ const COLLISION_EXEMPT_TYPES = new Set([
 ]);
 
 function footprint(f: FurnitureItem): { w: number; h: number } {
-  return f.rotation_deg === 90
+  // mod 180: user rotation covers full quarter turns (0/90/180/270)
+  return f.rotation_deg % 180 === 90
     ? { w: f.length_ft, h: f.width_ft }
     : { w: f.width_ft, h: f.length_ft };
 }

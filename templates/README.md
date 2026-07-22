@@ -37,6 +37,9 @@ containment, range overlaps). To change a layout, edit the script and rerun
   axis-aligned footprint** — no center-rotation math needed.
 - `rotation_deg: 0` → `width_ft` spans x, `length_ft` spans y.
   `rotation_deg: 90` → `length_ft` spans x, `width_ft` spans y.
+  Templates author only 0/90; the planner's rotate controls extend this to
+  full quarter turns, so renderers read `rotation_deg % 180` (180/270 have
+  the same axis-aligned footprint as 0/90).
 
 Every template assumes the door at the bottom of the left wall (left end
 wall for corridor rooms) with a 3–3.5 ft clearance zone kept empty, and the

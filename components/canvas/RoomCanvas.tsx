@@ -30,6 +30,8 @@ interface RoomCanvasProps {
   /** Optional closet footprint (ft), rendered as a hatched block when present. */
   closet?: { width_ft: number; depth_ft: number } | null;
   onMove: (id: string, xFt: number, yFt: number) => void;
+  /** Quarter-turn the item (1 = CW, -1 = CCW); wired to the store's rotateItem. */
+  onRotate?: (id: string, dir: 1 | -1) => void;
   onReset: () => void;
   readOnly?: boolean;
 }
@@ -42,8 +44,12 @@ const RED = "#dc2626";
 const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 2.5;
 
+// Matches the zoom buttons; enabled/disabled variants for the rotate pair.
+const ROTATE_BTN =
+  "grid h-8 w-8 place-items-center rounded-lg border border-ink/15 bg-white text-ink shadow-sm transition-colors enabled:cursor-pointer enabled:hover:border-cobalt enabled:hover:text-cobalt disabled:text-ink/25";
+
 const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCanvas(
-  { roomL, roomW, templateId, furniture, closet, onMove, onReset, readOnly = false },
+  { roomL, roomW, templateId, furniture, closet, onMove, onRotate, onReset, readOnly = false },
   ref
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -59,10 +65,28 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   // click-selection visually, without clearing it.
   const hoveredCategory = usePlannerStore((s) => s.hoveredCategory);
   const selectedCategory = usePlannerStore((s) => s.selectedCategory);
+  const selectedItemId = usePlannerStore((s) => s.selectedItemId);
   const setHoveredCategory = usePlannerStore((s) => s.setHoveredCategory);
-  const toggleSelectedCategory = usePlannerStore((s) => s.toggleSelectedCategory);
+  const toggleSelectedItem = usePlannerStore((s) => s.toggleSelectedItem);
   const clearSelectedCategory = usePlannerStore((s) => s.clearSelectedCategory);
   const activeCategory = readOnly ? null : hoveredCategory ?? selectedCategory;
+
+  // Rotate-control target: the pinned canvas item, or — when the pin came
+  // from a product tile — the sole movable item of that category.
+  const rotateTarget = useMemo(() => {
+    if (readOnly) return null;
+    if (selectedItemId) {
+      const f = furniture.find((x) => x.id === selectedItemId);
+      return f && f.movable ? f : null;
+    }
+    if (selectedCategory) {
+      const matches = furniture.filter(
+        (f) => f.movable && furnitureCategory(f) === selectedCategory
+      );
+      return matches.length === 1 ? matches[0] : null;
+    }
+    return null;
+  }, [readOnly, selectedItemId, selectedCategory, furniture]);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -134,9 +158,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
 
   function handleItemClick(f: FurnitureItem) {
     if (readOnly || justDragged()) return;
-    const cat = furnitureCategory(f);
-    if (cat) toggleSelectedCategory(cat);
-    else clearSelectedCategory();
+    // Pin the item itself (rotate target) plus its product category so the
+    // product-list cross-highlight keeps working exactly as before.
+    toggleSelectedItem(f.id, furnitureCategory(f));
   }
 
   useImperativeHandle(ref, () => ({
@@ -316,9 +340,13 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               const draggable = !readOnly && f.movable;
               const labelSize = Math.max(9, Math.min(13, h * 0.35, w * 0.16));
               const showLabel = w >= 34 && h >= 15;
-              const linkable = !readOnly && furnitureCategory(f) !== null;
+              // Every item is clickable in edit mode now (selection is the
+              // rotate target); category-less items just don't cross-light
+              // the product list.
+              const selected = !readOnly && selectedItemId === f.id;
               const highlighted =
-                activeCategory !== null && furnitureCategory(f) === activeCategory;
+                selected ||
+                (activeCategory !== null && furnitureCategory(f) === activeCategory);
               return (
                 <Group
                   key={f.id}
@@ -334,9 +362,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                     if (stage)
                       stage.container().style.cursor = draggable
                         ? "grab"
-                        : linkable
-                          ? "pointer"
-                          : "default";
+                        : readOnly
+                          ? "default"
+                          : "pointer";
                   }}
                   onMouseLeave={(e) => {
                     if (!readOnly) setHoveredCategory(null);
@@ -424,6 +452,57 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
             className="h-8 w-8 cursor-pointer rounded-lg border border-ink/15 bg-white text-base font-semibold text-ink shadow-sm transition-colors hover:border-cobalt hover:text-cobalt"
           >
             −
+          </button>
+        </div>
+      )}
+      {/* Rotate the selected item — same control language as the zoom cluster,
+          anchored to the opposite corner. Stays visible (muted) when nothing
+          is selected so the affordance is discoverable. */}
+      {!readOnly && (
+        <div className="absolute bottom-2 right-2 flex flex-col gap-1">
+          <button
+            type="button"
+            onClick={() => rotateTarget && onRotate?.(rotateTarget.id, -1)}
+            disabled={!rotateTarget}
+            aria-label="Rotate selected item counter-clockwise"
+            title={rotateTarget ? "Rotate 90° counter-clockwise" : "Select an item to rotate"}
+            className={ROTATE_BTN}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="1 4 1 10 7 10" />
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => rotateTarget && onRotate?.(rotateTarget.id, 1)}
+            disabled={!rotateTarget}
+            aria-label="Rotate selected item clockwise"
+            title={rotateTarget ? "Rotate 90° clockwise" : "Select an item to rotate"}
+            className={ROTATE_BTN}
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="23 4 23 10 17 10" />
+              <path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10" />
+            </svg>
           </button>
         </div>
       )}

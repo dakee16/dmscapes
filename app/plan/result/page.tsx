@@ -58,6 +58,7 @@ export default function ResultPage() {
   const swaps = usePlannerStore((s) => s.swaps);
   const initLayout = usePlannerStore((s) => s.initLayout);
   const moveItem = usePlannerStore((s) => s.moveItem);
+  const rotateItem = usePlannerStore((s) => s.rotateItem);
   const resetLayout = usePlannerStore((s) => s.resetLayout);
 
   // sessionStorage-persisted store: wait for rehydration before any decisions.
@@ -165,6 +166,10 @@ export default function ResultPage() {
                 moveItem(id, x, y);
                 track("layout_edited", { item: id });
               }}
+              onRotate={(id, dir) => {
+                rotateItem(id, dir);
+                track("layout_edited", { item: id, action: "rotate" });
+              }}
               onReset={handleReset}
             />
           </div>
@@ -174,8 +179,9 @@ export default function ResultPage() {
             </p>
           )}
           <p className="mt-2 hidden text-xs text-ink-soft lg:block">
-            Drag furniture to rearrange · items snap to a 6-inch grid · red outline means it
-            doesn&apos;t fit there
+            Drag furniture to rearrange · click an item to rotate it with the corner
+            buttons · items snap to a 6-inch grid · red outline means it doesn&apos;t fit
+            there
           </p>
         </section>
 

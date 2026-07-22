@@ -7,8 +7,10 @@ import { CATEGORY_COLORS } from "@/lib/styles";
 const WALL_TYPES = new Set(["string_lights", "wall_decor", "power_strip"]);
 
 function footprint(f: FurnitureItem) {
-  const w = f.rotation_deg === 90 ? f.length_ft : f.width_ft;
-  const h = f.rotation_deg === 90 ? f.width_ft : f.length_ft;
+  // mod 180: user rotation covers full quarter turns (0/90/180/270)
+  const swap = f.rotation_deg % 180 === 90;
+  const w = swap ? f.length_ft : f.width_ft;
+  const h = swap ? f.width_ft : f.length_ft;
   return { x: f.x_ft, y: f.y_ft, w, h };
 }
 

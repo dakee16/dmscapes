@@ -9,10 +9,14 @@ export interface Footprint {
   h: number;
 }
 
-/** Axis-aligned footprint honoring the 0/90 rotation convention. */
+/**
+ * Axis-aligned footprint. Templates author 0/90; the rotate controls extend
+ * that to full quarter turns, so rotation mod 180 decides the axis swap.
+ */
 export function footprint(f: FurnitureItem): Footprint {
-  const w = f.rotation_deg === 90 ? f.length_ft : f.width_ft;
-  const h = f.rotation_deg === 90 ? f.width_ft : f.length_ft;
+  const swap = f.rotation_deg % 180 === 90;
+  const w = swap ? f.length_ft : f.width_ft;
+  const h = swap ? f.width_ft : f.length_ft;
   return { x: f.x_ft, y: f.y_ft, w, h };
 }
 

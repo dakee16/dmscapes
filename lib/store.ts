@@ -25,6 +25,8 @@ export interface PlannerState {
   hoveredCategory: ProductCategory | null;
   /** Category pinned by a click; persists until toggled off or cleared. */
   selectedCategory: ProductCategory | null;
+  /** Specific canvas item pinned by a click — the rotate controls' target. */
+  selectedItemId: string | null;
 
   setCollege: (college: PlannerState["college"]) => void;
   setDorm: (dorm: PlannerState["dorm"]) => void;
@@ -39,9 +41,13 @@ export interface PlannerState {
   swapProduct: (category: ProductCategory, productId: string) => void;
   /** Update a furniture item's footprint (e.g. swapped rug with new dims). */
   resizeItem: (id: string, widthFt: number, lengthFt: number) => void;
+  /** Rotate an item a quarter turn about its center (1 = CW, -1 = CCW). */
+  rotateItem: (id: string, dir: 1 | -1) => void;
   setHoveredCategory: (category: ProductCategory | null) => void;
   /** Click behavior: same category toggles off, a new one replaces it. */
   toggleSelectedCategory: (category: ProductCategory) => void;
+  /** Canvas item click: same item toggles off, a new one replaces the pin. */
+  toggleSelectedItem: (id: string, category: ProductCategory | null) => void;
   /** Clear the pinned selection (e.g. clicking empty canvas). */
   clearSelectedCategory: () => void;
   resetPlanner: () => void;
@@ -58,6 +64,7 @@ const initial = {
   swaps: {},
   hoveredCategory: null,
   selectedCategory: null,
+  selectedItemId: null,
 } satisfies Partial<PlannerState>;
 
 export const usePlannerStore = create<PlannerState>()(
@@ -86,12 +93,46 @@ export const usePlannerStore = create<PlannerState>()(
               f.id === id ? { ...f, width_ft: widthFt, length_ft: lengthFt } : f
             ) ?? null,
         })),
+      rotateItem: (id, dir) =>
+        set((s) => ({
+          furniture:
+            s.furniture?.map((f) => {
+              if (f.id !== id) return f;
+              // Quarter turn about the item's center. Footprint convention
+              // matches components/canvas/geometry.ts: rotation mod 180
+              // decides whether width/length swap axes (keep in sync).
+              const rotation_deg = (f.rotation_deg + dir * 90 + 360) % 360;
+              const swap = f.rotation_deg % 180 === 90;
+              const w = swap ? f.length_ft : f.width_ft;
+              const h = swap ? f.width_ft : f.length_ft;
+              // New footprint is the transpose: keep the center, snap to the
+              // half-foot grid, and clamp inside the room like a drag would.
+              // An item too long to fit rotated pins at 0 and gets
+              // red-flagged by the canvas's out-of-bounds check.
+              const snap = (v: number) => Math.round(v * 2) / 2;
+              let x_ft = snap(f.x_ft + (w - h) / 2);
+              let y_ft = snap(f.y_ft + (h - w) / 2);
+              if (s.room) {
+                x_ft = Math.min(Math.max(x_ft, 0), Math.max(0, s.room.lengthFt - h));
+                y_ft = Math.min(Math.max(y_ft, 0), Math.max(0, s.room.widthFt - w));
+              }
+              return { ...f, rotation_deg, x_ft, y_ft };
+            }) ?? null,
+        })),
       setHoveredCategory: (category) => set({ hoveredCategory: category }),
       toggleSelectedCategory: (category) =>
         set((s) => ({
           selectedCategory: s.selectedCategory === category ? null : category,
+          // A product-tile pin is category-level; drop any stale item pin.
+          selectedItemId: null,
         })),
-      clearSelectedCategory: () => set({ selectedCategory: null }),
+      toggleSelectedItem: (id, category) =>
+        set((s) =>
+          s.selectedItemId === id
+            ? { selectedItemId: null, selectedCategory: null }
+            : { selectedItemId: id, selectedCategory: category }
+        ),
+      clearSelectedCategory: () => set({ selectedCategory: null, selectedItemId: null }),
       resetPlanner: () => set({ ...initial }),
     }),
     {
