@@ -2,14 +2,18 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import AuthPill from "@/components/auth/AuthPill";
 import ProfileButton from "@/components/auth/ProfileButton";
 import RoommateTeaser from "@/components/site/RoommateTeaser";
 
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/colleges", label: "Colleges" },
-  { href: "/plan", label: "Plan my room" },
 ] as const;
+
+// Filled CTA style, shared by the desktop nav button and its mobile counterpart.
+const PLAN_BTN =
+  "rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-cobalt";
 
 export default function Nav() {
   const [teaserOpen, setTeaserOpen] = useState(false);
@@ -23,12 +27,15 @@ export default function Nav() {
             dorm<span className="text-amber">scape</span>
           </span>
         </Link>
-        <div className="hidden items-center gap-7 text-sm font-medium text-ink-soft md:flex">
+        <div className="hidden items-center gap-6 text-sm font-medium text-ink-soft md:flex">
           {LINKS.map((link) => (
             <Link key={link.href} href={link.href} className="transition-colors hover:text-ink">
               {link.label}
             </Link>
           ))}
+          <a href="/plan" className={PLAN_BTN}>
+            Plan my room
+          </a>
           <button
             type="button"
             onClick={() => setTeaserOpen(true)}
@@ -41,12 +48,11 @@ export default function Nav() {
           </button>
         </div>
         <div className="flex shrink-0 items-center gap-2.5">
-          <a
-            href="/plan"
-            className="rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
-          >
+          {/* Mobile-only Plan CTA: the nav button above is desktop-only (md:flex). */}
+          <a href="/plan" className={`${PLAN_BTN} md:hidden`}>
             Plan my room
           </a>
+          <AuthPill />
           <ProfileButton />
         </div>
       </nav>
