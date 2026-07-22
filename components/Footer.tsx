@@ -17,7 +17,7 @@ const COLUMNS: {
   {
     heading: "Company",
     links: [
-      { label: "About", href: "/about", placeholder: true },
+      { label: "About", href: "/about" },
       { label: "Contact", href: "mailto:info@dormscape.us", external: true },
       { label: "Blog", href: "/blog", placeholder: true },
     ],
