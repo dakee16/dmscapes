@@ -20,7 +20,9 @@ export async function GET(request: Request) {
 
   const { data, error } = await supabase
     .from("saved_rooms")
-    .select("id, name, college_id, dorm_id, room_dimensions, style, budget, created_at")
+    .select(
+      "id, name, college_id, dorm_id, room_dimensions, style, budget, created_at, furniture_positions"
+    )
     .eq("user_id", userId)
     .not("name", "is", null)
     .order("created_at", { ascending: false })
@@ -43,6 +45,9 @@ export async function GET(request: Request) {
     budget: Number(r.budget),
     room_type: r.room_dimensions?.room_type ?? "",
     created_at: r.created_at,
+    length_ft: r.room_dimensions?.length_ft ?? null,
+    width_ft: r.room_dimensions?.width_ft ?? null,
+    furniture: r.furniture_positions ?? null,
   }));
 
   return NextResponse.json({ rooms } satisfies AccountRoomsResponse);

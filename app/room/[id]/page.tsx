@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
+import OpenInPlanner from "@/components/room/OpenInPlanner";
 import StaticRoomView from "@/components/room/StaticRoomView";
 import type { SaveRoomRequest } from "@/lib/api-types";
-import { CATEGORY_LABELS, CATEGORY_ORDER, productById, totalFor } from "@/lib/catalog";
+import { CATEGORY_LABELS, CATEGORY_ORDER, cartUrl, productById, totalFor } from "@/lib/catalog";
 import { formatRoomType } from "@/lib/format";
 import { getSchool } from "@/lib/schools";
 import { styleById } from "@/lib/styles";
@@ -87,24 +88,69 @@ export default async function SharedRoomPage(props: {
         </div>
 
         <div className="mt-6 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-xl border border-ink/10 bg-card p-4 sm:p-6">
+          {/* self-start: the card hugs its content instead of stretching to
+              match the list. Clicking it reopens the design in the planner. */}
+          <OpenInPlanner
+            seed={{
+              college_id: room.college_id,
+              dorm_id: room.dorm_id,
+              length_ft: dims.length_ft,
+              width_ft: dims.width_ft,
+              room_type: dims.room_type,
+              occupants: dims.occupants ?? null,
+              style: room.style,
+              budget: room.budget,
+              template_id: room.template_id,
+              furniture: room.furniture_positions,
+              products: room.selected_products ?? null,
+            }}
+            className="group block w-full cursor-pointer self-start rounded-xl border border-ink/10 bg-card p-4 text-left transition-colors hover:border-cobalt sm:p-6"
+          >
             <StaticRoomView
               lengthFt={dims.length_ft}
               widthFt={dims.width_ft}
               furniture={room.furniture_positions}
               isCorridor={room.template_id.startsWith("corridor-")}
             />
-            <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-wide text-ink-soft">
+            <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-wide text-ink-soft transition-colors group-hover:text-cobalt">
               Designed with Dormscape
             </p>
-          </div>
+          </OpenInPlanner>
 
           <div>
-            <div className="flex items-baseline justify-between">
+            <div className="flex items-center justify-between gap-3">
               <h2 className="font-display text-lg font-bold">The shopping list</h2>
-              <p className="font-mono text-sm font-semibold">
-                ${total.toFixed(2)}
-              </p>
+              <div className="flex shrink-0 items-center gap-3">
+                {products.length > 0 && (
+                  <a
+                    href={cartUrl(products)}
+                    target="_blank"
+                    rel="noopener sponsored"
+                    className="flex items-center gap-1.5 rounded-lg bg-cobalt px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-cobalt-deep"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-3.5 w-3.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      aria-hidden="true"
+                    >
+                      <circle cx="9" cy="21" r="1" />
+                      <circle cx="20" cy="21" r="1" />
+                      <path
+                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    Buy all {products.length}
+                  </a>
+                )}
+                <p className="font-mono text-sm font-semibold">
+                  ${total.toFixed(2)}
+                </p>
+              </div>
             </div>
             <ul className="mt-4 space-y-3">
               {products.map((p) => (

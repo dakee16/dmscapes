@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Nav from "@/components/Nav";
+import RoomThumb from "@/components/room/RoomThumb";
 import ShareButton from "@/components/room/ShareButton";
 import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
@@ -39,10 +40,19 @@ function DesignTile({ room }: { room: AccountRoomSummary }) {
         className="absolute inset-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-cobalt"
       />
       <div
-        className="pointer-events-none grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-paper text-2xl"
+        className="pointer-events-none w-20 shrink-0 overflow-hidden rounded-lg border border-ink/10 bg-white p-1 sm:w-24"
         aria-hidden="true"
       >
-        {style.emoji}
+        {room.length_ft && room.width_ft && room.furniture?.length ? (
+          <RoomThumb
+            lengthFt={room.length_ft}
+            widthFt={room.width_ft}
+            furniture={room.furniture}
+            className="h-auto w-full"
+          />
+        ) : (
+          <div className="h-12 rounded bg-paper" />
+        )}
       </div>
       <div className="pointer-events-none min-w-0 flex-1">
         <h3 className="truncate font-display text-base font-bold tracking-tight">

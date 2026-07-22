@@ -21,6 +21,7 @@ export type AnalyticsEvent =
   | "save_prompt_shown"
   | "design_saved"
   | "account_viewed"
+  | "saved_design_opened"
   | "purchase_prompt_shown"
   | "purchase_prompt_yes"
   | "purchase_prompt_still_deciding"

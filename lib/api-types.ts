@@ -58,6 +58,10 @@ export interface AccountRoomSummary {
   budget: number;
   room_type: string;
   created_at: string;
+  /** Room + layout, for the tile's mini layout preview. */
+  length_ft: number | null;
+  width_ft: number | null;
+  furniture: FurnitureItem[] | null;
 }
 export interface AccountRoomsResponse {
   rooms: AccountRoomSummary[];
