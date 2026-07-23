@@ -21,6 +21,10 @@ export const TEMPLATE_NOMINAL_DIMS: Record<string, { length: number; width: numb
   "wide-double-18x13-v1": { length: 18, width: 13 },
   "corridor-double-24x8-v1": { length: 24, width: 8.5 },
   "corridor-single-23x8-v1": { length: 23, width: 8 },
+  "standard-triple-17x16-v1": { length: 17, width: 16 },
+  "long-triple-27x14-v1": { length: 27, width: 14 },
+  "standard-quad-25x17-v1": { length: 25, width: 17 },
+  "long-quad-33x14-v1": { length: 33, width: 14 },
 };
 
 /** Items within this distance of a wall are treated as anchored to it. */

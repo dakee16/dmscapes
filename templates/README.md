@@ -1,9 +1,9 @@
 # Layout Templates
 
 JSON layout templates for the Dormscape room planner, plus the matcher
-that picks the best template for a user's room. Together the ten templates
-cover roughly 75% of standard US dorm rooms, based on the dimension clusters
-in `data/schools/`.
+that picks the best template for a user's room. Together the fourteen
+templates cover the large majority of standard US dorm rooms, based on the
+dimension clusters in `data/schools/`.
 
 ## Files
 
@@ -19,6 +19,10 @@ in `data/schools/`.
 | `wide-double-18x13-v1` | 18 × 13 | 2 | Parallel beds with a wide center walkway |
 | `corridor-double-24x8-v1` | 24 × 8.5 | 2 | Linear: beds end-to-end on one wall, desks opposite, rug divides zones |
 | `corridor-single-23x8-v1` | 23 × 8 | 1 | Bed at one end, desk at the other, storage along the long wall |
+| `standard-triple-17x16-v1` | 17 × 16 | 3 | Two beds head-to-head on the top wall, third along the bottom-left wall |
+| `long-triple-27x14-v1` | 27 × 14 | 3 | Linear: three beds end-to-end on one wall, desks opposite |
+| `standard-quad-25x17-v1` | 25 × 17 | 4 | Two head-to-head pairs, top and bottom walls, desks under the window |
+| `long-quad-33x14-v1` | 33 × 14 | 4 | Linear: four beds end-to-end on one wall, desks opposite |
 
 Dimension ranges (`room_constraints`) never overlap between templates with
 the same occupant count, so any room matches at most one template exactly.
@@ -53,7 +57,8 @@ template's `description`.
 - `built_in: false` — purchasable; carries a kebab-case `product_category`
   (`rug`, `desk-lamp`, `string-lights`, `wall-decor`, `storage-bins`,
   `throw-pillows`, `trash-can`, `power-strip`, `mirror`, `laundry-hamper`).
-- `owner` — `"A"` / `"B"` for per-occupant items, `"shared"` otherwise.
+- `owner` — `"A"` / `"B"` / `"C"` / `"D"` for per-occupant items (as many
+  letters as the template has occupants), `"shared"` otherwise.
 - `color_category` → canvas colors: bed (indigo), desk (emerald), dresser
   (amber), rug (pink), storage (orange), lighting (yellow), decor (purple).
 - Standard footprints: bed 3.17 × 6.67 (Twin XL), desk 3.5 × 2.0,
@@ -84,6 +89,6 @@ const { template, template_id, confidence, exact_match } = matchTemplate({
   closest aspect ratio. Otherwise the nearest template by Euclidean
   distance to its range box, `confidence` in 0.5–0.99 shrinking with
   distance.
-- If no template exists for the occupant count (e.g. triples), the best
-  dimensional match is returned with confidence capped at 0.9 and
+- If no template exists for the occupant count (e.g. quints and up), the
+  best dimensional match is returned with confidence capped at 0.9 and
   `exact_match: false`.

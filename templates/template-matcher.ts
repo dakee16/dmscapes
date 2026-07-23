@@ -27,6 +27,10 @@ import suiteLarge from "./suite-large-25x15-v1.json";
 import wideDouble from "./wide-double-18x13-v1.json";
 import corridorDouble from "./corridor-double-24x8-v1.json";
 import corridorSingle from "./corridor-single-23x8-v1.json";
+import standardTriple from "./standard-triple-17x16-v1.json";
+import longTriple from "./long-triple-27x14-v1.json";
+import standardQuad from "./standard-quad-25x17-v1.json";
+import longQuad from "./long-quad-33x14-v1.json";
 
 export interface FurnitureItem {
   id: string;
@@ -90,6 +94,10 @@ export const ALL_TEMPLATES: LayoutTemplate[] = [
   wideDouble,
   corridorDouble,
   corridorSingle,
+  standardTriple,
+  longTriple,
+  standardQuad,
+  longQuad,
 ];
 
 /** Euclidean distance (ft) from (length, width) to a template's range box. */
