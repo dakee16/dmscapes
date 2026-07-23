@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { nanoid } from "nanoid";
 import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
+import { rateLimit } from "@/lib/rate-limit";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
 import type { FurnitureItem, StyleId } from "@/lib/types";
 
@@ -65,6 +66,14 @@ function sanitizeProducts(input: unknown): Record<string, string> | null {
 }
 
 export async function POST(request: Request) {
+  const rl = rateLimit(request, "rooms", 20, 10 * 60 * 1000);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: "Too many requests. Give it a minute and try again." },
+      { status: 429, headers: { "Retry-After": String(rl.retryAfterSec) } }
+    );
+  }
+
   let body: SaveRoomRequest;
   try {
     body = await request.json();

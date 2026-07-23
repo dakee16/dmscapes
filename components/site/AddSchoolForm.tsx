@@ -21,6 +21,8 @@ export default function AddSchoolForm() {
       length_ft: Number(fd.get("length_ft")) || undefined,
       width_ft: Number(fd.get("width_ft")) || undefined,
       email: String(fd.get("email") ?? "").trim() || undefined,
+      // Honeypot: humans never see the field, so it stays empty for them.
+      website: String(fd.get("website") ?? "") || undefined,
     };
     if (!body.college_name) {
       setError("College name is required.");
@@ -67,6 +69,12 @@ export default function AddSchoolForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-5">
+      {/* Honeypot: visually hidden and skipped by keyboard/screen readers;
+          bots that autofill every field reveal themselves. */}
+      <div aria-hidden="true" className="absolute left-[-9999px] h-px w-px overflow-hidden">
+        <label htmlFor="website">Website</label>
+        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
       <div>
         <label className={label} htmlFor="college_name">
           College name <span className="text-cobalt">*</span>

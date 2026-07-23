@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { getServiceClient } from "@/lib/supabase-server";
+import { getUserId } from "@/lib/supabase-auth";
+import { rateLimit } from "@/lib/rate-limit";
 import type { FeedbackRequest } from "@/lib/api-types";
 
 // Confirmation-page feedback (purchase_feedback table). Rating is required;
@@ -12,6 +14,14 @@ function cleanId(value: unknown, max: number): string | null {
 }
 
 export async function POST(request: Request) {
+  const rl = rateLimit(request, "feedback", 10, 10 * 60 * 1000);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: "Too many requests. Give it a minute and try again." },
+      { status: 429, headers: { "Retry-After": String(rl.retryAfterSec) } }
+    );
+  }
+
   let body: FeedbackRequest;
   try {
     body = await request.json();
@@ -31,7 +41,9 @@ export async function POST(request: Request) {
     );
   }
 
-  const userId = cleanId(body.user_id, 64);
+  // User attribution comes from the verified bearer token, never the body:
+  // a request can't claim to be someone else.
+  const userId = await getUserId(request);
   const surveyId = cleanId(body.purchase_survey_id, 64);
   const text =
     typeof body.feedback_text === "string" && body.feedback_text.trim()

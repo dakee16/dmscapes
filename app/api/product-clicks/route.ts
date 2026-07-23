@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServiceClient } from "@/lib/supabase-server";
+import { rateLimit } from "@/lib/rate-limit";
 import type { ProductClickRequest } from "@/lib/api-types";
 
 // Click logging is best-effort: the buy button must never break because
@@ -12,6 +13,12 @@ function cleanId(value: unknown, max: number): string | null {
 }
 
 export async function POST(request: Request) {
+  // Generous: a shopper legitimately clicks many products in one sitting.
+  const rl = rateLimit(request, "product-clicks", 60, 10 * 60 * 1000);
+  if (!rl.allowed) {
+    return NextResponse.json({ ok: true }, { status: 202 });
+  }
+
   let body: ProductClickRequest;
   try {
     body = await request.json();

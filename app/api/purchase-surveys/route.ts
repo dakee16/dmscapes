@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { getServiceClient } from "@/lib/supabase-server";
+import { getUserId } from "@/lib/supabase-auth";
+import { rateLimit } from "@/lib/rate-limit";
 import type {
   PurchaseSurveyRequest,
   PurchaseSurveyResponse,
@@ -48,6 +50,14 @@ function sanitizeSnapshot(input: unknown): Record<string, unknown> | null {
 }
 
 export async function POST(request: Request) {
+  const rl = rateLimit(request, "purchase-surveys", 10, 10 * 60 * 1000);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: "Too many requests. Give it a minute and try again." },
+      { status: 429, headers: { "Retry-After": String(rl.retryAfterSec) } }
+    );
+  }
+
   let body: PurchaseSurveyRequest;
   try {
     body = await request.json();
@@ -66,10 +76,15 @@ export async function POST(request: Request) {
     );
   }
 
-  const userId = cleanId(body.user_id, 64);
+  // User attribution comes from the verified bearer token, never the body:
+  // a request can't claim to be someone else.
+  const userId = await getUserId(request);
   const savedRoomId = cleanId(body.saved_room_id, 40);
   const cartTotal =
-    typeof body.cart_total === "number" && Number.isFinite(body.cart_total)
+    typeof body.cart_total === "number" &&
+    Number.isFinite(body.cart_total) &&
+    body.cart_total >= 0 &&
+    body.cart_total <= 100000
       ? body.cart_total
       : null;
   const snapshot =

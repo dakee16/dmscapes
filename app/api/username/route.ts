@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServiceClient } from "@/lib/supabase-server";
+import { rateLimit } from "@/lib/rate-limit";
 import type { UsernameCheckResponse } from "@/lib/api-types";
 
 const USERNAME_RE = /^[A-Za-z0-9._]{3,20}$/;
@@ -9,6 +10,15 @@ const USERNAME_RE = /^[A-Za-z0-9._]{3,20}$/;
  * in 0002_profiles.sql is the real gate against races.
  */
 export async function GET(request: Request) {
+  // Debounced typing tops out well under this; blocks bulk enumeration.
+  const rl = rateLimit(request, "username", 40, 60 * 1000);
+  if (!rl.allowed) {
+    return NextResponse.json({ available: null } satisfies UsernameCheckResponse, {
+      status: 429,
+      headers: { "Retry-After": String(rl.retryAfterSec) },
+    });
+  }
+
   const u = new URL(request.url).searchParams.get("u") ?? "";
   if (!USERNAME_RE.test(u)) {
     return NextResponse.json(

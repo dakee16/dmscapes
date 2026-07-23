@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServiceClient } from "@/lib/supabase-server";
+import { rateLimit } from "@/lib/rate-limit";
 import type { RoomSubmissionRequest, RoomSubmissionResponse } from "@/lib/api-types";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -16,11 +17,25 @@ function clampFeet(value: unknown): number | null {
 }
 
 export async function POST(request: Request) {
+  const rl = rateLimit(request, "room-submissions", 5, 10 * 60 * 1000);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: "Too many requests. Give it a minute and try again." },
+      { status: 429, headers: { "Retry-After": String(rl.retryAfterSec) } }
+    );
+  }
+
   let body: RoomSubmissionRequest;
   try {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+  }
+
+  // Honeypot: humans never see this field; bots that fill it get a quiet
+  // success with no insert.
+  if (typeof body.website === "string" && body.website.trim()) {
+    return NextResponse.json({ ok: true } satisfies RoomSubmissionResponse);
   }
 
   const collegeName = cleanText(body.college_name, 120);

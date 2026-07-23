@@ -19,6 +19,7 @@ export default function RequestSchoolModal({
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
+  const honeypotRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (open) {
@@ -60,6 +61,8 @@ export default function RequestSchoolModal({
       college_name: collegeName.trim(),
       email: email.trim() || undefined,
       notes: "requested via planner",
+      // Honeypot: humans never see the field, so it stays empty for them.
+      website: honeypotRef.current?.value || undefined,
     };
     try {
       const res = await fetch("/api/room-submissions", {
@@ -132,6 +135,19 @@ export default function RequestSchoolModal({
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="mt-4 space-y-3" noValidate>
+            {/* Honeypot: visually hidden and skipped by keyboard/screen
+                readers; bots that autofill every field reveal themselves. */}
+            <div aria-hidden="true" className="absolute left-[-9999px] h-px w-px overflow-hidden">
+              <label htmlFor="req-website">Website</label>
+              <input
+                ref={honeypotRef}
+                id="req-website"
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <p className="text-sm leading-relaxed text-ink-soft">
               We&apos;ll collect the floor plans and dimensions. You plan the room.
             </p>

@@ -12,6 +12,9 @@ export interface RoomSubmissionRequest {
   width_ft?: number;
   email?: string;
   notes?: string;
+  /** Honeypot. Hidden from humans; any non-empty value marks the request as
+   * bot traffic and the server quietly discards it. */
+  website?: string;
 }
 export interface RoomSubmissionResponse {
   ok: true;
@@ -79,8 +82,8 @@ export interface ProductClickRequest {
 export type PurchaseSurveyResponse = "yes" | "still_deciding" | "no";
 export interface PurchaseSurveyRequest {
   session_id: string;
-  /** Present only when the user is signed in. */
-  user_id?: string | null;
+  // User attribution is derived server-side from the Authorization bearer
+  // token (signed-in callers attach it); a user_id in the body is ignored.
   response: PurchaseSurveyResponse;
   /** saved_rooms.id when the design was shared/saved this session, else null. */
   saved_room_id?: string | null;
@@ -110,8 +113,8 @@ export interface PurchaseSurveyResponseBody {
 // POST /api/feedback  (confirmation-page rating + optional write-up)
 export interface FeedbackRequest {
   session_id: string;
-  /** Present only when the user is signed in. */
-  user_id?: string | null;
+  // User attribution is derived server-side from the Authorization bearer
+  // token (signed-in callers attach it); a user_id in the body is ignored.
   /** 1-5, required. */
   rating: number;
   /** Optional free-text; null/absent when left empty. */

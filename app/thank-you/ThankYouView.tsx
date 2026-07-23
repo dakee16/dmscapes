@@ -7,7 +7,7 @@ import { REVEAL_EASE } from "@/components/site/Reveal";
 import PanelGrid from "@/components/site/PanelGrid";
 import { track, sessionId } from "@/lib/analytics";
 import { SURVEY_ID_KEY } from "@/lib/purchase-intent";
-import { useAuth } from "@/lib/auth-context";
+import { getBrowserClient } from "@/lib/supabase-browser";
 import type { FeedbackRequest } from "@/lib/api-types";
 
 const SHARE_URL = "https://dormscape.us";
@@ -15,7 +15,6 @@ const SHARE_LABEL = "dormscape.us";
 const STARS = [1, 2, 3, 4, 5] as const;
 
 export default function ThankYouView() {
-  const { user } = useAuth();
   const reduceMotion = useReducedMotion();
 
   const [canShare, setCanShare] = useState(false);
@@ -66,15 +65,20 @@ export default function ThankYouView() {
     setBusy(true);
     const body: FeedbackRequest = {
       session_id: sessionId(),
-      user_id: user?.id ?? null,
       rating,
       feedback_text: text.trim() || null,
       purchase_survey_id: window.sessionStorage.getItem(SURVEY_ID_KEY),
     };
     try {
+      // Attribution: the API reads the signed-in user from this bearer token
+      // (never from the body, which would be spoofable).
+      const headers: Record<string, string> = { "Content-Type": "application/json" };
+      const token = (await getBrowserClient()?.auth.getSession())?.data.session
+        ?.access_token;
+      if (token) headers.Authorization = `Bearer ${token}`;
       await fetch("/api/feedback", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify(body),
         keepalive: true,
       });

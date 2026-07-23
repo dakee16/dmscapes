@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { track, sessionId } from "@/lib/analytics";
 import { BUY_INTENT_EVENT, SURVEY_ID_KEY } from "@/lib/purchase-intent";
 import { usePlannerStore } from "@/lib/store";
-import { useAuth } from "@/lib/auth-context";
+import { getBrowserClient } from "@/lib/supabase-browser";
 import PanelGrid from "@/components/site/PanelGrid";
 import type {
   PurchaseSurveyRequest,
@@ -25,7 +25,6 @@ const AWAY_MS = 3500;
  */
 export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
   const router = useRouter();
-  const { user } = useAuth();
   const college = usePlannerStore((s) => s.college);
   const dorm = usePlannerStore((s) => s.dorm);
   const room = usePlannerStore((s) => s.room);
@@ -43,14 +42,13 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
   const yesBtnRef = useRef<HTMLButtonElement>(null);
 
   // Latest cart total / design for the survey payload, read at fire time.
-  const snapshotRef = useRef({ cartTotal, college, dorm, room, style, budget, userId: user?.id });
-  snapshotRef.current = { cartTotal, college, dorm, room, style, budget, userId: user?.id };
+  const snapshotRef = useRef({ cartTotal, college, dorm, room, style, budget });
+  snapshotRef.current = { cartTotal, college, dorm, room, style, budget };
 
-  const postSurvey = useCallback((response: PurchaseSurveyResponse) => {
+  const postSurvey = useCallback(async (response: PurchaseSurveyResponse) => {
     const s = snapshotRef.current;
     const body: PurchaseSurveyRequest = {
       session_id: sessionId(),
-      user_id: s.userId ?? null,
       response,
       saved_room_id: null,
       room_snapshot: {
@@ -69,9 +67,14 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
       },
       cart_total: Number.isFinite(s.cartTotal) ? s.cartTotal : null,
     };
+    // Attribution: the API reads the signed-in user from this bearer token
+    // (never from the body, which would be spoofable).
+    const headers: Record<string, string> = { "Content-Type": "application/json" };
+    const token = (await getBrowserClient()?.auth.getSession())?.data.session?.access_token;
+    if (token) headers.Authorization = `Bearer ${token}`;
     fetch("/api/purchase-surveys", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers,
       body: JSON.stringify(body),
       keepalive: true,
     })

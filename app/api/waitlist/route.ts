@@ -1,20 +1,35 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { rateLimit } from "@/lib/rate-limit";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export async function POST(request: Request) {
-  let body: { email?: string; source?: string };
+  const rl = rateLimit(request, "waitlist", 5, 10 * 60 * 1000);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: "Too many requests. Give it a minute and try again." },
+      { status: 429, headers: { "Retry-After": String(rl.retryAfterSec) } }
+    );
+  }
+
+  let body: { email?: string; source?: string; website?: string };
   try {
     body = await request.json();
   } catch {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
+  // Honeypot: humans never see this field; bots that fill it get a quiet
+  // success with no insert.
+  if (typeof body.website === "string" && body.website.trim()) {
+    return NextResponse.json({ ok: true });
+  }
+
   const email = body.email?.trim().toLowerCase() ?? "";
   const source = typeof body.source === "string" ? body.source.slice(0, 64) : "unknown";
 
-  if (!EMAIL_RE.test(email)) {
+  if (email.length > 254 || !EMAIL_RE.test(email)) {
     return NextResponse.json(
       { error: "Enter a valid email address." },
       { status: 400 }
