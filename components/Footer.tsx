@@ -25,9 +25,9 @@ const COLUMNS: {
   {
     heading: "Legal",
     links: [
-      { label: "Terms of Service", href: "/terms", placeholder: true },
-      { label: "Privacy Policy", href: "/privacy", placeholder: true },
-      { label: "Cookie Policy", href: "/cookies", placeholder: true },
+      { label: "Terms of Service", href: "/terms" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Cookie Policy", href: "/cookies" },
     ],
   },
 ];
