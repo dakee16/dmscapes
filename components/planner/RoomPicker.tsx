@@ -55,8 +55,21 @@ export default function RoomPicker({
                   )}
                 </span>
                 {dims ? (
-                  <span className="shrink-0 whitespace-nowrap pt-0.5 font-mono text-sm font-medium text-cobalt">
-                    {dims}
+                  // Estimated sizes read muted (vs. cobalt for published) with an
+                  // "est." tag, so the distinction is honest at a glance.
+                  <span className="flex shrink-0 flex-col items-end gap-0.5 pt-0.5">
+                    <span
+                      className={`whitespace-nowrap font-mono text-sm font-medium ${
+                        room.dims_estimated ? "text-ink-soft" : "text-cobalt"
+                      }`}
+                    >
+                      {dims}
+                    </span>
+                    {room.dims_estimated && (
+                      <span className="font-mono text-[9px] font-medium uppercase tracking-wide text-ink-soft/70">
+                        est.
+                      </span>
+                    )}
                   </span>
                 ) : (
                   <span className="shrink-0 whitespace-nowrap rounded-full bg-highlight/40 px-2.5 py-0.5 font-mono text-[11px] font-medium text-ink">

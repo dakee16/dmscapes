@@ -51,6 +51,7 @@ export default function ActionBar({
         width_ft: s.room.widthFt,
         room_type: s.room.type,
         occupants: s.room.occupants,
+        estimated: s.room.dimsEstimated ?? false,
       },
       style: s.style,
       budget: s.budget,

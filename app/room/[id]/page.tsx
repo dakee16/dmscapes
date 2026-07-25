@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import OpenInPlanner from "@/components/room/OpenInPlanner";
 import StaticRoomView from "@/components/room/StaticRoomView";
+import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import type { SaveRoomRequest } from "@/lib/api-types";
 import { CATEGORY_LABELS, CATEGORY_ORDER, cartUrl, productById, totalFor } from "@/lib/catalog";
 import { formatRoomType } from "@/lib/format";
@@ -85,6 +86,7 @@ export default async function SharedRoomPage(props: {
               {dims.length_ft} × {dims.width_ft} ft
             </span>
           </p>
+          {dims.estimated && <EstimatedDimsNote className="basis-full" />}
         </div>
 
         <div className="mt-6 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
@@ -98,6 +100,7 @@ export default async function SharedRoomPage(props: {
               width_ft: dims.width_ft,
               room_type: dims.room_type,
               occupants: dims.occupants ?? null,
+              estimated: dims.estimated ?? false,
               style: room.style,
               budget: room.budget,
               template_id: room.template_id,

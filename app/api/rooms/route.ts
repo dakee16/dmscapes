@@ -157,6 +157,7 @@ export async function POST(request: Request) {
       width_ft: dims.width_ft,
       room_type: roomType,
       occupants,
+      estimated: dims.estimated === true,
     },
     style,
     budget,

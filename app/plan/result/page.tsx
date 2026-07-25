@@ -12,6 +12,7 @@ import { formatDims } from "@/lib/schools";
 import { fitTemplateToRoom } from "@/lib/layout-fit";
 import type RoomCanvasType from "@/components/canvas/RoomCanvas";
 import type { RoomCanvasHandle } from "@/components/canvas/RoomCanvas";
+import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import BudgetTracker from "@/components/products/BudgetTracker";
 import ProductPanel from "@/components/products/ProductPanel";
 import ActionBar from "@/components/products/ActionBar";
@@ -200,6 +201,7 @@ export default function ResultPage() {
             </>
           )}
         </p>
+        {room.dimsEstimated && <EstimatedDimsNote className="mt-1.5" />}
       </header>
 
       <div className="mt-5 grid gap-6 lg:grid-cols-[1.5fr_1fr]">

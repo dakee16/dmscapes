@@ -11,6 +11,7 @@ import { track } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
 import { getSchool, formatDims } from "@/lib/schools";
 import { usePlannerStore } from "@/lib/store";
+import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import type { RoomSummary, SchoolSummary } from "@/lib/types";
 
 let flowTracked = false;
@@ -66,6 +67,7 @@ export default function PlanSelectPage() {
         widthFt: next.width_ft,
         bedSize: next.bed_size ?? "twin_xl",
         source: "catalog",
+        dimsEstimated: next.dims_estimated ?? false,
       });
     } else {
       setRoom(null);
@@ -172,6 +174,9 @@ export default function PlanSelectPage() {
               <span className="whitespace-nowrap font-mono text-sm font-semibold text-cobalt">
                 {confirmDims}
               </span>
+            )}
+            {room.dimsEstimated && (
+              <EstimatedDimsNote className="basis-full" />
             )}
           </div>
         )}

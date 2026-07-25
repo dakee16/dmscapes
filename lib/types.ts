@@ -64,12 +64,21 @@ export interface RoomSummary {
   type: string;
   label: string;
   occupants: number | null;
-  /** null when the school doesn't publish dimensions; user enters them manually. */
+  /**
+   * Room size in feet. Real when the school publishes it; a best-fit estimate
+   * (median of same-type rooms across the catalog) when `dims_estimated` is set;
+   * null only when no same-type room anywhere has dims, so the user types them in.
+   */
   length_ft: number | null;
   width_ft: number | null;
   sqft: number | null;
   /** Provided mattress size; defaults to "twin_xl" in the index builder. */
   bed_size: BedSize;
+  /**
+   * True when length_ft/width_ft are estimated from similar rooms rather than
+   * published by the school (see scripts/build-schools-index.mjs). Absent = real.
+   */
+  dims_estimated?: boolean;
   closet: { width_ft: number; depth_ft: number; wall: string | null } | null;
 }
 
@@ -98,4 +107,9 @@ export interface SelectedRoom {
   bedSize: BedSize;
   /** "catalog" = picked from a school's data, "manual" = typed in. */
   source: "catalog" | "manual";
+  /**
+   * True when lengthFt/widthFt are a same-type estimate rather than a published
+   * or user-entered size, so the UI can label the dimensions honestly.
+   */
+  dimsEstimated?: boolean;
 }

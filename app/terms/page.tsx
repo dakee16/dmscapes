@@ -86,6 +86,27 @@ export default function TermsPage() {
 
           <section className="mt-14">
             <h2 className="font-display text-2xl font-bold tracking-tight">
+              Defective or faulty products
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+              Dormscape doesn&rsquo;t sell, ship, stock, or fulfill any of the products you
+              see here. Every item is sold by the retailer (currently Amazon), and buying
+              it happens entirely on their site, under their terms. We&rsquo;re not
+              responsible for products that arrive defective, damaged, faulty, late, or
+              not as described, and we can&rsquo;t process returns, refunds, replacements,
+              or warranty claims.
+            </p>
+            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+              If something you bought through a link on Dormscape has a problem, resolve it
+              directly with Amazon (or the relevant retailer) through their own return and
+              refund process, which is what governs that purchase. Reaching out to us about
+              a damaged or faulty item won&rsquo;t be able to fix it, because the order was
+              never ours to fulfill.
+            </p>
+          </section>
+
+          <section className="mt-14">
+            <h2 className="font-display text-2xl font-bold tracking-tight">
               College and university data
             </h2>
             <p className="mt-3 text-base leading-relaxed text-ink-soft">

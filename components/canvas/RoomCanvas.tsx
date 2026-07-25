@@ -74,6 +74,12 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const [containerW, setContainerW] = useState(0);
   const [zoom, setZoom] = useState(1);
   const [stagePos, setStagePos] = useState({ x: 0, y: 0 });
+  // Konva draws to <canvas>, so it needs the *real* font family next/font
+  // generated (a hashed name), not the human name — otherwise it silently
+  // falls back to a system font and the labels look off. We read it from the
+  // CSS variable the layout sets (the same --font-plex-mono the static share
+  // view uses for furniture labels) and force a redraw once webfonts finish.
+  const [labelFont, setLabelFont] = useState("ui-monospace, monospace");
   const lastPinch = useRef<number | null>(null);
   // Suppresses the click that Konva fires right after a drag/pan release.
   const dragGuard = useRef(0);
@@ -113,6 +119,24 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     });
     ro.observe(el);
     return () => ro.disconnect();
+  }, []);
+
+  // Resolve the mono label font from the CSS variable, then redraw the layer
+  // once the webfont is actually loaded so text metrics (wrap/ellipsis) are
+  // measured against the real glyphs rather than the fallback.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const family = getComputedStyle(document.documentElement)
+      .getPropertyValue("--font-plex-mono")
+      .trim();
+    if (family) setLabelFont(`${family}, ui-monospace, monospace`);
+    let cancelled = false;
+    document.fonts?.ready.then(() => {
+      if (!cancelled) stageRef.current?.getLayers()[0]?.batchDraw();
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Base scale: fit the room's length across the container width.
@@ -187,7 +211,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       const layer = stage.getLayers()[0];
       const mark = new Konva.Text({
         text: "Designed with Dormscape",
-        fontFamily: "IBM Plex Mono, ui-monospace, monospace",
+        fontFamily: labelFont,
+        fontStyle: "500",
         fontSize: 12,
         fill: INK,
         opacity: 0.75,
@@ -410,7 +435,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                       align="center"
                       verticalAlign="middle"
                       fontSize={labelSize}
-                      fontFamily="Instrument Sans, system-ui, sans-serif"
+                      fontFamily={labelFont}
+                      fontStyle="500"
+                      letterSpacing={0.2}
                       fill="#ffffff"
                       listening={false}
                       wrap="word"

@@ -13,6 +13,8 @@ export interface PlannerSeed {
   width_ft: number;
   room_type: string;
   occupants: number | null;
+  /** Whether the saved size was a same-type estimate rather than published. */
+  estimated?: boolean;
   style: StyleId;
   budget: number;
   template_id: string;
@@ -53,6 +55,7 @@ export default function OpenInPlanner({
         // catalog when possible, else the near-universal dorm default.
         bedSize: roomMeta?.bed_size ?? "twin_xl",
         source: school ? "catalog" : "manual",
+        dimsEstimated: seed.estimated ?? false,
       },
       style: seed.style,
       budget: seed.budget,

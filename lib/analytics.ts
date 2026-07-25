@@ -29,7 +29,9 @@ export type AnalyticsEvent =
   | "share_link_copied"
   | "share_link_shared"
   | "confirmation_page_viewed"
-  | "feedback_submitted";
+  | "feedback_prompt_opened"
+  | "feedback_submitted"
+  | "contact_submitted";
 
 let initialized = false;
 

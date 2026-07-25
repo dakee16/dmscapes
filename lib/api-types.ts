@@ -29,6 +29,8 @@ export interface SaveRoomRequest {
     width_ft: number;
     room_type: string;
     occupants: number;
+    /** True when the size is a same-type estimate rather than published/entered. */
+    estimated?: boolean;
   };
   style: StyleId;
   budget: number;
@@ -123,6 +125,21 @@ export interface FeedbackRequest {
   purchase_survey_id?: string | null;
 }
 export interface FeedbackResponseBody {
+  ok: true;
+}
+
+// POST /api/contact  (Contact Us form → notification email + contact_submissions)
+export interface ContactRequest {
+  /** The sender's own email; required so we can reply. */
+  from_email: string;
+  name?: string;
+  phone?: string;
+  message: string;
+  /** Honeypot. Hidden from humans; any non-empty value marks the request as
+   * bot traffic and the server quietly discards it. */
+  website?: string;
+}
+export interface ContactResponse {
   ok: true;
 }
 

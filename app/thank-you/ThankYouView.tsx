@@ -5,25 +5,17 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { REVEAL_EASE } from "@/components/site/Reveal";
 import PanelGrid from "@/components/site/PanelGrid";
-import { track, sessionId } from "@/lib/analytics";
-import { SURVEY_ID_KEY } from "@/lib/purchase-intent";
-import { getBrowserClient } from "@/lib/supabase-browser";
-import type { FeedbackRequest } from "@/lib/api-types";
+import FeedbackForm from "@/components/products/FeedbackForm";
+import { track } from "@/lib/analytics";
 
 const SHARE_URL = "https://dormscape.us";
 const SHARE_LABEL = "dormscape.us";
-const STARS = [1, 2, 3, 4, 5] as const;
 
 export default function ThankYouView() {
   const reduceMotion = useReducedMotion();
 
   const [canShare, setCanShare] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [rating, setRating] = useState(0);
-  const [hovered, setHovered] = useState(0);
-  const [text, setText] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const viewedRef = useRef(false);
 
   useEffect(() => {
@@ -58,40 +50,6 @@ export default function ThankYouView() {
       // User cancelled the share sheet — nothing to do.
     }
   }
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (rating < 1 || busy) return;
-    setBusy(true);
-    const body: FeedbackRequest = {
-      session_id: sessionId(),
-      rating,
-      feedback_text: text.trim() || null,
-      purchase_survey_id: window.sessionStorage.getItem(SURVEY_ID_KEY),
-    };
-    try {
-      // Attribution: the API reads the signed-in user from this bearer token
-      // (never from the body, which would be spoofable).
-      const headers: Record<string, string> = { "Content-Type": "application/json" };
-      const token = (await getBrowserClient()?.auth.getSession())?.data.session
-        ?.access_token;
-      if (token) headers.Authorization = `Bearer ${token}`;
-      await fetch("/api/feedback", {
-        method: "POST",
-        headers,
-        body: JSON.stringify(body),
-        keepalive: true,
-      });
-    } catch {
-      // Feedback is fire-and-forget; never strand the user on a network blip.
-    }
-    track("feedback_submitted", { rating });
-    setSubmitted(true);
-    setBusy(false);
-  }
-
-  // Star fill previews the hover, falls back to the committed rating.
-  const shown = hovered || rating;
 
   return (
     <div>
@@ -188,82 +146,7 @@ export default function ThankYouView() {
         className="rise mt-4 rounded-2xl border border-ink/10 bg-white p-5 sm:p-6"
         style={{ animationDelay: "200ms" }}
       >
-        {submitted ? (
-          <div className="snap-in flex items-start gap-3" role="status">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-cobalt/10 text-cobalt">
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                aria-hidden="true"
-              >
-                <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </span>
-            <div>
-              <p className="font-display text-lg font-bold tracking-tight">
-                Thanks for the feedback.
-              </p>
-              <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                It goes straight into making the planner better.
-              </p>
-            </div>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} noValidate>
-            <p className="font-display text-lg font-bold tracking-tight">How did we do?</p>
-            <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-              A star rating sends it. Words are welcome, never required.
-            </p>
-            <div
-              className="mt-4 flex items-center gap-1"
-              role="radiogroup"
-              aria-label="Rate Dormscape from 1 to 5 stars"
-              onMouseLeave={() => setHovered(0)}
-            >
-              {STARS.map((n) => (
-                <button
-                  key={n}
-                  type="button"
-                  role="radio"
-                  aria-checked={rating === n}
-                  aria-label={`${n} star${n > 1 ? "s" : ""}`}
-                  onClick={() => setRating(n)}
-                  onMouseEnter={() => setHovered(n)}
-                  className={`cursor-pointer p-0.5 text-3xl leading-none transition-colors ${
-                    n <= shown ? "text-highlight" : "text-ink/15 hover:text-ink/30"
-                  }`}
-                >
-                  ★
-                </button>
-              ))}
-              {rating > 0 && (
-                <span className="ml-2 font-mono text-xs text-ink-soft">{rating}/5</span>
-              )}
-            </div>
-            <textarea
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              maxLength={2000}
-              placeholder="What worked? What was clunky? (optional)"
-              className="mt-4 min-h-24 w-full resize-y rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm leading-relaxed text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
-            />
-            <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
-              <p className="text-xs text-ink-soft" aria-live="polite">
-                {rating < 1 ? "Pick a star rating to submit." : " "}
-              </p>
-              <button
-                type="submit"
-                disabled={rating < 1 || busy}
-                className="h-11 cursor-pointer rounded-xl bg-cobalt px-6 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:bg-ink/15 disabled:text-ink-soft"
-              >
-                {busy ? "Sending…" : "Submit feedback"}
-              </button>
-            </div>
-          </form>
-        )}
+        <FeedbackForm source="thank_you" />
       </div>
 
       <div className="rise mt-8 text-center" style={{ animationDelay: "280ms" }}>

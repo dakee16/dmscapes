@@ -1,9 +1,17 @@
 import Link from "next/link";
+import FeedbackLink from "@/components/site/FeedbackLink";
 
 const COLUMNS: {
   heading: string;
   // placeholder routes 404 on purpose; skip prefetch so they don't spam the console
-  links: { label: string; href: string; external?: boolean; placeholder?: boolean }[];
+  links: {
+    label: string;
+    href?: string;
+    external?: boolean;
+    placeholder?: boolean;
+    // Opens the standalone feedback modal instead of navigating.
+    feedback?: boolean;
+  }[];
 }[] = [
   {
     heading: "Product",
@@ -18,7 +26,8 @@ const COLUMNS: {
     heading: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Contact", href: "mailto:info@dormscape.us", external: true },
+      { label: "Contact", href: "/contact" },
+      { label: "Feedback", feedback: true },
       { label: "Blog", href: "/blog", placeholder: true },
     ],
   },
@@ -70,7 +79,9 @@ export default function Footer() {
               <ul className="mt-4 space-y-2.5">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    {link.external ? (
+                    {link.feedback ? (
+                      <FeedbackLink />
+                    ) : link.external ? (
                       <a
                         href={link.href}
                         className="text-sm font-medium text-ink-soft transition-colors hover:text-ink"
@@ -79,7 +90,7 @@ export default function Footer() {
                       </a>
                     ) : (
                       <Link
-                        href={link.href}
+                        href={link.href ?? "#"}
                         prefetch={link.placeholder ? false : undefined}
                         className="text-sm font-medium text-ink-soft transition-colors hover:text-ink"
                       >
