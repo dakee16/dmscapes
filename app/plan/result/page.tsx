@@ -46,6 +46,8 @@ export default function ResultPage() {
   const router = useRouter();
   const canvasRef = useRef<RoomCanvasHandle>(null);
   const [hydrated, setHydrated] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
+  const [viewportH, setViewportH] = useState(0);
   const trackedRef = useRef(false);
 
   const college = usePlannerStore((s) => s.college);
@@ -111,6 +113,26 @@ export default function ResultPage() {
     }
   }, [hydrated, room, style]);
 
+  // Fullscreen editing: lock the page scroll, size the canvas to the viewport,
+  // and let Escape close it.
+  useEffect(() => {
+    if (!fullscreen) return;
+    const onResize = () => setViewportH(window.innerHeight);
+    onResize();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setFullscreen(false);
+    };
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("resize", onResize);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [fullscreen]);
+
   const products = useMemo(() => {
     if (!style) return [];
     return productsFor(style, tierForBudget(budget), room?.bedSize).map((p) => {
@@ -125,6 +147,34 @@ export default function ResultPage() {
 
   const dims = formatDims(room.lengthFt, room.widthFt);
   const total = totalFor(products);
+
+  // One canvas element, mounted either inline or in the fullscreen overlay.
+  // crossHighlight is off in fullscreen (no product list to light up).
+  const canvas = (
+    <RoomCanvas
+      ref={canvasRef}
+      roomL={room.lengthFt}
+      roomW={room.widthFt}
+      templateId={templateId}
+      furniture={furniture}
+      crossHighlight={!fullscreen}
+      onMove={(id, x, y) => {
+        moveItem(id, x, y);
+        track("layout_edited", { item: id });
+      }}
+      onRotate={(id, dir) => {
+        rotateItem(id, dir);
+        track("layout_edited", { item: id, action: "rotate" });
+      }}
+      onReset={handleReset}
+    />
+  );
+
+  // In fullscreen, cap the canvas width so the whole room fits the viewport
+  // height (the canvas scales to fill its container width). This maximizes the
+  // scale without forcing a scroll. Falls back to full width before measure.
+  const fsMaxWidth =
+    viewportH > 0 ? (room.lengthFt / room.widthFt) * (viewportH - 128) + 56 : undefined;
 
   function handleReset() {
     const t = ALL_TEMPLATES.find((x) => x.template_id === templateId);
@@ -156,22 +206,31 @@ export default function ResultPage() {
         {/* Canvas panel */}
         <section className="rise" style={{ animationDelay: "80ms" }}>
           <div className="overflow-hidden rounded-2xl border border-ink/10 bg-white p-1.5 sm:p-2">
-            <RoomCanvas
-              ref={canvasRef}
-              roomL={room.lengthFt}
-              roomW={room.widthFt}
-              templateId={templateId}
-              furniture={furniture}
-              onMove={(id, x, y) => {
-                moveItem(id, x, y);
-                track("layout_edited", { item: id });
-              }}
-              onRotate={(id, dir) => {
-                rotateItem(id, dir);
-                track("layout_edited", { item: id, action: "rotate" });
-              }}
-              onReset={handleReset}
-            />
+            {!fullscreen && canvas}
+          </div>
+          <div className="mt-2 flex flex-col items-start gap-0.5">
+            <button
+              type="button"
+              onClick={() => setFullscreen(true)}
+              className="flex cursor-pointer items-center gap-1.5 rounded-lg border border-ink/15 bg-white px-2.5 py-1.5 text-xs font-semibold text-ink shadow-sm transition-colors hover:border-cobalt hover:text-cobalt"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-3.5 w-3.5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3" />
+              </svg>
+              Edit in fullscreen
+            </button>
+            <p className="text-[10px] leading-tight text-ink-soft/80">
+              We recommend editing your room in fullscreen for more space.
+            </p>
           </div>
           {match && !match.exact_match && (
             <p className="mt-2 text-xs text-ink-soft">
@@ -228,6 +287,47 @@ export default function ResultPage() {
       <ActionBar products={products} getPng={() => canvasRef.current?.exportPNG() ?? null} />
       <PurchaseSurvey cartTotal={total} />
       <SavePrompt />
+
+      {/* Fullscreen editing overlay: the same canvas, scaled up to the viewport
+          for easier drag-and-drop. Product highlighting is off here. */}
+      {fullscreen && (
+        <div className="fixed inset-0 z-50 flex flex-col bg-paper">
+          <div className="flex items-center justify-between gap-3 border-b border-ink/10 bg-white px-4 py-2.5">
+            <div className="min-w-0">
+              <p className="truncate font-display text-sm font-bold text-ink">
+                {[dorm?.name, roomTypeLabel(room)].filter(Boolean).join(" · ")}
+              </p>
+              <p className="truncate font-mono text-[10px] uppercase tracking-[0.14em] text-ink-soft">
+                Fullscreen editing{dims ? ` · ${dims}` : ""}
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setFullscreen(false)}
+              className="flex shrink-0 cursor-pointer items-center gap-1.5 rounded-lg border border-ink/15 bg-white px-3 py-1.5 text-xs font-semibold text-ink shadow-sm transition-colors hover:border-cobalt hover:text-cobalt"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-3.5 w-3.5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" />
+              </svg>
+              Exit fullscreen
+            </button>
+          </div>
+          <div className="flex flex-1 items-center justify-center overflow-auto p-4">
+            <div className="w-full" style={{ maxWidth: fsMaxWidth }}>
+              {canvas}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

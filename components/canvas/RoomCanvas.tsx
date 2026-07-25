@@ -34,6 +34,12 @@ interface RoomCanvasProps {
   onRotate?: (id: string, dir: 1 | -1) => void;
   onReset: () => void;
   readOnly?: boolean;
+  /**
+   * Cross-highlight furniture with the product list (hover/pin a category to
+   * glow the matching pieces). Off in fullscreen, where there is no product
+   * list to cross-reference; single-item selection for rotating still works.
+   */
+  crossHighlight?: boolean;
 }
 
 const PAD = 28;
@@ -49,7 +55,18 @@ const ROTATE_BTN =
   "grid h-8 w-8 place-items-center rounded-lg border border-ink/15 bg-white text-ink shadow-sm transition-colors enabled:cursor-pointer enabled:hover:border-cobalt enabled:hover:text-cobalt disabled:text-ink/25";
 
 const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCanvas(
-  { roomL, roomW, templateId, furniture, closet, onMove, onRotate, onReset, readOnly = false },
+  {
+    roomL,
+    roomW,
+    templateId,
+    furniture,
+    closet,
+    onMove,
+    onRotate,
+    onReset,
+    readOnly = false,
+    crossHighlight = true,
+  },
   ref
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -69,7 +86,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const setHoveredCategory = usePlannerStore((s) => s.setHoveredCategory);
   const toggleSelectedItem = usePlannerStore((s) => s.toggleSelectedItem);
   const clearSelectedCategory = usePlannerStore((s) => s.clearSelectedCategory);
-  const activeCategory = readOnly ? null : hoveredCategory ?? selectedCategory;
+  const activeCategory = readOnly || !crossHighlight ? null : hoveredCategory ?? selectedCategory;
 
   // Rotate-control target: the pinned canvas item, or — when the pin came
   // from a product tile — the sole movable item of that category.
@@ -357,7 +374,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                   onClick={() => handleItemClick(f)}
                   onTap={() => handleItemClick(f)}
                   onMouseEnter={(e) => {
-                    if (!readOnly) setHoveredCategory(furnitureCategory(f));
+                    if (!readOnly && crossHighlight) setHoveredCategory(furnitureCategory(f));
                     const stage = e.target.getStage();
                     if (stage)
                       stage.container().style.cursor = draggable
@@ -367,7 +384,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                           : "pointer";
                   }}
                   onMouseLeave={(e) => {
-                    if (!readOnly) setHoveredCategory(null);
+                    if (!readOnly && crossHighlight) setHoveredCategory(null);
                     const stage = e.target.getStage();
                     if (stage) stage.container().style.cursor = "default";
                   }}
