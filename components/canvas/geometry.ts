@@ -50,13 +50,38 @@ function centerInside(inner: Footprint, outer: Footprint): boolean {
 }
 
 /**
+ * A rider is a small solid that sits centered inside a larger solid: pillows on
+ * a bed, a lamp on a desk, bins tucked under a bed. Riders tuck onto their host
+ * and are never treated as colliding with anything (they are excluded from the
+ * refit compaction too, in lib/layout-fit.ts), so a bin poking toward a dresser
+ * is not a real overlap.
+ */
+function riderIds(solids: FurnitureItem[]): Set<string> {
+  const riders = new Set<string>();
+  for (const f of solids) {
+    const r = footprint(f);
+    for (const c of solids) {
+      if (c === f) continue;
+      const cr = footprint(c);
+      if (cr.w * cr.h > r.w * r.h && centerInside(r, cr)) {
+        riders.add(f.id);
+        break;
+      }
+    }
+  }
+  return riders;
+}
+
+/**
  * Ids of items that are out of bounds or colliding.
- * Rules: only solid items collide; a pair is exempt when either item's center
- * sits inside the other (pillows on beds, lamps on desks, under-bed bins).
+ * Rules: only solid, non-rider items collide; a pair is additionally exempt
+ * when either center sits inside the other (belt and suspenders for riders).
  */
 export function invalidItems(furniture: FurnitureItem[], roomL: number, roomW: number): Set<string> {
   const bad = new Set<string>();
-  const solids = furniture.filter((f) => layerOf(f) === "solid");
+  const allSolids = furniture.filter((f) => layerOf(f) === "solid");
+  const riders = riderIds(allSolids);
+  const solids = allSolids.filter((f) => !riders.has(f.id));
 
   for (const f of furniture) {
     const fp = footprint(f);

@@ -1,7 +1,7 @@
 # Layout Templates
 
 JSON layout templates for the Dormscape room planner, plus the matcher
-that picks the best template for a user's room. Together the fourteen
+that picks the best template for a user's room. Together the sixteen
 templates cover the large majority of standard US dorm rooms, based on the
 dimension clusters in `data/schools/`.
 
@@ -19,8 +19,10 @@ dimension clusters in `data/schools/`.
 | `wide-double-18x13-v1` | 18 × 13 | 2 | Parallel beds with a wide center walkway |
 | `corridor-double-24x8-v1` | 24 × 8.5 | 2 | Linear: beds end-to-end on one wall, desks opposite, rug divides zones |
 | `corridor-single-23x8-v1` | 23 × 8 | 1 | Bed at one end, desk at the other, storage along the long wall |
+| `compact-triple-bunked-13x12-v1` | 13 × 12 | 3 | Tight triple: A/B bunked, third bed on a perpendicular wall (L-shape) |
 | `standard-triple-17x16-v1` | 17 × 16 | 3 | Two beds head-to-head on the top wall, third along the bottom-left wall |
-| `long-triple-27x14-v1` | 27 × 14 | 3 | Linear: three beds end-to-end on one wall, desks opposite |
+| `long-triple-27x14-v1` | 27 × 14 | 3 | Linear: three beds end-to-end on one wall, desks and dressers opposite |
+| `compact-quad-bunked-15x13-v1` | 15 × 13 | 4 | Tight quad: two bunk stacks on perpendicular walls (L-shape) |
 | `standard-quad-25x17-v1` | 25 × 17 | 4 | Two head-to-head pairs, top and bottom walls, desks under the window |
 | `long-quad-33x14-v1` | 33 × 14 | 4 | Linear: four beds end-to-end on one wall, desks opposite |
 

@@ -21,8 +21,10 @@ export const TEMPLATE_NOMINAL_DIMS: Record<string, { length: number; width: numb
   "wide-double-18x13-v1": { length: 18, width: 13 },
   "corridor-double-24x8-v1": { length: 24, width: 8.5 },
   "corridor-single-23x8-v1": { length: 23, width: 8 },
+  "compact-triple-bunked-13x12-v1": { length: 13, width: 12 },
   "standard-triple-17x16-v1": { length: 17, width: 16 },
   "long-triple-27x14-v1": { length: 27, width: 14 },
+  "compact-quad-bunked-15x13-v1": { length: 15, width: 13 },
   "standard-quad-25x17-v1": { length: 25, width: 17 },
   "long-quad-33x14-v1": { length: 33, width: 14 },
 };
@@ -143,34 +145,40 @@ function compactAxis(solids: FurnitureItem[], axis: "x" | "y", extent: number): 
   });
 }
 
-function separateOverlaps(items: FurnitureItem[], roomL: number, roomW: number): void {
-  const all = items.filter((f) => !COLLISION_EXEMPT_TYPES.has(f.type));
+/**
+ * A stacked companion (pillows on a bed, bins under it, a lamp on a desk) and
+ * the offset from its carrier's origin in the authored layout. Footprints never
+ * resize, so replaying that exact offset onto the carrier's refitted position
+ * keeps the rider glued to its carrier instead of being fitted independently
+ * (which drifted it off the bed, sometimes clear out of the room).
+ */
+interface Rider {
+  id: string;
+  carrierId: string;
+  dx: number;
+  dy: number;
+}
 
-  // stacked companions (pillows on beds, bins under beds, lamps on desks)
-  // ride with their carrier instead of joining the compaction
-  const riders = new Map<FurnitureItem, { carrier: FurnitureItem; x: number; y: number }>();
-  for (const f of all) {
+/**
+ * In the authored layout, find each rider (smaller item centered inside a
+ * larger solid) and record its offset from that carrier. Detection runs on the
+ * ORIGINAL coordinates so the offset is the true authored one.
+ */
+function findRiders(furniture: FurnitureItem[]): Map<string, Rider> {
+  const riders = new Map<string, Rider>();
+  const solids = furniture.filter((f) => !COLLISION_EXEMPT_TYPES.has(f.type));
+  for (const f of solids) {
     const r = rectOf(f);
-    for (const c of all) {
-      if (c === f || riders.has(c)) continue;
+    for (const c of solids) {
+      if (c === f) continue;
       const cr = rectOf(c);
       if (cr.w * cr.h > r.w * r.h && centerInside(r, cr)) {
-        riders.set(f, { carrier: c, x: c.x_ft, y: c.y_ft });
+        riders.set(f.id, { id: f.id, carrierId: c.id, dx: f.x_ft - c.x_ft, dy: f.y_ft - c.y_ft });
         break;
       }
     }
   }
-
-  const solids = all.filter((f) => !riders.has(f));
-  // x/y interact when a pair overlaps in both axes; a second y pass settles it
-  compactAxis(solids, "y", roomW);
-  compactAxis(solids, "x", roomL);
-  compactAxis(solids, "y", roomW);
-
-  for (const [f, { carrier, x, y }] of riders) {
-    f.x_ft = Math.round((f.x_ft + carrier.x_ft - x) * 100) / 100;
-    f.y_ft = Math.round((f.y_ft + carrier.y_ft - y) * 100) / 100;
-  }
+  return riders;
 }
 
 export function fitTemplateToRoom(
@@ -185,6 +193,8 @@ export function fitTemplateToRoom(
   const sameW = Math.abs(nominal.width - roomWidthFt) < 0.01;
   if (sameL && sameW) return furniture.map((f) => ({ ...f }));
 
+  const riders = findRiders(furniture);
+
   const fitted = furniture.map((f) => {
     const { w, h } = footprint(f);
     return {
@@ -193,11 +203,37 @@ export function fitTemplateToRoom(
       y_ft: fitAxis(f.y_ft, h, nominal.width, roomWidthFt),
     };
   });
-  // compaction only helps when the template plausibly fits; below ~60% of
+  const byId = new Map(fitted.map((f) => [f.id, f]));
+
+  // Compaction only helps when the template plausibly fits; below ~60% of
   // nominal the match is hopeless and shoving furniture just churns the
-  // layout, so keep the proportional fit and let the canvas flag it
+  // layout, so keep the proportional fit and let the canvas flag it. Riders
+  // are excluded here and reseated on their carriers afterward.
   if (roomLengthFt >= 0.6 * nominal.length && roomWidthFt >= 0.6 * nominal.width) {
-    separateOverlaps(fitted, roomLengthFt, roomWidthFt);
+    const solids = fitted.filter(
+      (f) => !COLLISION_EXEMPT_TYPES.has(f.type) && !riders.has(f.id)
+    );
+    // x and y interact: separating on one axis can reopen an overlap on the
+    // other, so alternate passes until the layout stops changing (or a small
+    // cap). Tight rooms need several rounds to unwind a 2D interlock; roomy
+    // ones converge in one.
+    for (let pass = 0; pass < 6; pass++) {
+      const before = solids.map((f) => `${f.x_ft},${f.y_ft}`).join("|");
+      compactAxis(solids, "y", roomWidthFt);
+      compactAxis(solids, "x", roomLengthFt);
+      if (solids.map((f) => `${f.x_ft},${f.y_ft}`).join("|") === before) break;
+    }
+  }
+
+  // Reseat riders rigidly on their (possibly moved) carrier, clamped so a rider
+  // can never end up out of bounds even when the room is smaller than nominal.
+  for (const rider of riders.values()) {
+    const f = byId.get(rider.id);
+    const carrier = byId.get(rider.carrierId);
+    if (!f || !carrier) continue;
+    const { w, h } = footprint(f);
+    f.x_ft = Math.round(Math.max(0, Math.min(carrier.x_ft + rider.dx, roomLengthFt - w)) * 100) / 100;
+    f.y_ft = Math.round(Math.max(0, Math.min(carrier.y_ft + rider.dy, roomWidthFt - h)) * 100) / 100;
   }
   return fitted;
 }

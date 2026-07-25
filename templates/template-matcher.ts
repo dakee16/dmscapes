@@ -27,8 +27,10 @@ import suiteLarge from "./suite-large-25x15-v1.json";
 import wideDouble from "./wide-double-18x13-v1.json";
 import corridorDouble from "./corridor-double-24x8-v1.json";
 import corridorSingle from "./corridor-single-23x8-v1.json";
+import compactTripleBunked from "./compact-triple-bunked-13x12-v1.json";
 import standardTriple from "./standard-triple-17x16-v1.json";
 import longTriple from "./long-triple-27x14-v1.json";
+import compactQuadBunked from "./compact-quad-bunked-15x13-v1.json";
 import standardQuad from "./standard-quad-25x17-v1.json";
 import longQuad from "./long-quad-33x14-v1.json";
 
@@ -94,8 +96,10 @@ export const ALL_TEMPLATES: LayoutTemplate[] = [
   wideDouble,
   corridorDouble,
   corridorSingle,
+  compactTripleBunked,
   standardTriple,
   longTriple,
+  compactQuadBunked,
   standardQuad,
   longQuad,
 ];
