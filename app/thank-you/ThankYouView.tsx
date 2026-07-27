@@ -47,7 +47,7 @@ export default function ThankYouView() {
       });
       track("share_link_shared");
     } catch {
-      // User cancelled the share sheet — nothing to do.
+      // User cancelled the share sheet, nothing to do.
     }
   }
 
@@ -83,7 +83,7 @@ export default function ThankYouView() {
         </p>
       </div>
 
-      {/* Share panel — the same cobalt CTA language as the rest of the site */}
+      {/* Share panel, the same cobalt CTA language as the rest of the site */}
       <div
         className="rise relative mt-10 overflow-hidden rounded-2xl bg-cobalt p-5 sm:p-6"
         style={{ animationDelay: "120ms" }}

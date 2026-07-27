@@ -1,6 +1,6 @@
 {
   "template_id": "corridor-double-24x8-v1",
-  "name": "Corridor Double — Linear Layout",
+  "name": "Corridor Double: Linear Layout",
   "description": "Long, narrow room (aspect > 2.7): beds end-to-end along the top wall, dressers continuing the same wall, desks on the opposite wall toward the window end, runner rug as the zone divider. Authored for a 24 x 8.5 ft room; assumes the door on the left end wall and the window on the right end wall.",
   "room_constraints": {
     "min_length_ft": 22,

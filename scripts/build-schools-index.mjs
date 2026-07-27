@@ -1,5 +1,5 @@
 // Condenses data/schools/*.json (3–14k lines each, full sourcing detail) into
-// lib/schools-index.json — the compact index the planner UI actually ships.
+// lib/schools-index.json, the compact index the planner UI actually ships.
 // Rerun after editing school data: node scripts/build-schools-index.mjs
 import fs from "node:fs";
 import path from "node:path";
@@ -24,7 +24,7 @@ const sources = fs
 //
 // Matching is tiered, most precise first, because room_type slugs are spelled
 // inconsistently across schools ("double" vs "traditional_double" vs
-// "premium_single") — an exact-slug-only match left ~228 rooms unestimated:
+// "premium_single"), an exact-slug-only match left ~228 rooms unestimated:
 //   1. exact room_type slug          (a "double" learns from published doubles)
 //   2. category + occupancy bucket    ("apartment:1" so a studio isn't sized
 //                                       like a roomy traditional single)

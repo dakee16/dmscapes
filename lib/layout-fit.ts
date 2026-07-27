@@ -85,7 +85,7 @@ function centerInside(inner: Rect, outer: Rect): boolean {
 
 /**
  * Wall-anchored and proportionally-placed items shift at different rates when
- * the room shrinks, which can open overlaps between former neighbors — often
+ * the room shrinks, which can open overlaps between former neighbors, often
  * whole rows that must compress against both walls at once. Per axis, build
  * the ordering constraints between items whose cross-axis intervals overlap
  * (skipping pairs that are stacked or better separated on the other axis) and

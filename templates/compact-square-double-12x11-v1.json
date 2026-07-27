@@ -1,6 +1,6 @@
 {
   "template_id": "compact-square-double-12x11-v1",
-  "name": "Compact Square Double — L-Shaped Beds",
+  "name": "Compact Square Double: L-Shaped Beds",
   "description": "L-shaped bed arrangement: Bed A along the top wall, Bed B along the right wall, desks tucked into the remaining corners, dressers by the door. Authored for a 12 x 11 ft room; assumes the door at the bottom of the left wall and the window high on the right wall.",
   "room_constraints": {
     "min_length_ft": 11.5,

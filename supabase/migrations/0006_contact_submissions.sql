@@ -3,7 +3,7 @@
 --
 -- Durable record of every message sent through the contact form, kept
 -- independently of whether the transactional email (Resend) actually delivered
--- — so nothing is lost if email is unconfigured or the provider hiccups.
+--, so nothing is lost if email is unconfigured or the provider hiccups.
 --
 -- Same security model as the other tables (0001/0003/0004): RLS enabled, NO
 -- public policies. Only /api/contact writes here, using the service-role key.

@@ -1,6 +1,6 @@
 {
   "template_id": "compact-quad-bunked-15x13-v1",
-  "name": "Compact Quad — Two Bunk Stacks, L-Shape",
+  "name": "Compact Quad: Two Bunk Stacks, L-Shape",
   "description": "Tight quad: bunk A/B on the top wall and bunk C/D on the right wall (an L). Desks A and B line the left wall, desks C and D the bottom wall clear of the door; each occupant keeps their own dresser. Authored for a 15 x 13 ft room; assumes the door at the bottom of the left wall and the window on the right wall.",
   "room_constraints": {
     "min_length_ft": 11,

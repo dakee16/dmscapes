@@ -1,6 +1,6 @@
 {
   "template_id": "corridor-single-23x8-v1",
-  "name": "Corridor Single — End-to-End Layout",
+  "name": "Corridor Single: End-to-End Layout",
   "description": "Long, narrow single: bed across the far (window) end, desk at the entry end, dresser, bins, and hamper lined along the top wall, runner rug down the middle. Authored for a 23 x 8 ft room; assumes the door on the left end wall and the window on the right end wall behind the bed.",
   "room_constraints": {
     "min_length_ft": 21,

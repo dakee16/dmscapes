@@ -249,7 +249,7 @@ export default function ResultPage() {
         {/* Products panel */}
         <section className="rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
           <BudgetTracker total={total} budget={budget} />
-          {/* Prominent "Buy all" — always visible above the first category, in
+          {/* Prominent "Buy all", always visible above the first category, in
               sync with the tracker above (same product total). */}
           <a
             href={cartUrl(products)}

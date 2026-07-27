@@ -1,6 +1,6 @@
 {
   "template_id": "long-quad-33x14-v1",
-  "name": "Long Quad — Four Beds Along the Top Wall",
+  "name": "Long Quad: Four Beds Along the Top Wall",
   "description": "Long, narrower room: all four beds end-to-end along the top wall, dressers continuing the same run toward the window end. Desks line the bottom wall in pairs. Authored for a 33 x 14 ft room; assumes the door at the bottom-left and the window on the right end wall.",
   "room_constraints": {
     "min_length_ft": 28,

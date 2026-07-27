@@ -1,6 +1,6 @@
 {
   "template_id": "large-square-double-16x15-v1",
-  "name": "Large Square Double — Open Center",
+  "name": "Large Square Double: Open Center",
   "description": "Spacious near-square double: parallel beds on the top and bottom walls, desks under the window, large open rug in the middle with extra wall decor. Authored for a 16 x 15 ft room; assumes the door at the bottom of the left wall and the window on the right wall.",
   "room_constraints": {
     "min_length_ft": 15,

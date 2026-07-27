@@ -60,7 +60,7 @@ export default function ContactForm() {
   }
 
   if (sent) {
-    // Success state — the same cobalt check + reassurance language the
+    // Success state, the same cobalt check + reassurance language the
     // confirmation page uses.
     return (
       <div className="snap-in rounded-2xl border border-ink/10 bg-white p-6 sm:p-8">

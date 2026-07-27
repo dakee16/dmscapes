@@ -1,6 +1,6 @@
 {
   "template_id": "standard-quad-25x17-v1",
-  "name": "Standard Quad — Two Pairs, Individual Dressers",
+  "name": "Standard Quad: Two Pairs, Individual Dressers",
   "description": "Four beds as two head-to-head pairs: A/B along the top wall, C/D along the bottom wall. Each occupant gets their own dresser, A/C in the gap between the pairs and B/D past the far end of their bed. Desks for all four line the right wall under the window, paired stacked front-to-back. Authored for a 25 x 17 ft room; assumes the door at the bottom of the left wall and the window on the right wall.",
   "room_constraints": {
     "min_length_ft": 20,

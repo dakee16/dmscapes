@@ -1,6 +1,6 @@
 {
   "template_id": "long-triple-27x14-v1",
-  "name": "Long Triple — Three Beds Along the Top Wall",
+  "name": "Long Triple: Three Beds Along the Top Wall",
   "description": "Long room (aspect ~1.9): all three beds end-to-end along the top wall. Desks and dressers share the bottom wall (desks left of center, dressers toward the window end) so the bed wall never has to carry more than three bed-lengths, and a runner rug divides the two zones. Authored for a 27 x 14 ft room; assumes the door on the left end wall and the window on the right end wall.",
   "room_constraints": {
     "min_length_ft": 21,

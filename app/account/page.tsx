@@ -239,7 +239,7 @@ export default function AccountPage() {
               )}
             </div>
 
-            {/* Logout — deliberately red/destructive, set apart from everything else */}
+            {/* Logout, deliberately red/destructive, set apart from everything else */}
             <div className="mt-12 flex justify-end border-t border-ink/8 pt-6">
               <button
                 type="button"

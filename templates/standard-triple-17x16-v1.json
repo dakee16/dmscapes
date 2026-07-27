@@ -1,6 +1,6 @@
 {
   "template_id": "standard-triple-17x16-v1",
-  "name": "Standard Triple — Two Walls, Third Bed Along the Bottom",
+  "name": "Standard Triple: Two Walls, Third Bed Along the Bottom",
   "description": "Three beds: A and B head-to-head along the top wall with a dresser between them, C along the bottom-right wall clear of the door swing. Desks for A and B stack under the window on the right wall; Desk C sits against the bottom wall left of center. Authored for a 17 x 16 ft room; assumes the door at the bottom of the left wall and the window on the right wall.",
   "room_constraints": {
     "min_length_ft": 14.5,

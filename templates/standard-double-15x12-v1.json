@@ -1,6 +1,6 @@
 {
   "template_id": "standard-double-15x12-v1",
-  "name": "Standard Double — Parallel Beds",
+  "name": "Standard Double: Parallel Beds",
   "description": "Two beds on opposite long walls, both desks under the window on the right wall, rug in the center walkway. Authored for a 15 x 12 ft room; assumes the door at the bottom of the left wall and the window centered on the right wall.",
   "room_constraints": {
     "min_length_ft": 14,

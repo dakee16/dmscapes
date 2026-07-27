@@ -4,8 +4,8 @@
 // paid infrastructure. Known limitation: on serverless hosting each warm
 // instance keeps its own counters (a cold start resets them, and parallel
 // instances don't share state), so the enforced ceiling is per-instance, not
-// global. That still stops the realistic abuse case here — one bot hammering
-// one endpoint — because repeated requests from the same client land on the
+// global. That still stops the realistic abuse case here, one bot hammering
+// one endpoint, because repeated requests from the same client land on the
 // same warm instance far more often than not. If traffic ever justifies a
 // hard global limit, swap the Map for Upstash Redis / Vercel KV behind the
 // same function signature.

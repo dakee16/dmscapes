@@ -1,5 +1,5 @@
 // Branded loading state: the Dormscape logo mark gently "breathing" (a soft
-// scale + opacity loop defined in globals.css). Restrained on purpose — no
+// scale + opacity loop defined in globals.css). Restrained on purpose, no
 // spin, no bounce. Pure CSS on transform/opacity, so it adds no JavaScript to
 // the wait and stays compositor-cheap; under prefers-reduced-motion it holds a
 // static logo instead. No hooks, so it renders in any tree.

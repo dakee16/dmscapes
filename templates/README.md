@@ -40,7 +40,7 @@ containment, range overlaps). To change a layout, edit the script and rerun
 - `x` runs along the room's **length** (left → right), `y` along its
   **width** (top → bottom). Rooms are authored length ≥ width.
 - `(x_ft, y_ft)` is always the **top-left corner of the item's
-  axis-aligned footprint** — no center-rotation math needed.
+  axis-aligned footprint**, no center-rotation math needed.
 - `rotation_deg: 0` → `width_ft` spans x, `length_ft` spans y.
   `rotation_deg: 90` → `length_ft` spans x, `width_ft` spans y.
   Templates author only 0/90; the planner's rotate controls extend this to
@@ -49,17 +49,17 @@ containment, range overlaps). To change a layout, edit the script and rerun
 
 Every template assumes the door at the bottom of the left wall (left end
 wall for corridor rooms) with a 3–3.5 ft clearance zone kept empty, and the
-window on the right wall (long wall for corridor rooms) — noted in each
+window on the right wall (long wall for corridor rooms), noted in each
 template's `description`.
 
 ## Furniture fields
 
-- `built_in: true` — school-provided (bed, desk, desk chair, dresser).
+- `built_in: true`, school-provided (bed, desk, desk chair, dresser).
   No `product_category`.
-- `built_in: false` — purchasable; carries a kebab-case `product_category`
+- `built_in: false`, purchasable; carries a kebab-case `product_category`
   (`rug`, `desk-lamp`, `string-lights`, `wall-decor`, `storage-bins`,
   `throw-pillows`, `trash-can`, `power-strip`, `mirror`, `laundry-hamper`).
-- `owner` — `"A"` / `"B"` / `"C"` / `"D"` for per-occupant items (as many
+- `owner`, `"A"` / `"B"` / `"C"` / `"D"` for per-occupant items (as many
   letters as the template has occupants), `"shared"` otherwise.
 - `color_category` → canvas colors: bed (indigo), desk (emerald), dresser
   (amber), rug (pink), storage (orange), lighting (yellow), decor (purple).

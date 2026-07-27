@@ -74,7 +74,7 @@ export async function POST(request: Request) {
     if (error) {
       console.error("contact_submissions insert failed:", error.message);
       // Only fail the request if we have neither a durable record nor a sent
-      // email — otherwise the message reached us and the user shouldn't retry.
+      // email, otherwise the message reached us and the user shouldn't retry.
       if (!emailed) {
         return NextResponse.json(
           { error: "Couldn't send your message. Try again in a minute." },

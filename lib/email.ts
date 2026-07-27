@@ -1,5 +1,5 @@
 // SERVER-ONLY. Minimal transactional-email helper built directly on Resend's
-// REST API (https://resend.com) — no SDK dependency, just fetch. The call runs
+// REST API (https://resend.com), no SDK dependency, just fetch. The call runs
 // server-side (inside an API route), so it isn't subject to the browser CSP.
 //
 // It no-ops safely when RESEND_API_KEY is unset, so local/dev and unconfigured
@@ -32,7 +32,7 @@ export function isEmailConfigured(): boolean {
 /**
  * Send one email through Resend. Returns true when the provider accepts the
  * message, false otherwise (unconfigured, network error, or non-2xx). Never
- * throws — email is always best-effort here.
+ * throws, email is always best-effort here.
  */
 export async function sendEmail({ to, subject, text, replyTo, from }: SendArgs): Promise<boolean> {
   const key = process.env.RESEND_API_KEY;

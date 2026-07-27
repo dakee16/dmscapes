@@ -1,6 +1,6 @@
 {
   "template_id": "compact-double-bunked-12x10-v1",
-  "name": "Compact Double — Bunked Beds",
+  "name": "Compact Double: Bunked Beds",
   "description": "Tight double: beds bunked into a single footprint on the top-left wall (A lower, B upper), freeing the floor for two desks stacked along the window wall and dressers by the door. Authored for a 12.4 x 10 ft room; assumes the door at the bottom of the left wall and the window on the right wall.",
   "room_constraints": {
     "min_length_ft": 11.5,

@@ -5,7 +5,7 @@
 -- Only the API routes touch these tables, using the service-role key (which
 -- bypasses RLS). Nothing here is readable or writable from the browser.
 
--- Waitlist signups (already exists from the landing page — kept for fresh envs)
+-- Waitlist signups (already exists from the landing page, kept for fresh envs)
 CREATE TABLE IF NOT EXISTS waitlist (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   email TEXT NOT NULL,

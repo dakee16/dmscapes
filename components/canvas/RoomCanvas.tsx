@@ -75,7 +75,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const [zoom, setZoom] = useState(1);
   const [stagePos, setStagePos] = useState({ x: 0, y: 0 });
   // Konva draws to <canvas>, so it needs the *real* font family next/font
-  // generated (a hashed name), not the human name — otherwise it silently
+  // generated (a hashed name), not the human name, otherwise it silently
   // falls back to a system font and the labels look off. We read it from the
   // CSS variable the layout sets (the same --font-plex-mono the static share
   // view uses for furniture labels) and force a redraw once webfonts finish.
@@ -94,8 +94,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const clearSelectedCategory = usePlannerStore((s) => s.clearSelectedCategory);
   const activeCategory = readOnly || !crossHighlight ? null : hoveredCategory ?? selectedCategory;
 
-  // Rotate-control target: the pinned canvas item, or — when the pin came
-  // from a product tile — the sole movable item of that category.
+  // Rotate-control target: the pinned canvas item, or, when the pin came
+  // from a product tile, the sole movable item of that category.
   const rotateTarget = useMemo(() => {
     if (readOnly) return null;
     if (selectedItemId) {
@@ -444,7 +444,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                       ellipsis
                     />
                   )}
-                  {/* Cross-highlight ring — cobalt glow, distinct from the red
+                  {/* Cross-highlight ring, cobalt glow, distinct from the red
                       collision flag; sits outside the item so small unlabeled
                       pieces are easy to spot. */}
                   {highlighted && (
@@ -499,7 +499,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           </button>
         </div>
       )}
-      {/* Rotate the selected item — same control language as the zoom cluster,
+      {/* Rotate the selected item, same control language as the zoom cluster,
           anchored to the opposite corner. Stays visible (muted) when nothing
           is selected so the affordance is discoverable. */}
       {!readOnly && (

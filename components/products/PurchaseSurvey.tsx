@@ -14,7 +14,7 @@ import type {
 } from "@/lib/api-types";
 
 const DONE_KEY = "dormscape-purchase-survey-done";
-/** Minimum time away (ms) before a return counts — filters accidental switches. */
+/** Minimum time away (ms) before a return counts, filters accidental switches. */
 const AWAY_MS = 3500;
 
 /**
@@ -186,7 +186,7 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
       }}
     >
       <div className="snap-in relative w-full max-w-xl overflow-hidden rounded-t-2xl border border-ink/10 bg-paper p-6 shadow-2xl sm:rounded-2xl sm:p-8">
-        {/* Graph-paper wash across the top, fading toward the middle — the same
+        {/* Graph-paper wash across the top, fading toward the middle, the same
             grid the rest of the site is built on. */}
         <div
           aria-hidden
@@ -229,7 +229,7 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
             <p className="text-sm leading-relaxed text-ink-soft">
               You just headed to Amazon. Did everything you wanted make it into your cart?
             </p>
-            {/* Cobalt action panel — a pocket-size echo of the home page CTA. */}
+            {/* Cobalt action panel, a pocket-size echo of the home page CTA. */}
             <div className="relative mt-6 overflow-hidden rounded-2xl bg-cobalt p-4 sm:p-5">
               <PanelGrid />
               <div className="relative">

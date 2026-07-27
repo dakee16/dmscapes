@@ -2,7 +2,7 @@ import type { FurnitureItem } from "@/lib/types";
 import { CATEGORY_COLORS } from "@/lib/styles";
 
 // Tiny top-down layout preview (account tiles). Room shell + furniture blocks
-// only — labels, door, and scale bar are unreadable at thumbnail size.
+// only, labels, door, and scale bar are unreadable at thumbnail size.
 // Same coordinate convention as StaticRoomView.
 const WALL_TYPES = new Set(["string_lights", "wall_decor", "power_strip"]);
 

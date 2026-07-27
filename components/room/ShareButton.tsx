@@ -4,7 +4,7 @@ import { useState } from "react";
 import { track } from "@/lib/analytics";
 
 /**
- * Round icon button that shares a saved design's /room/[id] link — the same
+ * Round icon button that shares a saved design's /room/[id] link, the same
  * behavior as "Share my room" on the result page (native share sheet where
  * available, clipboard copy otherwise), packaged for reuse inside a tile.
  * Calls preventDefault/stopPropagation so it never triggers a surrounding link.
@@ -36,7 +36,7 @@ export default function ShareButton({
         track("share_clicked", { type: "share", from });
         return;
       } catch {
-        // Cancelled or unsupported — fall through to clipboard.
+        // Cancelled or unsupported, fall through to clipboard.
       }
     }
 

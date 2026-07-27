@@ -9,7 +9,7 @@ import type { FeedbackRequest } from "@/lib/api-types";
 const STARS = [1, 2, 3, 4, 5] as const;
 
 /**
- * The shared feedback UI — star rating (required) + optional write-up — used
+ * The shared feedback UI, star rating (required) + optional write-up, used
  * both on the /thank-you confirmation page and from the footer "Feedback" modal.
  * Posts to /api/feedback (purchase_feedback table). Footer feedback carries no
  * purchase_survey_id and no room design; the API/table already treat those as
@@ -22,7 +22,7 @@ export default function FeedbackForm({
   autoFocus = false,
   onSubmitted,
 }: {
-  /** Where the rating came from — drives whether it links back to a purchase. */
+  /** Where the rating came from, drives whether it links back to a purchase. */
   source: "thank_you" | "footer";
   headline?: string;
   subhead?: string;
@@ -102,7 +102,7 @@ export default function FeedbackForm({
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      {/* Headline is optional — the footer modal already titles itself "Feedback". */}
+      {/* Headline is optional, the footer modal already titles itself "Feedback". */}
       {headline && (
         <p className="font-display text-lg font-bold tracking-tight">{headline}</p>
       )}

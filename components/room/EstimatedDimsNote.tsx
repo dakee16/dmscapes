@@ -6,7 +6,7 @@ export const ESTIMATED_DIMS_NOTE =
 /**
  * Honest, de-emphasized label shown next to a room size that was estimated from
  * the median of same-type rooms (see scripts/build-schools-index.mjs) rather
- * than published by the school. Muted but plainly legible on purpose — a trust
+ * than published by the school. Muted but plainly legible on purpose, a trust
  * signal, not fine print to bury.
  */
 export default function EstimatedDimsNote({ className = "" }: { className?: string }) {

@@ -29,7 +29,7 @@ export function beddingAdvisory(bedSize: BedSize | undefined): BeddingAdvisory |
       return {
         level: "warning",
         message:
-          "These are full-size beds, wider than a Twin XL. We've picked a full-size set here — a standard Twin XL set won't fit them.",
+          "These are full-size beds, wider than a Twin XL. We've picked a full-size set here, a standard Twin XL set won't fit them.",
       };
     case "twin":
       return {
@@ -38,6 +38,6 @@ export function beddingAdvisory(bedSize: BedSize | undefined): BeddingAdvisory |
           "These are standard twin beds, about 5 inches shorter than a Twin XL. The set below still works, but standard twin sheets fit best.",
       };
     default:
-      return null; // twin_xl (or unset) — the catalog's Twin XL bedding fits
+      return null; // twin_xl (or unset), the catalog's Twin XL bedding fits
   }
 }

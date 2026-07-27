@@ -1,6 +1,6 @@
 {
   "template_id": "wide-double-18x13-v1",
-  "name": "Wide Double — Parallel Beds, Center Walkway",
+  "name": "Wide Double: Parallel Beds, Center Walkway",
   "description": "Generous rectangle: parallel beds on the top and bottom walls with a wide center walkway, desks under the window on the right wall. Authored for an 18 x 13 ft room; assumes the door at the bottom of the left wall and the window on the right wall.",
   "room_constraints": {
     "min_length_ft": 17,

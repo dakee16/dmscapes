@@ -6,7 +6,7 @@ import { track } from "@/lib/analytics";
 
 /**
  * Footer "Feedback" entry point: a link-styled button that opens the same
- * rating UI used on the confirmation page, but standalone — usable any time,
+ * rating UI used on the confirmation page, but standalone, usable any time,
  * with no purchase or saved design required. Modal chrome mirrors the
  * post-purchase prompt (PurchaseSurvey) for a consistent feel.
  */
@@ -66,7 +66,7 @@ export default function FeedbackLink() {
           }}
         >
           <div className="snap-in relative w-full max-w-md overflow-hidden rounded-t-2xl border border-ink/10 bg-paper p-6 shadow-2xl sm:rounded-2xl sm:p-7">
-            {/* Graph-paper wash across the top — the same grid the site is built on. */}
+            {/* Graph-paper wash across the top, the same grid the site is built on. */}
             <div
               aria-hidden
               className="grid-paper pointer-events-none absolute inset-x-0 top-0 h-1/2"

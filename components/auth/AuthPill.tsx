@@ -6,7 +6,7 @@ import { useAuth } from "@/lib/auth-context";
 /**
  * Header auth pill, sits just left of the ProfileButton.
  * Logged out: a highlighted "Log in" button that opens the shared auth modal
- * (the same trigger the profile icon uses — no second modal). Logged in: the
+ * (the same trigger the profile icon uses, no second modal). Logged in: the
  * @username as a link to the full /account page (same destination as the
  * profile icon). Hidden below sm so the tightest screens fall back to the
  * profile icon alone.

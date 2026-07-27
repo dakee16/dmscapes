@@ -25,7 +25,7 @@ export interface PlannerState {
   hoveredCategory: ProductCategory | null;
   /** Category pinned by a click; persists until toggled off or cleared. */
   selectedCategory: ProductCategory | null;
-  /** Specific canvas item pinned by a click — the rotate controls' target. */
+  /** Specific canvas item pinned by a click, the rotate controls' target. */
   selectedItemId: string | null;
 
   setCollege: (college: PlannerState["college"]) => void;

@@ -96,7 +96,7 @@ export default function PlanSelectPage() {
       occupants: values.occupants,
       lengthFt: values.lengthFt,
       widthFt: values.widthFt,
-      // keep the catalog room's known bed size — these schools publish no
+      // keep the catalog room's known bed size, these schools publish no
       // dimensions, so every bed-size exception arrives through this path
       bedSize: pendingDimsRoom?.bed_size ?? "twin_xl",
       source: "manual",

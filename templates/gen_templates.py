@@ -128,7 +128,7 @@ TEMPLATES = []
 
 # ---------------------------------------------------------------- T1 15x12
 TEMPLATES.append(template(
-    "standard-double-15x12-v1", "Standard Double — Parallel Beds",
+    "standard-double-15x12-v1", "Standard Double: Parallel Beds",
     "Two beds on opposite long walls, both desks under the window on the "
     "right wall, rug in the center walkway. Authored for a 15 x 12 ft room; "
     "assumes the door at the bottom of the left wall and the window centered "
@@ -160,7 +160,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T2 12x11
 TEMPLATES.append(template(
-    "compact-square-double-12x11-v1", "Compact Square Double — L-Shaped Beds",
+    "compact-square-double-12x11-v1", "Compact Square Double: L-Shaped Beds",
     "L-shaped bed arrangement: Bed A along the top wall, Bed B along the "
     "right wall, desks tucked into the remaining corners, dressers by the "
     "door. Authored for a 12 x 11 ft room; assumes the door at the bottom of "
@@ -191,7 +191,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T3 17x10.5
 TEMPLATES.append(template(
-    "long-double-17x10-v1", "Long Double — Beds Along One Wall",
+    "long-double-17x10-v1", "Long Double: Beds Along One Wall",
     "Longer, narrower room: both beds head-to-head along the top wall with a "
     "shared dresser between them, Desk A on the bottom wall and Desk B under "
     "the window. Authored for a 17 x 10.5 ft room; assumes the door at the "
@@ -223,7 +223,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T4 11x8.8
 TEMPLATES.append(template(
-    "small-single-11x9-v1", "Small Single — Bed and Desk Opposite",
+    "small-single-11x9-v1", "Small Single: Bed and Desk Opposite",
     "Single room: bed along the top wall, desk under the window on the right "
     "wall, dresser opposite the bed. Authored for an 11 x 8.8 ft room; "
     "assumes the door at the bottom of the left wall and the window on the "
@@ -247,7 +247,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T5 12.4x10
 TEMPLATES.append(template(
-    "compact-double-bunked-12x10-v1", "Compact Double — Bunked Beds",
+    "compact-double-bunked-12x10-v1", "Compact Double: Bunked Beds",
     "Tight double: beds bunked into a single footprint on the top-left wall "
     "(A lower, B upper), freeing the floor for two desks stacked along the "
     "window wall and dressers by the door. Authored for a 12.4 x 10 ft room; "
@@ -276,7 +276,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T6 16x15
 TEMPLATES.append(template(
-    "large-square-double-16x15-v1", "Large Square Double — Open Center",
+    "large-square-double-16x15-v1", "Large Square Double: Open Center",
     "Spacious near-square double: parallel beds on the top and bottom walls, "
     "desks under the window, large open rug in the middle with extra wall "
     "decor. Authored for a 16 x 15 ft room; assumes the door at the bottom "
@@ -309,7 +309,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T7 25x15
 TEMPLATES.append(template(
-    "suite-large-25x15-v1", "Suite-Style Large — Sleep + Living Zones",
+    "suite-large-25x15-v1", "Suite-Style Large: Sleep + Living Zones",
     "Large suite-style room split into zones: sleeping zone on the left "
     "(both beds, dressers), study/living zone on the right (desks under the "
     "window, large living rug, storage cubes, full-length mirror). Authored "
@@ -346,7 +346,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T8 18x13
 TEMPLATES.append(template(
-    "wide-double-18x13-v1", "Wide Double — Parallel Beds, Center Walkway",
+    "wide-double-18x13-v1", "Wide Double: Parallel Beds, Center Walkway",
     "Generous rectangle: parallel beds on the top and bottom walls with a "
     "wide center walkway, desks under the window on the right wall. Authored "
     "for an 18 x 13 ft room; assumes the door at the bottom of the left wall "
@@ -378,7 +378,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T9 24x8.5
 TEMPLATES.append(template(
-    "corridor-double-24x8-v1", "Corridor Double — Linear Layout",
+    "corridor-double-24x8-v1", "Corridor Double: Linear Layout",
     "Long, narrow room (aspect > 2.7): beds end-to-end along the top wall, "
     "dressers continuing the same wall, desks on the opposite wall toward "
     "the window end, runner rug as the zone divider. Authored for a "
@@ -412,7 +412,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T10 23x8
 TEMPLATES.append(template(
-    "corridor-single-23x8-v1", "Corridor Single — End-to-End Layout",
+    "corridor-single-23x8-v1", "Corridor Single: End-to-End Layout",
     "Long, narrow single: bed across the far (window) end, desk at the entry "
     "end, dresser, bins, and hamper lined along the top wall, runner rug "
     "down the middle. Authored for a 23 x 8 ft room; assumes the door on the "
@@ -438,7 +438,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T11 17x16 (triple)
 TEMPLATES.append(template(
-    "standard-triple-17x16-v1", "Standard Triple — Two Walls, Third Bed Along the Bottom",
+    "standard-triple-17x16-v1", "Standard Triple: Two Walls, Third Bed Along the Bottom",
     "Three beds: A and B head-to-head along the top wall with a dresser "
     "between them, C along the bottom-right wall clear of the door swing. "
     "Desks for A and B stack under the window on the right wall; Desk C "
@@ -481,7 +481,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T12 27x14 (triple)
 TEMPLATES.append(template(
-    "long-triple-27x14-v1", "Long Triple — Three Beds Along the Top Wall",
+    "long-triple-27x14-v1", "Long Triple: Three Beds Along the Top Wall",
     "Long room (aspect ~1.9): all three beds end-to-end along the top wall. "
     "Desks and dressers share the bottom wall (desks left of center, dressers "
     "toward the window end) so the bed wall never has to carry more than three "
@@ -524,7 +524,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T13 25x17 (quad)
 TEMPLATES.append(template(
-    "standard-quad-25x17-v1", "Standard Quad — Two Pairs, Individual Dressers",
+    "standard-quad-25x17-v1", "Standard Quad: Two Pairs, Individual Dressers",
     "Four beds as two head-to-head pairs: A/B along the top wall, C/D along "
     "the bottom wall. Each occupant gets their own dresser, A/C in the gap "
     "between the pairs and B/D past the far end of their bed. Desks for "
@@ -576,7 +576,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T14 33x14 (quad)
 TEMPLATES.append(template(
-    "long-quad-33x14-v1", "Long Quad — Four Beds Along the Top Wall",
+    "long-quad-33x14-v1", "Long Quad: Four Beds Along the Top Wall",
     "Long, narrower room: all four beds end-to-end along the top wall, "
     "dressers continuing the same run toward the window end. Desks line "
     "the bottom wall in pairs. Authored for a 33 x 14 ft room; assumes the "
@@ -629,7 +629,7 @@ TEMPLATES.append(template(
 # walls (L-shape) so no single wall must carry two 6.7 ft bed-lengths, which is
 # what breaks in rooms narrower than ~13.5 ft.
 TEMPLATES.append(template(
-    "compact-triple-bunked-13x12-v1", "Compact Triple — Bunked Pair, L-Shape",
+    "compact-triple-bunked-13x12-v1", "Compact Triple: Bunked Pair, L-Shape",
     "Tight triple: A and B bunked on the top-left wall, the third bed on the "
     "right wall (an L, so neither wall needs two bed-lengths). Desks A and B "
     "line the left wall, desk C and the dressers run along the bottom wall "
@@ -670,7 +670,7 @@ TEMPLATES.append(template(
 # bunks off the bottom-left door and never put two bed-lengths on one wall,
 # freeing floor for four desks and four dressers.
 TEMPLATES.append(template(
-    "compact-quad-bunked-15x13-v1", "Compact Quad — Two Bunk Stacks, L-Shape",
+    "compact-quad-bunked-15x13-v1", "Compact Quad: Two Bunk Stacks, L-Shape",
     "Tight quad: bunk A/B on the top wall and bunk C/D on the right wall (an "
     "L). Desks A and B line the left wall, desks C and D the bottom wall clear "
     "of the door; each occupant keeps their own dresser. Authored for a 15 x "

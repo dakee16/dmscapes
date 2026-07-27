@@ -1,4 +1,4 @@
-/** White graph-paper overlay for cobalt panels — same as the home page CTA. */
+/** White graph-paper overlay for cobalt panels, same as the home page CTA. */
 export default function PanelGrid() {
   return (
     <div

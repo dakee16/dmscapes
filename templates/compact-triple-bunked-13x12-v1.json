@@ -1,6 +1,6 @@
 {
   "template_id": "compact-triple-bunked-13x12-v1",
-  "name": "Compact Triple — Bunked Pair, L-Shape",
+  "name": "Compact Triple: Bunked Pair, L-Shape",
   "description": "Tight triple: A and B bunked on the top-left wall, the third bed on the right wall (an L, so neither wall needs two bed-lengths). Desks A and B line the left wall, desk C and the dressers run along the bottom wall clear of the door. Authored for a 13 x 12 ft room; assumes the door at the bottom of the left wall and the window on the right wall.",
   "room_constraints": {
     "min_length_ft": 11,
