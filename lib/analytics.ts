@@ -31,7 +31,8 @@ export type AnalyticsEvent =
   | "confirmation_page_viewed"
   | "feedback_prompt_opened"
   | "feedback_submitted"
-  | "contact_submitted";
+  | "contact_submitted"
+  | "premium_waitlist_signup";
 
 let initialized = false;
 

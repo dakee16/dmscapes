@@ -19,7 +19,7 @@ const COLUMNS: {
       { label: "How it works", href: "/#how-it-works" },
       { label: "Vibes & styles", href: "/#vibes" },
       { label: "Colleges", href: "/colleges" },
-      { label: "Pricing", href: "/pricing", placeholder: true },
+      { label: "Pricing", href: "/pricing" },
     ],
   },
   {
