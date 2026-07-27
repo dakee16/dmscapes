@@ -28,7 +28,7 @@ const COLUMNS: {
       { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
       { label: "Feedback", feedback: true },
-      { label: "Blog", href: "/blog", placeholder: true },
+      { label: "Blog", href: "/blog" },
     ],
   },
   {

@@ -9,6 +9,7 @@ import RoommateTeaser from "@/components/site/RoommateTeaser";
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/colleges", label: "Colleges" },
+  { href: "/blog", label: "Blog" },
 ] as const;
 
 // Filled CTA style, shared by the desktop nav button and its mobile counterpart.
