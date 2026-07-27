@@ -23,7 +23,7 @@ export default function Schools() {
         We already know your room
       </h2>
       <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-        Floor plans and dimensions for 50+ schools, sourced from official housing
+        Floor plans and dimensions for 10+ schools, sourced from official housing
         documents. A few of them:
       </p>
 

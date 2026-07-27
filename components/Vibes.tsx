@@ -57,7 +57,7 @@ export default function Vibes() {
           Pick a vibe. We make it fit.
         </h2>
         <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-          Every vibe is a full plan — bedding, lighting, storage, decor — priced to your
+          Every vibe is a full plan (bedding, lighting, storage, decor), priced to your
           budget and arranged to your floor plan.
         </p>
 

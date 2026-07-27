@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import RoomPlanner from "@/components/RoomPlanner";
 import WaitlistForm from "@/components/WaitlistForm";
@@ -10,12 +11,12 @@ export default function Home() {
     <div id="top">
       <Nav />
       <main>
-        {/* ——— Hero ——— */}
+        {/* Hero */}
         <section className="grid-paper grid-paper-fade relative overflow-hidden">
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-14 sm:px-8 sm:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-28">
             <div>
               <p className="rise font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-                Free AI dorm planner — Fall &rsquo;26
+                Free AI dorm planner · Fall &rsquo;26
               </p>
               <h1
                 className="rise mt-4 font-display text-[2.6rem] font-extrabold leading-[1.04] tracking-tight sm:text-6xl"
@@ -30,23 +31,22 @@ export default function Home() {
                 style={{ animationDelay: "160ms" }}
               >
                 Pick your school, choose a vibe, set a budget. Dormscape knows your
-                exact room and hands you a layout plus a shoppable list from Amazon and
-                Target — before you ever get the keys.
+                exact room and hands you a layout plus a shoppable list from Amazon,
+                before you ever get the keys.
               </p>
               <div id="waitlist" className="rise mt-8 max-w-md scroll-mt-24" style={{ animationDelay: "240ms" }}>
                 <WaitlistForm id="waitlist-hero" source="hero" />
                 <p className="mt-3 text-sm text-ink-soft">
-                  Free for students. The first 1,000 signups get their room plan on
-                  launch day.
+                  Free for all. First 100 to get free premium tier.
                 </p>
               </div>
               <ul
                 className="rise mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-wide text-ink-soft"
                 style={{ animationDelay: "320ms" }}
               >
-                <li>50+ schools preloaded</li>
-                <li>$200–$1,500 budgets</li>
-                <li>Amazon + Target links</li>
+                <li>10+ schools preloaded</li>
+                <li>$200-$1,500 budgets</li>
+                <li>Amazon links</li>
               </ul>
             </div>
             <div className="flex justify-center lg:justify-end">
@@ -59,7 +59,7 @@ export default function Home() {
         <Vibes />
         <Schools />
 
-        {/* ——— Bottom CTA ——— */}
+        {/* Bottom CTA */}
         <section className="bg-cobalt">
           <div className="relative overflow-hidden">
             <div
@@ -90,7 +90,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* ——— Footer ——— */}
+      {/* Footer */}
       <footer className="border-t border-ink/8 bg-paper">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <div>
@@ -100,15 +100,25 @@ export default function Home() {
             </p>
           </div>
           <div className="flex items-center gap-6 text-sm font-medium text-ink-soft">
-            <a href="https://instagram.com" className="transition-colors hover:text-ink">
+            <a
+              href="https://instagram.com/dorm.scape"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-ink"
+            >
               Instagram
             </a>
-            <a href="https://tiktok.com" className="transition-colors hover:text-ink">
+            <a
+              href="https://tiktok.com/@dorm.scape"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-ink"
+            >
               TikTok
             </a>
-            <a href="mailto:hello@dormscape.com" className="transition-colors hover:text-ink">
+            <Link href="/contact" className="transition-colors hover:text-ink">
               Contact
-            </a>
+            </Link>
           </div>
           <p className="text-xs text-ink-soft">© 2026 Dormscape</p>
         </div>

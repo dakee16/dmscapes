@@ -9,7 +9,7 @@ type Vibe = {
   bed: string;
   rug: string;
   accent: string;
-  items: { name: string; store: "Amazon" | "Target"; price: number }[];
+  items: { name: string; store: "Amazon"; price: number }[];
   total: number;
 };
 
@@ -20,7 +20,7 @@ const VIBES: Record<VibeKey, Vibe> = {
     rug: "#dddcd6",
     accent: "#17172b",
     items: [
-      { name: "Washed-linen duvet, cloud white", store: "Target", price: 49 },
+      { name: "Washed-linen duvet, cloud white", store: "Amazon", price: 49 },
       { name: "Slim LED desk lamp", store: "Amazon", price: 24 },
       { name: "Under-bed storage, set of 2", store: "Amazon", price: 32 },
     ],
@@ -33,7 +33,7 @@ const VIBES: Record<VibeKey, Vibe> = {
     accent: "#c96f4a",
     items: [
       { name: "Warm-white fairy lights, 33 ft", store: "Amazon", price: 13 },
-      { name: "Waffle-knit throw blanket", store: "Target", price: 28 },
+      { name: "Waffle-knit throw blanket", store: "Amazon", price: 28 },
       { name: "Photo-clip string kit", store: "Amazon", price: 16 },
     ],
     total: 438,
@@ -46,7 +46,7 @@ const VIBES: Record<VibeKey, Vibe> = {
     items: [
       { name: "RGB LED strip, app-controlled", store: "Amazon", price: 19 },
       { name: "Single monitor arm, clamp mount", store: "Amazon", price: 35 },
-      { name: "Gel seat cushion", store: "Target", price: 42 },
+      { name: "Gel seat cushion", store: "Amazon", price: 42 },
     ],
     total: 486,
   },
@@ -56,9 +56,9 @@ const VIBES: Record<VibeKey, Vibe> = {
     rug: "#dccba6",
     accent: "#8a7b4f",
     items: [
-      { name: "Woven jute rug, 5×7", store: "Target", price: 45 },
+      { name: "Woven jute rug, 5×7", store: "Amazon", price: 45 },
       { name: "Macramé wall hanging", store: "Amazon", price: 22 },
-      { name: "Rattan table lamp", store: "Target", price: 31 },
+      { name: "Rattan table lamp", store: "Amazon", price: 31 },
     ],
     total: 429,
   },
@@ -68,9 +68,9 @@ const VIBES: Record<VibeKey, Vibe> = {
     rug: "#cadcca",
     accent: "#1e3a8a",
     items: [
-      { name: "Striped reversible duvet set", store: "Target", price: 54 },
+      { name: "Striped reversible duvet set", store: "Amazon", price: 54 },
       { name: "Monogram throw pillow", store: "Amazon", price: 19 },
-      { name: "Acrylic desk organizer", store: "Target", price: 21 },
+      { name: "Acrylic desk organizer", store: "Amazon", price: 21 },
     ],
     total: 445,
   },
