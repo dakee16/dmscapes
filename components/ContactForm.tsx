@@ -5,7 +5,7 @@ import { useState } from "react";
 // Waitlist-page contact form. There's no contact table or email service wired
 // up on this branch, so submit composes a prefilled email to the team and hands
 // off to the visitor's mail app. It's a real form, not a bare mailto link.
-const CONTACT_EMAIL = "hello@dormscape.com";
+const CONTACT_EMAIL = "info@dormscape.us";
 
 const INPUT =
   "h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt";
