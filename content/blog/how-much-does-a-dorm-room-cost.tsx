@@ -206,6 +206,7 @@ const post: BlogPost = {
   date: "2026-07-22",
   updated: "2026-07-27",
   readingTimeMin: 6,
+  faqTopic: "Budget and cost",
   faqs: [
     {
       q: "How much does it cost to set up a dorm room in 2026?",

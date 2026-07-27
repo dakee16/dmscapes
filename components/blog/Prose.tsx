@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import type { BlogFaq } from "@/content/blog/types";
 
 // Shared long-form primitives for blog posts. They wrap the exact typography
 // the rest of the site uses (see app/about/page.tsx) so every post inherits the
@@ -140,33 +139,5 @@ export function EndCTA({
         {cta}
       </Link>
     </div>
-  );
-}
-
-/** FAQ block. Questions are real <h3> headings under one <h2>, so the section
- *  is scannable for readers and extractable for search and AI. Rendered from
- *  the same faqs array that produces the FAQPage JSON-LD. */
-export function FAQSection({ faqs }: { faqs: BlogFaq[] }) {
-  return (
-    <section className="mt-14">
-      <h2
-        id="faq"
-        className="scroll-mt-24 font-display text-2xl font-bold tracking-tight sm:text-[1.7rem]"
-      >
-        Frequently asked questions
-      </h2>
-      <div className="mt-6 divide-y divide-ink/8">
-        {faqs.map((f) => (
-          <div key={f.q} className="py-5 first:pt-0">
-            <h3 className="font-display text-lg font-bold tracking-tight text-ink">
-              {f.q}
-            </h3>
-            <p className="mt-2 text-base leading-relaxed text-ink-soft">
-              {f.a}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
   );
 }

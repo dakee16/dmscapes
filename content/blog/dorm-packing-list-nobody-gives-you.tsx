@@ -246,6 +246,7 @@ const post: BlogPost = {
   date: "2026-07-24",
   updated: "2026-07-27",
   readingTimeMin: 8,
+  faqTopic: "Packing",
   faqs: [
     {
       q: "What do freshmen forget to pack for a dorm most often?",

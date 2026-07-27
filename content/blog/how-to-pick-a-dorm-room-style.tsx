@@ -184,6 +184,7 @@ const post: BlogPost = {
   date: "2026-07-18",
   updated: "2026-07-27",
   readingTimeMin: 7,
+  faqTopic: "Style",
   faqs: [
     {
       q: "How do I choose a dorm room style?",

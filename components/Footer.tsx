@@ -26,9 +26,10 @@ const COLUMNS: {
     heading: "Company",
     links: [
       { label: "About", href: "/about" },
+      { label: "Blog", href: "/blog" },
+      { label: "FAQ", href: "/faq" },
       { label: "Contact", href: "/contact" },
       { label: "Feedback", feedback: true },
-      { label: "Blog", href: "/blog" },
     ],
   },
   {

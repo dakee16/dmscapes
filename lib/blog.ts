@@ -1,4 +1,4 @@
-import type { BlogPost } from "@/content/blog/types";
+import type { BlogFaq, BlogPost } from "@/content/blog/types";
 
 // Absolute base for canonical URLs and schema. Mirrors app/sitemap.ts.
 export const BLOG_BASE =
@@ -33,13 +33,13 @@ const org = {
 };
 
 /**
- * Article + FAQPage JSON-LD nodes for a post. One publisher/author identity
- * (Dormscape) and both dates, since AI systems weight source and freshness
- * signals. Emitted as separate <script> tags by the page.
+ * Article JSON-LD for a blog post. One publisher/author identity (Dormscape)
+ * and both dates, since AI systems weight source and freshness signals. FAQ
+ * markup lives on the standalone /faq page now, not here.
  */
 export function articleJsonLd(post: BlogPost) {
   const url = `${BLOG_BASE}/blog/${post.slug}`;
-  const article = {
+  return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: post.title,
@@ -60,19 +60,17 @@ export function articleJsonLd(post: BlogPost) {
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     url,
   };
+}
 
-  const faq =
-    post.faqs && post.faqs.length > 0
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: post.faqs.map((f) => ({
-            "@type": "Question",
-            name: f.q,
-            acceptedAnswer: { "@type": "Answer", text: f.a },
-          })),
-        }
-      : null;
-
-  return faq ? [article, faq] : [article];
+/** Aggregated FAQPage JSON-LD for the standalone /faq page. */
+export function faqPageJsonLd(faqs: BlogFaq[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
 }

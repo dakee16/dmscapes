@@ -186,6 +186,7 @@ const post: BlogPost = {
   date: "2026-07-27",
   updated: "2026-07-27",
   readingTimeMin: 7,
+  faqTopic: "Measuring your room",
   faqs: [
     {
       q: "What should I measure in a dorm room first?",

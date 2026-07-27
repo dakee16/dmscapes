@@ -32,7 +32,11 @@ export type BlogMeta = {
   updated?: string;
   /** Reading-time estimate in minutes, shown on the index and post header. */
   readingTimeMin: number;
-  /** FAQ pairs. Rendered as a visible section and emitted as FAQPage JSON-LD. */
+  /** Short topic label for grouping this post's FAQs on the standalone /faq
+   *  page, e.g. "Measuring". Falls back to the title when absent. */
+  faqTopic?: string;
+  /** FAQ pairs. No longer shown inside the post; the standalone /faq page rolls
+   *  these up by topic and emits the FAQPage JSON-LD. */
   faqs?: BlogFaq[];
 };
 

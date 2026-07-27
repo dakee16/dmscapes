@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
-import { FAQSection } from "@/components/blog/Prose";
 import { getPost, allPostSlugs, POSTS } from "@/content/blog";
 import { articleJsonLd, formatBlogDate } from "@/lib/blog";
 
@@ -60,22 +59,19 @@ export default async function BlogPostPage(props: {
 
   const { Body } = post;
   const updated = post.updated ?? post.date;
-  const nodes = articleJsonLd(post);
+  const jsonLd = articleJsonLd(post);
   // Two other posts to surface at the foot for internal linking.
   const more = POSTS.filter((p) => p.slug !== post.slug).slice(0, 2);
 
   return (
     <div>
       <Nav />
-      {nodes.map((node, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(node).replace(/</g, "\\u003c"),
-          }}
-        />
-      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <main className="relative">
         <div
           className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[22rem]"
@@ -115,8 +111,6 @@ export default async function BlogPostPage(props: {
           </p>
 
           <Body />
-
-          {post.faqs && post.faqs.length > 0 && <FAQSection faqs={post.faqs} />}
 
           <div className="mt-16 border-t border-ink/8 pt-10">
             <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">

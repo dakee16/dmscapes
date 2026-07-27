@@ -201,6 +201,7 @@ const post: BlogPost = {
   date: "2026-07-20",
   updated: "2026-07-27",
   readingTimeMin: 7,
+  faqTopic: "Small and awkward rooms",
   faqs: [
     {
       q: "How do you make a small dorm room feel bigger?",
