@@ -1,4 +1,4 @@
-// Condenses data/schools/*.json (3–14k lines each, full sourcing detail) into
+// Condenses data/schools/*.json (3-14k lines each, full sourcing detail) into
 // lib/schools-index.json, the compact index the planner UI actually ships.
 // Rerun after editing school data: node scripts/build-schools-index.mjs
 import fs from "node:fs";

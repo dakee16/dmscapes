@@ -24,7 +24,7 @@ export async function GET(request: Request) {
     return NextResponse.json(
       {
         available: false,
-        error: "3–20 characters; letters, numbers, underscore, period.",
+        error: "3-20 characters; letters, numbers, underscore, period.",
       } satisfies UsernameCheckResponse,
       { status: 400 }
     );

@@ -212,7 +212,7 @@ export default function AuthModal() {
     const supabase = getBrowserClient();
     const value = username.trim();
     if (!USERNAME_RE.test(value)) {
-      setUError("3–20 characters; letters, numbers, underscore, period.");
+      setUError("3-20 characters; letters, numbers, underscore, period.");
       return;
     }
     if (!supabase || !user || busy) return;
@@ -259,7 +259,7 @@ export default function AuthModal() {
         return { text: "Taken. Try another.", tone: "bad" };
       case "invalid":
         return {
-          text: "3–20 characters; letters, numbers, underscore, period.",
+          text: "3-20 characters; letters, numbers, underscore, period.",
           tone: "bad",
         };
       case "unknown":

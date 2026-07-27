@@ -48,7 +48,7 @@ containment, range overlaps). To change a layout, edit the script and rerun
   the same axis-aligned footprint as 0/90).
 
 Every template assumes the door at the bottom of the left wall (left end
-wall for corridor rooms) with a 3–3.5 ft clearance zone kept empty, and the
+wall for corridor rooms) with a 3-3.5 ft clearance zone kept empty, and the
 window on the right wall (long wall for corridor rooms), noted in each
 template's `description`.
 
@@ -89,7 +89,7 @@ const { template, template_id, confidence, exact_match } = matchTemplate({
   rather than returning nothing.
 - Room inside a template's ranges → `confidence: 1.0`, ties broken by
   closest aspect ratio. Otherwise the nearest template by Euclidean
-  distance to its range box, `confidence` in 0.5–0.99 shrinking with
+  distance to its range box, `confidence` in 0.5-0.99 shrinking with
   distance.
 - If no template exists for the occupant count (e.g. quints and up), the
   best dimensional match is returned with confidence capped at 0.9 and

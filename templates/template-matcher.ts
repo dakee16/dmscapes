@@ -79,7 +79,7 @@ export interface RoomInput {
 export interface MatchResult {
   template_id: string;
   template: LayoutTemplate;
-  /** 1.0 for an exact range match, 0.5–0.99 for a nearest-template match. */
+  /** 1.0 for an exact range match, 0.5-0.99 for a nearest-template match. */
   confidence: number;
   /** True when the room's dimensions fall inside the template's ranges. */
   exact_match: boolean;
