@@ -16,13 +16,17 @@ import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
 import AuthModal from "@/components/auth/AuthModal";
 
-/** Row shape of public.profiles (supabase/migrations/0002_profiles.sql). */
+/** Row shape of public.profiles (supabase/migrations/0002_profiles.sql, plus
+ *  the contact fields added in 0007). full_name/phone are optional so the app
+ *  still runs before that migration is applied (the select uses "*"). */
 export interface Profile {
   id: string;
   email: string | null;
   username: string | null;
   auth_provider: string | null;
   created_at: string;
+  full_name?: string | null;
+  phone?: string | null;
 }
 
 /** What prompted the modal; copy inside adapts ("save your design" vs generic). */
@@ -64,6 +68,8 @@ function devMockProfile(): Profile | null {
       username: p.username ?? null,
       auth_provider: p.auth_provider ?? "email",
       created_at: new Date().toISOString(),
+      full_name: p.full_name ?? null,
+      phone: p.phone ?? null,
     };
   } catch {
     return null;
@@ -81,9 +87,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const fetchProfile = useCallback(
     async (uid: string) => {
       if (!supabase) return;
+      // select("*") so full_name/phone (migration 0007) come through when
+      // present but their absence never errors this app-wide fetch.
       const { data } = await supabase
         .from("profiles")
-        .select("id, email, username, auth_provider, created_at")
+        .select("*")
         .eq("id", uid)
         .maybeSingle();
       setProfile((data as Profile | null) ?? null);

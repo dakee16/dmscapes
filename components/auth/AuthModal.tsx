@@ -56,6 +56,9 @@ export default function AuthModal() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [confirmSent, setConfirmSent] = useState(false);
+  // Forgot-password sub-flow (login/email path only).
+  const [resetMode, setResetMode] = useState(false);
+  const [resetSent, setResetSent] = useState(false);
 
   const [username, setUsername] = useState("");
   const [uStatus, setUStatus] = useState<UsernameStatus>("idle");
@@ -97,6 +100,8 @@ export default function AuthModal() {
     setUError("");
     setBusy(false);
     setConfirmSent(false);
+    setResetMode(false);
+    setResetSent(false);
     const t = setTimeout(
       () => (needsUsername ? usernameRef : emailRef).current?.focus(),
       60
@@ -207,6 +212,31 @@ export default function AuthModal() {
     }
   }
 
+  async function handleReset(e: React.FormEvent) {
+    e.preventDefault();
+    const supabase = getBrowserClient();
+    if (!supabase || busy) return;
+    const mail = email.trim();
+    if (!EMAIL_RE.test(mail)) {
+      setError("That email doesn't look right.");
+      return;
+    }
+    setBusy(true);
+    setError("");
+    try {
+      const { error: err } = await supabase.auth.resetPasswordForEmail(mail, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
+      if (err) {
+        setError(err.message);
+        return;
+      }
+      setResetSent(true);
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function handleClaim(e: React.FormEvent) {
     e.preventDefault();
     const supabase = getBrowserClient();
@@ -244,9 +274,13 @@ export default function AuthModal() {
     ? "Claim your username"
     : confirmSent
       ? "Check your inbox"
-      : saveDesign
-        ? "Save your design"
-        : "Welcome to Dormscape";
+      : resetMode
+        ? resetSent
+          ? "Check your inbox"
+          : "Reset your password"
+        : saveDesign
+          ? "Save your design"
+          : "Welcome to Dormscape";
 
   const uHint: { text: string; tone: "soft" | "good" | "bad" } | null = (() => {
     if (!username.trim()) return null;
@@ -343,6 +377,67 @@ export default function AuthModal() {
               Got it
             </button>
           </div>
+        ) : resetMode ? (
+          resetSent ? (
+            <div className="mt-4 rounded-xl border border-ink/10 bg-white px-4 py-4 text-sm leading-relaxed">
+              <p className="font-semibold">
+                If {email.trim()} has an account, a reset link is on its way.
+              </p>
+              <p className="mt-1 text-ink-soft">
+                Open it to set a new password. The link expires soon, so use it
+                while it&apos;s fresh.
+              </p>
+              <button
+                type="button"
+                onClick={closeAuthModal}
+                className="mt-4 h-11 w-full cursor-pointer rounded-xl bg-ink text-sm font-semibold text-white transition-colors hover:bg-cobalt"
+              >
+                Got it
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleReset} className="mt-1" noValidate>
+              <p className="text-sm leading-relaxed text-ink-soft">
+                Enter your email and we&apos;ll send a link to set a new password.
+              </p>
+              <div className="mt-4">
+                <label htmlFor="auth-reset-email" className="mb-1.5 block text-sm font-medium">
+                  Email
+                </label>
+                <input
+                  id="auth-reset-email"
+                  type="email"
+                  autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@school.edu"
+                  className="h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
+                />
+              </div>
+              {error && (
+                <p className="mt-3 text-sm text-[#c2321e]" role="alert">
+                  {error}
+                </p>
+              )}
+              <button
+                type="submit"
+                disabled={busy}
+                className="mt-4 h-12 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
+              >
+                {busy ? "Sending…" : "Send reset link"}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setResetMode(false);
+                  setError("");
+                }}
+                className="mt-3 block w-full cursor-pointer text-center text-sm text-ink-soft transition-colors hover:text-ink"
+              >
+                Back to log in
+              </button>
+            </form>
+          )
         ) : needsUsername ? (
           <form onSubmit={handleClaim} className="mt-4 space-y-3" noValidate>
             <p className="text-sm leading-relaxed text-ink-soft">
@@ -495,6 +590,18 @@ export default function AuthModal() {
                     ? "Create free account"
                     : "Log in"}
               </button>
+              {mode === "login" && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setResetMode(true);
+                    setError("");
+                  }}
+                  className="block w-full cursor-pointer pt-1 text-center text-sm text-ink-soft transition-colors hover:text-ink"
+                >
+                  Forgot password?
+                </button>
+              )}
             </form>
           </div>
         )}
