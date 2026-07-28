@@ -47,6 +47,86 @@ const INK = "#17172b";
 const GRID = "#e4e9f4";
 const COBALT = "#2b4eff";
 const RED = "#dc2626";
+// Brand-mark colors for the export watermark (match app/icon.svg + the wordmark).
+const AMBER = "#f0b100";
+const HIGHLIGHT = "#ffd84d";
+const MARK_GRAY = "#d7d9e0";
+
+/**
+ * Bottom-right brand lockup baked into exported PNGs: the four-square icon mark
+ * plus the "dormscape" wordmark on a soft, mostly-transparent backing. Subtle
+ * over the room, but crisp enough to read as intentional branding when shared.
+ */
+function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
+  const WM_FONT = 'system-ui, -apple-system, "Segoe UI", sans-serif';
+  const fontSize = 14;
+  const iconSize = 16;
+  const sq = 7; // icon square side; two squares + a 2px gutter = 16
+  const gutter = iconSize - sq * 2;
+  const gap = 6; // icon-to-wordmark
+  const padX = 9;
+  const padY = 6;
+  const edge = 12; // inset from the canvas edges
+
+  const dorm = new Konva.Text({
+    text: "dorm",
+    fontFamily: WM_FONT,
+    fontStyle: "700",
+    fontSize,
+    fill: INK,
+  });
+  const scape = new Konva.Text({
+    text: "scape",
+    fontFamily: WM_FONT,
+    fontStyle: "700",
+    fontSize,
+    fill: AMBER,
+  });
+  const textW = dorm.width() + scape.width();
+  const textH = dorm.height();
+  const contentH = Math.max(iconSize, textH);
+  const pillW = padX * 2 + iconSize + gap + textW;
+  const pillH = padY * 2 + contentH;
+
+  const group = new Konva.Group({
+    x: stageW - pillW - edge,
+    y: stageH - pillH - edge,
+  });
+
+  group.add(
+    new Konva.Rect({
+      width: pillW,
+      height: pillH,
+      cornerRadius: 9,
+      fill: "#ffffff",
+      opacity: 0.7,
+      shadowColor: INK,
+      shadowBlur: 10,
+      shadowOpacity: 0.1,
+      shadowOffsetY: 2,
+    })
+  );
+
+  const ix = padX;
+  const iy = (pillH - iconSize) / 2;
+  const squares: Array<[number, number, string]> = [
+    [ix, iy, COBALT],
+    [ix + sq + gutter, iy, HIGHLIGHT],
+    [ix, iy + sq + gutter, MARK_GRAY],
+    [ix + sq + gutter, iy + sq + gutter, INK],
+  ];
+  for (const [x, y, fill] of squares) {
+    group.add(new Konva.Rect({ x, y, width: sq, height: sq, cornerRadius: 1.6, fill }));
+  }
+
+  const tx = padX + iconSize + gap;
+  const ty = (pillH - textH) / 2;
+  dorm.position({ x: tx, y: ty });
+  scape.position({ x: tx + dorm.width(), y: ty });
+  group.add(dorm, scape);
+
+  return group;
+}
 const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 2.5;
 
@@ -209,18 +289,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       const stage = stageRef.current;
       if (!stage) return null;
       const layer = stage.getLayers()[0];
-      const mark = new Konva.Text({
-        text: "Designed with Dormscape",
-        fontFamily: labelFont,
-        fontStyle: "500",
-        fontSize: 12,
-        fill: INK,
-        opacity: 0.75,
-      });
-      mark.position({
-        x: stage.width() - mark.width() - 10,
-        y: stage.height() - mark.height() - 8,
-      });
+      // Brand watermark, added just for the export then removed so the live
+      // canvas is untouched.
+      const mark = buildBrandWatermark(stage.width(), stage.height());
       layer.add(mark);
       layer.draw();
       const url = stage.toDataURL({ pixelRatio: 2 });

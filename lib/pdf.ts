@@ -25,6 +25,10 @@ const INK: RGB = [23, 23, 43];
 const AMBER: RGB = [240, 177, 0];
 const SOFT: RGB = [110, 113, 130];
 const LINE: RGB = [220, 225, 236];
+// Icon-mark colors (match app/icon.svg and the canvas export watermark).
+const COBALT: RGB = [43, 78, 255];
+const HIGHLIGHT: RGB = [255, 216, 77];
+const MARK_GRAY: RGB = [215, 217, 224];
 
 const money = (n: number) => `$${n.toFixed(2)}`;
 
@@ -42,14 +46,30 @@ export async function buildShoppingListDoc(input: ShoppingListPdfInput) {
   const nameMaxW = catX - M - 12;
   let y = 66;
 
-  // --- Wordmark ---
+  // --- Brand lockup: four-square icon mark + wordmark ---
+  const ss = 7; // icon square side
+  const gut = 2; // gutter between squares
+  const iconX = M;
+  const iconY = y - 14;
+  const marks: Array<[number, number, RGB]> = [
+    [iconX, iconY, COBALT],
+    [iconX + ss + gut, iconY, HIGHLIGHT],
+    [iconX, iconY + ss + gut, MARK_GRAY],
+    [iconX + ss + gut, iconY + ss + gut, INK],
+  ];
+  for (const [sx, sy, col] of marks) {
+    doc.setFillColor(col[0], col[1], col[2]);
+    doc.roundedRect(sx, sy, ss, ss, 1.4, 1.4, "F");
+  }
+
+  const wordX = M + (ss * 2 + gut) + 8;
   doc.setFont("helvetica", "bold");
   doc.setFontSize(22);
   doc.setTextColor(...INK);
-  doc.text("dorm", M, y);
+  doc.text("dorm", wordX, y);
   const dormW = doc.getTextWidth("dorm");
   doc.setTextColor(...AMBER);
-  doc.text("scape", M + dormW, y);
+  doc.text("scape", wordX + dormW, y);
 
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9);
