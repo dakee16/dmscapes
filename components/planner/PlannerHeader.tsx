@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import ProfileButton from "@/components/auth/ProfileButton";
+import ProfileMenu from "@/components/auth/ProfileMenu";
 
 const STEPS = [
   { href: "/plan", label: "Room" },
@@ -76,7 +76,7 @@ export default function PlannerHeader() {
           })}
         </ol>
 
-        <ProfileButton />
+        <ProfileMenu />
       </div>
     </header>
   );

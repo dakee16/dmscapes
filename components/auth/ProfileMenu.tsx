@@ -31,12 +31,12 @@ function Chevron({ open }: { open: boolean }) {
 }
 
 /**
- * Far-right header profile control. Logged out: a highlighted "Log in" pill
- * that opens the shared auth modal. Logged in: an avatar + @username + chevron
- * that toggles a dropdown (Account / Saved designs / Log out). Replaces the old
- * AuthPill + ProfileButton pair; the account menu that used to live on the
- * /account page now lives here. Closes on outside click, Escape, and route
- * change.
+ * Shared far-right header profile control, used by both the main site header
+ * (Nav) and the planner header (PlannerHeader). Logged out: a highlighted
+ * "Log in" pill that opens the shared auth modal. Logged in: an avatar +
+ * @username + chevron that toggles a dropdown (Account / Saved designs /
+ * Log out). Replaced the old AuthPill + ProfileButton controls. Closes on
+ * outside click, Escape, and route change.
  */
 export default function ProfileMenu() {
   const { user, profile, loading, openAuthModal, signOut } = useAuth();
