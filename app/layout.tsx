@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
 import { AuthProvider } from "@/lib/auth-context";
+import { UpgradeProvider } from "@/lib/upgrade-context";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -64,7 +65,9 @@ export default function RootLayout({
       className={`${bricolage.variable} ${instrument.variable} ${plexMono.variable}`}
     >
       <body className="min-h-screen antialiased">
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          <UpgradeProvider>{children}</UpgradeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

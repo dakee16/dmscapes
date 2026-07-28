@@ -27,7 +27,12 @@ export interface Profile {
   created_at: string;
   full_name?: string | null;
   phone?: string | null;
+  /** "free" or "plus". Defaults to "free" when the column/value is absent
+   *  (migration 0008 adds it with a 'free' default). */
+  plan?: PlanTier | null;
 }
+
+export type PlanTier = "free" | "plus";
 
 /** What prompted the modal; copy inside adapts ("save your design" vs generic). */
 export type AuthModalReason = "profile" | "save-design";
@@ -70,6 +75,7 @@ function devMockProfile(): Profile | null {
       created_at: new Date().toISOString(),
       full_name: p.full_name ?? null,
       phone: p.phone ?? null,
+      plan: p.plan ?? "free",
     };
   } catch {
     return null;

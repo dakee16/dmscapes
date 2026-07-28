@@ -2,6 +2,10 @@
 
 import { useState } from "react";
 import { track } from "@/lib/analytics";
+import { useAuth } from "@/lib/auth-context";
+import { useUpgrade } from "@/lib/upgrade-context";
+import { isPlus } from "@/lib/plan";
+import { getBrowserClient } from "@/lib/supabase-browser";
 import type { RoomSubmissionRequest } from "@/lib/api-types";
 
 const ROOM_TYPES = ["single", "double", "triple", "quad", "suite", "other"];
@@ -9,6 +13,9 @@ const ROOM_TYPES = ["single", "double", "triple", "quad", "suite", "other"];
 export default function AddSchoolForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
+  const { user, profile } = useAuth();
+  const { openUpgrade } = useUpgrade();
+  const plus = isPlus(profile);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -30,10 +37,17 @@ export default function AddSchoolForm() {
     }
     setStatus("sending");
     setError(null);
+    // Attach the session token so Plus members' requests get priority.
+    const supabase = getBrowserClient();
+    const token = supabase
+      ? (await supabase.auth.getSession()).data.session?.access_token
+      : null;
+    const headers: Record<string, string> = { "Content-Type": "application/json" };
+    if (token) headers.Authorization = `Bearer ${token}`;
     try {
       const res = await fetch("/api/room-submissions", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify(body),
       });
       if (!res.ok) {
@@ -162,6 +176,26 @@ export default function AddSchoolForm() {
       {error && (
         <p role="alert" className="rounded-lg bg-red-50 px-3.5 py-2.5 text-sm text-red-700">
           {error}
+        </p>
+      )}
+      {plus ? (
+        <p className="flex items-center gap-1.5 text-sm text-ink-soft">
+          <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase leading-none tracking-wide text-ink">
+            Plus
+          </span>
+          Your request skips to the front of the queue.
+        </p>
+      ) : (
+        <p className="text-sm text-ink-soft">
+          Want yours added first?{" "}
+          <button
+            type="button"
+            onClick={() => openUpgrade("school-request")}
+            className="cursor-pointer font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt"
+          >
+            Plus members skip the queue
+          </button>
+          .
         </p>
       )}
       <button

@@ -4,6 +4,7 @@ import RoomPlanner from "@/components/RoomPlanner";
 import HowItWorks from "@/components/HowItWorks";
 import Vibes from "@/components/Vibes";
 import Schools from "@/components/Schools";
+import PlusPitch from "@/components/site/PlusPitch";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/site/Reveal";
 import CursorGrid from "@/components/site/CursorGrid";
@@ -104,6 +105,10 @@ export default function Home() {
 
         <Vibes />
         <Schools />
+
+        {/* Plus pitch: distinct light treatment, between the showcase and the
+            final closing CTA. */}
+        <PlusPitch />
 
         {/* Bottom CTA */}
         <section className="bg-cobalt">

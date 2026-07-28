@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import ProfileMenu from "@/components/auth/ProfileMenu";
+import Wordmark from "@/components/site/Wordmark";
+import PlanBadge from "@/components/site/PlanBadge";
 import RoommateTeaser from "@/components/site/RoommateTeaser";
 
 // Text nav links, split around the "Plan my room" CTA so the header reads
@@ -45,11 +47,10 @@ export default function Nav() {
     <>
       <header className="sticky top-0 z-50 border-b border-ink/8 bg-paper/85 backdrop-blur-md">
         <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-5 sm:px-8">
-          <Link href="/" className="shrink-0" aria-label="Dormscape home">
-            <span className="font-display text-lg font-bold tracking-tight">
-              dorm<span className="text-amber">scape</span>
-            </span>
-          </Link>
+          <div className="flex shrink-0 items-center gap-2.5">
+            <Wordmark />
+            <PlanBadge />
+          </div>
 
           <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
             {/* Text nav, desktop only. Plan CTA sits between the two groups. */}

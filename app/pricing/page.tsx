@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import PremiumNotify from "@/components/site/PremiumNotify";
+import UpgradeButton from "@/components/site/UpgradeButton";
+import { PLUS_PRICE_USD } from "@/lib/plan";
 
 const DESCRIPTION =
-  "Dormscape is free: real room dimensions, all 6 styles, budget-aware picks, and a drag-and-drop layout. Room in 3D is the coming-soon premium tier.";
+  "The Dormscape planner is free forever. Plus is a one-time $4.99 unlock for unlimited saves, PDF export, and side-by-side comparison. Room in 3D is coming soon.";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -47,9 +49,29 @@ const FREE_PERKS: React.ReactNode[] = [
   <>All 6 styles: Minimalist, Cozy Aesthetic, Gamer, Boho, Preppy, Team Spirit</>,
   <>Budget-aware product picks with live Amazon links</>,
   <>Drag-and-drop 2D room layout that fits to the inch</>,
-  <>Save as many designs as you want with a free account</>,
+  <>Save one design to your free account</>,
   <>Share any design with a link</>,
   <>No account needed to start planning</>,
+];
+
+// Plus perks: the four things the one-time upgrade unlocks.
+const PLUS_PERKS: { title: string; body: string }[] = [
+  {
+    title: "Save unlimited designs",
+    body: "Free keeps one on file. Plus lets you save every look you're weighing and decide later.",
+  },
+  {
+    title: "Download your list as a PDF",
+    body: "A clean, printable shopping list, prices and totals, to send whoever's funding the run.",
+  },
+  {
+    title: "Compare two designs side by side",
+    body: "Line up two rooms with their budgets and details to settle which one wins.",
+  },
+  {
+    title: "Priority on add-my-school requests",
+    body: "Your school request jumps to the front of the queue when we build the next batch.",
+  },
 ];
 
 // Premium ("Room in 3D") perks: future tense on purpose, since none of this
@@ -146,32 +168,34 @@ export default function PricingPage() {
           className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[26rem]"
           aria-hidden="true"
         />
-        <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
           <div className="max-w-2xl">
             <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
               Pricing
             </p>
             <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
-              Free now. <span className="hl">3D soon.</span>
+              Free to plan. <span className="hl">Plus to go further.</span>
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              The dorm planner is free today, the whole thing, with no trial and
-              no paywall. The only paid tier is Room in 3D, and it isn&rsquo;t
-              here yet. Here&rsquo;s exactly what each one includes.
+              The planner is free forever, the whole thing, no trial and no
+              paywall. Plus is a one-time{" "}
+              <span className="font-semibold text-ink">
+                ${PLUS_PRICE_USD.toFixed(2)}
+              </span>{" "}
+              unlock for people who want to save more, export, and compare. Room
+              in 3D is the big one, and it&rsquo;s still on the way.
             </p>
           </div>
 
-          <div className="mt-12 grid items-stretch gap-5 md:grid-cols-2">
-            {/* FREE TIER: the real, active product. Highlighted so it never
-                reads as the lesser option. */}
-            <section className="flex h-full flex-col rounded-2xl border-2 border-cobalt/30 bg-card p-6 sm:p-8">
+          <div className="mt-12 grid items-start gap-5 lg:grid-cols-3">
+            {/* FREE TIER: the real, active product. Reads complete on its own. */}
+            <section className="flex h-full flex-col rounded-2xl border border-ink/12 bg-card p-6 sm:p-8">
               <div className="flex items-center justify-between gap-3">
                 <h2 className="font-display text-2xl font-extrabold tracking-tight">
                   Free
                 </h2>
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-cobalt/10 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-cobalt">
-                  <span className="h-1.5 w-1.5 rounded-full bg-cobalt" aria-hidden="true" />
-                  Your plan
+                <span className="inline-flex items-center rounded-full bg-ink/5 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink-soft">
+                  No card
                 </span>
               </div>
 
@@ -208,8 +232,69 @@ export default function PricingPage() {
 
               <div className="mt-auto border-t border-ink/8 pt-6">
                 <p className="text-[13px] leading-relaxed text-ink-soft">
-                  Everything above is live right now. No trial timer, no locked
-                  features, no upsell to plan your own room.
+                  The planner itself is free forever, no trial timer and nothing
+                  locked. The only cap is one saved design, and Plus lifts it.
+                </p>
+              </div>
+            </section>
+
+            {/* PLUS TIER: the recommended paid tier. A one-time $4.99 unlock,
+                cobalt border + "Most popular" ribbon to make it the standout
+                without diminishing Free. */}
+            <section className="relative flex h-full flex-col rounded-2xl border-2 border-cobalt bg-card p-6 shadow-[0_24px_60px_-30px_rgba(43,78,255,0.55)] sm:p-8">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-cobalt px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm">
+                Most popular
+              </span>
+              <div className="flex items-center justify-between gap-3">
+                <h2 className="font-display text-2xl font-extrabold tracking-tight">
+                  Plus
+                  <span className="text-cobalt">+</span>
+                </h2>
+                <span className="inline-flex items-center rounded-full bg-highlight px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
+                  One time
+                </span>
+              </div>
+
+              <div className="mt-5 flex items-baseline gap-2">
+                <span className="font-display text-5xl font-extrabold tracking-tight">
+                  ${PLUS_PRICE_USD.toFixed(2)}
+                </span>
+                <span className="text-ink-soft">once</span>
+              </div>
+              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
+                A single unlock, not a subscription. No renewal, no card kept on
+                file after.
+              </p>
+
+              <div className="mt-6">
+                <UpgradeButton className="rounded-xl bg-cobalt px-6 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-cobalt-deep" />
+              </div>
+
+              <div className="mt-7 border-t border-ink/8 pt-6">
+                <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
+                  Everything in Free, plus
+                </p>
+                <ul className="mt-4 space-y-4">
+                  {PLUS_PERKS.map((perk) => (
+                    <li key={perk.title} className="flex gap-3">
+                      <CheckIcon />
+                      <span>
+                        <span className="block text-[15px] font-semibold leading-snug text-ink">
+                          {perk.title}
+                        </span>
+                        <span className="mt-0.5 block text-[14px] leading-relaxed text-ink-soft">
+                          {perk.body}
+                        </span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-auto border-t border-ink/8 pt-6">
+                <p className="text-[13px] leading-relaxed text-ink-soft">
+                  Applies to your account the moment payment clears. Every free
+                  feature stays exactly as it is.
                 </p>
               </div>
             </section>

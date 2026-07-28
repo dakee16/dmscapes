@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ProfileMenu from "@/components/auth/ProfileMenu";
+import Wordmark from "@/components/site/Wordmark";
 
 const STEPS = [
   { href: "/plan", label: "Room" },
@@ -23,11 +24,7 @@ export default function PlannerHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-ink/8 bg-paper/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:gap-4 sm:px-8">
-        <Link href="/" className="shrink-0" aria-label="Dormscape home">
-          <span className="font-display text-base font-bold tracking-tight sm:text-lg">
-            dorm<span className="text-amber">scape</span>
-          </span>
-        </Link>
+        <Wordmark textClassName="text-base sm:text-lg" />
 
         <ol className="flex items-center gap-1.5 sm:gap-3" aria-label="Planner steps">
           {STEPS.map((step, i) => {

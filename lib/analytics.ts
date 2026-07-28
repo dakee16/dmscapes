@@ -32,7 +32,12 @@ export type AnalyticsEvent =
   | "feedback_prompt_opened"
   | "feedback_submitted"
   | "contact_submitted"
-  | "premium_waitlist_signup";
+  | "premium_waitlist_signup"
+  | "upgrade_prompt_shown"
+  | "upgrade_cta_clicked"
+  | "checkout_started"
+  | "plus_pdf_downloaded"
+  | "designs_compared";
 
 let initialized = false;
 

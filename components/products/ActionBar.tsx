@@ -7,7 +7,14 @@ import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
 import { useAuth } from "@/lib/auth-context";
+import { useUpgrade } from "@/lib/upgrade-context";
+import { isPlus } from "@/lib/plan";
 import { getBrowserClient } from "@/lib/supabase-browser";
+import { downloadShoppingListPdf } from "@/lib/pdf";
+import { CATEGORY_LABELS, totalFor } from "@/lib/catalog";
+import { styleById } from "@/lib/styles";
+import { roomTypeLabel } from "@/lib/format";
+import { formatDims } from "@/lib/schools";
 
 type Busy = null | "link" | "save";
 
@@ -26,7 +33,9 @@ export default function ActionBar({
   products: Product[];
   getPng: () => string | null;
 }) {
-  const { user, openAuthModal } = useAuth();
+  const { user, profile, openAuthModal } = useAuth();
+  const { openUpgrade } = useUpgrade();
+  const plus = isPlus(profile);
   const [menuOpen, setMenuOpen] = useState(false);
   const [savePanel, setSavePanel] = useState(false);
   const [name, setName] = useState("");
@@ -76,6 +85,14 @@ export default function ActionBar({
       body: JSON.stringify(body),
     });
     if (!res.ok) {
+      // Free-tier save cap: open the upgrade prompt instead of a toast.
+      if (res.status === 403) {
+        const data = (await res.json().catch(() => ({}))) as { limit?: boolean };
+        if (data.limit) {
+          openUpgrade("save-limit");
+          return null;
+        }
+      }
       showToast(
         res.status === 503
           ? "Sharing links come online soon. Download the PNG for now."
@@ -99,6 +116,44 @@ export default function ActionBar({
     a.download = "dormscape-room.png";
     a.click();
     track("share_clicked", { type: "download" });
+  }
+
+  // Plus feature: a clean, printable shopping list. Free users get the upgrade
+  // prompt instead.
+  async function handleDownloadPdf() {
+    setMenuOpen(false);
+    if (!plus) {
+      openUpgrade("pdf");
+      return;
+    }
+    if (products.length === 0) {
+      showToast("Nothing to list yet.");
+      return;
+    }
+    const s = usePlannerStore.getState();
+    const place = [s.college?.name, s.dorm?.name].filter(Boolean).join(" · ") || null;
+    const roomLine = s.room
+      ? [roomTypeLabel(s.room), formatDims(s.room.lengthFt, s.room.widthFt)]
+          .filter(Boolean)
+          .join(" · ")
+      : null;
+    try {
+      await downloadShoppingListPdf({
+        place,
+        roomLine,
+        styleName: s.style ? styleById(s.style).name : null,
+        budget: s.budget,
+        items: products.map((p) => ({
+          name: p.name,
+          category: CATEGORY_LABELS[p.category],
+          price: p.price,
+        })),
+        total: totalFor(products),
+      });
+      track("plus_pdf_downloaded");
+    } catch {
+      showToast("Couldn't build the PDF. Try again.");
+    }
   }
 
   async function handleCopyLink() {
@@ -172,6 +227,18 @@ export default function ActionBar({
                   className="block w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper disabled:opacity-60"
                 >
                   {busy === "link" ? "Creating link…" : "🔗 Copy share link"}
+                </button>
+                <button
+                  type="button"
+                  onClick={handleDownloadPdf}
+                  className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper"
+                >
+                  <span>📄 Download list PDF</span>
+                  {!plus && (
+                    <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wide text-ink">
+                      Plus
+                    </span>
+                  )}
                 </button>
               </div>
             )}

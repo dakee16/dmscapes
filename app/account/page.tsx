@@ -7,6 +7,8 @@ import Nav from "@/components/Nav";
 import RoomThumb from "@/components/room/RoomThumb";
 import ShareButton from "@/components/room/ShareButton";
 import { useAuth } from "@/lib/auth-context";
+import { useUpgrade } from "@/lib/upgrade-context";
+import { isPlus } from "@/lib/plan";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
 import { getSchool } from "@/lib/schools";
@@ -109,6 +111,8 @@ function ListSkeleton() {
 export default function AccountPage() {
   const router = useRouter();
   const { user, profile, loading, openAuthModal, signOut } = useAuth();
+  const { openUpgrade } = useUpgrade();
+  const plus = isPlus(profile);
 
   // null = still loading; array = loaded (possibly empty).
   const [designs, setDesigns] = useState<AccountRoomSummary[] | null>(null);
@@ -210,11 +214,34 @@ export default function AccountPage() {
               <h2 className="font-display text-xl font-bold tracking-tight">
                 Saved designs
               </h2>
-              {designs && designs.length > 0 && (
-                <span className="font-mono text-xs text-ink-soft">
-                  {designs.length} saved
-                </span>
-              )}
+              <div className="flex items-center gap-4">
+                {designs && designs.length >= 2 && (
+                  plus ? (
+                    <Link
+                      href="/account/compare"
+                      className="text-sm font-semibold text-cobalt underline-offset-2 transition-colors hover:underline"
+                    >
+                      Compare
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => openUpgrade("compare")}
+                      className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-semibold text-ink-soft transition-colors hover:text-ink"
+                    >
+                      Compare
+                      <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wide text-ink">
+                        Plus
+                      </span>
+                    </button>
+                  )
+                )}
+                {designs && designs.length > 0 && (
+                  <span className="font-mono text-xs text-ink-soft">
+                    {designs.length} saved
+                  </span>
+                )}
+              </div>
             </div>
 
             <div className="mt-4">

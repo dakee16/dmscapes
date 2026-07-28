@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getServiceClient } from "@/lib/supabase-server";
+import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
 import type { RoomSubmissionRequest, RoomSubmissionResponse } from "@/lib/api-types";
 
@@ -62,6 +63,20 @@ export async function POST(request: Request) {
     );
   }
 
+  // Plus members' requests jump the queue (priority flag, sorted first in the
+  // room_submissions_queue admin view). Derived from the logged-in user's plan,
+  // never a client-supplied field.
+  const userId = await getUserId(request);
+  let priority = false;
+  if (userId) {
+    const { data: prof } = await supabase
+      .from("profiles")
+      .select("plan")
+      .eq("id", userId)
+      .maybeSingle();
+    priority = prof?.plan === "plus";
+  }
+
   const { error } = await supabase.from("room_submissions").insert({
     college_name: collegeName,
     // Schema requires dorm_name; the request-school modal only collects
@@ -72,6 +87,8 @@ export async function POST(request: Request) {
     width_ft: clampFeet(body.width_ft),
     email,
     notes: cleanText(body.notes, 1000),
+    priority,
+    user_id: userId,
   });
 
   if (error) {

@@ -2,6 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { track } from "@/lib/analytics";
+import { useAuth } from "@/lib/auth-context";
+import { isPlus } from "@/lib/plan";
+import { getBrowserClient } from "@/lib/supabase-browser";
 import type { RoomSubmissionRequest } from "@/lib/api-types";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -20,6 +23,8 @@ export default function RequestSchoolModal({
   const [message, setMessage] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const honeypotRef = useRef<HTMLInputElement>(null);
+  const { profile } = useAuth();
+  const plus = isPlus(profile);
 
   useEffect(() => {
     if (open) {
@@ -64,10 +69,17 @@ export default function RequestSchoolModal({
       // Honeypot: humans never see the field, so it stays empty for them.
       website: honeypotRef.current?.value || undefined,
     };
+    // Attach the session token so Plus members' requests get priority.
+    const supabase = getBrowserClient();
+    const token = supabase
+      ? (await supabase.auth.getSession()).data.session?.access_token
+      : null;
+    const headers: Record<string, string> = { "Content-Type": "application/json" };
+    if (token) headers.Authorization = `Bearer ${token}`;
     try {
       const res = await fetch("/api/room-submissions", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers,
         body: JSON.stringify(body),
       });
       if (res.status === 503) {
@@ -180,6 +192,14 @@ export default function RequestSchoolModal({
                 className="h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
               />
             </div>
+            {plus && (
+              <p className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
+                <span className="rounded-full bg-highlight px-1.5 py-0.5 font-semibold leading-none text-ink">
+                  Plus
+                </span>
+                Your request skips to the front of the queue.
+              </p>
+            )}
             {status === "error" && (
               <p className="text-sm text-[#c2321e]" role="alert">
                 {message}
