@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import PremiumNotify from "@/components/site/PremiumNotify";
+import Room3DScene from "@/components/site/Room3DScene";
 import UpgradeButton from "@/components/site/UpgradeButton";
 import { PLUS_PRICE_USD } from "@/lib/plan";
 
@@ -132,30 +133,6 @@ function SoonPill() {
       </svg>
       Coming soon
     </span>
-  );
-}
-
-// Compact split-room sketch, reused from the Room in 3D teaser to build the
-// same anticipation on the pricing page.
-function SplitRoomSketch() {
-  return (
-    <div className="grid-paper relative overflow-hidden rounded-xl border border-dashed border-ink/25 bg-white">
-      <svg viewBox="0 0 300 130" className="block w-full" aria-hidden="true">
-        <rect x="20" y="14" width="260" height="102" rx="4" fill="none" strokeWidth="2.5" className="stroke-ink" />
-        <line x1="150" y1="14" x2="150" y2="116" strokeWidth="1.5" strokeDasharray="5 5" className="stroke-ink/30" />
-        <rect x="30" y="24" width="32" height="54" rx="3" strokeWidth="1.5" className="fill-cobalt/15 stroke-cobalt" />
-        <rect x="30" y="88" width="44" height="18" rx="3" strokeWidth="1.5" className="fill-cobalt/15 stroke-cobalt" />
-        <rect x="238" y="24" width="32" height="54" rx="3" strokeWidth="1.5" className="fill-highlight/40 stroke-amber" />
-        <rect x="226" y="88" width="44" height="18" rx="3" strokeWidth="1.5" className="fill-highlight/40 stroke-amber" />
-      </svg>
-      <span className="absolute left-1/2 top-1/2 inline-flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5 rounded-full bg-ink px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-white shadow-lg">
-        <svg viewBox="0 0 24 24" className="h-3 w-3 text-highlight" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-          <rect x="5" y="11" width="14" height="9" rx="2" />
-          <path d="M8 11V7a4 4 0 0 1 8 0v4" strokeLinecap="round" />
-        </svg>
-        3D · Coming soon
-      </span>
-    </div>
   );
 }
 
@@ -320,7 +297,7 @@ export default function PricingPage() {
               </p>
 
               <div className="mt-6">
-                <SplitRoomSketch />
+                <Room3DScene />
               </div>
 
               <p className="mt-6 text-[15px] leading-relaxed text-ink-soft">

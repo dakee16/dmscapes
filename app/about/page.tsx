@@ -174,8 +174,13 @@ export default function AboutPage() {
             <p className="mt-3 text-base leading-relaxed text-ink-soft">
               No account needed to plan a room. No paywall on the layout. Some
               shopping links are affiliate links, which pay us a small commission
-              at no extra cost to you. That&rsquo;s the whole business model, and
-              it&rsquo;s what keeps the tool free.
+              at no extra cost to you, and that keeps the core planner free.{" "}
+              <Link href="/pricing" className={TEXT_LINK}>
+                Dormscape Plus
+              </Link>{" "}
+              is an optional one-time $4.99 upgrade for extras like unlimited
+              saves and PDF export, but nothing in the free planner is locked
+              behind it.
             </p>
           </section>
 

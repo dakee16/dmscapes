@@ -3,6 +3,7 @@
 // Coming-soon teaser for the shared-3D roommate feature. Opened from the
 // header's "Room in 3D" nav item; controlled entirely by the caller.
 import { useEffect, useRef } from "react";
+import Room3DScene from "@/components/site/Room3DScene";
 
 export default function RoommateTeaser({
   open,
@@ -75,80 +76,8 @@ export default function RoommateTeaser({
           your budgets stay separate. We&rsquo;re building it now.
         </p>
 
-        {/* Split-room sketch, locked on purpose, not broken */}
-        <div className="grid-paper relative mt-5 overflow-hidden rounded-xl border border-dashed border-ink/25 bg-white">
-          <svg viewBox="0 0 300 150" className="block w-full" aria-hidden="true">
-            <rect
-              x="20"
-              y="16"
-              width="260"
-              height="118"
-              rx="4"
-              fill="none"
-              strokeWidth="2.5"
-              className="stroke-ink"
-            />
-            <line
-              x1="150"
-              y1="16"
-              x2="150"
-              y2="134"
-              strokeWidth="1.5"
-              strokeDasharray="5 5"
-              className="stroke-ink/30"
-            />
-            <rect
-              x="30"
-              y="26"
-              width="34"
-              height="64"
-              rx="3"
-              strokeWidth="1.5"
-              className="fill-cobalt/15 stroke-cobalt"
-            />
-            <rect
-              x="30"
-              y="104"
-              width="46"
-              height="20"
-              rx="3"
-              strokeWidth="1.5"
-              className="fill-cobalt/15 stroke-cobalt"
-            />
-            <rect
-              x="236"
-              y="26"
-              width="34"
-              height="64"
-              rx="3"
-              strokeWidth="1.5"
-              className="fill-highlight/40 stroke-amber"
-            />
-            <rect
-              x="224"
-              y="104"
-              width="46"
-              height="20"
-              rx="3"
-              strokeWidth="1.5"
-              className="fill-highlight/40 stroke-amber"
-            />
-          </svg>
-          <span className="absolute left-1/2 top-1/2 inline-flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5 rounded-full bg-ink px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-white shadow-lg">
-            <svg
-              viewBox="0 0 24 24"
-              className="h-3 w-3 text-highlight"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              aria-hidden="true"
-            >
-              <rect x="5" y="11" width="14" height="9" rx="2" />
-              <path d="M8 11V7a4 4 0 0 1 8 0v4" strokeLinecap="round" />
-            </svg>
-            3D · Coming soon
-          </span>
-        </div>
+        {/* Angled 3D room preview: your side and theirs, one space. */}
+        <Room3DScene className="mt-5" />
         <div className="mt-3 flex items-center gap-5 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
           <span className="inline-flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-cobalt" aria-hidden="true" />
