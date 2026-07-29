@@ -8,8 +8,10 @@
   --color-cobalt: #2b4eff;
   --color-cobalt-deep: #1e3ad6;
   --color-grid: #e4e9f4;
-  /* Grid lines under the cursor halo; see .cursor-grid */
-  --color-grid-strong: #c7d1ea;
+  /* Grid lines under the cursor halo; see .cursor-grid. Distinctly darker than
+     the base grid, with a slight cobalt tint so the halo reads as a deliberate
+     brand moment rather than a faint smudge. */
+  --color-grid-strong: #7b8fd6;
   --color-highlight: #ffd84d;
   /* Wordmark yellow; highlight is too pale for text on paper */
   --color-amber: #f0b100;
@@ -114,18 +116,20 @@ body {
     linear-gradient(90deg, var(--color-grid-strong) 1px, transparent 1px);
   background-size: 28px 28px;
   opacity: 0;
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.45s ease-out;
   -webkit-mask-image: radial-gradient(
-    280px circle at var(--cg-x, -999px) var(--cg-y, -999px),
+    340px circle at var(--cg-x, -999px) var(--cg-y, -999px),
     black 0%,
-    rgba(0, 0, 0, 0.35) 45%,
-    transparent 72%
+    black 34%,
+    rgba(0, 0, 0, 0.5) 62%,
+    transparent 85%
   );
   mask-image: radial-gradient(
-    280px circle at var(--cg-x, -999px) var(--cg-y, -999px),
+    340px circle at var(--cg-x, -999px) var(--cg-y, -999px),
     black 0%,
-    rgba(0, 0, 0, 0.35) 45%,
-    transparent 72%
+    black 34%,
+    rgba(0, 0, 0, 0.5) 62%,
+    transparent 85%
   );
 }
 
