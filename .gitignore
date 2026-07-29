@@ -45,3 +45,6 @@ next-env.d.ts
 
 # Local research source files (PDFs, DOCX, screenshots), not committed
 research/
+
+# Standalone brand assets for external use (video/reels/social), not part of the deployed app
+brand-assets/
