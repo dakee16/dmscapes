@@ -62,6 +62,10 @@ export async function POST(request: Request) {
   try {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
+      // Opt this session out of Managed Payments (Stripe's merchant-of-record
+      // flow, on by default). It requires a product tax code we don't set, and
+      // a flat $4.99 digital upgrade doesn't need automated tax at this stage.
+      managed_payments: { enabled: false },
       line_items: [
         priceId
           ? { price: priceId, quantity: 1 }
