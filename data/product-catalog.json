@@ -5471,5 +5471,3005 @@
     ],
     "description": "Pro-grade over-the-door hoop with a breakaway feel.",
     "active": true
+  },
+  {
+    "id": "aca-budget-bed-01",
+    "name": "Plaid Twin XL Comforter Set Blue Grey 5 Pieces College Dorm Bed in a Bag | Farmhouse Light",
+    "category": "bedding",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "budget",
+    "price": 32.99,
+    "amazon_asin": "B0CSDHQ4HQ",
+    "affiliate_url": "https://www.amazon.com/dp/B0CSDHQ4HQ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81K1ylOLW2L._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "plaid",
+    "rating": 4.6,
+    "review_count": 598,
+    "alternative_ids": [
+      "aca-mid-bed-01",
+      "aca-prem-bed-01"
+    ],
+    "description": "A warm, collegiate academia twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "aca-mid-bed-01",
+    "name": "Dorm Haul® Cozy College Comforter Set - Twin XL Bedding - Antarctica Gray",
+    "category": "bedding",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "mid",
+    "price": 32.99,
+    "amazon_asin": "B0C9VW1JX9",
+    "affiliate_url": "https://www.amazon.com/dp/B0C9VW1JX9?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71R8r1m1GxL._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "gray",
+    "rating": 5,
+    "review_count": 8,
+    "alternative_ids": [
+      "aca-budget-bed-01",
+      "aca-prem-bed-01"
+    ],
+    "description": "A warm, collegiate academia twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "aca-prem-bed-01",
+    "name": "Twin XL Comforter Set Dark Grey - 5 Pieces Complete Bedding Set | College Dorm Essentials,",
+    "category": "bedding",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "premium",
+    "price": 35.46,
+    "amazon_asin": "B0BNQ3W8JG",
+    "affiliate_url": "https://www.amazon.com/dp/B0BNQ3W8JG?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71uUab2uIoL._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "gray",
+    "rating": 4.5,
+    "review_count": 28858,
+    "alternative_ids": [
+      "aca-budget-bed-01",
+      "aca-mid-bed-01"
+    ],
+    "description": "A warm, collegiate academia twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "aca-budget-rug-01",
+    "name": "LUXE WEAVERS Distressed Floral Oriental Area Rug Beige 5x7 | Stain-Resistant",
+    "category": "rug",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "budget",
+    "price": 20.97,
+    "amazon_asin": "B072S217WP",
+    "affiliate_url": "https://www.amazon.com/dp/B072S217WP?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/A19+Vow3QvL._AC_SL1200_.jpg",
+    "width_ft": 5,
+    "length_ft": 7,
+    "height_ft": 0.06,
+    "color": "beige",
+    "rating": 4.7,
+    "review_count": 11599,
+    "alternative_ids": [
+      "aca-mid-rug-01",
+      "aca-prem-rug-01"
+    ],
+    "description": "A warm, collegiate academia area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "aca-mid-rug-01",
+    "name": "LUXE WEAVERS Distressed Floral Oriental Area Rug Beige 5x7 | Stain-Resistant",
+    "category": "rug",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "mid",
+    "price": 20.97,
+    "amazon_asin": "B072S217WP",
+    "affiliate_url": "https://www.amazon.com/dp/B072S217WP?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/A19+Vow3QvL._AC_SL1200_.jpg",
+    "width_ft": 5,
+    "length_ft": 7,
+    "height_ft": 0.06,
+    "color": "beige",
+    "rating": 4.7,
+    "review_count": 11599,
+    "alternative_ids": [
+      "aca-budget-rug-01",
+      "aca-prem-rug-01"
+    ],
+    "description": "A warm, collegiate academia area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "aca-prem-rug-01",
+    "name": "LUXE WEAVERS Distressed Floral Oriental Area Rug Beige 5x7 | Stain-Resistant",
+    "category": "rug",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "premium",
+    "price": 20.97,
+    "amazon_asin": "B072S217WP",
+    "affiliate_url": "https://www.amazon.com/dp/B072S217WP?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/A19+Vow3QvL._AC_SL1200_.jpg",
+    "width_ft": 5,
+    "length_ft": 7,
+    "height_ft": 0.06,
+    "color": "beige",
+    "rating": 4.7,
+    "review_count": 11599,
+    "alternative_ids": [
+      "aca-budget-rug-01",
+      "aca-mid-rug-01"
+    ],
+    "description": "A warm, collegiate academia area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "aca-budget-lamp-01",
+    "name": "NISSAFORS Bankers Desk Lamp, Green Glass Shade, Vintage Desk Lamp with Pull Chain Switch, ",
+    "category": "desk_lamp",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "budget",
+    "price": 8.99,
+    "amazon_asin": "B0DF6ZY6FZ",
+    "affiliate_url": "https://www.amazon.com/dp/B0DF6ZY6FZ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71h4G-cl6fL._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "gold",
+    "rating": 4.8,
+    "review_count": 334,
+    "alternative_ids": [
+      "aca-mid-lamp-01",
+      "aca-prem-lamp-01"
+    ],
+    "description": "A warm, collegiate academia desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "aca-mid-lamp-01",
+    "name": "Retro Style Bankers Lamp,Desk Lamp Brass Base Green Glass Shade Banker's Desk Lamp for Liv",
+    "category": "desk_lamp",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "mid",
+    "price": 14.28,
+    "amazon_asin": "B081VCBL65",
+    "affiliate_url": "https://www.amazon.com/dp/B081VCBL65?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61PD-WSX1CL._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "brass",
+    "rating": 4.5,
+    "review_count": 0,
+    "alternative_ids": [
+      "aca-budget-lamp-01",
+      "aca-prem-lamp-01"
+    ],
+    "description": "A warm, collegiate academia desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "aca-prem-lamp-01",
+    "name": "Retro Style Bankers Lamp,Desk Lamp Brass Base Green Glass Shade Banker's Desk Lamp for Liv",
+    "category": "desk_lamp",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "premium",
+    "price": 14.28,
+    "amazon_asin": "B081VCBL65",
+    "affiliate_url": "https://www.amazon.com/dp/B081VCBL65?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61PD-WSX1CL._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "brass",
+    "rating": 4.5,
+    "review_count": 0,
+    "alternative_ids": [
+      "aca-budget-lamp-01",
+      "aca-mid-lamp-01"
+    ],
+    "description": "A warm, collegiate academia desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "aca-budget-amb-01",
+    "name": "Fairy Lights Plug in, 99Feet 300LEDs Warm White String Lights, Waterproof Flexible Silver ",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "budget",
+    "price": 8.99,
+    "amazon_asin": "B014ZXTWOW",
+    "affiliate_url": "https://www.amazon.com/dp/B014ZXTWOW?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71fDAhgPYTL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "silver",
+    "rating": 4.5,
+    "review_count": 12937,
+    "alternative_ids": [
+      "aca-mid-amb-01",
+      "aca-prem-amb-01"
+    ],
+    "description": "warm, collegiate academia ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "aca-mid-amb-01",
+    "name": "LE LIGHTING EVER String Lights 33ft with 100 LEDs, Waterproof Copper Wire Lights, Outdoor ",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "mid",
+    "price": 9.99,
+    "amazon_asin": "B0196H75KA",
+    "affiliate_url": "https://www.amazon.com/dp/B0196H75KA?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71fae4QF8tL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.4,
+    "review_count": 5802,
+    "alternative_ids": [
+      "aca-budget-amb-01",
+      "aca-prem-amb-01"
+    ],
+    "description": "warm, collegiate academia ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "aca-prem-amb-01",
+    "name": "LE Fairy Lights with Switch, 66ft 200 LED, Plug in, Waterproof, Indoor Outdoor Decorative ",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "premium",
+    "price": 13.49,
+    "amazon_asin": "B01M9FPE8X",
+    "affiliate_url": "https://www.amazon.com/dp/B01M9FPE8X?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/717nBKi0rVL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.4,
+    "review_count": 5802,
+    "alternative_ids": [
+      "aca-budget-amb-01",
+      "aca-mid-amb-01"
+    ],
+    "description": "warm, collegiate academia ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "aca-budget-wall-01",
+    "name": "Belle Maison Art Botanical Print Set No. 20, Vintage Botanical Wall Art, 8x10 Prints, Unfr",
+    "category": "wall_decor",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "budget",
+    "price": 5.99,
+    "amazon_asin": "B01EMC8RAG",
+    "affiliate_url": "https://www.amazon.com/dp/B01EMC8RAG?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/91I7eav4nzL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.3,
+    "review_count": 42,
+    "alternative_ids": [
+      "aca-mid-wall-01",
+      "aca-prem-wall-01"
+    ],
+    "description": "A warm, collegiate academia wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "aca-mid-wall-01",
+    "name": "97 Decor Vintage Botanical Wall Art, 12 Pcs Plant Posters, Unframed | 12 prints in 8x10, 5",
+    "category": "wall_decor",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "mid",
+    "price": 8.99,
+    "amazon_asin": "B0CQ48YCPK",
+    "affiliate_url": "https://www.amazon.com/dp/B0CQ48YCPK?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81ij7fykZrL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.5,
+    "review_count": 2368,
+    "alternative_ids": [
+      "aca-budget-wall-01",
+      "aca-prem-wall-01"
+    ],
+    "description": "A warm, collegiate academia wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "aca-prem-wall-01",
+    "name": "Vintage Botanical Wall Art Prints Set of 2 Antique Sketch Wall Art Decor Neutral Flower Ca",
+    "category": "wall_decor",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "premium",
+    "price": 10.49,
+    "amazon_asin": "B0CM11NSSZ",
+    "affiliate_url": "https://www.amazon.com/dp/B0CM11NSSZ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81gqfDAqejL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.3,
+    "review_count": 103,
+    "alternative_ids": [
+      "aca-budget-wall-01",
+      "aca-mid-wall-01"
+    ],
+    "description": "A warm, collegiate academia wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "aca-budget-throw-01",
+    "name": "BEDELITE Plaid Fleece Throw Blanket, Black & White Buffalo 50x60 Throw | 100% Polyester Mi",
+    "category": "throw",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B08FY9T1MW",
+    "affiliate_url": "https://www.amazon.com/dp/B08FY9T1MW?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81HY1iZkzqL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "plaid",
+    "rating": 4.6,
+    "review_count": 2900,
+    "alternative_ids": [
+      "aca-mid-throw-01",
+      "aca-prem-throw-01"
+    ],
+    "description": "A warm, collegiate academia throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "aca-mid-throw-01",
+    "name": "Eddie Bauer - Sherpa Throw Blanket for Couch 50x60 - Ultra Soft Reversible Fleece & Plush",
+    "category": "throw",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "mid",
+    "price": 10.8,
+    "amazon_asin": "B01HTQQGHS",
+    "affiliate_url": "https://www.amazon.com/dp/B01HTQQGHS?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71-bxs-0qvL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "plaid",
+    "rating": 4.6,
+    "review_count": 9640,
+    "alternative_ids": [
+      "aca-budget-throw-01",
+      "aca-prem-throw-01"
+    ],
+    "description": "A warm, collegiate academia throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "aca-prem-throw-01",
+    "name": "HOMRITAR Ultra Soft Throw Blanket with Plaid, Cozy Flannel Fleece Luxury Blanket for Bed, ",
+    "category": "throw",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "premium",
+    "price": 16.99,
+    "amazon_asin": "B0838Y9MWC",
+    "affiliate_url": "https://www.amazon.com/dp/B0838Y9MWC?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71x1PV249wL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "plaid",
+    "rating": 4.6,
+    "review_count": 877,
+    "alternative_ids": [
+      "aca-budget-throw-01",
+      "aca-mid-throw-01"
+    ],
+    "description": "A warm, collegiate academia throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "aca-budget-curt-01",
+    "name": "MIULEE Cappuccino Brown Blackout Bedroom Curtains 84 Inch Long 52\"x84\" | Grommet Top, Room",
+    "category": "curtains",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "budget",
+    "price": 11.66,
+    "amazon_asin": "B086HG2HN8",
+    "affiliate_url": "https://www.amazon.com/dp/B086HG2HN8?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71G0fxhI8iL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "brown",
+    "rating": 4.6,
+    "review_count": 6287,
+    "alternative_ids": [
+      "aca-mid-curt-01",
+      "aca-prem-curt-01"
+    ],
+    "description": "warm, collegiate academia curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "aca-mid-curt-01",
+    "name": "HOMEIDEAS Blackout Curtains for Bedroom 52 X 84 Inch Long 2 Panels Set Chocolate Brown Roo",
+    "category": "curtains",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "mid",
+    "price": 16.81,
+    "amazon_asin": "B078B7TV6K",
+    "affiliate_url": "https://www.amazon.com/dp/B078B7TV6K?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61zalXQUvLL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "brown",
+    "rating": 4.6,
+    "review_count": 15762,
+    "alternative_ids": [
+      "aca-budget-curt-01",
+      "aca-prem-curt-01"
+    ],
+    "description": "warm, collegiate academia curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "aca-prem-curt-01",
+    "name": "HOMEIDEAS Blackout Curtains for Bedroom 52 X 84 Inch Long 2 Panels Set Chocolate Brown Roo",
+    "category": "curtains",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "premium",
+    "price": 16.81,
+    "amazon_asin": "B078B7TV6K",
+    "affiliate_url": "https://www.amazon.com/dp/B078B7TV6K?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61zalXQUvLL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "brown",
+    "rating": 4.6,
+    "review_count": 15762,
+    "alternative_ids": [
+      "aca-budget-curt-01",
+      "aca-mid-curt-01"
+    ],
+    "description": "warm, collegiate academia curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "aca-budget-acc-01",
+    "name": "4 Pcs Decorative Faux Books for Home Decor - Modern Fake Books for Coffee Table, Bookshelf",
+    "category": "accent",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "budget",
+    "price": 13.99,
+    "amazon_asin": "B0DQG8SXMN",
+    "affiliate_url": "https://www.amazon.com/dp/B0DQG8SXMN?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71ItgEcnERL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.4,
+    "review_count": 108,
+    "alternative_ids": [
+      "aca-mid-acc-01",
+      "aca-prem-acc-01"
+    ],
+    "description": "A warm, collegiate academia accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "aca-mid-acc-01",
+    "name": "Set of 3 Decorative Book for Home - XL Coffee Table Decoration Books - Stylish Fake/Faux D",
+    "category": "accent",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "mid",
+    "price": 57.93,
+    "amazon_asin": "B0BCXH5MD4",
+    "affiliate_url": "https://www.amazon.com/dp/B0BCXH5MD4?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71UAd1DS8zL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.4,
+    "review_count": 59,
+    "alternative_ids": [
+      "aca-budget-acc-01",
+      "aca-prem-acc-01"
+    ],
+    "description": "A warm, collegiate academia accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "aca-prem-acc-01",
+    "name": "Set of 3 Decorative Book for Home - XL Coffee Table Decoration Books - Stylish Fake/Faux D",
+    "category": "accent",
+    "style_tags": [
+      "academia"
+    ],
+    "budget_tier": "premium",
+    "price": 57.93,
+    "amazon_asin": "B0BCXH5MD4",
+    "affiliate_url": "https://www.amazon.com/dp/B0BCXH5MD4?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71UAd1DS8zL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.4,
+    "review_count": 59,
+    "alternative_ids": [
+      "aca-budget-acc-01",
+      "aca-mid-acc-01"
+    ],
+    "description": "A warm, collegiate academia accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "y2k-budget-bed-01",
+    "name": "Bedsure Twin XL Comforter Set Pink - Dorm Room Essentials for Girls, Extra Long Twin XL Be",
+    "category": "bedding",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "budget",
+    "price": 19.54,
+    "amazon_asin": "B09VT1L5JK",
+    "affiliate_url": "https://www.amazon.com/dp/B09VT1L5JK?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81zYKzDAguL._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "pink",
+    "rating": 4.5,
+    "review_count": 73913,
+    "alternative_ids": [
+      "y2k-mid-bed-01",
+      "y2k-prem-bed-01"
+    ],
+    "description": "A chrome-and-candy Y2K twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "y2k-mid-bed-01",
+    "name": "Bedsure Twin XL Comforter Set Pink - Dorm Room Essentials for Girls, Extra Long Twin XL Be",
+    "category": "bedding",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "mid",
+    "price": 19.54,
+    "amazon_asin": "B09VT1L5JK",
+    "affiliate_url": "https://www.amazon.com/dp/B09VT1L5JK?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81zYKzDAguL._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "pink",
+    "rating": 4.5,
+    "review_count": 73913,
+    "alternative_ids": [
+      "y2k-budget-bed-01",
+      "y2k-prem-bed-01"
+    ],
+    "description": "A chrome-and-candy Y2K twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "y2k-prem-bed-01",
+    "name": "Bedsure Twin XL Comforter Set Pink - Dorm Room Essentials for Girls, Extra Long Twin XL Be",
+    "category": "bedding",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "premium",
+    "price": 19.54,
+    "amazon_asin": "B09VT1L5JK",
+    "affiliate_url": "https://www.amazon.com/dp/B09VT1L5JK?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81zYKzDAguL._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "pink",
+    "rating": 4.5,
+    "review_count": 73913,
+    "alternative_ids": [
+      "y2k-budget-bed-01",
+      "y2k-mid-bed-01"
+    ],
+    "description": "A chrome-and-candy Y2K twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "y2k-budget-rug-01",
+    "name": "Pink Girls Room Rug 5x7 - Soft Fluffy Kids Bedroom Carpet | Cotton-Candy Soft - Dense Micr",
+    "category": "rug",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "budget",
+    "price": 12.99,
+    "amazon_asin": "B0DFWDGPD5",
+    "affiliate_url": "https://www.amazon.com/dp/B0DFWDGPD5?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71y8sCu2Y+L._AC_SL1200_.jpg",
+    "width_ft": 5,
+    "length_ft": 7,
+    "height_ft": 0.06,
+    "color": "pink",
+    "rating": 4.3,
+    "review_count": 1276,
+    "alternative_ids": [
+      "y2k-mid-rug-01",
+      "y2k-prem-rug-01"
+    ],
+    "description": "A chrome-and-candy Y2K area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "y2k-mid-rug-01",
+    "name": "Fluffy Soft Hot Pink Area Rug for Bedroom 5x7, Large Fuzzy Shag Carpet for Girls Kids Nurs",
+    "category": "rug",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "mid",
+    "price": 18.04,
+    "amazon_asin": "B0CZ97VTFW",
+    "affiliate_url": "https://www.amazon.com/dp/B0CZ97VTFW?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81BsiJezThL._AC_SL1200_.jpg",
+    "width_ft": 5,
+    "length_ft": 7,
+    "height_ft": 0.06,
+    "color": "hot pink",
+    "rating": 4.1,
+    "review_count": 10,
+    "alternative_ids": [
+      "y2k-budget-rug-01",
+      "y2k-prem-rug-01"
+    ],
+    "description": "A chrome-and-candy Y2K area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "y2k-prem-rug-01",
+    "name": "Area Rugs for Bedroom Living Room, 5ft x 7ft Pink Fluffy Carpet for Teens Room, Shaggy Thr",
+    "category": "rug",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "premium",
+    "price": 21.99,
+    "amazon_asin": "B091TQW1FK",
+    "affiliate_url": "https://www.amazon.com/dp/B091TQW1FK?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/7150GDmlOyL._AC_SL1200_.jpg",
+    "width_ft": 5,
+    "length_ft": 7,
+    "height_ft": 0.03,
+    "color": "pink",
+    "rating": 4.2,
+    "review_count": 4812,
+    "alternative_ids": [
+      "y2k-budget-rug-01",
+      "y2k-mid-rug-01"
+    ],
+    "description": "A chrome-and-candy Y2K area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "y2k-budget-lamp-01",
+    "name": "JUSJUBR 2PC RGB Under Monitor Light, Gaming Light with 353 Color Modes, LED Desk Light wit",
+    "category": "desk_lamp",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B0B14VBVJ5",
+    "affiliate_url": "https://www.amazon.com/dp/B0B14VBVJ5?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71b6dk5RO4L._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "multi",
+    "rating": 4.2,
+    "review_count": 660,
+    "alternative_ids": [
+      "y2k-mid-lamp-01",
+      "y2k-prem-lamp-01"
+    ],
+    "description": "A chrome-and-candy Y2K desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "y2k-mid-lamp-01",
+    "name": "WILLED RGB Under Monitor Light Bar, Gaming Lights for Gaming Setup, RGB Desk Led with Remo",
+    "category": "desk_lamp",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "mid",
+    "price": 13.49,
+    "amazon_asin": "B09CPP7CS3",
+    "affiliate_url": "https://www.amazon.com/dp/B09CPP7CS3?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81WxD9z3ARL._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "multi",
+    "rating": 4.3,
+    "review_count": 1234,
+    "alternative_ids": [
+      "y2k-budget-lamp-01",
+      "y2k-prem-lamp-01"
+    ],
+    "description": "A chrome-and-candy Y2K desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "y2k-prem-lamp-01",
+    "name": "Quntis Monitor Light Bar 15.7\", 24 RGB Backlight Modes for lmmersive Gaming Ambience, 900 ",
+    "category": "desk_lamp",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "premium",
+    "price": 17.99,
+    "amazon_asin": "B0C5JMWZC9",
+    "affiliate_url": "https://www.amazon.com/dp/B0C5JMWZC9?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61JttcDsIWL._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "multi",
+    "rating": 4.5,
+    "review_count": 1213,
+    "alternative_ids": [
+      "y2k-budget-lamp-01",
+      "y2k-mid-lamp-01"
+    ],
+    "description": "A chrome-and-candy Y2K desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "y2k-budget-amb-01",
+    "name": "The Original Lava Brand Lava Motion Lamp 14.5\" Pink Purple Silver",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "budget",
+    "price": 39.99,
+    "amazon_asin": "B00HRSGWWI",
+    "affiliate_url": "https://www.amazon.com/dp/B00HRSGWWI?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61q8sfintVL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "purple",
+    "rating": 4.1,
+    "review_count": 596,
+    "alternative_ids": [
+      "y2k-mid-amb-01",
+      "y2k-prem-amb-01"
+    ],
+    "description": "chrome-and-candy Y2K ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "y2k-mid-amb-01",
+    "name": "Lava Lamp 14.5\" Purple/Pink, Aluminium, 14.5 inch",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "mid",
+    "price": 39.99,
+    "amazon_asin": "B004FN817W",
+    "affiliate_url": "https://www.amazon.com/dp/B004FN817W?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/712wZD-STPL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "purple",
+    "rating": 4.3,
+    "review_count": 2972,
+    "alternative_ids": [
+      "y2k-budget-amb-01",
+      "y2k-prem-amb-01"
+    ],
+    "description": "chrome-and-candy Y2K ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "y2k-prem-amb-01",
+    "name": "Lava Lamp Classic Liquid Motion Lava Night Light Solid Silver Base Lamp Wax Liquid Soft Re",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "premium",
+    "price": 39.99,
+    "amazon_asin": "B07SPTZ3JD",
+    "affiliate_url": "https://www.amazon.com/dp/B07SPTZ3JD?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61mFjsLw4IL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "purple",
+    "rating": 3.9,
+    "review_count": 132,
+    "alternative_ids": [
+      "y2k-budget-amb-01",
+      "y2k-mid-amb-01"
+    ],
+    "description": "chrome-and-candy Y2K ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "y2k-budget-wall-01",
+    "name": "Summor Tapestry Rainbow Holographic Foil Wonderful Magic Fantasy Colorful Card Iridescent ",
+    "category": "wall_decor",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "budget",
+    "price": 8.99,
+    "amazon_asin": "B07GZTXMBG",
+    "affiliate_url": "https://www.amazon.com/dp/B07GZTXMBG?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61lLBep00-L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "iridescent",
+    "rating": 3,
+    "review_count": 2,
+    "alternative_ids": [
+      "y2k-mid-wall-01",
+      "y2k-prem-wall-01"
+    ],
+    "description": "A chrome-and-candy Y2K wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "y2k-mid-wall-01",
+    "name": "Summor Tapestry Rainbow Holographic Foil Wonderful Magic Fantasy Colorful Card Iridescent ",
+    "category": "wall_decor",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "mid",
+    "price": 8.99,
+    "amazon_asin": "B07GZTXMBG",
+    "affiliate_url": "https://www.amazon.com/dp/B07GZTXMBG?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61lLBep00-L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "iridescent",
+    "rating": 3,
+    "review_count": 2,
+    "alternative_ids": [
+      "y2k-budget-wall-01",
+      "y2k-prem-wall-01"
+    ],
+    "description": "A chrome-and-candy Y2K wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "y2k-prem-wall-01",
+    "name": "Summor Tapestry Rainbow Holographic Foil Wonderful Magic Fantasy Colorful Card Iridescent ",
+    "category": "wall_decor",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "premium",
+    "price": 8.99,
+    "amazon_asin": "B07GZTXMBG",
+    "affiliate_url": "https://www.amazon.com/dp/B07GZTXMBG?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61lLBep00-L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "iridescent",
+    "rating": 3,
+    "review_count": 2,
+    "alternative_ids": [
+      "y2k-budget-wall-01",
+      "y2k-mid-wall-01"
+    ],
+    "description": "A chrome-and-candy Y2K wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "y2k-budget-throw-01",
+    "name": "Pink Faux Fur Throw Blanket for Couch, Soft Fluffy Bubble Blanket for Bed Sofa, Thick Warm",
+    "category": "throw",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "budget",
+    "price": 13.99,
+    "amazon_asin": "B0DF6YVM7H",
+    "affiliate_url": "https://www.amazon.com/dp/B0DF6YVM7H?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/816YEkdKHVL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "pink",
+    "rating": 4.6,
+    "review_count": 1298,
+    "alternative_ids": [
+      "y2k-mid-throw-01",
+      "y2k-prem-throw-01"
+    ],
+    "description": "A chrome-and-candy Y2K throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "y2k-mid-throw-01",
+    "name": "Super Soft Faux Fur Throw Blanket- Royal Luxury Cozy Plush Rose Pink Color Blanket use for",
+    "category": "throw",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "mid",
+    "price": 17.99,
+    "amazon_asin": "B098R7CRY9",
+    "affiliate_url": "https://www.amazon.com/dp/B098R7CRY9?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61MP5VZ14JS._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "pink",
+    "rating": 4.6,
+    "review_count": 454,
+    "alternative_ids": [
+      "y2k-budget-throw-01",
+      "y2k-prem-throw-01"
+    ],
+    "description": "A chrome-and-candy Y2K throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "y2k-prem-throw-01",
+    "name": "Bedsure Faux Fur Throw Blanket - GentleSoft & Fluffy, Fuzzy Luxury Christmas Blanket for C",
+    "category": "throw",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "premium",
+    "price": 18.99,
+    "amazon_asin": "B0CRRDLRWY",
+    "affiliate_url": "https://www.amazon.com/dp/B0CRRDLRWY?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/91j-fcYLteL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "gray",
+    "rating": 4.7,
+    "review_count": 641,
+    "alternative_ids": [
+      "y2k-budget-throw-01",
+      "y2k-mid-throw-01"
+    ],
+    "description": "A chrome-and-candy Y2K throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "y2k-budget-curt-01",
+    "name": "Hot Pink Sheer Curtains 84 Inches Long 2 Panels Set for Bedroom Living Room, Soft Airy Lig",
+    "category": "curtains",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "budget",
+    "price": 11.99,
+    "amazon_asin": "B0FS1N89C8",
+    "affiliate_url": "https://www.amazon.com/dp/B0FS1N89C8?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71BwXtN94rL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "hot pink",
+    "rating": 4.7,
+    "review_count": 1626,
+    "alternative_ids": [
+      "y2k-mid-curt-01",
+      "y2k-prem-curt-01"
+    ],
+    "description": "chrome-and-candy Y2K curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "y2k-mid-curt-01",
+    "name": "HOMEIDEAS Raspberry Blackout Curtains, Hot Pink Curtains for Bedroom 52 X 84 Inch Length 2",
+    "category": "curtains",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "mid",
+    "price": 14.41,
+    "amazon_asin": "B0BWQPQ1GB",
+    "affiliate_url": "https://www.amazon.com/dp/B0BWQPQ1GB?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71WeGN5IE1L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "hot pink",
+    "rating": 4.6,
+    "review_count": 15762,
+    "alternative_ids": [
+      "y2k-budget-curt-01",
+      "y2k-prem-curt-01"
+    ],
+    "description": "chrome-and-candy Y2K curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "y2k-prem-curt-01",
+    "name": "HOMEIDEAS Raspberry Blackout Curtains, Hot Pink Curtains for Bedroom 52 X 84 Inch Length 2",
+    "category": "curtains",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "premium",
+    "price": 14.41,
+    "amazon_asin": "B0BWQPQ1GB",
+    "affiliate_url": "https://www.amazon.com/dp/B0BWQPQ1GB?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71WeGN5IE1L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "hot pink",
+    "rating": 4.6,
+    "review_count": 15762,
+    "alternative_ids": [
+      "y2k-budget-curt-01",
+      "y2k-mid-curt-01"
+    ],
+    "description": "chrome-and-candy Y2K curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "y2k-budget-acc-01",
+    "name": "Youdepot 12-Inch Large Hanging Mirror Ball for Disco Party Decor | Disco Ball Decor, for W",
+    "category": "accent",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "budget",
+    "price": 8.73,
+    "amazon_asin": "B07JYGTHM6",
+    "affiliate_url": "https://www.amazon.com/dp/B07JYGTHM6?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71IU649uYYL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.4,
+    "review_count": 1636,
+    "alternative_ids": [
+      "y2k-mid-acc-01",
+      "y2k-prem-acc-01"
+    ],
+    "description": "A chrome-and-candy Y2K accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "y2k-mid-acc-01",
+    "name": "Kicko Mirror Disco Ball - Cool and Fun Silver Hanging Party Disco Ball - 8 Inch Party Deco",
+    "category": "accent",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "mid",
+    "price": 9.99,
+    "amazon_asin": "B0758PQSLY",
+    "affiliate_url": "https://www.amazon.com/dp/B0758PQSLY?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71sRvCF9W+L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "silver",
+    "rating": 4.5,
+    "review_count": 237,
+    "alternative_ids": [
+      "y2k-budget-acc-01",
+      "y2k-prem-acc-01"
+    ],
+    "description": "A chrome-and-candy Y2K accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "y2k-prem-acc-01",
+    "name": "Kicko Mirror Disco Ball - Cool and Fun Silver Hanging Party Disco Ball - 8 Inch Party Deco",
+    "category": "accent",
+    "style_tags": [
+      "y2k"
+    ],
+    "budget_tier": "premium",
+    "price": 9.99,
+    "amazon_asin": "B0758PQSLY",
+    "affiliate_url": "https://www.amazon.com/dp/B0758PQSLY?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71sRvCF9W+L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "silver",
+    "rating": 4.5,
+    "review_count": 237,
+    "alternative_ids": [
+      "y2k-budget-acc-01",
+      "y2k-mid-acc-01"
+    ],
+    "description": "A chrome-and-candy Y2K accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "ret-budget-bed-01",
+    "name": "Bedsure Twin XL Comforter - 5 Pieces Reversible Burnt Orange Bed in a Bag, Twin XL Bedding",
+    "category": "bedding",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "budget",
+    "price": 31.48,
+    "amazon_asin": "B0BSFP1JL4",
+    "affiliate_url": "https://www.amazon.com/dp/B0BSFP1JL4?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81LqzWoX5KL._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "burnt orange",
+    "rating": 4.5,
+    "review_count": 29845,
+    "alternative_ids": [
+      "ret-mid-bed-01",
+      "ret-prem-bed-01"
+    ],
+    "description": "A sunny 70s retro twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "ret-mid-bed-01",
+    "name": "Bedsure Twin XL Comforter - 5 Pieces Reversible Burnt Orange Bed in a Bag, Twin XL Bedding",
+    "category": "bedding",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "mid",
+    "price": 31.48,
+    "amazon_asin": "B0BSFP1JL4",
+    "affiliate_url": "https://www.amazon.com/dp/B0BSFP1JL4?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81LqzWoX5KL._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "burnt orange",
+    "rating": 4.5,
+    "review_count": 29845,
+    "alternative_ids": [
+      "ret-budget-bed-01",
+      "ret-prem-bed-01"
+    ],
+    "description": "A sunny 70s retro twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "ret-prem-bed-01",
+    "name": "Bedsure Twin XL Comforter - 5 Pieces Reversible Burnt Orange Bed in a Bag, Twin XL Bedding",
+    "category": "bedding",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "premium",
+    "price": 31.48,
+    "amazon_asin": "B0BSFP1JL4",
+    "affiliate_url": "https://www.amazon.com/dp/B0BSFP1JL4?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81LqzWoX5KL._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "burnt orange",
+    "rating": 4.5,
+    "review_count": 29845,
+    "alternative_ids": [
+      "ret-budget-bed-01",
+      "ret-mid-bed-01"
+    ],
+    "description": "A sunny 70s retro twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "ret-budget-rug-01",
+    "name": "LUXE WEAVERS Distressed Floral Oriental Area Rug Beige 5x7 | Stain-Resistant",
+    "category": "rug",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "budget",
+    "price": 20.97,
+    "amazon_asin": "B072S217WP",
+    "affiliate_url": "https://www.amazon.com/dp/B072S217WP?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/A19+Vow3QvL._AC_SL1200_.jpg",
+    "width_ft": 5,
+    "length_ft": 7,
+    "height_ft": 0.06,
+    "color": "beige",
+    "rating": 4.7,
+    "review_count": 11599,
+    "alternative_ids": [
+      "ret-mid-rug-01",
+      "ret-prem-rug-01"
+    ],
+    "description": "A sunny 70s retro area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "ret-mid-rug-01",
+    "name": "LUXE WEAVERS Distressed Floral Oriental Area Rug Beige 5x7 | Stain-Resistant",
+    "category": "rug",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "mid",
+    "price": 20.97,
+    "amazon_asin": "B072S217WP",
+    "affiliate_url": "https://www.amazon.com/dp/B072S217WP?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/A19+Vow3QvL._AC_SL1200_.jpg",
+    "width_ft": 5,
+    "length_ft": 7,
+    "height_ft": 0.06,
+    "color": "beige",
+    "rating": 4.7,
+    "review_count": 11599,
+    "alternative_ids": [
+      "ret-budget-rug-01",
+      "ret-prem-rug-01"
+    ],
+    "description": "A sunny 70s retro area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "ret-prem-rug-01",
+    "name": "LUXE WEAVERS Distressed Floral Oriental Area Rug Beige 5x7 | Stain-Resistant",
+    "category": "rug",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "premium",
+    "price": 20.97,
+    "amazon_asin": "B072S217WP",
+    "affiliate_url": "https://www.amazon.com/dp/B072S217WP?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/A19+Vow3QvL._AC_SL1200_.jpg",
+    "width_ft": 5,
+    "length_ft": 7,
+    "height_ft": 0.06,
+    "color": "beige",
+    "rating": 4.7,
+    "review_count": 11599,
+    "alternative_ids": [
+      "ret-budget-rug-01",
+      "ret-mid-rug-01"
+    ],
+    "description": "A sunny 70s retro area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "ret-budget-lamp-01",
+    "name": "LALISU Mushroom Lamp Small Bedside Table Lamp, Retro Vintage Table Lamps Dimmable Nordic R",
+    "category": "desk_lamp",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "budget",
+    "price": 11.59,
+    "amazon_asin": "B0CMXN4H1J",
+    "affiliate_url": "https://www.amazon.com/dp/B0CMXN4H1J?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61MLCjvh-wL._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "white",
+    "rating": 4.3,
+    "review_count": 21,
+    "alternative_ids": [
+      "ret-mid-lamp-01",
+      "ret-prem-lamp-01"
+    ],
+    "description": "A sunny 70s retro desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "ret-mid-lamp-01",
+    "name": "Retro Painting Mushroom Table Lamp, Bohemian Resin Mushroom Decorative Bedside Lamp,Staine",
+    "category": "desk_lamp",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "mid",
+    "price": 19.9,
+    "amazon_asin": "B0CR8F9H1Y",
+    "affiliate_url": "https://www.amazon.com/dp/B0CR8F9H1Y?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71-Ci5xwrFL._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "multi",
+    "rating": 3.1,
+    "review_count": 31,
+    "alternative_ids": [
+      "ret-budget-lamp-01",
+      "ret-prem-lamp-01"
+    ],
+    "description": "A sunny 70s retro desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "ret-prem-lamp-01",
+    "name": "Retro Painting Mushroom Table Lamp, Bohemian Resin Mushroom Decorative Bedside Lamp,Staine",
+    "category": "desk_lamp",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "premium",
+    "price": 19.9,
+    "amazon_asin": "B0CR8F9H1Y",
+    "affiliate_url": "https://www.amazon.com/dp/B0CR8F9H1Y?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71-Ci5xwrFL._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "multi",
+    "rating": 3.1,
+    "review_count": 31,
+    "alternative_ids": [
+      "ret-budget-lamp-01",
+      "ret-mid-lamp-01"
+    ],
+    "description": "A sunny 70s retro desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "ret-budget-amb-01",
+    "name": "Sunset Lamp Projector with APP and Button Control, Multicolor Changing Projection Light Su",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "budget",
+    "price": 12.99,
+    "amazon_asin": "B0CJ4WT99G",
+    "affiliate_url": "https://www.amazon.com/dp/B0CJ4WT99G?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/719W5+x2roL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.3,
+    "review_count": 135,
+    "alternative_ids": [
+      "ret-mid-amb-01",
+      "ret-prem-amb-01"
+    ],
+    "description": "sunny 70s retro ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "ret-mid-amb-01",
+    "name": "Sunset lamp Projector, Sunset Projection lamp. 6W LED 180 Degree Rotating Wireless App Con",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "mid",
+    "price": 14.19,
+    "amazon_asin": "B08Z3WMX85",
+    "affiliate_url": "https://www.amazon.com/dp/B08Z3WMX85?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71mNBdEOKbL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4,
+    "review_count": 57,
+    "alternative_ids": [
+      "ret-budget-amb-01",
+      "ret-prem-amb-01"
+    ],
+    "description": "sunny 70s retro ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "ret-prem-amb-01",
+    "name": "XEBKOR Sunset Lamp Projector Multicolor Changing LED Projection Lamps | 360 Degree Rotatio",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "premium",
+    "price": 15.99,
+    "amazon_asin": "B0BRN3SF9V",
+    "affiliate_url": "https://www.amazon.com/dp/B0BRN3SF9V?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81k7h0YafpL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.4,
+    "review_count": 1832,
+    "alternative_ids": [
+      "ret-budget-amb-01",
+      "ret-mid-amb-01"
+    ],
+    "description": "sunny 70s retro ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "ret-budget-wall-01",
+    "name": "Retro Colorful 70s Stripes Tapestry Wall Hanging 70s Style Retro Stripes Multi Color Wall ",
+    "category": "wall_decor",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "budget",
+    "price": 5.99,
+    "amazon_asin": "B0CRH53M39",
+    "affiliate_url": "https://www.amazon.com/dp/B0CRH53M39?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61-3iQXoU0L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.5,
+    "review_count": 0,
+    "alternative_ids": [
+      "ret-mid-wall-01",
+      "ret-prem-wall-01"
+    ],
+    "description": "A sunny 70s retro wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "ret-mid-wall-01",
+    "name": "Imirell Retro 70s Groovy Tapestry 59Wx51H '' Vintage Y2k Abstract Spiral Swirl Pink Orange",
+    "category": "wall_decor",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "mid",
+    "price": 9.99,
+    "amazon_asin": "B0C65Q6RKX",
+    "affiliate_url": "https://www.amazon.com/dp/B0C65Q6RKX?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/01RmK+J4pJL._AC_SL1200_.gif",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "orange",
+    "rating": 4.7,
+    "review_count": 14,
+    "alternative_ids": [
+      "ret-budget-wall-01",
+      "ret-prem-wall-01"
+    ],
+    "description": "A sunny 70s retro wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "ret-prem-wall-01",
+    "name": "Orange Groovy Flower Cute Tapestry Wall Hanging Vintage Retro 60s 70s Floral Colorful Hipp",
+    "category": "wall_decor",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "premium",
+    "price": 9.99,
+    "amazon_asin": "B0DFLW444J",
+    "affiliate_url": "https://www.amazon.com/dp/B0DFLW444J?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/816F+iIlh1L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "orange",
+    "rating": 4.2,
+    "review_count": 14,
+    "alternative_ids": [
+      "ret-budget-wall-01",
+      "ret-mid-wall-01"
+    ],
+    "description": "A sunny 70s retro wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "ret-budget-throw-01",
+    "name": "BEDELITE Plaid Fleece Throw Blanket, Black & White Buffalo 50x60 Throw | 100% Polyester Mi",
+    "category": "throw",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B08FY9T1MW",
+    "affiliate_url": "https://www.amazon.com/dp/B08FY9T1MW?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81HY1iZkzqL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "plaid",
+    "rating": 4.6,
+    "review_count": 2900,
+    "alternative_ids": [
+      "ret-mid-throw-01",
+      "ret-prem-throw-01"
+    ],
+    "description": "A sunny 70s retro throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "ret-mid-throw-01",
+    "name": "Eddie Bauer - Sherpa Throw Blanket for Couch 50x60 - Ultra Soft Reversible Fleece & Plush",
+    "category": "throw",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "mid",
+    "price": 10.8,
+    "amazon_asin": "B01HTQQGHS",
+    "affiliate_url": "https://www.amazon.com/dp/B01HTQQGHS?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71-bxs-0qvL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "plaid",
+    "rating": 4.6,
+    "review_count": 9640,
+    "alternative_ids": [
+      "ret-budget-throw-01",
+      "ret-prem-throw-01"
+    ],
+    "description": "A sunny 70s retro throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "ret-prem-throw-01",
+    "name": "HOMRITAR Ultra Soft Throw Blanket with Plaid, Cozy Flannel Fleece Luxury Blanket for Bed, ",
+    "category": "throw",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "premium",
+    "price": 16.99,
+    "amazon_asin": "B0838Y9MWC",
+    "affiliate_url": "https://www.amazon.com/dp/B0838Y9MWC?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71x1PV249wL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "plaid",
+    "rating": 4.6,
+    "review_count": 877,
+    "alternative_ids": [
+      "ret-budget-throw-01",
+      "ret-mid-throw-01"
+    ],
+    "description": "A sunny 70s retro throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "ret-budget-curt-01",
+    "name": "Mrs.Naturall Burnt Orange Sheer Curtains 84 Inches Long, Boho Slight Linen Textured Retro ",
+    "category": "curtains",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "budget",
+    "price": 8.97,
+    "amazon_asin": "B09F5MG5VQ",
+    "affiliate_url": "https://www.amazon.com/dp/B09F5MG5VQ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81DIJWLH5+L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "burnt orange",
+    "rating": 4.6,
+    "review_count": 1013,
+    "alternative_ids": [
+      "ret-mid-curt-01",
+      "ret-prem-curt-01"
+    ],
+    "description": "sunny 70s retro curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "ret-mid-curt-01",
+    "name": "XTMYI Burnt Orange Sheer Curtains - Cozy Cottage Core Farmhouse 70s Retro Boho Botanical L",
+    "category": "curtains",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "mid",
+    "price": 10.99,
+    "amazon_asin": "B0B5F231JP",
+    "affiliate_url": "https://www.amazon.com/dp/B0B5F231JP?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71duu4aiuYL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "burnt orange",
+    "rating": 4.6,
+    "review_count": 1242,
+    "alternative_ids": [
+      "ret-budget-curt-01",
+      "ret-prem-curt-01"
+    ],
+    "description": "sunny 70s retro curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "ret-prem-curt-01",
+    "name": "XTMYI Burnt Orange Sheer Curtains - Cozy Cottage Core Farmhouse 70s Retro Boho Botanical L",
+    "category": "curtains",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "premium",
+    "price": 10.99,
+    "amazon_asin": "B0B5F231JP",
+    "affiliate_url": "https://www.amazon.com/dp/B0B5F231JP?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71duu4aiuYL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "burnt orange",
+    "rating": 4.6,
+    "review_count": 1242,
+    "alternative_ids": [
+      "ret-budget-curt-01",
+      "ret-mid-curt-01"
+    ],
+    "description": "sunny 70s retro curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "ret-budget-acc-01",
+    "name": "POZINO Irregular Wall Mirror, 39.3\"x16\" Asymmetrical Mirrors, Cloud Shaped Mirror, Gold Mo",
+    "category": "accent",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "budget",
+    "price": 8.99,
+    "amazon_asin": "B0C7Z3QD5X",
+    "affiliate_url": "https://www.amazon.com/dp/B0C7Z3QD5X?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61nERae387L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "gold",
+    "rating": 4.4,
+    "review_count": 400,
+    "alternative_ids": [
+      "ret-mid-acc-01",
+      "ret-prem-acc-01"
+    ],
+    "description": "A sunny 70s retro accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "ret-mid-acc-01",
+    "name": "POZINO Irregular Wall Mirror, 39.3\"x16\" Asymmetrical Mirrors, Cloud Shaped Mirror, Gold Mo",
+    "category": "accent",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "mid",
+    "price": 8.99,
+    "amazon_asin": "B0C7Z3QD5X",
+    "affiliate_url": "https://www.amazon.com/dp/B0C7Z3QD5X?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61nERae387L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "gold",
+    "rating": 4.4,
+    "review_count": 400,
+    "alternative_ids": [
+      "ret-budget-acc-01",
+      "ret-prem-acc-01"
+    ],
+    "description": "A sunny 70s retro accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "ret-prem-acc-01",
+    "name": "POZINO Irregular Wall Mirror, 39.3\"x16\" Asymmetrical Mirrors, Cloud Shaped Mirror, Gold Mo",
+    "category": "accent",
+    "style_tags": [
+      "retro"
+    ],
+    "budget_tier": "premium",
+    "price": 8.99,
+    "amazon_asin": "B0C7Z3QD5X",
+    "affiliate_url": "https://www.amazon.com/dp/B0C7Z3QD5X?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61nERae387L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "gold",
+    "rating": 4.4,
+    "review_count": 400,
+    "alternative_ids": [
+      "ret-budget-acc-01",
+      "ret-mid-acc-01"
+    ],
+    "description": "A sunny 70s retro accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "pas-budget-bed-01",
+    "name": "DECMAY Pink Twin/Twin XL Comforter Set 5 Pieces, Soft All Season Bed in a Bag Bedding Set ",
+    "category": "bedding",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 33.4,
+    "amazon_asin": "B0CDBJ2TL4",
+    "affiliate_url": "https://www.amazon.com/dp/B0CDBJ2TL4?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81lMTbO-kyL._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "pink",
+    "rating": 4.6,
+    "review_count": 154,
+    "alternative_ids": [
+      "pas-mid-bed-01",
+      "pas-prem-bed-01"
+    ],
+    "description": "A soft pastel twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "pas-mid-bed-01",
+    "name": "Pink Twin/Twin XL Comforter Bedding Set for College Girls - Tufted Extra Long Twin Comfort",
+    "category": "bedding",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 119,
+    "amazon_asin": "B0D3LJLFBP",
+    "affiliate_url": "https://www.amazon.com/dp/B0D3LJLFBP?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81-FhlQNLIL._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "pink",
+    "rating": 4.6,
+    "review_count": 383,
+    "alternative_ids": [
+      "pas-budget-bed-01",
+      "pas-prem-bed-01"
+    ],
+    "description": "A soft pastel twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "pas-prem-bed-01",
+    "name": "Pink Twin/Twin XL Comforter Bedding Set for College Girls - Tufted Extra Long Twin Comfort",
+    "category": "bedding",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 119,
+    "amazon_asin": "B0D3LJLFBP",
+    "affiliate_url": "https://www.amazon.com/dp/B0D3LJLFBP?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81-FhlQNLIL._AC_SL1200_.jpg",
+    "width_ft": 5.67,
+    "length_ft": 7.5,
+    "height_ft": 0.25,
+    "color": "pink",
+    "rating": 4.6,
+    "review_count": 383,
+    "alternative_ids": [
+      "pas-budget-bed-01",
+      "pas-mid-bed-01"
+    ],
+    "description": "A soft pastel twin XL comforter set to anchor the bed.",
+    "active": true,
+    "bed_size": "twin_xl"
+  },
+  {
+    "id": "pas-budget-rug-01",
+    "name": "Arbosofe Area Rugs Shaggy Rugs Fluffy Carpets, 6x9 Feet Navy Blue, Modern Plush Carpets fo",
+    "category": "rug",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 59.99,
+    "amazon_asin": "B0BZR6WZCQ",
+    "affiliate_url": "https://www.amazon.com/dp/B0BZR6WZCQ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81jFccYfckS._AC_SL1200_.jpg",
+    "width_ft": 6,
+    "length_ft": 9,
+    "height_ft": 0.06,
+    "color": "multi",
+    "rating": 4.3,
+    "review_count": 1724,
+    "alternative_ids": [
+      "pas-mid-rug-01",
+      "pas-prem-rug-01"
+    ],
+    "description": "A soft pastel area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "pas-mid-rug-01",
+    "name": "Arbosofe Area Rugs Shaggy Rugs Fluffy Carpets, 6x9 Feet Navy Blue, Modern Plush Carpets fo",
+    "category": "rug",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 59.99,
+    "amazon_asin": "B0BZR6WZCQ",
+    "affiliate_url": "https://www.amazon.com/dp/B0BZR6WZCQ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81jFccYfckS._AC_SL1200_.jpg",
+    "width_ft": 6,
+    "length_ft": 9,
+    "height_ft": 0.06,
+    "color": "multi",
+    "rating": 4.3,
+    "review_count": 1724,
+    "alternative_ids": [
+      "pas-budget-rug-01",
+      "pas-prem-rug-01"
+    ],
+    "description": "A soft pastel area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "pas-prem-rug-01",
+    "name": "Arbosofe Area Rugs Shaggy Rugs Fluffy Carpets, 6x9 Feet Navy Blue, Modern Plush Carpets fo",
+    "category": "rug",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 59.99,
+    "amazon_asin": "B0BZR6WZCQ",
+    "affiliate_url": "https://www.amazon.com/dp/B0BZR6WZCQ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81jFccYfckS._AC_SL1200_.jpg",
+    "width_ft": 6,
+    "length_ft": 9,
+    "height_ft": 0.06,
+    "color": "multi",
+    "rating": 4.3,
+    "review_count": 1724,
+    "alternative_ids": [
+      "pas-budget-rug-01",
+      "pas-mid-rug-01"
+    ],
+    "description": "A soft pastel area rug that grounds the whole room.",
+    "active": true
+  },
+  {
+    "id": "pas-budget-lamp-01",
+    "name": "BSOD Mushroom Lamp,Glass Table Bedside Lamps Translucent Murano Vintage Style Striped Smal",
+    "category": "desk_lamp",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 60.54,
+    "amazon_asin": "B093FNYCHQ",
+    "affiliate_url": "https://www.amazon.com/dp/B093FNYCHQ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61fsxQwUgpL._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "white",
+    "rating": 4.7,
+    "review_count": 1664,
+    "alternative_ids": [
+      "pas-mid-lamp-01",
+      "pas-prem-lamp-01"
+    ],
+    "description": "A soft pastel desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "pas-mid-lamp-01",
+    "name": "BSOD Mushroom Lamp,Glass Table Bedside Lamps Translucent Murano Vintage Style Striped Smal",
+    "category": "desk_lamp",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 60.54,
+    "amazon_asin": "B093FNYCHQ",
+    "affiliate_url": "https://www.amazon.com/dp/B093FNYCHQ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61fsxQwUgpL._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "white",
+    "rating": 4.7,
+    "review_count": 1664,
+    "alternative_ids": [
+      "pas-budget-lamp-01",
+      "pas-prem-lamp-01"
+    ],
+    "description": "A soft pastel desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "pas-prem-lamp-01",
+    "name": "BSOD Mushroom Lamp,Glass Table Bedside Lamps Translucent Murano Vintage Style Striped Smal",
+    "category": "desk_lamp",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 60.54,
+    "amazon_asin": "B093FNYCHQ",
+    "affiliate_url": "https://www.amazon.com/dp/B093FNYCHQ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61fsxQwUgpL._AC_SL1200_.jpg",
+    "width_ft": 0.05,
+    "length_ft": 0.05,
+    "height_ft": 1.31,
+    "color": "white",
+    "rating": 4.7,
+    "review_count": 1664,
+    "alternative_ids": [
+      "pas-budget-lamp-01",
+      "pas-mid-lamp-01"
+    ],
+    "description": "A soft pastel desk lamp for task light with character.",
+    "active": true
+  },
+  {
+    "id": "pas-budget-amb-01",
+    "name": "Fairy Lights Plug in, 99Feet 300LEDs Warm White String Lights, Waterproof Flexible Silver ",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 8.99,
+    "amazon_asin": "B014ZXTWOW",
+    "affiliate_url": "https://www.amazon.com/dp/B014ZXTWOW?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71fDAhgPYTL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "silver",
+    "rating": 4.5,
+    "review_count": 12937,
+    "alternative_ids": [
+      "pas-mid-amb-01",
+      "pas-prem-amb-01"
+    ],
+    "description": "soft pastel ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "pas-mid-amb-01",
+    "name": "LE LIGHTING EVER String Lights 33ft with 100 LEDs, Waterproof Copper Wire Lights, Outdoor ",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 9.99,
+    "amazon_asin": "B0196H75KA",
+    "affiliate_url": "https://www.amazon.com/dp/B0196H75KA?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71fae4QF8tL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.4,
+    "review_count": 5802,
+    "alternative_ids": [
+      "pas-budget-amb-01",
+      "pas-prem-amb-01"
+    ],
+    "description": "soft pastel ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "pas-prem-amb-01",
+    "name": "LE Fairy Lights with Switch, 66ft 200 LED, Plug in, Waterproof, Indoor Outdoor Decorative ",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 13.49,
+    "amazon_asin": "B01M9FPE8X",
+    "affiliate_url": "https://www.amazon.com/dp/B01M9FPE8X?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/717nBKi0rVL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.4,
+    "review_count": 5802,
+    "alternative_ids": [
+      "pas-budget-amb-01",
+      "pas-mid-amb-01"
+    ],
+    "description": "soft pastel ambient lighting for the evening glow.",
+    "active": true
+  },
+  {
+    "id": "pas-budget-wall-01",
+    "name": "Retro 70s Pink Tapestry, Abstract Yellow Orange Art Tapestries Wall Hanging for Bedroom Cl",
+    "category": "wall_decor",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 14.18,
+    "amazon_asin": "B0B71XYCG9",
+    "affiliate_url": "https://www.amazon.com/dp/B0B71XYCG9?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71w8aTCOAgL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "orange",
+    "rating": 4,
+    "review_count": 7,
+    "alternative_ids": [
+      "pas-mid-wall-01",
+      "pas-prem-wall-01"
+    ],
+    "description": "A soft pastel wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "pas-mid-wall-01",
+    "name": "Uokiuki Retro Hippie Tapestry Cute Heart Tapestry 60s 70s Groovy Tapestry Aesthetic Sage G",
+    "category": "wall_decor",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 14.99,
+    "amazon_asin": "B0BB2R9ZMR",
+    "affiliate_url": "https://www.amazon.com/dp/B0BB2R9ZMR?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61HdR68AmaL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "green",
+    "rating": 4.5,
+    "review_count": 0,
+    "alternative_ids": [
+      "pas-budget-wall-01",
+      "pas-prem-wall-01"
+    ],
+    "description": "A soft pastel wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "pas-prem-wall-01",
+    "name": "Uokiuki Retro Hippie Tapestry Cute Heart Tapestry 60s 70s Groovy Tapestry Aesthetic Sage G",
+    "category": "wall_decor",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 14.99,
+    "amazon_asin": "B0BB2R9ZMR",
+    "affiliate_url": "https://www.amazon.com/dp/B0BB2R9ZMR?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61HdR68AmaL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "green",
+    "rating": 4.5,
+    "review_count": 0,
+    "alternative_ids": [
+      "pas-budget-wall-01",
+      "pas-mid-wall-01"
+    ],
+    "description": "A soft pastel wall piece to carry the whole vibe.",
+    "active": true
+  },
+  {
+    "id": "pas-budget-throw-01",
+    "name": "Latepis Pink Faux Fur Throw Blanket for Couch Bubble Cute Soft Warm Comforter Thick Furry ",
+    "category": "throw",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B0DD74JDDK",
+    "affiliate_url": "https://www.amazon.com/dp/B0DD74JDDK?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71SFWSx2dCL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "pink",
+    "rating": 4.6,
+    "review_count": 748,
+    "alternative_ids": [
+      "pas-mid-throw-01",
+      "pas-prem-throw-01"
+    ],
+    "description": "A soft pastel throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "pas-mid-throw-01",
+    "name": "Bedsure GentleSoft Fluffy Pink Throw Blanket, Pink Decor Cozy Gifts for Teenage Girls, Sof",
+    "category": "throw",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 18.99,
+    "amazon_asin": "B08CY4C5QG",
+    "affiliate_url": "https://www.amazon.com/dp/B08CY4C5QG?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/91gJErc7uAL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "pink",
+    "rating": 4.6,
+    "review_count": 36400,
+    "alternative_ids": [
+      "pas-budget-throw-01",
+      "pas-prem-throw-01"
+    ],
+    "description": "A soft pastel throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "pas-prem-throw-01",
+    "name": "Bedsure GentleSoft Fluffy Pink Throw Blanket, Pink Decor Cozy Gifts for Teenage Girls, Sof",
+    "category": "throw",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 18.99,
+    "amazon_asin": "B08CY4C5QG",
+    "affiliate_url": "https://www.amazon.com/dp/B08CY4C5QG?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/91gJErc7uAL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "pink",
+    "rating": 4.6,
+    "review_count": 36400,
+    "alternative_ids": [
+      "pas-budget-throw-01",
+      "pas-mid-throw-01"
+    ],
+    "description": "A soft pastel throw to layer on the bed or chair.",
+    "active": true
+  },
+  {
+    "id": "pas-budget-curt-01",
+    "name": "Hot Pink Semi Sheer Curtains for Bedroom 84 Inches Long 2 Panels, Light Filtering Lightwei",
+    "category": "curtains",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 8.09,
+    "amazon_asin": "B0GSQ322RV",
+    "affiliate_url": "https://www.amazon.com/dp/B0GSQ322RV?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61HcDMq17jL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "hot pink",
+    "rating": 4.4,
+    "review_count": 188,
+    "alternative_ids": [
+      "pas-mid-curt-01",
+      "pas-prem-curt-01"
+    ],
+    "description": "soft pastel curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "pas-mid-curt-01",
+    "name": "KOUFALL Purple and Hot Pink Sheer Curtains 2 Panels 84 Inches Long,Preppy Princess Coquett",
+    "category": "curtains",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 8.99,
+    "amazon_asin": "B0823VDRL6",
+    "affiliate_url": "https://www.amazon.com/dp/B0823VDRL6?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71C-UMoH1WL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "purple",
+    "rating": 4.7,
+    "review_count": 6073,
+    "alternative_ids": [
+      "pas-budget-curt-01",
+      "pas-prem-curt-01"
+    ],
+    "description": "soft pastel curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "pas-prem-curt-01",
+    "name": "KOUFALL Purple and Hot Pink Sheer Curtains 2 Panels 84 Inches Long,Preppy Princess Coquett",
+    "category": "curtains",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 8.99,
+    "amazon_asin": "B0823VDRL6",
+    "affiliate_url": "https://www.amazon.com/dp/B0823VDRL6?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71C-UMoH1WL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "purple",
+    "rating": 4.7,
+    "review_count": 6073,
+    "alternative_ids": [
+      "pas-budget-curt-01",
+      "pas-mid-curt-01"
+    ],
+    "description": "soft pastel curtains to set the color of the light.",
+    "active": true
+  },
+  {
+    "id": "pas-budget-acc-01",
+    "name": "4 Pcs Decorative Faux Books for Home Decor - Modern Fake Books for Coffee Table, Bookshelf",
+    "category": "accent",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 13.99,
+    "amazon_asin": "B0DQG8SXMN",
+    "affiliate_url": "https://www.amazon.com/dp/B0DQG8SXMN?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71ItgEcnERL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.4,
+    "review_count": 108,
+    "alternative_ids": [
+      "pas-mid-acc-01",
+      "pas-prem-acc-01"
+    ],
+    "description": "A soft pastel accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "pas-mid-acc-01",
+    "name": "Set of 3 Decorative Book for Home - XL Coffee Table Decoration Books - Stylish Fake/Faux D",
+    "category": "accent",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 57.93,
+    "amazon_asin": "B0BCXH5MD4",
+    "affiliate_url": "https://www.amazon.com/dp/B0BCXH5MD4?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71UAd1DS8zL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.4,
+    "review_count": 59,
+    "alternative_ids": [
+      "pas-budget-acc-01",
+      "pas-prem-acc-01"
+    ],
+    "description": "A soft pastel accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "pas-prem-acc-01",
+    "name": "Set of 3 Decorative Book for Home - XL Coffee Table Decoration Books - Stylish Fake/Faux D",
+    "category": "accent",
+    "style_tags": [
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 57.93,
+    "amazon_asin": "B0BCXH5MD4",
+    "affiliate_url": "https://www.amazon.com/dp/B0BCXH5MD4?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71UAd1DS8zL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.4,
+    "review_count": 59,
+    "alternative_ids": [
+      "pas-budget-acc-01",
+      "pas-mid-acc-01"
+    ],
+    "description": "A soft pastel accent piece that finishes the look.",
+    "active": true
+  },
+  {
+    "id": "sha-budget-stor-01",
+    "name": "Casafield Set of 6 Collapsible Fabric Cube Storage Bins, Navy Blue - 11\" Foldable Cloth Ba",
+    "category": "storage",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 15.02,
+    "amazon_asin": "B07GVNJ1K7",
+    "affiliate_url": "https://www.amazon.com/dp/B07GVNJ1K7?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71-RirBHhFL._AC_SL1200_.jpg",
+    "width_ft": 0.88,
+    "length_ft": 0.88,
+    "height_ft": 0.92,
+    "color": "multi",
+    "rating": 4.6,
+    "review_count": 4504,
+    "alternative_ids": [
+      "sha-mid-stor-01",
+      "sha-prem-stor-01"
+    ],
+    "description": "Sturdy dorm storage that tucks under the bed or on a shelf.",
+    "active": true
+  },
+  {
+    "id": "sha-mid-stor-01",
+    "name": "Casafield Set of 6 Collapsible Fabric Cube Storage Bins, Gray - 11\" Foldable Cloth Baskets",
+    "category": "storage",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 15.99,
+    "amazon_asin": "B07GVQLGPS",
+    "affiliate_url": "https://www.amazon.com/dp/B07GVQLGPS?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71xPrUDSjnL._AC_SL1200_.jpg",
+    "width_ft": 0.88,
+    "length_ft": 0.88,
+    "height_ft": 0.92,
+    "color": "gray",
+    "rating": 4.6,
+    "review_count": 4504,
+    "alternative_ids": [
+      "sha-budget-stor-01",
+      "sha-prem-stor-01"
+    ],
+    "description": "Sturdy dorm storage that tucks under the bed or on a shelf.",
+    "active": true
+  },
+  {
+    "id": "sha-prem-stor-01",
+    "name": "Casafield Set of 6 Collapsible Fabric Cube Storage Bins, Black - 11\" Foldable Cloth Basket",
+    "category": "storage",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 19.88,
+    "amazon_asin": "B07GVNGZCH",
+    "affiliate_url": "https://www.amazon.com/dp/B07GVNGZCH?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71UuAYapwiL._AC_SL1200_.jpg",
+    "width_ft": 0.88,
+    "length_ft": 0.88,
+    "height_ft": 0.92,
+    "color": "black",
+    "rating": 4.6,
+    "review_count": 4504,
+    "alternative_ids": [
+      "sha-budget-stor-01",
+      "sha-mid-stor-01"
+    ],
+    "description": "Sturdy dorm storage that tucks under the bed or on a shelf.",
+    "active": true
+  },
+  {
+    "id": "sha-budget-deskacc-01",
+    "name": "Bamboo Wood Desk Organizer with File Organizer for Office Supplies Storage & Desk Accessor",
+    "category": "desk_accessories",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 19.99,
+    "amazon_asin": "B088ZHC5NZ",
+    "affiliate_url": "https://www.amazon.com/dp/B088ZHC5NZ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81XniFG2e6L._AC_SL1200_.jpg",
+    "width_ft": 0.35,
+    "length_ft": 0.68,
+    "height_ft": 0.53,
+    "color": "multi",
+    "rating": 4.7,
+    "review_count": 616,
+    "alternative_ids": [
+      "sha-mid-deskacc-01",
+      "sha-prem-deskacc-01"
+    ],
+    "description": "A tidy desk organizer to keep the essentials in order.",
+    "active": true
+  },
+  {
+    "id": "sha-mid-deskacc-01",
+    "name": "Sorbus Bamboo Desk Organizer - 3-Tier 100% Bamboo Desktop Organizers - Mini Bamboo Desk Dr",
+    "category": "desk_accessories",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 50.39,
+    "amazon_asin": "B077G87NPS",
+    "affiliate_url": "https://www.amazon.com/dp/B077G87NPS?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71CpOmzCXWL._AC_SL1200_.jpg",
+    "width_ft": 0.35,
+    "length_ft": 0.68,
+    "height_ft": 0.53,
+    "color": "multi",
+    "rating": 4.6,
+    "review_count": 2086,
+    "alternative_ids": [
+      "sha-budget-deskacc-01",
+      "sha-prem-deskacc-01"
+    ],
+    "description": "A tidy desk organizer to keep the essentials in order.",
+    "active": true
+  },
+  {
+    "id": "sha-prem-deskacc-01",
+    "name": "Sorbus Bamboo Desk Organizer - 3-Tier 100% Bamboo Desktop Organizers - Mini Bamboo Desk Dr",
+    "category": "desk_accessories",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 50.39,
+    "amazon_asin": "B077G87NPS",
+    "affiliate_url": "https://www.amazon.com/dp/B077G87NPS?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71CpOmzCXWL._AC_SL1200_.jpg",
+    "width_ft": 0.35,
+    "length_ft": 0.68,
+    "height_ft": 0.53,
+    "color": "multi",
+    "rating": 4.6,
+    "review_count": 2086,
+    "alternative_ids": [
+      "sha-budget-deskacc-01",
+      "sha-mid-deskacc-01"
+    ],
+    "description": "A tidy desk organizer to keep the essentials in order.",
+    "active": true
+  },
+  {
+    "id": "sha-budget-mir-01",
+    "name": "ITSRG Floor Mirror, Full Length Mirror with Stand, Arched Wall Mirror, Gold Floor Mirror F",
+    "category": "mirror",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 21.96,
+    "amazon_asin": "B0BLTRYPBK",
+    "affiliate_url": "https://www.amazon.com/dp/B0BLTRYPBK?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71nuA4KP0dL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "gold",
+    "rating": 4.6,
+    "review_count": 1926,
+    "alternative_ids": [
+      "sha-mid-mir-01",
+      "sha-prem-mir-01"
+    ],
+    "description": "A wall mirror to bounce light and check the fit.",
+    "active": true
+  },
+  {
+    "id": "sha-mid-mir-01",
+    "name": "PexFix Full Length Mirror, 65''x22'' Gold Arched Mirror Large Floor Mirror Standing Leanin",
+    "category": "mirror",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 37.94,
+    "amazon_asin": "B08L3M5HSN",
+    "affiliate_url": "https://www.amazon.com/dp/B08L3M5HSN?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61V5sqG5TyL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "gold",
+    "rating": 3.7,
+    "review_count": 18,
+    "alternative_ids": [
+      "sha-budget-mir-01",
+      "sha-prem-mir-01"
+    ],
+    "description": "A wall mirror to bounce light and check the fit.",
+    "active": true
+  },
+  {
+    "id": "sha-prem-mir-01",
+    "name": "PexFix Full Length Mirror, 65''x22'' Gold Arched Mirror Large Floor Mirror Standing Leanin",
+    "category": "mirror",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 37.94,
+    "amazon_asin": "B08L3M5HSN",
+    "affiliate_url": "https://www.amazon.com/dp/B08L3M5HSN?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61V5sqG5TyL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "gold",
+    "rating": 3.7,
+    "review_count": 18,
+    "alternative_ids": [
+      "sha-budget-mir-01",
+      "sha-mid-mir-01"
+    ],
+    "description": "A wall mirror to bounce light and check the fit.",
+    "active": true
+  },
+  {
+    "id": "sha-budget-hamper-01",
+    "name": "Pop Up Laundry Hamper，with Durable Handles collapsible laundry basket，Easy to Open and Fol",
+    "category": "laundry_hamper",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 8.99,
+    "amazon_asin": "B0BY8RJ5PQ",
+    "affiliate_url": "https://www.amazon.com/dp/B0BY8RJ5PQ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81s6BNes3PL._AC_SL1200_.jpg",
+    "width_ft": 1.25,
+    "length_ft": 1.25,
+    "height_ft": 2.58,
+    "color": "gray",
+    "rating": 4.7,
+    "review_count": 684,
+    "alternative_ids": [
+      "sha-mid-hamper-01",
+      "sha-prem-hamper-01"
+    ],
+    "description": "A collapsible hamper that folds flat when empty.",
+    "active": true
+  },
+  {
+    "id": "sha-mid-hamper-01",
+    "name": "Large Laundry Basket 82L Tall Collapsible Hamper with Handles for Dorm Grey | Freestanding",
+    "category": "laundry_hamper",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 20.04,
+    "amazon_asin": "B0B7B765HF",
+    "affiliate_url": "https://www.amazon.com/dp/B0B7B765HF?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81PuUWcLiML._AC_SL1200_.jpg",
+    "width_ft": 1.25,
+    "length_ft": 1.25,
+    "height_ft": 2.58,
+    "color": "gray",
+    "rating": 4.5,
+    "review_count": 4624,
+    "alternative_ids": [
+      "sha-budget-hamper-01",
+      "sha-prem-hamper-01"
+    ],
+    "description": "A collapsible hamper that folds flat when empty.",
+    "active": true
+  },
+  {
+    "id": "sha-prem-hamper-01",
+    "name": "SOLEDI Laundry Hamper with Lid 100L Large & Tall Collapsible Laundry Basket, Clothes Hampe",
+    "category": "laundry_hamper",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 32.97,
+    "amazon_asin": "B0BFHQWLJD",
+    "affiliate_url": "https://www.amazon.com/dp/B0BFHQWLJD?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81wYJvv+IPL._AC_SL1200_.jpg",
+    "width_ft": 1.25,
+    "length_ft": 1.25,
+    "height_ft": 2.58,
+    "color": "gray",
+    "rating": 4.6,
+    "review_count": 7811,
+    "alternative_ids": [
+      "sha-budget-hamper-01",
+      "sha-mid-hamper-01"
+    ],
+    "description": "A collapsible hamper that folds flat when empty.",
+    "active": true
+  },
+  {
+    "id": "sha-budget-power-01",
+    "name": "Surge Protector Power Strip - 5ft Extension Cord with 6 AC Outlets 4 USB | Flat Plug Power",
+    "category": "power_strip",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 12.43,
+    "amazon_asin": "B0CGWK8M2Z",
+    "affiliate_url": "https://www.amazon.com/dp/B0CGWK8M2Z?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61NHSzVs2kL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.7,
+    "review_count": 2730,
+    "alternative_ids": [
+      "sha-mid-power-01",
+      "sha-prem-power-01"
+    ],
+    "description": "A surge protector so one outlet powers the whole desk.",
+    "active": true
+  },
+  {
+    "id": "sha-mid-power-01",
+    "name": "Belkin Surge Protector Power Strip 6 AC 8ft Cord Flat Plug 720 Joules | Flat rotating plug",
+    "category": "power_strip",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 21.99,
+    "amazon_asin": "B000JV3CKA",
+    "affiliate_url": "https://www.amazon.com/dp/B000JV3CKA?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/51RHRYnlypL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.6,
+    "review_count": 5538,
+    "alternative_ids": [
+      "sha-budget-power-01",
+      "sha-prem-power-01"
+    ],
+    "description": "A surge protector so one outlet powers the whole desk.",
+    "active": true
+  },
+  {
+    "id": "sha-prem-power-01",
+    "name": "Belkin Surge Protector Power Strip 6 AC 8ft Cord Flat Plug 720 Joules | Flat rotating plug",
+    "category": "power_strip",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 21.99,
+    "amazon_asin": "B000JV3CKA",
+    "affiliate_url": "https://www.amazon.com/dp/B000JV3CKA?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/51RHRYnlypL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.6,
+    "review_count": 5538,
+    "alternative_ids": [
+      "sha-budget-power-01",
+      "sha-mid-power-01"
+    ],
+    "description": "A surge protector so one outlet powers the whole desk.",
+    "active": true
+  },
+  {
+    "id": "sha-budget-trash-01",
+    "name": "UUJOLY Plastic Small Trash Can Wastebasket, Garbage Container Basket for Bathrooms, Laundr",
+    "category": "trash_can",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 13.99,
+    "amazon_asin": "B09QWNCRC7",
+    "affiliate_url": "https://www.amazon.com/dp/B09QWNCRC7?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/21h3d3ZEhKL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "black",
+    "rating": 4.7,
+    "review_count": 3147,
+    "alternative_ids": [
+      "sha-mid-trash-01",
+      "sha-prem-trash-01"
+    ],
+    "description": "A slim bin that fits beside the desk.",
+    "active": true
+  },
+  {
+    "id": "sha-mid-trash-01",
+    "name": "N. NETDOT 3 Pack 10L / 2.6 Gallon Small Trash Can with Lid, Bathroom Garbage Can with Pop-",
+    "category": "trash_can",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 24.23,
+    "amazon_asin": "B0BKG7FD8T",
+    "affiliate_url": "https://www.amazon.com/dp/B0BKG7FD8T?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61Z9UknL1xL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "white",
+    "rating": 4.5,
+    "review_count": 4578,
+    "alternative_ids": [
+      "sha-budget-trash-01",
+      "sha-prem-trash-01"
+    ],
+    "description": "A slim bin that fits beside the desk.",
+    "active": true
+  },
+  {
+    "id": "sha-prem-trash-01",
+    "name": "SHPMXUPW 3 Pack Bathroom Small Trash Can with Lid,10L / 2.6 Gallon Slim Garbage Bin Wasteb",
+    "category": "trash_can",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 29.13,
+    "amazon_asin": "B0BW74WNP3",
+    "affiliate_url": "https://www.amazon.com/dp/B0BW74WNP3?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61hM6S23mRL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.3,
+    "review_count": 4835,
+    "alternative_ids": [
+      "sha-budget-trash-01",
+      "sha-mid-trash-01"
+    ],
+    "description": "A slim bin that fits beside the desk.",
+    "active": true
+  },
+  {
+    "id": "sha-budget-towel-01",
+    "name": "Mesh Shower Caddy Portable for College Dorm Room Essentials, Shower Caddy Tote with 8 Pock",
+    "category": "towel_caddy",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "budget",
+    "price": 5.99,
+    "amazon_asin": "B0787W7M2C",
+    "affiliate_url": "https://www.amazon.com/dp/B0787W7M2C?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81Q4SmEj4iL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.6,
+    "review_count": 12249,
+    "alternative_ids": [
+      "sha-mid-towel-01",
+      "sha-prem-towel-01"
+    ],
+    "description": "A mesh shower caddy for the walk to the hall bathroom.",
+    "active": true
+  },
+  {
+    "id": "sha-mid-towel-01",
+    "name": "Fammart Mesh Shower Caddy Portable for College Dorm Room Essentials, Odorless Polyester La",
+    "category": "towel_caddy",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "mid",
+    "price": 5.99,
+    "amazon_asin": "B0CYZXN11R",
+    "affiliate_url": "https://www.amazon.com/dp/B0CYZXN11R?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81FQDIN5x0L._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multi",
+    "rating": 4.6,
+    "review_count": 740,
+    "alternative_ids": [
+      "sha-budget-towel-01",
+      "sha-prem-towel-01"
+    ],
+    "description": "A mesh shower caddy for the walk to the hall bathroom.",
+    "active": true
+  },
+  {
+    "id": "sha-prem-towel-01",
+    "name": "Lifewit Mesh Shower Caddy Portable for College Dorm Room Essentials with 7 Pockets, Freest",
+    "category": "towel_caddy",
+    "style_tags": [
+      "academia",
+      "y2k",
+      "retro",
+      "pastel"
+    ],
+    "budget_tier": "premium",
+    "price": 6.99,
+    "amazon_asin": "B09TPBXSVN",
+    "affiliate_url": "https://www.amazon.com/dp/B09TPBXSVN?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71jLF2ohmYL._AC_SL1200_.jpg",
+    "width_ft": null,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "black",
+    "rating": 4.5,
+    "review_count": 2106,
+    "alternative_ids": [
+      "sha-budget-towel-01",
+      "sha-mid-towel-01"
+    ],
+    "description": "A mesh shower caddy for the walk to the hall bathroom.",
+    "active": true
   }
 ]

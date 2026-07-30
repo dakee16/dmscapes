@@ -20,9 +20,9 @@ function Body() {
         rules out anything permanent and anything that needs your roommate’s
         buy-in to look right. The reliable method is to start from a palette of a
         few colors, commit to a handful of anchor pieces that carry the look, and
-        treat named styles like Minimalist, Cozy, Gamer, Boho, Preppy, and Team
-        Spirit as starting points, not rules. Below is how to choose one and make
-        it hold together.
+        treat named styles like Minimalist, Cozy, Boho, Preppy, Academia, Y2K
+        Cyber, Gamer, Team Spirit, Retro, and Pastel as starting points, not
+        rules. Below is how to choose one and make it hold together.
       </Lead>
 
       <H2>The three constraints that decide everything</H2>
@@ -90,10 +90,12 @@ function Body() {
         losing.
       </P>
 
-      <H2>A framework: six styles and how to pull each off</H2>
+      <H2>A framework: ten styles and how to pull each off</H2>
       <P>
         These are the archetypes Dormscape uses as starting points. Treat them as
-        a vocabulary, not a costume. Most good rooms land between two of them.
+        a vocabulary, not a costume. Most good rooms land between two of them. Six
+        are free; Gamer, Team Spirit, Retro, and Pastel are{" "}
+        <TextLink href="/pricing">Dormscape Plus</TextLink> styles.
       </P>
 
       <H3>Minimalist</H3>
@@ -136,6 +138,24 @@ function Body() {
         proves a person lives there.
       </P>
 
+      <H3>Academia</H3>
+      <P>
+        Warm library energy: wood and brass, plaid and leather-look textures, and
+        the sense that someone reads in here. Anchor it with a deep, warm palette,
+        a plaid or herringbone throw, a stack of real books, and a brass or
+        banker-style lamp. The trap is going full costume, so keep it lived-in and
+        let one or two vintage pieces do the talking.
+      </P>
+
+      <H3>Y2K Cyber</H3>
+      <P>
+        Early-2000s digital nostalgia: chrome and holographic accents, hot pinks
+        and silvers and purples. Anchor it with a holo tapestry, a metallic or
+        candy-pink throw, and a lava or color-shift lamp. The trap is looking like
+        a toy aisle, so ground the loud accents against a clean, mostly neutral
+        base and let the shine be the accent.
+      </P>
+
       <H3>Team Spirit</H3>
       <P>
         School pride, done with restraint. Anchor it with one pennant or flag and
@@ -144,6 +164,22 @@ function Body() {
         palette. If you’re still choosing a hall,{" "}
         <TextLink href="/colleges">browse your college</TextLink> and picture the
         room first.
+      </P>
+
+      <H3>Retro</H3>
+      <P>
+        Seventies warmth: mustard, orange, and rust, with groovy shapes and cozy
+        texture. Anchor it with an earthy palette, a wavy or geometric throw, a
+        shag rug, and a mushroom or globe lamp. The trap is theme-park kitsch, so
+        pick two or three of the era's cues and keep the rest calm.
+      </P>
+
+      <H3>Pastel</H3>
+      <P>
+        Soft, plush, and gently unserious: pinks, lavenders, and baby blues in
+        fluffy textures. Anchor it with a pastel palette, a plush rug, a cloud or
+        heart pillow, and soft warm light. The trap is a room that reads flat and
+        sweet, so vary the textures and let one deeper tone anchor all the sugar.
       </P>
 
       <H2>You’re allowed to mix and to change your mind</H2>
@@ -178,11 +214,11 @@ const post: BlogPost = {
   title: "What to know before you pick a dorm room style",
   metaTitle: "How to Pick a Dorm Room Style (Before You Buy)",
   description:
-    "How to choose a dorm room style for a shared, temporary space: start with a palette, pick your anchor pieces, and use the six style archetypes as a framework.",
+    "How to choose a dorm room style for a shared, temporary space: start with a palette, pick your anchor pieces, and use the ten style archetypes as a framework.",
   excerpt:
-    "How to choose a style for a shared, temporary, small space, with a palette-first method and a plain-English guide to six archetypes from Minimalist to Team Spirit.",
+    "How to choose a style for a shared, temporary, small space, with a palette-first method and a plain-English guide to ten archetypes from Minimalist to Pastel.",
   date: "2026-07-18",
-  updated: "2026-07-27",
+  updated: "2026-07-29",
   readingTimeMin: 7,
   faqTopic: "Style",
   faqs: [
@@ -192,7 +228,7 @@ const post: BlogPost = {
     },
     {
       q: "What are the most popular dorm room styles?",
-      a: "Common archetypes are Minimalist, Cozy Aesthetic, Gamer, Boho, Preppy, and Team Spirit. Each is best treated as a starting point defined by a palette and a few anchor pieces, and most well-designed rooms blend two of them rather than following one strictly.",
+      a: "Dormscape offers ten style archetypes: Minimalist, Cozy Aesthetic, Boho, Preppy, Academia, and Y2K Cyber are free, while Gamer, Team Spirit, Retro, and Pastel are part of Dormscape Plus. Each is best treated as a starting point defined by a palette and a few anchor pieces, and most well-designed rooms blend two of them rather than following one strictly.",
     },
     {
       q: "How do roommates coordinate dorm styles without matching?",

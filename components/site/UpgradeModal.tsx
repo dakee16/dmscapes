@@ -24,6 +24,10 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     title: "Skip to the front of the line",
     body: "Plus school requests get processed first. Upgrade and we'll bump yours up the queue.",
   },
+  style: {
+    title: "That's a Plus style",
+    body: "Gamer, Team Spirit, Retro, and Pastel are Plus picks. Unlock all ten styles and design your room in any of them.",
+  },
   generic: {
     title: "Do more with Dormscape Plus",
     body: "One small upgrade unlocks the four things people ask for most, for good.",
@@ -32,6 +36,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
 
 const PERKS = [
   "Save unlimited designs",
+  "4 exclusive design styles",
   "Download your list as a PDF",
   "Compare two designs side by side",
   "Priority on add-my-school requests",

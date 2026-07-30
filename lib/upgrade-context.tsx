@@ -11,6 +11,7 @@ export type UpgradeReason =
   | "pdf"
   | "compare"
   | "school-request"
+  | "style"
   | "generic";
 
 interface UpgradeContextValue {

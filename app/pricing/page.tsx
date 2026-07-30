@@ -47,7 +47,7 @@ const FREE_PERKS: React.ReactNode[] = [
       supported schools
     </Link>
   </>,
-  <>All 6 styles: Minimalist, Cozy Aesthetic, Gamer, Boho, Preppy, Team Spirit</>,
+  <>6 free styles: Minimalist, Cozy Aesthetic, Boho, Preppy, Academia, Y2K Cyber</>,
   <>Budget-aware product picks with live Amazon links</>,
   <>Drag-and-drop 2D room layout that fits to the inch</>,
   <>Save one design to your free account</>,
@@ -60,6 +60,10 @@ const PLUS_PERKS: { title: string; body: string }[] = [
   {
     title: "Save unlimited designs",
     body: "Free keeps one on file. Plus lets you save every look you're weighing and decide later.",
+  },
+  {
+    title: "4 exclusive design styles",
+    body: "Gamer, Team Spirit, Retro, and Pastel, on top of the six styles everyone gets free.",
   },
   {
     title: "Download your list as a PDF",

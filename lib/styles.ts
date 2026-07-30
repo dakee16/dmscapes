@@ -7,8 +7,12 @@ export interface StyleMeta {
   keywords: string[];
   /** Reference palette for the style (thumbnails now come from StyleScene). */
   palette: [string, string, string, string];
+  /** True when the style is gated behind Dormscape Plus. */
+  plus?: boolean;
 }
 
+// Free styles come first, then the four Plus-gated styles. The picker and the
+// homepage showcase render in this order and read `plus` to draw the badge.
 export const STYLES: StyleMeta[] = [
   {
     id: "minimalist",
@@ -25,13 +29,6 @@ export const STYLES: StyleMeta[] = [
     palette: ["#f3e9dc", "#d9b99b", "#a9836a", "#6d4c35"],
   },
   {
-    id: "gamer",
-    name: "Gamer",
-    emoji: "🎮",
-    keywords: ["RGB", "blackout", "battle station", "neon"],
-    palette: ["#0d0d17", "#3b3b4f", "#7c3aed", "#22d3ee"],
-  },
-  {
     id: "boho",
     name: "Boho",
     emoji: "🪴",
@@ -46,13 +43,60 @@ export const STYLES: StyleMeta[] = [
     palette: ["#ffd1dc", "#ff7ba9", "#7fb069", "#f5c451"],
   },
   {
+    id: "academia",
+    name: "Academia",
+    emoji: "📚",
+    keywords: ["brass & wood", "plaid", "leather-look", "vintage"],
+    palette: ["#efe4cb", "#c69a4f", "#7c5230", "#2f2115"],
+  },
+  {
+    id: "y2k",
+    name: "Y2K Cyber",
+    emoji: "💿",
+    keywords: ["chrome", "holographic", "hot pink", "early 2000s"],
+    palette: ["#f3e8ff", "#ff4fd8", "#7b5cff", "#b8c6d6"],
+  },
+  {
+    id: "gamer",
+    name: "Gamer",
+    emoji: "🎮",
+    keywords: ["RGB", "blackout", "battle station", "neon"],
+    palette: ["#0d0d17", "#3b3b4f", "#7c3aed", "#22d3ee"],
+    plus: true,
+  },
+  {
     id: "team_spirit",
     name: "Team Spirit",
     emoji: "🏆",
     keywords: ["varsity stripes", "color-block", "game day"],
     palette: ["#f4f6fb", "#c8102e", "#0b1f3a", "#f5f5f5"],
+    plus: true,
+  },
+  {
+    id: "retro",
+    name: "Retro",
+    emoji: "🕺",
+    keywords: ["70s", "mustard", "groovy", "earth tones"],
+    palette: ["#f2ddb5", "#e08a2e", "#a8471f", "#6b7f3a"],
+    plus: true,
+  },
+  {
+    id: "pastel",
+    name: "Pastel",
+    emoji: "🧸",
+    keywords: ["soft pastel", "plush", "cute", "gentle"],
+    palette: ["#ffe9f2", "#ffd1e8", "#c8b6ff", "#bde0fe"],
+    plus: true,
   },
 ];
+
+/** The Plus-gated style ids. Selecting one as a free user opens the upgrade modal. */
+export const PLUS_STYLES: ReadonlySet<StyleId> = new Set<StyleId>(
+  STYLES.filter((s) => s.plus).map((s) => s.id)
+);
+
+/** Whether a style is gated behind Dormscape Plus. */
+export const isPlusStyle = (id: StyleId): boolean => PLUS_STYLES.has(id);
 
 export const styleById = (id: StyleId): StyleMeta =>
   STYLES.find((s) => s.id === id) ?? STYLES[0];

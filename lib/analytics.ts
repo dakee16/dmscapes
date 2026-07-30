@@ -8,6 +8,7 @@ export type AnalyticsEvent =
   | "flow_started"
   | "college_selected"
   | "style_selected"
+  | "style_locked_clicked"
   | "budget_set"
   | "design_completed"
   | "product_clicked"

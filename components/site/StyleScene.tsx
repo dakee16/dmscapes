@@ -15,6 +15,10 @@ const WALLS: Record<StyleId, string> = {
   boho: "#f4eddd",
   preppy: "#e9eef9",
   team_spirit: "#eef1f9",
+  academia: "#f3e9d4",
+  y2k: "#f3e8ff",
+  retro: "#f6e6c4",
+  pastel: "#ffeef6",
 };
 
 const TEAM_NAVY = "#0b1f3a";
@@ -227,6 +231,149 @@ function TeamSpirit() {
   );
 }
 
+function Academia() {
+  const AC_WOOD = "#7c5230";
+  const AC_BRASS = "#c69a4f";
+  return (
+    <Frame id="academia">
+      {/* framed vintage portrait */}
+      <rect x="150" y="26" width="34" height="42" fill="#efe4cb" stroke={AC_BRASS} strokeWidth="2" />
+      <circle cx="167" cy="42" r="7" fill="#d8c39a" stroke={STROKE} strokeWidth="0.75" />
+      <path d="M158 60 Q167 50 176 60" fill="#d8c39a" stroke={STROKE} strokeWidth="0.75" />
+      {/* bed with plaid blanket */}
+      <rect x="18" y="86" width="98" height="26" rx="3" fill="#b78a5c" opacity="0.4" stroke={STROKE} />
+      <line x1="18" y1="96" x2="116" y2="96" stroke={AC_WOOD} strokeOpacity="0.5" />
+      <line x1="18" y1="104" x2="116" y2="104" stroke="#6b7f3a" strokeOpacity="0.4" />
+      <line x1="46" y1="86" x2="46" y2="112" stroke={AC_WOOD} strokeOpacity="0.4" />
+      <line x1="82" y1="86" x2="82" y2="112" stroke={AC_WOOD} strokeOpacity="0.4" />
+      <rect x="24" y="77" width="22" height="11" rx="2" fill="#efe4cb" stroke={STROKE} />
+      {/* bookshelf with spines */}
+      <rect x="196" y="60" width="46" height="56" fill="#efe4cb" stroke={AC_WOOD} strokeWidth="1.5" />
+      <line x1="196" y1="80" x2="242" y2="80" stroke={AC_WOOD} />
+      <line x1="196" y1="98" x2="242" y2="98" stroke={AC_WOOD} />
+      <rect x="200" y="64" width="4" height="16" fill="#7c2d2d" />
+      <rect x="205" y="66" width="4" height="14" fill="#2f4a2f" />
+      <rect x="210" y="63" width="4" height="17" fill={AC_BRASS} />
+      <rect x="215" y="65" width="5" height="15" fill="#33465e" />
+      <rect x="222" y="64" width="4" height="16" fill="#7c2d2d" />
+      <rect x="200" y="83" width="4" height="15" fill="#33465e" />
+      <rect x="205" y="82" width="4" height="16" fill={AC_BRASS} />
+      <path d="M212 98 l3 -15 l3 1 l-3 15 z" fill="#2f4a2f" />
+      <rect x="222" y="84" width="4" height="14" fill="#7c2d2d" />
+      {/* banker's lamp with green glow */}
+      <circle cx="150" cy="98" r="12" fill="#6b7f3a" opacity="0.18" />
+      <path d="M140 92 Q150 84 160 92 Z" fill="#2f4a2f" stroke={STROKE} strokeWidth="0.75" />
+      <line x1="150" y1="92" x2="150" y2="108" stroke={AC_BRASS} strokeWidth="1.5" />
+      <rect x="142" y="108" width="16" height="4" rx="1" fill={AC_BRASS} />
+    </Frame>
+  );
+}
+
+function Y2K() {
+  const Y_PINK = "#ff4fd8";
+  const Y_PURPLE = "#7b5cff";
+  const Y_SILVER = "#aab6c6";
+  return (
+    <Frame id="y2k">
+      <defs>
+        <linearGradient id="y2k-holo" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor={Y_PINK} stopOpacity="0.55" />
+          <stop offset="0.5" stopColor={Y_PURPLE} stopOpacity="0.5" />
+          <stop offset="1" stopColor="#54e0ff" stopOpacity="0.5" />
+        </linearGradient>
+      </defs>
+      {/* holographic wall tapestry */}
+      <rect x="150" y="24" width="52" height="46" fill="url(#y2k-holo)" stroke={STROKE} />
+      <path d="M176 34 l2 6 l6 2 l-6 2 l-2 6 l-2 -6 l-6 -2 l6 -2 z" fill="#ffffff" opacity="0.85" />
+      {/* butterfly clip on wall */}
+      <path d="M40 34 q-7 -7 -11 0 q4 5 11 3 q7 2 11 -3 q-4 -7 -11 0" fill={Y_PINK} opacity="0.8" />
+      {/* bed with metallic pink throw */}
+      <rect x="16" y="86" width="94" height="26" rx="4" fill="#ffd1ec" stroke={STROKE} />
+      <path d="M16 97 L110 97 L110 108 Q95 112 80 108 Q65 112 50 108 Q35 112 16 108 Z" fill={Y_PURPLE} opacity="0.4" />
+      <rect x="22" y="77" width="22" height="11" rx="4" fill={Y_SILVER} stroke={STROKE} />
+      {/* inflatable blob chair */}
+      <path d="M150 112 Q140 112 140 100 Q140 88 158 88 Q176 88 176 100 Q176 112 166 112 Z" fill={Y_PINK} opacity="0.35" stroke={STROKE} />
+      <path d="M146 100 Q158 96 170 100" fill="none" stroke={STROKE} strokeOpacity="0.5" />
+      {/* lava lamp with glow */}
+      <circle cx="220" cy="86" r="12" fill={Y_PINK} opacity="0.18" />
+      <path d="M214 108 L226 108 L222 78 L218 78 Z" fill="#ffe0f4" stroke={STROKE} />
+      <ellipse cx="220" cy="90" rx="3" ry="5" fill={Y_PINK} opacity="0.85" />
+      <ellipse cx="221" cy="98" rx="2.5" ry="3.5" fill={Y_PURPLE} opacity="0.75" />
+      <rect x="214" y="108" width="12" height="4" rx="1" fill={Y_SILVER} />
+    </Frame>
+  );
+}
+
+function Retro() {
+  const R_ORANGE = "#e08a2e";
+  const R_RUST = "#a8471f";
+  const R_AVO = "#6b7f3a";
+  const rays = Array.from({ length: 12 }, (_, i) => {
+    const a = (i * 30 * Math.PI) / 180;
+    return {
+      x1: 170 + Math.cos(a) * 14,
+      y1: 44 + Math.sin(a) * 14,
+      x2: 170 + Math.cos(a) * 22,
+      y2: 44 + Math.sin(a) * 22,
+      i,
+    };
+  });
+  return (
+    <Frame id="retro">
+      {/* sunburst mirror */}
+      <g stroke={R_ORANGE} strokeWidth="1.5">
+        {rays.map((r) => (
+          <line key={r.i} x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2} />
+        ))}
+      </g>
+      <circle cx="170" cy="44" r="12" fill="#f2ddb5" stroke={R_RUST} strokeWidth="1.5" />
+      {/* bed with wavy stripe blanket */}
+      <rect x="18" y="86" width="98" height="26" rx="4" fill={R_ORANGE} opacity="0.3" stroke={STROKE} />
+      <path d="M18 96 Q33 92 48 96 T78 96 T108 96" fill="none" stroke={R_RUST} strokeOpacity="0.6" />
+      <path d="M18 103 Q33 99 48 103 T78 103 T108 103" fill="none" stroke={R_AVO} strokeOpacity="0.55" />
+      <rect x="24" y="77" width="22" height="11" rx="3" fill="#f2ddb5" stroke={STROKE} />
+      {/* mushroom lamp */}
+      <circle cx="150" cy="98" r="12" fill={R_ORANGE} opacity="0.2" />
+      <path d="M138 96 Q150 82 162 96 Z" fill={R_RUST} opacity="0.85" stroke={STROKE} strokeWidth="0.75" />
+      <path d="M146 96 L154 96 L152 110 L148 110 Z" fill="#f2ddb5" stroke={STROKE} />
+      {/* record on wall */}
+      <circle cx="216" cy="54" r="15" fill={R_RUST} opacity="0.75" stroke={STROKE} />
+      <circle cx="216" cy="54" r="4" fill="#f2ddb5" />
+      {/* shag rug */}
+      <ellipse cx="86" cy="122" rx="46" ry="6" fill="none" stroke={R_ORANGE} strokeOpacity="0.6" strokeDasharray="3 3" />
+    </Frame>
+  );
+}
+
+function Pastel() {
+  const P_PINK = "#ffb3d9";
+  const P_LAV = "#c8b6ff";
+  const P_BLUE = "#bde0fe";
+  return (
+    <Frame id="pastel">
+      {/* rainbow arc */}
+      <path d="M150 66 A26 26 0 0 1 202 66" fill="none" stroke={P_PINK} strokeWidth="4" />
+      <path d="M156 66 A20 20 0 0 1 196 66" fill="none" stroke={P_LAV} strokeWidth="4" />
+      <path d="M162 66 A14 14 0 0 1 190 66" fill="none" stroke={P_BLUE} strokeWidth="4" />
+      {/* cloud */}
+      <path d="M40 40 q-8 0 -8 7 q0 7 8 7 h22 q8 0 8 -7 q0 -8 -9 -7 q-2 -7 -12 -3 q-4 -1 -7 3 z" fill="#ffffff" opacity="0.85" stroke={STROKE} strokeWidth="0.75" />
+      {/* bed with plush pastel bedding */}
+      <rect x="18" y="86" width="98" height="26" rx="6" fill="#ffd9ec" stroke={STROKE} />
+      <path d="M18 98 Q33 94 48 98 T78 98 T108 98" fill="none" stroke={P_LAV} strokeOpacity="0.6" />
+      {/* heart pillow */}
+      <path d="M34 80 q-4 -5 -8 -1 q-3 3 0 6 l8 7 l8 -7 q3 -3 0 -6 q-4 -4 -8 1 z" fill={P_PINK} stroke={STROKE} strokeWidth="0.75" />
+      {/* fluffy round rug */}
+      <circle cx="150" cy="120" r="16" fill={P_BLUE} opacity="0.4" stroke={P_BLUE} strokeDasharray="2 2" />
+      {/* plush bear blob */}
+      <circle cx="212" cy="98" r="12" fill={P_LAV} opacity="0.5" stroke={STROKE} strokeWidth="0.75" />
+      <circle cx="206" cy="88" r="4" fill={P_LAV} opacity="0.6" stroke={STROKE} strokeWidth="0.5" />
+      <circle cx="218" cy="88" r="4" fill={P_LAV} opacity="0.6" stroke={STROKE} strokeWidth="0.5" />
+      <circle cx="208" cy="97" r="1.3" fill={INK} />
+      <circle cx="216" cy="97" r="1.3" fill={INK} />
+    </Frame>
+  );
+}
+
 const SCENES: Record<StyleId, () => React.ReactNode> = {
   minimalist: Minimalist,
   cozy: Cozy,
@@ -234,6 +381,10 @@ const SCENES: Record<StyleId, () => React.ReactNode> = {
   boho: Boho,
   preppy: Preppy,
   team_spirit: TeamSpirit,
+  academia: Academia,
+  y2k: Y2K,
+  retro: Retro,
+  pastel: Pastel,
 };
 
 export default function StyleScene({

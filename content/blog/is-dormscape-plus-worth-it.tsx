@@ -6,9 +6,10 @@ function Body() {
     <>
       <Lead>
         Dormscape Plus is a one-time $4.99 upgrade, not a subscription. It
-        unlocks four things: unlimited saved designs, a PDF export of your
-        shopping list, a side-by-side comparison view, and priority on
-        add-my-school requests. Whether it&rsquo;s worth it comes down to one
+        unlocks five things: unlimited saved designs, four exclusive design
+        styles, a PDF export of your shopping list, a side-by-side comparison
+        view, and priority on add-my-school requests. Whether it&rsquo;s worth it
+        comes down to one
         question: are you weighing more than one version of your room? If you
         are, Plus earns the five dollars. If you&rsquo;ve already settled on a
         single look, the free planner does everything you need. Here&rsquo;s the
@@ -18,17 +19,19 @@ function Body() {
       <H2>What&rsquo;s free, and what stays free</H2>
       <P>
         Start here, because it matters. The core planner is free and stays free.
-        That means real room dimensions for supported schools, all six styles,
-        budget-aware product picks with live links, the drag-and-drop 2D layout
-        that fits to the inch, one saved design, and a share link for any room.
-        Plus never locks a single one of those. It only adds on top, so
-        upgrading is a choice about extras, never a ransom on the basics.
+        That means real room dimensions for supported schools, six free styles
+        (Minimalist, Cozy, Boho, Preppy, Academia, and Y2K Cyber), budget-aware
+        product picks with live links, the drag-and-drop 2D layout that fits to
+        the inch, one saved design, and a share link for any room. Plus never
+        locks a single one of those. It only adds on top, so upgrading is a
+        choice about extras, never a ransom on the basics.
       </P>
 
-      <H2>The four things Plus unlocks</H2>
+      <H2>The five things Plus unlocks</H2>
       <P>
-        Four features, and they all point at the same person: someone comparing
-        options rather than committing to the first idea.
+        Five features. Most of them point at the same person: someone weighing
+        options rather than committing to the first idea. One just hands you more
+        looks to choose from.
       </P>
 
       <H3>1. Unlimited saved designs</H3>
@@ -41,7 +44,16 @@ function Body() {
         saved room is plenty.
       </P>
 
-      <H3>2. PDF export of your shopping list</H3>
+      <H3>2. Four exclusive design styles</H3>
+      <P>
+        Six styles are free. Plus adds four more, Gamer, Team Spirit, Retro, and
+        Pastel, each a complete plan with its own products, palette, and layout.{" "}
+        <strong>Worth it if</strong>{" "}your look is a battle station, game-day, 70s
+        groovy, or soft pastel.{" "}
+        <strong>Skip it if</strong>{" "}one of the six free styles already fits you.
+      </P>
+
+      <H3>3. PDF export of your shopping list</H3>
       <P>
         Plus turns your picks into a clean, printable PDF with names, prices, and
         a total. It&rsquo;s the thing you send the person actually paying, or
@@ -52,7 +64,7 @@ function Body() {
         screen.
       </P>
 
-      <H3>3. Side-by-side comparison view</H3>
+      <H3>4. Side-by-side comparison view</H3>
       <P>
         This lines up two saved designs with their budgets, styles, and room
         details next to each other, so you can settle which one wins without
@@ -66,7 +78,7 @@ function Body() {
         <strong>Skip it if</strong>{" "}there&rsquo;s only ever been one contender.
       </P>
 
-      <H3>4. Priority on add-my-school requests</H3>
+      <H3>5. Priority on add-my-school requests</H3>
       <P>
         If your school isn&rsquo;t in our dimensions database yet, Plus members
         jump to the front of the queue when we build the next batch.{" "}
@@ -134,9 +146,9 @@ const post: BlogPost = {
   title: "Is Dormscape Plus worth it? Here's what you actually get",
   metaTitle: "Is Dormscape Plus Worth It? An Honest Breakdown",
   description:
-    "An honest look at Dormscape Plus, a one-time $4.99 upgrade: unlimited saves, PDF export, side-by-side comparison, and priority school requests, plus who should skip it.",
+    "An honest look at Dormscape Plus, a one-time $4.99 upgrade: unlimited saves, four exclusive styles, PDF export, side-by-side comparison, and priority school requests, plus who should skip it.",
   excerpt:
-    "A specific, non-salesy breakdown of the four Plus features and who each one actually helps, including the people who should stay on the free planner.",
+    "A specific, non-salesy breakdown of the five Plus features and who each one actually helps, including the people who should stay on the free planner.",
   date: "2026-07-28",
   readingTimeMin: 6,
   faqTopic: "Plus",
@@ -147,15 +159,15 @@ const post: BlogPost = {
     },
     {
       q: "What does Dormscape Plus include?",
-      a: "Plus unlocks four things on top of the free planner: unlimited saved designs, a PDF export of your shopping list, a side-by-side comparison view for two saved designs, and priority handling on add-my-school requests.",
+      a: "Plus unlocks five things on top of the free planner: unlimited saved designs, four exclusive design styles (Gamer, Team Spirit, Retro, and Pastel), a PDF export of your shopping list, a side-by-side comparison view for two saved designs, and priority handling on add-my-school requests.",
     },
     {
       q: "Is the Dormscape planner still free?",
-      a: "Yes. The core 2D planner is free and stays free, including real room dimensions for supported schools, all six styles, budget-aware product picks, the drag-and-drop layout, one saved design, and share links. Plus only adds extras and never locks free features.",
+      a: "Yes. The core 2D planner is free and stays free, including real room dimensions for supported schools, six free styles, budget-aware product picks, the drag-and-drop layout, one saved design, and share links. Plus only adds extras and never locks free features.",
     },
     {
       q: "Do I need Dormscape Plus to plan a dorm room?",
-      a: "No. You can plan, style, and shop a complete room for free without an account. Plus is worth considering only if you want to save more than one design, export a PDF, compare two rooms side by side, or fast-track a school request.",
+      a: "No. You can plan, style, and shop a complete room for free without an account, using any of the six free styles. Plus is worth considering only if you want the four Plus styles, to save more than one design, export a PDF, compare two rooms side by side, or fast-track a school request.",
     },
   ],
   Body,

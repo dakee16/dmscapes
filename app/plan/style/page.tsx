@@ -5,8 +5,11 @@ import { useRouter } from "next/navigation";
 import StyleCard from "@/components/planner/StyleCard";
 import { track } from "@/lib/analytics";
 import { categoriesCovered, tierForBudget } from "@/lib/catalog";
-import { STYLES } from "@/lib/styles";
+import { STYLES, isPlusStyle } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
+import { useAuth } from "@/lib/auth-context";
+import { isPlus } from "@/lib/plan";
+import { useUpgrade } from "@/lib/upgrade-context";
 import type { StyleId } from "@/lib/types";
 
 const TIER_LABELS = { budget: "Essentials", mid: "Upgraded", premium: "Premium" } as const;
@@ -19,6 +22,10 @@ export default function PlanStylePage() {
   const setStyle = usePlannerStore((s) => s.setStyle);
   const setBudget = usePlannerStore((s) => s.setBudget);
 
+  const { profile } = useAuth();
+  const { openUpgrade } = useUpgrade();
+  const plus = isPlus(profile);
+
   const [mounted, setMounted] = useState(false);
   const budgetTrackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -30,6 +37,13 @@ export default function PlanStylePage() {
   }, [mounted, room, router]);
 
   function handleStyle(id: StyleId) {
+    // Plus-gated styles stay visible for free users, but selecting one opens
+    // the upgrade modal instead of silently blocking. Plus users select freely.
+    if (isPlusStyle(id) && !plus) {
+      track("style_locked_clicked", { style: id });
+      openUpgrade("style");
+      return;
+    }
     setStyle(id);
     track("style_selected", { style: id });
   }
@@ -76,6 +90,7 @@ export default function PlanStylePage() {
             key={s.id}
             style={s}
             selected={style === s.id}
+            locked={isPlusStyle(s.id) && !plus}
             onSelect={() => handleStyle(s.id)}
           />
         ))}

@@ -5,6 +5,10 @@ import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { matchTemplate, ALL_TEMPLATES } from "@/templates/template-matcher";
 import { cartUrl, productsFor, productById, tierForBudget, totalFor } from "@/lib/catalog";
+import { isPlusStyle } from "@/lib/styles";
+import { useAuth } from "@/lib/auth-context";
+import { isPlus } from "@/lib/plan";
+import { useUpgrade } from "@/lib/upgrade-context";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
@@ -64,6 +68,9 @@ export default function ResultPage() {
   const rotateItem = usePlannerStore((s) => s.rotateItem);
   const resetLayout = usePlannerStore((s) => s.resetLayout);
 
+  const { profile, loading: authLoading } = useAuth();
+  const { openUpgrade } = useUpgrade();
+
   // sessionStorage-persisted store: wait for rehydration before any decisions.
   useEffect(() => {
     if (usePlannerStore.persist.hasHydrated()) setHydrated(true);
@@ -75,7 +82,14 @@ export default function ResultPage() {
     if (!hydrated) return;
     if (!room) router.replace("/plan");
     else if (!style) router.replace("/plan/style");
-  }, [hydrated, room, style, router]);
+    // Defense in depth: a free user who reached a Plus-gated style (e.g. a
+    // stale store or a saved design) is sent back to the picker with the
+    // upgrade prompt, rather than served a room they can't actually use.
+    else if (!authLoading && isPlusStyle(style) && !isPlus(profile)) {
+      openUpgrade("style");
+      router.replace("/plan/style");
+    }
+  }, [hydrated, room, style, authLoading, profile, router, openUpgrade]);
 
   const match = useMemo(
     () =>
