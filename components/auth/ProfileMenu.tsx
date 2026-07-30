@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
-import { isPlus } from "@/lib/plan";
 
 function initialsOf(name: string): string {
   const clean = name.trim();
@@ -150,19 +149,6 @@ export default function ProfileMenu({
           </div>
 
           <div className="pt-1.5">
-            {!isPlus(profile) && (
-              <Link
-                href="/pricing"
-                role="menuitem"
-                onClick={() => setOpen(false)}
-                className="mb-0.5 flex items-center gap-2.5 rounded-lg bg-cobalt/5 px-3 py-2 text-sm font-semibold text-cobalt transition-colors hover:bg-cobalt/10"
-              >
-                <span className="grid h-[18px] w-[18px] place-items-center font-display text-base font-extrabold leading-none">
-                  +
-                </span>
-                Upgrade to Plus
-              </Link>
-            )}
             <Link
               href="/account/settings"
               role="menuitem"

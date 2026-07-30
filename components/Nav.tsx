@@ -106,11 +106,8 @@ export default function Nav() {
             {showUpgrade && (
               <Link
                 href="/pricing"
-                className="hidden shrink-0 items-center gap-1.5 rounded-lg border border-cobalt/30 bg-cobalt/5 px-3.5 py-2 text-sm font-semibold text-cobalt transition-colors hover:border-cobalt/50 hover:bg-cobalt/10 lg:inline-flex"
+                className="hidden shrink-0 text-sm font-medium text-cobalt transition-colors hover:text-cobalt-deep lg:inline-block"
               >
-                <span className="grid h-[18px] w-[18px] place-items-center font-display text-base font-extrabold leading-none">
-                  +
-                </span>
                 Upgrade to Plus
               </Link>
             )}
