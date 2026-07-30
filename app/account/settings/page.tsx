@@ -312,13 +312,15 @@ export default function AccountSettingsPage() {
   return (
     <div>
       <Nav />
-      <main className="mx-auto max-w-2xl px-5 py-10 sm:px-8">
+      <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
         {!ready ? (
           <div aria-busy="true" aria-label="Loading your settings">
             <div className="h-9 w-48 animate-pulse rounded-lg bg-ink/8" />
             <div className="mt-2 h-4 w-64 animate-pulse rounded bg-ink/5" />
-            <div className="mt-8 h-48 animate-pulse rounded-2xl bg-ink/8" />
-            <div className="mt-6 h-40 animate-pulse rounded-2xl bg-ink/8" />
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              <div className="h-64 animate-pulse rounded-2xl bg-ink/8" />
+              <div className="h-64 animate-pulse rounded-2xl bg-ink/8" />
+            </div>
           </div>
         ) : (
           <>
@@ -347,8 +349,12 @@ export default function AccountSettingsPage() {
               </p>
             </header>
 
-            {/* Profile */}
-            <section className={`mt-8 ${CARD}`}>
+            {/* Wide desktop: Profile sits beside the Email + Password stack,
+                since they are related but independent forms. Single column
+                below lg. */}
+            <div className="mt-8 grid items-start gap-6 lg:grid-cols-2">
+              {/* Profile */}
+              <section className={CARD}>
               <h2 className="font-display text-lg font-bold tracking-tight">Profile</h2>
               <form onSubmit={saveProfile} className="mt-4 space-y-4" noValidate>
                 <div>
@@ -426,8 +432,9 @@ export default function AccountSettingsPage() {
               </form>
             </section>
 
-            {/* Email */}
-            <section className={`mt-6 ${CARD}`}>
+              <div className="space-y-6">
+                {/* Email */}
+                <section className={CARD}>
               <h2 className="font-display text-lg font-bold tracking-tight">Email</h2>
               <p className="mt-1 text-sm text-ink-soft">
                 We&apos;ll send a confirmation link to the new address. Your email
@@ -464,8 +471,8 @@ export default function AccountSettingsPage() {
               </form>
             </section>
 
-            {/* Password / provider */}
-            <section className={`mt-6 ${CARD}`}>
+                {/* Password / provider */}
+                <section className={CARD}>
               <h2 className="font-display text-lg font-bold tracking-tight">Password</h2>
               {isPasswordAccount ? (
                 <form onSubmit={changePassword} className="mt-4 space-y-4" noValidate>
@@ -554,7 +561,9 @@ export default function AccountSettingsPage() {
                   </p>
                 </div>
               )}
-            </section>
+                </section>
+              </div>
+            </div>
           </>
         )}
       </main>

@@ -175,7 +175,7 @@ export default function AccountPage() {
   return (
     <div>
       <Nav />
-      <main className="mx-auto max-w-2xl px-5 py-10 sm:px-8">
+      <main className="mx-auto max-w-4xl px-5 py-10 sm:px-8">
         {!ready ? (
           <div aria-busy="true" aria-label="Loading your account">
             <div className="h-9 w-40 animate-pulse rounded-lg bg-ink/8" />
@@ -258,7 +258,7 @@ export default function AccountPage() {
                   )}
                 </>
               ) : (
-                <div className="space-y-3">
+                <div className="grid gap-3 sm:grid-cols-2">
                   {designs.map((room) => (
                     <DesignTile key={room.id} room={room} />
                   ))}

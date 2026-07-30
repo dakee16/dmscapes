@@ -168,7 +168,7 @@ export default function ComparePage() {
   return (
     <div>
       <Nav />
-      <main className="mx-auto max-w-3xl px-5 py-10 sm:px-8">
+      <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
         <Link
           href="/account"
           className="inline-flex items-center gap-1.5 font-mono text-xs font-medium uppercase tracking-[0.14em] text-ink-soft transition-colors hover:text-ink"

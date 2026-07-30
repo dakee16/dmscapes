@@ -22,7 +22,7 @@ export default function PrivacyPage() {
     <div>
       <Nav />
       <main>
-        <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-[50rem] px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-ink-soft">
             Legal
           </p>

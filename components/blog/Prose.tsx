@@ -16,7 +16,7 @@ function slugify(s: string) {
 /** Opening summary paragraph. Sits right under the H1 and answers the core
  *  question plainly, since AI answer engines lean on the top of the page. */
 export function Lead({ children }: { children: ReactNode }) {
-  return <p className="mt-6 text-lg leading-relaxed text-ink-soft">{children}</p>;
+  return <p className="mt-6 text-xl leading-relaxed text-ink-soft">{children}</p>;
 }
 
 /** Section heading. Auto-derives an id from plain-text children so sections are
@@ -44,7 +44,7 @@ export function H3({ children }: { children: ReactNode }) {
 
 export function P({ children }: { children: ReactNode }) {
   return (
-    <p className="mt-4 text-base leading-relaxed text-ink-soft">{children}</p>
+    <p className="mt-5 text-[17px] leading-relaxed text-ink-soft">{children}</p>
   );
 }
 
@@ -66,7 +66,7 @@ export function Ol({ children }: { children: ReactNode }) {
 
 export function Li({ children }: { children: ReactNode }) {
   return (
-    <li className="pl-1 text-base leading-relaxed text-ink-soft">{children}</li>
+    <li className="pl-1 text-[17px] leading-relaxed text-ink-soft">{children}</li>
   );
 }
 

@@ -77,7 +77,7 @@ export default async function BlogPostPage(props: {
           className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[22rem]"
           aria-hidden="true"
         />
-        <article className="mx-auto max-w-3xl px-5 py-12 sm:px-8 sm:py-16">
+        <article className="mx-auto max-w-[50rem] px-5 py-12 sm:px-8 sm:py-16">
           <Link
             href="/blog"
             className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wide text-ink-soft transition-colors hover:text-cobalt"

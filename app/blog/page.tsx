@@ -68,7 +68,7 @@ export default function BlogIndexPage() {
           className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[24rem]"
           aria-hidden="true"
         />
-        <div className="mx-auto max-w-3xl px-5 py-14 sm:px-8 sm:py-20">
+        <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             The Dormscape Blog
           </p>
@@ -81,7 +81,7 @@ export default function BlogIndexPage() {
             making a small room work.
           </p>
 
-          <div className="mt-12 space-y-4">
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
             {POSTS.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}
