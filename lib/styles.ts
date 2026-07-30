@@ -13,6 +13,8 @@ export interface StyleMeta {
 
 // Free styles come first, then the four Plus-gated styles. The picker and the
 // homepage showcase render in this order and read `plus` to draw the badge.
+// Boho was retired from selection (see RETIRED_STYLES below); it is intentionally
+// absent here so it can no longer be chosen for a new design.
 export const STYLES: StyleMeta[] = [
   {
     id: "minimalist",
@@ -27,13 +29,6 @@ export const STYLES: StyleMeta[] = [
     emoji: "🕯️",
     keywords: ["warm", "soft", "fairy lights", "layered"],
     palette: ["#f3e9dc", "#d9b99b", "#a9836a", "#6d4c35"],
-  },
-  {
-    id: "boho",
-    name: "Boho",
-    emoji: "🪴",
-    keywords: ["rattan", "macrame", "plants", "earthy"],
-    palette: ["#f5ecdf", "#d9a45b", "#a8763e", "#5f7355"],
   },
   {
     id: "preppy",
@@ -90,6 +85,27 @@ export const STYLES: StyleMeta[] = [
   },
 ];
 
+// Styles removed from selection but kept for lookup so existing saved designs
+// (saved list, comparison, /room/[id] share links, PDF export) still render with
+// their real name, emoji, and palette. Never shown in the picker or showcase.
+export const RETIRED_STYLES: StyleMeta[] = [
+  {
+    id: "boho",
+    name: "Boho",
+    emoji: "🪴",
+    keywords: ["rattan", "macrame", "plants", "earthy"],
+    palette: ["#f5ecdf", "#d9a45b", "#a8763e", "#5f7355"],
+  },
+];
+
+// Every style id the app recognizes: currently selectable plus retired ones.
+// Server-side validation (saving a design) accepts this full set so a saved
+// legacy design reopened in the planner can still be re-saved.
+const ALL_STYLES: StyleMeta[] = [...STYLES, ...RETIRED_STYLES];
+
+/** Every valid StyleId, including retired styles (for server-side validation). */
+export const ALL_STYLE_IDS: StyleId[] = ALL_STYLES.map((s) => s.id);
+
 /** The Plus-gated style ids. Selecting one as a free user opens the upgrade modal. */
 export const PLUS_STYLES: ReadonlySet<StyleId> = new Set<StyleId>(
   STYLES.filter((s) => s.plus).map((s) => s.id)
@@ -98,8 +114,9 @@ export const PLUS_STYLES: ReadonlySet<StyleId> = new Set<StyleId>(
 /** Whether a style is gated behind Dormscape Plus. */
 export const isPlusStyle = (id: StyleId): boolean => PLUS_STYLES.has(id);
 
+/** Resolve any known style (selectable or retired) for display. */
 export const styleById = (id: StyleId): StyleMeta =>
-  STYLES.find((s) => s.id === id) ?? STYLES[0];
+  ALL_STYLES.find((s) => s.id === id) ?? STYLES[0];
 
 /** Canvas fill colors per catalog color_category (matches templates/README.md). */
 export const CATEGORY_COLORS: Record<string, string> = {

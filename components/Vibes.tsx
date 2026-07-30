@@ -16,12 +16,6 @@ const VIBES: { id: StyleId; name: string; line: string; from: number; plus?: boo
     from: 310,
   },
   {
-    id: "boho",
-    name: "Boho",
-    line: "Plants, texture, thrifted everything.",
-    from: 280,
-  },
-  {
     id: "preppy",
     name: "Preppy",
     line: "Stripes, monograms, made-bed energy.",

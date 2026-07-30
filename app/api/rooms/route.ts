@@ -4,10 +4,14 @@ import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
 import { FREE_SAVED_DESIGN_LIMIT } from "@/lib/plan";
+import { ALL_STYLE_IDS } from "@/lib/styles";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
-import type { FurnitureItem, StyleId } from "@/lib/types";
+import type { FurnitureItem } from "@/lib/types";
 
-const STYLE_IDS: StyleId[] = ["minimalist", "cozy", "gamer", "boho", "preppy", "team_spirit"];
+// Accept every known style, including the retired Boho, so a legacy saved
+// design reopened in the planner can still be re-saved. New designs can only
+// pick a currently-selectable style, since Boho is gone from the picker.
+const STYLE_IDS = ALL_STYLE_IDS;
 
 function isFeet(value: unknown): value is number {
   return typeof value === "number" && Number.isFinite(value) && value >= 4 && value <= 60;

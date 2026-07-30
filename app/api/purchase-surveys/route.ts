@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
+import { ALL_STYLE_IDS } from "@/lib/styles";
 import type {
   PurchaseSurveyRequest,
   PurchaseSurveyResponse,
@@ -12,7 +13,8 @@ import type {
 // we validate strictly and log DB failures loudly.
 
 const RESPONSES: PurchaseSurveyResponse[] = ["yes", "still_deciding", "no"];
-const STYLE_IDS = ["minimalist", "cozy", "gamer", "boho", "preppy", "team_spirit"];
+// Every known style, including retired ones, so legacy designs still log surveys.
+const STYLE_IDS: string[] = ALL_STYLE_IDS;
 
 function cleanId(value: unknown, max: number): string | null {
   if (typeof value !== "string") return null;

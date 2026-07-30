@@ -20,9 +20,9 @@ function Body() {
         rules out anything permanent and anything that needs your roommate’s
         buy-in to look right. The reliable method is to start from a palette of a
         few colors, commit to a handful of anchor pieces that carry the look, and
-        treat named styles like Minimalist, Cozy, Boho, Preppy, Academia, Y2K
-        Cyber, Gamer, Team Spirit, Retro, and Pastel as starting points, not
-        rules. Below is how to choose one and make it hold together.
+        treat named styles like Minimalist, Cozy, Preppy, Academia, Y2K Cyber,
+        Gamer, Team Spirit, Retro, and Pastel as starting points, not rules.
+        Below is how to choose one and make it hold together.
       </Lead>
 
       <H2>The three constraints that decide everything</H2>
@@ -90,10 +90,10 @@ function Body() {
         losing.
       </P>
 
-      <H2>A framework: ten styles and how to pull each off</H2>
+      <H2>A framework: nine styles and how to pull each off</H2>
       <P>
         These are the archetypes Dormscape uses as starting points. Treat them as
-        a vocabulary, not a costume. Most good rooms land between two of them. Six
+        a vocabulary, not a costume. Most good rooms land between two of them. Five
         are free; Gamer, Team Spirit, Retro, and Pastel are{" "}
         <TextLink href="/pricing">Dormscape Plus</TextLink> styles.
       </P>
@@ -120,14 +120,6 @@ function Body() {
         LED accent, real cable management, and a chair that saves your back.
         The trap is cable chaos and harsh light, so pair the accent glow with
         warm ambient lighting and hide the wires with clips and a sleeve.
-      </P>
-
-      <H3>Boho</H3>
-      <P>
-        Layered patterns, natural fibers, and plants. Anchor it with a tapestry,
-        a textured rug, and a few low-maintenance plants. The trap is pattern
-        overload, so cap the palette at three or four tones and let one pattern
-        lead while the rest support.
       </P>
 
       <H3>Preppy</H3>
@@ -185,9 +177,9 @@ function Body() {
       <H2>You’re allowed to mix and to change your mind</H2>
       <P>
         The best dorm rooms are usually two styles at maybe seventy and thirty:
-        cozy with a minimalist backbone, boho with a preppy sense of order. Start
-        with the anchors, live in it for a week, and adjust. Removable pieces mean
-        a wrong call costs a swap, not a semester.
+        cozy with a minimalist backbone, or academia with a preppy sense of order.
+        Start with the anchors, live in it for a week, and adjust. Removable pieces
+        mean a wrong call costs a swap, not a semester.
       </P>
 
       <Callout label="How Dormscape uses these">
@@ -214,9 +206,9 @@ const post: BlogPost = {
   title: "What to know before you pick a dorm room style",
   metaTitle: "How to Pick a Dorm Room Style (Before You Buy)",
   description:
-    "How to choose a dorm room style for a shared, temporary space: start with a palette, pick your anchor pieces, and use the ten style archetypes as a framework.",
+    "How to choose a dorm room style for a shared, temporary space: start with a palette, pick your anchor pieces, and use the nine style archetypes as a framework.",
   excerpt:
-    "How to choose a style for a shared, temporary, small space, with a palette-first method and a plain-English guide to ten archetypes from Minimalist to Pastel.",
+    "How to choose a style for a shared, temporary, small space, with a palette-first method and a plain-English guide to nine archetypes from Minimalist to Pastel.",
   date: "2026-07-18",
   updated: "2026-07-29",
   readingTimeMin: 7,
@@ -228,7 +220,7 @@ const post: BlogPost = {
     },
     {
       q: "What are the most popular dorm room styles?",
-      a: "Dormscape offers ten style archetypes: Minimalist, Cozy Aesthetic, Boho, Preppy, Academia, and Y2K Cyber are free, while Gamer, Team Spirit, Retro, and Pastel are part of Dormscape Plus. Each is best treated as a starting point defined by a palette and a few anchor pieces, and most well-designed rooms blend two of them rather than following one strictly.",
+      a: "Dormscape offers nine style archetypes: Minimalist, Cozy Aesthetic, Preppy, Academia, and Y2K Cyber are free, while Gamer, Team Spirit, Retro, and Pastel are part of Dormscape Plus. Each is best treated as a starting point defined by a palette and a few anchor pieces, and most well-designed rooms blend two of them rather than following one strictly.",
     },
     {
       q: "How do roommates coordinate dorm styles without matching?",

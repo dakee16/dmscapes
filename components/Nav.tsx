@@ -98,18 +98,22 @@ export default function Nav() {
 
           {/* Actions: secondary items, the primary CTA, and the profile. */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Room in 3D: secondary teaser, quiet next to the CTA. Desktop
-                only; on smaller widths it lives in the overflow menu. */}
-            <button
-              type="button"
-              onClick={() => setTeaserOpen(true)}
-              title="Room in 3D, coming soon"
-              className="hidden shrink-0 cursor-pointer items-center gap-1.5 text-sm font-medium text-ink-soft transition-colors hover:text-ink lg:flex"
-            >
-              <Crown />
-              <span>Room in 3D</span>
-              <SoonBadge />
-            </button>
+            {/* Upgrade to Plus: the primary header-level upgrade entry for free
+                users, cobalt-tinted so it reads clearly without competing with
+                the solid "Plan my room" CTA. Plus members see no button here;
+                their status shows as the "+" on the wordmark. Desktop only; on
+                smaller widths it lives in the overflow menu. */}
+            {showUpgrade && (
+              <Link
+                href="/pricing"
+                className="hidden shrink-0 items-center gap-1.5 rounded-lg border border-cobalt/30 bg-cobalt/5 px-3.5 py-2 text-sm font-semibold text-cobalt transition-colors hover:border-cobalt/50 hover:bg-cobalt/10 lg:inline-flex"
+              >
+                <span className="grid h-[18px] w-[18px] place-items-center font-display text-base font-extrabold leading-none">
+                  +
+                </span>
+                Upgrade to Plus
+              </Link>
+            )}
 
             {/* The header's primary action. */}
             <a href="/plan" className={PLAN_BTN}>
@@ -198,7 +202,7 @@ export default function Nav() {
               )}
             </div>
 
-            <ProfileMenu />
+            <ProfileMenu onShowRoom3D={() => setTeaserOpen(true)} />
           </div>
         </nav>
       </header>

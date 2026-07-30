@@ -16,6 +16,19 @@ function initialsOf(name: string): string {
   return base.slice(0, 2).toUpperCase();
 }
 
+function Crown() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-[18px] w-[18px] shrink-0 text-amber"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M2.8 7.4l4 3 4.4-6a1 1 0 0 1 1.6 0l4.4 6 4-3a1 1 0 0 1 1.57 1l-1.6 8.9a1 1 0 0 1-1 .82H4.83a1 1 0 0 1-1-.82L2.24 8.4a1 1 0 0 1 1.56-1z" />
+    </svg>
+  );
+}
+
 function Chevron({ open }: { open: boolean }) {
   return (
     <svg
@@ -39,7 +52,14 @@ function Chevron({ open }: { open: boolean }) {
  * Log out). Replaced the old AuthPill + ProfileButton controls. Closes on
  * outside click, Escape, and route change.
  */
-export default function ProfileMenu() {
+export default function ProfileMenu({
+  onShowRoom3D,
+}: {
+  /** When provided, the dropdown gains a lower-priority "Room in 3D" item that
+   *  opens the coming-soon teaser. The site header passes this; the planner
+   *  header omits it. */
+  onShowRoom3D?: () => void;
+} = {}) {
   const { user, profile, loading, openAuthModal, signOut } = useAuth();
   const [open, setOpen] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
@@ -183,6 +203,23 @@ export default function ProfileMenu() {
               </svg>
               Saved designs
             </Link>
+            {onShowRoom3D && (
+              <button
+                type="button"
+                role="menuitem"
+                onClick={() => {
+                  setOpen(false);
+                  onShowRoom3D();
+                }}
+                className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper"
+              >
+                <Crown />
+                Room in 3D
+                <span className="ml-auto rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
+                  Soon
+                </span>
+              </button>
+            )}
           </div>
 
           <div className="mt-1.5 border-t border-ink/8 pt-1.5">

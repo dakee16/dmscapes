@@ -9,6 +9,7 @@ import {
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 import type { User } from "@supabase/supabase-js";
@@ -82,6 +83,22 @@ function devMockProfile(): Profile | null {
   }
 }
 
+/**
+ * Ask the server to revoke this account's oldest sessions beyond the concurrent
+ * limit (see app/api/session/enforce). Best-effort: a failure never blocks auth.
+ */
+async function enforceSessionLimit(accessToken: string): Promise<void> {
+  try {
+    await fetch("/api/session/enforce", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${accessToken}` },
+      keepalive: true,
+    });
+  } catch {
+    // Non-fatal: enforcement is a deterrent, not a gate on signing in.
+  }
+}
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const supabase = useMemo(() => getBrowserClient(), []);
   const [user, setUser] = useState<User | null>(null);
@@ -89,6 +106,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalReason, setModalReason] = useState<AuthModalReason>("profile");
+  // Shown when this device's session was revoked elsewhere (e.g. bumped by the
+  // concurrent-session cap), so we can tell it apart from a deliberate log out.
+  const [sessionBumped, setSessionBumped] = useState(false);
+  const intentionalSignOutRef = useRef(false);
+  const hadUserRef = useRef(false);
 
   const fetchProfile = useCallback(
     async (uid: string) => {
@@ -120,14 +142,33 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     supabase.auth.getSession().then(({ data }) => {
       const u = data.session?.user ?? null;
       setUser(u);
+      hadUserRef.current = Boolean(u);
       if (u) void fetchProfile(u.id);
       setLoading(false);
     });
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
       const u = session?.user ?? null;
       setUser(u);
       if (u) void fetchProfile(u.id);
       else setProfile(null);
+
+      if (event === "SIGNED_IN") {
+        // A fresh sign-in: clear any stale bump notice and ask the server to
+        // revoke this account's oldest sessions past the concurrent limit.
+        setSessionBumped(false);
+        if (session?.access_token) void enforceSessionLimit(session.access_token);
+      } else if (event === "SIGNED_OUT") {
+        // Distinguish an involuntary sign-out (session revoked on another
+        // device by the concurrent-session cap, or a failed token refresh)
+        // from the user clicking Log out. Only the involuntary case surfaces
+        // the polite notice.
+        if (hadUserRef.current && !intentionalSignOutRef.current) {
+          setSessionBumped(true);
+        }
+        intentionalSignOutRef.current = false;
+      }
+
+      hadUserRef.current = Boolean(u);
     });
     return () => sub.subscription.unsubscribe();
   }, [supabase, fetchProfile]);
@@ -141,6 +182,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const closeAuthModal = useCallback(() => setModalOpen(false), []);
 
   const signOut = useCallback(async () => {
+    // Mark this as a deliberate log out so the SIGNED_OUT handler doesn't mistake
+    // it for a session that got bumped elsewhere.
+    intentionalSignOutRef.current = true;
     if (process.env.NODE_ENV !== "production" && typeof window !== "undefined") {
       window.sessionStorage.removeItem(DEV_AUTH_KEY);
     }
@@ -184,6 +228,66 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     <AuthContext.Provider value={value}>
       {children}
       <AuthModal />
+      {sessionBumped && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="fixed inset-x-0 bottom-0 z-[70] flex justify-center px-4 pb-[max(1rem,env(safe-area-inset-bottom))]"
+        >
+          <div className="w-full max-w-md rounded-xl border border-ink/10 bg-white p-4 shadow-[0_20px_50px_-20px_rgba(23,23,43,0.45)]">
+            <div className="flex items-start gap-3">
+              <span
+                className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-highlight/60 text-ink"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="5" y="11" width="14" height="9" rx="2" />
+                  <path d="M8 11V7a4 4 0 0 1 8 0v4" strokeLinecap="round" />
+                </svg>
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-semibold text-ink">
+                  You&rsquo;ve been logged out
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+                  Your account was signed in on another device. We keep up to two
+                  devices signed in at once, so the oldest was signed out. You can
+                  log back in anytime.
+                </p>
+                <div className="mt-3 flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSessionBumped(false);
+                      openAuthModal("profile");
+                    }}
+                    className="cursor-pointer rounded-lg bg-ink px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
+                  >
+                    Log back in
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setSessionBumped(false)}
+                    className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+                  >
+                    Dismiss
+                  </button>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setSessionBumped(false)}
+                aria-label="Dismiss"
+                className="grid h-7 w-7 shrink-0 cursor-pointer place-items-center rounded-full text-ink-soft transition-colors hover:bg-paper hover:text-ink"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </AuthContext.Provider>
   );
 }

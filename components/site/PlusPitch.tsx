@@ -23,6 +23,11 @@ const MOMENTS: { title: string; body: string; icon: React.ReactNode }[] = [
     body: "Your add-my-school request jumps straight to the front of the queue.",
     icon: <path d="M13 5l7 7-7 7M4 5l7 7-7 7" />,
   },
+  {
+    title: "Four looks, Plus-only",
+    body: "Gamer, Team Spirit, Retro, and Pastel come with Plus, each a full room in its own palette.",
+    icon: <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" />,
+  },
 ];
 
 export default function PlusPitch() {
@@ -51,7 +56,7 @@ export default function PlusPitch() {
             </p>
           </div>
 
-          <div className="relative mt-8 grid gap-4 sm:grid-cols-3">
+          <div className="relative mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {MOMENTS.map((m) => (
               <div
                 key={m.title}

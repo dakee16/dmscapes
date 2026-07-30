@@ -26,7 +26,7 @@ const STEPS = [
     mock: (
       <div className="rounded-lg border border-ink/12 bg-white p-3">
         <div className="flex flex-wrap gap-1">
-          {["Cozy", "Gamer", "Boho"].map((v, i) => (
+          {["Cozy", "Gamer", "Preppy"].map((v, i) => (
             <span
               key={v}
               className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${

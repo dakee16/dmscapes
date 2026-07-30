@@ -19,8 +19,8 @@ function Body() {
       <H2>What&rsquo;s free, and what stays free</H2>
       <P>
         Start here, because it matters. The core planner is free and stays free.
-        That means real room dimensions for supported schools, six free styles
-        (Minimalist, Cozy, Boho, Preppy, Academia, and Y2K Cyber), budget-aware
+        That means real room dimensions for supported schools, five free styles
+        (Minimalist, Cozy, Preppy, Academia, and Y2K Cyber), budget-aware
         product picks with live links, the drag-and-drop 2D layout that fits to
         the inch, one saved design, and a share link for any room. Plus never
         locks a single one of those. It only adds on top, so upgrading is a
@@ -46,11 +46,11 @@ function Body() {
 
       <H3>2. Four exclusive design styles</H3>
       <P>
-        Six styles are free. Plus adds four more, Gamer, Team Spirit, Retro, and
+        Five styles are free. Plus adds four more, Gamer, Team Spirit, Retro, and
         Pastel, each a complete plan with its own products, palette, and layout.{" "}
         <strong>Worth it if</strong>{" "}your look is a battle station, game-day, 70s
         groovy, or soft pastel.{" "}
-        <strong>Skip it if</strong>{" "}one of the six free styles already fits you.
+        <strong>Skip it if</strong>{" "}one of the five free styles already fits you.
       </P>
 
       <H3>3. PDF export of your shopping list</H3>
@@ -163,11 +163,11 @@ const post: BlogPost = {
     },
     {
       q: "Is the Dormscape planner still free?",
-      a: "Yes. The core 2D planner is free and stays free, including real room dimensions for supported schools, six free styles, budget-aware product picks, the drag-and-drop layout, one saved design, and share links. Plus only adds extras and never locks free features.",
+      a: "Yes. The core 2D planner is free and stays free, including real room dimensions for supported schools, five free styles, budget-aware product picks, the drag-and-drop layout, one saved design, and share links. Plus only adds extras and never locks free features.",
     },
     {
       q: "Do I need Dormscape Plus to plan a dorm room?",
-      a: "No. You can plan, style, and shop a complete room for free without an account, using any of the six free styles. Plus is worth considering only if you want the four Plus styles, to save more than one design, export a PDF, compare two rooms side by side, or fast-track a school request.",
+      a: "No. You can plan, style, and shop a complete room for free without an account, using any of the five free styles. Plus is worth considering only if you want the four Plus styles, to save more than one design, export a PDF, compare two rooms side by side, or fast-track a school request.",
     },
   ],
   Body,

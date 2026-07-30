@@ -26,7 +26,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   },
   style: {
     title: "That's a Plus style",
-    body: "Gamer, Team Spirit, Retro, and Pastel are Plus picks. Unlock all ten styles and design your room in any of them.",
+    body: "Gamer, Team Spirit, Retro, and Pastel are Plus picks. Unlock all nine styles and design your room in any of them.",
   },
   generic: {
     title: "Do more with Dormscape Plus",
