@@ -60,6 +60,42 @@ export default function Home() {
                 <li>$200-$1,500 budgets</li>
                 <li>Live Amazon links</li>
               </ul>
+
+              {/* Secondary, benefit-forward Plus teaser. Deliberately lighter
+                  than the primary CTA: muted card, small type, added-value
+                  framing (no gating or scarcity language). */}
+              <Link
+                href="/pricing"
+                aria-label="See what Dormscape Plus adds"
+                className="rise group mt-6 flex w-full max-w-sm items-center gap-3 rounded-xl border border-ink/10 bg-white/60 px-4 py-2.5 transition-colors hover:border-cobalt/40 hover:bg-white"
+                style={{ animationDelay: "400ms" }}
+              >
+                <span className="flex shrink-0 items-center gap-2 text-cobalt" aria-hidden="true">
+                  {/* unlimited saves */}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-[17px] w-[17px]">
+                    <rect x="8" y="8" width="12" height="12" rx="2" />
+                    <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {/* PDF export */}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-[17px] w-[17px]">
+                    <path d="M12 3v10m0 0l-3.2-3.2M12 13l3.2-3.2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M5 16v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  {/* side-by-side comparison */}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-[17px] w-[17px]">
+                    <rect x="3.5" y="5" width="7" height="14" rx="1.5" />
+                    <rect x="13.5" y="5" width="7" height="14" rx="1.5" />
+                  </svg>
+                </span>
+                <span className="text-[13px] leading-snug text-ink-soft">
+                  Torn between two looks?{" "}
+                  <span className="font-semibold text-ink">Plus</span> saves and
+                  compares them side by side.
+                </span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-auto h-4 w-4 shrink-0 text-cobalt transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                  <path d="M5 12h14m0 0l-5-5m5 5l-5 5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </Link>
             </div>
             <HeroParallax className="flex justify-center lg:justify-end">
               <RoomPlanner />
