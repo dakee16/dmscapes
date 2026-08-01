@@ -270,6 +270,7 @@ export default function AuthModal() {
   }
 
   const saveDesign = modalReason === "save-design";
+  const buyReason = modalReason === "buy";
   const title = needsUsername
     ? "Claim your username"
     : confirmSent
@@ -280,7 +281,9 @@ export default function AuthModal() {
           : "Reset your password"
         : saveDesign
           ? "Save your design"
-          : "Welcome to Dormscape";
+          : buyReason
+            ? "One quick step to buy"
+            : "Welcome to Dormscape";
 
   const uHint: { text: string; tone: "soft" | "good" | "bad" } | null = (() => {
     if (!username.trim()) return null;
@@ -510,7 +513,9 @@ export default function AuthModal() {
             <p className="text-sm leading-relaxed text-ink-soft">
               {saveDesign
                 ? "Create a free account to keep this room."
-                : "Save designs and pick up where you left off. Free."}
+                : buyReason
+                  ? "Log in or grab a free account, then we'll send you straight to Amazon. Your room stays exactly as it is."
+                  : "Save designs and pick up where you left off. Free."}
             </p>
             <div className="mt-4 grid grid-cols-2 rounded-xl border border-ink/10 bg-white p-1 text-sm font-semibold">
               {(["signup", "login"] as const).map((m) => (

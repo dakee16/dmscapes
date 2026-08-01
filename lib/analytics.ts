@@ -38,7 +38,10 @@ export type AnalyticsEvent =
   | "upgrade_cta_clicked"
   | "checkout_started"
   | "plus_pdf_downloaded"
-  | "designs_compared";
+  | "designs_compared"
+  | "plus_welcome_shown"
+  | "plus_welcome_cta_clicked"
+  | "plus_welcome_dismissed";
 
 let initialized = false;
 

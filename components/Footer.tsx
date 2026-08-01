@@ -138,9 +138,19 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-ink/8 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="font-display text-lg font-bold tracking-tight">
-              dorm<span className="text-amber">scape</span>
-            </p>
+            <div className="flex items-center gap-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/icons/icon-512.png"
+                alt=""
+                width={28}
+                height={28}
+                className="h-7 w-7 shrink-0 rounded-lg border border-ink/10"
+              />
+              <p className="font-display text-lg font-bold tracking-tight">
+                dorm<span className="text-amber">scape</span>
+              </p>
+            </div>
             <p className="mt-1 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
               Dorm ready under a minute.
             </p>

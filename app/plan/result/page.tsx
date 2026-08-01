@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { matchTemplate, ALL_TEMPLATES } from "@/templates/template-matcher";
-import { cartUrl, productsFor, productById, tierForBudget, totalFor } from "@/lib/catalog";
+import { productsFor, productById, tierForBudget, totalFor } from "@/lib/catalog";
 import { isPlusStyle } from "@/lib/styles";
 import { useAuth } from "@/lib/auth-context";
 import { isPlus } from "@/lib/plan";
@@ -20,9 +20,10 @@ import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import BudgetTracker from "@/components/products/BudgetTracker";
 import ProductPanel from "@/components/products/ProductPanel";
 import ActionBar from "@/components/products/ActionBar";
+import BuyAllButton from "@/components/products/BuyAllButton";
 import PurchaseSurvey from "@/components/products/PurchaseSurvey";
 import SavePrompt from "@/components/planner/SavePrompt";
-import { signalBuyIntent } from "@/lib/purchase-intent";
+import { BuyGateProvider } from "@/lib/buy-gate";
 
 // react-konva can't render on the server, so load the canvas client-side only.
 const RoomCanvas = dynamic(() => import("@/components/canvas/RoomCanvas"), {
@@ -260,44 +261,20 @@ export default function ResultPage() {
           </p>
         </section>
 
-        {/* Products panel */}
-        <section className="rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
-          <BudgetTracker total={total} budget={budget} />
-          {/* Prominent "Buy all", always visible above the first category, in
-              sync with the tracker above (same product total). */}
-          <a
-            href={cartUrl(products)}
-            target="_blank"
-            rel="noopener sponsored"
-            onClick={() => {
-              signalBuyIntent();
-              track("product_clicked", { product_id: "buy_all", price: total, category: "cart" });
-            }}
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-cobalt px-4 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-cobalt-deep"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              aria-hidden="true"
-            >
-              <circle cx="9" cy="21" r="1" />
-              <circle cx="20" cy="21" r="1" />
-              <path
-                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            Buy all {products.length} items{" "}
-            <span className="font-mono">(${total.toFixed(0)})</span>
-          </a>
-          <div className="lg:max-h-[68vh] lg:overflow-y-auto lg:pr-1">
-            <ProductPanel products={products} bedSize={room.bedSize} />
-          </div>
-        </section>
+        {/* Products panel. Wrapped in the buy gate so its Buy / Buy all links
+            require sign-in for logged-out users and resume straight to Amazon
+            afterward (lib/buy-gate). */}
+        <BuyGateProvider>
+          <section className="rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
+            <BudgetTracker total={total} budget={budget} />
+            {/* Prominent "Buy all", always visible above the first category, in
+                sync with the tracker above (same product total). */}
+            <BuyAllButton products={products} total={total} />
+            <div className="lg:max-h-[68vh] lg:overflow-y-auto lg:pr-1">
+              <ProductPanel products={products} bedSize={room.bedSize} />
+            </div>
+          </section>
+        </BuyGateProvider>
       </div>
 
       <ActionBar products={products} getPng={() => canvasRef.current?.exportPNG() ?? null} />

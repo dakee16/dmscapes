@@ -18,7 +18,23 @@ export default function Wordmark({
   const plus = isPlus(profile);
 
   return (
-    <Link href="/" className="shrink-0" aria-label={plus ? "Dormscape Plus home" : "Dormscape home"}>
+    <Link
+      href="/"
+      className="flex shrink-0 items-center gap-2"
+      aria-label={plus ? "Dormscape Plus home" : "Dormscape home"}
+    >
+      {/* The brand mark. A static PNG served from /public; rendered as a small
+          rounded badge so its baked-in graph-paper backdrop reads as an app
+          icon against the header. eslint-disable: a fixed-size logo doesn't
+          need next/image's responsive machinery. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/icons/icon-512.png"
+        alt=""
+        width={32}
+        height={32}
+        className="h-8 w-8 shrink-0 rounded-[9px] border border-ink/10"
+      />
       <span className={`font-display font-bold tracking-tight ${textClassName}`}>
         dorm<span className="text-amber">scape</span>
         {plus && (

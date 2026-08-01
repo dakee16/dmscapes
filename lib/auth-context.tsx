@@ -15,7 +15,9 @@ import {
 import type { User } from "@supabase/supabase-js";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
+import { isPlus } from "@/lib/plan";
 import AuthModal from "@/components/auth/AuthModal";
+import PlusWelcome from "@/components/site/PlusWelcome";
 
 /** Row shape of public.profiles (supabase/migrations/0002_profiles.sql, plus
  *  the contact fields added in 0007). full_name/phone are optional so the app
@@ -36,7 +38,7 @@ export interface Profile {
 export type PlanTier = "free" | "plus";
 
 /** What prompted the modal; copy inside adapts ("save your design" vs generic). */
-export type AuthModalReason = "profile" | "save-design";
+export type AuthModalReason = "profile" | "save-design" | "buy";
 
 interface AuthContextValue {
   /** false when Supabase client env isn't configured. */
@@ -60,6 +62,11 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 // live Supabase: sessionStorage["dormscape-dev-auth"] = {"email","username"}.
 // The NODE_ENV guard makes this dead code in production builds.
 const DEV_AUTH_KEY = "dormscape-dev-auth";
+
+// Once-per-browser-session flag: the premium PlusWelcome shows at most once, on
+// the first real sign-in of the session (see the SIGNED_IN handler). Survives a
+// log out / log back in within the session; a new tab/window resets it.
+const PLUS_WELCOME_KEY = "dormscape-plus-welcome-seen";
 
 function devMockProfile(): Profile | null {
   if (process.env.NODE_ENV === "production" || typeof window === "undefined")
@@ -111,6 +118,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [sessionBumped, setSessionBumped] = useState(false);
   const intentionalSignOutRef = useRef(false);
   const hadUserRef = useRef(false);
+  // Mirrors modalReason so the async SIGNED_IN handler reads the latest value.
+  const modalReasonRef = useRef<AuthModalReason>("profile");
+  // The premium after-login upgrade takeover. Queued on a qualifying sign-in,
+  // then revealed once the profile (plan) is known and the auth modal is gone.
+  const [plusWelcomeOpen, setPlusWelcomeOpen] = useState(false);
+  const [pendingPlusWelcome, setPendingPlusWelcome] = useState(false);
 
   const fetchProfile = useCallback(
     async (uid: string) => {
@@ -157,6 +170,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         // revoke this account's oldest sessions past the concurrent limit.
         setSessionBumped(false);
         if (session?.access_token) void enforceSessionLimit(session.access_token);
+        // First real sign-in of this browser session (a session restore or a
+        // focus-driven re-fire keeps hadUserRef true, so those don't count):
+        // queue the premium welcome. Consume the once-per-session flag either
+        // way. Skip showing it when the login was to complete a buy, so it
+        // never collides with that resume (buy-gate opens with reason "buy").
+        if (
+          !hadUserRef.current &&
+          typeof window !== "undefined" &&
+          !window.sessionStorage.getItem(PLUS_WELCOME_KEY)
+        ) {
+          window.sessionStorage.setItem(PLUS_WELCOME_KEY, "1");
+          if (modalReasonRef.current !== "buy") setPendingPlusWelcome(true);
+        }
       } else if (event === "SIGNED_OUT") {
         // Distinguish an involuntary sign-out (session revoked on another
         // device by the concurrent-session cap, or a failed token refresh)
@@ -174,10 +200,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [supabase, fetchProfile]);
 
   const openAuthModal = useCallback((reason: AuthModalReason = "profile") => {
+    modalReasonRef.current = reason;
     setModalReason(reason);
     setModalOpen(true);
     track("auth_modal_opened", { reason });
   }, []);
+
+  // Reveal the queued PlusWelcome once the plan is known (profile loaded) and
+  // the auth modal has closed (so it never stacks on the login / username
+  // step). Plus members never see it; either way the queue clears.
+  useEffect(() => {
+    if (!pendingPlusWelcome || !profile || modalOpen) return;
+    setPendingPlusWelcome(false);
+    if (!isPlus(profile)) setPlusWelcomeOpen(true);
+  }, [pendingPlusWelcome, profile, modalOpen]);
 
   const closeAuthModal = useCallback(() => setModalOpen(false), []);
 
@@ -228,6 +264,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     <AuthContext.Provider value={value}>
       {children}
       <AuthModal />
+      <PlusWelcome
+        open={plusWelcomeOpen}
+        onClose={() => setPlusWelcomeOpen(false)}
+      />
       {sessionBumped && (
         <div
           role="status"

@@ -3,6 +3,7 @@
 import type { Product } from "@/lib/types";
 import { track, sessionId } from "@/lib/analytics";
 import { signalBuyIntent } from "@/lib/purchase-intent";
+import { useBuyGate } from "@/lib/buy-gate";
 import type { ProductClickRequest } from "@/lib/api-types";
 
 export function logProductClick(p: Product): void {
@@ -32,6 +33,8 @@ export default function ProductCard({
   /** Cross-highlight: true when the matching canvas item is hovered/selected. */
   active?: boolean;
 }) {
+  // Present on the result page; null elsewhere (links stay ungated there).
+  const buyGate = useBuyGate();
   return (
     <div
       className={`flex items-center gap-3 rounded-xl border bg-white p-2.5 transition-all ${
@@ -79,8 +82,16 @@ export default function ProductCard({
         rel="noopener sponsored"
         onClick={(e) => {
           e.stopPropagation();
-          signalBuyIntent();
-          logProductClick(product);
+          const proceed = () => {
+            signalBuyIntent();
+            logProductClick(product);
+          };
+          // Logged out: intercept, send them through sign-in, resume after.
+          if (buyGate && buyGate.gate(product.affiliate_url, proceed)) {
+            e.preventDefault();
+            return;
+          }
+          proceed();
         }}
         className="shrink-0 self-center rounded-full bg-cobalt px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-cobalt-deep"
       >

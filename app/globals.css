@@ -118,14 +118,14 @@ body {
   opacity: 0;
   transition: opacity 0.45s ease-out;
   -webkit-mask-image: radial-gradient(
-    340px circle at var(--cg-x, -999px) var(--cg-y, -999px),
+    200px circle at var(--cg-x, -999px) var(--cg-y, -999px),
     black 0%,
     black 34%,
     rgba(0, 0, 0, 0.5) 62%,
     transparent 85%
   );
   mask-image: radial-gradient(
-    340px circle at var(--cg-x, -999px) var(--cg-y, -999px),
+    200px circle at var(--cg-x, -999px) var(--cg-y, -999px),
     black 0%,
     black 34%,
     rgba(0, 0, 0, 0.5) 62%,
