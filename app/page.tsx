@@ -20,11 +20,22 @@ export default function Home() {
           <div className="grid-paper grid-paper-fade absolute inset-0 -z-10" aria-hidden="true">
             <CursorGrid />
           </div>
+          {/* Ambient depth: soft brand-tinted blooms over the grid, behind the
+              content, so the hero reads with more presence than a flat page. */}
+          <div
+            className="pointer-events-none absolute -right-28 -top-20 -z-10 h-[36rem] w-[36rem] rounded-full bg-cobalt/[0.09] blur-[110px]"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute -left-24 top-48 -z-10 h-80 w-80 rounded-full bg-highlight/25 blur-[100px]"
+            aria-hidden="true"
+          />
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-14 sm:px-8 sm:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-28">
             <div>
-              <p className="rise font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
+              <span className="rise inline-flex items-center gap-2 rounded-full border border-cobalt/20 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-cobalt">
+                <span className="h-1.5 w-1.5 rounded-full bg-cobalt" aria-hidden="true" />
                 Free AI dorm planner · Fall &rsquo;26
-              </p>
+              </span>
               <h1
                 className="rise mt-4 font-display text-[2.6rem] font-extrabold leading-[1.04] tracking-tight sm:text-6xl"
                 style={{ animationDelay: "80ms" }}
@@ -53,7 +64,7 @@ export default function Home() {
                 </p>
               </div>
               <ul
-                className="rise mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-wide text-ink-soft"
+                className="rise mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-wide text-ink-soft"
                 style={{ animationDelay: "320ms" }}
               >
                 <li>16 schools preloaded, more weekly</li>
@@ -67,7 +78,7 @@ export default function Home() {
               <Link
                 href="/pricing"
                 aria-label="See what Dormscape Plus adds"
-                className="rise group mt-6 flex w-full max-w-sm items-center gap-3 rounded-xl border border-ink/10 bg-white/60 px-4 py-2.5 transition-colors hover:border-cobalt/40 hover:bg-white"
+                className="rise group mt-5 flex w-full max-w-sm items-center gap-3 rounded-xl border border-ink/10 bg-white/60 px-4 py-2.5 transition-colors hover:border-cobalt/40 hover:bg-white"
                 style={{ animationDelay: "400ms" }}
               >
                 <span className="flex shrink-0 items-center gap-2 text-cobalt" aria-hidden="true">
@@ -98,7 +109,12 @@ export default function Home() {
               </Link>
             </div>
             <HeroParallax className="flex justify-center lg:justify-end">
-              <RoomPlanner />
+              {/* Slow idle float + faint breathe (see .hero-float in
+                  globals.css), layered under the scroll parallax so the preview
+                  feels gently alive. Reduced-motion pauses it. */}
+              <div className="hero-float">
+                <RoomPlanner />
+              </div>
             </HeroParallax>
           </div>
         </section>

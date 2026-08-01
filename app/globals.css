@@ -103,6 +103,25 @@ body {
   animation: brand-breathe 1.8s ease-in-out infinite;
 }
 
+/* Hero room preview: a slow idle float with a faint breathe, so the mockup
+   reads as gently alive without pulling focus. Compositor-only (transform),
+   delayed so it starts after the entrance settles, paused for reduced motion.
+   See app/page.tsx, where .hero-float wraps the preview inside HeroParallax. */
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -9px, 0) scale(1.012);
+  }
+}
+
+.hero-float {
+  animation: hero-float 7s ease-in-out 0.8s infinite;
+  will-change: transform;
+}
+
 /* Scroll reveals live in components/site/Reveal.tsx (framer-motion). */
 
 /* Cursor-reactive grid: a stronger copy of the graph paper, masked to a soft
@@ -144,7 +163,8 @@ body {
     scroll-behavior: auto;
   }
   .rise,
-  .snap-in {
+  .snap-in,
+  .hero-float {
     animation: none;
   }
   /* Static logo instead of the breathing loop; hold it fully visible. */

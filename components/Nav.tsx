@@ -11,10 +11,10 @@ import { isFree } from "@/lib/plan";
 
 // Primary text nav, in reading order. Shown centered on desktop; on smaller
 // widths these move into the overflow menu so the header stays uncrowded.
+// Blog lives in the footer now; kept out of the primary header to stay uncrowded.
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/colleges", label: "Colleges" },
-  { href: "/blog", label: "Blog" },
   { href: "/pricing", label: "Pricing" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -84,8 +84,8 @@ export default function Nav() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-ink/8 bg-paper/85 backdrop-blur-md">
-        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+      <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/90 shadow-[0_10px_30px_-24px_rgba(23,23,43,0.45)] backdrop-blur-md">
+        <nav className="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
           {/* Brand */}
           <Wordmark />
 

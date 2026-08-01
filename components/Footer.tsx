@@ -70,8 +70,8 @@ function InstagramIcon() {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-ink/8 bg-paper">
-      <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-14">
+    <footer className="relative overflow-hidden border-t border-ink/8 bg-paper">
+      <div className="relative z-10 mx-auto max-w-6xl px-5 pb-44 pt-12 sm:px-8 sm:pb-60 sm:pt-14">
         <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
           {COLUMNS.map((col) => (
             <div key={col.heading}>
@@ -157,6 +157,19 @@ export default function Footer() {
           </div>
           <p className="text-xs text-ink-soft">© 2026 Dormscape</p>
         </div>
+      </div>
+
+      {/* Oversized brand signature, bleeding off the bottom edge. The site's
+          wordmark treatment (ink "dorm" + amber "scape") at a much larger scale
+          and low opacity, cropped by the footer, so it reads as a watermark
+          behind the functional content rather than competing with it. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 flex justify-center overflow-hidden"
+      >
+        <span className="translate-y-[30%] select-none whitespace-nowrap font-display text-[clamp(7rem,27vw,20rem)] font-extrabold leading-none tracking-tight text-ink opacity-[0.06]">
+          dorm<span className="text-amber opacity-80">scape</span>
+        </span>
       </div>
     </footer>
   );
