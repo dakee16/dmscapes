@@ -50,9 +50,9 @@ export default function PlusPitch() {
               You&rsquo;ll have more than one good idea.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              The cozy version and the bold one. The layout your budget likes and
-              the one your heart does. Plus keeps every look you&rsquo;re torn
-              between, so you get to actually choose instead of guessing.
+              The cozy version and the bold one. Saving and sharing are free for
+              everyone; Plus is where you line two rooms up side by side, export
+              the winner, and design in all nine vibes instead of five.
             </p>
           </div>
 
@@ -91,10 +91,10 @@ export default function PlusPitch() {
               href="/pricing"
               className="inline-flex h-14 items-center rounded-xl bg-ink px-7 text-base font-semibold text-white transition-colors hover:bg-cobalt"
             >
-              See what Plus unlocks
+              See plans
             </Link>
             <span className="font-mono text-xs uppercase tracking-wide text-ink-soft">
-              $4.99 one time · not a subscription
+              $7.99 for Plus · $19.99 for Pro · one time
             </span>
           </div>
         </div>

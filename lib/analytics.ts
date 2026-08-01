@@ -41,7 +41,9 @@ export type AnalyticsEvent =
   | "designs_compared"
   | "plus_welcome_shown"
   | "plus_welcome_cta_clicked"
-  | "plus_welcome_dismissed";
+  | "plus_welcome_dismissed"
+  | "plan_credit_consumed"
+  | "plan_blocked_no_credits";
 
 let initialized = false;
 

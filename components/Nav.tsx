@@ -7,7 +7,7 @@ import ProfileMenu from "@/components/auth/ProfileMenu";
 import Wordmark from "@/components/site/Wordmark";
 import RoommateTeaser from "@/components/site/RoommateTeaser";
 import { useAuth } from "@/lib/auth-context";
-import { isPlus } from "@/lib/plan";
+import { isFree } from "@/lib/plan";
 
 // Primary text nav, in reading order. Shown centered on desktop; on smaller
 // widths these move into the overflow menu so the header stays uncrowded.
@@ -54,7 +54,9 @@ export default function Nav() {
   const menuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const { profile } = useAuth();
-  const showUpgrade = !isPlus(profile);
+  // Free accounts (and logged-out visitors) see the upgrade entry; Plus shows
+  // the "+" indicator and Pro the "PRO" badge on the wordmark instead.
+  const showUpgrade = isFree(profile);
 
   // Overflow menu closes on outside click and Escape.
   useEffect(() => {
@@ -108,7 +110,7 @@ export default function Nav() {
                 href="/pricing"
                 className="hidden shrink-0 text-sm font-medium text-cobalt transition-colors hover:text-cobalt-deep lg:inline-block"
               >
-                Upgrade to Plus
+                Upgrade
               </Link>
             )}
 

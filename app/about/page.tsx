@@ -176,11 +176,11 @@ export default function AboutPage() {
               shopping links are affiliate links, which pay us a small commission
               at no extra cost to you, and that keeps the core planner free.{" "}
               <Link href="/pricing" className={TEXT_LINK}>
-                Dormscape Plus
+                Plus and Pro
               </Link>{" "}
-              is an optional one-time $4.99 upgrade for extras like unlimited
-              saves and PDF export, but nothing in the free planner is locked
-              behind it.
+              are optional one-time upgrades ($7.99 and $19.99) for extras like
+              all nine vibes, PDF and PNG export, and the comparison view, but
+              nothing in the free planner is locked behind them.
             </p>
           </section>
 

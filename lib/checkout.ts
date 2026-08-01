@@ -1,29 +1,38 @@
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
+import type { PurchaseType } from "@/lib/plan";
 
 export type CheckoutResult =
   | { ok: true }
   | { ok: false; needsAuth: true }
-  | { ok: false; needsAuth?: false; alreadyPlus?: boolean; error: string };
+  | {
+      ok: false;
+      needsAuth?: false;
+      alreadyOwned?: boolean;
+      needsPlus?: boolean;
+      error: string;
+    };
 
 /**
- * Kick off the Plus checkout: fetch a Stripe session from /api/checkout and
- * send the browser to Stripe's hosted page. Returns needsAuth when the caller
- * should open the auth modal first. On success the browser navigates away.
+ * Kick off a one-time Stripe checkout for Plus, Pro, or a Plus credit recharge.
+ * Fetches a session from /api/checkout and sends the browser to Stripe's hosted
+ * page. Returns needsAuth when the caller should open the auth modal first. On
+ * success the browser navigates away.
  */
-export async function startCheckout(): Promise<CheckoutResult> {
+export async function startCheckout(type: PurchaseType = "plus"): Promise<CheckoutResult> {
   const supabase = getBrowserClient();
   const token = supabase
     ? (await supabase.auth.getSession()).data.session?.access_token
     : null;
   if (!token) return { ok: false, needsAuth: true };
 
-  track("checkout_started");
+  track("checkout_started", { type });
   let res: Response;
   try {
     res = await fetch("/api/checkout", {
       method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ type }),
     });
   } catch {
     return { ok: false, error: "Network hiccup. Try again in a moment." };
@@ -34,11 +43,17 @@ export async function startCheckout(): Promise<CheckoutResult> {
   const data = (await res.json().catch(() => ({}))) as {
     url?: string;
     error?: string;
-    alreadyPlus?: boolean;
+    alreadyOwned?: boolean;
+    needsPlus?: boolean;
   };
 
-  if (res.status === 409 && data.alreadyPlus) {
-    return { ok: false, alreadyPlus: true, error: "You're already on Plus." };
+  if (res.status === 409) {
+    return {
+      ok: false,
+      alreadyOwned: data.alreadyOwned,
+      needsPlus: data.needsPlus,
+      error: data.error ?? "That upgrade isn't available on your account.",
+    };
   }
   if (!res.ok || !data.url) {
     return { ok: false, error: data.error ?? "Couldn't start checkout. Try again." };

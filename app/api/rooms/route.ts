@@ -3,7 +3,6 @@ import { nanoid } from "nanoid";
 import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
-import { FREE_SAVED_DESIGN_LIMIT } from "@/lib/plan";
 import { ALL_STYLE_IDS } from "@/lib/styles";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
 import type { FurnitureItem } from "@/lib/types";
@@ -150,35 +149,9 @@ export async function POST(request: Request) {
     );
   }
 
-  // Free-tier save cap: one *named* design. Plus is unlimited. The anonymous
-  // share-link flow (no name) is never capped. Existing users who already have
-  // several designs keep them all; they're just blocked from adding more until
-  // they upgrade. `limit: true` tells the client to show the upgrade prompt.
-  if (name && userId) {
-    const { data: prof } = await supabase
-      .from("profiles")
-      .select("plan")
-      .eq("id", userId)
-      .maybeSingle();
-    if (prof?.plan !== "plus") {
-      const { count } = await supabase
-        .from("saved_rooms")
-        .select("id", { count: "exact", head: true })
-        .eq("user_id", userId)
-        .not("name", "is", null);
-      if ((count ?? 0) >= FREE_SAVED_DESIGN_LIMIT) {
-        return NextResponse.json(
-          {
-            error:
-              "Free accounts keep one saved design. Upgrade to Plus to save more.",
-            limit: true,
-          },
-          { status: 403 }
-        );
-      }
-    }
-  }
-
+  // Saving is available on every tier now (the paid lever is plan credits, not
+  // saves). A named design still requires login, handled above; the anonymous
+  // share-link flow needs no account at all.
   const id = nanoid(10);
   const { error } = await supabase.from("saved_rooms").insert({
     id,

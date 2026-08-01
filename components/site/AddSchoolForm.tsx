@@ -4,7 +4,7 @@ import { useState } from "react";
 import { track } from "@/lib/analytics";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { isPlus } from "@/lib/plan";
+import { hasFeatures } from "@/lib/plan";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import type { RoomSubmissionRequest } from "@/lib/api-types";
 
@@ -15,7 +15,7 @@ export default function AddSchoolForm() {
   const [error, setError] = useState<string | null>(null);
   const { user, profile } = useAuth();
   const { openUpgrade } = useUpgrade();
-  const plus = isPlus(profile);
+  const priority = hasFeatures(profile);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -178,10 +178,10 @@ export default function AddSchoolForm() {
           {error}
         </p>
       )}
-      {plus ? (
+      {priority ? (
         <p className="flex items-center gap-1.5 text-sm text-ink-soft">
           <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase leading-none tracking-wide text-ink">
-            Plus
+            Priority
           </span>
           Your request skips to the front of the queue.
         </p>
@@ -193,7 +193,7 @@ export default function AddSchoolForm() {
             onClick={() => openUpgrade("school-request")}
             className="cursor-pointer font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt"
           >
-            Plus members skip the queue
+            Plus and Pro skip the queue
           </button>
           .
         </p>

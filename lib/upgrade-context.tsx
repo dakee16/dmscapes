@@ -7,8 +7,9 @@ import { createContext, useCallback, useContext, useMemo, useState } from "react
 import UpgradeModal from "@/components/site/UpgradeModal";
 
 export type UpgradeReason =
-  | "save-limit"
+  | "credits"
   | "pdf"
+  | "png"
   | "compare"
   | "school-request"
   | "style"

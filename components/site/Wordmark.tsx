@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
-import { isPlus } from "@/lib/plan";
+import { isPlusTier, isPro } from "@/lib/plan";
 
 /**
- * The Dormscape wordmark. The Plus "+" is rendered here, inside the logo
- * component itself, so it appears in every header a Plus member sees and is
- * never editable as loose page text. Free users just see "dormscape".
+ * The Dormscape wordmark. The tier marker (Plus "+" or "PRO") is rendered here,
+ * inside the logo component itself, so it appears in every header the member
+ * sees and is never editable as loose page text. Free users just see
+ * "dormscape".
  */
 export default function Wordmark({
   textClassName = "text-lg",
@@ -15,13 +16,16 @@ export default function Wordmark({
   textClassName?: string;
 }) {
   const { profile } = useAuth();
-  const plus = isPlus(profile);
+  const plus = isPlusTier(profile);
+  const pro = isPro(profile);
 
   return (
     <Link
       href="/"
       className="flex shrink-0 items-center gap-2"
-      aria-label={plus ? "Dormscape Plus home" : "Dormscape home"}
+      aria-label={
+        pro ? "Dormscape Pro home" : plus ? "Dormscape Plus home" : "Dormscape home"
+      }
     >
       {/* The brand mark. A static PNG served from /public; rendered as a small
           rounded badge so its baked-in graph-paper backdrop reads as an app
@@ -44,6 +48,15 @@ export default function Wordmark({
             aria-label="Plus"
           >
             +
+          </span>
+        )}
+        {pro && (
+          <span
+            className="ml-1 align-[0.15em] text-[0.5em] font-extrabold uppercase tracking-[0.08em] text-cobalt"
+            title="You're on Dormscape Pro"
+            aria-label="Pro"
+          >
+            Pro
           </span>
         )}
       </span>

@@ -2,18 +2,28 @@
 
 import { useState } from "react";
 import { useAuth } from "@/lib/auth-context";
-import { isPlus } from "@/lib/plan";
+import { isPro, isPlusTier } from "@/lib/plan";
 import { startCheckout } from "@/lib/checkout";
 
+function CheckSvg() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+      <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 /**
- * The Plus purchase CTA. Signed-out users are sent to sign in first; signed-in
- * free users go straight to Stripe Checkout. Plus members see a settled
- * "you're in" state instead of a button.
+ * Purchase CTA for Plus or Pro. Signed-out users sign in first; signed-in users
+ * go straight to Stripe Checkout for the given tier. Members who already own the
+ * tier (or a higher one) see a settled state instead of a button.
  */
 export default function UpgradeButton({
+  type = "plus",
   className = "",
-  label = "Upgrade for $4.99",
+  label,
 }: {
+  type?: "plus" | "pro";
   className?: string;
   label?: string;
 }) {
@@ -21,13 +31,16 @@ export default function UpgradeButton({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
-  if (!loading && isPlus(profile)) {
+  const pro = isPro(profile);
+  const plus = isPlusTier(profile);
+  // Plus is "covered" by Plus or Pro; Pro only by Pro.
+  const owned = !loading && (type === "pro" ? pro : plus || pro);
+
+  if (owned) {
     return (
       <div className="flex items-center justify-center gap-2 rounded-xl border border-cobalt/30 bg-cobalt/5 px-6 py-3 text-center text-base font-semibold text-cobalt">
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-          <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-        You&apos;re on Plus
+        <CheckSvg />
+        {type === "pro" ? "You're on Pro" : pro ? "Pro covers this" : "You're on Plus"}
       </div>
     );
   }
@@ -40,7 +53,7 @@ export default function UpgradeButton({
     }
     setBusy(true);
     setError("");
-    const res = await startCheckout();
+    const res = await startCheckout(type);
     if (res.ok) return; // browser navigates to Stripe
     setBusy(false);
     if (res.needsAuth) {
@@ -50,6 +63,8 @@ export default function UpgradeButton({
     setError(res.error);
   }
 
+  const defaultLabel = type === "pro" ? "Go Pro for $19.99" : "Get Plus for $7.99";
+
   return (
     <div>
       <button
@@ -58,7 +73,7 @@ export default function UpgradeButton({
         disabled={busy}
         className={`w-full cursor-pointer disabled:cursor-wait disabled:opacity-70 ${className}`}
       >
-        {busy ? "Starting checkout…" : label}
+        {busy ? "Starting checkout…" : (label ?? defaultLabel)}
       </button>
       {error && (
         <p className="mt-2 text-sm text-[#c2321e]" role="alert">

@@ -7,7 +7,7 @@ import Nav from "@/components/Nav";
 import RoomThumb from "@/components/room/RoomThumb";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { isPlus } from "@/lib/plan";
+import { hasFeatures } from "@/lib/plan";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
 import { getSchool, formatDims } from "@/lib/schools";
@@ -111,7 +111,7 @@ export default function ComparePage() {
   const router = useRouter();
   const { user, profile, loading, openAuthModal } = useAuth();
   const { openUpgrade } = useUpgrade();
-  const plus = isPlus(profile);
+  const canCompare = hasFeatures(profile);
 
   const [designs, setDesigns] = useState<AccountRoomSummary[] | null>(null);
   const [aId, setAId] = useState("");
@@ -129,14 +129,14 @@ export default function ComparePage() {
 
   // Logged-in free users see the upgrade prompt (once).
   useEffect(() => {
-    if (loading || !user || plus || promptedRef.current) return;
+    if (loading || !user || canCompare || promptedRef.current) return;
     promptedRef.current = true;
     openUpgrade("compare");
-  }, [loading, user, plus, openUpgrade]);
+  }, [loading, user, canCompare, openUpgrade]);
 
   // Plus users: load the design library.
   useEffect(() => {
-    if (loading || !user || !plus) return;
+    if (loading || !user || !canCompare) return;
     let alive = true;
     (async () => {
       try {
@@ -161,7 +161,7 @@ export default function ComparePage() {
     return () => {
       alive = false;
     };
-  }, [loading, user, plus]);
+  }, [loading, user, canCompare]);
 
   const ready = !loading && Boolean(user);
 
@@ -190,7 +190,7 @@ export default function ComparePage() {
             <div className="h-80 animate-pulse rounded-2xl bg-ink/8" />
             <div className="h-80 animate-pulse rounded-2xl bg-ink/8" />
           </div>
-        ) : !plus ? (
+        ) : !canCompare ? (
           <div className="mt-8 rounded-2xl border border-ink/10 bg-card p-8 text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-highlight px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
               <span className="font-display text-sm font-extrabold leading-none">+</span>

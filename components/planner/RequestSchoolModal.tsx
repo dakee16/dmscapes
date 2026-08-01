@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { track } from "@/lib/analytics";
 import { useAuth } from "@/lib/auth-context";
-import { isPlus } from "@/lib/plan";
+import { hasFeatures } from "@/lib/plan";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import type { RoomSubmissionRequest } from "@/lib/api-types";
 
@@ -24,7 +24,7 @@ export default function RequestSchoolModal({
   const inputRef = useRef<HTMLInputElement>(null);
   const honeypotRef = useRef<HTMLInputElement>(null);
   const { profile } = useAuth();
-  const plus = isPlus(profile);
+  const priority = hasFeatures(profile);
 
   useEffect(() => {
     if (open) {
@@ -192,10 +192,10 @@ export default function RequestSchoolModal({
                 className="h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
               />
             </div>
-            {plus && (
+            {priority && (
               <p className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
                 <span className="rounded-full bg-highlight px-1.5 py-0.5 font-semibold leading-none text-ink">
-                  Plus
+                  Priority
                 </span>
                 Your request skips to the front of the queue.
               </p>

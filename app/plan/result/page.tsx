@@ -7,7 +7,7 @@ import { matchTemplate, ALL_TEMPLATES } from "@/templates/template-matcher";
 import { productsFor, productById, tierForBudget, totalFor } from "@/lib/catalog";
 import { isPlusStyle } from "@/lib/styles";
 import { useAuth } from "@/lib/auth-context";
-import { isPlus } from "@/lib/plan";
+import { isPaid } from "@/lib/plan";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
@@ -86,7 +86,7 @@ export default function ResultPage() {
     // Defense in depth: a free user who reached a Plus-gated style (e.g. a
     // stale store or a saved design) is sent back to the picker with the
     // upgrade prompt, rather than served a room they can't actually use.
-    else if (!authLoading && isPlusStyle(style) && !isPlus(profile)) {
+    else if (!authLoading && isPlusStyle(style) && !isPaid(profile)) {
       openUpgrade("style");
       router.replace("/plan/style");
     }

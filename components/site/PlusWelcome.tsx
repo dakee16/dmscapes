@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { track } from "@/lib/analytics";
-import { PLUS_PRICE_USD } from "@/lib/plan";
+import { PLUS_PRICE_USD, PRO_PRICE_USD } from "@/lib/plan";
 
 // The once-per-session "welcome" upgrade moment, shown after a free user's first
 // sign-in of the session (wired in lib/auth-context). Deliberately NOT the
@@ -16,8 +16,8 @@ type Feature = { label: string; desc: string; icon: React.ReactNode };
 
 const FEATURES: Feature[] = [
   {
-    label: "Unlimited saves",
-    desc: "Keep every look you love, not just one.",
+    label: "5 plan credits",
+    desc: "Design five rooms, recharge anytime for $4.99.",
     icon: (
       <path
         d="M6 4h12a1 1 0 0 1 1 1v14l-7-4-7 4V5a1 1 0 0 1 1-1z"
@@ -26,8 +26,8 @@ const FEATURES: Feature[] = [
     ),
   },
   {
-    label: "PDF export",
-    desc: "A clean, printable shopping list.",
+    label: "PDF and PNG export",
+    desc: "Your shopping list or your layout, downloaded.",
     icon: (
       <>
         <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" strokeLinejoin="round" />
@@ -51,8 +51,8 @@ const FEATURES: Feature[] = [
     icon: <path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z" strokeLinejoin="round" />,
   },
   {
-    label: "4 exclusive styles",
-    desc: "Gamer, Team Spirit, Retro, and Pastel.",
+    label: "All 9 vibes",
+    desc: "Gamer, Team Spirit, Retro, Pastel, and the five free.",
     icon: (
       <>
         <path d="M12 3a9 9 0 1 0 0 18h1.5a2.5 2.5 0 0 0 2.2-3.7 2.5 2.5 0 0 1 2.2-3.8H20A2 2 0 0 0 22 12 10 10 0 0 0 12 3z" strokeLinejoin="round" />
@@ -144,8 +144,8 @@ export default function PlusWelcome({
             One upgrade, <span className="hl">everything unlocked.</span>
           </h2>
           <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
-            You have the free planner already. Plus adds the five things people
-            ask for most, once, for keeps.
+            You have the free planner already. Plus unlocks every vibe and every
+            premium feature, and hands you five room-plan credits to design with.
           </p>
 
           <div className="mt-7 grid grid-cols-1 gap-x-5 gap-y-4 sm:grid-cols-2">
@@ -171,7 +171,9 @@ export default function PlusWelcome({
             <span className="font-display text-4xl font-extrabold tracking-tight text-ink">
               ${PLUS_PRICE_USD.toFixed(2)}
             </span>
-            <span className="text-sm text-ink-soft">one time, not a subscription</span>
+            <span className="text-sm text-ink-soft">
+              one time for Plus. Pro is ${PRO_PRICE_USD.toFixed(2)} for unlimited.
+            </span>
           </div>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">

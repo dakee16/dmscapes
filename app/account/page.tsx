@@ -8,7 +8,7 @@ import RoomThumb from "@/components/room/RoomThumb";
 import ShareButton from "@/components/room/ShareButton";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { isPlus } from "@/lib/plan";
+import { hasFeatures } from "@/lib/plan";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
 import { getSchool } from "@/lib/schools";
@@ -112,7 +112,7 @@ export default function AccountPage() {
   const router = useRouter();
   const { user, profile, loading, openAuthModal, signOut } = useAuth();
   const { openUpgrade } = useUpgrade();
-  const plus = isPlus(profile);
+  const canCompare = hasFeatures(profile);
 
   // null = still loading; array = loaded (possibly empty).
   const [designs, setDesigns] = useState<AccountRoomSummary[] | null>(null);
@@ -216,7 +216,7 @@ export default function AccountPage() {
               </h2>
               <div className="flex items-center gap-4">
                 {designs && designs.length >= 2 && (
-                  plus ? (
+                  canCompare ? (
                     <Link
                       href="/account/compare"
                       className="text-sm font-semibold text-cobalt underline-offset-2 transition-colors hover:underline"

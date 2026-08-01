@@ -8,7 +8,8 @@ import { categoriesCovered, tierForBudget } from "@/lib/catalog";
 import { STYLES, isPlusStyle } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
-import { isPlus } from "@/lib/plan";
+import { isPaid, isCreditMetered, canGeneratePlan } from "@/lib/plan";
+import { consumePlanCredit } from "@/lib/plan-credits";
 import { useUpgrade } from "@/lib/upgrade-context";
 import type { StyleId } from "@/lib/types";
 
@@ -22,11 +23,13 @@ export default function PlanStylePage() {
   const setStyle = usePlannerStore((s) => s.setStyle);
   const setBudget = usePlannerStore((s) => s.setBudget);
 
-  const { profile } = useAuth();
+  const { profile, refreshProfile } = useAuth();
   const { openUpgrade } = useUpgrade();
-  const plus = isPlus(profile);
+  // Vibe access: all 9 vibes unlock for any paid tier (Plus or Pro).
+  const allVibes = isPaid(profile);
 
   const [mounted, setMounted] = useState(false);
+  const [generating, setGenerating] = useState(false);
   const budgetTrackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => setMounted(true), []);
@@ -37,15 +40,43 @@ export default function PlanStylePage() {
   }, [mounted, room, router]);
 
   function handleStyle(id: StyleId) {
-    // Plus-gated styles stay visible for free users, but selecting one opens
-    // the upgrade modal instead of silently blocking. Plus users select freely.
-    if (isPlusStyle(id) && !plus) {
+    // Gated vibes stay visible for free users, but selecting one opens the
+    // upgrade modal instead of silently blocking. Plus/Pro select freely.
+    if (isPlusStyle(id) && !allVibes) {
       track("style_locked_clicked", { style: id });
       openUpgrade("style");
       return;
     }
     setStyle(id);
     track("style_selected", { style: id });
+  }
+
+  // Generate the plan. Plus users spend one plan credit here (the "click through
+  // to a result" moment); free and pro generate without limit. A Plus user with
+  // no credits left is blocked and shown the recharge / Pro choice.
+  async function handleGenerate() {
+    if (!style || generating) return;
+    if (isCreditMetered(profile)) {
+      // Fast path: a Plus user we already know is out of credits skips the
+      // server round-trip and goes straight to the recharge / Pro choice.
+      if (!canGeneratePlan(profile)) {
+        track("plan_blocked_no_credits");
+        openUpgrade("credits");
+        return;
+      }
+      setGenerating(true);
+      // Server is authoritative for the actual decrement (atomic, race-safe).
+      const { blocked } = await consumePlanCredit();
+      if (blocked) {
+        setGenerating(false);
+        track("plan_blocked_no_credits");
+        openUpgrade("credits");
+        return;
+      }
+      track("plan_credit_consumed");
+      await refreshProfile();
+    }
+    router.push("/plan/result");
   }
 
   function handleBudget(value: number) {
@@ -90,7 +121,7 @@ export default function PlanStylePage() {
             key={s.id}
             style={s}
             selected={style === s.id}
-            locked={isPlusStyle(s.id) && !plus}
+            locked={isPlusStyle(s.id) && !allVibes}
             onSelect={() => handleStyle(s.id)}
           />
         ))}
@@ -143,11 +174,11 @@ export default function PlanStylePage() {
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/8 bg-paper/92 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
         <button
           type="button"
-          disabled={!style}
-          onClick={() => router.push("/plan/result")}
+          disabled={!style || generating}
+          onClick={handleGenerate}
           className="h-13 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:bg-ink/15 disabled:text-ink-soft sm:h-12 sm:w-auto sm:px-10"
         >
-          Design my room →
+          {generating ? "Designing…" : "Design my room →"}
         </button>
       </div>
     </div>

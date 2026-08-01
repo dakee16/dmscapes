@@ -8,7 +8,7 @@ import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { isPlus } from "@/lib/plan";
+import { hasFeatures } from "@/lib/plan";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { downloadShoppingListPdf } from "@/lib/pdf";
 import { CATEGORY_LABELS, totalFor } from "@/lib/catalog";
@@ -35,7 +35,9 @@ export default function ActionBar({
 }) {
   const { user, profile, openAuthModal } = useAuth();
   const { openUpgrade } = useUpgrade();
-  const plus = isPlus(profile);
+  // PDF/PNG export are premium features: unlocked for Pro and for anyone who has
+  // ever bought Plus (stays unlocked even at 0 credits).
+  const features = hasFeatures(profile);
   const [menuOpen, setMenuOpen] = useState(false);
   const [savePanel, setSavePanel] = useState(false);
   const [name, setName] = useState("");
@@ -85,14 +87,6 @@ export default function ActionBar({
       body: JSON.stringify(body),
     });
     if (!res.ok) {
-      // Free-tier save cap: open the upgrade prompt instead of a toast.
-      if (res.status === 403) {
-        const data = (await res.json().catch(() => ({}))) as { limit?: boolean };
-        if (data.limit) {
-          openUpgrade("save-limit");
-          return null;
-        }
-      }
       showToast(
         res.status === 503
           ? "Sharing links come online soon. Download the PNG for now."
@@ -104,9 +98,14 @@ export default function ActionBar({
     return `${window.location.origin}/room/${data.id}`;
   }
 
+  // PNG export is a premium feature now. Free users get the upgrade prompt.
   function handleDownload() {
-    const url = getPng();
     setMenuOpen(false);
+    if (!features) {
+      openUpgrade("png");
+      return;
+    }
+    const url = getPng();
     if (!url) {
       showToast("Canvas isn't ready yet. Try again in a second.");
       return;
@@ -122,7 +121,7 @@ export default function ActionBar({
   // prompt instead.
   async function handleDownloadPdf() {
     setMenuOpen(false);
-    if (!plus) {
+    if (!features) {
       openUpgrade("pdf");
       return;
     }
@@ -216,9 +215,14 @@ export default function ActionBar({
                 <button
                   type="button"
                   onClick={handleDownload}
-                  className="block w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper"
+                  className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper"
                 >
-                  ⬇ Download PNG
+                  <span>⬇ Download PNG</span>
+                  {!features && (
+                    <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wide text-ink">
+                      Plus
+                    </span>
+                  )}
                 </button>
                 <button
                   type="button"
@@ -234,7 +238,7 @@ export default function ActionBar({
                   className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper"
                 >
                   <span>📄 Download list PDF</span>
-                  {!plus && (
+                  {!features && (
                     <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wide text-ink">
                       Plus
                     </span>

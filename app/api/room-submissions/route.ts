@@ -63,18 +63,19 @@ export async function POST(request: Request) {
     );
   }
 
-  // Plus members' requests jump the queue (priority flag, sorted first in the
-  // room_submissions_queue admin view). Derived from the logged-in user's plan,
+  // Members with premium features (anyone who has bought Plus, plus all Pro
+  // accounts) get priority: their requests sort first in the
+  // room_submissions_queue admin view. Derived from the logged-in user's plan,
   // never a client-supplied field.
   const userId = await getUserId(request);
   let priority = false;
   if (userId) {
     const { data: prof } = await supabase
       .from("profiles")
-      .select("plan")
+      .select("plan, plus_features_unlocked")
       .eq("id", userId)
       .maybeSingle();
-    priority = prof?.plan === "plus";
+    priority = prof?.plan === "pro" || prof?.plus_features_unlocked === true;
   }
 
   const { error } = await supabase.from("room_submissions").insert({

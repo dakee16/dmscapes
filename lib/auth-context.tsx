@@ -15,7 +15,7 @@ import {
 import type { User } from "@supabase/supabase-js";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
-import { isPlus } from "@/lib/plan";
+import { isPaid } from "@/lib/plan";
 import AuthModal from "@/components/auth/AuthModal";
 import PlusWelcome from "@/components/site/PlusWelcome";
 
@@ -30,12 +30,17 @@ export interface Profile {
   created_at: string;
   full_name?: string | null;
   phone?: string | null;
-  /** "free" or "plus". Defaults to "free" when the column/value is absent
-   *  (migration 0008 adds it with a 'free' default). */
+  /** "free", "plus", or "pro". Defaults to "free" when absent (migrations 0008
+   *  add the column, 0010 widens it to three tiers). */
   plan?: PlanTier | null;
+  /** Plus only: remaining plan-generation credits (null for free and pro). */
+  plan_credits_remaining?: number | null;
+  /** True once a user has ever purchased Plus; keeps premium features unlocked
+   *  even after their credits run out. Pro has features via its plan alone. */
+  plus_features_unlocked?: boolean | null;
 }
 
-export type PlanTier = "free" | "plus";
+export type PlanTier = "free" | "plus" | "pro";
 
 /** What prompted the modal; copy inside adapts ("save your design" vs generic). */
 export type AuthModalReason = "profile" | "save-design" | "buy";
@@ -84,6 +89,8 @@ function devMockProfile(): Profile | null {
       full_name: p.full_name ?? null,
       phone: p.phone ?? null,
       plan: p.plan ?? "free",
+      plan_credits_remaining: p.plan_credits_remaining ?? null,
+      plus_features_unlocked: p.plus_features_unlocked ?? false,
     };
   } catch {
     return null;
@@ -212,7 +219,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!pendingPlusWelcome || !profile || modalOpen) return;
     setPendingPlusWelcome(false);
-    if (!isPlus(profile)) setPlusWelcomeOpen(true);
+    if (!isPaid(profile)) setPlusWelcomeOpen(true);
   }, [pendingPlusWelcome, profile, modalOpen]);
 
   const closeAuthModal = useCallback(() => setModalOpen(false), []);

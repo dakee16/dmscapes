@@ -71,7 +71,7 @@ export default function Home() {
                 style={{ animationDelay: "400ms" }}
               >
                 <span className="flex shrink-0 items-center gap-2 text-cobalt" aria-hidden="true">
-                  {/* unlimited saves */}
+                  {/* all vibes */}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-[17px] w-[17px]">
                     <rect x="8" y="8" width="12" height="12" rx="2" />
                     <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" strokeLinecap="round" strokeLinejoin="round" />
@@ -89,8 +89,8 @@ export default function Home() {
                 </span>
                 <span className="text-[13px] leading-snug text-ink-soft">
                   Torn between two looks?{" "}
-                  <span className="font-semibold text-ink">Plus</span> saves and
-                  compares them side by side.
+                  <span className="font-semibold text-ink">Plus</span> compares
+                  them side by side and unlocks every vibe.
                 </span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-auto h-4 w-4 shrink-0 text-cobalt transition-transform group-hover:translate-x-0.5" aria-hidden="true">
                   <path d="M5 12h14m0 0l-5-5m5 5l-5 5" strokeLinecap="round" strokeLinejoin="round" />
