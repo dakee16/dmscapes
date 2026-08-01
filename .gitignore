@@ -48,3 +48,8 @@ research/
 
 # Standalone brand assets for external use (video/reels/social), not part of the deployed app
 brand-assets/
+
+# Claude Code skill/plugin machinery, not part of the app
+.agents/
+.claude/
+skills-lock.json
