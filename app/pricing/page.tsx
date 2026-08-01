@@ -4,7 +4,19 @@ import Nav from "@/components/Nav";
 import PremiumNotify from "@/components/site/PremiumNotify";
 import Room3DScene from "@/components/site/Room3DScene";
 import UpgradeButton from "@/components/site/UpgradeButton";
+import { SCHOOLS } from "@/lib/schools";
 import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD } from "@/lib/plan";
+
+// Real, honest social proof: counts derived straight from the shipped data, so
+// they can never drift from what we actually support. No fabricated reviews or
+// ratings. SCHOOL_COUNT matches the "16 schools" already cited on the homepage.
+const SCHOOL_COUNT = SCHOOLS.length;
+const ROOM_LAYOUTS = SCHOOLS.reduce(
+  (n, s) => n + s.dorms.reduce((m, d) => m + d.rooms.length, 0),
+  0
+);
+// Rounded down to a clean floor so the claim stays conservative (e.g. 1,026 -> 1,000+).
+const ROOM_LAYOUTS_FLOOR = Math.floor(ROOM_LAYOUTS / 100) * 100;
 
 const DESCRIPTION =
   "The Dormscape planner is free forever. Plus is a one-time $7.99 unlock (5 plan credits, all vibes, all features, recharge for $4.99). Pro is $19.99 for unlimited everything.";
@@ -147,6 +159,111 @@ function SoonPill() {
   );
 }
 
+// --- Trust-signal icons (small, on-brand line icons) ---
+type IconProps = { className?: string };
+const ICON_BASE = "h-[18px] w-[18px] shrink-0";
+
+function BuildingIcon({ className = ICON_BASE }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <path d="M3 21h18M6 21V5l6-2 6 2v16M10 21v-4h4v4" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10 9h.01M14 9h.01M10 13h.01M14 13h.01" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function ShieldIcon({ className = ICON_BASE }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+      <path d="M12 3l7 3v5c0 4.6-3 7.8-7 9-4-1.2-7-4.4-7-9V6z" strokeLinejoin="round" />
+      <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function ReceiptIcon({ className = ICON_BASE }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <path d="M6 3h12v18l-3-1.8-3 1.8-3-1.8L6 21z" strokeLinejoin="round" />
+      <path d="M9.5 8.5h5M9.5 12h5" strokeLinecap="round" />
+    </svg>
+  );
+}
+function CartIcon({ className = ICON_BASE }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <circle cx="9" cy="21" r="1" />
+      <circle cx="19" cy="21" r="1" />
+      <path d="M2 2h3l2.4 12.2a1.6 1.6 0 0 0 1.6 1.3h8.5a1.6 1.6 0 0 0 1.6-1.3L22 6H6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function BoltIcon({ className = ICON_BASE }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+      <path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+// The top social-proof / trust bar: real data counts plus honest guarantees
+// about how payment and products actually work. Nothing here is a fabricated
+// statistic, review, or refund promise.
+function TrustStrip() {
+  const items: { icon: React.ReactNode; label: React.ReactNode }[] = [
+    {
+      icon: <BuildingIcon />,
+      label: (
+        <>
+          <span className="font-semibold text-ink">{SCHOOL_COUNT} schools</span>
+          {", "}
+          <span className="font-semibold text-ink">
+            {ROOM_LAYOUTS_FLOOR.toLocaleString()}+
+          </span>{" "}
+          dorm room layouts
+        </>
+      ),
+    },
+    { icon: <ShieldIcon />, label: "Secured by Stripe" },
+    { icon: <ReceiptIcon />, label: "One-time payment, no subscription" },
+    { icon: <CartIcon />, label: "Real products, live Amazon links" },
+  ];
+  return (
+    <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-2xl border border-ink/10 bg-card/70 px-5 py-4 sm:mt-10 sm:gap-x-7">
+      {items.map((it, i) => (
+        <div key={i} className="flex items-center gap-x-6 sm:gap-x-7">
+          {i > 0 && <span className="hidden h-4 w-px bg-ink/12 sm:block" aria-hidden="true" />}
+          <span className="inline-flex items-center gap-2 text-[13px] leading-none text-ink-soft">
+            <span className="text-cobalt">{it.icon}</span>
+            {it.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// Badge-style reassurance under a checkout button. Only what is genuinely true:
+// Stripe secures the hosted checkout, and every tier is a single payment. No
+// refund/"cancel anytime" language, since we do not offer a subscription or a
+// stated refund policy.
+function PayBadges({ free = false }: { free?: boolean }) {
+  const badges: { icon: React.ReactNode; label: string }[] = free
+    ? [{ icon: <BoltIcon className="h-3.5 w-3.5 shrink-0" />, label: "No account needed" }]
+    : [
+        { icon: <ShieldIcon className="h-3.5 w-3.5 shrink-0" />, label: "Secured by Stripe" },
+        { icon: <ReceiptIcon className="h-3.5 w-3.5 shrink-0" />, label: "One-time payment" },
+      ];
+  return (
+    <div className="mt-3 flex flex-wrap items-center gap-x-3.5 gap-y-1.5">
+      {badges.map((b) => (
+        <span key={b.label} className="inline-flex items-center gap-1.5 text-[12px] font-medium text-ink-soft">
+          <span className="text-ink-soft/80">{b.icon}</span>
+          {b.label}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function PerkList({ perks, dotted = false }: { perks: { title: string; body: string }[]; dotted?: boolean }) {
   return (
     <ul className="mt-4 space-y-4">
@@ -199,7 +316,9 @@ export default function PricingPage() {
             </p>
           </div>
 
-          <div className="mt-12 grid items-start gap-5 lg:grid-cols-3">
+          <TrustStrip />
+
+          <div className="mt-8 grid items-start gap-5 lg:grid-cols-3">
             {/* FREE TIER: the real, active product. Reads complete on its own. */}
             <section className="flex h-full flex-col rounded-2xl border border-ink/12 bg-card p-6 sm:p-8">
               <div className="flex items-center justify-between gap-3">
@@ -219,12 +338,13 @@ export default function PricingPage() {
 
               <Link
                 href="/plan"
-                className="mt-6 inline-block rounded-xl bg-ink px-6 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-cobalt"
+                className="mt-6 block rounded-xl bg-ink px-6 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-cobalt"
               >
                 Plan my room
               </Link>
+              <PayBadges free />
 
-              <div className="mt-7 border-t border-ink/8 pt-6">
+              <div className="mt-6 border-t border-ink/8 pt-6">
                 <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
                   Everything included
                 </p>
@@ -278,6 +398,7 @@ export default function PricingPage() {
                   type="plus"
                   className="rounded-xl bg-cobalt px-6 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-cobalt-deep"
                 />
+                <PayBadges />
               </div>
 
               {/* How credits work: the one bit of this model worth spelling out. */}
@@ -326,9 +447,10 @@ export default function PricingPage() {
                   type="pro"
                   className="rounded-xl bg-ink px-6 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-cobalt"
                 />
+                <PayBadges />
               </div>
 
-              <div className="mt-7 border-t border-ink/8 pt-6">
+              <div className="mt-6 border-t border-ink/8 pt-6">
                 <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
                   Everything in Plus, plus
                 </p>
