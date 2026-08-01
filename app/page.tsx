@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import Reveal from "@/components/site/Reveal";
 import CursorGrid from "@/components/site/CursorGrid";
 import HeroParallax from "@/components/site/HeroParallax";
+import HomeFaq from "@/components/site/HomeFaq";
 
 export default function Home() {
   return (
@@ -162,38 +163,48 @@ export default function Home() {
             final closing CTA. */}
         <PlusPitch />
 
-        {/* Bottom CTA */}
-        <section className="bg-cobalt">
-          <div className="relative overflow-hidden">
-            <div
-              className="pointer-events-none absolute inset-0 opacity-[0.12]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
-                backgroundSize: "28px 28px",
-              }}
-              aria-hidden="true"
-            />
-            <Reveal className="relative mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-24">
-              <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-highlight">
-                Move-in is in August
+        {/* FAQ: replaces the old duplicate closing CTA. Product-level questions
+            in an accordion; the full dorm-advice FAQ lives at /faq. */}
+        <section className="relative overflow-hidden border-t border-ink/8">
+          <div
+            className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[22rem]"
+            aria-hidden="true"
+          />
+          <div className="mx-auto max-w-3xl px-5 py-20 sm:px-8 sm:py-24">
+            <Reveal className="text-center">
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
+                Frequently asked
               </p>
-              <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
-                Everyone else is winging it.
+              <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+                Questions, <span className="hl">answered.</span>
               </h2>
-              <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-white/80">
-                Show up with a plan instead of three carts of guesses. Pick your
-                school, set your budget, and see your exact room. Free.
+              <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-ink-soft">
+                The short version of what people ask most. Tap any question to
+                open it.
               </p>
-              <div className="mt-8">
-                <Link
-                  href="/plan"
-                  className="inline-flex h-14 items-center rounded-xl bg-white px-8 text-lg font-semibold text-ink transition-colors hover:bg-highlight"
-                >
-                  Plan my room for free
-                </Link>
-              </div>
             </Reveal>
+
+            <Reveal className="mt-10">
+              <HomeFaq />
+            </Reveal>
+
+            <p className="mt-8 text-center text-sm text-ink-soft">
+              Still curious?{" "}
+              <Link
+                href="/faq"
+                className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt"
+              >
+                Read the full FAQ
+              </Link>{" "}
+              or{" "}
+              <Link
+                href="/contact"
+                className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt"
+              >
+                get in touch
+              </Link>
+              .
+            </p>
           </div>
         </section>
       </main>
