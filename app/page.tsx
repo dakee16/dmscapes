@@ -56,7 +56,7 @@ export default function Home() {
               <div className="rise mt-8" style={{ animationDelay: "240ms" }}>
                 <Link
                   href="/plan"
-                  className="inline-flex h-14 items-center rounded-xl bg-cobalt px-8 text-lg font-semibold text-white shadow-[0_14px_32px_-14px_rgba(43,78,255,0.6)] transition-all hover:-translate-y-0.5 hover:bg-cobalt-deep"
+                  className="inline-flex h-14 items-center rounded-xl bg-cobalt px-8 text-lg font-semibold text-white shadow-[0_14px_32px_-14px_rgba(43,78,255,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-cobalt-deep hover:shadow-[0_20px_40px_-16px_rgba(43,78,255,0.7)] active:translate-y-0"
                 >
                   Plan my room for free
                 </Link>
@@ -144,7 +144,7 @@ export default function Home() {
               <div className="relative mt-8">
                 <Link
                   href="/plan"
-                  className="inline-flex h-14 items-center rounded-xl bg-highlight px-8 text-lg font-semibold text-ink transition-all hover:-translate-y-0.5 hover:bg-white"
+                  className="inline-flex h-14 items-center rounded-xl bg-highlight px-8 text-lg font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-white active:translate-y-0"
                 >
                   Plan my room for free
                 </Link>

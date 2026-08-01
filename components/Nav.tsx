@@ -25,7 +25,7 @@ const NAV_LINK =
 // Filled CTA style. The header's one high-priority action, kept visually
 // distinct from the quieter text links and secondary items around it.
 const PLAN_BTN =
-  "shrink-0 rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-cobalt";
+  "shrink-0 rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white shadow-[0_4px_14px_-6px_rgba(23,23,43,0.5)] transition-all duration-200 hover:bg-cobalt active:translate-y-px";
 
 function Crown({ className = "h-[18px] w-[18px]" }: { className?: string }) {
   return (

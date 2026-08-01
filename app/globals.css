@@ -31,6 +31,21 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typographic finesse (fonts, sizes, and weights untouched): balance display
+   headings so their lines carry even weight, and let body copy avoid orphaned
+   last-line words. Progressive enhancement, silently ignored where a browser
+   doesn't support it. */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 /* Graph paper, the page's throughline */

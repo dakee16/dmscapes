@@ -332,13 +332,13 @@ export default function PricingPage() {
                 <span className="font-display text-5xl font-extrabold tracking-tight">$0</span>
                 <span className="text-ink-soft">forever</span>
               </div>
-              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
+              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
                 Plan as many rooms as you like, no account required.
               </p>
 
               <Link
                 href="/plan"
-                className="mt-6 block rounded-xl bg-ink px-6 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-cobalt"
+                className="mt-6 block rounded-xl bg-ink px-6 py-3 text-center text-base font-semibold text-white transition-all duration-200 hover:bg-cobalt active:translate-y-px"
               >
                 Plan my room
               </Link>
@@ -388,7 +388,7 @@ export default function PricingPage() {
                 </span>
                 <span className="text-ink-soft">once</span>
               </div>
-              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
+              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
                 A single unlock, not a subscription. Recharge credits for $
                 {RECHARGE_PRICE_USD.toFixed(2)} whenever you run low.
               </p>
@@ -396,7 +396,7 @@ export default function PricingPage() {
               <div className="mt-6">
                 <UpgradeButton
                   type="plus"
-                  className="rounded-xl bg-cobalt px-6 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-cobalt-deep"
+                  className="rounded-xl bg-cobalt px-6 py-3 text-center text-base font-semibold text-white transition-all duration-200 hover:bg-cobalt-deep active:translate-y-px"
                 />
                 <PayBadges />
               </div>
@@ -437,7 +437,7 @@ export default function PricingPage() {
                 </span>
                 <span className="text-ink-soft">once</span>
               </div>
-              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">
+              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
                 The complete Dormscape. Every feature, unlimited plans, no credits
                 to ever think about.
               </p>
@@ -445,7 +445,7 @@ export default function PricingPage() {
               <div className="mt-6">
                 <UpgradeButton
                   type="pro"
-                  className="rounded-xl bg-ink px-6 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-cobalt"
+                  className="rounded-xl bg-ink px-6 py-3 text-center text-base font-semibold text-white transition-all duration-200 hover:bg-cobalt active:translate-y-px"
                 />
                 <PayBadges />
               </div>
