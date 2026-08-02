@@ -53,3 +53,9 @@ brand-assets/
 .agents/
 .claude/
 skills-lock.json
+
+
+.impeccable/
+data/
+docs/
+supabase/
