@@ -1,14 +1,20 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Dormscape tokens — graph-paper direction */
+  /* Dormscape tokens, graph-paper direction */
   --color-paper: #fafaf8;
   --color-ink: #17172b;
   --color-ink-soft: #4c4f63;
   --color-cobalt: #2b4eff;
   --color-cobalt-deep: #1e3ad6;
   --color-grid: #e4e9f4;
+  /* Grid lines under the cursor halo; see .cursor-grid. Distinctly darker than
+     the base grid, with a slight cobalt tint so the halo reads as a deliberate
+     brand moment rather than a faint smudge. */
+  --color-grid-strong: #7b8fd6;
   --color-highlight: #ffd84d;
+  /* Wordmark yellow; highlight is too pale for text on paper */
+  --color-amber: #f0b100;
   --color-card: #ffffff;
 
   --font-display: var(--font-bricolage);
@@ -25,9 +31,24 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Graph paper — the page's throughline */
+/* Typographic finesse (fonts, sizes, and weights untouched): balance display
+   headings so their lines carry even weight, and let body copy avoid orphaned
+   last-line words. Progressive enhancement, silently ignored where a browser
+   doesn't support it. */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Graph paper, the page's throughline */
 .grid-paper {
   background-image: linear-gradient(var(--color-grid) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
@@ -39,7 +60,7 @@ body {
   mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
 }
 
-/* Highlighter underline — school-supplies accent */
+/* Highlighter underline, school-supplies accent */
 .hl {
   background-image: linear-gradient(to top, var(--color-highlight) 0.32em, transparent 0.32em);
 }
@@ -78,13 +99,113 @@ body {
   animation: snap-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
+/* Quick, restrained cross-fade for swapping tab panels in place. */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Branded loading mark: the logo gently "breathing", a soft scale + opacity
+   loop, no spin, no bounce. Only transform/opacity so it stays compositor-cheap
+   (see components/site/BrandLoader). */
+@keyframes brand-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.07);
+    opacity: 1;
+  }
+}
+
+.brand-breathe {
+  animation: brand-breathe 1.8s ease-in-out infinite;
+}
+
+/* Hero room preview: a slow idle float with a faint breathe, so the mockup
+   reads as gently alive without pulling focus. Compositor-only (transform),
+   delayed so it starts after the entrance settles, paused for reduced motion.
+   See app/page.tsx, where .hero-float wraps the preview inside HeroParallax. */
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -9px, 0) scale(1.012);
+  }
+}
+
+.hero-float {
+  animation: hero-float 7s ease-in-out 0.8s infinite;
+  will-change: transform;
+}
+
+/* Scroll reveals live in components/site/Reveal.tsx (framer-motion). */
+
+/* Cursor-reactive grid: a stronger copy of the graph paper, masked to a soft
+   halo around the pointer (components/site/CursorGrid). Rendered inside a
+   .grid-paper layer so it inherits its origin and fade mask. */
+.cursor-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(var(--color-grid-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid-strong) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0;
+  transition: opacity 0.45s ease-out;
+  -webkit-mask-image: radial-gradient(
+    200px circle at var(--cg-x, -999px) var(--cg-y, -999px),
+    black 0%,
+    black 34%,
+    rgba(0, 0, 0, 0.5) 62%,
+    transparent 85%
+  );
+  mask-image: radial-gradient(
+    200px circle at var(--cg-x, -999px) var(--cg-y, -999px),
+    black 0%,
+    black 34%,
+    rgba(0, 0, 0, 0.5) 62%,
+    transparent 85%
+  );
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-grid {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
   .rise,
-  .snap-in {
+  .snap-in,
+  .fade-in,
+  .hero-float {
     animation: none;
+  }
+  /* Static logo instead of the breathing loop; hold it fully visible. */
+  .brand-breathe {
+    animation: none;
+    opacity: 1;
+  }
+  .cursor-grid {
+    display: none;
   }
 }
 
@@ -96,4 +217,11 @@ body {
 :focus-visible {
   outline: 2px solid var(--color-cobalt);
   outline-offset: 2px;
+}
+
+/* For inputs whose wrapper already shows focus (focus-within border): mutes
+   the global ring above, which (being unlayered) beats layered utilities
+   like focus-visible:outline-none. */
+.focus-quiet:focus-visible {
+  outline: none;
 }

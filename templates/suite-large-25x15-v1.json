@@ -1,6 +1,6 @@
 {
   "template_id": "suite-large-25x15-v1",
-  "name": "Suite-Style Large — Sleep + Living Zones",
+  "name": "Suite-Style Large: Sleep + Living Zones",
   "description": "Large suite-style room split into zones: sleeping zone on the left (both beds, dressers), study/living zone on the right (desks under the window, large living rug, storage cubes, full-length mirror). Authored for a 25 x 15 ft room; assumes the door at the bottom of the left wall and the window on the right wall.",
   "room_constraints": {
     "min_length_ft": 22,

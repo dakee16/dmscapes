@@ -5,7 +5,7 @@
   "state": "OH",
   "housing_url": "https://housing.osu.edu",
   "data_collected": "2026-07-14",
-  "campus_notes": "All residence hall rooms include bed(s), desk(s), desk chair(s), closet/wardrobe, refrigerator/microwave unit, window covering, and trash/recycling bins (housing.osu.edu/resources/what-to-bring). Beds are Twin XL (80-inch); personal lofting kits are prohibited \u2014 lofts rent through the university's bedlofts vendor. Door and window positions are not published; floor-plan PDFs/DOCX linked per room type show approximate layouts.",
+  "campus_notes": "All residence hall rooms include bed(s), desk(s), desk chair(s), closet/wardrobe, refrigerator/microwave unit, window covering, and trash/recycling bins (housing.osu.edu/resources/what-to-bring). Beds are Twin XL (80-inch); personal lofting kits are prohibited, lofts rent through the university's bedlofts vendor. Door and window positions are not published; floor-plan PDFs/DOCX linked per room type show approximate layouts.",
   "dorms": [
     {
       "dorm_id": "archer-house",
@@ -17,7 +17,10 @@
           "room_type": "single_suite",
           "room_type_official": "1 person per bedroom in a 2-room suite with a shared bath and air conditioning",
           "occupants": 1,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 9,
+            "width_ft": 9
+          },
           "suite_dimensions": {
             "length_ft": 27.0,
             "width_ft": 14.0
@@ -57,9 +60,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/archer_b36_t13.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/archer-house",
+          "data_source": "research/Ohio State/archer_b36_t13 (1).docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A two bedroom suite that measures 27 feet by 14 feet with a shared bathroom with toilet, sink and shower as well as shared entryway with a microfridge , 2 wardrobes and 2 dressers. Each individual bedroom for one person comes with a junior lofted bed desk and desk chair."
+          "notes": "Bedroom dimensions estimated from the official floor plan (27 x 14 ft suite envelope printed on plan); each single bedroom measures roughly 9 x 9 ft. Official description: A two bedroom suite that measures 27 feet by 14 feet with a shared bathroom with toilet, sink and shower as well as shared entryway with a microfridge , 2 wardrobes and 2 dressers. Each individual bedroom for one person comes with a junior lofted bed desk and desk chair."
         },
         {
           "room_type": "double",
@@ -1061,11 +1064,11 @@
           "room_type": "superdouble",
           "room_type_official": "2 people superdouble with bath and air conditioning",
           "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 27.0,
-            "width_ft": 14.0
+          "dimensions": {
+            "length_ft": 27,
+            "width_ft": 14
           },
+          "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": null,
@@ -1095,9 +1098,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/barrett_b3_t627.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/barrett-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Suite/room bathroom. Air conditioning. Official description: A two-person superdouble suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 single beds and a built-in wardrobe. In the study area there are 2 built - in desks with 2 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
+          "data_source": "research/Ohio State/barrett_b3_t627.docx",
+          "data_confidence": "high",
+          "notes": "Published suite envelope: 27 x 14 ft covering the sleeping area, study area, and in-suite bathroom (housing.osu.edu floor plan). Official description: A two-person superdouble suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 single beds and a built-in wardrobe. In the study area there are 2 built - in desks with 2 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
         },
         {
           "room_type": "double",
@@ -1145,11 +1148,11 @@
           "room_type": "triple_suite",
           "room_type_official": "3 people per suite with bath and air conditioning",
           "occupants": 3,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 27.0,
-            "width_ft": 14.0
+          "dimensions": {
+            "length_ft": 27,
+            "width_ft": 14
           },
+          "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": null,
@@ -1179,34 +1182,37 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/barrett_b3_t628.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/barrett-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A three person suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 sets of bunked beds, a built in wardrobe as well as 2 stand-alone wardrobes. In the study area there are 2 desks built in and 2 stand-alone desks with 4 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
+          "data_source": "research/Ohio State/barrett_b3_t628.docx",
+          "data_confidence": "high",
+          "notes": "Published suite envelope: 27 x 14 ft covering the sleeping area, study area, and in-suite bathroom (housing.osu.edu floor plan). Official description: A three person suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 sets of bunked beds, a built in wardrobe as well as 2 stand-alone wardrobes. In the study area there are 2 desks built in and 2 stand-alone desks with 4 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
         },
         {
           "room_type": "quad_apartment",
           "room_type_official": "4 people per apartment with bath and air conditioning",
           "occupants": 4,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 39,
+            "width_ft": 14
+          },
           "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": null,
           "built_in_furniture": [],
-          "floor_plan_url": null,
-          "data_source": "https://housing.osu.edu/hms/roomsearch/barrett-house",
-          "data_confidence": "low",
-          "notes": "Suite/room bathroom. Air conditioning. No floor plan published for this room type."
+          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/barrett_b3_t678.docx",
+          "data_source": "research/Ohio State/barrett_b3_t678.docx",
+          "data_confidence": "high",
+          "notes": "Published apartment envelope: 39 x 14 ft covering the sleeping area, study area, and bathroom."
         },
         {
           "room_type": "quad_suite",
           "room_type_official": "4 people per suite with bath and air conditioning",
           "occupants": 4,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 27.0,
-            "width_ft": 14.0
+          "dimensions": {
+            "length_ft": 27,
+            "width_ft": 14
           },
+          "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": null,
@@ -1236,9 +1242,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/barrett_b3_t629.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/barrett-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A four person suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 sets of bunked beds, built in wardrobe as well as 2 stand alone wardrobes. In the study area there are 2 desks built in and 2 stand alone desks with 4 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
+          "data_source": "research/Ohio State/barrett_b3_t629.docx",
+          "data_confidence": "high",
+          "notes": "Published suite envelope: 27 x 14 ft covering the sleeping area, study area, and in-suite bathroom (housing.osu.edu floor plan). Official description: A four person suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 sets of bunked beds, built in wardrobe as well as 2 stand alone wardrobes. In the study area there are 2 desks built in and 2 stand alone desks with 4 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
         }
       ]
     },
@@ -1338,7 +1344,10 @@
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2-room suite with a shared bath and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17.5,
+            "width_ft": 9
+          },
           "suite_dimensions": {
             "length_ft": 24.0,
             "width_ft": 21.0
@@ -1373,15 +1382,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/blackburn-house_b50_t632.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/blackburn-house",
+          "data_source": "research/Ohio State/blackburn-house_b50_t632.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 24 x 21 ft two-room suite; each two-person bedroom measures roughly 17.5 x 9 ft. Official description: A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10
+          },
           "suite_dimensions": {
             "length_ft": 32.0,
             "width_ft": 24.0
@@ -1416,15 +1428,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/blackburn-house_b50_t633.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/blackburn-house",
+          "data_source": "research/Ohio State/blackburn-house_b50_t633.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 32 x 24 ft two-room suite with lounge; each two-person bedroom measures roughly 17 x 10 ft (matches this building's published 17 x 10 ft double). Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 4 room suite with a shared bath, lounge, and air conditoning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10.5
+          },
           "suite_dimensions": {
             "length_ft": 54.0,
             "width_ft": 23.0
@@ -1459,9 +1474,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/blackburn-house_b50_t634.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/blackburn-house",
+          "data_source": "research/Ohio State/blackburn-house_b50_t634.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: Blackburn House 2 people per bedroom in a 4 room suite with a shared bath, lounge and air conditioning A suite with 4 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 54 feet that also includes 2 shared bathroom s (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 54 x 23 ft four-room suite with lounge; each two-person bedroom measures roughly 17 x 10.5 ft. Official description: Blackburn House 2 people per bedroom in a 4 room suite with a shared bath, lounge and air conditioning A suite with 4 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 54 feet that also includes 2 shared bathroom s (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         }
       ]
     },
@@ -1561,7 +1576,10 @@
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2-room suite with a shared bath and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17.5,
+            "width_ft": 9
+          },
           "suite_dimensions": {
             "length_ft": 24.0,
             "width_ft": 21.0
@@ -1596,15 +1614,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-2125-n-high-street_b47_t637.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/bowen-house",
+          "data_source": "research/Ohio State/residence-hall-at-2125-n-high-street_b47_t637.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 24 x 21 ft two-room suite; each two-person bedroom measures roughly 17.5 x 9 ft. Official description: A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10
+          },
           "suite_dimensions": {
             "length_ft": 32.0,
             "width_ft": 24.0
@@ -1639,15 +1660,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-2125-n-high-street_b47_t636.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/bowen-house",
+          "data_source": "research/Ohio State/residence-hall-at-2125-n-high-street_b47_t636.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 32 x 24 ft two-room suite with lounge; each two-person bedroom measures roughly 17 x 10 ft (matches this building's published 17 x 10 ft double). Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 3 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10.5
+          },
           "suite_dimensions": {
             "length_ft": 43.0,
             "width_ft": 23.0
@@ -1682,15 +1706,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-2125-n-high-street_b47_t635.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/bowen-house",
+          "data_source": "research/Ohio State/residence-hall-at-2125-n-high-street_b47_t635.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 3 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 43 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 43 x 23 ft three-room suite with lounge; each two-person bedroom measures roughly 17 x 10.5 ft. Official description: A suite with 3 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 43 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 4 room suite with a shared bath, lounge, and air conditoning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10.5
+          },
           "suite_dimensions": {
             "length_ft": 54.0,
             "width_ft": 23.0
@@ -1725,9 +1752,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-2125-n-high-street_b47_t640.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/bowen-house",
+          "data_source": "research/Ohio State/residence-hall-at-2125-n-high-street_b47_t640.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: Bowen House 2 people per bedroom in a 4-room suite with a shared bath, lounge, and air conditioning A suite with 4 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 54 feet that also includes 2 shared bathroom s (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 54 x 23 ft four-room suite with lounge; each two-person bedroom measures roughly 17 x 10.5 ft. Official description: Bowen House 2 people per bedroom in a 4-room suite with a shared bath, lounge, and air conditioning A suite with 4 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 54 feet that also includes 2 shared bathroom s (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         }
       ]
     },
@@ -2293,7 +2320,10 @@
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2-room suite with a shared bath and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17.5,
+            "width_ft": 9
+          },
           "suite_dimensions": {
             "length_ft": 24.0,
             "width_ft": 21.0
@@ -2328,15 +2358,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/busch-house_b51_t648.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/busch-house",
+          "data_source": "research/Ohio State/busch-house_b51_t648.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 24 x 21 ft two-room suite; each two-person bedroom measures roughly 17.5 x 9 ft. Official description: A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10
+          },
           "suite_dimensions": {
             "length_ft": 32.0,
             "width_ft": 24.0
@@ -2371,15 +2404,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/busch-house_b51_t647.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/busch-house",
+          "data_source": "research/Ohio State/busch-house_b51_t647.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 32 x 24 ft two-room suite with lounge; each two-person bedroom measures roughly 17 x 10 ft (matches this building's published 17 x 10 ft double). Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 3 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10.5
+          },
           "suite_dimensions": {
             "length_ft": 43.0,
             "width_ft": 23.0
@@ -2414,15 +2450,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/busch-house_b51_t646.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/busch-house",
+          "data_source": "research/Ohio State/busch-house_b51_t646.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 3 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 43 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 43 x 23 ft three-room suite with lounge; each two-person bedroom measures roughly 17 x 10.5 ft. Official description: A suite with 3 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 43 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 4 room suite with a shared bath, lounge, and air conditoning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10.5
+          },
           "suite_dimensions": {
             "length_ft": 54.0,
             "width_ft": 23.0
@@ -2457,9 +2496,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/busch-house_b51_t645.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/busch-house",
+          "data_source": "research/Ohio State/busch-house_b51_t645.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: Busch House 2 people per bedroom in a 4-room suite with a shared bath, lounge, and air conditioning A suite with 4 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 54 feet that also includes 2 shared bathroom s (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 54 x 23 ft four-room suite with lounge; each two-person bedroom measures roughly 17 x 10.5 ft. Official description: Busch House 2 people per bedroom in a 4-room suite with a shared bath, lounge, and air conditioning A suite with 4 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 54 feet that also includes 2 shared bathroom s (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         }
       ]
     },
@@ -2473,7 +2512,10 @@
           "room_type": "single_suite",
           "room_type_official": "1 person in a 2 bedroom suite with a semi-private bath, without air conditioning",
           "occupants": 1,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 11.75,
+            "width_ft": 10.08
+          },
           "suite_dimensions": null,
           "door": null,
           "window": null,
@@ -2507,15 +2549,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/canfield_b6_t95.pdf",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/canfield-hall",
-          "data_confidence": "low",
-          "notes": "Private bathroom. No air conditioning. Floor-plan drawing has no dimension callouts; furniture specs from the plan's spec table. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
+          "data_source": "research/Ohio State/canfield_b6_t95.pdf",
+          "data_confidence": "high",
+          "notes": "Single bedroom in the three-person suite; dimensions printed on the official floor plan: 11'-9\" x 10'-1\"."
         },
         {
           "room_type": "single",
           "room_type_official": "1 person per room with semi-private bath, without air conditioning",
           "occupants": 1,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 14.17,
+            "width_ft": 10.83
+          },
           "suite_dimensions": null,
           "door": null,
           "window": null,
@@ -2546,15 +2591,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/canfield_b6_t94.pdf",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/canfield-hall",
-          "data_confidence": "low",
-          "notes": "Private bathroom. No air conditioning. Floor-plan drawing has no dimension callouts; furniture specs from the plan's spec table. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
+          "data_source": "research/Ohio State/canfield_b6_t94.pdf",
+          "data_confidence": "high",
+          "notes": "Room dimensions printed on the official floor plan: 14'-2\" x 10'-10\"."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 4 person suite with semi-private bath, without air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 14.17,
+            "width_ft": 11.75
+          },
           "suite_dimensions": null,
           "door": null,
           "window": null,
@@ -2587,15 +2635,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/canfield_b6_t100.pdf",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/canfield-hall",
-          "data_confidence": "low",
-          "notes": "Private bathroom. No air conditioning. Floor-plan drawing has no dimension callouts; furniture specs from the plan's spec table. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
+          "data_source": "research/Ohio State/canfield_b6_t100.pdf",
+          "data_confidence": "high",
+          "notes": "Two-person bedroom in the four-person suite; dimensions printed on the official floor plan: 14'-2\" x 11'-9\"."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per room in 3 person suite with semi-private bath and no air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 14.17,
+            "width_ft": 11.75
+          },
           "suite_dimensions": null,
           "door": null,
           "window": null,
@@ -2629,9 +2680,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/canfield_b6_t739.pdf",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/canfield-hall",
-          "data_confidence": "low",
-          "notes": "Private bathroom. No air conditioning. Floor-plan drawing has no dimension callouts; furniture specs from the plan's spec table. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
+          "data_source": "research/Ohio State/canfield_b6_t739.pdf",
+          "data_confidence": "high",
+          "notes": "Two-person (bunked) bedroom in the three-person suite; dimensions printed on the official floor plan: 14'-2\" x 11'-9\"."
         },
         {
           "room_type": "double",
@@ -2735,7 +2786,10 @@
           "room_type": "triple",
           "room_type_official": "3 people per room with semi private bath without air conditioning",
           "occupants": 3,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 13.92
+          },
           "suite_dimensions": null,
           "door": null,
           "window": null,
@@ -2769,9 +2823,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/canfield_b6_t103.pdf",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/canfield-hall",
-          "data_confidence": "low",
-          "notes": "Private bathroom. No air conditioning. Floor-plan drawing has no dimension callouts; furniture specs from the plan's spec table. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
+          "data_source": "research/Ohio State/canfield_b6_t103.pdf",
+          "data_confidence": "high",
+          "notes": "Dimensions printed on the official floor plan: 17'-0\" wide, 10'-11\" main depth plus 3'-0\" closet/entry strip (13'-11\" total)."
         },
         {
           "room_type": "quad_apartment",
@@ -2826,7 +2880,10 @@
           "room_type": "quad",
           "room_type_official": "4 people per room with semi private bath without air conditioning",
           "occupants": 4,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 33.92,
+            "width_ft": 14.17
+          },
           "suite_dimensions": null,
           "door": null,
           "window": null,
@@ -2859,9 +2916,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/canfield_b6_t104.pdf",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/canfield-hall",
-          "data_confidence": "low",
-          "notes": "Private bathroom. No air conditioning. Floor-plan drawing has no dimension callouts; furniture specs from the plan's spec table. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
+          "data_source": "research/Ohio State/canfield_b6_t104.pdf",
+          "data_confidence": "medium",
+          "notes": "Corner room with two 45-degree angled walls; bounding footprint approximately 33'-11\" x 14'-2\" derived from the dimensions printed on the official floor plan."
         }
       ]
     },
@@ -3135,11 +3192,11 @@
           "room_type": "superdouble",
           "room_type_official": "2 people per superdouble with bath and air-conditioning",
           "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 27.0,
-            "width_ft": 14.0
+          "dimensions": {
+            "length_ft": 27,
+            "width_ft": 14
           },
+          "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": null,
@@ -3169,9 +3226,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/halloran_b8_t659.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/halloran-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Suite/room bathroom. Air conditioning. Official description: Halloran House 2 people per superdouble with bath and air conditioning A two-person superdouble suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 single beds and a built-in wardrobe. In the study area there are 2 built-in desks with 2 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
+          "data_source": "research/Ohio State/halloran_b8_t659.docx",
+          "data_confidence": "high",
+          "notes": "Published suite envelope: 27 x 14 ft covering the sleeping area, study area, and in-suite bathroom (housing.osu.edu floor plan). Official description: Halloran House 2 people per superdouble with bath and air conditioning A two-person superdouble suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 single beds and a built-in wardrobe. In the study area there are 2 built-in desks with 2 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
         }
       ]
     },
@@ -3315,11 +3372,11 @@
           "room_type": "superdouble",
           "room_type_official": "2 people per superdouble with bath and air-conditioning",
           "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 27.0,
-            "width_ft": 14.0
+          "dimensions": {
+            "length_ft": 27,
+            "width_ft": 14
           },
+          "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": null,
@@ -3349,9 +3406,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/haverfield_b9_t148.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/haverfield-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Suite/room bathroom. Air conditioning. Official description: Haverfield House 2 people per superdouble with bath and air conditioning A two-person superdouble suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 single beds and a built-in wardrobe. In the study area there are 2 built-in desks with 2 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
+          "data_source": "research/Ohio State/haverfield_b9_t148.docx",
+          "data_confidence": "high",
+          "notes": "Published suite envelope: 27 x 14 ft covering the sleeping area, study area, and in-suite bathroom (housing.osu.edu floor plan). Official description: Haverfield House 2 people per superdouble with bath and air conditioning A two-person superdouble suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 single beds and a built-in wardrobe. In the study area there are 2 built-in desks with 2 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
         }
       ]
     },
@@ -3362,29 +3419,14 @@
       "air_conditioning": true,
       "rooms": [
         {
-          "room_type": "double",
-          "room_type_official": "2 people per room with bath and air conditioning",
-          "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": null,
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [],
-          "floor_plan_url": null,
-          "data_source": "https://housing.osu.edu/hms/roomsearch/houck-house",
-          "data_confidence": "low",
-          "notes": "Suite/room bathroom. Air conditioning. No floor plan published for this room type."
-        },
-        {
           "room_type": "superdouble",
           "room_type_official": "2 people per superdouble with bath and air-conditioning",
           "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 27.0,
-            "width_ft": 14.0
+          "dimensions": {
+            "length_ft": 27,
+            "width_ft": 14
           },
+          "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": null,
@@ -3414,9 +3456,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/houck_b10_t641.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/houck-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Suite/room bathroom. Air conditioning. Official description: Houck House 2 people per superdouble with bath and air conditioning A two-person superdouble suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 single beds and a built-in wardrobe. In the study area there are 2 built-in desks with 2 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
+          "data_source": "research/Ohio State/houck_b10_t641.docx",
+          "data_confidence": "high",
+          "notes": "Published suite envelope: 27 x 14 ft covering the sleeping area, study area, and in-suite bathroom (housing.osu.edu floor plan). Official description: Houck House 2 people per superdouble with bath and air conditioning A two-person superdouble suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 single beds and a built-in wardrobe. In the study area there are 2 built-in desks with 2 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
         }
       ]
     },
@@ -3511,178 +3553,6 @@
           "data_source": "https://housing.osu.edu/hms/roomsearch/houston-house",
           "data_confidence": "medium",
           "notes": "Private bathroom. Air conditioning. Official description: Houston House 2 people per room with semi-private bath and air conditioning A double room with approximate dimensions of 17 feet by 10 feet. The room comes with two junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
-        },
-        {
-          "room_type": "double_suite",
-          "room_type_official": "2 people per bedroom in a 2-room suite with a shared bath and air conditioning",
-          "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 24.0,
-            "width_ft": 21.0
-          },
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 6.67,
-              "width_ft": 3,
-              "movable": true,
-              "bunkable": false,
-              "style": "junior_loft"
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "movable": true
-            }
-          ],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/houston-house_b53_t208.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/houston-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
-        },
-        {
-          "room_type": "double_suite",
-          "room_type_official": "2 people per bedroom in a 2 room suite with a shared bath, lounge, and air conditioning",
-          "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 32.0,
-            "width_ft": 24.0
-          },
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 6.67,
-              "width_ft": 3,
-              "movable": true,
-              "bunkable": false,
-              "style": "junior_loft"
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "movable": true
-            }
-          ],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/houston-house_b53_t209.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/houston-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
-        },
-        {
-          "room_type": "double_suite",
-          "room_type_official": "2 people per bedroom in a 3 room suite with a shared bath, lounge, and air conditioning",
-          "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 43.0,
-            "width_ft": 23.0
-          },
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 6.67,
-              "width_ft": 3,
-              "movable": true,
-              "bunkable": false,
-              "style": "junior_loft"
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "movable": true
-            }
-          ],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/houston-house_b53_t210.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/houston-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: Houston House 2 people per bedroom in a 3 room suite with shared bath, lounge, and air conditioning A suite with 3 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 43 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
-        },
-        {
-          "room_type": "double_suite",
-          "room_type_official": "2 people per bedroom in a 4 room suite with a shared bath, lounge, and air conditoning",
-          "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 54.0,
-            "width_ft": 23.0
-          },
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 6.67,
-              "width_ft": 3,
-              "movable": true,
-              "bunkable": false,
-              "style": "junior_loft"
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "movable": true
-            }
-          ],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/houston-house_b53_t211.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/houston-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: Houston House 2 people per bedroom in a 4 room suite with a shared bath, lounge, and air conditioning A suite with 4 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 54 feet that also includes 2 shared bathroom s (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         }
       ]
     },
@@ -3840,45 +3710,6 @@
           "data_source": "https://housing.osu.edu/hms/roomsearch/mack-hall",
           "data_confidence": "medium",
           "notes": "Private bathroom. No air conditioning. Dimensions are the bounding box measured from the labeled floor-plan drawing. Wall segments differ, so the room is likely irregular/L-shaped; usable area may be smaller. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "1 person per room with semi-private bath, without air conditioning",
-          "occupants": 1,
-          "dimensions": null,
-          "suite_dimensions": null,
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 1,
-              "length_ft": 6.83,
-              "width_ft": 3.0,
-              "movable": true,
-              "bunkable": false,
-              "style": "junior_loft"
-            },
-            {
-              "type": "desk",
-              "count": 1,
-              "movable": true,
-              "length_ft": 3.5,
-              "width_ft": 2.0,
-              "height_ft": 2.67
-            },
-            {
-              "type": "dresser",
-              "count": 1,
-              "movable": true,
-              "drawers": 3
-            }
-          ],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/mack_b13_t119.pdf",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/mack-hall",
-          "data_confidence": "low",
-          "notes": "Private bathroom. No air conditioning. Floor-plan drawing has no dimension callouts; furniture specs from the plan's spec table. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
         },
         {
           "room_type": "double",
@@ -4070,58 +3901,6 @@
           "notes": "Private bathroom. No air conditioning. Dimensions are the bounding box measured from the labeled floor-plan drawing. Wall segments differ, so the room is likely irregular/L-shaped; usable area may be smaller. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
         },
         {
-          "room_type": "triple",
-          "room_type_official": "3 people per room with semi private bath without air conditioning",
-          "occupants": 3,
-          "dimensions": null,
-          "suite_dimensions": null,
-          "door": null,
-          "window": null,
-          "closet": {
-            "type": "built-in",
-            "count": null
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 3,
-              "length_ft": 6.83,
-              "width_ft": 3.0,
-              "movable": true,
-              "bunkable": false,
-              "style": "junior_loft"
-            },
-            {
-              "type": "desk",
-              "count": 3,
-              "movable": true,
-              "length_ft": 3.5,
-              "width_ft": 2.0,
-              "height_ft": 2.67
-            },
-            {
-              "type": "dresser",
-              "count": 3,
-              "movable": true,
-              "drawers": 3
-            },
-            {
-              "type": "wardrobe",
-              "count": 3,
-              "movable": true
-            },
-            {
-              "type": "microfridge",
-              "count": 1,
-              "movable": true
-            }
-          ],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/mack_b13_t117.pdf",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/mack-hall",
-          "data_confidence": "low",
-          "notes": "Private bathroom. No air conditioning. Floor-plan drawing has no dimension callouts; furniture specs from the plan's spec table. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
-        },
-        {
           "room_type": "quad",
           "room_type_official": "4 people per room with semi private bath without air conditioning",
           "occupants": 4,
@@ -4183,11 +3962,11 @@
           "room_type": "double_apartment",
           "room_type_official": "Efficiency apartment for 2 people with air conditioning",
           "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 24.0,
-            "width_ft": 18.0
+          "dimensions": {
+            "length_ft": 24,
+            "width_ft": 18
           },
+          "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": {
@@ -4216,9 +3995,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/neilwood-gables_b16_t133.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/mendoza-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Suite/room bathroom. Air conditioning. Official description: An efficiency apartment measuring 24 feet by 18 feet. It has a bathroom with a toilet, sink and shower. It includes a closet and 2 dressers as well as 2 junior lofted beds, 2 desks, 2 desk chairs and a lounge chair. The efficiency has a kitchen with a table and chairs, sink, refrigerator, and stove. It comes with an air conditioning unit provided by the university."
+          "data_source": "research/Ohio State/neilwood-gables_b16_t133.docx",
+          "data_confidence": "high",
+          "notes": "Published efficiency-apartment envelope: 24 x 18 ft including the bathroom and kitchen. Official description: An efficiency apartment measuring 24 feet by 18 feet. It has a bathroom with a toilet, sink and shower. It includes a closet and 2 dressers as well as 2 junior lofted beds, 2 desks, 2 desk chairs and a lounge chair. The efficiency has a kitchen with a table and chairs, sink, refrigerator, and stove. It comes with an air conditioning unit provided by the university."
         }
       ]
     },
@@ -4683,10 +4462,13 @@
           "room_type": "quad_apartment",
           "room_type_official": "2 bedroom apartment for 4 people",
           "occupants": 4,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 11.5,
+            "width_ft": 11.5
+          },
           "suite_dimensions": {
-            "length_ft": 35.0,
-            "width_ft": 25.0
+            "length_ft": 35,
+            "width_ft": 25
           },
           "door": null,
           "window": null,
@@ -4716,18 +4498,21 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/neil-avenue_b28_t66.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/neil-building",
+          "data_source": "research/Ohio State/neil-avenue_b28_t66.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Suite/room bathroom. Air conditioning. Official description: Neil Building 2-bedroom apartment for 4 people A two-bedroom apartment for 4 people with approximate dimensions of 25 feet by 35 feet with 2 bedrooms, a living room, 2 bathrooms and kitchen included. Each bedroom has 2 junior lofted beds, 2 desks and 2 desk chairs, 2 dressers and 2 closets. Each bathroom has a sink, toilet and shower. The living room has a couch, 2 chairs, a coffee table and end table. The kitchen comes with a stove, refrigerator/freezer, dishwasher and barstools at the counter."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 25 x 35 ft two-bedroom apartment; each two-person bedroom measures roughly 11.5 x 11.5 ft. Official description: Neil Building 2-bedroom apartment for 4 people A two-bedroom apartment for 4 people with approximate dimensions of 25 feet by 35 feet with 2 bedrooms, a living room, 2 bathrooms and kitchen included. Each bedroom has 2 junior lofted beds, 2 desks and 2 desk chairs, 2 dressers and 2 closets. Each bathroom has a sink, toilet and shower. The living room has a couch, 2 chairs, a coffee table and end table. The kitchen comes with a stove, refrigerator/freezer, dishwasher and barstools at the counter."
         },
         {
           "room_type": "quad_apartment",
           "room_type_official": "4 bedroom apartment for 4 people",
           "occupants": 4,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 14,
+            "width_ft": 9
+          },
           "suite_dimensions": {
-            "length_ft": 53.0,
-            "width_ft": 25.0
+            "length_ft": 53,
+            "width_ft": 25
           },
           "door": null,
           "window": null,
@@ -4757,19 +4542,19 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/neil-avenue_b28_t64.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/neil-building",
+          "data_source": "research/Ohio State/neil-avenue_b28_t64.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Suite/room bathroom. Air conditioning. Official description: Neil Building 4-bedroom apartment for 4 people A four -bedroom apartment for 4 people with approximate dimensions of 25 feet by 53 feet with 4 bedrooms, a living room, 2 bathrooms and kitchen included. Each bedroom has a junior lofted bed, a desk and a desk chair, a dresser and a closet. Each bathroom has a sink, toilet and shower. The living room has a couch, a chair, a coffee table and end table. The kitchen comes with a stove, refrigerator/freezer, dishwasher and a table with four chairs ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 25 x 53 ft four-bedroom apartment; each single bedroom measures roughly 14 x 9 ft including its closet nook. Official description: Neil Building 4-bedroom apartment for 4 people A four -bedroom apartment for 4 people with approximate dimensions of 25 feet by 53 feet with 4 bedrooms, a living room, 2 bathrooms and kitchen included. Each bedroom has a junior lofted bed, a desk and a desk chair, a dresser and a closet. Each bathroom has a sink, toilet and shower. The living room has a couch, a chair, a coffee table and end table. The kitchen comes with a stove, refrigerator/freezer, dishwasher and a table with four chairs ."
         },
         {
           "room_type": "unknown_apartment",
           "room_type_official": "Efficiency Apartment",
-          "occupants": null,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 21.0,
-            "width_ft": 16.0
+          "occupants": 1,
+          "dimensions": {
+            "length_ft": 21,
+            "width_ft": 16
           },
+          "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": {
@@ -4798,19 +4583,19 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/neil-avenue_b28_t61.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/neil-building",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Suite/room bathroom. Air conditioning. Official description: A n efficiency apartment with approximate dimensions of 16 feet by 21 feet with a bathroom and small kitchen included. It has a junior lofted bed, a desk and a desk chair, and a dresser and closet . The bathroom has a sink, toilet and shower. The kitchen comes with a stove, sink, microwave, and under the counter refrigerator/freezer."
+          "data_source": "research/Ohio State/neil-avenue_b28_t61.docx",
+          "data_confidence": "high",
+          "notes": "Published efficiency-apartment envelope: approximately 16 x 21 ft including the bathroom and small kitchen. Official description: A n efficiency apartment with approximate dimensions of 16 feet by 21 feet with a bathroom and small kitchen included. It has a junior lofted bed, a desk and a desk chair, and a dresser and closet . The bathroom has a sink, toilet and shower. The kitchen comes with a stove, sink, microwave, and under the counter refrigerator/freezer."
         },
         {
           "room_type": "double_apartment",
           "room_type_official": "Efficiency apartment for 2 people with air conditioning",
           "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 21.0,
-            "width_ft": 20.0
+          "dimensions": {
+            "length_ft": 21,
+            "width_ft": 20
           },
+          "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": null,
@@ -4836,9 +4621,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/neil-avenue_b28_t58.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/neil-building",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Suite/room bathroom. Air conditioning. Official description: A two- person efficiency apartment with approximate dimensions of 20 feet by 21 feet with a bathroom and small kitchen included. It has 2 junior lofted beds, 2 desks and 2 desk chairs, and 2 wardrobes . The bathroom has a sink, toilet and shower. The kitchen comes with a stove, sink, and under the counter refrigerator/freezer."
+          "data_source": "research/Ohio State/neil-avenue_b28_t58.docx",
+          "data_confidence": "high",
+          "notes": "Published efficiency-apartment envelope: approximately 20 x 21 ft including the bathroom and small kitchen. Official description: A two- person efficiency apartment with approximate dimensions of 20 feet by 21 feet with a bathroom and small kitchen included. It has 2 junior lofted beds, 2 desks and 2 desk chairs, and 2 wardrobes . The bathroom has a sink, toilet and shower. The kitchen comes with a stove, sink, and under the counter refrigerator/freezer."
         }
       ]
     },
@@ -4894,11 +4679,11 @@
           "room_type": "superdouble",
           "room_type_official": "2 people per superdouble with bath and air-conditioning",
           "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 27.0,
-            "width_ft": 14.0
+          "dimensions": {
+            "length_ft": 27,
+            "width_ft": 14
           },
+          "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": null,
@@ -4928,19 +4713,19 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/norton_b17_t220.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/norton-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Suite/room bathroom. Air conditioning. Official description: Norton House 2 people per superdouble with bath and air conditioning A two-person superdouble suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 single beds and a built-in wardrobe. In the study area there are 2 built-in desks with 2 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
+          "data_source": "research/Ohio State/norton_b17_t220.docx",
+          "data_confidence": "high",
+          "notes": "Published suite envelope: 27 x 14 ft covering the sleeping area, study area, and in-suite bathroom (housing.osu.edu floor plan). Official description: Norton House 2 people per superdouble with bath and air conditioning A two-person superdouble suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 2 single beds and a built-in wardrobe. In the study area there are 2 built-in desks with 2 desk chairs and a microfridge . The bathroom in the suite includes a toilet, sink and shower."
         },
         {
           "room_type": "triple_suite",
           "room_type_official": "3 people per suite with bath and air conditioning",
           "occupants": 3,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 27.0,
-            "width_ft": 14.0
+          "dimensions": {
+            "length_ft": 27,
+            "width_ft": 14
           },
+          "suite_dimensions": null,
           "door": null,
           "window": null,
           "closet": null,
@@ -4970,9 +4755,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/norton_b17_t36.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/norton-house",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A three-person suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 1 set of bunked beds and 1 single bed , a built-in wardrobe as well as 1 stand-alone wardrobes. In the study area there are 2 desks built in and 1 stand-alone desk with 3 desk chairs and a microfridge. The bathroom in the suite includes a toilet, sink and shower."
+          "data_source": "research/Ohio State/norton_b17_t36.docx",
+          "data_confidence": "high",
+          "notes": "Published suite envelope: 27 x 14 ft covering the sleeping area, study area, and in-suite bathroom (housing.osu.edu floor plan). Official description: A three-person suite measuring 27 feet by 14 feet that includes a sleeping area, study area and bathroom. The sleeping area includes 1 set of bunked beds and 1 single bed , a built-in wardrobe as well as 1 stand-alone wardrobes. In the study area there are 2 desks built in and 1 stand-alone desk with 3 desk chairs and a microfridge. The bathroom in the suite includes a toilet, sink and shower."
         }
       ]
     },
@@ -5072,7 +4857,10 @@
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10
+          },
           "suite_dimensions": {
             "length_ft": 32.0,
             "width_ft": 24.0
@@ -5107,15 +4895,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/nosker_b18_t201.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/nosker-house",
+          "data_source": "research/Ohio State/nosker_b18_t201.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 32 x 24 ft two-room suite with lounge; each two-person bedroom measures roughly 17 x 10 ft (matches this building's published 17 x 10 ft double). Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 4 room suite with a shared bath, lounge, and air conditoning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10.5
+          },
           "suite_dimensions": {
             "length_ft": 54.0,
             "width_ft": 23.0
@@ -5150,15 +4941,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/nosker_b18_t204.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/nosker-house",
+          "data_source": "research/Ohio State/nosker_b18_t204.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: Nosker House 2 people per bedroom in a 4 room suite with a shared bath, lounge, and air conditioning A suite with 4 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 54 feet that also includes 2 shared bathroom s (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 54 x 23 ft four-room suite with lounge; each two-person bedroom measures roughly 17 x 10.5 ft. Official description: Nosker House 2 people per bedroom in a 4 room suite with a shared bath, lounge, and air conditioning A suite with 4 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 54 feet that also includes 2 shared bathroom s (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2-room suite with a shared bath and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17.5,
+            "width_ft": 9
+          },
           "suite_dimensions": {
             "length_ft": 24.0,
             "width_ft": 21.0
@@ -5193,9 +4987,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/nosker_b18_t200.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/nosker-house",
+          "data_source": "research/Ohio State/nosker_b18_t200.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 24 x 21 ft two-room suite; each two-person bedroom measures roughly 17.5 x 9 ft. Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         }
       ]
     },
@@ -5387,21 +5181,6 @@
           "data_source": "https://housing.osu.edu/hms/roomsearch/paterson-hall",
           "data_confidence": "medium",
           "notes": "Private bathroom. No air conditioning. Dimensions are the bounding box measured from the labeled floor-plan drawing. Wall segments differ, so the room is likely irregular/L-shaped; usable area may be smaller. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
-        },
-        {
-          "room_type": "single",
-          "room_type_official": "1 person per room with bath and closet, without air conditioning",
-          "occupants": 1,
-          "dimensions": null,
-          "suite_dimensions": null,
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [],
-          "floor_plan_url": null,
-          "data_source": "https://housing.osu.edu/hms/roomsearch/paterson-hall",
-          "data_confidence": "low",
-          "notes": "No air conditioning. No floor plan published for this room type."
         },
         {
           "room_type": "single",
@@ -6120,7 +5899,10 @@
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10
+          },
           "suite_dimensions": {
             "length_ft": 32.0,
             "width_ft": 24.0
@@ -6155,15 +5937,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-33-w-lane-avenue_b48_t171.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/raney-house",
+          "data_source": "research/Ohio State/residence-hall-at-33-w-lane-avenue_b48_t171.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 32 x 24 ft two-room suite with lounge; each two-person bedroom measures roughly 17 x 10 ft (matches this building's published 17 x 10 ft double). Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 3 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10.5
+          },
           "suite_dimensions": {
             "length_ft": 43.0,
             "width_ft": 23.0
@@ -6198,15 +5983,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-33-w-lane-avenue_b48_t170.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/raney-house",
+          "data_source": "research/Ohio State/residence-hall-at-33-w-lane-avenue_b48_t170.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 3 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 43 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 43 x 23 ft three-room suite with lounge; each two-person bedroom measures roughly 17 x 10.5 ft. Official description: A suite with 3 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 43 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2-room suite with a shared bath and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17.5,
+            "width_ft": 9
+          },
           "suite_dimensions": {
             "length_ft": 24.0,
             "width_ft": 21.0
@@ -6241,136 +6029,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-33-w-lane-avenue_b48_t172.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/raney-house",
+          "data_source": "research/Ohio State/residence-hall-at-33-w-lane-avenue_b48_t172.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
-        }
-      ]
-    },
-    {
-      "dorm_id": "scholars-east",
-      "dorm_name": "Scholars House East",
-      "hall_url": "https://housing.osu.edu/hms/roomsearch/scholars-east",
-      "air_conditioning": true,
-      "rooms": [
-        {
-          "room_type": "double",
-          "room_type_official": "2 people per room with semi-private bath and air conditioning",
-          "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": null,
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "movable": true,
-              "bunkable": false
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "movable": true,
-              "length_ft": 3.67,
-              "width_ft": 3.0,
-              "height_ft": 2.67
-            }
-          ],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/scholars-east_b29_t73.pdf",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/scholars-east",
-          "data_confidence": "low",
-          "notes": "Private bathroom. Air conditioning. Floor-plan drawing has no dimension callouts; furniture specs from the plan's spec table. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
-        },
-        {
-          "room_type": "double",
-          "room_type_official": "2 people per room with semi-private bath and air conditioning",
-          "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": null,
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "movable": true,
-              "bunkable": false
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "movable": true,
-              "length_ft": 3.67,
-              "width_ft": 3.0,
-              "height_ft": 2.67
-            }
-          ],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/scholars-east_b29_t273.pdf",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/scholars-east",
-          "data_confidence": "low",
-          "notes": "Private bathroom. Air conditioning. Floor-plan drawing has no dimension callouts; furniture specs from the plan's spec table. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
-        }
-      ]
-    },
-    {
-      "dorm_id": "scholars-west",
-      "dorm_name": "Scholars House West",
-      "hall_url": "https://housing.osu.edu/hms/roomsearch/scholars-west",
-      "air_conditioning": true,
-      "rooms": [
-        {
-          "room_type": "double",
-          "room_type_official": "2 people per room with semi-private bath and air conditioning",
-          "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": null,
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/scholars-west_b34_t71.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/scholars-west",
-          "data_confidence": "low",
-          "notes": "Private bathroom. Air conditioning. Official description: Scholars House West Bathroom Diagram Each bathroom pod includes a sink, toilet and shower and there are 3 pods within the restroom."
-        },
-        {
-          "room_type": "double",
-          "room_type_official": "2 people per room with semi-private bath and air conditioning",
-          "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": null,
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 7.0,
-              "width_ft": 3.0,
-              "movable": true,
-              "bunkable": false
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "movable": true,
-              "length_ft": 3.67,
-              "width_ft": 3.0,
-              "height_ft": 2.67
-            }
-          ],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/scholars-west_b34_t274.pdf",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/scholars-west",
-          "data_confidence": "low",
-          "notes": "Private bathroom. Air conditioning. Floor-plan drawing has no dimension callouts; furniture specs from the plan's spec table. Furniture counts assume one bed/desk/dresser set per occupant, as shown on the floor plan."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 24 x 21 ft two-room suite; each two-person bedroom measures roughly 17.5 x 9 ft. Official description: A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
         }
       ]
     },
@@ -6470,7 +6131,10 @@
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2-room suite with a shared bath and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17.5,
+            "width_ft": 9
+          },
           "suite_dimensions": {
             "length_ft": 24.0,
             "width_ft": 21.0
@@ -6505,15 +6169,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-160-west-woodruff-avenue_b46_t155.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/scott-house",
+          "data_source": "research/Ohio State/residence-hall-at-160-west-woodruff-avenue_b46_t155.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 24 x 21 ft two-room suite; each two-person bedroom measures roughly 17.5 x 9 ft. Official description: A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10
+          },
           "suite_dimensions": {
             "length_ft": 32.0,
             "width_ft": 24.0
@@ -6548,15 +6215,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-160-west-woodruff-avenue_b46_t156.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/scott-house",
+          "data_source": "research/Ohio State/residence-hall-at-160-west-woodruff-avenue_b46_t156.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 32 x 24 ft two-room suite with lounge; each two-person bedroom measures roughly 17 x 10 ft (matches this building's published 17 x 10 ft double). Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 3 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10.5
+          },
           "suite_dimensions": {
             "length_ft": 43.0,
             "width_ft": 23.0
@@ -6591,9 +6261,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-160-west-woodruff-avenue_b46_t154.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/scott-house",
+          "data_source": "research/Ohio State/residence-hall-at-160-west-woodruff-avenue_b46_t154.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 3 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 43 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 43 x 23 ft three-room suite with lounge; each two-person bedroom measures roughly 17 x 10.5 ft. Official description: A suite with 3 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 43 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         }
       ]
     },
@@ -6876,44 +6546,6 @@
       "air_conditioning": true,
       "rooms": [
         {
-          "room_type": "double_suite",
-          "room_type_official": "2 people per bedroom in a 3 room suite with a shared bath, lounge, and air conditioning",
-          "occupants": 2,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 44.0,
-            "width_ft": 25.0
-          },
-          "door": null,
-          "window": null,
-          "closet": null,
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 6.67,
-              "width_ft": 3,
-              "movable": true,
-              "bunkable": false,
-              "style": "junior_loft"
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "wardrobe",
-              "count": 2,
-              "movable": true
-            }
-          ],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residences-10th-neil_b40_t57.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/the-residence-on-tenth",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: The Residence on 10 th 2 people per bedroom in a 3-room suite with a shared bath, lounge, and air conditioning A suite with 3 separate bedrooms with 2 people per bedroom with the measuring 25 feet by 44 feet. The suite includes a shared bathroom with a toilet, shower and 3 sinks. It also has a lounge that comes with a couch, table and chairs and a lounge chair and refrigerator. In the bedrooms there are 2 junior lofted beds, 2 desks, 2 desk chairs, and 2 built-in wardrobes."
-        },
-        {
           "room_type": "double",
           "room_type_official": "2 people per room with bath and air conditioning",
           "occupants": 2,
@@ -7057,7 +6689,10 @@
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2-room suite with a shared bath and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17.5,
+            "width_ft": 9
+          },
           "suite_dimensions": {
             "length_ft": 24.0,
             "width_ft": 21.0
@@ -7092,15 +6727,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-187-w-lane-avenue_b49_t160.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/torres-house",
+          "data_source": "research/Ohio State/residence-hall-at-187-w-lane-avenue_b49_t160.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: Torres House 2 people per bedroom in a 2- room suite with a shared bath and air conditioning A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 24 x 21 ft two-room suite; each two-person bedroom measures roughly 17.5 x 9 ft. Official description: Torres House 2 people per bedroom in a 2- room suite with a shared bath and air conditioning A s uite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 24 feet by 21 feet that also includes a shared bathroom (including shower) within the suite . Each bedroom comes with 2 junior lofted bed s , 2 desk s , 2 desk chair s , 2 wardrobe s as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 2 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10
+          },
           "suite_dimensions": {
             "length_ft": 32.0,
             "width_ft": 24.0
@@ -7135,15 +6773,18 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-187-w-lane-avenue_b49_t161.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/torres-house",
+          "data_source": "research/Ohio State/residence-hall-at-187-w-lane-avenue_b49_t161.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 32 x 24 ft two-room suite with lounge; each two-person bedroom measures roughly 17 x 10 ft (matches this building's published 17 x 10 ft double). Official description: A suite with 2 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 32 feet by 24 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         },
         {
           "room_type": "double_suite",
           "room_type_official": "2 people per bedroom in a 3 room suite with a shared bath, lounge, and air conditioning",
           "occupants": 2,
-          "dimensions": null,
+          "dimensions": {
+            "length_ft": 17,
+            "width_ft": 10.5
+          },
           "suite_dimensions": {
             "length_ft": 43.0,
             "width_ft": 23.0
@@ -7178,58 +6819,9 @@
             }
           ],
           "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/residence-hall-at-187-w-lane-avenue_b49_t159.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/torres-house",
+          "data_source": "research/Ohio State/residence-hall-at-187-w-lane-avenue_b49_t159.docx",
           "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Bathroom shared within suite. Air conditioning. Official description: A suite with 3 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 43 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
-        }
-      ]
-    },
-    {
-      "dorm_id": "worthington-building",
-      "dorm_name": "Worthington Building",
-      "hall_url": "https://housing.osu.edu/hms/roomsearch/worthington-building",
-      "air_conditioning": true,
-      "rooms": [
-        {
-          "room_type": "quad_apartment",
-          "room_type_official": "2 bedroom apartment for 4 people",
-          "occupants": 4,
-          "dimensions": null,
-          "suite_dimensions": {
-            "length_ft": 33.0,
-            "width_ft": 26.0
-          },
-          "door": null,
-          "window": null,
-          "closet": {
-            "type": "built-in",
-            "count": 2
-          },
-          "built_in_furniture": [
-            {
-              "type": "bed_frame",
-              "count": 2,
-              "length_ft": 6.67,
-              "width_ft": 3,
-              "movable": true,
-              "bunkable": false,
-              "style": "junior_loft"
-            },
-            {
-              "type": "desk",
-              "count": 2,
-              "movable": true
-            },
-            {
-              "type": "dresser",
-              "count": 2,
-              "movable": true
-            }
-          ],
-          "floor_plan_url": "https://housing.osu.edu/hms/posts/floorplans/worthington_b33_t70.docx",
-          "data_source": "https://housing.osu.edu/hms/roomsearch/worthington-building",
-          "data_confidence": "medium",
-          "notes": "Published dimensions are for the whole suite/apartment, not the individual bedroom; bedroom dimensions are not published. Suite/room bathroom. Air conditioning. Official description: Worthington Building 2-bedroom apartment for 4 people A two-bedroom apartment for 4 people with approximate dimensions of 26 feet by 33 feet with a 2 bedrooms , a living room, 2 bathroom s and kitchen included. Each bedroom has 2 junior lofted beds, 2 desks and 2 desk chairs, 2 dressers and 2 closets. Each bathroom has a sink, toilet and shower. The living room has as a couch , 2 chairs , a coffee table and end table . The kitchen comes with a stove, refrigerator/freezer, dishwasher and barstools at the counter."
+          "notes": "Bedroom dimensions estimated from the official floor plan of the 43 x 23 ft three-room suite with lounge; each two-person bedroom measures roughly 17 x 10.5 ft. Official description: A suite with 3 separate bedrooms with each bedroom being assigned to 2 students with the suite approximate dimensions of 23 feet by 43 feet that also includes a shared bathroom (including shower) and a lounge within the suite. Each bedroom comes with 2 junior lofted beds, 2 desks, 2 desk chairs, 2 wardrobes as well as a microfridge ."
         }
       ]
     }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
+import { AuthProvider } from "@/lib/auth-context";
+import { UpgradeProvider } from "@/lib/upgrade-context";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -18,15 +20,37 @@ const plexMono = IBM_Plex_Mono({
   weight: ["400", "500", "600"],
 });
 
+const DESCRIPTION =
+  "Free AI dorm room planner. Pick your school, choose a vibe, set a budget, and get a room layout that fits your exact dorm, with a shoppable Amazon list.";
+
 export const metadata: Metadata = {
-  title: "Dormscape",
-  description:
-    "Free AI dorm room planner. Pick your school, choose a vibe, set a budget, and get a room layout that fits your exact dorm, with a shoppable list from Amazon.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us"),
+  title: {
+    default: "Dormscape",
+    template: "%s | Dormscape",
+  },
+  description: DESCRIPTION,
   openGraph: {
-    title: "Dormscape",
+    title: "Dormscape: your dorm room, planned before move-in day",
     description:
       "Pick your school, choose a vibe, set a budget. Get a room layout that fits your exact dorm, with a shoppable list.",
     siteName: "Dormscape",
+    type: "website",
+    url: "/",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Dormscape, the free AI dorm room planner",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dormscape: your dorm room, planned before move-in day",
+    description: DESCRIPTION,
+    images: ["/og.png"],
   },
 };
 
@@ -40,7 +64,11 @@ export default function RootLayout({
       lang="en"
       className={`${bricolage.variable} ${instrument.variable} ${plexMono.variable}`}
     >
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        <AuthProvider>
+          <UpgradeProvider>{children}</UpgradeProvider>
+        </AuthProvider>
+      </body>
     </html>
   );
 }

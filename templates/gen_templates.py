@@ -128,7 +128,7 @@ TEMPLATES = []
 
 # ---------------------------------------------------------------- T1 15x12
 TEMPLATES.append(template(
-    "standard-double-15x12-v1", "Standard Double — Parallel Beds",
+    "standard-double-15x12-v1", "Standard Double: Parallel Beds",
     "Two beds on opposite long walls, both desks under the window on the "
     "right wall, rug in the center walkway. Authored for a 15 x 12 ft room; "
     "assumes the door at the bottom of the left wall and the window centered "
@@ -160,7 +160,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T2 12x11
 TEMPLATES.append(template(
-    "compact-square-double-12x11-v1", "Compact Square Double — L-Shaped Beds",
+    "compact-square-double-12x11-v1", "Compact Square Double: L-Shaped Beds",
     "L-shaped bed arrangement: Bed A along the top wall, Bed B along the "
     "right wall, desks tucked into the remaining corners, dressers by the "
     "door. Authored for a 12 x 11 ft room; assumes the door at the bottom of "
@@ -191,7 +191,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T3 17x10.5
 TEMPLATES.append(template(
-    "long-double-17x10-v1", "Long Double — Beds Along One Wall",
+    "long-double-17x10-v1", "Long Double: Beds Along One Wall",
     "Longer, narrower room: both beds head-to-head along the top wall with a "
     "shared dresser between them, Desk A on the bottom wall and Desk B under "
     "the window. Authored for a 17 x 10.5 ft room; assumes the door at the "
@@ -223,7 +223,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T4 11x8.8
 TEMPLATES.append(template(
-    "small-single-11x9-v1", "Small Single — Bed and Desk Opposite",
+    "small-single-11x9-v1", "Small Single: Bed and Desk Opposite",
     "Single room: bed along the top wall, desk under the window on the right "
     "wall, dresser opposite the bed. Authored for an 11 x 8.8 ft room; "
     "assumes the door at the bottom of the left wall and the window on the "
@@ -247,7 +247,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T5 12.4x10
 TEMPLATES.append(template(
-    "compact-double-bunked-12x10-v1", "Compact Double — Bunked Beds",
+    "compact-double-bunked-12x10-v1", "Compact Double: Bunked Beds",
     "Tight double: beds bunked into a single footprint on the top-left wall "
     "(A lower, B upper), freeing the floor for two desks stacked along the "
     "window wall and dressers by the door. Authored for a 12.4 x 10 ft room; "
@@ -276,7 +276,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T6 16x15
 TEMPLATES.append(template(
-    "large-square-double-16x15-v1", "Large Square Double — Open Center",
+    "large-square-double-16x15-v1", "Large Square Double: Open Center",
     "Spacious near-square double: parallel beds on the top and bottom walls, "
     "desks under the window, large open rug in the middle with extra wall "
     "decor. Authored for a 16 x 15 ft room; assumes the door at the bottom "
@@ -309,7 +309,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T7 25x15
 TEMPLATES.append(template(
-    "suite-large-25x15-v1", "Suite-Style Large — Sleep + Living Zones",
+    "suite-large-25x15-v1", "Suite-Style Large: Sleep + Living Zones",
     "Large suite-style room split into zones: sleeping zone on the left "
     "(both beds, dressers), study/living zone on the right (desks under the "
     "window, large living rug, storage cubes, full-length mirror). Authored "
@@ -346,7 +346,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T8 18x13
 TEMPLATES.append(template(
-    "wide-double-18x13-v1", "Wide Double — Parallel Beds, Center Walkway",
+    "wide-double-18x13-v1", "Wide Double: Parallel Beds, Center Walkway",
     "Generous rectangle: parallel beds on the top and bottom walls with a "
     "wide center walkway, desks under the window on the right wall. Authored "
     "for an 18 x 13 ft room; assumes the door at the bottom of the left wall "
@@ -378,7 +378,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T9 24x8.5
 TEMPLATES.append(template(
-    "corridor-double-24x8-v1", "Corridor Double — Linear Layout",
+    "corridor-double-24x8-v1", "Corridor Double: Linear Layout",
     "Long, narrow room (aspect > 2.7): beds end-to-end along the top wall, "
     "dressers continuing the same wall, desks on the opposite wall toward "
     "the window end, runner rug as the zone divider. Authored for a "
@@ -412,7 +412,7 @@ TEMPLATES.append(template(
 
 # ---------------------------------------------------------------- T10 23x8
 TEMPLATES.append(template(
-    "corridor-single-23x8-v1", "Corridor Single — End-to-End Layout",
+    "corridor-single-23x8-v1", "Corridor Single: End-to-End Layout",
     "Long, narrow single: bed across the far (window) end, desk at the entry "
     "end, dresser, bins, and hamper lined along the top wall, runner rug "
     "down the middle. Authored for a 23 x 8 ft room; assumes the door on the "
@@ -433,6 +433,280 @@ TEMPLATES.append(template(
         F("trash", "trash_can", "Trash Can", "A", 0.4, 4.0, 1, 1),
         F("power-strip", "power_strip", "Power Strip", "A", 0.05, 0.8, 1, 0.15, 90, "wall"),
         F("mirror", "mirror", "Over-Door Mirror", "A", 0.05, 5.5, 1.5, 0.15, 90, "wall"),
+    ]))
+
+
+# ---------------------------------------------------------------- T11 17x16 (triple)
+TEMPLATES.append(template(
+    "standard-triple-17x16-v1", "Standard Triple: Two Walls, Third Bed Along the Bottom",
+    "Three beds: A and B head-to-head along the top wall with a dresser "
+    "between them, C along the bottom-right wall clear of the door swing. "
+    "Desks for A and B stack under the window on the right wall; Desk C "
+    "sits against the bottom wall left of center. Authored for a 17 x 16 "
+    "ft room; assumes the door at the bottom of the left wall and the "
+    "window on the right wall.",
+    con(14.5, 21, 15, 19, 3, ["triple"]), 17, 16, (0, 12.5, 3, 3.5), [
+        F("bed-a", "bed", "Bed A", "A", 0.5, 0.5, BED_W, BED_L, 90),
+        F("bed-b", "bed", "Bed B", "B", 9.3, 0.5, BED_W, BED_L, 90),
+        F("bed-c", "bed", "Bed C", "C", 9.3, 12.33, BED_W, BED_L, 90),
+        F("dresser-a", "dresser", "Dresser A", "A", 7.2, 0.5, DRESSER_W, DRESSER_L, 90),
+        F("dresser-b", "dresser", "Dresser B", "B", 9.3, 3.9, DRESSER_W, DRESSER_L, 90),
+        F("dresser-c", "dresser", "Dresser C", "C", 7.3, 12.33, DRESSER_W, DRESSER_L, 90),
+        F("desk-a", "desk", "Desk A", "A", 14.5, 4.6, DESK_W, DESK_L, 90),
+        F("desk-b", "desk", "Desk B", "B", 14.5, 8.6, DESK_W, DESK_L, 90),
+        F("desk-c", "desk", "Desk C", "C", 3.7, 13.6, DESK_W, DESK_L, 0),
+        F("chair-a", "desk_chair", "Desk Chair A", "A", 12.7, 5.6, CHAIR, CHAIR),
+        F("chair-b", "desk_chair", "Desk Chair B", "B", 12.7, 9.6, CHAIR, CHAIR),
+        F("chair-c", "desk_chair", "Desk Chair C", "C", 4.8, 11.9, CHAIR, CHAIR),
+        F("rug", "rug", "Area Rug", "shared", 7.4, 5.0, 5, 5, 0, "flat"),
+        F("storage-cubes", "storage_bins", "Stackable Storage Cubes", "shared", 10.0, 7.0, 2, 1.5),
+        F("lamp-a", "desk_lamp", "Desk Lamp A", "A", 15.0, 5.0, 0.5, 0.5, 0, "on", "desk-a"),
+        F("lamp-b", "desk_lamp", "Desk Lamp B", "B", 15.0, 9.0, 0.5, 0.5, 0, "on", "desk-b"),
+        F("lamp-c", "desk_lamp", "Desk Lamp C", "C", 4.2, 13.8, 0.5, 0.5, 0, "on", "desk-c"),
+        F("string-lights", "string_lights", "String Lights", "shared", 0.7, 0.05, 6, 0.15, 0, "wall"),
+        F("wall-decor", "wall_decor", "Wall Decor / Tapestry", "shared", 10.0, 15.8, 4, 0.15, 0, "wall"),
+        F("power-strip", "power_strip", "Power Strip", "shared", 16.75, 6.2, 1, 0.25, 90, "wall"),
+        F("mirror", "mirror", "Wall Mirror", "shared", 0.05, 7.2, 1.5, 0.15, 90, "wall"),
+        F("pillows-a", "throw_pillows", "Throw Pillows A", "A", 0.7, 1.4, 1.5, 1, 0, "on", "bed-a"),
+        F("pillows-b", "throw_pillows", "Throw Pillows B", "B", 9.5, 1.4, 1.5, 1, 0, "on", "bed-b"),
+        F("pillows-c", "throw_pillows", "Throw Pillows C", "C", 9.5, 12.7, 1.5, 1, 0, "on", "bed-c"),
+        F("bins-a", "storage_bins", "Under-Bed Storage Bins A", "A", 4.5, 1.1, 2, 1.5, 0, "on", "bed-a"),
+        F("bins-b", "storage_bins", "Under-Bed Storage Bins B", "B", 11.5, 1.1, 2, 1.5, 0, "on", "bed-b"),
+        F("bins-c", "storage_bins", "Under-Bed Storage Bins C", "C", 13.0, 12.4, 2, 1.5, 0, "on", "bed-c"),
+        F("trash", "trash_can", "Trash Can", "shared", 0.6, 9.3, 1, 1),
+        F("hamper-a", "laundry_hamper", "Laundry Hamper A", "A", 0.6, 4.0, 1.5, 1.5),
+        F("hamper-b", "laundry_hamper", "Laundry Hamper B", "B", 13.0, 3.9, 1.5, 1.5),
+        F("hamper-c", "laundry_hamper", "Laundry Hamper C", "C", 7.6, 14.9, 1.3, 1.0),
+    ]))
+
+# ---------------------------------------------------------------- T12 27x14 (triple)
+TEMPLATES.append(template(
+    "long-triple-27x14-v1", "Long Triple: Three Beds Along the Top Wall",
+    "Long room (aspect ~1.9): all three beds end-to-end along the top wall. "
+    "Desks and dressers share the bottom wall (desks left of center, dressers "
+    "toward the window end) so the bed wall never has to carry more than three "
+    "bed-lengths, and a runner rug divides the two zones. Authored for a 27 x "
+    "14 ft room; assumes the door on the left end wall and the window on the "
+    "right end wall.",
+    con(21, 33, 9, 24.5, 3, ["triple"]), 27, 14, (0, 10.5, 3, 3.5), [
+        F("bed-a", "bed", "Bed A", "A", 0.5, 0.4, BED_W, BED_L, 90),
+        F("bed-b", "bed", "Bed B", "B", 7.5, 0.4, BED_W, BED_L, 90),
+        F("bed-c", "bed", "Bed C", "C", 14.5, 0.4, BED_W, BED_L, 90),
+        F("desk-a", "desk", "Desk A", "A", 3.2, 12.0, DESK_W, DESK_L, 0),
+        F("desk-b", "desk", "Desk B", "B", 6.9, 12.0, DESK_W, DESK_L, 0),
+        F("desk-c", "desk", "Desk C", "C", 10.6, 12.0, DESK_W, DESK_L, 0),
+        F("dresser-a", "dresser", "Dresser A", "A", 14.4, 12.0, DRESSER_W, DRESSER_L, 0),
+        F("dresser-b", "dresser", "Dresser B", "B", 17.1, 12.0, DRESSER_W, DRESSER_L, 0),
+        F("dresser-c", "dresser", "Dresser C", "C", 19.8, 12.0, DRESSER_W, DRESSER_L, 0),
+        F("chair-a", "desk_chair", "Desk Chair A", "A", 3.9, 10.0, CHAIR, CHAIR),
+        F("chair-b", "desk_chair", "Desk Chair B", "B", 7.6, 10.0, CHAIR, CHAIR),
+        F("chair-c", "desk_chair", "Desk Chair C", "C", 11.3, 10.0, CHAIR, CHAIR),
+        F("rug", "rug", "Runner Rug (zone divider)", "shared", 4.0, 5.0, 18, 3.5, 0, "flat"),
+        F("storage-cubes", "storage_bins", "Stackable Storage Cubes", "shared", 23.5, 12.0, 2, 1.5),
+        F("lamp-a", "desk_lamp", "Desk Lamp A", "A", 3.6, 12.4, 0.5, 0.5, 0, "on", "desk-a"),
+        F("lamp-b", "desk_lamp", "Desk Lamp B", "B", 7.3, 12.4, 0.5, 0.5, 0, "on", "desk-b"),
+        F("lamp-c", "desk_lamp", "Desk Lamp C", "C", 11.0, 12.4, 0.5, 0.5, 0, "on", "desk-c"),
+        F("string-lights", "string_lights", "String Lights", "shared", 1.0, 0.02, 10, 0.15, 0, "wall"),
+        F("wall-decor", "wall_decor", "Wall Decor / Tapestry", "shared", 22.0, 0.05, 3, 0.15, 0, "wall"),
+        F("power-strip", "power_strip", "Power Strip", "shared", 26.85, 6.0, 1, 0.15, 90, "wall"),
+        F("mirror", "mirror", "Wall Mirror (window end)", "shared", 26.8, 3.4, 1.5, 0.2, 90, "wall"),
+        F("pillows-a", "throw_pillows", "Throw Pillows A", "A", 0.7, 1.1, 1.5, 1, 0, "on", "bed-a"),
+        F("pillows-b", "throw_pillows", "Throw Pillows B", "B", 7.7, 1.1, 1.5, 1, 0, "on", "bed-b"),
+        F("pillows-c", "throw_pillows", "Throw Pillows C", "C", 14.7, 1.1, 1.5, 1, 0, "on", "bed-c"),
+        F("bins-a", "storage_bins", "Under-Bed Storage Bins A", "A", 3.0, 1.0, 2, 1.5, 0, "on", "bed-a"),
+        F("bins-b", "storage_bins", "Under-Bed Storage Bins B", "B", 10.0, 1.0, 2, 1.5, 0, "on", "bed-b"),
+        F("bins-c", "storage_bins", "Under-Bed Storage Bins C", "C", 17.0, 1.0, 2, 1.5, 0, "on", "bed-c"),
+        F("trash", "trash_can", "Trash Can", "shared", 24.0, 8.5, 1, 1),
+        F("hamper-a", "laundry_hamper", "Laundry Hamper A", "A", 0.5, 5.0, 1.5, 1.5),
+        F("hamper-b", "laundry_hamper", "Laundry Hamper B", "B", 22.5, 8.5, 1.5, 1.5),
+        F("hamper-c", "laundry_hamper", "Laundry Hamper C", "C", 24.5, 5.0, 1.5, 1.5),
+    ]))
+
+# ---------------------------------------------------------------- T13 25x17 (quad)
+TEMPLATES.append(template(
+    "standard-quad-25x17-v1", "Standard Quad: Two Pairs, Individual Dressers",
+    "Four beds as two head-to-head pairs: A/B along the top wall, C/D along "
+    "the bottom wall. Each occupant gets their own dresser, A/C in the gap "
+    "between the pairs and B/D past the far end of their bed. Desks for "
+    "all four line the right wall under the window, paired stacked front-"
+    "to-back. Authored for a 25 x 17 ft room; assumes the door at the "
+    "bottom of the left wall and the window on the right wall.",
+    con(20, 28, 13, 22, 4, ["quad"]), 25, 17, (0, 13.5, 3, 3.5), [
+        F("bed-a", "bed", "Bed A", "A", 0.5, 0.4, BED_W, BED_L, 90),
+        F("bed-b", "bed", "Bed B", "B", 9.5, 0.4, BED_W, BED_L, 90),
+        F("bed-c", "bed", "Bed C", "C", 0.5, 10.33, BED_W, BED_L, 90),
+        F("bed-d", "bed", "Bed D", "D", 9.5, 10.33, BED_W, BED_L, 90),
+        F("dresser-a", "dresser", "Dresser A", "A", 7.3, 0.4, DRESSER_W, DRESSER_L, 90),
+        F("dresser-b", "dresser", "Dresser B", "B", 16.3, 0.4, DRESSER_W, DRESSER_L, 90),
+        F("dresser-c", "dresser", "Dresser C", "C", 7.3, 10.33, DRESSER_W, DRESSER_L, 90),
+        F("dresser-d", "dresser", "Dresser D", "D", 16.3, 11.0, DRESSER_W, DRESSER_L, 90),
+        F("desk-a", "desk", "Desk A", "A", 20.5, 0.5, DESK_W, DESK_L, 90),
+        F("desk-b", "desk", "Desk B", "B", 20.5, 4.5, DESK_W, DESK_L, 90),
+        F("desk-c", "desk", "Desk C", "C", 20.5, 9.0, DESK_W, DESK_L, 90),
+        F("desk-d", "desk", "Desk D", "D", 20.5, 13.0, DESK_W, DESK_L, 90),
+        F("chair-a", "desk_chair", "Desk Chair A", "A", 18.7, 1.5, CHAIR, CHAIR),
+        F("chair-b", "desk_chair", "Desk Chair B", "B", 18.7, 5.5, CHAIR, CHAIR),
+        F("chair-c", "desk_chair", "Desk Chair C", "C", 18.7, 10.0, CHAIR, CHAIR),
+        F("chair-d", "desk_chair", "Desk Chair D", "D", 18.7, 14.0, CHAIR, CHAIR),
+        F("rug", "rug", "Large Area Rug", "shared", 4.0, 5.7, 8, 5.5, 0, "flat"),
+        F("storage-cubes", "storage_bins", "Stackable Storage Cubes", "shared", 14.0, 5.9, 2, 1.5),
+        F("lamp-a", "desk_lamp", "Desk Lamp A", "A", 21.2, 0.9, 0.5, 0.5, 0, "on", "desk-a"),
+        F("lamp-b", "desk_lamp", "Desk Lamp B", "B", 21.2, 4.9, 0.5, 0.5, 0, "on", "desk-b"),
+        F("lamp-c", "desk_lamp", "Desk Lamp C", "C", 21.2, 9.4, 0.5, 0.5, 0, "on", "desk-c"),
+        F("lamp-d", "desk_lamp", "Desk Lamp D", "D", 21.2, 13.4, 0.5, 0.5, 0, "on", "desk-d"),
+        F("string-lights-a", "string_lights", "String Lights (top)", "shared", 0.8, 0.05, 7, 0.15, 0, "wall"),
+        F("string-lights-b", "string_lights", "String Lights (bottom)", "shared", 0.8, 16.8, 7, 0.15, 0, "wall"),
+        F("wall-decor", "wall_decor", "Wall Decor / Tapestry", "shared", 10.0, 0.05, 3, 0.15, 0, "wall"),
+        F("power-strip", "power_strip", "Power Strip", "shared", 24.75, 7.0, 1, 0.25, 90, "wall"),
+        F("mirror", "mirror", "Wall Mirror", "shared", 0.05, 5.6, 1.5, 0.15, 90, "wall"),
+        F("pillows-a", "throw_pillows", "Throw Pillows A", "A", 0.7, 1.4, 1.5, 1, 0, "on", "bed-a"),
+        F("pillows-b", "throw_pillows", "Throw Pillows B", "B", 9.7, 1.4, 1.5, 1, 0, "on", "bed-b"),
+        F("pillows-c", "throw_pillows", "Throw Pillows C", "C", 0.7, 11.2, 1.5, 1, 0, "on", "bed-c"),
+        F("pillows-d", "throw_pillows", "Throw Pillows D", "D", 9.7, 11.2, 1.5, 1, 0, "on", "bed-d"),
+        F("bins-a", "storage_bins", "Under-Bed Storage Bins A", "A", 4.0, 1.1, 2, 1.5, 0, "on", "bed-a"),
+        F("bins-b", "storage_bins", "Under-Bed Storage Bins B", "B", 12.0, 1.1, 2, 1.5, 0, "on", "bed-b"),
+        F("bins-c", "storage_bins", "Under-Bed Storage Bins C", "C", 4.0, 11.0, 2, 1.5, 0, "on", "bed-c"),
+        F("bins-d", "storage_bins", "Under-Bed Storage Bins D", "D", 12.0, 11.0, 2, 1.5, 0, "on", "bed-d"),
+        F("trash", "trash_can", "Trash Can", "shared", 18.0, 7.5, 1, 1),
+        F("hamper-a", "laundry_hamper", "Laundry Hamper A", "A", 4.5, 3.7, 1.5, 1.5),
+        F("hamper-b", "laundry_hamper", "Laundry Hamper B", "B", 12.5, 3.7, 1.5, 1.5),
+        F("hamper-c", "laundry_hamper", "Laundry Hamper C", "C", 4.5, 13.6, 1.5, 1.5),
+        F("hamper-d", "laundry_hamper", "Laundry Hamper D", "D", 12.5, 13.6, 1.5, 1.5),
+    ]))
+
+# ---------------------------------------------------------------- T14 33x14 (quad)
+TEMPLATES.append(template(
+    "long-quad-33x14-v1", "Long Quad: Four Beds Along the Top Wall",
+    "Long, narrower room: all four beds end-to-end along the top wall, "
+    "dressers continuing the same run toward the window end. Desks line "
+    "the bottom wall in pairs. Authored for a 33 x 14 ft room; assumes the "
+    "door at the bottom-left and the window on the right end wall.",
+    con(28, 40, 11, 19, 4, ["quad"]), 33, 14, (0, 10.5, 3, 3.5), [
+        F("bed-a", "bed", "Bed A", "A", 0.5, 0.4, BED_W, BED_L, 90),
+        F("bed-b", "bed", "Bed B", "B", 7.5, 0.4, BED_W, BED_L, 90),
+        F("bed-c", "bed", "Bed C", "C", 14.5, 0.4, BED_W, BED_L, 90),
+        F("bed-d", "bed", "Bed D", "D", 21.5, 0.4, BED_W, BED_L, 90),
+        F("dresser-a", "dresser", "Dresser A", "A", 28.5, 0.4, DRESSER_W, DRESSER_L, 0),
+        F("dresser-b", "dresser", "Dresser B", "B", 30.5, 2.5, DRESSER_W, DRESSER_L, 0),
+        F("dresser-c", "dresser", "Dresser C", "C", 28.5, 4.6, DRESSER_W, DRESSER_L, 0),
+        F("dresser-d", "dresser", "Dresser D", "D", 30.5, 6.7, DRESSER_W, DRESSER_L, 0),
+        F("desk-a", "desk", "Desk A", "A", 4.0, 8.0, DESK_W, DESK_L, 0),
+        F("desk-b", "desk", "Desk B", "B", 8.0, 8.0, DESK_W, DESK_L, 0),
+        F("desk-c", "desk", "Desk C", "C", 15.0, 8.0, DESK_W, DESK_L, 0),
+        F("desk-d", "desk", "Desk D", "D", 19.0, 8.0, DESK_W, DESK_L, 0),
+        F("chair-a", "desk_chair", "Desk Chair A", "A", 4.8, 6.3, CHAIR, CHAIR),
+        F("chair-b", "desk_chair", "Desk Chair B", "B", 8.8, 6.3, CHAIR, CHAIR),
+        F("chair-c", "desk_chair", "Desk Chair C", "C", 15.8, 6.3, CHAIR, CHAIR),
+        F("chair-d", "desk_chair", "Desk Chair D", "D", 19.8, 6.3, CHAIR, CHAIR),
+        F("rug", "rug", "Runner Rug (zone divider)", "shared", 3.5, 4.2, 12, 2.2, 0, "flat"),
+        F("lamp-a", "desk_lamp", "Desk Lamp A", "A", 4.7, 8.4, 0.5, 0.5, 0, "on", "desk-a"),
+        F("lamp-b", "desk_lamp", "Desk Lamp B", "B", 8.7, 8.4, 0.5, 0.5, 0, "on", "desk-b"),
+        F("lamp-c", "desk_lamp", "Desk Lamp C", "C", 15.7, 8.4, 0.5, 0.5, 0, "on", "desk-c"),
+        F("lamp-d", "desk_lamp", "Desk Lamp D", "D", 19.7, 8.4, 0.5, 0.5, 0, "on", "desk-d"),
+        F("string-lights", "string_lights", "String Lights", "shared", 1.0, 0.02, 14, 0.15, 0, "wall"),
+        F("wall-decor", "wall_decor", "Wall Decor / Tapestry", "shared", 23.5, 13.8, 3, 0.15, 0, "wall"),
+        F("power-strip", "power_strip", "Power Strip", "shared", 21.0, 13.8, 1, 0.15, 0, "wall"),
+        F("mirror", "mirror", "Wall Mirror (window end)", "shared", 32.8, 3.4, 1.5, 0.2, 90, "wall"),
+        F("pillows-a", "throw_pillows", "Throw Pillows A", "A", 0.7, 1.1, 1.5, 1, 0, "on", "bed-a"),
+        F("pillows-b", "throw_pillows", "Throw Pillows B", "B", 7.7, 1.1, 1.5, 1, 0, "on", "bed-b"),
+        F("pillows-c", "throw_pillows", "Throw Pillows C", "C", 14.7, 1.1, 1.5, 1, 0, "on", "bed-c"),
+        F("pillows-d", "throw_pillows", "Throw Pillows D", "D", 21.7, 1.1, 1.5, 1, 0, "on", "bed-d"),
+        F("bins-a", "storage_bins", "Under-Bed Storage Bins A", "A", 3.0, 1.0, 2, 1.5, 0, "on", "bed-a"),
+        F("bins-b", "storage_bins", "Under-Bed Storage Bins B", "B", 10.0, 1.0, 2, 1.5, 0, "on", "bed-b"),
+        F("bins-c", "storage_bins", "Under-Bed Storage Bins C", "C", 17.0, 1.0, 2, 1.5, 0, "on", "bed-c"),
+        F("bins-d", "storage_bins", "Under-Bed Storage Bins D", "D", 24.0, 1.0, 2, 1.5, 0, "on", "bed-d"),
+        F("trash", "trash_can", "Trash Can", "shared", 26.8, 7.3, 1, 1),
+        F("hamper-a", "laundry_hamper", "Laundry Hamper A", "A", 3.3, 6.3, 1.5, 1.5),
+        F("hamper-b", "laundry_hamper", "Laundry Hamper B", "B", 17.3, 6.3, 1.5, 1.5),
+        F("hamper-c", "laundry_hamper", "Laundry Hamper C", "C", 24.5, 8.0, 1.5, 1.5),
+        F("hamper-d", "laundry_hamper", "Laundry Hamper D", "D", 26.5, 10.0, 1.5, 1.5),
+    ]))
+
+# ---------------------------------------------------------------- T15 13x12 (compact triple, bunked, L-shape)
+# Tight triples (roughly < 250 sqft) cannot hold three flat beds plus three
+# desks and dressers; a flat template refit into them overlaps no matter how it
+# is packed. Bunking A over B frees floor, and the beds sit on PERPENDICULAR
+# walls (L-shape) so no single wall must carry two 6.7 ft bed-lengths, which is
+# what breaks in rooms narrower than ~13.5 ft.
+TEMPLATES.append(template(
+    "compact-triple-bunked-13x12-v1", "Compact Triple: Bunked Pair, L-Shape",
+    "Tight triple: A and B bunked on the top-left wall, the third bed on the "
+    "right wall (an L, so neither wall needs two bed-lengths). Desks A and B "
+    "line the left wall, desk C and the dressers run along the bottom wall "
+    "clear of the door. Authored for a 13 x 12 ft room; assumes the door at "
+    "the bottom of the left wall and the window on the right wall.",
+    con(11, 18.5, 9, 15, 3, ["triple"]), 13, 12, (0, 9, 3, 3), [
+        F("bed-ab", "bed", "Bunked Beds (A lower, B upper)", "shared", 0.5, 0.5, BED_W, BED_L, 90),
+        F("bed-c", "bed", "Bed C", "C", 9.83, 0.5, BED_W, BED_L, 0),
+        F("desk-a", "desk", "Desk A", "A", 0.5, 4.0, DESK_W, DESK_L, 0),
+        F("desk-b", "desk", "Desk B", "B", 0.5, 6.2, DESK_W, DESK_L, 0),
+        F("desk-c", "desk", "Desk C", "C", 3.2, 10.0, DESK_W, DESK_L, 0),
+        F("dresser-a", "dresser", "Dresser A", "A", 7.0, 10.0, DRESSER_W, DRESSER_L, 0),
+        F("dresser-b", "dresser", "Dresser B", "B", 9.7, 10.0, DRESSER_W, DRESSER_L, 0),
+        # Beside bed C (not stacked under it): a vertical bed plus two stacked
+        # dressers would overrun the wall when the room compresses below 11 ft.
+        F("dresser-c", "dresser", "Dresser C", "C", 7.2, 5.0, DRESSER_W, DRESSER_L, 0),
+        F("chair-a", "desk_chair", "Desk Chair A", "A", 4.2, 4.2, CHAIR, CHAIR),
+        F("chair-b", "desk_chair", "Desk Chair B", "B", 4.2, 6.4, CHAIR, CHAIR),
+        F("chair-c", "desk_chair", "Desk Chair C", "C", 4.0, 8.2, CHAIR, CHAIR),
+        F("rug", "rug", "Area Rug", "shared", 4.0, 3.9, 5, 4, 0, "flat"),
+        F("lamp-a", "desk_lamp", "Desk Lamp A", "A", 1.0, 4.4, 0.5, 0.5, 0, "on", "desk-a"),
+        F("lamp-b", "desk_lamp", "Desk Lamp B", "B", 1.0, 6.6, 0.5, 0.5, 0, "on", "desk-b"),
+        F("lamp-c", "desk_lamp", "Desk Lamp C", "C", 3.6, 10.4, 0.5, 0.5, 0, "on", "desk-c"),
+        F("string-lights", "string_lights", "String Lights", "shared", 0.7, 0.05, 6, 0.15, 0, "wall"),
+        F("wall-decor", "wall_decor", "Wall Decor / Tapestry", "shared", 7.5, 0.05, 2, 0.15, 0, "wall"),
+        F("power-strip", "power_strip", "Power Strip", "shared", 12.75, 8.0, 1, 0.25, 90, "wall"),
+        F("mirror", "mirror", "Wall Mirror", "shared", 0.05, 8.0, 1.5, 0.15, 90, "wall"),
+        F("pillows-a", "throw_pillows", "Throw Pillows (lower bunk)", "A", 0.8, 1.2, 1.5, 1, 0, "on", "bed-ab"),
+        F("pillows-c", "throw_pillows", "Throw Pillows C", "C", 10.2, 1.0, 1.5, 1, 0, "on", "bed-c"),
+        F("bins-ab", "storage_bins", "Under-Bed Storage Bins", "shared", 3.5, 1.1, 2, 1.5, 0, "on", "bed-ab"),
+        F("bins-c", "storage_bins", "Under-Bed Storage Bins C", "C", 10.0, 4.5, 2, 1.5, 0, "on", "bed-c"),
+        F("trash", "trash_can", "Trash Can", "shared", 7.0, 7.5, 1, 1),
+    ]))
+
+# ---------------------------------------------------------------- T16 15x13 (compact quad, bunked, L-shape)
+# Tight quads (down to ~130 sqft) cannot seat four flat beds. Two bunk stacks
+# on PERPENDICULAR walls (A/B on the top wall, C/D on the right wall) keep both
+# bunks off the bottom-left door and never put two bed-lengths on one wall,
+# freeing floor for four desks and four dressers.
+TEMPLATES.append(template(
+    "compact-quad-bunked-15x13-v1", "Compact Quad: Two Bunk Stacks, L-Shape",
+    "Tight quad: bunk A/B on the top wall and bunk C/D on the right wall (an "
+    "L). Desks A and B line the left wall, desks C and D the bottom wall clear "
+    "of the door; each occupant keeps their own dresser. Authored for a 15 x "
+    "13 ft room; assumes the door at the bottom of the left wall and the "
+    "window on the right wall.",
+    con(11, 20, 9, 19, 4, ["quad"]), 15, 13, (0, 10, 3, 3), [
+        F("bed-ab", "bed", "Bunked Beds (A lower, B upper)", "shared", 0.5, 0.4, BED_W, BED_L, 90),
+        F("bed-cd", "bed", "Bunked Beds (C lower, D upper)", "shared", 11.83, 0.4, BED_W, BED_L, 0),
+        F("desk-a", "desk", "Desk A", "A", 0.5, 4.0, DESK_W, DESK_L, 0),
+        F("desk-b", "desk", "Desk B", "B", 0.5, 6.2, DESK_W, DESK_L, 0),
+        F("desk-c", "desk", "Desk C", "C", 3.2, 11.0, DESK_W, DESK_L, 0),
+        F("desk-d", "desk", "Desk D", "D", 6.9, 11.0, DESK_W, DESK_L, 0),
+        F("dresser-a", "dresser", "Dresser A", "A", 4.5, 4.0, DRESSER_W, DRESSER_L, 0),
+        F("dresser-b", "dresser", "Dresser B", "B", 4.5, 6.2, DRESSER_W, DRESSER_L, 0),
+        F("dresser-c", "dresser", "Dresser C", "C", 11.5, 8.0, DRESSER_W, DRESSER_L, 0),
+        F("dresser-d", "dresser", "Dresser D", "D", 10.6, 11.0, DRESSER_W, DRESSER_L, 0),
+        F("chair-a", "desk_chair", "Desk Chair A", "A", 7.5, 4.2, CHAIR, CHAIR),
+        F("chair-b", "desk_chair", "Desk Chair B", "B", 7.5, 6.4, CHAIR, CHAIR),
+        F("chair-c", "desk_chair", "Desk Chair C", "C", 3.6, 9.2, CHAIR, CHAIR),
+        F("chair-d", "desk_chair", "Desk Chair D", "D", 7.3, 9.2, CHAIR, CHAIR),
+        F("rug", "rug", "Large Area Rug", "shared", 7.0, 4.0, 4.5, 4.5, 0, "flat"),
+        F("lamp-a", "desk_lamp", "Desk Lamp A", "A", 1.0, 4.4, 0.5, 0.5, 0, "on", "desk-a"),
+        F("lamp-b", "desk_lamp", "Desk Lamp B", "B", 1.0, 6.6, 0.5, 0.5, 0, "on", "desk-b"),
+        F("lamp-c", "desk_lamp", "Desk Lamp C", "C", 3.6, 11.4, 0.5, 0.5, 0, "on", "desk-c"),
+        F("lamp-d", "desk_lamp", "Desk Lamp D", "D", 7.3, 11.4, 0.5, 0.5, 0, "on", "desk-d"),
+        F("string-lights-a", "string_lights", "String Lights (left)", "shared", 0.7, 0.05, 6, 0.15, 0, "wall"),
+        F("string-lights-b", "string_lights", "String Lights (right)", "shared", 7.5, 0.05, 4, 0.15, 0, "wall"),
+        F("wall-decor", "wall_decor", "Wall Decor / Tapestry", "shared", 0.05, 8.5, 1.5, 0.15, 90, "wall"),
+        F("power-strip", "power_strip", "Power Strip", "shared", 14.75, 8.5, 1, 0.25, 90, "wall"),
+        F("mirror", "mirror", "Wall Mirror", "shared", 0.05, 4.0, 1.5, 0.15, 90, "wall"),
+        F("pillows-a", "throw_pillows", "Throw Pillows (A/B bunk)", "A", 0.8, 1.0, 1.5, 1, 0, "on", "bed-ab"),
+        F("pillows-c", "throw_pillows", "Throw Pillows (C/D bunk)", "C", 12.2, 1.0, 1.5, 1, 0, "on", "bed-cd"),
+        F("bins-ab", "storage_bins", "Under-Bed Storage Bins (A/B)", "shared", 3.5, 1.0, 2, 1.5, 0, "on", "bed-ab"),
+        F("bins-cd", "storage_bins", "Under-Bed Storage Bins (C/D)", "shared", 12.0, 4.0, 2, 1.5, 0, "on", "bed-cd"),
+        F("trash", "trash_can", "Trash Can", "shared", 9.5, 8.3, 1, 1),
+        F("hamper", "laundry_hamper", "Collapsible Laundry Hamper", "shared", 5.5, 8.3, 1.5, 1.5),
     ]))
 
 

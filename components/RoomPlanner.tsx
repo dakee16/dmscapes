@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-type VibeKey = "minimalist" | "cozy" | "gamer" | "boho" | "preppy";
+type VibeKey = "minimalist" | "cozy" | "gamer" | "preppy" | "team_spirit";
 
 type Vibe = {
   label: string;
@@ -50,18 +50,6 @@ const VIBES: Record<VibeKey, Vibe> = {
     ],
     total: 486,
   },
-  boho: {
-    label: "Boho",
-    bed: "#ead9be",
-    rug: "#dccba6",
-    accent: "#8a7b4f",
-    items: [
-      { name: "Woven jute rug, 5×7", store: "Amazon", price: 45 },
-      { name: "Macramé wall hanging", store: "Amazon", price: 22 },
-      { name: "Rattan table lamp", store: "Amazon", price: 31 },
-    ],
-    total: 429,
-  },
   preppy: {
     label: "Preppy",
     bed: "#d5dff5",
@@ -74,9 +62,24 @@ const VIBES: Record<VibeKey, Vibe> = {
     ],
     total: 445,
   },
+  team_spirit: {
+    label: "Team Spirit",
+    bed: "#dbe3f2",
+    rug: "#cdd7ea",
+    accent: "#c8102e",
+    items: [
+      { name: "Varsity-stripe comforter, navy/red", store: "Amazon", price: 64 },
+      { name: "Felt pennant banner set", store: "Amazon", price: 12 },
+      { name: "Over-the-door mini hoop", store: "Amazon", price: 33 },
+    ],
+    total: 421,
+  },
 };
 
 const VIBE_KEYS = Object.keys(VIBES) as VibeKey[];
+// Vibes that require Plus in the real planner. Marked in the hero switcher so a
+// visitor who falls for one is not surprised by a paywall later.
+const PLUS_HERO_KEYS = new Set<VibeKey>(["gamer", "team_spirit"]);
 const BUDGET = 500;
 
 function Piece({
@@ -128,13 +131,29 @@ export default function RoomPlanner() {
             type="button"
             onClick={() => setVibeKey(key)}
             aria-pressed={key === vibeKey}
-            className={`cursor-pointer rounded-full border px-3 py-1 text-xs font-semibold transition-colors ${
+            className={`inline-flex cursor-pointer items-center justify-center rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors pointer-coarse:min-h-[44px] pointer-coarse:px-4 ${
               key === vibeKey
                 ? "border-ink bg-ink text-white"
                 : "border-ink/15 bg-white text-ink-soft hover:border-ink/40 hover:text-ink"
             }`}
           >
             {VIBES[key].label}
+            {PLUS_HERO_KEYS.has(key) && (
+              <>
+                <svg
+                  viewBox="0 0 24 24"
+                  className="ml-1 inline-block h-2.5 w-2.5 -translate-y-px text-amber"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  aria-hidden="true"
+                >
+                  <rect x="5" y="11" width="14" height="9" rx="2" />
+                  <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
+                </svg>
+                <span className="sr-only"> (Plus style)</span>
+              </>
+            )}
           </button>
         ))}
       </div>

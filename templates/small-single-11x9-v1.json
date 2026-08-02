@@ -1,6 +1,6 @@
 {
   "template_id": "small-single-11x9-v1",
-  "name": "Small Single — Bed and Desk Opposite",
+  "name": "Small Single: Bed and Desk Opposite",
   "description": "Single room: bed along the top wall, desk under the window on the right wall, dresser opposite the bed. Authored for an 11 x 8.8 ft room; assumes the door at the bottom of the left wall and the window on the right wall.",
   "room_constraints": {
     "min_length_ft": 10,

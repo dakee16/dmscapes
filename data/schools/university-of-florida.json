@@ -408,7 +408,8 @@
           "rate_2026_27_per_semester": 5614,
           "data_source": "https://housing.ufl.edu/cypress-hall/",
           "data_confidence": "low",
-          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed). Bedding note: beds here are Full XL (54\" x 80\"), not Twin XL, so the Twin XL sets in the shopping list will not fit; buy full-size (Full XL) bedding.",
+          "bed_size": "full_xl"
         },
         {
           "room_type": "suite_double",
@@ -450,7 +451,8 @@
           "rate_2026_27_per_semester": 5304,
           "data_source": "https://housing.ufl.edu/cypress-hall/",
           "data_confidence": "low",
-          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed). Bedding note: beds here are Full XL (54\" x 80\"), not Twin XL, so the Twin XL sets in the shopping list will not fit; buy full-size (Full XL) bedding.",
+          "bed_size": "full_xl"
         }
       ],
       "notes": "One of the newest residence halls on campus, Cypress Hall and offers universally designed single, double and super suite style rooms. Cypress hosts a limited number of rooms with SureHands Lift system for students with physical impairments and approved housing accommodations. Located on the east side of campus, Cypress Hall is near the Broward Dining Hall, the College of Education, and the College of the Arts."
@@ -1344,7 +1346,8 @@
           "rate_2026_27_per_semester": 4709,
           "data_source": "https://housing.ufl.edu/keys-residential-complex/",
           "data_confidence": "low",
-          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed)."
+          "notes": "UF publishes no dimensions for this room type. Occupancy inferred from the room-type name; furniture set from the housing FAQ (fully furnished, may not be removed). Bedding note: beds here are Full XL (54\" x 80\"), not Twin XL, so the Twin XL sets in the shopping list will not fit; buy full-size (Full XL) bedding.",
+          "bed_size": "full_xl"
         }
       ],
       "notes": "Keys Residential Complex is an ideal living option for students who love apartment style living. Located near athletic venues, Flavet Field, Gator Corner Dining, and fraternity row means you will always have somewhere to go or something to do. Each apartment is fully furnished with full-size beds, a couch in the living room, a kitchen with a stove, oven, refrigerator, and microwave."

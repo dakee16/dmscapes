@@ -1,0 +1,1142 @@
+{
+  "college_id": "university-of-alabama",
+  "college_name": "The University of Alabama",
+  "city": "Tuscaloosa",
+  "state": "AL",
+  "housing_url": "https://housing.sl.ua.edu/halls/",
+  "data_collected": "2026-07-18",
+  "campus_notes": "All 17 communities from housing.sl.ua.edu/halls. Alabama publishes 'Approx. room dimensions' per hall as W x L; normalized here so length is the longer side. IMPORTANT for bedding: bed sizes vary by hall and are often NOT Twin XL: standard twin 36x75 (Blount, Bryce Lawn, Burke, Parham East), extended twin 36x80 (most suite communities, Tutwiler, Paty, Parham West, John England Jr.), full-size XL 54x80 (Bryant, East Edge). Each hall page also publishes window and furniture dimensions. AC not explicitly stated per hall.",
+  "dorms": [
+    {
+      "dorm_id": "blount",
+      "dorm_name": "Blount Hall",
+      "hall_url": "https://housing.sl.ua.edu/halls/blount/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double_suite",
+          "room_type_official": "Double bedroom in 2-bedroom suite",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12.0,
+            "width_ft": 12.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/blount/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Two double bedrooms share a bathroom (four residents per unit).",
+          "bed_size": "twin"
+        }
+      ],
+      "notes": "Home primarily to the Blount Scholars Program and Honors College. Standard twin beds (36x75)."
+    },
+    {
+      "dorm_id": "bryant",
+      "dorm_name": "Bryant Hall",
+      "hall_url": "https://housing.sl.ua.edu/halls/bryant/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double_suite",
+          "room_type_official": "Double bedroom in 2- to 4-bedroom suite",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 13.0,
+            "width_ft": 9.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/bryant/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Living room, kitchenette, and bathrooms in each suite; 2-, 3-, and 4-bedroom configurations.",
+          "bed_size": "full_xl"
+        }
+      ],
+      "notes": "Home to student-athletes and freshman engineering students. Full-size XL beds (54x80)."
+    },
+    {
+      "dorm_id": "bryce-lawn",
+      "dorm_name": "Bryce Lawn",
+      "hall_url": "https://housing.sl.ua.edu/halls/bryce-lawn/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "apartment_bedroom",
+          "room_type_official": "Bedroom A or B in 3-bedroom apartment",
+          "occupants": null,
+          "dimensions": {
+            "length_ft": 10.0,
+            "width_ft": 8.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/bryce-lawn/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Occupancy per bedroom not published.",
+          "bed_size": "twin"
+        },
+        {
+          "room_type": "apartment_bedroom",
+          "room_type_official": "Bedroom C in 3-bedroom apartment",
+          "occupants": null,
+          "dimensions": {
+            "length_ft": 16.0,
+            "width_ft": 8.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/bryce-lawn/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Occupancy per bedroom not published.",
+          "bed_size": "twin"
+        }
+      ],
+      "notes": "3-bedroom, 1.5-bath apartments with private kitchen and washer/dryer. Standard twin beds (36x75)."
+    },
+    {
+      "dorm_id": "burke",
+      "dorm_name": "Burke Hall",
+      "hall_url": "https://housing.sl.ua.edu/halls/burke/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 15.83,
+            "width_ft": 10.17
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/burke/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Community bathrooms.",
+          "bed_size": "twin"
+        },
+        {
+          "room_type": "single",
+          "room_type_official": "Single Room (Burke West only)",
+          "occupants": 1,
+          "dimensions": {
+            "length_ft": 15.83,
+            "width_ft": 10.17
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/burke/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'.",
+          "bed_size": "twin"
+        },
+        {
+          "room_type": "double_suite",
+          "room_type_official": "Double bedroom in 2- or 3-bedroom suite",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 15.83,
+            "width_ft": 10.17
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/burke/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Suites available with or without a private bathroom.",
+          "bed_size": "twin"
+        }
+      ],
+      "notes": "Burke East and West; most rooms are double-occupancy with community bathrooms. Standard twin beds (36x75). Published dims 15'10\" x 10'2\"."
+    },
+    {
+      "dorm_id": "highlands",
+      "dorm_name": "The Highlands",
+      "hall_url": "https://housing.sl.ua.edu/halls/highlands/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "apartment_single",
+          "room_type_official": "Single bedroom (A or C)",
+          "occupants": 1,
+          "dimensions": {
+            "length_ft": 10.0,
+            "width_ft": 10.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/highlands/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'."
+        },
+        {
+          "room_type": "apartment_double",
+          "room_type_official": "Double bedroom (B)",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 14.0,
+            "width_ft": 10.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/highlands/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'."
+        }
+      ],
+      "notes": "Apartments with private kitchen: two single bedrooms plus one double bedroom (four residents). Extended twin beds (36x80)."
+    },
+    {
+      "dorm_id": "john-england-jr",
+      "dorm_name": "John England Jr. Hall",
+      "hall_url": "https://housing.sl.ua.edu/halls/john-england-jr/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double_private_bath",
+          "room_type_official": "Double room with private bathroom",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 26.42,
+            "width_ft": 10.5
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/john-england-jr/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Published dimensions span the full room (10'6\"W x 26'5\"L), shared only with your roommate."
+        }
+      ],
+      "notes": "Double-occupancy rooms with private bathrooms; convenience store on the 1st floor. Extended twin beds (36x80)."
+    },
+    {
+      "dorm_id": "julia-tutwiler-hall",
+      "dorm_name": "Julia Tutwiler Hall",
+      "hall_url": "https://housing.sl.ua.edu/halls/julia-tutwiler-hall/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double_private_bath",
+          "room_type_official": "Double room with private bathroom",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12.25,
+            "width_ft": 12.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/julia-tutwiler-hall/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. No singles or suites in this hall. Published dims 12' x 12'3\"."
+        }
+      ],
+      "notes": "Double-occupancy rooms with private bathrooms; Julia's Market on the first floor. Extended twin beds (36x80)."
+    },
+    {
+      "dorm_id": "lakeside",
+      "dorm_name": "Lakeside",
+      "hall_url": "https://housing.sl.ua.edu/halls/lakeside/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double_suite",
+          "room_type_official": "Double bedroom in 1-, 2-, or 4-bedroom suite",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 10.0,
+            "width_ft": 10.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/lakeside/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Living room, kitchenette, and private bathroom per suite; full refrigerator (compact in 1-bedroom suites)."
+        }
+      ],
+      "notes": "Suite community near Lakeside Dining. Extended twin beds (36x80)."
+    },
+    {
+      "dorm_id": "parham-east",
+      "dorm_name": "Parham East",
+      "hall_url": "https://housing.sl.ua.edu/halls/parham-east/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 15.83,
+            "width_ft": 10.17
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/parham-east/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Community bathrooms.",
+          "bed_size": "twin"
+        },
+        {
+          "room_type": "double_suite",
+          "room_type_official": "Double bedroom in 2- or 3-bedroom suite",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 15.83,
+            "width_ft": 10.17
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/parham-east/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Suites available with or without a private bathroom.",
+          "bed_size": "twin"
+        }
+      ],
+      "notes": "Mostly double-occupancy rooms with community bathrooms. Standard twin beds (36x75). Published dims 15'10\" x 10'2\"."
+    },
+    {
+      "dorm_id": "parham-west",
+      "dorm_name": "Parham West",
+      "hall_url": "https://housing.sl.ua.edu/halls/parham-west/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 15.83,
+            "width_ft": 10.58
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/parham-west/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Community bathrooms."
+        }
+      ],
+      "notes": "Double-occupancy rooms with community bathrooms; connects to Parham East on the 1st floor. Extended twin beds (36x80). Published dims 15'10\" x 10'7\"."
+    },
+    {
+      "dorm_id": "paty",
+      "dorm_name": "Paty Hall",
+      "hall_url": "https://housing.sl.ua.edu/halls/paty/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 17.42,
+            "width_ft": 10.67
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": {
+            "wall": null,
+            "position_from_left_ft": null,
+            "width_ft": 3.17,
+            "height_ft": 4.25
+          },
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/paty/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Community bathrooms."
+        },
+        {
+          "room_type": "single",
+          "room_type_official": "Single Room",
+          "occupants": 1,
+          "dimensions": {
+            "length_ft": 17.42,
+            "width_ft": 10.67
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": {
+            "wall": null,
+            "position_from_left_ft": null,
+            "width_ft": 3.17,
+            "height_ft": 4.25
+          },
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "research/University of Alabama/Screenshot 2026-07-22 at 10.49.27 AM.png (housing.sl.ua.edu/halls/paty/#floorplan)",
+          "data_confidence": "medium",
+          "notes": "Paty publishes a single hall-wide 'Approx. room dimensions' bedroom spec (17'5\"W x 10'8\"L); applied to the single tier as the same uniform room. Community bathrooms."
+        }
+      ],
+      "notes": "Double-occupancy rooms with community bathrooms; Raising Cane's on the 1st floor. Extended twin beds (36x80). Published dims 17'5\" x 10'8\"."
+    },
+    {
+      "dorm_id": "presidential-village-1",
+      "dorm_name": "Presidential Village 1",
+      "hall_url": "https://housing.sl.ua.edu/halls/presidential-village-1/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double_suite",
+          "room_type_official": "Double bedroom in 2- or 4-bedroom suite",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 13.0,
+            "width_ft": 9.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/presidential-village-1/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Living room, kitchenette, and bathrooms in each suite."
+        }
+      ],
+      "notes": "Suite community near Presidential Terrace. Extended twin beds (36x80)."
+    },
+    {
+      "dorm_id": "presidential-village-2",
+      "dorm_name": "Presidential Village 2",
+      "hall_url": "https://housing.sl.ua.edu/halls/presidential-village-2/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double_suite",
+          "room_type_official": "Double bedroom in 2- or 4-bedroom suite",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 13.0,
+            "width_ft": 9.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/presidential-village-2/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Living room, kitchenette, and bathrooms in each suite."
+        }
+      ],
+      "notes": "Suite community near Presidential Terrace. Extended twin beds (36x80)."
+    },
+    {
+      "dorm_id": "ridgecrest-east-and-west",
+      "dorm_name": "Ridgecrest East and West",
+      "hall_url": "https://housing.sl.ua.edu/halls/ridgecrest-east-and-west/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double_suite",
+          "room_type_official": "Double bedroom in 4-bedroom suite",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 10.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/ridgecrest-east-and-west/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Living room, kitchenette, and bathrooms in each suite."
+        }
+      ],
+      "notes": "Suite community. Extended twin beds (36x80)."
+    },
+    {
+      "dorm_id": "ridgecrest-south",
+      "dorm_name": "Ridgecrest South",
+      "hall_url": "https://housing.sl.ua.edu/halls/ridgecrest-south/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double_suite",
+          "room_type_official": "Double bedroom in 2- or 4-bedroom suite",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 9.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/ridgecrest-south/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Living room, kitchenette, and bathrooms in each suite."
+        }
+      ],
+      "notes": "Honors housing in North and South towers; Honors Connections LLC. Extended twin beds (36x80)."
+    },
+    {
+      "dorm_id": "riverside",
+      "dorm_name": "Riverside",
+      "hall_url": "https://housing.sl.ua.edu/halls/riverside/",
+      "air_conditioning": null,
+      "rooms": [
+        {
+          "room_type": "double_suite",
+          "room_type_official": "Double bedroom in 1-, 2-, or 4-bedroom suite",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 11.0,
+            "width_ft": 10.0
+          },
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true
+            }
+          ],
+          "floor_plan_url": null,
+          "data_source": "https://housing.sl.ua.edu/halls/riverside/",
+          "data_confidence": "high",
+          "notes": "Dimensions are the hall's published 'Approx. room dimensions'. Living room, kitchenette, and private bathroom per suite; full refrigerator (compact in 1-bedroom suites)."
+        }
+      ],
+      "notes": "Suite community along the river. Extended twin beds (36x80)."
+    }
+  ]
+}

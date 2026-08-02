@@ -1,6 +1,6 @@
 {
   "template_id": "long-double-17x10-v1",
-  "name": "Long Double — Beds Along One Wall",
+  "name": "Long Double: Beds Along One Wall",
   "description": "Longer, narrower room: both beds head-to-head along the top wall with a shared dresser between them, Desk A on the bottom wall and Desk B under the window. Authored for a 17 x 10.5 ft room; assumes the door at the bottom of the left wall and the window on the right wall.",
   "room_constraints": {
     "min_length_ft": 16,

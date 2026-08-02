@@ -1,0 +1,270 @@
+"use client";
+
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
+import { track, sessionId } from "@/lib/analytics";
+import { BUY_INTENT_EVENT, SURVEY_ID_KEY } from "@/lib/purchase-intent";
+import { usePlannerStore } from "@/lib/store";
+import { getBrowserClient } from "@/lib/supabase-browser";
+import PanelGrid from "@/components/site/PanelGrid";
+import type {
+  PurchaseSurveyRequest,
+  PurchaseSurveyResponse,
+  PurchaseSurveyResponseBody,
+} from "@/lib/api-types";
+
+const DONE_KEY = "dormscape-purchase-survey-done";
+/** Minimum time away (ms) before a return counts, filters accidental switches. */
+const AWAY_MS = 3500;
+
+/**
+ * Post-purchase confirmation. Arms on the first buy click of the session, then
+ * shows a one-time prompt when the user returns to the tab (after being away
+ * long enough to have actually visited Amazon). "Yes, all set" hands off to the
+ * /thank-you confirmation page; the two not-yet answers just close.
+ */
+export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
+  const router = useRouter();
+  const college = usePlannerStore((s) => s.college);
+  const dorm = usePlannerStore((s) => s.dorm);
+  const room = usePlannerStore((s) => s.room);
+  const style = usePlannerStore((s) => s.style);
+  const budget = usePlannerStore((s) => s.budget);
+
+  const [open, setOpen] = useState(false);
+
+  // Detection state kept in refs so listeners always see the latest without
+  // re-subscribing: armed = a buy click happened; leftAt = when the tab hid;
+  // done = already shown this session (never show twice).
+  const armedRef = useRef(false);
+  const leftAtRef = useRef<number | null>(null);
+  const doneRef = useRef(false);
+  const yesBtnRef = useRef<HTMLButtonElement>(null);
+
+  // Latest cart total / design for the survey payload, read at fire time.
+  const snapshotRef = useRef({ cartTotal, college, dorm, room, style, budget });
+  snapshotRef.current = { cartTotal, college, dorm, room, style, budget };
+
+  const postSurvey = useCallback(async (response: PurchaseSurveyResponse) => {
+    const s = snapshotRef.current;
+    const body: PurchaseSurveyRequest = {
+      session_id: sessionId(),
+      response,
+      saved_room_id: null,
+      room_snapshot: {
+        college_id: s.college?.id ?? null,
+        dorm_id: s.dorm?.id ?? null,
+        style: s.style ?? null,
+        budget: s.budget ?? null,
+        room_dimensions: s.room
+          ? {
+              length_ft: s.room.lengthFt,
+              width_ft: s.room.widthFt,
+              room_type: s.room.type,
+              occupants: s.room.occupants,
+            }
+          : null,
+      },
+      cart_total: Number.isFinite(s.cartTotal) ? s.cartTotal : null,
+    };
+    // Attribution: the API reads the signed-in user from this bearer token
+    // (never from the body, which would be spoofable).
+    const headers: Record<string, string> = { "Content-Type": "application/json" };
+    const token = (await getBrowserClient()?.auth.getSession())?.data.session?.access_token;
+    if (token) headers.Authorization = `Bearer ${token}`;
+    fetch("/api/purchase-surveys", {
+      method: "POST",
+      headers,
+      body: JSON.stringify(body),
+      keepalive: true,
+    })
+      .then((res) => (res.ok ? (res.json() as Promise<PurchaseSurveyResponseBody>) : null))
+      .then((data) => {
+        if (data?.id) window.sessionStorage.setItem(SURVEY_ID_KEY, data.id);
+      })
+      .catch(() => {});
+  }, []);
+
+  // Wire up detection once.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    doneRef.current = window.sessionStorage.getItem(DONE_KEY) === "1";
+
+    function reveal() {
+      if (doneRef.current) return;
+      doneRef.current = true;
+      window.sessionStorage.setItem(DONE_KEY, "1");
+      armedRef.current = false;
+      setOpen(true);
+      track("purchase_prompt_shown");
+    }
+
+    function maybeShow() {
+      if (doneRef.current || !armedRef.current) return;
+      const leftAt = leftAtRef.current;
+      if (leftAt === null || Date.now() - leftAt < AWAY_MS) return;
+      reveal();
+    }
+
+    function onBuyIntent() {
+      if (doneRef.current) return;
+      armedRef.current = true;
+    }
+
+    function onVisibility() {
+      if (document.visibilityState === "hidden") {
+        if (armedRef.current && !doneRef.current) leftAtRef.current = Date.now();
+      } else {
+        maybeShow();
+      }
+    }
+
+    window.addEventListener(BUY_INTENT_EVENT, onBuyIntent);
+    document.addEventListener("visibilitychange", onVisibility);
+    window.addEventListener("focus", maybeShow);
+    return () => {
+      window.removeEventListener(BUY_INTENT_EVENT, onBuyIntent);
+      document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("focus", maybeShow);
+    };
+  }, []);
+
+  // Focus the primary action when the prompt opens (parity with AuthModal).
+  useEffect(() => {
+    if (!open) return;
+    const t = setTimeout(() => yesBtnRef.current?.focus(), 60);
+    return () => clearTimeout(t);
+  }, [open]);
+
+  const close = useCallback(() => setOpen(false), []);
+
+  // Backdrop / Escape / X read as the neutral "still deciding".
+  const dismiss = useCallback(() => {
+    postSurvey("still_deciding");
+    track("purchase_prompt_still_deciding");
+    close();
+  }, [postSurvey, close]);
+
+  useEffect(() => {
+    if (!open) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") dismiss();
+    }
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open, dismiss]);
+
+  if (!open) return null;
+
+  function handleYes() {
+    postSurvey("yes");
+    track("purchase_prompt_yes");
+    close();
+    router.push("/thank-you");
+  }
+
+  function handleStillDeciding() {
+    postSurvey("still_deciding");
+    track("purchase_prompt_still_deciding");
+    close();
+  }
+
+  function handleNo() {
+    postSurvey("no");
+    track("purchase_prompt_no");
+    close();
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="purchase-survey-title"
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) dismiss();
+      }}
+    >
+      <div className="snap-in relative w-full max-w-xl overflow-hidden rounded-t-2xl border border-ink/10 bg-paper p-6 shadow-2xl sm:rounded-2xl sm:p-8">
+        {/* Graph-paper wash across the top, fading toward the middle, the same
+            grid the rest of the site is built on. */}
+        <div
+          aria-hidden
+          className="grid-paper pointer-events-none absolute inset-x-0 top-0 h-1/2"
+          style={{
+            WebkitMaskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 48%, transparent 100%)",
+            maskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 48%, transparent 100%)",
+          }}
+        />
+        <div className="relative z-10">
+          <div className="flex items-start justify-between gap-4">
+            <h2
+              id="purchase-survey-title"
+              className="font-display text-xl font-bold tracking-tight sm:text-2xl"
+            >
+              Did you grab <span className="hl">everything?</span>
+            </h2>
+            <button
+              type="button"
+              onClick={dismiss}
+              aria-label="Close"
+              className="grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-ink"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
+                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+              </svg>
+            </button>
+          </div>
+
+          <div className="mt-2">
+            <p className="text-sm leading-relaxed text-ink-soft">
+              You just headed to Amazon. Did everything you wanted make it into your cart?
+            </p>
+            {/* Cobalt action panel, a pocket-size echo of the home page CTA. */}
+            <div className="relative mt-6 overflow-hidden rounded-2xl bg-cobalt p-4 sm:p-5">
+              <PanelGrid />
+              <div className="relative">
+                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-highlight">
+                  {Number.isFinite(cartTotal) ? `The $${cartTotal.toFixed(0)} plan` : "The plan"}
+                </p>
+                <button
+                  ref={yesBtnRef}
+                  type="button"
+                  onClick={handleYes}
+                  className="mt-3 h-12 w-full cursor-pointer rounded-xl bg-white text-base font-semibold text-ink transition-colors hover:bg-highlight"
+                >
+                  Yes, all set
+                </button>
+              </div>
+            </div>
+            <div className="mt-3 space-y-2">
+              <button
+                type="button"
+                onClick={handleStillDeciding}
+                className="h-12 w-full cursor-pointer rounded-xl border border-ink/15 bg-white text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
+              >
+                Still deciding
+              </button>
+              <button
+                type="button"
+                onClick={handleNo}
+                className="block w-full cursor-pointer py-1 text-center text-sm text-ink-soft transition-colors hover:text-ink"
+              >
+                No, not yet
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
