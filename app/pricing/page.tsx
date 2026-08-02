@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import PremiumNotify from "@/components/site/PremiumNotify";
 import Room3DScene from "@/components/site/Room3DScene";
 import UpgradeButton from "@/components/site/UpgradeButton";
@@ -303,15 +303,8 @@ function PerkList({ perks, dotted = false }: { perks: { title: string; body: str
 export default function PricingPage() {
   return (
     <div>
-      <Nav />
-      {/* Negative top margin pulls the page up behind the sticky header, the
-          matching padding keeps content in place, so the graph-paper layer runs
-          continuously behind the floating header. */}
-      <main className="relative -mt-[72px] pt-[72px] sm:-mt-[84px] sm:pt-[84px]">
-        <div
-          className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[26rem]"
-          aria-hidden="true"
-        />
+      <SiteHeader gridClassName="h-[26rem]" />
+      <main className="relative">
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
           <div className="max-w-2xl">
             <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">

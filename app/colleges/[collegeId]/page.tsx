@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import { SCHOOLS, formatDims, getSchool } from "@/lib/schools";
 
 // SEO pages targeting "[College Name] dorm room layout" queries.
@@ -58,13 +58,9 @@ export default async function CollegePage(props: {
 
   return (
     <div>
-      <Nav />
+      <SiteHeader gridClassName="h-[26rem]" />
       <main>
         <section className="relative">
-          <div
-            className="grid-paper grid-paper-fade absolute inset-0 -z-10"
-            aria-hidden="true"
-          />
           <div className="mx-auto max-w-6xl px-5 pb-12 pt-14 sm:px-8 sm:pt-20">
             <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
               {[school.city, school.state].filter(Boolean).join(", ")}

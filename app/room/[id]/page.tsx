@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import OpenInPlanner from "@/components/room/OpenInPlanner";
 import StaticRoomView from "@/components/room/StaticRoomView";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
@@ -54,7 +54,7 @@ export default async function SharedRoomPage(props: {
 
   return (
     <div>
-      <Nav />
+      <SiteHeader />
       <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
         {/* CTA first: this page exists to convert viewers */}
         <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-cobalt p-6 sm:flex-row sm:items-center">

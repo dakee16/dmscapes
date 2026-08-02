@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import RoomThumb from "@/components/room/RoomThumb";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
@@ -167,7 +167,7 @@ export default function ComparePage() {
 
   return (
     <div>
-      <Nav />
+      <SiteHeader />
       <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
         <Link
           href="/account"

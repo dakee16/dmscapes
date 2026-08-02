@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import PostCard from "@/components/blog/PostCard";
 import { POSTS } from "@/content/blog";
 import { BLOG_BASE } from "@/lib/blog";
@@ -56,7 +56,7 @@ export default function BlogIndexPage() {
 
   return (
     <div>
-      <Nav />
+      <SiteHeader gridClassName="h-[24rem]" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -64,10 +64,6 @@ export default function BlogIndexPage() {
         }}
       />
       <main className="relative">
-        <div
-          className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[24rem]"
-          aria-hidden="true"
-        />
         <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             The Dormscape Blog

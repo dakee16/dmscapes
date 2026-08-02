@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { passwordMeetsPolicy } from "@/lib/password";
@@ -316,7 +316,7 @@ export default function AccountSettingsPage() {
 
   return (
     <div>
-      <Nav />
+      <SiteHeader />
       <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
         {!ready ? (
           <div aria-busy="true" aria-label="Loading your settings">

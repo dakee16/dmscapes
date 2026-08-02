@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import { getPost, allPostSlugs, POSTS } from "@/content/blog";
 import { articleJsonLd, formatBlogDate } from "@/lib/blog";
 
@@ -65,7 +65,7 @@ export default async function BlogPostPage(props: {
 
   return (
     <div>
-      <Nav />
+      <SiteHeader gridClassName="h-[22rem]" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -73,10 +73,6 @@ export default async function BlogPostPage(props: {
         }}
       />
       <main className="relative">
-        <div
-          className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[22rem]"
-          aria-hidden="true"
-        />
         <article className="mx-auto max-w-[50rem] px-5 py-12 sm:px-8 sm:py-16">
           <Link
             href="/blog"

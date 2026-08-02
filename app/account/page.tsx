@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import RoomThumb from "@/components/room/RoomThumb";
 import ShareButton from "@/components/room/ShareButton";
 import { useAuth } from "@/lib/auth-context";
@@ -175,7 +175,7 @@ export default function AccountPage() {
 
   return (
     <div>
-      <Nav />
+      <SiteHeader />
       <main className="mx-auto max-w-4xl px-5 py-10 sm:px-8">
         {!ready ? (
           <div aria-busy="true" aria-label="Loading your account">

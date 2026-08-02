@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import AddSchoolForm from "@/components/site/AddSchoolForm";
 
 export const metadata: Metadata = {
@@ -11,12 +11,8 @@ export const metadata: Metadata = {
 export default function AddSchoolPage() {
   return (
     <div>
-      <Nav />
-      <main className="relative min-h-[80vh]">
-        <div
-          className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[28rem]"
-          aria-hidden="true"
-        />
+      <SiteHeader gridClassName="h-[28rem]" />
+      <main className="min-h-[80vh]">
         <div className="mx-auto max-w-xl px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             Every campus, eventually

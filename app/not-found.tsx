@@ -1,16 +1,12 @@
 import Link from "next/link";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import Footer from "@/components/Footer";
 
 export default function NotFound() {
   return (
     <div>
-      <Nav />
-      <main className="relative min-h-[70vh]">
-        <div
-          className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[28rem]"
-          aria-hidden="true"
-        />
+      <SiteHeader gridClassName="h-[28rem]" />
+      <main className="min-h-[70vh]">
         <div className="mx-auto max-w-xl px-5 py-20 sm:px-8 sm:py-28">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             404: off the map

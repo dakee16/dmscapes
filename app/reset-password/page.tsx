@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import { getBrowserClient } from "@/lib/supabase-browser";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -117,7 +117,7 @@ export default function ResetPasswordPage() {
 
   return (
     <div>
-      <Nav />
+      <SiteHeader />
       <main className="mx-auto max-w-md px-5 py-16 sm:px-8">
         <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
           Reset password

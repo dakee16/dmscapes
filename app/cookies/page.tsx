@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 
 // Structural draft reflecting Dormscape's actual use of cookies and browser
 // storage (Supabase session, planner state, PostHog analytics) as of this
@@ -20,7 +20,7 @@ const TEXT_LINK =
 export default function CookiesPage() {
   return (
     <div>
-      <Nav />
+      <SiteHeader />
       <main>
         <div className="mx-auto max-w-[50rem] px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-ink-soft">

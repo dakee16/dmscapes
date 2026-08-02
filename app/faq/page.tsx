@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import { POSTS } from "@/content/blog";
 import { faqPageJsonLd } from "@/lib/blog";
 
@@ -48,21 +48,14 @@ export default function FAQPage() {
 
   return (
     <div>
-      <Nav />
+      <SiteHeader gridClassName="h-[24rem]" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      {/* Negative top margin pulls the page up behind the sticky header, the
-          matching padding keeps content in place, so the graph-paper layer runs
-          continuously behind the floating header. */}
-      <main className="relative -mt-[72px] pt-[72px] sm:-mt-[84px] sm:pt-[84px]">
-        <div
-          className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[24rem]"
-          aria-hidden="true"
-        />
+      <main className="relative">
         <div className="mx-auto max-w-[50rem] px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             Frequently asked questions

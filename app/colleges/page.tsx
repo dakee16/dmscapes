@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Nav from "@/components/Nav";
+import SiteHeader from "@/components/site/SiteHeader";
 import { SCHOOLS } from "@/lib/schools";
 
 export const metadata: Metadata = {
@@ -12,12 +12,8 @@ export const metadata: Metadata = {
 export default function CollegesPage() {
   return (
     <div>
-      <Nav />
-      <main className="relative">
-        <div
-          className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[28rem]"
-          aria-hidden="true"
-        />
+      <SiteHeader gridClassName="h-[28rem]" />
+      <main>
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             {SCHOOLS.length} schools preloaded

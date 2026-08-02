@@ -14,7 +14,7 @@ import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, RECHARGE_CREDITS } f
 const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   "plan-credits": {
     title: "You're out of plan credits",
-    body: "You've used your Plus plan credits. Add more to keep designing new rooms, or go Pro for unlimited. Your saves, exports, and comparisons stay right where they are.",
+    body: "You've used your Plus plan credits. Recharge to keep designing new rooms, or go Pro for unlimited. Your saved designs, exports, and comparisons stay right where they are.",
   },
   "save-credits": {
     title: "You're out of save credits",
@@ -22,7 +22,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   },
   "free-plan-limit": {
     title: "That's your free room plan",
-    body: "Free includes one room plan. Upgrade to Plus for 5 more (and 5 saves), or Pro for unlimited plans and saves, plus every vibe and premium tool.",
+    body: "Free includes one room plan. Upgrade to Plus for 5 more, or Pro for unlimited room plans, plus every vibe and premium tool. Saving your designs is always free.",
   },
   "free-save-limit": {
     title: "That's your free saved design",
@@ -55,7 +55,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
 };
 
 const PERKS = [
-  "5 plan credits and 5 saves",
+  "5 plan credits (saving is always free)",
   "All 9 vibes unlocked",
   "PDF and PNG export",
   "Compare two designs side by side",
@@ -146,7 +146,7 @@ export default function UpgradeModal() {
         if (e.target === e.currentTarget) closeUpgrade();
       }}
     >
-      <div className="snap-in w-full max-w-md rounded-t-2xl border border-ink/10 bg-paper p-6 shadow-2xl sm:rounded-2xl sm:p-7">
+      <div className="snap-in w-full max-w-lg rounded-t-3xl border border-ink/10 bg-paper p-7 shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)] sm:rounded-3xl sm:p-9">
         <div className="flex items-start justify-between gap-4">
           <Badge />
           <CloseButton onClick={closeUpgrade} />
@@ -154,34 +154,36 @@ export default function UpgradeModal() {
 
         <h2
           id="upgrade-modal-title"
-          className="mt-4 font-display text-2xl font-extrabold tracking-tight"
+          className="mt-5 font-display text-[1.75rem] font-extrabold leading-[1.12] tracking-tight sm:text-3xl"
         >
           {copy.title}
         </h2>
-        <p className="mt-2 text-sm leading-relaxed text-ink-soft">{copy.body}</p>
+        <p className="mt-3 text-[15px] leading-relaxed text-ink-soft sm:text-base">
+          {copy.body}
+        </p>
 
         {isRecharge ? (
           // Out of a counter: a Plus member chooses between a recharge and Pro.
           <>
-            <div className="mt-5 space-y-2.5">
+            <div className="mt-6 space-y-3">
               <button
                 ref={rechargeRef}
                 type="button"
                 onClick={() => buy("recharge")}
                 disabled={busy !== null}
-                className="flex w-full cursor-pointer items-center justify-between gap-3 rounded-xl border border-cobalt bg-cobalt px-4 py-3.5 text-left text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
+                className="flex w-full cursor-pointer items-center justify-between gap-3 rounded-2xl border border-cobalt bg-cobalt px-5 py-4 text-left text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
               >
                 <span>
-                  <span className="block text-[15px] font-semibold leading-snug">
+                  <span className="block text-base font-semibold leading-snug">
                     {busy === "recharge"
                       ? "Starting checkout…"
-                      : `Recharge ${RECHARGE_CREDITS} plans + ${RECHARGE_CREDITS} saves`}
+                      : `Recharge ${RECHARGE_CREDITS} plan credits`}
                   </span>
-                  <span className="mt-0.5 block text-[13px] leading-snug text-white/80">
-                    Tops up both counters at once.
+                  <span className="mt-1 block text-sm leading-snug text-white/85">
+                    Five more rooms to design, added on.
                   </span>
                 </span>
-                <span className="shrink-0 font-mono text-sm font-semibold">
+                <span className="shrink-0 font-mono text-base font-semibold">
                   ${RECHARGE_PRICE_USD.toFixed(2)}
                 </span>
               </button>
@@ -190,17 +192,17 @@ export default function UpgradeModal() {
                 type="button"
                 onClick={() => buy("pro")}
                 disabled={busy !== null}
-                className="flex w-full cursor-pointer items-center justify-between gap-3 rounded-xl border border-ink/15 bg-white px-4 py-3.5 text-left text-ink transition-colors hover:border-cobalt disabled:cursor-wait disabled:opacity-70"
+                className="flex w-full cursor-pointer items-center justify-between gap-3 rounded-2xl border border-ink/15 bg-white px-5 py-4 text-left text-ink transition-colors hover:border-cobalt disabled:cursor-wait disabled:opacity-70"
               >
                 <span>
-                  <span className="block text-[15px] font-semibold leading-snug">
+                  <span className="block text-base font-semibold leading-snug">
                     {busy === "pro" ? "Starting checkout…" : "Go Pro, unlimited"}
                   </span>
-                  <span className="mt-0.5 block text-[13px] leading-snug text-ink-soft">
-                    Unlimited plans and saves, no counters.
+                  <span className="mt-1 block text-sm leading-snug text-ink-soft">
+                    Unlimited room plans, no counters, ever.
                   </span>
                 </span>
-                <span className="shrink-0 font-mono text-sm font-semibold">
+                <span className="shrink-0 font-mono text-base font-semibold">
                   ${PRO_PRICE_USD.toFixed(2)}
                 </span>
               </button>
@@ -222,9 +224,9 @@ export default function UpgradeModal() {
           // Free-user gate: show the shared value block and point to Pricing,
           // where the Plus / Pro choice is laid out clearly.
           <>
-            <ul className="mt-5 space-y-2.5">
+            <ul className="mt-6 space-y-3">
               {PERKS.map((perk) => (
-                <li key={perk} className="flex items-center gap-2.5 text-[15px] text-ink">
+                <li key={perk} className="flex items-center gap-2.5 text-base text-ink">
                   <span
                     className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-highlight text-ink"
                     aria-hidden="true"
@@ -238,8 +240,8 @@ export default function UpgradeModal() {
               ))}
             </ul>
 
-            <div className="mt-6 flex items-baseline gap-2">
-              <span className="font-display text-3xl font-extrabold tracking-tight">
+            <div className="mt-7 flex items-baseline gap-2.5">
+              <span className="font-display text-4xl font-extrabold tracking-tight">
                 ${PLUS_PRICE_USD.toFixed(2)}
               </span>
               <span className="text-sm text-ink-soft">
@@ -254,9 +256,9 @@ export default function UpgradeModal() {
                 track("upgrade_cta_clicked", { reason });
                 closeUpgrade();
               }}
-              className="mt-5 flex h-12 w-full items-center justify-center rounded-xl bg-ink text-base font-semibold text-white transition-colors hover:bg-cobalt"
+              className="mt-6 flex h-13 w-full items-center justify-center rounded-2xl bg-ink text-base font-semibold text-white transition-colors hover:bg-cobalt"
             >
-              See plans
+              Upgrade
             </Link>
             <button
               type="button"

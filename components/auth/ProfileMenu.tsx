@@ -45,8 +45,8 @@ function Chevron({ open }: { open: boolean }) {
 }
 
 /**
- * Shared far-right header profile control, used by both the main site header
- * (Nav) and the planner header (PlannerHeader). Logged out: a highlighted
+ * Far-right header profile control, part of the shared site header (Nav), which
+ * now renders on every page including the planner flow. Logged out: a highlighted
  * "Log in" pill that opens the shared auth modal. Logged in: an avatar +
  * @username + chevron that toggles a dropdown (Account / Saved designs /
  * Log out). Replaced the old AuthPill + ProfileButton controls. Closes on
