@@ -9,8 +9,7 @@ import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD } from "@/lib/plan";
 
 // Real, honest social proof: counts derived straight from the shipped data, so
 // they can never drift from what we actually support. No fabricated reviews or
-// ratings. SCHOOL_COUNT matches the "16 schools" already cited on the homepage.
-const SCHOOL_COUNT = SCHOOLS.length;
+// ratings. The floored layout count is the headline stat cited across the site.
 const ROOM_LAYOUTS = SCHOOLS.reduce(
   (n, s) => n + s.dorms.reduce((m, d) => m + d.rooms.length, 0),
   0
@@ -214,8 +213,6 @@ function TrustStrip() {
       icon: <BuildingIcon />,
       label: (
         <>
-          <span className="font-semibold text-ink">{SCHOOL_COUNT} schools</span>
-          {", "}
           <span className="font-semibold text-ink">
             {ROOM_LAYOUTS_FLOOR.toLocaleString()}+
           </span>{" "}
@@ -306,7 +303,10 @@ export default function PricingPage() {
   return (
     <div>
       <Nav />
-      <main className="relative">
+      {/* Negative top margin pulls the page up behind the sticky header, the
+          matching padding keeps content in place, so the graph-paper layer runs
+          continuously behind the floating header. */}
+      <main className="relative -mt-[72px] pt-[72px] sm:-mt-[84px] sm:pt-[84px]">
         <div
           className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[26rem]"
           aria-hidden="true"
@@ -320,13 +320,7 @@ export default function PricingPage() {
               Free to plan. <span className="hl">Pay once to go further.</span>
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              The planner is free to try, no trial timer and no card: free covers
-              one room plan and one save. When you want more, or the locked vibes
-              and the export, comparison, and priority tools, Plus is a one-time{" "}
-              <span className="font-semibold text-ink">${PLUS_PRICE_USD.toFixed(2)}</span>{" "}
-              for 5 plans and 5 saves, and Pro is{" "}
-              <span className="font-semibold text-ink">${PRO_PRICE_USD.toFixed(2)}</span>{" "}
-              for unlimited. No subscriptions, ever.
+              The planner is free to try. No trial timer, no card.
             </p>
           </div>
 

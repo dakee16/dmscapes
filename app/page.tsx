@@ -16,8 +16,11 @@ export default function Home() {
     <div id="top">
       <Nav />
       <main>
-        {/* Hero */}
-        <section className="relative overflow-hidden">
+        {/* Hero. The negative top margin pulls the section up behind the sticky
+            header while the matching top padding keeps the content in place, so
+            the graph-paper layer (inset-0) runs continuously behind and above
+            the floating header instead of stopping below it. */}
+        <section className="relative -mt-[72px] overflow-hidden pt-[72px] sm:-mt-[84px] sm:pt-[84px]">
           <div className="grid-paper grid-paper-fade absolute inset-0 -z-10" aria-hidden="true">
             <CursorGrid />
           </div>
@@ -72,7 +75,7 @@ export default function Home() {
                 className="rise mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-wide text-ink-soft"
                 style={{ animationDelay: "320ms" }}
               >
-                <li>16 schools preloaded, more weekly</li>
+                <li>1,000+ dorm layouts</li>
                 <li>$200-$1,500 budgets</li>
                 <li>Live Amazon links</li>
               </ul>

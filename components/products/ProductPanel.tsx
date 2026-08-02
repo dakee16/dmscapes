@@ -22,9 +22,12 @@ const CATEGORY_TO_FURNITURE_TYPE: Partial<Record<ProductCategory, string>> = {
 export default function ProductPanel({
   products,
   bedSize,
+  onRemove,
 }: {
   products: Product[];
   bedSize?: BedSize;
+  /** Move a category out of the cart and into the "Things to add" panel. */
+  onRemove?: (category: ProductCategory) => void;
 }) {
   const [swapTarget, setSwapTarget] = useState<Product | null>(null);
   const advisory = beddingAdvisory(bedSize);
@@ -67,9 +70,11 @@ export default function ProductPanel({
 
   if (products.length === 0) {
     return (
-      <div className="rounded-xl border border-ink/10 bg-white p-6 text-center">
+      <div className="rounded-xl border border-dashed border-ink/20 bg-white p-6 text-center">
         <p className="text-sm text-ink-soft">
-          No products found for this style and budget. Try nudging the budget slider.
+          Your list is empty. Add pieces from{" "}
+          <span className="font-semibold text-ink">Things to add</span> below to
+          build your room.
         </p>
       </div>
     );
@@ -97,7 +102,12 @@ export default function ProductPanel({
           >
             {CATEGORY_LABELS[p.category] ?? p.category}
           </p>
-          <ProductCard product={p} onSwapClick={setSwapTarget} active={isActive} />
+          <ProductCard
+            product={p}
+            onSwapClick={setSwapTarget}
+            onRemove={onRemove ? () => onRemove(p.category) : undefined}
+            active={isActive}
+          />
           {p.category === "bedding" && advisory && (
             <div
               className={`mt-1.5 flex gap-2 rounded-lg border px-3 py-2.5 text-xs leading-relaxed ${

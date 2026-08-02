@@ -30,6 +30,22 @@ export default function Schools() {
           Floor plans and dimensions sourced from official housing documents.
           A few of them:
         </p>
+        <Link
+          href="/colleges"
+          className="group mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-cobalt transition-colors hover:text-cobalt-deep"
+        >
+          See all supported schools
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+            aria-hidden="true"
+          >
+            <path d="M5 12h14m0 0l-5-5m5 5l-5 5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </Link>
       </Reveal>
 
       <Reveal>

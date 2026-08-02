@@ -44,7 +44,10 @@ export type AnalyticsEvent =
   | "plus_welcome_dismissed"
   | "plan_credit_consumed"
   | "plan_blocked_no_credits"
-  | "save_blocked_no_credits";
+  | "save_blocked_no_credits"
+  | "cart_item_added"
+  | "cart_item_removed"
+  | "cart_add_over_budget_confirmed";
 
 let initialized = false;
 

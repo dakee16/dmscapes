@@ -55,7 +55,10 @@ export default function FAQPage() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <main className="relative">
+      {/* Negative top margin pulls the page up behind the sticky header, the
+          matching padding keeps content in place, so the graph-paper layer runs
+          continuously behind the floating header. */}
+      <main className="relative -mt-[72px] pt-[72px] sm:-mt-[84px] sm:pt-[84px]">
         <div
           className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[24rem]"
           aria-hidden="true"

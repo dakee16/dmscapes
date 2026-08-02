@@ -11,7 +11,7 @@ import {
 import { Stage, Layer, Group, Rect, Line, Arc, Text } from "react-konva";
 import Konva from "konva";
 import type { KonvaEventObject } from "konva/lib/Node";
-import type { FurnitureItem } from "@/lib/types";
+import type { FurnitureItem, ProductCategory } from "@/lib/types";
 import { CATEGORY_COLORS } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
@@ -40,6 +40,13 @@ interface RoomCanvasProps {
    * list to cross-reference; single-item selection for rotating still works.
    */
   crossHighlight?: boolean;
+  /**
+   * Product categories parked in the "Things to add" panel. Their purchasable
+   * canvas pieces are hidden until moved back into the cart; built-in pieces
+   * (bed, desk) are never hidden. Positions are retained, so a piece reappears
+   * exactly where it was when added back.
+   */
+  hiddenCategories?: ProductCategory[];
 }
 
 const PAD = 28;
@@ -146,6 +153,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     onReset,
     readOnly = false,
     crossHighlight = true,
+    hiddenCategories,
   },
   ref
 ) {
@@ -234,6 +242,20 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     const rank = { rug: 0, solid: 1, wall: 2 } as const;
     return [...furniture].sort((a, b) => rank[layerOf(a)] - rank[layerOf(b)]);
   }, [furniture]);
+
+  // Purchasable pieces whose category was moved to "Things to add" are hidden
+  // from the canvas (built-ins always render). Layout positions are untouched,
+  // so moving a piece back re-renders it in the same spot.
+  const hiddenSet = useMemo(() => new Set(hiddenCategories ?? []), [hiddenCategories]);
+  const visible = useMemo(
+    () =>
+      ordered.filter((f) => {
+        if (!f.product_category) return true;
+        const cat = furnitureCategory(f);
+        return !(cat && hiddenSet.has(cat));
+      }),
+    [ordered, hiddenSet]
+  );
 
   function applyZoom(next: number) {
     const z = clamp(next, MIN_ZOOM, MAX_ZOOM);
@@ -443,7 +465,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
             )}
 
             {/* Furniture */}
-            {ordered.map((f) => {
+            {visible.map((f) => {
               const fp = footprint(f);
               const w = fp.w * pxFt;
               const h = fp.h * pxFt;

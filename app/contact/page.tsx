@@ -12,7 +12,10 @@ export default function ContactPage() {
   return (
     <div>
       <Nav />
-      <main className="relative">
+      {/* Negative top margin pulls the page up behind the sticky header, the
+          matching padding keeps content in place, so the graph-paper layer runs
+          continuously behind the floating header. */}
+      <main className="relative -mt-[72px] pt-[72px] sm:-mt-[84px] sm:pt-[84px]">
         <div
           className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[28rem]"
           aria-hidden="true"

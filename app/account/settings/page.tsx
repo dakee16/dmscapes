@@ -6,6 +6,8 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
+import { passwordMeetsPolicy } from "@/lib/password";
+import PasswordChecklist from "@/components/auth/PasswordChecklist";
 import type { UsernameCheckResponse } from "@/lib/api-types";
 
 const USERNAME_RE = /^[A-Za-z0-9._]{3,20}$/;
@@ -230,8 +232,11 @@ export default function AccountSettingsPage() {
     e.preventDefault();
     const supabase = getBrowserClient();
     if (!supabase || !user?.email || savingPw) return;
-    if (newPw.length < 6) {
-      setPwMsg({ tone: "bad", text: "New password needs at least 6 characters." });
+    if (!passwordMeetsPolicy(newPw)) {
+      setPwMsg({
+        tone: "bad",
+        text: "New password needs 8 to 12 characters, an uppercase letter, and a special character.",
+      });
       return;
     }
     if (newPw !== confirmPw) {
@@ -509,9 +514,10 @@ export default function AccountSettingsPage() {
                         setNewPw(e.target.value);
                         setPwMsg(null);
                       }}
-                      placeholder="6+ characters"
+                      placeholder="8 to 12 characters"
                       className={INPUT}
                     />
+                    <PasswordChecklist password={newPw} />
                   </div>
                   <div>
                     <label htmlFor="set-confirmpw" className={LABEL}>

@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
+import { passwordMeetsPolicy } from "@/lib/password";
+import PasswordChecklist from "@/components/auth/PasswordChecklist";
 import type { UsernameCheckResponse } from "@/lib/api-types";
 
 type Mode = "login" | "signup";
@@ -176,7 +178,16 @@ export default function AuthModal() {
       setError("That email doesn't look right.");
       return;
     }
-    if (password.length < 6) {
+    // New passwords (signup) must satisfy the full policy; logging in only needs
+    // whatever the existing account was created with.
+    if (mode === "signup") {
+      if (!passwordMeetsPolicy(password)) {
+        setError(
+          "Password needs 8 to 12 characters, an uppercase letter, and a special character."
+        );
+        return;
+      }
+    } else if (password.length < 6) {
       setError("Password needs at least 6 characters.");
       return;
     }
@@ -575,9 +586,10 @@ export default function AuthModal() {
                   autoComplete={mode === "signup" ? "new-password" : "current-password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder={mode === "signup" ? "6+ characters" : "Your password"}
+                  placeholder={mode === "signup" ? "8 to 12 characters" : "Your password"}
                   className="h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
                 />
+                {mode === "signup" && <PasswordChecklist password={password} />}
               </div>
               {error && (
                 <p className="text-sm text-[#c2321e]" role="alert">

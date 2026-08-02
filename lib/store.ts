@@ -18,6 +18,12 @@ export interface PlannerState {
   furniture: FurnitureItem[] | null;
   /** Product overrides from the swap modal: category -> product id. */
   swaps: Partial<Record<ProductCategory, string>>;
+  /**
+   * Categories currently parked in the "Things to add" panel (not in the active
+   * cart). `null` until the result page seeds it from the budget-aware split.
+   * Kept as a list of categories (not products) so it survives swaps.
+   */
+  excluded: ProductCategory[] | null;
 
   // Result-page cross-highlighting (transient UI, not persisted). Both the
   // canvas and the product list read/write these so either can light the other.
@@ -39,6 +45,10 @@ export interface PlannerState {
   /** Restore template defaults (pass the template's original furniture). */
   resetLayout: (furniture: FurnitureItem[]) => void;
   swapProduct: (category: ProductCategory, productId: string) => void;
+  /** Seed the "Things to add" split (called once by the result page). */
+  setExcluded: (categories: ProductCategory[]) => void;
+  /** Move a category between the cart and the "Things to add" panel. */
+  toggleExcluded: (category: ProductCategory) => void;
   /** Update a furniture item's footprint (e.g. swapped rug with new dims). */
   resizeItem: (id: string, widthFt: number, lengthFt: number) => void;
   /** Rotate an item a quarter turn about its center (1 = CW, -1 = CCW). */
@@ -62,6 +72,7 @@ const initial = {
   templateId: null,
   furniture: null,
   swaps: {},
+  excluded: null,
   hoveredCategory: null,
   selectedCategory: null,
   selectedItemId: null,
@@ -73,9 +84,9 @@ export const usePlannerStore = create<PlannerState>()(
       ...initial,
       setCollege: (college) => set({ college, dorm: null, room: null }),
       setDorm: (dorm) => set({ dorm, room: null }),
-      setRoom: (room) => set({ room, templateId: null, furniture: null }),
-      setStyle: (style) => set({ style, swaps: {} }),
-      setBudget: (budget) => set({ budget, swaps: {} }),
+      setRoom: (room) => set({ room, templateId: null, furniture: null, excluded: null }),
+      setStyle: (style) => set({ style, swaps: {}, excluded: null }),
+      setBudget: (budget) => set({ budget, swaps: {}, excluded: null }),
       initLayout: (templateId, furniture) =>
         set({ templateId, furniture: furniture.map((f) => ({ ...f })) }),
       moveItem: (id, xFt, yFt) =>
@@ -86,6 +97,16 @@ export const usePlannerStore = create<PlannerState>()(
       resetLayout: (furniture) => set({ furniture: furniture.map((f) => ({ ...f })) }),
       swapProduct: (category, productId) =>
         set((s) => ({ swaps: { ...s.swaps, [category]: productId } })),
+      setExcluded: (categories) => set({ excluded: [...categories] }),
+      toggleExcluded: (category) =>
+        set((s) => {
+          const current = s.excluded ?? [];
+          return {
+            excluded: current.includes(category)
+              ? current.filter((c) => c !== category)
+              : [...current, category],
+          };
+        }),
       resizeItem: (id, widthFt, lengthFt) =>
         set((s) => ({
           furniture:
@@ -148,6 +169,7 @@ export const usePlannerStore = create<PlannerState>()(
         templateId: s.templateId,
         furniture: s.furniture,
         swaps: s.swaps,
+        excluded: s.excluded,
       }),
     }
   )

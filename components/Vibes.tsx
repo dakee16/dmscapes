@@ -2,63 +2,63 @@ import Reveal from "@/components/site/Reveal";
 import StyleScene from "@/components/site/StyleScene";
 import type { StyleId } from "@/lib/types";
 
-const VIBES: { id: StyleId; name: string; line: string; from: number; plus?: boolean }[] = [
+const VIBES: { id: StyleId; name: string; line: string; who: string; plus?: boolean }[] = [
   {
     id: "minimalist",
     name: "Minimalist",
     line: "Clean lines, empty desk, nothing you don't need.",
-    from: 240,
+    who: "For the clean-desk devotee",
   },
   {
     id: "cozy",
     name: "Cozy Aesthetic",
     line: "Warm light, soft layers, film photos on string.",
-    from: 310,
+    who: "For the incurable homebody",
   },
   {
     id: "preppy",
     name: "Preppy",
     line: "Stripes, monograms, made-bed energy.",
-    from: 350,
+    who: "For the always put together",
   },
   {
     id: "academia",
     name: "Academia",
     line: "Warm library light, plaid, brass, and old books.",
-    from: 320,
+    who: "For the library romantic",
   },
   {
     id: "y2k",
     name: "Y2K Cyber",
     line: "Chrome, holo posters, butterfly-clip everything.",
-    from: 300,
+    who: "For the nostalgia maximalist",
   },
   {
     id: "gamer",
     name: "Gamer",
     line: "Dual glow, clean cable runs, zero screen glare.",
-    from: 420,
+    who: "For the gamer who still wants it to look good",
     plus: true,
   },
   {
     id: "team_spirit",
     name: "Team Spirit",
     line: "Varsity stripes, color-block, game-day ready.",
-    from: 300,
+    who: "For the diehard superfan",
     plus: true,
   },
   {
     id: "retro",
     name: "Retro",
     line: "Mustard and rust, groovy shapes, 70s warmth.",
-    from: 310,
+    who: "For the born-in-the-wrong-decade type",
     plus: true,
   },
   {
     id: "pastel",
     name: "Pastel",
     line: "Soft pinks, plush everything, gently unserious.",
-    from: 290,
+    who: "For the soft-serve dreamer",
     plus: true,
   },
 ];
@@ -104,7 +104,7 @@ export default function Vibes() {
                 <h3 className="font-display text-base font-bold">{vibe.name}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{vibe.line}</p>
                 <p className="mt-3 font-mono text-xs font-medium text-cobalt">
-                  from ${vibe.from}
+                  {vibe.who}
                 </p>
               </div>
             </article>

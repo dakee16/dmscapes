@@ -19,11 +19,14 @@ import type { RoomCanvasHandle } from "@/components/canvas/RoomCanvas";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import BudgetTracker from "@/components/products/BudgetTracker";
 import ProductPanel from "@/components/products/ProductPanel";
+import ThingsToAddPanel from "@/components/products/ThingsToAddPanel";
+import AddOverBudgetModal from "@/components/products/AddOverBudgetModal";
 import ActionBar from "@/components/products/ActionBar";
 import BuyAllButton from "@/components/products/BuyAllButton";
 import PurchaseSurvey from "@/components/products/PurchaseSurvey";
 import SavePrompt from "@/components/planner/SavePrompt";
 import { BuyGateProvider } from "@/lib/buy-gate";
+import type { Product, ProductCategory } from "@/lib/types";
 
 // react-konva can't render on the server, so load the canvas client-side only.
 const RoomCanvas = dynamic(() => import("@/components/canvas/RoomCanvas"), {
@@ -54,6 +57,9 @@ export default function ResultPage() {
   const [hydrated, setHydrated] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
   const [viewportH, setViewportH] = useState(0);
+  // Piece whose "+" would push the cart over budget: held here until the user
+  // confirms or backs out of AddOverBudgetModal.
+  const [pendingAdd, setPendingAdd] = useState<Product | null>(null);
   const trackedRef = useRef(false);
 
   const college = usePlannerStore((s) => s.college);
@@ -64,6 +70,9 @@ export default function ResultPage() {
   const templateId = usePlannerStore((s) => s.templateId);
   const furniture = usePlannerStore((s) => s.furniture);
   const swaps = usePlannerStore((s) => s.swaps);
+  const excluded = usePlannerStore((s) => s.excluded);
+  const setExcluded = usePlannerStore((s) => s.setExcluded);
+  const toggleExcluded = usePlannerStore((s) => s.toggleExcluded);
   const initLayout = usePlannerStore((s) => s.initLayout);
   const moveItem = usePlannerStore((s) => s.moveItem);
   const rotateItem = usePlannerStore((s) => s.rotateItem);
@@ -157,12 +166,60 @@ export default function ResultPage() {
     });
   }, [style, budget, swaps, room?.bedSize]);
 
+  // Seed the cart / "Things to add" split once per plan: walk the auto-list in
+  // priority order, keeping pieces while they fit the budget and parking the
+  // overflow. Resets to null (re-seeds) whenever the style, budget, or room
+  // changes; the user's manual add/remove is preserved otherwise.
+  useEffect(() => {
+    if (!hydrated || excluded !== null || products.length === 0) return;
+    let remaining = budget;
+    const overflow: ProductCategory[] = [];
+    for (const p of products) {
+      if (p.price <= remaining) remaining -= p.price;
+      else overflow.push(p.category);
+    }
+    setExcluded(overflow);
+  }, [hydrated, excluded, products, budget, setExcluded]);
+
+  const cartProducts = useMemo(
+    () => products.filter((p) => !(excluded ?? []).includes(p.category)),
+    [products, excluded]
+  );
+  const availableProducts = useMemo(
+    () => products.filter((p) => (excluded ?? []).includes(p.category)),
+    [products, excluded]
+  );
+
   if (!hydrated || !room || !style || !furniture || !templateId) {
     return <Skeleton />;
   }
 
   const dims = formatDims(room.lengthFt, room.widthFt);
-  const total = totalFor(products);
+  const total = totalFor(cartProducts);
+
+  // Remove is always immediate; adding is immediate when it stays within budget,
+  // and otherwise routes through the confirmation modal.
+  function handleRemove(category: ProductCategory) {
+    toggleExcluded(category);
+    track("cart_item_removed", { category });
+  }
+
+  function handleAdd(product: Product) {
+    if (total + product.price <= budget) {
+      toggleExcluded(product.category);
+      track("cart_item_added", { category: product.category });
+    } else {
+      setPendingAdd(product);
+    }
+  }
+
+  function confirmAdd() {
+    if (!pendingAdd) return;
+    toggleExcluded(pendingAdd.category);
+    track("cart_item_added", { category: pendingAdd.category });
+    track("cart_add_over_budget_confirmed", { category: pendingAdd.category });
+    setPendingAdd(null);
+  }
 
   // One canvas element, mounted either inline or in the fullscreen overlay.
   // crossHighlight is off in fullscreen (no product list to light up).
@@ -173,6 +230,7 @@ export default function ResultPage() {
       roomW={room.widthFt}
       templateId={templateId}
       furniture={furniture}
+      hiddenCategories={excluded ?? []}
       crossHighlight={!fullscreen}
       onMove={(id, x, y) => {
         moveItem(id, x, y);
@@ -267,17 +325,26 @@ export default function ResultPage() {
         <BuyGateProvider>
           <section className="rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
             <BudgetTracker total={total} budget={budget} />
-            {/* Prominent "Buy all", always visible above the first category, in
-                sync with the tracker above (same product total). */}
-            <BuyAllButton products={products} total={total} />
+            {/* Prominent "Buy all", in sync with the tracker above (same cart
+                total). Hidden when the cart is empty. */}
+            {cartProducts.length > 0 && (
+              <BuyAllButton products={cartProducts} total={total} />
+            )}
             <div className="lg:max-h-[68vh] lg:overflow-y-auto lg:pr-1">
-              <ProductPanel products={products} bedSize={room.bedSize} />
+              <ProductPanel
+                products={cartProducts}
+                bedSize={room.bedSize}
+                onRemove={handleRemove}
+              />
             </div>
+            {/* Budget-aware companion: pieces trimmed from the auto-list or
+                removed by hand, each with a "+" to move it back into the cart. */}
+            <ThingsToAddPanel items={availableProducts} onAdd={handleAdd} />
           </section>
         </BuyGateProvider>
       </div>
 
-      <ActionBar products={products} getPng={() => canvasRef.current?.exportPNG() ?? null} />
+      <ActionBar products={cartProducts} getPng={() => canvasRef.current?.exportPNG() ?? null} />
       <PurchaseSurvey cartTotal={total} />
       <SavePrompt />
 
@@ -320,6 +387,16 @@ export default function ResultPage() {
             </div>
           </div>
         </div>
+      )}
+
+      {pendingAdd && (
+        <AddOverBudgetModal
+          product={pendingAdd}
+          budget={budget}
+          newTotal={total + pendingAdd.price}
+          onConfirm={confirmAdd}
+          onCancel={() => setPendingAdd(null)}
+        />
       )}
     </div>
   );

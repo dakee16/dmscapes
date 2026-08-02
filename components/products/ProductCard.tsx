@@ -26,10 +26,13 @@ export function logProductClick(p: Product): void {
 export default function ProductCard({
   product,
   onSwapClick,
+  onRemove,
   active = false,
 }: {
   product: Product;
   onSwapClick?: (p: Product) => void;
+  /** When set, shows a "−" control that moves this item to "Things to add". */
+  onRemove?: () => void;
   /** Cross-highlight: true when the matching canvas item is hovered/selected. */
   active?: boolean;
 }) {
@@ -63,17 +66,34 @@ export default function ProductCard({
             {product.rating.toFixed(1)} ({product.review_count.toLocaleString()})
           </span>
         </p>
-        {onSwapClick && (
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              onSwapClick(product);
-            }}
-            className="mt-1 cursor-pointer font-mono text-[11px] font-medium uppercase tracking-wide text-cobalt hover:text-cobalt-deep"
-          >
-            ⇄ Swap
-          </button>
+        {(onSwapClick || onRemove) && (
+          <div className="mt-1 flex items-center gap-3">
+            {onSwapClick && (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onSwapClick(product);
+                }}
+                className="cursor-pointer font-mono text-[11px] font-medium uppercase tracking-wide text-cobalt hover:text-cobalt-deep"
+              >
+                ⇄ Swap
+              </button>
+            )}
+            {onRemove && (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onRemove();
+                }}
+                aria-label={`Remove ${product.name} from your list`}
+                className="cursor-pointer font-mono text-[11px] font-medium uppercase tracking-wide text-ink-soft transition-colors hover:text-ink"
+              >
+                − Remove
+              </button>
+            )}
+          </div>
         )}
       </div>
       <a

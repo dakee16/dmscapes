@@ -65,9 +65,10 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     q: "Will you add more schools?",
     a: (
       <>
-        Yes. We&rsquo;re at 16 schools with real dimensions and adding more. If
-        yours isn&rsquo;t listed, request it from the planner and we&rsquo;ll pull
-        its floor plans into the queue. Plus and Pro requests jump the line.
+        Yes. We&rsquo;ve mapped 1,000+ dorm layouts with real dimensions and keep
+        adding more. If yours isn&rsquo;t listed, request it from the planner and
+        we&rsquo;ll pull its floor plans into the queue. Plus and Pro requests jump
+        the line.
       </>
     ),
   },
