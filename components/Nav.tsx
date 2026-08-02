@@ -114,8 +114,9 @@ export default function Nav() {
               </Link>
             )}
 
-            {/* The header's primary action. */}
-            <a href="/plan" className={PLAN_BTN}>
+            {/* The header's primary action. Below lg it moves into the overflow
+                menu so the mobile header row never overflows the viewport. */}
+            <a href="/plan" className={`hidden lg:inline-block ${PLAN_BTN}`}>
               Plan my room
             </a>
 
@@ -152,6 +153,16 @@ export default function Nav() {
                   aria-label="Site menu"
                   className="absolute right-0 top-full z-50 mt-2 w-60 origin-top-right overflow-hidden rounded-xl border border-ink/10 bg-white p-1.5 shadow-[0_20px_50px_-20px_rgba(23,23,43,0.45)]"
                 >
+                  {/* Primary action, relocated here below lg so the header row
+                      stays within the viewport. */}
+                  <a
+                    href="/plan"
+                    role="menuitem"
+                    onClick={() => setMenuOpen(false)}
+                    className="mb-1 flex items-center justify-center rounded-lg bg-ink px-3 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
+                  >
+                    Plan my room
+                  </a>
                   <div className="pt-0.5">
                     {LINKS.map((link) => (
                       <Link

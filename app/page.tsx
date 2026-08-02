@@ -63,6 +63,10 @@ export default function Home() {
                 <p className="mt-3 text-sm text-ink-soft">
                   No account needed. Most rooms take under a minute.
                 </p>
+                <p className="mt-3 flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-wide text-ink-soft">
+                  <span className="h-1.5 w-1.5 rounded-full bg-cobalt" aria-hidden="true" />
+                  203 rooms planned and counting
+                </p>
               </div>
               <ul
                 className="rise mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-wide text-ink-soft"
@@ -205,6 +209,37 @@ export default function Home() {
               </Link>
               .
             </p>
+          </div>
+        </section>
+
+        {/* Closing CTA: mirror the hero ask so readers who reach the end can act
+            without scrolling back up (peak-end). */}
+        <section className="relative overflow-hidden border-t border-ink/8">
+          <div
+            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cobalt/[0.07] blur-[120px]"
+            aria-hidden="true"
+          />
+          <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-24">
+            <Reveal>
+              <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+                Your room is one <span className="hl">minute</span> away.
+              </h2>
+              <p className="mx-auto mt-4 max-w-md text-lg leading-relaxed text-ink-soft">
+                Pick your school, choose a vibe, set a budget. See your exact room,
+                laid out and shoppable, before you ever get the keys.
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/plan"
+                  className="inline-flex h-14 items-center rounded-xl bg-cobalt px-8 text-lg font-semibold text-white shadow-[0_14px_32px_-14px_rgba(43,78,255,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-cobalt-deep hover:shadow-[0_20px_40px_-16px_rgba(43,78,255,0.7)] active:translate-y-0"
+                >
+                  Plan my room for free
+                </Link>
+                <p className="mt-3 text-sm text-ink-soft">
+                  No account needed. Most rooms take under a minute.
+                </p>
+              </div>
+            </Reveal>
           </div>
         </section>
       </main>

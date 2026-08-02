@@ -77,6 +77,9 @@ const VIBES: Record<VibeKey, Vibe> = {
 };
 
 const VIBE_KEYS = Object.keys(VIBES) as VibeKey[];
+// Vibes that require Plus in the real planner. Marked in the hero switcher so a
+// visitor who falls for one is not surprised by a paywall later.
+const PLUS_HERO_KEYS = new Set<VibeKey>(["gamer", "team_spirit"]);
 const BUDGET = 500;
 
 function Piece({
@@ -135,6 +138,22 @@ export default function RoomPlanner() {
             }`}
           >
             {VIBES[key].label}
+            {PLUS_HERO_KEYS.has(key) && (
+              <>
+                <svg
+                  viewBox="0 0 24 24"
+                  className="ml-1 inline-block h-2.5 w-2.5 -translate-y-px text-amber"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  aria-hidden="true"
+                >
+                  <rect x="5" y="11" width="14" height="9" rx="2" />
+                  <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
+                </svg>
+                <span className="sr-only"> (Plus style)</span>
+              </>
+            )}
           </button>
         ))}
       </div>

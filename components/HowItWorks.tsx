@@ -8,7 +8,7 @@ const STEPS = [
   {
     n: "1",
     title: "Pick your college",
-    body: "We already have your room: dimensions, bed size, window, even which way the door swings. Pulled from official housing docs for 50+ schools.",
+    body: "We already have your room: dimensions, bed size, window, even which way the door swings. Pulled from official housing docs, one school at a time.",
     mock: (
       <div className="rounded-lg border border-ink/12 bg-white p-3">
         <p className="font-mono text-[10px] uppercase tracking-wide text-ink-soft">Your school</p>
@@ -22,7 +22,7 @@ const STEPS = [
   {
     n: "2",
     title: "Choose a vibe + budget",
-    body: "Five styles, from Minimalist to Preppy. Set anywhere between $200 and $1,500. The plan never goes a dollar over.",
+    body: "Nine styles, five of them free. Set anywhere between $200 and $1,500. The plan never goes a dollar over.",
     mock: (
       <div className="rounded-lg border border-ink/12 bg-white p-3">
         <div className="flex flex-wrap gap-1">

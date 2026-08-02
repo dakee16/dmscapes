@@ -222,6 +222,19 @@ function TrustStrip() {
         </>
       ),
     },
+    {
+      icon: (
+        <svg viewBox="0 0 24 24" className="h-[15px] w-[15px]" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+          <path d="M4 7l8-4 8 4v10l-8 4-8-4z" strokeLinejoin="round" />
+          <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+      label: (
+        <>
+          <span className="font-semibold text-ink">203</span> rooms planned
+        </>
+      ),
+    },
     { icon: <ShieldIcon />, label: "Secured by Stripe" },
     { icon: <ReceiptIcon />, label: "One-time payment, no subscription" },
     { icon: <CartIcon />, label: "Real products, live Amazon links" },

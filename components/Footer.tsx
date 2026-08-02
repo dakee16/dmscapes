@@ -112,7 +112,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5">
               <li>
                 <a
-                  href="https://tiktok.com"
+                  href="https://tiktok.com/@dorm.scape"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
@@ -123,7 +123,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/dorm.scape"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
