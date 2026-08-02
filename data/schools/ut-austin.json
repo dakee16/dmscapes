@@ -1,0 +1,3813 @@
+{
+  "college_id": "ut-austin",
+  "college_name": "The University of Texas at Austin",
+  "city": "Austin",
+  "state": "TX",
+  "housing_url": "https://housing.utexas.edu",
+  "data_collected": "2026-07-14",
+  "campus_notes": "UT Austin does not publish room length x width anywhere. Official floor plans for every hall (https://housing.utexas.edu/housing/residence-halls/residence-hall-resources/essential-info-forms/residence-hall-floor-plans) are raster CAD drawings that label each individual room's exact square footage (no room-type labels and no dimension callouts); typical values from those drawings are recorded per hall below. Every residence hall room comes with, per resident: a movable lofted Twin XL (36\" x 80\") bed, desk, desk chair, small under-bed dresser with cabinet, and bookshelf, plus one MicroFridge/microwave per room, trash and recycling bins, and corkboard(s); no furniture dimensions are published. Beds loft/bunk in most halls ('all furniture is moveable'). Full loft beds (5 settings, middle = 45\" to mattress top) appear in Blanton, Brackenridge, Duren, Jester, Kinsolving, Moore-Hill and Roberts; junior lofts (3 settings, 12\"-45\") in Andrews, Blanton, Carothers, Kinsolving and San Jacinto. All halls have AC and heat. Rates shown are per-person 2026-27 full academic year (room portion only, meal plan separate for halls; Jester/Duren/San Jacinto style rates include different bath configs). Many Jester rooms and renovated Kinsolving rooms have an in-room sink. Whitis Court closed for redevelopment (new ~1,000-bed hall opens 2027).",
+  "dorms": [
+    {
+      "dorm_id": "andrews",
+      "dorm_name": "Andrews Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/andrews-residence-hall",
+      "floor_plans_url": "https://utexas.box.com/v/ANDFloorplans",
+      "address": "2401 Whitis Ave, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": 200,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/andrews-residence-hall",
+          "data_confidence": "medium",
+          "notes": "floor_area_sqft is the typical value for standard rooms on the hall's official floor plans; individual rooms vary (see dorm notes). UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triple Room",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 3,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/andrews-residence-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "double_private_bath",
+          "room_type_official": "Double Room (Private Bath)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/andrews-residence-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 15410,
+          "bathroom": "One Bathroom (Private)"
+        },
+        {
+          "room_type": "premium_single",
+          "room_type_official": "Premium Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/andrews-residence-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles.",
+          "rate_2026_27_per_person": 19104,
+          "bathroom": "Community Bathroom"
+        }
+      ],
+      "notes": "All-women's hall in the Whitis community. Official floor plans label each room's area: standard rooms cluster at 199-218 sq ft, corner rooms up to ~271 sq ft, and a few smaller rooms of 146-172 sq ft (room types are not labeled on the plans)."
+    },
+    {
+      "dorm_id": "blanton",
+      "dorm_name": "Blanton Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/blanton-hall",
+      "floor_plans_url": "https://utexas.box.com/v/BLDFloorplans",
+      "address": "2500 University Ave, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top); junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/blanton-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "single",
+          "room_type_official": "Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top); junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/blanton-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 16364,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "premium_single",
+          "room_type_official": "Premium Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top); junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/blanton-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles.",
+          "rate_2026_27_per_person": 20352,
+          "bathroom": "One Bathroom (Private)"
+        },
+        {
+          "room_type": "double_private_bath",
+          "room_type_official": "Double Room (Private Bath)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top); junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/blanton-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 15410,
+          "bathroom": "One Bathroom (Private)"
+        }
+      ],
+      "notes": "Official floor plans show room numbers only (no square footage labels)."
+    },
+    {
+      "dorm_id": "brackenridge",
+      "dorm_name": "Brackenridge Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/brackenridge-hall",
+      "floor_plans_url": "https://utexas.box.com/v/BHDFloorplans",
+      "address": "303 E. 21st Street, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/brackenridge-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "premium_single",
+          "room_type_official": "Premium Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/brackenridge-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles.",
+          "rate_2026_27_per_person": 19104,
+          "bathroom": "Community Bathroom"
+        }
+      ],
+      "notes": "Official floor plans label each room's area: A/B-wing rooms run 216-258 sq ft; C/D-wing rooms run 141-203 sq ft (room types are not labeled, and the hall's singles are among the smaller rooms)."
+    },
+    {
+      "dorm_id": "carothers",
+      "dorm_name": "Carothers Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/carothers-hall",
+      "floor_plans_url": "https://utexas.box.com/v/CRDFloorplans",
+      "address": "2501 Whitis Ave, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/carothers-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "premium_single",
+          "room_type_official": "Premium Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/carothers-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles.",
+          "rate_2026_27_per_person": 19104,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triple Room",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 3,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/carothers-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        }
+      ],
+      "notes": "All-women's hall in the Whitis community. Official floor plans show room numbers only (no square footage labels)."
+    },
+    {
+      "dorm_id": "creekside",
+      "dorm_name": "Creekside Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/creekside-hall",
+      "floor_plans_url": "https://utexas.box.com/v/CRHFloorplans",
+      "address": "2500 San Jacinto Blvd, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": 193,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/creekside-hall",
+          "data_confidence": "medium",
+          "notes": "floor_area_sqft is the typical value for standard rooms on the hall's official floor plans; individual rooms vary (see dorm notes). UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        }
+      ],
+      "notes": "Official floor plans label nearly every resident room 192.9-193.2 sq ft - the most uniform room stock of any UT hall."
+    },
+    {
+      "dorm_id": "dobie-twenty21",
+      "dorm_name": "Dobie Twenty21",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/dobie-twenty21",
+      "floor_plans_url": "https://utexas.box.com/v/D21Floorplans",
+      "address": "2021 Guadalupe St., Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "one_bedroom_apartment",
+          "room_type_official": "One Bedroom",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/dobie-twenty21",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "bathroom": "One Bathroom (Private)"
+        },
+        {
+          "room_type": "one_bedroom_apartment_double",
+          "room_type_official": "One Bedroom (Double Occupancy)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/dobie-twenty21",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "bathroom": "One Bathroom (Private)"
+        },
+        {
+          "room_type": "two_bedroom_apartment",
+          "room_type_official": "Two Bedroom",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/dobie-twenty21",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "bathroom": "Two Bathrooms (Private)"
+        },
+        {
+          "room_type": "two_bedroom_apartment_double",
+          "room_type_official": "Two Bedroom (Double Occupancy)",
+          "occupants": 4,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 4,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 4,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 4,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 4,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 4,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/dobie-twenty21",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "bathroom": "Two Bathrooms (Private)"
+        }
+      ],
+      "notes": "University-affiliated high-rise with apartment-style units (private bathrooms); rates published separately from the traditional halls. Official floor plans show unit numbers only (no square footage labels)."
+    },
+    {
+      "dorm_id": "duren",
+      "dorm_name": "Duren Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/duren-hall",
+      "floor_plans_url": "https://utexas.box.com/v/ADHFloorplans",
+      "address": "2624 Whitis Ave, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": 260,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/duren-hall",
+          "data_confidence": "medium",
+          "notes": "floor_area_sqft is the typical value for standard rooms on the hall's official floor plans; individual rooms vary (see dorm notes). UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 18164,
+          "bathroom": "One Bathroom (Private)"
+        },
+        {
+          "room_type": "premium_single",
+          "room_type_official": "Premium Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/duren-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles.",
+          "rate_2026_27_per_person": 20961,
+          "bathroom": "One Bathroom (Private)"
+        },
+        {
+          "room_type": "double_connecting_bath",
+          "room_type_official": "Double Room (Connecting Bath)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/duren-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Bathroom is shared with one adjoining room and locks from the residence-room side.",
+          "rate_2026_27_per_person": 18164,
+          "bathroom": "One Bathroom (Connecting)"
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triple Room",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 3,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/duren-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 18164,
+          "bathroom": "One Bathroom (Private)"
+        },
+        {
+          "room_type": "quad",
+          "room_type_official": "Quad Room",
+          "occupants": 4,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 4,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 4,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 4,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 4,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 4,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/duren-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 18164,
+          "bathroom": "One Bathroom (Private)"
+        }
+      ],
+      "notes": "Each floor has its own study room; game room, exercise room and private courtyard. Official floor plans label each room's area: standard rooms cluster at 253-266 sq ft with corner rooms up to ~295 sq ft (room types are not labeled on the plans)."
+    },
+    {
+      "dorm_id": "jester-east",
+      "dorm_name": "Jester East Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-east-hall",
+      "floor_plans_url": "https://utexas.box.com/v/JSMFloorplans",
+      "address": "201 East 21st Street, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": 197,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-east-hall",
+          "data_confidence": "medium",
+          "notes": "floor_area_sqft is the typical value for standard rooms on the hall's official floor plans; individual rooms vary (see dorm notes). UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Majority of rooms in this hall have an in-room sink with cabinetry and mirror.",
+          "rate_2026_27_per_person": 14937,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "double_connecting_bath",
+          "room_type_official": "Double Room (Connecting Bath)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-east-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Bathroom is shared with one adjoining room and locks from the residence-room side.",
+          "rate_2026_27_per_person": 15884,
+          "bathroom": "One Bathroom (Connecting)"
+        },
+        {
+          "room_type": "single",
+          "room_type_official": "Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-east-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Majority of rooms in this hall have an in-room sink with cabinetry and mirror.",
+          "rate_2026_27_per_person": 16808,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "premium_single",
+          "room_type_official": "Premium Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-east-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles. Majority of rooms in this hall have an in-room sink with cabinetry and mirror.",
+          "rate_2026_27_per_person": 19104,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "double_private_bath",
+          "room_type_official": "Double Room (Private Bath)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-east-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 15884,
+          "bathroom": "One Bathroom (Private)"
+        }
+      ],
+      "notes": "10 floors, ~1,200 residents; study and laundry rooms on each floor; inside Jester Center with dining and academic services in-building. Official floor plans label each room's area: standard rooms cluster at approximately 195-200 sq ft (room types are not labeled on the plans)."
+    },
+    {
+      "dorm_id": "jester-west",
+      "dorm_name": "Jester West Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-west-hall",
+      "floor_plans_url": "https://utexas.box.com/v/JSWFloorplans",
+      "address": "201 East 21st Street, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-west-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Majority of rooms in this hall have an in-room sink with cabinetry and mirror.",
+          "rate_2026_27_per_person": 14937,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "double_connecting_bath",
+          "room_type_official": "Double Room (Connecting Bath)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-west-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Bathroom is shared with one adjoining room and locks from the residence-room side.",
+          "rate_2026_27_per_person": 15884,
+          "bathroom": "One Bathroom (Connecting)"
+        },
+        {
+          "room_type": "single",
+          "room_type_official": "Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-west-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Majority of rooms in this hall have an in-room sink with cabinetry and mirror.",
+          "rate_2026_27_per_person": 16808,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "premium_single",
+          "room_type_official": "Premium Single Room (Community Bath)",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-west-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles. Majority of rooms in this hall have an in-room sink with cabinetry and mirror.",
+          "rate_2026_27_per_person": 19104,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "premium_single_private_bath",
+          "room_type_official": "Premium Single Room (Private Bath)",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-west-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles.",
+          "rate_2026_27_per_person": 20352,
+          "bathroom": "One Bathroom (Private)"
+        },
+        {
+          "room_type": "double_private_bath",
+          "room_type_official": "Double Room (Private Bath)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-west-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 15884,
+          "bathroom": "One Bathroom (Private)"
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triple Room",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 3,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/jester-west-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 15884,
+          "bathroom": "One Bathroom (Private)"
+        }
+      ],
+      "notes": "14 floors, ~1,200 residents; UT's largest residence hall, inside Jester Center. Official floor plans show room numbers only at legible scale (no usable square footage labels)."
+    },
+    {
+      "dorm_id": "kinsolving",
+      "dorm_name": "Kinsolving Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/kinsolving-hall",
+      "floor_plans_url": "https://utexas.box.com/v/KINFloorplans",
+      "address": "2605 Whitis Ave, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room (Community Bath)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top); junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/kinsolving-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "renovated_double",
+          "room_type_official": "Renovated Double Room (Community Bath), South Tower",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top); junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/kinsolving-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "double_connecting_bath",
+          "room_type_official": "Double Room (Connecting Bath)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top); junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/kinsolving-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Bathroom is shared with one adjoining room and locks from the residence-room side.",
+          "rate_2026_27_per_person": 15410,
+          "bathroom": "One Bathroom (Connecting)"
+        },
+        {
+          "room_type": "triple_private_bath",
+          "room_type_official": "Triple Room (Private Bath)",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top); junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 3,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/kinsolving-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 15410,
+          "bathroom": "One Bathroom (Private)"
+        }
+      ],
+      "notes": "Renovated South Tower rooms have movable furniture and an in-room sink area with counter, mirror and cabinetry. Official floor plans show room numbers only (no square footage labels)."
+    },
+    {
+      "dorm_id": "littlefield",
+      "dorm_name": "Littlefield Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/littlefield-hall",
+      "floor_plans_url": "https://utexas.box.com/v/LTDFloorplans",
+      "address": "2503 Whitis Ave, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": 195,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/littlefield-hall",
+          "data_confidence": "medium",
+          "notes": "floor_area_sqft is the typical value for standard rooms on the hall's official floor plans; individual rooms vary (see dorm notes). UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "single",
+          "room_type_official": "Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/littlefield-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 16364,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "premium_single",
+          "room_type_official": "Premium Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/littlefield-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles.",
+          "rate_2026_27_per_person": 19104,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "double_private_bath",
+          "room_type_official": "Double Room (Private Bath)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/littlefield-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 15410,
+          "bathroom": "One Bathroom (Private)"
+        }
+      ],
+      "notes": "All-women's hall, UT's oldest (1927). Official floor plans label each room's area: standard rooms run 186-213 sq ft; a few smaller rooms of 132-158 sq ft are consistent with the hall's singles (types are not labeled on the plans)."
+    },
+    {
+      "dorm_id": "moore-hill",
+      "dorm_name": "Moore-Hill Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/moore-hill-hall",
+      "floor_plans_url": "https://utexas.box.com/v/MHDFloorplans",
+      "address": "204 E 21st Street, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": 195,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/moore-hill-hall",
+          "data_confidence": "medium",
+          "notes": "floor_area_sqft is the typical value for standard rooms on the hall's official floor plans; individual rooms vary (see dorm notes). UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "premium_single",
+          "room_type_official": "Premium Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/moore-hill-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles.",
+          "rate_2026_27_per_person": 19104,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "premium_single_private_bath",
+          "room_type_official": "Premium Single Room (Private Bath)",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/moore-hill-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles.",
+          "rate_2026_27_per_person": 20352,
+          "bathroom": "One Bathroom (Private)"
+        },
+        {
+          "room_type": "double_private_bath",
+          "room_type_official": "Double Room (Private Bath)",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/moore-hill-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 15410,
+          "bathroom": "One Bathroom (Private)"
+        }
+      ],
+      "notes": "Next to the stadium on the east side of campus. Official floor plans label each room's area: standard rooms cluster at 194-196 sq ft with corner rooms of 227-235 sq ft (types not labeled)."
+    },
+    {
+      "dorm_id": "prather",
+      "dorm_name": "Prather Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/prather-hall",
+      "floor_plans_url": "https://utexas.box.com/v/PHDFloorplans",
+      "address": "305 E 21st Street, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": 204,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/prather-hall",
+          "data_confidence": "medium",
+          "notes": "floor_area_sqft is the typical value for standard rooms on the hall's official floor plans; individual rooms vary (see dorm notes). UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "single",
+          "room_type_official": "Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/prather-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 16364,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triple Room",
+          "occupants": 3,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; loftable bed (loft type not specified for this hall). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 3,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 3,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/prather-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        }
+      ],
+      "notes": "Official floor plans label each room's area: standard rooms run 199-209 sq ft, corner rooms up to ~238 sq ft, plus at least one ~135 sq ft room consistent with a single (types not labeled)."
+    },
+    {
+      "dorm_id": "roberts",
+      "dorm_name": "Roberts Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/roberts-hall",
+      "floor_plans_url": "https://utexas.box.com/v/RHDFloorplans",
+      "address": "303 E 21st Street, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/roberts-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 14465,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "single",
+          "room_type_official": "Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/roberts-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 16364,
+          "bathroom": "Community Bathroom"
+        },
+        {
+          "room_type": "premium_single",
+          "room_type_official": "Premium Single Room",
+          "occupants": 1,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; full loft (5 height settings; middle setting = 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 1,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 1,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/roberts-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout. Premium singles are limited-quantity rooms priced above standard singles.",
+          "rate_2026_27_per_person": 19104,
+          "bathroom": "Community Bathroom"
+        }
+      ],
+      "notes": "Official floor plans label each room's area: rooms vary widely, 165-245 sq ft for standard rooms and 112-147 sq ft for a cluster of small rooms consistent with the hall's singles (types not labeled)."
+    },
+    {
+      "dorm_id": "san-jacinto",
+      "dorm_name": "San Jacinto Hall",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/san-jacinto-hall",
+      "floor_plans_url": "https://utexas.box.com/v/SJHFloorplans",
+      "address": "309 E 21st Street, Austin, TX 78705",
+      "air_conditioning": true,
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/san-jacinto-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 18164,
+          "bathroom": "One Bathroom (Private)"
+        },
+        {
+          "room_type": "ada_double",
+          "room_type_official": "ADA Double Room",
+          "occupants": 2,
+          "dimensions": null,
+          "floor_area_sqft": null,
+          "door": null,
+          "window": null,
+          "closet": {
+            "type": "open_closet",
+            "wall": null,
+            "width_ft": null,
+            "depth_ft": null,
+            "notes": "Open closet area with shelving and clothing rod (per virtual-tour descriptions); dimensions not published."
+          },
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.0,
+              "movable": true,
+              "loftable": true,
+              "bunkable": true,
+              "notes": "Twin XL 36\" x 80\" mattress; junior loft (3 height settings; 12\" to 45\" floor to mattress top). Height adjustments by residents allowed (3-person job) or by housing staff for a one-time $75 fee."
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Dimensions not published."
+            },
+            {
+              "type": "desk_chair",
+              "count": 2,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": null,
+              "width_ft": null,
+              "movable": true,
+              "notes": "Small dresser with cabinet, sized to fit under the lofted bed. Dimensions not published."
+            },
+            {
+              "type": "bookshelf",
+              "count": 2,
+              "movable": true,
+              "notes": "Small bookshelf. Dimensions not published."
+            },
+            {
+              "type": "microfridge",
+              "count": 1,
+              "movable": true,
+              "notes": "One MicroFridge + microwave provided per room; a second refrigerator is not allowed."
+            }
+          ],
+          "data_source": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/san-jacinto-hall",
+          "data_confidence": "low",
+          "notes": "UT publishes no length x width for any room; see the hall floor plan PDF for per-room square footage and layout.",
+          "rate_2026_27_per_person": 18164,
+          "bathroom": "One Bathroom (Private)"
+        }
+      ],
+      "notes": "Suite-style rooms with private bathrooms; on the east side near the stadium. Official floor plans show room numbers only (no square footage labels)."
+    },
+    {
+      "dorm_id": "whitis-avenue",
+      "dorm_name": "Whitis Court (closed for redevelopment)",
+      "hall_url": "https://housing.utexas.edu/housing/residence-halls/residence-hall-locations/whitis-avenue-hall",
+      "floor_plans_url": "https://utexas.box.com/v/WCHFloorplans",
+      "address": "Whitis Avenue, Austin, TX 78705",
+      "air_conditioning": null,
+      "rooms": [],
+      "status": "closed_for_redevelopment",
+      "notes": "Original six-building Whitis Court (1953, ~200 residents) closed; site being redeveloped into a ~1,000-bed residence hall scheduled to open in 2027."
+    }
+  ]
+}

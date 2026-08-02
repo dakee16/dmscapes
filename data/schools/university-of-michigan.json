@@ -1,0 +1,3398 @@
+{
+  "college_id": "university-of-michigan",
+  "college_name": "University of Michigan (Ann Arbor)",
+  "city": "Ann Arbor",
+  "state": "MI",
+  "housing_url": "https://housing.umich.edu",
+  "data_collected": "2026-07-14",
+  "campus_notes": "Michigan Housing explicitly does not publish per-room dimensions; their knowledge base (https://kb.housing.umich.edu/hc/en-us/articles/27512969150861-Residence-Hall-Room-Dimensions) says many doubles average 11' x 12' but individual rooms vary by era of construction. Beds take Twin XL (36\" x 80\") linens. Undergraduate rooms have one of two modular furniture systems (Building Block or Lifespace II) with published dimensions; both loft (58\" clearance) or half-loft (28.5\"), and Building Block also bunks/trundles. Custom-made lofts are prohibited. Furniture must sit at least 2 ft from windows and radiators. System-by-hall mapping: https://kb.housing.umich.edu/hc/en-us/articles/360002986491-Room-Furniture.",
+  "dorms": [
+    {
+      "dorm_id": "alice-lloyd-hall",
+      "dorm_name": "Alice Lloyd Hall",
+      "hall_url": "https://housing.umich.edu/residence-hall/alice-lloyd-hall/",
+      "neighborhood": "Central",
+      "address": "100 Observatory St., Ann Arbor, MI 48109-2025",
+      "population": 522,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing",
+      "assignment_pattern": "All-gender floors Single gender floors",
+      "living_learning_communities": "Lloyd Scholars for Writing and the Arts (LSWA)",
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "baits",
+      "dorm_name": "Baits II",
+      "hall_url": "https://housing.umich.edu/residence-hall/baits/",
+      "neighborhood": "North",
+      "address": null,
+      "population": 579,
+      "air_conditioning": false,
+      "air_conditioning_detail": "None",
+      "elevator": false,
+      "bathrooms_shared_by": "Inside suite",
+      "assignment_pattern": "All-gender floors",
+      "living_learning_communities": null,
+      "community_kitchen": false,
+      "furniture_system": "Building Block / Lifespace II (varies by room)",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Building Block / Lifespace II (varies by room) modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Building Block / Lifespace II (varies by room) modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "betsy-barbour",
+      "dorm_name": "Betsy Barbour",
+      "hall_url": "https://housing.umich.edu/residence-hall/betsy-barbour/",
+      "neighborhood": "Central",
+      "address": "417 Maynard St, Ann Arbor, MI 48109",
+      "population": 83,
+      "air_conditioning": false,
+      "air_conditioning_detail": "None",
+      "elevator": false,
+      "bathrooms_shared_by": "Floor",
+      "assignment_pattern": "All women's building",
+      "living_learning_communities": null,
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "bursley-hall",
+      "dorm_name": "Bursley Hall",
+      "hall_url": "https://housing.umich.edu/residence-hall/bursley-hall/",
+      "neighborhood": "North",
+      "address": "1931 Duffield St., Ann Arbor, MI 48109-2080",
+      "population": 1276,
+      "air_conditioning": false,
+      "air_conditioning_detail": "None",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing",
+      "assignment_pattern": "All-gender floors Single gender floors",
+      "living_learning_communities": "LiveWell | SubFree Theme Community",
+      "community_kitchen": false,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triples",
+          "occupants": 3,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 3,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "quad",
+          "room_type_official": "Quads",
+          "occupants": 4,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 4,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 4,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 4,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 4,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "couzens-hall",
+      "dorm_name": "Couzens Hall",
+      "hall_url": "https://housing.umich.edu/residence-hall/couzens-hall/",
+      "neighborhood": "Central",
+      "address": "1300 E. Ann Street, Ann Arbor, MI 48109-2016",
+      "population": 510,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing",
+      "assignment_pattern": "All-gender floors Single gender floors",
+      "living_learning_communities": "Health Sciences Scholars Program 1st Gen Theme Community",
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "east-quadrangle",
+      "dorm_name": "East Quadrangle",
+      "hall_url": "https://housing.umich.edu/residence-hall/east-quadrangle/",
+      "neighborhood": "Central",
+      "address": "701 East University Avenue, Ann Arbor, MI 48109-1245",
+      "population": 852,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing",
+      "assignment_pattern": "All-gender corridors",
+      "living_learning_communities": "Residential College Social Innovation Theme Community",
+      "community_kitchen": false,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "fletcher-hall",
+      "dorm_name": "Fletcher Hall",
+      "hall_url": "https://housing.umich.edu/residence-hall/fletcher-hall/",
+      "neighborhood": "Central",
+      "address": "915 Sybil, Ann Arbor, MI 48104",
+      "population": 74,
+      "air_conditioning": false,
+      "air_conditioning_detail": "None",
+      "elevator": false,
+      "bathrooms_shared_by": "Floor",
+      "assignment_pattern": "Single gender floors",
+      "living_learning_communities": null,
+      "community_kitchen": false,
+      "furniture_system": "Building Block",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Building Block modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triples",
+          "occupants": 3,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 3,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Building Block modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "florent-gillet",
+      "dorm_name": "Florent Gillet",
+      "hall_url": "https://housing.umich.edu/residence-hall/florent-gillet/",
+      "neighborhood": "Marygrove Campus",
+      "address": "8701 W. McNichols Rd, Detroit, MI 48221",
+      "population": null,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Inside suite",
+      "assignment_pattern": "All-gender floors",
+      "living_learning_communities": null,
+      "community_kitchen": false,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triples",
+          "occupants": 3,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 3,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions."
+        }
+      ]
+    },
+    {
+      "dorm_id": "helen-newberry",
+      "dorm_name": "Helen Newberry",
+      "hall_url": "https://housing.umich.edu/residence-hall/helen-newberry/",
+      "neighborhood": "Central",
+      "address": "429 Maynard St., Ann Arbor, MI 48109-1329",
+      "population": 82,
+      "air_conditioning": false,
+      "air_conditioning_detail": "None",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor",
+      "assignment_pattern": "All women's building",
+      "living_learning_communities": "ADELIA CHEEVER PROGRAM Theme Community",
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions."
+        }
+      ]
+    },
+    {
+      "dorm_id": "henderson-house",
+      "dorm_name": "Henderson House",
+      "hall_url": "https://housing.umich.edu/residence-hall/henderson-house/",
+      "neighborhood": "Central",
+      "address": "1330 Hill St, Ann Arbor, MI 48104-3194",
+      "population": 28,
+      "air_conditioning": false,
+      "air_conditioning_detail": "None",
+      "elevator": false,
+      "bathrooms_shared_by": "Floor",
+      "assignment_pattern": "All women's building",
+      "living_learning_communities": null,
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "martha-cook-building",
+      "dorm_name": "Martha Cook Building",
+      "hall_url": "https://housing.umich.edu/residence-hall/martha-cook-building/",
+      "neighborhood": "Central",
+      "address": "906 S. University, Ann Arbor, MI 48109-1195",
+      "population": 146,
+      "air_conditioning": false,
+      "air_conditioning_detail": "None",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor",
+      "assignment_pattern": "Single gender building",
+      "living_learning_communities": null,
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions."
+        }
+      ]
+    },
+    {
+      "dorm_id": "mary-markley-hall",
+      "dorm_name": "Mary Markley Hall",
+      "hall_url": "https://housing.umich.edu/residence-hall/mary-markley-hall/",
+      "neighborhood": "Central",
+      "address": "1503 Washington Heights, Ann Arbor, MI 48109-2015",
+      "population": 1167,
+      "air_conditioning": false,
+      "air_conditioning_detail": "None",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing",
+      "assignment_pattern": "All-gender floors Single gender floors",
+      "living_learning_communities": null,
+      "community_kitchen": false,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triples",
+          "occupants": 3,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 3,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "quad",
+          "room_type_official": "Quads",
+          "occupants": 4,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 4,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 4,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 4,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 4,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "mosher-jordan-hall",
+      "dorm_name": "Mosher-Jordan Hall",
+      "hall_url": "https://housing.umich.edu/residence-hall/mosher-jordan-hall/",
+      "neighborhood": "Central",
+      "address": "200 Observatory Street, Ann Arbor, MI 48109-2035",
+      "population": 428,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing",
+      "assignment_pattern": "All-gender floors Single gender floors",
+      "living_learning_communities": "Michigan Research and Discovery Scholars Women In Science and Engineering Residence Program",
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "north-quadrangle",
+      "dorm_name": "North Quadrangle",
+      "hall_url": "https://housing.umich.edu/residence-hall/north-quadrangle/",
+      "neighborhood": "Central",
+      "address": "105 South State Street, Ann Arbor, MI 48109-1245",
+      "population": 450,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Inside suite On hallway shared by clusters of rooms",
+      "assignment_pattern": "All-gender floors Single gender floors",
+      "living_learning_communities": "Global Scholars Program Max Kade German Residence INTERNATIONAL IMPACT Theme Community",
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triples",
+          "occupants": 3,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 3,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "oxford-houses",
+      "dorm_name": "Oxford Houses",
+      "hall_url": "https://housing.umich.edu/residence-hall/oxford-houses/",
+      "neighborhood": "Central",
+      "address": "623 Oxford Road, Ann Arbor, MI 48104-2654",
+      "population": 353,
+      "air_conditioning": false,
+      "air_conditioning_detail": "None",
+      "elevator": false,
+      "bathrooms_shared_by": "Floor Inside suite",
+      "assignment_pattern": "All-gender floors Single gender floors",
+      "living_learning_communities": "Michigan Sustainability Community",
+      "community_kitchen": true,
+      "furniture_system": "Building Block / Lifespace II (varies by room)",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Building Block / Lifespace II (varies by room) modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Building Block / Lifespace II (varies by room) modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triples",
+          "occupants": 3,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 3,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Building Block / Lifespace II (varies by room) modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "quad",
+          "room_type_official": "Quads",
+          "occupants": 4,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 4,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 4,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 4,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 4,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Building Block / Lifespace II (varies by room) modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "south-quadrangle",
+      "dorm_name": "South Quadrangle",
+      "hall_url": "https://housing.umich.edu/residence-hall/south-quadrangle/",
+      "neighborhood": "Central",
+      "address": "600 E. Madison, Ann Arbor, MI 48109-1372",
+      "population": 1145,
+      "air_conditioning": false,
+      "air_conditioning_detail": "None",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing",
+      "assignment_pattern": "All-gender floors Single gender floors",
+      "living_learning_communities": "Honors Program",
+      "community_kitchen": false,
+      "furniture_system": "Building Block",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Building Block modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Building Block modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triples",
+          "occupants": 3,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 3,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Building Block modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "quad",
+          "room_type_official": "Quads",
+          "occupants": 4,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 4,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": true,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 4,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 4,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 4,
+              "length_ft": 2.9,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop Organizer (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Building Block modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "stockwell-hall",
+      "dorm_name": "Stockwell Hall",
+      "hall_url": "https://housing.umich.edu/residence-hall/stockwell-hall/",
+      "neighborhood": "Central",
+      "address": "324 Observatory, Ann Arbor, MI 48109-2040",
+      "population": 383,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing",
+      "assignment_pattern": "All-gender floors Single gender floors",
+      "living_learning_communities": "Second Year Experience Theme Community",
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "west-quadrangle-cambridge-house",
+      "dorm_name": "West Quadrangle & Cambridge House",
+      "hall_url": "https://housing.umich.edu/residence-hall/west-quadrangle-cambridge-house/",
+      "neighborhood": "Central",
+      "address": "541 Thompson St, Ann Arbor, MI 48109-1360",
+      "population": 1043,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing",
+      "assignment_pattern": "All-gender floors Single gender floors",
+      "living_learning_communities": "Living Business Theme Community",
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "triple",
+          "room_type_official": "Triples",
+          "occupants": 3,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 3,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 3,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 3,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "wolverine-village-building-1",
+      "dorm_name": "Wolverine Village Building 1",
+      "hall_url": "https://housing.umich.edu/residence-hall/wolverine-village-building-1/",
+      "neighborhood": "Central",
+      "address": "310 Hill St., Ann Arbor, MI 48109",
+      "population": 723,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing Inside suite",
+      "assignment_pattern": "All-gender floors",
+      "living_learning_communities": "Michigan Sustainability Community",
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "wolverine-village-building-2",
+      "dorm_name": "Wolverine Village Building 2",
+      "hall_url": "https://housing.umich.edu/residence-hall/wolverine-village-building-2/",
+      "neighborhood": "Central",
+      "address": "330 Hill St., Ann Arbor, MI 48109",
+      "population": 302,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing Inside suite",
+      "assignment_pattern": "All-gender floors",
+      "living_learning_communities": null,
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "wolverine-village-building-3",
+      "dorm_name": "Wolverine Village Building 3",
+      "hall_url": "https://housing.umich.edu/residence-hall/wolverine-village-building-3/",
+      "neighborhood": "Central",
+      "address": "920 S Division St., Ann Arbor, MI 48109",
+      "population": 473,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing Inside suite",
+      "assignment_pattern": "All-gender floors",
+      "living_learning_communities": null,
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "wolverine-village-building-4",
+      "dorm_name": "Wolverine Village Building 4",
+      "hall_url": "https://housing.umich.edu/residence-hall/wolverine-village-building-4/",
+      "neighborhood": "Central",
+      "address": "910 S Division St, Ann Arbor, MI 48109",
+      "population": 301,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing Inside suite",
+      "assignment_pattern": "Single gender floors",
+      "living_learning_communities": "Michigan Sustainability Community",
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "single",
+          "room_type_official": "Singles",
+          "occupants": 1,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "triple_able_double",
+          "room_type_official": "Triple-able Doubles",
+          "occupants": 2,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Double room large enough to be assigned as a triple (Wolverine Village). Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    },
+    {
+      "dorm_id": "wolverine-village-dr-e-royster-harper-hall",
+      "dorm_name": "Wolverine Village Dr. E. Royster Harper Hall",
+      "hall_url": "https://housing.umich.edu/residence-hall/wolverine-village-dr-e-royster-harper-hall/",
+      "neighborhood": "Central",
+      "address": "355 E Hoover Ave, Ann Arbor, MI 48109",
+      "population": 491,
+      "air_conditioning": true,
+      "air_conditioning_detail": "Entire building",
+      "elevator": true,
+      "bathrooms_shared_by": "Floor Wing Inside suite",
+      "assignment_pattern": "All-gender floors",
+      "living_learning_communities": "Bridge Scholars Plus",
+      "community_kitchen": true,
+      "furniture_system": "Lifespace II",
+      "rooms": [
+        {
+          "room_type": "double",
+          "room_type_official": "Doubles",
+          "occupants": 2,
+          "dimensions": {
+            "length_ft": 12,
+            "width_ft": 11
+          },
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Campus-wide average for doubles published by Michigan Housing ('11 feet by 12 feet, but that's an average that may not be the reality in each room'); this hall's rooms may differ. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "triple_able_double",
+          "room_type_official": "Triple-able Doubles",
+          "occupants": 2,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 2,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 2,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 2,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Double room large enough to be assigned as a triple (Wolverine Village). Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        },
+        {
+          "room_type": "suite",
+          "room_type_official": "Suite",
+          "occupants": null,
+          "dimensions": null,
+          "door": null,
+          "window": null,
+          "closet": null,
+          "built_in_furniture": [
+            {
+              "type": "bed_frame",
+              "count": 1,
+              "length_ft": 6.67,
+              "width_ft": 3.38,
+              "height_ft": 2.5,
+              "movable": true,
+              "bunkable": false,
+              "loftable": true,
+              "loft_clearance_ft": 4.83,
+              "half_loft_clearance_ft": 2.38
+            },
+            {
+              "type": "desk",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "dresser",
+              "count": 1,
+              "length_ft": 3.04,
+              "width_ft": 2.0,
+              "height_ft": 2.52,
+              "movable": true
+            },
+            {
+              "type": "bookcase",
+              "count": 1,
+              "length_ft": 3.0,
+              "width_ft": 1.0,
+              "height_ft": 2.5,
+              "movable": true,
+              "notes": "Includes Desktop SmartBar (stacks with desk)."
+            }
+          ],
+          "data_source": "https://housing.umich.edu/residence-halls-comparison/",
+          "data_confidence": "low",
+          "notes": "Michigan Housing does not publish dimensions for this room type. Furniture: Lifespace II modular system; see built_in_furniture for published piece dimensions. Hall page lists: Bed (36\u201d x 80\u201d, takes extra long twin linens)."
+        }
+      ]
+    }
+  ]
+}
