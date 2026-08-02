@@ -12,6 +12,7 @@ import { isPaid, isPlusTier, isPlanMetered, canGeneratePlan } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
 import { useUpgrade } from "@/lib/upgrade-context";
 import CreditMeter from "@/components/site/CreditMeter";
+import DesignDisclaimerModal from "@/components/planner/DesignDisclaimerModal";
 import type { StyleId } from "@/lib/types";
 
 const TIER_LABELS = { budget: "Essentials", mid: "Upgraded", premium: "Premium" } as const;
@@ -31,6 +32,8 @@ export default function PlanStylePage() {
 
   const [mounted, setMounted] = useState(false);
   const [generating, setGenerating] = useState(false);
+  // Save-before-you-leave heads-up, shown when they tap "Design my room".
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
   const budgetTrackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => setMounted(true), []);
@@ -52,11 +55,19 @@ export default function PlanStylePage() {
     track("style_selected", { style: id });
   }
 
+  // Tapping "Design my room" first raises the save-before-you-leave heads-up;
+  // confirming there runs the actual generation.
+  function handleDesignClick() {
+    if (!style || generating) return;
+    setShowDisclaimer(true);
+  }
+
   // Generate the plan. Signed-in free and Plus accounts spend one plan credit
   // here (the "click through to a result" moment); Pro and logged-out visitors
   // generate without limit. When a counter is empty the block reason depends on
   // the tier: a free user is sent to Plus/Pro, a Plus user to recharge/Pro.
-  async function handleGenerate() {
+  async function runGenerate() {
+    setShowDisclaimer(false);
     if (!style || generating) return;
     if (isPlanMetered(profile)) {
       const blockReason = isPlusTier(profile) ? "plan-credits" : "free-plan-limit";
@@ -176,16 +187,23 @@ export default function PlanStylePage() {
 
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/8 bg-paper/92 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
         {/* Plus only: how many plan credits remain, right beside the action. */}
-        <CreditMeter only="plans" className="mb-2.5 justify-center sm:justify-start" />
+        <CreditMeter className="mb-2.5 justify-center sm:justify-start" />
         <button
           type="button"
           disabled={!style || generating}
-          onClick={handleGenerate}
+          onClick={handleDesignClick}
           className="h-13 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:bg-ink/15 disabled:text-ink-soft sm:h-12 sm:w-auto sm:px-10"
         >
           {generating ? "Designing…" : "Design my room →"}
         </button>
       </div>
+
+      {showDisclaimer && (
+        <DesignDisclaimerModal
+          onConfirm={runGenerate}
+          onCancel={() => setShowDisclaimer(false)}
+        />
+      )}
     </div>
   );
 }

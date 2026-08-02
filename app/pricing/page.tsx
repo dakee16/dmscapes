@@ -18,7 +18,7 @@ const ROOM_LAYOUTS = SCHOOLS.reduce(
 const ROOM_LAYOUTS_FLOOR = Math.floor(ROOM_LAYOUTS / 100) * 100;
 
 const DESCRIPTION =
-  "The Dormscape planner is free to try: 1 room plan and 1 save. Plus is a one-time $7.99 unlock (5 plan credits and 5 saves, all vibes, all features, recharge both for $4.99). Pro is $19.99 for unlimited plans and saves.";
+  "The Dormscape planner is free to try: 1 room plan, and saving your designs is always free. Plus is a one-time $7.99 unlock (5 plan credits, all vibes, all features, recharge for $4.99). Pro is $19.99 for unlimited plans.";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -58,7 +58,8 @@ const FREE_PERKS: React.ReactNode[] = [
       supported schools
     </Link>
   </>,
-  <>1 room plan and 1 saved design to try it out</>,
+  <>1 room plan to try it out</>,
+  <>Save your design to your account, free</>,
   <>5 vibes: Minimalist, Cozy Aesthetic, Preppy, Academia, Y2K Cyber</>,
   <>Budget-aware product picks with live Amazon links</>,
   <>Drag-and-drop 2D layout that fits to the inch</>,
@@ -66,12 +67,12 @@ const FREE_PERKS: React.ReactNode[] = [
   <>No account needed to start planning</>,
 ];
 
-// Plus perks: the one-time unlock. Two counters meter new plans and saves;
-// features are forever.
+// Plus perks: the one-time unlock. Plan generation is metered by plan credits;
+// saving is free, and features are forever.
 const PLUS_PERKS: { title: string; body: string }[] = [
   {
-    title: "5 plan credits and 5 saves",
-    body: "Two separate counters: one plan credit per new room, one save credit per saved design. Recharge both for $4.99 whenever you run low.",
+    title: "5 plan credits",
+    body: "One plan credit per new room you generate. Recharge 5 more for $4.99 whenever you run low. Saving your designs is always free.",
   },
   {
     title: "All 9 vibes",
@@ -94,8 +95,8 @@ const PLUS_PERKS: { title: string; body: string }[] = [
 // Pro perks: the ceiling. Unlimited, everything, no metering.
 const PRO_PERKS: { title: string; body: string }[] = [
   {
-    title: "Unlimited plans and saves",
-    body: "Generate and save as many rooms as you want. No credits, no counters, no recharges, ever.",
+    title: "Unlimited room plans",
+    body: "Generate as many rooms as you want. No credits, no counters, no recharges, ever.",
   },
   {
     title: "Everything in Plus",
@@ -229,7 +230,7 @@ function TrustStrip() {
       ),
       label: (
         <>
-          <span className="font-semibold text-ink">203</span> rooms planned
+          <span className="font-semibold text-ink">200+</span> rooms planned
         </>
       ),
     },
@@ -413,11 +414,11 @@ export default function PricingPage() {
               {/* How credits work: the one bit of this model worth spelling out. */}
               <div className="mt-6 rounded-xl border border-cobalt/20 bg-cobalt/5 px-4 py-3">
                 <p className="text-[13px] leading-relaxed text-ink">
-                  <span className="font-semibold">How credits work:</span> plans
-                  and saves have separate counters, one credit each per new room
-                  or saved design. Run either dry and a ${RECHARGE_PRICE_USD.toFixed(2)}{" "}
-                  recharge refills both. Your exports, comparisons, and everything
-                  already saved keep working, credits or not.
+                  <span className="font-semibold">How credits work:</span> one plan
+                  credit covers each new room you generate. Run dry and a $
+                  {RECHARGE_PRICE_USD.toFixed(2)} recharge adds five more. Saving your
+                  designs is always free, and your exports and comparisons keep
+                  working, credits or not.
                 </p>
               </div>
 

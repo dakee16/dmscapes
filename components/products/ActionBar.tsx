@@ -8,8 +8,7 @@ import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { hasFeatures, canSaveDesign, isPlusTier } from "@/lib/plan";
-import CreditMeter from "@/components/site/CreditMeter";
+import { hasFeatures } from "@/lib/plan";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { downloadShoppingListPdf } from "@/lib/pdf";
 import { CATEGORY_LABELS, totalFor } from "@/lib/catalog";
@@ -34,7 +33,7 @@ export default function ActionBar({
   products: Product[];
   getPng: () => string | null;
 }) {
-  const { user, profile, openAuthModal, refreshProfile } = useAuth();
+  const { user, profile, openAuthModal } = useAuth();
   const { openUpgrade } = useUpgrade();
   // PDF/PNG export are premium features: unlocked for Pro and for anyone who has
   // ever bought Plus (stays unlocked even at 0 credits).
@@ -73,13 +72,10 @@ export default function ActionBar({
     };
   }
 
-  // `designName` set = a named "Save design" (needs the auth token, and spends a
-  // save credit server-side); omitted = the anonymous "copy share link" flow,
-  // which never consumes a credit. Returns the share URL, a `blocked` marker when
-  // the account is out of save credits (403), or null on any other failure.
-  async function saveRoom(
-    designName?: string
-  ): Promise<{ url: string } | { blocked: true } | null> {
+  // `designName` set = a named "Save design" (needs the auth token); omitted = the
+  // anonymous "copy share link" flow. Saving is unlimited, so there's no credit to
+  // spend. Returns the share URL, or null on failure.
+  async function saveRoom(designName?: string): Promise<{ url: string } | null> {
     const body = buildSaveRequest();
     if (!body) return null;
     if (designName) body.name = designName;
@@ -91,10 +87,6 @@ export default function ActionBar({
       headers,
       body: JSON.stringify(body),
     });
-    if (res.status === 403) {
-      const data = (await res.json().catch(() => ({}))) as { blockedSave?: boolean };
-      if (data.blockedSave) return { blocked: true };
-    }
     if (!res.ok) {
       showToast(
         res.status === 503
@@ -168,10 +160,8 @@ export default function ActionBar({
     setMenuOpen(false);
     setBusy("link");
     try {
-      // The anonymous share link never carries a name, so it can't be a
-      // credit-blocked save; only the { url } case is possible here.
       const result = await saveRoom();
-      if (result && "url" in result) {
+      if (result) {
         await navigator.clipboard.writeText(result.url);
         showToast("Link copied. Send it to your roommate.");
         track("share_clicked", { type: "link" });
@@ -197,26 +187,13 @@ export default function ActionBar({
       setNameError("Give your design a name to save it.");
       return;
     }
-    // Fast path: an account we already know is out of saves skips the round-trip
-    // and goes straight to the right upgrade prompt (Plus recharge or free -> Plus).
-    if (!canSaveDesign(profile)) {
-      track("save_blocked_no_credits");
-      openUpgrade(isPlusTier(profile) ? "save-credits" : "free-save-limit");
-      return;
-    }
+    // Saving is unlimited: no credit check, just save.
     setBusy("save");
     try {
       const result = await saveRoom(trimmed);
-      if (result && "blocked" in result) {
-        track("save_blocked_no_credits");
-        openUpgrade(isPlusTier(profile) ? "save-credits" : "free-save-limit");
-        return;
-      }
-      if (result && "url" in result) {
+      if (result) {
         setSavedUrl(result.url);
         track("design_saved");
-        // Reflect the spent save credit (Plus) in the live counter.
-        await refreshProfile();
       }
     } finally {
       setBusy(null);
@@ -231,7 +208,7 @@ export default function ActionBar({
             <button
               type="button"
               onClick={() => setMenuOpen((v) => !v)}
-              className="cursor-pointer rounded-full bg-cobalt px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep"
+              className="cursor-pointer rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
             >
               Share my room
             </button>
@@ -274,15 +251,27 @@ export default function ActionBar({
           </div>
 
           <div className="ml-auto flex items-center gap-2.5">
-            {/* Plus only: saves remaining, right beside the save action. Hidden
-                on the tight mobile bar (still shown in the account dropdown). */}
-            <CreditMeter only="saves" className="hidden sm:flex" />
+            {/* Primary action: saving is free and unlimited, and it's the one
+                thing that keeps a design from being lost, so it leads the bar. */}
             <button
               type="button"
               onClick={handleSaveClick}
               aria-expanded={savePanel}
-              className="cursor-pointer rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
+              className="inline-flex cursor-pointer items-center gap-1.5 rounded-full bg-cobalt px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_20px_-8px_rgba(43,78,255,0.8)] transition-colors hover:bg-cobalt-deep"
             >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
+                <path
+                  d="M6 3h12a1 1 0 0 1 1 1v16l-7-4-7 4V4a1 1 0 0 1 1-1z"
+                  strokeLinejoin="round"
+                />
+              </svg>
               Save design
             </button>
           </div>

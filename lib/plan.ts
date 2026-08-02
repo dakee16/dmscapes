@@ -1,12 +1,13 @@
 import type { PlanTier } from "@/lib/auth-context";
 
 /**
- * Three-tier plan model with TWO independent counters (plans and saves). Prices
- * are all one-time (no subscriptions).
- *   Free     1 lifetime room plan + 1 lifetime saved design (independent caps)
- *   Plus     $7.99  -> 5 plan credits + 5 save credits (separate), all vibes,
- *                      all features permanently. Recharge $4.99 adds 5 to both.
- *   Pro      $19.99 -> unlimited plans + unlimited saves, all vibes/features.
+ * Three-tier plan model, metered on room-plan generation only. Saving a design
+ * is always free and unlimited for any signed-in account, so there is no save
+ * counter. Prices are all one-time (no subscriptions).
+ *   Free     1 lifetime room plan (then upgrade); saving is unlimited
+ *   Plus     $7.99  -> 5 plan credits, all vibes, all features permanently.
+ *                      Recharge $4.99 adds 5 more plan credits.
+ *   Pro      $19.99 -> unlimited plans, all vibes/features.
  */
 export const PLUS_PRICE_USD = 7.99;
 export const PLUS_PRICE_CENTS = 799;
@@ -103,10 +104,9 @@ export function isPlanMetered(p: PlanFields | null | undefined): boolean {
   return planOf(p.plan) !== "pro";
 }
 
-/** Save equivalent of isPlanMetered. */
-export function isSaveMetered(p: PlanFields | null | undefined): boolean {
-  if (!p) return false;
-  return planOf(p.plan) !== "pro";
+/** Saving is never metered anymore: every signed-in account saves for free. */
+export function isSaveMetered(_p: PlanFields | null | undefined): boolean {
+  return false;
 }
 
 /**
@@ -123,14 +123,10 @@ export function canGeneratePlan(p: PlanFields | null | undefined): boolean {
 }
 
 /**
- * Whether the user may save another design right now. Pro always can; Plus needs
- * a save credit; a signed-in free user is capped at FREE_SAVE_CAP lifetime
- * saves. Logged-out returns true (a named save requires login, gated elsewhere).
+ * Whether the user may save another design right now. Saving is unlimited for
+ * everyone: free, Plus, and Pro all save without limit (a named save still
+ * requires login, gated elsewhere). Kept as a helper so callers read clearly.
  */
-export function canSaveDesign(p: PlanFields | null | undefined): boolean {
-  if (!p) return true;
-  const t = planOf(p.plan);
-  if (t === "pro") return true;
-  if (t === "plus") return (p.save_credits_remaining ?? 0) > 0;
-  return (p.free_saves_used ?? 0) < FREE_SAVE_CAP;
+export function canSaveDesign(_p: PlanFields | null | undefined): boolean {
+  return true;
 }

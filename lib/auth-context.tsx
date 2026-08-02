@@ -13,6 +13,7 @@ import {
   useState,
 } from "react";
 import type { User } from "@supabase/supabase-js";
+import { useRouter } from "next/navigation";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
 import { isPaid } from "@/lib/plan";
@@ -125,6 +126,11 @@ async function enforceSessionLimit(accessToken: string): Promise<void> {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const supabase = useMemo(() => getBrowserClient(), []);
+  const router = useRouter();
+  // Kept in a ref so the long-lived onAuthStateChange subscription always reaches
+  // the current router without needing to re-subscribe.
+  const routerRef = useRef(router);
+  routerRef.current = router;
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -188,17 +194,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setSessionBumped(false);
         if (session?.access_token) void enforceSessionLimit(session.access_token);
         // First real sign-in of this browser session (a session restore or a
-        // focus-driven re-fire keeps hadUserRef true, so those don't count):
-        // queue the premium welcome. Consume the once-per-session flag either
-        // way. Skip showing it when the login was to complete a buy, so it
-        // never collides with that resume (buy-gate opens with reason "buy").
-        if (
-          !hadUserRef.current &&
-          typeof window !== "undefined" &&
-          !window.sessionStorage.getItem(PLUS_WELCOME_KEY)
-        ) {
-          window.sessionStorage.setItem(PLUS_WELCOME_KEY, "1");
-          if (modalReasonRef.current !== "buy") setPendingPlusWelcome(true);
+        // focus-driven re-fire keeps hadUserRef true, so those don't count).
+        if (!hadUserRef.current) {
+          const reason = modalReasonRef.current;
+          // Land a fresh login or signup on the home page, unless the sign-in was
+          // to finish an in-place action (saving the current design, or buying a
+          // plan) that navigating away would interrupt.
+          if (reason !== "save-design" && reason !== "buy") {
+            routerRef.current.push("/");
+          }
+          // Queue the premium welcome, once per browser session. Skip showing it
+          // when the login was to complete a buy, so it never collides with that
+          // resume (buy-gate opens with reason "buy").
+          if (
+            typeof window !== "undefined" &&
+            !window.sessionStorage.getItem(PLUS_WELCOME_KEY)
+          ) {
+            window.sessionStorage.setItem(PLUS_WELCOME_KEY, "1");
+            if (reason !== "buy") setPendingPlusWelcome(true);
+          }
         }
       } else if (event === "SIGNED_OUT") {
         // Distinguish an involuntary sign-out (session revoked on another

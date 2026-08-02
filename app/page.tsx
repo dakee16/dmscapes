@@ -68,7 +68,7 @@ export default function Home() {
                 </p>
                 <p className="mt-3 flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-wide text-ink-soft">
                   <span className="h-1.5 w-1.5 rounded-full bg-cobalt" aria-hidden="true" />
-                  203 rooms planned and counting
+                  200+ rooms planned and counting
                 </p>
               </div>
               <ul

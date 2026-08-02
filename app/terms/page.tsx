@@ -150,6 +150,21 @@ export default function TermsPage() {
 
           <section className="mt-14">
             <h2 className="font-display text-2xl font-bold tracking-tight">
+              Saving your design
+            </h2>
+            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+              Dormscape does not save your room design automatically. A design you
+              generate lives only in your browser until you choose to save it to
+              an account. If you leave, refresh, or close the page before saving,
+              that design is lost, and we can&rsquo;t recover it for you. Saving is
+              free and unlimited once you have an account, so when a design is
+              ready, save it before you navigate away. We&rsquo;re not responsible
+              for unsaved designs that are lost this way.
+            </p>
+          </section>
+
+          <section className="mt-14">
+            <h2 className="font-display text-2xl font-bold tracking-tight">
               Changes to these terms
             </h2>
             <p className="mt-3 text-base leading-relaxed text-ink-soft">
