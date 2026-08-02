@@ -20,6 +20,7 @@ import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import BudgetTracker from "@/components/products/BudgetTracker";
 import ProductPanel from "@/components/products/ProductPanel";
 import ThingsToAddPanel from "@/components/products/ThingsToAddPanel";
+import ProductTabSwitcher, { type ProductTab } from "@/components/products/ProductTabSwitcher";
 import AddOverBudgetModal from "@/components/products/AddOverBudgetModal";
 import ActionBar from "@/components/products/ActionBar";
 import BuyAllButton from "@/components/products/BuyAllButton";
@@ -60,6 +61,8 @@ export default function ResultPage() {
   // Piece whose "+" would push the cart over budget: held here until the user
   // confirms or backs out of AddOverBudgetModal.
   const [pendingAdd, setPendingAdd] = useState<Product | null>(null);
+  // Which product tab is showing: the cart ("Shopping list") or the catalog.
+  const [activeTab, setActiveTab] = useState<ProductTab>("list");
   const trackedRef = useRef(false);
 
   const college = usePlannerStore((s) => s.college);
@@ -324,22 +327,31 @@ export default function ResultPage() {
             afterward (lib/buy-gate). */}
         <BuyGateProvider>
           <section className="rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
+            {/* Budget total + progress: always visible above the tabs, and always
+                reflecting the shopping list specifically (not the catalog). */}
             <BudgetTracker total={total} budget={budget} />
-            {/* Prominent "Buy all", in sync with the tracker above (same cart
-                total). Hidden when the cart is empty. */}
+            {/* Island-style tab switcher, directly above Buy all. */}
+            <ProductTabSwitcher active={activeTab} onChange={setActiveTab} />
+            {/* Prominent "Buy all": stays visible on either tab (it reflects the
+                cart total). Hidden only when the cart itself is empty. */}
             {cartProducts.length > 0 && (
               <BuyAllButton products={cartProducts} total={total} />
             )}
-            <div className="lg:max-h-[68vh] lg:overflow-y-auto lg:pr-1">
-              <ProductPanel
-                products={cartProducts}
-                bedSize={room.bedSize}
-                onRemove={handleRemove}
-              />
+            {/* Active tab body. Keyed on the tab so switching re-triggers the
+                quick fade rather than swapping abruptly. */}
+            <div className="lg:max-h-[62vh] lg:overflow-y-auto lg:pr-1">
+              <div key={activeTab} className="fade-in">
+                {activeTab === "list" ? (
+                  <ProductPanel
+                    products={cartProducts}
+                    bedSize={room.bedSize}
+                    onRemove={handleRemove}
+                  />
+                ) : (
+                  <ThingsToAddPanel items={availableProducts} onAdd={handleAdd} />
+                )}
+              </div>
             </div>
-            {/* Budget-aware companion: pieces trimmed from the auto-list or
-                removed by hand, each with a "+" to move it back into the cart. */}
-            <ThingsToAddPanel items={availableProducts} onAdd={handleAdd} />
           </section>
         </BuyGateProvider>
       </div>

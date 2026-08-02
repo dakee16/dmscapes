@@ -72,9 +72,9 @@ export default function ProductPanel({
     return (
       <div className="rounded-xl border border-dashed border-ink/20 bg-white p-6 text-center">
         <p className="text-sm text-ink-soft">
-          Your list is empty. Add pieces from{" "}
-          <span className="font-semibold text-ink">Things to add</span> below to
-          build your room.
+          Your list is empty. Add pieces from the{" "}
+          <span className="font-semibold text-ink">Catalog</span> tab to build
+          your room.
         </p>
       </div>
     );

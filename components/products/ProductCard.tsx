@@ -88,7 +88,7 @@ export default function ProductCard({
                   onRemove();
                 }}
                 aria-label={`Remove ${product.name} from your list`}
-                className="cursor-pointer font-mono text-[11px] font-medium uppercase tracking-wide text-ink-soft transition-colors hover:text-ink"
+                className="cursor-pointer font-mono text-[10px] font-medium uppercase tracking-wide text-[#c2321e]/80 transition-colors hover:text-[#c2321e]"
               >
                 − Remove
               </button>
