@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import ProfileMenu from "@/components/auth/ProfileMenu";
 import Wordmark from "@/components/site/Wordmark";
 import RoommateTeaser from "@/components/site/RoommateTeaser";
+import HeaderCredits from "@/components/site/HeaderCredits";
 import { useAuth } from "@/lib/auth-context";
 import { isFree } from "@/lib/plan";
 
@@ -219,6 +220,14 @@ export default function Nav() {
             <ProfileMenu onShowRoom3D={() => setTeaserOpen(true)} />
           </div>
         </nav>
+
+        {/* Floating credit stat: sits OUTSIDE the island pill, on the open grid
+            to its right, roughly level with the header. Wide-desktop only, where
+            the centered max-w-6xl pill leaves clear grid space beside it; below
+            that the inline meters near the Plan/Save actions already cover it. */}
+        <div className="pointer-events-none absolute right-4 top-3 hidden h-[60px] items-center sm:top-4 sm:h-[68px] min-[1440px]:flex">
+          <HeaderCredits />
+        </div>
       </header>
       {/* Outside <header>: its backdrop-filter would trap fixed positioning. */}
       <RoommateTeaser open={teaserOpen} onClose={() => setTeaserOpen(false)} />
