@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
+import CreditMeter from "@/components/site/CreditMeter";
 
 function initialsOf(name: string): string {
   const clean = name.trim();
@@ -146,6 +147,8 @@ export default function ProfileMenu({
             {user?.email && (
               <p className="mt-0.5 truncate text-xs text-ink-soft">{user.email}</p>
             )}
+            {/* Plus only: the two live credit counters. */}
+            <CreditMeter className="mt-2.5" />
           </div>
 
           <div className="pt-1.5">

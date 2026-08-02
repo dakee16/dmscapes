@@ -8,9 +8,10 @@ import { categoriesCovered, tierForBudget } from "@/lib/catalog";
 import { STYLES, isPlusStyle } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
-import { isPaid, isCreditMetered, canGeneratePlan } from "@/lib/plan";
+import { isPaid, isPlusTier, isPlanMetered, canGeneratePlan } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
 import { useUpgrade } from "@/lib/upgrade-context";
+import CreditMeter from "@/components/site/CreditMeter";
 import type { StyleId } from "@/lib/types";
 
 const TIER_LABELS = { budget: "Essentials", mid: "Upgraded", premium: "Premium" } as const;
@@ -51,17 +52,19 @@ export default function PlanStylePage() {
     track("style_selected", { style: id });
   }
 
-  // Generate the plan. Plus users spend one plan credit here (the "click through
-  // to a result" moment); free and pro generate without limit. A Plus user with
-  // no credits left is blocked and shown the recharge / Pro choice.
+  // Generate the plan. Signed-in free and Plus accounts spend one plan credit
+  // here (the "click through to a result" moment); Pro and logged-out visitors
+  // generate without limit. When a counter is empty the block reason depends on
+  // the tier: a free user is sent to Plus/Pro, a Plus user to recharge/Pro.
   async function handleGenerate() {
     if (!style || generating) return;
-    if (isCreditMetered(profile)) {
-      // Fast path: a Plus user we already know is out of credits skips the
-      // server round-trip and goes straight to the recharge / Pro choice.
+    if (isPlanMetered(profile)) {
+      const blockReason = isPlusTier(profile) ? "plan-credits" : "free-plan-limit";
+      // Fast path: an account we already know is out of plans skips the server
+      // round-trip and goes straight to the right upgrade prompt.
       if (!canGeneratePlan(profile)) {
         track("plan_blocked_no_credits");
-        openUpgrade("credits");
+        openUpgrade(blockReason);
         return;
       }
       setGenerating(true);
@@ -70,7 +73,7 @@ export default function PlanStylePage() {
       if (blocked) {
         setGenerating(false);
         track("plan_blocked_no_credits");
-        openUpgrade("credits");
+        openUpgrade(blockReason);
         return;
       }
       track("plan_credit_consumed");
@@ -172,6 +175,8 @@ export default function PlanStylePage() {
       </div>
 
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/8 bg-paper/92 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
+        {/* Plus only: how many plan credits remain, right beside the action. */}
+        <CreditMeter only="plans" className="mb-2.5 justify-center sm:justify-start" />
         <button
           type="button"
           disabled={!style || generating}

@@ -50,9 +50,10 @@ export default function PlusPitch() {
               You&rsquo;ll have more than one good idea.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              The cozy version and the bold one. Saving and sharing are free for
-              everyone; Plus is where you line two rooms up side by side, export
-              the winner, and design in all nine vibes instead of five.
+              The cozy version and the bold one. Free gets you one plan and one
+              save to try it; Plus is five of each, plus lining two rooms up side
+              by side, exporting the winner, and designing in all nine vibes
+              instead of five.
             </p>
           </div>
 

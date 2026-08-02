@@ -8,7 +8,8 @@ import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { hasFeatures } from "@/lib/plan";
+import { hasFeatures, canSaveDesign, isPlusTier } from "@/lib/plan";
+import CreditMeter from "@/components/site/CreditMeter";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { downloadShoppingListPdf } from "@/lib/pdf";
 import { CATEGORY_LABELS, totalFor } from "@/lib/catalog";
@@ -33,7 +34,7 @@ export default function ActionBar({
   products: Product[];
   getPng: () => string | null;
 }) {
-  const { user, profile, openAuthModal } = useAuth();
+  const { user, profile, openAuthModal, refreshProfile } = useAuth();
   const { openUpgrade } = useUpgrade();
   // PDF/PNG export are premium features: unlocked for Pro and for anyone who has
   // ever bought Plus (stays unlocked even at 0 credits).
@@ -72,9 +73,13 @@ export default function ActionBar({
     };
   }
 
-  // `designName` set = a named "Save design" (needs the auth token); omitted =
-  // the anonymous "copy share link" flow.
-  async function saveRoom(designName?: string): Promise<string | null> {
+  // `designName` set = a named "Save design" (needs the auth token, and spends a
+  // save credit server-side); omitted = the anonymous "copy share link" flow,
+  // which never consumes a credit. Returns the share URL, a `blocked` marker when
+  // the account is out of save credits (403), or null on any other failure.
+  async function saveRoom(
+    designName?: string
+  ): Promise<{ url: string } | { blocked: true } | null> {
     const body = buildSaveRequest();
     if (!body) return null;
     if (designName) body.name = designName;
@@ -86,6 +91,10 @@ export default function ActionBar({
       headers,
       body: JSON.stringify(body),
     });
+    if (res.status === 403) {
+      const data = (await res.json().catch(() => ({}))) as { blockedSave?: boolean };
+      if (data.blockedSave) return { blocked: true };
+    }
     if (!res.ok) {
       showToast(
         res.status === 503
@@ -95,7 +104,7 @@ export default function ActionBar({
       return null;
     }
     const data = (await res.json()) as SaveRoomResponse;
-    return `${window.location.origin}/room/${data.id}`;
+    return { url: `${window.location.origin}/room/${data.id}` };
   }
 
   // PNG export is a premium feature now. Free users get the upgrade prompt.
@@ -159,9 +168,11 @@ export default function ActionBar({
     setMenuOpen(false);
     setBusy("link");
     try {
-      const url = await saveRoom();
-      if (url) {
-        await navigator.clipboard.writeText(url);
+      // The anonymous share link never carries a name, so it can't be a
+      // credit-blocked save; only the { url } case is possible here.
+      const result = await saveRoom();
+      if (result && "url" in result) {
+        await navigator.clipboard.writeText(result.url);
         showToast("Link copied. Send it to your roommate.");
         track("share_clicked", { type: "link" });
       }
@@ -186,12 +197,26 @@ export default function ActionBar({
       setNameError("Give your design a name to save it.");
       return;
     }
+    // Fast path: an account we already know is out of saves skips the round-trip
+    // and goes straight to the right upgrade prompt (Plus recharge or free -> Plus).
+    if (!canSaveDesign(profile)) {
+      track("save_blocked_no_credits");
+      openUpgrade(isPlusTier(profile) ? "save-credits" : "free-save-limit");
+      return;
+    }
     setBusy("save");
     try {
-      const url = await saveRoom(trimmed);
-      if (url) {
-        setSavedUrl(url);
+      const result = await saveRoom(trimmed);
+      if (result && "blocked" in result) {
+        track("save_blocked_no_credits");
+        openUpgrade(isPlusTier(profile) ? "save-credits" : "free-save-limit");
+        return;
+      }
+      if (result && "url" in result) {
+        setSavedUrl(result.url);
         track("design_saved");
+        // Reflect the spent save credit (Plus) in the live counter.
+        await refreshProfile();
       }
     } finally {
       setBusy(null);
@@ -248,14 +273,19 @@ export default function ActionBar({
             )}
           </div>
 
-          <button
-            type="button"
-            onClick={handleSaveClick}
-            aria-expanded={savePanel}
-            className="ml-auto cursor-pointer rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
-          >
-            Save design
-          </button>
+          <div className="ml-auto flex items-center gap-2.5">
+            {/* Plus only: saves remaining, right beside the save action. Hidden
+                on the tight mobile bar (still shown in the account dropdown). */}
+            <CreditMeter only="saves" className="hidden sm:flex" />
+            <button
+              type="button"
+              onClick={handleSaveClick}
+              aria-expanded={savePanel}
+              className="cursor-pointer rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
+            >
+              Save design
+            </button>
+          </div>
         </div>
 
         {savePanel && user && (

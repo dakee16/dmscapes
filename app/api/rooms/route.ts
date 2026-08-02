@@ -149,9 +149,33 @@ export async function POST(request: Request) {
     );
   }
 
-  // Saving is available on every tier now (the paid lever is plan credits, not
-  // saves). A named design still requires login, handled above; the anonymous
-  // share-link flow needs no account at all.
+  // Save metering: a named "Save design" spends one save credit (free is capped
+  // at 1 lifetime save, Plus spends from its 5, Pro is unlimited). The anonymous
+  // "copy share link" flow (no name) is not a saved design and never consumes.
+  // Consume BEFORE the insert so a user at their cap can't sneak a row in; if the
+  // insert then fails we refund. Fails open on RPC error, so infra hiccups never
+  // block a paying user's save.
+  if (name && userId) {
+    const { data: consumed, error: consumeErr } = await supabase.rpc(
+      "consume_save_credit",
+      { p_user_id: userId }
+    );
+    if (!consumeErr) {
+      const remaining = typeof consumed === "number" ? consumed : Number(consumed);
+      if (remaining < 0) {
+        return NextResponse.json(
+          {
+            error: "You've used your saves. Upgrade to save more designs.",
+            blockedSave: true,
+          },
+          { status: 403 }
+        );
+      }
+    } else {
+      console.error("save consume rpc failed:", consumeErr.message);
+    }
+  }
+
   const id = nanoid(10);
   const { error } = await supabase.from("saved_rooms").insert({
     id,
@@ -175,6 +199,11 @@ export async function POST(request: Request) {
 
   if (error) {
     console.error("saved_rooms insert failed:", error.message);
+    // The save credit was already spent above; hand it back so a failed insert
+    // doesn't cost the user a save. Best-effort.
+    if (name && userId) {
+      await supabase.rpc("refund_save_credit", { p_user_id: userId });
+    }
     return NextResponse.json(
       { error: "Couldn't save your design. Try again in a minute." },
       { status: 500 }

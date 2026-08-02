@@ -35,8 +35,15 @@ export interface Profile {
   plan?: PlanTier | null;
   /** Plus only: remaining plan-generation credits (null for free and pro). */
   plan_credits_remaining?: number | null;
+  /** Plus only: remaining save-design credits, independent of plan credits
+   *  (null for free and pro). Added in migration 0012. */
+  save_credits_remaining?: number | null;
+  /** Free-tier lifetime meters: how many plans / saves this free account has
+   *  ever used (capped at 1 each). Irrelevant once on a paid tier. */
+  free_plans_used?: number | null;
+  free_saves_used?: number | null;
   /** True once a user has ever purchased Plus; keeps premium features unlocked
-   *  even after their credits run out. Pro has features via its plan alone. */
+   *  even after either counter runs out. Pro has features via its plan alone. */
   plus_features_unlocked?: boolean | null;
 }
 
@@ -90,6 +97,9 @@ function devMockProfile(): Profile | null {
       phone: p.phone ?? null,
       plan: p.plan ?? "free",
       plan_credits_remaining: p.plan_credits_remaining ?? null,
+      save_credits_remaining: p.save_credits_remaining ?? null,
+      free_plans_used: p.free_plans_used ?? 0,
+      free_saves_used: p.free_saves_used ?? 0,
       plus_features_unlocked: p.plus_features_unlocked ?? false,
     };
   } catch {

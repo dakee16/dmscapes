@@ -9,12 +9,24 @@ import { track } from "@/lib/analytics";
 import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, RECHARGE_CREDITS } from "@/lib/plan";
 
 // Headline + one-line hook per gating point. The value block below is shared by
-// every reason except "credits", which is a Plus member out of plan credits and
-// gets its own recharge-vs-Pro layout.
+// every reason except the two Plus-recharge reasons (plan-credits, save-credits),
+// which get their own recharge-vs-Pro layout.
 const COPY: Record<UpgradeReason, { title: string; body: string }> = {
-  credits: {
+  "plan-credits": {
     title: "You're out of plan credits",
-    body: "You've used your Plus plan credits. Add more to keep designing new rooms, or go Pro for unlimited. Your saved designs, exports, and comparisons stay right where they are.",
+    body: "You've used your Plus plan credits. Add more to keep designing new rooms, or go Pro for unlimited. Your saves, exports, and comparisons stay right where they are.",
+  },
+  "save-credits": {
+    title: "You're out of save credits",
+    body: "You've used your Plus save credits. Recharge to keep saving designs, or go Pro for unlimited. Everything you've already saved stays right where it is.",
+  },
+  "free-plan-limit": {
+    title: "That's your free room plan",
+    body: "Free includes one room plan. Upgrade to Plus for 5 more (and 5 saves), or Pro for unlimited plans and saves, plus every vibe and premium tool.",
+  },
+  "free-save-limit": {
+    title: "That's your free saved design",
+    body: "Free includes one saved design. Upgrade to Plus for 5 saves (and 5 plan credits), or Pro for unlimited, plus every vibe and premium tool.",
   },
   pdf: {
     title: "Export your list as a PDF",
@@ -43,6 +55,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
 };
 
 const PERKS = [
+  "5 plan credits and 5 saves",
   "All 9 vibes unlocked",
   "PDF and PNG export",
   "Compare two designs side by side",
@@ -86,8 +99,9 @@ export default function UpgradeModal() {
     track("upgrade_prompt_shown", { reason });
     setBusy(null);
     setError("");
+    const recharge = reason === "plan-credits" || reason === "save-credits";
     const t = setTimeout(
-      () => (reason === "credits" ? rechargeRef : ctaRef).current?.focus(),
+      () => (recharge ? rechargeRef : ctaRef).current?.focus(),
       60
     );
     function onKey(e: KeyboardEvent) {
@@ -102,7 +116,9 @@ export default function UpgradeModal() {
 
   if (!open) return null;
   const copy = COPY[reason];
-  const isCredits = reason === "credits";
+  // Plus members who ran a counter dry get the recharge-vs-Pro layout; free-tier
+  // limits (and feature gates) get the shared Plus/Pro value block.
+  const isRecharge = reason === "plan-credits" || reason === "save-credits";
 
   async function buy(type: "recharge" | "pro") {
     if (busy) return;
@@ -144,8 +160,8 @@ export default function UpgradeModal() {
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-ink-soft">{copy.body}</p>
 
-        {isCredits ? (
-          // Out-of-credits: a Plus member chooses between a recharge and Pro.
+        {isRecharge ? (
+          // Out of a counter: a Plus member chooses between a recharge and Pro.
           <>
             <div className="mt-5 space-y-2.5">
               <button
@@ -157,10 +173,12 @@ export default function UpgradeModal() {
               >
                 <span>
                   <span className="block text-[15px] font-semibold leading-snug">
-                    {busy === "recharge" ? "Starting checkout…" : `Recharge ${RECHARGE_CREDITS} credits`}
+                    {busy === "recharge"
+                      ? "Starting checkout…"
+                      : `Recharge ${RECHARGE_CREDITS} plans + ${RECHARGE_CREDITS} saves`}
                   </span>
                   <span className="mt-0.5 block text-[13px] leading-snug text-white/80">
-                    Keep your Plus perks, just top up.
+                    Tops up both counters at once.
                   </span>
                 </span>
                 <span className="shrink-0 font-mono text-sm font-semibold">
@@ -176,10 +194,10 @@ export default function UpgradeModal() {
               >
                 <span>
                   <span className="block text-[15px] font-semibold leading-snug">
-                    {busy === "pro" ? "Starting checkout…" : "Go Pro, unlimited plans"}
+                    {busy === "pro" ? "Starting checkout…" : "Go Pro, unlimited"}
                   </span>
                   <span className="mt-0.5 block text-[13px] leading-snug text-ink-soft">
-                    Never think about credits again.
+                    Unlimited plans and saves, no counters.
                   </span>
                 </span>
                 <span className="shrink-0 font-mono text-sm font-semibold">

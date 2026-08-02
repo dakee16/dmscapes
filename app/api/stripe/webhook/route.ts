@@ -13,8 +13,9 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 // Signature verification needs the raw body and the Node runtime.
 export const runtime = "nodejs";
 
-/** Grant Plus: fresh 5 credits + permanent feature unlock. Idempotent given the
- *  session-id dedupe below (a replay would just set the same values). */
+/** Grant Plus: fresh 5 plan credits + 5 save credits (independent counters) +
+ *  permanent feature unlock. Idempotent given the session-id dedupe below (a
+ *  replay would just set the same values). */
 async function activatePlus(
   supabase: SupabaseClient,
   userId: string,
@@ -25,6 +26,7 @@ async function activatePlus(
     .update({
       plan: "plus",
       plan_credits_remaining: PLUS_INITIAL_CREDITS,
+      save_credits_remaining: PLUS_INITIAL_CREDITS,
       plus_features_unlocked: true,
       plan_purchased_at: new Date().toISOString(),
       ...(customerId ? { stripe_customer_id: customerId } : {}),
@@ -34,7 +36,7 @@ async function activatePlus(
   return !error;
 }
 
-/** Grant Pro: unlimited (no credit tracking), all features. */
+/** Grant Pro: unlimited (no credit tracking on either counter), all features. */
 async function activatePro(
   supabase: SupabaseClient,
   userId: string,
@@ -45,6 +47,7 @@ async function activatePro(
     .update({
       plan: "pro",
       plan_credits_remaining: null,
+      save_credits_remaining: null,
       plus_features_unlocked: true,
       plan_purchased_at: new Date().toISOString(),
       ...(customerId ? { stripe_customer_id: customerId } : {}),
@@ -54,10 +57,11 @@ async function activatePro(
   return !error;
 }
 
-/** Add recharge credits. Atomic increment (RPC) so it never clobbers a
- *  concurrent change, and the session-id dedupe stops replays double-adding. */
+/** Add recharge credits: +5 to BOTH counters at once (they were bought together
+ *  as a bundle). Atomic increment (RPC) so it never clobbers a concurrent
+ *  change, and the session-id dedupe stops replays double-adding. */
 async function addRecharge(supabase: SupabaseClient, userId: string): Promise<boolean> {
-  const { error } = await supabase.rpc("add_plan_credits", {
+  const { error } = await supabase.rpc("add_recharge_credits", {
     p_user_id: userId,
     p_amount: RECHARGE_CREDITS,
   });

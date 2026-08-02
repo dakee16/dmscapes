@@ -16,8 +16,8 @@ type Feature = { label: string; desc: string; icon: React.ReactNode };
 
 const FEATURES: Feature[] = [
   {
-    label: "5 plan credits",
-    desc: "Design five rooms, recharge anytime for $4.99.",
+    label: "5 plans + 5 saves",
+    desc: "Two separate counters, recharge both for $4.99.",
     icon: (
       <path
         d="M6 4h12a1 1 0 0 1 1 1v14l-7-4-7 4V5a1 1 0 0 1 1-1z"
@@ -145,7 +145,8 @@ export default function PlusWelcome({
           </h2>
           <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
             You have the free planner already. Plus unlocks every vibe and every
-            premium feature, and hands you five room-plan credits to design with.
+            premium feature, and hands you five plan credits and five saves to
+            design with.
           </p>
 
           <div className="mt-7 grid grid-cols-1 gap-x-5 gap-y-4 sm:grid-cols-2">

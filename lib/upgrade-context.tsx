@@ -1,13 +1,22 @@
 "use client";
 
 // Shared "Upgrade to Plus" modal state, mounted once in app/layout.tsx. Any
-// gating point (save cap, PDF export, comparison view, school request) calls
-// openUpgrade(reason); the copy adapts, the design stays identical.
+// gating point (plan/save limits, PDF export, comparison view, school request)
+// calls openUpgrade(reason); the copy adapts, the design stays identical.
+//
+// The four metered reasons split by tier AND counter:
+//   plan-credits    Plus member out of plan credits  -> recharge / Pro
+//   save-credits    Plus member out of save credits  -> recharge / Pro
+//   free-plan-limit free account used its 1 plan      -> Plus / Pro
+//   free-save-limit free account used its 1 save      -> Plus / Pro
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import UpgradeModal from "@/components/site/UpgradeModal";
 
 export type UpgradeReason =
-  | "credits"
+  | "plan-credits"
+  | "save-credits"
+  | "free-plan-limit"
+  | "free-save-limit"
   | "pdf"
   | "png"
   | "compare"

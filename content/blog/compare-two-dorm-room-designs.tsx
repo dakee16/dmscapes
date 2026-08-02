@@ -90,15 +90,17 @@ function Body() {
         side by side, so you&rsquo;re reading the same rows for both rooms at
         once. It&rsquo;s one of the premium tools in{" "}
         <TextLink href="/pricing">Dormscape Plus</TextLink> (a one-time $7.99
-        upgrade) and Pro ($19.99). Saving designs is free on every tier; the
-        comparison view is the paid part. If you&rsquo;re deciding whether
-        that&rsquo;s worth it, we broke it down honestly in{" "}
+        upgrade that also includes 5 plan credits and 5 saves) and Pro ($19.99
+        for unlimited). The comparison view itself is the paid part, and since it
+        lines up two saved designs, the 5 saves in Plus are what make it practical.
+        If you&rsquo;re deciding whether that&rsquo;s worth it, we broke it down
+        honestly in{" "}
         <TextLink href="/blog/is-dormscape-plus-worth-it">
           is Dormscape Plus worth it
         </TextLink>
-        . You can always compare the free way too, by saving one design, sharing
-        its link, and building the other, it&rsquo;s just more flipping back and
-        forth.
+        . You can always eyeball it the free way too, by saving your one free
+        design, sharing its link, and building the other alongside it, it&rsquo;s
+        just more flipping back and forth.
       </P>
 
       <H2>How to actually decide</H2>
@@ -150,7 +152,7 @@ const post: BlogPost = {
     },
     {
       q: "Can I compare two dorm rooms side by side in Dormscape?",
-      a: "Yes. Dormscape has a side-by-side comparison view that lines up two saved designs with their budgets, styles, school, room, and dimensions. Saving designs is free on every tier; the comparison view itself is a premium tool, part of Dormscape Plus (a one-time $7.99 upgrade) and Pro ($19.99).",
+      a: "Yes. Dormscape has a side-by-side comparison view that lines up two saved designs with their budgets, styles, school, room, and dimensions. The comparison view is a premium tool, part of Dormscape Plus (a one-time $7.99 upgrade, which also includes 5 plan credits and 5 saves) and Pro ($19.99 for unlimited).",
     },
     {
       q: "What should I compare first when choosing between two rooms?",

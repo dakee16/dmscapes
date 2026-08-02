@@ -26,7 +26,7 @@ const CFG: Record<
     cents: PLUS_PRICE_CENTS,
     envKey: "STRIPE_PLUS_PRICE_ID",
     name: "Dormscape Plus",
-    description: `One-time upgrade: ${PLUS_INITIAL_CREDITS} plan credits, all 9 vibes, and PDF/PNG export, comparison, and priority school requests unlocked for good.`,
+    description: `One-time upgrade: ${PLUS_INITIAL_CREDITS} plan credits and ${PLUS_INITIAL_CREDITS} saves, all 9 vibes, and PDF/PNG export, comparison, and priority school requests unlocked for good.`,
     success: "upgraded=plus",
   },
   pro: {
@@ -34,14 +34,14 @@ const CFG: Record<
     envKey: "STRIPE_PRO_PRICE_ID",
     name: "Dormscape Pro",
     description:
-      "One-time upgrade: unlimited plan credits, all 9 vibes, and every premium feature, forever.",
+      "One-time upgrade: unlimited plans and saves, all 9 vibes, and every premium feature, forever.",
     success: "upgraded=pro",
   },
   recharge: {
     cents: RECHARGE_PRICE_CENTS,
     envKey: "STRIPE_RECHARGE_PRICE_ID",
     name: "Dormscape Plus recharge",
-    description: `${RECHARGE_CREDITS} more plan credits added to your Plus account.`,
+    description: `${RECHARGE_CREDITS} more plan credits and ${RECHARGE_CREDITS} more saves added to your Plus account.`,
     success: "recharged=1",
   },
 };
