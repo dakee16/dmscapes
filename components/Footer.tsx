@@ -109,13 +109,13 @@ export default function Footer() {
             <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
               Social
             </p>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-2 space-y-0.5">
               <li>
                 <a
                   href="https://tiktok.com/@dorm.scape"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+                  className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
                 >
                   <TikTokIcon />
                   TikTok
@@ -126,7 +126,7 @@ export default function Footer() {
                   href="https://www.instagram.com/dorm.scape"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+                  className="inline-flex min-h-[44px] items-center gap-2 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
                 >
                   <InstagramIcon />
                   Instagram

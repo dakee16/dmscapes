@@ -131,7 +131,7 @@ export default function RoomPlanner() {
             type="button"
             onClick={() => setVibeKey(key)}
             aria-pressed={key === vibeKey}
-            className={`cursor-pointer rounded-full border px-3 py-1 text-xs font-semibold transition-colors ${
+            className={`inline-flex cursor-pointer items-center justify-center rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors pointer-coarse:min-h-[44px] pointer-coarse:px-4 ${
               key === vibeKey
                 ? "border-ink bg-ink text-white"
                 : "border-ink/15 bg-white text-ink-soft hover:border-ink/40 hover:text-ink"
