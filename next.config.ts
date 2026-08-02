@@ -101,6 +101,17 @@ export default function nextConfig(phase: string): NextConfig {
             { key: "X-Frame-Options", value: "DENY" },
             // Don't leak full URLs (room share ids, etc.) to external sites.
             { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+            // Pin the site to HTTPS for two years. Ignored by browsers over
+            // http:// (localhost dev), so it's safe to send everywhere. No
+            // includeSubDomains/preload, to avoid committing subdomains we
+            // don't control to HTTPS.
+            { key: "Strict-Transport-Security", value: "max-age=63072000" },
+            // Deny powerful features the app never uses, so injected or
+            // embedded content can't request them either.
+            {
+              key: "Permissions-Policy",
+              value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+            },
           ],
         },
       ];
