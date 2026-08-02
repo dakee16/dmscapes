@@ -12,7 +12,11 @@ export default function ContactPage() {
   return (
     <div>
       <Nav />
-      <main>
+      <main className="relative">
+        <div
+          className="grid-paper grid-paper-fade absolute inset-x-0 top-0 -z-10 h-[28rem]"
+          aria-hidden="true"
+        />
         <div className="mx-auto max-w-2xl px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             Get in touch
