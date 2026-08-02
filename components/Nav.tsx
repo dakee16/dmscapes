@@ -84,8 +84,12 @@ export default function Nav() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-ink/10 bg-paper/90 shadow-[0_10px_30px_-24px_rgba(23,23,43,0.45)] backdrop-blur-md">
-        <nav className="mx-auto flex h-[68px] max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+      {/* Floating "island" header: the sticky wrapper adds side + top margin so
+          the bar never sits flush to the viewport edges; the nav itself is the
+          rounded, translucent, blurred pill that hovers over the page as it
+          scrolls. */}
+      <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
+        <nav className="mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-4 rounded-full border border-ink/10 bg-paper/80 px-4 shadow-[0_12px_34px_-14px_rgba(23,23,43,0.4)] backdrop-blur-md sm:h-[68px] sm:px-6">
           {/* Brand */}
           <Wordmark />
 
