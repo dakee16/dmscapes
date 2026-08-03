@@ -54,22 +54,18 @@ const INK = "#17172b";
 const GRID = "#e4e9f4";
 const COBALT = "#2b4eff";
 const RED = "#dc2626";
-// Brand-mark colors for the export watermark (match app/icon.svg + the wordmark).
+// Brand-mark color for the export watermark (matches the "d" badge + wordmark).
 const AMBER = "#f0b100";
-const HIGHLIGHT = "#ffd84d";
-const MARK_GRAY = "#d7d9e0";
 
 /**
- * Bottom-right brand lockup baked into exported PNGs: the four-square icon mark
- * plus the "dormscape" wordmark on a soft, mostly-transparent backing. Subtle
+ * Bottom-right brand lockup baked into exported PNGs: the "d" badge plus the
+ * "dormscape" wordmark on a soft, mostly-transparent backing. Subtle
  * over the room, but crisp enough to read as intentional branding when shared.
  */
 function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
   const WM_FONT = 'system-ui, -apple-system, "Segoe UI", sans-serif';
   const fontSize = 14;
   const iconSize = 16;
-  const sq = 7; // icon square side; two squares + a 2px gutter = 16
-  const gutter = iconSize - sq * 2;
   const gap = 6; // icon-to-wordmark
   const padX = 9;
   const padY = 6;
@@ -116,15 +112,31 @@ function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
 
   const ix = padX;
   const iy = (pillH - iconSize) / 2;
-  const squares: Array<[number, number, string]> = [
-    [ix, iy, COBALT],
-    [ix + sq + gutter, iy, HIGHLIGHT],
-    [ix, iy + sq + gutter, MARK_GRAY],
-    [ix + sq + gutter, iy + sq + gutter, INK],
-  ];
-  for (const [x, y, fill] of squares) {
-    group.add(new Konva.Rect({ x, y, width: sq, height: sq, cornerRadius: 1.6, fill }));
-  }
+  group.add(
+    new Konva.Rect({
+      x: ix,
+      y: iy,
+      width: iconSize,
+      height: iconSize,
+      cornerRadius: 3.5,
+      fill: AMBER,
+    })
+  );
+  group.add(
+    new Konva.Text({
+      text: "d",
+      x: ix,
+      y: iy,
+      width: iconSize,
+      height: iconSize,
+      align: "center",
+      verticalAlign: "middle",
+      fontFamily: WM_FONT,
+      fontStyle: "800",
+      fontSize: 12,
+      fill: INK,
+    })
+  );
 
   const tx = padX + iconSize + gap;
   const ty = (pillH - textH) / 2;
