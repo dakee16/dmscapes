@@ -631,7 +631,7 @@ export default function AuthModal() {
                   <span className="font-semibold">
                     An account with this email already exists.
                   </span>{" "}
-                  We switched you to log in{email.trim() ? " — " : "."}
+                  We switched you to log in{email.trim() ? ", " : "."}
                   {email.trim() && (
                     <>
                       just enter your password for{" "}
