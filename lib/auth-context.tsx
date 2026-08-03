@@ -46,6 +46,10 @@ export interface Profile {
   /** True once a user has ever purchased Plus; keeps premium features unlocked
    *  even after either counter runs out. Pro has features via its plan alone. */
   plus_features_unlocked?: boolean | null;
+  /** When the user accepted the Terms + Privacy Policy. Set by handle_new_user
+   *  (migration 0013): the email-signup timestamp from the consent checkbox, or
+   *  now() for OAuth (implicit agreement). Null on accounts created before 0013. */
+  terms_accepted_at?: string | null;
 }
 
 export type PlanTier = "free" | "plus" | "pro";
@@ -102,6 +106,7 @@ function devMockProfile(): Profile | null {
       free_plans_used: p.free_plans_used ?? 0,
       free_saves_used: p.free_saves_used ?? 0,
       plus_features_unlocked: p.plus_features_unlocked ?? false,
+      terms_accepted_at: p.terms_accepted_at ?? null,
     };
   } catch {
     return null;

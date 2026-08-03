@@ -14,7 +14,7 @@ import { getServiceClient } from "@/lib/supabase-server";
 import type { Product } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: { absolute: "A Dormscape Room Design" },
+  title: { absolute: "A dormscape room design" },
   description: "A dorm room designed with Dormscape, the free AI dorm room planner.",
   robots: { index: false }, // share pages shouldn't compete with the planner in search
 };

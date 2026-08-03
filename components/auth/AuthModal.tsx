@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
@@ -58,6 +59,9 @@ export default function AuthModal() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [confirmSent, setConfirmSent] = useState(false);
+  // Terms + Privacy consent, required only on the email/password signup path.
+  // OAuth (Google) is treated as implicit agreement, so it never shows this.
+  const [agreed, setAgreed] = useState(false);
   // Forgot-password sub-flow (login/email path only).
   const [resetMode, setResetMode] = useState(false);
   const [resetSent, setResetSent] = useState(false);
@@ -104,6 +108,7 @@ export default function AuthModal() {
     setConfirmSent(false);
     setResetMode(false);
     setResetSent(false);
+    setAgreed(false);
     const t = setTimeout(
       () => (needsUsername ? usernameRef : emailRef).current?.focus(),
       60
@@ -181,6 +186,12 @@ export default function AuthModal() {
     // New passwords (signup) must satisfy the full policy; logging in only needs
     // whatever the existing account was created with.
     if (mode === "signup") {
+      // Defense in depth: the submit button is disabled until this is checked,
+      // but never trust the client to have enforced it.
+      if (!agreed) {
+        setError("Please agree to the Terms of Service and Privacy Policy to continue.");
+        return;
+      }
       if (!passwordMeetsPolicy(password)) {
         setError(
           "Password needs 8 to 12 characters, an uppercase letter, and a special character."
@@ -198,6 +209,13 @@ export default function AuthModal() {
         const { data, error: err } = await supabase.auth.signUp({
           email: mail,
           password,
+          options: {
+            // Record consent immediately in auth.users.raw_user_meta_data, so it
+            // survives the email-confirmation flow (there's no session yet to
+            // write the profile row). handle_new_user copies it onto profiles
+            // (migration 0013). The ISO timestamp is when they ticked the box.
+            data: { terms_accepted_at: new Date().toISOString() },
+          },
         });
         if (err) {
           setError(err.message);
@@ -316,6 +334,9 @@ export default function AuthModal() {
         return null;
     }
   })();
+
+  // Signup can't submit until Terms + Privacy are agreed to. Login is unaffected.
+  const signupBlocked = mode === "signup" && !agreed;
 
   return (
     <div
@@ -591,6 +612,39 @@ export default function AuthModal() {
                 />
                 {mode === "signup" && <PasswordChecklist password={password} />}
               </div>
+              {mode === "signup" && (
+                <div className="flex items-start gap-2.5 pt-0.5">
+                  <input
+                    id="auth-terms"
+                    type="checkbox"
+                    checked={agreed}
+                    onChange={(e) => setAgreed(e.target.checked)}
+                    aria-label="I agree to the Terms of Service and Privacy Policy"
+                    className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-cobalt"
+                  />
+                  <p className="text-[13px] leading-snug text-ink-soft">
+                    I agree to the{" "}
+                    <Link
+                      href="/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-cobalt underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt-deep"
+                    >
+                      Terms of Service
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                      href="/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-cobalt underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt-deep"
+                    >
+                      Privacy Policy
+                    </Link>
+                    .
+                  </p>
+                </div>
+              )}
               {error && (
                 <p className="text-sm text-[#c2321e]" role="alert">
                   {error}
@@ -598,8 +652,13 @@ export default function AuthModal() {
               )}
               <button
                 type="submit"
-                disabled={busy}
-                className="h-12 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
+                disabled={busy || signupBlocked}
+                aria-disabled={busy || signupBlocked}
+                className={`h-12 w-full rounded-xl text-base font-semibold text-white transition-colors ${
+                  signupBlocked
+                    ? "cursor-not-allowed bg-cobalt/40"
+                    : "cursor-pointer bg-cobalt hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
+                }`}
               >
                 {busy
                   ? "One sec…"
