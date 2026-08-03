@@ -81,9 +81,22 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 const DEV_AUTH_KEY = "dormscape-dev-auth";
 
 // Once-per-browser-session flag: the premium PlusWelcome shows at most once, on
-// the first real sign-in of the session (see the SIGNED_IN handler). Survives a
-// log out / log back in within the session; a new tab/window resets it.
+// the first real sign-in of the session (see the login handler). Survives a
+// log out / log back in within the session; a new tab/window resets it. The flag
+// is written only when the welcome actually shows, so a login that never displays
+// it (paid member, or a buy-gate login) doesn't burn the one chance.
 const PLUS_WELCOME_KEY = "dormscape-plus-welcome-seen";
+
+// Written by AuthModal right before a Google OAuth redirect, cleared on return.
+// We read it to tell a fresh OAuth login (which should welcome) apart from a
+// silent session restore (which should not): both come back with a session
+// already present at load, so the presence of the session alone can't.
+const OAUTH_PENDING_KEY = "dormscape-oauth-pending";
+
+// Dev-only: opens the PlusWelcome for local QA/screenshots without a real login
+// (set sessionStorage[DEV_PLUS_WELCOME_KEY] = "1"). Guarded by NODE_ENV so it is
+// dead code in production builds.
+const DEV_PLUS_WELCOME_KEY = "dormscape-dev-plus-welcome";
 
 function devMockProfile(): Profile | null {
   if (process.env.NODE_ENV === "production" || typeof window === "undefined")
@@ -152,6 +165,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // then revealed once the profile (plan) is known and the auth modal is gone.
   const [plusWelcomeOpen, setPlusWelcomeOpen] = useState(false);
   const [pendingPlusWelcome, setPendingPlusWelcome] = useState(false);
+  // Captured at mount (before AuthModal can clear the marker): true when this page
+  // load is the return leg of a Google OAuth redirect, i.e. a genuine login.
+  const oauthReturnRef = useRef(false);
 
   const fetchProfile = useCallback(
     async (uid: string) => {
@@ -169,11 +185,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   );
 
   useEffect(() => {
+    // Read the OAuth-return marker up front, before AuthModal's effect clears it.
+    if (typeof window !== "undefined") {
+      oauthReturnRef.current =
+        window.localStorage.getItem(OAUTH_PENDING_KEY) !== null;
+    }
     const dev = devMockProfile();
     if (dev) {
       setUser({ id: dev.id, email: dev.email ?? undefined } as User);
       setProfile(dev);
       setLoading(false);
+      // Dev-only screenshot/QA hook for the welcome (see DEV_PLUS_WELCOME_KEY).
+      if (
+        process.env.NODE_ENV !== "production" &&
+        !isPaid(dev) &&
+        typeof window !== "undefined" &&
+        window.sessionStorage.getItem(DEV_PLUS_WELCOME_KEY)
+      ) {
+        setPlusWelcomeOpen(true);
+      }
       return;
     }
     if (!supabase) {
@@ -183,7 +213,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     supabase.auth.getSession().then(({ data }) => {
       const u = data.session?.user ?? null;
       setUser(u);
-      hadUserRef.current = Boolean(u);
+      // A session already present at load is a silent restore, not a fresh login,
+      // so mark it seen to suppress the welcome. The lone exception is an OAuth
+      // redirect return: that session IS the login, so leave hadUserRef alone and
+      // let the login handler below welcome it.
+      if (u && !oauthReturnRef.current) hadUserRef.current = true;
       if (u) void fetchProfile(u.id);
       setLoading(false);
     });
@@ -193,14 +227,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (u) void fetchProfile(u.id);
       else setProfile(null);
 
-      if (event === "SIGNED_IN") {
+      // A genuine login is a SIGNED_IN event, or the INITIAL_SESSION that lands
+      // when returning from a Google OAuth redirect (supabase may surface the
+      // fresh session as either one). Silent restores and token refreshes are
+      // neither, so they never reach the welcome.
+      const isLoginEvent =
+        event === "SIGNED_IN" ||
+        (event === "INITIAL_SESSION" && Boolean(u) && oauthReturnRef.current);
+
+      if (isLoginEvent) {
         // A fresh sign-in: clear any stale bump notice and ask the server to
         // revoke this account's oldest sessions past the concurrent limit.
         setSessionBumped(false);
         if (session?.access_token) void enforceSessionLimit(session.access_token);
-        // First real sign-in of this browser session (a session restore or a
-        // focus-driven re-fire keeps hadUserRef true, so those don't count).
-        if (!hadUserRef.current) {
+        // First real login of this browser session. hadUserRef guards focus- or
+        // refresh-driven SIGNED_IN re-fires; an OAuth return is always a real
+        // login even though its session was just restored from the URL, so it
+        // bypasses that guard.
+        if (!hadUserRef.current || oauthReturnRef.current) {
+          // Consume the OAuth marker so later re-fires this page load don't count.
+          oauthReturnRef.current = false;
           const reason = modalReasonRef.current;
           // Land a fresh login or signup on the home page, unless the sign-in was
           // to finish an in-place action (saving the current design, or buying a
@@ -208,15 +254,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           if (reason !== "save-design" && reason !== "buy") {
             routerRef.current.push("/");
           }
-          // Queue the premium welcome, once per browser session. Skip showing it
-          // when the login was to complete a buy, so it never collides with that
-          // resume (buy-gate opens with reason "buy").
+          // Queue the premium welcome, once per browser session. Skip it when the
+          // login was to finish a buy, so it never collides with that resume
+          // (buy-gate opens with reason "buy"). The flag is set when it actually
+          // shows (reveal effect below), not here, so an undisplayed login keeps
+          // the one-per-session chance intact.
           if (
+            reason !== "buy" &&
             typeof window !== "undefined" &&
             !window.sessionStorage.getItem(PLUS_WELCOME_KEY)
           ) {
-            window.sessionStorage.setItem(PLUS_WELCOME_KEY, "1");
-            if (reason !== "buy") setPendingPlusWelcome(true);
+            setPendingPlusWelcome(true);
           }
         }
       } else if (event === "SIGNED_OUT") {
@@ -248,7 +296,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!pendingPlusWelcome || !profile || modalOpen) return;
     setPendingPlusWelcome(false);
-    if (!isPaid(profile)) setPlusWelcomeOpen(true);
+    // Already shown once this session (e.g. a prior tab-focus re-queue): stop.
+    if (
+      typeof window !== "undefined" &&
+      window.sessionStorage.getItem(PLUS_WELCOME_KEY)
+    ) {
+      return;
+    }
+    // Plus members never see it; either way the queue clears. Record it as seen
+    // only here, the moment it truly shows, so it stays a real once-per-session
+    // moment rather than being spent by a login that never displayed it.
+    if (!isPaid(profile)) {
+      if (typeof window !== "undefined") {
+        window.sessionStorage.setItem(PLUS_WELCOME_KEY, "1");
+      }
+      setPlusWelcomeOpen(true);
+    }
   }, [pendingPlusWelcome, profile, modalOpen]);
 
   const closeAuthModal = useCallback(() => setModalOpen(false), []);

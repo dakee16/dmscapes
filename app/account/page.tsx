@@ -217,7 +217,7 @@ export default function AccountPage() {
                 <span className="font-mono text-[11px] font-medium uppercase tracking-wide text-ink-soft">
                   Plus credits
                 </span>
-                <CreditMeter />
+                <CreditMeter recharge={false} />
                 <Link
                   href="/pricing"
                   className="ml-auto text-sm font-semibold text-cobalt underline-offset-2 transition-colors hover:underline"
