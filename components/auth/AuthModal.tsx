@@ -17,6 +17,22 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const PROMPTED_KEY = "dormscape-username-prompted";
 const OAUTH_PENDING_KEY = "dormscape-oauth-pending";
 
+/** True when a signUp error means the email already has an account. Supabase
+ *  surfaces this as an error only when email-enumeration protection is OFF; when
+ *  it's ON, the decoy-user check in handleCredentials catches it instead. */
+function isAlreadyRegistered(err: {
+  code?: string | null;
+  message?: string | null;
+}): boolean {
+  const code = (err.code ?? "").toLowerCase();
+  const msg = (err.message ?? "").toLowerCase();
+  return (
+    code === "user_already_exists" ||
+    code === "email_exists" ||
+    /already registered|already exists|already been registered/.test(msg)
+  );
+}
+
 function GoogleG() {
   return (
     <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
@@ -59,6 +75,9 @@ export default function AuthModal() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [confirmSent, setConfirmSent] = useState(false);
+  // True when a signup attempt found an existing account and we auto-switched
+  // the modal to login mode (the email stays pre-filled).
+  const [existingNotice, setExistingNotice] = useState(false);
   // Terms + Privacy consent, required only on the email/password signup path.
   // OAuth (Google) is treated as implicit agreement, so it never shows this.
   const [agreed, setAgreed] = useState(false);
@@ -109,6 +128,7 @@ export default function AuthModal() {
     setResetMode(false);
     setResetSent(false);
     setAgreed(false);
+    setExistingNotice(false);
     const t = setTimeout(
       () => (needsUsername ? usernameRef : emailRef).current?.focus(),
       60
@@ -174,6 +194,19 @@ export default function AuthModal() {
     // On success the browser navigates away; no state to restore.
   }
 
+  // Signup hit an existing account: flip the modal to login in place, keep the
+  // email pre-filled, clear the signup password, and focus the password field so
+  // they can just log in. A friendly notice explains the switch.
+  function switchToExistingAccount() {
+    setMode("login");
+    setPassword("");
+    setAgreed(false);
+    setConfirmSent(false);
+    setError("");
+    setExistingNotice(true);
+    setTimeout(() => document.getElementById("auth-password")?.focus(), 80);
+  }
+
   async function handleCredentials(e: React.FormEvent) {
     e.preventDefault();
     const supabase = getBrowserClient();
@@ -218,7 +251,18 @@ export default function AuthModal() {
           },
         });
         if (err) {
+          if (isAlreadyRegistered(err)) {
+            switchToExistingAccount();
+            return;
+          }
           setError(err.message);
+          return;
+        }
+        // Email-enumeration protection (on by default): an existing account comes
+        // back as a decoy user with an empty identities array and no error. Treat
+        // that exactly like the explicit "already registered" error above.
+        if (data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0) {
+          switchToExistingAccount();
           return;
         }
         track("auth_completed", { mode: "signup", provider: "email" });
@@ -557,6 +601,7 @@ export default function AuthModal() {
                   onClick={() => {
                     setMode(m);
                     setError("");
+                    setExistingNotice(false);
                   }}
                   className={`cursor-pointer rounded-lg py-2 transition-colors ${
                     mode === m ? "bg-ink text-white" : "text-ink-soft hover:text-ink"
@@ -566,6 +611,36 @@ export default function AuthModal() {
                 </button>
               ))}
             </div>
+            {mode === "login" && existingNotice && (
+              <div
+                className="mt-4 flex items-start gap-2.5 rounded-xl border border-cobalt/30 bg-cobalt/[0.06] px-4 py-3"
+                role="status"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="mt-0.5 h-5 w-5 shrink-0 text-cobalt"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 8h.01M11 12h1v4h1" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <p className="text-[13px] leading-snug text-ink">
+                  <span className="font-semibold">
+                    An account with this email already exists.
+                  </span>{" "}
+                  We switched you to log in{email.trim() ? " — " : "."}
+                  {email.trim() && (
+                    <>
+                      just enter your password for{" "}
+                      <span className="font-medium">{email.trim()}</span>.
+                    </>
+                  )}
+                </p>
+              </div>
+            )}
             <button
               type="button"
               onClick={handleGoogle}
@@ -592,7 +667,10 @@ export default function AuthModal() {
                   type="email"
                   autoComplete="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (existingNotice) setExistingNotice(false);
+                  }}
                   placeholder="you@school.edu"
                   className="h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
                 />

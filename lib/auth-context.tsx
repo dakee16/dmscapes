@@ -87,11 +87,22 @@ const DEV_AUTH_KEY = "dormscape-dev-auth";
 // it (paid member, or a buy-gate login) doesn't burn the one chance.
 const PLUS_WELCOME_KEY = "dormscape-plus-welcome-seen";
 
-// Written by AuthModal right before a Google OAuth redirect, cleared on return.
-// We read it to tell a fresh OAuth login (which should welcome) apart from a
-// silent session restore (which should not): both come back with a session
-// already present at load, so the presence of the session alone can't.
-const OAUTH_PENDING_KEY = "dormscape-oauth-pending";
+// True when THIS tab loaded with auth tokens in its URL: the landing leg of a
+// Google OAuth redirect OR an email-confirmation / magic-link click. That marks
+// this as the tab where the login actually happened — as opposed to a background
+// tab that only received the session via Supabase's cross-tab broadcast. Password
+// recovery is excluded (it lands on /reset-password and must not welcome).
+function detectUrlAuthLanding(): boolean {
+  if (typeof window === "undefined") return false;
+  const s = `${window.location.hash} ${window.location.search}`;
+  if (/type=recovery/.test(s)) return false;
+  return (
+    /access_token=|refresh_token=|[?&]code=/.test(s) ||
+    /type=(signup|magiclink|invite|email_change)/.test(s)
+  );
+}
+// Captured once at module load, before the Supabase client strips the URL hash.
+const INITIAL_URL_AUTH_LANDING = detectUrlAuthLanding();
 
 // Dev-only: opens the PlusWelcome for local QA/screenshots without a real login
 // (set sessionStorage[DEV_PLUS_WELCOME_KEY] = "1"). Guarded by NODE_ENV so it is
@@ -165,9 +176,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // then revealed once the profile (plan) is known and the auth modal is gone.
   const [plusWelcomeOpen, setPlusWelcomeOpen] = useState(false);
   const [pendingPlusWelcome, setPendingPlusWelcome] = useState(false);
-  // Captured at mount (before AuthModal can clear the marker): true when this page
-  // load is the return leg of a Google OAuth redirect, i.e. a genuine login.
-  const oauthReturnRef = useRef(false);
+  // True when THIS tab loaded with auth tokens in its URL (OAuth return or email
+  // confirmation / magic-link landing) — the tab where the login truly happened.
+  // Consumed once by the login handler below.
+  const urlLandingRef = useRef(INITIAL_URL_AUTH_LANDING);
 
   const fetchProfile = useCallback(
     async (uid: string) => {
@@ -185,11 +197,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   );
 
   useEffect(() => {
-    // Read the OAuth-return marker up front, before AuthModal's effect clears it.
-    if (typeof window !== "undefined") {
-      oauthReturnRef.current =
-        window.localStorage.getItem(OAUTH_PENDING_KEY) !== null;
-    }
     const dev = devMockProfile();
     if (dev) {
       setUser({ id: dev.id, email: dev.email ?? undefined } as User);
@@ -214,10 +221,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const u = data.session?.user ?? null;
       setUser(u);
       // A session already present at load is a silent restore, not a fresh login,
-      // so mark it seen to suppress the welcome. The lone exception is an OAuth
-      // redirect return: that session IS the login, so leave hadUserRef alone and
-      // let the login handler below welcome it.
-      if (u && !oauthReturnRef.current) hadUserRef.current = true;
+      // so mark it seen to suppress the welcome. The lone exception is a URL-auth
+      // landing (OAuth return or email-confirmation click): that session IS the
+      // login, so leave hadUserRef alone and let the login handler welcome it.
+      if (u && !urlLandingRef.current) hadUserRef.current = true;
       if (u) void fetchProfile(u.id);
       setLoading(false);
     });
@@ -227,26 +234,34 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (u) void fetchProfile(u.id);
       else setProfile(null);
 
-      // A genuine login is a SIGNED_IN event, or the INITIAL_SESSION that lands
-      // when returning from a Google OAuth redirect (supabase may surface the
-      // fresh session as either one). Silent restores and token refreshes are
-      // neither, so they never reach the welcome.
+      // Is the user actually looking at THIS tab right now? Supabase broadcasts a
+      // new session to every open tab, so a background tab also fires SIGNED_IN;
+      // it's hidden, while the tab the user acted in (a fresh login, an OAuth
+      // return, or the email-verification tab they just clicked into) is visible.
+      // This is what keeps the welcome on the tab the user is in.
+      const activeTab =
+        typeof document === "undefined" || document.visibilityState === "visible";
+      // A genuine login in THIS tab: a SIGNED_IN while this tab is active or
+      // landed the auth URL, or the INITIAL_SESSION that lands when returning
+      // from an OAuth redirect / clicking an email-confirmation link. A silent
+      // session restore or a cross-tab broadcast into a hidden tab is neither.
       const isLoginEvent =
-        event === "SIGNED_IN" ||
-        (event === "INITIAL_SESSION" && Boolean(u) && oauthReturnRef.current);
+        (event === "SIGNED_IN" &&
+          Boolean(u) &&
+          (urlLandingRef.current || activeTab)) ||
+        (event === "INITIAL_SESSION" && Boolean(u) && urlLandingRef.current);
 
       if (isLoginEvent) {
         // A fresh sign-in: clear any stale bump notice and ask the server to
         // revoke this account's oldest sessions past the concurrent limit.
         setSessionBumped(false);
         if (session?.access_token) void enforceSessionLimit(session.access_token);
-        // First real login of this browser session. hadUserRef guards focus- or
-        // refresh-driven SIGNED_IN re-fires; an OAuth return is always a real
-        // login even though its session was just restored from the URL, so it
-        // bypasses that guard.
-        if (!hadUserRef.current || oauthReturnRef.current) {
-          // Consume the OAuth marker so later re-fires this page load don't count.
-          oauthReturnRef.current = false;
+        // Consume the one-shot URL-landing flag so later re-fires this page load
+        // don't re-trigger. A URL landing is always a real login, so it bypasses
+        // the hadUserRef guard (which stops focus/refresh SIGNED_IN re-fires).
+        const landed = urlLandingRef.current;
+        urlLandingRef.current = false;
+        if (!hadUserRef.current || landed) {
           const reason = modalReasonRef.current;
           // Land a fresh login or signup on the home page, unless the sign-in was
           // to finish an in-place action (saving the current design, or buying a
