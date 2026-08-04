@@ -225,7 +225,7 @@ export default function Nav() {
             to its right, roughly level with the header. Wide-desktop only, where
             the centered max-w-6xl pill leaves clear grid space beside it; below
             that the inline meters near the Plan/Save actions already cover it. */}
-        <div className="pointer-events-none absolute right-4 top-3 hidden h-[60px] items-center sm:top-4 sm:h-[68px] min-[1440px]:flex">
+        <div className="pointer-events-none absolute right-4 top-3 hidden h-[60px] items-center sm:top-4 sm:h-[68px] min-[1600px]:flex">
           <HeaderCredits />
         </div>
       </header>
