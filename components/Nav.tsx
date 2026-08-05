@@ -105,20 +105,6 @@ export default function Nav() {
 
           {/* Actions: secondary items, the primary CTA, and the profile. */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Upgrade to Plus: the primary header-level upgrade entry for free
-                users, cobalt-tinted so it reads clearly without competing with
-                the solid "Plan my room" CTA. Plus members see no button here;
-                their status shows as the "+" on the wordmark. Desktop only; on
-                smaller widths it lives in the overflow menu. */}
-            {showUpgrade && (
-              <Link
-                href="/pricing"
-                className="hidden shrink-0 text-sm font-medium text-cobalt transition-colors hover:text-cobalt-deep lg:inline-block"
-              >
-                Upgrade
-              </Link>
-            )}
-
             {/* The header's primary action. Below lg it moves into the overflow
                 menu so the mobile header row never overflows the viewport. */}
             <a href="/plan" className={`hidden lg:inline-block ${PLAN_BTN}`}>
