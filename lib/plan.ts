@@ -88,6 +88,27 @@ export function planCreditsRemaining(p: PlanFields | null | undefined): number |
   return Math.max(0, p?.plan_credits_remaining ?? 0);
 }
 
+/** Tier-aware header design-credit state, shared by the desktop chip, the mobile
+ *  avatar badge, and the profile dropdown. Free = the fixed lifetime cap minus
+ *  used; Plus = live remaining credits; Pro is unlimited (nothing to count) and
+ *  logged-out has no profile, so both return show:false. Saving is unlimited for
+ *  everyone, so there is no saves counter. `plus` picks the CTA (recharge vs
+ *  upgrade) and its openUpgrade reason. */
+export interface HeaderCreditState {
+  show: boolean;
+  designsLeft: number;
+  empty: boolean;
+  plus: boolean;
+}
+export function headerCreditState(p: PlanFields | null | undefined): HeaderCreditState {
+  const t = planOf(p?.plan);
+  const plus = t === "plus";
+  const designsLeft = plus
+    ? Math.max(0, p?.plan_credits_remaining ?? 0)
+    : Math.max(0, FREE_PLAN_CAP - (p?.free_plans_used ?? 0));
+  return { show: t === "plus" || t === "free", designsLeft, empty: designsLeft <= 0, plus };
+}
+
 /** Remaining Plus save credits, or null when the concept doesn't apply. */
 export function saveCreditsRemaining(p: PlanFields | null | undefined): number | null {
   if (planOf(p?.plan) !== "plus") return null;

@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
-import CreditMeter from "@/components/site/CreditMeter";
+import { useUpgrade } from "@/lib/upgrade-context";
+import { headerCreditState } from "@/lib/plan";
 
 function initialsOf(name: string): string {
   const clean = name.trim();
@@ -61,6 +62,7 @@ export default function ProfileMenu({
   onShowRoom3D?: () => void;
 } = {}) {
   const { user, profile, loading, openAuthModal, signOut } = useAuth();
+  const { openUpgrade } = useUpgrade();
   const [open, setOpen] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -108,6 +110,9 @@ export default function ProfileMenu({
   const username = profile?.username ?? null;
   const display = username ?? user?.email ?? "account";
   const label = username ? `@${username}` : "Account";
+  // Tier-aware design credits (free + plus). Drives the mobile avatar badge and
+  // the prominent credits block at the top of the dropdown.
+  const credit = profile ? headerCreditState(profile) : null;
 
   async function handleLogout() {
     setLoggingOut(true);
@@ -126,8 +131,16 @@ export default function ProfileMenu({
         aria-label="Account menu"
         className="flex cursor-pointer items-center gap-2 rounded-full border border-ink/12 bg-white py-1 pl-1 pr-2 transition-colors hover:border-ink/25"
       >
-        <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-ink font-mono text-[11px] font-semibold text-white">
+        <span className="relative grid h-7 w-7 shrink-0 place-items-center rounded-full bg-ink font-mono text-[11px] font-semibold text-white">
           {initialsOf(display)}
+          {/* Mobile-only notification badge: something needs attention (out of
+              designs). Desktop shows the state via the header chip instead. */}
+          {credit?.show && credit.empty && (
+            <span
+              className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-cobalt ring-2 ring-white md:hidden"
+              aria-label="Out of designs"
+            />
+          )}
         </span>
         <span className="hidden max-w-[9rem] truncate text-sm font-semibold text-ink sm:inline">
           {label}
@@ -141,14 +154,40 @@ export default function ProfileMenu({
           aria-label="Account"
           className="absolute right-0 top-full z-50 mt-2 w-60 origin-top-right overflow-hidden rounded-xl border border-ink/10 bg-white p-1.5 shadow-[0_20px_50px_-20px_rgba(23,23,43,0.45)]"
         >
+          {/* Design credits: first and most prominent. Free + Plus see a live
+              count; at zero it becomes the Recharge/Upgrade action. Saving is
+              unlimited, so there is no saves counter. */}
+          {credit?.show && (
+            <div className="mb-1 rounded-lg bg-cobalt/[0.06] px-3 py-2.5">
+              <div className="flex items-baseline justify-between gap-2">
+                <span className="font-mono text-[11px] font-semibold uppercase tracking-wide text-ink-soft">
+                  Designs left
+                </span>
+                <span className="font-mono text-lg font-bold leading-none text-cobalt">
+                  {credit.designsLeft}
+                </span>
+              </div>
+              {credit.empty && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    openUpgrade(credit.plus ? "plan-credits" : "free-plan-limit");
+                  }}
+                  className="mt-2.5 w-full cursor-pointer rounded-lg bg-cobalt px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep"
+                >
+                  {credit.plus ? "Recharge designs" : "Upgrade for more"}
+                </button>
+              )}
+            </div>
+          )}
+
           {/* Identity header */}
-          <div className="border-b border-ink/8 px-3 pb-2.5 pt-1.5">
+          <div className="border-b border-ink/8 px-3 pb-2.5 pt-0.5">
             <p className="truncate text-sm font-semibold text-ink">{label}</p>
             {user?.email && (
               <p className="mt-0.5 truncate text-xs text-ink-soft">{user.email}</p>
             )}
-            {/* Plus only: the two live credit counters. */}
-            <CreditMeter className="mt-2.5" />
           </div>
 
           <div className="pt-1.5">
