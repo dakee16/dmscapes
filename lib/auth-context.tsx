@@ -181,17 +181,38 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Consumed once by the login handler below.
   const urlLandingRef = useRef(INITIAL_URL_AUTH_LANDING);
 
+  // Bumped on every fetch and on sign-out so a slow retry loop from a previous
+  // user can't resurrect a stale profile after logout or a newer fetch.
+  const fetchGenRef = useRef(0);
+
   const fetchProfile = useCallback(
     async (uid: string) => {
       if (!supabase) return;
+      const gen = ++fetchGenRef.current;
+      // A signed-in user ALWAYS has a profile row (handle_new_user creates it on
+      // signup), so a null/errored read means a transient auth-token race or
+      // network blip, not a missing profile. Retrying instead of settling on
+      // null is load-bearing: a stuck-null profile traps login on "Setting up
+      // your account…", silently disables plan metering (isPlanMetered(null) is
+      // false → unlimited plans), and hides the credits indicator.
       // select("*") so full_name/phone (migration 0007) come through when
       // present but their absence never errors this app-wide fetch.
-      const { data } = await supabase
-        .from("profiles")
-        .select("*")
-        .eq("id", uid)
-        .maybeSingle();
-      setProfile((data as Profile | null) ?? null);
+      for (let attempt = 0; attempt < 5; attempt++) {
+        const { data, error } = await supabase
+          .from("profiles")
+          .select("*")
+          .eq("id", uid)
+          .maybeSingle();
+        if (fetchGenRef.current !== gen) return; // superseded by logout/newer fetch
+        if (!error && data) {
+          setProfile(data as Profile);
+          return;
+        }
+        await new Promise((r) => setTimeout(r, 300 * (attempt + 1)));
+        if (fetchGenRef.current !== gen) return;
+      }
+      // Exhausted retries: leave any previously loaded profile untouched rather
+      // than clobbering it to null over a transient failure.
     },
     [supabase]
   );
@@ -232,7 +253,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const u = session?.user ?? null;
       setUser(u);
       if (u) void fetchProfile(u.id);
-      else setProfile(null);
+      else {
+        fetchGenRef.current++; // cancel any in-flight retry loop
+        setProfile(null);
+      }
 
       // Is the user actually looking at THIS tab right now? Supabase broadcasts a
       // new session to every open tab, so a background tab also fires SIGNED_IN;
@@ -339,6 +363,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       window.sessionStorage.removeItem(DEV_AUTH_KEY);
     }
     await supabase?.auth.signOut();
+    fetchGenRef.current++; // cancel any in-flight retry loop
     setUser(null);
     setProfile(null);
   }, [supabase]);

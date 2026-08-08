@@ -157,14 +157,14 @@ export default function ProfileMenu({
           {/* Design credits: first and most prominent. Free + Plus see a live
               count; at zero it becomes the Recharge/Upgrade action. Saving is
               unlimited, so there is no saves counter. */}
-          {credit?.show && (
+          {credit && (
             <div className="mb-1 rounded-lg bg-cobalt/[0.06] px-3 py-2.5">
               <div className="flex items-baseline justify-between gap-2">
                 <span className="font-mono text-[11px] font-semibold uppercase tracking-wide text-ink-soft">
                   Designs left
                 </span>
                 <span className="font-mono text-lg font-bold leading-none text-cobalt">
-                  {credit.designsLeft}
+                  {credit.unlimited ? "∞" : credit.designsLeft}
                 </span>
               </div>
               {credit.empty && (

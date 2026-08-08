@@ -15,7 +15,19 @@ export default function HeaderCredits() {
   const { openUpgrade } = useUpgrade();
 
   const c = headerCreditState(profile);
-  if (!user || !profile || !c.show) return null;
+  if (!user || !profile) return null;
+
+  if (c.unlimited) {
+    return (
+      <span
+        className="hidden shrink-0 items-baseline gap-1 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-cobalt md:inline-flex"
+        title="Room designs left"
+      >
+        Designs <span aria-hidden="true">·</span>
+        <span className="text-[13px] leading-none">&infin;</span>
+      </span>
+    );
+  }
 
   if (c.empty) {
     return (

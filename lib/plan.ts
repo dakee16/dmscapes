@@ -95,18 +95,24 @@ export function planCreditsRemaining(p: PlanFields | null | undefined): number |
  *  everyone, so there is no saves counter. `plus` picks the CTA (recharge vs
  *  upgrade) and its openUpgrade reason. */
 export interface HeaderCreditState {
+  /** Always true for a signed-in profile: free/plus show a finite count, pro
+   *  shows unlimited. (Callers still guard on the profile existing.) */
   show: boolean;
+  /** Pro: unlimited designs, shown as ∞ with no count or CTA. */
+  unlimited: boolean;
   designsLeft: number;
+  /** Out of designs — swap the count for the tier CTA. Never true for pro. */
   empty: boolean;
   plus: boolean;
 }
 export function headerCreditState(p: PlanFields | null | undefined): HeaderCreditState {
   const t = planOf(p?.plan);
   const plus = t === "plus";
+  const unlimited = t === "pro";
   const designsLeft = plus
     ? Math.max(0, p?.plan_credits_remaining ?? 0)
     : Math.max(0, FREE_PLAN_CAP - (p?.free_plans_used ?? 0));
-  return { show: t === "plus" || t === "free", designsLeft, empty: designsLeft <= 0, plus };
+  return { show: true, unlimited, designsLeft, empty: !unlimited && designsLeft <= 0, plus };
 }
 
 /** Remaining Plus save credits, or null when the concept doesn't apply. */
