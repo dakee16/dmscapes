@@ -4,12 +4,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { matchTemplate, ALL_TEMPLATES } from "@/templates/template-matcher";
-import { productsFor, productById, tierForBudget, totalFor } from "@/lib/catalog";
+import { productsFor, productById, tierForBudget, totalFor, extrasFor, isExtraCategory } from "@/lib/catalog";
 import { isPlusStyle } from "@/lib/styles";
 import { useAuth } from "@/lib/auth-context";
 import { isPaid } from "@/lib/plan";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { usePlannerStore } from "@/lib/store";
+import { furnitureCategory } from "@/lib/highlight";
 import { track } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
@@ -163,10 +164,14 @@ export default function ResultPage() {
 
   const products = useMemo(() => {
     if (!style) return [];
-    return productsFor(style, tierForBudget(budget), room?.bedSize).map((p) => {
+    const core = productsFor(style, tierForBudget(budget), room?.bedSize).map((p) => {
       const swapId = swaps[p.category];
       return (swapId && productById(swapId)) || p;
     });
+    // Catalog-only "extras": genuinely new categories the auto-list never uses.
+    // They're appended so the whole add/remove machinery works uniformly, and
+    // the seed below always parks them so they start in the Catalog, not the cart.
+    return [...core, ...extrasFor(style)];
   }, [style, budget, swaps, room?.bedSize]);
 
   // Seed the cart / "Things to add" split once per plan: walk the auto-list in
@@ -178,6 +183,12 @@ export default function ResultPage() {
     let remaining = budget;
     const overflow: ProductCategory[] = [];
     for (const p of products) {
+      // Extras never auto-seed into the cart: they always start parked in the
+      // Catalog so adding one is a deliberate, budget-affecting choice.
+      if (isExtraCategory(p.category)) {
+        overflow.push(p.category);
+        continue;
+      }
       if (p.price <= remaining) remaining -= p.price;
       else overflow.push(p.category);
     }
@@ -242,6 +253,10 @@ export default function ResultPage() {
       onRotate={(id, dir) => {
         rotateItem(id, dir);
         track("layout_edited", { item: id, action: "rotate" });
+      }}
+      onDeleteItem={(f) => {
+        const cat = furnitureCategory(f);
+        if (cat) handleRemove(cat);
       }}
       onReset={handleReset}
     />
@@ -316,9 +331,9 @@ export default function ResultPage() {
             </p>
           )}
           <p className="mt-2 hidden text-xs text-ink-soft lg:block">
-            Drag furniture to rearrange · click an item to rotate it with the corner
-            buttons · items snap to a 6-inch grid · red outline means it doesn&apos;t fit
-            there
+            Drag furniture to rearrange · click an item, then use the toolbar to
+            rotate, hide, lock, or delete it · items snap to a 6-inch grid · red
+            outline means it doesn&apos;t fit there
           </p>
         </section>
 

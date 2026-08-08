@@ -19,6 +19,7 @@ import { track } from "@/lib/analytics";
 import { isPaid } from "@/lib/plan";
 import AuthModal from "@/components/auth/AuthModal";
 import PlusWelcome from "@/components/site/PlusWelcome";
+import SignupWelcome from "@/components/site/SignupWelcome";
 
 /** Row shape of public.profiles (supabase/migrations/0002_profiles.sql, plus
  *  the contact fields added in 0007). full_name/phone are optional so the app
@@ -345,7 +346,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Plus members never see it; either way the queue clears. Record it as seen
     // only here, the moment it truly shows, so it stays a real once-per-session
     // moment rather than being spent by a login that never displayed it.
-    if (!isPaid(profile)) {
+    // A brand-new free account (no plan used yet) gets the SignupWelcome "start
+    // here" moment instead, so the Plus upsell never stacks on it; it can still
+    // surface on a later session once they've actually tried the product.
+    if (!isPaid(profile) && (profile.free_plans_used ?? 0) > 0) {
       if (typeof window !== "undefined") {
         window.sessionStorage.setItem(PLUS_WELCOME_KEY, "1");
       }
@@ -407,6 +411,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         open={plusWelcomeOpen}
         onClose={() => setPlusWelcomeOpen(false)}
       />
+      <SignupWelcome />
       {sessionBumped && (
         <div
           role="status"

@@ -60,7 +60,14 @@ export type ProductCategory =
   | "power_strip"
   | "trash_can"
   | "towel_caddy"
-  | "accent";
+  | "accent"
+  // Catalog "extras": genuinely new categories beyond the core 15 the
+  // auto-generated list uses. They never seed into the cart; they live in the
+  // Catalog tab for the student to browse and add (see lib/catalog EXTRA_*).
+  | "plant"
+  | "tapestry"
+  | "desk_organizer"
+  | "clip_fan";
 
 // ---- Compact schools index (lib/schools-index.json, built by scripts/build-schools-index.mjs)
 

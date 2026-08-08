@@ -32,6 +32,9 @@ interface RoomCanvasProps {
   onMove: (id: string, xFt: number, yFt: number) => void;
   /** Quarter-turn the item (1 = CW, -1 = CCW); wired to the store's rotateItem. */
   onRotate?: (id: string, dir: 1 | -1) => void;
+  /** Toolbar "delete": move the selected purchasable item's category to the
+   *  Catalog (same as the product list's Remove). Built-ins can't be deleted. */
+  onDeleteItem?: (f: FurnitureItem) => void;
   onReset: () => void;
   readOnly?: boolean;
   /**
@@ -149,9 +152,9 @@ function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
 const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 2.5;
 
-// Matches the zoom buttons; enabled/disabled variants for the rotate pair.
-const ROTATE_BTN =
-  "grid h-8 w-8 place-items-center rounded-lg border border-ink/15 bg-white text-ink shadow-sm transition-colors enabled:cursor-pointer enabled:hover:border-cobalt enabled:hover:text-cobalt disabled:text-ink/25";
+// Buttons inside the floating island toolbar (borderless; the island is the frame).
+const ISLAND_BTN =
+  "grid h-8 w-8 place-items-center rounded-lg text-ink transition-colors enabled:cursor-pointer enabled:hover:bg-ink/[0.06] enabled:hover:text-cobalt disabled:cursor-not-allowed disabled:text-ink/25";
 
 const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCanvas(
   {
@@ -162,6 +165,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     closet,
     onMove,
     onRotate,
+    onDeleteItem,
     onReset,
     readOnly = false,
     crossHighlight = true,
@@ -192,6 +196,10 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const setHoveredCategory = usePlannerStore((s) => s.setHoveredCategory);
   const toggleSelectedItem = usePlannerStore((s) => s.toggleSelectedItem);
   const clearSelectedCategory = usePlannerStore((s) => s.clearSelectedCategory);
+  const hiddenItemIds = usePlannerStore((s) => s.hiddenItemIds);
+  const lockedItemIds = usePlannerStore((s) => s.lockedItemIds);
+  const toggleHiddenItem = usePlannerStore((s) => s.toggleHiddenItem);
+  const toggleLockedItem = usePlannerStore((s) => s.toggleLockedItem);
   const activeCategory = readOnly || !crossHighlight ? null : hoveredCategory ?? selectedCategory;
 
   // Rotate-control target: the pinned canvas item, or, when the pin came
@@ -352,6 +360,14 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     return lines;
   }, [roomL, roomW, pxFt, roomHpx, roomWpx]);
 
+  // Floating-toolbar target: the selected movable item (same resolution the
+  // rotate control uses). Delete only applies to purchasable pieces, since it
+  // moves the item's category to the Catalog; built-ins have nowhere to go.
+  const toolbarItem = rotateTarget;
+  const toolbarHidden = toolbarItem ? hiddenItemIds.includes(toolbarItem.id) : false;
+  const toolbarLocked = toolbarItem ? lockedItemIds.includes(toolbarItem.id) : false;
+  const toolbarDeletable = Boolean(toolbarItem && furnitureCategory(toolbarItem));
+
   return (
     <div ref={containerRef} className="relative w-full select-none">
       {pxFt > 0 && (
@@ -484,9 +500,11 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               const bad = invalid.has(f.id);
               const layer = layerOf(f);
               const color = CATEGORY_COLORS[f.color_category] ?? "#94a3b8";
-              const draggable = !readOnly && f.movable;
+              const isHidden = hiddenItemIds.includes(f.id);
+              const isLocked = lockedItemIds.includes(f.id);
+              const draggable = !readOnly && f.movable && !isLocked && !isHidden;
               const labelSize = Math.max(9, Math.min(13, h * 0.35, w * 0.16));
-              const showLabel = w >= 34 && h >= 15;
+              const showLabel = w >= 34 && h >= 15 && !isHidden;
               // Every item is clickable in edit mode now (selection is the
               // rotate target); category-less items just don't cross-light
               // the product list.
@@ -523,10 +541,11 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                     width={w}
                     height={h}
                     fill={color}
-                    opacity={layer === "rug" ? 0.4 : f.built_in ? 0.55 : 0.92}
+                    opacity={isHidden ? 0.16 : layer === "rug" ? 0.4 : f.built_in ? 0.55 : 0.92}
                     cornerRadius={Math.min(4, w / 4, h / 4)}
-                    stroke={bad ? RED : INK}
-                    strokeWidth={bad ? 2 : 0.75}
+                    stroke={bad ? RED : isLocked ? AMBER : INK}
+                    strokeWidth={bad ? 2 : isLocked ? 1.75 : 0.75}
+                    dash={isHidden ? [4, 3] : undefined}
                     shadowColor={INK}
                     shadowOpacity={draggable ? 0.12 : 0}
                     shadowBlur={draggable ? 4 : 0}
@@ -575,6 +594,111 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         </Stage>
       )}
 
+      {/* Floating island toolbar (top center): acts on the selected item. Same
+          island treatment as the header. All icons grey out when nothing is
+          selected. Rendered here so it shows in fullscreen too (same canvas). */}
+      {!readOnly && (
+        <div className="absolute left-1/2 top-2 z-10 flex -translate-x-1/2 items-center gap-0.5 rounded-2xl border border-ink/10 bg-white/95 px-1.5 py-1 shadow-[0_10px_30px_-14px_rgba(23,23,43,0.5)] backdrop-blur-sm">
+          <button
+            type="button"
+            onClick={() => toolbarItem && onRotate?.(toolbarItem.id, -1)}
+            disabled={!toolbarItem}
+            aria-label="Rotate selected item counter-clockwise"
+            title={toolbarItem ? "Rotate 90° counter-clockwise" : "Select an item first"}
+            className={ISLAND_BTN}
+          >
+            <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polyline points="1 4 1 10 7 10" />
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => toolbarItem && onRotate?.(toolbarItem.id, 1)}
+            disabled={!toolbarItem}
+            aria-label="Rotate selected item clockwise"
+            title={toolbarItem ? "Rotate 90° clockwise" : "Select an item first"}
+            className={ISLAND_BTN}
+          >
+            <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polyline points="23 4 23 10 17 10" />
+              <path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10" />
+            </svg>
+          </button>
+
+          <span className="mx-0.5 h-5 w-px bg-ink/10" aria-hidden="true" />
+
+          <button
+            type="button"
+            onClick={() => toolbarItem && toggleHiddenItem(toolbarItem.id)}
+            disabled={!toolbarItem}
+            aria-pressed={toolbarHidden}
+            aria-label={toolbarHidden ? "Show selected item" : "Hide selected item"}
+            title={toolbarItem ? (toolbarHidden ? "Show on canvas" : "Hide from canvas") : "Select an item first"}
+            className={`${ISLAND_BTN} ${toolbarHidden ? "bg-cobalt/10 text-cobalt" : ""}`}
+          >
+            {toolbarHidden ? (
+              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+                <line x1="1" y1="1" x2="23" y2="23" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            )}
+          </button>
+          <button
+            type="button"
+            onClick={() => toolbarItem && toggleLockedItem(toolbarItem.id)}
+            disabled={!toolbarItem}
+            aria-pressed={toolbarLocked}
+            aria-label={toolbarLocked ? "Unlock selected item" : "Lock selected item"}
+            title={toolbarItem ? (toolbarLocked ? "Unlock (allow dragging)" : "Lock (prevent dragging)") : "Select an item first"}
+            className={`${ISLAND_BTN} ${toolbarLocked ? "bg-amber/15 text-amber-700" : ""}`}
+          >
+            {toolbarLocked ? (
+              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 9.9-1" />
+              </svg>
+            )}
+          </button>
+
+          <span className="mx-0.5 h-5 w-px bg-ink/10" aria-hidden="true" />
+
+          <button
+            type="button"
+            onClick={() => {
+              if (!toolbarItem) return;
+              onDeleteItem?.(toolbarItem);
+              clearSelectedCategory();
+            }}
+            disabled={!toolbarDeletable}
+            aria-label="Delete selected item (move to Catalog)"
+            title={
+              !toolbarItem
+                ? "Select an item first"
+                : toolbarDeletable
+                  ? "Delete (move to Catalog)"
+                  : "This built-in piece can't be deleted"
+            }
+            className={`${ISLAND_BTN} enabled:hover:text-red-600`}
+          >
+            <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polyline points="3 6 5 6 21 6" />
+              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+            </svg>
+          </button>
+        </div>
+      )}
+
       {/* Scale bar (DOM overlay so it stays crisp) */}
       {pxFt > 0 && (
         <div className="pointer-events-none absolute bottom-2 left-2 flex items-center gap-1.5 rounded bg-white/85 px-1.5 py-1">
@@ -601,57 +725,6 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
             className="h-8 w-8 cursor-pointer rounded-lg border border-ink/15 bg-white text-base font-semibold text-ink shadow-sm transition-colors hover:border-cobalt hover:text-cobalt"
           >
             −
-          </button>
-        </div>
-      )}
-      {/* Rotate the selected item, same control language as the zoom cluster,
-          anchored to the opposite corner. Stays visible (muted) when nothing
-          is selected so the affordance is discoverable. */}
-      {!readOnly && (
-        <div className="absolute bottom-2 right-2 flex flex-col gap-1">
-          <button
-            type="button"
-            onClick={() => rotateTarget && onRotate?.(rotateTarget.id, -1)}
-            disabled={!rotateTarget}
-            aria-label="Rotate selected item counter-clockwise"
-            title={rotateTarget ? "Rotate 90° counter-clockwise" : "Select an item to rotate"}
-            className={ROTATE_BTN}
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <polyline points="1 4 1 10 7 10" />
-              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={() => rotateTarget && onRotate?.(rotateTarget.id, 1)}
-            disabled={!rotateTarget}
-            aria-label="Rotate selected item clockwise"
-            title={rotateTarget ? "Rotate 90° clockwise" : "Select an item to rotate"}
-            className={ROTATE_BTN}
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <polyline points="23 4 23 10 17 10" />
-              <path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10" />
-            </svg>
           </button>
         </div>
       )}

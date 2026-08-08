@@ -24,6 +24,11 @@ export interface PlannerState {
    * Kept as a list of categories (not products) so it survives swaps.
    */
   excluded: ProductCategory[] | null;
+  /** Canvas items the user has hidden (ghosted) via the toolbar. Distinct from
+   *  `excluded`: a hidden item stays in the cart/list, it's just not drawn. */
+  hiddenItemIds: string[];
+  /** Canvas items locked against dragging via the toolbar. */
+  lockedItemIds: string[];
 
   // Result-page cross-highlighting (transient UI, not persisted). Both the
   // canvas and the product list read/write these so either can light the other.
@@ -49,6 +54,10 @@ export interface PlannerState {
   setExcluded: (categories: ProductCategory[]) => void;
   /** Move a category between the cart and the "Things to add" panel. */
   toggleExcluded: (category: ProductCategory) => void;
+  /** Toggle a canvas item's hidden (ghosted) state; keeps it in the cart. */
+  toggleHiddenItem: (id: string) => void;
+  /** Toggle a canvas item's locked (undraggable) state. */
+  toggleLockedItem: (id: string) => void;
   /** Update a furniture item's footprint (e.g. swapped rug with new dims). */
   resizeItem: (id: string, widthFt: number, lengthFt: number) => void;
   /** Rotate an item a quarter turn about its center (1 = CW, -1 = CCW). */
@@ -73,6 +82,8 @@ const initial = {
   furniture: null,
   swaps: {},
   excluded: null,
+  hiddenItemIds: [],
+  lockedItemIds: [],
   hoveredCategory: null,
   selectedCategory: null,
   selectedItemId: null,
@@ -84,7 +95,8 @@ export const usePlannerStore = create<PlannerState>()(
       ...initial,
       setCollege: (college) => set({ college, dorm: null, room: null }),
       setDorm: (dorm) => set({ dorm, room: null }),
-      setRoom: (room) => set({ room, templateId: null, furniture: null, excluded: null }),
+      setRoom: (room) =>
+        set({ room, templateId: null, furniture: null, excluded: null, hiddenItemIds: [], lockedItemIds: [] }),
       setStyle: (style) => set({ style, swaps: {}, excluded: null }),
       setBudget: (budget) => set({ budget, swaps: {}, excluded: null }),
       initLayout: (templateId, furniture) =>
@@ -94,7 +106,8 @@ export const usePlannerStore = create<PlannerState>()(
           furniture:
             s.furniture?.map((f) => (f.id === id ? { ...f, x_ft: xFt, y_ft: yFt } : f)) ?? null,
         })),
-      resetLayout: (furniture) => set({ furniture: furniture.map((f) => ({ ...f })) }),
+      resetLayout: (furniture) =>
+        set({ furniture: furniture.map((f) => ({ ...f })), hiddenItemIds: [], lockedItemIds: [] }),
       swapProduct: (category, productId) =>
         set((s) => ({ swaps: { ...s.swaps, [category]: productId } })),
       setExcluded: (categories) => set({ excluded: [...categories] }),
@@ -107,6 +120,18 @@ export const usePlannerStore = create<PlannerState>()(
               : [...current, category],
           };
         }),
+      toggleHiddenItem: (id) =>
+        set((s) => ({
+          hiddenItemIds: s.hiddenItemIds.includes(id)
+            ? s.hiddenItemIds.filter((x) => x !== id)
+            : [...s.hiddenItemIds, id],
+        })),
+      toggleLockedItem: (id) =>
+        set((s) => ({
+          lockedItemIds: s.lockedItemIds.includes(id)
+            ? s.lockedItemIds.filter((x) => x !== id)
+            : [...s.lockedItemIds, id],
+        })),
       resizeItem: (id, widthFt, lengthFt) =>
         set((s) => ({
           furniture:
@@ -170,6 +195,8 @@ export const usePlannerStore = create<PlannerState>()(
         furniture: s.furniture,
         swaps: s.swaps,
         excluded: s.excluded,
+        hiddenItemIds: s.hiddenItemIds,
+        lockedItemIds: s.lockedItemIds,
       }),
     }
   )

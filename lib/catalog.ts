@@ -40,7 +40,47 @@ export const CATEGORY_LABELS: Record<ProductCategory, string> = {
   trash_can: "Trash Can",
   towel_caddy: "Towels & Shower",
   accent: "Accent",
+  plant: "Greenery",
+  tapestry: "Tapestry",
+  desk_organizer: "Desk Organizer",
+  clip_fan: "Clip Fan",
 };
+
+/**
+ * "Extras": genuinely new categories, beyond the core 15 the auto-list uses, that
+ * only ever appear in the Catalog tab for browsing. They never seed into the
+ * cart (the result page always parks them), so adding one is a deliberate,
+ * budget-affecting choice. Order here is their display order in the Catalog.
+ */
+export const EXTRA_CATEGORIES: ProductCategory[] = [
+  "plant",
+  "tapestry",
+  "desk_organizer",
+  "clip_fan",
+];
+const EXTRA_SET = new Set<ProductCategory>(EXTRA_CATEGORIES);
+
+/** Whether a category is a Catalog-only "extra" (never auto-added to the cart). */
+export function isExtraCategory(category: ProductCategory): boolean {
+  return EXTRA_SET.has(category);
+}
+
+/**
+ * The extra products offered for a style: one active product per extra category
+ * that tags this style. Untiered (extras are a flat browse set, not budget-fit
+ * picks), so tier isn't considered. Empty until the catalog carries extras for
+ * the style, so the Catalog simply falls back to the old behavior meanwhile.
+ */
+export function extrasFor(style: StyleId): Product[] {
+  const out: Product[] = [];
+  for (const cat of EXTRA_CATEGORIES) {
+    const p = CATALOG.find(
+      (x) => x.active && x.category === cat && x.style_tags.includes(style)
+    );
+    if (p) out.push(p);
+  }
+  return out;
+}
 
 const byIdMap = new Map(CATALOG.map((p) => [p.id, p]));
 
