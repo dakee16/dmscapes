@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
 import { getBrowserClient } from "@/lib/supabase-browser";
+import { clearAuthParamsFromUrl } from "@/lib/auth-url";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
@@ -42,6 +43,9 @@ export default function ResetPasswordPage() {
     function markReady() {
       if (settledRef.current) return;
       settledRef.current = true;
+      // The recovery session is now in memory; strip the #access_token the
+      // reset link left in the address bar. Safe here (session already read).
+      clearAuthParamsFromUrl();
       setPhase("ready");
     }
 

@@ -15,6 +15,7 @@ import {
 import type { User } from "@supabase/supabase-js";
 import { useRouter } from "next/navigation";
 import { getBrowserClient } from "@/lib/supabase-browser";
+import { clearAuthParamsFromUrl } from "@/lib/auth-url";
 import { track } from "@/lib/analytics";
 import { isPaid } from "@/lib/plan";
 import AuthModal from "@/components/auth/AuthModal";
@@ -242,6 +243,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     supabase.auth.getSession().then(({ data }) => {
       const u = data.session?.user ?? null;
       setUser(u);
+      // getSession resolves only after the client has initialized and consumed
+      // any token from the URL (implicit-flow OAuth return / email link). Strip
+      // it now, unconditionally: whether the session took or the token was stale,
+      // nothing sensitive should linger in the address bar.
+      clearAuthParamsFromUrl();
       // A session already present at load is a silent restore, not a fresh login,
       // so mark it seen to suppress the welcome. The lone exception is a URL-auth
       // landing (OAuth return or email-confirmation click): that session IS the
@@ -253,6 +259,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
       const u = session?.user ?? null;
       setUser(u);
+      // Any settled auth event with a session (SIGNED_IN, INITIAL_SESSION,
+      // PASSWORD_RECOVERY, token refresh) means supabase has already consumed the
+      // URL token; make sure none of it lingers in the address bar. No-op when
+      // the URL is already clean.
+      if (u) clearAuthParamsFromUrl();
       if (u) void fetchProfile(u.id);
       else {
         fetchGenRef.current++; // cancel any in-flight retry loop
@@ -322,6 +333,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     });
     return () => sub.subscription.unsubscribe();
   }, [supabase, fetchProfile]);
+
+  // Reliably strip any Supabase auth token the address bar picked up from an
+  // implicit-flow landing (OAuth return, email-confirmation, or recovery link).
+  // Runs once on mount, independent of how auth is configured, so a token never
+  // lingers even if the client's init stalls. supabase parses the URL params
+  // synchronously when the client is created and keeps the token in memory for
+  // its pending exchange, so clearing the URL after a short grace period is safe
+  // and can't break sign-in. The event handlers above also clear it the instant
+  // a session settles, which is faster on the happy path.
+  useEffect(() => {
+    const t = setTimeout(clearAuthParamsFromUrl, 600);
+    return () => clearTimeout(t);
+  }, []);
 
   const openAuthModal = useCallback((reason: AuthModalReason = "profile") => {
     modalReasonRef.current = reason;
