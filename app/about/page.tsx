@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
+import PlanCta from "@/components/site/PlanCta";
 import { SCHOOLS } from "@/lib/schools";
 
 export const metadata: Metadata = {
@@ -183,12 +184,7 @@ export default function AboutPage() {
           {/* CTA */}
           <div className="mt-14 rounded-xl border border-dashed border-ink/20 bg-card/60 p-6 text-center">
             <p className="font-medium">Enough reading. Your room is waiting.</p>
-            <Link
-              href="/plan"
-              className="mt-3 inline-block rounded-lg bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
-            >
-              Plan my room for free
-            </Link>
+            <PlanCta className="mt-3 inline-block rounded-lg bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt" />
           </div>
         </div>
       </main>

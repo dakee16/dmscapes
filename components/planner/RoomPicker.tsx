@@ -50,7 +50,7 @@ export default function RoomPicker({
                   </span>
                   {room.occupants != null && (
                     <span className="text-xs text-ink-soft">
-                      sleeps {room.occupants}
+                      Sleeps {room.occupants}
                     </span>
                   )}
                 </span>

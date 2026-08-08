@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import PlanCta from "@/components/site/PlanCta";
 
 // Shared long-form primitives for blog posts. They wrap the exact typography
 // the rest of the site uses (see app/about/page.tsx) so every post inherits the
@@ -132,12 +133,12 @@ export function EndCTA({
   return (
     <div className="mt-14 rounded-xl border border-dashed border-ink/20 bg-card/60 p-6 text-center">
       <p className="font-medium text-ink">{children}</p>
-      <Link
+      <PlanCta
         href={href}
         className="mt-3 inline-block rounded-lg bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
-      >
-        {cta}
-      </Link>
+        freeLabel={cta}
+        paidLabel={cta.replace(/\s*for free$/i, "")}
+      />
     </div>
   );
 }

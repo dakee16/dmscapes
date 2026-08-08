@@ -5,6 +5,7 @@ import HowItWorks from "@/components/HowItWorks";
 import Vibes from "@/components/Vibes";
 import Schools from "@/components/Schools";
 import PlusPitch from "@/components/site/PlusPitch";
+import PlanCta from "@/components/site/PlanCta";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/site/Reveal";
 import CursorGrid from "@/components/site/CursorGrid";
@@ -57,12 +58,7 @@ export default function Home() {
                 you ever get the keys.
               </p>
               <div className="rise mt-8" style={{ animationDelay: "240ms" }}>
-                <Link
-                  href="/plan"
-                  className="inline-flex h-14 items-center rounded-xl bg-cobalt px-8 text-lg font-semibold text-white shadow-[0_14px_32px_-14px_rgba(43,78,255,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-cobalt-deep hover:shadow-[0_20px_40px_-16px_rgba(43,78,255,0.7)] active:translate-y-0"
-                >
-                  Plan my room for free
-                </Link>
+                <PlanCta className="inline-flex h-14 items-center rounded-xl bg-cobalt px-8 text-lg font-semibold text-white shadow-[0_14px_32px_-14px_rgba(43,78,255,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-cobalt-deep hover:shadow-[0_20px_40px_-16px_rgba(43,78,255,0.7)] active:translate-y-0" />
                 <p className="mt-3 text-sm text-ink-soft">
                   No account needed. Most rooms take under a minute.
                 </p>
@@ -149,12 +145,7 @@ export default function Home() {
                 Three steps between you and a room that actually works.
               </h2>
               <div className="relative mt-8">
-                <Link
-                  href="/plan"
-                  className="inline-flex h-14 items-center rounded-xl bg-highlight px-8 text-lg font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-white active:translate-y-0"
-                >
-                  Plan my room for free
-                </Link>
+                <PlanCta className="inline-flex h-14 items-center rounded-xl bg-highlight px-8 text-lg font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-white active:translate-y-0" />
               </div>
               <p className="relative mt-4 font-mono text-[11px] uppercase tracking-wide text-white/60">
                 Free · No account · Under a minute

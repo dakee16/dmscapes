@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
+import PlanCta from "@/components/site/PlanCta";
 import { POSTS } from "@/content/blog";
 import { faqPageJsonLd } from "@/lib/blog";
 
@@ -116,12 +117,7 @@ export default function FAQPage() {
               Still have a question about your room?
             </p>
             <div className="mt-3 flex flex-wrap justify-center gap-3">
-              <Link
-                href="/plan"
-                className="inline-block rounded-lg bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
-              >
-                Plan my room for free
-              </Link>
+              <PlanCta className="inline-block rounded-lg bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt" />
               <Link
                 href="/contact"
                 className="inline-block rounded-lg border border-ink/15 px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-cobalt/50 hover:text-cobalt"

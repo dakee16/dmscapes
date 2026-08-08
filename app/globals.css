@@ -153,6 +153,25 @@ p {
   will-change: transform;
 }
 
+/* Celebratory sheen: a narrow translucent band that sweeps across a card once
+   in a while. Reserved for confirmation moments (the subscriber "You're on
+   Plus/Pro" homepage section), so the flourish reads as a reward, not decor.
+   Compositor-only (transform); paused for reduced motion. */
+@keyframes sheen {
+  0% {
+    transform: translateX(-130%) skewX(-14deg);
+  }
+  55%,
+  100% {
+    transform: translateX(240%) skewX(-14deg);
+  }
+}
+
+.sheen-band {
+  animation: sheen 3.6s ease-in-out 0.5s infinite;
+  will-change: transform;
+}
+
 /* Scroll reveals live in components/site/Reveal.tsx (framer-motion). */
 
 /* Cursor-reactive grid: a stronger copy of the graph paper, masked to a soft
@@ -196,7 +215,8 @@ p {
   .rise,
   .snap-in,
   .fade-in,
-  .hero-float {
+  .hero-float,
+  .sheen-band {
     animation: none;
   }
   /* Static logo instead of the breathing loop; hold it fully visible. */

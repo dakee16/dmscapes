@@ -8,7 +8,7 @@ import Wordmark from "@/components/site/Wordmark";
 import RoommateTeaser from "@/components/site/RoommateTeaser";
 import HeaderCredits from "@/components/site/HeaderCredits";
 import { useAuth } from "@/lib/auth-context";
-import { isFree } from "@/lib/plan";
+import { isFree, isPaid } from "@/lib/plan";
 
 // Primary text nav, in reading order. Shown centered on desktop; on smaller
 // widths these move into the overflow menu so the header stays uncrowded.
@@ -58,6 +58,9 @@ export default function Nav() {
   // Free accounts (and logged-out visitors) see the upgrade entry; Plus shows
   // the "+" indicator and Pro the "PRO" badge on the wordmark instead.
   const showUpgrade = isFree(profile);
+  // The primary CTA drops the "for free" framing for paying customers: they
+  // already bought in, so "Try for FREE" would read as tone-deaf.
+  const planCtaLabel = isPaid(profile) ? "Plan my room" : "Try for FREE";
 
   // Overflow menu closes on outside click and Escape.
   useEffect(() => {
@@ -122,7 +125,7 @@ export default function Nav() {
             {/* The header's primary action. Below lg it moves into the overflow
                 menu so the mobile header row never overflows the viewport. */}
             <a href="/plan" className={`hidden lg:inline-block ${PLAN_BTN}`}>
-              Try for FREE
+              {planCtaLabel}
             </a>
 
             {/* Overflow menu: nav links + secondary items, below the desktop
@@ -166,7 +169,7 @@ export default function Nav() {
                     onClick={() => setMenuOpen(false)}
                     className="mb-1 flex items-center justify-center rounded-lg bg-ink px-3 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
                   >
-                    Plan my room
+                    {planCtaLabel}
                   </a>
                   <div className="pt-0.5">
                     {LINKS.map((link) => (

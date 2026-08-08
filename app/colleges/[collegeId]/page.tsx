@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteHeader from "@/components/site/SiteHeader";
+import PlanCta from "@/components/site/PlanCta";
 import { SCHOOLS, formatDims, getSchool } from "@/lib/schools";
 
 // SEO pages targeting "[College Name] dorm room layout" queries.
@@ -76,12 +77,11 @@ export default async function CollegePage(props: {
               . Pick your building, get a layout that fits to the inch, and a
               shoppable list that fits your budget.
             </p>
-            <Link
-              href="/plan"
+            <PlanCta
               className="mt-7 inline-block rounded-lg bg-cobalt px-6 py-3 font-semibold text-white transition-colors hover:bg-cobalt-deep"
-            >
-              Design your room for free
-            </Link>
+              freeLabel="Design your room for free"
+              paidLabel="Design your room"
+            />
           </div>
         </section>
 

@@ -136,6 +136,7 @@ export default function PlanStylePage() {
             style={s}
             selected={style === s.id}
             locked={isPlusStyle(s.id) && !allVibes}
+            unlocked={isPlusStyle(s.id) && allVibes}
             onSelect={() => handleStyle(s.id)}
           />
         ))}
