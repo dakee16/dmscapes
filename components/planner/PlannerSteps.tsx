@@ -37,7 +37,7 @@ export default function PlannerSteps() {
           const inner = (
             <span className="flex items-center gap-1.5 sm:gap-2">
               <span
-                className={`grid h-6 w-6 shrink-0 place-items-center rounded-full font-mono text-[11px] font-semibold transition-colors ${
+                className={`grid h-6 w-6 shrink-0 place-items-center rounded-full font-mono text-[11px] font-semibold leading-none transition-colors ${
                   active
                     ? "bg-cobalt text-white"
                     : done

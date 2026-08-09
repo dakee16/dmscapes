@@ -369,7 +369,114 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const toolbarDeletable = Boolean(toolbarItem && furnitureCategory(toolbarItem));
 
   return (
-    <div ref={containerRef} className="relative w-full select-none">
+    <div className="w-full select-none">
+      {/* Floating island toolbar, ABOVE the canvas (not overlaying the room).
+          Acts on the selected item; greys out when nothing is selected. Same
+          element in embedded and fullscreen, so it sits above the canvas in both. */}
+      {!readOnly && (
+        <div className="mb-2 flex justify-center">
+          <div className="flex items-center gap-0.5 rounded-2xl border border-ink/10 bg-white px-1.5 py-1 shadow-[0_8px_24px_-12px_rgba(23,23,43,0.45)]">
+            <button
+              type="button"
+              onClick={() => toolbarItem && onRotate?.(toolbarItem.id, -1)}
+              disabled={!toolbarItem}
+              aria-label="Rotate selected item counter-clockwise"
+              title={toolbarItem ? "Rotate 90° counter-clockwise" : "Select an item first"}
+              className={ISLAND_BTN}
+            >
+              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="1 4 1 10 7 10" />
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={() => toolbarItem && onRotate?.(toolbarItem.id, 1)}
+              disabled={!toolbarItem}
+              aria-label="Rotate selected item clockwise"
+              title={toolbarItem ? "Rotate 90° clockwise" : "Select an item first"}
+              className={ISLAND_BTN}
+            >
+              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="23 4 23 10 17 10" />
+                <path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10" />
+              </svg>
+            </button>
+
+            <span className="mx-0.5 h-5 w-px bg-ink/10" aria-hidden="true" />
+
+            <button
+              type="button"
+              onClick={() => toolbarItem && toggleHiddenItem(toolbarItem.id)}
+              disabled={!toolbarItem}
+              aria-pressed={toolbarHidden}
+              aria-label={toolbarHidden ? "Show selected item" : "Hide selected item"}
+              title={toolbarItem ? (toolbarHidden ? "Show on canvas" : "Hide from canvas") : "Select an item first"}
+              className={`${ISLAND_BTN} ${toolbarHidden ? "bg-cobalt/10 text-cobalt" : ""}`}
+            >
+              {toolbarHidden ? (
+                <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+                  <line x1="1" y1="1" x2="23" y2="23" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              )}
+            </button>
+            <button
+              type="button"
+              onClick={() => toolbarItem && toggleLockedItem(toolbarItem.id)}
+              disabled={!toolbarItem}
+              aria-pressed={toolbarLocked}
+              aria-label={toolbarLocked ? "Unlock selected item" : "Lock selected item"}
+              title={toolbarItem ? (toolbarLocked ? "Unlock (allow dragging)" : "Lock (prevent dragging)") : "Select an item first"}
+              className={`${ISLAND_BTN} ${toolbarLocked ? "bg-amber/15 text-amber-700" : ""}`}
+            >
+              {toolbarLocked ? (
+                <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 9.9-1" />
+                </svg>
+              )}
+            </button>
+
+            <span className="mx-0.5 h-5 w-px bg-ink/10" aria-hidden="true" />
+
+            <button
+              type="button"
+              onClick={() => {
+                if (!toolbarItem) return;
+                onDeleteItem?.(toolbarItem);
+                clearSelectedCategory();
+              }}
+              disabled={!toolbarDeletable}
+              aria-label="Delete selected item (move to Catalog)"
+              title={
+                !toolbarItem
+                  ? "Select an item first"
+                  : toolbarDeletable
+                    ? "Delete (move to Catalog)"
+                    : "This built-in piece can't be deleted"
+              }
+              className={`${ISLAND_BTN} enabled:hover:text-red-600`}
+            >
+              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="3 6 5 6 21 6" />
+                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
+      <div ref={containerRef} className="relative w-full">
       {pxFt > 0 && (
         <Stage
           ref={stageRef}
@@ -594,111 +701,6 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         </Stage>
       )}
 
-      {/* Floating island toolbar (top center): acts on the selected item. Same
-          island treatment as the header. All icons grey out when nothing is
-          selected. Rendered here so it shows in fullscreen too (same canvas). */}
-      {!readOnly && (
-        <div className="absolute left-1/2 top-2 z-10 flex -translate-x-1/2 items-center gap-0.5 rounded-2xl border border-ink/10 bg-white/95 px-1.5 py-1 shadow-[0_10px_30px_-14px_rgba(23,23,43,0.5)] backdrop-blur-sm">
-          <button
-            type="button"
-            onClick={() => toolbarItem && onRotate?.(toolbarItem.id, -1)}
-            disabled={!toolbarItem}
-            aria-label="Rotate selected item counter-clockwise"
-            title={toolbarItem ? "Rotate 90° counter-clockwise" : "Select an item first"}
-            className={ISLAND_BTN}
-          >
-            <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <polyline points="1 4 1 10 7 10" />
-              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            onClick={() => toolbarItem && onRotate?.(toolbarItem.id, 1)}
-            disabled={!toolbarItem}
-            aria-label="Rotate selected item clockwise"
-            title={toolbarItem ? "Rotate 90° clockwise" : "Select an item first"}
-            className={ISLAND_BTN}
-          >
-            <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <polyline points="23 4 23 10 17 10" />
-              <path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10" />
-            </svg>
-          </button>
-
-          <span className="mx-0.5 h-5 w-px bg-ink/10" aria-hidden="true" />
-
-          <button
-            type="button"
-            onClick={() => toolbarItem && toggleHiddenItem(toolbarItem.id)}
-            disabled={!toolbarItem}
-            aria-pressed={toolbarHidden}
-            aria-label={toolbarHidden ? "Show selected item" : "Hide selected item"}
-            title={toolbarItem ? (toolbarHidden ? "Show on canvas" : "Hide from canvas") : "Select an item first"}
-            className={`${ISLAND_BTN} ${toolbarHidden ? "bg-cobalt/10 text-cobalt" : ""}`}
-          >
-            {toolbarHidden ? (
-              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
-                <line x1="1" y1="1" x2="23" y2="23" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
-                <circle cx="12" cy="12" r="3" />
-              </svg>
-            )}
-          </button>
-          <button
-            type="button"
-            onClick={() => toolbarItem && toggleLockedItem(toolbarItem.id)}
-            disabled={!toolbarItem}
-            aria-pressed={toolbarLocked}
-            aria-label={toolbarLocked ? "Unlock selected item" : "Lock selected item"}
-            title={toolbarItem ? (toolbarLocked ? "Unlock (allow dragging)" : "Lock (prevent dragging)") : "Select an item first"}
-            className={`${ISLAND_BTN} ${toolbarLocked ? "bg-amber/15 text-amber-700" : ""}`}
-          >
-            {toolbarLocked ? (
-              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <rect x="3" y="11" width="18" height="11" rx="2" />
-                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-              </svg>
-            ) : (
-              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <rect x="3" y="11" width="18" height="11" rx="2" />
-                <path d="M7 11V7a5 5 0 0 1 9.9-1" />
-              </svg>
-            )}
-          </button>
-
-          <span className="mx-0.5 h-5 w-px bg-ink/10" aria-hidden="true" />
-
-          <button
-            type="button"
-            onClick={() => {
-              if (!toolbarItem) return;
-              onDeleteItem?.(toolbarItem);
-              clearSelectedCategory();
-            }}
-            disabled={!toolbarDeletable}
-            aria-label="Delete selected item (move to Catalog)"
-            title={
-              !toolbarItem
-                ? "Select an item first"
-                : toolbarDeletable
-                  ? "Delete (move to Catalog)"
-                  : "This built-in piece can't be deleted"
-            }
-            className={`${ISLAND_BTN} enabled:hover:text-red-600`}
-          >
-            <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <polyline points="3 6 5 6 21 6" />
-              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-            </svg>
-          </button>
-        </div>
-      )}
-
       {/* Scale bar (DOM overlay so it stays crisp) */}
       {pxFt > 0 && (
         <div className="pointer-events-none absolute bottom-2 left-2 flex items-center gap-1.5 rounded bg-white/85 px-1.5 py-1">
@@ -737,6 +739,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           Reset layout
         </button>
       )}
+      </div>
     </div>
   );
 });

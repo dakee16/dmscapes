@@ -43,15 +43,17 @@ export default function ProductPanel({
   const toggleSelectedCategory = usePlannerStore((s) => s.toggleSelectedCategory);
   const activeCategory = hoveredCategory ?? selectedCategory;
 
-  // Bring the active tile into view when the canvas lights one up (no-op when
-  // it's already visible, so hovering within the list doesn't jump the scroll).
+  // Bring a tile into view only when the user *pins* a category (clicks a
+  // furniture piece on the canvas, or a tile here) — never on hover. Keying this
+  // to hover (activeCategory) made the list jump on plain cursor movement, since
+  // every mouseenter/leave changed the active category and re-ran scrollIntoView.
   const tileRefs = useRef(new Map<ProductCategory, HTMLDivElement | null>());
   useEffect(() => {
-    if (!activeCategory) return;
+    if (!selectedCategory) return;
     tileRefs.current
-      .get(activeCategory)
+      .get(selectedCategory)
       ?.scrollIntoView({ block: "nearest", inline: "nearest" });
-  }, [activeCategory]);
+  }, [selectedCategory]);
 
   function handlePick(next: Product) {
     if (!swapTarget) return;
