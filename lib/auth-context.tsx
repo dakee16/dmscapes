@@ -157,11 +157,6 @@ async function enforceSessionLimit(accessToken: string): Promise<void> {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const supabase = useMemo(() => getBrowserClient(), []);
-  const router = useRouter();
-  // Kept in a ref so the long-lived onAuthStateChange subscription always reaches
-  // the current router without needing to re-subscribe.
-  const routerRef = useRef(router);
-  routerRef.current = router;
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -191,14 +186,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     async (uid: string) => {
       if (!supabase) return;
       const gen = ++fetchGenRef.current;
-      // A signed-in user ALWAYS has a profile row (handle_new_user creates it on
-      // signup), so a null/errored read means a transient auth-token race or
-      // network blip, not a missing profile. Retrying instead of settling on
-      // null is load-bearing: a stuck-null profile traps login on "Setting up
-      // your account…", silently disables plan metering (isPlanMetered(null) is
-      // false → unlimited plans), and hides the credits indicator.
+      // Normally a signed-in user has a profile row (handle_new_user creates it
+      // on signup), so a null/errored read is usually a transient auth-token
+      // race, not a missing profile. Retrying instead of settling on null is
+      // load-bearing: a stuck-null profile traps login on "Setting up your
+      // account…", silently disables plan metering (isPlanMetered(null) is false
+      // → unlimited plans), and hides the credits indicator.
+      //
+      // But a row CAN be genuinely gone: if it was deleted from `profiles` while
+      // the auth.users row survived (manual cleanup — deleting a profile does not
+      // cascade to auth.users), nothing recreates it, and that missing-profile
+      // state is exactly what let those accounts bypass the design limit. So when
+      // a read cleanly returns no row, we recreate a fresh FREE-tier profile
+      // (plan defaults 'free', free_plans_used 0) and re-read it — failing safe
+      // to the free cap, never to unrestricted access. RLS ("insert own") allows
+      // the user to (re)create their own row; the upsert is race-safe.
       // select("*") so full_name/phone (migration 0007) come through when
       // present but their absence never errors this app-wide fetch.
+      let recreated = false;
       for (let attempt = 0; attempt < 5; attempt++) {
         const { data, error } = await supabase
           .from("profiles")
@@ -209,6 +214,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (!error && data) {
           setProfile(data as Profile);
           return;
+        }
+        // A clean "no row" (not an error): recreate once, then let the next
+        // attempt read it back.
+        if (!error && !data && !recreated) {
+          recreated = true;
+          const { data: authData } = await supabase.auth.getUser();
+          await supabase.from("profiles").upsert(
+            {
+              id: uid,
+              email: authData.user?.email ?? null,
+              auth_provider:
+                (authData.user?.app_metadata?.provider as string | undefined) ?? "email",
+            },
+            { onConflict: "id", ignoreDuplicates: true }
+          );
+          if (fetchGenRef.current !== gen) return;
+          continue; // re-read immediately, no backoff
         }
         await new Promise((r) => setTimeout(r, 300 * (attempt + 1)));
         if (fetchGenRef.current !== gen) return;
@@ -299,13 +321,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         urlLandingRef.current = false;
         if (!hadUserRef.current || landed) {
           const reason = modalReasonRef.current;
-          // Land a fresh login or signup on the home page, unless the sign-in was
-          // to finish an in-place action (saving the current design, buying a
-          // plan, or generating the room from the style step) that navigating
-          // away would interrupt.
-          if (reason !== "save-design" && reason !== "buy" && reason !== "generate") {
-            routerRef.current.push("/");
-          }
+          // Stay on whatever page they authenticated from: a general login no
+          // longer bounces to the home page. In-place flows (save, buy) resume
+          // on their own page; the design gate (reason "generate") shows its
+          // credit-confirm prompt on the style page. None of them navigate here.
           // Queue the premium welcome, once per browser session. Skip it when the
           // login was to finish a buy, so it never collides with that resume
           // (buy-gate opens with reason "buy"). The flag is set when it actually

@@ -8,11 +8,12 @@ import { categoriesCovered, tierForBudget } from "@/lib/catalog";
 import { STYLES, isPlusStyle } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
-import { isPaid, isPlusTier, isPlanMetered, canGeneratePlan } from "@/lib/plan";
+import { isPaid, isPlusTier, isPlanMetered, canGeneratePlan, headerCreditState } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
 import { useUpgrade } from "@/lib/upgrade-context";
 import CreditMeter from "@/components/site/CreditMeter";
 import DesignDisclaimerModal from "@/components/planner/DesignDisclaimerModal";
+import CreditConfirmModal from "@/components/planner/CreditConfirmModal";
 import type { StyleId } from "@/lib/types";
 
 const TIER_LABELS = { budget: "Essentials", mid: "Upgraded", premium: "Premium" } as const;
@@ -24,6 +25,7 @@ export default function PlanStylePage() {
   const budget = usePlannerStore((s) => s.budget);
   const setStyle = usePlannerStore((s) => s.setStyle);
   const setBudget = usePlannerStore((s) => s.setBudget);
+  const resetPlanner = usePlannerStore((s) => s.resetPlanner);
 
   const { user, profile, refreshProfile, openAuthModal, modalOpen } = useAuth();
   const { openUpgrade } = useUpgrade();
@@ -35,12 +37,16 @@ export default function PlanStylePage() {
   // Save-before-you-leave heads-up, shown when they tap "Design my room".
   const [showDisclaimer, setShowDisclaimer] = useState(false);
   const budgetTrackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Set when the user declines the design gate: they're headed home, and we
+  // clear the store on the way, so the "no room -> back to Step 1" guard below
+  // must NOT hijack that navigation to /plan.
+  const exitingRef = useRef(false);
 
   useEffect(() => setMounted(true), []);
 
   // Store hydrates from sessionStorage on mount; only then can we trust `room`.
   useEffect(() => {
-    if (mounted && !room) router.replace("/plan");
+    if (mounted && !room && !exitingRef.current) router.replace("/plan");
   }, [mounted, room, router]);
 
   function handleStyle(id: StyleId) {
@@ -70,17 +76,23 @@ export default function PlanStylePage() {
     setShowDisclaimer(true);
   }
 
-  // Resume-after-login: once a gated visitor is authenticated, their profile is
-  // loaded, and the auth modal has fully closed, run the generation they asked
-  // for. Reads runGenerate through a ref so this effect needn't depend on it.
+  // Post-gate resume: once a gated visitor is authenticated, their profile is
+  // loaded (fetchProfile recreates a free-tier row if one was missing), and the
+  // auth modal has closed, we do NOT auto-generate. If they have a design to
+  // spend we ask (CreditConfirmModal); if they're already out we send them to
+  // the upgrade prompt. Their selections stay in the store either way.
   const pendingGenerateRef = useRef(false);
-  const runGenerateRef = useRef<() => void>(() => {});
+  const [showCreditConfirm, setShowCreditConfirm] = useState(false);
   useEffect(() => {
-    if (pendingGenerateRef.current && user && profile && !modalOpen) {
-      pendingGenerateRef.current = false;
-      runGenerateRef.current();
+    if (!pendingGenerateRef.current || !user || !profile || modalOpen) return;
+    pendingGenerateRef.current = false;
+    if (canGeneratePlan(profile)) {
+      setShowCreditConfirm(true);
+    } else {
+      track("plan_blocked_no_credits");
+      openUpgrade(isPlusTier(profile) ? "plan-credits" : "free-plan-limit");
     }
-  }, [user, profile, modalOpen]);
+  }, [user, profile, modalOpen, openUpgrade]);
 
   // Generate the plan. Signed-in free and Plus accounts spend one plan credit
   // here (the "click through to a result" moment); Pro and logged-out visitors
@@ -112,8 +124,6 @@ export default function PlanStylePage() {
     }
     router.push("/plan/result");
   }
-  // Keep the resume effect pointed at the latest closure of runGenerate.
-  runGenerateRef.current = runGenerate;
 
   function handleBudget(value: number) {
     setBudget(value);
@@ -225,6 +235,25 @@ export default function PlanStylePage() {
         <DesignDisclaimerModal
           onConfirm={runGenerate}
           onCancel={() => setShowDisclaimer(false)}
+        />
+      )}
+
+      {/* Design-gate confirmation, shown once a gated visitor has logged in.
+          Yes spends a design and generates; No discards the in-progress
+          selections and returns home. */}
+      {showCreditConfirm && (
+        <CreditConfirmModal
+          credit={headerCreditState(profile)}
+          onConfirm={() => {
+            setShowCreditConfirm(false);
+            runGenerate();
+          }}
+          onCancel={() => {
+            setShowCreditConfirm(false);
+            exitingRef.current = true;
+            resetPlanner();
+            router.push("/");
+          }}
         />
       )}
     </div>
