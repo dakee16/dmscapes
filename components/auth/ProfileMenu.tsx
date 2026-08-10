@@ -163,7 +163,11 @@ export default function ProfileMenu({
                 <span className="font-mono text-[11px] font-semibold uppercase tracking-wide text-ink-soft">
                   Designs left
                 </span>
-                <span className="font-mono text-lg font-bold leading-none text-cobalt">
+                <span
+                  className={`font-mono font-bold leading-none text-cobalt ${
+                    credit.unlimited ? "self-center text-xl" : "text-lg"
+                  }`}
+                >
                   {credit.unlimited ? "∞" : credit.designsLeft}
                 </span>
               </div>

@@ -57,7 +57,7 @@ export interface Profile {
 export type PlanTier = "free" | "plus" | "pro";
 
 /** What prompted the modal; copy inside adapts ("save your design" vs generic). */
-export type AuthModalReason = "profile" | "save-design" | "buy";
+export type AuthModalReason = "profile" | "save-design" | "buy" | "generate";
 
 interface AuthContextValue {
   /** false when Supabase client env isn't configured. */
@@ -300,9 +300,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (!hadUserRef.current || landed) {
           const reason = modalReasonRef.current;
           // Land a fresh login or signup on the home page, unless the sign-in was
-          // to finish an in-place action (saving the current design, or buying a
-          // plan) that navigating away would interrupt.
-          if (reason !== "save-design" && reason !== "buy") {
+          // to finish an in-place action (saving the current design, buying a
+          // plan, or generating the room from the style step) that navigating
+          // away would interrupt.
+          if (reason !== "save-design" && reason !== "buy" && reason !== "generate") {
             routerRef.current.push("/");
           }
           // Queue the premium welcome, once per browser session. Skip it when the
@@ -312,6 +313,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           // the one-per-session chance intact.
           if (
             reason !== "buy" &&
+            reason !== "generate" &&
             typeof window !== "undefined" &&
             !window.sessionStorage.getItem(PLUS_WELCOME_KEY)
           ) {

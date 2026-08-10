@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "The Dormscape Blog",
+    title: "The dormscape Blog",
     description: DESCRIPTION,
     siteName: "Dormscape",
     type: "website",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Dormscape Blog",
+    title: "The dormscape Blog",
     description: DESCRIPTION,
     images: ["/og.png"],
   },
@@ -40,7 +40,7 @@ export default function BlogIndexPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "The Dormscape Blog",
+    name: "The dormscape Blog",
     description: DESCRIPTION,
     url: `${BLOG_BASE}/blog`,
     publisher: { "@type": "Organization", name: "Dormscape", url: BLOG_BASE },
@@ -66,7 +66,7 @@ export default function BlogIndexPage() {
       <main className="relative">
         <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-            The Dormscape Blog
+            The dormscape Blog
           </p>
           <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             Dorm planning, <span className="hl">figured out.</span>

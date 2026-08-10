@@ -25,7 +25,7 @@ export default function PlanStylePage() {
   const setStyle = usePlannerStore((s) => s.setStyle);
   const setBudget = usePlannerStore((s) => s.setBudget);
 
-  const { profile, refreshProfile } = useAuth();
+  const { user, profile, refreshProfile, openAuthModal, modalOpen } = useAuth();
   const { openUpgrade } = useUpgrade();
   // Vibe access: all 9 vibes unlock for any paid tier (Plus or Pro).
   const allVibes = isPaid(profile);
@@ -56,11 +56,31 @@ export default function PlanStylePage() {
   }
 
   // Tapping "Design my room" first raises the save-before-you-leave heads-up;
-  // confirming there runs the actual generation.
+  // confirming there runs the actual generation. Logged-out visitors are gated
+  // here at the final step: we intercept, open the auth modal, and resume the
+  // generation automatically after they sign in (selections already live in the
+  // sessionStorage-backed store, so nothing is lost).
   function handleDesignClick() {
     if (!style || generating) return;
+    if (!user) {
+      pendingGenerateRef.current = true;
+      openAuthModal("generate");
+      return;
+    }
     setShowDisclaimer(true);
   }
+
+  // Resume-after-login: once a gated visitor is authenticated, their profile is
+  // loaded, and the auth modal has fully closed, run the generation they asked
+  // for. Reads runGenerate through a ref so this effect needn't depend on it.
+  const pendingGenerateRef = useRef(false);
+  const runGenerateRef = useRef<() => void>(() => {});
+  useEffect(() => {
+    if (pendingGenerateRef.current && user && profile && !modalOpen) {
+      pendingGenerateRef.current = false;
+      runGenerateRef.current();
+    }
+  }, [user, profile, modalOpen]);
 
   // Generate the plan. Signed-in free and Plus accounts spend one plan credit
   // here (the "click through to a result" moment); Pro and logged-out visitors
@@ -92,6 +112,8 @@ export default function PlanStylePage() {
     }
     router.push("/plan/result");
   }
+  // Keep the resume effect pointed at the latest closure of runGenerate.
+  runGenerateRef.current = runGenerate;
 
   function handleBudget(value: number) {
     setBudget(value);

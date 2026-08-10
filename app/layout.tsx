@@ -21,7 +21,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const DESCRIPTION =
-  "Free AI dorm room planner. Pick your school, choose a vibe, set a budget, and get a room layout that fits your exact dorm, with a shoppable Amazon list.";
+  "Free dorm planner built on real, building-specific dimensions. Pick a vibe, set a budget, and get a layout that fits your room, plus a shoppable Amazon list.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us"),
@@ -33,10 +33,10 @@ export const metadata: Metadata = {
   },
   description: DESCRIPTION,
   openGraph: {
-    title: "Dormscape: your dorm room, planned before move-in day",
+    title: "dormscape: your dorm room, planned before move-in day",
     description:
       "Pick your school, choose a vibe, set a budget. Get a room layout that fits your exact dorm, with a shoppable list.",
-    siteName: "Dormscape",
+    siteName: "dormscape",
     type: "website",
     url: "/",
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dormscape: your dorm room, planned before move-in day",
+    title: "dormscape: your dorm room, planned before move-in day",
     description: DESCRIPTION,
     images: ["/og.png"],
   },

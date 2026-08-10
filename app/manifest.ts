@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Dormscape",
-    short_name: "Dormscape",
+    name: "dormscape",
+    short_name: "dormscape",
     description:
       "Free AI dorm room planner. Pick your school, choose a vibe, set a budget, and get a room layout that fits your exact dorm.",
     start_url: "/",

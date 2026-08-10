@@ -20,11 +20,13 @@ export default function HeaderCredits() {
   if (c.unlimited) {
     return (
       <span
-        className="hidden shrink-0 items-baseline gap-1 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-cobalt md:inline-flex"
+        className="hidden shrink-0 items-center gap-1 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-cobalt md:inline-flex"
         title="Room designs left"
       >
         Designs <span aria-hidden="true">·</span>
-        <span className="text-[13px] leading-none">&infin;</span>
+        {/* Center-aligned (not baseline): ∞ is centered on the math axis, so it
+            only reads inline with items-center. Sized to match the label weight. */}
+        <span className="text-[15px] leading-none">&infin;</span>
       </span>
     );
   }

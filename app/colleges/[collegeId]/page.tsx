@@ -22,7 +22,7 @@ export async function generateMetadata(props: {
     title,
     description,
     openGraph: {
-      title: `${title} | Dormscape`,
+      title: `${title} | dormscape`,
       description,
       siteName: "Dormscape",
       type: "website",
@@ -38,7 +38,7 @@ export async function generateMetadata(props: {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | Dormscape`,
+      title: `${title} | dormscape`,
       description,
       images: ["/og.png"],
     },

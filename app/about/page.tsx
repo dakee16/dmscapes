@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Dormscape is a free dorm room planner built on real dorm dimensions from official housing data. See your exact room, set a budget, shop a list that fits.",
   openGraph: {
-    title: "About Dormscape",
+    title: "About dormscape",
     description:
       "The free dorm room planner built on real dorm dimensions. Why it exists, how it works, and how it stays free.",
     siteName: "Dormscape",
@@ -37,7 +37,7 @@ export default function AboutPage() {
       <main className="relative">
         <div className="mx-auto max-w-[50rem] px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-            About Dormscape
+            About dormscape
           </p>
           <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             The dorm planner that knows <span className="hl">your dorm.</span>

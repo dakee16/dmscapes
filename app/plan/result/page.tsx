@@ -335,6 +335,21 @@ export default function ResultPage() {
             rotate, hide, lock, or delete it · items snap to a 6-inch grid · red
             outline means it doesn&apos;t fit there
           </p>
+          {/* Honest, matter-of-fact placement disclaimer, same spirit as the
+              estimated-dimensions note. ToS is cross-referenced, not duplicated. */}
+          <p className="mt-2 flex items-start gap-1.5 text-[11px] leading-snug text-ink-soft/90">
+            <svg viewBox="0 0 24 24" className="mt-px h-3 w-3 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 11.5v4.5" strokeLinecap="round" />
+              <circle cx="12" cy="8" r="0.6" fill="currentColor" stroke="none" />
+            </svg>
+            <span>
+              Placement and fit shown here are a guide, not a guarantee. Your real
+              room may vary with the exact pieces you buy, how you arrange them,
+              and layout quirks our data can&apos;t capture. See our{" "}
+              <a href="/terms" className="underline underline-offset-2 hover:text-ink">Terms</a>.
+            </span>
+          </p>
         </section>
 
         {/* Products panel. Wrapped in the buy gate so its Buy / Buy all links
