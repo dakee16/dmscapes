@@ -6,6 +6,7 @@ import Vibes from "@/components/Vibes";
 import Schools from "@/components/Schools";
 import PlusPitch from "@/components/site/PlusPitch";
 import PlanCta from "@/components/site/PlanCta";
+import ScrollRuler from "@/components/site/ScrollRuler";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/site/Reveal";
 import CursorGrid from "@/components/site/CursorGrid";
@@ -15,6 +16,7 @@ import HomeFaq from "@/components/site/HomeFaq";
 export default function Home() {
   return (
     <div id="top">
+      <ScrollRuler />
       <Nav />
       <main>
         {/* Hero. The negative top margin pulls the section up behind the sticky

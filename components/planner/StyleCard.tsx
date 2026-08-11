@@ -25,10 +25,10 @@ export default function StyleCard({
       type="button"
       onClick={onSelect}
       aria-pressed={selected}
-      className={`group relative flex w-full flex-col items-start overflow-hidden rounded-xl border-2 bg-white text-left transition-all ${
+      className={`group relative flex w-full flex-col items-start overflow-hidden rounded-xl border-2 bg-white text-left transition-all duration-200 ease-out will-change-transform active:translate-y-0 active:scale-[0.99] active:duration-75 motion-reduce:transform-none motion-reduce:transition-none ${
         selected
           ? "border-cobalt shadow-[0_16px_40px_-20px_rgba(43,78,255,0.45)]"
-          : "border-ink/10 hover:border-ink/25 hover:shadow-[0_16px_40px_-20px_rgba(23,23,43,0.35)]"
+          : "border-ink/10 hover:-translate-y-[3px] hover:scale-[1.015] hover:border-ink/25 hover:shadow-[0_22px_48px_-22px_rgba(23,23,43,0.4)]"
       }`}
     >
       {locked && !selected && (

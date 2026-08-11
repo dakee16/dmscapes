@@ -152,9 +152,11 @@ function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
 const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 2.5;
 
-// Buttons inside the floating island toolbar (borderless; the island is the frame).
+// Buttons inside the floating island toolbar (borderless; the island is the
+// frame). A quick scale-down on press acknowledges the action; transform-only
+// so it stays compositor-cheap, and it's skipped under reduced motion.
 const ISLAND_BTN =
-  "grid h-8 w-8 place-items-center rounded-lg text-ink transition-colors enabled:cursor-pointer enabled:hover:bg-ink/[0.06] enabled:hover:text-cobalt disabled:cursor-not-allowed disabled:text-ink/25";
+  "grid h-8 w-8 place-items-center rounded-lg text-ink transition-[transform,background-color,color] duration-100 ease-out enabled:cursor-pointer enabled:hover:bg-ink/[0.06] enabled:hover:text-cobalt enabled:active:scale-[0.82] disabled:cursor-not-allowed disabled:text-ink/25 motion-reduce:transition-none motion-reduce:active:scale-100";
 
 const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCanvas(
   {
@@ -375,7 +377,15 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           element in embedded and fullscreen, so it sits above the canvas in both. */}
       {!readOnly && (
         <div className="mb-2 flex justify-center">
-          <div className="flex items-center gap-0.5 rounded-2xl border border-ink/10 bg-white px-1.5 py-1 shadow-[0_8px_24px_-12px_rgba(23,23,43,0.45)]">
+          {/* Lifts in (scale + opacity + shadow) the moment an item is selected,
+              so it reads as "now active" instead of an always-on bar. */}
+          <div
+            className={`flex origin-top items-center gap-0.5 rounded-2xl border border-ink/10 bg-white px-1.5 py-1 transition-all duration-300 ease-out will-change-transform motion-reduce:transition-none ${
+              toolbarItem
+                ? "scale-100 opacity-100 shadow-[0_12px_30px_-12px_rgba(23,23,43,0.5)]"
+                : "scale-[0.97] opacity-80 shadow-[0_6px_18px_-12px_rgba(23,23,43,0.4)]"
+            }`}
+          >
             <button
               type="button"
               onClick={() => toolbarItem && onRotate?.(toolbarItem.id, -1)}
