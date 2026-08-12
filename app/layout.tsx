@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
 import { AuthProvider } from "@/lib/auth-context";
 import { UpgradeProvider } from "@/lib/upgrade-context";
+import ScrollRuler from "@/components/site/ScrollRuler";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -67,6 +68,9 @@ export default function RootLayout({
       className={`${bricolage.variable} ${instrument.variable} ${plexMono.variable}`}
     >
       <body className="min-h-screen antialiased">
+        {/* The "planned to the inch" scroll ruler, site-wide. Fixed, wide-desktop
+            only, pointer-events-none; a no-op on short pages. */}
+        <ScrollRuler />
         <AuthProvider>
           <UpgradeProvider>{children}</UpgradeProvider>
         </AuthProvider>

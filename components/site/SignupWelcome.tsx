@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { isPaid } from "@/lib/plan";
 import { track } from "@/lib/analytics";
+import { REVEAL_EASE } from "@/components/site/Reveal";
 
 // The "start here" welcome for a brand-new account: a warm, once-ever hello that
 // hands the student their one free design credit. Deliberately NOT the Plus
@@ -17,6 +19,7 @@ const seenKey = (uid: string) => `dormscape-signup-welcome-${uid}`;
 export default function SignupWelcome() {
   const { user, profile, modalOpen } = useAuth();
   const [open, setOpen] = useState(false);
+  const reduce = useReducedMotion();
 
   // Reveal once the account is known, the auth modal has closed (so it never
   // stacks on the login / username step), and this is a genuinely fresh free
@@ -42,24 +45,34 @@ export default function SignupWelcome() {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  if (!open) return null;
-
   function dismiss() {
     track("signup_welcome_dismissed");
     setOpen(false);
   }
 
   return (
-    <div
-      className="fixed inset-0 z-[65] flex items-center justify-center overflow-y-auto bg-ink/45 p-4 backdrop-blur-[3px] sm:p-6"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="signup-welcome-title"
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) dismiss();
-      }}
-    >
-      <div className="rise relative my-auto w-full max-w-md overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)]">
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="fixed inset-0 z-[65] flex items-center justify-center overflow-y-auto bg-ink/45 p-4 backdrop-blur-[3px] sm:p-6"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="signup-welcome-title"
+          onMouseDown={(e) => {
+            if (e.target === e.currentTarget) dismiss();
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25, ease: REVEAL_EASE }}
+        >
+          <motion.div
+            className="relative my-auto w-full max-w-md overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)]"
+            initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16, scale: 0.96 }}
+            animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
+            exit={reduce ? { opacity: 0 } : { opacity: 0, y: 12, scale: 0.97 }}
+            transition={{ duration: 0.34, ease: REVEAL_EASE }}
+          >
         {/* Soft, friendly backdrop: graph-paper grid + a cobalt/highlight wash,
             distinct from the amber "premium" treatment of the Plus welcome. */}
         <div className="pointer-events-none absolute inset-0 grid-paper opacity-[0.5]" aria-hidden="true" />
@@ -129,7 +142,9 @@ export default function SignupWelcome() {
             </button>
           </div>
         </div>
-      </div>
-    </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

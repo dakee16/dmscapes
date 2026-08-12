@@ -44,49 +44,53 @@ function SubscriberBanner({ tier }: { tier: "plus" | "pro" }) {
 
   return (
     <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
-      <Reveal>
-        <div className="relative overflow-hidden rounded-2xl border border-cobalt/25 bg-card p-8 shadow-[0_30px_80px_-40px_rgba(43,78,255,0.5)] sm:p-12">
-          {/* Layered celebratory backdrop: brand grid, a cobalt->highlight wash,
-              and two soft glows. */}
-          <div className="grid-paper absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
-          <div
-            className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-cobalt/[0.08] via-transparent to-highlight/25"
-            aria-hidden="true"
-          />
-          <div
-            className="pointer-events-none absolute -right-12 -top-12 h-56 w-56 rounded-full bg-highlight/40 blur-3xl"
-            aria-hidden="true"
-          />
-          <div
-            className="pointer-events-none absolute -bottom-16 -left-10 h-56 w-56 rounded-full bg-cobalt/15 blur-3xl"
-            aria-hidden="true"
-          />
-          {/* The celebratory flourish: a single translucent sheen that sweeps
-              across the card. Clipped by overflow-hidden above. */}
-          <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-            <div className="sheen-band absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/45 to-transparent" />
-          </div>
+      <div className="relative overflow-hidden rounded-2xl border border-cobalt/25 bg-card p-8 shadow-[0_30px_80px_-40px_rgba(43,78,255,0.5)] sm:p-12">
+        {/* Layered celebratory backdrop: brand grid, a cobalt->highlight wash,
+            and two soft glows. */}
+        <div className="grid-paper absolute inset-0 -z-10 opacity-40" aria-hidden="true" />
+        <div
+          className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-cobalt/[0.08] via-transparent to-highlight/25"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -right-12 -top-12 h-56 w-56 rounded-full bg-highlight/40 blur-3xl"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute -bottom-16 -left-10 h-56 w-56 rounded-full bg-cobalt/15 blur-3xl"
+          aria-hidden="true"
+        />
+        {/* The celebratory flourish: a single translucent sheen that sweeps
+            across the card. Clipped by overflow-hidden above. */}
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+          <div className="sheen-band absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/45 to-transparent" />
+        </div>
 
-          <div className="relative max-w-2xl">
-            <span className="snap-in inline-flex items-center gap-2 rounded-full border border-cobalt/30 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-cobalt">
+        {/* One coordinated reveal: badge -> heading -> chips -> CTA cascade in
+            together, only when the section scrolls into view (Reveal stagger),
+            so it reads as a single reward moment instead of pieces animating on
+            mount off-screen. */}
+        <Reveal stagger className="relative">
+          <div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-cobalt/30 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-cobalt">
               <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 text-amber" fill="currentColor" aria-hidden="true">
                 <path d="M2.8 7.4l4 3 4.4-6a1 1 0 0 1 1.6 0l4.4 6 4-3a1 1 0 0 1 1.57 1l-1.6 8.9a1 1 0 0 1-1 .82H4.83a1 1 0 0 1-1-.82L2.24 8.4a1 1 0 0 1 1.56-1z" />
               </svg>
               Member · Dormscape {label}
             </span>
-            <h2 className="mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+          </div>
+          <div className="mt-4 max-w-2xl">
+            <h2 className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
               You&rsquo;re on <span className="hl">{label}.</span>
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">{blurb}</p>
           </div>
 
-          {/* Perk chips, each rising in with a small stagger. */}
-          <ul className="relative mt-8 flex flex-wrap gap-2.5">
-            {PERKS[tier].map((perk, i) => (
+          <ul className="mt-8 flex flex-wrap gap-2.5">
+            {PERKS[tier].map((perk) => (
               <li
                 key={perk}
-                className="rise inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper/70 px-3.5 py-2 text-sm font-medium text-ink"
-                style={{ animationDelay: `${120 + i * 90}ms` }}
+                className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-paper/70 px-3.5 py-2 text-sm font-medium text-ink"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-cobalt" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M20 6 9 17l-5-5" />
@@ -96,7 +100,7 @@ function SubscriberBanner({ tier }: { tier: "plus" | "pro" }) {
             ))}
           </ul>
 
-          <div className="relative mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+          <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
             <PlanCta className="inline-flex h-14 items-center rounded-xl bg-cobalt px-7 text-base font-semibold text-white transition-colors hover:bg-cobalt-deep" />
             <Link
               href="/account"
@@ -105,8 +109,8 @@ function SubscriberBanner({ tier }: { tier: "plus" | "pro" }) {
               Manage plan
             </Link>
           </div>
-        </div>
-      </Reveal>
+        </Reveal>
+      </div>
     </section>
   );
 }

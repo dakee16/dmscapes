@@ -45,6 +45,30 @@ export default function FeedbackLink() {
     };
   }, []);
 
+  // Auto-prompt once the session passes 5 minutes, at most once per session.
+  // Session start is stored so the timer survives navigation between pages (a
+  // fresh mount picks up the remaining time instead of restarting the clock);
+  // the "shown" flag keeps it to a single, non-nagging prompt.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const SHOWN = "dormscape-feedback-auto-shown";
+    if (window.sessionStorage.getItem(SHOWN)) return;
+    const START = "dormscape-session-start";
+    let start = Number(window.sessionStorage.getItem(START));
+    if (!start) {
+      start = Date.now();
+      window.sessionStorage.setItem(START, String(start));
+    }
+    const remaining = Math.max(0, start + 5 * 60 * 1000 - Date.now());
+    const t = window.setTimeout(() => {
+      if (window.sessionStorage.getItem(SHOWN)) return;
+      window.sessionStorage.setItem(SHOWN, "1");
+      setOpen(true);
+      track("feedback_prompt_opened", { source: "auto-5min" });
+    }, remaining);
+    return () => window.clearTimeout(t);
+  }, []);
+
   return (
     <>
       <button

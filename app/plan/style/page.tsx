@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import StyleCard from "@/components/planner/StyleCard";
 import { track } from "@/lib/analytics";
@@ -241,21 +242,24 @@ export default function PlanStylePage() {
       {/* Design-gate confirmation, shown once a gated visitor has logged in.
           Yes spends a design and generates; No discards the in-progress
           selections and returns home. */}
-      {showCreditConfirm && (
-        <CreditConfirmModal
-          credit={headerCreditState(profile)}
-          onConfirm={() => {
-            setShowCreditConfirm(false);
-            runGenerate();
-          }}
-          onCancel={() => {
-            setShowCreditConfirm(false);
-            exitingRef.current = true;
-            resetPlanner();
-            router.push("/");
-          }}
-        />
-      )}
+      <AnimatePresence>
+        {showCreditConfirm && (
+          <CreditConfirmModal
+            key="credit-confirm"
+            credit={headerCreditState(profile)}
+            onConfirm={() => {
+              setShowCreditConfirm(false);
+              runGenerate();
+            }}
+            onCancel={() => {
+              setShowCreditConfirm(false);
+              exitingRef.current = true;
+              resetPlanner();
+              router.push("/");
+            }}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }
