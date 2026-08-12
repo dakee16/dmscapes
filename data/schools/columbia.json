@@ -1,0 +1,1034 @@
+{
+ "college_id": "columbia",
+ "college_name": "Columbia University",
+ "city": "New York",
+ "state": "NY",
+ "housing_url": "https://housing.columbia.edu/",
+ "data_collected": "2026-08-12",
+ "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with Columbia housing floor plans and student-sourced specs. Columbia does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Columbia Housing tracks rooms by total square footage; ft x ft ranges below are calculated from typical square footages across the undergraduate residence halls.",
+ "dorms": [
+  {
+   "dorm_id": "john-jay-hall",
+   "dorm_name": "John Jay Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 90,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "8.5 x 10.5 to 9 x 11 ft (~90 sq ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double / Walk-through",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "11 x 15 to 12 x 16 ft (~170-190 sq ft)."
+    }
+   ],
+   "notes": "First-year corridor/suite hall."
+  },
+  {
+   "dorm_id": "carman-hall",
+   "dorm_name": "Carman Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "Suite-style; 11 x 14 to 12 x 15 ft (~160-180 sq ft per bedroom)."
+    }
+   ],
+   "notes": "First-year suite-style hall."
+  },
+  {
+   "dorm_id": "furnald-hall",
+   "dorm_name": "Furnald Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 115,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "9 x 11 to 10 x 11.5 ft (~100-115 sq ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "12 x 15 to 13 x 16 ft (~180-210 sq ft)."
+    }
+   ],
+   "notes": null
+  },
+  {
+   "dorm_id": "hartley-hall",
+   "dorm_name": "Hartley Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 120,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "9 x 11 to 10 x 12 ft (~100-120 sq ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 188,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "12 x 14 to 13 x 16 ft (~170-200 sq ft)."
+    }
+   ],
+   "notes": null
+  },
+  {
+   "dorm_id": "broadway-hall",
+   "dorm_name": "Broadway Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 130,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "9 x 12 to 10 x 13 ft (~110-130 sq ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.5,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 181,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "12 x 14 to 13 x 15 ft (~170-195 sq ft)."
+    }
+   ],
+   "notes": "Upperclassman residence hall."
+  },
+  {
+   "dorm_id": "schapiro-hall",
+   "dorm_name": "Schapiro Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 120,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "9 x 11.5 to 10 x 12 ft (~105-120 sq ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "12 x 15 to 13 x 16 ft (~180-200 sq ft)."
+    }
+   ],
+   "notes": "Upperclassman residence hall."
+  },
+  {
+   "dorm_id": "mcbain-hall",
+   "dorm_name": "McBain Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 120,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "9 x 11 to 10 x 12 ft (~100-120 sq ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double (Street-facing / Large)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.5,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 214,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "12 x 16 to 14 x 17 ft (~190-240 sq ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double (Shaft-facing / Small)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.5,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 155,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "11 x 13 to 12 x 14 ft (~140-170 sq ft)."
+    }
+   ],
+   "notes": "Upperclassman residence hall."
+  },
+  {
+   "dorm_id": "wien-hall",
+   "dorm_name": "Wien Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 104,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "8.5 x 11 to 9.5 x 12 ft (~95-115 sq ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double (Walk-through / Shared Entry)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.5,
+      "width_ft": 10.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 142,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "10 x 13 to 11 x 14 ft (~130-155 sq ft)."
+    }
+   ],
+   "notes": "Upperclassman residence hall."
+  },
+  {
+   "dorm_id": "river-hall",
+   "dorm_name": "River Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.5,
+      "width_ft": 10.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 131,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "10 x 12 to 11 x 13 ft (~120-140 sq ft)."
+    }
+   ],
+   "notes": "Upperclassman residence hall."
+  },
+  {
+   "dorm_id": "hogan-ruggles",
+   "dorm_name": "Hogan Hall & Ruggles Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single in Suite",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 10.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 126,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "10 x 11 to 11 x 13 ft (~110-140 sq ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double in Suite",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "12 x 15 to 13 x 17 ft (~180-220 sq ft)."
+    }
+   ],
+   "notes": "Upperclassman suite-style halls."
+  },
+  {
+   "dorm_id": "watt-hall",
+   "dorm_name": "Watt Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 234,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "12 x 16 to 14 x 20 ft (total living space 200-280 sq ft)."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "1/2-Bedroom Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13,
+      "width_ft": 10.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 136,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.columbia.edu/",
+     "data_confidence": "medium",
+     "notes": "Per bedroom 10 x 12 to 11 x 14 ft (~120-150 sq ft)."
+    }
+   ],
+   "notes": "Upperclassman apartment-style hall."
+  }
+ ]
+}

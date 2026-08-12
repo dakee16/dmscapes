@@ -1,0 +1,505 @@
+{
+ "college_id": "caltech",
+ "college_name": "California Institute of Technology",
+ "city": "Pasadena",
+ "state": "CA",
+ "housing_url": "https://housing.caltech.edu/",
+ "data_collected": "2026-08-12",
+ "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with Caltech housing floor plans and student-sourced specs. Caltech does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Standard beds are 3 x 6.6 ft (Twin XL). Figures are calculated from campus architecture logs, student house manuals, and floor plans.",
+ "dorms": [
+  {
+   "dorm_id": "bechtel-residence",
+   "dorm_name": "Bechtel Residence",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.25,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 100,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.caltech.edu/",
+     "data_confidence": "medium",
+     "notes": "Newest residence (built 2018), standardized suite-style layout; 8.5 x 11.5 to 9 x 11 ft."
+    }
+   ],
+   "notes": "The newest residence hall uses a standardized suite-style layout."
+  },
+  {
+   "dorm_id": "braun-house",
+   "dorm_name": "Braun House",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 120,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.caltech.edu/",
+     "data_confidence": "high",
+     "notes": "Among the most compact traditional layouts on campus; 10 x 12 ft."
+    }
+   ],
+   "notes": "Non-house dorm, compact traditional layouts."
+  },
+  {
+   "dorm_id": "south-houses",
+   "dorm_name": "The South Houses (Blacker, Dabney, Fleming, Ricketts)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 9.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.caltech.edu/",
+     "data_confidence": "medium",
+     "notes": "Classic historical architecture; 9 x 11 to 10 x 12 ft (90-120 sq ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.caltech.edu/",
+     "data_confidence": "medium",
+     "notes": "~180 sq ft."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Long/Narrow Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 23,
+      "width_ft": 8,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 184,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.caltech.edu/",
+     "data_confidence": "medium",
+     "notes": "7.5 x 24 or 8 x 22 ft; commonly split into a bedroom side and a study side by students."
+    }
+   ],
+   "notes": "Classic historical architecture with structural quirks, alcoves, and built-in closets."
+  },
+  {
+   "dorm_id": "north-houses",
+   "dorm_name": "The North Houses (Lloyd, Page, Ruddock/Venerable)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 8.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.caltech.edu/",
+     "data_confidence": "medium",
+     "notes": "Mid-century minimalist, box-shaped rooms; 8 x 12.5 to 9 x 12 ft."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.caltech.edu/",
+     "data_confidence": "medium",
+     "notes": "11.5 x 15.5 to 12 x 15 ft."
+    }
+   ],
+   "notes": "Mid-century minimalist architecture with highly rectangular, box-shaped rooms."
+  },
+  {
+   "dorm_id": "avery-house",
+   "dorm_name": "Avery House",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 9.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.caltech.edu/",
+     "data_confidence": "medium",
+     "notes": "9 x 12 to 10 x 11 ft."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 190,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.caltech.edu/",
+     "data_confidence": "medium",
+     "notes": null
+    }
+   ],
+   "notes": "Combines undergraduate and some graduate spaces in a cluster layout."
+  },
+  {
+   "dorm_id": "catalina-complex",
+   "dorm_name": "Catalina Complex (Graduate)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Private Bedroom (Shared Flat)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 120,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.caltech.edu/",
+     "data_confidence": "medium",
+     "notes": "1-bedroom private space inside a shared multi-bed graduate flat."
+    }
+   ],
+   "notes": "Graduate apartment complex; bedrooms modeled individually."
+  }
+ ]
+}

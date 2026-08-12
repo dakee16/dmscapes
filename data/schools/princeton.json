@@ -1,0 +1,302 @@
+{
+ "college_id": "princeton",
+ "college_name": "Princeton University",
+ "city": "Princeton",
+ "state": "NJ",
+ "housing_url": "https://housing.princeton.edu/",
+ "data_collected": "2026-08-12",
+ "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with Princeton housing floor plans and student-sourced specs. Princeton does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Princeton blends centuries-old Collegiate Gothic and modern complexes; there is no single master ft x ft list. Representative figures come from room-draw data and undergraduate floor plans. Large upperclass suites are represented via their per-bedroom singles.",
+ "dorms": [
+  {
+   "dorm_id": "historic-gothic",
+   "dorm_name": "Historic Gothic Dorms (Mathey, Rockefeller)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Gothic Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.princeton.edu/",
+     "data_confidence": "medium",
+     "notes": "Highly irregular rooms with stone window alcoves and ornamental fireplaces; 8.5 x 10 to 10 x 12 ft."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Suite Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 90,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.princeton.edu/",
+     "data_confidence": "medium",
+     "notes": "A ~440 sq ft triple suite breaks into a 12 x 15 common space paired with two smaller 9 x 10 bedrooms."
+    }
+   ],
+   "notes": "Buildings include Blair, Holder, Campbell, Hamilton, Pyne, 1901-Laughlin."
+  },
+  {
+   "dorm_id": "modern-dorms",
+   "dorm_name": "Modern & Standardized Dorms (Yeh, New College West, Whitman)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standardized Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.princeton.edu/",
+     "data_confidence": "medium",
+     "notes": "Clean geometric lines; highly standardized around 11.5 x 13 ft."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 210,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.princeton.edu/",
+     "data_confidence": "medium",
+     "notes": "180-240 sq ft; often a single large shared room or 2-room suite."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Large Double / Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 20,
+      "width_ft": 15,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 300,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.princeton.edu/",
+     "data_confidence": "medium",
+     "notes": "250-350 sq ft; often configured with a common room and bedrooms."
+    }
+   ],
+   "notes": "Buildings include Addy, Jose E. Feliciano, Kanji, and Bloomberg Hall."
+  },
+  {
+   "dorm_id": "spelman-hall",
+   "dorm_name": "Spelman Hall (Apartment-Style)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Apartment Single Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.princeton.edu/",
+     "data_confidence": "medium",
+     "notes": "Uniform pre-fabricated four-person apartments (exactly 930 sq ft); four private singles (~9 x 11 ft each) plus a ~14 x 18 ft living/kitchen."
+    }
+   ],
+   "notes": "Uniform pre-fabricated four-person apartments; bedrooms modeled individually."
+  }
+ ]
+}

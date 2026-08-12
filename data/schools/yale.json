@@ -1,0 +1,716 @@
+{
+ "college_id": "yale",
+ "college_name": "Yale University",
+ "city": "New Haven",
+ "state": "CT",
+ "housing_url": "https://housing.yale.edu/",
+ "data_collected": "2026-08-12",
+ "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with Yale housing floor plans and student-sourced specs. Yale does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Yale's historic residential colleges feature hundreds of unique layouts. Yale Housing details official figures for major room tiers; suite bedrooms are modeled individually.",
+ "dorms": [
+  {
+   "dorm_id": "es-harkness-hall",
+   "dorm_name": "ES Harkness Hall (Medical Campus)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Small Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13.92,
+      "width_ft": 9.83,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 135,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "high",
+     "notes": "13'11\" x 9'10\"."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Medium Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13.5,
+      "width_ft": 10.67,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 144,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "high",
+     "notes": "13'6\" x 10'8\"."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Large Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 14.67,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 161,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "high",
+     "notes": "14'8\" x 11'0\"."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Extra Large Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13.5,
+      "width_ft": 10.83,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 250,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "medium",
+     "notes": "Two configurations: 10'10\" x 13'6\" or 10'5\" x 10'8\" (~250 sq ft total layout)."
+    }
+   ],
+   "notes": "Graduate/medical building with exact dimensional standards per tier."
+  },
+  {
+   "dorm_id": "276-prospect",
+   "dorm_name": "276 Prospect Street",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Small Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 7,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 92,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "high",
+     "notes": "7'0\" x 11'0\"."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Medium Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 135,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "high",
+     "notes": null
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Large Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 160,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "high",
+     "notes": null
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Extra Large Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 220,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "high",
+     "notes": null
+    }
+   ],
+   "notes": "Standard multi-tier residential dorm layout."
+  },
+  {
+   "dorm_id": "254-prospect",
+   "dorm_name": "254 Prospect Street",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Medium Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "high",
+     "notes": null
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Large Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 170,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "high",
+     "notes": null
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Extra Large Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "high",
+     "notes": null
+    }
+   ],
+   "notes": null
+  },
+  {
+   "dorm_id": "bauer-hall",
+   "dorm_name": "Divinity School - Bauer Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Micro Unit",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 17.83,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 250,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "medium",
+     "notes": "Standardized to exactly 250 sq ft units containing a private bathroom (~14'0\" x 17'10\")."
+    }
+   ],
+   "notes": null
+  },
+  {
+   "dorm_id": "old-campus",
+   "dorm_name": "Undergraduate Residential Colleges & Old Campus",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Old Campus Freshman Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 104,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "medium",
+     "notes": "High 12-foot ceilings and walk-in closets; 8 x 11 to 10 x 12 ft."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Old Campus Freshman Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.5,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 201,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "medium",
+     "notes": "Often two small bedrooms attached to a shared common room; 11 x 16 to 12 x 19 ft."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Oversized Double (e.g. Durfee Hall)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 252,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.yale.edu/",
+     "data_confidence": "medium",
+     "notes": "Historic fireplaces and double windows facing Old Campus."
+    }
+   ],
+   "notes": "Undergraduate housing built around multi-room suites; bedrooms modeled individually."
+  }
+ ]
+}

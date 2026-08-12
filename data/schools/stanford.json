@@ -1,0 +1,408 @@
+{
+ "college_id": "stanford",
+ "college_name": "Stanford University",
+ "city": "Stanford",
+ "state": "CA",
+ "housing_url": "https://rde.stanford.edu/studenthousing",
+ "data_collected": "2026-08-12",
+ "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with Stanford housing floor plans and student-sourced specs. Stanford does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Stanford officially measures layouts by total square footage rather than ft x ft; representative rectangles are derived from standard architectural designs and student specs.",
+ "dorms": [
+  {
+   "dorm_id": "undergraduate-halls",
+   "dorm_name": "Undergraduate Residence Halls",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 116,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://rde.stanford.edu/studenthousing",
+     "data_confidence": "medium",
+     "notes": "Older stone halls (e.g. Toyon, Branner) to modern complexes; 10 x 10 to 11 x 12 ft."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.5,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 201,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://rde.stanford.edu/studenthousing",
+     "data_confidence": "medium",
+     "notes": "Long rectangles for two desk-and-bed sets along opposite walls; 11 x 16 to 12 x 19 ft."
+    }
+   ],
+   "notes": "Traditional dorm configurations across older stone halls and modern complexes."
+  },
+  {
+   "dorm_id": "gsb-residences",
+   "dorm_name": "Graduate School of Business Residences",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "GSB Suite Single Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 165,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://rde.stanford.edu/studenthousing",
+     "data_confidence": "high",
+     "notes": "Suite-style singles, completely standardized at exactly 11 x 15 ft per private bedroom."
+    }
+   ],
+   "notes": "GSB suite-style residences."
+  },
+  {
+   "dorm_id": "escondido-village",
+   "dorm_name": "Escondido Village",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "EV Studio",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 20,
+      "width_ft": 16,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 320,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://rde.stanford.edu/studenthousing",
+     "data_confidence": "medium",
+     "notes": "Open-concept box with full XL bed, kitchen counter, and bathroom wall; ~16 x 20 ft total."
+    },
+    {
+     "room_type": "one_bedroom_apartment",
+     "room_type_official": "EV Low-Rise 1-Bedroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 25,
+      "width_ft": 18,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 450,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://rde.stanford.edu/studenthousing",
+     "data_confidence": "medium",
+     "notes": "~18 x 25 ft total."
+    }
+   ],
+   "notes": "Modern apartment complex with uniform, square footprints."
+  },
+  {
+   "dorm_id": "munger-residences",
+   "dorm_name": "Munger Graduate Residences",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Munger Standard Studio",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 22,
+      "width_ft": 20,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 440,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://rde.stanford.edu/studenthousing",
+     "data_confidence": "medium",
+     "notes": "~20 x 22 ft total."
+    },
+    {
+     "room_type": "studio",
+     "room_type_official": "Munger Premium Studio",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 25,
+      "width_ft": 20,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 500,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://rde.stanford.edu/studenthousing",
+     "data_confidence": "medium",
+     "notes": "~20 x 25 ft total."
+    }
+   ],
+   "notes": "Graduate studios with square footprints."
+  },
+  {
+   "dorm_id": "lyman-residences",
+   "dorm_name": "Lyman Graduate Residences",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "two_bedroom_apartment",
+     "room_type_official": "Lyman 2-Bedroom Apartment",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 24,
+      "width_ft": 24,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://rde.stanford.edu/studenthousing",
+     "data_confidence": "medium",
+     "notes": "~24 x 24 ft total for the two-person shared footprint."
+    }
+   ],
+   "notes": "Graduate two-bedroom apartments."
+  }
+ ]
+}

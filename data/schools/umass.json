@@ -1,0 +1,399 @@
+{
+ "college_id": "umass",
+ "college_name": "University of Massachusetts Amherst",
+ "city": "Amherst",
+ "state": "MA",
+ "housing_url": "https://www.umass.edu/living/",
+ "data_collected": "2026-08-12",
+ "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with UMass Amherst housing floor plans and student-sourced specs. UMass Amherst does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Standard blueprints broken down by residential area and room type. Traditional halls feature painted concrete block walls and standard movable furniture.",
+ "dorms": [
+  {
+   "dorm_id": "traditional-halls",
+   "dorm_name": "Traditional Residence Halls (Southwest, Central, Northeast, Orchard Hill)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "11.0 x 9.0 ft; found on designated single-sex or co-ed floors in Southwest towers and Central."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "15.0 x 12.5 ft; the most common configuration. Rooms are typically deeper than wide."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple / Economy Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 224,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "16.0 x 14.0 ft; converted corner or expanded rooms with bunked/lofted beds."
+    }
+   ],
+   "notes": "Painted concrete block walls and standard movable furniture layouts."
+  },
+  {
+   "dorm_id": "sylvan-suites",
+   "dorm_name": "Sylvan Residential Area (McNamara, Brown, Cashin)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Suite Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": null
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 161,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": null
+    }
+   ],
+   "notes": "6-person or 8-person suites sharing a common living area and private suite bathroom; a 15 x 12 ft common living room per suite."
+  },
+  {
+   "dorm_id": "chcrc-honors",
+   "dorm_name": "Commonwealth Honors College (Elm, Maple, Birch, Linden, Oak, Sycamore)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Honors Suite Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 9.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 110,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": null
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Honors Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 178,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": null
+    }
+   ],
+   "notes": "Newer premium suite- and apartment-style spaces with integrated air conditioning; 16 x 12 ft suite living rooms."
+  },
+  {
+   "dorm_id": "north-apartments",
+   "dorm_name": "North Apartments (Buildings A, B, C, D)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Apartment Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9.3,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 102,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.umass.edu/living/",
+     "data_confidence": "high",
+     "notes": "4-bedroom single-occupancy layout with a shared 12.5 x 11 ft kitchen/living room and full kitchen."
+    }
+   ],
+   "notes": "4-bedroom single-occupancy apartments; bedrooms modeled individually."
+  }
+ ]
+}

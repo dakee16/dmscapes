@@ -1,0 +1,408 @@
+{
+ "college_id": "uc-davis",
+ "college_name": "University of California, Davis",
+ "city": "Davis",
+ "state": "CA",
+ "housing_url": "https://housing.ucdavis.edu/",
+ "data_collected": "2026-08-12",
+ "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with UC Davis housing floor plans and student-sourced specs. UC Davis does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Student Housing lists a mix of exact standard lengths and total square footage. Single, double, and triple layouts often share the same overall footprint in a hall, with furniture density changing.",
+ "dorms": [
+  {
+   "dorm_id": "standard-10x20-halls",
+   "dorm_name": "Standard 10 x 20 Halls (Miller, Alder, Kearney, Laben, Thompson)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 20,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucdavis.edu/",
+     "data_confidence": "medium",
+     "notes": "Long rectangular layout; single/double/triple share the same 10 x 20 ft footprint."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 20,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucdavis.edu/",
+     "data_confidence": "medium",
+     "notes": "10 x 20 ft footprint with lofted/bunked beds."
+    }
+   ],
+   "notes": "Long, rectangular layouts across newer or renovated high-occupancy halls."
+  },
+  {
+   "dorm_id": "classic-halls",
+   "dorm_name": "Classic 10.5 x 13.5 Halls (Gilmore, Bixby, Malcolm, Ryerson)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.5,
+      "width_ft": 7,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 74,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucdavis.edu/",
+     "data_confidence": "medium",
+     "notes": "Single rooms are typically ~half the footprint (~7 x 10.5 ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.5,
+      "width_ft": 10.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 142,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucdavis.edu/",
+     "data_confidence": "medium",
+     "notes": "10'6\" x 13'6\" (~142 sq ft)."
+    }
+   ],
+   "notes": "More traditionally square configurations in mid-century high-rises."
+  },
+  {
+   "dorm_id": "mid-size-halls",
+   "dorm_name": "Mid-Size 11 x 15 Halls (Currant, Live Oak, Wall, Potter, Campbell, Sequoia, Madrone)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 165,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucdavis.edu/",
+     "data_confidence": "medium",
+     "notes": "Listed at 165 total sq ft; 11 x 15 or 10 x 16.5 ft depending on the construction cut."
+    }
+   ],
+   "notes": null
+  },
+  {
+   "dorm_id": "suite-style-halls",
+   "dorm_name": "Suite-Style Halls (Yosemite, Tahoe, Shasta, Emerson)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Bedroom (Large)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 19,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 225,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucdavis.edu/",
+     "data_confidence": "medium",
+     "notes": "Bedroom spaces inside larger suites span 12 x 19 or 15 x 15 ft (~220-225 sq ft)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Bedroom (Emerson)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucdavis.edu/",
+     "data_confidence": "medium",
+     "notes": "Emerson bedroom spaces ~10 x 15 ft (~150 sq ft) inside suites."
+    }
+   ],
+   "notes": "Individual bedroom spaces inside multi-room suites."
+  },
+  {
+   "dorm_id": "regan-hall",
+   "dorm_name": "Regan Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14,
+      "width_ft": 13.58,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 190,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucdavis.edu/",
+     "data_confidence": "medium",
+     "notes": "Double-occupancy rooms measure 14 x 13'7\" or 12 x 13'8\". Single spaces are roughly half."
+    }
+   ],
+   "notes": "Multi-configuration layouts."
+  }
+ ]
+}

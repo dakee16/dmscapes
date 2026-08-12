@@ -1,0 +1,238 @@
+{
+ "college_id": "uiuc",
+ "college_name": "University of Illinois Urbana-Champaign",
+ "city": "Champaign",
+ "state": "IL",
+ "housing_url": "https://housing.illinois.edu/",
+ "data_collected": "2026-08-12",
+ "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with UIUC housing floor plans and student-sourced specs. UIUC does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Room shapes shift across floors, corners, and architectural cuts (L-shaped/window-alcove variants). Standard usable clearings and structural minimums provide the tier baselines below. Closets are ~3 x 3 ft structural drop-ins.",
+ "dorms": [
+  {
+   "dorm_id": "traditional-halls",
+   "dorm_name": "Traditional Halls (Six Pack, Ikenberry, FAR/PAR/LAR)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 105,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "9 x 11 or 10 x 11 ft (~100-110 sq ft of isolated layout space)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Shared Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "12 x 15 or 12 x 14 ft; ~168-180 sq ft, ~80-90 sq ft personal space per student. Examples: Scott, Snyder, Weston, Hopkins, FAR, PAR, LAR."
+    }
+   ],
+   "notes": "Traditional residence halls with painted concrete block walls."
+  },
+  {
+   "dorm_id": "premium-suites",
+   "dorm_name": "Newer Premium Halls (Bousfield, Wassaja, Nugent)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Premium Double (Suite / Semi-Private)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 169,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "13 x 13 or 14 x 12 ft of main bedroom footprint (excluding entry vestibule / private bath)."
+    }
+   ],
+   "notes": "Suite/semi-private style with private bathrooms."
+  },
+  {
+   "dorm_id": "l-shaped-triples",
+   "dorm_name": "Shared & L-Shaped Triples",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "triple",
+     "room_type_official": "Shared Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 19,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 228,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": 3.0,
+      "depth_ft": 3.0,
+      "notes": "Standard built-in closet, ~3 ft x 3 ft structural drop-in (source)."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.illinois.edu/",
+     "data_confidence": "medium",
+     "notes": "Main bounding walls average 12 x 19 ft. L-shaped variants break into a 12 x 13 ft main bay plus an 8 x 6 ft modular alcove."
+    }
+   ],
+   "notes": "Shared triples and L-shaped triple variants."
+  }
+ ]
+}

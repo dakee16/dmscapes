@@ -1,0 +1,681 @@
+{
+ "college_id": "harvard",
+ "college_name": "Harvard University",
+ "city": "Cambridge",
+ "state": "MA",
+ "housing_url": "https://dso.college.harvard.edu/housing",
+ "data_collected": "2026-08-12",
+ "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with Harvard housing floor plans and student-sourced specs. Harvard does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Harvard does not publish exact ft x ft for every room; its residential architecture is deeply historic with many custom suite layouts. Representative rectangles are derived from official square-footage ranges.",
+ "dorms": [
+  {
+   "dorm_id": "first-year-houses",
+   "dorm_name": "First-Year & Undergraduate Houses",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Small Single (Suite Bedroom)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 9.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 110,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "100-120 sq ft. Most undergrad housing is suites (bedrooms attached to a shared common room)."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Standard / Medium Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.5,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 145,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "130-160 sq ft."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Large Single / Master Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 14.5,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 185,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "170-200 sq ft."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room (Two Beds)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 220,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "200-240 sq ft."
+    }
+   ],
+   "notes": "Undergraduate housing consists of suites (bedrooms attached to a shared common room)."
+  },
+  {
+   "dorm_id": "gropius-complex",
+   "dorm_name": "Gropius Complex (Graduate)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 121,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "Ames, Dane, Holmes, Shaw, Story. 109-133 sq ft."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Medium Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 172,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "153-191 sq ft."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Large Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 14.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 230,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "224-235 sq ft."
+    }
+   ],
+   "notes": "Graduate complex with uniform, traditional linear floor plans."
+  },
+  {
+   "dorm_id": "north-hall-law",
+   "dorm_name": "North Hall (Law School)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Small Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 186,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "175-198 sq ft."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 17,
+      "width_ft": 13.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 230,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "210-249 sq ft."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Large Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 15.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 287,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "250-325 sq ft."
+    }
+   ],
+   "notes": "Harvard Law School residence."
+  },
+  {
+   "dorm_id": "historical-yards",
+   "dorm_name": "The Historical Yards",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Narrow Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 8.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 102,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "Massachusetts Hall, Holworthy, Stoughton. 18th/19th-century buildings; frequently narrow bedrooms."
+    }
+   ],
+   "notes": "Built in the 18th and 19th centuries with highly non-standard floor plans."
+  },
+  {
+   "dorm_id": "canaday-hall",
+   "dorm_name": "Canaday Hall (Crimson Yard Moderns)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 108,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "Constructed 1974, utilitarian concrete; precisely rectangular ~9 x 12 ft with flat walls."
+    }
+   ],
+   "notes": "Most uniform bedrooms on campus, precisely rectangular."
+  },
+  {
+   "dorm_id": "river-houses",
+   "dorm_name": "River Houses (Eliot, Dunster, Adams)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room (Standard)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 14,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 140,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "Neo-Georgian, renowned for irregular shapes; one single may measure 10 x 14 ft."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room (Walk-in Closet)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 121,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://dso.college.harvard.edu/housing",
+     "data_confidence": "medium",
+     "notes": "Another single next door could be 11 x 11 ft with an extra walk-in closet space."
+    }
+   ],
+   "notes": "Neo-Georgian structures renowned for irregular shapes; bay windows and alcoves alter rooms."
+  }
+ ]
+}
