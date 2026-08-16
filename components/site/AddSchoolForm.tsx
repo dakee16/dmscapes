@@ -9,6 +9,7 @@ import { getBrowserClient } from "@/lib/supabase-browser";
 import type { RoomSubmissionRequest } from "@/lib/api-types";
 
 const ROOM_TYPES = ["single", "double", "triple", "quad", "suite", "other"];
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export default function AddSchoolForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
@@ -27,12 +28,20 @@ export default function AddSchoolForm() {
       room_type: String(fd.get("room_type") ?? "") || undefined,
       length_ft: Number(fd.get("length_ft")) || undefined,
       width_ft: Number(fd.get("width_ft")) || undefined,
-      email: String(fd.get("email") ?? "").trim() || undefined,
+      email: String(fd.get("email") ?? "").trim(),
       // Honeypot: humans never see the field, so it stays empty for them.
       website: String(fd.get("website") ?? "") || undefined,
     };
     if (!body.college_name) {
       setError("College name is required.");
+      return;
+    }
+    if (!body.email) {
+      setError("Email is required so we can tell you when your school is live.");
+      return;
+    }
+    if (!EMAIL_RE.test(body.email)) {
+      setError("That email doesn't look right.");
       return;
     }
     setStatus("sending");
@@ -70,8 +79,7 @@ export default function AddSchoolForm() {
         </p>
         <h2 className="mt-2 font-display text-xl font-bold">Got it, thank you!</h2>
         <p className="mt-2 text-ink-soft">
-          Your school is in the queue. If you left an email, we&rsquo;ll ping you the
-          moment it&rsquo;s live.
+          Your school is in the queue. We&rsquo;ll ping you the moment it&rsquo;s live.
         </p>
       </div>
     );
@@ -163,12 +171,15 @@ export default function AddSchoolForm() {
       </div>
       <div>
         <label className={label} htmlFor="email">
-          Email <span className="font-normal text-ink-soft">(optional, we&rsquo;ll tell you when it&rsquo;s live)</span>
+          Email <span className="text-cobalt">*</span>{" "}
+          <span className="font-normal text-ink-soft">(we&rsquo;ll tell you when it&rsquo;s live)</span>
         </label>
         <input
           id="email"
           name="email"
           type="email"
+          required
+          autoComplete="email"
           placeholder="you@school.edu"
           className={input}
         />

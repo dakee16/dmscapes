@@ -55,7 +55,12 @@ export default function RequestSchoolModal({
       setMessage("Tell us which college to add.");
       return;
     }
-    if (email && !EMAIL_RE.test(email)) {
+    if (!email.trim()) {
+      setStatus("error");
+      setMessage("Email is required so we can tell you when your school is live.");
+      return;
+    }
+    if (!EMAIL_RE.test(email.trim())) {
       setStatus("error");
       setMessage("That email doesn't look right.");
       return;
@@ -64,7 +69,7 @@ export default function RequestSchoolModal({
     setMessage("");
     const body: RoomSubmissionRequest = {
       college_name: collegeName.trim(),
-      email: email.trim() || undefined,
+      email: email.trim(),
       notes: "requested via planner",
       // Honeypot: humans never see the field, so it stays empty for them.
       website: honeypotRef.current?.value || undefined,
@@ -134,8 +139,8 @@ export default function RequestSchoolModal({
           <div className="mt-4 rounded-xl border border-ink/10 bg-paper px-4 py-4 text-sm leading-relaxed">
             <p className="font-semibold">Got it. {collegeName.trim()} is on the list. 🎉</p>
             <p className="mt-1 text-ink-soft">
-              We add schools by request volume{email ? ", and we'll email you when yours is live" : ""}.
-              Meanwhile, you can still plan your room with manual measurements.
+              We add schools by request volume, and we&apos;ll email you when yours is
+              live. Meanwhile, you can still plan your room with manual measurements.
             </p>
             <button
               type="button"
@@ -165,7 +170,7 @@ export default function RequestSchoolModal({
             </p>
             <div>
               <label htmlFor="req-college" className="mb-1.5 block text-sm font-medium">
-                College name
+                College name <span className="text-cobalt">*</span>
               </label>
               <input
                 ref={inputRef}
@@ -180,11 +185,13 @@ export default function RequestSchoolModal({
             </div>
             <div>
               <label htmlFor="req-email" className="mb-1.5 block text-sm font-medium">
-                Email <span className="font-normal text-ink-soft">(get notified when it&apos;s live)</span>
+                Email <span className="text-cobalt">*</span>{" "}
+                <span className="font-normal text-ink-soft">(so we can tell you when it&apos;s live)</span>
               </label>
               <input
                 id="req-email"
                 type="email"
+                required
                 autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}

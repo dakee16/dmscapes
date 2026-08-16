@@ -48,7 +48,13 @@ export async function POST(request: Request) {
   }
 
   const email = cleanText(body.email, 254)?.toLowerCase() ?? null;
-  if (email && !EMAIL_RE.test(email)) {
+  if (!email) {
+    return NextResponse.json(
+      { error: "Email is required so we can tell you when your school is live." },
+      { status: 400 }
+    );
+  }
+  if (!EMAIL_RE.test(email)) {
     return NextResponse.json(
       { error: "Enter a valid email address." },
       { status: 400 }
