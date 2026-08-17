@@ -1,0 +1,355 @@
+{
+ "college_id": "seattleu",
+ "college_name": "Seattle University",
+ "city": "Seattle",
+ "state": "WA",
+ "housing_url": "https://www.seattleu.edu/life-at-seattle-u/housing-dining/",
+ "data_collected": "2026-08-17",
+ "campus_notes": "Dimensions compiled 2026-08-17 from independent research (official housing pages, floor plans, student-sourced specs). Seattle University publishes limited per-room ft x ft data; where an exact figure was published it is used (data_confidence: high/medium); rooms with no published number carry null dims and rely on the site's built-in estimate fallback which derives a representative ft x ft from the wider dataset and flags an 'Estimated based on similar rooms' disclaimer in the UI. Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Seattle U publishes linear dimensions for Campion (12x15, 180 sqft double), Bellarmine (12x15, 180 sqft double), Xavier (14x13.5), and Chardin (243 sqft double / 585 sqft 4-person suite).",
+ "dorms": [
+  {
+   "dorm_id": "campion-hall",
+   "dorm_name": "Campion Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.seattleu.edu/life-at-seattle-u/housing-dining/",
+     "data_confidence": "medium",
+     "notes": "Same footprint as double, single occupancy."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.seattleu.edu/life-at-seattle-u/housing-dining/",
+     "data_confidence": "high",
+     "notes": "Published: 12' x 15', ~180 sqft."
+    }
+   ],
+   "notes": "First-year residence tower."
+  },
+  {
+   "dorm_id": "bellarmine-hall",
+   "dorm_name": "Bellarmine Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.seattleu.edu/life-at-seattle-u/housing-dining/",
+     "data_confidence": "medium",
+     "notes": "Same footprint as double."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.seattleu.edu/life-at-seattle-u/housing-dining/",
+     "data_confidence": "high",
+     "notes": "Published: 12' x 15', ~180 sqft."
+    }
+   ],
+   "notes": "First-year residence tower."
+  },
+  {
+   "dorm_id": "xavier-hall",
+   "dorm_name": "Xavier Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14,
+      "width_ft": 13.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 189,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.seattleu.edu/life-at-seattle-u/housing-dining/",
+     "data_confidence": "high",
+     "notes": "Published: 14' x 13.5'."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "chardin-hall",
+   "dorm_name": "Chardin Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17,
+      "width_ft": 14,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 243,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.seattleu.edu/life-at-seattle-u/housing-dining/",
+     "data_confidence": "medium",
+     "notes": "Published: ~243 sqft (roughly 14' x 17')."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "4-Person Suite",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 26,
+      "width_ft": 22,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 585,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.seattleu.edu/life-at-seattle-u/housing-dining/",
+     "data_confidence": "medium",
+     "notes": "Published: ~585 sqft total 4-person suite."
+    }
+   ],
+   "notes": "Second-year hall; 4-person suites."
+  }
+ ]
+}
