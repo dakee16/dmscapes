@@ -9,7 +9,7 @@ import { categoriesCovered, tierForBudget } from "@/lib/catalog";
 import { STYLES, isPlusStyle } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
-import { isPaid, isPlusTier, isPlanMetered, canGeneratePlan, headerCreditState } from "@/lib/plan";
+import { isPaid, isPlusTier, isFlex, isPlanMetered, canGeneratePlan, headerCreditState } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
 import { useUpgrade } from "@/lib/upgrade-context";
 import CreditMeter from "@/components/site/CreditMeter";
@@ -91,7 +91,9 @@ export default function PlanStylePage() {
       setShowCreditConfirm(true);
     } else {
       track("plan_blocked_no_credits");
-      openUpgrade(isPlusTier(profile) ? "plan-credits" : "free-plan-limit");
+      openUpgrade(
+        isPlusTier(profile) ? "plan-credits" : isFlex(profile) ? "flex-credits" : "free-plan-limit"
+      );
     }
   }, [user, profile, modalOpen, openUpgrade]);
 
@@ -103,7 +105,11 @@ export default function PlanStylePage() {
     setShowDisclaimer(false);
     if (!style || generating) return;
     if (isPlanMetered(profile)) {
-      const blockReason = isPlusTier(profile) ? "plan-credits" : "free-plan-limit";
+      const blockReason = isPlusTier(profile)
+        ? "plan-credits"
+        : isFlex(profile)
+          ? "flex-credits"
+          : "free-plan-limit";
       // Fast path: an account we already know is out of plans skips the server
       // round-trip and goes straight to the right upgrade prompt.
       if (!canGeneratePlan(profile)) {

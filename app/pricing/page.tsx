@@ -5,7 +5,12 @@ import PremiumNotify from "@/components/site/PremiumNotify";
 import Room3DScene from "@/components/site/Room3DScene";
 import UpgradeButton from "@/components/site/UpgradeButton";
 import { SCHOOLS } from "@/lib/schools";
-import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD } from "@/lib/plan";
+import {
+  PLUS_PRICE_USD,
+  PRO_PRICE_USD,
+  RECHARGE_PRICE_USD,
+  FLEX_CREDIT_PRICE_USD,
+} from "@/lib/plan";
 
 // Real, honest social proof: counts derived straight from the shipped data, so
 // they can never drift from what we actually support. No fabricated reviews or
@@ -320,7 +325,50 @@ export default function PricingPage() {
 
           <TrustStrip />
 
-          <div className="mt-8 grid items-start gap-5 lg:grid-cols-3">
+          {/* FLEX: the à-la-carte tier, presented as a slim banner above the
+              three main cards. It's a real, selectable tier (Free -> Flex ->
+              Plus -> Pro), distinct in shape from the tier cards because it's
+              pay-as-you-go rather than a fixed plan. Same features as Free; you
+              just buy room-plan credits as you need them. */}
+          <section className="mt-8 flex flex-col gap-4 rounded-2xl border border-ink/15 bg-card p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+            <div className="flex items-start gap-4">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ink text-white" aria-hidden="true">
+                <svg viewBox="0 0 24 24" className="h-5 w-5 text-highlight" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z" strokeLinejoin="round" />
+                </svg>
+              </span>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h2 className="font-display text-xl font-extrabold tracking-tight">Flex</h2>
+                  <span className="rounded-full bg-ink/5 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink-soft">
+                    Pay as you go
+                  </span>
+                </div>
+                <p className="mt-1 max-w-xl text-[15px] leading-relaxed text-ink-soft">
+                  Not ready for a plan? Buy room-design credits à la carte at{" "}
+                  <span className="font-semibold text-ink">
+                    ${FLEX_CREDIT_PRICE_USD.toFixed(2)} each
+                  </span>
+                  , as few or as many as you want. Same features as Free — you just
+                  top up when you need another room.
+                </p>
+              </div>
+            </div>
+            <div className="flex shrink-0 items-center gap-3 sm:flex-col sm:items-end">
+              <span className="font-display text-3xl font-extrabold tracking-tight">
+                ${FLEX_CREDIT_PRICE_USD.toFixed(2)}
+                <span className="ml-1 align-middle text-sm font-medium text-ink-soft">/credit</span>
+              </span>
+              <Link
+                href="/account/billing"
+                className="inline-flex h-11 items-center rounded-xl bg-ink px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
+              >
+                Buy credits
+              </Link>
+            </div>
+          </section>
+
+          <div className="mt-5 grid items-start gap-5 lg:grid-cols-3">
             {/* FREE TIER: the real, active product. Reads complete on its own. */}
             <section className="flex h-full flex-col rounded-2xl border border-ink/12 bg-card p-6 sm:p-8">
               <div className="flex items-center justify-between gap-3">

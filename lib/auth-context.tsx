@@ -33,8 +33,8 @@ export interface Profile {
   created_at: string;
   full_name?: string | null;
   phone?: string | null;
-  /** "free", "plus", or "pro". Defaults to "free" when absent (migrations 0008
-   *  add the column, 0010 widens it to three tiers). */
+  /** "free", "flex", "plus", or "pro". Defaults to "free" when absent (migrations
+   *  0008 add the column, 0010 widens it to three tiers, 0015 adds "flex"). */
   plan?: PlanTier | null;
   /** Plus only: remaining plan-generation credits (null for free and pro). */
   plan_credits_remaining?: number | null;
@@ -54,7 +54,7 @@ export interface Profile {
   terms_accepted_at?: string | null;
 }
 
-export type PlanTier = "free" | "plus" | "pro";
+export type PlanTier = "free" | "flex" | "plus" | "pro";
 
 /** What prompted the modal; copy inside adapts ("save your design" vs generic). */
 export type AuthModalReason = "profile" | "save-design" | "buy" | "generate";

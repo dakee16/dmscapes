@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
 import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
@@ -9,6 +10,9 @@ import {
   RECHARGE_PRICE_CENTS,
   PLUS_INITIAL_CREDITS,
   RECHARGE_CREDITS,
+  FLEX_CREDIT_PRICE_CENTS,
+  FLEX_MIN_QTY,
+  FLEX_MAX_QTY,
   PURCHASE_TYPES,
   type PurchaseType,
 } from "@/lib/plan";
@@ -18,8 +22,10 @@ export const runtime = "nodejs";
 
 // Per-purchase config: price (falls back to inline price_data when no env price
 // id is set), the Stripe line-item copy, and the post-payment redirect.
+// Only the three fixed-price purchases live here; "flex_credits" is
+// quantity-priced and handled in its own branch below, so it's excluded.
 const CFG: Record<
-  PurchaseType,
+  Exclude<PurchaseType, "flex_credits">,
   { cents: number; envKey: string; name: string; description: string; success: string }
 > = {
   plus: {
@@ -62,15 +68,36 @@ export async function POST(request: Request) {
   }
 
   let type: PurchaseType = "plus";
+  // Flex à-la-carte credit quantity (only used when type === "flex_credits").
+  let quantity = 0;
   try {
-    const body = (await request.json().catch(() => ({}))) as { type?: string };
+    const body = (await request.json().catch(() => ({}))) as {
+      type?: string;
+      quantity?: number;
+    };
     if (body.type && PURCHASE_TYPES.includes(body.type as PurchaseType)) {
       type = body.type as PurchaseType;
     } else if (body.type) {
       return NextResponse.json({ error: "Unknown purchase type." }, { status: 400 });
     }
+    if (typeof body.quantity === "number" && Number.isFinite(body.quantity)) {
+      quantity = Math.floor(body.quantity);
+    }
   } catch {
     // Empty body is fine; defaults to "plus".
+  }
+
+  // Validate the Flex credit quantity up front so a bad value never reaches
+  // Stripe. Clamp to the sane [MIN, MAX] range; a non-positive quantity is a
+  // client bug, so reject it rather than silently charging for one credit.
+  if (type === "flex_credits") {
+    if (quantity < FLEX_MIN_QTY) {
+      return NextResponse.json(
+        { error: `Choose at least ${FLEX_MIN_QTY} credit.` },
+        { status: 400 }
+      );
+    }
+    quantity = Math.min(quantity, FLEX_MAX_QTY);
   }
 
   const userId = await getUserId(request);
@@ -117,13 +144,63 @@ export async function POST(request: Request) {
         { status: 409 }
       );
     }
+    // Flex credits are for Free, Flex, and Plus. Pro is already unlimited, so
+    // selling it à-la-carte credits makes no sense — block it.
+    if (type === "flex_credits" && plan === "pro") {
+      return NextResponse.json(
+        { error: "Pro already has unlimited plans — no credits needed.", alreadyOwned: true },
+        { status: 409 }
+      );
+    }
     email = data?.email ?? undefined;
     customerId = data?.stripe_customer_id ?? undefined;
   }
 
   const origin = process.env.NEXT_PUBLIC_SITE_URL ?? new URL(request.url).origin;
-  const cfg = CFG[type];
-  const priceId = process.env[cfg.envKey];
+
+  // Build line items, the success redirect, and the metadata per purchase type.
+  // flex_credits is quantity-priced ($1.99 × N, quantity on the line item); the
+  // other three are fixed and pull an optional env price id. The webhook reads
+  // metadata.quantity to know how many credits to grant.
+  const metadata: Record<string, string> = { user_id: userId, purchase: type };
+  let lineItems: Stripe.Checkout.SessionCreateParams.LineItem[];
+  let successUrl: string;
+
+  if (type === "flex_credits") {
+    metadata.quantity = String(quantity);
+    lineItems = [
+      {
+        quantity,
+        price_data: {
+          currency: "usd",
+          unit_amount: FLEX_CREDIT_PRICE_CENTS,
+          product_data: {
+            name: "Dormscape Flex credits",
+            description: `${quantity} room-plan credit${
+              quantity === 1 ? "" : "s"
+            } at $1.99 each. Each credit designs one room.`,
+          },
+        },
+      },
+    ];
+    successUrl = `${origin}/account/billing?credits=${quantity}`;
+  } else {
+    const cfg = CFG[type];
+    const priceId = process.env[cfg.envKey];
+    lineItems = [
+      priceId
+        ? { price: priceId, quantity: 1 }
+        : {
+            quantity: 1,
+            price_data: {
+              currency: "usd",
+              unit_amount: cfg.cents,
+              product_data: { name: cfg.name, description: cfg.description },
+            },
+          },
+    ];
+    successUrl = `${origin}/account?${cfg.success}`;
+  }
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -132,23 +209,12 @@ export async function POST(request: Request) {
       // default): it needs a product tax code we don't set, and these flat
       // one-time digital unlocks don't need automated tax at this stage.
       managed_payments: { enabled: false },
-      line_items: [
-        priceId
-          ? { price: priceId, quantity: 1 }
-          : {
-              quantity: 1,
-              price_data: {
-                currency: "usd",
-                unit_amount: cfg.cents,
-                product_data: { name: cfg.name, description: cfg.description },
-              },
-            },
-      ],
-      success_url: `${origin}/account?${cfg.success}`,
+      line_items: lineItems,
+      success_url: successUrl,
       cancel_url: `${origin}/pricing?checkout=cancelled`,
       client_reference_id: userId,
-      metadata: { user_id: userId, purchase: type },
-      payment_intent_data: { metadata: { user_id: userId, purchase: type } },
+      metadata,
+      payment_intent_data: { metadata },
       ...(customerId
         ? { customer: customerId }
         : email

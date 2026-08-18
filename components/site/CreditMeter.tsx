@@ -2,7 +2,7 @@
 
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { showCredits, planCreditsRemaining } from "@/lib/plan";
+import { showCredits, planCreditsRemaining, isPlusTier } from "@/lib/plan";
 
 // Live plan-credit counter, shown only for Plus accounts (free is a fixed 1 plan
 // and pro is unlimited, so neither has a moving count worth surfacing). Saving a
@@ -38,10 +38,10 @@ export default function CreditMeter({
       {spent && recharge && (
         <button
           type="button"
-          onClick={() => openUpgrade("plan-credits")}
+          onClick={() => openUpgrade(isPlusTier(profile) ? "plan-credits" : "flex-credits")}
           className="cursor-pointer rounded-full bg-cobalt px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-wide text-white transition-colors hover:bg-cobalt-deep"
         >
-          Recharge
+          {isPlusTier(profile) ? "Recharge" : "Buy"}
         </button>
       )}
     </div>

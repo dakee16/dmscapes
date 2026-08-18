@@ -7,6 +7,7 @@ import { useAuth } from "@/lib/auth-context";
 import { startCheckout } from "@/lib/checkout";
 import { track } from "@/lib/analytics";
 import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, RECHARGE_CREDITS } from "@/lib/plan";
+import BuyCreditsForm from "@/components/site/BuyCreditsForm";
 
 // Headline + one-line hook per gating point. The value block below is shared by
 // every reason except the two Plus-recharge reasons (plan-credits, save-credits),
@@ -23,6 +24,10 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   "free-plan-limit": {
     title: "That's your free room plan",
     body: "Free includes one room plan. Upgrade to Plus for 5 more, or Pro for unlimited room plans, plus every vibe and premium tool. Saving your designs is always free.",
+  },
+  "flex-credits": {
+    title: "You're out of credits",
+    body: "Buy more à-la-carte credits to keep designing — $1.99 each, no subscription. Or go Pro for unlimited room plans and every premium feature.",
   },
   "free-save-limit": {
     title: "That's your free saved design",
@@ -117,8 +122,10 @@ export default function UpgradeModal() {
   if (!open) return null;
   const copy = COPY[reason];
   // Plus members who ran a counter dry get the recharge-vs-Pro layout; free-tier
-  // limits (and feature gates) get the shared Plus/Pro value block.
+  // limits (and feature gates) get the shared Plus/Pro value block; a Flex user
+  // out of credits gets the à-la-carte buy form plus a Pro option.
   const isRecharge = reason === "plan-credits" || reason === "save-credits";
+  const isFlexCredits = reason === "flex-credits";
 
   async function buy(type: "recharge" | "pro") {
     if (busy) return;
@@ -162,7 +169,44 @@ export default function UpgradeModal() {
           {copy.body}
         </p>
 
-        {isRecharge ? (
+        {isFlexCredits ? (
+          // Out of credits on Flex: buy more à-la-carte, or step up to Pro.
+          <>
+            <div className="mt-6 rounded-2xl border border-ink/10 bg-white p-4">
+              <BuyCreditsForm source="upgrade-modal" autoFocus onStarted={closeUpgrade} />
+            </div>
+            <button
+              type="button"
+              onClick={() => buy("pro")}
+              disabled={busy !== null}
+              className="mt-3 flex w-full cursor-pointer items-center justify-between gap-3 rounded-2xl border border-ink/15 bg-white px-5 py-4 text-left text-ink transition-colors hover:border-cobalt disabled:cursor-wait disabled:opacity-70"
+            >
+              <span>
+                <span className="block text-base font-semibold leading-snug">
+                  {busy === "pro" ? "Starting checkout…" : "Go Pro, unlimited"}
+                </span>
+                <span className="mt-1 block text-sm leading-snug text-ink-soft">
+                  Unlimited room plans, no counters, ever.
+                </span>
+              </span>
+              <span className="shrink-0 font-mono text-base font-semibold">
+                ${PRO_PRICE_USD.toFixed(2)}
+              </span>
+            </button>
+            {error && (
+              <p className="mt-3 text-sm text-[#c2321e]" role="alert">
+                {error}
+              </p>
+            )}
+            <button
+              type="button"
+              onClick={closeUpgrade}
+              className="mt-3 block w-full cursor-pointer text-center text-sm text-ink-soft transition-colors hover:text-ink"
+            >
+              Not now
+            </button>
+          </>
+        ) : isRecharge ? (
           // Out of a counter: a Plus member chooses between a recharge and Pro.
           <>
             <div className="mt-6 space-y-3">

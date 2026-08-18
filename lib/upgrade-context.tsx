@@ -17,6 +17,7 @@ export type UpgradeReason =
   | "save-credits"
   | "free-plan-limit"
   | "free-save-limit"
+  | "flex-credits"
   | "pdf"
   | "png"
   | "compare"

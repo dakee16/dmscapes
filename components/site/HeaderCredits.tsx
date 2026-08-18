@@ -1,22 +1,51 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { headerCreditState } from "@/lib/plan";
+import { headerCreditState, planLabel, RECHARGE_PRICE_USD } from "@/lib/plan";
+import BuyCreditsForm from "@/components/site/BuyCreditsForm";
 
 // Compact design-credits chip that lives INSIDE the header island, just left of
 // the profile avatar (see Nav). Desktop only (md+); on mobile the avatar badge +
-// profile dropdown carry this instead. Free and Plus show a live "Designs · N"
-// count; at zero the chip swaps to a one-tap Recharge (Plus) / Upgrade (free)
-// button. Pro (unlimited) and logged-out show nothing. Saving is unlimited, so
-// there is no saves counter.
+// profile dropdown carry this instead.
+//
+// Pro shows a static ∞. Free, Flex, and Plus show a live "Designs · N" count
+// that doubles as a button: clicking it opens a small popover to buy à-la-carte
+// $1.99 credits (quantity + live price). When the count hits zero the chip turns
+// into a cobalt "Buy credits" call to action. Plus keeps its 5-for-$4.99
+// recharge as a secondary option inside the popover.
 export default function HeaderCredits() {
   const { user, profile } = useAuth();
   const { openUpgrade } = useUpgrade();
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
 
   const c = headerCreditState(profile);
+
+  // Close the popover on outside click, Escape, and route change.
+  useEffect(() => {
+    if (!open) return;
+    function onDown(e: MouseEvent) {
+      if (rootRef.current && !rootRef.current.contains(e.target as Node)) setOpen(false);
+    }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+  useEffect(() => setOpen(false), [pathname]);
+
   if (!user || !profile) return null;
 
+  // Pro: unlimited, nothing to buy.
   if (c.unlimited) {
     return (
       <span
@@ -24,32 +53,61 @@ export default function HeaderCredits() {
         title="Room designs left"
       >
         Designs <span aria-hidden="true">·</span>
-        {/* Center-aligned (not baseline): ∞ is centered on the math axis, so it
-            only reads inline with items-center. Sized to match the label weight. */}
         <span className="text-[15px] leading-none">&infin;</span>
       </span>
     );
   }
 
-  if (c.empty) {
-    return (
+  return (
+    <div ref={rootRef} className="relative hidden shrink-0 md:block">
       <button
         type="button"
-        onClick={() => openUpgrade(c.plus ? "plan-credits" : "free-plan-limit")}
-        className="hidden shrink-0 cursor-pointer items-center rounded-full bg-cobalt px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-white transition-colors hover:bg-cobalt-deep md:inline-flex"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        title="Buy room-design credits"
+        className={
+          c.empty
+            ? "flex cursor-pointer items-center rounded-full bg-cobalt px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-white transition-colors hover:bg-cobalt-deep"
+            : "flex cursor-pointer items-baseline gap-1 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-cobalt transition-colors hover:bg-cobalt/[0.12]"
+        }
       >
-        {c.plus ? "Recharge" : "Upgrade"}
+        {c.empty ? (
+          "Buy credits"
+        ) : (
+          <>
+            Designs <span aria-hidden="true">·</span>
+            <span className="text-[13px] leading-none">{c.designsLeft}</span>
+          </>
+        )}
       </button>
-    );
-  }
 
-  return (
-    <span
-      className="hidden shrink-0 items-baseline gap-1 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-cobalt md:inline-flex"
-      title="Room designs left"
-    >
-      Designs <span aria-hidden="true">·</span>
-      <span className="text-[13px] leading-none">{c.designsLeft}</span>
-    </span>
+      {open && (
+        <div
+          role="dialog"
+          aria-label="Buy design credits"
+          className="absolute right-0 top-full z-50 mt-2 w-72 origin-top-right rounded-2xl border border-ink/10 bg-white p-4 shadow-[0_20px_50px_-20px_rgba(23,23,43,0.45)]"
+        >
+          <div className="mb-3 flex items-baseline justify-between gap-2">
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-wide text-ink-soft">
+              {planLabel(profile)} · {c.designsLeft} left
+            </span>
+          </div>
+          <BuyCreditsForm source="header" autoFocus onStarted={() => setOpen(false)} />
+          {c.plus && (
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false);
+                openUpgrade("plan-credits");
+              }}
+              className="mt-3 block w-full cursor-pointer border-t border-ink/8 pt-3 text-center text-[13px] font-medium text-ink-soft transition-colors hover:text-ink"
+            >
+              Prefer the 5-pack? Recharge for ${RECHARGE_PRICE_USD.toFixed(2)}
+            </button>
+          )}
+        </div>
+      )}
+    </div>
   );
 }

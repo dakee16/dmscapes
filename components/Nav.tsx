@@ -8,7 +8,7 @@ import Wordmark from "@/components/site/Wordmark";
 import RoommateTeaser from "@/components/site/RoommateTeaser";
 import HeaderCredits from "@/components/site/HeaderCredits";
 import { useAuth } from "@/lib/auth-context";
-import { isFree, isPaid } from "@/lib/plan";
+import { isPaid } from "@/lib/plan";
 
 // Primary text nav, in reading order. Shown centered on desktop; on smaller
 // widths these move into the overflow menu so the header stays uncrowded.
@@ -55,9 +55,10 @@ export default function Nav() {
   const menuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const { profile } = useAuth();
-  // Free accounts (and logged-out visitors) see the upgrade entry; Plus shows
-  // the "+" indicator and Pro the "PRO" badge on the wordmark instead.
-  const showUpgrade = isFree(profile);
+  // Free and Flex accounts (and logged-out visitors) see the upgrade entry;
+  // Plus and Pro don't. Flex has free-like features, so it still gets the
+  // "upgrade to Plus" nudge; its credits chip handles buying more à la carte.
+  const showUpgrade = !isPaid(profile);
   // The primary CTA drops the "for free" framing for paying customers: they
   // already bought in, so "Try for FREE" would read as tone-deaf.
   const planCtaLabel = isPaid(profile) ? "Plan my room" : "Try for FREE";

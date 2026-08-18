@@ -150,3 +150,24 @@ export interface UsernameCheckResponse {
   available: boolean | null;
   error?: string;
 }
+
+// POST /api/account/invoices  (Billing page purchase history, from Stripe charges)
+export interface InvoiceItem {
+  /** Stripe charge id. */
+  id: string;
+  /** ISO 8601 timestamp of the charge. */
+  created: string;
+  /** Amount in the smallest currency unit (cents for USD). */
+  amount: number;
+  /** ISO currency code, e.g. "usd". */
+  currency: string;
+  /** Stripe charge status: "succeeded" | "pending" | "failed". */
+  status: string;
+  /** Line-item description, or null when Stripe didn't record one. */
+  description: string | null;
+  /** Link to Stripe's hosted receipt, or null when unavailable. */
+  receipt_url: string | null;
+}
+export interface InvoicesResponse {
+  invoices: InvoiceItem[];
+}

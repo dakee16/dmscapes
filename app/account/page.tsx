@@ -9,7 +9,7 @@ import RoomThumb from "@/components/room/RoomThumb";
 import ShareButton from "@/components/room/ShareButton";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { hasFeatures, showCredits } from "@/lib/plan";
+import { hasFeatures, showCredits, planLabel, isPlusTier } from "@/lib/plan";
 import CreditMeter from "@/components/site/CreditMeter";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
@@ -212,19 +212,20 @@ export default function AccountPage() {
               )}
             </header>
 
-            {/* Plus credits: a persistent, always-visible read on both counters,
-                with a one-tap recharge. Plus accounts only. */}
+            {/* Plan credits: a persistent, always-visible read on the credit
+                counter, with a link to Billing. Plus and Flex accounts (the two
+                tiers with a moving credit balance). */}
             {showCredits(profile) && (
               <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border border-cobalt/20 bg-cobalt/[0.04] px-4 py-3">
                 <span className="font-mono text-[11px] font-medium uppercase tracking-wide text-ink-soft">
-                  Plus credits
+                  {planLabel(profile)} credits
                 </span>
                 <CreditMeter recharge={false} />
                 <Link
-                  href="/pricing"
+                  href="/account/billing"
                   className="ml-auto text-sm font-semibold text-cobalt underline-offset-2 transition-colors hover:underline"
                 >
-                  Recharge
+                  {isPlusTier(profile) ? "Recharge" : "Buy more"}
                 </Link>
               </div>
             )}

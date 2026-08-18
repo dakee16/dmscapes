@@ -14,25 +14,30 @@ export type CheckoutResult =
     };
 
 /**
- * Kick off a one-time Stripe checkout for Plus, Pro, or a Plus credit recharge.
- * Fetches a session from /api/checkout and sends the browser to Stripe's hosted
- * page. Returns needsAuth when the caller should open the auth modal first. On
- * success the browser navigates away.
+ * Kick off a one-time Stripe checkout for Plus, Pro, a Plus credit recharge, or
+ * an à-la-carte Flex credit purchase. For "flex_credits", pass the quantity of
+ * $1.99 credits to buy; the server prices it as quantity × $1.99. Fetches a
+ * session from /api/checkout and sends the browser to Stripe's hosted page.
+ * Returns needsAuth when the caller should open the auth modal first. On success
+ * the browser navigates away.
  */
-export async function startCheckout(type: PurchaseType = "plus"): Promise<CheckoutResult> {
+export async function startCheckout(
+  type: PurchaseType = "plus",
+  quantity?: number
+): Promise<CheckoutResult> {
   const supabase = getBrowserClient();
   const token = supabase
     ? (await supabase.auth.getSession()).data.session?.access_token
     : null;
   if (!token) return { ok: false, needsAuth: true };
 
-  track("checkout_started", { type });
+  track("checkout_started", { type, ...(quantity != null ? { quantity } : {}) });
   let res: Response;
   try {
     res = await fetch("/api/checkout", {
       method: "POST",
       headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ type }),
+      body: JSON.stringify(quantity != null ? { type, quantity } : { type }),
     });
   } catch {
     return { ok: false, error: "Network hiccup. Try again in a moment." };

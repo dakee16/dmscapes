@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { headerCreditState } from "@/lib/plan";
+import { headerCreditState, planLabel } from "@/lib/plan";
 
 function initialsOf(name: string): string {
   const clean = name.trim();
@@ -171,24 +171,41 @@ export default function ProfileMenu({
                   {credit.unlimited ? "∞" : credit.designsLeft}
                 </span>
               </div>
-              {credit.empty && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    setOpen(false);
-                    openUpgrade(credit.plus ? "plan-credits" : "free-plan-limit");
-                  }}
-                  className="mt-2.5 w-full cursor-pointer rounded-lg bg-cobalt px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep"
-                >
-                  {credit.plus ? "Recharge designs" : "Upgrade for more"}
-                </button>
-              )}
+              {credit.empty &&
+                (credit.plus ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setOpen(false);
+                      openUpgrade("plan-credits");
+                    }}
+                    className="mt-2.5 w-full cursor-pointer rounded-lg bg-cobalt px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep"
+                  >
+                    Recharge designs
+                  </button>
+                ) : (
+                  // Free and Flex buy à-la-carte credits on the Billing page.
+                  <Link
+                    href="/account/billing"
+                    onClick={() => setOpen(false)}
+                    className="mt-2.5 block w-full rounded-lg bg-cobalt px-3 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep"
+                  >
+                    Buy credits
+                  </Link>
+                ))}
             </div>
           )}
 
-          {/* Identity header */}
+          {/* Identity header, with the current tier shown as a distinct badge. */}
           <div className="border-b border-ink/8 px-3 pb-2.5 pt-0.5">
-            <p className="truncate text-sm font-semibold text-ink">{label}</p>
+            <div className="flex items-center gap-2">
+              <p className="truncate text-sm font-semibold text-ink">{label}</p>
+              {profile && (
+                <span className="shrink-0 rounded-full bg-ink/8 px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink-soft">
+                  {planLabel(profile)}
+                </span>
+              )}
+            </div>
             {user?.email && (
               <p className="mt-0.5 truncate text-xs text-ink-soft">{user.email}</p>
             )}
@@ -234,6 +251,25 @@ export default function ProfileMenu({
                 />
               </svg>
               Saved designs
+            </Link>
+            <Link
+              href="/account/billing"
+              role="menuitem"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-ink transition-colors hover:bg-paper"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="h-[18px] w-[18px] text-ink-soft"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                aria-hidden="true"
+              >
+                <rect x="3" y="6" width="18" height="12" rx="2" />
+                <path d="M3 10h18" strokeLinecap="round" />
+              </svg>
+              Billing
             </Link>
             {onShowRoom3D && (
               <button

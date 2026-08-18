@@ -37,6 +37,7 @@ export type AnalyticsEvent =
   | "upgrade_prompt_shown"
   | "upgrade_cta_clicked"
   | "checkout_started"
+  | "flex_credits_buy_clicked"
   | "plus_pdf_downloaded"
   | "designs_compared"
   | "plus_welcome_shown"
