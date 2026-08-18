@@ -317,7 +317,13 @@ export default function AccountSettingsPage() {
   return (
     <div>
       <SiteHeader />
-      <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
+      <main className="relative mx-auto max-w-5xl px-5 py-10 sm:px-8">
+        {/* Subtle grid-paper texture, matching the Billing page and the rest of
+            the site (static, not cursor-reactive). */}
+        <div
+          className="grid-paper grid-paper-fade pointer-events-none absolute inset-x-0 top-0 -z-10 h-[24rem]"
+          aria-hidden="true"
+        />
         {!ready ? (
           <div aria-busy="true" aria-label="Loading your settings">
             <div className="h-9 w-48 animate-pulse rounded-lg bg-ink/8" />

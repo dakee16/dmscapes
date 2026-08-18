@@ -48,6 +48,10 @@ export interface Profile {
   /** True once a user has ever purchased Plus; keeps premium features unlocked
    *  even after either counter runs out. Pro has features via its plan alone. */
   plus_features_unlocked?: boolean | null;
+  /** When the account's current paid plan was purchased (set by the Stripe
+   *  webhook). Null for free accounts. Present via select("*"); used on the
+   *  Billing page's tier card. */
+  plan_purchased_at?: string | null;
   /** When the user accepted the Terms + Privacy Policy. Set by handle_new_user
    *  (migration 0013): the email-signup timestamp from the consent checkbox, or
    *  now() for OAuth (implicit agreement). Null on accounts created before 0013. */

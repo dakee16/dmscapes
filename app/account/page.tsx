@@ -178,7 +178,12 @@ export default function AccountPage() {
     <div>
       <SiteHeader />
       <PurchaseThankYou />
-      <main className="mx-auto max-w-4xl px-5 py-10 sm:px-8">
+      <main className="relative mx-auto max-w-4xl px-5 py-10 sm:px-8">
+        {/* Subtle grid-paper texture, matching the Billing page (static). */}
+        <div
+          className="grid-paper grid-paper-fade pointer-events-none absolute inset-x-0 top-0 -z-10 h-[24rem]"
+          aria-hidden="true"
+        />
         {!ready ? (
           <div aria-busy="true" aria-label="Loading your account">
             <div className="h-9 w-40 animate-pulse rounded-lg bg-ink/8" />
