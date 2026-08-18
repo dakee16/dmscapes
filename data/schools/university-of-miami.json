@@ -1,0 +1,1036 @@
+{
+ "college_id": "university-of-miami",
+ "college_name": "University of Miami",
+ "city": "Coral Gables",
+ "state": "FL",
+ "housing_url": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+ "data_collected": "2026-08-17",
+ "campus_notes": "Dimensions compiled 2026-08-17 from independent research (official housing pages, floor plans, student-sourced specs). Where an exact figure was published it is used (data_confidence: high/medium); rooms with no published number carry null dims and rely on the site's estimate fallback (a representative ft x ft from the wider dataset, flagged with the 'Estimated based on similar rooms' disclaimer). Undergraduate beds are Twin XL. This is the private University of Miami in Coral Gables, Florida, distinct from Miami University in Ohio. Centennial Village (five first-year residential colleges) and Lakeside Village publish square footage; the older colleges (Eaton, Mahoney, Pearson) do not, so those room dims use the estimate fallback. The former Hecht and Stanford colleges were replaced by Centennial Village.",
+ "dorms": [
+  {
+   "dorm_id": "biscayne-college",
+   "dorm_name": "Biscayne Residential College (Centennial Village)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.5,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~150 sq ft (published). Twin XL; desk, chair, closet, dresser. Wet-core private-communal bathrooms."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~200 sq ft (published). Twin XL."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 20,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 260,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~260 sq ft (published). Twin XL; three dressers."
+    }
+   ],
+   "notes": "First-year residential college in Centennial Village."
+  },
+  {
+   "dorm_id": "coral-college",
+   "dorm_name": "Coral Residential College (Centennial Village)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.5,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~150 sq ft (published). Twin XL; desk, chair, closet, dresser. Wet-core private-communal bathrooms."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~200 sq ft (published). Twin XL."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 20,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 260,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~260 sq ft (published). Twin XL; three dressers."
+    }
+   ],
+   "notes": "First-year residential college in Centennial Village."
+  },
+  {
+   "dorm_id": "grove-college",
+   "dorm_name": "Grove Residential College (Centennial Village)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.5,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~150 sq ft (published). Twin XL; desk, chair, closet, dresser. Wet-core private-communal bathrooms."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~200 sq ft (published). Twin XL."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 20,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 260,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~260 sq ft (published). Twin XL; three dressers."
+    }
+   ],
+   "notes": "First-year residential college in Centennial Village."
+  },
+  {
+   "dorm_id": "ibis-college",
+   "dorm_name": "Ibis Residential College (Centennial Village)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.5,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~150 sq ft (published). Twin XL; desk, chair, closet, dresser. Wet-core private-communal bathrooms."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~200 sq ft (published). Twin XL."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 20,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 260,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~260 sq ft (published). Twin XL; three dressers."
+    }
+   ],
+   "notes": "First-year residential college in Centennial Village."
+  },
+  {
+   "dorm_id": "vista-college",
+   "dorm_name": "Vista Residential College (Centennial Village)",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.5,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~150 sq ft (published). Twin XL; desk, chair, closet, dresser. Wet-core private-communal bathrooms."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~200 sq ft (published). Twin XL."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 20,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 260,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~260 sq ft (published). Twin XL; three dressers."
+    }
+   ],
+   "notes": "First-year residential college in Centennial Village."
+  },
+  {
+   "dorm_id": "eaton-college",
+   "dorm_name": "Eaton Residential College",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "low",
+     "notes": "Oldest residence hall (residential college since 1986); first-year. Dims not published."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "low",
+     "notes": "Traditional double; dims not published."
+    }
+   ],
+   "notes": "Traditional first-year residential college; dims not published."
+  },
+  {
+   "dorm_id": "mahoney-college",
+   "dorm_name": "Mahoney Residential College",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Traditional first-year residential college; dims not published."
+  },
+  {
+   "dorm_id": "pearson-college",
+   "dorm_name": "Pearson Residential College",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Traditional first-year residential college; dims not published."
+  },
+  {
+   "dorm_id": "lakeside-village",
+   "dorm_name": "Lakeside Village",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Double Bedroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 20.5,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 266,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
+     "data_confidence": "medium",
+     "notes": "~266 sq ft (published floor plan). Suite-style; primarily sophomores."
+    }
+   ],
+   "notes": "Suite/apartment-style community, primarily sophomores."
+  }
+ ]
+}

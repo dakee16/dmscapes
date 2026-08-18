@@ -71,7 +71,7 @@ export default function Home() {
                 className="rise mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-wide text-ink-soft"
                 style={{ animationDelay: "320ms" }}
               >
-                <li>1,400+ dorm layouts</li>
+                <li>1,500+ dorm layouts</li>
                 <li>$200-$1,500 budgets</li>
                 <li>Live Amazon links</li>
               </ul>

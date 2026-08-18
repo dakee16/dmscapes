@@ -1,0 +1,635 @@
+{
+ "college_id": "hampton",
+ "college_name": "Hampton University",
+ "city": "Hampton",
+ "state": "VA",
+ "housing_url": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+ "data_collected": "2026-08-17",
+ "campus_notes": "Dimensions compiled 2026-08-17 from independent research (official housing pages, floor plans, student-sourced specs). Where an exact figure was published it is used (data_confidence: high/medium); rooms with no published number carry null dims and rely on the site's estimate fallback (a representative ft x ft from the wider dataset, flagged with the 'Estimated based on similar rooms' disclaimer). Undergraduate beds are Twin XL. HBCU in Hampton, Virginia. Freshman halls offer 2- or 3-person rooms with a wardrobe or built-in closet per resident and community bathrooms; the university does not publish per-room dimensions, so room dims here use the estimate fallback.",
+ "dorms": [
+  {
+   "dorm_id": "virginia-cleveland-hall",
+   "dorm_name": "Virginia-Cleveland Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Historic first-year women's residence hall (\"VC\"); community bathrooms per wing."
+  },
+  {
+   "dorm_id": "twitchell-hall",
+   "dorm_name": "Twitchell Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "First-year residence hall; double/triple rooms with a wardrobe/built-in closet per resident and community bathrooms. No per-room dims published."
+  },
+  {
+   "dorm_id": "kelsey-hall",
+   "dorm_name": "Kelsey Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "First-year residence hall; double/triple rooms with a wardrobe/built-in closet per resident and community bathrooms. No per-room dims published."
+  },
+  {
+   "dorm_id": "moton-hall",
+   "dorm_name": "Moton Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": null
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "First-year residence hall; double/triple rooms with a wardrobe/built-in closet per resident and community bathrooms. No per-room dims published."
+  },
+  {
+   "dorm_id": "davidson-hall",
+   "dorm_name": "Davidson Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "First-year residence hall; double/triple rooms with a wardrobe/built-in closet per resident and community bathrooms. No per-room dims published."
+  },
+  {
+   "dorm_id": "kennedy-hall",
+   "dorm_name": "Kennedy Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "First-year residence hall; double/triple rooms with a wardrobe/built-in closet per resident and community bathrooms. No per-room dims published."
+  },
+  {
+   "dorm_id": "james-hall-suites",
+   "dorm_name": "James Hall and Suites",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Suite Single (Honors)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": "First two floors renovated into suite-style living for incoming honors freshmen."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": null
+    }
+   ],
+   "notes": "Suite-style hall; renovated floors for honors first-year students."
+  },
+  {
+   "dorm_id": "white-hall",
+   "dorm_name": "White Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "closet_area",
+      "wall": null,
+      "width_ft": null,
+      "depth_ft": null,
+      "notes": "Each resident has a wardrobe or built-in closet (per housing). Dimensions not published."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
+     "data_confidence": "low",
+     "notes": "Larger rooms; some suite-style bathrooms shared with one other room (4 rooms per bathroom)."
+    }
+   ],
+   "notes": "Residence hall with larger rooms and smaller-scale shared bathrooms."
+  }
+ ]
+}
