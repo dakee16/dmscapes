@@ -11,6 +11,7 @@ import Reveal from "@/components/site/Reveal";
 import CursorGrid from "@/components/site/CursorGrid";
 import HeroParallax from "@/components/site/HeroParallax";
 import HomeFaq from "@/components/site/HomeFaq";
+import StickyMobileCta from "@/components/site/StickyMobileCta";
 
 export default function Home() {
   return (
@@ -208,6 +209,10 @@ export default function Home() {
       </main>
 
       <Footer />
+
+      {/* Slim sticky "Plan my room" bar on phone/tablet; hidden on desktop where
+          the header already shows the CTA. */}
+      <StickyMobileCta />
     </div>
   );
 }

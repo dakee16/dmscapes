@@ -164,8 +164,9 @@ export default async function SharedRoomPage(props: {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={p.image_url}
-                    alt=""
+                    alt={p.name}
                     loading="lazy"
+                    decoding="async"
                     className="h-12 w-12 shrink-0 rounded-md border border-ink/5 object-contain"
                   />
                   <div className="min-w-0 flex-1">

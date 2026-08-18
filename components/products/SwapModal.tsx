@@ -92,8 +92,9 @@ export default function SwapModal({
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={alt.image_url}
-                      alt=""
+                      alt={alt.name}
                       loading="lazy"
+                      decoding="async"
                       className="h-14 w-14 shrink-0 rounded-lg border border-ink/5 bg-white object-contain"
                     />
                     <span className="min-w-0 flex-1">

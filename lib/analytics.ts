@@ -59,6 +59,16 @@ let initialized = false;
 
 function ensureInit(): boolean {
   if (typeof window === "undefined") return false;
+  // Respect a cookie-consent rejection: PostHog is never initialized and no
+  // analytics cookies are set. Accepted or not-yet-answered (US opt-out) allow
+  // it. Kept in sync with components/site/CookieConsent.tsx (same storage key).
+  try {
+    if (window.localStorage.getItem("dormscape-cookie-consent") === "rejected") {
+      return false;
+    }
+  } catch {
+    // localStorage blocked: fall through and behave as before.
+  }
   const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
   if (!key) return false;
   if (!initialized) {

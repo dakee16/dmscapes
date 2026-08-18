@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Instrument_Sans, IBM_Plex_Mono } from "next/font/g
 import { AuthProvider } from "@/lib/auth-context";
 import { UpgradeProvider } from "@/lib/upgrade-context";
 import ScrollRuler from "@/components/site/ScrollRuler";
+import CookieConsent from "@/components/site/CookieConsent";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -71,6 +72,7 @@ export default function RootLayout({
         {/* The "planned to the inch" scroll ruler, site-wide. Fixed, wide-desktop
             only, pointer-events-none; a no-op on short pages. */}
         <ScrollRuler />
+        <CookieConsent />
         <AuthProvider>
           <UpgradeProvider>{children}</UpgradeProvider>
         </AuthProvider>
