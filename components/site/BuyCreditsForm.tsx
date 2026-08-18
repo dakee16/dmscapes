@@ -69,14 +69,14 @@ export default function BuyCreditsForm({
       >
         How many credits?
       </label>
-      <div className="mt-2 flex items-center gap-2">
-        <div className="flex h-11 items-stretch overflow-hidden rounded-xl border border-ink/15 bg-white">
+      <div className="mt-2.5 flex items-center justify-between gap-3">
+        <div className="flex h-12 items-stretch overflow-hidden rounded-xl border border-ink/15 bg-white">
           <button
             type="button"
             onClick={() => setQty((q) => clamp(q - 1))}
             disabled={qty <= FLEX_MIN_QTY || busy}
             aria-label="Fewer credits"
-            className="grid w-10 cursor-pointer place-items-center text-lg font-semibold text-ink-soft transition-colors hover:bg-paper hover:text-ink disabled:cursor-not-allowed disabled:opacity-40"
+            className="grid w-11 cursor-pointer place-items-center text-xl font-semibold text-ink-soft transition-colors hover:bg-paper hover:text-ink disabled:cursor-not-allowed disabled:opacity-40"
           >
             &minus;
           </button>
@@ -89,36 +89,42 @@ export default function BuyCreditsForm({
             value={qty}
             autoFocus={autoFocus}
             onChange={(e) => setQty(clamp(Number(e.target.value)))}
-            className="focus-quiet w-14 border-x border-ink/10 bg-transparent text-center font-mono text-base font-semibold text-ink outline-none"
+            className="focus-quiet w-12 border-x border-ink/10 bg-transparent text-center font-mono text-base font-semibold text-ink outline-none"
           />
           <button
             type="button"
             onClick={() => setQty((q) => clamp(q + 1))}
             disabled={qty >= FLEX_MAX_QTY || busy}
             aria-label="More credits"
-            className="grid w-10 cursor-pointer place-items-center text-lg font-semibold text-ink-soft transition-colors hover:bg-paper hover:text-ink disabled:cursor-not-allowed disabled:opacity-40"
+            className="grid w-11 cursor-pointer place-items-center text-xl font-semibold text-ink-soft transition-colors hover:bg-paper hover:text-ink disabled:cursor-not-allowed disabled:opacity-40"
           >
             +
           </button>
         </div>
-        <p className="font-mono text-sm text-ink-soft">
-          {qty} &times; ${FLEX_CREDIT_PRICE_USD.toFixed(2)} ={" "}
-          <span className="font-semibold text-ink">${total}</span>
-        </p>
+        {/* Price: "N x $1.99" on top, the running total large below, right-aligned
+            so the stepper and the number never crowd each other. */}
+        <div className="text-right leading-tight">
+          <p className="whitespace-nowrap font-mono text-xs text-ink-soft">
+            {qty} &times; ${FLEX_CREDIT_PRICE_USD.toFixed(2)}
+          </p>
+          <p className="font-display text-2xl font-extrabold tracking-tight text-ink">
+            ${total}
+          </p>
+        </div>
       </div>
 
       <button
         type="button"
         onClick={buy}
         disabled={busy}
-        className="mt-3 flex h-12 w-full cursor-pointer items-center justify-center rounded-xl bg-cobalt px-6 text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
+        className="mt-4 flex h-12 w-full cursor-pointer items-center justify-center rounded-xl bg-cobalt px-6 text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
       >
-        {busy ? "Starting checkout…" : `Buy ${qty} credit${qty === 1 ? "" : "s"} · $${total}`}
+        {busy ? "Starting checkout…" : `Buy ${qty} credit${qty === 1 ? "" : "s"}`}
       </button>
 
-      <p className="mt-2 text-[13px] leading-snug text-ink-soft">
+      <p className="mt-2.5 text-[13px] leading-snug text-ink-soft">
         {tier === "free"
-          ? "$1.99 each. Your first purchase moves you to the Flex tier — same free features, plus the credits you buy."
+          ? "$1.99 each. Your first purchase moves you to the Flex tier: same free features, plus the credits you buy."
           : "$1.99 each, added to your existing credits. One-time payment, no subscription."}
       </p>
 

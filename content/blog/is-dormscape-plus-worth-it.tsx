@@ -18,12 +18,12 @@ function Body() {
       <H2>What&rsquo;s free, and what it covers</H2>
       <P>
         Start here, because it matters. The core planner is free to use: real room
-        dimensions for supported schools, five free vibes (Minimalist, Cozy,
-        Preppy, Academia, and Y2K Cyber), budget-aware product picks with live
+        dimensions for supported schools, three free vibes (Minimalist, Cozy,
+        and Preppy), budget-aware product picks with live
         links, the drag-and-drop 2D layout that fits to the inch, and a share link
         for any room. A free account includes one room plan and one saved design,
         enough to build a room end to end and see the whole thing. When you want
-        to plan or save more, or you want the four extra vibes and the export,
+        to plan or save more, or you want the six extra vibes and the export,
         comparison, and priority tools, that&rsquo;s where the paid tiers come in.
       </P>
 
@@ -36,11 +36,12 @@ function Body() {
 
       <H3>1. All nine vibes</H3>
       <P>
-        Five vibes are free. Plus adds four more, Gamer, Team Spirit, Retro, and
-        Pastel, each a complete plan with its own products, palette, and layout.{" "}
+        Three vibes are free. Plus adds six more, Academia, Y2K Cyber, Gamer,
+        Team Spirit, Retro, and Pastel, each a complete plan with its own
+        products, palette, and layout.{" "}
         <strong>Worth it if</strong>{" "}your look is a battle station, game-day, 70s
         groovy, or soft pastel.{" "}
-        <strong>Skip it if</strong>{" "}one of the five free vibes already fits you.
+        <strong>Skip it if</strong>{" "}one of the three free vibes already fits you.
       </P>
 
       <H3>2. PDF and PNG export</H3>
@@ -105,7 +106,7 @@ function Body() {
       <H2>Who should skip both</H2>
       <P>
         We would rather you not spend the money than feel misled, so plainly: if
-        one of the five free vibes fits, you&rsquo;re shopping off the screen,
+        one of the three free vibes fits, you&rsquo;re shopping off the screen,
         your school is already supported, and one room is really all you&rsquo;re
         planning, the free plan and save are all you need. Sharing is always free.
         You can always upgrade later if that changes.
@@ -155,11 +156,11 @@ const post: BlogPost = {
     },
     {
       q: "What does Dormscape Plus include?",
-      a: "Plus unlocks all nine vibes (adding Gamer, Team Spirit, Retro, and Pastel), PDF and PNG export, the side-by-side comparison view, and priority handling on add-my-school requests. It also comes with 5 plan credits and 5 saves, tracked separately: one plan credit per new room plan, one save credit per saved design. A $4.99 recharge tops up both whenever you run low, and the premium features stay unlocked even at zero credits.",
+      a: "Plus unlocks all nine vibes (adding Academia, Y2K Cyber, Gamer, Team Spirit, Retro, and Pastel), PDF and PNG export, the side-by-side comparison view, and priority handling on add-my-school requests. It also comes with 5 plan credits and 5 saves, tracked separately: one plan credit per new room plan, one save credit per saved design. A $4.99 recharge tops up both whenever you run low, and the premium features stay unlocked even at zero credits.",
     },
     {
       q: "Is the Dormscape planner still free?",
-      a: "Yes, the core 2D planner is free to use: real room dimensions for supported schools, five free vibes, budget-aware product picks, the drag-and-drop layout, and share links. A free account includes one room plan and one saved design to try it end to end; Plus and Pro add more of both plus the premium tools.",
+      a: "Yes, the core 2D planner is free to use: real room dimensions for supported schools, three free vibes, budget-aware product picks, the drag-and-drop layout, and share links. A free account includes one room plan and one saved design to try it end to end; Plus and Pro add more of both plus the premium tools.",
     },
     {
       q: "What is the difference between Plus and Pro?",

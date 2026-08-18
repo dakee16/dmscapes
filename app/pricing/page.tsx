@@ -65,7 +65,7 @@ const FREE_PERKS: React.ReactNode[] = [
   </>,
   <>1 room plan to try it out</>,
   <>Save your design to your account, free</>,
-  <>5 vibes: Minimalist, Cozy Aesthetic, Preppy, Academia, Y2K Cyber</>,
+  <>3 vibes: Minimalist, Cozy Aesthetic, and Preppy</>,
   <>Budget-aware product picks with live Amazon links</>,
   <>Drag-and-drop 2D layout that fits to the inch</>,
   <>Share any room with a link</>,
@@ -349,7 +349,7 @@ export default function PricingPage() {
                   <span className="font-semibold text-ink">
                     ${FLEX_CREDIT_PRICE_USD.toFixed(2)} each
                   </span>
-                  , as few or as many as you want. Same features as Free — you just
+                  , as few or as many as you want. Same features as Free; you just
                   top up when you need another room.
                 </p>
               </div>

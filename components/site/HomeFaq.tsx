@@ -34,7 +34,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     q: "What's the difference between Free, Plus, and Pro?",
     a: (
       <>
-        Free lets you try it with 1 room plan you can save, plus 5 vibes and
+        Free lets you try it with 1 room plan you can save, plus 3 vibes and
         share links. Plus ($7.99 once) unlocks all 9 vibes, PDF and PNG export,
         side-by-side comparison, and priority school requests, and gives you 5
         plan credits (recharge 5 more for $4.99). Pro ($19.99 once) is that same

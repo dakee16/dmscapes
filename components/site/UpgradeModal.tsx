@@ -27,7 +27,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   },
   "flex-credits": {
     title: "You're out of credits",
-    body: "Buy more à-la-carte credits to keep designing — $1.99 each, no subscription. Or go Pro for unlimited room plans and every premium feature.",
+    body: "Buy more à-la-carte credits to keep designing, $1.99 each, no subscription. Or go Pro for unlimited room plans and every premium feature.",
   },
   "free-save-limit": {
     title: "That's your free saved design",
@@ -51,7 +51,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   },
   style: {
     title: "That's a paid vibe",
-    body: "Gamer, Team Spirit, Retro, and Pastel are paid vibes. Plus and Pro unlock all nine.",
+    body: "Academia, Y2K Cyber, Gamer, Team Spirit, Retro, and Pastel are paid vibes. Plus and Pro unlock all nine.",
   },
   generic: {
     title: "Do more with Dormscape Plus",

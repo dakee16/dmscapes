@@ -220,7 +220,7 @@ const post: BlogPost = {
     },
     {
       q: "What are the most popular dorm room styles?",
-      a: "Dormscape offers nine style archetypes: Minimalist, Cozy Aesthetic, Preppy, Academia, and Y2K Cyber are free, while Gamer, Team Spirit, Retro, and Pastel are unlocked by any paid plan (Plus at $7.99 or Pro at $19.99). Each is best treated as a starting point defined by a palette and a few anchor pieces, and most well-designed rooms blend two of them rather than following one strictly.",
+      a: "Dormscape offers nine style archetypes: Minimalist, Cozy Aesthetic, and Preppy are free, while Academia, Y2K Cyber, Gamer, Team Spirit, Retro, and Pastel are unlocked by any paid plan (Plus at $7.99 or Pro at $19.99). Each is best treated as a starting point defined by a palette and a few anchor pieces, and most well-designed rooms blend two of them rather than following one strictly.",
     },
     {
       q: "How do roommates coordinate dorm styles without matching?",

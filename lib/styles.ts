@@ -43,6 +43,7 @@ export const STYLES: StyleMeta[] = [
     emoji: "📚",
     keywords: ["brass & wood", "plaid", "leather-look", "vintage"],
     palette: ["#efe4cb", "#c69a4f", "#7c5230", "#2f2115"],
+    plus: true,
   },
   {
     id: "y2k",
@@ -50,6 +51,7 @@ export const STYLES: StyleMeta[] = [
     emoji: "💿",
     keywords: ["chrome", "holographic", "hot pink", "early 2000s"],
     palette: ["#f3e8ff", "#ff4fd8", "#7b5cff", "#b8c6d6"],
+    plus: true,
   },
   {
     id: "gamer",

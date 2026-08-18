@@ -26,12 +26,14 @@ const VIBES: { id: StyleId; name: string; line: string; who: string; plus?: bool
     name: "Academia",
     line: "Warm library light, plaid, brass, and old books.",
     who: "For the library romantic",
+    plus: true,
   },
   {
     id: "y2k",
     name: "Y2K Cyber",
     line: "Chrome, holo posters, butterfly-clip everything.",
     who: "For the nostalgia maximalist",
+    plus: true,
   },
   {
     id: "gamer",

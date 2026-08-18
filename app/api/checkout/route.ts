@@ -148,7 +148,7 @@ export async function POST(request: Request) {
     // selling it à-la-carte credits makes no sense — block it.
     if (type === "flex_credits" && plan === "pro") {
       return NextResponse.json(
-        { error: "Pro already has unlimited plans — no credits needed.", alreadyOwned: true },
+        { error: "Pro already has unlimited plans, so no credits are needed.", alreadyOwned: true },
         { status: 409 }
       );
     }

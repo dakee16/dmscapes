@@ -86,10 +86,13 @@ export default function HeaderCredits() {
         <div
           role="dialog"
           aria-label="Buy design credits"
-          className="absolute right-0 top-full z-50 mt-2 w-72 origin-top-right rounded-2xl border border-ink/10 bg-white p-4 shadow-[0_20px_50px_-20px_rgba(23,23,43,0.45)]"
+          className="absolute right-0 top-full z-50 mt-2.5 w-[22rem] max-w-[calc(100vw-1.5rem)] origin-top-right rounded-2xl border border-ink/10 bg-white p-5 shadow-[0_24px_60px_-24px_rgba(23,23,43,0.5)]"
         >
-          <div className="mb-3 flex items-baseline justify-between gap-2">
-            <span className="font-mono text-[11px] font-semibold uppercase tracking-wide text-ink-soft">
+          <div className="mb-3.5 flex items-center justify-between gap-2 border-b border-ink/8 pb-3">
+            <span className="font-display text-base font-bold tracking-tight text-ink">
+              Buy plan credits
+            </span>
+            <span className="shrink-0 rounded-full bg-ink/6 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink-soft">
               {planLabel(profile)} · {c.designsLeft} left
             </span>
           </div>
@@ -101,7 +104,7 @@ export default function HeaderCredits() {
                 setOpen(false);
                 openUpgrade("plan-credits");
               }}
-              className="mt-3 block w-full cursor-pointer border-t border-ink/8 pt-3 text-center text-[13px] font-medium text-ink-soft transition-colors hover:text-ink"
+              className="mt-3.5 block w-full cursor-pointer border-t border-ink/8 pt-3.5 text-center text-[13px] font-medium text-ink-soft transition-colors hover:text-ink"
             >
               Prefer the 5-pack? Recharge for ${RECHARGE_PRICE_USD.toFixed(2)}
             </button>

@@ -230,7 +230,7 @@ export default function BillingPage() {
               <section className={`mt-6 ${CARD}`}>
                 <h2 className="font-display text-lg font-bold tracking-tight">Plan credits</h2>
                 <p className="mt-1 text-sm text-ink-soft">
-                  You&rsquo;re on Pro — unlimited room plans, so there&rsquo;s nothing to buy. Design
+                  You&rsquo;re on Pro, with unlimited room plans, so there&rsquo;s nothing to buy. Design
                   as much as you like.
                 </p>
               </section>
@@ -250,7 +250,7 @@ export default function BillingPage() {
                 </span>
                 <p className="text-sm leading-relaxed text-ink-soft">
                   We don&rsquo;t store your card. Every purchase is a one-time, secure Stripe
-                  Checkout that collects payment at the moment you buy — nothing is saved or
+                  Checkout that collects payment at the moment you buy. Nothing is saved or
                   charged again. There&rsquo;s no subscription to cancel.
                 </p>
               </div>
@@ -271,7 +271,7 @@ export default function BillingPage() {
                     <p className="text-sm text-ink-soft">
                       No purchases yet.{" "}
                       {invoicesFailed
-                        ? "We couldn't reach Stripe just now — refresh to try again."
+                        ? "We couldn't reach Stripe just now. Refresh to try again."
                         : "Anything you buy will show up here with a receipt."}
                     </p>
                   </div>
