@@ -1,0 +1,806 @@
+{
+ "college_id": "gcu",
+ "college_name": "Grand Canyon University",
+ "city": "Phoenix",
+ "state": "AZ",
+ "aliases": [
+  "gcu"
+ ],
+ "housing_url": "https://www.gcu.edu/why-gcu/campus-life/housing",
+ "data_collected": "2026-08-19",
+ "campus_notes": "Compiled 2026-08-19 from GCU Residence Life (gcu.edu). Large private Christian university in Phoenix, AZ. Freshman residence halls include The Grove (Juniper, Willow, Ironwood, Acacia), Saguaro, and Sedona; all offer single, double, and triple occupancy bedrooms in suite-style layouts (multiple bedrooms share a living space and, in many halls, an in-suite bathroom). Rooms are furnished with a Twin XL bed, desk, chair, and wardrobe per student. GCU does not publish per-room dimensions, so sizes here use the site's estimate fallback (a representative ft x ft derived from similar rooms across the dataset, flagged \"Estimated based on similar rooms. Official size not published.\"). GCU also operates apartment-style housing (e.g. Ocotillo, Antelope, Papago) that skews upperclass and is not modeled here.",
+ "dorms": [
+  {
+   "dorm_id": "juniper-hall",
+   "dorm_name": "Juniper Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    }
+   ],
+   "notes": "Freshman residence hall; suite-style with single, double, and triple occupancy bedrooms. Part of The Grove freshman community. No per-room dimensions published."
+  },
+  {
+   "dorm_id": "willow-hall",
+   "dorm_name": "Willow Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    }
+   ],
+   "notes": "Freshman residence hall; suite-style with single, double, and triple occupancy bedrooms. Part of The Grove freshman community. No per-room dimensions published."
+  },
+  {
+   "dorm_id": "ironwood-hall",
+   "dorm_name": "Ironwood Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    }
+   ],
+   "notes": "Freshman residence hall; suite-style with single, double, and triple occupancy bedrooms. Part of The Grove freshman community. No per-room dimensions published."
+  },
+  {
+   "dorm_id": "acacia-hall",
+   "dorm_name": "Acacia Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    }
+   ],
+   "notes": "Freshman residence hall; suite-style with single, double, and triple occupancy bedrooms. Part of The Grove freshman community. No per-room dimensions published."
+  },
+  {
+   "dorm_id": "saguaro-hall",
+   "dorm_name": "Saguaro Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    }
+   ],
+   "notes": "Freshman residence hall; suite-style with single, double, and triple occupancy bedrooms. No per-room dimensions published."
+  },
+  {
+   "dorm_id": "sedona-hall",
+   "dorm_name": "Sedona Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Wardrobe/closet per student."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.gcu.edu/why-gcu/campus-life/housing",
+     "data_confidence": "low",
+     "notes": "Suite-style (bedrooms share a living space and, in many halls, an in-suite bathroom). Estimated based on similar rooms. Official size not published."
+    }
+   ],
+   "notes": "Freshman residence hall; suite-style with single, double, and triple occupancy bedrooms. No per-room dimensions published."
+  }
+ ]
+}
