@@ -1,0 +1,737 @@
+{
+ "college_id": "umbc",
+ "college_name": "University of Maryland, Baltimore County",
+ "city": "Baltimore",
+ "state": "MD",
+ "housing_url": "https://reslife.umbc.edu/",
+ "data_collected": "2026-08-19",
+ "campus_notes": "Dimensions compiled 2026-08-19 from UMBC Residential Life (reslife.umbc.edu). Traditional halls (Chesapeake, Patapsco, Potomac, Susquehanna) publish room sizes: single 90 sq ft (9'x10'), double 180 sq ft (10'x18'), triple 300 sq ft (16'x18'), all with semi-private bathrooms; singles are limited and prioritized for medical accommodations and upperclass students. Suite-style halls: Erickson (double bedrooms 130 sq ft, 10'x15', with a 5'x6' walk-in closet; two double bedrooms plus a common living area and bath per suite) and Harbor (single bedrooms 88 sq ft, 8'x11'; double bedrooms 130 sq ft, 10'x15', with a 5'x6' walk-in closet). All published figures carry data_confidence 'high'. Undergraduate beds are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "chesapeake-hall",
+   "dorm_name": "Chesapeake Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 90,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "90 sq ft (9'x10'), semi-private bath. Singles are limited and prioritized for medical accommodations and upperclass students."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "180 sq ft (10'x18'), semi-private bath."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 16,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 300,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "300 sq ft (16'x18'), semi-private bath."
+    }
+   ],
+   "notes": "Traditional first-year/continuing residence hall; shared bedrooms with semi-private bathrooms. Furnished with bed (Twin XL), desk, chair, dresser, and closet/wardrobe."
+  },
+  {
+   "dorm_id": "patapsco-hall",
+   "dorm_name": "Patapsco Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 90,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "90 sq ft (9'x10'), semi-private bath. Singles are limited and prioritized for medical accommodations and upperclass students."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "180 sq ft (10'x18'), semi-private bath."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 16,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 300,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "300 sq ft (16'x18'), semi-private bath."
+    }
+   ],
+   "notes": "Traditional first-year/continuing residence hall; shared bedrooms with semi-private bathrooms. Furnished with bed (Twin XL), desk, chair, dresser, and closet/wardrobe."
+  },
+  {
+   "dorm_id": "potomac-hall",
+   "dorm_name": "Potomac Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 90,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "90 sq ft (9'x10'), semi-private bath. Singles are limited and prioritized for medical accommodations and upperclass students."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "180 sq ft (10'x18'), semi-private bath."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 16,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 300,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "300 sq ft (16'x18'), semi-private bath."
+    }
+   ],
+   "notes": "Traditional first-year/continuing residence hall; shared bedrooms with semi-private bathrooms. Furnished with bed (Twin XL), desk, chair, dresser, and closet/wardrobe."
+  },
+  {
+   "dorm_id": "susquehanna-hall",
+   "dorm_name": "Susquehanna Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 90,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "90 sq ft (9'x10'), semi-private bath. Singles are limited and prioritized for medical accommodations and upperclass students."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "180 sq ft (10'x18'), semi-private bath."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 18,
+      "width_ft": 16,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 300,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/halls/",
+     "data_confidence": "high",
+     "notes": "300 sq ft (16'x18'), semi-private bath."
+    }
+   ],
+   "notes": "Traditional first-year/continuing residence hall; shared bedrooms with semi-private bathrooms. Furnished with bed (Twin XL), desk, chair, dresser, and closet/wardrobe."
+  },
+  {
+   "dorm_id": "erickson-hall",
+   "dorm_name": "Erickson Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Double Bedroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 130,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "walk_in",
+      "wall": null,
+      "width_ft": 5,
+      "depth_ft": 6,
+      "notes": "5'x6' walk-in closet."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/suites/",
+     "data_confidence": "high",
+     "notes": "130 sq ft (10'x15') plus a 5'x6' walk-in closet. Each suite has two double bedrooms (4 students), a common living area, and a common bath."
+    }
+   ],
+   "notes": "Suite-style hall: two double bedrooms share a common living area and bath (4 students per suite)."
+  },
+  {
+   "dorm_id": "harbor-hall",
+   "dorm_name": "Harbor Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Suite Single Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 8,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 88,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/suites/",
+     "data_confidence": "high",
+     "notes": "88 sq ft (8'x11'). Some suites are four single bedrooms sharing a bath; four residents per suite."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Double Bedroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 10,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 130,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "walk_in",
+      "wall": null,
+      "width_ft": 5,
+      "depth_ft": 6,
+      "notes": "5'x6' walk-in closet."
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umbc.edu/communities/suites/",
+     "data_confidence": "high",
+     "notes": "130 sq ft (10'x15') plus a 5'x6' walk-in closet. Four residents per suite."
+    }
+   ],
+   "notes": "Suite-style hall with single and double bedrooms sharing a common area and bath (4 residents per suite)."
+  }
+ ]
+}

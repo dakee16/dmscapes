@@ -1,0 +1,189 @@
+{
+ "college_id": "tamucc",
+ "college_name": "Texas A&M University-Corpus Christi",
+ "city": "Corpus Christi",
+ "state": "TX",
+ "housing_url": "https://www.tamucc.edu/housing/",
+ "data_collected": "2026-08-19",
+ "campus_notes": "Compiled 2026-08-19 from independent research. First-time-in-college students are required to live on campus at Miramar. Islander Housing is apartment-style (Miramar and Momentum Village); apartments are modeled per bedroom so occupant counts and layouts match cleanly. TAMU-CC does not publish per-room dimensions and its official floor-plan pages were unreachable during data collection, so bedroom dimensions here use the site's estimate fallback (a representative ft x ft derived from similar rooms across the dataset, flagged \"Estimated based on similar rooms. Official size not published.\"). Building names and room configurations are from the official Islander Housing floor-plan index. Undergraduate beds are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "miramar",
+   "dorm_name": "Miramar",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Private Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.tamucc.edu/housing/",
+     "data_confidence": "low",
+     "notes": "Private bedroom — 1 Bed/1 Bath residence-hall rooms and the private bedrooms in 2- and 4-bedroom apartments. Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.tamucc.edu/housing/",
+     "data_confidence": "low",
+     "notes": "Two students share one bedroom (1 Bed/1 Bath shared apartment). Estimated based on similar rooms. Official size not published."
+    },
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.tamucc.edu/housing/",
+     "data_confidence": "low",
+     "notes": "Studio apartment. Estimated based on similar rooms. Official size not published."
+    }
+   ],
+   "notes": "Primary first-year community (Camden Miramar). Residence-hall and apartment-style units; first-time-in-college students are required to live here."
+  },
+  {
+   "dorm_id": "momentum-village",
+   "dorm_name": "Momentum Village",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Private Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.tamucc.edu/housing/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 2-bed/2-bath or 4-bed/4-bath apartment. Estimated based on similar rooms. Official size not published."
+    }
+   ],
+   "notes": "Apartment-style community; each resident has a private bedroom with a shared or private bath, common living area, and kitchen."
+  }
+ ]
+}

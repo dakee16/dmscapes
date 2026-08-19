@@ -4,6 +4,18 @@ import { notFound } from "next/navigation";
 import SiteHeader from "@/components/site/SiteHeader";
 import PlanCta from "@/components/site/PlanCta";
 import { SCHOOLS, formatDims, getSchool } from "@/lib/schools";
+import type { SchoolSummary } from "@/lib/types";
+
+// Rooms with a *published* size. Estimated dims are populated too
+// (build-schools-index.mjs), so both the SEO description and the on-page copy
+// must exclude them — otherwise a fully-estimated school claims "real
+// dimensions" it doesn't actually have.
+const publishedDimsCount = (s: SchoolSummary) =>
+  s.dorms.reduce(
+    (n, d) =>
+      n + d.rooms.filter((r) => r.length_ft && r.width_ft && !r.dims_estimated).length,
+    0
+  );
 
 // SEO pages targeting "[College Name] dorm room layout" queries.
 export function generateStaticParams() {
@@ -17,7 +29,9 @@ export async function generateMetadata(props: {
   const school = getSchool(collegeId);
   if (!school) return {};
   const title = `${school.name} Dorm Room Planner`;
-  const description = `Plan your ${school.name} dorm room before move-in. ${school.dorms.length} residence halls with real room dimensions, layout templates, and a shoppable list. Free.`;
+  const dimsClause =
+    publishedDimsCount(school) > 0 ? " with real room dimensions" : "";
+  const description = `Plan your ${school.name} dorm room before move-in. ${school.dorms.length} residence halls${dimsClause}, layout templates, and a shoppable list. Free.`;
   return {
     title,
     description,
@@ -52,10 +66,7 @@ export default async function CollegePage(props: {
   const school = getSchool(collegeId);
   if (!school) notFound();
 
-  const withDims = school.dorms.reduce(
-    (n, d) => n + d.rooms.filter((r) => r.length_ft && r.width_ft).length,
-    0
-  );
+  const withDims = publishedDimsCount(school);
 
   return (
     <div>
