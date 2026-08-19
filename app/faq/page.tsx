@@ -4,6 +4,7 @@ import SiteHeader from "@/components/site/SiteHeader";
 import PlanCta from "@/components/site/PlanCta";
 import { POSTS } from "@/content/blog";
 import { faqPageJsonLd } from "@/lib/blog";
+import FaqBrowser from "@/components/site/FaqBrowser";
 
 const DESCRIPTION =
   "Answers to common dorm questions: how to measure your room, what to pack, what it costs, small-room layouts, and choosing a style.";
@@ -69,48 +70,8 @@ export default function FAQPage() {
             room. Each one links out to the full guide if you want the detail.
           </p>
 
-          {/* Topic jump links */}
-          <nav aria-label="FAQ topics" className="mt-8 flex flex-wrap gap-2">
-            {GROUPS.map((g) => (
-              <a
-                key={g.slug}
-                href={`#faq-${g.slug}`}
-                className="rounded-full border border-ink/10 bg-card px-3 py-1.5 font-mono text-[11px] uppercase tracking-wide text-ink-soft transition-colors hover:border-cobalt/40 hover:text-cobalt"
-              >
-                {g.topic}
-              </a>
-            ))}
-          </nav>
-
-          <div className="mt-12 space-y-14">
-            {GROUPS.map((g) => (
-              <section key={g.slug} id={`faq-${g.slug}`} className="scroll-mt-24">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <h2 className="font-display text-2xl font-bold tracking-tight sm:text-[1.7rem]">
-                    {g.topic}
-                  </h2>
-                  <Link
-                    href={`/blog/${g.slug}`}
-                    className="font-mono text-[11px] uppercase tracking-wide text-cobalt transition-colors hover:text-cobalt-deep"
-                  >
-                    Read the guide
-                  </Link>
-                </div>
-                <div className="mt-5 divide-y divide-ink/8">
-                  {g.faqs.map((f) => (
-                    <div key={f.q} className="py-5 first:pt-0">
-                      <h3 className="font-display text-lg font-bold tracking-tight text-ink">
-                        {f.q}
-                      </h3>
-                      <p className="mt-2 text-base leading-relaxed text-ink-soft">
-                        {f.a}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            ))}
-          </div>
+          {/* Search + grouped, jump-linked accordion (client-side filter). */}
+          <FaqBrowser groups={GROUPS} />
 
           <div className="mt-14 rounded-xl border border-dashed border-ink/20 bg-card/60 p-6 text-center">
             <p className="font-medium text-ink">

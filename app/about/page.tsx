@@ -30,6 +30,42 @@ export const metadata: Metadata = {
 const TEXT_LINK =
   "font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-4 transition-colors hover:text-cobalt";
 
+// Real, shipped numbers only (no invented claims): the floored dorm-layout
+// count mirrors the "1,500+" figure cited on the homepage and pricing page.
+const LAYOUTS =
+  Math.floor(
+    SCHOOLS.reduce((n, s) => n + s.dorms.reduce((m, d) => m + d.rooms.length, 0), 0) / 100
+  ) * 100;
+
+// Shared mono stat-line label treatment (uppercase, letter-spaced).
+const STAT_LABEL = "mt-1 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink-soft";
+
+// The "how it works" mini-section: three short steps with simple line icons,
+// echoing the homepage flow, to give the page rhythm instead of one text block.
+const STEPS: { title: string; body: string; icon: React.ReactNode }[] = [
+  {
+    title: "Pick your school",
+    body: "We already have your building and room, pulled from official housing data.",
+    icon: (
+      <path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-4h4v4M9.5 11h.01M14.5 11h.01" strokeLinecap="round" strokeLinejoin="round" />
+    ),
+  },
+  {
+    title: "Choose a vibe and budget",
+    body: "Set the look you want and the number you can spend. The plan stays inside it.",
+    icon: (
+      <path d="M4 7h16M4 12h10M4 17h7M17 14l3 3-3 3" strokeLinecap="round" strokeLinejoin="round" />
+    ),
+  },
+  {
+    title: "Get a layout and list",
+    body: "A room arranged to the inch, plus real products with live links you can shop.",
+    icon: (
+      <path d="M4 5h16v14H4zM4 10h16M9 5v14" strokeLinecap="round" strokeLinejoin="round" />
+    ),
+  },
+];
+
 export default function AboutPage() {
   return (
     <div>
@@ -47,6 +83,28 @@ export default function AboutPage() {
             and you get your actual room: real dimensions, a layout you can
             rearrange, and a shopping list that fits the space and the budget.
           </p>
+
+          {/* Real-number stat callouts, in the site's mono stat-line language. */}
+          <div className="mt-10 grid grid-cols-3 gap-4 rounded-2xl border border-ink/10 bg-card/70 px-4 py-6 sm:px-8">
+            <div>
+              <p className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+                {SCHOOLS.length}
+              </p>
+              <p className={STAT_LABEL}>Schools supported</p>
+            </div>
+            <div className="border-x border-ink/8 px-2 text-center sm:px-4">
+              <p className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+                {LAYOUTS.toLocaleString()}+
+              </p>
+              <p className={STAT_LABEL}>Dorm layouts mapped</p>
+            </div>
+            <div className="text-right">
+              <p className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+                200+
+              </p>
+              <p className={STAT_LABEL}>Rooms planned</p>
+            </div>
+          </div>
 
           {/* The problem */}
           <section className="mt-14">
@@ -181,11 +239,55 @@ export default function AboutPage() {
             </p>
           </section>
 
-          {/* CTA */}
-          <div className="mt-14 rounded-xl border border-dashed border-ink/20 bg-card/60 p-6 text-center">
-            <p className="font-medium">Enough reading. Your room is waiting.</p>
-            <PlanCta className="mt-3 inline-block rounded-lg bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt" />
-          </div>
+          {/* How it works: short, icon-led steps for structural rhythm. */}
+          <section className="mt-14">
+            <h2 className="font-display text-2xl font-bold tracking-tight">How it works</h2>
+            <ol className="mt-6 grid gap-4 sm:grid-cols-3">
+              {STEPS.map((step, i) => (
+                <li key={step.title} className="rounded-xl border border-ink/10 bg-card p-5">
+                  <div className="flex items-center gap-3">
+                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cobalt/10 text-cobalt">
+                      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                        {step.icon}
+                      </svg>
+                    </span>
+                    <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-soft">
+                      Step {i + 1}
+                    </span>
+                  </div>
+                  <h3 className="mt-3 font-display text-base font-bold tracking-tight">{step.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{step.body}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          {/* Closing CTA card, matching the homepage's ink CTA treatment. */}
+          <section className="mt-14">
+            <div className="relative overflow-hidden rounded-2xl bg-ink px-6 py-12 text-center sm:px-12 sm:py-14">
+              <div
+                className="pointer-events-none absolute inset-0 opacity-[0.07]"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
+                  backgroundSize: "28px 28px",
+                }}
+                aria-hidden="true"
+              />
+              <p className="relative font-mono text-xs font-medium uppercase tracking-[0.18em] text-highlight">
+                Enough reading
+              </p>
+              <h2 className="relative mx-auto mt-3 max-w-xl font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+                Your exact room is one tap away.
+              </h2>
+              <div className="relative mt-7">
+                <PlanCta className="inline-flex h-13 items-center rounded-xl bg-highlight px-8 text-base font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-white active:translate-y-0" />
+              </div>
+              <p className="relative mt-4 font-mono text-[11px] uppercase tracking-wide text-white/60">
+                Free · No account · Under a minute
+              </p>
+            </div>
+          </section>
         </div>
       </main>
     </div>
