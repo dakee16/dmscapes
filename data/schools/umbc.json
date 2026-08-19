@@ -3,6 +3,7 @@
  "college_name": "University of Maryland, Baltimore County",
  "city": "Baltimore",
  "state": "MD",
+ "aliases": ["umbc"],
  "housing_url": "https://reslife.umbc.edu/",
  "data_collected": "2026-08-19",
  "campus_notes": "Dimensions compiled 2026-08-19 from UMBC Residential Life (reslife.umbc.edu). Traditional halls (Chesapeake, Patapsco, Potomac, Susquehanna) publish room sizes: single 90 sq ft (9'x10'), double 180 sq ft (10'x18'), triple 300 sq ft (16'x18'), all with semi-private bathrooms; singles are limited and prioritized for medical accommodations and upperclass students. Suite-style halls: Erickson (double bedrooms 130 sq ft, 10'x15', with a 5'x6' walk-in closet; two double bedrooms plus a common living area and bath per suite) and Harbor (single bedrooms 88 sq ft, 8'x11'; double bedrooms 130 sq ft, 10'x15', with a 5'x6' walk-in closet). All published figures carry data_confidence 'high'. Undergraduate beds are Twin XL.",

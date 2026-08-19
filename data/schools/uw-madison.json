@@ -3,6 +3,7 @@
   "college_name": "University of Wisconsin-Madison",
   "city": "Madison",
   "state": "WI",
+  "aliases": ["uw madison","uw"],
   "housing_url": "https://www.housing.wisc.edu/undergraduate/residence-halls/rooms/",
   "data_collected": "2026-07-19",
   "campus_notes": "All 19 undergraduate residence halls (the Humphrey and Jorns pages redirect to the Kronshage complex page, so they are covered under Kronshage). Each hall page publishes 'Typical Dimensions' per room type with the caveat that rooms vary slightly; normalized here so length is the longer side. Some units are two-room or irregular (Adams/Tripp triples, Lowell singles and Triple Type A, Dejope quad); the main or large room is recorded with confidence medium and the remainder noted. Bedding: Twin XL sheets fit ALL beds (mattresses are 33x80 or 36x80). All provided furniture can be lofted or bunked. Every room includes a compact 3.1 cu ft refrigerator (two in triples and quads). AC recorded per hall from the 'Air Conditioning in Resident Rooms' feature line. Housing partners with Roomie for to-scale 3D room models once students receive an assignment.",

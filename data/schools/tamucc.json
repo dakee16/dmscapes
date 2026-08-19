@@ -3,6 +3,7 @@
  "college_name": "Texas A&M University-Corpus Christi",
  "city": "Corpus Christi",
  "state": "TX",
+ "aliases": ["tamucc","tamu-cc","tamu cc","island university"],
  "housing_url": "https://www.tamucc.edu/housing/",
  "data_collected": "2026-08-19",
  "campus_notes": "Compiled 2026-08-19 from independent research. First-time-in-college students are required to live on campus at Miramar. Islander Housing is apartment-style (Miramar and Momentum Village); apartments are modeled per bedroom so occupant counts and layouts match cleanly. TAMU-CC does not publish per-room dimensions and its official floor-plan pages were unreachable during data collection, so bedroom dimensions here use the site's estimate fallback (a representative ft x ft derived from similar rooms across the dataset, flagged \"Estimated based on similar rooms. Official size not published.\"). Building names and room configurations are from the official Islander Housing floor-plan index. Undergraduate beds are Twin XL.",

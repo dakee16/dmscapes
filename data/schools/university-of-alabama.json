@@ -3,6 +3,7 @@
   "college_name": "The University of Alabama",
   "city": "Tuscaloosa",
   "state": "AL",
+  "aliases": ["ua","bama"],
   "housing_url": "https://housing.sl.ua.edu/halls/",
   "data_collected": "2026-07-18",
   "campus_notes": "All 17 communities from housing.sl.ua.edu/halls. Alabama publishes 'Approx. room dimensions' per hall as W x L; normalized here so length is the longer side. IMPORTANT for bedding: bed sizes vary by hall and are often NOT Twin XL: standard twin 36x75 (Blount, Bryce Lawn, Burke, Parham East), extended twin 36x80 (most suite communities, Tutwiler, Paty, Parham West, John England Jr.), full-size XL 54x80 (Bryant, East Edge). Each hall page also publishes window and furniture dimensions. AC not explicitly stated per hall.",

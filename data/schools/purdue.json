@@ -3,6 +3,7 @@
   "college_name": "Purdue University",
   "city": "West Lafayette",
   "state": "IN",
+  "aliases": [],
   "housing_url": "https://www.housing.purdue.edu",
   "data_collected": "2026-07-14",
   "campus_notes": "Purdue University Residences publishes exact room dimensions (width x length, occasionally ceiling height) and closet dimensions for the illustrated room layouts on each hall page, with the caveat that illustrations are approximate. The official rates data (CSV behind the housing-rates page) provides the full 2026-27 room-type inventory per building with academic-year rates, capacity, AC, and bath flags - it is far more granular than the illustrated layouts, so many rate tiers carry no dimensions; dimension layouts are attached to rate tiers only where the mapping is unambiguous, and ambiguities are noted on the affected rooms. Rates shown are per person per ACADEMIC YEAR (not per semester), utilities included. Standard mattress is 77\" x 36\" (Twin XL 80\" in the newest halls, e.g. the Parker halls; 89\" long mattress on request for residents 6'4\"+); most beds can be lofted (Bedloft.com rentals in some halls). Purdue Indianapolis buildings (North Hall, LUX on Capitol) are excluded. Master-leased apartment properties (Aspire, Fuse, etc.) appear with rate-only rooms; Hilltop and Provenance also publish dimensions/square footage.",

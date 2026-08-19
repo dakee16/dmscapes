@@ -3,6 +3,7 @@
  "college_name": "Miami University",
  "city": "Oxford",
  "state": "OH",
+ "aliases": ["miami of ohio","miami ohio","miami oh","muohio"],
  "housing_url": "https://miamioh.edu/campus-services/housing-dining/residence-halls/",
  "data_collected": "2026-08-17",
  "campus_notes": "Dimensions compiled 2026-08-17 from independent research (official housing pages, floor plans, student-sourced specs). Where an exact figure was published it is used (data_confidence: high/medium); rooms with no published number carry null dims and rely on the site's estimate fallback (a representative ft x ft from the wider dataset, flagged with the 'Estimated based on similar rooms' disclaimer). Undergraduate beds are Twin XL. This is the public Miami University in Oxford, Ohio, distinct from the University of Miami in Florida. First-year students live in traditional residence halls organized by quad; the university lists building square footage but not individual room dimensions, so room dims here use the estimate fallback.",

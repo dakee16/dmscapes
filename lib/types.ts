@@ -110,6 +110,8 @@ export interface SchoolSummary {
   name: string;
   city: string | null;
   state: string | null;
+  /** Acronyms/alternate names for search (e.g. ["psu"], ["ucla"]); [] if none. */
+  aliases: string[];
   dorms: DormSummary[];
 }
 

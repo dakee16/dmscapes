@@ -3,6 +3,7 @@
  "college_name": "University of New Orleans",
  "city": "New Orleans",
  "state": "LA",
+ "aliases": ["uno"],
  "housing_url": "https://www.uno.edu/housing",
  "data_collected": "2026-08-17",
  "campus_notes": "Dimensions compiled 2026-08-17 from independent research (official housing pages, floor plans, student-sourced specs). University of New Orleans publishes limited per-room ft x ft data; where an exact figure was published it is used (data_confidence: high/medium); rooms with no published number carry null dims and rely on the site's built-in estimate fallback which derives a representative ft x ft from the wider dataset and flags an 'Estimated based on similar rooms' disclaimer in the UI. Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Pontchartrain Halls and Privateer Place have furnished 1/2/4-bedroom units with community amenities; per-room dims not published.",

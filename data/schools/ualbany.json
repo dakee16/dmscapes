@@ -3,6 +3,7 @@
  "college_name": "University at Albany, SUNY",
  "city": "Albany",
  "state": "NY",
+ "aliases": ["ualbany","suny albany"],
  "housing_url": "https://www.albany.edu/residential-life/",
  "data_collected": "2026-08-17",
  "campus_notes": "Dimensions compiled 2026-08-17 from independent research (official housing pages, floor plans, student-sourced specs). University at Albany publishes limited per-room ft x ft data; where an exact figure was published it is used (data_confidence: high/medium); rooms with no published number carry null dims and rely on the site's built-in estimate fallback which derives a representative ft x ft from the wider dataset and flags an 'Estimated based on similar rooms' disclaimer in the UI. Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Housing organized into Quads (Dutch, Colonial, Indigenous, State) and Freedom Apartments; per-room dims not published publicly.",

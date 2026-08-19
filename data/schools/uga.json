@@ -3,6 +3,7 @@
  "college_name": "University of Georgia",
  "city": "Athens",
  "state": "GA",
+ "aliases": ["uga"],
  "housing_url": "https://housing.uga.edu/halls-information/",
  "data_collected": "2026-07-19",
  "campus_notes": "All UGA residences from housing.uga.edu, including the four expanded-housing overflow communities and the graduate/family communities (Brandon Oaks, Rogers Road, University Village). UGA publishes no dimensions in page text; dims here were read from the official room-plan images served by the floor-plan-search tool (housing.uga.edu/floor-plan-search/), which UGA caveats as 'may not be exact, differ slightly from room to room, and may be mirrored'. Students can look up their exact room's plan by room number in that tool. IMPORTANT for bedding - bed sizes vary: most halls have Twin XL (80x36) on 17-position adjustable frames, but Creswell and Soule have STANDARD twin (75x36), the East Village halls (Busbee, McWhorter, Rooker, Vandiver) have FULL-SIZE beds, and University Village East plans show standard twins. AC recorded only where the official plan shows an AC/fan-coil unit; otherwise null. Rate-table room types without a matching plan image carry null dims.",

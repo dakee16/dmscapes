@@ -3,6 +3,7 @@
   "college_name": "The University of Texas at Austin",
   "city": "Austin",
   "state": "TX",
+  "aliases": ["ut austin","ut"],
   "housing_url": "https://housing.utexas.edu",
   "data_collected": "2026-07-14",
   "campus_notes": "UT Austin does not publish room length x width anywhere. Official floor plans for every hall (https://housing.utexas.edu/housing/residence-halls/residence-hall-resources/essential-info-forms/residence-hall-floor-plans) are raster CAD drawings that label each individual room's exact square footage (no room-type labels and no dimension callouts); typical values from those drawings are recorded per hall below. Every residence hall room comes with, per resident: a movable lofted Twin XL (36\" x 80\") bed, desk, desk chair, small under-bed dresser with cabinet, and bookshelf, plus one MicroFridge/microwave per room, trash and recycling bins, and corkboard(s); no furniture dimensions are published. Beds loft/bunk in most halls ('all furniture is moveable'). Full loft beds (5 settings, middle = 45\" to mattress top) appear in Blanton, Brackenridge, Duren, Jester, Kinsolving, Moore-Hill and Roberts; junior lofts (3 settings, 12\"-45\") in Andrews, Blanton, Carothers, Kinsolving and San Jacinto. All halls have AC and heat. Rates shown are per-person 2026-27 full academic year (room portion only, meal plan separate for halls; Jester/Duren/San Jacinto style rates include different bath configs). Many Jester rooms and renovated Kinsolving rooms have an in-room sink. Whitis Court closed for redevelopment (new ~1,000-bed hall opens 2027).",

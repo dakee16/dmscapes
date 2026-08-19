@@ -3,6 +3,7 @@
   "college_name": "University of California, Los Angeles (UCLA)",
   "city": "Los Angeles",
   "state": "CA",
+  "aliases": ["ucla"],
   "housing_url": "https://housing.ucla.edu",
   "data_collected": "2026-07-14",
   "campus_notes": "All undergraduate on-campus housing is on 'the Hill' and falls into four building types: Classic residence halls (community bathrooms, no A/C), Deluxe residence halls (community bathrooms, A/C), Plaza residences (private or shared-between-two-rooms bathrooms, A/C), and Suites (two bedrooms sharing a bathroom plus a furnished living room, no A/C). Room dimensions (https://ask.housing.ucla.edu/app/answers/detail/a_id/539/~/square-footage-of-rooms-in-on-campus-housing) are published per building group and are explicitly approximate; door/window positions and ceiling heights are not published. Closet, desk, drawer, and bed dimensions are exact published values from the Ask Housing knowledge base. All beds take Twin XL (36\" x 80\") linens. Room-type availability per building taken from the 2026-27 rate pages (https://housing.ucla.edu/2026-2027-academic-year-rates). All resident mail goes to a central address (Hall Name + Room #, 330 De Neve Dr., Los Angeles, CA 90024); individual buildings do not have published street addresses.",

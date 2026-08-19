@@ -3,6 +3,7 @@
   "college_name": "Georgia Institute of Technology",
   "city": "Atlanta",
   "state": "GA",
+  "aliases": ["georgia tech","ga tech","gt"],
   "housing_url": "https://housing.gatech.edu",
   "data_collected": "2026-07-14",
   "campus_notes": "GT Housing publishes room dimensions only as campus-level approximations in its FAQ (https://housing.gatech.edu/first-time-residents/faq): traditional East Campus rooms ~12' x 10' to 15' x 11', traditional West Campus ~15' x 11', Harris suites 12' x 10', Woodruff suites 15' x 12', apartment bedrooms ~11' x 8'10\". Windows vary from 44\" x 95\" to 51\" x 116\" and all have blinds. Furniture dimensions are published at https://housing.gatech.edu/room-and-furniture: bed frame 38\" x 85.5\" (Twin XL mattress), wardrobe 36\"W x 24\"D x 76\"H, desk 42\"W x 24\"D x 30\"H, chair 20\"W x 23\"D x 33\"H, dresser 30\"W x 24\"D x 30\"H; all figures approximate. Most beds use the E-Z Loft system (low / medium ~3 ft / high ~6 ft / bunked); only Housing staff may adjust them, and bed rails are required above 36\". Furniture may be rearranged but never removed from the room, and homemade lofts are prohibited. Rates shown are official 2026-27 per person per semester (family units per apartment per month). Each building page links per-floor floor-plan PDFs (room numbers and types, no dimensions); URLs are recorded per dorm.",

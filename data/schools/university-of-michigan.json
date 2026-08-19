@@ -3,6 +3,7 @@
   "college_name": "University of Michigan (Ann Arbor)",
   "city": "Ann Arbor",
   "state": "MI",
+  "aliases": ["umich"],
   "housing_url": "https://housing.umich.edu",
   "data_collected": "2026-07-14",
   "campus_notes": "Michigan Housing explicitly does not publish per-room dimensions; their knowledge base (https://kb.housing.umich.edu/hc/en-us/articles/27512969150861-Residence-Hall-Room-Dimensions) says many doubles average 11' x 12' but individual rooms vary by era of construction. Beds take Twin XL (36\" x 80\") linens. Undergraduate rooms have one of two modular furniture systems (Building Block or Lifespace II) with published dimensions; both loft (58\" clearance) or half-loft (28.5\"), and Building Block also bunks/trundles. Custom-made lofts are prohibited. Furniture must sit at least 2 ft from windows and radiators. System-by-hall mapping: https://kb.housing.umich.edu/hc/en-us/articles/360002986491-Room-Furniture.",

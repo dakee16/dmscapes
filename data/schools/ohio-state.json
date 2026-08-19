@@ -3,6 +3,7 @@
   "college_name": "The Ohio State University",
   "city": "Columbus",
   "state": "OH",
+  "aliases": ["osu"],
   "housing_url": "https://housing.osu.edu",
   "data_collected": "2026-07-14",
   "campus_notes": "All residence hall rooms include bed(s), desk(s), desk chair(s), closet/wardrobe, refrigerator/microwave unit, window covering, and trash/recycling bins (housing.osu.edu/resources/what-to-bring). Beds are Twin XL (80-inch); personal lofting kits are prohibited, lofts rent through the university's bedlofts vendor. Door and window positions are not published; floor-plan PDFs/DOCX linked per room type show approximate layouts.",

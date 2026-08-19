@@ -137,6 +137,9 @@ for (const s of sources) {
     name: s.college_name,
     city: s.city ?? null,
     state: s.state ?? null,
+    // Hand-authored acronyms/alternate names so the selector matches "psu",
+    // "ucla", etc. — not just the full name (see searchSchools in lib/schools).
+    aliases: s.aliases ?? [],
     dorms,
   });
 }

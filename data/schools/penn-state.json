@@ -3,6 +3,7 @@
   "college_name": "The Pennsylvania State University (University Park)",
   "city": "University Park",
   "state": "PA",
+  "aliases": ["penn state","psu"],
   "housing_url": "https://liveon.psu.edu/university-park/housing-areas",
   "data_collected": "2026-07-14",
   "campus_notes": "Every hall page on liveon.psu.edu publishes a 'Room & Furnishing Dimensions' table (room L\u00d7W\u00d7ceiling by room type plus furniture, door, and window sizes), with the disclaimer that measurements are approximate and rooms vary. Mattresses are Twin XL (80\"). Most halls list height-adjustable beds and movable furniture. Door and window sizes are published for many halls but positions are not.",

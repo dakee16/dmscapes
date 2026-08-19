@@ -3,6 +3,7 @@
  "college_name": "Hampton University",
  "city": "Hampton",
  "state": "VA",
+ "aliases": [],
  "housing_url": "https://home.hamptonu.edu/student-affairs/residence-life-housing/",
  "data_collected": "2026-08-17",
  "campus_notes": "Dimensions compiled 2026-08-17 from independent research (official housing pages, floor plans, student-sourced specs). Where an exact figure was published it is used (data_confidence: high/medium); rooms with no published number carry null dims and rely on the site's estimate fallback (a representative ft x ft from the wider dataset, flagged with the 'Estimated based on similar rooms' disclaimer). Undergraduate beds are Twin XL. HBCU in Hampton, Virginia. Freshman halls offer 2- or 3-person rooms with a wardrobe or built-in closet per resident and community bathrooms; the university does not publish per-room dimensions, so room dims here use the estimate fallback.",

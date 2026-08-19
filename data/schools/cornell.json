@@ -3,6 +3,7 @@
  "college_name": "Cornell University",
  "city": "Ithaca",
  "state": "NY",
+ "aliases": [],
  "housing_url": "https://scl.cornell.edu/residential-life/housing",
  "data_collected": "2026-08-12",
  "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with Cornell housing floor plans and student-sourced specs. Cornell does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Cornell keeps exact floor plans restricted; institutional averages are Standard Single 9 x 12, Standard Double 12 x 13, Standard Triple 12 x 18, ceiling height 8 ft. Building-specific figures below come from student tours, housing disclosures, and historical dimensions.",

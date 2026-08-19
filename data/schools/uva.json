@@ -3,6 +3,7 @@
  "college_name": "University of Virginia",
  "city": "Charlottesville",
  "state": "VA",
+ "aliases": ["uva"],
  "housing_url": "https://housing.virginia.edu/",
  "data_collected": "2026-08-12",
  "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with University of Virginia housing floor plans and student-sourced specs. University of Virginia does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Typical double-occupancy rooms range 11.5 x 15 to 16 x 12 ft depending on architectural style and residence area. Figures below are the exact ft x ft for standard bedroom types across UVA's major housing areas.",

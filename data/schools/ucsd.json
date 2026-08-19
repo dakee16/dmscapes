@@ -3,6 +3,7 @@
  "college_name": "University of California, San Diego",
  "city": "La Jolla",
  "state": "CA",
+ "aliases": ["ucsd","uc san diego"],
  "housing_url": "https://hdh.ucsd.edu/",
  "data_collected": "2026-08-12",
  "campus_notes": "Dimensions compiled 2026-08-12 from a research document cross-referenced with UCSD housing floor plans and student-sourced specs. UCSD does not publish an official per-room ft x ft table; where the source gave a range or only square footage, a representative ft x ft was used (data_confidence: medium). Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Housing Dining Hospitality standardizes by square footage and generalized ft x ft. Blueprints vary by building age; the closest structural equivalents by college neighborhood are used below.",

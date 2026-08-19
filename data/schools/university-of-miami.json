@@ -3,6 +3,7 @@
  "college_name": "University of Miami",
  "city": "Coral Gables",
  "state": "FL",
+ "aliases": ["miami fl","miami florida"],
  "housing_url": "https://hrl.studentaffairs.miami.edu/living-on-campus/",
  "data_collected": "2026-08-17",
  "campus_notes": "Dimensions compiled 2026-08-17 from independent research (official housing pages, floor plans, student-sourced specs). Where an exact figure was published it is used (data_confidence: high/medium); rooms with no published number carry null dims and rely on the site's estimate fallback (a representative ft x ft from the wider dataset, flagged with the 'Estimated based on similar rooms' disclaimer). Undergraduate beds are Twin XL. This is the private University of Miami in Coral Gables, Florida, distinct from Miami University in Ohio. Centennial Village (five first-year residential colleges) and Lakeside Village publish square footage; the older colleges (Eaton, Mahoney, Pearson) do not, so those room dims use the estimate fallback. The former Hecht and Stanford colleges were replaced by Centennial Village.",

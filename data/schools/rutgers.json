@@ -3,6 +3,7 @@
  "college_name": "Rutgers University-New Brunswick",
  "city": "New Brunswick",
  "state": "NJ",
+ "aliases": [],
  "housing_url": "https://ruoncampus.rutgers.edu/living-on-campus",
  "data_collected": "2026-07-18",
  "campus_notes": "Covers all four New Brunswick residential campuses (College Avenue, Busch, Cook/Douglass, Livingston; 51 buildings) from ruoncampus.rutgers.edu. Rutgers publishes a single hall-wide 'Average Room Size' per building rather than per-room-type dimensions; that figure is recorded on the hall's standard double (or suite/apartment bedroom) and singles are left null per honest-data rules. Published sizes normalized so length is the longer side. Beds are Twin XL except Sojourner Truth Apartments (full-size). Traditional halls have communal bathrooms; suites and apartments have private bathrooms.",

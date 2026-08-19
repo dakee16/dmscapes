@@ -12,7 +12,9 @@ export function searchSchools(query: string): SchoolSummary[] {
   const q = query.trim().toLowerCase();
   if (!q) return SCHOOLS;
   return SCHOOLS.filter((s) =>
-    [s.name, s.city ?? "", s.state ?? ""].some((f) => f.toLowerCase().includes(q))
+    [s.name, s.city ?? "", s.state ?? "", ...(s.aliases ?? [])].some((f) =>
+      f.toLowerCase().includes(q)
+    )
   );
 }
 

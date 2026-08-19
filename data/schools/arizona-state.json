@@ -3,6 +3,7 @@
   "college_name": "Arizona State University",
   "city": "Tempe",
   "state": "AZ",
+  "aliases": ["asu"],
   "housing_url": "https://housing.asu.edu",
   "data_collected": "2026-07-14",
   "campus_notes": "ASU spans four metro-Phoenix campuses (Tempe, Downtown Phoenix, Polytechnic in Mesa, West Valley in Glendale); community addresses below identify the campus. ASU publishes no room dimensions, floor areas, or floor-plan drawings on its live housing site - only unit configurations, bed sizes, furnishings and rates. The only official room-size figures ever published were averages on now-removed move-in pages (captured via the Internet Archive): Taylor Place/Gordon Commons 214 sq ft and Casa de Oro 257 sq ft. Standard furnishings per resident (housing FAQ): bed, desk, desk chair, dresser, closet area, trash/recycle bins; all rooms have AC and most are carpeted. Beds are Twin XL 36\" x 80\" in nearly all communities (Gordon Commons lists 39\" x 80\"). Bed-size exceptions: Barrett's studio plan and the Willow 4-bedroom private-room/shared-bath plans use full-size beds (53\" x 78\"); Vista del Sol has full-size beds (54\" x 75\") for private-room bookings and standard twin (38\" x 75\") for shared-room bookings. Everything else is Twin XL. Rates shown are 2026-27 academic-year totals per person, room only.",

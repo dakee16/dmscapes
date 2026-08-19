@@ -3,6 +3,7 @@
  "college_name": "Chapman University",
  "city": "Orange",
  "state": "CA",
+ "aliases": [],
  "housing_url": "https://www.chapman.edu/housing/",
  "data_collected": "2026-08-17",
  "campus_notes": "Dimensions compiled 2026-08-17 from independent research (official housing pages, floor plans, student-sourced specs). Chapman University publishes limited per-room ft x ft data; where an exact figure was published it is used (data_confidence: high/medium); rooms with no published number carry null dims and rely on the site's built-in estimate fallback which derives a representative ft x ft from the wider dataset and flags an 'Estimated based on similar rooms' disclaimer in the UI. Multi-room suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL. Pralle-Sodaro publishes rooms as approximately 19'x11'.",

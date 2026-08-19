@@ -3,6 +3,7 @@
   "college_name": "University of Florida",
   "city": "Gainesville",
   "state": "FL",
+  "aliases": ["uf"],
   "housing_url": "https://housing.ufl.edu",
   "data_collected": "2026-07-14",
   "campus_notes": "UF Housing publishes no room dimensions, square footage, or floor plans for its residence halls - not on the current site nor in archived generations of it. Room inventory per hall is taken from the official 2026-27 rental-rate table (https://housing.ufl.edu/rates-payments-agreements/residence-hall-rental-rates/); rates shown are per person per semester (Fall 2026/Spring 2027). All rooms are fully furnished (bed, desk, chair, dresser per resident) and provided furniture may not be removed from the room. Beds are Twin XL (36\" x 80\") everywhere except Cypress Hall and Keys Residential Complex, which have Full XL (54\" x 80\") beds; bed height is adjustable on request, and some buildings' beds loft high enough to fit a desk underneath. Traditional halls generally do not include in-room refrigerators (students bring their own); each traditional floor has a shared restroom and community kitchen.",

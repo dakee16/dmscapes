@@ -3,6 +3,7 @@
   "college_name": "New York University",
   "city": "New York",
   "state": "NY",
+  "aliases": ["nyu"],
   "housing_url": "https://www.nyu.edu/students/student-information-and-resources/housing-and-dining/on-campus-living.html",
   "data_collected": "2026-07-14",
   "campus_notes": "NYU Residential Life publishes no room dimensions or square footage for its residence halls. Per-floor floor plans exist for every hall (PNG, linked per dorm via housing.nyu.edu) but NYU states they are not drawn to scale. Room inventory and rates are the official proposed 2026-27 table (https://www.nyu.edu/students/student-information-and-resources/housing-and-dining/on-campus-living/application-and-assignments/rates-and-payments.html); rates are per person per semester. Halls are scattered across Manhattan (Greenwich Village/Union Square area) and Downtown Brooklyn rather than a contiguous campus. Furnishings per resident (official what-to-bring guide): bed, twin mattress, desk, desk chair, drawer space, and closet/wardrobe space; beds are Twin XL (80\") except Clark Street's standard twin (75\"); personal furniture may not be added; all windows have blinds. Student AC units are only permitted in apartment-suite kitchens (halls otherwise have building AC where listed). 'In Unit' room types are bedrooms inside shared suites/apartments; 'Studio' types are self-contained rooms. NYU Law runs its own separate halls (D'Agostino, Hayden) with published approximate dimensions; they are law-school housing and not part of this Residential Life inventory.",

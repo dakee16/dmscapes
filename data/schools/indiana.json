@@ -3,6 +3,7 @@
  "college_name": "Indiana University Bloomington",
  "city": "Bloomington",
  "state": "IN",
+ "aliases": ["iu"],
  "housing_url": "https://housing.indiana.edu/residence-centers/index.html",
  "data_collected": "2026-07-19",
  "campus_notes": "18 of IU's 19 residence centers (Wright is excluded: renovated 2025 with new central air conditioning, but its room types and tours are not yet published; revisit later). IU publishes NO textual room dimensions anywhere; each room type links its official virtual tour, which includes floor plans and a built-in measurement tool, stored here as floor_plan_url. All rooms therefore carry null dimensions and rely on the planner's manual flow. Bedding: all residence hall beds are extra-long twin, so Twin XL sheets fit. Rooms come with a closet or wardrobe, desk, chair, and bed; no dresser or refrigerator is provided. Campus View and 3rd and Union are unfurnished apartment-style buildings. Price tier (Economy/Standard/Enhanced) and rooms/beds counts recorded per hall. AC is not stated per hall in crawlable text. The collegecollectionapts.com blog provided by the user was reviewed and excluded: it is third-party apartment marketing, not an official source.",
