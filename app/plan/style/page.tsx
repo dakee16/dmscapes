@@ -4,12 +4,15 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import StyleCard from "@/components/planner/StyleCard";
+import CreateVibeCard from "@/components/planner/CreateVibeCard";
+import CreateVibePanel from "@/components/planner/CreateVibePanel";
 import { track } from "@/lib/analytics";
 import { categoriesCovered, tierForBudget } from "@/lib/catalog";
 import { STYLES, isPlusStyle } from "@/lib/styles";
+import { CUSTOM_VIBE_ENABLED } from "@/lib/custom-vibe";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
-import { isPaid, isPlusTier, isFlex, isPlanMetered, canGeneratePlan, headerCreditState } from "@/lib/plan";
+import { isPaid, isPro, isPlusTier, isFlex, isPlanMetered, canGeneratePlan, headerCreditState } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
 import { useUpgrade } from "@/lib/upgrade-context";
 import CreditMeter from "@/components/site/CreditMeter";
@@ -32,9 +35,14 @@ export default function PlanStylePage() {
   const { openUpgrade } = useUpgrade();
   // Vibe access: all 9 vibes unlock for any paid tier (Plus or Pro).
   const allVibes = isPaid(profile);
+  // "Create your own vibe" is Pro-only (distinct from the Plus-gated styles).
+  const pro = isPro(profile);
 
   const [mounted, setMounted] = useState(false);
   const [generating, setGenerating] = useState(false);
+  // True while the custom-vibe tile is active (its input panel replaces the
+  // normal "Design my room" action).
+  const [customActive, setCustomActive] = useState(false);
   // Save-before-you-leave heads-up, shown when they tap "Design my room".
   const [showDisclaimer, setShowDisclaimer] = useState(false);
   const budgetTrackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -51,6 +59,8 @@ export default function PlanStylePage() {
   }, [mounted, room, router]);
 
   function handleStyle(id: StyleId) {
+    // Picking a curated style always leaves custom-vibe mode.
+    setCustomActive(false);
     // Gated vibes stay visible for free users, but selecting one opens the
     // upgrade modal instead of silently blocking. Plus/Pro select freely.
     if (isPlusStyle(id) && !allVibes) {
@@ -60,6 +70,18 @@ export default function PlanStylePage() {
     }
     setStyle(id);
     track("style_selected", { style: id });
+  }
+
+  // The custom tile: Pro opens the vibe input; everyone else gets the existing
+  // upgrade modal (reused verbatim, no new paywall UI).
+  function handleCustomTile() {
+    if (!pro) {
+      track("custom_vibe_locked_clicked");
+      openUpgrade("custom-vibe");
+      return;
+    }
+    setCustomActive(true);
+    track("custom_vibe_opened");
   }
 
   // Tapping "Design my room" first raises the save-before-you-leave heads-up;
@@ -153,7 +175,11 @@ export default function PlanStylePage() {
   }
 
   const tier = tierForBudget(budget);
-  const covered = style ? categoriesCovered(style, budget, room?.bedSize) : null;
+  // "covers" applies to curated styles only; the custom flow has its own copy.
+  const covered =
+    style && style !== "custom" && !customActive
+      ? categoriesCovered(style, budget, room?.bedSize)
+      : null;
 
   return (
     <div className="mx-auto max-w-3xl px-5 pb-36 sm:px-8 sm:pb-24">
@@ -173,12 +199,15 @@ export default function PlanStylePage() {
           <StyleCard
             key={s.id}
             style={s}
-            selected={style === s.id}
+            selected={style === s.id && !customActive}
             locked={isPlusStyle(s.id) && !allVibes}
             unlocked={isPlusStyle(s.id) && allVibes}
             onSelect={() => handleStyle(s.id)}
           />
         ))}
+        {CUSTOM_VIBE_ENABLED && (
+          <CreateVibeCard selected={customActive} locked={!pro} onSelect={handleCustomTile} />
+        )}
       </div>
 
       <div className="mt-8 rounded-xl border border-ink/10 bg-white p-5 sm:p-6">
@@ -219,12 +248,21 @@ export default function PlanStylePage() {
               covers:{" "}
               <span className="font-medium text-ink">{covered.join(", ").toLowerCase()}</span>.
             </>
+          ) : customActive ? (
+            <>
+              Your <span className="font-mono font-semibold text-ink">${budget}</span> budget sets
+              the quality tier we live-match your vibe to.
+            </>
           ) : (
             <>Pick a style above to see what your budget covers.</>
           )}
         </p>
       </div>
 
+      {/* Custom-vibe mode: the input experience replaces the curated action bar. */}
+      {customActive && <CreateVibePanel budget={budget} bedSize={room.bedSize} />}
+
+      {!customActive && (
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/8 bg-paper/92 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
         {/* Plus only: how many plan credits remain, right beside the action. */}
         <CreditMeter className="mb-2.5 justify-center sm:justify-start" />
@@ -237,6 +275,7 @@ export default function PlanStylePage() {
           {generating ? "Designing…" : "Design my room →"}
         </button>
       </div>
+      )}
 
       {showDisclaimer && (
         <DesignDisclaimerModal

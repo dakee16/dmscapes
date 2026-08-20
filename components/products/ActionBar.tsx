@@ -12,7 +12,7 @@ import { hasFeatures } from "@/lib/plan";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { downloadShoppingListPdf } from "@/lib/pdf";
 import { CATEGORY_LABELS, totalFor } from "@/lib/catalog";
-import { styleById } from "@/lib/styles";
+import { designDisplayName } from "@/lib/styles";
 import { roomTypeLabel } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
 
@@ -141,7 +141,7 @@ export default function ActionBar({
       await downloadShoppingListPdf({
         place,
         roomLine,
-        styleName: s.style ? styleById(s.style).name : null,
+        styleName: s.style ? designDisplayName(s.style, s.customVibe) : null,
         budget: s.budget,
         items: products.map((p) => ({
           name: p.name,

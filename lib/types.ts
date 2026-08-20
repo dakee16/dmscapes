@@ -42,7 +42,10 @@ export type StyleId =
   | "academia"
   | "y2k"
   | "retro"
-  | "pastel";
+  | "pastel"
+  // "Create your own vibe" (Pro): a pseudo-style whose products come from the
+  // live pipeline, not the curated catalog. Never shown in the picker grid.
+  | "custom";
 export type BudgetTier = "budget" | "mid" | "premium";
 
 export type ProductCategory =

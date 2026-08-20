@@ -23,6 +23,7 @@ export type UpgradeReason =
   | "compare"
   | "school-request"
   | "style"
+  | "custom-vibe"
   | "generic";
 
 interface UpgradeContextValue {

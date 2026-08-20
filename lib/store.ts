@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { FurnitureItem, ProductCategory, SelectedRoom, StyleId } from "./types";
+import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId } from "./types";
 
 export interface PlannerState {
   // Step 1
@@ -12,6 +12,15 @@ export interface PlannerState {
   // Step 2
   style: StyleId | null;
   budget: number;
+  // Step 2 · "Create your own vibe" (custom pseudo-style). The vibe text is the
+  // design's display name; the products come from the live pipeline, not the
+  // catalog, so they're carried here (and persisted) for the result page, save,
+  // and share. `customRegenUsed` tracks the one free regeneration per vibe.
+  customVibe: string | null;
+  customProducts: Product[] | null;
+  /** True when customProducts are placeholder matches (PA-API not live yet). */
+  customMock: boolean;
+  customRegenUsed: boolean;
   // Step 3: canvas layout
   templateId: string | null;
   /** Current furniture positions (template copy, mutated by drag). */
@@ -44,6 +53,10 @@ export interface PlannerState {
   setRoom: (room: SelectedRoom | null) => void;
   setStyle: (style: StyleId) => void;
   setBudget: (budget: number) => void;
+  /** Store a completed custom-vibe generation (sets style to "custom"). */
+  setCustomResult: (vibe: string, products: Product[], mock: boolean) => void;
+  /** Mark the one free regeneration for the current vibe as spent. */
+  markCustomRegen: () => void;
   /** Called once on result-page load (or after re-match). Replaces the layout. */
   initLayout: (templateId: string, furniture: FurnitureItem[]) => void;
   moveItem: (id: string, xFt: number, yFt: number) => void;
@@ -78,6 +91,10 @@ const initial = {
   room: null,
   style: null,
   budget: 500,
+  customVibe: null,
+  customProducts: null,
+  customMock: false,
+  customRegenUsed: false,
   templateId: null,
   furniture: null,
   swaps: {},
@@ -97,8 +114,29 @@ export const usePlannerStore = create<PlannerState>()(
       setDorm: (dorm) => set({ dorm, room: null }),
       setRoom: (room) =>
         set({ room, templateId: null, furniture: null, excluded: null, hiddenItemIds: [], lockedItemIds: [] }),
-      setStyle: (style) => set({ style, swaps: {}, excluded: null }),
+      // Selecting a catalog style clears any custom-vibe result so its products
+      // never leak into a normal plan.
+      setStyle: (style) =>
+        set({
+          style,
+          swaps: {},
+          excluded: null,
+          customVibe: null,
+          customProducts: null,
+          customMock: false,
+          customRegenUsed: false,
+        }),
       setBudget: (budget) => set({ budget, swaps: {}, excluded: null }),
+      setCustomResult: (vibe, products, mock) =>
+        set({
+          style: "custom",
+          customVibe: vibe,
+          customProducts: products,
+          customMock: mock,
+          swaps: {},
+          excluded: null,
+        }),
+      markCustomRegen: () => set({ customRegenUsed: true }),
       initLayout: (templateId, furniture) =>
         set({ templateId, furniture: furniture.map((f) => ({ ...f })) }),
       moveItem: (id, xFt, yFt) =>
@@ -191,6 +229,10 @@ export const usePlannerStore = create<PlannerState>()(
         room: s.room,
         style: s.style,
         budget: s.budget,
+        customVibe: s.customVibe,
+        customProducts: s.customProducts,
+        customMock: s.customMock,
+        customRegenUsed: s.customRegenUsed,
         templateId: s.templateId,
         furniture: s.furniture,
         swaps: s.swaps,
