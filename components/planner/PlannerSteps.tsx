@@ -11,7 +11,8 @@ const STEPS = [
 
 function currentStep(pathname: string): number {
   if (pathname.startsWith("/plan/result")) return 2;
-  if (pathname.startsWith("/plan/style")) return 1;
+  // The custom-vibe input is part of the Style step (choosing your vibe).
+  if (pathname.startsWith("/plan/style") || pathname.startsWith("/plan/create-vibe")) return 1;
   return 0;
 }
 

@@ -4,8 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import StyleCard from "@/components/planner/StyleCard";
-import CreateVibeCard from "@/components/planner/CreateVibeCard";
-import CreateVibePanel from "@/components/planner/CreateVibePanel";
+import CreateVibeBanner from "@/components/planner/CreateVibeBanner";
 import { track } from "@/lib/analytics";
 import { categoriesCovered, tierForBudget } from "@/lib/catalog";
 import { STYLES, isPlusStyle } from "@/lib/styles";
@@ -40,9 +39,6 @@ export default function PlanStylePage() {
 
   const [mounted, setMounted] = useState(false);
   const [generating, setGenerating] = useState(false);
-  // True while the custom-vibe tile is active (its input panel replaces the
-  // normal "Design my room" action).
-  const [customActive, setCustomActive] = useState(false);
   // Save-before-you-leave heads-up, shown when they tap "Design my room".
   const [showDisclaimer, setShowDisclaimer] = useState(false);
   const budgetTrackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -59,8 +55,6 @@ export default function PlanStylePage() {
   }, [mounted, room, router]);
 
   function handleStyle(id: StyleId) {
-    // Picking a curated style always leaves custom-vibe mode.
-    setCustomActive(false);
     // Gated vibes stay visible for free users, but selecting one opens the
     // upgrade modal instead of silently blocking. Plus/Pro select freely.
     if (isPlusStyle(id) && !allVibes) {
@@ -80,8 +74,8 @@ export default function PlanStylePage() {
       openUpgrade("custom-vibe");
       return;
     }
-    setCustomActive(true);
     track("custom_vibe_opened");
+    router.push("/plan/create-vibe");
   }
 
   // Tapping "Design my room" first raises the save-before-you-leave heads-up;
@@ -177,7 +171,7 @@ export default function PlanStylePage() {
   const tier = tierForBudget(budget);
   // "covers" applies to curated styles only; the custom flow has its own copy.
   const covered =
-    style && style !== "custom" && !customActive
+    style && style !== "custom"
       ? categoriesCovered(style, budget, room?.bedSize)
       : null;
 
@@ -199,14 +193,15 @@ export default function PlanStylePage() {
           <StyleCard
             key={s.id}
             style={s}
-            selected={style === s.id && !customActive}
+            selected={style === s.id}
             locked={isPlusStyle(s.id) && !allVibes}
             unlocked={isPlusStyle(s.id) && allVibes}
             onSelect={() => handleStyle(s.id)}
           />
         ))}
+        {/* Full-width banner spanning the grid, distinct from the nine tiles. */}
         {CUSTOM_VIBE_ENABLED && (
-          <CreateVibeCard selected={customActive} locked={!pro} onSelect={handleCustomTile} />
+          <CreateVibeBanner locked={!pro} onSelect={handleCustomTile} />
         )}
       </div>
 
@@ -248,21 +243,12 @@ export default function PlanStylePage() {
               covers:{" "}
               <span className="font-medium text-ink">{covered.join(", ").toLowerCase()}</span>.
             </>
-          ) : customActive ? (
-            <>
-              Your <span className="font-mono font-semibold text-ink">${budget}</span> budget sets
-              the quality tier we live-match your vibe to.
-            </>
           ) : (
             <>Pick a style above to see what your budget covers.</>
           )}
         </p>
       </div>
 
-      {/* Custom-vibe mode: the input experience replaces the curated action bar. */}
-      {customActive && <CreateVibePanel budget={budget} bedSize={room.bedSize} />}
-
-      {!customActive && (
       <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/8 bg-paper/92 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
         {/* Plus only: how many plan credits remain, right beside the action. */}
         <CreditMeter className="mb-2.5 justify-center sm:justify-start" />
@@ -275,7 +261,6 @@ export default function PlanStylePage() {
           {generating ? "Designing…" : "Design my room →"}
         </button>
       </div>
-      )}
 
       {showDisclaimer && (
         <DesignDisclaimerModal

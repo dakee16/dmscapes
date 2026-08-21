@@ -97,9 +97,10 @@ async function buildLive(
         minPrice: min,
         maxPrice: max,
       });
-      const pick = items.find(
-        (it) => it.imageUrl && it.price != null && it.price >= min && it.price <= max
-      );
+      // PA-API already applied MinPrice/MaxPrice; just require a usable listing
+      // (a real image + a buyable price). Re-filtering on the same narrow window
+      // here only threw away otherwise-good live matches.
+      const pick = items.find((it) => it.imageUrl && it.price != null);
       if (pick && pick.price != null) {
         out.push({
           id: `paapi-${pick.asin}`,
@@ -122,13 +123,35 @@ async function buildLive(
           active: true,
         });
       }
-    } catch {
-      // Skip a failing category rather than fail the whole generation.
+    } catch (err) {
+      // Log loudly so a live failure (bad signature, throttle, quota, wrong
+      // marketplace) is visible in the server logs instead of being silently
+      // swallowed and masked by the catalog fallback.
+      console.error(
+        `[vibe] PA-API SearchItems failed for "${cat}":`,
+        err instanceof Error ? err.message : err
+      );
     }
     // Throttle to respect PA-API's per-second limit.
     await new Promise((r) => setTimeout(r, 1100));
   }
   return out;
+}
+
+/** Keep every live (PA-API) product; top up only the categories PA-API couldn't
+ *  match from the curated catalog, returned in canonical category order. */
+function fillMissingFromCatalog(
+  live: Product[],
+  tier: BudgetTier,
+  seed: number,
+  bedSize?: BedSize
+): Product[] {
+  const have = new Set(live.map((p) => p.category));
+  const filler = buildMock(tier, seed, bedSize).filter((p) => !have.has(p.category));
+  const all = [...live, ...filler];
+  return CORE_VIBE_CATEGORIES.map((c) => all.find((p) => p.category === c)).filter(
+    (p): p is Product => Boolean(p)
+  );
 }
 
 export async function POST(request: Request) {
@@ -166,11 +189,23 @@ export async function POST(request: Request) {
   let products: Product[];
   let mock: boolean;
   if (paapiConfigured()) {
-    products = await buildLive(queries, tier);
-    mock = false;
-    // If live matching came back thin, fall back to mock so the user still gets
-    // a complete room rather than a half-empty one.
-    if (products.length < 8) {
+    // Credentials present -> LIVE is authoritative. Whatever categories PA-API
+    // matches are used as-is; any it couldn't fill are topped up from the curated
+    // catalog so the room is still complete, but the result stays live-backed
+    // (mock:false). The catalog only fully takes over when live returns NOTHING
+    // (a real failure — now logged per-category in buildLive above).
+    const live = await buildLive(queries, tier);
+    if (live.length > 0) {
+      products = fillMissingFromCatalog(live, tier, seed, bedSize);
+      mock = false;
+      console.log(
+        `[vibe] PA-API live: ${live.length}/${CORE_VIBE_CATEGORIES.length} categories matched` +
+          `, ${products.length - live.length} topped up from catalog`
+      );
+    } else {
+      console.error(
+        "[vibe] PA-API returned no products (see per-category errors above); falling back to catalog"
+      );
       products = buildMock(tier, seed, bedSize);
       mock = true;
     }
