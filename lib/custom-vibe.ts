@@ -1,10 +1,10 @@
-// "Create your own vibe" (Pro-exclusive) — shared, secret-free logic used by
+// "Create your own vibe" (Pro-exclusive), shared, secret-free logic used by
 // both the Step 2 UI and the /api/vibe/generate route.
 //
 // STATUS: v1 ships behind the NEXT_PUBLIC_CUSTOM_VIBE flag (default OFF) and is
 // mock-backed. Two real integrations must be wired before it can go live:
-//   1. Amazon Product Advertising API (PA-API 5.0) — see lib/paapi.ts.
-//   2. (optional) An LLM for validation + query generation — the deterministic
+//   1. Amazon Product Advertising API (PA-API 5.0), see lib/paapi.ts.
+//   2. (optional) An LLM for validation + query generation, the deterministic
 //      functions below are the v1 implementation, each with a clearly marked
 //      seam where a Claude call drops in. Nothing here calls a model yet.
 import type { ProductCategory } from "./types";
@@ -26,7 +26,7 @@ export const VIBE_PLACEHOLDER =
  *  reads as "anything goes," not a menu of presets. */
 export const INSPIRATION_CHIPS: readonly string[] = [
   "warm minimalist, oak, cream, and a single big plant",
-  "dark academia — leather, brass, and deep green",
+  "dark academia, leather, brass, and deep green",
   "cottagecore florals with gingham and warm light",
   "chrome-and-neon gamer battlestation, all blackout",
 ];
@@ -49,7 +49,7 @@ export const VIBE_LOADING_LINES: readonly string[] = [
 // lightweight, zero-cost gate that runs before any downstream API call. To make
 // it a model call instead, replace the body of validateVibe with a fast Claude
 // classification (e.g. "Is this a room/interior aesthetic? yes/no") and keep the
-// same {ok, message} return shape — nothing else changes.
+// same {ok, message} return shape, nothing else changes.
 
 const AESTHETIC_LEXICON: readonly string[] = [
   // colors
@@ -79,7 +79,7 @@ const AESTHETIC_LEXICON: readonly string[] = [
 const LEXICON_SET = new Set(AESTHETIC_LEXICON);
 
 const FAIL_MESSAGE =
-  "That doesn't sound like a room aesthetic yet — try describing colors, textures, or a mood, like \"warm minimalist with oak and cream.\"";
+  "That doesn't sound like a room aesthetic yet. Try describing colors, textures, or a mood, like \"warm minimalist with oak and cream.\"";
 
 export interface VibeValidation {
   ok: boolean;
@@ -91,7 +91,7 @@ export interface VibeValidation {
 export function validateVibe(raw: string): VibeValidation {
   const text = raw.trim().toLowerCase();
   if (text.length < 3) return { ok: false, message: FAIL_MESSAGE };
-  // Reject a lone URL / code-looking blob — clearly not a described aesthetic.
+  // Reject a lone URL / code-looking blob, clearly not a described aesthetic.
   if (/^https?:\/\//.test(text) || /[<>{}]/.test(text)) {
     return { ok: false, message: FAIL_MESSAGE };
   }
@@ -108,12 +108,12 @@ export function validateVibe(raw: string): VibeValidation {
 }
 
 /** Soft, non-blocking guidance shown under the input as the user types. Never a
- *  hard gate — just nudges toward enough detail for good matches. */
+ *  hard gate, just nudges toward enough detail for good matches. */
 export function vibeHelper(raw: string): string {
   const len = raw.trim().length;
-  if (len === 0) return "A sentence or two works best — colors, textures, a mood.";
+  if (len === 0) return "A sentence or two works best, colors, textures, a mood.";
   if (len < 15) return "A little more detail gets better matches.";
-  return "Nice — that's plenty to work with.";
+  return "Nice, that's plenty to work with.";
 }
 
 // ---------------------------------------------------------------------------
@@ -123,7 +123,7 @@ export function vibeHelper(raw: string): string {
 // mapping is deterministic: pull descriptive tokens out of the vibe and prepend
 // them to a per-category base term. To upgrade, replace generateVibeQueries with
 // a single Claude call that returns { [category]: query } and keep this as the
-// fallback — the /api/vibe/generate route already treats the result as opaque.
+// fallback, the /api/vibe/generate route already treats the result as opaque.
 
 /** The 15 core categories a plan is built from (mirrors CATEGORY_ORDER in
  *  lib/catalog.ts; kept here so the pipeline has no client/secret dependency). */

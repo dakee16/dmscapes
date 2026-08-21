@@ -72,7 +72,7 @@ async function addRecharge(supabase: SupabaseClient, userId: string): Promise<bo
 }
 
 /** Grant à-la-carte Flex credits: +quantity to plan_credits_remaining, and flip
- *  a `free` account to `flex` — both atomic in the RPC. The session-id dedupe
+ *  a `free` account to `flex`, both atomic in the RPC. The session-id dedupe
  *  above stops a replay from double-adding. */
 async function addFlexCredits(
   supabase: SupabaseClient,

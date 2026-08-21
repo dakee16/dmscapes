@@ -95,7 +95,7 @@ const PLUS_WELCOME_KEY = "dormscape-plus-welcome-seen";
 
 // True when THIS tab loaded with auth tokens in its URL: the landing leg of a
 // Google OAuth redirect OR an email-confirmation / magic-link click. That marks
-// this as the tab where the login actually happened — as opposed to a background
+// this as the tab where the login actually happened, as opposed to a background
 // tab that only received the session via Supabase's cross-tab broadcast. Password
 // recovery is excluded (it lands on /reset-password and must not welcome).
 function detectUrlAuthLanding(): boolean {
@@ -178,7 +178,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [plusWelcomeOpen, setPlusWelcomeOpen] = useState(false);
   const [pendingPlusWelcome, setPendingPlusWelcome] = useState(false);
   // True when THIS tab loaded with auth tokens in its URL (OAuth return or email
-  // confirmation / magic-link landing) — the tab where the login truly happened.
+  // confirmation / magic-link landing), the tab where the login truly happened.
   // Consumed once by the login handler below.
   const urlLandingRef = useRef(INITIAL_URL_AUTH_LANDING);
 
@@ -198,11 +198,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       // → unlimited plans), and hides the credits indicator.
       //
       // But a row CAN be genuinely gone: if it was deleted from `profiles` while
-      // the auth.users row survived (manual cleanup — deleting a profile does not
+      // the auth.users row survived (manual cleanup, deleting a profile does not
       // cascade to auth.users), nothing recreates it, and that missing-profile
       // state is exactly what let those accounts bypass the design limit. So when
       // a read cleanly returns no row, we recreate a fresh FREE-tier profile
-      // (plan defaults 'free', free_plans_used 0) and re-read it — failing safe
+      // (plan defaults 'free', free_plans_used 0) and re-read it, failing safe
       // to the free cap, never to unrestricted access. RLS ("insert own") allows
       // the user to (re)create their own row; the upsert is race-safe.
       // select("*") so full_name/phone (migration 0007) come through when

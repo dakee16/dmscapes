@@ -104,6 +104,10 @@ const PRO_PERKS: { title: string; body: string }[] = [
     body: "Generate as many rooms as you want. No credits, no counters, no recharges, ever.",
   },
   {
+    title: "Create your own vibe",
+    body: "Skip the nine presets. Describe any aesthetic in your own words and we match real products to it, live. Pro only.",
+  },
+  {
     title: "Everything in Plus",
     body: "All 9 vibes, PDF and PNG export, side-by-side comparison, and priority school requests.",
   },

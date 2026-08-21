@@ -55,7 +55,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   },
   "custom-vibe": {
     title: "Create your own vibe with Pro",
-    body: "Describe any aesthetic in your own words and we'll live-match real products to it. Creating your own vibe is a Pro feature — Pro also includes every curated vibe and premium tool.",
+    body: "Describe any aesthetic in your own words and we'll live-match real products to it. Creating your own vibe is a Pro feature. Pro also includes every curated vibe and premium tool.",
   },
   generic: {
     title: "Do more with Dormscape Plus",

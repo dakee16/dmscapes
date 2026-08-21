@@ -22,7 +22,7 @@ const PIECES: {
   art: React.ReactNode;
 }[] = [
   {
-    // Minimalist — platform bed
+    // Minimalist, platform bed
     label: "minimalist",
     wall: "#f6f6f3",
     rotate: -6,
@@ -39,7 +39,7 @@ const PIECES: {
     ),
   },
   {
-    // Retro — mushroom lamp
+    // Retro, mushroom lamp
     label: "retro",
     wall: "#f6e6c4",
     rotate: 5,
@@ -55,7 +55,7 @@ const PIECES: {
     ),
   },
   {
-    // Boho — potted plant
+    // Boho, potted plant
     label: "boho",
     wall: "#f4eddd",
     rotate: -3,
@@ -71,7 +71,7 @@ const PIECES: {
     ),
   },
   {
-    // Academia — armchair
+    // Academia, armchair
     label: "academia",
     wall: "#f3e9d4",
     rotate: 6,
@@ -90,7 +90,7 @@ const PIECES: {
     ),
   },
   {
-    // Pastel — framed art
+    // Pastel, framed art
     label: "pastel",
     wall: "#ffeef6",
     rotate: -7,
@@ -107,7 +107,7 @@ const PIECES: {
     ),
   },
   {
-    // Gamer — monitor / battlestation
+    // Gamer, monitor / battlestation
     label: "gamer",
     wall: "#eceafb",
     rotate: 4,

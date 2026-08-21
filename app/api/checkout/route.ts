@@ -145,7 +145,7 @@ export async function POST(request: Request) {
       );
     }
     // Flex credits are for Free, Flex, and Plus. Pro is already unlimited, so
-    // selling it à-la-carte credits makes no sense — block it.
+    // selling it à-la-carte credits makes no sense, block it.
     if (type === "flex_credits" && plan === "pro") {
       return NextResponse.json(
         { error: "Pro already has unlimited plans, so no credits are needed.", alreadyOwned: true },

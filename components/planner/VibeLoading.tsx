@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { VIBE_LOADING_LINES } from "@/lib/custom-vibe";
 
 // Item 5: the large, premium loading state for a custom-vibe generation. A room
-// canvas builds itself on a loop — furniture pieces fade and settle into place
+// canvas builds itself on a loop, furniture pieces fade and settle into place
 // under the breathing Dormscape mark (echoing the real drag-to-arrange canvas)
-// — with big cycling narrative copy and a progress bar beneath. Full-bleed so it
+//, with big cycling narrative copy and a progress bar beneath. Full-bleed so it
 // fills the page rather than reading as a small centered spinner.
 
 const STROKE = "rgba(23, 23, 43, 0.35)";
@@ -15,11 +15,11 @@ const STROKE = "rgba(23, 23, 43, 0.35)";
 // stagger delay so they arrive one after another, then the loop resets. Zones are
 // laid out to NOT overlap, so the room reads as cleanly built, never colliding.
 const CANVAS_PIECES: { x: number; y: number; w: number; h: number; fill: string; delay: string }[] = [
-  { x: 20, y: 22, w: 84, h: 46, fill: "#6366f1", delay: "0s" }, // bed — top-left
-  { x: 140, y: 24, w: 64, h: 30, fill: "#10b981", delay: "0.45s" }, // desk — top-right
-  { x: 20, y: 110, w: 34, h: 40, fill: "#f59e0b", delay: "0.9s" }, // dresser — lower-left
-  { x: 86, y: 96, w: 72, h: 52, fill: "#ec4899", delay: "1.35s" }, // rug — center floor
-  { x: 182, y: 92, w: 30, h: 64, fill: "#a855f7", delay: "1.8s" }, // shelf — right wall
+  { x: 20, y: 22, w: 84, h: 46, fill: "#6366f1", delay: "0s" }, // bed, top-left
+  { x: 140, y: 24, w: 64, h: 30, fill: "#10b981", delay: "0.45s" }, // desk, top-right
+  { x: 20, y: 110, w: 34, h: 40, fill: "#f59e0b", delay: "0.9s" }, // dresser, lower-left
+  { x: 86, y: 96, w: 72, h: 52, fill: "#ec4899", delay: "1.35s" }, // rug, center floor
+  { x: 182, y: 92, w: 30, h: 64, fill: "#a855f7", delay: "1.8s" }, // shelf, right wall
 ];
 
 export default function VibeLoading() {
@@ -96,7 +96,7 @@ export default function VibeLoading() {
           <div className="vibe-progress-bar h-full w-1/3 rounded-full bg-cobalt" />
         </div>
         <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-soft">
-          Matching live products to your vibe — a little longer than a preset
+          Matching live products to your vibe, a little longer than a preset
         </p>
       </div>
     </div>

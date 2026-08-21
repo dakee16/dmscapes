@@ -29,6 +29,7 @@ const PERKS: Record<"plus" | "pro", string[]> = {
   ],
   pro: [
     "Unlimited plans + saves",
+    "Create your own vibe",
     "All 9 vibes",
     "PDF + PNG export",
     "Priority school requests",
@@ -201,6 +202,22 @@ function PlusUpsell() {
                 <p className="mt-1 text-sm leading-relaxed text-ink-soft">{m.body}</p>
               </div>
             ))}
+          </div>
+
+          {/* Pro-exclusive highlight: describe your own vibe. */}
+          <div className="relative mt-4 flex flex-col items-start gap-2 rounded-xl border border-cobalt/25 bg-cobalt/[0.05] px-4 py-3.5 sm:flex-row sm:items-center sm:gap-3">
+            <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-cobalt px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-white">
+              <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <rect x="5" y="11" width="14" height="9" rx="2" />
+                <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
+              </svg>
+              Pro only
+            </span>
+            <p className="text-sm leading-relaxed text-ink-soft">
+              <span className="font-semibold text-ink">Create your own vibe:</span> skip the
+              presets and describe any aesthetic in your own words. We live-match real
+              products to it.
+            </p>
           </div>
 
           <div className="relative mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">

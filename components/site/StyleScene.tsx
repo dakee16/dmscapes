@@ -375,7 +375,7 @@ function Pastel() {
   );
 }
 
-// "Create your own vibe" placeholder. Deliberately not a furnished room — an
+// "Create your own vibe" placeholder. Deliberately not a furnished room, an
 // empty, dashed room outline waiting to be filled, with a cobalt sparkle, so it
 // reads as "you author this one" rather than a preset look.
 function Custom() {

@@ -8,7 +8,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 // there's no margin space); transform/opacity-only; static under reduced motion.
 //
 // Homepage-only by request. If we ever want it on other long-scroll pages
-// (blog, pricing), lift it into the layout behind a per-route flag — a separate
+// (blog, pricing), lift it into the layout behind a per-route flag, a separate
 // follow-up, deliberately not done here.
 
 // The tick pattern: short horizontal ticks every 13px, a longer major tick every

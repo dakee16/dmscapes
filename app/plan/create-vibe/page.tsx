@@ -59,7 +59,7 @@ export default function CreateVibePage() {
   }, []);
 
   // Guards: need a room (Step 1), and Pro (Free/Flex/Plus get the upgrade modal
-  // and go back to the picker — this is the Pro-only enforcement for the page).
+  // and go back to the picker, this is the Pro-only enforcement for the page).
   useEffect(() => {
     if (!hydrated) return;
     if (!room) {
@@ -123,15 +123,28 @@ export default function CreateVibePage() {
 
   return (
     <section className="relative min-h-[calc(100vh-8.5rem)] overflow-hidden">
-      {/* Premium ground: a soft top wash + grid-paper band, both TOP-ANCHORED and
-          faded to transparent so they dissolve into the page's base background
-          instead of ending on a hard rectangular seam (mirrors SiteHeader). */}
+      {/* Premium ground: a subtle cobalt wash + grid paper, both TOP-ANCHORED and
+          faded to ZERO over a long distance so they dissolve into the base page
+          background with no seam. The fade lives on each layer itself: the grid
+          via a to-bottom alpha MASK, the tint via its own colour at alpha 0.
+          (Never the `transparent` keyword for a visible fade, it interpolates
+          through transparent-black and leaves a grey band, which was the seam.) */}
       <span
-        className="pointer-events-none absolute inset-x-0 top-0 h-[40rem]"
-        style={{ background: "linear-gradient(180deg, #e9edff 0%, #f2f0ff 46%, transparent 100%)" }}
+        className="pointer-events-none absolute inset-x-0 top-0 h-[46rem]"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(43,78,255,0.07) 0%, rgba(43,78,255,0.02) 40%, rgba(43,78,255,0) 100%)",
+        }}
         aria-hidden="true"
       />
-      <span className="grid-paper grid-paper-fade pointer-events-none absolute inset-x-0 top-0 h-[40rem] opacity-70" aria-hidden="true" />
+      <span
+        className="grid-paper pointer-events-none absolute inset-x-0 top-0 h-[46rem] opacity-50"
+        style={{
+          maskImage: "linear-gradient(to bottom, black 0%, black 24%, transparent 90%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 24%, transparent 90%)",
+        }}
+        aria-hidden="true"
+      />
 
       <div className="relative mx-auto max-w-5xl px-5 pb-24 pt-4 sm:px-8 sm:pt-8">
         <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
@@ -139,14 +152,14 @@ export default function CreateVibePage() {
         </p>
 
         <div className="mt-6 grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-          {/* LEFT — heading, description, input. */}
+          {/* LEFT, heading, description, input. */}
           <div>
             <h1 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
               Put your room <br className="hidden sm:block" />
               into <span className="hl">words.</span>
             </h1>
             <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-soft">
-              Colors, textures, a mood, a reference — whatever the room feels like in
+              Colors, textures, a mood, a reference, whatever the room feels like in
               your head. We&apos;ll match real products to it and lay them out to your{" "}
               {room.lengthFt} × {room.widthFt} ft room.
             </p>
@@ -229,7 +242,7 @@ export default function CreateVibePage() {
             </button>
           </div>
 
-          {/* RIGHT — inspiration chips, levitating with independent idle float. */}
+          {/* RIGHT, inspiration chips, levitating with independent idle float. */}
           <div className="relative">
             <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-soft">
               Need a starting point? Tap one.

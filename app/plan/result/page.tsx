@@ -184,7 +184,7 @@ export default function ResultPage() {
   const products = useMemo(() => {
     if (!style) return [];
     // Custom vibe: the pipeline already produced the products (not the catalog),
-    // so swaps/extras don't apply — render them straight through.
+    // so swaps/extras don't apply, render them straight through.
     if (style === "custom") return customProducts ?? [];
     const core = productsFor(style, tierForBudget(budget), room?.bedSize).map((p) => {
       const swapId = swaps[p.category];
@@ -354,7 +354,7 @@ export default function ResultPage() {
             </p>
             {customMock && (
               <p className="mt-2 max-w-xl text-[11px] leading-snug text-ink-soft/90">
-                Sample matches for now — live Amazon results switch on once
+                Sample matches for now. Live Amazon results switch on once
                 Product Advertising API access is enabled.
               </p>
             )}

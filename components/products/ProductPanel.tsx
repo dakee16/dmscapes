@@ -44,7 +44,7 @@ export default function ProductPanel({
   const activeCategory = hoveredCategory ?? selectedCategory;
 
   // Bring a tile into view only when the user *pins* a category (clicks a
-  // furniture piece on the canvas, or a tile here) — never on hover. Keying this
+  // furniture piece on the canvas, or a tile here), never on hover. Keying this
   // to hover (activeCategory) made the list jump on plain cursor movement, since
   // every mouseenter/leave changed the active category and re-ran scrollIntoView.
   const tileRefs = useRef(new Map<ProductCategory, HTMLDivElement | null>());

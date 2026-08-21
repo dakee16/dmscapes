@@ -1,4 +1,4 @@
-// Amazon Product Advertising API (PA-API 5.0) client — SERVER ONLY.
+// Amazon Product Advertising API (PA-API 5.0) client, SERVER ONLY.
 //
 // ⚠️ ACTIVATION REQUIRED. This talks to Amazon's *official* API (never scraping,
 // which violates Amazon's ToS and risks the affiliate account). It is NOT wired
@@ -189,9 +189,9 @@ export async function searchItems(opts: PaapiSearchOptions): Promise<PaapiItem[]
       };
       const type = j.__type ?? j.Errors?.[0]?.Code ?? "";
       const msg = j.message ?? j.Message ?? j.Errors?.[0]?.Message ?? "";
-      detail = [type, msg].filter(Boolean).join(" — ") || bodyText;
+      detail = [type, msg].filter(Boolean).join(", ") || bodyText;
     } catch {
-      /* non-JSON body — keep the raw text */
+      /* non-JSON body, keep the raw text */
     }
     throw new Error(`PA-API SearchItems HTTP ${res.status}: ${detail}`);
   }

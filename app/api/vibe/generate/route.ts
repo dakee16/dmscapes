@@ -9,7 +9,7 @@ import { CATALOG, tierForBudget, beddingFor } from "@/lib/catalog";
 import { paapiConfigured, paapiDiagnostics, searchItems } from "@/lib/paapi";
 import type { BedSize, BudgetTier, Product, ProductCategory } from "@/lib/types";
 
-// POST /api/vibe/generate — the "Create your own vibe" pipeline.
+// POST /api/vibe/generate, the "Create your own vibe" pipeline.
 //
 // Flow: validate → query-gen (deterministic v1, see lib/custom-vibe) → per-
 // category product search → quality + budget filter → return a Product[] the
@@ -39,7 +39,7 @@ const TIER_PRICE: Record<BudgetTier, { min: number; max: number }> = {
 
 /**
  * MOCK product set. Samples the curated catalog by budget tier so every match
- * is a real, buyable item (real image, price, ASIN, affiliate link) — but it is
+ * is a real, buyable item (real image, price, ASIN, affiliate link), but it is
  * NOT vibe-specific matching. Clearly flagged mock:true in the response. `seed`
  * rotates the pick so the one free regeneration returns a different set.
  */
@@ -80,7 +80,7 @@ function buildMock(tier: BudgetTier, seed: number, bedSize?: BedSize): Product[]
  * (PA-API's ~1 req/sec limit), quality-filtered on what PA-API actually returns:
  * a real image, a buyable price in tier range, and Prime. NOTE: PA-API 5.0 does
  * NOT return star ratings or review counts, so the rating/review thresholds used
- * for the curated catalog and the mock cannot be applied here — flagged for the
+ * for the curated catalog and the mock cannot be applied here, flagged for the
  * activation review. Never runs today (paapiConfigured() is false).
  */
 async function buildLive(
@@ -193,7 +193,7 @@ export async function POST(request: Request) {
     // so a truncated/whitespaced paste is obvious in the logs.
     const diag = paapiDiagnostics();
     console.log(
-      `[vibe] PA-API configured — accessKey ${diag?.accessKeyLen} chars, ` +
+      `[vibe] PA-API configured, accessKey ${diag?.accessKeyLen} chars, ` +
         `secret ${diag?.secretKeyLen} chars, partnerTag "${diag?.partnerTag}"` +
         (diag?.hadWhitespace ? " (trimmed stray whitespace on paste!)" : "")
     );
@@ -201,7 +201,7 @@ export async function POST(request: Request) {
     // matches are used as-is; any it couldn't fill are topped up from the curated
     // catalog so the room is still complete, but the result stays live-backed
     // (mock:false). The catalog only fully takes over when live returns NOTHING
-    // (a real failure — now logged per-category in buildLive above).
+    // (a real failure, now logged per-category in buildLive above).
     const live = await buildLive(queries, tier);
     if (live.length > 0) {
       products = fillMissingFromCatalog(live, tier, seed, bedSize);

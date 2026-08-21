@@ -17,7 +17,7 @@ export const RECHARGE_PRICE_USD = 4.99;
 export const RECHARGE_PRICE_CENTS = 499;
 
 /**
- * Flex à-la-carte plan credits: $1.99 each, bought in any quantity (minimum 1 —
+ * Flex à-la-carte plan credits: $1.99 each, bought in any quantity (minimum 1, 
  * each credit is meaningfully priced, so there's no pack floor). A `free` buyer
  * becomes `flex` on their first purchase; `flex` and `plus` buyers keep their
  * tier and just top up the shared plan_credits_remaining pool. Pro never buys.
@@ -152,7 +152,7 @@ export interface HeaderCreditState {
   /** Pro: unlimited designs, shown as ∞ with no count or CTA. */
   unlimited: boolean;
   designsLeft: number;
-  /** Out of designs — swap the count for the tier CTA. Never true for pro. */
+  /** Out of designs, swap the count for the tier CTA. Never true for pro. */
   empty: boolean;
   /** Plus specifically (drives the recharge vs buy messaging). */
   plus: boolean;

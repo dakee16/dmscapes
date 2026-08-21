@@ -9,7 +9,7 @@ import { COOKIE_CONSENT_KEY } from "@/components/site/CookieConsent";
  * screens. It slides up once the hero has scrolled away, so the primary action
  * is always one tap from the thumb without scrolling back to the header.
  *
- *  - lg:hidden — hidden at the desktop breakpoint where the header shows its own
+ *  - lg:hidden, hidden at the desktop breakpoint where the header shows its own
  *    "Plan my room" CTA, so it never duplicates it. On phone/tablet the header
  *    CTA lives in the collapsed overflow menu, which is exactly where a sticky
  *    bar earns its keep.

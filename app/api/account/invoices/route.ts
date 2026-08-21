@@ -11,7 +11,7 @@ export const runtime = "nodejs";
 /**
  * List the signed-in user's past purchases (Flex credit buys, Plus, Pro, and
  * Plus recharges) for the Billing page. Reads their stripe_customer_id from the
- * profile, then lists that customer's Stripe charges — each carries the amount,
+ * profile, then lists that customer's Stripe charges, each carries the amount,
  * status, a description, and a hosted receipt_url. Degrades to an empty list
  * (never an error page) when the account has no customer id yet or Stripe/DB
  * isn't configured, so a new account's Billing page just shows "no purchases".

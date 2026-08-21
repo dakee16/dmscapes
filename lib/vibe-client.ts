@@ -10,7 +10,7 @@ export interface GenerateVibeResult {
   products?: Product[];
   /** True when products are placeholder matches (PA-API not live yet). */
   mock?: boolean;
-  /** Present on failure — already warm and user-facing. */
+  /** Present on failure, already warm and user-facing. */
   error?: string;
 }
 

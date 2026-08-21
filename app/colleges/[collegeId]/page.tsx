@@ -8,7 +8,7 @@ import type { SchoolSummary } from "@/lib/types";
 
 // Rooms with a *published* size. Estimated dims are populated too
 // (build-schools-index.mjs), so both the SEO description and the on-page copy
-// must exclude them — otherwise a fully-estimated school claims "real
+// must exclude them, otherwise a fully-estimated school claims "real
 // dimensions" it doesn't actually have.
 const publishedDimsCount = (s: SchoolSummary) =>
   s.dorms.reduce(
