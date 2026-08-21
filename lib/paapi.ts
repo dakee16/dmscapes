@@ -27,16 +27,44 @@ export interface PaapiCreds {
   partnerTag: string;
 }
 
-/** Present only when all three PA-API env vars are set. */
+/** Present only when all three PA-API env vars are set. Values are trimmed:
+ *  a stray newline/space pasted into .env.local corrupts the SigV4 signature
+ *  (or the access key) and yields Amazon's opaque "invalid token" error. */
 export function paapiCreds(): PaapiCreds | null {
-  const accessKey = process.env.AMAZON_PAAPI_ACCESS_KEY;
-  const secretKey = process.env.AMAZON_PAAPI_SECRET_KEY;
-  const partnerTag = process.env.AMAZON_PARTNER_TAG;
+  const accessKey = process.env.AMAZON_PAAPI_ACCESS_KEY?.trim();
+  const secretKey = process.env.AMAZON_PAAPI_SECRET_KEY?.trim();
+  const partnerTag = process.env.AMAZON_PARTNER_TAG?.trim();
   if (!accessKey || !secretKey || !partnerTag) return null;
   return { accessKey, secretKey, partnerTag };
 }
 
 export const paapiConfigured = (): boolean => paapiCreds() !== null;
+
+/** Non-secret shape for a one-time diagnostic log (lengths only, plus the
+ *  public partner tag). PA-API access keys are 20 chars and secrets 40; a length
+ *  that's off points straight at a truncated/whitespaced paste. Also flags when
+ *  trimming actually changed a value (i.e. there WAS stray whitespace). */
+export function paapiDiagnostics(): {
+  accessKeyLen: number;
+  secretKeyLen: number;
+  partnerTag: string;
+  hadWhitespace: boolean;
+} | null {
+  const rawAccess = process.env.AMAZON_PAAPI_ACCESS_KEY;
+  const rawSecret = process.env.AMAZON_PAAPI_SECRET_KEY;
+  const rawTag = process.env.AMAZON_PARTNER_TAG;
+  const creds = paapiCreds();
+  if (!creds) return null;
+  return {
+    accessKeyLen: creds.accessKey.length,
+    secretKeyLen: creds.secretKey.length,
+    partnerTag: creds.partnerTag,
+    hadWhitespace:
+      rawAccess !== creds.accessKey ||
+      rawSecret !== creds.secretKey ||
+      rawTag !== creds.partnerTag,
+  };
+}
 
 /** A single normalized PA-API result (the subset the pipeline needs). */
 export interface PaapiItem {
@@ -146,7 +174,26 @@ export async function searchItems(opts: PaapiSearchOptions): Promise<PaapiItem[]
   });
 
   if (!res.ok) {
-    throw new Error(`PA-API SearchItems ${res.status}: ${await res.text().catch(() => "")}`);
+    const bodyText = await res.text().catch(() => "");
+    // PA-API returns a typed JSON error. Surface __type/Code + message so the
+    // real cause is legible (UnrecognizedClientException = bad/expired/wrong key
+    // or a truncated paste; InvalidSignature = a signing bug; a partner-tag
+    // mismatch has its own message) instead of an opaque "invalid token".
+    let detail = bodyText;
+    try {
+      const j = JSON.parse(bodyText) as {
+        __type?: string;
+        message?: string;
+        Message?: string;
+        Errors?: { Code?: string; Message?: string }[];
+      };
+      const type = j.__type ?? j.Errors?.[0]?.Code ?? "";
+      const msg = j.message ?? j.Message ?? j.Errors?.[0]?.Message ?? "";
+      detail = [type, msg].filter(Boolean).join(" — ") || bodyText;
+    } catch {
+      /* non-JSON body — keep the raw text */
+    }
+    throw new Error(`PA-API SearchItems HTTP ${res.status}: ${detail}`);
   }
   const data = (await res.json()) as PaapiSearchResponse;
   const items = data.SearchResult?.Items ?? [];

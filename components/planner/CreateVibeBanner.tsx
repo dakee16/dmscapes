@@ -125,14 +125,9 @@ const PIECES: {
   },
 ];
 
-export default function CreateVibeBanner({
-  locked = false,
-  onSelect,
-}: {
-  /** True for a non-Pro user: badged; clicking opens the upgrade modal (caller). */
-  locked?: boolean;
-  onSelect: () => void;
-}) {
+// The Pro badge always shows; gating happens in the caller's onSelect (a non-Pro
+// click opens the upgrade modal), so the banner itself needs no locked variant.
+export default function CreateVibeBanner({ onSelect }: { onSelect: () => void }) {
   return (
     <button
       type="button"
@@ -145,39 +140,28 @@ export default function CreateVibeBanner({
         style={{ background: "linear-gradient(105deg, #f4f6ff 0%, #ffffff 46%, #eef1ff 100%)" }}
         aria-hidden="true"
       />
-      <span className="grid-paper-fade pointer-events-none absolute inset-0 opacity-70" aria-hidden="true" />
+      <span className="grid-paper grid-paper-fade pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
 
-      <span className="relative flex flex-col items-start gap-4 p-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-6">
-        {/* Left: the pitch. */}
-        <span className="flex flex-col">
-          <span className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 rounded-full bg-highlight px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink shadow-sm">
-              <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                <rect x="5" y="11" width="14" height="9" rx="2" />
-                <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
-              </svg>
-              Pro
-            </span>
-            <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-cobalt">
-              Beyond the nine
-            </span>
+      <span className="relative flex flex-col gap-4 p-5 sm:p-6">
+        {/* Single heading line at the top: Pro badge + heading + go affordance. */}
+        <span className="flex items-center gap-2.5">
+          <span className="inline-flex items-center gap-1 rounded-full bg-highlight px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink shadow-sm">
+            <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+              <rect x="5" y="11" width="14" height="9" rx="2" />
+              <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
+            </svg>
+            Pro
           </span>
-          <span className="mt-2 font-display text-xl font-extrabold tracking-tight text-ink sm:text-2xl">
+          <span className="font-display text-lg font-extrabold tracking-tight text-ink sm:text-xl">
             Create your own vibe
           </span>
-          <span className="mt-1 max-w-sm text-sm leading-relaxed text-ink-soft">
-            Describe any aesthetic in your own words — we match real products to it, live.
-          </span>
-          <span className="mt-3 inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-ink transition-colors group-hover:text-cobalt">
-            Start with words
-            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg>
-          </span>
+          <svg viewBox="0 0 24 24" className="ml-auto h-4 w-4 shrink-0 text-ink-soft transition-all group-hover:translate-x-0.5 group-hover:text-cobalt" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg>
         </span>
 
-        {/* Right: floating sampler of pieces from across the vibes. */}
-        <span className="relative flex h-24 shrink-0 items-end gap-2 self-stretch pr-1 sm:h-28 sm:gap-3" aria-hidden="true">
+        {/* Furniture sampler drawn from across the vibes, full width below. */}
+        <span className="relative flex flex-wrap items-end gap-2.5 sm:gap-3" aria-hidden="true">
           {PIECES.map((p) => (
             <span
               key={p.label}
@@ -199,14 +183,6 @@ export default function CreateVibeBanner({
           ))}
         </span>
       </span>
-
-      {/* Keep the affordance honest for non-Pro: a subtle "Pro only" corner cue on
-          top of the always-visible badge above. */}
-      {locked && (
-        <span className="pointer-events-none absolute right-4 top-4 hidden rounded-full border border-ink/10 bg-white/80 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink-soft backdrop-blur-sm sm:block">
-          Pro only
-        </span>
-      )}
     </button>
   );
 }

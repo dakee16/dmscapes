@@ -6,7 +6,7 @@ import {
   CORE_VIBE_CATEGORIES,
 } from "@/lib/custom-vibe";
 import { CATALOG, tierForBudget, beddingFor } from "@/lib/catalog";
-import { paapiConfigured, searchItems } from "@/lib/paapi";
+import { paapiConfigured, paapiDiagnostics, searchItems } from "@/lib/paapi";
 import type { BedSize, BudgetTier, Product, ProductCategory } from "@/lib/types";
 
 // POST /api/vibe/generate — the "Create your own vibe" pipeline.
@@ -189,6 +189,14 @@ export async function POST(request: Request) {
   let products: Product[];
   let mock: boolean;
   if (paapiConfigured()) {
+    // One-time, non-secret diagnostic: cred lengths + the public partner tag,
+    // so a truncated/whitespaced paste is obvious in the logs.
+    const diag = paapiDiagnostics();
+    console.log(
+      `[vibe] PA-API configured — accessKey ${diag?.accessKeyLen} chars, ` +
+        `secret ${diag?.secretKeyLen} chars, partnerTag "${diag?.partnerTag}"` +
+        (diag?.hadWhitespace ? " (trimmed stray whitespace on paste!)" : "")
+    );
     // Credentials present -> LIVE is authoritative. Whatever categories PA-API
     // matches are used as-is; any it couldn't fill are topped up from the curated
     // catalog so the room is still complete, but the result stays live-backed

@@ -12,13 +12,14 @@ import { VIBE_LOADING_LINES } from "@/lib/custom-vibe";
 const STROKE = "rgba(23, 23, 43, 0.35)";
 
 // Furniture that snaps into the loading room, in placement order. Each carries a
-// stagger delay so they arrive one after another, then the loop resets.
+// stagger delay so they arrive one after another, then the loop resets. Zones are
+// laid out to NOT overlap, so the room reads as cleanly built, never colliding.
 const CANVAS_PIECES: { x: number; y: number; w: number; h: number; fill: string; delay: string }[] = [
-  { x: 26, y: 128, w: 78, h: 40, fill: "#6366f1", delay: "0s" }, // bed
-  { x: 150, y: 40, w: 60, h: 30, fill: "#10b981", delay: "0.45s" }, // desk
-  { x: 96, y: 96, w: 70, h: 46, fill: "#ec4899", delay: "0.9s" }, // rug
-  { x: 30, y: 44, w: 30, h: 26, fill: "#f59e0b", delay: "1.35s" }, // dresser
-  { x: 176, y: 120, w: 30, h: 44, fill: "#a855f7", delay: "1.8s" }, // shelf
+  { x: 20, y: 22, w: 84, h: 46, fill: "#6366f1", delay: "0s" }, // bed — top-left
+  { x: 140, y: 24, w: 64, h: 30, fill: "#10b981", delay: "0.45s" }, // desk — top-right
+  { x: 20, y: 110, w: 34, h: 40, fill: "#f59e0b", delay: "0.9s" }, // dresser — lower-left
+  { x: 86, y: 96, w: 72, h: 52, fill: "#ec4899", delay: "1.35s" }, // rug — center floor
+  { x: 182, y: 92, w: 30, h: 64, fill: "#a855f7", delay: "1.8s" }, // shelf — right wall
 ];
 
 export default function VibeLoading() {

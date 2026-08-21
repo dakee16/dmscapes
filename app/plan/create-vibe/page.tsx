@@ -8,6 +8,7 @@ import { useUpgrade } from "@/lib/upgrade-context";
 import { isPro, isPlanMetered } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
 import { generateVibe } from "@/lib/vibe-client";
+import { tierForBudget } from "@/lib/catalog";
 import { track } from "@/lib/analytics";
 import {
   validateVibe,
@@ -24,6 +25,7 @@ import VibeLoading from "@/components/planner/VibeLoading";
 // chip tap-to-fill); this is a visual/layout upgrade. Loads the large loading
 // state (VibeLoading) during generation.
 const MIN_LOADING_MS = 2400;
+const TIER_LABELS = { budget: "Essentials", mid: "Upgraded", premium: "Premium" } as const;
 
 // Per-chip float + depth so the set levitates independently (no synced bob).
 // The horizontal offset (mlClass) is desktop-only, so chips stack flush on mobile.
@@ -38,6 +40,7 @@ export default function CreateVibePage() {
   const router = useRouter();
   const room = usePlannerStore((s) => s.room);
   const budget = usePlannerStore((s) => s.budget);
+  const setBudget = usePlannerStore((s) => s.setBudget);
   const setCustomResult = usePlannerStore((s) => s.setCustomResult);
   const { profile, refreshProfile, loading: authLoading } = useAuth();
   const { openUpgrade } = useUpgrade();
@@ -120,13 +123,15 @@ export default function CreateVibePage() {
 
   return (
     <section className="relative min-h-[calc(100vh-8.5rem)] overflow-hidden">
-      {/* Premium ground: soft diagonal gradient + faded grid paper. */}
+      {/* Premium ground: a soft top wash + grid-paper band, both TOP-ANCHORED and
+          faded to transparent so they dissolve into the page's base background
+          instead of ending on a hard rectangular seam (mirrors SiteHeader). */}
       <span
-        className="pointer-events-none absolute inset-0"
-        style={{ background: "linear-gradient(155deg, #eef1ff 0%, #ffffff 50%, #f5f0ff 100%)" }}
+        className="pointer-events-none absolute inset-x-0 top-0 h-[40rem]"
+        style={{ background: "linear-gradient(180deg, #e9edff 0%, #f2f0ff 46%, transparent 100%)" }}
         aria-hidden="true"
       />
-      <span className="grid-paper-fade pointer-events-none absolute inset-0 opacity-70" aria-hidden="true" />
+      <span className="grid-paper grid-paper-fade pointer-events-none absolute inset-x-0 top-0 h-[40rem] opacity-70" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-5xl px-5 pb-24 pt-4 sm:px-8 sm:pt-8">
         <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
@@ -180,6 +185,39 @@ export default function CreateVibePage() {
                 {apiError}
               </p>
             )}
+
+            {/* Budget (item 2): the standard slider, so budget is always captured
+                for a custom vibe just like the curated vibes. */}
+            <div className="mt-6 rounded-2xl border border-ink/10 bg-white/90 p-4 shadow-[0_18px_44px_-30px_rgba(23,23,43,0.5)] backdrop-blur-sm">
+              <div className="flex flex-wrap items-baseline justify-between gap-2">
+                <label htmlFor="vibe-budget" className="font-display text-base font-bold tracking-tight">
+                  Your budget
+                </label>
+                <div className="flex items-baseline gap-2">
+                  <span className="rounded-full bg-highlight/50 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
+                    {TIER_LABELS[tierForBudget(budget)]}
+                  </span>
+                  <output htmlFor="vibe-budget" className="font-mono text-2xl font-semibold text-ink">
+                    ${budget}
+                  </output>
+                </div>
+              </div>
+              <input
+                id="vibe-budget"
+                type="range"
+                min={200}
+                max={1500}
+                step={50}
+                value={budget}
+                onChange={(e) => setBudget(Number(e.target.value))}
+                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full bg-ink/10 accent-cobalt"
+                aria-valuetext={`$${budget}`}
+              />
+              <div className="mt-1.5 flex justify-between font-mono text-xs text-ink-soft">
+                <span>$200</span>
+                <span>$1,500</span>
+              </div>
+            </div>
 
             <button
               type="button"
