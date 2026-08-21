@@ -5,25 +5,30 @@ import type { PlanTier } from "@/lib/auth-context";
  * is always free and unlimited for any signed-in account, so there is no save
  * counter. Prices are all one-time (no subscriptions).
  *   Free     1 lifetime room plan (then upgrade); saving is unlimited
- *   Plus     $7.99  -> 5 plan credits, all vibes, all features permanently.
- *                      Recharge $4.99 adds 5 more plan credits.
- *   Pro      $19.99 -> unlimited plans, all vibes/features.
+ *   Plus     $4.99  -> 5 plan credits, all vibes, all features permanently.
+ *                      Recharge $2.99 adds 5 more plan credits.
+ *   Pro      $14.99 -> unlimited plans, all vibes/features.
+ *
+ * Launch-deal pricing: the _WAS_ constants are the pre-deal prices, shown struck
+ * through beside the current price on the pricing page.
  */
-export const PLUS_PRICE_USD = 7.99;
-export const PLUS_PRICE_CENTS = 799;
-export const PRO_PRICE_USD = 19.99;
-export const PRO_PRICE_CENTS = 1999;
-export const RECHARGE_PRICE_USD = 4.99;
-export const RECHARGE_PRICE_CENTS = 499;
+export const PLUS_PRICE_USD = 4.99;
+export const PLUS_PRICE_CENTS = 499;
+export const PLUS_PRICE_WAS_USD = 7.99;
+export const PRO_PRICE_USD = 14.99;
+export const PRO_PRICE_CENTS = 1499;
+export const PRO_PRICE_WAS_USD = 19.99;
+export const RECHARGE_PRICE_USD = 2.99;
+export const RECHARGE_PRICE_CENTS = 299;
 
 /**
- * Flex à-la-carte plan credits: $1.99 each, bought in any quantity (minimum 1 —
+ * Flex à-la-carte plan credits: $0.99 each, bought in any quantity (minimum 1 —
  * each credit is meaningfully priced, so there's no pack floor). A `free` buyer
  * becomes `flex` on their first purchase; `flex` and `plus` buyers keep their
  * tier and just top up the shared plan_credits_remaining pool. Pro never buys.
  */
-export const FLEX_CREDIT_PRICE_USD = 1.99;
-export const FLEX_CREDIT_PRICE_CENTS = 199;
+export const FLEX_CREDIT_PRICE_USD = 0.99;
+export const FLEX_CREDIT_PRICE_CENTS = 99;
 export const FLEX_MIN_QTY = 1;
 export const FLEX_MAX_QTY = 100;
 export const FLEX_DEFAULT_QTY = 3;

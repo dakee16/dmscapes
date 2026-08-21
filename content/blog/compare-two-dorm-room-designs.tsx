@@ -89,8 +89,8 @@ function Body() {
         saved designs with their budgets, styles, school, room, and dimensions
         side by side, so you&rsquo;re reading the same rows for both rooms at
         once. It&rsquo;s one of the premium tools in{" "}
-        <TextLink href="/pricing">Dormscape Plus</TextLink> (a one-time $7.99
-        upgrade that also includes 5 plan credits and 5 saves) and Pro ($19.99
+        <TextLink href="/pricing">Dormscape Plus</TextLink> (a one-time $4.99
+        upgrade that also includes 5 plan credits and 5 saves) and Pro ($14.99
         for unlimited). The comparison view itself is the paid part, and since it
         lines up two saved designs, the 5 saves in Plus are what make it practical.
         If you&rsquo;re deciding whether that&rsquo;s worth it, we broke it down
@@ -152,7 +152,7 @@ const post: BlogPost = {
     },
     {
       q: "Can I compare two dorm rooms side by side in Dormscape?",
-      a: "Yes. Dormscape has a side-by-side comparison view that lines up two saved designs with their budgets, styles, school, room, and dimensions. The comparison view is a premium tool, part of Dormscape Plus (a one-time $7.99 upgrade, which also includes 5 plan credits and 5 saves) and Pro ($19.99 for unlimited).",
+      a: "Yes. Dormscape has a side-by-side comparison view that lines up two saved designs with their budgets, styles, school, room, and dimensions. The comparison view is a premium tool, part of Dormscape Plus (a one-time $4.99 upgrade, which also includes 5 plan credits and 5 saves) and Pro ($14.99 for unlimited).",
     },
     {
       q: "What should I compare first when choosing between two rooms?",

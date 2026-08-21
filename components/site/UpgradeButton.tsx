@@ -63,7 +63,7 @@ export default function UpgradeButton({
     setError(res.error);
   }
 
-  const defaultLabel = type === "pro" ? "Go Pro for $19.99" : "Get Plus for $7.99";
+  const defaultLabel = type === "pro" ? "Go Pro for $14.99" : "Get Plus for $4.99";
 
   return (
     <div>

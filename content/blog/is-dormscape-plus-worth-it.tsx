@@ -5,10 +5,10 @@ function Body() {
   return (
     <>
       <Lead>
-        Dormscape Plus is a one-time $7.99 upgrade, not a subscription. It unlocks
+        Dormscape Plus is a one-time $4.99 upgrade, not a subscription. It unlocks
         all nine vibes and every premium tool (PDF and PNG export, the
         side-by-side comparison view, and priority school requests), and hands you
-        five plan credits and five saves as two separate counters. Pro is $19.99
+        five plan credits and five saves as two separate counters. Pro is $14.99
         once and drops the counters entirely: unlimited plans and saves,
         everything unlocked, forever. Whether either is worth it comes down to how
         many rooms you&rsquo;re planning and whether you want the locked vibes and
@@ -84,7 +84,7 @@ function Body() {
         generate a brand-new room plan, and a save credit is spent each time you
         save a design. Plus starts you with five of each, and they run down
         independently, you might have zero plans left but three saves, or the
-        other way around. When either runs low, a single $4.99 recharge refills
+        other way around. When either runs low, a single $2.99 recharge refills
         both at once, as many times as you want. Two things stay true no matter
         what: everything you&rsquo;ve already saved, exported, or compared keeps
         working even at zero credits, and the four features above never re-lock
@@ -93,7 +93,7 @@ function Body() {
 
       <H2>When Pro makes sense</H2>
       <P>
-        Pro is $19.99 once and removes the credit system entirely: unlimited room
+        Pro is $14.99 once and removes the credit system entirely: unlimited room
         plans and unlimited saves, every vibe, every feature, nothing to recharge
         and no counter to watch.{" "}
         <strong>Worth it if</strong>{" "}you expect to plan more than a couple of
@@ -114,7 +114,7 @@ function Body() {
 
       <H2>The math</H2>
       <P>
-        Plus is $7.99 once, recharges are $4.99 each, and Pro is $19.99 once. No
+        Plus is $4.99 once, recharges are $2.99 each, and Pro is $14.99 once. No
         renewals, no card kept on file after, no trial that quietly turns into a
         charge. See the full split on the{" "}
         <TextLink href="/pricing">pricing page</TextLink>.
@@ -143,7 +143,7 @@ const post: BlogPost = {
   title: "Is Dormscape Plus worth it? Here's what you actually get",
   metaTitle: "Is Dormscape Plus Worth It? An Honest Breakdown",
   description:
-    "An honest look at Dormscape Plus ($7.99 once: all vibes, PDF and PNG export, comparison, priority, and 5 plan credits plus 5 saves) and Pro ($19.99 for unlimited), plus who should stay on the free planner.",
+    "An honest look at Dormscape Plus ($4.99 once: all vibes, PDF and PNG export, comparison, priority, and 5 plan credits plus 5 saves) and Pro ($14.99 for unlimited), plus who should stay on the free planner.",
   excerpt:
     "A specific, non-salesy breakdown of what Plus and Pro unlock, how the plan and save credits work, and who each tier actually helps, including the people who should stay free.",
   date: "2026-07-28",
@@ -152,11 +152,11 @@ const post: BlogPost = {
   faqs: [
     {
       q: "How much is Dormscape Plus?",
-      a: "Dormscape Plus is a one-time $7.99 payment, not a subscription. It grants 5 plan credits and 5 saves (two separate counters), unlocks all nine vibes, and unlocks every premium feature permanently. If either counter runs out you can recharge for $4.99, which refills both, as often as you like. Pro is a one-time $19.99 for unlimited plans and saves with everything unlocked.",
+      a: "Dormscape Plus is a one-time $4.99 payment, not a subscription. It grants 5 plan credits and 5 saves (two separate counters), unlocks all nine vibes, and unlocks every premium feature permanently. If either counter runs out you can recharge for $2.99, which refills both, as often as you like. Pro is a one-time $14.99 for unlimited plans and saves with everything unlocked.",
     },
     {
       q: "What does Dormscape Plus include?",
-      a: "Plus unlocks all nine vibes (adding Academia, Y2K Cyber, Gamer, Team Spirit, Retro, and Pastel), PDF and PNG export, the side-by-side comparison view, and priority handling on add-my-school requests. It also comes with 5 plan credits and 5 saves, tracked separately: one plan credit per new room plan, one save credit per saved design. A $4.99 recharge tops up both whenever you run low, and the premium features stay unlocked even at zero credits.",
+      a: "Plus unlocks all nine vibes (adding Academia, Y2K Cyber, Gamer, Team Spirit, Retro, and Pastel), PDF and PNG export, the side-by-side comparison view, and priority handling on add-my-school requests. It also comes with 5 plan credits and 5 saves, tracked separately: one plan credit per new room plan, one save credit per saved design. A $2.99 recharge tops up both whenever you run low, and the premium features stay unlocked even at zero credits.",
     },
     {
       q: "Is the Dormscape planner still free?",
@@ -164,7 +164,7 @@ const post: BlogPost = {
     },
     {
       q: "What is the difference between Plus and Pro?",
-      a: "Plus is $7.99 and uses two credit counters: it starts you with 5 plan credits and 5 saves, and a $4.99 recharge refills both when they run out. Pro is $19.99 and has no counters at all, meaning unlimited plans and unlimited saves. Both unlock all nine vibes and every premium feature. Pro is the better value if you plan many rooms; Plus with the occasional recharge is cheaper for a few.",
+      a: "Plus is $4.99 and uses two credit counters: it starts you with 5 plan credits and 5 saves, and a $2.99 recharge refills both when they run out. Pro is $14.99 and has no counters at all, meaning unlimited plans and unlimited saves. Both unlock all nine vibes and every premium feature. Pro is the better value if you plan many rooms; Plus with the occasional recharge is cheaper for a few.",
     },
   ],
   Body,

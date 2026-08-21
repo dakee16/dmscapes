@@ -13,8 +13,8 @@ import BuyCreditsForm from "@/components/site/BuyCreditsForm";
 //
 // Pro shows a static ∞. Free, Flex, and Plus show a live "Designs · N" count
 // that doubles as a button: clicking it opens a small popover to buy à-la-carte
-// $1.99 credits (quantity + live price). When the count hits zero the chip turns
-// into a cobalt "Buy credits" call to action. Plus keeps its 5-for-$4.99
+// $0.99 credits (quantity + live price). When the count hits zero the chip turns
+// into a cobalt "Buy credits" call to action. Plus keeps its 5-for-$2.99
 // recharge as a secondary option inside the popover.
 export default function HeaderCredits() {
   const { user, profile } = useAuth();

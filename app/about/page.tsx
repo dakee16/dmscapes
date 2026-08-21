@@ -233,7 +233,7 @@ export default function AboutPage() {
               <Link href="/pricing" className={TEXT_LINK}>
                 Plus and Pro
               </Link>{" "}
-              are optional one-time upgrades ($7.99 and $19.99) for extras like
+              are optional one-time upgrades ($4.99 and $14.99) for extras like
               all nine vibes, PDF and PNG export, and the comparison view, but
               nothing in the free planner is locked behind them.
             </p>

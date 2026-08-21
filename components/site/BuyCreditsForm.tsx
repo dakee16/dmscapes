@@ -13,7 +13,7 @@ import {
 } from "@/lib/plan";
 
 // The à-la-carte Flex-credit purchase control: a quantity stepper, a live
-// price (quantity × $1.99), and a "Buy credits" button that opens Stripe
+// price (quantity × $0.99), and a "Buy credits" button that opens Stripe
 // Checkout. Shared by the header buy-popover, the Billing page, and the
 // Upgrade modal's out-of-credits state, so the buy flow is identical everywhere.
 //
@@ -101,7 +101,7 @@ export default function BuyCreditsForm({
             +
           </button>
         </div>
-        {/* Price: "N x $1.99" on top, the running total large below, right-aligned
+        {/* Price: "N x $0.99" on top, the running total large below, right-aligned
             so the stepper and the number never crowd each other. */}
         <div className="text-right leading-tight">
           <p className="whitespace-nowrap font-mono text-xs text-ink-soft">
@@ -124,8 +124,8 @@ export default function BuyCreditsForm({
 
       <p className="mt-2.5 text-[13px] leading-snug text-ink-soft">
         {tier === "free"
-          ? "$1.99 each. Your first purchase moves you to the Flex tier: same free features, plus the credits you buy."
-          : "$1.99 each, added to your existing credits. One-time payment, no subscription."}
+          ? "$0.99 each. Your first purchase moves you to the Flex tier: same free features, plus the credits you buy."
+          : "$0.99 each, added to your existing credits. One-time payment, no subscription."}
       </p>
 
       {error && (

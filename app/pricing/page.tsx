@@ -7,7 +7,9 @@ import UpgradeButton from "@/components/site/UpgradeButton";
 import { SCHOOLS } from "@/lib/schools";
 import {
   PLUS_PRICE_USD,
+  PLUS_PRICE_WAS_USD,
   PRO_PRICE_USD,
+  PRO_PRICE_WAS_USD,
   RECHARGE_PRICE_USD,
   FLEX_CREDIT_PRICE_USD,
 } from "@/lib/plan";
@@ -23,7 +25,7 @@ const ROOM_LAYOUTS = SCHOOLS.reduce(
 const ROOM_LAYOUTS_FLOOR = Math.floor(ROOM_LAYOUTS / 100) * 100;
 
 const DESCRIPTION =
-  "The Dormscape planner is free to try: 1 room plan, and saving your designs is always free. Plus is a one-time $7.99 unlock (5 plan credits, all vibes, all features, recharge for $4.99). Pro is $19.99 for unlimited plans.";
+  "The Dormscape planner is free to try: 1 room plan, and saving your designs is always free. Plus is a one-time $4.99 unlock (5 plan credits, all vibes, all features, recharge for $2.99). Pro is $14.99 for unlimited plans.";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -77,7 +79,7 @@ const FREE_PERKS: React.ReactNode[] = [
 const PLUS_PERKS: { title: string; body: string }[] = [
   {
     title: "5 plan credits",
-    body: "One plan credit per new room you generate. Recharge 5 more for $4.99 whenever you run low. Saving your designs is always free.",
+    body: "One plan credit per new room you generate. Recharge 5 more for $2.99 whenever you run low. Saving your designs is always free.",
   },
   {
     title: "All 9 vibes",
@@ -417,7 +419,7 @@ export default function PricingPage() {
               </div>
             </section>
 
-            {/* PLUS TIER: the recommended paid tier. One-time $7.99, cobalt
+            {/* PLUS TIER: the recommended paid tier. One-time $4.99, cobalt
                 border + "Most popular" ribbon to stand out without diminishing
                 Free. */}
             <section className="relative flex h-full flex-col rounded-2xl border-2 border-cobalt bg-card p-6 shadow-[0_24px_60px_-30px_rgba(43,78,255,0.55)] sm:p-8">
@@ -433,7 +435,10 @@ export default function PricingPage() {
                 </span>
               </div>
 
-              <div className="mt-5 flex items-baseline gap-2">
+              <div className="mt-5 flex items-baseline gap-2.5">
+                <span className="font-display text-2xl font-semibold text-ink-soft/55 line-through decoration-ink-soft/50 decoration-2">
+                  ${PLUS_PRICE_WAS_USD.toFixed(2)}
+                </span>
                 <span className="font-display text-5xl font-extrabold tracking-tight">
                   ${PLUS_PRICE_USD.toFixed(2)}
                 </span>
@@ -483,7 +488,10 @@ export default function PricingPage() {
                 </span>
               </div>
 
-              <div className="mt-5 flex items-baseline gap-2">
+              <div className="mt-5 flex items-baseline gap-2.5">
+                <span className="font-display text-2xl font-semibold text-ink-soft/55 line-through decoration-ink-soft/50 decoration-2">
+                  ${PRO_PRICE_WAS_USD.toFixed(2)}
+                </span>
                 <span className="font-display text-5xl font-extrabold tracking-tight">
                   ${PRO_PRICE_USD.toFixed(2)}
                 </span>

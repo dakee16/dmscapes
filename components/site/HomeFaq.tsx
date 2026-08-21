@@ -35,9 +35,9 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     a: (
       <>
         Free lets you try it with 1 room plan you can save, plus 3 vibes and
-        share links. Plus ($7.99 once) unlocks all 9 vibes, PDF and PNG export,
+        share links. Plus ($4.99 once) unlocks all 9 vibes, PDF and PNG export,
         side-by-side comparison, and priority school requests, and gives you 5
-        plan credits (recharge 5 more for $4.99). Pro ($19.99 once) is that same
+        plan credits (recharge 5 more for $2.99). Pro ($14.99 once) is that same
         unlock with unlimited plans. Saving your designs is always free. See the
         full split on the{" "}
         <Link
@@ -79,7 +79,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
         Plans and saves are metered separately, so only the one you&rsquo;ve used
         up pauses. Say you&rsquo;re out of plan credits but still have saves, you
         can keep saving, and vice versa. Everything you&rsquo;ve already made
-        keeps working, exports and comparison included. A $4.99 recharge refills
+        keeps working, exports and comparison included. A $2.99 recharge refills
         both counters, or go Pro for unlimited.
       </>
     ),

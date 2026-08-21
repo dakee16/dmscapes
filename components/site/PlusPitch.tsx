@@ -211,7 +211,7 @@ function PlusUpsell() {
               See plans
             </Link>
             <span className="font-mono text-xs uppercase tracking-wide text-ink-soft">
-              $7.99 for Plus · $19.99 for Pro · one time
+              $4.99 for Plus · $14.99 for Pro · one time
             </span>
           </div>
         </div>

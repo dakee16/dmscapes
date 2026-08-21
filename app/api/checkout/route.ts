@@ -54,7 +54,7 @@ const CFG: Record<
 
 /**
  * Start a one-time Stripe Checkout session for one of the three purchases:
- * Plus ($7.99), Pro ($19.99), or a Plus credit recharge ($4.99). The profile is
+ * Plus ($4.99), Pro ($14.99), or a Plus credit recharge ($2.99). The profile is
  * only ever changed server-side in the webhook after Stripe confirms payment,
  * never from the client redirect.
  */
@@ -159,7 +159,7 @@ export async function POST(request: Request) {
   const origin = process.env.NEXT_PUBLIC_SITE_URL ?? new URL(request.url).origin;
 
   // Build line items, the success redirect, and the metadata per purchase type.
-  // flex_credits is quantity-priced ($1.99 × N, quantity on the line item); the
+  // flex_credits is quantity-priced ($0.99 × N, quantity on the line item); the
   // other three are fixed and pull an optional env price id. The webhook reads
   // metadata.quantity to know how many credits to grant.
   const metadata: Record<string, string> = { user_id: userId, purchase: type };
@@ -178,7 +178,7 @@ export async function POST(request: Request) {
             name: "Dormscape Flex credits",
             description: `${quantity} room-plan credit${
               quantity === 1 ? "" : "s"
-            } at $1.99 each. Each credit designs one room.`,
+            } at $0.99 each. Each credit designs one room.`,
           },
         },
       },

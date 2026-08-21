@@ -17,7 +17,7 @@ type Feature = { label: string; desc: string; icon: React.ReactNode };
 const FEATURES: Feature[] = [
   {
     label: "5 plans + 5 saves",
-    desc: "Two separate counters, recharge both for $4.99.",
+    desc: "Two separate counters, recharge both for $2.99.",
     icon: (
       <path
         d="M6 4h12a1 1 0 0 1 1 1v14l-7-4-7 4V5a1 1 0 0 1 1-1z"
