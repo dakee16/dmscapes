@@ -1,0 +1,460 @@
+{
+ "college_id": "indiana-wesleyan",
+ "college_name": "Indiana Wesleyan University",
+ "city": "Marion",
+ "state": "IN",
+ "aliases": [
+  "iwu",
+  "indiana wesleyan",
+  "indwes"
+ ],
+ "housing_url": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+ "data_collected": "2026-08-22",
+ "campus_notes": "Compiled 2026-08-22 from IWU Residence Life (indwes.edu, Marion residential campus). Traditional halls are open freshman-senior and split by gender: Reed, Evans, Beckett, Martin (women) and South, Hodson (men). IWU does not publish ft x ft room dimensions, so all rooms carry null dims and use the estimate fallback (flagged 'Estimated based on similar rooms'). Reed Hall is suite-style with 2-3 students per bedroom sharing a living space and full on-suite bathroom (this specific hall's double was a user request and is modeled below). Undergraduate mattresses are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "reed-hall",
+   "dorm_name": "Reed Hall",
+   "hall_url": "https://www.indwes.edu/about/life-at-iwu/residence-halls/reed-hall",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.indwes.edu/about/life-at-iwu/residence-halls/reed-hall",
+     "data_confidence": "low",
+     "notes": "Reed Hall suite-style 2-person bedroom (shared suite living space + full on-suite bath), women. Confirms the requested Reed Hall double. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Suite-Style Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.indwes.edu/about/life-at-iwu/residence-halls/reed-hall",
+     "data_confidence": "low",
+     "notes": "Reed Hall suite-style 3-person bedroom. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "evans-hall",
+   "dorm_name": "Evans Hall",
+   "hall_url": "https://www.indwes.edu/about/life-at-iwu/residence-halls/evans-hall",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Women's hall (built 1993, 200+ residents). Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "hodson-hall",
+   "dorm_name": "Hodson Hall",
+   "hall_url": "https://www.indwes.edu/about/life-at-iwu/residence-halls/hodson-hall",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Men's hall (200+ residents). Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "beckett-hall",
+   "dorm_name": "Beckett Hall",
+   "hall_url": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Women's traditional hall. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "martin-hall",
+   "dorm_name": "Martin Hall",
+   "hall_url": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Women's traditional hall. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "south-hall",
+   "dorm_name": "South Hall",
+   "hall_url": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Men's traditional hall. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  }
+ ]
+}

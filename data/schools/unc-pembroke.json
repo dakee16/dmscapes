@@ -1,0 +1,453 @@
+{
+ "college_id": "unc-pembroke",
+ "college_name": "University of North Carolina at Pembroke",
+ "city": "Pembroke",
+ "state": "NC",
+ "aliases": [
+  "unc pembroke",
+  "uncp",
+  "unc at pembroke",
+  "university of north carolina pembroke"
+ ],
+ "housing_url": "https://www.uncp.edu/campus-life/housing-residence-life/residential-communities",
+ "data_collected": "2026-08-22",
+ "campus_notes": "Compiled 2026-08-22 from UNC Pembroke Housing & Residence Life (uncp.edu). North Hall (6-story traditional, predominantly first-year) and Belk Hall offer double and single rooms with community baths. Oak Hall (4-story, 360-bed, suite-style, first-year + LLC) has 68 suites of two double bedrooms plus 22 suites of four single bedrooms. Cypress Hall (5-story, 476-bed) has 94 suites of two double bedrooms plus 25 suites of four single bedrooms. Pine Hall is suite-style. UNCP does not publish ft x ft room dimensions, so all rooms carry null dims and use the estimate fallback (flagged 'Estimated based on similar rooms'). All rooms have Twin XL beds (80\" x 36\").",
+ "dorms": [
+  {
+   "dorm_id": "north-hall",
+   "dorm_name": "North Hall",
+   "hall_url": "https://www.uncp.edu/campus-life/housing-and-residence-life/residential-communities/residence-halls/belk-hall-and-north-hall.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.uncp.edu/campus-life/housing-residence-life/residential-communities",
+     "data_confidence": "low",
+     "notes": "6-story traditional, community bath, predominantly first-year. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.uncp.edu/campus-life/housing-residence-life/residential-communities",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "belk-hall",
+   "dorm_name": "Belk Hall",
+   "hall_url": "https://www.uncp.edu/campus-life/housing-and-residence-life/residential-communities/residence-halls/belk-hall-and-north-hall.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.uncp.edu/campus-life/housing-residence-life/residential-communities",
+     "data_confidence": "low",
+     "notes": "Traditional, community bath. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.uncp.edu/campus-life/housing-residence-life/residential-communities",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "oak-hall",
+   "dorm_name": "Oak Hall",
+   "hall_url": "https://www.uncp.edu/campus-life/housing-and-residence-life/residential-communities/residence-halls/oak-hall.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.uncp.edu/campus-life/housing-residence-life/residential-communities",
+     "data_confidence": "low",
+     "notes": "Suite of two double bedrooms + shared bath (first-year + LLC). Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.uncp.edu/campus-life/housing-residence-life/residential-communities",
+     "data_confidence": "low",
+     "notes": "Four private bedrooms sharing a living area + bath. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "cypress-hall",
+   "dorm_name": "Cypress Hall",
+   "hall_url": "https://gpac.uncp.edu/campus-life/housing-and-residence-life/residential-communities/residence-halls/cypress-hall",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.uncp.edu/campus-life/housing-residence-life/residential-communities",
+     "data_confidence": "low",
+     "notes": "Four-person suite of two double bedrooms. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.uncp.edu/campus-life/housing-residence-life/residential-communities",
+     "data_confidence": "low",
+     "notes": "Four-person suite of four single bedrooms. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "pine-hall",
+   "dorm_name": "Pine Hall",
+   "hall_url": "https://www.uncp.edu/campus-life/housing-residence-life/residential-communities",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.uncp.edu/campus-life/housing-residence-life/residential-communities",
+     "data_confidence": "low",
+     "notes": "Suite-style. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  }
+ ]
+}

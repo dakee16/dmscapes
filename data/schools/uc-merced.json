@@ -1,0 +1,453 @@
+{
+ "college_id": "uc-merced",
+ "college_name": "University of California, Merced",
+ "city": "Merced",
+ "state": "CA",
+ "aliases": [
+  "uc merced",
+  "ucm",
+  "ucmerced",
+  "university of california merced"
+ ],
+ "housing_url": "https://housing.ucmerced.edu/residence-halls",
+ "data_collected": "2026-08-22",
+ "campus_notes": "Compiled 2026-08-22 from UC Merced Housing & Residence Education (housing.ucmerced.edu). Sierra Terraces (Tuolumne + Mariposa Halls) are dorm buildings housing ~400 mostly-first-year students in suites of two double rooms sharing a bath; Valley Terraces are apartment-style suites with two or three double bedrooms sharing restrooms for 4-6; the Summits (Cathedral + Tenaya Halls) are newer residence halls. UC Merced does not publish ft x ft room dimensions, so all rooms carry null dims and use the estimate fallback (flagged 'Estimated based on similar rooms'). Undergraduate mattresses are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "tuolumne-hall",
+   "dorm_name": "Tuolumne Hall",
+   "hall_url": "https://housing.ucmerced.edu/housing/sierra-terraces",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucmerced.edu/residence-halls",
+     "data_confidence": "low",
+     "notes": "Sierra Terraces; two doubles share a bath. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucmerced.edu/residence-halls",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "mariposa-hall",
+   "dorm_name": "Mariposa Hall",
+   "hall_url": "https://housing.ucmerced.edu/housing/sierra-terraces",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucmerced.edu/residence-halls",
+     "data_confidence": "low",
+     "notes": "Sierra Terraces; two doubles share a bath. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucmerced.edu/residence-halls",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "valley-terraces",
+   "dorm_name": "Valley Terraces",
+   "hall_url": "https://housing.ucmerced.edu/housing/valley-terraces",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucmerced.edu/residence-halls",
+     "data_confidence": "low",
+     "notes": "Apartment-style suite with two or three double bedrooms. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "cathedral-hall",
+   "dorm_name": "Cathedral Hall",
+   "hall_url": "https://housing.ucmerced.edu/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucmerced.edu/residence-halls",
+     "data_confidence": "low",
+     "notes": "The Summits (newer). Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucmerced.edu/residence-halls",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "tenaya-hall",
+   "dorm_name": "Tenaya Hall",
+   "hall_url": "https://housing.ucmerced.edu/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucmerced.edu/residence-halls",
+     "data_confidence": "low",
+     "notes": "The Summits (newer). Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.ucmerced.edu/residence-halls",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  }
+ ]
+}

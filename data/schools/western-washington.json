@@ -1,0 +1,600 @@
+{
+ "college_id": "western-washington",
+ "college_name": "Western Washington University",
+ "city": "Bellingham",
+ "state": "WA",
+ "aliases": [
+  "wwu",
+  "western washington",
+  "western"
+ ],
+ "housing_url": "https://housing.wwu.edu/explore-the-buildings",
+ "data_collected": "2026-08-22",
+ "campus_notes": "Compiled 2026-08-22 from WWU University Residences (housing.wwu.edu). WWU groups rooms as value / standard / premium but does not publish per-room ft x ft dimensions, so all rooms carry null dims and use the site's estimate fallback (median of same-type published rooms, flagged 'Estimated based on similar rooms'). Undergraduate mattresses are Twin XL. Ridgeway complex halls (Alpha, Beta, Gamma, etc.) share a common traditional-double layout; Buchanan Towers offers premium singles/doubles; Fairhaven is cluster/suite-style.",
+ "dorms": [
+  {
+   "dorm_id": "nash-hall",
+   "dorm_name": "Nash Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Value/traditional double. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "mathes-hall",
+   "dorm_name": "Mathes Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Value/traditional double. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "edens-hall",
+   "dorm_name": "Edens Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "higginson-hall",
+   "dorm_name": "Higginson Hall",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Standard Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "ridgeway-complex",
+   "dorm_name": "Ridgeway Complex",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Ridgeway halls (Alpha/Beta/Gamma/Delta/Kappa/Omega/Sigma) share this double layout. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "buchanan-towers",
+   "dorm_name": "Buchanan Towers",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Premium Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Premium single. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Premium Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Premium double. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "fairhaven-complex",
+   "dorm_name": "Fairhaven Complex",
+   "hall_url": null,
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Cluster Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.wwu.edu/explore-the-buildings",
+     "data_confidence": "low",
+     "notes": "Cluster/suite-style double. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  }
+ ]
+}

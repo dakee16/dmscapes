@@ -1,0 +1,400 @@
+{
+ "college_id": "michigan-tech",
+ "college_name": "Michigan Technological University",
+ "city": "Houghton",
+ "state": "MI",
+ "aliases": [
+  "michigan tech",
+  "mtu",
+  "mich tech"
+ ],
+ "housing_url": "https://www.mtu.edu/residential-living/options/undergraduate/",
+ "data_collected": "2026-08-22",
+ "campus_notes": "Compiled 2026-08-22 from Michigan Tech Residential Living. First-year students are required to live on campus. Wadsworth Hall publishes explicit dimensions (standard double 12' x 15'; private-bath 2-person room 19' x 12'8\", bath 6'8\" x 4'9\") carried at data_confidence high. McNair, Douglass Houghton and East Hall publish room types without ft x ft figures, so those rooms carry null dims and use the estimate fallback. Undergraduate mattresses are Twin XL (36\" x 80\"); beds are loftable.",
+ "dorms": [
+  {
+   "dorm_id": "wadsworth-hall",
+   "dorm_name": "Wadsworth Hall",
+   "hall_url": "https://www.mtu.edu/residential-living/options/undergraduate/wadsworth/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.mtu.edu/residential-living/options/undergraduate/wadsworth/",
+     "data_confidence": "high",
+     "notes": "Published: standard double 12' x 15', ~180 sqft, two residents."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double with Private Bath",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 19,
+      "width_ft": 12.67,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 241,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.mtu.edu/residential-living/options/undergraduate/wadsworth/",
+     "data_confidence": "high",
+     "notes": "Published: 2-person room with private bath 19' x 12'8\" (bath 6'8\" x 4'9\")."
+    }
+   ]
+  },
+  {
+   "dorm_id": "mcnair-hall",
+   "dorm_name": "McNair Hall",
+   "hall_url": "https://www.mtu.edu/residential-living/options/undergraduate/mcnair/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.mtu.edu/residential-living/options/undergraduate/",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.mtu.edu/residential-living/options/undergraduate/",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "douglass-houghton-hall",
+   "dorm_name": "Douglass Houghton Hall",
+   "hall_url": "https://www.mtu.edu/residential-living/options/undergraduate/dhh/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.mtu.edu/residential-living/options/undergraduate/",
+     "data_confidence": "low",
+     "notes": "Small number of singles. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.mtu.edu/residential-living/options/undergraduate/",
+     "data_confidence": "low",
+     "notes": "Primarily double occupancy. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad Room",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.mtu.edu/residential-living/options/undergraduate/",
+     "data_confidence": "low",
+     "notes": "Small number of quad rooms. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "east-hall",
+   "dorm_name": "East Hall",
+   "hall_url": "https://www.mtu.edu/residential-living/options/undergraduate/east/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.mtu.edu/residential-living/options/undergraduate/",
+     "data_confidence": "low",
+     "notes": "Suite-style double. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms across the dataset), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  }
+ ]
+}

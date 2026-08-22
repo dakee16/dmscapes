@@ -31,7 +31,7 @@ const TEXT_LINK =
   "font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-4 transition-colors hover:text-cobalt";
 
 // Real, shipped numbers only (no invented claims): the floored dorm-layout
-// count mirrors the "1,500+" figure cited on the homepage and pricing page.
+// count mirrors the "1,600+" figure cited on the homepage and pricing page.
 const LAYOUTS =
   Math.floor(
     SCHOOLS.reduce((n, s) => n + s.dorms.reduce((m, d) => m + d.rooms.length, 0), 0) / 100
