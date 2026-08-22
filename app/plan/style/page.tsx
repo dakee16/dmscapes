@@ -4,12 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import StyleCard from "@/components/planner/StyleCard";
+import CreateVibeBanner from "@/components/planner/CreateVibeBanner";
 import { track } from "@/lib/analytics";
 import { categoriesCovered, tierForBudget } from "@/lib/catalog";
 import { STYLES, isPlusStyle } from "@/lib/styles";
+import { CUSTOM_VIBE_ENABLED } from "@/lib/custom-vibe";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
-import { isPaid, isPlusTier, isFlex, isPlanMetered, canGeneratePlan, headerCreditState } from "@/lib/plan";
+import { isPaid, isPro, isPlusTier, isFlex, isPlanMetered, canGeneratePlan, headerCreditState } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
 import { useUpgrade } from "@/lib/upgrade-context";
 import CreditMeter from "@/components/site/CreditMeter";
@@ -32,6 +34,8 @@ export default function PlanStylePage() {
   const { openUpgrade } = useUpgrade();
   // Vibe access: all 9 vibes unlock for any paid tier (Plus or Pro).
   const allVibes = isPaid(profile);
+  // "Create your own vibe" is Pro-only (distinct from the Plus-gated styles).
+  const pro = isPro(profile);
 
   const [mounted, setMounted] = useState(false);
   const [generating, setGenerating] = useState(false);
@@ -60,6 +64,18 @@ export default function PlanStylePage() {
     }
     setStyle(id);
     track("style_selected", { style: id });
+  }
+
+  // The custom tile: Pro opens the vibe input; everyone else gets the existing
+  // upgrade modal (reused verbatim, no new paywall UI).
+  function handleCustomTile() {
+    if (!pro) {
+      track("custom_vibe_locked_clicked");
+      openUpgrade("custom-vibe");
+      return;
+    }
+    track("custom_vibe_opened");
+    router.push("/plan/create-vibe");
   }
 
   // Tapping "Design my room" first raises the save-before-you-leave heads-up;
@@ -153,7 +169,11 @@ export default function PlanStylePage() {
   }
 
   const tier = tierForBudget(budget);
-  const covered = style ? categoriesCovered(style, budget, room?.bedSize) : null;
+  // "covers" applies to curated styles only; the custom flow has its own copy.
+  const covered =
+    style && style !== "custom"
+      ? categoriesCovered(style, budget, room?.bedSize)
+      : null;
 
   return (
     <div className="mx-auto max-w-3xl px-5 pb-36 sm:px-8 sm:pb-24">
@@ -179,6 +199,10 @@ export default function PlanStylePage() {
             onSelect={() => handleStyle(s.id)}
           />
         ))}
+        {/* Full-width banner spanning the grid, distinct from the nine tiles. */}
+        {CUSTOM_VIBE_ENABLED && (
+          <CreateVibeBanner onSelect={handleCustomTile} />
+        )}
       </div>
 
       <div className="mt-8 rounded-xl border border-ink/10 bg-white p-5 sm:p-6">

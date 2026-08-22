@@ -6,8 +6,9 @@ import { CATEGORY_LABELS } from "@/lib/catalog";
 /**
  * Companion to the cart: pieces that fit the current style but aren't in the
  * active list (trimmed from the budget-aware auto-list, or removed by hand).
- * Each tile mirrors the cart card styling with a single "+" to move it back in.
- * Adding runs through the result page's budget check (which may confirm first).
+ * Each tile mirrors the cart card styling with a single full-height green "+"
+ * button on the right edge to move it back in. Adding runs through the result
+ * page's budget check (which may confirm first).
  */
 export default function ThingsToAddPanel({
   items,
@@ -43,43 +44,46 @@ export default function ThingsToAddPanel({
         <ul className="mt-3 space-y-2.5">
           {items.map((p) => (
             <li key={p.id}>
-              <div className="flex items-center gap-3 rounded-xl border border-ink/10 bg-white p-2.5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={p.image_url}
-                  alt={p.name}
-                  loading="lazy"
-                  className="h-14 w-14 shrink-0 rounded-lg border border-ink/5 bg-white object-contain"
-                />
-                <div className="min-w-0 flex-1">
-                  <p className="font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-ink-soft">
-                    {CATEGORY_LABELS[p.category] ?? p.category}
-                  </p>
-                  <p className="line-clamp-2 text-sm font-medium leading-snug text-ink">
-                    {p.name}
-                  </p>
-                  <p className="mt-0.5 flex items-baseline gap-2">
-                    <span className="font-mono text-sm font-semibold text-ink">
-                      ${p.price.toFixed(2)}
-                    </span>
-                    <span className="text-xs text-ink-soft">
-                      <span className="text-highlight" aria-hidden>
-                        ★
-                      </span>{" "}
-                      {p.rating.toFixed(1)} ({p.review_count.toLocaleString()})
-                    </span>
-                  </p>
+              <div className="flex items-stretch overflow-hidden rounded-xl border border-ink/10 bg-white">
+                <div className="flex min-w-0 flex-1 items-center gap-3 p-2.5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.image_url}
+                    alt={p.name}
+                    loading="lazy"
+                    className="h-14 w-14 shrink-0 rounded-lg border border-ink/5 bg-white object-contain"
+                  />
+                  <div className="min-w-0 flex-1">
+                    <p className="font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-ink-soft">
+                      {CATEGORY_LABELS[p.category] ?? p.category}
+                    </p>
+                    <p className="line-clamp-2 text-sm font-medium leading-snug text-ink">
+                      {p.name}
+                    </p>
+                    <p className="mt-0.5 flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                      <span className="font-mono text-sm font-semibold text-ink">
+                        ${p.price.toFixed(2)}
+                      </span>
+                      <span className="text-xs text-ink-soft">
+                        <span className="text-highlight" aria-hidden>
+                          ★
+                        </span>{" "}
+                        {p.rating.toFixed(1)} ({p.review_count.toLocaleString()})
+                      </span>
+                    </p>
+                  </div>
                 </div>
+                {/* Full-height green add button on the right edge. */}
                 <button
                   type="button"
                   onClick={() => onAdd(p)}
                   aria-label={`Add ${p.name} to your list`}
-                  className="flex shrink-0 items-center gap-1 self-center rounded-full border border-cobalt/30 bg-cobalt/[0.06] px-3 py-2 text-xs font-semibold text-cobalt transition-colors hover:bg-cobalt/12"
+                  title="Add to list"
+                  className="flex w-12 shrink-0 items-center justify-center border-l border-ink/10 bg-[#16a34a] text-white transition-colors hover:bg-[#15803d]"
                 >
-                  <span aria-hidden="true" className="text-sm leading-none">
-                    +
-                  </span>
-                  Add
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
                 </button>
               </div>
             </li>

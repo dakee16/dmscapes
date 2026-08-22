@@ -100,10 +100,36 @@ export const RETIRED_STYLES: StyleMeta[] = [
   },
 ];
 
-// Every style id the app recognizes: currently selectable plus retired ones.
-// Server-side validation (saving a design) accepts this full set so a saved
-// legacy design reopened in the planner can still be re-saved.
-const ALL_STYLES: StyleMeta[] = [...STYLES, ...RETIRED_STYLES];
+// "Create your own vibe" (Pro). A pseudo-style: resolvable for display, saves,
+// share links, and comparison, but deliberately NOT in STYLES so it never
+// appears in the picker grid (the page renders its own distinct tile) and the
+// homepage showcase skips it. Its real display name is the user's vibe text,
+// supplied per-design; `name` here is only the fallback label.
+export const CUSTOM_STYLE: StyleMeta = {
+  id: "custom",
+  name: "Create your own",
+  emoji: "✨",
+  keywords: ["your words", "live-matched"],
+  palette: ["#eef1ff", "#c7d2fe", "#2b4eff", "#17172b"],
+};
+
+export const isCustomStyle = (id: StyleId): boolean => id === "custom";
+
+/**
+ * Display name for a design wherever a style name would show (result subtitle,
+ * saved-designs list, comparison, share page, PDF). A custom design has no named
+ * style, so its own vibe text stands in; a saved custom design passes its stored
+ * name (which is the vibe). Falls back to the style's name for curated designs.
+ */
+export function designDisplayName(id: StyleId, vibe?: string | null): string {
+  if (id === "custom") return vibe?.trim() || "Your custom vibe";
+  return styleById(id).name;
+}
+
+// Every style id the app recognizes: currently selectable, retired, plus the
+// custom pseudo-style. Server-side validation (saving a design) accepts this
+// full set so a saved legacy or custom design reopened in the planner re-saves.
+const ALL_STYLES: StyleMeta[] = [...STYLES, ...RETIRED_STYLES, CUSTOM_STYLE];
 
 /** Every valid StyleId, including retired styles (for server-side validation). */
 export const ALL_STYLE_IDS: StyleId[] = ALL_STYLES.map((s) => s.id);

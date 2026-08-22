@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import type { FurnitureItem, ProductCategory, SelectedRoom, StyleId } from "./types";
+import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId } from "./types";
 
 export interface PlannerState {
   // Step 1
@@ -12,6 +12,15 @@ export interface PlannerState {
   // Step 2
   style: StyleId | null;
   budget: number;
+  // Step 2 · "Create your own vibe" (custom pseudo-style). The vibe text is the
+  // design's display name; the products come from the live pipeline, not the
+  // catalog, so they're carried here (and persisted) for the result page, save,
+  // and share. `customRegenUsed` tracks the one free regeneration per vibe.
+  customVibe: string | null;
+  customProducts: Product[] | null;
+  /** True when customProducts are placeholder matches (PA-API not live yet). */
+  customMock: boolean;
+  customRegenUsed: boolean;
   // Step 3: canvas layout
   templateId: string | null;
   /** Current furniture positions (template copy, mutated by drag). */
@@ -29,6 +38,11 @@ export interface PlannerState {
   hiddenItemIds: string[];
   /** Canvas items locked against dragging via the toolbar. */
   lockedItemIds: string[];
+  /** User-pasted "Add your own item" products (Part 2). Rendered in the cart
+   *  and counted toward the budget, separate from the category-based auto-list. */
+  customItems: Product[];
+  /** Custom item ids not yet placed on the canvas (shown in the unplaced tray). */
+  unplacedItemIds: string[];
 
   // Result-page cross-highlighting (transient UI, not persisted). Both the
   // canvas and the product list read/write these so either can light the other.
@@ -44,6 +58,10 @@ export interface PlannerState {
   setRoom: (room: SelectedRoom | null) => void;
   setStyle: (style: StyleId) => void;
   setBudget: (budget: number) => void;
+  /** Store a completed custom-vibe generation (sets style to "custom"). */
+  setCustomResult: (vibe: string, products: Product[], mock: boolean) => void;
+  /** Mark the one free regeneration for the current vibe as spent. */
+  markCustomRegen: () => void;
   /** Called once on result-page load (or after re-match). Replaces the layout. */
   initLayout: (templateId: string, furniture: FurnitureItem[]) => void;
   moveItem: (id: string, xFt: number, yFt: number) => void;
@@ -69,6 +87,12 @@ export interface PlannerState {
   toggleSelectedItem: (id: string, category: ProductCategory | null) => void;
   /** Clear the pinned selection (e.g. clicking empty canvas). */
   clearSelectedCategory: () => void;
+  /** Add a pasted item to the cart; place=true also drops it on the canvas. */
+  addCustomItem: (product: Product, place: boolean) => void;
+  /** Move an unplaced custom item onto the canvas (centered, then draggable). */
+  placeCustomItem: (id: string) => void;
+  /** Remove a custom item from the cart, canvas, and unplaced tray. */
+  removeCustomItem: (id: string) => void;
   resetPlanner: () => void;
 }
 
@@ -78,12 +102,18 @@ const initial = {
   room: null,
   style: null,
   budget: 500,
+  customVibe: null,
+  customProducts: null,
+  customMock: false,
+  customRegenUsed: false,
   templateId: null,
   furniture: null,
   swaps: {},
   excluded: null,
   hiddenItemIds: [],
   lockedItemIds: [],
+  customItems: [],
+  unplacedItemIds: [],
   hoveredCategory: null,
   selectedCategory: null,
   selectedItemId: null,
@@ -96,9 +126,32 @@ export const usePlannerStore = create<PlannerState>()(
       setCollege: (college) => set({ college, dorm: null, room: null }),
       setDorm: (dorm) => set({ dorm, room: null }),
       setRoom: (room) =>
-        set({ room, templateId: null, furniture: null, excluded: null, hiddenItemIds: [], lockedItemIds: [] }),
-      setStyle: (style) => set({ style, swaps: {}, excluded: null }),
+        set({ room, templateId: null, furniture: null, excluded: null, hiddenItemIds: [], lockedItemIds: [], customItems: [], unplacedItemIds: [] }),
+      // Selecting a catalog style clears any custom-vibe result so its products
+      // never leak into a normal plan.
+      setStyle: (style) =>
+        set({
+          style,
+          swaps: {},
+          excluded: null,
+          customVibe: null,
+          customProducts: null,
+          customMock: false,
+          customRegenUsed: false,
+          customItems: [],
+          unplacedItemIds: [],
+        }),
       setBudget: (budget) => set({ budget, swaps: {}, excluded: null }),
+      setCustomResult: (vibe, products, mock) =>
+        set({
+          style: "custom",
+          customVibe: vibe,
+          customProducts: products,
+          customMock: mock,
+          swaps: {},
+          excluded: null,
+        }),
+      markCustomRegen: () => set({ customRegenUsed: true }),
       initLayout: (templateId, furniture) =>
         set({ templateId, furniture: furniture.map((f) => ({ ...f })) }),
       moveItem: (id, xFt, yFt) =>
@@ -179,6 +232,60 @@ export const usePlannerStore = create<PlannerState>()(
             : { selectedItemId: id, selectedCategory: category }
         ),
       clearSelectedCategory: () => set({ selectedCategory: null, selectedItemId: null }),
+      addCustomItem: (product, place) =>
+        set((s) => {
+          const customItems = s.customItems.some((x) => x.id === product.id)
+            ? s.customItems
+            : [...s.customItems, product];
+          if (place) {
+            const w = 2, l = 2;
+            const x = s.room ? Math.min(1, Math.max(0, s.room.lengthFt - l)) : 1;
+            const y = s.room ? Math.min(1, Math.max(0, s.room.widthFt - w)) : 1;
+            const item: FurnitureItem = {
+              id: product.id, type: "custom", label: product.name.slice(0, 20),
+              owner: "student", x_ft: x, y_ft: y, width_ft: w, length_ft: l,
+              rotation_deg: 0, movable: true, built_in: false,
+              color_category: "accent", product_category: product.category,
+            };
+            const has = (s.furniture ?? []).some((f) => f.id === product.id);
+            return {
+              customItems,
+              furniture: has ? s.furniture : [...(s.furniture ?? []), item],
+              unplacedItemIds: s.unplacedItemIds.filter((id) => id !== product.id),
+            };
+          }
+          return {
+            customItems,
+            unplacedItemIds: s.unplacedItemIds.includes(product.id)
+              ? s.unplacedItemIds
+              : [...s.unplacedItemIds, product.id],
+          };
+        }),
+      placeCustomItem: (id) =>
+        set((s) => {
+          const p = s.customItems.find((x) => x.id === id);
+          if (!p) return {} as Partial<PlannerState>;
+          const w = 2, l = 2;
+          const x = s.room ? Math.max(0, (s.room.lengthFt - l) / 2) : 1;
+          const y = s.room ? Math.max(0, (s.room.widthFt - w) / 2) : 1;
+          const item: FurnitureItem = {
+            id, type: "custom", label: p.name.slice(0, 20), owner: "student",
+            x_ft: x, y_ft: y, width_ft: w, length_ft: l, rotation_deg: 0,
+            movable: true, built_in: false, color_category: "accent",
+            product_category: p.category,
+          };
+          const has = (s.furniture ?? []).some((f) => f.id === id);
+          return {
+            furniture: has ? s.furniture : [...(s.furniture ?? []), item],
+            unplacedItemIds: s.unplacedItemIds.filter((x) => x !== id),
+          };
+        }),
+      removeCustomItem: (id) =>
+        set((s) => ({
+          customItems: s.customItems.filter((p) => p.id !== id),
+          furniture: (s.furniture ?? []).filter((f) => f.id !== id),
+          unplacedItemIds: s.unplacedItemIds.filter((x) => x !== id),
+        })),
       resetPlanner: () => set({ ...initial }),
     }),
     {
@@ -191,12 +298,18 @@ export const usePlannerStore = create<PlannerState>()(
         room: s.room,
         style: s.style,
         budget: s.budget,
+        customVibe: s.customVibe,
+        customProducts: s.customProducts,
+        customMock: s.customMock,
+        customRegenUsed: s.customRegenUsed,
         templateId: s.templateId,
         furniture: s.furniture,
         swaps: s.swaps,
         excluded: s.excluded,
         hiddenItemIds: s.hiddenItemIds,
         lockedItemIds: s.lockedItemIds,
+        customItems: s.customItems,
+        unplacedItemIds: s.unplacedItemIds,
       }),
     }
   )

@@ -172,6 +172,61 @@ p {
   will-change: transform;
 }
 
+/* "Create your own vibe" ambient motion. Each element sets its own
+   --float-dur / --float-delay / --float-dist inline so the set drifts out of
+   sync (independent float, never a synchronized bob). Compositor-only. */
+@keyframes vibe-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, calc(var(--float-dist, 8px) * -1), 0);
+  }
+}
+.vibe-float {
+  animation: vibe-float var(--float-dur, 6s) ease-in-out var(--float-delay, 0s) infinite;
+  will-change: transform;
+}
+
+/* Indeterminate sweep for the vibe loading progress bar. */
+@keyframes vibe-progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(320%);
+  }
+}
+.vibe-progress-bar {
+  animation: vibe-progress 1.7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+/* Loading canvas: furniture pieces fade in and settle into place, then the loop
+   resets, echoing the real drag-to-arrange interaction. Each piece sets its own
+   --snap-delay inline so they arrive in sequence, not all at once. */
+@keyframes vibe-snap {
+  0%,
+  6% {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(0.9);
+  }
+  20%,
+  84% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0) scale(0.95);
+  }
+}
+.vibe-snap {
+  animation: vibe-snap 3.6s ease-in-out var(--snap-delay, 0s) infinite;
+  will-change: transform, opacity;
+}
+
 /* Scroll reveals live in components/site/Reveal.tsx (framer-motion). */
 
 /* Cursor-reactive grid: a stronger copy of the graph paper, masked to a soft
@@ -216,11 +271,18 @@ p {
   .snap-in,
   .fade-in,
   .hero-float,
-  .sheen-band {
+  .sheen-band,
+  .vibe-float,
+  .vibe-progress-bar {
     animation: none;
   }
   /* Static logo instead of the breathing loop; hold it fully visible. */
   .brand-breathe {
+    animation: none;
+    opacity: 1;
+  }
+  /* Hold the loading canvas fully assembled instead of looping the build. */
+  .vibe-snap {
     animation: none;
     opacity: 1;
   }

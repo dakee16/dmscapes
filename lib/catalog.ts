@@ -90,8 +90,14 @@ export function productById(id: string): Product | undefined {
 
 /** Budget slider value -> catalog tier. Tier room targets: 200-400 / 400-700 / 700-1500. */
 export function tierForBudget(budget: number): BudgetTier {
-  if (budget <= 400) return "budget";
-  if (budget <= 700) return "mid";
+  // Tuned so a budget lands a cart WITHIN ~\$50 of it, not hundreds under. The
+  // auto-list is one product per category and the result-page seeder trims to
+  // never exceed budget, so a higher tier fills a mid/high budget far closer
+  // (premium sums ~\$700-790 for the well-stocked styles, and the seeder parks
+  // whatever overflows). Sparse-premium styles (academia/y2k/retro/pastel) are
+  // catalog-limited and tracked separately.
+  if (budget <= 350) return "budget";
+  if (budget <= 500) return "mid";
   return "premium";
 }
 

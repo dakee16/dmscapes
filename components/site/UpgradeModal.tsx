@@ -53,6 +53,14 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     title: "That's a paid vibe",
     body: "Academia, Y2K Cyber, Gamer, Team Spirit, Retro, and Pastel are paid vibes. Plus and Pro unlock all nine.",
   },
+  "custom-vibe": {
+    title: "Create your own vibe with Pro",
+    body: "Describe any aesthetic in your own words and we'll live-match real products to it. Creating your own vibe is a Pro feature. Pro also includes every curated vibe and premium tool.",
+  },
+  "own-item": {
+    title: "Add your own products",
+    body: "Paste any Amazon link to drop your own products straight into your room, budget, and layout. Adding your own items is a Plus feature, Plus and Pro both include it, along with every vibe and premium tool.",
+  },
   generic: {
     title: "Do more with Dormscape Plus",
     body: "One small upgrade unlocks every vibe and every premium feature, for good.",

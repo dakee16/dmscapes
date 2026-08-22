@@ -7,7 +7,10 @@ import { matchTemplate, ALL_TEMPLATES } from "@/templates/template-matcher";
 import { productsFor, productById, tierForBudget, totalFor, extrasFor, isExtraCategory } from "@/lib/catalog";
 import { isPlusStyle } from "@/lib/styles";
 import { useAuth } from "@/lib/auth-context";
-import { isPaid } from "@/lib/plan";
+import { isPaid, isPro, isPlanMetered } from "@/lib/plan";
+import { consumePlanCredit } from "@/lib/plan-credits";
+import { generateVibe } from "@/lib/vibe-client";
+import BrandLoader from "@/components/site/BrandLoader";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
@@ -23,6 +26,8 @@ import ProductPanel from "@/components/products/ProductPanel";
 import ThingsToAddPanel from "@/components/products/ThingsToAddPanel";
 import ProductTabSwitcher, { type ProductTab } from "@/components/products/ProductTabSwitcher";
 import AddOverBudgetModal from "@/components/products/AddOverBudgetModal";
+import AddOwnItemModal from "@/components/products/AddOwnItemModal";
+import ProductCard from "@/components/products/ProductCard";
 import ActionBar from "@/components/products/ActionBar";
 import BuyAllButton from "@/components/products/BuyAllButton";
 import PurchaseSurvey from "@/components/products/PurchaseSurvey";
@@ -62,8 +67,11 @@ export default function ResultPage() {
   // Piece whose "+" would push the cart over budget: held here until the user
   // confirms or backs out of AddOverBudgetModal.
   const [pendingAdd, setPendingAdd] = useState<Product | null>(null);
+  const [showAddOwn, setShowAddOwn] = useState(false);
+  const [pendingOwn, setPendingOwn] = useState<{ product: Product; place: boolean } | null>(null);
   // Which product tab is showing: the cart ("Shopping list") or the catalog.
   const [activeTab, setActiveTab] = useState<ProductTab>("list");
+  const [regenerating, setRegenerating] = useState(false);
   const trackedRef = useRef(false);
 
   const college = usePlannerStore((s) => s.college);
@@ -71,19 +79,33 @@ export default function ResultPage() {
   const room = usePlannerStore((s) => s.room);
   const style = usePlannerStore((s) => s.style);
   const budget = usePlannerStore((s) => s.budget);
+  // Custom vibe: products come from the live pipeline, and the vibe text stands
+  // in for the style name everywhere a style name would show.
+  const customVibe = usePlannerStore((s) => s.customVibe);
+  const customProducts = usePlannerStore((s) => s.customProducts);
+  const customMock = usePlannerStore((s) => s.customMock);
+  const customRegenUsed = usePlannerStore((s) => s.customRegenUsed);
+  const setCustomResult = usePlannerStore((s) => s.setCustomResult);
+  const markCustomRegen = usePlannerStore((s) => s.markCustomRegen);
   const templateId = usePlannerStore((s) => s.templateId);
   const furniture = usePlannerStore((s) => s.furniture);
   const swaps = usePlannerStore((s) => s.swaps);
   const excluded = usePlannerStore((s) => s.excluded);
   const setExcluded = usePlannerStore((s) => s.setExcluded);
   const toggleExcluded = usePlannerStore((s) => s.toggleExcluded);
+  const customItems = usePlannerStore((s) => s.customItems);
+  const unplacedItemIds = usePlannerStore((s) => s.unplacedItemIds);
+  const addCustomItem = usePlannerStore((s) => s.addCustomItem);
+  const placeCustomItem = usePlannerStore((s) => s.placeCustomItem);
+  const removeCustomItem = usePlannerStore((s) => s.removeCustomItem);
   const initLayout = usePlannerStore((s) => s.initLayout);
   const moveItem = usePlannerStore((s) => s.moveItem);
   const rotateItem = usePlannerStore((s) => s.rotateItem);
   const resetLayout = usePlannerStore((s) => s.resetLayout);
 
-  const { profile, loading: authLoading } = useAuth();
+  const { profile, loading: authLoading, refreshProfile } = useAuth();
   const { openUpgrade } = useUpgrade();
+  const isCustom = style === "custom";
 
   // sessionStorage-persisted store: wait for rehydration before any decisions.
   useEffect(() => {
@@ -96,6 +118,12 @@ export default function ResultPage() {
     if (!hydrated) return;
     if (!room) router.replace("/plan");
     else if (!style) router.replace("/plan/style");
+    // Custom vibe is Pro-only: a non-Pro who reached it (stale store / shared
+    // link) is sent back to the picker with the Pro prompt.
+    else if (!authLoading && style === "custom" && !isPro(profile)) {
+      openUpgrade("custom-vibe");
+      router.replace("/plan/style");
+    }
     // Defense in depth: a free user who reached a Plus-gated style (e.g. a
     // stale store or a saved design) is sent back to the picker with the
     // upgrade prompt, rather than served a room they can't actually use.
@@ -164,6 +192,9 @@ export default function ResultPage() {
 
   const products = useMemo(() => {
     if (!style) return [];
+    // Custom vibe: the pipeline already produced the products (not the catalog),
+    // so swaps/extras don't apply, render them straight through.
+    if (style === "custom") return customProducts ?? [];
     const core = productsFor(style, tierForBudget(budget), room?.bedSize).map((p) => {
       const swapId = swaps[p.category];
       return (swapId && productById(swapId)) || p;
@@ -172,7 +203,7 @@ export default function ResultPage() {
     // They're appended so the whole add/remove machinery works uniformly, and
     // the seed below always parks them so they start in the Catalog, not the cart.
     return [...core, ...extrasFor(style)];
-  }, [style, budget, swaps, room?.bedSize]);
+  }, [style, budget, swaps, room?.bedSize, customProducts]);
 
   // Seed the cart / "Things to add" split once per plan: walk the auto-list in
   // priority order, keeping pieces while they fit the budget and parking the
@@ -209,7 +240,14 @@ export default function ResultPage() {
   }
 
   const dims = formatDims(room.lengthFt, room.widthFt);
-  const total = totalFor(cartProducts);
+  // Custom ("Add your own item") products always ride in the cart regardless of
+  // the category-based excluded split, and count toward the budget.
+  const allCartProducts = [...cartProducts, ...customItems];
+  const unplacedCustomItems = customItems.filter((cp) => unplacedItemIds.includes(cp.id));
+  // "Add your own item" is a Plus feature: Plus + Pro only. Free/Flex see a lock
+  // and get the Plus prompt on click.
+  const ownItemLocked = !authLoading && !isPaid(profile);
+  const total = totalFor(allCartProducts);
 
   // Remove is always immediate; adding is immediate when it stays within budget,
   // and otherwise routes through the confirmation modal.
@@ -233,6 +271,24 @@ export default function ResultPage() {
     track("cart_item_added", { category: pendingAdd.category });
     track("cart_add_over_budget_confirmed", { category: pendingAdd.category });
     setPendingAdd(null);
+  }
+
+  // "Add your own item": a confident category match auto-places it on the canvas;
+  // otherwise it lands in the unplaced tray for the user to place by hand.
+  function handleOwnResolved(product: Product, category: ProductCategory | null) {
+    const place = category !== null;
+    if (total + product.price <= budget) {
+      addCustomItem(product, place);
+      track("own_item_added", { category: category ?? "uncategorized", placed: place });
+    } else {
+      setPendingOwn({ product, place });
+    }
+  }
+  function confirmOwn() {
+    if (!pendingOwn) return;
+    addCustomItem(pendingOwn.product, pendingOwn.place);
+    track("own_item_added", { over_budget: true, placed: pendingOwn.place });
+    setPendingOwn(null);
   }
 
   // One canvas element, mounted either inline or in the fullscreen overlay.
@@ -276,6 +332,35 @@ export default function ResultPage() {
       );
   }
 
+  // One free regeneration per vibe (same description, new pass); after that each
+  // pass spends a plan credit via the existing logic. Pro is unlimited, so the
+  // credit branch is a no-op for the only audience today.
+  async function handleRegenerate() {
+    if (regenerating || !isCustom || !customVibe || !room) return;
+    const free = !customRegenUsed;
+    if (!free && isPlanMetered(profile)) {
+      const { blocked } = await consumePlanCredit();
+      if (blocked) {
+        openUpgrade("plan-credits");
+        return;
+      }
+      await refreshProfile();
+    }
+    setRegenerating(true);
+    const result = await generateVibe({
+      vibe: customVibe,
+      budget,
+      bedSize: room.bedSize,
+      seed: free ? 1 : Math.floor(Math.random() * 4) + 2,
+    });
+    setRegenerating(false);
+    if (result.ok && result.products && result.products.length > 0) {
+      if (free) markCustomRegen();
+      setCustomResult(customVibe, result.products, result.mock ?? false);
+      track("custom_vibe_regenerated", { free });
+    }
+  }
+
   return (
     <div className="mx-auto max-w-6xl px-4 pb-32 pt-6 sm:px-6 lg:pb-10">
       <header className="rise">
@@ -293,7 +378,45 @@ export default function ResultPage() {
           )}
         </p>
         {room.dimsEstimated && <EstimatedDimsNote className="mt-1.5" />}
+
+        {/* Custom vibe: the user's own words stand in for a style name, plus the
+            one-free-regeneration control and an honest sample-data note. */}
+        {isCustom && customVibe && (
+          <div className="mt-3">
+            <p className="max-w-xl font-display text-base font-semibold italic leading-snug text-ink">
+              &ldquo;{customVibe}&rdquo;
+            </p>
+            {customMock && (
+              <p className="mt-2 max-w-xl text-[11px] leading-snug text-ink-soft/90">
+                Sample matches for now. Live Amazon results switch on once
+                Product Advertising API access is enabled.
+              </p>
+            )}
+          </div>
+        )}
       </header>
+
+      {/* Item 6: the one free regeneration, a standalone centered control just
+          below the header. */}
+      {isCustom && customVibe && (
+        <div className="mt-5 flex flex-col items-center gap-1.5 rise">
+          <button
+            type="button"
+            onClick={handleRegenerate}
+            disabled={regenerating}
+            className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white px-5 py-2.5 text-sm font-semibold text-ink shadow-sm transition-colors hover:border-cobalt hover:text-cobalt disabled:opacity-60"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M21 12a9 9 0 1 1-2.64-6.36" />
+              <path d="M21 3v5h-5" />
+            </svg>
+            {regenerating ? "Regenerating…" : "Regenerate matches"}
+          </button>
+          <span className="font-mono text-[10px] uppercase tracking-wide text-ink-soft">
+            {customRegenUsed ? "New matches, same vibe" : "One free regeneration"}
+          </span>
+        </div>
+      )}
 
       <div className="mt-5 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
         {/* Canvas panel */}
@@ -301,6 +424,35 @@ export default function ResultPage() {
           <div className="overflow-hidden rounded-2xl border border-ink/10 bg-white p-1.5 sm:p-2">
             {!fullscreen && canvas}
           </div>
+          {/* Unplaced tray: custom items we couldn't confidently categorize.
+              "Place" drops the item on the canvas (centered); the existing drag
+              handles then let the user position it exactly. */}
+          {unplacedCustomItems.length > 0 && (
+            <div className="mt-2 rounded-xl border border-amber/40 bg-amber/[0.06] p-2.5">
+              <p className="mb-2 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-ink">
+                Unplaced items · drop onto your room
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {unplacedCustomItems.map((cp) => (
+                  <button
+                    key={cp.id}
+                    type="button"
+                    onClick={() => {
+                      placeCustomItem(cp.id);
+                      track("layout_edited", { item: cp.id, action: "place" });
+                    }}
+                    title={`Place ${cp.name} on your room`}
+                    className="flex items-center gap-2 rounded-lg border border-ink/15 bg-white px-2 py-1.5 text-left transition-colors hover:border-cobalt"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={cp.image_url} alt="" className="h-8 w-8 shrink-0 rounded border border-ink/5 object-contain" />
+                    <span className="max-w-[9rem] truncate text-xs font-medium text-ink">{cp.name}</span>
+                    <span className="font-mono text-[10px] font-semibold uppercase tracking-wide text-cobalt">Place →</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
           <div className="mt-2 flex flex-col items-start gap-0.5">
             <button
               type="button"
@@ -362,21 +514,71 @@ export default function ResultPage() {
             <BudgetTracker total={total} budget={budget} />
             {/* Island-style tab switcher, directly above Buy all. */}
             <ProductTabSwitcher active={activeTab} onChange={setActiveTab} />
+            {/* Add-your-own-item: paste an Amazon link to pull a real product into
+                the list + budget (Part 2). Sits right under the tabs. */}
+            <button
+              type="button"
+              onClick={() => {
+                if (!isPaid(profile)) {
+                  openUpgrade("own-item");
+                  return;
+                }
+                setShowAddOwn(true);
+              }}
+              aria-label={ownItemLocked ? "Add your own item (Plus feature)" : "Add your own item"}
+              className="flex items-center justify-center gap-1.5 rounded-xl border border-dashed border-cobalt/40 bg-cobalt/[0.05] px-4 py-2.5 text-sm font-semibold text-cobalt transition-colors hover:border-cobalt hover:bg-cobalt/10"
+            >
+              {ownItemLocked ? (
+                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="5" y="11" width="14" height="10" rx="2" />
+                  <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              )}
+              Add your own item
+              {ownItemLocked && (
+                <span className="ml-1 inline-flex items-center rounded-full bg-highlight px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wide text-ink">
+                  Plus
+                </span>
+              )}
+            </button>
             {/* Prominent "Buy all": stays visible on either tab (it reflects the
                 cart total). Hidden only when the cart itself is empty. */}
-            {cartProducts.length > 0 && (
-              <BuyAllButton products={cartProducts} total={total} />
+            {allCartProducts.length > 0 && (
+              <BuyAllButton products={allCartProducts} total={total} />
             )}
             {/* Active tab body. Keyed on the tab so switching re-triggers the
                 quick fade rather than swapping abruptly. */}
             <div className="lg:max-h-[62vh] lg:overflow-y-auto lg:pr-1">
               <div key={activeTab} className="fade-in">
                 {activeTab === "list" ? (
-                  <ProductPanel
-                    products={cartProducts}
-                    bedSize={room.bedSize}
-                    onRemove={handleRemove}
-                  />
+                  <div className="space-y-4">
+                    <ProductPanel
+                      products={cartProducts}
+                      bedSize={room.bedSize}
+                      onRemove={handleRemove}
+                    />
+                    {customItems.length > 0 && (
+                      <div className="space-y-2.5">
+                        <p className="font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-cobalt">
+                          Your added items
+                        </p>
+                        {customItems.map((cp) => (
+                          <div key={cp.id}>
+                            {unplacedItemIds.includes(cp.id) && (
+                              <p className="mb-1 font-mono text-[10px] uppercase tracking-wide text-amber">
+                                Unplaced · drop it from the tray onto your room
+                              </p>
+                            )}
+                            <ProductCard product={cp} onRemove={() => removeCustomItem(cp.id)} />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ) : (
                   <ThingsToAddPanel items={availableProducts} onAdd={handleAdd} />
                 )}
@@ -386,7 +588,7 @@ export default function ResultPage() {
         </BuyGateProvider>
       </div>
 
-      <ActionBar products={cartProducts} getPng={() => canvasRef.current?.exportPNG() ?? null} />
+      <ActionBar products={allCartProducts} getPng={() => canvasRef.current?.exportPNG() ?? null} />
       <PurchaseSurvey cartTotal={total} />
       <SavePrompt />
 
@@ -439,6 +641,25 @@ export default function ResultPage() {
           onConfirm={confirmAdd}
           onCancel={() => setPendingAdd(null)}
         />
+      )}
+
+      {pendingOwn && (
+        <AddOverBudgetModal
+          product={pendingOwn.product}
+          budget={budget}
+          newTotal={total + pendingOwn.product.price}
+          onConfirm={confirmOwn}
+          onCancel={() => setPendingOwn(null)}
+        />
+      )}
+      {showAddOwn && (
+        <AddOwnItemModal onClose={() => setShowAddOwn(false)} onAdd={handleOwnResolved} />
+      )}
+
+      {regenerating && (
+        <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center gap-5 bg-paper/95 px-6 text-center backdrop-blur-sm">
+          <BrandLoader label="Re-matching your vibe…" />
+        </div>
       )}
     </div>
   );

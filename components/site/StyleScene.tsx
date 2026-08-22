@@ -19,6 +19,7 @@ const WALLS: Record<StyleId, string> = {
   y2k: "#f3e8ff",
   retro: "#f6e6c4",
   pastel: "#ffeef6",
+  custom: "#eef1ff",
 };
 
 const TEAM_NAVY = "#0b1f3a";
@@ -374,6 +375,43 @@ function Pastel() {
   );
 }
 
+// "Create your own vibe" placeholder. Deliberately not a furnished room, an
+// empty, dashed room outline waiting to be filled, with a cobalt sparkle, so it
+// reads as "you author this one" rather than a preset look.
+function Custom() {
+  const COBALT = "#2b4eff";
+  const star = (cx: number, cy: number, r: number, w: number) => (
+    <path
+      d={`M${cx} ${cy - r} L${cx + r * 0.28} ${cy - r * 0.28} L${cx + r} ${cy} L${cx + r * 0.28} ${cy + r * 0.28} L${cx} ${cy + r} L${cx - r * 0.28} ${cy + r * 0.28} L${cx - r} ${cy} L${cx - r * 0.28} ${cy - r * 0.28} Z`}
+      fill={COBALT}
+      opacity={w}
+    />
+  );
+  return (
+    <Frame id="custom">
+      {/* dashed "empty room" outline */}
+      <rect
+        x="40"
+        y="44"
+        width="176"
+        height="66"
+        rx="6"
+        fill="#ffffff"
+        opacity="0.5"
+        stroke={COBALT}
+        strokeOpacity="0.5"
+        strokeWidth="1.5"
+        strokeDasharray="5 4"
+      />
+      {/* central sparkle + two small companions */}
+      {star(128, 78, 18, 0.92)}
+      {star(170, 60, 8, 0.7)}
+      {star(96, 96, 6, 0.6)}
+      <circle cx="128" cy="78" r="27" fill="none" stroke={COBALT} strokeOpacity="0.25" strokeWidth="1" strokeDasharray="2 3" />
+    </Frame>
+  );
+}
+
 const SCENES: Record<StyleId, () => React.ReactNode> = {
   minimalist: Minimalist,
   cozy: Cozy,
@@ -385,6 +423,7 @@ const SCENES: Record<StyleId, () => React.ReactNode> = {
   y2k: Y2K,
   retro: Retro,
   pastel: Pastel,
+  custom: Custom,
 };
 
 export default function StyleScene({

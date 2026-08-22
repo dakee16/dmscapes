@@ -49,11 +49,18 @@ export type AnalyticsEvent =
   | "cart_item_added"
   | "cart_item_removed"
   | "cart_add_over_budget_confirmed"
+  | "own_item_added"
   | "signup_welcome_shown"
   | "signup_welcome_cta_clicked"
   | "signup_welcome_dismissed"
   | "purchase_thank_you_shown"
-  | "purchase_thank_you_dismissed";
+  | "purchase_thank_you_dismissed"
+  // "Create your own vibe" (Pro) funnel
+  | "custom_vibe_locked_clicked"
+  | "custom_vibe_opened"
+  | "custom_vibe_validation_failed"
+  | "custom_vibe_generated"
+  | "custom_vibe_regenerated";
 
 let initialized = false;
 
