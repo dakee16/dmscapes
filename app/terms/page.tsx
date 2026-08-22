@@ -29,6 +29,7 @@ const SECTIONS = [
   { id: "no-warranty", title: "No warranty on prices, availability, or fit" },
   { id: "affiliate", title: "The Amazon affiliate relationship" },
   { id: "defective-products", title: "Defective or faulty products" },
+  { id: "paid-plans", title: "Paid plans and refunds" },
   { id: "college-data", title: "College and university data" },
   { id: "using-dormscape", title: "Using Dormscape" },
   { id: "accounts", title: "Accounts" },
@@ -44,6 +45,7 @@ const SUMMARY = [
   "We can't guarantee prices, availability, or that a product fits. Measure and check before you buy.",
   "Some links are Amazon affiliate links; we may earn a small commission at no extra cost to you, which keeps the tool free.",
   "We don't sell or ship products. Returns, refunds, and faulty items are handled by Amazon, not us.",
+  "Paid Dormscape features (Plus, Flex credits, Pro) are final and non-refundable; we don't entertain refunds or payment disputes on them.",
   "We're not affiliated with any college; dorm data comes from public sources, not an official record.",
   "Accounts are optional (only to save designs), and you can ask us to delete yours anytime.",
   "Unsaved designs can be lost, so save before you leave the page.",
@@ -180,8 +182,27 @@ export default function TermsPage() {
             </p>
           </section>
 
+          <section id="paid-plans" className="mt-14 scroll-mt-24">
+            <SectionHeading n={5} title="Paid plans and refunds" />
+            <p className={P}>
+              Some Dormscape features are paid: the Plus one-time unlock,
+              &agrave;-la-carte Flex credits, and the Pro plan. All payments for these
+              are final and non-refundable. When you buy, you&rsquo;re paying for access
+              to the feature, not for any particular result or outcome.
+            </p>
+            <p className={P}>
+              If a paid feature doesn&rsquo;t work out the way you hoped &mdash; for
+              example, a generated room, product match, or layout isn&rsquo;t what you
+              wanted &mdash; that is not grounds for a refund. We don&rsquo;t issue
+              refunds, partial refunds, or credit-backs, and we don&rsquo;t entertain
+              payment disputes or chargebacks, for a paid feature that was delivered to
+              your account. By purchasing, you agree not to initiate a chargeback or
+              dispute on that basis. Payments are processed by Stripe under their terms.
+            </p>
+          </section>
+
           <section id="college-data" className="mt-14 scroll-mt-24">
-            <SectionHeading n={5} title="College and university data" />
+            <SectionHeading n={6} title="College and university data" />
             <p className={P}>
               Dormscape is not affiliated with, endorsed by, or operated on behalf of any
               college or university listed on this site. Room dimensions and hall
@@ -193,7 +214,7 @@ export default function TermsPage() {
           </section>
 
           <section id="using-dormscape" className="mt-14 scroll-mt-24">
-            <SectionHeading n={6} title="Using Dormscape" />
+            <SectionHeading n={7} title="Using Dormscape" />
             <p className={P}>
               Use the site the way it&rsquo;s meant to be used: to plan a room, save a
               design, and shop for it if you want to. Don&rsquo;t scrape, automate, or
@@ -205,7 +226,7 @@ export default function TermsPage() {
           </section>
 
           <section id="accounts" className="mt-14 scroll-mt-24">
-            <SectionHeading n={7} title="Accounts" />
+            <SectionHeading n={8} title="Accounts" />
             <p className={P}>
               Creating an account is optional and only needed if you want to save a
               design and come back to it later. You can request that your account and
@@ -218,7 +239,7 @@ export default function TermsPage() {
           </section>
 
           <section id="saving-your-design" className="mt-14 scroll-mt-24">
-            <SectionHeading n={8} title="Saving your design" />
+            <SectionHeading n={9} title="Saving your design" />
             <p className={P}>
               Dormscape does not save your room design automatically. A design you
               generate lives only in your browser until you choose to save it to
@@ -231,7 +252,7 @@ export default function TermsPage() {
           </section>
 
           <section id="changes" className="mt-14 scroll-mt-24">
-            <SectionHeading n={9} title="Changes to these terms" />
+            <SectionHeading n={10} title="Changes to these terms" />
             <p className={P}>
               We may update these terms as Dormscape changes. If we do, we&rsquo;ll update
               the date at the top of this page. Continuing to use the site after a
@@ -240,7 +261,7 @@ export default function TermsPage() {
           </section>
 
           <section id="questions" className="mt-14 scroll-mt-24">
-            <SectionHeading n={10} title="Questions" />
+            <SectionHeading n={11} title="Questions" />
             <p className={P}>
               Questions about these terms? Email{" "}
               <a href="mailto:info@dormscape.us" className={TEXT_LINK}>
