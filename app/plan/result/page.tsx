@@ -244,6 +244,9 @@ export default function ResultPage() {
   // the category-based excluded split, and count toward the budget.
   const allCartProducts = [...cartProducts, ...customItems];
   const unplacedCustomItems = customItems.filter((cp) => unplacedItemIds.includes(cp.id));
+  // "Add your own item" is a Plus feature: Plus + Pro only. Free/Flex see a lock
+  // and get the Plus prompt on click.
+  const ownItemLocked = !authLoading && !isPaid(profile);
   const total = totalFor(allCartProducts);
 
   // Remove is always immediate; adding is immediate when it stays within budget,
@@ -515,13 +518,32 @@ export default function ResultPage() {
                 the list + budget (Part 2). Sits right under the tabs. */}
             <button
               type="button"
-              onClick={() => setShowAddOwn(true)}
+              onClick={() => {
+                if (!isPaid(profile)) {
+                  openUpgrade("own-item");
+                  return;
+                }
+                setShowAddOwn(true);
+              }}
+              aria-label={ownItemLocked ? "Add your own item (Plus feature)" : "Add your own item"}
               className="flex items-center justify-center gap-1.5 rounded-xl border border-dashed border-cobalt/40 bg-cobalt/[0.05] px-4 py-2.5 text-sm font-semibold text-cobalt transition-colors hover:border-cobalt hover:bg-cobalt/10"
             >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M12 5v14M5 12h14" />
-              </svg>
+              {ownItemLocked ? (
+                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="5" y="11" width="14" height="10" rx="2" />
+                  <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              )}
               Add your own item
+              {ownItemLocked && (
+                <span className="ml-1 inline-flex items-center rounded-full bg-highlight px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wide text-ink">
+                  Plus
+                </span>
+              )}
             </button>
             {/* Prominent "Buy all": stays visible on either tab (it reflects the
                 cart total). Hidden only when the cart itself is empty. */}

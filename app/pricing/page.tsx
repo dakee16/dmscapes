@@ -84,6 +84,10 @@ const PLUS_PERKS: { title: string; body: string }[] = [
     body: "Gamer, Team Spirit, Retro, and Pastel, on top of the five styles everyone gets free.",
   },
   {
+    title: "Add your own products",
+    body: "Paste any Amazon product link to pull your own items into your room, budget, and layout, on top of our curated picks.",
+  },
+  {
     title: "PDF and PNG export",
     body: "Download your shopping list as a clean PDF, or your room layout as an image.",
   },

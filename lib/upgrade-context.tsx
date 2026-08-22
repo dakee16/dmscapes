@@ -24,6 +24,7 @@ export type UpgradeReason =
   | "school-request"
   | "style"
   | "custom-vibe"
+  | "own-item"
   | "generic";
 
 interface UpgradeContextValue {
