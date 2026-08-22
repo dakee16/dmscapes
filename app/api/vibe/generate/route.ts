@@ -6,21 +6,21 @@ import {
   CORE_VIBE_CATEGORIES,
 } from "@/lib/custom-vibe";
 import { CATALOG, tierForBudget, beddingFor } from "@/lib/catalog";
-import { paapiConfigured, paapiDiagnostics, searchItems } from "@/lib/paapi";
+import { creatorsConfigured, creatorsDiagnostics, searchItems } from "@/lib/creators-api";
 import type { BedSize, BudgetTier, Product, ProductCategory } from "@/lib/types";
 
 // POST /api/vibe/generate, the "Create your own vibe" pipeline.
 //
 // Flow: validate → query-gen (deterministic v1, see lib/custom-vibe) → per-
-// category product search → quality + budget filter → return a Product[] the
-// result page renders exactly like a curated vibe. When PA-API credentials are
-// absent (they are, today) it returns CLEARLY-MARKED mock products drawn from
-// the curated catalog so the whole flow is demonstrable and one credential-flip
-// from live. See lib/paapi.ts for activation steps.
+// category product search (Amazon Creators API, OAuth bearer token) → quality +
+// budget filter → return a Product[] the result page renders exactly like a
+// curated vibe. When Creators credentials are absent it returns CLEARLY-MARKED
+// mock products drawn from the curated catalog so the whole flow stays
+// demonstrable. See lib/creators-api.ts for the auth/search layer.
 
 export interface VibeGenerateResponse {
   products: Product[];
-  /** True when the products are placeholder matches, not live PA-API results. */
+  /** True when the products are placeholder matches, not live Creators results. */
   mock: boolean;
   vibe: string;
 }
@@ -76,12 +76,12 @@ function buildMock(tier: BudgetTier, seed: number, bedSize?: BedSize): Product[]
 }
 
 /**
- * LIVE product set from PA-API. One throttled SearchItems call per category
- * (PA-API's ~1 req/sec limit), quality-filtered on what PA-API actually returns:
- * a real image, a buyable price in tier range, and Prime. NOTE: PA-API 5.0 does
- * NOT return star ratings or review counts, so the rating/review thresholds used
- * for the curated catalog and the mock cannot be applied here, flagged for the
- * activation review. Never runs today (paapiConfigured() is false).
+ * LIVE product set from the Amazon Creators API. One throttled searchItems call
+ * per category, then a quality pick: a real image, a buyable price, and — when
+ * the Creators API returns them — the curated rating/review bar (PA-API 5.0 did
+ * not return these; the Creators response is checked at runtime and the raw
+ * shape is logged once in lib/creators-api). Any per-category failure is logged
+ * loudly rather than silently swallowed.
  */
 async function buildLive(
   queries: Record<string, string>,
@@ -97,13 +97,22 @@ async function buildLive(
         minPrice: min,
         maxPrice: max,
       });
-      // PA-API already applied MinPrice/MaxPrice; just require a usable listing
-      // (a real image + a buyable price). Re-filtering on the same narrow window
-      // here only threw away otherwise-good live matches.
-      const pick = items.find((it) => it.imageUrl && it.price != null);
+      // Require a usable listing (real image + buyable price). When the Creators
+      // API supplies ratings/reviews, prefer picks that clear the curated bar;
+      // fall back to any usable listing so a category is never dropped for want
+      // of review data.
+      const usable = items.filter((it) => it.imageUrl && it.price != null);
+      const quality = usable.filter(
+        (it) =>
+          it.rating != null &&
+          it.reviewCount != null &&
+          it.rating >= MIN_RATING &&
+          it.reviewCount >= MIN_REVIEWS
+      );
+      const pick = (quality[0] ?? usable[0]) as (typeof items)[number] | undefined;
       if (pick && pick.price != null) {
         out.push({
-          id: `paapi-${pick.asin}`,
+          id: `creators-${pick.asin}`,
           name: pick.title,
           category: cat as ProductCategory,
           style_tags: ["custom"],
@@ -116,23 +125,23 @@ async function buildLive(
           length_ft: null,
           height_ft: null,
           color: "",
-          rating: 0, // PA-API 5.0 does not return ratings
-          review_count: 0, // PA-API 5.0 does not return review counts
+          rating: pick.rating ?? 0, // Creators API may return a real rating
+          review_count: pick.reviewCount ?? 0, // and a real review count
           alternative_ids: [],
           description: "",
           active: true,
         });
       }
     } catch (err) {
-      // Log loudly so a live failure (bad signature, throttle, quota, wrong
-      // marketplace) is visible in the server logs instead of being silently
+      // Log loudly so a live failure (bad token, expired scope, access-restricted,
+      // wrong marketplace) is visible in the server logs instead of being silently
       // swallowed and masked by the catalog fallback.
       console.error(
-        `[vibe] PA-API SearchItems failed for "${cat}":`,
+        `[vibe] Creators searchItems failed for "${cat}":`,
         err instanceof Error ? err.message : err
       );
     }
-    // Throttle to respect PA-API's per-second limit.
+    // Throttle between calls to stay under the Creators API rate limit.
     await new Promise((r) => setTimeout(r, 1100));
   }
   return out;
@@ -188,31 +197,31 @@ export async function POST(request: Request) {
 
   let products: Product[];
   let mock: boolean;
-  if (paapiConfigured()) {
-    // One-time, non-secret diagnostic: cred lengths + the public partner tag,
-    // so a truncated/whitespaced paste is obvious in the logs.
-    const diag = paapiDiagnostics();
+  if (creatorsConfigured()) {
+    // One-time, non-secret diagnostic: which env names supplied the creds, their
+    // lengths, and the public partner tag.
+    const diag = creatorsDiagnostics();
     console.log(
-      `[vibe] PA-API configured, accessKey ${diag?.accessKeyLen} chars, ` +
-        `secret ${diag?.secretKeyLen} chars, partnerTag "${diag?.partnerTag}"` +
-        (diag?.hadWhitespace ? " (trimmed stray whitespace on paste!)" : "")
+      `[vibe] Creators API configured via ${diag?.usingNewNames ? "AMAZON_CREATORS_*" : "AMAZON_PAAPI_* (fallback)"}, ` +
+        `credentialId ${diag?.credentialIdLen} chars, secret ${diag?.credentialSecretLen} chars, ` +
+        `partnerTag "${diag?.partnerTag}"`
     );
-    // Credentials present -> LIVE is authoritative. Whatever categories PA-API
-    // matches are used as-is; any it couldn't fill are topped up from the curated
-    // catalog so the room is still complete, but the result stays live-backed
-    // (mock:false). The catalog only fully takes over when live returns NOTHING
-    // (a real failure, now logged per-category in buildLive above).
+    // Credentials present -> LIVE is authoritative. Whatever categories the
+    // Creators API matches are used as-is; any it couldn't fill are topped up
+    // from the curated catalog so the room is still complete, but the result
+    // stays live-backed (mock:false). The catalog only fully takes over when
+    // live returns NOTHING (a real failure, logged per-category in buildLive).
     const live = await buildLive(queries, tier);
     if (live.length > 0) {
       products = fillMissingFromCatalog(live, tier, seed, bedSize);
       mock = false;
       console.log(
-        `[vibe] PA-API live: ${live.length}/${CORE_VIBE_CATEGORIES.length} categories matched` +
+        `[vibe] Creators live: ${live.length}/${CORE_VIBE_CATEGORIES.length} categories matched` +
           `, ${products.length - live.length} topped up from catalog`
       );
     } else {
       console.error(
-        "[vibe] PA-API returned no products (see per-category errors above); falling back to catalog"
+        "[vibe] Creators API returned no products (see per-category errors above); falling back to catalog"
       );
       products = buildMock(tier, seed, bedSize);
       mock = true;

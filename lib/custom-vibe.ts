@@ -3,7 +3,7 @@
 //
 // STATUS: v1 ships behind the NEXT_PUBLIC_CUSTOM_VIBE flag (default OFF) and is
 // mock-backed. Two real integrations must be wired before it can go live:
-//   1. Amazon Product Advertising API (PA-API 5.0), see lib/paapi.ts.
+//   1. Amazon Creators API (OAuth client-credentials), see lib/creators-api.ts.
 //   2. (optional) An LLM for validation + query generation, the deterministic
 //      functions below are the v1 implementation, each with a clearly marked
 //      seam where a Claude call drops in. Nothing here calls a model yet.

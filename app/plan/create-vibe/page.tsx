@@ -123,17 +123,23 @@ export default function CreateVibePage() {
 
   return (
     <section className="relative min-h-[calc(100vh-8.5rem)] overflow-hidden">
-      {/* Premium ground: a subtle cobalt wash + grid paper, both TOP-ANCHORED and
-          faded to ZERO over a long distance so they dissolve into the base page
-          background with no seam. The fade lives on each layer itself: the grid
-          via a to-bottom alpha MASK, the tint via its own colour at alpha 0.
-          (Never the `transparent` keyword for a visible fade, it interpolates
-          through transparent-black and leaves a grey band, which was the seam.) */}
+      {/* Premium ground: a warm-to-cool brand wash (highlight amber -> cobalt,
+          the "yellow/blue" gradient) + grid paper, both TOP-ANCHORED. The colour
+          blend is a DIAGONAL gradient, so its vertical fade into the off-white
+          base can't live in the colour stops; it rides a long, EASED to-bottom
+          alpha MASK instead (same technique as the grid layer). The eased mask
+          tail is what removes the abrupt edge, the wash melts into #fafaf8 with
+          no band. (Mask alpha 0 is safe; the grey-band trap is only the
+          `transparent` keyword inside a COLOUR gradient, which we avoid.) */}
       <span
         className="pointer-events-none absolute inset-x-0 top-0 h-[46rem]"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(43,78,255,0.07) 0%, rgba(43,78,255,0.02) 40%, rgba(43,78,255,0) 100%)",
+            "linear-gradient(115deg, rgba(255,216,77,0.22) 0%, rgba(255,216,77,0.06) 34%, rgba(43,78,255,0.07) 66%, rgba(43,78,255,0.18) 100%)",
+          maskImage:
+            "linear-gradient(to bottom, black 0%, black 10%, rgba(0,0,0,0.82) 28%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.22) 68%, rgba(0,0,0,0.07) 84%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, black 0%, black 10%, rgba(0,0,0,0.82) 28%, rgba(0,0,0,0.5) 48%, rgba(0,0,0,0.22) 68%, rgba(0,0,0,0.07) 84%, transparent 100%)",
         }}
         aria-hidden="true"
       />
