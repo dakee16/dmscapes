@@ -237,3 +237,75 @@ interface RawListing {
   };
   deliveryInfo?: { isPrimeEligible?: boolean };
 }
+
+// ---- GetItems (look up specific ASINs) -------------------------------------
+const GET_URL = "https://creatorsapi.amazon/catalog/v1/getItems";
+
+/**
+ * Look up specific ASINs (the "Add your own item" paste flow). Throws on any
+ * failure so the route can fall back to a demo product; returns [] if the API
+ * returns no items. Same auth + resource set as searchItems.
+ */
+export async function getItems(asins: string[]): Promise<CreatorItem[]> {
+  const creds = creatorsCreds();
+  if (!creds) throw new Error("Creators API not configured");
+  const token = await getAccessToken(creds);
+
+  const body = {
+    itemIds: asins,
+    itemIdType: "ASIN",
+    marketplace: MARKETPLACE,
+    partnerTag: creds.partnerTag,
+    partnerType: "Associates",
+    resources: [
+      "images.primary.large",
+      "itemInfo.title",
+      "offersV2.listings.price",
+      "customerReviews.count",
+      "customerReviews.starRating",
+    ],
+  };
+
+  const res = await fetch(GET_URL, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "content-type": "application/json",
+      "x-marketplace": MARKETPLACE,
+    },
+    body: JSON.stringify(body),
+  });
+
+  const text = await res.text().catch(() => "");
+  if (!res.ok) {
+    let detail = text;
+    try {
+      const j = JSON.parse(text) as {
+        message?: string; Message?: string;
+        errors?: { code?: string; message?: string }[]; __type?: string;
+      };
+      const code = j.__type ?? j.errors?.[0]?.code ?? "";
+      const msg = j.message ?? j.Message ?? j.errors?.[0]?.message ?? "";
+      detail = [code, msg].filter(Boolean).join(", ") || text;
+    } catch {
+      /* keep raw */
+    }
+    throw new Error(`Creators getItems HTTP ${res.status}: ${detail}`);
+  }
+
+  const data = JSON.parse(text) as { itemsResult?: { items?: RawItem[] } };
+  const items = data.itemsResult?.items ?? [];
+  return items.map((it) => ({
+    asin: it.asin ?? "",
+    title: it.itemInfo?.title?.displayValue ?? "",
+    imageUrl: it.images?.primary?.large?.url ?? it.images?.primary?.medium?.url ?? null,
+    price: readPrice(it),
+    detailPageUrl: it.detailPageUrl ?? it.detailPageURL ?? "",
+    isPrime: false,
+    rating:
+      it.customerReviews?.starRating?.value != null
+        ? Number(it.customerReviews.starRating.value)
+        : null,
+    reviewCount: it.customerReviews?.count != null ? Number(it.customerReviews.count) : null,
+  }));
+}
