@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import RoomPlanner from "@/components/RoomPlanner";
 import HowItWorks from "@/components/HowItWorks";
 import Vibes from "@/components/Vibes";
+import CreateVibePromo from "@/components/site/CreateVibePromo";
 import Schools from "@/components/Schools";
 import PlusPitch from "@/components/site/PlusPitch";
 import PlanCta from "@/components/site/PlanCta";
@@ -156,6 +157,7 @@ export default function Home() {
         </section>
 
         <Vibes />
+        <CreateVibePromo />
         <Schools />
 
         {/* Plus pitch: distinct light treatment, between the showcase and the

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import StyleScene from "@/components/site/StyleScene";
 import type { StyleId } from "@/lib/types";
@@ -112,36 +111,6 @@ export default function Vibes() {
               </div>
             </article>
           ))}
-        </Reveal>
-
-        {/* Pro-exclusive highlight: none of the nine? describe your own. */}
-        <Reveal className="mt-6">
-          <div className="flex flex-col items-start gap-4 rounded-2xl border border-ink/10 bg-white p-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-6">
-            <div className="flex items-start gap-3">
-              <span className="mt-0.5 inline-flex shrink-0 items-center gap-1 rounded-full bg-highlight px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink shadow-sm">
-                <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                  <rect x="5" y="11" width="14" height="9" rx="2" />
-                  <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
-                </svg>
-                Pro
-              </span>
-              <div>
-                <h3 className="font-display text-lg font-bold tracking-tight">
-                  None of the nine? Create your own.
-                </h3>
-                <p className="mt-1 max-w-lg text-sm leading-relaxed text-ink-soft">
-                  Describe any aesthetic in your own words and we match real products to
-                  it, live. A Pro feature.
-                </p>
-              </div>
-            </div>
-            <Link
-              href="/pricing"
-              className="shrink-0 rounded-lg bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
-            >
-              See Pro
-            </Link>
-          </div>
         </Reveal>
       </div>
     </section>
