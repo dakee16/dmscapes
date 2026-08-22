@@ -49,6 +49,7 @@ export type AnalyticsEvent =
   | "cart_item_added"
   | "cart_item_removed"
   | "cart_add_over_budget_confirmed"
+  | "own_item_added"
   | "signup_welcome_shown"
   | "signup_welcome_cta_clicked"
   | "signup_welcome_dismissed"

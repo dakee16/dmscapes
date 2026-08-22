@@ -26,6 +26,8 @@ import ProductPanel from "@/components/products/ProductPanel";
 import ThingsToAddPanel from "@/components/products/ThingsToAddPanel";
 import ProductTabSwitcher, { type ProductTab } from "@/components/products/ProductTabSwitcher";
 import AddOverBudgetModal from "@/components/products/AddOverBudgetModal";
+import AddOwnItemModal from "@/components/products/AddOwnItemModal";
+import ProductCard from "@/components/products/ProductCard";
 import ActionBar from "@/components/products/ActionBar";
 import BuyAllButton from "@/components/products/BuyAllButton";
 import PurchaseSurvey from "@/components/products/PurchaseSurvey";
@@ -65,6 +67,8 @@ export default function ResultPage() {
   // Piece whose "+" would push the cart over budget: held here until the user
   // confirms or backs out of AddOverBudgetModal.
   const [pendingAdd, setPendingAdd] = useState<Product | null>(null);
+  const [showAddOwn, setShowAddOwn] = useState(false);
+  const [pendingOwn, setPendingOwn] = useState<{ product: Product; place: boolean } | null>(null);
   // Which product tab is showing: the cart ("Shopping list") or the catalog.
   const [activeTab, setActiveTab] = useState<ProductTab>("list");
   const [regenerating, setRegenerating] = useState(false);
@@ -89,6 +93,11 @@ export default function ResultPage() {
   const excluded = usePlannerStore((s) => s.excluded);
   const setExcluded = usePlannerStore((s) => s.setExcluded);
   const toggleExcluded = usePlannerStore((s) => s.toggleExcluded);
+  const customItems = usePlannerStore((s) => s.customItems);
+  const unplacedItemIds = usePlannerStore((s) => s.unplacedItemIds);
+  const addCustomItem = usePlannerStore((s) => s.addCustomItem);
+  const placeCustomItem = usePlannerStore((s) => s.placeCustomItem);
+  const removeCustomItem = usePlannerStore((s) => s.removeCustomItem);
   const initLayout = usePlannerStore((s) => s.initLayout);
   const moveItem = usePlannerStore((s) => s.moveItem);
   const rotateItem = usePlannerStore((s) => s.rotateItem);
@@ -231,7 +240,11 @@ export default function ResultPage() {
   }
 
   const dims = formatDims(room.lengthFt, room.widthFt);
-  const total = totalFor(cartProducts);
+  // Custom ("Add your own item") products always ride in the cart regardless of
+  // the category-based excluded split, and count toward the budget.
+  const allCartProducts = [...cartProducts, ...customItems];
+  const unplacedCustomItems = customItems.filter((cp) => unplacedItemIds.includes(cp.id));
+  const total = totalFor(allCartProducts);
 
   // Remove is always immediate; adding is immediate when it stays within budget,
   // and otherwise routes through the confirmation modal.
@@ -255,6 +268,24 @@ export default function ResultPage() {
     track("cart_item_added", { category: pendingAdd.category });
     track("cart_add_over_budget_confirmed", { category: pendingAdd.category });
     setPendingAdd(null);
+  }
+
+  // "Add your own item": a confident category match auto-places it on the canvas;
+  // otherwise it lands in the unplaced tray for the user to place by hand.
+  function handleOwnResolved(product: Product, category: ProductCategory | null) {
+    const place = category !== null;
+    if (total + product.price <= budget) {
+      addCustomItem(product, place);
+      track("own_item_added", { category: category ?? "uncategorized", placed: place });
+    } else {
+      setPendingOwn({ product, place });
+    }
+  }
+  function confirmOwn() {
+    if (!pendingOwn) return;
+    addCustomItem(pendingOwn.product, pendingOwn.place);
+    track("own_item_added", { over_budget: true, placed: pendingOwn.place });
+    setPendingOwn(null);
   }
 
   // One canvas element, mounted either inline or in the fullscreen overlay.
@@ -390,6 +421,35 @@ export default function ResultPage() {
           <div className="overflow-hidden rounded-2xl border border-ink/10 bg-white p-1.5 sm:p-2">
             {!fullscreen && canvas}
           </div>
+          {/* Unplaced tray: custom items we couldn't confidently categorize.
+              "Place" drops the item on the canvas (centered); the existing drag
+              handles then let the user position it exactly. */}
+          {unplacedCustomItems.length > 0 && (
+            <div className="mt-2 rounded-xl border border-amber/40 bg-amber/[0.06] p-2.5">
+              <p className="mb-2 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-ink">
+                Unplaced items · drop onto your room
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {unplacedCustomItems.map((cp) => (
+                  <button
+                    key={cp.id}
+                    type="button"
+                    onClick={() => {
+                      placeCustomItem(cp.id);
+                      track("layout_edited", { item: cp.id, action: "place" });
+                    }}
+                    title={`Place ${cp.name} on your room`}
+                    className="flex items-center gap-2 rounded-lg border border-ink/15 bg-white px-2 py-1.5 text-left transition-colors hover:border-cobalt"
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={cp.image_url} alt="" className="h-8 w-8 shrink-0 rounded border border-ink/5 object-contain" />
+                    <span className="max-w-[9rem] truncate text-xs font-medium text-ink">{cp.name}</span>
+                    <span className="font-mono text-[10px] font-semibold uppercase tracking-wide text-cobalt">Place →</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
           <div className="mt-2 flex flex-col items-start gap-0.5">
             <button
               type="button"
@@ -451,21 +511,52 @@ export default function ResultPage() {
             <BudgetTracker total={total} budget={budget} />
             {/* Island-style tab switcher, directly above Buy all. */}
             <ProductTabSwitcher active={activeTab} onChange={setActiveTab} />
+            {/* Add-your-own-item: paste an Amazon link to pull a real product into
+                the list + budget (Part 2). Sits right under the tabs. */}
+            <button
+              type="button"
+              onClick={() => setShowAddOwn(true)}
+              className="flex items-center justify-center gap-1.5 rounded-xl border border-dashed border-cobalt/40 bg-cobalt/[0.05] px-4 py-2.5 text-sm font-semibold text-cobalt transition-colors hover:border-cobalt hover:bg-cobalt/10"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+              Add your own item
+            </button>
             {/* Prominent "Buy all": stays visible on either tab (it reflects the
                 cart total). Hidden only when the cart itself is empty. */}
-            {cartProducts.length > 0 && (
-              <BuyAllButton products={cartProducts} total={total} />
+            {allCartProducts.length > 0 && (
+              <BuyAllButton products={allCartProducts} total={total} />
             )}
             {/* Active tab body. Keyed on the tab so switching re-triggers the
                 quick fade rather than swapping abruptly. */}
             <div className="lg:max-h-[62vh] lg:overflow-y-auto lg:pr-1">
               <div key={activeTab} className="fade-in">
                 {activeTab === "list" ? (
-                  <ProductPanel
-                    products={cartProducts}
-                    bedSize={room.bedSize}
-                    onRemove={handleRemove}
-                  />
+                  <div className="space-y-4">
+                    <ProductPanel
+                      products={cartProducts}
+                      bedSize={room.bedSize}
+                      onRemove={handleRemove}
+                    />
+                    {customItems.length > 0 && (
+                      <div className="space-y-2.5">
+                        <p className="font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-cobalt">
+                          Your added items
+                        </p>
+                        {customItems.map((cp) => (
+                          <div key={cp.id}>
+                            {unplacedItemIds.includes(cp.id) && (
+                              <p className="mb-1 font-mono text-[10px] uppercase tracking-wide text-amber">
+                                Unplaced · drop it from the tray onto your room
+                              </p>
+                            )}
+                            <ProductCard product={cp} onRemove={() => removeCustomItem(cp.id)} />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ) : (
                   <ThingsToAddPanel items={availableProducts} onAdd={handleAdd} />
                 )}
@@ -475,7 +566,7 @@ export default function ResultPage() {
         </BuyGateProvider>
       </div>
 
-      <ActionBar products={cartProducts} getPng={() => canvasRef.current?.exportPNG() ?? null} />
+      <ActionBar products={allCartProducts} getPng={() => canvasRef.current?.exportPNG() ?? null} />
       <PurchaseSurvey cartTotal={total} />
       <SavePrompt />
 
@@ -528,6 +619,19 @@ export default function ResultPage() {
           onConfirm={confirmAdd}
           onCancel={() => setPendingAdd(null)}
         />
+      )}
+
+      {pendingOwn && (
+        <AddOverBudgetModal
+          product={pendingOwn.product}
+          budget={budget}
+          newTotal={total + pendingOwn.product.price}
+          onConfirm={confirmOwn}
+          onCancel={() => setPendingOwn(null)}
+        />
+      )}
+      {showAddOwn && (
+        <AddOwnItemModal onClose={() => setShowAddOwn(false)} onAdd={handleOwnResolved} />
       )}
 
       {regenerating && (
