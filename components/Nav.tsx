@@ -94,7 +94,7 @@ export default function Nav() {
           rounded, translucent, blurred pill that hovers over the page as it
           scrolls. */}
       <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
-        <nav className="mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-4 rounded-full border border-ink/10 bg-paper/80 px-4 shadow-[0_12px_34px_-14px_rgba(23,23,43,0.4)] backdrop-blur-md sm:h-[68px] sm:px-6">
+        <nav className="mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-4 rounded-full border border-ink/10 bg-paper/95 px-4 shadow-[0_12px_34px_-14px_rgba(23,23,43,0.4)] sm:h-[68px] sm:bg-paper/80 sm:px-6 sm:backdrop-blur-md">
           {/* Brand */}
           <Wordmark />
 

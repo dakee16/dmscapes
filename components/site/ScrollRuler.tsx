@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
 // On-brand scroll-progress signature: a ruler down each open margin, reinforcing
@@ -74,6 +75,19 @@ function Rail({ side }: { side: "left" | "right" }) {
 }
 
 export default function ScrollRuler() {
+  // Mount the rails (and their two useScroll subscriptions) ONLY at xl+, where the
+  // ruler is actually visible. It was previously display:none below xl but the
+  // framer-motion scroll hooks still ran on mobile, driving nothing — a pure
+  // waste. Now they never mount below xl.
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1280px)");
+    const sync = () => setShow(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+  if (!show) return null;
   return (
     <>
       <Rail side="left" />

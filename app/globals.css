@@ -263,6 +263,13 @@ p {
   }
 }
 
+@media (max-width: 640px) {
+  .hero-float,
+  .vibe-float {
+    animation: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

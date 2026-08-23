@@ -10,6 +10,13 @@ import {
 } from "react";
 import { Stage, Layer, Group, Rect, Line, Arc, Text } from "react-konva";
 import Konva from "konva";
+
+// Cap the canvas backing-store resolution. High-DPR phones (devicePixelRatio 2-3)
+// otherwise rasterize 2-3x the pixels on every drag/zoom/pinch redraw, which is a
+// real mobile lag source; 2x keeps retina crispness while halving work on 3x screens.
+if (typeof window !== "undefined") {
+  Konva.pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+}
 import type { KonvaEventObject } from "konva/lib/Node";
 import type { FurnitureItem, ProductCategory } from "@/lib/types";
 import { CATEGORY_COLORS } from "@/lib/styles";
