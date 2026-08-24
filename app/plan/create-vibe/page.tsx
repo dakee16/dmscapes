@@ -123,18 +123,6 @@ export default function CreateVibePage() {
 
   return (
     <section className="relative min-h-[calc(100vh-8.5rem)] overflow-hidden">
-      {/* Clean, quiet ground: a soft, top-anchored grid-paper texture over the
-          off-white base, masked to fade out. No colour wash, so the background
-          never competes with the content. */}
-      <span
-        className="grid-paper pointer-events-none absolute inset-x-0 top-0 h-[46rem] opacity-50"
-        style={{
-          maskImage: "linear-gradient(to bottom, black 0%, black 24%, transparent 90%)",
-          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 24%, transparent 90%)",
-        }}
-        aria-hidden="true"
-      />
-
       <div className="relative mx-auto max-w-5xl px-5 pb-24 pt-4 sm:px-8 sm:pt-8">
         <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
           Pro · Create your own vibe
