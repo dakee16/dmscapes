@@ -222,12 +222,6 @@ export default function BillingPage() {
     <div>
       <SiteHeader />
       <main className="relative">
-        {/* Subtle static grid-paper texture (not the cursor-reactive hero grid),
-            fading out below the fold, for visual consistency with the site. */}
-        <div
-          className="grid-paper grid-paper-fade pointer-events-none absolute inset-x-0 top-0 -z-10 h-[28rem]"
-          aria-hidden="true"
-        />
         <div className="mx-auto max-w-3xl px-5 py-10 sm:px-8">
           {!ready ? (
             <div aria-busy="true" aria-label="Loading billing">
@@ -382,23 +376,6 @@ export default function BillingPage() {
                 </section>
               )}
 
-              {/* Payment method note --------------------------------------------- */}
-              <section className={`mt-6 ${CARD}`}>
-                <h2 className="font-display text-lg font-bold tracking-tight">Payment method</h2>
-                <div className="mt-3 flex items-start gap-3 rounded-xl border border-ink/10 bg-paper px-4 py-3.5">
-                  <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="h-4 w-4 text-ink-soft" fill="none" stroke="currentColor" strokeWidth="1.8">
-                      <rect x="3" y="6" width="18" height="12" rx="2" />
-                      <path d="M3 10h18" strokeLinecap="round" />
-                    </svg>
-                  </span>
-                  <p className="text-sm leading-relaxed text-ink-soft">
-                    We don&rsquo;t store your card. Every purchase is a one-time, secure Stripe
-                    Checkout that collects payment at the moment you buy. Nothing is saved or
-                    charged again. There&rsquo;s no subscription to cancel.
-                  </p>
-                </div>
-              </section>
 
               {/* Purchase history: cards, or an upsell for empty free/flex ------- */}
               <section className="mt-6">
