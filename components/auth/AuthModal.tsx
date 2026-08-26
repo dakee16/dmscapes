@@ -33,6 +33,27 @@ function isAlreadyRegistered(err: {
   );
 }
 
+// Auth network calls can hang (dropped connection, slow cold start) and never
+// settle. The busy flag is cleared in `finally`, which only runs once the awaited
+// promise resolves or rejects, so a hung request would otherwise leave the submit
+// button stuck on "One sec…" forever. Race every auth call against this timeout so
+// the promise always settles and the UI always recovers.
+const AUTH_TIMEOUT_MS = 15000;
+function withTimeout<T>(promise: Promise<T>, ms = AUTH_TIMEOUT_MS): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<never>((_, reject) => {
+      setTimeout(() => {
+        const e = new Error("Request timed out");
+        e.name = "TimeoutError";
+        reject(e);
+      }, ms);
+    }),
+  ]);
+}
+const SLOW_NETWORK_MSG =
+  "This is taking longer than expected — check your connection and try again.";
+
 function GoogleG() {
   return (
     <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
@@ -180,18 +201,26 @@ export default function AuthModal() {
     setBusy(true);
     setError("");
     window.localStorage.setItem(OAUTH_PENDING_KEY, "1");
-    const { error: err } = await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: `${window.location.origin}${window.location.pathname}`,
-      },
-    });
-    if (err) {
+    try {
+      const { error: err } = await withTimeout(
+        supabase.auth.signInWithOAuth({
+          provider: "google",
+          options: {
+            redirectTo: `${window.location.origin}${window.location.pathname}`,
+          },
+        })
+      );
+      if (err) {
+        window.localStorage.removeItem(OAUTH_PENDING_KEY);
+        setError(err.message);
+        setBusy(false);
+      }
+      // On success the browser navigates away; no state to restore.
+    } catch {
       window.localStorage.removeItem(OAUTH_PENDING_KEY);
-      setError(err.message);
+      setError(SLOW_NETWORK_MSG);
       setBusy(false);
     }
-    // On success the browser navigates away; no state to restore.
   }
 
   // Signup hit an existing account: flip the modal to login in place, keep the
@@ -239,7 +268,7 @@ export default function AuthModal() {
     setError("");
     try {
       if (mode === "signup") {
-        const { data, error: err } = await supabase.auth.signUp({
+        const { data, error: err } = await withTimeout(supabase.auth.signUp({
           email: mail,
           password,
           options: {
@@ -249,7 +278,7 @@ export default function AuthModal() {
             // (migration 0013). The ISO timestamp is when they ticked the box.
             data: { terms_accepted_at: new Date().toISOString() },
           },
-        });
+        }));
         if (err) {
           if (isAlreadyRegistered(err)) {
             switchToExistingAccount();
@@ -270,16 +299,20 @@ export default function AuthModal() {
         // fires and the username step renders via needsUsername.
         if (!data.session) setConfirmSent(true);
       } else {
-        const { error: err } = await supabase.auth.signInWithPassword({
-          email: mail,
-          password,
-        });
+        const { error: err } = await withTimeout(
+          supabase.auth.signInWithPassword({
+            email: mail,
+            password,
+          })
+        );
         if (err) {
           setError(err.message);
           return;
         }
         track("auth_completed", { mode: "login", provider: "email" });
       }
+    } catch {
+      setError(SLOW_NETWORK_MSG);
     } finally {
       setBusy(false);
     }
@@ -297,14 +330,18 @@ export default function AuthModal() {
     setBusy(true);
     setError("");
     try {
-      const { error: err } = await supabase.auth.resetPasswordForEmail(mail, {
-        redirectTo: `${window.location.origin}/reset-password`,
-      });
+      const { error: err } = await withTimeout(
+        supabase.auth.resetPasswordForEmail(mail, {
+          redirectTo: `${window.location.origin}/reset-password`,
+        })
+      );
       if (err) {
         setError(err.message);
         return;
       }
       setResetSent(true);
+    } catch {
+      setError(SLOW_NETWORK_MSG);
     } finally {
       setBusy(false);
     }
