@@ -20,7 +20,7 @@ import {
 import type { InvoiceItem, InvoicesResponse } from "@/lib/api-types";
 
 // Shared mono stat-line treatment (uppercase, letter-spaced), the same language
-// as the header credits chip and the "200+ rooms planned" trust lines.
+// as the header credits chip and the "500+ rooms planned" trust lines.
 const EYEBROW = "font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-soft";
 const CARD = "rounded-2xl border border-ink/10 bg-card p-5 sm:p-6";
 

@@ -100,7 +100,7 @@ export default function AboutPage() {
             </div>
             <div className="text-right">
               <p className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
-                200+
+                500+
               </p>
               <p className={STAT_LABEL}>Rooms planned</p>
             </div>

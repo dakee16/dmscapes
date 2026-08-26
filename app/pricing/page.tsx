@@ -245,7 +245,7 @@ function TrustStrip() {
       ),
       label: (
         <>
-          <span className="font-semibold text-ink">200+</span> rooms planned
+          <span className="font-semibold text-ink">500+</span> rooms planned
         </>
       ),
     },
