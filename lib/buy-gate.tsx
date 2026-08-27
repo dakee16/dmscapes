@@ -53,7 +53,8 @@ function openAmazon(url: string): boolean {
 }
 
 export function BuyGateProvider({ children }: { children: React.ReactNode }) {
-  const { user, openAuthModal, modalOpen } = useAuth();
+  const { user, openAuthModal } = useAuth();
+  const PENDING_BUY_KEY = "dormscape-pending-buy";
   const pendingRef = useRef<PendingBuy | null>(null);
   const userRef = useRef(user);
   userRef.current = user;
@@ -64,6 +65,17 @@ export function BuyGateProvider({ children }: { children: React.ReactNode }) {
   const gate = useCallback(
     (url: string, onProceed: () => void): boolean => {
       if (userRef.current) return false; // signed in: let the link do its thing
+      // Auth is a full page now, so this surface unmounts during login. Stash the
+      // destination in sessionStorage (with a timestamp) so we can resume the buy
+      // when the user lands back here signed in.
+      try {
+        window.sessionStorage.setItem(
+          PENDING_BUY_KEY,
+          JSON.stringify({ url, ts: Date.now() })
+        );
+      } catch {
+        /* private mode etc. — the in-tab ref below still covers same-tab resumes */
+      }
       pendingRef.current = { url, onProceed };
       openAuthModal("buy");
       return true;
@@ -71,21 +83,36 @@ export function BuyGateProvider({ children }: { children: React.ReactNode }) {
     [openAuthModal]
   );
 
-  // Resume once sign-in lands: user flips from null to set with a buy pending.
+  // Resume once sign-in lands: the buy survives the navigation to /login via
+  // sessionStorage, and the in-tab ref covers the (now rare) same-tab case.
   useEffect(() => {
     if (!user) return;
-    const pending = pendingRef.current;
-    if (!pending) return;
+    let pending = pendingRef.current;
     pendingRef.current = null;
+    if (!pending) {
+      try {
+        const raw = window.sessionStorage.getItem(PENDING_BUY_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw) as { url?: string; ts?: number };
+          // Only a fresh intent (< 5 min) resumes, so a stale back-out can never
+          // surprise-open Amazon on a later, unrelated login.
+          if (parsed.url && Date.now() - (parsed.ts ?? 0) < 5 * 60 * 1000) {
+            pending = { url: parsed.url, onProceed: () => {} };
+          }
+        }
+      } catch {
+        /* ignore */
+      }
+    }
+    try {
+      window.sessionStorage.removeItem(PENDING_BUY_KEY);
+    } catch {
+      /* ignore */
+    }
+    if (!pending) return;
     pending.onProceed();
     if (!openAmazon(pending.url)) setReadyUrl(pending.url);
   }, [user]);
-
-  // If the modal closes without a sign-in (the user backed out), drop the
-  // pending buy so a later, unrelated login can't trigger a surprise redirect.
-  useEffect(() => {
-    if (!modalOpen && !userRef.current) pendingRef.current = null;
-  }, [modalOpen]);
 
   const value = useMemo<BuyGateValue>(() => ({ gate }), [gate]);
 
