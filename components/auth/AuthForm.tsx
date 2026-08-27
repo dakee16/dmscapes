@@ -29,7 +29,7 @@ function withTimeout<T>(promise: Promise<T>, ms = AUTH_TIMEOUT_MS): Promise<T> {
   ]);
 }
 const SLOW_NETWORK_MSG =
-  "This is taking longer than expected — check your connection and try again.";
+  "This is taking longer than expected. Check your connection and try again.";
 
 function isAlreadyRegistered(err: { code?: string | null; message?: string | null }): boolean {
   const code = (err.code ?? "").toLowerCase();

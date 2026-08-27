@@ -74,7 +74,7 @@ export function BuyGateProvider({ children }: { children: React.ReactNode }) {
           JSON.stringify({ url, ts: Date.now() })
         );
       } catch {
-        /* private mode etc. — the in-tab ref below still covers same-tab resumes */
+        /* private mode etc.; the in-tab ref below still covers same-tab resumes */
       }
       pendingRef.current = { url, onProceed };
       openAuthModal("buy");

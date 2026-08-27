@@ -15,7 +15,7 @@ const SKIP_KEY = "dormscape-username-prompted";
  * AuthProvider). Replaces the username step that used to live inside the auth
  * modal. It is SEQUENCED after the SignupWelcome: it stays hidden while
  * `signupWelcomeOpen` is true and for a short grace after signup, so a brand-new
- * user sees "here's your free credit" first, then the username ask — never both
+ * user sees "here's your free credit" first, then the username ask, never both
  * at once (Part 3), regardless of whether they signed up with email or Google.
  */
 export default function UsernamePrompt() {

@@ -10,7 +10,7 @@ import type { StyleId } from "@/lib/types";
 
 const REASONS: AuthModalReason[] = ["profile", "save-design", "buy", "generate"];
 
-// Layered promo tiles — the same floating line-art vibe language as the CYO
+// Layered promo tiles: the same floating line-art vibe language as the CYO
 // section, giving the page depth without literal 3D.
 const TILES: { id: StyleId; wrap: string; rotate: number; dur: string; delay: string; dist: string }[] = [
   { id: "cozy", wrap: "col-start-1 row-start-1 z-20", rotate: -5, dur: "6.6s", delay: "0s", dist: "10px" },
@@ -38,18 +38,17 @@ function LoginInner() {
         </div>
       </div>
 
-      {/* RIGHT: promo — hidden on small screens so the form leads on mobile */}
+      {/* RIGHT: promo, hidden on small screens so the form leads on mobile */}
       <div className="relative order-2 mt-10 flex flex-col justify-center border-t border-ink/10 pt-10 lg:mt-0 lg:border-0 lg:pt-0">
         <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-highlight px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink shadow-sm">
           Your dorm, planned to the inch
         </span>
         <h1 className="mt-4 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-          Welcome to <span className="text-amber">dormscape</span>
-          <span className="hl">.</span>
+          Welcome to dorm<span className="text-amber">scape</span>.
         </h1>
         <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-soft">
           Your exact room, laid out to the inch, with a shoppable list that fits your budget.
-          Sign in and it&apos;s all waiting — your schools, your vibes, your saved designs.
+          Sign in and it&apos;s all waiting: your schools, your vibes, your saved designs.
         </p>
         {/* Floating layered illustration */}
         <div className="mt-10 grid w-full max-w-sm grid-cols-2 gap-4 sm:gap-5" aria-hidden="true">
