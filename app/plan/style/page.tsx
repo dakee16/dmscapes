@@ -100,6 +100,19 @@ export default function PlanStylePage() {
   // the upgrade prompt. Their selections stay in the store either way.
   const pendingGenerateRef = useRef(false);
   const [showCreditConfirm, setShowCreditConfirm] = useState(false);
+  // Returning from the dedicated auth page after the design gate: re-arm the
+  // resume. The ref is per-mount, so it was lost when we navigated to /login;
+  // the auth page appended ?authgate=generate to this URL, so consume it once
+  // and re-arm, and the resume effect below fires as soon as auth resolves.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const url = new URL(window.location.href);
+    if (url.searchParams.get("authgate") === "generate") {
+      pendingGenerateRef.current = true;
+      url.searchParams.delete("authgate");
+      window.history.replaceState({}, "", url.pathname + url.search);
+    }
+  }, []);
   useEffect(() => {
     if (!pendingGenerateRef.current || !user || !profile || modalOpen) return;
     pendingGenerateRef.current = false;

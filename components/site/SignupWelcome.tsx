@@ -17,9 +17,16 @@ import { REVEAL_EASE } from "@/components/site/Reveal";
 const seenKey = (uid: string) => `dormscape-signup-welcome-${uid}`;
 
 export default function SignupWelcome() {
-  const { user, profile, modalOpen } = useAuth();
+  const { user, profile, modalOpen, setSignupWelcomeOpen } = useAuth();
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
+
+  // Publish open state so the post-signup username prompt can wait until this
+  // welcome is dismissed, sequencing the two instead of stacking them (Part 3).
+  useEffect(() => {
+    setSignupWelcomeOpen(open);
+    return () => setSignupWelcomeOpen(false);
+  }, [open, setSignupWelcomeOpen]);
 
   // Reveal once the account is known, the auth modal has closed (so it never
   // stacks on the login / username step), and this is a genuinely fresh free

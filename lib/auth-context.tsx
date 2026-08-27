@@ -18,7 +18,7 @@ import { getBrowserClient } from "@/lib/supabase-browser";
 import { clearAuthParamsFromUrl } from "@/lib/auth-url";
 import { track } from "@/lib/analytics";
 import { isPaid } from "@/lib/plan";
-import AuthModal from "@/components/auth/AuthModal";
+import UsernamePrompt from "@/components/auth/UsernamePrompt";
 import PlusWelcome from "@/components/site/PlusWelcome";
 import SignupWelcome from "@/components/site/SignupWelcome";
 
@@ -74,6 +74,10 @@ interface AuthContextValue {
   modalReason: AuthModalReason;
   openAuthModal: (reason?: AuthModalReason) => void;
   closeAuthModal: () => void;
+  /** True while the brand-new-signup welcome is showing, so the username prompt
+   *  can sequence itself AFTER it (never both at once). */
+  signupWelcomeOpen: boolean;
+  setSignupWelcomeOpen: (open: boolean) => void;
   signOut: () => Promise<void>;
   /** Re-reads the profiles row (call after claiming a username). */
   refreshProfile: () => Promise<void>;
@@ -161,6 +165,7 @@ async function enforceSessionLimit(accessToken: string): Promise<void> {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const supabase = useMemo(() => getBrowserClient(), []);
+  const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -177,6 +182,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // then revealed once the profile (plan) is known and the auth modal is gone.
   const [plusWelcomeOpen, setPlusWelcomeOpen] = useState(false);
   const [pendingPlusWelcome, setPendingPlusWelcome] = useState(false);
+  // True while the brand-new-signup welcome is on screen; the username prompt waits
+  // for this to clear so the two never stack (SignupWelcome syncs it).
+  const [signupWelcomeOpen, setSignupWelcomeOpen] = useState(false);
   // True when THIS tab loaded with auth tokens in its URL (OAuth return or email
   // confirmation / magic-link landing), the tab where the login truly happened.
   // Consumed once by the login handler below.
@@ -372,12 +380,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => clearTimeout(t);
   }, []);
 
-  const openAuthModal = useCallback((reason: AuthModalReason = "profile") => {
-    modalReasonRef.current = reason;
-    setModalReason(reason);
-    setModalOpen(true);
-    track("auth_modal_opened", { reason });
-  }, []);
+  const openAuthModal = useCallback(
+    (reason: AuthModalReason = "profile") => {
+      modalReasonRef.current = reason;
+      setModalReason(reason);
+      track("auth_modal_opened", { reason });
+      if (typeof window === "undefined") return;
+      // Auth now lives on a dedicated page. Navigate there, carrying the reason
+      // (for copy) and a `next` return path with a per-flow resume marker, so the
+      // design gate / buy / save resume exactly as the old overlay did once the
+      // user lands back. (buy stashes its URL in sessionStorage before this runs.)
+      const url = new URL(window.location.href);
+      if (reason === "generate") url.searchParams.set("authgate", "generate");
+      const next = url.pathname + url.search;
+      const params = new URLSearchParams({ reason, next });
+      router.push(`/login?${params.toString()}`);
+    },
+    [router]
+  );
 
   // Reveal the queued PlusWelcome once the plan is known (profile loaded) and
   // the auth modal has closed (so it never stacks on the login / username
@@ -435,6 +455,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       modalReason,
       openAuthModal,
       closeAuthModal,
+      signupWelcomeOpen,
+      setSignupWelcomeOpen,
       signOut,
       refreshProfile,
     }),
@@ -447,6 +469,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       modalReason,
       openAuthModal,
       closeAuthModal,
+      signupWelcomeOpen,
+      setSignupWelcomeOpen,
       signOut,
       refreshProfile,
     ]
@@ -455,7 +479,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   return (
     <AuthContext.Provider value={value}>
       {children}
-      <AuthModal />
+      <UsernamePrompt />
       <PlusWelcome
         open={plusWelcomeOpen}
         onClose={() => setPlusWelcomeOpen(false)}
