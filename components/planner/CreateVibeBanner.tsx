@@ -127,7 +127,15 @@ const PIECES: {
 
 // The Pro badge always shows; gating happens in the caller's onSelect (a non-Pro
 // click opens the upgrade modal), so the banner itself needs no locked variant.
-export default function CreateVibeBanner({ onSelect }: { onSelect: () => void }) {
+export default function CreateVibeBanner({
+  onSelect,
+  unlocked = false,
+}: {
+  onSelect: () => void;
+  /** Pro users already have this: the badge reads "Unlocked" instead of "Pro",
+   *  matching how the Plus-gated vibe tiles show access. */
+  unlocked?: boolean;
+}) {
   return (
     <button
       type="button"
@@ -145,13 +153,23 @@ export default function CreateVibeBanner({ onSelect }: { onSelect: () => void })
       <span className="relative flex flex-col gap-4 p-5 sm:p-6">
         {/* Single heading line at the top: Pro badge + heading + go affordance. */}
         <span className="flex items-center gap-2.5">
-          <span className="inline-flex items-center gap-1 rounded-full bg-highlight px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink shadow-sm">
-            <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-              <rect x="5" y="11" width="14" height="9" rx="2" />
-              <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
-            </svg>
-            Pro
-          </span>
+          {unlocked ? (
+            <span className="inline-flex items-center gap-1 rounded-full bg-cobalt px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm">
+              <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <rect x="5" y="11" width="14" height="9" rx="2" />
+                <path d="M8 11V8a4 4 0 0 1 7.5-1.5" strokeLinecap="round" />
+              </svg>
+              Unlocked
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1 rounded-full bg-highlight px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink shadow-sm">
+              <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <rect x="5" y="11" width="14" height="9" rx="2" />
+                <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
+              </svg>
+              Pro
+            </span>
+          )}
           <span className="font-display text-lg font-extrabold tracking-tight text-ink sm:text-xl">
             Create your own vibe
           </span>

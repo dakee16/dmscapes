@@ -214,7 +214,7 @@ export default function PlanStylePage() {
         ))}
         {/* Full-width banner spanning the grid, distinct from the nine tiles. */}
         {CUSTOM_VIBE_ENABLED && (
-          <CreateVibeBanner onSelect={handleCustomTile} />
+          <CreateVibeBanner onSelect={handleCustomTile} unlocked={pro} />
         )}
       </div>
 

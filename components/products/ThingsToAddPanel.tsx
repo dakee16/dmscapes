@@ -21,7 +21,7 @@ export default function ThingsToAddPanel({
     <section className="rounded-2xl border border-ink/10 bg-paper/70 p-3.5">
       <div className="flex items-baseline justify-between gap-3">
         <p className="font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-cobalt">
-          Catalog
+          Add more
         </p>
         {items.length > 0 && (
           <span className="font-mono text-[11px] font-medium text-ink-soft">

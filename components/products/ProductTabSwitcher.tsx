@@ -18,7 +18,7 @@ export default function ProductTabSwitcher({
 }) {
   const tabs: { id: ProductTab; label: string }[] = [
     { id: "list", label: "Shopping list" },
-    { id: "catalog", label: "Catalog" },
+    { id: "catalog", label: "Add more" },
   ];
   return (
     <div
