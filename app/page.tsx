@@ -100,7 +100,7 @@ export default function Home() {
                     </span>
                   </span>
                   <span className="mt-0.5 block text-[13px] leading-snug text-ink-soft">
-                    Not on our list, or an odd shape? Sketch it yourself.
+                    Sketch it yourself.
                   </span>
                 </span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-auto h-4 w-4 shrink-0 text-cobalt transition-transform group-hover:translate-x-0.5" aria-hidden="true">
