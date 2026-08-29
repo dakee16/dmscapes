@@ -18,11 +18,11 @@ if (typeof window !== "undefined") {
   Konva.pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
 }
 import type { KonvaEventObject } from "konva/lib/Node";
-import type { FurnitureItem, ProductCategory } from "@/lib/types";
+import type { FurnitureItem, ProductCategory, RoomOutline } from "@/lib/types";
 import { CATEGORY_COLORS } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
-import { clamp, footprint, invalidItems, layerOf, snapHalfFt } from "./geometry";
+import { clamp, footprint, invalidItems, layerOf, pointInPolygon, snapHalfFt } from "./geometry";
 
 export interface RoomCanvasHandle {
   /** PNG data URL of the current layout with a Dormscape watermark. */
@@ -36,6 +36,12 @@ interface RoomCanvasProps {
   furniture: FurnitureItem[];
   /** Optional closet footprint (ft), rendered as a hatched block when present. */
   closet?: { width_ft: number; depth_ft: number } | null;
+  /**
+   * Hand-drawn rooms: the rectilinear outline + placed doors/windows/closets.
+   * When present the canvas draws that shape (grid clipped to it, data-driven
+   * openings) instead of the default rectangle with a fixed door/window.
+   */
+  outline?: RoomOutline | null;
   onMove: (id: string, xFt: number, yFt: number) => void;
   /** Quarter-turn the item (1 = CW, -1 = CCW); wired to the store's rotateItem. */
   onRotate?: (id: string, dir: 1 | -1) => void;
@@ -179,6 +185,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     readOnly = false,
     crossHighlight = true,
     hiddenCategories,
+    outline,
   },
   ref
 ) {
@@ -263,7 +270,10 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const stageW = containerW;
   const stageH = roomHpx + PAD * 2;
 
-  const invalid = useMemo(() => invalidItems(furniture, roomL, roomW), [furniture, roomL, roomW]);
+  const invalid = useMemo(
+    () => invalidItems(furniture, roomL, roomW, outline ?? undefined),
+    [furniture, roomL, roomW, outline]
+  );
 
   const isCorridor = templateId?.startsWith("corridor-") ?? false;
 
@@ -368,6 +378,60 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     }
     return lines;
   }, [roomL, roomW, pxFt, roomHpx, roomWpx]);
+
+  // Hand-drawn rooms: precompute the wall path, closets, and door/window shapes
+  // in canvas px. Doors swing along the edge's inward normal so the arc opens
+  // into the room; windows are a flush cobalt line in the wall gap.
+  const drawn = useMemo(() => {
+    if (!outline || pxFt <= 0) return null;
+    const pts = outline.points;
+    const n = pts.length;
+    const px = (xFt: number, yFt: number): [number, number] => [PAD + xFt * pxFt, PAD + yFt * pxFt];
+    const flat = pts.flatMap((p) => px(p.x, p.y));
+
+    // Unit inward normal of edge e: the perpendicular that points into the room.
+    const inwardNormal = (e: number) => {
+      const a = pts[e], b = pts[(e + 1) % n];
+      const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+      const dx = (b.x - a.x) / len, dy = (b.y - a.y) / len;
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      const cands = [{ nx: -dy, ny: dx }, { nx: dy, ny: -dx }];
+      return cands.find((c) => pointInPolygon(mx + c.nx * 0.05, my + c.ny * 0.05, pts)) ?? cands[0];
+    };
+
+    const openings = outline.openings.map((op) => {
+      const a = pts[op.edge], b = pts[(op.edge + 1) % n];
+      const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+      const dx = (b.x - a.x) / len, dy = (b.y - a.y) / len;
+      const s = { x: a.x + dx * op.offset_ft, y: a.y + dy * op.offset_ft };
+      const e = { x: a.x + dx * (op.offset_ft + op.width_ft), y: a.y + dy * (op.offset_ft + op.width_ft) };
+      const gap = [...px(s.x, s.y), ...px(e.x, e.y)];
+      if (op.kind === "window") return { kind: "window" as const, gap };
+      const nrm = inwardNormal(op.edge);
+      const angleD = (Math.atan2(dy, dx) * 180) / Math.PI;
+      const angleN = (Math.atan2(nrm.ny, nrm.nx) * 180) / Math.PI;
+      const delta = (((angleN - angleD) % 360) + 360) % 360;
+      const [hx, hy] = px(s.x, s.y);
+      return {
+        kind: "door" as const,
+        gap,
+        door: {
+          x: hx,
+          y: hy,
+          radius: op.width_ft * pxFt,
+          rotation: delta < 180 ? angleD : angleN,
+          leaf: [hx, hy, ...px(s.x + nrm.nx * op.width_ft, s.y + nrm.ny * op.width_ft)],
+        },
+      };
+    });
+
+    const closets = outline.closets.map((c) => {
+      const [x, y] = px(c.x_ft, c.y_ft);
+      return { x, y, w: c.width_ft * pxFt, h: c.depth_ft * pxFt };
+    });
+
+    return { flat, openings, closets };
+  }, [outline, pxFt]);
 
   // Floating-toolbar target: the selected movable item (same resolution the
   // rotate control uses). Delete only applies to purchasable pieces, since it
@@ -525,6 +589,59 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           onTouchEnd={() => (lastPinch.current = null)}
         >
           <Layer>
+            {drawn ? (
+              <>
+                {/* Hand-drawn room: white fill + grid clipped to the outline,
+                    then the wall stroke, closets, and data-driven openings. */}
+                <Group
+                  listening={false}
+                  clipFunc={(ctx) => {
+                    ctx.beginPath();
+                    for (let i = 0; i < drawn.flat.length; i += 2) {
+                      if (i === 0) ctx.moveTo(drawn.flat[0], drawn.flat[1]);
+                      else ctx.lineTo(drawn.flat[i], drawn.flat[i + 1]);
+                    }
+                    ctx.closePath();
+                  }}
+                >
+                  <Rect x={PAD} y={PAD} width={roomWpx} height={roomHpx} fill="#ffffff" />
+                  {gridLines.map((l) => (
+                    <Line key={l.key} points={l.points} stroke={GRID} strokeWidth={1} listening={false} />
+                  ))}
+                </Group>
+                <Line points={drawn.flat} closed stroke={INK} strokeWidth={2} listening={false} />
+                {drawn.closets.map((c, i) => (
+                  <Rect
+                    key={`closet-${i}`}
+                    x={c.x}
+                    y={c.y}
+                    width={c.w}
+                    height={c.h}
+                    fill={INK}
+                    opacity={0.08}
+                    stroke={INK}
+                    strokeWidth={1}
+                    dash={[4, 3]}
+                    listening={false}
+                  />
+                ))}
+                {drawn.openings.map((op, i) => (
+                  <Group key={`opening-${i}`} listening={false}>
+                    <Line points={op.gap} stroke="#ffffff" strokeWidth={4} />
+                    {op.kind === "window" ? (
+                      <Line points={op.gap} stroke={COBALT} strokeWidth={4} />
+                    ) : (
+                      <>
+                        <Arc x={op.door.x} y={op.door.y} innerRadius={0} outerRadius={op.door.radius} angle={90} rotation={op.door.rotation} fill={COBALT} opacity={0.07} />
+                        <Arc x={op.door.x} y={op.door.y} innerRadius={op.door.radius} outerRadius={op.door.radius} angle={90} rotation={op.door.rotation} stroke={COBALT} strokeWidth={1.5} opacity={0.5} />
+                        <Line points={op.door.leaf} stroke={COBALT} strokeWidth={2} opacity={0.6} />
+                      </>
+                    )}
+                  </Group>
+                ))}
+              </>
+            ) : (
+              <>
             {/* Room shell */}
             <Rect x={PAD} y={PAD} width={roomWpx} height={roomHpx} fill="#ffffff" />
             {gridLines.map((l) => (
@@ -614,6 +731,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 strokeWidth={4}
                 listening={false}
               />
+            )}
+              </>
             )}
 
             {/* Furniture */}

@@ -60,7 +60,10 @@ export type AnalyticsEvent =
   | "custom_vibe_opened"
   | "custom_vibe_validation_failed"
   | "custom_vibe_generated"
-  | "custom_vibe_regenerated";
+  | "custom_vibe_regenerated"
+  | "draw_room_locked_clicked"
+  | "draw_room_opened"
+  | "drawn_room_completed";
 
 let initialized = false;
 

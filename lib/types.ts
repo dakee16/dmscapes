@@ -118,6 +118,50 @@ export interface SchoolSummary {
   dorms: DormSummary[];
 }
 
+// ---- Hand-drawn rooms ("Design your room", Plus feature)
+
+/** A point in feet, origin top-left, x along length, y along width. */
+export interface Point {
+  x: number;
+  y: number;
+}
+
+/**
+ * A door or window sitting on one edge of the room outline. Fixed standard
+ * widths (door 3 ft, window 4 ft): the user repositions along the wall but can't
+ * resize. `edge` indexes the outline ring (edge i runs points[i] -> points[i+1],
+ * last wraps to points[0]); `offset_ft` is the distance from that edge's start
+ * point to the opening's near end.
+ */
+export interface WallOpening {
+  kind: "door" | "window";
+  edge: number;
+  offset_ft: number;
+  width_ft: number;
+}
+
+/** A closet drawn against a wall: an axis-aligned obstacle furniture avoids. */
+export interface ClosetRect {
+  x_ft: number;
+  y_ft: number;
+  width_ft: number;
+  depth_ft: number;
+}
+
+/**
+ * A hand-drawn, rectilinear (right-angle) room outline. `points` is a closed
+ * ring in feet, normalized so the bounding box starts at (0,0) — so the room's
+ * bbox extents equal SelectedRoom.lengthFt x widthFt and all the existing
+ * rectangle-based canvas math (scale, grid, drag clamp) keeps working, with the
+ * polygon living inside that box. Absent on every college/manual room, which
+ * stay plain rectangles.
+ */
+export interface RoomOutline {
+  points: Point[];
+  openings: WallOpening[];
+  closets: ClosetRect[];
+}
+
 // ---- Planner selections
 
 export interface SelectedRoom {
@@ -127,11 +171,16 @@ export interface SelectedRoom {
   widthFt: number;
   /** Provided mattress size; "twin_xl" unless the school documents otherwise. */
   bedSize: BedSize;
-  /** "catalog" = picked from a school's data, "manual" = typed in. */
-  source: "catalog" | "manual";
+  /** "catalog" = school data, "manual" = typed dims, "drawn" = hand-drawn outline. */
+  source: "catalog" | "manual" | "drawn";
   /**
    * True when lengthFt/widthFt are a same-type estimate rather than a published
    * or user-entered size, so the UI can label the dimensions honestly.
    */
   dimsEstimated?: boolean;
+  /**
+   * Present only for hand-drawn rooms (source "drawn"): the rectilinear wall
+   * outline plus placed doors/windows/closets. lengthFt/widthFt are its bbox.
+   */
+  outline?: RoomOutline | null;
 }

@@ -11,6 +11,9 @@ import { track } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
 import { getSchool, formatDims } from "@/lib/schools";
 import { usePlannerStore } from "@/lib/store";
+import { useAuth } from "@/lib/auth-context";
+import { useUpgrade } from "@/lib/upgrade-context";
+import { isPaid } from "@/lib/plan";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import type { RoomSummary, SchoolSummary } from "@/lib/types";
 
@@ -24,6 +27,21 @@ export default function PlanSelectPage() {
   const setCollege = usePlannerStore((s) => s.setCollege);
   const setDorm = usePlannerStore((s) => s.setDorm);
   const setRoom = usePlannerStore((s) => s.setRoom);
+  const { profile, loading: authLoading } = useAuth();
+  const { openUpgrade } = useUpgrade();
+  // "Draw your own room" is a Plus feature (Plus + Pro): free/flex/logged-out
+  // see the lock and get the upgrade modal on click.
+  const drawLocked = !authLoading && !isPaid(profile);
+
+  function handleDraw() {
+    if (drawLocked) {
+      track("draw_room_locked_clicked");
+      openUpgrade("draw-room");
+      return;
+    }
+    track("draw_room_opened");
+    router.push("/plan/draw");
+  }
 
   const [mounted, setMounted] = useState(false);
   const [manualOpen, setManualOpen] = useState(false);
@@ -202,6 +220,37 @@ export default function PlanSelectPage() {
         </div>
 
         {manualOpen && <ManualEntry mode="school" onSubmit={handleManual} />}
+
+        {/* Alternative path: hand-draw a custom room outline (Plus feature). */}
+        <button
+          type="button"
+          onClick={handleDraw}
+          className="group flex w-full items-center gap-3 rounded-xl border border-cobalt/25 bg-cobalt/[0.04] px-4 py-3.5 text-left transition-colors hover:border-cobalt/60 hover:bg-cobalt/[0.07]"
+        >
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cobalt/10 text-cobalt" aria-hidden="true">
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+            </svg>
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="flex flex-wrap items-center gap-2">
+              <span className="text-sm font-semibold text-ink">Draw your own room</span>
+              {drawLocked && (
+                <span className="inline-flex items-center rounded-full bg-highlight px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wide text-ink">
+                  Plus
+                </span>
+              )}
+            </span>
+            <span className="mt-0.5 block text-xs leading-snug text-ink-soft">
+              Not on the list, or an odd shape? Sketch your exact floor plan, even
+              an L-shape, with doors, windows, and closets.
+            </span>
+          </span>
+          <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0 text-cobalt transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <path d="M5 12h14m0 0l-5-5m5 5l-5 5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
       </div>
 
       {/* Next: sticky on mobile, inline on desktop */}

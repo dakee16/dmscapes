@@ -300,6 +300,7 @@ export default function ResultPage() {
       roomW={room.widthFt}
       templateId={templateId}
       furniture={furniture}
+      outline={room.outline ?? null}
       hiddenCategories={excluded ?? []}
       crossHighlight={!fullscreen}
       onMove={(id, x, y) => {

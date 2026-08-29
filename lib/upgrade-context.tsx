@@ -25,6 +25,7 @@ export type UpgradeReason =
   | "style"
   | "custom-vibe"
   | "own-item"
+  | "draw-room"
   | "generic";
 
 interface UpgradeContextValue {

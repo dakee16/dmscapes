@@ -61,6 +61,10 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     title: "Add your own products",
     body: "Paste any Amazon link to drop your own products straight into your room, budget, and layout. Adding your own items is a Plus feature, Plus and Pro both include it, along with every vibe and premium tool.",
   },
+  "draw-room": {
+    title: "Draw your own room",
+    body: "Sketch your exact floor plan, walls, doors, windows, and closets, even an L-shaped room, then get a layout built to fit it. Drawing your own room is a Plus feature, Plus and Pro both include it, along with every vibe and premium tool.",
+  },
   generic: {
     title: "Do more with Dormscape Plus",
     body: "One small upgrade unlocks every vibe and every premium feature, for good.",
