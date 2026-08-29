@@ -23,6 +23,7 @@ export default function PlusPitch() {
 const PERKS: Record<"plus" | "pro", string[]> = {
   plus: [
     "All 9 vibes",
+    "Draw your own room",
     "PDF + PNG export",
     "Compare two rooms",
     "Priority school requests",
@@ -30,6 +31,7 @@ const PERKS: Record<"plus" | "pro", string[]> = {
   pro: [
     "Unlimited plans + saves",
     "Create your own vibe",
+    "Draw your own room",
     "All 9 vibes",
     "PDF + PNG export",
     "Priority school requests",
@@ -202,6 +204,22 @@ function PlusUpsell() {
                 <p className="mt-1 text-sm leading-relaxed text-ink-soft">{m.body}</p>
               </div>
             ))}
+          </div>
+
+          {/* Plus highlight: draw your own room, any shape. */}
+          <div className="relative mt-4 flex flex-col items-start gap-2 rounded-xl border border-highlight/60 bg-highlight/[0.12] px-4 py-3.5 sm:flex-row sm:items-center sm:gap-3">
+            <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-highlight px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
+              <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+              </svg>
+              Plus
+            </span>
+            <p className="text-sm leading-relaxed text-ink-soft">
+              <span className="font-semibold text-ink">Draw your own room:</span> not on our
+              list, or an odd shape? Sketch your exact floor plan, even an L-shape, and we fit
+              a full layout to it.
+            </p>
           </div>
 
           {/* Pro-exclusive highlight: describe your own vibe. */}

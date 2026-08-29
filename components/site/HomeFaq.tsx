@@ -51,6 +51,25 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     ),
   },
   {
+    q: "What if my school or room isn't listed, or my room is an odd shape?",
+    a: (
+      <>
+        Draw it. <span className="font-semibold text-ink">Draw your own room</span>{" "}
+        (a Plus feature) lets you trace your exact floor plan, even an L-shape, and
+        drop in the door, windows, and closets. We place furniture against your
+        real walls and hand back the same layout and shoppable list as a listed
+        room, and you can save the room and reuse it for other designs. More on the{" "}
+        <Link
+          href="/blog/design-your-own-dorm-room"
+          className="font-semibold text-cobalt underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt-deep"
+        >
+          drawing tool
+        </Link>
+        .
+      </>
+    ),
+  },
+  {
     q: "How do the Amazon links work? Is this an ad?",
     a: (
       <>

@@ -63,6 +63,7 @@ export type AnalyticsEvent =
   | "custom_vibe_regenerated"
   | "draw_room_locked_clicked"
   | "draw_room_opened"
+  | "draw_room_started"
   | "drawn_room_completed"
   | "drawn_room_reused";
 

@@ -356,6 +356,53 @@ export default function RoomDrawCanvas({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [points, preview, closed, pxFt]);
 
+  // Placement preview that follows the cursor: a ghost of the door/window/closet
+  // where it would land. Driven by mouse-move, so it only appears on desktop
+  // (touch devices have no hovering cursor).
+  let ghostOpening:
+    | null
+    | { kind: "door" | "window"; gap: number[]; door?: { x: number; y: number; radius: number; rotation: number; leaf: number[] } } = null;
+  let ghostCloset: null | { x: number; y: number; w: number; h: number } = null;
+  if (closed && cursor && pxFt > 0) {
+    if (tool === "door" || tool === "window") {
+      const width = tool === "door" ? DOOR_FT : WINDOW_FT;
+      const { edge, t, dist } = nearestEdge(cursor);
+      const e2 = edges[edge];
+      if (e2 && dist <= 1.5 && e2.len >= width) {
+        const offset = snap(Math.max(0, Math.min(e2.len - width, t - width / 2)));
+        const ux = (e2.b.x - e2.a.x) / (e2.len || 1), uy = (e2.b.y - e2.a.y) / (e2.len || 1);
+        const s = { x: e2.a.x + ux * offset, y: e2.a.y + uy * offset };
+        const en = { x: e2.a.x + ux * (offset + width), y: e2.a.y + uy * (offset + width) };
+        const gap = [...px(s.x, s.y), ...px(en.x, en.y)];
+        if (tool === "window") {
+          ghostOpening = { kind: "window", gap };
+        } else {
+          const nrm = inwardNormal(edge);
+          const angleD = (Math.atan2(uy, ux) * 180) / Math.PI;
+          const angleN = (Math.atan2(nrm.ny, nrm.nx) * 180) / Math.PI;
+          const delta = (((angleN - angleD) % 360) + 360) % 360;
+          const [hx, hy] = px(s.x, s.y);
+          ghostOpening = {
+            kind: "door",
+            gap,
+            door: {
+              x: hx,
+              y: hy,
+              radius: width * pxFt,
+              rotation: delta < 180 ? angleD : angleN,
+              leaf: [hx, hy, ...px(s.x + nrm.nx * width, s.y + nrm.ny * width)],
+            },
+          };
+        }
+      }
+    } else if (tool === "closet") {
+      const cx = snap(Math.max(0, cursor.x - CLOSET_W / 2));
+      const cy = snap(Math.max(0, cursor.y - CLOSET_D / 2));
+      const [gx, gy] = px(cx, cy);
+      ghostCloset = { x: gx, y: gy, w: CLOSET_W * pxFt, h: CLOSET_D * pxFt };
+    }
+  }
+
   const canPlan = closed && points.length >= 3;
 
   const TOOLS: { id: Tool; label: string; icon: React.ReactNode }[] = [
@@ -596,6 +643,23 @@ export default function RoomDrawCanvas({
                     </Group>
                   );
                 })}
+
+              {/* Placement preview following the cursor (desktop only). */}
+              {ghostOpening && (
+                <Group listening={false} opacity={0.55}>
+                  <Line points={ghostOpening.gap} stroke={WHITE} strokeWidth={5} />
+                  <Line points={ghostOpening.gap} stroke={ghostOpening.kind === "door" ? COBALT : AMBER} strokeWidth={4} dash={[6, 4]} />
+                  {ghostOpening.door && (
+                    <>
+                      <Arc x={ghostOpening.door.x} y={ghostOpening.door.y} innerRadius={0} outerRadius={ghostOpening.door.radius} angle={90} rotation={ghostOpening.door.rotation} fill={COBALT} opacity={0.1} />
+                      <Line points={ghostOpening.door.leaf} stroke={COBALT} strokeWidth={2} dash={[4, 3]} />
+                    </>
+                  )}
+                </Group>
+              )}
+              {ghostCloset && (
+                <Rect listening={false} x={ghostCloset.x} y={ghostCloset.y} width={ghostCloset.w} height={ghostCloset.h} fill={INK} opacity={0.1} stroke={COBALT} strokeWidth={1.5} dash={[5, 4]} />
+              )}
 
               {/* Dimension labels */}
               {dimLabels.map((d) => (

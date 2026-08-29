@@ -74,6 +74,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
 const PERKS = [
   "5 plan credits (saving is always free)",
   "All 9 vibes unlocked",
+  "Draw your own room, any shape",
   "PDF and PNG export",
   "Compare two designs side by side",
   "Priority on add-my-school requests",

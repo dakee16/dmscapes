@@ -79,36 +79,29 @@ export default function Home() {
                 <li>Live Amazon links</li>
               </ul>
 
-              {/* Secondary, benefit-forward Plus teaser. Deliberately lighter
-                  than the primary CTA: muted card, small type, added-value
-                  framing (no gating or scarcity language). */}
+              {/* Prominent "Draw your own room" promo (replaces the Plus teaser). */}
               <Link
-                href="/pricing"
-                aria-label="See what Dormscape Plus adds"
-                className="rise group mt-5 flex w-full max-w-sm items-center gap-3 rounded-xl border border-ink/10 bg-white/60 px-4 py-2.5 transition-colors hover:border-cobalt/40 hover:bg-white"
+                href="/plan/draw"
+                aria-label="Draw your own room"
+                className="rise group mt-5 flex w-full max-w-sm items-center gap-3 overflow-hidden rounded-xl border border-cobalt/30 bg-gradient-to-br from-cobalt/[0.08] via-white to-highlight/[0.14] px-4 py-3 shadow-[0_16px_40px_-26px_rgba(43,78,255,0.6)] transition-all hover:-translate-y-0.5 hover:border-cobalt/60 hover:shadow-[0_22px_48px_-24px_rgba(43,78,255,0.7)]"
                 style={{ animationDelay: "400ms" }}
               >
-                <span className="flex shrink-0 items-center gap-2 text-cobalt" aria-hidden="true">
-                  {/* all vibes */}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-[17px] w-[17px]">
-                    <rect x="8" y="8" width="12" height="12" rx="2" />
-                    <path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  {/* PDF export */}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-[17px] w-[17px]">
-                    <path d="M12 3v10m0 0l-3.2-3.2M12 13l3.2-3.2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M5 16v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  {/* side-by-side comparison */}
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-[17px] w-[17px]">
-                    <rect x="3.5" y="5" width="7" height="14" rx="1.5" />
-                    <rect x="13.5" y="5" width="7" height="14" rx="1.5" />
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-cobalt text-white shadow-[0_8px_20px_-8px_rgba(43,78,255,0.7)]" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 20h9" />
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
                   </svg>
                 </span>
-                <span className="text-[13px] leading-snug text-ink-soft">
-                  Torn between two looks?{" "}
-                  <span className="font-semibold text-ink">Plus</span> compares
-                  them side by side and unlocks every vibe.
+                <span className="min-w-0">
+                  <span className="flex items-center gap-1.5">
+                    <span className="text-sm font-bold text-ink">Draw your own room</span>
+                    <span className="inline-flex items-center rounded-full bg-cobalt px-1.5 py-0.5 font-mono text-[8px] font-semibold uppercase tracking-wide text-white">
+                      New
+                    </span>
+                  </span>
+                  <span className="mt-0.5 block text-[13px] leading-snug text-ink-soft">
+                    Not on our list, or an odd shape? Sketch it yourself.
+                  </span>
                 </span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="ml-auto h-4 w-4 shrink-0 text-cobalt transition-transform group-hover:translate-x-0.5" aria-hidden="true">
                   <path d="M5 12h14m0 0l-5-5m5 5l-5 5" strokeLinecap="round" strokeLinejoin="round" />
@@ -126,9 +119,9 @@ export default function Home() {
           </div>
         </section>
 
-        <HowItWorks />
-
         <TwoWaysToPlan />
+
+        <HowItWorks />
 
         {/* Mid-scroll CTA: the obvious next action */}
         <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">

@@ -90,6 +90,10 @@ const PLUS_PERKS: { title: string; body: string }[] = [
     body: "Paste any Amazon product link to pull your own items into your room, budget, and layout, on top of our curated picks.",
   },
   {
+    title: "Draw your own room",
+    body: "Not on our list, or an odd shape? Sketch your exact floor plan, even an L-shape, with doors, windows, and closets, and we fit a full layout to it.",
+  },
+  {
     title: "PDF and PNG export",
     body: "Download your shopping list as a clean PDF, or your room layout as an image.",
   },

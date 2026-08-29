@@ -17,7 +17,6 @@ const LINKS = [
   { href: "/", label: "Home" },
   { href: "/colleges", label: "Colleges" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/contact", label: "Contact" },
 ] as const;
 
 const NAV_LINK =
@@ -46,6 +45,31 @@ function SoonBadge() {
     <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
       Soon
     </span>
+  );
+}
+
+// The header "Draw" entry: the word framed with small tilted blue confetti
+// strips and a "new" superscript, linking to the Draw tab of the planner.
+function DrawNavLink({ onClick }: { onClick?: () => void }) {
+  return (
+    <Link
+      href="/plan/draw"
+      onClick={onClick}
+      aria-label="Draw your own room (new)"
+      className="relative inline-flex items-center px-1"
+    >
+      <span aria-hidden="true" className="pointer-events-none absolute -left-2.5 top-0.5 h-2 w-[3px] -rotate-[24deg] rounded-full bg-cobalt" />
+      <span aria-hidden="true" className="pointer-events-none absolute -left-1 -top-1.5 h-1.5 w-[3px] rotate-[16deg] rounded-full bg-cobalt/60" />
+      <span aria-hidden="true" className="pointer-events-none absolute -right-3.5 -top-1 h-2 w-[3px] rotate-[28deg] rounded-full bg-cobalt/80" />
+      <span aria-hidden="true" className="pointer-events-none absolute -right-2 top-1.5 h-1.5 w-[3px] -rotate-[22deg] rounded-full bg-cobalt/50" />
+      <span aria-hidden="true" className="pointer-events-none absolute right-2 -top-2 h-1 w-1 rounded-full bg-cobalt/70" />
+      <span className="text-sm font-semibold text-cobalt transition-colors hover:text-cobalt-deep">
+        Draw
+      </span>
+      <sup className="ml-0.5 font-mono text-[8px] font-bold uppercase tracking-wide text-amber">
+        new
+      </sup>
+    </Link>
   );
 }
 
@@ -105,6 +129,7 @@ export default function Nav() {
                 {link.label}
               </Link>
             ))}
+            <DrawNavLink />
           </div>
 
           {/* Actions: secondary items, the primary CTA, and the profile. */}
@@ -175,6 +200,17 @@ export default function Nav() {
                         {link.label}
                       </Link>
                     ))}
+                    <Link
+                      href="/plan/draw"
+                      role="menuitem"
+                      onClick={() => setMenuOpen(false)}
+                      className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-cobalt transition-colors hover:bg-paper"
+                    >
+                      Draw your room
+                      <span className="rounded-full bg-cobalt px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wide text-white">
+                        New
+                      </span>
+                    </Link>
                   </div>
 
                   <div className="mt-1.5 border-t border-ink/8 pt-1.5">

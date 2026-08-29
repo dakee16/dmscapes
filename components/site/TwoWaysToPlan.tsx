@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 
 /**
@@ -46,12 +47,16 @@ const WAYS = [
     title: "We know your room, just plan",
     body: "Pick your school and building and your exact dimensions, bed size, and window are already in. Skip straight to picking a vibe.",
     src: "/videos/plan-known-room.mp4",
+    href: "/plan",
+    cta: "Find my school",
   },
   {
     tag: "Plus",
     title: "Not on the list? Make your own",
     body: "Sketch your exact floor plan wall by wall, even an L-shape, drop in the door, windows, and closets, and we fit a full layout to it.",
     src: "/videos/draw-your-own-room.mp4",
+    href: "/plan/draw",
+    cta: "Draw your room",
   },
 ] as const;
 
@@ -92,6 +97,15 @@ export default function TwoWaysToPlan() {
             <div className="mt-5">
               <WalkthroughVideo src={w.src} title={w.title} />
             </div>
+            <Link
+              href={w.href}
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-cobalt transition-colors hover:text-cobalt-deep"
+            >
+              {w.cta}
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M5 12h14m0 0l-5-5m5 5l-5 5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
           </Reveal>
         ))}
       </div>

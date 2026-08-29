@@ -7,14 +7,10 @@ import DormPicker from "@/components/planner/DormPicker";
 import RoomPicker, { roomKey } from "@/components/planner/RoomPicker";
 import ManualEntry, { type ManualEntryValues } from "@/components/planner/ManualEntry";
 import RequestSchoolModal from "@/components/planner/RequestSchoolModal";
-import DrawnRoomsReuse from "@/components/planner/DrawnRoomsReuse";
 import { track } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
 import { getSchool, formatDims } from "@/lib/schools";
 import { usePlannerStore } from "@/lib/store";
-import { useAuth } from "@/lib/auth-context";
-import { useUpgrade } from "@/lib/upgrade-context";
-import { isPaid } from "@/lib/plan";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import type { RoomSummary, SchoolSummary } from "@/lib/types";
 
@@ -28,21 +24,6 @@ export default function PlanSelectPage() {
   const setCollege = usePlannerStore((s) => s.setCollege);
   const setDorm = usePlannerStore((s) => s.setDorm);
   const setRoom = usePlannerStore((s) => s.setRoom);
-  const { profile, loading: authLoading } = useAuth();
-  const { openUpgrade } = useUpgrade();
-  // "Draw your own room" is a Plus feature (Plus + Pro): free/flex/logged-out
-  // see the lock and get the upgrade modal on click.
-  const drawLocked = !authLoading && !isPaid(profile);
-
-  function handleDraw() {
-    if (drawLocked) {
-      track("draw_room_locked_clicked");
-      openUpgrade("draw-room");
-      return;
-    }
-    track("draw_room_opened");
-    router.push("/plan/draw");
-  }
 
   const [mounted, setMounted] = useState(false);
   const [manualOpen, setManualOpen] = useState(false);
@@ -221,56 +202,6 @@ export default function PlanSelectPage() {
         </div>
 
         {manualOpen && <ManualEntry mode="school" onSubmit={handleManual} />}
-
-        {/* Alternative path, given its own prominence as a headline new feature:
-            hand-draw any room outline (Plus). */}
-        <div className="pt-2">
-          <div className="mb-4 flex items-center gap-3" aria-hidden="true">
-            <span className="h-px flex-1 bg-ink/10" />
-            <span className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-ink-soft">
-              or
-            </span>
-            <span className="h-px flex-1 bg-ink/10" />
-          </div>
-          <button
-            type="button"
-            onClick={handleDraw}
-            className="group relative flex w-full items-center gap-4 overflow-hidden rounded-2xl border border-cobalt/30 bg-gradient-to-br from-cobalt/[0.08] via-white to-highlight/[0.14] p-5 text-left shadow-[0_18px_44px_-28px_rgba(43,78,255,0.5)] transition-all hover:-translate-y-0.5 hover:border-cobalt/60 hover:shadow-[0_24px_52px_-26px_rgba(43,78,255,0.6)] sm:p-6"
-          >
-            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-cobalt text-white shadow-[0_10px_24px_-10px_rgba(43,78,255,0.7)] sm:h-14 sm:w-14" aria-hidden="true">
-              <svg viewBox="0 0 24 24" className="h-6 w-6 sm:h-7 sm:w-7" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 20h9" />
-                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
-              </svg>
-            </span>
-            <span className="min-w-0 flex-1">
-              <span className="flex flex-wrap items-center gap-2">
-                <span className="font-display text-lg font-extrabold tracking-tight text-ink sm:text-xl">
-                  Draw your own room
-                </span>
-                <span className="inline-flex items-center rounded-full bg-cobalt px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wide text-white">
-                  New
-                </span>
-                {drawLocked && (
-                  <span className="inline-flex items-center rounded-full bg-highlight px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wide text-ink">
-                    Plus
-                  </span>
-                )}
-              </span>
-              <span className="mt-1 block text-sm leading-snug text-ink-soft">
-                Not on the list, or an odd shape? Sketch your exact floor plan,
-                even an L-shape, with doors, windows, and closets, and we fit a
-                full layout to it.
-              </span>
-            </span>
-            <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0 text-cobalt transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <path d="M5 12h14m0 0l-5-5m5 5l-5 5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Quick-start from a room this user has already drawn (signed-in only). */}
-        <DrawnRoomsReuse />
       </div>
 
       {/* Next: sticky on mobile, inline on desktop */}

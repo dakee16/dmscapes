@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/site/SiteHeader";
 import PlannerSteps from "@/components/planner/PlannerSteps";
+import PlannerTabs from "@/components/planner/PlannerTabs";
 
 export const metadata: Metadata = {
   title: "Plan your dorm room",
@@ -15,6 +16,7 @@ export default function PlanLayout({ children }: { children: React.ReactNode }) 
           step progress sits just below it. */}
       <SiteHeader />
       <PlannerSteps />
+      <PlannerTabs />
       {/* Width, horizontal padding, and bottom clearance are owned per page:
           steps 1 and 2 are narrow forms, the result page is a wide two-panel view. */}
       <main className="w-full pt-6 sm:pt-10">{children}</main>
