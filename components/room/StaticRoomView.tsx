@@ -1,4 +1,4 @@
-import type { FurnitureItem } from "@/lib/types";
+import type { FurnitureItem, Point, RoomOutline } from "@/lib/types";
 import { CATEGORY_COLORS } from "@/lib/styles";
 
 // Server-renderable top-down room view for the read-only share page (/room/[id]).
@@ -14,16 +14,27 @@ function footprint(f: FurnitureItem) {
   return { x: f.x_ft, y: f.y_ft, w, h };
 }
 
+function pointInPoly(px: number, py: number, poly: Point[]): boolean {
+  let inside = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const xi = poly[i].x, yi = poly[i].y, xj = poly[j].x, yj = poly[j].y;
+    if (yi > py !== yj > py && px < ((xj - xi) * (py - yi)) / (yj - yi) + xi) inside = !inside;
+  }
+  return inside;
+}
+
 export default function StaticRoomView({
   lengthFt,
   widthFt,
   furniture,
   isCorridor,
+  outline,
 }: {
   lengthFt: number;
   widthFt: number;
   furniture: FurnitureItem[];
   isCorridor?: boolean;
+  outline?: RoomOutline | null;
 }) {
   const PX = 34; // px per foot at viewBox scale
   const PAD = 20;
@@ -31,6 +42,34 @@ export default function StaticRoomView({
   const H = widthFt * PX + PAD * 2;
   const x = (ft: number) => PAD + ft * PX;
   const y = (ft: number) => PAD + ft * PX;
+
+  // Hand-drawn room: the wall path, doors/windows, and closets in px.
+  const drawn = (() => {
+    if (!outline) return null;
+    const pts = outline.points, n = pts.length;
+    const path = pts.map((p, i) => `${i === 0 ? "M" : "L"} ${x(p.x)} ${y(p.y)}`).join(" ") + " Z";
+    const inwardNormal = (e: number) => {
+      const a = pts[e], b = pts[(e + 1) % n];
+      const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+      const dx = (b.x - a.x) / len, dy = (b.y - a.y) / len;
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+      const cs = [{ nx: -dy, ny: dx }, { nx: dy, ny: -dx }];
+      return cs.find((c) => pointInPoly(mx + c.nx * 0.05, my + c.ny * 0.05, pts)) ?? cs[0];
+    };
+    const openings = outline.openings.map((op) => {
+      const a = pts[op.edge], b = pts[(op.edge + 1) % n];
+      const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+      const ux = (b.x - a.x) / len, uy = (b.y - a.y) / len;
+      const s = { x: a.x + ux * op.offset_ft, y: a.y + uy * op.offset_ft };
+      const e = { x: a.x + ux * (op.offset_ft + op.width_ft), y: a.y + uy * (op.offset_ft + op.width_ft) };
+      if (op.kind === "window") return { kind: "window" as const, s, e };
+      const nrm = inwardNormal(op.edge);
+      const leaf = { x: s.x + nrm.nx * op.width_ft, y: s.y + nrm.ny * op.width_ft };
+      const sweep = ux * nrm.ny - uy * nrm.nx > 0 ? 1 : 0;
+      return { kind: "door" as const, s, e, leaf, width: op.width_ft, sweep };
+    });
+    return { path, openings, closets: outline.closets };
+  })();
 
   // z-order: rugs under, wall items over, solids in between
   const sorted = [...furniture].sort((a, b) => {
@@ -55,9 +94,17 @@ export default function StaticRoomView({
         <pattern id="ft-grid" width={PX} height={PX} patternUnits="userSpaceOnUse">
           <path d={`M ${PX} 0 L 0 0 0 ${PX}`} fill="none" stroke="#e4e9f4" strokeWidth="1" />
         </pattern>
+        {drawn && (
+          <clipPath id="room-clip">
+            <path d={drawn.path} />
+          </clipPath>
+        )}
       </defs>
-      <rect x={x(0)} y={y(0)} width={lengthFt * PX} height={widthFt * PX} fill="#ffffff" />
-      <rect x={x(0)} y={y(0)} width={lengthFt * PX} height={widthFt * PX} fill="url(#ft-grid)" />
+      <rect x={x(0)} y={y(0)} width={lengthFt * PX} height={widthFt * PX} fill="#ffffff" clipPath={drawn ? "url(#room-clip)" : undefined} />
+      <rect x={x(0)} y={y(0)} width={lengthFt * PX} height={widthFt * PX} fill="url(#ft-grid)" clipPath={drawn ? "url(#room-clip)" : undefined} />
+      {drawn?.closets.map((c, i) => (
+        <rect key={`cl-${i}`} x={x(c.x_ft)} y={y(c.y_ft)} width={c.width_ft * PX} height={c.depth_ft * PX} fill="#17172b" opacity={0.08} stroke="#17172b" strokeWidth={1} strokeDasharray="4 3" />
+      ))}
 
       {sorted.map((f) => {
         const fp = footprint(f);
@@ -98,45 +145,60 @@ export default function StaticRoomView({
       })}
 
       {/* walls on top so furniture tucks under the stroke */}
-      <rect
-        x={x(0)}
-        y={y(0)}
-        width={lengthFt * PX}
-        height={widthFt * PX}
-        fill="none"
-        stroke="#17172b"
-        strokeWidth={3}
-      />
-
-      {/* door: gap + swing arc; all templates put it at the bottom of the left wall */}
-      <line x1={x(0)} y1={y(widthFt) - doorLen} x2={x(0)} y2={y(widthFt)} stroke="#fafaf8" strokeWidth={5} />
-      <path
-        d={`M ${x(0)} ${y(widthFt) - doorLen} A ${doorLen} ${doorLen} 0 0 1 ${x(0) + doorLen} ${y(widthFt)}`}
-        fill="none"
-        stroke="#4c4f63"
-        strokeWidth={1.5}
-        strokeDasharray="4 4"
-      />
-
-      {/* window: cobalt segment */}
-      {isCorridor ? (
-        <line
-          x1={x(lengthFt * 0.35)}
-          y1={y(0)}
-          x2={x(lengthFt * 0.65)}
-          y2={y(0)}
-          stroke="#2b4eff"
-          strokeWidth={4}
-        />
+      {drawn ? (
+        <path d={drawn.path} fill="none" stroke="#17172b" strokeWidth={3} strokeLinejoin="round" />
       ) : (
-        <line
-          x1={x(lengthFt)}
-          y1={y(widthFt * 0.3)}
-          x2={x(lengthFt)}
-          y2={y(widthFt * 0.7)}
-          stroke="#2b4eff"
-          strokeWidth={4}
+        <rect
+          x={x(0)}
+          y={y(0)}
+          width={lengthFt * PX}
+          height={widthFt * PX}
+          fill="none"
+          stroke="#17172b"
+          strokeWidth={3}
         />
+      )}
+
+      {drawn ? (
+        // Data-driven doors/windows on the drawn walls.
+        drawn.openings.map((op, i) => (
+          <g key={`op-${i}`}>
+            <line x1={x(op.s.x)} y1={y(op.s.y)} x2={x(op.e.x)} y2={y(op.e.y)} stroke="#fafaf8" strokeWidth={5} />
+            {op.kind === "window" ? (
+              <line x1={x(op.s.x)} y1={y(op.s.y)} x2={x(op.e.x)} y2={y(op.e.y)} stroke="#2b4eff" strokeWidth={4} />
+            ) : (
+              <>
+                <path
+                  d={`M ${x(op.e.x)} ${y(op.e.y)} A ${op.width * PX} ${op.width * PX} 0 0 ${op.sweep} ${x(op.leaf.x)} ${y(op.leaf.y)}`}
+                  fill="none"
+                  stroke="#4c4f63"
+                  strokeWidth={1.5}
+                  strokeDasharray="4 4"
+                />
+                <line x1={x(op.s.x)} y1={y(op.s.y)} x2={x(op.leaf.x)} y2={y(op.leaf.y)} stroke="#4c4f63" strokeWidth={1.5} />
+              </>
+            )}
+          </g>
+        ))
+      ) : (
+        <>
+          {/* door: gap + swing arc; all templates put it at the bottom of the left wall */}
+          <line x1={x(0)} y1={y(widthFt) - doorLen} x2={x(0)} y2={y(widthFt)} stroke="#fafaf8" strokeWidth={5} />
+          <path
+            d={`M ${x(0)} ${y(widthFt) - doorLen} A ${doorLen} ${doorLen} 0 0 1 ${x(0) + doorLen} ${y(widthFt)}`}
+            fill="none"
+            stroke="#4c4f63"
+            strokeWidth={1.5}
+            strokeDasharray="4 4"
+          />
+
+          {/* window: cobalt segment */}
+          {isCorridor ? (
+            <line x1={x(lengthFt * 0.35)} y1={y(0)} x2={x(lengthFt * 0.65)} y2={y(0)} stroke="#2b4eff" strokeWidth={4} />
+          ) : (
+            <line x1={x(lengthFt)} y1={y(widthFt * 0.3)} x2={x(lengthFt)} y2={y(widthFt * 0.7)} stroke="#2b4eff" strokeWidth={4} />
+          )}
+        </>
       )}
 
       {/* scale bar */}

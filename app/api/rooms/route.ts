@@ -5,7 +5,7 @@ import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
 import { ALL_STYLE_IDS } from "@/lib/styles";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
-import type { FurnitureItem } from "@/lib/types";
+import type { ClosetRect, FurnitureItem, Point, RoomOutline, WallOpening } from "@/lib/types";
 
 // Accept every known style, including the retired Boho, so a legacy saved
 // design reopened in the planner can still be re-saved. New designs can only
@@ -69,6 +69,56 @@ function sanitizeProducts(input: unknown): Record<string, string> | null {
   return out;
 }
 
+/** A finite coordinate in feet, within a generous room bound. */
+function isCoord(n: unknown): n is number {
+  return typeof n === "number" && Number.isFinite(n) && n >= -1 && n <= 120;
+}
+
+/**
+ * Whitelist a hand-drawn room outline so only well-formed geometry lands in the
+ * JSONB. Returns null on any malformed field so the caller can reject the save.
+ */
+function sanitizeOutline(input: unknown): RoomOutline | null {
+  if (typeof input !== "object" || input === null) return null;
+  const o = input as Record<string, unknown>;
+  if (!Array.isArray(o.points) || o.points.length < 3 || o.points.length > 40) return null;
+  const points: Point[] = [];
+  for (const raw of o.points) {
+    if (typeof raw !== "object" || raw === null) return null;
+    const p = raw as Record<string, unknown>;
+    if (!isCoord(p.x) || !isCoord(p.y)) return null;
+    points.push({ x: p.x, y: p.y });
+  }
+
+  const openings: WallOpening[] = [];
+  if (o.openings !== undefined) {
+    if (!Array.isArray(o.openings) || o.openings.length > 20) return null;
+    for (const raw of o.openings) {
+      if (typeof raw !== "object" || raw === null) return null;
+      const w = raw as Record<string, unknown>;
+      if (w.kind !== "door" && w.kind !== "window") return null;
+      if (!Number.isInteger(w.edge) || (w.edge as number) < 0 || (w.edge as number) >= points.length) return null;
+      if (!isCoord(w.offset_ft) || typeof w.width_ft !== "number" || !(w.width_ft > 0 && w.width_ft <= 20)) return null;
+      openings.push({ kind: w.kind, edge: w.edge as number, offset_ft: w.offset_ft as number, width_ft: w.width_ft });
+    }
+  }
+
+  const closets: ClosetRect[] = [];
+  if (o.closets !== undefined) {
+    if (!Array.isArray(o.closets) || o.closets.length > 20) return null;
+    for (const raw of o.closets) {
+      if (typeof raw !== "object" || raw === null) return null;
+      const c = raw as Record<string, unknown>;
+      if (!isCoord(c.x_ft) || !isCoord(c.y_ft)) return null;
+      if (typeof c.width_ft !== "number" || !(c.width_ft > 0 && c.width_ft <= 40)) return null;
+      if (typeof c.depth_ft !== "number" || !(c.depth_ft > 0 && c.depth_ft <= 40)) return null;
+      closets.push({ x_ft: c.x_ft, y_ft: c.y_ft, width_ft: c.width_ft, depth_ft: c.depth_ft });
+    }
+  }
+
+  return { points, openings, closets };
+}
+
 export async function POST(request: Request) {
   const rl = rateLimit(request, "rooms", 20, 10 * 60 * 1000);
   if (!rl.allowed) {
@@ -99,6 +149,11 @@ export async function POST(request: Request) {
       : null;
   const furniture = sanitizeFurniture(body.furniture_positions);
   const products = sanitizeProducts(body.selected_products);
+  // Hand-drawn rooms include an outline; normal rooms don't. Present-but-invalid
+  // is a corrupt save, so it fails validation below.
+  const rawOutline = dims.outline;
+  const outline = rawOutline == null ? null : sanitizeOutline(rawOutline);
+  const outlineBad = rawOutline != null && outline === null;
 
   if (
     !style ||
@@ -109,7 +164,8 @@ export async function POST(request: Request) {
     !isFeet(dims.length_ft) ||
     !isFeet(dims.width_ft) ||
     !furniture ||
-    !products
+    !products ||
+    outlineBad
   ) {
     return NextResponse.json(
       { error: "That design couldn't be saved. Some fields look off." },
@@ -165,6 +221,7 @@ export async function POST(request: Request) {
       room_type: roomType,
       occupants,
       estimated: dims.estimated === true,
+      ...(outline ? { outline } : {}),
     },
     style,
     budget,

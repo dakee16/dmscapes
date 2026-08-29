@@ -2,6 +2,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import RoomPlanner from "@/components/RoomPlanner";
 import HowItWorks from "@/components/HowItWorks";
+import TwoWaysToPlan from "@/components/site/TwoWaysToPlan";
 import Vibes from "@/components/Vibes";
 import CreateVibePromo from "@/components/site/CreateVibePromo";
 import Schools from "@/components/Schools";
@@ -126,6 +127,8 @@ export default function Home() {
         </section>
 
         <HowItWorks />
+
+        <TwoWaysToPlan />
 
         {/* Mid-scroll CTA: the obvious next action */}
         <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">

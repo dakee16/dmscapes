@@ -1,4 +1,4 @@
-import type { FurnitureItem } from "@/lib/types";
+import type { FurnitureItem, RoomOutline } from "@/lib/types";
 import { CATEGORY_COLORS } from "@/lib/styles";
 
 // Tiny top-down layout preview (account tiles). Room shell + furniture blocks
@@ -18,17 +18,23 @@ export default function RoomThumb({
   lengthFt,
   widthFt,
   furniture,
+  outline,
   className,
 }: {
   lengthFt: number;
   widthFt: number;
   furniture: FurnitureItem[];
+  /** Hand-drawn rooms: draw the real outline instead of a plain rectangle. */
+  outline?: RoomOutline | null;
   className?: string;
 }) {
   const PX = 10;
   const PAD = 1;
   const W = lengthFt * PX + PAD * 2;
   const H = widthFt * PX + PAD * 2;
+  const shapePath = outline
+    ? outline.points.map((p, i) => `${i === 0 ? "M" : "L"} ${PAD + p.x * PX} ${PAD + p.y * PX}`).join(" ") + " Z"
+    : null;
 
   // z-order: rugs under, wall items over, solids in between
   const sorted = [...furniture].sort((a, b) => {
@@ -39,15 +45,19 @@ export default function RoomThumb({
 
   return (
     <svg viewBox={`0 0 ${W} ${H}`} aria-hidden="true" className={className}>
-      <rect
-        x={PAD}
-        y={PAD}
-        width={lengthFt * PX}
-        height={widthFt * PX}
-        fill="#ffffff"
-        stroke="#17172b"
-        strokeWidth={1.5}
-      />
+      {shapePath ? (
+        <path d={shapePath} fill="#ffffff" stroke="#17172b" strokeWidth={1.5} strokeLinejoin="round" />
+      ) : (
+        <rect
+          x={PAD}
+          y={PAD}
+          width={lengthFt * PX}
+          height={widthFt * PX}
+          fill="#ffffff"
+          stroke="#17172b"
+          strokeWidth={1.5}
+        />
+      )}
       {sorted.map((f) => {
         const fp = footprint(f);
         return (

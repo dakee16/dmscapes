@@ -48,6 +48,7 @@ export async function GET(request: Request) {
     length_ft: r.room_dimensions?.length_ft ?? null,
     width_ft: r.room_dimensions?.width_ft ?? null,
     furniture: r.furniture_positions ?? null,
+    outline: r.room_dimensions?.outline ?? null,
   }));
 
   return NextResponse.json({ rooms } satisfies AccountRoomsResponse);

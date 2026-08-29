@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { usePlannerStore } from "@/lib/store";
 import { getSchool } from "@/lib/schools";
 import { track } from "@/lib/analytics";
-import type { FurnitureItem, ProductCategory, StyleId } from "@/lib/types";
+import type { FurnitureItem, ProductCategory, RoomOutline, StyleId } from "@/lib/types";
 
 export interface PlannerSeed {
   college_id: string | null;
@@ -21,6 +21,8 @@ export interface PlannerSeed {
   furniture: FurnitureItem[];
   /** Saved product picks (category -> product id); restored as swaps. */
   products: Partial<Record<ProductCategory, string>> | null;
+  /** Hand-drawn rooms only: the outline, restored so the shape/openings return. */
+  outline?: RoomOutline | null;
 }
 
 /**
@@ -54,8 +56,9 @@ export default function OpenInPlanner({
         // bed size isn't stored on saved rooms; recover it from the school
         // catalog when possible, else the near-universal dorm default.
         bedSize: roomMeta?.bed_size ?? "twin_xl",
-        source: school ? "catalog" : "manual",
+        source: seed.outline ? "drawn" : school ? "catalog" : "manual",
         dimsEstimated: seed.estimated ?? false,
+        outline: seed.outline ?? null,
       },
       style: seed.style,
       budget: seed.budget,

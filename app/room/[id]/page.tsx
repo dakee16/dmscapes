@@ -106,6 +106,7 @@ export default async function SharedRoomPage(props: {
               template_id: room.template_id,
               furniture: room.furniture_positions,
               products: room.selected_products ?? null,
+              outline: dims.outline ?? null,
             }}
             className="group block w-full cursor-pointer self-start rounded-xl border border-ink/10 bg-card p-4 text-left transition-colors hover:border-cobalt sm:p-6"
           >
@@ -114,6 +115,7 @@ export default async function SharedRoomPage(props: {
               widthFt={dims.width_ft}
               furniture={room.furniture_positions}
               isCorridor={room.template_id.startsWith("corridor-")}
+              outline={dims.outline ?? null}
             />
             <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-wide text-ink-soft transition-colors group-hover:text-cobalt">
               Designed with Dormscape

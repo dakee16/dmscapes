@@ -52,6 +52,7 @@ function DesignTile({ room }: { room: AccountRoomSummary }) {
             lengthFt={room.length_ft}
             widthFt={room.width_ft}
             furniture={room.furniture}
+            outline={room.outline ?? null}
             className="h-auto w-full"
           />
         ) : (

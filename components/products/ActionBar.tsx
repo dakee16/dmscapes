@@ -63,6 +63,9 @@ export default function ActionBar({
         room_type: s.room.type,
         occupants: s.room.occupants,
         estimated: s.room.dimsEstimated ?? false,
+        // Hand-drawn rooms carry their outline so a reopened design keeps its
+        // real shape and doors/windows/closets.
+        outline: s.room.outline ?? null,
       },
       style: s.style,
       budget: s.budget,

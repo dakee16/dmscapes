@@ -18,6 +18,7 @@ import { track } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
 import { fitTemplateToRoom } from "@/lib/layout-fit";
+import { placeInPolygon } from "@/lib/place-in-polygon";
 import type RoomCanvasType from "@/components/canvas/RoomCanvas";
 import type { RoomCanvasHandle } from "@/components/canvas/RoomCanvas";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
@@ -146,22 +147,27 @@ export default function ResultPage() {
     [room]
   );
 
+  // A hand-drawn, non-rectangular room (L / T / U): the box templates can't lay
+  // it out, so we place furniture against the drawn walls instead. A drawn
+  // *rectangle* still uses the polished template pipeline (its outline is a plain
+  // box). `match.template.furniture` is just the parts list for the occupancy.
+  const drawnOutline =
+    room?.source === "drawn" && room.outline && room.outline.points.length > 4
+      ? room.outline
+      : null;
+
   // Adopt the matched template's layout (once, or when the room changed),
   // refit to the actual room size: templates are authored at nominal dims.
   useEffect(() => {
     if (!hydrated || !match || !room) return;
-    if (templateId !== match.template_id || !furniture) {
-      initLayout(
-        match.template_id,
-        fitTemplateToRoom(
-          match.template.furniture,
-          match.template_id,
-          room.lengthFt,
-          room.widthFt
-        )
-      );
+    const wantId = drawnOutline ? "custom-drawn" : match.template_id;
+    if (templateId !== wantId || !furniture) {
+      const placed = drawnOutline
+        ? placeInPolygon(match.template.furniture, drawnOutline, room.lengthFt, room.widthFt)
+        : fitTemplateToRoom(match.template.furniture, match.template_id, room.lengthFt, room.widthFt);
+      initLayout(wantId, placed);
     }
-  }, [hydrated, match, room, templateId, furniture, initLayout]);
+  }, [hydrated, match, room, templateId, furniture, initLayout, drawnOutline]);
 
   useEffect(() => {
     if (hydrated && room && style && !trackedRef.current) {
@@ -326,6 +332,11 @@ export default function ResultPage() {
     viewportH > 0 ? (room.lengthFt / room.widthFt) * (viewportH - 128) + 56 : undefined;
 
   function handleReset() {
+    // Drawn polygon: re-run the wall placer. Otherwise restore the template.
+    if (drawnOutline && match && room) {
+      resetLayout(placeInPolygon(match.template.furniture, drawnOutline, room.lengthFt, room.widthFt));
+      return;
+    }
     const t = ALL_TEMPLATES.find((x) => x.template_id === templateId);
     if (t && room)
       resetLayout(
@@ -478,10 +489,16 @@ export default function ResultPage() {
               We recommend editing your room in fullscreen for more space.
             </p>
           </div>
-          {match && !match.exact_match && (
+          {drawnOutline ? (
             <p className="mt-2 text-xs text-ink-soft">
-              Closest layout for your room size. Drag anything to make it yours.
+              Auto-placed to fit the room you drew. Drag anything to make it yours.
             </p>
+          ) : (
+            match && !match.exact_match && (
+              <p className="mt-2 text-xs text-ink-soft">
+                Closest layout for your room size. Drag anything to make it yours.
+              </p>
+            )
           )}
           <p className="mt-2 hidden text-xs text-ink-soft lg:block">
             Drag furniture to rearrange · click an item, then use the toolbar to

@@ -150,7 +150,7 @@ export interface ClosetRect {
 
 /**
  * A hand-drawn, rectilinear (right-angle) room outline. `points` is a closed
- * ring in feet, normalized so the bounding box starts at (0,0) — so the room's
+ * ring in feet, normalized so the bounding box starts at (0,0), so the room's
  * bbox extents equal SelectedRoom.lengthFt x widthFt and all the existing
  * rectangle-based canvas math (scale, grid, drag clamp) keeps working, with the
  * polygon living inside that box. Absent on every college/manual room, which

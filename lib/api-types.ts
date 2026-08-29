@@ -1,7 +1,7 @@
 // Request/response contracts between the planner UI and the API routes.
 // The API implements these; the UI imports them. Keep in sync with the
 // Supabase schema in supabase/migrations/.
-import type { FurnitureItem, ProductCategory, StyleId } from "./types";
+import type { FurnitureItem, ProductCategory, RoomOutline, StyleId } from "./types";
 
 // POST /api/room-submissions  (request-school modal + /add-school form)
 export interface RoomSubmissionRequest {
@@ -31,6 +31,8 @@ export interface SaveRoomRequest {
     occupants: number;
     /** True when the size is a same-type estimate rather than published/entered. */
     estimated?: boolean;
+    /** Hand-drawn rooms only: the wall outline + doors/windows/closets. */
+    outline?: RoomOutline | null;
   };
   style: StyleId;
   budget: number;
@@ -67,6 +69,8 @@ export interface AccountRoomSummary {
   length_ft: number | null;
   width_ft: number | null;
   furniture: FurnitureItem[] | null;
+  /** Hand-drawn rooms only: the outline, so the tile draws the real shape. */
+  outline?: RoomOutline | null;
 }
 export interface AccountRoomsResponse {
   rooms: AccountRoomSummary[];
