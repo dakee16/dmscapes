@@ -408,10 +408,15 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       const gap = [...px(s.x, s.y), ...px(e.x, e.y)];
       if (op.kind === "window") return { kind: "window" as const, gap };
       const nrm = inwardNormal(op.edge);
-      const angleD = (Math.atan2(dy, dx) * 180) / Math.PI;
-      const angleN = (Math.atan2(nrm.ny, nrm.nx) * 180) / Math.PI;
+      // swing (0-3): bit0 = hinge at gap end, bit1 = open outward.
+      const swing = op.swing ?? 0;
+      const hinge = swing & 1 ? e : s;
+      const dirx = swing & 1 ? -dx : dx, diry = swing & 1 ? -dy : dy;
+      const nx = swing & 2 ? -nrm.nx : nrm.nx, ny = swing & 2 ? -nrm.ny : nrm.ny;
+      const angleD = (Math.atan2(diry, dirx) * 180) / Math.PI;
+      const angleN = (Math.atan2(ny, nx) * 180) / Math.PI;
       const delta = (((angleN - angleD) % 360) + 360) % 360;
-      const [hx, hy] = px(s.x, s.y);
+      const [hx, hy] = px(hinge.x, hinge.y);
       return {
         kind: "door" as const,
         gap,
@@ -420,7 +425,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           y: hy,
           radius: op.width_ft * pxFt,
           rotation: delta < 180 ? angleD : angleN,
-          leaf: [hx, hy, ...px(s.x + nrm.nx * op.width_ft, s.y + nrm.ny * op.width_ft)],
+          leaf: [hx, hy, ...px(hinge.x + nx * op.width_ft, hinge.y + ny * op.width_ft)],
         },
       };
     });

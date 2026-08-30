@@ -64,9 +64,15 @@ export default function StaticRoomView({
       const e = { x: a.x + ux * (op.offset_ft + op.width_ft), y: a.y + uy * (op.offset_ft + op.width_ft) };
       if (op.kind === "window") return { kind: "window" as const, s, e };
       const nrm = inwardNormal(op.edge);
-      const leaf = { x: s.x + nrm.nx * op.width_ft, y: s.y + nrm.ny * op.width_ft };
-      const sweep = ux * nrm.ny - uy * nrm.nx > 0 ? 1 : 0;
-      return { kind: "door" as const, s, e, leaf, width: op.width_ft, sweep };
+      // swing (0-3): bit0 = hinge at gap end, bit1 = open outward.
+      const swing = op.swing ?? 0;
+      const hinge = swing & 1 ? e : s;
+      const dirx = swing & 1 ? -ux : ux, diry = swing & 1 ? -uy : uy;
+      const nx = swing & 2 ? -nrm.nx : nrm.nx, ny = swing & 2 ? -nrm.ny : nrm.ny;
+      const closedEnd = { x: hinge.x + dirx * op.width_ft, y: hinge.y + diry * op.width_ft };
+      const leaf = { x: hinge.x + nx * op.width_ft, y: hinge.y + ny * op.width_ft };
+      const sweep = dirx * ny - diry * nx > 0 ? 1 : 0;
+      return { kind: "door" as const, s: hinge, e: closedEnd, leaf, width: op.width_ft, sweep };
     });
     return { path, openings, closets: outline.closets };
   })();

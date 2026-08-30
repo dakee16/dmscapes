@@ -20,6 +20,9 @@ const WINDOW_FT = 4;
 const CLOSET_W = 2.5;
 const CLOSET_D = 2;
 const CLOSE_SNAP_FT = 0.75; // click within this of the start point to close the loop
+// Walls snap to this angle increment, so diagonals are precise (0/15/.../90...)
+// without being freeform. 15deg covers 45deg cut-corners and shallower bays.
+const ANGLE_STEP = 15;
 
 const INK = "#17172b";
 const GRID = "#e8ecf6";
@@ -32,6 +35,7 @@ type Tool = "wall" | "door" | "window" | "closet";
 type Selected = { kind: "opening" | "closet"; index: number } | null;
 
 const snap = (v: number) => Math.round(v * 2) / 2;
+const round2 = (v: number) => Math.round(v * 100) / 100;
 
 /** Length in feet-and-inches, e.g. 10.5 -> 10'6", 12 -> 12'. */
 function ftIn(ft: number): string {
@@ -41,18 +45,42 @@ function ftIn(ft: number): string {
   return i === 0 ? `${f}'` : `${f}'${i}"`;
 }
 
-/** Do two axis-aligned segments properly cross (interiors intersect)? */
+/** Do two segments properly cross (interiors intersect)? Any angle; shared
+ *  endpoints of adjacent walls don't count. */
 function segCross(a1: Point, a2: Point, b1: Point, b2: Point): boolean {
-  const aVert = a1.x === a2.x;
-  const bVert = b1.x === b2.x;
-  if (aVert === bVert) return false; // parallel axis-aligned segments never "cross"
-  const v = aVert ? { p1: a1, p2: a2 } : { p1: b1, p2: b2 };
-  const h = aVert ? { p1: b1, p2: b2 } : { p1: a1, p2: a2 };
-  const vx = v.p1.x;
-  const hy = h.p1.y;
-  const vyLo = Math.min(v.p1.y, v.p2.y), vyHi = Math.max(v.p1.y, v.p2.y);
-  const hxLo = Math.min(h.p1.x, h.p2.x), hxHi = Math.max(h.p1.x, h.p2.x);
-  return vx > hxLo && vx < hxHi && hy > vyLo && hy < vyHi;
+  const eps = 1e-9;
+  const cross = (p: Point, q: Point, r: Point) =>
+    (q.x - p.x) * (r.y - p.y) - (q.y - p.y) * (r.x - p.x);
+  const o1 = cross(a1, a2, b1), o2 = cross(a1, a2, b2);
+  const o3 = cross(b1, b2, a1), o4 = cross(b1, b2, a2);
+  const straddle = (u: number, v: number) => (u > eps && v < -eps) || (u < -eps && v > eps);
+  return straddle(o1, o2) && straddle(o3, o4);
+}
+
+/**
+ * Door swing geometry (in feet). `swing` (0-3) cycles the hinge end (gap start
+ * vs end) and the open side (into the room vs out), so the user can flip a door
+ * to any of its four orientations. Returns the hinge, the 90-degree arc's start
+ * angle, and the open leaf's far end.
+ */
+function doorGeom(
+  s: Point,
+  end: Point,
+  u: { x: number; y: number },
+  nIn: { x: number; y: number },
+  width: number,
+  swing: number
+): { hinge: Point; rotation: number; leaf: Point } {
+  const bit0 = swing & 1; // hinge: 0 = gap start, 1 = gap end
+  const bit1 = (swing >> 1) & 1; // side: 0 = inward, 1 = outward
+  const hinge = bit0 ? end : s;
+  const dir = bit0 ? { x: -u.x, y: -u.y } : u;
+  const normal = bit1 ? { x: -nIn.x, y: -nIn.y } : nIn;
+  const angleDir = (Math.atan2(dir.y, dir.x) * 180) / Math.PI;
+  const angleNorm = (Math.atan2(normal.y, normal.x) * 180) / Math.PI;
+  const delta = (((angleNorm - angleDir) % 360) + 360) % 360;
+  const rotation = delta < 180 ? angleDir : angleNorm;
+  return { hinge, rotation, leaf: { x: hinge.x + normal.x * width, y: hinge.y + normal.y * width } };
 }
 
 /** No two non-adjacent edges of the closed ring cross. */
@@ -162,13 +190,20 @@ export default function RoomDrawCanvas({
       ? Math.hypot(cursor.x - points[0].x, cursor.y - points[0].y) <= CLOSE_SNAP_FT
       : false;
 
-  // The preview corner is axis-locked to the previous point (keeps walls square).
+  // Wall preview: snap the angle from the previous corner to ANGLE_STEP and the
+  // length to the half-foot grid, so horizontal/vertical AND clean diagonals are
+  // both easy to draw without going fully freeform.
   const preview: Point | null = (() => {
     if (tool !== "wall" || closed || points.length === 0 || !cursor) return null;
     if (nearStart) return points[0];
     const last = points[points.length - 1];
     const dx = cursor.x - last.x, dy = cursor.y - last.y;
-    return Math.abs(dx) >= Math.abs(dy) ? { x: cursor.x, y: last.y } : { x: last.x, y: cursor.y };
+    const dist = Math.hypot(dx, dy);
+    if (dist < 1e-6) return last;
+    const ang = Math.round((Math.atan2(dy, dx) * 180) / Math.PI / ANGLE_STEP) * ANGLE_STEP;
+    const rad = (ang * Math.PI) / 180;
+    const len = Math.max(0.5, snap(dist));
+    return { x: round2(last.x + Math.cos(rad) * len), y: round2(last.y + Math.sin(rad) * len) };
   })();
 
   // ---- edge helpers ---------------------------------------------------------
@@ -253,10 +288,7 @@ export default function RoomDrawCanvas({
   function finishOutline() {
     if (points.length < 3) return;
     const ring = [...points];
-    const s = ring[0], l = ring[ring.length - 1];
-    // Close rectilinearly: if the last corner shares no axis with the start,
-    // drop one right-angle corner so the closing run stays square.
-    if (s.x !== l.x && s.y !== l.y) ring.push({ x: s.x, y: l.y });
+    // The loop closes on the last-corner -> start edge (any angle is fine now).
     if (!isSimpleRing(ring)) {
       setHint("That outline crosses itself. Undo the last corner and try again.");
       return;
@@ -276,6 +308,22 @@ export default function RoomDrawCanvas({
     }
     setSelected(null);
   }
+
+  // Door swing: cycle the selected door through its four orientations (which end
+  // it hinges on x whether it opens in or out), like the furniture rotate button.
+  function rotateDoor() {
+    if (!selected || selected.kind !== "opening") return;
+    const op = openings[selected.index];
+    if (!op || op.kind !== "door") return;
+    commit({
+      openings: openings.map((o, i) =>
+        i === selected.index ? { ...o, swing: ((o.swing ?? 0) + 1) % 4 } : o
+      ),
+    });
+  }
+  const selectedDoor =
+    selected?.kind === "opening" && openings[selected.index]?.kind === "door";
+
   useEffect(() => {
     function onKey(ev: KeyboardEvent) {
       if ((ev.key === "Delete" || ev.key === "Backspace") && selected) {
@@ -378,10 +426,8 @@ export default function RoomDrawCanvas({
           ghostOpening = { kind: "window", gap };
         } else {
           const nrm = inwardNormal(edge);
-          const angleD = (Math.atan2(uy, ux) * 180) / Math.PI;
-          const angleN = (Math.atan2(nrm.ny, nrm.nx) * 180) / Math.PI;
-          const delta = (((angleN - angleD) % 360) + 360) % 360;
-          const [hx, hy] = px(s.x, s.y);
+          const dg = doorGeom(s, en, { x: ux, y: uy }, { x: nrm.nx, y: nrm.ny }, width, 0);
+          const [hx, hy] = px(dg.hinge.x, dg.hinge.y);
           ghostOpening = {
             kind: "door",
             gap,
@@ -389,8 +435,8 @@ export default function RoomDrawCanvas({
               x: hx,
               y: hy,
               radius: width * pxFt,
-              rotation: delta < 180 ? angleD : angleN,
-              leaf: [hx, hy, ...px(s.x + nrm.nx * width, s.y + nrm.ny * width)],
+              rotation: dg.rotation,
+              leaf: [hx, hy, ...px(dg.leaf.x, dg.leaf.y)],
             },
           };
         }
@@ -431,12 +477,13 @@ export default function RoomDrawCanvas({
                   setHint(null);
                 }}
                 aria-pressed={active}
-                title={disabled ? "Finish the walls first" : `${t.label} tool`}
+                aria-disabled={disabled}
+                title={disabled ? "Complete your room outline first" : `${t.label} tool`}
                 className={`flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
                   active
                     ? "bg-cobalt text-white"
                     : disabled
-                      ? "cursor-not-allowed text-ink/25"
+                      ? "cursor-not-allowed text-ink/30 opacity-60"
                       : "text-ink hover:bg-ink/[0.06] hover:text-cobalt"
                 }`}
               >
@@ -449,6 +496,20 @@ export default function RoomDrawCanvas({
           })}
         </div>
         <div className="flex items-center gap-1.5">
+          {selectedDoor && (
+            <button
+              type="button"
+              onClick={rotateDoor}
+              title="Rotate the door's swing direction"
+              className="flex items-center gap-1.5 rounded-xl border border-ink/15 bg-white px-3 py-2 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="23 4 23 10 17 10" />
+                <path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10" />
+              </svg>
+              Swing
+            </button>
+          )}
           {selected && (
             <button
               type="button"
@@ -482,6 +543,32 @@ export default function RoomDrawCanvas({
             Clear
           </button>
         </div>
+      </div>
+
+      {/* Locked-tools notice: doors/windows/closets need an enclosed outline. */}
+      {!closed && (
+        <div className="mb-3 flex items-start gap-2 rounded-lg border border-ink/10 bg-white px-3 py-2 text-xs leading-snug text-ink-soft">
+          <svg viewBox="0 0 24 24" className="mt-px h-3.5 w-3.5 shrink-0 text-ink-soft" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <rect x="5" y="11" width="14" height="9" rx="2" />
+            <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
+          </svg>
+          Connect the walls into a closed shape to unlock the door, window, and
+          closet tools.
+        </div>
+      )}
+
+      {/* Furniture-placement disclaimer, persistent while drawing. Same quiet
+          info-note treatment as the estimated-dimensions note elsewhere. */}
+      <div className="mb-3 flex items-start gap-2 rounded-lg border border-cobalt/20 bg-cobalt/[0.04] px-3 py-2 text-xs leading-snug text-ink-soft">
+        <svg viewBox="0 0 24 24" className="mt-px h-3.5 w-3.5 shrink-0 text-cobalt" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 11.5v4.5" strokeLinecap="round" />
+          <circle cx="12" cy="8" r="0.6" fill="currentColor" stroke="none" />
+        </svg>
+        <span>
+          Furniture is added automatically once you plan your room. You can adjust
+          everything afterward.
+        </span>
       </div>
 
       <div ref={containerRef} className="relative w-full overflow-hidden rounded-2xl border border-ink/10 bg-white">
@@ -590,24 +677,29 @@ export default function RoomDrawCanvas({
                   const [mxp, myp] = px(mid.x, mid.y);
                   const isSel = selected?.kind === "opening" && selected.index === i;
                   const nrm = inwardNormal(op.edge);
-                  const angleD = (Math.atan2(uy, ux) * 180) / Math.PI;
-                  const angleN = (Math.atan2(nrm.ny, nrm.nx) * 180) / Math.PI;
-                  const delta = (((angleN - angleD) % 360) + 360) % 360;
-                  const rotation = delta < 180 ? angleD : angleN;
-                  const [lx, ly] = px(s.x + nrm.nx * op.width_ft, s.y + nrm.ny * op.width_ft);
+                  const dg =
+                    op.kind === "door"
+                      ? doorGeom(s, end, { x: ux, y: uy }, { x: nrm.nx, y: nrm.ny }, op.width_ft, op.swing ?? 0)
+                      : null;
                   return (
                     <Group key={`op-${i}`}>
                       {/* white gap erases the wall under the opening */}
                       <Line points={[sx, sy, ex, ey]} stroke={WHITE} strokeWidth={5} listening={false} />
                       {op.kind === "window" ? (
                         <Line points={[sx, sy, ex, ey]} stroke={COBALT} strokeWidth={4} listening={false} />
-                      ) : (
-                        <>
-                          <Arc x={sx} y={sy} innerRadius={0} outerRadius={op.width_ft * pxFt} angle={90} rotation={rotation} fill={COBALT} opacity={0.08} listening={false} />
-                          <Arc x={sx} y={sy} innerRadius={op.width_ft * pxFt} outerRadius={op.width_ft * pxFt} angle={90} rotation={rotation} stroke={COBALT} strokeWidth={1.5} opacity={0.5} listening={false} />
-                          <Line points={[sx, sy, lx, ly]} stroke={COBALT} strokeWidth={2} opacity={0.6} listening={false} />
-                        </>
-                      )}
+                      ) : dg ? (
+                        (() => {
+                          const [hx, hy] = px(dg.hinge.x, dg.hinge.y);
+                          const [lx, ly] = px(dg.leaf.x, dg.leaf.y);
+                          return (
+                            <>
+                              <Arc x={hx} y={hy} innerRadius={0} outerRadius={op.width_ft * pxFt} angle={90} rotation={dg.rotation} fill={COBALT} opacity={0.08} listening={false} />
+                              <Arc x={hx} y={hy} innerRadius={op.width_ft * pxFt} outerRadius={op.width_ft * pxFt} angle={90} rotation={dg.rotation} stroke={COBALT} strokeWidth={1.5} opacity={0.5} listening={false} />
+                              <Line points={[hx, hy, lx, ly]} stroke={COBALT} strokeWidth={2} opacity={0.6} listening={false} />
+                            </>
+                          );
+                        })()
+                      ) : null}
                       {/* Drag handle: constrained to slide along this wall. */}
                       <Circle
                         x={mxp}
@@ -640,6 +732,38 @@ export default function RoomDrawCanvas({
                           commit({ openings: openings.map((o, k) => (k === i ? { ...o, offset_ft: offset } : o)) });
                         }}
                       />
+                      {/* Window resize handle (window only, when selected): drag
+                          the far end along the wall to change its width. */}
+                      {op.kind === "window" && isSel && (
+                        <Circle
+                          x={ex}
+                          y={ey}
+                          radius={7}
+                          fill={WHITE}
+                          stroke={AMBER}
+                          strokeWidth={2.5}
+                          draggable
+                          onClick={(ev) => { ev.cancelBubble = true; }}
+                          onTap={(ev) => { ev.cancelBubble = true; }}
+                          dragBoundFunc={(pos) => {
+                            const [ax, ay] = px(e2.a.x, e2.a.y);
+                            const [bx, by] = px(e2.b.x, e2.b.y);
+                            const vx = bx - ax, vy = by - ay;
+                            const len2 = vx * vx + vy * vy || 1;
+                            let t = ((pos.x - ax) * vx + (pos.y - ay) * vy) / len2;
+                            const tMin = (op.offset_ft + 1) / (e2.len || 1); // keep at least 1 ft wide
+                            t = Math.max(tMin, Math.min(1, t));
+                            return { x: ax + vx * t, y: ay + vy * t };
+                          }}
+                          onDragEnd={(ev) => {
+                            const [ax, ay] = px(e2.a.x, e2.a.y);
+                            const dxft = (ev.target.x() - ax) / pxFt, dyft = (ev.target.y() - ay) / pxFt;
+                            const alongEnd = dxft * ux + dyft * uy; // ft from edge start to the end handle
+                            const width = snap(Math.max(1, Math.min(e2.len - op.offset_ft, alongEnd - op.offset_ft)));
+                            commit({ openings: openings.map((o, k) => (k === i ? { ...o, width_ft: width } : o)) });
+                          }}
+                        />
+                      )}
                     </Group>
                   );
                 })}

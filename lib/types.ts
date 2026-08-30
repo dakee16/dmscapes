@@ -138,6 +138,12 @@ export interface WallOpening {
   edge: number;
   offset_ft: number;
   width_ft: number;
+  /**
+   * Doors only: which way the leaf swings, 0-3. Cycles hinge end (start/end of
+   * the gap) x open side (into the room / out of it). Absent = the default
+   * inward swing hinged at the gap start.
+   */
+  swing?: number;
 }
 
 /** A closet drawn against a wall: an axis-aligned obstacle furniture avoids. */

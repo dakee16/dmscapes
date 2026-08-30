@@ -82,16 +82,31 @@ export function pointInPolygon(px: number, py: number, poly: Point[], eps = 1e-6
   return inside;
 }
 
-/** Does an axis-aligned polygon edge cut through the OPEN interior of a rect? */
+/** Does a polygon edge cut through the OPEN interior of a rect? Any angle. */
 function edgeCrossesRectInterior(ax: number, ay: number, bx: number, by: number, r: Footprint, eps = 1e-6): boolean {
-  if (Math.abs(ax - bx) < eps) {
-    // vertical edge at x = ax
-    const yLo = Math.min(ay, by), yHi = Math.max(ay, by);
-    return ax > r.x + eps && ax < r.x + r.w - eps && yHi > r.y + eps && yLo < r.y + r.h - eps;
+  // Liang-Barsky clip of segment a->b to the OPEN interior of the rect. Works for
+  // diagonal walls too; an edge merely flush with a rect side is excluded, so
+  // furniture sitting against a wall is not a "crossing".
+  const x0 = r.x + eps, x1 = r.x + r.w - eps, y0 = r.y + eps, y1 = r.y + r.h - eps;
+  if (x1 <= x0 || y1 <= y0) return false; // rect too small to have an interior
+  const dx = bx - ax, dy = by - ay;
+  let t0 = 0, t1 = 1;
+  const clip = (p: number, q: number): boolean => {
+    if (Math.abs(p) < 1e-12) return q >= 0; // parallel to this edge: inside iff q>=0
+    const t = q / p;
+    if (p < 0) {
+      if (t > t1) return false;
+      if (t > t0) t0 = t;
+    } else {
+      if (t < t0) return false;
+      if (t < t1) t1 = t;
+    }
+    return true;
+  };
+  if (clip(-dx, ax - x0) && clip(dx, x1 - ax) && clip(-dy, ay - y0) && clip(dy, y1 - ay)) {
+    return t1 - t0 > eps; // a non-degenerate portion lies strictly inside
   }
-  // horizontal edge at y = ay
-  const xLo = Math.min(ax, bx), xHi = Math.max(ax, bx);
-  return ay > r.y + eps && ay < r.y + r.h - eps && xHi > r.x + eps && xLo < r.x + r.w - eps;
+  return false;
 }
 
 /**
