@@ -467,31 +467,48 @@ export default function RoomDrawCanvas({
             const active = tool === t.id;
             const disabled = t.id !== "wall" && !closed;
             return (
-              <button
-                key={t.id}
-                type="button"
-                disabled={disabled}
-                onClick={() => {
-                  setTool(t.id);
-                  setSelected(null);
-                  setHint(null);
-                }}
-                aria-pressed={active}
-                aria-disabled={disabled}
-                title={disabled ? "Complete your room outline first" : `${t.label} tool`}
-                className={`flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
-                  active
-                    ? "bg-cobalt text-white"
-                    : disabled
-                      ? "cursor-not-allowed text-ink/30 opacity-60"
-                      : "text-ink hover:bg-ink/[0.06] hover:text-cobalt"
-                }`}
-              >
-                <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  {t.icon}
-                </svg>
-                {t.label}
-              </button>
+              <span key={t.id} className="relative flex">
+                <button
+                  type="button"
+                  disabled={disabled}
+                  onClick={() => {
+                    setTool(t.id);
+                    setSelected(null);
+                    setHint(null);
+                  }}
+                  aria-pressed={active}
+                  aria-disabled={disabled}
+                  title={disabled ? "Complete your room outline first" : `${t.label} tool`}
+                  className={`flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
+                    active
+                      ? "bg-cobalt text-white"
+                      : disabled
+                        ? "cursor-not-allowed text-ink/30 opacity-60"
+                        : "text-ink hover:bg-ink/[0.06] hover:text-cobalt"
+                  }`}
+                >
+                  <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    {t.icon}
+                  </svg>
+                  {t.label}
+                </button>
+                {/* Lock over the Window button while the outline is open: it floats
+                    above the toolbar and dips a little into it, and explains itself
+                    on hover. Disappears the moment the walls enclose. */}
+                {t.id === "window" && !closed && (
+                  <span className="group/lock absolute -top-4 left-1/2 z-20 -translate-x-1/2">
+                    <span className="grid h-6 w-6 place-items-center rounded-full border border-amber/60 bg-white text-amber shadow-[0_6px_16px_-6px_rgba(23,23,43,0.55)]">
+                      <svg viewBox="0 0 24 24" className="h-[14px] w-[14px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <rect x="5" y="11" width="14" height="9" rx="2" />
+                        <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+                      </svg>
+                    </span>
+                    <span className="pointer-events-none absolute left-1/2 top-full z-30 mt-2 w-52 -translate-x-1/2 rounded-lg bg-ink px-3 py-2 text-center text-xs font-medium leading-snug text-white opacity-0 shadow-[0_12px_30px_-10px_rgba(23,23,43,0.6)] transition-opacity duration-150 group-hover/lock:opacity-100">
+                      Connect the walls into a closed shape to unlock the door, window, and closet tools.
+                    </span>
+                  </span>
+                )}
+              </span>
             );
           })}
         </div>
@@ -544,18 +561,6 @@ export default function RoomDrawCanvas({
           </button>
         </div>
       </div>
-
-      {/* Locked-tools notice: doors/windows/closets need an enclosed outline. */}
-      {!closed && (
-        <div className="mb-3 flex items-start gap-2 rounded-lg border border-ink/10 bg-white px-3 py-2 text-xs leading-snug text-ink-soft">
-          <svg viewBox="0 0 24 24" className="mt-px h-3.5 w-3.5 shrink-0 text-ink-soft" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-            <rect x="5" y="11" width="14" height="9" rx="2" />
-            <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
-          </svg>
-          Connect the walls into a closed shape to unlock the door, window, and
-          closet tools.
-        </div>
-      )}
 
       {/* Furniture-placement disclaimer, persistent while drawing. Same quiet
           info-note treatment as the estimated-dimensions note elsewhere. */}
