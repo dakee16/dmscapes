@@ -1,9 +1,13 @@
 import type { MetadataRoute } from "next";
-import { SCHOOLS } from "@/lib/schools";
+import { SCHOOLS, allDormPaths } from "@/lib/schools";
 import { POSTS } from "@/content/blog";
+import { SITE_URL as BASE } from "@/lib/seo";
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us";
-
+/**
+ * Every indexable URL: marketing pages, the college hubs, one page per
+ * residence hall, and the blog. Well under the 50,000-URL / 50 MB limit for a
+ * single sitemap, so no index-sitemap split is needed yet.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
   const statics: MetadataRoute.Sitemap = [
     { url: `${BASE}/`, changeFrequency: "weekly", priority: 1 },
@@ -13,7 +17,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/blog`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/faq`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/about`, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE}/methodology`, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/add-school`, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE}/contact`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/terms`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/privacy`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${BASE}/cookies`, changeFrequency: "yearly", priority: 0.3 },
@@ -23,11 +29,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: 0.8,
   }));
+  // One entry per residence hall: the deepest, most specific pages we have.
+  const dorms: MetadataRoute.Sitemap = allDormPaths().map(({ collegeId, dormId }) => ({
+    url: `${BASE}/colleges/${collegeId}/${dormId}`,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
   const posts: MetadataRoute.Sitemap = POSTS.map((p) => ({
     url: `${BASE}/blog/${p.slug}`,
     lastModified: p.updated ?? p.date,
     changeFrequency: "monthly",
     priority: 0.6,
   }));
-  return [...statics, ...colleges, ...posts];
+  return [...statics, ...colleges, ...dorms, ...posts];
 }

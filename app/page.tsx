@@ -14,10 +14,33 @@ import CursorGrid from "@/components/site/CursorGrid";
 import HeroParallax from "@/components/site/HeroParallax";
 import HomeFaq from "@/components/site/HomeFaq";
 import StickyMobileCta from "@/components/site/StickyMobileCta";
+import JsonLd from "@/components/site/JsonLd";
+import {
+  pageMetadata,
+  organizationJsonLd,
+  webSiteJsonLd,
+  softwareApplicationJsonLd,
+} from "@/lib/seo";
+import { SCHOOLS } from "@/lib/schools";
+
+const DORM_COUNT = SCHOOLS.reduce((n, s) => n + s.dorms.length, 0);
+
+export const metadata = pageMetadata({
+  title: "Dormscape: Free Dorm Room Planner With Real Dorm Dimensions",
+  absoluteTitle: true,
+  description: `Plan your college dorm room before move-in. Find your exact room across ${SCHOOLS.length} schools and ${DORM_COUNT} residence halls, get a layout that fits it, set your style and budget, and leave with a shoppable list. Free.`,
+  path: "/",
+  ogTitle: "dormscape: your dorm room, planned before move-in day",
+});
 
 export default function Home() {
   return (
     <div id="top">
+      {/* Site-level identity: what Dormscape is (a free dorm room planner),
+          stated as structured data rather than left to be inferred from copy. */}
+      <JsonLd
+        data={[organizationJsonLd(), webSiteJsonLd(), softwareApplicationJsonLd()]}
+      />
       <Nav />
       <main>
         {/* Hero. The negative top margin pulls the section up behind the sticky
@@ -42,7 +65,7 @@ export default function Home() {
             <div>
               <span className="rise inline-flex items-center gap-2 rounded-full border border-cobalt/20 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-cobalt">
                 <span className="h-1.5 w-1.5 rounded-full bg-cobalt" aria-hidden="true" />
-                Free AI dorm planner · Fall &rsquo;26
+                Free dorm room planner · Fall &rsquo;26
               </span>
               <h1
                 className="rise mt-4 font-display text-[2.6rem] font-extrabold leading-[1.04] tracking-tight sm:text-6xl"
@@ -56,9 +79,10 @@ export default function Home() {
                 className="rise mt-5 max-w-md text-lg leading-relaxed text-ink-soft"
                 style={{ animationDelay: "160ms" }}
               >
-                Pick your school, choose a vibe, set a budget. Dormscape knows your
-                exact room and hands you a layout plus a shoppable Amazon list, before
-                you ever get the keys.
+                Find your exact dorm room, get a layout that actually fits it,
+                tune the style and budget, and leave with a shoppable list.
+                Dormscape is a dorm room planner built on real, building-specific
+                dimensions, so it all fits before you ever get the keys.
               </p>
               <div className="rise mt-8" style={{ animationDelay: "240ms" }}>
                 <PlanCta className="inline-flex h-14 items-center rounded-xl bg-cobalt px-8 text-lg font-semibold text-white shadow-[0_14px_32px_-14px_rgba(43,78,255,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-cobalt-deep hover:shadow-[0_20px_40px_-16px_rgba(43,78,255,0.7)] active:translate-y-0" />
