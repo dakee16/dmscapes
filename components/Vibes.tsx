@@ -1,8 +1,16 @@
+import Link from "next/link";
+import StyleGallery from "@/components/experience/StyleGallery";
 import Reveal from "@/components/site/Reveal";
 import StyleScene from "@/components/site/StyleScene";
 import type { StyleId } from "@/lib/types";
 
-const VIBES: { id: StyleId; name: string; line: string; who: string; plus?: boolean }[] = [
+const VIBES: {
+  id: StyleId;
+  name: string;
+  line: string;
+  who: string;
+  plus?: boolean;
+}[] = [
   {
     id: "minimalist",
     name: "Minimalist",
@@ -67,52 +75,45 @@ const VIBES: { id: StyleId; name: string; line: string; who: string; plus?: bool
 
 export default function Vibes() {
   return (
-    <section id="vibes" className="border-y border-ink/8 bg-white">
-      <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <Reveal stagger>
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-            Style showcase
-          </p>
-          <h2 className="mt-3 max-w-xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
-            Pick a vibe. We make it fit.
+    <section id="vibes" className="dm-vibes-section">
+      <Reveal className="dm-vibes-heading dm-section">
+        <div>
+          <p className="dm-eyebrow">03 / Style showcase</p>
+          <h2>
+            Pick a vibe.
+            <br />
+            <em>We make it fit.</em>
           </h2>
-          <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-            Every vibe is a full plan: bedding, lighting, storage, and decor, priced to
-            your budget and arranged to your floor plan.
+        </div>
+        <div>
+          <p>
+            Every vibe is a full plan: bedding, lighting, storage, and decor,
+            priced to your budget and arranged to your floor plan.
           </p>
-        </Reveal>
-
-        <Reveal
-          stagger
-          className="-mx-5 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-3"
-          itemClassName="w-64 shrink-0 snap-start sm:w-auto"
-        >
-          {VIBES.map((vibe) => (
-            <article
-              key={vibe.id}
-              className="relative h-full overflow-hidden rounded-xl border border-ink/10 bg-paper transition-shadow hover:shadow-[0_16px_40px_-20px_rgba(23,23,43,0.35)]"
-            >
-              {vibe.plus && (
-                <span className="absolute left-2.5 top-2.5 z-10 inline-flex items-center gap-1 rounded-full bg-highlight px-2.5 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink shadow-sm">
-                  <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                    <rect x="5" y="11" width="14" height="9" rx="2" />
-                    <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
-                  </svg>
-                  Plus
-                </span>
-              )}
-              <StyleScene id={vibe.id} className="h-36 w-full" />
-              <div className="flex flex-col border-t border-ink/8 p-4">
-                <h3 className="font-display text-base font-bold">{vibe.name}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{vibe.line}</p>
-                <p className="mt-3 font-mono text-xs font-medium text-cobalt">
-                  {vibe.who}
-                </p>
-              </div>
-            </article>
-          ))}
-        </Reveal>
-      </div>
+          <span className="dm-eyebrow">09 styles / One very you room</span>
+        </div>
+      </Reveal>
+      <StyleGallery count={VIBES.length}>
+        {VIBES.map((vibe, i) => (
+          <article key={vibe.id} className="dm-vibe-card" data-vibe={vibe.id}>
+            <div className="dm-vibe-card-top">
+              <span className="dm-eyebrow">
+                {String(i + 1).padStart(2, "0")} / {vibe.name}
+              </span>
+              {vibe.plus && <span className="dm-yellow-tag">Plus</span>}
+            </div>
+            <StyleScene id={vibe.id} className="dm-vibe-scene" />
+            <div className="dm-vibe-card-copy">
+              <h3>{vibe.name}</h3>
+              <p>{vibe.line}</p>
+              <span className="dm-eyebrow">{vibe.who}</span>
+              <Link href="/plan" aria-label={`Plan a ${vibe.name} room`}>
+                Explore this vibe <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+          </article>
+        ))}
+      </StyleGallery>
     </section>
   );
 }

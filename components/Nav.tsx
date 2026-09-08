@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { MotionToggle } from "@/components/experience/MotionProvider";
 import { usePathname } from "next/navigation";
 import ProfileMenu from "@/components/auth/ProfileMenu";
 import Wordmark from "@/components/site/Wordmark";
@@ -20,12 +21,12 @@ const LINKS = [
 ] as const;
 
 const NAV_LINK =
-  "text-sm font-medium text-ink-soft transition-colors hover:text-ink";
+  "dm-nav-link text-sm font-medium text-ink-soft transition-colors hover:text-ink";
 
 // Filled CTA style. The header's one high-priority action, kept visually
 // distinct from the quieter text links and secondary items around it.
 const PLAN_BTN =
-  "shrink-0 rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-white shadow-[0_4px_14px_-6px_rgba(23,23,43,0.5)] transition-all duration-200 hover:bg-cobalt active:translate-y-px";
+  "dm-button dm-nav-cta";
 
 function Crown({ className = "h-[18px] w-[18px]" }: { className?: string }) {
   return (
@@ -113,19 +114,16 @@ export default function Nav() {
 
   return (
     <>
-      {/* Floating "island" header: the sticky wrapper adds side + top margin so
-          the bar never sits flush to the viewport edges; the nav itself is the
-          rounded, translucent, blurred pill that hovers over the page as it
-          scrolls. */}
-      <header className="sticky top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
-        <nav className="mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-4 rounded-full border border-ink/10 bg-paper/95 px-4 shadow-[0_12px_34px_-14px_rgba(23,23,43,0.4)] sm:h-[68px] sm:bg-paper/80 sm:px-6 sm:backdrop-blur-md">
+      {/* Shared editorial navigation, including the native tier and account controls. */}
+      <header className="dm-header">
+        <nav aria-label="Main navigation" className="dm-nav">
           {/* Brand */}
           <Wordmark />
 
           {/* Primary nav, centered, desktop only. */}
           <div className="hidden items-center gap-7 lg:flex">
             {LINKS.map((link) => (
-              <Link key={link.href} href={link.href} className={NAV_LINK}>
+              <Link key={link.href} href={link.href} aria-current={pathname === link.href ? "page" : undefined} className={NAV_LINK}>
                 {link.label}
               </Link>
             ))}
@@ -252,6 +250,7 @@ export default function Nav() {
                 (md+); mobile uses the avatar badge + dropdown in ProfileMenu. */}
             <HeaderCredits />
 
+            <MotionToggle />
             <ProfileMenu onShowRoom3D={() => setTeaserOpen(true)} />
           </div>
         </nav>

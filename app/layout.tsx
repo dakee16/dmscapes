@@ -1,34 +1,55 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import MotionProvider from "@/components/experience/MotionProvider";
 import { AuthProvider } from "@/lib/auth-context";
 import { UpgradeProvider } from "@/lib/upgrade-context";
-import ScrollRuler from "@/components/site/ScrollRuler";
 import CookieConsent from "@/components/site/CookieConsent";
 import "./globals.css";
+import "./experience.css";
 
-const bricolage = Bricolage_Grotesque({
+const bricolage = localFont({
+  src: "../public/experience/fonts/bricolage.woff2",
   variable: "--font-bricolage",
-  subsets: ["latin"],
+  weight: "200 800",
+  display: "swap",
+  preload: false,
 });
-
-const instrument = Instrument_Sans({
+const instrument = localFont({
+  src: "../public/experience/fonts/instrument-sans.woff2",
   variable: "--font-instrument",
-  subsets: ["latin"],
+  weight: "400 700",
+  display: "swap",
 });
-
-const plexMono = IBM_Plex_Mono({
+const plexMono = localFont({
+  src: "../public/experience/fonts/plex-mono.woff2",
   variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: "400",
+  display: "swap",
+  preload: false,
+});
+const syne = localFont({
+  src: "../public/experience/fonts/syne.woff2",
+  variable: "--font-syne",
+  weight: "400 800",
+  display: "swap",
+});
+const serif = localFont({
+  src: "../public/experience/fonts/instrument-serif-italic.woff2",
+  variable: "--font-serif",
+  style: "italic",
+  weight: "400",
+  display: "swap",
 });
 
 const DESCRIPTION =
   "Free dorm planner built on real, building-specific dimensions. Pick a vibe, set a budget, and get a layout that fits your room, plus a shoppable Amazon list.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us",
+  ),
   title: {
-    // Lowercase to match the wordmark (dorm + amber "scape"); this is the
+    // Lowercase to match the wordmark; this is the
     // browser tab title, so every page inherits the lowercase brand token.
     default: "dormscape",
     template: "%s | dormscape",
@@ -66,15 +87,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bricolage.variable} ${instrument.variable} ${plexMono.variable}`}
+      className={`${bricolage.variable} ${instrument.variable} ${plexMono.variable} ${syne.variable} ${serif.variable}`}
     >
       <body className="min-h-screen antialiased">
-        {/* The "planned to the inch" scroll ruler, site-wide. Fixed, wide-desktop
-            only, pointer-events-none; a no-op on short pages. */}
-        <ScrollRuler />
         <CookieConsent />
         <AuthProvider>
-          <UpgradeProvider>{children}</UpgradeProvider>
+          <UpgradeProvider>
+            <MotionProvider>{children}</MotionProvider>
+          </UpgradeProvider>
         </AuthProvider>
       </body>
     </html>

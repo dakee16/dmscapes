@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
@@ -258,7 +260,7 @@ function TrustStrip() {
     { icon: <CartIcon />, label: "Real products, live Amazon links" },
   ];
   return (
-    <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-2xl border border-ink/10 bg-card/70 px-5 py-4 sm:mt-10 sm:gap-x-7">
+    <div className="dm-editorial-card mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-2xl border border-ink/10 bg-card/70 px-5 py-4 sm:mt-10 sm:gap-x-7">
       {items.map((it, i) => (
         <div key={i} className="flex items-center gap-x-6 sm:gap-x-7">
           {i > 0 && <span className="hidden h-4 w-px bg-ink/12 sm:block" aria-hidden="true" />}
@@ -323,13 +325,13 @@ export default function PricingPage() {
   return (
     <div>
       <SiteHeader gridClassName="h-[26rem]" />
-      <main className="relative">
+      <main id="page-content" tabIndex={-1} className="dm-page relative">
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
-          <div className="max-w-2xl">
+          <div className="dm-public-hero"><div>
             <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
               Pricing
             </p>
-            <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+            <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
               Free to plan. <span className="hl">Pay once to go further.</span>
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
@@ -337,6 +339,7 @@ export default function PricingPage() {
             </p>
           </div>
 
+          <BlueprintArtwork variant="orbit" /></div>
           <TrustStrip />
 
           {/* FLEX: the à-la-carte tier, presented as a slim banner above the
@@ -592,6 +595,7 @@ export default function PricingPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

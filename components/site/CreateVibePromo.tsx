@@ -25,7 +25,7 @@ const TILES: {
 
 export default function CreateVibePromo() {
   return (
-    <section id="create-your-own" className="relative overflow-hidden border-y border-ink/8 bg-paper">
+    <section id="create-your-own" className="dm-custom-promo relative overflow-hidden border-y border-ink/8 bg-paper">
       {/* Brand ground: a soft amber -> cobalt wash (the create-vibe page's
           signature) over faded grid paper, dissolving into the base surface. */}
       <span

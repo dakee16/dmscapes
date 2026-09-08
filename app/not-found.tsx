@@ -10,12 +10,12 @@ export default function NotFound() {
   return (
     <div>
       <SiteHeader gridClassName="h-[28rem]" />
-      <main className="min-h-[68vh]">
+      <main id="page-content" tabIndex={-1} className="dm-page min-h-[68vh]">
         <div className="mx-auto max-w-xl px-5 py-20 sm:px-8 sm:py-28">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             404: off the map
           </p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             This page isn&rsquo;t on the{" "}
             <span className="hl">floor plan.</span>
           </h1>
@@ -32,7 +32,7 @@ export default function NotFound() {
             </Link>
             <Link
               href="/plan"
-              className="inline-flex h-13 items-center justify-center rounded-xl border border-ink/15 bg-white px-7 text-base font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-cobalt/40 active:translate-y-0"
+              className="dm-editorial-card inline-flex h-13 items-center justify-center rounded-xl border border-ink/15 bg-white px-7 text-base font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-cobalt/40 active:translate-y-0"
             >
               Plan my room
             </Link>

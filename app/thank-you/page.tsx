@@ -12,7 +12,7 @@ export default function ThankYouPage() {
   return (
     <div className="relative min-h-screen">
       <SiteHeader gridClassName="h-80" />
-      <main className="mx-auto w-full max-w-xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
+      <main id="page-content" tabIndex={-1} className="dm-page mx-auto w-full max-w-xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
         <ThankYouView />
       </main>
     </div>

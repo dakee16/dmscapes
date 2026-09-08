@@ -2,11 +2,12 @@
 
 import { Children, useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useExperienceMotion } from "@/components/experience/MotionProvider";
 
 // Ease-out-expo. Every reveal on the site shares this curve; nothing bouncy.
 export const REVEAL_EASE = [0.16, 1, 0.3, 1] as const;
 
-const HIDDEN = { opacity: 0, y: 18, transition: { duration: 0 } };
+const HIDDEN = { opacity: 0, y: 32, transition: { duration: 0 } };
 
 /**
  * Scroll-reveal wrapper (framer-motion). Server markup renders children fully
@@ -30,6 +31,7 @@ export default function Reveal({
   /** classes for the per-child wrappers in stagger mode; they become the layout children */
   itemClassName?: string;
 }) {
+  const { paused } = useExperienceMotion();
   const ref = useRef<HTMLDivElement>(null);
   const [armed, setArmed] = useState(false);
   const inView = useInView(ref, {
@@ -46,7 +48,7 @@ export default function Reveal({
     setArmed(true);
   }, []);
 
-  const state = armed && !inView ? "hidden" : "shown";
+  const state = !paused && armed && !inView ? "hidden" : "shown";
 
   const container = stagger
     ? {
@@ -60,7 +62,7 @@ export default function Reveal({
         shown: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.55, ease: REVEAL_EASE, delay: delay / 1000 },
+          transition: { duration: 0.8, ease: REVEAL_EASE, delay: delay / 1000 },
         },
       };
 
@@ -69,7 +71,7 @@ export default function Reveal({
     shown: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.55, ease: REVEAL_EASE },
+      transition: { duration: 0.8, ease: REVEAL_EASE },
     },
   };
 

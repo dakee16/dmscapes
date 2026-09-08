@@ -9,17 +9,25 @@ export const metadata: Metadata = {
     "Pick your school and room, choose a style, set a budget, and get a layout that fits your exact dorm.",
 };
 
-export default function PlanLayout({ children }: { children: React.ReactNode }) {
+export default function PlanLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <div className="relative min-h-screen">
-      {/* Same floating island header as the rest of the site; the planner's
-          step progress sits just below it. */}
+    <div className="dm-plan-shell relative min-h-screen">
       <SiteHeader />
-      <PlannerSteps />
-      <PlannerTabs />
-      {/* Width, horizontal padding, and bottom clearance are owned per page:
-          steps 1 and 2 are narrow forms, the result page is a wide two-panel view. */}
-      <main className="w-full pt-6 sm:pt-10">{children}</main>
+      <div className="dm-plan-topbar">
+        <PlannerSteps />
+        <PlannerTabs />
+      </div>
+      <main
+        id="page-content"
+        tabIndex={-1}
+        className="dm-page w-full pt-6 sm:pt-10"
+      >
+        {children}
+      </main>
     </div>
   );
 }

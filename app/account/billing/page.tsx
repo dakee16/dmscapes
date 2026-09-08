@@ -22,7 +22,7 @@ import type { InvoiceItem, InvoicesResponse } from "@/lib/api-types";
 // Shared mono stat-line treatment (uppercase, letter-spaced), the same language
 // as the header credits chip and the "500+ rooms planned" trust lines.
 const EYEBROW = "font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-soft";
-const CARD = "rounded-2xl border border-ink/10 bg-card p-5 sm:p-6";
+const CARD = "dm-account-surface rounded-2xl border border-ink/10 bg-card p-5 sm:p-6";
 
 // Per-tier visual language: accent colors + the icon that marks the tier, kept
 // consistent with the wordmark badges (cobalt "+" for Plus, amber crown for Pro)
@@ -221,7 +221,7 @@ export default function BillingPage() {
   return (
     <div>
       <SiteHeader />
-      <main className="relative">
+      <main id="page-content" tabIndex={-1} className="dm-page relative">
         <div className="mx-auto max-w-3xl px-5 py-10 sm:px-8">
           {!ready ? (
             <div aria-busy="true" aria-label="Loading billing">
@@ -241,7 +241,7 @@ export default function BillingPage() {
                   </svg>
                   Saved designs
                 </Link>
-                <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+                <h1 className="dm-page-title mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
                   Billing
                 </h1>
                 <p className="mt-1.5 text-sm text-ink-soft">
@@ -252,7 +252,7 @@ export default function BillingPage() {
               {justBought !== null && (
                 <div
                   role="status"
-                  className="mt-6 flex items-start gap-3 rounded-xl border border-cobalt/20 bg-cobalt/[0.05] px-4 py-3.5"
+                  className="dm-editorial-card mt-6 flex items-start gap-3 rounded-xl border border-cobalt/20 bg-cobalt/[0.05] px-4 py-3.5"
                 >
                   <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-cobalt text-white" aria-hidden="true">
                     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -267,7 +267,7 @@ export default function BillingPage() {
               )}
 
               {/* 1. TIER STATUS CARD ------------------------------------------------ */}
-              <section className={`relative mt-6 overflow-hidden rounded-2xl border ${ui.cardBorder} bg-card p-6 shadow-[0_20px_50px_-30px_rgba(23,23,43,0.4)] sm:p-7`}>
+              <section className={`relative mt-6 overflow-hidden dm-account-surface rounded-2xl border ${ui.cardBorder} bg-card p-6 shadow-[0_20px_50px_-30px_rgba(23,23,43,0.4)] sm:p-7`}>
                 {/* Faint grid-paper wash inside the accent card. */}
                 <div className="grid-paper pointer-events-none absolute inset-0 opacity-[0.4]" aria-hidden="true" />
                 <div className="relative flex flex-wrap items-start justify-between gap-4">
@@ -442,7 +442,7 @@ export default function BillingPage() {
                     </ul>
                   ) : tier === "free" || tier === "flex" ? (
                     // 5. No history on a free/flex account: an upsell, not a blank.
-                    <div className="overflow-hidden rounded-2xl border border-cobalt/25 bg-cobalt/[0.04] p-5 sm:p-6">
+                    <div className="overflow-hidden dm-account-surface rounded-2xl border border-cobalt/25 bg-cobalt/[0.04] p-5 sm:p-6">
                       <p className={EYEBROW}>Do more with a one-time upgrade</p>
                       <h3 className="mt-2 font-display text-xl font-extrabold tracking-tight">
                         Unlock every vibe and tool

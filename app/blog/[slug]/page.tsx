@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -72,7 +73,7 @@ export default async function BlogPostPage(props: {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <main className="relative">
+      <main id="page-content" tabIndex={-1} className="dm-page relative">
         <article className="mx-auto max-w-[50rem] px-5 py-12 sm:px-8 sm:py-16">
           <Link
             href="/blog"
@@ -97,7 +98,7 @@ export default async function BlogPostPage(props: {
             <span>{post.readingTimeMin} min read</span>
           </div>
 
-          <h1 className="mt-3 font-display text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl">
+          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl">
             {post.title}
           </h1>
 
@@ -117,7 +118,7 @@ export default async function BlogPostPage(props: {
                 <Link
                   key={p.slug}
                   href={`/blog/${p.slug}`}
-                  className="group block rounded-xl border border-ink/10 bg-card p-5 transition-colors hover:border-cobalt/40"
+                  className="dm-editorial-card group block rounded-xl border border-ink/10 bg-card p-5 transition-colors hover:border-cobalt/40"
                 >
                   <h3 className="font-display text-base font-bold tracking-tight text-ink transition-colors group-hover:text-cobalt">
                     {p.title}
@@ -131,6 +132,7 @@ export default async function BlogPostPage(props: {
           </div>
         </article>
       </main>
+      <Footer />
     </div>
   );
 }

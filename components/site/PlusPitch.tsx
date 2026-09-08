@@ -46,7 +46,7 @@ function SubscriberBanner({ tier }: { tier: "plus" | "pro" }) {
       : "Every vibe and every premium feature is yours, permanently. Here's to the rooms you'll design.";
 
   return (
-    <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
+    <section className="dm-plus mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
       <div className="relative overflow-hidden rounded-2xl border border-cobalt/25 bg-card p-8 shadow-[0_30px_80px_-40px_rgba(43,78,255,0.5)] sm:p-12">
         {/* Layered celebratory backdrop: brand grid, a cobalt->highlight wash,
             and two soft glows. */}
@@ -151,7 +151,7 @@ const MOMENTS: { title: string; body: string; icon: React.ReactNode }[] = [
 
 function PlusUpsell() {
   return (
-    <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
+    <section className="dm-plus mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
       <Reveal>
         <div className="relative overflow-hidden rounded-2xl border border-ink/12 bg-card p-8 sm:p-12">
           <div className="grid-paper absolute inset-0 -z-10 opacity-40" aria-hidden="true" />

@@ -74,7 +74,7 @@ export default function ThankYouView() {
             />
           </svg>
         </motion.div>
-        <h1 className="mt-6 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+        <h1 className="dm-page-title mt-6 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
           Thank you for using <span className="hl">Dormscape</span>.
         </h1>
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">

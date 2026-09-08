@@ -374,9 +374,9 @@ export default function ResultPage() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-4 pb-32 pt-6 sm:px-6 lg:pb-10">
-      <header className="rise">
-        <h1 className="font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
+    <div className="dm-result mx-auto max-w-6xl px-4 pb-32 pt-6 sm:px-6 lg:pb-10">
+      <header className="dm-result-heading rise">
+        <h1 className="dm-page-title font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
           Your room, <span className="hl">planned.</span>
         </h1>
         <p className="mt-1.5 font-mono text-xs uppercase tracking-[0.14em] text-ink-soft">
@@ -430,9 +430,10 @@ export default function ResultPage() {
         </div>
       )}
 
-      <div className="mt-5 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+      <div className="dm-result-grid mt-5 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
         {/* Canvas panel */}
-        <section className="rise" style={{ animationDelay: "80ms" }}>
+        <section className="dm-canvas-panel rise" style={{ animationDelay: "80ms" }}>
+          <div className="dm-eyebrow"><span>01 / Your floor plan</span><span>Made to measure</span></div>
           <div className="overflow-hidden rounded-2xl border border-ink/10 bg-white p-1.5 sm:p-2">
             {!fullscreen && canvas}
           </div>
@@ -526,7 +527,7 @@ export default function ResultPage() {
             require sign-in for logged-out users and resume straight to Amazon
             afterward (lib/buy-gate). */}
         <BuyGateProvider>
-          <section className="rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
+          <section className="dm-shopping-panel rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
             {/* Budget total + progress: always visible above the tabs, and always
                 reflecting the shopping list specifically (not the catalog). */}
             <BudgetTracker total={total} budget={budget} />
