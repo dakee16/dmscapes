@@ -321,6 +321,18 @@ function PerkList({ perks, dotted = false }: { perks: { title: string; body: str
   );
 }
 
+function PriceDisplay({ amount, was, cadence }: { amount: string; was?: string; cadence: string }) {
+  return (
+    <div className="dm-price-block">
+      <div className="dm-price-was">{was && <s>${was}</s>}</div>
+      <div className="dm-price-row">
+        <span className="dm-price-amount">${amount}</span>
+        <span className="dm-price-cadence">{cadence}</span>
+      </div>
+    </div>
+  );
+}
+
 export default function PricingPage() {
   return (
     <div>
@@ -395,10 +407,7 @@ export default function PricingPage() {
                 </span>
               </div>
 
-              <div className="mt-5 flex items-baseline gap-2">
-                <span className="font-display text-5xl font-extrabold tracking-tight">$0</span>
-                <span className="text-ink-soft">forever</span>
-              </div>
+              <PriceDisplay amount="0" cadence="forever" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
                 Try the full planner on the house: one room plan and one save.
               </p>
@@ -450,15 +459,7 @@ export default function PricingPage() {
                 </span>
               </div>
 
-              <div className="mt-5 flex items-baseline gap-2.5">
-                <span className="font-display text-2xl font-semibold text-ink-soft/55 line-through decoration-ink-soft/50 decoration-2">
-                  ${PLUS_PRICE_WAS_USD.toFixed(2)}
-                </span>
-                <span className="font-display text-5xl font-extrabold tracking-tight">
-                  ${PLUS_PRICE_USD.toFixed(2)}
-                </span>
-                <span className="text-ink-soft">once</span>
-              </div>
+              <PriceDisplay amount={PLUS_PRICE_USD.toFixed(2)} was={PLUS_PRICE_WAS_USD.toFixed(2)} cadence="once" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
                 A single unlock, not a subscription. Recharge both counters for $
                 {RECHARGE_PRICE_USD.toFixed(2)} whenever you run low.
@@ -503,15 +504,7 @@ export default function PricingPage() {
                 </span>
               </div>
 
-              <div className="mt-5 flex items-baseline gap-2.5">
-                <span className="font-display text-2xl font-semibold text-ink-soft/55 line-through decoration-ink-soft/50 decoration-2">
-                  ${PRO_PRICE_WAS_USD.toFixed(2)}
-                </span>
-                <span className="font-display text-5xl font-extrabold tracking-tight">
-                  ${PRO_PRICE_USD.toFixed(2)}
-                </span>
-                <span className="text-ink-soft">once</span>
-              </div>
+              <PriceDisplay amount={PRO_PRICE_USD.toFixed(2)} was={PRO_PRICE_WAS_USD.toFixed(2)} cadence="once" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
                 The complete Dormscape. Every feature, unlimited plans and saves,
                 no credits to ever think about.

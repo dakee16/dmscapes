@@ -10,6 +10,7 @@ const COLUMNS: {
     label: string;
     href?: string;
     external?: boolean;
+    anchor?: boolean;
     placeholder?: boolean;
     // Opens the standalone feedback modal instead of navigating.
     feedback?: boolean;
@@ -18,8 +19,8 @@ const COLUMNS: {
   {
     heading: "Product",
     links: [
-      { label: "How it works", href: "/#how-it-works" },
-      { label: "Vibes & styles", href: "/#vibes" },
+      { label: "How it works", href: "/#how-it-works", anchor: true },
+      { label: "Vibes & styles", href: "/#vibes", anchor: true },
       { label: "Colleges", href: "/colleges" },
       { label: "Pricing", href: "/pricing" },
       { label: "Room in 3D", href: "/pricing" },
@@ -93,7 +94,7 @@ export default function Footer() {
                 <li key={link.label}>
                   {link.feedback ? (
                     <FeedbackLink />
-                  ) : link.external ? (
+                  ) : link.external || link.anchor ? (
                     <a href={link.href}>{link.label}</a>
                   ) : (
                     <Link
