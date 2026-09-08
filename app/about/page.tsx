@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
@@ -71,12 +72,12 @@ export default function AboutPage() {
   return (
     <div>
       <SiteHeader gridClassName="h-[28rem]" />
-      <main className="relative">
+      <main id="page-content" tabIndex={-1} className="dm-page relative">
         <div className="mx-auto max-w-[50rem] px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             About dormscape
           </p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             The dorm planner that knows <span className="hl">your dorm.</span>
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft">
@@ -85,6 +86,11 @@ export default function AboutPage() {
             rearrange, and a shopping list that fits the space and the budget.
           </p>
 
+          <figure className="dm-about-image">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/experience/cozy-room.webp" width={1536} height={1024} alt="A dorm style study with blue bedding, warm wood, and soft string lights" loading="lazy" />
+            <figcaption><span className="dm-eyebrow">A little room. A lot of possibility.</span><span aria-hidden="true">✳</span></figcaption>
+          </figure>
           {/* Real-number stat callouts, in the site's mono stat-line language. */}
           <div className="mt-10 grid grid-cols-3 gap-4 rounded-2xl border border-ink/10 bg-card/70 px-4 py-6 sm:px-8">
             <div>
@@ -156,7 +162,7 @@ export default function AboutPage() {
               Why it&rsquo;s not another checklist
             </h2>
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-xl border border-ink/10 bg-card p-5">
+              <div className="dm-editorial-card rounded-xl border border-ink/10 bg-card p-5">
                 <p className="font-mono text-[11px] uppercase tracking-wide text-cobalt">
                   Real dimensions
                 </p>
@@ -173,7 +179,7 @@ export default function AboutPage() {
                   .
                 </p>
               </div>
-              <div className="rounded-xl border border-ink/10 bg-card p-5">
+              <div className="dm-editorial-card rounded-xl border border-ink/10 bg-card p-5">
                 <p className="font-mono text-[11px] uppercase tracking-wide text-cobalt">
                   Visual layout
                 </p>
@@ -249,7 +255,7 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold tracking-tight">How it works</h2>
             <ol className="mt-6 grid gap-4 sm:grid-cols-3">
               {STEPS.map((step, i) => (
-                <li key={step.title} className="rounded-xl border border-ink/10 bg-card p-5">
+                <li key={step.title} className="dm-editorial-card rounded-xl border border-ink/10 bg-card p-5">
                   <div className="flex items-center gap-3">
                     <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cobalt/10 text-cobalt">
                       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
@@ -295,6 +301,7 @@ export default function AboutPage() {
           </section>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

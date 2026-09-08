@@ -122,7 +122,7 @@ export default function ResetPasswordPage() {
   return (
     <div>
       <SiteHeader />
-      <main className="mx-auto max-w-md px-5 py-16 sm:px-8">
+      <main id="page-content" tabIndex={-1} className="dm-page mx-auto max-w-md px-5 py-16 sm:px-8">
         <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
           Reset password
         </p>
@@ -136,7 +136,7 @@ export default function ResetPasswordPage() {
 
         {phase === "ready" && (
           <>
-            <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight">
+            <h1 className="dm-page-title mt-3 font-display text-3xl font-extrabold tracking-tight">
               Set a new password
             </h1>
             <p className="mt-1.5 text-sm text-ink-soft">
@@ -196,7 +196,7 @@ export default function ResetPasswordPage() {
 
         {phase === "done" && (
           <>
-            <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight">
+            <h1 className="dm-page-title mt-3 font-display text-3xl font-extrabold tracking-tight">
               Password updated
             </h1>
             <p className="mt-1.5 text-sm text-ink-soft">
@@ -211,7 +211,7 @@ export default function ResetPasswordPage() {
               </Link>
               <Link
                 href="/plan"
-                className="inline-flex h-12 items-center rounded-xl border border-ink/15 bg-white px-6 text-sm font-semibold text-ink transition-colors hover:border-ink/30"
+                className="dm-editorial-card inline-flex h-12 items-center rounded-xl border border-ink/15 bg-white px-6 text-sm font-semibold text-ink transition-colors hover:border-ink/30"
               >
                 Plan a room
               </Link>
@@ -221,7 +221,7 @@ export default function ResetPasswordPage() {
 
         {phase === "expired" && (
           <>
-            <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight">
+            <h1 className="dm-page-title mt-3 font-display text-3xl font-extrabold tracking-tight">
               This link expired
             </h1>
             <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">

@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
@@ -64,12 +65,12 @@ export default function TermsPage() {
   return (
     <div>
       <SiteHeader gridClassName="h-[20rem]" />
-      <main>
+      <main id="page-content" tabIndex={-1}>
         <div className="mx-auto max-w-[50rem] px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-ink-soft">
             Legal
           </p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight">
+          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight">
             Terms of Service
           </h1>
           {/* Prominent "last updated" badge. */}
@@ -284,6 +285,7 @@ export default function TermsPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

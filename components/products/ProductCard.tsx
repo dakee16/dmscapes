@@ -41,7 +41,7 @@ export default function ProductCard({
   const hasActions = Boolean(onSwapClick || onRemove);
   return (
     <div
-      className={`flex items-stretch overflow-hidden rounded-xl border transition-all ${
+      className={`dm-product-card flex items-stretch overflow-hidden rounded-xl border transition-all ${
         active ? "border-cobalt bg-cobalt/[0.04] ring-2 ring-cobalt/25" : "border-ink/10 bg-white"
       }`}
     >

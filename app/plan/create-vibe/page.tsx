@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
@@ -131,7 +132,7 @@ export default function CreateVibePage() {
         <div className="mt-6 grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           {/* LEFT, heading, description, input. */}
           <div>
-            <h1 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
+            <h1 className="dm-page-title font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
               Put your room <br className="hidden sm:block" />
               into <span className="hl">words.</span>
             </h1>
@@ -219,8 +220,9 @@ export default function CreateVibePage() {
             </button>
           </div>
 
-          {/* RIGHT, inspiration chips, levitating with independent idle float. */}
-          <div className="relative">
+          {/* The inspiration chips remain real tap-to-fill controls. */}
+          <div className="dm-vibe-inspiration relative">
+            <BlueprintArtwork variant="orbit" />
             <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-soft">
               Need a starting point? Tap one.
             </p>

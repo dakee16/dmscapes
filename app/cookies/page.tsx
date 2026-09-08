@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
@@ -21,12 +22,12 @@ export default function CookiesPage() {
   return (
     <div>
       <SiteHeader />
-      <main>
+      <main id="page-content" tabIndex={-1}>
         <div className="mx-auto max-w-[50rem] px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-ink-soft">
             Legal
           </p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight">
+          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight">
             Cookie Policy
           </h1>
           <p className="mt-2 font-mono text-sm text-ink-soft">
@@ -135,6 +136,7 @@ export default function CookiesPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -7,7 +7,7 @@ export default function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group block rounded-xl border border-ink/10 bg-card p-5 transition-colors hover:border-cobalt/40 sm:p-6"
+      className="dm-editorial-card dm-post-card group block rounded-xl border border-ink/10 bg-card p-5 transition-colors hover:border-cobalt/40 sm:p-6"
     >
       <div className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
         <time dateTime={post.date}>{formatBlogDate(post.date)}</time>

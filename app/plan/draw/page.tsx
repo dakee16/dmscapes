@@ -8,7 +8,7 @@ import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { isPaid } from "@/lib/plan";
 import { track } from "@/lib/analytics";
-import DrawScreenshot from "@/components/planner/DrawScreenshot";
+import RoomDrawingPreview from "@/components/planner/RoomDrawingPreview";
 import DrawnRoomsReuse from "@/components/planner/DrawnRoomsReuse";
 import type { RoomDrawResult } from "@/components/planner/RoomDrawCanvas";
 
@@ -64,11 +64,11 @@ export default function DrawRoomPage() {
   // Once started (desktop, Plus): the actual drawing tool + occupancy selector.
   if (started) {
     return (
-      <div className="mx-auto max-w-4xl px-5 pb-24 sm:px-8">
+      <div className="dm-draw-workspace mx-auto max-w-4xl px-5 pb-24 sm:px-8">
         <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
           Step 1 · Draw your room
         </p>
-        <h1 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+        <h1 className="dm-page-title mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
           Trace your <span className="hl">walls</span>
         </h1>
         <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -96,18 +96,18 @@ export default function DrawRoomPage() {
     );
   }
 
-  // Landing (the "Draw" tab): heading, screenshot, description, and the button.
+  // Landing (the "Draw" tab): live room drawing, description, and the button.
   return (
-    <div className="mx-auto max-w-5xl px-5 pb-24 sm:px-8">
+    <div className="dm-draw-workspace mx-auto max-w-5xl px-5 pb-24 sm:px-8">
       <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
         Step 1 · Draw your room
       </p>
-      <h1 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+      <h1 className="dm-page-title mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
         Draw your <span className="hl">exact room</span>
       </h1>
 
       <div className="mt-7 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-        <DrawScreenshot />
+        <RoomDrawingPreview />
 
         <div>
           <div className="flex flex-wrap items-center gap-2">

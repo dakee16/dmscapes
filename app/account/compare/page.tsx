@@ -42,7 +42,7 @@ function DesignColumn({
   const meta = room ? detailsOf(room) : null;
 
   return (
-    <div className="flex flex-col rounded-2xl border border-ink/10 bg-card p-5">
+    <div className="flex flex-col dm-account-surface rounded-2xl border border-ink/10 bg-card p-5">
       <label className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
         {label}
       </label>
@@ -168,7 +168,7 @@ export default function ComparePage() {
   return (
     <div>
       <SiteHeader />
-      <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
+      <main id="page-content" tabIndex={-1} className="dm-page mx-auto max-w-5xl px-5 py-10 sm:px-8">
         <Link
           href="/account"
           className="inline-flex items-center gap-1.5 font-mono text-xs font-medium uppercase tracking-[0.14em] text-ink-soft transition-colors hover:text-ink"
@@ -178,7 +178,7 @@ export default function ComparePage() {
           </svg>
           Saved designs
         </Link>
-        <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+        <h1 className="dm-page-title mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
           Compare designs
         </h1>
         <p className="mt-1.5 text-sm text-ink-soft">
@@ -191,7 +191,7 @@ export default function ComparePage() {
             <div className="h-80 animate-pulse rounded-2xl bg-ink/8" />
           </div>
         ) : !canCompare ? (
-          <div className="mt-8 rounded-2xl border border-ink/10 bg-card p-8 text-center">
+          <div className="mt-8 dm-account-surface rounded-2xl border border-ink/10 bg-card p-8 text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-highlight px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
               <span className="font-display text-sm font-extrabold leading-none">+</span>
               Plus feature
@@ -216,7 +216,7 @@ export default function ComparePage() {
             <div className="h-80 animate-pulse rounded-2xl bg-ink/8" />
           </div>
         ) : designs.length < 2 ? (
-          <div className="mt-8 rounded-2xl border border-dashed border-ink/20 bg-white px-6 py-12 text-center">
+          <div className="mt-8 dm-account-surface rounded-2xl border border-dashed border-ink/20 bg-white px-6 py-12 text-center">
             <h2 className="font-display text-xl font-bold tracking-tight">
               Save two designs to compare
             </h2>

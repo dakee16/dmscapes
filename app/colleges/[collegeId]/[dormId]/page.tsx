@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -142,10 +143,10 @@ export default async function DormPage(props: {
           },
         ]}
       />
-      <main>
+      <main id="page-content" tabIndex={-1}>
         <section className="mx-auto max-w-5xl px-5 pb-10 pt-10 sm:px-8 sm:pt-14">
           <Breadcrumbs items={crumbs} />
-          <h1 className="mt-4 max-w-3xl font-display text-4xl font-extrabold leading-[1.06] tracking-tight sm:text-5xl">
+          <h1 className="dm-page-title mt-4 max-w-3xl font-display text-4xl font-extrabold leading-[1.06] tracking-tight sm:text-5xl">
             {dorm.name} <span className="hl">room dimensions</span>
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
@@ -183,7 +184,7 @@ export default async function DormPage(props: {
           <h2 className="font-display text-2xl font-bold tracking-tight">
             Room types and sizes
           </h2>
-          <div className="mt-5 overflow-x-auto rounded-xl border border-ink/10 bg-card">
+          <div className="dm-editorial-card mt-5 overflow-x-auto rounded-xl border border-ink/10 bg-card">
             <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-ink/10 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
@@ -339,6 +340,7 @@ export default async function DormPage(props: {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

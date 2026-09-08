@@ -55,7 +55,7 @@ export default async function SharedRoomPage(props: {
   return (
     <div>
       <SiteHeader />
-      <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8">
+      <main id="page-content" tabIndex={-1} className="dm-page mx-auto max-w-5xl px-5 py-10 sm:px-8">
         {/* CTA first: this page exists to convert viewers */}
         <div className="flex flex-col items-start justify-between gap-4 rounded-xl bg-cobalt p-6 sm:flex-row sm:items-center">
           <div>
@@ -75,7 +75,7 @@ export default async function SharedRoomPage(props: {
         </div>
 
         <div className="mt-8 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <h1 className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
+          <h1 className="dm-page-title font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
             {style.emoji} {style.name} room
           </h1>
           <p className="min-w-0 font-mono text-sm text-ink-soft">
@@ -108,7 +108,7 @@ export default async function SharedRoomPage(props: {
               products: room.selected_products ?? null,
               outline: dims.outline ?? null,
             }}
-            className="group block w-full cursor-pointer self-start rounded-xl border border-ink/10 bg-card p-4 text-left transition-colors hover:border-cobalt sm:p-6"
+            className="dm-editorial-card group block w-full cursor-pointer self-start rounded-xl border border-ink/10 bg-card p-4 text-left transition-colors hover:border-cobalt sm:p-6"
           >
             <StaticRoomView
               lengthFt={dims.length_ft}

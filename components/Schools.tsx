@@ -18,7 +18,7 @@ const SCHOOLS = [
 
 export default function Schools() {
   return (
-    <section id="schools" className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
+    <section id="schools" className="dm-schools mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
       <Reveal stagger>
         <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
           Supported schools

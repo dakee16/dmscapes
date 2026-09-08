@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -69,14 +70,14 @@ export default async function CollegePage(props: {
           },
         ]}
       />
-      <main>
+      <main id="page-content" tabIndex={-1}>
         <section className="relative">
           <div className="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 sm:pt-14">
             <Breadcrumbs items={crumbs} />
             <p className="mt-4 font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
               {place}
             </p>
-            <h1 className="mt-3 max-w-3xl font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
+            <h1 className="dm-page-title mt-3 max-w-3xl font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
               {school.name} <span className="hl">dorm room planner</span>
             </h1>
             <p className="mt-4 max-w-xl text-lg text-ink-soft">
@@ -119,7 +120,7 @@ export default async function CollegePage(props: {
                 <li key={d.id}>
                   <Link
                     href={`/colleges/${school.id}/${d.id}`}
-                    className="group block h-full rounded-xl border border-ink/10 bg-card p-5 transition-colors hover:border-cobalt"
+                    className="dm-editorial-card group block h-full rounded-xl border border-ink/10 bg-card p-5 transition-colors hover:border-cobalt"
                   >
                     <div className="flex items-baseline justify-between gap-3">
                       <h3 className="font-display text-base font-bold transition-colors group-hover:text-cobalt">
@@ -170,6 +171,7 @@ export default async function CollegePage(props: {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

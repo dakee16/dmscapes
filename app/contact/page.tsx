@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import SiteHeader from "@/components/site/SiteHeader";
 import ContactForm from "@/components/site/ContactForm";
@@ -12,12 +13,12 @@ export default function ContactPage() {
   return (
     <div>
       <SiteHeader gridClassName="h-[28rem]" />
-      <main className="relative">
-        <div className="mx-auto max-w-2xl px-5 py-14 sm:px-8 sm:py-20">
+      <main id="page-content" tabIndex={-1} className="dm-page relative">
+        <div className="dm-contact-layout">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             Get in touch
           </p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight">
+          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight">
             Contact <span className="hl">us</span>
           </h1>
           <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">
@@ -29,6 +30,7 @@ export default function ContactPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

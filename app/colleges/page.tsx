@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
@@ -32,13 +34,13 @@ export default function CollegesPage() {
           ),
         ]}
       />
-      <main>
-        <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-14">
+      <main id="page-content" tabIndex={-1} className="dm-page">
+        <div className="dm-directory-shell">
           <Breadcrumbs items={crumbs} />
-          <p className="mt-4 font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
+          <div className="dm-public-hero"><div><p className="mt-4 font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             {SCHOOLS.length} schools · {DORM_COUNT.toLocaleString()} residence halls
           </p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             Find your <span className="hl">campus.</span>
           </h1>
           <p className="mt-4 max-w-xl text-lg text-ink-soft">
@@ -47,15 +49,17 @@ export default function CollegesPage() {
             types, measured dimensions, and an example layout drawn to scale.
           </p>
 
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {SCHOOLS.map((s) => {
+          </div><BlueprintArtwork /></div>
+          <ul className="dm-campus-grid mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {SCHOOLS.map((s, index) => {
               const rooms = s.dorms.reduce((n, d) => n + d.rooms.length, 0);
               return (
                 <li key={s.id}>
                   <Link
                     href={`/colleges/${s.id}`}
-                    className="block rounded-xl border border-ink/10 bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-cobalt hover:shadow-md"
+                    className="dm-editorial-card block rounded-xl border border-ink/10 bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-cobalt hover:shadow-md"
                   >
+                    <span className="dm-campus-index dm-eyebrow">{String(index + 1).padStart(2, "0")} / <span aria-hidden="true">↗</span></span>
                     <h2 className="font-display text-lg font-bold tracking-tight">
                       {s.name}
                     </h2>
@@ -82,6 +86,7 @@ export default function CollegesPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

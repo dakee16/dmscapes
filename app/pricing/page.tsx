@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
@@ -258,7 +260,7 @@ function TrustStrip() {
     { icon: <CartIcon />, label: "Real products, live Amazon links" },
   ];
   return (
-    <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-2xl border border-ink/10 bg-card/70 px-5 py-4 sm:mt-10 sm:gap-x-7">
+    <div className="dm-editorial-card mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-2xl border border-ink/10 bg-card/70 px-5 py-4 sm:mt-10 sm:gap-x-7">
       {items.map((it, i) => (
         <div key={i} className="flex items-center gap-x-6 sm:gap-x-7">
           {i > 0 && <span className="hidden h-4 w-px bg-ink/12 sm:block" aria-hidden="true" />}
@@ -319,17 +321,29 @@ function PerkList({ perks, dotted = false }: { perks: { title: string; body: str
   );
 }
 
+function PriceDisplay({ amount, was, cadence }: { amount: string; was?: string; cadence: string }) {
+  return (
+    <div className="dm-price-block">
+      <div className="dm-price-was">{was && <s>${was}</s>}</div>
+      <div className="dm-price-row">
+        <span className="dm-price-amount">${amount}</span>
+        <span className="dm-price-cadence">{cadence}</span>
+      </div>
+    </div>
+  );
+}
+
 export default function PricingPage() {
   return (
     <div>
       <SiteHeader gridClassName="h-[26rem]" />
-      <main className="relative">
+      <main id="page-content" tabIndex={-1} className="dm-page relative">
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
-          <div className="max-w-2xl">
+          <div className="dm-public-hero"><div>
             <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
               Pricing
             </p>
-            <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+            <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
               Free to plan. <span className="hl">Pay once to go further.</span>
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
@@ -337,6 +351,7 @@ export default function PricingPage() {
             </p>
           </div>
 
+          <BlueprintArtwork variant="orbit" /></div>
           <TrustStrip />
 
           {/* FLEX: the à-la-carte tier, presented as a slim banner above the
@@ -392,10 +407,7 @@ export default function PricingPage() {
                 </span>
               </div>
 
-              <div className="mt-5 flex items-baseline gap-2">
-                <span className="font-display text-5xl font-extrabold tracking-tight">$0</span>
-                <span className="text-ink-soft">forever</span>
-              </div>
+              <PriceDisplay amount="0" cadence="forever" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
                 Try the full planner on the house: one room plan and one save.
               </p>
@@ -447,15 +459,7 @@ export default function PricingPage() {
                 </span>
               </div>
 
-              <div className="mt-5 flex items-baseline gap-2.5">
-                <span className="font-display text-2xl font-semibold text-ink-soft/55 line-through decoration-ink-soft/50 decoration-2">
-                  ${PLUS_PRICE_WAS_USD.toFixed(2)}
-                </span>
-                <span className="font-display text-5xl font-extrabold tracking-tight">
-                  ${PLUS_PRICE_USD.toFixed(2)}
-                </span>
-                <span className="text-ink-soft">once</span>
-              </div>
+              <PriceDisplay amount={PLUS_PRICE_USD.toFixed(2)} was={PLUS_PRICE_WAS_USD.toFixed(2)} cadence="once" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
                 A single unlock, not a subscription. Recharge both counters for $
                 {RECHARGE_PRICE_USD.toFixed(2)} whenever you run low.
@@ -500,15 +504,7 @@ export default function PricingPage() {
                 </span>
               </div>
 
-              <div className="mt-5 flex items-baseline gap-2.5">
-                <span className="font-display text-2xl font-semibold text-ink-soft/55 line-through decoration-ink-soft/50 decoration-2">
-                  ${PRO_PRICE_WAS_USD.toFixed(2)}
-                </span>
-                <span className="font-display text-5xl font-extrabold tracking-tight">
-                  ${PRO_PRICE_USD.toFixed(2)}
-                </span>
-                <span className="text-ink-soft">once</span>
-              </div>
+              <PriceDisplay amount={PRO_PRICE_USD.toFixed(2)} was={PRO_PRICE_WAS_USD.toFixed(2)} cadence="once" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
                 The complete Dormscape. Every feature, unlimited plans and saves,
                 no credits to ever think about.
@@ -592,6 +588,7 @@ export default function PricingPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

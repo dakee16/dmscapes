@@ -7,7 +7,7 @@ export default function BudgetTracker({ total, budget }: { total: number; budget
   const barColor = over ? "bg-[#dc2626]" : warn ? "bg-highlight" : "bg-cobalt";
 
   return (
-    <div className="rounded-xl border border-ink/10 bg-white p-3.5">
+    <div className="dm-budget-tracker rounded-xl border border-ink/10 bg-white p-3.5">
       <div className="flex items-baseline justify-between gap-3">
         <p className="font-mono text-sm font-semibold text-ink">
           Total: ${total.toFixed(0)}{" "}

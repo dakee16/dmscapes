@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
@@ -57,12 +58,12 @@ export default function FAQPage() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <main className="relative">
+      <main id="page-content" tabIndex={-1} className="dm-page relative">
         <div className="mx-auto max-w-[50rem] px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             Frequently asked questions
           </p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             Dorm questions, <span className="hl">answered.</span>
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft">
@@ -89,6 +90,7 @@ export default function FAQPage() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

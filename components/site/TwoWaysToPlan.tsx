@@ -66,7 +66,7 @@ const WAYS = [
  */
 export default function TwoWaysToPlan() {
   return (
-    <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
+    <section className="dm-ways mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
       <Reveal className="text-center">
         <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
           Two ways to start

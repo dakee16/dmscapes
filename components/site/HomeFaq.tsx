@@ -118,21 +118,23 @@ export default function HomeFaq() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-ink/10 bg-card shadow-[0_24px_60px_-40px_rgba(23,23,43,0.4)]">
-      <div className="divide-y divide-ink/8">
+    <div className="dm-home-faq">
+      <div className="dm-faq-items">
         {FAQS.map((f, i) => {
           const isOpen = open === i;
           return (
-            <div key={f.q}>
+            <div key={f.q} className="dm-faq-item">
               <h3>
                 <button
                   type="button"
                   onClick={() => setOpen(isOpen ? null : i)}
+                  id={`home-faq-question-${i}`}
+                  aria-controls={`home-faq-answer-${i}`}
                   aria-expanded={isOpen}
-                  className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-paper/60 sm:px-6"
+                  className="dm-faq-question flex w-full cursor-pointer items-center justify-between gap-5 text-left"
                 >
                   <span
-                    className={`font-display text-[17px] font-bold leading-snug tracking-tight transition-colors sm:text-lg ${
+                    className={`font-sans text-base font-semibold leading-relaxed transition-colors sm:text-lg ${
                       isOpen ? "text-cobalt" : "text-ink"
                     }`}
                   >
@@ -152,13 +154,18 @@ export default function HomeFaq() {
               {/* Collapsible answer: grid-rows 0fr -> 1fr animates to auto height
                   smoothly, no measured max-height guesswork. */}
               <div
-                className={`grid transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none ${
+                id={`home-faq-answer-${i}`}
+                role="region"
+                aria-labelledby={`home-faq-question-${i}`}
+                aria-hidden={!isOpen}
+                inert={!isOpen}
+                className={`dm-faq-answer grid transition-[grid-template-rows] duration-300 ease-out motion-reduce:transition-none ${
                   isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
                 }`}
               >
                 <div className="overflow-hidden">
                   <p
-                    className={`px-5 pb-6 text-[15px] leading-relaxed text-ink-soft transition-opacity duration-300 motion-reduce:transition-none sm:px-6 ${
+                    className={`pb-6 pr-10 text-[15px] leading-relaxed text-ink-soft transition-opacity duration-300 motion-reduce:transition-none ${
                       isOpen ? "opacity-100" : "opacity-0"
                     }`}
                   >

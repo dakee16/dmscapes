@@ -35,7 +35,7 @@ function DesignTile({ room }: { room: AccountRoomSummary }) {
       : `/room/${room.id}`;
 
   return (
-    <div className="relative flex items-center gap-4 rounded-xl border border-ink/10 bg-card p-4 transition-shadow hover:shadow-[0_16px_40px_-20px_rgba(23,23,43,0.35)] sm:p-5">
+    <div className="dm-account-tile relative flex items-center gap-4 rounded-xl border border-ink/10 bg-card p-4 transition-shadow hover:shadow-[0_16px_40px_-20px_rgba(23,23,43,0.35)] sm:p-5">
       {/* Stretched link: whole tile opens the read-only room view. The share
           button sits above it (relative + z) so it stays independently clickable. */}
       <Link
@@ -179,7 +179,7 @@ export default function AccountPage() {
     <div>
       <SiteHeader />
       <PurchaseThankYou />
-      <main className="relative mx-auto max-w-4xl px-5 py-10 sm:px-8">
+      <main id="page-content" tabIndex={-1} className="dm-page relative mx-auto max-w-4xl px-5 py-10 sm:px-8">
         {!ready ? (
           <div aria-busy="true" aria-label="Loading your account">
             <div className="h-9 w-40 animate-pulse rounded-lg bg-ink/8" />
@@ -196,7 +196,7 @@ export default function AccountPage() {
               <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
                 Your account
               </p>
-              <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <h1 className="dm-page-title mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
                 {profile?.username ? `@${profile.username}` : "Welcome back"}
               </h1>
               {user?.email && (

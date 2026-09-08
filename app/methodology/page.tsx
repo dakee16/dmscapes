@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
@@ -46,13 +47,13 @@ export default function MethodologyPage() {
     <div>
       <SiteHeader gridClassName="h-[26rem]" />
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
-      <main className="relative">
+      <main id="page-content" tabIndex={-1} className="dm-page relative">
         <div className="mx-auto max-w-[50rem] px-5 py-10 sm:px-8 sm:py-14">
           <Breadcrumbs items={crumbs} />
           <p className="mt-4 font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             Data and methodology
           </p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             How we measure <span className="hl">dorm rooms.</span>
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft">
@@ -262,6 +263,7 @@ export default function MethodologyPage() {
           </section>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

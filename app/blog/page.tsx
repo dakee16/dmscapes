@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import type { Metadata } from "next";
 import SiteHeader from "@/components/site/SiteHeader";
 import PostCard from "@/components/blog/PostCard";
@@ -63,12 +65,12 @@ export default function BlogIndexPage() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <main className="relative">
-        <div className="mx-auto max-w-5xl px-5 py-14 sm:px-8 sm:py-20">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
+      <main id="page-content" tabIndex={-1} className="dm-page relative">
+        <div className="dm-editorial-shell">
+          <div className="dm-public-hero"><div><p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             The dormscape Blog
           </p>
-          <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             Dorm planning, <span className="hl">figured out.</span>
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-ink-soft">
@@ -77,13 +79,15 @@ export default function BlogIndexPage() {
             making a small room work.
           </p>
 
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
+          </div><BlueprintArtwork variant="orbit" /></div>
+          <div className="dm-post-grid mt-12 grid gap-4 md:grid-cols-2">
             {POSTS.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

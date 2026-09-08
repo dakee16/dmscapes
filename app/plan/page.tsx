@@ -2,10 +2,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import StudioPreview from "@/components/experience/StudioPreview";
 import CollegeSearch from "@/components/planner/CollegeSearch";
 import DormPicker from "@/components/planner/DormPicker";
 import RoomPicker, { roomKey } from "@/components/planner/RoomPicker";
-import ManualEntry, { type ManualEntryValues } from "@/components/planner/ManualEntry";
+import ManualEntry, {
+  type ManualEntryValues,
+} from "@/components/planner/ManualEntry";
 import RequestSchoolModal from "@/components/planner/RequestSchoolModal";
 import { track } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
@@ -28,7 +31,9 @@ export default function PlanSelectPage() {
   const [mounted, setMounted] = useState(false);
   const [manualOpen, setManualOpen] = useState(false);
   const [requestOpen, setRequestOpen] = useState(false);
-  const [pendingDimsRoom, setPendingDimsRoom] = useState<RoomSummary | null>(null);
+  const [pendingDimsRoom, setPendingDimsRoom] = useState<RoomSummary | null>(
+    null,
+  );
   const [selectedRoomKey, setSelectedRoomKey] = useState<string | null>(null);
 
   useEffect(() => {
@@ -55,11 +60,11 @@ export default function PlanSelectPage() {
 
   const school = useMemo(
     () => (college?.id ? getSchool(college.id) : undefined),
-    [college?.id]
+    [college?.id],
   );
   const dormSummary = useMemo(
     () => school?.dorms.find((d) => d.id === dorm?.id),
-    [school, dorm?.id]
+    [school, dorm?.id],
   );
 
   function handleCollege(next: SchoolSummary) {
@@ -120,7 +125,11 @@ export default function PlanSelectPage() {
 
   if (!mounted) {
     return (
-      <div className="mx-auto max-w-2xl space-y-4 px-5 sm:px-8" aria-busy="true" aria-label="Loading planner">
+      <div
+        className="mx-auto max-w-2xl space-y-4 px-5 sm:px-8"
+        aria-busy="true"
+        aria-label="Loading planner"
+      >
         <div className="h-9 w-3/4 animate-pulse rounded-lg bg-ink/8" />
         <div className="h-5 w-1/2 animate-pulse rounded bg-ink/8" />
         <div className="h-13 animate-pulse rounded-xl bg-ink/8" />
@@ -132,105 +141,133 @@ export default function PlanSelectPage() {
   const confirmDims = room ? formatDims(room.lengthFt, room.widthFt) : null;
 
   return (
-    <div className="mx-auto max-w-2xl px-5 pb-36 sm:px-8 sm:pb-24">
-      <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-        Step 1 · Your room
-      </p>
-      <h1 className="mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-        Find your <span className="hl">exact dorm</span>
-      </h1>
-      <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-        We&apos;ve measured the rooms so you don&apos;t have to. Pick your school, building,
-        and room type.
-      </p>
+    <div className="dm-planner-select">
+      <div className="dm-planner-form">
+        <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
+          Step 1 · Your room
+        </p>
+        <h1 className="dm-page-title mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+          Find your <span className="hl">exact dorm</span>
+        </h1>
+        <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">
+          We&apos;ve measured the rooms so you don&apos;t have to. Pick your
+          school, building, and room type.
+        </p>
 
-      <div className="mt-7 space-y-6">
-        <CollegeSearch
-          selectedName={college?.id ? college.name : null}
-          onSelect={handleCollege}
-          onNoMatches={() => setRequestOpen(true)}
-        />
-
-        {school && (
-          <DormPicker
-            school={school}
-            selectedDormId={dorm?.id ?? null}
-            onSelect={(d) => {
-              setDorm(d);
-              setPendingDimsRoom(null);
-              setSelectedRoomKey(null);
-            }}
+        <div className="mt-7 space-y-6">
+          <CollegeSearch
+            selectedName={college?.id ? college.name : null}
+            onSelect={handleCollege}
+            onNoMatches={() => setRequestOpen(true)}
           />
-        )}
 
-        {school && dormSummary && (
-          <RoomPicker dorm={dormSummary} selectedKey={selectedRoomKey} onSelect={handleRoom} />
-        )}
+          {school && (
+            <DormPicker
+              school={school}
+              selectedDormId={dorm?.id ?? null}
+              onSelect={(d) => {
+                setDorm(d);
+                setPendingDimsRoom(null);
+                setSelectedRoomKey(null);
+              }}
+            />
+          )}
 
-        {pendingDimsRoom && (
-          <ManualEntry
-            mode="dims-only"
-            prefillType={pendingDimsRoom.type}
-            prefillOccupants={pendingDimsRoom.occupants ?? 2}
-            onSubmit={handleDimsOnly}
-          />
-        )}
+          {school && dormSummary && (
+            <RoomPicker
+              dorm={dormSummary}
+              selectedKey={selectedRoomKey}
+              onSelect={handleRoom}
+            />
+          )}
 
-        {room && (
-          <div className="snap-in flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl border border-cobalt/30 bg-cobalt/5 px-4 py-3.5">
-            <svg className="h-5 w-5 shrink-0 text-cobalt" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-              <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            <span className="min-w-0 text-sm font-semibold text-ink">
-              {[college?.name, dorm?.name, roomTypeLabel(room)].filter(Boolean).join(" · ")}
-            </span>
-            {confirmDims && (
-              <span className="whitespace-nowrap font-mono text-sm font-semibold text-cobalt">
-                {confirmDims}
+          {pendingDimsRoom && (
+            <ManualEntry
+              mode="dims-only"
+              prefillType={pendingDimsRoom.type}
+              prefillOccupants={pendingDimsRoom.occupants ?? 2}
+              onSubmit={handleDimsOnly}
+            />
+          )}
+
+          {room && (
+            <div className="snap-in flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl border border-cobalt/30 bg-cobalt/5 px-4 py-3.5">
+              <svg
+                className="h-5 w-5 shrink-0 text-cobalt"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                aria-hidden="true"
+              >
+                <path
+                  d="M20 6L9 17l-5-5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="min-w-0 text-sm font-semibold text-ink">
+                {[college?.name, dorm?.name, roomTypeLabel(room)]
+                  .filter(Boolean)
+                  .join(" · ")}
               </span>
-            )}
-            {room.dimsEstimated && (
-              <EstimatedDimsNote className="basis-full" />
-            )}
-          </div>
-        )}
+              {confirmDims && (
+                <span className="whitespace-nowrap font-mono text-sm font-semibold text-cobalt">
+                  {confirmDims}
+                </span>
+              )}
+              {room.dimsEstimated && (
+                <EstimatedDimsNote className="basis-full" />
+              )}
+            </div>
+          )}
 
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-          <button
-            type="button"
-            onClick={() => {
-              setManualOpen((v) => !v);
-              setPendingDimsRoom(null);
-            }}
-            className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-4 transition-colors hover:text-cobalt"
-          >
-            Enter my room size manually
-          </button>
-          <button
-            type="button"
-            onClick={() => setRequestOpen(true)}
-            className="text-ink-soft underline-offset-4 transition-colors hover:text-cobalt hover:underline"
-          >
-            Add my school
-          </button>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+            <button
+              type="button"
+              onClick={() => {
+                setManualOpen((v) => !v);
+                setPendingDimsRoom(null);
+              }}
+              className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-4 transition-colors hover:text-cobalt"
+            >
+              Enter my room size manually
+            </button>
+            <button
+              type="button"
+              onClick={() => setRequestOpen(true)}
+              className="text-ink-soft underline-offset-4 transition-colors hover:text-cobalt hover:underline"
+            >
+              Add my school
+            </button>
+          </div>
+
+          {manualOpen && <ManualEntry mode="school" onSubmit={handleManual} />}
         </div>
 
-        {manualOpen && <ManualEntry mode="school" onSubmit={handleManual} />}
+        {/* Next: sticky on mobile, inline on desktop */}
+        <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/8 bg-paper/92 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
+          <button
+            type="button"
+            disabled={!room}
+            onClick={() => router.push("/plan/style")}
+            className="h-13 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:bg-ink/15 disabled:text-ink-soft sm:h-12 sm:w-auto sm:px-10"
+          >
+            Next: pick your style →
+          </button>
+        </div>
       </div>
-
-      {/* Next: sticky on mobile, inline on desktop */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/8 bg-paper/92 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
-        <button
-          type="button"
-          disabled={!room}
-          onClick={() => router.push("/plan/style")}
-          className="h-13 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:bg-ink/15 disabled:text-ink-soft sm:h-12 sm:w-auto sm:px-10"
-        >
-          Next: pick your style →
-        </button>
-      </div>
-
-      <RequestSchoolModal open={requestOpen} onClose={() => setRequestOpen(false)} />
+      <StudioPreview
+        caption={
+          room && confirmDims
+            ? `Your room: ${confirmDims}`
+            : "Your next chapter, taking shape."
+        }
+      />
+      <RequestSchoolModal
+        open={requestOpen}
+        onClose={() => setRequestOpen(false)}
+      />
     </div>
   );
 }

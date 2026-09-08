@@ -35,7 +35,7 @@ const INPUT =
 const LABEL = "mb-1.5 block text-sm font-medium";
 const BTN_PRIMARY =
   "inline-flex h-11 cursor-pointer items-center rounded-xl bg-cobalt px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:opacity-60";
-const CARD = "rounded-2xl border border-ink/10 bg-card p-5 sm:p-6";
+const CARD = "dm-account-surface rounded-2xl border border-ink/10 bg-card p-5 sm:p-6";
 
 function toneClass(tone: Tone): string {
   return tone === "bad"
@@ -317,7 +317,7 @@ export default function AccountSettingsPage() {
   return (
     <div>
       <SiteHeader />
-      <main className="relative mx-auto max-w-5xl px-5 py-10 sm:px-8">
+      <main id="page-content" tabIndex={-1} className="dm-page relative mx-auto max-w-5xl px-5 py-10 sm:px-8">
         {!ready ? (
           <div aria-busy="true" aria-label="Loading your settings">
             <div className="h-9 w-48 animate-pulse rounded-lg bg-ink/8" />
@@ -346,7 +346,7 @@ export default function AccountSettingsPage() {
                 </svg>
                 Saved designs
               </Link>
-              <h1 className="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <h1 className="dm-page-title mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
                 Account settings
               </h1>
               <p className="mt-1.5 text-sm text-ink-soft">
@@ -384,7 +384,7 @@ export default function AccountSettingsPage() {
                   <label htmlFor="set-username" className={LABEL}>
                     Username
                   </label>
-                  <div className="flex h-12 items-center rounded-xl border border-ink/15 bg-white pl-4 transition-colors focus-within:border-cobalt">
+                  <div className="dm-editorial-card flex h-12 items-center rounded-xl border border-ink/15 bg-white pl-4 transition-colors focus-within:border-cobalt">
                     <span className="font-mono text-sm text-ink-soft" aria-hidden="true">
                       @
                     </span>

@@ -22,7 +22,7 @@ export default function Wordmark({
   return (
     <Link
       href="/"
-      className="flex shrink-0 items-center gap-2"
+      className="dm-wordmark flex shrink-0 items-center gap-2"
       aria-label={
         pro ? "Dormscape Pro home" : plus ? "Dormscape Plus home" : "Dormscape home"
       }
@@ -39,8 +39,8 @@ export default function Wordmark({
         height={32}
         className="h-8 w-8 shrink-0 rounded-[9px] border border-ink/10"
       />
-      <span className={`font-display font-bold tracking-tight ${textClassName}`}>
-        dorm<span className="text-amber">scape</span>
+      <span className={`dm-brand-type font-bold tracking-tight ${textClassName}`}>
+        dorm<span className="text-cobalt">scape</span>
         {plus && (
           <span
             className="ml-0.5 text-cobalt"
