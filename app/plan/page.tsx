@@ -37,7 +37,21 @@ export default function PlanSelectPage() {
       flowTracked = true;
       track("flow_started");
     }
-  }, []);
+    // Deep link from the college / residence-hall pages:
+    // /plan?school=penn-state&dorm=atherton-hall preselects the school (and
+    // building) so those pages hand off with the student's context intact.
+    // Read from location rather than useSearchParams so this page keeps
+    // rendering statically (same pattern as the Step 2 auth-gate resume).
+    const params = new URLSearchParams(window.location.search);
+    const schoolId = params.get("school");
+    if (!schoolId) return;
+    const s = getSchool(schoolId);
+    if (!s) return;
+    setCollege({ id: s.id, name: s.name });
+    const dormId = params.get("dorm");
+    const d = dormId ? s.dorms.find((x) => x.id === dormId) : undefined;
+    if (d) setDorm({ id: d.id, name: d.name });
+  }, [setCollege, setDorm]);
 
   const school = useMemo(
     () => (college?.id ? getSchool(college.id) : undefined),

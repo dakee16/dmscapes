@@ -27,6 +27,7 @@ const COLUMNS: {
     heading: "Company",
     links: [
       { label: "About", href: "/about" },
+      { label: "How we measure", href: "/methodology" },
       { label: "Blog", href: "/blog" },
       { label: "FAQ", href: "/faq" },
       { label: "Contact", href: "/contact" },

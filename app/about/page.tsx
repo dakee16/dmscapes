@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Dormscape is a free dorm room planner built on real dorm dimensions from official housing data. See your exact room, set a budget, shop a list that fits.",
+  alternates: { canonical: "/about" },
   openGraph: {
     title: "About dormscape",
     description:
@@ -165,7 +166,11 @@ export default function AboutPage() {
                 <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
                   Room sizes come from official housing data, school by school.
                   When a college doesn&rsquo;t publish a number, we leave it blank
-                  instead of inventing one.
+                  instead of inventing one.{" "}
+                  <Link href="/methodology" className={TEXT_LINK}>
+                    How we measure
+                  </Link>
+                  .
                 </p>
               </div>
               <div className="rounded-xl border border-ink/10 bg-card p-5">

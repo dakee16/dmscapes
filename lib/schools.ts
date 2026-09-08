@@ -25,6 +25,29 @@ export function formatDims(lengthFt: number | null, widthFt: number | null): str
   return `${fmt(lengthFt)} × ${fmt(widthFt)} ft`;
 }
 
+/** One residence hall, for the building-level SEO pages. */
+export function getDorm(schoolId: string, dormId: string) {
+  const school = getSchool(schoolId);
+  const dorm = school?.dorms.find((d) => d.id === dormId);
+  return school && dorm ? { school, dorm } : undefined;
+}
+
+/** Every (school, dorm) pair, for generateStaticParams and the sitemap. */
+export function allDormPaths(): { collegeId: string; dormId: string }[] {
+  return SCHOOLS.flatMap((s) =>
+    s.dorms.map((d) => ({ collegeId: s.id, dormId: d.id }))
+  );
+}
+
+/** Rooms whose size the school actually publishes (estimates excluded). */
+export function publishedDimsCount(school: SchoolSummary): number {
+  return school.dorms.reduce(
+    (n, d) =>
+      n + d.rooms.filter((r) => r.length_ft && r.width_ft && !r.dims_estimated).length,
+    0
+  );
+}
+
 /** Room types present in a school's data (for the SEO college pages). */
 export function roomTypesOf(school: SchoolSummary): string[] {
   const types = new Set<string>();

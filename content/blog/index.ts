@@ -8,6 +8,8 @@ import plusWorth from "./is-dormscape-plus-worth-it";
 import compare from "./compare-two-dorm-room-designs";
 import describeVibe from "./describe-your-dorm-room-in-words";
 import drawRoom from "./design-your-own-dorm-room";
+import planDorm from "./how-to-plan-a-college-dorm-room";
+import layoutIdeas from "./dorm-room-layout-ideas";
 
 // The blog registry. To publish a post: add its file above and to this array.
 // Everything else (index page, post pages, sitemap) reads from POSTS, so the
@@ -22,6 +24,8 @@ export const POSTS: BlogPost[] = [
   compare,
   describeVibe,
   drawRoom,
+  planDorm,
+  layoutIdeas,
 ].sort(
   // Newest first. ISO date strings sort correctly as plain strings.
   (a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)

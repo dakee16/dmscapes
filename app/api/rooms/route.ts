@@ -99,7 +99,17 @@ function sanitizeOutline(input: unknown): RoomOutline | null {
       if (w.kind !== "door" && w.kind !== "window") return null;
       if (!Number.isInteger(w.edge) || (w.edge as number) < 0 || (w.edge as number) >= points.length) return null;
       if (!isCoord(w.offset_ft) || typeof w.width_ft !== "number" || !(w.width_ft > 0 && w.width_ft <= 20)) return null;
-      openings.push({ kind: w.kind, edge: w.edge as number, offset_ft: w.offset_ft as number, width_ft: w.width_ft });
+      const swing =
+        Number.isInteger(w.swing) && (w.swing as number) >= 0 && (w.swing as number) <= 3
+          ? (w.swing as number)
+          : undefined;
+      openings.push({
+        kind: w.kind,
+        edge: w.edge as number,
+        offset_ft: w.offset_ft as number,
+        width_ft: w.width_ft,
+        ...(swing !== undefined ? { swing } : {}),
+      });
     }
   }
 
