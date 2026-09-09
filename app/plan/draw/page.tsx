@@ -64,7 +64,7 @@ export default function DrawRoomPage() {
   // Once started (desktop, Plus): the actual drawing tool + occupancy selector.
   if (started) {
     return (
-      <div className="dm-draw-workspace mx-auto max-w-4xl px-5 pb-24 sm:px-8">
+      <div className="dm-draw-workspace dm-draw-editor mx-auto max-w-4xl px-5 pb-24 sm:px-8">
         <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
           Step 1 · Draw your room
         </p>
@@ -99,17 +99,16 @@ export default function DrawRoomPage() {
   // Landing (the "Draw" tab): live room drawing, description, and the button.
   return (
     <div className="dm-draw-workspace mx-auto max-w-5xl px-5 pb-24 sm:px-8">
-      <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-        Step 1 · Draw your room
-      </p>
-      <h1 className="dm-page-title mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-        Draw your <span className="hl">exact room</span>
-      </h1>
-
-      <div className="mt-7 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+      <div className="dm-draw-landing mt-7 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <RoomDrawingPreview />
 
-        <div>
+        <div className="dm-draw-intro">
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
+            Step 1 · Draw your room
+          </p>
+          <h1 className="dm-page-title font-display">
+            Draw your <span className="hl">exact room</span>
+          </h1>
           <div className="flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded-full bg-cobalt px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wide text-white">
               New

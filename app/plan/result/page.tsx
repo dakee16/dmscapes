@@ -33,6 +33,7 @@ import ActionBar from "@/components/products/ActionBar";
 import BuyAllButton from "@/components/products/BuyAllButton";
 import PurchaseSurvey from "@/components/products/PurchaseSurvey";
 import SavePrompt from "@/components/planner/SavePrompt";
+import VibeLoading from "@/components/planner/VibeLoading";
 import { BuyGateProvider } from "@/lib/buy-gate";
 import type { Product, ProductCategory } from "@/lib/types";
 
@@ -375,43 +376,45 @@ export default function ResultPage() {
 
   return (
     <div className="dm-result mx-auto max-w-6xl px-4 pb-32 pt-6 sm:px-6 lg:pb-10">
-      <header className="dm-result-heading rise">
-        <h1 className="dm-page-title font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
-          Your room, <span className="hl">planned.</span>
-        </h1>
-        <p className="mt-1.5 font-mono text-xs uppercase tracking-[0.14em] text-ink-soft">
-          {/* Text segments wrap at word boundaries; dims never split mid-string. */}
-          {[college?.name, dorm?.name, roomTypeLabel(room)].filter(Boolean).join(" · ")}
-          {dims && (
-            <>
-              <span aria-hidden="true"> · </span>
-              <span className="whitespace-nowrap">{dims}</span>
-            </>
-          )}
-        </p>
-        {room.dimsEstimated && <EstimatedDimsNote className="mt-1.5" />}
-
-        {/* Custom vibe: the user's own words stand in for a style name, plus the
-            one-free-regeneration control and an honest sample-data note. */}
-        {isCustom && customVibe && (
-          <div className="mt-3">
-            <p className="max-w-xl font-display text-base font-semibold italic leading-snug text-ink">
-              &ldquo;{customVibe}&rdquo;
-            </p>
-            {customMock && (
-              <p className="mt-2 max-w-xl text-[11px] leading-snug text-ink-soft/90">
-                Sample matches for now. Live Amazon results switch on once
-                Product Advertising API access is enabled.
-              </p>
+      <header className="dm-result-heading">
+        <div className="dm-result-title-group">
+          <h1 className="dm-page-title font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
+            Your room, <span className="hl">planned.</span>
+          </h1>
+          <p className="mt-1.5 font-mono text-xs uppercase tracking-[0.14em] text-ink-soft">
+            {/* Text segments wrap at word boundaries; dims never split mid-string. */}
+            {[college?.name, dorm?.name, roomTypeLabel(room)].filter(Boolean).join(" · ")}
+            {dims && (
+              <>
+                <span aria-hidden="true"> · </span>
+                <span className="whitespace-nowrap">{dims}</span>
+              </>
             )}
-          </div>
-        )}
+          </p>
+          {room.dimsEstimated && <EstimatedDimsNote className="mt-1.5" />}
+
+          {/* Custom vibe: the user's own words stand in for a style name, plus the
+              one-free-regeneration control and an honest sample-data note. */}
+          {isCustom && customVibe && (
+            <div className="mt-3">
+              <p className="max-w-xl font-display text-base font-semibold italic leading-snug text-ink">
+                &ldquo;{customVibe}&rdquo;
+              </p>
+              {customMock && (
+                <p className="mt-2 max-w-xl text-[11px] leading-snug text-ink-soft/90">
+                  Sample matches for now. Live Amazon results switch on once
+                  Product Advertising API access is enabled.
+                </p>
+              )}
+            </div>
+          )}
+        </div>
+        <ActionBar products={allCartProducts} getPng={() => canvasRef.current?.exportPNG() ?? null} />
       </header>
 
-      {/* Item 6: the one free regeneration, a standalone centered control just
-          below the header. */}
+      {/* Regeneration keeps its existing free-use and credit behavior. */}
       {isCustom && customVibe && (
-        <div className="mt-5 flex flex-col items-center gap-1.5 rise">
+        <div className="dm-regenerate-row mt-5 flex flex-wrap items-center gap-3 rise">
           <button
             type="button"
             onClick={handleRegenerate}
@@ -607,7 +610,6 @@ export default function ResultPage() {
         </BuyGateProvider>
       </div>
 
-      <ActionBar products={allCartProducts} getPng={() => canvasRef.current?.exportPNG() ?? null} />
       <PurchaseSurvey cartTotal={total} />
       <SavePrompt />
 
@@ -676,9 +678,7 @@ export default function ResultPage() {
       )}
 
       {regenerating && (
-        <div className="fixed inset-0 z-[60] flex flex-col items-center justify-center gap-5 bg-paper/95 px-6 text-center backdrop-blur-sm">
-          <BrandLoader label="Re-matching your vibe…" />
-        </div>
+        <VibeLoading description={customVibe ?? ""} budget={budget} regenerating />
       )}
     </div>
   );

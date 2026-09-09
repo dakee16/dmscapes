@@ -262,7 +262,7 @@ export default function CreateVibePage() {
         </div>
       </div>
 
-      {generating && <VibeLoading />}
+      {generating && <VibeLoading description={text.trim()} budget={budget} />}
     </section>
   );
 }

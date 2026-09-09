@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { Product } from "@/lib/types";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
@@ -38,6 +38,7 @@ export default function ActionBar({
   // PDF/PNG export are premium features: unlocked for Pro and for anyone who has
   // ever bought Plus (stays unlocked even at 0 credits).
   const features = hasFeatures(profile);
+  const actionRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [savePanel, setSavePanel] = useState(false);
   const [name, setName] = useState("");
@@ -45,6 +46,29 @@ export default function ActionBar({
   const [busy, setBusy] = useState<Busy>(null);
   const [toast, setToast] = useState("");
   const [savedUrl, setSavedUrl] = useState("");
+
+  useEffect(() => {
+    if (!menuOpen && !savePanel) return;
+    const onOutside = (event: PointerEvent) => {
+      if (!actionRef.current?.contains(event.target as Node)) {
+        setMenuOpen(false);
+        setSavePanel(false);
+      }
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        actionRef.current?.querySelector<HTMLButtonElement>('button[aria-expanded="true"]')?.focus();
+        setMenuOpen(false);
+        setSavePanel(false);
+      }
+    };
+    document.addEventListener("pointerdown", onOutside);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onOutside);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [menuOpen, savePanel]);
 
   function showToast(msg: string) {
     setToast(msg);
@@ -176,6 +200,7 @@ export default function ActionBar({
 
   // "Save design": signed-out users sign in first; signed-in users name it.
   function handleSaveClick() {
+    setMenuOpen(false);
     if (!user) {
       openAuthModal("save-design");
       return;
@@ -205,24 +230,26 @@ export default function ActionBar({
 
   return (
     <>
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-ink/10 bg-white/95 px-4 py-3 backdrop-blur lg:static lg:z-auto lg:mt-6 lg:rounded-2xl lg:border lg:px-5 lg:py-4">
-        <div className="mx-auto flex max-w-6xl items-center gap-2.5">
+      <div ref={actionRef} className="dm-design-actions">
+        <div className="dm-design-actions-main" role="group" aria-label="Save or share your design">
           <div className="relative">
             <button
               type="button"
-              onClick={() => setMenuOpen((v) => !v)}
-              className="cursor-pointer rounded-full border border-ink/15 bg-white px-4 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
+              onClick={() => { setMenuOpen((v) => !v); setSavePanel(false); }}
+              aria-expanded={menuOpen}
+              aria-controls="design-share-options"
+              className="dm-share-trigger inline-flex cursor-pointer items-center justify-center gap-2 border border-ink/20 bg-paper px-4 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
             >
-              Share my room
+              Share room <span aria-hidden="true">↗</span>
             </button>
             {menuOpen && (
-              <div className="absolute bottom-full left-0 z-50 mb-2 w-52 snap-in rounded-xl border border-ink/10 bg-white p-1.5 shadow-lg">
+              <div id="design-share-options" className="dm-share-menu snap-in border border-ink/15 bg-white p-1.5" role="group" aria-label="Sharing and downloads">
                 <button
                   type="button"
                   onClick={handleDownload}
                   className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper"
                 >
-                  <span>⬇ Download PNG</span>
+                  <span>Download PNG</span>
                   {!features && (
                     <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wide text-ink">
                       Plus
@@ -235,14 +262,14 @@ export default function ActionBar({
                   disabled={busy === "link"}
                   className="block w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper disabled:opacity-60"
                 >
-                  {busy === "link" ? "Creating link…" : "🔗 Copy share link"}
+                  {busy === "link" ? "Creating link…" : "Copy share link"}
                 </button>
                 <button
                   type="button"
                   onClick={handleDownloadPdf}
                   className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper"
                 >
-                  <span>📄 Download list PDF</span>
+                  <span>Download list PDF</span>
                   {!features && (
                     <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wide text-ink">
                       Plus
@@ -253,14 +280,15 @@ export default function ActionBar({
             )}
           </div>
 
-          <div className="ml-auto flex items-center gap-2.5">
+          <div className="dm-save-action">
             {/* Primary action: saving is free and unlimited, and it's the one
                 thing that keeps a design from being lost, so it leads the bar. */}
             <button
               type="button"
               onClick={handleSaveClick}
               aria-expanded={savePanel}
-              className="inline-flex cursor-pointer items-center gap-1.5 rounded-full bg-cobalt px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_20px_-8px_rgba(43,78,255,0.8)] transition-colors hover:bg-cobalt-deep"
+              aria-controls="design-save-panel"
+              className="dm-save-trigger inline-flex cursor-pointer items-center justify-center gap-2 border border-cobalt bg-cobalt px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -281,9 +309,9 @@ export default function ActionBar({
         </div>
 
         {savePanel && user && (
-          <div className="mx-auto mt-3 max-w-6xl">
+          <div id="design-save-panel" className="dm-save-panel">
             {savedUrl ? (
-              <div className="rounded-xl border border-ink/10 bg-paper px-4 py-3 text-sm text-ink">
+              <div className="dm-save-success border border-ink/10 bg-paper px-4 py-3 text-sm text-ink" role="status">
                 <p>
                   Saved!{" "}
                   <a href={savedUrl} className="font-medium text-cobalt underline">
@@ -312,7 +340,7 @@ export default function ActionBar({
                     aria-label="Design name"
                     aria-invalid={Boolean(nameError)}
                     placeholder="Name this design (e.g. Cozy corner)"
-                    className="h-11 flex-1 rounded-xl border border-ink/15 bg-white px-4 text-sm text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
+                    className="h-11 min-w-0 flex-1 rounded-xl border border-ink/15 bg-white px-4 text-sm text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
                   />
                   <button
                     type="submit"

@@ -101,7 +101,7 @@ export default function FeedbackForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
+    <form className="dm-feedback-form" onSubmit={handleSubmit} noValidate>
       {/* Headline is optional, the footer modal already titles itself "Feedback". */}
       {headline && (
         <p className="font-display text-lg font-bold tracking-tight">{headline}</p>

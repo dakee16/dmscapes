@@ -16,12 +16,15 @@ export default function RoommateTeaser({
 
   useEffect(() => {
     if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     const t = setTimeout(() => closeRef.current?.focus(), 60);
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") onClose();
     }
     document.addEventListener("keydown", onKey);
     return () => {
+      document.body.style.overflow = previousOverflow;
       clearTimeout(t);
       document.removeEventListener("keydown", onKey);
     };
@@ -31,15 +34,16 @@ export default function RoommateTeaser({
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
+      className="dm-roommate-backdrop fixed inset-0 z-[60] flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="roommate-teaser-title"
+      aria-describedby="roommate-teaser-description"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="snap-in w-full max-w-md rounded-t-2xl border border-ink/10 bg-paper p-6 shadow-2xl sm:rounded-2xl sm:p-8">
+      <div className="dm-roommate-modal snap-in w-full border border-ink/15 bg-paper shadow-2xl">
         <div className="flex items-start justify-between gap-4">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
             Coming soon
@@ -64,46 +68,52 @@ export default function RoommateTeaser({
           </button>
         </div>
 
-        <h2
-          id="roommate-teaser-title"
-          className="mt-2 font-display text-2xl font-extrabold tracking-tight"
-        >
-          Your room. Your roommate. <span className="hl">One 3D view.</span>
-        </h2>
-        <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-          Plan the same room together, from different couches. You each pick a
-          side and a vibe, the layout stays in sync in a shared 3D room, and
-          your budgets stay separate. We&rsquo;re building it now.
-        </p>
+        <div className="dm-roommate-layout">
+          <div className="dm-roommate-copy">
+            <h2
+              id="roommate-teaser-title"
+              className="dm-dialog-title font-display"
+            >
+              Your room. Your roommate. <span className="hl">One 3D view.</span>
+            </h2>
+            <p id="roommate-teaser-description" className="mt-5 text-base leading-relaxed text-ink-soft">
+              Plan the same room together, from different couches. You each pick a
+              side and a vibe, the layout stays in sync in a shared 3D room, and
+              your budgets stay separate. We&rsquo;re building it now.
+            </p>
 
-        {/* Angled 3D room preview: your side and theirs, one space. */}
-        <Room3DScene className="mt-5" />
-        <div className="mt-3 flex items-center gap-5 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
-          <span className="inline-flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-cobalt" aria-hidden="true" />
-            Your side
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-amber" aria-hidden="true" />
-            Their side
-          </span>
+            <button
+              type="button"
+              onClick={onClose}
+              className="mt-6 h-12 w-full cursor-pointer rounded-xl bg-ink text-base font-semibold text-white transition-colors hover:bg-cobalt"
+            >
+              Got it
+            </button>
+            <a
+              href="https://tiktok.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 block text-center text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+            >
+              Follow on TikTok for updates
+            </a>
+          </div>
+          <div className="dm-roommate-visual">
+            {/* Angled 3D room preview: your side and theirs, one space. */}
+            <Room3DScene />
+            <div className="mt-3 flex items-center gap-5 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-cobalt" aria-hidden="true" />
+                Your side
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <span className="h-2 w-2 rounded-full bg-amber" aria-hidden="true" />
+                Their side
+              </span>
+            </div>
+
+          </div>
         </div>
-
-        <button
-          type="button"
-          onClick={onClose}
-          className="mt-6 h-12 w-full cursor-pointer rounded-xl bg-ink text-base font-semibold text-white transition-colors hover:bg-cobalt"
-        >
-          Got it
-        </button>
-        <a
-          href="https://tiktok.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 block text-center text-sm font-medium text-ink-soft transition-colors hover:text-ink"
-        >
-          Follow on TikTok for updates
-        </a>
       </div>
     </div>
   );
