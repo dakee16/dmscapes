@@ -459,10 +459,10 @@ export default function RoomDrawCanvas({
   ];
 
   return (
-    <div className="w-full select-none">
+    <div className="dm-draw-toolbox w-full select-none">
       {/* Toolbar: same island treatment as the result-page canvas toolbar. */}
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-0.5 rounded-2xl border border-ink/10 bg-white p-1 shadow-[0_10px_28px_-16px_rgba(23,23,43,0.5)]">
+      <div className="dm-draw-toolbar mb-3 flex flex-wrap items-center justify-between gap-2">
+        <div className="dm-tool-group flex flex-wrap items-center gap-0.5 border border-ink/15 bg-white p-1">
           {TOOLS.map((t) => {
             const active = tool === t.id;
             const disabled = t.id !== "wall" && !closed;
@@ -576,7 +576,7 @@ export default function RoomDrawCanvas({
         </span>
       </div>
 
-      <div ref={containerRef} className="relative w-full overflow-hidden rounded-2xl border border-ink/10 bg-white">
+      <div ref={containerRef} className="dm-draw-canvas relative overflow-hidden border border-ink/15 bg-white">
         {pxFt > 0 && (
           <Stage
             width={stageW}

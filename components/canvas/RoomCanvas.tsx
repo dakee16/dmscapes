@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  type CSSProperties,
   forwardRef,
   useEffect,
   useImperativeHandle,
@@ -447,7 +448,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const toolbarDeletable = Boolean(toolbarItem && furnitureCategory(toolbarItem));
 
   return (
-    <div className="w-full select-none">
+    <div className="dm-room-canvas w-full select-none">
       {/* Floating island toolbar, ABOVE the canvas (not overlaying the room).
           Acts on the selected item; greys out when nothing is selected. Same
           element in embedded and fullscreen, so it sits above the canvas in both. */}
@@ -456,7 +457,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           {/* Lifts in (scale + opacity + shadow) the moment an item is selected,
               so it reads as "now active" instead of an always-on bar. */}
           <div
-            className={`flex origin-top items-center gap-0.5 rounded-2xl border border-ink/10 bg-white px-1.5 py-1 transition-all duration-300 ease-out will-change-transform motion-reduce:transition-none ${
+            className={`dm-tool-group flex origin-top items-center gap-0.5 rounded-2xl border border-ink/10 bg-white px-1.5 py-1 transition-all duration-300 ease-out will-change-transform motion-reduce:transition-none ${
               toolbarItem
                 ? "scale-100 opacity-100 shadow-[0_12px_30px_-12px_rgba(23,23,43,0.5)]"
                 : "scale-[0.97] opacity-80 shadow-[0_6px_18px_-12px_rgba(23,23,43,0.4)]"
@@ -562,7 +563,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           </div>
         </div>
       )}
-      <div ref={containerRef} className="relative w-full">
+      <div ref={containerRef} className="dm-room-viewport relative w-full" style={{ "--dm-room-aspect": roomL / roomW } as CSSProperties}>
       {pxFt > 0 && (
         <Stage
           ref={stageRef}

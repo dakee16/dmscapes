@@ -89,7 +89,7 @@ export default function FeedbackLink() {
             if (e.target === e.currentTarget) close();
           }}
         >
-          <div className="snap-in relative w-full max-w-md overflow-hidden rounded-t-2xl border border-ink/10 bg-paper p-6 shadow-2xl sm:rounded-2xl sm:p-7">
+          <div className="dm-feedback-modal snap-in relative w-full border border-ink/15 bg-paper shadow-2xl">
             {/* Graph-paper wash across the top, the same grid the site is built on. */}
             <div
               aria-hidden
@@ -109,7 +109,7 @@ export default function FeedbackLink() {
                   </p>
                   <h2
                     id="footer-feedback-title"
-                    className="mt-1.5 font-display text-xl font-bold tracking-tight"
+                    className="dm-dialog-title mt-3 font-display"
                   >
                     Tell us how it&apos;s <span className="hl">going</span>
                   </h2>

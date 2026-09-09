@@ -12,9 +12,11 @@ body {
   isolation: isolate;
 }
 /* Syne’s 800 master is deliberately extra-wide. Keep headings in its natural-width range. */
-.dm-app .font-display {
+.font-display {
   font-weight: 600;
   letter-spacing: -0.025em;
+  line-height: 1.2;
+  font-synthesis: none;
 }
 #how-it-works,
 #vibes {
@@ -157,7 +159,8 @@ body {
 }
 .dm-serif,
 .dm-home em,
-.dm-page-title .hl {
+.dm-page-title .hl,
+[role="dialog"] .hl {
   font-family: var(--font-serif), Georgia, serif;
   font-style: italic;
   font-weight: 400;
@@ -1011,9 +1014,6 @@ body {
   padding-left: var(--dm-gutter);
   padding-right: var(--dm-gutter);
 }
-.dm-footer .font-display {
-  font-family: var(--font-bricolage);
-}
 .dm-footer .text-amber {
   color: var(--color-cobalt);
 }
@@ -1107,13 +1107,93 @@ body {
 .dm-page [role="dialog"] {
   border-radius: 8px;
 }
-.dm-app [role="dialog"] h2 {
+[role="dialog"] h2 {
   font-family: var(--font-syne);
+  font-weight: 600;
+  line-height: 1.2;
   letter-spacing: -0.03em;
 }
-.dm-app [role="dialog"] input,
-.dm-app [role="dialog"] textarea {
+[role="dialog"] input,
+[role="dialog"] textarea {
   border-radius: 4px;
+}
+/* Keep all planner and modal controls in the same compact corner treatment. */
+:where(.dm-plan-shell, .dm-result, [role="dialog"]) button:not([role="switch"]) {
+  border-radius: 3px;
+}
+.dm-feedback-modal {
+  max-width: 580px;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  border-radius: 4px;
+  padding: clamp(24px, 4vw, 36px);
+}
+.dm-dialog-title {
+  font-size: clamp(28px, 3.2vw, 40px);
+}
+.dm-feedback-form > p {
+  font-size: 16px;
+  line-height: 1.65;
+}
+.dm-feedback-form textarea {
+  min-height: 128px;
+  font-size: 16px;
+}
+.dm-feedback-form > div:last-child > p {
+  font-size: 14px;
+}
+.dm-feedback-form button[type="submit"] {
+  font-size: 15px;
+  min-height: 46px;
+}
+.dm-roommate-backdrop {
+  align-items: center;
+  padding: 20px;
+}
+.dm-roommate-modal {
+  max-width: 1080px;
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  border-radius: 4px;
+  padding: clamp(24px, 3.5vw, 40px);
+}
+.dm-roommate-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+  margin-top: 28px;
+}
+.dm-roommate-copy,
+.dm-roommate-visual {
+  min-width: 0;
+}
+.dm-roommate-copy > a {
+  font-size: 14px;
+}
+.dm-roommate-visual {
+  border-left: 1px solid var(--dm-rule);
+  padding-left: 20px;
+}
+.dm-roommate-visual .dm-room-model {
+  height: clamp(260px, 42svh, 410px);
+  min-height: 0;
+}
+.dm-roommate-visual > div:last-child {
+  justify-content: center;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+@media (max-width: 720px) {
+  .dm-roommate-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .dm-roommate-visual {
+    border-left: 0;
+    border-top: 1px solid var(--dm-rule);
+    padding: 16px 0 0;
+  }
 }
 /* Planner navigation and editorial/form split. */
 .dm-plan-shell {
@@ -1311,7 +1391,10 @@ body {
   padding-right: var(--dm-gutter);
 }
 .dm-result-heading {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 24px;
   border-bottom: 1px solid var(--dm-rule);
   padding-bottom: 25px;
   margin-bottom: 30px;
@@ -1375,8 +1458,102 @@ body {
 .dm-product-card:hover {
   border-color: #2b4eff66;
 }
-.dm-action-bar {
+.dm-design-actions {
+  position: relative;
+  z-index: 40;
+}
+.dm-design-actions-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dm-design-actions-main > div {
+  flex: 1;
+}
+.dm-design-actions-main > div > button {
+  width: 100%;
+  min-height: 46px;
+  border-radius: 3px;
+  white-space: nowrap;
+  box-shadow: none;
+}
+.dm-share-menu,
+.dm-save-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  z-index: 45;
   border-radius: 4px;
+  box-shadow: 5px 5px 0 #2b4eff18;
+}
+.dm-share-menu {
+  left: 0;
+  width: 240px;
+}
+.dm-share-menu button {
+  min-height: 44px;
+}
+.dm-save-panel {
+  right: 0;
+  width: min(440px, calc(100vw - 40px));
+  border: 1px solid var(--dm-rule);
+  padding: 16px;
+  background: white;
+}
+.dm-save-success {
+  overflow-wrap: anywhere;
+}
+.dm-regenerate-row {
+  justify-content: flex-start;
+}
+.dm-regenerate-row button {
+  min-height: 44px;
+  box-shadow: none;
+}
+.dm-tool-group {
+  border-radius: 4px;
+  box-shadow: none;
+  transform: none;
+}
+.dm-draw-toolbar button,
+.dm-room-canvas button {
+  border-radius: 3px;
+  box-shadow: none;
+}
+.dm-draw-toolbar button {
+  min-height: 40px;
+}
+.dm-canvas-panel .dm-room-viewport {
+  /* Limit displayed height without changing room coordinates or zoom math. */
+  max-width: min(100%, calc((clamp(320px, 58svh, 600px) - 56px) * var(--dm-room-aspect) + 56px));
+  margin-inline: auto;
+}
+@media (max-width: 1023px) {
+  .dm-result-heading {
+    display: block;
+  }
+  .dm-design-actions {
+    position: fixed;
+    inset: auto 0 0;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--dm-rule);
+    background: var(--color-paper);
+  }
+  .dm-design-actions-main {
+    max-width: 540px;
+    margin-inline: auto;
+  }
+  .dm-share-menu,
+  .dm-save-panel {
+    top: auto;
+    bottom: calc(100% + 10px);
+  }
+  .dm-save-panel {
+    left: 16px;
+    right: 16px;
+    width: auto;
+    max-width: 540px;
+    margin-inline: auto;
+  }
 }
 /* A live, replayable floor-plan sketch in place of the static screenshot. */
 .dm-drawing-preview {
@@ -1463,12 +1640,51 @@ body {
 .dm-draw-workspace .dm-page-title {
   font-size: clamp(40px, 5vw, 70px);
 }
-.dm-draw-workspace > div.mt-6:has(canvas) {
-  border: 1px solid var(--dm-rule);
-  background: white;
-  box-shadow: 8px 8px 0 #e4e9f477;
+.dm-draw-landing {
+  max-width: 1240px;
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 72px);
 }
-.dm-app[data-page="plan-create-vibe"] section > div {
+.dm-draw-landing .dm-drawing-preview {
+  width: 100%;
+  max-width: 560px;
+}
+.dm-draw-intro .dm-page-title {
+  margin: 18px 0 24px;
+  font-size: clamp(40px, 4.2vw, 64px);
+  line-height: 1.15;
+}
+.dm-draw-editor .dm-page-title {
+  font-size: clamp(32px, 3.5vw, 48px);
+}
+.dm-draw-toolbox {
+  max-width: 1120px;
+  margin-inline: auto;
+}
+.dm-draw-canvas {
+  /* 26 × 20 ft stays exact; only the screen space used by the grid changes. */
+  width: min(100%, calc((clamp(320px, 58svh, 600px) - 48px) * 1.3 + 48px));
+  margin-inline: auto;
+  border-radius: 4px;
+}
+@media (max-width: 1023px) {
+  .dm-draw-landing {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .dm-draw-intro {
+    order: -1;
+  }
+  .dm-draw-landing .dm-drawing-preview {
+    margin-inline: auto;
+  }
+}
+.dm-draw-workspace > div.mt-6:has(canvas) {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.dm-app[data-page="plan-create-vibe"] section > div:not(.dm-vibe-loading) {
   max-width: 1480px;
   padding-left: var(--dm-gutter);
   padding-right: var(--dm-gutter);
@@ -1483,6 +1699,194 @@ body {
 }
 .dm-app[data-page="plan-create-vibe"] .dm-page-title {
   font-size: clamp(42px, 5.2vw, 76px);
+}
+/* Custom-vibe search: the real brief, an assembling room, and moving category cards. */
+.dm-vibe-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: clamp(20px, 3.5vw, 48px);
+  background: var(--color-paper);
+}
+.dm-vibe-loading .dm-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.dm-vibe-loading-header,
+.dm-vibe-loading-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-shrink: 0;
+}
+.dm-vibe-loading-header {
+  border-bottom: 1px solid var(--dm-rule);
+  padding-bottom: 20px;
+}
+.dm-vibe-loading-header > div {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.dm-vibe-loading-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding-block: 40px;
+  flex-shrink: 0;
+}
+.dm-vibe-loading-copy > .dm-eyebrow {
+  color: var(--color-cobalt);
+}
+.dm-vibe-loading-copy h2 {
+  margin: 20px 0 32px;
+  font: 600 clamp(38px, 4.6vw, 66px)/1.14 var(--font-syne), sans-serif;
+  letter-spacing: -0.025em;
+}
+.dm-vibe-loading-copy h2 .dm-serif {
+  font-size: 1.14em;
+}
+.dm-vibe-loading-brief {
+  max-width: 460px;
+  border-left: 3px solid var(--color-highlight);
+  padding-left: 18px;
+}
+.dm-vibe-loading-brief blockquote {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-ink-soft);
+}
+.dm-vibe-loading-budget {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  margin-top: 24px;
+}
+.dm-vibe-loading-budget strong {
+  font-size: 24px;
+  font-weight: 600;
+}
+.dm-vibe-loading-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 28px;
+  margin-top: 28px;
+  font-size: 16px;
+  color: var(--color-cobalt);
+}
+.dm-vibe-loading-status > span {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
+}
+.dm-vibe-search-scene {
+  min-width: 0;
+  border: 1px solid var(--dm-rule);
+  background-image: linear-gradient(var(--color-grid) 1px, transparent 1px), linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.dm-vibe-search-heading {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--dm-rule);
+  color: var(--color-ink-soft);
+}
+.dm-vibe-search-scene .dm-room-model {
+  height: clamp(280px, 40svh, 430px);
+  min-height: 0;
+  pointer-events: none;
+}
+.dm-vibe-search-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0 20px 20px;
+}
+.dm-vibe-search-card {
+  min-width: 0;
+  padding: 16px 12px 12px;
+  border: 1px solid var(--dm-rule);
+  border-radius: 3px;
+  background: white;
+  box-shadow: 3px 3px 0 #2b4eff12;
+}
+.dm-vibe-search-card .dm-eyebrow {
+  color: var(--color-cobalt);
+  font-size: 12px;
+  letter-spacing: 0;
+}
+.dm-vibe-search-card strong {
+  display: block;
+  min-height: 44px;
+  margin: 10px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.dm-vibe-search-track {
+  height: 2px;
+  overflow: hidden;
+  background: var(--color-grid);
+}
+.dm-vibe-search-track > span {
+  display: block;
+  width: 33%;
+  height: 100%;
+  background: var(--color-cobalt);
+}
+.dm-vibe-loading-footer {
+  border-top: 1px solid var(--dm-rule);
+  padding-top: 20px;
+  color: var(--color-ink-soft);
+}
+.dm-vibe-loading-footer p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+@media (max-width: 800px) {
+  .dm-vibe-loading-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding-block: 28px;
+  }
+  .dm-vibe-loading-copy h2 {
+    margin: 16px 0 24px;
+  }
+  .dm-vibe-loading-header > div > .dm-eyebrow {
+    display: none;
+  }
+  .dm-vibe-loading-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .dm-vibe-search-cards {
+    gap: 6px;
+    padding: 0 12px 16px;
+  }
+  .dm-vibe-search-card {
+    padding: 12px 8px;
+  }
 }
 /* Campus directories, editorial pages, accounts and checkout keep native data. */
 .dm-app[data-page="colleges"] main {
@@ -2617,12 +3021,12 @@ body {
   font: 400 9px var(--font-plex-mono);
   color: var(--color-ink-soft);
 }
-.dm-footer-grid h2 {
+.dm-footer-grid > div > h2 {
   font-size: 9px;
   color: var(--color-ink-soft);
   margin-bottom: 22px;
 }
-.dm-footer-grid ul {
+.dm-footer-grid > div > ul {
   display: grid;
   gap: 13px;
 }
@@ -2646,7 +3050,7 @@ body {
 .dm-footer .dm-motion-label {
   display: inline;
 }
-.dm-footer-grid svg {
+.dm-footer-grid li > a > svg {
   width: 13px;
   height: 13px;
 }
