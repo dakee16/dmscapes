@@ -143,7 +143,7 @@ export default async function DormPage(props: {
           },
         ]}
       />
-      <main id="page-content" tabIndex={-1}>
+      <main id="page-content" tabIndex={-1} className="dm-page dm-campus-detail">
         <section className="mx-auto max-w-5xl px-5 pb-10 pt-10 sm:px-8 sm:pt-14">
           <Breadcrumbs items={crumbs} />
           <h1 className="dm-page-title mt-4 max-w-3xl font-display text-4xl font-extrabold leading-[1.06] tracking-tight sm:text-5xl">
@@ -167,7 +167,7 @@ export default async function DormPage(props: {
             <PlanCta
               href={planHref}
               className="inline-block rounded-lg bg-cobalt px-6 py-3 font-semibold text-white transition-colors hover:bg-cobalt-deep"
-              freeLabel={`Plan a ${dorm.name} room free`}
+              freeLabel={`Plan your ${dorm.name} room`}
               paidLabel={`Plan a ${dorm.name} room`}
             />
             <Link
@@ -184,7 +184,7 @@ export default async function DormPage(props: {
           <h2 className="font-display text-2xl font-bold tracking-tight">
             Room types and sizes
           </h2>
-          <div className="dm-editorial-card mt-5 overflow-x-auto rounded-xl border border-ink/10 bg-card">
+          <div className="dm-room-table dm-editorial-card mt-5 overflow-x-auto rounded-xl border border-ink/10 bg-card" role="region" aria-label="Room types and sizes" tabIndex={0}>
             <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-ink/10 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
@@ -209,7 +209,7 @@ export default async function DormPage(props: {
                         <span className="whitespace-nowrap font-mono text-ink">
                           {formatDims(r.length_ft, r.width_ft) ?? "Not published"}
                         </span>
-                        {r.dims_estimated && <EstimatedDimsNote className="mt-1 block" />}
+                        {r.dims_estimated && <div className="mt-2 max-w-xs"><EstimatedDimsNote /></div>}
                       </td>
                       <td className="px-4 py-3 font-mono text-ink-soft">
                         {area ? `${area} sq ft` : "Not published"}

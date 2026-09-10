@@ -89,6 +89,7 @@ function buildCsp(isDev: boolean): string {
 export default function nextConfig(phase: string): NextConfig {
   const csp = buildCsp(phase === PHASE_DEVELOPMENT_SERVER);
   return {
+    allowedDevOrigins: ["terminal.local"],
     async headers() {
       return [
         {

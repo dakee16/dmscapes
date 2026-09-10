@@ -60,7 +60,7 @@ function DesignTile({ room }: { room: AccountRoomSummary }) {
         )}
       </div>
       <div className="pointer-events-none min-w-0 flex-1">
-        <h3 className="truncate font-display text-base font-bold tracking-tight">
+        <h3 className="font-display text-base font-bold tracking-tight">
           {room.name}
         </h3>
         {place && <p className="mt-0.5 truncate text-sm text-ink-soft">{place}</p>}
@@ -232,7 +232,7 @@ export default function AccountPage() {
             )}
 
             {/* Saved designs */}
-            <div className="mt-10 flex items-baseline justify-between gap-3">
+            <div className="mt-10 flex flex-wrap items-baseline justify-between gap-3">
               <h2 className="font-display text-xl font-bold tracking-tight">
                 Saved designs
               </h2>

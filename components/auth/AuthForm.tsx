@@ -251,9 +251,9 @@ export default function AuthForm({
   if (!configured) {
     return (
       <div className="space-y-4">
-        <h2 className="font-display text-2xl font-bold tracking-tight">Accounts are almost here</h2>
+        <h2 className="font-display text-2xl font-bold tracking-tight">Sign-in is unavailable</h2>
         <p className="rounded-xl border border-ink/10 bg-white px-4 py-3.5 text-sm leading-relaxed text-ink-soft">
-          Accounts aren&apos;t live quite yet. Your designs still work without one.
+          Please try again later. You can still explore schools, room sizes, and styles.
         </p>
         <Link href="/plan" className="flex h-12 w-full items-center justify-center rounded-xl bg-cobalt text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep">
           Start planning
@@ -323,7 +323,7 @@ export default function AuthForm({
           </p>
           <div className="mt-4 grid grid-cols-2 rounded-xl border border-ink/10 bg-white p-1 text-sm font-semibold">
             {(["signup", "login"] as const).map((m) => (
-              <button key={m} type="button" onClick={() => { setMode(m); setError(""); setExistingNotice(false); }} className={`cursor-pointer rounded-lg py-2 transition-colors ${mode === m ? "bg-ink text-white" : "text-ink-soft hover:text-ink"}`}>
+              <button key={m} type="button" aria-pressed={mode === m} onClick={() => { setMode(m); setError(""); setExistingNotice(false); }} className={`cursor-pointer rounded-lg py-2 transition-colors ${mode === m ? "bg-ink text-white" : "text-ink-soft hover:text-ink"}`}>
                 {m === "signup" ? "Sign up" : "Log in"}
               </button>
             ))}

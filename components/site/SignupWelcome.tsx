@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
@@ -7,6 +9,8 @@ import { useAuth } from "@/lib/auth-context";
 import { isPaid } from "@/lib/plan";
 import { track } from "@/lib/analytics";
 import { REVEAL_EASE } from "@/components/site/Reveal";
+
+const MotionModal = motion.create(Modal);
 
 // The "start here" welcome for a brand-new account: a warm, once-ever hello that
 // hands the student their one free design credit. Deliberately NOT the Plus
@@ -60,7 +64,7 @@ export default function SignupWelcome() {
   return (
     <AnimatePresence>
       {open && (
-        <motion.div
+        <MotionModal
           className="fixed inset-0 z-[65] flex items-center justify-center overflow-y-auto bg-ink/45 p-4 backdrop-blur-[3px] sm:p-6"
           role="dialog"
           aria-modal="true"
@@ -150,7 +154,7 @@ export default function SignupWelcome() {
           </div>
         </div>
           </motion.div>
-        </motion.div>
+        </MotionModal>
       )}
     </AnimatePresence>
   );

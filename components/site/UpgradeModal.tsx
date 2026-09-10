@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useUpgrade, type UpgradeReason } from "@/lib/upgrade-context";
@@ -18,8 +20,8 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     body: "You've used your Plus plan credits. Recharge to keep designing new rooms, or go Pro for unlimited. Your saved designs, exports, and comparisons stay right where they are.",
   },
   "save-credits": {
-    title: "You're out of save credits",
-    body: "You've used your Plus save credits. Recharge to keep saving designs, or go Pro for unlimited. Everything you've already saved stays right where it is.",
+    title: "Your designs stay saved",
+    body: "Saving is always free and unlimited. Recharge when you need more room plans; everything you've saved stays right where it is.",
   },
   "free-plan-limit": {
     title: "That's your free room plan",
@@ -30,8 +32,8 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     body: "Buy more à-la-carte credits to keep designing, $0.99 each, no subscription. Or go Pro for unlimited room plans and every premium feature.",
   },
   "free-save-limit": {
-    title: "That's your free saved design",
-    body: "Free includes one saved design. Upgrade to Plus for 5 saves (and 5 plan credits), or Pro for unlimited, plus every vibe and premium tool.",
+    title: "Keep every good idea",
+    body: "Saving is free and unlimited. Plus adds 5 room-plan credits, every vibe, and premium tools. Pro includes unlimited room plans.",
   },
   pdf: {
     title: "Export your list as a PDF",
@@ -157,7 +159,7 @@ export default function UpgradeModal() {
   }
 
   return (
-    <div
+    <Modal
       className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
@@ -297,8 +299,8 @@ export default function UpgradeModal() {
               ))}
             </ul>
 
-            <div className="mt-7 flex items-baseline gap-2.5">
-              <span className="font-display text-4xl font-extrabold tracking-tight">
+            <div className="mt-7 flex flex-wrap items-baseline gap-2.5">
+              <span className="dm-numeric text-4xl font-semibold tracking-tight">
                 ${PLUS_PRICE_USD.toFixed(2)}
               </span>
               <span className="text-sm text-ink-soft">
@@ -327,6 +329,6 @@ export default function UpgradeModal() {
           </>
         )}
       </div>
-    </div>
+    </Modal>
   );
 }

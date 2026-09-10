@@ -34,11 +34,13 @@ export default function FeedbackForm({
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (rating < 1 || busy) return;
     setBusy(true);
+    setError("");
     const body: FeedbackRequest = {
       session_id: sessionId(),
       rating,
@@ -55,14 +57,17 @@ export default function FeedbackForm({
       const token = (await getBrowserClient()?.auth.getSession())?.data.session
         ?.access_token;
       if (token) headers.Authorization = `Bearer ${token}`;
-      await fetch("/api/feedback", {
+      const response = await fetch("/api/feedback", {
         method: "POST",
         headers,
         body: JSON.stringify(body),
         keepalive: true,
       });
+      if (!response.ok) throw new Error("Feedback request failed");
     } catch {
-      // Feedback is fire-and-forget; never strand the user on a network blip.
+      setError("Couldn't send your feedback. Your words are still here; please try again.");
+      setBusy(false);
+      return;
     }
     track("feedback_submitted", { rating, source });
     setSubmitted(true);
@@ -122,9 +127,22 @@ export default function FeedbackForm({
             role="radio"
             aria-checked={rating === n}
             aria-label={`${n} star${n > 1 ? "s" : ""}`}
+            tabIndex={n === (rating || 1) ? 0 : -1}
             autoFocus={autoFocus && n === 1}
             onClick={() => setRating(n)}
             onMouseEnter={() => setHovered(n)}
+            onKeyDown={(event) => {
+              let next: number = n;
+              if (event.key === "ArrowRight" || event.key === "ArrowDown") next = n % 5 + 1;
+              else if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (n + 3) % 5 + 1;
+              else if (event.key === "Home") next = 1;
+              else if (event.key === "End") next = 5;
+              else return;
+              event.preventDefault();
+              setHovered(0);
+              setRating(next);
+              event.currentTarget.parentElement?.querySelector<HTMLButtonElement>(`button[aria-label="${next} star${next > 1 ? "s" : ""}"]`)?.focus();
+            }}
             className={`cursor-pointer p-0.5 text-3xl leading-none transition-colors ${
               n <= shown ? "text-highlight" : "text-ink/15 hover:text-ink/30"
             }`}
@@ -137,12 +155,14 @@ export default function FeedbackForm({
         )}
       </div>
       <textarea
+        aria-label="Your feedback (optional)"
         value={text}
         onChange={(e) => setText(e.target.value)}
         maxLength={2000}
         placeholder="What worked? What was clunky? (optional)"
         className="mt-4 min-h-24 w-full resize-y rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm leading-relaxed text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
       />
+      {error && <p className="mt-3 text-sm text-[#c2321e]" role="alert">{error}</p>}
       <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
         <p className="text-xs text-ink-soft" aria-live="polite">
           {rating < 1 ? "Pick a star rating to submit." : " "}

@@ -90,12 +90,12 @@ export default function RootLayout({
       className={`${bricolage.variable} ${instrument.variable} ${plexMono.variable} ${syne.variable} ${serif.variable}`}
     >
       <body className="min-h-screen antialiased">
-        <CookieConsent />
-        <AuthProvider>
-          <UpgradeProvider>
-            <MotionProvider>{children}</MotionProvider>
-          </UpgradeProvider>
-        </AuthProvider>
+        <MotionProvider>
+          <CookieConsent />
+          <AuthProvider>
+            <UpgradeProvider>{children}</UpgradeProvider>
+          </AuthProvider>
+        </MotionProvider>
       </body>
     </html>
   );

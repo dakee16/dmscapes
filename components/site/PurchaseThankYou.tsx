@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useEffect, useState } from "react";
 import { track } from "@/lib/analytics";
 import { PRO_PRICE_USD } from "@/lib/plan";
@@ -17,7 +19,7 @@ const COPY: Record<Tier, { title: string; blurb: string; perks: string[] }> = {
     title: "You're on Plus.",
     blurb: "Every vibe and every premium feature is unlocked, permanently.",
     perks: [
-      "5 plan credits + 5 saves (recharge anytime)",
+      "5 plan credits, with free unlimited saving",
       "All 9 vibes unlocked",
       "PDF + PNG export and side-by-side compare",
       "Priority on your add-my-school requests",
@@ -73,7 +75,7 @@ export default function PurchaseThankYou() {
   }
 
   return (
-    <div
+    <Modal
       className="fixed inset-0 z-[65] flex items-center justify-center overflow-y-auto bg-ink/45 p-4 backdrop-blur-[3px] sm:p-6"
       role="dialog"
       aria-modal="true"
@@ -141,6 +143,6 @@ export default function PurchaseThankYou() {
           </button>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 }

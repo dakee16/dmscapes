@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useEffect } from "react";
 
 /**
@@ -24,7 +26,7 @@ export default function DesignDisclaimerModal({
   }, [onCancel]);
 
   return (
-    <div
+    <Modal
       className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-4 backdrop-blur-[2px] sm:items-center"
       onClick={onCancel}
       role="dialog"
@@ -42,13 +44,13 @@ export default function DesignDisclaimerModal({
           id="design-disclaimer-title"
           className="mt-1 font-display text-lg font-bold leading-snug text-ink"
         >
-          Save your room or you&rsquo;ll lose it
+          Keep your room for later
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-ink-soft">
           Dormscape doesn&rsquo;t save your design automatically. When your room is
           ready, tap{" "}
           <span className="font-semibold text-ink">Save design</span> to keep it in
-          your account. If you leave or refresh without saving, the design is gone.
+          your account. Your work stays in this browser tab, but closing the tab or starting a new room can discard unsaved changes.
         </p>
 
         <div className="mt-5 flex flex-col-reverse gap-2.5 sm:flex-row sm:justify-end">
@@ -68,6 +70,6 @@ export default function DesignDisclaimerModal({
           </button>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 }

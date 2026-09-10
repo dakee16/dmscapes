@@ -56,7 +56,7 @@ export default function HomeHero() {
           </span>
           <div className="dm-hero-caption">
             <span>A little room. A lot of you.</span>
-            <span>↔ Drag to explore</span>
+            <span className="dm-room-interaction-hint">↔ Drag to explore</span>
           </div>
           <div className="dm-hero-vibes" aria-label="Preview a room style">
             {["minimalist", "cozy", "preppy"].map((value) => (
@@ -69,9 +69,9 @@ export default function HomeHero() {
                 {value}
               </button>
             ))}
-            <Link href="/pricing">
+            <a href="#vibes">
               All nine vibes <span aria-hidden="true">↗</span>
-            </Link>
+            </a>
           </div>
         </div>
         <div className="dm-hero-bottom">

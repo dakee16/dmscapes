@@ -78,14 +78,14 @@ export default function ThankYouView() {
           Thank you for using <span className="hl">Dormscape</span>.
         </h1>
         <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
-          Your haul is on its way, and your room already knows where everything goes.
-          That&apos;s one big move-in task, handled.
+          Your room has a plan. Keep your layout handy while you finish shopping
+          and get ready for move-in.
         </p>
       </div>
 
       {/* Share panel, the same cobalt CTA language as the rest of the site */}
       <div
-        className="rise relative mt-10 overflow-hidden rounded-2xl bg-cobalt p-5 sm:p-6"
+        className="dm-thank-you-card rise relative mt-10 overflow-hidden rounded-2xl bg-cobalt p-5 sm:p-6"
         style={{ animationDelay: "120ms" }}
       >
         <PanelGrid />
@@ -143,7 +143,7 @@ export default function ThankYouView() {
 
       {/* Feedback */}
       <div
-        className="rise mt-4 rounded-2xl border border-ink/10 bg-white p-5 sm:p-6"
+        className="dm-thank-you-card rise mt-4 rounded-2xl border border-ink/10 bg-white p-5 sm:p-6"
         style={{ animationDelay: "200ms" }}
       >
         <FeedbackForm source="thank_you" />

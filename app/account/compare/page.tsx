@@ -47,6 +47,7 @@ function DesignColumn({
         {label}
       </label>
       <select
+        aria-label={label}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="mt-2 h-11 w-full cursor-pointer rounded-xl border border-ink/15 bg-white px-3 text-sm font-semibold text-ink outline-none transition-colors focus:border-cobalt"

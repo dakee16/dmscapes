@@ -97,7 +97,10 @@ export default function Nav() {
       }
     }
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") setMenuOpen(false);
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+        menuRef.current?.querySelector<HTMLButtonElement>('button[aria-expanded]')?.focus();
+      }
     }
     document.addEventListener("mousedown", onDown);
     document.addEventListener("keydown", onKey);

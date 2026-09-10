@@ -72,7 +72,11 @@ export default function ResetPasswordPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const supabase = getBrowserClient();
-    if (!supabase || busy) return;
+    if (busy) return;
+    if (!supabase) {
+      setError("Password reset is temporarily unavailable. Please try again later.");
+      return;
+    }
     if (password.length < 6) {
       setError("Password needs at least 6 characters.");
       return;
@@ -90,6 +94,8 @@ export default function ResetPasswordPage() {
         return;
       }
       setPhase("done");
+    } catch {
+      setError("Couldn't update your password. Check your connection and try again.");
     } finally {
       setBusy(false);
     }
@@ -98,7 +104,11 @@ export default function ResetPasswordPage() {
   async function handleResend(e: React.FormEvent) {
     e.preventDefault();
     const supabase = getBrowserClient();
-    if (!supabase || resending) return;
+    if (resending) return;
+    if (!supabase) {
+      setResendMsg("Password reset is temporarily unavailable. Please try again later.");
+      return;
+    }
     const mail = resendEmail.trim();
     if (!EMAIL_RE.test(mail)) {
       setResendMsg("That email doesn't look right.");
@@ -114,6 +124,8 @@ export default function ResetPasswordPage() {
       setResendMsg(
         err ? err.message : `If ${mail} has an account, a new link is on its way.`
       );
+    } catch {
+      setResendMsg("Couldn't send a new link. Check your connection and try again.");
     } finally {
       setResending(false);
     }
