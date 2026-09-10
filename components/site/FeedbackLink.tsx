@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useCallback, useEffect, useRef, useState } from "react";
 import FeedbackForm from "@/components/products/FeedbackForm";
 import { track } from "@/lib/analytics";
@@ -24,17 +26,14 @@ export default function FeedbackLink() {
     track("feedback_prompt_opened", { source: "footer" });
   }
 
-  // Escape to close + lock background scroll while the modal is up.
+  // Modal owns focus and scroll locking; this entry point handles dismissal.
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
     };
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
     document.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = prevOverflow;
       document.removeEventListener("keydown", onKey);
     };
   }, [open, close]);
@@ -80,7 +79,7 @@ export default function FeedbackLink() {
       </button>
 
       {open && (
-        <div
+        <Modal
           className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
           role="dialog"
           aria-modal="true"
@@ -147,7 +146,7 @@ export default function FeedbackLink() {
               </div>
             </div>
           </div>
-        </div>
+        </Modal>
       )}
     </>
   );

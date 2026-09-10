@@ -34,6 +34,44 @@ export default function MotionProvider({
     }
   }, []);
 
+  // A cross-page hash can arrive before Next's streamed section exists. Honor
+  // it once that section mounts, including a direct visit to a section URL.
+  useEffect(() => {
+    let observer: MutationObserver | undefined;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    let frame = 0;
+    function followHash() {
+      observer?.disconnect();
+      clearTimeout(timer);
+      cancelAnimationFrame(frame);
+      let id: string;
+      try { id = decodeURIComponent(window.location.hash.slice(1)); } catch { return; }
+      if (!id) return;
+      function scrollIfReady() {
+        const target = document.getElementById(id);
+        // Streaming can temporarily park the section in a hidden container.
+        if (!target || !target.getClientRects().length || !target.getBoundingClientRect().height) return false;
+        observer?.disconnect();
+        clearTimeout(timer);
+        frame = requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
+        return true;
+      }
+      if (!scrollIfReady()) {
+        observer = new MutationObserver(scrollIfReady);
+        observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["hidden", "style"] });
+        timer = setTimeout(() => observer?.disconnect(), 10000);
+      }
+    }
+    followHash();
+    window.addEventListener("hashchange", followHash);
+    return () => {
+      observer?.disconnect();
+      clearTimeout(timer);
+      cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", followHash);
+    };
+  }, [pathname]);
+
   function toggle() {
     const next = !paused;
     setChoice(next);

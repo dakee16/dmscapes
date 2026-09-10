@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
@@ -130,7 +132,7 @@ export default function UsernamePrompt() {
   if (!open) return null;
 
   return (
-    <div
+    <Modal
       className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
@@ -174,6 +176,6 @@ export default function UsernamePrompt() {
           </button>
         </form>
       </div>
-    </div>
+    </Modal>
   );
 }

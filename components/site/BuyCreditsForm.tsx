@@ -69,7 +69,7 @@ export default function BuyCreditsForm({
       >
         How many credits?
       </label>
-      <div className="mt-2.5 flex items-center justify-between gap-3">
+      <div className="mt-2.5 flex flex-wrap items-center justify-between gap-3">
         <div className="flex h-12 items-stretch overflow-hidden rounded-xl border border-ink/15 bg-white">
           <button
             type="button"
@@ -107,7 +107,7 @@ export default function BuyCreditsForm({
           <p className="whitespace-nowrap font-mono text-xs text-ink-soft">
             {qty} &times; ${FLEX_CREDIT_PRICE_USD.toFixed(2)}
           </p>
-          <p className="font-display text-2xl font-extrabold tracking-tight text-ink">
+          <p className="dm-numeric text-2xl font-semibold tracking-tight text-ink">
             ${total}
           </p>
         </div>

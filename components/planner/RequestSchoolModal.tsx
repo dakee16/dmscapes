@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useEffect, useRef, useState } from "react";
 import { track } from "@/lib/analytics";
 import { useAuth } from "@/lib/auth-context";
@@ -109,7 +111,7 @@ export default function RequestSchoolModal({
   }
 
   return (
-    <div
+    <Modal
       className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
@@ -222,6 +224,6 @@ export default function RequestSchoolModal({
           </form>
         )}
       </div>
-    </div>
+    </Modal>
   );
 }

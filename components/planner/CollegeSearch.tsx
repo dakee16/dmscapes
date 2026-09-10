@@ -43,7 +43,7 @@ export default function CollegeSearch({
     if (!open) return;
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setActiveIdx((i) => Math.min(i + 1, results.length - 1));
+      setActiveIdx((i) => Math.max(0, Math.min(i + 1, results.length - 1)));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
       setActiveIdx((i) => Math.max(i - 1, 0));
@@ -79,6 +79,7 @@ export default function CollegeSearch({
           aria-expanded={open}
           aria-controls="college-results"
           aria-autocomplete="list"
+          aria-activedescendant={open && results[activeIdx] ? `college-option-${results[activeIdx].id}` : undefined}
           autoComplete="off"
           placeholder="Search your college…"
           value={query}
@@ -117,16 +118,16 @@ export default function CollegeSearch({
             </li>
           ) : (
             results.map((school, i) => (
-              <li key={school.id} role="option" aria-selected={i === activeIdx}>
+              <li key={school.id} id={`college-option-${school.id}`} role="option" aria-selected={i === activeIdx}>
                 <button
                   type="button"
                   onClick={() => choose(school)}
                   onMouseEnter={() => setActiveIdx(i)}
-                  className={`flex w-full items-baseline justify-between gap-3 px-4 py-3 text-left transition-colors ${
+                  className={`flex w-full flex-wrap items-baseline justify-between gap-3 px-4 py-3 text-left transition-colors ${
                     i === activeIdx ? "bg-cobalt/5" : ""
                   }`}
                 >
-                  <span className="text-[15px] font-medium text-ink">{school.name}</span>
+                  <span className="min-w-0 text-[15px] font-medium text-ink">{school.name}</span>
                   {school.city && (
                     <span className="shrink-0 text-xs text-ink-soft">
                       {school.city}, {school.state}

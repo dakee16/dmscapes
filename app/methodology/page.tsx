@@ -71,7 +71,7 @@ export default function MethodologyPage() {
               { n: stats.published.toLocaleString(), l: "Published sizes" },
             ].map((s) => (
               <div key={s.l}>
-                <p className="font-display text-3xl font-extrabold tracking-tight">
+                <p className="dm-numeric text-3xl font-semibold tracking-tight">
                   {s.n}
                 </p>
                 <p className="mt-1 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink-soft">

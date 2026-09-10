@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { track, sessionId } from "@/lib/analytics";
@@ -176,7 +178,7 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
   }
 
   return (
-    <div
+    <Modal
       className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
@@ -265,6 +267,6 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
           </div>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 }

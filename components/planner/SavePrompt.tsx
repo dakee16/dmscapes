@@ -40,7 +40,7 @@ export default function SavePrompt() {
     <div
       role="complementary"
       aria-label="Save your design"
-      className="rise fixed inset-x-4 bottom-[5rem] z-40 rounded-2xl border border-ink/10 bg-white p-4 shadow-xl sm:inset-x-auto sm:right-6 sm:w-80 lg:bottom-6"
+      className="dm-save-nudge rise fixed inset-x-4 bottom-[5rem] z-40 rounded-2xl border border-ink/10 bg-white p-4 shadow-xl sm:inset-x-auto sm:right-6 sm:w-80 lg:bottom-6"
     >
       <div className="flex items-start justify-between gap-3">
         <p className="font-display text-base font-bold tracking-tight">

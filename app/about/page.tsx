@@ -94,19 +94,19 @@ export default function AboutPage() {
           {/* Real-number stat callouts, in the site's mono stat-line language. */}
           <div className="mt-10 grid grid-cols-3 gap-4 rounded-2xl border border-ink/10 bg-card/70 px-4 py-6 sm:px-8">
             <div>
-              <p className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <p className="dm-numeric text-3xl font-semibold tracking-tight sm:text-4xl">
                 {SCHOOLS.length}
               </p>
               <p className={STAT_LABEL}>Schools supported</p>
             </div>
             <div className="border-x border-ink/8 px-2 text-center sm:px-4">
-              <p className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <p className="dm-numeric text-3xl font-semibold tracking-tight sm:text-4xl">
                 {LAYOUTS.toLocaleString()}+
               </p>
               <p className={STAT_LABEL}>Dorm layouts mapped</p>
             </div>
             <div className="text-right">
-              <p className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+              <p className="dm-numeric text-3xl font-semibold tracking-tight sm:text-4xl">
                 500+
               </p>
               <p className={STAT_LABEL}>Rooms planned</p>

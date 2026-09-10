@@ -143,8 +143,8 @@ const MOMENTS: { title: string; body: string; icon: React.ReactNode }[] = [
     icon: <path d="M13 5l7 7-7 7M4 5l7 7-7 7" />,
   },
   {
-    title: "Four looks, Plus-only",
-    body: "Gamer, Team Spirit, Retro, and Pastel come with Plus, each a full room in its own palette.",
+    title: "Six more ways to make it yours",
+    body: "Academia, Y2K, Gamer, Team Spirit, Retro, and Pastel come with Plus, each a full room in its own palette.",
     icon: <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z" />,
   },
 ];
@@ -169,10 +169,10 @@ function PlusUpsell() {
               You&rsquo;ll have more than one good idea.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              The cozy version and the bold one. Free gets you one plan and one
-              save to try it; Plus is five of each, plus lining two rooms up side
-              by side, exporting the winner, and designing in all nine vibes
-              instead of five.
+              The cozy version and the bold one. Free gets you one room plan;
+              Plus adds five more, plus comparing two rooms side by side,
+              exporting the winner, and designing in all nine vibes. Saving
+              your designs is always free.
             </p>
           </div>
 

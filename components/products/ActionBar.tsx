@@ -46,6 +46,10 @@ export default function ActionBar({
   const [busy, setBusy] = useState<Busy>(null);
   const [toast, setToast] = useState("");
   const [savedUrl, setSavedUrl] = useState("");
+  const [shareFallbackUrl, setShareFallbackUrl] = useState("");
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => { if (toastTimer.current) clearTimeout(toastTimer.current); }, []);
 
   useEffect(() => {
     if (!menuOpen && !savePanel) return;
@@ -72,7 +76,8 @@ export default function ActionBar({
 
   function showToast(msg: string) {
     setToast(msg);
-    window.setTimeout(() => setToast(""), 3500);
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setToast(""), 5000);
   }
 
   function buildSaveRequest(): SaveRoomRequest | null {
@@ -117,7 +122,7 @@ export default function ActionBar({
     if (!res.ok) {
       showToast(
         res.status === 503
-          ? "Sharing links come online soon. Download the PNG for now."
+          ? "Sharing is temporarily unavailable. Your room is still here; try again in a moment."
           : "Couldn't save right now. Try again in a minute."
       );
       return null;
@@ -184,15 +189,25 @@ export default function ActionBar({
   }
 
   async function handleCopyLink() {
+    if (busy) return;
     setMenuOpen(false);
     setBusy("link");
     try {
       const result = await saveRoom();
       if (result) {
-        await navigator.clipboard.writeText(result.url);
-        showToast("Link copied. Send it to your roommate.");
+        try {
+          await navigator.clipboard.writeText(result.url);
+          setShareFallbackUrl("");
+          showToast("Link copied. Send it to your roommate.");
+        } catch {
+          setShareFallbackUrl(result.url);
+          setMenuOpen(true);
+          showToast("Your share link is ready. Select and copy it below.");
+        }
         track("share_clicked", { type: "link" });
       }
+    } catch {
+      showToast("Couldn't create the link. Check your connection and try again.");
     } finally {
       setBusy(null);
     }
@@ -210,6 +225,7 @@ export default function ActionBar({
 
   async function handleSave(e: React.FormEvent) {
     e.preventDefault();
+    if (busy) return;
     const trimmed = name.trim();
     if (!trimmed) {
       setNameError("Give your design a name to save it.");
@@ -223,6 +239,8 @@ export default function ActionBar({
         setSavedUrl(result.url);
         track("design_saved");
       }
+    } catch {
+      showToast("Couldn't save your design. Check your connection and try again.");
     } finally {
       setBusy(null);
     }
@@ -276,6 +294,13 @@ export default function ActionBar({
                     </span>
                   )}
                 </button>
+                {shareFallbackUrl && (
+                  <div className="dm-share-fallback">
+                    <label htmlFor="room-share-link">Your room link</label>
+                    <input id="room-share-link" readOnly value={shareFallbackUrl}
+                      onFocus={(event) => event.currentTarget.select()} />
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -364,7 +389,7 @@ export default function ActionBar({
       {toast && (
         <div
           role="status"
-          className="snap-in fixed bottom-20 left-1/2 z-50 -translate-x-1/2 rounded-full bg-ink px-4 py-2 text-sm font-medium text-white shadow-lg lg:bottom-8"
+          className="dm-action-toast snap-in fixed bottom-20 left-1/2 z-50 -translate-x-1/2 rounded-full bg-ink px-4 py-2 text-sm font-medium text-white shadow-lg lg:bottom-8"
         >
           {toast}
         </div>

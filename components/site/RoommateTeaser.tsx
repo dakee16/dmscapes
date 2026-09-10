@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 // Coming-soon teaser for the shared-3D roommate feature. Opened from the
 // header's "Room in 3D" nav item; controlled entirely by the caller.
 import { useEffect, useRef } from "react";
@@ -16,15 +18,12 @@ export default function RoommateTeaser({
 
   useEffect(() => {
     if (!open) return;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
     const t = setTimeout(() => closeRef.current?.focus(), 60);
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") onClose();
     }
     document.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = previousOverflow;
       clearTimeout(t);
       document.removeEventListener("keydown", onKey);
     };
@@ -33,7 +32,7 @@ export default function RoommateTeaser({
   if (!open) return null;
 
   return (
-    <div
+    <Modal
       className="dm-roommate-backdrop fixed inset-0 z-[60] flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
       role="dialog"
       aria-modal="true"
@@ -90,7 +89,7 @@ export default function RoommateTeaser({
               Got it
             </button>
             <a
-              href="https://tiktok.com"
+              href="https://tiktok.com/@dorm.scape"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 block text-center text-sm font-medium text-ink-soft transition-colors hover:text-ink"
@@ -115,6 +114,6 @@ export default function RoommateTeaser({
           </div>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 }

@@ -21,7 +21,7 @@ export default function StudioPreview({
       <RoomModel vibe={vibe} />
       <div className="dm-preview-bottom">
         <span>{caption}</span>
-        <span>↔ Drag to explore</span>
+        <span className="dm-room-interaction-hint">↔ Drag to explore</span>
       </div>
       <p className="dm-preview-note">
         Style study · Your exact floor plan comes next.

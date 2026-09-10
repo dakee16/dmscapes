@@ -75,8 +75,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
       <>
         Every product is a real Amazon listing, and the links are affiliate
         links: buy through one and Amazon pays us a small commission at no extra
-        cost to you. That commission is the entire business model, and it&rsquo;s
-        what keeps the planner free.
+        cost to you. That commission helps keep the planner free to try.
       </>
     ),
   },
@@ -95,11 +94,9 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     q: "What happens when my Plus credits run out?",
     a: (
       <>
-        Plans and saves are metered separately, so only the one you&rsquo;ve used
-        up pauses. Say you&rsquo;re out of plan credits but still have saves, you
-        can keep saving, and vice versa. Everything you&rsquo;ve already made
-        keeps working, exports and comparison included. A $2.99 recharge refills
-        both counters, or go Pro for unlimited.
+        Only new room plans use credits. Saving stays free, and your existing
+        designs, exports, and comparisons keep working. A $2.99 recharge adds
+        five more plan credits, or go Pro for unlimited plans.
       </>
     ),
   },

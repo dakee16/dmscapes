@@ -1,3 +1,4 @@
+import CampusDirectory from "@/components/site/CampusDirectory";
 import Footer from "@/components/Footer";
 import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import type { Metadata } from "next";
@@ -50,30 +51,11 @@ export default function CollegesPage() {
           </p>
 
           </div><BlueprintArtwork /></div>
-          <ul className="dm-campus-grid mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {SCHOOLS.map((s, index) => {
-              const rooms = s.dorms.reduce((n, d) => n + d.rooms.length, 0);
-              return (
-                <li key={s.id}>
-                  <Link
-                    href={`/colleges/${s.id}`}
-                    className="dm-editorial-card block rounded-xl border border-ink/10 bg-card p-5 transition-all hover:-translate-y-0.5 hover:border-cobalt hover:shadow-md"
-                  >
-                    <span className="dm-campus-index dm-eyebrow">{String(index + 1).padStart(2, "0")} / <span aria-hidden="true">↗</span></span>
-                    <h2 className="font-display text-lg font-bold tracking-tight">
-                      {s.name}
-                    </h2>
-                    <p className="mt-1 text-sm text-ink-soft">
-                      {[s.city, s.state].filter(Boolean).join(", ")}
-                    </p>
-                    <p className="mt-3 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
-                      {s.dorms.length} buildings · {rooms} room types
-                    </p>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          <CampusDirectory schools={SCHOOLS.map(s => ({
+            id: s.id, name: s.name, city: s.city, state: s.state,
+            buildings: s.dorms.length,
+            rooms: s.dorms.reduce((n, dorm) => n + dorm.rooms.length, 0),
+          }))} />
 
           <div className="mt-12 rounded-xl border border-dashed border-ink/20 bg-card/60 p-6 text-center">
             <p className="font-medium">Don&rsquo;t see your school? It takes 30 seconds.</p>

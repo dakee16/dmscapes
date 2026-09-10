@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useEffect, useRef, useState } from "react";
 import type { Product, ProductCategory } from "@/lib/types";
 import type { ProductLookupResponse } from "@/app/api/product-lookup/route";
@@ -60,7 +62,7 @@ export default function AddOwnItemModal({
   }
 
   return (
-    <div
+    <Modal
       className="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 p-4 backdrop-blur-sm"
       onClick={onClose}
       role="dialog"
@@ -140,6 +142,6 @@ export default function AddOwnItemModal({
           </button>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 }

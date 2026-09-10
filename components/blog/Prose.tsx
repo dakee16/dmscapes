@@ -107,7 +107,7 @@ export function Callout({
   children: ReactNode;
 }) {
   return (
-    <aside className="mt-8 rounded-xl border border-ink/10 bg-card p-5 sm:p-6">
+    <aside className="dm-blog-callout mt-8 border-l-[3px] border-cobalt bg-cobalt/[0.04] p-5 sm:p-6">
       {label ? (
         <div className="mb-2 font-mono text-[11px] uppercase tracking-wide text-cobalt">
           {label}

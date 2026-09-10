@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useEffect } from "react";
 import type { Product } from "@/lib/types";
 
@@ -32,7 +34,7 @@ export default function AddOverBudgetModal({
   const over = newTotal - budget;
 
   return (
-    <div
+    <Modal
       className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-4 sm:items-center"
       onClick={onCancel}
       role="dialog"
@@ -79,6 +81,6 @@ export default function AddOverBudgetModal({
           </button>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 }

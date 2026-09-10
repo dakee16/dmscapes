@@ -1,7 +1,8 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useEffect } from "react";
-import { createPortal } from "react-dom";
 import type { Product } from "@/lib/types";
 import { alternativesOf } from "@/lib/catalog";
 
@@ -21,25 +22,13 @@ export default function SwapModal({
       if (e.key === "Escape") onClose();
     }
     window.addEventListener("keydown", onKey);
-    // Lock background scroll while the overlay is open.
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
     return () => {
       window.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
     };
   }, [onClose]);
 
-  // Portal to <body> so the overlay escapes the products column, whose ancestor
-  // .rise/.fade-in animations leave a lingering `transform` (animation-fill-mode:
-  // both -> translateY(0)). Any non-none transform makes that ancestor the
-  // containing block for `position: fixed`, which would otherwise pin this modal
-  // to the tall column instead of the viewport (forcing a scroll to find it).
-  // Only rendered on a real click, so document is always defined here.
-  if (typeof document === "undefined") return null;
-
-  return createPortal(
-    <div
+  return (
+    <Modal
       className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-4 sm:items-center"
       onClick={onClose}
       role="dialog"
@@ -122,7 +111,6 @@ export default function SwapModal({
           </ul>
         )}
       </div>
-    </div>,
-    document.body
+    </Modal>
   );
 }

@@ -1,9 +1,13 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { REVEAL_EASE } from "@/components/site/Reveal";
 import type { HeaderCreditState } from "@/lib/plan";
+
+const MotionModal = motion.create(Modal);
 
 /**
  * Shown only in the Step 3 "Design my room" login gate, right after a gated
@@ -47,7 +51,7 @@ export default function CreditConfirmModal({
   }, [onCancel]);
 
   return (
-    <motion.div
+    <MotionModal
       className="fixed inset-0 z-[65] flex items-center justify-center overflow-y-auto bg-ink/45 p-4 backdrop-blur-[3px] sm:p-6"
       role="dialog"
       aria-modal="true"
@@ -99,6 +103,6 @@ export default function CreditConfirmModal({
           </div>
         </div>
       </motion.div>
-    </motion.div>
+    </MotionModal>
   );
 }

@@ -23,7 +23,7 @@ const COLUMNS: {
       { label: "Vibes & styles", href: "/#vibes", anchor: true },
       { label: "Colleges", href: "/colleges" },
       { label: "Pricing", href: "/pricing" },
-      { label: "Room in 3D", href: "/pricing" },
+      { label: "Room in 3D", href: "/pricing#room-in-3d", anchor: true },
     ],
   },
   {

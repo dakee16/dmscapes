@@ -123,7 +123,7 @@ export default async function SharedRoomPage(props: {
           </OpenInPlanner>
 
           <div>
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex flex-wrap items-center justify-between gap-3">
               <h2 className="font-display text-lg font-bold">The shopping list</h2>
               <div className="flex shrink-0 items-center gap-3">
                 {products.length > 0 && (

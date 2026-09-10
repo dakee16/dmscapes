@@ -58,7 +58,7 @@ export default function PrivacyPage() {
   return (
     <div>
       <SiteHeader gridClassName="h-[20rem]" />
-      <main id="page-content" tabIndex={-1}>
+      <main id="page-content" tabIndex={-1} className="dm-page dm-legal-page">
         <div className="mx-auto max-w-[50rem] px-5 py-14 sm:px-8 sm:py-20">
           <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-ink-soft">
             Legal

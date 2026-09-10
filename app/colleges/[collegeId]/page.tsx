@@ -70,7 +70,7 @@ export default async function CollegePage(props: {
           },
         ]}
       />
-      <main id="page-content" tabIndex={-1}>
+      <main id="page-content" tabIndex={-1} className="dm-page dm-campus-detail">
         <section className="relative">
           <div className="mx-auto max-w-6xl px-5 pb-12 pt-10 sm:px-8 sm:pt-14">
             <Breadcrumbs items={crumbs} />

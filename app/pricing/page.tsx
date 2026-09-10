@@ -85,7 +85,7 @@ const PLUS_PERKS: { title: string; body: string }[] = [
   },
   {
     title: "All 9 vibes",
-    body: "Gamer, Team Spirit, Retro, and Pastel, on top of the five styles everyone gets free.",
+    body: "Academia, Y2K, Gamer, Team Spirit, Retro, and Pastel, plus the three free styles.",
   },
   {
     title: "Add your own products",
@@ -409,7 +409,7 @@ export default function PricingPage() {
 
               <PriceDisplay amount="0" cadence="forever" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                Try the full planner on the house: one room plan and one save.
+                Try the planner on the house: one room plan, with free unlimited saving.
               </p>
 
               <Link
@@ -436,8 +436,8 @@ export default function PricingPage() {
 
               <div className="mt-auto border-t border-ink/8 pt-6">
                 <p className="text-[13px] leading-relaxed text-ink-soft">
-                  Free to try, no trial timer: one plan and one save. The paid
-                  tiers add more of both, the locked vibes, and the export,
+                  Free to try, no trial timer: one plan with free saving. The paid
+                  tiers add more plans, the locked vibes, and the export,
                   comparison, and priority tools.
                 </p>
               </div>
@@ -461,7 +461,7 @@ export default function PricingPage() {
 
               <PriceDisplay amount={PLUS_PRICE_USD.toFixed(2)} was={PLUS_PRICE_WAS_USD.toFixed(2)} cadence="once" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                A single unlock, not a subscription. Recharge both counters for $
+                A single unlock, not a subscription. Add five plan credits for $
                 {RECHARGE_PRICE_USD.toFixed(2)} whenever you run low.
               </p>
 
@@ -537,7 +537,7 @@ export default function PricingPage() {
           {/* ROADMAP: Room in 3D. Not a pricing tier, honestly not shipped yet;
               kept here so the coming-soon teaser and notify-me still live on the
               pricing page. */}
-          <section className="mt-6 overflow-hidden rounded-2xl border border-ink/12 bg-card p-6 sm:p-8">
+          <section id="room-in-3d" className="mt-6 scroll-mt-28 overflow-hidden rounded-2xl border border-ink/12 bg-card p-6 sm:p-8">
             <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
               <div>
                 <div className="flex items-center gap-3">
@@ -575,8 +575,7 @@ export default function PricingPage() {
             <p className="text-[15px] leading-relaxed text-ink-soft">
               <span className="font-semibold text-ink">Why is the planner free?</span>{" "}
               Some shopping links are affiliate links that pay us a small
-              commission at no extra cost to you. That keeps the whole tool free,
-              and it&rsquo;s the entire business model.{" "}
+              commission at no extra cost to you. That helps keep the planner free to try.{" "}
               <Link
                 href="/about"
                 className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt"

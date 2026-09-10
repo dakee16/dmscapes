@@ -1,5 +1,7 @@
 "use client";
 
+import Modal from "@/components/site/Modal";
+
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { track } from "@/lib/analytics";
@@ -16,8 +18,8 @@ type Feature = { label: string; desc: string; icon: React.ReactNode };
 
 const FEATURES: Feature[] = [
   {
-    label: "5 plans + 5 saves",
-    desc: "Two separate counters, recharge both for $2.99.",
+    label: "5 plan credits",
+    desc: "Recharge five more for $2.99. Saving is always free.",
     icon: (
       <path
         d="M6 4h12a1 1 0 0 1 1 1v14l-7-4-7 4V5a1 1 0 0 1 1-1z"
@@ -52,7 +54,7 @@ const FEATURES: Feature[] = [
   },
   {
     label: "All 9 vibes",
-    desc: "Gamer, Team Spirit, Retro, Pastel, and the five free.",
+    desc: "Three free styles, plus Academia, Y2K, Gamer, Team Spirit, Retro, and Pastel.",
     icon: (
       <>
         <path d="M12 3a9 9 0 1 0 0 18h1.5a2.5 2.5 0 0 0 2.2-3.7 2.5 2.5 0 0 1 2.2-3.8H20A2 2 0 0 0 22 12 10 10 0 0 0 12 3z" strokeLinejoin="round" />
@@ -90,7 +92,7 @@ export default function PlusWelcome({
   if (!open) return null;
 
   return (
-    <div
+    <Modal
       className="fixed inset-0 z-[65] flex items-center justify-center overflow-y-auto bg-ink/45 p-4 backdrop-blur-[3px] sm:p-6"
       role="dialog"
       aria-modal="true"
@@ -145,8 +147,8 @@ export default function PlusWelcome({
           </h2>
           <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
             You have the free planner already. Plus unlocks every vibe and every
-            premium feature, and hands you five plan credits and five saves to
-            design with.
+            premium feature, and gives you five plan credits to design with.
+            Saving your designs is always free.
           </p>
 
           <div className="mt-7 grid grid-cols-1 gap-x-5 gap-y-4 sm:grid-cols-2">
@@ -202,6 +204,6 @@ export default function PlusWelcome({
           </div>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 }
