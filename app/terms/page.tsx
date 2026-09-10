@@ -192,9 +192,9 @@ export default function TermsPage() {
               to the feature, not for any particular result or outcome.
             </p>
             <p className={P}>
-              If a paid feature doesn&rsquo;t work out the way you hoped &mdash; for
+              If a paid feature doesn&rsquo;t work out the way you hoped (for
               example, a generated room, product match, or layout isn&rsquo;t what you
-              wanted &mdash; that is not grounds for a refund. We don&rsquo;t issue
+              wanted), that is not grounds for a refund. We don&rsquo;t issue
               refunds, partial refunds, or credit-backs, and we don&rsquo;t entertain
               payment disputes or chargebacks, for a paid feature that was delivered to
               your account. By purchasing, you agree not to initiate a chargeback or

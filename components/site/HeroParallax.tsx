@@ -10,7 +10,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
  *
  * The scroll hook lives in ParallaxInner, which is mounted ONLY on desktop
  * (hover + fine pointer). On mobile the wrapper renders a plain <div>, so
- * useScroll never subscribes there — no scroll-linked work on phones.
+ * useScroll never subscribes there, so there is no scroll-linked work on phones.
  */
 function ParallaxInner({
   children,

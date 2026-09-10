@@ -77,8 +77,8 @@ function buildMock(tier: BudgetTier, seed: number, bedSize?: BedSize): Product[]
 
 /**
  * LIVE product set from the Amazon Creators API. One throttled searchItems call
- * per category, then a quality pick: a real image, a buyable price, and — when
- * the Creators API returns them — the curated rating/review bar (PA-API 5.0 did
+ * per category, then a quality pick: a real image, a buyable price, and, when
+ * the Creators API returns them, the curated rating/review bar (PA-API 5.0 did
  * not return these; the Creators response is checked at runtime and the raw
  * shape is logged once in lib/creators-api). Any per-category failure is logged
  * loudly rather than silently swallowed.

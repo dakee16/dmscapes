@@ -52,7 +52,7 @@
      "floor_plan_url": null,
      "data_source": "https://www.tamucc.edu/housing/",
      "data_confidence": "low",
-     "notes": "Private bedroom — 1 Bed/1 Bath residence-hall rooms and the private bedrooms in 2- and 4-bedroom apartments. Estimated based on similar rooms. Official size not published."
+     "notes": "Private bedroom: 1 Bed/1 Bath residence-hall rooms and the private bedrooms in 2- and 4-bedroom apartments. Estimated based on similar rooms. Official size not published."
     },
     {
      "room_type": "double",
