@@ -9,7 +9,7 @@ import {
 } from "@/lib/paste-item";
 import type { Product, ProductCategory } from "@/lib/types";
 
-// POST /api/product-lookup — the "Add your own item" paste flow. Extracts the
+// POST /api/product-lookup: the "Add your own item" paste flow. Extracts the
 // ASIN from a pasted Amazon URL, looks it up through the Creators API (with our
 // affiliate tag), and returns a Product the result page can drop into the cart.
 //
@@ -34,10 +34,10 @@ export interface ProductLookupResponse {
 function demoPrice(asin: string): number {
   let h = 0;
   for (let i = 0; i < asin.length; i++) h = (h * 31 + asin.charCodeAt(i)) >>> 0;
-  return Math.round((14 + (h % 46)) ) + 0.99; // ~$14.99–$59.99
+  return Math.round((14 + (h % 46)) ) + 0.99; // ~$14.99 to $59.99
 }
 
-// Neutral placeholder image (inline SVG data URI) for demo items — no external
+// Neutral placeholder image (inline SVG data URI) for demo items, with no external
 // fetch, renders in the same <img> the real product would.
 function placeholderImage(): string {
   const svg =

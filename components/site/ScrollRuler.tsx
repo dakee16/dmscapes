@@ -77,7 +77,7 @@ function Rail({ side }: { side: "left" | "right" }) {
 export default function ScrollRuler() {
   // Mount the rails (and their two useScroll subscriptions) ONLY at xl+, where the
   // ruler is actually visible. It was previously display:none below xl but the
-  // framer-motion scroll hooks still ran on mobile, driving nothing — a pure
+  // framer-motion scroll hooks still ran on mobile, driving nothing, a pure
   // waste. Now they never mount below xl.
   const [show, setShow] = useState(false);
   useEffect(() => {

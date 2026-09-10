@@ -1,4 +1,4 @@
-// Amazon Creators API client — SERVER ONLY.
+// Amazon Creators API client. SERVER ONLY.
 //
 // Replaces the retired PA-API 5.0 (AWS SigV4 signing removed entirely). The
 // Creators API uses OAuth 2.0 client-credentials instead: exchange the
@@ -22,7 +22,7 @@ export interface CreatorsCreds {
 /**
  * Present only when the Creators credentials + partner tag are set. Reads the
  * new AMAZON_CREATORS_* names first, then falls back to the old AMAZON_PAAPI_*
- * names — the same Credential ID/Secret work either way, so the integration is
+ * names. The same Credential ID/Secret work either way, so the integration is
  * live whether or not .env.local has been renamed. Values are trimmed.
  */
 export function creatorsCreds(): CreatorsCreds | null {

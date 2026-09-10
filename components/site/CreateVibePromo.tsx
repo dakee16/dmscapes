@@ -6,8 +6,8 @@ import type { StyleId } from "@/lib/types";
 // Dedicated homepage section for the Pro "Create your own vibe" feature (its own
 // headline + CTA + real space in the scroll, replacing the small strip that used
 // to sit folded inside the Vibes section). The illustration is a layered cluster
-// of floating StyleScene tiles — the same line-art vibe language used in the
-// picker and the create-vibe input page — angled, shadowed, and idle-floating
+// of floating StyleScene tiles (the same line-art vibe language used in the
+// picker and the create-vibe input page), angled, shadowed, and idle-floating
 // (vibe-float, reduced-motion aware) so it reads as "any aesthetic, your call".
 const TILES: {
   id: StyleId;
@@ -55,7 +55,7 @@ export default function CreateVibePromo() {
             Not one of the nine? <span className="hl">Describe your own.</span>
           </h2>
           <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-soft">
-            Type any aesthetic in your own words — &ldquo;warm beige study nook,&rdquo;
+            Type any aesthetic in your own words: &ldquo;warm beige study nook,&rdquo;
             &ldquo;chrome Y2K,&rdquo; a movie set, a color you love. Dormscape matches
             real products to it, live, and lays them out to your exact room.
           </p>

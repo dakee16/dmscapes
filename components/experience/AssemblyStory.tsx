@@ -28,7 +28,7 @@ export default function AssemblyStory() {
         <div className="dm-story-sticky">
           <div className="dm-preview-top dm-eyebrow">
             <span>Your room, coming together</span>
-            <span>01 — 03</span>
+            <span>01 / 03</span>
           </div>
           <RoomModel assembly progress={progress} />
           <div className="dm-preview-bottom">

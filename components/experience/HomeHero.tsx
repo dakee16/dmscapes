@@ -102,7 +102,7 @@ export default function HomeHero() {
             <div key={copy} aria-hidden={copy === 1 ? true : undefined}>
               <span>1,600+ dorm layouts</span>
               <i>✳</i>
-              <span>$200–$1,500 budgets</span>
+              <span>$200 to $1,500 budgets</span>
               <i>✳</i>
               <span>Live Amazon links</span>
               <i>✳</i>
