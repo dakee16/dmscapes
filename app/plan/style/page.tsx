@@ -227,6 +227,9 @@ export default function PlanStylePage() {
 
       <div className="dm-style-columns">
         <div className="dm-style-grid grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {CUSTOM_VIBE_ENABLED && (
+            <CreateVibeBanner onSelect={handleCustomTile} unlocked={pro} />
+          )}
           {STYLES.map((s) => (
             <StyleCard
               key={s.id}
@@ -237,10 +240,6 @@ export default function PlanStylePage() {
               onSelect={() => handleStyle(s.id)}
             />
           ))}
-          {/* Full-width banner spanning the grid, distinct from the nine tiles. */}
-          {CUSTOM_VIBE_ENABLED && (
-            <CreateVibeBanner onSelect={handleCustomTile} unlocked={pro} />
-          )}
         </div>
 
         <div className="dm-style-aside">
