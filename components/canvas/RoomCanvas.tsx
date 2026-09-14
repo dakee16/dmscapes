@@ -199,6 +199,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<Konva.Stage>(null);
+  const labelRefs = useRef(new Map<string, Konva.Group>());
   const [viewport, setViewport] = useState({ width: 0, height: 420 });
   const [panMode, setPanMode] = useState(false);
   const [showGrid, setShowGrid] = useState(true);
@@ -357,6 +358,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     e.cancelBubble = true;
     const point = dragPosition(f, e.target);
     e.target.position({ x: PAD + point.x * pxFt, y: PAD + point.y * pxFt });
+    labelRefs.current.get(f.id)?.position(e.target.position());
     dragGuard.current = Date.now();
     setDragging(null);
     if (point.x !== f.x_ft || point.y !== f.y_ft) onMove(f.id, point.x, point.y);
@@ -532,7 +534,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         <button type="button" aria-expanded={showHelp} aria-controls={helpId} onClick={() => setShowHelp(!showHelp)} aria-label="Canvas help and shortcuts" title="Help & shortcuts"><Icon path="M9 8a3 3 0 0 1 6 0c0 2-3 2-3 5m0 4h.01M22 12A10 10 0 1 1 2 12a10 10 0 0 1 20 0" /></button>
       </div>
       {showHelp && <div id={helpId} className={styles.help}>
-        <p><strong>Make yourself at home.</strong> Drag a piece to move it, or choose it from the furniture menu. Use the arrow controls for precise positioning. A red outline marks a possible overlap or wall crossing.</p>
+        <p><strong>Make yourself at home.</strong> Drag a piece to move it, or choose it from the furniture menu. Use your keyboard arrow keys for precise positioning. A red outline marks a possible overlap or wall crossing.</p>
         <p><kbd>R</kbd> Rotate · <kbd>↑ ↓ ← →</kbd> Nudge · <kbd>Shift</kbd> + arrows: 1 ft · <kbd>0</kbd> Fit room · <kbd>H</kbd> Pan · <kbd>V</kbd> Select · <kbd>Esc</kbd> Deselect</p>
         <p>Pinch with two fingers to zoom and pan. With a mouse, use Ctrl/⌘ + scroll to zoom at the pointer. Hiding a piece only changes the view; removing it moves its category to the catalog.</p>
       </div>}
@@ -758,7 +760,16 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                   y={PAD + fp.y * pxFt}
                   draggable={draggable}
                   onDragStart={(e) => { e.cancelBubble = true; if (selectedItemId !== f.id) toggleSelectedItem(f.id, furnitureCategory(f)); setDragging({ id: f.id, x: f.x_ft, y: f.y_ft }); }}
-                  onDragMove={(e) => { e.cancelBubble = true; setDragging({ id: f.id, ...dragPosition(f, e.target) }); }}
+                  onDragMove={(e) => {
+                    e.cancelBubble = true;
+                    // Furniture moves in Konva before React renders. Update the
+                    // overlay label in the same draw, using raw pixels instead
+                    // of the snapped coordinates used by guides and fit checks.
+                    labelRefs.current.get(f.id)?.position(e.target.position());
+                    const point = dragPosition(f, e.target);
+                    setDragging(previous => previous?.id === f.id && previous.x === point.x && previous.y === point.y
+                      ? previous : { id: f.id, ...point });
+                  }}
                   onDragEnd={(e) => handleDragEnd(f, e)}
                   onClick={() => handleItemClick(f)}
                   onTap={() => handleItemClick(f)}
@@ -827,9 +838,14 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 if (w < 50 || h < 28 || hiddenItemIds.includes(f.id) || !["bed", "desk", "dresser", "rug"].includes(f.type)) return null;
                 const size = Math.max(9, Math.min(11, w * .14));
                 const width = Math.min(w-8, (f.label.length+2)*size*.61);
-                const x = PAD + (dragging?.id === f.id ? dragging.x : fp.x)*pxFt + (w-width)/2;
-                const y = PAD + (dragging?.id === f.id ? dragging.y : fp.y)*pxFt + (f.type === "desk" ? h*.85 : h/2) - 8;
-                return <Group key={`label-${f.id}`}>
+                const x = (w-width)/2;
+                const y = (f.type === "desk" ? h*.85 : h/2) - 8;
+                return <Group
+                  key={`label-${f.id}`}
+                  ref={node => { if (node) labelRefs.current.set(f.id, node); else labelRefs.current.delete(f.id); }}
+                  x={PAD + fp.x*pxFt}
+                  y={PAD + fp.y*pxFt}
+                >
                   <Rect x={x} y={y-1} width={width} height={18} fill="#fffffff0" cornerRadius={2} />
                   <Text x={x+2} y={y} width={width-4} height={16} text={f.label} align="center" verticalAlign="middle" fontSize={size} fontFamily={labelFont} fontStyle="500" letterSpacing={.2} fill={INK} wrap="none" ellipsis />
                 </Group>;
@@ -860,9 +876,6 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
             {visible.filter(f => f.movable).map(f => <option key={f.id} value={f.id}>{f.label}{lockedItemIds.includes(f.id) ? " (locked)" : ""}{hiddenItemIds.includes(f.id) ? " (hidden)" : ""}</option>)}
           </select>
           <small>{toolbarItem && selectedFootprint ? `${feetLabel(selectedFootprint.w)} × ${feetLabel(selectedFootprint.h)} · ${toolbarLocked ? "Locked in place" : toolbarHidden ? "Hidden from view" : toolbarItem.built_in ? "Provided furniture" : "Move it to make it yours"}` : "Drag to arrange. Use the controls for the details."}</small>
-        </div>
-        <div className={styles.nudge} aria-label="Nudge selected furniture">
-          {[[0,-1,"↑","up"],[-1,0,"←","left"],[0,1,"↓","down"],[1,0,"→","right"]].map(([x,y,arrow,name]) => <button key={String(name)} type="button" disabled={!canEditItem} onClick={() => nudge(Number(x),Number(y))} aria-label={`Move selected item ${name}`} title={`Move ${name}`}>{arrow}</button>)}
         </div>
         <div className={styles.group}>
           <button type="button" disabled={!canEditItem || !onRotate} onClick={() => toolbarItem && onRotate?.(toolbarItem.id,1)} title="Rotate clockwise (R)" aria-label="Rotate selected item clockwise"><Icon path="M20 4v6h-6m5-1a8 8 0 1 0 1 8" />Rotate</button>
