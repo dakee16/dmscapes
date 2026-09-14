@@ -78,6 +78,9 @@ export interface PlannerState {
   toggleLockedItem: (id: string) => void;
   /** Update a furniture item's footprint (e.g. swapped rug with new dims). */
   resizeItem: (id: string, widthFt: number, lengthFt: number) => void;
+  updateItem3D: (id: string, patch: Partial<Pick<FurnitureItem, "height_ft" | "elevation_ft" | "material_color" | "parent_id">>) => void;
+  updateStudio: (patch: Partial<import("./studio").StudioSettings>) => void;
+  updateOpenings: (outline: import("./types").RoomOutline) => void;
   /** Rotate an item a quarter turn about its center (1 = CW, -1 = CCW). */
   rotateItem: (id: string, dir: 1 | -1) => void;
   setHoveredCategory: (category: ProductCategory | null) => void;
@@ -154,11 +157,16 @@ export const usePlannerStore = create<PlannerState>()(
       markCustomRegen: () => set({ customRegenUsed: true }),
       initLayout: (templateId, furniture) =>
         set({ templateId, furniture: furniture.map((f) => ({ ...f })) }),
-      moveItem: (id, xFt, yFt) =>
-        set((s) => ({
-          furniture:
-            s.furniture?.map((f) => (f.id === id ? { ...f, x_ft: xFt, y_ft: yFt } : f)) ?? null,
-        })),
+      moveItem: (id, xFt, yFt) => set(s => {
+        const before=s.furniture?.find(f=>f.id===id);
+        if(!before || !before.movable || s.lockedItemIds.includes(id))return {};
+        const dx=xFt-before.x_ft,dy=yFt-before.y_ft;
+        return {furniture:s.furniture?.map(f=>f.id===id?{...f,x_ft:xFt,y_ft:yFt}:
+          f.parent_id===id?{...f,x_ft:f.x_ft+dx,y_ft:f.y_ft+dy}:f)??null};
+      }),
+      updateItem3D: (id, patch) => set(s => ({furniture:s.furniture?.map(f=>f.id===id?{...f,...patch}:f)??null})),
+      updateStudio: patch => set(s => ({room:s.room?{...s.room,studio:{ceilingFt:8,floor:"oak",wallColor:"#f3eee4",lighting:"day",...s.room.studio,...patch}}:null})),
+      updateOpenings: outline => set(s => ({room:s.room?{...s.room,outline}:null})),
       resetLayout: (furniture) =>
         set({ furniture: furniture.map((f) => ({ ...f })), hiddenItemIds: [], lockedItemIds: [] }),
       swapProduct: (category, productId) =>

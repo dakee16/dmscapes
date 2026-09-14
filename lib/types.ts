@@ -189,4 +189,5 @@ export interface SelectedRoom {
    * outline plus placed doors/windows/closets. lengthFt/widthFt are its bbox.
    */
   outline?: RoomOutline | null;
+  studio?: import("./studio").StudioSettings;
 }
