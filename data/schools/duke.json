@@ -10,7 +10,7 @@
  ],
  "housing_url": "https://students.duke.edu/living/housing/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from Duke Housing & Residence Life's official East Campus, quad-description and amenities pages. All first-year students live on East Campus, and Duke names its fourteen halls there and says which have central air conditioning versus units — recorded per hall here. Duke publishes room types, furnishings and, unusually, the bed size for each quad, but no room dimensions, so every room uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Bed size is worth checking before you shop: most of Duke is Twin XL, but Edens and Wannamaker quads and the 301 Swift apartments have full-size beds, and the single bedrooms in The Blue Light apartments have queen beds — none of which a Twin XL set will fit.",
+ "campus_notes": "Compiled 2026-09-14 from Duke Housing & Residence Life's official East Campus, quad-description and amenities pages. All first-year students live on East Campus, and Duke names its fourteen halls there and says which have central air conditioning versus units, recorded per hall here. Duke publishes room types, furnishings and, unusually, the bed size for each quad, but no room dimensions, so every room uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Bed size is worth checking before you shop: most of Duke is Twin XL, but Edens and Wannamaker quads and the 301 Swift apartments have full-size beds, and the single bedrooms in The Blue Light apartments have queen beds, none of which a Twin XL set will fit.",
  "dorms": [
   {
    "dorm_id": "alspaugh",
@@ -2290,7 +2290,7 @@
      "floor_plan_url": null,
      "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
      "data_confidence": "low",
-     "notes": "Private bedroom in a two- or three-bedroom apartment. These have queen beds — no standard dorm bedding will fit. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "Private bedroom in a two- or three-bedroom apartment. These have queen beds: no standard dorm bedding will fit. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     },
     {
      "room_type": "apartment_double",

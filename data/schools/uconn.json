@@ -11,7 +11,7 @@
  ],
  "housing_url": "https://campushousing.uconn.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from UConn Campus Housing's official traditional-housing area pages. UConn documents housing by area rather than by building, naming the halls in each, the room types offered, the floor arrangement and the bed size, but publishes no room dimensions — so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are XL twin (80\" x 36\") and can be bunked, lofted or left on the floor, which is the main thing worth planning around. Areas whose hall names UConn does not list publicly (Alumni Quad, Buckley/Shippee, McMahon, Northwest, Werth Tower) are left out rather than guessed at.",
+ "campus_notes": "Compiled 2026-09-14 from UConn Campus Housing's official traditional-housing area pages. UConn documents housing by area rather than by building, naming the halls in each, the room types offered, the floor arrangement and the bed size, but publishes no room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are XL twin (80\" x 36\") and can be bunked, lofted or left on the floor, which is the main thing worth planning around. Areas whose hall names UConn does not list publicly (Alumni Quad, Buckley/Shippee, McMahon, Northwest, Werth Tower) are left out rather than guessed at.",
  "dorms": [
   {
    "dorm_id": "beecher",

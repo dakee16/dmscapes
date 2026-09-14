@@ -362,7 +362,7 @@
      "notes": "Three residents share a bedroom in a furnished three-bedroom apartment. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "About 1,000 residents across 165 apartments — 107 in the North Village and 58 across the North and South Towers. Apartment-style bathrooms with a tub-shower unit, wash basin, toilet and medicine cabinets.",
+   "notes": "About 1,000 residents across 165 apartments: 107 in the North Village and 58 across the North and South Towers. Apartment-style bathrooms with a tub-shower unit, wash basin, toilet and medicine cabinets.",
    "population": 1000,
    "building_type": "Apartment"
   },
@@ -410,7 +410,7 @@
      "floor_plan_url": null,
      "data_source": "https://www.housing.ucsb.edu/housing-options/options-filter/san-clemente-villages",
      "data_confidence": "low",
-     "notes": "Private, lockable bedroom in a two-bedroom apartment for two residents with one bathroom. Carpeted, with an extra-long full size bed, closet, bookcase, drawer, desk and chair — the full-size bed means Twin XL bedding will not fit. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "Private, lockable bedroom in a two-bedroom apartment for two residents with one bathroom. Carpeted, with an extra-long full size bed, closet, bookcase, drawer, desk and chair: the full-size bed means Twin XL bedding will not fit. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
     },
     {
      "room_type": "apartment_bedroom",

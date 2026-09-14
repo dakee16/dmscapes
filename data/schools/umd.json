@@ -13,7 +13,7 @@
  ],
  "housing_url": "https://reslife.umd.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from the University of Maryland Department of Resident Life's official hall directory and room-layout pages. Maryland publishes which housing style every hall uses and what furniture each room type includes, but says plainly that it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type — so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly.",
+ "campus_notes": "Compiled 2026-09-14 from the University of Maryland Department of Resident Life's official hall directory and room-layout pages. Maryland publishes which housing style every hall uses and what furniture each room type includes, but says plainly that it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly.",
  "dorms": [
   {
    "dorm_id": "anne-arundel",

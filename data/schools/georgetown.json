@@ -11,7 +11,7 @@
  ],
  "housing_url": "https://residentialliving.georgetown.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from Georgetown Residential Living's official residence pages. Georgetown describes each residence's room types, bathroom arrangement and furnishings in detail — including the 30-inch writing desks in its apartments and which rooms have in-room sinks — but publishes no room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are bunkable Twin XL. One practical quirk worth knowing: microwaves are not permitted in Georgetown housing, so residents rent a combined Fridge-Microwave unit instead. Only residences with a detailed official page are included.",
+ "campus_notes": "Compiled 2026-09-14 from Georgetown Residential Living's official residence pages. Georgetown describes each residence's room types, bathroom arrangement and furnishings in detail (including the 30-inch writing desks in its apartments and which rooms have in-room sinks) but publishes no room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are bunkable Twin XL. One practical quirk worth knowing: microwaves are not permitted in Georgetown housing, so residents rent a combined Fridge-Microwave unit instead. Only residences with a detailed official page are included.",
  "dorms": [
   {
    "dorm_id": "copley-hall",
@@ -164,7 +164,7 @@
      "notes": "Two large community bathrooms on each floor. Closets with drawers, shelves and window shades. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "First-year hall with renovated community spaces on each floor — kitchens, couches and televisions."
+   "notes": "First-year hall with renovated community spaces on each floor: kitchens, couches and televisions."
   },
   {
    "dorm_id": "harbin-hall",
@@ -571,7 +571,7 @@
      "notes": "Two residents per bedroom in a four-person, two-bedroom, one-bathroom apartment with a full kitchen and living room. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Four buildings — Groves, Beh, McBride and McCahill — comprehensively renovated in August 2019, around a central courtyard.",
+   "notes": "Four buildings (Groves, Beh, McBride and McCahill) comprehensively renovated in August 2019, around a central courtyard.",
    "building_type": "Apartment"
   },
   {
@@ -824,7 +824,7 @@
      "notes": "Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Three connected buildings — Loyola, Xavier and Ryder — for upperclass students."
+   "notes": "Three connected buildings (Loyola, Xavier and Ryder) for upperclass students."
   }
  ]
 }

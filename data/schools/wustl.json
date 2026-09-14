@@ -13,7 +13,7 @@
  ],
  "housing_url": "https://reslife.washu.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from WashU Residential Life's official South 40 building directory. All first- and second-year students live on the South 40, and WashU names every building and describes its two housing patterns — modern buildings, where two double rooms are adjoined by a shared restroom, and traditional buildings, with single and double rooms on a corridor and common restrooms — plus the furnishings in every room. It publishes no per-room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are extra-long twin (36\" x 80\") on frames that sit 36 inches off the floor, which is worth measuring under before buying storage.",
+ "campus_notes": "Compiled 2026-09-14 from WashU Residential Life's official South 40 building directory. All first- and second-year students live on the South 40, and WashU names every building and describes its two housing patterns (modern buildings, where two double rooms are adjoined by a shared restroom, and traditional buildings, with single and double rooms on a corridor and common restrooms) plus the furnishings in every room. It publishes no per-room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are extra-long twin (36\" x 80\") on frames that sit 36 inches off the floor, which is worth measuring under before buying storage.",
  "dorms": [
   {
    "dorm_id": "danforth-house",

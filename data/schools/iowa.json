@@ -12,7 +12,7 @@
  ],
  "housing_url": "https://housing.uiowa.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from University of Iowa Housing & Dining's official residence-hall pages. Iowa publishes the room types in every hall, the bathroom arrangement in unusual detail (community, single-user, suite and private) and exact furniture dimensions — lofted bed frame, desk and closet — but states that room layout and size vary and gives no per-room figure, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are extra-long twin (36\" x 80\") on lofted frames with 58 inches of clearance underneath, which is worth planning around. Every hall is air conditioned.",
+ "campus_notes": "Compiled 2026-09-14 from University of Iowa Housing & Dining's official residence-hall pages. Iowa publishes the room types in every hall, the bathroom arrangement in unusual detail (community, single-user, suite and private) and exact furniture dimensions (lofted bed frame, desk and closet) but states that room layout and size vary and gives no per-room figure, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are extra-long twin (36\" x 80\") on lofted frames with 58 inches of clearance underneath, which is worth planning around. Every hall is air conditioned.",
  "dorms": [
   {
    "dorm_id": "burge",
@@ -439,7 +439,7 @@
      "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Opened 2017; 1,049 first-year, returning, transfer and honors residents. Single-user restrooms — sink, toilet and shower behind one locking door. Fitness centre in the building.",
+   "notes": "Opened 2017; 1,049 first-year, returning, transfer and honors residents. Single-user restrooms: sink, toilet and shower behind one locking door. Fitness centre in the building.",
    "population": 1049
   },
   {

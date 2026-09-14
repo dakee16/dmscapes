@@ -13,7 +13,7 @@
  ],
  "housing_url": "https://studentlife.utk.edu/housing/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from University Housing's official hall-styles and room-types pages at the University of Tennessee, Knoxville. Tennessee documents each hall's style (community, suite or apartment) and defines its room types by occupancy — shared versus private bedrooms within a unit — but publishes no per-room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Units are modeled per bedroom so occupant counts and layouts match cleanly.",
+ "campus_notes": "Compiled 2026-09-14 from University Housing's official hall-styles and room-types pages at the University of Tennessee, Knoxville. Tennessee documents each hall's style (community, suite or apartment) and defines its room types by occupancy (shared versus private bedrooms within a unit) but publishes no per-room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Units are modeled per bedroom so occupant counts and layouts match cleanly.",
  "dorms": [
   {
    "dorm_id": "geier-hall",

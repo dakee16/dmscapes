@@ -29,7 +29,7 @@ export function beddingAdvisory(bedSize: BedSize | undefined): BeddingAdvisory |
       return {
         level: "warning",
         message:
-          "These are queen beds — wider and longer than a Twin XL. We don't stock a queen set yet, so the bedding below is the closest we have; buy queen-size sheets separately.",
+          "These are queen beds, wider and longer than a Twin XL. We don't stock a queen set yet, so the bedding below is the closest we have; buy queen-size sheets separately.",
       };
     case "full":
       return {

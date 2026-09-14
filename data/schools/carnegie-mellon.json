@@ -11,7 +11,7 @@
  ],
  "housing_url": "https://www.cmu.edu/housing/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from Carnegie Mellon Housing & Residential Education's official residence pages. CMU publishes each house's exact room types, total capacity and air-conditioning status, and provides representative floor-plan PDFs, but states plainly that room measurements are estimates and that actual sizes and furniture configurations vary — so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Air conditioning is recorded per house because several first-year houses (Donner, E-Tower, Mudge) have none. CMU distinguishes semi-suites (a bathroom shared with the adjoining room) from full suites (bathroom plus common space), which is kept in the room names. Beds are Twin XL.",
+ "campus_notes": "Compiled 2026-09-14 from Carnegie Mellon Housing & Residential Education's official residence pages. CMU publishes each house's exact room types, total capacity and air-conditioning status, and provides representative floor-plan PDFs, but states plainly that room measurements are estimates and that actual sizes and furniture configurations vary, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Air conditioning is recorded per house because several first-year houses (Donner, E-Tower, Mudge) have none. CMU distinguishes semi-suites (a bathroom shared with the adjoining room) from full suites (bathroom plus common space), which is kept in the room names. Beds are Twin XL.",
  "dorms": [
   {
    "dorm_id": "boss",

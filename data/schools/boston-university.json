@@ -10,7 +10,7 @@
  ],
  "housing_url": "https://www.bu.edu/housing/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from BU Housing's official undergraduate residence pages. BU publishes the exact room layouts available in every residence — traditional, suite, semi-suite, studio and apartment — and provides floor plans, but no dimensions in text, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" BU's housing system is unusually varied: brownstone apartments, large traditional towers and full apartments all sit within a few blocks, so the residence matters more than the room type alone. Beds are Twin XL.",
+ "campus_notes": "Compiled 2026-09-14 from BU Housing's official undergraduate residence pages. BU publishes the exact room layouts available in every residence (traditional, suite, semi-suite, studio and apartment) and provides floor plans, but no dimensions in text, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" BU's housing system is unusually varied: brownstone apartments, large traditional towers and full apartments all sit within a few blocks, so the residence matters more than the room type alone. Beds are Twin XL.",
  "dorms": [
   {
    "dorm_id": "warren-towers",
@@ -2918,7 +2918,7 @@
      "notes": "Studio Single layout published for this residence. Boston University publishes each residence's room layouts and floor plans but no dimensions in text, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Six Bay State Road buildings — 94, 110, 112, 115, 133 and 139 — of shared or single one-bedroom and studio units, each with a kitchen and bathroom."
+   "notes": "Six Bay State Road buildings (94, 110, 112, 115, 133 and 139) of shared or single one-bedroom and studio units, each with a kitchen and bathroom."
   },
   {
    "dorm_id": "central-campus-apartments",

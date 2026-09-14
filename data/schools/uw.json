@@ -13,7 +13,7 @@
  ],
  "housing_url": "https://hfs.uw.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from University of Washington Housing & Food Services' official residence-hall pages. UW publishes the exact mix of room types in every hall — down to the number of units of each — plus the bathroom style, but keeps room dimensions in the StarRez housing portal rather than on the public pages, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Note how much of UW's stock has private in-room bathrooms, which is unusual and changes what fits in the room. Beds are Twin XL.",
+ "campus_notes": "Compiled 2026-09-14 from University of Washington Housing & Food Services' official residence-hall pages. UW publishes the exact mix of room types in every hall (down to the number of units of each) plus the bathroom style, but keeps room dimensions in the StarRez housing portal rather than on the public pages, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Note how much of UW's stock has private in-room bathrooms, which is unusual and changes what fits in the room. Beds are Twin XL.",
  "dorms": [
   {
    "dorm_id": "alder-hall",

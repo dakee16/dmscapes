@@ -12,7 +12,7 @@
  ],
  "housing_url": "https://studentaffairs.auburn.edu/housing/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from Auburn University Housing's official community pages. Auburn publishes bedroom, bathroom, closet and furniture dimensions for The Hill, The Quad and The Village — including the adjustable bed-frame height range — and notes that all measurements are approximate and may vary by room. Concourse Hall and South Donahue publish room types and furnishings but no dimensions, so those rooms use the site's estimate fallback and are labelled as estimates. Most beds are Twin XL on adjustable, bunkable frames; the private South Donahue suite bedrooms have queen beds, which is flagged because no standard dorm bedding will fit them.",
+ "campus_notes": "Compiled 2026-09-14 from Auburn University Housing's official community pages. Auburn publishes bedroom, bathroom, closet and furniture dimensions for The Hill, The Quad and The Village (including the adjustable bed-frame height range) and notes that all measurements are approximate and may vary by room. Concourse Hall and South Donahue publish room types and furnishings but no dimensions, so those rooms use the site's estimate fallback and are labelled as estimates. Most beds are Twin XL on adjustable, bunkable frames; the private South Donahue suite bedrooms have queen beds, which is flagged because no standard dorm bedding will fit them.",
  "dorms": [
   {
    "dorm_id": "boyd-hall",
@@ -501,7 +501,7 @@
      "notes": "Limited single availability. Auburn notes all measurements are approximate and may vary by room."
     }
    ],
-   "notes": "Ten historic residence halls — Upper Quad (1938) and Lower Quad (1952) — housing about 1,000 undergraduates. Keller and Owen halls are offline for renovation during 2026-27.",
+   "notes": "Ten historic residence halls, Upper Quad (1938) and Lower Quad (1952), housing about 1,000 undergraduates. Keller and Owen halls are offline for renovation during 2026-27.",
    "population": 1000,
    "building_type": "Suite-style"
   },
@@ -566,7 +566,7 @@
      "notes": "Private bedroom in a 1-, 2-, 3- or 4-bedroom suite; the shared living area is about 13'5\" x 10'8\" with 8' ceilings and a sink, counter and cabinets. Open closet with a curtain rod rather than a door. Auburn notes all measurements are approximate and may vary by room."
     }
    ],
-   "notes": "Eight residence halls across Village East, West and South housing about 1,500 undergraduates — freshmen, honors students and sorority members. Layouts are 1BR/1BA, 2BR/1BA, 3BR/1BA and 4BR/2BA.",
+   "notes": "Eight residence halls across Village East, West and South housing about 1,500 undergraduates: freshmen, honors students and sorority members. Layouts are 1BR/1BA, 2BR/1BA, 3BR/1BA and 4BR/2BA.",
    "population": 1500,
    "building_type": "Suite-style"
   },

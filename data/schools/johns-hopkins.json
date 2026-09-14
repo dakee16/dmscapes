@@ -12,7 +12,7 @@
  ],
  "housing_url": "https://studentaffairs.jhu.edu/on-campus-living/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from Johns Hopkins Student Affairs' official residence-hall descriptions. Hopkins describes each hall's style precisely — corridor-style doubles and singles in AMR II, two-bedroom suites in AMR III, two- and three-bedroom suites with a kitchenette in McCoy and Wolman — and provides floor plans and room renderings, but states room size varies and publishes no dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" AMR I is excluded: construction to replace it with a new residence hall and dining facility began in May 2026. Beds are Twin XL.",
+ "campus_notes": "Compiled 2026-09-14 from Johns Hopkins Student Affairs' official residence-hall descriptions. Hopkins describes each hall's style precisely (corridor-style doubles and singles in AMR II, two-bedroom suites in AMR III, two- and three-bedroom suites with a kitchenette in McCoy and Wolman) and provides floor plans and room renderings, but states room size varies and publishes no dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" AMR I is excluded: construction to replace it with a new residence hall and dining facility began in May 2026. Beds are Twin XL.",
  "dorms": [
   {
    "dorm_id": "amr-ii",

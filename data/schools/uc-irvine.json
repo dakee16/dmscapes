@@ -713,7 +713,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.uci.edu/rates/",
      "data_confidence": "medium",
-     "notes": "411 sq ft studio — the published area is the whole unit, which for a studio is the room itself. UCI publishes no length x width, so the footprint is estimated from similar rooms."
+     "notes": "411 sq ft studio: the published area is the whole unit, which for a studio is the room itself. UCI publishes no length x width, so the footprint is estimated from similar rooms."
     },
     {
      "room_type": "apartment_bedroom",
@@ -928,7 +928,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.uci.edu/rates/",
      "data_confidence": "medium",
-     "notes": "350 sq ft studio — the published area is the whole unit, which for a studio is the room itself. Footprint estimated from similar rooms."
+     "notes": "350 sq ft studio: the published area is the whole unit, which for a studio is the room itself. Footprint estimated from similar rooms."
     },
     {
      "room_type": "apartment_bedroom",

@@ -13,7 +13,7 @@
  ],
  "housing_url": "https://www.colorado.edu/living/housing/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from CU Boulder University Housing & Residence Life's official hall pages and its \"what we provide\" furnishing list. CU Boulder is unusual in publishing a per-student figure — 60 to 100 square feet of living space — rather than a room size, and says plainly that rooms come in a wide variety of sizes and layouts, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Dresser and mattress sizes are CU's own published measurements. Air conditioning is recorded per hall because most of the older central-campus halls have none — Baker uses evaporative cooling and Willard, Farrand and Libby have neither. Only halls with a live official page are included.",
+ "campus_notes": "Compiled 2026-09-14 from CU Boulder University Housing & Residence Life's official hall pages and its \"what we provide\" furnishing list. CU Boulder is unusual in publishing a per-student figure (60 to 100 square feet of living space) rather than a room size, and says plainly that rooms come in a wide variety of sizes and layouts, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Dresser and mattress sizes are CU's own published measurements. Air conditioning is recorded per hall because most of the older central-campus halls have none: Baker uses evaporative cooling and Willard, Farrand and Libby have neither. Only halls with a live official page are included.",
  "dorms": [
   {
    "dorm_id": "baker-hall",

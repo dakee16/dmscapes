@@ -13,7 +13,7 @@
  ],
  "housing_url": "https://housing.umn.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from University of Minnesota Housing & Residential Life's official hall pages. Minnesota publishes an average square footage for every room type — which most schools do not — but never a length x width, so residence-hall rooms here show a representative rectangle of the published area at a typical width for the occupancy, recorded as medium confidence with the reason stated on each room. Apartment buildings (Yudof, Wilkins) publish whole-unit areas rather than bedroom sizes, so their bedrooms are modeled per bedroom with the unit area noted and the bedroom footprint estimated from similar rooms. Bailey Hall is excluded: it is closed for the 2026-27 academic year. Beds are extra-long twin (36\" x 80\").",
+ "campus_notes": "Compiled 2026-09-14 from University of Minnesota Housing & Residential Life's official hall pages. Minnesota publishes an average square footage for every room type (which most schools do not) but never a length x width, so residence-hall rooms here show a representative rectangle of the published area at a typical width for the occupancy, recorded as medium confidence with the reason stated on each room. Apartment buildings (Yudof, Wilkins) publish whole-unit areas rather than bedroom sizes, so their bedrooms are modeled per bedroom with the unit area noted and the bedroom footprint estimated from similar rooms. Bailey Hall is excluded: it is closed for the 2026-27 academic year. Beds are extra-long twin (36\" x 80\").",
  "dorms": [
   {
    "dorm_id": "17th-avenue",
@@ -872,7 +872,7 @@
      "notes": "11 triples; bathroom shared by roughly 5 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
     }
    ],
-   "notes": "Superblock. Bathrooms are shared by only about five rooms — among the lowest ratios on campus."
+   "notes": "Superblock. Bathrooms are shared by only about five rooms, among the lowest ratios on campus."
   },
   {
    "dorm_id": "sanford",
@@ -1108,7 +1108,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.umn.edu/territorial",
      "data_confidence": "medium",
-     "notes": "About 337 doubles — Territorial is almost entirely doubles. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+     "notes": "About 337 doubles: Territorial is almost entirely doubles. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
     },
     {
      "room_type": "triple_private_bath",
@@ -1324,7 +1324,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.umn.edu/yudof",
      "data_confidence": "low",
-     "notes": "About 26 four-person, two-bedroom apartments at 560 sq ft for the whole unit — two residents per bedroom. Bedroom size estimated from similar rooms."
+     "notes": "About 26 four-person, two-bedroom apartments at 560 sq ft for the whole unit, two residents per bedroom. Bedroom size estimated from similar rooms."
     }
    ],
    "notes": "East River neighborhood. Built 2002; 6 floors, about 507 first-year and returning residents in apartment-style units with full kitchens and washer/dryers in most units.",
@@ -1457,7 +1457,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.umn.edu/wilkins",
      "data_confidence": "low",
-     "notes": "About 15 two-person, two-bedroom apartments at 756 sq ft for the whole unit — a private bedroom each. Bedroom size estimated from similar rooms."
+     "notes": "About 15 two-person, two-bedroom apartments at 756 sq ft for the whole unit, a private bedroom each. Bedroom size estimated from similar rooms."
     },
     {
      "room_type": "apartment_bedroom",
@@ -1497,7 +1497,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.umn.edu/wilkins",
      "data_confidence": "low",
-     "notes": "About 35 four-person, two-bedroom apartments at 756 sq ft for the whole unit — two residents per bedroom. Bedroom size estimated from similar rooms."
+     "notes": "About 35 four-person, two-bedroom apartments at 756 sq ft for the whole unit, two residents per bedroom. Bedroom size estimated from similar rooms."
     }
    ],
    "notes": "Built 1996; 4 floors, 142 first-year residents in fully furnished apartments with full kitchens. Utilities and laundry included.",

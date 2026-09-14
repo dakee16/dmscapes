@@ -13,7 +13,7 @@
  ],
  "housing_url": "https://housing.unc.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from Carolina Housing's official residence-hall and room-type pages. UNC publishes an average room size on most hall pages and a measured floor plan on each room-type page, but states plainly that \"all room dimensions are approximate and may vary from room to room\" and that it cannot give exact measurements for every space — so hall-page averages are recorded as high confidence and room-type plans applied to halls that do not publish their own are recorded as medium. Suite and apartment units are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL (80\" x 36\"); rooms can be lofted.",
+ "campus_notes": "Compiled 2026-09-14 from Carolina Housing's official residence-hall and room-type pages. UNC publishes an average room size on most hall pages and a measured floor plan on each room-type page, but states plainly that \"all room dimensions are approximate and may vary from room to room\" and that it cannot give exact measurements for every space, so hall-page averages are recorded as high confidence and room-type plans applied to halls that do not publish their own are recorded as medium. Suite and apartment units are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL (80\" x 36\"); rooms can be lofted.",
  "dorms": [
   {
    "dorm_id": "alderman",
@@ -2627,7 +2627,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.unc.edu/explore/residence-hall/craige/",
      "data_confidence": "high",
-     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+     "notes": "Back room, beside the suite bathroom, the larger of the two suite double layouts."
     },
     {
      "room_type": "single_suite",
@@ -2780,7 +2780,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.unc.edu/explore/residence-hall/ehringhaus/",
      "data_confidence": "high",
-     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+     "notes": "Back room, beside the suite bathroom, the larger of the two suite double layouts."
     },
     {
      "room_type": "single_suite",
@@ -2933,7 +2933,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.unc.edu/explore/residence-hall/hinton-james/",
      "data_confidence": "high",
-     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+     "notes": "Back room, beside the suite bathroom, the larger of the two suite double layouts."
     },
     {
      "room_type": "single_suite",
@@ -2980,7 +2980,7 @@
      "notes": "Private bedroom on a suite bathroom. UNC does not publish a size for the suite single in this hall; estimated from similar rooms."
     }
    ],
-   "notes": "South Campus. Built 1967, remodeled 2013; 10 floors, 964 residents — UNC's largest hall. Eight-person suites: four double bedrooms share one bathroom.",
+   "notes": "South Campus. Built 1967, remodeled 2013; 10 floors, 964 residents, UNC's largest hall. Eight-person suites: four double bedrooms share one bathroom.",
    "population": 964,
    "year_built": 1967,
    "campus_area": "South Campus",
@@ -3096,7 +3096,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.unc.edu/explore/residence-hall/parker/",
      "data_confidence": "high",
-     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+     "notes": "Back room, beside the suite bathroom, the larger of the two suite double layouts."
     }
    ],
    "notes": "Mid-campus. Built 1958, bedrooms remodeled 2013; 4 floors, 167 residents, no elevator. Built-in closets have no doors; overhead storage bins above. Lofted beds clear 55\".",
@@ -3215,7 +3215,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.unc.edu/explore/residence-hall/teague/",
      "data_confidence": "high",
-     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+     "notes": "Back room, beside the suite bathroom, the larger of the two suite double layouts."
     }
    ],
    "notes": "Mid-campus. Built 1958, renovated 2013; 4 floors, 173 residents, no elevator. Windows 60\" x 46\". Built-in closets 36\" w x 26\" d, no doors.",
@@ -3324,7 +3324,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.unc.edu/explore/residence-hall/avery/",
      "data_confidence": "high",
-     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+     "notes": "Back room, beside the suite bathroom, the larger of the two suite double layouts."
     }
    ],
    "notes": "Mid-campus, 295 Ridge Road. Built 1958, fully renovated and reopened 2025 with an elevator tower; 4 floors, 214 residents. Windows 60\" x 46\".",
@@ -4166,7 +4166,7 @@
      "floor_plan_url": null,
      "data_source": "https://housing.unc.edu/explore/room-types/suite-style-single/",
      "data_confidence": "high",
-     "notes": "Carolina Housing's published Carmichael suite single plan — the most private room type on campus."
+     "notes": "Carolina Housing's published Carmichael suite single plan, the most private room type on campus."
     },
     {
      "room_type": "double_suite",

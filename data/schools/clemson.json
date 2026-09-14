@@ -10,7 +10,7 @@
  ],
  "housing_url": "https://housing.clemson.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from Clemson University Housing & Dining's official building pages. Clemson publishes a room footprint for most buildings — usually stated as including the closet or entry space — plus measured desk, dresser, closet, window and bed-frame sizes, so most rooms here come straight from those pages at high confidence; Clemson notes exact measurements may vary. Suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Residence-hall beds are XL twin; the Douthit Hills West apartments use full-size beds instead, which is flagged on those rooms because Twin XL bedding will not fit.",
+ "campus_notes": "Compiled 2026-09-14 from Clemson University Housing & Dining's official building pages. Clemson publishes a room footprint for most buildings (usually stated as including the closet or entry space) plus measured desk, dresser, closet, window and bed-frame sizes, so most rooms here come straight from those pages at high confidence; Clemson notes exact measurements may vary. Suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Residence-hall beds are XL twin; the Douthit Hills West apartments use full-size beds instead, which is flagged on those rooms because Twin XL bedding will not fit.",
  "dorms": [
   {
    "dorm_id": "cope",
@@ -1943,7 +1943,7 @@
      "notes": "Select single rooms. Size not published; estimated from similar rooms."
     }
    ],
-   "notes": "Seven fraternity and sorority halls — Wannamaker, Simpson South, Simpson North, Norris, Bowen, Bradley and Donaldson — housing 442 undergraduates across 344 spaces. Hall-style bathrooms per floor.",
+   "notes": "Seven fraternity and sorority halls (Wannamaker, Simpson South, Simpson North, Norris, Bowen, Bradley and Donaldson) housing 442 undergraduates across 344 spaces. Hall-style bathrooms per floor.",
    "population": 344,
    "building_type": "Traditional",
    "bathroom_configuration": "Hall-style"

@@ -12,7 +12,7 @@
  ],
  "housing_url": "https://housingmealplans.syr.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from Syracuse University Housing's official residence-hall directory. Syracuse publishes each hall's neighborhood, capacity and exact mix of room types — including its distinctive split double, a room divided by a wall into two halves — but no room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are Twin XL. Worth knowing before you plan: a split double is two narrow halves, not one open rectangle, so a layout drawn for an open double will not transfer.",
+ "campus_notes": "Compiled 2026-09-14 from Syracuse University Housing's official residence-hall directory. Syracuse publishes each hall's neighborhood, capacity and exact mix of room types (including its distinctive split double, a room divided by a wall into two halves) but no room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are Twin XL. Worth knowing before you plan: a split double is two narrow halves, not one open rectangle, so a layout drawn for an open double will not transfer.",
  "dorms": [
   {
    "dorm_id": "boland-hall",
@@ -98,7 +98,7 @@
      "floor_plan_url": null,
      "data_source": "https://housingmealplans.syr.edu/residential-facilities/residence-halls/",
      "data_confidence": "low",
-     "notes": "A split double is divided by a wall into two halves, shared with one roommate — Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "A split double is divided by a wall into two halves, shared with one roommate, Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
    "notes": "West Neighborhood. About 290 residents.",
@@ -229,7 +229,7 @@
      "floor_plan_url": null,
      "data_source": "https://housingmealplans.syr.edu/residential-facilities/residence-halls/",
      "data_confidence": "low",
-     "notes": "A split double is divided by a wall into two halves, shared with one roommate — Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "A split double is divided by a wall into two halves, shared with one roommate, Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     },
     {
      "room_type": "double_suite",
@@ -400,7 +400,7 @@
      "floor_plan_url": null,
      "data_source": "https://housingmealplans.syr.edu/residential-facilities/residence-halls/",
      "data_confidence": "low",
-     "notes": "A split double is divided by a wall into two halves, shared with one roommate — Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "A split double is divided by a wall into two halves, shared with one roommate, Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     },
     {
      "room_type": "quad_suite",
@@ -662,7 +662,7 @@
      "floor_plan_url": null,
      "data_source": "https://housingmealplans.syr.edu/residential-facilities/residence-halls/",
      "data_confidence": "low",
-     "notes": "A split double is divided by a wall into two halves, shared with one roommate — Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "A split double is divided by a wall into two halves, shared with one roommate, Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
    "notes": "Mount Olympus Neighborhood. About 540 residents.",
@@ -793,7 +793,7 @@
      "floor_plan_url": null,
      "data_source": "https://housingmealplans.syr.edu/residential-facilities/residence-halls/",
      "data_confidence": "low",
-     "notes": "A split double is divided by a wall into two halves, shared with one roommate — Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "A split double is divided by a wall into two halves, shared with one roommate, Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
    "notes": "East Neighborhood. About 450 residents.",
@@ -884,7 +884,7 @@
      "floor_plan_url": null,
      "data_source": "https://housingmealplans.syr.edu/residential-facilities/residence-halls/",
      "data_confidence": "low",
-     "notes": "A split double is divided by a wall into two halves, shared with one roommate — Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "A split double is divided by a wall into two halves, shared with one roommate, Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
    "notes": "East Neighborhood. About 250 residents.",
@@ -1277,7 +1277,7 @@
      "floor_plan_url": null,
      "data_source": "https://housingmealplans.syr.edu/residential-facilities/residence-halls/",
      "data_confidence": "low",
-     "notes": "A split double is divided by a wall into two halves, shared with one roommate — Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "A split double is divided by a wall into two halves, shared with one roommate, Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     },
     {
      "room_type": "double",
@@ -1710,7 +1710,7 @@
      "floor_plan_url": null,
      "data_source": "https://housingmealplans.syr.edu/residential-facilities/residence-halls/",
      "data_confidence": "low",
-     "notes": "A split double is divided by a wall into two halves, shared with one roommate — Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "A split double is divided by a wall into two halves, shared with one roommate, Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
    "notes": "West Neighborhood. About 490 residents.",
@@ -1841,7 +1841,7 @@
      "floor_plan_url": null,
      "data_source": "https://housingmealplans.syr.edu/residential-facilities/residence-halls/",
      "data_confidence": "low",
-     "notes": "A split double is divided by a wall into two halves, shared with one roommate — Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "A split double is divided by a wall into two halves, shared with one roommate, Syracuse's distinctive layout. Syracuse publishes each hall's room types and capacity but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
    "notes": "East Neighborhood. About 475 residents.",

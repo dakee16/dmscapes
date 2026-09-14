@@ -13,7 +13,7 @@
  ],
  "housing_url": "https://reslife.tamu.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from Texas A&M Residence Life's official housing-style pages and 3D tours. Texas A&M organises its on-campus housing by hall style rather than by building — Commons, Corridor, Modular, Ramp, Balcony and Hullabaloo, plus the White Creek Apartments — and publishes an example space for each style, which is how this entry is structured. Per-hall room and furniture dimensions exist but live inside the housing portal's floor-plan viewer rather than on the public site, and Texas A&M notes specifications vary from hall to hall and room to room, so rooms here use the site's estimate fallback and are labelled \"Estimated based on similar rooms. Official size not published.\" Beds are Twin XL.",
+ "campus_notes": "Compiled 2026-09-14 from Texas A&M Residence Life's official housing-style pages and 3D tours. Texas A&M organises its on-campus housing by hall style rather than by building (Commons, Corridor, Modular, Ramp, Balcony and Hullabaloo, plus the White Creek Apartments) and publishes an example space for each style, which is how this entry is structured. Per-hall room and furniture dimensions exist but live inside the housing portal's floor-plan viewer rather than on the public site, and Texas A&M notes specifications vary from hall to hall and room to room, so rooms here use the site's estimate fallback and are labelled \"Estimated based on similar rooms. Official size not published.\" Beds are Twin XL.",
  "dorms": [
   {
    "dorm_id": "commons",
@@ -59,7 +59,7 @@
      "floor_plan_url": null,
      "data_source": "https://reslife.tamu.edu/",
      "data_confidence": "low",
-     "notes": "Suites where two rooms share a bathroom — a balance of privacy and community. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "Suites where two rooms share a bathroom, a balance of privacy and community. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
     },
     {
      "room_type": "single_suite",
@@ -99,10 +99,10 @@
      "floor_plan_url": null,
      "data_source": "https://reslife.tamu.edu/",
      "data_confidence": "low",
-     "notes": "Suites where two rooms share a bathroom — a balance of privacy and community. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "Suites where two rooms share a bathroom, a balance of privacy and community. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Suites where two rooms share a bathroom — a balance of privacy and community.",
+   "notes": "Suites where two rooms share a bathroom, a balance of privacy and community.",
    "building_type": "Commons-Style Halls"
   },
   {
@@ -239,7 +239,7 @@
      "floor_plan_url": null,
      "data_source": "https://reslife.tamu.edu/",
      "data_confidence": "low",
-     "notes": "Private bathrooms shared only with a roommate — the most private of the traditional styles. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "Private bathrooms shared only with a roommate, the most private of the traditional styles. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
     },
     {
      "room_type": "single_private_bath",
@@ -279,10 +279,10 @@
      "floor_plan_url": null,
      "data_source": "https://reslife.tamu.edu/",
      "data_confidence": "low",
-     "notes": "Private bathrooms shared only with a roommate — the most private of the traditional styles. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+     "notes": "Private bathrooms shared only with a roommate, the most private of the traditional styles. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Private bathrooms shared only with a roommate — the most private of the traditional styles.",
+   "notes": "Private bathrooms shared only with a roommate, the most private of the traditional styles.",
    "building_type": "Modular-Style Halls"
   },
   {

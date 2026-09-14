@@ -12,7 +12,7 @@
  ],
  "housing_url": "https://residentiallife.nd.edu/",
  "data_collected": "2026-09-14",
- "campus_notes": "Compiled 2026-09-14 from Notre Dame Residential Life's official hall directory. Notre Dame has 32 single-gender undergraduate halls and students typically stay in the same hall all four years, so the hall matters more here than at most universities. Residential Life states that room dimensions differ for every room and keeps per-hall floor plans behind a student login, so rooms use the site's estimate fallback and are labelled as estimates — with one exception: Johnson Family Hall publishes its average room sizes, which are recorded here at high confidence. Beds are Twin XL.",
+ "campus_notes": "Compiled 2026-09-14 from Notre Dame Residential Life's official hall directory. Notre Dame has 32 single-gender undergraduate halls and students typically stay in the same hall all four years, so the hall matters more here than at most universities. Residential Life states that room dimensions differ for every room and keeps per-hall floor plans behind a student login, so rooms use the site's estimate fallback and are labelled as estimates: with one exception: Johnson Family Hall publishes its average room sizes, which are recorded here at high confidence. Beds are Twin XL.",
  "dorms": [
   {
    "dorm_id": "alumni-hall",
@@ -111,7 +111,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -211,7 +211,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -311,7 +311,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -411,7 +411,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -511,7 +511,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -611,7 +611,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -711,7 +711,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -811,7 +811,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -911,7 +911,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -1011,7 +1011,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -1111,7 +1111,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -1211,7 +1211,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -1311,7 +1311,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -1411,7 +1411,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -1511,7 +1511,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -1611,7 +1611,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -1711,7 +1711,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Men"
   },
   {
@@ -1811,7 +1811,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -1911,7 +1911,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -2011,7 +2011,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -2111,7 +2111,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -2211,7 +2211,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -2311,7 +2311,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -2411,7 +2411,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -2511,7 +2511,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -2611,7 +2611,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -2711,7 +2711,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -2811,7 +2811,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -2911,7 +2911,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -3011,7 +3011,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
@@ -3111,7 +3111,7 @@
      "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
     }
    ],
-   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities: students stay in the same hall all four years and halls field their own interhall sports teams.",
    "gender": "Women"
   },
   {
