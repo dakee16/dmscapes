@@ -1,4 +1,5 @@
 import type { FurnitureItem, ProductCategory, RoomOutline, SelectedRoom } from "./types";
+import { furnitureCategory } from "./highlight";
 import { footprint, rectInsidePolygon } from "@/components/canvas/geometry";
 
 export interface StudioSettings {
@@ -54,7 +55,7 @@ export function itemElevation(f: FurnitureItem, items: FurnitureItem[]): number 
   return host ? itemHeight(host) : 0;
 }
 export function visibleFurniture(items: FurnitureItem[], hidden: string[], excluded: ProductCategory[]): FurnitureItem[] {
-  return items.filter(f=>!hidden.includes(f.id) && (f.built_in || !f.product_category || !excluded.includes(f.product_category as ProductCategory)));
+  return items.filter(f=>!hidden.includes(f.id) && (f.built_in || !furnitureCategory(f) || !excluded.includes(furnitureCategory(f)!)));
 }
 export function constrainedPosition(f: FurnitureItem, x: number, y: number, room: SelectedRoom, snap: boolean): {x:number;y:number} {
   const b=footprint(f), round=(n:number)=>snap?Math.round(n*2)/2:Math.round(n*100)/100;

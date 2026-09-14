@@ -23,6 +23,8 @@ export interface PlannerSeed {
   products: Partial<Record<ProductCategory, string>> | null;
   /** Hand-drawn rooms only: the outline, restored so the shape/openings return. */
   outline?: RoomOutline | null;
+  studio?: import("@/lib/studio").StudioSettings;
+  editor?: import("@/lib/studio-save").SavedEditorState;
 }
 
 /**
@@ -59,12 +61,22 @@ export default function OpenInPlanner({
         source: seed.outline ? "drawn" : school ? "catalog" : "manual",
         dimsEstimated: seed.estimated ?? false,
         outline: seed.outline ?? null,
+        studio: seed.studio,
       },
       style: seed.style,
       budget: seed.budget,
       templateId: seed.template_id,
       furniture: seed.furniture.map((f) => ({ ...f })),
       swaps: seed.products ?? {},
+      hiddenItemIds:seed.editor?.hiddenItemIds??[],
+      lockedItemIds:seed.editor?.lockedItemIds??[],
+      excluded:seed.editor?.excluded??null,
+      customItems:seed.editor?.customItems??[],
+      unplacedItemIds:seed.editor?.unplacedItemIds??[],
+      customProducts:seed.editor?.customProducts??null,
+      customVibe:seed.editor?.customVibe??null,
+      customMock:seed.editor?.customMock??false,
+      customRegenUsed:seed.editor?.customRegenUsed??false,
       hoveredCategory: null,
       selectedCategory: null,
       selectedItemId: null,

@@ -31,5 +31,7 @@ export function furnitureCategory(f: FurnitureItem): ProductCategory | null {
   if (f.product_category && CATEGORY_BY_PRODUCT_TAG[f.product_category]) {
     return CATEGORY_BY_PRODUCT_TAG[f.product_category];
   }
+  const direct=["bedding","rug","desk_lamp","ambient_lighting","wall_decor","storage","throw","curtains","desk_accessories","mirror","laundry_hamper","power_strip","trash_can","towel_caddy","accent","plant","tapestry","desk_organizer","clip_fan"];
+  if(f.product_category && direct.includes(f.product_category))return f.product_category as ProductCategory;
   return CATEGORY_BY_TYPE[f.type] ?? null;
 }

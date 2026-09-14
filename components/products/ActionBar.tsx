@@ -95,6 +95,10 @@ export default function ActionBar({
         // Hand-drawn rooms carry their outline so a reopened design keeps its
         // real shape and doors/windows/closets.
         outline: s.room.outline ?? null,
+        studio: s.room.studio,
+        editor: {hiddenItemIds:s.hiddenItemIds,lockedItemIds:s.lockedItemIds,excluded:s.excluded??[],
+          customItems:s.customItems,unplacedItemIds:s.unplacedItemIds,customProducts:s.customProducts,
+          customVibe:s.customVibe,customMock:s.customMock,customRegenUsed:s.customRegenUsed,cartProducts:products},
       },
       style: s.style,
       budget: s.budget,

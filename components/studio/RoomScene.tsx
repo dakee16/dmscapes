@@ -28,7 +28,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
     selectedId:props.selectedId,items:visibleFurniture(props.items,props.hidden,props.excluded).map(f=>{
       const b=footprint(f),product=props.products?.find(p=>p.id===f.id)||props.products?.find(p=>p.category===furnitureCategory(f));
       const color=/^#[0-9a-f]{6}$/i.test(product?.color??"")?product!.color:undefined;
-      return {...f,material_color:f.material_color||color,kind:modelKind(f),height:f.height_ft??product?.height_ft??itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:Boolean(props.readOnly)||props.locked.includes(f.id)};
+      return {...f,material_color:f.material_color||color,kind:modelKind(f),height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:Boolean(props.readOnly)||props.locked.includes(f.id)};
     })};
   const latest=useRef(data);latest.current=data;
   useImperativeHandle(ref,()=>({exportPNG:()=>view.current?.exportPNG()??null,preset:m=>view.current?.preset(m),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);

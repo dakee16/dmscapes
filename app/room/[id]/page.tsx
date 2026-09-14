@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteHeader from "@/components/site/SiteHeader";
 import OpenInPlanner from "@/components/room/OpenInPlanner";
-import StaticRoomView from "@/components/room/StaticRoomView";
+import SharedRoomStudio from "@/components/studio/SharedRoomStudio";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import type { SaveRoomRequest } from "@/lib/api-types";
 import { CATEGORY_LABELS, CATEGORY_ORDER, cartUrl, productById, totalFor } from "@/lib/catalog";
@@ -46,7 +46,7 @@ export default async function SharedRoomPage(props: {
   const dims = room.room_dimensions;
   const school = room.college_id ? getSchool(room.college_id) : undefined;
   const style = styleById(room.style);
-  const products = CATEGORY_ORDER.map((cat) => {
+  const products = dims.editor?.cartProducts ?? CATEGORY_ORDER.map((cat) => {
     const pid = room.selected_products?.[cat];
     return pid ? productById(pid) : undefined;
   }).filter((p): p is Product => Boolean(p));
@@ -76,7 +76,7 @@ export default async function SharedRoomPage(props: {
 
         <div className="mt-8 flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <h1 className="dm-page-title font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
-            {style.emoji} {style.name} room
+            {dims.editor?.customVibe || style.name} room
           </h1>
           <p className="min-w-0 font-mono text-sm text-ink-soft">
             {school ? `${school.name} · ` : ""}
@@ -92,6 +92,8 @@ export default async function SharedRoomPage(props: {
         <div className="mt-6 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           {/* self-start: the card hugs its content instead of stretching to
               match the list. Clicking it reopens the design in the planner. */}
+          <div className="min-w-0 self-start">
+          <SharedRoomStudio room={{type:dims.room_type,occupants:dims.occupants??1,lengthFt:dims.length_ft,widthFt:dims.width_ft,bedSize:"twin_xl",source:dims.outline?"drawn":"manual",outline:dims.outline??null,studio:dims.studio}} items={room.furniture_positions} style={room.style} products={products} editor={dims.editor}/>
           <OpenInPlanner
             seed={{
               college_id: room.college_id,
@@ -107,20 +109,14 @@ export default async function SharedRoomPage(props: {
               furniture: room.furniture_positions,
               products: room.selected_products ?? null,
               outline: dims.outline ?? null,
+              studio: dims.studio,
+              editor: dims.editor,
             }}
             className="dm-editorial-card group block w-full cursor-pointer self-start rounded-xl border border-ink/10 bg-card p-4 text-left transition-colors hover:border-cobalt sm:p-6"
           >
-            <StaticRoomView
-              lengthFt={dims.length_ft}
-              widthFt={dims.width_ft}
-              furniture={room.furniture_positions}
-              isCorridor={room.template_id.startsWith("corridor-")}
-              outline={dims.outline ?? null}
-            />
-            <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-wide text-ink-soft transition-colors group-hover:text-cobalt">
-              Designed with Dormscape
-            </p>
+            <p className="text-center text-sm font-semibold text-cobalt">Open this design in the planner ↗</p>
           </OpenInPlanner>
+          </div>
 
           <div>
             <div className="flex flex-wrap items-center justify-between gap-3">
