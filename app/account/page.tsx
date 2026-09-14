@@ -9,8 +9,8 @@ import RoomThumb from "@/components/room/RoomThumb";
 import ShareButton from "@/components/room/ShareButton";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { hasFeatures, showCredits, planLabel, isPlusTier } from "@/lib/plan";
-import CreditMeter from "@/components/site/CreditMeter";
+import { hasFeatures } from "@/lib/plan";
+import { AccountHeader, MembershipCard, IdentityCard, accountStyles as s } from "@/components/account/AccountUI";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
 import { getSchool } from "@/lib/schools";
@@ -35,80 +35,40 @@ function DesignTile({ room }: { room: AccountRoomSummary }) {
       : `/room/${room.id}`;
 
   return (
-    <div className="dm-account-tile relative flex items-center gap-4 rounded-xl border border-ink/10 bg-card p-4 transition-shadow hover:shadow-[0_16px_40px_-20px_rgba(23,23,43,0.35)] sm:p-5">
-      {/* Stretched link: whole tile opens the read-only room view. The share
-          button sits above it (relative + z) so it stays independently clickable. */}
-      <Link
-        href={`/room/${room.id}`}
-        aria-label={`Open ${room.name}`}
-        className="absolute inset-0 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-cobalt"
-      />
-      <div
-        className="pointer-events-none w-20 shrink-0 overflow-hidden rounded-lg border border-ink/10 bg-white p-1 sm:w-24"
-        aria-hidden="true"
-      >
+    <article className={s.designTile}>
+      <Link href={`/room/${room.id}`} aria-label={`Open ${room.name}`} className={s.tileLink} />
+      <div className={s.thumbnail} aria-hidden="true">
         {room.length_ft && room.width_ft && room.furniture?.length ? (
-          <RoomThumb
-            lengthFt={room.length_ft}
-            widthFt={room.width_ft}
-            furniture={room.furniture}
-            outline={room.outline ?? null}
-            className="h-auto w-full"
-          />
-        ) : (
-          <div className="h-12 rounded bg-paper" />
-        )}
+          <RoomThumb lengthFt={room.length_ft} widthFt={room.width_ft} furniture={room.furniture}
+            outline={room.outline ?? null} className="h-auto w-full" />
+        ) : <span className={s.thumbnailFallback}>Your room, saved</span>}
       </div>
-      <div className="pointer-events-none min-w-0 flex-1">
-        <h3 className="font-display text-base font-bold tracking-tight">
-          {room.name}
-        </h3>
-        {place && <p className="mt-0.5 truncate text-sm text-ink-soft">{place}</p>}
-        <p className="mt-1 truncate font-mono text-xs text-ink-soft">
-          {style.name} · {formatRoomType(room.room_type)} · ${room.budget}
-        </p>
+      <div className={s.tileBody}>
+        <div className={s.tileMeta}><span>{style.name}</span><span>{formatRoomType(room.room_type)}</span></div>
+        <h3>{room.name}</h3>
+        {place && <p>{place}</p>}
+        <p>Budget: ${room.budget}</p>
       </div>
-      <div className="relative z-10 shrink-0">
-        <ShareButton url={url} title={room.name} from="account" />
-      </div>
-    </div>
+      <div className={s.tileShare}><ShareButton url={url} title={room.name} from="account" /></div>
+    </article>
   );
 }
 
 function EmptyState() {
   return (
-    <div className="rounded-2xl border border-dashed border-ink/20 bg-white px-6 py-12 text-center">
-      <div
-        className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-highlight/40 text-3xl"
-        aria-hidden="true"
-      >
-        🛏️
-      </div>
-      <h3 className="mt-4 font-display text-xl font-bold tracking-tight">
-        No saved designs yet
-      </h3>
-      <p className="mx-auto mt-1.5 max-w-sm text-sm leading-relaxed text-ink-soft">
-        Plan a room you love, give it a name, and it&apos;ll live here so you can pick
-        up on any device. Want to save one?
-      </p>
-      <Link
-        href="/plan"
-        className="mt-5 inline-flex h-11 items-center rounded-xl bg-ink px-6 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
-      >
-        Plan my room
-      </Link>
+    <div className={s.empty}>
+      <span className={s.emptyMark} aria-hidden="true">Make room.</span>
+      <h3>Your first design belongs here.</h3>
+      <p>Start with your room, find your vibe, and save a layout you love. Your saved designs stay together across devices.</p>
+      <Link href="/plan" className={s.primary}>Plan my room <span aria-hidden="true">↗</span></Link>
     </div>
   );
 }
 
 function ListSkeleton() {
-  return (
-    <div className="space-y-3" aria-busy="true" aria-label="Loading your designs">
-      {Array.from({ length: 3 }).map((_, i) => (
-        <div key={i} className="h-[88px] animate-pulse rounded-xl bg-ink/8" />
-      ))}
-    </div>
-  );
+  return <div className={s.designGrid} aria-busy="true" aria-label="Loading your designs">
+    {[0, 1, 2].map(i => <div key={i} className={s.skeleton} />)}
+  </div>;
 }
 
 export default function AccountPage() {
@@ -179,123 +139,41 @@ export default function AccountPage() {
     <div>
       <SiteHeader />
       <PurchaseThankYou />
-      <main id="page-content" tabIndex={-1} className="dm-page relative mx-auto max-w-4xl px-5 py-10 sm:px-8">
-        {!ready ? (
-          <div aria-busy="true" aria-label="Loading your account">
-            <div className="h-9 w-40 animate-pulse rounded-lg bg-ink/8" />
-            <div className="mt-2 h-4 w-56 animate-pulse rounded bg-ink/5" />
-            <div className="mt-10 h-6 w-32 animate-pulse rounded bg-ink/8" />
-            <div className="mt-4">
-              <ListSkeleton />
-            </div>
-          </div>
-        ) : (
+      <main id="page-content" tabIndex={-1} className={`dm-page ${s.page}`}>
+        <AccountHeader active="overview" title="Your personal" accent="studio."
+          description="All your room ideas, with room for the next one."
+          action={<Link href="/plan" className={s.primary}>New room plan <span aria-hidden="true">↗</span></Link>} />
+        {!ready ? <ListSkeleton /> : (
           <>
-            {/* Identity */}
-            <header>
-              <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-                Your account
-              </p>
-              <h1 className="dm-page-title mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
-                {profile?.username ? `@${profile.username}` : "Welcome back"}
-              </h1>
-              {user?.email && (
-                <p className="mt-1 text-sm text-ink-soft">{user.email}</p>
-              )}
-              {!profile?.username && (
-                <button
-                  type="button"
-                  onClick={() => openAuthModal("profile")}
-                  className="mt-3 cursor-pointer rounded-lg border border-ink/15 bg-white px-3.5 py-1.5 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
-                >
-                  Set a username
-                </button>
-              )}
-            </header>
-
-            {/* Plan credits: a persistent, always-visible read on the credit
-                counter, with a link to Billing. Plus and Flex accounts (the two
-                tiers with a moving credit balance). */}
-            {showCredits(profile) && (
-              <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-xl border border-cobalt/20 bg-cobalt/[0.04] px-4 py-3">
-                <span className="font-mono text-[11px] font-medium uppercase tracking-wide text-ink-soft">
-                  {planLabel(profile)} credits
-                </span>
-                <CreditMeter recharge={false} />
-                <Link
-                  href="/account/billing"
-                  className="ml-auto text-sm font-semibold text-cobalt underline-offset-2 transition-colors hover:underline"
-                >
-                  {isPlusTier(profile) ? "Recharge" : "Buy more"}
-                </Link>
+            <div className={s.overview}>
+              <section className={s.welcome} aria-label="Account overview">
+                <IdentityCard name={profile?.full_name} username={profile?.username} email={user?.email} />
+                <p className={s.welcomeText}>A space for everything you&apos;re imagining. Revisit your layouts, share your favorites, or start something new.</p>
+                {!profile?.username && <button type="button" onClick={() => openAuthModal("profile")} className={s.secondary}>Set a username</button>}
+                <dl className={s.stats}>
+                  <div><dt>Saved designs</dt><dd>{designs === null || loadFailed ? "…" : designs.length}</dd></div>
+                  <div><dt>Your profile</dt><dd><Link href="/account/settings" className="text-base text-cobalt">Edit details ↗</Link></dd></div>
+                </dl>
+              </section>
+              <MembershipCard profile={profile} />
+            </div>
+            <div className={s.sectionHeading}>
+              <div><h2>On your drawing board</h2><p>Your saved rooms, ready for another look.</p></div>
+              {designs && designs.length >= 2 && (canCompare
+                ? <Link href="/account/compare" className={s.secondary}>Compare designs ↗</Link>
+                : <button type="button" onClick={() => openUpgrade("compare")} className={s.secondary}>Compare designs <span className="bg-highlight px-2 py-1 text-xs">Plus</span></button>)}
+            </div>
+            {designs === null ? <ListSkeleton /> : loadFailed ? (
+              <div className={s.error} role="status"><h3>Your designs couldn&apos;t load.</h3>
+                <p>Your saved rooms haven&apos;t changed. Reload the page to try again.</p>
+                <button type="button" className={s.secondary} onClick={() => window.location.reload()}>Try again</button>
               </div>
+            ) : designs.length === 0 ? <EmptyState /> : (
+              <div className={s.designGrid}>{designs.map(room => <DesignTile key={room.id} room={room} />)}</div>
             )}
-
-            {/* Saved designs */}
-            <div className="mt-10 flex flex-wrap items-baseline justify-between gap-3">
-              <h2 className="font-display text-xl font-bold tracking-tight">
-                Saved designs
-              </h2>
-              <div className="flex items-center gap-4">
-                {designs && designs.length >= 2 && (
-                  canCompare ? (
-                    <Link
-                      href="/account/compare"
-                      className="text-sm font-semibold text-cobalt underline-offset-2 transition-colors hover:underline"
-                    >
-                      Compare
-                    </Link>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={() => openUpgrade("compare")}
-                      className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-semibold text-ink-soft transition-colors hover:text-ink"
-                    >
-                      Compare
-                      <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wide text-ink">
-                        Plus
-                      </span>
-                    </button>
-                  )
-                )}
-                {designs && designs.length > 0 && (
-                  <span className="font-mono text-xs text-ink-soft">
-                    {designs.length} saved
-                  </span>
-                )}
-              </div>
-            </div>
-
-            <div className="mt-4">
-              {designs === null ? (
-                <ListSkeleton />
-              ) : designs.length === 0 ? (
-                <>
-                  <EmptyState />
-                  {loadFailed && (
-                    <p className="mt-3 text-center text-xs text-ink-soft" role="status">
-                      Couldn&apos;t reach your saved designs just now. Refresh to try
-                      again.
-                    </p>
-                  )}
-                </>
-              ) : (
-                <div className="grid gap-3 sm:grid-cols-2">
-                  {designs.map((room) => (
-                    <DesignTile key={room.id} room={room} />
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Logout, deliberately red/destructive, set apart from everything else */}
-            <div className="mt-12 flex justify-end border-t border-ink/8 pt-6">
-              <button
-                type="button"
-                onClick={handleLogout}
-                disabled={loggingOut}
-                className="cursor-pointer rounded-lg border border-[#c2321e]/40 bg-white px-4 py-2 text-sm font-semibold text-[#c2321e] transition-colors hover:bg-[#c2321e] hover:text-white disabled:cursor-wait disabled:opacity-60"
-              >
+            <div className={s.footer}>
+              <p>Your ideas live here. Make yourself at home.</p>
+              <button type="button" onClick={handleLogout} disabled={loggingOut} className={s.secondary}>
                 {loggingOut ? "Logging out…" : "Log out"}
               </button>
             </div>

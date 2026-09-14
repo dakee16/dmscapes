@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { AccountHeader, IdentityCard, accountStyles as s } from "@/components/account/AccountUI";
 import SiteHeader from "@/components/site/SiteHeader";
 import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
@@ -30,12 +30,10 @@ function oauthLabel(provider: string | null | undefined): string | null {
   }
 }
 
-const INPUT =
-  "h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt";
-const LABEL = "mb-1.5 block text-sm font-medium";
-const BTN_PRIMARY =
-  "inline-flex h-11 cursor-pointer items-center rounded-xl bg-cobalt px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:opacity-60";
-const CARD = "dm-account-surface rounded-2xl border border-ink/10 bg-card p-5 sm:p-6";
+const INPUT = s.input;
+const LABEL = s.label;
+const BTN_PRIMARY = s.primary;
+const CARD = s.settingsSection;
 
 function toneClass(tone: Tone): string {
   return tone === "bad"
@@ -317,7 +315,9 @@ export default function AccountSettingsPage() {
   return (
     <div>
       <SiteHeader />
-      <main id="page-content" tabIndex={-1} className="dm-page relative mx-auto max-w-5xl px-5 py-10 sm:px-8">
+      <main id="page-content" tabIndex={-1} className={`dm-page ${s.page}`}>
+        <AccountHeader active="settings" title="Make it" accent="yours."
+          description="The details behind your designs. Keep your profile and sign-in information up to date." />
         {!ready ? (
           <div aria-busy="true" aria-label="Loading your settings">
             <div className="h-9 w-48 animate-pulse rounded-lg bg-ink/8" />
@@ -329,38 +329,22 @@ export default function AccountSettingsPage() {
           </div>
         ) : (
           <>
-            <header>
-              <Link
-                href="/account"
-                className="inline-flex items-center gap-1.5 font-mono text-xs font-medium uppercase tracking-[0.14em] text-ink-soft transition-colors hover:text-ink"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="h-3.5 w-3.5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  aria-hidden="true"
-                >
-                  <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                Saved designs
-              </Link>
-              <h1 className="dm-page-title mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
-                Account settings
-              </h1>
-              <p className="mt-1.5 text-sm text-ink-soft">
-                Manage how you sign in and how your designs are labeled.
-              </p>
-            </header>
-
-            {/* Wide desktop: Profile sits beside the Email + Password stack,
-                since they are related but independent forms. Single column
-                below lg. */}
-            <div className="mt-8 grid items-start gap-6 lg:grid-cols-2">
+            <div className={s.settingsLayout}>
+              <aside className={s.settingsAside}>
+                <IdentityCard name={profile?.full_name} username={profile?.username} email={user?.email} />
+                <p>Your profile keeps your room ideas connected to you, wherever you plan next.</p>
+                <nav className={s.settingsLinks} aria-label="Settings sections">
+                  <a href="#profile-details">Profile <span aria-hidden="true">↘</span></a>
+                  <a href="#email-details">Email <span aria-hidden="true">↘</span></a>
+                  <a href="#security-details">Security <span aria-hidden="true">↘</span></a>
+                </nav>
+              </aside>
+              <div className={s.stack}>
               {/* Profile */}
-              <section className={CARD}>
-              <h2 className="font-display text-lg font-bold tracking-tight">Profile</h2>
+              <section id="profile-details" className={CARD}>
+              <p className={s.eyebrow}>01 / Your identity</p>
+              <h2>Profile details</h2>
+              <p>A name and handle that make every shared design yours.</p>
               <form onSubmit={saveProfile} className="mt-4 space-y-4" noValidate>
                 <div>
                   <label htmlFor="set-name" className={LABEL}>
@@ -384,7 +368,7 @@ export default function AccountSettingsPage() {
                   <label htmlFor="set-username" className={LABEL}>
                     Username
                   </label>
-                  <div className="dm-editorial-card flex h-12 items-center rounded-xl border border-ink/15 bg-white pl-4 transition-colors focus-within:border-cobalt">
+                  <div className={s.usernameField}>
                     <span className="font-mono text-sm text-ink-soft" aria-hidden="true">
                       @
                     </span>
@@ -399,7 +383,7 @@ export default function AccountSettingsPage() {
                         setProfileMsg(null);
                       }}
                       placeholder="dormdesigner"
-                      className="focus-quiet h-full flex-1 rounded-r-xl bg-transparent px-1.5 text-base outline-none placeholder:text-ink-soft/60"
+                      className="focus-quiet"
                     />
                   </div>
                   <FieldMsg msg={uHint} />
@@ -437,10 +421,11 @@ export default function AccountSettingsPage() {
               </form>
             </section>
 
-              <div className="space-y-6">
+              <div className={s.stack}>
                 {/* Email */}
-                <section className={CARD}>
-              <h2 className="font-display text-lg font-bold tracking-tight">Email</h2>
+                <section id="email-details" className={CARD}>
+              <p className={s.eyebrow}>02 / Stay connected</p>
+              <h2>Email address</h2>
               <p className="mt-1 text-sm text-ink-soft">
                 We&apos;ll send a confirmation link to the new address. Your email
                 only changes once you click it.
@@ -477,8 +462,9 @@ export default function AccountSettingsPage() {
             </section>
 
                 {/* Password / provider */}
-                <section className={CARD}>
-              <h2 className="font-display text-lg font-bold tracking-tight">Password</h2>
+                <section id="security-details" className={CARD}>
+              <p className={s.eyebrow}>03 / Just for you</p>
+              <h2>Sign-in &amp; security</h2>
               {isPasswordAccount ? (
                 <form onSubmit={changePassword} className="mt-4 space-y-4" noValidate>
                   <p className="text-sm text-ink-soft">
@@ -568,6 +554,7 @@ export default function AccountSettingsPage() {
                 </div>
               )}
                 </section>
+              </div>
               </div>
             </div>
           </>
