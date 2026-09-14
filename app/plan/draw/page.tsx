@@ -125,12 +125,11 @@ export default function DrawRoomPage() {
             full layout to it in the next steps.
           </p>
 
-          {/* Drawing needs a hovering cursor (live placement preview), so it's a
-              desktop feature. Phones see a note instead of the button. */}
+          {/* Corners use the tap position, so the same editor works with touch. */}
           <button
             type="button"
             onClick={handleStart}
-            className="mt-6 hidden h-12 items-center gap-2 rounded-xl bg-cobalt px-7 text-base font-semibold text-white shadow-[0_14px_32px_-16px_rgba(43,78,255,0.7)] transition-all hover:-translate-y-0.5 hover:bg-cobalt-deep lg:inline-flex"
+            className="dm-button mt-6 inline-flex h-12 items-center gap-2 bg-cobalt px-7 text-base font-semibold text-white"
           >
             {drawLocked ? "Unlock drawing (Plus)" : "Draw your room"}
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -142,8 +141,8 @@ export default function DrawRoomPage() {
               <rect x="2" y="4" width="20" height="14" rx="2" />
               <path d="M8 20h8M12 18v2" strokeLinecap="round" />
             </svg>
-            Drawing your room works on a computer, where you can place walls with a
-            cursor. Open this page on a laptop to start.
+            Start with a rectangle or L-shape, or tap to trace your walls.
+            Use the zoom and pan controls for smaller details.
           </p>
         </div>
       </div>

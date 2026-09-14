@@ -1,7 +1,8 @@
 "use client";
 
 import {
-  type CSSProperties,
+  type KeyboardEvent,
+  useId,
   forwardRef,
   useEffect,
   useImperativeHandle,
@@ -20,10 +21,18 @@ if (typeof window !== "undefined") {
 }
 import type { KonvaEventObject } from "konva/lib/Node";
 import type { FurnitureItem, ProductCategory, RoomOutline } from "@/lib/types";
-import { CATEGORY_COLORS } from "@/lib/styles";
+import { CATEGORY_COLORS, styleById } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
-import { clamp, footprint, invalidItems, layerOf, pointInPolygon, snapHalfFt } from "./geometry";
+import { clamp, footprint, invalidItems, layerOf, pointInPolygon } from "./geometry";
+
+import FurnitureGlyph from "./FurnitureGlyph";
+import { feetLabel, fitViewport, placedCoordinate, zoomAt } from "./viewport";
+import styles from "./CanvasStudio.module.css";
+
+function Icon({ path }: { path: string }) {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={path} /></svg>;
+}
 
 export interface RoomCanvasHandle {
   /** PNG data URL of the current layout with a Dormscape watermark. */
@@ -50,6 +59,8 @@ interface RoomCanvasProps {
    *  Catalog (same as the product list's Remove). Built-ins can't be deleted. */
   onDeleteItem?: (f: FurnitureItem) => void;
   onReset: () => void;
+  history?: { canUndo: boolean; canRedo: boolean; undo: () => void; redo: () => void };
+  fullscreen?: boolean;
   readOnly?: boolean;
   /**
    * Cross-highlight furniture with the product list (hover/pin a category to
@@ -68,7 +79,7 @@ interface RoomCanvasProps {
 
 const PAD = 28;
 const INK = "#17172b";
-const GRID = "#e4e9f4";
+const GRID = "#dce0e7";
 const COBALT = "#2b4eff";
 const RED = "#dc2626";
 // Brand-mark color for the export watermark (matches the "d" badge + wordmark).
@@ -100,7 +111,7 @@ function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
     fontFamily: WM_FONT,
     fontStyle: "700",
     fontSize,
-    fill: AMBER,
+    fill: COBALT,
   });
   const textW = dorm.width() + scape.width();
   const textH = dorm.height();
@@ -117,7 +128,7 @@ function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
     new Konva.Rect({
       width: pillW,
       height: pillH,
-      cornerRadius: 9,
+      cornerRadius: 3,
       fill: "#ffffff",
       opacity: 0.7,
       shadowColor: INK,
@@ -136,7 +147,7 @@ function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
       width: iconSize,
       height: iconSize,
       cornerRadius: 3.5,
-      fill: AMBER,
+      fill: COBALT,
     })
   );
   group.add(
@@ -164,13 +175,7 @@ function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
   return group;
 }
 const MIN_ZOOM = 0.5;
-const MAX_ZOOM = 2.5;
-
-// Buttons inside the floating island toolbar (borderless; the island is the
-// frame). A quick scale-down on press acknowledges the action; transform-only
-// so it stays compositor-cheap, and it's skipped under reduced motion.
-const ISLAND_BTN =
-  "grid h-8 w-8 place-items-center rounded-lg text-ink transition-[transform,background-color,color] duration-100 ease-out enabled:cursor-pointer enabled:hover:bg-ink/[0.06] enabled:hover:text-cobalt enabled:active:scale-[0.82] disabled:cursor-not-allowed disabled:text-ink/25 motion-reduce:transition-none motion-reduce:active:scale-100";
+const MAX_ZOOM = 3;
 
 const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCanvas(
   {
@@ -183,6 +188,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     onRotate,
     onDeleteItem,
     onReset,
+    history,
+    fullscreen = false,
     readOnly = false,
     crossHighlight = true,
     hiddenCategories,
@@ -192,7 +199,16 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
 ) {
   const containerRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<Konva.Stage>(null);
-  const [containerW, setContainerW] = useState(0);
+  const [viewport, setViewport] = useState({ width: 0, height: 420 });
+  const [panMode, setPanMode] = useState(false);
+  const [showGrid, setShowGrid] = useState(true);
+  const [showLabels, setShowLabels] = useState(true);
+  const [snapping, setSnapping] = useState(true);
+  const [showHelp, setShowHelp] = useState(false);
+  const [dragging, setDragging] = useState<{ id: string; x: number; y: number } | null>(null);
+  const helpId = useId();
+  const selectId = useId();
+  const lastPinchCenter = useRef<{ x: number; y: number } | null>(null);
   const [zoom, setZoom] = useState(1);
   const [stagePos, setStagePos] = useState({ x: 0, y: 0 });
   // Konva draws to <canvas>, so it needs the *real* font family next/font
@@ -214,6 +230,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const toggleSelectedItem = usePlannerStore((s) => s.toggleSelectedItem);
   const clearSelectedCategory = usePlannerStore((s) => s.clearSelectedCategory);
   const hiddenItemIds = usePlannerStore((s) => s.hiddenItemIds);
+  const selectedStyle = usePlannerStore(s => s.style);
+  const palette = styleById(selectedStyle ?? "minimalist").palette;
   const lockedItemIds = usePlannerStore((s) => s.lockedItemIds);
   const toggleHiddenItem = usePlannerStore((s) => s.toggleHiddenItem);
   const toggleLockedItem = usePlannerStore((s) => s.toggleLockedItem);
@@ -240,7 +258,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     const el = containerRef.current;
     if (!el) return;
     const ro = new ResizeObserver((entries) => {
-      setContainerW(entries[0].contentRect.width);
+      setViewport({ width: entries[0].contentRect.width, height: entries[0].contentRect.height });
     });
     ro.observe(el);
     return () => ro.disconnect();
@@ -264,17 +282,15 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     };
   }, []);
 
-  // Base scale: fit the room's length across the container width.
-  const pxFt = containerW > 0 ? (containerW - PAD * 2) / roomL : 0;
+  const stageW = viewport.width;
+  const stageH = viewport.height;
+  const fitted = fitViewport(stageW, stageH, roomL, roomW, stageW < 450 ? 36 : 48);
+  const pxFt = fitted.scale;
   const roomWpx = roomL * pxFt;
   const roomHpx = roomW * pxFt;
-  const stageW = containerW;
-  const stageH = roomHpx + PAD * 2;
 
-  const invalid = useMemo(
-    () => invalidItems(furniture, roomL, roomW, outline ?? undefined),
-    [furniture, roomL, roomW, outline]
-  );
+  // Resize and room changes always begin with the whole room in view.
+  useEffect(() => { setZoom(1); setStagePos({ x: 0, y: 0 }); }, [stageW, stageH, roomL, roomW]);
 
   const isCorridor = templateId?.startsWith("corridor-") ?? false;
 
@@ -297,50 +313,60 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     [ordered, hiddenSet]
   );
 
-  function applyZoom(next: number) {
+  const activeFurniture = useMemo(() => visible.filter(f => !hiddenItemIds.includes(f.id)), [visible, hiddenItemIds]);
+  const invalid = useMemo(() => invalidItems(
+    activeFurniture.map(f => dragging?.id === f.id ? { ...f, x_ft: dragging.x, y_ft: dragging.y } : f),
+    roomL, roomW, outline ?? undefined
+  ), [activeFurniture, dragging, roomL, roomW, outline]);
+
+  function fitRoom() { setZoom(1); setStagePos({ x: 0, y: 0 }); }
+  function applyZoom(next: number, anchor = { x: stageW / 2, y: stageH / 2 }) {
     const z = clamp(next, MIN_ZOOM, MAX_ZOOM);
-    // Keep the stage center fixed while zooming.
-    const cx = stageW / 2;
-    const cy = stageH / 2;
-    setStagePos((pos) => ({
-      x: cx - ((cx - pos.x) / zoom) * z,
-      y: cy - ((cy - pos.y) / zoom) * z,
-    }));
+    setStagePos(pos => zoomAt(pos, zoom, z, anchor));
     setZoom(z);
   }
-
   function handleTouchMove(e: KonvaEventObject<TouchEvent>) {
     const touches = e.evt.touches;
     if (touches.length !== 2) return;
     e.evt.preventDefault();
-    const dist = Math.hypot(
-      touches[0].clientX - touches[1].clientX,
-      touches[0].clientY - touches[1].clientY
-    );
-    if (lastPinch.current !== null) {
-      applyZoom(zoom * (dist / lastPinch.current));
+    const stage = stageRef.current;
+    stage?.stopDrag();
+    stage?.find(".furniture").forEach(node => { if (node.isDragging()) node.stopDrag(); });
+    const rect = stage?.container().getBoundingClientRect();
+    if (!rect) return;
+    const center = { x: (touches[0].clientX + touches[1].clientX) / 2 - rect.left, y: (touches[0].clientY + touches[1].clientY) / 2 - rect.top };
+    const dist = Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY);
+    if (lastPinch.current !== null && lastPinchCenter.current) {
+      const z = clamp(zoom * dist / lastPinch.current, MIN_ZOOM, MAX_ZOOM);
+      const previous = lastPinchCenter.current;
+      setStagePos(pos => {
+        const next = zoomAt(pos, zoom, z, previous);
+        return { x: next.x + center.x - previous.x, y: next.y + center.y - previous.y };
+      });
+      setZoom(z);
     }
     lastPinch.current = dist;
-  }
-
-  function handleDragEnd(f: FurnitureItem, e: KonvaEventObject<DragEvent>) {
-    const node = e.target;
-    const fp = footprint(f);
-    let xFt = snapHalfFt((node.x() - PAD) / pxFt);
-    let yFt = snapHalfFt((node.y() - PAD) / pxFt);
-    xFt = clamp(xFt, 0, Math.max(0, roomL - fp.w));
-    yFt = clamp(yFt, 0, Math.max(0, roomW - fp.h));
-    node.position({ x: PAD + xFt * pxFt, y: PAD + yFt * pxFt });
+    lastPinchCenter.current = center;
     dragGuard.current = Date.now();
-    onMove(f.id, xFt, yFt);
   }
-
+  function dragPosition(f: FurnitureItem, node: Konva.Node) {
+    const fp = footprint(f);
+    return { x: placedCoordinate((node.x() - PAD) / pxFt, fp.w, roomL, snapping), y: placedCoordinate((node.y() - PAD) / pxFt, fp.h, roomW, snapping) };
+  }
+  function handleDragEnd(f: FurnitureItem, e: KonvaEventObject<DragEvent>) {
+    e.cancelBubble = true;
+    const point = dragPosition(f, e.target);
+    e.target.position({ x: PAD + point.x * pxFt, y: PAD + point.y * pxFt });
+    dragGuard.current = Date.now();
+    setDragging(null);
+    if (point.x !== f.x_ft || point.y !== f.y_ft) onMove(f.id, point.x, point.y);
+  }
   // True for a beat after any drag/pan, so a furniture drag doesn't also
   // register as a click that toggles the selection.
   const justDragged = () => Date.now() - dragGuard.current < 250;
 
   function handleItemClick(f: FurnitureItem) {
-    if (readOnly || justDragged()) return;
+    if (readOnly || panMode || justDragged()) return;
     // Pin the item itself (rotate target) plus its product category so the
     // product-list cross-highlight keeps working exactly as before.
     toggleSelectedItem(f.id, furnitureCategory(f));
@@ -351,15 +377,23 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       const stage = stageRef.current;
       if (!stage) return null;
       const layer = stage.getLayers()[0];
-      // Brand watermark, added just for the export then removed so the live
-      // canvas is untouched.
+      const transform = { x: stage.x(), y: stage.y(), scaleX: stage.scaleX(), scaleY: stage.scaleY() };
+      const editorNodes = stage.find(".editor-only");
+      const visibleBefore = editorNodes.map(node => node.visible());
       const mark = buildBrandWatermark(stage.width(), stage.height());
-      layer.add(mark);
-      layer.draw();
-      const url = stage.toDataURL({ pixelRatio: 2 });
-      mark.destroy();
-      layer.draw();
-      return url;
+      try {
+        // Export the complete fitted plan, even when the editor is zoomed/panned.
+        stage.setAttrs({ x: 0, y: 0, scaleX: 1, scaleY: 1 });
+        editorNodes.forEach(node => node.hide());
+        layer.add(mark);
+        layer.draw();
+        return stage.toDataURL({ pixelRatio: 2 });
+      } finally {
+        mark.destroy();
+        editorNodes.forEach((node, i) => node.visible(visibleBefore[i]));
+        stage.setAttrs(transform);
+        layer.draw();
+      }
     },
   }));
 
@@ -439,131 +473,70 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     return { flat, openings, closets };
   }, [outline, pxFt]);
 
-  // Floating-toolbar target: the selected movable item (same resolution the
-  // rotate control uses). Delete only applies to purchasable pieces, since it
-  // moves the item's category to the Catalog; built-ins have nowhere to go.
-  const toolbarItem = rotateTarget;
+  const toolbarItem = rotateTarget && visible.some(f => f.id === rotateTarget.id) ? rotateTarget : null;
   const toolbarHidden = toolbarItem ? hiddenItemIds.includes(toolbarItem.id) : false;
   const toolbarLocked = toolbarItem ? lockedItemIds.includes(toolbarItem.id) : false;
-  const toolbarDeletable = Boolean(toolbarItem && furnitureCategory(toolbarItem));
+  const canEditItem = !!toolbarItem && !toolbarLocked && !toolbarHidden;
+  const toolbarDeletable = !!toolbarItem && !toolbarItem.built_in && !toolbarLocked && !!furnitureCategory(toolbarItem) && !!onDeleteItem;
+  const selectedFootprint = toolbarItem ? footprint(toolbarItem) : null;
+
+  function nudge(dx: number, dy: number, large = false) {
+    if (!toolbarItem || !canEditItem) return;
+    const fp = footprint(toolbarItem);
+    const step = large ? 1 : snapping ? .5 : 1 / 12;
+    onMove(toolbarItem.id, placedCoordinate(fp.x + dx * step, fp.w, roomL, snapping), placedCoordinate(fp.y + dy * step, fp.h, roomW, snapping));
+  }
+  function keyboard(event: KeyboardEvent<HTMLDivElement>) {
+    if (readOnly || (event.target as HTMLElement).closest("input,textarea,select,[contenteditable=true]")) return;
+    const key = event.key.toLowerCase();
+    if (event.ctrlKey || event.metaKey) {
+      if (key === "z" || key === "y") { event.preventDefault(); key === "y" || event.shiftKey ? history?.redo() : history?.undo(); }
+      return;
+    }
+    if (key === "escape") {
+      if (selectedItemId || selectedCategory || panMode) event.stopPropagation();
+      clearSelectedCategory(); setPanMode(false); return;
+    }
+    if ((event.target as HTMLElement).closest("button")) return;
+    if (key === "0") { event.preventDefault(); fitRoom(); }
+    if (key === "+" || key === "=") { event.preventDefault(); applyZoom(zoom + .25); }
+    if (key === "-") { event.preventDefault(); applyZoom(zoom - .25); }
+    if (key === "v") setPanMode(false);
+    if (key === "h") setPanMode(true);
+    if (key === "g") setShowGrid(value => !value);
+    if (key === "r" && canEditItem && toolbarItem) { event.preventDefault(); onRotate?.(toolbarItem.id, event.shiftKey ? -1 : 1); }
+    const arrows: Record<string, [number, number]> = { arrowleft: [-1,0], arrowright: [1,0], arrowup: [0,-1], arrowdown: [0,1] };
+    if (arrows[key] && canEditItem) { event.preventDefault(); nudge(...arrows[key], event.shiftKey); }
+    if ((key === "delete" || key === "backspace") && toolbarDeletable && toolbarItem) { event.preventDefault(); onDeleteItem?.(toolbarItem); clearSelectedCategory(); }
+  }
 
   return (
-    <div className="dm-room-canvas w-full select-none">
-      {/* Floating island toolbar, ABOVE the canvas (not overlaying the room).
-          Acts on the selected item; greys out when nothing is selected. Same
-          element in embedded and fullscreen, so it sits above the canvas in both. */}
-      {!readOnly && (
-        <div className="mb-2 flex justify-center">
-          {/* Lifts in (scale + opacity + shadow) the moment an item is selected,
-              so it reads as "now active" instead of an always-on bar. */}
-          <div
-            className={`dm-tool-group flex origin-top items-center gap-0.5 rounded-2xl border border-ink/10 bg-white px-1.5 py-1 transition-all duration-300 ease-out will-change-transform motion-reduce:transition-none ${
-              toolbarItem
-                ? "scale-100 opacity-100 shadow-[0_12px_30px_-12px_rgba(23,23,43,0.5)]"
-                : "scale-[0.97] opacity-80 shadow-[0_6px_18px_-12px_rgba(23,23,43,0.4)]"
-            }`}
-          >
-            <button
-              type="button"
-              onClick={() => toolbarItem && onRotate?.(toolbarItem.id, -1)}
-              disabled={!toolbarItem}
-              aria-label="Rotate selected item counter-clockwise"
-              title={toolbarItem ? "Rotate 90° counter-clockwise" : "Select an item first"}
-              className={ISLAND_BTN}
-            >
-              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <polyline points="1 4 1 10 7 10" />
-                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
-              </svg>
-            </button>
-            <button
-              type="button"
-              onClick={() => toolbarItem && onRotate?.(toolbarItem.id, 1)}
-              disabled={!toolbarItem}
-              aria-label="Rotate selected item clockwise"
-              title={toolbarItem ? "Rotate 90° clockwise" : "Select an item first"}
-              className={ISLAND_BTN}
-            >
-              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <polyline points="23 4 23 10 17 10" />
-                <path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10" />
-              </svg>
-            </button>
-
-            <span className="mx-0.5 h-5 w-px bg-ink/10" aria-hidden="true" />
-
-            <button
-              type="button"
-              onClick={() => toolbarItem && toggleHiddenItem(toolbarItem.id)}
-              disabled={!toolbarItem}
-              aria-pressed={toolbarHidden}
-              aria-label={toolbarHidden ? "Show selected item" : "Hide selected item"}
-              title={toolbarItem ? (toolbarHidden ? "Show on canvas" : "Hide from canvas") : "Select an item first"}
-              className={`${ISLAND_BTN} ${toolbarHidden ? "bg-cobalt/10 text-cobalt" : ""}`}
-            >
-              {toolbarHidden ? (
-                <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
-                  <line x1="1" y1="1" x2="23" y2="23" />
-                </svg>
-              ) : (
-                <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
-                  <circle cx="12" cy="12" r="3" />
-                </svg>
-              )}
-            </button>
-            <button
-              type="button"
-              onClick={() => toolbarItem && toggleLockedItem(toolbarItem.id)}
-              disabled={!toolbarItem}
-              aria-pressed={toolbarLocked}
-              aria-label={toolbarLocked ? "Unlock selected item" : "Lock selected item"}
-              title={toolbarItem ? (toolbarLocked ? "Unlock (allow dragging)" : "Lock (prevent dragging)") : "Select an item first"}
-              className={`${ISLAND_BTN} ${toolbarLocked ? "bg-amber/15 text-amber-700" : ""}`}
-            >
-              {toolbarLocked ? (
-                <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="3" y="11" width="18" height="11" rx="2" />
-                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                </svg>
-              ) : (
-                <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="3" y="11" width="18" height="11" rx="2" />
-                  <path d="M7 11V7a5 5 0 0 1 9.9-1" />
-                </svg>
-              )}
-            </button>
-
-            <span className="mx-0.5 h-5 w-px bg-ink/10" aria-hidden="true" />
-
-            <button
-              type="button"
-              onClick={() => {
-                if (!toolbarItem) return;
-                onDeleteItem?.(toolbarItem);
-                clearSelectedCategory();
-              }}
-              disabled={!toolbarDeletable}
-              aria-label="Delete selected item (move to Catalog)"
-              title={
-                !toolbarItem
-                  ? "Select an item first"
-                  : toolbarDeletable
-                    ? "Delete (move to Catalog)"
-                    : "This built-in piece can't be deleted"
-              }
-              className={`${ISLAND_BTN} enabled:hover:text-red-600`}
-            >
-              <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <polyline points="3 6 5 6 21 6" />
-                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-              </svg>
-            </button>
-          </div>
+    <div className={`${styles.studio} dm-room-canvas`} onKeyDown={keyboard}>
+      <div className={styles.topbar}>
+        <div className={styles.title}><i /><strong>Your room studio</strong></div>
+        <span className={styles.meta}>{feetLabel(roomL)} × {feetLabel(roomW)} · Top view</span>
+      </div>
+      <div className={styles.toolbar} aria-label="Floor plan tools">
+        {!readOnly && <div className={styles.group}>
+          <button type="button" aria-label="Select and move furniture" aria-pressed={!panMode} onClick={() => setPanMode(false)} title="Select (V)"><Icon path="m5 3 15 9-7 2-3 7Z" />Select</button>
+          <button type="button" aria-label="Pan the room" aria-pressed={panMode} onClick={() => setPanMode(true)} title="Pan (H)"><Icon path="M8 13V6a2 2 0 0 1 4 0v6-8a2 2 0 0 1 4 0v8-5a2 2 0 0 1 4 0v9c0 4-3 6-7 6-2 0-4-1-5-3l-4-5a2 2 0 0 1 3-2l1 1" /></button>
+          <span className={styles.divider} />
+          <button type="button" onClick={() => history?.undo()} disabled={!history?.canUndo} aria-label="Undo layout edit" title="Undo (Ctrl/⌘ Z)"><Icon path="M4 10h10a6 6 0 0 1 0 12M8 5l-5 5 5 5" /></button>
+          <button type="button" onClick={() => history?.redo()} disabled={!history?.canRedo} aria-label="Redo layout edit" title="Redo (Ctrl/⌘ Shift Z)"><Icon path="M20 10H10a6 6 0 0 0 0 12m6-17 5 5-5 5" /></button>
+        </div>}
+        <div className={styles.group}>
+          <button type="button" onClick={() => setShowGrid(!showGrid)} aria-pressed={showGrid} title="Show grid (G)"><Icon path="M4 4h16v16H4zM4 12h16M12 4v16" />Grid</button>
+          <button type="button" onClick={() => setShowLabels(!showLabels)} aria-pressed={showLabels}>Labels</button>
+          {!readOnly && <button type="button" onClick={() => setSnapping(!snapping)} aria-pressed={snapping} title="Snap to a 6-inch grid. Turn off for 1-inch positioning.">Snap</button>}
         </div>
-      )}
-      <div ref={containerRef} className="dm-room-viewport relative w-full" style={{ "--dm-room-aspect": roomL / roomW } as CSSProperties}>
+        <button type="button" aria-expanded={showHelp} aria-controls={helpId} onClick={() => setShowHelp(!showHelp)} aria-label="Canvas help and shortcuts" title="Help & shortcuts"><Icon path="M9 8a3 3 0 0 1 6 0c0 2-3 2-3 5m0 4h.01M22 12A10 10 0 1 1 2 12a10 10 0 0 1 20 0" /></button>
+      </div>
+      {showHelp && <div id={helpId} className={styles.help}>
+        <p><strong>Make yourself at home.</strong> Drag a piece to move it, or choose it from the furniture menu. Use the arrow controls for precise positioning. A red outline marks a possible overlap or wall crossing.</p>
+        <p><kbd>R</kbd> Rotate · <kbd>↑ ↓ ← →</kbd> Nudge · <kbd>Shift</kbd> + arrows: 1 ft · <kbd>0</kbd> Fit room · <kbd>H</kbd> Pan · <kbd>V</kbd> Select · <kbd>Esc</kbd> Deselect</p>
+        <p>Pinch with two fingers to zoom and pan. With a mouse, use Ctrl/⌘ + scroll to zoom at the pointer. Hiding a piece only changes the view; removing it moves its category to the catalog.</p>
+      </div>}
+      <div ref={containerRef} className={`${styles.surface} dm-room-viewport`} tabIndex={0} role="region" aria-label="Interactive room floor plan" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })} style={fullscreen ? { height: "clamp(320px, calc(100svh - 300px), 850px)" } : undefined}>
       {pxFt > 0 && (
         <Stage
           ref={stageRef}
@@ -573,7 +546,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           scaleY={zoom}
           x={stagePos.x}
           y={stagePos.y}
-          draggable={zoom > 1}
+          draggable
+          onWheel={(e) => { if (e.evt.ctrlKey || e.evt.metaKey) { e.evt.preventDefault(); const pointer = stageRef.current?.getPointerPosition(); if (pointer) applyZoom(zoom * Math.exp(-e.evt.deltaY * .006), pointer); } }}
           onDragEnd={(e) => {
             if (e.target === stageRef.current) {
               dragGuard.current = Date.now();
@@ -592,9 +566,13 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
             }
           }}
           onTouchMove={handleTouchMove}
-          onTouchEnd={() => (lastPinch.current = null)}
+          onTouchEnd={() => { lastPinch.current = null; lastPinchCenter.current = null; }}
+          onTouchCancel={() => { lastPinch.current = null; lastPinchCenter.current = null; setDragging(null); }}
+          style={{ cursor: panMode ? "grab" : "default" }}
         >
           <Layer>
+            <Rect width={stageW} height={stageH} fill="#f0f1f4" listening={false} />
+            <Group x={fitted.x - PAD} y={fitted.y - PAD}>
             {drawn ? (
               <>
                 {/* Hand-drawn room: white fill + grid clipped to the outline,
@@ -610,12 +588,12 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                     ctx.closePath();
                   }}
                 >
-                  <Rect x={PAD} y={PAD} width={roomWpx} height={roomHpx} fill="#ffffff" />
-                  {gridLines.map((l) => (
+                  <Rect x={PAD} y={PAD} width={roomWpx} height={roomHpx} fill="#fafaf8" listening={false} />
+                  {showGrid && gridLines.map((l) => (
                     <Line key={l.key} points={l.points} stroke={GRID} strokeWidth={1} listening={false} />
                   ))}
                 </Group>
-                <Line points={drawn.flat} closed stroke={INK} strokeWidth={2} listening={false} />
+                <Line points={drawn.flat} closed stroke={INK} strokeWidth={5} listening={false} />
                 {drawn.closets.map((c, i) => (
                   <Rect
                     key={`closet-${i}`}
@@ -649,8 +627,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
             ) : (
               <>
             {/* Room shell */}
-            <Rect x={PAD} y={PAD} width={roomWpx} height={roomHpx} fill="#ffffff" />
-            {gridLines.map((l) => (
+            <Rect x={PAD} y={PAD} width={roomWpx} height={roomHpx} fill="#fafaf8" listening={false} />
+            {showGrid && gridLines.map((l) => (
               <Line key={l.key} points={l.points} stroke={GRID} strokeWidth={1} listening={false} />
             ))}
             <Rect
@@ -659,7 +637,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               width={roomWpx}
               height={roomHpx}
               stroke={INK}
-              strokeWidth={2}
+              strokeWidth={5}
               listening={false}
             />
 
@@ -741,6 +719,19 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               </>
             )}
 
+            <Group listening={false}>
+              <Line points={[PAD, PAD-19, PAD+roomWpx, PAD-19]} stroke="#8d95a8" strokeWidth={.75} />
+              <Line points={[PAD-19, PAD, PAD-19, PAD+roomHpx]} stroke="#8d95a8" strokeWidth={.75} />
+              {[0, roomWpx].map(x => <Line key={`tick-x${x}`} points={[PAD+x, PAD-24, PAD+x, PAD-14]} stroke="#8d95a8" strokeWidth={1} />)}
+              {[0, roomHpx].map(y => <Line key={`tick-y${y}`} points={[PAD-24, PAD+y, PAD-14, PAD+y]} stroke="#8d95a8" strokeWidth={1} />)}
+              <Rect x={PAD+roomWpx/2-28} y={PAD-26} width={56} height={14} fill="#f0f1f4" />
+              <Text x={PAD+roomWpx/2-28} y={PAD-25} width={56} text={feetLabel(roomL)} fontFamily={labelFont} fontSize={11} align="center" fill="#555967" />
+              <Text x={PAD-28} y={PAD+roomHpx/2+28} width={56} text={feetLabel(roomW)} fontFamily={labelFont} fontSize={11} align="center" rotation={-90} fill="#555967" />
+            </Group>
+            {dragging && <Group name="editor-only" listening={false}>
+              <Line points={[PAD + dragging.x*pxFt, PAD, PAD + dragging.x*pxFt, PAD+roomHpx]} stroke={COBALT} strokeWidth={.8} dash={[4,4]} />
+              <Line points={[PAD, PAD + dragging.y*pxFt, PAD+roomWpx, PAD + dragging.y*pxFt]} stroke={COBALT} strokeWidth={.8} dash={[4,4]} />
+            </Group>}
             {/* Furniture */}
             {visible.map((f) => {
               const fp = footprint(f);
@@ -748,12 +739,10 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               const h = fp.h * pxFt;
               const bad = invalid.has(f.id);
               const layer = layerOf(f);
-              const color = CATEGORY_COLORS[f.color_category] ?? "#94a3b8";
+              const color = f.type === "bed" || f.type === "rug" ? palette[2] : CATEGORY_COLORS[f.color_category] ?? "#94a3b8";
               const isHidden = hiddenItemIds.includes(f.id);
               const isLocked = lockedItemIds.includes(f.id);
-              const draggable = !readOnly && f.movable && !isLocked && !isHidden;
-              const labelSize = Math.max(9, Math.min(13, h * 0.35, w * 0.16));
-              const showLabel = w >= 34 && h >= 15 && !isHidden;
+              const draggable = !readOnly && !panMode && f.movable && !isLocked && !isHidden;
               // Every item is clickable in edit mode now (selection is the
               // rotate target); category-less items just don't cross-light
               // the product list.
@@ -764,9 +753,12 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               return (
                 <Group
                   key={f.id}
+                  name="furniture"
                   x={PAD + fp.x * pxFt}
                   y={PAD + fp.y * pxFt}
                   draggable={draggable}
+                  onDragStart={(e) => { e.cancelBubble = true; if (selectedItemId !== f.id) toggleSelectedItem(f.id, furnitureCategory(f)); setDragging({ id: f.id, x: f.x_ft, y: f.y_ft }); }}
+                  onDragMove={(e) => { e.cancelBubble = true; setDragging({ id: f.id, ...dragPosition(f, e.target) }); }}
                   onDragEnd={(e) => handleDragEnd(f, e)}
                   onClick={() => handleItemClick(f)}
                   onTap={() => handleItemClick(f)}
@@ -789,39 +781,26 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                   <Rect
                     width={w}
                     height={h}
-                    fill={color}
-                    opacity={isHidden ? 0.16 : layer === "rug" ? 0.4 : f.built_in ? 0.55 : 0.92}
+                    fill="#fafaf8"
+                    opacity={isHidden ? 0.16 : 1}
                     cornerRadius={Math.min(4, w / 4, h / 4)}
                     stroke={bad ? RED : isLocked ? AMBER : INK}
                     strokeWidth={bad ? 2 : isLocked ? 1.75 : 0.75}
                     dash={isHidden ? [4, 3] : undefined}
+                    hitStrokeWidth={10}
                     shadowColor={INK}
                     shadowOpacity={draggable ? 0.12 : 0}
-                    shadowBlur={draggable ? 4 : 0}
+                    shadowBlur={layer === "rug" ? 0 : dragging?.id === f.id ? 14 : 5}
                     shadowOffsetY={draggable ? 1 : 0}
                   />
-                  {showLabel && (
-                    <Text
-                      width={w}
-                      height={h}
-                      text={f.label}
-                      align="center"
-                      verticalAlign="middle"
-                      fontSize={labelSize}
-                      fontFamily={labelFont}
-                      fontStyle="500"
-                      letterSpacing={0.2}
-                      fill="#ffffff"
-                      listening={false}
-                      wrap="word"
-                      ellipsis
-                    />
-                  )}
+                  <Group opacity={isHidden ? .12 : 1} listening={false}><FurnitureGlyph item={f} scale={pxFt} color={color} /></Group>
+                  {bad && !isHidden && <Rect name="editor-only" width={w} height={h} stroke={RED} strokeWidth={2} fillEnabled={false} listening={false} />}
                   {/* Cross-highlight ring, cobalt glow, distinct from the red
                       collision flag; sits outside the item so small unlabeled
                       pieces are easy to spot. */}
                   {highlighted && (
                     <Rect
+                      name="editor-only"
                       x={-3.5}
                       y={-3.5}
                       width={w + 7}
@@ -831,7 +810,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                       strokeWidth={2.5}
                       fillEnabled={false}
                       shadowColor={COBALT}
-                      shadowBlur={12}
+                      shadowBlur={0}
                       shadowOpacity={0.9}
                       listening={false}
                     />
@@ -839,48 +818,65 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 </Group>
               );
             })}
+            {/* Labels sit above the furnishing layer, so under-bed storage and
+                other small pieces never obscure a bed or desk name. */}
+            <Group listening={false}>
+              {showLabels && visible.map(f => {
+                const fp = footprint(f);
+                const w = fp.w * pxFt, h = fp.h * pxFt;
+                if (w < 50 || h < 28 || hiddenItemIds.includes(f.id) || !["bed", "desk", "dresser", "rug"].includes(f.type)) return null;
+                const size = Math.max(9, Math.min(11, w * .14));
+                const width = Math.min(w-8, (f.label.length+2)*size*.61);
+                const x = PAD + (dragging?.id === f.id ? dragging.x : fp.x)*pxFt + (w-width)/2;
+                const y = PAD + (dragging?.id === f.id ? dragging.y : fp.y)*pxFt + (f.type === "desk" ? h*.85 : h/2) - 8;
+                return <Group key={`label-${f.id}`}>
+                  <Rect x={x} y={y-1} width={width} height={18} fill="#fffffff0" cornerRadius={2} />
+                  <Text x={x+2} y={y} width={width-4} height={16} text={f.label} align="center" verticalAlign="middle" fontSize={size} fontFamily={labelFont} fontStyle="500" letterSpacing={.2} fill={INK} wrap="none" ellipsis />
+                </Group>;
+              })}
+            </Group>
+            </Group>
           </Layer>
         </Stage>
       )}
 
-      {/* Scale bar (DOM overlay so it stays crisp) */}
-      {pxFt > 0 && (
-        <div className="pointer-events-none absolute bottom-2 left-2 flex items-center gap-1.5 rounded bg-white/85 px-1.5 py-1">
-          <span className="block h-[2px] bg-ink" style={{ width: `${pxFt * zoom}px` }} />
-          <span className="font-mono text-[10px] leading-none text-ink">1 ft</span>
+      {pxFt > 0 && <div className={styles.scale}><i style={{ width: pxFt * zoom }} /><span>1 ft</span></div>}
+      <div className={styles.viewportControls} aria-label="View controls">
+        <button type="button" onClick={() => applyZoom(zoom - .25)} disabled={zoom <= MIN_ZOOM} aria-label="Zoom out">−</button>
+        <output aria-label="Zoom level">{Math.round(zoom * 100)}%</output>
+        <button type="button" onClick={() => applyZoom(zoom + .25)} disabled={zoom >= MAX_ZOOM} aria-label="Zoom in">+</button>
+        <span className={styles.divider} />
+        <button type="button" onClick={fitRoom} title="Fit the whole room (0)"><Icon path="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M8 8h8v8H8z" />Fit</button>
+      </div>
+      </div>
+      {!readOnly && <div className={styles.inspector}>
+        <div className={styles.selection}>
+          <label htmlFor={selectId}>SELECT A PIECE TO EDIT</label>
+          <select id={selectId} value={toolbarItem?.id ?? ""} onChange={event => {
+            if (!event.target.value) clearSelectedCategory();
+            else { const item = visible.find(f => f.id === event.target.value); if (item && item.id !== selectedItemId) toggleSelectedItem(item.id, furnitureCategory(item)); }
+          }}>
+            <option value="">Choose furniture or click the plan</option>
+            {visible.filter(f => f.movable).map(f => <option key={f.id} value={f.id}>{f.label}{lockedItemIds.includes(f.id) ? " (locked)" : ""}{hiddenItemIds.includes(f.id) ? " (hidden)" : ""}</option>)}
+          </select>
+          <small>{toolbarItem && selectedFootprint ? `${feetLabel(selectedFootprint.w)} × ${feetLabel(selectedFootprint.h)} · ${toolbarLocked ? "Locked in place" : toolbarHidden ? "Hidden from view" : toolbarItem.built_in ? "Provided furniture" : "Move it to make it yours"}` : "Drag to arrange. Use the controls for the details."}</small>
         </div>
-      )}
-
-      {/* Controls overlay */}
-      {!readOnly && (
-        <div className="absolute right-2 top-2 flex flex-col gap-1">
-          <button
-            type="button"
-            onClick={() => applyZoom(zoom + 0.25)}
-            aria-label="Zoom in"
-            className="h-8 w-8 cursor-pointer rounded-lg border border-ink/15 bg-white text-base font-semibold text-ink shadow-sm transition-colors hover:border-cobalt hover:text-cobalt"
-          >
-            +
-          </button>
-          <button
-            type="button"
-            onClick={() => applyZoom(zoom - 0.25)}
-            aria-label="Zoom out"
-            className="h-8 w-8 cursor-pointer rounded-lg border border-ink/15 bg-white text-base font-semibold text-ink shadow-sm transition-colors hover:border-cobalt hover:text-cobalt"
-          >
-            −
-          </button>
+        <div className={styles.nudge} aria-label="Nudge selected furniture">
+          {[[0,-1,"↑","up"],[-1,0,"←","left"],[0,1,"↓","down"],[1,0,"→","right"]].map(([x,y,arrow,name]) => <button key={String(name)} type="button" disabled={!canEditItem} onClick={() => nudge(Number(x),Number(y))} aria-label={`Move selected item ${name}`} title={`Move ${name}`}>{arrow}</button>)}
         </div>
-      )}
-      {!readOnly && (
-        <button
-          type="button"
-          onClick={onReset}
-          className="absolute left-2 top-2 cursor-pointer rounded-lg border border-ink/15 bg-white px-2.5 py-1.5 font-mono text-[11px] font-medium uppercase tracking-wide text-ink-soft shadow-sm transition-colors hover:border-cobalt hover:text-cobalt"
-        >
-          Reset layout
-        </button>
-      )}
+        <div className={styles.group}>
+          <button type="button" disabled={!canEditItem || !onRotate} onClick={() => toolbarItem && onRotate?.(toolbarItem.id,1)} title="Rotate clockwise (R)" aria-label="Rotate selected item clockwise"><Icon path="M20 4v6h-6m5-1a8 8 0 1 0 1 8" />Rotate</button>
+          <button type="button" disabled={!toolbarItem} onClick={() => toolbarItem && toggleLockedItem(toolbarItem.id)} aria-pressed={toolbarLocked} aria-label={toolbarLocked ? "Unlock selected item" : "Lock selected item"}><Icon path={toolbarLocked ? "M5 10h14v11H5zM8 10V7a4 4 0 0 1 8 0v3" : "M5 10h14v11H5zM8 10V7a4 4 0 0 1 7-2"} /></button>
+          <button type="button" disabled={!toolbarItem} onClick={() => toolbarItem && toggleHiddenItem(toolbarItem.id)} aria-pressed={toolbarHidden} aria-label={toolbarHidden ? "Show selected item" : "Hide selected item"}><Icon path="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Zm13 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0" /></button>
+          <button type="button" disabled={!toolbarDeletable} onClick={() => { if (toolbarItem) { onDeleteItem?.(toolbarItem); clearSelectedCategory(); } }} className={styles.danger} aria-label="Remove selected item to catalog"><Icon path="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7" /></button>
+        </div>
+      </div>}
+      <div className={styles.footer}>
+        <p className={`${styles.status} ${invalid.size ? styles.warning : ""}`} role="status">
+          <i />{invalid.size ? `${invalid.size} ${invalid.size === 1 ? "piece needs" : "pieces need"} a fit check. Look for red outlines.` : `${activeFurniture.length} pieces in your room.`}
+          {dragging ? ` Position: ${feetLabel(dragging.x)} / ${feetLabel(dragging.y)}` : ""}
+        </p>
+        {!readOnly && <button type="button" onClick={onReset} title="Restore the starting layout. You can undo this.">Reset layout</button>}
       </div>
     </div>
   );

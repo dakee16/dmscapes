@@ -1,4 +1,4 @@
-import RoomModel from "@/components/experience/RoomModel";
+import { DesignStack } from "@/components/experience/StudioMotion";
 
 export default function Room3DScene({
   className = "",
@@ -7,9 +7,9 @@ export default function Room3DScene({
 }) {
   return (
     <div className={`dm-room-scene ${className}`}>
-      <RoomModel />
+      <DesignStack />
       <p className="dm-eyebrow text-center text-ink-soft">
-        Concept preview <span className="dm-room-interaction-hint">· Drag to explore</span>
+        Your floor plan. Your style. Your shopping list.
       </p>
     </div>
   );

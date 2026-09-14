@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { animate, motion, useMotionValue } from "framer-motion";
-import RoomModel from "@/components/experience/RoomModel";
+import { motion } from "framer-motion";
+import { ProductRadar } from "@/components/experience/StudioMotion";
 import { MotionToggle, useExperienceMotion } from "@/components/experience/MotionProvider";
 import { VIBE_LOADING_LINES } from "@/lib/custom-vibe";
 
@@ -20,25 +20,16 @@ export default function VibeLoading({
 }) {
   const { paused } = useExperienceMotion();
   const [line, setLine] = useState(0);
-  const assembly = useMotionValue(0.08);
 
   useEffect(() => {
     if (paused) {
-      assembly.set(1);
       return;
     }
-    const playback = animate(assembly, [0.08, 0.38, 0.7, 1, 1, 0.08], {
-      duration: 14,
-      times: [0, 0.2, 0.45, 0.7, 0.88, 1],
-      ease: "easeInOut",
-      repeat: Infinity,
-    });
     const timer = window.setInterval(() => setLine(value => (value + 1) % VIBE_LOADING_LINES.length), 3200);
     return () => {
-      playback.stop();
       window.clearInterval(timer);
     };
-  }, [paused, assembly]);
+  }, [paused]);
 
   useEffect(() => {
     const previous = document.body.style.overflow;
@@ -73,7 +64,7 @@ export default function VibeLoading({
 
         <div className="dm-vibe-search-scene" aria-hidden="true">
           <div className="dm-vibe-search-heading"><span className="dm-eyebrow">Product search</span><span className="dm-eyebrow">Style study</span></div>
-          <RoomModel assembly progress={assembly} />
+          <ProductRadar />
           <div className="dm-vibe-search-cards">
             {SEARCH_CATEGORIES.map((category, index) => (
               <motion.div

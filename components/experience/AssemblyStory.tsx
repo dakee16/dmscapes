@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import RoomModel from "./RoomModel";
+import { PlanningBlueprint } from "./StudioMotion";
 import PlanCta from "@/components/site/PlanCta";
 import Reveal from "@/components/site/Reveal";
 
@@ -28,9 +28,9 @@ export default function AssemblyStory() {
         <div className="dm-story-sticky">
           <div className="dm-preview-top dm-eyebrow">
             <span>Your room, coming together</span>
-            <span>01 / 03</span>
+            <span className="dm-story-meta">Plan / Style / Shop</span>
           </div>
-          <RoomModel assembly progress={progress} />
+          <PlanningBlueprint progress={progress} />
           <div className="dm-preview-bottom">
             <span>Start with the right dimensions.</span>
             <span className="dm-assembly-progress">

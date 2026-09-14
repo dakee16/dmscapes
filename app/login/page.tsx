@@ -3,7 +3,7 @@
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import SiteHeader from "@/components/site/SiteHeader";
-import RoomModel from "@/components/experience/RoomModel";
+import { DesignStack } from "@/components/experience/StudioMotion";
 import AuthForm from "@/components/auth/AuthForm";
 import type { AuthModalReason } from "@/lib/auth-context";
 
@@ -40,7 +40,7 @@ function LoginInner() {
           Your exact room, laid out to the inch, with a shoppable list that fits your budget.
           Sign in and it&apos;s all waiting: your schools, your vibes, your saved designs.
         </p>
-        <RoomModel className="dm-login-room" />
+        <DesignStack />
       </div>
     </div>
   );

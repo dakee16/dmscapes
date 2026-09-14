@@ -1,15 +1,17 @@
 "use client";
 
-import RoomModel from "./RoomModel";
+import { CampusMap, PaletteStudy } from "./StudioMotion";
 
 export default function StudioPreview({
   vibe = "cozy",
   label = "A little room. A lot of possibility.",
   caption = "Your next chapter, taking shape.",
+  variant = "campus",
 }: {
   vibe?: string;
   label?: string;
   caption?: string;
+  variant?: "campus" | "palette";
 }) {
   return (
     <aside className="dm-studio-preview">
@@ -18,13 +20,12 @@ export default function StudioPreview({
         <span aria-hidden="true">✳</span>
       </div>
       <h2>{label}</h2>
-      <RoomModel vibe={vibe} />
+      {variant === "palette" ? <PaletteStudy vibe={vibe} /> : <CampusMap />}
       <div className="dm-preview-bottom">
         <span>{caption}</span>
-        <span className="dm-room-interaction-hint">↔ Drag to explore</span>
       </div>
       <p className="dm-preview-note">
-        Style study · Your exact floor plan comes next.
+        {variant === "palette" ? "Material study · Your exact floor plan comes next." : "Find your school, choose your hall, make it yours."}
       </p>
     </aside>
   );

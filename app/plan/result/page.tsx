@@ -21,6 +21,8 @@ import { fitTemplateToRoom } from "@/lib/layout-fit";
 import { placeInPolygon } from "@/lib/place-in-polygon";
 import type RoomCanvasType from "@/components/canvas/RoomCanvas";
 import type { RoomCanvasHandle } from "@/components/canvas/RoomCanvas";
+import { useLayoutHistory } from "@/components/canvas/useLayoutHistory";
+import Modal from "@/components/site/Modal";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import BudgetTracker from "@/components/products/BudgetTracker";
 import ProductPanel from "@/components/products/ProductPanel";
@@ -61,11 +63,11 @@ function Skeleton() {
 }
 
 export default function ResultPage() {
+  const layoutHistory = useLayoutHistory();
   const router = useRouter();
   const canvasRef = useRef<RoomCanvasHandle>(null);
   const [hydrated, setHydrated] = useState(false);
   const [fullscreen, setFullscreen] = useState(false);
-  const [viewportH, setViewportH] = useState(0);
   // Piece whose "+" would push the cart over budget: held here until the user
   // confirms or backs out of AddOverBudgetModal.
   const [pendingAdd, setPendingAdd] = useState<Product | null>(null);
@@ -177,22 +179,14 @@ export default function ResultPage() {
     }
   }, [hydrated, room, style]);
 
-  // Fullscreen editing: lock the page scroll, size the canvas to the viewport,
-  // and let Escape close it.
+  // The shared Modal handles focus and scroll locking; Escape exits the studio.
   useEffect(() => {
     if (!fullscreen) return;
-    const onResize = () => setViewportH(window.innerHeight);
-    onResize();
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setFullscreen(false);
     };
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    window.addEventListener("resize", onResize);
     window.addEventListener("keydown", onKey);
     return () => {
-      document.body.style.overflow = prevOverflow;
-      window.removeEventListener("resize", onResize);
       window.removeEventListener("keydown", onKey);
     };
   }, [fullscreen]);
@@ -310,6 +304,8 @@ export default function ResultPage() {
       outline={room.outline ?? null}
       hiddenCategories={excluded ?? []}
       crossHighlight={!fullscreen}
+      history={layoutHistory}
+      fullscreen={fullscreen}
       onMove={(id, x, y) => {
         moveItem(id, x, y);
         track("layout_edited", { item: id });
@@ -325,12 +321,6 @@ export default function ResultPage() {
       onReset={handleReset}
     />
   );
-
-  // In fullscreen, cap the canvas width so the whole room fits the viewport
-  // height (the canvas scales to fill its container width). This maximizes the
-  // scale without forcing a scroll. Falls back to full width before measure.
-  const fsMaxWidth =
-    viewportH > 0 ? (room.lengthFt / room.widthFt) * (viewportH - 128) + 56 : undefined;
 
   function handleReset() {
     // Drawn polygon: re-run the wall placer. Otherwise restore the template.
@@ -437,7 +427,7 @@ export default function ResultPage() {
         {/* Canvas panel */}
         <section className="dm-canvas-panel rise" style={{ animationDelay: "80ms" }}>
           <div className="dm-eyebrow"><span>01 / Your floor plan</span><span>Made to measure</span></div>
-          <div className="overflow-hidden rounded-2xl border border-ink/10 bg-white p-1.5 sm:p-2">
+          <div className="min-w-0">
             {!fullscreen && canvas}
           </div>
           {/* Unplaced tray: custom items we couldn't confidently categorize.
@@ -489,9 +479,6 @@ export default function ResultPage() {
               </svg>
               Edit in fullscreen
             </button>
-            <p className="text-[10px] leading-tight text-ink-soft/80">
-              We recommend editing your room in fullscreen for more space.
-            </p>
           </div>
           {drawnOutline ? (
             <p className="mt-2 text-xs text-ink-soft">
@@ -504,11 +491,6 @@ export default function ResultPage() {
               </p>
             )
           )}
-          <p className="mt-2 hidden text-xs text-ink-soft lg:block">
-            Drag furniture to rearrange · click an item, then use the toolbar to
-            rotate, hide, lock, or delete it · items snap to a 6-inch grid · red
-            outline means it doesn&apos;t fit there
-          </p>
           {/* Honest, matter-of-fact placement disclaimer, same spirit as the
               estimated-dimensions note. ToS is cross-referenced, not duplicated. */}
           <p className="mt-2 flex items-start gap-1.5 text-[11px] leading-snug text-ink-soft/90">
@@ -616,7 +598,7 @@ export default function ResultPage() {
       {/* Fullscreen editing overlay: the same canvas, scaled up to the viewport
           for easier drag-and-drop. Product highlighting is off here. */}
       {fullscreen && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-paper">
+        <Modal className="dm-canvas-fullscreen flex flex-col bg-paper" aria-label="Fullscreen room studio">
           <div className="flex items-center justify-between gap-3 border-b border-ink/10 bg-white px-4 py-2.5">
             <div className="min-w-0">
               <p className="truncate font-display text-sm font-bold text-ink">
@@ -646,12 +628,12 @@ export default function ResultPage() {
               Exit fullscreen
             </button>
           </div>
-          <div className="flex flex-1 items-center justify-center overflow-auto p-4">
-            <div className="w-full" style={{ maxWidth: fsMaxWidth }}>
+          <div className="flex flex-1 items-start justify-center overflow-auto p-3 sm:p-4">
+            <div className="w-full max-w-[1400px]">
               {canvas}
             </div>
           </div>
-        </div>
+        </Modal>
       )}
 
       {pendingAdd && (

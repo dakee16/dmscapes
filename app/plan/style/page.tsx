@@ -244,6 +244,7 @@ export default function PlanStylePage() {
 
         <div className="dm-style-aside">
           <StudioPreview
+            variant="palette"
             vibe={style ?? "cozy"}
             caption="A preview of your palette."
           />

@@ -1,9 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { Stage, Layer, Line, Rect, Circle, Text, Arc, Group } from "react-konva";
 import Konva from "konva";
 import type { ClosetRect, Point, RoomOutline, WallOpening } from "@/lib/types";
+
+import { fitViewport, zoomAt } from "@/components/canvas/viewport";
+import { clamp, rectInsidePolygon } from "@/components/canvas/geometry";
+import styles from "@/components/canvas/CanvasStudio.module.css";
 
 // Cap the backing-store resolution on high-DPR phones (same reasoning as RoomCanvas).
 if (typeof window !== "undefined") {
@@ -25,13 +29,13 @@ const CLOSE_SNAP_FT = 0.75; // click within this of the start point to close the
 const ANGLE_STEP = 15;
 
 const INK = "#17172b";
-const GRID = "#e8ecf6";
-const GRID5 = "#cdd6ec";
+const GRID = "#e0e4eb";
+const GRID5 = "#c5ccda";
 const COBALT = "#2b4eff";
 const AMBER = "#f0b100";
 const WHITE = "#ffffff";
 
-type Tool = "wall" | "door" | "window" | "closet";
+type Tool = "wall" | "door" | "window" | "closet" | "pan";
 type Selected = { kind: "opening" | "closet"; index: number } | null;
 
 const snap = (v: number) => Math.round(v * 2) / 2;
@@ -121,7 +125,15 @@ export default function RoomDrawCanvas({
   onComplete: (result: RoomDrawResult) => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [containerW, setContainerW] = useState(0);
+  const stageRef = useRef<Konva.Stage>(null);
+  const [viewport, setViewport] = useState({ width: 0, height: 420 });
+  const [zoom, setZoom] = useState(1);
+  const [stagePos, setStagePos] = useState({ x: 0, y: 0 });
+  const [showGrid, setShowGrid] = useState(true);
+  const [startLength, setStartLength] = useState("14");
+  const [startWidth, setStartWidth] = useState("12");
+  const inputId = useId();
+  const lastDrag = useRef(0);
 
   const [tool, setTool] = useState<Tool>("wall");
   const [points, setPoints] = useState<Point[]>([]);
@@ -132,19 +144,34 @@ export default function RoomDrawCanvas({
   const [selected, setSelected] = useState<Selected>(null);
   const [hint, setHint] = useState<string | null>(null);
   const history = useRef<Snapshot[]>([]);
+  const future = useRef<Snapshot[]>([]);
 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-    const ro = new ResizeObserver((e) => setContainerW(e[0].contentRect.width));
+    const ro = new ResizeObserver((e) => setViewport({ width: e[0].contentRect.width, height: e[0].contentRect.height }));
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
 
-  const pxFt = containerW > 0 ? (containerW - PAD * 2) / SPAN_X : 0;
-  const stageW = containerW;
-  const stageH = SPAN_Y * pxFt + PAD * 2;
-  const px = (xFt: number, yFt: number): [number, number] => [PAD + xFt * pxFt, PAD + yFt * pxFt];
+  const stageW = viewport.width;
+  const stageH = viewport.height;
+  const fitted = fitViewport(stageW, stageH, SPAN_X, SPAN_Y, PAD + 10);
+  const pxFt = fitted.scale;
+  const ox = fitted.x, oy = fitted.y;
+  const px = (xFt: number, yFt: number): [number, number] => [ox + xFt * pxFt, oy + yFt * pxFt];
+  useEffect(() => { setZoom(1); setStagePos({ x: 0, y: 0 }); }, [stageW, stageH]);
+  function applyZoom(next: number) {
+    const z = clamp(next, .75, 3);
+    setStagePos(pos => zoomAt(pos, zoom, z, { x: stageW/2, y: stageH/2 }));
+    setZoom(z);
+  }
+  function toWorld(pos: { x: number; y: number }) {
+    return stageRef.current?.getAbsoluteTransform().copy().invert().point(pos) ?? pos;
+  }
+  function toScreen(pos: { x: number; y: number }) {
+    return stageRef.current?.getAbsoluteTransform().point(pos) ?? pos;
+  }
 
   // ---- history / undo -------------------------------------------------------
   function snapshot(): Snapshot {
@@ -152,37 +179,52 @@ export default function RoomDrawCanvas({
   }
   function commit(next: Partial<Snapshot>) {
     history.current.push(snapshot());
+    if (history.current.length > 50) history.current.shift();
+    future.current = [];
     if (next.points !== undefined) setPoints(next.points);
     if (next.closed !== undefined) setClosed(next.closed);
     if (next.openings !== undefined) setOpenings(next.openings);
     if (next.closets !== undefined) setClosets(next.closets);
   }
+  function restore(prev: Snapshot) {
+    setPoints(prev.points); setClosed(prev.closed); setOpenings(prev.openings); setClosets(prev.closets);
+    setSelected(null); setHint(null); setCursor(null); setTool(prev.closed ? "door" : "wall");
+  }
   function undo() {
     const prev = history.current.pop();
     if (!prev) return;
-    setPoints(prev.points);
-    setClosed(prev.closed);
-    setOpenings(prev.openings);
-    setClosets(prev.closets);
-    setSelected(null);
-    setHint(null);
+    future.current.push(snapshot());
+    restore(prev);
+  }
+  function redo() {
+    const next = future.current.pop();
+    if (!next) return;
+    history.current.push(snapshot());
+    restore(next);
   }
   function clearAll() {
-    history.current = [];
-    setPoints([]);
-    setClosed(false);
-    setOpenings([]);
-    setClosets([]);
-    setSelected(null);
-    setHint(null);
-    setTool("wall");
+    commit({ points: [], closed: false, openings: [], closets: [] });
+    setSelected(null); setHint("Drawing cleared. Undo to bring it back."); setTool("wall"); setCursor(null);
+  }
+  function startShape(shape: "rectangle" | "l") {
+    const length = Number(startLength), width = Number(startWidth);
+    if (!Number.isFinite(length) || !Number.isFinite(width) || length < 4 || length > 24 || width < 4 || width > 18) {
+      setHint("Enter a length from 4 to 24 ft and a width from 4 to 18 ft, or draw your own shape."); return;
+    }
+    const x = snap((SPAN_X-length)/2), y = snap((SPAN_Y-width)/2);
+    const ring = shape === "rectangle"
+      ? [{x,y},{x:x+length,y},{x:x+length,y:y+width},{x,y:y+width}]
+      : [{x,y},{x:x+length,y},{x:x+length,y:y+width/2},{x:x+length/2,y:y+width/2},{x:x+length/2,y:y+width},{x,y:y+width}];
+    commit({ points: ring, closed: true, openings: [], closets: [] });
+    setTool("door"); setCursor(null); setHint("Shape ready. Add doors and windows to match your room.");
   }
 
   // ---- cursor + rubber-band preview ----------------------------------------
   function pointerFt(stage: Konva.Stage | null): Point | null {
-    const p = stage?.getPointerPosition();
-    if (!p) return null;
-    return { x: snap((p.x - PAD) / pxFt), y: snap((p.y - PAD) / pxFt) };
+    const pointer = stage?.getPointerPosition();
+    if (!pointer || pxFt <= 0) return null;
+    const p = toWorld(pointer);
+    return { x: snap((p.x - ox) / pxFt), y: snap((p.y - oy) / pxFt) };
   }
 
   const nearStart =
@@ -193,18 +235,18 @@ export default function RoomDrawCanvas({
   // Wall preview: snap the angle from the previous corner to ANGLE_STEP and the
   // length to the half-foot grid, so horizontal/vertical AND clean diagonals are
   // both easy to draw without going fully freeform.
-  const preview: Point | null = (() => {
-    if (tool !== "wall" || closed || points.length === 0 || !cursor) return null;
-    if (nearStart) return points[0];
+  function nextWallPoint(target: Point): Point {
     const last = points[points.length - 1];
-    const dx = cursor.x - last.x, dy = cursor.y - last.y;
-    const dist = Math.hypot(dx, dy);
+    if (!last) return target;
+    if (points.length >= 3 && Math.hypot(target.x-points[0].x,target.y-points[0].y) <= CLOSE_SNAP_FT) return points[0];
+    const dx = target.x-last.x, dy = target.y-last.y;
+    const dist = Math.hypot(dx,dy);
     if (dist < 1e-6) return last;
-    const ang = Math.round((Math.atan2(dy, dx) * 180) / Math.PI / ANGLE_STEP) * ANGLE_STEP;
-    const rad = (ang * Math.PI) / 180;
-    const len = Math.max(0.5, snap(dist));
-    return { x: round2(last.x + Math.cos(rad) * len), y: round2(last.y + Math.sin(rad) * len) };
-  })();
+    const angle = Math.round(Math.atan2(dy,dx)*180/Math.PI/ANGLE_STEP)*ANGLE_STEP*Math.PI/180;
+    const len = Math.max(.5,snap(dist));
+    return { x: round2(last.x+Math.cos(angle)*len), y: round2(last.y+Math.sin(angle)*len) };
+  }
+  const preview = tool === "wall" && !closed && cursor && points.length ? nextWallPoint(cursor) : null;
 
   // ---- edge helpers ---------------------------------------------------------
   const edges = useMemo(() => {
@@ -231,8 +273,10 @@ export default function RoomDrawCanvas({
 
   // ---- click handling -------------------------------------------------------
   function handleStageClick(e: Konva.KonvaEventObject<MouseEvent | TouchEvent>) {
+    if (tool === "pan" || Date.now() - lastDrag.current < 250) return;
     const ft = pointerFt(e.target.getStage());
     if (!ft) return;
+    if (ft.x < 0 || ft.y < 0 || ft.x > SPAN_X || ft.y > SPAN_Y) { setHint("Place your room inside the drawing grid."); return; }
     setHint(null);
 
     if (tool === "wall") {
@@ -241,15 +285,17 @@ export default function RoomDrawCanvas({
         commit({ points: [ft] });
         return;
       }
-      if (nearStart) {
+      if (points.length >= 3 && Math.hypot(ft.x-points[0].x,ft.y-points[0].y) <= CLOSE_SNAP_FT) {
         finishOutline();
         return;
       }
-      if (preview) {
+      const clickedPoint = nextWallPoint(ft);
+      if (clickedPoint) {
         // Ignore a zero-length repeat click on the same corner.
         const last = points[points.length - 1];
-        if (preview.x === last.x && preview.y === last.y) return;
-        commit({ points: [...points, preview] });
+        if (clickedPoint.x === last.x && clickedPoint.y === last.y) return;
+        if (clickedPoint.x < 0 || clickedPoint.y < 0 || clickedPoint.x > SPAN_X || clickedPoint.y > SPAN_Y) { setHint("That corner is outside the grid. Choose a closer point."); return; }
+        commit({ points: [...points, clickedPoint] });
       }
       return;
     }
@@ -271,7 +317,8 @@ export default function RoomDrawCanvas({
         setHint(`That wall is too short for a ${width}-ft ${tool}.`);
         return;
       }
-      const offset = snap(Math.max(0, Math.min(e2.len - width, t - width / 2)));
+      const offset = clamp(snap(t-width/2),0,e2.len-width);
+      if (openings.some(o => o.edge === edge && offset < o.offset_ft+o.width_ft && offset+width > o.offset_ft)) { setHint("There is already an opening here. Leave a little space between them."); return; }
       commit({ openings: [...openings, { kind: tool, edge, offset_ft: offset, width_ft: width }] });
       setSelected({ kind: "opening", index: openings.length });
       return;
@@ -280,6 +327,7 @@ export default function RoomDrawCanvas({
     if (tool === "closet") {
       const x = snap(Math.max(0, ft.x - CLOSET_W / 2));
       const y = snap(Math.max(0, ft.y - CLOSET_D / 2));
+      if (!rectInsidePolygon({ x, y, w: CLOSET_W, h: CLOSET_D }, points)) { setHint("Place the whole closet inside your walls."); return; }
       commit({ closets: [...closets, { x_ft: x, y_ft: y, width_ft: CLOSET_W, depth_ft: CLOSET_D }] });
       setSelected({ kind: "closet", index: closets.length });
     }
@@ -288,6 +336,8 @@ export default function RoomDrawCanvas({
   function finishOutline() {
     if (points.length < 3) return;
     const ring = [...points];
+    const area = Math.abs(ring.reduce((sum,p,i) => { const next = ring[(i+1)%ring.length]; return sum+p.x*next.y-next.x*p.y; }, 0))/2;
+    if (area < 1) { setHint("Give your room some floor space. Place at least three corners around an area."); return; }
     // The loop closes on the last-corner -> start edge (any angle is fine now).
     if (!isSimpleRing(ring)) {
       setHint("That outline crosses itself. Undo the last corner and try again.");
@@ -324,16 +374,18 @@ export default function RoomDrawCanvas({
   const selectedDoor =
     selected?.kind === "opening" && openings[selected.index]?.kind === "door";
 
-  useEffect(() => {
-    function onKey(ev: KeyboardEvent) {
-      if ((ev.key === "Delete" || ev.key === "Backspace") && selected) {
-        ev.preventDefault();
-        removeSelected();
-      }
+  function keyboard(ev: KeyboardEvent<HTMLDivElement>) {
+    if ((ev.target as HTMLElement).closest("input,textarea,select,[contenteditable=true]")) return;
+    if (ev.metaKey || ev.ctrlKey) {
+      if (ev.key.toLowerCase() === "z" || ev.key.toLowerCase() === "y") { ev.preventDefault(); ev.shiftKey || ev.key.toLowerCase() === "y" ? redo() : undo(); }
+      return;
     }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  });
+    if ((ev.key === "Delete" || ev.key === "Backspace") && selected) { ev.preventDefault(); removeSelected(); }
+    if (ev.key === "Escape") { setSelected(null); setCursor(null); setTool(closed ? "pan" : "wall"); }
+    if ((ev.target as HTMLElement).closest("button")) return;
+    if (ev.key === "Enter" && !closed && points.length >= 3) { ev.preventDefault(); finishOutline(); }
+    if (ev.key.toLowerCase() === "r" && selectedDoor) { ev.preventDefault(); rotateDoor(); }
+  }
 
   // ---- complete -------------------------------------------------------------
   function planRoom() {
@@ -373,17 +425,17 @@ export default function RoomDrawCanvas({
   const gridLines = useMemo(() => {
     const l: { key: string; pts: number[]; strong: boolean }[] = [];
     for (let i = 0; i <= SPAN_X; i++)
-      l.push({ key: `v${i}`, pts: [PAD + i * pxFt, PAD, PAD + i * pxFt, PAD + SPAN_Y * pxFt], strong: i % 5 === 0 });
+      l.push({ key: `v${i}`, pts: [ox + i * pxFt, oy, ox + i * pxFt, oy + SPAN_Y * pxFt], strong: i % 5 === 0 });
     for (let j = 0; j <= SPAN_Y; j++)
-      l.push({ key: `h${j}`, pts: [PAD, PAD + j * pxFt, PAD + SPAN_X * pxFt, PAD + j * pxFt], strong: j % 5 === 0 });
+      l.push({ key: `h${j}`, pts: [ox, oy + j * pxFt, ox + SPAN_X * pxFt, oy + j * pxFt], strong: j % 5 === 0 });
     return l;
-  }, [pxFt]);
+  }, [pxFt, ox, oy]);
 
   const wallFlat = useMemo(() => {
     const seq = closed ? points : preview ? [...points, preview] : points;
     return seq.flatMap((p) => px(p.x, p.y));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [points, preview, closed, pxFt]);
+  }, [points, preview, closed, pxFt, ox, oy]);
 
   // Live dimension labels: one per committed edge, plus the live preview edge.
   const dimLabels = useMemo(() => {
@@ -402,7 +454,7 @@ export default function RoomDrawCanvas({
     }
     return labels;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [points, preview, closed, pxFt]);
+  }, [points, preview, closed, pxFt, ox, oy]);
 
   // Placement preview that follows the cursor: a ghost of the door/window/closet
   // where it would land. Driven by mouse-move, so it only appears on desktop
@@ -417,7 +469,7 @@ export default function RoomDrawCanvas({
       const { edge, t, dist } = nearestEdge(cursor);
       const e2 = edges[edge];
       if (e2 && dist <= 1.5 && e2.len >= width) {
-        const offset = snap(Math.max(0, Math.min(e2.len - width, t - width / 2)));
+        const offset = clamp(snap(t-width/2),0,e2.len-width);
         const ux = (e2.b.x - e2.a.x) / (e2.len || 1), uy = (e2.b.y - e2.a.y) / (e2.len || 1);
         const s = { x: e2.a.x + ux * offset, y: e2.a.y + uy * offset };
         const en = { x: e2.a.x + ux * (offset + width), y: e2.a.y + uy * (offset + width) };
@@ -450,8 +502,10 @@ export default function RoomDrawCanvas({
   }
 
   const canPlan = closed && points.length >= 3;
+  const floorArea = closed ? Math.abs(points.reduce((sum,p,i) => { const next=points[(i+1)%points.length]; return sum+p.x*next.y-next.x*p.y; },0))/2 : 0;
 
   const TOOLS: { id: Tool; label: string; icon: React.ReactNode }[] = [
+    { id: "pan", label: "Pan", icon: <path d="M12 3v18M3 12h18M8 7l4-4 4 4M8 17l4 4 4-4M7 8l-4 4 4 4m10-8 4 4-4 4" /> },
     { id: "wall", label: "Wall", icon: <path d="M3 6h18M3 6v12M21 6v12M3 18h18" /> },
     { id: "door", label: "Door", icon: <path d="M4 21h16M6 21V4h9v17M15 4l3 2v15M11 12h.5" /> },
     { id: "window", label: "Window", icon: <path d="M4 4h16v16H4zM12 4v16M4 12h16" /> },
@@ -459,142 +513,62 @@ export default function RoomDrawCanvas({
   ];
 
   return (
-    <div className="dm-draw-toolbox w-full select-none">
-      {/* Toolbar: same island treatment as the result-page canvas toolbar. */}
-      <div className="dm-draw-toolbar mb-3 flex flex-wrap items-center justify-between gap-2">
-        <div className="dm-tool-group flex flex-wrap items-center gap-0.5 border border-ink/15 bg-white p-1">
-          {TOOLS.map((t) => {
-            const active = tool === t.id;
-            const disabled = t.id !== "wall" && !closed;
-            return (
-              <span key={t.id} className="relative flex">
-                <button
-                  type="button"
-                  disabled={disabled}
-                  onClick={() => {
-                    setTool(t.id);
-                    setSelected(null);
-                    setHint(null);
-                  }}
-                  aria-pressed={active}
-                  aria-disabled={disabled}
-                  title={disabled ? "Complete your room outline first" : `${t.label} tool`}
-                  className={`flex items-center gap-1.5 rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
-                    active
-                      ? "bg-cobalt text-white"
-                      : disabled
-                        ? "cursor-not-allowed text-ink/30 opacity-60"
-                        : "text-ink hover:bg-ink/[0.06] hover:text-cobalt"
-                  }`}
-                >
-                  <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    {t.icon}
-                  </svg>
-                  {t.label}
-                </button>
-                {/* Lock over the Window button while the outline is open: it floats
-                    above the toolbar and dips a little into it, and explains itself
-                    on hover. Disappears the moment the walls enclose. */}
-                {t.id === "window" && !closed && (
-                  <span className="group/lock absolute -top-4 left-1/2 z-20 -translate-x-1/2">
-                    <span className="grid h-6 w-6 place-items-center rounded-full border border-amber/60 bg-white text-amber shadow-[0_6px_16px_-6px_rgba(23,23,43,0.55)]">
-                      <svg viewBox="0 0 24 24" className="h-[14px] w-[14px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <rect x="5" y="11" width="14" height="9" rx="2" />
-                        <path d="M8 11V8a4 4 0 0 1 8 0v3" />
-                      </svg>
-                    </span>
-                    <span className="pointer-events-none absolute left-1/2 top-full z-30 mt-2 w-52 -translate-x-1/2 rounded-lg bg-ink px-3 py-2 text-center text-xs font-medium leading-snug text-white opacity-0 shadow-[0_12px_30px_-10px_rgba(23,23,43,0.6)] transition-opacity duration-150 group-hover/lock:opacity-100">
-                      Connect the walls into a closed shape to unlock the door, window, and closet tools.
-                    </span>
-                  </span>
-                )}
-              </span>
-            );
-          })}
+    <div className={`${styles.studio} dm-draw-toolbox`} onKeyDown={keyboard}>
+      <div className={styles.topbar}>
+        <div className={styles.title}><i /><strong>Your drawing studio</strong></div>
+        <span className={styles.meta}>{closed ? `${Math.round(floorArea)} sq ft · ${points.length} walls` : "26 × 20 ft workspace"}</span>
+      </div>
+      <div className={styles.drawSteps}>
+        <span data-active={!closed}><b>01</b> Draw the walls</span>
+        <span data-active={closed}><b>02</b> Add the details</span>
+        <span><b>03</b> Style your room</span>
+      </div>
+      {points.length === 0 && <div className={styles.starter}>
+        <span>Start with a shape, or draw below.</span>
+        <div className={styles.roomDimensions}>
+          <label htmlFor={`${inputId}-length`}>Length (ft)</label><input id={`${inputId}-length`} type="number" min="4" max="24" step=".5" value={startLength} onChange={e => setStartLength(e.target.value)} />
+          <label htmlFor={`${inputId}-width`}>Width (ft)</label><input id={`${inputId}-width`} type="number" min="4" max="18" step=".5" value={startWidth} onChange={e => setStartWidth(e.target.value)} />
         </div>
-        <div className="flex items-center gap-1.5">
-          {selectedDoor && (
-            <button
-              type="button"
-              onClick={rotateDoor}
-              title="Rotate the door's swing direction"
-              className="flex items-center gap-1.5 rounded-xl border border-ink/15 bg-white px-3 py-2 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
-            >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <polyline points="23 4 23 10 17 10" />
-                <path d="M20.49 15a9 9 0 1 1-2.13-9.36L23 10" />
-              </svg>
-              Swing
-            </button>
-          )}
-          {selected && (
-            <button
-              type="button"
-              onClick={removeSelected}
-              className="flex items-center gap-1.5 rounded-xl border border-ink/15 bg-white px-3 py-2 text-sm font-semibold text-ink transition-colors hover:border-red-500 hover:text-red-600"
-            >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <polyline points="3 6 5 6 21 6" />
-                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
-              </svg>
-              Remove
-            </button>
-          )}
-          <button
-            type="button"
-            onClick={undo}
-            disabled={history.current.length === 0}
-            className="flex items-center gap-1.5 rounded-xl border border-ink/15 bg-white px-3 py-2 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt disabled:cursor-not-allowed disabled:text-ink/25"
-          >
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <polyline points="1 4 1 10 7 10" />
-              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
-            </svg>
-            Undo
-          </button>
-          <button
-            type="button"
-            onClick={clearAll}
-            className="flex items-center gap-1.5 rounded-xl border border-ink/15 bg-white px-3 py-2 text-sm font-semibold text-ink transition-colors hover:border-red-500 hover:text-red-600"
-          >
-            Clear
-          </button>
+        <button type="button" className={styles.outlined} onClick={() => startShape("rectangle")}>Rectangle</button>
+        <button type="button" className={styles.outlined} onClick={() => startShape("l")}>L-shape</button>
+      </div>}
+      <div className={`${styles.toolbar} dm-draw-toolbar`} aria-label="Drawing tools">
+        <div className={styles.group}>
+          {TOOLS.map(t => <button key={t.id} type="button" aria-pressed={tool === t.id} disabled={t.id === "wall" ? closed : t.id !== "pan" && !closed} onClick={() => { setTool(t.id); setSelected(null); setHint(null); setCursor(null); }} title={!closed && t.id !== "wall" && t.id !== "pan" ? "Finish the walls to unlock this tool" : t.label}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{t.icon}</svg>{t.label}
+          </button>)}
+        </div>
+        <span className={styles.divider} />
+        <div className={styles.group}>
+          <button type="button" onClick={undo} disabled={!history.current.length} title="Undo (Ctrl/⌘ Z)">↶ Undo</button>
+          <button type="button" onClick={redo} disabled={!future.current.length} title="Redo (Ctrl/⌘ Shift Z)">↷ Redo</button>
+          <button type="button" aria-pressed={showGrid} onClick={() => setShowGrid(!showGrid)}>Grid</button>
+          <button type="button" className={styles.danger} disabled={!points.length} onClick={clearAll}>Clear</button>
         </div>
       </div>
-
-      {/* Furniture-placement disclaimer, persistent while drawing. Same quiet
-          info-note treatment as the estimated-dimensions note elsewhere. */}
-      <div className="mb-3 flex items-start gap-2 rounded-lg border border-cobalt/20 bg-cobalt/[0.04] px-3 py-2 text-xs leading-snug text-ink-soft">
-        <svg viewBox="0 0 24 24" className="mt-px h-3.5 w-3.5 shrink-0 text-cobalt" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-          <circle cx="12" cy="12" r="9" />
-          <path d="M12 11.5v4.5" strokeLinecap="round" />
-          <circle cx="12" cy="8" r="0.6" fill="currentColor" stroke="none" />
-        </svg>
-        <span>
-          Furniture is added automatically once you plan your room. You can adjust
-          everything afterward.
-        </span>
-      </div>
-
-      <div ref={containerRef} className="dm-draw-canvas relative overflow-hidden border border-ink/15 bg-white">
+      <div ref={containerRef} className={`${styles.surface} dm-draw-canvas`} tabIndex={0} role="region" aria-label="Room drawing canvas" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })}>
         {pxFt > 0 && (
           <Stage
+            ref={stageRef}
+            x={stagePos.x} y={stagePos.y} scaleX={zoom} scaleY={zoom} draggable={tool === "pan"}
+            onDragEnd={e => { if (e.target === stageRef.current) { setStagePos({ x:e.target.x(),y:e.target.y() }); lastDrag.current = Date.now(); } }}
             width={stageW}
             height={stageH}
             onClick={handleStageClick}
             onTap={handleStageClick}
             onMouseMove={(e) => setCursor(pointerFt(e.target.getStage()))}
             onMouseLeave={() => setCursor(null)}
-            style={{ cursor: tool === "wall" ? "crosshair" : "copy" }}
+            style={{ cursor: tool === "pan" ? "grab" : tool === "wall" ? "crosshair" : "copy" }}
           >
             <Layer>
+              <Rect x={ox} y={oy} width={SPAN_X*pxFt} height={SPAN_Y*pxFt} fill="#fafaf8" stroke="#d2d6e0" strokeWidth={1} listening={false} />
               {/* Grid */}
-              {gridLines.map((l) => (
+              {showGrid && gridLines.map((l) => (
                 <Line key={l.key} points={l.pts} stroke={l.strong ? GRID5 : GRID} strokeWidth={1} listening={false} />
               ))}
 
               {/* Room fill once closed */}
-              {closed && <Line points={wallFlat} closed fill="rgba(43,78,255,0.04)" listening={false} />}
+              {closed && <Line points={wallFlat} closed fill="#ffffffc9" listening={false} />}
 
               {/* Closets (drag to move, corner handle to resize) */}
               {closets.map((c, i) => {
@@ -608,34 +582,38 @@ export default function RoomDrawCanvas({
                       y={cy}
                       width={w}
                       height={h}
-                      fill={INK}
-                      opacity={0.08}
+                      fill="#e4e7df"
                       stroke={isSel ? COBALT : INK}
                       strokeWidth={isSel ? 2 : 1}
-                      dash={[4, 3]}
-                      draggable
+                      dash={[5, 3]}
+                      draggable={tool !== "pan"}
                       onClick={(e) => { e.cancelBubble = true; setSelected({ kind: "closet", index: i }); }}
                       onTap={(e) => { e.cancelBubble = true; setSelected({ kind: "closet", index: i }); }}
                       onDragStart={(e) => { e.cancelBubble = true; setSelected({ kind: "closet", index: i }); }}
                       onDragEnd={(e) => {
-                        const nx = snap((e.target.x() - PAD) / pxFt);
-                        const ny = snap((e.target.y() - PAD) / pxFt);
+                        lastDrag.current = Date.now();
+                        const nx = snap((e.target.x() - ox) / pxFt);
+                        const ny = snap((e.target.y() - oy) / pxFt);
+                        if (!rectInsidePolygon({ x:nx, y:ny, w:c.width_ft, h:c.depth_ft },points)) { e.target.position({ x:cx,y:cy }); setHint("Keep the closet inside the room."); return; }
                         commit({ closets: closets.map((cc, k) => (k === i ? { ...cc, x_ft: Math.max(0, nx), y_ft: Math.max(0, ny) } : cc)) });
                       }}
                     />
-                    <Text x={cx} y={cy} width={w} height={h} text="Closet" align="center" verticalAlign="middle" fontSize={Math.min(12, h * 0.4)} fontStyle="600" fill={INK} opacity={0.55} listening={false} />
+                    <Text x={cx} y={cy} width={w} height={h} text="Closet" align="center" verticalAlign="middle" fontSize={Math.min(12, h * 0.4)} fontStyle="600" fill={INK} listening={false} />
                     {isSel && (
                       <Circle
                         x={cx + w}
                         y={cy + h}
                         radius={7}
+                        hitStrokeWidth={14}
                         fill={WHITE}
                         stroke={COBALT}
                         strokeWidth={2}
-                        draggable
+                        draggable={tool !== "pan"}
                         onDragEnd={(e) => {
+                          lastDrag.current = Date.now();
                           const nw = snap(Math.max(1, (e.target.x() - cx) / pxFt));
                           const nh = snap(Math.max(1, (e.target.y() - cy) / pxFt));
+                          if (!rectInsidePolygon({ x:c.x_ft, y:c.y_ft, w:nw, h:nh },points)) { e.target.position({x:cx+w,y:cy+h}); setHint("Keep the closet inside the room."); return; }
                           commit({ closets: closets.map((cc, k) => (k === i ? { ...cc, width_ft: nw, depth_ft: nh } : cc)) });
                         }}
                       />
@@ -646,7 +624,7 @@ export default function RoomDrawCanvas({
 
               {/* Walls */}
               {wallFlat.length >= 4 && (
-                <Line points={wallFlat} closed={closed} stroke={INK} strokeWidth={2.5} lineJoin="round" lineCap="round" listening={false} />
+                <Line points={wallFlat} closed={closed} stroke={INK} strokeWidth={4} lineJoin="miter" lineCap="round" listening={false} />
               )}
 
               {/* Corner dots; the start dot glows so the user knows where to close */}
@@ -710,14 +688,16 @@ export default function RoomDrawCanvas({
                         x={mxp}
                         y={myp}
                         radius={isSel ? 8 : 6}
+                        hitStrokeWidth={16}
                         fill={WHITE}
                         stroke={op.kind === "door" ? COBALT : AMBER}
                         strokeWidth={2}
-                        draggable
+                        draggable={tool !== "pan"}
                         onClick={(ev) => { ev.cancelBubble = true; setSelected({ kind: "opening", index: i }); }}
                         onTap={(ev) => { ev.cancelBubble = true; setSelected({ kind: "opening", index: i }); }}
                         onDragStart={(ev) => { ev.cancelBubble = true; setSelected({ kind: "opening", index: i }); }}
-                        dragBoundFunc={(pos) => {
+                        dragBoundFunc={(absolutePos) => {
+                          const pos = toWorld(absolutePos);
                           // Project onto the edge, clamp so the opening stays on the wall.
                           const [ax, ay] = px(e2.a.x, e2.a.y);
                           const [bx, by] = px(e2.b.x, e2.b.y);
@@ -726,14 +706,20 @@ export default function RoomDrawCanvas({
                           let t = ((pos.x - ax) * vx + (pos.y - ay) * vy) / len2;
                           const half = op.width_ft / 2 / (e2.len || 1);
                           t = Math.max(half, Math.min(1 - half, t));
-                          return { x: ax + vx * t, y: ay + vy * t };
+                          return toScreen({ x: ax + vx * t, y: ay + vy * t });
                         }}
                         onDragEnd={(ev) => {
+                          lastDrag.current = Date.now();
                           const [ax, ay] = px(e2.a.x, e2.a.y);
                           const dxft = (ev.target.x() - ax) / pxFt;
                           const dyft = (ev.target.y() - ay) / pxFt;
                           const along = dxft * ux + dyft * uy; // ft from edge start to handle (mid)
-                          const offset = snap(Math.max(0, Math.min(e2.len - op.width_ft, along - op.width_ft / 2)));
+                          const offset = clamp(snap(along-op.width_ft/2),0,e2.len-op.width_ft);
+                          if (openings.some((o,k) => k !== i && o.edge === op.edge && offset < o.offset_ft+o.width_ft && offset+op.width_ft > o.offset_ft)) {
+                            ev.target.position({x:mxp,y:myp});
+                            setHint("Leave space between doors and windows.");
+                            return;
+                          }
                           commit({ openings: openings.map((o, k) => (k === i ? { ...o, offset_ft: offset } : o)) });
                         }}
                       />
@@ -744,13 +730,15 @@ export default function RoomDrawCanvas({
                           x={ex}
                           y={ey}
                           radius={7}
+                        hitStrokeWidth={14}
                           fill={WHITE}
                           stroke={AMBER}
                           strokeWidth={2.5}
-                          draggable
+                          draggable={tool !== "pan"}
                           onClick={(ev) => { ev.cancelBubble = true; }}
                           onTap={(ev) => { ev.cancelBubble = true; }}
-                          dragBoundFunc={(pos) => {
+                          dragBoundFunc={(absolutePos) => {
+                          const pos = toWorld(absolutePos);
                             const [ax, ay] = px(e2.a.x, e2.a.y);
                             const [bx, by] = px(e2.b.x, e2.b.y);
                             const vx = bx - ax, vy = by - ay;
@@ -758,13 +746,19 @@ export default function RoomDrawCanvas({
                             let t = ((pos.x - ax) * vx + (pos.y - ay) * vy) / len2;
                             const tMin = (op.offset_ft + 1) / (e2.len || 1); // keep at least 1 ft wide
                             t = Math.max(tMin, Math.min(1, t));
-                            return { x: ax + vx * t, y: ay + vy * t };
+                            return toScreen({ x: ax + vx * t, y: ay + vy * t });
                           }}
                           onDragEnd={(ev) => {
+                          lastDrag.current = Date.now();
                             const [ax, ay] = px(e2.a.x, e2.a.y);
                             const dxft = (ev.target.x() - ax) / pxFt, dyft = (ev.target.y() - ay) / pxFt;
                             const alongEnd = dxft * ux + dyft * uy; // ft from edge start to the end handle
-                            const width = snap(Math.max(1, Math.min(e2.len - op.offset_ft, alongEnd - op.offset_ft)));
+                            const width = clamp(snap(alongEnd-op.offset_ft),1,e2.len-op.offset_ft);
+                            if (openings.some((o,k) => k !== i && o.edge === op.edge && op.offset_ft < o.offset_ft+o.width_ft && op.offset_ft+width > o.offset_ft)) {
+                              ev.target.position({x:ex,y:ey});
+                              setHint("Leave space between doors and windows.");
+                              return;
+                            }
                             commit({ openings: openings.map((o, k) => (k === i ? { ...o, width_ft: width } : o)) });
                           }}
                         />
@@ -793,43 +787,39 @@ export default function RoomDrawCanvas({
               {/* Dimension labels */}
               {dimLabels.map((d) => (
                 <Group key={d.key} listening={false}>
-                  <Rect x={d.x - 18} y={d.y - 9} width={36} height={18} cornerRadius={4} fill={WHITE} opacity={0.9} />
-                  <Text x={d.x - 18} y={d.y - 9} width={36} height={18} text={d.text} align="center" verticalAlign="middle" fontSize={11} fontStyle="600" fill={d.live ? COBALT : INK} />
+                  <Rect x={d.x - 27} y={d.y - 10} width={54} height={20} cornerRadius={2} fill={WHITE} stroke="#17172b20" opacity={.96} />
+                  <Text x={d.x - 27} y={d.y - 10} width={54} height={20} text={d.text} align="center" verticalAlign="middle" fontSize={11} fontStyle="600" fill={d.live ? COBALT : INK} />
                 </Group>
               ))}
             </Layer>
           </Stage>
         )}
 
-        {/* Empty-state hint overlay before any point is placed */}
-        {points.length === 0 && (
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <p className="max-w-xs text-center text-sm leading-relaxed text-ink-soft">
-              Tap to drop your first corner, then tap around the room. Walls snap
-              square and to a 6-inch grid. Tap the first corner again to close.
-            </p>
-          </div>
-        )}
+        <div className={styles.drawMeta}><span>1 square = 1 ft</span><span>6-inch snap · 15° angles</span></div>
+        {points.length === 0 && <div className={styles.empty}>
+          <span>⌑</span><strong>Every great room<br />starts with a line.</strong>
+          <p>Tap to place corners around your room. Return to the first corner, or choose Close walls when you are ready.</p>
+        </div>}
+        <div className={styles.viewportControls} aria-label="Drawing view controls">
+          <button type="button" disabled={zoom <= .75} onClick={() => applyZoom(zoom-.25)} aria-label="Zoom drawing out">−</button>
+          <output aria-label="Drawing zoom level">{Math.round(zoom*100)}%</output>
+          <button type="button" disabled={zoom >= 3} onClick={() => applyZoom(zoom+.25)} aria-label="Zoom drawing in">+</button>
+          <button type="button" onClick={() => { setZoom(1); setStagePos({x:0,y:0}); }}>Fit grid</button>
+        </div>
       </div>
-
-      {/* Status line + primary action */}
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
-        <p className="min-h-5 text-sm text-ink-soft" aria-live="polite">
-          {hint ??
-            (!closed
-              ? points.length === 0
-                ? "Draw wall: tap to place corners."
-                : `${points.length} corner${points.length > 1 ? "s" : ""} placed${nearStart ? " · tap the glowing corner to close" : ""}.`
-              : "Add doors, windows, and closets, or plan your room.")}
-        </p>
-        <button
-          type="button"
-          disabled={!canPlan}
-          onClick={planRoom}
-          className="inline-flex h-12 items-center justify-center rounded-xl bg-cobalt px-8 text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:bg-ink/15 disabled:text-ink-soft"
-        >
-          Plan this room →
-        </button>
+      {selected && <div className={styles.inspector}>
+        <div className={styles.selection}><strong>{selected.kind === "closet" ? "Closet" : openings[selected.index]?.kind === "door" ? "Door" : "Window"}</strong><small>{selected.kind === "closet" ? "Drag to move. Drag the corner to resize." : selectedDoor ? "Slide along the wall. Change the swing below." : "Slide along the wall. Drag the end to resize."}</small></div>
+        {selectedDoor && <button type="button" className={styles.outlined} onClick={rotateDoor}>↻ Change swing</button>}
+        <button type="button" className={styles.danger} onClick={removeSelected}>Remove</button>
+      </div>}
+      <div className={styles.footer}>
+        <p role="status" aria-live="polite">{hint ?? (closed ? "Place doors and windows on a wall. Closets go inside your room." : points.length ? `${points.length} corners placed. Keep drawing, or close your walls.` : "Choose a starter shape or place your first corner.")}</p>
+        {!closed && points.length >= 3 && <button type="button" className={styles.outlined} onClick={finishOutline}>Close walls</button>}
+        <button type="button" className={styles.primary} disabled={!canPlan} onClick={planRoom}>Plan this room →</button>
+      </div>
+      <div className={styles.help}>
+        <p>Furniture is added after you choose your style. You can rearrange it in the room studio.</p>
+        <p><kbd>Enter</kbd> Close walls · <kbd>Ctrl/⌘ Z</kbd> Undo · <kbd>Ctrl/⌘ Shift Z</kbd> Redo · <kbd>R</kbd> Door swing · <kbd>Delete</kbd> Remove selection</p>
       </div>
     </div>
   );

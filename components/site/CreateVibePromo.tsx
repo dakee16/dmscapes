@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
-import RoomModel from "@/components/experience/RoomModel";
-import CustomVibeBrief from "@/components/experience/CustomVibeBrief";
+import { VibeMoodboard } from "@/components/experience/StudioMotion";
 import styles from "@/components/experience/CustomVibe.module.css";
 
 export default function CreateVibePromo() {
@@ -38,11 +37,10 @@ export default function CreateVibePromo() {
               <span>Dormscape / Vibe studio</span>
               <span>Made personal.</span>
             </div>
-            <RoomModel vibe="cozy" className={styles.visualRoom} />
-            <CustomVibeBrief />
+            <VibeMoodboard />
             <figcaption className={styles.visualCaption}>
               <span>Illustrative style study</span>
-              <span className="dm-room-interaction-hint">Drag to explore</span>
+              <span>Your brief, made visual.</span>
             </figcaption>
           </figure>
         </Reveal>
