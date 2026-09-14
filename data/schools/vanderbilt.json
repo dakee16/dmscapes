@@ -1,0 +1,1565 @@
+{
+ "college_id": "vanderbilt",
+ "college_name": "Vanderbilt University",
+ "city": "Nashville",
+ "state": "TN",
+ "aliases": [
+  "vanderbilt",
+  "vandy",
+  "vanderbilt university",
+  "commodores"
+ ],
+ "housing_url": "https://www.vanderbilt.edu/ohare/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Vanderbilt Housing and Residential Experience's official pages. Vanderbilt says plainly that it is unable to provide measurements for specific rooms and keeps floor plans inside the Housing Portal, so most rooms here use the site's estimate fallback and are labelled \"Estimated based on similar rooms. Official size not published.\" Three Commons houses are the exception — Hank Ingram (167-269 sq ft), Sutherland (201-290) and Stambaugh (201-310) publish a room-size range, and those rooms show a representative rectangle of the midpoint at medium confidence with the range stated on the room. Vanderbilt has been converting from traditional dormitories to a residential college system, so only the ten Commons houses and the current residential colleges are listed; halls replaced during that conversion are deliberately left out.",
+ "dorms": [
+  {
+   "dorm_id": "crawford",
+   "dorm_name": "Crawford House",
+   "hall_url": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "One of the ten houses of the Martha Rivers Ingram Commons, which opened in 2008 and houses the entire first-year class.",
+   "campus_area": "The Commons"
+  },
+  {
+   "dorm_id": "east",
+   "dorm_name": "East House",
+   "hall_url": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "One of the ten houses of the Martha Rivers Ingram Commons, which opened in 2008 and houses the entire first-year class.",
+   "campus_area": "The Commons"
+  },
+  {
+   "dorm_id": "gillette",
+   "dorm_name": "Gillette House",
+   "hall_url": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "One of the ten houses of the Martha Rivers Ingram Commons, which opened in 2008 and houses the entire first-year class.",
+   "campus_area": "The Commons"
+  },
+  {
+   "dorm_id": "hank-ingram",
+   "dorm_name": "Hank Ingram House",
+   "hall_url": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18.2,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 218,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "medium",
+     "notes": "Vanderbilt publishes a room-size range of 167-269 sq ft for this house but no length x width; the footprint shown is a representative rectangle of the midpoint of that range. The Commons houses hold a wide variety of room types, and configurations vary between houses and within them."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "Vanderbilt publishes a 167-269 sq ft range for this house's rooms overall but nothing specific to singles. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "One of the ten houses of the Martha Rivers Ingram Commons, which opened in 2008 and houses the entire first-year class.",
+   "campus_area": "The Commons"
+  },
+  {
+   "dorm_id": "memorial",
+   "dorm_name": "Memorial House",
+   "hall_url": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "One of the ten houses of the Martha Rivers Ingram Commons, which opened in 2008 and houses the entire first-year class.",
+   "campus_area": "The Commons"
+  },
+  {
+   "dorm_id": "murray",
+   "dorm_name": "Murray House",
+   "hall_url": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "One of the ten houses of the Martha Rivers Ingram Commons, which opened in 2008 and houses the entire first-year class.",
+   "campus_area": "The Commons"
+  },
+  {
+   "dorm_id": "north",
+   "dorm_name": "North House",
+   "hall_url": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "One of the ten houses of the Martha Rivers Ingram Commons, which opened in 2008 and houses the entire first-year class.",
+   "campus_area": "The Commons"
+  },
+  {
+   "dorm_id": "stambaugh",
+   "dorm_name": "Stambaugh House",
+   "hall_url": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 21.3,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 256,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "medium",
+     "notes": "Vanderbilt publishes a room-size range of 201-310 sq ft for this house but no length x width; the footprint shown is a representative rectangle of the midpoint of that range. The Commons houses hold a wide variety of room types, and configurations vary between houses and within them."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "Vanderbilt publishes a 201-310 sq ft range for this house's rooms overall but nothing specific to singles. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "One of the ten houses of the Martha Rivers Ingram Commons, which opened in 2008 and houses the entire first-year class.",
+   "campus_area": "The Commons"
+  },
+  {
+   "dorm_id": "sutherland",
+   "dorm_name": "Sutherland House",
+   "hall_url": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 20.5,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "medium",
+     "notes": "Vanderbilt publishes a room-size range of 201-290 sq ft for this house but no length x width; the footprint shown is a representative rectangle of the midpoint of that range. The Commons houses hold a wide variety of room types, and configurations vary between houses and within them."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "Vanderbilt publishes a 201-290 sq ft range for this house's rooms overall but nothing specific to singles. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "One of the ten houses of the Martha Rivers Ingram Commons, which opened in 2008 and houses the entire first-year class.",
+   "campus_area": "The Commons"
+  },
+  {
+   "dorm_id": "west",
+   "dorm_name": "West House",
+   "hall_url": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/ohare/our-residence-halls/",
+     "data_confidence": "low",
+     "notes": "The Commons houses hold a wide variety of room types, and configurations vary between houses and within them. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "One of the ten houses of the Martha Rivers Ingram Commons, which opened in 2008 and houses the entire first-year class.",
+   "campus_area": "The Commons"
+  },
+  {
+   "dorm_id": "warren-college",
+   "dorm_name": "Warren College",
+   "hall_url": "https://www.vanderbilt.edu/living/residences.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Opened 2014 as one of Vanderbilt's first residential colleges for sophomores through seniors.",
+   "year_built": 2014,
+   "building_type": "Residential college"
+  },
+  {
+   "dorm_id": "moore-college",
+   "dorm_name": "Moore College",
+   "hall_url": "https://www.vanderbilt.edu/living/residences.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Opened 2014 alongside Warren College for sophomores through seniors.",
+   "year_built": 2014,
+   "building_type": "Residential college"
+  },
+  {
+   "dorm_id": "e-bronson-ingram-college",
+   "dorm_name": "E. Bronson Ingram College",
+   "hall_url": "https://www.vanderbilt.edu/living/residences.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Residential college for sophomores through seniors.",
+   "year_built": 2018,
+   "building_type": "Residential college"
+  },
+  {
+   "dorm_id": "rothschild-college",
+   "dorm_name": "Rothschild College",
+   "hall_url": "https://www.vanderbilt.edu/living/residences.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Residential college on the West End, part of Vanderbilt's College Halls initiative.",
+   "year_built": 2020,
+   "building_type": "Residential college"
+  },
+  {
+   "dorm_id": "zeppos-college",
+   "dorm_name": "Zeppos College",
+   "hall_url": "https://www.vanderbilt.edu/living/residences.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Residential college housing up to 335 sophomores, juniors and seniors in four-person suites, doubles and singles.",
+   "year_built": 2020,
+   "building_type": "Residential college"
+  },
+  {
+   "dorm_id": "carmichael-college",
+   "dorm_name": "Oliver C. Carmichael College",
+   "hall_url": "https://www.vanderbilt.edu/living/residences.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a residential college suite. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Residential college for sophomores through seniors.",
+   "year_built": 2023,
+   "building_type": "Residential college"
+  },
+  {
+   "dorm_id": "mctyeire-international-house",
+   "dorm_name": "McTyeire International House",
+   "hall_url": "https://www.vanderbilt.edu/living/residences.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Private room in the language-immersion house. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.vanderbilt.edu/living/residences.php",
+     "data_confidence": "low",
+     "notes": "Shared room in the language-immersion house. Vanderbilt states it is unable to provide measurements for specific rooms and keeps floor plans in the Housing Portal, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Language-immersion living-learning community.",
+   "building_type": "Living-learning community"
+  }
+ ]
+}

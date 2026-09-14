@@ -1,0 +1,1613 @@
+{
+ "college_id": "tufts",
+ "college_name": "Tufts University",
+ "city": "Medford",
+ "state": "MA",
+ "aliases": [
+  "tufts",
+  "tufts university",
+  "jumbos"
+ ],
+ "housing_url": "https://students.tufts.edu/residential-life-and-learning",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from the Tufts Office of Residential Life and Learning's official first-year housing pages, which name every hall assigned to first-year students. Tufts publishes hall features and bathroom arrangements but no room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Only the officially listed first-year halls are included; upperclass houses and apartments are not listed hall-by-hall on the public site and are left out rather than guessed at. Beds are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "bush-hall",
+   "dorm_name": "Bush Hall",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "carmichael-hall",
+   "dorm_name": "Carmichael Hall",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "court-at-professors-row",
+   "dorm_name": "Court at Professors Row",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "hodgdon-hall",
+   "dorm_name": "Hodgdon Hall",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "houston-hall",
+   "dorm_name": "Houston Hall",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year hall on the Residential Quad, one of Tufts' newly renovated spaces. Four gender-neutral community bathrooms per floor; linoleum tiled floors; study space on the first floor and social lounges on each floor."
+  },
+  {
+   "dorm_id": "metcalf-hall",
+   "dorm_name": "Metcalf Hall",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "miller-hall",
+   "dorm_name": "Miller Hall",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "richardson-house",
+   "dorm_name": "Richardson House",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "tilton-hall",
+   "dorm_name": "Tilton Hall",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "wilson-house",
+   "dorm_name": "Wilson House",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "1023-beacon-street",
+   "dorm_name": "1023 Beacon Street (SMFA)",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "1025-beacon-street",
+   "dorm_name": "1025 Beacon Street (SMFA)",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  },
+  {
+   "dorm_id": "1047-beacon-street",
+   "dorm_name": "1047 Beacon Street (SMFA)",
+   "hall_url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited singles. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate",
+     "data_confidence": "low",
+     "notes": "Limited triples. Tufts publishes each hall's room types and features but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year residence hall."
+  }
+ ]
+}

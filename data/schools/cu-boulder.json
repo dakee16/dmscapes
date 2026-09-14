@@ -1,0 +1,1149 @@
+{
+ "college_id": "cu-boulder",
+ "college_name": "University of Colorado Boulder",
+ "city": "Boulder",
+ "state": "CO",
+ "aliases": [
+  "cu boulder",
+  "colorado",
+  "university of colorado",
+  "cu",
+  "buffs",
+  "boulder"
+ ],
+ "housing_url": "https://www.colorado.edu/living/housing/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from CU Boulder University Housing & Residence Life's official hall pages and its \"what we provide\" furnishing list. CU Boulder is unusual in publishing a per-student figure — 60 to 100 square feet of living space — rather than a room size, and says plainly that rooms come in a wide variety of sizes and layouts, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Dresser and mattress sizes are CU's own published measurements. Air conditioning is recorded per hall because most of the older central-campus halls have none — Baker uses evaporative cooling and Willard, Farrand and Libby have neither. Only halls with a live official page are included.",
+ "dorms": [
+  {
+   "dorm_id": "baker-hall",
+   "dorm_name": "Baker Hall",
+   "hall_url": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/baker-hall",
+   "air_conditioning": "evaporative cooling",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single, community bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/baker-hall",
+     "data_confidence": "low",
+     "notes": "Community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double, community bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/baker-hall",
+     "data_confidence": "low",
+     "notes": "Community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple, community bath",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/baker-hall",
+     "data_confidence": "low",
+     "notes": "Community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad, community bath",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/baker-hall",
+     "data_confidence": "low",
+     "notes": "Community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Two doubles with shared bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/baker-hall",
+     "data_confidence": "low",
+     "notes": "Two double rooms share a bathroom between them. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_private_bath",
+     "room_type_official": "Triple with bath",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/baker-hall",
+     "data_confidence": "low",
+     "notes": "Private bathroom for the room. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Historic hall housing first-year students in the College of Arts & Sciences, School of Education and Program in Exploratory Studies. Evaporative cooling rather than air conditioning.",
+   "population": null
+  },
+  {
+   "dorm_id": "willard-hall",
+   "dorm_name": "Willard Hall",
+   "hall_url": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/willard-hall",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double, community bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/willard-hall",
+     "data_confidence": "low",
+     "notes": "Community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Community-bath hall with free laundry, Wi-Fi and lounge/study space, stairs and an elevator. No air conditioning.",
+   "population": null
+  },
+  {
+   "dorm_id": "farrand-hall",
+   "dorm_name": "Farrand Hall",
+   "hall_url": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/farrand-hall",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single, community bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/farrand-hall",
+     "data_confidence": "low",
+     "notes": "Community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double, community bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/farrand-hall",
+     "data_confidence": "low",
+     "notes": "Community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Central campus hall on Farrand Field. No elevators and no air conditioning; unavailable from 2026-27.",
+   "population": null
+  },
+  {
+   "dorm_id": "libby-hall",
+   "dorm_name": "Libby Hall",
+   "hall_url": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/libby-hall",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single, community bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/libby-hall",
+     "data_confidence": "low",
+     "notes": "Community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double, community bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/libby-hall",
+     "data_confidence": "low",
+     "notes": "Community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Bunked triple, community bath",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/libby-hall",
+     "data_confidence": "low",
+     "notes": "Bunked beds; community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_private_bath",
+     "room_type_official": "Triple with bath",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-housing/libby-hall",
+     "data_confidence": "low",
+     "notes": "Private bathroom for the room. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Central campus hall. No air conditioning.",
+   "population": null
+  },
+  {
+   "dorm_id": "williams-village-east",
+   "dorm_name": "Onizuka Hall",
+   "hall_url": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-apartment-style-and-residence-hall-living/williams-village-east",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single, community bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-apartment-style-and-residence-hall-living/williams-village-east",
+     "data_confidence": "low",
+     "notes": "Community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double, community bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-apartment-style-and-residence-hall-living/williams-village-east",
+     "data_confidence": "low",
+     "notes": "Community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Two doubles with shared bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-apartment-style-and-residence-hall-living/williams-village-east",
+     "data_confidence": "low",
+     "notes": "Two double rooms share a bathroom between them. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Two singles with shared bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-apartment-style-and-residence-hall-living/williams-village-east",
+     "data_confidence": "low",
+     "notes": "Two single rooms share a bathroom between them. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with private bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-apartment-style-and-residence-hall-living/williams-village-east",
+     "data_confidence": "low",
+     "notes": "Private bathroom for the room. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with private bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-apartment-style-and-residence-hall-living/williams-village-east",
+     "data_confidence": "low",
+     "notes": "Private bathroom for the room. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Bunked triple, community bath",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Waterproof XL twin mattress 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "length_ft": 2.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Three-drawer dresser 30.5\" w x 24\" d x 30\" h."
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "count": 1,
+       "notes": "Microwave/refrigerator unit, one per room."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.colorado.edu/living/housing/undergraduate-housing/explore-apartment-style-and-residence-hall-living/williams-village-east",
+     "data_confidence": "low",
+     "notes": "Bunked beds; community bathroom. CU Boulder publishes a per-student space of 60-100 square feet rather than a room size, noting rooms come in a wide variety of sizes and layouts, so this footprint is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "The newest residence hall on campus: a modern 178,000 sq ft building at Williams Village with sustainable design and air conditioning. All bathrooms are gender-inclusive. Engineering Connections and Traditional living communities.",
+   "population": 705
+  }
+ ]
+}

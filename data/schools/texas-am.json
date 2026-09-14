@@ -1,0 +1,609 @@
+{
+ "college_id": "texas-am",
+ "college_name": "Texas A&M University",
+ "city": "College Station",
+ "state": "TX",
+ "aliases": [
+  "texas a&m",
+  "tamu",
+  "texas am",
+  "aggies",
+  "texas a and m",
+  "a&m"
+ ],
+ "housing_url": "https://reslife.tamu.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Texas A&M Residence Life's official housing-style pages and 3D tours. Texas A&M organises its on-campus housing by hall style rather than by building — Commons, Corridor, Modular, Ramp, Balcony and Hullabaloo, plus the White Creek Apartments — and publishes an example space for each style, which is how this entry is structured. Per-hall room and furniture dimensions exist but live inside the housing portal's floor-plan viewer rather than on the public site, and Texas A&M notes specifications vary from hall to hall and room to room, so rooms here use the site's estimate fallback and are labelled \"Estimated based on similar rooms. Official size not published.\" Beds are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "commons",
+   "dorm_name": "Commons-Style Halls",
+   "hall_url": "https://reslife.tamu.edu/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "Suites where two rooms share a bathroom — a balance of privacy and community. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "Suites where two rooms share a bathroom — a balance of privacy and community. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suites where two rooms share a bathroom — a balance of privacy and community.",
+   "building_type": "Commons-Style Halls"
+  },
+  {
+   "dorm_id": "corridor",
+   "dorm_name": "Corridor-Style Halls",
+   "hall_url": "https://reslife.tamu.edu/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "Traditional dorms: double and single rooms opening onto inside hallways, with community bathrooms and two private showers per floor. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "Traditional dorms: double and single rooms opening onto inside hallways, with community bathrooms and two private showers per floor. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional dorms: double and single rooms opening onto inside hallways, with community bathrooms and two private showers per floor.",
+   "building_type": "Corridor-Style Halls"
+  },
+  {
+   "dorm_id": "modular",
+   "dorm_name": "Modular-Style Halls",
+   "hall_url": "https://reslife.tamu.edu/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Private Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "Private bathrooms shared only with a roommate — the most private of the traditional styles. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Private Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "Private bathrooms shared only with a roommate — the most private of the traditional styles. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Private bathrooms shared only with a roommate — the most private of the traditional styles.",
+   "building_type": "Modular-Style Halls"
+  },
+  {
+   "dorm_id": "ramp",
+   "dorm_name": "Ramp-Style Halls",
+   "hall_url": "https://reslife.tamu.edu/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "Small, intimate floors reached by their own ramp entries, which makes for tight-knit communities. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "Small, intimate floors reached by their own ramp entries, which makes for tight-knit communities. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Small, intimate floors reached by their own ramp entries, which makes for tight-knit communities.",
+   "building_type": "Ramp-Style Halls"
+  },
+  {
+   "dorm_id": "balcony",
+   "dorm_name": "Balcony-Style Halls",
+   "hall_url": "https://reslife.tamu.edu/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "Rooms open directly to an outdoor walkway, motel-style, with shared bathrooms. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "Rooms open directly to an outdoor walkway, motel-style, with shared bathrooms. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Rooms open directly to an outdoor walkway, motel-style, with shared bathrooms.",
+   "building_type": "Balcony-Style Halls"
+  },
+  {
+   "dorm_id": "hullabaloo",
+   "dorm_name": "Hullabaloo Hall",
+   "hall_url": "https://reslife.tamu.edu/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "The newest first-year hall: modern single and double rooms arranged into suites with bathrooms shared by two to four students. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "The newest first-year hall: modern single and double rooms arranged into suites with bathrooms shared by two to four students. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "The newest first-year hall: modern single and double rooms arranged into suites with bathrooms shared by two to four students.",
+   "building_type": "Hullabaloo Hall"
+  },
+  {
+   "dorm_id": "white-creek",
+   "dorm_name": "White Creek Apartments",
+   "hall_url": "https://reslife.tamu.edu/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.tamu.edu/",
+     "data_confidence": "low",
+     "notes": "Apartment-style housing; published unit sizes are 1,181 and 1,292 sq ft. Texas A&M publishes room dimensions per hall inside its housing portal's floor-plan viewer rather than on the public site, and notes specifications vary hall to hall and room to room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Apartment-style housing; published unit sizes are 1,181 and 1,292 sq ft.",
+   "building_type": "White Creek Apartments"
+  }
+ ]
+}

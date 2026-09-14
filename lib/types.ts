@@ -78,7 +78,7 @@ export type ProductCategory =
  * Provided mattress size. "twin_xl" (36"×80") is the near-universal US dorm
  * default; the others are documented exceptions that change which bedding fits.
  */
-export type BedSize = "twin_xl" | "twin" | "full" | "full_xl";
+export type BedSize = "twin_xl" | "twin" | "full" | "full_xl" | "queen";
 
 export interface RoomSummary {
   type: string;

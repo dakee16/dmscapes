@@ -1,0 +1,2536 @@
+{
+ "college_id": "tennessee",
+ "college_name": "University of Tennessee, Knoxville",
+ "city": "Knoxville",
+ "state": "TN",
+ "aliases": [
+  "tennessee",
+  "ut knoxville",
+  "utk",
+  "university of tennessee",
+  "vols",
+  "volunteers"
+ ],
+ "housing_url": "https://studentlife.utk.edu/housing/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from University Housing's official hall-styles and room-types pages at the University of Tennessee, Knoxville. Tennessee documents each hall's style (community, suite or apartment) and defines its room types by occupancy — shared versus private bedrooms within a unit — but publishes no per-room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Units are modeled per bedroom so occupant counts and layouts match cleanly.",
+ "dorms": [
+  {
+   "dorm_id": "geier-hall",
+   "dorm_name": "Geier Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, with shared hallway bathrooms. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per room, with shared hallway bathrooms. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Community-style hall with shared hallway bathrooms."
+  },
+  {
+   "dorm_id": "hess-hall",
+   "dorm_name": "Hess Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, with shared hallway bathrooms. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per room, with shared hallway bathrooms. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Community-style hall with shared hallway bathrooms."
+  },
+  {
+   "dorm_id": "robinson-hall",
+   "dorm_name": "Robinson Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, with shared hallway bathrooms. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per room, with shared hallway bathrooms. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Community-style hall with shared hallway bathrooms."
+  },
+  {
+   "dorm_id": "magnolia-hall",
+   "dorm_name": "Magnolia Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, with shared hallway bathrooms. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per room, with shared hallway bathrooms. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom; the suite shares an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Double Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Shared",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Three residents per bedroom, sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Triple Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, three bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Quad Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Quad Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, four bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Offered in both community-style and suite-style configurations."
+  },
+  {
+   "dorm_id": "beacon-hall",
+   "dorm_name": "Beacon Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom; the suite shares an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Double Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Shared",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Three residents per bedroom, sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Triple Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, three bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Quad Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Quad Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, four bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style hall with in-suite bathrooms."
+  },
+  {
+   "dorm_id": "brown-hall",
+   "dorm_name": "Brown Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom; the suite shares an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Double Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Shared",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Three residents per bedroom, sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Triple Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, three bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Quad Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Quad Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, four bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style hall with in-suite bathrooms."
+  },
+  {
+   "dorm_id": "clement-hall",
+   "dorm_name": "Clement Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom; the suite shares an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Double Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Shared",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Three residents per bedroom, sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Triple Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, three bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Quad Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Quad Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, four bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style hall with in-suite bathrooms."
+  },
+  {
+   "dorm_id": "dogwood-hall",
+   "dorm_name": "Dogwood Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom; the suite shares an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Double Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Shared",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Three residents per bedroom, sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Triple Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, three bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Quad Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Quad Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, four bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style hall with in-suite bathrooms."
+  },
+  {
+   "dorm_id": "poplar-hall",
+   "dorm_name": "Poplar Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom; the suite shares an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Double Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Shared",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Three residents per bedroom, sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Triple Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, three bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Quad Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Quad Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, four bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style hall with in-suite bathrooms."
+  },
+  {
+   "dorm_id": "stokely-hall",
+   "dorm_name": "Stokely Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom; the suite shares an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Double Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Shared",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Three residents per bedroom, sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Triple Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, three bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Quad Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Quad Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, four bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style hall with in-suite bathrooms."
+  },
+  {
+   "dorm_id": "torchbearer-hall",
+   "dorm_name": "Torchbearer Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom; the suite shares an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Double Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Shared",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Three residents per bedroom, sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Triple Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, three bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Quad Shared",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom, two bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Quad Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "One resident per bedroom, four bedrooms per unit sharing an in-suite bathroom. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style hall with in-suite bathrooms."
+  },
+  {
+   "dorm_id": "laurel-hall",
+   "dorm_name": "Laurel Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in an apartment with a full kitchen. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in an apartment with a full kitchen. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Apartment-style hall with full kitchens."
+  },
+  {
+   "dorm_id": "volunteer-hall",
+   "dorm_name": "Volunteer Hall",
+   "hall_url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in an apartment with a full kitchen. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentlife.utk.edu/housing/housing-options/hall-styles/",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in an apartment with a full kitchen. The University of Tennessee publishes hall styles and room types but not per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Apartment-style hall with full kitchens."
+  }
+ ]
+}

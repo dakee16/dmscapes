@@ -1,0 +1,3644 @@
+{
+ "college_id": "wustl",
+ "college_name": "Washington University in St. Louis",
+ "city": "St. Louis",
+ "state": "MO",
+ "aliases": [
+  "washu",
+  "wustl",
+  "washington university",
+  "washington university in st louis",
+  "wash u",
+  "bears"
+ ],
+ "housing_url": "https://reslife.washu.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from WashU Residential Life's official South 40 building directory. All first- and second-year students live on the South 40, and WashU names every building and describes its two housing patterns — modern buildings, where two double rooms are adjoined by a shared restroom, and traditional buildings, with single and double rooms on a corridor and common restrooms — plus the furnishings in every room. It publishes no per-room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are extra-long twin (36\" x 80\") on frames that sit 36 inches off the floor, which is worth measuring under before buying storage.",
+ "dorms": [
+  {
+   "dorm_id": "danforth-house",
+   "dorm_name": "Danforth House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "dardick-house",
+   "dorm_name": "Dardick House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "dauten-hall",
+   "dorm_name": "Dauten Hall",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "hitzeman-hall",
+   "dorm_name": "Hitzeman Hall",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "hurd-hall",
+   "dorm_name": "Hurd Hall",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "koenig-house",
+   "dorm_name": "Koenig House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "lee-hall",
+   "dorm_name": "Lee Hall",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "lien-house",
+   "dorm_name": "Lien House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "myers-hall",
+   "dorm_name": "Myers Hall",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "park-house",
+   "dorm_name": "Park House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "rutledge-hall",
+   "dorm_name": "Rutledge Hall",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "shanedling-hall",
+   "dorm_name": "Shanedling Hall",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "thomas-eliot-a-house",
+   "dorm_name": "Thomas Eliot \"A\" House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "umrath-house",
+   "dorm_name": "Umrath House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some single rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Modern building: most layouts are two double rooms adjoined by a shared restroom. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 first-year residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "beaumont-hall",
+   "dorm_name": "Beaumont Hall",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Single room on a corridor. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 sophomore residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "gregg-house",
+   "dorm_name": "Gregg House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Single room on a corridor. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 sophomore residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "liggett-house",
+   "dorm_name": "Liggett House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Single room on a corridor. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 sophomore residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "mudd-house",
+   "dorm_name": "Mudd House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Single room on a corridor. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 sophomore residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "nemerov-house",
+   "dorm_name": "Nemerov House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Single room on a corridor. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 sophomore residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "shepley-house",
+   "dorm_name": "Shepley House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Single room on a corridor. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 sophomore residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "thomas-eliot-b-house",
+   "dorm_name": "Thomas Eliot \"B\" House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Single room on a corridor. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 sophomore residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "wheeler-house",
+   "dorm_name": "Wheeler House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Single room on a corridor. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 sophomore residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "zetcher-house",
+   "dorm_name": "Zetcher House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Single room on a corridor. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 sophomore residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "lopata-house",
+   "dorm_name": "Lopata House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Single room on a corridor. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 sophomore residential community.",
+   "campus_area": "South 40"
+  },
+  {
+   "dorm_id": "village-house",
+   "dorm_name": "Village House",
+   "hall_url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "The standard room. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Single room on a corridor. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\"; frame sits 36\" off the floor.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/south-40-buildings/",
+     "data_confidence": "low",
+     "notes": "Some triple rooms. Traditional building: single and double rooms on each floor with common restrooms. WashU publishes room types and furnishings but no per-room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "South 40 sophomore residential community.",
+   "campus_area": "South 40"
+  }
+ ]
+}

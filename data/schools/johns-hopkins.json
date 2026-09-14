@@ -1,0 +1,647 @@
+{
+ "college_id": "johns-hopkins",
+ "college_name": "Johns Hopkins University",
+ "city": "Baltimore",
+ "state": "MD",
+ "aliases": [
+  "johns hopkins",
+  "jhu",
+  "hopkins",
+  "blue jays",
+  "john hopkins"
+ ],
+ "housing_url": "https://studentaffairs.jhu.edu/on-campus-living/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Johns Hopkins Student Affairs' official residence-hall descriptions. Hopkins describes each hall's style precisely — corridor-style doubles and singles in AMR II, two-bedroom suites in AMR III, two- and three-bedroom suites with a kitchenette in McCoy and Wolman — and provides floor plans and room renderings, but states room size varies and publishes no dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" AMR I is excluded: construction to replace it with a new residence hall and dining facility began in May 2026. Beds are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "amr-ii",
+   "dorm_name": "Alumni Memorial Residence II (AMR II)",
+   "hall_url": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Corridor-style double with hallway bathrooms. Rooms are single-sex, floors are coed. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Corridor-style single with hallway bathrooms. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional first-year hall arranged into houses, with corridor-style doubles and singles and hallway bathrooms."
+  },
+  {
+   "dorm_id": "amr-iii-a",
+   "dorm_name": "AMR III A",
+   "hall_url": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Two bedrooms share a bathroom. Suites are single-sex, floors are coed. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a two-bedroom suite sharing a bathroom. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style first-year hall: two bedrooms share a bathroom.",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "amr-iii-b",
+   "dorm_name": "AMR III B",
+   "hall_url": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Two bedrooms share a bathroom. Suites are single-sex, floors are coed. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a two-bedroom suite sharing a bathroom. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style first-year hall: two bedrooms share a bathroom.",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "mccoy-hall",
+   "dorm_name": "McCoy Hall",
+   "hall_url": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Two or three bedrooms share a bathroom and kitchenette. Suites are single-sex, floors are coed. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a suite sharing a bathroom and kitchenette. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style hall for first- and second-year students: two or three bedrooms share a bathroom and kitchenette.",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "wolman-hall",
+   "dorm_name": "Wolman Hall",
+   "hall_url": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a suite of two or three bedrooms sharing a bathroom and kitchenette. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a suite of two or three bedrooms sharing a bathroom and kitchenette. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Suite Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Three residents share a bedroom in a suite with a bathroom and kitchenette. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style hall whose bedrooms can be single, double or triple occupancy, sharing a bathroom and kitchenette.",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "scott-bates-commons",
+   "dorm_name": "Scott-Bates Commons",
+   "hall_url": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a suite. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a suite. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "The newest Hopkins residence hall, primarily for second-year students.",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "bradford-apartments",
+   "dorm_name": "Bradford Apartments",
+   "hall_url": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in an undergraduate apartment with a kitchen. Johns Hopkins publishes room types and floor plans per hall but notes room size varies and gives no dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Undergraduate apartment building.",
+   "building_type": "Apartment"
+  }
+ ]
+}

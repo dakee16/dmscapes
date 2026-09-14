@@ -1,0 +1,3117 @@
+{
+ "college_id": "uconn",
+ "college_name": "University of Connecticut",
+ "city": "Storrs",
+ "state": "CT",
+ "aliases": [
+  "uconn",
+  "connecticut",
+  "university of connecticut",
+  "huskies"
+ ],
+ "housing_url": "https://campushousing.uconn.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from UConn Campus Housing's official traditional-housing area pages. UConn documents housing by area rather than by building, naming the halls in each, the room types offered, the floor arrangement and the bed size, but publishes no room dimensions — so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are XL twin (80\" x 36\") and can be bunked, lofted or left on the floor, which is the main thing worth planning around. Areas whose hall names UConn does not list publicly (Alumni Quad, Buckley/Shippee, McMahon, Northwest, Werth Tower) are left out rather than guessed at.",
+ "dorms": [
+  {
+   "dorm_id": "beecher",
+   "dorm_name": "Beecher Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "vinton",
+   "dorm_name": "Vinton Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "kingston",
+   "dorm_name": "Kingston Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "allen",
+   "dorm_name": "Allen Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "keller",
+   "dorm_name": "Keller Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "fenwick",
+   "dorm_name": "Fenwick Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "wade",
+   "dorm_name": "Wade Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "hamilton",
+   "dorm_name": "Hamilton Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "jefferson",
+   "dorm_name": "Jefferson Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "colt",
+   "dorm_name": "Colt Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "webster",
+   "dorm_name": "Webster Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "sherman",
+   "dorm_name": "Sherman Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "trumbull",
+   "dorm_name": "Trumbull Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "sousa",
+   "dorm_name": "Sousa Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "morgan",
+   "dorm_name": "Morgan Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "lafayette",
+   "dorm_name": "Lafayette Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Towers Quadrangle: 16 named sections across 6 four-story buildings, primarily a first-year area with co-ed floors.",
+   "campus_area": "Towers Quadrangle"
+  },
+  {
+   "dorm_id": "holcomb",
+   "dorm_name": "Holcomb Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus, three or four floors. South of Horsebarn Hill Road; single-gender female housing.",
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "whitney",
+   "dorm_name": "Whitney Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus, three or four floors. South of Horsebarn Hill Road.",
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "sprague",
+   "dorm_name": "Sprague Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus, three or four floors. South of Horsebarn Hill Road.",
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "grange",
+   "dorm_name": "Grange Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus, three or four floors. North of Horsebarn Hill Road; primarily first-year.",
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "hicks",
+   "dorm_name": "Hicks Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/east-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus, three or four floors. North of Horsebarn Hill Road; primarily first-year, single-gender female housing.",
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "ellsworth",
+   "dorm_name": "Ellsworth Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/hilltop-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/hilltop-halls/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/hilltop-halls/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Hilltop Halls: two nine-storey buildings housing about 600 upper-division students and student-athletes, with traditional rooms and community restrooms on single-sex floors.",
+   "campus_area": "Hilltop"
+  },
+  {
+   "dorm_id": "hale",
+   "dorm_name": "Hale Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/hilltop-halls/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/hilltop-halls/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/hilltop-halls/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Hilltop Halls: two nine-storey buildings housing about 600 upper-division students and student-athletes, with traditional rooms and community restrooms on single-sex floors.",
+   "campus_area": "Hilltop"
+  },
+  {
+   "dorm_id": "chandler-lancaster",
+   "dorm_name": "Chandler/Lancaster Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "West Campus: four four-storey buildings, about 500 residents on single-sex floors. Two air-conditioned study lounges per building; two large bathrooms per floor.",
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "hollister",
+   "dorm_name": "Hollister Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "West Campus: four four-storey buildings, about 500 residents on single-sex floors. Two air-conditioned study lounges per building; two large bathrooms per floor.",
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "alsop",
+   "dorm_name": "Alsop Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "West Campus: four four-storey buildings, about 500 residents on single-sex floors. Two air-conditioned study lounges per building; two large bathrooms per floor.",
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "shakespeare-troy",
+   "dorm_name": "Shakespeare/Troy Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/west-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "West Campus: four four-storey buildings, about 500 residents on single-sex floors. Two air-conditioned study lounges per building; two large bathrooms per floor.",
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "baldwin",
+   "dorm_name": "Baldwin Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/north-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/north-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/north-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "North Campus: 11 three-storey buildings, about 1,400 residents on single-sex floors. Game room in the building.",
+   "campus_area": "North Campus"
+  },
+  {
+   "dorm_id": "mcconaughy",
+   "dorm_name": "McConaughy Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/north-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/north-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/north-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "North Campus: 11 three-storey buildings, about 1,400 residents on single-sex floors. Area office, multipurpose room and laundry.",
+   "campus_area": "North Campus"
+  },
+  {
+   "dorm_id": "russell",
+   "dorm_name": "Russell Hall",
+   "hall_url": "https://campushousing.uconn.edu/housing-options/traditional-housing/north-campus/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/north-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 80\" x 36\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://campushousing.uconn.edu/housing-options/traditional-housing/north-campus/",
+     "data_confidence": "low",
+     "notes": "Beds can be bunked, lofted or left on the floor. UConn publishes each area's halls, room types and bed size but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "North Campus: 11 three-storey buildings, about 1,400 residents on single-sex floors. Mailroom for the area.",
+   "campus_area": "North Campus"
+  }
+ ]
+}

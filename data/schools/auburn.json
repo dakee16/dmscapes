@@ -1,0 +1,746 @@
+{
+ "college_id": "auburn",
+ "college_name": "Auburn University",
+ "city": "Auburn",
+ "state": "AL",
+ "aliases": [
+  "auburn",
+  "auburn university",
+  "au",
+  "war eagle",
+  "tigers"
+ ],
+ "housing_url": "https://studentaffairs.auburn.edu/housing/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Auburn University Housing's official community pages. Auburn publishes bedroom, bathroom, closet and furniture dimensions for The Hill, The Quad and The Village — including the adjustable bed-frame height range — and notes that all measurements are approximate and may vary by room. Concourse Hall and South Donahue publish room types and furnishings but no dimensions, so those rooms use the site's estimate fallback and are labelled as estimates. Most beds are Twin XL on adjustable, bunkable frames; the private South Donahue suite bedrooms have queen beds, which is flagged because no standard dorm bedding will fit them.",
+ "dorms": [
+  {
+   "dorm_id": "boyd-hall",
+   "dorm_name": "Boyd Hall",
+   "hall_url": "https://studentaffairs.auburn.edu/housing/communities/the-hill.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.5,
+      "width_ft": 11.67,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 193,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.92,
+      "depth_ft": 2.5,
+      "height_ft": 6.67,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL, adjustable frame 12\"-32\" high; bunkable with risers.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/the-hill.php",
+     "data_confidence": "high",
+     "notes": "Suite-style: two double-occupancy bedrooms connected by a 5'6\" x 4'11\" shared bathroom. Closet 47\" w x 30\" d x 80\" h with doors. Auburn notes all measurements are approximate and may vary by room."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 16.5,
+      "width_ft": 11.67,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 193,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.92,
+      "depth_ft": 2.5,
+      "height_ft": 6.67,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL, adjustable frame 12\"-32\" high; bunkable with risers.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/the-hill.php",
+     "data_confidence": "high",
+     "notes": "Limited single-occupancy rooms in the same published footprint. Auburn notes all measurements are approximate and may vary by room."
+    }
+   ],
+   "notes": "The Hill community, about 400 first-year undergraduates across Boyd and Sasnett halls.",
+   "population": 213,
+   "gender": "Co-ed",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "sasnett-hall",
+   "dorm_name": "Sasnett Hall",
+   "hall_url": "https://studentaffairs.auburn.edu/housing/communities/the-hill.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.5,
+      "width_ft": 11.67,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 193,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.92,
+      "depth_ft": 2.5,
+      "height_ft": 6.67,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL, adjustable frame 12\"-32\" high; bunkable with risers.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/the-hill.php",
+     "data_confidence": "high",
+     "notes": "Suite-style: two double-occupancy bedrooms connected by a 5'6\" x 4'11\" shared bathroom. Closet 47\" w x 30\" d x 80\" h with doors. Auburn notes all measurements are approximate and may vary by room."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 16.5,
+      "width_ft": 11.67,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 193,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.92,
+      "depth_ft": 2.5,
+      "height_ft": 6.67,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL, adjustable frame 12\"-32\" high; bunkable with risers.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/the-hill.php",
+     "data_confidence": "high",
+     "notes": "Limited single-occupancy rooms in the same published footprint. Auburn notes all measurements are approximate and may vary by room."
+    }
+   ],
+   "notes": "The Hill community, about 400 first-year undergraduates across Boyd and Sasnett halls.",
+   "population": 208,
+   "gender": "Co-ed",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "the-quad",
+   "dorm_name": "The Quad",
+   "hall_url": "https://studentaffairs.auburn.edu/housing/communities/the-quad.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.9,
+      "width_ft": 11.9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 189,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL, adjustable frame 12\"-32\" high; bunkable with risers.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/the-quad.php",
+     "data_confidence": "high",
+     "notes": "Suite-style: two double-occupancy rooms connected by a bathroom. Published average suite dimensions; many rooms have architectural soffits that change the usable footprint. Auburn notes all measurements are approximate and may vary by room."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Cubby Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.9,
+      "width_ft": 11.9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 189,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL, adjustable frame 12\"-32\" high; bunkable with risers.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/the-quad.php",
+     "data_confidence": "medium",
+     "notes": "Double with additional cubby storage. Auburn notes all measurements are approximate and may vary by room."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double End Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.9,
+      "width_ft": 11.9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 189,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL, adjustable frame 12\"-32\" high; bunkable with risers.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/the-quad.php",
+     "data_confidence": "medium",
+     "notes": "End room, Upper Quad only. Auburn notes all measurements are approximate and may vary by room."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 15.9,
+      "width_ft": 11.9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 189,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL, adjustable frame 12\"-32\" high; bunkable with risers.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/the-quad.php",
+     "data_confidence": "medium",
+     "notes": "Limited single availability. Auburn notes all measurements are approximate and may vary by room."
+    }
+   ],
+   "notes": "Ten historic residence halls — Upper Quad (1938) and Lower Quad (1952) — housing about 1,000 undergraduates. Keller and Owen halls are offline for renovation during 2026-27.",
+   "population": 1000,
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "the-village",
+   "dorm_name": "The Village",
+   "hall_url": "https://studentaffairs.auburn.edu/housing/communities/the-village.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 9.42,
+      "width_ft": 8.42,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 79,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL, adjustable frame 12\"-32\" high; bunkable with risers.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/the-village.php",
+     "data_confidence": "high",
+     "notes": "Private bedroom in a 1-, 2-, 3- or 4-bedroom suite; the shared living area is about 13'5\" x 10'8\" with 8' ceilings and a sink, counter and cabinets. Open closet with a curtain rod rather than a door. Auburn notes all measurements are approximate and may vary by room."
+    }
+   ],
+   "notes": "Eight residence halls across Village East, West and South housing about 1,500 undergraduates — freshmen, honors students and sorority members. Layouts are 1BR/1BA, 2BR/1BA, 3BR/1BA and 4BR/2BA.",
+   "population": 1500,
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "concourse-hall",
+   "dorm_name": "Concourse Hall",
+   "hall_url": "https://studentaffairs.auburn.edu/housing/communities/concourse-hall.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL, adjustable frame 12\"-32\" high; bunkable with risers.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/concourse-hall.php",
+     "data_confidence": "low",
+     "notes": "Suite-style: two double-occupancy bedrooms share a bathroom with a double sink, a separate toilet room and a shower area. Auburn does not publish a size for Concourse; estimated from similar rooms."
+    }
+   ],
+   "notes": "About 370 undergraduates. Washers and dryers on every floor.",
+   "population": 370,
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "south-donahue",
+   "dorm_name": "South Donahue Hall",
+   "hall_url": "https://studentaffairs.auburn.edu/housing/communities/south-donahue.php",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite Bedroom (queen)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "queen",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 5.0,
+       "notes": "Queen mattress.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/south-donahue.php",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 1-, 2- or 4-bedroom suite, with a queen bed, desk, dresser and open closet. The common area is 14' x 11' with a 42\" wall-mounted TV and the kitchen is 9' x 5' with a washer/dryer. Auburn does not publish bedroom dimensions here; estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Shared Suite Bedroom (Twin XL)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL, adjustable frame 12\"-32\" high; bunkable with risers.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "length_ft": 1.6,
+       "width_ft": 2.1,
+       "height_ft": 2.83,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 1.5,
+       "movable": true,
+       "notes": "Two stackable dressers per resident."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://studentaffairs.auburn.edu/housing/communities/south-donahue.php",
+     "data_confidence": "low",
+     "notes": "The shared version of the 2 Bedroom / 2 Bathroom suite uses Twin XL beds rather than queens. Size not published; estimated from similar rooms."
+    }
+   ],
+   "notes": "About 500 first-year and upperclass undergraduates across five floors of suite-style apartments with in-unit kitchens and laundry.",
+   "population": 500,
+   "building_type": "Apartment"
+  }
+ ]
+}

@@ -1,0 +1,3425 @@
+{
+ "college_id": "umd",
+ "college_name": "University of Maryland",
+ "city": "College Park",
+ "state": "MD",
+ "aliases": [
+  "umd",
+  "maryland",
+  "university of maryland",
+  "college park",
+  "terps",
+  "terrapins"
+ ],
+ "housing_url": "https://reslife.umd.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from the University of Maryland Department of Resident Life's official hall directory and room-layout pages. Maryland publishes which housing style every hall uses and what furniture each room type includes, but says plainly that it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type — so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly.",
+ "dorms": [
+  {
+   "dorm_id": "anne-arundel",
+   "dorm_name": "Anne Arundel",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "bel-air",
+   "dorm_name": "Bel Air",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "cambridge",
+   "dorm_name": "Cambridge",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "caroline",
+   "dorm_name": "Caroline",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "carroll",
+   "dorm_name": "Carroll",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "cecil",
+   "dorm_name": "Cecil",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "centreville",
+   "dorm_name": "Centreville",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "chestertown",
+   "dorm_name": "Chestertown",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "cumberland",
+   "dorm_name": "Cumberland",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "denton",
+   "dorm_name": "Denton",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "dorchester",
+   "dorm_name": "Dorchester",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "easton",
+   "dorm_name": "Easton",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "elkton",
+   "dorm_name": "Elkton",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "ellicott",
+   "dorm_name": "Ellicott",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "hagerstown",
+   "dorm_name": "Hagerstown",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "johnson-whittle",
+   "dorm_name": "Johnson-Whittle",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "la-plata",
+   "dorm_name": "La Plata",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "pyon-chen",
+   "dorm_name": "Pyon-Chen",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "queen-annes",
+   "dorm_name": "Queen Anne's",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "somerset",
+   "dorm_name": "Somerset",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "wicomico",
+   "dorm_name": "Wicomico",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "worcester",
+   "dorm_name": "Worcester",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two beds, two dressers, two desks and two chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "A set of bunked beds plus a third bed on an elevated metal frame, with three dressers, desks and chairs. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms along a corridor with community bathrooms."
+  },
+  {
+   "dorm_id": "oakland",
+   "dorm_name": "Oakland",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Semi-Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two connected double rooms share a bathroom. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Semi-suite style: two double rooms share a bathroom."
+  },
+  {
+   "dorm_id": "prince-frederick",
+   "dorm_name": "Prince Frederick",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Semi-Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Two connected double rooms share a bathroom. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Semi-suite style: two double rooms share a bathroom."
+  },
+  {
+   "dorm_id": "allegany",
+   "dorm_name": "Allegany",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "baltimore",
+   "dorm_name": "Baltimore",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "calvert",
+   "dorm_name": "Calvert",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "charles",
+   "dorm_name": "Charles",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "frederick",
+   "dorm_name": "Frederick",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "garrett",
+   "dorm_name": "Garrett",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "harford",
+   "dorm_name": "Harford",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "howard",
+   "dorm_name": "Howard",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "kent",
+   "dorm_name": "Kent",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "leonardtown",
+   "dorm_name": "Leonardtown",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "montgomery",
+   "dorm_name": "Montgomery",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "prince-georges",
+   "dorm_name": "Prince George's",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "st-marys",
+   "dorm_name": "St. Mary's",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "talbot",
+   "dorm_name": "Talbot",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  },
+  {
+   "dorm_id": "washington",
+   "dorm_name": "Washington",
+   "hall_url": "https://reslife.umd.edu/terp-housing/residence-halls",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Suite / Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a three- to five-bedroom suite or apartment housing up to eight students. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Suite / Apartment Shared Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://reslife.umd.edu/terp-housing/residence-halls",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a three- to five-bedroom suite or apartment. The University of Maryland states it cannot provide exact measurements because each space varies slightly in size, layout and furniture even within the same building type, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite or apartment style: three to five bedrooms with one or two bathrooms, housing up to eight students.",
+   "building_type": "Suite / Apartment"
+  }
+ ]
+}

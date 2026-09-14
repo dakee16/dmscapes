@@ -1,0 +1,1797 @@
+{
+ "college_id": "carnegie-mellon",
+ "college_name": "Carnegie Mellon University",
+ "city": "Pittsburgh",
+ "state": "PA",
+ "aliases": [
+  "carnegie mellon",
+  "cmu",
+  "carnegie mellon university",
+  "tartans"
+ ],
+ "housing_url": "https://www.cmu.edu/housing/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Carnegie Mellon Housing & Residential Education's official residence pages. CMU publishes each house's exact room types, total capacity and air-conditioning status, and provides representative floor-plan PDFs, but states plainly that room measurements are estimates and that actual sizes and furniture configurations vary — so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Air conditioning is recorded per house because several first-year houses (Donner, E-Tower, Mudge) have none. CMU distinguishes semi-suites (a bathroom shared with the adjoining room) from full suites (bathroom plus common space), which is kept in the room names. Beds are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "boss",
+   "dorm_name": "Boss House",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/boss.html",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Semi-Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/boss.html",
+     "data_confidence": "low",
+     "notes": "Private room sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Semi-Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/boss.html",
+     "data_confidence": "low",
+     "notes": "Two residents sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year house in the Margaret Morrison Avenue neighborhood, sharing a large outdoor courtyard with McGill House. Semi-private bathrooms.",
+   "population": 72
+  },
+  {
+   "dorm_id": "donner",
+   "dorm_name": "Donner House",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/donner.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/donner.html",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/donner.html",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Traditional Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/donner.html",
+     "data_confidence": "low",
+     "notes": "Three residents on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Double-as-Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/donner.html",
+     "data_confidence": "low",
+     "notes": "A double occupied by three residents at a reduced rate. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Four-floor first-year house with a large community lounge on the first floor. No air conditioning except limited window units in medical-accommodation rooms.",
+   "population": 239
+  },
+  {
+   "dorm_id": "etower",
+   "dorm_name": "E-Tower",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/etower.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/etower.html",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/etower.html",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Traditional Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/etower.html",
+     "data_confidence": "low",
+     "notes": "Three residents on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year house connected to Morewood Gardens by a breezeway, near The Underground dining and the makerspaces. No air conditioning.",
+   "population": 209
+  },
+  {
+   "dorm_id": "fifth-clyde",
+   "dorm_name": "Fifth & Clyde House",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/fifth-clyde/index.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Semi-Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/fifth-clyde/index.html",
+     "data_confidence": "low",
+     "notes": "Private room sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Semi-Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/fifth-clyde/index.html",
+     "data_confidence": "low",
+     "notes": "Two residents sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/fifth-clyde/index.html",
+     "data_confidence": "low",
+     "notes": "Private room in a suite with its own bathroom and common space. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/fifth-clyde/index.html",
+     "data_confidence": "low",
+     "notes": "Two residents in a suite with its own bathroom and common space. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Six-story, 98,000 sq ft upper-class house with a 5,000 sq ft community space: jam room, music practice room, sprung-floor wellness/dance room, study areas and a multipurpose room.",
+   "population": 264
+  },
+  {
+   "dorm_id": "hamerschlag",
+   "dorm_name": "Hamerschlag House",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/hamerschlag.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/hamerschlag.html",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/hamerschlag.html",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year house on Margaret Morrison Avenue, mostly doubles with a few singles. Renovated in 2025 with new study rooms, lounge space and air conditioning.",
+   "population": 157
+  },
+  {
+   "dorm_id": "henderson",
+   "dorm_name": "Henderson House",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/henderson.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Semi-Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/henderson.html",
+     "data_confidence": "low",
+     "notes": "Private room sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Semi-Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/henderson.html",
+     "data_confidence": "low",
+     "notes": "Two residents sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "LEED-certified first-year house with a wellness room, kitchen, TV lounges, study spaces and a recreation room.",
+   "population": 60
+  },
+  {
+   "dorm_id": "mcgill",
+   "dorm_name": "McGill House",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/mcgill.html",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Semi-Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/mcgill.html",
+     "data_confidence": "low",
+     "notes": "Private room sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Semi-Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/mcgill.html",
+     "data_confidence": "low",
+     "notes": "Two residents sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year house sharing a large outdoor courtyard with Boss House. Semi-private bathrooms.",
+   "population": 71
+  },
+  {
+   "dorm_id": "morewood-gardens",
+   "dorm_name": "Morewood Gardens",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/morewood-gardens.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Semi-Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/morewood-gardens.html",
+     "data_confidence": "low",
+     "notes": "Private room sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Semi-Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/morewood-gardens.html",
+     "data_confidence": "low",
+     "notes": "Two residents sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Semi-Suite Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/morewood-gardens.html",
+     "data_confidence": "low",
+     "notes": "Three residents sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "More than 450 residents of all years, with renovated suite bathrooms, a computer lab, fitness room, music practice rooms, community kitchens and maker spaces.",
+   "population": 451
+  },
+  {
+   "dorm_id": "mudge",
+   "dorm_name": "Mudge House",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/mudge.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/mudge.html",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/mudge.html",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Traditional Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/mudge.html",
+     "data_confidence": "low",
+     "notes": "Three residents on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Semi-Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/mudge.html",
+     "data_confidence": "low",
+     "notes": "Private room sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Semi-Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/mudge.html",
+     "data_confidence": "low",
+     "notes": "Two residents sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad_suite",
+     "room_type_official": "Semi-Suite Quad",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/mudge.html",
+     "data_confidence": "low",
+     "notes": "Four residents sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Three towers, 310 residents, around a courtyard with a koi pond. No air conditioning.",
+   "population": 310
+  },
+  {
+   "dorm_id": "resnik",
+   "dorm_name": "Resnik House",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/resnik.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Semi-Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/resnik.html",
+     "data_confidence": "low",
+     "notes": "Private room sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Semi-Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/resnik.html",
+     "data_confidence": "low",
+     "notes": "Two residents sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/resnik.html",
+     "data_confidence": "low",
+     "notes": "Private room in a suite with its own bathroom and common space. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/resnik.html",
+     "data_confidence": "low",
+     "notes": "Two residents in a suite with its own bathroom and common space. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Centrally located house above several dining venues, with microfridges, floor lounges and community kitchens.",
+   "population": 150
+  },
+  {
+   "dorm_id": "scobell",
+   "dorm_name": "Scobell House",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/scobell.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Traditional Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/scobell.html",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/scobell.html",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "All-women first-year house in the Margaret Morrison Avenue neighborhood, part of the WHeSco community of about 200 residents across three houses.",
+   "population": 88
+  },
+  {
+   "dorm_id": "stever",
+   "dorm_name": "Stever House",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/stever.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/stever.html",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "254 residents in doubles only. The first CMU building designated green, LEED silver certified in 2003; community baths with automatic lighting and flow controls, and year-round heating and cooling with enhanced ventilation.",
+   "population": 254
+  },
+  {
+   "dorm_id": "welch",
+   "dorm_name": "Welch House",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/welch.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Semi-Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/welch.html",
+     "data_confidence": "low",
+     "notes": "Private room sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Semi-Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/welch.html",
+     "data_confidence": "low",
+     "notes": "Two residents sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year house in the WHeSco community with laundry, kitchen, TV room, study lounge and recreation room on the ground floor.",
+   "population": 56
+  },
+  {
+   "dorm_id": "west-wing",
+   "dorm_name": "West Wing",
+   "hall_url": "https://www.cmu.edu/housing/our-communities/residences/west-wing.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Semi-Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/west-wing.html",
+     "data_confidence": "low",
+     "notes": "Private room sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Semi-Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/west-wing.html",
+     "data_confidence": "low",
+     "notes": "Two residents sharing a bathroom with the adjoining room. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/west-wing.html",
+     "data_confidence": "low",
+     "notes": "Private room in a suite with its own bathroom and common space. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.cmu.edu/housing/our-communities/residences/west-wing.html",
+     "data_confidence": "low",
+     "notes": "Two residents in a suite with its own bathroom and common space. Carnegie Mellon publishes representative floor plans and states that room measurements are estimates and actual sizes and furniture configurations vary, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "146 residents in three-, four- and five-person units, with microfridges, floor lounges and community kitchens.",
+   "population": 146
+  }
+ ]
+}

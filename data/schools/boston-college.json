@@ -1,0 +1,5952 @@
+{
+ "college_id": "boston-college",
+ "college_name": "Boston College",
+ "city": "Chestnut Hill",
+ "state": "MA",
+ "aliases": [
+  "boston college",
+  "bc",
+  "eagles",
+  "chestnut hill"
+ ],
+ "housing_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life.html",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Boston College Residential Life's official floor-plan page, which is unusually generous: BC publishes approximate dimensions for every traditional room type (single, double, triple, lofted triple and quad) and approximate bedroom square footage for every suite and apartment layout, and names which of its 36 halls use each. Traditional rooms therefore carry BC's own ft x ft at high confidence; suite and apartment bedrooms, where only an area is published, show a representative rectangle of that area at medium confidence with the reason stated on the room. Suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Beds are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "roncalli",
+   "dorm_name": "Roncalli",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "welch",
+   "dorm_name": "Welch",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "williams",
+   "dorm_name": "Williams",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "claver",
+   "dorm_name": "Claver",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "loyola",
+   "dorm_name": "Loyola",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "xavier",
+   "dorm_name": "Xavier",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "fenwick",
+   "dorm_name": "Fenwick",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "cheverus",
+   "dorm_name": "Cheverus",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "kostka",
+   "dorm_name": "Kostka",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "medeiros",
+   "dorm_name": "Medeiros",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "fitzpatrick",
+   "dorm_name": "Fitzpatrick",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "gonzaga",
+   "dorm_name": "Gonzaga",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "shaw-house",
+   "dorm_name": "Shaw House",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "keyes-hall",
+   "dorm_name": "Keyes Hall",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "hardey-house",
+   "dorm_name": "Hardey House",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "cushing-hall",
+   "dorm_name": "Cushing Hall",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "duchesne",
+   "dorm_name": "Duchesne",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "66-commonwealth-avenue",
+   "dorm_name": "66 Commonwealth Avenue",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "greycliff",
+   "dorm_name": "Greycliff",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 8.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 96,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 8 ft wide by 12 ft long."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 12 ft wide by 16 ft long."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 23.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 368,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 23 ft wide by 16 ft long — one of the largest triples anywhere in this catalog."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Lofted Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Same 12 x 16 ft footprint as a double, with the third bed lofted."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": {
+      "length_ft": 36.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 576,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "high",
+     "notes": "Boston College publishes this as an approximate floor-plan size. Roughly 16 ft wide by 36 ft long."
+    }
+   ],
+   "notes": "Traditional-style hall: rooms on a corridor with communal bathrooms.",
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "walsh",
+   "dorm_name": "Walsh",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "4-Person Suite Bedroom (2-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.7,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 140,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Two bedrooms of about 140 sq ft each share the suite. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "8-Person Suite Bedroom (4-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.2,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 170,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Four bedrooms of about 170 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Suite-style hall: bedrooms open onto a shared common room and bathroom.",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "vanderslice",
+   "dorm_name": "Vanderslice",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "8-Person Suite Bedroom (4-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.2,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 170,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Four bedrooms of about 170 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "9-Person Suite Bedroom (3-bedroom)",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 13.1,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 170,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Three bedrooms of about 170 sq ft each, three residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Suite-style hall: bedrooms open onto a shared common room and bathroom.",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "90-saint-thomas-more",
+   "dorm_name": "90 Saint Thomas More",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "6-Person Suite Bedroom (2-bedroom)",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 13.8,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Two bedrooms of about 180 sq ft each, three residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "8-Person Suite Bedroom (4-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.2,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 170,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Four bedrooms of about 170 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Suite-style hall: bedrooms open onto a shared common room and bathroom.",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "stayer",
+   "dorm_name": "Stayer",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "6-Person Suite Bedroom (2-bedroom)",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 13.8,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Two bedrooms of about 180 sq ft each, three residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "8-Person Suite Bedroom (4-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.2,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 170,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Four bedrooms of about 170 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Suite-style hall: bedrooms open onto a shared common room and bathroom.",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "modulars",
+   "dorm_name": "Modulars",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "6-Person Apartment Bedroom (3-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.5,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Three bedrooms of about 150 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Apartment-style hall with a kitchen and living room in every unit.",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "rubenstein",
+   "dorm_name": "Rubenstein",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "4-Person Apartment Bedroom (2-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.3,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 160,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Two bedrooms of about 160 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "6-Person Apartment Bedroom (3-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.5,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Three bedrooms of about 150 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Apartment-style hall with a kitchen and living room in every unit.",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "ignacio",
+   "dorm_name": "Ignacio",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "4-Person Apartment Bedroom (2-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.3,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 160,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Two bedrooms of about 160 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "6-Person Apartment Bedroom (3-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.5,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Three bedrooms of about 150 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Apartment-style hall with a kitchen and living room in every unit.",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "voute",
+   "dorm_name": "Voute",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "4-Person Apartment Bedroom (2-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.3,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 160,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Two bedrooms of about 160 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Apartment-style hall with a kitchen and living room in every unit.",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "gabelli",
+   "dorm_name": "Gabelli",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "4-Person Apartment Bedroom (2-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.3,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 160,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Two bedrooms of about 160 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Apartment-style hall with a kitchen and living room in every unit.",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "thomas-more-apartments",
+   "dorm_name": "Thomas More Apartments",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "4-Person Apartment Bedroom (2-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.3,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 160,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Two bedrooms of about 160 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "6-Person Apartment Bedroom (3-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.5,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Three bedrooms of about 150 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Apartment-style hall with a kitchen and living room in every unit.",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "reservoir",
+   "dorm_name": "Reservoir",
+   "hall_url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "2-Person Apartment Bedroom (1-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "One bedroom of about 180 sq ft shared by two residents. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "apartment_triple",
+     "room_type_official": "3-Person Apartment Bedroom (1-bedroom)",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.2,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 210,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "One bedroom of about 210 sq ft shared by three residents. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "4-Person Apartment Bedroom (2-bedroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.3,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 160,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/residence-hall-floor-plans.html",
+     "data_confidence": "medium",
+     "notes": "Two bedrooms of about 160 sq ft each, two residents per bedroom. Boston College publishes the bedroom's approximate square footage for this layout but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Apartment-style hall with a kitchen and living room in every unit.",
+   "building_type": "Apartment"
+  }
+ ]
+}

@@ -1,0 +1,2342 @@
+{
+ "college_id": "duke",
+ "college_name": "Duke University",
+ "city": "Durham",
+ "state": "NC",
+ "aliases": [
+  "duke",
+  "duke university",
+  "blue devils"
+ ],
+ "housing_url": "https://students.duke.edu/living/housing/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Duke Housing & Residence Life's official East Campus, quad-description and amenities pages. All first-year students live on East Campus, and Duke names its fourteen halls there and says which have central air conditioning versus units — recorded per hall here. Duke publishes room types, furnishings and, unusually, the bed size for each quad, but no room dimensions, so every room uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Bed size is worth checking before you shop: most of Duke is Twin XL, but Edens and Wannamaker quads and the 301 Swift apartments have full-size beds, and the single bedrooms in The Blue Light apartments have queen beds — none of which a Twin XL set will fit.",
+ "dorms": [
+  {
+   "dorm_id": "alspaugh",
+   "dorm_name": "Alspaugh",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Air-conditioning units rather than central air.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "bassett",
+   "dorm_name": "Bassett",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Air-conditioning units rather than central air.",
+   "population": 120,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "bell-tower",
+   "dorm_name": "Bell Tower",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Central air conditioning.",
+   "population": 140,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "blackwell",
+   "dorm_name": "Blackwell",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Central air conditioning.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "brown",
+   "dorm_name": "Brown",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Air-conditioning units rather than central air.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "east-house",
+   "dorm_name": "East House",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Air-conditioning units rather than central air.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "gilbert-addoms",
+   "dorm_name": "Gilbert-Addoms",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Air-conditioning units rather than central air.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "giles",
+   "dorm_name": "Giles",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Air-conditioning units rather than central air.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "pegram",
+   "dorm_name": "Pegram",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Air-conditioning units rather than central air.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "randolph",
+   "dorm_name": "Randolph",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Central air conditioning.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "southgate",
+   "dorm_name": "Southgate",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Central air conditioning.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "trinity",
+   "dorm_name": "Trinity",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Central air conditioning.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "west-house",
+   "dorm_name": "West House",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Air-conditioning units rather than central air.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "wilson",
+   "dorm_name": "Wilson",
+   "hall_url": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "First-year rooms are primarily doubles with a limited number of singles, and shared bathrooms including gender-designated and all-gender options. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/first-year-housing/living-on-east-campus/",
+     "data_confidence": "low",
+     "notes": "Limited singles. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East Campus first-year residence hall. Air-conditioning units rather than central air.",
+   "population": null,
+   "campus_area": "East Campus"
+  },
+  {
+   "dorm_id": "craven",
+   "dorm_name": "Craven Quad",
+   "hall_url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Renovated in 2019. Sophomores, juniors and seniors.",
+   "population": 395,
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "crowell",
+   "dorm_name": "Crowell Quad",
+   "hall_url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Renovated in 2018. Sophomores, juniors and seniors.",
+   "population": 340,
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "keohane",
+   "dorm_name": "Keohane Quad",
+   "hall_url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Opened in phases in 2002 and 2012.",
+   "population": 480,
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "kilgo",
+   "dorm_name": "Kilgo Quad",
+   "hall_url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Sophomores, juniors and seniors.",
+   "population": 340,
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "edens",
+   "dorm_name": "Edens Quad",
+   "hall_url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "notes": "Full-size mattress.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "notes": "Full-size mattress.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Seven buildings make up the quad. Full-size beds, so Twin XL bedding will not fit.",
+   "population": 500,
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "wannamaker",
+   "dorm_name": "Wannamaker Quad",
+   "hall_url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "notes": "Full-size mattress.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "notes": "Full-size mattress.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Almost 100% wheelchair accessible. Full-size beds, so Twin XL bedding will not fit.",
+   "population": 230,
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "few",
+   "dorm_name": "Few Quad",
+   "hall_url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Two twin beds. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "One twin bed. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "About 430 sophomores, juniors and seniors in singles and doubles.",
+   "population": 430,
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "hollows",
+   "dorm_name": "Hollows Quad",
+   "hall_url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Suite-style: two to five students per suite, each with an en-suite kitchenette and bathroom. Bed frames are 41\" x 85\" x 48\". Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a suite with an en-suite kitchenette and bathroom. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Opened 2019; 400+ students in two- to five-person suites, each with its own kitchenette and bathroom(s).",
+   "population": 400,
+   "campus_area": "West Campus",
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "300-swift",
+   "dorm_name": "300 Swift",
+   "hall_url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "1-Bedroom Apartment (2 person)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "2-Bedroom Apartment (4 person)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "400+ bed apartment-style building with studio, one- and two-bedroom apartments.",
+   "population": 400,
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "301-swift",
+   "dorm_name": "301 Swift",
+   "hall_url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "notes": "Full-size mattress.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a fully furnished two-bedroom apartment opening onto an exterior walkway. Full-size beds, so Twin XL bedding will not fit. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "46-bed community of two-bedroom apartments.",
+   "population": 46,
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "the-blue-light",
+   "dorm_name": "The Blue Light",
+   "hall_url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Single Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "queen",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 5.0,
+       "notes": "Queen mattress.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a two- or three-bedroom apartment. These have queen beds — no standard dorm bedding will fit. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Apartment Double Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress, about 80\" x 36\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Dresser and/or wardrobe or closet space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "data_confidence": "low",
+     "notes": "Shared bedroom in a two- or three-bedroom apartment; Twin XL beds here. Duke publishes room types, furnishings and bed sizes per residence but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "200+ beds in two- and three-bedroom apartments (two bedrooms = one single and one double; three bedrooms = two singles and one double).",
+   "population": 200,
+   "building_type": "Apartment"
+  }
+ ]
+}

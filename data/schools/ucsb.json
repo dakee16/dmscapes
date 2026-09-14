@@ -1,0 +1,461 @@
+{
+ "college_id": "ucsb",
+ "college_name": "University of California, Santa Barbara",
+ "city": "Santa Barbara",
+ "state": "CA",
+ "aliases": [
+  "ucsb",
+  "uc santa barbara",
+  "santa barbara",
+  "gauchos"
+ ],
+ "housing_url": "https://www.housing.ucsb.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from UC Santa Barbara Campus Housing's official community pages. UCSB publishes each community's room types, bathroom arrangement, furnishings and capacity but not per-room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Residence-hall and San Joaquin beds are extra-long twin; San Clemente Villages uses extra-long full beds, which is flagged on those rooms because Twin XL bedding will not fit. Apartments are modeled per bedroom so occupant counts and layouts match cleanly.",
+ "dorms": [
+  {
+   "dorm_id": "anacapa",
+   "dorm_name": "Anacapa",
+   "hall_url": "https://www.housing.ucsb.edu/housing-options/options-filter/anacapa",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.ucsb.edu/housing-options/options-filter/anacapa",
+     "data_confidence": "low",
+     "notes": "Anacapa's primary room type. Furnished with a bed, desk, chair, dresser, mirror, towel bar, wastebasket and drapes. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.ucsb.edu/housing-options/options-filter/anacapa",
+     "data_confidence": "low",
+     "notes": "Furnished with a bed, desk, chair, dresser, mirror, towel bar, wastebasket and drapes. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "600 residents. Men and women live in adjacent wings connected by stairs; no elevators. A large single-gender bathroom on each wing with multiple sinks, toilet stalls and private showers. Study lounge and kitchenette on every floor.",
+   "population": 600,
+   "bathroom_configuration": "Communal"
+  },
+  {
+   "dorm_id": "manzanita-village",
+   "dorm_name": "Manzanita Village",
+   "hall_url": "https://www.housing.ucsb.edu/housing-options/options-filter/manzanita-village",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.ucsb.edu/housing-options/options-filter/manzanita-village",
+     "data_confidence": "low",
+     "notes": "Furnished with a bed, desk, chair, dresser, mirror, towel bar, wastebasket and drapes. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "small_double",
+     "room_type_official": "Small Double (limited)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.ucsb.edu/housing-options/options-filter/manzanita-village",
+     "data_confidence": "low",
+     "notes": "A limited number of smaller double rooms. Furnished with a bed, desk, chair, dresser, mirror, towel bar, wastebasket and drapes. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single (limited)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.ucsb.edu/housing-options/options-filter/manzanita-village",
+     "data_confidence": "low",
+     "notes": "Limited availability. Furnished with a bed, desk, chair, dresser, mirror, towel bar, wastebasket and drapes. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.ucsb.edu/housing-options/options-filter/manzanita-village",
+     "data_confidence": "low",
+     "notes": "Furnished with a bed, desk, chair, dresser, mirror, towel bar, wastebasket and drapes. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Seventeen three- and four-story halls on main campus housing about 1,100 undergraduates. Semi-private bathrooms off the hallways, each shared by four or five students.",
+   "population": 1100,
+   "bathroom_configuration": "Semi-private, shared by 4-5 students"
+  },
+  {
+   "dorm_id": "san-joaquin-villages",
+   "dorm_name": "San Joaquin Villages",
+   "hall_url": "https://www.housing.ucsb.edu/housing-options/options-filter/san-joaquin-villages",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Apartment Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.ucsb.edu/housing-options/options-filter/san-joaquin-villages",
+     "data_confidence": "low",
+     "notes": "Two residents share a bedroom in a furnished three-bedroom apartment. Each student gets an extra-long twin bed, closet, drawer, desk and chair. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_triple",
+     "room_type_official": "Apartment Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.ucsb.edu/housing-options/options-filter/san-joaquin-villages",
+     "data_confidence": "low",
+     "notes": "Three residents share a bedroom in a furnished three-bedroom apartment. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "About 1,000 residents across 165 apartments — 107 in the North Village and 58 across the North and South Towers. Apartment-style bathrooms with a tub-shower unit, wash basin, toilet and medicine cabinets.",
+   "population": 1000,
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "san-clemente-villages",
+   "dorm_name": "San Clemente Villages",
+   "hall_url": "https://www.housing.ucsb.edu/housing-options/options-filter/san-clemente-villages",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2-Bedroom Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "notes": "Extra-long full mattress, 54\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.ucsb.edu/housing-options/options-filter/san-clemente-villages",
+     "data_confidence": "low",
+     "notes": "Private, lockable bedroom in a two-bedroom apartment for two residents with one bathroom. Carpeted, with an extra-long full size bed, closet, bookcase, drawer, desk and chair — the full-size bed means Twin XL bedding will not fit. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "4-Bedroom Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "notes": "Extra-long full mattress, 54\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.housing.ucsb.edu/housing-options/options-filter/san-clemente-villages",
+     "data_confidence": "low",
+     "notes": "Private, lockable bedroom in a four-bedroom apartment for four residents with two full bathrooms. Extra-long full size bed, so Twin XL bedding will not fit. UC Santa Barbara does not publish per-room dimensions; this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Graduate housing: 150 two-bedroom and 166 four-bedroom apartments across three-story buildings, 964 residents in total.",
+   "population": 964,
+   "building_type": "Apartment"
+  }
+ ]
+}

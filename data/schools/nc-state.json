@@ -1,0 +1,3258 @@
+{
+ "college_id": "nc-state",
+ "college_name": "North Carolina State University",
+ "city": "Raleigh",
+ "state": "NC",
+ "aliases": [
+  "nc state",
+  "ncsu",
+  "north carolina state",
+  "nc state university",
+  "wolfpack"
+ ],
+ "housing_url": "https://housing.dasa.ncsu.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from NC State University Housing's official hall pages. NC State is unusually thorough: almost every residence hall publishes a room-details table with exact length x width x ceiling height plus measured desk, dresser, wardrobe, closet, bed-frame and microfridge footprints, so most rooms here are recorded at high confidence straight from those tables. Suites are modeled per bedroom so occupant counts and layouts match cleanly. Residence-hall beds are extra-long twin (36\" x 80\") on loftable frames; the Wolf Ridge and Wolf Village apartments use full-size beds instead, which is flagged on those rooms because Twin XL bedding will not fit them.",
+ "dorms": [
+  {
+   "dorm_id": "alexander-hall",
+   "dorm_name": "Alexander Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/alexander-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Hall-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.17,
+      "width_ft": 11.42,
+      "ceiling_height_ft": 9.08
+     },
+     "floor_area_sqft": 196,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/alexander-hall/",
+     "data_confidence": "high",
+     "notes": "Published room size from the hall's official room-details table."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Hall-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 17.17,
+      "width_ft": 11.42,
+      "ceiling_height_ft": 9.08
+     },
+     "floor_area_sqft": 196,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/alexander-hall/",
+     "data_confidence": "medium",
+     "notes": "Singles occupy the same published footprint as this hall's doubles."
+    }
+   ],
+   "notes": "TOTA community on Main Campus; home to Global Village. Two community bathrooms per floor. Rooms have an in-room sink.",
+   "population": 165,
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "turlington-hall",
+   "dorm_name": "Turlington Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/turlington-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Hall-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.17,
+      "width_ft": 11.42,
+      "ceiling_height_ft": 9.08
+     },
+     "floor_area_sqft": 196,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/turlington-hall/",
+     "data_confidence": "high",
+     "notes": "Published room size from the hall's official room-details table."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Hall-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 17.17,
+      "width_ft": 11.42,
+      "ceiling_height_ft": 9.08
+     },
+     "floor_area_sqft": 196,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/turlington-hall/",
+     "data_confidence": "medium",
+     "notes": "Singles occupy the same published footprint as this hall's doubles."
+    }
+   ],
+   "notes": "TOTA community; home to Arts Village. Original hardwood floors and high ceilings. Community bathrooms. Rooms have an in-room sink.",
+   "population": 161,
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "owen-hall",
+   "dorm_name": "Owen Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/owen-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Hall-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18.75,
+      "width_ft": 11.33,
+      "ceiling_height_ft": 8.5
+     },
+     "floor_area_sqft": 212,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/owen-hall/",
+     "data_confidence": "high",
+     "notes": "Published room size from the hall's official room-details table."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Hall-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 18.75,
+      "width_ft": 11.33,
+      "ceiling_height_ft": 8.5
+     },
+     "floor_area_sqft": 212,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/owen-hall/",
+     "data_confidence": "medium",
+     "notes": "Singles occupy the same published footprint as this hall's doubles."
+    }
+   ],
+   "notes": "TOTA community; home to Exploratory Studies Village. Two community bathrooms per floor, kitchens on floors 1 and 3, elevator added 2020. Rooms have an in-room sink.",
+   "population": 376,
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "tucker-hall",
+   "dorm_name": "Tucker Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/tucker-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Hall-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18.75,
+      "width_ft": 11.33,
+      "ceiling_height_ft": 8.5
+     },
+     "floor_area_sqft": 212,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 3.42,
+      "height_ft": 4.83
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/tucker-hall/",
+     "data_confidence": "high",
+     "notes": "Published room size from the hall's official room-details table."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Hall-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 18.75,
+      "width_ft": 11.33,
+      "ceiling_height_ft": 8.5
+     },
+     "floor_area_sqft": 212,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 3.42,
+      "height_ft": 4.83
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/tucker-hall/",
+     "data_confidence": "medium",
+     "notes": "Singles occupy the same published footprint as this hall's doubles."
+    }
+   ],
+   "notes": "TOTA community on Main Campus. Loftable furniture; closets 28\" w x 34\" d x 80\" h, some larger. Rooms have an in-room sink.",
+   "population": null,
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "bagwell-hall",
+   "dorm_name": "Bagwell Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/bagwell-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Hall-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.25,
+      "width_ft": 11.33,
+      "ceiling_height_ft": 9.0
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.08,
+      "height_ft": 2.62
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/bagwell-hall/",
+     "data_confidence": "high",
+     "notes": "Published room size from the hall's official room-details table."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Hall-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 17.25,
+      "width_ft": 11.33,
+      "ceiling_height_ft": 9.0
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.08,
+      "height_ft": 2.62
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/bagwell-hall/",
+     "data_confidence": "medium",
+     "notes": "Singles occupy the same published footprint as this hall's doubles."
+    }
+   ],
+   "notes": "The Quad, Main Campus; Honors Village. One shared closet per room, two community bathrooms per floor. Rooms have an in-room sink.",
+   "population": 163,
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "becton-hall",
+   "dorm_name": "Becton Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/becton-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Hall-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.25,
+      "width_ft": 11.33,
+      "ceiling_height_ft": 9.0
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/becton-hall/",
+     "data_confidence": "high",
+     "notes": "Published room size from the hall's official room-details table."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Hall-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 17.25,
+      "width_ft": 11.33,
+      "ceiling_height_ft": 9.0
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/becton-hall/",
+     "data_confidence": "medium",
+     "notes": "Singles occupy the same published footprint as this hall's doubles."
+    }
+   ],
+   "notes": "The Quad, Main Campus; Honors Village. Shared closets, two community bathrooms per floor, elevator. Rooms have an in-room sink.",
+   "population": 209,
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "berry-hall",
+   "dorm_name": "Berry Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/berry-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Hall-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 10.75,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 167,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/berry-hall/",
+     "data_confidence": "high",
+     "notes": "Published room size from the hall's official room-details table."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Hall-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 15.5,
+      "width_ft": 10.75,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 167,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/berry-hall/",
+     "data_confidence": "medium",
+     "notes": "Singles occupy the same published footprint as this hall's doubles."
+    }
+   ],
+   "notes": "The Quad, Main Campus; Honors Village. Shared closet, community bathrooms, elevator. Rooms have an in-room sink.",
+   "population": 60,
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "gold-hall",
+   "dorm_name": "Gold Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/gold-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Hall-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.17,
+      "width_ft": 11.83,
+      "ceiling_height_ft": 10.0
+     },
+     "floor_area_sqft": 203,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.75,
+      "height_ft": 3.33
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/gold-hall/",
+     "data_confidence": "high",
+     "notes": "Published room size from the hall's official room-details table."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Hall-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 17.17,
+      "width_ft": 11.83,
+      "ceiling_height_ft": 10.0
+     },
+     "floor_area_sqft": 203,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.75,
+      "height_ft": 3.33
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/gold-hall/",
+     "data_confidence": "medium",
+     "notes": "Singles occupy the same published footprint as this hall's doubles."
+    }
+   ],
+   "notes": "Single-sex hall for male students. One community bathroom per floor; ground-floor laundry and kitchen.",
+   "population": 58,
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "welch-hall",
+   "dorm_name": "Welch Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/welch-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Hall-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.17,
+      "width_ft": 11.83,
+      "ceiling_height_ft": 10.0
+     },
+     "floor_area_sqft": 203,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/welch-hall/",
+     "data_confidence": "high",
+     "notes": "Published room size from the hall's official room-details table."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Hall-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 17.17,
+      "width_ft": 11.83,
+      "ceiling_height_ft": 10.0
+     },
+     "floor_area_sqft": 203,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/welch-hall/",
+     "data_confidence": "medium",
+     "notes": "Singles occupy the same published footprint as this hall's doubles."
+    }
+   ],
+   "notes": "Single-sex hall for female students; home to the Women of Welch (WOW) village. Closets, no wardrobes, no in-room sinks, no elevator.",
+   "population": 58,
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "watauga-hall",
+   "dorm_name": "Watauga Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/watauga-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.92,
+      "width_ft": 11.25,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 134,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 1.67,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/watauga-hall/",
+     "data_confidence": "high",
+     "notes": "Published room size. NC State's oldest residence hall (1896)."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 1.67,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/watauga-hall/",
+     "data_confidence": "low",
+     "notes": "NC State lists the single's length as TBA (width 11'3\", height 8'). Size estimated from similar rooms."
+    }
+   ],
+   "notes": "North Campus. Hall-style with community bathrooms.",
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "syme-hall",
+   "dorm_name": "Syme Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/syme-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room (Style 1)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.17,
+      "width_ft": 17.42,
+      "ceiling_height_ft": 10.25
+     },
+     "floor_area_sqft": 229,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/syme-hall/",
+     "data_confidence": "high",
+     "notes": "Style 1 has three windows."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room (Style 2)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 11.58,
+      "ceiling_height_ft": 10.25
+     },
+     "floor_area_sqft": 174,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/syme-hall/",
+     "data_confidence": "high",
+     "notes": "Style 2 has one larger window."
+    }
+   ],
+   "notes": "North Campus, 4 floors, 212 residents. Home to the Students Advocating for Youth (SAY) village. Community bathrooms each floor.",
+   "population": 212,
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "north-hall",
+   "dorm_name": "North Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/north-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Hotel-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18.17,
+      "width_ft": 12.0,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 218,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 1.92,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/north-hall/",
+     "data_confidence": "high",
+     "notes": "Hotel-style room with an in-suite private bathroom and in-room sink — among the largest rooms on campus."
+    }
+   ],
+   "notes": "Hotel-style building with private in-suite bathrooms.",
+   "building_type": "Hotel-style",
+   "bathroom_configuration": "Private in-suite bathroom"
+  },
+  {
+   "dorm_id": "wood-hall",
+   "dorm_name": "Wood Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/wood-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Room B & J",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 14.75,
+      "width_ft": 8.0,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 118,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/wood-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for rooms B and J. At 8 ft wide these are single-occupancy; the other Wood layouts are doubles."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Room C & H",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.83,
+      "width_ft": 11.58,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/wood-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for rooms C and H."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Room D & G",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.0,
+      "width_ft": 11.58,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 197,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/wood-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for rooms D and G."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Room E & F",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/wood-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for rooms E and F."
+    }
+   ],
+   "notes": "Hall-style building; each room letter has its own published footprint.",
+   "building_type": "Hall-style"
+  },
+  {
+   "dorm_id": "lee-hall",
+   "dorm_name": "Lee Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/lee-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms A & D",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.58,
+      "width_ft": 14.67,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 199,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/lee-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms A and D."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms B & C",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.0,
+      "width_ft": 11.5,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 196,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/lee-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms B and C."
+    }
+   ],
+   "notes": "West Campus. Four-bedroom suites sharing one bathroom. NC State's table prints bedrooms B and C as 17\"; the published floor plan is 17 ft.",
+   "population": null,
+   "building_type": "Suite-style",
+   "bathroom_configuration": "One bathroom shared by the four-bedroom suite"
+  },
+  {
+   "dorm_id": "sullivan-hall",
+   "dorm_name": "Sullivan Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/sullivan-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms A & D",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.58,
+      "width_ft": 14.67,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 199,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.21,
+      "height_ft": 4.29
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/sullivan-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms A and D."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms B & C",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.0,
+      "width_ft": 11.5,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 196,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 7.42,
+      "height_ft": 5.08
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/sullivan-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms B and C."
+    }
+   ],
+   "notes": "West Campus, 12 floors, 713 residents; Engineering Village occupies the upper nine floors. Four-bedroom suites share one bathroom. Wardrobes, no closets.",
+   "population": 713,
+   "building_type": "Suite-style",
+   "bathroom_configuration": "One bathroom shared by the four-bedroom suite"
+  },
+  {
+   "dorm_id": "bragaw-hall",
+   "dorm_name": "Bragaw Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/bragaw-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms A & D",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.58,
+      "width_ft": 14.67,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 199,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/bragaw-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms A and D."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms B & C",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.08,
+      "width_ft": 11.5,
+      "ceiling_height_ft": 8.0
+     },
+     "floor_area_sqft": 162,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 6.0,
+       "movable": false
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/bragaw-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms B and C."
+    }
+   ],
+   "notes": "Central Campus. Four-bedroom suites sharing one bathroom.",
+   "population": null,
+   "building_type": "Suite-style",
+   "bathroom_configuration": "One bathroom shared by the four-bedroom suite"
+  },
+  {
+   "dorm_id": "bowen-hall",
+   "dorm_name": "Bowen Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/bowen-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms A, B & C",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.33,
+      "width_ft": 10.0,
+      "ceiling_height_ft": 7.83
+     },
+     "floor_area_sqft": 163,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.33,
+      "height_ft": 5.0
+     },
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.48,
+      "depth_ft": 2.0,
+      "height_ft": 7.54
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/bowen-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms A, B and C. Built-in closet 41.75\" w x 90.5\" h."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms D & E",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 13.38,
+      "ceiling_height_ft": 7.83
+     },
+     "floor_area_sqft": 214,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.48,
+      "depth_ft": 2.0,
+      "height_ft": 7.54
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/bowen-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms D and E. NC State's table prints the length as 16\"; the floor plan is 16 ft."
+    }
+   ],
+   "notes": "Tri-Towers, Central Campus. Five-bedroom suite-style hall: ten residents share a common bathroom with 2 sinks, 2 toilets and 2 showers.",
+   "population": null,
+   "building_type": "Suite-style",
+   "bathroom_configuration": "Shared suite bathroom (2 sinks, 2 toilets, 2 showers)"
+  },
+  {
+   "dorm_id": "carroll-hall",
+   "dorm_name": "Carroll Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/carroll-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms A, B & C",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.33,
+      "width_ft": 10.0,
+      "ceiling_height_ft": 7.83
+     },
+     "floor_area_sqft": 163,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.33,
+      "height_ft": 5.0
+     },
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.48,
+      "depth_ft": 2.0,
+      "height_ft": 7.54
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/carroll-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms A, B and C. Built-in closet 41.75\" w x 90.5\" h."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms D & E",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 13.38,
+      "ceiling_height_ft": 7.83
+     },
+     "floor_area_sqft": 214,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.48,
+      "depth_ft": 2.0,
+      "height_ft": 7.54
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/carroll-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms D and E. NC State's table prints the length as 16\"; the floor plan is 16 ft."
+    }
+   ],
+   "notes": "Tri-Towers, Central Campus. Five-bedroom suite-style hall: ten residents share a common bathroom with 2 sinks, 2 toilets and 2 showers.",
+   "population": null,
+   "building_type": "Suite-style",
+   "bathroom_configuration": "Shared suite bathroom (2 sinks, 2 toilets, 2 showers)"
+  },
+  {
+   "dorm_id": "metcalf-hall",
+   "dorm_name": "Metcalf Hall",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/metcalf-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms A, B & C",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.33,
+      "width_ft": 10.0,
+      "ceiling_height_ft": 7.83
+     },
+     "floor_area_sqft": 163,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.33,
+      "height_ft": 5.0
+     },
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.48,
+      "depth_ft": 2.0,
+      "height_ft": 7.54
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/metcalf-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms A, B and C. Built-in closet 41.75\" w x 90.5\" h."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Bedrooms D & E",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.0,
+      "width_ft": 13.38,
+      "ceiling_height_ft": 7.83
+     },
+     "floor_area_sqft": 214,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.48,
+      "depth_ft": 2.0,
+      "height_ft": 7.54
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/metcalf-hall/",
+     "data_confidence": "high",
+     "notes": "Published footprint for suite bedrooms D and E. NC State's table prints the length as 16\"; the floor plan is 16 ft."
+    }
+   ],
+   "notes": "Tri-Towers, Central Campus. Five-bedroom suite-style hall: ten residents share a common bathroom with 2 sinks, 2 toilets and 2 showers.",
+   "population": 407,
+   "building_type": "Suite-style",
+   "bathroom_configuration": "Shared suite bathroom (2 sinks, 2 toilets, 2 showers)"
+  },
+  {
+   "dorm_id": "university-towers",
+   "dorm_name": "University Towers",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/university-towers/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 21.0,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 210,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 4.83,
+      "depth_ft": 1.75,
+      "height_ft": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.15,
+       "height_ft": 6.0,
+       "notes": "Loftable frame 85\" x 37.75\"; extra-long twin mattress 36\" x 80\" x 7\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true,
+       "notes": "Study table."
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "microfridge",
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 3.58,
+       "count": 1
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/university-towers/",
+     "data_confidence": "high",
+     "notes": "210 sq ft double with two separate sleeping areas and in-room sinks; two rooms share a bathroom (1 toilet, 1 shower)."
+    }
+   ],
+   "notes": "Suite-style building, 9 floors, 885 residents. On-site dining, fitness room, sand volleyball.",
+   "population": 885,
+   "building_type": "Suite-style"
+  },
+  {
+   "dorm_id": "wolf-ridge",
+   "dorm_name": "Wolf Ridge Apartments",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/wolf-ridge/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.08,
+      "width_ft": 9.17,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 102,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "notes": "Full-size mattress, 80\" long.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Two-drawer chest."
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false,
+       "notes": "Sliding doors with mirror."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/wolf-ridge/",
+     "data_confidence": "high",
+     "notes": "Private bedroom in a 2-, 3- or 4-bedroom apartment (graduate lofts also available). Beds are full size at 80\" long, so Twin XL bedding will not fit."
+    }
+   ],
+   "notes": "LEED Silver apartment community by Hunt Library. Dishwasher, stove/oven, stainless refrigerator, sectional sofa and ceiling fans.",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "wolf-village-apartments",
+   "dorm_name": "Wolf Village Apartments",
+   "hall_url": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/wolf-village-apartments/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.75,
+      "depth_ft": 1.33,
+      "height_ft": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.42,
+       "notes": "Full-size mattress 53\" x 75\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.17,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.0,
+       "width_ft": 2.0,
+       "height_ft": 1.67,
+       "movable": true
+      },
+      {
+       "type": "bookshelf",
+       "count": 1,
+       "length_ft": 1.54,
+       "width_ft": 1.46,
+       "height_ft": 4.0,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.dasa.ncsu.edu/residential-communities/on-campus-housing/wolf-village-apartments/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a studio or 4-bedroom apartment. Full-size beds (53\" x 75\"), so Twin XL bedding will not fit. NC State does not publish bedroom dimensions here; estimated from similar rooms."
+    }
+   ],
+   "notes": "Apartment community with in-unit stackable washer/dryer, two full bathrooms, full kitchen and entertainment center.",
+   "building_type": "Apartment"
+  }
+ ]
+}

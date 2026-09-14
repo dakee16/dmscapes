@@ -1,0 +1,3074 @@
+{
+ "college_id": "udel",
+ "college_name": "University of Delaware",
+ "city": "Newark",
+ "state": "DE",
+ "aliases": [
+  "udel",
+  "delaware",
+  "university of delaware",
+  "ud",
+  "blue hens"
+ ],
+ "housing_url": "https://www.udel.edu/students/reslife/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from University of Delaware Residence Life & Housing's official hall directory. Delaware publishes the exact room types each hall or complex offers but states that with the variety of room types on campus it cannot give exact measurements for every room, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Beds are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "caesar-rodney",
+   "dorm_name": "Caesar Rodney",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/caesar-rodney/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/caesar-rodney/",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/caesar-rodney/",
+     "data_confidence": "low",
+     "notes": "Private room with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/caesar-rodney/",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/caesar-rodney/",
+     "data_confidence": "low",
+     "notes": "Two residents with their own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/caesar-rodney/",
+     "data_confidence": "low",
+     "notes": "First-year triple on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Large Triple / Quad with Bath",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/caesar-rodney/",
+     "data_confidence": "low",
+     "notes": "Large room for three or four first-year residents with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional corridor hall in the Caesar Rodney complex."
+  },
+  {
+   "dorm_id": "gilbert",
+   "dorm_name": "Eliphalet Gilbert",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/gilbert/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/gilbert/",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/gilbert/",
+     "data_confidence": "low",
+     "notes": "Private room with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/gilbert/",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/gilbert/",
+     "data_confidence": "low",
+     "notes": "Two residents with their own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/gilbert/",
+     "data_confidence": "low",
+     "notes": "First-year triple on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Large Triple / Quad with Bath",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/gilbert/",
+     "data_confidence": "low",
+     "notes": "Large room for three or four first-year residents with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional corridor complex on the east side of campus."
+  },
+  {
+   "dorm_id": "harrington",
+   "dorm_name": "Harrington",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/harrington/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/harrington/",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/harrington/",
+     "data_confidence": "low",
+     "notes": "Private room with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/harrington/",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/harrington/",
+     "data_confidence": "low",
+     "notes": "Two residents with their own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional corridor complex."
+  },
+  {
+   "dorm_id": "lanethomp",
+   "dorm_name": "Lane and Thompson",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/lanethomp/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/lanethomp/",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/lanethomp/",
+     "data_confidence": "low",
+     "notes": "Private room with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/lanethomp/",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/lanethomp/",
+     "data_confidence": "low",
+     "notes": "Two residents with their own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional corridor halls."
+  },
+  {
+   "dorm_id": "redding",
+   "dorm_name": "Louis L. Redding",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/redding/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/redding/",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/redding/",
+     "data_confidence": "low",
+     "notes": "Private room with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/redding/",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/redding/",
+     "data_confidence": "low",
+     "notes": "Two residents with their own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/redding/",
+     "data_confidence": "low",
+     "notes": "First-year triple on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Large Triple / Quad with Bath",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/redding/",
+     "data_confidence": "low",
+     "notes": "Large room for three or four first-year residents with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional corridor hall."
+  },
+  {
+   "dorm_id": "russell",
+   "dorm_name": "Russell",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/russell/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/russell/",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/russell/",
+     "data_confidence": "low",
+     "notes": "Private room with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/russell/",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/russell/",
+     "data_confidence": "low",
+     "notes": "Two residents with their own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional corridor complex."
+  },
+  {
+   "dorm_id": "smyth",
+   "dorm_name": "Smyth",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/smyth/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/smyth/",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/smyth/",
+     "data_confidence": "low",
+     "notes": "Private room with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/smyth/",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/smyth/",
+     "data_confidence": "low",
+     "notes": "Two residents with their own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional corridor hall."
+  },
+  {
+   "dorm_id": "southacademy",
+   "dorm_name": "South Academy",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/southacademy/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/southacademy/",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/southacademy/",
+     "data_confidence": "low",
+     "notes": "Private room with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/southacademy/",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/southacademy/",
+     "data_confidence": "low",
+     "notes": "Two residents with their own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/southacademy/",
+     "data_confidence": "low",
+     "notes": "First-year triple on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Large Triple / Quad with Bath",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/southacademy/",
+     "data_confidence": "low",
+     "notes": "Large room for three or four first-year residents with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Traditional corridor hall."
+  },
+  {
+   "dorm_id": "n-central",
+   "dorm_name": "North Central (Brown, Harter, Sharp, Sypherd)",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/n-central/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/n-central/",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/n-central/",
+     "data_confidence": "low",
+     "notes": "Private room with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/n-central/",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/n-central/",
+     "data_confidence": "low",
+     "notes": "Two residents with their own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/n-central/",
+     "data_confidence": "low",
+     "notes": "First-year triple on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Large Triple / Quad with Bath",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/n-central/",
+     "data_confidence": "low",
+     "notes": "Large room for three or four first-year residents with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Four connected traditional halls — Brown, Harter, Sharp and Sypherd — on the north end of The Green."
+  },
+  {
+   "dorm_id": "s-central",
+   "dorm_name": "South Central (Cannon, Kent, New Castle, Squire, Sussex)",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/s-central/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/s-central/",
+     "data_confidence": "low",
+     "notes": "Private room on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/s-central/",
+     "data_confidence": "low",
+     "notes": "Private room with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/s-central/",
+     "data_confidence": "low",
+     "notes": "Two residents on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/s-central/",
+     "data_confidence": "low",
+     "notes": "Two residents with their own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/s-central/",
+     "data_confidence": "low",
+     "notes": "First-year triple on a corridor with a community bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Large Triple / Quad with Bath",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/s-central/",
+     "data_confidence": "low",
+     "notes": "Large room for three or four first-year residents with its own bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Five traditional halls — Cannon, Kent, New Castle, Squire and Sussex — south of The Green."
+  },
+  {
+   "dorm_id": "georgeread",
+   "dorm_name": "George Read",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/georgeread/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single in Suite",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/georgeread/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a suite; two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in Suite",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/georgeread/",
+     "data_confidence": "low",
+     "notes": "Two residents share a bedroom in a suite; two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple in Suite",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/georgeread/",
+     "data_confidence": "low",
+     "notes": "Three residents share a bedroom in a suite. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Suite (first-year)",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/georgeread/",
+     "data_confidence": "low",
+     "notes": "First-year triple suite: two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style hall: two bedrooms share a bathroom."
+  },
+  {
+   "dorm_id": "indy",
+   "dorm_name": "Independence",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/indy/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single in Suite",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/indy/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a suite; two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in Suite",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/indy/",
+     "data_confidence": "low",
+     "notes": "Two residents share a bedroom in a suite; two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple in Suite",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/indy/",
+     "data_confidence": "low",
+     "notes": "Three residents share a bedroom in a suite. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Suite (first-year)",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/indy/",
+     "data_confidence": "low",
+     "notes": "First-year triple suite: two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style complex."
+  },
+  {
+   "dorm_id": "tmk-js",
+   "dorm_name": "James Smith & Thomas McKean",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/tmk-js/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single in Suite",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/tmk-js/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a suite; two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in Suite",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/tmk-js/",
+     "data_confidence": "low",
+     "notes": "Two residents share a bedroom in a suite; two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple in Suite",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/tmk-js/",
+     "data_confidence": "low",
+     "notes": "Three residents share a bedroom in a suite. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Suite (first-year)",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/tmk-js/",
+     "data_confidence": "low",
+     "notes": "First-year triple suite: two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style pair of halls."
+  },
+  {
+   "dorm_id": "ray",
+   "dorm_name": "Ray Street",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/ray/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single in Suite",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/ray/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a suite; two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double in Suite",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/ray/",
+     "data_confidence": "low",
+     "notes": "Two residents share a bedroom in a suite; two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple in Suite",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/ray/",
+     "data_confidence": "low",
+     "notes": "Three residents share a bedroom in a suite. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Suite (first-year)",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/ray/",
+     "data_confidence": "low",
+     "notes": "First-year triple suite: two bedrooms share a bathroom. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style complex on Ray Street."
+  },
+  {
+   "dorm_id": "university-courtyard",
+   "dorm_name": "University Courtyard Apartments",
+   "hall_url": "https://www.udel.edu/students/reslife/our-residence-halls/apartment-style/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "one_bedroom_apartment",
+     "room_type_official": "1 Bedroom / 1 Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/apartment-style/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 1 Bedroom / 1 Bath apartment with a kitchen and living room. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "two_bedroom_apartment",
+     "room_type_official": "2 Bedroom / 2 Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/apartment-style/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 2 Bedroom / 2 Bath apartment with a kitchen and living room. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "two_bedroom_apartment",
+     "room_type_official": "2 Bedroom / 2 Bath (large)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/apartment-style/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 2 Bedroom / 2 Bath (large) apartment with a kitchen and living room. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "4 Bedroom / 2 Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/apartment-style/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 4 Bedroom / 2 Bath apartment with a kitchen and living room. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "4 Bedroom / 4 Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.udel.edu/students/reslife/our-residence-halls/apartment-style/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 4 Bedroom / 4 Bath apartment with a kitchen and living room. The University of Delaware states that with the variety of room types on campus it cannot provide exact measurements for every room, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Apartment-style community; each resident has a private bedroom.",
+   "building_type": "Apartment"
+  }
+ ]
+}

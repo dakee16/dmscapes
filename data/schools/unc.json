@@ -1,0 +1,4704 @@
+{
+ "college_id": "unc",
+ "college_name": "University of North Carolina at Chapel Hill",
+ "city": "Chapel Hill",
+ "state": "NC",
+ "aliases": [
+  "unc",
+  "unc chapel hill",
+  "unc-ch",
+  "carolina",
+  "tar heels",
+  "north carolina"
+ ],
+ "housing_url": "https://housing.unc.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Carolina Housing's official residence-hall and room-type pages. UNC publishes an average room size on most hall pages and a measured floor plan on each room-type page, but states plainly that \"all room dimensions are approximate and may vary from room to room\" and that it cannot give exact measurements for every space — so hall-page averages are recorded as high confidence and room-type plans applied to halls that do not publish their own are recorded as medium. Suite and apartment units are modeled per bedroom so occupant counts and layouts match cleanly. Undergraduate beds are Twin XL (80\" x 36\"); rooms can be lofted.",
+ "dorms": [
+  {
+   "dorm_id": "alderman",
+   "dorm_name": "Alderman",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/alderman/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 6.17,
+      "height_ft": 4.75
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/alderman/",
+     "data_confidence": "high",
+     "notes": "Hall-page average room size. Windows 74\" x 57\"."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/alderman/",
+     "data_confidence": "medium",
+     "notes": "Singles occupy the same 12' x 16' average footprint published for Alderman rooms."
+    }
+   ],
+   "notes": "North Campus, Kenan Community. Built 1937; 3 floors, 88 residents.",
+   "population": 88,
+   "year_built": 1937,
+   "campus_area": "North Campus",
+   "elevator": true
+  },
+  {
+   "dorm_id": "cobb",
+   "dorm_name": "Cobb",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/cobb/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.42,
+      "height_ft": 4.25
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/cobb/",
+     "data_confidence": "high",
+     "notes": "Hall-page average room size. Windows 65\" x 51\"."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/cobb/",
+     "data_confidence": "medium",
+     "notes": "Same 12' x 14' average footprint published for Cobb rooms."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Corridor-Style Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/cobb/",
+     "data_confidence": "medium",
+     "notes": "Cobb has the most triples on campus. Same published average footprint; beds may be bunked."
+    }
+   ],
+   "notes": "North Campus. Built 1952, renovated 2005; 4 floors, 386 residents.",
+   "population": 386,
+   "year_built": 1952,
+   "campus_area": "North Campus",
+   "elevator": true
+  },
+  {
+   "dorm_id": "winston",
+   "dorm_name": "Winston",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/winston/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 6.5,
+      "height_ft": 5.25
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/winston/",
+     "data_confidence": "high",
+     "notes": "Hall-page average room size. Windows 78\" x 63\"."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/winston/",
+     "data_confidence": "medium",
+     "notes": "Same 12' x 14' average footprint published for Winston rooms."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Corridor-Style Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/winston/",
+     "data_confidence": "medium",
+     "notes": "Same published average footprint; beds may be bunked but not stacked three high."
+    }
+   ],
+   "notes": "North Campus. Built 1948, renovated 2003; 4 floors, 181 residents.",
+   "population": 181,
+   "year_built": 1948,
+   "campus_area": "North Campus",
+   "elevator": false
+  },
+  {
+   "dorm_id": "connor",
+   "dorm_name": "Connor",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/connor/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double (Connor Community)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.83,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 185,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "high",
+     "notes": "Connor Community has its own published corridor double floor plan."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Corridor-Style Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 22.5,
+      "width_ft": 12.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 276,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-triple/",
+     "data_confidence": "medium",
+     "notes": "Published plan is the dormered triple (22'6\" x 12'3\"). Beds may be bunked but not stacked three high."
+    }
+   ],
+   "notes": "North Campus, Connor Community.",
+   "campus_area": "North Campus"
+  },
+  {
+   "dorm_id": "alexander",
+   "dorm_name": "Alexander",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/alexander/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "everett",
+   "dorm_name": "Everett",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/everett/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Corridor-Style Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 22.5,
+      "width_ft": 12.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 276,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-triple/",
+     "data_confidence": "medium",
+     "notes": "Published plan is the dormered triple (22'6\" x 12'3\"). Beds may be bunked but not stacked three high."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "graham",
+   "dorm_name": "Graham",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/graham/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "grimes",
+   "dorm_name": "Grimes",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/grimes/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Corridor-Style Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 22.5,
+      "width_ft": 12.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 276,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-triple/",
+     "data_confidence": "medium",
+     "notes": "Published plan is the dormered triple (22'6\" x 12'3\"). Beds may be bunked but not stacked three high."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "joyner",
+   "dorm_name": "Joyner",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/joyner/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Corridor-Style Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 22.5,
+      "width_ft": 12.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 276,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-triple/",
+     "data_confidence": "medium",
+     "notes": "Published plan is the dormered triple (22'6\" x 12'3\"). Beds may be bunked but not stacked three high."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff. Joyner offers the 'spa style' private enclosed bathroom units."
+  },
+  {
+   "dorm_id": "kenan",
+   "dorm_name": "Kenan",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/kenan/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "lewis",
+   "dorm_name": "Lewis",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/lewis/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Corridor-Style Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 22.5,
+      "width_ft": 12.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 276,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-triple/",
+     "data_confidence": "medium",
+     "notes": "Published plan is the dormered triple (22'6\" x 12'3\"). Beds may be bunked but not stacked three high."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "mangum",
+   "dorm_name": "Mangum",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/mangum/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "manly",
+   "dorm_name": "Manly",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/manly/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Corridor-Style Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 22.5,
+      "width_ft": 12.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 276,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-triple/",
+     "data_confidence": "medium",
+     "notes": "Published plan is the dormered triple (22'6\" x 12'3\"). Beds may be bunked but not stacked three high."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "mcclinton",
+   "dorm_name": "McClinton",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/mcclinton/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "mciver",
+   "dorm_name": "McIver",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/mciver/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "old-east",
+   "dorm_name": "Old East",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/old-east/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "old-west",
+   "dorm_name": "Old West",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/old-west/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "ruffin-jr",
+   "dorm_name": "Ruffin Jr.",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/ruffin-jr/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Corridor-Style Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 22.5,
+      "width_ft": 12.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 276,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-triple/",
+     "data_confidence": "medium",
+     "notes": "Published plan is the dormered triple (22'6\" x 12'3\"). Beds may be bunked but not stacked three high."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "spencer",
+   "dorm_name": "Spencer",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/spencer/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Corridor-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 19.67,
+      "width_ft": 12.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 246,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-single/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published corridor single floor plan (19'8\" x 12'6\", 12'11\" ceiling)."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "stacy",
+   "dorm_name": "Stacy",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/stacy/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Corridor-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.42,
+      "width_ft": 13.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-double/",
+     "data_confidence": "medium",
+     "notes": "Carolina Housing's published standard corridor double floor plan. Hall-specific rooms vary; the school notes all dimensions are approximate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Corridor-Style Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 22.5,
+      "width_ft": 12.25,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 276,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/corridor-style-triple/",
+     "data_confidence": "medium",
+     "notes": "Published plan is the dormered triple (22'6\" x 12'3\"). Beds may be bunked but not stacked three high."
+    }
+   ],
+   "notes": "Corridor-style hall: hallway bathrooms shared by the floor, cleaned by housing staff."
+  },
+  {
+   "dorm_id": "craige",
+   "dorm_name": "Craige",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/craige/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (front room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 156,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/craige/",
+     "data_confidence": "high",
+     "notes": "Front room. Suite bathroom shared with the other bedrooms in the suite."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (back room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/craige/",
+     "data_confidence": "high",
+     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/craige/",
+     "data_confidence": "low",
+     "notes": "Private bedroom on a suite bathroom. UNC does not publish a size for the suite single in this hall; estimated from similar rooms."
+    }
+   ],
+   "notes": "South Campus. Built 1962, bedrooms remodeled 2012; 6 floors, 620 residents. Suite bathrooms.",
+   "population": 620,
+   "year_built": 1962,
+   "campus_area": "South Campus",
+   "elevator": true
+  },
+  {
+   "dorm_id": "ehringhaus",
+   "dorm_name": "Ehringhaus",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/ehringhaus/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (front room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 156,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/ehringhaus/",
+     "data_confidence": "high",
+     "notes": "Front room. Suite bathroom shared with the other bedrooms in the suite."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (back room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/ehringhaus/",
+     "data_confidence": "high",
+     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/ehringhaus/",
+     "data_confidence": "low",
+     "notes": "Private bedroom on a suite bathroom. UNC does not publish a size for the suite single in this hall; estimated from similar rooms."
+    }
+   ],
+   "notes": "South Campus. Built 1962, bedrooms remodeled 2012, bathrooms 2013; 6 floors, 610 residents. Windows 43\" x 64\".",
+   "population": 610,
+   "year_built": 1962,
+   "campus_area": "South Campus",
+   "elevator": true
+  },
+  {
+   "dorm_id": "hinton-james",
+   "dorm_name": "Hinton James",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/hinton-james/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (front room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 156,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/hinton-james/",
+     "data_confidence": "high",
+     "notes": "Front room. Suite bathroom shared with the other bedrooms in the suite."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (back room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/hinton-james/",
+     "data_confidence": "high",
+     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/hinton-james/",
+     "data_confidence": "low",
+     "notes": "Private bedroom on a suite bathroom. UNC does not publish a size for the suite single in this hall; estimated from similar rooms."
+    }
+   ],
+   "notes": "South Campus. Built 1967, remodeled 2013; 10 floors, 964 residents — UNC's largest hall. Eight-person suites: four double bedrooms share one bathroom.",
+   "population": 964,
+   "year_built": 1967,
+   "campus_area": "South Campus",
+   "elevator": true
+  },
+  {
+   "dorm_id": "parker",
+   "dorm_name": "Parker",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/parker/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (front room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.0,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 169,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.17,
+      "height_ft": 6.25
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/parker/",
+     "data_confidence": "high",
+     "notes": "Front room. Suite bathroom shared with the other bedrooms in the suite."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (back room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.17,
+      "height_ft": 6.25
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/parker/",
+     "data_confidence": "high",
+     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+    }
+   ],
+   "notes": "Mid-campus. Built 1958, bedrooms remodeled 2013; 4 floors, 167 residents, no elevator. Built-in closets have no doors; overhead storage bins above. Lofted beds clear 55\".",
+   "population": 167,
+   "year_built": 1958,
+   "campus_area": "Mid-Campus",
+   "elevator": false
+  },
+  {
+   "dorm_id": "teague",
+   "dorm_name": "Teague",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/teague/",
+   "air_conditioning": "window units",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (front room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.0,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 169,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.17,
+      "height_ft": 6.25
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/teague/",
+     "data_confidence": "high",
+     "notes": "Front room. Suite bathroom shared with the other bedrooms in the suite."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (back room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.17,
+      "height_ft": 6.25
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/teague/",
+     "data_confidence": "high",
+     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+    }
+   ],
+   "notes": "Mid-campus. Built 1958, renovated 2013; 4 floors, 173 residents, no elevator. Windows 60\" x 46\". Built-in closets 36\" w x 26\" d, no doors.",
+   "population": 173,
+   "year_built": 1958,
+   "campus_area": "Mid-Campus",
+   "elevator": false
+  },
+  {
+   "dorm_id": "avery",
+   "dorm_name": "Avery",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/avery/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (front room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 156,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/avery/",
+     "data_confidence": "high",
+     "notes": "Front room. Suite bathroom shared with the other bedrooms in the suite."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (back room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 10.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 150,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/avery/",
+     "data_confidence": "high",
+     "notes": "Back room, beside the suite bathroom — the larger of the two suite double layouts."
+    }
+   ],
+   "notes": "Mid-campus, 295 Ridge Road. Built 1958, fully renovated and reopened 2025 with an elevator tower; 4 floors, 214 residents. Windows 60\" x 46\".",
+   "population": 214,
+   "year_built": 1958,
+   "campus_area": "Mid-Campus",
+   "elevator": true
+  },
+  {
+   "dorm_id": "craige-north",
+   "dorm_name": "Craige North",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/craige-north/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 18.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 216,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/craige-north/",
+     "data_confidence": "high",
+     "notes": "Hall-page average room size. Four-person suites share a bathroom."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 18.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 216,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/craige-north/",
+     "data_confidence": "medium",
+     "notes": "Same 12' x 18' average footprint published for this hall's rooms."
+    }
+   ],
+   "notes": "South Campus, Manning East community. Built 2002; 4 floors, 229 residents. First-floor windows 40\" x 84\", other floors 40\" x 64\".",
+   "population": 229,
+   "year_built": 2002,
+   "campus_area": "South Campus",
+   "elevator": true
+  },
+  {
+   "dorm_id": "hardin",
+   "dorm_name": "Hardin",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/hardin/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 18.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 216,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/hardin/",
+     "data_confidence": "high",
+     "notes": "Hall-page average room size. Four-person suites share a bathroom."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 18.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 216,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/hardin/",
+     "data_confidence": "medium",
+     "notes": "Same 12' x 18' average footprint published for this hall's rooms."
+    }
+   ],
+   "notes": "South Campus, Manning East community. Built 2002; 4 floors, 190 residents. First-floor windows 40\" x 84\", other floors 40\" x 64\".",
+   "population": 190,
+   "year_built": 2002,
+   "campus_area": "South Campus",
+   "elevator": true
+  },
+  {
+   "dorm_id": "horton",
+   "dorm_name": "Horton",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/horton/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 18.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 216,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/horton/",
+     "data_confidence": "high",
+     "notes": "Hall-page average room size. Four-person suites share a bathroom."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 18.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 216,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/horton/",
+     "data_confidence": "medium",
+     "notes": "Same 12' x 18' average footprint published for this hall's rooms."
+    }
+   ],
+   "notes": "South Campus, Manning East community. Built 2002; 4 floors, 276 residents. First-floor windows 40\" x 84\", other floors 40\" x 64\".",
+   "population": 276,
+   "year_built": 2002,
+   "campus_area": "South Campus",
+   "elevator": true
+  },
+  {
+   "dorm_id": "koury",
+   "dorm_name": "Koury",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/koury/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 18.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 216,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/koury/",
+     "data_confidence": "high",
+     "notes": "Hall-page average room size. Four-person suites share a bathroom."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 18.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 216,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/koury/",
+     "data_confidence": "medium",
+     "notes": "Same 12' x 18' average footprint published for this hall's rooms."
+    }
+   ],
+   "notes": "South Campus, Manning East community. Built 2002; 4 floors, 262 residents. First-floor windows 40\" x 84\", other floors 40\" x 64\".",
+   "population": 262,
+   "year_built": 2002,
+   "campus_area": "South Campus",
+   "elevator": true
+  },
+  {
+   "dorm_id": "morrison",
+   "dorm_name": "Morrison",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/morrison/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (front room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 182,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/morrison/",
+     "data_confidence": "high",
+     "notes": "Front room. Eight-person suites: four double bedrooms share one bathroom."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double (back room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 10.58,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 169,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/morrison/",
+     "data_confidence": "high",
+     "notes": "Back room."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/residence-hall/morrison/",
+     "data_confidence": "low",
+     "notes": "Private bedroom on a suite bathroom. Size not published; estimated from similar rooms."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Super Suite Bedroom 1",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.08,
+      "width_ft": 14.33,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/morrison-super-suite/",
+     "data_confidence": "high",
+     "notes": "Super Suite (floors 8-10): three bedrooms house six residents around an 18'3\" x 14'4\" shared living room. Residents clean the suite bathroom."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Super Suite Bedroom 2",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.08,
+      "width_ft": 16.92,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 221,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/morrison-super-suite/",
+     "data_confidence": "high",
+     "notes": "Super Suite bedroom 2 of 3."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Super Suite Bedroom 3",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.25,
+      "width_ft": 16.92,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 190,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/morrison-super-suite/",
+     "data_confidence": "high",
+     "notes": "Super Suite bedroom 3 of 3."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Super Suite Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 16.92,
+      "width_ft": 9.83,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 166,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/morrison-super-suite/",
+     "data_confidence": "high",
+     "notes": "One-resident Super Suite: private bedroom plus an 18'2\" x 14'2\" living room and private bathroom."
+    }
+   ],
+   "notes": "South Campus. Built 1965, renovated 2006; 10 floors, 860 residents. Suite living areas on floors 8-10 measure 17'8\" x 14'4\".",
+   "population": 860,
+   "year_built": 1965,
+   "campus_area": "South Campus",
+   "elevator": true
+  },
+  {
+   "dorm_id": "carmichael",
+   "dorm_name": "Carmichael",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/carmichael/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Suite-Style Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 7.5,
+      "width_ft": 13.42,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 101,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/suite-style-single/",
+     "data_confidence": "high",
+     "notes": "Carolina Housing's published Carmichael suite single plan — the most private room type on campus."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite-Style Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/suite-style-double/",
+     "data_confidence": "low",
+     "notes": "Suite bathroom typically has one toilet, one shower and two sinks. Size not published; estimated from similar rooms."
+    }
+   ],
+   "notes": "Mid-campus suite-style hall."
+  },
+  {
+   "dorm_id": "ram-village-1",
+   "dorm_name": "Ram Village 1",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/ram-village-1/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom (single occupant)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/ram-village-apartments-single-occupant/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 1-, 2-, 3- or 4-bedroom apartment with kitchen and living room. UNC does not publish apartment room sizes; estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Apartment Bedroom (double occupant)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/ram-village-apartments-double-occupant/",
+     "data_confidence": "low",
+     "notes": "Two residents share the bedroom in a 1 Bed/1 Bath, 2 Bed/2 Bath or 3 Bed/2 Bath apartment. Size not published; estimated from similar rooms."
+    }
+   ],
+   "notes": "Undergraduate apartment: kitchen with stove and full-size refrigerator, living room with couch and dining set. Residents maintain their own bathroom. Laundry is in Ram Village 2 and 5."
+  },
+  {
+   "dorm_id": "ram-village-2",
+   "dorm_name": "Ram Village 2",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/ram-village-2/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom (single occupant)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/ram-village-apartments-single-occupant/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 1-, 2-, 3- or 4-bedroom apartment with kitchen and living room. UNC does not publish apartment room sizes; estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Apartment Bedroom (double occupant)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/ram-village-apartments-double-occupant/",
+     "data_confidence": "low",
+     "notes": "Two residents share the bedroom in a 1 Bed/1 Bath, 2 Bed/2 Bath or 3 Bed/2 Bath apartment. Size not published; estimated from similar rooms."
+    }
+   ],
+   "notes": "Undergraduate apartment: kitchen with stove and full-size refrigerator, living room with couch and dining set. Residents maintain their own bathroom. Laundry is in Ram Village 2 and 5."
+  },
+  {
+   "dorm_id": "ram-village-3",
+   "dorm_name": "Ram Village 3",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/ram-village-3/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom (single occupant)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/ram-village-apartments-single-occupant/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 1-, 2-, 3- or 4-bedroom apartment with kitchen and living room. UNC does not publish apartment room sizes; estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Apartment Bedroom (double occupant)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/ram-village-apartments-double-occupant/",
+     "data_confidence": "low",
+     "notes": "Two residents share the bedroom in a 1 Bed/1 Bath, 2 Bed/2 Bath or 3 Bed/2 Bath apartment. Size not published; estimated from similar rooms."
+    }
+   ],
+   "notes": "Undergraduate apartment: kitchen with stove and full-size refrigerator, living room with couch and dining set. Residents maintain their own bathroom. Laundry is in Ram Village 2 and 5."
+  },
+  {
+   "dorm_id": "ram-village-5",
+   "dorm_name": "Ram Village 5",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/ram-village-5/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom (single occupant)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/ram-village-apartments-single-occupant/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 1-, 2-, 3- or 4-bedroom apartment with kitchen and living room. UNC does not publish apartment room sizes; estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Apartment Bedroom (double occupant)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/ram-village-apartments-double-occupant/",
+     "data_confidence": "low",
+     "notes": "Two residents share the bedroom in a 1 Bed/1 Bath, 2 Bed/2 Bath or 3 Bed/2 Bath apartment. Size not published; estimated from similar rooms."
+    }
+   ],
+   "notes": "Undergraduate apartment: kitchen with stove and full-size refrigerator, living room with couch and dining set. Residents maintain their own bathroom. Laundry is in Ram Village 2 and 5."
+  },
+  {
+   "dorm_id": "taylor-hall",
+   "dorm_name": "Taylor",
+   "hall_url": "https://housing.unc.edu/explore/residence-hall/taylor-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom (single occupant)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/ram-village-apartments-single-occupant/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 1-, 2-, 3- or 4-bedroom apartment with kitchen and living room. UNC does not publish apartment room sizes; estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Apartment Bedroom (double occupant)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "length_ft": 3.5,
+       "width_ft": 2.0
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "length_ft": 2.67,
+       "width_ft": 1.67
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.unc.edu/explore/room-types/ram-village-apartments-double-occupant/",
+     "data_confidence": "low",
+     "notes": "Two residents share the bedroom in a 1 Bed/1 Bath, 2 Bed/2 Bath or 3 Bed/2 Bath apartment. Size not published; estimated from similar rooms."
+    }
+   ],
+   "notes": "Undergraduate apartment: kitchen with stove and full-size refrigerator, living room with couch and dining set. Residents maintain their own bathroom. Laundry is in Ram Village 2 and 5."
+  }
+ ]
+}

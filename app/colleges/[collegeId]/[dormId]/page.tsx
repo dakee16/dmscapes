@@ -221,7 +221,9 @@ export default async function DormPage(props: {
                             ? "Full XL"
                             : r.bed_size === "full"
                               ? "Full"
-                              : "Twin"}
+                              : r.bed_size === "queen"
+                                ? "Queen"
+                                : "Twin"}
                         {bed?.level === "warning" && (
                           <span className="mt-1 block text-[11px] leading-snug text-ink-soft">
                             {bed.message}

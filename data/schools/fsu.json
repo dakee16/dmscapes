@@ -1,0 +1,1397 @@
+{
+ "college_id": "fsu",
+ "college_name": "Florida State University",
+ "city": "Tallahassee",
+ "state": "FL",
+ "aliases": [
+  "fsu",
+  "florida state",
+  "florida state university",
+  "seminoles"
+ ],
+ "housing_url": "https://housing.fsu.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Florida State University Housing's official residence-hall pages. FSU publishes the room types each hall offers and the furniture every resident receives, but not per-room dimensions or floor plans, so every room here uses the site's estimate fallback (a representative ft x ft derived from similar rooms across the dataset) and is labelled \"Estimated based on similar rooms. Official size not published.\" Hall names, room types and occupancy come straight from the official hall directory. Beds are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "azalea-hall",
+   "dorm_name": "Azalea Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/azalea-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/azalea-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "broward-hall",
+   "dorm_name": "Broward Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/broward-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/broward-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/broward-hall",
+     "data_confidence": "low",
+     "notes": "Single room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "bryan-hall",
+   "dorm_name": "Bryan Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/bryan-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/bryan-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/bryan-hall",
+     "data_confidence": "low",
+     "notes": "Triple room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": "One of Florida State's historic halls on Landis Green.",
+   "population": null
+  },
+  {
+   "dorm_id": "cawthon-hall",
+   "dorm_name": "Cawthon Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/cawthon-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/cawthon-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/cawthon-hall",
+     "data_confidence": "low",
+     "notes": "Single room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/cawthon-hall",
+     "data_confidence": "low",
+     "notes": "Triple room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "degraff-hall",
+   "dorm_name": "DeGraff Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/degraff-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/degraff-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "deviney-hall",
+   "dorm_name": "Deviney Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/deviney-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/deviney-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "dorman-hall",
+   "dorm_name": "Dorman Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/dorman-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/dorman-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "gilchrist-hall",
+   "dorm_name": "Gilchrist Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/gilchrist-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/gilchrist-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/gilchrist-hall",
+     "data_confidence": "low",
+     "notes": "Single room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/gilchrist-hall",
+     "data_confidence": "low",
+     "notes": "Triple room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "jennie-murphree-hall",
+   "dorm_name": "Jennie Murphree Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/jennie-murphree-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/jennie-murphree-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/jennie-murphree-hall",
+     "data_confidence": "low",
+     "notes": "Single room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/jennie-murphree-hall",
+     "data_confidence": "low",
+     "notes": "Triple room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "landis-hall",
+   "dorm_name": "Landis Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/landis-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/landis-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/landis-hall",
+     "data_confidence": "low",
+     "notes": "Single room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/landis-hall",
+     "data_confidence": "low",
+     "notes": "Triple room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style first-year hall, 403 residents. Lounges, kitchens and study areas on floors 1-5. Rooms have a sink and mirror, and a small refrigerator.",
+   "population": 403
+  },
+  {
+   "dorm_id": "magnolia-hall",
+   "dorm_name": "Magnolia Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/magnolia-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/magnolia-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "mccollum-hall",
+   "dorm_name": "McCollum Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/mccollum-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/mccollum-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "ragans-hall",
+   "dorm_name": "Ragans Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/ragans-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/ragans-hall",
+     "data_confidence": "low",
+     "notes": "Single room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "reynolds-hall",
+   "dorm_name": "Reynolds Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/reynolds-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/reynolds-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/reynolds-hall",
+     "data_confidence": "low",
+     "notes": "Single room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/reynolds-hall",
+     "data_confidence": "low",
+     "notes": "Triple room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "rogers-hall",
+   "dorm_name": "Rogers Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/rogers-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/rogers-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "salley-hall",
+   "dorm_name": "Salley Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/salley-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/salley-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "traditions-hall",
+   "dorm_name": "Traditions Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/traditions-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/traditions-hall",
+     "data_confidence": "low",
+     "notes": "Single room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  },
+  {
+   "dorm_id": "wildwood-hall",
+   "dorm_name": "Wildwood Hall",
+   "hall_url": "https://housing.fsu.edu/explore-housing/residence-halls/wildwood-hall",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.fsu.edu/explore-housing/residence-halls/wildwood-hall",
+     "data_confidence": "low",
+     "notes": "Double room. Each resident has a bed, closet, dresser and desk with chair. Florida State does not publish per-room dimensions; this size is estimated from similar rooms across the dataset and labelled as an estimate."
+    }
+   ],
+   "notes": null,
+   "population": null
+  }
+ ]
+}

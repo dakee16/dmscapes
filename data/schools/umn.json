@@ -1,0 +1,1510 @@
+{
+ "college_id": "umn",
+ "college_name": "University of Minnesota Twin Cities",
+ "city": "Minneapolis",
+ "state": "MN",
+ "aliases": [
+  "umn",
+  "u of m",
+  "minnesota",
+  "university of minnesota",
+  "twin cities",
+  "gophers"
+ ],
+ "housing_url": "https://housing.umn.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from University of Minnesota Housing & Residential Life's official hall pages. Minnesota publishes an average square footage for every room type — which most schools do not — but never a length x width, so residence-hall rooms here show a representative rectangle of the published area at a typical width for the occupancy, recorded as medium confidence with the reason stated on each room. Apartment buildings (Yudof, Wilkins) publish whole-unit areas rather than bedroom sizes, so their bedrooms are modeled per bedroom with the unit area noted and the bedroom footprint estimated from similar rooms. Bailey Hall is excluded: it is closed for the 2026-27 academic year. Beds are extra-long twin (36\" x 80\").",
+ "dorms": [
+  {
+   "dorm_id": "17th-avenue",
+   "dorm_name": "17th Avenue",
+   "hall_url": "https://housing.umn.edu/17th",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.2,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/17th",
+     "data_confidence": "medium",
+     "notes": "Common bathroom shared by about 10-12 residents. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Built 2013; 6 floors, 600 first-year residents. Carpeted rooms, laundry included, fresh-food dining, game room. Participates in Gender Open Housing.",
+   "population": 600,
+   "year_built": 2013
+  },
+  {
+   "dorm_id": "centennial",
+   "dorm_name": "Centennial",
+   "hall_url": "https://housing.umn.edu/centennial",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.9,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 129,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/centennial",
+     "data_confidence": "medium",
+     "notes": "About 530 singles; common bathroom shared by roughly 15 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.4,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 185,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/centennial",
+     "data_confidence": "medium",
+     "notes": "About 62 doubles; common bathroom shared by roughly 15 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double with 2 Bedrooms",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 22.4,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 269,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/centennial",
+     "data_confidence": "medium",
+     "notes": "Two single-occupancy bedrooms connected, the larger one holding both desks; about 13 of them. The published area covers both bedrooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple with 2 Bedrooms",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 20.7,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 269,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/centennial",
+     "data_confidence": "medium",
+     "notes": "A single-occupancy bedroom connected to a double-occupancy room; about 11 of them. The published area covers both bedrooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Superblock. Built 1950; 6 floors, about 700 first-year and returning residents. Gender Open Housing offered for singles and doubles.",
+   "population": 700,
+   "year_built": 1950,
+   "address": "614 Delaware Street SE, Minneapolis"
+  },
+  {
+   "dorm_id": "comstock",
+   "dorm_name": "Comstock",
+   "hall_url": "https://housing.umn.edu/comstock",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12.8,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 128,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/comstock",
+     "data_confidence": "medium",
+     "notes": "About 199 singles. Quarter-bath with a sink shared between two rooms, plus a larger bathroom shared by about 7 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.2,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/comstock",
+     "data_confidence": "medium",
+     "notes": "About 166 doubles; common bathroom shared by roughly 10 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 18.1,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 235,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/comstock",
+     "data_confidence": "medium",
+     "notes": "Fewer than 10 triples; common bathroom shared by roughly 7 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Built 1940; 6 floors, 553 first-year residents, with a dining hall in the building.",
+   "population": 553,
+   "year_built": 1940,
+   "address": "210 Delaware Street SE, Minneapolis"
+  },
+  {
+   "dorm_id": "frontier",
+   "dorm_name": "Frontier",
+   "hall_url": "https://housing.umn.edu/frontier",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.6,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/frontier",
+     "data_confidence": "medium",
+     "notes": "About 273 doubles; common bathroom shared by roughly 7 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Two-Person Suite",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18.2,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 219,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/frontier",
+     "data_confidence": "medium",
+     "notes": "About 46 suites: two rooms of two share a 3/4 bath with shower and toilet, and each room has its own sink. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Built 1959; 4 floors, 735 first-year residents. Home to the Biology House, Nursing, Taylor House (CSE) and WISE living-learning communities.",
+   "population": 735,
+   "year_built": 1959,
+   "address": "701 Fulton Street SE, Minneapolis"
+  },
+  {
+   "dorm_id": "middlebrook",
+   "dorm_name": "Middlebrook",
+   "hall_url": "https://housing.umn.edu/middlebrook",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.8,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 118,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/middlebrook",
+     "data_confidence": "medium",
+     "notes": "About 30 singles with a semi-private bathroom. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.9,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 179,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/middlebrook",
+     "data_confidence": "medium",
+     "notes": "About 333 doubles with a semi-private bathroom. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Bathroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 18.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 216,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/middlebrook",
+     "data_confidence": "medium",
+     "notes": "About 11 of them, with exclusive access to their own bathroom. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Two-Person Suite",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 21.3,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 256,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/middlebrook",
+     "data_confidence": "medium",
+     "notes": "About 88 suites with an adjoining shared bath. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "triple_private_bath",
+     "room_type_official": "Triple with Bathroom",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 19.7,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 256,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/middlebrook",
+     "data_confidence": "medium",
+     "notes": "About 11 of them, sharing a 3/4 bath. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "West Bank. Over 900 students including the Honors Living Learning Community. Dining hall, convenience store, tech lab and music practice rooms in the building.",
+   "population": 900,
+   "address": "412 22nd Avenue South, Minneapolis"
+  },
+  {
+   "dorm_id": "pioneer",
+   "dorm_name": "Pioneer",
+   "hall_url": "https://housing.umn.edu/pioneer",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 16.8,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/pioneer",
+     "data_confidence": "medium",
+     "notes": "About 22 singles; bathroom shared by roughly 5 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16.7,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/pioneer",
+     "data_confidence": "medium",
+     "notes": "About 358 doubles; bathroom shared by roughly 5 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 24.8,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 322,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/pioneer",
+     "data_confidence": "medium",
+     "notes": "11 triples; bathroom shared by roughly 5 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Superblock. Bathrooms are shared by only about five rooms — among the lowest ratios on campus."
+  },
+  {
+   "dorm_id": "sanford",
+   "dorm_name": "Sanford",
+   "hall_url": "https://housing.umn.edu/sanford",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13.3,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 133,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/sanford",
+     "data_confidence": "medium",
+     "notes": "About 80 singles; bathroom shared by roughly 12 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.6,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 187,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/sanford",
+     "data_confidence": "medium",
+     "notes": "About 167 doubles; bathroom shared by roughly 12 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 18.8,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 244,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/sanford",
+     "data_confidence": "medium",
+     "notes": "About 34 triples; bathroom shared by roughly 15 rooms. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Three-Person Suite",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 26.3,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 342,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/sanford",
+     "data_confidence": "medium",
+     "notes": "Fewer than 10 suites, with a bathroom shared between three and six residents. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Superblock. 530 first-year residents, with dining, a game room and a tech lab in the building.",
+   "population": 530
+  },
+  {
+   "dorm_id": "territorial",
+   "dorm_name": "Territorial",
+   "hall_url": "https://housing.umn.edu/territorial",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.8,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 189,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/territorial",
+     "data_confidence": "medium",
+     "notes": "About 337 doubles — Territorial is almost entirely doubles. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    },
+    {
+     "room_type": "triple_private_bath",
+     "room_type_official": "Triple with Bathroom",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 28.5,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 371,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/territorial",
+     "data_confidence": "medium",
+     "notes": "Fewer than 10 of them, with their own bathroom. The University of Minnesota publishes an average square footage for this room type but no length x width; the footprint shown is a representative rectangle of that published area."
+    }
+   ],
+   "notes": "Superblock. Built 1958 and expanded 1999; 4 floors, 695 first-year residents.",
+   "population": 695,
+   "year_built": 1958,
+   "address": "417 Walnut Street SE, Minneapolis"
+  },
+  {
+   "dorm_id": "yudof",
+   "dorm_name": "Yudof",
+   "hall_url": "https://housing.umn.edu/yudof",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "1-Bedroom Apartment (single)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/yudof",
+     "data_confidence": "low",
+     "notes": "About 46 single-occupancy one-bedroom apartments, 235 sq ft for the whole unit. The University of Minnesota publishes unit areas rather than bedroom sizes, so the bedroom footprint here is estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2-Bedroom Efficiency (2 person)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/yudof",
+     "data_confidence": "low",
+     "notes": "About 156 two-person, two-bedroom efficiency units at 335 sq ft for the whole unit, with a shared bath. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2-Bedroom Studio (2 person)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/yudof",
+     "data_confidence": "low",
+     "notes": "About 104 two-person, two-bedroom studio units at 560 sq ft for the whole unit. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2-Bedroom Apartment (4 person)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/yudof",
+     "data_confidence": "low",
+     "notes": "About 26 four-person, two-bedroom apartments at 560 sq ft for the whole unit — two residents per bedroom. Bedroom size estimated from similar rooms."
+    }
+   ],
+   "notes": "East River neighborhood. Built 2002; 6 floors, about 507 first-year and returning residents in apartment-style units with full kitchens and washer/dryers in most units.",
+   "population": 507,
+   "year_built": 2002,
+   "address": "220 Delaware Street SE, Minneapolis",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "wilkins",
+   "dorm_name": "Wilkins",
+   "hall_url": "https://housing.umn.edu/wilkins",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "1-Person Efficiency",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/wilkins",
+     "data_confidence": "low",
+     "notes": "About 15 one-person efficiencies, 294 sq ft for the whole unit. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "1-Bedroom Apartment (2 person)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/wilkins",
+     "data_confidence": "low",
+     "notes": "About 22 two-person, one-bedroom apartments at 575 sq ft for the whole unit; offered as Gender Open Housing. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2-Bedroom Apartment (2 person)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/wilkins",
+     "data_confidence": "low",
+     "notes": "About 15 two-person, two-bedroom apartments at 756 sq ft for the whole unit — a private bedroom each. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2-Bedroom Apartment (4 person)",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Extra-long twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.umn.edu/wilkins",
+     "data_confidence": "low",
+     "notes": "About 35 four-person, two-bedroom apartments at 756 sq ft for the whole unit — two residents per bedroom. Bedroom size estimated from similar rooms."
+    }
+   ],
+   "notes": "Built 1996; 4 floors, 142 first-year residents in fully furnished apartments with full kitchens. Utilities and laundry included.",
+   "population": 142,
+   "year_built": 1996,
+   "address": "1212 University Avenue SE, Minneapolis",
+   "building_type": "Apartment"
+  }
+ ]
+}

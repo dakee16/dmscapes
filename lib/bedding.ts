@@ -25,6 +25,12 @@ export function beddingAdvisory(bedSize: BedSize | undefined): BeddingAdvisory |
         message:
           "These are Full XL beds (extra long). We've picked a full-size set here since a Twin XL won't fit, and for the 80-inch mattress, sheets labeled “Full XL” fit best.",
       };
+    case "queen":
+      return {
+        level: "warning",
+        message:
+          "These are queen beds — wider and longer than a Twin XL. We don't stock a queen set yet, so the bedding below is the closest we have; buy queen-size sheets separately.",
+      };
     case "full":
       return {
         level: "warning",

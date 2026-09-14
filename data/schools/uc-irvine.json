@@ -1,0 +1,1143 @@
+{
+ "college_id": "uc-irvine",
+ "college_name": "University of California, Irvine",
+ "city": "Irvine",
+ "state": "CA",
+ "aliases": [
+  "uc irvine",
+  "uci",
+  "irvine",
+  "anteaters"
+ ],
+ "housing_url": "https://housing.uci.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from UCI Student Housing's official community and rates pages. UCI publishes each community's room types and the square footage of its graduate apartments, but states that all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so those rooms use the site's estimate fallback and are labelled as estimates. Apartment areas are whole-unit figures rather than bedroom sizes, so apartments are modeled per bedroom with the unit area kept in the note; studios are the exception, where the unit area is the room. Beds are extra-long twin (38\" x 80\"). Note that Mesa Court and Middle Earth have no air conditioning.",
+ "dorms": [
+  {
+   "dorm_id": "mesa-court",
+   "dorm_name": "Mesa Court",
+   "hall_url": "https://housing.uci.edu/mesa-court/",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private room in a suite of rooms sharing a bathroom. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Reduced Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "A smaller double offered at a reduced rate. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Three residents in one room. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Attached Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Two double rooms attached to each other. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Tower Quad Room",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Four residents in a room in one of the mid-rise towers. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "29 classic halls (55-90 beds each, 2,044 spaces) and 4 mid-rise towers (338-424 beds each, 1,440 spaces), about 3,400 mostly first- and second-year residents. Classic halls are suites of 6 rooms with shared bathrooms and a hall kitchen, living room and laundry; towers have mixed-gender floors where room pairs share a bathroom. No air conditioning.",
+   "population": 3400
+  },
+  {
+   "dorm_id": "middle-earth",
+   "dorm_name": "Middle Earth",
+   "hall_url": "https://housing.uci.edu/middle-earth/",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private room in a suite of rooms sharing a bathroom. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "The standard first-year room. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Reduced Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "A smaller double offered at a reduced rate. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Three residents in one room. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Attached Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Two double rooms attached to each other. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Tower Quad Room",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 4,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Four residents in a room in one of the mid-rise towers. Furnished with an extra-long twin bed, desk with chair and wardrobe. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "24 classic halls (48-96 beds each, 1,784 spaces) with 5-10 rooms per suite and shared single-gender and gender-inclusive bathrooms, plus the Laurelin-Telperion mid-rise tower (640 spaces, 5 mixed-gender floors where room pairs share a bathroom). About 2,400 residents.",
+   "population": 2400
+  },
+  {
+   "dorm_id": "arroyo-vista",
+   "dorm_name": "Arroyo Vista",
+   "hall_url": "https://housing.uci.edu/arroyo-vista/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Two residents share a room in a theme house. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Suite",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Two residents share a bedroom in a suite. UCI states all floor plans are approximate and publishes no per-room dimensions for the undergraduate residence halls, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Theme houses organised around shared interests.",
+   "building_type": "Theme house"
+  },
+  {
+   "dorm_id": "campus-village",
+   "dorm_name": "Campus Village",
+   "hall_url": "https://housing.uci.edu/campus-village/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2 Bedroom / 1 Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 685 sq ft two-bedroom, one-bath unit. UCI publishes the whole-unit area rather than the bedroom size, so the bedroom footprint is estimated from similar rooms."
+    }
+   ],
+   "notes": "Graduate and family apartments.",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "palo-verde",
+   "dorm_name": "Palo Verde",
+   "hall_url": "https://housing.uci.edu/palo-verde/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": 411,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "medium",
+     "notes": "411 sq ft studio — the published area is the whole unit, which for a studio is the room itself. UCI publishes no length x width, so the footprint is estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "1 Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 538-665 sq ft one-bedroom apartment. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2 Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in an 842-881 sq ft two-bedroom apartment. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2 Bedroom Townhome",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 1,040-1,150 sq ft two-bedroom townhome. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "3 Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 1,120-1,270 sq ft three-bedroom apartment. Bedroom size estimated from similar rooms."
+    }
+   ],
+   "notes": "Graduate apartments.",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "verano-place",
+   "dorm_name": "Verano Place",
+   "hall_url": "https://housing.uci.edu/verano-place/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": 350,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "medium",
+     "notes": "350 sq ft studio — the published area is the whole unit, which for a studio is the room itself. Footprint estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "1 Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 505-508 sq ft one-bedroom apartment. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2 Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 626-843 sq ft two-bedroom apartment. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2 Bedroom Townhome",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 704-900 sq ft two-bedroom townhome. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "3 Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 749 sq ft three-bedroom apartment. Bedroom size estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "4 Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin 38\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true,
+       "notes": "Some desks include a bookcase."
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uci.edu/rates/",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a 1,090 sq ft four-bedroom apartment. Bedroom size estimated from similar rooms."
+    }
+   ],
+   "notes": "Graduate apartments.",
+   "building_type": "Apartment"
+  }
+ ]
+}

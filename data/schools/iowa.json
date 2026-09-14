@@ -1,0 +1,1903 @@
+{
+ "college_id": "iowa",
+ "college_name": "University of Iowa",
+ "city": "Iowa City",
+ "state": "IA",
+ "aliases": [
+  "iowa",
+  "university of iowa",
+  "ui",
+  "uiowa",
+  "hawkeyes"
+ ],
+ "housing_url": "https://housing.uiowa.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from University of Iowa Housing & Dining's official residence-hall pages. Iowa publishes the room types in every hall, the bathroom arrangement in unusual detail (community, single-user, suite and private) and exact furniture dimensions — lofted bed frame, desk and closet — but states that room layout and size vary and gives no per-room figure, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are extra-long twin (36\" x 80\") on lofted frames with 58 inches of clearance underneath, which is worth planning around. Every hall is air conditioned.",
+ "dorms": [
+  {
+   "dorm_id": "burge",
+   "dorm_name": "Burge Hall",
+   "hall_url": "https://housing.uiowa.edu/residence-halls/burge",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/burge",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/burge",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/burge",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Private Bathroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/burge",
+     "data_confidence": "low",
+     "notes": "Residents share a private en-suite bathroom and maintain it themselves. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "922 residents on the east side of campus, with Burge Market Place and Clinton Street Market in the building. Community-style restrooms serve 16-20 students; suite-style and private options also available.",
+   "population": 922
+  },
+  {
+   "dorm_id": "catlett",
+   "dorm_name": "Catlett Hall",
+   "hall_url": "https://housing.uiowa.edu/residence-halls/catlett",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/catlett",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/catlett",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/catlett",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/catlett",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Opened 2017; 1,049 first-year, returning, transfer and honors residents. Single-user restrooms — sink, toilet and shower behind one locking door. Fitness centre in the building.",
+   "population": 1049
+  },
+  {
+   "dorm_id": "currier",
+   "dorm_name": "Currier Hall",
+   "hall_url": "https://housing.uiowa.edu/residence-halls/currier",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/currier",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/currier",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/currier",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad Studio",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/currier",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Historic east-side hall with a fitness centre. Community-style, single-user and private restrooms.",
+   "population": null
+  },
+  {
+   "dorm_id": "daum",
+   "dorm_name": "Daum Hall",
+   "hall_url": "https://housing.uiowa.edu/residence-halls/daum",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/daum",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/daum",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/daum",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Private Bathroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/daum",
+     "data_confidence": "low",
+     "notes": "Residents share a private en-suite bathroom and maintain it themselves. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "East side of campus. First-floor community restrooms serve 16-20 students; single-user and private restrooms elsewhere.",
+   "population": null
+  },
+  {
+   "dorm_id": "hillcrest",
+   "dorm_name": "Hillcrest Hall",
+   "hall_url": "https://housing.uiowa.edu/residence-halls/hillcrest",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/hillcrest",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/hillcrest",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/hillcrest",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/hillcrest",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "West side of campus. Single-user restrooms plus private bathrooms with select rooms.",
+   "population": null
+  },
+  {
+   "dorm_id": "petersen",
+   "dorm_name": "Petersen Hall",
+   "hall_url": "https://housing.uiowa.edu/residence-halls/petersen",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/petersen",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/petersen",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/petersen",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Opened 2015; 501 residents on the west side of campus. Carpeted rooms and single-user restrooms.",
+   "population": 501
+  },
+  {
+   "dorm_id": "rienow",
+   "dorm_name": "Rienow Hall",
+   "hall_url": "https://housing.uiowa.edu/residence-halls/rienow",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/rienow",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/rienow",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Private Bathroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/rienow",
+     "data_confidence": "low",
+     "notes": "Residents share a private en-suite bathroom and maintain it themselves. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "488 residents on the west side of campus. Community-style restrooms on single-gender floors serve 16-20 students.",
+   "population": 488
+  },
+  {
+   "dorm_id": "slater",
+   "dorm_name": "Slater Hall",
+   "hall_url": "https://housing.uiowa.edu/residence-halls/slater",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/slater",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/slater",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 12 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "West side of campus. Single-user, private and first-floor community-style restrooms.",
+   "population": null
+  },
+  {
+   "dorm_id": "stanley",
+   "dorm_name": "Stanley Hall",
+   "hall_url": "https://housing.uiowa.edu/residence-halls/stanley",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/stanley",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 12 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/stanley",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 12 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/stanley",
+     "data_confidence": "low",
+     "notes": "A common bathroom is shared by about 15 rooms. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Private Bathroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/stanley",
+     "data_confidence": "low",
+     "notes": "Residents share a private en-suite bathroom and maintain it themselves. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "354 residents. Single-user restrooms, open to residents of any gender.",
+   "population": 354
+  },
+  {
+   "dorm_id": "mayflower",
+   "dorm_name": "Mayflower Hall",
+   "hall_url": "https://housing.uiowa.edu/residence-halls/mayflower",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/mayflower",
+     "data_confidence": "low",
+     "notes": "Suite bathroom shared with a roommate and the adjoining room. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "studio",
+     "room_type_official": "Single Studio",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/mayflower",
+     "data_confidence": "low",
+     "notes": "Private bedroom with a bathroom and a shared full-size kitchen. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.08,
+      "depth_ft": 2.0,
+      "height_ft": 6.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.33,
+       "height_ft": 6.17,
+       "notes": "Lofted frame 85\" long x 40\" wide x 74\" high, 58\" of clearance underneath; extra-long twin mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 4.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true,
+       "notes": "Drawer space."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.uiowa.edu/residence-halls/mayflower",
+     "data_confidence": "low",
+     "notes": "Suite bathroom shared with a roommate and the adjoining room, plus a full-size kitchen. The University of Iowa publishes furniture dimensions and room types but notes room layout and size vary and gives no per-room figure, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Suite-style hall, 810 residents, with full-size kitchens and carpeted rooms.",
+   "population": 810
+  }
+ ]
+}

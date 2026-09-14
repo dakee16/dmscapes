@@ -1,0 +1,2433 @@
+{
+ "college_id": "clemson",
+ "college_name": "Clemson University",
+ "city": "Clemson",
+ "state": "SC",
+ "aliases": [
+  "clemson",
+  "clemson university",
+  "tigers"
+ ],
+ "housing_url": "https://housing.clemson.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Clemson University Housing & Dining's official building pages. Clemson publishes a room footprint for most buildings — usually stated as including the closet or entry space — plus measured desk, dresser, closet, window and bed-frame sizes, so most rooms here come straight from those pages at high confidence; Clemson notes exact measurements may vary. Suites and apartments are modeled per bedroom so occupant counts and layouts match cleanly. Residence-hall beds are XL twin; the Douthit Hills West apartments use full-size beds instead, which is flagged on those rooms because Twin XL bedding will not fit.",
+ "dorms": [
+  {
+   "dorm_id": "cope",
+   "dorm_name": "Cope",
+   "hall_url": "https://housing.clemson.edu/building/cope/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.0,
+      "height_ft": 10.5
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/cope/",
+     "data_confidence": "high",
+     "notes": "Published room size includes the entry and closet space. Two walk-in closets, a lavatory sink and a medicine cabinet in every room; tile floors, not carpet."
+    }
+   ],
+   "notes": "The Shoebox community, about 140 students per building. Hall-style bathroom on each floor. Large 60\" x 126\" windows.",
+   "population": null,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Hall-style"
+  },
+  {
+   "dorm_id": "young",
+   "dorm_name": "Young",
+   "hall_url": "https://housing.clemson.edu/building/young/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.0,
+      "height_ft": 10.5
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/young/",
+     "data_confidence": "high",
+     "notes": "Published room size includes the entry and closet space. Two walk-in closets, a lavatory sink and a medicine cabinet in every room; tile floors, not carpet."
+    }
+   ],
+   "notes": "The Shoebox community, about 140 students per building. Hall-style bathroom on each floor. Large 60\" x 126\" windows.",
+   "population": 130,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Hall-style"
+  },
+  {
+   "dorm_id": "geer",
+   "dorm_name": "Geer",
+   "hall_url": "https://housing.clemson.edu/building/geer/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.0,
+      "height_ft": 10.5
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/geer/",
+     "data_confidence": "high",
+     "notes": "Published room size includes the entry and closet space. Two walk-in closets, a lavatory sink and a medicine cabinet in every room; tile floors, not carpet."
+    }
+   ],
+   "notes": "The Shoebox community, about 140 students per building. Hall-style bathroom on each floor. Large 60\" x 126\" windows.",
+   "population": 136,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Hall-style"
+  },
+  {
+   "dorm_id": "benet",
+   "dorm_name": "Benet",
+   "hall_url": "https://housing.clemson.edu/building/benet/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.0,
+      "height_ft": 10.5
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/benet/",
+     "data_confidence": "high",
+     "notes": "Published room size includes the entry and closet space. Two walk-in closets, a lavatory sink and a medicine cabinet in every room; tile floors, not carpet."
+    }
+   ],
+   "notes": "The Shoebox community, about 140 students per building. Hall-style bathroom on each floor. Large 60\" x 126\" windows.",
+   "population": 132,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Hall-style"
+  },
+  {
+   "dorm_id": "sanders",
+   "dorm_name": "Sanders",
+   "hall_url": "https://housing.clemson.edu/building/sanders/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 5.0,
+      "height_ft": 10.5
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/sanders/",
+     "data_confidence": "high",
+     "notes": "Published room size includes the entry and closet space. Two walk-in closets, a lavatory sink and a medicine cabinet in every room; tile floors, not carpet."
+    }
+   ],
+   "notes": "The Shoebox community, about 140 students per building. Hall-style bathroom on each floor. Large 60\" x 126\" windows.",
+   "population": 136,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Hall-style"
+  },
+  {
+   "dorm_id": "byrnes-hall",
+   "dorm_name": "Byrnes Hall",
+   "hall_url": "https://housing.clemson.edu/building/byrnes-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.42,
+      "height_ft": 5.42
+     },
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/byrnes-hall/",
+     "data_confidence": "high",
+     "notes": "Standard room; the published size includes the closet. Two open closets roughly 3' w x 2' d x 7'10\" h. Mirrors are not included."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corner Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 15.75,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 181,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.42,
+      "height_ft": 5.42
+     },
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/byrnes-hall/",
+     "data_confidence": "high",
+     "notes": "Corner rooms have their own published footprint."
+    }
+   ],
+   "notes": "Bryan Mall community high-rise, over 374 residents, first-year coed. Wet-core bathrooms: clusters of semi-private rooms, each with a toilet, sink and shower behind a locking door. Kitchen, lounges and laundry on the lower level.",
+   "population": 374,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Wet-core"
+  },
+  {
+   "dorm_id": "lever-hall",
+   "dorm_name": "Lever Hall",
+   "hall_url": "https://housing.clemson.edu/building/lever-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.42,
+      "height_ft": 5.42
+     },
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/lever-hall/",
+     "data_confidence": "high",
+     "notes": "Standard room; the published size includes the closet. Two open closets roughly 3' w x 2' d x 7'10\" h. Mirrors are not included."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corner Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 15.75,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 181,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.42,
+      "height_ft": 5.42
+     },
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/lever-hall/",
+     "data_confidence": "high",
+     "notes": "Corner rooms have their own published footprint."
+    }
+   ],
+   "notes": "Bryan Mall community high-rise, over 374 residents, first-year coed. Wet-core bathrooms: clusters of semi-private rooms, each with a toilet, sink and shower behind a locking door. Kitchen, lounges and laundry on the lower level.",
+   "population": 374,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Wet-core"
+  },
+  {
+   "dorm_id": "manning-hall",
+   "dorm_name": "Manning Hall",
+   "hall_url": "https://housing.clemson.edu/building/manning-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.42,
+      "height_ft": 5.42
+     },
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/manning-hall/",
+     "data_confidence": "high",
+     "notes": "Standard room; the published size includes the closet. Two open closets roughly 3' w x 2' d x 7'10\" h. Mirrors are not included."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Corner Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 15.75,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 181,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.42,
+      "height_ft": 5.42
+     },
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/manning-hall/",
+     "data_confidence": "high",
+     "notes": "Corner rooms have their own published footprint."
+    }
+   ],
+   "notes": "Bryan Mall community high-rise, over 374 residents, first-year coed. Wet-core bathrooms: clusters of semi-private rooms, each with a toilet, sink and shower behind a locking door. Kitchen, lounges and laundry on the lower level.",
+   "population": 374,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Wet-core"
+  },
+  {
+   "dorm_id": "mauldin-hall",
+   "dorm_name": "Mauldin Hall",
+   "hall_url": "https://housing.clemson.edu/building/mauldin-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.75,
+      "height_ft": 5.42
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.17,
+       "width_ft": 2.58,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 1.33,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/mauldin-hall/",
+     "data_confidence": "high",
+     "notes": "Published size includes the closet. Two closets, two wall-mounted mirrors and two bookshelves per room; carpet. Clemson notes exact measurements may vary."
+    }
+   ],
+   "notes": "First-year coed hall, 144 spaces. Two hall-style bathrooms per floor.",
+   "population": 144,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Hall-style"
+  },
+  {
+   "dorm_id": "barnett-hall",
+   "dorm_name": "Barnett Hall",
+   "hall_url": "https://housing.clemson.edu/building/barnett-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 156,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 2.75,
+      "height_ft": 5.42
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.17,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 1.33,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/barnett-hall/",
+     "data_confidence": "high",
+     "notes": "Published size includes closet space. Two closets per room; carpet and venetian blinds."
+    }
+   ],
+   "notes": "Fraternity & sorority housing for women, 144 spaces. Hall-style bathrooms at the ends of each floor.",
+   "population": 144,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Hall-style",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "smith-hall",
+   "dorm_name": "Smith Hall",
+   "hall_url": "https://housing.clemson.edu/building/smith-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 156,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.17,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/smith-hall/",
+     "data_confidence": "high",
+     "notes": "Published size includes closet space. Two desks, two closets, two chests of drawers and mirrors."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 13.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 156,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 2.17,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 5.0,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/smith-hall/",
+     "data_confidence": "medium",
+     "notes": "A select few Smith rooms house three residents in the same published footprint: three desks, one wardrobe and two closets. Triple bed frames are larger (38\" x 86\" including the frame)."
+    }
+   ],
+   "notes": "Women-only hall housing fraternity, sorority and first-year residents, 144 spaces. Hall-style bathrooms at the ends of each floor.",
+   "population": 144,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Hall-style",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "gressette-hall",
+   "dorm_name": "Gressette Hall",
+   "hall_url": "https://housing.clemson.edu/building/gressette-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.0,
+      "width_ft": 10.08,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 171,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.5,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/gressette-hall/",
+     "data_confidence": "high",
+     "notes": "Published size includes the closet."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 140,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.5,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/gressette-hall/",
+     "data_confidence": "high",
+     "notes": "Published single-room footprint."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 17.0,
+      "width_ft": 10.08,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 171,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.5,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 5.0,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/gressette-hall/",
+     "data_confidence": "medium",
+     "notes": "Reduced-rate triple in rooms 0240, 0340, 0440 and 0540: one freestanding bed plus two bunked, with up to 36\" of clearance under the bottom bunk."
+    }
+   ],
+   "notes": "Wet-core bathrooms: clusters of semi-private rooms, each with a toilet, sink and shower behind a locking door.",
+   "building_type": "Traditional",
+   "bathroom_configuration": "Wet-core"
+  },
+  {
+   "dorm_id": "holmes-hall",
+   "dorm_name": "Holmes Hall",
+   "hall_url": "https://housing.clemson.edu/building/holmes-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Suite Bedroom (first floor)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 140,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 5.0,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/holmes-hall/",
+     "data_confidence": "high",
+     "notes": "First-floor bedroom in a double suite: two bedrooms of two share one bathroom, four residents in total. Each resident gets a bed, desk, chest of drawers, nightstand and wardrobe."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Suite Bedroom (floors 2-5)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 5.0,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/holmes-hall/",
+     "data_confidence": "high",
+     "notes": "Upper-floor bedrooms are two feet wider than the first floor."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Suite Bedroom",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 2.67,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 5.0,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/holmes-hall/",
+     "data_confidence": "medium",
+     "notes": "Reduced-rate triple suite: two joined bedrooms of three share one bathroom, six residents in total. Beds loft to 72 inches."
+    }
+   ],
+   "notes": "Suite-style first-year hall. One shower and toilet per suite; suitemates share the whole space. Also offered as a triple-double suite (three in one bedroom, two in the other, five residents).",
+   "population": 272,
+   "building_type": "Suite-style",
+   "bathroom_configuration": "Shared suite bathroom"
+  },
+  {
+   "dorm_id": "mccabe-hall",
+   "dorm_name": "McCabe Hall",
+   "hall_url": "https://housing.clemson.edu/building/mccabe-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Suite Bedroom (first floor)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 140,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 5.0,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/mccabe-hall/",
+     "data_confidence": "high",
+     "notes": "First-floor bedroom in a double suite: two bedrooms of two share one bathroom, four residents in total. Each resident gets a bed, desk, chest of drawers, nightstand and wardrobe."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Suite Bedroom (floors 2-5)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.67,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 5.0,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/mccabe-hall/",
+     "data_confidence": "high",
+     "notes": "Upper-floor bedrooms are two feet wider than the first floor."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Triple Suite Bedroom",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 2.67,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 5.0,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/mccabe-hall/",
+     "data_confidence": "medium",
+     "notes": "Reduced-rate triple suite: two joined bedrooms of three share one bathroom, six residents in total. Beds loft to 72 inches."
+    }
+   ],
+   "notes": "Suite-style first-year hall. One shower and toilet per suite; suitemates share the whole space. Also offered as a triple-double suite (three in one bedroom, two in the other, five residents).",
+   "population": 258,
+   "building_type": "Suite-style",
+   "bathroom_configuration": "Shared suite bathroom"
+  },
+  {
+   "dorm_id": "mickel-hall",
+   "dorm_name": "Mickel Hall",
+   "hall_url": "https://housing.clemson.edu/building/mickel-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Bedroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 165,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/mickel-hall/",
+     "data_confidence": "high",
+     "notes": "Published size includes closet space. Two bedrooms of two make a four-person suite sharing a bathroom with a double vanity; five closets per suite."
+    }
+   ],
+   "notes": "Suite-style hall with LVT flooring and venetian blinds.",
+   "building_type": "Suite-style",
+   "bathroom_configuration": "Suite bathroom with double vanity"
+  },
+  {
+   "dorm_id": "cribb-deschamps-hall",
+   "dorm_name": "Cribb & DesChamps Hall",
+   "hall_url": "https://housing.clemson.edu/building/cribb-deschamps-hall/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double Suite Bedroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.0,
+      "width_ft": 11.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 165,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/cribb-deschamps-hall/",
+     "data_confidence": "high",
+     "notes": "Two joined bedrooms with two beds each share a bathroom."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single Suite Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/cribb-deschamps-hall/",
+     "data_confidence": "low",
+     "notes": "Two joined bedrooms with one bed each share a bathroom. Clemson publishes a size for the double suite only; estimated from similar rooms."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single with Private Bath",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/cribb-deschamps-hall/",
+     "data_confidence": "low",
+     "notes": "One bed with a private bathroom. Size not published; estimated from similar rooms."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "length_ft": 3.0,
+       "width_ft": 2.0,
+       "height_ft": 5.0,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/cribb-deschamps-hall/",
+     "data_confidence": "low",
+     "notes": "Three beds sharing a bathroom; beds loft up to 72 inches. Size not published; estimated from similar rooms."
+    }
+   ],
+   "notes": "Suite-style pair of halls, 422 spaces between them.",
+   "population": 422,
+   "building_type": "Suite-style",
+   "bathroom_configuration": "Shared suite bathroom"
+  },
+  {
+   "dorm_id": "the-quad",
+   "dorm_name": "The Quad",
+   "hall_url": "https://housing.clemson.edu/building/the-quad/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 3.83,
+      "height_ft": 5.33
+     },
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.0,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "XL twin 36\" x 85\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.71,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.46,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/the-quad/",
+     "data_confidence": "low",
+     "notes": "Clemson publishes furniture, closet and window sizes for The Quad but not a room footprint; size estimated from similar rooms. Lavatory sink and mirror in every room; tile floors."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 3.83,
+      "height_ft": 5.33
+     },
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.0,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 7.08,
+       "width_ft": 3.0,
+       "notes": "XL twin 36\" x 85\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.71,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.46,
+       "width_ft": 2.04,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/the-quad/",
+     "data_confidence": "low",
+     "notes": "Select single rooms. Size not published; estimated from similar rooms."
+    }
+   ],
+   "notes": "Seven fraternity and sorority halls — Wannamaker, Simpson South, Simpson North, Norris, Bowen, Bradley and Donaldson — housing 442 undergraduates across 344 spaces. Hall-style bathrooms per floor.",
+   "population": 344,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Hall-style"
+  },
+  {
+   "dorm_id": "douthit-hills-east",
+   "dorm_name": "Douthit Hills East",
+   "hall_url": "https://housing.clemson.edu/building/douthit-hills-east/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 19.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 209,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.5,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/douthit-hills-east/",
+     "data_confidence": "high",
+     "notes": "Typical double; Clemson notes the size varies. Closets typically 30\" x 58\"."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 9.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 126,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.5,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/douthit-hills-east/",
+     "data_confidence": "high",
+     "notes": "Typical single footprint."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 19.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 209,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.5,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/douthit-hills-east/",
+     "data_confidence": "medium",
+     "notes": "Reduced-rate triples in buildings E, F and G, with three beds lofted to 72 inches."
+    }
+   ],
+   "notes": "Three residential buildings (E, F and G), 748 spaces. Wet-core bathrooms: clusters of semi-private rooms, each with a toilet, sink and shower behind a locking door.",
+   "population": 748,
+   "building_type": "Traditional",
+   "bathroom_configuration": "Wet-core"
+  },
+  {
+   "dorm_id": "douthit-hills",
+   "dorm_name": "Douthit Hills West",
+   "hall_url": "https://housing.clemson.edu/building/douthit-hills/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 8.0,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 104,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.5,
+      "depth_ft": 3.33,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "notes": "Full-size mattress 54\" x 75\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 5.0,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 1.83,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/douthit-hills/",
+     "data_confidence": "high",
+     "notes": "Private bedroom in a 2- or 4-bedroom apartment with in-unit laundry; living rooms are about 10' x 13'. Beds here are full size (54\" x 75\"), so Twin XL bedding will not fit. Clemson notes sizes vary."
+    },
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "notes": "Storage bed.",
+       "movable": false
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/douthit-hills/",
+     "data_confidence": "low",
+     "notes": "One-person studio with a full kitchen, bathroom, living area and a storage bed. Size not published; estimated from similar rooms. Full-size mattress."
+    }
+   ],
+   "notes": "Apartment community, 870 spaces across studio, 2-bedroom and 4-bedroom units, each with a bathroom in the unit and in-unit laundry.",
+   "population": 870,
+   "building_type": "Apartment",
+   "bathroom_configuration": "In-unit"
+  },
+  {
+   "dorm_id": "lightsey-bridge-i",
+   "dorm_name": "Lightsey Bridge I",
+   "hall_url": "https://housing.clemson.edu/building/lightsey-bridge-i/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 144,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.0,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "XL twin 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/lightsey-bridge-i/",
+     "data_confidence": "high",
+     "notes": "Two residents share each bedroom in a two-bedroom, four-person apartment; the living room is 12' x 14'. One full bath with a double vanity, plus a kitchen with stove, refrigerator and microwave."
+    }
+   ],
+   "notes": "Apartment community, 474 spaces. Laundry in the Commons Building; two half basketball courts.",
+   "population": 474,
+   "building_type": "Apartment",
+   "bathroom_configuration": "In-unit"
+  },
+  {
+   "dorm_id": "calhoun-courts",
+   "dorm_name": "Calhoun Courts",
+   "hall_url": "https://housing.clemson.edu/building/calhoun-courts/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": {
+      "wall": null,
+      "position_from_left_ft": null,
+      "width_ft": 4.17,
+      "height_ft": 5.17
+     },
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.75,
+       "width_ft": 3.17,
+       "notes": "XL twin, 38\" x 81\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/calhoun-courts/",
+     "data_confidence": "low",
+     "notes": "Two residents share each bedroom in a two-bedroom, four-person apartment; the living room is 14' x 15'. Clemson publishes the living-room size and furniture here but not the bedroom footprint, so the bedroom size is estimated from similar rooms."
+    }
+   ],
+   "notes": "Apartment community, 700 spaces. One full bath with double vanity, LVT flooring, kitchen with stove, refrigerator and microwave.",
+   "population": 700,
+   "building_type": "Apartment",
+   "bathroom_configuration": "In-unit"
+  },
+  {
+   "dorm_id": "thornhill-village",
+   "dorm_name": "Thornhill Village",
+   "hall_url": "https://housing.clemson.edu/building/thornhill-village/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 9.0,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 108,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.33,
+      "depth_ft": 4.17,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "XL twin, loftable, 38\" x 80\" including the frame.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 1.5,
+       "height_ft": 2.5,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.clemson.edu/building/thornhill-village/",
+     "data_confidence": "high",
+     "notes": "Two residents share each bedroom in a four-person quad apartment; the living room is 12' x 15' with a sofa, coffee table and pub table. One full bathroom per unit."
+    }
+   ],
+   "notes": "Apartment community, 344 spaces, with on-site parking, green space and laundry in the commons building.",
+   "population": 344,
+   "building_type": "Apartment",
+   "bathroom_configuration": "In-unit"
+  }
+ ]
+}

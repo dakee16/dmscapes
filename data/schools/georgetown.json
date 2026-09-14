@@ -1,0 +1,830 @@
+{
+ "college_id": "georgetown",
+ "college_name": "Georgetown University",
+ "city": "Washington",
+ "state": "DC",
+ "aliases": [
+  "georgetown",
+  "georgetown university",
+  "gu",
+  "hoyas"
+ ],
+ "housing_url": "https://residentialliving.georgetown.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Georgetown Residential Living's official residence pages. Georgetown describes each residence's room types, bathroom arrangement and furnishings in detail — including the 30-inch writing desks in its apartments and which rooms have in-room sinks — but publishes no room dimensions, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Beds are bunkable Twin XL. One practical quirk worth knowing: microwaves are not permitted in Georgetown housing, so residents rent a combined Fridge-Microwave unit instead. Only residences with a detailed official page are included.",
+ "dorms": [
+  {
+   "dorm_id": "copley-hall",
+   "dorm_name": "Copley Hall",
+   "hall_url": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/copley-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/copley-hall/",
+     "data_confidence": "low",
+     "notes": "Two double rooms share one bathroom. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Vinyl plank flooring. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Standard Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/copley-hall/",
+     "data_confidence": "low",
+     "notes": "Double with its own sink and vanity; two shared floor bathrooms per level. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Neo-gothic gray stone building opened in 1932, with chapels and a formal lounge. First-year housing."
+  },
+  {
+   "dorm_id": "darnall-hall",
+   "dorm_name": "Darnall Hall",
+   "hall_url": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/darnall-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/darnall-hall/",
+     "data_confidence": "low",
+     "notes": "Two large community bathrooms on each floor. Closets with drawers, shelves and window shades. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year hall with renovated community spaces on each floor — kitchens, couches and televisions."
+  },
+  {
+   "dorm_id": "harbin-hall",
+   "dorm_name": "Harbin Hall",
+   "hall_url": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/harbin-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/harbin-hall/",
+     "data_confidence": "low",
+     "notes": "The standard Harbin room. Each cluster of rooms shares one bathroom and one shower room. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/harbin-hall/",
+     "data_confidence": "low",
+     "notes": "One triple on each floor. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year hall built on a cluster plan, with community rooms, kitchens and televisions on each floor."
+  },
+  {
+   "dorm_id": "new-south",
+   "dorm_name": "New South",
+   "hall_url": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/new-south/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/new-south/",
+     "data_confidence": "low",
+     "notes": "Double with a sink and mirrored medicine cabinet in the room; two common restrooms and shower rooms per floor. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year hall with a community space and laundry on every floor."
+  },
+  {
+   "dorm_id": "reynolds-hall",
+   "dorm_name": "Reynolds Hall",
+   "hall_url": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/reynolds-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/reynolds-hall/",
+     "data_confidence": "low",
+     "notes": "Desks have hutches and wall cabinets combine closet, drawer and hutch space. Four bathrooms per floor. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/reynolds-hall/",
+     "data_confidence": "low",
+     "notes": "Four bathrooms per floor. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/first-year-housing/reynolds-hall/",
+     "data_confidence": "low",
+     "notes": "Four bathrooms per floor. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "First-year hall with two study rooms and a kitchen community space per floor, plus a music practice room, library and multipurpose room on the first floor."
+  },
+  {
+   "dorm_id": "village-a",
+   "dorm_name": "Village A",
+   "hall_url": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/village-a/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Apartment Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "movable": true,
+       "notes": "30\" writing desk with hutch."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/village-a/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom in a four-person, two-bedroom, one-bathroom garden apartment with a kitchen and dining table. Closets have no doors. Some units have balconies over the Potomac; rooftop apartments have large decks. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Upperclass garden-style apartment complex with a community room and patio.",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "alumni-square",
+   "dorm_name": "Alumni Square",
+   "hall_url": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/alumni-square/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Apartment Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 2.5,
+       "width_ft": 2.0,
+       "movable": true,
+       "notes": "30\" writing desk with hutch."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/alumni-square/",
+     "data_confidence": "low",
+     "notes": "Two residents per bedroom in a four-person, two-bedroom, one-bathroom apartment with a full kitchen and living room. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Four buildings — Groves, Beh, McBride and McCahill — comprehensively renovated in August 2019, around a central courtyard.",
+   "building_type": "Apartment"
+  },
+  {
+   "dorm_id": "village-c-west",
+   "dorm_name": "Village C West",
+   "hall_url": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/village-c-west/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Private Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/village-c-west/",
+     "data_confidence": "low",
+     "notes": "Double occupancy with a private bathroom. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Renovated in spring 2021. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Two wings (X and Y), fully renovated in spring 2021. Furnished community space with kitchen on each floor."
+  },
+  {
+   "dorm_id": "village-c-east",
+   "dorm_name": "Village C East",
+   "hall_url": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/village-c-east/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double_private_bath",
+     "room_type_official": "Double with Private Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/village-c-east/",
+     "data_confidence": "low",
+     "notes": "Double occupancy with a private bathroom. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Furnished community room with kitchen and TV on each floor; laundry on the third floor."
+  },
+  {
+   "dorm_id": "lxr",
+   "dorm_name": "LXR",
+   "hall_url": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/lxr/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/lxr/",
+     "data_confidence": "low",
+     "notes": "Desks have hutches; wall cabinetry combines closet and drawer space. Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/lxr/",
+     "data_confidence": "low",
+     "notes": "Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentialliving.georgetown.edu/explore-residences/upperclass-housing/lxr/",
+     "data_confidence": "low",
+     "notes": "Beds are bunkable twin XL. Microwaves are not permitted; residents rent a Fridge-Microwave combo through Breez. Georgetown publishes each residence's room types and furnishings but no room dimensions, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Three connected buildings — Loyola, Xavier and Ryder — for upperclass students."
+  }
+ ]
+}

@@ -1,0 +1,3324 @@
+{
+ "college_id": "notre-dame",
+ "college_name": "University of Notre Dame",
+ "city": "Notre Dame",
+ "state": "IN",
+ "aliases": [
+  "notre dame",
+  "nd",
+  "university of notre dame",
+  "fighting irish",
+  "und"
+ ],
+ "housing_url": "https://residentiallife.nd.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Notre Dame Residential Life's official hall directory. Notre Dame has 32 single-gender undergraduate halls and students typically stay in the same hall all four years, so the hall matters more here than at most universities. Residential Life states that room dimensions differ for every room and keeps per-hall floor plans behind a student login, so rooms use the site's estimate fallback and are labelled as estimates — with one exception: Johnson Family Hall publishes its average room sizes, which are recorded here at high confidence. Beds are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "alumni-hall",
+   "dorm_name": "Alumni Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/alumni-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/alumni-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/alumni-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "baumer-hall",
+   "dorm_name": "Baumer Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/baumer-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/baumer-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/baumer-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "carroll-hall",
+   "dorm_name": "Carroll Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/carroll-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/carroll-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/carroll-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "coyle-hall",
+   "dorm_name": "Coyle Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/coyle-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/coyle-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/coyle-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "dillon-hall",
+   "dorm_name": "Dillon Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/dillon-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/dillon-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/dillon-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "duncan-hall",
+   "dorm_name": "Duncan Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/duncan-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/duncan-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/duncan-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "dunne-hall",
+   "dorm_name": "Dunne Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/dunne-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/dunne-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/dunne-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "graham-family-hall",
+   "dorm_name": "Graham Family Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/graham-family-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/graham-family-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/graham-family-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "keenan-hall",
+   "dorm_name": "Keenan Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/keenan-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/keenan-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/keenan-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "keough-hall",
+   "dorm_name": "Keough Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/keough-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/keough-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/keough-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "knott-hall",
+   "dorm_name": "Knott Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/knott-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/knott-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/knott-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "morrissey-hall",
+   "dorm_name": "Morrissey Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/morrissey-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/morrissey-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/morrissey-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "oneill-family-hall",
+   "dorm_name": "O'Neill Family Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/oneill-family-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/oneill-family-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/oneill-family-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "siegfried-hall",
+   "dorm_name": "Siegfried Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/siegfried-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/siegfried-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/siegfried-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "sorin-hall",
+   "dorm_name": "Sorin Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/sorin-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/sorin-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/sorin-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "stanford-hall",
+   "dorm_name": "Stanford Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/stanford-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/stanford-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/stanford-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "st-edwards-hall",
+   "dorm_name": "St. Edward's Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/st-edwards-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/st-edwards-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/st-edwards-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Men's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Men"
+  },
+  {
+   "dorm_id": "badin-hall",
+   "dorm_name": "Badin Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/badin-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/badin-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/badin-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "breen-phillips-hall",
+   "dorm_name": "Breen-Phillips Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/breen-phillips-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/breen-phillips-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/breen-phillips-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "cavanaugh-hall",
+   "dorm_name": "Cavanaugh Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/cavanaugh-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/cavanaugh-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/cavanaugh-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "farley-hall",
+   "dorm_name": "Farley Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/farley-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/farley-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/farley-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "flaherty-hall",
+   "dorm_name": "Flaherty Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/flaherty-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/flaherty-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/flaherty-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "grojean-hall",
+   "dorm_name": "Grojean Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/grojean-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/grojean-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/grojean-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "lewis-hall",
+   "dorm_name": "Lewis Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/lewis-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/lewis-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/lewis-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "lyons-community-in-zahm-hall",
+   "dorm_name": "Lyons Community in Zahm Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/lyons-community-in-zahm-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/lyons-community-in-zahm-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/lyons-community-in-zahm-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "mcglinn-hall",
+   "dorm_name": "McGlinn Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/mcglinn-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/mcglinn-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/mcglinn-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "pasquerilla-east-hall",
+   "dorm_name": "Pasquerilla East Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/pasquerilla-east-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/pasquerilla-east-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/pasquerilla-east-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "pasquerilla-west-hall",
+   "dorm_name": "Pasquerilla West Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/pasquerilla-west-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/pasquerilla-west-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/pasquerilla-west-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "ryan-hall",
+   "dorm_name": "Ryan Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/ryan-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/ryan-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/ryan-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "walsh-hall",
+   "dorm_name": "Walsh Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/walsh-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/walsh-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/walsh-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "welsh-family-hall",
+   "dorm_name": "Welsh Family Hall",
+   "hall_url": "https://residentiallife.nd.edu/undergraduate/halls/welsh-family-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/welsh-family-hall/",
+     "data_confidence": "low",
+     "notes": "Single room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://residentiallife.nd.edu/undergraduate/halls/welsh-family-hall/",
+     "data_confidence": "low",
+     "notes": "Double room. Notre Dame states room dimensions differ for every room and publishes per-hall floor plans only behind a student login, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Women's residence hall. Notre Dame's halls are lifelong communities — students stay in the same hall all four years and halls field their own interhall sports teams.",
+   "gender": "Women"
+  },
+  {
+   "dorm_id": "johnson-family-hall",
+   "dorm_name": "Johnson Family Hall",
+   "hall_url": "https://johnsonfamilyhall.nd.edu/room-layouts/",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 8.5,
+      "width_ft": 14.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 123,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://johnsonfamilyhall.nd.edu/room-layouts/",
+     "data_confidence": "high",
+     "notes": "Published average size; Notre Dame notes specific rooms may vary slightly."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 14.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 167,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://johnsonfamilyhall.nd.edu/room-layouts/",
+     "data_confidence": "high",
+     "notes": "Published average size; specific rooms may vary slightly."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad (middle room)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13.5,
+      "width_ft": 14.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 196,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://johnsonfamilyhall.nd.edu/room-layouts/",
+     "data_confidence": "high",
+     "notes": "The middle room of a quad; the two side rooms are 9' x 14'6\" each."
+    },
+    {
+     "room_type": "quad",
+     "room_type_official": "Quad (side room)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 9.0,
+      "width_ft": 14.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 130,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 1,
+       "movable": false
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://johnsonfamilyhall.nd.edu/room-layouts/",
+     "data_confidence": "high",
+     "notes": "A side room of a quad, off the 13'6\" x 14'6\" middle room."
+    }
+   ],
+   "notes": "Women's residence hall and the only Notre Dame hall that publishes its room sizes publicly.",
+   "gender": "Women"
+  }
+ ]
+}

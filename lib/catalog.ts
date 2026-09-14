@@ -113,7 +113,10 @@ export function beddingFor(
   tier: BudgetTier,
   bedSize?: BedSize
 ): Product | undefined {
-  if (bedSize === "full" || bedSize === "full_xl") {
+  // Queen is rare (a handful of upperclass apartments) and the catalog has no
+  // queen set, so it falls back to the widest we stock; beddingAdvisory tells
+  // the user plainly that they'll need to buy the queen set themselves.
+  if (bedSize === "full" || bedSize === "full_xl" || bedSize === "queen") {
     return (
       CATALOG.find(
         (x) =>

@@ -1,0 +1,1455 @@
+{
+ "college_id": "virginia-tech",
+ "college_name": "Virginia Tech",
+ "city": "Blacksburg",
+ "state": "VA",
+ "aliases": [
+  "virginia tech",
+  "vt",
+  "vpi",
+  "hokies",
+  "virginia polytechnic"
+ ],
+ "housing_url": "https://housing.vt.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from Virginia Tech Housing and Residence Life's official hall pages. Most halls publish a typical room size on their own page, which is recorded here at high confidence; Virginia Tech adds that specific room sizes vary due to building layouts, and for several halls (CID, Payne, Peddrew-Yates, New Residence Hall East and both Pearson halls) it publishes no size at all, so those rooms are estimated from similar rooms and flagged. Suites are modeled per bedroom so occupant counts and layouts match cleanly. Nearly every room has a built-in sink and mirror, which is unusual and worth planning around. Beds are Twin XL. Air conditioning is recorded per hall because many of the older halls have none.",
+ "dorms": [
+  {
+   "dorm_id": "pritchard",
+   "dorm_name": "Pritchard Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Pritchard.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Pritchard.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Virginia Tech's largest residence hall. Lofted beds with along-ceiling cabinetry for storage.",
+   "population": 1016,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "hoge",
+   "dorm_name": "Hoge Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/hoge.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/hoge.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Traditional-style hall on the Dietrick Quad.",
+   "population": 800,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "aj-e",
+   "dorm_name": "Ambler Johnston (East)",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/aj-e.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/aj-e.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Dietrick Quad, south campus. Mostly traditional rooms with a limited number of private-bath rooms. Fitness studio, community kitchen, library, movie theater and study lounges in the building.",
+   "population": 321,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "aj-w",
+   "dorm_name": "Ambler Johnston (West)",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/aj-w.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/aj-w.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Dietrick Quad, south campus. One of Virginia Tech's more modern halls, with a fitness studio, library and movie theater.",
+   "population": 852,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "miles",
+   "dorm_name": "Miles Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Miles.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.25,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 164,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Miles.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "President's Quad, east campus. All-male first-year hall with renovated hallway bathrooms.",
+   "population": 224,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "slushertower",
+   "dorm_name": "Slusher Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/SlusherTower.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15.75,
+      "width_ft": 9.58,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 151,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/SlusherTower.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "All-gender first-year hall by War Memorial Hall and the Drillfield. The 'tree lounge' between the tower and wing hosts community events.",
+   "population": 628,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "campbell-main",
+   "dorm_name": "Campbell (Main)",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Campbell-Main.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 154,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Campbell-Main.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "On the Drillfield, north residential campus. All-gender first-year housing.",
+   "population": 171,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "campbell-east",
+   "dorm_name": "Campbell (East)",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Campbell-East.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 154,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Campbell-East.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "On the Drillfield near War Memorial Hall. All-female first-year hall.",
+   "population": 158,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "eggleston-main",
+   "dorm_name": "Eggleston (Main)",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Eggleston-Main.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 10.67,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 149,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Eggleston-Main.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror. Virginia Tech's page prints the second figure as 14\"; the typical room is 10'8\" x 14'."
+    }
+   ],
+   "notes": "Central campus by the Drillfield, near Owens Dining Hall, Newman Library and Squires Student Center.",
+   "population": 229,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "eggleston-west",
+   "dorm_name": "Eggleston (West)",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Eggleston-West.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 10.67,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 149,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Eggleston-West.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "North residential campus by the Drillfield; coed and multi-generational.",
+   "population": 201,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "johnson",
+   "dorm_name": "Johnson Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Johnson.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.25,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 164,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Johnson.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "President's Quad, east campus. All-female first-year hall.",
+   "population": 179,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "newman",
+   "dorm_name": "Newman Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Newman.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.25,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 164,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Newman.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "President's Quad. Coed and multi-generational; home to the Transfer Experience and VIA living-learning programs.",
+   "population": 274,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "vawter",
+   "dorm_name": "Vawter Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Vawter.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.25,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 164,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Vawter.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Coed, all-gender traditional hall.",
+   "population": 324,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "whitehurst",
+   "dorm_name": "Whitehurst Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/whitehurst.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 154,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/whitehurst.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "All-male first-year traditional hall.",
+   "population": 216,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "oshag",
+   "dorm_name": "O'Shaughnessy Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/oshag.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/oshag.html",
+     "data_confidence": "high",
+     "notes": "Typical room size published on the hall page. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Prairie Quad, south end of the residential campus. Modern and coed.",
+   "population": 333,
+   "building_type": "Traditional"
+  },
+  {
+   "dorm_id": "harper",
+   "dorm_name": "Harper Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Harper.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Bedroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 10.67,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 149,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Harper.html",
+     "data_confidence": "high",
+     "notes": "Typical bedroom size published on the hall page. Most suites are three two-person rooms (six students) around a shared bathroom and common living space. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Suite-style hall; suites hold two to six students depending on configuration.",
+   "population": 233,
+   "building_type": "Suite-style",
+   "bathroom_configuration": "In-suite bathroom"
+  },
+  {
+   "dorm_id": "hillcrest",
+   "dorm_name": "Hillcrest Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Hillcrest.html",
+   "air_conditioning": "none",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Bedroom",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Hillcrest.html",
+     "data_confidence": "high",
+     "notes": "Typical bedroom size published on the hall page. Suites connect two or three two-person rooms through a shared bathroom; a few private-bath rooms exist. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Western campus edge by the Duck Pond. Honors students in the Hillcrest Honors Living-Learning Program.",
+   "population": 101,
+   "building_type": "Suite-style",
+   "bathroom_configuration": "In-suite bathroom"
+  },
+  {
+   "dorm_id": "newhallwest",
+   "dorm_name": "New Hall West",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/NewHallWest.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "triple_private_bath",
+     "room_type_official": "Private Bath 3-Person Room",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 16.83,
+      "width_ft": 11.58,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/NewHallWest.html",
+     "data_confidence": "high",
+     "notes": "Hotel-style room: three residents share a connected private bathroom. Unique built-in wooden shelving of varying sizes. Virginia Tech notes specific room sizes vary due to building layouts. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Southwestern residential campus near West End dining and McComas Hall.",
+   "population": 253,
+   "building_type": "Hotel-style",
+   "bathroom_configuration": "Private bath shared by the room"
+  },
+  {
+   "dorm_id": "cid",
+   "dorm_name": "Creativity and Innovation District Residence Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/CID.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Traditional Double",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/CID.html",
+     "data_confidence": "low",
+     "notes": "Virginia Tech publishes no room size for CID, noting sizes vary by building layout; estimated from similar rooms. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "596 residents. Pod-style restrooms: each toilet and shower is a separate lockable unit with common sinks and mirrors outside. Suite-style rooms here are filled by VT Athletics.",
+   "population": 596
+  },
+  {
+   "dorm_id": "payne",
+   "dorm_name": "Payne Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Payne.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Payne.html",
+     "data_confidence": "low",
+     "notes": "Virginia Tech publishes no room size for Payne; estimated from similar rooms. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Coed suite hall: two or three two-person rooms connected by a bathroom and, in some cases, a common living space.",
+   "population": 250
+  },
+  {
+   "dorm_id": "peddrew-yates",
+   "dorm_name": "Peddrew-Yates Hall",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Peddrew-Yates.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/Peddrew-Yates.html",
+     "data_confidence": "low",
+     "notes": "Virginia Tech publishes no room size for Peddrew-Yates; estimated from similar rooms. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Suite-style hall with in-suite bathrooms, study lounges and a community kitchen.",
+   "population": 217
+  },
+  {
+   "dorm_id": "newresidencehalleast",
+   "dorm_name": "New Residence Hall East",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/NewResidenceHallEast.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Suite Bedroom",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 2,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/NewResidenceHallEast.html",
+     "data_confidence": "low",
+     "notes": "Virginia Tech states room sizes here vary by floor and publishes none; estimated from similar rooms. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "All-gender, multi-generational community of science majors. Suites share in-suite bathrooms with toilets and shower stalls.",
+   "population": 219
+  },
+  {
+   "dorm_id": "pearson-e",
+   "dorm_name": "Pearson Hall (East)",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/pearson-e.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "triple",
+     "room_type_official": "Traditional Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/pearson-e.html",
+     "data_confidence": "low",
+     "notes": "Virginia Tech publishes no room size for Pearson East; estimated from similar rooms. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Upper Quad. Corps of Cadets hall with classrooms in the building.",
+   "population": 549
+  },
+  {
+   "dorm_id": "pearson-w",
+   "dorm_name": "Pearson Hall (West)",
+   "hall_url": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/pearson-w.html",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "triple",
+     "room_type_official": "Traditional Triple",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL mattress 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "wardrobe",
+       "count": 3,
+       "movable": false,
+       "notes": "Clothing storage unit / closet."
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.vt.edu/experience/YourResidenceHall/HallListing/pearson-w.html",
+     "data_confidence": "low",
+     "notes": "Virginia Tech publishes no room size for Pearson West; estimated from similar rooms. Rooms have a built-in sink and mirror."
+    }
+   ],
+   "notes": "Upper Quad, Hokie Stone construction. Corps of Cadets hall with classrooms in the building.",
+   "population": 529
+  }
+ ]
+}

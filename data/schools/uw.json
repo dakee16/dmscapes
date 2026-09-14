@@ -1,0 +1,2099 @@
+{
+ "college_id": "uw",
+ "college_name": "University of Washington",
+ "city": "Seattle",
+ "state": "WA",
+ "aliases": [
+  "uw",
+  "u dub",
+  "udub",
+  "washington",
+  "university of washington",
+  "huskies"
+ ],
+ "housing_url": "https://hfs.uw.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from University of Washington Housing & Food Services' official residence-hall pages. UW publishes the exact mix of room types in every hall — down to the number of units of each — plus the bathroom style, but keeps room dimensions in the StarRez housing portal rather than on the public pages, so every room here uses the site's estimate fallback and is labelled \"Estimated based on similar rooms. Official size not published.\" Note how much of UW's stock has private in-room bathrooms, which is unusual and changes what fits in the room. Beds are Twin XL.",
+ "dorms": [
+  {
+   "dorm_id": "alder-hall",
+   "dorm_name": "Alder Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/alder-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/alder-hall/",
+     "data_confidence": "low",
+     "notes": "1 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/alder-hall/",
+     "data_confidence": "low",
+     "notes": "232 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/alder-hall/",
+     "data_confidence": "low",
+     "notes": "56 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "289 units, all with private bathrooms.",
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "elm-hall",
+   "dorm_name": "Elm Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/elm-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/elm-hall/",
+     "data_confidence": "low",
+     "notes": "12 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/elm-hall/",
+     "data_confidence": "low",
+     "notes": "97 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/elm-hall/",
+     "data_confidence": "low",
+     "notes": "108 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "All rooms have private bathrooms.",
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "lander-hall",
+   "dorm_name": "Lander Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/lander-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/lander-hall/",
+     "data_confidence": "low",
+     "notes": "6 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/lander-hall/",
+     "data_confidence": "low",
+     "notes": "55 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/lander-hall/",
+     "data_confidence": "low",
+     "notes": "243 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/lander-hall/",
+     "data_confidence": "low",
+     "notes": "40 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "All rooms have private bathrooms.",
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "maple-hall",
+   "dorm_name": "Maple Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/maple-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/maple-hall/",
+     "data_confidence": "low",
+     "notes": "12 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/maple-hall/",
+     "data_confidence": "low",
+     "notes": "23 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/maple-hall/",
+     "data_confidence": "low",
+     "notes": "227 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/maple-hall/",
+     "data_confidence": "low",
+     "notes": "130 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "All rooms have private bathrooms. 1135 NE Campus Parkway.",
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "poplar-hall",
+   "dorm_name": "Poplar Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/poplar-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/poplar-hall/",
+     "data_confidence": "low",
+     "notes": "6 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/poplar-hall/",
+     "data_confidence": "low",
+     "notes": "23 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/poplar-hall/",
+     "data_confidence": "low",
+     "notes": "130 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/poplar-hall/",
+     "data_confidence": "low",
+     "notes": "5 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "All rooms have private bathrooms.",
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "terry-hall",
+   "dorm_name": "Terry Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/terry-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/terry-hall/",
+     "data_confidence": "low",
+     "notes": "4 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/terry-hall/",
+     "data_confidence": "low",
+     "notes": "132 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/terry-hall/",
+     "data_confidence": "low",
+     "notes": "26 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "All rooms have private bathrooms.",
+   "campus_area": "West Campus"
+  },
+  {
+   "dorm_id": "oak-hall",
+   "dorm_name": "Oak Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oak-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oak-hall/",
+     "data_confidence": "low",
+     "notes": "2 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oak-hall/",
+     "data_confidence": "low",
+     "notes": "128 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oak-hall/",
+     "data_confidence": "low",
+     "notes": "1 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Three-Person Suite",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oak-hall/",
+     "data_confidence": "low",
+     "notes": "9 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad_suite",
+     "room_type_official": "Four-Person Suite",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oak-hall/",
+     "data_confidence": "low",
+     "notes": "15 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Private music practice rooms; gender-inclusive housing. All rooms have private bathrooms.",
+   "campus_area": "North Campus"
+  },
+  {
+   "dorm_id": "oliver-hall",
+   "dorm_name": "Oliver Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oliver-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oliver-hall/",
+     "data_confidence": "low",
+     "notes": "3 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oliver-hall/",
+     "data_confidence": "low",
+     "notes": "142 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oliver-hall/",
+     "data_confidence": "low",
+     "notes": "38 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Three-Person Suite",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oliver-hall/",
+     "data_confidence": "low",
+     "notes": "14 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad_suite",
+     "room_type_official": "Four-Person Suite",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/oliver-hall/",
+     "data_confidence": "low",
+     "notes": "24 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Formerly Willow Hall. All rooms have private bathrooms.",
+   "campus_area": "North Campus"
+  },
+  {
+   "dorm_id": "spratlen-hall",
+   "dorm_name": "Spratlen Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/spratlen-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/spratlen-hall/",
+     "data_confidence": "low",
+     "notes": "4 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/spratlen-hall/",
+     "data_confidence": "low",
+     "notes": "100 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double_shared_bath",
+     "room_type_official": "Double Room, Community Bath",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/spratlen-hall/",
+     "data_confidence": "low",
+     "notes": "240 of these in the hall; community bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/spratlen-hall/",
+     "data_confidence": "low",
+     "notes": "153 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Three-Person Suite",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/spratlen-hall/",
+     "data_confidence": "low",
+     "notes": "6 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad_suite",
+     "room_type_official": "Four-Person Suite",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/spratlen-hall/",
+     "data_confidence": "low",
+     "notes": "20 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Formerly Madrona Hall. Home to the Business Living Learning Community with the Michael G. Foster School of Business.",
+   "campus_area": "North Campus"
+  },
+  {
+   "dorm_id": "mccarty-hall",
+   "dorm_name": "McCarty Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mccarty-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "studio",
+     "room_type_official": "Studio Apartment",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mccarty-hall/",
+     "data_confidence": "low",
+     "notes": "6 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mccarty-hall/",
+     "data_confidence": "low",
+     "notes": "4 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mccarty-hall/",
+     "data_confidence": "low",
+     "notes": "106 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple Room",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mccarty-hall/",
+     "data_confidence": "low",
+     "notes": "147 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double with Triple Setup",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mccarty-hall/",
+     "data_confidence": "low",
+     "notes": "50 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Three-Person Suite",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mccarty-hall/",
+     "data_confidence": "low",
+     "notes": "7 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad_suite",
+     "room_type_official": "Four-Person Suite",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mccarty-hall/",
+     "data_confidence": "low",
+     "notes": "21 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Home to The MILL maker space and private music practice rooms. The 'double with triple setup' is a room for two residents with a third set of furniture in it.",
+   "campus_area": "North Campus"
+  },
+  {
+   "dorm_id": "hansee-hall",
+   "dorm_name": "Hansee Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/hansee-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/hansee-hall/",
+     "data_confidence": "low",
+     "notes": "307 of these in the hall; community bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "triple_suite",
+     "room_type_official": "Three-Person Suite",
+     "occupants": 3,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/hansee-hall/",
+     "data_confidence": "low",
+     "notes": "1 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "quad_suite",
+     "room_type_official": "Four-Person Suite",
+     "occupants": 4,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 4,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 4,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 4,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/hansee-hall/",
+     "data_confidence": "low",
+     "notes": "5 of these in the hall; private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Historic 24-hour quiet residence hall, almost entirely single rooms.",
+   "campus_area": "North Campus"
+  },
+  {
+   "dorm_id": "mcmahon-hall",
+   "dorm_name": "McMahon Hall",
+   "hall_url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mcmahon-hall/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single Room",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mcmahon-hall/",
+     "data_confidence": "low",
+     "notes": "60 of these in the hall; semi-private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.0,
+       "notes": "Twin XL 36\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mcmahon-hall/",
+     "data_confidence": "low",
+     "notes": "480 of these in the hall; semi-private bathroom. UW publishes room counts and rates per hall but keeps room dimensions in the StarRez housing portal rather than on the public hall page, so this size is estimated from similar rooms and labelled as an estimate."
+    }
+   ],
+   "notes": "Unique cluster-system community: rooms are grouped into clusters that share a bathroom.",
+   "campus_area": "North Campus"
+  }
+ ]
+}

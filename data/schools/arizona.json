@@ -1,0 +1,2355 @@
+{
+ "college_id": "arizona",
+ "college_name": "University of Arizona",
+ "city": "Tucson",
+ "state": "AZ",
+ "aliases": [
+  "arizona",
+  "u of a",
+  "ua",
+  "uarizona",
+  "university of arizona",
+  "wildcats"
+ ],
+ "housing_url": "https://housing.arizona.edu/",
+ "data_collected": "2026-09-14",
+ "campus_notes": "Compiled 2026-09-14 from University of Arizona Housing & Residential Life's official dorm pages. Arizona is one of the most thoroughly documented housing sites in the country: nearly every hall publishes exact room dimensions and square footage per room type alongside measured closet, desk, dresser, window and doorway sizes, bed-to-bed spacing and outlet counts, so almost every room here is high confidence taken straight from those pages. Arizona notes that room measurements may vary. Most beds are extra-long twin (38\" x 80\"); Hopi uses full-size beds and the Honors Village 4BR/4BA apartments offer a Full XL option, both flagged on the room because Twin XL bedding will not fit. Suites and apartments are modeled per bedroom.",
+ "dorms": [
+  {
+   "dorm_id": "apache-santa-cruz",
+   "dorm_name": "Apache-Santa Cruz",
+   "hall_url": "https://housing.arizona.edu/dorms/apache-santa-cruz",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 165,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.54,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/apache-santa-cruz",
+     "data_confidence": "high",
+     "notes": "Beds bunk with 55\" between them and 34\" of clearance underneath. Closet 2' x 3' with 2 shelves."
+    }
+   ],
+   "notes": "Three stories on Highland Ave. near the Main Library, Rec Center and Arizona Stadium. Hard flooring, moveable furniture.",
+   "population": 299,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "arbol-de-la-vida",
+   "dorm_name": "Árbol de la Vida",
+   "hall_url": "https://housing.arizona.edu/dorms/arbol-de-la-vida",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.0,
+      "width_ft": 17.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 170,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/arbol-de-la-vida",
+     "data_confidence": "high",
+     "notes": "4 electrical outlets."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 17.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 201,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/arbol-de-la-vida",
+     "data_confidence": "high",
+     "notes": "6 electrical outlets. Beds bunkable."
+    }
+   ],
+   "notes": "Six stories across five connected structures with smart room heating and cooling. Carpet, except hard flooring in Building E from 2026-27.",
+   "population": 703,
+   "bathroom_configuration": "community and all-gender"
+  },
+  {
+   "dorm_id": "arizona-sonora",
+   "dorm_name": "Arizona-Sonora",
+   "hall_url": "https://housing.arizona.edu/dorms/arizona-sonora",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 17.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 262,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.38,
+      "depth_ft": 1.33,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.58,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/arizona-sonora",
+     "data_confidence": "high",
+     "notes": "Among the largest doubles on campus. Closet has 6 shelves; 12 outlets."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 18.0,
+      "width_ft": 14.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 261,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.38,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 3.58,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/arizona-sonora",
+     "data_confidence": "high",
+     "notes": "Beds are 36\" wide here rather than 38\". Closet has 6 shelves; 10 outlets."
+    }
+   ],
+   "notes": "Nine stories across two connected towers with elevators. Available only to select student groups in 2026-27.",
+   "population": 400,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "cochise",
+   "dorm_name": "Cochise",
+   "hall_url": "https://housing.arizona.edu/dorms/cochise",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.0,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 182,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.5,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/cochise",
+     "data_confidence": "high",
+     "notes": "50\" between beds; 12 outlets."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 13.0,
+      "width_ft": 11.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 238,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.5,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/cochise",
+     "data_confidence": "high",
+     "notes": "Published as 13' x 11' plus a 9'6\" x 10' alcove, 238 sq ft total. 22 outlets."
+    },
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Adjoined Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 15.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 180,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.5,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/cochise",
+     "data_confidence": "high",
+     "notes": "Center room of an adjoined double: two 12' x 13' bedrooms share this 12' x 15' common area, 500 sq ft across the three spaces. 36 outlets."
+    }
+   ],
+   "notes": "Four stories with high ceilings and a lobby fireplace; on the National Register of Historic Places since 1986. LVP flooring, outdoor basketball court.",
+   "population": 164,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "coconino",
+   "dorm_name": "Coconino",
+   "hall_url": "https://housing.arizona.edu/dorms/coconino",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.5,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 145,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.5,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/coconino",
+     "data_confidence": "high",
+     "notes": "Bunkable beds, moveable furniture."
+    },
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.5,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/coconino",
+     "data_confidence": "low",
+     "notes": "Arizona lists a single room type here but publishes no dimensions for it; estimated from similar rooms."
+    }
+   ],
+   "notes": "Elevator-served hall with hard flooring and built-in wardrobes.",
+   "population": 140,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "colonia-de-la-paz",
+   "dorm_name": "Colonia de la Paz",
+   "hall_url": "https://housing.arizona.edu/dorms/colonia-de-la-paz",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 9.0,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 90,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.0,
+      "depth_ft": 2.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/colonia-de-la-paz",
+     "data_confidence": "high",
+     "notes": "One of the smallest singles on campus. 6 outlets."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.42,
+      "depth_ft": 1.96,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/colonia-de-la-paz",
+     "data_confidence": "high",
+     "notes": "75\" between beds; 8 outlets."
+    }
+   ],
+   "notes": "Multiple courtyards and Southwest artifacts, study bridges, package lockers. Hard flooring; beds are not bunkable here.",
+   "population": 463,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "coronado",
+   "dorm_name": "Coronado",
+   "hall_url": "https://housing.arizona.edu/dorms/coronado",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 10.0,
+      "width_ft": 20.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 200,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.83,
+      "depth_ft": 1.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/coronado",
+     "data_confidence": "high",
+     "notes": "Connecting bathroom shared with the neighbouring room. 44\" between beds; built-in wardrobe."
+    }
+   ],
+   "notes": "Nine-story co-ed building in the Park District by Park Student Union, with package lockers for 24/7 pickup.",
+   "population": 706,
+   "bathroom_configuration": "suite"
+  },
+  {
+   "dorm_id": "gila",
+   "dorm_name": "Gila",
+   "hall_url": "https://housing.arizona.edu/dorms/gila",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.0,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 100,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.42,
+      "depth_ft": 2.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/gila",
+     "data_confidence": "high",
+     "notes": "Closet 41\" w x 24\" d x 80\" h."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 13.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 155,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 4.5,
+      "depth_ft": 1.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/gila",
+     "data_confidence": "high",
+     "notes": "27\" between beds when bunked; 4 outlets."
+    }
+   ],
+   "notes": "Three stories in the Historic District, on the National Register since 1986; rooms renovated 2015. In-room sinks, carpet, no elevator.",
+   "population": 170,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "graham-greenlee",
+   "dorm_name": "Graham-Greenlee",
+   "hall_url": "https://housing.arizona.edu/dorms/graham-greenlee",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 18.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 198,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.88,
+      "depth_ft": 1.38,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/graham-greenlee",
+     "data_confidence": "high",
+     "notes": "47\" between beds, 33\" clearance underneath; beds are not bunkable. Closet has 5 shelves."
+    }
+   ],
+   "notes": "Three stories, carpeted, with wide 117\"-span windows. Not available during 2026-27.",
+   "population": 308,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "honors-village",
+   "dorm_name": "Honors Village",
+   "hall_url": "https://housing.arizona.edu/dorms/honors-village",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Double-Suite",
+     "occupants": 2,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 5.83,
+      "depth_ft": 1.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/honors-village",
+     "data_confidence": "low",
+     "notes": "Two residents share a bedroom with a private bathroom. Arizona publishes furniture and closet sizes here but not room dimensions; size estimated from similar rooms."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Single-Suite",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 8.92,
+      "depth_ft": 1.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/honors-village",
+     "data_confidence": "low",
+     "notes": "One resident, private bathroom. Size not published; estimated from similar rooms."
+    },
+    {
+     "room_type": "single_private_bath",
+     "room_type_official": "Single-Private",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 9.08,
+      "depth_ft": 1.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/honors-village",
+     "data_confidence": "low",
+     "notes": "One resident, private bathroom. Size not published; estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "2BR/2BA Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 5.67,
+      "depth_ft": 1.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/honors-village",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a two-bedroom, two-bath apartment. Size not published; estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "4BR/4BA Apartment Bedroom",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 5.08,
+      "depth_ft": 1.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/honors-village",
+     "data_confidence": "low",
+     "notes": "Private bedroom in a four-bedroom, four-bath apartment. Offered with Twin XL or Full XL mattresses; this is the Twin XL option. Size not published; estimated from similar rooms."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "4BR/4BA Apartment Bedroom (Full XL)",
+     "occupants": 1,
+     "dimensions": null,
+     "floor_area_sqft": null,
+     "bed_size": "full_xl",
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 5.08,
+      "depth_ft": 1.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 4.5,
+       "notes": "Full XL mattress 54\" x 80\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/honors-village",
+     "data_confidence": "low",
+     "notes": "The Full XL option in a four-bedroom, four-bath apartment: 54\" x 80\" mattress, so Twin XL bedding will not fit."
+    }
+   ],
+   "notes": "More than 1,000 residents in a mix of suite and apartment units, each with a private bathroom.",
+   "population": 1000,
+   "bathroom_configuration": "private"
+  },
+  {
+   "dorm_id": "hopi",
+   "dorm_name": "Hopi",
+   "hall_url": "https://housing.arizona.edu/dorms/hopi",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 13.5,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 162,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.33,
+      "depth_ft": 3.33,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "notes": "Full-size mattress 54\" x 75\".",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/hopi",
+     "data_confidence": "high",
+     "notes": "Hopi is an all-singles hall and the beds are full size (54\" x 75\"), not Twin XL, so standard dorm bedding will not fit."
+    }
+   ],
+   "notes": "Single-story, all-single-room community near campus landmarks. Carpet, no elevator.",
+   "population": 57,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "kaibab-huachuca",
+   "dorm_name": "Kaibab-Huachuca",
+   "hall_url": "https://housing.arizona.edu/dorms/kaibab-huachuca",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 3.33,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/kaibab-huachuca",
+     "data_confidence": "high",
+     "notes": "55\" between beds, 33\" clearance underneath. Closet has 8 shelves."
+    }
+   ],
+   "notes": "LVP flooring with 30% recycled content. Not available during 2026-27.",
+   "population": 326,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "likins",
+   "dorm_name": "Likins",
+   "hall_url": "https://housing.arizona.edu/dorms/likins",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 17.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 201,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.5,
+      "depth_ft": 3.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/likins",
+     "data_confidence": "high",
+     "notes": "53.5\" between beds; bunkable."
+    }
+   ],
+   "notes": "Carpeted rooms with 16 electrical outlets — the most of any hall on campus.",
+   "population": null,
+   "bathroom_configuration": "community and all-gender"
+  },
+  {
+   "dorm_id": "manzanita-mohave",
+   "dorm_name": "Manzanita-Mohave",
+   "hall_url": "https://housing.arizona.edu/dorms/manzanita-mohave",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.0,
+      "depth_ft": 5.0,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 1.83,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/manzanita-mohave",
+     "data_confidence": "high",
+     "notes": "94\" between beds — the most spread-out double layout on campus. Beds are not bunkable. Closet has 10 shelves."
+    }
+   ],
+   "notes": "Carpeted rooms with 153\"-span windows.",
+   "population": null,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "maricopa",
+   "dorm_name": "Maricopa",
+   "hall_url": "https://housing.arizona.edu/dorms/maricopa",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.0,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 115,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.85,
+      "depth_ft": 3.46,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/maricopa",
+     "data_confidence": "high",
+     "notes": "Two doorless closets totalling 46.25\" of width."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 8.0,
+      "width_ft": 25.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 204,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.75,
+      "depth_ft": 2.79,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/maricopa",
+     "data_confidence": "high",
+     "notes": "An unusually long, narrow double at 8' x 25'6\". Two doorless closets."
+    }
+   ],
+   "notes": "All-female residence, no elevator. Rooms have two closets each, without doors.",
+   "population": 97,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "navajo-pinal-stadium",
+   "dorm_name": "Navajo-Pinal (Stadium)",
+   "hall_url": "https://housing.arizona.edu/dorms/navajo-pinal-stadium",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.0,
+      "width_ft": 19.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 190,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.17,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/navajo-pinal-stadium",
+     "data_confidence": "high",
+     "notes": "Closet has 3 shelves."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 198,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.17,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/navajo-pinal-stadium",
+     "data_confidence": "high",
+     "notes": "Bunkable beds; 12 outlets."
+    },
+    {
+     "room_type": "triple",
+     "room_type_official": "Triple",
+     "occupants": 3,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 198,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.17,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 3,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 3,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 3,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 3,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/navajo-pinal-stadium",
+     "data_confidence": "high",
+     "notes": "Same 12' x 16' footprint as the double, shared by three residents; beds are 36\" wide. Closet has 4 shelves."
+    }
+   ],
+   "notes": "Four stories under Arizona Stadium, carpeted, no elevator.",
+   "population": 146,
+   "bathroom_configuration": "community"
+  },
+  {
+   "dorm_id": "pima",
+   "dorm_name": "Pima",
+   "hall_url": "https://housing.arizona.edu/dorms/pima",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.0,
+      "width_ft": 10.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 100,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.83,
+      "depth_ft": 1.83,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/pima",
+     "data_confidence": "high",
+     "notes": "Wardrobe-style closet. Mattress is 34\" x 78\" here."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 13.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 156,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.83,
+      "depth_ft": 1.83,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/pima",
+     "data_confidence": "high",
+     "notes": "Attached suite bathroom; wheelchair-accessible suite bathrooms available."
+    }
+   ],
+   "notes": "Three stories plus two adjacent structures in the Historic District by the Student Union, on the Tucson Modern Streetcar line. Two community kitchens.",
+   "population": 117,
+   "bathroom_configuration": "suite"
+  },
+  {
+   "dorm_id": "posada-san-pedro",
+   "dorm_name": "Posada San Pedro",
+   "hall_url": "https://housing.arizona.edu/dorms/posada-san-pedro",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.5,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 126,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 1.92,
+      "depth_ft": 2.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/posada-san-pedro",
+     "data_confidence": "high",
+     "notes": "6 outlets."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.75,
+      "depth_ft": 1.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/posada-san-pedro",
+     "data_confidence": "high",
+     "notes": "72\" between beds; bunkable."
+    }
+   ],
+   "notes": "Hard flooring; some rooms have private attached bathrooms.",
+   "population": 228,
+   "bathroom_configuration": "community and all-gender"
+  },
+  {
+   "dorm_id": "pueblo-de-la-cienega",
+   "dorm_name": "Pueblo de la Cienega",
+   "hall_url": "https://housing.arizona.edu/dorms/pueblo-de-la-cienega",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.5,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 126,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 1.92,
+      "depth_ft": 2.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/pueblo-de-la-cienega",
+     "data_confidence": "high",
+     "notes": "36\" doorway; 6 outlets."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.75,
+      "depth_ft": 1.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/pueblo-de-la-cienega",
+     "data_confidence": "high",
+     "notes": "72\" between beds."
+    }
+   ],
+   "notes": "Hard flooring, wheelchair-accessible suite bathrooms attached to certain rooms.",
+   "population": 229,
+   "bathroom_configuration": "community and all-gender"
+  },
+  {
+   "dorm_id": "villa-del-puente",
+   "dorm_name": "Villa del Puente",
+   "hall_url": "https://housing.arizona.edu/dorms/villa-del-puente",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "single",
+     "room_type_official": "Single",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.5,
+      "width_ft": 12.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 126,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 1.92,
+      "depth_ft": 2.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/villa-del-puente",
+     "data_confidence": "high",
+     "notes": "6 outlets."
+    },
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.0,
+      "width_ft": 16.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.75,
+      "depth_ft": 2.92,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/villa-del-puente",
+     "data_confidence": "high",
+     "notes": "72\" between beds; bunkable."
+    }
+   ],
+   "notes": "Elevator-served and wheelchair accessible; hard flooring.",
+   "population": 286,
+   "bathroom_configuration": "community and all-gender"
+  },
+  {
+   "dorm_id": "yavapai",
+   "dorm_name": "Yavapai",
+   "hall_url": "https://housing.arizona.edu/dorms/yavapai",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 12.0,
+      "width_ft": 14.0,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 168,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 2.42,
+      "depth_ft": 2.17,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 2.0,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/yavapai",
+     "data_confidence": "high",
+     "notes": "50\" between beds, 33\" clearance underneath. Window 55\" x 60\"."
+    }
+   ],
+   "notes": "160 beds; LVP flooring with 30% recycled content.",
+   "population": 160,
+   "bathroom_configuration": "community all-gender"
+  },
+  {
+   "dorm_id": "yuma",
+   "dorm_name": "Yuma",
+   "hall_url": "https://housing.arizona.edu/dorms/yuma",
+   "air_conditioning": "central",
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 11.5,
+      "width_ft": 13.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 155,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3.0,
+      "depth_ft": 2.5,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3.17,
+       "notes": "Extra-long twin mattress 38\" x 80\", 6.5\" thick.",
+       "movable": true
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "length_ft": 3.5,
+       "width_ft": 2.0,
+       "height_ft": 2.5,
+       "movable": true
+      },
+      {
+       "type": "desk_chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://housing.arizona.edu/dorms/yuma",
+     "data_confidence": "high",
+     "notes": "In-room sink; bunkable beds; 4 outlets."
+    }
+   ],
+   "notes": "Historic District hall on the National Register since 1986. In-room sinks, carpet, built-in closets.",
+   "population": 170,
+   "bathroom_configuration": "community"
+  }
+ ]
+}

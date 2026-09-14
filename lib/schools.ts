@@ -7,15 +7,20 @@ export function getSchool(id: string): SchoolSummary | undefined {
   return SCHOOLS.find((s) => s.id === id);
 }
 
-/** Case-insensitive substring match on name/city/state for the autocomplete. */
+/**
+ * Case-insensitive substring match on name/city/state for the autocomplete,
+ * with exact alias/name hits first. Several schools share a substring with a
+ * sibling campus ("unc" is in both Chapel Hill and Pembroke; "tamu" in both
+ * College Station and Corpus Christi), and someone typing the acronym means
+ * the school that actually claims it.
+ */
 export function searchSchools(query: string): SchoolSummary[] {
   const q = query.trim().toLowerCase();
   if (!q) return SCHOOLS;
-  return SCHOOLS.filter((s) =>
-    [s.name, s.city ?? "", s.state ?? "", ...(s.aliases ?? [])].some((f) =>
-      f.toLowerCase().includes(q)
-    )
-  );
+  const fields = (s: SchoolSummary) => [s.name, s.city ?? "", s.state ?? "", ...(s.aliases ?? [])];
+  const exact = (s: SchoolSummary) => fields(s).some((f) => f.toLowerCase() === q);
+  const hits = SCHOOLS.filter((s) => fields(s).some((f) => f.toLowerCase().includes(q)));
+  return hits.sort((a, b) => Number(exact(b)) - Number(exact(a)));
 }
 
 /** "15 × 12 ft" (rounded to sensible precision) or null when unpublished. */
