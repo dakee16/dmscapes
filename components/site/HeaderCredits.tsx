@@ -52,7 +52,7 @@ export default function HeaderCredits() {
   if (c.unlimited) {
     return (
       <span
-        className="hidden shrink-0 items-center gap-1 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-cobalt md:inline-flex"
+        className="hidden shrink-0 items-center gap-1 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-2 font-mono text-[11px] font-semibold uppercase leading-none tracking-wide text-cobalt md:inline-flex"
         title="Room designs left"
       >
         Designs <span aria-hidden="true">·</span>
@@ -71,8 +71,8 @@ export default function HeaderCredits() {
         title="Buy room-design credits"
         className={
           c.empty
-            ? "flex cursor-pointer items-center rounded-full bg-cobalt px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-white transition-colors hover:bg-cobalt-deep"
-            : "flex cursor-pointer items-baseline gap-1 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[11px] font-semibold uppercase tracking-wide text-cobalt transition-colors hover:bg-cobalt/[0.12]"
+            ? "flex cursor-pointer items-center rounded-full bg-cobalt px-3 py-2 font-mono text-[11px] font-semibold uppercase leading-none tracking-wide text-white transition-colors hover:bg-cobalt-deep"
+            : "flex cursor-pointer items-center gap-1 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-2 font-mono text-[11px] font-semibold uppercase leading-none tracking-wide text-cobalt transition-colors hover:bg-cobalt/[0.12]"
         }
       >
         {c.empty ? (
