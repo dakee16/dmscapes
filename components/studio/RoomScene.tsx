@@ -9,6 +9,7 @@ import { footprint, pointInPolygon } from "@/components/canvas/geometry";
 import { constrainedPosition, itemElevation, itemHeight, modelKind, roomOutline, studioSettings, visibleFurniture } from "@/lib/studio";
 import { furnitureCategory } from "@/lib/highlight";
 import s from "./Studio.module.css";
+import BrandLoader from "@/components/site/BrandLoader";
 
 export type CameraView="room"|"top"|"inside";
 export interface RoomSceneHandle {exportPNG:()=>string|null;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;}
@@ -56,8 +57,9 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   useEffect(()=>{view.current?.setMoveMode(props.moveMode??false);},[props.moveMode]);
   if(!allowed)return null;
   return <div className={s.scene} data-testid="room-3d"><div ref={node} className={s.sceneMount}/>
-    {!ready&&!error&&<div className={s.sceneMessage} role="status"><span className={s.loadingMark} aria-hidden="true">d.</span><strong>Making room for your ideas.</strong><span>Loading your 3D studio</span></div>}
+    {!ready&&!error&&<div className={s.sceneMessage}><BrandLoader label="Opening your 3D studio…"/></div>}
     {error&&<div className={s.sceneMessage} role="status"><strong>Keep creating.</strong><p>{error}</p><div className={s.buttonRow}><button onClick={()=>setRetry(n=>n+1)}>Retry 3D</button>{props.onFallback&&<button onClick={props.onFallback}>Open 2D plan</button>}</div></div>}
   </div>;
 });
 export default RoomScene;
+

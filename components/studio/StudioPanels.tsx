@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import type { FurnitureItem, Product, SelectedRoom, WallOpening } from "@/lib/types";
 import { usePlannerStore } from "@/lib/store";
 import { footprint } from "@/components/canvas/geometry";
@@ -55,7 +54,7 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
   </>;
 }
 
-export function RoomDetails({room}:{room:SelectedRoom}){
+export function RoomDetails({room,onEdit}:{room:SelectedRoom;onEdit:()=>void}){
   const st=usePlannerStore.getState(),outline=roomOutline(room),settings=studioSettings(room.studio);
   const [error,setError]=useState("");
   const lengths=outline.points.map((p,i)=>Math.hypot(outline.points[(i+1)%outline.points.length].x-p.x,outline.points[(i+1)%outline.points.length].y-p.y));
@@ -78,9 +77,11 @@ export function RoomDetails({room}:{room:SelectedRoom}){
   }
   return <><p className={s.eyebrow}>The space you start with</p><h2>Check your room.</h2>
     <p className={s.muted}>{room.lengthFt} × {room.widthFt} ft. {room.dimsEstimated?"Room dimensions are estimated.":"Room dimensions come from your selected or drawn plan."}</p>
+    <button className={s.primary} onClick={onEdit}>Edit walls &amp; doors ↗</button>
+    <p className={s.note}>Adjust the outline in 2D while keeping your furniture. Changes carry into both views.</p>
     <div className={s.section}><NumberField label="Ceiling height (ft)" value={settings.ceilingFt} min={6} max={16} onCommit={n=>st.updateStudio({ceilingFt:n})}/>
       <p className={s.note}>8 ft is the preview default. Enter a measured height when you have it.</p></div>
-    <div className={s.section}><h3>Doors &amp; windows</h3><p className={s.muted}>Only openings you add or draw are shown. Wall numbers follow the outline clockwise from its first point.</p>
+    <div className={s.section}><h3>Doors &amp; windows</h3><p className={s.muted}>Add doors and windows on the 2D drawing, or use the exact measurements below. Wall numbers follow the outline from its first point.</p>
       <div className={s.buttonRow}><button onClick={()=>add("door")}>+ Door</button><button onClick={()=>add("window")}>+ Window</button></div>
       {outline.openings.map((o,i)=><div key={i} className={s.opening}>
         <div className={s.row}><strong>{o.kind==="door"?"Door":"Window"} {i+1}</strong><button aria-label={"Remove "+o.kind+" "+(i+1)} onClick={()=>{st.updateOpenings({...outline,openings:outline.openings.filter((_,n)=>n!==i)});setError("");}}>Remove</button></div>
@@ -90,7 +91,7 @@ export function RoomDetails({room}:{room:SelectedRoom}){
       </div>)}
       {error&&<p className={s.warning} role="status">{error}</p>}
     </div>
-    <p className={s.note}>Need a different room shape? Save this design first, then <Link href="/plan/draw">draw a new room</Link>.</p>
+
   </>;
 }
 
@@ -101,3 +102,4 @@ export function StyleDetails({room}:{room:SelectedRoom}){
  <div className={s.section}><label className={s.field}>Wall color<input aria-label="Wall preview color" type="color" value={settings.wallColor} onChange={e=>update({wallColor:e.target.value})}/></label><p className={s.note}>Preview only. Check your residence hall rules before changing finishes.</p></div>
  <div className={s.section}><h3>Lighting</h3><div className={s.buttonRow}><button aria-pressed={settings.lighting==="day"} onClick={()=>update({lighting:"day"})}>Daylight</button><button aria-pressed={settings.lighting==="evening"} onClick={()=>update({lighting:"evening"})}>Evening glow</button></div></div></>;
 }
+

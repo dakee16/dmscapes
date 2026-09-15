@@ -1,5 +1,6 @@
 "use client";
 
+import BrandLoader from "@/components/site/BrandLoader";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
@@ -15,7 +16,7 @@ import type { RoomDrawResult } from "@/components/planner/RoomDrawCanvas";
 // react-konva can't render on the server, so load the editor client-side only.
 const RoomDrawCanvas = dynamic(() => import("@/components/planner/RoomDrawCanvas"), {
   ssr: false,
-  loading: () => <div className="h-[460px] w-full animate-pulse rounded-2xl bg-ink/5" />,
+  loading: () => <div className="grid min-h-[420px] place-items-center"><BrandLoader label="Opening your drawing studio…"/></div>,
 });
 
 const OCC = [1, 2, 3, 4] as const;

@@ -158,3 +158,9 @@
 .backButton { color:#2b4eff; padding:8px 0; margin-bottom:18px; }
 @media(min-width:781px){.workspace{overflow:hidden}.rail{max-height:100%}.rail button{min-height:64px}.expanded .workspace{min-height:320px}}
 @media(max-width:780px){.rail{overflow-x:auto;overflow-y:hidden;flex-shrink:0}.rail button{min-width:58px}.expanded .workspace{flex:none}.expanded{display:block}.cameraBar{bottom:92px}.gestureHint{bottom:57px}}
+
+
+.roomEditor { min-width:0; max-width:1200px; margin:auto; }
+.editingNotice { display:block; max-width:230px; padding:10px 14px; border-left:2px solid #2b4eff; color:#656675; font-size:12px; line-height:1.5; }
+.expanded .roomEditor { flex:1; width:100%; overflow:auto; overscroll-behavior:contain; }
+.openingsHint { position:absolute; top:56px; left:18px; z-index:4; max-width:calc(100% - 36px); min-height:38px; padding:8px 12px; margin:0; border:1px solid #2b4eff30; background:#fafaf8; color:#2b4eff; border-radius:3px; }

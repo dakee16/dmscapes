@@ -60,3 +60,23 @@ const {canUse3D}=load(path.join(root,"lib/plan.ts"));
 for(const profile of [null,undefined,{plan:"free"},{plan:"flex"},{plan:"plus"},{plan:"unknown"},{plan:"plus",plus_features_unlocked:true}])assert.equal(canUse3D(profile),false);
 assert.equal(canUse3D({plan:"pro"}),true);
 console.log("PASS: interactive 3D entitlement is exclusive to Pro.");
+
+const {roomEditError}=load(path.join(root,"lib/room-editing.ts"));
+const edited={points:[{x:0,y:0},{x:18,y:0},{x:18,y:12},{x:0,y:12}],openings:[{kind:"door",edge:0,offset_ft:2,width_ft:3},{kind:"window",edge:1,offset_ft:4,width_ft:4}],closets:[]};
+assert.equal(roomEditError(edited),null);
+assert(roomEditError({...edited,points:[{x:0,y:0},{x:18,y:12},{x:18,y:0},{x:0,y:12}]}),"Crossed walls must be rejected");
+assert(roomEditError({...edited,openings:[{kind:"door",edge:0,offset_ft:17,width_ft:3}]}),"An opening must fit on its wall");
+assert(roomEditError({...edited,openings:[...edited.openings,{kind:"window",edge:0,offset_ft:3,width_ft:3}]}),"Openings must not overlap");
+assert(roomEditError({...edited,closets:[{x_ft:17,y_ft:2,width_ft:2,depth_ft:2}]}),"Walls must not strand closets outside");
+store.setState({room,furniture:[item,lamp],budget:500,swaps:{rug:"qa-product"},lockedItemIds:["desk"],excluded:["wall_art"],customVibe:"unchanged"});
+store.getState().updateRoomGeometry(edited);
+assert.equal(store.getState().room.lengthFt,18);
+assert.deepEqual(store.getState().furniture,[item,lamp],"Wall edits must keep the furniture arrangement");
+assert.equal(store.getState().budget,500);assert.deepEqual(store.getState().swaps,{rug:"qa-product"});assert.deepEqual(store.getState().excluded,["wall_art"]);assert.equal(store.getState().customVibe,"unchanged");
+store.getState().updateRoomGeometry(edited,{x:1,y:1});
+assert.equal(store.getState().furniture[0].x_ft,item.x_ft-1);assert.equal(store.getState().furniture[1].x_ft,lamp.x_ft-1,"Origin normalization keeps attachments aligned");
+const committed=store.getState().room;
+store.getState().updateRoomGeometry({...edited,openings:[{kind:"door",edge:8,offset_ft:0,width_ft:3}]});
+assert.equal(store.getState().room,committed,"Invalid geometry must not change the stored design");
+console.log("PASS: room editing validation, geometry updates, furniture and cart preservation, and origin translation.");
+

@@ -50,29 +50,8 @@ function ProBadge() {
   );
 }
 
-// The header "Draw" entry: the word framed with small tilted blue confetti
-// strips and a "new" superscript, linking to the Draw tab of the planner.
 function DrawNavLink({ onClick }: { onClick?: () => void }) {
-  return (
-    <Link
-      href="/plan/draw"
-      onClick={onClick}
-      aria-label="Draw your own room (new)"
-      className="relative inline-flex items-center px-1"
-    >
-      <span aria-hidden="true" className="pointer-events-none absolute -left-2.5 top-0.5 h-2 w-[3px] -rotate-[24deg] rounded-full bg-cobalt" />
-      <span aria-hidden="true" className="pointer-events-none absolute -left-1 -top-1.5 h-1.5 w-[3px] rotate-[16deg] rounded-full bg-cobalt/60" />
-      <span aria-hidden="true" className="pointer-events-none absolute -right-3.5 -top-1 h-2 w-[3px] rotate-[28deg] rounded-full bg-cobalt/80" />
-      <span aria-hidden="true" className="pointer-events-none absolute -right-2 top-1.5 h-1.5 w-[3px] -rotate-[22deg] rounded-full bg-cobalt/50" />
-      <span aria-hidden="true" className="pointer-events-none absolute right-2 -top-2 h-1 w-1 rounded-full bg-cobalt/70" />
-      <span className="text-sm font-semibold text-cobalt transition-colors hover:text-cobalt-deep">
-        Draw
-      </span>
-      <sup className="ml-0.5 font-mono text-[8px] font-bold uppercase tracking-wide text-amber">
-        new
-      </sup>
-    </Link>
-  );
+  return <Link href="/plan/draw" onClick={onClick} className={NAV_LINK}>Draw</Link>;
 }
 
 export default function Nav() {
@@ -206,12 +185,9 @@ export default function Nav() {
                       href="/plan/draw"
                       role="menuitem"
                       onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-cobalt transition-colors hover:bg-paper"
+                      className="block rounded-lg px-3 py-2 text-sm font-medium text-ink transition-colors hover:bg-paper"
                     >
-                      Draw your room
-                      <span className="rounded-full bg-cobalt px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wide text-white">
-                        New
-                      </span>
+                      Draw
                     </Link>
                   </div>
 
@@ -264,3 +240,4 @@ export default function Nav() {
     </>
   );
 }
+

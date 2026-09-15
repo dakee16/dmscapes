@@ -7,12 +7,13 @@ export function createStudioScene(container, options) {
   renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
   const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D room. Drag empty space to orbit. Select an item in Arrange for keyboard editing.");
   canvas.style.cssText="display:block;width:100%;height:100%;touch-action:none;outline-offset:-4px";container.appendChild(canvas);
-  const scene=new T.Scene(),camera=new T.PerspectiveCamera(42,1,.05,400),kit=createModelKit();
+  const scene=new T.Scene(),camera=new T.PerspectiveCamera(42,1,.2,400),kit=createModelKit();
   const hemi=new T.HemisphereLight("#f3f6ff","#958368",2.3);scene.add(hemi);
   const sun=new T.DirectionalLight("#fff3dc",3.1);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.bias=-.0003;sun.shadow.normalBias=.025;scene.add(sun,sun.target);
   const fill=new T.DirectionalLight("#cedcff",1.1);scene.add(fill);
+  const shadowOnly=new T.MeshBasicMaterial({colorWrite:false,depthWrite:false});
   const roomRoot=new T.Group(),itemRoot=new T.Group();scene.add(roomRoot,itemRoot);
-  const meshes=new Map(),wallGroups=[];let roomKey="",data=null,disposed=false,raf=0,assemblyStart=0;
+  const meshes=new Map(),wallGroups=[],openingGroups=[];let roomKey="",data=null,disposed=false,raf=0,assemblyStart=0;
   const ray=new T.Raycaster(),ndc=new T.Vector2(),plane=new T.Plane(new T.Vector3(0,1,0),0);
   const marker=new T.Box3Helper(new T.Box3(),0x2b4eff);marker.visible=false;scene.add(marker);
   const guides=new T.Group();scene.add(guides);
@@ -38,6 +39,7 @@ export function createStudioScene(container, options) {
       const outward=(camera.position.x-mid.x)*normal.x+(camera.position.z-mid.y)*normal.y;
       wall.visible=walls!=="hidden"&&(walls==="all"||mode==="inside"||(mode!=="top"&&outward<.1));
     }
+    for(const opening of openingGroups)opening.visible=walls!=="hidden";
   }
   function showLabel(){
     const m=meshes.get(data?.selectedId);if(!m){marker.visible=false;label.style.display="none";return;}
@@ -60,8 +62,8 @@ export function createStudioScene(container, options) {
     cameraUpdate();camera.updateMatrixWorld();showLabel();renderer.render(scene,camera);if(more)request();
   }
   function clearRoom(){
-    for(const g of roomRoot.children)g.traverse(o=>{if(o.userData.ownGeometry)o.geometry?.dispose();if(o.userData.ownMaterial){o.material?.map?.dispose();o.material?.dispose();}});
-    roomRoot.clear();wallGroups.length=0;
+    for(const g of roomRoot.children)g.traverse(o=>{if(o.userData.ownGeometry)o.geometry?.dispose();if(o.userData.ownMaterial){for(const material of Array.isArray(o.material)?o.material:[o.material]){material?.map?.dispose();material?.dispose();}}});
+    roomRoot.clear();wallGroups.length=0;openingGroups.length=0;
   }
   function floorTexture(finish){
     const c=document.createElement("canvas");c.width=c.height=256;const x=c.getContext("2d");
@@ -75,30 +77,58 @@ export function createStudioScene(container, options) {
   function buildRoom(){
     clearRoom();const {room,settings,outline}=data,l=room.lengthFt,w=room.widthFt,h=settings.ceilingFt;
     const shape=new T.Shape();outline.points.forEach((p,i)=>i?shape.lineTo(p.x,-p.y):shape.moveTo(p.x,-p.y));shape.closePath();
-    const floor=new T.Mesh(new T.ShapeGeometry(shape),new T.MeshStandardMaterial({color:"#ffffff",map:floorTexture(settings.floor),roughness:.9,side:T.DoubleSide}));
-    floor.rotation.x=-Math.PI/2;floor.receiveShadow=true;floor.userData={ownGeometry:true,ownMaterial:true};roomRoot.add(floor);
-    const base=new T.Mesh(new T.ExtrudeGeometry(shape,{depth:.18,bevelEnabled:false}),kit.mat("#d7cbb9"));
-    base.rotation.x=-Math.PI/2;base.position.y=-.205;base.userData.ownGeometry=true;roomRoot.add(base);
+    // A single closed slab avoids competing cap and floor surfaces.
+    const floor=new T.Mesh(new T.ExtrudeGeometry(shape,{depth:.18,bevelEnabled:false}),[
+      new T.MeshStandardMaterial({map:floorTexture(settings.floor),roughness:.92}),
+      new T.MeshStandardMaterial({color:"#b39a7d",roughness:.95})
+    ]);
+    floor.name="room-floor";floor.rotation.x=-Math.PI/2;floor.position.y=-.18;
+    floor.receiveShadow=true;floor.userData={ownGeometry:true,ownMaterial:true};roomRoot.add(floor);
     let area=0;outline.points.forEach((p,i)=>{const b=outline.points[(i+1)%outline.points.length];area+=p.x*b.y-b.x*p.y;});
     outline.points.forEach((a,i)=>{
       const b=outline.points[(i+1)%outline.points.length],len=Math.hypot(b.x-a.x,b.y-a.y);if(len<.01)return;const dx=(b.x-a.x)/len,dz=(b.y-a.y)/len;
       const group=new T.Group();group.position.set(a.x,0,a.y);group.rotation.y=-Math.atan2(dz,dx);roomRoot.add(group);
       group.userData.normal=area>0?{x:dz,y:-dx}:{x:-dz,y:dx};group.userData.mid={x:(a.x+b.x)/2,y:(a.y+b.y)/2};wallGroups.push(group);
+      // Openings remain visible when their surrounding wall cuts away.
+      const fixtures=new T.Group();fixtures.name="wall-openings-"+i;
+      fixtures.position.copy(group.position);fixtures.rotation.copy(group.rotation);
+      roomRoot.add(fixtures);openingGroups.push(fixtures);
+      // Colorless proxies keep wall shadows stable during camera movement.
+      const wallShadow=new T.Group();wallShadow.name="wall-shadow-"+i;
+      wallShadow.position.copy(group.position);wallShadow.rotation.copy(group.rotation);roomRoot.add(wallShadow);
       const openings=outline.openings.filter(o=>o.edge===i).sort((a,b)=>a.offset_ft-b.offset_ft);
       let cursor=0;const wall=kit.mat(settings.wallColor);
-      const segment=(start,end,low,high)=>{if(end-start>.005&&high-low>.005)kit.box(group,end-start,high-low,.14,wall,(start+end)/2,(low+high)/2,0,.01);};
+      const segment=(start,end,low,high)=>{if(end-start<=.005||high-low<=.005)return;
+        const mesh=kit.box(group,end-start,high-low,.14,wall,(start+end)/2,(low+high)/2,0,.01);mesh.castShadow=false;
+        const shadow=new T.Mesh(mesh.geometry,shadowOnly);shadow.position.copy(mesh.position);shadow.castShadow=true;wallShadow.add(shadow);
+      };
       for(const o of openings){
         const left=Math.max(cursor,Math.min(len,o.offset_ft)),right=Math.max(left,Math.min(len,o.offset_ft+o.width_ft));segment(cursor,left,0,h);
         if(o.kind==="window"){
           const low=Math.min(3,h*.4),high=Math.min(h-.5,6.5);segment(left,right,0,low);segment(left,right,high,h);
-          kit.box(group,right-left,.1,.26,kit.mat("#fffaf0"),(left+right)/2,low,.02);
-          kit.box(group,right-left,.08,.08,kit.mat("#fffaf0"),(left+right)/2,high,0);
-          kit.box(group,.075,high-low,.08,kit.mat("#fffaf0"),(left+right)/2,(low+high)/2,0);
-          const glass=kit.box(group,right-left,high-low,.015,kit.mat("#c8e1ec"),(left+right)/2,(low+high)/2,-.03,.001);glass.castShadow=false;
+          const frame=kit.mat("#fffaf0"),center=(left+right)/2,openingHeight=high-low;
+          kit.box(fixtures,right-left+.16,.12,.32,frame,center,low,0);
+          kit.box(fixtures,right-left+.16,.1,.22,frame,center,high,0);
+          for(const edge of [left,right])kit.box(fixtures,.1,openingHeight,.22,frame,edge,(low+high)/2,0);
+          const glass=kit.box(fixtures,Math.max(.05,right-left-.1),openingHeight-.1,.035,kit.mat("#a7cddd",.3),center,(low+high)/2,0,.001);
+          glass.name="window-pane";glass.castShadow=false;
+          kit.box(fixtures,.065,openingHeight,.12,frame,center,(low+high)/2,0);
+          kit.box(fixtures,right-left,.065,.12,frame,center,(low+high)/2,0);
         }else{
-          segment(left,right,Math.min(6.7,h),h);
-          for(const edge of [left,right])kit.box(group,.075,Math.min(6.7,h),.22,kit.mat("#fffaf0"),edge,Math.min(6.7,h)/2,0);
-          kit.box(group,right-left,.08,.22,kit.mat("#fffaf0"),(left+right)/2,Math.min(6.7,h),0);
+          const doorHeight=Math.min(6.7,h-.1),frame=kit.mat("#fffaf0");
+          segment(left,right,doorHeight,h);
+          for(const edge of [left,right])kit.box(fixtures,.1,doorHeight,.22,frame,edge,doorHeight/2,0);
+          kit.box(fixtures,right-left+.1,.1,.22,frame,(left+right)/2,doorHeight,0);
+          // Match all four hinge and swing orientations in the 2D plan.
+          const swing=o.swing??0,endHinge=Boolean(swing&1),inward=area>0?1:-1;
+          const side=(swing&2)?-inward:inward,hinge=new T.Group(),leafWidth=Math.max(.1,right-left-.12);
+          hinge.position.x=endHinge?right-.06:left+.06;
+          hinge.rotation.y=(endHinge?1:-1)*side*Math.PI/2;
+          fixtures.add(hinge);const direction=endHinge?-1:1;
+          const leaf=kit.box(hinge,leafWidth,doorHeight-.1,.09,kit.mat("#b88d61"),direction*leafWidth/2,doorHeight/2,0,.015);
+          leaf.name="door-leaf";
+          kit.box(hinge,leafWidth*.73,doorHeight*.61,.018,kit.mat("#cfae85"),direction*leafWidth/2,doorHeight*.57,.054,.005);
+          for(const face of [-1,1])kit.box(hinge,.19,.05,.08,kit.mat("#485063",.25),direction*(leafWidth-.2),3,face*.09,.012);
         }cursor=right;
       }
       segment(cursor,len,0,h);let sk=0;
@@ -202,6 +232,7 @@ export function createStudioScene(container, options) {
     },
     destroy(){disposed=true;cancelAnimationFrame(raf);resize.disconnect();document.removeEventListener("visibilitychange",visible);
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
-      clearGuides();lineMat.dispose();marker.geometry.dispose();marker.material.dispose();clearRoom();kit.dispose();renderer.dispose();renderer.forceContextLoss();label.remove();canvas.remove();}
+      clearGuides();lineMat.dispose();marker.geometry.dispose();marker.material.dispose();clearRoom();shadowOnly.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();label.remove();canvas.remove();}
   };
 }
+

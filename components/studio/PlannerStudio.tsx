@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import dynamic from "next/dynamic";
+import BrandLoader from "@/components/site/BrandLoader";
 import { useAuth } from "@/lib/auth-context";
 import { canUse3D } from "@/lib/plan";
 import { useUpgrade } from "@/lib/upgrade-context";
@@ -12,16 +14,20 @@ import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
 import { ItemInspector, RoomDetails, StyleDetails } from "./StudioPanels";
 import s from "./Studio.module.css";
 
+const RoomEditor = dynamic(() => import("@/components/planner/RoomDrawCanvas"), {ssr:false,loading:()=> <BrandLoader label="Opening your room editor…"/>});
+
 type Panel="furnish"|"style"|"room"|"shop"|"item"|"checks"|"help";
 export default function PlannerStudio({canvas,get2DPng,shopping,products,total,budget,subtitle,history,onReset,extras,unplaced}:{canvas:ReactNode;get2DPng:()=>string|null;shopping:ReactNode;products:Product[];total:number;budget:number;subtitle:string;history:{canUndo:boolean;canRedo:boolean;undo:()=>void;redo:()=>void};onReset:()=>void;extras?:ReactNode;unplaced?:ReactNode}){
   const room=usePlannerStore(st=>st.room)!,items=usePlannerStore(st=>st.furniture)??[];
   const style=usePlannerStore(st=>st.style)??"minimalist",hidden=usePlannerStore(st=>st.hiddenItemIds),excluded=usePlannerStore(st=>st.excluded)??[],locked=usePlannerStore(st=>st.lockedItemIds);
   const selectedId=usePlannerStore(st=>st.selectedItemId);
+  const [editingRoom,setEditingRoom]=useState(false);
   const [requestedView,setView]=useState<"2d"|"3d">("3d"),[panel,setPanel]=useState<Panel>("furnish"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
   const [camera,setCamera]=useState<CameraView>("room"),[expanded,setExpanded]=useState(false),[mobileOpen,setMobileOpen]=useState(false),[query,setQuery]=useState(""),[resetConfirm,setResetConfirm]=useState(false);
   const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),previous=useRef(selectedId),closeRef=useRef<HTMLButtonElement>(null);
   const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade();
   const allowed3D=!loading&&canUse3D(profile),view=requestedView==="3d"&&allowed3D?"3d":"2d";
+  function editRoom(){setView("2d");setMobileOpen(false);setEditingRoom(true);}
   function enter3D(){if(allowed3D)setView("3d");else openUpgrade("room-3d");}
   const selected=items.find(f=>f.id===selectedId);
   const issues=placementIssues(visibleFurniture(items,hidden,excluded),room,studioSettings(room.studio));
@@ -49,15 +55,17 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         if(e.shiftKey&&target===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&target===last){e.preventDefault();first?.focus();}
       }
       if(target.closest("input,textarea,select,[contenteditable=true]"))return;
-      if(view==="3d"&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="z"){e.preventDefault();e.stopPropagation();e.shiftKey?history.redo():history.undo();}
+      if(!editingRoom&&view==="3d"&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="z"){e.preventDefault();e.stopPropagation();e.shiftKey?history.redo():history.undo();}
       if(e.key==="Escape"){setMobileOpen(false);setMoveMode(false);}}}>
     <header className={s.header}>
       <div className={s.titleBlock}><p className={s.eyebrow}>Dormscape / Room studio</p><h1>Your room, <em>in perspective.</em></h1><p>{subtitle}</p></div>
-      <div className={s.viewSwitch} role="group" aria-label="Planner view"><button aria-pressed={view==="2d"} onClick={()=>{setView("2d");setMoveMode(false);}}>2D plan</button><button aria-pressed={view==="3d"} onClick={enter3D}>3D room{!allowed3D&&<small> Pro</small>}</button></div>
-      <div className={s.actions}><ActionBar products={products} getPng={()=>view==="3d"?scene.current?.exportPNG()??null:get2DPng()}/></div>
+      <div className={s.viewSwitch} role="group" aria-label="Planner view"><button disabled={editingRoom} aria-pressed={view==="2d"} onClick={()=>{setView("2d");setMoveMode(false);}}>2D plan</button><button disabled={editingRoom} aria-pressed={view==="3d"} onClick={enter3D}>3D room{!allowed3D&&<small> Pro</small>}</button></div>
+      <div className={s.actions}>{editingRoom?<span className={s.editingNotice}>Room edits are a draft until you apply them.</span>:<ActionBar products={products} getPng={()=>view==="3d"?scene.current?.exportPNG()??null:get2DPng()}/>}</div>
     </header>
-    {extras&&<div className={s.extras}>{extras}</div>}
-    <div className={s.workspace}>
+    {extras&&!editingRoom&&<div className={s.extras}>{extras}</div>}
+    {editingRoom ? <section className={s.roomEditor} aria-label="Edit room walls and openings">
+      <RoomEditor initialRoom={room} furniture={visibleFurniture(items,hidden,excluded)} onCancel={()=>setEditingRoom(false)} onComplete={result=>{usePlannerStore.getState().updateRoomGeometry(result.outline,result.origin);setEditingRoom(false);setPanel("room");}}/>
+    </section> : <div className={s.workspace}>
       <nav className={s.rail} aria-label="Studio tools">
         {([["furnish","▦","Arrange"],["style","◐","Style"],["room","⌑","Room"],["shop","⊞","Shop"]] as const).map(([key,icon,label])=><button key={key} aria-pressed={panel===key} onClick={()=>open(key)}><span aria-hidden="true">{icon}</span>{label}</button>)}
       </nav>
@@ -78,11 +86,13 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
             <span className={s.separator}/><button aria-label="Zoom out" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(1.15)}>−</button><button aria-label="Zoom in" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(.87)}>+</button>
 
           </div>
+          {roomOutlineMissing(room)&&<button className={s.openingsHint} onClick={editRoom}>Doors and windows not set. Add openings ↗</button>}
           <p className={s.gestureHint}>{moveMode?"Move mode: drag the selected furniture. Choose Stop moving when done.":"Drag empty space to look around. Select a piece to arrange it."}</p>
         </>}
         <div className={s.editBar}>
           <button disabled={!history.canUndo} onClick={history.undo}>Undo</button><button disabled={!history.canRedo} onClick={history.redo}>Redo</button>
           {view==="3d"&&<><label><input type="checkbox" checked={snap} onChange={e=>setSnap(e.target.checked)}/>Snap</label></>}
+          <button onClick={editRoom}>Edit walls &amp; doors</button>
           <button onClick={()=>open("help")}>How to use</button>
         </div>
         {resetConfirm&&<div className={s.resetConfirm} role="group" aria-label="Confirm layout reset"><p>Restore the original furniture arrangement? You can undo this.</p><div className={s.buttonRow}><button onClick={()=>{onReset();setResetConfirm(false);}}>Restore layout</button><button onClick={()=>setResetConfirm(false)}>Keep my changes</button></div></div>}
@@ -101,18 +111,19 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
           {panel==="item"&&selected&&<ItemInspector key={selected.id} item={selected} items={items} room={room} product={selectedProduct} issues={issues.filter(i=>i.id===selected.id).map(i=>i.message)} moveMode={moveMode}
             onFocus={()=>{if(!allowed3D){openUpgrade("room-3d");return;}setCamera("room");scene.current?.focus(selected.id);}} onMoveMode={()=>{if(!allowed3D){openUpgrade("room-3d");return;}setView("3d");if(camera==="inside")preset("room");setMoveMode(v=>!v);setMobileOpen(false);}} onShop={()=>open("shop")}/>}
           {panel==="item"&&!selected&&<p className={s.note}>Select furniture in the room or open Arrange to choose an item.</p>}
-          {panel==="room"&&<><RoomDetails room={room}/><details className={s.disclosure}><summary>View &amp; layout options</summary>{allowed3D&&<label className={s.field}>Wall visibility<select aria-label="Wall visibility" value={walls} onChange={e=>setWalls(e.target.value)}><option value="auto">Automatic cutaway</option><option value="all">All walls</option><option value="hidden">Hide walls</option></select></label>}<div className={s.buttonRow}><button onClick={()=>open("checks")}>Placement checks ({new Set(issues.map(i=>i.id)).size})</button><button onClick={()=>setResetConfirm(true)}>Reset layout</button></div></details></>}
+          {panel==="room"&&<><RoomDetails room={room} onEdit={editRoom}/><details className={s.disclosure}><summary>View &amp; layout options</summary>{allowed3D&&<label className={s.field}>Wall visibility<select aria-label="Wall visibility" value={walls} onChange={e=>setWalls(e.target.value)}><option value="auto">Automatic cutaway</option><option value="all">All walls</option><option value="hidden">Hide walls</option></select></label>}<div className={s.buttonRow}><button onClick={()=>open("checks")}>Placement checks ({new Set(issues.map(i=>i.id)).size})</button><button onClick={()=>setResetConfirm(true)}>Reset layout</button></div></details></>}
           {panel==="style"&&<StyleDetails room={room}/>}
           {panel==="shop"&&shopping}
           {panel==="checks"&&<><button className={s.backButton} onClick={()=>open("room")}>← Room details</button><p className={s.eyebrow}>A second look</p><h2>Placement checks</h2><p className={s.muted}>Checks flag overlap, wall boundaries, ceiling height, and proximity to inward door swings. They are a guide, not a guarantee of fit.</p>
             {issues.length? <ul className={s.issueList}>{issues.map((issue,i)=><li key={i}><button onClick={()=>{select(issue.id);scene.current?.focus(issue.id);}}><strong>{items.find(f=>f.id===issue.id)?.label}</strong><span>{issue.message}</span></button></li>)}</ul>:<p className={s.note}>No placement conflicts detected for the visible furniture.</p>}
-            {roomOutlineMissing(room)&&<p className={s.warning}>No doors or windows are recorded. Add their real positions in Room details to check door clearance.</p>}
+            {roomOutlineMissing(room)&&<p className={s.warning}>No doors or windows are recorded. Choose Edit walls &amp; doors to add their real positions and check clearance.</p>}
           </>}
-          {panel==="help"&&<><p className={s.eyebrow}>Make yourself at home</p><h2>Your studio guide.</h2><dl className={s.helpList}><dt>Look around</dt><dd>Drag empty space. Use the camera presets to return to a familiar view.</dd><dt>Arrange</dt><dd>Drag a piece on desktop. On a phone, select it and choose Move selected first.</dd><dt>Zoom</dt><dd>Scroll, pinch, or use the zoom buttons.</dd><dt>Be precise</dt><dd>Use the selected item&apos;s position fields. Snap rounds to half-foot increments.</dd><dt>Undo</dt><dd>Use Undo or Ctrl / Command + Z. A finished drag counts as one edit.</dd><dt>Save &amp; share</dt><dd>Use Save design to keep a named copy in your account. Share creates a link or exports the current view.</dd></dl><p className={s.note}>3D objects are approximate models. Product photos show the actual selected items. Switching views does not generate a new plan or use a credit.</p></>}
+          {panel==="help"&&<><p className={s.eyebrow}>Make yourself at home</p><h2>Your studio guide.</h2><dl className={s.helpList}><dt>Look around</dt><dd>Drag empty space. Use the camera presets to return to a familiar view.</dd><dt>Arrange</dt><dd>Drag a piece on desktop. On a phone, select it and choose Move selected first.</dd><dt>Zoom</dt><dd>Scroll, pinch, or use the zoom buttons.</dd><dt>Be precise</dt><dd>Use the selected item&apos;s position fields. Snap rounds to half-foot increments.</dd><dt>Undo</dt><dd>Use Undo or Ctrl / Command + Z. A finished drag counts as one edit.</dd><dt>Walls &amp; openings</dt><dd>Choose Edit walls &amp; doors in either view. Drag walls and corners, then add or slide doors and windows. Apply the draft to keep it, or cancel to return.</dd><dt>Save &amp; share</dt><dd>Use Save design to keep a named copy in your account. Share creates a link or exports the current view.</dd></dl><p className={s.note}>3D objects are approximate models. Product photos show the actual selected items. Switching views does not generate a new plan or use a credit.</p></>}
         </div>
       </aside>
-    </div>
-    <footer className={s.statusBar}><span>Changes kept in this tab · Save design for your account</span><button onClick={()=>open("shop")}><span>Shopping total</span> <strong>${total.toFixed(2)}</strong> / ${budget}{total>budget&&<b> Over budget</b>} ↗</button></footer>
+    </div>}
+    <footer className={s.statusBar}><span>Changes kept in this tab · Save design for your account</span><button disabled={editingRoom} onClick={()=>open("shop")}><span>Shopping total</span> <strong>${total.toFixed(2)}</strong> / ${budget}{total>budget&&<b> Over budget</b>} ↗</button></footer>
   </div>;
 }
 function roomOutlineMissing(room:{outline?:{openings:unknown[]}|null}){return !room.outline?.openings.length;}
+

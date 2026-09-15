@@ -1,5 +1,6 @@
 "use client";
 
+import BrandLoader from "@/components/site/BrandLoader";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import StudioPreview from "@/components/experience/StudioPreview";
@@ -124,18 +125,7 @@ export default function PlanSelectPage() {
   }
 
   if (!mounted) {
-    return (
-      <div
-        className="mx-auto max-w-2xl space-y-4 px-5 sm:px-8"
-        aria-busy="true"
-        aria-label="Loading planner"
-      >
-        <div className="h-9 w-3/4 animate-pulse rounded-lg bg-ink/8" />
-        <div className="h-5 w-1/2 animate-pulse rounded bg-ink/8" />
-        <div className="h-13 animate-pulse rounded-xl bg-ink/8" />
-        <div className="h-40 animate-pulse rounded-xl bg-ink/8" />
-      </div>
-    );
+    return <div className="grid min-h-[50svh] place-items-center px-5"><BrandLoader label="Opening your planner…"/></div>;
   }
 
   const confirmDims = room ? formatDims(room.lengthFt, room.widthFt) : null;

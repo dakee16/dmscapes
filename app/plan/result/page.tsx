@@ -43,24 +43,11 @@ import type { Product, ProductCategory } from "@/lib/types";
 // react-konva can't render on the server, so load the canvas client-side only.
 const RoomCanvas = dynamic(() => import("@/components/canvas/RoomCanvas"), {
   ssr: false,
-  loading: () => <div className="aspect-[4/3] w-full animate-pulse rounded-xl bg-ink/5" />,
+  loading: () => <div className="grid min-h-[360px] place-items-center"><BrandLoader label="Opening your 2D plan…"/></div>,
 }) as unknown as typeof RoomCanvasType;
 
 function Skeleton() {
-  return (
-    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-      <div className="h-8 w-64 animate-pulse rounded-lg bg-ink/10" />
-      <div className="mt-2 h-4 w-40 animate-pulse rounded bg-ink/5" />
-      <div className="mt-6 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-        <div className="aspect-[4/3] animate-pulse rounded-2xl bg-ink/5" />
-        <div className="space-y-3">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} className="h-20 animate-pulse rounded-xl bg-ink/5" />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <div className="grid min-h-[60svh] place-items-center px-5"><BrandLoader label="Bringing your room together…"/></div>;
 }
 
 export default function ResultPage() {
@@ -160,12 +147,13 @@ export default function ResultPage() {
       ? room.outline
       : null;
 
-  // Adopt the matched template's layout (once, or when the room changed),
+  // Initialize only when furniture is absent. setRoom clears the previous layout;
+  // editing walls and reopening saved rooms must keep their arrangement.
   // refit to the actual room size: templates are authored at nominal dims.
   useEffect(() => {
     if (!hydrated || !match || !room) return;
     const wantId = drawnOutline ? "custom-drawn" : match.template_id;
-    if (templateId !== wantId || !furniture) {
+    if (!furniture) {
       const placed = drawnOutline
         ? placeInPolygon(match.template.furniture, drawnOutline, room.lengthFt, room.widthFt)
         : fitTemplateToRoom(match.template.furniture, match.template_id, room.lengthFt, room.widthFt);
@@ -489,3 +477,4 @@ export default function ResultPage() {
     </div>
   );
 }
+

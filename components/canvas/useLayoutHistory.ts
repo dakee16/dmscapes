@@ -15,7 +15,7 @@ export function useLayoutHistory() {
   const excluded = usePlannerStore(s => s.excluded);
   const room = usePlannerStore(s => s.room);
   const previous = useRef<Snapshot>({ furniture, hiddenItemIds, lockedItemIds, room });
-  const boundary = JSON.stringify([room?.lengthFt, room?.widthFt, room?.type, furniture?.map(f => f.id).sort(), excluded]);
+  const boundary = JSON.stringify([room?.type, furniture?.map(f => f.id).sort(), excluded]);
   const previousBoundary = useRef(boundary);
   const restoring = useRef<string | null>(null);
   const [past, setPast] = useState<Snapshot[]>([]);
@@ -62,3 +62,4 @@ export function useLayoutHistory() {
     },
   };
 }
+

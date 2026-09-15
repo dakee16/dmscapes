@@ -1,5 +1,7 @@
 "use client";
 
+import { roomEditError } from "./room-editing";
+
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId } from "./types";
@@ -81,6 +83,7 @@ export interface PlannerState {
   updateItem3D: (id: string, patch: Partial<Pick<FurnitureItem, "height_ft" | "elevation_ft" | "material_color" | "parent_id">>) => void;
   updateStudio: (patch: Partial<import("./studio").StudioSettings>) => void;
   updateOpenings: (outline: import("./types").RoomOutline) => void;
+  updateRoomGeometry: (outline: import("./types").RoomOutline, origin?: import("./types").Point) => void;
   /** Rotate an item a quarter turn about its center (1 = CW, -1 = CCW). */
   rotateItem: (id: string, dir: 1 | -1) => void;
   setHoveredCategory: (category: ProductCategory | null) => void;
@@ -166,6 +169,12 @@ export const usePlannerStore = create<PlannerState>()(
       }),
       updateItem3D: (id, patch) => set(s => ({furniture:s.furniture?.map(f=>f.id===id?{...f,...patch}:f)??null})),
       updateStudio: patch => set(s => ({room:s.room?{...s.room,studio:{ceilingFt:8,floor:"oak",wallColor:"#f3eee4",lighting:"day",...s.room.studio,...patch}}:null})),
+      updateRoomGeometry: (outline, origin = {x:0,y:0}) => set(s => {
+        if(!s.room || roomEditError(outline) || !Number.isFinite(origin.x) || !Number.isFinite(origin.y))return {};
+        const lengthFt=Math.max(...outline.points.map(p=>p.x)),widthFt=Math.max(...outline.points.map(p=>p.y));
+        return {room:{...s.room,outline,lengthFt,widthFt,source:"drawn" as const,dimsEstimated:false},
+          furniture:s.furniture?.map(f=>({...f,x_ft:f.x_ft-origin.x,y_ft:f.y_ft-origin.y}))??null};
+      }),
       updateOpenings: outline => set(s => ({room:s.room?{...s.room,outline}:null})),
       resetLayout: (furniture) =>
         set({ furniture: furniture.map((f) => ({ ...f })), hiddenItemIds: [], lockedItemIds: [] }),
@@ -313,3 +322,4 @@ export const usePlannerStore = create<PlannerState>()(
     }
   )
 );
+
