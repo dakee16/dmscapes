@@ -17,7 +17,6 @@ import { isPaid } from "@/lib/plan";
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/colleges", label: "Colleges" },
-  { href: "/pricing", label: "Pricing" },
   { href: "/pricing#room-in-3d", label: "3D Studio" },
 ] as const;
 

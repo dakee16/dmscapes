@@ -1,4 +1,4 @@
-import StudioLaunch from "@/components/site/StudioLaunch";
+import StudioShowcase from "@/components/experience/StudioShowcase";
 import HomeHero from "@/components/experience/HomeHero";
 import AssemblyStory from "@/components/experience/AssemblyStory";
 import Link from "next/link";
@@ -45,7 +45,7 @@ export default function Home() {
       <Nav />
       <main id="page-content" tabIndex={-1}>
         <HomeHero />
-        <StudioLaunch />
+        <StudioShowcase />
         <AssemblyStory />
         <TwoWaysToPlan />
         <Vibes />

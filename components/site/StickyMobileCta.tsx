@@ -28,7 +28,11 @@ export default function StickyMobileCta() {
       } catch {
         consentResolved = true; // storage blocked: don't let it hide the CTA
       }
-      setShow(window.scrollY > 480 && consentResolved);
+      // The studio reveal already has its own CTA and bottom chapter controls.
+      // Let those stay visible while this section fills the phone screen.
+      const studio = document.getElementById("room-in-3d")?.getBoundingClientRect();
+      const inStudio = !!studio && studio.top < innerHeight * .45 && studio.bottom > innerHeight * .7;
+      setShow(window.scrollY > 480 && consentResolved && !inStudio);
     }
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -48,6 +52,7 @@ export default function StickyMobileCta() {
         show ? "translate-y-0" : "pointer-events-none translate-y-full"
       } transition-transform duration-300 ease-out`}
       aria-hidden={!show}
+      inert={!show}
     >
       <div className="border-t border-ink/10 bg-paper/95 px-4 pb-[max(0.6rem,env(safe-area-inset-bottom))] pt-2.5 backdrop-blur-md">
         <PlanCta className="flex h-12 w-full items-center justify-center rounded-xl bg-cobalt text-base font-semibold text-white shadow-[0_10px_28px_-12px_rgba(43,78,255,0.65)] transition-colors hover:bg-cobalt-deep active:translate-y-px" />

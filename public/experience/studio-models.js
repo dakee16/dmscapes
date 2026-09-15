@@ -48,7 +48,7 @@ export function createModelKit() {
         break;
       }
       case "desk":
-        legs(h-.15);box(g,w,.16,d,wood,0,h-.08,0);
+        legs(Math.max(.04,h-.18));box(g,w,.16,d,wood,0,h-.08,0);
         if(w>2){box(g,w*.25,h*.45,d*.85,wood,w*.32,h*.6,0);for(let i=0;i<2;i++)box(g,.35,.035,.025,ink,w*.32,h*(.48+i*.18),d*.44);}
         break;
       case "chair":
@@ -84,10 +84,16 @@ export function createModelKit() {
         box(g,w,.025,.03,ink,0,h/2,0);for(let x=-w*.45;x<w*.5;x+=.35)oval(g,x,.02,0,.055,.075,.055,white);break;
       case "pillow":box(g,w,h,d,cloth,0,h/2,0,Math.min(h/2,.15));break;
       default:
-        box(g,w,h,d,cloth,0,h/2,0,.09);box(g,w*1.02,.08,d*1.02,accent,0,h-.04,0,.04);box(g,w*.25,.08,.015,ink,0,h*.6,d/2+.01);
+        // The lid and body used to share their entire upper face. Keep the
+        // body below the lid instead of drawing two colors on the same plane.
+        const lid=Math.min(.08,h*.2),body=Math.max(.008,h-lid-.015);
+        const base=box(g,w,body,d,cloth,0,body/2,0,.09);base.name="storage-body";
+        const cap=box(g,w*1.02,lid,d*1.02,accent,0,h-lid/2,0,.025);cap.name="storage-lid";
+        box(g,w*.25,.08,.015,ink,0,h*.6,d/2+.015);
     }
     g.traverse(o=>{o.userData.itemId=f.id;});g.userData.itemId=f.id;return g;
   }
   function dispose(){geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());fabric.dispose();}
   return {build,box,mat,dispose};
 }
+

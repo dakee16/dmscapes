@@ -164,3 +164,34 @@
 .editingNotice { display:block; max-width:230px; padding:10px 14px; border-left:2px solid #2b4eff; color:#656675; font-size:12px; line-height:1.5; }
 .expanded .roomEditor { flex:1; width:100%; overflow:auto; overscroll-behavior:contain; }
 .openingsHint { position:absolute; top:56px; left:18px; z-index:4; max-width:calc(100% - 36px); min-height:38px; padding:8px 12px; margin:0; border:1px solid #2b4eff30; background:#fafaf8; color:#2b4eff; border-radius:3px; }
+
+/* The 2D studio has one control rail and one persistent shopping panel. */
+.workspace.workspacePlan { grid-template-columns:158px minmax(0,1fr) 330px; min-height:480px; height:calc(100dvh - 245px); max-height:1080px; }
+.planToolsHost { background:#17172b; min-width:0; min-height:0; overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#515878 #17172b; z-index:5; }
+.workspacePlan .canvasLayer { padding:0; overflow:hidden; }
+.workspacePlan .renderArea { min-height:0; height:100%; }
+.workspacePlan .viewport { min-height:0; }
+.workspacePlan .panelContent { padding:18px; }
+.workspacePlan .resetConfirm { top:20px; bottom:auto; }
+.shopBackdrop { display:none; }
+.emptySelection { text-align:center; padding:5px 0 18px; }
+.selectionArt { margin:0 auto 22px; max-width:220px; background:radial-gradient(ellipse at center,#dfe5ff 0,transparent 68%); }
+.selectionArt svg { width:100%; display:block; }
+.emptySelection > p:not(.eyebrow) { margin:16px 0 24px; font:400 13px/1.8 var(--font-instrument),sans-serif; color:#656675; }
+.emptySelection h2 { font-size:29px; }.emptyShop { margin-top:16px; min-height:38px; color:#2b4eff; text-decoration:underline; text-underline-offset:4px; }
+@media(min-width:1450px){.workspace.workspacePlan{grid-template-columns:164px minmax(0,1fr) 350px}}
+@media(min-width:781px) and (max-width:1100px){.workspace.workspacePlan{grid-template-columns:140px minmax(0,1fr) 290px}.workspacePlan .panelContent{padding:14px}}
+@media(max-width:780px){
+ .workspace.workspacePlan { display:grid; grid-template-columns:88px minmax(0,1fr); grid-template-rows:minmax(0,1fr); height:calc(100dvh - 185px); min-height:490px; max-height:920px; }
+ .workspacePlan .planToolsHost { grid-column:1; grid-row:1; }
+ .workspacePlan .viewport { grid-column:2; grid-row:1; height:100%; min-height:0; }
+ .workspacePlan .panel { position:fixed; top:76px; right:0; bottom:0; width:min(360px,calc(100vw - 44px)); height:auto; max-height:none; z-index:76; border-left:1px solid #17172b30; border-top:0; transform:translateX(105%); visibility:hidden; transition:transform .22s ease,visibility .22s; box-shadow:-16px 0 50px #17172b30; }
+ .workspacePlan .panel.mobileOpen { transform:none; visibility:visible; max-height:none; }
+ .workspacePlan .panelContent { max-height:none; display:block; overflow:auto; }
+ .workspacePlan .panelHeading { padding:12px 16px; }
+ .workspacePlan .mobileSheetTitle { pointer-events:none; }
+ .workspacePlan .mobileSheetTitle > span { display:none; }
+ .workspacePlan .shopBackdrop { display:block; position:fixed; inset:76px 0 0; z-index:75; background:#17172b65; border:0; border-radius:0; }
+ .expanded .workspace.workspacePlan { display:grid; height:calc(100dvh - 160px); min-height:460px; }
+ .expanded .workspacePlan .viewport { height:100%; min-height:0; }
+}

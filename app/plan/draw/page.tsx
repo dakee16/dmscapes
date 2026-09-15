@@ -133,9 +133,7 @@ export default function DrawRoomPage() {
             className="dm-button mt-6 inline-flex h-12 items-center gap-2 bg-cobalt px-7 text-base font-semibold text-white"
           >
             {drawLocked ? "Unlock drawing (Plus)" : "Draw your room"}
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <path d="M5 12h14m0 0l-5-5m5 5l-5 5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+
           </button>
           <p className="mt-6 flex items-start gap-2 rounded-xl border border-ink/10 bg-white px-4 py-3 text-sm leading-snug text-ink-soft lg:hidden">
             <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0 text-cobalt" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
