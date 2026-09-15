@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { sanitizeStudio, sanitizeEditor, sanitizeItem3D } from "@/lib/studio-save";
 import { nanoid } from "nanoid";
 import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
@@ -30,12 +31,16 @@ function sanitizeFurniture(input: unknown): FurnitureItem[] | null {
     if (typeof raw !== "object" || raw === null) return null;
     const f = raw as Record<string, unknown>;
     const id = cleanId(f.id, 60);
-    if (!id) return null;
+    if (!id || out.some(item=>item.id===id)) return null;
+    const spatial=sanitizeItem3D(f);
+    if(!spatial) return null;
     for (const key of ["x_ft", "y_ft", "width_ft", "length_ft", "rotation_deg"]) {
       const n = f[key];
       if (typeof n !== "number" || !Number.isFinite(n) || Math.abs(n) > 1000) return null;
     }
+    if((f.width_ft as number)<=0 || (f.length_ft as number)<=0)return null;
     out.push({
+      ...spatial,
       id,
       type: typeof f.type === "string" ? f.type.slice(0, 60) : "unknown",
       label: typeof f.label === "string" ? f.label.slice(0, 120) : "",
@@ -54,13 +59,17 @@ function sanitizeFurniture(input: unknown): FurnitureItem[] | null {
         : {}),
     });
   }
+  for(const item of out){
+    let parent=item.parent_id;const seen=new Set([item.id]);
+    while(parent){if(seen.has(parent))return null;seen.add(parent);const host=out.find(f=>f.id===parent);if(!host)return null;parent=host.parent_id;}
+  }
   return out;
 }
 
 function sanitizeProducts(input: unknown): Record<string, string> | null {
   if (typeof input !== "object" || input === null || Array.isArray(input)) return null;
   const entries = Object.entries(input as Record<string, unknown>);
-  if (entries.length > 20) return null;
+  if (entries.length > 60) return null;
   const out: Record<string, string> = {};
   for (const [key, value] of entries) {
     if (key.length > 40 || typeof value !== "string" || !value || value.length > 64) return null;
@@ -164,6 +173,9 @@ export async function POST(request: Request) {
   const rawOutline = dims.outline;
   const outline = rawOutline == null ? null : sanitizeOutline(rawOutline);
   const outlineBad = rawOutline != null && outline === null;
+  const studio=dims.studio==null?null:sanitizeStudio(dims.studio);
+  const editor=dims.editor==null?null:sanitizeEditor(dims.editor);
+  const spatialBad=(dims.studio!=null&&!studio)||(dims.editor!=null&&!editor);
 
   if (
     !style ||
@@ -175,7 +187,7 @@ export async function POST(request: Request) {
     !isFeet(dims.width_ft) ||
     !furniture ||
     !products ||
-    outlineBad
+    outlineBad || spatialBad
   ) {
     return NextResponse.json(
       { error: "That design couldn't be saved. Some fields look off." },
@@ -232,6 +244,8 @@ export async function POST(request: Request) {
       occupants,
       estimated: dims.estimated === true,
       ...(outline ? { outline } : {}),
+      ...(studio ? {studio} : {}),
+      ...(editor ? {editor} : {}),
     },
     style,
     budget,

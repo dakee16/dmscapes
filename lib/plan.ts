@@ -233,3 +233,6 @@ export function canGeneratePlan(p: PlanFields | null | undefined): boolean {
 export function canSaveDesign(_p: PlanFields | null | undefined): boolean {
   return true;
 }
+
+/** Interactive 3D is exclusive to Pro, including shared-room viewers. */
+export const canUse3D = isPro;

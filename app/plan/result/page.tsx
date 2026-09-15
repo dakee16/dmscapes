@@ -31,7 +31,8 @@ import ProductTabSwitcher, { type ProductTab } from "@/components/products/Produ
 import AddOverBudgetModal from "@/components/products/AddOverBudgetModal";
 import AddOwnItemModal from "@/components/products/AddOwnItemModal";
 import ProductCard from "@/components/products/ProductCard";
-import ActionBar from "@/components/products/ActionBar";
+import PlannerStudio from "@/components/studio/PlannerStudio";
+import { roomOutline } from "@/lib/studio";
 import BuyAllButton from "@/components/products/BuyAllButton";
 import PurchaseSurvey from "@/components/products/PurchaseSurvey";
 import SavePrompt from "@/components/planner/SavePrompt";
@@ -42,24 +43,11 @@ import type { Product, ProductCategory } from "@/lib/types";
 // react-konva can't render on the server, so load the canvas client-side only.
 const RoomCanvas = dynamic(() => import("@/components/canvas/RoomCanvas"), {
   ssr: false,
-  loading: () => <div className="aspect-[4/3] w-full animate-pulse rounded-xl bg-ink/5" />,
+  loading: () => <div className="grid min-h-[360px] place-items-center"><BrandLoader label="Opening your 2D plan…"/></div>,
 }) as unknown as typeof RoomCanvasType;
 
 function Skeleton() {
-  return (
-    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-      <div className="h-8 w-64 animate-pulse rounded-lg bg-ink/10" />
-      <div className="mt-2 h-4 w-40 animate-pulse rounded bg-ink/5" />
-      <div className="mt-6 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-        <div className="aspect-[4/3] animate-pulse rounded-2xl bg-ink/5" />
-        <div className="space-y-3">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} className="h-20 animate-pulse rounded-xl bg-ink/5" />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+  return <div className="grid min-h-[60svh] place-items-center px-5"><BrandLoader label="Bringing your room together…"/></div>;
 }
 
 export default function ResultPage() {
@@ -159,12 +147,13 @@ export default function ResultPage() {
       ? room.outline
       : null;
 
-  // Adopt the matched template's layout (once, or when the room changed),
+  // Initialize only when furniture is absent. setRoom clears the previous layout;
+  // editing walls and reopening saved rooms must keep their arrangement.
   // refit to the actual room size: templates are authored at nominal dims.
   useEffect(() => {
     if (!hydrated || !match || !room) return;
     const wantId = drawnOutline ? "custom-drawn" : match.template_id;
-    if (templateId !== wantId || !furniture) {
+    if (!furniture) {
       const placed = drawnOutline
         ? placeInPolygon(match.template.furniture, drawnOutline, room.lengthFt, room.widthFt)
         : fitTemplateToRoom(match.template.furniture, match.template_id, room.lengthFt, room.widthFt);
@@ -301,7 +290,7 @@ export default function ResultPage() {
       roomW={room.widthFt}
       templateId={templateId}
       furniture={furniture}
-      outline={room.outline ?? null}
+      outline={roomOutline(room)}
       hiddenCategories={excluded ?? []}
       crossHighlight={!fullscreen}
       history={layoutHistory}
@@ -365,153 +354,18 @@ export default function ResultPage() {
   }
 
   return (
-    <div className="dm-result mx-auto max-w-6xl px-4 pb-32 pt-6 sm:px-6 lg:pb-10">
-      <header className="dm-result-heading">
-        <div className="dm-result-title-group">
-          <h1 className="dm-page-title font-display text-2xl font-extrabold tracking-tight text-ink sm:text-3xl">
-            Your room, <span className="hl">planned.</span>
-          </h1>
-          <p className="mt-1.5 font-mono text-xs uppercase tracking-[0.14em] text-ink-soft">
-            {/* Text segments wrap at word boundaries; dims never split mid-string. */}
-            {[college?.name, dorm?.name, roomTypeLabel(room)].filter(Boolean).join(" · ")}
-            {dims && (
-              <>
-                <span aria-hidden="true"> · </span>
-                <span className="whitespace-nowrap">{dims}</span>
-              </>
-            )}
-          </p>
-          {room.dimsEstimated && <EstimatedDimsNote className="mt-1.5" />}
-
-          {/* Custom vibe: the user's own words stand in for a style name, plus the
-              one-free-regeneration control and an honest sample-data note. */}
-          {isCustom && customVibe && (
-            <div className="mt-3">
-              <p className="max-w-xl font-display text-base font-semibold italic leading-snug text-ink">
-                &ldquo;{customVibe}&rdquo;
-              </p>
-              {customMock && (
-                <p className="mt-2 max-w-xl text-[11px] leading-snug text-ink-soft/90">
-                  Sample matches for now. Live Amazon results switch on once
-                  Product Advertising API access is enabled.
-                </p>
-              )}
-            </div>
-          )}
-        </div>
-        <ActionBar products={allCartProducts} getPng={() => canvasRef.current?.exportPNG() ?? null} />
-      </header>
-
-      {/* Regeneration keeps its existing free-use and credit behavior. */}
-      {isCustom && customVibe && (
-        <div className="dm-regenerate-row mt-5 flex flex-wrap items-center gap-3 rise">
-          <button
-            type="button"
-            onClick={handleRegenerate}
-            disabled={regenerating}
-            className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-white px-5 py-2.5 text-sm font-semibold text-ink shadow-sm transition-colors hover:border-cobalt hover:text-cobalt disabled:opacity-60"
-          >
-            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M21 12a9 9 0 1 1-2.64-6.36" />
-              <path d="M21 3v5h-5" />
-            </svg>
-            {regenerating ? "Regenerating…" : "Regenerate matches"}
-          </button>
-          <span className="font-mono text-[10px] uppercase tracking-wide text-ink-soft">
-            {customRegenUsed ? "New matches, same vibe" : "One free regeneration"}
-          </span>
-        </div>
-      )}
-
-      <div className="dm-result-grid mt-5 grid gap-6 lg:grid-cols-[1.5fr_1fr]">
-        {/* Canvas panel */}
-        <section className="dm-canvas-panel rise" style={{ animationDelay: "80ms" }}>
-          <div className="dm-eyebrow"><span>01 / Your floor plan</span><span>Made to measure</span></div>
-          <div className="min-w-0">
-            {!fullscreen && canvas}
-          </div>
-          {/* Unplaced tray: custom items we couldn't confidently categorize.
-              "Place" drops the item on the canvas (centered); the existing drag
-              handles then let the user position it exactly. */}
-          {unplacedCustomItems.length > 0 && (
-            <div className="mt-2 rounded-xl border border-amber/40 bg-amber/[0.06] p-2.5">
-              <p className="mb-2 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-ink">
-                Unplaced items · drop onto your room
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {unplacedCustomItems.map((cp) => (
-                  <button
-                    key={cp.id}
-                    type="button"
-                    onClick={() => {
-                      placeCustomItem(cp.id);
-                      track("layout_edited", { item: cp.id, action: "place" });
-                    }}
-                    title={`Place ${cp.name} on your room`}
-                    className="flex items-center gap-2 rounded-lg border border-ink/15 bg-white px-2 py-1.5 text-left transition-colors hover:border-cobalt"
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={cp.image_url} alt="" className="h-8 w-8 shrink-0 rounded border border-ink/5 object-contain" />
-                    <span className="max-w-[9rem] truncate text-xs font-medium text-ink">{cp.name}</span>
-                    <span className="font-mono text-[10px] font-semibold uppercase tracking-wide text-cobalt">Place →</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-          <div className="mt-2 flex flex-col items-start gap-0.5">
-            <button
-              type="button"
-              onClick={() => setFullscreen(true)}
-              className="flex cursor-pointer items-center gap-1.5 rounded-lg border border-ink/15 bg-white px-2.5 py-1.5 text-xs font-semibold text-ink shadow-sm transition-colors hover:border-cobalt hover:text-cobalt"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                className="h-3.5 w-3.5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3" />
-              </svg>
-              Edit in fullscreen
-            </button>
-          </div>
-          {drawnOutline ? (
-            <p className="mt-2 text-xs text-ink-soft">
-              Auto-placed to fit the room you drew. Drag anything to make it yours.
-            </p>
-          ) : (
-            match && !match.exact_match && (
-              <p className="mt-2 text-xs text-ink-soft">
-                Closest layout for your room size. Drag anything to make it yours.
-              </p>
-            )
-          )}
-          {/* Honest, matter-of-fact placement disclaimer, same spirit as the
-              estimated-dimensions note. ToS is cross-referenced, not duplicated. */}
-          <p className="mt-2 flex items-start gap-1.5 text-[11px] leading-snug text-ink-soft/90">
-            <svg viewBox="0 0 24 24" className="mt-px h-3 w-3 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M12 11.5v4.5" strokeLinecap="round" />
-              <circle cx="12" cy="8" r="0.6" fill="currentColor" stroke="none" />
-            </svg>
-            <span>
-              Placement and fit shown here are a guide, not a guarantee. Your real
-              room may vary with the exact pieces you buy, how you arrange them,
-              and layout quirks our data can&apos;t capture. See our{" "}
-              <a href="/terms" className="underline underline-offset-2 hover:text-ink">Terms</a>.
-            </span>
-          </p>
-        </section>
-
-        {/* Products panel. Wrapped in the buy gate so its Buy / Buy all links
-            require sign-in for logged-out users and resume straight to Amazon
-            afterward (lib/buy-gate). */}
-        <BuyGateProvider>
+    <div>
+      <PlannerStudio canvas={canvas} get2DPng={()=>canvasRef.current?.exportPNG()??null}
+        products={allCartProducts} total={total} budget={budget} history={layoutHistory} onReset={handleReset}
+        subtitle={[college?.name,dorm?.name,roomTypeLabel(room),dims,room.dimsEstimated?"Estimated room size":null].filter(Boolean).join(" · ")}
+        extras={isCustom&&customVibe?<div className="dm-regenerate-row flex flex-wrap items-center gap-3">
+          <p className="text-sm italic">{customVibe}</p>
+          <button type="button" onClick={handleRegenerate} disabled={regenerating} className="border border-ink/20 px-3 py-2 text-xs">{regenerating?"Regenerating…":"Regenerate matches"}</button>
+          <span className="text-xs text-ink-soft">{customRegenUsed?"New matches, same vibe":"One free regeneration"}</span>
+          {customMock&&<p className="basis-full text-xs text-ink-soft">Sample matches. Live results appear when product access is available.</p>}
+        </div>:null}
+        unplaced={unplacedCustomItems.length>0?<div><p className="mb-2 text-xs font-semibold">Unplaced items</p><div className="flex flex-wrap gap-2">{unplacedCustomItems.map(cp=><button key={cp.id} type="button" onClick={()=>placeCustomItem(cp.id)} className="border border-ink/20 px-3 py-2 text-xs">Place {cp.name} ↗</button>)}</div></div>:null}
+        shopping={<BuyGateProvider>
           <section className="dm-shopping-panel rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
             {/* Budget total + progress: always visible above the tabs, and always
                 reflecting the shopping list specifically (not the catalog). */}
@@ -589,53 +443,10 @@ export default function ResultPage() {
               </div>
             </div>
           </section>
-        </BuyGateProvider>
-      </div>
-
+        </BuyGateProvider>}
+      />
       <PurchaseSurvey cartTotal={total} />
       <SavePrompt />
-
-      {/* Fullscreen editing overlay: the same canvas, scaled up to the viewport
-          for easier drag-and-drop. Product highlighting is off here. */}
-      {fullscreen && (
-        <Modal className="dm-canvas-fullscreen flex flex-col bg-paper" aria-label="Fullscreen room studio">
-          <div className="flex items-center justify-between gap-3 border-b border-ink/10 bg-white px-4 py-2.5">
-            <div className="min-w-0">
-              <p className="truncate font-display text-sm font-bold text-ink">
-                {[dorm?.name, roomTypeLabel(room)].filter(Boolean).join(" · ")}
-              </p>
-              <p className="truncate font-mono text-[10px] uppercase tracking-[0.14em] text-ink-soft">
-                Fullscreen editing{dims ? ` · ${dims}` : ""}
-              </p>
-            </div>
-            <button
-              type="button"
-              onClick={() => setFullscreen(false)}
-              className="flex shrink-0 cursor-pointer items-center gap-1.5 rounded-lg border border-ink/15 bg-white px-3 py-1.5 text-xs font-semibold text-ink shadow-sm transition-colors hover:border-cobalt hover:text-cobalt"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                className="h-3.5 w-3.5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M4 14h6v6M20 10h-6V4M14 10l7-7M3 21l7-7" />
-              </svg>
-              Exit fullscreen
-            </button>
-          </div>
-          <div className="flex flex-1 items-start justify-center overflow-auto p-3 sm:p-4">
-            <div className="w-full max-w-[1400px]">
-              {canvas}
-            </div>
-          </div>
-        </Modal>
-      )}
-
       {pendingAdd && (
         <AddOverBudgetModal
           product={pendingAdd}
@@ -662,6 +473,8 @@ export default function ResultPage() {
       {regenerating && (
         <VibeLoading description={customVibe ?? ""} budget={budget} regenerating />
       )}
+
     </div>
   );
 }
+

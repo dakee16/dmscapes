@@ -1,0 +1,22 @@
+.loader { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; color:#2b4eff; text-align:center; width:100%; max-width:380px; margin:auto; }
+.drawing { width:240px; max-width:100%; }
+.drawing svg { display:block; width:100%; overflow:visible; }
+.wordmark { font:600 25px/1.2 var(--font-syne),sans-serif; letter-spacing:-.06em; color:#17172b; }
+.wordmark > span { color:#2b4eff; }
+.caption { margin-top:13px; max-width:280px; color:#656675; font:400 14px/1.6 var(--font-instrument),sans-serif; }
+.wall,.door { stroke-dasharray:1; animation:trace 3.8s cubic-bezier(.22,.7,.2,1) infinite; }
+.door { animation-delay:.45s; }
+.bed,.desk,.rug { transform-box:fill-box; transform-origin:center; animation:place 3.8s cubic-bezier(.22,.7,.2,1) infinite both; }
+.desk { animation-delay:.2s; }.rug { animation-delay:.4s; }
+.cursor { animation:cursor 3.8s cubic-bezier(.22,.7,.2,1) infinite both; }
+.track { width:90px; height:2px; background:#2b4eff15; margin-top:22px; overflow:hidden; }
+.track i { display:block; width:40%; height:100%; background:#2b4eff; animation:progress 1.8s ease-in-out infinite; }
+@keyframes trace { 0%,8% { stroke-dashoffset:1; opacity:.35; } 45%,85% { stroke-dashoffset:0; opacity:1; } 100% { stroke-dashoffset:0; opacity:.15; } }
+@keyframes place { 0%,22% { opacity:0; transform:translateY(-9px) scale(.93); } 46%,84% { opacity:1; transform:none; } 100% { opacity:0; transform:none; } }
+@keyframes cursor { 0% { transform:translate(42px,30px); opacity:0; } 14% { opacity:1; } 36% { transform:translate(198px,30px); } 64%,82% { transform:translate(141px,140px); opacity:1; } 100% { transform:translate(141px,140px); opacity:0; } }
+@keyframes progress { from { transform:translateX(-100%); } to { transform:translateX(350%); } }
+@media (prefers-reduced-motion:reduce) { .loader * { animation:none; }.cursor { transform:translate(141px,140px); }.track i { width:100%; opacity:.45; } }
+:global([data-motion="paused"]) .loader * { animation:none; }
+:global([data-motion="paused"]) .cursor { transform:translate(141px,140px); }
+:global([data-motion="paused"]) .track i { width:100%; opacity:.45; }
+

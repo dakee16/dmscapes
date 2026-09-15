@@ -8,7 +8,7 @@ import { faqPageJsonLd } from "@/lib/blog";
 import FaqBrowser from "@/components/site/FaqBrowser";
 
 const DESCRIPTION =
-  "Answers to common dorm questions: how to measure your room, what to pack, what it costs, small-room layouts, and choosing a style.";
+  "Answers to common dorm questions: how to measure your room, what to pack, what it costs, small-room layouts, choosing a style, and using the Pro 3D Room Studio.";
 
 export const metadata: Metadata = {
   title: "FAQ",

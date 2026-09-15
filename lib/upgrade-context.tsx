@@ -25,6 +25,7 @@ export type UpgradeReason =
   | "style"
   | "custom-vibe"
   | "own-item"
+  | "room-3d"
   | "draw-room"
   | "generic";
 

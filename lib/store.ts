@@ -1,5 +1,7 @@
 "use client";
 
+import { roomEditError } from "./room-editing";
+
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId } from "./types";
@@ -78,6 +80,10 @@ export interface PlannerState {
   toggleLockedItem: (id: string) => void;
   /** Update a furniture item's footprint (e.g. swapped rug with new dims). */
   resizeItem: (id: string, widthFt: number, lengthFt: number) => void;
+  updateItem3D: (id: string, patch: Partial<Pick<FurnitureItem, "height_ft" | "elevation_ft" | "material_color" | "parent_id">>) => void;
+  updateStudio: (patch: Partial<import("./studio").StudioSettings>) => void;
+  updateOpenings: (outline: import("./types").RoomOutline) => void;
+  updateRoomGeometry: (outline: import("./types").RoomOutline, origin?: import("./types").Point) => void;
   /** Rotate an item a quarter turn about its center (1 = CW, -1 = CCW). */
   rotateItem: (id: string, dir: 1 | -1) => void;
   setHoveredCategory: (category: ProductCategory | null) => void;
@@ -154,11 +160,22 @@ export const usePlannerStore = create<PlannerState>()(
       markCustomRegen: () => set({ customRegenUsed: true }),
       initLayout: (templateId, furniture) =>
         set({ templateId, furniture: furniture.map((f) => ({ ...f })) }),
-      moveItem: (id, xFt, yFt) =>
-        set((s) => ({
-          furniture:
-            s.furniture?.map((f) => (f.id === id ? { ...f, x_ft: xFt, y_ft: yFt } : f)) ?? null,
-        })),
+      moveItem: (id, xFt, yFt) => set(s => {
+        const before=s.furniture?.find(f=>f.id===id);
+        if(!before || !before.movable || s.lockedItemIds.includes(id))return {};
+        const dx=xFt-before.x_ft,dy=yFt-before.y_ft;
+        return {furniture:s.furniture?.map(f=>f.id===id?{...f,x_ft:xFt,y_ft:yFt}:
+          f.parent_id===id?{...f,x_ft:f.x_ft+dx,y_ft:f.y_ft+dy}:f)??null};
+      }),
+      updateItem3D: (id, patch) => set(s => ({furniture:s.furniture?.map(f=>f.id===id?{...f,...patch}:f)??null})),
+      updateStudio: patch => set(s => ({room:s.room?{...s.room,studio:{ceilingFt:8,floor:"oak",wallColor:"#f3eee4",lighting:"day",...s.room.studio,...patch}}:null})),
+      updateRoomGeometry: (outline, origin = {x:0,y:0}) => set(s => {
+        if(!s.room || roomEditError(outline) || !Number.isFinite(origin.x) || !Number.isFinite(origin.y))return {};
+        const lengthFt=Math.max(...outline.points.map(p=>p.x)),widthFt=Math.max(...outline.points.map(p=>p.y));
+        return {room:{...s.room,outline,lengthFt,widthFt,source:"drawn" as const,dimsEstimated:false},
+          furniture:s.furniture?.map(f=>({...f,x_ft:f.x_ft-origin.x,y_ft:f.y_ft-origin.y}))??null};
+      }),
+      updateOpenings: outline => set(s => ({room:s.room?{...s.room,outline}:null})),
       resetLayout: (furniture) =>
         set({ furniture: furniture.map((f) => ({ ...f })), hiddenItemIds: [], lockedItemIds: [] }),
       swapProduct: (category, productId) =>
@@ -192,32 +209,23 @@ export const usePlannerStore = create<PlannerState>()(
               f.id === id ? { ...f, width_ft: widthFt, length_ft: lengthFt } : f
             ) ?? null,
         })),
-      rotateItem: (id, dir) =>
-        set((s) => ({
-          furniture:
-            s.furniture?.map((f) => {
-              if (f.id !== id) return f;
-              // Quarter turn about the item's center. Footprint convention
-              // matches components/canvas/geometry.ts: rotation mod 180
-              // decides whether width/length swap axes (keep in sync).
-              const rotation_deg = (f.rotation_deg + dir * 90 + 360) % 360;
-              const swap = f.rotation_deg % 180 === 90;
-              const w = swap ? f.length_ft : f.width_ft;
-              const h = swap ? f.width_ft : f.length_ft;
-              // New footprint is the transpose: keep the center, snap to the
-              // half-foot grid, and clamp inside the room like a drag would.
-              // An item too long to fit rotated pins at 0 and gets
-              // red-flagged by the canvas's out-of-bounds check.
-              const snap = (v: number) => Math.round(v * 2) / 2;
-              let x_ft = snap(f.x_ft + (w - h) / 2);
-              let y_ft = snap(f.y_ft + (h - w) / 2);
-              if (s.room) {
-                x_ft = Math.min(Math.max(x_ft, 0), Math.max(0, s.room.lengthFt - h));
-                y_ft = Math.min(Math.max(y_ft, 0), Math.max(0, s.room.widthFt - w));
-              }
-              return { ...f, rotation_deg, x_ft, y_ft };
-            }) ?? null,
-        })),
+      rotateItem: (id, dir) => set(s => {
+        const item=s.furniture?.find(f=>f.id===id);
+        if(!item || !item.movable || s.lockedItemIds.includes(id))return {};
+        const swapped=item.rotation_deg%180===90;
+        const w=swapped?item.length_ft:item.width_ft,h=swapped?item.width_ft:item.length_ft;
+        const rotation_deg=(item.rotation_deg+dir*90+360)%360;
+        let x_ft=Math.round((item.x_ft+(w-h)/2)*2)/2,y_ft=Math.round((item.y_ft+(h-w)/2)*2)/2;
+        if(s.room){x_ft=Math.min(Math.max(x_ft,0),Math.max(0,s.room.lengthFt-h));y_ft=Math.min(Math.max(y_ft,0),Math.max(0,s.room.widthFt-w));}
+        const cx=item.x_ft+w/2,cy=item.y_ft+h/2,nx=x_ft+h/2,ny=y_ft+w/2;
+        return {furniture:s.furniture?.map(f=>{
+          if(f.id===id)return {...f,rotation_deg,x_ft,y_ft};
+          if(f.parent_id!==id)return f;
+          const sw=f.rotation_deg%180===90,cw=sw?f.length_ft:f.width_ft,ch=sw?f.width_ft:f.length_ft;
+          const dx=f.x_ft+cw/2-cx,dy=f.y_ft+ch/2-cy;
+          return {...f,rotation_deg:(f.rotation_deg+dir*90+360)%360,x_ft:nx-dir*dy-ch/2,y_ft:ny+dir*dx-cw/2};
+        })??null};
+      }),
       setHoveredCategory: (category) => set({ hoveredCategory: category }),
       toggleSelectedCategory: (category) =>
         set((s) => ({
@@ -314,3 +322,4 @@ export const usePlannerStore = create<PlannerState>()(
     }
   )
 );
+

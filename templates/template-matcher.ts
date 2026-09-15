@@ -44,6 +44,11 @@ export interface FurnitureItem {
   width_ft: number;
   length_ft: number;
   rotation_deg: number;
+  /** Optional 3D metadata; legacy designs use category defaults. */
+  height_ft?: number;
+  elevation_ft?: number;
+  material_color?: string;
+  parent_id?: string;
   movable: boolean;
   built_in: boolean;
   color_category: string;

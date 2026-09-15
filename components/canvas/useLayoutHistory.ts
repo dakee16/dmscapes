@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePlannerStore } from "@/lib/store";
 import type { FurnitureItem } from "@/lib/types";
 
-type Snapshot = { furniture: FurnitureItem[] | null; hiddenItemIds: string[]; lockedItemIds: string[] };
+type Snapshot = { furniture: FurnitureItem[] | null; hiddenItemIds: string[]; lockedItemIds: string[]; room: ReturnType<typeof usePlannerStore.getState>["room"] };
 const LIMIT = 50;
 
 /** Lives with the result page, so entering fullscreen keeps the undo history. */
@@ -14,15 +14,15 @@ export function useLayoutHistory() {
   const lockedItemIds = usePlannerStore(s => s.lockedItemIds);
   const excluded = usePlannerStore(s => s.excluded);
   const room = usePlannerStore(s => s.room);
-  const previous = useRef<Snapshot>({ furniture, hiddenItemIds, lockedItemIds });
-  const boundary = JSON.stringify([room, furniture?.map(f => f.id).sort(), excluded]);
+  const previous = useRef<Snapshot>({ furniture, hiddenItemIds, lockedItemIds, room });
+  const boundary = JSON.stringify([room?.type, furniture?.map(f => f.id).sort(), excluded]);
   const previousBoundary = useRef(boundary);
   const restoring = useRef<string | null>(null);
   const [past, setPast] = useState<Snapshot[]>([]);
   const [future, setFuture] = useState<Snapshot[]>([]);
 
   useEffect(() => {
-    const next = { furniture, hiddenItemIds, lockedItemIds };
+    const next = { furniture, hiddenItemIds, lockedItemIds, room };
     const key = JSON.stringify(next);
     if (boundary !== previousBoundary.current) {
       // Product additions/removals change the cart. Never resurrect them via undo.
@@ -37,7 +37,7 @@ export function useLayoutHistory() {
     }
     previous.current = next;
     previousBoundary.current = boundary;
-  }, [furniture, hiddenItemIds, lockedItemIds, boundary]);
+  }, [furniture, hiddenItemIds, lockedItemIds, room, boundary]);
 
   function restore(snapshot: Snapshot) {
     restoring.current = JSON.stringify(snapshot);
@@ -62,3 +62,4 @@ export function useLayoutHistory() {
     },
   };
 }
+

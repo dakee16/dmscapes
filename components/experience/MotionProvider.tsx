@@ -19,13 +19,15 @@ export default function MotionProvider({
   children: React.ReactNode;
 }) {
   const reduced = useReducedMotion();
+  const [hydrated, setHydrated] = useState(false);
   const [choice, setChoice] = useState<boolean | null>(null);
   const pathname = usePathname();
-  const paused = choice ?? !!reduced;
+  const paused = choice ?? (hydrated && !!reduced);
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 180, damping: 35 });
 
   useEffect(() => {
+    setHydrated(true);
     try {
       const stored = localStorage.getItem("dormscape-motion-paused");
       if (stored !== null) setChoice(stored === "true");

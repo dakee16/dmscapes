@@ -26,6 +26,9 @@ import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import { clamp, footprint, invalidItems, layerOf, pointInPolygon } from "./geometry";
 
+import { createPortal } from "react-dom";
+import { useCanvasDock } from "./CanvasControlsContext";
+import CanvasToolRail from "./CanvasToolRail";
 import FurnitureGlyph from "./FurnitureGlyph";
 import { feetLabel, fitViewport, placedCoordinate, zoomAt } from "./viewport";
 import styles from "./CanvasStudio.module.css";
@@ -197,6 +200,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   },
   ref
 ) {
+  const dock = useCanvasDock();
   const containerRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<Konva.Stage>(null);
   const labelRefs = useRef(new Map<string, Konva.Group>());
@@ -496,7 +500,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       return;
     }
     if (key === "escape") {
-      if (selectedItemId || selectedCategory || panMode) event.stopPropagation();
+      if (dock?.expanded) { event.stopPropagation(); dock.expand(); }
+      else if (selectedItemId || selectedCategory || panMode) event.stopPropagation();
       clearSelectedCategory(); setPanMode(false); return;
     }
     if ((event.target as HTMLElement).closest("button")) return;
@@ -513,7 +518,14 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   }
 
   return (
-    <div className={`${styles.studio} dm-room-canvas`} onKeyDown={keyboard}>
+    <div className={`${styles.studio} dm-room-canvas ${dock ? styles.dockedCanvas : ""}`} onKeyDown={keyboard}>
+      {dock?.host && dock.active && createPortal(<CanvasToolRail dock={dock} pan={panMode} setPan={setPanMode} grid={showGrid} labels={showLabels} snap={snapping} zoom={zoom}
+        roomLabel={feetLabel(roomL)+" × "+feetLabel(roomW)} toggleGrid={()=>setShowGrid(v=>!v)} toggleLabels={()=>setShowLabels(v=>!v)} toggleSnap={()=>setSnapping(v=>!v)} zoomTo={applyZoom} fit={fitRoom}
+        undo={()=>history?.undo()} redo={()=>history?.redo()} canUndo={!!history?.canUndo} canRedo={!!history?.canRedo}
+        selected={toolbarItem} locked={toolbarLocked} hidden={toolbarHidden} canEdit={canEditItem&&!!onRotate} canDelete={toolbarDeletable}
+        rotate={()=>toolbarItem&&onRotate?.(toolbarItem.id,1)} toggleLock={()=>toolbarItem&&toggleLockedItem(toolbarItem.id)} toggleHide={()=>toolbarItem&&toggleHiddenItem(toolbarItem.id)}
+        remove={()=>{if(toolbarItem){onDeleteItem?.(toolbarItem);clearSelectedCategory();}}} hiddenItems={visible.filter(f=>hiddenItemIds.includes(f.id))} showItem={toggleHiddenItem} invalidCount={invalid.size}/>,dock.host)}
+      {!dock && <>
       <div className={styles.topbar}>
         <div className={styles.title}><i /><strong>Your room studio</strong></div>
         <span className={styles.meta}>{feetLabel(roomL)} × {feetLabel(roomW)} · Top view</span>
@@ -538,7 +550,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         <p><kbd>R</kbd> Rotate · <kbd>↑ ↓ ← →</kbd> Nudge · <kbd>Shift</kbd> + arrows: 1 ft · <kbd>0</kbd> Fit room · <kbd>H</kbd> Pan · <kbd>V</kbd> Select · <kbd>Esc</kbd> Deselect</p>
         <p>Pinch with two fingers to zoom and pan. With a mouse, use Ctrl/⌘ + scroll to zoom at the pointer. Hiding a piece only changes the view; removing it moves its category to the catalog.</p>
       </div>}
-      <div ref={containerRef} className={`${styles.surface} dm-room-viewport`} tabIndex={0} role="region" aria-label="Interactive room floor plan" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })} style={fullscreen ? { height: "clamp(320px, calc(100svh - 300px), 850px)" } : undefined}>
+      </>}
+      <div ref={containerRef} className={`${styles.surface} dm-room-viewport`} tabIndex={0} role="region" aria-label="Interactive room floor plan" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })} style={!dock && fullscreen ? { height: "clamp(320px, calc(100svh - 300px), 850px)" } : undefined}>
       {pxFt > 0 && (
         <Stage
           ref={stageRef}
@@ -857,14 +870,15 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       )}
 
       {pxFt > 0 && <div className={styles.scale}><i style={{ width: pxFt * zoom }} /><span>1 ft</span></div>}
-      <div className={styles.viewportControls} aria-label="View controls">
+      {!dock&&<div className={styles.viewportControls} aria-label="View controls">
         <button type="button" onClick={() => applyZoom(zoom - .25)} disabled={zoom <= MIN_ZOOM} aria-label="Zoom out">−</button>
         <output aria-label="Zoom level">{Math.round(zoom * 100)}%</output>
         <button type="button" onClick={() => applyZoom(zoom + .25)} disabled={zoom >= MAX_ZOOM} aria-label="Zoom in">+</button>
         <span className={styles.divider} />
         <button type="button" onClick={fitRoom} title="Fit the whole room (0)"><Icon path="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M8 8h8v8H8z" />Fit</button>
+      </div>}
       </div>
-      </div>
+      {!dock&&<>
       {!readOnly && <div className={styles.inspector}>
         <div className={styles.selection}>
           <label htmlFor={selectId}>SELECT A PIECE TO EDIT</label>
@@ -891,6 +905,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         </p>
         {!readOnly && <button type="button" onClick={onReset} title="Restore the starting layout. You can undo this.">Reset layout</button>}
       </div>
+      </>}
     </div>
   );
 });

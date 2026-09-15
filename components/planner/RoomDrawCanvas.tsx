@@ -3,8 +3,11 @@
 import { useEffect, useId, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { Stage, Layer, Line, Rect, Circle, Text, Arc, Group } from "react-konva";
 import Konva from "konva";
-import type { ClosetRect, Point, RoomOutline, WallOpening } from "@/lib/types";
+import type { ClosetRect, Point, RoomOutline, WallOpening, SelectedRoom, FurnitureItem } from "@/lib/types";
 
+import { roomOutline } from "@/lib/studio";
+import { roomEditError } from "@/lib/room-editing";
+import { footprint } from "@/components/canvas/geometry";
 import { fitViewport, zoomAt } from "@/components/canvas/viewport";
 import { clamp, rectInsidePolygon } from "@/components/canvas/geometry";
 import styles from "@/components/canvas/CanvasStudio.module.css";
@@ -17,8 +20,6 @@ if (typeof window !== "undefined") {
 // The blank drawing surface is a fixed grid in feet; the user clicks corners to
 // trace a rectilinear outline, which is normalized to origin on completion.
 const PAD = 24;
-const SPAN_X = 26; // ft shown across
-const SPAN_Y = 20; // ft shown down
 const DOOR_FT = 3;
 const WINDOW_FT = 4;
 const CLOSET_W = 2.5;
@@ -36,7 +37,7 @@ const AMBER = "#f0b100";
 const WHITE = "#ffffff";
 
 type Tool = "wall" | "door" | "window" | "closet" | "pan";
-type Selected = { kind: "opening" | "closet"; index: number } | null;
+type Selected = { kind: "opening" | "closet" | "wall" | "corner"; index: number } | null;
 
 const snap = (v: number) => Math.round(v * 2) / 2;
 const round2 = (v: number) => Math.round(v * 100) / 100;
@@ -112,6 +113,7 @@ export interface RoomDrawResult {
   outline: RoomOutline;
   lengthFt: number;
   widthFt: number;
+  origin: Point;
 }
 
 /**
@@ -120,10 +122,16 @@ export interface RoomDrawResult {
  * "Plan this room" hands a normalized RoomOutline (+ bbox dims) back up.
  */
 export default function RoomDrawCanvas({
-  onComplete,
+  onComplete, initialRoom, furniture = [], onCancel,
 }: {
   onComplete: (result: RoomDrawResult) => void;
+  initialRoom?: SelectedRoom;
+  furniture?: FurnitureItem[];
+  onCancel?: () => void;
 }) {
+  const initial = useRef(initialRoom ? roomOutline(initialRoom) : null).current;
+  const SPAN_X = initialRoom ? Math.max(26, initialRoom.lengthFt + 4) : 26;
+  const SPAN_Y = initialRoom ? Math.max(20, initialRoom.widthFt + 4) : 20;
   const containerRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<Konva.Stage>(null);
   const [viewport, setViewport] = useState({ width: 0, height: 420 });
@@ -136,10 +144,10 @@ export default function RoomDrawCanvas({
   const lastDrag = useRef(0);
 
   const [tool, setTool] = useState<Tool>("wall");
-  const [points, setPoints] = useState<Point[]>([]);
-  const [closed, setClosed] = useState(false);
-  const [openings, setOpenings] = useState<WallOpening[]>([]);
-  const [closets, setClosets] = useState<ClosetRect[]>([]);
+  const [points, setPoints] = useState<Point[]>(initial?.points.map(p => ({...p})) ?? []);
+  const [closed, setClosed] = useState(Boolean(initial));
+  const [openings, setOpenings] = useState<WallOpening[]>(initial?.openings.map(o => ({...o})) ?? []);
+  const [closets, setClosets] = useState<ClosetRect[]>(initial?.closets.map(c => ({...c})) ?? []);
   const [cursor, setCursor] = useState<Point | null>(null);
   const [selected, setSelected] = useState<Selected>(null);
   const [hint, setHint] = useState<string | null>(null);
@@ -188,7 +196,7 @@ export default function RoomDrawCanvas({
   }
   function restore(prev: Snapshot) {
     setPoints(prev.points); setClosed(prev.closed); setOpenings(prev.openings); setClosets(prev.closets);
-    setSelected(null); setHint(null); setCursor(null); setTool(prev.closed ? "door" : "wall");
+    setSelected(null); setHint(null); setCursor(null); setTool(prev.closed && !initialRoom ? "door" : "wall");
   }
   function undo() {
     const prev = history.current.pop();
@@ -353,7 +361,7 @@ export default function RoomDrawCanvas({
     if (!selected) return;
     if (selected.kind === "opening") {
       commit({ openings: openings.filter((_, i) => i !== selected.index) });
-    } else {
+    } else if (selected.kind === "closet") {
       commit({ closets: closets.filter((_, i) => i !== selected.index) });
     }
     setSelected(null);
@@ -387,6 +395,13 @@ export default function RoomDrawCanvas({
     if (ev.key.toLowerCase() === "r" && selectedDoor) { ev.preventDefault(); rotateDoor(); }
   }
 
+  function editWallPoints(next: Point[]): boolean {
+    if(next.some(p=>p.x<0||p.y<0||p.x>SPAN_X||p.y>SPAN_Y)){setHint("Keep the walls inside the drawing grid.");return false;}
+    const error=roomEditError({points:next,openings,closets});
+    if(error){setHint(error);return false;}
+    commit({points:next});setHint("Walls updated. Apply your changes when you are ready.");return true;
+  }
+
   // ---- complete -------------------------------------------------------------
   function planRoom() {
     if (!closed || points.length < 3) return;
@@ -400,7 +415,9 @@ export default function RoomDrawCanvas({
       openings: openings.map((o) => ({ ...o })),
       closets: closets.map((c) => ({ ...c, x_ft: c.x_ft - minX, y_ft: c.y_ft - minY })),
     };
-    onComplete({ outline, lengthFt, widthFt });
+    const error = roomEditError(outline);
+    if (error) { setHint(error); return; }
+    onComplete({ outline, lengthFt, widthFt, origin: { x: minX, y: minY } });
   }
 
   // ---- inward normal (door swing) ------------------------------------------
@@ -429,7 +446,7 @@ export default function RoomDrawCanvas({
     for (let j = 0; j <= SPAN_Y; j++)
       l.push({ key: `h${j}`, pts: [ox, oy + j * pxFt, ox + SPAN_X * pxFt, oy + j * pxFt], strong: j % 5 === 0 });
     return l;
-  }, [pxFt, ox, oy]);
+  }, [pxFt, ox, oy, SPAN_X, SPAN_Y]);
 
   const wallFlat = useMemo(() => {
     const seq = closed ? points : preview ? [...points, preview] : points;
@@ -515,14 +532,14 @@ export default function RoomDrawCanvas({
   return (
     <div className={`${styles.studio} dm-draw-toolbox`} onKeyDown={keyboard}>
       <div className={styles.topbar}>
-        <div className={styles.title}><i /><strong>Your drawing studio</strong></div>
+        <div className={styles.title}><i /><strong>{initialRoom ? "Edit your room" : "Your drawing studio"}</strong></div>
         <span className={styles.meta}>{closed ? `${Math.round(floorArea)} sq ft · ${points.length} walls` : "26 × 20 ft workspace"}</span>
       </div>
-      <div className={styles.drawSteps}>
+      {!initialRoom && <div className={styles.drawSteps}>
         <span data-active={!closed}><b>01</b> Draw the walls</span>
         <span data-active={closed}><b>02</b> Add the details</span>
         <span><b>03</b> Style your room</span>
-      </div>
+      </div>}
       {points.length === 0 && <div className={styles.starter}>
         <span>Start with a shape, or draw below.</span>
         <div className={styles.roomDimensions}>
@@ -534,7 +551,7 @@ export default function RoomDrawCanvas({
       </div>}
       <div className={`${styles.toolbar} dm-draw-toolbar`} aria-label="Drawing tools">
         <div className={styles.group}>
-          {TOOLS.map(t => <button key={t.id} type="button" aria-pressed={tool === t.id} disabled={t.id === "wall" ? closed : t.id !== "pan" && !closed} onClick={() => { setTool(t.id); setSelected(null); setHint(null); setCursor(null); }} title={!closed && t.id !== "wall" && t.id !== "pan" ? "Finish the walls to unlock this tool" : t.label}>
+          {TOOLS.map(t => <button key={t.id} type="button" aria-pressed={tool === t.id} disabled={t.id !== "wall" && t.id !== "pan" && !closed} onClick={() => { setTool(t.id); setSelected(null); setHint(null); setCursor(null); }} title={!closed && t.id !== "wall" && t.id !== "pan" ? "Finish the walls to unlock this tool" : t.label}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{t.icon}</svg>{t.label}
           </button>)}
         </div>
@@ -543,7 +560,7 @@ export default function RoomDrawCanvas({
           <button type="button" onClick={undo} disabled={!history.current.length} title="Undo (Ctrl/⌘ Z)">↶ Undo</button>
           <button type="button" onClick={redo} disabled={!future.current.length} title="Redo (Ctrl/⌘ Shift Z)">↷ Redo</button>
           <button type="button" aria-pressed={showGrid} onClick={() => setShowGrid(!showGrid)}>Grid</button>
-          <button type="button" className={styles.danger} disabled={!points.length} onClick={clearAll}>Clear</button>
+          {!initialRoom&&<button type="button" className={styles.danger} disabled={!points.length} onClick={clearAll}>Clear</button>}
         </div>
       </div>
       <div ref={containerRef} className={`${styles.surface} dm-draw-canvas`} tabIndex={0} role="region" aria-label="Room drawing canvas" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })}>
@@ -570,6 +587,11 @@ export default function RoomDrawCanvas({
               {/* Room fill once closed */}
               {closed && <Line points={wallFlat} closed fill="#ffffffc9" listening={false} />}
 
+              {/* Keep furniture visible while editing walls, without changing placement. */}
+              {closed && furniture.map(f => { const b=footprint(f),[x,y]=px(f.x_ft,f.y_ft); return <Group key={f.id} listening={false} opacity={.45}>
+                <Rect x={x} y={y} width={b.w*pxFt} height={b.h*pxFt} fill="#dfe5ff" stroke="#727eac" strokeWidth={1} cornerRadius={2}/>
+                {b.w*pxFt>28&&b.h*pxFt>18&&<Text x={x+3} y={y+3} width={Math.max(1,b.w*pxFt-6)} height={Math.max(1,b.h*pxFt-6)} text={f.label} fontSize={10} fill={INK} align="center" verticalAlign="middle"/>}
+              </Group>; })}
               {/* Closets (drag to move, corner handle to resize) */}
               {closets.map((c, i) => {
                 const [cx, cy] = px(c.x_ft, c.y_ft);
@@ -646,6 +668,19 @@ export default function RoomDrawCanvas({
                   );
                 })}
 
+              {closed && tool === "wall" && points.map((p,i) => {
+                const q=points[(i+1)%points.length],[ax,ay]=px(p.x,p.y),[bx,by]=px(q.x,q.y);
+                return <Group key={"wall-edit-"+i}>
+                  <Line points={[ax,ay,bx,by]} stroke={selected?.kind==="wall"&&selected.index===i?COBALT:"transparent"} strokeWidth={5} hitStrokeWidth={20} draggable
+                    onClick={e=>{e.cancelBubble=true;setSelected({kind:"wall",index:i});}} onTap={e=>{e.cancelBubble=true;setSelected({kind:"wall",index:i});}}
+                    onDragStart={()=>setSelected({kind:"wall",index:i})}
+                    onDragEnd={e=>{lastDrag.current=Date.now();const dx=snap(e.target.x()/pxFt),dy=snap(e.target.y()/pxFt);e.target.position({x:0,y:0});editWallPoints(points.map((v,n)=>n===i||n===(i+1)%points.length?{x:v.x+dx,y:v.y+dy}:v));}}/>
+                  <Circle x={ax} y={ay} radius={6} hitStrokeWidth={16} fill={selected?.kind==="corner"&&selected.index===i?COBALT:WHITE} stroke={COBALT} strokeWidth={2} draggable
+                    onClick={e=>{e.cancelBubble=true;setSelected({kind:"corner",index:i});}} onTap={e=>{e.cancelBubble=true;setSelected({kind:"corner",index:i});}}
+                    onDragStart={()=>setSelected({kind:"corner",index:i})}
+                    onDragEnd={e=>{lastDrag.current=Date.now();const p={x:snap((e.target.x()-ox)/pxFt),y:snap((e.target.y()-oy)/pxFt)};e.target.position({x:ax,y:ay});editWallPoints(points.map((v,n)=>n===i?p:v));}}/>
+                </Group>;
+              })}
               {/* Openings: door swing / window bar + a drag handle to slide along the wall */}
               {closed &&
                 openings.map((op, i) => {
@@ -807,18 +842,24 @@ export default function RoomDrawCanvas({
           <button type="button" onClick={() => { setZoom(1); setStagePos({x:0,y:0}); }}>Fit grid</button>
         </div>
       </div>
-      {selected && <div className={styles.inspector}>
+      {closed && tool==="wall" && <div className={styles.inspector}>
+        <div className={styles.selection}><label htmlFor={inputId+"-wall-selection"}>Edit a wall or corner</label><select id={inputId+"-wall-selection"} value={selected&&(selected.kind==="wall"||selected.kind==="corner")?selected.kind+":"+selected.index:""} onChange={e=>{const [kind,index]=e.target.value.split(":");setSelected(kind?{kind:kind as "wall"|"corner",index:Number(index)}:null);}}><option value="">Choose on the drawing or here</option>{points.map((_,i)=><option key={"w"+i} value={"wall:"+i}>Wall {i+1}</option>)}{points.map((_,i)=><option key={"c"+i} value={"corner:"+i}>Corner {i+1}</option>)}</select><small>Drag a wall or a blue corner. Furniture stays in place.</small></div>
+        {selected?.kind==="corner"&&(["x","y"] as const).map(axis=><label className={styles.geometryField} key={axis}>Corner {axis.toUpperCase()} (ft)<input key={selected.index+":"+points[selected.index][axis]} aria-label={"Corner "+axis.toUpperCase()+" (ft)"} type="number" min="0" max={axis==="x"?SPAN_X:SPAN_Y} step=".5" defaultValue={points[selected.index][axis]} onKeyDown={e=>{if(e.key==="Enter"){e.preventDefault();e.currentTarget.blur();}}} onBlur={e=>{const n=e.currentTarget.valueAsNumber;if(!Number.isFinite(n)||!editWallPoints(points.map((p,i)=>i===selected.index?{...p,[axis]:n}:p)))e.currentTarget.value=String(points[selected.index][axis]);}}/></label>)}
+        {selected?.kind==="wall"&&<label className={styles.geometryField}>Wall length (ft)<input key={selected.index+":"+edges[selected.index].len} aria-label="Wall length (ft)" type="number" min=".5" max="60" step=".5" defaultValue={round2(edges[selected.index].len)} onKeyDown={e=>{if(e.key==="Enter"){e.preventDefault();e.currentTarget.blur();}}} onBlur={e=>{const n=e.currentTarget.valueAsNumber,a=points[selected.index],j=(selected.index+1)%points.length,b=points[j],len=edges[selected.index].len;if(!Number.isFinite(n)||n<.5||!editWallPoints(points.map((p,i)=>i===j?{x:round2(a.x+(b.x-a.x)*n/len),y:round2(a.y+(b.y-a.y)*n/len)}:p)))e.currentTarget.value=String(round2(len));}}/></label>}
+      </div>}
+      {selected && (selected.kind==="opening"||selected.kind==="closet") && <div className={styles.inspector}>
         <div className={styles.selection}><strong>{selected.kind === "closet" ? "Closet" : openings[selected.index]?.kind === "door" ? "Door" : "Window"}</strong><small>{selected.kind === "closet" ? "Drag to move. Drag the corner to resize." : selectedDoor ? "Slide along the wall. Change the swing below." : "Slide along the wall. Drag the end to resize."}</small></div>
         {selectedDoor && <button type="button" className={styles.outlined} onClick={rotateDoor}>↻ Change swing</button>}
         <button type="button" className={styles.danger} onClick={removeSelected}>Remove</button>
       </div>}
       <div className={styles.footer}>
-        <p role="status" aria-live="polite">{hint ?? (closed ? "Place doors and windows on a wall. Closets go inside your room." : points.length ? `${points.length} corners placed. Keep drawing, or close your walls.` : "Choose a starter shape or place your first corner.")}</p>
+        <p role="status" aria-live="polite">{hint ?? (closed && tool==="wall" ? "Drag walls or corners. Use the fields below for exact measurements." : closed ? "Place doors and windows on a wall. Closets go inside your room." : points.length ? `${points.length} corners placed. Keep drawing, or close your walls.` : "Choose a starter shape or place your first corner.")}</p>
         {!closed && points.length >= 3 && <button type="button" className={styles.outlined} onClick={finishOutline}>Close walls</button>}
-        <button type="button" className={styles.primary} disabled={!canPlan} onClick={planRoom}>Plan this room →</button>
+        {onCancel&&<button type="button" className={styles.outlined} onClick={onCancel}>Cancel edits</button>}
+        <button type="button" className={styles.primary} disabled={!canPlan} onClick={planRoom}>{initialRoom?"Apply room changes":"Plan this room →"}</button>
       </div>
       <div className={styles.help}>
-        <p>Furniture is added after you choose your style. You can rearrange it in the room studio.</p>
+        <p>{initialRoom ? "Your furniture, products and budget are kept. If you move a wall through furniture, placement checks will help you rearrange it after applying." : "Furniture is added after you choose your style. You can rearrange it in the room studio."}</p>
         <p><kbd>Enter</kbd> Close walls · <kbd>Ctrl/⌘ Z</kbd> Undo · <kbd>Ctrl/⌘ Shift Z</kbd> Redo · <kbd>R</kbd> Door swing · <kbd>Delete</kbd> Remove selection</p>
       </div>
     </div>

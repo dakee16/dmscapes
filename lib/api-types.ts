@@ -33,6 +33,8 @@ export interface SaveRoomRequest {
     estimated?: boolean;
     /** Hand-drawn rooms only: the wall outline + doors/windows/closets. */
     outline?: RoomOutline | null;
+    studio?: import("./studio").StudioSettings;
+    editor?: import("./studio-save").SavedEditorState;
   };
   style: StyleId;
   budget: number;

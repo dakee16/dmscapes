@@ -1,0 +1,14 @@
+import Link from "next/link";
+import s from "./StudioLaunch.module.css";
+export default function StudioLaunch(){
+ return <section id="room-in-3d" className={s.launch} aria-labelledby="studio-launch-title">
+  <div className={s.copy}><p className={s.badge}>AVAILABLE NOW / INCLUDED WITH PRO</p><h2 id="studio-launch-title">Make room.<br/><em>In every dimension.</em></h2><p>Your floor plan has a new perspective. Arrange furniture in live 3D, set the atmosphere, and see your room from the inside before move-in.</p>
+  <div className={s.actions}><Link href="/plan" className={s.primary}>Open room planner ↗</Link><Link href="/pricing#pro">Explore Pro</Link></div><Link href="/blog/introducing-dormscape-3d-room-studio" className={s.guide}>Take the studio tour →</Link></div>
+  <div className={s.visual}><div className={s.topline}><span>ONE ROOM / TWO VIEWS</span><span>2D ↔ 3D</span></div><svg viewBox="0 0 540 350" role="img" aria-label="A floor plan becomes an isometric room with a bed, desk, and rug">
+   <defs><pattern id="studio-launch-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#ffffff" strokeOpacity=".08"/></pattern></defs><rect width="540" height="350" fill="url(#studio-launch-grid)"/>
+   <g fill="none" stroke="#d6dfff" strokeWidth="2"><path d="M35 60H178V250H35V60Z"/><rect x="46" y="72" width="48" height="92" rx="2"/><path d="M46 96H94"/><rect x="115" y="74" width="48" height="29"/><rect x="86" y="173" width="65" height="58" strokeDasharray="5 4"/><path d="M42 267H170M42 262V272M170 262V272"/></g><text x="106" y="293" textAnchor="middle" fill="#d6dfff" fontSize="12" fontFamily="monospace">THE PLAN</text>
+   <path d="M204 160H243M234 150L244 160L234 170" stroke="#ffdc60" strokeWidth="3" fill="none"/>
+   <g stroke="#172346" strokeWidth="2" strokeLinejoin="round"><path d="M270 164L386 105L509 165V240L391 302L270 240Z" fill="#bccdff"/><path d="M270 164V91L386 35V105Z" fill="#e9edff"/><path d="M386 35L509 95V165L386 105Z" fill="#d1dcff"/><path d="M270 164L386 105L509 165L391 228Z" fill="#dec59c"/><path d="M270 164V177L391 241L509 179V165L391 228Z" fill="#b38e65"/><path d="M300 150L336 133L385 158L350 177Z" fill="#faf8ef"/><path d="M300 150V161L350 188V177M350 188L385 169V158" fill="#eee7d5"/><path d="M310 146L335 139L346 145L324 155Z" fill="#d9c4fa"/><path d="M366 191L417 165L460 186L411 214Z" fill="#748bd5"/><path d="M432 123L460 109L487 122L459 137Z" fill="#f9dfab"/><path d="M435 125V150M483 125V150" fill="none"/><path d="M408 225L411 264L422 254L434 270L441 265L429 248L445 245Z" fill="#ffdc60"/></g>
+  </svg><div className={s.features}><span><b>Arrange</b>Move it. Make it fit.</span><span><b>Style</b>Finishes &amp; lighting.</span><span><b>Explore</b>Room, top &amp; inside.</span></div><p className={s.note}>The same layout in both views. Switching views uses no extra plan credits.</p></div>
+ </section>;
+}
