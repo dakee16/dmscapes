@@ -18,6 +18,7 @@ const LINKS = [
   { href: "/", label: "Home" },
   { href: "/colleges", label: "Colleges" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/pricing#room-in-3d", label: "3D Studio" },
 ] as const;
 
 const NAV_LINK =
@@ -41,10 +42,10 @@ function Crown({ className = "h-[18px] w-[18px]" }: { className?: string }) {
   );
 }
 
-function SoonBadge() {
+function ProBadge() {
   return (
     <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
-      Soon
+      Pro
     </span>
   );
 }
@@ -227,7 +228,7 @@ export default function Nav() {
                       <Crown className="h-[18px] w-[18px]" />
                       Room in 3D
                       <span className="ml-auto">
-                        <SoonBadge />
+                        <ProBadge />
                       </span>
                     </button>
 

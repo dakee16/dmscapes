@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { track } from "@/lib/analytics";
 
-// Email capture for the coming-soon "Room in 3D" premium tier on /pricing.
+// Legacy interest capture. The live 3D launch no longer renders this form.
 // Reuses the existing waitlist table/route with a source that flags it as
 // premium interest, so demand is measurable without a new table.
 const SOURCE = "premium_3d";

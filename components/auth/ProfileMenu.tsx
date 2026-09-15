@@ -57,7 +57,7 @@ export default function ProfileMenu({
   onShowRoom3D,
 }: {
   /** When provided, the dropdown gains a lower-priority "Room in 3D" item that
-   *  opens the coming-soon teaser. The site header passes this; the planner
+   *  opens the live 3D introduction. The site header passes this; the planner
    *  header omits it. */
   onShowRoom3D?: () => void;
 } = {}) {
@@ -284,7 +284,7 @@ export default function ProfileMenu({
                 <Crown />
                 Room in 3D
                 <span className="ml-auto rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
-                  Soon
+                  Pro
                 </span>
               </button>
             )}

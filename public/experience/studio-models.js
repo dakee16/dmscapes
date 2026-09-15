@@ -66,9 +66,9 @@ export function createModelKit() {
         }break;
       }
       case "rug":
-        box(g,w,h,d,cloth,0,h/2,0,.018);
-        for(const x of [-1,1])box(g,.05,.007,d*.92,white,x*w*.43,h+.004,0,.001);
-        for(const z of [-1,1])box(g,w*.9,.007,.045,white,0,h+.004,z*d*.43,.001);break;
+        box(g,w,h,d,cloth,0,h/2+.025,0,.012).castShadow=false;
+        for(const x of [-1,1])box(g,.05,.007,d*.92,white,x*w*.43,h+.029,0,.001);
+        for(const z of [-1,1])box(g,w*.9,.007,.045,white,0,h+.029,z*d*.43,.001);break;
       case "lamp":
         cyl(g,Math.min(w,d)*.32,Math.min(w,d)*.35,.07,metal,0,.04,0);
         cyl(g,.035,.035,h*.65,ink,0,h*.35,0);cyl(g,Math.min(w,d)*.22,Math.min(w,d)*.43,h*.38,white,0,h*.79,0);break;

@@ -1,5 +1,7 @@
 "use client";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
+import {useAuth} from "@/lib/auth-context";
+import {canUse3D} from "@/lib/plan";
 import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId } from "@/lib/types";
 import { useExperienceMotion } from "@/components/experience/MotionProvider";
 import { styleById } from "@/lib/styles";
@@ -16,6 +18,7 @@ type View={update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;zoom:(fa
 type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;onError:(message:string)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
 export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;onSelect?:(id:string|null)=>void;onMove?:(id:string,x:number,y:number)=>void;onFallback?:()=>void;}
 const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(props,ref){
+  const {profile,loading}=useAuth(),allowed=!loading&&canUse3D(profile);
   const node=useRef<HTMLDivElement>(null),view=useRef<View|null>(null),current=useRef(props);current.current=props;
   const {paused}=useExperienceMotion();const pausedRef=useRef(paused);pausedRef.current=paused;
   const [error,setError]=useState(""),[ready,setReady]=useState(false),[retry,setRetry]=useState(0);
@@ -33,6 +36,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   const latest=useRef(data);latest.current=data;
   useImperativeHandle(ref,()=>({exportPNG:()=>view.current?.exportPNG()??null,preset:m=>view.current?.preset(m),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);
   useEffect(()=>{
+    if(!allowed)return;
     let disposed=false;setError("");setReady(false);
     (async()=>{try{
       const path="/experience/studio-scene.js";
@@ -45,11 +49,12 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
       view.current=v;v.update(latest.current);v.setWalls(current.current.walls??"auto");v.setMoveMode(current.current.moveMode??false);setReady(true);
     }catch{if(!disposed)setError("3D is unavailable on this browser. Your room can still be edited in 2D.");}})();
     return()=>{disposed=true;view.current?.destroy();view.current=null;};
-  },[retry]);
+  },[retry,allowed]);
   useEffect(()=>{view.current?.update(data);});
   useEffect(()=>{view.current?.setReduced(paused);},[paused]);
   useEffect(()=>{view.current?.setWalls(props.walls??"auto");},[props.walls]);
   useEffect(()=>{view.current?.setMoveMode(props.moveMode??false);},[props.moveMode]);
+  if(!allowed)return null;
   return <div className={s.scene} data-testid="room-3d"><div ref={node} className={s.sceneMount}/>
     {!ready&&!error&&<div className={s.sceneMessage} role="status"><span className={s.loadingMark} aria-hidden="true">d.</span><strong>Making room for your ideas.</strong><span>Loading your 3D studio</span></div>}
     {error&&<div className={s.sceneMessage} role="status"><strong>Keep creating.</strong><p>{error}</p><div className={s.buttonRow}><button onClick={()=>setRetry(n=>n+1)}>Retry 3D</button>{props.onFallback&&<button onClick={props.onFallback}>Open 2D plan</button>}</div></div>}

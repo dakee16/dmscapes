@@ -1,3 +1,5 @@
+import studio from "./introducing-dormscape-3d-room-studio";
+import arrange3d from "./arrange-a-dorm-room-in-3d";
 import type { BlogPost } from "./types";
 import measure from "./how-to-measure-your-dorm-room";
 import packing from "./dorm-packing-list-nobody-gives-you";
@@ -15,6 +17,8 @@ import layoutIdeas from "./dorm-room-layout-ideas";
 // Everything else (index page, post pages, sitemap) reads from POSTS, so the
 // page structure never has to change.
 export const POSTS: BlogPost[] = [
+  studio,
+  arrange3d,
   measure,
   packing,
   cost,

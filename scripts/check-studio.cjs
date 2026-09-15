@@ -55,3 +55,8 @@ assert.equal(save.sanitizeEditor({...base,cartProducts:[{...catalog[0],affiliate
 assert.equal(save.sanitizeEditor({...base,cartProducts:[{...catalog[0],image_url:"javascript:alert(1)"}]}),null);
 if(process.argv[2]){const request=JSON.parse(fs.readFileSync(process.argv[2],"utf8"));assert(save.sanitizeStudio(request.room_dimensions.studio));assert(save.sanitizeEditor(request.room_dimensions.editor));assert.equal(request.room_dimensions.studio.floor,"walnut");assert.equal(request.room_dimensions.outline.openings.length,2);}
 console.log("PASS: room bounds, concave rooms, visibility, attachment movement/rotation, locks, catalog and saved-state validation.");
+
+const {canUse3D}=load(path.join(root,"lib/plan.ts"));
+for(const profile of [null,undefined,{plan:"free"},{plan:"flex"},{plan:"plus"},{plan:"unknown"},{plan:"plus",plus_features_unlocked:true}])assert.equal(canUse3D(profile),false);
+assert.equal(canUse3D({plan:"pro"}),true);
+console.log("PASS: interactive 3D entitlement is exclusive to Pro.");

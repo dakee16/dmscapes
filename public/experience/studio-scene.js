@@ -5,7 +5,7 @@ export function createStudioScene(container, options) {
   renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.6));renderer.setClearColor("#efeee8");
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
   renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
-  const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D room. Drag empty space to orbit. Select an item in Furnish for keyboard editing.");
+  const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D room. Drag empty space to orbit. Select an item in Arrange for keyboard editing.");
   canvas.style.cssText="display:block;width:100%;height:100%;touch-action:none;outline-offset:-4px";container.appendChild(canvas);
   const scene=new T.Scene(),camera=new T.PerspectiveCamera(42,1,.05,400),kit=createModelKit();
   const hemi=new T.HemisphereLight("#f3f6ff","#958368",2.3);scene.add(hemi);
@@ -78,7 +78,7 @@ export function createStudioScene(container, options) {
     const floor=new T.Mesh(new T.ShapeGeometry(shape),new T.MeshStandardMaterial({color:"#ffffff",map:floorTexture(settings.floor),roughness:.9,side:T.DoubleSide}));
     floor.rotation.x=-Math.PI/2;floor.receiveShadow=true;floor.userData={ownGeometry:true,ownMaterial:true};roomRoot.add(floor);
     const base=new T.Mesh(new T.ExtrudeGeometry(shape,{depth:.18,bevelEnabled:false}),kit.mat("#d7cbb9"));
-    base.rotation.x=-Math.PI/2;base.position.y=-.18;base.userData.ownGeometry=true;roomRoot.add(base);
+    base.rotation.x=-Math.PI/2;base.position.y=-.205;base.userData.ownGeometry=true;roomRoot.add(base);
     let area=0;outline.points.forEach((p,i)=>{const b=outline.points[(i+1)%outline.points.length];area+=p.x*b.y-b.x*p.y;});
     outline.points.forEach((a,i)=>{
       const b=outline.points[(i+1)%outline.points.length],len=Math.hypot(b.x-a.x,b.y-a.y);if(len<.01)return;const dx=(b.x-a.x)/len,dz=(b.y-a.y)/len;

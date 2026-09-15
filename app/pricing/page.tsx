@@ -3,8 +3,7 @@ import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
-import PremiumNotify from "@/components/site/PremiumNotify";
-import Room3DScene from "@/components/site/Room3DScene";
+import StudioLaunch from "@/components/site/StudioLaunch";
 import UpgradeButton from "@/components/site/UpgradeButton";
 import { SCHOOLS } from "@/lib/schools";
 import {
@@ -27,7 +26,7 @@ const ROOM_LAYOUTS = SCHOOLS.reduce(
 const ROOM_LAYOUTS_FLOOR = Math.floor(ROOM_LAYOUTS / 100) * 100;
 
 const DESCRIPTION =
-  "The Dormscape planner is free to try: 1 room plan, and saving your designs is always free. Plus is a one-time $4.99 unlock (5 plan credits, all vibes, all features, recharge for $2.99). Pro is $14.99 for unlimited plans.";
+  "The Dormscape planner is free to try: 1 room plan, and saving your designs is always free. Plus is a one-time $4.99 unlock (5 plan credits, all preset vibes and 2D tools, recharge for $2.99). Pro is $14.99 for unlimited plans, custom vibes, and live 3D Room Studio.";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -111,6 +110,7 @@ const PLUS_PERKS: { title: string; body: string }[] = [
 
 // Pro perks: the ceiling. Unlimited, everything, no metering.
 const PRO_PERKS: { title: string; body: string }[] = [
+  {title: "Live 3D Room Studio", body: "Arrange furniture, explore room, top, and inside views, and try finishes and lighting. Switch between the same 2D and 3D layout. Included with Pro, available now."},
   {
     title: "Unlimited room plans",
     body: "Generate as many rooms as you want. No credits, no counters, no recharges, ever.",
@@ -129,22 +129,6 @@ const PRO_PERKS: { title: string; body: string }[] = [
   },
 ];
 
-// Room in 3D roadmap perks: future tense on purpose, none of this ships yet.
-const PREMIUM_PERKS: { title: string; body: string }[] = [
-  {
-    title: "Walk around your room in true 3D",
-    body: "Spin it, drop to eye level, and see the space from any angle instead of just top-down.",
-  },
-  {
-    title: "Plan live with your roommate",
-    body: "Edit the same room together in real time, from different couches. Changes sync as you make them.",
-  },
-  {
-    title: "Swap finishes and see them render",
-    body: "Try a different rug, bedding, or wall color and watch the room update in 3D before you buy.",
-  },
-];
-
 function CheckIcon() {
   return (
     <svg
@@ -157,27 +141,6 @@ function CheckIcon() {
     >
       <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-  );
-}
-
-// The ink "coming soon" pill with the highlight lock, echoing the Room in 3D
-// nav item and its teaser modal.
-function SoonPill() {
-  return (
-    <span className="inline-flex items-center gap-1.5 rounded-full bg-ink px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-white">
-      <svg
-        viewBox="0 0 24 24"
-        className="h-3 w-3 text-highlight"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        aria-hidden="true"
-      >
-        <rect x="5" y="11" width="14" height="9" rx="2" />
-        <path d="M8 11V7a4 4 0 0 1 8 0v4" strokeLinecap="round" />
-      </svg>
-      Coming soon
-    </span>
   );
 }
 
@@ -522,7 +485,7 @@ export default function PricingPage() {
                 <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
                   Everything in Plus, plus
                 </p>
-                <PerkList perks={PRO_PERKS} />
+                <div id="pro" className="scroll-mt-28"><PerkList perks={PRO_PERKS} /></div>
               </div>
 
               <div className="mt-auto border-t border-ink/8 pt-6">
@@ -534,41 +497,7 @@ export default function PricingPage() {
             </section>
           </div>
 
-          {/* ROADMAP: Room in 3D. Not a pricing tier, honestly not shipped yet;
-              kept here so the coming-soon teaser and notify-me still live on the
-              pricing page. */}
-          <section id="room-in-3d" className="mt-6 scroll-mt-28 overflow-hidden rounded-2xl border border-ink/12 bg-card p-6 sm:p-8">
-            <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-              <div>
-                <div className="flex items-center gap-3">
-                  <h2 className="font-display text-2xl font-extrabold tracking-tight">
-                    Room in 3D
-                  </h2>
-                  <SoonPill />
-                </div>
-                <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
-                  On the roadmap, not a tier yet: your room and your
-                  roommate&rsquo;s, in one shared 3D space you can actually walk
-                  through. We haven&rsquo;t set a price, and early interest helps
-                  us pick a fair one.
-                </p>
-                <div className="mt-5">
-                  <PerkList perks={PREMIUM_PERKS} dotted />
-                </div>
-                <div className="mt-6 border-t border-ink/8 pt-6">
-                  <p className="text-sm font-semibold text-ink">Want it the day it drops?</p>
-                  <p className="mb-4 mt-1 text-[14px] leading-relaxed text-ink-soft">
-                    Leave your email and we&rsquo;ll tell you the moment Room in 3D
-                    goes live.
-                  </p>
-                  <PremiumNotify />
-                </div>
-              </div>
-              <div>
-                <Room3DScene />
-              </div>
-            </div>
-          </section>
+          <StudioLaunch />
 
           {/* Trust strip: why the core stays free. */}
           <div className="mt-6 rounded-xl border border-dashed border-ink/20 bg-card/60 p-6 text-center">

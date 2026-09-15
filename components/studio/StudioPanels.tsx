@@ -36,7 +36,7 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
       <button aria-pressed={hidden} onClick={()=>st.toggleHiddenItem(item.id)}>{hidden?"Show item":"Hide item"}</button>
     </div>
     {!item.movable&&<p className={s.note}>This is a fixed fixture. Its position stays anchored.</p>}
-    <div className={s.section}><h3>Position in feet</h3><div className={s.fieldGrid}>
+    <details className={s.disclosure}><summary>Position &amp; measurements</summary><div className={s.section}><h3>Position in feet</h3><div className={s.fieldGrid}>
       <NumberField label="X position" value={item.x_ft} max={room.lengthFt} disabled={!movable} onCommit={n=>position("x",n)}/>
       <NumberField label="Y position" value={item.y_ft} max={room.widthFt} disabled={!movable} onCommit={n=>position("y",n)}/>
     </div></div>
@@ -46,9 +46,10 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
       <NumberField label="Height (ft)" value={itemHeight(item)} min={.02} max={16} step={.05} onCommit={n=>st.updateItem3D(item.id,{height_ft:n})}/>
       <NumberField label="Above floor (ft)" value={itemElevation(item,items)} max={16} disabled={!movable} onCommit={n=>st.updateItem3D(item.id,{elevation_ft:n,parent_id:undefined})}/>
     </div></div>
+    </details>
     {movable&&hosts.length>0&&!["bed","bunk","desk","wardrobe","dresser","shelf"].includes(modelKind(item))&&<label className={s.field}>Place on a surface<select value={item.parent_id??""} onChange={e=>attach(e.target.value)}>
       <option value="">Floor / free placement</option>{hosts.map(h=><option key={h.id} value={h.id}>{h.label}</option>)}</select><span className={s.muted}>Placed accessories follow their surface when it moves.</span></label>}
-    <div className={s.section}><label className={s.field}>Preview color<input aria-label="Item preview color" type="color" value={item.material_color??"#b9c2d5"} onChange={e=>st.updateItem3D(item.id,{material_color:e.target.value})}/></label><p className={s.muted}>For visualization only. Product options and price stay the same.</p></div>
+    <details className={s.disclosure}><summary>Preview color</summary><div className={s.section}><label className={s.field}>Preview color<input aria-label="Item preview color" type="color" value={item.material_color??"#b9c2d5"} onChange={e=>st.updateItem3D(item.id,{material_color:e.target.value})}/></label><p className={s.muted}>For visualization only. Product options and price stay the same.</p></div></details>
     {issues.length>0&&<div className={s.warning} role="status"><strong>Check placement</strong><ul>{issues.map((v,i)=><li key={i}>{v}</li>)}</ul></div>}
     {product&&<div className={s.productPeek}>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={product.image_url} alt="" loading="lazy"/><div><strong>{product.name}</strong><span>${product.price.toFixed(2)}</span></div><button onClick={onShop}>Product details &amp; swaps ↗</button></div>}
   </>;

@@ -43,7 +43,7 @@ function SubscriberBanner({ tier }: { tier: "plus" | "pro" }) {
   const blurb =
     tier === "pro"
       ? "Unlimited plans and saves, every vibe, every feature. The whole studio is yours, for good."
-      : "Every vibe and every premium feature is yours, permanently. Here's to the rooms you'll design.";
+      : "All nine preset vibes and your Plus tools are yours, permanently. Pro adds live 3D and custom vibes. Here's to the rooms you'll design.";
 
   return (
     <section className="dm-plus mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">

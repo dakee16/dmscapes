@@ -1,119 +1,14 @@
 "use client";
-
+import Link from "next/link";
 import Modal from "@/components/site/Modal";
-
-// Coming-soon teaser for the shared-3D roommate feature. Opened from the
-// header's "Room in 3D" nav item; controlled entirely by the caller.
-import { useEffect, useRef } from "react";
-import Room3DScene from "@/components/site/Room3DScene";
-
-export default function RoommateTeaser({
-  open,
-  onClose,
-}: {
-  open: boolean;
-  onClose: () => void;
-}) {
-  const closeRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-    const t = setTimeout(() => closeRef.current?.focus(), 60);
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") onClose();
-    }
-    document.addEventListener("keydown", onKey);
-    return () => {
-      clearTimeout(t);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [open, onClose]);
-
-  if (!open) return null;
-
-  return (
-    <Modal
-      className="dm-roommate-backdrop fixed inset-0 z-[60] flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="roommate-teaser-title"
-      aria-describedby="roommate-teaser-description"
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-    >
-      <div className="dm-roommate-modal snap-in w-full border border-ink/15 bg-paper shadow-2xl">
-        <div className="flex items-start justify-between gap-4">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-            Coming soon
-          </p>
-          <button
-            ref={closeRef}
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-ink"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              aria-hidden="true"
-            >
-              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-            </svg>
-          </button>
-        </div>
-
-        <div className="dm-roommate-layout">
-          <div className="dm-roommate-copy">
-            <h2
-              id="roommate-teaser-title"
-              className="dm-dialog-title font-display"
-            >
-              Your room. Your roommate. <span className="hl">One 3D view.</span>
-            </h2>
-            <p id="roommate-teaser-description" className="mt-5 text-base leading-relaxed text-ink-soft">
-              Plan the same room together, from different couches. You each pick a
-              side and a vibe, the layout stays in sync in a shared 3D room, and
-              your budgets stay separate. We&rsquo;re building it now.
-            </p>
-
-            <button
-              type="button"
-              onClick={onClose}
-              className="mt-6 h-12 w-full cursor-pointer rounded-xl bg-ink text-base font-semibold text-white transition-colors hover:bg-cobalt"
-            >
-              Got it
-            </button>
-            <a
-              href="https://tiktok.com/@dorm.scape"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 block text-center text-sm font-medium text-ink-soft transition-colors hover:text-ink"
-            >
-              Follow on TikTok for updates
-            </a>
-          </div>
-          <div className="dm-roommate-visual">
-            {/* Angled 3D room preview: your side and theirs, one space. */}
-            <Room3DScene />
-            <div className="mt-3 flex items-center gap-5 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
-              <span className="inline-flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-cobalt" aria-hidden="true" />
-                Your side
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <span className="h-2 w-2 rounded-full bg-amber" aria-hidden="true" />
-                Their side
-              </span>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </Modal>
-  );
+import {useAuth} from "@/lib/auth-context";
+import {canUse3D} from "@/lib/plan";
+import {useUpgrade} from "@/lib/upgrade-context";
+import {usePlannerStore} from "@/lib/store";
+export default function RoommateTeaser({open,onClose}:{open:boolean;onClose:()=>void}){
+ const {profile}=useAuth(),{openUpgrade}=useUpgrade(),room=usePlannerStore(s=>s.room),style=usePlannerStore(s=>s.style);
+ if(!open)return null;
+ return <Modal role="dialog" aria-modal="true" aria-labelledby="studio-intro-title" className="fixed inset-0 z-[60] grid place-items-center bg-ink/40 p-5" onMouseDown={e=>{if(e.target===e.currentTarget)onClose();}}>
+ <div className="w-full max-w-lg border border-ink/15 bg-paper p-7 sm:p-10"><div className="flex justify-between gap-4"><p className="dm-eyebrow">Available now / Dormscape Pro</p><button onClick={onClose} aria-label="Close 3D introduction">✕</button></div><h2 id="studio-intro-title" className="dm-dialog-title mt-5">Your room. <em>Every angle.</em></h2><p className="my-5 leading-relaxed text-ink-soft">Arrange your furniture in live 3D. Try floor finishes and lighting, explore an inside view, and switch to the same layout in 2D.</p><p className="mb-6 text-sm text-ink-soft">Included with Pro. No extra generation credits to switch views. Shared links show a 2D plan to everyone; interactive 3D is for Pro members.</p>
+ {canUse3D(profile)?<Link className="dm-button w-full" href={room&&style?"/plan/result":"/plan"} onClick={onClose}>Open room planner ↗</Link>:<button className="dm-button w-full" onClick={()=>{onClose();openUpgrade("room-3d");}}>Explore 3D with Pro ↗</button>}<Link href="/blog/introducing-dormscape-3d-room-studio" onClick={onClose} className="mt-5 block text-center text-sm text-cobalt underline">See how the studio works</Link></div></Modal>;
 }
