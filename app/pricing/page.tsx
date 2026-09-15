@@ -457,7 +457,7 @@ export default function PricingPage() {
 
             {/* PRO TIER: the ceiling. Unlimited everything, amber-accented as the
                 top, most complete option. */}
-            <section className="relative flex h-full flex-col rounded-2xl border border-amber/50 bg-card p-6 shadow-[0_24px_60px_-34px_rgba(240,177,0,0.55)] sm:p-8">
+            <section id="pro" className="scroll-mt-28 relative flex h-full flex-col rounded-2xl border border-amber/50 bg-card p-6 shadow-[0_24px_60px_-34px_rgba(240,177,0,0.55)] sm:p-8">
               <div className="flex items-center justify-between gap-3">
                 <h2 className="font-display text-2xl font-extrabold tracking-tight">
                   Pro
@@ -485,7 +485,7 @@ export default function PricingPage() {
                 <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
                   Everything in Plus, plus
                 </p>
-                <div id="pro" className="scroll-mt-28"><PerkList perks={PRO_PERKS} /></div>
+                <PerkList perks={PRO_PERKS} />
               </div>
 
               <div className="mt-auto border-t border-ink/8 pt-6">
