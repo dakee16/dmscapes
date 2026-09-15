@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import Link from "next/link";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import type { Product } from "@/lib/types";
@@ -14,7 +13,7 @@ type Panel="furnish"|"style"|"room"|"shop"|"item"|"checks"|"help";
 export default function PlannerStudio({canvas,get2DPng,shopping,products,total,budget,subtitle,history,onReset,extras,unplaced}:{canvas:ReactNode;get2DPng:()=>string|null;shopping:ReactNode;products:Product[];total:number;budget:number;subtitle:string;history:{canUndo:boolean;canRedo:boolean;undo:()=>void;redo:()=>void};onReset:()=>void;extras?:ReactNode;unplaced?:ReactNode}){
   const room=usePlannerStore(st=>st.room)!,items=usePlannerStore(st=>st.furniture)??[];
   const style=usePlannerStore(st=>st.style)??"minimalist",hidden=usePlannerStore(st=>st.hiddenItemIds),excluded=usePlannerStore(st=>st.excluded)??[],locked=usePlannerStore(st=>st.lockedItemIds);
-  const selectedId=usePlannerStore(st=>st.selectedItemId),selectedCategory=usePlannerStore(st=>st.selectedCategory);
+  const selectedId=usePlannerStore(st=>st.selectedItemId);
   const [view,setView]=useState<"2d"|"3d">("3d"),[panel,setPanel]=useState<Panel>("furnish"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
   const [camera,setCamera]=useState<CameraView>("room"),[expanded,setExpanded]=useState(false),[mobileOpen,setMobileOpen]=useState(false),[query,setQuery]=useState(""),[resetConfirm,setResetConfirm]=useState(false);
   const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),previous=useRef(selectedId),closeRef=useRef<HTMLButtonElement>(null);
@@ -23,9 +22,10 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const selectedProduct=selected?(products.find(p=>p.id===selected.id)||products.find(p=>p.category===furnitureCategory(selected))):undefined;
   useEffect(()=>{if(selectedId&&selectedId!==previous.current){setPanel("item");}previous.current=selectedId;},[selectedId]);
   useEffect(()=>{
-    if(!expanded)return;const prev=document.body.style.overflow;document.body.style.overflow="hidden";
+    if(!expanded)return;const prev=document.body.style.overflow,focused=document.activeElement as HTMLElement|null;document.body.style.overflow="hidden";
+    root.current?.querySelector<HTMLButtonElement>('[aria-label="Exit expanded studio"]')?.focus();
     function key(e:KeyboardEvent){if(e.key==="Escape"){setExpanded(false);}}
-    document.addEventListener("keydown",key);return()=>{document.body.style.overflow=prev;document.removeEventListener("keydown",key);};
+    document.addEventListener("keydown",key);return()=>{document.body.style.overflow=prev;document.removeEventListener("keydown",key);focused?.focus();};
   },[expanded]);
   function select(id:string|null){
     const item=items.find(f=>f.id===id);
@@ -36,7 +36,13 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   function preset(next:CameraView){setCamera(next);scene.current?.preset(next);}
   const titles:Record<Panel,string>={furnish:"Furniture",style:"Style & light",room:"Room details",shop:"Shopping list",item:"Selected item",checks:"Placement checks",help:"Studio guide"};
   return <div ref={root} className={s.studio+" "+(expanded?s.expanded:"")} data-testid="planner-studio"
-    onKeyDown={e=>{const target=e.target as HTMLElement;if(target.closest("input,textarea,select,[contenteditable=true]"))return;
+    onKeyDown={e=>{const target=e.target as HTMLElement;
+      if(expanded&&e.key==="Tab"){
+        const nodes=Array.from(root.current?.querySelectorAll<HTMLElement>('button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),textarea:not(:disabled),[tabindex="0"]')??[]).filter(n=>n.getClientRects().length>0&&!n.closest('[aria-hidden="true"]'));
+        const first=nodes[0],last=nodes[nodes.length-1];
+        if(e.shiftKey&&target===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&target===last){e.preventDefault();first?.focus();}
+      }
+      if(target.closest("input,textarea,select,[contenteditable=true]"))return;
       if(view==="3d"&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="z"){e.preventDefault();e.stopPropagation();e.shiftKey?history.redo():history.undo();}
       if(e.key==="Escape"){setMobileOpen(false);setMoveMode(false);}}}>
     <header className={s.header}>
@@ -88,7 +94,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
             <button className={s.primary} onClick={()=>open("shop")}>Browse products ↗</button>
           </>}
           {panel==="item"&&selected&&<ItemInspector key={selected.id} item={selected} items={items} room={room} product={selectedProduct} issues={issues.filter(i=>i.id===selected.id).map(i=>i.message)} moveMode={moveMode}
-            onFocus={()=>{setCamera("room");scene.current?.focus(selected.id);}} onMoveMode={()=>{setView("3d");setMoveMode(v=>!v);setMobileOpen(false);}} onShop={()=>open("shop")}/>}
+            onFocus={()=>{setCamera("room");scene.current?.focus(selected.id);}} onMoveMode={()=>{setView("3d");if(camera==="inside")preset("room");setMoveMode(v=>!v);setMobileOpen(false);}} onShop={()=>open("shop")}/>}
           {panel==="item"&&!selected&&<p className={s.note}>Select furniture in the room or open Furnish to choose an item.</p>}
           {panel==="room"&&<RoomDetails room={room}/>}
           {panel==="style"&&<StyleDetails room={room}/>}

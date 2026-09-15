@@ -57,7 +57,7 @@ export function createStudioScene(container, options) {
         m.group.position.y=m.item.elevation+(options.reduced?0:(1-q)*(1-q)*1.3);m.group.scale.setScalar(.94+.06*q);if(q<1)assembling=true;}
       if(!assembling)assemblyStart=0;else more=true;
     }
-    cameraUpdate();showLabel();renderer.render(scene,camera);if(more)request();
+    cameraUpdate();camera.updateMatrixWorld();showLabel();renderer.render(scene,camera);if(more)request();
   }
   function clearRoom(){
     for(const g of roomRoot.children)g.traverse(o=>{if(o.userData.ownGeometry)o.geometry?.dispose();if(o.userData.ownMaterial){o.material?.map?.dispose();o.material?.dispose();}});
@@ -128,7 +128,10 @@ export function createStudioScene(container, options) {
   function preset(value,immediate=false){
     if(!data)return;mode=value;cancelDrag();
     if(value==="inside"){eye.set(data.interior.x,Math.min(data.settings.ceilingFt-.5,4.8),data.interior.y);angle=0;polar=Math.PI/2;tween=null;request();return;}
-    const l=data.room.lengthFt,w=data.room.widthFt,to=new T.Vector3(l/2,.8,w/2),r=Math.max(l,w)*1.38/Math.min(width/height,1.3);
+    const l=data.room.lengthFt,w=data.room.widthFt,h=data.settings.ceilingFt,aspect=width/height;
+    const vfov=camera.fov*Math.PI/180,hfov=2*Math.atan(Math.tan(vfov/2)*aspect);
+    const to=new T.Vector3(l/2,value==="top"?0:h*.38,w/2);
+    const r=value==="top"?Math.max(l/aspect,w)*.56/Math.tan(vfov/2):Math.hypot(l/2,w/2,h/2)*1.08/Math.sin(Math.min(vfov,hfov)/2);
     const toA=value==="top"?0:.7,toP=value==="top"?.001:.94;
     if(immediate||options.reduced){angle=toA;polar=toP;radius=r;target.copy(to);tween=null;}
     else tween={start:performance.now(),a:angle,p:polar,r:radius,from:target.clone(),to,toA,toP,toR:r};request();
