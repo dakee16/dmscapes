@@ -33,6 +33,8 @@ import longTriple from "./long-triple-27x14-v1.json";
 import compactQuadBunked from "./compact-quad-bunked-15x13-v1.json";
 import standardQuad from "./standard-quad-25x17-v1.json";
 import longQuad from "./long-quad-33x14-v1.json";
+import { fitTemplateToRoom, layoutPenalty, TEMPLATE_NOMINAL_DIMS } from "@/lib/layout-fit";
+import { isBunkBed } from "@/lib/bedding";
 
 export interface FurnitureItem {
   id: string;
@@ -49,6 +51,8 @@ export interface FurnitureItem {
   elevation_ft?: number;
   material_color?: string;
   parent_id?: string;
+  /** Catalog choice used to size this piece; preserves later manual size edits. */
+  product_id?: string;
   movable: boolean;
   built_in: boolean;
   color_category: string;
@@ -160,6 +164,22 @@ export function matchTemplate(room: RoomInput): MatchResult {
   );
   const occupancyExact = byOccupants.length > 0;
   const occupantPool = occupancyExact ? byOccupants : ALL_TEMPLATES;
+
+  if (room.occupants === 3 || room.occupants === 4) {
+    const ranked = occupantPool.map(template => {
+      const fitted = fitTemplateToRoom(template.furniture, template.template_id, length, width);
+      const penalty = layoutPenalty(fitted, length, width);
+      // Prefer separate beds when they fit comfortably; bunks preserve floor space in tight rooms.
+      const nominal = TEMPLATE_NOMINAL_DIMS[template.template_id];
+      const score = penalty + template.furniture.filter(isBunkBed).length * 15 +
+        Math.hypot(length-nominal.length, width-nominal.width) * .5;
+      return { template, penalty, score };
+    }).sort((a, b) => a.score - b.score);
+    const { template, penalty } = ranked[0];
+    const exact = distanceToTemplate(length, width, template.room_constraints) === 0 && penalty < 10;
+    return { template, template_id: template.template_id, exact_match: exact,
+      confidence: exact ? 1 : Math.max(.5, .99 - penalty / 1000) };
+  }
 
   // 2. Soft room-type filter.
   const pool = filterByRoomType(occupantPool, room.room_type);

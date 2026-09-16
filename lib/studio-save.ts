@@ -64,5 +64,6 @@ export function sanitizeItem3D(raw:Record<string,unknown>):Partial<FurnitureItem
   if(raw.elevation_ft!==undefined){if(!finite(raw.elevation_ft,0,16))return null;out.elevation_ft=raw.elevation_ft as number;}
   if(raw.material_color!==undefined){if(typeof raw.material_color!=="string"||!/^#[0-9a-f]{6}$/i.test(raw.material_color))return null;out.material_color=raw.material_color;}
   if(raw.parent_id!==undefined){if(typeof raw.parent_id!=="string"||raw.parent_id.length>60)return null;out.parent_id=raw.parent_id;}
+  if(raw.product_id!==undefined){if(typeof raw.product_id!=="string"||raw.product_id.length>100)return null;out.product_id=raw.product_id;}
   return out;
 }

@@ -1,5 +1,6 @@
 import type { FurnitureItem, ProductCategory, RoomOutline, SelectedRoom } from "./types";
 import { furnitureCategory } from "./highlight";
+import { isBunkBed } from "./bedding";
 import { footprint, rectInsidePolygon } from "@/components/canvas/geometry";
 
 export interface StudioSettings {
@@ -23,7 +24,9 @@ export function roomOutline(room: SelectedRoom): RoomOutline {
 }
 export function modelKind(item: FurnitureItem): string {
   const t = item.type.toLowerCase();
-  if (/bed|bunk/.test(t)) return /bunk/.test(t) ? "bunk" : "bed";
+  if (["art","lights","lamp","chair","storage","pillow","fridge"].includes(t)) return t;
+  if (isBunkBed(item)) return "bunk";
+  if (t === "bed") return "bed";
   if (/desk$|table/.test(t)) return "desk";
   if (/chair/.test(t)) return "chair";
   if (/wardrobe|closet/.test(t)) return "wardrobe";
@@ -44,18 +47,21 @@ export function itemHeight(f: FurnitureItem): number {
   return ({bed:2,bunk:5.7,desk:2.5,chair:3,wardrobe:6,dresser:3.1,shelf:4.5,rug:.035,
     lamp:1.5,mirror:4.8,art:2.5,plant:2,fridge:2.6,pillow:.4,lights:.15,storage:1.3} as Record<string,number>)[modelKind(f)] ?? 1.5;
 }
+export function bedSurfaceHeight(f: FurnitureItem): number {
+  return isBunkBed(f) ? itemHeight(f)*.3+.195 : itemHeight(f)-.085;
+}
 export function itemElevation(f: FurnitureItem, items: FurnitureItem[]): number {
   if (typeof f.elevation_ft === "number") return f.elevation_ft;
   const k = modelKind(f);
   if (k === "art" || k === "lights") return k === "lights" ? 6.5 : 3.4;
   if (!["lamp","plant","pillow"].includes(k)) return 0;
   const fp = footprint(f), cx=fp.x+fp.w/2, cy=fp.y+fp.h/2;
-  const host = items.find(p => p.id!==f.id && ["desk","dresser","bed","shelf"].includes(modelKind(p)) &&
+  const host = items.find(p => p.id!==f.id && ["desk","dresser","bed","bunk","shelf"].includes(modelKind(p)) &&
     (()=>{const b=footprint(p);return b.w*b.h>fp.w*fp.h && cx>=b.x&&cx<=b.x+b.w&&cy>=b.y&&cy<=b.y+b.h;})());
-  return host ? itemHeight(host) : 0;
+  return host ? ["bed","bunk"].includes(modelKind(host)) ? bedSurfaceHeight(host) : itemHeight(host) : 0;
 }
 export function visibleFurniture(items: FurnitureItem[], hidden: string[], excluded: ProductCategory[]): FurnitureItem[] {
-  return items.filter(f=>!hidden.includes(f.id) && (f.built_in || !furnitureCategory(f) || !excluded.includes(furnitureCategory(f)!)));
+  return items.filter(f=>!hidden.includes(f.id) && (f.built_in || f.type === "custom" || !furnitureCategory(f) || !excluded.includes(furnitureCategory(f)!)));
 }
 export function constrainedPosition(f: FurnitureItem, x: number, y: number, room: SelectedRoom, snap: boolean): {x:number;y:number} {
   const b=footprint(f), round=(n:number)=>snap?Math.round(n*2)/2:Math.round(n*100)/100;
@@ -84,8 +90,8 @@ export function placementIssues(items: FurnitureItem[], room: SelectedRoom, sett
     for(const other of items){
       if(other.id<=f.id || ["rug","art","lights","mirror"].includes(modelKind(other)))continue;
       const oe=itemElevation(other,items);
-      const underBed=(modelKind(f)==="storage" && modelKind(other)==="bed" && e+itemHeight(f)<itemHeight(other)*.7)||
-        (modelKind(other)==="storage" && k==="bed" && oe+itemHeight(other)<itemHeight(f)*.7);
+      const underBed=(modelKind(f)==="storage" && ["bed","bunk"].includes(modelKind(other)) && e+itemHeight(f)<(isBunkBed(other)?itemHeight(other)*.35:itemHeight(other)*.7))||
+        (modelKind(other)==="storage" && ["bed","bunk"].includes(k) && oe+itemHeight(other)<(isBunkBed(f)?itemHeight(f)*.35:itemHeight(f)*.7));
       if(!underBed && overlaps(b,footprint(other)) && e<oe+itemHeight(other)-.06 && oe<e+itemHeight(f)-.06){
         add(f.id,"Overlaps "+other.label);add(other.id,"Overlaps "+f.label);
       }

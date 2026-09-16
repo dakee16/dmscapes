@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
-import { matchTemplate, ALL_TEMPLATES } from "@/templates/template-matcher";
+import { matchTemplate } from "@/templates/template-matcher";
 import { productsFor, productById, tierForBudget, totalFor, extrasFor, isExtraCategory } from "@/lib/catalog";
 import { isPlusStyle } from "@/lib/styles";
 import { useAuth } from "@/lib/auth-context";
@@ -19,6 +19,7 @@ import { roomTypeLabel } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
 import { fitTemplateToRoom } from "@/lib/layout-fit";
 import { placeInPolygon } from "@/lib/place-in-polygon";
+import { syncProductFurniture } from "@/lib/product-model";
 import type RoomCanvasType from "@/components/canvas/RoomCanvas";
 import type { RoomCanvasHandle } from "@/components/canvas/RoomCanvas";
 import { useLayoutHistory } from "@/components/canvas/useLayoutHistory";
@@ -225,6 +226,13 @@ export default function ResultPage() {
     [products, excluded]
   );
 
+  useEffect(() => {
+    if (!room || !furniture || excluded === null) return;
+    const placedCustom = customItems.filter(p => furniture.some(f => f.id === p.id));
+    const next = syncProductFurniture(furniture, [...cartProducts, ...placedCustom], room);
+    if (next !== furniture) usePlannerStore.setState({furniture:next});
+  }, [room, furniture, cartProducts, customItems, excluded]);
+
   if (!hydrated || !room || !style || !furniture || !templateId) {
     return <Skeleton />;
   }
@@ -312,16 +320,13 @@ export default function ResultPage() {
   );
 
   function handleReset() {
-    // Drawn polygon: re-run the wall placer. Otherwise restore the template.
-    if (drawnOutline && match && room) {
-      resetLayout(placeInPolygon(match.template.furniture, drawnOutline, room.lengthFt, room.widthFt));
-      return;
-    }
-    const t = ALL_TEMPLATES.find((x) => x.template_id === templateId);
-    if (t && room)
-      resetLayout(
-        fitTemplateToRoom(t.furniture, t.template_id, room.lengthFt, room.widthFt)
-      );
+    if (!match || !room) return;
+    const placed = drawnOutline
+      ? placeInPolygon(match.template.furniture, drawnOutline, room.lengthFt, room.widthFt)
+      : fitTemplateToRoom(match.template.furniture, match.template_id, room.lengthFt, room.widthFt);
+    usePlannerStore.setState({templateId:drawnOutline ? "custom-drawn" : match.template_id});
+    const extras=furniture!.filter(f=>f.id.startsWith("cart-")||customItems.some(p=>p.id===f.id));
+    resetLayout(syncProductFurniture([...placed,...extras],allCartProducts,room));
   }
 
   // One free regeneration per vibe (same description, new pass); after that each
@@ -477,4 +482,3 @@ export default function ResultPage() {
     </div>
   );
 }
-

@@ -24,6 +24,7 @@ import type { FurnitureItem, ProductCategory, RoomOutline } from "@/lib/types";
 import { CATEGORY_COLORS, styleById } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
+import { bedLabel, isBunkBed } from "@/lib/bedding";
 import { clamp, footprint, invalidItems, layerOf, pointInPolygon } from "./geometry";
 
 import { createPortal } from "react-dom";
@@ -850,17 +851,20 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 const w = fp.w * pxFt, h = fp.h * pxFt;
                 if (w < 50 || h < 28 || hiddenItemIds.includes(f.id) || !["bed", "desk", "dresser", "rug"].includes(f.type)) return null;
                 const size = Math.max(9, Math.min(11, w * .14));
-                const width = Math.min(w-8, (f.label.length+2)*size*.61);
+                const stacked = isBunkBed(f) && w < 125;
+                const label = stacked ? bedLabel(f).replace(" · ", "\n") : bedLabel(f);
+                const labelH = stacked ? 30 : 16;
+                const width = Math.min(w-8, (Math.max(...label.split("\n").map(line=>line.length))+2)*size*.61);
                 const x = (w-width)/2;
-                const y = (f.type === "desk" ? h*.85 : h/2) - 8;
+                const y = (f.type === "desk" ? h*.85 : h/2) - labelH/2;
                 return <Group
                   key={`label-${f.id}`}
                   ref={node => { if (node) labelRefs.current.set(f.id, node); else labelRefs.current.delete(f.id); }}
                   x={PAD + fp.x*pxFt}
                   y={PAD + fp.y*pxFt}
                 >
-                  <Rect x={x} y={y-1} width={width} height={18} fill="#fffffff0" cornerRadius={2} />
-                  <Text x={x+2} y={y} width={width-4} height={16} text={f.label} align="center" verticalAlign="middle" fontSize={size} fontFamily={labelFont} fontStyle="500" letterSpacing={.2} fill={INK} wrap="none" ellipsis />
+                  <Rect x={x} y={y-1} width={width} height={labelH+2} fill="#fffffff0" cornerRadius={2} />
+                  <Text x={x+2} y={y} width={width-4} height={labelH} text={label} align="center" verticalAlign="middle" fontSize={size} fontFamily={labelFont} fontStyle="500" letterSpacing={.2} fill={INK} wrap="none" ellipsis />
                 </Group>;
               })}
             </Group>

@@ -12,7 +12,7 @@ function load(file) {
   if (file.endsWith(".json")) return require(file);
   if (cache.has(file)) return cache.get(file).exports;
   const module = {exports:{}}; cache.set(file,module);
-  const code = ts.transpileModule(fs.readFileSync(file,"utf8"), {compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX}}).outputText;
+  const code = ts.transpileModule(fs.readFileSync(file,"utf8"), {compilerOptions:{esModuleInterop:true,target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX}}).outputText;
   new Function("require","module","exports",code)(id=>id.startsWith("@/")?load(path.join(root,id.slice(2))):id.startsWith(".")?load(path.resolve(path.dirname(file),id)):require(id),module,module.exports);
   return module.exports;
 }
@@ -34,6 +34,8 @@ assert.equal(studio.placementIssues([item,lamp],room,studio.DEFAULT_STUDIO).filt
 store.setState({room,furniture:[item,lamp],lockedItemIds:[],hiddenItemIds:[]});
 store.getState().moveItem("desk",3,3);
 assert.equal(store.getState().furniture[1].x_ft,3.5);
+store.getState().updateItem3D("desk",{height_ft:3});
+assert.equal(store.getState().furniture[1].elevation_ft,3,"Accessories follow a resized surface");
 store.setState({furniture:[item,lamp]});
 store.getState().rotateItem("desk",1);
 assert.equal(store.getState().furniture[1].x_ft,4);
@@ -80,3 +82,36 @@ store.getState().updateRoomGeometry({...edited,openings:[{kind:"door",edge:8,off
 assert.equal(store.getState().room,committed,"Invalid geometry must not change the stored design");
 console.log("PASS: room editing validation, geometry updates, furniture and cart preservation, and origin translation.");
 
+const {matchTemplate}=load(path.join(root,"templates/template-matcher.ts"));
+const {fitTemplateToRoom,layoutPenalty}=load(path.join(root,"lib/layout-fit.ts"));
+const {isBunkBed,bedLabel}=load(path.join(root,"lib/bedding.ts"));
+const {syncProductFurniture,productVisual}=load(path.join(root,"lib/product-model.ts"));
+const {productsFor}=load(path.join(root,"lib/catalog.ts"));
+const {invalidItems}=load(path.join(root,"components/canvas/geometry.ts"));
+for(const [occupants,lengthFt,widthFt,expectedBunks] of [[3,13,12,1],[3,17,16,0],[3,27,14,0],[4,15,13,2],[4,25,17,0],[4,33,14,0],[4,17,25,0]]){
+  const room={type:"suite",occupants,lengthFt,widthFt,source:"manual"};
+  const match=matchTemplate({length_ft:lengthFt,width_ft:widthFt,occupants,room_type:room.type});
+  const items=fitTemplateToRoom(match.template.furniture,match.template_id,lengthFt,widthFt);
+  const beds=items.filter(f=>f.type==="bed");
+  assert.equal(beds.reduce((n,f)=>n+(isBunkBed(f)?2:1),0),occupants,"Every occupant needs a sleeping space");
+  assert.equal(beds.filter(isBunkBed).length,expectedBunks,`Bed configuration for ${occupants} / ${lengthFt}×${widthFt}`);
+  assert(layoutPenalty(items,lengthFt,widthFt)<10,"Layout must fit without overlapping furniture");
+  for(const bed of beds.filter(isBunkBed)){assert.equal(studio.modelKind(bed),"bunk");assert.match(bedLabel(bed),/2 beds/);}
+  const products=productsFor("minimalist","mid");
+  const synced=syncProductFurniture(items,products,room);
+  assert.equal(syncProductFurniture(synced,products,room),synced,"Product synchronization must stabilize");
+  assert(layoutPenalty(synced,lengthFt,widthFt)<15,"Actual product sizes must not introduce floor collisions");
+  assert(synced.some(f=>f.product_category==="curtains"),"Cart curtains must appear");
+  const accessory=synced.find(f=>f.product_category==="desk_accessories");assert(accessory?.parent_id,"Desk accessories must sit on a surface");
+  const rug=synced.find(f=>f.type==="rug");assert.equal(rug.width_ft,products.find(p=>p.category==="rug").width_ft);
+  assert.deepEqual(synced.filter(f=>f.built_in),items.filter(f=>f.built_in),"Shopping for bedding must not resize the provided bed");
+  const edited=synced.map(f=>f.id===rug.id?{...f,width_ft:3.8,x_ft:1}:f);
+  assert.equal(syncProductFurniture(edited,products,room),edited,"Manual sizes and positions survive rerenders");
+}
+const testProduct={...catalog[0],category:"desk_lamp",name:"Green glass bankers lamp",description:"",color:"green"};
+assert.equal(productVisual(testProduct).variant,"banker");
+assert.equal(productVisual({...testProduct,name:"Pink mushroom lamp"}).variant,"mushroom");
+assert.equal(productVisual({...testProduct,category:"wall_decor",name:"Floating shelves"}).kind,"wall-shelf");
+assert.equal(productVisual({...testProduct,category:"throw",name:"Cotton knitted throw blanket"}).kind,"blanket");
+assert(invalidItems([{...item,id:"bed",type:"bed",width_ft:7,length_ft:3}, {...item,id:"overlapping-desk",x_ft:3,y_ft:2.5}],15,12).size>0,"A desk overlapping a bed is not a rider");
+console.log("PASS: triple/quad capacity and clearance, portrait layouts, legacy bunks, cart dimensions, missing categories, and product variants.");

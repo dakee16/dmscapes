@@ -7,13 +7,13 @@ import { useExperienceMotion } from "@/components/experience/MotionProvider";
 import { styleById } from "@/lib/styles";
 import { footprint, pointInPolygon } from "@/components/canvas/geometry";
 import { constrainedPosition, itemElevation, itemHeight, modelKind, roomOutline, studioSettings, visibleFurniture } from "@/lib/studio";
-import { furnitureCategory } from "@/lib/highlight";
+import { productForFurniture, productVisual } from "@/lib/product-model";
 import s from "./Studio.module.css";
 import BrandLoader from "@/components/site/BrandLoader";
 
 export type CameraView="room"|"top"|"inside";
 export interface RoomSceneHandle {exportPNG:()=>string|null;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;}
-type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;footW:number;footD:number;locked:boolean};
+type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;footW:number;footD:number;locked:boolean;bare:boolean;product?:ReturnType<typeof productVisual>};
 type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];selectedId:string|null;interior:{x:number;y:number}};
 type View={update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;exportPNG:()=>string;destroy:()=>void};
 type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;onError:(message:string)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
@@ -30,9 +30,15 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   }
   const data:SceneData={room:props.room,outline,settings,interior,palette:styleById(props.style).palette,
     selectedId:props.selectedId,items:visibleFurniture(props.items,props.hidden,props.excluded).map(f=>{
-      const b=footprint(f),product=props.products?.find(p=>p.id===f.id)||props.products?.find(p=>p.category===furnitureCategory(f));
-      const color=/^#[0-9a-f]{6}$/i.test(product?.color??"")?product!.color:undefined;
-      return {...f,material_color:f.material_color||color,kind:modelKind(f),height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:Boolean(props.readOnly)||props.locked.includes(f.id)};
+      const b=footprint(f),choice=productForFurniture(f,props.products??[]);
+      const product=choice && (!f.built_in || f.type==="bed") ? productVisual(choice) : undefined;
+      const kind=f.built_in?modelKind(f):product?.kind??modelKind(f);
+      let rotation=f.rotation_deg;
+      if(["art","wall-shelf","macrame","mirror","curtains","lights"].includes(kind)){
+        if(b.w>b.h && Math.min(b.y,props.room.widthFt-b.y-b.h)<.5)rotation=b.y<props.room.widthFt/2?0:180;
+        else if(b.h>b.w && Math.min(b.x,props.room.lengthFt-b.x-b.w)<.5)rotation=b.x<props.room.lengthFt/2?270:90;
+      }
+      return {...f,rotation_deg:rotation,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||product?.color,kind,height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:Boolean(props.readOnly)||props.locked.includes(f.id)};
     })};
   const latest=useRef(data);latest.current=data;
   useImperativeHandle(ref,()=>({exportPNG:()=>view.current?.exportPNG()??null,preset:m=>view.current?.preset(m),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);
@@ -62,4 +68,3 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   </div>;
 });
 export default RoomScene;
-

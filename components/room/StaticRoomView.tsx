@@ -1,5 +1,6 @@
 import type { FurnitureItem, Point, RoomOutline } from "@/lib/types";
 import { CATEGORY_COLORS } from "@/lib/styles";
+import { bedLabel, isBunkBed } from "@/lib/bedding";
 
 // Server-renderable top-down room view for the read-only share page (/room/[id]).
 // Same coordinate convention as the Konva canvas (templates/README.md):
@@ -132,6 +133,7 @@ export default function StaticRoomView({
               opacity={opacity}
               stroke="#17172b"
               strokeOpacity={0.35}
+              strokeDasharray={isBunkBed(f) ? "5 3" : undefined}
             />
             {showLabel && (
               <text
@@ -143,7 +145,7 @@ export default function StaticRoomView({
                 fill="#17172b"
                 style={{ fontFamily: "var(--font-plex-mono), monospace" }}
               >
-                {f.label.length > 18 ? `${f.label.slice(0, 17)}…` : f.label}
+                {bedLabel(f).length > 18 ? `${bedLabel(f).slice(0, 17)}…` : bedLabel(f)}
               </text>
             )}
           </g>

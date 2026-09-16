@@ -7,7 +7,7 @@ export function createStudioScene(container, options) {
   renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;
   const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D room. Drag empty space to orbit. Select an item in Arrange for keyboard editing.");
   canvas.style.cssText="display:block;width:100%;height:100%;touch-action:none;outline-offset:-4px";container.appendChild(canvas);
-  const scene=new T.Scene(),camera=new T.PerspectiveCamera(42,1,.2,400),kit=createModelKit();
+  const scene=new T.Scene(),camera=new T.PerspectiveCamera(42,1,.2,400),kit=createModelKit({onTexture:request});
   const hemi=new T.HemisphereLight("#f3f6ff","#958368",2.3);scene.add(hemi);
   const sun=new T.DirectionalLight("#fff3dc",3.1);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);sun.shadow.bias=-.0003;sun.shadow.normalBias=.025;scene.add(sun,sun.target);
   const fill=new T.DirectionalLight("#cedcff",1.1);scene.add(fill);
@@ -19,7 +19,7 @@ export function createStudioScene(container, options) {
   const guides=new T.Group();scene.add(guides);
   const lineMat=new T.LineDashedMaterial({color:0x2b4eff,dashSize:.15,gapSize:.1,transparent:true,opacity:.65});
   const label=document.createElement("div");label.className="dm-studio-scene-label";
-  label.style.cssText="position:absolute;pointer-events:none;z-index:2;padding:7px 10px;background:#17172b;color:white;font:12px/1.4 system-ui;border-radius:3px;max-width:220px;white-space:nowrap;display:none;transform:translate(-50%,-100%)";
+  label.style.cssText="position:absolute;pointer-events:none;z-index:2;padding:7px 10px;background:#17172b;color:white;font:12px/1.4 system-ui;border-radius:3px;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:none;transform:translate(-50%,-100%)";
   container.appendChild(label);
   let width=1,height=1,angle=.7,polar=.94,radius=25,mode="room",walls="auto",target=new T.Vector3(),eye=new T.Vector3();
   let drag=null,pointers=new Map(),pinch=0,tween=null,dragMode=false;
@@ -146,7 +146,7 @@ export function createStudioScene(container, options) {
     if(key!==roomKey){roomKey=key;buildRoom();}
     const ids=new Set();
     for(const f of next.items){
-      ids.add(f.id);const key=JSON.stringify([f.kind,f.width_ft,f.length_ft,f.height,f.material_color,next.palette]);let m=meshes.get(f.id);
+      ids.add(f.id);const key=JSON.stringify([f.kind,f.width_ft,f.length_ft,f.height,f.material_color,f.product,f.bare,next.palette]);let m=meshes.get(f.id);
       if(!m||m.key!==key){if(m)itemRoot.remove(m.group);const group=kit.build(f,next.palette);itemRoot.add(group);m={group,key,item:f};meshes.set(f.id,m);}
       m.item=f;
       if(drag?.id!==f.id){m.group.position.set(f.x_ft+f.footW/2,f.elevation,f.y_ft+f.footD/2);m.group.rotation.y=-f.rotation_deg*Math.PI/180;}
@@ -235,4 +235,3 @@ export function createStudioScene(container, options) {
       clearGuides();lineMat.dispose();marker.geometry.dispose();marker.material.dispose();clearRoom();shadowOnly.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();label.remove();canvas.remove();}
   };
 }
-

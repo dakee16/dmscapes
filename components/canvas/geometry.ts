@@ -49,6 +49,17 @@ function centerInside(inner: Footprint, outer: Footprint): boolean {
   return cx >= outer.x && cx <= outer.x + outer.w && cy >= outer.y && cy <= outer.y + outer.h;
 }
 
+/** Only real accessories can ride furniture; overlapping desks are collisions. */
+export function furnitureHost(f: FurnitureItem, items: FurnitureItem[]): FurnitureItem | undefined {
+  const hostTypes: Record<string, string[]> = {
+    desk_lamp: ["desk", "dresser"], throw_pillows: ["bed", "bunk"], storage_bins: ["bed", "bunk"],
+  };
+  const types = hostTypes[f.type];
+  return items.find(c => c.id !== f.id && (f.parent_id === c.id ||
+    (types?.includes(c.type) && centerInside(footprint(f), footprint(c)) &&
+      footprint(c).w * footprint(c).h > footprint(f).w * footprint(f).h)));
+}
+
 // ---- Polygon (hand-drawn room) geometry -------------------------------------
 // A drawn room is a closed rectilinear ring of Points (ft). These replace the
 // simple `x + w <= roomL` bounds test with real polygon containment so an
@@ -137,25 +148,13 @@ export function rectInsidePolygon(fp: Footprint, poly: Point[]): boolean {
  * is not a real overlap.
  */
 function riderIds(solids: FurnitureItem[]): Set<string> {
-  const riders = new Set<string>();
-  for (const f of solids) {
-    const r = footprint(f);
-    for (const c of solids) {
-      if (c === f) continue;
-      const cr = footprint(c);
-      if (cr.w * cr.h > r.w * r.h && centerInside(r, cr)) {
-        riders.add(f.id);
-        break;
-      }
-    }
-  }
-  return riders;
+  return new Set(solids.filter(f => furnitureHost(f, solids)).map(f => f.id));
 }
 
 /**
  * Ids of items that are out of bounds or colliding.
- * Rules: only solid, non-rider items collide; a pair is additionally exempt
- * when either center sits inside the other (belt and suspenders for riders).
+ * Rules: only solid, non-rider items collide. Containment alone must not hide
+ * furniture collisions; furnitureHost recognizes real attachments.
  */
 export function invalidItems(
   furniture: FurnitureItem[],
@@ -194,7 +193,6 @@ export function invalidItems(
       const a = footprint(solids[i]);
       const b = footprint(solids[j]);
       if (!overlaps(a, b)) continue;
-      if (centerInside(a, b) || centerInside(b, a)) continue;
       bad.add(solids[i].id);
       bad.add(solids[j].id);
     }

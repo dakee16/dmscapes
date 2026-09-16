@@ -1,4 +1,5 @@
 import type { FurnitureItem } from "./types";
+import { furnitureHost } from "@/components/canvas/geometry";
 
 /**
  * Templates are authored at a nominal room size but match a *range* of rooms
@@ -76,13 +77,6 @@ const rectOf = (f: FurnitureItem): Rect => {
   return { x: f.x_ft, y: f.y_ft, w, h };
 };
 
-/** Stacked-item exemption (pillows on beds, bins under beds), as in the canvas. */
-function centerInside(inner: Rect, outer: Rect): boolean {
-  const cx = inner.x + inner.w / 2;
-  const cy = inner.y + inner.h / 2;
-  return cx >= outer.x && cx <= outer.x + outer.w && cy >= outer.y && cy <= outer.y + outer.h;
-}
-
 /**
  * Wall-anchored and proportionally-placed items shift at different rates when
  * the room shrinks, which can open overlaps between former neighbors, often
@@ -94,7 +88,7 @@ function centerInside(inner: Rect, outer: Rect): boolean {
  * overflow by shrinking wall clearances. Infeasible chains clamp at zero and
  * stay red-flagged by the canvas.
  */
-function compactAxis(solids: FurnitureItem[], axis: "x" | "y", extent: number): void {
+function compactAxis(solids: FurnitureItem[], axis: "x" | "y", extent: number, gap: number): void {
   const eps = 1e-6;
   const rects = solids.map(rectOf);
   const pos = rects.map((r) => (axis === "x" ? r.x : r.y));
@@ -121,19 +115,18 @@ function compactAxis(solids: FurnitureItem[], axis: "x" | "y", extent: number): 
       if (along > eps) {
         // currently colliding: only resolve here if this is the cheaper axis
         if (cross < along) continue;
-        if (centerInside(rects[u], rects[v]) || centerInside(rects[v], rects[u])) continue;
       }
       preds[v].push(u);
     }
   }
 
   for (const v of order) {
-    for (const u of preds[v]) pos[v] = Math.max(pos[v], pos[u] + size[u]);
+    for (const u of preds[v]) pos[v] = Math.max(pos[v], pos[u] + size[u] + gap);
   }
   const succMin = solids.map(() => Infinity);
   for (let k = order.length - 1; k >= 0; k--) {
     const u = order[k];
-    pos[u] = Math.min(pos[u], extent - size[u], succMin[u] - size[u]);
+    pos[u] = Math.min(pos[u], extent - size[u], succMin[u] - size[u] - gap);
     pos[u] = Math.max(0, pos[u]);
     for (const p of preds[u]) succMin[p] = Math.min(succMin[p], pos[u]);
   }
@@ -168,17 +161,27 @@ function findRiders(furniture: FurnitureItem[]): Map<string, Rider> {
   const riders = new Map<string, Rider>();
   const solids = furniture.filter((f) => !COLLISION_EXEMPT_TYPES.has(f.type));
   for (const f of solids) {
-    const r = rectOf(f);
-    for (const c of solids) {
-      if (c === f) continue;
-      const cr = rectOf(c);
-      if (cr.w * cr.h > r.w * r.h && centerInside(r, cr)) {
-        riders.set(f.id, { id: f.id, carrierId: c.id, dx: f.x_ft - c.x_ft, dy: f.y_ft - c.y_ft });
-        break;
-      }
-    }
+    const c = furnitureHost(f, solids);
+    if (c) riders.set(f.id, { id: f.id, carrierId: c.id, dx: f.x_ft - c.x_ft, dy: f.y_ft - c.y_ft });
   }
   return riders;
+}
+
+/** Compare actual fitted furniture, since a template's dimension range can be too generous. */
+export function layoutPenalty(items: FurnitureItem[], length: number, width: number): number {
+  const solids = items.filter(f => !COLLISION_EXEMPT_TYPES.has(f.type) && !furnitureHost(f, items));
+  let score = 0;
+  for (let i = 0; i < solids.length; i++) {
+    const a = rectOf(solids[i]);
+    score += 1000 * (Math.max(0, -a.x) + Math.max(0, -a.y) + Math.max(0, a.x + a.w - length) + Math.max(0, a.y + a.h - width));
+    for (const b of solids.slice(i + 1).map(rectOf)) {
+      const dx = Math.max(a.x - b.x - b.w, b.x - a.x - a.w);
+      const dy = Math.max(a.y - b.y - b.h, b.y - a.y - a.h);
+      if (dx < 0 && dy < 0) score += 1000 * Math.min(-dx, -dy);
+      score += Math.max(0, .6 - Math.hypot(Math.max(0, dx), Math.max(0, dy)));
+    }
+  }
+  return score;
 }
 
 export function fitTemplateToRoom(
@@ -187,6 +190,11 @@ export function fitTemplateToRoom(
   roomLengthFt: number,
   roomWidthFt: number
 ): FurnitureItem[] {
+  if (roomWidthFt > roomLengthFt) {
+    return fitTemplateToRoom(furniture, templateId, roomWidthFt, roomLengthFt).map(f => ({...f,
+      x_ft: Math.round((roomLengthFt-f.y_ft-footprint(f).h)*100)/100,
+      y_ft: f.x_ft, rotation_deg:(f.rotation_deg+90)%360}));
+  }
   const nominal = TEMPLATE_NOMINAL_DIMS[templateId];
   if (!nominal) return furniture.map((f) => ({ ...f }));
   const sameL = Math.abs(nominal.length - roomLengthFt) < 0.01;
@@ -219,8 +227,9 @@ export function fitTemplateToRoom(
     // ones converge in one.
     for (let pass = 0; pass < 6; pass++) {
       const before = solids.map((f) => `${f.x_ft},${f.y_ft}`).join("|");
-      compactAxis(solids, "y", roomWidthFt);
-      compactAxis(solids, "x", roomLengthFt);
+      const gap = /triple|quad/.test(templateId) ? .35 : 0;
+      compactAxis(solids, "y", roomWidthFt, gap);
+      compactAxis(solids, "x", roomLengthFt, gap);
       if (solids.map((f) => `${f.x_ft},${f.y_ft}`).join("|") === before) break;
     }
   }

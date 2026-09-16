@@ -1,6 +1,7 @@
 "use client";
 
 import { roomEditError } from "./room-editing";
+import { bedSurfaceHeight, itemElevation, itemHeight, modelKind } from "./studio";
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
@@ -167,7 +168,16 @@ export const usePlannerStore = create<PlannerState>()(
         return {furniture:s.furniture?.map(f=>f.id===id?{...f,x_ft:xFt,y_ft:yFt}:
           f.parent_id===id?{...f,x_ft:f.x_ft+dx,y_ft:f.y_ft+dy}:f)??null};
       }),
-      updateItem3D: (id, patch) => set(s => ({furniture:s.furniture?.map(f=>f.id===id?{...f,...patch}:f)??null})),
+      updateItem3D: (id, patch) => set(s => {
+        const before=s.furniture?.find(f=>f.id===id);
+        if(!before)return {};
+        const after={...before,...patch},items=s.furniture!;
+        const surface=(f:FurnitureItem)=>["bed","bunk"].includes(modelKind(f))?bedSurfaceHeight(f):itemHeight(f);
+        const lift=itemElevation(after,items)-itemElevation(before,items);
+        const surfaceChange=surface(after)-surface(before);
+        return {furniture:items.map(f=>f.id===id?after:f.parent_id===id?
+          {...f,elevation_ft:Math.max(0,itemElevation(f,items)+lift+(itemElevation(f,items)>0?surfaceChange:0))}:f)};
+      }),
       updateStudio: patch => set(s => ({room:s.room?{...s.room,studio:{ceilingFt:8,floor:"oak",wallColor:"#f3eee4",lighting:"day",...s.room.studio,...patch}}:null})),
       updateRoomGeometry: (outline, origin = {x:0,y:0}) => set(s => {
         if(!s.room || roomEditError(outline) || !Number.isFinite(origin.x) || !Number.isFinite(origin.y))return {};
@@ -322,4 +332,3 @@ export const usePlannerStore = create<PlannerState>()(
     }
   )
 );
-

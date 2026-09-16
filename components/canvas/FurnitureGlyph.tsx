@@ -1,5 +1,6 @@
 import { Group, Rect, Line, Circle, Ellipse } from "react-konva";
 import type { FurnitureItem } from "@/lib/types";
+import { isBunkBed } from "@/lib/bedding";
 
 /** Top-down symbols inside the real footprint. These never change hit areas. */
 export default function FurnitureGlyph({ item, scale, color }: { item: FurnitureItem; scale: number; color: string }) {
@@ -45,5 +46,9 @@ export default function FurnitureGlyph({ item, scale, color }: { item: Furniture
     default:
       art = <Rect width={w} height={h} fill={color} opacity={.45} cornerRadius={2} />;
   }
-  return <Group x={x} y={y} rotation={rotation} listening={false}>{art}</Group>;
+  return <Group x={x} y={y} rotation={rotation} listening={false}>{art}{isBunkBed(item) && <>
+    <Rect x={w*.04} y={h*.03} width={w*.92} height={h*.94} stroke={ink} strokeWidth={1.6} dash={[5,3]} cornerRadius={2}/>
+    <Rect x={w*.72} y={h*.68} width={w*.22} height={h*.29} fill="#b99263" stroke={ink} strokeWidth={.7}/>
+    {[1,2,3].map(i=><Line key={i} points={[w*.74,h*(.68+i*.07),w*.92,h*(.68+i*.07)]} stroke={surface} strokeWidth={2}/>)}
+  </>}</Group>;
 }

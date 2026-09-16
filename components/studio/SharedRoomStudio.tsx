@@ -2,14 +2,16 @@
 import {useAuth} from "@/lib/auth-context";
 import {canUse3D} from "@/lib/plan";
 import {useUpgrade} from "@/lib/upgrade-context";
-import {useRef,useState} from "react";
+import {useMemo,useRef,useState} from "react";
 import type {FurnitureItem,Product,SelectedRoom,StyleId} from "@/lib/types";
 import type {SavedEditorState} from "@/lib/studio-save";
 import {visibleFurniture,roomOutline} from "@/lib/studio";
+import {syncProductFurniture} from "@/lib/product-model";
 import StaticRoomView from "@/components/room/StaticRoomView";
 import RoomScene,{type RoomSceneHandle} from "./RoomScene";
 import s from "./Studio.module.css";
-export default function SharedRoomStudio({room,items,style,products,editor}:{room:SelectedRoom;items:FurnitureItem[];style:StyleId;products:Product[];editor?:SavedEditorState}){
+export default function SharedRoomStudio({room,items:savedItems,style,products,editor}:{room:SelectedRoom;items:FurnitureItem[];style:StyleId;products:Product[];editor?:SavedEditorState}){
+ const items=useMemo(()=>syncProductFurniture(savedItems,products.filter(p=>!editor?.unplacedItemIds.includes(p.id)),room),[savedItems,products,editor,room]);
  const [requestedView,setView]=useState<"2d"|"3d">("3d"),ref=useRef<RoomSceneHandle>(null);
  const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade(),allowed=!loading&&canUse3D(profile);
  const view=allowed?requestedView:"2d";

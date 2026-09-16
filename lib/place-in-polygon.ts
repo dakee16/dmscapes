@@ -1,5 +1,5 @@
 import type { FurnitureItem, RoomOutline } from "./types";
-import { pointInPolygon, rectInsidePolygon } from "@/components/canvas/geometry";
+import { furnitureHost, pointInPolygon, rectInsidePolygon } from "@/components/canvas/geometry";
 
 /**
  * Auto-place a furniture set inside a hand-drawn (rectilinear) room.
@@ -41,11 +41,6 @@ function dims(f: FurnitureItem, rot: number): { w: number; h: number } {
 }
 const rectOf = (f: FurnitureItem): Rect => ({ x: f.x_ft, y: f.y_ft, ...dims(f, f.rotation_deg) });
 
-function centerInside(inner: Rect, outer: Rect): boolean {
-  const cx = inner.x + inner.w / 2, cy = inner.y + inner.h / 2;
-  return cx >= outer.x && cx <= outer.x + outer.w && cy >= outer.y && cy <= outer.y + outer.h;
-}
-
 function overlaps(a: Rect, b: Rect, eps = 1e-6): boolean {
   return a.x < b.x + b.w - eps && b.x < a.x + a.w - eps && a.y < b.y + b.h - eps && b.y < a.y + a.h - eps;
 }
@@ -55,15 +50,8 @@ function findRiders(parts: FurnitureItem[]): Map<string, string> {
   const riders = new Map<string, string>();
   const solids = parts.filter((f) => !RIDER_EXEMPT.has(f.type));
   for (const f of solids) {
-    const rf = rectOf(f);
-    for (const c of solids) {
-      if (c === f) continue;
-      const rc = rectOf(c);
-      if (rc.w * rc.h > rf.w * rf.h && centerInside(rf, rc)) {
-        riders.set(f.id, c.id);
-        break;
-      }
-    }
+    const host = furnitureHost(f, solids);
+    if (host) riders.set(f.id, host.id);
   }
   return riders;
 }

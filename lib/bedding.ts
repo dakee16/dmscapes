@@ -1,4 +1,16 @@
-import type { BedSize } from "./types";
+import type { BedSize, FurnitureItem } from "./types";
+
+/** Older saved rooms encode bunk configuration in the bed's label/id. */
+export function isBunkBed(item: FurnitureItem): boolean {
+  const type=item.type.toLowerCase();
+  return /bunk/.test(type) || (type === "bed" && /bunk/i.test(`${item.id} ${item.label}`));
+}
+
+export function bedLabel(item: FurnitureItem): string {
+  if (!isBunkBed(item)) return item.label;
+  const owners = item.label.match(/\b[A-D]\b/g);
+  return `Bunk${owners?.length ? ` ${[...new Set(owners)].join("/")}` : ""} · 2 beds`;
+}
 
 /**
  * Most dorm beds are Twin XL, which the catalog's bedding fits. When a room's
