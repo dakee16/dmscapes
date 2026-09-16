@@ -33,13 +33,13 @@ function preview(overrides = {}) {
   };
 }
 const trial = preview();
-trial.tick(999); assert.equal(trial.prompt, undefined, "Show the room for a full second");
+trial.tick(499); assert.equal(trial.prompt, undefined, "Show the room for half a second");
 trial.tick(1); assert.equal(trial.prompt.reason, "room-3d");
 assert.equal(trial.returned, false, "Keep the room visible behind the prompt");
 trial.prompt.close(); assert.equal(trial.returned, true, "Dismissal returns to 2D");
 for (const state of [{ready:false}, {allowed:true}, {enabled:false}, {error:"WebGL unavailable"}, {props:{preview:false}}]) {
   const p = preview(state); p.tick(10000); assert.equal(p.prompt, undefined, JSON.stringify(state));
 }
-const cancelled = preview(); cancelled.tick(500); cancelled.cleanup(); cancelled.tick(1000);
+const cancelled = preview(); cancelled.tick(250); cancelled.cleanup(); cancelled.tick(1000);
 assert.equal(cancelled.prompt, undefined, "Switching to 2D or unmounting cancels the prompt");
-console.log("PASS: prompt waits for a rendered room + 1 second, skips Pro/loading/errors, cancels on exit, and dismisses to 2D.");
+console.log("PASS: prompt waits for a rendered room + 0.5 seconds, skips Pro/loading/errors, cancels on exit, and dismisses to 2D.");

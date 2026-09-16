@@ -185,13 +185,13 @@
  .workspace.workspacePlan { display:grid; grid-template-columns:88px minmax(0,1fr); grid-template-rows:minmax(0,1fr); height:calc(100dvh - 185px); min-height:490px; max-height:920px; }
  .workspacePlan .planToolsHost { grid-column:1; grid-row:1; }
  .workspacePlan .viewport { grid-column:2; grid-row:1; height:100%; min-height:0; }
- .workspacePlan .panel { position:fixed; top:76px; right:0; bottom:0; width:min(360px,calc(100vw - 44px)); height:auto; max-height:none; z-index:76; border-left:1px solid #17172b30; border-top:0; transform:translateX(105%); visibility:hidden; transition:transform .22s ease,visibility .22s; box-shadow:-16px 0 50px #17172b30; }
- .workspacePlan .panel.mobileOpen { transform:none; visibility:visible; max-height:none; }
- .workspacePlan .panelContent { max-height:none; display:block; overflow:auto; }
- .workspacePlan .panelHeading { padding:12px 16px; }
- .workspacePlan .mobileSheetTitle { pointer-events:none; }
- .workspacePlan .mobileSheetTitle > span { display:none; }
- .workspacePlan .shopBackdrop { display:block; position:fixed; inset:76px 0 0; z-index:75; background:#17172b65; border:0; border-radius:0; }
+ .workspace .panel { position:fixed; top:76px; right:0; bottom:0; width:min(360px,calc(100vw - 24px)); height:auto; max-height:none; z-index:76; border-left:1px solid #17172b30; border-top:0; transform:translateX(105%); visibility:hidden; transition:transform .22s ease; box-shadow:-16px 0 50px #17172b30; }
+ .workspace .panel.mobileOpen { transform:none; visibility:visible; max-height:none; }
+ .workspace .panelContent { max-height:none; display:block; overflow:auto; padding-bottom:calc(20px + env(safe-area-inset-bottom)); }
+ .workspace .panelHeading { padding:12px 16px; }
+ .workspace .mobileSheetTitle { pointer-events:none; }
+ .workspace .mobileSheetTitle > span { display:none; }
+ .workspace .shopBackdrop { display:block; position:fixed; inset:76px 0 0; z-index:75; background:#17172b65; border:0; border-radius:0; }
  .expanded .workspace.workspacePlan { display:grid; height:calc(100dvh - 160px); min-height:460px; }
  .expanded .workspacePlan .viewport { height:100%; min-height:0; }
 }

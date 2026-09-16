@@ -62,7 +62,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   },[retry,enabled]);
   useEffect(()=>{
     if(!enabled||allowed||!ready||error||!props.preview)return;
-    const timer=setTimeout(()=>openUpgrade("room-3d",()=>current.current.onFallback?.()),1000);
+    const timer=setTimeout(()=>openUpgrade("room-3d",()=>current.current.onFallback?.()),500);
     return()=>clearTimeout(timer);
   },[enabled,allowed,ready,error,props.preview,openUpgrade]);
   useEffect(()=>{view.current?.update(data);});

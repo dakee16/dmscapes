@@ -1493,7 +1493,9 @@ body {
 }
 .dm-design-actions-main > div {
   flex: 1;
+  min-width: 0;
 }
+.dm-cart-action { display: none; }
 .dm-design-actions-main > div > button {
   width: 100%;
   min-height: 46px;
@@ -1577,6 +1579,13 @@ body {
     max-width: 540px;
     margin-inline: auto;
   }
+}
+@media (max-width: 780px) {
+  .dm-cart-action { display: block; }
+  .dm-cart-action > button { background: var(--color-highlight); color: var(--color-ink); border: 1px solid var(--dm-rule); }
+  .dm-design-actions-main { gap: 6px; }
+  .dm-design-actions-main > div > button { padding-inline: 8px; font-size: 11px; gap: 4px; }
+  .dm-design-actions-main .dm-save-trigger svg { display: none; }
 }
 /* A live, replayable floor-plan sketch in place of the static screenshot. */
 .dm-drawing-preview {

@@ -33,7 +33,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const allowed3D=!loading&&canUse3D(profile),preview=view==="3d"&&!allowed3D;
   const activePanel=view==="2d"?"shop":panel;
   useEffect(()=>{const media=window.matchMedia("(max-width:780px)");const update=()=>setCompact(media.matches);update();media.addEventListener("change",update);return()=>media.removeEventListener("change",update);},[]);
-  useEffect(()=>{if(view!=="2d"||!compact||!mobileOpen)return;const focused=document.activeElement as HTMLElement|null,overflow=document.body.style.overflow;document.body.style.overflow="hidden";closeRef.current?.focus();return()=>{document.body.style.overflow=overflow;focused?.focus();};},[view,compact,mobileOpen]);
+  useEffect(()=>{if(!compact||!mobileOpen)return;const focused=document.activeElement as HTMLElement|null,overflow=document.body.style.overflow;document.body.style.overflow="hidden";const frame=requestAnimationFrame(()=>closeRef.current?.focus({preventScroll:true}));return()=>{cancelAnimationFrame(frame);document.body.style.overflow=overflow;focused?.focus({preventScroll:true});};},[compact,mobileOpen]);
   function editRoom(){setView("2d");setMobileOpen(false);setEditingRoom(true);}
   function enter3D(){setView("3d");setPanel("shop");setMoveMode(false);}
   const selected=items.find(f=>f.id===selectedId);
@@ -67,7 +67,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
     <header className={s.header}>
       <div className={s.titleBlock}><p className={s.eyebrow}>Dormscape / Room studio</p><h1>Your room, <em>in perspective.</em></h1><p>{subtitle}</p></div>
       <div className={s.viewSwitch} role="group" aria-label="Planner view"><button disabled={editingRoom} aria-pressed={view==="2d"} onClick={()=>{setView("2d");setMoveMode(false);}}>2D plan</button><button disabled={editingRoom} aria-pressed={view==="3d"} onClick={enter3D}>3D room{!allowed3D&&<small> Pro</small>}</button></div>
-      <div className={s.actions} inert={preview}>{editingRoom?<span className={s.editingNotice}>Room edits are a draft until you apply them.</span>:<ActionBar products={products} getPng={()=>view==="3d"?scene.current?.exportPNG()??null:get2DPng()}/>}</div>
+      <div className={s.actions} inert={preview}>{editingRoom?<span className={s.editingNotice}>Room edits are a draft until you apply them.</span>:<ActionBar products={products} getPng={()=>view==="3d"?scene.current?.exportPNG()??null:get2DPng()} onShop={()=>open("shop")} shopOpen={mobileOpen&&activePanel==="shop"}/>}</div>
     </header>
     {extras&&!editingRoom&&<div className={s.extras}>{extras}</div>}
     {editingRoom ? <section className={s.roomEditor} aria-label="Edit room walls and openings">
@@ -105,9 +105,9 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         {resetConfirm&&<div className={s.resetConfirm} role="group" aria-label="Confirm layout reset"><p>Restore the original furniture arrangement? You can undo this.</p><div className={s.buttonRow}><button onClick={()=>{onReset();setResetConfirm(false);}}>Restore layout</button><button onClick={()=>setResetConfirm(false)}>Keep my changes</button></div></div>}
         {view==="3d"&&unplaced&&<div className={s.unplaced} inert={preview}>{unplaced}</div>}
       </section>
-      {view==="2d"&&compact&&mobileOpen&&<button className={s.shopBackdrop} aria-label="Close shopping panel" onClick={()=>setMobileOpen(false)}/>}
-      <aside ref={shopPanel} className={s.panel+" "+(mobileOpen?s.mobileOpen:"")} aria-label={titles[activePanel]} inert={preview||(view==="2d"&&compact&&!mobileOpen)} role={view==="2d"&&compact&&mobileOpen?"dialog":undefined} aria-modal={view==="2d"&&compact&&mobileOpen?true:undefined}
-        onKeyDown={e=>{if(view!=="2d"||!compact||!mobileOpen)return;
+      {compact&&mobileOpen&&<button className={s.shopBackdrop} aria-label="Close studio panel" onClick={()=>setMobileOpen(false)}/>}
+      <aside ref={shopPanel} id="studio-panel" className={s.panel+" "+(mobileOpen?s.mobileOpen:"")} aria-label={titles[activePanel]} inert={preview||(compact&&!mobileOpen)} role={compact&&mobileOpen?"dialog":undefined} aria-modal={compact&&mobileOpen?true:undefined}
+        onKeyDown={e=>{if(!compact||!mobileOpen)return;
           if(e.key==="Escape"){e.stopPropagation();setMobileOpen(false);}
           if(e.key==="Tab"){const nodes=Array.from(shopPanel.current?.querySelectorAll<HTMLElement>('button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),[tabindex="0"]')??[]).filter(n=>n.getClientRects().length>0);const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
         }}>

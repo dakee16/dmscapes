@@ -29,9 +29,13 @@ async function accessToken(): Promise<string | null> {
 export default function ActionBar({
   products,
   getPng,
+  onShop,
+  shopOpen,
 }: {
   products: Product[];
   getPng: () => string | null;
+  onShop: () => void;
+  shopOpen: boolean;
 }) {
   const { user, profile, openAuthModal } = useAuth();
   const { openUpgrade } = useUpgrade();
@@ -253,7 +257,13 @@ export default function ActionBar({
   return (
     <>
       <div ref={actionRef} className="dm-design-actions">
-        <div className="dm-design-actions-main" role="group" aria-label="Save or share your design">
+        <div className="dm-design-actions-main" role="group" aria-label="Shopping cart, save and share">
+          <div className="dm-cart-action">
+            <button type="button" aria-expanded={shopOpen} aria-controls="studio-panel"
+              onClick={()=>{setMenuOpen(false);setSavePanel(false);onShop();}}>
+              Cart ({products.length})
+            </button>
+          </div>
           <div className="relative">
             <button
               type="button"
