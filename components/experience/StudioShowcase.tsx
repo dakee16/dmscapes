@@ -15,6 +15,15 @@ export default function StudioShowcase() {
   const { paused } = useExperienceMotion();
   const { scrollYProgress } = useScroll({ target:section, offset:["start 72px", "end end"] });
   const [choice,setChoice] = useState<number|null>(null), [chapter,setChapter] = useState(0);
+  useEffect(()=>{
+    const followHash=()=>{if(window.location.hash==="#room-in-3d-end")setChoice(2);};
+    const followLink=(event:MouseEvent)=>{
+      const link=(event.target as Element).closest?.("a");
+      if(link?.pathname==="/"&&link.hash==="#room-in-3d-end")setChoice(2);
+    };
+    followHash();window.addEventListener("hashchange",followHash);document.addEventListener("click",followLink);
+    return()=>{window.removeEventListener("hashchange",followHash);document.removeEventListener("click",followLink);};
+  },[]);
   const latest = useRef({paused,choice,progress:0});
   latest.current = {paused,choice,progress:scrollYProgress.get()};
   const watermarkY = useTransform(scrollYProgress,[0,1],[40,-70]);
@@ -48,6 +57,7 @@ export default function StudioShowcase() {
   },[]);
   const active=choice??(paused?2:chapter);
   return <section ref={section} id="room-in-3d" className={s.showcase} data-paused={paused} aria-labelledby="showcase-title">
+    <span id="room-in-3d-end" className={s.endFrame} aria-hidden="true"/>
     <div className={s.sticky}>
       <div className={s.grid} aria-hidden="true"/>
       <motion.span className={s.watermark} style={{y:paused?0:watermarkY}} aria-hidden="true">3D</motion.span>
@@ -57,7 +67,7 @@ export default function StudioShowcase() {
           <p className={s.kicker}>A whole new perspective.</p>
           <h2 id="showcase-title">Your room.<br/><em>Now in 3D.</em></h2>
           <p className={s.description}>Move the desk. Find your light. Step inside. Meet the room you can&apos;t wait to move into.</p>
-          <Link href="/plan" className={s.cta}>Enter the room studio <span aria-hidden="true">↗</span></Link>
+          <Link href="/plan?view=3d" className={s.cta}>Plan with 3D <span aria-hidden="true">↗</span></Link>
           <div className={s.links}><Link href="/pricing#pro">Explore Pro</Link><Link href="/blog/introducing-dormscape-3d-room-studio">Take the tour ↗</Link></div>
         </div>
         <div className={s.visual}>

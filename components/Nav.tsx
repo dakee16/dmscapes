@@ -17,7 +17,7 @@ import { isPaid } from "@/lib/plan";
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/colleges", label: "Colleges" },
-  { href: "/pricing#room-in-3d", label: "3D Studio" },
+  { href: "/#room-in-3d-end", label: "3D Studio" },
 ] as const;
 
 const NAV_LINK =
@@ -239,4 +239,3 @@ export default function Nav() {
     </>
   );
 }
-

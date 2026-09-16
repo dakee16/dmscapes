@@ -25,6 +25,8 @@ export interface PlannerState {
   customMock: boolean;
   customRegenUsed: boolean;
   // Step 3: canvas layout
+  plannerView: "2d" | "3d";
+  setPlannerView: (view: "2d" | "3d") => void;
   templateId: string | null;
   /** Current furniture positions (template copy, mutated by drag). */
   furniture: FurnitureItem[] | null;
@@ -104,6 +106,7 @@ export interface PlannerState {
 }
 
 const initial = {
+  plannerView: "2d",
   college: null,
   dorm: null,
   room: null,
@@ -130,6 +133,7 @@ export const usePlannerStore = create<PlannerState>()(
   persist(
     (set) => ({
       ...initial,
+      setPlannerView: (plannerView) => set({ plannerView }),
       setCollege: (college) => set({ college, dorm: null, room: null }),
       setDorm: (dorm) => set({ dorm, room: null }),
       setRoom: (room) =>
@@ -311,6 +315,7 @@ export const usePlannerStore = create<PlannerState>()(
       storage: createJSONStorage(() => sessionStorage),
       // Persist only the design data; the highlight fields are transient UI.
       partialize: (s) => ({
+        plannerView: s.plannerView,
         college: s.college,
         dorm: s.dorm,
         room: s.room,

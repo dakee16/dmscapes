@@ -25,16 +25,17 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const [editingRoom,setEditingRoom]=useState(false);
   const [toolsHost,setToolsHost]=useState<HTMLDivElement|null>(null),[compact,setCompact]=useState(false);
   const shopPanel=useRef<HTMLElement>(null);
-  const [requestedView,setView]=useState<"2d"|"3d">("3d"),[panel,setPanel]=useState<Panel>("shop"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
+  const view=usePlannerStore(st=>st.plannerView),setView=usePlannerStore(st=>st.setPlannerView);
+  const [panel,setPanel]=useState<Panel>("shop"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
   const [camera,setCamera]=useState<CameraView>("room"),[expanded,setExpanded]=useState(false),[mobileOpen,setMobileOpen]=useState(false),[query,setQuery]=useState(""),[resetConfirm,setResetConfirm]=useState(false);
   const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),previous=useRef(selectedId),closeRef=useRef<HTMLButtonElement>(null);
   const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade();
-  const allowed3D=!loading&&canUse3D(profile),view=requestedView==="3d"&&allowed3D?"3d":"2d";
+  const allowed3D=!loading&&canUse3D(profile),preview=view==="3d"&&!allowed3D;
   const activePanel=view==="2d"?"shop":panel;
   useEffect(()=>{const media=window.matchMedia("(max-width:780px)");const update=()=>setCompact(media.matches);update();media.addEventListener("change",update);return()=>media.removeEventListener("change",update);},[]);
   useEffect(()=>{if(view!=="2d"||!compact||!mobileOpen)return;const focused=document.activeElement as HTMLElement|null,overflow=document.body.style.overflow;document.body.style.overflow="hidden";closeRef.current?.focus();return()=>{document.body.style.overflow=overflow;focused?.focus();};},[view,compact,mobileOpen]);
   function editRoom(){setView("2d");setMobileOpen(false);setEditingRoom(true);}
-  function enter3D(){if(allowed3D){setView("3d");setPanel("shop");}else openUpgrade("room-3d");}
+  function enter3D(){setView("3d");setPanel("shop");setMoveMode(false);}
   const selected=items.find(f=>f.id===selectedId);
   const issues=placementIssues(visibleFurniture(items,hidden,excluded),room,studioSettings(room.studio));
   const selectedProduct=selected?(products.find(p=>p.id===selected.id)||products.find(p=>p.category===furnitureCategory(selected))):undefined;
@@ -61,31 +62,31 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         if(e.shiftKey&&target===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&target===last){e.preventDefault();first?.focus();}
       }
       if(target.closest("input,textarea,select,[contenteditable=true]"))return;
-      if(!editingRoom&&view==="3d"&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="z"){e.preventDefault();e.stopPropagation();e.shiftKey?history.redo():history.undo();}
+      if(!editingRoom&&view==="3d"&&allowed3D&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="z"){e.preventDefault();e.stopPropagation();e.shiftKey?history.redo():history.undo();}
       if(e.key==="Escape"){setMobileOpen(false);setMoveMode(false);}}}>
     <header className={s.header}>
       <div className={s.titleBlock}><p className={s.eyebrow}>Dormscape / Room studio</p><h1>Your room, <em>in perspective.</em></h1><p>{subtitle}</p></div>
       <div className={s.viewSwitch} role="group" aria-label="Planner view"><button disabled={editingRoom} aria-pressed={view==="2d"} onClick={()=>{setView("2d");setMoveMode(false);}}>2D plan</button><button disabled={editingRoom} aria-pressed={view==="3d"} onClick={enter3D}>3D room{!allowed3D&&<small> Pro</small>}</button></div>
-      <div className={s.actions}>{editingRoom?<span className={s.editingNotice}>Room edits are a draft until you apply them.</span>:<ActionBar products={products} getPng={()=>view==="3d"?scene.current?.exportPNG()??null:get2DPng()}/>}</div>
+      <div className={s.actions} inert={preview}>{editingRoom?<span className={s.editingNotice}>Room edits are a draft until you apply them.</span>:<ActionBar products={products} getPng={()=>view==="3d"?scene.current?.exportPNG()??null:get2DPng()}/>}</div>
     </header>
     {extras&&!editingRoom&&<div className={s.extras}>{extras}</div>}
     {editingRoom ? <section className={s.roomEditor} aria-label="Edit room walls and openings">
       <RoomEditor initialRoom={room} furniture={visibleFurniture(items,hidden,excluded)} onCancel={()=>setEditingRoom(false)} onComplete={result=>{usePlannerStore.getState().updateRoomGeometry(result.outline,result.origin);setEditingRoom(false);setPanel("room");}}/>
     </section> : <div className={s.workspace+" "+(view==="2d"?s.workspacePlan:"")}>
-      {view==="2d"?<div ref={setToolsHost} className={s.planToolsHost} aria-label="Floor plan tools"/>:<nav className={s.rail} aria-label="Studio tools">
+      {view==="2d"?<div ref={setToolsHost} className={s.planToolsHost} aria-label="Floor plan tools"/>:<nav className={s.rail} aria-label="Studio tools" inert={preview}>
         {([["shop","⊞","Shop"],["style","◐","Style"],["room","⌑","Room"],["furnish","▦","Arrange"]] as const).map(([key,icon,label])=><button key={key} aria-pressed={activePanel===key} onClick={()=>open(key)}><span aria-hidden="true">{icon}</span>{label}</button>)}
       </nav>}
       <section className={s.viewport} aria-label="Room workspace">
         {view==="3d"&&<div className={s.viewportTop}><span className={s.spaceBadge}>{view==="3d"?"LIVE 3D / ":"2D / "}{room.lengthFt} × {room.widthFt} ft</span><button aria-label={expanded?"Exit expanded studio":"Expand studio"} onClick={()=>setExpanded(v=>!v)}>{expanded?"Exit fullscreen":"Expand ↗"}</button></div>}
         <div className={s.renderArea}>
           <div className={s.sceneLayer} style={{visibility:view==="3d"?"visible":"hidden",pointerEvents:view==="3d"?"auto":"none"}} aria-hidden={view!=="3d"}>
-            {allowed3D&&<RoomScene ref={scene} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode}
+            {(allowed3D||view==="3d")&&<RoomScene ref={scene} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview}
               onSelect={select} onMove={(id,x,y)=>usePlannerStore.getState().moveItem(id,x,y)} onFallback={()=>setView("2d")}/>}
           </div>
           <div className={s.canvasLayer} style={{display:view==="2d"?"block":"none"}}><CanvasControlsContext.Provider value={{host:toolsHost,active:view==="2d",expanded,editRoom,expand:()=>setExpanded(v=>!v),reset:()=>setResetConfirm(true),shop:()=>open("shop")}}>{canvas}</CanvasControlsContext.Provider></div>
         </div>
         {view==="3d"&&<>
-          <div className={s.cameraBar} role="group" aria-label="Camera controls">
+          <div className={s.cameraBar} role="group" aria-label="Camera controls" inert={preview}>
             <button aria-pressed={camera==="room"} onClick={()=>preset("room")}>Room</button>
             <button aria-pressed={camera==="top"} onClick={()=>preset("top")}>Top</button>
             <button aria-pressed={camera==="inside"} onClick={()=>preset("inside")}>Inside</button>
@@ -93,19 +94,19 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
 
           </div>
           {roomOutlineMissing(room)&&<button className={s.openingsHint} onClick={editRoom}>Doors and windows not set. Add openings ↗</button>}
-          <p className={s.gestureHint}>{moveMode?"Move mode: drag the selected furniture. Choose Stop moving when done.":"Drag empty space to look around. Select a piece to arrange it."}</p>
+          <p className={s.gestureHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Stop moving when done.":"Drag empty space to look around. Select a piece to arrange it."}</p>
         </>}
-        {view==="3d"&&<div className={s.editBar}>
+        {view==="3d"&&<div className={s.editBar} inert={preview}>
           <button disabled={!history.canUndo} onClick={history.undo}>Undo</button><button disabled={!history.canRedo} onClick={history.redo}>Redo</button>
           {view==="3d"&&<><label><input type="checkbox" checked={snap} onChange={e=>setSnap(e.target.checked)}/>Snap</label></>}
           <button onClick={editRoom}>Edit walls &amp; doors</button>
           <button onClick={()=>open("help")}>How to use</button>
         </div>}
         {resetConfirm&&<div className={s.resetConfirm} role="group" aria-label="Confirm layout reset"><p>Restore the original furniture arrangement? You can undo this.</p><div className={s.buttonRow}><button onClick={()=>{onReset();setResetConfirm(false);}}>Restore layout</button><button onClick={()=>setResetConfirm(false)}>Keep my changes</button></div></div>}
-        {view==="3d"&&unplaced&&<div className={s.unplaced}>{unplaced}</div>}
+        {view==="3d"&&unplaced&&<div className={s.unplaced} inert={preview}>{unplaced}</div>}
       </section>
       {view==="2d"&&compact&&mobileOpen&&<button className={s.shopBackdrop} aria-label="Close shopping panel" onClick={()=>setMobileOpen(false)}/>}
-      <aside ref={shopPanel} className={s.panel+" "+(mobileOpen?s.mobileOpen:"")} aria-label={titles[activePanel]} inert={view==="2d"&&compact&&!mobileOpen} role={view==="2d"&&compact&&mobileOpen?"dialog":undefined} aria-modal={view==="2d"&&compact&&mobileOpen?true:undefined}
+      <aside ref={shopPanel} className={s.panel+" "+(mobileOpen?s.mobileOpen:"")} aria-label={titles[activePanel]} inert={preview||(view==="2d"&&compact&&!mobileOpen)} role={view==="2d"&&compact&&mobileOpen?"dialog":undefined} aria-modal={view==="2d"&&compact&&mobileOpen?true:undefined}
         onKeyDown={e=>{if(view!=="2d"||!compact||!mobileOpen)return;
           if(e.key==="Escape"){e.stopPropagation();setMobileOpen(false);}
           if(e.key==="Tab"){const nodes=Array.from(shopPanel.current?.querySelectorAll<HTMLElement>('button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),[tabindex="0"]')??[]).filter(n=>n.getClientRects().length>0);const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
@@ -141,4 +142,3 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   </div>;
 }
 function roomOutlineMissing(room:{outline?:{openings:unknown[]}|null}){return !room.outline?.openings.length;}
-

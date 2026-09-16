@@ -3,7 +3,6 @@ import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
-import StudioLaunch from "@/components/site/StudioLaunch";
 import UpgradeButton from "@/components/site/UpgradeButton";
 import { SCHOOLS } from "@/lib/schools";
 import {
@@ -496,8 +495,6 @@ export default function PricingPage() {
               </div>
             </section>
           </div>
-
-          <StudioLaunch />
 
           {/* Trust strip: why the core stays free. */}
           <div className="mt-6 rounded-xl border border-dashed border-ink/20 bg-card/60 p-6 text-center">

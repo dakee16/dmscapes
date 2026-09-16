@@ -2,6 +2,7 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 import {useAuth} from "@/lib/auth-context";
 import {canUse3D} from "@/lib/plan";
+import {useUpgrade} from "@/lib/upgrade-context";
 import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId } from "@/lib/types";
 import { useExperienceMotion } from "@/components/experience/MotionProvider";
 import { styleById } from "@/lib/styles";
@@ -16,10 +17,12 @@ export interface RoomSceneHandle {exportPNG:()=>string|null;preset:(mode:CameraV
 type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;footW:number;footD:number;locked:boolean;bare:boolean;product?:ReturnType<typeof productVisual>};
 type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];selectedId:string|null;interior:{x:number;y:number}};
 type View={update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;exportPNG:()=>string;destroy:()=>void};
-type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;onError:(message:string)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
-export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;onSelect?:(id:string|null)=>void;onMove?:(id:string,x:number,y:number)=>void;onFallback?:()=>void;}
+type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;onReady:()=>void;onError:(message:string)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
+export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;onSelect?:(id:string|null)=>void;onMove?:(id:string,x:number,y:number)=>void;onFallback?:()=>void;}
 const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(props,ref){
   const {profile,loading}=useAuth(),allowed=!loading&&canUse3D(profile);
+  const {openUpgrade}=useUpgrade(),enabled=!loading&&(allowed||props.preview===true);
+  const access=useRef(allowed);access.current=allowed;
   const node=useRef<HTMLDivElement>(null),view=useRef<View|null>(null),current=useRef(props);current.current=props;
   const {paused}=useExperienceMotion();const pausedRef=useRef(paused);pausedRef.current=paused;
   const [error,setError]=useState(""),[ready,setReady]=useState(false),[retry,setRetry]=useState(0);
@@ -38,31 +41,36 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
         if(b.w>b.h && Math.min(b.y,props.room.widthFt-b.y-b.h)<.5)rotation=b.y<props.room.widthFt/2?0:180;
         else if(b.h>b.w && Math.min(b.x,props.room.lengthFt-b.x-b.w)<.5)rotation=b.x<props.room.lengthFt/2?270:90;
       }
-      return {...f,rotation_deg:rotation,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||product?.color,kind,height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:Boolean(props.readOnly)||props.locked.includes(f.id)};
+      return {...f,rotation_deg:rotation,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||product?.color,kind,height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:!allowed||Boolean(props.readOnly)||props.locked.includes(f.id)};
     })};
   const latest=useRef(data);latest.current=data;
-  useImperativeHandle(ref,()=>({exportPNG:()=>view.current?.exportPNG()??null,preset:m=>view.current?.preset(m),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);
+  useImperativeHandle(ref,()=>({exportPNG:()=>access.current?view.current?.exportPNG()??null:null,preset:m=>view.current?.preset(m),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);
   useEffect(()=>{
-    if(!allowed)return;
+    if(!enabled)return;
     let disposed=false;setError("");setReady(false);
     (async()=>{try{
       const path="/experience/studio-scene.js";
       const module=await import(/* webpackIgnore: true */ /* turbopackIgnore: true */ path) as SceneModule;
       if(disposed||!node.current)return;
-      const v=module.createStudioScene(node.current,{reduced:pausedRef.current,onError:message=>{if(!disposed)setError(message);},
-        onSelect:id=>{if(!current.current.readOnly)current.current.onSelect?.(id);},
-        onMove:(id,x,y)=>{if(!current.current.readOnly)current.current.onMove?.(id,x,y);},
+      const v=module.createStudioScene(node.current,{reduced:pausedRef.current||!access.current,onReady:()=>{if(!disposed)setReady(true);},onError:message=>{if(!disposed)setError(message);},
+        onSelect:id=>{if(access.current&&!current.current.readOnly)current.current.onSelect?.(id);},
+        onMove:(id,x,y)=>{if(access.current&&!current.current.readOnly)current.current.onMove?.(id,x,y);},
         constrain:(id,x,y)=>{const p=current.current,f=p.items.find(f=>f.id===id);return f?constrainedPosition(f,x,y,p.room,p.snap!==false):{x,y};}});
-      view.current=v;v.update(latest.current);v.setWalls(current.current.walls??"auto");v.setMoveMode(current.current.moveMode??false);setReady(true);
+      view.current=v;v.update(latest.current);v.setWalls(current.current.walls??"auto");v.setMoveMode(current.current.moveMode??false);
     }catch{if(!disposed)setError("3D is unavailable on this browser. Your room can still be edited in 2D.");}})();
     return()=>{disposed=true;view.current?.destroy();view.current=null;};
-  },[retry,allowed]);
+  },[retry,enabled]);
+  useEffect(()=>{
+    if(!enabled||allowed||!ready||error||!props.preview)return;
+    const timer=setTimeout(()=>openUpgrade("room-3d",()=>current.current.onFallback?.()),1000);
+    return()=>clearTimeout(timer);
+  },[enabled,allowed,ready,error,props.preview,openUpgrade]);
   useEffect(()=>{view.current?.update(data);});
-  useEffect(()=>{view.current?.setReduced(paused);},[paused]);
+  useEffect(()=>{view.current?.setReduced(paused||!allowed);},[paused,allowed]);
   useEffect(()=>{view.current?.setWalls(props.walls??"auto");},[props.walls]);
   useEffect(()=>{view.current?.setMoveMode(props.moveMode??false);},[props.moveMode]);
-  if(!allowed)return null;
-  return <div className={s.scene} data-testid="room-3d"><div ref={node} className={s.sceneMount}/>
+  if(!enabled)return null;
+  return <div className={s.scene} data-testid="room-3d"><div ref={node} className={s.sceneMount} inert={!allowed}/>
     {!ready&&!error&&<div className={s.sceneMessage}><BrandLoader label="Opening your 3D studio…"/></div>}
     {error&&<div className={s.sceneMessage} role="status"><strong>Keep creating.</strong><p>{error}</p><div className={s.buttonRow}><button onClick={()=>setRetry(n=>n+1)}>Retry 3D</button>{props.onFallback&&<button onClick={props.onFallback}>Open 2D plan</button>}</div></div>}
   </div>;

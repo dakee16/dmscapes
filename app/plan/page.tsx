@@ -49,6 +49,8 @@ export default function PlanSelectPage() {
     // Read from location rather than useSearchParams so this page keeps
     // rendering statically (same pattern as the Step 2 auth-gate resume).
     const params = new URLSearchParams(window.location.search);
+    const view = params.get("view");
+    if (view === "2d" || view === "3d") usePlannerStore.getState().setPlannerView(view);
     const schoolId = params.get("school");
     if (!schoolId) return;
     const s = getSchool(schoolId);

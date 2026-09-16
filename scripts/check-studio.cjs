@@ -19,6 +19,14 @@ function load(file) {
 const studio=load(path.join(root,"lib/studio.ts"));
 const save=load(path.join(root,"lib/studio-save.ts"));
 const {usePlannerStore:store}=load(path.join(root,"lib/store.ts"));
+assert.equal(store.getState().plannerView,"2d");
+store.getState().setPlannerView("3d");
+store.getState().setCollege({id:null,name:"Preview test"});
+store.getState().setStyle("minimalist");
+assert.equal(store.getState().plannerView,"3d","Room and vibe selection must preserve 3D intent");
+assert.equal(JSON.parse(memory.get("dormscape-planner")).state.plannerView,"3d","3D intent must survive the login round trip");
+store.getState().resetPlanner();
+assert.equal(store.getState().plannerView,"2d");
 const room={type:"double",occupants:2,lengthFt:15,widthFt:12,source:"manual"};
 const item={id:"desk",type:"desk",label:"Desk",x_ft:2,y_ft:2,width_ft:4,length_ft:2,rotation_deg:0,movable:true,built_in:true};
 assert.deepEqual(studio.roomOutline(room).openings,[],"Unknown doors must not be invented");

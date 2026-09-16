@@ -13,7 +13,7 @@ export function createStudioScene(container, options) {
   const fill=new T.DirectionalLight("#cedcff",1.1);scene.add(fill);
   const shadowOnly=new T.MeshBasicMaterial({colorWrite:false,depthWrite:false});
   const roomRoot=new T.Group(),itemRoot=new T.Group();scene.add(roomRoot,itemRoot);
-  const meshes=new Map(),wallGroups=[],openingGroups=[];let roomKey="",data=null,disposed=false,raf=0,assemblyStart=0;
+  const meshes=new Map(),wallGroups=[],openingGroups=[];let roomKey="",data=null,disposed=false,raf=0,assemblyStart=0,ready=false;
   const ray=new T.Raycaster(),ndc=new T.Vector2(),plane=new T.Plane(new T.Vector3(0,1,0),0);
   const marker=new T.Box3Helper(new T.Box3(),0x2b4eff);marker.visible=false;scene.add(marker);
   const guides=new T.Group();scene.add(guides);
@@ -59,7 +59,9 @@ export function createStudioScene(container, options) {
         m.group.position.y=m.item.elevation+(options.reduced?0:(1-q)*(1-q)*1.3);m.group.scale.setScalar(.94+.06*q);if(q<1)assembling=true;}
       if(!assembling)assemblyStart=0;else more=true;
     }
-    cameraUpdate();camera.updateMatrixWorld();showLabel();renderer.render(scene,camera);if(more)request();
+    cameraUpdate();camera.updateMatrixWorld();showLabel();renderer.render(scene,camera);
+    if(!ready&&data&&width>1&&height>1){ready=true;options.onReady?.();}
+    if(more)request();
   }
   function clearRoom(){
     for(const g of roomRoot.children)g.traverse(o=>{if(o.userData.ownGeometry)o.geometry?.dispose();if(o.userData.ownMaterial){for(const material of Array.isArray(o.material)?o.material:[o.material]){material?.map?.dispose();material?.dispose();}}});
