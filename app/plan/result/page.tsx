@@ -94,6 +94,7 @@ export default function ResultPage() {
   const initLayout = usePlannerStore((s) => s.initLayout);
   const moveItem = usePlannerStore((s) => s.moveItem);
   const rotateItem = usePlannerStore((s) => s.rotateItem);
+  const setItemRotation = usePlannerStore((s) => s.setItemRotation);
   const resetLayout = usePlannerStore((s) => s.resetLayout);
 
   const { profile, loading: authLoading, refreshProfile } = useAuth();
@@ -309,6 +310,10 @@ export default function ResultPage() {
       }}
       onRotate={(id, dir) => {
         rotateItem(id, dir);
+        track("layout_edited", { item: id, action: "rotate" });
+      }}
+      onSetRotation={(id, degrees) => {
+        setItemRotation(id, degrees);
         track("layout_edited", { item: id, action: "rotate" });
       }}
       onDeleteItem={(f) => {

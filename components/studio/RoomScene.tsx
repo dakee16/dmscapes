@@ -36,12 +36,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
       const b=footprint(f),choice=productForFurniture(f,props.products??[]);
       const product=choice && (!f.built_in || f.type==="bed") ? productVisual(choice) : undefined;
       const kind=f.built_in?modelKind(f):product?.kind??modelKind(f);
-      let rotation=f.rotation_deg;
-      if(["art","wall-shelf","macrame","mirror","curtains","lights"].includes(kind)){
-        if(b.w>b.h && Math.min(b.y,props.room.widthFt-b.y-b.h)<.5)rotation=b.y<props.room.widthFt/2?0:180;
-        else if(b.h>b.w && Math.min(b.x,props.room.lengthFt-b.x-b.w)<.5)rotation=b.x<props.room.lengthFt/2?270:90;
-      }
-      return {...f,rotation_deg:rotation,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||product?.color,kind,height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:!allowed||Boolean(props.readOnly)||props.locked.includes(f.id)};
+      return {...f,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||product?.color,kind,height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:!allowed||Boolean(props.readOnly)||props.locked.includes(f.id)};
     })};
   const latest=useRef(data);latest.current=data;
   useImperativeHandle(ref,()=>({exportPNG:()=>access.current?view.current?.exportPNG()??null:null,preset:m=>view.current?.preset(m),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);

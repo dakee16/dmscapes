@@ -31,6 +31,7 @@ import { createPortal } from "react-dom";
 import { useCanvasDock } from "./CanvasControlsContext";
 import CanvasToolRail from "./CanvasToolRail";
 import FurnitureGlyph from "./FurnitureGlyph";
+import RotationControl from "./RotationControl";
 import { feetLabel, fitViewport, placedCoordinate, zoomAt } from "./viewport";
 import styles from "./CanvasStudio.module.css";
 
@@ -59,6 +60,7 @@ interface RoomCanvasProps {
   onMove: (id: string, xFt: number, yFt: number) => void;
   /** Quarter-turn the item (1 = CW, -1 = CCW); wired to the store's rotateItem. */
   onRotate?: (id: string, dir: 1 | -1) => void;
+  onSetRotation?: (id: string, degrees: number) => void;
   /** Toolbar "delete": move the selected purchasable item's category to the
    *  Catalog (same as the product list's Remove). Built-ins can't be deleted. */
   onDeleteItem?: (f: FurnitureItem) => void;
@@ -190,6 +192,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     closet,
     onMove,
     onRotate,
+    onSetRotation,
     onDeleteItem,
     onReset,
     history,
@@ -525,6 +528,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         undo={()=>history?.undo()} redo={()=>history?.redo()} canUndo={!!history?.canUndo} canRedo={!!history?.canRedo}
         selected={toolbarItem} locked={toolbarLocked} hidden={toolbarHidden} canEdit={canEditItem&&!!onRotate} canDelete={toolbarDeletable}
         rotate={()=>toolbarItem&&onRotate?.(toolbarItem.id,1)} toggleLock={()=>toolbarItem&&toggleLockedItem(toolbarItem.id)} toggleHide={()=>toolbarItem&&toggleHiddenItem(toolbarItem.id)}
+        setRotation={onSetRotation ? degrees=>toolbarItem&&onSetRotation(toolbarItem.id,degrees) : undefined}
         remove={()=>{if(toolbarItem){onDeleteItem?.(toolbarItem);clearSelectedCategory();}}} hiddenItems={visible.filter(f=>hiddenItemIds.includes(f.id))} showItem={toggleHiddenItem} invalidCount={invalid.size}/>,dock.host)}
       {!dock && <>
       <div className={styles.topbar}>
@@ -751,8 +755,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
             {/* Furniture */}
             {visible.map((f) => {
               const fp = footprint(f);
-              const w = fp.w * pxFt;
-              const h = fp.h * pxFt;
+              const w = f.width_ft * pxFt;
+              const h = f.length_ft * pxFt;
               const bad = invalid.has(f.id);
               const layer = layerOf(f);
               const color = f.type === "bed" || f.type === "rug" ? palette[2] : CATEGORY_COLORS[f.color_category] ?? "#94a3b8";
@@ -803,6 +807,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                     if (stage) stage.container().style.cursor = "default";
                   }}
                 >
+                  <Group x={fp.w*pxFt/2} y={fp.h*pxFt/2} offsetX={w/2} offsetY={h/2} rotation={f.rotation_deg}>
                   <Rect
                     width={w}
                     height={h}
@@ -840,6 +845,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                       listening={false}
                     />
                   )}
+                  </Group>
                 </Group>
               );
             })}
@@ -856,7 +862,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 const labelH = stacked ? 30 : 16;
                 const width = Math.min(w-8, (Math.max(...label.split("\n").map(line=>line.length))+2)*size*.61);
                 const x = (w-width)/2;
-                const y = (f.type === "desk" ? h*.85 : h/2) - labelH/2;
+                const y = (f.type === "desk" && f.rotation_deg % 180 === 0 ? h*.85 : h/2) - labelH/2;
                 return <Group
                   key={`label-${f.id}`}
                   ref={node => { if (node) labelRefs.current.set(f.id, node); else labelRefs.current.delete(f.id); }}
@@ -896,7 +902,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           <small>{toolbarItem && selectedFootprint ? `${feetLabel(selectedFootprint.w)} × ${feetLabel(selectedFootprint.h)} · ${toolbarLocked ? "Locked in place" : toolbarHidden ? "Hidden from view" : toolbarItem.built_in ? "Provided furniture" : "Move it to make it yours"}` : "Drag to arrange. Use the controls for the details."}</small>
         </div>
         <div className={styles.group}>
-          <button type="button" disabled={!canEditItem || !onRotate} onClick={() => toolbarItem && onRotate?.(toolbarItem.id,1)} title="Rotate clockwise (R)" aria-label="Rotate selected item clockwise"><Icon path="M20 4v6h-6m5-1a8 8 0 1 0 1 8" />Rotate</button>
+          {toolbarItem && onSetRotation && <RotationControl key={toolbarItem.id} degrees={toolbarItem.rotation_deg} disabled={!canEditItem} onCommit={degrees=>onSetRotation(toolbarItem.id,degrees)}/>}
+          <button type="button" disabled={!canEditItem || !onRotate} onClick={() => toolbarItem && onRotate?.(toolbarItem.id,1)} title="Rotate 90° clockwise (R)" aria-label="Rotate selected item 90° clockwise"><Icon path="M20 4v6h-6m5-1a8 8 0 1 0 1 8" />Rotate 90°</button>
           <button type="button" disabled={!toolbarItem} onClick={() => toolbarItem && toggleLockedItem(toolbarItem.id)} aria-pressed={toolbarLocked} aria-label={toolbarLocked ? "Unlock selected item" : "Lock selected item"}><Icon path={toolbarLocked ? "M5 10h14v11H5zM8 10V7a4 4 0 0 1 8 0v3" : "M5 10h14v11H5zM8 10V7a4 4 0 0 1 7-2"} /></button>
           <button type="button" disabled={!toolbarItem} onClick={() => toolbarItem && toggleHiddenItem(toolbarItem.id)} aria-pressed={toolbarHidden} aria-label={toolbarHidden ? "Show selected item" : "Hide selected item"}><Icon path="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Zm13 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0" /></button>
           <button type="button" disabled={!toolbarDeletable} onClick={() => { if (toolbarItem) { onDeleteItem?.(toolbarItem); clearSelectedCategory(); } }} className={styles.danger} aria-label="Remove selected item to catalog"><Icon path="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7" /></button>

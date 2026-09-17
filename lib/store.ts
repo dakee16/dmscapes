@@ -1,6 +1,7 @@
 "use client";
 
 import { roomEditError } from "./room-editing";
+import { footprint, normalizeRotation, rotateFurniture } from "@/components/canvas/geometry";
 import { bedSurfaceHeight, itemElevation, itemHeight, modelKind } from "./studio";
 
 import { create } from "zustand";
@@ -89,6 +90,8 @@ export interface PlannerState {
   updateRoomGeometry: (outline: import("./types").RoomOutline, origin?: import("./types").Point) => void;
   /** Rotate an item a quarter turn about its center (1 = CW, -1 = CCW). */
   rotateItem: (id: string, dir: 1 | -1) => void;
+  /** Set any angle in degrees, preserving the center and attached accessories. */
+  setItemRotation: (id: string, degrees: number) => void;
   setHoveredCategory: (category: ProductCategory | null) => void;
   /** Click behavior: same category toggles off, a new one replaces it. */
   toggleSelectedCategory: (category: ProductCategory) => void;
@@ -131,7 +134,7 @@ const initial = {
 
 export const usePlannerStore = create<PlannerState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       ...initial,
       setPlannerView: (plannerView) => set({ plannerView }),
       setCollege: (college) => set({ college, dorm: null, room: null }),
@@ -223,22 +226,17 @@ export const usePlannerStore = create<PlannerState>()(
               f.id === id ? { ...f, width_ft: widthFt, length_ft: lengthFt } : f
             ) ?? null,
         })),
-      rotateItem: (id, dir) => set(s => {
+      rotateItem: (id, dir) => {
+        const item = get().furniture?.find(f => f.id === id);
+        if (item) get().setItemRotation(id, item.rotation_deg + dir * 90);
+      },
+      setItemRotation: (id, degrees) => set(s => {
         const item=s.furniture?.find(f=>f.id===id);
-        if(!item || !item.movable || s.lockedItemIds.includes(id))return {};
-        const swapped=item.rotation_deg%180===90;
-        const w=swapped?item.length_ft:item.width_ft,h=swapped?item.width_ft:item.length_ft;
-        const rotation_deg=(item.rotation_deg+dir*90+360)%360;
-        let x_ft=Math.round((item.x_ft+(w-h)/2)*2)/2,y_ft=Math.round((item.y_ft+(h-w)/2)*2)/2;
-        if(s.room){x_ft=Math.min(Math.max(x_ft,0),Math.max(0,s.room.lengthFt-h));y_ft=Math.min(Math.max(y_ft,0),Math.max(0,s.room.widthFt-w));}
-        const cx=item.x_ft+w/2,cy=item.y_ft+h/2,nx=x_ft+h/2,ny=y_ft+w/2;
-        return {furniture:s.furniture?.map(f=>{
-          if(f.id===id)return {...f,rotation_deg,x_ft,y_ft};
-          if(f.parent_id!==id)return f;
-          const sw=f.rotation_deg%180===90,cw=sw?f.length_ft:f.width_ft,ch=sw?f.width_ft:f.length_ft;
-          const dx=f.x_ft+cw/2-cx,dy=f.y_ft+ch/2-cy;
-          return {...f,rotation_deg:(f.rotation_deg+dir*90+360)%360,x_ft:nx-dir*dy-ch/2,y_ft:ny+dir*dx-cw/2};
-        })??null};
+        if(!item || !item.movable || s.lockedItemIds.includes(id) || !Number.isFinite(degrees))return {};
+        const delta=normalizeRotation(degrees)-normalizeRotation(item.rotation_deg);
+        if(!delta)return {};
+        const b=footprint(item),pivot={x:b.x+b.w/2,y:b.y+b.h/2};
+        return {furniture:s.furniture!.map(f=>f.id===id||f.parent_id===id?rotateFurniture(f,delta,pivot):f)};
       }),
       setHoveredCategory: (category) => set({ hoveredCategory: category }),
       toggleSelectedCategory: (category) =>

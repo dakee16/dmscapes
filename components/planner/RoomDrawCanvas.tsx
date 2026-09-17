@@ -556,7 +556,7 @@ export default function RoomDrawCanvas({
 
               {/* Keep furniture visible while editing walls, without changing placement. */}
               {closed && furniture.map(f => { const b=footprint(f),[x,y]=px(f.x_ft,f.y_ft); return <Group key={f.id} listening={false} opacity={.45}>
-                <Rect x={x} y={y} width={b.w*pxFt} height={b.h*pxFt} fill="#dfe5ff" stroke="#727eac" strokeWidth={1} cornerRadius={2}/>
+                <Rect x={x+b.w*pxFt/2} y={y+b.h*pxFt/2} offsetX={f.width_ft*pxFt/2} offsetY={f.length_ft*pxFt/2} width={f.width_ft*pxFt} height={f.length_ft*pxFt} rotation={f.rotation_deg} fill="#dfe5ff" stroke="#727eac" strokeWidth={1} cornerRadius={2}/>
                 {b.w*pxFt>28&&b.h*pxFt>18&&<Text x={x+3} y={y+3} width={Math.max(1,b.w*pxFt-6)} height={Math.max(1,b.h*pxFt-6)} text={f.label} fontSize={10} fill={INK} align="center" verticalAlign="middle"/>}
               </Group>; })}
               {/* Closets (drag to move, corner handle to resize) */}

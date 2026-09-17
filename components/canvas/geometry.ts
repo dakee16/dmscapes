@@ -9,15 +9,72 @@ export interface Footprint {
   h: number;
 }
 
-/**
- * Axis-aligned footprint. Templates author 0/90; the rotate controls extend
- * that to full quarter turns, so rotation mod 180 decides the axis swap.
- */
+export const normalizeRotation = (degrees: number): number => ((degrees % 360) + 360) % 360;
+
+function rotationAxes(degrees: number) {
+  const angle = normalizeRotation(degrees) * Math.PI / 180;
+  // Exact quarter turns keep existing layouts and repeated rotations stable.
+  const clean = (v: number) => Math.abs(v) < 1e-12 ? 0 : v;
+  return { cos: clean(Math.cos(angle)), sin: clean(Math.sin(angle)) };
+}
+
+/** Axis-aligned bounds; saved x/y remain their top-left at every angle. */
 export function footprint(f: FurnitureItem): Footprint {
-  const swap = f.rotation_deg % 180 === 90;
-  const w = swap ? f.length_ft : f.width_ft;
-  const h = swap ? f.width_ft : f.length_ft;
+  const { cos, sin } = rotationAxes(f.rotation_deg);
+  const w = Math.abs(cos) * f.width_ft + Math.abs(sin) * f.length_ft;
+  const h = Math.abs(sin) * f.width_ft + Math.abs(cos) * f.length_ft;
   return { x: f.x_ft, y: f.y_ft, w, h };
+}
+
+export function rectCorners({ x, y, w, h }: Footprint): Point[] {
+  return [{ x, y }, { x: x + w, y }, { x: x + w, y: y + h }, { x, y: y + h }];
+}
+
+export function furnitureCorners(f: FurnitureItem): Point[] {
+  const b = footprint(f), { cos, sin } = rotationAxes(f.rotation_deg);
+  return rectCorners({ x: -f.width_ft / 2, y: -f.length_ft / 2, w: f.width_ft, h: f.length_ft })
+    .map(p => ({ x: b.x + b.w / 2 + p.x * cos - p.y * sin, y: b.y + b.h / 2 + p.x * sin + p.y * cos }));
+}
+
+/** Room coordinates in the furniture's unrotated, center-based frame. */
+export function furnitureLocalPoint(f: FurnitureItem, p: Point): Point {
+  const b = footprint(f), { cos, sin } = rotationAxes(f.rotation_deg);
+  const dx = p.x - b.x - b.w / 2, dy = p.y - b.y - b.h / 2;
+  return { x: dx * cos + dy * sin, y: -dx * sin + dy * cos };
+}
+
+export function furnitureContainsPoint(f: FurnitureItem, p: Point): boolean {
+  const local = furnitureLocalPoint(f, p);
+  return Math.abs(local.x) <= f.width_ft / 2 + 1e-6 && Math.abs(local.y) <= f.length_ft / 2 + 1e-6;
+}
+
+/** Separating-axis test for convex footprints; touching edges are allowed. */
+export function polygonsOverlap(a: Point[], b: Point[], eps = 1e-6): boolean {
+  for (const polygon of [a, b]) {
+    for (let i = 0; i < polygon.length; i++) {
+      const p = polygon[i], q = polygon[(i + 1) % polygon.length];
+      const length = Math.hypot(q.x - p.x, q.y - p.y);
+      const nx = -(q.y - p.y) / length, ny = (q.x - p.x) / length;
+      const pa = a.map(v => v.x * nx + v.y * ny), pb = b.map(v => v.x * nx + v.y * ny);
+      if (Math.max(...pa) <= Math.min(...pb) + eps || Math.max(...pb) <= Math.min(...pa) + eps) return false;
+    }
+  }
+  return true;
+}
+
+export function furnitureInsidePolygon(f: FurnitureItem, polygon: Point[]): boolean {
+  return rectInsidePolygon({ x: -f.width_ft / 2, y: -f.length_ft / 2, w: f.width_ft, h: f.length_ft },
+    polygon.map(p => furnitureLocalPoint(f, p)));
+}
+
+/** Rotate a piece and its bounds around a shared pivot without grid snapping. */
+export function rotateFurniture(f: FurnitureItem, degrees: number, pivot: Point): FurnitureItem {
+  const before = footprint(f), { cos, sin } = rotationAxes(degrees);
+  const next = { ...f, rotation_deg: normalizeRotation(f.rotation_deg + degrees) };
+  const after = footprint(next);
+  const dx = before.x + before.w / 2 - pivot.x, dy = before.y + before.h / 2 - pivot.y;
+  return { ...next, x_ft: pivot.x + dx * cos - dy * sin - after.w / 2,
+    y_ft: pivot.y + dx * sin + dy * cos - after.h / 2 };
 }
 
 /** Wall-mounted items: thin, hug walls, never collide. */
@@ -39,25 +96,16 @@ export function clamp(v: number, min: number, max: number): number {
   return Math.min(Math.max(v, min), max);
 }
 
-function overlaps(a: Footprint, b: Footprint, eps = 1e-6): boolean {
-  return a.x < b.x + b.w - eps && b.x < a.x + a.w - eps && a.y < b.y + b.h - eps && b.y < a.y + a.h - eps;
-}
-
-function centerInside(inner: Footprint, outer: Footprint): boolean {
-  const cx = inner.x + inner.w / 2;
-  const cy = inner.y + inner.h / 2;
-  return cx >= outer.x && cx <= outer.x + outer.w && cy >= outer.y && cy <= outer.y + outer.h;
-}
-
 /** Only real accessories can ride furniture; overlapping desks are collisions. */
 export function furnitureHost(f: FurnitureItem, items: FurnitureItem[]): FurnitureItem | undefined {
   const hostTypes: Record<string, string[]> = {
     desk_lamp: ["desk", "dresser"], throw_pillows: ["bed", "bunk"], storage_bins: ["bed", "bunk"],
   };
   const types = hostTypes[f.type];
+  const b = footprint(f);
   return items.find(c => c.id !== f.id && (f.parent_id === c.id ||
-    (types?.includes(c.type) && centerInside(footprint(f), footprint(c)) &&
-      footprint(c).w * footprint(c).h > footprint(f).w * footprint(f).h)));
+    (types?.includes(c.type) && furnitureContainsPoint(c, { x: b.x + b.w / 2, y: b.y + b.h / 2 }) &&
+      c.width_ft * c.length_ft > f.width_ft * f.length_ft)));
 }
 
 // ---- Polygon (hand-drawn room) geometry -------------------------------------
@@ -65,17 +113,13 @@ export function furnitureHost(f: FurnitureItem, items: FurnitureItem[]): Furnitu
 // simple `x + w <= roomL` bounds test with real polygon containment so an
 // L-shaped room flags furniture that pokes across a wall or into a notch.
 
-/** True if (px,py) is on the axis-aligned segment (ax,ay)-(bx,by), within eps. */
+/** True if (px,py) is on a segment at any angle, within eps. */
 function onSegment(px: number, py: number, ax: number, ay: number, bx: number, by: number, eps: number): boolean {
-  if (Math.abs(ax - bx) < eps) {
-    // vertical
-    return Math.abs(px - ax) < eps && py >= Math.min(ay, by) - eps && py <= Math.max(ay, by) + eps;
-  }
-  if (Math.abs(ay - by) < eps) {
-    // horizontal
-    return Math.abs(py - ay) < eps && px >= Math.min(ax, bx) - eps && px <= Math.max(ax, bx) + eps;
-  }
-  return false;
+  const dx = bx - ax, dy = by - ay, length = Math.hypot(dx, dy);
+  if (length < eps) return Math.hypot(px - ax, py - ay) <= eps;
+  return Math.abs((px - ax) * dy - (py - ay) * dx) <= eps * length &&
+    px >= Math.min(ax, bx) - eps && px <= Math.max(ax, bx) + eps &&
+    py >= Math.min(ay, by) - eps && py <= Math.max(ay, by) + eps;
 }
 
 /**
@@ -123,8 +167,7 @@ function edgeCrossesRectInterior(ax: number, ay: number, bx: number, by: number,
 /**
  * True when the whole footprint sits inside the polygon: all four corners are
  * inside/on the ring AND no wall edge cuts across the rect (which would mean a
- * concave notch pokes into it). Exact for rectilinear rooms + axis-aligned
- * footprints.
+ * concave notch pokes into it). Handles diagonal walls as well.
  */
 export function rectInsidePolygon(fp: Footprint, poly: Point[]): boolean {
   const corners: [number, number][] = [
@@ -173,7 +216,7 @@ export function invalidItems(
     const fp = footprint(f);
     // Out of bounds: inside the drawn polygon, or inside the bbox rectangle.
     const outOfBounds = outline
-      ? !rectInsidePolygon(fp, outline.points)
+      ? !furnitureInsidePolygon(f, outline.points)
       : fp.x < -eps || fp.y < -eps || fp.x + fp.w > roomL + eps || fp.y + fp.h > roomW + eps;
     if (outOfBounds) bad.add(f.id);
   }
@@ -184,15 +227,13 @@ export function invalidItems(
   for (const cl of outline?.closets ?? []) {
     const clo: Footprint = { x: cl.x_ft, y: cl.y_ft, w: cl.width_ft, h: cl.depth_ft };
     for (const f of solids) {
-      if (overlaps(footprint(f), clo)) bad.add(f.id);
+      if (polygonsOverlap(furnitureCorners(f), rectCorners(clo))) bad.add(f.id);
     }
   }
 
   for (let i = 0; i < solids.length; i++) {
     for (let j = i + 1; j < solids.length; j++) {
-      const a = footprint(solids[i]);
-      const b = footprint(solids[j]);
-      if (!overlaps(a, b)) continue;
+      if (!polygonsOverlap(furnitureCorners(solids[i]), furnitureCorners(solids[j]))) continue;
       bad.add(solids[i].id);
       bad.add(solids[j].id);
     }

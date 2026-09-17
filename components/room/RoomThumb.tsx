@@ -1,18 +1,11 @@
 import type { FurnitureItem, RoomOutline } from "@/lib/types";
 import { CATEGORY_COLORS } from "@/lib/styles";
+import { footprint } from "@/components/canvas/geometry";
 
 // Tiny top-down layout preview (account tiles). Room shell + furniture blocks
 // only, labels, door, and scale bar are unreadable at thumbnail size.
 // Same coordinate convention as StaticRoomView.
 const WALL_TYPES = new Set(["string_lights", "wall_decor", "power_strip"]);
-
-function footprint(f: FurnitureItem) {
-  // mod 180: user rotation covers full quarter turns (0/90/180/270)
-  const swap = f.rotation_deg % 180 === 90;
-  const w = swap ? f.length_ft : f.width_ft;
-  const h = swap ? f.width_ft : f.length_ft;
-  return { x: f.x_ft, y: f.y_ft, w, h };
-}
 
 export default function RoomThumb({
   lengthFt,
@@ -60,13 +53,15 @@ export default function RoomThumb({
       )}
       {sorted.map((f) => {
         const fp = footprint(f);
+        const cx = PAD + (fp.x + fp.w / 2) * PX, cy = PAD + (fp.y + fp.h / 2) * PX;
         return (
           <rect
             key={f.id}
-            x={PAD + fp.x * PX}
-            y={PAD + fp.y * PX}
-            width={Math.max(fp.w * PX, 1.5)}
-            height={Math.max(fp.h * PX, 1.5)}
+            x={cx - f.width_ft * PX / 2}
+            y={cy - f.length_ft * PX / 2}
+            width={Math.max(f.width_ft * PX, 1.5)}
+            height={Math.max(f.length_ft * PX, 1.5)}
+            transform={`rotate(${f.rotation_deg} ${cx} ${cy})`}
             rx={1}
             fill={CATEGORY_COLORS[f.color_category] ?? "#94a3b8"}
             opacity={f.type === "rug" ? 0.45 : f.built_in ? 0.55 : 0.9}

@@ -1,19 +1,12 @@
 import type { FurnitureItem, Point, RoomOutline } from "@/lib/types";
 import { CATEGORY_COLORS } from "@/lib/styles";
 import { bedLabel, isBunkBed } from "@/lib/bedding";
+import { footprint } from "@/components/canvas/geometry";
 
 // Server-renderable top-down room view for the read-only share page (/room/[id]).
 // Same coordinate convention as the Konva canvas (templates/README.md):
 // feet, origin top-left, x along length, rotation 0 = width_ft spans x.
 const WALL_TYPES = new Set(["string_lights", "wall_decor", "power_strip"]);
-
-function footprint(f: FurnitureItem) {
-  // mod 180: user rotation covers full quarter turns (0/90/180/270)
-  const swap = f.rotation_deg % 180 === 90;
-  const w = swap ? f.length_ft : f.width_ft;
-  const h = swap ? f.width_ft : f.length_ft;
-  return { x: f.x_ft, y: f.y_ft, w, h };
-}
 
 function pointInPoly(px: number, py: number, poly: Point[]): boolean {
   let inside = false;
@@ -118,14 +111,16 @@ export default function StaticRoomView({
         const isWall = WALL_TYPES.has(f.type);
         const fill = CATEGORY_COLORS[f.color_category] ?? "#94a3b8";
         const opacity = f.type === "rug" ? 0.45 : f.built_in ? 0.55 : 0.9;
-        const wPx = Math.max(fp.w * PX, 3);
-        const hPx = Math.max(fp.h * PX, 3);
+        const wPx = Math.max(f.width_ft * PX, 3);
+        const hPx = Math.max(f.length_ft * PX, 3);
+        const cx = x(fp.x + fp.w / 2), cy = y(fp.y + fp.h / 2);
         const showLabel = !isWall && wPx > 44 && hPx > 20;
         return (
           <g key={f.id}>
             <rect
-              x={x(fp.x)}
-              y={y(fp.y)}
+              x={cx - wPx / 2}
+              y={cy - hPx / 2}
+              transform={`rotate(${f.rotation_deg} ${cx} ${cy})`}
               width={wPx}
               height={hPx}
               rx={3}
@@ -137,8 +132,8 @@ export default function StaticRoomView({
             />
             {showLabel && (
               <text
-                x={x(fp.x) + wPx / 2}
-                y={y(fp.y) + hPx / 2}
+                x={cx}
+                y={cy}
                 textAnchor="middle"
                 dominantBaseline="central"
                 fontSize={Math.min(11, hPx * 0.4)}

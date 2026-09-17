@@ -1,5 +1,5 @@
 import type { FurnitureItem } from "./types";
-import { furnitureHost } from "@/components/canvas/geometry";
+import { footprint, furnitureHost } from "@/components/canvas/geometry";
 
 /**
  * Templates are authored at a nominal room size but match a *range* of rooms
@@ -41,13 +41,6 @@ const COLLISION_EXEMPT_TYPES = new Set([
   "power_strip",
   "mirror",
 ]);
-
-function footprint(f: FurnitureItem): { w: number; h: number } {
-  // mod 180: user rotation covers full quarter turns (0/90/180/270)
-  return f.rotation_deg % 180 === 90
-    ? { w: f.length_ft, h: f.width_ft }
-    : { w: f.width_ft, h: f.length_ft };
-}
 
 function fitAxis(pos: number, size: number, tplExtent: number, roomExtent: number): number {
   const gapNear = pos;

@@ -1,7 +1,7 @@
 import type { FurnitureItem, ProductCategory, RoomOutline, SelectedRoom } from "./types";
 import { furnitureCategory } from "./highlight";
 import { isBunkBed } from "./bedding";
-import { footprint, rectInsidePolygon } from "@/components/canvas/geometry";
+import { footprint, furnitureContainsPoint, furnitureCorners, furnitureInsidePolygon, furnitureLocalPoint, polygonsOverlap, rectCorners } from "@/components/canvas/geometry";
 
 export interface StudioSettings {
   ceilingFt: number;
@@ -57,7 +57,7 @@ export function itemElevation(f: FurnitureItem, items: FurnitureItem[]): number 
   if (!["lamp","plant","pillow"].includes(k)) return 0;
   const fp = footprint(f), cx=fp.x+fp.w/2, cy=fp.y+fp.h/2;
   const host = items.find(p => p.id!==f.id && ["desk","dresser","bed","bunk","shelf"].includes(modelKind(p)) &&
-    (()=>{const b=footprint(p);return b.w*b.h>fp.w*fp.h && cx>=b.x&&cx<=b.x+b.w&&cy>=b.y&&cy<=b.y+b.h;})());
+    p.width_ft*p.length_ft>f.width_ft*f.length_ft && furnitureContainsPoint(p,{x:cx,y:cy}));
   return host ? ["bed","bunk"].includes(modelKind(host)) ? bedSurfaceHeight(host) : itemHeight(host) : 0;
 }
 export function visibleFurniture(items: FurnitureItem[], hidden: string[], excluded: ProductCategory[]): FurnitureItem[] {
@@ -67,32 +67,32 @@ export function constrainedPosition(f: FurnitureItem, x: number, y: number, room
   const b=footprint(f), round=(n:number)=>snap?Math.round(n*2)/2:Math.round(n*100)/100;
   x=Math.max(0,Math.min(room.lengthFt-b.w,round(x)));
   y=Math.max(0,Math.min(room.widthFt-b.h,round(y)));
-  if(!room.outline || rectInsidePolygon({...b,x,y},room.outline.points))return {x,y};
+  if(!room.outline || furnitureInsidePolygon({...f,x_ft:x,y_ft:y},room.outline.points))return {x,y};
   return {x:f.x_ft,y:f.y_ft};
 }
-const overlaps=(a:ReturnType<typeof footprint>,b:ReturnType<typeof footprint>)=>a.x<b.x+b.w-.02&&b.x<a.x+a.w-.02&&a.y<b.y+b.h-.02&&b.y<a.y+a.h-.02;
 export function placementIssues(items: FurnitureItem[], room: SelectedRoom, settings: StudioSettings): {id:string;message:string}[] {
   const result:{id:string;message:string}[]=[];
   const add=(id:string,message:string)=>{if(!result.some(x=>x.id===id&&x.message===message))result.push({id,message});};
   const outline=roomOutline(room);
   for(const f of items){
-    const b=footprint(f), k=modelKind(f), e=itemElevation(f,items);
-    if(!rectInsidePolygon(b,outline.points))add(f.id,"Crosses a room wall");
+    const corners=furnitureCorners(f), k=modelKind(f), e=itemElevation(f,items);
+    if(!furnitureInsidePolygon(f,outline.points))add(f.id,"Crosses a room wall");
     if(e+itemHeight(f)>settings.ceilingFt+.1)add(f.id,"Above the ceiling");
     if(["rug","art","lights","mirror"].includes(k))continue;
-    for(const c of outline.closets)if(overlaps(b,{x:c.x_ft,y:c.y_ft,w:c.width_ft,h:c.depth_ft}))add(f.id,"Overlaps a fixed closet");
+    for(const c of outline.closets)if(polygonsOverlap(corners,rectCorners({x:c.x_ft,y:c.y_ft,w:c.width_ft,h:c.depth_ft}),.02))add(f.id,"Overlaps a fixed closet");
     for(const o of outline.openings.filter(o=>o.kind==="door" && (o.swing??0)<2)){
       const a=outline.points[o.edge],z=outline.points[(o.edge+1)%outline.points.length],len=Math.hypot(z.x-a.x,z.y-a.y)||1;
       const offset=o.offset_ft+((o.swing??0)%2 ? o.width_ft:0),cx=a.x+(z.x-a.x)*offset/len,cy=a.y+(z.y-a.y)*offset/len;
-      const nearX=Math.max(b.x,Math.min(cx,b.x+b.w)),nearY=Math.max(b.y,Math.min(cy,b.y+b.h));
-      if(e<6.6 && Math.hypot(nearX-cx,nearY-cy)<o.width_ft-.1)add(f.id,"Near the door swing. Check clearance");
+      const local=furnitureLocalPoint(f,{x:cx,y:cy});
+      const dx=Math.max(0,Math.abs(local.x)-f.width_ft/2),dy=Math.max(0,Math.abs(local.y)-f.length_ft/2);
+      if(e<6.6 && Math.hypot(dx,dy)<o.width_ft-.1)add(f.id,"Near the door swing. Check clearance");
     }
     for(const other of items){
       if(other.id<=f.id || ["rug","art","lights","mirror"].includes(modelKind(other)))continue;
       const oe=itemElevation(other,items);
       const underBed=(modelKind(f)==="storage" && ["bed","bunk"].includes(modelKind(other)) && e+itemHeight(f)<(isBunkBed(other)?itemHeight(other)*.35:itemHeight(other)*.7))||
         (modelKind(other)==="storage" && ["bed","bunk"].includes(k) && oe+itemHeight(other)<(isBunkBed(f)?itemHeight(f)*.35:itemHeight(f)*.7));
-      if(!underBed && overlaps(b,footprint(other)) && e<oe+itemHeight(other)-.06 && oe<e+itemHeight(f)-.06){
+      if(!underBed && polygonsOverlap(corners,furnitureCorners(other),.02) && e<oe+itemHeight(other)-.06 && oe<e+itemHeight(f)-.06){
         add(f.id,"Overlaps "+other.label);add(other.id,"Overlaps "+f.label);
       }
     }

@@ -1,6 +1,6 @@
 import type { FurnitureItem, Product, SelectedRoom } from "./types";
 import { furnitureCategory } from "./highlight";
-import { footprint, furnitureHost, invalidItems, layerOf, rectInsidePolygon } from "@/components/canvas/geometry";
+import { footprint, furnitureCorners, furnitureHost, furnitureInsidePolygon, invalidItems, layerOf, rectInsidePolygon } from "@/components/canvas/geometry";
 import { bedSurfaceHeight, itemHeight, modelKind, roomOutline } from "./studio";
 
 const COLORS: Record<string, string> = {
@@ -82,6 +82,7 @@ function placeOnSurface(item: FurnitureItem, items: FurnitureItem[], preferDesk:
   for(const host of hosts){
     const b=footprint(host),size=footprint(item);
     for(let y=b.y+.08;y+size.h<=b.y+b.h-.08;y+=.2) for(let x=b.x+.08;x+size.w<=b.x+b.w-.08;x+=.2){
+      if(!furnitureInsidePolygon({...item,x_ft:x,y_ft:y},furnitureCorners(host)))continue;
       const blocked=items.some(f=>f.parent_id===host.id && (f.height_ft??1)>.05 && (item.height_ft??1)>.05 && (()=>{const a=footprint(f);return x<a.x+a.w+.08&&x+size.w+.08>a.x&&y<a.y+a.h+.08&&y+size.h+.08>a.y;})());
       if(!blocked){item.x_ft=x;item.y_ft=y;item.parent_id=host.id;item.elevation_ft=itemHeight(host);return true;}
     }
