@@ -120,7 +120,7 @@ export default function DrawRoomPage() {
             )}
           </div>
           <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
-            Start with a simple shape or draw your own. Add your doors and
+            Draw your walls on the grid. Add your doors and
             windows, then choose a vibe. We’ll arrange the furniture to fit.
           </p>
 
@@ -138,7 +138,7 @@ export default function DrawRoomPage() {
               <rect x="2" y="4" width="20" height="14" rx="2" />
               <path d="M8 20h8M12 18v2" strokeLinecap="round" />
             </svg>
-            Start with a rectangle or L-shape, or tap to trace your walls.
+            Tap to place corners and trace your walls.
             You can adjust the walls and add details as you go.
           </p>
         </div>

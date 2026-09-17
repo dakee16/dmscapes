@@ -138,9 +138,6 @@ export default function RoomDrawCanvas({
   const [zoom, setZoom] = useState(1);
   const [stagePos, setStagePos] = useState({ x: 0, y: 0 });
   const [showGrid, setShowGrid] = useState(true);
-  const [startLength, setStartLength] = useState("14");
-  const [startWidth, setStartWidth] = useState("12");
-  const [freeDraw, setFreeDraw] = useState(false);
   const inputId = useId();
   const lastDrag = useRef(0);
 
@@ -213,21 +210,7 @@ export default function RoomDrawCanvas({
   }
   function clearAll() {
     commit({ points: [], closed: false, openings: [], closets: [] });
-    setFreeDraw(false);
     setSelected(null); setHint("Drawing cleared. Undo to bring it back."); setTool("wall"); setCursor(null);
-  }
-  function startShape(shape: "rectangle" | "l") {
-    const length = Number(startLength), width = Number(startWidth);
-    if (!Number.isFinite(length) || !Number.isFinite(width) || length < 4 || length > 24 || width < 4 || width > 18) {
-      setHint("Enter a length from 4 to 24 ft and a width from 4 to 18 ft, or draw your own shape."); return;
-    }
-    const x = snap((SPAN_X-length)/2), y = snap((SPAN_Y-width)/2);
-    const ring = shape === "rectangle"
-      ? [{x,y},{x:x+length,y},{x:x+length,y:y+width},{x,y:y+width}]
-      : [{x,y},{x:x+length,y},{x:x+length,y:y+width/2},{x:x+length/2,y:y+width/2},{x:x+length/2,y:y+width},{x,y:y+width}];
-    commit({ points: ring, closed: true, openings: [], closets: [] });
-    setTool("door"); setCursor(null); setHint(null);
-    containerRef.current?.focus({preventScroll:true});
   }
 
   // ---- cursor + rubber-band preview ----------------------------------------
@@ -522,7 +505,6 @@ export default function RoomDrawCanvas({
   }
 
   const canPlan = closed && points.length >= 3;
-  const choosingShape = !initialRoom && !points.length && !freeDraw;
   const floorArea = closed ? Math.abs(points.reduce((sum,p,i) => { const next=points[(i+1)%points.length]; return sum+p.x*next.y-next.x*p.y; },0))/2 : 0;
 
   const TOOLS: { id: Tool; label: string; icon: React.ReactNode }[] = [
@@ -535,32 +517,18 @@ export default function RoomDrawCanvas({
   return (
     <div className={`${styles.studio} ${styles.drawing} dm-draw-toolbox`} onKeyDown={keyboard}>
       <div className={styles.topbar}>
-        <div className={styles.title}><i /><strong>{initialRoom ? "Edit your room" : closed ? "Add your room’s details" : "Start with your room’s shape"}</strong></div>
+        <div className={styles.title}><i /><strong>{initialRoom ? "Edit your room" : closed ? "Add your room’s details" : "Draw your walls"}</strong></div>
         {closed && <span className={styles.meta}>{Math.round(floorArea)} sq ft</span>}
       </div>
-      {!choosingShape && <div className={`${styles.toolbar} ${styles.drawToolbar} dm-draw-toolbar`} role="group" aria-label="Drawing tools">
+      <div className={`${styles.toolbar} ${styles.drawToolbar} dm-draw-toolbar`} role="group" aria-label="Drawing tools">
           {TOOLS.filter(t => closed || t.id === "wall").map(t => <button key={t.id} type="button" aria-pressed={tool === t.id} onClick={() => { setTool(t.id); setSelected(null); setHint(null); setCursor(null); }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{t.icon}</svg>{t.label}
           </button>)}
           <button type="button" className={styles.drawUndo} onClick={undo} disabled={!history.current.length} aria-label="Undo" title="Undo (Ctrl/⌘ Z)">↶</button>
-      </div>}
-      {(!choosingShape || hint) && <p className={styles.drawHint} role="status" aria-live="polite">{hint ?? (tool === "pan" ? "Drag to move the view. Choose a tool to keep editing." : closed ? ({wall:"Drag a wall or corner to change the shape.",door:"Tap a wall where your door goes.",window:"Tap a wall to add a window.",closet:"Tap inside your room to add a closet."})[tool] : points.length ? "Keep tapping corners. Tap the first one again to finish your walls." : "Tap the grid to place your first corner.")}</p>}
-      <div ref={containerRef} className={`${styles.surface} ${choosingShape ? styles.choosingShape : ""} dm-draw-canvas`} tabIndex={choosingShape ? -1 : 0} role="region" aria-label="Room drawing canvas" onPointerDown={e => { if (!(e.target as HTMLElement).closest("button,input")) containerRef.current?.focus({ preventScroll: true }); }}>
-        {choosingShape && <div className={styles.drawStarter}>
-          <h2>What shape is your room?</h2>
-          <p>Choose the closest match. You can adjust it next.</p>
-          <div className={styles.roomDimensions} role="group" aria-label="Room size">
-            <label htmlFor={`${inputId}-length`}>Length (ft)<input id={`${inputId}-length`} type="number" min="4" max="24" step=".5" value={startLength} onChange={e => setStartLength(e.target.value)} /></label>
-            <span aria-hidden="true">×</span>
-            <label htmlFor={`${inputId}-width`}>Width (ft)<input id={`${inputId}-width`} type="number" min="4" max="18" step=".5" value={startWidth} onChange={e => setStartWidth(e.target.value)} /></label>
-          </div>
-          <div className={styles.shapeChoices}>
-            <button type="button" onClick={() => startShape("rectangle")}><svg viewBox="0 0 48 40" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 5h38v30H5z"/></svg>Rectangle</button>
-            <button type="button" onClick={() => startShape("l")}><svg viewBox="0 0 48 40" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M5 5h38v15H24v15H5z"/></svg>L-shape</button>
-          </div>
-          <button type="button" className={styles.drawOwn} onClick={() => { setFreeDraw(true); setTool("wall"); setHint(null); containerRef.current?.focus({preventScroll:true}); }}>Draw a different shape →</button>
-        </div>}
-        {!choosingShape && pxFt > 0 && (
+      </div>
+      <p className={styles.drawHint} role="status" aria-live="polite">{hint ?? (tool === "pan" ? "Drag to move the view. Choose a tool to keep editing." : closed ? ({wall:"Drag a wall or corner to change the shape.",door:"Tap a wall where your door goes.",window:"Tap a wall to add a window.",closet:"Tap inside your room to add a closet."})[tool] : points.length ? "Keep tapping corners. Tap the first one again to finish your walls." : "Tap the grid to place your first corner.")}</p>
+      <div ref={containerRef} className={`${styles.surface} dm-draw-canvas`} tabIndex={0} role="region" aria-label="Room drawing canvas" onPointerDown={e => { if (!(e.target as HTMLElement).closest("button,input")) containerRef.current?.focus({ preventScroll: true }); }}>
+        {pxFt > 0 && (
           <Stage
             ref={stageRef}
             x={stagePos.x} y={stagePos.y} scaleX={zoom} scaleY={zoom} draggable={tool === "pan"}
@@ -826,17 +794,17 @@ export default function RoomDrawCanvas({
           </Stage>
         )}
 
-        {!choosingShape && <div className={styles.drawMeta}><span>1 square = 1 ft</span></div>}
-        {!choosingShape && points.length === 0 && <div className={styles.empty}>
+        <div className={styles.drawMeta}><span>1 square = 1 ft</span></div>
+        {points.length === 0 && <div className={styles.empty}>
           <strong>Start at any corner.</strong>
           <p>Tap around your room, then return to the first dot.</p>
         </div>}
-        {!choosingShape && <div className={styles.viewportControls} aria-label="Drawing view controls">
+        <div className={styles.viewportControls} aria-label="Drawing view controls">
           <button type="button" disabled={zoom <= .75} onClick={() => applyZoom(zoom-.25)} aria-label="Zoom drawing out">−</button>
           <output aria-label="Drawing zoom level">{Math.round(zoom*100)}%</output>
           <button type="button" disabled={zoom >= 3} onClick={() => applyZoom(zoom+.25)} aria-label="Zoom drawing in">+</button>
           <button type="button" onClick={() => { setZoom(1); setStagePos({x:0,y:0}); }}>Reset view</button>
-        </div>}
+        </div>
       </div>
       {closed && tool==="wall" && <details className={styles.drawPrecision}><summary>Exact measurements</summary><div className={styles.inspector}>
         <div className={styles.selection}><label htmlFor={inputId+"-wall-selection"}>Edit a wall or corner</label><select id={inputId+"-wall-selection"} value={selected&&(selected.kind==="wall"||selected.kind==="corner")?selected.kind+":"+selected.index:""} onChange={e=>{const [kind,index]=e.target.value.split(":");setSelected(kind?{kind:kind as "wall"|"corner",index:Number(index)}:null);}}><option value="">Choose on the drawing or here</option>{points.map((_,i)=><option key={"w"+i} value={"wall:"+i}>Wall {i+1}</option>)}{points.map((_,i)=><option key={"c"+i} value={"corner:"+i}>Corner {i+1}</option>)}</select><small>Drag a wall or a blue corner. Furniture stays in place.</small></div>
@@ -848,19 +816,17 @@ export default function RoomDrawCanvas({
         {selectedDoor && <button type="button" className={styles.outlined} onClick={rotateDoor}>↻ Change swing</button>}
         <button type="button" className={styles.danger} onClick={removeSelected}>Remove</button>
       </div>}
-      {!choosingShape && <div className={styles.footer}>
-        <p>{closed ? initialRoom ? "Ready? Apply your changes to the room." : "Details are optional. Furniture comes next." : points.length ? "Made a wrong turn? You can always undo." : "Prefer a head start? Use a ready-made shape."}</p>
-        {!initialRoom && !points.length && <button type="button" className={styles.outlined} onClick={() => { setFreeDraw(false); setHint(null); }}>Choose a shape</button>}
+      <div className={styles.footer}>
+        <p>{closed ? initialRoom ? "Ready? Apply your changes to the room." : "Details are optional. Furniture comes next." : "Made a wrong turn? You can always undo."}</p>
         {!closed && points.length >= 3 && <button type="button" className={styles.primary} onClick={finishOutline}>Finish walls →</button>}
         {onCancel&&<button type="button" className={styles.outlined} onClick={onCancel}>Cancel edits</button>}
         {canPlan && <button type="button" className={styles.primary} onClick={planRoom}>{initialRoom?"Apply room changes":"Choose my vibe →"}</button>}
-      </div>}
-      {(!choosingShape || history.current.length > 0 || future.current.length > 0) && <details className={styles.drawOptions}>
+      </div>
+      <details className={styles.drawOptions}>
         <summary>More tools & tips</summary>
         <div className={styles.group}>
-          {!choosingShape && <button type="button" aria-pressed={tool === "pan"} onClick={() => { setTool(tool === "pan" ? "wall" : "pan"); setSelected(null); setHint(null); setCursor(null); }}>Move the view</button>}
-          {!choosingShape && <button type="button" aria-pressed={showGrid} onClick={() => setShowGrid(!showGrid)}>Show grid</button>}
-          {choosingShape && <button type="button" onClick={undo} disabled={!history.current.length}>↶ Undo</button>}
+          <button type="button" aria-pressed={tool === "pan"} onClick={() => { setTool(tool === "pan" ? "wall" : "pan"); setSelected(null); setHint(null); setCursor(null); }}>Move the view</button>
+          <button type="button" aria-pressed={showGrid} onClick={() => setShowGrid(!showGrid)}>Show grid</button>
           <button type="button" onClick={redo} disabled={!future.current.length}>↷ Redo</button>
           {!initialRoom&&<button type="button" className={styles.danger} disabled={!points.length} onClick={clearAll}>Start over</button>}
         </div>
@@ -869,7 +835,7 @@ export default function RoomDrawCanvas({
         <p>Each square is 1 ft. Walls snap to 6-inch increments and 15° angles.</p>
         <p><kbd>Enter</kbd> Finish walls · <kbd>Ctrl/⌘ Z</kbd> Undo · <kbd>Ctrl/⌘ Shift Z</kbd> Redo · <kbd>R</kbd> Door swing · <kbd>Delete</kbd> Remove selection</p>
         </div>
-      </details>}
+      </details>
     </div>
   );
 }
