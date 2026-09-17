@@ -30,8 +30,8 @@ const CLOSE_SNAP_FT = 0.75; // click within this of the start point to close the
 const ANGLE_STEP = 15;
 
 const INK = "#17172b";
-const GRID = "#e0e4eb";
-const GRID5 = "#c5ccda";
+const GRID = "#e9ecf3";
+const GRID5 = "#d3daea";
 const COBALT = "#2b4eff";
 const AMBER = "#f0b100";
 const WHITE = "#ffffff";
@@ -517,16 +517,19 @@ export default function RoomDrawCanvas({
   return (
     <div className={`${styles.studio} ${styles.drawing} dm-draw-toolbox`} onKeyDown={keyboard}>
       <div className={styles.topbar}>
-        <div className={styles.title}><i /><strong>{initialRoom ? "Edit your room" : closed ? "Add your room’s details" : "Draw your walls"}</strong></div>
-        {closed && <span className={styles.meta}>{Math.round(floorArea)} sq ft</span>}
-      </div>
-      <div className={`${styles.toolbar} ${styles.drawToolbar} dm-draw-toolbar`} role="group" aria-label="Drawing tools">
+        <div className={styles.drawHeading}>
+          <div>
+            <div className={styles.title}><strong>{initialRoom ? "Edit your room" : closed ? "Add your room’s details" : "Draw your walls"}</strong></div>
+            <p className={styles.drawHint} role="status" aria-live="polite">{hint ?? (tool === "pan" ? "Drag to move the view. Choose a tool to keep editing." : closed ? ({wall:"Drag a wall or corner to change the shape.",door:"Tap a wall where your door goes.",window:"Tap a wall to add a window.",closet:"Tap inside your room to add a closet."})[tool] : points.length ? "Tap to place each corner. Tap the first one to finish." : "Tap the grid to place your first corner.")}</p>
+          </div>
+        </div>
+        <div className={`${styles.toolbar} ${styles.drawToolbar} ${!closed ? styles.drawTracing : ""} dm-draw-toolbar`} role="group" aria-label="Drawing tools">
           {TOOLS.filter(t => closed || t.id === "wall").map(t => <button key={t.id} type="button" aria-pressed={tool === t.id} onClick={() => { setTool(t.id); setSelected(null); setHint(null); setCursor(null); }}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{t.icon}</svg>{t.label}
           </button>)}
-          <button type="button" className={styles.drawUndo} onClick={undo} disabled={!history.current.length} aria-label="Undo" title="Undo (Ctrl/⌘ Z)">↶</button>
+          <button type="button" className={styles.drawUndo} onClick={undo} disabled={!history.current.length} aria-label="Undo" title="Undo (Ctrl/⌘ Z)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m8 5-4 4 4 4M4 9h10a5 5 0 0 1 0 10h-3" /></svg></button>
+        </div>
       </div>
-      <p className={styles.drawHint} role="status" aria-live="polite">{hint ?? (tool === "pan" ? "Drag to move the view. Choose a tool to keep editing." : closed ? ({wall:"Drag a wall or corner to change the shape.",door:"Tap a wall where your door goes.",window:"Tap a wall to add a window.",closet:"Tap inside your room to add a closet."})[tool] : points.length ? "Keep tapping corners. Tap the first one again to finish your walls." : "Tap the grid to place your first corner.")}</p>
       <div ref={containerRef} className={`${styles.surface} dm-draw-canvas`} tabIndex={0} role="region" aria-label="Room drawing canvas" onPointerDown={e => { if (!(e.target as HTMLElement).closest("button,input")) containerRef.current?.focus({ preventScroll: true }); }}>
         {pxFt > 0 && (
           <Stage
@@ -542,14 +545,14 @@ export default function RoomDrawCanvas({
             style={{ cursor: tool === "pan" ? "grab" : tool === "wall" ? "crosshair" : "copy" }}
           >
             <Layer>
-              <Rect x={ox} y={oy} width={SPAN_X*pxFt} height={SPAN_Y*pxFt} fill="#fafaf8" stroke="#d2d6e0" strokeWidth={1} listening={false} />
+              <Rect x={ox} y={oy} width={SPAN_X*pxFt} height={SPAN_Y*pxFt} fill={WHITE} stroke="#cbd3e3" strokeWidth={1} shadowColor="#36466b" shadowBlur={20} shadowOffsetY={5} shadowOpacity={0.09} listening={false} />
               {/* Grid */}
               {showGrid && gridLines.map((l) => (
                 <Line key={l.key} points={l.pts} stroke={l.strong ? GRID5 : GRID} strokeWidth={1} listening={false} />
               ))}
 
               {/* Room fill once closed */}
-              {closed && <Line points={wallFlat} closed fill="#ffffffc9" listening={false} />}
+              {closed && <Line points={wallFlat} closed fill="#f0f3ffd9" listening={false} />}
 
               {/* Keep furniture visible while editing walls, without changing placement. */}
               {closed && furniture.map(f => { const b=footprint(f),[x,y]=px(f.x_ft,f.y_ft); return <Group key={f.id} listening={false} opacity={.45}>
@@ -794,8 +797,16 @@ export default function RoomDrawCanvas({
           </Stage>
         )}
 
-        <div className={styles.drawMeta}><span>1 square = 1 ft</span></div>
+        <div className={styles.drawMeta}><span>1 square = 1 ft</span>{closed && <span className={styles.drawArea}>{Math.round(floorArea)} sq ft</span>}</div>
         {points.length === 0 && <div className={styles.empty}>
+          <svg className={styles.drawIllustration} viewBox="0 0 160 112" fill="none" aria-hidden="true">
+            <path d="M26 86V26H124V86H26Z" fill="#f0f3ff" fillOpacity=".7" stroke="#a9b8ec" strokeWidth="1.5" strokeDasharray="4 5" />
+            <path d="M26 86V26H124" stroke="#2b4eff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="26" cy="86" r="10" fill="#2b4eff" fillOpacity=".1" />
+            <circle cx="26" cy="86" r="4" fill="white" stroke="#2b4eff" strokeWidth="2" />
+            <rect x="22.5" y="22.5" width="7" height="7" rx="1" fill="white" stroke="#2b4eff" strokeWidth="2" />
+            <g transform="translate(124 26) rotate(32)"><path d="M0 0-5-12v-27H5v27Z" fill="#ffd84d" stroke="#17172b" strokeWidth="1.2" /><path d="M-5-32H5M-5-12H5" stroke="#17172b" strokeWidth="1.2" /><path d="m0 0-2-6h4Z" fill="#17172b" /></g>
+          </svg>
           <strong>Start at any corner.</strong>
           <p>Tap around your room, then return to the first dot.</p>
         </div>}

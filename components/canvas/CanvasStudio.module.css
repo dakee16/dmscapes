@@ -43,22 +43,59 @@
 .empty > span { display: inline-flex; width: 48px; height: 48px; margin-bottom: 12px; align-items: center; justify-content: center; background: #2b4eff; color: white; box-shadow: 4px 4px 0 #2b4eff20; font-size: 28px; }
 .empty strong { display: block; font: 500 26px/1.15 var(--font-syne), sans-serif; }
 .empty p { color: #5c6070; font-size: 13px; line-height: 1.6; margin-top: 10px; }
-.drawing .surface { height: clamp(320px, 46svh, 520px); }
-.drawHint { margin: 0; padding: 10px 14px; border-bottom: 1px solid var(--studio-rule); background: #f4f5fb; color: #555967; font-size: 13px; line-height: 1.5; }
-.drawToolbar .drawUndo { margin-left: auto; font-size: 20px; }
+.drawing { --studio-rule: #dfe3ed; border-radius: 16px; background: white; box-shadow: 0 4px 8px #25355b03, 0 18px 50px -24px #25355b30; }
+.drawing .topbar { padding: 18px 22px; gap: 16px 24px; }
+.drawHeading { display: flex; flex: 1; align-items: flex-start; gap: 12px; min-width: 250px; }
+.drawHeading > div { flex: 1; }
+.drawing .title strong { font-size: 17px; letter-spacing: -.02em; }
+.drawHint { max-width: 44ch; min-height: 39px; margin: 4px 0 0; color: #646b7d; font-size: 13px; line-height: 1.5; }
+.drawing .drawToolbar { flex-wrap: nowrap; align-self: center; padding: 4px; gap: 4px; border: 1px solid #e5e8f0; border-radius: 12px; background: #f5f6fa; }
+.drawing .drawToolbar button { min-height: 44px; padding: 10px 12px; border-radius: 8px; font-size: 13px; }
+.drawing .drawToolbar button[aria-pressed="true"] { box-shadow: 0 2px 4px #2b4eff26, inset 0 1px 0 #ffffff30; }
+.drawToolbar .drawUndo { margin-left: 4px; border-left-color: #dfe3ed; }
+.drawing .surface { height: clamp(380px, 52svh, 600px); border-radius: 0; background-color: #f3f5fa; background-image: radial-gradient(#c5cddd80 .65px, transparent .65px); background-size: 8px 8px; }
+.drawing .empty { width: min(88%, 360px); padding: 20px 12px 26px; background: radial-gradient(ellipse, #fffffff5 45%, #ffffff00 72%); }
+.drawIllustration { display: block; width: 144px; height: 101px; margin: 0 auto 14px; overflow: visible; }
+.drawing .empty strong { font-size: clamp(22px, 2.4vw, 28px); letter-spacing: -.045em; }
+.drawing .empty p { max-width: 28ch; margin: 10px auto 0; color: #646b7d; text-wrap: balance; }
+.drawing .viewportControls { bottom: 16px; right: 18px; border-radius: 10px; border-color: #dfe3ed; box-shadow: 0 3px 12px #25355b0a; }
+.drawing .viewportControls button { border-radius: 7px; }
+.drawing .viewportControls button:last-child { margin-left: 3px; border-left-color: #e5e8f0; }
+.drawing .footer { min-height: 76px; padding: 16px 22px; background: white; font-size: 13px; }
+.drawing .primary, .drawing .outlined { border-radius: 8px; }
+.drawing .primary { min-height: 46px; box-shadow: 0 2px 4px #2b4eff26; }
 .drawOptions, .drawPrecision { border-top: 1px solid var(--studio-rule); background: white; }
 .drawOptions summary, .drawPrecision summary { padding: 12px 14px; min-height: 44px; cursor: pointer; color: #555967; font-size: 12px; }
+.drawing .drawOptions summary, .drawing .drawPrecision summary { padding-inline: 22px; }
+.drawing .drawOptions { background: #fafbfe; }
 .drawOptions summary:hover, .drawPrecision summary:hover { color: #2b4eff; }
 .drawOptions summary:focus-visible, .drawPrecision summary:focus-visible { outline: 3px solid #2b4eff; outline-offset: -3px; }
 .drawOptions > .group { padding: 0 14px; }
 .drawOptions .help { background: white; border: 0; color: #5c6070; }
 .drawPrecision .inspector { border: 0; padding-top: 0; }
-.drawMeta { display: flex; align-items: center; justify-content: space-between; gap: 10px; position: absolute; inset: 12px 16px auto; pointer-events: none; font: 10px/1.4 var(--font-plex-mono), monospace; color: #717587; }
+.drawMeta { display: flex; align-items: center; justify-content: space-between; gap: 10px; position: absolute; inset: 14px 18px auto; pointer-events: none; font: 10px/1.4 var(--font-plex-mono), monospace; color: #646b7d; }
+.drawMeta > span { padding: 5px 8px; border-radius: 5px; background: #f3f5faed; }
+.drawMeta .drawArea { color: #2b4eff; background: #e9eeff; }
 @media (max-width: 600px) { .topbar,.toolbar,.inspector,.footer { padding: 10px; }.topbar .meta { font-size: 9px; }.toolbar { gap: 3px; }.divider { margin-inline: 2px; }.toolbar button { padding-inline: 7px; }.surface { height: clamp(320px, 53svh, 470px); }.viewportControls { right: 8px; bottom: 9px; }.scale { left: 8px; bottom: 14px; }.scale i { max-width: 24px; }.scale span { max-width: 44px; }.selection { flex-basis: 100%; }.selection select { max-width: none; }.inspector .group { flex-wrap: wrap; }.footer { gap: 5px; }
-  .drawToolbar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) 44px; gap: 2px; }
-  .drawToolbar button { min-width: 0; padding: 8px 3px; flex-direction: column; gap: 4px; font-size: 11px; }
-  .drawToolbar .drawUndo { grid-column: 5; margin-left: 0; min-height: 54px; }
-  .drawHint { min-height: 60px; display: flex; align-items: center; }
+  .drawing { border-radius: 12px; }
+  .drawing .topbar { padding: 16px 12px 12px; gap: 12px; }
+  .drawHeading { min-width: 0; flex-basis: 100%; gap: 10px; }
+  .drawing .title strong { font-size: 16px; }
+  .drawHint { min-height: 39px; font-size: 12px; line-height: 19.5px; }
+  .drawing .drawToolbar { display: flex; width: 100%; gap: 2px; }
+  .drawing .drawToolbar button { min-width: 0; padding: 8px 3px; flex-direction: column; gap: 4px; font-size: 11px; }
+  .drawing .drawToolbar button:not(.drawUndo) { flex: 1; max-width: 88px; }
+  .drawing .drawToolbar .drawUndo { margin-left: auto; min-width: 44px; min-height: 54px; }
+  .drawing .drawTracing { width: auto; }
+  .drawing .drawTracing button, .drawing .drawTracing .drawUndo { flex-direction: row; min-height: 44px; padding: 8px 10px; }
+  .drawing .surface { height: 360px; }
+  .drawing .empty { padding: 10px 8px; }
+  .drawIllustration { width: 96px; height: 67px; margin-bottom: 10px; }
+  .drawing .drawMeta { inset: 10px 10px auto; }
+  .drawing .viewportControls { right: 10px; bottom: 10px; }
+  .drawing .footer { padding: 14px; gap: 12px; }
+  .drawing .footer > .primary { width: 100%; }
+  .drawing .drawOptions summary, .drawing .drawPrecision summary { padding-inline: 14px; }
 }
 @media (prefers-reduced-motion: reduce) { .studio button { transition: none; } }
 @media (pointer: coarse) {
