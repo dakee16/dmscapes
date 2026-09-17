@@ -123,3 +123,24 @@ assert.equal(productVisual({...testProduct,category:"wall_decor",name:"Floating 
 assert.equal(productVisual({...testProduct,category:"throw",name:"Cotton knitted throw blanket"}).kind,"blanket");
 assert(invalidItems([{...item,id:"bed",type:"bed",width_ft:7,length_ft:3}, {...item,id:"overlapping-desk",x_ft:3,y_ft:2.5}],15,12).size>0,"A desk overlapping a bed is not a rider");
 console.log("PASS: triple/quad capacity and clearance, portrait layouts, legacy bunks, cart dimensions, missing categories, and product variants.");
+
+// Render the real drawing UI without a browser canvas to check progressive disclosure.
+const drawFile=path.join(root,"components/planner/RoomDrawCanvas.tsx"),drawModule={exports:{}};
+const drawCode=ts.transpileModule(fs.readFileSync(drawFile,"utf8"),{compilerOptions:{esModuleInterop:true,target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX}}).outputText;
+new Function("require","module","exports",drawCode)(id=>{
+  if(id==="react-konva"||id==="konva"||id.endsWith(".module.css"))return {};
+  return id.startsWith("@/")?load(path.join(root,id.slice(2))):require(id);
+},drawModule,drawModule.exports);
+const {createElement}=require("react"),{renderToStaticMarkup}=require("react-dom/server");
+const drawHTML=props=>renderToStaticMarkup(createElement(drawModule.exports.default,{onComplete:()=>{},...props}));
+const freshDrawing=drawHTML({});
+assert.match(freshDrawing,/What shape is your room\?/);
+assert.match(freshDrawing,/Length \(ft\)/);assert.match(freshDrawing,/Width \(ft\)/);
+for(const label of ["Rectangle","L-shape","Draw a different shape"])assert(freshDrawing.includes(label));
+assert.doesNotMatch(freshDrawing,/Drawing tools|Choose my vibe|More tools|Exact measurements/,"A new room starts with shape choices, not the full editor");
+const existingDrawing=drawHTML({initialRoom:room,onCancel:()=>{}});
+assert.doesNotMatch(existingDrawing,/What shape is your room\?/,"Existing rooms open directly for editing");
+for(const label of ["Shape","Door","Window","Closet","Apply room changes","Cancel edits"])assert(existingDrawing.includes(label));
+assert.match(existingDrawing,/<details><summary>Exact measurements<\/summary>/,"Precision fields start collapsed");
+assert.match(existingDrawing,/<details><summary>More tools &amp; tips<\/summary>/,"Extra tools and keyboard tips start collapsed");
+console.log("PASS: drawing starts with shape choices; existing rooms keep editing tools, with precision and extra controls collapsed.");

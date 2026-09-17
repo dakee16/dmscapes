@@ -1,5 +1,5 @@
 // Run with: node scripts/check-3d-preview.cjs
-// Exercise the production preview effect with a deterministic clock.
+// Exercise the production gate without waiting for a timer or a rendered frame.
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
@@ -13,33 +13,30 @@ function visit(node) {
   ts.forEachChild(node, visit);
 }
 visit(source);
-assert(effect, "The 3D preview must have a delayed upgrade effect");
+assert(effect, "The 3D preview must have an upgrade effect");
 function preview(overrides = {}) {
-  let time = 0, pending, prompt, returned = false;
+  let prompt, returned = false;
   const context = {
-    enabled: true, allowed: false, ready: true, error: "", props: { preview: true },
+    enabled: true, allowed: false, ready: false, error: "", props: { preview: true },
     current: { current: { onFallback: () => { returned = true; } } },
-    setTimeout: (run, delay) => { pending = { run, at: time + delay }; return 1; },
-    clearTimeout: () => { pending = undefined; },
+    setTimeout: () => assert.fail("The 3D gate must not wait for a preview timer"),
     openUpgrade: (reason, close) => { prompt = { reason, close }; },
     ...overrides,
   };
-  const cleanup = vm.runInNewContext(`(${effect})()`, context);
+  vm.runInNewContext(`(${effect})()`, context);
   return {
-    tick(ms) { time += ms; if (pending && time >= pending.at) { const run = pending.run; pending = undefined; run(); } },
-    cleanup,
     get prompt() { return prompt; },
     get returned() { return returned; },
   };
 }
 const trial = preview();
-trial.tick(499); assert.equal(trial.prompt, undefined, "Show the room for half a second");
-trial.tick(1); assert.equal(trial.prompt.reason, "room-3d");
+assert.equal(trial.prompt?.reason, "room-3d", "Open immediately, even before the first 3D frame");
 assert.equal(trial.returned, false, "Keep the room visible behind the prompt");
 trial.prompt.close(); assert.equal(trial.returned, true, "Dismissal returns to 2D");
-for (const state of [{ready:false}, {allowed:true}, {enabled:false}, {error:"WebGL unavailable"}, {props:{preview:false}}]) {
-  const p = preview(state); p.tick(10000); assert.equal(p.prompt, undefined, JSON.stringify(state));
+for (const state of [{allowed:true}, {enabled:false}, {props:{preview:false}}]) {
+  assert.equal(preview(state).prompt, undefined, JSON.stringify(state));
 }
-const cancelled = preview(); cancelled.tick(250); cancelled.cleanup(); cancelled.tick(1000);
-assert.equal(cancelled.prompt, undefined, "Switching to 2D or unmounting cancels the prompt");
-console.log("PASS: prompt waits for a rendered room + 0.5 seconds, skips Pro/loading/errors, cancels on exit, and dismisses to 2D.");
+for (const state of [{ready:true}, {error:"WebGL unavailable"}]) {
+  assert.equal(preview(state).prompt?.reason, "room-3d", "Rendering must not control access");
+}
+console.log("PASS: prompt opens immediately, skips Pro/auth-loading/non-preview views, keeps the room behind it, and dismisses to 2D.");

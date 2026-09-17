@@ -62,32 +62,31 @@ export default function DrawRoomPage() {
     router.push("/plan/style");
   }
 
-  // Once started (desktop, Plus): the actual drawing tool + occupancy selector.
+  // Drawing tool + occupancy selector.
   if (started) {
     return (
       <div className="dm-draw-workspace dm-draw-editor mx-auto max-w-4xl px-5 pb-24 sm:px-8">
-        <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-          Step 1 · Draw your room
-        </p>
-        <h1 className="dm-page-title mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-          Trace your <span className="hl">walls</span>
-        </h1>
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <span className="text-sm font-semibold text-ink">How many people?</span>
-          <div className="inline-flex items-center gap-0.5 rounded-xl border border-ink/10 bg-white p-1">
-            {OCC.map((n) => (
-              <button
-                key={n}
-                type="button"
-                onClick={() => setOccupants(n)}
-                aria-pressed={occupants === n}
-                className={`h-9 w-10 rounded-lg text-sm font-semibold transition-colors ${
-                  occupants === n ? "bg-cobalt text-white" : "text-ink hover:bg-ink/[0.06]"
-                }`}
-              >
-                {n}
-              </button>
-            ))}
+        <div className="mx-auto flex max-w-[1120px] flex-wrap items-end justify-between gap-5">
+          <h1 className="dm-page-title font-display text-3xl font-bold tracking-tight sm:text-4xl">
+            Map your <span className="hl">room</span>
+          </h1>
+          <div className="flex flex-wrap items-center gap-3" role="group" aria-label="People sharing this room">
+            <span className="text-sm font-semibold text-ink">How many people?</span>
+            <div className="inline-flex items-center gap-0.5 rounded-xl border border-ink/10 bg-white p-1">
+              {OCC.map((n) => (
+                <button
+                  key={n}
+                  type="button"
+                  onClick={() => setOccupants(n)}
+                  aria-pressed={occupants === n}
+                  className={`h-11 w-11 rounded-lg text-sm font-semibold transition-colors ${
+                    occupants === n ? "bg-cobalt text-white" : "text-ink hover:bg-ink/[0.06]"
+                  }`}
+                >
+                  {n}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
         <div className="mt-6">
@@ -121,9 +120,8 @@ export default function DrawRoomPage() {
             )}
           </div>
           <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
-            Not on our list, or an odd shape? Trace your floor plan wall by wall,
-            even an L-shape, drop in the door, windows, and closets, and we fit a
-            full layout to it in the next steps.
+            Start with a simple shape or draw your own. Add your doors and
+            windows, then choose a vibe. We’ll arrange the furniture to fit.
           </p>
 
           {/* Corners use the tap position, so the same editor works with touch. */}
@@ -141,7 +139,7 @@ export default function DrawRoomPage() {
               <path d="M8 20h8M12 18v2" strokeLinecap="round" />
             </svg>
             Start with a rectangle or L-shape, or tap to trace your walls.
-            Use the zoom and pan controls for smaller details.
+            You can adjust the walls and add details as you go.
           </p>
         </div>
       </div>

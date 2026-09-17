@@ -172,7 +172,7 @@ export default function UpgradeModal() {
         if (e.target === e.currentTarget) closeUpgrade();
       }}
     >
-      <div className="snap-in w-full max-w-lg rounded-t-3xl border border-ink/10 bg-paper p-7 shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)] sm:rounded-3xl sm:p-9">
+      <div className={`${reason === "room-3d" ? "" : "snap-in "}w-full max-w-lg rounded-t-3xl border border-ink/10 bg-paper p-7 shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)] sm:rounded-3xl sm:p-9`}>
         <div className="flex items-start justify-between gap-4">
           {reason === "room-3d" || reason === "custom-vibe" ? <span className="dm-eyebrow">Dormscape Pro</span> : <Badge />}
           <CloseButton onClick={closeUpgrade} />

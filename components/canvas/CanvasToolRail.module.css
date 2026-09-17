@@ -14,4 +14,21 @@
 .tools .mobileShop{display:none}
 @media(min-width:781px){.tools .pair button{flex-direction:row;gap:5px;min-height:34px;padding:6px 2px;font-size:10px}.tools .pair button svg{width:15px;height:15px}.tools .selected .pair{gap:3px}.tools .selected .pair button{gap:3px;font-size:9px}}
 @media(max-height:780px) and (min-width:781px){.tools{padding:10px 8px;gap:8px}.tools button{min-height:32px;padding:4px 2px;gap:2px}.heading{padding-bottom:6px}.groupLabel{margin-bottom:4px}.tools .wide{padding:7px 4px;min-height:32px}.tools svg{width:16px;height:16px}}
-@media(max-width:780px){.tools{padding:10px 5px;gap:10px}.pair{grid-template-columns:1fr 1fr;gap:3px}.tools button{min-height:42px;font-size:9px}.tools button span{max-width:100%;overflow-wrap:normal}.heading{padding:0 2px 8px}.heading strong{font-size:11px}.heading small{font-size:8px}.groupLabel{font-size:8px;margin-left:2px;letter-spacing:0}.tools .wide{flex-direction:column;text-align:center;justify-content:center;font-size:9px;gap:3px}.tools .mobileShop{display:flex;width:100%;margin-top:5px;background:#2b4eff;color:white}.zoom{flex-wrap:wrap;justify-content:center}.zoom output{order:-1;width:100%;padding:5px;text-align:center}.zoom button{width:50%;min-width:0}.selected>strong{font-size:10px}.detail summary{font-size:9px;padding:3px 0}.detail p{font-size:10px}.selected{padding:5px 2px}}
+@media(max-width:780px){
+ .tools{flex-direction:row;align-items:center;width:max-content;min-width:100%;min-height:0;padding:8px;gap:12px}
+ .heading{display:none}
+ .group{position:relative;display:flex;align-items:stretch;flex-shrink:0;gap:4px;padding-top:17px}
+ .groupLabel{position:absolute;top:0;left:3px;margin:0;font-size:8px;letter-spacing:.04em}
+ .pair{display:flex;gap:4px}
+ .tools button{min-width:48px;min-height:44px;font-size:10px;padding:6px}
+ .tools button span{white-space:nowrap;overflow-wrap:normal}
+ .tools .wide{width:auto;flex-direction:column;text-align:center;justify-content:center;gap:4px;padding:6px}
+ .tools .mobileShop{display:flex;margin:0;background:#2b4eff;color:white}
+ .zoom{flex-shrink:0;margin-top:17px;gap:2px}
+ .zoom button{min-width:36px;min-height:44px}.zoom output{min-width:36px;text-align:center}
+ .selected{flex-shrink:0;padding:5px}.selected>strong{max-width:200px;font-size:10px;margin-bottom:4px}
+ .detail{flex-shrink:0;max-width:210px;border-top:0;padding:0}.detail summary{min-height:44px;display:flex;align-items:center;font-size:10px;padding:6px}.detail p{font-size:11px}
+ .warning{flex:0 0 160px}
+ .utilities{display:flex;align-items:center;flex-shrink:0;gap:8px;margin:17px 0 0}
+ .tools .reset{width:auto;justify-content:center;padding:6px}
+}

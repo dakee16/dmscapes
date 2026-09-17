@@ -61,10 +61,9 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
     return()=>{disposed=true;view.current?.destroy();view.current=null;};
   },[retry,enabled]);
   useEffect(()=>{
-    if(!enabled||allowed||!ready||error||!props.preview)return;
-    const timer=setTimeout(()=>openUpgrade("room-3d",()=>current.current.onFallback?.()),500);
-    return()=>clearTimeout(timer);
-  },[enabled,allowed,ready,error,props.preview,openUpgrade]);
+    if(!enabled||allowed||!props.preview)return;
+    openUpgrade("room-3d",()=>current.current.onFallback?.());
+  },[enabled,allowed,props.preview,openUpgrade]);
   useEffect(()=>{view.current?.update(data);});
   useEffect(()=>{view.current?.setReduced(paused||!allowed);},[paused,allowed]);
   useEffect(()=>{view.current?.setWalls(props.walls??"auto");},[props.walls]);
