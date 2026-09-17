@@ -72,14 +72,14 @@ export default function DrawRoomPage() {
           </h1>
           <div className="flex flex-wrap items-center gap-3" role="group" aria-label="People sharing this room">
             <span className="text-sm font-semibold text-ink">How many people?</span>
-            <div className="inline-flex items-center gap-0.5 rounded-xl border border-ink/10 bg-white p-1">
+            <div className="inline-flex items-center gap-0.5 rounded-[3px] border border-ink/10 bg-white p-1">
               {OCC.map((n) => (
                 <button
                   key={n}
                   type="button"
                   onClick={() => setOccupants(n)}
                   aria-pressed={occupants === n}
-                  className={`h-11 w-11 rounded-lg text-sm font-semibold transition-colors ${
+                  className={`h-11 w-11 rounded-[2px] text-sm font-semibold transition-colors ${
                     occupants === n ? "bg-cobalt text-white" : "text-ink hover:bg-ink/[0.06]"
                   }`}
                 >

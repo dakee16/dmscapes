@@ -30,8 +30,8 @@ const CLOSE_SNAP_FT = 0.75; // click within this of the start point to close the
 const ANGLE_STEP = 15;
 
 const INK = "#17172b";
-const GRID = "#e9ecf3";
-const GRID5 = "#d3daea";
+const GRID = "#e4e9f4";
+const GRID5 = "#cbd3ec";
 const COBALT = "#2b4eff";
 const AMBER = "#f0b100";
 const WHITE = "#ffffff";
@@ -545,7 +545,7 @@ export default function RoomDrawCanvas({
             style={{ cursor: tool === "pan" ? "grab" : tool === "wall" ? "crosshair" : "copy" }}
           >
             <Layer>
-              <Rect x={ox} y={oy} width={SPAN_X*pxFt} height={SPAN_Y*pxFt} fill={WHITE} stroke="#cbd3e3" strokeWidth={1} shadowColor="#36466b" shadowBlur={20} shadowOffsetY={5} shadowOpacity={0.09} listening={false} />
+              <Rect x={ox} y={oy} width={SPAN_X*pxFt} height={SPAN_Y*pxFt} fill="#fafaf8" stroke="#cbd3ec" strokeWidth={1} listening={false} />
               {/* Grid */}
               {showGrid && gridLines.map((l) => (
                 <Line key={l.key} points={l.pts} stroke={l.strong ? GRID5 : GRID} strokeWidth={1} listening={false} />
