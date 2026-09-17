@@ -32,6 +32,10 @@ function loadGeometry(name, imports = {}) {
 }
 const geometry = loadGeometry("geometry");
 const viewport = loadGeometry("viewport", { "./geometry": geometry });
+assert.equal(viewport.pointerRotation(0, {x:10,y:20}, {x:10,y:0}, {x:30,y:20}), 90);
+assert.equal(viewport.pointerRotation(32.5, {x:10,y:20}, {x:10,y:0}, {x:-10,y:20}), 302.5);
+assert.equal(viewport.pointerRotation(32.5, {x:100,y:200}, {x:100,y:140}, {x:40,y:200}), 302.5, "Zoom and pan cannot change the relative rotation");
+assert.equal(viewport.pointerRotation(345, {x:0,y:0}, {x:10,y:0}, {x:0,y:10}), 75, "Rotation wraps through 360 degrees");
 const f = { id: "bed", x_ft: 2, y_ft: 3, width_ft: 3, length_ft: 6, rotation_deg: 0 };
 const item = new Konva.Group({ x: 68, y: 88 });
 const label = new Konva.Group({ x: 68, y: 88 });

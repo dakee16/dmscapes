@@ -25,13 +25,13 @@ import { CATEGORY_COLORS, styleById } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import { bedLabel, isBunkBed } from "@/lib/bedding";
-import { clamp, footprint, invalidItems, layerOf, pointInPolygon } from "./geometry";
+import { clamp, footprint, invalidItems, layerOf, pointInPolygon, rotateFurniture } from "./geometry";
 
 import { createPortal } from "react-dom";
 import { useCanvasDock } from "./CanvasControlsContext";
 import CanvasToolRail from "./CanvasToolRail";
 import FurnitureGlyph from "./FurnitureGlyph";
-import RotationControl from "./RotationControl";
+import RotationHandle from "./RotationHandle";
 import { feetLabel, fitViewport, placedCoordinate, zoomAt } from "./viewport";
 import styles from "./CanvasStudio.module.css";
 
@@ -215,6 +215,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const [snapping, setSnapping] = useState(true);
   const [showHelp, setShowHelp] = useState(false);
   const [dragging, setDragging] = useState<{ id: string; x: number; y: number } | null>(null);
+  const [rotationPreview, setRotationPreview] = useState<{ id: string; degrees: number } | null>(null);
   const helpId = useId();
   const selectId = useId();
   const lastPinchCenter = useRef<{ x: number; y: number } | null>(null);
@@ -246,22 +247,33 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const toggleLockedItem = usePlannerStore((s) => s.toggleLockedItem);
   const activeCategory = readOnly || !crossHighlight ? null : hoveredCategory ?? selectedCategory;
 
+  // Preview the whole attachment group locally; commit only the finished gesture.
+  const displayFurniture = useMemo(() => {
+    const item = rotationPreview && furniture.find(f => f.id === rotationPreview.id);
+    if (!item || !rotationPreview) return furniture;
+    const b = footprint(item), pivot = { x: b.x + b.w / 2, y: b.y + b.h / 2 };
+    return furniture.map(f => f.id === item.id || f.parent_id === item.id
+      ? rotateFurniture(f, rotationPreview.degrees - item.rotation_deg, pivot) : f);
+  }, [furniture, rotationPreview]);
+
+  useEffect(() => { setRotationPreview(null); }, [furniture, selectedItemId, selectedCategory, lockedItemIds, hiddenItemIds, panMode, readOnly, dock?.active]);
+
   // Rotate-control target: the pinned canvas item, or, when the pin came
   // from a product tile, the sole movable item of that category.
   const rotateTarget = useMemo(() => {
     if (readOnly) return null;
     if (selectedItemId) {
-      const f = furniture.find((x) => x.id === selectedItemId);
+      const f = displayFurniture.find((x) => x.id === selectedItemId);
       return f && f.movable ? f : null;
     }
     if (selectedCategory) {
-      const matches = furniture.filter(
+      const matches = displayFurniture.filter(
         (f) => f.movable && furnitureCategory(f) === selectedCategory
       );
       return matches.length === 1 ? matches[0] : null;
     }
     return null;
-  }, [readOnly, selectedItemId, selectedCategory, furniture]);
+  }, [readOnly, selectedItemId, selectedCategory, displayFurniture]);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -305,8 +317,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
 
   const ordered = useMemo(() => {
     const rank = { rug: 0, solid: 1, wall: 2 } as const;
-    return [...furniture].sort((a, b) => rank[layerOf(a)] - rank[layerOf(b)]);
-  }, [furniture]);
+    return [...displayFurniture].sort((a, b) => rank[layerOf(a)] - rank[layerOf(b)]);
+  }, [displayFurniture]);
 
   // Purchasable pieces whose category was moved to "Things to add" are hidden
   // from the canvas (built-ins always render). Layout positions are untouched,
@@ -489,6 +501,22 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const canEditItem = !!toolbarItem && !toolbarLocked && !toolbarHidden;
   const toolbarDeletable = !!toolbarItem && !toolbarItem.built_in && !toolbarLocked && !!furnitureCategory(toolbarItem) && !!onDeleteItem;
   const selectedFootprint = toolbarItem ? footprint(toolbarItem) : null;
+  const rotationCenter = selectedFootprint ? {
+    x: stagePos.x + (fitted.x + (selectedFootprint.x + selectedFootprint.w / 2) * pxFt) * zoom,
+    y: stagePos.y + (fitted.y + (selectedFootprint.y + selectedFootprint.h / 2) * pxFt) * zoom,
+  } : null;
+  const rotationPosition = toolbarItem && rotationCenter ? (() => {
+    const angle = toolbarItem.rotation_deg * Math.PI / 180;
+    const x = toolbarItem.width_ft * pxFt * zoom / 2, y = -toolbarItem.length_ft * pxFt * zoom / 2;
+    return { x: clamp(rotationCenter.x + x * Math.cos(angle) - y * Math.sin(angle), 22, stageW - 22),
+      y: clamp(rotationCenter.y + x * Math.sin(angle) + y * Math.cos(angle), 22, stageH - 22) };
+  })() : null;
+
+  function finishRotation(degrees?: number) {
+    dragGuard.current = Date.now();
+    setRotationPreview(null);
+    if (degrees !== undefined && toolbarItem && canEditItem) onSetRotation?.(toolbarItem.id, degrees);
+  }
 
   function nudge(dx: number, dy: number, large = false) {
     if (!toolbarItem || !canEditItem) return;
@@ -528,7 +556,6 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         undo={()=>history?.undo()} redo={()=>history?.redo()} canUndo={!!history?.canUndo} canRedo={!!history?.canRedo}
         selected={toolbarItem} locked={toolbarLocked} hidden={toolbarHidden} canEdit={canEditItem&&!!onRotate} canDelete={toolbarDeletable}
         rotate={()=>toolbarItem&&onRotate?.(toolbarItem.id,1)} toggleLock={()=>toolbarItem&&toggleLockedItem(toolbarItem.id)} toggleHide={()=>toolbarItem&&toggleHiddenItem(toolbarItem.id)}
-        setRotation={onSetRotation ? degrees=>toolbarItem&&onSetRotation(toolbarItem.id,degrees) : undefined}
         remove={()=>{if(toolbarItem){onDeleteItem?.(toolbarItem);clearSelectedCategory();}}} hiddenItems={visible.filter(f=>hiddenItemIds.includes(f.id))} showItem={toggleHiddenItem} invalidCount={invalid.size}/>,dock.host)}
       {!dock && <>
       <div className={styles.topbar}>
@@ -551,12 +578,12 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         <button type="button" aria-expanded={showHelp} aria-controls={helpId} onClick={() => setShowHelp(!showHelp)} aria-label="Canvas help and shortcuts" title="Help & shortcuts"><Icon path="M9 8a3 3 0 0 1 6 0c0 2-3 2-3 5m0 4h.01M22 12A10 10 0 1 1 2 12a10 10 0 0 1 20 0" /></button>
       </div>
       {showHelp && <div id={helpId} className={styles.help}>
-        <p><strong>Make yourself at home.</strong> Drag a piece to move it, or choose it from the furniture menu. Use your keyboard arrow keys for precise positioning. A red outline marks a possible overlap or wall crossing.</p>
+        <p><strong>Make yourself at home.</strong> Drag a piece to move it, or choose it from the furniture menu. Drag its circular arrow to rotate, or click the arrow, move your cursor, then click to place. Escape cancels rotation. A red outline marks a possible overlap or wall crossing.</p>
         <p><kbd>R</kbd> Rotate · <kbd>↑ ↓ ← →</kbd> Nudge · <kbd>Shift</kbd> + arrows: 1 ft · <kbd>0</kbd> Fit room · <kbd>H</kbd> Pan · <kbd>V</kbd> Select · <kbd>Esc</kbd> Deselect</p>
         <p>Pinch with two fingers to zoom and pan. With a mouse, use Ctrl/⌘ + scroll to zoom at the pointer. Hiding a piece only changes the view; removing it moves its category to the catalog.</p>
       </div>}
       </>}
-      <div ref={containerRef} className={`${styles.surface} dm-room-viewport`} tabIndex={0} role="region" aria-label="Interactive room floor plan" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })} style={!dock && fullscreen ? { height: "clamp(320px, calc(100svh - 300px), 850px)" } : undefined}>
+      <div ref={containerRef} className={`${styles.surface} dm-room-viewport`} data-rotating={rotationPreview ? true : undefined} tabIndex={0} role="region" aria-label="Interactive room floor plan" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })} style={!dock && fullscreen ? { height: "clamp(320px, calc(100svh - 300px), 850px)" } : undefined}>
       {pxFt > 0 && (
         <Stage
           ref={stageRef}
@@ -567,6 +594,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           x={stagePos.x}
           y={stagePos.y}
           draggable
+          onDragMove={(e) => { if (e.target === stageRef.current) setStagePos({ x: e.target.x(), y: e.target.y() }); }}
           onWheel={(e) => { if (e.evt.ctrlKey || e.evt.metaKey) { e.evt.preventDefault(); const pointer = stageRef.current?.getPointerPosition(); if (pointer) applyZoom(zoom * Math.exp(-e.evt.deltaY * .006), pointer); } }}
           onDragEnd={(e) => {
             if (e.target === stageRef.current) {
@@ -879,6 +907,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         </Stage>
       )}
 
+      {pxFt > 0 && toolbarItem && canEditItem && onSetRotation && !panMode && !dragging && rotationCenter && rotationPosition &&
+        <RotationHandle key={toolbarItem.id} label={toolbarItem.label} center={rotationCenter} position={rotationPosition} degrees={toolbarItem.rotation_deg}
+          onPreview={degrees=>setRotationPreview({id:toolbarItem.id,degrees})} onCommit={finishRotation} onCancel={()=>finishRotation()}/>}
       {pxFt > 0 && <div className={styles.scale}><i style={{ width: pxFt * zoom }} /><span>1 ft</span></div>}
       {!dock&&<div className={styles.viewportControls} aria-label="View controls">
         <button type="button" onClick={() => applyZoom(zoom - .25)} disabled={zoom <= MIN_ZOOM} aria-label="Zoom out">−</button>
@@ -902,7 +933,6 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           <small>{toolbarItem && selectedFootprint ? `${feetLabel(selectedFootprint.w)} × ${feetLabel(selectedFootprint.h)} · ${toolbarLocked ? "Locked in place" : toolbarHidden ? "Hidden from view" : toolbarItem.built_in ? "Provided furniture" : "Move it to make it yours"}` : "Drag to arrange. Use the controls for the details."}</small>
         </div>
         <div className={styles.group}>
-          {toolbarItem && onSetRotation && <RotationControl key={toolbarItem.id} degrees={toolbarItem.rotation_deg} disabled={!canEditItem} onCommit={degrees=>onSetRotation(toolbarItem.id,degrees)}/>}
           <button type="button" disabled={!canEditItem || !onRotate} onClick={() => toolbarItem && onRotate?.(toolbarItem.id,1)} title="Rotate 90° clockwise (R)" aria-label="Rotate selected item 90° clockwise"><Icon path="M20 4v6h-6m5-1a8 8 0 1 0 1 8" />Rotate 90°</button>
           <button type="button" disabled={!toolbarItem} onClick={() => toolbarItem && toggleLockedItem(toolbarItem.id)} aria-pressed={toolbarLocked} aria-label={toolbarLocked ? "Unlock selected item" : "Lock selected item"}><Icon path={toolbarLocked ? "M5 10h14v11H5zM8 10V7a4 4 0 0 1 8 0v3" : "M5 10h14v11H5zM8 10V7a4 4 0 0 1 7-2"} /></button>
           <button type="button" disabled={!toolbarItem} onClick={() => toolbarItem && toggleHiddenItem(toolbarItem.id)} aria-pressed={toolbarHidden} aria-label={toolbarHidden ? "Show selected item" : "Hide selected item"}><Icon path="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Zm13 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0" /></button>

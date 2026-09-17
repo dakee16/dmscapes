@@ -3,7 +3,6 @@ import { useState } from "react";
 import type { FurnitureItem, Product, SelectedRoom, WallOpening } from "@/lib/types";
 import { usePlannerStore } from "@/lib/store";
 import { footprint } from "@/components/canvas/geometry";
-import RotationControl from "@/components/canvas/RotationControl";
 import { constrainedPosition, FLOOR_FINISHES, itemElevation, itemHeight, modelKind, roomOutline, studioSettings } from "@/lib/studio";
 import s from "./Studio.module.css";
 
@@ -35,7 +34,6 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
       <button disabled={!item.movable} aria-pressed={locked} onClick={()=>st.toggleLockedItem(item.id)}>{locked?"Unlock":"Lock"}</button>
       <button aria-pressed={hidden} onClick={()=>st.toggleHiddenItem(item.id)}>{hidden?"Show item":"Hide item"}</button>
     </div>
-    <RotationControl key={item.id} degrees={item.rotation_deg} disabled={!movable||hidden} onCommit={degrees=>st.setItemRotation(item.id,degrees)}/>
     {!item.movable&&<p className={s.note}>This is a fixed fixture. Its position stays anchored.</p>}
     <details className={s.disclosure}><summary>Position &amp; measurements</summary><div className={s.section}><h3>Position in feet</h3><div className={s.fieldGrid}>
       <NumberField label="X position" value={item.x_ft} max={room.lengthFt} disabled={!movable} onCommit={n=>position("x",n)}/>

@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import type { FurnitureItem } from "@/lib/types";
 import type { CanvasDock } from "./CanvasControlsContext";
 import s from "./CanvasToolRail.module.css";
-import RotationControl from "./RotationControl";
 
 function Icon({d}:{d:string}){return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d}/></svg>;}
 function Tool({label,d,onClick,active,disabled,className=""}:{label:string;d:string;onClick:()=>void;active?:boolean;disabled?:boolean;className?:string}){return <button type="button" aria-label={label} title={label} aria-pressed={active} disabled={disabled} onClick={onClick} className={className}><Icon d={d}/><span>{label}</span></button>;}
@@ -14,7 +13,6 @@ export interface CanvasToolRailProps {
   undo:()=>void;redo:()=>void;canUndo:boolean;canRedo:boolean;
   selected:FurnitureItem|null;locked:boolean;hidden:boolean;canEdit:boolean;canDelete:boolean;
   rotate:()=>void;toggleLock:()=>void;toggleHide:()=>void;remove:()=>void;hiddenItems:FurnitureItem[];showItem:(id:string)=>void;invalidCount:number;
-  setRotation?:(degrees:number)=>void;
 }
 export default function CanvasToolRail(p:CanvasToolRailProps){
   return <div className={s.tools} data-testid="canvas-tool-rail">
@@ -26,7 +24,6 @@ export default function CanvasToolRail(p:CanvasToolRailProps){
       <Tool label="Redo" d="m16 5 5 5-5 5m5-5H11a6 6 0 0 0 0 12" disabled={!p.canRedo} onClick={p.redo}/>
     </Group>
     {p.selected&&<div className={s.selected}><strong title={p.selected.label}>{p.selected.label}</strong>
-      {p.setRotation&&<RotationControl key={p.selected.id} degrees={p.selected.rotation_deg} disabled={!p.canEdit} onCommit={p.setRotation}/>}
       <div className={s.pair}>
       <Tool label="Rotate 90°" d="M20 4v6h-6m5-1a8 8 0 1 0 1 8" disabled={!p.canEdit} onClick={p.rotate}/>
       <Tool label={p.locked?"Unlock":"Lock"} d="M5 10h14v11H5zM8 10V7a4 4 0 0 1 8 0v3" active={p.locked} onClick={p.toggleLock}/>
@@ -49,6 +46,6 @@ export default function CanvasToolRail(p:CanvasToolRailProps){
     </div>
     {p.hiddenItems.length>0&&<details className={s.detail}><summary>Hidden ({p.hiddenItems.length})</summary>{p.hiddenItems.map(f=><button type="button" key={f.id} onClick={()=>p.showItem(f.id)}>Show {f.label}</button>)}</details>}
     {p.invalidCount>0&&<p className={s.warning} role="status">Red outlines show where a piece needs more space.</p>}
-    <div className={s.utilities}><details className={s.detail}><summary>Help &amp; keys</summary><p>Click a piece, then drag to move. Enter any angle to follow your walls. Pinch or use the zoom controls to look closer.</p><p>R: rotate 90°<br/>Shift + R: rotate −90°<br/>Arrow keys: nudge<br/>Ctrl / ⌘ Z: undo<br/>0: fit · Esc: deselect</p></details><button type="button" className={s.reset} onClick={p.dock.reset}>Reset layout</button></div>
+    <div className={s.utilities}><details className={s.detail}><summary>Help &amp; keys</summary><p>Click a piece, then drag to move. Drag its circular arrow to rotate, or click the arrow, move your cursor, then click to place.</p><p>Esc: cancel rotation<br/>R: rotate 90°<br/>Shift + R: rotate −90°<br/>Arrow keys: nudge<br/>Ctrl / ⌘ Z: undo<br/>0: fit · Esc: deselect</p></details><button type="button" className={s.reset} onClick={p.dock.reset}>Reset layout</button></div>
   </div>;
 }

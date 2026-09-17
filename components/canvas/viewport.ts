@@ -1,4 +1,10 @@
-import { clamp } from "./geometry";
+import { clamp, normalizeRotation } from "./geometry";
+
+/** Cursor bearings keep rotation centered and independent of zoom or pan. */
+export function pointerRotation(initial: number, center: { x: number; y: number }, start: { x: number; y: number }, pointer: { x: number; y: number }) {
+  const bearing = (p: { x: number; y: number }) => Math.atan2(p.y - center.y, p.x - center.x);
+  return normalizeRotation(initial + (bearing(pointer) - bearing(start)) * 180 / Math.PI);
+}
 
 /** Fit both axes, keeping drawing dimensions independent from screen size. */
 export function fitViewport(width: number, height: number, lengthFt: number, widthFt: number, padding = 46) {

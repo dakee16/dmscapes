@@ -1,6 +1,0 @@
-.control { display:flex; align-items:center; justify-content:space-between; gap:6px; margin:6px 0; color:inherit; font:500 12px/1.4 var(--font-instrument),sans-serif; }
-.control>span { display:flex; align-items:center; gap:4px; }
-.control input { width:74px; min-height:36px; padding:6px; border:1px solid #9499b2; border-radius:3px; background:#fafaf8; color:#17172b; font:400 13px/1.4 var(--font-plex-mono),monospace; }
-.control input:focus-visible { outline:2px solid #637dff; outline-offset:2px; }
-.control input:disabled { opacity:.45; cursor:not-allowed; }
-@media(pointer:coarse) { .control input { min-height:44px; } }
