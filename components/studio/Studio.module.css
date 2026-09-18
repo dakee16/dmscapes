@@ -160,12 +160,9 @@
 @media(max-width:780px){.rail{overflow-x:auto;overflow-y:hidden;flex-shrink:0}.rail button{min-width:58px}.expanded .workspace{flex:none}.expanded{display:block}.cameraBar{bottom:92px}.gestureHint{bottom:57px}}
 
 
-.roomEditor { min-width:0; max-width:1200px; margin:auto; }
-.editingNotice { display:block; max-width:230px; padding:10px 14px; border-left:2px solid #2b4eff; color:#656675; font-size:12px; line-height:1.5; }
-.expanded .roomEditor { flex:1; width:100%; overflow:auto; overscroll-behavior:contain; }
 .openingsHint { position:absolute; top:56px; left:18px; z-index:4; max-width:calc(100% - 36px); min-height:38px; padding:8px 12px; margin:0; border:1px solid #2b4eff30; background:#fafaf8; color:#2b4eff; border-radius:3px; }
 
-/* The 2D studio has one control rail and one persistent shopping panel. */
+/* The 2D studio has one control rail and one shared details and shopping panel. */
 .workspace.workspacePlan { grid-template-columns:158px minmax(0,1fr) 330px; min-height:480px; height:calc(100dvh - 245px); max-height:1080px; }
 .planToolsHost { background:#17172b; min-width:0; min-height:0; overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; scrollbar-color:#515878 #17172b; z-index:5; }
 .workspacePlan .canvasLayer { padding:0; overflow:hidden; }

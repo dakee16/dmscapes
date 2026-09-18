@@ -5,7 +5,7 @@ export interface CanvasDock {
   host: HTMLElement | null;
   active: boolean;
   expanded: boolean;
-  editRoom: () => void;
+  editOpenings: () => void;
   expand: () => void;
   reset: () => void;
   shop: () => void;

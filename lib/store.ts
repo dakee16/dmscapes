@@ -2,7 +2,7 @@
 
 import { roomEditError } from "./room-editing";
 import { footprint, normalizeRotation, rotateFurniture } from "@/components/canvas/geometry";
-import { bedSurfaceHeight, itemElevation, itemHeight, modelKind } from "./studio";
+import { bedSurfaceHeight, itemElevation, itemHeight, modelKind, roomOutline } from "./studio";
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
@@ -86,7 +86,7 @@ export interface PlannerState {
   resizeItem: (id: string, widthFt: number, lengthFt: number) => void;
   updateItem3D: (id: string, patch: Partial<Pick<FurnitureItem, "height_ft" | "elevation_ft" | "material_color" | "parent_id">>) => void;
   updateStudio: (patch: Partial<import("./studio").StudioSettings>) => void;
-  updateOpenings: (outline: import("./types").RoomOutline) => void;
+  updateOpenings: (openings: import("./types").WallOpening[]) => string | null;
   updateRoomGeometry: (outline: import("./types").RoomOutline, origin?: import("./types").Point) => void;
   /** Rotate an item a quarter turn about its center (1 = CW, -1 = CCW). */
   rotateItem: (id: string, dir: 1 | -1) => void;
@@ -192,7 +192,13 @@ export const usePlannerStore = create<PlannerState>()(
         return {room:{...s.room,outline,lengthFt,widthFt,source:"drawn" as const,dimsEstimated:false},
           furniture:s.furniture?.map(f=>({...f,x_ft:f.x_ft-origin.x,y_ft:f.y_ft-origin.y}))??null};
       }),
-      updateOpenings: outline => set(s => ({room:s.room?{...s.room,outline}:null})),
+      updateOpenings: openings => {
+        const room=get().room;
+        if(!room)return "Choose a room first.";
+        const outline={...roomOutline(room),openings},error=roomEditError(outline);
+        if(!error)set({room:{...room,outline}});
+        return error;
+      },
       resetLayout: (furniture) =>
         set({ furniture: furniture.map((f) => ({ ...f })), hiddenItemIds: [], lockedItemIds: [] }),
       swapProduct: (category, productId) =>

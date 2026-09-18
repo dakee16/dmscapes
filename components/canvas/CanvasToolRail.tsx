@@ -40,7 +40,7 @@ export default function CanvasToolRail(p:CanvasToolRailProps){
       <button type="button" aria-label="Zoom out" disabled={p.zoom<=.5} onClick={()=>p.zoomTo(p.zoom-.25)}>−</button><output aria-label="Zoom level">{Math.round(p.zoom*100)}%</output><button type="button" aria-label="Zoom in" disabled={p.zoom>=3} onClick={()=>p.zoomTo(p.zoom+.25)}>+</button>
     </div>
     <div className={s.group}><span className={s.groupLabel}>Your space</span>
-      <Tool label="Walls & doors" d="M3 21V3h18v18h-6m-6 0H3m6 0V11h6v10" className={s.wide} onClick={p.dock.editRoom}/>
+      <Tool label="Doors & windows" d="M3 21V3h18v18h-6m-6 0H3m6 0V11h6v10" className={s.wide} onClick={p.dock.editOpenings}/>
       <Tool label={p.dock.expanded?"Exit fullscreen":"Expand"} d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" className={s.wide} onClick={p.dock.expand}/>
       <Tool label="Shop" d="M4 7h16l-1 14H5ZM8 7V5a4 4 0 0 1 8 0v2" className={s.mobileShop} onClick={p.dock.shop}/>
     </div>

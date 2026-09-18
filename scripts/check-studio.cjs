@@ -10,6 +10,7 @@ global.sessionStorage = {getItem:k=>memory.get(k)??null,setItem:(k,v)=>memory.se
 function load(file) {
   if (!path.extname(file)) file += ".ts";
   if (file.endsWith(".json")) return require(file);
+  if (file.endsWith(".module.css")) return {};
   if (cache.has(file)) return cache.get(file).exports;
   const module = {exports:{}}; cache.set(file,module);
   const code = ts.transpileModule(fs.readFileSync(file,"utf8"), {compilerOptions:{esModuleInterop:true,target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX}}).outputText;
@@ -133,6 +134,39 @@ const committed=store.getState().room;
 store.getState().updateRoomGeometry({...edited,openings:[{kind:"door",edge:8,offset_ft:0,width_ft:3}]});
 assert.equal(store.getState().room,committed,"Invalid geometry must not change the stored design");
 console.log("PASS: room editing validation, geometry updates, furniture and cart preservation, and origin translation.");
+
+for(const original of [{...room,source:"catalog",dimsEstimated:true},{...irregular,source:"drawn",outline:{...irregular.outline,closets:[{x_ft:0,y_ft:5,width_ft:2,depth_ft:2}]}}]){
+  store.setState({room:original,furniture:[item,lamp],plannerView:"3d"});
+  const outline=studio.roomOutline(original),openings=[{kind:"door",edge:0,offset_ft:1,width_ft:3,swing:0},{kind:"window",edge:1,offset_ft:0,width_ft:4}];
+  assert.equal(store.getState().updateOpenings(openings),null);
+  assert.deepEqual(store.getState().room,{...original,outline:{...outline,openings}},"Openings cannot alter walls, dimensions, closets, or room metadata");
+  assert.deepEqual(store.getState().furniture,[item,lamp]);
+  assert.equal(store.getState().plannerView,"3d","Editing openings preserves the current view");
+  assert.deepEqual(JSON.parse(memory.get("dormscape-planner")).state.room.outline.openings,openings);
+  const moved=[{...openings[0],offset_ft:2,width_ft:2.5,swing:3},openings[1]];
+  assert.equal(store.getState().updateOpenings(moved),null);
+  const validRoom=store.getState().room;
+  for(const invalid of [
+    [{...openings[0],edge:99}], [{...openings[0],offset_ft:NaN}], [{...openings[0],width_ft:-1}],
+    [{...openings[0],offset_ft:original.lengthFt}], [openings[0],{...openings[0],kind:"window"}],
+    Array.from({length:21},()=>openings[0]),
+  ]){
+    assert(store.getState().updateOpenings(invalid),"Invalid openings return an error");
+    assert.equal(store.getState().room,validRoom,"Invalid edits leave the room untouched");
+  }
+  assert.equal(store.getState().updateOpenings([]),null);
+  assert.deepEqual(store.getState().room,{...original,outline},"Removing openings preserves the original room");
+}
+console.log("PASS: openings add, edit, remove, persist, and validate without changing walls, dimensions, closets, furniture, or view.");
+const {NumberField}=load(path.join(root,"components/studio/StudioPanels.tsx"));
+for(const [entered,accept,expected] of [[4,true,"4"],[4,false,"3"],[99,true,"3"],[NaN,true,"3"]]){
+  let calls=0;
+  const field=NumberField({label:"Opening width",value:3,min:.5,max:10,onCommit:()=>{calls++;return accept;}});
+  const input={valueAsNumber:entered,value:String(entered)};
+  field.props.children[1].props.onBlur({currentTarget:input});
+  assert.equal(input.value,expected,"Rejected opening edits restore the committed measurement");
+  assert.equal(calls,Number(Number.isFinite(entered)&&entered<=10));
+}
 
 const {matchTemplate}=load(path.join(root,"templates/template-matcher.ts"));
 const {fitTemplateToRoom,layoutPenalty}=load(path.join(root,"lib/layout-fit.ts"));

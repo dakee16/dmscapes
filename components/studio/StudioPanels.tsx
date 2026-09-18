@@ -6,9 +6,9 @@ import { footprint } from "@/components/canvas/geometry";
 import { constrainedPosition, FLOOR_FINISHES, itemElevation, itemHeight, modelKind, roomOutline, studioSettings } from "@/lib/studio";
 import s from "./Studio.module.css";
 
-export function NumberField({label,value,min=0,max=60,step=.1,disabled=false,onCommit}:{label:string;value:number;min?:number;max?:number;step?:number;disabled?:boolean;onCommit:(n:number)=>void}){
+export function NumberField({label,value,min=0,max=60,step=.1,disabled=false,onCommit}:{label:string;value:number;min?:number;max?:number;step?:number;disabled?:boolean;onCommit:(n:number)=>void|boolean}){
   return <label className={s.field}>{label}<input key={value} aria-label={label} type="number" inputMode="decimal" step={step} min={min} max={max} defaultValue={Math.round(value*100)/100} disabled={disabled}
-    onBlur={e=>{const n=e.currentTarget.valueAsNumber;if(Number.isFinite(n)&&n>=min&&n<=max)onCommit(n);else e.currentTarget.value=String(value);}}
+    onBlur={e=>{const n=e.currentTarget.valueAsNumber;if(!Number.isFinite(n)||n<min||n>max||onCommit(n)===false)e.currentTarget.value=String(value);}}
     onKeyDown={e=>{if(e.key==="Enter"){e.preventDefault();e.currentTarget.blur();}}}/></label>;
 }
 
@@ -54,44 +54,41 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
   </>;
 }
 
-export function RoomDetails({room,onEdit}:{room:SelectedRoom;onEdit:()=>void}){
+export function RoomDetails({room}:{room:SelectedRoom}){
   const st=usePlannerStore.getState(),outline=roomOutline(room),settings=studioSettings(room.studio);
   const [error,setError]=useState("");
   const lengths=outline.points.map((p,i)=>Math.hypot(outline.points[(i+1)%outline.points.length].x-p.x,outline.points[(i+1)%outline.points.length].y-p.y));
   function change(index:number,patch:Partial<WallOpening>){
     const value={...outline.openings[index],...patch},len=lengths[value.edge];
     value.width_ft=Math.min(value.width_ft,len);value.offset_ft=Math.max(0,Math.min(value.offset_ft,len-value.width_ft));
-    const collision=outline.openings.some((o,i)=>i!==index&&o.edge===value.edge&&o.offset_ft<value.offset_ft+value.width_ft&&value.offset_ft<o.offset_ft+o.width_ft);
-    if(collision){setError("Those openings overlap. Move this opening or choose another wall.");return;}
-    setError("");st.updateOpenings({...outline,openings:outline.openings.map((o,i)=>i===index?value:o)});
+    const error=st.updateOpenings(outline.openings.map((o,i)=>i===index?value:o));
+    setError(error??"");return !error;
   }
   function add(kind:"door"|"window"){
     if(outline.openings.length>=20){setError("This room already has 20 openings.");return;}
     for(let edge=0;edge<lengths.length;edge++){const width=kind==="door"?3:4;
       for(let offset=.25;offset+width<=lengths[edge];offset+=.25){
         if(!outline.openings.some(o=>o.edge===edge&&o.offset_ft<offset+width&&offset<o.offset_ft+o.width_ft)){
-          st.updateOpenings({...outline,openings:[...outline.openings,{kind,edge,offset_ft:offset,width_ft:width,swing:0}]});setError("");return;
+          setError(st.updateOpenings([...outline.openings,{kind,edge,offset_ft:offset,width_ft:width,swing:0}])??"");return;
         }
       }
     }setError("No clear wall segment fits that opening. Adjust the existing openings first.");
   }
-  return <><p className={s.eyebrow}>The space you start with</p><h2>Check your room.</h2>
+  return <><p className={s.eyebrow}>The space you start with</p><h2>Doors &amp; windows</h2>
     <p className={s.muted}>{room.lengthFt} × {room.widthFt} ft. {room.dimsEstimated?"Room dimensions are estimated.":"Room dimensions come from your selected or drawn plan."}</p>
-    <button className={s.primary} onClick={onEdit}>Edit walls &amp; doors ↗</button>
-    <p className={s.note}>Adjust the outline in 2D while keeping your furniture. Changes carry into both views.</p>
-    <div className={s.section}><NumberField label="Ceiling height (ft)" value={settings.ceilingFt} min={6} max={16} onCommit={n=>st.updateStudio({ceilingFt:n})}/>
-      <p className={s.note}>8 ft is the preview default. Enter a measured height when you have it.</p></div>
-    <div className={s.section}><h3>Doors &amp; windows</h3><p className={s.muted}>Add doors and windows on the 2D drawing, or use the exact measurements below. Wall numbers follow the outline from its first point.</p>
+    <p className={s.muted}>Add an opening, then choose its wall and measurements. Changes appear immediately in both views. Wall numbers follow the outline from its first point; offsets are measured from the start of each wall.</p>
+    <div className={s.section}>
       <div className={s.buttonRow}><button onClick={()=>add("door")}>+ Door</button><button onClick={()=>add("window")}>+ Window</button></div>
       {outline.openings.map((o,i)=><div key={i} className={s.opening}>
-        <div className={s.row}><strong>{o.kind==="door"?"Door":"Window"} {i+1}</strong><button aria-label={"Remove "+o.kind+" "+(i+1)} onClick={()=>{st.updateOpenings({...outline,openings:outline.openings.filter((_,n)=>n!==i)});setError("");}}>Remove</button></div>
+        <div className={s.row}><strong>{o.kind==="door"?"Door":"Window"} {i+1}</strong><button aria-label={"Remove "+o.kind+" "+(i+1)} onClick={()=>setError(st.updateOpenings(outline.openings.filter((_,n)=>n!==i))??"")}>Remove</button></div>
         <label className={s.field}>Wall<select value={o.edge} onChange={e=>change(i,{edge:Number(e.target.value)})}>{lengths.map((len,n)=><option key={n} value={n}>Wall {n+1} · {len.toFixed(1)} ft</option>)}</select></label>
-        <div className={s.fieldGrid}><NumberField label={"Opening "+(i+1)+" offset (ft)"} value={o.offset_ft} max={lengths[o.edge]} onCommit={n=>change(i,{offset_ft:n})}/><NumberField label={"Opening "+(i+1)+" width (ft)"} value={o.width_ft} min={.5} max={Math.min(20,lengths[o.edge])} onCommit={n=>change(i,{width_ft:n})}/></div>
+        <div className={s.fieldGrid}><NumberField label={"Opening "+(i+1)+" offset (ft)"} value={o.offset_ft} max={lengths[o.edge]-o.width_ft} onCommit={n=>change(i,{offset_ft:n})}/><NumberField label={"Opening "+(i+1)+" width (ft)"} value={o.width_ft} min={.5} max={Math.min(20,lengths[o.edge]-o.offset_ft)} onCommit={n=>change(i,{width_ft:n})}/></div>
         {o.kind==="door"&&<label className={s.field}>Door swing<select value={o.swing??0} onChange={e=>change(i,{swing:Number(e.target.value)})}><option value={0}>Inward, start hinge</option><option value={1}>Inward, end hinge</option><option value={2}>Outward, start hinge</option><option value={3}>Outward, end hinge</option></select></label>}
       </div>)}
       {error&&<p className={s.warning} role="status">{error}</p>}
     </div>
-
+    <div className={s.section}><NumberField label="Ceiling height (ft)" value={settings.ceilingFt} min={6} max={16} onCommit={n=>st.updateStudio({ceilingFt:n})}/>
+      <p className={s.note}>8 ft is the preview default. Enter a measured height when you have it.</p></div>
   </>;
 }
 
