@@ -1,9 +1,9 @@
 "use client";
-import { useState } from "react";
 import type { FurnitureItem, Product, SelectedRoom, WallOpening } from "@/lib/types";
 import { usePlannerStore } from "@/lib/store";
 import { footprint } from "@/components/canvas/geometry";
 import { constrainedPosition, FLOOR_FINISHES, itemElevation, itemHeight, modelKind, roomOutline, studioSettings } from "@/lib/studio";
+import { OPENING_DRAG_TYPE, type OpeningControls } from "@/lib/room-editing";
 import s from "./Studio.module.css";
 
 export function NumberField({label,value,min=0,max=60,step=.1,disabled=false,onCommit}:{label:string;value:number;min?:number;max?:number;step?:number;disabled?:boolean;onCommit:(n:number)=>void|boolean}){
@@ -54,41 +54,25 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
   </>;
 }
 
-export function RoomDetails({room}:{room:SelectedRoom}){
-  const st=usePlannerStore.getState(),outline=roomOutline(room),settings=studioSettings(room.studio);
-  const [error,setError]=useState("");
-  const lengths=outline.points.map((p,i)=>Math.hypot(outline.points[(i+1)%outline.points.length].x-p.x,outline.points[(i+1)%outline.points.length].y-p.y));
-  function change(index:number,patch:Partial<WallOpening>){
-    const value={...outline.openings[index],...patch},len=lengths[value.edge];
-    value.width_ft=Math.min(value.width_ft,len);value.offset_ft=Math.max(0,Math.min(value.offset_ft,len-value.width_ft));
-    const error=st.updateOpenings(outline.openings.map((o,i)=>i===index?value:o));
-    setError(error??"");return !error;
-  }
-  function add(kind:"door"|"window"){
-    if(outline.openings.length>=20){setError("This room already has 20 openings.");return;}
-    for(let edge=0;edge<lengths.length;edge++){const width=kind==="door"?3:4;
-      for(let offset=.25;offset+width<=lengths[edge];offset+=.25){
-        if(!outline.openings.some(o=>o.edge===edge&&o.offset_ft<offset+width&&offset<o.offset_ft+o.width_ft)){
-          setError(st.updateOpenings([...outline.openings,{kind,edge,offset_ft:offset,width_ft:width,swing:0}])??"");return;
-        }
-      }
-    }setError("No clear wall segment fits that opening. Adjust the existing openings first.");
-  }
-  return <><p className={s.eyebrow}>The space you start with</p><h2>Doors &amp; windows</h2>
-    <p className={s.muted}>{room.lengthFt} × {room.widthFt} ft. {room.dimsEstimated?"Room dimensions are estimated.":"Room dimensions come from your selected or drawn plan."}</p>
-    <p className={s.muted}>Add an opening, then choose its wall and measurements. Changes appear immediately in both views. Wall numbers follow the outline from its first point; offsets are measured from the start of each wall.</p>
-    <div className={s.section}>
-      <div className={s.buttonRow}><button onClick={()=>add("door")}>+ Door</button><button onClick={()=>add("window")}>+ Window</button></div>
-      {outline.openings.map((o,i)=><div key={i} className={s.opening}>
-        <div className={s.row}><strong>{o.kind==="door"?"Door":"Window"} {i+1}</strong><button aria-label={"Remove "+o.kind+" "+(i+1)} onClick={()=>setError(st.updateOpenings(outline.openings.filter((_,n)=>n!==i))??"")}>Remove</button></div>
-        <label className={s.field}>Wall<select value={o.edge} onChange={e=>change(i,{edge:Number(e.target.value)})}>{lengths.map((len,n)=><option key={n} value={n}>Wall {n+1} · {len.toFixed(1)} ft</option>)}</select></label>
-        <div className={s.fieldGrid}><NumberField label={"Opening "+(i+1)+" offset (ft)"} value={o.offset_ft} max={lengths[o.edge]-o.width_ft} onCommit={n=>change(i,{offset_ft:n})}/><NumberField label={"Opening "+(i+1)+" width (ft)"} value={o.width_ft} min={.5} max={Math.min(20,lengths[o.edge]-o.offset_ft)} onCommit={n=>change(i,{width_ft:n})}/></div>
-        {o.kind==="door"&&<label className={s.field}>Door swing<select value={o.swing??0} onChange={e=>change(i,{swing:Number(e.target.value)})}><option value={0}>Inward, start hinge</option><option value={1}>Inward, end hinge</option><option value={2}>Outward, start hinge</option><option value={3}>Outward, end hinge</option></select></label>}
-      </div>)}
-      {error&&<p className={s.warning} role="status">{error}</p>}
+export function RoomDetails({room,controls,onAdd,onRemove,onFlip}:{room:SelectedRoom;controls:OpeningControls;onAdd:(kind:WallOpening["kind"])=>void;onRemove:(index:number)=>void;onFlip:(index:number)=>void}){
+  const openings=roomOutline(room).openings;
+  return <><p className={s.eyebrow}>Make room for real life</p><h2>Doors &amp; windows</h2>
+    <p className={s.muted}>Drag one onto a wall. Or tap to add, then drag it into place.</p>
+    <div className={s.openingTools}>
+      {(["door","window"] as const).map(kind=><button key={kind} type="button" draggable onDragStart={e=>{e.dataTransfer.setData(OPENING_DRAG_TYPE+"-"+kind,kind);e.dataTransfer.effectAllowed="copy";}} onClick={()=>onAdd(kind)}>
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">{kind==="door"?<><path d="M10 42V6h26v36M7 42h34M14 42V10l18 5v27Z"/><circle cx="27" cy="28" r="1"/></>:<><rect x="7" y="7" width="34" height="34" rx="1"/><path d="M24 7v34M7 24h34M5 43h38"/></>}</svg>
+        <strong>+ {kind==="door"?"Door":"Window"}</strong><small>Drag or tap to add</small>
+      </button>)}
     </div>
-    <div className={s.section}><NumberField label="Ceiling height (ft)" value={settings.ceilingFt} min={6} max={16} onCommit={n=>st.updateStudio({ceilingFt:n})}/>
-      <p className={s.note}>8 ft is the preview default. Enter a measured height when you have it.</p></div>
+    <p className={s.note}>They snap to walls automatically. Drag an existing door or window to move it.</p>
+    {openings.length>0&&<details className={s.disclosure}><summary>Placed openings ({openings.length})</summary>
+      <div className={s.buttonRow}>{openings.map((o,i)=><button key={i} aria-pressed={controls.selected===i} onClick={()=>controls.select(i)}>{o.kind==="door"?"Door":"Window"} {i+1}</button>)}</div>
+      {controls.selected!==null&&openings[controls.selected]&&<div className={s.buttonRow}>
+        {openings[controls.selected].kind==="door"&&<button onClick={()=>onFlip(controls.selected!)}>Flip door</button>}
+        <button onClick={()=>onRemove(controls.selected!)}>Remove</button>
+      </div>}
+      <p className={s.muted}>Keyboard: select an opening, then use ← / → to slide it or ↑ / ↓ to move to the next wall.</p>
+    </details>}
   </>;
 }
 

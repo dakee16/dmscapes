@@ -1,5 +1,45 @@
-import type { Point, RoomOutline } from "./types";
+import type { Point, RoomOutline, WallOpening } from "./types";
 import { rectInsidePolygon } from "@/components/canvas/geometry";
+
+export const OPENING_DRAG_TYPE = "application/x-dormscape-opening";
+export interface OpeningControls {
+  selected: number | null;
+  select: (index: number | null) => void;
+  preview: (target: number | WallOpening["kind"], point: Point) => WallOpening | null;
+  commit: (index: number | null, opening: WallOpening) => void;
+}
+
+export function openingCenter(points: Point[], opening: WallOpening): Point {
+  const a=points[opening.edge],b=points[(opening.edge+1)%points.length],t=(opening.offset_ft+opening.width_ft/2)/Math.hypot(b.x-a.x,b.y-a.y);
+  return {x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t};
+}
+
+/** Snap to free space on the nearest wall, keeping sizes and room geometry fixed. */
+export function openingAtPoint(outline: RoomOutline, target: WallOpening | WallOpening["kind"], point?: Point, exclude=-1): WallOpening | null {
+  if(point&&(!Number.isFinite(point.x)||!Number.isFinite(point.y)))return null;
+  if(exclude<0&&outline.openings.length>=20)return null;
+  const opening:WallOpening=typeof target==="string"?{kind:target,width_ft:target==="door"?3:4,edge:0,offset_ft:0}:target;
+  const edges=outline.points.map((a,edge)=>{
+    const b=outline.points[(edge+1)%outline.points.length],length=Math.hypot(b.x-a.x,b.y-a.y);
+    const along=point?Math.max(0,Math.min(length,((point.x-a.x)*(b.x-a.x)+(point.y-a.y)*(b.y-a.y))/length)):length/2;
+    return {edge,length,along,distance:point?Math.hypot(point.x-a.x-(b.x-a.x)*along/length,point.y-a.y-(b.y-a.y)*along/length):0};
+  }).filter(e=>e.length>0).sort((a,b)=>a.distance-b.distance);
+  for(const {edge,length,along,distance} of point?edges.slice(0,1):edges){
+    if(distance>1.5||length<opening.width_ft)continue;
+    const occupied=outline.openings.filter((o,i)=>i!==exclude&&o.edge===edge).sort((a,b)=>a.offset_ft-b.offset_ft);
+    let start=0,best:number|null=null,delta=Infinity;
+    for(const end of [...occupied,{offset_ft:length,width_ft:0}]){
+      if(end.offset_ft-start>=opening.width_ft){
+        const offset=Math.max(start,Math.min(end.offset_ft-opening.width_ft,Math.round((along-opening.width_ft/2)*4)/4));
+        const d=Math.abs(offset+opening.width_ft/2-along);
+        if(d<delta){best=offset;delta=d;}
+      }
+      start=Math.max(start,end.offset_ft+end.width_ft);
+    }
+    if(best!==null)return {...opening,edge,offset_ft:best};
+  }
+  return null;
+}
 
 /** Reject broken walls before committing an edit to either planner view. */
 export function roomEditError({points,openings,closets}:RoomOutline):string|null {
@@ -25,4 +65,3 @@ export function roomEditError({points,openings,closets}:RoomOutline):string|null
   if(closets.some(c=>!rectInsidePolygon({x:c.x_ft,y:c.y_ft,w:c.width_ft,h:c.depth_ft},points)))return "A closet would be outside the room. Move it first, then adjust the walls.";
   return null;
 }
-

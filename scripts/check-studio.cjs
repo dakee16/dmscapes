@@ -116,7 +116,60 @@ for(const profile of [null,undefined,{plan:"free"},{plan:"flex"},{plan:"plus"},{
 assert.equal(canUse3D({plan:"pro"}),true);
 console.log("PASS: interactive 3D entitlement is exclusive to Pro.");
 
-const {roomEditError}=load(path.join(root,"lib/room-editing.ts"));
+const {roomEditError,openingAtPoint,openingCenter}=load(path.join(root,"lib/room-editing.ts"));
+const plainOutline=studio.roomOutline(room);
+const snappedDoor=openingAtPoint(plainOutline,"door",{x:7.5,y:.2});
+assert.deepEqual(snappedDoor,{kind:"door",width_ft:3,edge:0,offset_ft:6});
+assert.deepEqual(openingCenter(plainOutline.points,snappedDoor),{x:7.5,y:0});
+const withDoor={...plainOutline,openings:[snappedDoor]};
+const snappedWindow=openingAtPoint(withDoor,"window",{x:7.5,y:0});
+assert.equal(roomEditError({...withDoor,openings:[snappedDoor,snappedWindow]}),null,"Drops snap into available space without overlapping");
+assert.equal(snappedWindow.width_ft,4);
+const movedDoor=openingAtPoint(withDoor,{...snappedDoor,swing:3},{x:15,y:8},0);
+assert.deepEqual(movedDoor,{kind:"door",width_ft:3,edge:1,offset_ft:6.5,swing:3},"Drag can move to a different wall while retaining size and swing");
+assert.equal(openingAtPoint(plainOutline,"door",{x:7,y:6}),null,"Dropping in the middle of the room cancels placement");
+assert.equal(openingAtPoint(plainOutline,"door",{x:NaN,y:0}),null);
+const fullWall={...plainOutline,openings:[{kind:"window",edge:0,offset_ft:0,width_ft:15}]};
+assert.equal(openingAtPoint(fullWall,"door",{x:7,y:0}),null,"A full wall rejects the drop");
+assert.equal(openingAtPoint(fullWall,"door").edge,1,"Tap-to-add finds another wall automatically");
+const shortOutline={points:[{x:0,y:0},{x:2,y:0},{x:2,y:2},{x:0,y:2}],openings:[],closets:[]};
+assert.equal(openingAtPoint(shortOutline,"door"),null,"Standard openings do not shrink to fit short walls");
+for(const target of [irregular,diagonalRoom]){
+  const snapped=openingAtPoint(target.outline,"door");
+  const moved=openingAtPoint({...target.outline,openings:[snapped]},snapped,openingCenter(target.outline.points,snapped),0);
+  assert.equal(roomEditError({...target.outline,openings:[moved]}),null,"Snapping supports concave and diagonal outlines");
+}
+console.log("PASS: drag placement snaps to free wall space, preserves size/swing, supports irregular rooms, and rejects invalid drops.");
+// Run the actual 3D gesture handlers against the shared snapping logic.
+const sceneSource=ts.createSourceFile("studio-scene.js",fs.readFileSync(path.join(root,"public/experience/studio-scene.js"),"utf8"),ts.ScriptTarget.Latest,true);
+const gestureFunctions=[];
+function collectGestures(node){
+  if(ts.isFunctionDeclaration(node)&&["down","distance","move","up","cancelDrag","positionOpening"].includes(node.name?.text))gestureFunctions.push(node.getText(sceneSource));
+  ts.forEachChild(node,collectGestures);
+}
+collectGestures(sceneSource);
+let openingCommits=0;
+const openingNode={position:{set(x,y,z){Object.assign(this,{x,y,z});}},rotation:{y:0}};
+const gestureContext={data:{editOpenings:true,outline:withDoor},drag:null,pointers:new Map(),pinch:0,assemblyStart:0,angle:.7,polar:.94,
+  meshes:new Map(),openingNodes:new Map([[0,openingNode]]),openingGhost:{visible:false},clearGuides(){},request(){},
+  canvas:{focus(){},setPointerCapture(){},hasPointerCapture(){return false;}},
+  openingHit:()=>({object:{userData:{openingIndex:0}},point:{y:3}}),wallPoint:e=>({x:e.x,z:e.y}),
+  options:{onSelectOpening(){},previewOpening:(i,x,y)=>openingAtPoint(withDoor,withDoor.openings[i],{x,y},i),onOpeningChange:(i,o)=>{openingCommits++;assert.equal(i,0);assert.equal(o.edge,1);}},
+};
+require("node:vm").runInNewContext(gestureFunctions.join("\n"),gestureContext);
+const pointer={pointerId:1,button:0,pointerType:"touch",clientX:0,clientY:0};
+gestureContext.down(pointer);
+gestureContext.move({...pointer,clientX:30,clientY:20,x:15,y:8});
+assert.equal(openingCommits,0,"Dragging only previews the opening");
+assert.equal(gestureContext.drag.nextOpening.edge,1);
+assert.equal(gestureContext.angle,.7,"Dragging an opening cannot orbit the room");
+gestureContext.up(pointer);assert.equal(openingCommits,1,"One completed touch gesture makes one history edit");
+gestureContext.down(pointer);gestureContext.move({...pointer,clientX:30,clientY:20,x:15,y:8});gestureContext.cancelDrag();gestureContext.up(pointer);
+assert.equal(openingCommits,1,"Cancel restores the original opening without committing");
+gestureContext.down(pointer);gestureContext.move({...pointer,clientX:30,clientY:20,x:7,y:6});gestureContext.up(pointer);
+assert.equal(openingCommits,1,"An invalid drop does not alter the room");
+assert.equal(openingNode.position.x,0);assert.equal(openingNode.position.z,0);
+console.log("PASS: 3D touch dragging previews without orbiting, commits once, and safely cancels invalid drops.");
 const edited={points:[{x:0,y:0},{x:18,y:0},{x:18,y:12},{x:0,y:12}],openings:[{kind:"door",edge:0,offset_ft:2,width_ft:3},{kind:"window",edge:1,offset_ft:4,width_ft:4}],closets:[]};
 assert.equal(roomEditError(edited),null);
 assert(roomEditError({...edited,points:[{x:0,y:0},{x:18,y:12},{x:18,y:0},{x:0,y:12}]}),"Crossed walls must be rejected");
@@ -158,7 +211,7 @@ for(const original of [{...room,source:"catalog",dimsEstimated:true},{...irregul
   assert.deepEqual(store.getState().room,{...original,outline},"Removing openings preserves the original room");
 }
 console.log("PASS: openings add, edit, remove, persist, and validate without changing walls, dimensions, closets, furniture, or view.");
-const {NumberField}=load(path.join(root,"components/studio/StudioPanels.tsx"));
+const {NumberField,RoomDetails}=load(path.join(root,"components/studio/StudioPanels.tsx"));
 for(const [entered,accept,expected] of [[4,true,"4"],[4,false,"3"],[99,true,"3"],[NaN,true,"3"]]){
   let calls=0;
   const field=NumberField({label:"Opening width",value:3,min:.5,max:10,onCommit:()=>{calls++;return accept;}});
@@ -210,6 +263,10 @@ new Function("require","module","exports",drawCode)(id=>{
   return id.startsWith("@/")?load(path.join(root,id.slice(2))):require(id);
 },drawModule,drawModule.exports);
 const {createElement}=require("react"),{renderToStaticMarkup}=require("react-dom/server");
+const openingHTML=renderToStaticMarkup(createElement(RoomDetails,{room:{...room,outline:withDoor},controls:{selected:0,select:()=>{}},onAdd:()=>{},onRemove:()=>{},onFlip:()=>{}}));
+assert.equal((openingHTML.match(/draggable="true"/g)||[]).length,2,"Door and window cards support native drag and drop");
+assert.doesNotMatch(openingHTML,/<input|<select|offset|Ceiling height|Opening.*width/,"Opening tools have no measurement or wall selection form");
+assert.match(openingHTML,/Flip door/);assert.match(openingHTML,/Remove/);
 const drawHTML=props=>renderToStaticMarkup(createElement(drawModule.exports.default,{onComplete:()=>{},...props}));
 const freshDrawing=drawHTML({});
 assert.match(freshDrawing,/tabindex="0" role="region" aria-label="Room drawing canvas"/,"A new room opens directly on the drawing canvas");

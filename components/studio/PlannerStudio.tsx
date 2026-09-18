@@ -1,13 +1,14 @@
 "use client";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import { CanvasControlsContext } from "@/components/canvas/CanvasControlsContext";
 import { useAuth } from "@/lib/auth-context";
 import { canUse3D } from "@/lib/plan";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
-import type { Product } from "@/lib/types";
-import { placementIssues, studioSettings, visibleFurniture } from "@/lib/studio";
+import type { Product, WallOpening } from "@/lib/types";
+import { placementIssues, roomOutline, studioSettings, visibleFurniture } from "@/lib/studio";
+import { openingAtPoint, openingCenter, type OpeningControls } from "@/lib/room-editing";
 import ActionBar from "@/components/products/ActionBar";
 import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
 import { ItemInspector, RoomDetails, StyleDetails } from "./StudioPanels";
@@ -18,6 +19,8 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const room=usePlannerStore(st=>st.room)!,items=usePlannerStore(st=>st.furniture)??[];
   const style=usePlannerStore(st=>st.style)??"minimalist",hidden=usePlannerStore(st=>st.hiddenItemIds),excluded=usePlannerStore(st=>st.excluded)??[],locked=usePlannerStore(st=>st.lockedItemIds);
   const selectedId=usePlannerStore(st=>st.selectedItemId);
+  const [selectedOpening,setSelectedOpening]=useState<number|null>(null),[openingError,setOpeningError]=useState("");
+  const outline=roomOutline(room);
   const [toolsHost,setToolsHost]=useState<HTMLDivElement|null>(null),[compact,setCompact]=useState(false);
   const shopPanel=useRef<HTMLElement>(null);
   const view=usePlannerStore(st=>st.plannerView),setView=usePlannerStore(st=>st.setPlannerView);
@@ -30,7 +33,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   useEffect(()=>{const media=window.matchMedia("(max-width:780px)");const update=()=>setCompact(media.matches);update();media.addEventListener("change",update);return()=>media.removeEventListener("change",update);},[]);
   useEffect(()=>{if(!compact||!mobileOpen)return;const focused=document.activeElement as HTMLElement|null,overflow=document.body.style.overflow;document.body.style.overflow="hidden";const frame=requestAnimationFrame(()=>closeRef.current?.focus({preventScroll:true}));return()=>{cancelAnimationFrame(frame);document.body.style.overflow=overflow;focused?.focus({preventScroll:true});};},[compact,mobileOpen]);
   function editOpenings(){open("room");}
-  function enter3D(){setView("3d");setPanel("shop");setMoveMode(false);}
+  function enter3D(){setView("3d");setMoveMode(false);}
   const selected=items.find(f=>f.id===selectedId);
   const issues=placementIssues(visibleFurniture(items,hidden,excluded),room,studioSettings(room.studio));
   const selectedProduct=selected?(products.find(p=>p.id===selected.id)||products.find(p=>p.category===furnitureCategory(selected))):undefined;
@@ -42,14 +45,46 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
     document.addEventListener("keydown",key);return()=>{document.body.style.overflow=prev;document.removeEventListener("keydown",key);focused?.focus();};
   },[expanded]);
   function select(id:string|null){
+    setSelectedOpening(null);
     const item=items.find(f=>f.id===id);
     usePlannerStore.setState({selectedItemId:id,selectedCategory:item?furnitureCategory(item):null});
     if(id&&view==="3d")setPanel("item");
   }
   function open(next:Panel){if(next==="style"&&!allowed3D){openUpgrade("room-3d");return;}setPanel(next);setMobileOpen(true);if(next!=="item")setMoveMode(false);}
+  function selectOpening(index:number|null){
+    setSelectedOpening(index);setOpeningError("");
+    if(index!==null){usePlannerStore.setState({selectedItemId:null,selectedCategory:null,hoveredCategory:null});setPanel("room");setMoveMode(false);}
+  }
+  function commitOpening(index:number|null,opening:WallOpening){
+    const current=roomOutline(usePlannerStore.getState().room!);
+    const error=usePlannerStore.getState().updateOpenings(index===null?[...current.openings,opening]:current.openings.map((o,i)=>i===index?opening:o));
+    setOpeningError(error??"");
+    if(!error){selectOpening(index??current.openings.length);setMobileOpen(false);}
+  }
+  const openingControls:OpeningControls={selected:selectedOpening,select:selectOpening,
+    preview:(target,point)=>{const current=roomOutline(usePlannerStore.getState().room!);const opening=typeof target==="number"?current.openings[target]:target;return opening?openingAtPoint(current,opening,point,typeof target==="number"?target:-1):null;},
+    commit:commitOpening};
+  function addOpening(kind:WallOpening["kind"]){
+    const opening=openingAtPoint(outline,kind);
+    if(opening)commitOpening(null,opening);else setOpeningError("No clear wall space left for another "+kind+".");
+  }
+  function removeOpening(index:number){usePlannerStore.getState().updateOpenings(outline.openings.filter((_,i)=>i!==index));selectOpening(null);}
+  function flipOpening(index:number){const opening=outline.openings[index];if(opening)commitOpening(index,{...opening,swing:((opening.swing??0)+1)%4});}
+  function openingKey(e:ReactKeyboardEvent){
+    const opening=selectedOpening===null?null:outline.openings[selectedOpening];
+    if(preview||!opening||e.target instanceof HTMLElement&&e.target.closest("input,textarea,select"))return;
+    if(e.key==="Delete"||e.key==="Backspace"){e.preventDefault();e.stopPropagation();removeOpening(selectedOpening!);return;}
+    if(!["ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(e.key))return;
+    e.preventDefault();e.stopPropagation();
+    const edge=(opening.edge+(e.key==="ArrowDown"?1:e.key==="ArrowUp"?-1:0)+outline.points.length)%outline.points.length;
+    const a=outline.points[edge],b=outline.points[(edge+1)%outline.points.length],length=Math.hypot(b.x-a.x,b.y-a.y);
+    const along=e.key==="ArrowLeft"||e.key==="ArrowRight"?opening.offset_ft+opening.width_ft/2+(e.key==="ArrowLeft"?-.25:.25):length/2;
+    const next=openingControls.preview(selectedOpening!,{x:a.x+(b.x-a.x)*along/length,y:a.y+(b.y-a.y)*along/length});
+    if(next)commitOpening(selectedOpening!,next);
+  }
   function preset(next:CameraView){setCamera(next);scene.current?.preset(next);}
   const titles:Record<Panel,string>={furnish:"Furniture",style:"Style & light",room:"Room details",shop:"Shopping list",item:"Selected item",checks:"Placement checks",help:"Studio guide"};
-  return <div ref={root} className={s.studio+" "+(expanded?s.expanded:"")} data-testid="planner-studio"
+  return <div ref={root} className={s.studio+" "+(expanded?s.expanded:"")} data-testid="planner-studio" onKeyDownCapture={openingKey}
     onKeyDown={e=>{const target=e.target as HTMLElement;
       if(expanded&&e.key==="Tab"){
         const nodes=Array.from(root.current?.querySelectorAll<HTMLElement>('button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),textarea:not(:disabled),[tabindex="0"]')??[]).filter(n=>n.getClientRects().length>0&&!n.closest('[aria-hidden="true"],[inert]'));
@@ -73,10 +108,10 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         {view==="3d"&&<div className={s.viewportTop}><span className={s.spaceBadge}>{view==="3d"?"LIVE 3D / ":"2D / "}{room.lengthFt} × {room.widthFt} ft</span><button aria-label={expanded?"Exit expanded studio":"Expand studio"} onClick={()=>setExpanded(v=>!v)}>{expanded?"Exit fullscreen":"Expand ↗"}</button></div>}
         <div className={s.renderArea}>
           <div className={s.sceneLayer} style={{visibility:view==="3d"?"visible":"hidden",pointerEvents:view==="3d"?"auto":"none"}} aria-hidden={view!=="3d"}>
-            {(allowed3D||view==="3d")&&<RoomScene ref={scene} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview}
+            {(allowed3D||view==="3d")&&<RoomScene ref={scene} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview} openingControls={openingControls}
               onSelect={select} onMove={(id,x,y)=>usePlannerStore.getState().moveItem(id,x,y)} onFallback={()=>setView("2d")}/>}
           </div>
-          <div className={s.canvasLayer} style={{display:view==="2d"?"block":"none"}}><CanvasControlsContext.Provider value={{host:toolsHost,active:view==="2d",expanded,editOpenings,expand:()=>setExpanded(v=>!v),reset:()=>setResetConfirm(true),shop:()=>open("shop")}}>{canvas}</CanvasControlsContext.Provider></div>
+          <div className={s.canvasLayer} style={{display:view==="2d"?"block":"none"}}><CanvasControlsContext.Provider value={{host:toolsHost,active:view==="2d",expanded,editOpenings,openings:openingControls,expand:()=>setExpanded(v=>!v),reset:()=>setResetConfirm(true),shop:()=>open("shop")}}>{canvas}</CanvasControlsContext.Provider></div>
         </div>
         {view==="3d"&&<>
           <div className={s.cameraBar} role="group" aria-label="Camera controls" inert={preview}>
@@ -95,6 +130,12 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
           <button onClick={editOpenings}>Doors &amp; windows</button>
           <button onClick={()=>open("help")}>How to use</button>
         </div>}
+        {selectedOpening!==null&&outline.openings[selectedOpening]&&!preview&&<div className={s.openingActions} style={view==="2d"&&!compact&&openingCenter(outline.points,outline.openings[selectedOpening]).y<room.widthFt/2?{top:"auto",bottom:12}:undefined} role="group" aria-label="Selected opening">
+          <strong>{outline.openings[selectedOpening].kind==="door"?"Door":"Window"}</strong><span>Drag to move</span>
+          {outline.openings[selectedOpening].kind==="door"&&<button onClick={()=>flipOpening(selectedOpening)}>Flip door</button>}
+          <button onClick={()=>removeOpening(selectedOpening)}>Remove</button><button aria-label="Deselect opening" onClick={()=>selectOpening(null)}>×</button>
+        </div>}
+        {openingError&&<p className={s.openingError} role="status">{openingError}</p>}
         {resetConfirm&&<div className={s.resetConfirm} role="group" aria-label="Confirm layout reset"><p>Restore the original furniture arrangement? You can undo this.</p><div className={s.buttonRow}><button onClick={()=>{onReset();setResetConfirm(false);}}>Restore layout</button><button onClick={()=>setResetConfirm(false)}>Keep my changes</button></div></div>}
         {view==="3d"&&unplaced&&<div className={s.unplaced} inert={preview}>{unplaced}</div>}
       </section>
@@ -120,14 +161,14 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
             <p className={s.eyebrow}>Your next move</p><h2>Make it yours.</h2><p>Room finishes and shopping details stay in their own tools. Select a placed piece to move it, rotate it, or dial in its dimensions.</p>
             <button className={s.primary} onClick={()=>open("furnish")}>Choose a piece ↗</button><button className={s.emptyShop} onClick={()=>open("shop")}>Explore the shopping list</button>
           </div>}
-          {activePanel==="room"&&<>{view==="2d"&&<button className={s.backButton} onClick={()=>open("shop")}>← Shopping list</button>}<RoomDetails room={room}/><details className={s.disclosure}><summary>View &amp; layout options</summary>{allowed3D&&<label className={s.field}>Wall visibility<select aria-label="Wall visibility" value={walls} onChange={e=>setWalls(e.target.value)}><option value="auto">Automatic cutaway</option><option value="all">All walls</option><option value="hidden">Hide walls</option></select></label>}<div className={s.buttonRow}><button onClick={()=>open("checks")}>Placement checks ({new Set(issues.map(i=>i.id)).size})</button><button onClick={()=>setResetConfirm(true)}>Reset layout</button></div></details></>}
+          {activePanel==="room"&&<>{view==="2d"&&<button className={s.backButton} onClick={()=>open("shop")}>← Shopping list</button>}<RoomDetails room={room} controls={openingControls} onAdd={addOpening} onRemove={removeOpening} onFlip={flipOpening}/><details className={s.disclosure}><summary>View &amp; layout options</summary>{allowed3D&&<label className={s.field}>Wall visibility<select aria-label="Wall visibility" value={walls} onChange={e=>setWalls(e.target.value)}><option value="auto">Automatic cutaway</option><option value="all">All walls</option><option value="hidden">Hide walls</option></select></label>}<div className={s.buttonRow}><button onClick={()=>open("checks")}>Placement checks ({new Set(issues.map(i=>i.id)).size})</button><button onClick={()=>setResetConfirm(true)}>Reset layout</button></div></details></>}
           {activePanel==="style"&&<StyleDetails room={room}/>}
           {activePanel==="shop"&&<>{view==="2d"&&unplaced}<div>{shopping}</div></>}
           {activePanel==="checks"&&<><button className={s.backButton} onClick={()=>open("room")}>← Room details</button><p className={s.eyebrow}>A second look</p><h2>Placement checks</h2><p className={s.muted}>Checks flag overlap, wall boundaries, ceiling height, and proximity to inward door swings. They are a guide, not a guarantee of fit.</p>
             {issues.length? <ul className={s.issueList}>{issues.map((issue,i)=><li key={i}><button onClick={()=>{select(issue.id);scene.current?.focus(issue.id);}}><strong>{items.find(f=>f.id===issue.id)?.label}</strong><span>{issue.message}</span></button></li>)}</ul>:<p className={s.note}>No placement conflicts detected for the visible furniture.</p>}
             {roomOutlineMissing(room)&&<p className={s.warning}>No doors or windows are recorded. Choose Doors &amp; windows to add their real positions and check clearance.</p>}
           </>}
-          {activePanel==="help"&&<><p className={s.eyebrow}>Make yourself at home</p><h2>Your studio guide.</h2><dl className={s.helpList}><dt>Look around</dt><dd>Drag empty space. Use the camera presets to return to a familiar view.</dd><dt>Arrange</dt><dd>Drag a piece on desktop. On a phone, select it and choose Move selected first.</dd><dt>Zoom</dt><dd>Scroll, pinch, or use the zoom buttons.</dd><dt>Be precise</dt><dd>Use the selected item&apos;s position fields. Snap rounds to half-foot increments.</dd><dt>Undo</dt><dd>Use Undo or Ctrl / Command + Z. A finished drag counts as one edit.</dd><dt>Doors &amp; windows</dt><dd>Choose Doors &amp; windows in either view. Add an opening, then choose its wall, position, width, and door swing. Changes appear immediately in both views. Use Undo to reverse an edit.</dd><dt>Save &amp; share</dt><dd>Use Save design to keep a named copy in your account. Share creates a link or exports the current view.</dd></dl><p className={s.note}>3D objects are approximate models. Product photos show the actual selected items. Switching views does not generate a new plan or use a credit.</p></>}
+          {activePanel==="help"&&<><p className={s.eyebrow}>Make yourself at home</p><h2>Your studio guide.</h2><dl className={s.helpList}><dt>Look around</dt><dd>Drag empty space. Use the camera presets to return to a familiar view.</dd><dt>Arrange</dt><dd>Drag a piece on desktop. On a phone, select it and choose Move selected first.</dd><dt>Zoom</dt><dd>Scroll, pinch, or use the zoom buttons.</dd><dt>Be precise</dt><dd>Use the selected item&apos;s position fields. Snap rounds to half-foot increments.</dd><dt>Undo</dt><dd>Use Undo or Ctrl / Command + Z. A finished drag counts as one edit.</dd><dt>Doors &amp; windows</dt><dd>Choose Doors &amp; windows in either view. Drag a door or window onto a wall, or tap to add one and drag it into place. Select a door to flip it. Changes appear immediately in both views. Use Undo to reverse an edit.</dd><dt>Save &amp; share</dt><dd>Use Save design to keep a named copy in your account. Share creates a link or exports the current view.</dd></dl><p className={s.note}>3D objects are approximate models. Product photos show the actual selected items. Switching views does not generate a new plan or use a credit.</p></>}
         </div>
       </aside>
     </div>

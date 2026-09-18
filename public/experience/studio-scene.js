@@ -13,10 +13,12 @@ export function createStudioScene(container, options) {
   const fill=new T.DirectionalLight("#cedcff",1.1);scene.add(fill);
   const shadowOnly=new T.MeshBasicMaterial({colorWrite:false,depthWrite:false});
   const roomRoot=new T.Group(),itemRoot=new T.Group();scene.add(roomRoot,itemRoot);
-  const meshes=new Map(),wallGroups=[],openingGroups=[];let roomKey="",data=null,disposed=false,raf=0,assemblyStart=0,ready=false;
+  const meshes=new Map(),wallGroups=[],openingGroups=[],openingNodes=new Map();let roomKey="",data=null,disposed=false,raf=0,assemblyStart=0,ready=false;
   const ray=new T.Raycaster(),ndc=new T.Vector2(),plane=new T.Plane(new T.Vector3(0,1,0),0);
   const marker=new T.Box3Helper(new T.Box3(),0x2b4eff);marker.visible=false;scene.add(marker);
   const guides=new T.Group();scene.add(guides);
+  const openingGhost=new T.Mesh(new T.BoxGeometry(1,1,1),new T.MeshBasicMaterial({color:0x2b4eff,transparent:true,opacity:.45,depthTest:false}));
+  openingGhost.visible=false;openingGhost.renderOrder=10;scene.add(openingGhost);
   const lineMat=new T.LineDashedMaterial({color:0x2b4eff,dashSize:.15,gapSize:.1,transparent:true,opacity:.65});
   const label=document.createElement("div");label.className="dm-studio-scene-label";
   label.style.cssText="position:absolute;pointer-events:none;z-index:2;padding:7px 10px;background:#17172b;color:white;font:12px/1.4 system-ui;border-radius:3px;max-width:220px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:none;transform:translate(-50%,-100%)";
@@ -30,6 +32,28 @@ export function createStudioScene(container, options) {
     ray.setFromCamera(ndc,camera);plane.constant=-y;return ray.ray.intersectPlane(plane,new T.Vector3());
   };
   function hit(e){roomPoint(e);return ray.intersectObjects(itemRoot.children,true).find(h=>h.object.userData.itemId)?.object.userData.itemId??null;}
+  function openingHit(e){
+    roomPoint(e);
+    const opening=ray.intersectObjects(openingGroups.filter(g=>g.visible),true).find(h=>h.object.userData.openingIndex!==undefined);
+    const item=ray.intersectObjects(itemRoot.children,true).find(h=>h.object.userData.itemId);
+    return opening&&(!item||opening.distance<=item.distance)?opening:null;
+  }
+  function wallPoint(e,height=0){
+    const floor=roomPoint(e,height);
+    return ray.intersectObjects(wallGroups.filter(g=>g.visible),true)[0]?.point??floor;
+  }
+  function positionOpening(node,opening,originalOffset=0){
+    const a=data.outline.points[opening.edge],b=data.outline.points[(opening.edge+1)%data.outline.points.length],len=Math.hypot(b.x-a.x,b.y-a.y);
+    const offset=opening.offset_ft-originalOffset;
+    node.position.set(a.x+(b.x-a.x)*offset/len,0,a.y+(b.y-a.y)*offset/len);node.rotation.y=-Math.atan2(b.y-a.y,b.x-a.x);
+  }
+  function ghostOpening(opening){
+    openingGhost.visible=!!opening;
+    if(opening){positionOpening(openingGhost,{...opening,offset_ft:opening.offset_ft+opening.width_ft/2});
+      const door=opening.kind==="door",h=door?Math.min(6.7,data.settings.ceilingFt-.1):3.5;
+      openingGhost.position.y=door?h/2:Math.min(3,data.settings.ceilingFt*.4)+h/2;openingGhost.scale.set(opening.width_ft,h,.18);}
+    request();
+  }
   function request(){if(!raf&&!disposed)raf=requestAnimationFrame(frame);}
   function cameraUpdate(){
     if(mode==="inside"){camera.position.copy(eye);camera.lookAt(eye.x+Math.sin(angle)*8,eye.y+Math.cos(polar)*4,eye.z-Math.cos(angle)*8);}
@@ -42,6 +66,8 @@ export function createStudioScene(container, options) {
     for(const opening of openingGroups)opening.visible=walls!=="hidden";
   }
   function showLabel(){
+    const selectedOpening=data?.editOpenings&&openingNodes.get(data?.selectedOpening);
+    if(selectedOpening){marker.box.setFromObject(selectedOpening);marker.visible=true;label.style.display="none";return;}
     const m=meshes.get(data?.selectedId);if(!m){marker.visible=false;label.style.display="none";return;}
     marker.box.setFromObject(m.group);marker.visible=true;
     const p=new T.Vector3();marker.box.getCenter(p);p.y=marker.box.max.y+.18;p.project(camera);
@@ -65,7 +91,7 @@ export function createStudioScene(container, options) {
   }
   function clearRoom(){
     for(const g of roomRoot.children)g.traverse(o=>{if(o.userData.ownGeometry)o.geometry?.dispose();if(o.userData.ownMaterial){for(const material of Array.isArray(o.material)?o.material:[o.material]){material?.map?.dispose();material?.dispose();}}});
-    roomRoot.clear();wallGroups.length=0;openingGroups.length=0;
+    roomRoot.clear();wallGroups.length=0;openingGroups.length=0;openingNodes.clear();
   }
   function floorTexture(finish){
     const c=document.createElement("canvas");c.width=c.height=256;const x=c.getContext("2d");
@@ -91,10 +117,6 @@ export function createStudioScene(container, options) {
       const b=outline.points[(i+1)%outline.points.length],len=Math.hypot(b.x-a.x,b.y-a.y);if(len<.01)return;const dx=(b.x-a.x)/len,dz=(b.y-a.y)/len;
       const group=new T.Group();group.position.set(a.x,0,a.y);group.rotation.y=-Math.atan2(dz,dx);roomRoot.add(group);
       group.userData.normal=area>0?{x:dz,y:-dx}:{x:-dz,y:dx};group.userData.mid={x:(a.x+b.x)/2,y:(a.y+b.y)/2};wallGroups.push(group);
-      // Openings remain visible when their surrounding wall cuts away.
-      const fixtures=new T.Group();fixtures.name="wall-openings-"+i;
-      fixtures.position.copy(group.position);fixtures.rotation.copy(group.rotation);
-      roomRoot.add(fixtures);openingGroups.push(fixtures);
       // Colorless proxies keep wall shadows stable during camera movement.
       const wallShadow=new T.Group();wallShadow.name="wall-shadow-"+i;
       wallShadow.position.copy(group.position);wallShadow.rotation.copy(group.rotation);roomRoot.add(wallShadow);
@@ -105,6 +127,10 @@ export function createStudioScene(container, options) {
         const shadow=new T.Mesh(mesh.geometry,shadowOnly);shadow.position.copy(mesh.position);shadow.castShadow=true;wallShadow.add(shadow);
       };
       for(const o of openings){
+        // Separate groups let a door/window follow the pointer without rebuilding the room.
+        const index=outline.openings.indexOf(o),fixtures=new T.Group();fixtures.name="opening-"+index;
+        fixtures.position.copy(group.position);fixtures.rotation.copy(group.rotation);
+        roomRoot.add(fixtures);openingGroups.push(fixtures);openingNodes.set(index,fixtures);
         const left=Math.max(cursor,Math.min(len,o.offset_ft)),right=Math.max(left,Math.min(len,o.offset_ft+o.width_ft));segment(cursor,left,0,h);
         if(o.kind==="window"){
           const low=Math.min(3,h*.4),high=Math.min(h-.5,6.5);segment(left,right,0,low);segment(left,right,high,h);
@@ -131,7 +157,13 @@ export function createStudioScene(container, options) {
           leaf.name="door-leaf";
           kit.box(hinge,leafWidth*.73,doorHeight*.61,.018,kit.mat("#cfae85"),direction*leafWidth/2,doorHeight*.57,.054,.005);
           for(const face of [-1,1])kit.box(hinge,.19,.05,.08,kit.mat("#485063",.25),direction*(leafWidth-.2),3,face*.09,.012);
-        }cursor=right;
+        }
+        const height=o.kind==="door"?Math.min(6.7,h-.1):Math.min(h-.5,6.5)-Math.min(3,h*.4),bottom=o.kind==="door"?0:Math.min(3,h*.4);
+        const hitbox=kit.box(fixtures,right-left,height,.4,kit.mat("#2b4eff"),(left+right)/2,bottom+height/2,0);
+        hitbox.visible=false;
+        // Raycasting still uses this invisible box, including the open doorway and top-view edge.
+        fixtures.traverse(mesh=>{if(mesh.isMesh)mesh.userData.openingIndex=index;});
+        cursor=right;
       }
       segment(cursor,len,0,h);let sk=0;
       for(const o of openings.filter(o=>o.kind==="door")){if(o.offset_ft>sk)kit.box(group,o.offset_ft-sk,.2,.18,kit.mat("#fffaf0"),(sk+o.offset_ft)/2,.1,0);sk=o.offset_ft+o.width_ft;}
@@ -144,7 +176,7 @@ export function createStudioScene(container, options) {
     fill.color.set(settings.lighting==="evening"?"#ffbe76":"#cedcff");renderer.setClearColor(settings.lighting==="evening"?"#252838":"#efeee8");
   }
   function sync(next){
-    const first=!data;data=next;const key=JSON.stringify([next.room.lengthFt,next.room.widthFt,next.outline,next.settings]);
+    const first=!data;if(drag?.openingIndex!==undefined&&data?.outline!==next.outline)cancelDrag();data=next;const key=JSON.stringify([next.room.lengthFt,next.room.widthFt,next.outline,next.settings]);
     if(key!==roomKey){roomKey=key;buildRoom();}
     const ids=new Set();
     for(const f of next.items){
@@ -183,6 +215,10 @@ export function createStudioScene(container, options) {
     if(e.button>1)return;assemblyStart=0;for(const m of meshes.values()){m.group.scale.setScalar(1);m.group.position.y=m.item.elevation;}
     canvas.focus({preventScroll:true});canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
     if(pointers.size===2){cancelDrag();pinch=distance();return;}
+    const opening=data?.editOpenings?openingHit(e):null;
+    if(opening){const index=opening.object.userData.openingIndex;options.onSelectOpening?.(index);
+      drag={pointerId:e.pointerId,openingIndex:index,startX:e.clientX,startY:e.clientY,moved:false,height:opening.point.y,opening:data.outline.openings[index]};return;}
+    options.onSelectOpening?.(null);
     const id=hit(e),m=meshes.get(id),movable=m&&m.item.movable&&!m.item.locked&&mode!=="inside"&&(e.pointerType!=="touch"||dragMode);
     options.onSelect?.(id);const p=roomPoint(e,m?.item.elevation||0);
     drag={pointerId:e.pointerId,id:movable?id:null,startX:e.clientX,startY:e.clientY,lastX:e.clientX,lastY:e.clientY,moved:false,
@@ -192,7 +228,14 @@ export function createStudioScene(container, options) {
   function move(e){
     if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
     if(pointers.size===2){const d=distance();if(pinch&&d>0)radius=Math.max(4,Math.min(180,radius*pinch/d));pinch=d;request();return;}
-    if(!drag||e.pointerId!==drag.pointerId)return;const dx=e.clientX-drag.lastX,dy=e.clientY-drag.lastY;
+    if(!drag||e.pointerId!==drag.pointerId)return;
+    if(drag.openingIndex!==undefined){
+      drag.moved ||= Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>4;
+      if(drag.moved){const p=wallPoint(e,drag.height),next=p&&options.previewOpening?.(drag.openingIndex,p.x,p.z);
+        drag.nextOpening=next??null;const node=openingNodes.get(drag.openingIndex);
+        if(node)positionOpening(node,next??drag.opening,drag.opening.offset_ft);request();}return;
+    }
+    const dx=e.clientX-drag.lastX,dy=e.clientY-drag.lastY;
     drag.moved ||= Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>4;
     if(drag.id&&drag.moved){
       const m=meshes.get(drag.id),p=roomPoint(e,m.item.elevation);
@@ -204,14 +247,14 @@ export function createStudioScene(container, options) {
     drag.lastX=e.clientX;drag.lastY=e.clientY;request();
   }
   function up(e){
-    pointers.delete(e.pointerId);pinch=0;if(drag?.pointerId===e.pointerId){const d=drag;drag=null;clearGuides();if(d.id&&d.moved)options.onMove?.(d.id,d.x,d.y);}
+    pointers.delete(e.pointerId);pinch=0;if(drag?.pointerId===e.pointerId){const d=drag;drag=null;clearGuides();if(d.openingIndex!==undefined){const node=openingNodes.get(d.openingIndex);if(node)positionOpening(node,d.opening,d.opening.offset_ft);if(d.moved&&d.nextOpening)options.onOpeningChange?.(d.openingIndex,d.nextOpening);}else if(d.id&&d.moved)options.onMove?.(d.id,d.x,d.y);}
     if(canvas.hasPointerCapture(e.pointerId))canvas.releasePointerCapture(e.pointerId);request();
   }
-  function cancelDrag(){if(drag?.id){for(const m of meshes.values())m.group.position.set(m.item.x_ft+m.item.footW/2,m.item.elevation,m.item.y_ft+m.item.footD/2);}drag=null;clearGuides();}
+  function cancelDrag(){if(drag?.openingIndex!==undefined){const node=openingNodes.get(drag.openingIndex);if(node)positionOpening(node,drag.opening,drag.opening.offset_ft);}openingGhost.visible=false;if(drag?.id){for(const m of meshes.values())m.group.position.set(m.item.x_ft+m.item.footW/2,m.item.elevation,m.item.y_ft+m.item.footD/2);}drag=null;clearGuides();}
   function cancel(e){pointers.delete(e.pointerId);pinch=0;cancelDrag();request();}
   function wheel(e){e.preventDefault();tween=null;radius=Math.max(4,Math.min(180,radius*Math.exp(e.deltaY*.001)));request();}
   function key(e){
-    if(e.key==="Escape"){cancelDrag();options.onSelect?.(null);request();return;}
+    if(e.key==="Escape"){cancelDrag();options.onSelectOpening?.(null);options.onSelect?.(null);request();return;}
     if(["ArrowLeft","ArrowRight","ArrowUp","ArrowDown","+","=","-"].includes(e.key)){
       e.preventDefault();tween=null;if(e.key==="ArrowLeft")angle+=.1;if(e.key==="ArrowRight")angle-=.1;
       if(e.key==="ArrowUp")polar=Math.max(.08,polar-.1);if(e.key==="ArrowDown")polar=Math.min(1.45,polar+.1);
@@ -219,7 +262,13 @@ export function createStudioScene(container, options) {
   }
   const resize=new ResizeObserver(()=>{const r=container.getBoundingClientRect();width=Math.max(1,r.width);height=Math.max(1,r.height);
     renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();if(data)preset(mode,true);request();});resize.observe(container);
-  const events={pointerdown:down,pointermove:move,pointerup:up,pointercancel:cancel,keydown:key};
+  function droppedOpening(e){
+    if(!data?.editOpenings)return null;
+    const kind=["door","window"].find(kind=>e.dataTransfer.types.includes(options.openingDragType+"-"+kind));
+    if(!kind)return null;e.preventDefault();const p=wallPoint(e,0);
+    return p?options.previewOpening?.(kind,p.x,p.z):null;
+  }
+  const events={dragover:e=>{const opening=droppedOpening(e);e.dataTransfer.dropEffect=opening?"copy":"none";ghostOpening(opening);},dragleave:()=>ghostOpening(null),drop:e=>{const opening=droppedOpening(e);ghostOpening(null);if(opening)options.onOpeningChange?.(null,opening);},pointerdown:down,pointermove:move,pointerup:up,pointercancel:cancel,keydown:key};
   for(const [name,fn]of Object.entries(events))canvas.addEventListener(name,fn);canvas.addEventListener("wheel",wheel,{passive:false});
   const visible=()=>request();document.addEventListener("visibilitychange",visible);
   return {update:sync,preset:m=>preset(m),focus,zoom:f=>{radius=Math.max(4,Math.min(180,radius*f));request();},
@@ -234,6 +283,6 @@ export function createStudioScene(container, options) {
     },
     destroy(){disposed=true;cancelAnimationFrame(raf);resize.disconnect();document.removeEventListener("visibilitychange",visible);
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
-      clearGuides();lineMat.dispose();marker.geometry.dispose();marker.material.dispose();clearRoom();shadowOnly.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();label.remove();canvas.remove();}
+      clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();marker.material.dispose();clearRoom();shadowOnly.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();label.remove();canvas.remove();}
   };
 }

@@ -12,7 +12,7 @@ const filename = path.join(__dirname, "../components/canvas/RoomCanvas.tsx");
 const source = ts.createSourceFile(filename, fs.readFileSync(filename, "utf8"), ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
 let dragMove, dragEnd, dragPosition;
 function visit(node) {
-  if (ts.isJsxAttribute(node) && node.name.getText(source) === "onDragMove") dragMove = node.initializer.expression.getText(source);
+  if (ts.isJsxAttribute(node) && node.name.getText(source) === "onDragMove" && node.initializer.expression.getText(source).includes("labelRefs.current")) dragMove = node.initializer.expression.getText(source);
   if (ts.isFunctionDeclaration(node)) {
     if (node.name?.text === "handleDragEnd") dragEnd = node.getText(source);
     if (node.name?.text === "dragPosition") dragPosition = node.getText(source);

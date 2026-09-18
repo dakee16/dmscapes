@@ -10,7 +10,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { Stage, Layer, Group, Rect, Line, Arc, Text } from "react-konva";
+import { Stage, Layer, Group, Rect, Line, Arc, Text, Circle } from "react-konva";
 import Konva from "konva";
 
 // Cap the canvas backing-store resolution. High-DPR phones (devicePixelRatio 2-3)
@@ -20,7 +20,8 @@ if (typeof window !== "undefined") {
   Konva.pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
 }
 import type { KonvaEventObject } from "konva/lib/Node";
-import type { FurnitureItem, ProductCategory, RoomOutline } from "@/lib/types";
+import type { FurnitureItem, ProductCategory, RoomOutline, WallOpening, Point } from "@/lib/types";
+import { OPENING_DRAG_TYPE, openingCenter } from "@/lib/room-editing";
 import { CATEGORY_COLORS, styleById } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
@@ -205,6 +206,11 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   ref
 ) {
   const dock = useCanvasDock();
+  const [openingPreview,setOpeningPreview]=useState<{index:number|null;opening:WallOpening}|null>(null);
+  const openingCancelled=useRef(false);
+  const openingGrab=useRef<Point>({x:0,y:0});
+  const drawOutline=useMemo(()=>!outline||!openingPreview?outline:{...outline,openings:openingPreview.index===null?[...outline.openings,openingPreview.opening]:outline.openings.map((o,i)=>i===openingPreview.index?openingPreview.opening:o)},[outline,openingPreview]);
+  useEffect(()=>{setOpeningPreview(null);},[outline,dock?.active]);
   const containerRef = useRef<HTMLDivElement>(null);
   const stageRef = useRef<Konva.Stage>(null);
   const labelRefs = useRef(new Map<string, Konva.Group>());
@@ -350,7 +356,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     const touches = e.evt.touches;
     if (touches.length !== 2) return;
     e.evt.preventDefault();
+    openingCancelled.current=true;setOpeningPreview(null);
     const stage = stageRef.current;
+    stage?.find(".opening").forEach(node=>{if(node.isDragging())node.stopDrag();});
     stage?.stopDrag();
     stage?.find(".furniture").forEach(node => { if (node.isDragging()) node.stopDrag(); });
     const rect = stage?.container().getBoundingClientRect();
@@ -440,8 +448,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   // in canvas px. Doors swing along the edge's inward normal so the arc opens
   // into the room; windows are a flush cobalt line in the wall gap.
   const drawn = useMemo(() => {
-    if (!outline || pxFt <= 0) return null;
-    const pts = outline.points;
+    if (!drawOutline || pxFt <= 0) return null;
+    const pts = drawOutline.points;
     const n = pts.length;
     const px = (xFt: number, yFt: number): [number, number] => [PAD + xFt * pxFt, PAD + yFt * pxFt];
     const flat = pts.flatMap((p) => px(p.x, p.y));
@@ -456,7 +464,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       return cands.find((c) => pointInPolygon(mx + c.nx * 0.05, my + c.ny * 0.05, pts)) ?? cands[0];
     };
 
-    const openings = outline.openings.map((op) => {
+    const openings = drawOutline.openings.map((op) => {
       const a = pts[op.edge], b = pts[(op.edge + 1) % n];
       const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
       const dx = (b.x - a.x) / len, dy = (b.y - a.y) / len;
@@ -487,13 +495,13 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       };
     });
 
-    const closets = outline.closets.map((c) => {
+    const closets = drawOutline.closets.map((c) => {
       const [x, y] = px(c.x_ft, c.y_ft);
       return { x, y, w: c.width_ft * pxFt, h: c.depth_ft * pxFt };
     });
 
     return { flat, openings, closets };
-  }, [outline, pxFt]);
+  }, [drawOutline, pxFt]);
 
   const toolbarItem = rotateTarget && visible.some(f => f.id === rotateTarget.id) ? rotateTarget : null;
   const toolbarHidden = toolbarItem ? hiddenItemIds.includes(toolbarItem.id) : false;
@@ -532,6 +540,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       return;
     }
     if (key === "escape") {
+      openingCancelled.current=true;
+      setOpeningPreview(null);dock?.openings.select(null);
       if (dock?.expanded) { event.stopPropagation(); dock.expand(); }
       else if (selectedItemId || selectedCategory || panMode) event.stopPropagation();
       clearSelectedCategory(); setPanMode(false); return;
@@ -549,6 +559,23 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     if ((key === "delete" || key === "backspace") && toolbarDeletable && toolbarItem) { event.preventDefault(); onDeleteItem?.(toolbarItem); clearSelectedCategory(); }
   }
 
+  function openingPoint(event:{clientX:number;clientY:number}):Point|null {
+    const bounds=containerRef.current?.getBoundingClientRect();
+    if(!bounds||pxFt<=0)return null;
+    return {x:((event.clientX-bounds.left-stagePos.x)/zoom-fitted.x)/pxFt,y:((event.clientY-bounds.top-stagePos.y)/zoom-fitted.y)/pxFt};
+  }
+  function grabOpening(index:number){
+    openingCancelled.current=false;
+    const pointer=stageRef.current?.getPointerPosition(),center=openingCenter(outline!.points,outline!.openings[index]);
+    openingGrab.current=pointer?{x:((pointer.x-stagePos.x)/zoom-fitted.x)/pxFt-center.x,y:((pointer.y-stagePos.y)/zoom-fitted.y)/pxFt-center.y}:{x:0,y:0};
+  }
+  function dragOpening(index:number){
+    if(openingCancelled.current)return null;
+    const pointer=stageRef.current?.getPointerPosition();
+    if(!pointer)return null;
+    return dock?.openings.preview(index,{x:((pointer.x-stagePos.x)/zoom-fitted.x)/pxFt-openingGrab.current.x,y:((pointer.y-stagePos.y)/zoom-fitted.y)/pxFt-openingGrab.current.y})??null;
+  }
+  function dropKind(types:readonly string[]){return (["door","window"] as const).find(kind=>types.includes(OPENING_DRAG_TYPE+"-"+kind));}
   return (
     <div className={`${styles.studio} dm-room-canvas ${dock ? styles.dockedCanvas : ""}`} onKeyDown={keyboard}>
       {dock?.host && dock.active && createPortal(<CanvasToolRail dock={dock} pan={panMode} setPan={setPanMode} grid={showGrid} labels={showLabels} snap={snapping} zoom={zoom}
@@ -583,7 +610,10 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         <p>Pinch with two fingers to zoom and pan. With a mouse, use Ctrl/⌘ + scroll to zoom at the pointer. Hiding a piece only changes the view; removing it moves its category to the catalog.</p>
       </div>}
       </>}
-      <div ref={containerRef} className={`${styles.surface} dm-room-viewport`} data-rotating={rotationPreview ? true : undefined} tabIndex={0} role="region" aria-label="Interactive room floor plan" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })} style={!dock && fullscreen ? { height: "clamp(320px, calc(100svh - 300px), 850px)" } : undefined}>
+      <div ref={containerRef} className={`${styles.surface} dm-room-viewport`} data-rotating={rotationPreview ? true : undefined}
+        onDragOver={e=>{const kind=dropKind(e.dataTransfer.types);if(readOnly||!dock||!kind)return;e.preventDefault();const point=openingPoint(e),opening=point&&dock.openings.preview(kind,point);e.dataTransfer.dropEffect=opening?"copy":"none";setOpeningPreview(opening?{index:null,opening}:null);}}
+        onDragLeave={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))setOpeningPreview(null);}}
+        onDrop={e=>{const kind=dropKind(e.dataTransfer.types);if(readOnly||!dock||!kind)return;e.preventDefault();const point=openingPoint(e),opening=point&&dock.openings.preview(kind,point);setOpeningPreview(null);if(opening)dock.openings.commit(null,opening);}} tabIndex={0} role="region" aria-label="Interactive room floor plan" onPointerDown={() => containerRef.current?.focus({ preventScroll: true })} style={!dock && fullscreen ? { height: "clamp(320px, calc(100svh - 300px), 850px)" } : undefined}>
       {pxFt > 0 && (
         <Stage
           ref={stageRef}
@@ -605,17 +635,17 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           onClick={(e) => {
             // A click on empty canvas (not a furniture node) clears the pin.
             if (!readOnly && e.target === e.target.getStage() && !justDragged()) {
-              clearSelectedCategory();
+              clearSelectedCategory();dock?.openings.select(null);
             }
           }}
           onTap={(e) => {
             if (!readOnly && e.target === e.target.getStage() && !justDragged()) {
-              clearSelectedCategory();
+              clearSelectedCategory();dock?.openings.select(null);
             }
           }}
           onTouchMove={handleTouchMove}
           onTouchEnd={() => { lastPinch.current = null; lastPinchCenter.current = null; }}
-          onTouchCancel={() => { lastPinch.current = null; lastPinchCenter.current = null; setDragging(null); }}
+          onTouchCancel={() => { openingCancelled.current=true;setOpeningPreview(null);lastPinch.current = null; lastPinchCenter.current = null; setDragging(null); }}
           style={{ cursor: panMode ? "grab" : "default" }}
         >
           <Layer>
@@ -657,20 +687,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                     listening={false}
                   />
                 ))}
-                {drawn.openings.map((op, i) => (
-                  <Group key={`opening-${i}`} listening={false}>
-                    <Line points={op.gap} stroke="#ffffff" strokeWidth={4} />
-                    {op.kind === "window" ? (
-                      <Line points={op.gap} stroke={COBALT} strokeWidth={4} />
-                    ) : (
-                      <>
-                        <Arc x={op.door.x} y={op.door.y} innerRadius={0} outerRadius={op.door.radius} angle={90} rotation={op.door.rotation} fill={COBALT} opacity={0.07} />
-                        <Arc x={op.door.x} y={op.door.y} innerRadius={op.door.radius} outerRadius={op.door.radius} angle={90} rotation={op.door.rotation} stroke={COBALT} strokeWidth={1.5} opacity={0.5} />
-                        <Line points={op.door.leaf} stroke={COBALT} strokeWidth={2} opacity={0.6} />
-                      </>
-                    )}
-                  </Group>
-                ))}
+
               </>
             ) : (
               <>
@@ -805,7 +822,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                   x={PAD + fp.x * pxFt}
                   y={PAD + fp.y * pxFt}
                   draggable={draggable}
-                  onDragStart={(e) => { e.cancelBubble = true; if (selectedItemId !== f.id) toggleSelectedItem(f.id, furnitureCategory(f)); setDragging({ id: f.id, x: f.x_ft, y: f.y_ft }); }}
+                  onDragStart={(e) => { e.cancelBubble = true; dock?.openings.select(null);if (selectedItemId !== f.id) toggleSelectedItem(f.id, furnitureCategory(f)); setDragging({ id: f.id, x: f.x_ft, y: f.y_ft }); }}
                   onDragMove={(e) => {
                     e.cancelBubble = true;
                     // Furniture moves in Konva before React renders. Update the
@@ -817,8 +834,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                       ? previous : { id: f.id, ...point });
                   }}
                   onDragEnd={(e) => handleDragEnd(f, e)}
-                  onClick={() => handleItemClick(f)}
-                  onTap={() => handleItemClick(f)}
+                  onClick={() => {dock?.openings.select(null);handleItemClick(f);}}
+                  onTap={() => {dock?.openings.select(null);handleItemClick(f);}}
                   onMouseEnter={(e) => {
                     if (!readOnly && crossHighlight) setHoveredCategory(furnitureCategory(f));
                     const stage = e.target.getStage();
@@ -902,6 +919,31 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 </Group>;
               })}
             </Group>
+            {drawn&&drawn.openings.map((op, i) => (
+                  <Group key={`opening-${i}`} name="opening" draggable={!readOnly&&!panMode&&!!dock&&i<(outline?.openings.length??0)}
+                    onClick={e=>{e.cancelBubble=true;if(!readOnly&&!panMode)dock?.openings.select(i);}}
+                    onTap={e=>{e.cancelBubble=true;if(!readOnly&&!panMode)dock?.openings.select(i);}}
+                    onMouseDown={()=>grabOpening(i)} onTouchStart={()=>grabOpening(i)}
+                    onDragStart={e=>{e.cancelBubble=true;dock?.openings.select(i);}}
+                    onDragMove={e=>{e.cancelBubble=true;const opening=dragOpening(i);e.target.position({x:0,y:0});setOpeningPreview(opening?{index:i,opening}:null);}}
+                    onDragEnd={e=>{e.cancelBubble=true;const opening=dragOpening(i);e.target.position({x:0,y:0});setOpeningPreview(null);setHoveredCategory(null);dragGuard.current=Date.now();if(opening)dock?.openings.commit(i,opening);}}
+                    onMouseEnter={e=>{if(!readOnly&&!panMode)e.target.getStage()!.container().style.cursor="grab";}}
+                    onMouseLeave={e=>{e.target.getStage()!.container().style.cursor="default";}}
+                    listening={!readOnly&&!panMode&&!!dock}>
+                    <Line points={op.gap} stroke="transparent" strokeWidth={24/zoom} />
+                    <Line points={op.gap} stroke="#ffffff" strokeWidth={4} />
+                    {op.kind === "window" ? (
+                      <Line points={op.gap} stroke={COBALT} strokeWidth={4} />
+                    ) : (
+                      <>
+                        <Arc x={op.door.x} y={op.door.y} innerRadius={0} outerRadius={op.door.radius} angle={90} rotation={op.door.rotation} fill={COBALT} opacity={0.07} />
+                        <Arc x={op.door.x} y={op.door.y} innerRadius={op.door.radius} outerRadius={op.door.radius} angle={90} rotation={op.door.rotation} stroke={COBALT} strokeWidth={1.5} opacity={0.5} />
+                        <Line points={op.door.leaf} stroke={COBALT} strokeWidth={2} opacity={0.6} />
+                      </>
+                    )}
+                    {!readOnly&&dock&&<Circle name="editor-only" x={(op.gap[0]+op.gap[2])/2} y={(op.gap[1]+op.gap[3])/2} radius={(dock.openings.selected===i?6:4)/zoom} fill="white" stroke={COBALT} strokeWidth={2/zoom} hitStrokeWidth={18/zoom}/>}
+                  </Group>
+                ))}
             </Group>
           </Layer>
         </Stage>

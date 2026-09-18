@@ -3,22 +3,23 @@ import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "re
 import {useAuth} from "@/lib/auth-context";
 import {canUse3D} from "@/lib/plan";
 import {useUpgrade} from "@/lib/upgrade-context";
-import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId } from "@/lib/types";
+import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId, WallOpening } from "@/lib/types";
 import { useExperienceMotion } from "@/components/experience/MotionProvider";
 import { styleById } from "@/lib/styles";
 import { footprint, pointInPolygon } from "@/components/canvas/geometry";
 import { constrainedPosition, itemElevation, itemHeight, modelKind, roomOutline, studioSettings, visibleFurniture } from "@/lib/studio";
 import { productForFurniture, productVisual } from "@/lib/product-model";
+import { OPENING_DRAG_TYPE, type OpeningControls } from "@/lib/room-editing";
 import s from "./Studio.module.css";
 import BrandLoader from "@/components/site/BrandLoader";
 
 export type CameraView="room"|"top"|"inside";
 export interface RoomSceneHandle {exportPNG:()=>string|null;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;}
 type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;footW:number;footD:number;locked:boolean;bare:boolean;product?:ReturnType<typeof productVisual>};
-type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];selectedId:string|null;interior:{x:number;y:number}};
+type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];selectedId:string|null;selectedOpening:number|null;editOpenings:boolean;interior:{x:number;y:number}};
 type View={update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;exportPNG:()=>string;destroy:()=>void};
-type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;onReady:()=>void;onError:(message:string)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
-export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;onSelect?:(id:string|null)=>void;onMove?:(id:string,x:number,y:number)=>void;onFallback?:()=>void;}
+type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;openingDragType:string;previewOpening:(target:number|WallOpening["kind"],x:number,y:number)=>WallOpening|null;onSelectOpening:(index:number|null)=>void;onOpeningChange:(index:number|null,opening:WallOpening)=>void;onReady:()=>void;onError:(message:string)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
+export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;openingControls?:OpeningControls;onSelect?:(id:string|null)=>void;onMove?:(id:string,x:number,y:number)=>void;onFallback?:()=>void;}
 const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(props,ref){
   const {profile,loading}=useAuth(),allowed=!loading&&canUse3D(profile);
   const {openUpgrade}=useUpgrade(),enabled=!loading&&(allowed||props.preview===true);
@@ -32,7 +33,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
     outer:for(let y=.5;y<props.room.widthFt;y+=.5)for(let x=.5;x<props.room.lengthFt;x+=.5)if(pointInPolygon(x,y,outline.points)){interior={x,y};break outer;}
   }
   const data:SceneData={room:props.room,outline,settings,interior,palette:styleById(props.style).palette,
-    selectedId:props.selectedId,items:visibleFurniture(props.items,props.hidden,props.excluded).map(f=>{
+    selectedId:props.selectedId,selectedOpening:props.openingControls?.selected??null,editOpenings:allowed&&!props.readOnly&&!!props.openingControls,items:visibleFurniture(props.items,props.hidden,props.excluded).map(f=>{
       const b=footprint(f),choice=productForFurniture(f,props.products??[]);
       const product=choice && (!f.built_in || f.type==="bed") ? productVisual(choice) : undefined;
       const kind=f.built_in?modelKind(f):product?.kind??modelKind(f);
@@ -47,7 +48,10 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
       const path="/experience/studio-scene.js";
       const module=await import(/* webpackIgnore: true */ /* turbopackIgnore: true */ path) as SceneModule;
       if(disposed||!node.current)return;
-      const v=module.createStudioScene(node.current,{reduced:pausedRef.current||!access.current,onReady:()=>{if(!disposed)setReady(true);},onError:message=>{if(!disposed)setError(message);},
+      const v=module.createStudioScene(node.current,{reduced:pausedRef.current||!access.current,openingDragType:OPENING_DRAG_TYPE,
+        previewOpening:(target,x,y)=>access.current&&!current.current.readOnly?current.current.openingControls?.preview(target,{x,y})??null:null,
+        onSelectOpening:index=>{if(access.current&&!current.current.readOnly)current.current.openingControls?.select(index);},
+        onOpeningChange:(index,opening)=>{if(access.current&&!current.current.readOnly)current.current.openingControls?.commit(index,opening);},onReady:()=>{if(!disposed)setReady(true);},onError:message=>{if(!disposed)setError(message);},
         onSelect:id=>{if(access.current&&!current.current.readOnly)current.current.onSelect?.(id);},
         onMove:(id,x,y)=>{if(access.current&&!current.current.readOnly)current.current.onMove?.(id,x,y);},
         constrain:(id,x,y)=>{const p=current.current,f=p.items.find(f=>f.id===id);return f?constrainedPosition(f,x,y,p.room,p.snap!==false):{x,y};}});
