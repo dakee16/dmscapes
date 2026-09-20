@@ -3,7 +3,7 @@ import HomeHero from "@/components/experience/HomeHero";
 import AssemblyStory from "@/components/experience/AssemblyStory";
 import Link from "next/link";
 import Nav from "@/components/Nav";
-import TwoWaysToPlan from "@/components/site/TwoWaysToPlan";
+import LaunchVideo from "@/components/site/LaunchVideo";
 import Vibes from "@/components/Vibes";
 import CreateVibePromo from "@/components/site/CreateVibePromo";
 import Schools from "@/components/Schools";
@@ -47,7 +47,7 @@ export default function Home() {
         <HomeHero />
         <StudioShowcase />
         <AssemblyStory />
-        <TwoWaysToPlan />
+        <LaunchVideo />
         <Vibes />
         <CreateVibePromo />
         <Schools />

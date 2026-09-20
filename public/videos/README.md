@@ -1,12 +1,14 @@
-# Homepage walkthrough videos
+# Homepage video
 
-The "Two ways to start" section on the homepage shows two walkthrough clips.
-Drop your recordings here with these exact names and they replace the
-placeholders automatically (no code change needed):
+The launch section on the homepage plays one clip:
 
-- plan-known-room.mp4    -> "We know your room, just plan" (search a college)
-- draw-your-own-room.mp4  -> "Not on the list? Make your own" (draw your room)
+- dormscape-launch.mp4        -> the 30 second product tour
+- dormscape-launch-poster.jpg -> first frame, shown before playback starts
 
-MP4 (H.264/AAC) plays everywhere. Landscape 16:9 fits the slot best; other
-aspect ratios letterbox inside a 16:9 frame. Until a file exists, the slot
-shows a "Walkthrough coming soon" placeholder.
+MP4 (H.264/AAC), 16:9, faststart. It autoplays muted when the section scrolls
+into view and pauses when it leaves; the viewer turns sound on with the button
+on the clip. Re-encode a new master with:
+
+    ffmpeg -i master.mp4 -c:v libx264 -crf 24 -preset slow -pix_fmt yuv420p \
+      -movflags +faststart -c:a aac -b:a 128k dormscape-launch.mp4
+    ffmpeg -ss 0.5 -i dormscape-launch.mp4 -frames:v 1 -q:v 4 dormscape-launch-poster.jpg

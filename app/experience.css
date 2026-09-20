@@ -689,7 +689,7 @@ body {
   font-size: 11px;
 }
 /* Existing marketing sections retain their copy, routes, and membership behavior. */
-.dm-home .dm-ways,
+.dm-home .dm-launch,
 .dm-home .dm-custom-promo,
 .dm-home .dm-schools,
 .dm-home .dm-plus {
@@ -698,7 +698,7 @@ body {
   padding: 90px var(--dm-gutter);
   margin: 0 auto;
 }
-.dm-home :is(.dm-ways, .dm-custom-promo, .dm-schools, .dm-plus) h2 {
+.dm-home :is(.dm-launch, .dm-custom-promo, .dm-schools, .dm-plus) h2 {
   font-size: clamp(35px, 4.3vw, 65px);
   line-height: 1.12;
   letter-spacing: -0.03em;
@@ -710,32 +710,10 @@ body {
   font-weight: 400;
   font-style: italic;
 }
-.dm-home .dm-ways {
+.dm-home .dm-launch {
   border-top: 1px solid var(--dm-rule);
 }
-.dm-home .dm-ways > div {
-  max-width: none;
-  padding: 0;
-}
-.dm-home .dm-ways a.group {
-  border-radius: 3px;
-  padding: 35px;
-  border-color: var(--dm-rule);
-  box-shadow: none;
-  transition:
-    transform 0.4s var(--dm-ease),
-    box-shadow 0.4s;
-}
-.dm-home .dm-ways a.group:hover {
-  transform: translateY(-8px);
-  box-shadow: 8px 8px 0 #2b4eff14;
-}
-.dm-home .dm-ways h3 {
-  font-size: 30px;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-}
-.dm-home .dm-ways video {
+.dm-home .dm-launch video {
   border-radius: 0;
 }
 .dm-home .dm-custom-promo > div {
@@ -2361,7 +2339,7 @@ body {
   .dm-vibe-scene {
     height: 220px;
   }
-  .dm-home .dm-ways,
+  .dm-home .dm-launch,
   .dm-home .dm-custom-promo,
   .dm-home .dm-schools,
   .dm-home .dm-plus {
@@ -2903,24 +2881,12 @@ body {
   margin-top: 5px;
   font-size: 10px;
 }
-.dm-home .dm-ways > div:first-child {
-  text-align: left;
-}
-.dm-home .dm-ways > div:first-child > p:last-child {
-  margin-left: 0;
-}
-.dm-home .dm-ways > div:nth-child(2) > div {
-  padding: 28px;
-  border: 1px solid var(--dm-rule);
-}
-.dm-home .dm-ways > div:nth-child(2) > div:nth-child(2) {
-  background: #edf0fc;
-}
-.dm-home .dm-ways .aspect-video {
+.dm-home .dm-launch .aspect-video {
   border-radius: 3px;
   box-shadow: none;
+  border-color: var(--dm-rule);
 }
-.dm-home .dm-ways a {
+.dm-home .dm-launch a {
   border-bottom: 1px solid currentColor;
   padding-bottom: 5px;
 }
@@ -3013,9 +2979,6 @@ body {
   .dm-campus-grid > li > a {
     padding: 22px;
     min-height: 175px;
-  }
-  .dm-home .dm-ways > div:nth-child(2) > div {
-    padding: 22px;
   }
   .dm-home .dm-schools li {
     padding: 20px 15px;
