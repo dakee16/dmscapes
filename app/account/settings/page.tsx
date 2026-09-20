@@ -334,9 +334,9 @@ export default function AccountSettingsPage() {
                 <IdentityCard name={profile?.full_name} username={profile?.username} email={user?.email} />
                 <p>Your profile keeps your room ideas connected to you, wherever you plan next.</p>
                 <nav className={s.settingsLinks} aria-label="Settings sections">
-                  <a href="#profile-details">Profile <span aria-hidden="true">↘</span></a>
-                  <a href="#email-details">Email <span aria-hidden="true">↘</span></a>
-                  <a href="#security-details">Security <span aria-hidden="true">↘</span></a>
+                  <a href="#profile-details">Profile <span aria-hidden="true">↘︎</span></a>
+                  <a href="#email-details">Email <span aria-hidden="true">↘︎</span></a>
+                  <a href="#security-details">Security <span aria-hidden="true">↘︎</span></a>
                 </nav>
               </aside>
               <div className={s.stack}>

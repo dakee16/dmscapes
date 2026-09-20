@@ -37,7 +37,7 @@ export default function CampusDirectory({ schools }: { schools: Campus[] }) {
         {results.map(school => (
           <li key={school.id}>
             <Link href={`/colleges/${school.id}`} className="dm-editorial-card block border border-ink/10 bg-card p-5 transition-colors hover:border-cobalt">
-              <span className="dm-campus-index dm-eyebrow">{String(school.index + 1).padStart(2, "0")} / <span aria-hidden="true">↗</span></span>
+              <span className="dm-campus-index dm-eyebrow">{String(school.index + 1).padStart(2, "0")} / <span aria-hidden="true">↗︎</span></span>
               <h2 className="font-display text-lg font-bold tracking-tight">{school.name}</h2>
               <p className="mt-1 text-sm text-ink-soft">{[school.city, school.state].filter(Boolean).join(", ")}</p>
               <p className="mt-3 font-mono text-xs uppercase tracking-wide text-ink-soft">{school.buildings} buildings · {school.rooms} room types</p>

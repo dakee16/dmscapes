@@ -34,7 +34,7 @@ export default function BlueprintArtwork({
           <>
             <div className="dm-orbit-ring" />
             <div className="dm-orbit-ring dm-orbit-ring-two" />
-            <span className="dm-orbit-star">✳</span>
+            <span className="dm-orbit-star">✳︎</span>
             <span className="dm-orbit-sticker">
               A little room.
               <br />

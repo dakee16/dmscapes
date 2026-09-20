@@ -272,7 +272,7 @@ export default function ActionBar({
               aria-controls="design-share-options"
               className="dm-share-trigger inline-flex cursor-pointer items-center justify-center gap-2 border border-ink/20 bg-paper px-4 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
             >
-              Share room <span aria-hidden="true">↗</span>
+              Share room <span aria-hidden="true">↗︎</span>
             </button>
             {menuOpen && (
               <div id="design-share-options" className="dm-share-menu snap-in border border-ink/15 bg-white p-1.5" role="group" aria-label="Sharing and downloads">

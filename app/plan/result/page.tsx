@@ -374,7 +374,7 @@ export default function ResultPage() {
           <span className="text-xs text-ink-soft">{customRegenUsed?"New matches, same vibe":"One free regeneration"}</span>
           {customMock&&<p className="basis-full text-xs text-ink-soft">Sample matches. Live results appear when product access is available.</p>}
         </div>:null}
-        unplaced={unplacedCustomItems.length>0?<div><p className="mb-2 text-xs font-semibold">Unplaced items</p><div className="flex flex-wrap gap-2">{unplacedCustomItems.map(cp=><button key={cp.id} type="button" onClick={()=>placeCustomItem(cp.id)} className="border border-ink/20 px-3 py-2 text-xs">Place {cp.name} ↗</button>)}</div></div>:null}
+        unplaced={unplacedCustomItems.length>0?<div><p className="mb-2 text-xs font-semibold">Unplaced items</p><div className="flex flex-wrap gap-2">{unplacedCustomItems.map(cp=><button key={cp.id} type="button" onClick={()=>placeCustomItem(cp.id)} className="border border-ink/20 px-3 py-2 text-xs">Place {cp.name} ↗︎</button>)}</div></div>:null}
         shopping={<BuyGateProvider>
           <section className="dm-shopping-panel rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
             {/* Budget total + progress: always visible above the tabs, and always

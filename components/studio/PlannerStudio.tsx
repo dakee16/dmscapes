@@ -105,7 +105,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         {([["shop","⊞","Shop"],["style","◐","Style"],["room","⌑","Room"],["furnish","▦","Arrange"]] as const).map(([key,icon,label])=><button key={key} aria-pressed={activePanel===key} onClick={()=>open(key)}><span aria-hidden="true">{icon}</span>{label}</button>)}
       </nav>}
       <section className={s.viewport} aria-label="Room workspace">
-        {view==="3d"&&<div className={s.viewportTop}><span className={s.spaceBadge}>{view==="3d"?"LIVE 3D / ":"2D / "}{room.lengthFt} × {room.widthFt} ft</span><button aria-label={expanded?"Exit expanded studio":"Expand studio"} onClick={()=>setExpanded(v=>!v)}>{expanded?"Exit fullscreen":"Expand ↗"}</button></div>}
+        {view==="3d"&&<div className={s.viewportTop}><span className={s.spaceBadge}>{view==="3d"?"LIVE 3D / ":"2D / "}{room.lengthFt} × {room.widthFt} ft</span><button aria-label={expanded?"Exit expanded studio":"Expand studio"} onClick={()=>setExpanded(v=>!v)}>{expanded?"Exit fullscreen":"Expand ↗︎"}</button></div>}
         <div className={s.renderArea}>
           <div className={s.sceneLayer} style={{visibility:view==="3d"?"visible":"hidden",pointerEvents:view==="3d"?"auto":"none"}} aria-hidden={view!=="3d"}>
             {(allowed3D||view==="3d")&&<RoomScene ref={scene} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview} openingControls={openingControls}
@@ -121,7 +121,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
             <span className={s.separator}/><button aria-label="Zoom out" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(1.15)}>−</button><button aria-label="Zoom in" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(.87)}>+</button>
 
           </div>
-          {roomOutlineMissing(room)&&<button className={s.openingsHint} onClick={editOpenings}>Doors and windows not set. Add openings ↗</button>}
+          {roomOutlineMissing(room)&&<button className={s.openingsHint} onClick={editOpenings}>Doors and windows not set. Add openings ↗︎</button>}
           <p className={s.gestureHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Stop moving when done.":"Drag empty space to look around. Select a piece to arrange it."}</p>
         </>}
         {view==="3d"&&<div className={s.editBar} inert={preview}>
@@ -149,9 +149,9 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         <div className={s.panelContent}>
           {activePanel==="furnish"&&<><p className={s.eyebrow}>Your room inventory</p><h2>Make space.</h2><p className={s.muted}>Start with one piece. Select it here or in the room, then move or rotate it. Your other tools stay out of the way.</p>
             <label className={s.field}>Find furniture<input type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Bed, desk, lamp…"/></label>
-            <ul className={s.inventory}>{items.filter(f=>f.label.toLowerCase().includes(query.toLowerCase())).map(item=><li key={item.id}><button onClick={()=>{select(item.id);scene.current?.focus(item.id);setMobileOpen(true);}}><span className={s.itemSwatch} style={{background:item.material_color||"#d9c8af"}}/><span><strong>{item.label}</strong><small>{hidden.includes(item.id)?"Hidden":excluded.includes(furnitureCategory(item)! )&&!item.built_in?"Not in shopping list":item.movable?(item.built_in?"Dorm-provided":"Placed item"):"Fixed fixture"}</small></span><span aria-hidden="true">↗</span></button></li>)}</ul>
+            <ul className={s.inventory}>{items.filter(f=>f.label.toLowerCase().includes(query.toLowerCase())).map(item=><li key={item.id}><button onClick={()=>{select(item.id);scene.current?.focus(item.id);setMobileOpen(true);}}><span className={s.itemSwatch} style={{background:item.material_color||"#d9c8af"}}/><span><strong>{item.label}</strong><small>{hidden.includes(item.id)?"Hidden":excluded.includes(furnitureCategory(item)! )&&!item.built_in?"Not in shopping list":item.movable?(item.built_in?"Dorm-provided":"Placed item"):"Fixed fixture"}</small></span><span aria-hidden="true">↗︎</span></button></li>)}</ul>
             {items.filter(f=>f.label.toLowerCase().includes(query.toLowerCase())).length===0&&<p className={s.note}>No matching furniture. Try another name.</p>}
-            <button className={s.primary} onClick={()=>open("shop")}>Browse products ↗</button>
+            <button className={s.primary} onClick={()=>open("shop")}>Browse products ↗︎</button>
           </>}
           {activePanel==="item"&&<button className={s.backButton} onClick={()=>open("furnish")}>← All furniture</button>}
           {activePanel==="item"&&selected&&<ItemInspector key={selected.id} item={selected} items={items} room={room} product={selectedProduct} issues={issues.filter(i=>i.id===selected.id).map(i=>i.message)} moveMode={moveMode}
@@ -159,7 +159,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
           {activePanel==="item"&&!selected&&<div className={s.emptySelection}>
             <div className={s.selectionArt} aria-hidden="true"><svg viewBox="0 0 220 150" fill="none"><path d="M26 108 110 66l84 42-84 42Z" fill="#e0e6ff"/><path d="M82 91V45l46-23v47" stroke="#2b4eff" strokeWidth="3"/><path d="m82 91 46-24 28 14-46 24Z" fill="#ffdc60" stroke="#17172b" strokeWidth="2"/><path d="M82 91v28m28-14v28m46-62v28" stroke="#17172b" strokeWidth="3"/><path d="m161 109 5 27 8-9 8 12 6-4-9-12 13-4Z" fill="#2b4eff" stroke="#fafaf8" strokeWidth="2"/></svg></div>
             <p className={s.eyebrow}>Your next move</p><h2>Make it yours.</h2><p>Room finishes and shopping details stay in their own tools. Select a placed piece to move it, rotate it, or dial in its dimensions.</p>
-            <button className={s.primary} onClick={()=>open("furnish")}>Choose a piece ↗</button><button className={s.emptyShop} onClick={()=>open("shop")}>Explore the shopping list</button>
+            <button className={s.primary} onClick={()=>open("furnish")}>Choose a piece ↗︎</button><button className={s.emptyShop} onClick={()=>open("shop")}>Explore the shopping list</button>
           </div>}
           {activePanel==="room"&&<>{view==="2d"&&<button className={s.backButton} onClick={()=>open("shop")}>← Shopping list</button>}<RoomDetails room={room} controls={openingControls} onAdd={addOpening} onRemove={removeOpening} onFlip={flipOpening}/><details className={s.disclosure}><summary>View &amp; layout options</summary>{allowed3D&&<label className={s.field}>Wall visibility<select aria-label="Wall visibility" value={walls} onChange={e=>setWalls(e.target.value)}><option value="auto">Automatic cutaway</option><option value="all">All walls</option><option value="hidden">Hide walls</option></select></label>}<div className={s.buttonRow}><button onClick={()=>open("checks")}>Placement checks ({new Set(issues.map(i=>i.id)).size})</button><button onClick={()=>setResetConfirm(true)}>Reset layout</button></div></details></>}
           {activePanel==="style"&&<StyleDetails room={room}/>}
@@ -172,7 +172,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         </div>
       </aside>
     </div>
-    {view==="3d"&&<footer className={s.statusBar}><span>Changes kept in this tab · Save design for your account</span><button onClick={()=>open("shop")}><span>Shopping total</span> <strong>${total.toFixed(2)}</strong> / ${budget}{total>budget&&<b> Over budget</b>} ↗</button></footer>}
+    {view==="3d"&&<footer className={s.statusBar}><span>Changes kept in this tab · Save design for your account</span><button onClick={()=>open("shop")}><span>Shopping total</span> <strong>${total.toFixed(2)}</strong> / ${budget}{total>budget&&<b> Over budget</b>} ↗︎</button></footer>}
   </div>;
 }
 function roomOutlineMissing(room:{outline?:{openings:unknown[]}|null}){return !room.outline?.openings.length;}

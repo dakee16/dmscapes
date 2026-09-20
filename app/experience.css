@@ -120,8 +120,9 @@ body {
   transform: translateY(-3px);
   box-shadow: 6px 6px 0 var(--color-highlight);
 }
+/* U+FE0E keeps UI symbols in text presentation on mobile, including JSX glyphs. */
 .dm-button::after {
-  content: "↗";
+  content: "\2197\FE0E";
   font-size: 24px;
   line-height: 1;
 }
@@ -201,7 +202,7 @@ body {
   padding: 8px 0;
 }
 .dm-text-link::after {
-  content: "↗";
+  content: "\2197\FE0E";
   font-size: 22px;
 }
 .dm-yellow-tag {

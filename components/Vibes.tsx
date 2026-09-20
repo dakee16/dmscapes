@@ -108,7 +108,7 @@ export default function Vibes() {
               <p>{vibe.line}</p>
               <span className="dm-eyebrow">{vibe.who}</span>
               <Link href="/plan" aria-label={`Plan a ${vibe.name} room`}>
-                Explore this vibe <span aria-hidden="true">↗</span>
+                Explore this vibe <span aria-hidden="true">↗︎</span>
               </Link>
             </div>
           </article>

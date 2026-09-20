@@ -79,7 +79,7 @@ export default function Home() {
             <span>
               Make <em>room.</em>
             </span>
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true">↗︎</span>
           </Link>
           <div>
             <PlanCta />

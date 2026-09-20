@@ -14,9 +14,9 @@ export default function HomeHero() {
     <>
       <section className="dm-hero" aria-labelledby="hero-title">
         <div className="dm-hero-topline dm-eyebrow">
-          <Link href="#room-in-3d">New: live 3D Room Studio · Pro ↗</Link>
+          <Link href="#room-in-3d">New: live 3D Room Studio · Pro ↗︎</Link>
           <span>
-            Fall ’26 <span aria-hidden="true">✳</span>
+            Fall ’26 <span aria-hidden="true">✳︎</span>
           </span>
         </div>
         <div className="dm-hero-copy">
@@ -56,7 +56,7 @@ export default function HomeHero() {
           </span>
           <div className="dm-hero-caption">
             <span>A little room. A lot of you.</span>
-            <span className="dm-room-interaction-hint">↔ Drag to explore</span>
+            <span className="dm-room-interaction-hint">↔︎ Drag to explore</span>
           </div>
           <div className="dm-hero-vibes" aria-label="Preview a room style">
             {["minimalist", "cozy", "preppy"].map((value) => (
@@ -70,7 +70,7 @@ export default function HomeHero() {
               </button>
             ))}
             <a href="#vibes">
-              All nine vibes <span aria-hidden="true">↗</span>
+              All nine vibes <span aria-hidden="true">↗︎</span>
             </a>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function HomeHero() {
           <div className="dm-social-proof">
             <span aria-hidden="true">
               D<span>S</span>
-              <span>↗</span>
+              <span>↗︎</span>
             </span>
             <p>
               <strong>500+</strong> rooms planned
@@ -89,7 +89,7 @@ export default function HomeHero() {
           <Link href="/plan/draw" className="dm-draw-note">
             Draw your own room <span className="dm-yellow-tag">New</span>
             <small>Sketch it yourself.</small>
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true">↗︎</span>
           </Link>
           <a className="dm-eyebrow dm-scroll-cue" href="#how-it-works">
             Scroll to make room <span aria-hidden="true">↓</span>
@@ -101,13 +101,13 @@ export default function HomeHero() {
           {[0, 1].map((copy) => (
             <div key={copy} aria-hidden={copy === 1 ? true : undefined}>
               <span>1,600+ dorm layouts</span>
-              <i>✳</i>
+              <i>✳︎</i>
               <span>$200 to $1,500 budgets</span>
-              <i>✳</i>
+              <i>✳︎</i>
               <span>Live Amazon links</span>
-              <i>✳</i>
+              <i>✳︎</i>
               <span>Real, building-specific dimensions</span>
-              <i>✳</i>
+              <i>✳︎</i>
             </div>
           ))}
         </div>

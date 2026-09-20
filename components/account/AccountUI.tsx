@@ -60,7 +60,7 @@ export function MembershipCard({ profile, billing = false }: { profile: Profile 
       <div className={s.cardBottom}>
         <span>{profile?.username ? "@" + profile.username : "Dormscape member"}</span>
         <Link href={billing ? (state.unlimited ? "/plan" : "/pricing") : "/account/billing"}>
-          {billing ? (state.unlimited ? "Start a plan" : "Explore plans") : "Manage plan"} <span aria-hidden="true">↗</span>
+          {billing ? (state.unlimited ? "Start a plan" : "Explore plans") : "Manage plan"} <span aria-hidden="true">↗︎</span>
         </Link>
       </div>
     </section>

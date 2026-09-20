@@ -114,7 +114,7 @@ export default async function SharedRoomPage(props: {
             }}
             className="dm-editorial-card group block w-full cursor-pointer self-start rounded-xl border border-ink/10 bg-card p-4 text-left transition-colors hover:border-cobalt sm:p-6"
           >
-            <p className="text-center text-sm font-semibold text-cobalt">Open this design in the planner ↗</p>
+            <p className="text-center text-sm font-semibold text-cobalt">Open this design in the planner ↗︎</p>
           </OpenInPlanner>
           </div>
 

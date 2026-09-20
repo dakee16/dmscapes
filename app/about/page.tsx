@@ -89,7 +89,7 @@ export default function AboutPage() {
           <figure className="dm-about-image">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/experience/cozy-room.webp" width={1536} height={1024} alt="A dorm style study with blue bedding, warm wood, and soft string lights" loading="lazy" />
-            <figcaption><span className="dm-eyebrow">A little room. A lot of possibility.</span><span aria-hidden="true">✳</span></figcaption>
+            <figcaption><span className="dm-eyebrow">A little room. A lot of possibility.</span><span aria-hidden="true">✳︎</span></figcaption>
           </figure>
           {/* Real-number stat callouts, in the site's mono stat-line language. */}
           <div className="mt-10 grid grid-cols-3 gap-4 rounded-2xl border border-ink/10 bg-card/70 px-4 py-6 sm:px-8">

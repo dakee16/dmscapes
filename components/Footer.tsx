@@ -84,7 +84,7 @@ export default function Footer() {
         <div className="dm-footer-brand">
           <Wordmark />
           <p>Dorm ready under a minute.</p>
-          <small>© 2026 Dormscape</small>
+          <small>©︎ 2026 Dormscape</small>
         </div>
         {COLUMNS.map((col) => (
           <div key={col.heading}>
@@ -119,7 +119,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <TikTokIcon />
-                TikTok <span aria-hidden="true">↗</span>
+                TikTok <span aria-hidden="true">↗︎</span>
               </a>
             </li>
             <li>
@@ -129,7 +129,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <InstagramIcon />
-                Instagram <span aria-hidden="true">↗</span>
+                Instagram <span aria-hidden="true">↗︎</span>
               </a>
             </li>
           </ul>

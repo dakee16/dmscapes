@@ -60,7 +60,7 @@ function EmptyState() {
       <span className={s.emptyMark} aria-hidden="true">Make room.</span>
       <h3>Your first design belongs here.</h3>
       <p>Start with your room, find your vibe, and save a layout you love. Your saved designs stay together across devices.</p>
-      <Link href="/plan" className={s.primary}>Plan my room <span aria-hidden="true">↗</span></Link>
+      <Link href="/plan" className={s.primary}>Plan my room <span aria-hidden="true">↗︎</span></Link>
     </div>
   );
 }
@@ -142,7 +142,7 @@ export default function AccountPage() {
       <main id="page-content" tabIndex={-1} className={`dm-page ${s.page}`}>
         <AccountHeader active="overview" title="Your personal" accent="studio."
           description="All your room ideas, with room for the next one."
-          action={<Link href="/plan" className={s.primary}>New room plan <span aria-hidden="true">↗</span></Link>} />
+          action={<Link href="/plan" className={s.primary}>New room plan <span aria-hidden="true">↗︎</span></Link>} />
         {!ready ? <ListSkeleton /> : (
           <>
             <div className={s.overview}>
@@ -152,7 +152,7 @@ export default function AccountPage() {
                 {!profile?.username && <button type="button" onClick={() => openAuthModal("profile")} className={s.secondary}>Set a username</button>}
                 <dl className={s.stats}>
                   <div><dt>Saved designs</dt><dd>{designs === null || loadFailed ? "…" : designs.length}</dd></div>
-                  <div><dt>Your profile</dt><dd><Link href="/account/settings" className="text-base text-cobalt">Edit details ↗</Link></dd></div>
+                  <div><dt>Your profile</dt><dd><Link href="/account/settings" className="text-base text-cobalt">Edit details ↗︎</Link></dd></div>
                 </dl>
               </section>
               <MembershipCard profile={profile} />
@@ -160,7 +160,7 @@ export default function AccountPage() {
             <div className={s.sectionHeading}>
               <div><h2>On your drawing board</h2><p>Your saved rooms, ready for another look.</p></div>
               {designs && designs.length >= 2 && (canCompare
-                ? <Link href="/account/compare" className={s.secondary}>Compare designs ↗</Link>
+                ? <Link href="/account/compare" className={s.secondary}>Compare designs ↗︎</Link>
                 : <button type="button" onClick={() => openUpgrade("compare")} className={s.secondary}>Compare designs <span className="bg-highlight px-2 py-1 text-xs">Plus</span></button>)}
             </div>
             {designs === null ? <ListSkeleton /> : loadFailed ? (

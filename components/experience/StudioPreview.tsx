@@ -17,7 +17,7 @@ export default function StudioPreview({
     <aside className="dm-studio-preview">
       <div className="dm-preview-top">
         <span className="dm-eyebrow">Dormscape / Studio</span>
-        <span aria-hidden="true">✳</span>
+        <span aria-hidden="true">✳︎</span>
       </div>
       <h2>{label}</h2>
       {variant === "palette" ? <PaletteStudy vibe={vibe} /> : <CampusMap />}

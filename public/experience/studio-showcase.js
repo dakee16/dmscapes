@@ -36,7 +36,7 @@ export function createShowcase(container) {
     {kind:"lamp",width_ft:.8,length_ft:.8,height:1.6,x:3.6,z:-3.8,y:2.62},
     {kind:"plant",width_ft:1.2,length_ft:1.2,height:2.2,x:4.7,z:3.7},
     {kind:"art",width_ft:1.7,length_ft:.09,height:2.1,x:1.2,z:-4.84,y:3.25},
-    {kind:"pillow",width_ft:1,length_ft:.8,height:.3,x:-3.6,z:-.9,y:2.19,material_color:"#314aff"},
+    {kind:"pillow",width_ft:1,length_ft:.8,height:.3,x:-3.6,z:-.6,y:2.5,material_color:"#314aff"},
   ];
   const models=specs.map((spec,i)=>{const group=kit.build({...spec,id:`showcase-${i}`},["#f5efdd","#778cf5","#ffdc60"]);group.position.set(spec.x,spec.y||0,spec.z);world.add(group);return group;});
   const blueprint=new T.Group();world.add(blueprint);

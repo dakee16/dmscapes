@@ -147,7 +147,7 @@ export default function BillingPage() {
       <main id="page-content" tabIndex={-1} className={`dm-page ${s.page}`}>
         <AccountHeader active="billing" title="More room to" accent="create."
           description="Your membership, your credits, every purchase. All in one place."
-          action={<Link href="/plan" className={s.secondary}>Back to planning ↗</Link>} />
+          action={<Link href="/plan" className={s.secondary}>Back to planning ↗︎</Link>} />
         {!ready ? <div className={s.skeleton} aria-busy="true" aria-label="Loading billing" /> : (
           <>
             {justBought !== null && <div role="status" className={s.notice}>
@@ -176,7 +176,7 @@ export default function BillingPage() {
                     <p className={s.eyebrow}>The possibilities are yours</p>
                     <h2>No top-ups needed.</h2>
                     <p>Your Pro membership includes unlimited room plans. Keep exploring until it feels like you.</p>
-                    <Link href="/plan" className={s.primary} style={{ marginTop: 20 }}>Create a room ↗</Link>
+                    <Link href="/plan" className={s.primary} style={{ marginTop: 20 }}>Create a room ↗︎</Link>
                   </section>
                 ))}
               </div>
@@ -204,7 +204,7 @@ export default function BillingPage() {
                           </div>
                           <div className={s.invoiceAmount}>
                             <strong>{money(inv.amount, inv.currency)}</strong>
-                            {inv.receipt_url && <a href={inv.receipt_url} target="_blank" rel="noopener noreferrer" aria-label={`Receipt for ${inv.description ?? "Dormscape purchase"}`}>Receipt ↗</a>}
+                            {inv.receipt_url && <a href={inv.receipt_url} target="_blank" rel="noopener noreferrer" aria-label={`Receipt for ${inv.description ?? "Dormscape purchase"}`}>Receipt ↗︎</a>}
                           </div>
                         </li>
                       ))}
@@ -212,7 +212,7 @@ export default function BillingPage() {
                   ) : (
                     <div className={s.historyEmpty}><h3>A clean slate.</h3>
                       <p>No purchases yet. When you make one, the details and available receipts will appear here.</p>
-                      {profile && tier !== "pro" && <Link href="/pricing" className={s.secondary}>Explore one-time plans ↗</Link>}
+                      {profile && tier !== "pro" && <Link href="/pricing" className={s.secondary}>Explore one-time plans ↗︎</Link>}
                     </div>
                   )}
                 </section>
