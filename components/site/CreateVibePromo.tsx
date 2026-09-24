@@ -17,15 +17,8 @@ export default function CreateVibePromo() {
             <em>Your own vibe.</em>
           </h2>
           <p className={styles.promoDescription}>
-            A movie set, a color you love, an aesthetic all your own.
-            Describe it in your words. Dormscape finds real products and
-            arranges them for your room and budget.
+            Describe your style. We’ll find the products.
           </p>
-          <ul className={styles.benefits}>
-            <li><span>01</span> Your words</li>
-            <li><span>02</span> Real products</li>
-            <li><span>03</span> Your budget</li>
-          </ul>
           <div className={styles.actions}>
             <Link href="/plan" className="dm-button">Build your own vibe</Link>
             <Link href="/pricing" className="dm-text-link">What Pro includes</Link>
@@ -35,12 +28,10 @@ export default function CreateVibePromo() {
           <figure className={styles.visual}>
             <div className={styles.visualHeader}>
               <span>Dormscape / Vibe studio</span>
-              <span>Made personal.</span>
             </div>
             <VibeMoodboard />
             <figcaption className={styles.visualCaption}>
               <span>Illustrative style study</span>
-              <span>Your brief, made visual.</span>
             </figcaption>
           </figure>
         </Reveal>

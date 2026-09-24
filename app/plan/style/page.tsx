@@ -220,10 +220,6 @@ export default function PlanStylePage() {
       <h1 className="dm-page-title mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
         What&apos;s your <span className="hl">vibe</span>?
       </h1>
-      <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-        Every style is a complete plan: bedding, lighting, storage, and decor,
-        arranged to your {room.lengthFt} × {room.widthFt} ft room.
-      </p>
 
       <div className="dm-style-columns">
         <div className="dm-style-grid grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -246,7 +242,6 @@ export default function PlanStylePage() {
           <StudioPreview
             variant="palette"
             vibe={style ?? "cozy"}
-            caption="A preview of your palette."
           />
           <div className="dm-budget-card mt-8 rounded-xl border border-ink/10 bg-white p-5 sm:p-6">
             <div className="flex flex-wrap items-baseline justify-between gap-2">

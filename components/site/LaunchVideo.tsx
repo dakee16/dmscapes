@@ -38,12 +38,6 @@ export default function LaunchVideo() {
           <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
             Watch a dorm <span className="hl">come together.</span>
           </h2>
-          <p className="mt-4 max-w-md text-base leading-relaxed text-ink-soft">
-            Pick your school and we already know the room, down to the inch.
-            Choose a vibe, set a budget, and Dormscape lays out a room that
-            actually fits, with every piece linked and priced. Here is the whole
-            thing, start to finish.
-          </p>
           <Link
             href="/plan"
             className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-cobalt transition-colors hover:text-cobalt-deep"

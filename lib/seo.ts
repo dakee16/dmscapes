@@ -22,7 +22,7 @@ export function absoluteUrl(path = "/"): string {
 }
 
 const OG_IMAGE = {
-  url: "/og.png",
+  url: "/og.png?v=folded-room",
   width: 1200,
   height: 630,
   alt: "Dormscape, the free dorm room planner",
@@ -80,7 +80,7 @@ const organization = {
   url: SITE_URL,
   logo: {
     "@type": "ImageObject",
-    url: `${SITE_URL}/icons/icon-512.png`,
+    url: `${SITE_URL}/icons/icon-512.png?v=folded-room`,
     width: 512,
     height: 512,
   },

@@ -143,13 +143,8 @@ export default function PlusWelcome({
             id="plus-welcome-title"
             className="mt-6 max-w-md font-display text-3xl font-extrabold leading-[1.1] tracking-tight text-ink sm:text-4xl"
           >
-            One upgrade, <span className="hl">everything unlocked.</span>
+            More room <span className="hl">to plan.</span>
           </h2>
-          <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
-            You have the free planner already. Plus unlocks every vibe and every
-            premium feature, and gives you five plan credits to design with.
-            Saving your designs is always free.
-          </p>
 
           <div className="mt-7 grid grid-cols-1 gap-x-5 gap-y-4 sm:grid-cols-2">
             {FEATURES.map((f) => (

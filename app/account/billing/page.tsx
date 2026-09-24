@@ -149,7 +149,6 @@ export default function BillingPage() {
       <SiteHeader />
       <main id="page-content" tabIndex={-1} className={`dm-page ${s.page}`}>
         <AccountHeader active="billing" title="More room to" accent="create."
-          description="Your membership, your credits, every purchase. All in one place."
           action={<Link href="/plan" className={s.secondary}>Back to planning ↗︎</Link>} />
         {!ready ? <div className={s.skeleton} aria-busy="true" aria-label="Loading billing" /> : (
           <>
@@ -169,16 +168,14 @@ export default function BillingPage() {
                 </section>
                 {profile && (canBuyFlexCredits(profile) ? (
                   <section className={s.topup}>
-                    <p className={s.eyebrow}>Keep the ideas coming</p>
-                    <h2>A little more room.</h2>
-                    <p>Top up at ${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. One credit designs one room. Buy what you need, when you need it.</p>
+                    <h2>Buy plan credits</h2>
+                    <p>${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. One credit generates one room plan.</p>
                     <div className={s.creditForm}><BuyCreditsForm source="billing" /></div>
                   </section>
                 ) : (
                   <section className={s.topup}>
-                    <p className={s.eyebrow}>The possibilities are yours</p>
                     <h2>No top-ups needed.</h2>
-                    <p>Your Pro membership includes unlimited room plans. Keep exploring until it feels like you.</p>
+                    <p>Pro includes unlimited room plans.</p>
                     <Link href="/plan" className={s.primary} style={{ marginTop: 20 }}>Create a room ↗︎</Link>
                   </section>
                 ))}

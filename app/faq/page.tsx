@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     url: "/faq",
     images: [
       {
-        url: "/og.png",
+        url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
         alt: "Dormscape, the free AI dorm room planner",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dorm FAQ",
     description: DESCRIPTION,
-    images: ["/og.png"],
+    images: ["/og.png?v=folded-room"],
   },
 };
 
@@ -65,10 +65,6 @@ export default function FAQPage() {
           <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             Dorm questions, <span className="hl">answered.</span>
           </h1>
-          <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-            The short answers to what people ask most about setting up a dorm
-            room. Each one links out to the full guide if you want the detail.
-          </p>
 
           {/* Search + grouped, jump-linked accordion (client-side filter). */}
           <FaqBrowser groups={GROUPS} />

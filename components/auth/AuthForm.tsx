@@ -8,6 +8,7 @@ import { useAuth, type AuthModalReason } from "@/lib/auth-context";
 import { track } from "@/lib/analytics";
 import { passwordMeetsPolicy } from "@/lib/password";
 import PasswordChecklist from "@/components/auth/PasswordChecklist";
+import styles from "./Auth.module.css";
 
 type Mode = "login" | "signup";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -243,17 +244,17 @@ export default function AuthForm({
       : saveDesign
         ? "Save your design"
         : buyReason
-          ? "One quick step to buy"
+          ? "Sign in to shop"
           : generateReason
-            ? "One step to your room"
-            : "Welcome back";
+            ? "Sign in to design"
+            : mode === "signup" ? "Create your account" : "Welcome back";
 
   if (!configured) {
     return (
-      <div className="space-y-4">
-        <h2 className="font-display text-2xl font-bold tracking-tight">Sign-in is unavailable</h2>
+      <div className={`${styles.form} space-y-4`}>
+        <h1>Sign-in is unavailable</h1>
         <p className="rounded-xl border border-ink/10 bg-white px-4 py-3.5 text-sm leading-relaxed text-ink-soft">
-          Please try again later. You can still explore schools, room sizes, and styles.
+          Please try again later.
         </p>
         <Link href="/plan" className="flex h-12 w-full items-center justify-center rounded-xl bg-cobalt text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep">
           Start planning
@@ -263,13 +264,13 @@ export default function AuthForm({
   }
 
   return (
-    <div>
-      <h2 className="font-display text-2xl font-bold tracking-tight sm:text-3xl">{title}</h2>
+    <div className={styles.form}>
+      <h1>{title}</h1>
 
       {confirmSent ? (
         <div className="mt-4 rounded-xl border border-ink/10 bg-white px-4 py-4 text-sm leading-relaxed">
           <p className="font-semibold">We sent a confirmation link to {email.trim()}.</p>
-          <p className="mt-1 text-ink-soft">Click it to activate your account, then come back and log in.</p>
+          <p className="mt-1 text-ink-soft">Open the link, then log in.</p>
           <button
             type="button"
             onClick={() => {
@@ -285,7 +286,7 @@ export default function AuthForm({
         resetSent ? (
           <div className="mt-4 rounded-xl border border-ink/10 bg-white px-4 py-4 text-sm leading-relaxed">
             <p className="font-semibold">If {email.trim()} has an account, a reset link is on its way.</p>
-            <p className="mt-1 text-ink-soft">Open it to set a new password. The link expires soon, so use it while it&apos;s fresh.</p>
+            <p className="mt-1 text-ink-soft">Open the link to choose a new password.</p>
             <button
               type="button"
               onClick={() => { setResetMode(false); setResetSent(false); }}
@@ -312,16 +313,7 @@ export default function AuthForm({
         )
       ) : (
         <div className="mt-3">
-          <p className="text-sm leading-relaxed text-ink-soft">
-            {saveDesign
-              ? "Create a free account to keep this room."
-              : buyReason
-                ? "Log in or grab a free account, then we'll send you straight to Amazon. Your room stays exactly as it is."
-                : generateReason
-                  ? "Create a free account to generate your room. Every choice you just made is saved, so you pick up right here."
-                  : "Save designs and pick up where you left off. Free."}
-          </p>
-          <div className="mt-4 grid grid-cols-2 rounded-xl border border-ink/10 bg-white p-1 text-sm font-semibold">
+          <div className={styles.modeTabs} role="group" aria-label="Account access">
             {(["signup", "login"] as const).map((m) => (
               <button key={m} type="button" aria-pressed={mode === m} onClick={() => { setMode(m); setError(""); setExistingNotice(false); }} className={`cursor-pointer rounded-lg py-2 transition-colors ${mode === m ? "bg-ink text-white" : "text-ink-soft hover:text-ink"}`}>
                 {m === "signup" ? "Sign up" : "Log in"}

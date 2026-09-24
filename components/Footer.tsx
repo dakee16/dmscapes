@@ -84,7 +84,6 @@ export default function Footer() {
       <div className="dm-footer-grid">
         <div className="dm-footer-brand">
           <Wordmark />
-          <p>Dorm ready under a minute.</p>
           <small>©︎ 2026 Dormscape</small>
         </div>
         {COLUMNS.map((col) => (

@@ -21,8 +21,7 @@ export default function AddSchoolPage() {
             Add <span className="hl">your school.</span>
           </h1>
           <p className="mt-4 text-lg text-ink-soft">
-            Know your room&rsquo;s size? Even better. Measurements help us support
-            your dorm faster. Just the college name and your email are required.
+            Only your college name and email are required.
           </p>
           <div className="mt-8 rounded-xl border border-ink/10 bg-card p-6 shadow-sm">
             <AddSchoolForm />

@@ -137,9 +137,7 @@ export default function CreateVibePage() {
               into <span className="hl">words.</span>
             </h1>
             <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-soft">
-              Colors, textures, a mood, a reference, whatever the room feels like in
-              your head. We&apos;ll match real products to it and lay them out to your{" "}
-              {room.lengthFt} × {room.widthFt} ft room.
+              Include colors, materials, or a reference you like.
             </p>
 
             <label htmlFor="vibe-input" className="sr-only">

@@ -225,13 +225,6 @@ export default function RoomPlanner() {
             style={{ left: "70%", top: "78%", width: "10%", height: "15%", backgroundColor: vibe.rug }}
           />
 
-          {/* Fit badge */}
-          <div
-            className="snap-in absolute right-2 top-[31%] rounded-md px-2 py-1 font-mono text-[9px] font-semibold uppercase tracking-wide text-ink"
-            style={{ backgroundColor: "var(--color-highlight)", animationDelay: "950ms" }}
-          >
-            Everything fits ✓
-          </div>
         </div>
 
         {/* Shoppable list */}

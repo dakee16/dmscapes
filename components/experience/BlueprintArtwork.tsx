@@ -23,9 +23,6 @@ export default function BlueprintArtwork({
       className={`dm-blueprint-art dm-blueprint-${variant}`}
       aria-hidden="true"
     >
-      <span className="dm-eyebrow dm-art-caption">
-        Measure. Imagine. Make room.
-      </span>
       <motion.div
         className="dm-art-scene"
         style={{ rotate: paused ? -5 : rotation, y: paused ? 0 : lift }}
@@ -35,11 +32,6 @@ export default function BlueprintArtwork({
             <div className="dm-orbit-ring" />
             <div className="dm-orbit-ring dm-orbit-ring-two" />
             <span className="dm-orbit-star">✳︎</span>
-            <span className="dm-orbit-sticker">
-              A little room.
-              <br />
-              Infinite possibility.
-            </span>
           </>
         ) : (
           <>

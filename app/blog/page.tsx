@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "/blog",
     images: [
       {
-        url: "/og.png",
+        url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
         alt: "Dormscape, the free AI dorm room planner",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The dormscape Blog",
     description: DESCRIPTION,
-    images: ["/og.png"],
+    images: ["/og.png?v=folded-room"],
   },
 };
 
@@ -72,11 +72,6 @@ export default function BlogIndexPage() {
           <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             Dorm planning, <span className="hl">figured out.</span>
           </h1>
-          <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-            Specific, useful guides to setting up a dorm room the right way:
-            measuring the space, packing what matters, budgeting honestly, and
-            making a small room work.
-          </p>
 
           </div><BlueprintArtwork variant="orbit" /></div>
           <div className="dm-post-grid mt-12 grid gap-4 md:grid-cols-2">

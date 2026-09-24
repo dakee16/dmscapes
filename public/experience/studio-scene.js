@@ -1,7 +1,7 @@
 import * as T from "./vendor/three.module.min.js";
 import { createModelKit } from "./studio-models.js";
 export function createStudioScene(container, options) {
-  const brandMark=new Image();brandMark.src="/brand/dormscape-mark.png";
+  const brandMark=new Image();brandMark.src="/brand/dormscape-mark.png?v=folded-room";
   const renderer=new T.WebGLRenderer({antialias:true});
   renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.6));renderer.setClearColor("#efeee8");
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;

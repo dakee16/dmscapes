@@ -171,10 +171,7 @@ function PlusUpsell() {
               You&rsquo;ll have more than one good idea.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              The cozy version and the bold one. Free gets you one room plan;
-              Plus adds five more, plus comparing two rooms side by side,
-              exporting the winner, and designing in all nine vibes. Saving
-              your designs is always free.
+              Five plan credits, all nine preset styles, and Plus tools.
             </p>
           </div>
 
@@ -218,9 +215,7 @@ function PlusUpsell() {
               Plus
             </span>
             <p className="text-sm leading-relaxed text-ink-soft">
-              <span className="font-semibold text-ink">Draw your own room:</span> not on our
-              list, or an odd shape? Sketch your exact floor plan, even an L-shape, and we fit
-              a full layout to it.
+              <span className="font-semibold text-ink">Draw your own room:</span> sketch a custom floor plan in 2D.
             </p>
           </div>
 
@@ -234,9 +229,7 @@ function PlusUpsell() {
               Pro only
             </span>
             <p className="text-sm leading-relaxed text-ink-soft">
-              <span className="font-semibold text-ink">Create your own vibe:</span> skip the
-              presets and describe any aesthetic in your own words. We live-match real
-              products to it. Pro also includes the <Link href="/plan/draw/3d" className="text-cobalt underline">3D Room Builder</Link> and live 3D planning.
+              Custom vibes, live 3D planning, and the <Link href="/plan/draw/3d" className="text-cobalt underline">3D Room Builder</Link>.
             </p>
           </div>
 

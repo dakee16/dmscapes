@@ -2,7 +2,7 @@ import s from "./BrandLoader.module.css";
 import BrandMark from "./BrandMark";
 
 /** Lightweight floor-plan animation shared by route and studio loading states. */
-export default function BrandLoader({label="Making room for your ideas…",className=""}:{label?:string;className?:string}) {
+export default function BrandLoader({label="Loading…",className=""}:{label?:string;className?:string}) {
   return <div className={s.loader+" "+className} role="status" aria-live="polite" aria-label={label || "Loading Dormscape"}>
     <div className={s.drawing} aria-hidden="true">
       <svg viewBox="0 0 240 170" fill="none">

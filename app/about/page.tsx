@@ -4,6 +4,7 @@ import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
 import PlanCta from "@/components/site/PlanCta";
 import { SCHOOLS } from "@/lib/schools";
+import { STYLES } from "@/lib/styles";
 
 export const metadata: Metadata = {
   description:
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     url: "/about",
     images: [
       {
-        url: "/og.png",
+        url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
         alt: "Dormscape, the free AI dorm room planner",
@@ -88,7 +89,7 @@ export default function AboutPage() {
           <figure className="dm-about-image">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/experience/cozy-room.webp" width={1536} height={1024} alt="A dorm style study with blue bedding, warm wood, and soft string lights" loading="lazy" />
-            <figcaption><span className="dm-eyebrow">A little room. A lot of possibility.</span><span aria-hidden="true">✳︎</span></figcaption>
+            <figcaption><span className="dm-eyebrow">Illustrative style study</span></figcaption>
           </figure>
           {/* Real-number stat callouts, in the site's mono stat-line language. */}
           <div className="mt-10 grid grid-cols-3 gap-4 rounded-2xl border border-ink/10 bg-card/70 px-4 py-6 sm:px-8">
@@ -106,9 +107,9 @@ export default function AboutPage() {
             </div>
             <div className="text-right">
               <p className="dm-numeric text-3xl font-semibold tracking-tight sm:text-4xl">
-                500+
+                {STYLES.length}
               </p>
-              <p className={STAT_LABEL}>Rooms planned</p>
+              <p className={STAT_LABEL}>Preset styles</p>
             </div>
           </div>
 
@@ -234,18 +235,17 @@ export default function AboutPage() {
           {/* Free, honestly */}
           <section className="mt-14">
             <h2 className="font-display text-2xl font-bold tracking-tight">
-              Free, actually
+              Start free
             </h2>
             <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              No account needed to plan a room. No paywall on the layout. Some
-              shopping links are affiliate links, which pay us a small commission
-              at no extra cost to you, and that keeps the core planner free.{" "}
+              Explore in 2D for free. Create an account for your first room plan
+              and unlimited saving. Some shopping links are affiliate links,
+              which pay us a small commission at no extra cost to you.{" "}
               <Link href="/pricing" className={TEXT_LINK}>
                 Plus and Pro
               </Link>{" "}
-              are optional one-time upgrades ($4.99 and $14.99) for extras like
-              all nine vibes, PDF and PNG export, and the comparison view, but
-              nothing in the free planner is locked behind them.
+              are optional one-time upgrades for more plans and tools, including
+              exports, custom vibes, and 3D room building and planning.
             </p>
           </section>
 
@@ -284,18 +284,12 @@ export default function AboutPage() {
                 }}
                 aria-hidden="true"
               />
-              <p className="relative font-mono text-xs font-medium uppercase tracking-[0.18em] text-highlight">
-                Enough reading
-              </p>
               <h2 className="relative mx-auto mt-3 max-w-xl font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-                Your exact room is one tap away.
+                Plan your room.
               </h2>
               <div className="relative mt-7">
                 <PlanCta className="inline-flex h-13 items-center rounded-xl bg-highlight px-8 text-base font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-white active:translate-y-0" />
               </div>
-              <p className="relative mt-4 font-mono text-[11px] uppercase tracking-wide text-white/60">
-                Free · No account · Under a minute
-              </p>
             </div>
           </section>
         </div>
