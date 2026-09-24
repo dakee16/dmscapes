@@ -120,6 +120,10 @@ export default function DrawRoomPage() {
               </span>
             )}
           </div>
+          <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
+            Draw your walls on the grid. Add your doors and
+            windows, then choose a vibe. We’ll create a layout based on your room.
+          </p>
 
           {/* Corners use the tap position, so the same editor works with touch. */}
           <button
@@ -136,6 +140,7 @@ export default function DrawRoomPage() {
               <path d="M8 20h8M12 18v2" strokeLinecap="round" />
             </svg>
             Tap to place corners and trace your walls.
+            You can adjust the walls and add details as you go.
           </p>
         </div>
       </div>

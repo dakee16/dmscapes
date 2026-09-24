@@ -254,7 +254,7 @@ export default function AuthForm({
       <div className={`${styles.form} space-y-4`}>
         <h1>Sign-in is unavailable</h1>
         <p className="rounded-xl border border-ink/10 bg-white px-4 py-3.5 text-sm leading-relaxed text-ink-soft">
-          Please try again later.
+          Please try again later. You can still explore schools, room sizes, and styles.
         </p>
         <Link href="/plan" className="flex h-12 w-full items-center justify-center rounded-xl bg-cobalt text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep">
           Start planning
@@ -313,6 +313,15 @@ export default function AuthForm({
         )
       ) : (
         <div className="mt-3">
+          <p className={styles.formIntro}>
+            {saveDesign
+              ? "Create a free account to keep this room."
+              : buyReason
+                ? "Sign in and we'll send you to Amazon. Your room stays exactly as it is."
+                : generateReason
+                  ? "Create a free account to generate your room. Your choices are saved, so you can pick up right here."
+                  : "Save your designs, revisit your favorites, and pick up where you left off."}
+          </p>
           <div className={styles.modeTabs} role="group" aria-label="Account access">
             {(["signup", "login"] as const).map((m) => (
               <button key={m} type="button" aria-pressed={mode === m} onClick={() => { setMode(m); setError(""); setExistingNotice(false); }} className={`cursor-pointer rounded-lg py-2 transition-colors ${mode === m ? "bg-ink text-white" : "text-ink-soft hover:text-ink"}`}>

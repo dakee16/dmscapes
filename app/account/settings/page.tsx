@@ -316,7 +316,8 @@ export default function AccountSettingsPage() {
     <div>
       <SiteHeader />
       <main id="page-content" tabIndex={-1} className={`dm-page ${s.page}`}>
-        <AccountHeader active="settings" title="Make it" accent="yours." />
+        <AccountHeader active="settings" title="Make it" accent="yours."
+          description="The details behind your designs. Keep your profile and sign-in information up to date." />
         {!ready ? (
           <div aria-busy="true" aria-label="Loading your settings">
             <div className="h-9 w-48 animate-pulse rounded-lg bg-ink/8" />
@@ -331,6 +332,7 @@ export default function AccountSettingsPage() {
             <div className={s.settingsLayout}>
               <aside className={s.settingsAside}>
                 <IdentityCard name={profile?.full_name} username={profile?.username} email={user?.email} />
+                <p>Your profile keeps your room ideas connected to you, wherever you plan next.</p>
                 <nav className={s.settingsLinks} aria-label="Settings sections">
                   <a href="#profile-details">Profile <span aria-hidden="true">↘︎</span></a>
                   <a href="#email-details">Email <span aria-hidden="true">↘︎</span></a>
@@ -342,6 +344,7 @@ export default function AccountSettingsPage() {
               <section id="profile-details" className={CARD}>
               <p className={s.eyebrow}>01 / Your identity</p>
               <h2>Profile details</h2>
+              <p>A name and handle that make every shared design yours.</p>
               <form onSubmit={saveProfile} className="mt-4 space-y-4" noValidate>
                 <div>
                   <label htmlFor="set-name" className={LABEL}>

@@ -4,8 +4,8 @@ import { CampusMap, PaletteStudy } from "./StudioMotion";
 
 export default function StudioPreview({
   vibe = "cozy",
-  label,
-  caption,
+  label = "A little room. A lot of possibility.",
+  caption = "Your next chapter, taking shape.",
   variant = "campus",
 }: {
   vibe?: string;
@@ -19,10 +19,14 @@ export default function StudioPreview({
         <span className="dm-eyebrow">Dormscape / Studio</span>
         <span aria-hidden="true">✳︎</span>
       </div>
-      <h2>{label ?? (variant === "palette" ? "Your palette" : "Find your campus")}</h2>
+      <h2>{label}</h2>
       {variant === "palette" ? <PaletteStudy vibe={vibe} /> : <CampusMap />}
-      {caption && <div className="dm-preview-bottom"><span>{caption}</span></div>}
-      {variant === "palette" && <p className="dm-preview-note">Style preview, not your room layout.</p>}
+      <div className="dm-preview-bottom">
+        <span>{caption}</span>
+      </div>
+      <p className="dm-preview-note">
+        {variant === "palette" ? "Palette preview · Your room layout comes next." : "Find your school, choose your hall, make it yours."}
+      </p>
     </aside>
   );
 }

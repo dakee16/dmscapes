@@ -94,6 +94,29 @@
   letter-spacing: -0.025em;
 }
 
+.welcomeCopy { width: 100%; }
+.welcomeCopy p {
+  max-width: 390px;
+  margin: 24px 0 0;
+  color: #d1d2df;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.welcomeEyebrow {
+  display: block;
+  font: 400 11px / 1.6 var(--font-mono), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffdc60;
+}
+.welcomeCopy .welcomeEyebrow { margin-bottom: 24px; }
+.formIntro {
+  margin: 0 0 20px;
+  color: var(--color-ink-soft);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
 .welcomeTitle em {
   display: inline-block;
   margin-top: 8px;

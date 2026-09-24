@@ -28,10 +28,15 @@ function LoginInner() {
         </div>
       </div>
       <aside className={styles.welcomePanel} aria-label="Welcome to dormscape">
-        <h2 className={styles.welcomeTitle}>Welcome to<br /><em>dormscape.</em></h2>
+        <div className={styles.welcomeCopy}>
+          <span className={styles.welcomeEyebrow}>Your next chapter, planned.</span>
+          <h2 className={styles.welcomeTitle}>Welcome to<br /><em>dormscape.</em></h2>
+          <p>Your room, your style, your starting point. Sign in to keep your favorite layouts, explore new ideas, and make move-in feel like coming home.</p>
+        </div>
         <div className={styles.markPoster} aria-hidden="true">
           <BrandMark size={320} className={styles.mark} />
         </div>
+        <span className={styles.welcomeEyebrow}>A little room. A lot of possibility.</span>
       </aside>
     </div>
   );

@@ -44,6 +44,11 @@ export default function CollegesPage() {
           <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
             Find your <span className="hl">campus.</span>
           </h1>
+          <p className="mt-4 max-w-xl text-lg text-ink-soft">
+            Start with your campus. Explore residence halls, room types,
+            published dimensions, and example layouts drawn to scale.
+            A little planning now makes move-in feel a lot more familiar.
+          </p>
 
           </div><BlueprintArtwork /></div>
           <CampusDirectory schools={SCHOOLS.map(s => ({
@@ -53,7 +58,7 @@ export default function CollegesPage() {
           }))} />
 
           <div className="mt-12 rounded-xl border border-dashed border-ink/20 bg-card/60 p-6 text-center">
-            <p className="font-medium">Don&rsquo;t see your school?</p>
+            <p className="font-medium">Don&rsquo;t see your school? Tell us where you&rsquo;re heading.</p>
             <Link
               href="/add-school"
               className="mt-3 inline-block rounded-lg bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt"

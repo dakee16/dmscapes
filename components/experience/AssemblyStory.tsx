@@ -22,11 +22,12 @@ export default function AssemblyStory() {
           <br />
           to <em>move-in cart.</em>
         </h2>
+        <p>Three steps between you and a room that actually works.</p>
       </Reveal>
       <div ref={ref} className="dm-story-grid">
         <div className="dm-story-sticky">
           <div className="dm-preview-top dm-eyebrow">
-            <span>Floor plan</span>
+            <span>Your room, coming together</span>
             <span className="dm-story-meta">Plan / Style / Shop</span>
           </div>
           <PlanningBlueprint progress={progress} />
@@ -46,7 +47,8 @@ export default function AssemblyStory() {
               <em>exact dorm.</em>
             </h3>
             <p>
-              Choose your school, building, and room type.
+              Pick your school, building, and room type. Start with the room
+              dimensions, then make the layout your own.
             </p>
             <div className="dm-demo-form">
               <span>
@@ -68,7 +70,8 @@ export default function AssemblyStory() {
               <em>feel like you.</em>
             </h3>
             <p>
-              Choose a style and set your budget.
+              Choose your vibe and set a budget. We handle the bedding,
+              lighting, storage, and decor.
             </p>
             <div className="dm-demo-styles">
               <span>Cozy</span>
@@ -91,14 +94,18 @@ export default function AssemblyStory() {
               <em>room.</em>
             </h3>
             <p>
-              Arrange your layout and shop the linked products.
+              A 2D layout based on your floor plan, plus a shoppable list
+              with live Amazon links. Find your favorites, then make them yours.
             </p>
             <div className="dm-demo-receipt">
-              <span className="dm-eyebrow">Example room</span>
+              <span className="dm-eyebrow">Example room / All sorted</span>
               <div>
                 <span>14 items</span>
                 <strong>$612</strong>
               </div>
+              <p>
+                Your picks, all sorted <span>✓</span>
+              </p>
             </div>
             <PlanCta className="dm-text-link" />
           </Reveal>

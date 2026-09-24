@@ -64,7 +64,9 @@ export default function StudioShowcase() {
       <div className={s.topline}><span><i/> THE ROOM STUDIO / LIVE NOW</span><span className={s.pro}>INCLUDED WITH PRO ↗︎</span></div>
       <div className={s.content}>
         <div className={s.copy}>
+          <p className={s.kicker}>A whole new perspective.</p>
           <h2 id="showcase-title">Your room.<br/><em>Now in 3D.</em></h2>
+          <p className={s.description}>Build your walls. Move the desk. Find your light. Pro brings your own room from a blank 3D grid to a furnished space.</p>
           <Link href="/plan?view=3d" className={s.cta}>Plan with 3D <span aria-hidden="true">↗︎</span></Link>
           <div className={s.links}><Link href="/plan/draw/3d">Build your own room ↗︎</Link><Link href="/pricing#pro">Explore Pro</Link></div>
         </div>

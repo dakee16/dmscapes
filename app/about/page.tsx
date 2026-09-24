@@ -89,7 +89,7 @@ export default function AboutPage() {
           <figure className="dm-about-image">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/experience/cozy-room.webp" width={1536} height={1024} alt="A dorm style study with blue bedding, warm wood, and soft string lights" loading="lazy" />
-            <figcaption><span className="dm-eyebrow">Illustrative style study</span></figcaption>
+            <figcaption><span className="dm-eyebrow">A little room. A lot of possibility.</span><span className="dm-eyebrow">Style study</span></figcaption>
           </figure>
           {/* Real-number stat callouts, in the site's mono stat-line language. */}
           <div className="mt-10 grid grid-cols-3 gap-4 rounded-2xl border border-ink/10 bg-card/70 px-4 py-6 sm:px-8">
@@ -284,12 +284,14 @@ export default function AboutPage() {
                 }}
                 aria-hidden="true"
               />
+              <p className="relative font-mono text-xs font-medium uppercase tracking-[0.18em] text-highlight">Enough reading</p>
               <h2 className="relative mx-auto mt-3 max-w-xl font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-                Plan your room.
+                Your next room starts here.
               </h2>
               <div className="relative mt-7">
                 <PlanCta className="inline-flex h-13 items-center rounded-xl bg-highlight px-8 text-base font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-white active:translate-y-0" />
               </div>
+              <p className="relative mt-4 font-mono text-[11px] uppercase tracking-wide text-white/60">One free plan · Make it yours</p>
             </div>
           </section>
         </div>

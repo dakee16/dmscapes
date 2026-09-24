@@ -153,6 +153,7 @@ export default function BillingPage() {
       <SiteHeader />
       <main id="page-content" tabIndex={-1} className={`dm-page ${s.page}`}>
         <AccountHeader active="billing" title="More room to" accent="create."
+          description="Your membership, your credits, every purchase. All in one place."
           action={<Link href="/plan" className={s.secondary}>Back to planning ↗︎</Link>} />
         {!ready ? <div className={s.skeleton} aria-busy="true" aria-label="Loading billing" /> : (
           <>
@@ -172,8 +173,9 @@ export default function BillingPage() {
                 </section>
                 {profile && (
                   <section id="buy-credits" className={s.topup}>
+                    <p className={s.eyebrow}>Keep the ideas coming</p>
                     <h2>Buy plan credits</h2>
-                    <p>${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. One credit generates one room plan.</p>
+                    <p>Top up at ${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. One credit generates one room plan. Buy what you need, when you need it.</p>
                     <div className={s.creditForm}><BuyCreditsForm source="billing" /></div>
                   </section>
                 )}

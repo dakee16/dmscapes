@@ -38,6 +38,11 @@ export default function LaunchVideo() {
           <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
             Watch a dorm <span className="hl">come together.</span>
           </h2>
+          <p className="mt-4 max-w-md text-base leading-relaxed text-ink-soft">
+            From the floor plan to the finishing touches. Choose your school,
+            find a vibe, and set a budget. Watch a room come together with a
+            layout to explore and a shopping list to make it yours.
+          </p>
           <Link
             href="/plan"
             className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-cobalt transition-colors hover:text-cobalt-deep"

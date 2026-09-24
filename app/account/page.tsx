@@ -141,12 +141,14 @@ export default function AccountPage() {
       <PurchaseThankYou />
       <main id="page-content" tabIndex={-1} className={`dm-page ${s.page}`}>
         <AccountHeader active="overview" title="Your personal" accent="studio."
+          description="All your room ideas, with room for the next one."
           action={<Link href="/plan" className={s.primary}>New room plan <span aria-hidden="true">↗︎</span></Link>} />
         {!ready ? <ListSkeleton /> : (
           <>
             <div className={s.overview}>
               <section className={s.welcome} aria-label="Account overview">
                 <IdentityCard name={profile?.full_name} username={profile?.username} email={user?.email} />
+                <p className={s.welcomeText}>A space for everything you&apos;re imagining. Revisit your layouts, share your favorites, or start something new.</p>
                 {!profile?.username && <button type="button" onClick={() => openAuthModal("profile")} className={s.secondary}>Set a username</button>}
                 <dl className={s.stats}>
                   <div><dt>Saved designs</dt><dd>{designs === null || loadFailed ? "…" : designs.length}</dd></div>
@@ -156,7 +158,7 @@ export default function AccountPage() {
               <MembershipCard profile={profile} />
             </div>
             <div className={s.sectionHeading}>
-              <div><h2>Saved designs</h2></div>
+              <div><h2>On your drawing board</h2><p>Your saved rooms, ready for another look.</p></div>
               {designs && designs.length >= 2 && (canCompare
                 ? <Link href="/account/compare" className={s.secondary}>Compare designs ↗︎</Link>
                 : <button type="button" onClick={() => openUpgrade("compare")} className={s.secondary}>Compare designs <span className="bg-highlight px-2 py-1 text-xs">Plus</span></button>)}
@@ -170,6 +172,7 @@ export default function AccountPage() {
               <div className={s.designGrid}>{designs.map(room => <DesignTile key={room.id} room={room} />)}</div>
             )}
             <div className={s.footer}>
+              <p>Your ideas live here. Make yourself at home.</p>
               <button type="button" onClick={handleLogout} disabled={loggingOut} className={s.secondary}>
                 {loggingOut ? "Logging out…" : "Log out"}
               </button>

@@ -24,8 +24,12 @@ export default function Schools() {
           Supported schools
         </p>
         <h2 className="mt-3 max-w-xl font-display text-3xl font-bold tracking-tight sm:text-4xl">
-          Find your college.
+          We already know your room
         </h2>
+        <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-ink-soft">
+          Floor plans and dimensions sourced from official housing documents.
+          A few of them:
+        </p>
         <Link
           href="/colleges"
           className="group mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-cobalt transition-colors hover:text-cobalt-deep"
@@ -64,7 +68,8 @@ export default function Schools() {
 
         <div className="mt-8 flex flex-col items-start gap-3 rounded-xl border border-dashed border-ink/25 bg-white px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-ink-soft">
-            <span className="font-semibold text-ink">Don&apos;t see your school?</span>
+            <span className="font-semibold text-ink">Don&apos;t see your school?</span>{" "}
+            Tell us where you&apos;re heading and help us choose what to add next.
           </p>
           <Link
             href="/add-school"

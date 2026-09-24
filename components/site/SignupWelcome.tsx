@@ -107,6 +107,11 @@ export default function SignupWelcome() {
           >
             Welcome to <em>dormscape.</em>
           </h2>
+          <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
+            Here&rsquo;s your first design credit, on us. Pick your school, choose
+            a vibe, and start imagining your space with a room layout and
+            shoppable picks for your budget.
+          </p>
 
           {/* The credit, front and center. */}
           <div className={`${styles.welcomeCredit} mt-6 flex items-center gap-4 border border-cobalt/15 bg-cobalt/[0.05] p-4`}>
@@ -116,7 +121,7 @@ export default function SignupWelcome() {
             <div className="min-w-0">
               <p className="text-sm font-semibold text-ink">1 free design credit</p>
               <p className="mt-0.5 text-[13px] leading-snug text-ink-soft">
-                Generate one room plan. No card required.
+                Enough to plan a full room, start to finish. No card needed.
               </p>
             </div>
           </div>

@@ -52,9 +52,11 @@ export function MembershipCard({ profile, billing = false }: { profile: Profile 
         <strong>{!profile ? "…" : state.designsLeft}</strong>
         <span>Room plans remaining</span>
       </div>
-      {profile && state.empty && (
-        <p className={s.memberNote}>Top up to generate another room.</p>
-      )}
+      <p className={s.memberNote}>
+        {!profile ? "Fetching your plan details." : state.empty
+          ? "Ready for another idea? Top up whenever you like."
+          : "One plan. A whole new possibility."}
+      </p>
       <div className={s.cardBottom}>
         <span>{profile?.username ? "@" + profile.username : "Dormscape member"}</span>
         <Link href={billing ? "#buy-credits" : "/account/billing"}>
@@ -71,7 +73,7 @@ export function IdentityCard({ name, username, email }: { name?: string | null; 
   return (
     <div className={s.identity}>
       <span className={s.avatar} aria-hidden="true">{initials}</span>
-      <div><h2>{displayName}</h2>{email && <p className={s.identityEmail}>{email}</p>}</div>
+      <div><p className={s.eyebrow}>Made by you</p><h2>{displayName}</h2>{email && <p className={s.identityEmail}>{email}</p>}</div>
     </div>
   );
 }

@@ -145,6 +145,11 @@ export default function PlusWelcome({
           >
             More room <span className="hl">to plan.</span>
           </h2>
+          <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
+            Try another style. Compare your favorites. Plus adds {PLUS_INITIAL_CREDITS} plan
+            credits, all nine preset vibes, 2D room drawing, and exports.
+            Saving your designs is always free.
+          </p>
 
           <div className="mt-7 grid grid-cols-1 gap-x-5 gap-y-4 sm:grid-cols-2">
             {FEATURES.map((f) => (

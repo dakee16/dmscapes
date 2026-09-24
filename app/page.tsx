@@ -8,6 +8,7 @@ import Vibes from "@/components/Vibes";
 import CreateVibePromo from "@/components/site/CreateVibePromo";
 import Schools from "@/components/Schools";
 import PlusPitch from "@/components/site/PlusPitch";
+import PlanCta from "@/components/site/PlanCta";
 import Footer from "@/components/Footer";
 import Reveal from "@/components/site/Reveal";
 import HomeFaq from "@/components/site/HomeFaq";
@@ -59,22 +60,31 @@ export default function Home() {
               <br />
               <em>answered.</em>
             </h2>
+            <p>The short version of what people ask most.</p>
           </Reveal>
           <div>
             <HomeFaq />
             <p className="dm-faq-after">
-              <Link href="/faq">Full FAQ</Link> ·{" "}
-              <Link href="/contact">Contact us</Link>
+              Still curious? <Link href="/faq">Read the full FAQ</Link> or{" "}
+              <Link href="/contact">get in touch</Link>.
             </p>
           </div>
         </section>
         <section className="dm-final-cta dm-section">
+          <div className="dm-eyebrow">
+            <span>Your next chapter starts here.</span>
+            <span>Your room is waiting.</span>
+          </div>
           <Link href="/plan">
             <span>
               Make <em>room.</em>
             </span>
             <span aria-hidden="true">↗︎</span>
           </Link>
+          <div>
+            <PlanCta />
+            <span>No account needed to explore.</span>
+          </div>
         </section>
       </main>
       <Footer />

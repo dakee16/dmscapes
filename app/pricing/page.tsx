@@ -311,6 +311,10 @@ export default function PricingPage() {
             <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
               Free to plan. <span className="hl">Pay once to go further.</span>
             </h1>
+            <p className="mt-4 text-lg leading-relaxed text-ink-soft">
+              Start with one free room plan. No trial timer, no card.
+              Upgrade when you&apos;re ready to explore more possibilities.
+            </p>
           </div>
 
           <BlueprintArtwork variant="orbit" /></div>
@@ -336,11 +340,11 @@ export default function PricingPage() {
                   </span>
                 </div>
                 <p className="mt-1 max-w-xl text-[15px] leading-relaxed text-ink-soft">
-                  Buy room-plan credits for{" "}
+                  Need another room? Buy room-plan credits for{" "}
                   <span className="font-semibold text-ink">
                     ${FLEX_CREDIT_PRICE_USD.toFixed(2)} each
                   </span>
-                  . Includes Free features.
+                  . Keep the Free features and top up whenever inspiration strikes.
                 </p>
               </div>
             </div>
@@ -370,7 +374,7 @@ export default function PricingPage() {
 
               <PriceDisplay amount="0" cadence="forever" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                One room plan. Unlimited saving.
+                Try the planner on the house: one room plan, with free unlimited saving.
               </p>
 
               <Link
@@ -415,7 +419,7 @@ export default function PricingPage() {
 
               <PriceDisplay amount={PLUS_PRICE_USD.toFixed(2)} was={PLUS_PRICE_WAS_USD.toFixed(2)} cadence="once" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                Includes {PLUS_INITIAL_CREDITS} plan credits. Recharge {RECHARGE_CREDITS} for $
+                A one-time upgrade with {PLUS_INITIAL_CREDITS} plan credits. Recharge {RECHARGE_CREDITS} for $
                 {RECHARGE_PRICE_USD.toFixed(2)}.
               </p>
 
@@ -432,7 +436,8 @@ export default function PricingPage() {
                 <p className="text-[13px] leading-relaxed text-ink">
                   <span className="font-semibold">How credits work:</span> each new
                   room plan uses one credit. Saving, exports, and comparisons
-                  don’t use credits.
+                  don’t use credits. Your saved designs and paid tools stay
+                  available even when your credit balance reaches zero.
                 </p>
               </div>
 
@@ -457,7 +462,8 @@ export default function PricingPage() {
 
               <PriceDisplay amount={PRO_PRICE_USD.toFixed(2)} was={PRO_PRICE_WAS_USD.toFixed(2)} cadence="once" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                {PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D tools.
+                Build in 3D, find your own vibe, and bring your ideas to life.
+                Includes {PRO_INITIAL_CREDITS} plan credits and all Plus tools.
               </p>
 
               <div className="mt-6">
