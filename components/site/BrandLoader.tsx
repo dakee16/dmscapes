@@ -1,4 +1,5 @@
 import s from "./BrandLoader.module.css";
+import BrandMark from "./BrandMark";
 
 /** Lightweight floor-plan animation shared by route and studio loading states. */
 export default function BrandLoader({label="Making room for your ideas…",className=""}:{label?:string;className?:string}) {
@@ -14,7 +15,7 @@ export default function BrandLoader({label="Making room for your ideas…",class
         <g className={s.cursor}><path d="M0 0L3 21L9 15L16 24L21 20L14 12L23 9Z" fill="#17172b" stroke="#fafaf8" strokeWidth="2"/></g>
       </svg>
     </div>
-    <span className={s.wordmark} aria-hidden="true">dormscape<span>.</span></span>
+    <span className={s.wordmark} aria-hidden="true"><BrandMark size={34}/>dormscape<span>.</span></span>
     {label&&<span className={s.caption} aria-hidden="true">{label}</span>}
     <div className={s.track} aria-hidden="true"><i/></div>
   </div>;

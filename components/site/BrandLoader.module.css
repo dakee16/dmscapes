@@ -3,6 +3,7 @@
 .drawing svg { display:block; width:100%; overflow:visible; }
 .wordmark { font:600 25px/1.2 var(--font-syne),sans-serif; letter-spacing:-.06em; color:#17172b; }
 .wordmark > span { color:#2b4eff; }
+.wordmark { display:flex; align-items:center; gap:8px; }.wordmark > span { margin-left:-8px; }
 .caption { margin-top:13px; max-width:280px; color:#656675; font:400 14px/1.6 var(--font-instrument),sans-serif; }
 .wall,.door { stroke-dasharray:1; animation:trace 3.8s cubic-bezier(.22,.7,.2,1) infinite; }
 .door { animation-delay:.45s; }
@@ -19,4 +20,3 @@
 :global([data-motion="paused"]) .loader * { animation:none; }
 :global([data-motion="paused"]) .cursor { transform:translate(141px,140px); }
 :global([data-motion="paused"]) .track i { width:100%; opacity:.45; }
-

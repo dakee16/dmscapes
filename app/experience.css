@@ -66,8 +66,11 @@ body {
   gap: 24px;
 }
 .dm-wordmark > img {
-  display: none;
+  display: block;
 }
+.dm-wordmark { gap:10px; }
+@media(max-width:480px){.dm-wordmark > .dm-brand-mark{width:34px!important;height:34px!important}.dm-wordmark{gap:7px}}
+@media(max-width:380px){.dm-nav .dm-wordmark .dm-brand-type{font-size:20px;letter-spacing:-1px}.dm-nav .dm-wordmark > .dm-brand-mark{width:30px!important;height:30px!important}}
 .dm-brand-type {
   font-family: var(--font-bricolage), sans-serif;
   font-size: clamp(23px, 2vw, 31px);

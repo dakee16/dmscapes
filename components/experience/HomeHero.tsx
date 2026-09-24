@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import BrandMark from "@/components/site/BrandMark";
 import { motion } from "framer-motion";
 import RoomModel from "./RoomModel";
 import PlanCta from "@/components/site/PlanCta";
@@ -76,10 +77,7 @@ export default function HomeHero() {
         </div>
         <div className="dm-hero-bottom">
           <div className="dm-social-proof">
-            <span aria-hidden="true">
-              D<span>S</span>
-              <span>↗︎</span>
-            </span>
+            <BrandMark size={48}/>
             <p>
               <strong>500+</strong> rooms planned
               <br />

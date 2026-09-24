@@ -1,6 +1,7 @@
 import * as T from "./vendor/three.module.min.js";
 import { createModelKit } from "./studio-models.js";
 export function createStudioScene(container, options) {
+  const brandMark=new Image();brandMark.src="/brand/dormscape-mark.png";
   const renderer=new T.WebGLRenderer({antialias:true});
   renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.6));renderer.setClearColor("#efeee8");
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
@@ -278,7 +279,8 @@ export function createStudioScene(container, options) {
       marker.visible=false;guides.visible=false;renderer.render(scene,camera);
       const out=document.createElement("canvas");out.width=canvas.width;out.height=canvas.height;const ctx=out.getContext("2d");ctx.drawImage(canvas,0,0);
       const fs=Math.max(14,out.width*.016);ctx.font="600 "+fs+"px system-ui";const text="dormscape.us · Room concept",tw=ctx.measureText(text).width;
-      ctx.fillStyle="#fafaf8";ctx.fillRect(out.width-tw-fs*2,out.height-fs*3,tw+fs*1.5,fs*2.2);
+      ctx.fillStyle="#fafaf8";ctx.fillRect(out.width-tw-fs*4.3,out.height-fs*3,tw+fs*3.8,fs*2.2);
+      if(brandMark.complete&&brandMark.naturalWidth)ctx.drawImage(brandMark,out.width-tw-fs*3.9,out.height-fs*2.8,fs*1.8,fs*1.8);
       ctx.fillStyle="#2b4eff";ctx.fillText(text,out.width-tw-fs*1.3,out.height-fs*1.5);guides.visible=true;request();return out.toDataURL("image/png");
     },
     destroy(){disposed=true;cancelAnimationFrame(raf);resize.disconnect();document.removeEventListener("visibilitychange",visible);

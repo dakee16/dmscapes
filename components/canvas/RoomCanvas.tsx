@@ -31,6 +31,7 @@ import { clamp, footprint, invalidItems, layerOf, pointInPolygon, rotateFurnitur
 import { createPortal } from "react-dom";
 import { useCanvasDock } from "./CanvasControlsContext";
 import CanvasToolRail from "./CanvasToolRail";
+import { brandImage } from "@/lib/brand-image";
 import FurnitureGlyph from "./FurnitureGlyph";
 import RotationHandle from "./RotationHandle";
 import { feetLabel, fitViewport, placedCoordinate, zoomAt } from "./viewport";
@@ -89,18 +90,17 @@ const INK = "#17172b";
 const GRID = "#dce0e7";
 const COBALT = "#2b4eff";
 const RED = "#dc2626";
-// Brand-mark color for the export watermark (matches the "d" badge + wordmark).
 const AMBER = "#f0b100";
 
 /**
- * Bottom-right brand lockup baked into exported PNGs: the "d" badge plus the
+ * Bottom-right brand lockup baked into exported PNGs: the ribbon mark plus the
  * "dormscape" wordmark on a soft, mostly-transparent backing. Subtle
  * over the room, but crisp enough to read as intentional branding when shared.
  */
 function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
   const WM_FONT = 'system-ui, -apple-system, "Segoe UI", sans-serif';
   const fontSize = 14;
-  const iconSize = 16;
+  const iconSize = 26;
   const gap = 6; // icon-to-wordmark
   const padX = 9;
   const padY = 6;
@@ -147,31 +147,8 @@ function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
 
   const ix = padX;
   const iy = (pillH - iconSize) / 2;
-  group.add(
-    new Konva.Rect({
-      x: ix,
-      y: iy,
-      width: iconSize,
-      height: iconSize,
-      cornerRadius: 3.5,
-      fill: COBALT,
-    })
-  );
-  group.add(
-    new Konva.Text({
-      text: "d",
-      x: ix,
-      y: iy,
-      width: iconSize,
-      height: iconSize,
-      align: "center",
-      verticalAlign: "middle",
-      fontFamily: WM_FONT,
-      fontStyle: "800",
-      fontSize: 12,
-      fill: INK,
-    })
-  );
+  const logo = brandImage();
+  if (logo) group.add(new Konva.Image({image:logo,x:ix,y:iy,width:iconSize,height:iconSize}));
 
   const tx = padX + iconSize + gap;
   const ty = (pillH - textH) / 2;
@@ -206,6 +183,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   ref
 ) {
   const dock = useCanvasDock();
+  useEffect(() => { brandImage(); }, []);
   const [openingPreview,setOpeningPreview]=useState<{index:number|null;opening:WallOpening}|null>(null);
   const openingCancelled=useRef(false);
   const openingGrab=useRef<Point>({x:0,y:0});

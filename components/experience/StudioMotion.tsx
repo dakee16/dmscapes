@@ -1,4 +1,5 @@
 "use client";
+import BrandMark from "@/components/site/BrandMark";
 
 import { useRef, type CSSProperties, type ReactNode } from "react";
 import { motion, useInView, useTransform, type MotionValue } from "framer-motion";
@@ -100,7 +101,7 @@ export function CampusMap() {
 export function ProductRadar() {
   return <MotionFrame className={styles.radar}>
     <div className={styles.radarRings}><i /><i /><i /><span /></div>
-    <div className={styles.radarCore}>d<span>Matching<br />your brief</span></div>
+    <div className={styles.radarCore}><BrandMark size={60}/><span>Matching<br />your brief</span></div>
     {["TEXTURES", "LIGHTING", "THE DETAILS"].map((name, i) => <div key={name} className={styles.radarCard} style={{ "--i": i } as CSSProperties}><span>0{i + 1} / {name}</span><svg viewBox="0 0 100 64" fill="none" stroke="currentColor" strokeWidth="2">{i === 0 ? <><rect x="18" y="10" width="64" height="44" rx="3" /><path d="M25 18h50M25 25h50M25 32h50M25 39h50M25 46h50" opacity=".3" /></> : i === 1 ? <><path d="M25 34C25 1 75 1 75 34ZM50 34v21M34 55h32" /><ellipse cx="50" cy="34" rx="25" ry="3" /></> : <><rect x="25" y="5" width="50" height="54" /><circle cx="50" cy="26" r="12" /><path d="m30 52 13-14 12 9 15-17" /></>}</svg><i /></div>)}
   </MotionFrame>;
 }

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ProductRadar } from "@/components/experience/StudioMotion";
 import { MotionToggle, useExperienceMotion } from "@/components/experience/MotionProvider";
 import { VIBE_LOADING_LINES } from "@/lib/custom-vibe";
+import BrandMark from "@/components/site/BrandMark";
 
 const SEARCH_CATEGORIES = ["Bedding & textiles", "Lighting & decor", "Storage & essentials"];
 
@@ -40,7 +41,7 @@ export default function VibeLoading({
   return (
     <div className="dm-vibe-loading" aria-label="Finding products for your custom vibe" aria-busy="true">
       <header className="dm-vibe-loading-header">
-        <span className="dm-brand-type font-bold">dorm<span className="text-cobalt">scape</span></span>
+        <span className="flex items-center gap-2"><BrandMark size={34}/><span className="dm-brand-type font-bold">dorm<span className="text-cobalt">scape</span></span></span>
         <div><span className="dm-eyebrow">Custom vibe / In progress</span><MotionToggle /></div>
       </header>
 

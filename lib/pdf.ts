@@ -1,5 +1,6 @@
 // Client-side shopping-list PDF (Plus feature). jsPDF is dynamically imported
 // so it stays out of the main bundle and never runs on the server.
+import { BRAND_MARK_URL } from "./brand-image";
 
 export interface ShoppingListItem {
   name: string;
@@ -22,10 +23,9 @@ export interface ShoppingListPdfInput {
 
 type RGB = [number, number, number];
 const INK: RGB = [23, 23, 43];
-const AMBER: RGB = [240, 177, 0];
+const COBALT: RGB = [43, 78, 255];
 const SOFT: RGB = [110, 113, 130];
 const LINE: RGB = [220, 225, 236];
-// Icon-mark color (matches the "d" badge and the canvas export watermark).
 
 const money = (n: number) => `$${n.toFixed(2)}`;
 
@@ -43,16 +43,14 @@ export async function buildShoppingListDoc(input: ShoppingListPdfInput) {
   const nameMaxW = catX - M - 12;
   let y = 66;
 
-  // --- Brand lockup: "d" badge + wordmark ---
-  const badge = 16; // badge side
+  // The same approved artwork used in the website header and canvas exports.
+  const badge = 24;
   const iconX = M;
-  const iconY = y - 14;
-  doc.setFillColor(...AMBER);
-  doc.roundedRect(iconX, iconY, badge, badge, 3.2, 3.2, "F");
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(13);
-  doc.setTextColor(...INK);
-  doc.text("d", iconX + badge / 2, iconY + badge - 4.2, { align: "center" });
+  const iconY = y - 20;
+  try {
+    const response = await fetch(BRAND_MARK_URL);
+    if (response.ok) doc.addImage(new Uint8Array(await response.arrayBuffer()), "PNG", iconX, iconY, badge, badge);
+  } catch { /* An offline image failure must not prevent a shopping-list download. */ }
 
   const wordX = M + badge + 8;
   doc.setFont("helvetica", "bold");
@@ -60,7 +58,7 @@ export async function buildShoppingListDoc(input: ShoppingListPdfInput) {
   doc.setTextColor(...INK);
   doc.text("dorm", wordX, y);
   const dormW = doc.getTextWidth("dorm");
-  doc.setTextColor(...AMBER);
+  doc.setTextColor(...COBALT);
   doc.text("scape", wordX + dormW, y);
 
   doc.setFont("helvetica", "normal");
