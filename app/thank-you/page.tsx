@@ -3,7 +3,6 @@ import SiteHeader from "@/components/site/SiteHeader";
 import ThankYouView from "./ThankYouView";
 
 export const metadata: Metadata = {
-  title: "Thank you",
   description: "Your dorm room is handled. Thanks for planning with Dormscape.",
   robots: { index: false }, // a post-purchase moment, not a landing page
 };

@@ -48,12 +48,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us",
   ),
-  title: {
-    // Lowercase to match the wordmark; this is the
-    // browser tab title, so every page inherits the lowercase brand token.
-    default: "dormscape",
-    template: "%s | dormscape",
-  },
+  // Every route inherits the same lowercase browser tab title.
+  title: "dormscape",
   description: DESCRIPTION,
   openGraph: {
     title: "dormscape: your dorm room, planned before move-in day",

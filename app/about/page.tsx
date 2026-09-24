@@ -6,7 +6,6 @@ import PlanCta from "@/components/site/PlanCta";
 import { SCHOOLS } from "@/lib/schools";
 
 export const metadata: Metadata = {
-  title: "About",
   description:
     "Dormscape is a free dorm room planner built on real dorm dimensions from official housing data. See your exact room, set a budget, shop a list that fits.",
   alternates: { canonical: "/about" },

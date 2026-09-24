@@ -12,7 +12,6 @@ import SiteHeader from "@/components/site/SiteHeader";
 // are navigation/structure only. The legal paragraph text below is unchanged.
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
   description:
     "Dormscape's terms of service: what the free dorm planner does, what it doesn't guarantee, and how the Amazon affiliate links work.",
 };

@@ -10,7 +10,6 @@ import SiteHeader from "@/components/site/SiteHeader";
 // before scaling to meaningful user volume.
 
 export const metadata: Metadata = {
-  title: "Cookie Policy",
   description:
     "Dormscape's cookie policy: the sign-in session, planner progress, and PostHog analytics cookies we use, in plain language.",
 };

@@ -11,7 +11,6 @@ const DESCRIPTION =
   "Dorm planning answers: room measurements, budgets, styles, and Pro 3D room building. Learn to draw walls, add doors and windows, and furnish your room in 3D.";
 
 export const metadata: Metadata = {
-  title: "FAQ",
   description: DESCRIPTION,
   alternates: { canonical: "/faq" },
   openGraph: {

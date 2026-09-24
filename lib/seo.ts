@@ -30,15 +30,14 @@ const OG_IMAGE = {
 
 /**
  * Build a page's Metadata with a canonical URL and matching OG/Twitter cards.
- * `title` is the page title (the root layout appends the brand); `ogTitle`
- * overrides the social title when the branded form reads better there.
+ * `title` supplies the social card title; `ogTitle` can override that form.
+ * The browser tab title is inherited from the root layout.
  */
 export function pageMetadata({
   title,
   description,
   path,
   ogTitle,
-  absoluteTitle = false,
   noIndex = false,
   type = "website",
 }: {
@@ -46,15 +45,12 @@ export function pageMetadata({
   description: string;
   path: string;
   ogTitle?: string;
-  /** Skip the "| dormscape" template (the homepage carries the brand itself). */
-  absoluteTitle?: boolean;
   /** Utility pages (login, thank-you) that shouldn't compete in the index. */
   noIndex?: boolean;
   type?: "website" | "article";
 }): Metadata {
   const social = ogTitle ?? `${title} | ${SITE_NAME.toLowerCase()}`;
   return {
-    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
     ...(noIndex ? { robots: { index: false, follow: true } } : {}),

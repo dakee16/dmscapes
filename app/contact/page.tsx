@@ -4,7 +4,6 @@ import SiteHeader from "@/components/site/SiteHeader";
 import ContactForm from "@/components/site/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact",
   description:
     "Questions, feedback, a school we should add, or a bug to report? Send the Dormscape team a message.",
 };

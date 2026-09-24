@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { isPlusTier, isPro } from "@/lib/plan";
-import BrandMark from "./BrandMark";
 
 /**
  * The Dormscape wordmark. The tier marker (Plus "+" or "PRO") is rendered here,
@@ -28,7 +27,6 @@ export default function Wordmark({
         pro ? "Dormscape Pro home" : plus ? "Dormscape Plus home" : "Dormscape home"
       }
     >
-      <BrandMark className="dm-brand-mark" />
       <span className={`dm-brand-type font-bold tracking-tight ${textClassName}`}>
         dorm<span className="text-cobalt">scape</span>
         {plus && (

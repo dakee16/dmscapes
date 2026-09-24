@@ -28,7 +28,6 @@ const DESCRIPTION =
   "Try Dormscape free. Plus unlocks 2D drawing and exports for $4.99. Pro is $14.99 once for unlimited plans, custom vibes, 3D Room Builder, and 3D Room Studio.";
 
 export const metadata: Metadata = {
-  title: "Pricing",
   description: DESCRIPTION,
   alternates: { canonical: "/pricing" },
   openGraph: {

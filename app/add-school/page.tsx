@@ -4,7 +4,6 @@ import SiteHeader from "@/components/site/SiteHeader";
 import AddSchoolForm from "@/components/site/AddSchoolForm";
 
 export const metadata: Metadata = {
-  title: "Add My School",
   description:
     "Add your college to the Dormscape dorm room planner. Tell us the building and room size and we'll add it.",
 };

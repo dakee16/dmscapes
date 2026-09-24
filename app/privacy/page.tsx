@@ -13,7 +13,6 @@ import SiteHeader from "@/components/site/SiteHeader";
 // are navigation/structure only. The legal text below is unchanged.
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
   description:
     "Dormscape's privacy policy: what account, design, and usage data we collect, how it's stored, and how to delete your data.",
 };

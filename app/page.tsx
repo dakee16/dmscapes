@@ -26,7 +26,6 @@ const DORM_COUNT = SCHOOLS.reduce((n, s) => n + s.dorms.length, 0);
 
 export const metadata = pageMetadata({
   title: "Dormscape: Free Dorm Room Planner With Real Dorm Dimensions",
-  absoluteTitle: true,
   description: `Plan your college dorm room before move-in. Find your exact room across ${SCHOOLS.length} schools and ${DORM_COUNT} residence halls, get a layout that fits it, set your style and budget, and leave with a shoppable list. Start free in 2D; explore live 3D with Pro.`,
   path: "/",
   ogTitle: "dormscape: your dorm room, planned before move-in day",
