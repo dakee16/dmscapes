@@ -9,6 +9,8 @@ import {
   PRO_PRICE_CENTS,
   RECHARGE_PRICE_CENTS,
   PLUS_INITIAL_CREDITS,
+  PRO_INITIAL_CREDITS,
+  CREDIT_PLAN_VERSION,
   RECHARGE_CREDITS,
   FLEX_CREDIT_PRICE_CENTS,
   FLEX_MIN_QTY,
@@ -20,34 +22,31 @@ import {
 // Stripe's Node SDK needs the Node runtime, not edge.
 export const runtime = "nodejs";
 
-// Per-purchase config: price (falls back to inline price_data when no env price
-// id is set), the Stripe line-item copy, and the post-payment redirect.
-// Only the three fixed-price purchases live here; "flex_credits" is
-// quantity-priced and handled in its own branch below, so it's excluded.
+// Inline prices keep Stripe's checkout copy in sync with the current allowance.
 const CFG: Record<
   Exclude<PurchaseType, "flex_credits">,
-  { cents: number; envKey: string; name: string; description: string; success: string }
+  { cents: number; credits: number; name: string; description: string; success: string }
 > = {
   plus: {
     cents: PLUS_PRICE_CENTS,
-    envKey: "STRIPE_PLUS_PRICE_ID",
+    credits: PLUS_INITIAL_CREDITS,
     name: "Dormscape Plus",
-    description: `One-time upgrade: ${PLUS_INITIAL_CREDITS} plan credits and ${PLUS_INITIAL_CREDITS} saves, all 9 vibes, and PDF/PNG export, comparison, and priority school requests unlocked for good.`,
+    description: `One-time upgrade: ${PLUS_INITIAL_CREDITS} plan credits, free saving, all 9 vibes, and PDF/PNG export, comparison, and priority school requests unlocked for good.`,
     success: "upgraded=plus",
   },
   pro: {
     cents: PRO_PRICE_CENTS,
-    envKey: "STRIPE_PRO_PRICE_ID",
+    credits: PRO_INITIAL_CREDITS,
     name: "Dormscape Pro",
     description:
-      "One-time upgrade: unlimited plans and saves, all 9 vibes, and every premium feature, forever.",
+      `One-time upgrade: ${PRO_INITIAL_CREDITS} plan credits, free saving, 3D Room Builder, live 3D planning, custom vibes, and all Plus tools. Top up credits separately.`,
     success: "upgraded=pro",
   },
   recharge: {
     cents: RECHARGE_PRICE_CENTS,
-    envKey: "STRIPE_RECHARGE_PRICE_ID",
+    credits: RECHARGE_CREDITS,
     name: "Dormscape Plus recharge",
-    description: `${RECHARGE_CREDITS} more plan credits and ${RECHARGE_CREDITS} more saves added to your Plus account.`,
+    description: `${RECHARGE_CREDITS} more plan credits added to your Plus account. Saving uses no credits.`,
     success: "recharged=1",
   },
 };
@@ -118,13 +117,15 @@ export async function POST(request: Request) {
   let email: string | undefined;
   let customerId: string | undefined;
   const supabase = getServiceClient();
-  if (supabase) {
-    const { data } = await supabase
+  if (!supabase) return NextResponse.json({ error: "Couldn't load your billing account. Try again." }, { status: 503 });
+  {
+    const { data, error } = await supabase
       .from("profiles")
       .select("email, plan, stripe_customer_id")
       .eq("id", userId)
       .maybeSingle();
-    const plan = data?.plan ?? "free";
+    if (error || !data) return NextResponse.json({ error: "Couldn't load your billing account. Try again." }, { status: 503 });
+    const plan = data.plan ?? "free";
     // Guard against buying something the account can't use.
     if (type === "plus" && (plan === "plus" || plan === "pro")) {
       return NextResponse.json(
@@ -140,34 +141,25 @@ export async function POST(request: Request) {
     }
     if (type === "recharge" && plan !== "plus") {
       return NextResponse.json(
-        { error: "Recharges are for Plus accounts. Grab Plus or Pro first.", needsPlus: true },
+        { error: "This recharge is for Plus accounts. Other tiers can buy credits individually.", needsPlus: true },
         { status: 409 }
       );
     }
-    // Flex credits are for Free, Flex, and Plus. Pro is already unlimited, so
-    // selling it à-la-carte credits makes no sense, block it.
-    if (type === "flex_credits" && plan === "pro") {
-      return NextResponse.json(
-        { error: "Pro already has unlimited plans, so no credits are needed.", alreadyOwned: true },
-        { status: 409 }
-      );
-    }
+    // Every tier can add credits while retaining its existing feature access.
     email = data?.email ?? undefined;
     customerId = data?.stripe_customer_id ?? undefined;
   }
 
   const origin = process.env.NEXT_PUBLIC_SITE_URL ?? new URL(request.url).origin;
 
-  // Build line items, the success redirect, and the metadata per purchase type.
-  // flex_credits is quantity-priced ($0.99 × N, quantity on the line item); the
-  // other three are fixed and pull an optional env price id. The webhook reads
-  // metadata.quantity to know how many credits to grant.
-  const metadata: Record<string, string> = { user_id: userId, purchase: type };
+  // Pin each grant in server-owned metadata so an in-flight checkout keeps its offer.
+  const metadata: Record<string, string> = { user_id: userId, purchase: type, credit_plan_version: CREDIT_PLAN_VERSION };
   let lineItems: Stripe.Checkout.SessionCreateParams.LineItem[];
   let successUrl: string;
 
   if (type === "flex_credits") {
     metadata.quantity = String(quantity);
+    metadata.credit_amount = String(quantity);
     lineItems = [
       {
         quantity,
@@ -186,19 +178,14 @@ export async function POST(request: Request) {
     successUrl = `${origin}/account/billing?credits=${quantity}`;
   } else {
     const cfg = CFG[type];
-    const priceId = process.env[cfg.envKey];
-    lineItems = [
-      priceId
-        ? { price: priceId, quantity: 1 }
-        : {
-            quantity: 1,
-            price_data: {
-              currency: "usd",
-              unit_amount: cfg.cents,
-              product_data: { name: cfg.name, description: cfg.description },
-            },
-          },
-    ];
+    metadata.credit_amount = String(cfg.credits);
+    lineItems = [{
+      quantity: 1,
+      price_data: {
+        currency: "usd", unit_amount: cfg.cents,
+        product_data: { name: cfg.name, description: cfg.description },
+      },
+    }];
     successUrl = `${origin}/account?${cfg.success}`;
   }
 

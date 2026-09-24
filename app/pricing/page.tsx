@@ -7,6 +7,9 @@ import UpgradeButton from "@/components/site/UpgradeButton";
 import { SCHOOLS } from "@/lib/schools";
 import {
   PLUS_PRICE_USD,
+  PLUS_INITIAL_CREDITS,
+  PRO_INITIAL_CREDITS,
+  RECHARGE_CREDITS,
   PLUS_PRICE_WAS_USD,
   PRO_PRICE_USD,
   PRO_PRICE_WAS_USD,
@@ -25,7 +28,7 @@ const ROOM_LAYOUTS = SCHOOLS.reduce(
 const ROOM_LAYOUTS_FLOOR = Math.floor(ROOM_LAYOUTS / 100) * 100;
 
 const DESCRIPTION =
-  "Try Dormscape free. Plus unlocks 2D drawing and exports for $4.99. Pro is $14.99 once for unlimited plans, custom vibes, 3D Room Builder, and 3D Room Studio.";
+  `Try Dormscape free. Plus includes ${PLUS_INITIAL_CREDITS} plan credits for $${PLUS_PRICE_USD.toFixed(2)}. Pro includes ${PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D tools for $${PRO_PRICE_USD.toFixed(2)}. One-time purchases.`;
 
 export const metadata: Metadata = {
   description: DESCRIPTION,
@@ -77,8 +80,8 @@ const FREE_PERKS: React.ReactNode[] = [
 // saving is free, and features are forever.
 const PLUS_PERKS: { title: string; body: string }[] = [
   {
-    title: "5 plan credits",
-    body: "One plan credit per new room you generate. Recharge 5 more for $2.99 whenever you run low. Saving your designs is always free.",
+    title: `${PLUS_INITIAL_CREDITS} plan credits`,
+    body: `One credit per new room plan. Recharge ${RECHARGE_CREDITS} more for $${RECHARGE_PRICE_USD.toFixed(2)}. Saving your designs is always free.`,
   },
   {
     title: "All 9 vibes",
@@ -106,13 +109,13 @@ const PLUS_PERKS: { title: string; body: string }[] = [
   },
 ];
 
-// Pro perks: the ceiling. Unlimited, everything, no metering.
+// Pro includes a larger generation allowance and permanent access to its tools.
 const PRO_PERKS: { title: string; body: string }[] = [
   {title: "3D Room Builder", body: "Build your own room on a 3D grid. Place a floor, draw custom walls, and add doors and windows. Your room carries straight into 3D planning. Pro only."},
   {title: "Live 3D Room Studio", body: "Arrange furniture, explore room, top, and inside views, and try finishes and lighting. Switch between the same 2D and 3D layout. Included with Pro, available now."},
   {
-    title: "Unlimited room plans",
-    body: "Generate as many rooms as you want. No credits, no counters, no recharges, ever.",
+    title: `${PRO_INITIAL_CREDITS} plan credits`,
+    body: `${PRO_INITIAL_CREDITS} included credits for new room plans. Top up for $${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. Your Pro tools and saved designs remain available at zero.`,
   },
   {
     title: "Create your own vibe",
@@ -123,8 +126,8 @@ const PRO_PERKS: { title: string; body: string }[] = [
     body: "All 9 vibes, PDF and PNG export, side-by-side comparison, and priority school requests.",
   },
   {
-    title: "One and done",
-    body: "A single payment unlocks it all for good. No subscription, nothing to renew.",
+    title: "No subscription",
+    body: "One payment unlocks Pro tools permanently. Plan generation uses credits, which you can top up separately. No recurring payments.",
   },
 ];
 
@@ -412,7 +415,7 @@ export default function PricingPage() {
 
               <PriceDisplay amount={PLUS_PRICE_USD.toFixed(2)} was={PLUS_PRICE_WAS_USD.toFixed(2)} cadence="once" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                Includes five plan credits. Recharge five for $
+                Includes {PLUS_INITIAL_CREDITS} plan credits. Recharge {RECHARGE_CREDITS} for $
                 {RECHARGE_PRICE_USD.toFixed(2)}.
               </p>
 
@@ -441,21 +444,20 @@ export default function PricingPage() {
               </div>
             </section>
 
-            {/* PRO TIER: the ceiling. Unlimited everything, amber-accented as the
-                top, most complete option. */}
+            {/* Pro: all tools, with its own included generation allowance. */}
             <section id="pro" className="scroll-mt-28 relative flex h-full flex-col rounded-2xl border border-amber/50 bg-card p-6 shadow-[0_24px_60px_-34px_rgba(240,177,0,0.55)] sm:p-8">
               <div className="flex items-center justify-between gap-3">
                 <h2 className="font-display text-2xl font-extrabold tracking-tight">
                   Pro
                 </h2>
                 <span className="inline-flex items-center rounded-full bg-amber/15 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
-                  Unlimited
+                  {PRO_INITIAL_CREDITS} credits
                 </span>
               </div>
 
               <PriceDisplay amount={PRO_PRICE_USD.toFixed(2)} was={PRO_PRICE_WAS_USD.toFixed(2)} cadence="once" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                Unlimited room plans, custom vibes, and 3D tools.
+                {PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D tools.
               </p>
 
               <div className="mt-6">

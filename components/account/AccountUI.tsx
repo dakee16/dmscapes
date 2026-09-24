@@ -49,16 +49,16 @@ export function MembershipCard({ profile, billing = false }: { profile: Profile 
       </div>
       <h2 className={s.planName}>{profile ? planLabel(profile) : "Loading…"}</h2>
       <div className={s.balance}>
-        <strong>{!profile ? "…" : state.unlimited ? "∞" : state.designsLeft}</strong>
-        <span>{state.unlimited ? "Unlimited room plans" : "Room plans remaining"}</span>
+        <strong>{!profile ? "…" : state.designsLeft}</strong>
+        <span>Room plans remaining</span>
       </div>
-      {profile && state.empty && !state.unlimited && (
+      {profile && state.empty && (
         <p className={s.memberNote}>Top up to generate another room.</p>
       )}
       <div className={s.cardBottom}>
         <span>{profile?.username ? "@" + profile.username : "Dormscape member"}</span>
-        <Link href={billing ? (state.unlimited ? "/plan" : "/pricing") : "/account/billing"}>
-          {billing ? (state.unlimited ? "Start a plan" : "Explore plans") : "Manage plan"} <span aria-hidden="true">↗︎</span>
+        <Link href={billing ? "#buy-credits" : "/account/billing"}>
+          {billing ? "Buy credits" : "Manage plan"} <span aria-hidden="true">↗︎</span>
         </Link>
       </div>
     </section>

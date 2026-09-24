@@ -90,9 +90,9 @@ function Body() {
         side by side, so you&rsquo;re reading the same rows for both rooms at
         once. It&rsquo;s one of the premium tools in{" "}
         <TextLink href="/pricing">Dormscape Plus</TextLink> (a one-time $4.99
-        upgrade that also includes 5 plan credits and 5 saves) and Pro ($14.99
-        for unlimited). The comparison view itself is the paid part, and since it
-        lines up two saved designs, the 5 saves in Plus are what make it practical.
+        upgrade that also includes 3 plan credits) and Pro ($14.99
+        with 10 plan credits). Saving designs is free on every tier. Generating a new
+        room uses one plan credit; opening, editing, and comparing saved designs do not.
         If you&rsquo;re deciding whether that&rsquo;s worth it, we broke it down
         honestly in{" "}
         <TextLink href="/blog/is-dormscape-plus-worth-it">
@@ -152,7 +152,7 @@ const post: BlogPost = {
     },
     {
       q: "Can I compare two dorm rooms side by side in Dormscape?",
-      a: "Yes. Dormscape has a side-by-side comparison view that lines up two saved designs with their budgets, styles, school, room, and dimensions. The comparison view is a premium tool, part of Dormscape Plus (a one-time $4.99 upgrade, which also includes 5 plan credits and 5 saves) and Pro ($14.99 for unlimited).",
+      a: "Yes. Dormscape has a side-by-side comparison view that lines up two saved designs with their budgets, styles, school, room, and dimensions. The comparison view is a premium tool, part of Dormscape Plus (a one-time $4.99 upgrade with 3 plan credits) and Pro ($14.99 with 10 plan credits). Saving and comparing designs do not use plan credits.",
     },
     {
       q: "What should I compare first when choosing between two rooms?",

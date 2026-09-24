@@ -22,7 +22,7 @@ const STEPS = [
   {
     n: "2",
     title: "Choose a vibe + budget",
-    body: "Nine styles, five of them free. Set anywhere between $200 and $1,500. The plan never goes a dollar over.",
+    body: "Nine styles, three of them free. Set anywhere between $200 and $1,500. The plan never goes a dollar over.",
     mock: (
       <div className="rounded-lg border border-ink/12 bg-white p-3">
         <div className="flex flex-wrap gap-1">

@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
+import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, FLEX_CREDIT_PRICE_USD } from "@/lib/plan";
 
 // Structural draft reflecting Dormscape's actual data flows and business
 // model as of this writing. Have a legal professional (or a service like
@@ -9,7 +10,7 @@ import SiteHeader from "@/components/site/SiteHeader";
 // text, especially before scaling to meaningful user volume.
 //
 // PRESENTATION NOTE: the TOC, section numbers, and "short version" summary box
-// are navigation/structure only. The legal paragraph text below is unchanged.
+// are navigation/structure only. Credit terms reflect the current offer.
 
 export const metadata: Metadata = {
   description:
@@ -41,13 +42,13 @@ const SECTIONS = [
 // Plain-language recap. Accurate restatement of the sections below; it sits
 // alongside the full text and does not replace it.
 const SUMMARY = [
-  "Dormscape is a free planning tool. No account or purchase is needed to plan a room.",
+  "A free account includes one generated room plan. More generations use purchased plan credits.",
   "We can't guarantee prices, availability, or that a product fits. Measure and check before you buy.",
   "Some links are Amazon affiliate links; we may earn a small commission at no extra cost to you, which keeps the tool free.",
   "We don't sell or ship products. Returns, refunds, and faulty items are handled by Amazon, not us.",
   "Paid Dormscape features (Plus, Flex credits, Pro) are final and non-refundable; we don't entertain refunds or payment disputes on them.",
   "We're not affiliated with any college; dorm data comes from public sources, not an official record.",
-  "Accounts are optional (only to save designs), and you can ask us to delete yours anytime.",
+  "An account is required to generate and save designs. You can ask us to delete yours anytime.",
   "Unsaved designs can be lost, so save before you leave the page.",
 ];
 
@@ -75,7 +76,7 @@ export default function TermsPage() {
           {/* Prominent "last updated" badge. */}
           <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-card px-3 py-1 font-mono text-xs font-medium uppercase tracking-wide text-ink-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-cobalt" aria-hidden="true" />
-            Last updated: July 23, 2026
+            Last updated: September 24, 2026
           </p>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft">
             Dormscape is a free tool. These terms explain what that means: what you can
@@ -128,8 +129,8 @@ export default function TermsPage() {
               Dormscape helps you plan a dorm room before you move in. Pick your school
               and building, get real room dimensions where they&rsquo;re published, choose a
               style, set a budget, and get a shoppable list of products that fit. The
-              planner itself is free to use. No account is required to build a room plan,
-              and no purchase is required either.
+              planner is free to try. You can browse rooms and styles without an account.
+              An account is required to generate a plan and includes one free generation.
             </p>
           </section>
 
@@ -185,6 +186,27 @@ export default function TermsPage() {
           <section id="paid-plans" className="mt-14 scroll-mt-24">
             <SectionHeading n={5} title="Paid plans and refunds" />
             <p className={P}>
+              Plus costs ${PLUS_PRICE_USD.toFixed(2)} once and includes {PLUS_INITIAL_CREDITS} plan credits.
+              A Plus recharge costs ${RECHARGE_PRICE_USD.toFixed(2)} and adds {RECHARGE_CREDITS} credits.
+              Pro costs ${PRO_PRICE_USD.toFixed(2)} once and includes {PRO_INITIAL_CREDITS} plan credits,
+              Pro tools, and all Plus tools. All tiers can buy additional credits
+              for ${FLEX_CREDIT_PRICE_USD.toFixed(2)} each. These are one-time purchases,
+              not subscriptions; included credits do not reset monthly.
+            </p>
+            <p className={P}>
+              A new generated room plan uses one plan credit. Custom vibes include
+              one free regeneration of the same vibe; subsequent regenerations use
+              one credit each. Editing furniture, drawing or building a room shell,
+              saving, sharing, exporting, comparing, and switching views use no credits.
+              At zero credits, new generations require a top-up; your purchased tools
+              and saved designs remain available.
+            </p>
+            <p className={P}>
+              Purchased credits do not expire. Existing purchased credit balances are
+              retained, and new purchases add to the balance. The allowance shown at
+              checkout applies to that purchase.
+            </p>
+            <p className={P}>
               Some Dormscape features are paid: the Plus one-time unlock,
               &agrave;-la-carte Flex credits, and the Pro plan. All payments for these
               are final and non-refundable. When you buy, you&rsquo;re paying for access
@@ -228,8 +250,8 @@ export default function TermsPage() {
           <section id="accounts" className="mt-14 scroll-mt-24">
             <SectionHeading n={8} title="Accounts" />
             <p className={P}>
-              Creating an account is optional and only needed if you want to save a
-              design and come back to it later. You can request that your account and
+              An account is required to generate and save a design, manage credits,
+              and return to saved rooms later. You can request that your account and
               associated data be deleted at any time by emailing us. See the{" "}
               <Link href="/privacy" className={TEXT_LINK}>
                 Privacy Policy

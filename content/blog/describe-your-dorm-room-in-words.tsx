@@ -105,7 +105,7 @@ const post: BlogPost = {
     },
     {
       q: "Do I need Pro to create my own vibe?",
-      a: "Yes. The nine preset styles are available on the free and paid plans, but describing your own vibe in free text is a Pro feature. Pro is a one-time $19.99 unlock that also includes unlimited plans, every preset vibe, PDF and PNG export, and side-by-side comparison.",
+      a: "Yes. Free includes three preset styles and one plan credit. Plus unlocks all nine presets with three plan credits. Creating your own vibe requires Pro: $14.99 once with 10 plan credits, 3D room building and planning, every preset vibe, exports, and comparison. Each new custom-vibe design uses one credit.",
     },
   ],
   Body,

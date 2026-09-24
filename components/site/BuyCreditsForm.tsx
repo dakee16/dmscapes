@@ -17,9 +17,9 @@ import {
 // Checkout. Shared by the header buy-popover, the Billing page, and the
 // Upgrade modal's out-of-credits state, so the buy flow is identical everywhere.
 //
-// A Free buyer becomes Flex on their first purchase; Flex and Plus buyers keep
+// A Free buyer becomes Flex on their first purchase; Flex, Plus, and Pro buyers keep
 // their tier and just top up the shared plan_credits_remaining pool (the note
-// below adapts). Pro never sees this (checkout blocks it, callers hide it).
+// below adapts). Pro tools stay available even when the credit pool is empty.
 export default function BuyCreditsForm({
   source,
   autoFocus = false,

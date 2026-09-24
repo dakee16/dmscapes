@@ -27,11 +27,9 @@ export default function CreditConfirmModal({
   onConfirm: () => void;
   onCancel: () => void;
 }) {
-  const { unlimited, designsLeft, plus } = credit;
-  const noun = plus ? "design credit" : "free design credit";
-  const body = unlimited
-    ? "You're on Pro, with unlimited designs. Ready to see this room?"
-    : `You have ${designsLeft} ${noun}${designsLeft === 1 ? "" : "s"}. Use ${
+  const { designsLeft, tier } = credit;
+  const noun = tier === "free" ? "free design credit" : "design credit";
+  const body = `You have ${designsLeft} ${noun}${designsLeft === 1 ? "" : "s"}. Use ${
         designsLeft === 1 ? "it" : "one"
       } now to see this room?`;
 
@@ -74,7 +72,7 @@ export default function CreditConfirmModal({
         <div className="relative p-7 sm:p-8">
           <span className="grid h-12 w-12 place-items-center rounded-2xl bg-cobalt text-white shadow-sm">
             <span className="font-display text-xl font-extrabold leading-none">
-              {unlimited ? "∞" : designsLeft}
+              {designsLeft}
             </span>
           </span>
           <h2

@@ -15,9 +15,7 @@ import { useAuth } from "@/lib/auth-context";
 import {
   isPaid,
   isPro,
-  isPlusTier,
-  isFlex,
-  isPlanMetered,
+  creditLimitReason,
   canGeneratePlan,
   headerCreditState,
 } from "@/lib/plan";
@@ -52,6 +50,8 @@ export default function PlanStylePage() {
 
   const [mounted, setMounted] = useState(false);
   const [generating, setGenerating] = useState(false);
+  const [generationError, setGenerationError] = useState<string | null>(null);
+  const generatingRef = useRef(false);
   // Save-before-you-leave heads-up, shown when they tap "Design my room".
   const [showDisclaimer, setShowDisclaimer] = useState(false);
   const budgetTrackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -133,49 +133,43 @@ export default function PlanStylePage() {
       setShowCreditConfirm(true);
     } else {
       track("plan_blocked_no_credits");
-      openUpgrade(
-        isPlusTier(profile)
-          ? "plan-credits"
-          : isFlex(profile)
-            ? "flex-credits"
-            : "free-plan-limit",
-      );
+      openUpgrade(creditLimitReason(profile));
     }
   }, [user, profile, modalOpen, openUpgrade]);
 
-  // Generate the plan. Signed-in free and Plus accounts spend one plan credit
-  // here (the "click through to a result" moment); Pro and logged-out visitors
-  // generate without limit. When a counter is empty the block reason depends on
-  // the tier: a free user is sent to Plus/Pro, a Plus user to recharge/Pro.
+  // The server spends one credit before a new plan opens, for every tier.
   async function runGenerate() {
     setShowDisclaimer(false);
-    if (!style || generating) return;
-    if (isPlanMetered(profile)) {
-      const blockReason = isPlusTier(profile)
-        ? "plan-credits"
-        : isFlex(profile)
-          ? "flex-credits"
-          : "free-plan-limit";
-      // Fast path: an account we already know is out of plans skips the server
-      // round-trip and goes straight to the right upgrade prompt.
-      if (!canGeneratePlan(profile)) {
-        track("plan_blocked_no_credits");
-        openUpgrade(blockReason);
-        return;
-      }
-      setGenerating(true);
-      // Server is authoritative for the actual decrement (atomic, race-safe).
+    if (!style || generatingRef.current) return;
+    setGenerationError(null);
+    if (!user || !profile) {
+      setGenerationError("Your account is still loading. Please try again.");
+      return;
+    }
+    const blockReason = creditLimitReason(profile);
+    if (!canGeneratePlan(profile)) {
+      track("plan_blocked_no_credits");
+      openUpgrade(blockReason);
+      return;
+    }
+    generatingRef.current = true;
+    setGenerating(true);
+    try {
       const { blocked } = await consumePlanCredit();
+      void refreshProfile();
       if (blocked) {
-        setGenerating(false);
         track("plan_blocked_no_credits");
         openUpgrade(blockReason);
         return;
       }
       track("plan_credit_consumed");
-      await refreshProfile();
+      router.push("/plan/result");
+    } catch (error) {
+      setGenerationError(error instanceof Error ? error.message : "Couldn't start your design. Please try again.");
+    } finally {
+      generatingRef.current = false;
+      setGenerating(false);
     }
-    router.push("/plan/result");
   }
 
   function handleBudget(value: number) {
@@ -303,8 +297,9 @@ export default function PlanStylePage() {
           </div>
 
           <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/8 bg-paper/92 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
-            {/* Plus only: how many plan credits remain, right beside the action. */}
+            {/* Current paid balance beside the generation action. */}
             <CreditMeter className="mb-2.5 justify-center sm:justify-start" />
+            {generationError && <p role="alert" className="mb-3 text-sm text-[#c2321e]">{generationError}</p>}
             <button
               type="button"
               disabled={!style || generating}

@@ -5,7 +5,7 @@ import Modal from "@/components/site/Modal";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { track } from "@/lib/analytics";
-import { PLUS_PRICE_USD, PRO_PRICE_USD } from "@/lib/plan";
+import { PLUS_PRICE_USD, PRO_PRICE_USD, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, RECHARGE_PRICE_USD } from "@/lib/plan";
 
 // The once-per-session "welcome" upgrade moment, shown after a free user's first
 // sign-in of the session (wired in lib/auth-context). Deliberately NOT the
@@ -18,8 +18,8 @@ type Feature = { label: string; desc: string; icon: React.ReactNode };
 
 const FEATURES: Feature[] = [
   {
-    label: "5 plan credits",
-    desc: "Recharge five more for $2.99. Saving is always free.",
+    label: `${PLUS_INITIAL_CREDITS} plan credits`,
+    desc: `Recharge ${RECHARGE_CREDITS} more for $${RECHARGE_PRICE_USD.toFixed(2)}. Saving is always free.`,
     icon: (
       <path
         d="M6 4h12a1 1 0 0 1 1 1v14l-7-4-7 4V5a1 1 0 0 1 1-1z"
@@ -170,7 +170,7 @@ export default function PlusWelcome({
               ${PLUS_PRICE_USD.toFixed(2)}
             </span>
             <span className="text-sm text-ink-soft">
-              one time for Plus. Pro is ${PRO_PRICE_USD.toFixed(2)} for unlimited plans, custom vibes, and 3D room building and planning.
+              one time for Plus. Pro is ${PRO_PRICE_USD.toFixed(2)} for {PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D room building and planning.
             </span>
           </div>
 

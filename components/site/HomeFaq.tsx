@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, RECHARGE_PRICE_USD, FLEX_CREDIT_PRICE_USD } from "@/lib/plan";
 
 // Homepage FAQ accordion. Curated, product-level questions consolidated from
 // what's established across the site (dimensions, accounts, tiers, the affiliate
@@ -38,9 +39,9 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
       <>
         Free lets you try it with 1 room plan you can save, plus 3 vibes and
         share links. Plus ($4.99 once) unlocks all 9 vibes, PDF and PNG export,
-        side-by-side comparison, and priority school requests, and gives you 5
-        plan credits (recharge 5 more for $2.99). Pro ($14.99 once) is that same
-        unlock with unlimited plans, create your own vibe, 3D Room Builder, and live 3D Room Studio. Saving your designs is always free. See the
+        side-by-side comparison, and priority school requests, and gives you {PLUS_INITIAL_CREDITS}
+        plan credits (recharge {RECHARGE_CREDITS} more for ${RECHARGE_PRICE_USD.toFixed(2)}). Pro ($14.99 once) is that same
+        tools with {PRO_INITIAL_CREDITS} plan credits, create your own vibe, 3D Room Builder, and live 3D Room Studio. Saving your designs is always free. See the
         full split on the{" "}
         <Link
           href="/pricing"
@@ -90,13 +91,14 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
       </>
     ),
   },
+  { q: "How many designs can I generate with Pro?", a: <>Pro includes {PRO_INITIAL_CREDITS} plan credits. Each new room plan uses one credit. After the included free custom-vibe regeneration, further regenerations use one credit each. Add more for ${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. Editing, saving, room building, and switching between 2D and 3D use no credits.</> },
   {
     q: "What happens when my Plus credits run out?",
     a: (
       <>
         Only new room plans use credits. Saving stays free, and your existing
-        designs, exports, and comparisons keep working. A $2.99 recharge adds
-        five more plan credits, or go Pro for unlimited plans.
+        designs, exports, and comparisons keep working. A ${RECHARGE_PRICE_USD.toFixed(2)} recharge adds
+        {RECHARGE_CREDITS} more plan credits.
       </>
     ),
   },

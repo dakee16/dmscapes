@@ -52,10 +52,15 @@ dimensions.
 
 ## Capabilities and Constraints
 
-- Three access tiers: Free (unlimited plans, a subset of vibes, save and share),
-  Plus (7.99 one-time: 5 plan credits, all vibes, premium features unlocked
-  permanently, plus a 5-credit recharge for 4.99), and Pro (19.99 one-time:
-  unlimited credits, everything).
+- Four access tiers: Free (one room-plan generation, three preset vibes, save
+  and share), Flex (additional credits at $0.99 each with Free tools), Plus
+  ($4.99 once: 3 plan credits, all preset vibes and permanent Plus tools;
+  a $2.99 recharge adds 3 credits), and Pro ($14.99 once: 10 plan credits,
+  3D Room Builder, live 3D Room Studio, custom vibes, and all Plus tools).
+- Every tier can buy extra plan credits at $0.99 each. Credits do not expire.
+  Existing purchased balances carry over. Editing, saving, exporting, and
+  switching views do not use credits. Custom vibes include one free
+  regeneration; subsequent regenerations use one credit each.
 - Premium features gated above Free: PDF and PNG export, side-by-side plan
   comparison, and priority school requests.
 - 9 vibes: Minimalist, Cozy, Preppy, Academia, Y2K, Gamer, Retro, Pastel, Boho.

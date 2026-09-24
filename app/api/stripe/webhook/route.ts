@@ -3,88 +3,33 @@ import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
 import { getServiceClient } from "@/lib/supabase-server";
 import {
-  PLUS_INITIAL_CREDITS,
-  RECHARGE_CREDITS,
+  PRO_INITIAL_CREDITS,
   FLEX_MIN_QTY,
   FLEX_MAX_QTY,
   PURCHASE_TYPES,
   type PurchaseType,
 } from "@/lib/plan";
-import type { SupabaseClient } from "@supabase/supabase-js";
+import { addPlanCredits, grantPurchasedPlan } from "@/lib/credit-ledger";
 
 // Signature verification needs the raw body and the Node runtime.
 export const runtime = "nodejs";
 
-/** Grant Plus: fresh 5 plan credits + 5 save credits (independent counters) +
- *  permanent feature unlock. Idempotent given the session-id dedupe below (a
- *  replay would just set the same values). */
-async function activatePlus(
-  supabase: SupabaseClient,
-  userId: string,
-  customerId: string | null
-): Promise<boolean> {
-  const { error } = await supabase
-    .from("profiles")
-    .update({
-      plan: "plus",
-      plan_credits_remaining: PLUS_INITIAL_CREDITS,
-      save_credits_remaining: PLUS_INITIAL_CREDITS,
-      plus_features_unlocked: true,
-      plan_purchased_at: new Date().toISOString(),
-      ...(customerId ? { stripe_customer_id: customerId } : {}),
-    })
-    .eq("id", userId);
-  if (error) console.error("stripe webhook: plus activation failed:", error.message);
-  return !error;
-}
-
-/** Grant Pro: unlimited (no credit tracking on either counter), all features. */
-async function activatePro(
-  supabase: SupabaseClient,
-  userId: string,
-  customerId: string | null
-): Promise<boolean> {
-  const { error } = await supabase
-    .from("profiles")
-    .update({
-      plan: "pro",
-      plan_credits_remaining: null,
-      save_credits_remaining: null,
-      plus_features_unlocked: true,
-      plan_purchased_at: new Date().toISOString(),
-      ...(customerId ? { stripe_customer_id: customerId } : {}),
-    })
-    .eq("id", userId);
-  if (error) console.error("stripe webhook: pro activation failed:", error.message);
-  return !error;
-}
-
-/** Add recharge credits: +5 to BOTH counters at once (they were bought together
- *  as a bundle). Atomic increment (RPC) so it never clobbers a concurrent
- *  change, and the session-id dedupe stops replays double-adding. */
-async function addRecharge(supabase: SupabaseClient, userId: string): Promise<boolean> {
-  const { error } = await supabase.rpc("add_recharge_credits", {
-    p_user_id: userId,
-    p_amount: RECHARGE_CREDITS,
-  });
-  if (error) console.error("stripe webhook: recharge failed:", error.message);
-  return !error;
-}
-
-/** Grant à-la-carte Flex credits: +quantity to plan_credits_remaining, and flip
- *  a `free` account to `flex`, both atomic in the RPC. The session-id dedupe
- *  above stops a replay from double-adding. */
-async function addFlexCredits(
-  supabase: SupabaseClient,
-  userId: string,
-  quantity: number
-): Promise<boolean> {
-  const { error } = await supabase.rpc("add_flex_credits", {
-    p_user_id: userId,
-    p_amount: quantity,
-  });
-  if (error) console.error("stripe webhook: flex credit grant failed:", error.message);
-  return !error;
+/** New checkouts pin their grant in Stripe metadata. Sessions opened before
+ * this release retain the allowance they were sold; this compatibility value
+ * is never used for new purchases or public plan descriptions. */
+function creditGrant(purchase: PurchaseType, metadata: Stripe.Metadata | null): number {
+  if (metadata?.credit_amount != null) {
+    const value = Number(metadata.credit_amount);
+    if (!Number.isSafeInteger(value) || value < FLEX_MIN_QTY || value > FLEX_MAX_QTY) throw new Error("Invalid checkout credit amount.");
+    return value;
+  }
+  if (purchase === "flex_credits") {
+    const quantity = Number(metadata?.quantity);
+    if (!Number.isSafeInteger(quantity) || quantity < FLEX_MIN_QTY || quantity > FLEX_MAX_QTY) throw new Error("Missing checkout credit quantity.");
+    return quantity;
+  }
+  if (purchase === "pro") return PRO_INITIAL_CREDITS;
+  return 5; // Honor fixed-price Plus/recharge sessions sold before the new offer.
 }
 
 export async function POST(request: Request) {
@@ -127,11 +72,11 @@ export async function POST(request: Request) {
   const rawPurchase = session.metadata?.purchase ?? "plus";
   const purchase = (PURCHASE_TYPES as readonly string[]).includes(rawPurchase)
     ? (rawPurchase as PurchaseType)
-    : "plus";
+    : null;
   const customerId = typeof session.customer === "string" ? session.customer : null;
 
-  if (!userId) {
-    console.error("stripe webhook: paid session with no user_id", session.id);
+  if (!userId || !purchase) {
+    console.error("stripe webhook: paid session with missing user or unknown purchase", session.id);
     return NextResponse.json({ received: true });
   }
 
@@ -139,6 +84,13 @@ export async function POST(request: Request) {
   if (!supabase) {
     console.error("stripe webhook: Supabase not configured, can't apply purchase");
     return NextResponse.json({ error: "Not configured." }, { status: 500 });
+  }
+
+  let amount: number;
+  try { amount = creditGrant(purchase, session.metadata); }
+  catch (error) {
+    console.error("stripe webhook: invalid credit grant", error);
+    return NextResponse.json({ error: "Invalid credit grant." }, { status: 500 });
   }
 
   // Idempotency: record this checkout session before applying it. A duplicate
@@ -158,18 +110,15 @@ export async function POST(request: Request) {
   }
 
   let ok = false;
-  if (purchase === "plus") ok = await activatePlus(supabase, userId, customerId);
-  else if (purchase === "pro") ok = await activatePro(supabase, userId, customerId);
-  else if (purchase === "recharge") ok = await addRecharge(supabase, userId);
-  else if (purchase === "flex_credits") {
-    // Quantity is set by our own checkout route (validated there), so clamp
-    // defensively to [MIN, MAX] and grant. ponytail: trust our metadata; if it
-    // were ever missing this grants the floor rather than nothing.
-    const parsed = Math.floor(Number(session.metadata?.quantity));
-    const qty = Number.isFinite(parsed)
-      ? Math.min(FLEX_MAX_QTY, Math.max(FLEX_MIN_QTY, parsed))
-      : FLEX_MIN_QTY;
-    ok = await addFlexCredits(supabase, userId, qty);
+  try {
+    if (purchase === "plus" || purchase === "pro") {
+      await grantPurchasedPlan(supabase, userId, purchase, amount, customerId);
+    } else {
+      await addPlanCredits(supabase, userId, amount, purchase === "recharge");
+    }
+    ok = true;
+  } catch (error) {
+    console.error("stripe webhook: credit grant failed", error);
   }
 
   if (!ok) {

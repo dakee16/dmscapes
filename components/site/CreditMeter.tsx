@@ -2,13 +2,9 @@
 
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { showCredits, planCreditsRemaining, isPlusTier } from "@/lib/plan";
+import { showCredits, planCreditsRemaining, isPlusTier, creditLimitReason } from "@/lib/plan";
 
-// Live plan-credit counter, shown only for Plus accounts (free is a fixed 1 plan
-// and pro is unlimited, so neither has a moving count worth surfacing). Saving a
-// design is unlimited for every signed-in account, so there's no save counter.
-// Cobalt while there's credit left, muted once it's spent, with a Recharge action
-// sitting right beside the zero state so topping up never takes any hunting.
+// Live generation balance for Flex, Plus, and Pro. Saving uses no credits.
 export default function CreditMeter({
   className = "",
   recharge = true,
@@ -38,7 +34,7 @@ export default function CreditMeter({
       {spent && recharge && (
         <button
           type="button"
-          onClick={() => openUpgrade(isPlusTier(profile) ? "plan-credits" : "flex-credits")}
+          onClick={() => openUpgrade(creditLimitReason(profile))}
           className="cursor-pointer rounded-full bg-cobalt px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-wide text-white transition-colors hover:bg-cobalt-deep"
         >
           {isPlusTier(profile) ? "Recharge" : "Buy"}
