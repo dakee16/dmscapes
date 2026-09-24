@@ -4,7 +4,7 @@ import Link from "next/link";
 import Reveal from "@/components/site/Reveal";
 import PlanCta from "@/components/site/PlanCta";
 import { useAuth } from "@/lib/auth-context";
-import { isPaid, isPro } from "@/lib/plan";
+import { isPaid, isPro, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS } from "@/lib/plan";
 
 // Homepage Plus section. Free and logged-out visitors get the upsell pitch
 // (PlusUpsell). Paying customers get a celebratory status banner instead
@@ -22,6 +22,7 @@ export default function PlusPitch() {
 
 const PERKS: Record<"plus" | "pro", string[]> = {
   plus: [
+    `${PLUS_INITIAL_CREDITS} included plan credits`,
     "All 9 vibes",
     "Draw your own room",
     "PDF + PNG export",
@@ -29,7 +30,9 @@ const PERKS: Record<"plus" | "pro", string[]> = {
     "Priority school requests",
   ],
   pro: [
-    "Unlimited plans + saves",
+    `${PRO_INITIAL_CREDITS} included plan credits`,
+    "3D Room Builder",
+    "Live 3D Room Studio",
     "Create your own vibe",
     "Draw your own room",
     "All 9 vibes",
@@ -42,8 +45,8 @@ function SubscriberBanner({ tier }: { tier: "plus" | "pro" }) {
   const label = tier === "pro" ? "Pro" : "Plus";
   const blurb =
     tier === "pro"
-      ? "Unlimited plans and saves, every vibe, every feature. The whole studio is yours, for good."
-      : "All nine preset vibes and your Plus tools are yours, permanently. Pro adds live 3D and custom vibes. Here's to the rooms you'll design.";
+      ? "Your Pro tools are unlocked: 3D room building, live 3D planning, and custom vibes. Top up plan credits whenever you need more."
+      : "All nine preset vibes and your Plus tools are yours, permanently. Pro adds 3D room building, live 3D planning, and custom vibes. Here's to the rooms you'll design.";
 
   return (
     <section className="dm-plus mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
@@ -169,10 +172,7 @@ function PlusUpsell() {
               You&rsquo;ll have more than one good idea.
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              The cozy version and the bold one. Free gets you one room plan;
-              Plus adds five more, plus comparing two rooms side by side,
-              exporting the winner, and designing in all nine vibes. Saving
-              your designs is always free.
+              {PLUS_INITIAL_CREDITS} plan credits, all nine preset styles, and Plus tools.
             </p>
           </div>
 
@@ -216,9 +216,7 @@ function PlusUpsell() {
               Plus
             </span>
             <p className="text-sm leading-relaxed text-ink-soft">
-              <span className="font-semibold text-ink">Draw your own room:</span> not on our
-              list, or an odd shape? Sketch your exact floor plan, even an L-shape, and we fit
-              a full layout to it.
+              <span className="font-semibold text-ink">Draw your own room:</span> sketch a custom floor plan in 2D.
             </p>
           </div>
 
@@ -232,9 +230,7 @@ function PlusUpsell() {
               Pro only
             </span>
             <p className="text-sm leading-relaxed text-ink-soft">
-              <span className="font-semibold text-ink">Create your own vibe:</span> skip the
-              presets and describe any aesthetic in your own words. We live-match real
-              products to it.
+              Custom vibes, live 3D planning, and the <Link href="/plan/draw/3d" className="text-cobalt underline">3D Room Builder</Link>.
             </p>
           </div>
 

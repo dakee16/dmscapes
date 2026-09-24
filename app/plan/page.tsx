@@ -141,10 +141,6 @@ export default function PlanSelectPage() {
         <h1 className="dm-page-title mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
           Find your <span className="hl">exact dorm</span>
         </h1>
-        <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-          We&apos;ve measured the rooms so you don&apos;t have to. Pick your
-          school, building, and room type.
-        </p>
 
         <div className="mt-7 space-y-6">
           <CollegeSearch
@@ -253,7 +249,7 @@ export default function PlanSelectPage() {
         caption={
           room && confirmDims
             ? `Your room: ${confirmDims}`
-            : "Your next chapter, taking shape."
+            : undefined
         }
       />
       <RequestSchoolModal

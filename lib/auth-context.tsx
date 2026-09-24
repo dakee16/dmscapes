@@ -36,17 +36,16 @@ export interface Profile {
   /** "free", "flex", "plus", or "pro". Defaults to "free" when absent (migrations
    *  0008 add the column, 0010 widens it to three tiers, 0015 adds "flex"). */
   plan?: PlanTier | null;
-  /** Plus only: remaining plan-generation credits (null for free and pro). */
+  /** Remaining generation credits for Flex, Plus, and Pro. Legacy Pro null
+   * balances are normalized by the shared plan helper on first use. */
   plan_credits_remaining?: number | null;
-  /** Plus only: remaining save-design credits, independent of plan credits
-   *  (null for free and pro). Added in migration 0012. */
+  /** Legacy column retained for profile compatibility. Saving is unmetered. */
   save_credits_remaining?: number | null;
-  /** Free-tier lifetime meters: how many plans / saves this free account has
-   *  ever used (capped at 1 each). Irrelevant once on a paid tier. */
+  /** Free-tier generation count (cap 1). The old save count is no longer used. */
   free_plans_used?: number | null;
   free_saves_used?: number | null;
   /** True once a user has ever purchased Plus; keeps premium features unlocked
-   *  even after either counter runs out. Pro has features via its plan alone. */
+   *  after generation credits run out. Pro has features via its plan alone. */
   plus_features_unlocked?: boolean | null;
   /** When the account's current paid plan was purchased (set by the Stripe
    *  webhook). Null for free accounts. Present via select("*"); used on the
@@ -202,8 +201,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       // on signup), so a null/errored read is usually a transient auth-token
       // race, not a missing profile. Retrying instead of settling on null is
       // load-bearing: a stuck-null profile traps login on "Setting up your
-      // account…", silently disables plan metering (isPlanMetered(null) is false
-      // → unlimited plans), and hides the credits indicator.
+      // account…" and hides the credits indicator. Generation stays blocked
+      // until a real profile and its balance can be confirmed.
       //
       // But a row CAN be genuinely gone: if it was deleted from `profiles` while
       // the auth.users row survived (manual cleanup, deleting a profile does not

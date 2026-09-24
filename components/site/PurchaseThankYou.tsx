@@ -4,7 +4,7 @@ import Modal from "@/components/site/Modal";
 
 import { useEffect, useState } from "react";
 import { track } from "@/lib/analytics";
-import { PRO_PRICE_USD } from "@/lib/plan";
+import { PRO_PRICE_USD, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS } from "@/lib/plan";
 
 // Brief, satisfying confirmation shown when a buyer returns from Stripe Checkout
 // for Plus or Pro. Stripe redirects to /account?upgraded=plus|pro (see
@@ -17,9 +17,9 @@ type Tier = "plus" | "pro";
 const COPY: Record<Tier, { title: string; blurb: string; perks: string[] }> = {
   plus: {
     title: "You're on Plus.",
-    blurb: "Every vibe and every premium feature is unlocked, permanently.",
+    blurb: "Every preset vibe and your Plus tools are unlocked, permanently.",
     perks: [
-      "5 plan credits, with free unlimited saving",
+      `${PLUS_INITIAL_CREDITS} included plan credits, with free saving`,
       "All 9 vibes unlocked",
       "PDF + PNG export and side-by-side compare",
       "Priority on your add-my-school requests",
@@ -27,9 +27,11 @@ const COPY: Record<Tier, { title: string; blurb: string; perks: string[] }> = {
   },
   pro: {
     title: "You're on Pro.",
-    blurb: "Unlimited plans and saves, with everything unlocked for good.",
+    blurb: "Your Pro tools are unlocked. Generate rooms with your plan credits, then keep editing and saving for free.",
     perks: [
-      "Unlimited plan credits and saves",
+      `${PRO_INITIAL_CREDITS} included plan credits, with free saving`,
+      "3D Room Builder and live 3D Room Studio",
+      "Create your own vibe",
       "All 9 vibes unlocked",
       "PDF + PNG export and side-by-side compare",
       "Priority on your add-my-school requests",
@@ -130,7 +132,7 @@ export default function PurchaseThankYou() {
 
           {tier === "plus" && (
             <p className="mt-5 text-[13px] leading-relaxed text-ink-soft">
-              Want unlimited forever? Pro is ${PRO_PRICE_USD.toFixed(2)}, one time.
+              Pro includes {PRO_INITIAL_CREDITS} plan credits and 3D tools for ${PRO_PRICE_USD.toFixed(2)}, one time.
             </p>
           )}
 

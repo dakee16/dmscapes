@@ -4,16 +4,17 @@
 // gating point (plan/save limits, PDF export, comparison view, school request)
 // calls openUpgrade(reason); the copy adapts, the design stays identical.
 //
-// The four metered reasons split by tier AND counter:
+// Generation limits are separate from permanent feature access:
 //   plan-credits    Plus member out of plan credits  -> recharge / Pro
-//   save-credits    Plus member out of save credits  -> recharge / Pro
+//   pro-credits     Pro member out of plan credits   -> top up
 //   free-plan-limit free account used its 1 plan      -> Plus / Pro
-//   free-save-limit free account used its 1 save      -> Plus / Pro
+// Legacy save reasons are retained for compatibility; saving uses no credits.
 import { createContext, useCallback, useContext, useMemo, useRef, useState } from "react";
 import UpgradeModal from "@/components/site/UpgradeModal";
 
 export type UpgradeReason =
   | "plan-credits"
+  | "pro-credits"
   | "save-credits"
   | "free-plan-limit"
   | "free-save-limit"
@@ -26,6 +27,7 @@ export type UpgradeReason =
   | "custom-vibe"
   | "own-item"
   | "room-3d"
+  | "draw-3d"
   | "draw-room"
   | "generic";
 

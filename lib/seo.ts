@@ -22,7 +22,7 @@ export function absoluteUrl(path = "/"): string {
 }
 
 const OG_IMAGE = {
-  url: "/og.png",
+  url: "/og.png?v=folded-room",
   width: 1200,
   height: 630,
   alt: "Dormscape, the free dorm room planner",
@@ -30,15 +30,14 @@ const OG_IMAGE = {
 
 /**
  * Build a page's Metadata with a canonical URL and matching OG/Twitter cards.
- * `title` is the page title (the root layout appends the brand); `ogTitle`
- * overrides the social title when the branded form reads better there.
+ * `title` supplies the social card title; `ogTitle` can override that form.
+ * The browser tab title is inherited from the root layout.
  */
 export function pageMetadata({
   title,
   description,
   path,
   ogTitle,
-  absoluteTitle = false,
   noIndex = false,
   type = "website",
 }: {
@@ -46,15 +45,12 @@ export function pageMetadata({
   description: string;
   path: string;
   ogTitle?: string;
-  /** Skip the "| dormscape" template (the homepage carries the brand itself). */
-  absoluteTitle?: boolean;
   /** Utility pages (login, thank-you) that shouldn't compete in the index. */
   noIndex?: boolean;
   type?: "website" | "article";
 }): Metadata {
   const social = ogTitle ?? `${title} | ${SITE_NAME.toLowerCase()}`;
   return {
-    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
     ...(noIndex ? { robots: { index: false, follow: true } } : {}),
@@ -84,7 +80,7 @@ const organization = {
   url: SITE_URL,
   logo: {
     "@type": "ImageObject",
-    url: `${SITE_URL}/icons/icon-512.png`,
+    url: `${SITE_URL}/icons/icon-512.png?v=folded-room`,
     width: 512,
     height: 512,
   },
@@ -124,7 +120,8 @@ export function softwareApplicationJsonLd() {
     operatingSystem: "Any (web browser)",
     browserRequirements: "Requires JavaScript",
     description:
-      "Plan a college dorm room to scale: pick your school and building to load real room dimensions, arrange furniture in a 2D layout that fits, set a budget and style, and get a shoppable list.",
+      "Plan a college dorm room to scale: use school dimensions or draw your own room, choose a style and budget, and get a shoppable layout. Pro adds the 3D Room Builder for floors, walls, doors and windows, plus live 3D furniture planning.",
+    featureList: ["2D room planning", "School room dimensions", "Budget-aware shopping", "Pro: 3D Room Builder", "Pro: live 3D Room Studio"],
     offers: {
       "@type": "Offer",
       price: "0",

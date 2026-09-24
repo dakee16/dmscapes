@@ -6,7 +6,7 @@ import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { isPro, isPlanMetered } from "@/lib/plan";
+import { isPro, canGeneratePlan } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
 import { generateVibe } from "@/lib/vibe-client";
 import { tierForBudget } from "@/lib/catalog";
@@ -52,6 +52,7 @@ export default function CreateVibePage() {
   const [apiError, setApiError] = useState<string | null>(null);
   const [generating, setGenerating] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const generatingRef = useRef(false);
 
   // Wait for the sessionStorage-backed store to rehydrate before any redirect.
   useEffect(() => {
@@ -79,7 +80,8 @@ export default function CreateVibePage() {
   }
 
   async function handleGenerate() {
-    if (generating) return;
+    if (generatingRef.current) return;
+    if (!isPro(profile)) { openUpgrade("custom-vibe"); return; }
     const vibe = text.trim();
     const check = validateVibe(vibe);
     if (!check.ok) {
@@ -89,31 +91,35 @@ export default function CreateVibePage() {
     }
     setValidationMsg(null);
     setApiError(null);
+    if (!canGeneratePlan(profile)) { openUpgrade("pro-credits"); return; }
+    generatingRef.current = true;
     setGenerating(true);
     const startedAt = Date.now();
 
-    if (isPlanMetered(profile)) {
-      const { blocked } = await consumePlanCredit();
-      if (blocked) {
-        setGenerating(false);
-        setApiError("You're out of plan credits for now.");
+    try {
+      const result = await generateVibe({ vibe, budget, bedSize: room?.bedSize, seed: 0 });
+      const elapsed = Date.now() - startedAt;
+      if (elapsed < MIN_LOADING_MS) await new Promise((r) => setTimeout(r, MIN_LOADING_MS - elapsed));
+      if (!result.ok || !result.products?.length) {
+        setApiError(result.error ?? "We couldn't build a room from that. Try tweaking your description.");
         return;
       }
-      await refreshProfile();
-    }
-
-    const result = await generateVibe({ vibe, budget, bedSize: room?.bedSize, seed: 0 });
-    const elapsed = Date.now() - startedAt;
-    if (elapsed < MIN_LOADING_MS) await new Promise((r) => setTimeout(r, MIN_LOADING_MS - elapsed));
-
-    if (!result.ok || !result.products || result.products.length === 0) {
+      // Charge only when matches are ready. A failed search uses no credit.
+      const { blocked } = await consumePlanCredit();
+      void refreshProfile();
+      if (blocked) {
+        openUpgrade("pro-credits");
+        return;
+      }
+      track("custom_vibe_generated", { mock: result.mock });
+      setCustomResult(vibe, result.products, result.mock ?? false);
+      router.push("/plan/result");
+    } catch (error) {
+      setApiError(error instanceof Error ? error.message : "Couldn't start your design. Please try again.");
+    } finally {
+      generatingRef.current = false;
       setGenerating(false);
-      setApiError(result.error ?? "We couldn't build a room from that. Try tweaking your description.");
-      return;
     }
-    track("custom_vibe_generated", { mock: result.mock });
-    setCustomResult(vibe, result.products, result.mock ?? false);
-    router.push("/plan/result");
   }
 
   // Hold the frame until we know the guards pass (avoids a flash of the form
@@ -137,9 +143,7 @@ export default function CreateVibePage() {
               into <span className="hl">words.</span>
             </h1>
             <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-soft">
-              Colors, textures, a mood, a reference, whatever the room feels like in
-              your head. We&apos;ll match real products to it and lay them out to your{" "}
-              {room.lengthFt} × {room.widthFt} ft room.
+              Include colors, materials, or a reference you like.
             </p>
 
             <label htmlFor="vibe-input" className="sr-only">

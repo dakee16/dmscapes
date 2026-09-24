@@ -93,7 +93,7 @@ const RED = "#dc2626";
 const AMBER = "#f0b100";
 
 /**
- * Bottom-right brand lockup baked into exported PNGs: the ribbon mark plus the
+ * Bottom-right brand lockup baked into exported PNGs: the folded-room mark plus the
  * "dormscape" wordmark on a soft, mostly-transparent backing. Subtle
  * over the room, but crisp enough to read as intentional branding when shared.
  */

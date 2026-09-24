@@ -2,6 +2,7 @@
 
 import BrandLoader from "@/components/site/BrandLoader";
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { usePlannerStore } from "@/lib/store";
@@ -119,10 +120,6 @@ export default function DrawRoomPage() {
               </span>
             )}
           </div>
-          <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
-            Draw your walls on the grid. Add your doors and
-            windows, then choose a vibe. We’ll arrange the furniture to fit.
-          </p>
 
           {/* Corners use the tap position, so the same editor works with touch. */}
           <button
@@ -139,13 +136,18 @@ export default function DrawRoomPage() {
               <path d="M8 20h8M12 18v2" strokeLinecap="round" />
             </svg>
             Tap to place corners and trace your walls.
-            You can adjust the walls and add details as you go.
           </p>
         </div>
       </div>
 
       {/* Quick-start from a room this user has already drawn (signed-in only). */}
       <div className="mt-10">
+        <Link href="/plan/draw/3d" className="dm-draw-3d-promo">
+          <span className="dm-eyebrow">New / Included with Pro</span>
+          <strong>Start with a floor. Build your world.</strong>
+          <span>Place walls, floors, doors, and windows on a live 3D grid, then furnish your room in the 3D planner.</span>
+          <b>Explore the 3D Room Builder ↗</b>
+        </Link>
         <DrawnRoomsReuse />
       </div>
     </div>

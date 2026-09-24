@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import Link from "next/link";
+import BrandMark from "@/components/site/BrandMark";
 import type { Profile } from "@/lib/auth-context";
 import { headerCreditState, planLabel } from "@/lib/plan";
 import s from "./account.module.css";
@@ -12,7 +13,7 @@ export function AccountHeader({ active, title, accent, description, action }: {
   active: "overview" | "billing" | "settings";
   title: string;
   accent: string;
-  description: string;
+  description?: string;
   action?: ReactNode;
 }) {
   return (
@@ -21,7 +22,7 @@ export function AccountHeader({ active, title, accent, description, action }: {
         <div>
           <p className={s.eyebrow}>Dormscape / Your space</p>
           <h1 className={s.title}>{title} <em>{accent}</em></h1>
-          <p className={s.description}>{description}</p>
+          {description && <p className={s.description}>{description}</p>}
         </div>
         {action && <div className={s.headerAction}>{action}</div>}
       </header>
@@ -44,23 +45,20 @@ export function MembershipCard({ profile, billing = false }: { profile: Profile 
     <section className={s.membership} aria-label="Your membership">
       <div className={s.cardTop}>
         <p className={s.eyebrow}>Your membership</p>
-        <span className={s.memberMark} aria-hidden="true">d.</span>
+        <BrandMark size={40} />
       </div>
       <h2 className={s.planName}>{profile ? planLabel(profile) : "Loading…"}</h2>
       <div className={s.balance}>
-        <strong>{!profile ? "…" : state.unlimited ? "∞" : state.designsLeft}</strong>
-        <span>{state.unlimited ? "Unlimited room plans" : "Room plans remaining"}</span>
+        <strong>{!profile ? "…" : state.designsLeft}</strong>
+        <span>Room plans remaining</span>
       </div>
-      <p className={s.memberNote}>
-        {!profile ? "Fetching your plan details." : state.unlimited
-          ? "All the room to keep creating."
-          : state.empty ? "Ready for another idea? Top up whenever you like."
-          : "One plan. A whole new possibility."}
-      </p>
+      {profile && state.empty && (
+        <p className={s.memberNote}>Top up to generate another room.</p>
+      )}
       <div className={s.cardBottom}>
         <span>{profile?.username ? "@" + profile.username : "Dormscape member"}</span>
-        <Link href={billing ? (state.unlimited ? "/plan" : "/pricing") : "/account/billing"}>
-          {billing ? (state.unlimited ? "Start a plan" : "Explore plans") : "Manage plan"} <span aria-hidden="true">↗︎</span>
+        <Link href={billing ? "#buy-credits" : "/account/billing"}>
+          {billing ? "Buy credits" : "Manage plan"} <span aria-hidden="true">↗︎</span>
         </Link>
       </div>
     </section>
@@ -73,7 +71,7 @@ export function IdentityCard({ name, username, email }: { name?: string | null; 
   return (
     <div className={s.identity}>
       <span className={s.avatar} aria-hidden="true">{initials}</span>
-      <div><p className={s.eyebrow}>Made by you</p><h2>{displayName}</h2>{email && <p className={s.identityEmail}>{email}</p>}</div>
+      <div><h2>{displayName}</h2>{email && <p className={s.identityEmail}>{email}</p>}</div>
     </div>
   );
 }

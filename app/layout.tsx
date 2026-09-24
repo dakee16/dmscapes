@@ -48,12 +48,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us",
   ),
-  title: {
-    // Lowercase to match the wordmark; this is the
-    // browser tab title, so every page inherits the lowercase brand token.
-    default: "dormscape",
-    template: "%s | dormscape",
-  },
+  // Every route inherits the same lowercase browser tab title.
+  title: "dormscape",
   description: DESCRIPTION,
   openGraph: {
     title: "dormscape: your dorm room, planned before move-in day",
@@ -64,7 +60,7 @@ export const metadata: Metadata = {
     url: "/",
     images: [
       {
-        url: "/og.png",
+        url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
         alt: "Dormscape, the free AI dorm room planner",
@@ -75,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "dormscape: your dorm room, planned before move-in day",
     description: DESCRIPTION,
-    images: ["/og.png"],
+    images: ["/og.png?v=folded-room"],
   },
 };
 

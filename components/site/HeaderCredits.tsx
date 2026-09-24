@@ -4,18 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { headerCreditState, planLabel, RECHARGE_PRICE_USD } from "@/lib/plan";
+import { headerCreditState, planLabel, RECHARGE_PRICE_USD, RECHARGE_CREDITS } from "@/lib/plan";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
 
 // Compact design-credits chip that lives INSIDE the header island, just left of
 // the profile avatar (see Nav). Desktop only (md+); on mobile the avatar badge +
 // profile dropdown carry this instead.
 //
-// Pro shows a static ∞. Free, Flex, and Plus show a live "Designs · N" count
-// that doubles as a button: clicking it opens a small popover to buy à-la-carte
-// $0.99 credits (quantity + live price). When the count hits zero the chip turns
-// into a cobalt "Buy credits" call to action. Plus keeps its 5-for-$2.99
-// recharge as a secondary option inside the popover.
+// Every tier shows its live balance and a top-up action. Plus also offers a recharge.
 export default function HeaderCredits() {
   const { user, profile } = useAuth();
   const { openUpgrade } = useUpgrade();
@@ -47,19 +43,6 @@ export default function HeaderCredits() {
   useEffect(() => setOpen(false), [pathname]);
 
   if (!user || !profile) return null;
-
-  // Pro: unlimited, nothing to buy.
-  if (c.unlimited) {
-    return (
-      <span
-        className="hidden shrink-0 items-center gap-1 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-2 font-mono text-[11px] font-semibold uppercase leading-none tracking-wide text-cobalt md:inline-flex"
-        title="Room designs left"
-      >
-        Designs <span aria-hidden="true">·</span>
-        <span className="text-[15px] leading-none">&infin;</span>
-      </span>
-    );
-  }
 
   return (
     <div ref={rootRef} className="relative hidden shrink-0 md:block">
@@ -109,7 +92,7 @@ export default function HeaderCredits() {
               }}
               className="mt-3.5 block w-full cursor-pointer border-t border-ink/8 pt-3.5 text-center text-[13px] font-medium text-ink-soft transition-colors hover:text-ink"
             >
-              Prefer the 5-pack? Recharge for ${RECHARGE_PRICE_USD.toFixed(2)}
+              Prefer the {RECHARGE_CREDITS}-pack? Recharge for ${RECHARGE_PRICE_USD.toFixed(2)}
             </button>
           )}
         </div>

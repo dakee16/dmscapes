@@ -4,7 +4,6 @@ import PlannerSteps from "@/components/planner/PlannerSteps";
 import PlannerTabs from "@/components/planner/PlannerTabs";
 
 export const metadata: Metadata = {
-  title: "Plan your dorm room",
   description:
     "Pick your school and room, choose a style, set a budget, and get a layout that fits your exact dorm.",
 };

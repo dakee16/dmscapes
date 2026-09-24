@@ -8,7 +8,7 @@ import { useUpgrade, type UpgradeReason } from "@/lib/upgrade-context";
 import { useAuth } from "@/lib/auth-context";
 import { startCheckout } from "@/lib/checkout";
 import { track } from "@/lib/analytics";
-import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, RECHARGE_CREDITS } from "@/lib/plan";
+import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, RECHARGE_CREDITS, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS } from "@/lib/plan";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
 
 // Headline + one-line hook per gating point. The value block below is shared by
@@ -17,7 +17,11 @@ import BuyCreditsForm from "@/components/site/BuyCreditsForm";
 const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   "plan-credits": {
     title: "You're out of plan credits",
-    body: "You've used your Plus plan credits. Recharge to keep designing new rooms, or go Pro for unlimited. Your saved designs, exports, and comparisons stay right where they are.",
+    body: "You've used your Plus plan credits. Recharge to generate more rooms. Your saved designs, exports, and comparisons stay right where they are.",
+  },
+  "pro-credits": {
+    title: "You're out of plan credits",
+    body: "Add more for $0.99 per credit. Your saved rooms and Pro tools, including 3D building and planning, remain available.",
   },
   "save-credits": {
     title: "Your designs stay saved",
@@ -25,15 +29,15 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   },
   "free-plan-limit": {
     title: "That's your free room plan",
-    body: "Free includes one room plan. Upgrade to Plus for 5 more, or Pro for unlimited room plans, plus every vibe and premium tool. Saving your designs is always free.",
+    body: `Free includes one room plan. Plus adds ${PLUS_INITIAL_CREDITS} plan credits and Plus tools. Pro includes ${PRO_INITIAL_CREDITS} plan credits, 3D tools, and custom vibes. Saving is always free.`,
   },
   "flex-credits": {
     title: "You're out of credits",
-    body: "Buy more à-la-carte credits to keep designing, $0.99 each, no subscription. Or go Pro for unlimited room plans and every premium feature.",
+    body: `Buy more plan credits for $0.99 each. Or upgrade to Pro for ${PRO_INITIAL_CREDITS} included credits and every premium tool. No subscription.`,
   },
   "free-save-limit": {
     title: "Keep every good idea",
-    body: "Saving is free and unlimited. Plus adds 5 room-plan credits, every vibe, and premium tools. Pro includes unlimited room plans.",
+    body: `Saving is always free. Plus adds ${PLUS_INITIAL_CREDITS} plan credits, all nine preset vibes, and Plus tools. Pro includes ${PRO_INITIAL_CREDITS} plan credits, 3D tools, and custom vibes.`,
   },
   pdf: {
     title: "Export your list as a PDF",
@@ -67,18 +71,22 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     title: "Step inside your room with Pro",
     body: "Arrange furniture in live 3D, try finishes and lighting, and switch to the same layout in 2D. 3D Room Studio is included with Pro. Your 2D plan stays available.",
   },
+  "draw-3d": {
+    title: "Build your own room in 3D",
+    body: "Place a floor, draw custom walls, and add doors and windows on a 3D grid. Then furnish that same room in the 3D planner. The 3D Room Builder is included with Pro. Plus keeps the 2D drawing tool.",
+  },
   "draw-room": {
     title: "Draw your own room",
-    body: "Sketch your exact floor plan, walls, doors, windows, and closets, even an L-shaped room, then get a layout built to fit it. Drawing your own room is a Plus feature, Plus and Pro both include it, along with every vibe and premium tool.",
+    body: "Sketch your floor plan in 2D, including walls, doors, windows, and closets, then get a layout built around it. Plus and Pro both include 2D drawing, all preset vibes, and Plus tools. Building and planning directly in 3D require Pro.",
   },
   generic: {
     title: "Do more with Dormscape Plus",
-    body: "Unlock all nine preset vibes, more room plans, exports, and comparison. Pro adds live 3D and custom vibes.",
+    body: "Unlock all nine preset vibes, more room plans, exports, and comparison. Pro adds the 3D Room Builder, live 3D planning, and custom vibes.",
   },
 };
 
 const PERKS = [
-  "5 plan credits (saving is always free)",
+  `${PLUS_INITIAL_CREDITS} plan credits (saving is always free)`,
   "All 9 vibes unlocked",
   "Draw your own room, any shape",
   "PDF and PNG export",
@@ -144,7 +152,7 @@ export default function UpgradeModal() {
   // limits (and feature gates) get the shared Plus/Pro value block; a Flex user
   // out of credits gets the à-la-carte buy form plus a Pro option.
   const isRecharge = reason === "plan-credits" || reason === "save-credits";
-  const isFlexCredits = reason === "flex-credits";
+  const isFlexCredits = reason === "flex-credits" || reason === "pro-credits";
 
   async function buy(type: "recharge" | "pro") {
     if (busy) return;
@@ -174,7 +182,7 @@ export default function UpgradeModal() {
     >
       <div className={`${reason === "room-3d" ? "" : "snap-in "}w-full max-w-lg rounded-t-3xl border border-ink/10 bg-paper p-7 shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)] sm:rounded-3xl sm:p-9`}>
         <div className="flex items-start justify-between gap-4">
-          {reason === "room-3d" || reason === "custom-vibe" ? <span className="dm-eyebrow">Dormscape Pro</span> : <Badge />}
+          {reason === "room-3d" || reason === "draw-3d" || reason === "custom-vibe" || reason === "pro-credits" ? <span className="dm-eyebrow">Dormscape Pro</span> : <Badge />}
           <CloseButton onClick={closeUpgrade} />
         </div>
 
@@ -188,15 +196,15 @@ export default function UpgradeModal() {
           {copy.body}
         </p>
 
-        {reason === "room-3d" || reason === "custom-vibe" ? (
-          <div className="mt-6 space-y-4"><p>Live 3D Room Studio, create your own vibe, unlimited room plans, and everything in Plus.</p><button className="dm-button w-full" onClick={() => buy("pro")} disabled={busy !== null}>{busy ? "Starting checkout…" : `Get Pro for $${PRO_PRICE_USD.toFixed(2)} once`}</button>{error && <p role="alert">{error}</p>}<Link href="/pricing#pro" onClick={closeUpgrade} className="block text-center text-cobalt underline">See all Pro features</Link><button className="block w-full text-sm" onClick={closeUpgrade}>Keep planning in 2D</button></div>
+        {reason === "room-3d" || reason === "draw-3d" || reason === "custom-vibe" ? (
+          <div className="mt-6 space-y-4"><p>3D Room Builder, live 3D Room Studio, create your own vibe, {PRO_INITIAL_CREDITS} plan credits, and everything in Plus.</p><button className="dm-button w-full" onClick={() => buy("pro")} disabled={busy !== null}>{busy ? "Starting checkout…" : `Get Pro for $${PRO_PRICE_USD.toFixed(2)} once`}</button>{error && <p role="alert">{error}</p>}<Link href="/pricing#pro" onClick={closeUpgrade} className="block text-center text-cobalt underline">See all Pro features</Link><button className="block w-full text-sm" onClick={closeUpgrade}>Keep planning in 2D</button></div>
         ) : isFlexCredits ? (
           // Out of credits on Flex: buy more à-la-carte, or step up to Pro.
           <>
             <div className="mt-6 rounded-2xl border border-ink/10 bg-white p-4">
               <BuyCreditsForm source="upgrade-modal" autoFocus onStarted={closeUpgrade} />
             </div>
-            <button
+            {reason !== "pro-credits" && <button
               type="button"
               onClick={() => buy("pro")}
               disabled={busy !== null}
@@ -204,16 +212,16 @@ export default function UpgradeModal() {
             >
               <span>
                 <span className="block text-base font-semibold leading-snug">
-                  {busy === "pro" ? "Starting checkout…" : "Go Pro, unlimited"}
+                  {busy === "pro" ? "Starting checkout…" : "Upgrade to Pro"}
                 </span>
                 <span className="mt-1 block text-sm leading-snug text-ink-soft">
-                  Unlimited room plans, no counters, ever.
+                  {PRO_INITIAL_CREDITS} plan credits, 3D tools, and custom vibes.
                 </span>
               </span>
               <span className="shrink-0 font-mono text-base font-semibold">
                 ${PRO_PRICE_USD.toFixed(2)}
               </span>
-            </button>
+            </button>}
             {error && (
               <p className="mt-3 text-sm text-[#c2321e]" role="alert">
                 {error}
@@ -245,7 +253,7 @@ export default function UpgradeModal() {
                       : `Recharge ${RECHARGE_CREDITS} plan credits`}
                   </span>
                   <span className="mt-1 block text-sm leading-snug text-white/85">
-                    Five more rooms to design, added on.
+                    {RECHARGE_CREDITS} more rooms to design, added on.
                   </span>
                 </span>
                 <span className="shrink-0 font-mono text-base font-semibold">
@@ -261,10 +269,10 @@ export default function UpgradeModal() {
               >
                 <span>
                   <span className="block text-base font-semibold leading-snug">
-                    {busy === "pro" ? "Starting checkout…" : "Go Pro, unlimited"}
+                    {busy === "pro" ? "Starting checkout…" : "Upgrade to Pro"}
                   </span>
                   <span className="mt-1 block text-sm leading-snug text-ink-soft">
-                    Unlimited room plans, no counters, ever.
+                    {PRO_INITIAL_CREDITS} plan credits, 3D tools, and custom vibes.
                   </span>
                 </span>
                 <span className="shrink-0 font-mono text-base font-semibold">

@@ -4,7 +4,6 @@ import SiteHeader from "@/components/site/SiteHeader";
 import ContactForm from "@/components/site/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact",
   description:
     "Questions, feedback, a school we should add, or a bug to report? Send the Dormscape team a message.",
 };
@@ -22,8 +21,7 @@ export default function ContactPage() {
             Contact <span className="hl">us</span>
           </h1>
           <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-            Questions, feedback, a school we should add, or something not working right.
-            Send it over and we&apos;ll get back to you at the email you leave.
+            We’ll reply to the email you provide.
           </p>
           <div className="mt-8">
             <ContactForm />

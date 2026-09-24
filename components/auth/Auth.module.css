@@ -1,0 +1,164 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(32px, 5vw, 80px);
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 44px 32px 64px;
+}
+
+.formPanel {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 24px 0;
+}
+
+.formWrap {
+  width: 100%;
+  max-width: 440px;
+  margin: auto;
+}
+
+.form {
+  font-family: var(--font-instrument), sans-serif;
+}
+
+.form h1 {
+  margin: 0 0 28px;
+  font: 600 clamp(30px, 3.3vw, 44px) / 1.12 var(--font-bricolage), sans-serif;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.form button,
+.form input:not([type="checkbox"]),
+.form [role="status"],
+.form > div {
+  border-radius: 3px;
+}
+
+.form button,
+.form input:not([type="checkbox"]) {
+  min-height: 48px;
+}
+
+.form input:not([type="checkbox"]) {
+  font-size: 16px;
+}
+
+.form button:focus-visible,
+.form input:focus-visible,
+.form a:focus-visible {
+  outline: 2px solid #2b4eff;
+  outline-offset: 3px;
+}
+
+.form .modeTabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 24px;
+  padding: 4px;
+  border: 1px solid #17172b24;
+  border-radius: 3px;
+  background: #f0f0ec;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.modeTabs button[aria-pressed="true"] {
+  background: #2b4eff;
+  color: #fff;
+}
+
+.welcomePanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 42px;
+  min-width: 0;
+  padding: clamp(32px, 4vw, 58px) 32px 50px;
+  overflow: hidden;
+  background: #17172b;
+  border-radius: 3px;
+  color: #fafaf8;
+}
+
+.welcomePanel .welcomeTitle {
+  align-self: flex-start;
+  margin: 0;
+  font: 500 clamp(38px, 4.1vw, 58px) / 1.1 var(--font-bricolage), sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.welcomeTitle em {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: var(--font-serif), serif;
+  font-size: 1.3em;
+  font-weight: 400;
+  color: #ffdc60;
+}
+
+.markPoster {
+  display: grid;
+  place-items: center;
+  width: min(100%, 340px);
+  aspect-ratio: 1;
+  padding: 12px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 14px 14px 0 #2b4eff;
+  transform: rotate(-6deg);
+}
+
+.markPoster .mark {
+  max-width: 100%;
+  height: auto !important;
+  border-radius: 0 !important;
+}
+
+.welcomeDialog {
+  border-top: 5px solid #2b4eff;
+  border-radius: 3px;
+  background: #fafaf8;
+  font-family: var(--font-instrument), sans-serif;
+}
+
+.welcomeDialog h2 {
+  font: 600 clamp(30px, 6vw, 38px) / 1.1 var(--font-bricolage), sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.welcomeDialog h2 em {
+  display: block;
+  margin-top: 4px;
+  color: #2b4eff;
+  font-family: var(--font-serif), serif;
+  font-size: 1.22em;
+  font-weight: 400;
+}
+
+.welcomeDialog button,
+.welcomeDialog a,
+.welcomeCredit,
+.welcomeCredit > span {
+  border-radius: 3px;
+}
+
+@media (max-width: 899px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 540px;
+    padding: 28px 24px 56px;
+  }
+  .formPanel { padding: 0; }
+  .welcomePanel { display: none; }
+}
+
+@media (max-width: 380px) {
+  .layout { padding-inline: 18px; }
+}

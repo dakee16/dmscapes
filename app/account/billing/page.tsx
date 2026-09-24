@@ -11,7 +11,10 @@ import { getBrowserClient } from "@/lib/supabase-browser";
 import {
   planLabel,
   planOf,
-  canBuyFlexCredits,
+  PLUS_INITIAL_CREDITS,
+  PRO_INITIAL_CREDITS,
+  RECHARGE_CREDITS,
+  RECHARGE_PRICE_USD,
   FLEX_CREDIT_PRICE_USD,
 } from "@/lib/plan";
 import type { InvoiceItem, InvoicesResponse } from "@/lib/api-types";
@@ -37,13 +40,17 @@ const PERKS: Record<PlanTier, string[]> = {
     "PDF and PNG export",
     "Side-by-side design comparison",
     "Priority on add-my-school requests",
-    "5 plan credits, recharge anytime",
+    `${PLUS_INITIAL_CREDITS} included plan credits`,
+    `Recharge ${RECHARGE_CREDITS} credits for $${RECHARGE_PRICE_USD.toFixed(2)}`,
   ],
   pro: [
     "Everything in Plus",
-    "Unlimited room plans",
+    "3D Room Builder: floors, walls, doors, and windows",
+    "Live 3D Room Studio",
+    "Create your own vibe",
+    `${PRO_INITIAL_CREDITS} included plan credits`,
     "Unlimited saved designs",
-    "No credits and no counters, ever",
+    `Top up plan credits at $${FLEX_CREDIT_PRICE_USD.toFixed(2)} each`,
   ],
 };
 
@@ -146,7 +153,6 @@ export default function BillingPage() {
       <SiteHeader />
       <main id="page-content" tabIndex={-1} className={`dm-page ${s.page}`}>
         <AccountHeader active="billing" title="More room to" accent="create."
-          description="Your membership, your credits, every purchase. All in one place."
           action={<Link href="/plan" className={s.secondary}>Back to planning ↗︎</Link>} />
         {!ready ? <div className={s.skeleton} aria-busy="true" aria-label="Loading billing" /> : (
           <>
@@ -164,21 +170,13 @@ export default function BillingPage() {
                     {purchasedAt && <div><dt>Plan purchased</dt><dd>{purchasedAt}</dd></div>}
                   </dl>
                 </section>
-                {profile && (canBuyFlexCredits(profile) ? (
-                  <section className={s.topup}>
-                    <p className={s.eyebrow}>Keep the ideas coming</p>
-                    <h2>A little more room.</h2>
-                    <p>Top up at ${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. One credit designs one room. Buy what you need, when you need it.</p>
+                {profile && (
+                  <section id="buy-credits" className={s.topup}>
+                    <h2>Buy plan credits</h2>
+                    <p>${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. One credit generates one room plan.</p>
                     <div className={s.creditForm}><BuyCreditsForm source="billing" /></div>
                   </section>
-                ) : (
-                  <section className={s.topup}>
-                    <p className={s.eyebrow}>The possibilities are yours</p>
-                    <h2>No top-ups needed.</h2>
-                    <p>Your Pro membership includes unlimited room plans. Keep exploring until it feels like you.</p>
-                    <Link href="/plan" className={s.primary} style={{ marginTop: 20 }}>Create a room ↗︎</Link>
-                  </section>
-                ))}
+                )}
               </div>
               <div className={s.stack}>
                 <section className={s.panel}>

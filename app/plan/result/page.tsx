@@ -7,7 +7,7 @@ import { matchTemplate } from "@/templates/template-matcher";
 import { productsFor, productById, tierForBudget, totalFor, extrasFor, isExtraCategory } from "@/lib/catalog";
 import { isPlusStyle } from "@/lib/styles";
 import { useAuth } from "@/lib/auth-context";
-import { isPaid, isPro, isPlanMetered } from "@/lib/plan";
+import { isPaid, isPro, canGeneratePlan } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
 import { generateVibe } from "@/lib/vibe-client";
 import BrandLoader from "@/components/site/BrandLoader";
@@ -65,6 +65,8 @@ export default function ResultPage() {
   // Which product tab is showing: the cart ("Shopping list") or the catalog.
   const [activeTab, setActiveTab] = useState<ProductTab>("list");
   const [regenerating, setRegenerating] = useState(false);
+  const [regenError, setRegenError] = useState<string | null>(null);
+  const regeneratingRef = useRef(false);
   const trackedRef = useRef(false);
 
   const college = usePlannerStore((s) => s.college);
@@ -334,32 +336,37 @@ export default function ResultPage() {
     resetLayout(syncProductFurniture([...placed,...extras],allCartProducts,room));
   }
 
-  // One free regeneration per vibe (same description, new pass); after that each
-  // pass spends a plan credit via the existing logic. Pro is unlimited, so the
-  // credit branch is a no-op for the only audience today.
+  // One free regeneration per vibe; each subsequent pass uses one plan credit.
   async function handleRegenerate() {
-    if (regenerating || !isCustom || !customVibe || !room) return;
+    if (regeneratingRef.current || !isCustom || !customVibe || !room) return;
+    if (!isPro(profile)) { openUpgrade("custom-vibe"); return; }
     const free = !customRegenUsed;
-    if (!free && isPlanMetered(profile)) {
-      const { blocked } = await consumePlanCredit();
-      if (blocked) {
-        openUpgrade("plan-credits");
-        return;
-      }
-      await refreshProfile();
-    }
+    setRegenError(null);
+    if (!free && !canGeneratePlan(profile)) { openUpgrade("pro-credits"); return; }
+    regeneratingRef.current = true;
     setRegenerating(true);
-    const result = await generateVibe({
-      vibe: customVibe,
-      budget,
-      bedSize: room.bedSize,
-      seed: free ? 1 : Math.floor(Math.random() * 4) + 2,
-    });
-    setRegenerating(false);
-    if (result.ok && result.products && result.products.length > 0) {
-      if (free) markCustomRegen();
-      setCustomResult(customVibe, result.products, result.mock ?? false);
-      track("custom_vibe_regenerated", { free });
+    try {
+      const result = await generateVibe({
+        vibe: customVibe, budget, bedSize: room.bedSize,
+        seed: free ? 1 : Math.floor(Math.random() * 4) + 2,
+      });
+      if (result.ok && result.products?.length) {
+        if (!free) {
+          const { blocked } = await consumePlanCredit();
+          void refreshProfile();
+          if (blocked) { openUpgrade("pro-credits"); return; }
+        }
+        if (free) markCustomRegen();
+        setCustomResult(customVibe, result.products, result.mock ?? false);
+        track("custom_vibe_regenerated", { free });
+      } else {
+        setRegenError(result.error ?? "Couldn't find new matches. Your current room is unchanged.");
+      }
+    } catch (error) {
+      setRegenError(error instanceof Error ? error.message : "Couldn't regenerate. Please try again.");
+    } finally {
+      regeneratingRef.current = false;
+      setRegenerating(false);
     }
   }
 
@@ -371,7 +378,8 @@ export default function ResultPage() {
         extras={isCustom&&customVibe?<div className="dm-regenerate-row flex flex-wrap items-center gap-3">
           <p className="text-sm italic">{customVibe}</p>
           <button type="button" onClick={handleRegenerate} disabled={regenerating} className="border border-ink/20 px-3 py-2 text-xs">{regenerating?"Regenerating…":"Regenerate matches"}</button>
-          <span className="text-xs text-ink-soft">{customRegenUsed?"New matches, same vibe":"One free regeneration"}</span>
+          <span className="text-xs text-ink-soft">{customRegenUsed?"Uses 1 plan credit":"One free regeneration"}</span>
+          {regenError&&<p role="alert" className="basis-full text-sm text-[#c2321e]">{regenError}</p>}
           {customMock&&<p className="basis-full text-xs text-ink-soft">Sample matches. Live results appear when product access is available.</p>}
         </div>:null}
         unplaced={unplacedCustomItems.length>0?<div><p className="mb-2 text-xs font-semibold">Unplaced items</p><div className="flex flex-wrap gap-2">{unplacedCustomItems.map(cp=><button key={cp.id} type="button" onClick={()=>placeCustomItem(cp.id)} className="border border-ink/20 px-3 py-2 text-xs">Place {cp.name} ↗︎</button>)}</div></div>:null}

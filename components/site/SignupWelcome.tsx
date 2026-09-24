@@ -1,6 +1,8 @@
 "use client";
 
 import Modal from "@/components/site/Modal";
+import BrandMark from "@/components/site/BrandMark";
+import styles from "@/components/auth/Auth.module.css";
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
@@ -78,24 +80,15 @@ export default function SignupWelcome() {
           transition={{ duration: 0.25, ease: REVEAL_EASE }}
         >
           <motion.div
-            className="relative my-auto w-full max-w-md overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)]"
+            className={`${styles.welcomeDialog} relative my-auto w-full max-w-md overflow-hidden border border-ink/10 shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)]`}
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16, scale: 0.96 }}
             animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: 12, scale: 0.97 }}
             transition={{ duration: 0.34, ease: REVEAL_EASE }}
           >
-        {/* Soft, friendly backdrop: graph-paper grid + a cobalt/highlight wash,
-            distinct from the amber "premium" treatment of the Plus welcome. */}
-        <div className="pointer-events-none absolute inset-0 grid-paper opacity-[0.5]" aria-hidden="true" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/70 via-paper/40 to-paper" aria-hidden="true" />
-        <div className="pointer-events-none absolute -left-16 -top-20 h-56 w-56 rounded-full bg-cobalt/12 blur-3xl" aria-hidden="true" />
-        <div className="pointer-events-none absolute -bottom-24 -right-16 h-56 w-56 rounded-full bg-highlight/40 blur-3xl" aria-hidden="true" />
-
         <div className="relative p-7 sm:p-9">
           <div className="flex items-start justify-between gap-4">
-            <span className="inline-flex items-center gap-2 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-cobalt">
-              You&rsquo;re in
-            </span>
+            <BrandMark size={48} />
             <button
               type="button"
               onClick={dismiss}
@@ -112,23 +105,18 @@ export default function SignupWelcome() {
             id="signup-welcome-title"
             className="mt-6 font-display text-3xl font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[2.1rem]"
           >
-            Welcome to <span className="hl">Dormscape.</span>
+            Welcome to <em>dormscape.</em>
           </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
-            Here&rsquo;s your first design credit, on us. Pick your school, choose a
-            vibe, and we&rsquo;ll lay out your room to the inch with a shoppable list
-            that fits your budget.
-          </p>
 
           {/* The credit, front and center. */}
-          <div className="mt-6 flex items-center gap-4 rounded-2xl border border-cobalt/15 bg-cobalt/[0.05] p-4">
+          <div className={`${styles.welcomeCredit} mt-6 flex items-center gap-4 border border-cobalt/15 bg-cobalt/[0.05] p-4`}>
             <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-cobalt text-white">
               <span className="font-display text-2xl font-extrabold leading-none">1</span>
             </span>
             <div className="min-w-0">
               <p className="text-sm font-semibold text-ink">1 free design credit</p>
               <p className="mt-0.5 text-[13px] leading-snug text-ink-soft">
-                Enough to plan a full room, start to finish. No card needed.
+                Generate one room plan. No card required.
               </p>
             </div>
           </div>

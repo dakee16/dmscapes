@@ -7,6 +7,9 @@ import UpgradeButton from "@/components/site/UpgradeButton";
 import { SCHOOLS } from "@/lib/schools";
 import {
   PLUS_PRICE_USD,
+  PLUS_INITIAL_CREDITS,
+  PRO_INITIAL_CREDITS,
+  RECHARGE_CREDITS,
   PLUS_PRICE_WAS_USD,
   PRO_PRICE_USD,
   PRO_PRICE_WAS_USD,
@@ -25,10 +28,9 @@ const ROOM_LAYOUTS = SCHOOLS.reduce(
 const ROOM_LAYOUTS_FLOOR = Math.floor(ROOM_LAYOUTS / 100) * 100;
 
 const DESCRIPTION =
-  "The Dormscape planner is free to try: 1 room plan, and saving your designs is always free. Plus is a one-time $4.99 unlock (5 plan credits, all preset vibes and 2D tools, recharge for $2.99). Pro is $14.99 for unlimited plans, custom vibes, and live 3D Room Studio.";
+  `Try Dormscape free. Plus includes ${PLUS_INITIAL_CREDITS} plan credits for $${PLUS_PRICE_USD.toFixed(2)}. Pro includes ${PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D tools for $${PRO_PRICE_USD.toFixed(2)}. One-time purchases.`;
 
 export const metadata: Metadata = {
-  title: "Pricing",
   description: DESCRIPTION,
   alternates: { canonical: "/pricing" },
   openGraph: {
@@ -39,7 +41,7 @@ export const metadata: Metadata = {
     url: "/pricing",
     images: [
       {
-        url: "/og.png",
+        url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
         alt: "Dormscape, the free AI dorm room planner",
@@ -50,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pricing",
     description: DESCRIPTION,
-    images: ["/og.png"],
+    images: ["/og.png?v=folded-room"],
   },
 };
 
@@ -78,8 +80,8 @@ const FREE_PERKS: React.ReactNode[] = [
 // saving is free, and features are forever.
 const PLUS_PERKS: { title: string; body: string }[] = [
   {
-    title: "5 plan credits",
-    body: "One plan credit per new room you generate. Recharge 5 more for $2.99 whenever you run low. Saving your designs is always free.",
+    title: `${PLUS_INITIAL_CREDITS} plan credits`,
+    body: `One credit per new room plan. Recharge ${RECHARGE_CREDITS} more for $${RECHARGE_PRICE_USD.toFixed(2)}. Saving your designs is always free.`,
   },
   {
     title: "All 9 vibes",
@@ -107,12 +109,13 @@ const PLUS_PERKS: { title: string; body: string }[] = [
   },
 ];
 
-// Pro perks: the ceiling. Unlimited, everything, no metering.
+// Pro includes a larger generation allowance and permanent access to its tools.
 const PRO_PERKS: { title: string; body: string }[] = [
+  {title: "3D Room Builder", body: "Build your own room on a 3D grid. Place a floor, draw custom walls, and add doors and windows. Your room carries straight into 3D planning. Pro only."},
   {title: "Live 3D Room Studio", body: "Arrange furniture, explore room, top, and inside views, and try finishes and lighting. Switch between the same 2D and 3D layout. Included with Pro, available now."},
   {
-    title: "Unlimited room plans",
-    body: "Generate as many rooms as you want. No credits, no counters, no recharges, ever.",
+    title: `${PRO_INITIAL_CREDITS} plan credits`,
+    body: `${PRO_INITIAL_CREDITS} included credits for new room plans. Top up for $${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. Your Pro tools and saved designs remain available at zero.`,
   },
   {
     title: "Create your own vibe",
@@ -123,8 +126,8 @@ const PRO_PERKS: { title: string; body: string }[] = [
     body: "All 9 vibes, PDF and PNG export, side-by-side comparison, and priority school requests.",
   },
   {
-    title: "One and done",
-    body: "A single payment unlocks it all for good. No subscription, nothing to renew.",
+    title: "No subscription",
+    body: "One payment unlocks Pro tools permanently. Plan generation uses credits, which you can top up separately. No recurring payments.",
   },
 ];
 
@@ -213,7 +216,7 @@ function TrustStrip() {
       ),
       label: (
         <>
-          <span className="font-semibold text-ink">500+</span> rooms planned
+          <span className="font-semibold text-ink">{SCHOOLS.length}</span> colleges supported
         </>
       ),
     },
@@ -308,9 +311,6 @@ export default function PricingPage() {
             <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
               Free to plan. <span className="hl">Pay once to go further.</span>
             </h1>
-            <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              The planner is free to try. No trial timer, no card.
-            </p>
           </div>
 
           <BlueprintArtwork variant="orbit" /></div>
@@ -336,12 +336,11 @@ export default function PricingPage() {
                   </span>
                 </div>
                 <p className="mt-1 max-w-xl text-[15px] leading-relaxed text-ink-soft">
-                  Not ready for a plan? Buy room-design credits à la carte at{" "}
+                  Buy room-plan credits for{" "}
                   <span className="font-semibold text-ink">
                     ${FLEX_CREDIT_PRICE_USD.toFixed(2)} each
                   </span>
-                  , as few or as many as you want. Same features as Free; you just
-                  top up when you need another room.
+                  . Includes Free features.
                 </p>
               </div>
             </div>
@@ -371,7 +370,7 @@ export default function PricingPage() {
 
               <PriceDisplay amount="0" cadence="forever" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                Try the planner on the house: one room plan, with free unlimited saving.
+                One room plan. Unlimited saving.
               </p>
 
               <Link
@@ -396,13 +395,6 @@ export default function PricingPage() {
                 </ul>
               </div>
 
-              <div className="mt-auto border-t border-ink/8 pt-6">
-                <p className="text-[13px] leading-relaxed text-ink-soft">
-                  Free to try, no trial timer: one plan with free saving. The paid
-                  tiers add more plans, the locked vibes, and the export,
-                  comparison, and priority tools.
-                </p>
-              </div>
             </section>
 
             {/* PLUS TIER: the recommended paid tier. One-time $4.99, cobalt
@@ -423,8 +415,8 @@ export default function PricingPage() {
 
               <PriceDisplay amount={PLUS_PRICE_USD.toFixed(2)} was={PLUS_PRICE_WAS_USD.toFixed(2)} cadence="once" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                A single unlock, not a subscription. Add five plan credits for $
-                {RECHARGE_PRICE_USD.toFixed(2)} whenever you run low.
+                Includes {PLUS_INITIAL_CREDITS} plan credits. Recharge {RECHARGE_CREDITS} for $
+                {RECHARGE_PRICE_USD.toFixed(2)}.
               </p>
 
               <div className="mt-6">
@@ -438,11 +430,9 @@ export default function PricingPage() {
               {/* How credits work: the one bit of this model worth spelling out. */}
               <div className="mt-6 rounded-xl border border-cobalt/20 bg-cobalt/5 px-4 py-3">
                 <p className="text-[13px] leading-relaxed text-ink">
-                  <span className="font-semibold">How credits work:</span> one plan
-                  credit covers each new room you generate. Run dry and a $
-                  {RECHARGE_PRICE_USD.toFixed(2)} recharge adds five more. Saving your
-                  designs is always free, and your exports and comparisons keep
-                  working, credits or not.
+                  <span className="font-semibold">How credits work:</span> each new
+                  room plan uses one credit. Saving, exports, and comparisons
+                  don’t use credits.
                 </p>
               </div>
 
@@ -454,22 +444,20 @@ export default function PricingPage() {
               </div>
             </section>
 
-            {/* PRO TIER: the ceiling. Unlimited everything, amber-accented as the
-                top, most complete option. */}
+            {/* Pro: all tools, with its own included generation allowance. */}
             <section id="pro" className="scroll-mt-28 relative flex h-full flex-col rounded-2xl border border-amber/50 bg-card p-6 shadow-[0_24px_60px_-34px_rgba(240,177,0,0.55)] sm:p-8">
               <div className="flex items-center justify-between gap-3">
                 <h2 className="font-display text-2xl font-extrabold tracking-tight">
                   Pro
                 </h2>
                 <span className="inline-flex items-center rounded-full bg-amber/15 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
-                  Unlimited
+                  {PRO_INITIAL_CREDITS} credits
                 </span>
               </div>
 
               <PriceDisplay amount={PRO_PRICE_USD.toFixed(2)} was={PRO_PRICE_WAS_USD.toFixed(2)} cadence="once" />
               <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                The complete Dormscape. Every feature, unlimited plans and saves,
-                no credits to ever think about.
+                {PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D tools.
               </p>
 
               <div className="mt-6">
@@ -487,12 +475,6 @@ export default function PricingPage() {
                 <PerkList perks={PRO_PERKS} />
               </div>
 
-              <div className="mt-auto border-t border-ink/8 pt-6">
-                <p className="text-[13px] leading-relaxed text-ink-soft">
-                  Best if you are planning more than a couple of rooms, or just
-                  never want to see a credit counter.
-                </p>
-              </div>
             </section>
           </div>
 

@@ -64,18 +64,16 @@ export default function StudioShowcase() {
       <div className={s.topline}><span><i/> THE ROOM STUDIO / LIVE NOW</span><span className={s.pro}>INCLUDED WITH PRO ↗︎</span></div>
       <div className={s.content}>
         <div className={s.copy}>
-          <p className={s.kicker}>A whole new perspective.</p>
           <h2 id="showcase-title">Your room.<br/><em>Now in 3D.</em></h2>
-          <p className={s.description}>Move the desk. Find your light. Step inside. Meet the room you can&apos;t wait to move into.</p>
           <Link href="/plan?view=3d" className={s.cta}>Plan with 3D <span aria-hidden="true">↗︎</span></Link>
-          <div className={s.links}><Link href="/pricing#pro">Explore Pro</Link><Link href="/blog/introducing-dormscape-3d-room-studio">Take the tour ↗︎</Link></div>
+          <div className={s.links}><Link href="/plan/draw/3d">Build your own room ↗︎</Link><Link href="/pricing#pro">Explore Pro</Link></div>
         </div>
         <div className={s.visual}>
           <div className={s.orbit} aria-hidden="true"/><div className={s.orbitTwo} aria-hidden="true"/>
           <div ref={stage} className={s.stage} role="img" aria-label="A blueprint rises into a furnished 3D dorm room with a bed, desk, rug, window, and warm lighting">
             <svg className={s.fallback} viewBox="0 0 600 500" aria-hidden="true"><g fill="none" stroke="#cbd7ff" strokeWidth="2"><path d="m88 285 220-120 210 124-221 127Z" fill="#a0b2ed"/><path d="M88 285V159L308 40v125M308 40l210 125v124" fill="#e1e7ff"/><path d="m308 40 210 125v124L308 165Z" fill="#b4c3fb"/><path d="m124 266 72-40 124 72-74 42Z" fill="#fff2d8"/><path d="m124 266 122 74v20l-122-74Zm122 74 74-42v20l-74 42Z" fill="#c5a57e"/><path d="m165 255 31-17 40 23-31 17Z" fill="#314fff"/><path d="m280 322 68-37 89 50-69 40Z" fill="#314fff"/><path d="m342 220 53-28 89 51-52 28Z" fill="#ffdc60"/><path d="M347 223v45m130-21v44M364 100l81 48v67l-81-48Z"/></g></svg>
           </div>
-          <span className={s.coord} aria-hidden="true">12′ × 10′ / ENDLESS POSSIBILITIES</span>
+          <span className={s.coord} aria-hidden="true">12′ × 10′ / EXAMPLE ROOM</span>
           <div className={s.sceneCaption}><span className={s.sceneNumber}>0{active+1}</span><span>{["Start with your floor plan.","Every piece, in its place.","Your move-in, previewed."][active]}</span><span aria-hidden="true">↗︎</span></div>
         </div>
       </div>

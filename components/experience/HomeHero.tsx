@@ -8,14 +8,14 @@ import RoomModel from "./RoomModel";
 import PlanCta from "@/components/site/PlanCta";
 import { useExperienceMotion } from "./MotionProvider";
 
-export default function HomeHero() {
+export default function HomeHero({ collegeCount, layoutCount }: { collegeCount: number; layoutCount: number }) {
   const [vibe, setVibe] = useState("cozy");
   const { paused } = useExperienceMotion();
   return (
     <>
       <section className="dm-hero" aria-labelledby="hero-title">
         <div className="dm-hero-topline dm-eyebrow">
-          <Link href="#room-in-3d">New: live 3D Room Studio · Pro ↗︎</Link>
+          <Link href="/plan/draw/3d">New: build your room in 3D · Pro ↗︎</Link>
           <span>
             Fall ’26 <span aria-hidden="true">✳︎</span>
           </span>
@@ -39,24 +39,13 @@ export default function HomeHero() {
               </span>
             ))}
           </h1>
-          <p>
-            Find your exact dorm room, get a layout that actually fits it, tune
-            the style and budget, and leave with a shoppable list. Now explore your room in live 3D with Pro.
-          </p>
           <PlanCta className="dm-button dm-hero-cta" />
-          <small>Start in 2D without an account. Live 3D is included with Pro.</small>
+          <small>No account needed to explore.</small>
         </div>
         <div className="dm-hero-stage">
           <div className="dm-stage-grid" aria-hidden="true" />
-          <div className="dm-eyebrow dm-room-coordinate">
-            Your next chapter / A style study
-          </div>
           <RoomModel vibe={vibe} />
-          <span className="dm-fit-tag">
-            <span aria-hidden="true">✓</span> Make yourself at home.
-          </span>
           <div className="dm-hero-caption">
-            <span>A little room. A lot of you.</span>
             <span className="dm-room-interaction-hint">↔︎ Drag to explore</span>
           </div>
           <div className="dm-hero-vibes" aria-label="Preview a room style">
@@ -79,18 +68,15 @@ export default function HomeHero() {
           <div className="dm-social-proof">
             <BrandMark size={48}/>
             <p>
-              <strong>500+</strong> rooms planned
-              <br />
-              <small>and counting.</small>
+              <strong>{collegeCount}</strong> colleges
             </p>
           </div>
           <Link href="/plan/draw" className="dm-draw-note">
-            Draw your own room <span className="dm-yellow-tag">New</span>
-            <small>Sketch it yourself.</small>
+            Draw your own room
             <span aria-hidden="true">↗︎</span>
           </Link>
           <a className="dm-eyebrow dm-scroll-cue" href="#how-it-works">
-            Scroll to make room <span aria-hidden="true">↓</span>
+            How it works <span aria-hidden="true">↓</span>
           </a>
         </div>
       </section>
@@ -98,7 +84,7 @@ export default function HomeHero() {
         <div>
           {[0, 1].map((copy) => (
             <div key={copy} aria-hidden={copy === 1 ? true : undefined}>
-              <span>1,600+ dorm layouts</span>
+              <span>{layoutCount.toLocaleString("en-US")} dorm layouts</span>
               <i>✳︎</i>
               <span>$200 to $1,500 budgets</span>
               <i>✳︎</i>

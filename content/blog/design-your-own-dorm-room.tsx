@@ -79,10 +79,11 @@ function Body() {
 
       <Callout label="Draw it, then plan it">
         <p>
-          Drawing your own room is a <TextLink href="/pricing">Plus</TextLink>{" "}
+          Drawing your own room in 2D is a <TextLink href="/pricing">Plus</TextLink>{" "}
           feature (Plus and Pro both include it). Open the planner, choose{" "}
           <TextLink href="/plan/draw">Draw your own room</TextLink>, trace your walls, and
-          plan the room around the shape you actually live in.
+          plan the room around the shape you actually live in. Prefer building on a live 3D grid? Pro also includes the{" "}
+          <TextLink href="/plan/draw/3d">3D Room Builder</TextLink>, with floors, walls, doors, and windows that carry into the 3D planner.
         </p>
       </Callout>
 
@@ -100,12 +101,13 @@ const post: BlogPost = {
   excerpt:
     "Not every dorm is on the list, and not every room is a rectangle. Draw your exact floor plan, even an L-shape, and get a layout that fits it.",
   date: "2026-08-29",
+  updated: "2026-09-24",
   readingTimeMin: 5,
   faqTopic: "Draw your own room",
   faqs: [
     {
       q: "Can I plan a dorm room that isn't in Dormscape's database?",
-      a: "Yes. If your school or room isn't listed yet, use Draw your own room to trace your exact floor plan wall by wall, add the door, windows, and closets, and then plan it with a vibe and budget just like a listed room. It's a Plus feature, included on both Plus and Pro.",
+      a: "Yes. If your school or room isn't listed yet, use 2D drawing to trace your floor plan, add doors, windows, and closets, and then choose a vibe and budget. 2D drawing is included with Plus and Pro. Pro also includes the 3D Room Builder for constructing a room directly on a 3D grid.",
     },
     {
       q: "Does Dormscape support L-shaped or irregular dorm rooms?",
@@ -121,7 +123,7 @@ const post: BlogPost = {
     },
     {
       q: "Do I need Plus to draw my own room?",
-      a: "Yes. Drawing your own room is a Plus feature, and both Plus ($4.99 one time) and Pro ($14.99 one time) include it, along with all nine vibes, adding your own products, PDF and PNG export, and side-by-side comparison.",
+      a: "2D drawing is included with Plus ($4.99 one time) and Pro ($14.99 one time), along with all nine vibes, adding your own products, PDF and PNG export, and side-by-side comparison. Building your room on a live 3D grid and furnishing it in live 3D require Pro.",
     },
   ],
   Body,

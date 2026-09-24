@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, RECHARGE_PRICE_USD, FLEX_CREDIT_PRICE_USD } from "@/lib/plan";
 
 // Homepage FAQ accordion. Curated, product-level questions consolidated from
 // what's established across the site (dimensions, accounts, tiers, the affiliate
 // model, schools, credits). The full dorm-advice FAQ and its structured data
 // live on /faq; this stays schema-free so there's no duplicate FAQPage markup.
 const FAQS: { q: string; a: React.ReactNode }[] = [
-  {q:"Does Dormscape have a 3D room planner?",a:<>Yes. 3D Room Studio is available now with Pro. Arrange furniture, change finishes and lighting, and explore room, top, and inside views. Switch back to the same layout in 2D at any time. <Link href="/blog/introducing-dormscape-3d-room-studio" className="text-cobalt underline">Meet the 3D studio</Link>.</>},
+  {q:"Does Dormscape have a 3D room planner?",a:<>Yes. Pro includes both the 3D Room Builder and live 3D Room Studio. Build your own floor and walls, add doors and windows, then furnish the room and explore it from different views. <Link href="/plan/draw/3d" className="text-cobalt underline">Build your room in 3D</Link>.</>},
 
   {
     q: "How accurate are the room dimensions?",
@@ -38,9 +39,9 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
       <>
         Free lets you try it with 1 room plan you can save, plus 3 vibes and
         share links. Plus ($4.99 once) unlocks all 9 vibes, PDF and PNG export,
-        side-by-side comparison, and priority school requests, and gives you 5
-        plan credits (recharge 5 more for $2.99). Pro ($14.99 once) is that same
-        unlock with unlimited plans, create your own vibe, and live 3D Room Studio. Saving your designs is always free. See the
+        side-by-side comparison, and priority school requests, and gives you {PLUS_INITIAL_CREDITS}
+        plan credits (recharge {RECHARGE_CREDITS} more for ${RECHARGE_PRICE_USD.toFixed(2)}). Pro ($14.99 once) is that same
+        tools with {PRO_INITIAL_CREDITS} plan credits, create your own vibe, 3D Room Builder, and live 3D Room Studio. Saving your designs is always free. See the
         full split on the{" "}
         <Link
           href="/pricing"
@@ -85,20 +86,19 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     q: "Will you add more schools?",
     a: (
       <>
-        Yes. We&rsquo;ve mapped 1,500+ dorm layouts with real dimensions and keep
-        adding more. If yours isn&rsquo;t listed, request it from the planner and
-        we&rsquo;ll pull its floor plans into the queue. Plus and Pro requests jump
-        the line.
+        Yes. If yours isn&rsquo;t listed, request it from the planner.
+        Plus and Pro requests receive priority.
       </>
     ),
   },
+  { q: "How many designs can I generate with Pro?", a: <>Pro includes {PRO_INITIAL_CREDITS} plan credits. Each new room plan uses one credit. After the included free custom-vibe regeneration, further regenerations use one credit each. Add more for ${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. Editing, saving, room building, and switching between 2D and 3D use no credits.</> },
   {
     q: "What happens when my Plus credits run out?",
     a: (
       <>
         Only new room plans use credits. Saving stays free, and your existing
-        designs, exports, and comparisons keep working. A $2.99 recharge adds
-        five more plan credits, or go Pro for unlimited plans.
+        designs, exports, and comparisons keep working. A ${RECHARGE_PRICE_USD.toFixed(2)} recharge adds
+        {RECHARGE_CREDITS} more plan credits.
       </>
     ),
   },

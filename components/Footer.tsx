@@ -24,6 +24,7 @@ const COLUMNS: {
       { label: "Colleges", href: "/colleges" },
       { label: "Pricing", href: "/pricing" },
       { label: "Room in 3D", href: "/#room-in-3d-end", anchor: true },
+      { label: "3D Room Builder", href: "/plan/draw/3d" },
     ],
   },
   {
@@ -83,7 +84,6 @@ export default function Footer() {
       <div className="dm-footer-grid">
         <div className="dm-footer-brand">
           <Wordmark />
-          <p>Dorm ready under a minute.</p>
           <small>©︎ 2026 Dormscape</small>
         </div>
         {COLUMNS.map((col) => (

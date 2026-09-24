@@ -22,12 +22,11 @@ export default function AssemblyStory() {
           <br />
           to <em>move-in cart.</em>
         </h2>
-        <p>Three steps between you and a room that actually works.</p>
       </Reveal>
       <div ref={ref} className="dm-story-grid">
         <div className="dm-story-sticky">
           <div className="dm-preview-top dm-eyebrow">
-            <span>Your room, coming together</span>
+            <span>Floor plan</span>
             <span className="dm-story-meta">Plan / Style / Shop</span>
           </div>
           <PlanningBlueprint progress={progress} />
@@ -47,8 +46,7 @@ export default function AssemblyStory() {
               <em>exact dorm.</em>
             </h3>
             <p>
-              Pick your school, building, and room type. We already have the
-              dimensions, so everything fits before you buy.
+              Choose your school, building, and room type.
             </p>
             <div className="dm-demo-form">
               <span>
@@ -70,8 +68,7 @@ export default function AssemblyStory() {
               <em>feel like you.</em>
             </h3>
             <p>
-              Choose your vibe and set a budget. We handle the bedding,
-              lighting, storage, and decor.
+              Choose a style and set your budget.
             </p>
             <div className="dm-demo-styles">
               <span>Cozy</span>
@@ -94,18 +91,14 @@ export default function AssemblyStory() {
               <em>room.</em>
             </h3>
             <p>
-              A 2D layout that fits your exact floor plan, plus a shoppable list
-              with live Amazon links. Add to cart, done.
+              Arrange your layout and shop the linked products.
             </p>
             <div className="dm-demo-receipt">
-              <span className="dm-eyebrow">Example room / All sorted</span>
+              <span className="dm-eyebrow">Example room</span>
               <div>
                 <span>14 items</span>
                 <strong>$612</strong>
               </div>
-              <p>
-                Everything fits <span>✓</span>
-              </p>
             </div>
             <PlanCta className="dm-text-link" />
           </Reveal>
