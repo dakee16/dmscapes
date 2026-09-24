@@ -24,6 +24,7 @@ const COLUMNS: {
       { label: "Colleges", href: "/colleges" },
       { label: "Pricing", href: "/pricing" },
       { label: "Room in 3D", href: "/#room-in-3d-end", anchor: true },
+      { label: "3D Room Builder", href: "/plan/draw/3d" },
     ],
   },
   {

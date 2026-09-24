@@ -15,7 +15,7 @@ export default function HomeHero() {
     <>
       <section className="dm-hero" aria-labelledby="hero-title">
         <div className="dm-hero-topline dm-eyebrow">
-          <Link href="#room-in-3d">New: live 3D Room Studio · Pro ↗︎</Link>
+          <Link href="/plan/draw/3d">New: build your room in 3D · Pro ↗︎</Link>
           <span>
             Fall ’26 <span aria-hidden="true">✳︎</span>
           </span>
@@ -41,7 +41,7 @@ export default function HomeHero() {
           </h1>
           <p>
             Find your exact dorm room, get a layout that actually fits it, tune
-            the style and budget, and leave with a shoppable list. Now explore your room in live 3D with Pro.
+            the style and budget, and leave with a shoppable list. Build and explore your own room in live 3D with Pro.
           </p>
           <PlanCta className="dm-button dm-hero-cta" />
           <small>Start in 2D without an account. Live 3D is included with Pro.</small>

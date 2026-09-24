@@ -188,6 +188,9 @@ export default function Nav() {
                     >
                       Draw
                     </Link>
+                    <Link href="/plan/draw/3d" role="menuitem" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2 text-sm font-medium text-ink transition-colors hover:bg-paper">
+                      Build in 3D <span className="ml-2 text-xs text-cobalt">Pro</span>
+                    </Link>
                   </div>
 
                   <div className="mt-1.5 border-t border-ink/8 pt-1.5">

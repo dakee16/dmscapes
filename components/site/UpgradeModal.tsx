@@ -67,13 +67,17 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     title: "Step inside your room with Pro",
     body: "Arrange furniture in live 3D, try finishes and lighting, and switch to the same layout in 2D. 3D Room Studio is included with Pro. Your 2D plan stays available.",
   },
+  "draw-3d": {
+    title: "Build your own room in 3D",
+    body: "Place a floor, draw custom walls, and add doors and windows on a 3D grid. Then furnish that same room in the 3D planner. The 3D Room Builder is included with Pro. Plus keeps the 2D drawing tool.",
+  },
   "draw-room": {
     title: "Draw your own room",
-    body: "Sketch your exact floor plan, walls, doors, windows, and closets, even an L-shaped room, then get a layout built to fit it. Drawing your own room is a Plus feature, Plus and Pro both include it, along with every vibe and premium tool.",
+    body: "Sketch your floor plan in 2D, including walls, doors, windows, and closets, then get a layout built around it. Plus and Pro both include 2D drawing, all preset vibes, and Plus tools. Building and planning directly in 3D require Pro.",
   },
   generic: {
     title: "Do more with Dormscape Plus",
-    body: "Unlock all nine preset vibes, more room plans, exports, and comparison. Pro adds live 3D and custom vibes.",
+    body: "Unlock all nine preset vibes, more room plans, exports, and comparison. Pro adds the 3D Room Builder, live 3D planning, and custom vibes.",
   },
 };
 
@@ -174,7 +178,7 @@ export default function UpgradeModal() {
     >
       <div className={`${reason === "room-3d" ? "" : "snap-in "}w-full max-w-lg rounded-t-3xl border border-ink/10 bg-paper p-7 shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)] sm:rounded-3xl sm:p-9`}>
         <div className="flex items-start justify-between gap-4">
-          {reason === "room-3d" || reason === "custom-vibe" ? <span className="dm-eyebrow">Dormscape Pro</span> : <Badge />}
+          {reason === "room-3d" || reason === "draw-3d" || reason === "custom-vibe" ? <span className="dm-eyebrow">Dormscape Pro</span> : <Badge />}
           <CloseButton onClick={closeUpgrade} />
         </div>
 
@@ -188,8 +192,8 @@ export default function UpgradeModal() {
           {copy.body}
         </p>
 
-        {reason === "room-3d" || reason === "custom-vibe" ? (
-          <div className="mt-6 space-y-4"><p>Live 3D Room Studio, create your own vibe, unlimited room plans, and everything in Plus.</p><button className="dm-button w-full" onClick={() => buy("pro")} disabled={busy !== null}>{busy ? "Starting checkout…" : `Get Pro for $${PRO_PRICE_USD.toFixed(2)} once`}</button>{error && <p role="alert">{error}</p>}<Link href="/pricing#pro" onClick={closeUpgrade} className="block text-center text-cobalt underline">See all Pro features</Link><button className="block w-full text-sm" onClick={closeUpgrade}>Keep planning in 2D</button></div>
+        {reason === "room-3d" || reason === "draw-3d" || reason === "custom-vibe" ? (
+          <div className="mt-6 space-y-4"><p>3D Room Builder, live 3D Room Studio, create your own vibe, unlimited room plans, and everything in Plus.</p><button className="dm-button w-full" onClick={() => buy("pro")} disabled={busy !== null}>{busy ? "Starting checkout…" : `Get Pro for $${PRO_PRICE_USD.toFixed(2)} once`}</button>{error && <p role="alert">{error}</p>}<Link href="/pricing#pro" onClick={closeUpgrade} className="block text-center text-cobalt underline">See all Pro features</Link><button className="block w-full text-sm" onClick={closeUpgrade}>Keep planning in 2D</button></div>
         ) : isFlexCredits ? (
           // Out of credits on Flex: buy more à-la-carte, or step up to Pro.
           <>

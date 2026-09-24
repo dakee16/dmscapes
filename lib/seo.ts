@@ -124,7 +124,8 @@ export function softwareApplicationJsonLd() {
     operatingSystem: "Any (web browser)",
     browserRequirements: "Requires JavaScript",
     description:
-      "Plan a college dorm room to scale: pick your school and building to load real room dimensions, arrange furniture in a 2D layout that fits, set a budget and style, and get a shoppable list.",
+      "Plan a college dorm room to scale: use school dimensions or draw your own room, choose a style and budget, and get a shoppable layout. Pro adds the 3D Room Builder for floors, walls, doors and windows, plus live 3D furniture planning.",
+    featureList: ["2D room planning", "School room dimensions", "Budget-aware shopping", "Pro: 3D Room Builder", "Pro: live 3D Room Studio"],
     offers: {
       "@type": "Offer",
       price: "0",

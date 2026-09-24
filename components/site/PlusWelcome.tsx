@@ -175,7 +175,7 @@ export default function PlusWelcome({
               ${PLUS_PRICE_USD.toFixed(2)}
             </span>
             <span className="text-sm text-ink-soft">
-              one time for Plus. Pro is ${PRO_PRICE_USD.toFixed(2)} for unlimited.
+              one time for Plus. Pro is ${PRO_PRICE_USD.toFixed(2)} for unlimited plans, custom vibes, and 3D room building and planning.
             </span>
           </div>
 

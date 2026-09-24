@@ -41,6 +41,9 @@ const PERKS: Record<PlanTier, string[]> = {
   ],
   pro: [
     "Everything in Plus",
+    "3D Room Builder: floors, walls, doors, and windows",
+    "Live 3D Room Studio",
+    "Create your own vibe",
     "Unlimited room plans",
     "Unlimited saved designs",
     "No credits and no counters, ever",

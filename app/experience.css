@@ -69,6 +69,8 @@ body {
   display: block;
 }
 .dm-wordmark { gap:10px; }
+.dm-draw-3d-promo{display:flex;flex-direction:column;gap:14px;padding:clamp(24px,4vw,48px);margin-bottom:36px;background:#17172b;color:#fafaf8;border-left:5px solid #ffdc60;text-decoration:none;box-shadow:8px 8px 0 #e1e5f5}
+.dm-draw-3d-promo .dm-eyebrow{color:#ffdc60}.dm-draw-3d-promo strong{font-family:var(--font-bricolage),sans-serif;font-size:clamp(24px,3vw,38px);font-weight:600;line-height:1.15;letter-spacing:-.025em}.dm-draw-3d-promo>span:not(.dm-eyebrow){max-width:65ch;font-size:16px;line-height:1.65;color:#c9cce0}.dm-draw-3d-promo b{font-weight:500;color:#ffdc60;margin-top:6px}
 @media(max-width:480px){.dm-wordmark > .dm-brand-mark{width:34px!important;height:34px!important}.dm-wordmark{gap:7px}}
 @media(max-width:380px){.dm-nav .dm-wordmark .dm-brand-type{font-size:20px;letter-spacing:-1px}.dm-nav .dm-wordmark > .dm-brand-mark{width:30px!important;height:30px!important}}
 .dm-brand-type {
@@ -1239,6 +1241,24 @@ body {
 .dm-plan-topbar a.relative.rounded-full {
   border-radius: 2px;
   padding: 8px 20px;
+}
+@media (max-width: 780px) {
+  .dm-plan-topbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .dm-plan-topbar > div {
+    width: 100%;
+  }
+  .dm-plan-topbar > div:last-child > div {
+    display: flex;
+    width: 100%;
+  }
+  .dm-plan-topbar a.relative.rounded-full {
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
 }
 .dm-plan-shell > main {
   padding-top: 42px;

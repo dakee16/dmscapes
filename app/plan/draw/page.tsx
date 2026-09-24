@@ -2,6 +2,7 @@
 
 import BrandLoader from "@/components/site/BrandLoader";
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { usePlannerStore } from "@/lib/store";
@@ -146,6 +147,12 @@ export default function DrawRoomPage() {
 
       {/* Quick-start from a room this user has already drawn (signed-in only). */}
       <div className="mt-10">
+        <Link href="/plan/draw/3d" className="dm-draw-3d-promo">
+          <span className="dm-eyebrow">New / Included with Pro</span>
+          <strong>Start with a floor. Build your world.</strong>
+          <span>Place walls, floors, doors, and windows on a live 3D grid, then furnish your room in the 3D planner.</span>
+          <b>Explore the 3D Room Builder ↗</b>
+        </Link>
         <DrawnRoomsReuse />
       </div>
     </div>

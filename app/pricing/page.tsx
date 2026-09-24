@@ -25,7 +25,7 @@ const ROOM_LAYOUTS = SCHOOLS.reduce(
 const ROOM_LAYOUTS_FLOOR = Math.floor(ROOM_LAYOUTS / 100) * 100;
 
 const DESCRIPTION =
-  "The Dormscape planner is free to try: 1 room plan, and saving your designs is always free. Plus is a one-time $4.99 unlock (5 plan credits, all preset vibes and 2D tools, recharge for $2.99). Pro is $14.99 for unlimited plans, custom vibes, and live 3D Room Studio.";
+  "Try Dormscape free. Plus unlocks 2D drawing and exports for $4.99. Pro is $14.99 once for unlimited plans, custom vibes, 3D Room Builder, and 3D Room Studio.";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -109,6 +109,7 @@ const PLUS_PERKS: { title: string; body: string }[] = [
 
 // Pro perks: the ceiling. Unlimited, everything, no metering.
 const PRO_PERKS: { title: string; body: string }[] = [
+  {title: "3D Room Builder", body: "Build your own room on a 3D grid. Place a floor, draw custom walls, and add doors and windows. Your room carries straight into 3D planning. Pro only."},
   {title: "Live 3D Room Studio", body: "Arrange furniture, explore room, top, and inside views, and try finishes and lighting. Switch between the same 2D and 3D layout. Included with Pro, available now."},
   {
     title: "Unlimited room plans",

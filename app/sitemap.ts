@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const statics: MetadataRoute.Sitemap = [
     { url: `${BASE}/`, changeFrequency: "weekly", priority: 1 },
     { url: `${BASE}/plan`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/plan/draw/3d`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/colleges`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/pricing`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/blog`, changeFrequency: "weekly", priority: 0.7 },

@@ -236,3 +236,6 @@ export function canSaveDesign(_p: PlanFields | null | undefined): boolean {
 
 /** Interactive 3D is exclusive to Pro, including shared-room viewers. */
 export const canUse3D = isPro;
+
+/** Building room geometry directly in 3D is a separate, Pro-only entry point. */
+export const canBuild3D = isPro;

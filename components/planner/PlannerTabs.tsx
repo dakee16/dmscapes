@@ -4,13 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 /**
- * Plan | Draw switcher, shown just under the 1-2-3 progress steps on Step 1,
- * Step 2, and the Draw landing. "Plan" is the normal school-search flow; "Draw"
- * is the hand-drawn-room path. Hidden on every other planner sub-page.
+ * School search, 2D drawing, and Pro 3D building share the style/budget flow.
+ * Hidden on the result workspace so its own view controls stay primary.
  */
 export default function PlannerTabs() {
   const pathname = usePathname();
   const onDraw = pathname.startsWith("/plan/draw");
+  const onDraw3D = pathname.startsWith("/plan/draw/3d");
   const onPlan =
     pathname === "/plan" ||
     pathname.startsWith("/plan/style") ||
@@ -19,7 +19,8 @@ export default function PlannerTabs() {
 
   const tabs = [
     { href: "/plan", label: "Plan", active: onPlan, isNew: false },
-    { href: "/plan/draw", label: "Draw", active: onDraw, isNew: true },
+    { href: "/plan/draw", label: "Draw in 2D", active: onDraw && !onDraw3D, isNew: false },
+    { href: "/plan/draw/3d", label: "Build in 3D", active: onDraw3D, isNew: false },
   ];
 
   return (

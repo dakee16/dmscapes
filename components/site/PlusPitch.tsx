@@ -30,6 +30,8 @@ const PERKS: Record<"plus" | "pro", string[]> = {
   ],
   pro: [
     "Unlimited plans + saves",
+    "3D Room Builder",
+    "Live 3D Room Studio",
     "Create your own vibe",
     "Draw your own room",
     "All 9 vibes",
@@ -43,7 +45,7 @@ function SubscriberBanner({ tier }: { tier: "plus" | "pro" }) {
   const blurb =
     tier === "pro"
       ? "Unlimited plans and saves, every vibe, every feature. The whole studio is yours, for good."
-      : "All nine preset vibes and your Plus tools are yours, permanently. Pro adds live 3D and custom vibes. Here's to the rooms you'll design.";
+      : "All nine preset vibes and your Plus tools are yours, permanently. Pro adds 3D room building, live 3D planning, and custom vibes. Here's to the rooms you'll design.";
 
   return (
     <section className="dm-plus mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">
@@ -234,7 +236,7 @@ function PlusUpsell() {
             <p className="text-sm leading-relaxed text-ink-soft">
               <span className="font-semibold text-ink">Create your own vibe:</span> skip the
               presets and describe any aesthetic in your own words. We live-match real
-              products to it.
+              products to it. Pro also includes the <Link href="/plan/draw/3d" className="text-cobalt underline">3D Room Builder</Link> and live 3D planning.
             </p>
           </div>
 

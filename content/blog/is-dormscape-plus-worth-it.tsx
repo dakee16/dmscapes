@@ -4,7 +4,7 @@ import { Lead, H2, H3, P, Ul, Li, Callout, EndCTA, TextLink } from "@/components
 function Body() {
   return (
     <>
-      <Lead>Dormscape Plus is a one-time $4.99 upgrade with five room-plan credits, all nine preset vibes, drawing, product imports, exports, comparison, and priority school requests. Saving designs is always free. Pro is $14.99 once and adds unlimited room plans, create your own vibe, and live 3D Room Studio. Choose based on the tools you want and the number of plans you expect to generate.</Lead>
+      <Lead>Dormscape Plus is a one-time $4.99 upgrade with five room-plan credits, all nine preset vibes, 2D drawing, product imports, exports, comparison, and priority school requests. Saving designs is always free. Pro is $14.99 once and adds unlimited room plans, create your own vibe, 3D Room Builder, and live 3D Room Studio. Choose based on the tools you want and the number of plans you expect to generate.</Lead>
 
       <H2>What&rsquo;s free, and what it covers</H2>
       <P>
@@ -20,7 +20,7 @@ function Body() {
 
       <H2>What Plus unlocks</H2>
       <P>
-        Plus adds permanent 2D tools and a pack of plan credits. Pro includes those tools and adds live 3D and custom vibes.
+        Plus adds permanent 2D tools and a pack of plan credits. Pro includes those tools and adds 3D room building, live 3D planning, and custom vibes.
       </P>
 
       <H3>1. All nine vibes</H3>
@@ -70,12 +70,13 @@ function Body() {
       <H2>When Pro makes sense</H2>
       <P>
         Pro is $14.99 once and removes the credit system entirely: unlimited room
-        plans, create your own vibe, and live 3D Room Studio. Saving stays free for every account. Pro includes all Plus features, with nothing to recharge
+        plans, create your own vibe, 3D Room Builder, and live 3D Room Studio. The{" "}
+        <TextLink href="/plan/draw/3d">3D builder</TextLink> lets you place a floor, shape walls, and add doors and windows before furnishing the room. Saving stays free for every account. Pro includes all Plus features, with nothing to recharge
         and no counter to watch.{" "}
-        <strong>Worth it if</strong>{" "}you expect to plan more than a couple of
+        <strong>Worth it if</strong>{" "}you want to build or explore your room in 3D, expect to plan more than a couple of
         rooms, you&rsquo;re helping friends plan theirs, or you just never want to
         think about credits.{" "}
-        <strong>Skip it if</strong>{" "}a handful of plans is all you need; Plus plus
+        <strong>Skip it if</strong>{" "}2D planning and a handful of plans are all you need; Plus plus
         the odd recharge is cheaper.
       </P>
 
@@ -117,18 +118,18 @@ const post: BlogPost = {
   title: "Is Dormscape Plus worth it? Here's what you actually get",
   metaTitle: "Is Dormscape Plus Worth It? An Honest Breakdown",
   description:
-    "An honest look at Dormscape Plus ($4.99 once: all vibes, PDF and PNG export, comparison, priority, and 5 plan credits) and Pro ($14.99 for unlimited plans, custom vibes, and 3D), plus who should stay on the free planner.",
+    "Compare Dormscape Plus and Pro: plan credits, 2D tools, custom vibes, 3D Room Builder, and live 3D planning. Find the tools you need before upgrading.",
   excerpt:
     "A specific, non-salesy breakdown of what Plus and Pro unlock, how plan credits and free saving work, and who each tier actually helps, including the people who should stay free.",
   date: "2026-07-28",
-  updated: "2026-09-15",
+  updated: "2026-09-24",
   readingTimeMin: 6,
   faqTopic: "Plus",
   faqs: [
-    {q:"How much is Dormscape Plus?",a:"Plus is $4.99 once with five room-plan credits. A $2.99 recharge adds five more plan credits. Saving is always free and unlimited. Pro is $14.99 once for unlimited room plans, custom vibes, and live 3D Room Studio."},
-    {q:"What does Dormscape Plus include?",a:"Plus includes all nine preset vibes, drawing your room, importing Amazon products, PDF and PNG export, comparison, priority school requests, and five plan credits. Live 3D and create your own vibe require Pro."},
+    {q:"How much is Dormscape Plus?",a:"Plus is $4.99 once with five room-plan credits. A $2.99 recharge adds five more plan credits. Saving is always free and unlimited. Pro is $14.99 once for unlimited room plans, custom vibes, 3D Room Builder, and live 3D Room Studio."},
+    {q:"What does Dormscape Plus include?",a:"Plus includes all nine preset vibes, 2D room drawing, importing Amazon products, PDF and PNG export, comparison, priority school requests, and five plan credits. 3D room building, live 3D planning, and create your own vibe require Pro."},
     {q:"Is the Dormscape planner still free?",a:"Yes. Free includes one room plan, three preset vibes, the 2D editor, shopping links, sharing, and unlimited saving with an account. Interactive 3D is included with Pro."},
-    {q:"What is the difference between Plus and Pro?",a:"Plus has five initial plan credits and permanent Plus tools. Pro includes all Plus tools, unlimited plans, live 3D Room Studio, and create your own vibe. Saving is free for every account."}
+    {q:"What is the difference between Plus and Pro?",a:"Plus has five initial plan credits and permanent Plus tools. Pro includes all Plus tools, unlimited plans, 3D Room Builder, live 3D Room Studio, and create your own vibe. Saving is free for every account."}
   ],
   Body,
 };

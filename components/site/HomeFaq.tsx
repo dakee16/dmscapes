@@ -8,7 +8,7 @@ import Link from "next/link";
 // model, schools, credits). The full dorm-advice FAQ and its structured data
 // live on /faq; this stays schema-free so there's no duplicate FAQPage markup.
 const FAQS: { q: string; a: React.ReactNode }[] = [
-  {q:"Does Dormscape have a 3D room planner?",a:<>Yes. 3D Room Studio is available now with Pro. Arrange furniture, change finishes and lighting, and explore room, top, and inside views. Switch back to the same layout in 2D at any time. <Link href="/blog/introducing-dormscape-3d-room-studio" className="text-cobalt underline">Meet the 3D studio</Link>.</>},
+  {q:"Does Dormscape have a 3D room planner?",a:<>Yes. Pro includes both the 3D Room Builder and live 3D Room Studio. Build your own floor and walls, add doors and windows, then furnish the room and explore it from different views. <Link href="/plan/draw/3d" className="text-cobalt underline">Build your room in 3D</Link>.</>},
 
   {
     q: "How accurate are the room dimensions?",
@@ -40,7 +40,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
         share links. Plus ($4.99 once) unlocks all 9 vibes, PDF and PNG export,
         side-by-side comparison, and priority school requests, and gives you 5
         plan credits (recharge 5 more for $2.99). Pro ($14.99 once) is that same
-        unlock with unlimited plans, create your own vibe, and live 3D Room Studio. Saving your designs is always free. See the
+        unlock with unlimited plans, create your own vibe, 3D Room Builder, and live 3D Room Studio. Saving your designs is always free. See the
         full split on the{" "}
         <Link
           href="/pricing"

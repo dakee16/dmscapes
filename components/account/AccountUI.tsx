@@ -53,7 +53,7 @@ export function MembershipCard({ profile, billing = false }: { profile: Profile 
       </div>
       <p className={s.memberNote}>
         {!profile ? "Fetching your plan details." : state.unlimited
-          ? "All the room to keep creating."
+          ? "Build your room in 3D, furnish it, and keep creating with unlimited plans."
           : state.empty ? "Ready for another idea? Top up whenever you like."
           : "One plan. A whole new possibility."}
       </p>

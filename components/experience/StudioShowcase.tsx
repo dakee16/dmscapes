@@ -66,9 +66,9 @@ export default function StudioShowcase() {
         <div className={s.copy}>
           <p className={s.kicker}>A whole new perspective.</p>
           <h2 id="showcase-title">Your room.<br/><em>Now in 3D.</em></h2>
-          <p className={s.description}>Move the desk. Find your light. Step inside. Meet the room you can&apos;t wait to move into.</p>
+          <p className={s.description}>Build your walls. Move the desk. Find your light. Pro brings your own room from a blank 3D grid to a furnished space.</p>
           <Link href="/plan?view=3d" className={s.cta}>Plan with 3D <span aria-hidden="true">↗︎</span></Link>
-          <div className={s.links}><Link href="/pricing#pro">Explore Pro</Link><Link href="/blog/introducing-dormscape-3d-room-studio">Take the tour ↗︎</Link></div>
+          <div className={s.links}><Link href="/plan/draw/3d">Build your own room ↗︎</Link><Link href="/pricing#pro">Explore Pro</Link></div>
         </div>
         <div className={s.visual}>
           <div className={s.orbit} aria-hidden="true"/><div className={s.orbitTwo} aria-hidden="true"/>

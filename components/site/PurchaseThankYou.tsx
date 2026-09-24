@@ -17,7 +17,7 @@ type Tier = "plus" | "pro";
 const COPY: Record<Tier, { title: string; blurb: string; perks: string[] }> = {
   plus: {
     title: "You're on Plus.",
-    blurb: "Every vibe and every premium feature is unlocked, permanently.",
+    blurb: "Every preset vibe and your Plus tools are unlocked, permanently.",
     perks: [
       "5 plan credits, with free unlimited saving",
       "All 9 vibes unlocked",
@@ -30,6 +30,8 @@ const COPY: Record<Tier, { title: string; blurb: string; perks: string[] }> = {
     blurb: "Unlimited plans and saves, with everything unlocked for good.",
     perks: [
       "Unlimited plan credits and saves",
+      "3D Room Builder and live 3D Room Studio",
+      "Create your own vibe",
       "All 9 vibes unlocked",
       "PDF + PNG export and side-by-side compare",
       "Priority on your add-my-school requests",
