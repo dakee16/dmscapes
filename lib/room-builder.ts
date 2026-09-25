@@ -1,4 +1,4 @@
-import type { BedSize, Point, RoomOutline, SelectedRoom, WallOpening } from "./types";
+import type { BedSize, ClosetRect, Point, RoomOutline, SelectedRoom, WallOpening } from "./types";
 import { DEFAULT_STUDIO, type StudioSettings } from "./studio";
 import { sanitizeStudio } from "./studio-save";
 import { openingAtPoint, roomEditError } from "./room-editing";
@@ -9,16 +9,17 @@ export interface BuilderDraft {
   points: Point[];
   closed: boolean;
   openings: WallOpening[];
+  closets: ClosetRect[];
   settings: StudioSettings;
   occupants: number;
   bedSize: BedSize;
 }
-export type BuilderTool = "select" | "floor" | "wall" | "door" | "window" | "orbit";
-export type BuilderSelection = { kind: "corner" | "wall" | "opening"; index: number } | null;
+export type BuilderTool = "select" | "floor" | "wall" | "door" | "window" | "closet" | "orbit";
+export type BuilderSelection = { kind: "corner" | "wall" | "opening" | "closet"; index: number } | null;
 export const BUILDER_LIMIT = 30;
 export const BUILDER_MAX_CORNERS = 40;
-export const emptyDraft = (): BuilderDraft => ({version:1,points:[],closed:false,openings:[],settings:{...DEFAULT_STUDIO},occupants:1,bedSize:"twin_xl"});
-export const builderOutline = (d: BuilderDraft): RoomOutline => ({points:d.points,openings:d.openings,closets:[]});
+export const emptyDraft = (): BuilderDraft => ({version:1,points:[],closed:false,openings:[],closets:[],settings:{...DEFAULT_STUDIO},occupants:1,bedSize:"twin_xl"});
+export const builderOutline = (d: BuilderDraft): RoomOutline => ({points:d.points,openings:d.openings,closets:d.closets});
 export const snapPoint = (p: Point, step = .5): Point => ({x:Math.max(-30,Math.min(30,Math.round(p.x/step)*step)),y:Math.max(-30,Math.min(30,Math.round(p.y/step)*step))});
 export function roomArea(points: Point[]) { return Math.abs(points.reduce((a,p,i)=>{const q=points[(i+1)%points.length];return a+p.x*q.y-q.x*p.y;},0))/2; }
 export function builderBounds(points: Point[]) {
@@ -28,6 +29,7 @@ export function builderBounds(points: Point[]) {
 export function builderError(d: BuilderDraft): string | null {
   if(!d.closed)return "Close the walls to make a floor before continuing.";
   const path=pathError(d.points);if(path)return path;
+  const closets=closetError(d.closets);if(closets)return closets;
   const geometry=roomEditError(builderOutline(d));
   if(geometry)return geometry;
   const b=builderBounds(d.points);
@@ -46,8 +48,12 @@ export function parseBuilderDraft(input: unknown): BuilderDraft | null {
     if(!["door","window"].includes(o.kind)||!Number.isInteger(o.edge)||o.edge<0||o.edge>=points.length||!Number.isFinite(o.offset_ft)||o.offset_ft<0||!Number.isFinite(o.width_ft)||o.width_ft<.5||o.width_ft>12||(o.swing!==undefined&&(!Number.isInteger(o.swing)||o.swing<0||o.swing>3)))return null;
     openings.push({kind:o.kind,edge:o.edge,offset_ft:o.offset_ft,width_ft:o.width_ft,...(o.kind==="door"?{swing:o.swing??0}:{})});
   }
-  const result:BuilderDraft={version:1,points,openings,closed:d.closed,settings,occupants:d.occupants as number,bedSize:d.bedSize as BedSize};
-  if(pathError(points)||(result.closed?!!roomEditError(builderOutline(result)):openings.length>0))return null;
+  // Version-one drafts made before closet support remain valid.
+  const rawClosets=d.closets===undefined?[]:d.closets;
+  if(!Array.isArray(rawClosets)||closetError(rawClosets))return null;
+  const closets:ClosetRect[]=rawClosets.map(c=>({x_ft:c.x_ft,y_ft:c.y_ft,width_ft:c.width_ft,depth_ft:c.depth_ft}));
+  const result:BuilderDraft={version:1,points,openings,closets,closed:d.closed,settings,occupants:d.occupants as number,bedSize:d.bedSize as BedSize};
+  if(pathError(points)||(result.closed?!!roomEditError(builderOutline(result)):openings.length>0||closets.length>0))return null;
   return result;
 }
 function cross(a:Point,b:Point,c:Point){return (b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x);}
@@ -99,7 +105,42 @@ export function builderRoom(d:BuilderDraft):SelectedRoom {
   const error=builderError(d);if(error)throw Error(error);
   const b=builderBounds(d.points);
   return {type:(["single","double","triple","quad"] as const)[d.occupants-1],occupants:d.occupants,lengthFt:b.length,widthFt:b.width,bedSize:d.bedSize,source:"drawn",
-    outline:{points:d.points.map(p=>({x:p.x-b.x,y:p.y-b.y})),openings:d.openings.map(o=>({...o})),closets:[]},studio:{...d.settings}};
+    outline:{points:d.points.map(p=>({x:p.x-b.x,y:p.y-b.y})),openings:d.openings.map(o=>({...o})),closets:d.closets.map(c=>({...c,x_ft:c.x_ft-b.x,y_ft:c.y_ft-b.y}))},studio:{...d.settings}};
+}
+
+function closetError(closets:unknown[]):string|null {
+  if(closets.length>20)return "A room can have up to 20 closets.";
+  for(const raw of closets){
+    if(!raw||typeof raw!=="object"||Array.isArray(raw))return "Enter valid closet measurements.";
+    const c=raw as ClosetRect;
+    if(!Number.isFinite(c.x_ft)||!Number.isFinite(c.y_ft)||Math.abs(c.x_ft)>BUILDER_LIMIT||Math.abs(c.y_ft)>BUILDER_LIMIT)return "Keep the closet on the 60 ft grid.";
+    if(!Number.isFinite(c.width_ft)||!Number.isFinite(c.depth_ft)||c.width_ft<.5||c.depth_ft<.5||c.width_ft>20||c.depth_ft>20)return "Closet width and depth can be 0.5 to 20 ft.";
+  }
+  const items=closets as ClosetRect[];
+  for(let i=0;i<items.length;i++)for(let j=i+1;j<items.length;j++){
+    const a=items[i],b=items[j];
+    if(a.x_ft<b.x_ft+b.width_ft-.001&&b.x_ft<a.x_ft+a.width_ft-.001&&a.y_ft<b.y_ft+b.depth_ft-.001&&b.y_ft<a.y_ft+a.depth_ft-.001)return "Leave space between closets; they cannot overlap.";
+  }
+  return null;
+}
+/** Exact measurements use the closet's lower X/Z corner, matching planner obstacles. */
+export function editBuilderCloset(d:BuilderDraft,closet:ClosetRect,index=-1):BuilderDraft|string {
+  if(!d.closed)return "Finish the floor and walls first.";
+  if(!Number.isInteger(index)||index< -1||index>=d.closets.length)return "Choose a closet first.";
+  const next={...d,closets:index===-1?[...d.closets,{...closet}]:d.closets.map((c,i)=>i===index?{...closet}:c)};
+  return closetError(next.closets)??roomEditError(builderOutline(next))??next;
+}
+/** A pointer targets the center; snap its footprint and hug the outer room bounds. */
+export function placeBuilderCloset(d:BuilderDraft,point:Point,width:number,depth:number,step=.5,index=-1):BuilderDraft|string {
+  if(!d.closed)return "Finish the floor and walls first.";
+  if(!Number.isFinite(point.x)||!Number.isFinite(point.y)||!Number.isFinite(step)||step<=0)return "Choose a position inside your room.";
+  const b=builderBounds(d.points);
+  if(point.x<b.x-.25||point.x>b.x+b.length+.25||point.y<b.y-.25||point.y>b.y+b.width+.25)return "Place the closet inside your walls.";
+  return editBuilderCloset(d,{
+    x_ft:Math.max(b.x,Math.min(b.x+b.length-width,Math.round((point.x-width/2)/step)*step)),
+    y_ft:Math.max(b.y,Math.min(b.y+b.width-depth,Math.round((point.y-depth/2)/step)*step)),
+    width_ft:width,depth_ft:depth,
+  },index);
 }
 export function presetDraft(shape:"rectangle"|"l"|"alcove",length=14,width=12):BuilderDraft {
   const x=-length/2,y=-width/2;

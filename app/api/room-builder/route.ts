@@ -26,7 +26,7 @@ export async function POST(request:Request) {
   const denied=await access(request);if(denied)return denied;
   let draft;
   try {const text=await request.text();if(text.length>24000)return reply({error:"This draft is too large."},413);draft=parseBuilderDraft(JSON.parse(text));}catch{return reply({error:"This room draft could not be read."},400);}
-  if(!draft)return reply({error:"The room contains invalid walls, openings, or dimensions."},400);
+  if(!draft)return reply({error:"The room contains invalid walls, openings, closets, or dimensions."},400);
   const error=builderError(draft);if(error)return reply({error},400);
   // No generation credit or database write: validate the handoff, not a saved design.
   return reply({room:builderRoom(draft)});

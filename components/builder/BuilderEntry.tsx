@@ -42,11 +42,11 @@ export default function BuilderEntry(){
   }
   if(uid&&verified===uid&&pro)return <RoomBuilder key={uid} userId={uid} onComplete={complete}/>;
   return <section className={s.landing} aria-labelledby="builder-title">
-    <div className={s.landingCopy}><p className={s.eyebrow}>New / Dormscape Pro</p><h1 id="builder-title">Your room.<br/><em>From the ground up.</em></h1><p className={s.lead}>Don’t just arrange a room. Build yours. Place a floor, shape the walls, and add doors and windows on a live 3D grid. Then make it home in the 3D planner.</p>
+    <div className={s.landingCopy}><p className={s.eyebrow}>New / Dormscape Pro</p><h1 id="builder-title">Your room.<br/><em>From the ground up.</em></h1><p className={s.lead}>Don’t just arrange a room. Build yours. Place a floor, shape the walls, and add doors, windows, and closets on a live 3D grid. Then make it home in the 3D planner.</p>
       <div className={s.actions}><button className={s.primary} onClick={start} disabled={loading||busy}>{loading?"Checking your account…":busy?"Opening your builder…":!user?"Sign in to build in 3D":pro?"Start building in 3D ↗":"Unlock 3D building with Pro ↗"}</button><Link href="/plan/draw">Prefer drawing in 2D?</Link></div>
       {error&&<p role="alert" className={s.error}>{error}</p>}
       <p className={s.fine}>Pro only. Existing 2D drawing remains included with Plus and Pro.</p>
     </div><BuilderIllustration/>
-    <ol className={s.featureGrid}><li><span>01 / SHAPE</span><h2>A floor that fits.</h2><p>Start with a rectangle or trace a custom outline. Move corners and enter exact measurements.</p></li><li><span>02 / OPENINGS</span><h2>Every little detail.</h2><p>Place doors and windows on your walls. Set their width, position, and door swing.</p></li><li><span>03 / FURNISH</span><h2>Built. Now make it yours.</h2><p>Choose a vibe and budget. Your drawn room opens in 3D, ready for furniture and shopping.</p></li></ol>
+    <ol className={s.featureGrid}><li><span>01 / SHAPE</span><h2>A floor that fits.</h2><p>Start with a rectangle or trace a custom outline. Move corners and enter exact measurements.</p></li><li><span>02 / DETAILS</span><h2>Every little detail.</h2><p>Place doors and windows on your walls. Add built-in closets and set their exact size and position.</p></li><li><span>03 / FURNISH</span><h2>Built. Now make it yours.</h2><p>Choose a vibe and budget. Your drawn room opens in 3D, ready for furniture and shopping.</p></li></ol>
   </section>;
 }

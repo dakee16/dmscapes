@@ -2,7 +2,7 @@ import * as T from "./vendor/three.module.min.js";
 
 /** Kept separate from the furniture renderer: construction has its own gestures. */
 export function createBuilderShell(draft) {
-  const root=new T.Group(),walls=[],openings=[],corners=[];
+  const root=new T.Group(),walls=[],openings=[],corners=[],closets=[];
   const materials=new Map();
   const mat=color=>{if(!materials.has(color))materials.set(color,new T.MeshStandardMaterial({color,roughness:.8}));return materials.get(color);};
   const box=(parent,w,h,d,color,x,y,z)=>{const mesh=new T.Mesh(new T.BoxGeometry(w,h,d),mat(color));mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;parent.add(mesh);return mesh;};
@@ -45,16 +45,27 @@ export function createBuilderShell(draft) {
     // A low wall trace stays visible in cutaway and top views.
     const trace=new T.Mesh(new T.BoxGeometry(len,.055,.18),mat("#2b4eff"));trace.position.set((a.x+b.x)/2,.04,(a.y+b.y)/2);trace.rotation.copy(wall.rotation);trace.userData={kind:"wall",index:i};root.add(trace);
   }
+  if(draft.closed)for(const [index,c] of (draft.closets??[]).entries()){
+    const closet=new T.Group(),h=height*.87,w=c.width_ft,d=c.depth_ft;
+    closet.name="builder-closet";closet.position.set(c.x_ft+w/2,0,c.y_ft+d/2);root.add(closet);closets.push(closet);
+    // Separate solid panels keep the front free of coplanar faces. All parts stay in the reserved footprint.
+    box(closet,w,h,d-.06,"#c5ad8b",0,h/2,-.03);
+    for(const side of [-1,1]){
+      box(closet,w/2-.025,h-.08,.035,"#e4d2b6",side*w/4,h/2,d/2-.0325);
+      box(closet,.025,.28,.025,"#51515f",side*Math.min(.10,w*.15),h*.46,d/2-.0125);
+    }
+    closet.traverse(node=>{node.userData={kind:"closet",index};});
+  }
   points.forEach((p,index)=>{const material=new T.MeshBasicMaterial({color:index===0&&!draft.closed?"#ffdc60":"#2b4eff",depthTest:false});
     const node=new T.Mesh(new T.SphereGeometry(.16,14,10),material);node.position.set(p.x,.10,p.y);node.userData={kind:"corner",index};node.renderOrder=5;root.add(node);corners.push(node);});
-  return {root,walls,openings,corners,dispose(){const seen=new Set();root.traverse(o=>{o.geometry?.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material])if(m&&!seen.has(m)){m.dispose();seen.add(m);}});}};
+  return {root,walls,openings,corners,closets,dispose(){const seen=new Set();root.traverse(o=>{o.geometry?.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material])if(m&&!seen.has(m)){m.dispose();seen.add(m);}});}};
 }
 
 export function createBuilderScene(container,options){
   const renderer=new T.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.7));renderer.setClearColor("#eceef3");
   renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.12;
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
-  const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D construction grid. Use the tools to draw. Exact coordinates and opening controls are available beside the canvas.");
+  const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D construction grid. Use the tools to draw. Exact coordinates, opening controls, and closet measurements are available beside the canvas.");
   canvas.style.cssText="display:block;width:100%;height:100%;touch-action:none;outline-offset:-4px";container.appendChild(canvas);
   const scene=new T.Scene(),camera=new T.PerspectiveCamera(42,1,.1,400),ray=new T.Raycaster(),ndc=new T.Vector2(),plane=new T.Plane(new T.Vector3(0,1,0),0);
   const hemi=new T.HemisphereLight("#f5f7ff","#9d8f7b",2.6);scene.add(hemi);
@@ -77,7 +88,7 @@ export function createBuilderScene(container,options){
   }
   function pointer(e){const r=canvas.getBoundingClientRect();ndc.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);ray.setFromCamera(ndc,camera);return ray.ray.intersectPlane(plane,new T.Vector3());}
   function picked(e){pointer(e);const hits=ray.intersectObjects(shell?.root.children??[],true).filter(h=>h.object.userData.kind&&!(h.object.userData.kind==="wall"&&h.object.parent!==shell.root&&!h.object.parent.visible));
-    return hits.find(h=>h.object.userData.kind==="corner")??hits.find(h=>h.object.userData.kind==="opening")??hits[0];}
+    return hits.find(h=>h.object.userData.kind==="corner")??hits.find(h=>["opening","closet"].includes(h.object.userData.kind))??hits[0];}
   function wallPoint(e){const floor=pointer(e);const hit=ray.intersectObjects((shell?.walls??[]).filter(w=>w.visible),true)[0];return hit?.point??floor;}
   function clearGhost(){for(const o of ghost.children)o.geometry?.dispose();ghost.clear();label.style.display="none";}
   function line(a,b){const g=new T.BufferGeometry().setFromPoints([new T.Vector3(a.x,.08,a.y),new T.Vector3(b.x,.08,b.y)]),m=new T.Line(g,ghostMat);m.renderOrder=8;ghost.add(m);}
@@ -92,6 +103,10 @@ export function createBuilderScene(container,options){
       if(opening){const a=data.draft.points[opening.edge],b=data.draft.points[(opening.edge+1)%data.draft.points.length],len=Math.hypot(b.x-a.x,b.y-a.y),along=opening.offset_ft+opening.width_ft/2;
         const m=new T.Mesh(new T.BoxGeometry(opening.width_ft,data.tool==="door"?6.6:3.5,.3),ghostMat);m.position.set(a.x+(b.x-a.x)*along/len,data.tool==="door"?3.3:4.7,a.y+(b.y-a.y)*along/len);m.rotation.y=-Math.atan2(b.y-a.y,b.x-a.x);m.renderOrder=9;ghost.add(m);label.textContent="Click to place "+data.tool;
       }else label.textContent="Choose a clear wall";
+    }else if(data.tool==="closet"){
+      const c=options.previewCloset(-1,{x:p.x,y:p.z});
+      if(c){const h=data.draft.settings.ceilingFt*.87,m=new T.Mesh(new T.BoxGeometry(c.width_ft,h,c.depth_ft),ghostMat);m.position.set(c.x_ft+c.width_ft/2,h/2,c.y_ft+c.depth_ft/2);m.renderOrder=9;ghost.add(m);label.textContent=c.width_ft+" × "+c.depth_ft+" ft · Click to place closet";}
+      else label.textContent="Keep closets inside the room and clear of each other";
     }else{request();return;}
     const r=canvas.getBoundingClientRect();label.style.display="block";label.style.left=Math.max(90,Math.min(width-90,e.clientX-r.left))+"px";label.style.top=Math.max(35,e.clientY-r.top-18)+"px";request();
   }
@@ -100,7 +115,7 @@ export function createBuilderScene(container,options){
     if(pointers.size>1){drag=null;clearGhost();rebuild(true);return;}
     const hit=picked(e),item=hit?.object.userData;
     drag={id:e.pointerId,x:e.clientX,y:e.clientY,lastX:e.clientX,lastY:e.clientY,moved:false,orbit:data.tool==="orbit"||e.button!==0||e.altKey,item:data.tool==="select"&&item?{kind:item.kind,index:item.index}:null};
-    if(drag.item){options.onSelect(drag.item);const p=pointer(e);if(p&&item.kind==="corner"){const c=data.draft.points[item.index];drag.offset={x:p.x-c.x,y:p.z-c.y};}}
+    if(drag.item){options.onSelect(drag.item);const p=pointer(e);if(p&&item.kind==="corner"){const c=data.draft.points[item.index];drag.offset={x:p.x-c.x,y:p.z-c.y};}else if(p&&item.kind==="closet"){const c=data.draft.closets[item.index];drag.offset={x:p.x-c.x_ft-c.width_ft/2,y:p.z-c.y_ft-c.depth_ft/2};}}
     clearGhost();
   }
   function move(e){if(!data)return;if(!pointers.has(e.pointerId)){hover(e);return;}pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
@@ -109,14 +124,15 @@ export function createBuilderScene(container,options){
     if(drag.moved){
       if(drag.orbit||data.tool==="select"&&!drag.item){angle-=dx*.008;polar=Math.max(.08,Math.min(1.45,polar+dy*.006));view="room";}
       else if(drag.item?.kind==="corner"){const p=pointer(e);if(p){p.x-=drag.offset?.x??0;p.z-=drag.offset?.y??0;const q=snap(p);drag.point=q;const node=shell.corners[drag.item.index];node.position.set(q.x,.1,q.y);clearGhost();const points=data.draft.points,n=points.length;if(drag.item.index>0||data.draft.closed)line(points[(drag.item.index-1+n)%n],q);if(drag.item.index<n-1||data.draft.closed)line(q,points[(drag.item.index+1)%n]);}}
+      else if(drag.item?.kind==="closet"){const p=pointer(e);if(p){drag.point={x:p.x-(drag.offset?.x??0),y:p.z-(drag.offset?.y??0)};const c=options.previewCloset(drag.item.index,drag.point);if(c){shell.closets[drag.item.index].position.set(c.x_ft+c.width_ft/2,0,c.y_ft+c.depth_ft/2);updateSelection();}}}
       else if(drag.item?.kind==="opening"){const p=wallPoint(e);clearGhost();if(p){drag.point={x:p.x,y:p.z};const opening=options.previewOpening(drag.item.index,drag.point);if(opening){const a=data.draft.points[opening.edge],b=data.draft.points[(opening.edge+1)%data.draft.points.length],len=Math.hypot(b.x-a.x,b.y-a.y),along=opening.offset_ft+opening.width_ft/2,h=opening.kind==="door"?6.5:3;
         const preview=new T.Mesh(new T.BoxGeometry(opening.width_ft,h,.3),ghostMat);preview.position.set(a.x+(b.x-a.x)*along/len,opening.kind==="door"?h/2:4.5,a.y+(b.y-a.y)*along/len);preview.rotation.y=-Math.atan2(b.y-a.y,b.x-a.x);preview.renderOrder=8;ghost.add(preview);}}}
     }
     drag.lastX=e.clientX;drag.lastY=e.clientY;request();
   }
   function up(e){const d=drag;pointers.delete(e.pointerId);if(canvas.hasPointerCapture(e.pointerId))canvas.releasePointerCapture(e.pointerId);pinch=0;if(!d||d.id!==e.pointerId)return;drag=null;
-    if(d.moved&&d.item&&d.point){d.item.kind==="corner"?options.onMoveCorner(d.item.index,d.point):d.item.kind==="opening"&&options.onMoveOpening(d.item.index,d.point);rebuild(true);}
-    else if(!d.moved&&!d.orbit){if(data.tool==="select")options.onSelect(d.item);else{const p=["door","window"].includes(data.tool)?wallPoint(e):pointer(e);if(p)options.onPoint(["door","window"].includes(data.tool)?{x:p.x,y:p.z}:snap(p));}}
+    if(d.moved&&d.item&&d.point){if(d.item.kind==="corner")options.onMoveCorner(d.item.index,d.point);else if(d.item.kind==="opening")options.onMoveOpening(d.item.index,d.point);else if(d.item.kind==="closet")options.onMoveCloset(d.item.index,d.point);rebuild(true);}
+    else if(!d.moved&&!d.orbit){if(data.tool==="select")options.onSelect(d.item);else{const p=["door","window"].includes(data.tool)?wallPoint(e):pointer(e);if(p)options.onPoint(["door","window","closet"].includes(data.tool)?{x:p.x,y:p.z}:snap(p));}}
     clearGhost();request();
   }
   function wheel(e){e.preventDefault();radius=Math.max(5,Math.min(180,radius*Math.exp(e.deltaY*.001)));request();}
@@ -124,14 +140,14 @@ export function createBuilderScene(container,options){
   function fit(mode="room"){view=mode;const p=data?.draft.points??[];let l=14,w=12;
     if(p.length>1){const xs=p.map(p=>p.x),ys=p.map(p=>p.y);l=Math.max(4,Math.max(...xs)-Math.min(...xs));w=Math.max(4,Math.max(...ys)-Math.min(...ys));target.set((Math.max(...xs)+Math.min(...xs))/2,mode==="top"?0:(data.draft.settings.ceilingFt*.25),(Math.max(...ys)+Math.min(...ys))/2);}else target.set(0,1.5,0);
     const fov=camera.fov*Math.PI/180,hfov=2*Math.atan(Math.tan(fov/2)*width/height);radius=mode==="top"?Math.max(l/(width/height),w)*.63/Math.tan(fov/2):Math.hypot(l/2,w/2,4)*1.2/Math.sin(Math.min(fov,hfov)/2);angle=mode==="top"?0:.68;polar=mode==="top"?.001:.82;request();}
-  function rebuild(force=false){const key=JSON.stringify(data.draft);if(!force&&key===shellKey)return;shellKey=key;if(shell){scene.remove(shell.root);shell.dispose();}shell=createBuilderShell(data.draft);scene.add(shell.root);}
+  function updateSelection(){const selected=data.selection?.kind==="wall"?shell.walls.find(w=>w.userData.index===data.selection.index):data.selection?.kind==="opening"?shell.openings.find(o=>o.userData.index===data.selection.index):data.selection?.kind==="closet"?shell.closets[data.selection.index]:null;selectionBox.visible=!!selected;if(selected)selectionBox.box.setFromObject(selected).expandByScalar(.06);}
+  function rebuild(force=false){const key=JSON.stringify(data.draft);if(!force&&key===shellKey)return;shellKey=key;if(shell){scene.remove(shell.root);shell.dispose();}shell=createBuilderShell(data.draft);scene.add(shell.root);updateSelection();}
   const contextLost=e=>{e.preventDefault();options.onError("The graphics connection was interrupted. Your draft is kept. Retry the view or continue using the numeric tools.");};
   const events={pointerdown:down,pointermove:move,pointerup:up,pointercancel:e=>{pointers.delete(e.pointerId);cancel();},lostpointercapture:e=>{if(pointers.delete(e.pointerId))cancel();},pointerleave:()=>{if(!drag){clearGhost();request();}},keydown:key,contextmenu:e=>e.preventDefault(),webglcontextlost:contextLost};
   for(const [name,fn]of Object.entries(events))canvas.addEventListener(name,fn);canvas.addEventListener("wheel",wheel,{passive:false});
   const resize=new ResizeObserver(()=>{const r=container.getBoundingClientRect();width=Math.max(1,r.width);height=Math.max(1,r.height);renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();fit(view);});resize.observe(container);
   const visible=()=>request();document.addEventListener("visibilitychange",visible);
   return {update(next){const first=!data;data=next;rebuild();for(const corner of shell.corners)corner.material.color.set(next.selection?.kind==="corner"&&next.selection.index===corner.userData.index||!next.draft.closed&&corner.userData.index===0?"#ffdc60":"#2b4eff");
-    const selected=next.selection?.kind==="wall"?shell.walls.find(w=>w.userData.index===next.selection.index):next.selection?.kind==="opening"?shell.openings.find(o=>o.userData.index===next.selection.index):null;
-    selectionBox.visible=!!selected;if(selected)selectionBox.box.setFromObject(selected).expandByScalar(.06);
+    updateSelection();
     clearGhost();canvas.style.cursor=next.tool==="orbit"?"grab":next.tool==="select"?"default":"crosshair";if(first)fit();request();},fit,zoom(factor){radius=Math.max(5,Math.min(180,radius*factor));request();},destroy(){disposed=true;cancelAnimationFrame(raf);resize.disconnect();document.removeEventListener("visibilitychange",visible);for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);shell?.dispose();clearGhost();ghostMat.dispose();selectionBox.geometry.dispose();selectionBox.material.dispose();for(const o of [grid,major,ground]){o.geometry.dispose();o.material.dispose();}renderer.dispose();renderer.forceContextLoss();canvas.remove();label.remove();}};
 }
