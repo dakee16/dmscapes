@@ -269,16 +269,54 @@ body {
   stroke: currentColor;
   stroke-width: 1.6;
 }
-.dm-hero-season {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  flex: none;
-  white-space: nowrap;
+/* Hero college search: wraps the planner's CollegeSearch and hands off to Step 1. */
+.dm-hero-search {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex: 0 1 440px;
+  min-width: 0;
+  font-family: var(--font-instrument), sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
 }
-.dm-hero-season > span {
-  color: var(--color-cobalt);
-  font-size: 18px;
+.dm-hero-search > div {
+  flex: 1;
+  min-width: 0;
+}
+.dm-hero-search input {
+  height: 44px;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 16px;
+  border-color: var(--dm-rule);
+  border-right: 0;
+  border-radius: 4px 0 0 4px;
+}
+.dm-hero-search input:focus {
+  border-color: var(--color-cobalt);
+}
+.dm-hero-search ul {
+  border-radius: 4px;
+}
+.dm-hero-search > button {
+  flex: none;
+  height: 44px;
+  padding: 0 20px;
+  background: var(--color-cobalt);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dm-hero-search > button:hover {
+  background: var(--color-ink);
+}
+.dm-hero-search > button:focus-visible {
+  outline: 2px solid var(--color-cobalt);
+  outline-offset: 2px;
 }
 .dm-hero-copy {
   padding: 42px 0 30px;
@@ -2277,12 +2315,13 @@ body {
     padding-top: 20px;
   }
   .dm-hero-topline {
-    gap: 0;
-    padding-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 10px 0;
+    padding-bottom: 14px;
   }
   .dm-hero-announcement { width: 100%; }
   .dm-hero-announcement-title { flex: 1; }
-  .dm-hero-season { display: none; }
+  .dm-hero-search { flex-basis: 100%; }
   .dm-hero-copy {
     padding: 32px 0 0;
   }

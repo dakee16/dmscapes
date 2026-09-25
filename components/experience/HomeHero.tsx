@@ -3,12 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import BrandMark from "@/components/site/BrandMark";
+import HeroSearch from "@/components/site/HeroSearch";
 import { motion } from "framer-motion";
 import RoomModel from "./RoomModel";
 import PlanCta from "@/components/site/PlanCta";
 import { useExperienceMotion } from "./MotionProvider";
 
-export default function HomeHero({ collegeCount, layoutCount }: { collegeCount: number; layoutCount: number }) {
+export default function HomeHero({ layoutCount }: { layoutCount: number }) {
   const [vibe, setVibe] = useState("cozy");
   const { paused } = useExperienceMotion();
   return (
@@ -21,9 +22,7 @@ export default function HomeHero({ collegeCount, layoutCount }: { collegeCount: 
             <span className="dm-hero-pro">Pro</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12" /></svg>
           </Link>
-          <span className="dm-hero-season">
-            Fall ’26 <span aria-hidden="true">✳︎</span>
-          </span>
+          <HeroSearch />
         </div>
         <div className="dm-hero-copy">
           <h1 id="hero-title">
@@ -81,8 +80,8 @@ export default function HomeHero({ collegeCount, layoutCount }: { collegeCount: 
           <div className="dm-social-proof">
             <BrandMark size={40}/>
             <p>
-              <span><strong>{collegeCount}</strong> colleges</span>
-              <small>Find your campus. Make it yours.</small>
+              <span><strong>500+</strong> rooms planned</span>
+              <small>and counting.</small>
             </p>
           </div>
           <Link href="/plan/draw" className="dm-draw-note">

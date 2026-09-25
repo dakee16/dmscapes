@@ -44,7 +44,7 @@ export default function Home() {
       />
       <Nav />
       <main id="page-content" tabIndex={-1}>
-        <HomeHero collegeCount={SCHOOLS.length} layoutCount={LAYOUT_COUNT} />
+        <HomeHero layoutCount={LAYOUT_COUNT} />
         <StudioShowcase />
         <AssemblyStory />
         <LaunchVideo />

@@ -8,10 +8,12 @@ export default function CollegeSearch({
   selectedName,
   onSelect,
   onNoMatches,
+  placeholder = "Search your college…",
 }: {
   selectedName: string | null;
   onSelect: (school: SchoolSummary) => void;
   onNoMatches?: () => void;
+  placeholder?: string;
 }) {
   const [query, setQuery] = useState(selectedName ?? "");
   const [open, setOpen] = useState(false);
@@ -81,7 +83,7 @@ export default function CollegeSearch({
           aria-autocomplete="list"
           aria-activedescendant={open && results[activeIdx] ? `college-option-${results[activeIdx].id}` : undefined}
           autoComplete="off"
-          placeholder="Search your college…"
+          placeholder={placeholder}
           value={query}
           onChange={(e) => {
             setQuery(e.target.value);
