@@ -15,8 +15,13 @@ export default function HomeHero({ collegeCount, layoutCount }: { collegeCount: 
     <>
       <section className="dm-hero" aria-labelledby="hero-title">
         <div className="dm-hero-topline dm-eyebrow">
-          <Link href="/plan/draw/3d">New: build your room in 3D · Pro ↗︎</Link>
-          <span>
+          <Link href="/plan/draw/3d" className="dm-hero-announcement">
+            <span className="dm-hero-new">New</span>
+            <span className="dm-hero-announcement-title">Build your room in 3D</span>
+            <span className="dm-hero-pro">Pro</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12" /></svg>
+          </Link>
+          <span className="dm-hero-season">
             Fall ’26 <span aria-hidden="true">✳︎</span>
           </span>
         </div>
@@ -74,17 +79,23 @@ export default function HomeHero({ collegeCount, layoutCount }: { collegeCount: 
         </div>
         <div className="dm-hero-bottom">
           <div className="dm-social-proof">
-            <BrandMark size={48}/>
+            <BrandMark size={40}/>
             <p>
-              <strong>{collegeCount}</strong> colleges
-              <br /><small>Find your campus. Make it yours.</small>
+              <span><strong>{collegeCount}</strong> colleges</span>
+              <small>Find your campus. Make it yours.</small>
             </p>
           </div>
           <Link href="/plan/draw" className="dm-draw-note">
-            Draw your own room
-            <span className="dm-yellow-tag">2D + 3D</span>
-            <small>Sketch it yourself.</small>
-            <span aria-hidden="true">↗︎</span>
+            <span className="dm-draw-note-copy">
+              <span className="dm-draw-note-heading">
+                <strong>Draw your own room</strong>
+                <span className="dm-yellow-tag">2D + 3D</span>
+              </span>
+              <small>Sketch it yourself.</small>
+            </span>
+            <span className="dm-draw-note-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12" /></svg>
+            </span>
           </Link>
           <a className="dm-eyebrow dm-scroll-cue" href="#how-it-works">
             Scroll to make room <span aria-hidden="true">↓</span>
