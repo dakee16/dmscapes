@@ -58,3 +58,5 @@ skills-lock.json
 .impeccable/
 supabase/
 brag-output/
+# Claude Ads setup profile and runs (internal, local only)
+.claude-ads/
