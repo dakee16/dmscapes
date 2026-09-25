@@ -1,0 +1,902 @@
+{
+ "college_id": "ole-miss",
+ "college_name": "University of Mississippi",
+ "city": "Oxford",
+ "state": "MS",
+ "aliases": [
+  "ole miss",
+  "olemiss",
+  "university of mississippi",
+  "um",
+  "mississippi"
+ ],
+ "housing_url": "https://olemiss.edu/housing/residence-halls/",
+ "data_collected": "2026-09-25",
+ "campus_notes": "Compiled 2026-09-25 from Ole Miss Student Housing hall pages (olemiss.edu/housing). Every hall page publishes a Double Room W x L and sq ft. Contemporary halls (Pittman, Minor, Burns, RH1-RH3) and residential colleges (RC South, Luckyday) all list 12' x 26' (312 sq ft) with an in-room bathroom; traditional halls list 11-16 ft doubles with community bathrooms. Residential colleges also offer a limited number of singles, suite singles, and quad singles with no published size (not listed here). Campus Walk and Northgate apartments publish no dimensions and use the estimate fallback. Bed size is not stated; Twin XL assumed.",
+ "dorms": [
+  {
+   "dorm_id": "pittman-hall",
+   "dorm_name": "Pittman Hall",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/contemporary-halls/pittman-hall/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_in_room_bath",
+     "room_type_official": "Double Room (in-room bathroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 26,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 312,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/contemporary-halls/pittman-hall/",
+     "data_confidence": "medium",
+     "notes": "Published as \"12' W x 26'L (312 sq ft)\". The same figure is listed for every contemporary hall and residential college and appears to be the full footprint including the in-room bathroom, so open floor for furniture is smaller."
+    }
+   ]
+  },
+  {
+   "dorm_id": "minor-hall",
+   "dorm_name": "Minor Hall",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/contemporary-halls/minor-hall/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_in_room_bath",
+     "room_type_official": "Double Room (in-room bathroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 26,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 312,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/contemporary-halls/minor-hall/",
+     "data_confidence": "medium",
+     "notes": "Published as \"12' W x 26'L (312 sq ft)\". The same figure is listed for every contemporary hall and residential college and appears to be the full footprint including the in-room bathroom, so open floor for furniture is smaller."
+    }
+   ]
+  },
+  {
+   "dorm_id": "burns-hall",
+   "dorm_name": "Burns Hall",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/contemporary-halls/burns-hall1/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_in_room_bath",
+     "room_type_official": "Double Room (in-room bathroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 26,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 312,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/contemporary-halls/burns-hall1/",
+     "data_confidence": "medium",
+     "notes": "Published as \"12' W x 26'L (312 sq ft)\". The same figure is listed for every contemporary hall and residential college and appears to be the full footprint including the in-room bathroom, so open floor for furniture is smaller."
+    }
+   ]
+  },
+  {
+   "dorm_id": "residence-hall-1",
+   "dorm_name": "Residence Hall 1 (RH1)",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/contemporary-halls/rh-1/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_in_room_bath",
+     "room_type_official": "Double Room (in-room bathroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 26,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 312,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/contemporary-halls/rh-1/",
+     "data_confidence": "medium",
+     "notes": "Published as \"12' W x 26'L (312 sq ft)\". The same figure is listed for every contemporary hall and residential college and appears to be the full footprint including the in-room bathroom, so open floor for furniture is smaller."
+    }
+   ]
+  },
+  {
+   "dorm_id": "residence-hall-2",
+   "dorm_name": "Residence Hall 2 (RH2)",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/contemporary-halls/rh-2/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_in_room_bath",
+     "room_type_official": "Double Room (in-room bathroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 26,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 312,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/contemporary-halls/rh-2/",
+     "data_confidence": "medium",
+     "notes": "Published as \"12' W x 26'L (312 sq ft)\". The same figure is listed for every contemporary hall and residential college and appears to be the full footprint including the in-room bathroom, so open floor for furniture is smaller."
+    }
+   ]
+  },
+  {
+   "dorm_id": "residence-hall-3",
+   "dorm_name": "Residence Hall 3 (RH3)",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/contemporary-halls/rh-3/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_in_room_bath",
+     "room_type_official": "Double Room (in-room bathroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 26,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 312,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/contemporary-halls/rh-3/",
+     "data_confidence": "medium",
+     "notes": "Published as \"12' W x 26'L (312 sq ft)\". The same figure is listed for every contemporary hall and residential college and appears to be the full footprint including the in-room bathroom, so open floor for furniture is smaller."
+    }
+   ]
+  },
+  {
+   "dorm_id": "residential-college-south",
+   "dorm_name": "Residential College South",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/residential-colleges/rc-south/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_in_room_bath",
+     "room_type_official": "Double Room (in-room bathroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 26,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 312,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/residential-colleges/rc-south/",
+     "data_confidence": "medium",
+     "notes": "Published as \"12' W x 26'L (312 sq ft)\". The same figure is listed for every contemporary hall and residential college and appears to be the full footprint including the in-room bathroom, so open floor for furniture is smaller."
+    }
+   ]
+  },
+  {
+   "dorm_id": "luckyday-residential-college",
+   "dorm_name": "Luckyday Residential College",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/residential-colleges/lucky-day/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_in_room_bath",
+     "room_type_official": "Double Room (in-room bathroom)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 26,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 312,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/residential-colleges/lucky-day/",
+     "data_confidence": "medium",
+     "notes": "Published as \"12' W x 26'L (312 sq ft)\". The same figure is listed for every contemporary hall and residential college and appears to be the full footprint including the in-room bathroom, so open floor for furniture is smaller."
+    }
+   ]
+  },
+  {
+   "dorm_id": "martin-hall",
+   "dorm_name": "Martin Hall",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/traditional-halls/martin-stockard/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/traditional-halls/martin-stockard/",
+     "data_confidence": "high",
+     "notes": "Published as \"11' W x 16'L (204 sq ft)\", community bathroom. The listed square footage does not equal the listed dimensions, so the ft x ft figure is used and sq ft is derived from it."
+    }
+   ]
+  },
+  {
+   "dorm_id": "stockard-hall",
+   "dorm_name": "Stockard Hall",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/traditional-halls/martin-stockard/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/traditional-halls/martin-stockard/",
+     "data_confidence": "high",
+     "notes": "Published as \"11' W x 16'L (204 sq ft)\", community bathroom. The listed square footage does not equal the listed dimensions, so the ft x ft figure is used and sq ft is derived from it."
+    }
+   ]
+  },
+  {
+   "dorm_id": "deaton-hall",
+   "dorm_name": "Deaton Hall",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/traditional-halls/deaton-hall/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 195,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/traditional-halls/deaton-hall/",
+     "data_confidence": "high",
+     "notes": "Published as \"15' W x 13'L (192 sq ft)\", community bathroom. The listed square footage does not equal the listed dimensions, so the ft x ft figure is used and sq ft is derived from it."
+    }
+   ]
+  },
+  {
+   "dorm_id": "hefley-hall",
+   "dorm_name": "Hefley Hall",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/traditional-halls/hefley-hall/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/traditional-halls/hefley-hall/",
+     "data_confidence": "high",
+     "notes": "Published as \"12' W x 16' L (192 sq ft)\", community bathroom."
+    }
+   ]
+  },
+  {
+   "dorm_id": "brown-hall",
+   "dorm_name": "Brown Hall",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/traditional-halls/brown-hall/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 12,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 192,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/traditional-halls/brown-hall/",
+     "data_confidence": "high",
+     "notes": "Published as \"16' W x 12'L (192 sq ft)\", community bathroom."
+    }
+   ]
+  },
+  {
+   "dorm_id": "stewart-hall",
+   "dorm_name": "Stewart Hall",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/traditional-halls/stewart-hall/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/traditional-halls/stewart-hall/",
+     "data_confidence": "high",
+     "notes": "Published as \"16' W x 11'L (176 sq ft)\", community bathroom."
+    }
+   ]
+  },
+  {
+   "dorm_id": "crosby-hall",
+   "dorm_name": "Crosby Hall",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/traditional-halls/crosby-hall/",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Double Room",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 16,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 176,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/traditional-halls/crosby-hall/",
+     "data_confidence": "high",
+     "notes": "Published as \"16' W x 11'L (176 sq ft)\", community bathroom."
+    }
+   ]
+  },
+  {
+   "dorm_id": "campus-walk-apartments",
+   "dorm_name": "Campus Walk Apartments",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/apartments/campus-walk/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private Bedroom (triple or quad apartment)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/apartments/campus-walk/",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "northgate-apartments",
+   "dorm_name": "Northgate Apartments",
+   "hall_url": "https://olemiss.edu/housing/residence-halls/apartments/northgate-apt/",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Apartment Bedroom (1, 2, or 3 bedroom unit)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://olemiss.edu/housing/residence-halls/apartments/northgate-apt/",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  }
+ ]
+}

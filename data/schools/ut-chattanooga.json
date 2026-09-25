@@ -1,0 +1,922 @@
+{
+ "college_id": "ut-chattanooga",
+ "college_name": "University of Tennessee at Chattanooga",
+ "city": "Chattanooga",
+ "state": "TN",
+ "aliases": [
+  "utc",
+  "ut chattanooga",
+  "chattanooga",
+  "tennessee chattanooga",
+  "university of tennessee chattanooga",
+  "mocs"
+ ],
+ "housing_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls",
+ "data_collected": "2026-09-25",
+ "campus_notes": "Compiled 2026-09-25 from UTC Housing & Residence Life building pages (utc.edu). Most buildings publish bedroom dimensions. Oak Street and West Campus are first-year; Lockmiller four-person apartments house first-years; Boling and Walker are open to first-years and upperclassmen; the rest are upperclass. Stophel, Decosimo, UC Foundation, and Walker private bedrooms have full-size beds (54\" x 75\"); Guerry shared bedrooms use regular twin beds; other buildings use extra-long twins. Oak Street, Palmetto Place, and Decosimo studios publish no dimensions and use the estimate fallback.",
+ "dorms": [
+  {
+   "dorm_id": "oak-street-residence-hall",
+   "dorm_name": "Oak Street Residence Hall",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/oak-street-residence-hall",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "double",
+     "room_type_official": "Shared Bedroom (hall-style bath)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/oak-street-residence-hall",
+     "data_confidence": "low",
+     "notes": "First-year only. Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "west-campus",
+   "dorm_name": "West Campus",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/west-campus",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "double_suite",
+     "room_type_official": "Shared Bedroom (2 or 4 person suite)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 11.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 173,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "built-in",
+      "width_ft": 3,
+      "depth_ft": 2,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/west-campus",
+     "data_confidence": "medium",
+     "notes": "Published as \"Approximately 11.5 feet x 15 feet\". First-year. Closet 3 ft wide x 2 ft deep x 9 ft high; adjustable-height XL twin frames."
+    }
+   ]
+  },
+  {
+   "dorm_id": "lockmiller-apartments",
+   "dorm_name": "Lockmiller Apartments",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/lockmiller",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Shared Bedroom (4 person apartment)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 14.92,
+      "width_ft": 11.92,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 178,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/lockmiller",
+     "data_confidence": "high",
+     "notes": "Published as \"Bedroom 14'11\\\" X 11'11\\\"\". Primarily first-year."
+    }
+   ]
+  },
+  {
+   "dorm_id": "boling-apartments",
+   "dorm_name": "Boling Apartments",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/boling",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private Bedroom A, B, or C",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 9.67,
+      "width_ft": 8,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 77,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/boling",
+     "data_confidence": "high",
+     "notes": "Published as \"Bedrooms A, B, and C: 9'8\\\" x 8'\"."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private Bedroom D",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 99,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/boling",
+     "data_confidence": "high",
+     "notes": "Published as \"Bedroom D: 9' x 11'\"."
+    }
+   ]
+  },
+  {
+   "dorm_id": "walker-apartments",
+   "dorm_name": "Walker Apartments",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/walker",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private Bedroom (4 bedroom apartment)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 132,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full 54\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/walker",
+     "data_confidence": "high",
+     "notes": "Published as \"bedroom 11 X 12\". Business Residential College, first-years and upperclassmen."
+    }
+   ]
+  },
+  {
+   "dorm_id": "stagmaier-hall",
+   "dorm_name": "Stagmaier Hall",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/stagmaier",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Private Bedroom (2 person suite, rooms x01-x10, x13-x14, x17-x18)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 9.5,
+      "width_ft": 9,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 86,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "walk-in",
+      "width_ft": 5,
+      "depth_ft": 4,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/stagmaier",
+     "data_confidence": "medium",
+     "notes": "Published as \"Bedroom: 9' x 9.5'\", approximate. Separate 11' x 10' study area with the desk; closet 5' x 4'."
+    },
+    {
+     "room_type": "single_suite",
+     "room_type_official": "Private Bedroom (2 person suite, rooms x11-x12, x15-x16, x19-x20)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 10.5,
+      "width_ft": 10.5,
+      "ceiling_height_ft": 11.5
+     },
+     "floor_area_sqft": 110,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": {
+      "type": "walk-in",
+      "width_ft": 5,
+      "depth_ft": 4,
+      "wall": null
+     },
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/stagmaier",
+     "data_confidence": "medium",
+     "notes": "Published as \"Bedroom: 10.5' x 10.5'\", approximate. Separate 9' x 9.5' study area with the desk; closet 5' x 4'; 11.5' ceilings."
+    }
+   ]
+  },
+  {
+   "dorm_id": "stophel-apartments",
+   "dorm_name": "Stophel Apartments",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/stophel",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private Bedroom (2 or 4 bedroom apartment)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 132,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full 54\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/stophel",
+     "data_confidence": "high",
+     "notes": "Published as \"bedroom 11 feet X 12 feet\"."
+    }
+   ]
+  },
+  {
+   "dorm_id": "johnson-obear-apartments",
+   "dorm_name": "Johnson Obear Apartments",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/johnson-obear",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private Bedroom (3 or 4 bedroom apartment)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11.75,
+      "width_ft": 8.5,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 100,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/johnson-obear",
+     "data_confidence": "high",
+     "notes": "Published as \"11'9\\\" X 8'6\\\"\"."
+    }
+   ]
+  },
+  {
+   "dorm_id": "decosimo-apartments",
+   "dorm_name": "Decosimo Apartments",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/decosimo",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private Bedroom (4 bedroom apartment)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 132,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full 54\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/decosimo",
+     "data_confidence": "high",
+     "notes": "Published as \"11 X 12\"."
+    },
+    {
+     "room_type": "studio",
+     "room_type_official": "Private Studio",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full 54\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/decosimo",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    },
+    {
+     "room_type": "double_studio",
+     "room_type_official": "Shared Studio (2 person)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full 54\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/decosimo",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "guerry-apartments",
+   "dorm_name": "Guerry Apartments",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/guerry",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Shared Bedroom A (3 bedroom apartment)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 13,
+      "width_ft": 13,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 169,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": true,
+       "notes": "Twin 38\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/guerry",
+     "data_confidence": "high",
+     "notes": "Published as \"bedroom A 13' X 13'\". Attached full bath; regular twin beds."
+    },
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private Bedroom B or C (3 bedroom apartment)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 11,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 121,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full 54\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/guerry",
+     "data_confidence": "high",
+     "notes": "Published as \"bedroom B & C 11' X 11'\"."
+    },
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Shared Bedroom A (2 bedroom apartment)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": 15,
+      "width_ft": 15,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 225,
+     "bed_size": "twin",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.25,
+       "width_ft": 3.17,
+       "movable": true,
+       "notes": "Twin 38\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/guerry",
+     "data_confidence": "medium",
+     "notes": "The 2 bedroom listing gives one bedroom size, \"15' X 15'\", taken as shared Bedroom A (the larger room); regular twin beds."
+    }
+   ]
+  },
+  {
+   "dorm_id": "palmetto-place-apartments",
+   "dorm_name": "Palmetto Place Apartments",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/palmetto-place",
+   "air_conditioning": null,
+   "rooms": [
+    {
+     "room_type": "apartment_double",
+     "room_type_official": "Shared Bedroom (2 bedroom apartment)",
+     "occupants": 2,
+     "dimensions": {
+      "length_ft": null,
+      "width_ft": null,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": null,
+     "bed_size": null,
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 2,
+       "length_ft": 6.67,
+       "width_ft": 3,
+       "movable": true,
+       "notes": "Twin XL 36\" x 80\"."
+      },
+      {
+       "type": "desk",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 2,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 2,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/palmetto-place",
+     "data_confidence": "low",
+     "notes": "Room type published by the school without a ft x ft figure; dims left null and filled by the site's estimate fallback (median of same-type published rooms), flagged 'Estimated based on similar rooms. Official size not published.'"
+    }
+   ]
+  },
+  {
+   "dorm_id": "uc-foundation-apartments",
+   "dorm_name": "UC Foundation Apartments",
+   "hall_url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/ucf",
+   "air_conditioning": true,
+   "rooms": [
+    {
+     "room_type": "apartment_bedroom",
+     "room_type_official": "Private Bedroom (4 bedroom apartment)",
+     "occupants": 1,
+     "dimensions": {
+      "length_ft": 12,
+      "width_ft": 11,
+      "ceiling_height_ft": null
+     },
+     "floor_area_sqft": 132,
+     "bed_size": "full",
+     "door": null,
+     "window": null,
+     "closet": null,
+     "built_in_furniture": [
+      {
+       "type": "bed_frame",
+       "count": 1,
+       "length_ft": 6.25,
+       "width_ft": 4.5,
+       "movable": true,
+       "notes": "Full 54\" x 75\"."
+      },
+      {
+       "type": "desk",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "chair",
+       "count": 1,
+       "movable": true
+      },
+      {
+       "type": "dresser",
+       "count": 1,
+       "movable": true
+      }
+     ],
+     "floor_plan_url": null,
+     "data_source": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/ucf",
+     "data_confidence": "high",
+     "notes": "Published as \"bedroom 11 feet x 12 feet\"."
+    }
+   ]
+  }
+ ]
+}
