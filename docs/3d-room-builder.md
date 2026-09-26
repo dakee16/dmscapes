@@ -6,7 +6,7 @@ Entry: `/plan/draw/3d`. The public landing and FAQ are indexable. Opening the ed
 
 1. A Pro member places a rectangular floor, chooses a starter shape, or traces a closed perimeter on a 60 by 60 ft grid.
 2. The editor supports corner moves, exact coordinates, wall splitting, doors, windows, opening offsets and widths, four door swings, built-in closet placement/movement/sizing/footprint rotation, ceiling height, floor finish, wall color, occupancy, and mattress size.
-3. The validated room is normalized into the existing `SelectedRoom` shape. Style and budget use the existing flow. `plannerView` is set to `3d` so the result opens in 3D.
+3. The validated room is normalized into the existing `SelectedRoom` shape. The room opens directly in the manual planning workspace. Style and product matching are optional afterward. `plannerView` is set to `3d` so the result opens in 3D.
 
 Closets use the existing `RoomOutline.closets` fixed-obstacle representation in feet. Each width/depth is 0.5 to 20 ft. Footprints must remain inside the polygon and cannot overlap each other. The handoff normalizes their X/Z positions with the room origin. Legacy version-one drafts without a `closets` field restore with an empty list.
 

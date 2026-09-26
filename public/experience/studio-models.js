@@ -62,7 +62,8 @@ export function createModelKit({onTexture=()=>{}}={}) {
     const legs=(height,thick=.12)=>{for(const x of [-1,1])for(const z of [-1,1])box(g,thick,height,thick,wood,x*(w/2-.15),height/2,z*(d/2-.15));};
     switch(f.kind){
       case "bed":case "bunk":{
-        const levels=f.kind==="bunk"?[h*.3,h*.78]:[h-.28];
+        const loft=f.bed_mode==="lofted";
+        const levels=f.kind==="bunk"?[h*.3,h*.78]:loft?[h*.78]:[h-.28];
         for(const [index,level] of levels.entries()){
           box(g,w,.18,d,wood,0,level-.36,0);
           box(g,w*.96,.35,d*.96,white,0,level-.1,0,.12).name=`mattress-${index}`;
@@ -75,18 +76,29 @@ export function createModelKit({onTexture=()=>{}}={}) {
         }
         for(const x of [-1,1])for(const z of [-1,1])box(g,.14,h,.14,wood,x*(w/2-.08),h/2,z*(d/2-.08));
         box(g,w,.65,.12,wood,0,h-.32,-d/2+.07);
-        if(f.kind==="bunk"){
+        if(f.kind==="bunk"||loft){
           for(const side of [-1,1]){
             box(g,.1,.12,d-.2,wood,side*(w/2-.08),h-.18,0).name="bunk-guardrail";
             box(g,.1,.09,d-.2,wood,side*(w/2-.08),h-.53,0);
             for(const z of [-.35,.15,.35])box(g,.075,.8,.075,wood,side*(w/2-.08),h-.55,z*d);
           }
-          const ladder=new T.Group();ladder.name="bunk-ladder";g.add(ladder);
+          const ladder=new T.Group();ladder.name=loft?"loft-ladder":"bunk-ladder";g.add(ladder);
           for(const x of [w*.04,w*.39])box(ladder,.08,h*.86,.09,darkwood,x,h*.43,d/2-.02);
           for(let y=.4;y<h*.85;y+=.65)box(ladder,w*.38,.09,.12,wood,w*.215,y,d/2-.02);
         }
         break;
       }
+      case "sofa":case "lounge":{
+        legs(h*.2,.1);box(g,w,h*.25,d,cloth,0,h*.35,0,.12);
+        box(g,w,h*.55,.2,cloth,0,h*.7,-d*.44,.12);
+        for(const side of [-1,1])box(g,.22,h*.48,d,cloth,side*(w/2-.11),h*.57,0,.08);
+        const seats=f.kind==="sofa"?2:1;for(let i=0;i<seats;i++)box(g,(w-.5)/seats,.15,d*.75,accent,(i-(seats-1)/2)*(w-.5)/seats,h*.54,d*.05,.08);break;
+      }
+      case "radiator":
+        for(let i=0;i<8;i++)box(g,w/10,h,d,metal,(i-3.5)*w/8,h/2,0,.04);break;
+      case "column":box(g,w,h,d,white,0,h/2,0,.02);break;
+      case "microwave":
+        box(g,w,h,d,white,0,h/2,0);box(g,w*.72,h*.7,.02,ink,-w*.08,h*.53,d/2+.025);box(g,.04,h*.48,.05,metal,w*.21,h*.53,d/2+.045);break;
       case "desk":
         legs(Math.max(.04,h-.18));box(g,w,.16,d,wood,0,h-.08,0);
         if(w>2){box(g,w*.25,h*.45,d*.85,wood,w*.32,h*.6,0);for(let i=0;i<2;i++)box(g,.35,.035,.025,ink,w*.32,h*(.48+i*.18),d*.44);}

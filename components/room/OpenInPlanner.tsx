@@ -1,10 +1,11 @@
 "use client";
 
+import { DEFAULT_PLANNING } from "@/lib/planning";
 import { useRouter } from "next/navigation";
 import { usePlannerStore } from "@/lib/store";
 import { getSchool } from "@/lib/schools";
 import { track } from "@/lib/analytics";
-import type { FurnitureItem, ProductCategory, RoomOutline, StyleId } from "@/lib/types";
+import type { BedSize, FurnitureItem, ProductCategory, RoomOutline, StyleId } from "@/lib/types";
 
 export interface PlannerSeed {
   college_id: string | null;
@@ -13,6 +14,7 @@ export interface PlannerSeed {
   width_ft: number;
   room_type: string;
   occupants: number | null;
+  bed_size?: BedSize;
   /** Whether the saved size was a same-type estimate rather than published. */
   estimated?: boolean;
   style: StyleId;
@@ -48,6 +50,8 @@ export default function OpenInPlanner({
     const dorm = school?.dorms.find((d) => d.id === seed.dorm_id);
     const roomMeta = dorm?.rooms.find((r) => r.type === seed.room_type);
     usePlannerStore.setState({
+      planning:seed.editor?.planning??{...DEFAULT_PLANNING},
+      savedFingerprint:null,checkHighlight:null,
       college: school ? { id: school.id, name: school.name } : null,
       dorm: dorm ? { id: dorm.id, name: dorm.name } : null,
       room: {
@@ -55,9 +59,8 @@ export default function OpenInPlanner({
         occupants: seed.occupants ?? roomMeta?.occupants ?? 1,
         lengthFt: seed.length_ft,
         widthFt: seed.width_ft,
-        // bed size isn't stored on saved rooms; recover it from the school
-        // catalog when possible, else the near-universal dorm default.
-        bedSize: roomMeta?.bed_size ?? "twin_xl",
+        // Legacy saves recover the catalog size; new saves preserve the choice.
+        bedSize: seed.bed_size ?? roomMeta?.bed_size ?? "twin_xl",
         source: seed.outline ? "drawn" : school ? "catalog" : "manual",
         dimsEstimated: seed.estimated ?? false,
         outline: seed.outline ?? null,

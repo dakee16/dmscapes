@@ -39,6 +39,8 @@ import PurchaseSurvey from "@/components/products/PurchaseSurvey";
 import SavePrompt from "@/components/planner/SavePrompt";
 import VibeLoading from "@/components/planner/VibeLoading";
 import { BuyGateProvider } from "@/lib/buy-gate";
+import { assignedCosts, mergeArrangement, shoppingProducts } from "@/lib/planning";
+import { ShoppingOwnership } from "@/components/studio/PlanningPanels";
 import type { Product, ProductCategory } from "@/lib/types";
 
 // react-konva can't render on the server, so load the canvas client-side only.
@@ -69,6 +71,8 @@ export default function ResultPage() {
   const regeneratingRef = useRef(false);
   const trackedRef = useRef(false);
 
+  const planning = usePlannerStore(s=>s.planning);
+  const manual = planning.mode === "manual";
   const college = usePlannerStore((s) => s.college);
   const dorm = usePlannerStore((s) => s.dorm);
   const room = usePlannerStore((s) => s.room);
@@ -116,18 +120,18 @@ export default function ResultPage() {
     else if (!style) router.replace("/plan/style");
     // Custom vibe is Pro-only: a non-Pro who reached it (stale store / shared
     // link) is sent back to the picker with the Pro prompt.
-    else if (!authLoading && style === "custom" && !isPro(profile)) {
+    else if (!manual && !authLoading && style === "custom" && !isPro(profile)) {
       openUpgrade("custom-vibe");
       router.replace("/plan/style");
     }
     // Defense in depth: a free user who reached a Plus-gated style (e.g. a
     // stale store or a saved design) is sent back to the picker with the
     // upgrade prompt, rather than served a room they can't actually use.
-    else if (!authLoading && isPlusStyle(style) && !isPaid(profile)) {
+    else if (!manual && !authLoading && isPlusStyle(style) && !isPaid(profile)) {
       openUpgrade("style");
       router.replace("/plan/style");
     }
-  }, [hydrated, room, style, authLoading, profile, router, openUpgrade]);
+  }, [hydrated, room, style, authLoading, profile, router, openUpgrade, manual]);
 
   const match = useMemo(
     () =>
@@ -161,9 +165,9 @@ export default function ResultPage() {
       const placed = drawnOutline
         ? placeInPolygon(match.template.furniture, drawnOutline, room.lengthFt, room.widthFt)
         : fitTemplateToRoom(match.template.furniture, match.template_id, room.lengthFt, room.widthFt);
-      initLayout(wantId, placed);
+      initLayout(wantId, manual ? placed.filter(f=>f.built_in).map((f,i)=>({...f,inventory:true,supply:"school",dimensions_source:"generic",assigned_to:planning.roommates.length?planning.roommates[Math.max(0,"ABCDEFGH".indexOf(f.owner))%planning.roommates.length].id:"shared"})) : placed);
     }
-  }, [hydrated, match, room, templateId, furniture, initLayout, drawnOutline]);
+  }, [hydrated, match, room, templateId, furniture, initLayout, drawnOutline, manual, planning.roommates]);
 
   useEffect(() => {
     if (hydrated && room && style && !trackedRef.current) {
@@ -205,6 +209,7 @@ export default function ResultPage() {
   // changes; the user's manual add/remove is preserved otherwise.
   useEffect(() => {
     if (!hydrated || excluded !== null || products.length === 0) return;
+    if(manual){setExcluded(products.map(p=>p.category));return;}
     let remaining = budget;
     const overflow: ProductCategory[] = [];
     for (const p of products) {
@@ -218,7 +223,7 @@ export default function ResultPage() {
       else overflow.push(p.category);
     }
     setExcluded(overflow);
-  }, [hydrated, excluded, products, budget, setExcluded]);
+  }, [hydrated, excluded, products, budget, setExcluded, manual]);
 
   const cartProducts = useMemo(
     () => products.filter((p) => !(excluded ?? []).includes(p.category)),
@@ -248,7 +253,8 @@ export default function ResultPage() {
   // "Add your own item" is a Plus feature: Plus + Pro only. Free/Flex see a lock
   // and get the Plus prompt on click.
   const ownItemLocked = !authLoading && !isPaid(profile);
-  const total = totalFor(allCartProducts);
+  const buyingProducts=shoppingProducts(allCartProducts,planning);
+  const total = Object.values(assignedCosts(furniture,allCartProducts,planning)).reduce((a,b)=>a+b,0);
 
   // Remove is always immediate; adding is immediate when it stays within budget,
   // and otherwise routes through the confirmation modal.
@@ -319,6 +325,7 @@ export default function ResultPage() {
         track("layout_edited", { item: id, action: "rotate" });
       }}
       onDeleteItem={(f) => {
+        if(f.inventory){usePlannerStore.getState().removeInventoryItem(f.id);return;}
         const cat = furnitureCategory(f);
         if (cat) handleRemove(cat);
       }}
@@ -332,8 +339,7 @@ export default function ResultPage() {
       ? placeInPolygon(match.template.furniture, drawnOutline, room.lengthFt, room.widthFt)
       : fitTemplateToRoom(match.template.furniture, match.template_id, room.lengthFt, room.widthFt);
     usePlannerStore.setState({templateId:drawnOutline ? "custom-drawn" : match.template_id});
-    const extras=furniture!.filter(f=>f.id.startsWith("cart-")||customItems.some(p=>p.id===f.id));
-    resetLayout(syncProductFurniture([...placed,...extras],allCartProducts,room));
+    resetLayout(mergeArrangement(furniture!,placed,usePlannerStore.getState().lockedItemIds));
   }
 
   // One free regeneration per vibe; each subsequent pass uses one plan credit.
@@ -372,7 +378,7 @@ export default function ResultPage() {
 
   return (
     <div>
-      <PlannerStudio canvas={canvas} get2DPng={()=>canvasRef.current?.exportPNG()??null}
+      <PlannerStudio canvas={canvas} get2DPng={()=>canvasRef.current?.exportPNG()??null} focus2D={id=>canvasRef.current?.focusItem(id)}
         products={allCartProducts} total={total} budget={budget} history={layoutHistory} onReset={handleReset}
         subtitle={[college?.name,dorm?.name,roomTypeLabel(room),dims,room.dimsEstimated?"Estimated room size":null].filter(Boolean).join(" · ")}
         extras={isCustom&&customVibe?<div className="dm-regenerate-row flex flex-wrap items-center gap-3">
@@ -388,6 +394,7 @@ export default function ResultPage() {
             {/* Budget total + progress: always visible above the tabs, and always
                 reflecting the shopping list specifically (not the catalog). */}
             <BudgetTracker total={total} budget={budget} />
+            <ShoppingOwnership products={allCartProducts}/>
             {/* Island-style tab switcher, directly above Buy all. */}
             <ProductTabSwitcher active={activeTab} onChange={setActiveTab} />
             {/* Add-your-own-item: paste an Amazon link to pull a real product into
@@ -423,8 +430,8 @@ export default function ResultPage() {
             </button>
             {/* Prominent "Buy all": stays visible on either tab (it reflects the
                 cart total). Hidden only when the cart itself is empty. */}
-            {allCartProducts.length > 0 && (
-              <BuyAllButton products={allCartProducts} total={total} />
+            {buyingProducts.length > 0 && (
+              <BuyAllButton products={buyingProducts} total={totalFor(buyingProducts)} />
             )}
             {/* Active tab body. Keyed on the tab so switching re-triggers the
                 quick fade rather than swapping abruptly. */}

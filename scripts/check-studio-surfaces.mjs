@@ -27,6 +27,16 @@ try {
   assert(upper.min.y-lower.max.y>2,"Bunks need two separated sleeping levels");
   assert(bunk.getObjectByName("bunk-ladder"));assert(bunk.getObjectByName("bunk-guardrail"));
   assert(new T.Box3().setFromObject(bunk.getObjectByName("bunk-guardrail")).min.y>upper.max.y,"Upper guardrail belongs above the mattress");
+  const loft=kit.build({id:"loft",kind:"bed",bed_mode:"lofted",width_ft:3.25,length_ft:6.67,height:6.2},["#ffffff"]);
+  assert(loft.getObjectByName("loft-ladder"));
+  assert(!loft.getObjectByName("mattress-1"),"Lofts have exactly one sleeping level");
+  assert(new T.Box3().setFromObject(loft.getObjectByName("mattress-0")).min.y>4.5,"A loft clears the desk below it");
+  for(const kind of ["sofa","lounge","radiator","column","microwave"]){
+    const model=kit.build({id:kind,kind,width_ft:2,length_ft:2,height:3},["#ffffff"]);
+    const bounds=new T.Box3().setFromObject(model);
+    assert([...bounds.min.toArray(),...bounds.max.toArray()].every(Number.isFinite));
+    assert(!model.getObjectByName("storage-body"),`${kind} must use its own model`);
+  }
   for(const [kind,variant] of [["lamp","banker"],["lamp","mushroom"],["lamp","task"],["lamp","lava"],["lamp","projector"],["lamp","shade"],["mirror","arch"],["mirror","round"],["basket","woven"],["hamper","plain"],["blanket","knit"],["curtains","plain"],["wall-shelf","plain"],["fan","plain"],["organizer","plain"],["power-strip","plain"],["lights","curtain"]]){
     const model=kit.build({id:kind,kind,width_ft:1.5,length_ft:.8,height:2,product:{id:kind+variant,variant,pattern:"check"}},["#fff9ed","#ac8e78"]);
     const bounds=new T.Box3().setFromObject(model);

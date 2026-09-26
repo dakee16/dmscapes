@@ -36,7 +36,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
     selectedId:props.selectedId,selectedOpening:props.openingControls?.selected??null,editOpenings:allowed&&!props.readOnly&&!!props.openingControls,items:visibleFurniture(props.items,props.hidden,props.excluded).map(f=>{
       const b=footprint(f),choice=productForFurniture(f,props.products??[]);
       const product=choice && (!f.built_in || f.type==="bed") ? productVisual(choice) : undefined;
-      const kind=f.built_in?modelKind(f):product?.kind??modelKind(f);
+      const kind=f.built_in||f.inventory?modelKind(f):product?.kind??modelKind(f);
       return {...f,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||product?.color,kind,height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:!allowed||Boolean(props.readOnly)||props.locked.includes(f.id)};
     })};
   const latest=useRef(data);latest.current=data;

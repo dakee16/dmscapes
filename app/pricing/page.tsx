@@ -67,7 +67,8 @@ const FREE_PERKS: React.ReactNode[] = [
       supported schools
     </Link>
   </>,
-  <>1 room plan to try it out</>,
+  <>1 generated room plan to try it out</>,
+  <>Manual 2D planning with an editable furniture library</>,
   <>Save your design to your account, free</>,
   <>3 vibes: Minimalist, Cozy Aesthetic, and Preppy</>,
   <>Budget-aware product picks with live Amazon links</>,
@@ -81,7 +82,7 @@ const FREE_PERKS: React.ReactNode[] = [
 const PLUS_PERKS: { title: string; body: string }[] = [
   {
     title: `${PLUS_INITIAL_CREDITS} plan credits`,
-    body: `One credit per new room plan. Recharge ${RECHARGE_CREDITS} more for $${RECHARGE_PRICE_USD.toFixed(2)}. Saving your designs is always free.`,
+    body: `One credit per generated room plan. Recharge ${RECHARGE_CREDITS} more for $${RECHARGE_PRICE_USD.toFixed(2)}. Manual arrangements and saving your designs use no credits.`,
   },
   {
     title: "All 9 vibes",
@@ -434,9 +435,9 @@ export default function PricingPage() {
               {/* How credits work: the one bit of this model worth spelling out. */}
               <div className="mt-6 rounded-xl border border-cobalt/20 bg-cobalt/5 px-4 py-3">
                 <p className="text-[13px] leading-relaxed text-ink">
-                  <span className="font-semibold">How credits work:</span> each new
-                  room plan uses one credit. Saving, exports, and comparisons
-                  don’t use credits. Your saved designs and paid tools stay
+                  <span className="font-semibold">How credits work:</span> generating a
+                  room plan with product matches uses one credit. Manual 2D planning,
+                  layout previews, saving, exports, and comparisons use no credits. Your saved designs and paid tools stay
                   available even when your credit balance reaches zero.
                 </p>
               </div>

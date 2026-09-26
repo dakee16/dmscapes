@@ -3,6 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteHeader from "@/components/site/SiteHeader";
 import OpenInPlanner from "@/components/room/OpenInPlanner";
+import RoomReview from "@/components/studio/RoomReview";
+import { DEFAULT_PLANNING, shoppingProducts } from "@/lib/planning";
+import { visibleFurniture } from "@/lib/studio";
 import SharedRoomStudio from "@/components/studio/SharedRoomStudio";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import type { SaveRoomRequest } from "@/lib/api-types";
@@ -49,7 +52,9 @@ export default async function SharedRoomPage(props: {
     const pid = room.selected_products?.[cat];
     return pid ? productById(pid) : undefined;
   }).filter((p): p is Product => Boolean(p));
-  const total = totalFor(products);
+  const planning=dims.editor?.planning??DEFAULT_PLANNING;
+  const buying=shoppingProducts(products,planning);
+  const total = totalFor(buying);
 
   return (
     <div>
@@ -92,7 +97,7 @@ export default async function SharedRoomPage(props: {
           {/* self-start: the card hugs its content instead of stretching to
               match the list. Clicking it reopens the design in the planner. */}
           <div className="min-w-0 self-start">
-          <SharedRoomStudio room={{type:dims.room_type,occupants:dims.occupants??1,lengthFt:dims.length_ft,widthFt:dims.width_ft,bedSize:"twin_xl",source:dims.outline?"drawn":"manual",outline:dims.outline??null,studio:dims.studio}} items={room.furniture_positions} style={room.style} products={products} editor={dims.editor}/>
+          <SharedRoomStudio room={{type:dims.room_type,occupants:dims.occupants??1,lengthFt:dims.length_ft,widthFt:dims.width_ft,bedSize:dims.bed_size??"twin_xl",source:dims.outline?"drawn":"manual",outline:dims.outline??null,studio:dims.studio}} items={room.furniture_positions} style={room.style} products={products} editor={dims.editor}/>
           <OpenInPlanner
             seed={{
               college_id: room.college_id,
@@ -101,6 +106,7 @@ export default async function SharedRoomPage(props: {
               width_ft: dims.width_ft,
               room_type: dims.room_type,
               occupants: dims.occupants ?? null,
+              bed_size: dims.bed_size,
               estimated: dims.estimated ?? false,
               style: room.style,
               budget: room.budget,
@@ -121,9 +127,9 @@ export default async function SharedRoomPage(props: {
             <div className="flex flex-wrap items-center justify-between gap-3">
               <h2 className="font-display text-lg font-bold">The shopping list</h2>
               <div className="flex shrink-0 items-center gap-3">
-                {products.length > 0 && (
+                {buying.length > 0 && (
                   <a
-                    href={cartUrl(products)}
+                    href={cartUrl(buying)}
                     target="_blank"
                     rel="noopener sponsored"
                     className="flex items-center gap-1.5 rounded-lg bg-cobalt px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-cobalt-deep"
@@ -144,7 +150,7 @@ export default async function SharedRoomPage(props: {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    Buy all {products.length}
+                    Buy all {buying.length}
                   </a>
                 )}
                 <p className="font-mono text-sm font-semibold">
@@ -153,7 +159,7 @@ export default async function SharedRoomPage(props: {
               </div>
             </div>
             <ul className="mt-4 space-y-3">
-              {products.map((p) => (
+              {buying.map((p) => (
                 <li
                   key={p.id}
                   className="flex items-center gap-3 rounded-lg border border-ink/10 bg-card p-3"
@@ -183,13 +189,14 @@ export default async function SharedRoomPage(props: {
                 </li>
               ))}
             </ul>
-            {products.length === 0 && (
+            {buying.length === 0 && (
               <p className="mt-4 rounded-lg border border-dashed border-ink/20 p-4 text-sm text-ink-soft">
-                This design didn&rsquo;t save its product picks.
+                No purchases in this list. School-provided and already-owned products stay out of the total.
               </p>
             )}
           </div>
         </div>
+        <RoomReview id={id} planning={planning} products={products} items={visibleFurniture(room.furniture_positions,dims.editor?.hiddenItemIds??[],dims.editor?.excluded??[])} room={{type:dims.room_type,occupants:dims.occupants??1,lengthFt:dims.length_ft,widthFt:dims.width_ft,bedSize:dims.bed_size??"twin_xl",source:dims.outline?"drawn":"manual",outline:dims.outline??null,studio:dims.studio}}/>
       </main>
     </div>
   );

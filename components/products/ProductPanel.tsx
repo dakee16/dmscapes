@@ -9,16 +9,6 @@ import { track } from "@/lib/analytics";
 import ProductCard from "./ProductCard";
 import SwapModal from "./SwapModal";
 
-/** Product categories whose swap should resize a furniture footprint on the canvas. */
-const CATEGORY_TO_FURNITURE_TYPE: Partial<Record<ProductCategory, string>> = {
-  rug: "rug",
-  laundry_hamper: "laundry_hamper",
-  trash_can: "trash_can",
-  storage: "storage_bins",
-  desk_lamp: "desk_lamp",
-  mirror: "mirror",
-};
-
 export default function ProductPanel({
   products,
   bedSize,
@@ -32,8 +22,6 @@ export default function ProductPanel({
   const [swapTarget, setSwapTarget] = useState<Product | null>(null);
   const advisory = beddingAdvisory(bedSize);
   const swapProduct = usePlannerStore((s) => s.swapProduct);
-  const resizeItem = usePlannerStore((s) => s.resizeItem);
-  const furniture = usePlannerStore((s) => s.furniture);
 
   // Cross-highlight state shared with the canvas. Hover takes visual priority
   // over the pinned click-selection, without clearing it.
@@ -57,16 +45,11 @@ export default function ProductPanel({
 
   function handlePick(next: Product) {
     if (!swapTarget) return;
+    const state=usePlannerStore.getState(),assignment=state.planning.productSupply[swapTarget.id];
+    if(assignment){const supply={...state.planning.productSupply};delete supply[swapTarget.id];supply[next.id]=assignment;state.updatePlanning({productSupply:supply});}
     swapProduct(swapTarget.category, next.id);
     track("product_swapped", { old: swapTarget.id, new: next.id });
 
-    // If the replacement has a real footprint, update matching canvas items.
-    const type = CATEGORY_TO_FURNITURE_TYPE[next.category];
-    if (type && next.width_ft && next.length_ft && furniture) {
-      for (const f of furniture) {
-        if (f.type === type) resizeItem(f.id, next.width_ft, next.length_ft);
-      }
-    }
     setSwapTarget(null);
   }
 

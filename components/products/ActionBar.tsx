@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { Product } from "@/lib/types";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
+import { fingerprintState } from "@/lib/planner-fingerprint";
+import { shoppingProducts } from "@/lib/planning";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
 import { useAuth } from "@/lib/auth-context";
@@ -37,6 +39,9 @@ export default function ActionBar({
   onShop: () => void;
   shopOpen: boolean;
 }) {
+  const planning=usePlannerStore(s=>s.planning);
+  const buying=shoppingProducts(products,planning);
+  const pendingSave=useRef(false);
   const { user, profile, openAuthModal } = useAuth();
   const { openUpgrade } = useUpgrade();
   // PDF/PNG export are premium features: unlocked for Pro and for anyone who has
@@ -53,6 +58,7 @@ export default function ActionBar({
   const [shareFallbackUrl, setShareFallbackUrl] = useState("");
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  useEffect(()=>{if(user&&pendingSave.current){pendingSave.current=false;setName(usePlannerStore.getState().planning.name);setSavePanel(true);setSavedUrl("");}},[user]);
   useEffect(() => () => { if (toastTimer.current) clearTimeout(toastTimer.current); }, []);
 
   useEffect(() => {
@@ -95,6 +101,7 @@ export default function ActionBar({
         width_ft: s.room.widthFt,
         room_type: s.room.type,
         occupants: s.room.occupants,
+        bed_size: s.room.bedSize,
         estimated: s.room.dimsEstimated ?? false,
         // Hand-drawn rooms carry their outline so a reopened design keeps its
         // real shape and doors/windows/closets.
@@ -102,7 +109,7 @@ export default function ActionBar({
         studio: s.room.studio,
         editor: {hiddenItemIds:s.hiddenItemIds,lockedItemIds:s.lockedItemIds,excluded:s.excluded??[],
           customItems:s.customItems,unplacedItemIds:s.unplacedItemIds,customProducts:s.customProducts,
-          customVibe:s.customVibe,customMock:s.customMock,customRegenUsed:s.customRegenUsed,cartProducts:products},
+          customVibe:s.customVibe,customMock:s.customMock,customRegenUsed:s.customRegenUsed,cartProducts:products,planning:s.planning},
       },
       style: s.style,
       budget: s.budget,
@@ -116,6 +123,7 @@ export default function ActionBar({
   // anonymous "copy share link" flow. Saving is unlimited, so there's no credit to
   // spend. Returns the share URL, or null on failure.
   async function saveRoom(designName?: string): Promise<{ url: string } | null> {
+    const fingerprint=fingerprintState(usePlannerStore.getState());
     const body = buildSaveRequest();
     if (!body) return null;
     if (designName) body.name = designName;
@@ -136,6 +144,7 @@ export default function ActionBar({
       return null;
     }
     const data = (await res.json()) as SaveRoomResponse;
+    if(designName)usePlannerStore.setState({savedFingerprint:fingerprint,savedByUserId:user?.id??null});
     return { url: `${window.location.origin}/room/${data.id}` };
   }
 
@@ -166,7 +175,7 @@ export default function ActionBar({
       openUpgrade("pdf");
       return;
     }
-    if (products.length === 0) {
+    if (buying.length === 0) {
       showToast("Nothing to list yet.");
       return;
     }
@@ -183,12 +192,12 @@ export default function ActionBar({
         roomLine,
         styleName: s.style ? designDisplayName(s.style, s.customVibe) : null,
         budget: s.budget,
-        items: products.map((p) => ({
+        items: buying.map((p) => ({
           name: p.name,
           category: CATEGORY_LABELS[p.category],
           price: p.price,
         })),
-        total: totalFor(products),
+        total: totalFor(buying),
       });
       track("plus_pdf_downloaded");
     } catch {
@@ -225,9 +234,11 @@ export default function ActionBar({
   function handleSaveClick() {
     setMenuOpen(false);
     if (!user) {
+      pendingSave.current=true;
       openAuthModal("save-design");
       return;
     }
+    setName(usePlannerStore.getState().planning.name);setSavedUrl("");
     setSavePanel((v) => !v);
   }
 
@@ -242,6 +253,7 @@ export default function ActionBar({
     // Saving is unlimited: no credit check, just save.
     setBusy("save");
     try {
+      usePlannerStore.getState().updatePlanning({name:trimmed});
       const result = await saveRoom(trimmed);
       if (result) {
         setSavedUrl(result.url);
@@ -261,7 +273,7 @@ export default function ActionBar({
           <div className="dm-cart-action">
             <button type="button" aria-expanded={shopOpen} aria-controls="studio-panel"
               onClick={()=>{setMenuOpen(false);setSavePanel(false);onShop();}}>
-              Cart ({products.length})
+              Cart ({buying.length})
             </button>
           </div>
           <div className="relative">

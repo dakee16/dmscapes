@@ -2,8 +2,13 @@
 
 import Modal from "@/components/site/Modal";
 
-import { useEffect } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Product } from "@/lib/types";
+import { usePlannerStore } from "@/lib/store";
+import { syncProductFurniture } from "@/lib/product-model";
+import { placementIssues, studioSettings } from "@/lib/studio";
+import { MiniPlan } from "@/components/studio/PlanningPanels";
+import { furnitureCategory } from "@/lib/highlight";
 import { alternativesOf } from "@/lib/catalog";
 
 export default function SwapModal({
@@ -15,6 +20,11 @@ export default function SwapModal({
   onPick: (next: Product) => void;
   onClose: () => void;
 }) {
+  const [preview,setPreview]=useState<Product|null>(null);
+  const room=usePlannerStore(s=>s.room),furniture=usePlannerStore(s=>s.furniture);
+  const nextItems=useMemo(()=>preview&&room&&furniture?syncProductFurniture(furniture,[preview],room):null,[preview,room,furniture]);
+  const problems=nextItems&&room?placementIssues(nextItems,room,studioSettings(room.studio)).filter(i=>nextItems.find(f=>f.id===i.id&&furnitureCategory(f)===preview?.category)):[];
+  const larger=preview&&((preview.width_ft??0)>(product.width_ft??Infinity)||(preview.length_ft??0)>(product.length_ft??Infinity));
   const alternatives = alternativesOf(product);
 
   useEffect(() => {
@@ -63,9 +73,10 @@ export default function SwapModal({
           </button>
         </div>
 
+        {preview&&<div className="mt-4 border border-cobalt/25 bg-paper p-4"><h3 className="font-semibold">Preview: {preview.name}</h3><p className="mt-2 text-sm">{preview.width_ft&&preview.length_ft?`${preview.width_ft} × ${preview.length_ft} ft. Product-supplied dimensions; confirm the selected variant.`:"No complete product dimensions. The canvas uses an approximate footprint."}</p>{larger&&<p className="mt-2 text-sm font-semibold text-[#855515]">This replacement is larger. Check its footprint before applying.</p>}{nextItems&&room&&<MiniPlan room={room} items={nextItems} highlight={nextItems.find(f=>!f.inventory&&furnitureCategory(f)===preview.category)?.id}/>}<p className="text-xs text-ink-soft">{problems.length?`${problems.length} placement checks need attention.`:"No new placement warning detected for this category."} Product shape and model are approximate.</p><div className="mt-3 flex gap-3"><button className="bg-cobalt px-4 py-2 text-sm font-semibold text-white" onClick={()=>onPick(preview)}>Apply replacement</button><button className="border border-ink/20 px-4 py-2 text-sm" onClick={()=>setPreview(null)}>Cancel</button></div></div>}
         {alternatives.length === 0 ? (
           <p className="mt-5 rounded-xl border border-ink/10 bg-paper p-4 text-sm text-ink-soft">
-            No alternatives for this one yet. It&apos;s the best pick at every budget.
+            No alternatives for this item yet.
           </p>
         ) : (
           <ul className="mt-4 space-y-2.5">
@@ -75,7 +86,7 @@ export default function SwapModal({
                 <li key={alt.id}>
                   <button
                     type="button"
-                    onClick={() => onPick(alt)}
+                    onClick={() => setPreview(alt)}
                     className="flex w-full cursor-pointer items-center gap-3 rounded-xl border border-ink/10 bg-white p-2.5 text-left transition-colors hover:border-cobalt"
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -53,6 +53,15 @@ export interface FurnitureItem {
   parent_id?: string;
   /** Catalog choice used to size this piece; preserves later manual size edits. */
   product_id?: string;
+  /** Generic inventory stays independent from generated shopping suggestions. */
+  inventory?: boolean;
+  bed_mode?: "standard" | "raised" | "lofted" | "bunked";
+  loft_confirmed?: boolean;
+  assigned_to?: string;
+  supply?: "school" | "owned" | "buy";
+  cost?: number;
+  clearance_ft?: number;
+  dimensions_source?: "generic" | "measured" | "product";
   movable: boolean;
   built_in: boolean;
   color_category: string;

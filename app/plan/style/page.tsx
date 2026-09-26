@@ -162,6 +162,8 @@ export default function PlanStylePage() {
         openUpgrade(blockReason);
         return;
       }
+      usePlannerStore.getState().updatePlanning({mode:"generated"});
+      usePlannerStore.setState({excluded:null});
       track("plan_credit_consumed");
       router.push("/plan/result");
     } catch (error) {
@@ -215,8 +217,7 @@ export default function PlanStylePage() {
         What&apos;s your <span className="hl">vibe</span>?
       </h1>
       <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-        Every style is a complete plan: bedding, lighting, storage, and decor,
-        arranged to your {room.lengthFt} × {room.widthFt} ft room.
+        Find bedding, lighting, storage, and decor for your {room.lengthFt} × {room.widthFt} ft room. Your furniture arrangement stays in place.
       </p>
 
       <div className="dm-style-columns">

@@ -67,7 +67,7 @@ export default function PrivacyPage() {
           </h1>
           <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-card px-3 py-1 font-mono text-xs font-medium uppercase tracking-wide text-ink-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-cobalt" aria-hidden="true" />
-            Last updated: July 23, 2026
+            Last updated: September 26, 2026
           </p>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft">
             This page explains what information Dormscape collects, why, and what you
@@ -129,8 +129,23 @@ export default function PrivacyPage() {
                 <span className="font-semibold text-ink">Saved room designs.</span>{" "}When
                 you save a room, we store the school, dorm, and room type you picked,
                 your chosen style and budget, your furniture layout, and any product
-                swaps you made. This is what lets you come back and reload a saved
-                design.
+                swaps you made, along with any roommate names, assignments, and
+                layout alternatives you enter. This lets you reload a saved design.
+                Anyone with its shared link can see these details.
+              </li>
+              <li>
+                <span className="font-semibold text-ink">Device drafts.</span>{" "}
+                The planner keeps a recovery draft in this browser when storage is
+                available. It may remain after you close the tab or sign out and is
+                available to people using the same browser. Clear the site&rsquo;s
+                browser storage to remove it. It is not a cross-device backup.
+              </li>
+              <li>
+                <span className="font-semibold text-ink">Room review comments.</span>{" "}
+                Posting requires sign-in. We store the comment, display name,
+                selected layout alternative, date, and your account identifier.
+                The name and comment are visible to anyone with the room link;
+                the account identifier is not included in public comment responses.
               </li>
               <li>
                 <span className="font-semibold text-ink">

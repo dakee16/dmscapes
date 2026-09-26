@@ -76,7 +76,7 @@ export default function TermsPage() {
           {/* Prominent "last updated" badge. */}
           <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-card px-3 py-1 font-mono text-xs font-medium uppercase tracking-wide text-ink-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-cobalt" aria-hidden="true" />
-            Last updated: September 24, 2026
+            Last updated: September 26, 2026
           </p>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft">
             Dormscape is a free tool. These terms explain what that means: what you can
@@ -263,13 +263,15 @@ export default function TermsPage() {
           <section id="saving-your-design" className="mt-14 scroll-mt-24">
             <SectionHeading n={9} title="Saving your design" />
             <p className={P}>
-              Dormscape does not save your room design automatically. A design you
-              generate lives only in your browser until you choose to save it to
-              an account. If you leave, refresh, or close the page before saving,
-              that design is lost, and we can&rsquo;t recover it for you. Saving is
-              free and unlimited once you have an account, so when a design is
-              ready, save it before you navigate away. We&rsquo;re not responsible
-              for unsaved designs that are lost this way.
+              Dormscape keeps a recovery draft on your device when browser storage
+              is available. It can survive refreshing or closing the tab, but
+              clearing browser data, replacing the draft, or using private browsing
+              can remove it. This draft is not a cloud backup and does not transfer
+              between devices. Use Save design to keep a named copy in your account.
+              Saving is free and unlimited. Shared room links show a saved snapshot,
+              including its roommate assignments and layout alternatives. Anyone
+              with the link can read posted review comments; comments do not edit
+              the original room.
             </p>
           </section>
 

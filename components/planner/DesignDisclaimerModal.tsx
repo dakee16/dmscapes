@@ -47,10 +47,11 @@ export default function DesignDisclaimerModal({
           Keep your room for later
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-          Dormscape doesn&rsquo;t save your design automatically. When your room is
-          ready, tap{" "}
+          A recovery draft is kept on this device when browser storage is available.
+          When your room is ready, tap{" "}
           <span className="font-semibold text-ink">Save design</span> to keep it in
-          your account. Your work stays in this browser tab, but closing the tab or starting a new room can discard unsaved changes.
+          your account. Clearing browser data or replacing this draft can remove
+          local changes. Device recovery is not a cloud backup.
         </p>
 
         <div className="mt-5 flex flex-col-reverse gap-2.5 sm:flex-row sm:justify-end">

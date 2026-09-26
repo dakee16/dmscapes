@@ -57,7 +57,8 @@ export default function DrawnRoomsReuse() {
       outline: r.outline,
     });
     track("drawn_room_reused", { id: r.id });
-    router.push("/plan/style");
+    usePlannerStore.getState().startManual();
+    router.push("/plan/result");
   }
 
   return (

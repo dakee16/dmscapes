@@ -265,7 +265,9 @@ new Function("require","module","exports",drawCode)(id=>{
 const {createElement}=require("react"),{renderToStaticMarkup}=require("react-dom/server");
 const openingHTML=renderToStaticMarkup(createElement(RoomDetails,{room:{...room,outline:withDoor},controls:{selected:0,select:()=>{}},onAdd:()=>{},onRemove:()=>{},onFlip:()=>{}}));
 assert.equal((openingHTML.match(/draggable="true"/g)||[]).length,2,"Door and window cards support native drag and drop");
-assert.doesNotMatch(openingHTML,/<input|<select|offset|Ceiling height|Opening.*width/,"Opening tools have no measurement or wall selection form");
+assert.match(openingHTML,/Bedding size for product matches/,"Room details preserve the bedding choice separately from opening tools");
+const openingToolsHTML=openingHTML.slice(openingHTML.indexOf("<h2>Doors"));
+assert.doesNotMatch(openingToolsHTML,/<input|<select|offset|Ceiling height|Opening.*width/,"Opening tools have no measurement or wall selection form");
 assert.match(openingHTML,/Flip door/);assert.match(openingHTML,/Remove/);
 const drawHTML=props=>renderToStaticMarkup(createElement(drawModule.exports.default,{onComplete:()=>{},...props}));
 const freshDrawing=drawHTML({});

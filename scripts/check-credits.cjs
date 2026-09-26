@@ -271,7 +271,7 @@ function handler(file, name, scope) {
 }
 
 function controllerScope(overrides = {}) {
-  const state = { busy: false, errors: [], upgrades: [], paths: [], spends: 0, saves: 0, freeUsed: false };
+  const state = { busy: false, errors: [], upgrades: [], paths: [], spends: 0, saves: 0, freeUsed: false, planning: {mode:"manual"}, excluded: ["bedding"] };
   const scope = {
     user: { id: "member" }, profile: { plan: "pro", plan_credits_remaining: 10 },
     style: "minimalist", room: { bedSize: "twin-xl" }, budget: 500,
@@ -286,6 +286,7 @@ function controllerScope(overrides = {}) {
     consumePlanCredit: async () => { state.spends++; return { blocked: false, remaining: 9 }; },
     refreshProfile: async () => {}, generateVibe: async () => ({ ok: true, products: [{ id: "bed" }] }),
     setCustomResult: () => { state.saves++; }, markCustomRegen: () => { state.freeUsed = true; },
+    usePlannerStore: {getState:()=>({updatePlanning:patch=>{state.planning={...state.planning,...patch};}}),setState:patch=>Object.assign(state,patch)},
     ...overrides,
   };
   return { state, scope };
@@ -297,12 +298,16 @@ test("Preset generation handles exhausted credits and network failures without n
     await handler("app/plan/style/page.tsx", "runGenerate", scope)();
     assert.deepEqual(state.paths, []);
     assert.equal(state.busy, false);
+    assert.equal(state.planning.mode, "manual");
+    assert.deepEqual(state.excluded, ["bedding"]);
     assert(state.upgrades.includes("pro-credits") || state.errors.includes("Network unavailable"));
   }
   const { state, scope } = controllerScope();
   await handler("app/plan/style/page.tsx", "runGenerate", scope)();
   assert.equal(state.spends, 1);
   assert.deepEqual(state.paths, ["/plan/result"]);
+  assert.equal(state.planning.mode, "generated");
+  assert.equal(state.excluded, null);
 });
 
 test("Custom-vibe search failure spends nothing; a successful design spends once", async () => {
