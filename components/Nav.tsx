@@ -6,18 +6,15 @@ import { MotionToggle } from "@/components/experience/MotionProvider";
 import { usePathname } from "next/navigation";
 import ProfileMenu from "@/components/auth/ProfileMenu";
 import Wordmark from "@/components/site/Wordmark";
-import RoommateTeaser from "@/components/site/RoommateTeaser";
 import HeaderCredits from "@/components/site/HeaderCredits";
-import { useAuth } from "@/lib/auth-context";
-import { isPaid } from "@/lib/plan";
 
 // Primary text nav, in reading order. Shown centered on desktop; on smaller
 // widths these move into the overflow menu so the header stays uncrowded.
 // Blog lives in the footer now; kept out of the primary header to stay uncrowded.
 const LINKS = [
-  { href: "/", label: "Home" },
+  { href: "/#how-it-works", label: "How it works" },
   { href: "/colleges", label: "Colleges" },
-  { href: "/#room-in-3d-end", label: "3D Studio" },
+  { href: "/rooms", label: "My rooms" },
 ] as const;
 
 const NAV_LINK =
@@ -28,44 +25,11 @@ const NAV_LINK =
 const PLAN_BTN =
   "dm-button dm-nav-cta";
 
-function Crown({ className = "h-[18px] w-[18px]" }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className={`${className} shrink-0 text-amber`}
-      fill="currentColor"
-      aria-hidden="true"
-    >
-      <path d="M2.8 7.4l4 3 4.4-6a1 1 0 0 1 1.6 0l4.4 6 4-3a1 1 0 0 1 1.57 1l-1.6 8.9a1 1 0 0 1-1 .82H4.83a1 1 0 0 1-1-.82L2.24 8.4a1 1 0 0 1 1.56-1z" />
-    </svg>
-  );
-}
-
-function ProBadge() {
-  return (
-    <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
-      Pro
-    </span>
-  );
-}
-
-function DrawNavLink({ onClick }: { onClick?: () => void }) {
-  return <Link href="/plan/draw" onClick={onClick} className={NAV_LINK}>Draw</Link>;
-}
-
 export default function Nav() {
-  const [teaserOpen, setTeaserOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const { profile } = useAuth();
-  // Free and Flex accounts (and logged-out visitors) see the upgrade entry;
-  // Plus and Pro don't. Flex has free-like features, so it still gets the
-  // "upgrade to Plus" nudge; its credits chip handles buying more à la carte.
-  const showUpgrade = !isPaid(profile);
-  // The primary CTA drops the "for free" framing for paying customers: they
-  // already bought in, so "Try for FREE" would read as tone-deaf.
-  const planCtaLabel = isPaid(profile) ? "Plan my room" : "Try for FREE";
+  const planCtaLabel = "Plan my room";
 
   // Overflow menu closes on outside click and Escape.
   useEffect(() => {
@@ -109,7 +73,6 @@ export default function Nav() {
                 {link.label}
               </Link>
             ))}
-            <DrawNavLink />
           </div>
 
           {/* Actions: secondary items, the primary CTA, and the profile. */}
@@ -180,50 +143,10 @@ export default function Nav() {
                         {link.label}
                       </Link>
                     ))}
-                    <Link
-                      href="/plan/draw"
-                      role="menuitem"
-                      onClick={() => setMenuOpen(false)}
-                      className="block rounded-lg px-3 py-2 text-sm font-medium text-ink transition-colors hover:bg-paper"
-                    >
-                      Draw
-                    </Link>
-                    <Link href="/plan/draw/3d" role="menuitem" onClick={() => setMenuOpen(false)} className="block rounded-lg px-3 py-2 text-sm font-medium text-ink transition-colors hover:bg-paper">
-                      Build in 3D <span className="ml-2 text-xs text-cobalt">Pro</span>
-                    </Link>
+
                   </div>
 
-                  <div className="mt-1.5 border-t border-ink/8 pt-1.5">
-                    <button
-                      type="button"
-                      role="menuitem"
-                      onClick={() => {
-                        setMenuOpen(false);
-                        setTeaserOpen(true);
-                      }}
-                      className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper"
-                    >
-                      <Crown className="h-[18px] w-[18px]" />
-                      Room in 3D
-                      <span className="ml-auto">
-                        <ProBadge />
-                      </span>
-                    </button>
 
-                    {showUpgrade && (
-                      <Link
-                        href="/pricing"
-                        role="menuitem"
-                        onClick={() => setMenuOpen(false)}
-                        className="mt-0.5 flex items-center gap-2.5 rounded-lg bg-cobalt/5 px-3 py-2 text-sm font-semibold text-cobalt transition-colors hover:bg-cobalt/10"
-                      >
-                        <span className="grid h-[18px] w-[18px] place-items-center font-display text-base font-extrabold leading-none">
-                          +
-                        </span>
-                        Upgrade to Plus
-                      </Link>
-                    )}
-                  </div>
                 </div>
               )}
             </div>
@@ -233,12 +156,11 @@ export default function Nav() {
             <HeaderCredits />
 
             <MotionToggle />
-            <ProfileMenu onShowRoom3D={() => setTeaserOpen(true)} />
+            <ProfileMenu />
           </div>
         </nav>
       </header>
       {/* Outside <header>: its backdrop-filter would trap fixed positioning. */}
-      <RoommateTeaser open={teaserOpen} onClose={() => setTeaserOpen(false)} />
     </>
   );
 }

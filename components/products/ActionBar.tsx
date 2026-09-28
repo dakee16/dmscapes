@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Product } from "@/lib/types";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
 import { fingerprintState } from "@/lib/planner-fingerprint";
+import { useWorkspace } from "@/components/workspace/WorkspaceContext";
 import { shoppingProducts } from "@/lib/planning";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
@@ -33,11 +34,13 @@ export default function ActionBar({
   getPng,
   onShop,
   shopOpen,
+  exportsOnly = false,
 }: {
   products: Product[];
   getPng: () => string | null;
   onShop: () => void;
   shopOpen: boolean;
+  exportsOnly?: boolean;
 }) {
   const planning=usePlannerStore(s=>s.planning);
   const buying=shoppingProducts(products,planning);
@@ -46,7 +49,8 @@ export default function ActionBar({
   const { openUpgrade } = useUpgrade();
   // PDF/PNG export are premium features: unlocked for Pro and for anyone who has
   // ever bought Plus (stays unlocked even at 0 credits).
-  const features = hasFeatures(profile);
+  const workspace = useWorkspace();
+  const features = hasFeatures(profile) || !!workspace?.ownerPro;
   const actionRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [savePanel, setSavePanel] = useState(false);
@@ -270,13 +274,13 @@ export default function ActionBar({
     <>
       <div ref={actionRef} className="dm-design-actions">
         <div className="dm-design-actions-main" role="group" aria-label="Shopping cart, save and share">
-          <div className="dm-cart-action">
+          {!exportsOnly && <div className="dm-cart-action">
             <button type="button" aria-expanded={shopOpen} aria-controls="studio-panel"
               onClick={()=>{setMenuOpen(false);setSavePanel(false);onShop();}}>
               Cart ({buying.length})
             </button>
           </div>
-          <div className="relative">
+          }<div className="relative">
             <button
               type="button"
               onClick={() => { setMenuOpen((v) => !v); setSavePanel(false); }}
@@ -284,7 +288,7 @@ export default function ActionBar({
               aria-controls="design-share-options"
               className="dm-share-trigger inline-flex cursor-pointer items-center justify-center gap-2 border border-ink/20 bg-paper px-4 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
             >
-              Share room <span aria-hidden="true">↗︎</span>
+              {exportsOnly ? "Export" : "Share room"} <span aria-hidden="true">↗︎</span>
             </button>
             {menuOpen && (
               <div id="design-share-options" className="dm-share-menu snap-in border border-ink/15 bg-white p-1.5" role="group" aria-label="Sharing and downloads">
@@ -300,14 +304,14 @@ export default function ActionBar({
                     </span>
                   )}
                 </button>
-                <button
+                {!exportsOnly && <button
                   type="button"
                   onClick={handleCopyLink}
                   disabled={busy === "link"}
                   className="block w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper disabled:opacity-60"
                 >
                   {busy === "link" ? "Creating link…" : "Copy share link"}
-                </button>
+                </button>}
                 <button
                   type="button"
                   onClick={handleDownloadPdf}
@@ -331,7 +335,7 @@ export default function ActionBar({
             )}
           </div>
 
-          <div className="dm-save-action">
+          {!exportsOnly && <div className="dm-save-action">
             {/* Primary action: saving is free and unlimited, and it's the one
                 thing that keeps a design from being lost, so it leads the bar. */}
             <button
@@ -356,7 +360,7 @@ export default function ActionBar({
               </svg>
               Save design
             </button>
-          </div>
+          </div>}
         </div>
 
         {savePanel && user && (

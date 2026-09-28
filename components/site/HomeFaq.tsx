@@ -9,6 +9,9 @@ import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, RECHARGE_P
 // model, schools, credits). The full dorm-advice FAQ and its structured data
 // live on /faq; this stays schema-free so there's no duplicate FAQPage markup.
 const FAQS: { q: string; a: React.ReactNode }[] = [
+  { q: "What is My rooms?", a: <>Your home for saved layouts and shopping lists. Open a workspace to try furniture, keep layout alternatives, and organize purchases. The quick planner still starts with your room, style, and budget.</> },
+  { q: "Can I plan with my roommates?", a: <>Yes. A Pro owner can host one shared room with up to eight people, including the owner. Friends join free through an invitation link with editing or comment access. Shared rooms include shopping assignments, feedback, and version history.</> },
+  { q: "Does saving or inviting someone use a credit?", a: <>No. Credits are used for generated designs. Saving, manual editing, switching views, and invitations use no credits. Joining a shared Pro room does not give guests Pro access in their own rooms.</> },
   {q:"Does Dormscape have a 3D room planner?",a:<>Yes. Pro includes both the 3D Room Builder and live 3D Room Studio. Build your own floor and walls, add doors and windows, then furnish the room and explore it from different views. <Link href="/plan/draw/3d" className="text-cobalt underline">Build your room in 3D</Link>.</>},
 
   {
@@ -27,9 +30,8 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     q: "Do I need an account to use the planner?",
     a: (
       <>
-        No. Pick your school, choose a vibe, set a budget, and get a full room
-        plan with a shoppable list without signing up. A free account only comes
-        in when you want to save designs to a library or upgrade.
+        You can explore schools, room setup, and styles without an account.
+        Sign in to generate your design, save it in My rooms, or join a shared room.
       </>
     ),
   },
@@ -41,7 +43,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
         share links. Plus ($4.99 once) unlocks all 9 vibes, PDF and PNG export,
         side-by-side comparison, and priority school requests, and gives you {PLUS_INITIAL_CREDITS}
         plan credits (recharge {RECHARGE_CREDITS} more for ${RECHARGE_PRICE_USD.toFixed(2)}). Pro ($14.99 once) is that same
-        tools with {PRO_INITIAL_CREDITS} plan credits, create your own vibe, 3D Room Builder, and live 3D Room Studio. Saving your designs is always free. See the
+        tools with {PRO_INITIAL_CREDITS} plan credits, create your own vibe, 3D Room Builder, live 3D Room Studio, and shared room hosting. Saving your designs is always free. See the
         full split on the{" "}
         <Link
           href="/pricing"

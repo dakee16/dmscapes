@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import BrandMark from "@/components/site/BrandMark";
+import ShoppingPeek from "./ShoppingPeek";
 import HeroSearch from "@/components/site/HeroSearch";
 import { motion } from "framer-motion";
 import RoomModel from "./RoomModel";
@@ -16,17 +16,17 @@ export default function HomeHero({ layoutCount }: { layoutCount: number }) {
     <>
       <section className="dm-hero" aria-labelledby="hero-title">
         <div className="dm-hero-topline dm-eyebrow">
-          <Link href="/plan/draw/3d" className="dm-hero-announcement">
+          <Link href="/#together" className="dm-hero-announcement">
             <span className="dm-hero-new">New</span>
-            <span className="dm-hero-announcement-title">Build your room in 3D</span>
-            <span className="dm-hero-pro">Pro</span>
+            <span className="dm-hero-announcement-title">Make room for your roommates</span>
+            <span className="dm-hero-pro">My rooms</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12" /></svg>
           </Link>
           <HeroSearch />
         </div>
         <div className="dm-hero-copy">
           <h1 id="hero-title">
-            {["Your dorm,", "planned to", "the inch."].map((line, i) => (
+            {["Your room.", "Your style.", "All sorted."].map((line, i) => (
               <span className="dm-title-mask" key={line}>
                 <motion.span
                   initial={paused ? false : { y: "110%", rotate: 3 }}
@@ -44,9 +44,9 @@ export default function HomeHero({ layoutCount }: { layoutCount: number }) {
             ))}
           </h1>
           <p>
-            Find your dorm room, choose a style, and make the space your own.
-            Explore a layout and shoppable picks for your budget, or build and
-            plan your own room in live 3D with Pro.
+            See your room come together with a layout and a shopping list
+            made for your style and budget. Save it, shop it, and get ready
+            for move-in together.
           </p>
           <PlanCta className="dm-button dm-hero-cta" />
           <small>No account needed to explore.</small>
@@ -55,6 +55,7 @@ export default function HomeHero({ layoutCount }: { layoutCount: number }) {
           <div className="dm-stage-grid" aria-hidden="true" />
           <div className="dm-eyebrow dm-room-coordinate">Your next chapter / A style study</div>
           <RoomModel vibe={vibe} />
+          <ShoppingPeek vibe={vibe}/>
           <span className="dm-fit-tag"><span aria-hidden="true">✓</span> Make yourself at home.</span>
           <div className="dm-hero-caption">
             <span>A little room. A lot of you.</span>
@@ -78,19 +79,19 @@ export default function HomeHero({ layoutCount }: { layoutCount: number }) {
         </div>
         <div className="dm-hero-bottom">
           <div className="dm-social-proof">
-            <BrandMark size={40}/>
+            <span className="dm-yellow-tag" aria-hidden="true">2D ↔ 3D</span>
             <p>
-              <span><strong>500+</strong> rooms planned</span>
-              <small>and counting.</small>
+              <span><strong>{layoutCount.toLocaleString("en-US")}</strong> catalog room layouts</span>
+              <small>Find your college. Make it yours.</small>
             </p>
           </div>
-          <Link href="/plan/draw" className="dm-draw-note">
+          <Link href="/rooms" className="dm-draw-note">
             <span className="dm-draw-note-copy">
               <span className="dm-draw-note-heading">
-                <strong>Draw your own room</strong>
-                <span className="dm-yellow-tag">2D + 3D</span>
+                <strong>Your ideas live here</strong>
+                <span className="dm-yellow-tag">My rooms</span>
               </span>
-              <small>Sketch it yourself.</small>
+              <small>Layouts, shopping, and your people.</small>
             </span>
             <span className="dm-draw-note-arrow" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12" /></svg>

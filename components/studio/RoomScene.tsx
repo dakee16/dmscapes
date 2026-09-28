@@ -1,5 +1,6 @@
 "use client";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
+import { useWorkspace } from "@/components/workspace/WorkspaceContext";
 import {useAuth} from "@/lib/auth-context";
 import {canUse3D} from "@/lib/plan";
 import {useUpgrade} from "@/lib/upgrade-context";
@@ -21,7 +22,8 @@ type View={update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;zoom:(fa
 type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;openingDragType:string;previewOpening:(target:number|WallOpening["kind"],x:number,y:number)=>WallOpening|null;onSelectOpening:(index:number|null)=>void;onOpeningChange:(index:number|null,opening:WallOpening)=>void;onReady:()=>void;onError:(message:string)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
 export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;openingControls?:OpeningControls;onSelect?:(id:string|null)=>void;onMove?:(id:string,x:number,y:number)=>void;onFallback?:()=>void;}
 const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(props,ref){
-  const {profile,loading}=useAuth(),allowed=!loading&&canUse3D(profile);
+  const workspace=useWorkspace();
+  const {profile,loading}=useAuth(),allowed=!loading&&(canUse3D(profile)||workspace?.ownerPro===true);
   const {openUpgrade}=useUpgrade(),enabled=!loading&&(allowed||props.preview===true);
   const access=useRef(allowed);access.current=allowed;
   const node=useRef<HTMLDivElement>(null),view=useRef<View|null>(null),current=useRef(props);current.current=props;

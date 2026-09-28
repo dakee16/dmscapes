@@ -1,6 +1,6 @@
 "use client";
-
 import Link from "next/link";
+
 import BrandLoader from "@/components/site/BrandLoader";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -30,10 +30,6 @@ export default function PlanSelectPage() {
   const setDorm = usePlannerStore((s) => s.setDorm);
   const setRoom = usePlannerStore((s) => s.setRoom);
 
-  const furniture=usePlannerStore(s=>s.furniture);
-  const [blank,setBlank]=useState(false);
-  function openWorkspace(){usePlannerStore.getState().startManual(blank);router.push("/plan/result");}
-  function sample(){setCollege(null);setDorm(null);setRoom({type:"double",occupants:2,lengthFt:15,widthFt:12,bedSize:"twin_xl",source:"manual",dimsEstimated:true,outline:{points:[{x:0,y:0},{x:15,y:0},{x:15,y:12},{x:0,y:12}],openings:[{kind:"door",edge:3,offset_ft:1,width_ft:3,swing:0},{kind:"window",edge:0,offset_ft:5,width_ft:4}],closets:[]}});usePlannerStore.getState().startManual();router.push("/plan/result");}
   const [mounted, setMounted] = useState(false);
   const [manualOpen, setManualOpen] = useState(false);
   const [requestOpen, setRequestOpen] = useState(false);
@@ -151,14 +147,7 @@ export default function PlanSelectPage() {
           dimensions, then choose the details that make it yours.
         </p>
 
-        <div className="dm-planner-entry-options" aria-label="Ways to start">
-          <button onClick={()=>{setManualOpen(false);document.getElementById("school-picker")?.scrollIntoView({block:"center"});}}>01 <strong>Find my dorm</strong><span>School, hall, room</span></button>
-          <button onClick={()=>{setManualOpen(true);setPendingDimsRoom(null);requestAnimationFrame(()=>document.getElementById("manual-room-entry")?.scrollIntoView({block:"center"}));}}>02 <strong>Enter measurements</strong><span>Your own dimensions</span></button>
-          <Link href="/plan/draw">03 <strong>Draw my room</strong><span>2D with Plus · 3D with Pro</span></Link>
-          <button onClick={sample}>04 <strong>Try a sample</strong><span>Explore a furnished double</span></button>
-        </div>
-        {room&&furniture&&<Link className="dm-resume-draft" href="/plan/result">Resume your current room ↗</Link>}
-        <div id="school-picker" className="mt-7 space-y-6">
+        <div className="mt-7 space-y-6">
           <CollegeSearch
             selectedName={college?.id ? college.name : null}
             onSelect={handleCollege}
@@ -235,7 +224,7 @@ export default function PlanSelectPage() {
               }}
               className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-4 transition-colors hover:text-cobalt"
             >
-              Enter my room size manually
+              Can’t find your room? Add your own
             </button>
             <button
               type="button"
@@ -246,20 +235,18 @@ export default function PlanSelectPage() {
             </button>
           </div>
 
-          {manualOpen && <div id="manual-room-entry"><ManualEntry mode="school" onSubmit={handleManual} /></div>}
+          {manualOpen && <div><ManualEntry mode="school" onSubmit={handleManual}/><p className="mt-4 text-sm text-ink-soft">Need a different shape? <Link href="/plan/draw" className="font-semibold text-cobalt underline">Draw your room</Link> with Plus, or <Link href="/plan/draw/3d" className="font-semibold text-cobalt underline">build in 3D</Link> with Pro.</p></div>}
         </div>
 
-        <label className="mt-6 flex items-center gap-3 text-sm"><input type="checkbox" checked={blank} onChange={e=>setBlank(e.target.checked)} className="accent-cobalt"/>Start with an empty room</label>
-        <p className="mt-2 text-xs text-ink-soft">Basic 2D planning is free. No account or design credit needed.</p>
-        {/* Open the manual workspace before choosing optional product matches. */}
+        {/* Next: sticky on mobile, inline on desktop */}
         <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/8 bg-paper/92 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
           <button
             type="button"
             disabled={!room}
-            onClick={openWorkspace}
+            onClick={() => router.push("/plan/style")}
             className="h-13 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:bg-ink/15 disabled:text-ink-soft sm:h-12 sm:w-auto sm:px-10"
           >
-            Open my room →
+            Next: pick your style →
           </button>
         </div>
       </div>

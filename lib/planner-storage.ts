@@ -5,6 +5,9 @@ import { roomEditError } from "./room-editing";
 export const RECOVERY_KEY="dormscape-planner-recovery-v2";
 export let draftStorageStatus: "saved"|"session"|"unavailable" = "unavailable";
 export let recoveredDraft = false;
+// A private workspace uses account-scoped recovery, never the public planner draft.
+let suspended = false;
+export function suspendPlannerStorage(value: boolean) { suspended = value; }
 const fields=["plannerView","college","dorm","room","style","budget","customVibe","customProducts","customMock","customRegenUsed","templateId","furniture","swaps","excluded","hiddenItemIds","lockedItemIds","customItems","unplacedItemIds","planning","savedFingerprint","savedByUserId"];
 /** Ignore corrupt JSON or incompatible shapes instead of breaking the planner. */
 export function validDraft(value:string|null):string|null{
@@ -30,6 +33,7 @@ export const plannerStorage:StateStorage={
     return null;
   },
   setItem(name,value){
+    if (suspended) return;
     let session=false;try{sessionStorage.setItem(name,value);session=true;}catch{}
     try{const s=JSON.parse(value).state;
       // Choosing a different school must not destroy the last usable room.

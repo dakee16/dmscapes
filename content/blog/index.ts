@@ -1,3 +1,5 @@
+import workspace from "./plan-a-dorm-room-with-roommates";
+import sharedShopping from "./shared-dorm-shopping-list";
 import studio from "./introducing-dormscape-3d-room-studio";
 import build3d from "./build-a-dorm-room-in-3d";
 import irregular3d from "./plan-an-irregular-dorm-room-in-3d";
@@ -19,6 +21,8 @@ import layoutIdeas from "./dorm-room-layout-ideas";
 // Everything else (index page, post pages, sitemap) reads from POSTS, so the
 // page structure never has to change.
 export const POSTS: BlogPost[] = [
+  workspace,
+  sharedShopping,
   build3d,
   irregular3d,
   studio,

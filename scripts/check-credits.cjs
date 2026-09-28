@@ -326,18 +326,18 @@ test("Custom-vibe search failure spends nothing; a successful design spends once
 test("Custom regeneration keeps one free pass and charges subsequent successful passes", async () => {
   for (const customRegenUsed of [false, true]) {
     const { state, scope } = controllerScope({ customRegenUsed });
-    await handler("app/plan/result/page.tsx", "handleRegenerate", scope)();
+    await handler("components/planner/PlanResult.tsx", "handleRegenerate", scope)();
     assert.equal(state.spends, customRegenUsed ? 1 : 0);
     assert.equal(state.freeUsed, !customRegenUsed);
     assert.equal(state.saves, 1);
     assert.equal(state.busy, false);
   }
   const failed = controllerScope({ customRegenUsed: true, generateVibe: async () => ({ ok: false, error: "Search failed" }) });
-  await handler("app/plan/result/page.tsx", "handleRegenerate", failed.scope)();
+  await handler("components/planner/PlanResult.tsx", "handleRegenerate", failed.scope)();
   assert.equal(failed.state.spends, 0);
   assert.equal(failed.state.saves, 0);
   const blocked = controllerScope({ customRegenUsed: true, consumePlanCredit: async () => ({ blocked: true, remaining: 0 }) });
-  await handler("app/plan/result/page.tsx", "handleRegenerate", blocked.scope)();
+  await handler("components/planner/PlanResult.tsx", "handleRegenerate", blocked.scope)();
   assert.equal(blocked.state.saves, 0);
   assert.deepEqual(blocked.state.upgrades, ["pro-credits"]);
 });

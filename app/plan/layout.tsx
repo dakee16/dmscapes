@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import SiteHeader from "@/components/site/SiteHeader";
 import PlannerSteps from "@/components/planner/PlannerSteps";
-import PlannerTabs from "@/components/planner/PlannerTabs";
 
 export const metadata: Metadata = {
   description:
@@ -18,7 +17,6 @@ export default function PlanLayout({
       <SiteHeader />
       <div className="dm-plan-topbar">
         <PlannerSteps />
-        <PlannerTabs />
       </div>
       <main
         id="page-content"

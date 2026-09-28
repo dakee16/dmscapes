@@ -15,6 +15,7 @@
 
 # next.js
 /.next/
+/.next-workspace-*/
 /out/
 
 # production

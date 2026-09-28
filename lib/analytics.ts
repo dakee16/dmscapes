@@ -87,6 +87,15 @@ function ensureInit(): boolean {
     posthog.init(key, {
       api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST ?? "https://us.i.posthog.com",
       capture_pageview: true,
+      disable_capture_url_hashes: true,
+      disable_session_recording: true,
+      before_send: (event) => {
+        if (!event) return null;
+        const privatePath = (value: unknown) => {
+          try { return /^\/(rooms|login)(\/|$)/.test(new URL(String(value), location.origin).pathname); } catch { return false; }
+        };
+        return privatePath(location.href) || privatePath(event.properties?.$current_url) || privatePath(event.properties?.$referrer) ? null : event;
+      },
     });
     initialized = true;
   }

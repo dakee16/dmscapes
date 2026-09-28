@@ -13,7 +13,7 @@ import { isPaid } from "@/lib/plan";
  */
 export default function PlanCta({
   className,
-  freeLabel = "Plan my room for free",
+  freeLabel = "Plan my room",
   paidLabel = "Plan my room",
   href = "/plan",
 }: {

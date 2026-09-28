@@ -230,7 +230,7 @@ export default function ProfileMenu({
               Account
             </Link>
             <Link
-              href="/account"
+              href="/rooms"
               role="menuitem"
               onClick={() => setOpen(false)}
               className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-ink transition-colors hover:bg-paper"
@@ -248,7 +248,7 @@ export default function ProfileMenu({
                   strokeLinejoin="round"
                 />
               </svg>
-              Saved designs
+              My rooms
             </Link>
             <Link
               href="/account/billing"

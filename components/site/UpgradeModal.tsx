@@ -19,6 +19,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     title: "You're out of plan credits",
     body: "You've used your Plus plan credits. Recharge to generate more rooms. Your saved designs, exports, and comparisons stay right where they are.",
   },
+  "workspace": { title: "Make room for your roommates", body: "Pro hosts one shared room with up to eight people, including you. Friends join free to edit or comment, with a shared shopping list and version history. Personal rooms stay available on every plan." },
   "pro-credits": {
     title: "You're out of plan credits",
     body: "Add more for $0.99 per credit. Your saved rooms and Pro tools, including 3D building and planning, remain available.",
@@ -182,7 +183,7 @@ export default function UpgradeModal() {
     >
       <div className={`${reason === "room-3d" ? "" : "snap-in "}w-full max-w-lg rounded-t-3xl border border-ink/10 bg-paper p-7 shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)] sm:rounded-3xl sm:p-9`}>
         <div className="flex items-start justify-between gap-4">
-          {reason === "room-3d" || reason === "draw-3d" || reason === "custom-vibe" || reason === "pro-credits" ? <span className="dm-eyebrow">Dormscape Pro</span> : <Badge />}
+          {reason === "workspace" || reason === "room-3d" || reason === "draw-3d" || reason === "custom-vibe" || reason === "pro-credits" ? <span className="dm-eyebrow">Dormscape Pro</span> : <Badge />}
           <CloseButton onClick={closeUpgrade} />
         </div>
 
@@ -196,8 +197,8 @@ export default function UpgradeModal() {
           {copy.body}
         </p>
 
-        {reason === "room-3d" || reason === "draw-3d" || reason === "custom-vibe" ? (
-          <div className="mt-6 space-y-4"><p>3D Room Builder, live 3D Room Studio, create your own vibe, {PRO_INITIAL_CREDITS} plan credits, and everything in Plus.</p><button className="dm-button w-full" onClick={() => buy("pro")} disabled={busy !== null}>{busy ? "Starting checkout…" : `Get Pro for $${PRO_PRICE_USD.toFixed(2)} once`}</button>{error && <p role="alert">{error}</p>}<Link href="/pricing#pro" onClick={closeUpgrade} className="block text-center text-cobalt underline">See all Pro features</Link><button className="block w-full text-sm" onClick={closeUpgrade}>Keep planning in 2D</button></div>
+        {reason === "workspace" || reason === "room-3d" || reason === "draw-3d" || reason === "custom-vibe" ? (
+          <div className="mt-6 space-y-4"><p>3D Room Builder, live 3D Room Studio, create your own vibe, {PRO_INITIAL_CREDITS} plan credits, shared room hosting, and everything in Plus.</p><button className="dm-button w-full" onClick={() => buy("pro")} disabled={busy !== null}>{busy ? "Starting checkout…" : `Get Pro for $${PRO_PRICE_USD.toFixed(2)} once`}</button>{error && <p role="alert">{error}</p>}<Link href="/pricing#pro" onClick={closeUpgrade} className="block text-center text-cobalt underline">See all Pro features</Link><button className="block w-full text-sm" onClick={closeUpgrade}>Keep my current plan</button></div>
         ) : isFlexCredits ? (
           // Out of credits on Flex: buy more à-la-carte, or step up to Pro.
           <>

@@ -57,7 +57,12 @@ const Modal = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(functio
     };
     document.addEventListener("keydown", onKey);
     document.addEventListener("focusin", onFocus);
+    const observer = new MutationObserver(() => {
+      if (dialogs.at(-1) === dialog && (!dialog.contains(document.activeElement) || document.activeElement?.matches(':disabled'))) focusFirst();
+    });
+    observer.observe(dialog, { subtree: true, childList: true, attributes: true, attributeFilter: ["disabled"] });
     return () => {
+      observer.disconnect();
       const wasTop = dialogs.at(-1) === dialog;
       dialogs.splice(dialogs.indexOf(dialog), 1);
       document.removeEventListener("keydown", onKey);

@@ -26,6 +26,7 @@ import { CATEGORY_COLORS, styleById } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import { bedLabel, isBunkBed } from "@/lib/bedding";
+import { useWorkspacePeople } from "@/components/workspace/WorkspaceContext";
 import { ownerName } from "@/lib/planning";
 import { clamp, footprint, invalidItems, layerOf, pointInPolygon, rotateFurniture } from "./geometry";
 
@@ -223,6 +224,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const selectedCategory = usePlannerStore((s) => s.selectedCategory);
   const selectedItemId = usePlannerStore((s) => s.selectedItemId);
   const planning = usePlannerStore(s=>s.planning);
+  const people = useWorkspacePeople(planning.roommates);
   const checkHighlight = usePlannerStore(s=>s.checkHighlight);
   const setHoveredCategory = usePlannerStore((s) => s.setHoveredCategory);
   const toggleSelectedItem = usePlannerStore((s) => s.toggleSelectedItem);
@@ -852,7 +854,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                     shadowOffsetY={draggable ? 1 : 0}
                   />
                   <Group opacity={isHidden ? .12 : 1} listening={false}><FurnitureGlyph item={f} scale={pxFt} color={color} /></Group>
-                  {planning.showOwners&&!isHidden&&<Rect name="editor-only" width={w} height={h} stroke={planning.roommates.find(r=>r.id===f.assigned_to)?.color??"#68748b"} strokeWidth={2.5} fillEnabled={false} listening={false}/>}
+                  {planning.showOwners&&!isHidden&&<Rect name="editor-only" width={w} height={h} stroke={people.find(r=>r.id===f.assigned_to)?.color??"#68748b"} strokeWidth={2.5} fillEnabled={false} listening={false}/>}
                   {bad && !isHidden && <Rect name="editor-only" width={w} height={h} stroke={RED} strokeWidth={2} fillEnabled={false} listening={false} />}
                   {/* Cross-highlight ring, cobalt glow, distinct from the red
                       collision flag; sits outside the item so small unlabeled
@@ -887,7 +889,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 if (w < 38 || h < 24 || hiddenItemIds.includes(f.id)) return null;
                 const size = Math.max(9, Math.min(11, w * .14));
                 const stacked = isBunkBed(f) && w < 125;
-                const label = planning.showOwners?`${bedLabel(f)}\n${ownerName(f.assigned_to,planning.roommates)}`:stacked ? bedLabel(f).replace(" · ", "\n") : bedLabel(f);
+                const label = planning.showOwners?`${bedLabel(f)}\n${ownerName(f.assigned_to,people)}`:stacked ? bedLabel(f).replace(" · ", "\n") : bedLabel(f);
                 const labelH = stacked||planning.showOwners ? 30 : 16;
                 const width = Math.min(w-8, (Math.max(...label.split("\n").map(line=>line.length))+2)*size*.61);
                 const x = (w-width)/2;

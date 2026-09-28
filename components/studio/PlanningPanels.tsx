@@ -9,6 +9,7 @@ import { furnitureCorners } from "@/components/canvas/geometry";
 import { roomOutline, visibleFurniture } from "@/lib/studio";
 import { NumberField } from "./StudioPanels";
 import s from "./Studio.module.css";
+import { useWorkspacePeople } from "@/components/workspace/WorkspaceContext";
 import v from "./Planning.module.css";
 
 function PieceIcon({piece}:{piece:LibraryPiece}){
@@ -29,13 +30,14 @@ export function FurnitureLibrary({onSelect}:{onSelect:(id:string)=>void}){
   const [query,setQuery]=useState(""),[group,setGroup]=useState("All"),[tab,setTab]=useState<"library"|"room">("library"),[message,setMessage]=useState("");
   const items=usePlannerStore(s=>s.furniture)??[],planning=usePlannerStore(s=>s.planning),hidden=usePlannerStore(s=>s.hiddenItemIds),add=usePlannerStore(s=>s.addLibraryPiece);
   const pieces=FURNITURE_LIBRARY.filter(p=>(group==="All"||p.group===group)&&p.name.toLowerCase().includes(query.toLowerCase()));
+  const people=useWorkspacePeople(planning.roommates);
   return <><div className={v.segment} role="group" aria-label="Furniture source"><button aria-pressed={tab==="library"} onClick={()=>setTab("library")}>Add furniture</button><button aria-pressed={tab==="room"} onClick={()=>setTab("room")}>In your room ({items.length})</button></div>
     <label className={s.field}>Find a piece<input type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Bed, desk, radiator…"/></label>
     {tab==="library"?<><div className={v.chips} aria-label="Furniture categories">{["All",...new Set(FURNITURE_LIBRARY.map(p=>p.group))].map(g=><button key={g} aria-pressed={group===g} onClick={()=>setGroup(g)}>{g}</button>)}</div>
       <p className={v.caption}>Room pieces, ready to arrange. Edit every measurement.</p>
       <div className={v.library}>{pieces.map(p=><button key={p.key} onClick={()=>{const id=add(p.key);if(id){onSelect(id);setMessage(`${p.name} added. You can undo this.`);}else setMessage("This room has reached its 60-piece limit. Remove a piece to add another.");}}><PieceIcon piece={p}/><strong>{p.name}</strong><span>{p.w} × {p.d} ft</span><b aria-hidden="true">+</b></button>)}</div>
       {!pieces.length&&<p className={s.note}>No matching pieces. Try another category or use Custom footprint.</p>}
-    </>:<ul className={v.roomInventory}>{items.filter(f=>f.label.toLowerCase().includes(query.toLowerCase())).map(f=><li key={f.id}><button onClick={()=>onSelect(f.id)}><i style={{background:planning.roommates.find(r=>r.id===f.assigned_to)?.color??"#acb7c9"}}/><span><strong>{f.label}</strong><small>{hidden.includes(f.id)?"Hidden · ":""}{ownerName(f.assigned_to,planning.roommates)} · {supplyFor(f)==="school"?"School provided":supplyFor(f)==="owned"?"Already owned":"To buy"}</small></span><b>↗</b></button></li>)}{!items.length&&<li className={s.note}>Your room is a blank canvas. Add your first piece.</li>}</ul>}
+    </>:<ul className={v.roomInventory}>{items.filter(f=>f.label.toLowerCase().includes(query.toLowerCase())).map(f=><li key={f.id}><button onClick={()=>onSelect(f.id)}><i style={{background:people.find(r=>r.id===f.assigned_to)?.color??"#acb7c9"}}/><span><strong>{f.label}</strong><small>{hidden.includes(f.id)?"Hidden · ":""}{ownerName(f.assigned_to,people)} · {supplyFor(f)==="school"?"School provided":supplyFor(f)==="owned"?"Already owned":"To buy"}</small></span><b>↗</b></button></li>)}{!items.length&&<li className={s.note}>Your room is a blank canvas. Add your first piece.</li>}</ul>}
     {message&&<p className={v.caption} role="status">{message}</p>}
   </>;
 }
@@ -82,5 +84,6 @@ export function ShoppingOwnership({products}:{products:Product[]}){
   const details=usePlannerStore(s=>s.planning);
   function assign(productId:string,patch:Partial<{supply:"school"|"owned"|"buy";assignedTo:string}>){usePlannerStore.setState(state=>assignOwnership(state.furniture??[],state.planning,products,{productId},patch));}
   if(!products.length)return <div className={v.success}><strong>Build your layout first.</strong><p>Add furniture from the library, then find a vibe when you want product recommendations.</p><Link href="/plan/style">Find products for my room ↗</Link></div>;
-  return <details className={v.shoppingOwnership}><summary>Already have it? Set who brings what</summary>{products.map(p=>{const value=details.productSupply[p.id]??{supply:"buy",assignedTo:"shared"};return <div key={p.id}><strong>{p.name}</strong><select aria-label={`Supply for ${p.name}`} value={value.supply} onChange={e=>assign(p.id,{supply:e.target.value as typeof value.supply})}><option value="buy">To buy</option><option value="owned">Already owned</option><option value="school">School provided</option></select><select aria-label={`Buyer for ${p.name}`} value={value.assignedTo} onChange={e=>assign(p.id,{assignedTo:e.target.value})}><option value="shared">Shared</option>{details.roommates.map(r=><option key={r.id} value={r.id}>{r.name}</option>)}</select><small>{p.width_ft&&p.length_ft?`Product dimensions: ${p.width_ft} × ${p.length_ft} ft. Confirm the seller's selected variant.`:"Approximate footprint. Product dimensions are not available."}</small></div>;})}</details>;
+  const people=useWorkspacePeople(details.roommates);
+  return <details className={v.shoppingOwnership}><summary>Already have it? Set who brings what</summary>{products.map(p=>{const value=details.productSupply[p.id]??{supply:"buy",assignedTo:"shared"};return <div key={p.id}><strong>{p.name}</strong><select aria-label={`Supply for ${p.name}`} value={value.supply} onChange={e=>assign(p.id,{supply:e.target.value as typeof value.supply})}><option value="buy">To buy</option><option value="owned">Already owned</option><option value="school">School provided</option></select><select aria-label={`Buyer for ${p.name}`} value={value.assignedTo} onChange={e=>assign(p.id,{assignedTo:e.target.value})}><option value="shared">Shared</option>{people.map(r=><option key={r.id} value={r.id}>{r.name}</option>)}</select><small>{p.width_ft&&p.length_ft?`Product dimensions: ${p.width_ft} × ${p.length_ft} ft. Confirm the seller's selected variant.`:"Approximate footprint. Product dimensions are not available."}</small></div>;})}</details>;
 }

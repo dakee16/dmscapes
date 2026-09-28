@@ -28,7 +28,7 @@ export function AccountHeader({ active, title, accent, description, action }: {
       </header>
       <nav className={s.nav} aria-label="Account navigation">
         {([
-          ["overview", "/account", "My studio"],
+          ["overview", "/rooms", "My rooms"],
           ["billing", "/account/billing", "Plan & billing"],
           ["settings", "/account/settings", "Settings"],
         ] as const).map(([key, href, label]) => (

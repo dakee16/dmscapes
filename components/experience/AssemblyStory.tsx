@@ -89,13 +89,14 @@ export default function AssemblyStory() {
           <Reveal className="dm-story-step">
             <span className="dm-step-number">03</span>
             <h3>
-              Get your
+              Shop your
               <br />
               <em>room.</em>
             </h3>
             <p>
               A 2D layout based on your floor plan, plus a shoppable list
-              with live Amazon links. Find your favorites, then make them yours.
+              with live Amazon links beside it. Swap products and watch your budget.
+              Save it all in My rooms when you’re ready.
             </p>
             <div className="dm-demo-receipt">
               <span className="dm-eyebrow">Example room / All sorted</span>

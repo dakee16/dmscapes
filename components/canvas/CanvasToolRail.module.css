@@ -4,6 +4,7 @@
 .pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px; }
 .tools button { min-width:0; border:1px solid transparent; border-radius:3px; background:transparent; color:#e4e6f5; min-height:38px; padding:6px 3px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:4px; font:500 10px/1.25 var(--font-instrument),sans-serif; cursor:pointer; }
 .tools button svg { width:18px;height:18px;flex-shrink:0; }
+.tools button span { white-space:nowrap; overflow-wrap:normal; }
 .tools button:enabled:hover{background:#ffffff15;color:#fff}.tools button[aria-pressed="true"]{background:#2b4eff;color:white;border-color:#647dff}.tools button:disabled{opacity:.32;cursor:not-allowed}
 .tools :is(button,summary):focus-visible{outline:2px solid #ffdc60;outline-offset:-2px}
 .tools .wide{width:100%;flex-direction:row;justify-content:flex-start;gap:9px;padding:9px 5px;text-align:left}
