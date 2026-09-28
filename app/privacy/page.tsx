@@ -41,7 +41,7 @@ const SUMMARY = [
   "We don't sell your data, and we don't build advertising profiles.",
   "Your data is stored with Supabase; the app reaches it only through our server.",
   "A few services help run Dormscape: Supabase (database and sign-in), Google (optional sign-in), PostHog (analytics), and Amazon (affiliate links).",
-  "You can ask us to delete your account and its data at any time by emailing info@dormscape.us.",
+  "Delete your account in Account settings, or contact info@dormscape.us for help. Owned rooms and designs are removed; some support and payment records may remain.",
 ];
 
 function SectionHeading({ n, title }: { n: number; title: string }) {
@@ -67,7 +67,7 @@ export default function PrivacyPage() {
           </h1>
           <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-card px-3 py-1 font-mono text-xs font-medium uppercase tracking-wide text-ink-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-cobalt" aria-hidden="true" />
-            Last updated: September 26, 2026
+            Last updated: September 28, 2026
           </p>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft">
             This page explains what information Dormscape collects, why, and what you
@@ -157,6 +157,14 @@ export default function PrivacyPage() {
                 are optional and not required to use the planner.
               </li>
               <li>
+                <span className="font-semibold text-ink">Problem reports.</span>{" "}
+                We store the category, description, optional reply email and page path
+                you submit, along with your account identifier if you are signed in.
+                We strip query strings and invitation fragments from page paths.
+                Reports are private to the team and may be sent to our support inbox
+                using Resend. Do not include passwords or payment details.
+              </li>
+              <li>
                 <span className="font-semibold text-ink">Analytics.</span>{" "}We use
                 PostHog to understand how people use Dormscape: which pages get
                 visited, which buttons get clicked, and where people drop off in the
@@ -223,14 +231,22 @@ export default function PrivacyPage() {
           <section id="your-rights" className="mt-14 scroll-mt-24">
             <SectionHeading n={5} title="Your rights" />
             <p className={P}>
-              You can ask us to delete your account and the data tied to it at any
-              time. Email{" "}
+              You can permanently delete your account from{" "}
+              <Link href="/account/settings#delete-account" className={TEXT_LINK}>Account settings</Link>.
+              This removes your profile, saved designs, comments, memberships and rooms
+              you own, including shared rooms for all their members. Paid access and
+              unused credits are lost. Deletion does not issue a refund or cancel
+              retailer orders. For help, email{" "}
               <a href="mailto:info@dormscape.us" className={TEXT_LINK}>
                 info@dormscape.us
               </a>{" "}
-              and we&rsquo;ll take care of it. If you never created an account, most of
-              your planner data (your in-progress room selections) lives only in your
-              browser and clears when you clear your browser storage.
+              . Rooms and saved versions owned by other people, exported copies,
+              support correspondence and payment records may remain. Reports may be
+              retained for investigation; their linked account identifier and matching
+              reply email are cleared. Provider backups follow their retention schedules.
+              Recovery drafts in the browser used for deletion are cleared. Clear site
+              storage on other devices to remove their local drafts. If you never created
+              an account, clear browser storage to remove in-progress planner selections.
             </p>
           </section>
 

@@ -92,7 +92,7 @@ function ensureInit(): boolean {
       before_send: (event) => {
         if (!event) return null;
         const privatePath = (value: unknown) => {
-          try { return /^\/(rooms|login)(\/|$)/.test(new URL(String(value), location.origin).pathname); } catch { return false; }
+          try { return /^\/(rooms|login|account|report)(\/|$)/.test(new URL(String(value), location.origin).pathname); } catch { return false; }
         };
         return privatePath(location.href) || privatePath(event.properties?.$current_url) || privatePath(event.properties?.$referrer) ? null : event;
       },

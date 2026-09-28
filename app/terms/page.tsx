@@ -48,7 +48,7 @@ const SUMMARY = [
   "We don't sell or ship products. Returns, refunds, and faulty items are handled by Amazon, not us.",
   "Paid Dormscape features (Plus, Flex credits, Pro) are final and non-refundable; we don't entertain refunds or payment disputes on them.",
   "We're not affiliated with any college; dorm data comes from public sources, not an official record.",
-  "An account is required to generate and save designs. You can ask us to delete yours anytime.",
+  "An account is required to generate and save designs. You can delete yours in Account settings.",
   "Unsaved designs can be lost, so save before you leave the page.",
 ];
 
@@ -76,7 +76,7 @@ export default function TermsPage() {
           {/* Prominent "last updated" badge. */}
           <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-card px-3 py-1 font-mono text-xs font-medium uppercase tracking-wide text-ink-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-cobalt" aria-hidden="true" />
-            Last updated: September 26, 2026
+            Last updated: September 28, 2026
           </p>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft">
             Dormscape is a free tool. These terms explain what that means: what you can
@@ -251,8 +251,11 @@ export default function TermsPage() {
             <SectionHeading n={8} title="Accounts" />
             <p className={P}>
               An account is required to generate and save a design, manage credits,
-              and return to saved rooms later. You can request that your account and
-              associated data be deleted at any time by emailing us. See the{" "}
+              and return to saved rooms later. You can delete your account in{" "}
+              <Link href="/account/settings#delete-account" className={TEXT_LINK}>Account settings</Link>
+              {" "}or contact us for help. Deletion is permanent and removes paid access,
+              unused credits and rooms you own, including shared rooms for their members.
+              It does not issue a refund or cancel retailer orders. See the{" "}
               <Link href="/privacy" className={TEXT_LINK}>
                 Privacy Policy
               </Link>{" "}

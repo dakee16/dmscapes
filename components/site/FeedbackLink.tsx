@@ -14,10 +14,8 @@ import { track } from "@/lib/analytics";
  */
 export default function FeedbackLink() {
   const [open, setOpen] = useState(false);
-  const closeTimer = useRef<number | null>(null);
 
   const close = useCallback(() => {
-    if (closeTimer.current) window.clearTimeout(closeTimer.current);
     setOpen(false);
   }, []);
 
@@ -25,24 +23,6 @@ export default function FeedbackLink() {
     setOpen(true);
     track("feedback_prompt_opened", { source: "footer" });
   }
-
-  // Modal owns focus and scroll locking; this entry point handles dismissal.
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close();
-    };
-    document.addEventListener("keydown", onKey);
-    return () => {
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [open, close]);
-
-  useEffect(() => {
-    return () => {
-      if (closeTimer.current) window.clearTimeout(closeTimer.current);
-    };
-  }, []);
 
   // Auto-prompt once the session passes 5 minutes, at most once per session.
   // Session start is stored so the timer survives navigation between pages (a
@@ -60,7 +40,7 @@ export default function FeedbackLink() {
     }
     const remaining = Math.max(0, start + 5 * 60 * 1000 - Date.now());
     const t = window.setTimeout(() => {
-      if (window.sessionStorage.getItem(SHOWN)) return;
+      if (window.sessionStorage.getItem(SHOWN) || document.querySelector('[aria-modal="true"]')) return;
       window.sessionStorage.setItem(SHOWN, "1");
       setOpen(true);
       track("feedback_prompt_opened", { source: "auto-5min" });
@@ -78,14 +58,26 @@ export default function FeedbackLink() {
         Feedback
       </button>
 
-      {open && (
+      {open && <FeedbackDialog onClose={close} />}
+    </>
+  );
+}
+
+export function FeedbackDialog({ onClose }: { onClose: () => void }) {
+  const closeTimer = useRef<number | null>(null);
+  useEffect(() => {
+    const escape = (event: KeyboardEvent) => { if (event.key === "Escape") onClose(); };
+    document.addEventListener("keydown", escape);
+    return () => { document.removeEventListener("keydown", escape); if (closeTimer.current) window.clearTimeout(closeTimer.current); };
+  }, [onClose]);
+  return (
         <Modal
           className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
           role="dialog"
           aria-modal="true"
           aria-labelledby="footer-feedback-title"
           onMouseDown={(e) => {
-            if (e.target === e.currentTarget) close();
+            if (e.target === e.currentTarget) onClose();
           }}
         >
           <div className="dm-feedback-modal snap-in relative w-full border border-ink/15 bg-paper shadow-2xl">
@@ -115,7 +107,7 @@ export default function FeedbackLink() {
                 </div>
                 <button
                   type="button"
-                  onClick={close}
+                  onClick={onClose}
                   aria-label="Close"
                   className="grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-ink"
                 >
@@ -138,16 +130,11 @@ export default function FeedbackLink() {
                   headline=""
                   subhead="A star rating sends it. Words are welcome, never required."
                   autoFocus
-                  onSubmitted={() => {
-                    // Let the "Thanks for the feedback" state land, then close.
-                    closeTimer.current = window.setTimeout(close, 1600);
-                  }}
+                  onSubmitted={() => { closeTimer.current = window.setTimeout(onClose, 1600); }}
                 />
               </div>
             </div>
           </div>
         </Modal>
-      )}
-    </>
   );
 }

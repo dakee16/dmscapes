@@ -37,6 +37,7 @@ const COLUMNS: {
       { label: "FAQ", href: "/faq" },
       { label: "Contact", href: "/contact" },
       { label: "Feedback", feedback: true },
+      { label: "Report a problem", href: "/report" },
     ],
   },
   {

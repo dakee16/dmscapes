@@ -1,4 +1,5 @@
 import WorkspaceStory from "@/components/experience/WorkspaceStory";
+import StudioShowcase from "@/components/experience/StudioShowcase";
 import HomeHero from "@/components/experience/HomeHero";
 import AssemblyStory from "@/components/experience/AssemblyStory";
 import Link from "next/link";
@@ -46,6 +47,7 @@ export default function Home() {
         <AssemblyStory />
         <Vibes />
         <CreateVibePromo />
+        <StudioShowcase />
         <WorkspaceStory />
         <Schools />
         <RoomPlans />
