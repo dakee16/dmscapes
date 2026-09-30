@@ -11,6 +11,7 @@ export interface RoomWorkspace {
   source_room_id: string | null;
   created_at: string;
   updated_at: string;
+  realtime_epoch?: string;
 }
 export interface WorkspaceMember {
   user_id: string;
@@ -25,6 +26,7 @@ export interface WorkspaceComment {
   target: string;
   resolved: boolean;
   created_at: string;
+  parent_id?: string | null;
 }
 export interface WorkspaceVersion {
   id: string;

@@ -38,7 +38,7 @@ export async function workspaceAccess(db: NonNullable<ReturnType<typeof getServi
   return { workspace, role: member.role, ownerPro: owner?.plan === "pro" } as const;
 }
 export async function workspaceAction(db: NonNullable<ReturnType<typeof getServiceClient>>, userId: string, id: string | null, action: string, payload: Record<string, unknown>) {
-  const { data, error } = await db.rpc("dormscape_workspace_action", { p_actor: userId, p_id: id, p_action: action, p_payload: payload });
+  const { data, error } = await db.rpc(["comment", "resolve"].includes(action) ? "dormscape_workspace_comment" : "dormscape_workspace_action", { p_actor: userId, p_id: id, p_action: action, p_payload: payload });
   if (error) { console.error("workspace action failed", error.code); return workspaceUnavailable(); }
   if (data?.error) return workspaceJson({ error: data.error }, data.status ?? 400);
   return workspaceJson(data);

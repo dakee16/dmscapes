@@ -13,16 +13,19 @@ import { productForFurniture, productVisual } from "@/lib/product-model";
 import { OPENING_DRAG_TYPE, type OpeningControls } from "@/lib/room-editing";
 import s from "./Studio.module.css";
 import BrandLoader from "@/components/site/BrandLoader";
+import {usePlannerStore} from "@/lib/store";
+import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
 
 export type CameraView="room"|"top"|"inside";
 export interface RoomSceneHandle {exportPNG:()=>string|null;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;}
 type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;footW:number;footD:number;locked:boolean;bare:boolean;product?:ReturnType<typeof productVisual>};
 type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];selectedId:string|null;selectedOpening:number|null;editOpenings:boolean;interior:{x:number;y:number}};
-type View={update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;exportPNG:()=>string;destroy:()=>void};
+type View={readCursor:(x:number,y:number)=>{x:number;y:number}|null;projectCursor:(x:number,y:number)=>{x:number;y:number}|null;update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;exportPNG:()=>string;destroy:()=>void};
 type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;openingDragType:string;previewOpening:(target:number|WallOpening["kind"],x:number,y:number)=>WallOpening|null;onSelectOpening:(index:number|null)=>void;onOpeningChange:(index:number|null,opening:WallOpening)=>void;onReady:()=>void;onError:(message:string)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
 export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;openingControls?:OpeningControls;onSelect?:(id:string|null)=>void;onMove?:(id:string,x:number,y:number)=>void;onFallback?:()=>void;}
 const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(props,ref){
   const workspace=useWorkspace();
+  const plannerView=usePlannerStore(st=>st.plannerView);
   const {profile,loading}=useAuth(),allowed=!loading&&(canUse3D(profile)||workspace?.ownerPro===true);
   const {openUpgrade}=useUpgrade(),enabled=!loading&&(allowed||props.preview===true);
   const access=useRef(allowed);access.current=allowed;
@@ -71,6 +74,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   useEffect(()=>{view.current?.setMoveMode(props.moveMode??false);},[props.moveMode]);
   if(!enabled)return null;
   return <div className={s.scene} data-testid="room-3d"><div ref={node} className={s.sceneMount} inert={!allowed}/>
+    {workspace&&plannerView==="3d"&&workspace.section!=="roommates"&&ready&&!error&&<CollaborationOverlay surface="scene" dynamic projection={{read:(x,y)=>view.current?.readCursor(x,y)??null,draw:(x,y)=>view.current?.projectCursor(x,y)??null}} pins={data.items.map(f=>{const b=footprint(f);return {id:f.id,label:f.label,x:(b.x+b.w/2)/props.room.lengthFt,y:(b.y+b.h/2)/props.room.widthFt};})}/>}
     {!ready&&!error&&<div className={s.sceneMessage}><BrandLoader label="Opening your 3D studio…"/></div>}
     {error&&<div className={s.sceneMessage} role="status"><strong>Keep creating.</strong><p>{error}</p><div className={s.buttonRow}><button onClick={()=>setRetry(n=>n+1)}>Retry 3D</button>{props.onFallback&&<button onClick={props.onFallback}>Open 2D plan</button>}</div></div>}
   </div>;

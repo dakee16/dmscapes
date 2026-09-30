@@ -18,7 +18,9 @@ Without the migration or Supabase credentials, workspace APIs return an explicit
 
 ## Collaboration and privacy
 
-Autosave debounces by 1.1 seconds. Foreground tabs synchronize approximately every eight seconds. This is revision-checked collaboration, not live cursors or simultaneous merging. A stale save returns 409; users can keep their edits in a private copy or load the latest shared room. Tab recovery is scoped to account and room. Opening a workspace preserves the quick planner's separate draft.
+Autosave debounces by 1.1 seconds. Private realtime channels notify members about saved changes and comments; foreground tabs retain an eight-second polling fallback. Live presence and cursors are separate from revision-checked room saves. This does not merge simultaneous edits. A stale save returns 409; users can keep their edits in a private copy or load the latest shared room. Tab recovery is scoped to account and room. Opening a workspace preserves the quick planner's separate draft.
+
+Apply `20260930_workspace_collaboration.sql` after the email-invitation migration. Follow [workspace collaboration setup](workspace-collaboration.md) for private Supabase channels, threaded comments, optional LiveKit voice and the two-account acceptance checks. Voice requires separate server credentials and a redeploy. The app remains usable without voice configuration.
 
 Invite tokens are random, hashed in storage, carried in URL fragments and expire in seven days. New invitations are emailed with Resend and bound to the recipient's verified email. Pending invitations reserve one of four total places (owner included). Re-sending to the same address replaces only its previous invite. Owners can cancel individual invitations. Apply the email-invitation migration in docs/email-rollout.md after the original workspace migration. Making a room personal removes guests and invites. Deleting a workspace cascades to its comments and versions but leaves original saved designs intact. If the host loses Pro, guests keep read access only.
 

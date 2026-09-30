@@ -32,6 +32,10 @@ const supabaseOrigin = (() => {
     return null;
   }
 })();
+const voiceOrigin = (() => {
+  try { const url=new URL(process.env.LIVEKIT_URL ?? ""); return url.protocol === "wss:" ? url.origin : null; }
+  catch { return null; }
+})();
 
 /**
  * PostHog talks to its API host (event capture, remote config fetches) and
@@ -72,10 +76,15 @@ function buildCsp(isDev: boolean): string {
       "connect-src 'self'",
       isDev ? "ws:" : null, // HMR websocket
       supabaseOrigin,
+      supabaseOrigin?.replace(/^https:/,"wss:"),
+      voiceOrigin,
+      voiceOrigin?.replace(/^wss:/,"https:"),
+      voiceOrigin?.endsWith(".livekit.cloud") ? "wss://*.livekit.cloud https://*.livekit.cloud" : null,
       posthogOrigins.api,
       posthogOrigins.assets,
     ],
     "object-src 'none'",
+    "media-src 'self' blob:",
     "base-uri 'self'",
     "form-action 'self'",
     "frame-ancestors 'none'",
@@ -115,6 +124,10 @@ export default function nextConfig(phase: string): NextConfig {
               value: "camera=(), microphone=(), geolocation=(), browsing-topics=()",
             },
           ],
+        },
+        {
+          source: "/rooms/:path*",
+          headers: [{ key:"Permissions-Policy", value:"camera=(), microphone=(self), geolocation=(), browsing-topics=()" }],
         },
       ];
     },

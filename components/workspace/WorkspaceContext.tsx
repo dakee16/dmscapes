@@ -1,11 +1,14 @@
 "use client";
 import { createContext, useContext } from "react";
+import type { WorkspaceComment } from "@/lib/workspace";
 export interface WorkspaceAccess {
   id: string;
   members: {user_id: string; display_name: string}[];
   ownerPro: boolean;
   canEdit: boolean;
   section: "room" | "shopping" | "roommates";
+  comments?: WorkspaceComment[];
+  commentOn?: (target:string) => void;
 }
 export const WorkspaceContext = createContext<WorkspaceAccess | null>(null);
 export const useWorkspace = () => useContext(WorkspaceContext);

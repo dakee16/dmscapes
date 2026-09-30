@@ -26,7 +26,8 @@ import { CATEGORY_COLORS, styleById } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import { bedLabel, isBunkBed } from "@/lib/bedding";
-import { useWorkspacePeople } from "@/components/workspace/WorkspaceContext";
+import { useWorkspace, useWorkspacePeople } from "@/components/workspace/WorkspaceContext";
+import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
 import { ownerName } from "@/lib/planning";
 import { clamp, footprint, invalidItems, layerOf, pointInPolygon, rotateFurniture } from "./geometry";
 
@@ -186,6 +187,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   ref
 ) {
   const dock = useCanvasDock();
+  const workspace = useWorkspace();
   useEffect(() => { brandImage(); }, []);
   const [openingPreview,setOpeningPreview]=useState<{index:number|null;opening:WallOpening}|null>(null);
   const openingCancelled=useRef(false);
@@ -380,6 +382,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const justDragged = () => Date.now() - dragGuard.current < 250;
 
   function handleItemClick(f: FurnitureItem) {
+    if (readOnly && workspace?.commentOn && !panMode && !justDragged()) { workspace.commentOn(`furniture:${f.id}`); return; }
     if (readOnly || panMode || justDragged()) return;
     // Pin the item itself (rotate target) plus its product category so the
     // product-list cross-highlight keeps working exactly as before.
@@ -936,6 +939,10 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         </Stage>
       )}
 
+      {pxFt > 0 && workspace && <CollaborationOverlay surface="plan" projection={{
+        read:(x,y)=>({x:((x-stagePos.x)/zoom-fitted.x)/(pxFt*roomL),y:((y-stagePos.y)/zoom-fitted.y)/(pxFt*roomW)}),
+        draw:(x,y)=>({x:stagePos.x+(fitted.x+x*pxFt*roomL)*zoom,y:stagePos.y+(fitted.y+y*pxFt*roomW)*zoom}),
+      }} pins={activeFurniture.map(f=>{const b=footprint(f);return {id:f.id,label:f.label,x:(b.x+b.w/2)/roomL,y:(b.y+b.h/2)/roomW};})}/>}
       {pxFt > 0 && toolbarItem && canEditItem && onSetRotation && !panMode && !dragging && rotationCenter && rotationPosition &&
         <RotationHandle key={toolbarItem.id} label={toolbarItem.label} center={rotationCenter} position={rotationPosition} degrees={toolbarItem.rotation_deg}
           onPreview={degrees=>setRotationPreview({id:toolbarItem.id,degrees})} onCommit={finishRotation} onCancel={()=>finishRotation()}/>}

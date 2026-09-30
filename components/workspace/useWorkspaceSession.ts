@@ -14,10 +14,13 @@ export function useWorkspaceSession(id: string, userId?: string) {
   const control = useRef({ revision: 0, baseline: "", loading: true, saving: false, canEdit: false, conflict: false, stopped: false });
   const recoverKey = userId ? `dormscape-workspace:${userId}:${id}` : "";
   const saveRef = useRef<() => Promise<boolean>>(async () => false);
+  const refreshSequence = useRef(0);
   const accept = useCallback((next: WorkspaceDetail) => {
     const c = control.current;
+    const selection = c.baseline ? usePlannerStore.getState().selectedItemId : null;
     c.loading = true;
     loadSnapshot({ ...next.workspace.snapshot, name: next.workspace.name });
+    if (selection && next.workspace.snapshot.furniture_positions.some(f => f.id === selection)) usePlannerStore.setState({selectedItemId:selection});
     c.revision = next.workspace.revision;
     c.baseline = snapshotKey(currentSnapshot()!);
     c.canEdit = next.canEdit;
@@ -28,16 +31,17 @@ export function useWorkspaceSession(id: string, userId?: string) {
 
   const refresh = useCallback(async (force = false) => {
     const c = control.current;
+    const sequence = ++refreshSequence.current;
     let next: WorkspaceDetail;
     try { next = await workspaceRequest<WorkspaceDetail>(`/api/workspaces/${id}`); }
     catch (e) {
-      if (control.current !== c || c.stopped) return;
+      if (control.current !== c || c.stopped || sequence !== refreshSequence.current) return;
       if (e instanceof WorkspaceError && [401,403,404].includes(e.status)) {
         c.canEdit = false; c.loading = true; setDetail(null); setError(e.message);
       }
       throw e;
     }
-    if (c.stopped || control.current !== c || (!force && next.workspace.revision < c.revision)) return;
+    if (c.stopped || control.current !== c || sequence !== refreshSequence.current || (!force && next.workspace.revision < c.revision)) return;
     c.canEdit = next.canEdit;
     const current = currentSnapshot();
     if (force || c.loading || (!c.saving && next.workspace.revision > c.revision && current && snapshotKey(current) === c.baseline)) {

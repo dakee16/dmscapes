@@ -81,6 +81,13 @@
 .workspaceMain { padding:0 3vw 24px; }
 .workspaceMain .notice,.workspaceMain .error { margin-top:14px; }
 .editor { position:relative; }
+.productNote { color:#304bff; font-size:11px; text-decoration:underline; text-underline-offset:3px; margin-top:7px; min-height:30px; }
+.roommateNotes { padding:32px; background:#e9edff; border-top:3px solid #304bff; border-radius:4px; align-self:start; }
+.roommateNotes h2 { margin:16px 0; }
+.roommateNotes p { font-size:13px; line-height:1.75; color:#626b84; max-width:430px; }
+.roommateNotes>button { margin:22px 0; }
+.roommateNotes>div { border-top:1px solid #304bff25; padding-top:20px; }
+.roommateNotes>div>strong { display:block; margin-bottom:8px; font-size:14px; }
 .editor[data-section=roommates] { display:none; }
 .readonly { position:relative; }
 .readOnlyRoom { display:grid; grid-template-columns:minmax(0,1fr) minmax(280px,28%); gap:20px; margin-top:24px; }
