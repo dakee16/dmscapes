@@ -201,6 +201,9 @@ export async function POST(request: Request) {
       cancel_url: `${origin}/pricing?checkout=cancelled`,
       client_reference_id: userId,
       metadata,
+      // Generate a real paid invoice for the branded thank-you email.
+      invoice_creation: { enabled: true, invoice_data: { metadata: { ...metadata, dormscape_email: "v1" }, footer: "Thank you for making room with Dormscape. dormscape.us/contact" } },
+      ...(!customerId ? { customer_creation: "always" as const } : {}),
       payment_intent_data: { metadata },
       ...(customerId
         ? { customer: customerId }

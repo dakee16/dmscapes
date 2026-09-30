@@ -1,12 +1,9 @@
 import WorkspaceStory from "@/components/experience/WorkspaceStory";
 import StudioShowcase from "@/components/experience/StudioShowcase";
 import HomeHero from "@/components/experience/HomeHero";
-import AssemblyStory from "@/components/experience/AssemblyStory";
+import HomeJourney from "@/components/experience/HomeJourney";
 import Link from "next/link";
 import Nav from "@/components/Nav";
-import Vibes from "@/components/Vibes";
-import CreateVibePromo from "@/components/site/CreateVibePromo";
-import Schools from "@/components/Schools";
 import RoomPlans from "@/components/site/RoomPlans";
 import PlanCta from "@/components/site/PlanCta";
 import Footer from "@/components/Footer";
@@ -44,16 +41,13 @@ export default function Home() {
       <Nav />
       <main id="page-content" tabIndex={-1}>
         <HomeHero layoutCount={LAYOUT_COUNT} />
-        <AssemblyStory />
-        <Vibes />
-        <CreateVibePromo />
+        <HomeJourney schoolCount={SCHOOLS.length} />
         <StudioShowcase />
         <WorkspaceStory />
-        <Schools />
         <RoomPlans />
         <section className="dm-faq-section dm-section">
           <Reveal className="dm-section-heading">
-            <p className="dm-eyebrow">05 / Frequently asked</p>
+            <p className="dm-eyebrow">A few things to know</p>
             <h2>
               Questions,
               <br />

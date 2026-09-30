@@ -1,8 +1,7 @@
 # Dormscape auth email templates
 
-Branded, spam-filter-friendly replacements for Supabase's bare default auth
-emails. These are the three templates Dormscape actually sends today (confirmed
-against the auth code):
+Paste-ready templates with Dormscape's cobalt, cream, yellow, lowercase wordmark,
+and serif tagline. They share the design of the new invitation and invoice emails.
 
 | File | Supabase template | Suggested subject |
 | --- | --- | --- |
@@ -10,8 +9,9 @@ against the auth code):
 | `reset-password.html` | Reset Password | `Reset your Dormscape password` |
 | `change-email.html` | Change Email Address | `Confirm your new email for Dormscape` |
 
-We do **not** send magic-link or invite emails, so those templates can be left
-as-is.
+Supabase's magic-link and Invite user templates are not used by the app.
+Workspace invitations are sent separately through Resend; see
+[`../email-rollout.md`](../email-rollout.md).
 
 ## How to install (manual, dashboard only)
 
@@ -29,18 +29,22 @@ no API in the app that sends them, so pasting is the only way to update them.
 
 ## Why these are built the way they are
 
-Deliverability, not decoration. Each choice below lowers spam scoring:
+These use conservative email markup for broad client compatibility:
 
-- **No external images.** Nothing to block, nothing to flag as image-heavy. The
+- **No external images.** The layout remains legible with images blocked. The
   wordmark is styled text.
 - **Table-based layout with inline styles.** Renders consistently in Gmail,
   Outlook, and Apple Mail.
 - **One clear call to action** plus a visible fallback link for clients that
   strip buttons.
 - **A plain-language reason line in the footer** ("You received this because...")
-  so filters and recipients see a legitimate sender.
-- **Design-system colors and fonts** (paper `#fafaf8`, ink `#17172b`, cobalt
-  `#2b4eff`) with web-safe fallbacks, since most email clients ignore web fonts.
+  so recipients know why the email arrived.
+- **Brand colors** (paper `#fffdf7`, ink `#17172b`, cobalt `#304bff`, yellow
+  `#ffe268`) and web-safe Arial/Georgia fonts. Tables and inline styles also
+  keep the call to action readable in Outlook.
+
+Template changes alone cannot guarantee inbox placement. Use verified SMTP
+and test actual delivery and confirmation redirects after saving.
 
 ## Template variables
 

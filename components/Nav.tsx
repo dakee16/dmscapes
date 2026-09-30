@@ -13,24 +13,29 @@ import s from "./Navigation.module.css";
 const GROUPS = [
   { label: "Plan", caption: "Make room for your next chapter.", links: [
     { label: "Plan my room", href: "/plan", detail: "A layout and shopping list, together" },
-    { label: "My rooms", href: "/rooms", detail: "Your workspaces and saved designs" },
     { label: "Draw in 2D", href: "/plan/draw", detail: "Start with your own dimensions" },
     { label: "Build in 3D", href: "/plan/draw/3d", detail: "Walls, doors and windows with Pro" },
   ] },
-  { label: "Explore", caption: "Find your room. Find your style.", links: [
+  { label: "My rooms", caption: "A place for your plans and your people.", links: [
+    { label: "Open My rooms", href: "/rooms", detail: "Your workspaces and saved designs" },
+    { label: "Plan with roommates", href: "/#together", detail: "One Pro host. Friends join free." },
+  ] },
+  { label: "Discover", caption: "Find your room. Find your style.", links: [
     { label: "How it works", href: "/#how-it-works" },
     { label: "Vibes & styles", href: "/#vibes" },
     { label: "The 3D studio", href: "/#room-in-3d-end" },
     { label: "Colleges", href: "/colleges" },
+  ] },
+  { label: "Help", caption: "A little help before move-in.", links: [
     { label: "Room guides", href: "/blog" },
     { label: "Frequently asked", href: "/faq" },
+    { label: "Contact", href: "/contact" },
+    { label: "Feedback", href: "feedback" },
+    { label: "Report a problem", href: "/report" },
   ] },
   { label: "About", caption: "The people and policies behind the plan.", links: [
     { label: "About Dormscape", href: "/about" },
     { label: "How we measure", href: "/methodology" },
-    { label: "Contact", href: "/contact" },
-    { label: "Feedback", href: "feedback" },
-    { label: "Report a problem", href: "/report" },
     { label: "Privacy policy", href: "/privacy" },
     { label: "Cookie policy", href: "/cookies" },
     { label: "Terms of service", href: "/terms" },
@@ -93,22 +98,22 @@ export default function Nav() {
         <div id="site-navigation" className={s.groups} data-open={mobileOpen}>
           {GROUPS.map(group => <div className={s.group} key={group.label}>
             <button type="button" className={s.trigger} data-group={group.label}
-              aria-expanded={open === group.label} aria-controls={`nav-${group.label}`}
+              aria-expanded={open === group.label} aria-controls={`nav-${group.label.replaceAll(" ", "-").toLowerCase()}`}
               onClick={() => setOpen(open === group.label ? null : group.label)}
               onKeyDown={event => {
                 if (event.key === "ArrowDown") {
                   event.preventDefault(); setOpen(group.label);
-                  requestAnimationFrame(() => document.getElementById(`nav-${group.label}`)?.querySelector<HTMLElement>("a, button")?.focus());
+                  requestAnimationFrame(() => document.getElementById(`nav-${group.label.replaceAll(" ", "-").toLowerCase()}`)?.querySelector<HTMLElement>("a, button")?.focus());
                 }
               }}>
               {group.label}<svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" strokeWidth="1.5" /></svg>
             </button>
-            <div id={`nav-${group.label}`} className={s.panel} hidden={open !== group.label} onKeyDown={panelKeys}>
+            <div id={`nav-${group.label.replaceAll(" ", "-").toLowerCase()}`} className={s.panel} hidden={open !== group.label} onKeyDown={panelKeys}>
               <p>{group.caption}</p>
               {group.links.map(link => link.href === "feedback"
                 ? <button type="button" className={s.link} key={link.href} onClick={() => {
                   root.current?.querySelector<HTMLButtonElement>(window.matchMedia("(max-width:1023px)").matches
-                    ? '[aria-controls="site-navigation"]' : '[data-group="About"]')?.focus();
+                    ? '[aria-controls="site-navigation"]' : '[data-group="Help"]')?.focus();
                   close(); setFeedback(true);
                 }}><span>{link.label}</span><span aria-hidden="true">↗</span></button>
                 : <Link key={link.href} className={s.link}

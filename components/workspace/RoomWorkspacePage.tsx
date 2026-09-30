@@ -29,7 +29,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   const [section, setSection] = useState<WorkspaceAccess["section"]>("room");
   const [dialog, setDialog] = useState<"invite" | "history" | "settings" | null>(null);
   const [busy, setBusy] = useState(false), [message, setMessage] = useState(""), [error, setError] = useState("");
-  const [link, setLink] = useState(""), [inviteRole, setInviteRole] = useState("editor");
+  const [inviteEmail, setInviteEmail] = useState(""), [inviteRole, setInviteRole] = useState("editor");
   const [comment, setComment] = useState(""), [target, setTarget] = useState("room"), [versionName, setVersionName] = useState("");
   const [confirm, setConfirm] = useState<string | null>(null);
   const state = usePlannerStore(), products = currentProducts(state);
@@ -42,9 +42,13 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   }
   async function createInvite() {
     if (!detail?.ownerPro) { openUpgrade("workspace"); return; }
-    if (!detail.workspace.shared && !await run("share", { enabled: true })) return;
-    const result = await run("invite", { role: inviteRole });
-    if (result?.token) setLink(`${location.origin}/rooms/join#${result.token}`);
+    setBusy(true); setError(""); setMessage("");
+    try {
+      if (!detail.workspace.shared) await session.action("share", { enabled: true });
+      const result = await session.action("invite", { role: inviteRole, email: inviteEmail });
+      if (result.sent) { setMessage(`Invitation sent to ${result.email}. They'll receive a button to join this room.`); setInviteEmail(""); }
+    } catch (error) { setError((error as Error).message); }
+    finally { setBusy(false); }
   }
   async function copyLocalChanges() {
     const snapshot = currentSnapshot(); if (!snapshot) return;
@@ -80,7 +84,17 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
       {message && !dialog && <p role="status" className={s.muted}>{message}</p>}
     </main>
     {dialog && <Modal className={`${s.modal} ${s.app}`} role="dialog" aria-modal="true" aria-labelledby="workspace-dialog-title" onKeyDown={e => { if(e.key==="Escape"&&!busy)setDialog(null); }} onClick={() => { if(!busy)setDialog(null); }}><div className={s.dialog} onClick={e => e.stopPropagation()}><header><div><p className={s.eyebrow}>Your room / {dialog}</p><h2 id="workspace-dialog-title">{dialog === "invite" ? "Make room for friends." : dialog === "history" ? "Every good idea, kept." : "Room settings."}</h2></div><button disabled={busy} aria-label="Close room dialog" onClick={() => setDialog(null)}>Close</button></header>
-      {dialog === "invite" && <><p className={s.muted}>One Pro host. Up to eight people, including you. This link expires in seven days; creating a new one replaces the previous link.</p><label className={s.field} style={{marginTop:20}}>Invite with<select value={inviteRole} onChange={e => setInviteRole(e.target.value)}><option value="editor">Editing access</option><option value="commenter">Comment access</option></select></label><button className={s.primary} disabled={busy} onClick={() => void createInvite()}>{busy ? "Creating…" : detail.ownerPro ? "Create invite link" : "Unlock shared rooms with Pro"}</button>{link && <div className={s.inviteLink}><input aria-label="Room invitation link" readOnly value={link} onFocus={e => e.target.select()}/><button onClick={async () => { try { await navigator.clipboard.writeText(link); setMessage("Invite link copied. Send it to your roommates."); } catch { setMessage("Select and copy the invitation link above."); } }}>Copy</button></div>}{detail.workspace.shared && <button className={s.secondary} disabled={busy} style={{marginTop:16}} onClick={async () => { if (await run("revoke")) { setLink(""); setMessage("Invitation links revoked. Existing members keep access."); } }}>Revoke invitation links</button>}</>}
+      {dialog === "invite" && <><p className={s.muted}>You + three roommates. Enter their email and we&apos;ll send a personal invitation. They join free using that same email address.</p>
+        <div className={s.inviteCapacity}><span>{detail.members.length} joined</span><span>{detail.invitations?.length ?? 0} invited</span><strong>{WORKSPACE_MEMBER_LIMIT} places total</strong></div>
+        <form onSubmit={e => { e.preventDefault(); void createInvite(); }} className={s.inviteForm}>
+          <label className={s.field}>Roommate&apos;s email<input type="email" autoComplete="email" required maxLength={254} placeholder="roommate@school.edu" value={inviteEmail} onChange={e => setInviteEmail(e.target.value)} disabled={busy}/></label>
+          <label className={s.field}>Access<select disabled={busy} value={inviteRole} onChange={e => setInviteRole(e.target.value)}><option value="editor">Can edit</option><option value="commenter">Can comment</option></select></label>
+          <p className={s.muted}>{inviteRole === "editor" ? "Can arrange the room, update shopping, and comment." : "Can view the room and shopping list, and leave comments."}</p>
+          <button className={s.primary} type={detail.ownerPro ? "submit" : "button"} onClick={() => { if (!detail.ownerPro) openUpgrade("workspace"); }} disabled={busy || (detail.ownerPro && detail.members.length >= WORKSPACE_MEMBER_LIMIT)}>{busy ? "Sending invitation…" : detail.ownerPro ? "Send invitation ↗" : "Unlock shared rooms with Pro"}</button>
+        </form>
+        {!!detail.invitations?.length && <section className={s.pendingInvites} aria-label="Pending invitations"><h3>On the guest list</h3><p className={s.muted}>Invitations reserve a place for seven days. Sending again to the same email replaces its previous invitation.</p>{detail.invitations.map(invite => <div key={invite.id}><span><strong>{invite.email}</strong><small>{invite.role === "editor" ? "Can edit" : "Can comment"} · Expires {new Date(invite.expires_at).toLocaleDateString()}</small></span><button disabled={busy} className={s.secondary} aria-label={`Cancel invitation to ${invite.email}`} onClick={async () => { if (await run("revoke", { invite_id: invite.id })) setMessage("Invitation cancelled. That place is available again."); }}>Cancel</button></div>)}</section>}
+        {detail.members.length >= WORKSPACE_MEMBER_LIMIT && <p className={s.notice}>Your room is full. Remove a member in Roommates before inviting someone else.</p>}
+      </>}
       {dialog === "history" && <>{detail.canEdit && <form onSubmit={async e => { e.preventDefault(); if(await run("checkpoint", {name:versionName}))setVersionName(""); }}><label className={s.field}>Keep a named version<input required maxLength={80} value={versionName} onChange={e=>setVersionName(e.target.value)} placeholder="The layout we both love"/></label><button className={s.primary} disabled={busy || !versionName.trim()}>Save version</button></form>}<p className={s.muted} style={{marginTop:20}}>Your latest 20 versions. Restoring also keeps a copy of the current layout and shopping list.</p>{detail.versions.map(v=><div className={s.historyItem} key={v.id}><div><strong>{v.name}</strong><small>{new Date(v.created_at).toLocaleString()}</small></div>{detail.canEdit&&<button disabled={busy} onClick={()=>setConfirm(`restore:${v.id}`)}>Restore</button>}</div>)}</>}
       {dialog === "settings" && <><p className={s.muted}>{isOwner ? "You own this room. Personal rooms are private. Shared rooms are visible to their members." : "This room belongs to its host. Your personal rooms are separate."}</p><div className={s.buttons} style={{marginTop:24}}>{isOwner ? <>{detail.workspace.shared&&<button className={s.secondary} onClick={()=>setConfirm("personal")}>Make personal</button>}<button className={s.secondary} onClick={()=>setConfirm("delete")}>Delete workspace</button></> : <button className={s.secondary} onClick={()=>setConfirm("leave")}>Leave room</button>}</div><p className={s.muted} style={{marginTop:16}}>Original saved designs remain in My rooms when you delete a workspace.</p></>}
       {message&&<p role="status" className={s.notice}>{message}</p>}{error&&<p role="alert" className={s.error}>{error}</p>}
@@ -88,7 +102,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
     {confirm && <Modal className={`${s.modal} ${s.app}`} role="alertdialog" aria-modal="true" aria-labelledby="confirm-title" onKeyDown={e=>{if(e.key==="Escape"&&!busy)setConfirm(null);}}><div className={s.dialog}><h2 id="confirm-title">{confirm==="reload" ? "Load the shared version?" : confirm.startsWith("restore:") ? "Restore this version?" : confirm.startsWith("remove:") ? "Remove this roommate?" : confirm==="personal" ? "Make this room personal?" : confirm==="delete" ? "Delete this workspace?" : "Leave this room?"}</h2><p className={s.muted} style={{marginTop:16}}>{confirm==="reload" ? "This replaces your unsaved edits. Keep a personal copy first if you want to preserve them." : confirm==="personal" ? "Roommates will lose access and all invitation links will stop working. Your room and shopping list stay saved." : confirm==="delete" ? "The workspace, comments, and versions will be deleted. This cannot be undone. Original saved designs remain available." : confirm.startsWith("restore:") ? "The room and shopping list will return to this version for everyone. The current version is kept in history." : confirm==="leave" ? "You will lose access to this room. Your existing comments remain with its members." : "Their access ends immediately. Existing comments remain with the room."}</p><div className={s.buttons} style={{marginTop:24}}><button className={s.primary} disabled={busy} onClick={async()=>{
       if(confirm==="reload"){try{await session.refresh(true);session.discardRecovery();setConfirm(null);}catch(e){setError((e as Error).message);}return;}
       const result=confirm.startsWith("restore:")?await run("restore",{version_id:confirm.slice(8)}):confirm.startsWith("remove:")?await run("member",{user_id:confirm.slice(7),role:"remove"}):confirm==="personal"?await run("share",{enabled:false}):await run(confirm);
-      if(result){if(confirm==="delete"||confirm==="leave")router.push("/rooms");setConfirm(null);setLink("");}
+      if(result){if(confirm==="delete"||confirm==="leave")router.push("/rooms");setConfirm(null);setInviteEmail("");}
     }}>{busy ? "Working…" : "Confirm"}</button><button className={s.secondary} disabled={busy} onClick={()=>setConfirm(null)}>Cancel</button></div>{error&&<p role="alert" className={s.error}>{error}</p>}</div></Modal>}
   </WorkspaceContext.Provider>;
 }

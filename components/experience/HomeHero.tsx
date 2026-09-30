@@ -26,7 +26,7 @@ export default function HomeHero({ layoutCount }: { layoutCount: number }) {
         </div>
         <div className="dm-hero-copy">
           <h1 id="hero-title">
-            {["Your room.", "Your style.", "All sorted."].map((line, i) => (
+            {["Your dorm,", "planned to", "the inch."].map((line, i) => (
               <span className="dm-title-mask" key={line}>
                 <motion.span
                   initial={paused ? false : { y: "110%", rotate: 3 }}
@@ -44,9 +44,8 @@ export default function HomeHero({ layoutCount }: { layoutCount: number }) {
             ))}
           </h1>
           <p>
-            See your room come together with a layout and a shopping list
-            made for your style and budget. Save it, shop it, and get ready
-            for move-in together.
+            Your room dimensions. Your style. A layout that fits, with a
+            shopping list right beside it. Get move-in ready before you arrive.
           </p>
           <PlanCta className="dm-button dm-hero-cta" />
           <small>No account needed to explore.</small>

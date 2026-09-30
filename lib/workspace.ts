@@ -40,12 +40,14 @@ export interface WorkspaceDetail {
   members: WorkspaceMember[];
   comments: WorkspaceComment[];
   versions: WorkspaceVersion[];
+  /** Only returned to the room owner. */
+  invitations: { id: string; email: string; role: "editor" | "commenter"; expires_at: string }[];
 }
 export interface WorkspaceSummary extends RoomWorkspace {
   role: WorkspaceRole;
   member_count: number;
 }
-export const WORKSPACE_MEMBER_LIMIT = 8;
+export const WORKSPACE_MEMBER_LIMIT = 4;
 export const WORKSPACE_SHARED_LIMIT = 1;
 
 /** One identity for autosave. Transient panels and selection never count as edits. */

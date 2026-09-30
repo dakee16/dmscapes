@@ -5,7 +5,7 @@
 - `/plan` keeps the quick room, style, budget and shopping flow. Doors, windows, room shape and 2D/3D views remain available there.
 - `/rooms` contains personal rooms, shared memberships and original saved designs. Importing a saved design makes a private workspace copy; it never rewrites the original.
 - `/rooms/[id]` contains the furniture library, layout alternatives, placement checks, shopping assignments, comments, invitations and version history.
-- Free accounts have personal workspaces. Pro hosts one active shared room with up to eight people including the owner. Guests join free as editors or commenters.
+- Free accounts have personal workspaces. Pro hosts one active shared room with up to four people including the owner. Guests join free as editors or commenters.
 - Prices and generation credits are unchanged: Plus 3, Plus recharge 3, Pro 10. Manual edits, saves, invitations and view changes use no design credits.
 
 ## Deployment prerequisites
@@ -20,7 +20,7 @@ Without the migration or Supabase credentials, workspace APIs return an explicit
 
 Autosave debounces by 1.1 seconds. Foreground tabs synchronize approximately every eight seconds. This is revision-checked collaboration, not live cursors or simultaneous merging. A stale save returns 409; users can keep their edits in a private copy or load the latest shared room. Tab recovery is scoped to account and room. Opening a workspace preserves the quick planner's separate draft.
 
-Invite tokens are random, hashed in storage, carried in URL fragments and expire in seven days. A new link revokes older links. Making a room personal removes guests and invites. Deleting a workspace cascades to its comments and versions but leaves original saved designs intact. If the host loses Pro, guests keep read access only.
+Invite tokens are random, hashed in storage, carried in URL fragments and expire in seven days. New invitations are emailed with Resend and bound to the recipient's verified email. Pending invitations reserve one of four total places (owner included). Re-sending to the same address replaces only its previous invite. Owners can cancel individual invitations. Apply the email-invitation migration in docs/email-rollout.md after the original workspace migration. Making a room personal removes guests and invites. Deleting a workspace cascades to its comments and versions but leaves original saved designs intact. If the host loses Pro, guests keep read access only.
 
 The latest 20 versions are retained, with automatic checkpoints throttled to five minutes. Restoring preserves the previous state. Member roles and Pro hosting are enforced by database transactions using the server-verified actor.
 

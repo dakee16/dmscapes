@@ -19,7 +19,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     title: "You're out of plan credits",
     body: "You've used your Plus plan credits. Recharge to generate more rooms. Your saved designs, exports, and comparisons stay right where they are.",
   },
-  "workspace": { title: "Make room for your roommates", body: "Pro hosts one shared room with up to eight people, including you. Friends join free to edit or comment, with a shared shopping list and version history. Personal rooms stay available on every plan." },
+  "workspace": { title: "Make room for your roommates", body: "Pro hosts one shared room with up to four people, including you. Friends join free to edit or comment, with a shared shopping list and version history. Personal rooms stay available on every plan." },
   "pro-credits": {
     title: "You're out of plan credits",
     body: "Add more for $0.99 per credit. Your saved rooms and Pro tools, including 3D building and planning, remain available.",

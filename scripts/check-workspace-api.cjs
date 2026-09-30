@@ -2,12 +2,13 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),ts=require('typescript');
 const root=path.join(__dirname,'..'),cache=new Map();
 const actor='11111111-1111-4111-8111-111111111111',room='22222222-2222-4222-8222-222222222222';
-let user=actor,available=true,member=true,rpc=[],queries=[];
-const db={from(table){const filters=[];const q={select(){return q;},eq(k,v){filters.push([k,v]);return q;},in(k,v){filters.push([k,v]);return q;},order(){return q;},limit(){return q;},single(){return q;},maybeSingle(){return q;},then(resolve,reject){queries.push({table,filters});const data=table==='workspace_members'?(member?{role:'owner'}:null):table==='room_workspaces'?{id:room,owner_id:actor,shared:true}:table==='profiles'?{plan:'pro'}:null;return Promise.resolve({data,error:null}).then(resolve,reject);}};return q;},async rpc(name,payload){rpc.push({name,payload});return {data:{ok:true,id:room,revision:2},error:null};}};
+let user=actor,available=true,member=true,rpc=[],queries=[],mail=[],mailOk=true,mailConfigured=true;
+const db={from(table){const filters=[];const q={select(){return q;},eq(k,v){filters.push([k,v]);return q;},in(k,v){filters.push([k,v]);return q;},order(){return q;},limit(){return q;},single(){return q;},maybeSingle(){return q;},then(resolve,reject){queries.push({table,filters});const data=table==='workspace_members'?(member?{role:'owner'}:null):table==='room_workspaces'?{id:room,owner_id:actor,name:'Our room',shared:true}:table==='profiles'?{plan:'pro',username:'Jamie'}:null;return Promise.resolve({data,error:null}).then(resolve,reject);}};return q;},async rpc(name,payload){rpc.push({name,payload});return {data:{ok:true,id:room,invite_id:room,revision:2},error:null};}};
 function load(file){if(!path.extname(file))file+='.ts';if(file.endsWith('.json'))return require(file);if(cache.has(file))return cache.get(file).exports;const m={exports:{}};cache.set(file,m);const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{esModuleInterop:true,module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;new Function('require','module','exports',code)(id=>{
  if(id.endsWith('supabase-server'))return {getServiceClient:()=>available?db:null};
  if(id.endsWith('supabase-auth'))return {getUserId:async()=>user};
  if(id.endsWith('rate-limit'))return {rateLimit:()=>({allowed:true})};
+ if(id.endsWith('/email'))return {isEmailConfigured:()=>mailConfigured,sendEmail:async payload=>{mail.push(payload);return mailOk;}};
  return id.startsWith('@/')?load(path.join(root,id.slice(2))):id.startsWith('.')?load(path.resolve(path.dirname(file),id)):require(id);
 },m,m.exports);return m.exports;}
 const list=load(path.join(root,'app/api/workspaces/route.ts')),one=load(path.join(root,'app/api/workspaces/[id]/route.ts')),join=load(path.join(root,'app/api/workspaces/join/route.ts'));
@@ -25,9 +26,16 @@ const snapshot={name:'My room',college_id:null,dorm_id:null,room_dimensions:{len
  for(const bad of [{...snapshot,budget:0},{...snapshot,room_dimensions:{...snapshot.room_dimensions,length_ft:-1}},{...snapshot,style:'invented'}])assert.equal((await list.POST(request('POST',{snapshot:bad}))).status,400);
  assert.equal((await one.PATCH(request('PATCH',{action:'save',snapshot,revision:1,p_actor:'forged'}),ctx)).status,200);assert.equal(rpc.at(-1).payload.p_actor,actor);assert.equal(rpc.at(-1).payload.p_payload.p_actor,undefined);
  for(const body of [{action:'save',snapshot,revision:0},{action:'member',user_id:actor,role:'owner'},{action:'share',enabled:'yes'},{action:'comment',body:' ',target:'room'},{action:'restore',version_id:'bad',revision:1},{action:'unknown'}])assert.equal((await one.PATCH(request('PATCH',body),ctx)).status,400);
- const invite=await one.PATCH(request('PATCH',{action:'invite',role:'editor'}),ctx),token=(await invite.json()).token;assert.match(token,/^[A-Za-z0-9_-]{43}$/);assert.match(rpc.at(-1).payload.p_payload.token_hash,/^[a-f0-9]{64}$/);assert(!JSON.stringify(rpc.at(-1)).includes(token));
+ assert.equal((await one.PATCH(request('PATCH',{action:'invite',role:'editor',email:'not-an-email'}),ctx)).status,400);
+ mailConfigured=false;assert.equal((await one.PATCH(request('PATCH',{action:'invite',role:'editor',email:'friend@example.test'}),ctx)).status,503);assert.equal(mail.length,0);mailConfigured=true;
+ const invite=await one.PATCH(request('PATCH',{action:'invite',role:'editor',email:' Friend@Example.Test '}),ctx),invitation=await invite.json();
+ assert.equal(invitation.sent,true);assert.equal(invitation.token,undefined);assert.equal(invitation.email,'friend@example.test');
+ const token=mail.at(-1).text.match(/rooms\/join#([A-Za-z0-9_-]{43})/)[1];
+ assert.match(token,/^[A-Za-z0-9_-]{43}$/);assert.match(rpc.at(-1).payload.p_payload.token_hash,/^[a-f0-9]{64}$/);assert(!JSON.stringify(rpc.at(-1)).includes(token));assert.equal(rpc.at(-1).payload.p_payload.email,'friend@example.test');assert.match(mail.at(-1).html,/Join the room/);
  assert.equal((await join.POST(request('POST',{token,user_id:'forged'}))).status,200);assert.equal(rpc.at(-1).payload.p_actor,actor);assert.equal(rpc.at(-1).payload.p_payload.token_hash,require('node:crypto').createHash('sha256').update(token).digest('hex'));
  assert.equal((await join.POST(request('POST',{token:'bad'}))).status,400);
+ mailOk=false;assert.equal((await one.PATCH(request('PATCH',{action:'invite',role:'commenter',email:'other@example.test'}),ctx)).status,502);assert.equal(rpc.at(-1).payload.p_action,'revoke');assert.equal(rpc.at(-1).payload.p_payload.invite_id,room);
+ member=false;const previous=mail.length;assert.equal((await one.PATCH(request('PATCH',{action:'invite',role:'editor',email:'third@example.test'}),ctx)).status,404);assert.equal(mail.length,previous);
  assert.equal(await boundary.workspaceBody(new Request('https://example.test',{method:'POST',body:'x'.repeat(750001)})),null);
  assert.equal(await boundary.workspaceBody(new Request('https://example.test',{method:'POST',body:'[]'})),null);
  console.log('PASS: workspace APIs require verified identity, scope reads/imports to members, validate writes, bound bodies, hash invites and disable caching.');

@@ -33,7 +33,7 @@ const PERKS: Record<"plus" | "pro", string[]> = {
     `${PRO_INITIAL_CREDITS} included plan credits`,
     "3D Room Builder",
     "Live 3D Room Studio",
-    "Shared room: invite up to seven friends",
+    "Shared room: invite up to three friends",
     "Create your own vibe",
     "Draw your own room",
     "All 9 vibes",

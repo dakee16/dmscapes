@@ -10,6 +10,7 @@ import {
   type PurchaseType,
 } from "@/lib/plan";
 import { addPlanCredits, grantPurchasedPlan } from "@/lib/credit-ledger";
+import { deliverPurchaseInvoice } from "@/lib/purchase-email";
 
 // Signature verification needs the raw body and the Node runtime.
 export const runtime = "nodejs";
@@ -51,6 +52,21 @@ export async function POST(request: Request) {
   } catch (err) {
     console.error("stripe webhook signature verification failed:", err);
     return NextResponse.json({ error: "Invalid signature." }, { status: 400 });
+  }
+
+  // Invoices finalize asynchronously. Keep mail retries separate from credits:
+  // a Resend failure must never re-grant credits or roll back a paid upgrade.
+  if (event.type === "invoice.paid") {
+    const invoice = event.data.object as Stripe.Invoice;
+    if (invoice.metadata?.dormscape_email !== "v1") return NextResponse.json({ received: true });
+    const db = getServiceClient();
+    if (!db) return NextResponse.json({ error: "Email storage not configured." }, { status: 503 });
+    try { await deliverPurchaseInvoice(db, stripe, invoice); }
+    catch (error) {
+      console.error("stripe invoice email pending:", invoice.id, error instanceof Error ? error.message : "Delivery failed");
+      return NextResponse.json({ error: "Invoice email pending. Retry delivery." }, { status: 503 });
+    }
+    return NextResponse.json({ received: true });
   }
 
   // Card payments complete synchronously; delayed methods fire the async event.

@@ -112,7 +112,7 @@ const PLUS_PERKS: { title: string; body: string }[] = [
 
 // Pro includes a larger generation allowance and permanent access to its tools.
 const PRO_PERKS: { title: string; body: string }[] = [
-  {title: "A shared room for your people", body: "Host one active shared workspace with up to eight people, including you. Friends join free with editing or comment access. Keep a shared shopping list, purchasing assignments, comments, and room versions."},
+  {title: "A shared room for your people", body: "Host one active shared workspace with up to four people, including you. Friends join free with editing or comment access. Keep a shared shopping list, purchasing assignments, comments, and room versions."},
   {title: "3D Room Builder", body: "Build your own room on a 3D grid. Place a floor, draw custom walls, and add doors and windows. Your room carries straight into 3D planning. Pro only."},
   {title: "Live 3D Room Studio", body: "Arrange furniture, explore room, top, and inside views, and try finishes and lighting. Switch between the same 2D and 3D layout. Included with Pro, available now."},
   {
