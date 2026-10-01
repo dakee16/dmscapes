@@ -395,3 +395,139 @@
 }
 .ds-login:hover { text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 420px) { .ds-login { font-size: 15px; } }
+
+/* ==========================================================================
+   Page kit: shared by every content page (components/ds/Page*)
+   ========================================================================== */
+
+/* Heading sizes. Pair with <Headline className="ds-h1|ds-h2|ds-h3">. */
+.ds-h1 .ds-display { font-size: clamp(56px, 7.4vw, 108px); line-height: 0.92; letter-spacing: -0.04em; }
+.ds-h1 .ds-serif { font-size: clamp(38px, 4.2vw, 60px); line-height: 1.08; }
+.ds-h1--tight .ds-serif { font-size: clamp(54px, 6.6vw, 96px); line-height: 1; }
+.ds-h2 .ds-display { font-size: clamp(38px, 4.2vw, 60px); line-height: 1.02; font-weight: 800; letter-spacing: -0.03em; }
+.ds-h2 .ds-serif { font-size: clamp(44px, 4.8vw, 68px); line-height: 1.04; }
+.ds-h2--inline { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 0.28em; }
+.ds-h2--inline .ds-line { display: inline-block; }
+.ds-h3 .ds-display { font-size: clamp(28px, 2.6vw, 36px); line-height: 1.05; font-weight: 800; letter-spacing: -0.025em; }
+.ds-h3 .ds-serif { font-size: clamp(30px, 2.8vw, 40px); line-height: 1.05; }
+
+.ds-section { padding-block: clamp(56px, 7.2vw, 104px); }
+.ds-section--tight { padding-block: clamp(40px, 5vw, 72px); }
+.ds-stack > * + * { margin-top: var(--gap, 18px); }
+
+/* White card with a hairline ring */
+.ds-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08);
+}
+a.ds-card { display: block; text-decoration: none; transition: transform 0.3s var(--ds-ease), box-shadow 0.3s var(--ds-ease); }
+a.ds-card:hover { transform: translateY(-3px); box-shadow: 0 0 0 2px var(--ds-blue), 0 16px 30px rgba(36, 73, 255, 0.12); text-decoration: none; }
+
+/* Small rounded pill, white by default */
+.ds-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+/* Breadcrumbs (components/ds/Crumbs) */
+.ds-crumbs ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.ds-crumbs li { display: flex; align-items: center; gap: 8px; }
+.ds-crumbs li + li::before { content: "/"; color: var(--ds-caption); }
+.ds-crumbs a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+.ds-crumbs a:hover { color: var(--ds-blue); }
+
+/* Tape band with static items (components/ds/TapeStats) */
+.ds-tapestats {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: 64px;
+  overflow: hidden;
+}
+.ds-tapestats ul {
+  width: min(100% - 2 * var(--ds-gutter), var(--ds-max));
+  margin: 0 auto 12px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px 40px;
+  font-family: var(--ds-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ds-tapestats li { display: flex; align-items: center; gap: 40px; }
+.ds-tapestats li + li::before { content: "·"; font-weight: 800; }
+@media (max-width: 900px) {
+  .ds-tapestats { height: auto; min-height: 56px; padding: 26px 0 0; }
+  .ds-tapestats ul { flex-wrap: wrap; justify-content: flex-start; gap: 6px 18px; font-size: 11px; margin-bottom: 10px; }
+  .ds-tapestats li { gap: 18px; }
+  .ds-tapestats li + li::before { display: none; }
+}
+
+/* Table: hairline rows, mono head */
+.ds-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.ds-table th, .ds-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--ds-line); vertical-align: top; }
+.ds-table thead th { font-family: var(--ds-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-caption); }
+.ds-table tbody th { font-weight: 700; }
+
+/* Plain text input on paper */
+.ds-input {
+  width: 100%;
+  min-height: 52px;
+  box-sizing: border-box;
+  padding: 0 18px;
+  border: 1.5px solid rgba(22, 22, 29, 0.18);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ds-ink);
+  font: 450 16px var(--ds-sans);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.ds-input:focus { outline: none; border-color: var(--ds-blue); box-shadow: 0 0 0 3px rgba(36, 73, 255, 0.18); }
+textarea.ds-input { min-height: 140px; padding: 14px 18px; line-height: 1.5; resize: vertical; }
+.ds-label { display: block; margin-bottom: 8px; font-family: var(--ds-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* Long-form prose (legal, blog posts) */
+.ds-prose { font-size: 18px; line-height: 1.7; color: var(--ds-body); }
+.ds-prose > * + * { margin-top: 1.1em; }
+.ds-prose h2 { margin-top: 2.2em; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.1; font-weight: 800; font-stretch: 92%; letter-spacing: -0.025em; color: var(--ds-ink); }
+.ds-prose h3 { margin-top: 1.8em; font-size: 22px; line-height: 1.2; font-weight: 800; color: var(--ds-ink); }
+.ds-prose a { color: var(--ds-blue); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+.ds-prose a:hover { color: var(--ds-blue-deep); }
+.ds-prose strong { color: var(--ds-ink); }
+.ds-prose ul, .ds-prose ol { padding-left: 1.3em; }
+.ds-prose li + li { margin-top: 0.4em; }
+.ds-prose li::marker { color: var(--ds-blue); font-weight: 700; }
+.ds-prose blockquote { margin-left: 0; padding: 4px 0 4px 20px; border-left: 4px solid var(--ds-tape); font-family: var(--ds-serif); font-style: italic; font-size: 1.15em; color: var(--ds-ink); }
+.ds-prose table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.ds-prose th, .ds-prose td { padding: 10px 12px; border-bottom: 1px solid var(--ds-line); text-align: left; }
+.ds-prose img { max-width: 100%; height: auto; border-radius: 14px; }
+.ds-prose code { font-family: var(--ds-mono); font-size: 0.85em; }
+
+/* Redesigned pages own their layout: neutralize legacy page-scoped main rules */
+.dm-app .ds > main { max-width: none; margin: 0; padding: 0; }
