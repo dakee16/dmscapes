@@ -1,10 +1,19 @@
-import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import SiteHeader from "@/components/site/SiteHeader";
+import PageShell from "@/components/ds/PageShell";
+import Headline from "@/components/ds/Headline";
+import { ArrowRight } from "@/components/ds/Icons";
+import JsonLd from "@/components/site/JsonLd";
+import ReadingBar from "@/components/blog/ReadingBar";
+import PostToc from "@/components/blog/PostToc";
+import PostHeroArt from "@/components/blog/PostHeroArt";
+import PostCard from "@/components/blog/PostCard";
+import { outlineOf } from "@/components/blog/outline";
+import { TOPIC_PHRASE, shortDate, splitTitle, summarize, topicOf } from "@/components/blog/topics";
 import { getPost, allPostSlugs, POSTS } from "@/content/blog";
-import { articleJsonLd, formatBlogDate } from "@/lib/blog";
+import { articleJsonLd } from "@/lib/blog";
+import css from "@/components/blog/Post.module.css";
 
 // Prebuild every post at build time; unknown slugs 404.
 export function generateStaticParams() {
@@ -60,78 +69,128 @@ export default async function BlogPostPage(props: {
   const { Body } = post;
   const updated = post.updated ?? post.date;
   const jsonLd = articleJsonLd(post);
-  // Two other posts to surface at the foot for internal linking.
-  const more = POSTS.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const topic = topicOf(post);
+  const outline = outlineOf(Body);
+  const { lead, tail } = splitTitle(post.slug, post.title);
+  const size = lead.length <= 32 ? css.titleL : lead.length <= 56 ? css.titleM : css.titleS;
+
+  // Three more guides for the foot: the same topic first, then the newest.
+  const others = POSTS.filter((p) => p.slug !== post.slug);
+  const sameTopic = topic ? others.filter((p) => topicOf(p)?.id === topic.id) : [];
+  const more = [...sameTopic, ...others.filter((p) => !sameTopic.includes(p))].slice(0, 3).map(summarize);
+  const moreTail = topic && more.every((p) => p.topic === topic.id) ? TOPIC_PHRASE[topic.id] : "the guides.";
 
   return (
-    <div>
-      <SiteHeader gridClassName="h-[22rem]" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
-        }}
-      />
-      <main id="page-content" tabIndex={-1} className="dm-page relative">
-        <article className="mx-auto max-w-[50rem] px-5 py-12 sm:px-8 sm:py-16">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wide text-ink-soft transition-colors hover:text-cobalt"
-          >
-            <svg
-              viewBox="0 0 16 16"
-              className="h-3.5 w-3.5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              aria-hidden="true"
-            >
-              <path d="M13 8H3M7 4L3 8l4 4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            All posts
-          </Link>
+    <PageShell>
+      <JsonLd data={jsonLd} />
+      <ReadingBar targetId="post-body" />
 
-          <div className="mt-6 flex items-center gap-2 font-mono text-[11px] uppercase tracking-wide text-cobalt">
-            <time dateTime={post.date}>{formatBlogDate(post.date)}</time>
-            <span aria-hidden="true">·</span>
-            <span>{post.readingTimeMin} min read</span>
-          </div>
-
-          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl">
-            {post.title}
-          </h1>
-
-          <p className="mt-4 text-sm text-ink-soft">
-            By <span className="font-semibold text-ink">Dormscape</span>
-            {updated !== post.date && <> · Updated {formatBlogDate(updated)}</>}
-          </p>
-
-          <Body />
-
-          <div className="mt-16 border-t border-ink/8 pt-10">
-            <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
-              Keep reading
-            </p>
-            <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              {more.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`/blog/${p.slug}`}
-                  className="dm-editorial-card group block rounded-xl border border-ink/10 bg-card p-5 transition-colors hover:border-cobalt/40"
-                >
-                  <h3 className="font-display text-base font-bold tracking-tight text-ink transition-colors group-hover:text-cobalt">
-                    {p.title}
-                  </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                    {p.excerpt}
+      <header className={css.header} aria-labelledby="page-title">
+        <div className={`ds-wrap ${css.headerGrid}`}>
+          <div>
+            <nav aria-label="Breadcrumb" className={`ds-crumbs ${css.crumbs}`} data-reveal="load">
+              <ol>
+                <li>
+                  <Link href="/blog">Blog</Link>
+                </li>
+                {topic && (
+                  <li>
+                    <Link href={`/blog?topic=${topic.id}`}>{topic.label}</Link>
+                  </li>
+                )}
+              </ol>
+            </nav>
+            <Headline
+              as="h1"
+              id="page-title"
+              load
+              delayMs={60}
+              className={`${css.title} ${size}`}
+              lines={[
+                { text: tail ? `${lead} ` : lead, riso: true },
+                ...(tail ? [{ text: tail, serif: true }] : []),
+              ]}
+            />
+            <div className={css.byline} data-reveal="load" style={{ "--i": 3 } as React.CSSProperties}>
+              <div className={css.author}>
+                <span className={css.avatar} aria-hidden="true">
+                  d<i />
+                </span>
+                <div className={css.authorText}>
+                  <p className={css.authorName}>By Dormscape</p>
+                  <p className={css.authorMeta}>
+                    <time dateTime={post.date}>{shortDate(post.date)}</time> · {post.readingTimeMin} min read
+                    {updated !== post.date && (
+                      <>
+                        {" "}
+                        · Updated <time dateTime={updated}>{shortDate(updated)}</time>
+                      </>
+                    )}
                   </p>
-                </Link>
-              ))}
+                </div>
+              </div>
+              {outline.checklistId && (
+                <a href={`#${outline.checklistId}`} className={css.jump}>
+                  Jump to the checklist
+                  <ArrowRight size={16} />
+                </a>
+              )}
             </div>
           </div>
-        </article>
-      </main>
-      <Footer />
-    </div>
+          <div className={css.visual} data-reveal-img="load">
+            <PostHeroArt slug={post.slug} />
+          </div>
+        </div>
+      </header>
+
+      <div className={css.body}>
+        <div className={`ds-wrap ${css.bodyGrid}`}>
+          {outline.headings.length > 0 ? <PostToc headings={outline.headings} title={post.title} /> : <div />}
+          <article className={css.article} id="post-body" aria-labelledby="page-title">
+            <div className={`ds-prose ${css.prose}`}>
+              <Body />
+            </div>
+            <footer className={css.foot}>
+              <p className={css.footBy}>
+                <span className={css.avatar} aria-hidden="true">
+                  d
+                </span>
+                <span>
+                  <strong>Written by Dormscape.</strong>
+                  {topic && <> Filed under {topic.label}.</>}
+                </span>
+              </p>
+              <Link href="/methodology" className={css.footLink}>
+                How we source room sizes
+                <ArrowRight size={15} />
+              </Link>
+            </footer>
+          </article>
+        </div>
+      </div>
+
+      <section className={css.more} aria-labelledby="more-title">
+        <div className="ds-wrap">
+          <div className={css.moreHead}>
+            <Headline
+              id="more-title"
+              className="ds-h2 ds-h2--inline"
+              lines={[{ text: "Keep reading " }, { text: moreTail, serif: true }]}
+            />
+            <Link href="/blog" className={css.moreAll}>
+              All guides
+              <ArrowRight size={17} />
+            </Link>
+          </div>
+          <ul className={css.moreGrid}>
+            {more.map((p, i) => (
+              <li key={p.slug} data-reveal="" style={{ "--i": i } as React.CSSProperties}>
+                <PostCard post={p} as="h3" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </PageShell>
   );
 }

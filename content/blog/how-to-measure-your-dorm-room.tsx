@@ -4,12 +4,12 @@ import {
   H2,
   P,
   Ul,
-  Ol,
   Li,
   Callout,
   EndCTA,
   TextLink,
 } from "@/components/blog/Prose";
+import PlanChecklist from "@/components/blog/PlanChecklist";
 
 function Body() {
   return (
@@ -64,7 +64,9 @@ function Body() {
       </P>
 
       <H2>The measurements that matter</H2>
-      <Ol>
+      <PlanChecklist
+        spots={["room", "walls", "ceiling", "underbed", "window", "door", "closet", "furniture"]}
+      >
         <Li>
           <strong>Room length and width.</strong> Measure the floor wall to
           wall, then note any alcove, radiator nook, or angled corner
@@ -109,7 +111,7 @@ function Body() {
           dresser you can’t move. Their length and width are what you subtract
           from the room to find the floor you’re decorating.
         </Li>
-      </Ol>
+      </PlanChecklist>
 
       <H2>The mistakes that cost you a return trip</H2>
       <Ul>

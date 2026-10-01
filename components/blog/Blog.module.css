@@ -1,0 +1,219 @@
+/* Blog index (design-handoff/designs/site/Blog.dc.html) */
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-top: calc(var(--ds-nav-h) + clamp(40px, 5vw, 72px));
+}
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 396px);
+  gap: 32px 64px;
+  align-items: start;
+}
+.eyebrow { margin-bottom: 18px; }
+.title :global(.ds-display),
+.title :global(.ds-serif) {
+  font-size: clamp(56px, 7.8vw, 112px);
+}
+.title :global(.ds-display) { line-height: 0.95; letter-spacing: -0.045em; }
+.title :global(.ds-serif) { line-height: 1.05; }
+.heroAside { padding-top: 36px; }
+.heroAside :global(.ds-lede) { font-size: clamp(17px, 1.35vw, 19px); }
+.motto {
+  margin: 28px 0 0;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+
+/* ---------- Filters ---------- */
+.filterRow { margin-top: 34px; }
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.filter {
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1.5px solid rgba(22, 22, 29, 0.2);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ds-ink);
+  font: 700 15px var(--ds-sans);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.25s var(--ds-ease);
+}
+.filter:hover { border-color: var(--ds-ink); }
+.filter[aria-pressed="true"] {
+  padding: 0 18px;
+  border-color: var(--ds-ink);
+  background: var(--ds-ink);
+  color: #fff;
+  font-weight: 800;
+}
+
+/* ---------- Featured ---------- */
+.featuredSection { padding-top: clamp(32px, 4.2vw, 60px); }
+.featured {
+  display: grid;
+  grid-template-columns: minmax(0, 780fr) minmax(0, 516fr);
+  min-height: 440px;
+  border-radius: 26px;
+  overflow: hidden;
+  background: #fff;
+  color: var(--ds-ink);
+  text-decoration: none;
+  transition: transform 0.3s var(--ds-ease), box-shadow 0.3s var(--ds-ease);
+}
+.featured:hover { transform: translateY(-3px); box-shadow: 0 0 0 2px var(--ds-blue), 0 16px 30px rgba(36, 73, 255, 0.12); }
+.featuredCover { display: block; min-height: 100%; }
+.featuredCover > span { --grid: 30px; box-shadow: none; }
+.featuredBody {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 38px;
+}
+.featuredMeta,
+.cardMeta {
+  font-family: var(--ds-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.featuredMeta { font-size: 12px; letter-spacing: 0.1em; color: var(--ds-blue); }
+.featuredTitle {
+  margin: 16px 0 0;
+  font-size: clamp(30px, 2.95vw, 42px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.featuredTitle[data-long] { font-size: clamp(28px, 2.5vw, 36px); }
+.featuredExcerpt {
+  margin-top: 16px;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ds-body);
+}
+.featuredGo {
+  margin-top: auto;
+  padding-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 850;
+}
+.featuredGo svg { transition: transform 0.3s var(--ds-ease); }
+.featured:hover .featuredGo svg { transform: translateX(4px); }
+
+/* ---------- Grid ---------- */
+.gridSection { padding: clamp(40px, 4.2vw, 60px) 0 clamp(72px, 8vw, 120px); }
+.grid {
+  margin-block: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 24px;
+}
+.grid > li { min-width: 0; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--ds-ink);
+  text-decoration: none;
+}
+.cardCover {
+  display: block;
+  height: var(--cover-h, 220px);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.3s var(--ds-ease), box-shadow 0.3s var(--ds-ease);
+}
+.card:hover .cardCover { transform: translateY(-3px); box-shadow: 0 14px 26px rgba(22, 22, 29, 0.12); }
+.cardTitle {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 850;
+  letter-spacing: -0.005em;
+}
+.card:hover .cardTitle { color: var(--ds-blue); }
+.cardMeta { font-size: 11px; letter-spacing: 0.08em; color: var(--ds-caption); }
+
+.ctaCell { display: flex; }
+.ctaCard {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 330px;
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 18px;
+  background: var(--ds-ink);
+  color: #f4f3ee;
+  transition: transform 0.3s var(--ds-ease);
+}
+.ctaCard:hover { transform: translateY(-3px); }
+.ctaEyebrow {
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-yellow);
+}
+.ctaTitle {
+  margin: 0;
+  font-size: clamp(30px, 2.65vw, 38px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 850;
+  color: var(--ds-yellow) !important;
+  text-decoration: none;
+}
+/* the whole card is the link */
+.ctaLink::after { content: ""; position: absolute; inset: 0; border-radius: 18px; }
+.ctaLink:focus-visible { outline: none; }
+.ctaLink:focus-visible::after { outline: 3px solid var(--ds-blue); outline-offset: 3px; }
+
+@media (max-width: 1023px) {
+  .heroGrid { grid-template-columns: minmax(0, 1fr); }
+  .heroAside { padding-top: 0; max-width: 560px; }
+  .featured { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .featuredCover { aspect-ratio: 16 / 9; min-height: 0; }
+  .featuredBody { padding: 28px 26px 30px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .featuredCover { aspect-ratio: 416 / 240; }
+  .featuredBody { padding: 22px 20px 24px; }
+  .featured { border-radius: 20px; }
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .cardCover { height: auto; aspect-ratio: 416 / 220; }
+  .ctaCard { min-height: 240px; padding: 26px; }
+  .filter { padding: 0 14px; font-size: 14px; }
+  .filter[aria-pressed="true"] { padding: 0 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .featured, .cardCover, .ctaCard, .featuredGo svg { transition: none; }
+  .featured:hover, .card:hover .cardCover, .ctaCard:hover { transform: none; }
+}

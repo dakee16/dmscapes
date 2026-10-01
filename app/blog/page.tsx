@@ -1,10 +1,12 @@
-import Footer from "@/components/Footer";
-import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import type { Metadata } from "next";
-import SiteHeader from "@/components/site/SiteHeader";
-import PostCard from "@/components/blog/PostCard";
+import PageShell from "@/components/ds/PageShell";
+import Headline from "@/components/ds/Headline";
+import JsonLd from "@/components/site/JsonLd";
+import BlogBrowser from "@/components/blog/BlogBrowser";
+import { TOPICS, summarize } from "@/components/blog/topics";
 import { POSTS } from "@/content/blog";
 import { BLOG_BASE } from "@/lib/blog";
+import css from "@/components/blog/Blog.module.css";
 
 const DESCRIPTION =
   "Practical, specific guides to planning a dorm room: how to measure it, what to pack, what it costs, small-room ideas, and how to pick a style.";
@@ -55,38 +57,46 @@ export default function BlogIndexPage() {
     })),
   };
 
-  return (
-    <div>
-      <SiteHeader gridClassName="h-[24rem]" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
-        }}
-      />
-      <main id="page-content" tabIndex={-1} className="dm-page relative">
-        <div className="dm-editorial-shell">
-          <div className="dm-public-hero"><div><p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-            The dormscape Blog
-          </p>
-          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
-            Dorm planning, <span className="hl">figured out.</span>
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-            Specific, useful guides to setting up a dorm room the right way:
-            measuring the space, packing what matters, budgeting honestly, and
-            making a small room work.
-          </p>
+  const posts = POSTS.map(summarize);
+  // Only topics that actually have guides get a filter.
+  const topics = TOPICS.filter((t) => posts.some((p) => p.topic === t.id)).map(({ id, label }) => ({ id, label }));
 
-          </div><BlueprintArtwork variant="orbit" /></div>
-          <div className="dm-post-grid mt-12 grid gap-4 md:grid-cols-2">
-            {POSTS.map((post) => (
-              <PostCard key={post.slug} post={post} />
-            ))}
+  return (
+    <PageShell navOverlay>
+      <JsonLd data={jsonLd} />
+      <header className={css.hero} aria-labelledby="page-title">
+        <div className={`ds-wrap ${css.heroGrid}`}>
+          <div>
+            <p className={`ds-eyebrow ${css.eyebrow}`} data-reveal="load">
+              The Dormscape blog · {POSTS.length} guides
+            </p>
+            <Headline
+              as="h1"
+              id="page-title"
+              load
+              delayMs={60}
+              className={`ds-h1 ${css.title}`}
+              lines={[
+                { text: "Dorm planning, ", riso: true },
+                { text: "figured out.", serif: true },
+              ]}
+            />
+          </div>
+          <div className={css.heroAside} data-reveal="load" style={{ "--i": 3 } as React.CSSProperties}>
+            <p className="ds-lede">
+              Specific, useful guides to setting up a dorm room the right way:
+              measuring the space, packing what matters, budgeting honestly, and
+              making a small room work.
+            </p>
+            <p className={css.motto}>
+              Measure. Imagine. Make room.
+              <br />
+              A little room. Infinite possibility.
+            </p>
           </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </header>
+      <BlogBrowser posts={posts} topics={topics} />
+    </PageShell>
   );
 }
