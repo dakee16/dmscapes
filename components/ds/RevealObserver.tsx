@@ -31,7 +31,9 @@ const KINDS = [
   "data-bar",
   "data-pop",
 ] as const;
-const SELECTOR = KINDS.map((k) => `[${k}]:not([${k}="in"]):not([${k}="armed"])`).join(",") + ",[data-count]:not([data-count-done])";
+const SELECTOR =
+  KINDS.map((k) => `[${k}]:not([${k}="in"]):not([${k}="armed"]):not([${k}="load"])`).join(",") +
+  ",[data-count]:not([data-count-done])";
 
 function motionPaused(): boolean {
   if (typeof window === "undefined") return true;
@@ -123,6 +125,14 @@ export default function RevealObserver() {
         }
         if (kind === "data-headline") {
           el.querySelectorAll<HTMLElement>(".ds-line").forEach((line, i) => line.style.setProperty("--l", String(i)));
+        }
+        // First-paint reveals are pure CSS (ds.css); only count-ups need us.
+        if (kind && el.getAttribute(kind) === "load") {
+          if (el.hasAttribute("data-count") && !el.hasAttribute("data-count-done")) {
+            if (paused) el.setAttribute("data-count-done", "");
+            else countUp(el);
+          }
+          return;
         }
         const rect = el.getBoundingClientRect();
         const onScreen = rect.top < vh * 0.98 && rect.bottom > 0;

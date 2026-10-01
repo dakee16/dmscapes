@@ -38,7 +38,7 @@ export default function Headline({
       style={delayMs ? ({ "--d": `${delayMs}ms` } as React.CSSProperties) : undefined}
     >
       {lines.map((line, i) => (
-        <span key={i} className={`ds-line ${line.className ?? ""}`}>
+        <span key={i} className={`ds-line ${line.className ?? ""}`} style={{ "--l": i } as React.CSSProperties}>
           <span
             className={[
               line.serif ? "ds-serif ds-serif--blue" : "ds-display",
