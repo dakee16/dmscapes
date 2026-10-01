@@ -61,3 +61,6 @@ supabase/
 brag-output/
 # Claude Ads setup profile and runs (internal, local only)
 .claude-ads/
+
+# Design handoff (local reference only; repo is public)
+/design-handoff/
