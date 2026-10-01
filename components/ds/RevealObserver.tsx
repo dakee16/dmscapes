@@ -68,22 +68,45 @@ export default function RevealObserver() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Rules, bars and to-scale rectangles arm at scale(0): zero area, which an
+    // overflow-clipped parent can hide from the observer for good. Those are
+    // watched through their parent instead.
+    const viaParent = new Map<Element, HTMLElement[]>();
+    const self = new Set<Element>();
+    const flip = (el: HTMLElement) => {
+      if (el.hasAttribute("data-count") && !el.hasAttribute("data-count-done")) countUp(el);
+      const kind = kindOf(el);
+      if (kind) el.setAttribute(kind, "in");
+    };
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          const el = entry.target as HTMLElement;
           const vh = window.innerHeight;
           const enough =
             entry.intersectionRatio >= 0.2 || entry.intersectionRect.height >= vh * 0.2;
           if (!entry.isIntersecting || !enough) continue;
-          io.unobserve(el);
-          if (el.hasAttribute("data-count") && !el.hasAttribute("data-count-done")) countUp(el);
-          const kind = kindOf(el);
-          if (kind) el.setAttribute(kind, "in");
+          const target = entry.target as HTMLElement;
+          io.unobserve(target);
+          const kids = viaParent.get(target) ?? [];
+          viaParent.delete(target);
+          if (self.delete(target)) flip(target);
+          kids.forEach(flip);
         }
       },
       { threshold: [0, 0.2, 0.5] }
     );
+    const watch = (el: HTMLElement, kind: string | null) => {
+      const parent = el.parentElement;
+      if (parent && (kind === "data-grow" || kind === "data-bar" || kind === "data-draw")) {
+        const list = viaParent.get(parent) ?? [];
+        list.push(el);
+        viaParent.set(parent, list);
+        io.observe(parent);
+      } else {
+        self.add(el);
+        io.observe(el);
+      }
+    };
 
     let frame = 0;
     function scan() {
@@ -126,7 +149,7 @@ export default function RevealObserver() {
           );
           return;
         }
-        io.observe(el);
+        watch(el, kind);
       });
     }
     const schedule = () => {

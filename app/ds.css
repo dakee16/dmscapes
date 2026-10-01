@@ -126,8 +126,8 @@
   display: block;
   overflow: hidden;
   /* room for italic overhang, descenders and the riso shadow */
-  padding: 0.04em 0.14em 0.1em 0.06em;
-  margin: -0.04em -0.14em -0.1em -0.06em;
+  padding: 0.04em 0.14em 0.2em 0.06em;
+  margin: -0.04em -0.14em -0.2em -0.06em;
 }
 .ds-line > span {
   display: inline-block;
@@ -323,6 +323,8 @@
 /* Visually hidden, still read aloud */
 .ds-sr {
   position: absolute !important;
+  /* pinned to the containing block's start so it can't widen a scroller */
+  inset-inline-start: 0;
   width: 1px;
   height: 1px;
   overflow: hidden;
@@ -521,6 +523,8 @@ textarea.ds-input { min-height: 140px; padding: 14px 18px; line-height: 1.5; res
 .ds-prose a:hover { color: var(--ds-blue-deep); }
 .ds-prose strong { color: var(--ds-ink); }
 .ds-prose ul, .ds-prose ol { padding-left: 1.3em; }
+.ds-prose ul { list-style: disc; }
+.ds-prose ol { list-style: decimal; }
 .ds-prose li + li { margin-top: 0.4em; }
 .ds-prose li::marker { color: var(--ds-blue); font-weight: 700; }
 .ds-prose blockquote { margin-left: 0; padding: 4px 0 4px 20px; border-left: 4px solid var(--ds-tape); font-family: var(--ds-serif); font-style: italic; font-size: 1.15em; color: var(--ds-ink); }

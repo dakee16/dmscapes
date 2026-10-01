@@ -2068,64 +2068,18 @@ body {
 .dm-app[data-page="pricing"] .dm-room-model {
   height: 360px;
 }
-.dm-app[data-page="about"] main,
-.dm-app[data-page="methodology"] main {
-  max-width: 1050px;
-}
-.dm-app[data-page="about"] main > header,
-.dm-app[data-page="methodology"] main > header {
-  padding-bottom: 30px;
-  border-bottom: 1px solid var(--dm-rule);
-}
-.dm-app[data-page="blog"] main {
-  max-width: 1480px;
-  padding-left: var(--dm-gutter);
-  padding-right: var(--dm-gutter);
-}
-.dm-app[data-page="blog"] .dm-editorial-card {
-  min-height: 260px;
-  background: #fff;
-}
-.dm-app[data-page^="blog-"] .dm-page-title {
-  font-size: clamp(36px, 4.5vw, 64px);
-  max-width: 900px;
-}
-.dm-app[data-page="faq"] main {
-  max-width: 1050px;
-}
-.dm-app[data-page="faq"] [aria-expanded] {
-  padding-top: 23px;
-  padding-bottom: 23px;
-}
-.dm-app:is([data-page="contact"], [data-page="add-school"]) main {
-  max-width: 1200px;
-  margin: auto;
-  padding: 65px var(--dm-gutter) 100px;
-}
-.dm-contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 70px;
-  align-content: start;
-}
-.dm-contact-layout > h1,
-.dm-contact-layout > p {
-  grid-column: 1;
-}
-.dm-contact-layout > h1 {
-  font-size: clamp(42px, 5.1vw, 70px);
-  align-self: end;
-}
-.dm-contact-layout > div:last-child {
-  grid-column: 2;
-  grid-row: 1/6;
-  margin-top: 0;
-  background: white;
-  border: 1px solid var(--dm-rule);
-  border-radius: 3px;
-  padding: 30px;
-  box-shadow: 8px 8px 0 #e4e9f477;
-}
+
+
+
+
+
+
+
+
+
+
+
+
 .dm-app[data-page^="account"] main {
   max-width: 1280px;
   padding: 55px var(--dm-gutter) 80px;
@@ -2182,16 +2136,8 @@ body {
   padding-left: var(--dm-gutter);
   padding-right: var(--dm-gutter);
 }
-.dm-app:is([data-page="terms"], [data-page="privacy"], [data-page="cookies"])
-  main {
-  max-width: 900px;
-}
-.dm-app:is([data-page="terms"], [data-page="privacy"], [data-page="cookies"])
-  .dm-page-title {
-  padding-bottom: 25px;
-  border-bottom: 1px solid var(--dm-rule);
-  font-size: clamp(38px, 5vw, 72px);
-}
+
+
 @keyframes dm-enter {
   from {
     opacity: 0.2;
@@ -2470,11 +2416,7 @@ body {
   .dm-canvas-panel {
     box-shadow: none;
   }
-  .dm-app:is([data-page="contact"], [data-page="add-school"]) main {
-    display: block;
-    max-width: 680px;
-    padding-top: 40px;
-  }
+  
   .dm-app[data-page="pricing"] .dm-room-model {
     height: 300px;
   }
@@ -2660,13 +2602,8 @@ body {
 }
 
 @media (max-width: 800px) {
-  .dm-contact-layout {
-    display: block;
-  }
-  .dm-contact-layout > div:last-child {
-    margin-top: 35px;
-    padding: 25px;
-  }
+  
+  
   .dm-login-room {
     height: 300px;
   }
@@ -3084,41 +3021,12 @@ body {
   width: 13px;
   height: 13px;
 }
-.dm-about-image {
-  position: relative;
-  overflow: hidden;
-  margin-top: 40px;
-  border: 1px solid var(--dm-rule);
-}
-.dm-about-image > img {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  object-position: 50% 55%;
-}
-.dm-about-image > figcaption {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 22px;
-  background: var(--color-cobalt);
-  color: white;
-}
-.dm-about-image > figcaption > span:last-child {
-  font-size: 28px;
-  color: var(--color-highlight);
-}
-.dm-app[data-page="about"] main > div > section,
-.dm-app[data-page="methodology"] main > div > section {
-  padding-top: 32px;
-  border-top: 1px solid var(--dm-rule);
-}
-.dm-app[data-page="about"] main > div > section > h2,
-.dm-app[data-page="methodology"] main > div > section > h2 {
-  font-size: clamp(26px, 3vw, 36px);
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-}
+
+
+
+
+
+
 .dm-page :is(div, section, article).rounded-xl,
 .dm-page :is(div, section, article).rounded-2xl {
   border-radius: 4px;
@@ -3149,15 +3057,7 @@ body {
   min-height: 470px;
   border: 1px solid var(--dm-rule);
 }
-@supports (animation-timeline: view()) {
-  @media (min-width: 900px) {
-    .dm-about-image > img {
-      animation: dm-photo-drift linear both;
-      animation-timeline: view();
-      animation-range: entry 0% exit 100%;
-    }
-  }
-}
+
 @keyframes dm-photo-drift {
   from {
     transform: scale(1.12) translateY(-10px);
@@ -3166,9 +3066,7 @@ body {
     transform: scale(1.12) translateY(10px);
   }
 }
-.dm-app[data-motion="paused"] .dm-about-image > img {
-  animation: none !important;
-}
+
 @media (max-width: 900px) {
   .dm-footer-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -3188,9 +3086,7 @@ body {
   .dm-footer-brand > small {
     margin: 0;
   }
-  .dm-about-image > img {
-    height: 300px;
-  }
+  
   .dm-vibe-inspiration {
     margin-top: 20px;
   }
@@ -3207,15 +3103,9 @@ body {
   .dm-footer-brand > p {
     margin: 12px 0;
   }
-  .dm-about-image > img {
-    height: 240px;
-  }
-  .dm-about-image > figcaption {
-    padding: 12px 16px;
-  }
-  .dm-about-image .dm-eyebrow {
-    font-size: 8px;
-  }
+  
+  
+  
   .dm-vibe-inspiration {
     padding: 25px 20px;
     min-height: 0;
@@ -3285,11 +3175,11 @@ body {
 .dm-page [aria-label="Breadcrumb"] { min-width: 0; overflow-wrap: anywhere; }
 .dm-page [role="listbox"], .dm-page [role="tablist"] { border-radius: 4px; }
 .dm-page :is([role="alert"], [role="status"]) { overflow-wrap: anywhere; }
-.dm-contact-layout > div:last-child > :is(form, div) { border: 0; padding: 0; box-shadow: none; }
+
 .dm-account-surface h3 { white-space: normal; overflow-wrap: anywhere; }
 .dm-account-surface { min-width: 0; }
-.dm-app[data-page="faq"] input { min-height: 0; box-shadow: none; }
-.dm-app[data-page="faq"] nav a { min-height: 40px; border-radius: 3px; }
+
+
 .dm-footer-grid li > a, .dm-footer-grid li > button { font-size: 14px; min-height: 28px; }
 .dm-footer-grid > div > h2 { font-size: 12px; }
 .dm-footer-brand > p, .dm-footer-brand > small { font-size: 12px; }
@@ -3301,8 +3191,7 @@ body {
   letter-spacing: -0.02em;
 }
 .dm-app[data-page^="account"] :is(section, div)[class*="rounded"],
-.dm-app[data-page^="room-"] :is(section, div)[class*="rounded"],
-.dm-thank-you-card { border-radius: 4px; }
+.dm-app[data-page^="room-"] :is(section, div)[class*="rounded"] { border-radius: 4px; }
 .dm-save-nudge { border-radius: 4px; box-shadow: 5px 5px 0 #2b4eff12; }
 .dm-action-toast {
   max-width: calc(100vw - 32px); border-radius: 4px; text-align: center; line-height: 1.6;
@@ -3318,10 +3207,10 @@ body {
 .dm-room-table th { white-space: nowrap; }
 .dm-room-table td { line-height: 1.6; }
 .dm-room-table td:nth-child(3) { min-width: 210px; }
-.dm-legal-page :is(aside, nav, section)[class*="rounded"] { border-radius: 4px; box-shadow: none; }
-.dm-legal-page > div > p:first-of-type { border: 0; border-radius: 0; padding-inline: 0; background: none; }
-.dm-legal-page aside { border: 0; border-left: 3px solid var(--color-cobalt); background: #2b4eff08; line-height: 1.6; }
-.dm-legal-page nav { border-inline: 0; background: transparent; }
+
+
+
+
 @media (max-width: 600px) {
   .dm-dialog-layer > div { padding: 22px; }
   .dm-dialog-layer h2 { font-size: 28px; }
@@ -3345,7 +3234,7 @@ body {
 .dm-directory-empty a { color: var(--color-cobalt); text-decoration: underline; text-underline-offset: 3px; }
 
 .dm-dialog-layer[data-motion="paused"] * { animation: none !important; transition: none !important; }
-.dm-app[data-page="thank-you"] .dm-page-title,
+
 .dm-app[data-page="reset-password"] .dm-page-title { font-size: clamp(34px, 4vw, 52px); }
 .dm-app[data-page="reset-password"] main > div.flex { flex-wrap: wrap; }
 .dm-app[data-page^="account"] :is(p, dd) { overflow-wrap: anywhere; }
