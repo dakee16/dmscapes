@@ -11,27 +11,29 @@ import "./ds.css";
 
 // Redesign type system: Archivo (UI and display, wght + wdth axes), Fraunces
 // italic (the second line of every headline), Martian Mono (labels and tags).
-// Self-hosted variable fonts, SIL OFL (licenses beside the files).
+// Self-hosted variable fonts, SIL OFL (licenses beside the files), trimmed to
+// the axis ranges the design uses (fontTools instancer): Archivo wght 400–900
+// and wdth 84–100%; Fraunces pinned at opsz 144 / SOFT 30 / WONK 1, wght
+// 300–700; Martian Mono at wdth 100, wght 400–800.
 const archivo = localFont({
   src: "./fonts/archivo.woff2",
   variable: "--font-archivo",
-  weight: "100 900",
+  weight: "400 900",
   display: "swap",
-  declarations: [{ prop: "font-stretch", value: "62% 125%" }],
+  declarations: [{ prop: "font-stretch", value: "84% 100%" }],
 });
 const fraunces = localFont({
   src: "./fonts/fraunces-italic.woff2",
   variable: "--font-fraunces",
-  weight: "100 900",
+  weight: "300 700",
   style: "italic",
   display: "swap",
 });
 const martian = localFont({
   src: "./fonts/martian-mono.woff2",
   variable: "--font-martian",
-  weight: "100 800",
+  weight: "400 800",
   display: "swap",
-  declarations: [{ prop: "font-stretch", value: "75% 112.5%" }],
 });
 
 const bricolage = localFont({
