@@ -37,7 +37,7 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
   const planning=usePlannerStore(st=>st.planning);
   const [panel,setPanel]=useState<Panel>("shop"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
   const [camera,setCamera]=useState<CameraView>("room"),[expanded,setExpanded]=useState(false),[mobileOpen,setMobileOpen]=useState(false),[query,setQuery]=useState(""),[resetConfirm,setResetConfirm]=useState(false);
-  const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),previous=useRef(selectedId),closeRef=useRef<HTMLButtonElement>(null);
+  const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),closeRef=useRef<HTMLButtonElement>(null);
   const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade();
   const allowed3D=!loading&&(canUse3D(profile)||workspace?.ownerPro===true),preview=view==="3d"&&!allowed3D;
   const activePanel=panel;
@@ -50,7 +50,8 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
   const analysis=useMemo(()=>analyzeRoom(visibleFurniture(items,hidden,excluded),room,planning.walkwayFt),[items,hidden,excluded,room,planning.walkwayFt]);
   const issues=analysis.issues;
   const selectedProduct=selected?productForFurniture(selected,products):undefined;
-  useEffect(()=>{if(selectedId&&selectedId!==previous.current){setPanel("item");}previous.current=selectedId;},[selectedId,view]);
+  // Selection never opens a tool. Keep arranging until Edit selected is requested.
+  useEffect(()=>{if(!selectedId&&panel==="item"){setPanel("shop");setMobileOpen(false);}},[selectedId,panel]);
   useEffect(()=>{
     if(!expanded)return;const prev=document.body.style.overflow,focused=document.activeElement as HTMLElement|null;document.body.style.overflow="hidden";
     root.current?.querySelector<HTMLButtonElement>('[aria-label="Exit expanded studio"],[aria-label="Exit fullscreen"]')?.focus();
@@ -61,12 +62,11 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
     setSelectedOpening(null);
     const item=items.find(f=>f.id===id);
     usePlannerStore.setState({selectedItemId:id,selectedCategory:item?furnitureCategory(item):null});
-    if(id)setPanel("item");
   }
   function open(next:Panel){setPanel(next);if(next!=="item")usePlannerStore.getState().updatePlanning({lastPanel:next});setMobileOpen(true);if(next!=="item")setMoveMode(false);}
   function selectOpening(index:number|null){
     setSelectedOpening(index);setOpeningError("");
-    if(index!==null){usePlannerStore.setState({selectedItemId:null,selectedCategory:null,hoveredCategory:null});setPanel("room");setMoveMode(false);}
+    if(index!==null){usePlannerStore.setState({selectedItemId:null,selectedCategory:null,hoveredCategory:null});setMoveMode(false);}
   }
   function commitOpening(index:number|null,opening:WallOpening){
     const current=roomOutline(usePlannerStore.getState().room!);
@@ -96,7 +96,7 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
     if(next)commitOpening(selectedOpening!,next);
   }
   function highlight(issue:PlanIssue){
-    if(issue.itemId){previous.current=issue.itemId;usePlannerStore.setState({selectedItemId:issue.itemId});if(view==="3d")scene.current?.focus(issue.itemId);else focus2D(issue.itemId);}
+    if(issue.itemId){usePlannerStore.setState({selectedItemId:issue.itemId});if(view==="3d")scene.current?.focus(issue.itemId);else focus2D(issue.itemId);}
     if(issue.region){usePlannerStore.setState({checkHighlight:{points:issue.region,label:issue.title}});setView("2d");}
     setPanel("checks");if(compact)setMobileOpen(false);
   }
@@ -111,16 +111,16 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
       }
       if(target.closest("input,textarea,select,[contenteditable=true]"))return;
       if(view==="3d"&&allowed3D&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="z"){e.preventDefault();e.stopPropagation();e.shiftKey?history.redo():history.undo();}
-      if(e.key==="Escape"){setMobileOpen(false);setMoveMode(false);}}}>
+      if(e.key==="Escape"){setMobileOpen(false);setMoveMode(false);setPanel("shop");}}}>
     <header className={s.header}>
       <div className={s.titleBlock}><p className={s.eyebrow}>Your room / Make it yours</p><p>{subtitle}</p></div>
       <div className={s.viewSwitch} role="group" aria-label="Planner view"><button aria-pressed={view==="2d"} onClick={()=>{setView("2d");setMoveMode(false);}}>2D plan</button><button aria-pressed={view==="3d"} onClick={enter3D}>3D room{!allowed3D&&<small> Pro</small>}</button></div>
       <div className={s.actions}><button className={s.backButton} onClick={()=>open("shop")}>Shopping list · ${total.toFixed(2)}</button><ActionBar exportsOnly products={products} getPng={()=>view==="3d"?scene.current?.exportPNG()??null:get2DPng()} onShop={()=>open("shop")} shopOpen={mobileOpen&&activePanel==="shop"}/></div>
     </header>
     {extras&&<div className={s.extras}>{extras}</div>}
-    <div className={s.workspace+" "+(view==="2d"?s.workspacePlan:"")}>
+    <div className={s.workspace+" "+(view==="2d"?s.workspacePlan:"")} data-tool-open={activePanel!=="shop"}>
       <div className={s.planToolsHost} aria-label="Workspace tools">
-        <nav className={s.workspaceTasks} aria-label="Planning tasks">{compact&&selectedId&&<button onClick={()=>open("item")}>Edit selected</button>}<button onClick={()=>open("furnish")}>+ Furniture</button><button onClick={()=>open("layouts")}>Layout ideas</button><button onClick={()=>open("checks")}>Checks <b>{issues.filter(i=>i.level==="warning").length}</b></button><button onClick={()=>open("shop")}>Shopping list</button></nav>
+        <nav className={s.workspaceTasks} aria-label="Planning tasks">{selectedId&&<button onClick={()=>open("item")}>Edit selected</button>}<button onClick={()=>open("furnish")}>+ Furniture</button><button onClick={()=>open("layouts")}>Layout ideas</button><button onClick={()=>open("checks")}>Checks <b>{issues.filter(i=>i.level==="warning").length}</b></button><button onClick={()=>open("shop")}>Shopping list</button></nav>
         {view==="2d"?<div ref={setToolsHost}/>:<nav className={s.spatialTools} aria-label="3D tools" inert={preview}>
           <strong>Room tools</strong><div className={s.toolPair}><button aria-pressed={!moveMode} onClick={()=>setMoveMode(false)}>Select</button><button aria-pressed={moveMode} onClick={()=>setMoveMode(v=>!v)}>Move</button><button disabled={!history.canUndo} onClick={history.undo}>Undo</button><button disabled={!history.canRedo} onClick={history.redo}>Redo</button></div>
           <span>Camera</span><div className={s.toolPair}>{(["room","top","inside"] as const).map(mode=><button key={mode} aria-pressed={camera===mode} onClick={()=>preset(mode)}>{mode}</button>)}<button onClick={()=>preset("room")}>Fit</button></div><div className={s.toolPair}><button aria-label="Zoom out" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(1.15)}>− Zoom</button><button aria-label="Zoom in" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(.87)}>+ Zoom</button></div>
@@ -159,7 +159,7 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
         <div className={s.panelHeading}><button className={s.mobileSheetTitle} aria-expanded={mobileOpen} onClick={()=>setMobileOpen(v=>!v)}>{titles[activePanel]} <span aria-hidden="true">{mobileOpen?"⌄":"⌃"}</span></button><strong className={s.desktopTitle}>{titles[activePanel]}</strong>{activePanel!=="shop"&&<button className={s.drawerClose} aria-label="Close room tool" onClick={()=>setPanel("shop")}>×</button>}<button ref={closeRef} className={s.mobileClose} aria-label="Collapse panel" onClick={()=>setMobileOpen(false)}>Done</button></div>
         {activePanel!=="shop"&&<nav className={s.panelTabs} aria-label="Room tools">{([["furnish","Furniture"],["layouts","Layouts"],["room","Room"],["style","Style"]] as const).map(([key,label])=><button key={key} aria-pressed={activePanel===key||(activePanel==="item"&&key==="furnish")} onClick={()=>open(key)}>{label}</button>)}</nav>}
         <div className={s.panelContent}>
-          {activePanel==="furnish"&&<FurnitureLibrary onSelect={id=>{select(id);setMobileOpen(true);}}/>}
+          {activePanel==="furnish"&&<FurnitureLibrary onSelect={id=>{select(id);open("item");}}/>}
           {activePanel==="layouts"&&<LayoutPanel/>}
           {activePanel==="item"&&<button className={s.backButton} onClick={()=>open("furnish")}>← All furniture</button>}
           {activePanel==="item"&&selected&&<ItemInspector key={selected.id} item={selected} items={items} room={room} product={selectedProduct} view={view} issues={issues.filter(i=>i.itemId===selected.id).map(i=>i.title)} moveMode={moveMode}
