@@ -100,7 +100,7 @@ export default function ProfileMenu({
       <button
         type="button"
         onClick={() => openAuthModal("profile")}
-        className="shrink-0 cursor-pointer rounded-full bg-highlight px-3.5 py-1.5 text-sm font-semibold text-ink transition-colors hover:bg-amber"
+        className="ds-login shrink-0 cursor-pointer"
       >
         Log in
       </button>

@@ -100,6 +100,11 @@ export default function nextConfig(phase: string): NextConfig {
   return {
     distDir: process.env.DORMSCAPE_QA_OUTPUT || ".next",
     allowedDevOrigins: ["terminal.local"],
+    // Redesign renders ship as JPEG masters; next/image serves AVIF/WebP.
+    images: {
+      formats: ["image/avif", "image/webp"],
+      qualities: [70, 75, 80],
+    },
     async headers() {
       return [
         {
