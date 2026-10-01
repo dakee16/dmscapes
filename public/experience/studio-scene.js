@@ -273,6 +273,16 @@ export function createStudioScene(container, options) {
   for(const [name,fn]of Object.entries(events))canvas.addEventListener(name,fn);canvas.addEventListener("wheel",wheel,{passive:false});
   const visible=()=>request();document.addEventListener("visibilitychange",visible);
   return {update:sync,preset:m=>preset(m),focus,zoom:f=>{radius=Math.max(4,Math.min(180,radius*f));request();},
+    readCursor(x,y){
+      if(!data)return null;
+      const bounds=canvas.getBoundingClientRect(),p=roomPoint({clientX:bounds.left+x,clientY:bounds.top+y});
+      return p?{x:p.x/data.room.lengthFt,y:p.z/data.room.widthFt}:null;
+    },
+    projectCursor(x,y){
+      if(!data)return null;
+      const p=new T.Vector3(x*data.room.lengthFt,.01,y*data.room.widthFt).project(camera);
+      return p.z<-1||p.z>1?null:{x:(p.x+1)*width/2,y:(1-p.y)*height/2};
+    },
     setWalls:v=>{walls=v;request();},setMoveMode:v=>{dragMode=v;},
     setReduced:v=>{options.reduced=v;if(v){assemblyStart=0;tween=null;for(const m of meshes.values()){m.group.scale.setScalar(1);m.group.position.y=m.item.elevation;}request();}},
     exportPNG(){

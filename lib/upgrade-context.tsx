@@ -29,6 +29,7 @@ export type UpgradeReason =
   | "room-3d"
   | "draw-3d"
   | "draw-room"
+  | "workspace"
   | "generic";
 
 interface UpgradeContextValue {

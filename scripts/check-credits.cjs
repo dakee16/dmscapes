@@ -271,7 +271,7 @@ function handler(file, name, scope) {
 }
 
 function controllerScope(overrides = {}) {
-  const state = { busy: false, errors: [], upgrades: [], paths: [], spends: 0, saves: 0, freeUsed: false };
+  const state = { busy: false, errors: [], upgrades: [], paths: [], spends: 0, saves: 0, freeUsed: false, planning: {mode:"manual"}, excluded: ["bedding"] };
   const scope = {
     user: { id: "member" }, profile: { plan: "pro", plan_credits_remaining: 10 },
     style: "minimalist", room: { bedSize: "twin-xl" }, budget: 500,
@@ -286,6 +286,7 @@ function controllerScope(overrides = {}) {
     consumePlanCredit: async () => { state.spends++; return { blocked: false, remaining: 9 }; },
     refreshProfile: async () => {}, generateVibe: async () => ({ ok: true, products: [{ id: "bed" }] }),
     setCustomResult: () => { state.saves++; }, markCustomRegen: () => { state.freeUsed = true; },
+    usePlannerStore: {getState:()=>({updatePlanning:patch=>{state.planning={...state.planning,...patch};}}),setState:patch=>Object.assign(state,patch)},
     ...overrides,
   };
   return { state, scope };
@@ -297,12 +298,16 @@ test("Preset generation handles exhausted credits and network failures without n
     await handler("app/plan/style/page.tsx", "runGenerate", scope)();
     assert.deepEqual(state.paths, []);
     assert.equal(state.busy, false);
+    assert.equal(state.planning.mode, "manual");
+    assert.deepEqual(state.excluded, ["bedding"]);
     assert(state.upgrades.includes("pro-credits") || state.errors.includes("Network unavailable"));
   }
   const { state, scope } = controllerScope();
   await handler("app/plan/style/page.tsx", "runGenerate", scope)();
   assert.equal(state.spends, 1);
   assert.deepEqual(state.paths, ["/plan/result"]);
+  assert.equal(state.planning.mode, "generated");
+  assert.equal(state.excluded, null);
 });
 
 test("Custom-vibe search failure spends nothing; a successful design spends once", async () => {
@@ -321,18 +326,18 @@ test("Custom-vibe search failure spends nothing; a successful design spends once
 test("Custom regeneration keeps one free pass and charges subsequent successful passes", async () => {
   for (const customRegenUsed of [false, true]) {
     const { state, scope } = controllerScope({ customRegenUsed });
-    await handler("app/plan/result/page.tsx", "handleRegenerate", scope)();
+    await handler("components/planner/PlanResult.tsx", "handleRegenerate", scope)();
     assert.equal(state.spends, customRegenUsed ? 1 : 0);
     assert.equal(state.freeUsed, !customRegenUsed);
     assert.equal(state.saves, 1);
     assert.equal(state.busy, false);
   }
   const failed = controllerScope({ customRegenUsed: true, generateVibe: async () => ({ ok: false, error: "Search failed" }) });
-  await handler("app/plan/result/page.tsx", "handleRegenerate", failed.scope)();
+  await handler("components/planner/PlanResult.tsx", "handleRegenerate", failed.scope)();
   assert.equal(failed.state.spends, 0);
   assert.equal(failed.state.saves, 0);
   const blocked = controllerScope({ customRegenUsed: true, consumePlanCredit: async () => ({ blocked: true, remaining: 0 }) });
-  await handler("app/plan/result/page.tsx", "handleRegenerate", blocked.scope)();
+  await handler("components/planner/PlanResult.tsx", "handleRegenerate", blocked.scope)();
   assert.equal(blocked.state.saves, 0);
   assert.deepEqual(blocked.state.upgrades, ["pro-credits"]);
 });

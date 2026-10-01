@@ -60,7 +60,8 @@ export default function DrawRoomPage() {
       closets: result.outline.closets.length,
       occupants,
     });
-    router.push("/plan/style");
+    usePlannerStore.getState().startManual();
+    router.push("/plan/result");
   }
 
   // Drawing tool + occupancy selector.

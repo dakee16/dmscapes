@@ -1,4 +1,5 @@
 "use client";
+import ProductImage from "@/components/products/ProductImage";
 
 import type { Product } from "@/lib/types";
 import { track, sessionId } from "@/lib/analytics";
@@ -49,7 +50,7 @@ export default function ProductCard({
           action column can own the right edge, full height. */}
       <div className="flex min-w-0 flex-1 items-center gap-3 p-2.5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <ProductImage
           src={product.image_url}
           alt={product.name}
           loading="lazy"

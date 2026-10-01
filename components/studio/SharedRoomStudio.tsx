@@ -1,7 +1,10 @@
 "use client";
+import {useWorkspace} from "@/components/workspace/WorkspaceContext";
 import {useAuth} from "@/lib/auth-context";
 import {canUse3D} from "@/lib/plan";
 import {useUpgrade} from "@/lib/upgrade-context";
+import dynamic from "next/dynamic";
+import {usePlannerStore} from "@/lib/store";
 import {useMemo,useRef,useState} from "react";
 import type {FurnitureItem,Product,SelectedRoom,StyleId} from "@/lib/types";
 import type {SavedEditorState} from "@/lib/studio-save";
@@ -10,15 +13,19 @@ import {syncProductFurniture} from "@/lib/product-model";
 import StaticRoomView from "@/components/room/StaticRoomView";
 import RoomScene,{type RoomSceneHandle} from "./RoomScene";
 import s from "./Studio.module.css";
+const RoomCanvas=dynamic(()=>import("@/components/canvas/RoomCanvas"),{ssr:false});
 export default function SharedRoomStudio({room,items:savedItems,style,products,editor}:{room:SelectedRoom;items:FurnitureItem[];style:StyleId;products:Product[];editor?:SavedEditorState}){
  const items=useMemo(()=>syncProductFurniture(savedItems,products.filter(p=>!editor?.unplacedItemIds.includes(p.id)),room),[savedItems,products,editor,room]);
- const [requestedView,setView]=useState<"2d"|"3d">("3d"),ref=useRef<RoomSceneHandle>(null);
- const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade(),allowed=!loading&&canUse3D(profile);
- const view=allowed?requestedView:"2d";
+ const [requestedView,setRequestedView]=useState<"2d"|"3d">("3d"),ref=useRef<RoomSceneHandle>(null);
+ const workspace=useWorkspace();
+ const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade(),allowed=!loading&&(canUse3D(profile)||workspace?.ownerPro===true);
+ const workspaceView=usePlannerStore(st=>st.plannerView);
+ const view=allowed?(workspace?workspaceView:requestedView):"2d";
+ const setView=(v:"2d"|"3d")=>workspace?usePlannerStore.getState().setPlannerView(v):setRequestedView(v);
  const visible=visibleFurniture(items,editor?.hiddenItemIds??[],editor?.excluded??[]);
  return <section className={s.sharedViewer} aria-label="Shared room preview">
    <div className={s.sharedTools} role="group" aria-label="Shared room view"><button aria-pressed={view==="3d"} onClick={()=>allowed?setView("3d"):openUpgrade("room-3d")}>3D room{!allowed&&" · Pro"}</button><button aria-pressed={view==="2d"} onClick={()=>setView("2d")}>2D plan</button>{view==="3d"&&<button onClick={()=>ref.current?.preset("room")}>Reset view</button>}</div>
-   <div className={s.sharedStage}>{view==="3d"?<RoomScene ref={ref} room={room} items={items} hidden={editor?.hiddenItemIds??[]} excluded={editor?.excluded??[]} locked={[]} selectedId={null} style={style} products={products} readOnly onFallback={()=>setView("2d")}/>:<div className={s.sharedPlan}><StaticRoomView lengthFt={room.lengthFt} widthFt={room.widthFt} furniture={visible} outline={roomOutline(room)}/></div>}</div>
-   <p className={s.sharedNote}>{view==="3d"?"Drag to look around. Furniture models and unmeasured heights are approximate.":"Shared 2D plan. Pro members can explore this room in 3D."}</p>
+   <div className={s.sharedStage}>{view==="3d"?<RoomScene ref={ref} room={room} items={items} hidden={editor?.hiddenItemIds??[]} excluded={editor?.excluded??[]} locked={[]} selectedId={null} style={style} products={products} readOnly onFallback={()=>setView("2d")}/>:workspace?<RoomCanvas roomL={room.lengthFt} roomW={room.widthFt} templateId={null} furniture={visible} outline={roomOutline(room)} onMove={()=>{}} onReset={()=>{}} readOnly crossHighlight={false}/>:<div className={s.sharedPlan}><StaticRoomView lengthFt={room.lengthFt} widthFt={room.widthFt} furniture={visible} outline={roomOutline(room)}/></div>}</div>
+   <p className={s.sharedNote}>{view==="3d"?"Drag to look around. Furniture models and unmeasured heights are approximate.":allowed?"Shared 2D plan. Switch to 3D above to look around.":"Shared 2D plan. Pro members can explore this room in 3D."}</p>
  </section>;
 }

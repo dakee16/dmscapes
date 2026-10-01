@@ -19,6 +19,7 @@ const COLUMNS: {
   {
     heading: "Product",
     links: [
+      { label: "My rooms", href: "/rooms" },
       { label: "How it works", href: "/#how-it-works", anchor: true },
       { label: "Vibes & styles", href: "/#vibes", anchor: true },
       { label: "Colleges", href: "/colleges" },
@@ -36,6 +37,7 @@ const COLUMNS: {
       { label: "FAQ", href: "/faq" },
       { label: "Contact", href: "/contact" },
       { label: "Feedback", feedback: true },
+      { label: "Report a problem", href: "/report" },
     ],
   },
   {
@@ -84,7 +86,7 @@ export default function Footer() {
       <div className="dm-footer-grid">
         <div className="dm-footer-brand">
           <Wordmark />
-          <p>Your next chapter, planned.</p>
+          <p>Plan it. Shop it. Make it yours.</p>
           <small>©︎ 2026 Dormscape</small>
         </div>
         {COLUMNS.map((col) => (

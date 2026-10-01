@@ -8,6 +8,7 @@ import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { passwordMeetsPolicy } from "@/lib/password";
 import PasswordChecklist from "@/components/auth/PasswordChecklist";
+import DeleteAccountSection from "@/components/account/DeleteAccountSection";
 import type { UsernameCheckResponse } from "@/lib/api-types";
 
 const USERNAME_RE = /^[A-Za-z0-9._]{3,20}$/;
@@ -337,6 +338,7 @@ export default function AccountSettingsPage() {
                   <a href="#profile-details">Profile <span aria-hidden="true">↘︎</span></a>
                   <a href="#email-details">Email <span aria-hidden="true">↘︎</span></a>
                   <a href="#security-details">Security <span aria-hidden="true">↘︎</span></a>
+                  <a href="#delete-account">Delete account <span aria-hidden="true">↘︎</span></a>
                 </nav>
               </aside>
               <div className={s.stack}>
@@ -554,6 +556,7 @@ export default function AccountSettingsPage() {
                 </div>
               )}
                 </section>
+                <DeleteAccountSection onLeave={() => { guardedRef.current = true; }} />
               </div>
               </div>
             </div>

@@ -52,6 +52,8 @@ export function productVisual(product: Product) {
 }
 
 export function productForFurniture(item: FurnitureItem, products: Product[]): Product | undefined {
+  if(item.inventory && !item.product_id && item.type!=="bed")return undefined;
+  if(item.product_id){const exact=products.find(p=>p.id===item.product_id);if(exact)return exact;}
   return products.find(p => p.id === item.id) ?? products.find(p => p.category === furnitureCategory(item));
 }
 
@@ -95,7 +97,7 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
   let changed = false;
   const result = items.map(f => {
     const p = productForFurniture(f, products);
-    if (f.built_in || !p || f.product_id === p.id) return f;
+    if (f.inventory || f.built_in || !p || f.product_id === p.id) return f;
     changed = true;
     const visual = productVisual(p), defaults = DEFAULT_SIZE[visual.kind];
     const host = furnitureHost(f, items);
@@ -134,8 +136,9 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
   });
   for (let i=0;i<result.length;i++) if(result[i]!==items[i]) clearPosition(result[i],result,room);
   for (const p of products) {
+    if(result.length>=60)break;
     // Custom items have their own explicit placed/unplaced workflow.
-    if (p.id.startsWith("custom-") || result.some(f => f.id === p.id || (!f.built_in && furnitureCategory(f) === p.category)) || p.category === "bedding") continue;
+    if (p.id.startsWith("custom-") || result.some(f => f.id === p.id || (!f.inventory && !f.built_in && furnitureCategory(f) === p.category)) || p.category === "bedding") continue;
     const visual = productVisual(p), size = DEFAULT_SIZE[visual.kind] ?? [.8,.8,1];
     const wall = ["curtains", "art", "lights", "wall-shelf", "macrame"].includes(visual.kind);
     const surface = ["organizer", "desk-mat", "riser", "fan", "candle", "books", "towels", "caddy", "decor", "plant"].includes(visual.kind);

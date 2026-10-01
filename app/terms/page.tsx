@@ -48,7 +48,7 @@ const SUMMARY = [
   "We don't sell or ship products. Returns, refunds, and faulty items are handled by Amazon, not us.",
   "Paid Dormscape features (Plus, Flex credits, Pro) are final and non-refundable; we don't entertain refunds or payment disputes on them.",
   "We're not affiliated with any college; dorm data comes from public sources, not an official record.",
-  "An account is required to generate and save designs. You can ask us to delete yours anytime.",
+  "An account is required to generate and save designs. You can delete yours in Account settings.",
   "Unsaved designs can be lost, so save before you leave the page.",
 ];
 
@@ -76,7 +76,7 @@ export default function TermsPage() {
           {/* Prominent "last updated" badge. */}
           <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-card px-3 py-1 font-mono text-xs font-medium uppercase tracking-wide text-ink-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-cobalt" aria-hidden="true" />
-            Last updated: September 24, 2026
+            Last updated: September 28, 2026
           </p>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft">
             Dormscape is a free tool. These terms explain what that means: what you can
@@ -251,8 +251,11 @@ export default function TermsPage() {
             <SectionHeading n={8} title="Accounts" />
             <p className={P}>
               An account is required to generate and save a design, manage credits,
-              and return to saved rooms later. You can request that your account and
-              associated data be deleted at any time by emailing us. See the{" "}
+              and return to saved rooms later. You can delete your account in{" "}
+              <Link href="/account/settings#delete-account" className={TEXT_LINK}>Account settings</Link>
+              {" "}or contact us for help. Deletion is permanent and removes paid access,
+              unused credits and rooms you own, including shared rooms for their members.
+              It does not issue a refund or cancel retailer orders. See the{" "}
               <Link href="/privacy" className={TEXT_LINK}>
                 Privacy Policy
               </Link>{" "}
@@ -263,16 +266,19 @@ export default function TermsPage() {
           <section id="saving-your-design" className="mt-14 scroll-mt-24">
             <SectionHeading n={9} title="Saving your design" />
             <p className={P}>
-              Dormscape does not save your room design automatically. A design you
-              generate lives only in your browser until you choose to save it to
-              an account. If you leave, refresh, or close the page before saving,
-              that design is lost, and we can&rsquo;t recover it for you. Saving is
-              free and unlimited once you have an account, so when a design is
-              ready, save it before you navigate away. We&rsquo;re not responsible
-              for unsaved designs that are lost this way.
+              Dormscape keeps a recovery draft on your device when browser storage
+              is available. It can survive refreshing or closing the tab, but
+              clearing browser data, replacing the draft, or using private browsing
+              can remove it. This draft is not a cloud backup and does not transfer
+              between devices. Use Save design to keep a named copy in your account.
+              Saving is free and unlimited. Shared room links show a saved snapshot,
+              including its roommate assignments and layout alternatives. Anyone
+              with the link can read posted review comments; comments do not edit
+              the original room.
             </p>
           </section>
 
+          <section id="shared-workspaces" className="mt-14 scroll-mt-24"><h2 className="text-2xl font-semibold">Shared room workspaces</h2><p className={P}>Every account can keep personal workspaces. Pro includes hosting one active shared workspace with up to four people, including its owner. Invited members join free with editing or comment access. The host's Pro access applies inside that shared room; it does not upgrade a guest's personal account. Email invitations reserve a place for seven days and require the recipient to sign in with that verified email address. The owner can cancel invitations, remove members, or make a room personal. Making a room personal removes invited members. If the host no longer has Pro, invited members retain read access but cannot make shared changes.</p><p className={P}>Workspace changes save to the account when the app reports that saving succeeded. Conflicting edits require review. We retain the latest 20 room versions; a restored version replaces the current layout and shopping state for all members. Keep exported copies of important work. Generation credits are separate from room storage: saving, manual editing, invitations, and view changes do not spend credits. Guests cannot spend a host's generation credits.</p><p className={P}>Deleting a workspace removes its membership, invitations, comments, and versions. Original saved designs remain separate. Purchasing assignments help roommates coordinate; they do not create payments or settle debts.</p></section>
           <section id="changes" className="mt-14 scroll-mt-24">
             <SectionHeading n={10} title="Changes to these terms" />
             <p className={P}>

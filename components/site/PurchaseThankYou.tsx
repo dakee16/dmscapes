@@ -31,6 +31,7 @@ const COPY: Record<Tier, { title: string; blurb: string; perks: string[] }> = {
     perks: [
       `${PRO_INITIAL_CREDITS} included plan credits, with free saving`,
       "3D Room Builder and live 3D Room Studio",
+      "Host one shared room with up to four people",
       "Create your own vibe",
       "All 9 vibes unlocked",
       "PDF + PNG export and side-by-side compare",

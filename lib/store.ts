@@ -7,8 +7,22 @@ import { bedSurfaceHeight, itemElevation, itemHeight, modelKind, roomOutline } f
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId } from "./types";
+import { DEFAULT_PLANNING, OWNER_COLORS, type PlanningDetails } from "./planning";
+import { FURNITURE_LIBRARY, findFreePosition, newPiece } from "./furniture-library";
+import { furnitureCategory } from "./highlight";
+import { plannerStorage } from "./planner-storage";
 
 export interface PlannerState {
+  planning: PlanningDetails;
+  checkHighlight: {points:import("./types").Point[];label:string}|null;
+  savedFingerprint: string | null;
+  savedByUserId: string | null;
+  updatePlanning: (patch:Partial<PlanningDetails>)=>void;
+  startManual: (empty?:boolean)=>void;
+  addLibraryPiece: (key:string)=>string|null;
+  updateInventoryItem: (id:string,patch:Partial<FurnitureItem>)=>void;
+  duplicateItem: (id:string)=>string|null;
+  removeInventoryItem: (id:string)=>void;
   // Step 1
   college: { id: string | null; name: string } | null;
   dorm: { id: string; name: string } | null;
@@ -109,6 +123,10 @@ export interface PlannerState {
 }
 
 const initial = {
+  planning: DEFAULT_PLANNING,
+  checkHighlight: null,
+  savedFingerprint: null,
+  savedByUserId: null,
   plannerView: "2d",
   college: null,
   dorm: null,
@@ -136,11 +154,37 @@ export const usePlannerStore = create<PlannerState>()(
   persist(
     (set, get) => ({
       ...initial,
+      updatePlanning: patch=>set(s=>({planning:{...s.planning,...patch}})),
+      startManual: (empty=false)=>set(s=>({style:"minimalist",customVibe:null,customProducts:null,swaps:{},excluded:null,
+        planning:{...DEFAULT_PLANNING,mode:"manual",roommates:Array.from({length:s.room?.occupants??1},(_,i)=>({id:`person-${i+1}`,name:i===0?"You":`Roommate ${i+1}`,color:OWNER_COLORS[i%OWNER_COLORS.length]}))},
+        furniture:empty?[]:null,templateId:empty?"manual-empty":null,customItems:[],unplacedItemIds:[],hiddenItemIds:[],lockedItemIds:[],selectedItemId:null,savedFingerprint:null})),
+      addLibraryPiece: key=>{
+        const s=get(),piece=FURNITURE_LIBRARY.find(p=>p.key===key);if(!piece||!s.room||(s.furniture?.length??0)>=60)return null;
+        const id=`piece-${crypto.randomUUID()}`,item=newPiece(piece,s.room,s.furniture??[],id);
+        const firstBed=piece.type==="bed"&&!s.furniture?.some(f=>["bed","bunk"].includes(modelKind(f)));
+        const bedSize=piece.key==="full"?"full":piece.key==="twin"?"twin":"twin_xl";
+        set({furniture:[...(s.furniture??[]),item],selectedItemId:id,selectedCategory:null,...(firstBed?{room:{...s.room,bedSize}}:{})});return id;
+      },
+      updateInventoryItem: (id,patch)=>set(s=>{const before=s.furniture?.find(f=>f.id===id);if(!before||Object.entries(patch).every(([k,v])=>before[k as keyof FurnitureItem]===v))return {};
+        const after={...before,...patch,id:before.id},surface=(f:FurnitureItem)=>["bed","bunk"].includes(modelKind(f))?bedSurfaceHeight(f):itemHeight(f),lift=surface(after)-surface(before);
+        return {furniture:s.furniture!.map(f=>f.id===id?after:f.parent_id===id&&lift&&itemElevation(f,s.furniture!)>0?{...f,elevation_ft:Math.max(0,itemElevation(f,s.furniture!)+lift)}:f)};
+      }),
+      duplicateItem: id=>{
+        const s=get(),item=s.furniture?.find(f=>f.id===id);if(!item||!s.room||!item.movable||(s.furniture?.length??0)>=60)return null;
+        const nextId=`piece-${crypto.randomUUID()}`,copy={...item,id:nextId,label:item.label+" copy",inventory:true,parent_id:undefined,product_id:undefined,product_category:undefined};
+        const placed=findFreePosition(copy,s.room,s.furniture??[])??{...copy,x_ft:item.x_ft+.5,y_ft:item.y_ft+.5};
+        set({furniture:[...s.furniture!,placed],selectedItemId:nextId,selectedCategory:null});return nextId;
+      },
+      removeInventoryItem: id=>set(s=>{const item=s.furniture?.find(f=>f.id===id),category=item&&!item.inventory&&!item.built_in?furnitureCategory(item):null;
+        return {furniture:s.furniture?.filter(f=>f.id!==id).map(f=>f.parent_id===id?{...f,parent_id:undefined,elevation_ft:0}:f)??null,
+        customItems:s.customItems.filter(p=>p.id!==id),unplacedItemIds:s.unplacedItemIds.filter(x=>x!==id),
+        excluded:category&&!s.customItems.some(p=>p.id===id)?[...new Set([...(s.excluded??[]),category])]:s.excluded,
+        hiddenItemIds:s.hiddenItemIds.filter(x=>x!==id),lockedItemIds:s.lockedItemIds.filter(x=>x!==id),selectedItemId:null,selectedCategory:null};}),
       setPlannerView: (plannerView) => set({ plannerView }),
       setCollege: (college) => set({ college, dorm: null, room: null }),
       setDorm: (dorm) => set({ dorm, room: null }),
       setRoom: (room) =>
-        set({ room, templateId: null, furniture: null, excluded: null, hiddenItemIds: [], lockedItemIds: [], customItems: [], unplacedItemIds: [] }),
+        set({ room, templateId: null, furniture: null, excluded: null, hiddenItemIds: [], lockedItemIds: [], customItems: [], unplacedItemIds: [],planning:{...DEFAULT_PLANNING},savedFingerprint:null }),
       // Selecting a catalog style clears any custom-vibe result so its products
       // never leak into a normal plan.
       setStyle: (style) =>
@@ -152,13 +196,12 @@ export const usePlannerStore = create<PlannerState>()(
           customProducts: null,
           customMock: false,
           customRegenUsed: false,
-          customItems: [],
-          unplacedItemIds: [],
         }),
       setBudget: (budget) => set({ budget, swaps: {}, excluded: null }),
       setCustomResult: (vibe, products, mock) =>
         set({
           style: "custom",
+          planning: {...get().planning,mode:"generated"},
           customVibe: vibe,
           customProducts: products,
           customMock: mock,
@@ -200,7 +243,7 @@ export const usePlannerStore = create<PlannerState>()(
         return error;
       },
       resetLayout: (furniture) =>
-        set({ furniture: furniture.map((f) => ({ ...f })), hiddenItemIds: [], lockedItemIds: [] }),
+        set({ furniture: furniture.map((f) => ({ ...f })), selectedItemId:null, selectedCategory:null }),
       swapProduct: (category, productId) =>
         set((s) => ({ swaps: { ...s.swaps, [category]: productId } })),
       setExcluded: (categories) => set({ excluded: [...categories] }),
@@ -264,7 +307,7 @@ export const usePlannerStore = create<PlannerState>()(
             ? s.customItems
             : [...s.customItems, product];
           if (place) {
-            const w = 2, l = 2;
+            const w = product.width_ft || 2, l = product.length_ft || 2;
             const x = s.room ? Math.min(1, Math.max(0, s.room.lengthFt - l)) : 1;
             const y = s.room ? Math.min(1, Math.max(0, s.room.widthFt - w)) : 1;
             const item: FurnitureItem = {
@@ -272,6 +315,7 @@ export const usePlannerStore = create<PlannerState>()(
               owner: "student", x_ft: x, y_ft: y, width_ft: w, length_ft: l,
               rotation_deg: 0, movable: true, built_in: false,
               color_category: "accent", product_category: product.category,
+              product_id:product.id,dimensions_source:product.width_ft&&product.length_ft?"product":"generic",
             };
             const has = (s.furniture ?? []).some((f) => f.id === product.id);
             return {
@@ -291,7 +335,7 @@ export const usePlannerStore = create<PlannerState>()(
         set((s) => {
           const p = s.customItems.find((x) => x.id === id);
           if (!p) return {} as Partial<PlannerState>;
-          const w = 2, l = 2;
+          const w = p.width_ft || 2, l = p.length_ft || 2;
           const x = s.room ? Math.max(0, (s.room.lengthFt - l) / 2) : 1;
           const y = s.room ? Math.max(0, (s.room.widthFt - w) / 2) : 1;
           const item: FurnitureItem = {
@@ -299,6 +343,7 @@ export const usePlannerStore = create<PlannerState>()(
             x_ft: x, y_ft: y, width_ft: w, length_ft: l, rotation_deg: 0,
             movable: true, built_in: false, color_category: "accent",
             product_category: p.category,
+            product_id:p.id,dimensions_source:p.width_ft&&p.length_ft?"product":"generic",
           };
           const has = (s.furniture ?? []).some((f) => f.id === id);
           return {
@@ -312,13 +357,16 @@ export const usePlannerStore = create<PlannerState>()(
           furniture: (s.furniture ?? []).filter((f) => f.id !== id),
           unplacedItemIds: s.unplacedItemIds.filter((x) => x !== id),
         })),
-      resetPlanner: () => set({ ...initial }),
+      resetPlanner: () => {plannerStorage.removeItem("dormscape-planner");set({ ...initial });},
     }),
     {
       name: "dormscape-planner",
-      storage: createJSONStorage(() => sessionStorage),
+      storage: createJSONStorage(() => plannerStorage),
       // Persist only the design data; the highlight fields are transient UI.
       partialize: (s) => ({
+        planning: s.planning,
+        savedFingerprint:s.savedFingerprint,
+        savedByUserId:s.savedByUserId,
         plannerView: s.plannerView,
         college: s.college,
         dorm: s.dorm,

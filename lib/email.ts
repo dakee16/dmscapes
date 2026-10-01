@@ -15,10 +15,13 @@
 //      "Dormscape <contact@dormscape.us>") and CONTACT_TO_EMAIL
 //      (default "info@dormscape.us").
 
-interface SendArgs {
+export interface SendArgs {
   to: string;
   subject: string;
   text: string;
+  html?: string;
+  attachments?: { filename: string; path: string }[];
+  idempotencyKey?: string;
   /** Set so replies go to the person who wrote in, not the sending domain. */
   replyTo?: string;
   from?: string;
@@ -34,7 +37,7 @@ export function isEmailConfigured(): boolean {
  * message, false otherwise (unconfigured, network error, or non-2xx). Never
  * throws, email is always best-effort here.
  */
-export async function sendEmail({ to, subject, text, replyTo, from }: SendArgs): Promise<boolean> {
+export async function sendEmail({ to, subject, text, html, attachments, idempotencyKey, replyTo, from }: SendArgs): Promise<boolean> {
   const key = process.env.RESEND_API_KEY;
   if (!key) return false;
   const sender = from ?? process.env.CONTACT_FROM_EMAIL ?? "Dormscape <contact@dormscape.us>";
@@ -44,17 +47,22 @@ export async function sendEmail({ to, subject, text, replyTo, from }: SendArgs):
       headers: {
         Authorization: `Bearer ${key}`,
         "Content-Type": "application/json",
+        ...(idempotencyKey ? { "Idempotency-Key": idempotencyKey } : {}),
       },
       body: JSON.stringify({
         from: sender,
         to: [to],
         subject,
         text,
+        ...(html ? { html } : {}),
+        ...(attachments ? { attachments } : {}),
         ...(replyTo ? { reply_to: replyTo } : {}),
       }),
+      signal: AbortSignal.timeout(15_000),
     });
     if (!res.ok) {
-      console.error("Resend send failed:", res.status, await res.text().catch(() => ""));
+      // Do not log addresses, message contents, invitation tokens or provider bodies.
+      console.error("Resend send failed:", res.status);
       return false;
     }
     return true;

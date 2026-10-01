@@ -22,7 +22,8 @@ function visit(node) {
 visit(source);
 assert(open && focus && attributes.role);
 assert(editOpenings && activePanel);
-assert(!source.text.includes("RoomDrawCanvas"),"The planner must not mount the room drawing editor");
+assert(source.text.includes("const [editingRoom,setEditingRoom]=useState(false)"),"Room geometry editing starts closed");
+assert(source.text.includes("editingRoom&&isPaid(profile)&&<Modal"),"The geometry editor is explicitly opened and paid-gated");
 for (const view of ["2d","3d"]) {
   let panel, mobileOpen = false, nextFrame, focused = false, restored = false;
   const context = {view, compact:true, mobileOpen:false, preview:false, allowed3D:true,
@@ -47,4 +48,4 @@ for (const view of ["2d","3d"]) {
   assert.equal(vm.runInNewContext(activePanel,context),"room","Opening controls are reachable in both views, including free 2D");
 }
 console.log("PASS: mobile cart opens in 2D and 3D, locks background scrolling, focuses the drawer, and restores focus on close.");
-console.log("PASS: door/window controls open in both views without exposing the drawing canvas or switching views.");
+console.log("PASS: door/window controls open in both views without switching views; wall drawing is a separate paid modal.");

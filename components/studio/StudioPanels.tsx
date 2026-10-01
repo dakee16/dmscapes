@@ -56,7 +56,7 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
 
 export function RoomDetails({room,controls,onAdd,onRemove,onFlip}:{room:SelectedRoom;controls:OpeningControls;onAdd:(kind:WallOpening["kind"])=>void;onRemove:(index:number)=>void;onFlip:(index:number)=>void}){
   const openings=roomOutline(room).openings;
-  return <><p className={s.eyebrow}>Make room for real life</p><h2>Doors &amp; windows</h2>
+  return <><label className={s.field}>Bedding size for product matches<select value={room.bedSize} onChange={e=>usePlannerStore.setState({room:{...room,bedSize:e.target.value as SelectedRoom["bedSize"]}})}><option value="twin_xl">Twin XL</option><option value="twin">Twin</option><option value="full">Full</option><option value="full_xl">Full XL</option><option value="queen">Queen</option></select></label><p className={s.note}>Check the actual mattress size. This setting does not resize your furniture.</p><p className={s.eyebrow}>Make room for real life</p><h2>Doors &amp; windows</h2>
     <p className={s.muted}>Drag one onto a wall. Or tap to add, then drag it into place.</p>
     <div className={s.openingTools}>
       {(["door","window"] as const).map(kind=><button key={kind} type="button" draggable onDragStart={e=>{e.dataTransfer.setData(OPENING_DRAG_TYPE+"-"+kind,kind);e.dataTransfer.effectAllowed="copy";}} onClick={()=>onAdd(kind)}>

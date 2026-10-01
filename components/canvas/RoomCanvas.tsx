@@ -26,6 +26,9 @@ import { CATEGORY_COLORS, styleById } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import { bedLabel, isBunkBed } from "@/lib/bedding";
+import { useWorkspace, useWorkspacePeople } from "@/components/workspace/WorkspaceContext";
+import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
+import { ownerName } from "@/lib/planning";
 import { clamp, footprint, invalidItems, layerOf, pointInPolygon, rotateFurniture } from "./geometry";
 
 import { createPortal } from "react-dom";
@@ -42,6 +45,7 @@ function Icon({ path }: { path: string }) {
 }
 
 export interface RoomCanvasHandle {
+  focusItem: (id:string)=>void;
   /** PNG data URL of the current layout with a Dormscape watermark. */
   exportPNG: () => string | null;
 }
@@ -183,6 +187,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   ref
 ) {
   const dock = useCanvasDock();
+  const workspace = useWorkspace();
   useEffect(() => { brandImage(); }, []);
   const [openingPreview,setOpeningPreview]=useState<{index:number|null;opening:WallOpening}|null>(null);
   const openingCancelled=useRef(false);
@@ -220,6 +225,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const hoveredCategory = usePlannerStore((s) => s.hoveredCategory);
   const selectedCategory = usePlannerStore((s) => s.selectedCategory);
   const selectedItemId = usePlannerStore((s) => s.selectedItemId);
+  const planning = usePlannerStore(s=>s.planning);
+  const people = useWorkspacePeople(planning.roommates);
+  const checkHighlight = usePlannerStore(s=>s.checkHighlight);
   const setHoveredCategory = usePlannerStore((s) => s.setHoveredCategory);
   const toggleSelectedItem = usePlannerStore((s) => s.toggleSelectedItem);
   const clearSelectedCategory = usePlannerStore((s) => s.clearSelectedCategory);
@@ -311,7 +319,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const visible = useMemo(
     () =>
       ordered.filter((f) => {
-        if (!f.product_category) return true;
+        if (f.inventory || !f.product_category) return true;
         const cat = furnitureCategory(f);
         return !(cat && hiddenSet.has(cat));
       }),
@@ -374,6 +382,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const justDragged = () => Date.now() - dragGuard.current < 250;
 
   function handleItemClick(f: FurnitureItem) {
+    if (readOnly && workspace?.commentOn && !panMode && !justDragged()) { workspace.commentOn(`furniture:${f.id}`); return; }
     if (readOnly || panMode || justDragged()) return;
     // Pin the item itself (rotate target) plus its product category so the
     // product-list cross-highlight keeps working exactly as before.
@@ -381,6 +390,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   }
 
   useImperativeHandle(ref, () => ({
+    focusItem: id=>{const f=furniture.find(f=>f.id===id);if(!f)return;const b=footprint(f),z=1.35;setZoom(z);setStagePos({x:stageW/2-(fitted.x+(b.x+b.w/2)*pxFt)*z,y:stageH/2-(fitted.y+(b.y+b.h/2)*pxFt)*z});},
     exportPNG: () => {
       const stage = stageRef.current;
       if (!stage) return null;
@@ -485,7 +495,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const toolbarHidden = toolbarItem ? hiddenItemIds.includes(toolbarItem.id) : false;
   const toolbarLocked = toolbarItem ? lockedItemIds.includes(toolbarItem.id) : false;
   const canEditItem = !!toolbarItem && !toolbarLocked && !toolbarHidden;
-  const toolbarDeletable = !!toolbarItem && !toolbarItem.built_in && !toolbarLocked && !!furnitureCategory(toolbarItem) && !!onDeleteItem;
+  const toolbarDeletable = !!toolbarItem && !toolbarLocked && (!!toolbarItem.inventory || (!toolbarItem.built_in && !!furnitureCategory(toolbarItem))) && !!onDeleteItem;
   const selectedFootprint = toolbarItem ? footprint(toolbarItem) : null;
   const rotationCenter = selectedFootprint ? {
     x: stagePos.x + (fitted.x + (selectedFootprint.x + selectedFootprint.w / 2) * pxFt) * zoom,
@@ -847,6 +857,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                     shadowOffsetY={draggable ? 1 : 0}
                   />
                   <Group opacity={isHidden ? .12 : 1} listening={false}><FurnitureGlyph item={f} scale={pxFt} color={color} /></Group>
+                  {planning.showOwners&&!isHidden&&<Rect name="editor-only" width={w} height={h} stroke={people.find(r=>r.id===f.assigned_to)?.color??"#68748b"} strokeWidth={2.5} fillEnabled={false} listening={false}/>}
                   {bad && !isHidden && <Rect name="editor-only" width={w} height={h} stroke={RED} strokeWidth={2} fillEnabled={false} listening={false} />}
                   {/* Cross-highlight ring, cobalt glow, distinct from the red
                       collision flag; sits outside the item so small unlabeled
@@ -878,11 +889,11 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               {showLabels && visible.map(f => {
                 const fp = footprint(f);
                 const w = fp.w * pxFt, h = fp.h * pxFt;
-                if (w < 50 || h < 28 || hiddenItemIds.includes(f.id) || !["bed", "desk", "dresser", "rug"].includes(f.type)) return null;
+                if (w < 38 || h < 24 || hiddenItemIds.includes(f.id)) return null;
                 const size = Math.max(9, Math.min(11, w * .14));
                 const stacked = isBunkBed(f) && w < 125;
-                const label = stacked ? bedLabel(f).replace(" · ", "\n") : bedLabel(f);
-                const labelH = stacked ? 30 : 16;
+                const label = planning.showOwners?`${bedLabel(f)}\n${ownerName(f.assigned_to,people)}`:stacked ? bedLabel(f).replace(" · ", "\n") : bedLabel(f);
+                const labelH = stacked||planning.showOwners ? 30 : 16;
                 const width = Math.min(w-8, (Math.max(...label.split("\n").map(line=>line.length))+2)*size*.61);
                 const x = (w-width)/2;
                 const y = (f.type === "desk" && f.rotation_deg % 180 === 0 ? h*.85 : h/2) - labelH/2;
@@ -897,6 +908,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 </Group>;
               })}
             </Group>
+            {checkHighlight&&!readOnly&&<Group name="editor-only" listening={false}><Line points={checkHighlight.points.flatMap(p=>[PAD+p.x*pxFt,PAD+p.y*pxFt])} closed fill="#ffbe3530" stroke="#c88910" strokeWidth={2/zoom} dash={[6/zoom,4/zoom]}/></Group>}
             {drawn&&drawn.openings.map((op, i) => (
                   <Group key={`opening-${i}`} name="opening" draggable={!readOnly&&!panMode&&!!dock&&i<(outline?.openings.length??0)}
                     onClick={e=>{e.cancelBubble=true;if(!readOnly&&!panMode)dock?.openings.select(i);}}
@@ -927,6 +939,10 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         </Stage>
       )}
 
+      {pxFt > 0 && workspace && <CollaborationOverlay surface="plan" projection={{
+        read:(x,y)=>({x:((x-stagePos.x)/zoom-fitted.x)/(pxFt*roomL),y:((y-stagePos.y)/zoom-fitted.y)/(pxFt*roomW)}),
+        draw:(x,y)=>({x:stagePos.x+(fitted.x+x*pxFt*roomL)*zoom,y:stagePos.y+(fitted.y+y*pxFt*roomW)*zoom}),
+      }} pins={activeFurniture.map(f=>{const b=footprint(f);return {id:f.id,label:f.label,x:(b.x+b.w/2)/roomL,y:(b.y+b.h/2)/roomW};})}/>}
       {pxFt > 0 && toolbarItem && canEditItem && onSetRotation && !panMode && !dragging && rotationCenter && rotationPosition &&
         <RotationHandle key={toolbarItem.id} label={toolbarItem.label} center={rotationCenter} position={rotationPosition} degrees={toolbarItem.rotation_deg}
           onPreview={degrees=>setRotationPreview({id:toolbarItem.id,degrees})} onCommit={finishRotation} onCancel={()=>finishRotation()}/>}

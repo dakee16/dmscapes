@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import type { Product } from "@/lib/types";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
+import { fingerprintState } from "@/lib/planner-fingerprint";
+import { useWorkspace } from "@/components/workspace/WorkspaceContext";
+import { shoppingProducts } from "@/lib/planning";
 import { usePlannerStore } from "@/lib/store";
 import { track } from "@/lib/analytics";
 import { useAuth } from "@/lib/auth-context";
@@ -31,17 +34,23 @@ export default function ActionBar({
   getPng,
   onShop,
   shopOpen,
+  exportsOnly = false,
 }: {
   products: Product[];
   getPng: () => string | null;
   onShop: () => void;
   shopOpen: boolean;
+  exportsOnly?: boolean;
 }) {
+  const planning=usePlannerStore(s=>s.planning);
+  const buying=shoppingProducts(products,planning);
+  const pendingSave=useRef(false);
   const { user, profile, openAuthModal } = useAuth();
   const { openUpgrade } = useUpgrade();
   // PDF/PNG export are premium features: unlocked for Pro and for anyone who has
   // ever bought Plus (stays unlocked even at 0 credits).
-  const features = hasFeatures(profile);
+  const workspace = useWorkspace();
+  const features = hasFeatures(profile) || !!workspace?.ownerPro;
   const actionRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [savePanel, setSavePanel] = useState(false);
@@ -53,6 +62,7 @@ export default function ActionBar({
   const [shareFallbackUrl, setShareFallbackUrl] = useState("");
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  useEffect(()=>{if(user&&pendingSave.current){pendingSave.current=false;setName(usePlannerStore.getState().planning.name);setSavePanel(true);setSavedUrl("");}},[user]);
   useEffect(() => () => { if (toastTimer.current) clearTimeout(toastTimer.current); }, []);
 
   useEffect(() => {
@@ -95,6 +105,7 @@ export default function ActionBar({
         width_ft: s.room.widthFt,
         room_type: s.room.type,
         occupants: s.room.occupants,
+        bed_size: s.room.bedSize,
         estimated: s.room.dimsEstimated ?? false,
         // Hand-drawn rooms carry their outline so a reopened design keeps its
         // real shape and doors/windows/closets.
@@ -102,7 +113,7 @@ export default function ActionBar({
         studio: s.room.studio,
         editor: {hiddenItemIds:s.hiddenItemIds,lockedItemIds:s.lockedItemIds,excluded:s.excluded??[],
           customItems:s.customItems,unplacedItemIds:s.unplacedItemIds,customProducts:s.customProducts,
-          customVibe:s.customVibe,customMock:s.customMock,customRegenUsed:s.customRegenUsed,cartProducts:products},
+          customVibe:s.customVibe,customMock:s.customMock,customRegenUsed:s.customRegenUsed,cartProducts:products,planning:s.planning},
       },
       style: s.style,
       budget: s.budget,
@@ -116,6 +127,7 @@ export default function ActionBar({
   // anonymous "copy share link" flow. Saving is unlimited, so there's no credit to
   // spend. Returns the share URL, or null on failure.
   async function saveRoom(designName?: string): Promise<{ url: string } | null> {
+    const fingerprint=fingerprintState(usePlannerStore.getState());
     const body = buildSaveRequest();
     if (!body) return null;
     if (designName) body.name = designName;
@@ -136,6 +148,7 @@ export default function ActionBar({
       return null;
     }
     const data = (await res.json()) as SaveRoomResponse;
+    if(designName)usePlannerStore.setState({savedFingerprint:fingerprint,savedByUserId:user?.id??null});
     return { url: `${window.location.origin}/room/${data.id}` };
   }
 
@@ -166,7 +179,7 @@ export default function ActionBar({
       openUpgrade("pdf");
       return;
     }
-    if (products.length === 0) {
+    if (buying.length === 0) {
       showToast("Nothing to list yet.");
       return;
     }
@@ -183,12 +196,12 @@ export default function ActionBar({
         roomLine,
         styleName: s.style ? designDisplayName(s.style, s.customVibe) : null,
         budget: s.budget,
-        items: products.map((p) => ({
+        items: buying.map((p) => ({
           name: p.name,
           category: CATEGORY_LABELS[p.category],
           price: p.price,
         })),
-        total: totalFor(products),
+        total: totalFor(buying),
       });
       track("plus_pdf_downloaded");
     } catch {
@@ -225,9 +238,11 @@ export default function ActionBar({
   function handleSaveClick() {
     setMenuOpen(false);
     if (!user) {
+      pendingSave.current=true;
       openAuthModal("save-design");
       return;
     }
+    setName(usePlannerStore.getState().planning.name);setSavedUrl("");
     setSavePanel((v) => !v);
   }
 
@@ -242,6 +257,7 @@ export default function ActionBar({
     // Saving is unlimited: no credit check, just save.
     setBusy("save");
     try {
+      usePlannerStore.getState().updatePlanning({name:trimmed});
       const result = await saveRoom(trimmed);
       if (result) {
         setSavedUrl(result.url);
@@ -258,13 +274,13 @@ export default function ActionBar({
     <>
       <div ref={actionRef} className="dm-design-actions">
         <div className="dm-design-actions-main" role="group" aria-label="Shopping cart, save and share">
-          <div className="dm-cart-action">
+          {!exportsOnly && <div className="dm-cart-action">
             <button type="button" aria-expanded={shopOpen} aria-controls="studio-panel"
               onClick={()=>{setMenuOpen(false);setSavePanel(false);onShop();}}>
-              Cart ({products.length})
+              Cart ({buying.length})
             </button>
           </div>
-          <div className="relative">
+          }<div className="relative">
             <button
               type="button"
               onClick={() => { setMenuOpen((v) => !v); setSavePanel(false); }}
@@ -272,7 +288,7 @@ export default function ActionBar({
               aria-controls="design-share-options"
               className="dm-share-trigger inline-flex cursor-pointer items-center justify-center gap-2 border border-ink/20 bg-paper px-4 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
             >
-              Share room <span aria-hidden="true">↗︎</span>
+              {exportsOnly ? "Export" : "Share room"} <span aria-hidden="true">↗︎</span>
             </button>
             {menuOpen && (
               <div id="design-share-options" className="dm-share-menu snap-in border border-ink/15 bg-white p-1.5" role="group" aria-label="Sharing and downloads">
@@ -288,14 +304,14 @@ export default function ActionBar({
                     </span>
                   )}
                 </button>
-                <button
+                {!exportsOnly && <button
                   type="button"
                   onClick={handleCopyLink}
                   disabled={busy === "link"}
                   className="block w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper disabled:opacity-60"
                 >
                   {busy === "link" ? "Creating link…" : "Copy share link"}
-                </button>
+                </button>}
                 <button
                   type="button"
                   onClick={handleDownloadPdf}
@@ -319,7 +335,7 @@ export default function ActionBar({
             )}
           </div>
 
-          <div className="dm-save-action">
+          {!exportsOnly && <div className="dm-save-action">
             {/* Primary action: saving is free and unlimited, and it's the one
                 thing that keeps a design from being lost, so it leads the bar. */}
             <button
@@ -344,7 +360,7 @@ export default function ActionBar({
               </svg>
               Save design
             </button>
-          </div>
+          </div>}
         </div>
 
         {savePanel && user && (

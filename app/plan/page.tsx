@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import BrandLoader from "@/components/site/BrandLoader";
 import { useEffect, useMemo, useState } from "react";
@@ -223,7 +224,7 @@ export default function PlanSelectPage() {
               }}
               className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-4 transition-colors hover:text-cobalt"
             >
-              Enter my room size manually
+              Can’t find your room? Add your own
             </button>
             <button
               type="button"
@@ -234,7 +235,7 @@ export default function PlanSelectPage() {
             </button>
           </div>
 
-          {manualOpen && <ManualEntry mode="school" onSubmit={handleManual} />}
+          {manualOpen && <div><ManualEntry mode="school" onSubmit={handleManual}/><p className="mt-4 text-sm text-ink-soft">Need a different shape? <Link href="/plan/draw" className="font-semibold text-cobalt underline">Draw your room</Link> with Plus, or <Link href="/plan/draw/3d" className="font-semibold text-cobalt underline">build in 3D</Link> with Pro.</p></div>}
         </div>
 
         {/* Next: sticky on mobile, inline on desktop */}

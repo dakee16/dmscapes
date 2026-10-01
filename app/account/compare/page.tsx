@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import SiteHeader from "@/components/site/SiteHeader";
@@ -13,6 +13,8 @@ import { track } from "@/lib/analytics";
 import { getSchool, formatDims } from "@/lib/schools";
 import { styleById } from "@/lib/styles";
 import { formatRoomType } from "@/lib/format";
+import { analyzeRoom, assignedCosts, DEFAULT_PLANNING } from "@/lib/planning";
+import { visibleFurniture } from "@/lib/studio";
 import type { AccountRoomSummary, AccountRoomsResponse } from "@/lib/api-types";
 
 function detailsOf(room: AccountRoomSummary) {
@@ -40,6 +42,9 @@ function DesignColumn({
 }) {
   const room = designs.find((d) => d.id === value);
   const meta = room ? detailsOf(room) : null;
+  const visible=useMemo(()=>room?visibleFurniture(room.furniture??[],room.editor?.hiddenItemIds??[],room.editor?.excluded??[]):[],[room]);
+  const analysis=useMemo(()=>room?.length_ft&&room.width_ft?analyzeRoom(visible,{type:room.room_type,occupants:room.occupants??1,lengthFt:room.length_ft,widthFt:room.width_ft,bedSize:room.bed_size??"twin_xl",source:"manual",outline:room.outline,studio:room.studio},room.editor?.planning?.walkwayFt??2):null,[room,visible]);
+  const cost=room?.editor?.cartProducts?Object.values(assignedCosts(room.furniture??[],room.editor.cartProducts,room.editor.planning??DEFAULT_PLANNING)).reduce((a,b)=>a+b,0):null;
 
   return (
     <div className="flex flex-col dm-account-surface rounded-2xl border border-ink/10 bg-card p-5">
@@ -62,11 +67,12 @@ function DesignColumn({
       {room && meta && (
         <div className="mt-4">
           <div className="overflow-hidden rounded-xl border border-ink/10 bg-white p-2">
-            {room.length_ft && room.width_ft && room.furniture?.length ? (
+            {room.length_ft && room.width_ft && room.furniture ? (
               <RoomThumb
                 lengthFt={room.length_ft}
                 widthFt={room.width_ft}
-                furniture={room.furniture}
+                furniture={visible}
+                outline={room.outline??null}
                 className="h-auto w-full"
               />
             ) : (
@@ -79,6 +85,10 @@ function DesignColumn({
           <dl className="mt-4 space-y-0">
             {[
               ["Budget", `$${room.budget}`],
+              ["To buy", cost===null?"Not recorded":`$${cost.toFixed(2)}`],
+              ["Open floor",analysis?`≈ ${Math.round(analysis.openFloorFt2)} ft²`:"Not recorded"],
+              ["Placement checks",analysis?String(analysis.issues.filter(i=>i.level==="warning").length):"Not recorded"],
+              ["Sleeping places",analysis?`${analysis.beds} / ${room.occupants??1}`:"Not recorded"],
               ["Style", meta.style],
               ["School", meta.place],
               ["Room", meta.roomType],

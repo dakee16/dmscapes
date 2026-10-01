@@ -38,7 +38,8 @@ export default function BuilderEntry(){
     const data=await request(draft) as {room:SelectedRoom};
     if(identity.current!==id)throw Error("Your account changed. Open the builder again to continue.");
     const planner=usePlannerStore.getState();planner.setCollege(null);planner.setRoom(data.room);planner.setPlannerView("3d");
-    router.push("/plan/style");
+    usePlannerStore.getState().startManual();
+    router.push("/plan/result");
   }
   if(uid&&verified===uid&&pro)return <RoomBuilder key={uid} userId={uid} onComplete={complete}/>;
   return <section className={s.landing} aria-labelledby="builder-title">
@@ -47,6 +48,6 @@ export default function BuilderEntry(){
       {error&&<p role="alert" className={s.error}>{error}</p>}
       <p className={s.fine}>Pro only. Existing 2D drawing remains included with Plus and Pro.</p>
     </div><BuilderIllustration/>
-    <ol className={s.featureGrid}><li><span>01 / SHAPE</span><h2>A floor that fits.</h2><p>Start with a rectangle or trace a custom outline. Move corners and enter exact measurements.</p></li><li><span>02 / DETAILS</span><h2>Every little detail.</h2><p>Place doors and windows on your walls. Add built-in closets and set their exact size and position.</p></li><li><span>03 / FURNISH</span><h2>Built. Now make it yours.</h2><p>Choose a vibe and budget. Your drawn room opens in 3D, ready for furniture and shopping.</p></li></ol>
+    <ol className={s.featureGrid}><li><span>01 / SHAPE</span><h2>A floor that fits.</h2><p>Start with a rectangle or trace a custom outline. Move corners and enter exact measurements.</p></li><li><span>02 / DETAILS</span><h2>Every little detail.</h2><p>Place doors and windows on your walls. Add built-in closets and set their exact size and position.</p></li><li><span>03 / FURNISH</span><h2>Built. Now make it yours.</h2><p>Your drawn room opens in 3D, ready to furnish. Choose a vibe and product matches whenever you are ready.</p></li></ol>
   </section>;
 }

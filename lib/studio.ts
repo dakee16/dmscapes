@@ -1,6 +1,7 @@
 import type { FurnitureItem, ProductCategory, RoomOutline, SelectedRoom } from "./types";
 import { furnitureCategory } from "./highlight";
 import { isBunkBed } from "./bedding";
+import { bedMetrics, bedMode } from "./bed-config";
 import { footprint, furnitureContainsPoint, furnitureCorners, furnitureInsidePolygon, furnitureLocalPoint, polygonsOverlap, rectCorners } from "@/components/canvas/geometry";
 
 export interface StudioSettings {
@@ -24,6 +25,8 @@ export function roomOutline(room: SelectedRoom): RoomOutline {
 }
 export function modelKind(item: FurnitureItem): string {
   const t = item.type.toLowerCase();
+  if (bedMode(item)) return bedMode(item)==="bunked"?"bunk":"bed";
+  if (["sofa","lounge","ottoman","radiator","column","microwave"].includes(t)) return t;
   if (["art","lights","lamp","chair","storage","pillow","fridge"].includes(t)) return t;
   if (isBunkBed(item)) return "bunk";
   if (t === "bed") return "bed";
@@ -44,11 +47,12 @@ export function modelKind(item: FurnitureItem): string {
 }
 export function itemHeight(f: FurnitureItem): number {
   if (typeof f.height_ft === "number" && f.height_ft > 0) return f.height_ft;
+  if (bedMetrics(f)) return bedMetrics(f)!.height;
   return ({bed:2,bunk:5.7,desk:2.5,chair:3,wardrobe:6,dresser:3.1,shelf:4.5,rug:.035,
     lamp:1.5,mirror:4.8,art:2.5,plant:2,fridge:2.6,pillow:.4,lights:.15,storage:1.3} as Record<string,number>)[modelKind(f)] ?? 1.5;
 }
 export function bedSurfaceHeight(f: FurnitureItem): number {
-  return isBunkBed(f) ? itemHeight(f)*.3+.195 : itemHeight(f)-.085;
+  return bedMode(f)==="lofted" ? itemHeight(f)*.78+.195 : isBunkBed(f) ? itemHeight(f)*.3+.195 : itemHeight(f)-.085;
 }
 export function itemElevation(f: FurnitureItem, items: FurnitureItem[]): number {
   if (typeof f.elevation_ft === "number") return f.elevation_ft;
@@ -61,7 +65,7 @@ export function itemElevation(f: FurnitureItem, items: FurnitureItem[]): number 
   return host ? ["bed","bunk"].includes(modelKind(host)) ? bedSurfaceHeight(host) : itemHeight(host) : 0;
 }
 export function visibleFurniture(items: FurnitureItem[], hidden: string[], excluded: ProductCategory[]): FurnitureItem[] {
-  return items.filter(f=>!hidden.includes(f.id) && (f.built_in || f.type === "custom" || !furnitureCategory(f) || !excluded.includes(furnitureCategory(f)!)));
+  return items.filter(f=>!hidden.includes(f.id) && (f.inventory || f.built_in || f.type === "custom" || !furnitureCategory(f) || !excluded.includes(furnitureCategory(f)!)));
 }
 export function constrainedPosition(f: FurnitureItem, x: number, y: number, room: SelectedRoom, snap: boolean): {x:number;y:number} {
   const b=footprint(f), round=(n:number)=>snap?Math.round(n*2)/2:Math.round(n*100)/100;
@@ -92,7 +96,10 @@ export function placementIssues(items: FurnitureItem[], room: SelectedRoom, sett
       const oe=itemElevation(other,items);
       const underBed=(modelKind(f)==="storage" && ["bed","bunk"].includes(modelKind(other)) && e+itemHeight(f)<(isBunkBed(other)?itemHeight(other)*.35:itemHeight(other)*.7))||
         (modelKind(other)==="storage" && ["bed","bunk"].includes(k) && oe+itemHeight(other)<(isBunkBed(f)?itemHeight(f)*.35:itemHeight(f)*.7));
-      if(!underBed && polygonsOverlap(corners,furnitureCorners(other),.02) && e<oe+itemHeight(other)-.06 && oe<e+itemHeight(f)-.06){
+      const fitsUnder=(host:FurnitureItem,guest:FurnitureItem)=>{const m=bedMetrics(host);if(!m||!["lofted","raised"].includes(m.mode))return false;
+        if(itemElevation(guest,items)+itemHeight(guest)>itemElevation(host,items)+m.underside-.1)return false;
+        return furnitureCorners(guest).every(p=>{const q=furnitureLocalPoint(host,p);return Math.abs(q.x)<host.width_ft/2-.18&&Math.abs(q.y)<host.length_ft/2-.18;});};
+      if(!underBed && !fitsUnder(f,other) && !fitsUnder(other,f) && polygonsOverlap(corners,furnitureCorners(other),.02) && e<oe+itemHeight(other)-.06 && oe<e+itemHeight(f)-.06){
         add(f.id,"Overlaps "+other.label);add(other.id,"Overlaps "+f.label);
       }
     }

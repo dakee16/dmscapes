@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { sanitizeStudio, sanitizeEditor, sanitizeItem3D } from "@/lib/studio-save";
+import { sanitizeStudio, sanitizeEditor, sanitizeFurnitureList } from "@/lib/studio-save";
 import { nanoid } from "nanoid";
 import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
@@ -24,47 +24,7 @@ function cleanId(value: unknown, max: number): string | null {
 }
 
 /** Whitelist known FurnitureItem fields so arbitrary JSON never lands in the DB. */
-function sanitizeFurniture(input: unknown): FurnitureItem[] | null {
-  if (!Array.isArray(input) || input.length === 0 || input.length > 60) return null;
-  const out: FurnitureItem[] = [];
-  for (const raw of input) {
-    if (typeof raw !== "object" || raw === null) return null;
-    const f = raw as Record<string, unknown>;
-    const id = cleanId(f.id, 60);
-    if (!id || out.some(item=>item.id===id)) return null;
-    const spatial=sanitizeItem3D(f);
-    if(!spatial) return null;
-    for (const key of ["x_ft", "y_ft", "width_ft", "length_ft", "rotation_deg"]) {
-      const n = f[key];
-      if (typeof n !== "number" || !Number.isFinite(n) || Math.abs(n) > 1000) return null;
-    }
-    if((f.width_ft as number)<=0 || (f.length_ft as number)<=0)return null;
-    out.push({
-      ...spatial,
-      id,
-      type: typeof f.type === "string" ? f.type.slice(0, 60) : "unknown",
-      label: typeof f.label === "string" ? f.label.slice(0, 120) : "",
-      owner: typeof f.owner === "string" ? f.owner.slice(0, 20) : "shared",
-      x_ft: f.x_ft as number,
-      y_ft: f.y_ft as number,
-      width_ft: f.width_ft as number,
-      length_ft: f.length_ft as number,
-      rotation_deg: f.rotation_deg as number,
-      movable: Boolean(f.movable),
-      built_in: Boolean(f.built_in),
-      color_category:
-        typeof f.color_category === "string" ? f.color_category.slice(0, 30) : "decor",
-      ...(typeof f.product_category === "string"
-        ? { product_category: f.product_category.slice(0, 40) }
-        : {}),
-    });
-  }
-  for(const item of out){
-    let parent=item.parent_id;const seen=new Set([item.id]);
-    while(parent){if(seen.has(parent))return null;seen.add(parent);const host=out.find(f=>f.id===parent);if(!host)return null;parent=host.parent_id;}
-  }
-  return out;
-}
+function sanitizeFurniture(input: unknown): FurnitureItem[] | null { return sanitizeFurnitureList(input); }
 
 function sanitizeProducts(input: unknown): Record<string, string> | null {
   if (typeof input !== "object" || input === null || Array.isArray(input)) return null;
@@ -162,6 +122,7 @@ export async function POST(request: Request) {
   const templateId = cleanId(body.template_id, 100);
   const dims = body.room_dimensions ?? ({} as SaveRoomRequest["room_dimensions"]);
   const roomType = cleanId(dims.room_type, 60);
+  const bedSizeValid = dims.bed_size == null || ["twin", "twin_xl", "full", "full_xl", "queen"].includes(dims.bed_size);
   const occupants =
     typeof dims.occupants === "number" && dims.occupants >= 1 && dims.occupants <= 8
       ? dims.occupants
@@ -187,7 +148,7 @@ export async function POST(request: Request) {
     !isFeet(dims.width_ft) ||
     !furniture ||
     !products ||
-    outlineBad || spatialBad
+    outlineBad || spatialBad || !bedSizeValid
   ) {
     return NextResponse.json(
       { error: "That design couldn't be saved. Some fields look off." },
@@ -242,6 +203,7 @@ export async function POST(request: Request) {
       width_ft: dims.width_ft,
       room_type: roomType,
       occupants,
+      ...(dims.bed_size ? {bed_size:dims.bed_size} : {}),
       estimated: dims.estimated === true,
       ...(outline ? { outline } : {}),
       ...(studio ? {studio} : {}),

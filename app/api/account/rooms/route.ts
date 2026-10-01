@@ -49,6 +49,10 @@ export async function GET(request: Request) {
     width_ft: r.room_dimensions?.width_ft ?? null,
     furniture: r.furniture_positions ?? null,
     outline: r.room_dimensions?.outline ?? null,
+    studio:r.room_dimensions?.studio,
+    editor:r.room_dimensions?.editor,
+    occupants:r.room_dimensions?.occupants,
+    bed_size:r.room_dimensions?.bed_size,
   }));
 
   return NextResponse.json({ rooms } satisfies AccountRoomsResponse);

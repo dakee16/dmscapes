@@ -1,6 +1,7 @@
 // Geometry + layer rules for the room canvas. Coordinates are in feet,
 // origin top-left, x along room length, y along room width (templates/README.md).
 import type { ClosetRect, FurnitureItem, Point } from "@/lib/types";
+import { bedMetrics } from "@/lib/bed-config";
 
 export interface Footprint {
   x: number;
@@ -233,6 +234,10 @@ export function invalidItems(
 
   for (let i = 0; i < solids.length; i++) {
     for (let j = i + 1; j < solids.length; j++) {
+      const under=(bed:FurnitureItem,guest:FurnitureItem)=>{const metrics=bedMetrics(bed);if(!metrics||!["lofted","raised"].includes(metrics.mode))return false;
+        const top=(guest.elevation_ft??0)+(guest.height_ft??(guest.type==="desk"?2.5:guest.type.includes("chair")?3:3.1));
+        return top<(bed.elevation_ft??0)+metrics.underside-.1 && furnitureCorners(guest).every(p=>{const q=furnitureLocalPoint(bed,p);return Math.abs(q.x)<bed.width_ft/2-.18&&Math.abs(q.y)<bed.length_ft/2-.18;});};
+      if(under(solids[i],solids[j])||under(solids[j],solids[i]))continue;
       if (!polygonsOverlap(furnitureCorners(solids[i]), furnitureCorners(solids[j]))) continue;
       bad.add(solids[i].id);
       bad.add(solids[j].id);

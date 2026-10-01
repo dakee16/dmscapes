@@ -42,7 +42,7 @@ const serif = localFont({
 });
 
 const DESCRIPTION =
-  "Free dorm planner built on real, building-specific dimensions. Pick a vibe, set a budget, and get a layout that fits your room, plus a shoppable Amazon list.";
+  "Plan and furnish your college room with a layout and shoppable Amazon list. Save your ideas in My rooms and coordinate move-in with roommates.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(

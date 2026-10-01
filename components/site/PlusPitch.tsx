@@ -33,6 +33,7 @@ const PERKS: Record<"plus" | "pro", string[]> = {
     `${PRO_INITIAL_CREDITS} included plan credits`,
     "3D Room Builder",
     "Live 3D Room Studio",
+    "Shared room: invite up to three friends",
     "Create your own vibe",
     "Draw your own room",
     "All 9 vibes",
@@ -45,8 +46,8 @@ function SubscriberBanner({ tier }: { tier: "plus" | "pro" }) {
   const label = tier === "pro" ? "Pro" : "Plus";
   const blurb =
     tier === "pro"
-      ? "Your Pro tools are unlocked: 3D room building, live 3D planning, and custom vibes. Top up plan credits whenever you need more."
-      : "All nine preset vibes and your Plus tools are yours, permanently. Pro adds 3D room building, live 3D planning, and custom vibes. Here's to the rooms you'll design.";
+      ? "Your Pro tools are unlocked: 3D room building, live 3D planning, shared room hosting, and custom vibes. Top up plan credits whenever you need more."
+      : "All nine preset vibes and your Plus tools are yours, permanently. Pro adds 3D room building, live 3D planning, shared room hosting, and custom vibes. Here's to the rooms you'll design.";
 
   return (
     <section className="dm-plus mx-auto max-w-6xl px-5 pb-20 sm:px-8 sm:pb-28">

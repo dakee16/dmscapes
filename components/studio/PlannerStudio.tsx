@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState, type ReactNode, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import { CanvasControlsContext } from "@/components/canvas/CanvasControlsContext";
 import { useAuth } from "@/lib/auth-context";
-import { canUse3D } from "@/lib/plan";
+import { canUse3D, isPaid } from "@/lib/plan";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
@@ -12,12 +12,17 @@ import { openingAtPoint, openingCenter, type OpeningControls } from "@/lib/room-
 import ActionBar from "@/components/products/ActionBar";
 import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
 import { ItemInspector, RoomDetails, StyleDetails } from "./StudioPanels";
+import dynamic from "next/dynamic";
+import Modal from "@/components/site/Modal";
+import BrandLoader from "@/components/site/BrandLoader";
 import s from "./Studio.module.css";
 
+const RoomDrawCanvas=dynamic(()=>import("@/components/planner/RoomDrawCanvas"),{ssr:false,loading:()=> <BrandLoader label="Opening room measurements…"/>});
 type Panel="furnish"|"style"|"room"|"shop"|"item"|"checks"|"help";
-export default function PlannerStudio({canvas,get2DPng,shopping,products,total,budget,subtitle,history,onReset,extras,unplaced}:{canvas:ReactNode;get2DPng:()=>string|null;shopping:ReactNode;products:Product[];total:number;budget:number;subtitle:string;history:{canUndo:boolean;canRedo:boolean;undo:()=>void;redo:()=>void};onReset:()=>void;extras?:ReactNode;unplaced?:ReactNode}){
+export default function PlannerStudio({canvas,get2DPng,shopping,products,total,budget,subtitle,history,onReset,extras,unplaced}:{focus2D?:(id:string)=>void;canvas:ReactNode;get2DPng:()=>string|null;shopping:ReactNode;products:Product[];total:number;budget:number;subtitle:string;history:{canUndo:boolean;canRedo:boolean;undo:()=>void;redo:()=>void};onReset:()=>void;extras?:ReactNode;unplaced?:ReactNode}){
   const room=usePlannerStore(st=>st.room)!,items=usePlannerStore(st=>st.furniture)??[];
   const style=usePlannerStore(st=>st.style)??"minimalist",hidden=usePlannerStore(st=>st.hiddenItemIds),excluded=usePlannerStore(st=>st.excluded)??[],locked=usePlannerStore(st=>st.lockedItemIds);
+  const [editingRoom,setEditingRoom]=useState(false);
   const selectedId=usePlannerStore(st=>st.selectedItemId);
   const [selectedOpening,setSelectedOpening]=useState<number|null>(null),[openingError,setOpeningError]=useState("");
   const outline=roomOutline(room);
@@ -30,7 +35,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade();
   const allowed3D=!loading&&canUse3D(profile),preview=view==="3d"&&!allowed3D;
   const activePanel=view==="2d"&&panel!=="room"&&panel!=="checks"?"shop":panel;
-  useEffect(()=>{const media=window.matchMedia("(max-width:780px)");const update=()=>setCompact(media.matches);update();media.addEventListener("change",update);return()=>media.removeEventListener("change",update);},[]);
+  useEffect(()=>{const media=window.matchMedia("(max-width:780px)");const update=()=>{setCompact(media.matches);setMobileOpen(false);};update();media.addEventListener("change",update);return()=>media.removeEventListener("change",update);},[]);
   useEffect(()=>{if(!compact||!mobileOpen)return;const focused=document.activeElement as HTMLElement|null,overflow=document.body.style.overflow;document.body.style.overflow="hidden";const frame=requestAnimationFrame(()=>closeRef.current?.focus({preventScroll:true}));return()=>{cancelAnimationFrame(frame);document.body.style.overflow=overflow;focused?.focus({preventScroll:true});};},[compact,mobileOpen]);
   function editOpenings(){open("room");}
   function enter3D(){setView("3d");setMoveMode(false);}
@@ -161,7 +166,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
             <p className={s.eyebrow}>Your next move</p><h2>Make it yours.</h2><p>Room finishes and shopping details stay in their own tools. Select a placed piece to move it, rotate it, or dial in its dimensions.</p>
             <button className={s.primary} onClick={()=>open("furnish")}>Choose a piece ↗︎</button><button className={s.emptyShop} onClick={()=>open("shop")}>Explore the shopping list</button>
           </div>}
-          {activePanel==="room"&&<>{view==="2d"&&<button className={s.backButton} onClick={()=>open("shop")}>← Shopping list</button>}<RoomDetails room={room} controls={openingControls} onAdd={addOpening} onRemove={removeOpening} onFlip={flipOpening}/><details className={s.disclosure}><summary>View &amp; layout options</summary>{allowed3D&&<label className={s.field}>Wall visibility<select aria-label="Wall visibility" value={walls} onChange={e=>setWalls(e.target.value)}><option value="auto">Automatic cutaway</option><option value="all">All walls</option><option value="hidden">Hide walls</option></select></label>}<div className={s.buttonRow}><button onClick={()=>open("checks")}>Placement checks ({new Set(issues.map(i=>i.id)).size})</button><button onClick={()=>setResetConfirm(true)}>Reset layout</button></div></details></>}
+          {activePanel==="room"&&<>{view==="2d"&&<button className={s.backButton} onClick={()=>open("shop")}>← Shopping list</button>}<button className={s.primary} disabled={loading} onClick={()=>{if(!isPaid(profile)){openUpgrade("draw-room");return;}setEditingRoom(true);setMobileOpen(false);}}>Edit walls &amp; room shape{!isPaid(profile)&&" · Plus"}</button><RoomDetails room={room} controls={openingControls} onAdd={addOpening} onRemove={removeOpening} onFlip={flipOpening}/><details className={s.disclosure}><summary>View &amp; layout options</summary>{allowed3D&&<label className={s.field}>Wall visibility<select aria-label="Wall visibility" value={walls} onChange={e=>setWalls(e.target.value)}><option value="auto">Automatic cutaway</option><option value="all">All walls</option><option value="hidden">Hide walls</option></select></label>}<div className={s.buttonRow}><button onClick={()=>open("checks")}>Placement checks ({new Set(issues.map(i=>i.id)).size})</button><button onClick={()=>setResetConfirm(true)}>Reset layout</button></div></details></>}
           {activePanel==="style"&&<StyleDetails room={room}/>}
           {activePanel==="shop"&&<>{view==="2d"&&unplaced}<div>{shopping}</div></>}
           {activePanel==="checks"&&<><button className={s.backButton} onClick={()=>open("room")}>← Room details</button><p className={s.eyebrow}>A second look</p><h2>Placement checks</h2><p className={s.muted}>Checks flag overlap, wall boundaries, ceiling height, and proximity to inward door swings. They are a guide, not a guarantee of fit.</p>
@@ -173,6 +178,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
       </aside>
     </div>
     {view==="3d"&&<footer className={s.statusBar}><span>Changes kept in this tab · Save design for your account</span><button onClick={()=>open("shop")}><span>Shopping total</span> <strong>${total.toFixed(2)}</strong> / ${budget}{total>budget&&<b> Over budget</b>} ↗︎</button></footer>}
+    {editingRoom&&isPaid(profile)&&<Modal role="dialog" aria-modal="true" aria-label="Edit room shape" className={s.geometryModal} onKeyDown={e=>{if(e.key==="Escape"){e.stopPropagation();setEditingRoom(false);}}}><div><header><h2>Edit your room</h2><button onClick={()=>setEditingRoom(false)}>Close</button></header><RoomDrawCanvas initialRoom={room} furniture={items} onCancel={()=>setEditingRoom(false)} onComplete={result=>{usePlannerStore.getState().updateRoomGeometry(result.outline,result.origin);setEditingRoom(false);}}/></div></Modal>}
   </div>;
 }
 function roomOutlineMissing(room:{outline?:{openings:unknown[]}|null}){return !room.outline?.openings.length;}

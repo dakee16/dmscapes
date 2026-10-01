@@ -67,11 +67,12 @@ const FREE_PERKS: React.ReactNode[] = [
       supported schools
     </Link>
   </>,
-  <>1 room plan to try it out</>,
-  <>Save your design to your account, free</>,
+  <>1 generated room plan to try it out</>,
+  <>Personal workspaces with a 2D furniture library</>,
+  <>My rooms: save and organize your designs, free</>,
   <>3 vibes: Minimalist, Cozy Aesthetic, and Preppy</>,
   <>Budget-aware product picks with live Amazon links</>,
-  <>Drag-and-drop 2D layout that fits to the inch</>,
+  <>Drag-and-drop 2D layout with editable measurements</>,
   <>Share any room with a link</>,
   <>No account needed to start planning</>,
 ];
@@ -81,7 +82,7 @@ const FREE_PERKS: React.ReactNode[] = [
 const PLUS_PERKS: { title: string; body: string }[] = [
   {
     title: `${PLUS_INITIAL_CREDITS} plan credits`,
-    body: `One credit per new room plan. Recharge ${RECHARGE_CREDITS} more for $${RECHARGE_PRICE_USD.toFixed(2)}. Saving your designs is always free.`,
+    body: `One credit per generated room plan. Recharge ${RECHARGE_CREDITS} more for $${RECHARGE_PRICE_USD.toFixed(2)}. Manual arrangements and saving your designs use no credits.`,
   },
   {
     title: "All 9 vibes",
@@ -111,6 +112,7 @@ const PLUS_PERKS: { title: string; body: string }[] = [
 
 // Pro includes a larger generation allowance and permanent access to its tools.
 const PRO_PERKS: { title: string; body: string }[] = [
+  {title: "A shared room for your people", body: "Host one active shared workspace with up to four people, including you. Friends join free with editing or comment access. Keep a shared shopping list, purchasing assignments, comments, and room versions."},
   {title: "3D Room Builder", body: "Build your own room on a 3D grid. Place a floor, draw custom walls, and add doors and windows. Your room carries straight into 3D planning. Pro only."},
   {title: "Live 3D Room Studio", body: "Arrange furniture, explore room, top, and inside views, and try finishes and lighting. Switch between the same 2D and 3D layout. Included with Pro, available now."},
   {
@@ -320,49 +322,7 @@ export default function PricingPage() {
           <BlueprintArtwork variant="orbit" /></div>
           <TrustStrip />
 
-          {/* FLEX: the à-la-carte tier, presented as a slim banner above the
-              three main cards. It's a real, selectable tier (Free -> Flex ->
-              Plus -> Pro), distinct in shape from the tier cards because it's
-              pay-as-you-go rather than a fixed plan. Same features as Free; you
-              just buy room-plan credits as you need them. */}
-          <section className="mt-8 flex flex-col gap-4 rounded-2xl border border-ink/15 bg-card p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-            <div className="flex items-start gap-4">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-ink text-white" aria-hidden="true">
-                <svg viewBox="0 0 24 24" className="h-5 w-5 text-highlight" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z" strokeLinejoin="round" />
-                </svg>
-              </span>
-              <div>
-                <div className="flex items-center gap-2">
-                  <h2 className="font-display text-xl font-extrabold tracking-tight">Flex</h2>
-                  <span className="rounded-full bg-ink/5 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink-soft">
-                    Pay as you go
-                  </span>
-                </div>
-                <p className="mt-1 max-w-xl text-[15px] leading-relaxed text-ink-soft">
-                  Need another room? Buy room-plan credits for{" "}
-                  <span className="font-semibold text-ink">
-                    ${FLEX_CREDIT_PRICE_USD.toFixed(2)} each
-                  </span>
-                  . Keep the Free features and top up whenever inspiration strikes.
-                </p>
-              </div>
-            </div>
-            <div className="flex shrink-0 items-center gap-3 sm:flex-col sm:items-end">
-              <span className="font-display text-3xl font-extrabold tracking-tight">
-                ${FLEX_CREDIT_PRICE_USD.toFixed(2)}
-                <span className="ml-1 align-middle text-sm font-medium text-ink-soft">/credit</span>
-              </span>
-              <Link
-                href="/account/billing"
-                className="inline-flex h-11 items-center rounded-xl bg-ink px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
-              >
-                Buy credits
-              </Link>
-            </div>
-          </section>
-
-          <div className="mt-5 grid items-start gap-5 lg:grid-cols-3">
+          <div id="plans" className="mt-5 grid scroll-mt-28 items-start gap-5 lg:grid-cols-3">
             {/* FREE TIER: the real, active product. Reads complete on its own. */}
             <section className="flex h-full flex-col rounded-2xl border border-ink/12 bg-card p-6 sm:p-8">
               <div className="flex items-center justify-between gap-3">
@@ -434,9 +394,9 @@ export default function PricingPage() {
               {/* How credits work: the one bit of this model worth spelling out. */}
               <div className="mt-6 rounded-xl border border-cobalt/20 bg-cobalt/5 px-4 py-3">
                 <p className="text-[13px] leading-relaxed text-ink">
-                  <span className="font-semibold">How credits work:</span> each new
-                  room plan uses one credit. Saving, exports, and comparisons
-                  don’t use credits. Your saved designs and paid tools stay
+                  <span className="font-semibold">How credits work:</span> generating a
+                  room plan with product matches uses one credit. Manual 2D planning,
+                  layout previews, saving, exports, and comparisons use no credits. Your saved designs and paid tools stay
                   available even when your credit balance reaches zero.
                 </p>
               </div>
@@ -483,6 +443,8 @@ export default function PricingPage() {
 
             </section>
           </div>
+
+          <section className="mt-7 flex flex-wrap items-center justify-between gap-5 border-y border-ink/15 py-6"><div><h2 className="text-xl font-semibold">Just need another design?</h2><p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-soft">Buy extra generation credits for ${FLEX_CREDIT_PRICE_USD.toFixed(2)} each. Plus recharge adds {RECHARGE_CREDITS} for ${RECHARGE_PRICE_USD.toFixed(2)}. Saving, manual edits, switching views, and invitations use no credits. Guests never spend their host&apos;s credits.</p></div><Link href="/account/billing" className="dm-button">Buy extra credits</Link></section>
 
           {/* Trust strip: why the core stays free. */}
           <div className="mt-6 rounded-xl border border-dashed border-ink/20 bg-card/60 p-6 text-center">
