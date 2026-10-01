@@ -157,6 +157,10 @@
 .ds-btn svg { flex: none; transition: transform 0.3s var(--ds-ease); }
 .ds-btn:hover svg { transform: translateX(3px); }
 .ds-btn--sm { min-height: 44px; padding: 0 18px; font-size: 15px; }
+@media (max-width: 600px) {
+  /* long labels ("Plan your Willard Residential College room") wrap instead of overflowing */
+  .ds-btn { max-width: 100%; white-space: normal; text-align: center; line-height: 1.2; padding-block: 10px; box-sizing: border-box; }
+}
 .ds-btn--lg { min-height: 64px; padding: 0 32px; font-size: 21px; font-weight: 800; }
 .ds-btn--ink { background: var(--ds-ink); color: var(--ds-paper); }
 .ds-btn--ink:hover { box-shadow: 0 10px 24px rgba(22, 22, 29, 0.25); }

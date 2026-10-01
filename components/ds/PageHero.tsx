@@ -9,6 +9,8 @@ export interface PageHeroArt {
   ratio: number;
   /** CSS object-position */
   position?: string;
+  /** "contain" keeps the whole render in view (renders on a matching background) */
+  fit?: "cover" | "contain";
 }
 
 /**
@@ -64,7 +66,7 @@ export default function PageHero({
             preload
             quality={80}
             sizes="(min-width: 1024px) 50vw, 100vw"
-            style={{ objectFit: "cover", objectPosition: art.position ?? "50% 50%" }}
+            style={{ objectFit: art.fit ?? "cover", objectPosition: art.position ?? "50% 50%" }}
           />
         </div>
       )}
