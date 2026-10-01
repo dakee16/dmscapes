@@ -1,0 +1,81 @@
+/* /report: short hero, then the form in a card beside an index-card note */
+
+.hero :global(.ds-h1 .ds-serif) { font-size: clamp(50px, 6vw, 88px); line-height: 1.02; }
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 760px) minmax(0, 380px);
+  justify-content: space-between;
+  align-items: start;
+  gap: 32px 56px;
+}
+.card {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  padding: clamp(24px, 3.4vw, 44px);
+}
+.note {
+  grid-column: 2;
+  grid-row: 1;
+  position: sticky;
+  top: calc(var(--ds-nav-h) + 28px);
+}
+
+/* Index card with a strip of tape, the same paper as the legal recap */
+.indexCard {
+  position: relative;
+  padding: 24px 28px 26px;
+  background: #fffdf6;
+  border-radius: 6px;
+  box-shadow: 0 14px 30px rgba(22, 22, 29, 0.12), 0 1px 0 rgba(22, 22, 29, 0.06);
+  transform: rotate(1.2deg);
+}
+.indexCard::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -14px;
+  width: 112px;
+  height: 28px;
+  margin-left: -56px;
+  background: rgba(243, 194, 26, 0.85);
+  transform: rotate(-3deg);
+}
+.noteLabel {
+  margin: 0 -28px 14px;
+  padding: 0 28px 12px;
+  border-bottom: 2px solid #e85a6b;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+.noteText {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ds-ink);
+}
+.noteText a {
+  font-weight: 700;
+  color: var(--ds-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  overflow-wrap: anywhere;
+}
+.noteText a:hover { color: var(--ds-blue-deep); }
+
+@media (max-width: 1023px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .card, .note { grid-column: 1; grid-row: auto; }
+  .note { position: static; max-width: 520px; }
+}
+@media (max-width: 767px) {
+  .indexCard { transform: none; padding: 22px 20px; }
+  .noteLabel { margin-inline: -20px; padding-inline: 20px; }
+  .noteText { font-size: 17px; }
+}

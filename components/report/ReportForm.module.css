@@ -1,0 +1,166 @@
+/* Report a problem form (components/site/ReportForm), in the redesign's form style */
+
+.form {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+
+.field {
+  display: block;
+  font: 800 14px/1.4 var(--ds-sans);
+  color: var(--ds-ink);
+}
+/* "Optional", inline after the label text */
+.field > small:first-of-type:not(:last-child),
+.field > small:only-child {
+  margin-left: 8px;
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+/* Hints under a control */
+.field :is(input, textarea, select) ~ small {
+  display: block;
+  margin: 8px 0 0;
+  font: 450 13px/1.55 var(--ds-sans);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ds-caption);
+}
+
+.field input,
+.field textarea,
+.field select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 52px;
+  box-sizing: border-box;
+  margin-top: 8px;
+  padding: 0 18px;
+  border: 1.5px solid rgba(22, 22, 29, 0.18);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ds-ink);
+  font: 450 16px/1.5 var(--ds-sans);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field textarea {
+  min-height: 168px;
+  padding: 14px 18px;
+  resize: vertical;
+}
+.field select {
+  appearance: none;
+  padding-right: 48px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none' stroke='%2316161D' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  cursor: pointer;
+}
+.field input::placeholder,
+.field textarea::placeholder { color: #8a8a94; }
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--ds-blue);
+  box-shadow: 0 0 0 3px rgba(36, 73, 255, 0.18);
+}
+.field :is(input, textarea, select):disabled { opacity: 0.6; cursor: not-allowed; }
+
+.hint {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ds-caption);
+}
+.link {
+  color: var(--ds-blue);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+.link:hover { color: var(--ds-blue-deep); }
+
+.error {
+  margin: 0;
+  padding: 12px 16px;
+  border-left: 4px solid var(--ds-red);
+  border-radius: 10px;
+  background: #fff1ef;
+  color: #8c231b;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+  gap: 10px;
+  min-height: 56px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  font: 850 17px/1 var(--ds-sans);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.25s var(--ds-ease), box-shadow 0.25s var(--ds-ease);
+}
+.primary:hover { transform: translateY(-2px); box-shadow: 4px 4px 0 var(--ds-pink); text-decoration: none; }
+.primary:active { transform: none; }
+.primary svg { flex: none; transition: transform 0.3s var(--ds-ease); }
+.primary:hover svg { transform: translateX(3px); }
+.primary:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
+
+.success {
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ds-body);
+}
+.success > span {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 6px;
+  border-radius: 50%;
+  background: var(--ds-blue);
+  color: #fff;
+}
+.success h2 {
+  margin: 0;
+  font-size: clamp(28px, 2.6vw, 36px);
+  line-height: 1.05;
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  color: var(--ds-ink);
+}
+.success p { margin: 0; }
+.success strong { font-family: var(--ds-mono); font-size: 0.9em; color: var(--ds-ink); overflow-wrap: anywhere; }
+.success .primary { margin-top: 10px; }
+
+.trap {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 767px) {
+  .primary { justify-self: stretch; }
+}

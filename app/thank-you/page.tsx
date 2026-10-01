@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import SiteHeader from "@/components/site/SiteHeader";
+import PageShell from "@/components/ds/PageShell";
+import PageHero from "@/components/ds/PageHero";
+import { Check } from "@/components/ds/Icons";
 import ThankYouView from "./ThankYouView";
+import css from "@/components/report/ThankYou.module.css";
 
 export const metadata: Metadata = {
   description: "Your dorm room is handled. Thanks for planning with Dormscape.",
@@ -9,11 +12,34 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <div className="relative min-h-screen">
-      <SiteHeader gridClassName="h-80" />
-      <main id="page-content" tabIndex={-1} className="dm-page mx-auto w-full max-w-xl px-5 pb-24 pt-10 sm:px-8 sm:pt-14">
-        <ThankYouView />
-      </main>
-    </div>
+    <PageShell navOverlay>
+      <PageHero
+        size="md"
+        bg="var(--ds-sky)"
+        className={css.hero}
+        lines={[
+          { text: "Thank you for using ", riso: true },
+          { text: "Dormscape.", serif: true },
+        ]}
+        lede={
+          <p>
+            Your room has a plan. Keep your layout handy while you finish shopping
+            and get ready for move-in.
+          </p>
+        }
+        visual={
+          <div className={css.badgeWrap} aria-hidden="true" data-pop="">
+            <span className={css.badge}>
+              <Check size={64} strokeWidth={2.6} />
+            </span>
+          </div>
+        }
+      />
+      <section className="ds-section ds-section--tight">
+        <div className="ds-wrap">
+          <ThankYouView />
+        </div>
+      </section>
+    </PageShell>
   );
 }
