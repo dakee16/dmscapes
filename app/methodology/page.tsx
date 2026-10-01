@@ -1,12 +1,18 @@
-import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site/SiteHeader";
+import PageShell from "@/components/ds/PageShell";
+import PageHero from "@/components/ds/PageHero";
+import Headline from "@/components/ds/Headline";
+import Crumbs from "@/components/ds/Crumbs";
+import TapeStats from "@/components/ds/TapeStats";
+import CtaBand from "@/components/ds/CtaBand";
+import { ArrowRight, Check, CloseIcon } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
-import Breadcrumbs from "@/components/site/Breadcrumbs";
 import JsonLd from "@/components/site/JsonLd";
+import { RuleArt, SameScale } from "@/components/methodology/MethodologyArt";
 import { SCHOOLS } from "@/lib/schools";
 import { pageMetadata, breadcrumbJsonLd } from "@/lib/seo";
+import css from "@/components/methodology/Methodology.module.css";
 
 export const metadata: Metadata = pageMetadata({
   title: "How We Measure Dorm Rooms",
@@ -16,7 +22,8 @@ export const metadata: Metadata = pageMetadata({
 });
 
 // Live coverage numbers, computed from the shipped index so this page can never
-// drift from the data it describes.
+// drift from the data it describes. Published = the school's own size;
+// estimated = a same-type median; blank = no size at all.
 const stats = (() => {
   let dorms = 0, rooms = 0, published = 0, estimated = 0, unknown = 0;
   for (const s of SCHOOLS) {
@@ -24,246 +31,356 @@ const stats = (() => {
     for (const d of s.dorms) {
       for (const r of d.rooms) {
         rooms++;
-        if (r.length_ft && r.width_ft) {
-          if (r.dims_estimated) estimated++;
-          else published++;
-        } else unknown++;
+        if (r.dims_estimated) estimated++;
+        else if (r.length_ft && r.width_ft) published++;
+        else unknown++;
       }
     }
   }
   return { schools: SCHOOLS.length, dorms, rooms, published, estimated, unknown };
 })();
 
-const TEXT_LINK =
-  "font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-4 transition-colors hover:text-cobalt";
-
 const crumbs = [
   { name: "Home", path: "/" },
   { name: "How we measure", path: "/methodology" },
 ];
 
+const fmt = (n: number) => n.toLocaleString("en-US");
+const pct = (n: number) => Math.round((n / stats.rooms) * 100);
+
+const RULES = [
+  {
+    kind: "feet",
+    t: "Feet, length first",
+    b: "Sizes are stored in feet, normalized so the longer wall is the length. That matches how our layout templates are authored, so a 12 x 16 and a 16 x 12 room resolve to the same plan.",
+  },
+  {
+    kind: "type",
+    t: "Per room type, not per room",
+    b: "A building gets one entry per room type it offers (single, double, triple, suite). Individual rooms of the same type vary slightly; we plan against the published type.",
+  },
+  {
+    kind: "bed",
+    t: "Bed size is tracked separately",
+    b: "Twin XL is the near-universal default, but plenty of halls use standard twin, full, or full XL. We store the exception when a school documents one, because it changes which bedding actually fits.",
+  },
+  {
+    kind: "closet",
+    t: "Closets when published",
+    b: "Where a school publishes closet dimensions, we store them and draw the closet as a real obstacle in the layout.",
+  },
+] as const;
+
+const STATES = [
+  {
+    k: "published",
+    label: "Published",
+    n: stats.published,
+    body: "The university publishes this size. Shown plainly, with no qualifier.",
+  },
+  {
+    k: "estimated",
+    label: "Estimated",
+    n: stats.estimated,
+    body: (
+      <>
+        The school does not publish a size for this room type, so we use the median of the same room type across
+        schools that do. It is always labeled &ldquo;estimated&rdquo; wherever it appears, so you know to check it with
+        a tape measure.
+      </>
+    ),
+  },
+  {
+    k: "blank",
+    label: "Blank",
+    n: stats.unknown,
+    body: "No credible source and no comparable room to estimate from. We leave it empty and ask you for the measurement instead of inventing one.",
+  },
+];
+
+const LIMITS = [
+  "Published dimensions describe a room type, not your specific room.",
+  "Radiators, angled walls, built-ins, door swings, and lofted or bunked furniture all change what actually fits.",
+  "Treat a Dormscape layout as a well-measured starting point.",
+  "Confirm anything tight with a tape measure on move-in day.",
+];
+
 export default function MethodologyPage() {
   return (
-    <div>
-      <SiteHeader gridClassName="h-[26rem]" />
+    <PageShell navOverlay>
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
-      <main id="page-content" tabIndex={-1} className="dm-page relative">
-        <div className="mx-auto max-w-[50rem] px-5 py-10 sm:px-8 sm:py-14">
-          <Breadcrumbs items={crumbs} />
-          <p className="mt-4 font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-            Data and methodology
+      <PageHero
+        bg="#F6EFE4"
+        className={css.hero}
+        crumbs={<Crumbs items={crumbs} />}
+        eyebrow="Data and methodology"
+        lines={[
+          { text: "How we measure", riso: true },
+          { text: "dorm rooms.", serif: true },
+        ]}
+        lede={
+          <p>
+            Dormscape only works if the numbers are right. This page explains exactly where every dimension comes from,
+            how we label the ones we are less sure about, and what we refuse to do.
           </p>
-          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
-            How we measure <span className="hl">dorm rooms.</span>
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-            Dormscape only works if the numbers are right. This page explains
-            exactly where every dimension comes from, how we label the ones we
-            are less sure about, and what we refuse to do.
+        }
+        art={{
+          src: "/redesign/site-methodology-blueprint.jpg",
+          alt: "A blue floor-plan blueprint of an Atherton Hall double, 16.4 by 12 feet, stamped Published, with an architect's scale ruler, a pencil and a rubber stamp; a white sheet stamped Estimated lies underneath.",
+          ratio: 1360 / 1320,
+          position: "30% 50%",
+        }}
+      />
+
+      <div className={css.tape}>
+        <TapeStats
+          label="Coverage"
+          items={[
+            { n: stats.schools, l: "Schools" },
+            { n: stats.dorms, l: "Residence halls" },
+            { n: stats.rooms, l: "Room types" },
+            { n: stats.published, l: "Published sizes" },
+          ].map((s) => (
+            <>
+              <span className={`ds-num ${css.tapeNum}`} data-count={s.n}>
+                {fmt(s.n)}
+              </span>
+              {s.l}
+            </>
+          ))}
+        />
+      </div>
+
+      <section className="ds-section" aria-labelledby="sources-title">
+        <div className="ds-wrap">
+          <Headline
+            id="sources-title"
+            className="ds-h2 ds-h2--inline"
+            lines={[{ text: "Where the measurements" }, { text: "come from.", serif: true }]}
+          />
+          <div className={css.cols} data-reveal="">
+            <p>
+              Every dimension starts at the university. We work from official housing sources only: residence-life
+              websites, published room dimension tables, official floor plans and room-layout PDFs, and in some cases
+              the dimensioned room drawings schools publish as images. We do not scrape student forums, listing sites,
+              or apartment marketing pages, and we do not use another planner&rsquo;s numbers.
+            </p>
+            <p>
+              Schools publish this very differently. Some list per-room-type dimensions on every hall page. Some
+              publish one average room size for a whole building. Some publish nothing at all and only offer a virtual
+              tour. We record what each school actually says, and we record how specific it was.
+            </p>
+          </div>
+          <div className={css.sourceCards}>
+            <div className={css.okCard} data-reveal="">
+              <h3 className={css.cardHead}>Official housing sources only</h3>
+              <ul className={css.checks}>
+                {[
+                  "Residence-life websites",
+                  "Published room dimension tables",
+                  "Official floor plans and room-layout PDFs",
+                  "Dimensioned room drawings",
+                ].map((t) => (
+                  <li key={t}>
+                    <Check size={22} strokeWidth={3} />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={css.noCard} data-reveal="" style={{ "--i": 1 } as React.CSSProperties}>
+              <h3 className={css.cardHead}>Never used</h3>
+              <ul className={css.checks}>
+                {["Student forums", "Listing sites", "Apartment marketing pages", "Another planner’s numbers"].map(
+                  (t) => (
+                    <li key={t}>
+                      <CloseIcon size={22} />
+                      <span>{t}</span>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={`ds-section ${css.record}`} aria-labelledby="record-title">
+        <div className="ds-wrap">
+          <p className={`ds-eyebrow ${css.eyebrow}`} data-reveal="">
+            House rules
+          </p>
+          <Headline id="record-title" className="ds-h2" lines={[{ text: "How a room is recorded" }]} />
+          <ul className={css.rules}>
+            {RULES.map((row, i) => (
+              <li key={row.t} data-reveal="" style={{ "--i": i } as React.CSSProperties}>
+                <article className={css.rule}>
+                  <RuleArt kind={row.kind} />
+                  <h3>{row.t}</h3>
+                  <p>{row.b}</p>
+                </article>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="ds-section" aria-labelledby="states-title">
+        <div className="ds-wrap">
+          <Headline
+            id="states-title"
+            className="ds-h2 ds-h2--inline"
+            lines={[{ text: "Published, estimated," }, { text: "or blank.", serif: true }]}
+          />
+          <p className={css.intro} data-reveal="">
+            Every size on the site is in one of three states, and we label them honestly rather than smoothing over the
+            gaps.
           </p>
 
-          {/* Live coverage */}
-          <div className="mt-10 grid grid-cols-2 gap-4 rounded-2xl border border-ink/10 bg-card/70 px-4 py-6 sm:grid-cols-4 sm:px-8">
-            {[
-              { n: stats.schools.toLocaleString(), l: "Schools" },
-              { n: stats.dorms.toLocaleString(), l: "Residence halls" },
-              { n: stats.rooms.toLocaleString(), l: "Room types" },
-              { n: stats.published.toLocaleString(), l: "Published sizes" },
-            ].map((s) => (
-              <div key={s.l}>
-                <p className="dm-numeric text-3xl font-semibold tracking-tight">
-                  {s.n}
-                </p>
-                <p className="mt-1 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink-soft">
-                  {s.l}
-                </p>
+          <figure className={css.split} data-reveal="">
+            <figcaption className={css.legend}>
+              {STATES.map((s) => (
+                <span key={s.k} className={css.key}>
+                  <span className={css.swatch} data-k={s.k} aria-hidden="true" />
+                  {s.label} · {fmt(s.n)}
+                </span>
+              ))}
+              <span className={css.of}>of {fmt(stats.rooms)} room types</span>
+            </figcaption>
+            <div
+              className={css.bar}
+              role="img"
+              aria-label={`Of ${fmt(stats.rooms)} room types, ${fmt(stats.published)} are published, ${fmt(stats.estimated)} estimated and ${fmt(stats.unknown)} blank`}
+            >
+              {STATES.map((s, i) => (
+                <span
+                  key={s.k}
+                  className={css.seg}
+                  data-k={s.k}
+                  data-bar=""
+                  style={{ flexGrow: s.k === "blank" ? undefined : s.n, "--i": i } as React.CSSProperties}
+                >
+                  {s.k !== "blank" && pct(s.n) >= 5 ? `${pct(s.n)}%` : null}
+                </span>
+              ))}
+            </div>
+          </figure>
+
+          <dl className={css.states}>
+            {STATES.map((s, i) => (
+              <div key={s.k} className={css.state} data-reveal="" style={{ "--i": i } as React.CSSProperties}>
+                <dt>
+                  <span className={css.stamp} data-k={s.k} data-pop="" style={{ "--i": i + 3 } as React.CSSProperties}>
+                    {s.label}
+                  </span>
+                  <span className={css.count}>{fmt(s.n)} room types</span>
+                </dt>
+                <dd>{s.body}</dd>
               </div>
             ))}
-          </div>
+          </dl>
 
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              Where the measurements come from
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              Every dimension starts at the university. We work from official
-              housing sources only: residence-life websites, published room
-              dimension tables, official floor plans and room-layout PDFs, and in
-              some cases the dimensioned room drawings schools publish as images.
-              We do not scrape student forums, listing sites, or apartment
-              marketing pages, and we do not use another planner&rsquo;s numbers.
-            </p>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              Schools publish this very differently. Some list per-room-type
-              dimensions on every hall page. Some publish one average room size
-              for a whole building. Some publish nothing at all and only offer a
-              virtual tour. We record what each school actually says, and we
-              record how specific it was.
-            </p>
-          </section>
-
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              How a room is recorded
-            </h2>
-            <ul className="mt-4 space-y-3">
-              {[
-                {
-                  t: "Feet, length first",
-                  b: "Sizes are stored in feet, normalized so the longer wall is the length. That matches how our layout templates are authored, so a 12 x 16 and a 16 x 12 room resolve to the same plan.",
-                },
-                {
-                  t: "Per room type, not per room",
-                  b: "A building gets one entry per room type it offers (single, double, triple, suite). Individual rooms of the same type vary slightly; we plan against the published type.",
-                },
-                {
-                  t: "Bed size is tracked separately",
-                  b: "Twin XL is the near-universal default, but plenty of halls use standard twin, full, or full XL. We store the exception when a school documents one, because it changes which bedding actually fits.",
-                },
-                {
-                  t: "Closets when published",
-                  b: "Where a school publishes closet dimensions, we store them and draw the closet as a real obstacle in the layout.",
-                },
-              ].map((row) => (
-                <li key={row.t} className="rounded-xl border border-ink/10 bg-card p-5">
-                  <h3 className="font-display text-base font-bold tracking-tight">
-                    {row.t}
-                  </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{row.b}</p>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              Published, estimated, or blank
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              Every size on the site is in one of three states, and we label them
-              honestly rather than smoothing over the gaps.
-            </p>
-            <dl className="mt-5 space-y-4">
-              <div className="rounded-xl border border-ink/10 bg-card p-5">
-                <dt className="font-display text-base font-bold">
-                  Published ({stats.published.toLocaleString()} room types)
-                </dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                  The university publishes this size. Shown plainly, with no
-                  qualifier.
-                </dd>
-              </div>
-              <div className="rounded-xl border border-ink/10 bg-card p-5">
-                <dt className="font-display text-base font-bold">
-                  Estimated ({stats.estimated.toLocaleString()} room types)
-                </dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                  The school does not publish a size for this room type, so we
-                  use the median of the same room type across schools that do. It
-                  is always labeled &ldquo;estimated&rdquo; wherever it appears,
-                  so you know to check it with a tape measure.
-                </dd>
-              </div>
-              <div className="rounded-xl border border-ink/10 bg-card p-5">
-                <dt className="font-display text-base font-bold">
-                  Blank ({stats.unknown.toLocaleString()} room types)
-                </dt>
-                <dd className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                  No credible source and no comparable room to estimate from. We
-                  leave it empty and ask you for the measurement instead of
-                  inventing one.
-                </dd>
-              </div>
-            </dl>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft">
-              The rule behind all three: a blank is better than a guess. If we
-              cannot source a number, we would rather ask you to{" "}
-              <Link href="/blog/how-to-measure-your-dorm-room" className={TEXT_LINK}>
+          <div className={css.maxim} data-reveal="">
+            <p className={css.maximLead}>The rule behind all three</p>
+            <p className={css.maximQuote}>&ldquo;A blank is better than a guess.&rdquo;</p>
+            <p className={css.maximBody}>
+              If we cannot source a number, we would rather ask you to{" "}
+              <Link href="/blog/how-to-measure-your-dorm-room" className="ds-link">
                 measure it yourself
               </Link>{" "}
               than quietly make one up.
             </p>
-          </section>
-
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              How layouts are generated
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              Layouts are not decorative mockups. Each starts from a hand-authored
-              template validated against real furniture footprints, then gets
-              refit to your room&rsquo;s actual dimensions: pieces that hug a wall
-              stay against it, everything else keeps its proportional position,
-              and footprints are never resized, because real furniture does not
-              shrink. Anything that cannot fit is flagged rather than hidden.
-            </p>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              If your room is not a rectangle, or your school is not covered yet,
-              you can{" "}
-              <Link href="/plan/draw" className={TEXT_LINK}>
-                draw the floor plan yourself
-              </Link>{" "}
-              and we lay furniture out against the walls you drew.
-            </p>
-          </section>
-
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              Limits worth knowing
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              Published dimensions describe a room type, not your specific room.
-              Radiators, angled walls, built-ins, door swings, and lofted or
-              bunked furniture all change what actually fits. Treat a Dormscape
-              layout as a well-measured starting point and confirm anything tight
-              with a tape measure on move-in day. Our{" "}
-              <Link href="/terms" className={TEXT_LINK}>
-                Terms
-              </Link>{" "}
-              say the same thing in the formal version.
-            </p>
-          </section>
-
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              Found something wrong?
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              Corrections are welcome and they are the fastest way this data gets
-              better. Tell us the school, the building, and the room type, and
-              ideally where the university publishes the real number.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-3">
-              <Link
-                href="/contact"
-                className="inline-block rounded-lg bg-ink px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
-              >
-                Report a correction
-              </Link>
-              <Link
-                href="/add-school"
-                className="inline-block rounded-lg border border-ink/15 px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:border-cobalt/50 hover:text-cobalt"
-              >
-                Add my school
-              </Link>
-            </div>
-          </section>
-
-          <section className="mt-14">
-            <div className="rounded-2xl bg-ink px-6 py-10 text-center sm:px-12">
-              <h2 className="font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-                See it on your own room.
-              </h2>
-              <p className="mx-auto mt-3 max-w-md text-white/80">
-                Pick your building and get a layout measured against its real
-                dimensions.
-              </p>
-              <PlanCta className="mt-6 inline-block rounded-lg bg-highlight px-6 py-3 font-semibold text-ink transition-colors hover:bg-white" />
-            </div>
-          </section>
+          </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </section>
+
+      <section className={`ds-section ${css.layouts}`} aria-labelledby="layouts-title">
+        <div className={`ds-wrap ${css.layoutsGrid}`}>
+          <div className={css.layoutsCopy}>
+            <Headline
+              id="layouts-title"
+              className="ds-h2"
+              lines={[{ text: "How layouts are" }, { text: "generated.", serif: true }]}
+            />
+            <div data-reveal="">
+              <p>
+                Layouts are not decorative mockups. Each starts from a hand-authored template validated against real
+                furniture footprints, then gets refit to your room&rsquo;s actual dimensions: pieces that hug a wall stay
+                against it, and everything else keeps its proportional position. Anything that cannot fit is flagged
+                rather than hidden.
+              </p>
+              <p className={css.callout}>Footprints are never resized, because real furniture does not shrink.</p>
+              <p>
+                If your room is not a rectangle, or your school is not covered yet, you can{" "}
+                <Link href="/plan/draw" className="ds-link">
+                  draw the floor plan yourself
+                </Link>{" "}
+                and we lay furniture out against the walls you drew.
+              </p>
+            </div>
+          </div>
+          <SameScale />
+        </div>
+      </section>
+
+      <section className={`ds-section ${css.limits}`} aria-labelledby="limits-title">
+        <div className="ds-wrap">
+          <Headline id="limits-title" className="ds-h2" lines={[{ text: "Limits worth knowing" }]} />
+          <ol className={css.limitGrid}>
+            {LIMITS.map((t, i) => (
+              <li key={t} data-reveal="" style={{ "--i": i } as React.CSSProperties}>
+                <div className={css.limit} data-tone={i === LIMITS.length - 1 ? "yellow" : undefined}>
+                  <span className={css.limitNum} aria-hidden="true">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className={css.limitText}>{t}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+          <p className={css.limitsNote} data-reveal="">
+            Our{" "}
+            <Link href="/terms" className="ds-link">
+              Terms
+            </Link>{" "}
+            say the same thing in the formal version.
+          </p>
+        </div>
+      </section>
+
+      <section className="ds-section" aria-labelledby="fix-title" id="corrections">
+        <div className="ds-wrap">
+          <h2 id="fix-title" className={css.fixTitle} data-reveal="">
+            Found something wrong?
+          </h2>
+          <p className={css.fixBody} data-reveal="">
+            Corrections are welcome and they are the fastest way this data gets better. Tell us the school, the
+            building, and the room type, and ideally where the university publishes the real number.
+          </p>
+          <div className={css.fixActions} data-reveal="">
+            <Link href="/contact" className="ds-btn ds-btn--ink-yellow">
+              Report a correction
+              <ArrowRight />
+            </Link>
+            <Link href="/add-school" className="ds-btn ds-btn--ghost">
+              Add my school
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <CtaBand
+        tone="blue"
+        lead="See it on"
+        tail="your own room."
+        note="Pick your building and get a layout measured against its real dimensions."
+      >
+        <PlanCta
+          className="ds-btn ds-btn--yellow ds-btn--lg"
+          freeLabel="Plan my room for free"
+          icon={<ArrowRight size={20} />}
+        />
+      </CtaBand>
+    </PageShell>
   );
 }

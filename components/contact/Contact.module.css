@@ -1,0 +1,230 @@
+/* Contact (design-handoff/designs/site/Contact.dc.html): the form is a postcard */
+
+/* ---------- Hero ---------- */
+.hero :global(.ds-h1 .ds-display) {
+  font-size: clamp(64px, 8.3vw, 120px);
+  line-height: 0.9;
+  font-stretch: 86%;
+  letter-spacing: -0.045em;
+}
+.hero :global(.ds-h1 .ds-serif) { font-size: clamp(64px, 8.9vw, 128px); line-height: 1; }
+.hero :global(.ds-lede) { font-size: clamp(17px, 1.4vw, 20px); }
+.hero[data-art] > div:last-child {
+  grid-template-columns: minmax(0, 470px) minmax(0, 758px);
+  justify-content: space-between;
+  align-items: start;
+  gap: 48px 64px;
+  padding: 62px 0 90px;
+}
+.hero[data-art] > div:last-child > div:first-child { padding-top: 20px; }
+
+.aside { width: 100%; }
+.quick {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quick a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 56px;
+  padding: 0 18px;
+  border-radius: 14px;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.25s var(--ds-ease), box-shadow 0.25s var(--ds-ease);
+}
+.quick a:hover { transform: translateY(-2px); box-shadow: 0 0 0 2px var(--ds-blue); text-decoration: none; }
+.quick a svg { flex: none; transition: transform 0.3s var(--ds-ease); }
+.quick a:hover svg { transform: translateX(3px); }
+.reach {
+  margin: 26px 0 0;
+  font-family: var(--ds-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+.reach a { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.reach a:hover { color: var(--ds-blue); }
+
+/* ---------- Postcard ---------- */
+.card {
+  position: relative;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  min-height: 820px;
+  box-sizing: border-box;
+  padding: 38px 40px 44px;
+  border-radius: 10px;
+  background: #fffdf8;
+  box-shadow: 0 30px 60px rgba(90, 60, 30, 0.2), 0 2px 0 rgba(90, 60, 30, 0.08);
+}
+.stamp {
+  position: absolute;
+  right: 40px;
+  top: 36px;
+  width: 118px;
+  height: 142px;
+  box-sizing: border-box;
+  padding: 8px;
+  background: #fff;
+  outline: 3px dashed #d7d0c2;
+  outline-offset: -3px;
+}
+.stampArt { position: relative; width: 100%; height: 100%; background: var(--ds-blue); overflow: hidden; }
+.stampArt > span { position: absolute; box-sizing: border-box; }
+.stampArt > span:nth-child(1) { left: 14px; top: 16px; width: 72px; height: 54px; border: 3px solid #fff; }
+.stampArt > span:nth-child(2) { left: 20px; top: 22px; width: 14px; height: 28px; background: var(--ds-yellow); }
+.stampArt > span:nth-child(3) { left: 46px; top: 44px; width: 32px; height: 20px; background: #ff8cc0; }
+.stampArt > .stampName {
+  left: 10px;
+  bottom: 8px;
+  font-family: var(--ds-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+.postmark {
+  position: absolute;
+  right: 120px;
+  top: 110px;
+  width: 110px;
+  height: 110px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid rgba(22, 22, 29, 0.45);
+  border-radius: 50%;
+  font-family: var(--ds-mono);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  color: rgba(22, 22, 29, 0.55);
+  transform: rotate(-14deg);
+}
+.dear {
+  margin: 0;
+  padding-right: 250px;
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--ds-blue);
+}
+.body {
+  flex: 1;
+  margin-top: 150px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1.5px 290px;
+  gap: 30px;
+  min-height: 470px;
+}
+.messageCol { display: flex; flex-direction: column; gap: 8px; }
+.label { font-size: 14px; font-weight: 800; }
+.optional { font-weight: 500; color: var(--ds-caption); }
+.lined {
+  flex-grow: 1;
+  min-height: 288px;
+  box-sizing: border-box;
+  padding: 6px 2px;
+  border: none;
+  border-radius: 4px;
+  background: repeating-linear-gradient(180deg, transparent 0 35px, rgba(36, 73, 255, 0.25) 35px 36px);
+  background-attachment: local;
+  font-family: var(--ds-serif);
+  font-size: 20px;
+  line-height: 36px;
+  color: var(--ds-ink);
+  resize: none;
+}
+.lined::placeholder { font-style: italic; color: var(--ds-caption); opacity: 1; }
+.card .lined:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--ds-blue); }
+.divider { background: rgba(22, 22, 29, 0.18); }
+.fields { display: flex; flex-direction: column; gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.line {
+  height: 44px;
+  box-sizing: border-box;
+  padding: 0 2px;
+  border: none;
+  border-bottom: 2px solid rgba(22, 22, 29, 0.35);
+  border-radius: 0;
+  background: transparent;
+  font: 400 17px var(--ds-sans);
+  color: var(--ds-ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.line::placeholder { color: #8a8a94; opacity: 1; }
+.lineStrong { border-bottom-color: var(--ds-ink); }
+.card .line:focus-visible { outline: none; border-bottom-color: var(--ds-blue); box-shadow: 0 2px 0 var(--ds-blue); }
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.error { margin: 0; font-size: 14px; font-weight: 600; line-height: 1.45; color: #c2321e; }
+.send { width: 100%; min-height: 58px; margin-top: auto; font-size: 18px; font-weight: 850; }
+.send:disabled { cursor: wait; opacity: 0.7; transform: none; }
+
+/* Sent */
+.sentBody { margin-top: 150px; display: flex; flex-direction: column; align-items: flex-start; max-width: 480px; }
+.sentCheck {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--ds-blue);
+  color: #fff;
+}
+.sentTitle { margin: 22px 0 0; font-size: 44px; line-height: 1.05; font-weight: 850; letter-spacing: -0.03em; }
+.sentTitle :global(.ds-serif) { font-size: 1.1em; font-weight: 400; }
+.sentText { margin: 14px 0 0; font-size: 18px; line-height: 1.55; color: var(--ds-body); }
+.sentText strong { color: var(--ds-ink); }
+.again { margin-top: 22px; padding: 0; border: 0; background: none; color: var(--ds-ink); font: 700 16px var(--ds-sans); cursor: pointer; }
+
+/* Narrow postcard: message above the address lines */
+@container (max-width: 620px) {
+  .body { grid-template-columns: minmax(0, 1fr); gap: 26px; margin-top: 110px; min-height: 0; }
+  .divider { display: none; }
+  .lined { min-height: 216px; }
+  .send { margin-top: 8px; }
+  .sentBody { margin-top: 110px; }
+}
+
+@media (max-width: 1180px) {
+  .hero[data-art] > div:last-child { grid-template-columns: minmax(0, 1fr); padding: 40px 0 72px; }
+  .hero[data-art] > div:last-child > div:first-child { padding-top: 0; max-width: 560px; }
+  .card { max-width: 758px; min-height: 0; }
+}
+@media (max-width: 600px) {
+  .card { padding: 24px 20px 28px; }
+  .stamp { right: 18px; top: 18px; width: 78px; height: 94px; padding: 5px; }
+  .stampArt > span:nth-child(1) { left: 8px; top: 9px; width: 48px; height: 36px; }
+  .stampArt > span:nth-child(2) { left: 12px; top: 13px; width: 9px; height: 18px; }
+  .stampArt > span:nth-child(3) { left: 30px; top: 28px; width: 21px; height: 13px; }
+  .stampArt > .stampName { left: 6px; bottom: 5px; font-size: 7px; }
+  .postmark { right: 74px; top: 62px; width: 76px; height: 76px; font-size: 7px; }
+  .dear { padding-right: 96px; font-size: 30px; }
+  .body,
+  .sentBody { margin-top: 84px; }
+  .sentTitle { font-size: 36px; }
+}
