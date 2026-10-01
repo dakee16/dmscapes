@@ -5,13 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Headline from "@/components/ds/Headline";
 import { useScrub, span, easeOutExpo } from "@/components/ds/useScrub";
+import { useFrameSequence } from "@/components/ds/useFrameSequence";
 import HomeSearch from "./HomeSearch";
 import css from "./Home.module.css";
 
 /**
  * 01 · Hero. On desktop the panel pins for one extra screen: the copy drifts
- * up at a third of scroll speed, the render settles, and the caption naming
- * the real room fades in at the end (MOTION.md · Hero).
+ * up at a third of scroll speed, the room lowers onto its own floor plan
+ * (a rendered frame sequence), and the caption naming the real room fades in
+ * as it lands (MOTION.md · Hero).
  */
 export default function HomeHero({
   schoolCount,
@@ -25,25 +27,36 @@ export default function HomeHero({
   const art = useRef<HTMLDivElement>(null);
   const caption = useRef<HTMLParagraphElement>(null);
 
+  const canvas = useRef<HTMLCanvasElement>(null);
+  // The room settles onto its own floor plan as you scroll: 25 rendered frames.
+  const seq = useFrameSequence(canvas, {
+    count: 25,
+    url: (i) => `/redesign/seq/hero-${String(i).padStart(2, "0")}.webp`,
+    position: [0.5, 0.55],
+  });
+
   useScrub(
     track,
     (p) => {
-      const desktop = window.innerWidth >= 1024;
+      // -1: motion off or narrow screen. Everything sits still and visible.
+      const still = p < 0;
       const vh = window.innerHeight;
       if (copy.current) {
-        copy.current.style.transform = desktop ? `translate3d(0, ${(-p * vh * 0.3).toFixed(1)}px, 0)` : "";
-        copy.current.style.opacity = desktop ? String(1 - span(p, 0.55, 1) * 0.6) : "";
+        copy.current.style.transform = still ? "" : `translate3d(0, ${(-p * vh * 0.3).toFixed(1)}px, 0)`;
+        copy.current.style.opacity = still ? "" : String(1 - span(p, 0.55, 1) * 0.6);
       }
       if (art.current) {
-        const s = 1.06 - easeOutExpo(p) * 0.06;
-        art.current.style.transform = desktop ? `scale(${s.toFixed(4)})` : "";
+        art.current.style.transform = still ? "" : `scale(${(1.03 - easeOutExpo(p) * 0.03).toFixed(4)})`;
       }
       if (caption.current) {
-        const c = span(p, 0.7, 0.95);
-        caption.current.style.opacity = desktop ? String(c) : "";
+        caption.current.style.opacity = still ? "1" : String(span(p, 0.68, 0.9));
+      }
+      if (!still) {
+        const k = span(p, 0.04, 0.72);
+        seq.draw(k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2);
       }
     },
-    { from: [0, 0], to: [1, 1], smooth: 0.5, minWidth: 1024, rest: 0 }
+    { from: [0, 0], to: [1, 1], smooth: 0.5, minWidth: 1024, rest: -1 }
   );
 
   return (
@@ -90,6 +103,9 @@ export default function HomeHero({
             quality={80}
             sizes="(min-width: 1024px) 53vw, 100vw"
           />
+          {seq.enabled && (
+            <canvas ref={canvas} className={css.heroCanvas} data-show={seq.showing || undefined} aria-hidden="true" />
+          )}
         </div>
         <p ref={caption} className={css.heroCaption}>
           Real room ·{" "}

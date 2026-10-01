@@ -74,6 +74,15 @@
   will-change: transform;
 }
 .heroArt img { object-fit: cover; object-position: 50% 55%; }
+.heroCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+.heroCanvas[data-show] { opacity: 1; }
 .heroCaption {
   position: absolute;
   right: var(--ds-gutter);
