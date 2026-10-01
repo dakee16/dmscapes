@@ -2011,23 +2011,10 @@ body {
 
 
 
-.dm-app[data-page="pricing"] main > div {
-  max-width: 1480px;
-  padding-left: var(--dm-gutter);
-  padding-right: var(--dm-gutter);
-}
-.dm-app[data-page="pricing"] main section {
-  border-radius: 3px;
-  box-shadow: none;
-  min-width: 0;
-}
-.dm-app[data-page="pricing"] main section.border-cobalt {
-  background: #edf0ff;
-  box-shadow: 8px 8px 0 #2b4eff16;
-}
-.dm-app[data-page="pricing"] main section.border-amber\/50 {
-  background: #fff8df;
-}
+
+
+
+
 /* Keep the old price separate so the amount and cadence always have room. */
 .dm-price-block {
   margin-top: 20px;
@@ -2065,9 +2052,7 @@ body {
     font-size: clamp(36px, 20cqi, 60px);
   }
 }
-.dm-app[data-page="pricing"] .dm-room-model {
-  height: 360px;
-}
+
 
 
 
@@ -2417,9 +2402,7 @@ body {
     box-shadow: none;
   }
   
-  .dm-app[data-page="pricing"] .dm-room-model {
-    height: 300px;
-  }
+  
   .dm-account-tile > div:first-of-type {
     height: 185px;
   }
@@ -2544,12 +2527,8 @@ body {
     gap: 18px;
   }
   
-  .dm-app[data-page="pricing"] main section {
-    padding: 25px;
-  }
-  .dm-app[data-page="pricing"] main > div {
-    padding-top: 45px;
-  }
+  
+  
 }
 .dm-app[data-motion="paused"]
   :is(
