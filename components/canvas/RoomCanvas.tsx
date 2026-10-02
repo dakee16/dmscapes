@@ -605,7 +605,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const canSwap = !!ui && !!toolbarEntry && !toolbarEntry.custom && alternativesOf(toolbarEntry.product).length > 0;
   const doorBoxes = drawn ? drawn.openings.flatMap(o => o.kind === "door" && o.swingBox ? [o.swingBox] : []) : [];
   const live = (f: FurnitureItem) => dragging?.id === f.id ? { ...f, x_ft: dragging.x, y_ft: dragging.y } : f;
-  const clearance = toolbarItem && dock && !readOnly && !rotationPreview
+  const previewing = !!ghost && !!toolbarItem && ghostIds.has(toolbarItem.id);
+  const clearance = toolbarItem && dock && !readOnly && !rotationPreview && !previewing
     ? nearestClearance(live(toolbarItem), activeFurniture.map(live), roomL, roomW, doorBoxes, f => bedLabel(f).slice(0, 18))
     : null;
   const wallW = Math.max(4, Math.min(9, pxFt * .17));
@@ -792,7 +793,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               const draggable = !readOnly && !panMode && f.movable && !isLocked && !isHidden;
               // The rotate/toolbar target gets handles; its category-mates (and
               // hovered list rows) get a lighter ring.
-              const selected = !readOnly && toolbarItem?.id === f.id;
+              const selected = !readOnly && toolbarItem?.id === f.id && !ghostIds.has(f.id);
               const highlighted = !selected && !readOnly && (selectedItemId === f.id ||
                 (activeCategory !== null && furnitureCategory(f) === activeCategory));
               const entry = entryFor?.(f);
@@ -896,15 +897,18 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 const owners = planning.showOwners;
                 const dressedBed = f.type === "bed" && !!entry;
                 let label: { text: string; mono: boolean; height: number } | null = null;
-                if (showLabels && w >= 34 && h >= 18) {
+                const chair = /chair|lounge/.test(f.type);
+                if (showLabels && w >= 34 && h >= 18 && !chair) {
                   if (owners) label = { text: `${bedLabel(f)}\n${ownerName(f.assigned_to,people)}`, mono: false, height: 30 };
                   else if (builtIn && !dressedBed) label = { text: (isBunkBed(f) && w < 125 ? bedLabel(f).replace(" · ", "\n") : bedLabel(f)).toUpperCase(), mono: true, height: isBunkBed(f) && w < 125 ? 26 : 14 };
                   else if (!entry && !builtIn) label = { text: bedLabel(f), mono: false, height: 16 };
                 }
                 const size = label?.mono ? 9 : Math.max(9, Math.min(11, w * .14));
+                // Mono labels show whole or not at all (no "DESK C…" stubs).
+                if (label?.mono && Math.max(...label.text.split("\n").map(line => line.length)) * size * .72 + 6 > w) label = null;
                 const labelW = label ? Math.min(w - 6, (Math.max(...label.text.split("\n").map(line=>line.length))+2)*size*(label.mono ? .72 : .6)) : 0;
                 const labelY = label ? (f.type === "desk" && f.rotation_deg % 180 === 0 ? h*.82 : h/2) - label.height/2 : 0;
-                const isSel = !readOnly && toolbarItem?.id === f.id;
+                const isSel = !readOnly && toolbarItem?.id === f.id && !ghostIds.has(f.id);
                 const pinActive = isSel || (!!entry && (entry.custom ? selectedItemId === f.id : activeCategory === entry.product.category));
                 const r = 11 / z;
                 const inside = w >= 48 && h >= 40;
@@ -991,10 +995,10 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         read:(x,y)=>({x:((x-stagePos.x)/zoom-fitted.x)/(pxFt*roomL),y:((y-stagePos.y)/zoom-fitted.y)/(pxFt*roomW)}),
         draw:(x,y)=>({x:stagePos.x+(fitted.x+x*pxFt*roomL)*zoom,y:stagePos.y+(fitted.y+y*pxFt*roomW)*zoom}),
       }} pins={activeFurniture.map(f=>{const b=footprint(f);return {id:f.id,label:f.label,x:(b.x+b.w/2)/roomL,y:(b.y+b.h/2)/roomW};})}/>}
-      {pxFt > 0 && toolbarItem && canEditItem && onSetRotation && !panMode && !dragging && rotationCenter && rotationPosition &&
+      {pxFt > 0 && toolbarItem && canEditItem && onSetRotation && !panMode && !dragging && !previewing && rotationCenter && rotationPosition &&
         <RotationHandle key={toolbarItem.id} label={toolbarItem.label} center={rotationCenter} position={rotationPosition} degrees={toolbarItem.rotation_deg}
           onPreview={degrees=>setRotationPreview({id:toolbarItem.id,degrees})} onCommit={finishRotation} onCancel={()=>finishRotation()}/>}
-      {pxFt > 0 && dock && !readOnly && toolbarItem && toolbarPos && !dragging && !rotationPreview && !panMode && (
+      {pxFt > 0 && dock && !readOnly && toolbarItem && toolbarPos && !dragging && !rotationPreview && !panMode && !previewing && (
         <div ref={toolbarRef} className={styles.itemBar} role="toolbar" aria-label={`${bedLabel(toolbarItem)} actions`} style={{ left: toolbarPos.x, top: toolbarPos.y }}>
           {onRotate && <button type="button" disabled={!canEditItem} onClick={() => onRotate(toolbarItem.id, 1)} title="Rotate 90° (R)"><RotateIcon size={15} />Rotate</button>}
           {canSwap && <button type="button" className={styles.swap} onClick={() => ui?.openSwap(toolbarEntry!.product)}><SwapIcon size={15} />Swap</button>}

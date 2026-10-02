@@ -40,7 +40,7 @@
 .backLink { display: none; }
 .wordmark { flex: none; font-size: 24px; }
 .vr { flex: none; width: 1.5px; height: 32px; background: var(--rule); }
-.titleBlock { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex: 0 1 380px; }
+.titleBlock { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex: 0 1 440px; }
 .titleLine { display: flex; align-items: center; gap: 6px; min-width: 0; }
 .titleLine h1 { margin: 0; font-size: 17px; font-weight: 800; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .rename {
@@ -73,7 +73,7 @@
 .viewSwitch button[aria-pressed="true"] .proTag { background: #fff; color: var(--ds-blue); }
 .phoneSwitch { display: none; }
 .noCredit { font-family: var(--ds-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-caption); white-space: nowrap; }
-.barEnd { margin-left: auto; display: flex; align-items: center; gap: 8px; min-width: 0; }
+.barEnd { margin-left: auto; flex: none; display: flex; align-items: center; gap: 8px; }
 .history { display: flex; gap: 2px; }
 .history button {
   display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border: 0; border-radius: 10px;
@@ -197,6 +197,7 @@
 .panelList { flex: 1; min-height: 0; display: flex; flex-direction: column; }
 .panelContent { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 20px 24px 24px; display: flex; flex-direction: column; }
 .panelContent > * { flex: none; }
+.app .panelContent h2:not([class]) { margin: 4px 0 10px; font-size: 22px; font-weight: 850; letter-spacing: -0.02em; line-height: 1.15; }
 .panelTitle { margin: 4px 0 12px; font-size: 26px; font-weight: 850; letter-spacing: -0.02em; line-height: 1.1; }
 .panelTabs { flex: none; display: flex; align-items: center; gap: 8px; padding: 14px 16px 0; }
 .panelTabs nav { flex: 1; display: flex; padding: 3px; border-radius: 12px; background: #eeede7; }
@@ -559,3 +560,9 @@
 .seg button { flex: 1 1 0; height: 40px; border: 0; border-radius: 10px; background: transparent; color: var(--ds-ink); font: 700 14px/1 var(--ds-sans); cursor: pointer; }
 .seg button[aria-pressed="true"] { background: var(--ds-ink); color: var(--ds-yellow); font-weight: 800; }
 .finishNote { margin: 16px 0; padding: 14px; border-radius: 12px; background: #f4f3ee; font-size: 13px; line-height: 1.45; color: var(--ds-muted); }
+
+/* Workspace 2D: the task chips get their own strip above the plan. */
+.workspace.workspacePlan > .viewport { background: var(--ds-plan); }
+.workspace.workspacePlan > .viewport > .renderArea { top: 56px; }
+.workspace.workspacePlan .workspaceTasks { top: 10px; }
+@media (max-width: 780px) { .workspace.workspacePlan > .viewport > .renderArea { top: 0; } }

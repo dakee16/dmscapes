@@ -3,6 +3,7 @@
 
 .list {
   --rule: rgba(22, 22, 29, 0.08);
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -52,10 +53,11 @@
 .extras { flex: none; padding: 12px 24px; border-bottom: 1.5px solid var(--rule); font-size: 13px; }
 
 /* ---------- chips ---------- */
-.chips { flex: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 24px; border-bottom: 1.5px solid var(--rule); }
+.chips { flex: none; display: flex; flex-wrap: nowrap; gap: 6px; padding: 12px 24px; border-bottom: 1.5px solid var(--rule); overflow-x: auto; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
 .chips button {
   display: inline-flex; align-items: center; gap: 5px;
-  height: 30px; padding: 0 12px; border: 0; border-radius: 999px;
+  flex: none; height: 30px; padding: 0 11px; border: 0; border-radius: 999px;
   background: #eeede7; color: var(--ds-ink);
   font: 600 13px/1 var(--ds-sans); cursor: pointer; white-space: nowrap;
   transition: background 0.15s, color 0.15s;
@@ -248,7 +250,9 @@
   .scroll { padding: 0 12px 12px; }
   .row { grid-template-columns: 22px 40px minmax(0, 1fr) auto auto; min-height: 60px; }
   .thumb { width: 40px; height: 40px; }
-  .name { font-size: 15px; white-space: normal; }
+  .name { font-size: 15px; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .row[data-selected] .name { -webkit-line-clamp: 3; }
+  .list[data-sheet="peek"] .name { -webkit-line-clamp: 1; }
   .row .swapBtn { display: none; }
   .iconBtn { width: 40px; height: 40px; border-radius: 10px; background: #eeede7; }
   .foot { padding: 12px 16px; padding-bottom: max(12px, env(safe-area-inset-bottom)); }
@@ -285,4 +289,22 @@
 
 @media (prefers-reduced-motion: reduce) {
   .meter > span, .row, .option, .chips button { transition: none; }
+}
+
+/* The swap sheet's filters wrap (Swap.dc.html). */
+.swap .chips { flex-wrap: wrap; overflow: visible; }
+
+/* Narrow columns (the 3D studio's side panel). */
+@container (max-width: 380px) {
+  .head, .swapHead { padding-inline: 18px; }
+  .chips, .extras { padding-inline: 18px; }
+  .scroll { padding-inline: 10px; }
+  .row { grid-template-columns: 22px 32px minmax(0, 1fr) auto auto; column-gap: 8px; }
+  .thumb { width: 32px; height: 32px; }
+  .row .actions > a { display: none; }
+  .meterTotal { font-size: 38px; }
+  .meterOf { font-size: 15px; }
+  .foot { padding-inline: 14px; gap: 8px; }
+  .addOwn { padding: 0 10px; font-size: 13px; }
+  .buyAll { padding: 4px 10px; }
 }

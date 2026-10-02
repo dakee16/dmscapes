@@ -17,7 +17,6 @@ export interface Clearance {
  */
 export function nearestClearance(item: FurnitureItem, others: FurnitureItem[], roomL: number, roomW: number, doors: Footprint[], nameOf: (f: FurnitureItem) => string): Clearance | null {
   const b = footprint(item);
-  const rug = layerOf(item) === "rug";
   const found: Clearance[] = [];
   const consider = (o: Footprint, kind: Clearance["kind"], name: string) => {
     const ox = Math.min(b.x + b.w, o.x + o.w) - Math.max(b.x, o.x);
@@ -34,11 +33,10 @@ export function nearestClearance(item: FurnitureItem, others: FurnitureItem[], r
     }
   };
   for (const d of doors) consider(d, "door", "Door clears");
-  if (!rug) {
-    for (const f of others) {
-      if (f.id === item.id || f.parent_id || f.parent_id === item.id || item.parent_id === f.id || layerOf(f) !== "solid") continue;
-      consider(footprint(f), "piece", nameOf(f));
-    }
+  // Pieces that overlap the selection (a bed on a rug) have no gap and are skipped.
+  for (const f of others) {
+    if (f.id === item.id || f.parent_id || item.parent_id === f.id || layerOf(f) !== "solid") continue;
+    consider(footprint(f), "piece", nameOf(f));
   }
   const midX = b.x + b.w / 2, midY = b.y + b.h / 2;
   found.push(

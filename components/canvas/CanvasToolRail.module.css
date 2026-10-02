@@ -15,6 +15,9 @@
 .tool[aria-pressed="true"] { background: var(--ds-ink); color: #fff; }
 .tool[aria-pressed="true"]:hover { background: var(--ds-ink); }
 .tool:disabled { color: #b5b3bd; cursor: default; }
+/* On/off toggles read lighter than the active pointer tool. */
+.tool[data-toggle][aria-pressed="true"] { background: #eef1fd; color: var(--ds-blue); }
+.tool[data-toggle][aria-pressed="true"]:hover { background: #e2e7fc; }
 .tool:focus-visible, .menu button:focus-visible { outline: 3px solid var(--ds-blue); outline-offset: 2px; }
 .small { height: 40px; border-radius: 10px; }
 .pct { font-family: var(--ds-mono); font-size: 10px; font-weight: 700; font-variant-numeric: tabular-nums; }

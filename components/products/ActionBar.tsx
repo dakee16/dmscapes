@@ -36,6 +36,7 @@ export default function ActionBar({
   products,
   getPng,
   exportsOnly = false,
+  hideCompare = false,
 }: {
   products: Product[];
   getPng: () => string | null;
@@ -43,6 +44,8 @@ export default function ActionBar({
   onShop?: () => void;
   shopOpen?: boolean;
   exportsOnly?: boolean;
+  /** The 3D studio's bar keeps to Export, Share and Save. */
+  hideCompare?: boolean;
 }) {
   const planning=usePlannerStore(s=>s.planning);
   const buying=shoppingProducts(products,planning);
@@ -280,7 +283,7 @@ export default function ActionBar({
   return (
     <>
       <div ref={actionRef} className={a.bar} data-exports-only={exportsOnly || undefined}>
-        {!exportsOnly && (
+        {!exportsOnly && !hideCompare && (
           <Link href="/account/compare" className={`${a.btn} ${a.compare}`}>
             <CompareIcon size={16} className={a.icon} />Compare{tag}
           </Link>

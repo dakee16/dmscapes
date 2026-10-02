@@ -39,9 +39,9 @@ export default function CanvasToolRail(p: CanvasToolRailProps) {
     return () => { document.removeEventListener("pointerdown", outside); document.removeEventListener("keydown", key, true); };
   }, [more]);
 
-  const tool = (label: string, icon: ReactNode, onClick: () => void, opts: { pressed?: boolean; disabled?: boolean; className?: string; title?: string } = {}) => (
+  const tool = (label: string, icon: ReactNode, onClick: () => void, opts: { pressed?: boolean; disabled?: boolean; className?: string; title?: string; toggle?: boolean } = {}) => (
     <button type="button" aria-label={label} title={opts.title ?? label} aria-pressed={opts.pressed} disabled={opts.disabled}
-      className={`${s.tool} ${opts.className ?? ""}`} onClick={onClick}>{icon}</button>
+      data-toggle={opts.toggle || undefined} className={`${s.tool} ${opts.className ?? ""}`} onClick={onClick}>{icon}</button>
   );
 
   return (
@@ -49,7 +49,7 @@ export default function CanvasToolRail(p: CanvasToolRailProps) {
       <div className={s.group}>
         {tool("Select and move", <SelectIcon />, () => p.setPan(false), { pressed: !p.pan, className: s.desk, title: "Select and move (V)" })}
         {tool("Pan the plan", <PanIcon />, () => p.setPan(true), { pressed: p.pan, className: s.desk, title: "Pan (H)" })}
-        {tool("Labels and measurements", <RulerIcon />, p.toggleLabels, { pressed: p.labels })}
+        {tool("Labels and measurements", <RulerIcon />, p.toggleLabels, { pressed: p.labels, toggle: true })}
         {p.dock.addPiece && tool("Add a piece", <PlusIcon />, p.dock.addPiece)}
         {tool("Doors and windows", <RoomIcon />, p.dock.editOpenings, { className: s.desk, title: "Edit walls, doors and windows" })}
         {tool("Undo", <UndoIcon />, p.undo, { disabled: !p.canUndo, className: planner ? s.phone : "", title: "Undo (Ctrl/⌘ Z)" })}

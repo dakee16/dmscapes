@@ -10,7 +10,7 @@ import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import { designDisplayName } from "@/lib/styles";
 import { roomTypeLabel } from "@/lib/format";
-import { formatDims } from "@/lib/schools";
+import { getSchool } from "@/lib/schools";
 import { alternativesOf } from "@/lib/catalog";
 import type { Product, WallOpening } from "@/lib/types";
 import { placementIssues, roomOutline, studioSettings, visibleFurniture } from "@/lib/studio";
@@ -46,7 +46,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const [toolsHost,setToolsHost]=useState<HTMLDivElement|null>(null),[compact,setCompact]=useState(false);
   const shopPanel=useRef<HTMLElement>(null);
   const view=usePlannerStore(st=>st.plannerView),setView=usePlannerStore(st=>st.setPlannerView);
-  const [panel,setPanel]=useState<Panel>("shop"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
+  const [panel,setPanel]=useState<Panel>(()=>usePlannerStore.getState().plannerView==="3d"?"style":"shop"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
   const [camera,setCamera]=useState<CameraView>("room"),[expanded,setExpanded]=useState(false),[mobileOpen,setMobileOpen]=useState(false),[query,setQuery]=useState(""),[resetConfirm,setResetConfirm]=useState(false);
   const [renaming,setRenaming]=useState(false);
   const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),closeRef=useRef<HTMLButtonElement>(null),dragStart=useRef<number|null>(null);
@@ -120,7 +120,9 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const typeLabel=roomTypeLabel(room),roomName=/\broom\b/i.test(typeLabel)?typeLabel:`${typeLabel} Room`;
   const named=planning.name&&planning.name!=="My room"?planning.name:null;
   const title=named??[dorm?.name??"Your room",roomName].join(" · ");
-  const subline=[college?.name.replace(/\s*\(.*\)$/,""),formatDims(room.lengthFt,room.widthFt)+(room.dimsEstimated?" (est.)":""),designDisplayName(style,customVibe),`$${budget} budget`].filter(Boolean).join(" · ");
+  // The school's short name (its first alias, e.g. "penn state"); the line is set in caps.
+  const school=college?.id?getSchool(college.id):undefined;
+  const subline=[school?.aliases?.[0]??college?.name.replace(/^The\s+/,"").replace(/\s*\(.*\)$/,""),room.dimsEstimated?"Estimated size":null,designDisplayName(style,customVibe),`$${budget} budget`].filter(Boolean).join(" · ");
   function rename(value:string){const name=value.trim().slice(0,60);usePlannerStore.getState().updatePlanning({name:name||"My room"});setRenaming(false);}
 
   const viewSwitch=(className:string)=><div className={className} role="group" aria-label="Planner view">
@@ -206,7 +208,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
           <button type="button" aria-label="Redo" title="Redo (Ctrl/⌘ Shift Z)" disabled={!history.canRedo||preview} onClick={history.redo}><RedoIcon size={18}/></button>
         </div>
         <span className={s.vr} aria-hidden="true"/>
-        <div className={s.actions} inert={preview}><ActionBar products={products} getPng={()=>view==="3d"?scene.current?.exportPNG()??null:get2DPng()} onShop={()=>open("shop")} shopOpen={activePanel==="shop"}/></div>
+        <div className={s.actions} inert={preview}><ActionBar hideCompare={view==="3d"} products={products} getPng={()=>view==="3d"?scene.current?.exportPNG()??null:get2DPng()} onShop={()=>open("shop")} shopOpen={activePanel==="shop"}/></div>
       </div>
     </header>
     <Body id={shell?"page-content":undefined} tabIndex={shell?-1:undefined} className={s.body}>
