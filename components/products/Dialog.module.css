@@ -1,10 +1,12 @@
 /* Studio dialogs (over budget, add your own, did you grab everything?).
-   The shared Modal provides the scrim and focus handling; this styles the card. */
+   The shared Modal provides the scrim and focus handling; this styles the card.
+   Selectors are doubled where the legacy .dm-dialog-layer rules (experience.css)
+   would otherwise flatten radii and borders. */
 .layer {
   position: fixed; inset: 0; z-index: 80; display: flex; align-items: center; justify-content: center;
   padding: clamp(12px, 3vw, 28px); background: rgba(22, 22, 29, 0.55); overflow-y: auto;
 }
-.card {
+.card, .layer > .card {
   position: relative; width: min(460px, 100%); padding: 28px; border-radius: 22px; background: var(--ds-paper);
   color: var(--ds-ink); font-family: var(--ds-sans);
   box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06), 0 40px 90px -30px rgba(10, 16, 44, 0.6);
@@ -20,7 +22,7 @@
 .figures span { font-size: 15px; font-weight: 700; }
 .figures b { font-size: 18px; font-weight: 900; color: var(--ds-magenta); }
 .actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 22px; }
-.card .primary, .card .secondary, .card .quiet {
+.card .primary.primary, .card .secondary.secondary, .card .quiet.quiet {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 20px;
   border-radius: 999px; font: 800 15px/1 var(--ds-sans); cursor: pointer;
 }
@@ -31,7 +33,7 @@
 .card .secondary:hover { border-color: var(--ds-ink); }
 .card .quiet { min-height: 40px; border: 0; background: none; color: var(--ds-caption); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .card .quiet:hover { color: var(--ds-ink); }
-.close {
+.card .close.close {
   position: absolute; top: 14px; right: 14px; display: inline-flex; align-items: center; justify-content: center;
   width: 40px; height: 40px; border: 0; border-radius: 50%; background: transparent; color: var(--ds-ink); cursor: pointer;
 }
@@ -53,13 +55,13 @@
   background-size: 24px 24px;
 }
 .panel p { margin: 0; font-family: var(--ds-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ds-yellow); }
-.panel .yes { width: 100%; margin-top: 12px; min-height: 52px; border: 0; border-radius: 999px; background: #fff; color: var(--ds-ink); font: 850 16px/1 var(--ds-sans); cursor: pointer; }
+.panel .yes.yes { width: 100%; margin-top: 12px; min-height: 52px; border: 0; border-radius: 999px; background: #fff; color: var(--ds-ink); font: 850 16px/1 var(--ds-sans); cursor: pointer; }
 .panel .yes:hover { background: var(--ds-yellow); }
 .stack { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
 .stack .secondary { width: 100%; }
 @media (max-width: 600px) {
   .layer { align-items: flex-end; padding: 0; }
-  .card, .card.wide { width: 100%; padding: 24px 20px calc(20px + env(safe-area-inset-bottom)); border-radius: 22px 22px 0 0; }
+  .card, .card.wide, .layer > .card { width: 100%; padding: 24px 20px calc(20px + env(safe-area-inset-bottom)); border-radius: 22px 22px 0 0; }
   .actions { flex-direction: column-reverse; }
   .actions > button { width: 100%; }
 }

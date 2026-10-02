@@ -189,7 +189,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
       if(view==="3d"&&allowed3D&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==="z"){e.preventDefault();e.stopPropagation();e.shiftKey?history.redo():history.undo();}
       if(e.key==="Escape"){setMobileOpen(false);setMoveMode(false);}}}>
     <header className={s.appBar}>
-      {shell&&<Link href="/plan/style" className={s.backLink} aria-label="Back to your vibe and budget"><ChevronLeft size={20}/></Link>}
+      {shell&&<Link href="/plan/budget" className={s.backLink} aria-label="Back to your budget"><ChevronLeft size={20}/></Link>}
       {shell&&<><Wordmark className={s.wordmark}/><span className={s.vr} aria-hidden="true"/></>}
       <div className={s.titleBlock}>
         <div className={s.titleLine}>
@@ -286,7 +286,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         </div>}
       </aside>
     </Body>
-    {editingRoom&&isPaid(profile)&&<Modal role="dialog" aria-modal="true" aria-label="Edit room shape" className={s.geometryModal} onKeyDown={e=>{if(e.key==="Escape"){e.stopPropagation();setEditingRoom(false);}}}><div><header><h2>Edit your room</h2><button onClick={()=>setEditingRoom(false)}>Close</button></header><RoomDrawCanvas initialRoom={room} furniture={items} onCancel={()=>setEditingRoom(false)} onComplete={result=>{usePlannerStore.getState().updateRoomGeometry(result.outline,result.origin);setEditingRoom(false);}}/></div></Modal>}
+    {editingRoom&&isPaid(profile)&&<Modal role="dialog" aria-modal="true" aria-label="Edit room shape" className={s.geometryModal} onKeyDown={e=>{if(e.key==="Escape"){e.stopPropagation();setEditingRoom(false);}}}><div><RoomDrawCanvas initialRoom={room} furniture={items} onCancel={()=>setEditingRoom(false)} onComplete={result=>{usePlannerStore.getState().updateRoomGeometry(result.outline,result.origin);setEditingRoom(false);}}/></div></Modal>}
   </div>;
 
 }

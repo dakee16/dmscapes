@@ -178,7 +178,7 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
       </aside>}
       {!compact&&<aside id={activePanel==="shop"?"studio-panel":undefined} className={s.panel} aria-label="Shopping list"><div className={s.panelList}>{shopping}</div></aside>}
     </div>
-    {editingRoom&&(isPaid(profile)||workspace?.ownerPro)&&<Modal role="dialog" aria-modal="true" aria-label="Edit room shape" className={s.geometryModal} onKeyDown={e=>{if(e.key==="Escape"){e.stopPropagation();setEditingRoom(false);}}}><div><header><h2>Edit your room</h2><button onClick={()=>setEditingRoom(false)}>Close</button></header><RoomDrawCanvas initialRoom={room} furniture={items} onCancel={()=>setEditingRoom(false)} onComplete={result=>{usePlannerStore.getState().updateRoomGeometry(result.outline,result.origin);setEditingRoom(false);}}/></div></Modal>}
+    {editingRoom&&(isPaid(profile)||workspace?.ownerPro)&&<Modal role="dialog" aria-modal="true" aria-label="Edit room shape" className={s.geometryModal} onKeyDown={e=>{if(e.key==="Escape"){e.stopPropagation();setEditingRoom(false);}}}><div><RoomDrawCanvas initialRoom={room} furniture={items} onCancel={()=>setEditingRoom(false)} onComplete={result=>{usePlannerStore.getState().updateRoomGeometry(result.outline,result.origin);setEditingRoom(false);}}/></div></Modal>}
     <footer className={s.statusBar}><span>Manual edits use no design credits.</span><button onClick={()=>open("shop")}><span>Shopping total</span> <strong>${total.toFixed(2)}</strong> / ${budget}{total>budget&&<b> Over budget</b>}</button></footer>
   </div>;
 }
