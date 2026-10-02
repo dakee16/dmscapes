@@ -11,6 +11,8 @@ import {
   FLEX_DEFAULT_QTY,
   planOf,
 } from "@/lib/plan";
+import { MinusIcon, PlusIcon } from "@/components/account-ui/parts";
+import css from "@/components/account-ui/BuyCredits.module.css";
 
 // The à-la-carte Flex-credit purchase control: a quantity stepper, a live
 // price (quantity × $0.99), and a "Buy credits" button that opens Stripe
@@ -62,23 +64,20 @@ export default function BuyCreditsForm({
   }
 
   return (
-    <div>
-      <label
-        htmlFor={`flex-qty-${source}`}
-        className="block font-mono text-[11px] font-semibold uppercase tracking-wide text-ink-soft"
-      >
+    <div className={css.form}>
+      <label htmlFor={`flex-qty-${source}`} className={css.label}>
         How many credits?
       </label>
-      <div className="mt-2.5 flex flex-wrap items-center justify-between gap-3">
-        <div className="flex h-12 items-stretch overflow-hidden rounded-xl border border-ink/15 bg-white">
+      <div className={css.row}>
+        <div className={css.stepper}>
           <button
             type="button"
             onClick={() => setQty((q) => clamp(q - 1))}
             disabled={qty <= FLEX_MIN_QTY || busy}
             aria-label="Fewer credits"
-            className="grid w-11 cursor-pointer place-items-center text-xl font-semibold text-ink-soft transition-colors hover:bg-paper hover:text-ink disabled:cursor-not-allowed disabled:opacity-40"
+            className={css.step}
           >
-            &minus;
+            <MinusIcon />
           </button>
           <input
             id={`flex-qty-${source}`}
@@ -89,47 +88,40 @@ export default function BuyCreditsForm({
             value={qty}
             autoFocus={autoFocus}
             onChange={(e) => setQty(clamp(Number(e.target.value)))}
-            className="focus-quiet w-12 border-x border-ink/10 bg-transparent text-center font-mono text-base font-semibold text-ink outline-none"
+            className={css.qty}
           />
           <button
             type="button"
             onClick={() => setQty((q) => clamp(q + 1))}
             disabled={qty >= FLEX_MAX_QTY || busy}
             aria-label="More credits"
-            className="grid w-11 cursor-pointer place-items-center text-xl font-semibold text-ink-soft transition-colors hover:bg-paper hover:text-ink disabled:cursor-not-allowed disabled:opacity-40"
+            className={css.step}
           >
-            +
+            <PlusIcon />
           </button>
         </div>
         {/* Price: "N x $0.99" on top, the running total large below, right-aligned
             so the stepper and the number never crowd each other. */}
-        <div className="text-right leading-tight">
-          <p className="whitespace-nowrap font-mono text-xs text-ink-soft">
+        <div className={css.price} aria-live="polite">
+          <p className={css.each}>
             {qty} &times; ${FLEX_CREDIT_PRICE_USD.toFixed(2)}
           </p>
-          <p className="dm-numeric text-2xl font-semibold tracking-tight text-ink">
-            ${total}
-          </p>
+          <p className={css.total}>${total}</p>
         </div>
       </div>
 
-      <button
-        type="button"
-        onClick={buy}
-        disabled={busy}
-        className="mt-4 flex h-12 w-full cursor-pointer items-center justify-center rounded-xl bg-cobalt px-6 text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
-      >
+      <button type="button" onClick={buy} disabled={busy} className={css.buy}>
         {busy ? "Starting checkout…" : `Buy ${qty} credit${qty === 1 ? "" : "s"}`}
       </button>
 
-      <p className="mt-2.5 text-[13px] leading-snug text-ink-soft">
+      <p className={css.note}>
         {tier === "free"
           ? "$0.99 each. Your first purchase moves you to the Flex tier: same free features, plus the credits you buy."
           : "$0.99 each, added to your existing credits. One-time payment, no subscription."}
       </p>
 
       {error && (
-        <p className="mt-2 text-sm text-[#c2321e]" role="alert">
+        <p className={css.error} role="alert">
           {error}
         </p>
       )}
