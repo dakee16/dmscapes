@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { track } from "@/lib/analytics";
+import { Check } from "@/components/ds/Icons";
+import css from "@/components/account-ui/Notify.module.css";
 
 // Legacy interest capture. The live 3D launch no longer renders this form.
 // Reuses the existing waitlist table/route with a source that flags it as
@@ -51,24 +53,14 @@ export default function PremiumNotify() {
 
   if (done) {
     return (
-      <div className="snap-in flex items-center gap-3 rounded-xl border border-cobalt/30 bg-cobalt/5 p-4">
-        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-cobalt">
-          <svg
-            viewBox="0 0 24 24"
-            className="h-5 w-5"
-            fill="none"
-            stroke="#ffffff"
-            strokeWidth="2.5"
-            aria-hidden="true"
-          >
-            <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+      <div className={css.done}>
+        <span aria-hidden="true">
+          <Check size={20} color="#fff" />
         </span>
         <div>
-          <p className="text-sm font-semibold text-ink">You&rsquo;re on the list.</p>
-          <p className="text-[13px] leading-relaxed text-ink-soft">
-            We&rsquo;ll email <span className="font-medium text-ink">{email.trim()}</span> the
-            moment Room in 3D is ready.
+          <p className={css.doneTitle}>You&rsquo;re on the list.</p>
+          <p className={css.doneText}>
+            We&rsquo;ll email <strong>{email.trim()}</strong> the moment Room in 3D is ready.
           </p>
         </div>
       </div>
@@ -76,8 +68,8 @@ export default function PremiumNotify() {
   }
 
   return (
-    <form onSubmit={handleSubmit} noValidate>
-      <div className="flex flex-col gap-2.5 sm:flex-row">
+    <form onSubmit={handleSubmit} noValidate className={css.form}>
+      <div className={css.row}>
         <input
           type="email"
           autoComplete="email"
@@ -89,22 +81,15 @@ export default function PremiumNotify() {
           }}
           placeholder="you@school.edu"
           aria-label="Email address"
-          className="h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
+          className="ds-input"
         />
-        <button
-          type="submit"
-          disabled={busy}
-          className="h-12 shrink-0 cursor-pointer rounded-xl bg-ink px-6 text-base font-semibold text-white transition-colors hover:bg-cobalt disabled:cursor-wait disabled:opacity-70"
-        >
+        <button type="submit" disabled={busy} className="ds-btn ds-btn--ink-yellow">
           {busy ? "Saving…" : "Notify me"}
         </button>
       </div>
 
       {/* Honeypot: off-screen, hidden from humans and assistive tech. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-[-9999px] h-0 w-0 overflow-hidden"
-      >
+      <div aria-hidden="true" className={css.trap}>
         <label htmlFor="p-website">Leave this field empty</label>
         <input
           id="p-website"
@@ -117,13 +102,11 @@ export default function PremiumNotify() {
       </div>
 
       {error ? (
-        <p className="mt-2 text-sm text-[#c2321e]" role="alert">
+        <p className={css.error} role="alert">
           {error}
         </p>
       ) : (
-        <p className="mt-2 text-[13px] text-ink-soft">
-          No spam. One email when it launches, and that&rsquo;s it.
-        </p>
+        <p className={css.note}>No spam. One email when it launches, and that&rsquo;s it.</p>
       )}
     </form>
   );
