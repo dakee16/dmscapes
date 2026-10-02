@@ -1,0 +1,464 @@
+/* Step 03 · budget (designs/planner/Budget + M-Budget). Layout comes from
+   Vibe.module.css; this holds the figure, the tape slider and the generate. */
+
+.titleSans.titleSans {
+  text-shadow: none;
+}
+
+.figure {
+  display: block;
+  margin: 18px 0 0 -6px;
+  font-size: clamp(140px, 15.3vw, 220px);
+  line-height: 1;
+  font-weight: 900;
+  font-stretch: 85%;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 5px 4px 0 rgba(255, 79, 168, 0.85), -5px -3px 0 rgba(36, 73, 255, 0.4);
+  white-space: nowrap;
+}
+
+/* ---------- Tape slider ---------- */
+.tape {
+  position: relative;
+  margin-top: 24px;
+  height: 118px;
+  max-width: 888px;
+  touch-action: pan-y;
+}
+.range {
+  position: absolute;
+  left: 0;
+  top: 24px;
+  width: 100%;
+  height: 80px;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  z-index: 2;
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2px;
+  height: 80px;
+}
+.range::-moz-range-thumb {
+  width: 2px;
+  height: 80px;
+  border: 0;
+}
+.strip {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 34px;
+  height: 64px;
+  background-color: var(--ds-tape);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1.5px, transparent 1.5px calc(100% / 130)),
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.75) 0 1.5px, transparent 1.5px calc(100% / 26)),
+    repeating-linear-gradient(90deg, var(--ds-ink) 0 2px, transparent 2px calc(100% / 13));
+  background-size: 100% 10px, 100% 18px, 100% 28px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  border-radius: 4px;
+  box-shadow: 0 3px 0 var(--ds-tape-shadow), 0 12px 24px rgba(22, 22, 29, 0.12);
+}
+.marks span {
+  position: absolute;
+  top: 36px;
+  padding-left: 2px;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ds-ink);
+}
+.ends {
+  display: none;
+}
+.marker {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.flag {
+  position: absolute;
+  top: 0;
+  left: clamp(0px, calc(var(--p) * 100% - 38px), calc(100% - 76px));
+  width: 76px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  font-size: 14px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.markerLine {
+  position: absolute;
+  top: 28px;
+  left: calc(var(--p) * 100% - 1.5px);
+  width: 3px;
+  height: 76px;
+  background: var(--ds-red);
+}
+.markerDot {
+  position: absolute;
+  top: 98px;
+  left: calc(var(--p) * 100% - 9px);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--ds-red);
+  box-shadow: 0 0 0 3px var(--ds-paper);
+}
+.range:focus-visible ~ .marker .markerDot {
+  box-shadow: 0 0 0 3px var(--ds-paper), 0 0 0 6px var(--ds-blue);
+}
+.range:focus-visible ~ .marker .flag {
+  outline: 3px solid var(--ds-blue);
+  outline-offset: 2px;
+}
+
+/* ---------- Quick picks + what it covers ---------- */
+.quick {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.quickLabel {
+  margin-right: 6px;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+.quickBtn.quickBtn {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(22, 22, 29, 0.25);
+  background: #fff;
+  font-family: var(--ds-sans);
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ds-ink);
+  cursor: pointer;
+  transition: background-color 150ms var(--ds-ease), color 150ms var(--ds-ease);
+}
+.quickBtn.quickBtn:hover {
+  border-color: var(--ds-ink);
+}
+.quickBtn.quickBtn[aria-pressed="true"] {
+  background: var(--ds-ink);
+  border-color: var(--ds-ink);
+  color: var(--ds-yellow);
+}
+
+.covers {
+  margin: 18px 0 0;
+  min-height: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  max-width: 888px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ds-muted);
+}
+.covers strong {
+  font-weight: 700;
+  color: var(--ds-ink);
+}
+.tier {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--ds-yellow);
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ds-ink);
+}
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.facts {
+  margin-top: 36px;
+  max-width: 888px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 2px solid var(--ds-ink);
+}
+.factHead {
+  font-size: 17px;
+  font-weight: 800;
+}
+.factBody {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ds-muted);
+}
+
+/* ---------- Generate ---------- */
+.go {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.error {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ds-red);
+}
+.goBar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.plan.plan {
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 26px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  font-family: var(--ds-sans);
+  font-size: 22px;
+  font-weight: 850;
+  box-shadow: 5px 5px 0 var(--ds-pink);
+  cursor: pointer;
+  transition: transform 180ms var(--ds-ease), box-shadow 180ms var(--ds-ease), opacity 180ms;
+}
+.plan.plan:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--ds-pink);
+}
+.plan.plan:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--ds-pink);
+}
+.plan.plan:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+.costs {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--ds-muted);
+}
+.meter {
+  justify-content: center;
+}
+.backLink {
+  align-self: center;
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ds-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.backLink:hover {
+  color: var(--ds-ink);
+}
+.backPhone {
+  display: none;
+}
+
+.skelFigure {
+  margin-top: 24px;
+  width: 50%;
+  height: 200px;
+  border-radius: 16px;
+  background: rgba(22, 22, 29, 0.06);
+}
+
+@media (max-width: 1199px) {
+  .facts {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 900px) {
+  .figure {
+    margin: 14px 0 0 -4px;
+    font-size: clamp(88px, 28vw, 112px);
+    text-shadow: 4px 3px 0 rgba(255, 79, 168, 0.85), -3px -2px 0 rgba(36, 73, 255, 0.4);
+  }
+  .tape {
+    margin-top: 18px;
+    height: 96px;
+  }
+  .range {
+    top: 16px;
+    height: 70px;
+  }
+  .range::-webkit-slider-thumb {
+    height: 70px;
+  }
+  .strip {
+    top: 30px;
+    height: 48px;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1px, transparent 1px calc(100% / 130)),
+      repeating-linear-gradient(90deg, var(--ds-ink) 0 1.5px, transparent 1.5px calc(100% / 26));
+    background-size: 100% 9px, 100% 18px;
+    box-shadow: 0 3px 0 var(--ds-tape-shadow);
+  }
+  .marks {
+    display: none;
+  }
+  .ends {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    top: 26px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--ds-mono);
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .flag {
+    display: none;
+  }
+  .markerDot {
+    top: 0;
+  }
+  .markerLine {
+    top: 16px;
+    height: 70px;
+  }
+  .quick {
+    margin-top: 16px;
+  }
+  .quickLabel {
+    display: none;
+  }
+  .quickBtn.quickBtn {
+    height: 44px;
+  }
+  .covers {
+    font-size: 14px;
+  }
+  .phoneSummary {
+    margin-top: 18px;
+  }
+  .facts {
+    display: none;
+  }
+  .backPhone {
+    display: inline-block;
+    margin-top: 18px;
+  }
+  .backDesk {
+    display: none;
+  }
+  .go {
+    margin-top: 16px;
+  }
+  .goBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    gap: 8px;
+    padding: 12px 20px max(22px, env(safe-area-inset-bottom));
+    background: var(--ds-paper);
+    border-top: 1.5px solid rgba(22, 22, 29, 0.1);
+  }
+  .plan.plan {
+    height: 60px;
+    padding: 0 24px;
+    font-size: 20px;
+    box-shadow: 4px 4px 0 var(--ds-pink);
+  }
+  .costs {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plan.plan,
+  .quickBtn.quickBtn {
+    transition: none;
+  }
+}
+
+/* The small tape (create-vibe, and every tape on phones above). */
+.tape[data-size="sm"] {
+  margin-top: 8px;
+  height: 96px;
+}
+.tape[data-size="sm"] .range {
+  top: 16px;
+  height: 70px;
+}
+.tape[data-size="sm"] .range::-webkit-slider-thumb {
+  height: 70px;
+}
+.tape[data-size="sm"] .strip {
+  top: 30px;
+  height: 48px;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1px, transparent 1px calc(100% / 130)),
+    repeating-linear-gradient(90deg, var(--ds-ink) 0 1.5px, transparent 1.5px calc(100% / 26));
+  background-size: 100% 9px, 100% 18px;
+  box-shadow: 0 3px 0 var(--ds-tape-shadow);
+}
+.tape[data-size="sm"] .marks,
+.tape[data-size="sm"] .flag {
+  display: none;
+}
+.tape[data-size="sm"] .ends {
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 26px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  font-weight: 700;
+}
+.tape[data-size="sm"] .markerDot {
+  top: 0;
+}
+.tape[data-size="sm"] .markerLine {
+  top: 16px;
+  height: 70px;
+}

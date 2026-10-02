@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { ProductRadar } from "@/components/experience/StudioMotion";
-import { MotionToggle, useExperienceMotion } from "@/components/experience/MotionProvider";
-import { VIBE_LOADING_LINES } from "@/lib/custom-vibe";
-import BrandMark from "@/components/site/BrandMark";
+import Generating from "@/components/plan-steps/Generating";
+import { dimsOf, schoolLabel, usd, vibeMeta } from "@/components/plan-steps/room-model";
+import { usePlannerStore } from "@/lib/store";
 
-const SEARCH_CATEGORIES = ["Bedding & textiles", "Lighting & decor", "Storage & essentials"];
+const noop = () => {};
 
-/** Decorative product-search motion; completion still comes from the real request. */
+/**
+ * The custom-vibe wait (Create your own vibe, and its regeneration on the
+ * result page): the same planning screen as the curated flow, held in its calm
+ * loop until the caller unmounts it. Completion still comes from the real request.
+ */
 export default function VibeLoading({
   description = "",
   budget,
@@ -19,75 +20,26 @@ export default function VibeLoading({
   budget?: number;
   regenerating?: boolean;
 }) {
-  const { paused } = useExperienceMotion();
-  const [line, setLine] = useState(0);
-
-  useEffect(() => {
-    if (paused) {
-      return;
-    }
-    const timer = window.setInterval(() => setLine(value => (value + 1) % VIBE_LOADING_LINES.length), 3200);
-    return () => {
-      window.clearInterval(timer);
-    };
-  }, [paused]);
-
-  useEffect(() => {
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = previous; };
-  }, []);
-
+  const room = usePlannerStore((s) => s.room);
+  const college = usePlannerStore((s) => s.college);
+  const dorm = usePlannerStore((s) => s.dorm);
+  if (!room) return null;
+  const brief = description.trim();
+  const under = typeof budget === "number" ? ` that land under ${usd(budget)}` : "";
   return (
-    <div className="dm-vibe-loading" aria-label="Finding products for your custom vibe" aria-busy="true">
-      <header className="dm-vibe-loading-header">
-        <span className="flex items-center gap-2"><BrandMark size={34}/><span className="dm-brand-type font-bold">dorm<span className="text-cobalt">scape</span></span></span>
-        <div><span className="dm-eyebrow">Custom vibe / In progress</span><MotionToggle /></div>
-      </header>
-
-      <div className="dm-vibe-loading-layout">
-        <div className="dm-vibe-loading-copy">
-          <p className="dm-eyebrow">{regenerating ? "A fresh take on your vibe" : "From your words to your room"}</p>
-          <h2>Finding your<br /><span className="dm-serif">kind of room.</span></h2>
-          {description && (
-            <div className="dm-vibe-loading-brief">
-              <span className="dm-eyebrow">Your brief</span>
-              <blockquote>{description}</blockquote>
-            </div>
-          )}
-          {typeof budget === "number" && (
-            <div className="dm-vibe-loading-budget"><span className="dm-eyebrow">Your budget</span><strong>${budget.toLocaleString("en-US")}</strong></div>
-          )}
-          <p className="dm-vibe-loading-status" role="status" aria-live="polite" aria-atomic="true">
-            <span aria-hidden="true" />{VIBE_LOADING_LINES[line]}
-          </p>
-        </div>
-
-        <div className="dm-vibe-search-scene" aria-hidden="true">
-          <div className="dm-vibe-search-heading"><span className="dm-eyebrow">Product search</span><span className="dm-eyebrow">Style study</span></div>
-          <ProductRadar />
-          <div className="dm-vibe-search-cards">
-            {SEARCH_CATEGORIES.map((category, index) => (
-              <motion.div
-                key={category}
-                className="dm-vibe-search-card"
-                initial={false}
-                animate={paused ? { y: 0, opacity: 1 } : { y: [12, 0, 0, -12], opacity: [0, 1, 1, 0] }}
-                transition={paused ? { duration: 0 } : { duration: 5.4, delay: index * 0.45, repeat: Infinity, times: [0, 0.16, 0.82, 1], ease: "easeInOut" }}
-              >
-                <span className="dm-eyebrow">0{index + 1} / Matching</span>
-                <strong>{category}</strong>
-                <div className="dm-vibe-search-track"><motion.span initial={false} animate={paused ? { x: 0 } : { x: ["-110%", "310%"] }} transition={paused ? { duration: 0 } : { duration: 2.4, delay: index * 0.2, repeat: Infinity, ease: "linear" }} /></div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <footer className="dm-vibe-loading-footer">
-        <span className="dm-eyebrow">Your room is coming together</span>
-        <p>Matching products to your vibe can take a little longer than a preset.</p>
-      </footer>
-    </div>
+    <Generating
+      room={room}
+      summary={[schoolLabel(college), dorm?.name, brief ? `“${brief}”` : null, typeof budget === "number" ? usd(budget) : null]
+        .filter(Boolean)
+        .join(" · ")}
+      eyebrow={regenerating ? "A fresh take on your vibe" : "From your words to your room"}
+      measure={`Loaded your ${dimsOf(room.lengthFt, room.widthFt)} room with its standard furniture.`}
+      imagine={brief ? `Finding real pieces for “${brief}”${under}.` : `Finding real pieces for your vibe${under}.`}
+      picks={{ bedding: true, rug: true, lamp: true }}
+      colors={vibeMeta("custom")!.dots}
+      ready={false}
+      onOpen={noop}
+      skippable={false}
+    />
   );
 }

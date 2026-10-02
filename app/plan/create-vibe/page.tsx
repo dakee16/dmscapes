@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
@@ -11,35 +10,26 @@ import { consumePlanCredit } from "@/lib/plan-credits";
 import { generateVibe } from "@/lib/vibe-client";
 import { tierForBudget } from "@/lib/catalog";
 import { track } from "@/lib/analytics";
-import {
-  validateVibe,
-  vibeHelper,
-  VIBE_PLACEHOLDER,
-  INSPIRATION_CHIPS,
-} from "@/lib/custom-vibe";
-import VibeLoading from "@/components/planner/VibeLoading";
+import { validateVibe, vibeHelper, VIBE_PLACEHOLDER, INSPIRATION_CHIPS } from "@/lib/custom-vibe";
+import RoomCard from "@/components/plan-steps/RoomCard";
+import BudgetTape from "@/components/plan-steps/BudgetTape";
+import Generating from "@/components/plan-steps/Generating";
+import { dimsOf, schoolLabel, usd, vibeMeta } from "@/components/plan-steps/room-model";
+import { ArrowUpRight } from "@/components/ds/Icons";
+import v from "@/components/plan-steps/Vibe.module.css";
+import css from "@/components/plan-steps/CreateVibe.module.css";
 
-// Item 4: the "Create your own vibe" input as its own dedicated page (Pro).
-// Left: heading, description, the text input. Right: the inspiration chips
-// levitating with staggered, independent idle float. Premium gradient + grid
-// paper ground. Same functionality as the old inline panel (validation gate,
-// chip tap-to-fill); this is a visual/layout upgrade. Loads the large loading
-// state (VibeLoading) during generation.
-const MIN_LOADING_MS = 2400;
 const TIER_LABELS = { budget: "Essentials", mid: "Upgraded", premium: "Premium" } as const;
 
-// Per-chip float + depth so the set levitates independently (no synced bob).
-// The horizontal offset (mlClass) is desktop-only, so chips stack flush on mobile.
-const CHIP_MOTION = [
-  { rotate: -2.5, mlClass: "", dur: "6.5s", delay: "0s", dist: "10px", z: "shadow-[0_18px_40px_-20px_rgba(23,23,43,0.45)]" },
-  { rotate: 2, mlClass: "sm:ml-12", dur: "7.8s", delay: "0.5s", dist: "13px", z: "shadow-[0_22px_48px_-22px_rgba(43,78,255,0.4)]" },
-  { rotate: -1.5, mlClass: "sm:ml-4", dur: "7.1s", delay: "0.9s", dist: "9px", z: "shadow-[0_16px_36px_-20px_rgba(23,23,43,0.4)]" },
-  { rotate: 3, mlClass: "sm:ml-16", dur: "8.3s", delay: "0.3s", dist: "12px", z: "shadow-[0_20px_44px_-22px_rgba(23,23,43,0.42)]" },
-];
-
+// The "Create your own vibe" input as its own page (Pro). Left: heading,
+// description, the text input and the budget. Right: the room so far and the
+// inspiration chips (tap to fill). Same functionality as before (validation
+// gate, chip tap-to-fill); the wait is the shared planning screen.
 export default function CreateVibePage() {
   const router = useRouter();
   const room = usePlannerStore((s) => s.room);
+  const college = usePlannerStore((s) => s.college);
+  const dorm = usePlannerStore((s) => s.dorm);
   const budget = usePlannerStore((s) => s.budget);
   const setBudget = usePlannerStore((s) => s.setBudget);
   const setCustomResult = usePlannerStore((s) => s.setCustomResult);
@@ -51,6 +41,8 @@ export default function CreateVibePage() {
   const [validationMsg, setValidationMsg] = useState<string | null>(null);
   const [apiError, setApiError] = useState<string | null>(null);
   const [generating, setGenerating] = useState(false);
+  // The planning screen: null while idle; ready once matches are in and paid for.
+  const [planning, setPlanning] = useState<{ ready: boolean; vibe: string } | null>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const generatingRef = useRef(false);
 
@@ -58,6 +50,12 @@ export default function CreateVibePage() {
   useEffect(() => {
     if (usePlannerStore.persist.hasHydrated()) setHydrated(true);
     return usePlannerStore.persist.onFinishHydration(() => setHydrated(true));
+  }, []);
+
+  // Text typed into the vibe step's Pro field arrives as ?vibe=.
+  useEffect(() => {
+    const carried = new URLSearchParams(window.location.search).get("vibe");
+    if (carried) setText(carried.slice(0, 500));
   }, []);
 
   // Guards: need a room (Step 1), and Pro (Free/Flex/Plus get the upgrade modal
@@ -94,13 +92,12 @@ export default function CreateVibePage() {
     if (!canGeneratePlan(profile)) { openUpgrade("pro-credits"); return; }
     generatingRef.current = true;
     setGenerating(true);
-    const startedAt = Date.now();
+    setPlanning({ ready: false, vibe });
 
     try {
       const result = await generateVibe({ vibe, budget, bedSize: room?.bedSize, seed: 0 });
-      const elapsed = Date.now() - startedAt;
-      if (elapsed < MIN_LOADING_MS) await new Promise((r) => setTimeout(r, MIN_LOADING_MS - elapsed));
       if (!result.ok || !result.products?.length) {
+        setPlanning(null);
         setApiError(result.error ?? "We couldn't build a room from that. Try tweaking your description.");
         return;
       }
@@ -108,13 +105,16 @@ export default function CreateVibePage() {
       const { blocked } = await consumePlanCredit();
       void refreshProfile();
       if (blocked) {
+        setPlanning(null);
         openUpgrade("pro-credits");
         return;
       }
       track("custom_vibe_generated", { mock: result.mock });
       setCustomResult(vibe, result.products, result.mock ?? false);
-      router.push("/plan/result");
+      // The planning screen opens /plan/result (openPlan) as soon as it can.
+      setPlanning({ ready: true, vibe });
     } catch (error) {
+      setPlanning(null);
       setApiError(error instanceof Error ? error.message : "Couldn't start your design. Please try again.");
     } finally {
       generatingRef.current = false;
@@ -122,153 +122,113 @@ export default function CreateVibePage() {
     }
   }
 
+  const openPlan = useCallback(() => router.push("/plan/result"), [router]);
+
   // Hold the frame until we know the guards pass (avoids a flash of the form
   // before a non-Pro visitor is redirected).
   if (!hydrated || !room || (!authLoading && !isPro(profile))) {
-    return <div className="min-h-[60vh]" aria-busy="true" />;
+    return <div className={css.hold} aria-busy="true" />;
   }
 
   return (
-    <section className="relative min-h-[calc(100vh-8.5rem)] overflow-hidden">
-      <div className="relative mx-auto max-w-5xl px-5 pb-24 pt-4 sm:px-8 sm:pt-8">
-        <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-          Pro · Create your own vibe
+    <div className={v.layout}>
+      <div className={v.left}>
+        <p className={`ds-eyebrow ${v.eyebrow}`}>Pro · Create your own vibe</p>
+        <h1 className={v.title}>
+          <span className={v.titleSans}>Put your room</span>{" "}
+          <span className={v.titleSerif}>into words.</span>
+        </h1>
+        <p className={css.lede}>
+          Colors, textures, a mood, a reference, whatever the room feels like in your head. We&apos;ll match real
+          products to it and lay them out to your {room.lengthFt} × {room.widthFt} ft room.
         </p>
 
-        <div className="mt-6 grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-          {/* LEFT, heading, description, input. */}
-          <div>
-            <h1 className="dm-page-title font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
-              Put your room <br className="hidden sm:block" />
-              into <span className="hl">words.</span>
-            </h1>
-            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-ink-soft">
-              Colors, textures, a mood, a reference, whatever the room feels like in
-              your head. We&apos;ll match real products to it and lay them out to your{" "}
-              {room.lengthFt} × {room.widthFt} ft room.
-            </p>
+        <label htmlFor="vibe-input" className="ds-sr">
+          Describe your vibe
+        </label>
+        <textarea
+          id="vibe-input"
+          ref={textareaRef}
+          value={text}
+          onChange={(e) => {
+            setText(e.target.value);
+            if (validationMsg) setValidationMsg(null);
+            if (apiError) setApiError(null);
+          }}
+          rows={4}
+          placeholder={VIBE_PLACEHOLDER}
+          aria-describedby="vibe-helper"
+          className={`ds-input ${css.textarea}`}
+        />
+        <p id="vibe-helper" className={css.helper} aria-live="polite">
+          {vibeHelper(text)}
+        </p>
 
-            <label htmlFor="vibe-input" className="sr-only">
-              Describe your vibe
-            </label>
-            <textarea
-              id="vibe-input"
-              ref={textareaRef}
-              value={text}
-              onChange={(e) => {
-                setText(e.target.value);
-                if (validationMsg) setValidationMsg(null);
-                if (apiError) setApiError(null);
-              }}
-              rows={4}
-              placeholder={VIBE_PLACEHOLDER}
-              className="mt-6 w-full resize-none rounded-2xl border border-ink/15 bg-white/90 p-4 text-base text-ink shadow-[0_18px_44px_-28px_rgba(23,23,43,0.5)] outline-none backdrop-blur-sm transition-colors placeholder:text-ink-soft/55 focus:border-cobalt"
-            />
-            <p className="mt-2 font-mono text-[11px] uppercase tracking-wide text-ink-soft/80" aria-live="polite">
-              {vibeHelper(text)}
-            </p>
+        {validationMsg && (
+          <p className={css.warn} role="alert">
+            {validationMsg}
+          </p>
+        )}
+        {apiError && (
+          <p className={css.error} role="alert">
+            {apiError}
+          </p>
+        )}
 
-            {validationMsg && (
-              <p className="mt-3 flex items-start gap-2 rounded-lg border border-highlight/50 bg-highlight/15 px-3 py-2.5 text-sm leading-snug text-ink" role="alert">
-                <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <circle cx="12" cy="12" r="9" />
-                  <path d="M12 8v5M12 16h.01" strokeLinecap="round" />
-                </svg>
-                {validationMsg}
-              </p>
-            )}
-            {apiError && (
-              <p className="mt-3 rounded-lg border border-ink/15 bg-white px-3 py-2.5 text-sm leading-snug text-ink" role="alert">
-                {apiError}
-              </p>
-            )}
-
-            {/* Budget (item 2): the standard slider, so budget is always captured
-                for a custom vibe just like the curated vibes. */}
-            <div className="mt-6 rounded-2xl border border-ink/10 bg-white/90 p-4 shadow-[0_18px_44px_-30px_rgba(23,23,43,0.5)] backdrop-blur-sm">
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <label htmlFor="vibe-budget" className="font-display text-base font-bold tracking-tight">
-                  Your budget
-                </label>
-                <div className="flex items-baseline gap-2">
-                  <span className="rounded-full bg-highlight/50 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
-                    {TIER_LABELS[tierForBudget(budget)]}
-                  </span>
-                  <output htmlFor="vibe-budget" className="font-mono text-2xl font-semibold text-ink">
-                    ${budget}
-                  </output>
-                </div>
-              </div>
-              <input
-                id="vibe-budget"
-                type="range"
-                min={200}
-                max={1500}
-                step={50}
-                value={budget}
-                onChange={(e) => setBudget(Number(e.target.value))}
-                className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full bg-ink/10 accent-cobalt"
-                aria-valuetext={`$${budget}`}
-              />
-              <div className="mt-1.5 flex justify-between font-mono text-xs text-ink-soft">
-                <span>$200</span>
-                <span>$1,500</span>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={handleGenerate}
-              disabled={generating}
-              className="mt-6 inline-flex h-13 w-full items-center justify-center rounded-xl bg-cobalt text-base font-semibold text-white shadow-[0_18px_40px_-20px_rgba(43,78,255,0.6)] transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:bg-ink/15 disabled:text-ink-soft sm:w-auto sm:px-10"
-            >
-              Build my room →
-            </button>
+        {/* Budget: the same tape as the budget step, so a custom vibe is
+            always priced just like the curated vibes. */}
+        <div className={css.budget}>
+          <div className={css.budgetHead}>
+            <span className={css.budgetLabel}>Your budget</span>
+            <span className={css.tier}>{TIER_LABELS[tierForBudget(budget)]}</span>
+            <output htmlFor="vibe-budget" className={css.budgetFigure}>
+              {usd(budget)}
+            </output>
           </div>
+          <BudgetTape id="vibe-budget" value={budget} onChange={setBudget} size="sm" />
+        </div>
 
-          {/* The inspiration chips remain real tap-to-fill controls. */}
-          <div className="dm-vibe-inspiration relative">
-            <BlueprintArtwork variant="orbit" />
-            <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-soft">
-              Need a starting point? Tap one.
-            </p>
-            <div className="mt-5 flex flex-col gap-4 sm:gap-5">
-              {INSPIRATION_CHIPS.map((chip, idx) => {
-                const m = CHIP_MOTION[idx % CHIP_MOTION.length];
-                return (
-                  <button
-                    key={chip}
-                    type="button"
-                    onClick={() => fillFrom(chip)}
-                    style={
-                      {
-                        "--float-dur": m.dur,
-                        "--float-delay": m.delay,
-                        "--float-dist": m.dist,
-                      } as React.CSSProperties
-                    }
-                    className={`vibe-float group/chip w-fit max-w-[19rem] rounded-2xl border border-ink/10 bg-white/90 px-4 py-3 text-left text-sm leading-snug text-ink backdrop-blur-sm transition-colors hover:border-cobalt/50 ${m.mlClass} ${m.z}`}
-                  >
-                    <span
-                      className="block"
-                      style={{ transform: `rotate(${m.rotate}deg)` }}
-                    >
-                      <span className="font-mono text-[10px] uppercase tracking-wide text-cobalt">
-                        Vibe
-                      </span>
-                      <span className="mt-1 block text-ink-soft transition-colors group-hover/chip:text-ink">
-                        &ldquo;{chip}&rdquo;
-                      </span>
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+        <div className={css.goBar}>
+          <button type="button" onClick={handleGenerate} disabled={generating} className={css.build}>
+            {generating ? "Building…" : "Build my room"}
+            <ArrowUpRight size={22} strokeWidth={2.8} />
+          </button>
+          <span className={css.cost}>Uses 1 plan credit once your matches are ready</span>
         </div>
       </div>
 
-      {generating && <VibeLoading description={text.trim()} budget={budget} />}
-    </section>
+      <div className={`${v.rail} ${css.rail}`}>
+        <div className={v.desktopOnly}>
+          <RoomCard />
+        </div>
+        <div className={css.chips}>
+          <p className={css.chipsLabel}>Need a starting point? Tap one.</p>
+          <ul className={css.chipList}>
+            {INSPIRATION_CHIPS.map((chip) => (
+              <li key={chip}>
+                <button type="button" onClick={() => fillFrom(chip)} className={css.chip}>
+                  <span className={css.chipTag}>Vibe</span>
+                  <span className={css.chipText}>&ldquo;{chip}&rdquo;</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {planning && (
+        <Generating
+          room={room}
+          summary={[schoolLabel(college), dorm?.name, `“${planning.vibe}”`, usd(budget)].filter(Boolean).join(" · ")}
+          eyebrow="From your words to your room"
+          measure={`Loaded your ${dimsOf(room.lengthFt, room.widthFt)} room with its standard furniture.`}
+          imagine={`Finding real pieces for “${planning.vibe}” that land under ${usd(budget)}.`}
+          picks={{ bedding: true, rug: true, lamp: true }}
+          colors={vibeMeta("custom")!.dots}
+          ready={planning.ready}
+          onOpen={openPlan}
+        />
+      )}
+    </div>
   );
 }
