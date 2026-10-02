@@ -1,2 +1,50 @@
 import s from "./Builder.module.css";
-export default function BuilderIllustration(){return <div className={s.illustration} aria-hidden="true"><div className={s.artTop}><span>THE ROOM STARTS WITH YOU</span><b>3D / PRO</b></div><svg viewBox="0 0 560 430" fill="none"><defs><pattern id="builder-grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" stroke="#afbdff" strokeOpacity=".15"/></pattern></defs><rect width="560" height="430" fill="url(#builder-grid)"/><g className={s.artFloor}><path d="m58 287 217-126 224 129-219 126Z" fill="#bd9b75" stroke="#17172b" strokeWidth="3"/><path d="m58 278 217-126 224 129-219 126Z" fill="#f4ddaf" stroke="#17172b" strokeWidth="3"/></g><g className={s.artWalls}><path d="M58 278V123L275 0v152Z" fill="#f8f5ea" stroke="#17172b" strokeWidth="3"/><path d="M275 152V0l224 129v152Z" fill="#d8dfff" stroke="#17172b" strokeWidth="3"/><path d="m345 94 87 50v72l-87-51Z" fill="#2b4eff" stroke="#17172b" strokeWidth="3"/><path d="m389 119 1 71m-45-60 87 51" stroke="#f8f5ea" strokeWidth="5"/><path d="M115 244V139l51-30v105" fill="#ffdc60" stroke="#17172b" strokeWidth="3"/></g><path d="m303 247 17 71 16-22 30 34 14-13-29-32 28-9Z" fill="#ffdc60" stroke="#17172b" strokeWidth="3"/><g stroke="#fff" strokeWidth="1.5"><path d="m48 312 210 121m-213-130-6 14m222 107-6 15"/><path d="m327 403 191-111m-195 107 8 12m180-126 9 14"/></g></svg><div className={s.artBottom}><span>FLOOR → WALLS → YOUR WORLD</span><span className={s.liveDot}>LIVE CONSTRUCTION</span></div></div>;}
+
+/**
+ * Small plans for the 3D Room Builder page (design-handoff designs/site/Builder):
+ * the three steps drawn on a dark grid, and the four room shapes the builder
+ * supports. Decorative; the copy beside them says the same thing.
+ */
+export type BuilderFigureKind = "shape" | "details" | "furnish" | "rectangle" | "l" | "alcove" | "angled";
+
+export default function BuilderIllustration({ kind }: { kind: BuilderFigureKind }) {
+  if (kind === "shape" || kind === "details" || kind === "furnish") {
+    return (
+      <figure className={s.figure} aria-hidden="true">
+        <svg viewBox="0 0 260 170" fill="none">
+          {kind === "shape" && <>
+            <path d="M20 20H200V90H240V150H20Z" stroke="#8FB2FF" strokeWidth="4" strokeLinejoin="round" />
+            {[[20, 20], [200, 20], [200, 90], [240, 150], [20, 150]].map(([x, y]) => <circle key={`${x}-${y}`} cx={x} cy={y} r="7" fill="#FFFFFF" />)}
+            <circle className={s.figPulse} cx="240" cy="90" r="11" fill="#FFB866" />
+          </>}
+          {kind === "details" && <>
+            <path d="M20 20H240V150H150M100 150H20Z" stroke="#F4F3EE" strokeWidth="5" />
+            <path d="M100 150V100A50 50 0 0 1 150 150" stroke="#8FB2FF" strokeWidth="2.5" strokeDasharray="6 5" />
+            <path d="M90 20H170" stroke="#8FB2FF" strokeWidth="9" />
+            <path d="M90 20H170" stroke="#0A102C" strokeWidth="3" />
+            <rect x="170" y="110" width="66" height="36" fill="rgba(255,184,102,0.18)" stroke="#FFB866" strokeWidth="2.5" />
+          </>}
+          {kind === "furnish" && <>
+            <path d="M20 20H240V150H20Z" stroke="#F4F3EE" strokeWidth="5" />
+            <rect x="26" y="26" width="40" height="80" rx="3" fill="#E6C29A" />
+            <rect x="26" y="84" width="40" height="22" fill="#B5562F" />
+            <rect x="92" y="60" width="90" height="62" rx="3" fill="#E3CFAE" />
+            <rect x="196" y="26" width="38" height="40" fill="#8FB2FF" />
+            <circle cx="214" cy="120" r="12" fill="#FFB866" />
+          </>}
+        </svg>
+      </figure>
+    );
+  }
+  const path = {
+    rectangle: "M10 10H160V110H10Z",
+    l: "M10 10H110V60H160V110H10Z",
+    alcove: "M10 10H160V110H115V85H55V110H10Z",
+    angled: "M10 10H120L160 50V110H10Z",
+  }[kind];
+  return (
+    <svg className={s.shapeArt} viewBox="0 0 170 120" fill="none" aria-hidden="true">
+      <path d={path} stroke="#8FB2FF" strokeWidth="5" strokeLinejoin="round" />
+    </svg>
+  );
+}

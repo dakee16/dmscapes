@@ -76,6 +76,7 @@
   color: rgba(22, 22, 29, 0.68);
 }
 .steps li + li { border-left: 1.5px solid rgba(22, 22, 29, 0.3); }
+.steps b { font-weight: inherit; }
 .steps li[aria-current] > span {
   padding: 3px 9px;
   border-radius: 3px;
@@ -404,6 +405,10 @@ button.row:hover { background: rgba(36, 73, 255, 0.05); }
 /* ---------- Narrower: panel drops under the canvas ---------- */
 @container (max-width: 1180px) {
   .body { grid-template-columns: 72px minmax(0, 1fr) 300px; }
+  .steps { flex-basis: 300px; }
+  .steps li { flex: 1 1 auto; }
+  .steps li[aria-current] { flex-grow: 2.4; }
+  .steps li:not([aria-current]) b { display: none; }
   .panel { padding: 20px; }
 }
 @container (max-width: 940px) {
@@ -418,7 +423,6 @@ button.row:hover { background: rgba(36, 73, 255, 0.05); }
     border-left: 0;
     border-top: 1.5px solid var(--draw-rule);
   }
-  .steps { flex-basis: 420px; }
 }
 
 /* ---------- Phone ---------- */
@@ -426,10 +430,6 @@ button.row:hover { background: rgba(36, 73, 255, 0.05); }
   .bar { gap: 10px; padding: 10px 12px; }
   .lead { flex: 1 1 auto; }
   .steps { order: 3; flex: 1 1 100%; margin: 0; height: 32px; }
-  .steps li { flex: 1 1 auto; letter-spacing: 0.04em; }
-  .steps li[aria-current] { flex-grow: 2.4; }
-  .steps li:not([aria-current]) b { display: none; }
-  .steps b { font-weight: inherit; }
   .actions { gap: 2px; }
   .btn { padding-inline: 16px; }
   .body { grid-template-columns: minmax(0, 1fr); }
