@@ -5,17 +5,20 @@ import { cartUrl } from "@/lib/catalog";
 import { track } from "@/lib/analytics";
 import { signalBuyIntent } from "@/lib/purchase-intent";
 import { useBuyGate } from "@/lib/buy-gate";
+import { UpRightIcon } from "@/components/studio-ui/icons";
+import { dollars } from "@/components/studio-ui/list";
 
-// The prominent "Buy all" cart link above the product list. Same visual as
-// before; now routed through the buy gate so logged-out shoppers sign in first
-// (and resume straight to Amazon). Split out of the result page so it can call
-// useBuyGate() from inside the BuyGateProvider subtree.
+// "Buy all": one Amazon cart link for everything still to buy. Routed through
+// the buy gate so logged-out shoppers sign in first (and resume straight to
+// Amazon). Split out so it can call useBuyGate() inside the BuyGateProvider.
 export default function BuyAllButton({
   products,
   total,
+  className,
 }: {
   products: Product[];
   total: number;
+  className?: string;
 }) {
   const buyGate = useBuyGate();
   const url = cartUrl(products);
@@ -36,26 +39,12 @@ export default function BuyAllButton({
         }
         proceed();
       }}
-      className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-cobalt px-4 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-cobalt-deep"
+      className={className}
+      aria-label={`Buy all ${products.length} items on Amazon, ${dollars(total)}`}
     >
-      <svg
-        viewBox="0 0 24 24"
-        className="h-4 w-4"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        aria-hidden="true"
-      >
-        <circle cx="9" cy="21" r="1" />
-        <circle cx="20" cy="21" r="1" />
-        <path
-          d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-      Buy all {products.length} items{" "}
-      <span className="font-mono">(${total.toFixed(0)})</span>
+      <span>Buy all {products.length}</span>
+      <small>{dollars(total)} on Amazon</small>
+      <UpRightIcon size={14} />
     </a>
   );
 }

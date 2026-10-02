@@ -1,51 +1,105 @@
 "use client";
-import type { ReactNode } from "react";
+import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import type { FurnitureItem } from "@/lib/types";
 import type { CanvasDock } from "./CanvasControlsContext";
+import { EyeIcon, FitIcon, GridIcon, HelpIcon, MagnetIcon, MinusIcon, MoreIcon, PanIcon, PlusIcon, RedoIcon, ResetIcon, RoomIcon, RulerIcon, SelectIcon, UndoIcon, ExpandIcon } from "@/components/studio-ui/icons";
 import s from "./CanvasToolRail.module.css";
 
-function Icon({d}:{d:string}){return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d}/></svg>;}
-function Tool({label,d,onClick,active,disabled,className=""}:{label:string;d:string;onClick:()=>void;active?:boolean;disabled?:boolean;className?:string}){return <button type="button" aria-label={label} title={label} aria-pressed={active} disabled={disabled} onClick={onClick} className={className}><Icon d={d}/><span>{label}</span></button>;}
-function Group({label,children}:{label:string;children:ReactNode}){return <div className={s.group}><span className={s.groupLabel}>{label}</span><div className={s.pair}>{children}</div></div>;}
 export interface CanvasToolRailProps {
-  dock:CanvasDock;pan:boolean;grid:boolean;labels:boolean;snap:boolean;zoom:number;roomLabel:string;
-  setPan:(v:boolean)=>void;toggleGrid:()=>void;toggleLabels:()=>void;toggleSnap:()=>void;zoomTo:(v:number)=>void;fit:()=>void;
-  undo:()=>void;redo:()=>void;canUndo:boolean;canRedo:boolean;
-  selected:FurnitureItem|null;locked:boolean;hidden:boolean;canEdit:boolean;canDelete:boolean;
-  rotate:()=>void;toggleLock:()=>void;toggleHide:()=>void;remove:()=>void;hiddenItems:FurnitureItem[];showItem:(id:string)=>void;invalidCount:number;
+  dock: CanvasDock; pan: boolean; grid: boolean; labels: boolean; snap: boolean; zoom: number; roomLabel: string;
+  setPan: (v: boolean) => void; toggleGrid: () => void; toggleLabels: () => void; toggleSnap: () => void; zoomTo: (v: number) => void; fit: () => void;
+  undo: () => void; redo: () => void; canUndo: boolean; canRedo: boolean;
+  hiddenItems: FurnitureItem[]; showItem: (id: string) => void;
 }
-export default function CanvasToolRail(p:CanvasToolRailProps){
-  return <div className={s.tools} data-testid="canvas-tool-rail">
-    <div className={s.heading}><strong>Plan tools</strong><small>{p.roomLabel}</small></div>
-    <Group label="Arrange">
-      <Tool label="Select" d="m5 3 15 9-7 2-3 7Z" active={!p.pan} onClick={()=>p.setPan(false)}/>
-      <Tool label="Pan" d="M8 12V6a2 2 0 0 1 4 0v6-8a2 2 0 0 1 4 0v8-5a2 2 0 0 1 4 0v9c0 4-3 6-7 6-2 0-4-1-5-3l-4-5a2 2 0 0 1 3-2l1 1" active={p.pan} onClick={()=>p.setPan(true)}/>
-      <Tool label="Undo" d="M8 5 3 10l5 5M3 10h10a6 6 0 0 1 0 12" disabled={!p.canUndo} onClick={p.undo}/>
-      <Tool label="Redo" d="m16 5 5 5-5 5m5-5H11a6 6 0 0 0 0 12" disabled={!p.canRedo} onClick={p.redo}/>
-    </Group>
-    {p.selected&&<div className={s.selected}><strong title={p.selected.label}>{p.selected.label}</strong>
-      <div className={s.pair}>
-      <Tool label="Rotate 90°" d="M20 4v6h-6m5-1a8 8 0 1 0 1 8" disabled={!p.canEdit} onClick={p.rotate}/>
-      <Tool label={p.locked?"Unlock":"Lock"} d="M5 10h14v11H5zM8 10V7a4 4 0 0 1 8 0v3" active={p.locked} onClick={p.toggleLock}/>
-      <Tool label={p.hidden?"Show":"Hide"} d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7Zm13 0a3 3 0 1 1-6 0 3 3 0 0 1 6 0" active={p.hidden} onClick={p.toggleHide}/>
-      <Tool label="Remove" d="M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7" disabled={!p.canDelete} onClick={p.remove}/>
-    </div></div>}
-    <Group label="View">
-      <Tool label="Grid" d="M4 4h16v16H4zM4 12h16M12 4v16" active={p.grid} onClick={p.toggleGrid}/>
-      <Tool label="Labels" d="M4 6h16M12 6v14M8 20h8" active={p.labels} onClick={p.toggleLabels}/>
-      <Tool label="Snap" d="M6 3v8a6 6 0 0 0 12 0V3h-4v8a2 2 0 0 1-4 0V3ZM6 7h4m4 0h4" active={p.snap} onClick={p.toggleSnap}/>
-      <Tool label="Fit" d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M8 8h8v8H8z" onClick={p.fit}/>
-    </Group>
-    <div className={s.zoom} role="group" aria-label="Plan zoom">
-      <button type="button" aria-label="Zoom out" disabled={p.zoom<=.5} onClick={()=>p.zoomTo(p.zoom-.25)}>−</button><output aria-label="Zoom level">{Math.round(p.zoom*100)}%</output><button type="button" aria-label="Zoom in" disabled={p.zoom>=3} onClick={()=>p.zoomTo(p.zoom+.25)}>+</button>
+
+/**
+ * The plan's tool rail (Planner.dc.html): select, pan, measurements, add a
+ * piece, doors and windows, zoom. On phones it's the row of icons under the
+ * app bar. Less-used tools (grid, snap, focus mode, hidden pieces, help,
+ * reset) live under More.
+ */
+export default function CanvasToolRail(p: CanvasToolRailProps) {
+  const [more, setMore] = useState(false);
+  const [help, setHelp] = useState(false);
+  const wrap = useRef<HTMLDivElement>(null);
+  const menuId = useId();
+  const planner = p.dock.variant === "planner";
+
+  useEffect(() => {
+    if (!more) return;
+    const outside = (e: PointerEvent) => { if (!wrap.current?.contains(e.target as Node)) setMore(false); };
+    const key = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      e.stopPropagation();
+      setMore(false);
+      wrap.current?.querySelector<HTMLButtonElement>("[aria-controls]")?.focus();
+    };
+    document.addEventListener("pointerdown", outside);
+    document.addEventListener("keydown", key, true);
+    return () => { document.removeEventListener("pointerdown", outside); document.removeEventListener("keydown", key, true); };
+  }, [more]);
+
+  const tool = (label: string, icon: ReactNode, onClick: () => void, opts: { pressed?: boolean; disabled?: boolean; className?: string; title?: string } = {}) => (
+    <button type="button" aria-label={label} title={opts.title ?? label} aria-pressed={opts.pressed} disabled={opts.disabled}
+      className={`${s.tool} ${opts.className ?? ""}`} onClick={onClick}>{icon}</button>
+  );
+
+  return (
+    <div className={s.rail} data-testid="canvas-tool-rail" data-variant={p.dock.variant ?? "workspace"}>
+      <div className={s.group}>
+        {tool("Select and move", <SelectIcon />, () => p.setPan(false), { pressed: !p.pan, className: s.desk, title: "Select and move (V)" })}
+        {tool("Pan the plan", <PanIcon />, () => p.setPan(true), { pressed: p.pan, className: s.desk, title: "Pan (H)" })}
+        {tool("Labels and measurements", <RulerIcon />, p.toggleLabels, { pressed: p.labels })}
+        {p.dock.addPiece && tool("Add a piece", <PlusIcon />, p.dock.addPiece)}
+        {tool("Doors and windows", <RoomIcon />, p.dock.editOpenings, { className: s.desk, title: "Edit walls, doors and windows" })}
+        {tool("Undo", <UndoIcon />, p.undo, { disabled: !p.canUndo, className: planner ? s.phone : "", title: "Undo (Ctrl/⌘ Z)" })}
+        {!planner && tool("Redo", <RedoIcon />, p.redo, { disabled: !p.canRedo, className: s.desk, title: "Redo (Ctrl/⌘ Shift Z)" })}
+      </div>
+      <div className={s.bottom}>
+        <div className={s.zoom} role="group" aria-label="Plan zoom">
+          {tool("Zoom in", <PlusIcon size={18} />, () => p.zoomTo(p.zoom + 0.25), { disabled: p.zoom >= 3, className: s.small })}
+          <output aria-label="Zoom level" className={s.pct}>{Math.round(p.zoom * 100)}%</output>
+          {tool("Zoom out", <MinusIcon size={18} />, () => p.zoomTo(p.zoom - 0.25), { disabled: p.zoom <= 0.5, className: s.small })}
+          {tool("Fit the room to the screen", <FitIcon size={18} />, p.fit, { className: s.small, title: "Fit room (0)" })}
+        </div>
+        <div className={s.moreWrap} ref={wrap}>
+          <button type="button" className={`${s.tool} ${s.small}`} aria-label="More plan tools" title="More plan tools"
+            aria-expanded={more} aria-controls={menuId} onClick={() => setMore((v) => !v)}><MoreIcon /></button>
+          {more && (
+            <div id={menuId} className={s.menu} role="group" aria-label="More plan tools">
+              <p className={s.menuHead}>Plan · {p.roomLabel}</p>
+              <div className={`${s.seg} ${s.phoneFlex}`} role="group" aria-label="Pointer">
+                <button type="button" aria-pressed={!p.pan} onClick={() => p.setPan(false)}><SelectIcon size={16} />Select</button>
+                <button type="button" aria-pressed={p.pan} onClick={() => p.setPan(true)}><PanIcon size={16} />Pan</button>
+              </div>
+              <button type="button" className={s.item} aria-pressed={p.grid} onClick={p.toggleGrid}><GridIcon size={16} />Grid<span>{p.grid ? "On" : "Off"}</span></button>
+              <button type="button" className={s.item} aria-pressed={p.snap} onClick={p.toggleSnap} title="Snap to a 6-inch grid. Turn off for 1-inch positioning."><MagnetIcon size={16} />Snap to 6 inches<span>{p.snap ? "On" : "Off"}</span></button>
+              <button type="button" className={`${s.item} ${s.phoneFlex}`} onClick={() => { setMore(false); p.dock.editOpenings(); }}><RoomIcon size={16} />Doors &amp; windows</button>
+              {planner && <button type="button" className={`${s.item} ${s.phoneFlex}`} disabled={!p.canRedo} onClick={p.redo}><RedoIcon size={16} />Redo</button>}
+              <button type="button" className={s.item} onClick={() => { setMore(false); p.dock.expand(); }}>
+                <ExpandIcon size={16} />{p.dock.expanded ? "Exit fullscreen" : planner ? "Focus on the plan" : "Expand"}
+              </button>
+              {p.hiddenItems.length > 0 && (
+                <div className={s.hidden}>
+                  <p className={s.menuHead}>Hidden ({p.hiddenItems.length})</p>
+                  {p.hiddenItems.map((f) => (
+                    <button type="button" key={f.id} className={s.item} onClick={() => p.showItem(f.id)}><EyeIcon size={16} />Show {f.label}</button>
+                  ))}
+                </div>
+              )}
+              <button type="button" className={s.item} aria-expanded={help} onClick={() => setHelp((v) => !v)}><HelpIcon size={16} />Help &amp; keys</button>
+              {help && (
+                <div className={s.help}>
+                  <p>Click a piece, then drag to move. Drag its round handle to rotate, or click the handle, move your cursor, then click to place.</p>
+                  <p>Esc: cancel rotation · R: rotate 90° · Shift + R: rotate −90° · Arrow keys: nudge · Ctrl / ⌘ Z: undo · 0: fit · Esc: deselect</p>
+                  <p>Pinch with two fingers to zoom and pan. With a mouse, use Ctrl/⌘ + scroll to zoom at the pointer.</p>
+                </div>
+              )}
+              <button type="button" className={`${s.item} ${s.reset}`} onClick={() => { setMore(false); p.dock.reset(); }}><ResetIcon size={16} />Reset layout</button>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
-    <div className={s.group}><span className={s.groupLabel}>Your space</span>
-      <Tool label="Doors & windows" d="M3 21V3h18v18h-6m-6 0H3m6 0V11h6v10" className={s.wide} onClick={p.dock.editOpenings}/>
-      <Tool label={p.dock.expanded?"Exit fullscreen":"Expand"} d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" className={s.wide} onClick={p.dock.expand}/>
-      <Tool label="Shop" d="M4 7h16l-1 14H5ZM8 7V5a4 4 0 0 1 8 0v2" className={s.mobileShop} onClick={p.dock.shop}/>
-    </div>
-    {p.hiddenItems.length>0&&<details className={s.detail}><summary>Hidden ({p.hiddenItems.length})</summary>{p.hiddenItems.map(f=><button type="button" key={f.id} onClick={()=>p.showItem(f.id)}>Show {f.label}</button>)}</details>}
-    {p.invalidCount>0&&<p className={s.warning} role="status">Red outlines show where a piece needs more space.</p>}
-    <div className={s.utilities}><details className={s.detail}><summary>Help &amp; keys</summary><p>Click a piece, then drag to move. Drag its circular arrow to rotate, or click the arrow, move your cursor, then click to place.</p><p>Esc: cancel rotation<br/>R: rotate 90°<br/>Shift + R: rotate −90°<br/>Arrow keys: nudge<br/>Ctrl / ⌘ Z: undo<br/>0: fit · Esc: deselect</p></details><button type="button" className={s.reset} onClick={p.dock.reset}>Reset layout</button></div>
-  </div>;
+  );
 }

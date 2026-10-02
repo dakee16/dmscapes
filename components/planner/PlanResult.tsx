@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { matchTemplate } from "@/templates/template-matcher";
@@ -25,25 +25,25 @@ import type { RoomCanvasHandle } from "@/components/canvas/RoomCanvas";
 import { useLayoutHistory } from "@/components/canvas/useLayoutHistory";
 import Modal from "@/components/site/Modal";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
-import BudgetTracker from "@/components/products/BudgetTracker";
-import ProductPanel from "@/components/products/ProductPanel";
-import ThingsToAddPanel from "@/components/products/ThingsToAddPanel";
-import ProductTabSwitcher, { type ProductTab } from "@/components/products/ProductTabSwitcher";
 import AddOverBudgetModal from "@/components/products/AddOverBudgetModal";
 import AddOwnItemModal from "@/components/products/AddOwnItemModal";
-import ProductCard from "@/components/products/ProductCard";
+import ShoppingList from "@/components/products/ShoppingList";
 import WorkspaceStudio from "@/components/studio/WorkspaceStudio";
 import { useWorkspace } from "@/components/workspace/WorkspaceContext";
 import OpenWorkspaceButton from "@/components/workspace/OpenWorkspaceButton";
 import PlannerStudio from "@/components/studio/PlannerStudio";
 import { roomOutline } from "@/lib/studio";
-import BuyAllButton from "@/components/products/BuyAllButton";
 import PurchaseSurvey from "@/components/products/PurchaseSurvey";
 import SavePrompt from "@/components/planner/SavePrompt";
 import VibeLoading from "@/components/planner/VibeLoading";
 import { BuyGateProvider } from "@/lib/buy-gate";
 import { assignedCosts, mergeArrangement, shoppingProducts } from "@/lib/planning";
 import { ShoppingOwnership } from "@/components/studio/PlanningPanels";
+import { StudioUIContext, entryMatcher, type StudioUIValue, type SwapGhost } from "@/components/studio-ui/StudioUI";
+import { numberEntries, type ListEntry } from "@/components/studio-ui/list";
+import { PlusIcon } from "@/components/studio-ui/icons";
+import { placementIssues, studioSettings } from "@/lib/studio";
+import r from "@/components/studio-ui/Result.module.css";
 import type { Product, ProductCategory } from "@/lib/types";
 
 // react-konva can't render on the server, so load the canvas client-side only.
@@ -52,11 +52,17 @@ const RoomCanvas = dynamic(() => import("@/components/canvas/RoomCanvas"), {
   loading: () => <div className="grid min-h-[360px] place-items-center"><BrandLoader label="Opening your 2D plan…"/></div>,
 }) as unknown as typeof RoomCanvasType;
 
-function Skeleton() {
-  return <div className="grid min-h-[60svh] place-items-center px-5"><BrandLoader label="Bringing your room together…"/></div>;
+function Skeleton({ shell }: { shell: boolean }) {
+  const loader = <BrandLoader label="Bringing your room together…"/>;
+  return shell ? <main id="page-content" tabIndex={-1} className={r.skeleton}>{loader}</main> : <div className={r.skeleton}>{loader}</div>;
 }
 
-export default function PlanResult() {
+/**
+ * The plan result: canvas and shopping list as one object. `shell` renders the
+ * planner's own app bar and <main> (the /plan/result page); inside a My Room
+ * workspace the room header around it belongs to the workspace page.
+ */
+export default function PlanResult({ shell = false }: { shell?: boolean }) {
   const workspace=useWorkspace();
   const Studio=workspace?WorkspaceStudio:PlannerStudio;
   const layoutHistory = useLayoutHistory();
@@ -69,8 +75,13 @@ export default function PlanResult() {
   const [pendingAdd, setPendingAdd] = useState<Product | null>(null);
   const [showAddOwn, setShowAddOwn] = useState(false);
   const [pendingOwn, setPendingOwn] = useState<{ product: Product; place: boolean } | null>(null);
-  // Which product tab is showing: the cart ("Shopping list") or the catalog.
-  const [activeTab, setActiveTab] = useState<ProductTab>("list");
+  // Swap sheet and its canvas ghost, the phone sheet, and the Add more section (UI only).
+  const [swapTarget, setSwapTarget] = useState<Product | null>(null);
+  const [ghostProduct, setGhostProduct] = useState<Product | null>(null);
+  const [sheet, setSheet] = useState<"peek" | "full">(workspace ? "full" : "peek");
+  const [addMoreOpen, setAddMoreOpen] = useState(false);
+  const closeSwap = useCallback(() => { setSwapTarget(null); setGhostProduct(null); }, []);
+  const previewSwap = useCallback((product: Product | null) => setGhostProduct(product), []);
   const [regenerating, setRegenerating] = useState(false);
   const [regenError, setRegenError] = useState<string | null>(null);
   const regeneratingRef = useRef(false);
@@ -246,8 +257,23 @@ export default function PlanResult() {
     if (next !== furniture) usePlannerStore.setState({furniture:next});
   }, [room, furniture, cartProducts, customItems, excluded]);
 
+  // List numbers shared by the rows and the canvas pins.
+  const entries = useMemo(() => numberEntries(cartProducts, customItems), [cartProducts, customItems]);
+  const entryFor = useMemo(() => entryMatcher(entries), [entries]);
+
+  // The swap preview: where the alternative would sit, and whether it still fits.
+  const ghost = useMemo<SwapGhost | null>(() => {
+    if (!ghostProduct || !room || !furniture) return null;
+    const next = syncProductFurniture(furniture, [ghostProduct], room);
+    const items = next.filter((f, i) => f !== furniture[i]);
+    if (!items.length) return null;
+    const ids = new Set(items.map((f) => f.id));
+    const fits = !placementIssues(next, room, studioSettings(room.studio)).some((issue) => ids.has(issue.id));
+    return { product: ghostProduct, items, replaces: furniture.filter((f) => ids.has(f.id)).map((f) => f.id), fits };
+  }, [ghostProduct, room, furniture]);
+
   if (!hydrated || !room || !style || !furniture || !templateId) {
-    return <Skeleton />;
+    return <Skeleton shell={shell} />;
   }
 
   const dims = formatDims(room.lengthFt, room.widthFt);
@@ -284,6 +310,38 @@ export default function PlanResult() {
     track("cart_add_over_budget_confirmed", { category: pendingAdd.category });
     setPendingAdd(null);
   }
+
+  function handleSwap(next: Product) {
+    if (!swapTarget) return;
+    const state=usePlannerStore.getState(),assignment=state.planning.productSupply[swapTarget.id];
+    if(assignment){const supply={...state.planning.productSupply};delete supply[swapTarget.id];supply[next.id]=assignment;state.updatePlanning({productSupply:supply});}
+    usePlannerStore.getState().swapProduct(swapTarget.category, next.id);
+    track("product_swapped", { old: swapTarget.id, new: next.id });
+    closeSwap();
+  }
+
+  function handleEntryRemove(entry: ListEntry) {
+    if (entry.custom) removeCustomItem(entry.product.id);
+    else handleRemove(entry.product.category);
+    usePlannerStore.getState().clearSelectedCategory();
+  }
+
+  function openAddOwn() {
+    if (!isPaid(profile) && !workspace?.ownerPro) {
+      openUpgrade("own-item");
+      return;
+    }
+    setShowAddOwn(true);
+  }
+
+  const ui: StudioUIValue = {
+    variant: workspace ? "workspace" : "planner",
+    entries, entryFor, swapTarget,
+    openSwap: (product) => { setGhostProduct(null); setSwapTarget(product); setSheet("full"); },
+    closeSwap, ghost, previewSwap, applySwap: handleSwap, remove: handleEntryRemove,
+    addOwn: openAddOwn, ownLocked: ownItemLocked, sheet, setSheet, addMoreOpen, setAddMoreOpen,
+    showAddMore: () => { closeSwap(); setAddMoreOpen(true); setSheet("full"); },
+  };
 
   // "Add your own item": a confident category match auto-places it on the canvas;
   // otherwise it lands in the unplaced tray for the user to place by hand.
@@ -381,101 +439,34 @@ export default function PlanResult() {
     }
   }
 
+  // Custom vibes: one free regeneration, then each pass uses a plan credit.
+  const regen = !workspace&&isCustom&&customVibe?<div className={r.regen}>
+          <p className={r.regenVibe}><span className={r.regenLabel}>Your vibe</span>{customVibe}</p>
+          <button type="button" onClick={handleRegenerate} disabled={regenerating} className={r.regenButton}>
+            <span>{regenerating?"Regenerating…":"Regenerate matches"}</span>
+            <small>{customRegenUsed?"Uses 1 plan credit":"One free regeneration"}</small>
+          </button>
+          {regenError&&<p role="alert" className={r.regenError}>{regenError}</p>}
+          {customMock&&<p className={r.regenNote}>Sample matches. Live results appear when product access is available.</p>}
+        </div>:null;
+
   return (
-    <div>
-      <Studio canvas={canvas} get2DPng={()=>canvasRef.current?.exportPNG()??null} focus2D={id=>canvasRef.current?.focusItem(id)}
+    <StudioUIContext.Provider value={ui}>
+    <BuyGateProvider>
+      <Studio canvas={canvas} get2DPng={()=>canvasRef.current?.exportPNG()??null} focus2D={id=>canvasRef.current?.focusItem(id)} shell={shell}
         products={allCartProducts} total={total} budget={budget} history={layoutHistory} onReset={handleReset}
         subtitle={[college?.name,dorm?.name,roomTypeLabel(room),dims,room.dimsEstimated?"Estimated room size":null].filter(Boolean).join(" · ")}
-        extras={!workspace&&isCustom&&customVibe?<div className="dm-regenerate-row flex flex-wrap items-center gap-3">
-          <p className="text-sm italic">{customVibe}</p>
-          <button type="button" onClick={handleRegenerate} disabled={regenerating} className="border border-ink/20 px-3 py-2 text-xs">{regenerating?"Regenerating…":"Regenerate matches"}</button>
-          <span className="text-xs text-ink-soft">{customRegenUsed?"Uses 1 plan credit":"One free regeneration"}</span>
-          {regenError&&<p role="alert" className="basis-full text-sm text-[#c2321e]">{regenError}</p>}
-          {customMock&&<p className="basis-full text-xs text-ink-soft">Sample matches. Live results appear when product access is available.</p>}
-        </div>:null}
-        unplaced={unplacedCustomItems.length>0?<div><p className="mb-2 text-xs font-semibold">Unplaced items</p><div className="flex flex-wrap gap-2">{unplacedCustomItems.map(cp=><button key={cp.id} type="button" onClick={()=>placeCustomItem(cp.id)} className="border border-ink/20 px-3 py-2 text-xs">Place {cp.name} ↗︎</button>)}</div></div>:null}
-        shopping={<BuyGateProvider>
-          <section className="dm-shopping-panel rise flex flex-col gap-3" style={{ animationDelay: "160ms" }}>
-            {/* Budget total + progress: always visible above the tabs, and always
-                reflecting the shopping list specifically (not the catalog). */}
-            <BudgetTracker total={total} budget={budget} />
-            {workspace&&<ShoppingOwnership products={allCartProducts}/>}
-            {/* Island-style tab switcher, directly above Buy all. */}
-            <ProductTabSwitcher active={activeTab} onChange={setActiveTab} />
-            {/* Add-your-own-item: paste an Amazon link to pull a real product into
-                the list + budget (Part 2). Sits right under the tabs. */}
-            <button
-              type="button"
-              onClick={() => {
-                if (!isPaid(profile) && !workspace?.ownerPro) {
-                  openUpgrade("own-item");
-                  return;
-                }
-                setShowAddOwn(true);
-              }}
-              aria-label={ownItemLocked ? "Add your own item (Plus feature)" : "Add your own item"}
-              className="flex items-center justify-center gap-1.5 rounded-xl border border-dashed border-cobalt/40 bg-cobalt/[0.05] px-4 py-2.5 text-sm font-semibold text-cobalt transition-colors hover:border-cobalt hover:bg-cobalt/10"
-            >
-              {ownItemLocked ? (
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <rect x="5" y="11" width="14" height="10" rx="2" />
-                  <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-                </svg>
-              ) : (
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-              )}
-              Add your own item
-              {ownItemLocked && (
-                <span className="ml-1 inline-flex items-center rounded-full bg-highlight px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wide text-ink">
-                  Plus
-                </span>
-              )}
-            </button>
-            {/* Prominent "Buy all": stays visible on either tab (it reflects the
-                cart total). Hidden only when the cart itself is empty. */}
-            {buyingProducts.length > 0 && (
-              <BuyAllButton products={buyingProducts} total={totalFor(buyingProducts)} />
-            )}
-            {/* Active tab body. Keyed on the tab so switching re-triggers the
-                quick fade rather than swapping abruptly. */}
-            <div className="lg:max-h-[62vh] lg:overflow-y-auto lg:pr-1">
-              <div key={activeTab} className="fade-in">
-                {activeTab === "list" ? (
-                  <div className="space-y-4">
-                    <ProductPanel
-                      products={cartProducts}
-                      bedSize={room.bedSize}
-                      onRemove={handleRemove}
-                    />
-                    {customItems.length > 0 && (
-                      <div className="space-y-2.5">
-                        <p className="font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-cobalt">
-                          Your added items
-                        </p>
-                        {customItems.map((cp) => (
-                          <div key={cp.id}>
-                            {unplacedItemIds.includes(cp.id) && (
-                              <p className="mb-1 font-mono text-[10px] uppercase tracking-wide text-amber">
-                                Unplaced · drop it from the tray onto your room
-                              </p>
-                            )}
-                            <ProductCard product={cp} onRemove={() => removeCustomItem(cp.id)} />
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <ThingsToAddPanel items={availableProducts} onAdd={handleAdd} />
-                )}
-              </div>
-            </div>
-          </section>
-        </BuyGateProvider>}
+        extras={null}
+        unplaced={unplacedCustomItems.length>0?<div className={r.unplaced}><p>Not on the plan yet</p><div>{unplacedCustomItems.map(cp=><button key={cp.id} type="button" onClick={()=>placeCustomItem(cp.id)}><PlusIcon size={14}/>Place {cp.name}</button>)}</div></div>:null}
+        shopping={<ShoppingList total={total} budget={budget} bedSize={room.bedSize}
+          available={availableProducts} onAdd={handleAdd}
+          buying={buyingProducts} buyingTotal={totalFor(buyingProducts)}
+          unplacedIds={unplacedItemIds} onPlace={placeCustomItem}
+          ownership={workspace?<ShoppingOwnership products={allCartProducts}/>:undefined}
+          handoff={!workspace?<div className={r.handoff}><strong>A room worth keeping.</strong><p>Save this layout and its shopping list in your own workspace. Invite your roommates with Pro.</p><OpenWorkspaceButton/></div>:undefined}
+          extras={regen}/>}
       />
-      {!workspace&&<div className="dm-workspace-handoff"><div><strong>A room worth keeping.</strong><p>Save this layout and its shopping list in your own workspace. Invite your roommates with Pro.</p></div><OpenWorkspaceButton/></div>}
+    </BuyGateProvider>
       <PurchaseSurvey cartTotal={total} />
       {!workspace&&<SavePrompt />}
       {pendingAdd && (
@@ -504,7 +495,6 @@ export default function PlanResult() {
       {regenerating && (
         <VibeLoading description={customVibe ?? ""} budget={budget} regenerating />
       )}
-
-    </div>
+    </StudioUIContext.Provider>
   );
 }
