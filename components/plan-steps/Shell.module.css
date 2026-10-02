@@ -1,0 +1,182 @@
+/* The planner step screens: app bar, step tape, page frame. */
+
+.shell {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--ds-paper);
+}
+
+.main {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+}
+
+/* ---------- App bar ---------- */
+.bar {
+  position: relative;
+  z-index: 20;
+  height: 64px;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1.5px solid rgba(22, 22, 29, 0.1);
+  background: var(--ds-paper);
+}
+
+.wordmark {
+  justify-self: start;
+}
+
+.actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+.rooms {
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.rooms:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+/* ---------- Step tape ---------- */
+.stepsNav {
+  width: min(560px, 42vw);
+}
+
+.tape {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 36px;
+  display: flex;
+  background-color: var(--ds-tape);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.55) 0 1.5px, transparent 1.5px 10px),
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.7) 0 1.5px, transparent 1.5px 50px);
+  background-size: 100% 6px, 100% 11px;
+  background-repeat: no-repeat;
+  background-position: 0 100%, 0 100%;
+  border-radius: 4px;
+  box-shadow: 0 2px 0 var(--ds-tape-shadow), 0 8px 18px rgba(22, 22, 29, 0.12);
+  overflow: hidden;
+}
+
+.step {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 6px;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.step + .step {
+  border-left: 1.5px solid rgba(22, 22, 29, 0.3);
+}
+
+.stepTag {
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  border-radius: 3px;
+  padding: 4px 10px;
+}
+
+.stepTodo {
+  color: rgba(22, 22, 29, 0.6);
+}
+
+.stepLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 0 6px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: var(--ds-ink);
+  transition: background-color 150ms var(--ds-ease);
+}
+.stepLink:hover {
+  background: rgba(22, 22, 29, 0.1);
+}
+
+@media (max-width: 767px) {
+  .bar {
+    height: 56px;
+    padding: 0 16px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+  .rooms {
+    display: none;
+  }
+  .stepsNav {
+    width: auto;
+    justify-self: end;
+    max-width: 200px;
+    flex: 1;
+  }
+  .tape {
+    height: 28px;
+    background-image: repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.55) 0 1px, transparent 1px 7px);
+    background-size: 100% 5px;
+    border-radius: 3px;
+    box-shadow: 0 2px 0 var(--ds-tape-shadow);
+  }
+  .step {
+    padding-bottom: 4px;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+  }
+  .step + .step {
+    border-left: 0;
+  }
+  .stepNum {
+    display: none;
+  }
+  .stepTag {
+    border-radius: 2px;
+    padding: 3px 6px;
+  }
+  .stepLink {
+    gap: 3px;
+    padding: 0 2px;
+    min-height: 24px;
+  }
+  .stepLink svg {
+    width: 10px;
+    height: 10px;
+  }
+  .actions {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 359px) {
+  .stepsNav {
+    max-width: 160px;
+  }
+}

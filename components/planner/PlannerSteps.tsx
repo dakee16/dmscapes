@@ -2,81 +2,65 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Check } from "@/components/ds/Icons";
+import css from "@/components/plan-steps/Shell.module.css";
 
-const STEPS = [
+/** School and room share step 01; the Pro vibe field belongs to step 02. */
+export const PLANNER_STEPS = [
   { href: "/plan", label: "Room" },
-  { href: "/plan/style", label: "Style" },
-  { href: "/plan/result", label: "Design" },
+  { href: "/plan/style", label: "Vibe" },
+  { href: "/plan/budget", label: "Budget" },
 ] as const;
 
-function currentStep(pathname: string): number {
-  if (pathname.startsWith("/plan/result")) return 2;
-  // The custom-vibe input is part of the Style step (choosing your vibe).
+export function currentStep(pathname: string): number {
+  if (pathname.startsWith("/plan/budget")) return 2;
   if (pathname.startsWith("/plan/style") || pathname.startsWith("/plan/create-vibe")) return 1;
   return 0;
 }
 
 /**
- * Planner progress indicator. It used to live in a separate full-width planner
- * header; now the shared SiteHeader renders on the planner flow like everywhere
- * else, and this sits just below it as a compact, centered pill on the grid, so
- * the header stays identical site-wide while the planner keeps its step affordance.
+ * The planner's progress, drawn as a strip of measuring tape. Finished steps
+ * are links back; the current step is the ink tag; later steps wait.
  */
 export default function PlannerSteps() {
   const pathname = usePathname();
   const current = currentStep(pathname);
 
   return (
-    <div className="mx-auto mt-3 flex w-full max-w-6xl justify-center px-4 sm:mt-5 sm:px-8">
-      <ol
-        className="flex items-center gap-1.5 rounded-full border border-ink/10 bg-paper/70 px-3.5 py-1.5 shadow-sm backdrop-blur-sm sm:gap-3 sm:px-5 sm:py-2"
-        aria-label="Planner steps"
-      >
-        {STEPS.map((step, i) => {
-          const done = i < current;
-          const active = i === current;
-          const inner = (
-            <span className="flex items-center gap-1.5 sm:gap-2">
-              <span
-                className={`grid h-6 w-6 shrink-0 place-items-center rounded-full font-mono text-[11px] font-semibold leading-none transition-colors ${
-                  active
-                    ? "bg-cobalt text-white"
-                    : done
-                      ? "bg-ink text-white"
-                      : "border border-ink/20 text-ink-soft"
-                }`}
-              >
-                {done ? "✓" : i + 1}
-              </span>
-              {/* On the tightest widths only the active step keeps its label
-                  beside its number; the rest stay compact. */}
-              <span
-                className={`text-xs font-medium sm:text-sm ${
-                  active ? "text-ink" : "hidden text-ink-soft sm:inline"
-                }`}
-              >
-                {step.label}
-              </span>
-            </span>
+    <nav aria-label="Planner steps" className={css.stepsNav}>
+      <ol className={css.tape}>
+        {PLANNER_STEPS.map((step, i) => {
+          const n = String(i + 1).padStart(2, "0");
+          const label = (
+            <>
+              <span className={css.stepNum}>{n} </span>
+              {step.label}
+            </>
           );
-          return (
-            <li key={step.href} className="flex items-center gap-1.5 sm:gap-3">
-              {i > 0 && <span className="h-px w-3 bg-ink/15 sm:w-6" aria-hidden="true" />}
-              {done ? (
-                <Link
-                  href={step.href}
-                  className="rounded-md transition-opacity hover:opacity-70"
-                  aria-label={`Back to step ${i + 1}: ${step.label}`}
-                >
-                  {inner}
+          if (i < current) {
+            return (
+              <li key={step.href} className={css.step} data-state="done">
+                <Link href={step.href} className={css.stepLink} aria-label={`Step ${i + 1}, ${step.label}: done. Go back`}>
+                  <Check size={13} strokeWidth={3.2} />
+                  <span>{label}</span>
                 </Link>
-              ) : (
-                <span aria-current={active ? "step" : undefined}>{inner}</span>
-              )}
+              </li>
+            );
+          }
+          if (i === current) {
+            return (
+              <li key={step.href} className={css.step} data-state="current" aria-current="step">
+                <span className={css.stepTag}>{label}</span>
+              </li>
+            );
+          }
+          return (
+            <li key={step.href} className={css.step} data-state="todo">
+              <span className={css.stepTodo}>{label}</span>
             </li>
           );
         })}
       </ol>
-    </div>
+    </nav>
   );
 }
