@@ -3,6 +3,7 @@
 import BrandLoader from "@/components/site/BrandLoader";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { usePlannerStore } from "@/lib/store";
@@ -10,14 +11,21 @@ import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { isPaid } from "@/lib/plan";
 import { track } from "@/lib/analytics";
+import PageShell from "@/components/ds/PageShell";
+import PageHero from "@/components/ds/PageHero";
+import Headline from "@/components/ds/Headline";
+import { ArrowRight, ArrowUpRight } from "@/components/ds/Icons";
+import Wordmark from "@/components/site/Wordmark";
 import RoomDrawingPreview from "@/components/planner/RoomDrawingPreview";
 import DrawnRoomsReuse from "@/components/planner/DrawnRoomsReuse";
+import DrawSteps from "@/components/draw/DrawSteps";
 import type { RoomDrawResult } from "@/components/planner/RoomDrawCanvas";
+import css from "@/components/draw/DrawPage.module.css";
 
 // react-konva can't render on the server, so load the editor client-side only.
 const RoomDrawCanvas = dynamic(() => import("@/components/planner/RoomDrawCanvas"), {
   ssr: false,
-  loading: () => <div className="grid min-h-[420px] place-items-center"><BrandLoader label="Opening your drawing studio…"/></div>,
+  loading: () => <div className={css.loading}><BrandLoader label="Opening your drawing studio…"/></div>,
 });
 
 const OCC = [1, 2, 3, 4] as const;
@@ -64,98 +72,92 @@ export default function DrawRoomPage() {
     router.push("/plan/result");
   }
 
-  // Drawing tool + occupancy selector.
+  // Drawing tool: a full-screen workbench (design-handoff designs/site/Draw).
   if (started) {
     return (
-      <div className="dm-draw-workspace dm-draw-editor mx-auto max-w-4xl px-5 pb-24 sm:px-8">
-        <div className="mx-auto flex max-w-[1120px] flex-wrap items-end justify-between gap-5">
-          <h1 className="dm-page-title font-display text-3xl font-bold tracking-tight sm:text-4xl">
-            Map your <span className="hl">room</span>
-          </h1>
-          <div className="flex flex-wrap items-center gap-3" role="group" aria-label="People sharing this room">
-            <span className="text-sm font-semibold text-ink">How many people?</span>
-            <div className="inline-flex items-center gap-0.5 rounded-[3px] border border-ink/10 bg-white p-1">
-              {OCC.map((n) => (
-                <button
-                  key={n}
-                  type="button"
-                  onClick={() => setOccupants(n)}
-                  aria-pressed={occupants === n}
-                  className={`h-11 w-11 rounded-[2px] text-sm font-semibold transition-colors ${
-                    occupants === n ? "bg-cobalt text-white" : "text-ink hover:bg-ink/[0.06]"
-                  }`}
-                >
-                  {n}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-        <div className="mt-6">
-          <RoomDrawCanvas onComplete={handleComplete} />
-        </div>
+      <div className={`ds ${css.app}`}>
+        <main id="page-content" tabIndex={-1} className={css.appMain}>
+          <RoomDrawCanvas
+            onComplete={handleComplete}
+            chrome={{
+              fill: true,
+              lead: (
+                <>
+                  <Wordmark className={css.appMark} />
+                  <span className={css.appRule} aria-hidden="true" />
+                  <h1 className={css.appTitle}>Draw your exact room</h1>
+                </>
+              ),
+              panel: (
+                <>
+                  <div className={css.people} role="group" aria-labelledby="draw-people-label">
+                    <span id="draw-people-label" className={css.peopleLabel}>How many people?</span>
+                    <div className={css.peopleSeg}>
+                      {OCC.map((n) => (
+                        <button
+                          key={n}
+                          type="button"
+                          onClick={() => setOccupants(n)}
+                          aria-pressed={occupants === n}
+                        >
+                          {n}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <p className={css.plusNote}><span className="ds-tag">Plus</span>Drawing is included with Plus and Pro.</p>
+                  <Link href="/plan/draw/3d" className={css.to3d}>Prefer 3D? Explore the 3D Room Builder<ArrowUpRight size={16} /></Link>
+                </>
+              ),
+            }}
+          />
+        </main>
       </div>
     );
   }
 
-  // Landing (the "Draw" tab): live room drawing, description, and the button.
+  // Landing: the live drawing, what it does, and the button (Plus gate).
   return (
-    <div className="dm-draw-workspace mx-auto max-w-5xl px-5 pb-24 sm:px-8">
-      <div className="dm-draw-landing mt-7 grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-        <RoomDrawingPreview />
+    <PageShell navOverlay>
+      <PageHero
+        bg="var(--ds-sky)"
+        className={css.hero}
+        eyebrow={<span className={css.eyebrow}>Step 1 · Draw your room<span className={`ds-tag ${css.tagNew}`}>New</span>{drawLocked && <span className={`ds-tag ${css.tagPlus}`}>Plus</span>}</span>}
+        lines={[{ text: "Draw your", riso: true }, { text: "exact room.", serif: true }]}
+        lede={<p>Draw your walls on the grid. Add your doors and windows, then choose a vibe. We’ll create a layout based on your room.</p>}
+        visual={<RoomDrawingPreview />}
+      >
+        {/* Corners use the tap position, so the same editor works with touch. */}
+        <button type="button" onClick={handleStart} className="ds-btn ds-btn--ink-yellow ds-btn--lg">
+          {drawLocked ? "Unlock drawing (Plus)" : "Draw your room"}
+          <ArrowRight />
+        </button>
+        <Link href="/plan/draw/3d" className={`ds-link ${css.heroLink}`}>Prefer 3D? Explore the 3D Room Builder</Link>
+      </PageHero>
 
-        <div className="dm-draw-intro">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-            Step 1 · Draw your room
-          </p>
-          <h1 className="dm-page-title font-display">
-            Draw your <span className="hl">exact room</span>
-          </h1>
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center rounded-full bg-cobalt px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wide text-white">
-              New
-            </span>
-            {drawLocked && (
-              <span className="inline-flex items-center rounded-full bg-highlight px-2 py-0.5 font-mono text-[9px] font-semibold uppercase tracking-wide text-ink">
-                Plus
-              </span>
-            )}
-          </div>
-          <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink-soft">
-            Draw your walls on the grid. Add your doors and
-            windows, then choose a vibe. We’ll create a layout based on your room.
-          </p>
-
-          {/* Corners use the tap position, so the same editor works with touch. */}
-          <button
-            type="button"
-            onClick={handleStart}
-            className="dm-button mt-6 inline-flex h-12 items-center gap-2 bg-cobalt px-7 text-base font-semibold text-white"
-          >
-            {drawLocked ? "Unlock drawing (Plus)" : "Draw your room"}
-
-          </button>
-          <p className="mt-6 flex items-start gap-2 rounded-xl border border-ink/10 bg-white px-4 py-3 text-sm leading-snug text-ink-soft lg:hidden">
-            <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0 text-cobalt" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="14" rx="2" />
-              <path d="M8 20h8M12 18v2" strokeLinecap="round" />
-            </svg>
-            Tap to place corners and trace your walls.
-            You can adjust the walls and add details as you go.
-          </p>
+      <section className="ds-section" aria-labelledby="draw-how">
+        <div className="ds-wrap">
+          <Headline id="draw-how" className="ds-h2" lines={[{ text: "Measure. Trace." }, { text: "Make room.", serif: true }]} />
+          <DrawSteps />
         </div>
-      </div>
+      </section>
 
-      {/* Quick-start from a room this user has already drawn (signed-in only). */}
-      <div className="mt-10">
-        <Link href="/plan/draw/3d" className="dm-draw-3d-promo">
-          <span className="dm-eyebrow">New / Included with Pro</span>
-          <strong>Start with a floor. Build your world.</strong>
-          <span>Place walls, floors, doors, and windows on a live 3D grid, then furnish your room in the 3D planner.</span>
-          <b>Explore the 3D Room Builder ↗</b>
-        </Link>
-        <DrawnRoomsReuse />
-      </div>
-    </div>
+      <section className={`ds-section ${css.more}`} aria-label="More ways to start">
+        <div className={`ds-wrap ${css.moreWrap}`}>
+          <DrawnRoomsReuse />
+          <Link href="/plan/draw/3d" className={css.promo} data-reveal="">
+            <span className={css.promoArt}>
+              <Image src="/redesign/site-builder-under-construction.jpg" alt="" fill sizes="(min-width: 900px) 40vw, 100vw" quality={75} style={{ objectFit: "cover" }} />
+            </span>
+            <span className={css.promoCopy}>
+              <span className={css.promoEyebrow}>New / Included with Pro</span>
+              <strong className={css.promoTitle}>Start with a floor. <em>Build your world.</em></strong>
+              <span className={css.promoText}>Place walls, floors, doors, and windows on a live 3D grid, then furnish your room in the 3D planner.</span>
+              <b className={css.promoCta}>Explore the 3D Room Builder<ArrowUpRight size={18} /></b>
+            </span>
+          </Link>
+        </div>
+      </section>
+    </PageShell>
   );
 }

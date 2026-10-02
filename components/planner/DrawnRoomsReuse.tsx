@@ -9,6 +9,7 @@ import { track } from "@/lib/analytics";
 import RoomThumb from "@/components/room/RoomThumb";
 import { formatDims } from "@/lib/schools";
 import type { AccountRoomSummary, AccountRoomsResponse } from "@/lib/api-types";
+import css from "@/components/draw/DrawPage.module.css";
 
 const OCC_FOR_TYPE: Record<string, number> = { single: 1, double: 2, triple: 3, quad: 4 };
 
@@ -62,35 +63,33 @@ export default function DrawnRoomsReuse() {
   }
 
   return (
-    <div>
-      <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-soft">
-        Reuse a room you drew
-      </p>
-      <div className="mt-3 flex gap-3 overflow-x-auto pb-1">
+    <section className={css.reuse} aria-labelledby="reuse-drawn-title">
+      <h2 id="reuse-drawn-title" className={css.reuseTitle}>Reuse a room you drew</h2>
+      <ul className={css.reuseList}>
         {rooms.map((r) => (
-          <button
-            key={r.id}
-            type="button"
-            onClick={() => reuse(r)}
-            title={`Plan a new design for ${r.name}`}
-            className="group flex w-40 shrink-0 flex-col rounded-xl border border-ink/10 bg-white p-2.5 text-left transition-colors hover:border-cobalt"
-          >
-            <span className="grid h-20 place-items-center overflow-hidden rounded-lg bg-paper">
-              <RoomThumb
-                lengthFt={r.length_ft!}
-                widthFt={r.width_ft!}
-                furniture={r.furniture ?? []}
-                outline={r.outline}
-                className="max-h-20 w-auto"
-              />
-            </span>
-            <span className="mt-2 truncate text-sm font-semibold text-ink">{r.name}</span>
-            <span className="font-mono text-[10px] uppercase tracking-wide text-ink-soft">
-              {formatDims(r.length_ft, r.width_ft)} · drawn
-            </span>
-          </button>
+          <li key={r.id}>
+            <button
+              type="button"
+              onClick={() => reuse(r)}
+              title={`Plan a new design for ${r.name}`}
+              className={css.reuseCard}
+            >
+              <span className={css.reuseThumb}>
+                <RoomThumb
+                  lengthFt={r.length_ft!}
+                  widthFt={r.width_ft!}
+                  furniture={r.furniture ?? []}
+                  outline={r.outline}
+                />
+              </span>
+              <span className={css.reuseName}>{r.name}</span>
+              <span className={css.reuseMeta}>
+                {formatDims(r.length_ft, r.width_ft)} · drawn
+              </span>
+            </button>
+          </li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 }
