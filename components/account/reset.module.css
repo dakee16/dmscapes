@@ -1,0 +1,52 @@
+/* /reset-password: the login family (form on paper, door hanger beside it). */
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 520px) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+  padding-block: clamp(40px, 6vw, 88px) clamp(64px, 8vw, 104px);
+}
+.eyebrow { margin: 0 0 16px; font-family: var(--ds-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-blue); }
+.title { margin: 0; font-weight: 400; line-height: 0.98; }
+.title b { display: block; font-size: clamp(48px, 5.4vw, 76px); font-weight: 900; font-stretch: 88%; letter-spacing: -0.045em; }
+.title i {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--ds-serif);
+  font-size: clamp(50px, 5.6vw, 80px);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
+  letter-spacing: -0.02em;
+  color: var(--ds-blue);
+}
+.lede { margin: 18px 0 0; max-width: 460px; font-size: 18px; line-height: 1.5; color: var(--ds-body); }
+.form { margin-top: 28px; display: grid; gap: 18px; }
+.form :global(.ds-btn) { width: 100%; }
+.form :global(.ds-btn):disabled { cursor: wait; opacity: 0.7; transform: none; }
+.error { margin: 0; font-size: 15px; line-height: 1.45; color: #b01d2a; }
+.status { margin: 0; font-family: var(--ds-mono); font-size: 12px; font-weight: 600; line-height: 1.5; color: var(--ds-caption); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.skeleton { display: grid; gap: 16px; }
+.skeleton span { display: block; height: 52px; border-radius: 14px; background: linear-gradient(90deg, #efeee8, #f7f6f1, #efeee8); background-size: 200% 100%; animation: shimmer 1.4s linear infinite; }
+.skeleton span:first-child { height: 140px; width: 80%; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+.art {
+  position: relative;
+  aspect-ratio: 1440 / 1800;
+  max-height: 640px;
+  justify-self: center;
+  width: 100%;
+  max-width: 512px;
+  overflow: hidden;
+  border-radius: 26px;
+  background: var(--ds-warm);
+}
+
+@media (max-width: 900px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); }
+  .art { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton span { animation: none; }
+}

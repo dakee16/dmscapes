@@ -15,6 +15,8 @@
   overflow-y: auto;
   overscroll-behavior: contain;
   background: rgba(22, 22, 29, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   animation: scrimIn 0.22s ease-out both;
 }
 /* Phone: the upgrade sheet and username claim rise from the bottom edge. */
@@ -44,8 +46,8 @@
   background: var(--ds-paper);
   color: var(--ds-ink);
   font-family: var(--ds-sans);
-  box-shadow: 0 30px 90px -30px rgba(10, 16, 44, 0.6);
-  animation: sheetIn 0.34s var(--ds-ease) both;
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06), 0 40px 90px -30px rgba(10, 16, 44, 0.6);
+  animation: sheetIn 0.45s var(--ds-ease) both;
 }
 .sheet.still { animation: none; }
 .sheet.ink {
@@ -67,10 +69,11 @@
 .tape[data-tone="blue"] { background-color: var(--ds-blue); background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0 1.5px, transparent 1.5px 10px); }
 
 @keyframes scrimIn { from { opacity: 0; } }
-@keyframes sheetIn { from { opacity: 0; transform: translate3d(0, 18px, 0) scale(0.98); } }
+@keyframes sheetIn { from { opacity: 0; transform: translate3d(0, -20px, 0) scale(0.97); } }
 @keyframes sheetUp { from { transform: translate3d(0, 60px, 0); opacity: 0.4; } }
 @media (prefers-reduced-motion: reduce) {
   .layer.layer, .sheet.sheet { animation-duration: 0.2s; animation-name: scrimIn; }
+  .sheet.sheet.sheet .close { transition: none; transform: none; }
 }
 .layer[data-motion="paused"], .layer[data-motion="paused"] > .sheet.sheet { animation: none; }
 
@@ -87,17 +90,19 @@
   place-items: center;
   width: 44px;
   height: 44px;
-  margin: -8px -10px 0 0;
+  margin: -6px -8px 0 0;
   padding: 0;
   border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: inherit;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.14);
+  color: var(--ds-ink);
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.3s var(--ds-ease);
 }
-.sheet.sheet.sheet .close:hover { background: rgba(22, 22, 29, 0.07); }
-.ink .close:hover { background: rgba(255, 255, 255, 0.12) !important; }
+.sheet.sheet.sheet .close:hover { background: var(--ds-ink); color: var(--ds-paper); box-shadow: none; transform: rotate(90deg); }
+.sheet.sheet.ink .close { background: rgba(255, 255, 255, 0.1); color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.3); }
+.sheet.sheet.sheet.ink .close:hover { background: var(--ds-yellow); color: var(--ds-ink); }
 
 .badge {
   display: inline-flex;
