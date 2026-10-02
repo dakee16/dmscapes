@@ -318,6 +318,8 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
     usePlannerStore.getState().swapProduct(swapTarget.category, next.id);
     track("product_swapped", { old: swapTarget.id, new: next.id });
     closeSwap();
+    // Phone: drop the sheet back so the plan shows the new piece.
+    setSheet("peek");
   }
 
   function handleEntryRemove(entry: ListEntry) {

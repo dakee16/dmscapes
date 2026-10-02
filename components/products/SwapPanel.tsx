@@ -124,11 +124,12 @@ export default function SwapPanel({ product, total, budget }: { product: Product
               const chosen = preview?.id === alt.id;
               return (
                 <li key={alt.id} className={s.option} data-preview={chosen || undefined}
-                  onMouseEnter={() => show(alt)} onMouseLeave={() => show(null)}
+                  onPointerEnter={(e) => { if (e.pointerType === "mouse") show(alt); }}
+                  onPointerLeave={(e) => { if (e.pointerType === "mouse") show(null); }}
                   onFocus={() => show(alt)}>
                   <span className={s.optionThumb} aria-hidden="true"><ProductImage src={alt.image_url} alt="" /></span>
                   <span className={s.optionInfo}>
-                    <button type="button" className={s.optionName} aria-pressed={chosen} onClick={() => show(chosen ? null : alt)}
+                    <button type="button" className={s.optionName} aria-pressed={chosen} onClick={() => show(alt)}
                       aria-label={`Preview ${alt.name} on the plan`}>{alt.name}</button>
                     <span className={s.detail}>{sizeLabel(alt.width_ft, alt.length_ft) ?? "Size not listed"} · {fit}</span>
                     <span className={s.delta} data-up={delta > 0 || undefined}>

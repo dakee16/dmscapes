@@ -216,7 +216,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         {viewSwitch(`${s.viewSwitch} ${s.phoneSwitch}`)}
         {view==="2d"?<div ref={setToolsHost} className={s.railHost} aria-label="Floor plan tools"/>:
           <nav className={s.phone3dTools} aria-label="3D panels" inert={preview}>
-            {([["furnish","Arrange"],["style","Room"],["room","Openings"],["shop","List"]] as const).map(([key,label])=><button key={key} type="button" aria-pressed={mobileOpen&&activePanel===key} onClick={()=>open(key)}>{label}</button>)}
+            {([["furnish","Arrange"],["style","Room"],["shop","List"]] as const).map(([key,label])=><button key={key} type="button" aria-pressed={mobileOpen&&activePanel===key} onClick={()=>open(key)}>{label}</button>)}
           </nav>}
       </div>
       {view==="3d"&&!compact&&<aside className={s.arrange} aria-label="Arrange" inert={preview}>{arrangeContent}</aside>}

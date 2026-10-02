@@ -122,8 +122,8 @@ export default function ShoppingList({
         data-active={active || undefined}
         data-selected={chosen || undefined}
         data-peek={peekIds.has(p.id) || undefined}
-        onMouseEnter={() => { if (!e.custom) setHoveredCategory(p.category); }}
-        onMouseLeave={() => { if (!e.custom) setHoveredCategory(null); }}
+        onPointerEnter={(ev) => { if (!e.custom && ev.pointerType === "mouse") setHoveredCategory(p.category); }}
+        onPointerLeave={(ev) => { if (!e.custom && ev.pointerType === "mouse") setHoveredCategory(null); }}
         onClick={() => select(e)}
       >
         <span className={s.num} aria-hidden="true">{pad2(e.number)}</span>
@@ -153,6 +153,7 @@ export default function ShoppingList({
             </span>
             <span className={s.moreActions}>
               {unplaced && <button type="button" className={s.textBtn} onClick={() => onPlace(p.id)}>Place on the plan</button>}
+              {canSwap && <button type="button" className={`${s.textBtn} ${s.moreSwap}`} onClick={() => ui?.openSwap(p)}><SwapIcon size={13} /> Swap</button>}
               <ProductLink product={p} className={s.textBtn}>Buy on Amazon <UpRightIcon size={12} /></ProductLink>
               <button type="button" className={`${s.textBtn} ${s.danger}`} onClick={() => ui?.remove(e)} aria-label={`Remove ${p.name} from your list`}>
                 <TrashIcon size={13} /> Remove

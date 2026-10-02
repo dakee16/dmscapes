@@ -566,3 +566,6 @@
 .workspace.workspacePlan > .viewport > .renderArea { top: 56px; }
 .workspace.workspacePlan .workspaceTasks { top: 10px; }
 @media (max-width: 780px) { .workspace.workspacePlan > .viewport > .renderArea { top: 0; } }
+.workspace:not(.workspacePlan) > .planToolsHost { overflow-y: auto; overscroll-behavior: contain; }
+.workspace:not(.workspacePlan) .workspaceTasks button { justify-content: flex-start; }
+.workspace:not(.workspacePlan) .workspaceTasks b { margin-left: auto; }
