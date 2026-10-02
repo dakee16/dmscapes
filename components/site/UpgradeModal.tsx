@@ -10,10 +10,13 @@ import { startCheckout } from "@/lib/checkout";
 import { track } from "@/lib/analytics";
 import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, RECHARGE_CREDITS, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS } from "@/lib/plan";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
+import { ArrowRight, Check } from "@/components/ds/Icons";
+import { CloseButton, TierBadge } from "@/components/account-ui/parts";
+import d from "@/components/account-ui/Dialog.module.css";
 
-// Headline + one-line hook per gating point. The value block below is shared by
-// every reason except the two Plus-recharge reasons (plan-credits, save-credits),
-// which get their own recharge-vs-Pro layout.
+// Headline + one-line hook per gating point. The body below adapts: Plus and Pro
+// cards for feature gates and free limits, a Pro card for Pro-only tools, the
+// recharge-vs-Pro choice for Plus members out of credits, and the Flex form.
 const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   "plan-credits": {
     title: "You're out of plan credits",
@@ -86,6 +89,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   },
 };
 
+
 const PERKS = [
   `${PLUS_INITIAL_CREDITS} plan credits (saving is always free)`,
   "All 9 vibes unlocked",
@@ -94,37 +98,24 @@ const PERKS = [
   "Compare two designs side by side",
   "Priority on add-my-school requests",
 ];
-
-function Badge() {
-  return (
-    <span className="inline-flex items-center gap-2 rounded-full bg-highlight px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
-      <span className="font-display text-sm font-extrabold leading-none">+</span>
-      Dormscape Plus
-    </span>
-  );
-}
-
-function CloseButton({ onClick }: { onClick: () => void }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label="Close"
-      className="grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-ink"
-    >
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-        <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-      </svg>
-    </button>
-  );
-}
+const PRO_PERKS = [
+  "Everything in Plus",
+  `${PRO_INITIAL_CREDITS} plan credits`,
+  "3D Room Builder",
+  "Live 3D Room Studio",
+  "Create your own vibe",
+  "A shared room for your people",
+];
+const PRO_LINE = `${PRO_INITIAL_CREDITS} plan credits, 3D tools, and custom vibes.`;
+const PRO_GATES: UpgradeReason[] = ["workspace", "room-3d", "draw-3d", "custom-vibe"];
+const usd = (n: number) => `$${n.toFixed(2)}`;
 
 export default function UpgradeModal() {
   const { open, reason, closeUpgrade } = useUpgrade();
   const { openAuthModal } = useAuth();
-  const ctaRef = useRef<HTMLAnchorElement>(null);
+  const ctaRef = useRef<HTMLButtonElement>(null);
   const rechargeRef = useRef<HTMLButtonElement>(null);
-  const [busy, setBusy] = useState<null | "recharge" | "pro">(null);
+  const [busy, setBusy] = useState<null | "recharge" | "pro" | "plus">(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -149,13 +140,16 @@ export default function UpgradeModal() {
 
   if (!open) return null;
   const copy = COPY[reason];
-  // Plus members who ran a counter dry get the recharge-vs-Pro layout; free-tier
-  // limits (and feature gates) get the shared Plus/Pro value block; a Flex user
-  // out of credits gets the à-la-carte buy form plus a Pro option.
+  // Plus members who ran a counter dry get the recharge-vs-Pro layout; Pro-only
+  // tools get the Pro card; a Flex or Pro member out of credits gets the
+  // à-la-carte buy form; every other gate gets the Plus and Pro cards.
   const isRecharge = reason === "plan-credits" || reason === "save-credits";
   const isFlexCredits = reason === "flex-credits" || reason === "pro-credits";
+  const isProGate = PRO_GATES.includes(reason);
+  const isPlans = !isRecharge && !isFlexCredits && !isProGate;
+  const proBadge = isProGate || reason === "pro-credits";
 
-  async function buy(type: "recharge" | "pro") {
+  async function buy(type: "recharge" | "pro" | "plus") {
     if (busy) return;
     setBusy(type);
     setError("");
@@ -171,9 +165,16 @@ export default function UpgradeModal() {
     setError(res.error);
   }
 
+  const errorLine = error && (
+    <p className={d.error} role="alert">
+      {error}
+    </p>
+  );
+
   return (
     <Modal
-      className="fixed inset-0 z-[90] flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
+      className={`${d.layer} ${d.bottom}`}
+      style={{ "--z": 90 } as React.CSSProperties}
       role="dialog"
       aria-modal="true"
       aria-labelledby="upgrade-modal-title"
@@ -181,166 +182,173 @@ export default function UpgradeModal() {
         if (e.target === e.currentTarget) closeUpgrade();
       }}
     >
-      <div className={`${reason === "room-3d" ? "" : "snap-in "}w-full max-w-lg rounded-t-3xl border border-ink/10 bg-paper p-7 shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)] sm:rounded-3xl sm:p-9`}>
-        <div className="flex items-start justify-between gap-4">
-          {reason === "workspace" || reason === "room-3d" || reason === "draw-3d" || reason === "custom-vibe" || reason === "pro-credits" ? <span className="dm-eyebrow">Dormscape Pro</span> : <Badge />}
+      <div
+        className={`ds ${d.sheet} ${reason === "room-3d" ? d.still : ""}`}
+        style={{ "--w": isPlans ? "740px" : "540px" } as React.CSSProperties}
+      >
+        <div className={d.top}>
+          <TierBadge tier={proBadge ? "pro" : "plus"} />
           <CloseButton onClick={closeUpgrade} />
         </div>
 
-        <h2
-          id="upgrade-modal-title"
-          className="mt-5 font-display text-[1.75rem] font-extrabold leading-[1.12] tracking-tight sm:text-3xl"
-        >
+        <h2 id="upgrade-modal-title" className={d.title}>
           {copy.title}
         </h2>
-        <p className="mt-3 text-[15px] leading-relaxed text-ink-soft sm:text-base">
-          {copy.body}
-        </p>
+        <p className={d.body}>{copy.body}</p>
 
-        {reason === "workspace" || reason === "room-3d" || reason === "draw-3d" || reason === "custom-vibe" ? (
-          <div className="mt-6 space-y-4"><p>3D Room Builder, live 3D Room Studio, create your own vibe, {PRO_INITIAL_CREDITS} plan credits, shared room hosting, and everything in Plus.</p><button className="dm-button w-full" onClick={() => buy("pro")} disabled={busy !== null}>{busy ? "Starting checkout…" : `Get Pro for $${PRO_PRICE_USD.toFixed(2)} once`}</button>{error && <p role="alert">{error}</p>}<Link href="/pricing#pro" onClick={closeUpgrade} className="block text-center text-cobalt underline">See all Pro features</Link><button className="block w-full text-sm" onClick={closeUpgrade}>Keep my current plan</button></div>
-        ) : isFlexCredits ? (
-          // Out of credits on Flex: buy more à-la-carte, or step up to Pro.
+        {isProGate ? (
+          // Pro-only tools: one Pro card, like the Pro column on /pricing.
           <>
-            <div className="mt-6 rounded-2xl border border-ink/10 bg-white p-4">
+            <div className={`${d.plan} ${d.planPro}`} style={{ marginTop: 22 }}>
+              <div className={d.planHead}>
+                <h3>Pro</h3>
+                <span className={d.planTag}>One time</span>
+              </div>
+              <p className={d.priceRow}>
+                <span className={d.price}>{usd(PRO_PRICE_USD)}</span>
+                <span className={d.once}>once</span>
+              </p>
+              <p className={d.planLine}>
+                3D Room Builder, live 3D Room Studio, create your own vibe, {PRO_INITIAL_CREDITS} plan credits, shared room
+                hosting, and everything in Plus.
+              </p>
+              <div className={d.planCta}>
+                <button ref={ctaRef} type="button" className={`${d.btn} ${d.btnWhite} ${d.wide}`} onClick={() => buy("pro")} disabled={busy !== null}>
+                  {busy ? "Starting checkout…" : `Get Pro for ${usd(PRO_PRICE_USD)} once`}
+                </button>
+              </div>
+            </div>
+            {errorLine}
+            <div className={d.foot}>
+              <Link href="/pricing#pro" onClick={closeUpgrade} className={d.textLink}>
+                See all Pro features <ArrowRight size={16} />
+              </Link>
+              <button type="button" className={d.later} onClick={closeUpgrade}>
+                Keep my current plan
+              </button>
+            </div>
+          </>
+        ) : isFlexCredits ? (
+          // Out of credits on Flex or Pro: buy more à la carte, or step up to Pro.
+          <>
+            <div className={d.well}>
               <BuyCreditsForm source="upgrade-modal" autoFocus onStarted={closeUpgrade} />
             </div>
-            {reason !== "pro-credits" && <button
-              type="button"
-              onClick={() => buy("pro")}
-              disabled={busy !== null}
-              className="mt-3 flex w-full cursor-pointer items-center justify-between gap-3 rounded-2xl border border-ink/15 bg-white px-5 py-4 text-left text-ink transition-colors hover:border-cobalt disabled:cursor-wait disabled:opacity-70"
-            >
-              <span>
-                <span className="block text-base font-semibold leading-snug">
-                  {busy === "pro" ? "Starting checkout…" : "Upgrade to Pro"}
-                </span>
-                <span className="mt-1 block text-sm leading-snug text-ink-soft">
-                  {PRO_INITIAL_CREDITS} plan credits, 3D tools, and custom vibes.
-                </span>
-              </span>
-              <span className="shrink-0 font-mono text-base font-semibold">
-                ${PRO_PRICE_USD.toFixed(2)}
-              </span>
-            </button>}
-            {error && (
-              <p className="mt-3 text-sm text-[#c2321e]" role="alert">
-                {error}
-              </p>
+            {reason !== "pro-credits" && (
+              <div className={d.options} style={{ marginTop: 12 }}>
+                <button type="button" onClick={() => buy("pro")} disabled={busy !== null} className={`${d.option} ${d.optionBlue}`}>
+                  <span className={d.optionText}>
+                    <b>{busy === "pro" ? "Starting checkout…" : "Upgrade to Pro"}</b>
+                    <span>{PRO_LINE}</span>
+                  </span>
+                  <span className={d.optionPrice}>{usd(PRO_PRICE_USD)}</span>
+                </button>
+              </div>
             )}
-            <button
-              type="button"
-              onClick={closeUpgrade}
-              className="mt-3 block w-full cursor-pointer text-center text-sm text-ink-soft transition-colors hover:text-ink"
-            >
+            {errorLine}
+            <button type="button" onClick={closeUpgrade} className={d.later}>
               Not now
             </button>
           </>
         ) : isRecharge ? (
           // Out of a counter: a Plus member chooses between a recharge and Pro.
           <>
-            <div className="mt-6 space-y-3">
+            <div className={d.options}>
               <button
                 ref={rechargeRef}
                 type="button"
                 onClick={() => buy("recharge")}
                 disabled={busy !== null}
-                className="flex w-full cursor-pointer items-center justify-between gap-3 rounded-2xl border border-cobalt bg-cobalt px-5 py-4 text-left text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
+                className={`${d.option} ${d.optionInk}`}
               >
-                <span>
-                  <span className="block text-base font-semibold leading-snug">
-                    {busy === "recharge"
-                      ? "Starting checkout…"
-                      : `Recharge ${RECHARGE_CREDITS} plan credits`}
-                  </span>
-                  <span className="mt-1 block text-sm leading-snug text-white/85">
-                    {RECHARGE_CREDITS} more rooms to design, added on.
-                  </span>
+                <span className={d.optionText}>
+                  <b>{busy === "recharge" ? "Starting checkout…" : `Recharge ${RECHARGE_CREDITS} plan credits`}</b>
+                  <span>{RECHARGE_CREDITS} more rooms to design, added on.</span>
                 </span>
-                <span className="shrink-0 font-mono text-base font-semibold">
-                  ${RECHARGE_PRICE_USD.toFixed(2)}
-                </span>
+                <span className={d.optionPrice}>{usd(RECHARGE_PRICE_USD)}</span>
               </button>
-
-              <button
-                type="button"
-                onClick={() => buy("pro")}
-                disabled={busy !== null}
-                className="flex w-full cursor-pointer items-center justify-between gap-3 rounded-2xl border border-ink/15 bg-white px-5 py-4 text-left text-ink transition-colors hover:border-cobalt disabled:cursor-wait disabled:opacity-70"
-              >
-                <span>
-                  <span className="block text-base font-semibold leading-snug">
-                    {busy === "pro" ? "Starting checkout…" : "Upgrade to Pro"}
-                  </span>
-                  <span className="mt-1 block text-sm leading-snug text-ink-soft">
-                    {PRO_INITIAL_CREDITS} plan credits, 3D tools, and custom vibes.
-                  </span>
+              <button type="button" onClick={() => buy("pro")} disabled={busy !== null} className={`${d.option} ${d.optionBlue}`}>
+                <span className={d.optionText}>
+                  <b>{busy === "pro" ? "Starting checkout…" : "Upgrade to Pro"}</b>
+                  <span>{PRO_LINE}</span>
                 </span>
-                <span className="shrink-0 font-mono text-base font-semibold">
-                  ${PRO_PRICE_USD.toFixed(2)}
-                </span>
+                <span className={d.optionPrice}>{usd(PRO_PRICE_USD)}</span>
               </button>
             </div>
-            {error && (
-              <p className="mt-3 text-sm text-[#c2321e]" role="alert">
-                {error}
-              </p>
-            )}
-            <button
-              type="button"
-              onClick={closeUpgrade}
-              className="mt-3 block w-full cursor-pointer text-center text-sm text-ink-soft transition-colors hover:text-ink"
-            >
+            {errorLine}
+            <button type="button" onClick={closeUpgrade} className={d.later}>
               Not now
             </button>
           </>
         ) : (
-          // Free-user gate: show the shared value block and point to Pricing,
-          // where the Plus / Pro choice is laid out clearly.
+          // Free-user gate: the Plus and Pro cards from /pricing, side by side.
           <>
-            <ul className="mt-6 space-y-3">
-              {PERKS.map((perk) => (
-                <li key={perk} className="flex items-center gap-2.5 text-base text-ink">
-                  <span
-                    className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-highlight text-ink"
-                    aria-hidden="true"
-                  >
-                    <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="3">
-                      <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                  {perk}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-7 flex flex-wrap items-baseline gap-2.5">
-              <span className="dm-numeric text-4xl font-semibold tracking-tight">
-                ${PLUS_PRICE_USD.toFixed(2)}
-              </span>
-              <span className="text-sm text-ink-soft">
-                one time for Plus, or ${PRO_PRICE_USD.toFixed(2)} for Pro
-              </span>
+            <div className={d.plans}>
+              <article className={`${d.plan} ${d.planPlus}`} aria-labelledby="upgrade-plus">
+                <div className={d.planHead}>
+                  <h3 id="upgrade-plus">
+                    Plus<span>+</span>
+                  </h3>
+                  <span className={d.planTag}>One time</span>
+                </div>
+                <p className={d.priceRow}>
+                  <span className={d.price}>{usd(PLUS_PRICE_USD)}</span>
+                  <span className={d.once}>once</span>
+                </p>
+                <ul className={d.perks}>
+                  {PERKS.map((perk) => (
+                    <li key={perk}>
+                      <Check size={16} color="var(--ds-yellow)" />
+                      <span>{perk}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className={d.planCta}>
+                  <button ref={ctaRef} type="button" className={`${d.btn} ${d.btnYellow} ${d.wide}`} onClick={() => buy("plus")} disabled={busy !== null}>
+                    {busy === "plus" ? "Starting checkout…" : `Get Plus for ${usd(PLUS_PRICE_USD)}`}
+                  </button>
+                </div>
+              </article>
+              <article className={`${d.plan} ${d.planPro}`} aria-labelledby="upgrade-pro">
+                <div className={d.planHead}>
+                  <h3 id="upgrade-pro">Pro</h3>
+                  <span className={d.planTag}>{PRO_INITIAL_CREDITS} credits</span>
+                </div>
+                <p className={d.priceRow}>
+                  <span className={d.price}>{usd(PRO_PRICE_USD)}</span>
+                  <span className={d.once}>once</span>
+                </p>
+                <ul className={d.perks}>
+                  {PRO_PERKS.map((perk) => (
+                    <li key={perk}>
+                      <Check size={16} color="#fff" />
+                      <span>{perk}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className={d.planCta}>
+                  <button type="button" className={`${d.btn} ${d.btnWhite} ${d.wide}`} onClick={() => buy("pro")} disabled={busy !== null}>
+                    {busy === "pro" ? "Starting checkout…" : `Go Pro for ${usd(PRO_PRICE_USD)}`}
+                  </button>
+                </div>
+              </article>
             </div>
-
-            <Link
-              ref={ctaRef}
-              href="/pricing"
-              onClick={() => {
-                track("upgrade_cta_clicked", { reason });
-                closeUpgrade();
-              }}
-              className="mt-6 flex h-13 w-full items-center justify-center rounded-2xl bg-ink text-base font-semibold text-white transition-colors hover:bg-cobalt"
-            >
-              Upgrade
-            </Link>
-            <button
-              type="button"
-              onClick={closeUpgrade}
-              className="mt-3 block w-full cursor-pointer text-center text-sm text-ink-soft transition-colors hover:text-ink"
-            >
-              Maybe later
-            </button>
+            {errorLine}
+            <div className={d.foot}>
+              <Link
+                href="/pricing"
+                onClick={() => {
+                  track("upgrade_cta_clicked", { reason });
+                  closeUpgrade();
+                }}
+                className={d.textLink}
+              >
+                Compare every plan <ArrowRight size={16} />
+              </Link>
+              <button type="button" onClick={closeUpgrade} className={d.later}>
+                Maybe later
+              </button>
+            </div>
           </>
         )}
       </div>

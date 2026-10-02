@@ -4,6 +4,9 @@ import Modal from "@/components/site/Modal";
 
 import { useEffect, useState } from "react";
 import { track } from "@/lib/analytics";
+import { ArrowRight, Check } from "@/components/ds/Icons";
+import { CloseButton } from "@/components/account-ui/parts";
+import d from "@/components/account-ui/Dialog.module.css";
 import { PRO_PRICE_USD, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS } from "@/lib/plan";
 
 // Brief, satisfying confirmation shown when a buyer returns from Stripe Checkout
@@ -79,7 +82,8 @@ export default function PurchaseThankYou() {
 
   return (
     <Modal
-      className="fixed inset-0 z-[65] flex items-center justify-center overflow-y-auto bg-ink/45 p-4 backdrop-blur-[3px] sm:p-6"
+      className={d.layer}
+      style={{ "--z": 65 } as React.CSSProperties}
       role="dialog"
       aria-modal="true"
       aria-labelledby="thankyou-title"
@@ -87,64 +91,38 @@ export default function PurchaseThankYou() {
         if (e.target === e.currentTarget) close();
       }}
     >
-      <div className="rise relative my-auto w-full max-w-md overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)]">
-        <div className="pointer-events-none absolute inset-0 grid-paper opacity-[0.5]" aria-hidden="true" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/70 via-paper/40 to-paper" aria-hidden="true" />
-        <div className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full bg-highlight/40 blur-3xl" aria-hidden="true" />
-        <div className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-cobalt/10 blur-3xl" aria-hidden="true" />
-
-        <div className="relative p-7 sm:p-9">
-          <div className="flex items-start justify-between gap-4">
-            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-cobalt text-white shadow-sm">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M20 6 9 17l-5-5" />
-              </svg>
-            </span>
-            <button
-              type="button"
-              onClick={close}
-              aria-label="Close"
-              className="grid h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-ink"
-            >
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
-
-          <h2
-            id="thankyou-title"
-            className="mt-5 font-display text-3xl font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[2.1rem]"
-          >
-            Thank you. <span className="hl">{copy.title}</span>
-          </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{copy.blurb}</p>
-
-          <ul className="mt-6 space-y-2.5">
-            {copy.perks.map((perk) => (
-              <li key={perk} className="flex items-start gap-2.5">
-                <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0 text-cobalt" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-                <span className="text-sm leading-snug text-ink">{perk}</span>
-              </li>
-            ))}
-          </ul>
-
-          {tier === "plus" && (
-            <p className="mt-5 text-[13px] leading-relaxed text-ink-soft">
-              Pro includes {PRO_INITIAL_CREDITS} plan credits and 3D tools for ${PRO_PRICE_USD.toFixed(2)}, one time.
-            </p>
-          )}
-
-          <button
-            type="button"
-            onClick={close}
-            className="mt-7 h-12 w-full cursor-pointer rounded-xl bg-cobalt px-6 text-base font-semibold text-white transition-colors hover:bg-cobalt-deep"
-          >
-            Start designing
-          </button>
+      <div className={`ds ${d.sheet} ${d.taped}`} style={{ "--w": "500px", paddingTop: "calc(clamp(24px, 3vw, 34px) + 12px)" } as React.CSSProperties}>
+        <div className={d.tape} data-tone={tier === "pro" ? "blue" : undefined} aria-hidden="true" />
+        <div className={d.top}>
+          <span className={d.seal} data-tone={tier} aria-hidden="true">
+            <Check size={30} strokeWidth={3} />
+          </span>
+          <CloseButton onClick={close} />
         </div>
+
+        <h2 id="thankyou-title" className={d.title}>
+          Thank you. <span className={d.serif}>{copy.title}</span>
+        </h2>
+        <p className={d.body}>{copy.blurb}</p>
+
+        <ul className={d.perks}>
+          {copy.perks.map((perk) => (
+            <li key={perk}>
+              <Check size={18} color="var(--ds-blue)" />
+              <span>{perk}</span>
+            </li>
+          ))}
+        </ul>
+
+        {tier === "plus" && (
+          <p className={d.small}>
+            Pro includes {PRO_INITIAL_CREDITS} plan credits and 3D tools for ${PRO_PRICE_USD.toFixed(2)}, one time.
+          </p>
+        )}
+
+        <button type="button" onClick={close} className={`${d.btn} ${tier === "pro" ? d.btnBlue : d.btnInk} ${d.wide}`} style={{ marginTop: 26 }}>
+          Start designing <ArrowRight />
+        </button>
       </div>
     </Modal>
   );

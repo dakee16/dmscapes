@@ -83,3 +83,5 @@
 .form.form .buy:disabled { cursor: wait; opacity: 0.7; }
 .note { margin: 10px 0 0; font-size: 13.5px; line-height: 1.45; color: var(--ds-caption); }
 .error { margin: 8px 0 0; font-size: 14px; line-height: 1.45; color: #b01d2a; }
+/* The stepper shows focus for the whole control */
+.form .qty:focus-visible { outline: none; }

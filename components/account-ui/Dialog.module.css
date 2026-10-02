@@ -50,6 +50,9 @@
   animation: sheetIn 0.45s var(--ds-ease) both;
 }
 .sheet.still { animation: none; }
+/* Framer Motion drives these itself */
+.layer.layer.quiet { animation: none; }
+.sheet.sheet.quiet { animation: none; }
 .sheet.ink {
   background: var(--ds-ink);
   color: var(--ds-paper);
@@ -192,7 +195,7 @@
   transition: transform 0.25s var(--ds-ease), box-shadow 0.25s var(--ds-ease), background-color 0.2s;
 }
 .sheet.sheet.sheet :is(a, button).btn:hover:not(:disabled) { transform: translateY(-2px); }
-.sheet.sheet.sheet :is(a, button).btn:disabled { cursor: wait; opacity: 0.65; transform: none; }
+.sheet.sheet.sheet :is(a, button).btn:disabled { cursor: not-allowed; opacity: 0.6; transform: none; box-shadow: none; }
 .sheet.sheet.sheet :is(a, button).wide { width: 100%; }
 .sheet.sheet.sheet :is(a, button).btnInk { background: var(--ds-ink); color: var(--ds-yellow); }
 .sheet.sheet.sheet :is(a, button).btnInk:hover:not(:disabled) { box-shadow: 4px 4px 0 var(--ds-pink); }
