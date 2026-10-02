@@ -1,0 +1,88 @@
+/* Manual room-size entry (components/planner/ManualEntry). */
+
+.manual {
+  padding: 18px;
+  background: #fff;
+  border: 1.5px solid rgba(22, 22, 29, 0.14);
+  border-radius: 16px;
+  animation: rise 250ms var(--ds-ease) both;
+}
+
+.intro {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ds-muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+
+.label {
+  margin-bottom: 6px;
+  color: var(--ds-caption);
+}
+
+.optional {
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--ds-sans);
+  font-weight: 500;
+}
+
+.input.input {
+  min-height: 48px;
+  border-radius: 12px;
+}
+
+.num.num {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.select.select {
+  appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 16 16' fill='none' stroke='%2316161D' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+.error {
+  margin: 12px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ds-red);
+}
+
+.submit.submit {
+  margin-top: 16px;
+  min-height: 48px;
+  border-radius: 999px;
+}
+
+@media (max-width: 520px) {
+  .submit.submit {
+    width: 100%;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .manual {
+    animation: none;
+  }
+}

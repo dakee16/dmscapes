@@ -1,25 +1,33 @@
 "use client";
-import Link from "next/link";
 
-import BrandLoader from "@/components/site/BrandLoader";
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import StudioPreview from "@/components/experience/StudioPreview";
-import CollegeSearch from "@/components/planner/CollegeSearch";
-import DormPicker from "@/components/planner/DormPicker";
-import RoomPicker, { roomKey } from "@/components/planner/RoomPicker";
-import ManualEntry, {
-  type ManualEntryValues,
-} from "@/components/planner/ManualEntry";
+import BrandLoader from "@/components/site/BrandLoader";
+import SchoolStep from "@/components/plan-steps/SchoolStep";
+import RoomStep from "@/components/plan-steps/RoomStep";
+import ResumeRoom from "@/components/plan-steps/ResumeRoom";
+import { roomKey } from "@/components/planner/RoomPicker";
+import type { ManualEntryValues } from "@/components/planner/ManualEntry";
 import RequestSchoolModal from "@/components/planner/RequestSchoolModal";
 import { track } from "@/lib/analytics";
-import { roomTypeLabel } from "@/lib/format";
-import { getSchool, formatDims } from "@/lib/schools";
+import { getSchool } from "@/lib/schools";
 import { usePlannerStore } from "@/lib/store";
-import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
-import type { RoomSummary, SchoolSummary } from "@/lib/types";
+import type { RoomSummary, SchoolSummary, SelectedRoom } from "@/lib/types";
+import css from "@/components/plan-steps/Page.module.css";
 
 let flowTracked = false;
+
+/** Which catalog row (if any) the stored room came from, so a return visit shows it chosen. */
+function keyForStoredRoom(rooms: RoomSummary[], room: SelectedRoom | null): string | null {
+  if (!room || room.source !== "catalog") return null;
+  const i = rooms.findIndex(
+    (r) =>
+      r.type === room.type &&
+      ((r.length_ft === room.lengthFt && r.width_ft === room.widthFt) ||
+        (r.length_ft === room.widthFt && r.width_ft === room.lengthFt))
+  );
+  return i >= 0 ? roomKey(rooms[i], i) : null;
+}
 
 export default function PlanSelectPage() {
   const router = useRouter();
@@ -31,11 +39,9 @@ export default function PlanSelectPage() {
   const setRoom = usePlannerStore((s) => s.setRoom);
 
   const [mounted, setMounted] = useState(false);
-  const [manualOpen, setManualOpen] = useState(false);
   const [requestOpen, setRequestOpen] = useState(false);
-  const [pendingDimsRoom, setPendingDimsRoom] = useState<RoomSummary | null>(
-    null,
-  );
+  const [showSchools, setShowSchools] = useState(false);
+  const [pendingDimsRoom, setPendingDimsRoom] = useState<RoomSummary | null>(null);
   const [selectedRoomKey, setSelectedRoomKey] = useState<string | null>(null);
 
   useEffect(() => {
@@ -53,7 +59,13 @@ export default function PlanSelectPage() {
     const view = params.get("view");
     if (view === "2d" || view === "3d") usePlannerStore.getState().setPlannerView(view);
     const schoolId = params.get("school");
-    if (!schoolId) return;
+    if (!schoolId) {
+      // A return visit: show the stored catalog room as chosen.
+      const s = usePlannerStore.getState();
+      const d = s.college?.id ? getSchool(s.college.id)?.dorms.find((x) => x.id === s.dorm?.id) : undefined;
+      if (d) setSelectedRoomKey(keyForStoredRoom(d.rooms, s.room));
+      return;
+    }
     const s = getSchool(schoolId);
     if (!s) return;
     setCollege({ id: s.id, name: s.name });
@@ -62,20 +74,22 @@ export default function PlanSelectPage() {
     if (d) setDorm({ id: d.id, name: d.name });
   }, [setCollege, setDorm]);
 
-  const school = useMemo(
-    () => (college?.id ? getSchool(college.id) : undefined),
-    [college?.id],
-  );
-  const dormSummary = useMemo(
-    () => school?.dorms.find((d) => d.id === dorm?.id),
-    [school, dorm?.id],
-  );
+  const school = useMemo(() => (college?.id ? getSchool(college.id) : undefined), [college?.id]);
+  const dormSummary = useMemo(() => school?.dorms.find((d) => d.id === dorm?.id), [school, dorm?.id]);
+  const view: "school" | "room" = school && !showSchools ? "room" : "school";
+
+  useEffect(() => {
+    if (mounted) window.scrollTo(0, 0);
+  }, [view, mounted]);
 
   function handleCollege(next: SchoolSummary) {
-    setManualOpen(false);
     setPendingDimsRoom(null);
-    setSelectedRoomKey(null);
-    setCollege({ id: next.id, name: next.name });
+    setShowSchools(false);
+    // Picking the same school again keeps the building and room already chosen.
+    if (next.id !== college?.id) {
+      setSelectedRoomKey(null);
+      setCollege({ id: next.id, name: next.name });
+    }
     track("college_selected", { college_id: next.id });
   }
 
@@ -128,139 +142,60 @@ export default function PlanSelectPage() {
   }
 
   if (!mounted) {
-    return <div className="grid min-h-[50svh] place-items-center px-5"><BrandLoader label="Opening your planner…"/></div>;
+    return (
+      <div className={css.loading}>
+        <BrandLoader label="Opening your planner…" />
+      </div>
+    );
   }
 
-  const confirmDims = room ? formatDims(room.lengthFt, room.widthFt) : null;
+  const catalogRoom = (() => {
+    if (!dormSummary || !selectedRoomKey) return pendingDimsRoom;
+    const i = dormSummary.rooms.findIndex((r, idx) => roomKey(r, idx) === selectedRoomKey);
+    return i >= 0 ? dormSummary.rooms[i] : null;
+  })();
 
   return (
-    <div className="dm-planner-select">
-      <div className="dm-planner-form">
-        <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-          Step 1 · Your room
-        </p>
-        <h1 className="dm-page-title mt-3 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-          Find your <span className="hl">exact dorm</span>
-        </h1>
-        <p className="mt-3 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-          Pick your school, building, and room type. Start with the room
-          dimensions, then choose the details that make it yours.
-        </p>
-
-        <div className="mt-7 space-y-6">
-          <CollegeSearch
-            selectedName={college?.id ? college.name : null}
-            onSelect={handleCollege}
-            onNoMatches={() => setRequestOpen(true)}
-          />
-
-          {school && (
-            <DormPicker
-              school={school}
-              selectedDormId={dorm?.id ?? null}
-              onSelect={(d) => {
-                setDorm(d);
-                setPendingDimsRoom(null);
-                setSelectedRoomKey(null);
-              }}
-            />
-          )}
-
-          {school && dormSummary && (
-            <RoomPicker
-              dorm={dormSummary}
-              selectedKey={selectedRoomKey}
-              onSelect={handleRoom}
-            />
-          )}
-
-          {pendingDimsRoom && (
-            <ManualEntry
-              mode="dims-only"
-              prefillType={pendingDimsRoom.type}
-              prefillOccupants={pendingDimsRoom.occupants ?? 2}
-              onSubmit={handleDimsOnly}
-            />
-          )}
-
-          {room && (
-            <div className="snap-in flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl border border-cobalt/30 bg-cobalt/5 px-4 py-3.5">
-              <svg
-                className="h-5 w-5 shrink-0 text-cobalt"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                aria-hidden="true"
-              >
-                <path
-                  d="M20 6L9 17l-5-5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="min-w-0 text-sm font-semibold text-ink">
-                {[college?.name, dorm?.name, roomTypeLabel(room)]
-                  .filter(Boolean)
-                  .join(" · ")}
-              </span>
-              {confirmDims && (
-                <span className="whitespace-nowrap font-mono text-sm font-semibold text-cobalt">
-                  {confirmDims}
-                </span>
-              )}
-              {room.dimsEstimated && (
-                <EstimatedDimsNote className="basis-full" />
-              )}
-            </div>
-          )}
-
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-            <button
-              type="button"
-              onClick={() => {
-                setManualOpen((v) => !v);
-                setPendingDimsRoom(null);
-              }}
-              className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-4 transition-colors hover:text-cobalt"
-            >
-              Can’t find your room? Add your own
-            </button>
-            <button
-              type="button"
-              onClick={() => setRequestOpen(true)}
-              className="text-ink-soft underline-offset-4 transition-colors hover:text-cobalt hover:underline"
-            >
-              Add my school
-            </button>
-          </div>
-
-          {manualOpen && <div><ManualEntry mode="school" onSubmit={handleManual}/><p className="mt-4 text-sm text-ink-soft">Need a different shape? <Link href="/plan/draw" className="font-semibold text-cobalt underline">Draw your room</Link> with Plus, or <Link href="/plan/draw/3d" className="font-semibold text-cobalt underline">build in 3D</Link> with Pro.</p></div>}
-        </div>
-
-        {/* Next: sticky on mobile, inline on desktop */}
-        <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/8 bg-paper/92 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-md sm:static sm:z-auto sm:mt-8 sm:border-0 sm:bg-transparent sm:p-0 sm:backdrop-blur-none">
-          <button
-            type="button"
-            disabled={!room}
-            onClick={() => router.push("/plan/style")}
-            className="h-13 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:bg-ink/15 disabled:text-ink-soft sm:h-12 sm:w-auto sm:px-10"
-          >
-            Next: pick your style →
-          </button>
-        </div>
-      </div>
-      <StudioPreview
-        caption={
-          room && confirmDims
-            ? `Your room: ${confirmDims}`
-            : "Your next chapter, taking shape."
-        }
-      />
-      <RequestSchoolModal
-        open={requestOpen}
-        onClose={() => setRequestOpen(false)}
-      />
-    </div>
+    <>
+      {view === "room" && school ? (
+        <RoomStep
+          school={school}
+          dormId={dorm?.id ?? null}
+          selectedKey={selectedRoomKey}
+          catalogRoom={catalogRoom}
+          room={room}
+          pendingDimsRoom={pendingDimsRoom}
+          onBack={() => setShowSchools(true)}
+          onDorm={(d) => {
+            if (d.id !== dorm?.id) {
+              setDorm(d);
+              setPendingDimsRoom(null);
+              setSelectedRoomKey(null);
+            }
+          }}
+          onRoom={handleRoom}
+          onDimsOnly={handleDimsOnly}
+          onNext={() => router.push("/plan/style")}
+        />
+      ) : (
+        <SchoolStep
+          onSelect={handleCollege}
+          onRequest={() => setRequestOpen(true)}
+          onManual={handleManual}
+          resume={
+            room ? (
+              <ResumeRoom
+                college={college}
+                dorm={dorm}
+                room={room}
+                onUse={() => router.push("/plan/style")}
+                onEdit={school ? () => setShowSchools(false) : undefined}
+              />
+            ) : null
+          }
+        />
+      )}
+      <RequestSchoolModal open={requestOpen} onClose={() => setRequestOpen(false)} />
+    </>
   );
 }

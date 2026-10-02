@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import css from "@/components/plan-steps/Forms.module.css";
 
 const ROOM_TYPES = ["single", "double", "triple", "suite"] as const;
 
@@ -60,31 +61,30 @@ export default function ManualEntry({
     });
   }
 
-  const inputCls =
-    "h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt";
+  const inputCls = `ds-input ${css.input}`;
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="rise rounded-xl border border-ink/10 bg-white p-4 sm:p-5"
+      className={css.manual}
     >
       {mode === "dims-only" ? (
-        <p className="mb-4 text-sm leading-relaxed text-ink-soft">
+        <p className={css.intro}>
           Your school doesn&apos;t publish this room&apos;s size. Grab a tape measure, ask
           your RA, or estimate. Close is good enough.
         </p>
       ) : (
-        <p className="mb-4 text-sm leading-relaxed text-ink-soft">
+        <p className={css.intro}>
           No problem. Tell us about your room and we&apos;ll plan around your exact
           measurements.
         </p>
       )}
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className={css.grid}>
         {mode === "school" && (
-          <div className="col-span-2">
-            <label htmlFor="me-college" className="mb-1.5 block text-sm font-medium">
-              College <span className="font-normal text-ink-soft">(optional)</span>
+          <div className={css.full}>
+            <label htmlFor="me-college" className={`ds-label ${css.label}`}>
+              College <span className={css.optional}>(optional)</span>
             </label>
             <input
               id="me-college"
@@ -98,7 +98,7 @@ export default function ManualEntry({
         )}
 
         <div>
-          <label htmlFor="me-length" className="mb-1.5 block text-sm font-medium">
+          <label htmlFor="me-length" className={`ds-label ${css.label}`}>
             Length (ft)
           </label>
           <input
@@ -112,11 +112,11 @@ export default function ManualEntry({
             value={length}
             onChange={(e) => setLength(e.target.value)}
             placeholder="15"
-            className={`${inputCls} font-mono`}
+            className={`${inputCls} ${css.num}`}
           />
         </div>
         <div>
-          <label htmlFor="me-width" className="mb-1.5 block text-sm font-medium">
+          <label htmlFor="me-width" className={`ds-label ${css.label}`}>
             Width (ft)
           </label>
           <input
@@ -130,21 +130,21 @@ export default function ManualEntry({
             value={width}
             onChange={(e) => setWidth(e.target.value)}
             placeholder="12"
-            className={`${inputCls} font-mono`}
+            className={`${inputCls} ${css.num}`}
           />
         </div>
 
         {mode === "school" && (
           <>
             <div>
-              <label htmlFor="me-type" className="mb-1.5 block text-sm font-medium">
+              <label htmlFor="me-type" className={`ds-label ${css.label}`}>
                 Room type
               </label>
               <select
                 id="me-type"
                 value={roomType}
                 onChange={(e) => setRoomType(e.target.value)}
-                className={`${inputCls} appearance-none pr-9`}
+                className={`${inputCls} ${css.select}`}
               >
                 {ROOM_TYPES.map((t) => (
                   <option key={t} value={t}>
@@ -154,14 +154,14 @@ export default function ManualEntry({
               </select>
             </div>
             <div>
-              <label htmlFor="me-occ" className="mb-1.5 block text-sm font-medium">
+              <label htmlFor="me-occ" className={`ds-label ${css.label}`}>
                 Roommates total
               </label>
               <select
                 id="me-occ"
                 value={occupants}
                 onChange={(e) => setOccupants(Number(e.target.value))}
-                className={`${inputCls} appearance-none pr-9`}
+                className={`${inputCls} ${css.select}`}
               >
                 {[1, 2, 3, 4].map((n) => (
                   <option key={n} value={n}>
@@ -175,14 +175,14 @@ export default function ManualEntry({
       </div>
 
       {error && (
-        <p className="mt-3 text-sm text-[#c2321e]" role="alert">
+        <p className={css.error} role="alert">
           {error}
         </p>
       )}
 
       <button
         type="submit"
-        className="mt-4 h-12 w-full cursor-pointer rounded-xl bg-cobalt px-6 text-base font-semibold text-white transition-colors hover:bg-cobalt-deep sm:w-auto"
+        className={`ds-btn ds-btn--ink ${css.submit}`}
       >
         Use these dimensions
       </button>
