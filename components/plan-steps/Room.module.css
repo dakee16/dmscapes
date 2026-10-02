@@ -251,7 +251,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 4px;
-  padding: 14px 48px 14px 20px;
+  padding: 14px 20px;
   background: #fff;
   border: 1.5px solid rgba(22, 22, 29, 0.2);
   border-radius: 16px;
@@ -288,6 +288,7 @@
   accent-color: var(--ds-yellow);
 }
 .typeName {
+  padding-right: 30px;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.2;
@@ -710,7 +711,7 @@
   .type {
     min-height: 108px;
     justify-content: flex-start;
-    padding: 14px 40px 14px 14px;
+    padding: 14px;
     border-radius: 14px;
   }
   .type[data-selected="true"] {

@@ -134,10 +134,9 @@
     display: none;
   }
   .stepsNav {
-    width: auto;
-    justify-self: end;
+    width: 100%;
     max-width: 200px;
-    flex: 1;
+    justify-self: end;
   }
   .tape {
     height: 28px;
@@ -175,6 +174,15 @@
   }
 }
 
+/* Phones: wordmark and tape only, as drawn (the profile menu waits for wider screens). */
+@media (max-width: 479px) {
+  .bar {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .actions {
+    display: none;
+  }
+}
 @media (max-width: 359px) {
   .stepsNav {
     max-width: 160px;
