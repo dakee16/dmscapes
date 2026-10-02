@@ -23,7 +23,7 @@ import s from "./Studio.module.css";
 
 const RoomDrawCanvas=dynamic(()=>import("@/components/planner/RoomDrawCanvas"),{ssr:false,loading:()=> <BrandLoader label="Opening room measurements…"/>});
 type Panel="furnish"|"style"|"room"|"shop"|"item"|"checks"|"help"|"layouts"|"roommates";
-export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,products,total,budget,subtitle,history,onReset,extras,unplaced}:{canvas:ReactNode;get2DPng:()=>string|null;focus2D:(id:string)=>void;shopping:ReactNode;products:Product[];total:number;budget:number;subtitle:string;history:{canUndo:boolean;canRedo:boolean;undo:()=>void;redo:()=>void};onReset:()=>void;extras?:ReactNode;unplaced?:ReactNode}){
+export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,products,total,budget,subtitle,history,onReset,extras,unplaced}:{canvas:ReactNode;get2DPng:()=>string|null;focus2D:(id:string)=>void;shopping:ReactNode;products:Product[];total:number;budget:number;subtitle:string;history:{canUndo:boolean;canRedo:boolean;undo:()=>void;redo:()=>void};onReset:()=>void;extras?:ReactNode;unplaced?:ReactNode;shell?:boolean}){
   const workspace=useWorkspace();
   const room=usePlannerStore(st=>st.room)!,items=usePlannerStore(st=>st.furniture)??[];
   const style=usePlannerStore(st=>st.style)??"minimalist",hidden=usePlannerStore(st=>st.hiddenItemIds),excluded=usePlannerStore(st=>st.excluded)??[],locked=usePlannerStore(st=>st.lockedItemIds);
@@ -135,7 +135,7 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
             {(allowed3D||view==="3d")&&<RoomScene ref={scene} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview} openingControls={openingControls}
               onSelect={select} onMove={(id,x,y)=>usePlannerStore.getState().moveItem(id,x,y)} onFallback={()=>setView("2d")}/>}
           </div>
-          <div className={s.canvasLayer} style={{display:view==="2d"?"block":"none"}}><CanvasControlsContext.Provider value={{host:toolsHost,active:view==="2d",expanded,editOpenings,openings:openingControls,expand:()=>setExpanded(v=>!v),reset:()=>setResetConfirm(true),shop:()=>open("shop")}}>{canvas}</CanvasControlsContext.Provider></div>
+          <div className={s.canvasLayer} style={{display:view==="2d"?"block":"none"}}><CanvasControlsContext.Provider value={{host:toolsHost,active:view==="2d",expanded,editOpenings,openings:openingControls,expand:()=>setExpanded(v=>!v),reset:()=>setResetConfirm(true),shop:()=>open("shop"),addPiece:()=>open("furnish"),variant:"workspace"}}>{canvas}</CanvasControlsContext.Provider></div>
         </div>
         {view==="3d"&&<>
           {roomOutlineMissing(room)&&<button className={s.openingsHint} onClick={editOpenings}>Doors and windows not set. Add openings ↗︎</button>}

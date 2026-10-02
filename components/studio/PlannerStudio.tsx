@@ -148,6 +148,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
       onFocus={()=>{if(!allowed3D){openUpgrade("room-3d");return;}setCamera("room");scene.current?.focus(selected.id);}} onMoveMode={toggleMove} onShop={()=>open("shop")}/>
       :<div className={s.emptySelection}><p className={s.eyebrow}>Your next move</p><h2 className={s.panelTitle}>Make it yours.</h2><p>Select a placed piece to move it, rotate it, or dial in its dimensions.</p></div>}
   </>;
+  const swapSelected=()=>{if(selectedProduct){ui?.openSwap(selectedProduct);setPanel("shop");setMobileOpen(true);}};
   const shown=items.filter(f=>f.label.toLowerCase().includes(query.toLowerCase()));
   const canSwap=!!selectedProduct&&alternativesOf(selectedProduct).length>0;
   const arrangeContent=<div className={s.arrangeInner}>
@@ -173,7 +174,6 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
       <p className={s.hint}>Moves here show up in 2D too. Both views share one layout.</p>
     </div>
   </div>;
-  const swapSelected=()=>{if(selectedProduct){ui?.openSwap(selectedProduct);setPanel("shop");setMobileOpen(true);}};
 
   const Body=shell?"main":"div";
   return <div ref={root} className={s.app} data-view={view} data-expanded={expanded||undefined} data-studio-app="" data-testid="planner-studio" onKeyDownCapture={openingKey}
