@@ -167,7 +167,9 @@ export default function Generating({
           </p>
           <ol className={css.stageList}>
             {STAGES.map((s, i) => {
-              const state = i < stage || (i === 2 && ready) ? "done" : i === stage ? "active" : "todo";
+              // Stages finish in order; the last one only once the plan is ready.
+              const doneUpTo = ready && stage === 2 ? 3 : stage;
+              const state = i < doneUpTo ? "done" : i === stage ? "active" : "todo";
               return (
                 <li key={s.word} className={css.stage} data-state={state} data-i={i}>
                   <span className={css.word}>

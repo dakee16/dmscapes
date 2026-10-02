@@ -95,19 +95,38 @@ export default function SchoolStep({
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
-  // Keep the keyboard-active row in view inside the scrolling panel.
+  // Keep the keyboard-active row in view: scroll the panel, not the page
+  // (hovering a row never scrolls anything).
+  const keyNav = useRef(false);
+  function reveal(i: number, align: "nearest" | "start") {
+    const el = listRef.current?.querySelector<HTMLElement>(`[data-index="${i}"]`);
+    const body = listRef.current?.parentElement;
+    if (!el || !body) return;
+    if (body.scrollHeight <= body.clientHeight + 1) {
+      el.scrollIntoView({ block: "nearest" });
+      return;
+    }
+    const b = body.getBoundingClientRect();
+    const r = el.getBoundingClientRect();
+    if (align === "start") body.scrollTop += r.top - b.top - 4;
+    else if (r.top < b.top) body.scrollTop -= b.top - r.top + 8;
+    else if (r.bottom > b.bottom - 40) body.scrollTop += r.bottom - b.bottom + 48;
+  }
   useEffect(() => {
-    const el = listRef.current?.querySelector<HTMLElement>(`[data-index="${active}"]`);
-    el?.scrollIntoView({ block: "nearest" });
+    if (!keyNav.current) return;
+    keyNav.current = false;
+    reveal(active, "nearest");
   }, [active]);
 
   function onKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === "ArrowDown") {
       e.preventDefault();
+      keyNav.current = true;
       setBrowse(true);
       setActive((i) => Math.min(i + 1, results.length - 1));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
+      keyNav.current = true;
       setActive((i) => Math.max(i - 1, 0));
     } else if (e.key === "Enter") {
       e.preventDefault();
@@ -125,9 +144,7 @@ export default function SchoolStep({
     const i = SORTED.findIndex((s) => letterOf(s) === letter);
     if (i < 0) return;
     setActive(i);
-    requestAnimationFrame(() =>
-      listRef.current?.querySelector<HTMLElement>(`[data-index="${i}"]`)?.scrollIntoView({ block: "start" })
-    );
+    requestAnimationFrame(() => reveal(i, "start"));
   }
 
   const letters = useMemo(() => [...new Set(SORTED.map(letterOf))], []);
@@ -145,8 +162,8 @@ export default function SchoolStep({
           <span className={css.titleSerif}>campus.</span>
         </h1>
         <p className={css.lede}>
-          {SCHOOLS.length.toLocaleString("en-US")} schools and {HALLS.toLocaleString("en-US")} residence halls. Pick
-          yours and we load your building&apos;s real dimensions.
+          {`${SCHOOLS.length.toLocaleString("en-US")} schools and ${HALLS.toLocaleString("en-US")} residence halls. `}
+          Pick yours and we load your building&apos;s real dimensions.
         </p>
 
         <form role="search" className={css.searchForm} onSubmit={(e) => e.preventDefault()}>

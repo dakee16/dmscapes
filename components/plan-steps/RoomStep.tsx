@@ -224,8 +224,7 @@ export default function RoomStep({
         ) : (
           <div className={css.pickHall}>
             <p>
-              Choose one of {short}&apos;s {plural(counts.buildings, "building")} and we&apos;ll draw its rooms to
-              scale.
+              {`Choose one of ${short}'s ${plural(counts.buildings, "building")} and we'll draw its rooms to scale.`}
             </p>
             <Link href="/plan/draw" className={css.drawLink}>
               Draw my own room instead
