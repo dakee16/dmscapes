@@ -31,6 +31,7 @@ Every page keeps its URL, metadata, canonical, OG image and JSON-LD. Legal text 
 - **Cookie banner** is in the server HTML and shown by a tiny inline script, so it doesn't become the phone LCP element.
 - **Comments** open as a side panel on desktop and a bottom sheet on phones (non-modal).
 - **Terms**: "Shared room workspaces" is now numbered (10), so the last two sections are 11 and 12. Text unchanged.
+- **Site header** is solid once scrolled (no blur): the hero's lavender on the homepage (`<Nav bg>`), paper elsewhere, night on dark pages, with a `--ds-line` hairline. Under 420px the Pro wordmark tag is compacted so the Pro header fits at 390. Still open: below about 360px the header overflows its gutter for every state (pre-existing), and for Pro already at 360–375.
 
 ## Test end to end with real keys
 
