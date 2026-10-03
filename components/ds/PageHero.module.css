@@ -1,6 +1,7 @@
 .hero {
   position: relative;
-  overflow: clip;
+  /* x only, so a hero search's dropdown can hang below the hero */
+  overflow-x: clip;
   padding-top: var(--ds-nav-h);
 }
 .hero[data-tone="dark"] { color: #f4f2ec; }
@@ -41,6 +42,7 @@
   top: var(--ds-nav-h);
   bottom: 0;
   width: 48.6%;
+  transform-origin: 100% 100%; /* the settle grows up and left, inside the hero */
 }
 .visual { min-width: 0; }
 
