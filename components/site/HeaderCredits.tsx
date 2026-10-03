@@ -4,12 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { headerCreditState, planLabel, RECHARGE_PRICE_USD, RECHARGE_CREDITS } from "@/lib/plan";
+import { headerCreditState, planLabel, planOf, RECHARGE_PRICE_USD, RECHARGE_CREDITS } from "@/lib/plan";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
+import css from "./HeaderMenus.module.css";
 
-// Compact design-credits chip that lives INSIDE the header island, just left of
-// the profile avatar (see Nav). Desktop only (md+); on mobile the avatar badge +
-// profile dropdown carry this instead.
+// Compact design-credits pill that lives in the header, just left of the profile
+// avatar (see Nav): a strip of tape carrying the live count. 768px and up; on
+// phones the avatar badge + profile dropdown carry this instead.
 //
 // Every tier shows its live balance and a top-up action. Plus also offers a recharge.
 export default function HeaderCredits() {
@@ -45,40 +46,31 @@ export default function HeaderCredits() {
   if (!user || !profile) return null;
 
   return (
-    <div ref={rootRef} className="relative hidden shrink-0 md:block">
+    <div ref={rootRef} className={css.root} data-credits>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="dialog"
         aria-expanded={open}
         title="Buy room-design credits"
-        className={
-          c.empty
-            ? "flex cursor-pointer items-center rounded-full bg-cobalt px-3 py-2 font-mono text-[11px] font-semibold uppercase leading-none tracking-wide text-white transition-colors hover:bg-cobalt-deep"
-            : "flex cursor-pointer items-center gap-1 rounded-full border border-cobalt/25 bg-cobalt/[0.06] px-3 py-2 font-mono text-[11px] font-semibold uppercase leading-none tracking-wide text-cobalt transition-colors hover:bg-cobalt/[0.12]"
-        }
+        className={css.credits}
+        data-empty={c.empty}
       >
         {c.empty ? (
           "Buy credits"
         ) : (
           <>
-            Designs <span aria-hidden="true">·</span>
-            <span className="text-[13px] leading-none">{c.designsLeft}</span>
+            <span className={css.count}>{c.designsLeft}</span>
+            {c.designsLeft === 1 ? "design" : "designs"}
           </>
         )}
       </button>
 
       {open && (
-        <div
-          role="dialog"
-          aria-label="Buy design credits"
-          className="absolute right-0 top-full z-50 mt-2.5 w-[22rem] max-w-[calc(100vw-1.5rem)] origin-top-right rounded-2xl border border-ink/10 bg-white p-5 shadow-[0_24px_60px_-24px_rgba(23,23,43,0.5)]"
-        >
-          <div className="mb-3.5 flex items-center justify-between gap-2 border-b border-ink/8 pb-3">
-            <span className="font-display text-base font-bold tracking-tight text-ink">
-              Buy plan credits
-            </span>
-            <span className="shrink-0 rounded-full bg-ink/6 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink-soft">
+        <div role="dialog" aria-label="Buy design credits" className={`${css.pop} ${css.buy}`}>
+          <div className={css.buyHead}>
+            <p className={css.buyTitle}>Buy plan credits</p>
+            <span className={css.tier} data-tier={planOf(profile.plan)}>
               {planLabel(profile)} · {c.designsLeft} left
             </span>
           </div>
@@ -90,7 +82,7 @@ export default function HeaderCredits() {
                 setOpen(false);
                 openUpgrade("plan-credits");
               }}
-              className="mt-3.5 block w-full cursor-pointer border-t border-ink/8 pt-3.5 text-center text-[13px] font-medium text-ink-soft transition-colors hover:text-ink"
+              className={css.recharge}
             >
               Prefer the {RECHARGE_CREDITS}-pack? Recharge for ${RECHARGE_PRICE_USD.toFixed(2)}
             </button>
