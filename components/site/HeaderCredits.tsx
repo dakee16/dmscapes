@@ -61,7 +61,7 @@ export default function HeaderCredits() {
         ) : (
           <>
             <span className={css.count}>{c.designsLeft}</span>
-            {c.designsLeft === 1 ? "design" : "designs"}
+            <span className={css.creditsLabel}>{c.designsLeft === 1 ? "design" : "designs"}</span>
           </>
         )}
       </button>

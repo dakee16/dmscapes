@@ -65,38 +65,40 @@
   box-shadow: 0 0 0 2px #fff;
 }
 
-/* The credits pill: a yellow tape chip with the live count. */
+/* Credits (site nav only): the live count on a scrap of tape, then
+   "designs". No pill until hover, like the nav links. */
 .credits {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   min-height: 44px;
   box-sizing: border-box;
-  padding: 0 14px 0 6px;
+  padding: 0 10px 0 8px;
   border: 0;
   border-radius: 999px;
-  background: #fff;
-  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.16);
-  color: var(--ds-ink);
+  background: none;
+  color: inherit;
   font: 700 14px/1 var(--ds-sans);
   white-space: nowrap;
   cursor: pointer;
-  transition: box-shadow 0.2s, background-color 0.2s;
+  transition: background-color 0.18s;
 }
-.credits:hover { box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.4); }
-.credits[aria-expanded="true"] { box-shadow: inset 0 0 0 2px var(--ds-ink); }
+.credits:hover,
+.credits[aria-expanded="true"] { background: var(--nav-hover, rgba(22, 22, 29, 0.06)); }
 .count {
   display: inline-grid;
   place-items: center;
   min-width: 32px;
-  height: 32px;
+  height: 26px;
   box-sizing: border-box;
   padding: 0 8px;
-  border-radius: 999px;
+  border-radius: 3px;
   background-color: var(--ds-tape);
   background-image: repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.55) 0 1px, transparent 1px 6px);
   background-size: 100% 5px;
   background-repeat: no-repeat;
+  box-shadow: 0 2px 0 var(--ds-tape-shadow);
+  rotate: -3deg;
   color: var(--ds-ink);
   font: 850 15px/1 var(--ds-sans);
   font-variant-numeric: tabular-nums;
@@ -304,6 +306,32 @@
   /* Phones: the menu hangs from the header bar's right edge, not the avatar */
   .root:not([data-credits]) { position: static; }
   .menu { top: calc(100% + 4px); right: 0; width: min(320px, 100%); }
+}
+/* The site nav's account trigger: avatar, @username and chevron with no
+   pill until hover (the planner header keeps the white pill above). */
+:global(.ds-site-nav) .trigger { padding: 0 10px 0 6px; background: none; box-shadow: none; color: inherit; }
+:global(.ds-site-nav) .trigger:hover,
+:global(.ds-site-nav) .trigger[aria-expanded="true"] { background: var(--nav-hover); box-shadow: none; }
+:global(.ds-site-nav) .chev { color: inherit; opacity: 0.6; }
+:global(.ds-site-nav[data-tone="dark"]) .avatar { box-shadow: 0 0 0 1.5px rgba(244, 243, 238, 0.3); }
+/* A long @username truncates rather than pushing the row past the plate. */
+:global(.ds-site-nav) .root:not([data-credits]) { flex: 0 1 auto; min-width: 0; }
+:global(.ds-site-nav) .trigger { max-width: 100%; }
+/* Below 1360 the row is too tight for the full account controls beside the
+   links: the avatar alone, and the credits count with its word kept for
+   screen readers only. */
+@media (max-width: 1360px) {
+  :global(.ds-site-nav) :is(.name, .chev) { display: none; }
+  :global(.ds-site-nav) .trigger { width: 44px; padding: 0; justify-content: center; }
+  :global(.ds-site-nav) .credits { padding: 0 6px; }
+  :global(.ds-site-nav) .creditsLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
 }
 @media (min-width: 768px) { .alert { display: none; } }
 @media (max-width: 767px) { .root[data-credits] { display: none; } }
