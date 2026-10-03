@@ -6,6 +6,8 @@ import Headline from "@/components/ds/Headline";
 import CtaBand from "@/components/ds/CtaBand";
 import { ArrowRight, Check } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
+import JsonLd from "@/components/site/JsonLd";
+import { softwareApplicationJsonLd } from "@/lib/seo";
 import UpgradeButton from "@/components/site/UpgradeButton";
 import { SCHOOLS } from "@/lib/schools";
 import { STYLES } from "@/lib/styles";
@@ -220,6 +222,7 @@ function PriceRuler() {
 export default function PricingPage() {
   return (
     <PageShell navOverlay>
+      <JsonLd data={softwareApplicationJsonLd()} />
       <PageHero
         bg="var(--ds-sky)"
         size="md"

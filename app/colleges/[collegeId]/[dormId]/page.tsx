@@ -144,6 +144,15 @@ export default async function DormPage(props: {
               url: absoluteUrl(`/colleges/${school.id}`),
               ...(place ? { address: place } : {}),
             },
+            // Room sizes as data for search and answer engines; published
+            // dimensions only, never our estimates.
+            containsPlace: dorm.rooms.filter(isPublished).map((r) => ({
+              "@type": "Room",
+              name: roomName(r),
+              description: `${ft(Math.max(r.length_ft!, r.width_ft!))} × ${ft(Math.min(r.length_ft!, r.width_ft!))} ft, ${bedName(r.bed_size)} beds`,
+              floorSize: { "@type": "QuantitativeValue", value: Math.round(r.length_ft! * r.width_ft!), unitCode: "FTK" },
+              ...(r.occupants ? { occupancy: { "@type": "QuantitativeValue", value: r.occupants } } : {}),
+            })),
           },
         ]}
       />

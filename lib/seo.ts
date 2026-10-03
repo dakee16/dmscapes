@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PRO_INITIAL_CREDITS, PRO_PRICE_USD } from "@/lib/plan";
 
 /**
  * Shared SEO infrastructure: one place for the canonical origin, page metadata
@@ -139,12 +140,12 @@ export function softwareApplicationJsonLd() {
     description:
       "Plan a college dorm room to scale: use school dimensions or draw your own room, choose a style and budget, and get a shoppable layout. Pro adds the 3D Room Builder for floors, walls, doors and windows, plus live 3D furniture planning.",
     featureList: ["2D room planning", "School room dimensions", "Budget-aware shopping", "Pro: 3D Room Builder", "Pro: live 3D Room Studio"],
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "Free to plan a room. Optional one-time Plus and Pro upgrades.",
-    },
+    // Prices and credits from lib/plan, so the schema never drifts from checkout.
+    offers: [
+      { name: "Free", price: "0", description: "Free to plan a room. Saving is always free." },
+      { name: "Plus", price: PLUS_PRICE_USD.toFixed(2), description: `One-time purchase. ${PLUS_INITIAL_CREDITS} plan credits.` },
+      { name: "Pro", price: PRO_PRICE_USD.toFixed(2), description: `One-time purchase. ${PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D tools.` },
+    ].map((offer) => ({ "@type": "Offer", priceCurrency: "USD", ...offer })),
     publisher: { "@id": `${SITE_URL}/#organization` },
     isAccessibleForFree: true,
   };
