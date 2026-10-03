@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 import { rateLimit } from "@/lib/rate-limit";
+import { getUserId } from "@/lib/supabase-auth";
+import { getServiceClient } from "@/lib/supabase-server";
+import { isPro } from "@/lib/plan";
 import {
   validateVibe,
   generateVibeQueries,
@@ -24,6 +27,8 @@ export interface VibeGenerateResponse {
   mock: boolean;
   vibe: string;
 }
+
+const BED_SIZES: BedSize[] = ["twin", "twin_xl", "full", "full_xl", "queen"];
 
 // Curated quality bar, mirrored from the hand-verified catalog.
 const MIN_RATING = 4.0;
@@ -172,6 +177,18 @@ export async function POST(request: Request) {
     );
   }
 
+  // Custom vibes are a Pro feature and every call spends Creators API quota,
+  // so the plan is checked here, not only in the browser.
+  const userId = await getUserId(request);
+  if (!userId) {
+    return NextResponse.json({ error: "Sign in to create your own vibe." }, { status: 401 });
+  }
+  const db = getServiceClient();
+  const { data: profile } = db ? await db.from("profiles").select("plan").eq("id", userId).maybeSingle() : { data: null };
+  if (!isPro(profile)) {
+    return NextResponse.json({ error: "Create your own vibe is included with Pro." }, { status: 403 });
+  }
+
   let body: { vibe?: unknown; budget?: unknown; bedSize?: unknown; seed?: unknown };
   try {
     body = await request.json();
@@ -189,7 +206,7 @@ export async function POST(request: Request) {
     typeof body.budget === "number" && body.budget >= 200 && body.budget <= 1500
       ? body.budget
       : 500;
-  const bedSize = typeof body.bedSize === "string" ? (body.bedSize as BedSize) : undefined;
+  const bedSize = BED_SIZES.includes(body.bedSize as BedSize) ? (body.bedSize as BedSize) : undefined;
   const seed = typeof body.seed === "number" && body.seed >= 0 ? Math.floor(body.seed) : 0;
   const tier = tierForBudget(budget);
 
