@@ -89,16 +89,59 @@ function PlanSketch() {
   );
 }
 
+/** An opaque computed background-color, or null for transparent/translucent. */
+function opaque(color: string): string | null {
+  const rgba = color.match(/^rgba?\(([^)]+)\)$/);
+  if (!rgba) return color && color !== "transparent" ? color : null;
+  const alpha = rgba[1].split(/[\s,/]+/).filter(Boolean)[3];
+  return alpha === undefined || parseFloat(alpha) >= 1 ? color : null;
+}
+
+/** Paper text reads better than ink on it (WCAG luminance below ~0.18). */
+function isDark(color: string): boolean {
+  const rgb = color.match(/^rgba?\(\s*([\d.]+)[\s,]+([\d.]+)[\s,]+([\d.]+)/);
+  if (!rgb) return false;
+  const [r, g, b] = rgb.slice(1, 4).map((v) => {
+    const c = Number(v) / 255;
+    return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.18;
+}
+
+/** Fixed or sticky chrome (a post's reading bar, the pinned homepage hero
+ *  copy) isn't the section behind the header. */
+function pinned(el: Element): boolean {
+  for (let n: Element | null = el; n && n !== document.body; n = n.parentElement) {
+    const position = getComputedStyle(n).position;
+    if (position === "fixed" || position === "sticky") return true;
+  }
+  return false;
+}
+
+/** The colour of the page section directly behind the header: the topmost
+ *  opaque element 8px in from the left, just below it. */
+function groundBehind(header: HTMLElement): string | null {
+  const y = header.getBoundingClientRect().bottom + 1;
+  if (y >= window.innerHeight) return null;
+  for (const el of document.elementsFromPoint(8, y)) {
+    if (header.contains(el)) continue;
+    const color = opaque(getComputedStyle(el).backgroundColor);
+    if (color && !pinned(el)) return color;
+  }
+  return null;
+}
+
+/** Ruler numbers, one per 96px tick; the card never runs past 14. */
+const RULER_NUMBERS = Array.from({ length: 14 }, (_, i) => i + 1);
+
 export default function Nav({
   overlay = false,
   tone = "light",
-  bg,
 }: {
   /** Float over the page's first section (homepage hero) until scrolled. */
   overlay?: boolean;
+  /** "dark" forces the dark tone; otherwise a dark ground switches to it. */
   tone?: "light" | "dark";
-  /** Solid background once scrolled; defaults to paper (night when dark). */
-  bg?: string;
 }) {
   const pathname = usePathname();
   const root = useRef<HTMLElement>(null);
@@ -106,16 +149,39 @@ export default function Nav({
   const [mobileOpen, setMobileOpen] = useState(false);
   const [feedback, setFeedback] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [groundDark, setGroundDark] = useState(tone === "dark");
   const close = () => { setMore(false); setMobileOpen(false); };
   const current = activeKey(pathname);
+  const dark = tone === "dark" || groundDark;
 
   useEffect(close, [pathname]);
+  // One passive, rAF-throttled listener: scrolled state, the ruler's progress
+  // strip and the card's ground colour (re-read on resize and route change).
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const header = root.current;
+    if (!header) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      header.style.setProperty("--nav-progress", String(max > 0 ? Math.min(1, window.scrollY / max) : 0));
+      setScrolled(window.scrollY > 8);
+      const ground = groundBehind(header);
+      const darkGround = ground !== null && isDark(ground);
+      header.style.setProperty("--nav-ground",
+        tone === "dark" && !darkGround ? "var(--ds-night)" : ground ?? "var(--ds-paper)");
+      setGroundDark(darkGround);
+    };
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    schedule();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
+  }, [pathname, tone]);
   useEffect(() => {
     if (!more && !mobileOpen) return;
     const outside = (event: PointerEvent) => {
@@ -202,14 +268,21 @@ export default function Nav({
   return <>
     <header
       ref={root}
-      className={`ds ${s.header}`}
+      className={`ds ds-site-nav ${s.header}`}
       data-overlay={overlay}
-      data-tone={tone}
+      data-tone={dark ? "dark" : "light"}
       data-scrolled={scrolled || mobileOpen}
-      style={bg ? ({ "--nav-bg": bg } as CSSProperties) : undefined}
+      data-open={mobileOpen}
     >
+      <div className={s.plate}>
+      <span className={s.ruler} aria-hidden="true">
+        <span className={`${s.progress} ds-nav-progress`} />
+        <span className={s.ticks}>
+          {RULER_NUMBERS.map((n) => <span key={n} style={{ "--n": n } as CSSProperties}>{n}</span>)}
+        </span>
+      </span>
       <nav className={s.bar} aria-label="Main navigation">
-        <Wordmark tone={tone} />
+        <Wordmark tone={dark ? "dark" : "light"} />
         <div className={s.links}>
           {PRIMARY.map((link) =>
             link.href.startsWith("/#")
@@ -235,7 +308,7 @@ export default function Nav({
         <div className={s.actions}>
           <HeaderCredits />
           <div className={s.profile}><ProfileMenu /></div>
-          <Link href="/plan" className={`ds-btn ds-btn--sm ${tone === "dark" ? "ds-btn--yellow" : "ds-btn--ink"} ${s.cta}`}>
+          <Link href="/plan" className={`ds-btn ds-btn--sm ${dark ? "ds-btn--yellow" : "ds-btn--ink"} ${s.cta}`}>
             <span className={s.ctaLong}>Plan my room free</span><span className={s.ctaShort}>Plan free</span><ArrowRight size={16} />
           </Link>
           <button type="button" className={s.menuBtn} aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -244,6 +317,7 @@ export default function Nav({
           </button>
         </div>
       </nav>
+      </div>
       <div id="site-navigation" className={s.sheet} data-open={mobileOpen} hidden={!mobileOpen}>
         <div className={s.sheetInner}>
           <div className={s.sheetPrimary}>

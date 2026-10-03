@@ -50,7 +50,7 @@
 
 @media (max-width: 767px) {
   :root {
-    --ds-nav-h: 64px;
+    --ds-nav-h: 72px;
     --ds-riso: var(--ds-riso-sm);
   }
 }
