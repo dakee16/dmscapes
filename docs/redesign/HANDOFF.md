@@ -1,62 +1,54 @@
 # Redesign handoff (for Claude Code)
 
-State of the `redesign` branch and what's left. Read `KIT.md` before building anything.
+The whole front end is redesigned on the `redesign` branch. What's left needs real keys: end-to-end testing against Supabase, Stripe, LiveKit, Resend and PostHog, and a few follow-ups that need data or schema changes. Read `KIT.md` before changing any UI.
 
-## Done on this branch
+## What's on the branch
 
-| Area | Files |
+| Area | Main files |
 |---|---|
-| Foundation: fonts, tokens, motion system, nav, footer | `app/ds.css`, `app/layout.tsx`, `components/ds/*`, `components/Nav.tsx`, `components/Footer.tsx` |
+| Foundation: fonts, tokens, motion, nav (More menu), footer, dialog base, loader, cookie banner | `app/ds.css`, `app/ds-dialog.css`, `app/layout.tsx`, `components/ds/*`, `components/Nav.tsx`, `components/Footer.tsx`, `components/site/{Modal,BrandLoader,CookieConsent,FeedbackLink,HeaderCredits}.tsx` |
 | Homepage | `app/page.tsx`, `components/home/*`, `lib/home-data.ts` |
-| Colleges, college, hall | `app/colleges/**`, `components/colleges/*`, `components/college/*`, `components/hall/*`, `lib/room-preview.ts`, `lib/school-names.ts` |
-| Pricing | `app/pricing/page.tsx`, `components/pricing/*`, `components/site/UpgradeButton.tsx` |
-| About, methodology, contact, add school | `app/{about,methodology,contact,add-school}`, `components/{about,methodology,contact,add-school}` |
-| FAQ, blog, post | `app/faq`, `app/blog/**`, `components/{faq,blog}`, `content/blog/how-to-measure-your-dorm-room.tsx` (checklist wrapper only) |
-| Terms, privacy, cookies, 404, report, thank-you | `app/{terms,privacy,cookies,report,thank-you}`, `app/not-found.tsx`, `components/{legal,not-found,report}` |
+| Colleges, college, hall | `app/colleges/**`, `components/{colleges,college,hall}/*`, `lib/room-preview.ts`, `lib/school-names.ts` |
+| Pricing, about, methodology, contact, add school, FAQ, blog, legal, 404, report, thank-you | `app/*`, matching `components/<page>/` folders |
+| Login, profile menu, feedback | `app/login`, `components/auth/*`, `components/products/FeedbackForm.tsx` |
+| Planner steps (School → Room → Vibe → **Budget** → planning screen) | `app/plan/{page,style,budget,create-vibe}`, `app/plan/layout.tsx`, `components/plan-steps/*`, `components/planner/*` |
+| Studio: result screen, 2D Konva canvas, list, swap, 3D studio panels | `components/planner/PlanResult.tsx`, `components/studio/*`, `components/canvas/*`, `components/products/*`, `components/studio-ui/*` |
+| Draw in 2D, 3D Room Builder | `app/plan/draw/**`, `components/planner/RoomDrawCanvas.tsx`, `components/draw/*`, `components/builder/*`, colours in `public/experience/room-builder.js` |
+| My Room (Pro), My designs, join, share page | `app/my-room` (new), `app/rooms/**`, `app/room/[id]`, `components/{my-room,workspace,room}/*`, `components/studio/{WorkspacePanels,SharedRoomStudio,RoomReview}.tsx` |
+| Account, billing, settings, compare, deleted, reset password, upgrade and welcome dialogs | `app/account/**`, `app/reset-password`, `components/{account,account-ui}/*`, `components/site/{UpgradeModal,PlusWelcome,SignupWelcome,PurchaseThankYou,BuyCreditsForm}.tsx`, `components/auth/UsernamePrompt.tsx` |
 
-Every converted page keeps its URL, metadata, canonical, OG image and JSON-LD. Legal text is unchanged word for word (checked block by block against the old pages).
+Every page keeps its URL, metadata, canonical, OG image and JSON-LD. Legal text is unchanged word for word. `app/experience.css` is down to the skip link, progress line and motion toggle; 38 unused components, the five old fonts and the old homepage assets are gone.
 
-## Yours
+## Behaviour changes to know about (all approved or flagged to the owner)
 
-In this order, stopping for the owner's review after each:
+- **New `/plan/budget` step** between vibe and generation; guards send you back if room or vibe is missing. New PostHog event `budget_step_viewed {style}`; every existing event kept.
+- **Planning screen**: no percentage; a ~1.4 s preset (walls, built-ins, picks) with "Open my plan" to skip, then the result as soon as generation finishes. The old forced 2.4 s wait on create-vibe is gone. The vibe step passes typed Pro text to `/plan/create-vibe?vibe=`.
+- **Upgrade sheet starts checkout directly** (Plus and Pro cards, same `buy()` call; `upgrade_cta_clicked` also fires with `type`). "Compare every plan" still links to /pricing. Easy to revert if the owner prefers.
+- **Billing**: Plus members get a "Recharge · 3 credits for $2.99" button (existing `startCheckout("recharge")`).
+- **Compare** reads `?a=<id>&b=<id>` (the My designs pick-two tray links there); falls back to the two newest designs.
+- **/my-room**: Pro with a shared room → redirected into it; Pro without → three-step Setup (pick a design, draw the line, invite) using the existing workspace create/save/share/invite API; Free/Plus → Pro gate (`openUpgrade("workspace")`). /rooms is now "My designs".
+- **Invites** stay email-only; the UI shows "Resend invite" (the token never reaches the client).
+- **Cookie banner** is in the server HTML and shown by a tiny inline script, so it doesn't become the phone LCP element.
+- **Comments** open as a side panel on desktop and a bottom sheet on phones (non-modal).
+- **Terms**: "Shared room workspaces" is now numbered (10), so the last two sections are 11 and 12. Text unchanged.
 
-1. **Planner**: `/plan`, `/plan/style`, the new `/plan/budget` step, `/plan/result`, `/plan/draw`, `/plan/draw/3d`, `/plan/create-vibe`. Restyle the Konva canvas; don't change planning or generation. Add `/plan/budget` to the PostHog funnel events.
-2. **My Room**: `/my-room` (Pro home, gate and setup) and `/rooms` → "My designs". Keep `/rooms/[id]` and `/rooms/join` URLs exactly. Designs: `design-handoff/designs/my-room/`.
-3. **Account**: `/account`, `/account/billing`, `/account/settings`, `/account/compare`, `/account/deleted`, `/login`, `/reset-password`, and the share page `/room/[id]`.
-4. **End-to-end with real keys**: Stripe checkout from `/pricing` (Plus, Pro) and `/account/billing` (recharge, Flex), auth (Google and email), contact, add-school and report submissions, saving, generation, LiveKit voice, Resend emails, PostHog events, Amazon tag on every product link.
+## Test end to end with real keys
 
-## Decisions already made (from the approved plan)
+Supabase auth (Google, email, sign-up consent, reset, `next=`), Stripe (Plus and Pro from /pricing and from the upgrade sheet, recharge, Flex), saving and generation through the new budget step, workspace create/share/invite/join/comments/versions/restore, LiveKit room call, Resend emails, PostHog funnel incl. `budget_step_viewed`, Amazon tag on every product link. None of these could run in the redesign sandbox (no env), so screens were checked with mocked APIs and test-time patches only.
 
-- Invites: email only, no open room link or short URL. Show "Copy invite link" only if the email binding stays; otherwise "Resend invite".
-- Versions: keep the 5-minute checkpoints and the last 20; record who made each change and a summary; checkpoint before every restore; copy reads "Saved as you go".
-- Item status: Not yet / Ordered / Packed, stored with the item. No relationship label.
-- Planner generating screen: no fake percentage; a preset animation under about 1.5 s with a skip.
-- The voice ring shows only when that person is in the room.
-- Counts come from data; strike-through prices come from `lib/plan.ts`.
-- Restyle the credits/profile menu to match the nav.
-- Supabase: migrations as files in `docs/migrations/`, shown to the owner before anything is applied. Never write to production.
+## Follow-ups that need data or schema changes
 
-## Follow-ups left for you
+1. **Version author and summary** (approved decision): `workspace_versions` has neither. Proposed migration `docs/migrations/20261003_workspace_version_authors.sql` (NOT applied; show the owner first). It also needs the one-line RPC change and GET route change described in its comments.
+2. **Item status Not yet / Ordered / Packed** (approved decision): `sanitizePlanning` in `lib/studio-save.ts` keeps only `supply` and `assignedTo` from `productSupply`, so a status would be dropped. Add an optional status there, then the Who brings what board can show it.
+3. **Shared pieces hatched yellow on the plan, the split line, and an owner filter** on the canvas: needs `components/canvas/RoomCanvas.tsx` changes (shared pieces currently get a grey outline).
+4. **Invite preview**: /rooms/join can't show the inviter, room or "your half" before joining without a small preview API.
+5. **Door and window positions, closet positions** for school rooms aren't in the data, so plans place them from the template.
+6. **Recharge confirmation**: Stripe's recharge success URL `/account?recharged=1` redirects to /rooms and drops the parameter, so buyers see no confirmation (pre-existing).
+7. **SignupWelcome** can appear over `/rooms/join` and `/rooms/[id]` for new free users; consider suppressing it on invite and room routes.
+8. **Purchase price** isn't stored on the profile, so billing shows the purchase date only.
 
-- **Homepage My Room CTA**: `components/home/TogetherSection.tsx` links "Open My Room" to `/rooms`. Switch it to `/my-room` once that page exists.
-- **Remove dead code after the planner and account pages move over**: `components/experience/*` (old homepage pieces), `components/site/{HeroSearch,RoomPlans,HomeFaq,CampusDirectory,SiteHeader,Breadcrumbs,Reveal,HeroParallax,…}` once nothing imports them, the old fonts in `app/layout.tsx` (Syne, Instrument Sans, Plex Mono, Bricolage, Instrument Serif), and `app/experience.css` rules for converted pages. `strip_legacy`-style removal: delete rules scoped to `data-page="<page>"` once the page is converted.
-- **`components/products/FeedbackForm.tsx`** (used on thank-you) still has the old styling; restyle it with the planner.
-- **Thin blue scroll-progress line** (`.dm-progress` in `MotionProvider`) still shows on every page; posts hide it in favor of the tape reading bar. Decide whether to keep it site-wide.
-- **Blog upkeep**: a new post needs its `faqTopic` mapped in `components/blog/topics.ts` (for the filters) and an entry there for its serif title tail; covers fall back to a generic plan cover.
-- **Cookie banner** (`components/site/CookieConsent.tsx`) still has the old look, and because it mounts after hydration it can become the mobile LCP element on a first visit (pricing on a phone measured 4.2 s with it showing, 1.4 s without). Restyle it, and consider rendering its text on the server.
+## Motion, media and performance
 
-## Motion and media notes
-
-- Scroll scenes use `useScrub` (smoothed progress) and `useFrameSequence` (canvas image sequences). The homepage hero scrubs 25 WebP frames (`public/redesign/seq/hero-NN.webp`, about 1 MB) on desktop only, loaded after `load`, skipped with reduced motion, the pause toggle, or Save-Data.
-- `data-*="load"` reveals are pure CSS keyframes (no hydration flash). Scroll reveals go through `RevealObserver`.
-- The 3D renders come from `design-handoff/3d-source` (build tool only). `site-hall-clay-room.jpg` is a label-free clay render, because a render with baked-in dimensions can't be honest on 1,361 different hall pages.
-
-## Performance (production build, 4× CPU, 1.6 Mbps, 150 ms RTT)
-
-| Page | Phone LCP | Desktop LCP | CLS |
-|---|---|---|---|
-| Home (redesign) | 2.2 s | 1.7–2.1 s | < 0.01 |
-| Home (main, before) | 3.4 s | 3.4 s | 0 |
-| College | 1.7 s | 1.7 s | < 0.01 |
-
-The biggest remaining cost is JavaScript every page loads: PostHog (in a ~400 KB chunk), Supabase (~230 KB), and the full school index (~600 KB raw) pulled in by the client-side college search. Lazy-loading PostHog or moving school search to a small API would help most, but both change data flows, so they need the owner's OK.
+- Scroll scenes: `useScrub` and `useFrameSequence` (homepage hero scrubs 25 WebP frames on desktop only, after `load`, skipped with reduced motion, the pause toggle or Save-Data). First-paint reveals are CSS keyframes; scroll reveals go through `RevealObserver`.
+- Renders were made with `design-handoff/3d-source` (build tool only, never shipped).
+- Homepage LCP on a throttled phone: 2.2 s (main: 3.4 s); CLS < 0.01. The biggest remaining cost is shared JavaScript (PostHog ~400 KB chunk, Supabase ~230 KB, the school index pulled in by client-side search); lazy-loading PostHog or a small search API would help but changes data flows, so ask the owner first.
