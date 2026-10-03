@@ -1192,31 +1192,12 @@ body {
 :where(.dm-plan-shell, .dm-result, [role="dialog"]) button:not([role="switch"]) {
   border-radius: 3px;
 }
-.dm-feedback-modal {
-  max-width: 580px;
-  max-height: calc(100dvh - 32px);
-  overflow-y: auto;
-  border-radius: 4px;
-  padding: clamp(24px, 4vw, 36px);
-}
-.dm-dialog-title {
-  font-size: clamp(28px, 3.2vw, 40px);
-}
-.dm-feedback-form > p {
-  font-size: 16px;
-  line-height: 1.65;
-}
-.dm-feedback-form textarea {
-  min-height: 128px;
-  font-size: 16px;
-}
-.dm-feedback-form > div:last-child > p {
-  font-size: 14px;
-}
-.dm-feedback-form button[type="submit"] {
-  font-size: 15px;
-  min-height: 46px;
-}
+
+
+
+
+
+
 .dm-roommate-backdrop {
   align-items: center;
   padding: 20px;
@@ -1417,26 +1398,10 @@ body {
 }
 
 
-.dm-dialog-layer.dm-canvas-fullscreen {
-  padding: 0;
-  align-items: stretch;
-  justify-content: flex-start;
-  overflow: hidden;
-}
-.dm-dialog-layer.dm-canvas-fullscreen > div {
-  max-height: none;
-  border-radius: 0;
-  box-shadow: none;
-}
-.dm-dialog-layer.dm-canvas-fullscreen > div:first-child {
-  padding: 12px 16px;
-  overflow: visible;
-  flex: none;
-}
-.dm-dialog-layer.dm-canvas-fullscreen > div:last-child {
-  padding: 16px;
-  min-height: 0;
-}
+
+
+
+
 
 
 
@@ -2504,44 +2469,20 @@ body {
 :is(.dm-hero-stage, .dm-studio-preview, .dm-room-scene):has(.has-webgl) .dm-room-interaction-hint { display: inline; }
 
 /* Portaled dialogs clear transformed page ancestors and stay usable on short screens. */
-.dm-dialog-layer {
-  --dialog-gap: clamp(12px, 3vw, 28px);
-  position: fixed;
-  inset: 0;
-  z-index: 80;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--dialog-gap);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-.dm-dialog-layer > div {
-  min-width: 0;
-  max-height: calc(100dvh - 2 * var(--dialog-gap));
-  overflow-y: auto;
-  border-radius: 4px;
-  box-shadow: 0 24px 80px -28px #17172b55;
-}
-.dm-dialog-layer h2 { font-size: clamp(25px, 3vw, 36px); line-height: 1.18; overflow-wrap: anywhere; }
-.dm-dialog-layer p { overflow-wrap: anywhere; }
-.dm-dialog-layer :is(input, textarea, select) { min-width: 0; font-size: 16px; }
-.dm-dialog-layer :is(button, a):not([role="switch"]),
+
+
+
+
+
+
 .dm-nav :is(button, a)[class*="rounded"],
 .dm-page :is(button, a)[class*="rounded"] { border-radius: 3px; }
-.dm-dialog-layer button[aria-label="Close"] {
-  width: 40px; height: 40px; border: 1px solid var(--dm-rule); flex-shrink: 0;
-}
-.dm-dialog-layer :is(div, ul)[class*="rounded"]:not(.rounded-full) { border-radius: 4px; }
-.dm-dialog-layer .dm-eyebrow,
-.dm-dialog-layer p.font-mono { font-size: 12px; }
-.dm-cookie-banner > div {
-  border-radius: 4px;
-  border-top: 3px solid var(--color-cobalt);
-  box-shadow: 0 12px 40px -18px #17172b55;
-}
-.dm-cookie-banner p { font-size: 14px; line-height: 1.65; }
-.dm-cookie-banner button { border-radius: 3px; min-height: 44px; }
+
+
+
+
+
+
 :where(a, button, input, textarea, select, [tabindex]):focus-visible {
   outline: 2px solid var(--color-cobalt); outline-offset: 4px;
 }
@@ -2587,15 +2528,13 @@ body {
 
 
 @media (max-width: 600px) {
-  .dm-dialog-layer > div { padding: 22px; }
-  .dm-dialog-layer h2 { font-size: 28px; }
+  
+  
   .dm-room-table { border-right-color: #2b4eff55; }
   .dm-campus-detail .dm-page-title { font-size: clamp(34px, 8vw, 52px); }
   .dm-footer-grid > div > ul { gap: 10px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .dm-dialog-layer *, .dm-cookie-banner * { animation: none !important; transition: none !important; }
-}
+
 
 .dm-directory-filter { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 18px; margin-top: 35px; }
 .dm-directory-search { flex: 1 1 300px; max-width: 540px; min-width: 0; }
@@ -2608,17 +2547,17 @@ body {
 .dm-directory-empty p { margin-top: 12px; font-size: 16px; line-height: 1.7; color: var(--color-ink-soft); }
 .dm-directory-empty a { color: var(--color-cobalt); text-decoration: underline; text-underline-offset: 3px; }
 
-.dm-dialog-layer[data-motion="paused"] * { animation: none !important; transition: none !important; }
+
 
 
 
 .dm-app[data-page^="account"] :is(p, dd) { overflow-wrap: anywhere; }
 .dm-nav [role="dialog"] { border-radius: 4px; }
-.dm-cookie-banner { z-index: 70; }
 
 
-.dm-feedback-form button[role="radio"] { width: 40px; min-height: 44px; flex-shrink: 0; }
-.dm-feedback-form > [role="radiogroup"] { flex-wrap: wrap; }
+
+
+
 
 
 

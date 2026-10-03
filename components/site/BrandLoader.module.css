@@ -1,22 +1,121 @@
-.loader { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; color:#2b4eff; text-align:center; width:100%; max-width:380px; margin:auto; }
-.drawing { width:240px; max-width:100%; }
-.drawing svg { display:block; width:100%; overflow:visible; }
-.wordmark { font:600 25px/1.2 var(--font-syne),sans-serif; letter-spacing:-.06em; color:#17172b; }
-.wordmark > span { color:#2b4eff; }
-.wordmark { display:flex; align-items:center; gap:8px; }.wordmark > span { margin-left:-8px; }
-.caption { margin-top:13px; max-width:280px; color:#656675; font:400 14px/1.6 var(--font-instrument),sans-serif; }
-.wall,.door { stroke-dasharray:1; animation:trace 3.8s cubic-bezier(.22,.7,.2,1) infinite; }
-.door { animation-delay:.45s; }
-.bed,.desk,.rug { transform-box:fill-box; transform-origin:center; animation:place 3.8s cubic-bezier(.22,.7,.2,1) infinite both; }
-.desk { animation-delay:.2s; }.rug { animation-delay:.4s; }
-.cursor { animation:cursor 3.8s cubic-bezier(.22,.7,.2,1) infinite both; }
-.track { width:90px; height:2px; background:#2b4eff15; margin-top:22px; overflow:hidden; }
-.track i { display:block; width:40%; height:100%; background:#2b4eff; animation:progress 1.8s ease-in-out infinite; }
-@keyframes trace { 0%,8% { stroke-dashoffset:1; opacity:.35; } 45%,85% { stroke-dashoffset:0; opacity:1; } 100% { stroke-dashoffset:0; opacity:.15; } }
-@keyframes place { 0%,22% { opacity:0; transform:translateY(-9px) scale(.93); } 46%,84% { opacity:1; transform:none; } 100% { opacity:0; transform:none; } }
-@keyframes cursor { 0% { transform:translate(42px,30px); opacity:0; } 14% { opacity:1; } 36% { transform:translate(198px,30px); } 64%,82% { transform:translate(141px,140px); opacity:1; } 100% { transform:translate(141px,140px); opacity:0; } }
-@keyframes progress { from { transform:translateX(-100%); } to { transform:translateX(350%); } }
-@media (prefers-reduced-motion:reduce) { .loader * { animation:none; }.cursor { transform:translate(141px,140px); }.track i { width:100%; opacity:.45; } }
-:global([data-motion="paused"]) .loader * { animation:none; }
-:global([data-motion="paused"]) .cursor { transform:translate(141px,140px); }
-:global([data-motion="paused"]) .track i { width:100%; opacity:.45; }
+/* components/site/BrandLoader: the shared loading mark */
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 360px;
+  margin: auto;
+  padding: 24px;
+  box-sizing: border-box;
+  text-align: center;
+  color: var(--ds-ink, #16161d);
+  font-family: var(--ds-sans, sans-serif);
+}
+
+/* A sheet of plan paper with a measuring tape pulling out along its top */
+.sheet {
+  position: relative;
+  width: 224px;
+  max-width: 100%;
+  padding: 26px 12px 10px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background-color: var(--ds-plan, #fbfaf6);
+  background-image:
+    linear-gradient(rgba(36, 73, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 73, 255, 0.08) 1px, transparent 1px);
+  background-size: 12px 12px;
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 14px 30px -18px rgba(10, 16, 44, 0.35);
+}
+.sheet svg { display: block; width: 100%; height: auto; overflow: visible; }
+.tape {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 8px;
+  height: 11px;
+}
+.tape i {
+  display: block;
+  height: 100%;
+  border-radius: 1px 3px 3px 1px;
+  background-color: var(--ds-tape, #f3c21a);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.85) 0 1.5px, transparent 1.5px 40px),
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1px, transparent 1px 8px);
+  background-size: 100% 8px, 100% 4px;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 0 var(--ds-tape-shadow, #c99a06), inset -4px 0 0 var(--ds-red, #d7262e);
+  transform-origin: left center;
+  animation: pull 3.6s var(--ds-ease, ease) infinite;
+}
+
+.wall, .door { stroke-dashoffset: 0; }
+.wall { stroke-dasharray: 1; animation: trace 3.6s cubic-bezier(0.22, 0.7, 0.2, 1) infinite; }
+.door { animation: fade 3.6s ease infinite; animation-delay: 0.5s; }
+.bed, .desk, .rug {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: place 3.6s var(--ds-ease-back, ease) infinite both;
+}
+.desk { animation-delay: 0.18s; }
+.rug { animation-delay: 0.36s; }
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  margin-top: 20px;
+  font-size: 26px;
+  font-weight: 850;
+  font-stretch: 90%;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.wordmark i {
+  display: inline-block;
+  width: 0.24em;
+  height: 0.24em;
+  margin-left: 0.07em;
+  border-radius: 50%;
+  background: var(--ds-blue, #2449ff);
+  animation: hop 1.2s var(--ds-ease-back, ease) infinite;
+}
+.caption {
+  max-width: 280px;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ds-muted, #3a3a46);
+}
+
+@keyframes pull {
+  0% { transform: scaleX(0.04); }
+  45%, 85% { transform: scaleX(1); }
+  100% { transform: scaleX(0.04); }
+}
+@keyframes trace {
+  0%, 6% { stroke-dashoffset: 1; }
+  45%, 88% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0.2; }
+}
+@keyframes fade {
+  0%, 30% { opacity: 0; }
+  45%, 85% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes place {
+  0%, 30% { opacity: 0; transform: translateY(-10px) scale(0.92); }
+  48%, 86% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: none; }
+}
+@keyframes hop {
+  0%, 55%, 100% { transform: none; }
+  25% { transform: translateY(-0.22em); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader * { animation: none !important; }
+}
+:global([data-motion="paused"]) .loader * { animation: none !important; }
