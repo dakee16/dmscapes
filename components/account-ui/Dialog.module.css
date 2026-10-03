@@ -147,6 +147,7 @@
   font-weight: 850;
   font-stretch: 92%;
   letter-spacing: -0.035em;
+  word-spacing: 0.06em;
   overflow-wrap: anywhere;
   text-wrap: balance;
 }
@@ -467,7 +468,7 @@
 
 /* Delete confirmation */
 .danger .eyebrow { color: #b01d2a; }
-.list { margin: 16px 0 0; padding: 0 0 0 20px; display: grid; gap: 8px; font-size: 15px; line-height: 1.5; color: var(--ds-body); }
+.list { margin: 16px 0 0; padding: 0 0 0 20px; list-style: disc; display: grid; gap: 8px; font-size: 15px; line-height: 1.5; color: var(--ds-body); }
 .list li::marker { color: var(--ds-red); }
 .split { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
 .split > * { flex: 1 1 180px; }

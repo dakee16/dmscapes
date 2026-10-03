@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { useAuth, type PlanTier, type Profile } from "@/lib/auth-context";
 import { startCheckout } from "@/lib/checkout";
@@ -50,11 +50,18 @@ export function oauthLabel(provider: string | null | undefined): string | null {
 
 export function AccountShell({ active, children }: { active: "plan" | "profile"; children: ReactNode }) {
   const onPlan = active === "plan";
+  const navRef = useRef<HTMLElement>(null);
+  // Phone: the section nav is a sideways-scrolling row; bring the current page into view.
+  useEffect(() => {
+    const nav = navRef.current;
+    const current = nav?.querySelector<HTMLElement>('[aria-current="page"]');
+    if (nav && current && nav.scrollWidth > nav.clientWidth) nav.scrollLeft = current.offsetLeft - nav.offsetLeft - 16;
+  }, []);
   return (
     <div className={`ds-wrap ${s.shell}`}>
       <aside className={s.aside}>
         <h1 className={s.h1}>Account</h1>
-        <nav className={s.sideNav} aria-label="Account sections">
+        <nav ref={navRef} className={s.sideNav} aria-label="Account sections">
           <Link href="/account/billing" aria-current={onPlan ? "page" : undefined}>
             Plan &amp; credits
           </Link>
