@@ -8,6 +8,7 @@ import RevealObserver from "@/components/ds/RevealObserver";
 import "./globals.css";
 import "./experience.css";
 import "./ds.css";
+import "./ds-dialog.css";
 
 // Redesign type system: Archivo (UI and display, wght + wdth axes), Fraunces
 // italic (the second line of every headline), Martian Mono (labels and tags).

@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Shared dialog base (components/site/Modal.tsx): a paper card with a 22px
+   radius dropping in over an ink scrim.
+
+   Specificity plan: the layer and card defaults sit in :where() so a dialog's
+   own CSS module always wins, while still beating the legacy Tailwind
+   utilities many dialogs pass on the layer (those live in a cascade layer).
+   The card's fill is the one true default: it sits in the components layer so
+   any bg-* utility or module background replaces it.
+   ========================================================================== */
+
+:where(.ds-dialog) {
+  --dialog-gap: clamp(12px, 3vw, 28px);
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--dialog-gap);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: rgba(22, 22, 29, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: var(--ds-ink);
+  font-family: var(--ds-sans);
+  font-synthesis: none;
+}
+
+/* The card: whatever the dialog renders as its first child. */
+:where(.ds-dialog) > :where(*) {
+  min-width: 0;
+  max-height: calc(100dvh - 2 * var(--dialog-gap));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-radius: 22px;
+  box-shadow:
+    0 0 0 1px rgba(22, 22, 29, 0.06),
+    0 40px 90px -30px rgba(10, 16, 44, 0.6);
+}
+@layer components {
+  .ds-dialog > * { background-color: var(--ds-paper); }
+}
+
+/* Type: headings in the redesign voice, the italic second voice in blue. */
+:where(.ds-dialog) :where(h2) {
+  font-family: var(--ds-sans);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 850;
+  font-stretch: 88%;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+:where(.ds-dialog) :where(h2, h3) :where(em),
+.ds-dialog .hl {
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
+  letter-spacing: -0.01em;
+  color: var(--ds-blue);
+  background: none;
+}
+:where(.ds-dialog) :where(p) { overflow-wrap: anywhere; }
+/* 16px keeps iOS from zooming into fields */
+:where(.ds-dialog) :where(input, textarea, select) { min-width: 0; font-size: 16px; }
+
+/* Kit buttons stay pills inside any dialog (a legacy rule squares off every
+   button under [role="dialog"]). */
+.ds-dialog .ds-btn,
+[role="dialog"] .ds-btn { border-radius: 999px; }
+
+/* Close button: <ModalClose /> */
+.ds-dialog-close,
+.ds-dialog .ds-dialog-close {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.14);
+  color: var(--ds-ink);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.3s var(--ds-ease);
+}
+.ds-dialog-close:hover {
+  background: var(--ds-ink);
+  color: var(--ds-paper);
+  box-shadow: none;
+  transform: rotate(90deg);
+}
+.ds-dialog-close:focus-visible {
+  outline: 3px solid var(--ds-blue);
+  outline-offset: 3px;
+}
+.ds-dialog-close:disabled { cursor: not-allowed; opacity: 0.5; transform: none; }
+
+/* Motion: the scrim fades, the card drops in. Dialogs animated by Framer
+   Motion (inline opacity/transform) keep their own. */
+@keyframes ds-scrim-in { from { opacity: 0; } }
+@keyframes ds-dialog-in {
+  from { opacity: 0; transform: translate3d(0, -20px, 0) scale(0.97); }
+}
+@keyframes ds-dialog-fade { from { opacity: 0; } }
+:where(.ds-dialog:not([style*="opacity"])) {
+  animation: ds-scrim-in 0.22s ease-out both;
+}
+:where(.ds-dialog) > :where(:not([style*="transform"]):not([style*="opacity"])) {
+  animation: ds-dialog-in 0.45s var(--ds-ease) both;
+}
+
+/* Reduced motion and the site's pause toggle (Modal sets data-motion from
+   MotionProvider, which also follows prefers-reduced-motion): a short fade,
+   nothing moves or loops inside. */
+@media (prefers-reduced-motion: reduce) {
+  .ds-dialog > * { animation-name: ds-dialog-fade !important; animation-duration: 0.2s !important; }
+  .ds-dialog > * *, .ds-dialog-close { animation: none !important; transition: none !important; }
+}
+.ds-dialog[data-motion="paused"] { animation: none !important; }
+.ds-dialog[data-motion="paused"] > * { animation: ds-dialog-fade 0.2s linear both !important; }
+.ds-dialog[data-motion="paused"] > * * { animation: none !important; transition: none !important; }
