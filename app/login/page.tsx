@@ -11,15 +11,27 @@ import type { AuthModalReason } from "@/lib/auth-context";
 
 const REASONS: AuthModalReason[] = ["profile", "save-design", "buy", "generate"];
 
+/** The post-auth destination, only when it stays on this site. Parsed the way
+ *  the browser will parse it, so "/\host" or a tab after the slash can't
+ *  turn into another origin. */
+function sameSitePath(raw: string | null): string | null {
+  if (!raw?.startsWith("/")) return null;
+  const base = "https://dormscape.invalid";
+  try {
+    const url = new URL(raw, base);
+    return url.origin === base ? `${url.pathname}${url.search}${url.hash}` : null;
+  } catch {
+    return null;
+  }
+}
+
 function LoginInner() {
   const params = useSearchParams();
   const rawReason = params.get("reason");
   const reason: AuthModalReason = REASONS.includes(rawReason as AuthModalReason)
     ? (rawReason as AuthModalReason)
     : "profile";
-  const rawNext = params.get("next");
-  // Only allow same-site relative paths as the post-auth destination.
-  const next = rawNext && rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : "/plan";
+  const next = sameSitePath(params.get("next")) ?? "/plan";
 
   return <AuthForm reason={reason} next={next} />;
 }
