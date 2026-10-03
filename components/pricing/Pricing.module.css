@@ -191,7 +191,7 @@
 .table thead th:first-child, .table tbody th { text-align: left; }
 .table tbody th { font-weight: 700; }
 .table td { width: 16%; font-weight: 600; font-variant-numeric: tabular-nums; }
-.table td svg { vertical-align: middle; color: var(--ds-blue); }
+.table td svg { display: inline-block; vertical-align: middle; color: var(--ds-blue); }
 .table [data-plus] { background: #f4f4f7; }
 .table thead th[data-plus] { background: var(--ds-ink); color: var(--ds-yellow); border-radius: 10px 10px 0 0; }
 .table thead th[data-pro] { color: var(--ds-blue); }
