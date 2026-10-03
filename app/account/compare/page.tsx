@@ -13,6 +13,7 @@ import { hasFeatures } from "@/lib/plan";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
 import { getSchool, formatDims } from "@/lib/schools";
+import { shortName } from "@/lib/school-names";
 import { styleById } from "@/lib/styles";
 import { formatRoomType } from "@/lib/format";
 import { CATEGORY_LABELS } from "@/lib/catalog";
@@ -42,8 +43,7 @@ function detailsOf(room: AccountRoomSummary) {
   const school = room.college_id ? getSchool(room.college_id) : undefined;
   const dorm = school?.dorms.find((d) => d.id === room.dorm_id);
   return {
-    place: [school?.name, dorm?.name].filter(Boolean).join(" · ") || "Custom room",
-    hall: dorm?.name ?? school?.name ?? "Custom room",
+    place: [school ? shortName(school) : null, dorm?.name].filter(Boolean).join(" · ") || "Custom room",
     style: styleById(room.style),
     roomType: formatRoomType(room.room_type),
     dims: formatDims(room.length_ft, room.width_ft),
@@ -147,7 +147,7 @@ function Header({
             <b>{d.meta.style.name}</b>
           </div>
           <h2 className={css.name}>{d.room.name}</h2>
-          <p className={css.meta} title={d.meta.place}>{[d.meta.hall, d.meta.roomType, d.meta.dims].filter(Boolean).join(" · ")}</p>
+          <p className={css.meta}>{[d.meta.place, d.meta.roomType, d.meta.dims].filter(Boolean).join(" · ")}</p>
           <Link href={`/room/${d.room.id}`} className={css.open}>
             Open this design <ArrowRight size={16} />
           </Link>
