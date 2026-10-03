@@ -34,7 +34,7 @@ export default function TogetherSection() {
             <li className={`ds-tag ${css.chip}`} data-pop="">Invites use no credits</li>
           </ul>
           <div className={`${css.ctaRow} ${css.togetherCtas}`} data-reveal="">
-            <Link href="/rooms" className="ds-btn ds-btn--ink">
+            <Link href="/my-room" className="ds-btn ds-btn--ink">
               Open My Room
               <ArrowRight />
             </Link>

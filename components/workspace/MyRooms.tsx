@@ -25,13 +25,13 @@ import { PlusIcon } from "@/components/studio-ui/icons";
 import s from "./Designs.module.css";
 
 type Tab = "designs" | "drawn" | "rooms";
-const PX_MAX = 9; // px per foot: every plan shares one scale unless it has to shrink to fit
+const PX_MAX = 12.5; // px per foot: every plan shares one scale unless it has to shrink to fit
 const usd = (n: number) => `$${Math.round(n).toLocaleString("en-US")}`;
 const date = (iso: string) => new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric" });
 
 /** A saved room drawn to scale on plan paper. */
 function Plan({ lengthFt, widthFt, furniture, outline }: { lengthFt: number; widthFt: number; furniture: FurnitureItem[]; outline?: RoomOutline | null }) {
-  const px = Math.min(PX_MAX, 300 / lengthFt, 150 / widthFt);
+  const px = Math.min(PX_MAX, 330 / lengthFt, 168 / widthFt);
   return <span className={s.plan} aria-hidden="true"><RoomThumb lengthFt={lengthFt} widthFt={widthFt} furniture={furniture} outline={outline} className={s.planSvg} style={{ width: lengthFt * px + 2, height: widthFt * px + 2 }} /></span>;
 }
 
