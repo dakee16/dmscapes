@@ -58,7 +58,7 @@
 .heroH1 .l2,
 .heroH1 .l3 { font-size: clamp(58px, 7.8vw, 112px); line-height: 0.98; }
 .heroLede { margin-top: 30px; max-width: 520px; font-size: clamp(17px, 1.4vw, 20px); font-weight: 450; }
-.heroSearchWrap { margin-top: 34px; max-width: 600px; }
+.heroSearchWrap { position: relative; z-index: 2; margin-top: 34px; max-width: 600px; } /* above the note: both are reveal stacking contexts */
 .heroSub {
   margin: 18px 0 0 6px;
   display: flex;
@@ -193,7 +193,7 @@
   }
   .searchField:focus-within { box-shadow: 0 0 0 3px var(--ds-blue); }
   .searchField :global(input) { height: 56px !important; font-size: 17px !important; }
-  .searchField :global(ul) { left: 0; right: 0; }
+  .searchField :global(ul) { left: 0; right: 0; margin-top: 8px !important; } /* covers the CTA below */
   .search > button { min-height: 56px; }
 }
 
