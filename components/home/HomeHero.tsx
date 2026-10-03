@@ -99,7 +99,8 @@ export default function HomeHero({
             src="/redesign/home-hero-room-over-plan.jpg"
             alt="A furnished dorm room floating above its own floor plan, with dashed guide lines linking its corners to the drawing, marked 15 feet 3 inches by 11 feet 8 inches."
             fill
-            preload
+            loading="eager"
+            fetchPriority="high"
             quality={80}
             sizes="(min-width: 1024px) 53vw, 100vw"
           />
