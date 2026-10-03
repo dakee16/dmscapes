@@ -54,4 +54,13 @@ Local browser QA: open the dev server on `localhost`, not `127.0.0.1`. Next bloc
 
 - Scroll scenes: `useScrub` and `useFrameSequence` (homepage hero scrubs 25 WebP frames on desktop only, after `load`, skipped with reduced motion, the pause toggle or Save-Data). First-paint reveals are CSS keyframes; scroll reveals go through `RevealObserver`.
 - Renders were made with `design-handoff/3d-source` (build tool only, never shipped).
-- Homepage LCP on a throttled phone: 2.2 s (main: 3.4 s); CLS < 0.01. The biggest remaining cost is shared JavaScript (PostHog ~400 KB chunk, Supabase ~230 KB, the school index pulled in by client-side search); lazy-loading PostHog or a small search API would help but changes data flows, so ask the owner first.
+- Lighthouse on a local production build (October 2026): desktop LCP 0.8–0.9 s on the homepage, colleges, pricing and a hall page. Mobile (simulated slow 4G, 4x CPU) LCP is 3.7–4.4 s, while the same pages paint their LCP in about 0.1 s unthrottled; the hero images load at high priority and weigh 15–28 KB. What remains is shared JavaScript before paint (PostHog, Supabase, the school index pulled in by client-side search); lazy-loading PostHog or a small search API would help but changes data flows, so ask the owner first.
+
+## SEO and answer engines
+
+- Every page has its own `<title>` again ("Elder Hall Room Dimensions, Northwestern | dormscape"); the root layout appends the brand. Pass `title` to `pageMetadata()` (`lib/seo.ts`); `absoluteTitle` is for a title that already carries the brand (the homepage). A layout that sets a title must restate the template (see `app/plan/layout.tsx`).
+- Templated descriptions go through `fitDescription()`, which picks the longest version within a search snippet.
+- Canonicals on every indexable page; login, the plan result screen and the planner steps stay out of the index (steps point their canonical at `/plan`). `/plan/draw` is in the sitemap.
+- Structured data: Organization, WebSite and WebApplication (with the Free, Plus and Pro offers from `lib/plan`) on the homepage and pricing; hall pages list each published room type as a schema.org `Room` with its floor size; FAQPage, BreadcrumbList, Article and BlogPosting as before.
+- `/llms.txt` (`app/llms.txt/route.ts`) maps the site for AI crawlers from the school data and `lib/plan`.
+- Owner actions: once this is on production, resubmit `https://dormscape.us/sitemap.xml` in Google Search Console and request indexing for the homepage and `/colleges`. Backlinks (press, partner schools) are outreach, not code.
