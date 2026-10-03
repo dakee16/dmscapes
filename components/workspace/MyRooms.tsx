@@ -1,25 +1,52 @@
 "use client";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { workspaceRequest } from "@/lib/workspace-client";
 import type { WorkspaceSummary } from "@/lib/workspace";
 import type { AccountRoomSummary, AccountRoomsResponse, SaveRoomRequest } from "@/lib/api-types";
-import { DEFAULT_PLANNING } from "@/lib/planning";
+import { DEFAULT_PLANNING, shoppingProducts } from "@/lib/planning";
 import { productsFor, extrasFor } from "@/lib/catalog";
+import { hasFeatures, isPro } from "@/lib/plan";
+import { getSchool, formatDims } from "@/lib/schools";
+import { shortName } from "@/lib/school-names";
+import { styleById } from "@/lib/styles";
+import { formatRoomType } from "@/lib/format";
+import type { FurnitureItem, RoomOutline } from "@/lib/types";
 import RoomThumb from "@/components/room/RoomThumb";
+import ShareButton from "@/components/room/ShareButton";
+import PageShell from "@/components/ds/PageShell";
 import BrandLoader from "@/components/site/BrandLoader";
-import Modal from "@/components/site/Modal";
-import RoomAppHeader from "./RoomAppHeader";
+import Modal, { ModalClose } from "@/components/site/Modal";
 import PurchaseThankYou from "@/components/site/PurchaseThankYou";
-import s from "./Workspace.module.css";
+import { ArrowRight, SearchIcon } from "@/components/ds/Icons";
+import { PlusIcon } from "@/components/studio-ui/icons";
+import s from "./Designs.module.css";
+
+type Tab = "designs" | "drawn" | "rooms";
+const PX_MAX = 9; // px per foot: every plan shares one scale unless it has to shrink to fit
+const usd = (n: number) => `$${Math.round(n).toLocaleString("en-US")}`;
+const date = (iso: string) => new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric" });
+
+/** A saved room drawn to scale on plan paper. */
+function Plan({ lengthFt, widthFt, furniture, outline }: { lengthFt: number; widthFt: number; furniture: FurnitureItem[]; outline?: RoomOutline | null }) {
+  const px = Math.min(PX_MAX, 300 / lengthFt, 150 / widthFt);
+  return <span className={s.plan} aria-hidden="true"><RoomThumb lengthFt={lengthFt} widthFt={widthFt} furniture={furniture} outline={outline} className={s.planSvg} style={{ width: lengthFt * px + 2, height: widthFt * px + 2 }} /></span>;
+}
+
+function placeOf(collegeId: string | null, dormId: string | null) {
+  const school = collegeId ? getSchool(collegeId) : undefined;
+  const dorm = school?.dorms.find(d => d.id === dormId);
+  return { school: school ? shortName(school) : null, dorm: dorm?.name ?? null };
+}
 
 export default function MyRooms() {
   const { user, profile, loading } = useAuth(), router = useRouter();
   const [rooms, setRooms] = useState<WorkspaceSummary[]>([]), [saved, setSaved] = useState<AccountRoomSummary[]>([]);
   const [busy, setBusy] = useState(true), [error, setError] = useState(""), [actionError, setActionError] = useState("");
-  const [filter, setFilter] = useState("All rooms"), [search, setSearch] = useState(""), [opening, setOpening] = useState("");
+  const [tab, setTab] = useState<Tab>("designs"), [search, setSearch] = useState(""), [opening, setOpening] = useState("");
+  const [picked, setPicked] = useState<string[]>([]);
   const [create, setCreate] = useState(false), [name, setName] = useState("My college room"), [length, setLength] = useState(15), [width, setWidth] = useState(12), [occupants, setOccupants] = useState(2);
   const requestVersion = useRef(0);
   const load = useCallback(async () => {
@@ -50,23 +77,117 @@ export default function MyRooms() {
     try { const result = await workspaceRequest<{ id: string }>("/api/workspaces", { method: "POST", body: JSON.stringify({ snapshot }) }); router.push(`/rooms/${result.id}`); }
     catch (e) { setActionError((e as Error).message); setOpening(""); }
   }
-  const imported = new Set(rooms.map(r => r.source_room_id));
+  const workspaceFor = useMemo(() => new Map(rooms.filter(r => r.role === "owner" && r.source_room_id).map(r => [r.source_room_id!, r])), [rooms]);
   const matches = (text: string) => text.toLowerCase().includes(search.trim().toLowerCase());
-  const visible = rooms.filter(r => matches(r.name) && (filter === "All rooms" || (filter === "Shared" ? r.shared : !r.shared)));
-  const originals = saved.filter(r => !imported.has(r.id) && filter !== "Shared" && matches(r.name));
-  return <><RoomAppHeader/><PurchaseThankYou/><main id="page-content" className={s.dashboard}>
-    <div className={s.intro}><div><p className={s.eyebrow}>Your space / All in one place</p><h1>Make yourself<br/><em>at home.</em></h1><p>Your layouts, your shopping list, your people. Pick up right where you left off.</p></div>
-      <div className={s.buttons}><Link href="/plan" className={s.primary}>Plan my room <span aria-hidden="true">↗</span></Link>{user && <button className={s.secondary} onClick={() => setCreate(true)}>Start a blank room</button>}</div></div>
-    {(!user || (!busy && !rooms.length && !saved.length)) && <section className={s.spotlight}><div className={s.spotlightCopy}><p className={s.eyebrow}>One room. A shared plan.</p><h2>Good taste.<br/>Even better teamwork.</h2><p>Keep the things you love, find what you need, and decide who brings what. Invite your people when you&apos;re ready.</p><Link href={user && profile?.plan === "pro" ? "#rooms-list" : user ? "/pricing#plans" : "/login?next=%2Frooms"}>{user && profile?.plan === "pro" ? "Open a room below to invite friends" : "Explore shared rooms with Pro"} ↗</Link></div>
-      <div className={s.spotlightArt} aria-label="Example shared shopping list"><div className={s.listSlip}><p className={s.eyebrow}>Move-in list / Example</p><div><i>✓</i><strong>Desk lamp</strong><span>Already have</span></div><div><i>A</i><strong>Mini fridge</strong><span>Alex is bringing</span></div><div><i>+</i><strong>The perfect rug</strong><span>Choose together</span></div></div></div></section>}
-    {loading || busy ? <BrandLoader label="Opening your rooms…"/> : !user ? <section className={s.empty}><h2>Your room has a home here.</h2><p>Sign in to save your layouts, keep your shopping list together, and join a roommate&apos;s room.</p><Link href="/login?next=%2Frooms" className={s.primary}>Sign in to My rooms</Link></section> : <>
-      <div id="rooms-list" className={s.filterbar}><div className={s.tabs} role="group" aria-label="Filter rooms">{["All rooms", "Personal", "Shared"].map(f => <button key={f} aria-pressed={f === filter} onClick={() => setFilter(f)}>{f}</button>)}</div><input type="search" className={s.search} placeholder="Find a room…" aria-label="Search your rooms" value={search} onChange={e => setSearch(e.target.value)}/></div>
-      {saved.length >= 2 && <p className={s.muted} style={{marginBottom:20}}><Link href="/account/compare">Compare your saved designs ↗</Link></p>}
-      {error && <div className={s.error} role="alert">{error} <button onClick={() => void load()}>Retry</button></div>}{actionError && !create && <p className={s.error} role="alert">{actionError}</p>}
-      <div className={s.grid}>{visible.map(r => <article key={r.id} className={s.roomCard}><Link href={`/rooms/${r.id}`} aria-label={`Open ${r.name}`}><div className={s.preview}><RoomThumb lengthFt={r.snapshot.room_dimensions.length_ft} widthFt={r.snapshot.room_dimensions.width_ft} furniture={r.snapshot.furniture_positions} outline={r.snapshot.room_dimensions.outline}/><span>{r.shared ? `${r.member_count} ${r.member_count === 1 ? "person" : "people"}` : "Personal"}</span></div></Link><div className={s.roomBody}><span className={s.eyebrow}>{r.role === "owner" ? "Your room" : "Shared with you"}</span><h3>{r.name}</h3><p>{r.snapshot.room_dimensions.length_ft} × {r.snapshot.room_dimensions.width_ft} ft · ${r.snapshot.budget} budget</p><footer><small>Edited {new Date(r.updated_at).toLocaleDateString()}</small><Link href={`/rooms/${r.id}`}>Open room ↗</Link></footer></div></article>)}
-        {originals.map(r => <article key={r.id} className={s.roomCard}><Link href={`/room/${r.id}`} aria-label={`View ${r.name}`}><div className={s.preview}><RoomThumb lengthFt={r.length_ft ?? 15} widthFt={r.width_ft ?? 12} furniture={r.furniture ?? []} outline={r.outline}/><span>Saved design</span></div></Link><div className={s.roomBody}><span className={s.eyebrow}>Ready for its next chapter</span><h3>{r.name}</h3><p>{r.length_ft} × {r.width_ft} ft · ${r.budget} budget</p><footer><Link href={`/room/${r.id}`}>View design</Link><button disabled={!!opening} onClick={() => void importRoom(r.id)}>{opening === r.id ? "Opening…" : "Open workspace ↗"}</button></footer></div></article>)}</div>
-      {!visible.length && !originals.length && <div className={s.empty}><h2>{search || filter !== "All rooms" ? "No rooms here yet." : "Your first room starts here."}</h2><p>{search ? "Try another name or clear your search." : filter === "Shared" ? "Open a personal room and invite your roommates with Pro, or join through an invitation." : "Start with your college room and get a layout with a shopping list for your style and budget."}</p>{search ? <button className={s.secondary} onClick={() => setSearch("")}>Clear search</button> : <Link className={s.primary} href="/plan">Plan my room ↗</Link>}</div>}
-    </>}
-    {create && <Modal className={`${s.modal} ${s.app}`} onKeyDown={e => { if(e.key==="Escape"&&!opening)setCreate(false); }} role="dialog" aria-modal="true" aria-labelledby="blank-title" onClick={() => { if (!opening) setCreate(false); }}><form className={s.dialog} onSubmit={createBlank} onClick={e => e.stopPropagation()}><header><div><p className={s.eyebrow}>A blank canvas</p><h2 id="blank-title">Make room.</h2></div><button type="button" disabled={!!opening} onClick={() => setCreate(false)} aria-label="Close new room">Close</button></header><label className={s.field}>Room name<input required maxLength={80} value={name} onChange={e => setName(e.target.value)}/></label><div className={s.fieldRow}><label className={s.field}>Length (ft)<input required type="number" min={4} max={60} step={.1} value={length} onChange={e => setLength(e.target.valueAsNumber)}/></label><label className={s.field}>Width (ft)<input required type="number" min={4} max={60} step={.1} value={width} onChange={e => setWidth(e.target.valueAsNumber)}/></label></div><label className={s.field}>People in this room<select value={occupants} onChange={e => setOccupants(Number(e.target.value))}>{[1,2,3,4,5,6,7,8].map(n => <option key={n} value={n}>{n}</option>)}</select></label><p className={s.muted}>Add furniture and openings in your room tools. Custom wall drawing is included with Plus and Pro. Starting a blank room uses no design credits.</p>{actionError && <p className={s.error} role="alert">{actionError}</p>}<div className={s.buttons} style={{marginTop:24}}><button className={s.primary} disabled={!!opening}>{opening ? "Creating…" : "Create my room ↗"}</button><Link className={s.secondary} href="/plan">Find my college room</Link></div></form></Modal>}
-  </main></>;
+  const designs = saved.filter(r => matches(r.name));
+  const drawn = designs.filter(r => r.outline);
+  const workspaces = rooms.filter(r => matches(r.name));
+  const shown = tab === "rooms" ? [] : tab === "drawn" ? drawn : designs;
+  const pick = (id: string) => setPicked(p => p.includes(id) ? p.filter(x => x !== id) : [...p, id].slice(-2));
+  const pickedRooms = picked.map(id => saved.find(r => r.id === id)).filter((r): r is AccountRoomSummary => !!r);
+  const origin = typeof window === "undefined" ? "https://dormscape.us" : window.location.origin;
+  const label = (r: AccountRoomSummary) => { const p = placeOf(r.college_id, r.dorm_id); return [p.dorm ?? p.school ?? r.name, styleById(r.style).name].join(" · "); };
+
+  return <PageShell className={s.page}>
+    <PurchaseThankYou/>
+    <section className={`ds-wrap ${s.head}`}>
+      <h1 className={s.title}><span>My designs,</span> <em>saved free.</em></h1>
+      <div className={s.headActions}>
+        <Link href="/plan" className="ds-btn ds-btn--ink-yellow">Start a new plan<PlusIcon size={18}/></Link>
+        <span className={s.headNote}>Uses 1 plan credit · saving never does</span>
+        {user && <button type="button" className={s.textBtn} onClick={() => setCreate(true)}>Or start a blank room</button>}
+      </div>
+    </section>
+
+    <section className={`ds-wrap ${s.body}`} aria-label="Your saved rooms">
+      {loading || busy ? <BrandLoader label="Opening your rooms…"/> : !user ? <div className={s.empty}>
+        <h2>Your room has <em>a home here.</em></h2>
+        <p>Sign in to save your layouts, keep your shopping list together, and join a roommate&apos;s room.</p>
+        <Link href="/login?next=%2Frooms" className="ds-btn ds-btn--ink-yellow">Sign in to My designs</Link>
+      </div> : <>
+        <div className={s.bar}>
+          <div className={s.tabs} role="group" aria-label="Show">
+            {([["designs", "Designs", designs.length], ["drawn", "Rooms you drew", drawn.length], ["rooms", "Workspaces", workspaces.length]] as const).map(([key, text, n]) => <button key={key} type="button" aria-pressed={tab === key} onClick={() => setTab(key)}>{text} · {n}</button>)}
+          </div>
+          <label className={s.search}><SearchIcon size={18}/><span className="ds-sr">Search your rooms</span><input type="search" placeholder="Find a room…" value={search} onChange={e => setSearch(e.target.value)}/></label>
+          {tab !== "rooms" && saved.length >= 2 && <span className={s.tick}>Tick two to compare</span>}
+        </div>
+        {error && <div className={s.error} role="alert">{error} <button type="button" onClick={() => void load()}>Retry</button></div>}
+        {actionError && !create && <p className={s.error} role="alert">{actionError}</p>}
+
+        <div className={s.grid}>
+          {shown.map(r => {
+            const L = r.length_ft ?? 15, W = r.width_ft ?? 12, p = placeOf(r.college_id, r.dorm_id), on = picked.includes(r.id);
+            const products = r.editor?.cartProducts ?? [], total = r.editor ? shoppingProducts(products, r.editor.planning ?? DEFAULT_PLANNING).reduce((n, x) => n + x.price, 0) : null;
+            const ws = workspaceFor.get(r.id);
+            return <article key={r.id} className={s.card} data-picked={on}>
+              <div className={s.thumb}>
+                <Plan lengthFt={L} widthFt={W} furniture={r.furniture ?? []} outline={r.outline}/>
+                {r.outline && <span className={s.drawnTag}>Drawn room</span>}
+                {saved.length >= 2 && <label className={s.compare}><input type="checkbox" checked={on} onChange={() => pick(r.id)}/>Compare<span className="ds-sr"> {r.name}</span></label>}
+              </div>
+              <div className={s.cardBody}>
+                <div className={s.cardHead}><h2>{r.name}</h2><span>Saved {date(r.created_at)}</span></div>
+                <p className={s.meta}>{[r.outline ? "Drawn in 2D" : p.school, p.dorm, formatDims(r.length_ft, r.width_ft), styleById(r.style).name].filter(Boolean).join(" · ") || formatRoomType(r.room_type)}</p>
+                {total !== null ? <div className={s.budget}><strong>{usd(total)} of {usd(r.budget)}</strong><span aria-hidden="true"><i style={{ width: `${Math.min(100, (total / Math.max(1, r.budget)) * 100)}%` }} data-over={total > r.budget}/></span></div> : <p className={s.budgetPlain}>{usd(r.budget)} budget</p>}
+                <div className={s.actions}>
+                  <Link href={`/room/${r.id}`} className={s.open}>Open</Link>
+                  {ws ? <Link href={`/rooms/${ws.id}`}>Open its workspace</Link> : <button type="button" disabled={!!opening} onClick={() => void importRoom(r.id)}>{opening === r.id ? "Opening…" : "Open as workspace"}</button>}
+                  <ShareButton url={`${origin}/room/${r.id}`} title={r.name} from="my-designs" className={s.share}/>
+                </div>
+              </div>
+            </article>;
+          })}
+          {tab === "rooms" && workspaces.map(r => {
+            const d = r.snapshot.room_dimensions, p = placeOf(r.snapshot.college_id, r.snapshot.dorm_id);
+            return <article key={r.id} className={s.card}>
+              <Link href={`/rooms/${r.id}`} className={s.thumb} aria-label={`Open ${r.name}`}>
+                <Plan lengthFt={d.length_ft} widthFt={d.width_ft} furniture={r.snapshot.furniture_positions} outline={d.outline}/>
+                <span className={r.shared ? s.sharedTag : s.drawnTag}>{r.shared ? `Shared · ${r.member_count} ${r.member_count === 1 ? "person" : "people"}` : "Personal"}</span>
+              </Link>
+              <div className={s.cardBody}>
+                <div className={s.cardHead}><h2>{r.name}</h2><span>Edited {date(r.updated_at)}</span></div>
+                <p className={s.meta}>{[r.role === "owner" ? "Your room" : "Shared with you", p.school, formatDims(d.length_ft, d.width_ft), `${usd(r.snapshot.budget)} budget`].filter(Boolean).join(" · ")}</p>
+                <div className={s.actions}><Link href={`/rooms/${r.id}`} className={s.open}>Open room</Link></div>
+              </div>
+            </article>;
+          })}
+          {tab !== "rooms" && <Link href="/plan" className={s.newCard}><span aria-hidden="true"><PlusIcon size={26}/></span><strong>Plan another room</strong><em>or reuse a room you drew</em></Link>}
+          {tab === "rooms" && <button type="button" className={s.newCard} onClick={() => setCreate(true)}><span aria-hidden="true"><PlusIcon size={26}/></span><strong>Start a blank room</strong><em>no design credits needed</em></button>}
+        </div>
+
+        {!shown.length && tab !== "rooms" && <p className={s.none}>{search ? <>No designs match &ldquo;{search}&rdquo;. <button type="button" onClick={() => setSearch("")}>Clear search</button></> : tab === "drawn" ? "Rooms you draw in 2D show up here." : "Your first design starts with your college room, a style and a budget."}</p>}
+        {tab === "rooms" && !workspaces.length && <p className={s.none}>{search ? <>No rooms match &ldquo;{search}&rdquo;. <button type="button" onClick={() => setSearch("")}>Clear search</button></> : "Open a saved design as a workspace to keep it in step with your roommates, or join one through an invitation."}</p>}
+
+        <aside className={s.together}>
+          <div><p className={s.togetherEyebrow}>My Room · Pro</p><h2>Planning with a roommate?</h2><p>Open one design as your shared room, split it down the middle, and settle who brings what. Friends join free.</p></div>
+          <Link href={isPro(profile) ? "/my-room" : "/pricing#plans"} className="ds-btn ds-btn--ink-yellow ds-btn--sm">{isPro(profile) ? "Open My Room" : "See Pro"}<ArrowRight size={16}/></Link>
+        </aside>
+      </>}
+    </section>
+
+    {pickedRooms.length > 0 && <div className={s.tray} role="region" aria-label="Compare tray">
+      <span className={s.trayCount}>{pickedRooms.length} selected</span>
+      <span className={s.trayNames}>{pickedRooms.map((r, i) => <span key={r.id}>{i > 0 && <i> vs </i>}<b>{label(r)}</b></span>)}</span>
+      {pickedRooms.length === 2 ? <Link href={`/account/compare?a=${encodeURIComponent(pickedRooms[0].id)}&b=${encodeURIComponent(pickedRooms[1].id)}`} className={s.trayGo}>Compare side by side{!hasFeatures(profile) && <span>Plus</span>}</Link>
+        : <span className={s.trayHint}>Tick one more</span>}
+      <button type="button" className={s.trayClear} onClick={() => setPicked([])}>Clear</button>
+    </div>}
+
+    {create && <Modal className={s.dialogLayer} aria-labelledby="blank-title" onKeyDown={e => { if (e.key === "Escape" && !opening) setCreate(false); }} onClick={() => { if (!opening) setCreate(false); }}>
+      <form className={s.dialog} onSubmit={createBlank} onClick={e => e.stopPropagation()}>
+        <ModalClose label="Close new room" disabled={!!opening} onClick={() => setCreate(false)}/>
+        <p className={s.dialogEyebrow}>A blank canvas</p><h2 id="blank-title">Make <em>room.</em></h2>
+        <label className={s.field}><span>Room name</span><input className="ds-input" required maxLength={80} value={name} onChange={e => setName(e.target.value)}/></label>
+        <div className={s.fieldRow}>
+          <label className={s.field}><span>Length (ft)</span><input className="ds-input" required type="number" min={4} max={60} step={.1} value={length} onChange={e => setLength(e.target.valueAsNumber)}/></label>
+          <label className={s.field}><span>Width (ft)</span><input className="ds-input" required type="number" min={4} max={60} step={.1} value={width} onChange={e => setWidth(e.target.valueAsNumber)}/></label>
+        </div>
+        <label className={s.field}><span>People in this room</span><select className="ds-input" value={occupants} onChange={e => setOccupants(Number(e.target.value))}>{[1,2,3,4,5,6,7,8].map(n => <option key={n} value={n}>{n}</option>)}</select></label>
+        <p className={s.dialogNote}>Add furniture and openings in your room tools. Custom wall drawing is included with Plus and Pro. Starting a blank room uses no design credits.</p>
+        {actionError && <p className={s.error} role="alert">{actionError}</p>}
+        <div className={s.dialogActions}><button type="submit" className={s.inkBtn} disabled={!!opening}>{opening ? "Creating…" : "Create my room"}</button><Link className={s.ghostBtn} href="/plan">Find my college room</Link></div>
+      </form>
+    </Modal>}
+  </PageShell>;
 }

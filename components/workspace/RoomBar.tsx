@@ -25,7 +25,7 @@ export default function RoomBar({ detail, userId, name, place, status, tab, setT
   const enabled = detail.workspace.shared && detail.ownerPro;
   const openCount = detail.comments.filter(c => !c.parent_id && !c.resolved).length;
   const isOwner = detail.role === "owner";
-  const tabs: [RoomTab, string, string][] = [["room", "Room plan", "Plan"], ["shopping", "Who brings what", "Who brings what"], ["roommates", "People", "People"]];
+  const tabs: [RoomTab, string, string][] = [["room", "Room plan", "Plan"], ["shopping", "Who brings what", "Who brings"], ["roommates", "People", "People"]];
   return <header className={s.bar}>
     <Link href="/rooms" className={s.barBack} aria-label="Back to My designs"><ChevronLeft size={22} /></Link>
     <Wordmark className={s.barMark} />
@@ -54,10 +54,10 @@ export default function RoomBar({ detail, userId, name, place, status, tab, setT
         })}
       </div>
       {enabled && <CallControl open={side === "voice"} onOpen={() => openSide(side === "voice" ? null : "voice")} />}
-      <button type="button" className={s.barComments} aria-expanded={side === "comments"} aria-controls="room-side-panel" onClick={() => openSide(side === "comments" ? null : "comments")}>
-        <CommentIcon /><span className={s.barCommentsText}>Comments</span>{openCount > 0 && <b>{openCount}</b>}<span className="ds-sr">{openCount ? `, ${openCount} open` : ""}</span>
+      <button type="button" className={s.barComments} aria-label={`Comments${openCount ? `, ${openCount} open` : ""}`} aria-expanded={side === "comments"} aria-controls="room-side-panel" onClick={() => openSide(side === "comments" ? null : "comments")}>
+        <CommentIcon /><span className={s.barCommentsText} aria-hidden="true">Comments</span>{openCount > 0 && <b aria-hidden="true">{openCount}</b>}
       </button>
-      {isOwner && <button type="button" className={s.invite} onClick={onInvite}><PlusIcon size={16} /><span className={s.inviteText}>Invite</span></button>}
+      {isOwner && <button type="button" className={s.invite} aria-label="Invite people" onClick={onInvite}><PlusIcon size={16} /><span className={s.inviteText}>Invite</span></button>}
     </div>
   </header>;
 }

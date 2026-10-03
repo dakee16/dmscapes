@@ -11,8 +11,8 @@
   background: var(--ds-paper);
 }
 .room *, .room *::before, .room *::after { box-sizing: border-box; }
-.room button { font-family: var(--ds-sans); color: inherit; }
-.room button:disabled { cursor: not-allowed; opacity: 0.5; }
+:where(.room) :where(button) { font-family: var(--ds-sans); color: inherit; }
+:where(.room) :where(button:disabled) { cursor: not-allowed; opacity: 0.5; }
 .room select { font-family: var(--ds-sans); }
 
 /* ---------- shared bits ---------- */
@@ -146,6 +146,7 @@
 .room[data-section="room"] .stage { background-color: var(--ds-plan); background-image: linear-gradient(rgba(36, 73, 255, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(36, 73, 255, 0.07) 1px, transparent 1px); background-size: 36px 36px; }
 .stage[data-following="true"]::after { content: ""; position: fixed; inset: var(--bar-h) 0 0 0; z-index: 55; pointer-events: none; box-shadow: inset 0 0 0 5px var(--person); }
 .editor[hidden] { display: none; }
+.room[data-side] .rail { display: none; }
 .followBanner {
   position: fixed; left: 50%; top: calc(var(--bar-h) + 16px); z-index: 56; transform: translateX(-50%);
   display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 6px 0 8px; border-radius: 999px;
@@ -271,7 +272,7 @@
 .voiceHint { margin: 12px 0 0; font-size: 12px; line-height: 1.5; color: #8f94b4; }
 .voiceArt { display: flex; justify-content: center; margin: 40px 0 26px; }
 .voiceArt span { display: flex; align-items: center; justify-content: center; width: 64px; height: 64px; margin-left: -10px; border-radius: 50%; background: var(--person); color: var(--person-ink); font-size: 24px; font-weight: 900; box-shadow: 0 0 0 4px var(--ds-night); }
-.voiceArt span:first-child { margin-left: 0; box-shadow: 0 0 0 4px var(--ds-night), 0 0 0 8px var(--ds-yellow); }
+.voiceArt span:first-child { margin-left: 0; }
 .voiceTitle { margin: 0; text-align: center; font-size: 34px; font-weight: 900; letter-spacing: -0.03em; }
 .voiceTitle em { color: var(--ds-yellow); }
 .voiceBody { margin: 10px 0 0; text-align: center; font-size: 15px; line-height: 1.55; color: #b9bdd6; }
@@ -302,11 +303,13 @@
 .commentPin:hover, .commentPin:focus-visible { outline: 3px solid var(--ds-ink); outline-offset: 2px; }
 
 /* ---------- who brings what ---------- */
-.bring { position: relative; max-width: 1296px; margin: 0 auto; padding: 36px 0 24px; }
+.bring { position: relative; max-width: 1296px; margin: 0 auto; padding: 36px 0 24px; container-type: inline-size; }
 .bringTop { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 648px); gap: 24px 64px; align-items: start; }
 .pageTitle { margin: 0; font-weight: 400; line-height: 0.95; }
-.pageTitle > span { display: block; font-size: clamp(42px, 4.6vw, 64px); font-weight: 900; font-stretch: 88%; letter-spacing: -0.04em; }
-.pageTitle em { display: block; margin-top: 4px; font-size: clamp(32px, 3.6vw, 52px); line-height: 1.1; }
+.pageTitle > span { display: block; font-size: clamp(40px, 5cqi, 64px); font-weight: 900; font-stretch: 88%; letter-spacing: -0.04em; }
+.pageTitle em { display: block; margin-top: 4px; font-size: clamp(30px, 4cqi, 52px); line-height: 1.1; }
+@container (max-width: 1080px) { .bringTop { grid-template-columns: minmax(0, 1fr); } }
+@container (max-width: 1100px) { .people { grid-template-columns: minmax(0, 1fr); } }
 .bringIntro > p { margin: 14px 0 0; max-width: 520px; font-size: 17px; line-height: 1.5; color: var(--ds-muted); }
 .spend { padding: 22px 24px; border-radius: 22px; background: #fff; }
 .spendHead { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 16px; }
@@ -360,6 +363,7 @@
 .bringFoot { margin: 24px 0 0; font-size: 13px; color: var(--ds-caption); }
 
 /* ---------- people and versions ---------- */
+.peopleWrap { container-type: inline-size; }
 .people { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 568px); gap: 40px 68px; max-width: 1296px; margin: 0 auto; padding: 40px 0 24px; align-items: start; }
 .peopleHead { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; }
 .pageTitleSm { margin: 0; font-size: clamp(32px, 3vw, 40px); font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; }
@@ -384,7 +388,8 @@
 .removeBtn { margin-left: auto; min-height: 40px; padding: 0 10px; border: 0; background: none; color: #b0182a !important; font: 800 13px/1 var(--ds-sans); cursor: pointer; }
 .removeBtn:hover { text-decoration: underline; text-underline-offset: 3px; }
 .seatInvite { display: flex; flex-direction: column; gap: 8px; min-height: 150px; padding: 16px 18px; border-radius: 20px; border: 2px dashed rgba(22, 22, 29, 0.25); }
-.seatInvite > label { font-size: 15px; font-weight: 850; }
+.seatInvite > label, .seatInvite > strong { font-size: 15px; font-weight: 850; }
+.seatInvite[data-held] { justify-content: center; }
 .seatInvite input { height: 44px; padding: 0 14px; border: 1.5px solid rgba(22, 22, 29, 0.25); border-radius: 12px; background: #fff; color: var(--ds-ink); font: 450 16px/1 var(--ds-sans); }
 .seatInvite input:focus, .seatInvite select:focus, .seatFoot select:focus, .versionForm input:focus { outline: none; border-color: var(--ds-blue); box-shadow: 0 0 0 3px rgba(36, 73, 255, 0.18); }
 .seatInvite > div { display: flex; gap: 8px; }
@@ -443,6 +448,7 @@
 .confirm h2 { margin: 0; font-size: clamp(26px, 3vw, 32px) !important; }
 .confirm > p { margin: 14px 0 0; font-size: 15px; line-height: 1.55; color: var(--ds-muted); }
 .confirmActions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.confirm :is(.inkBtn, .ghostBtn, .dangerBtn) { min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 15px; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 1600px) {
@@ -457,25 +463,29 @@
   .joinCallText { display: none; }
   .joinCall { padding: 0 12px; }
   .tabs button { padding: 0 12px; }
-  .bringTop, .people { grid-template-columns: minmax(0, 1fr); }
   .sidePanel { width: 360px; }
 }
 @media (max-width: 960px) {
-  .bar { flex-wrap: wrap; height: auto; padding: 8px 12px 10px; gap: 8px 10px; }
-  .barBack { display: flex; align-items: center; justify-content: center; flex: none; width: 36px; height: 40px; margin-left: -6px; color: var(--ds-ink); }
-  .barTitle { flex: 1 1 0; }
+  .bar { flex-wrap: wrap; height: auto; padding: 8px 12px 10px; gap: 8px; }
+  .barBack { display: flex; align-items: center; justify-content: center; flex: none; width: 32px; height: 40px; margin-left: -6px; color: var(--ds-ink); order: 0; }
+  .barTitle { flex: 1 1 0; order: 1; }
   .barName input { max-width: none; }
-  .barRight { margin-left: 0; gap: 6px; }
-  .tabs { order: 3; flex: 1 1 100%; }
-  .tabs button { flex: 1; justify-content: center; height: 36px; padding: 0 8px; font-size: 13.5px; }
+  .barRight { display: contents; }
+  .faces { order: 2; }
+  .invite { order: 3; }
+  .tabs { order: 4; flex: 1 1 calc(100% - 112px); min-width: 0; }
+  .barComments { order: 5; }
+  .callPill, .joinCall { order: 6; }
+  .tabs button { flex: 1; justify-content: center; height: 38px; padding: 0 8px; font-size: 13.5px; }
   .face { width: 30px; height: 30px; font-size: 12px; }
   .barComments, .joinCall { width: 44px; padding: 0; justify-content: center; position: relative; }
   .barComments b { position: absolute; top: -4px; right: -6px; }
   .invite { width: 44px; padding: 0; justify-content: center; }
   .inviteText { display: none; }
-  .callPill { padding-left: 10px; }
-  .callPillLabel { font-size: 0; }
-  .callPillLabel .callClock { font-size: 11px; }
+  .callPill { position: fixed; left: 12px; right: 12px; bottom: calc(78px + env(safe-area-inset-bottom)); z-index: 46; height: 60px; padding: 0 10px 0 18px; border-radius: 20px; box-shadow: 0 14px 30px rgba(22, 22, 29, 0.3); }
+  .callPillLabel { flex: 1; justify-content: flex-start; }
+  .callRound { width: 42px; height: 42px; }
+  .room:not([data-section="room"]) .callPill { bottom: calc(14px + env(safe-area-inset-bottom)); }
   .sidePanel {
     position: fixed; left: 0; right: 0; bottom: 0; top: auto; z-index: 75; width: auto; height: auto; max-height: min(82dvh, 760px);
     border-left: 0; border-radius: 22px 22px 0 0; box-shadow: 0 -12px 36px rgba(22, 22, 29, 0.22);

@@ -129,7 +129,7 @@ export function CallControl({ onOpen, open }: { onOpen: () => void; open: boolea
     <button type="button" className={s.callRound} aria-pressed={!v.muted} aria-label={v.muted ? "Unmute" : "Mute"} disabled={v.toggling || v.status === "reconnecting"} onClick={() => void v.toggleMic()}><MicIcon muted={v.muted} /></button>
     <button type="button" className={`${s.callRound} ${s.callLeave}`} aria-label="Leave the call" onClick={v.leave}><HangUpIcon /></button>
   </div>;
-  return <button type="button" className={s.joinCall} onClick={onOpen} aria-expanded={open} aria-controls="room-side-panel"><HeadsetIcon /><span className={s.joinCallText}>Join room call</span></button>;
+  return <button type="button" className={s.joinCall} aria-label="Join room call" onClick={onOpen} aria-expanded={open} aria-controls="room-side-panel"><HeadsetIcon /><span className={s.joinCallText}>Join room call</span></button>;
 }
 
 /** The night call panel: who's in, who isn't, follow a view, mute and leave. */

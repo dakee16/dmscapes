@@ -24,7 +24,7 @@ const PeoplePanel = forwardRef<HTMLInputElement, Props>(function PeoplePanel({ d
   const current = detail.versions[0];
   const chosen = detail.versions.find(v => v.id === selected) ?? null;
   const isCurrent = (v: { revision: number }) => v.revision === detail.workspace.revision;
-  return <section className={s.people} aria-labelledby="people-title">
+  return <div className={s.peopleWrap}><section className={s.people} aria-labelledby="people-title">
     <div className={s.peopleMain}>
       <div className={s.peopleHead}><h2 id="people-title" className={s.pageTitleSm}>People <em>in the room</em></h2><span className={s.seatCount}>{detail.members.length} of {WORKSPACE_MEMBER_LIMIT} seats</span></div>
       <p className={s.peopleLede}>Editors arrange the room and update who brings what. Commenters weigh in without moving the bed. Nobody needs Pro to join a Pro room.</p>
@@ -45,8 +45,9 @@ const PeoplePanel = forwardRef<HTMLInputElement, Props>(function PeoplePanel({ d
             <button type="button" className={s.removeBtn} disabled={busy} aria-label={`Cancel invitation to ${invite.email}`} onClick={async () => { await run("revoke", { invite_id: invite.id }); }}>Cancel</button>
           </div>
         </div>)}
-        {isOwner && !full && <form className={s.seatInvite} onSubmit={async e => { e.preventDefault(); if (!detail.ownerPro) { onUpgrade(); return; } if (await onInvite(email, role)) setEmail(""); }}>
-          <label htmlFor="room-invite-email">{WORKSPACE_MEMBER_LIMIT - detail.members.length - invites.length <= 1 ? "Last seat" : "Invite someone"}</label>
+        {isOwner && !full && WORKSPACE_MEMBER_LIMIT - detail.members.length - invites.length <= 0 && <div className={s.seatInvite} data-held="true"><strong>Every seat is held</strong><small>Invitations hold a seat for seven days. Cancel one to invite someone else, or resend it if it got lost.</small></div>}
+        {isOwner && !full && WORKSPACE_MEMBER_LIMIT - detail.members.length - invites.length > 0 && <form className={s.seatInvite} onSubmit={async e => { e.preventDefault(); if (!detail.ownerPro) { onUpgrade(); return; } if (await onInvite(email, role)) setEmail(""); }}>
+          <label htmlFor="room-invite-email">{WORKSPACE_MEMBER_LIMIT - detail.members.length - invites.length === 1 ? "Last seat" : "Invite someone"}</label>
           <input ref={inviteField} id="room-invite-email" type="email" autoComplete="email" required maxLength={254} placeholder="their@email.com" value={email} onChange={e => setEmail(e.target.value)} disabled={busy} />
           <div><label><span className="ds-sr">Access</span><select disabled={busy} value={role} onChange={e => setRole(e.target.value as "editor" | "commenter")}><option value="editor">Can edit</option><option value="commenter">Can comment</option></select></label>
             <button type={detail.ownerPro ? "submit" : "button"} onClick={() => { if (!detail.ownerPro) onUpgrade(); }} className={s.inkBtn} disabled={busy}>{busy ? "Sending…" : detail.ownerPro ? "Invite" : "Unlock with Pro"}</button></div>
@@ -88,6 +89,6 @@ const PeoplePanel = forwardRef<HTMLInputElement, Props>(function PeoplePanel({ d
         {detail.canEdit && <button type="button" className={s.inkBtn} disabled={busy || !chosen || isCurrent(chosen)} onClick={() => chosen && confirm(`restore:${chosen.id}`)}>{!chosen ? "Pick a version" : isCurrent(chosen) ? "This is the current version" : `Restore v${chosen.revision}`}</button>}
       </div>
     </section>
-  </section>;
+  </section></div>;
 });
 export default PeoplePanel;
