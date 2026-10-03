@@ -1,14 +1,15 @@
 "use client";
-import ProductImage from "@/components/products/ProductImage";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { usePlannerStore } from "@/lib/store";
-import { assignOwnership, shoppingProducts } from "@/lib/planning";
+import { getSchool } from "@/lib/schools";
+import { shortName } from "@/lib/school-names";
+import { formatRoomType } from "@/lib/format";
+import { purchaseForPiece, supplyFor } from "@/lib/planning";
 import { currentSnapshot, currentProducts, workspaceRequest } from "@/lib/workspace-client";
-import { WORKSPACE_MEMBER_LIMIT } from "@/lib/workspace";
 import BrandLoader from "@/components/site/BrandLoader";
 import Modal from "@/components/site/Modal";
 import PlanResult from "@/components/planner/PlanResult";
@@ -16,107 +17,163 @@ import ReadOnlyRoom from "./ReadOnlyRoom";
 import RoomAppHeader from "./RoomAppHeader";
 import { WorkspaceContext, type WorkspaceAccess } from "./WorkspaceContext";
 import { useWorkspaceSession } from "./useWorkspaceSession";
-import s from "./Workspace.module.css";
-import CollaborationProvider from "./CollaborationProvider";
-import CollaborationBar from "./CollaborationBar";
-import CollaborationOverlay from "./CollaborationOverlay";
+import CollaborationProvider, { useCollaboration } from "./CollaborationProvider";
 import CommentsPanel from "./CommentsPanel";
+import RoomBar from "./RoomBar";
+import RoomRail from "./RoomRail";
+import BringBoard from "./BringBoard";
+import PeoplePanel from "./PeoplePanel";
+import { VoicePanel, VoiceProvider, VoiceToast } from "./RoomVoice";
+import { initial, personStyle } from "./people";
+import s from "./Room.module.css";
+
+export type RoomTab = WorkspaceAccess["section"];
 
 export default function RoomWorkspacePage({ id }: { id: string }) {
   const { user, loading } = useAuth();
-  if (loading) return <><RoomAppHeader/><div className={s.dashboard}><BrandLoader label="Opening your room…"/></div></>;
-  if (!user) return <><RoomAppHeader/><main className={s.dashboard}><section className={s.empty}><h1>Your room is waiting.</h1><p>Sign in to open your workspace. Private rooms are only visible to their members.</p><Link className={s.primary} href={`/login?next=${encodeURIComponent(`/rooms/${id}`)}`}>Sign in to continue</Link></section></main></>;
+  if (loading) return <div className="ds"><RoomAppHeader/><main id="page-content" className={s.state}><BrandLoader label="Opening your room…"/></main></div>;
+  if (!user) return <div className="ds"><RoomAppHeader/><main id="page-content" className={s.state}><section className={s.stateCard}><p className={s.stateEyebrow}>My Room</p><h1>Your room <em>is waiting.</em></h1><p>Sign in to open your workspace. Private rooms are only visible to their members.</p><Link className="ds-btn ds-btn--ink-yellow" href={`/login?next=${encodeURIComponent(`/rooms/${id}`)}`}>Sign in to continue</Link></section></main></div>;
   return <WorkspaceSession key={`${user.id}:${id}`} id={id} userId={user.id}/>;
 }
+
 function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   const session = useWorkspaceSession(id, userId), router = useRouter(), { openUpgrade } = useUpgrade();
-  const [section, setSection] = useState<WorkspaceAccess["section"]>("room");
-  const [dialog, setDialog] = useState<"invite" | "history" | "settings" | null>(null);
+  const [section, setSection] = useState<RoomTab>("room");
+  const [side, setSide] = useState<"comments" | "voice" | null>(null);
   const [busy, setBusy] = useState(false), [message, setMessage] = useState(""), [error, setError] = useState("");
-  const [inviteEmail, setInviteEmail] = useState(""), [inviteRole, setInviteRole] = useState("editor");
-  const [commentsOpen, setCommentsOpen] = useState(false), [target, setTarget] = useState("room"), [versionName, setVersionName] = useState("");
-  function commentOn(next:string) { setTarget(next); setCommentsOpen(true); }
-  function locateComment(next:string) {
-    if(next.startsWith("product:")){setSection("shopping");requestAnimationFrame(()=>document.getElementById(`workspace-product-${next.slice(8)}`)?.scrollIntoView({behavior:"smooth",block:"center"}));}
-    else {setSection("room");if(next.startsWith("furniture:"))usePlannerStore.setState({selectedItemId:next.slice(10)});}
-  }
+  const [target, setTarget] = useState("room");
   const [confirm, setConfirm] = useState<string | null>(null);
+  const [overlay, setOverlay] = useState({ pins: true, cursors: true });
+  const [following, setFollowing] = useState<string | null>(null);
+  const inviteField = useRef<HTMLInputElement>(null);
+  function commentOn(next: string) { setTarget(next); setSide("comments"); }
+  function locateComment(next: string) {
+    if (next.startsWith("product:")) { setSection("shopping"); requestAnimationFrame(() => document.getElementById(`workspace-product-${next.slice(8)}`)?.scrollIntoView({ behavior: "smooth", block: "center" })); }
+    else { setSection("room"); if (next.startsWith("furniture:")) usePlannerStore.setState({ selectedItemId: next.slice(10) }); }
+  }
   const state = usePlannerStore(), products = currentProducts(state);
   const detail = session.detail, isOwner = detail?.role === "owner";
+  const messages: Record<string, string> = { checkpoint: "Version saved.", comment: "Comment added.", revoke: "Invitation cancelled. That place is available again.", restore: "Version restored for everyone. The layout before it is kept in Versions." };
   async function run(action: string, payload: Record<string, unknown> = {}) {
     setBusy(true); setError(""); setMessage("");
-    try { const result = await session.action(action, payload); setMessage(action === "checkpoint" ? "Version saved." : action === "comment" ? "Comment added." : "Changes saved."); return result; }
+    try { const result = await session.action(action, payload); setMessage(messages[action] ?? "Changes saved."); return result; }
     catch (e) { setError((e as Error).message); return null; }
     finally { setBusy(false); }
   }
-  async function createInvite() {
-    if (!detail?.ownerPro) { openUpgrade("workspace"); return; }
+  async function createInvite(email: string, role: "editor" | "commenter") {
+    if (!detail?.ownerPro) { openUpgrade("workspace"); return false; }
     setBusy(true); setError(""); setMessage("");
     try {
       if (!detail.workspace.shared) await session.action("share", { enabled: true });
-      const result = await session.action("invite", { role: inviteRole, email: inviteEmail });
-      if (result.sent) { setMessage(`Invitation sent to ${result.email}. They'll receive a button to join this room.`); setInviteEmail(""); }
-    } catch (error) { setError((error as Error).message); }
+      const result = await session.action("invite", { role, email });
+      if (result.sent) { setMessage(`Invitation sent to ${result.email}. They'll receive a button to join this room.`); return true; }
+      return false;
+    } catch (e) { setError((e as Error).message); return false; }
     finally { setBusy(false); }
   }
   async function copyLocalChanges() {
     const snapshot = currentSnapshot(); if (!snapshot) return;
     setBusy(true); setError("");
     try {
-      const value = await workspaceRequest<{ id: string }>("/api/workspaces", { method: "POST", body: JSON.stringify({ snapshot: { ...snapshot, name: `${snapshot.name?.slice(0,64)} (my copy)` } }) });
+      const value = await workspaceRequest<{ id: string }>("/api/workspaces", { method: "POST", body: JSON.stringify({ snapshot: { ...snapshot, name: `${snapshot.name?.slice(0, 64)} (my copy)` } }) });
       router.push(`/rooms/${value.id}`);
     } catch (e) { setError((e as Error).message); setBusy(false); }
   }
-  if (!detail || !state.room) return <><RoomAppHeader/><main className={s.dashboard}>{session.error ? <div className={s.empty}><h2>Let&apos;s get you back in.</h2><p role="alert">{session.error}</p><div className={s.buttons}><button className={s.primary} onClick={() => void session.refresh().catch(e => setError(e.message))}>Try again</button><Link className={s.secondary} href="/rooms">My rooms</Link></div>{error && <p role="alert">{error}</p>}</div> : <BrandLoader label="Opening your room and shopping list…"/>}</main></>;
-  const access = { id, members: detail.members, ownerPro: detail.ownerPro, canEdit: detail.canEdit, section, comments:detail.comments, commentOn };
-  const statusLabels = { loading: "Opening room", saved: "All changes saved", unsaved: "Unsaved changes", saving: "Saving your room…", conflict: "New changes to review", offline: "Not saved. Retry when connected." };
+  function invite() { setSection("roommates"); setSide(null); requestAnimationFrame(() => requestAnimationFrame(() => { inviteField.current?.focus(); inviteField.current?.scrollIntoView({ block: "center", behavior: "smooth" }); })); }
+  // The skip link and focus land on the active view when it changes.
+  const stage = useRef<HTMLElement>(null), firstTab = useRef(true);
+  useEffect(() => { if (firstTab.current) { firstTab.current = false; return; } window.scrollTo({ top: 0 }); }, [section]);
+
+  if (!detail || !state.room) return <div className="ds"><RoomAppHeader/><main id="page-content" className={s.state}>{session.error ? <section className={s.stateCard}><p className={s.stateEyebrow}>My Room</p><h1>Let&apos;s get you <em>back in.</em></h1><p role="alert">{session.error}</p><div className={s.stateActions}><button type="button" className="ds-btn ds-btn--ink-yellow" onClick={() => void session.refresh().catch(e => setError(e.message))}>Try again</button><Link className="ds-btn ds-btn--ghost-ink" href="/rooms">My designs</Link></div>{error && <p role="alert" className={s.inlineError}>{error}</p>}</section> : <BrandLoader label="Opening your room and shopping list…"/>}</main></div>;
+
+  const enabled = detail.workspace.shared && detail.ownerPro;
   const commentAllowed = isOwner || (detail.workspace.shared && detail.ownerPro);
-  const buying = shoppingProducts(products, state.planning);
-  return <CollaborationProvider id={id} epoch={detail.workspace.realtime_epoch} enabled={detail.workspace.shared && detail.ownerPro} userId={userId} memberIds={detail.members.map(m=>m.user_id)} onChange={()=>session.refresh()}><WorkspaceContext.Provider value={access}><RoomAppHeader/>
-    <header className={s.workspaceHeader}><div><div className={s.roomTitle}><input aria-label="Room name" key={state.planning.name} defaultValue={state.planning.name} maxLength={80} readOnly={!detail.canEdit} onBlur={e => { const name = e.target.value.trim(); if (name) state.updatePlanning({ name }); else e.target.value = state.planning.name; }}/></div><span className={s.saveStatus} data-state={session.status} role="status"><i/>{detail.canEdit ? statusLabels[session.status] : commentAllowed ? "Comment access · Changes sync automatically" : "View access · Changes sync automatically"}</span></div>
-      <div className={s.buttons}>{isOwner && <button className={s.primary} onClick={() => { setDialog("invite"); setError(""); setMessage(""); }}>Invite roommates ↗</button>}<button className={s.secondary} onClick={() => setDialog("settings")} aria-label="Room settings">•••</button></div></header>
-    <CollaborationBar detail={detail} userId={userId} section={section} openComments={()=>{setTarget("room");setCommentsOpen(true);}} commentOn={commentOn}/>
-    <nav className={s.workspaceNav} aria-label="Room workspace">{([['room','Room'],['shopping','Shopping'],['roommates','Roommates']] as const).map(([key,label]) => <button key={key} aria-current={section === key ? "page" : undefined} onClick={() => setSection(key)}>{label}</button>)}<button onClick={() => setDialog("history")}>Version history</button></nav>
-    <main id="page-content" className={s.workspaceMain}>
-      {session.status === "conflict" && <div className={s.notice} role="alert"><strong>A roommate saved a newer version.</strong><p>Your edits are still here. Keep them in a personal copy, or load the latest shared room.</p><div className={s.buttons}><button className={s.secondary} disabled={busy} onClick={() => void copyLocalChanges()}>Keep my edits in a copy</button><button className={s.secondary} onClick={() => setConfirm("reload")}>Load latest shared version</button></div></div>}
-      {session.recovery && <div className={s.notice}><strong>We found unsaved edits from this tab.</strong><div className={s.buttons}><button className={s.secondary} onClick={session.recover}>Recover my edits</button><button className={s.secondary} onClick={session.discardRecovery}>Keep the saved room</button></div></div>}
-      {session.error && <div className={s.error} role="alert">{session.error} <button onClick={() => void session.save()}>Retry saving</button></div>}
-      {error && !dialog && <p role="alert" className={s.error}>{error}</p>}
-      {section === "shopping" && <section className={s.shoppingBoard} style={{position:"relative"}}><CollaborationOverlay surface="shopping"/><header><div><p className={s.eyebrow}>Your shopping list / Ready for move-in</p><h2>Who&apos;s bringing <em>what?</em></h2><p>Track what you already have. Your product picks and room stay connected below.</p></div><strong>${buying.reduce((n,p) => n+p.price,0).toFixed(2)} <small className={s.muted}>to buy</small></strong></header>
-        <div className={s.checklist}>{products.length ? products.map(p => { const ownership = state.planning.productSupply[p.id] ?? { supply: "buy", assignedTo: "shared" }; const assign = (patch: Partial<typeof ownership>) => usePlannerStore.setState(st => assignOwnership(st.furniture ?? [],st.planning,products,{productId:p.id},patch)); return <div className={s.checkRow} key={p.id} id={`workspace-product-${p.id}`}><ProductImage src={p.image_url}/><div><strong>{p.name}</strong><small>${p.price.toFixed(2)} · <a href={p.affiliate_url} target="_blank" rel="noopener noreferrer sponsored">View product ↗</a></small><button className={s.productNote} onClick={()=>commentOn(`product:${p.id}`)}>Leave a note</button></div><select disabled={!detail.canEdit} aria-label={`Supply for ${p.name}`} value={ownership.supply} onChange={e => assign({ supply: e.target.value as typeof ownership.supply })}><option value="buy">To buy</option><option value="owned">Already have</option><option value="school">School provides</option></select><select disabled={!detail.canEdit} aria-label={`Who brings ${p.name}`} value={ownership.assignedTo} onChange={e => assign({ assignedTo:e.target.value })}><option value="shared">Shared</option>{detail.members.map(m => <option value={m.user_id} key={m.user_id}>{m.display_name}</option>)}{state.planning.roommates.filter(r => !detail.members.some(m => m.user_id === r.id)).map(r => <option key={r.id} value={r.id}>{r.name}</option>)}</select></div>; }) : <p className={s.muted}>Your shopping list is ready for its first pick. Browse the product panel below.</p>}</div><p className={s.muted}>Prices are estimates and can change at checkout. Dormscape may earn from qualifying purchases.</p></section>}
-      <div className={s.editor} data-section={section}>
-        {detail.canEdit ? <PlanResult/> : <ReadOnlyRoom room={state.room} items={state.furniture ?? []} style={state.style ?? "minimalist"} products={products} editor={detail.workspace.snapshot.room_dimensions.editor} canComment={commentAllowed}/>}
+  const access: WorkspaceAccess = { id, members: detail.members, ownerPro: detail.ownerPro, canEdit: detail.canEdit, section, comments: detail.comments, commentOn, overlay };
+  const statusLabels = { loading: ["Opening", "Opening room"], saved: ["Saved", "All changes saved"], unsaved: ["Unsaved", "Unsaved changes"], saving: ["Saving…", "Saving your room…"], conflict: ["New changes", "New changes to review"], offline: ["Not saved", "Not saved. Retry when connected."] } as const;
+  const status = detail.canEdit ? { label: statusLabels[session.status][0], full: statusLabels[session.status][1], state: session.status } : { label: commentAllowed ? "Can comment" : "View only", full: commentAllowed ? "Comment access · Changes sync automatically" : "View access · Changes sync automatically", state: "view" };
+  const school = state.college?.id ? getSchool(state.college.id) : undefined;
+  const place = [school ? shortName(school) : state.college?.name, state.dorm?.name, formatRoomType(state.room.type)].filter(Boolean).join(" · ") || `${state.room.lengthFt} × ${state.room.widthFt} ft room`;
+  const furniture = state.furniture ?? [];
+  const unclaimed = products.filter(p => (state.planning.productSupply[p.id]?.supply ?? "buy") === "buy" && (state.planning.productSupply[p.id]?.assignedTo ?? "shared") === "shared").length
+    + furniture.filter(f => f.inventory && !f.built_in && !purchaseForPiece(f, products) && supplyFor(f) === "buy" && (f.assigned_to ?? "shared") === "shared").length;
+  const ownerOf = (t: string) => {
+    if (t.startsWith("furniture:")) { const f = furniture.find(x => x.id === t.slice(10)); return f ? f.assigned_to ?? "shared" : undefined; }
+    if (t.startsWith("product:")) { const v = state.planning.productSupply[t.slice(8)]; return v ? v.assignedTo : products.some(p => p.id === t.slice(8)) ? "shared" : undefined; }
+    return undefined;
+  };
+  const showOnPlan = (itemId: string) => { setSection("room"); usePlannerStore.setState({ selectedItemId: itemId }); };
+
+  return <CollaborationProvider id={id} epoch={detail.workspace.realtime_epoch} enabled={enabled} userId={userId} memberIds={detail.members.map(m => m.user_id)} onChange={() => session.refresh()}><VoiceProvider id={detail.workspace.id} epoch={detail.workspace.realtime_epoch} enabled={enabled}><WorkspaceContext.Provider value={access}>
+    <div className={`ds ${s.room}`} data-section={section} data-side={side ?? undefined}>
+      <RoomBar detail={detail} userId={userId} name={state.planning.name} place={place} status={status} tab={section} setTab={t => { setSection(t); setFollowing(null); }} badges={{ shopping: unclaimed }}
+        side={side} openSide={setSide} onInvite={invite} canRename={detail.canEdit} onRename={name => state.updatePlanning({ name })} />
+      <ActivitySync section={section} />
+      <Follow id={following} members={detail.members} setSection={setSection} stop={() => setFollowing(null)} />
+      <div className={s.notices}>
+        {session.status === "conflict" && <div className={s.notice} role="alert"><div><strong>A roommate saved a newer version.</strong><p>Your edits are still here. Keep them in a personal copy, or load the latest shared room.</p></div><div className={s.noticeActions}><button type="button" className={s.ghostBtn} disabled={busy} onClick={() => void copyLocalChanges()}>Keep my edits in a copy</button><button type="button" className={s.inkBtn} onClick={() => setConfirm("reload")}>Load latest shared version</button></div></div>}
+        {session.recovery && <div className={s.notice}><div><strong>We found unsaved edits from this tab.</strong></div><div className={s.noticeActions}><button type="button" className={s.inkBtn} onClick={session.recover}>Recover my edits</button><button type="button" className={s.ghostBtn} onClick={session.discardRecovery}>Keep the saved room</button></div></div>}
+        {session.error && <div className={`${s.notice} ${s.noticeError}`} role="alert"><div><p>{session.error}</p></div><div className={s.noticeActions}><button type="button" className={s.ghostBtn} onClick={() => void session.save()}>Retry saving</button></div></div>}
+        {error && !confirm && section !== "roommates" && <p role="alert" className={s.inlineError}>{error}</p>}
+        {message && !confirm && section !== "roommates" && <p role="status" className={s.toast}>{message}<button type="button" aria-label="Dismiss" onClick={() => setMessage("")}>×</button></p>}
       </div>
-      {section === "roommates" && <div className={s.collaboration}><aside className={s.people}><p className={s.eyebrow}>Your people</p><h2>Better, <em>together.</em></h2><p>Editors can arrange the room and update shopping. Commenters can give feedback. Nobody needs to buy Pro to join your Pro room.</p>{detail.members.map(m => <div className={s.member} key={m.user_id}><span>{m.display_name.slice(0,2).toUpperCase()}</span><div><strong>{m.display_name}{m.user_id===userId ? " (you)" : ""}</strong><small>{m.role}</small></div>{isOwner && m.role !== "owner" && <select aria-label={`Access for ${m.display_name}`} disabled={busy} value={m.role} onChange={e => { if (e.target.value === "remove") setConfirm(`remove:${m.user_id}`); else void run("member", { user_id: m.user_id, role: e.target.value }); }}><option value="editor">Can edit</option><option value="commenter">Can comment</option><option value="remove">Remove access</option></select>}</div>)}<p>{detail.members.length} of {WORKSPACE_MEMBER_LIMIT} people</p>{isOwner && <button className={s.primary} onClick={() => setDialog("invite")}>Invite a roommate ↗</button>}{!detail.ownerPro && isOwner && <p>Pro hosts one shared room. Your personal rooms stay available on every plan.</p>}</aside>
-        <section className={s.roommateNotes}><p className={s.eyebrow}>Everyone has a say</p><h2>Good rooms start<br/>with a <em>conversation.</em></h2><p>Leave a note on the furniture or shopping list. Reply, decide, and resolve it together. Your comments are always one click away.</p><button className={s.primary} onClick={()=>{setTarget("room");setCommentsOpen(true);}}>Open room notes ↗</button><div><strong>Here at the same time?</strong><p>Look for the colored avatars above. Live cursors show where your roommates are looking. Room voice lets you talk while you plan.</p></div></section></div>}
-      {message && !dialog && <p role="status" className={s.muted}>{message}</p>}
-    </main>
-    <CommentsPanel open={commentsOpen} onClose={()=>setCommentsOpen(false)} comments={detail.comments} userId={userId} role={detail.role} allowed={commentAllowed} target={target} setTarget={setTarget} onLocate={locateComment} action={(action,payload)=>session.action(action,payload)} targets={[
-      {id:"room",name:"The room"},
-      ...(state.furniture??[]).map(f=>({id:`furniture:${f.id}`,name:f.label})),
-      ...products.map(p=>({id:`product:${p.id}`,name:p.name})),
-      ...state.planning.alternatives.map(a=>({id:`layout:${a.id}`,name:a.name})),
-    ]}/>
-    {dialog && <Modal className={`${s.modal} ${s.app}`} role="dialog" aria-modal="true" aria-labelledby="workspace-dialog-title" onKeyDown={e => { if(e.key==="Escape"&&!busy)setDialog(null); }} onClick={() => { if(!busy)setDialog(null); }}><div className={s.dialog} onClick={e => e.stopPropagation()}><header><div><p className={s.eyebrow}>Your room / {dialog}</p><h2 id="workspace-dialog-title">{dialog === "invite" ? "Make room for friends." : dialog === "history" ? "Every good idea, kept." : "Room settings."}</h2></div><button disabled={busy} aria-label="Close room dialog" onClick={() => setDialog(null)}>Close</button></header>
-      {dialog === "invite" && <><p className={s.muted}>You + three roommates. Enter their email and we&apos;ll send a personal invitation. They join free using that same email address.</p>
-        <div className={s.inviteCapacity}><span>{detail.members.length} joined</span><span>{detail.invitations?.length ?? 0} invited</span><strong>{WORKSPACE_MEMBER_LIMIT} places total</strong></div>
-        <form onSubmit={e => { e.preventDefault(); void createInvite(); }} className={s.inviteForm}>
-          <label className={s.field}>Roommate&apos;s email<input type="email" autoComplete="email" required maxLength={254} placeholder="roommate@school.edu" value={inviteEmail} onChange={e => setInviteEmail(e.target.value)} disabled={busy}/></label>
-          <label className={s.field}>Access<select disabled={busy} value={inviteRole} onChange={e => setInviteRole(e.target.value)}><option value="editor">Can edit</option><option value="commenter">Can comment</option></select></label>
-          <p className={s.muted}>{inviteRole === "editor" ? "Can arrange the room, update shopping, and comment." : "Can view the room and shopping list, and leave comments."}</p>
-          <button className={s.primary} type={detail.ownerPro ? "submit" : "button"} onClick={() => { if (!detail.ownerPro) openUpgrade("workspace"); }} disabled={busy || (detail.ownerPro && detail.members.length >= WORKSPACE_MEMBER_LIMIT)}>{busy ? "Sending invitation…" : detail.ownerPro ? "Send invitation ↗" : "Unlock shared rooms with Pro"}</button>
-        </form>
-        {!!detail.invitations?.length && <section className={s.pendingInvites} aria-label="Pending invitations"><h3>On the guest list</h3><p className={s.muted}>Invitations reserve a place for seven days. Sending again to the same email replaces its previous invitation.</p>{detail.invitations.map(invite => <div key={invite.id}><span><strong>{invite.email}</strong><small>{invite.role === "editor" ? "Can edit" : "Can comment"} · Expires {new Date(invite.expires_at).toLocaleDateString()}</small></span><button disabled={busy} className={s.secondary} aria-label={`Cancel invitation to ${invite.email}`} onClick={async () => { if (await run("revoke", { invite_id: invite.id })) setMessage("Invitation cancelled. That place is available again."); }}>Cancel</button></div>)}</section>}
-        {detail.members.length >= WORKSPACE_MEMBER_LIMIT && <p className={s.notice}>Your room is full. Remove a member in Roommates before inviting someone else.</p>}
-      </>}
-      {dialog === "history" && <>{detail.canEdit && <form onSubmit={async e => { e.preventDefault(); if(await run("checkpoint", {name:versionName}))setVersionName(""); }}><label className={s.field}>Keep a named version<input required maxLength={80} value={versionName} onChange={e=>setVersionName(e.target.value)} placeholder="The layout we both love"/></label><button className={s.primary} disabled={busy || !versionName.trim()}>Save version</button></form>}<p className={s.muted} style={{marginTop:20}}>Your latest 20 versions. Restoring also keeps a copy of the current layout and shopping list.</p>{detail.versions.map(v=><div className={s.historyItem} key={v.id}><div><strong>{v.name}</strong><small>{new Date(v.created_at).toLocaleString()}</small></div>{detail.canEdit&&<button disabled={busy} onClick={()=>setConfirm(`restore:${v.id}`)}>Restore</button>}</div>)}</>}
-      {dialog === "settings" && <><p className={s.muted}>{isOwner ? "You own this room. Personal rooms are private. Shared rooms are visible to their members." : "This room belongs to its host. Your personal rooms are separate."}</p><div className={s.buttons} style={{marginTop:24}}>{isOwner ? <>{detail.workspace.shared&&<button className={s.secondary} onClick={()=>setConfirm("personal")}>Make personal</button>}<button className={s.secondary} onClick={()=>setConfirm("delete")}>Delete workspace</button></> : <button className={s.secondary} onClick={()=>setConfirm("leave")}>Leave room</button>}</div><p className={s.muted} style={{marginTop:16}}>Original saved designs remain in My rooms when you delete a workspace.</p></>}
-      {message&&<p role="status" className={s.notice}>{message}</p>}{error&&<p role="alert" className={s.error}>{error}</p>}
-    </div></Modal>}
-    {confirm && <Modal className={`${s.modal} ${s.app}`} role="alertdialog" aria-modal="true" aria-labelledby="confirm-title" onKeyDown={e=>{if(e.key==="Escape"&&!busy)setConfirm(null);}}><div className={s.dialog}><h2 id="confirm-title">{confirm==="reload" ? "Load the shared version?" : confirm.startsWith("restore:") ? "Restore this version?" : confirm.startsWith("remove:") ? "Remove this roommate?" : confirm==="personal" ? "Make this room personal?" : confirm==="delete" ? "Delete this workspace?" : "Leave this room?"}</h2><p className={s.muted} style={{marginTop:16}}>{confirm==="reload" ? "This replaces your unsaved edits. Keep a personal copy first if you want to preserve them." : confirm==="personal" ? "Roommates will lose access and all invitation links will stop working. Your room and shopping list stay saved." : confirm==="delete" ? "The workspace, comments, and versions will be deleted. This cannot be undone. Original saved designs remain available." : confirm.startsWith("restore:") ? "The room and shopping list will return to this version for everyone. The current version is kept in history." : confirm==="leave" ? "You will lose access to this room. Your existing comments remain with its members." : "Their access ends immediately. Existing comments remain with the room."}</p><div className={s.buttons} style={{marginTop:24}}><button className={s.primary} disabled={busy} onClick={async()=>{
-      if(confirm==="reload"){try{await session.refresh(true);session.discardRecovery();setConfirm(null);}catch(e){setError((e as Error).message);}return;}
-      const result=confirm.startsWith("restore:")?await run("restore",{version_id:confirm.slice(8)}):confirm.startsWith("remove:")?await run("member",{user_id:confirm.slice(7),role:"remove"}):confirm==="personal"?await run("share",{enabled:false}):await run(confirm);
-      if(result){if(confirm==="delete"||confirm==="leave")router.push("/rooms");setConfirm(null);setInviteEmail("");}
-    }}>{busy ? "Working…" : "Confirm"}</button><button className={s.secondary} disabled={busy} onClick={()=>setConfirm(null)}>Cancel</button></div>{error&&<p role="alert" className={s.error}>{error}</p>}</div></Modal>}
-  </WorkspaceContext.Provider></CollaborationProvider>;
+      <div className={s.body}>
+        {section === "room" && <RoomRail detail={detail} userId={userId} overlay={overlay} setOverlay={setOverlay} following={following} onFollow={setFollowing} onInvite={invite} onPeople={() => setSection("roommates")} />}
+        <main id="page-content" ref={stage} tabIndex={-1} className={s.stage} data-following={following ? "true" : undefined} style={following ? personStyle(following, detail.members) : undefined}>
+          {following && <FollowBanner id={following} members={detail.members} stop={() => setFollowing(null)} />}
+          <div className={s.editor} hidden={section !== "room"}>
+            {detail.canEdit ? <PlanResult/> : <ReadOnlyRoom room={state.room} items={furniture} style={state.style ?? "minimalist"} products={products} editor={detail.workspace.snapshot.room_dimensions.editor} canComment={commentAllowed}/>}
+          </div>
+          {section === "shopping" && <BringBoard detail={detail} userId={userId} products={products} commentOn={commentOn} showOnPlan={showOnPlan} />}
+          {section === "roommates" && <PeoplePanel ref={inviteField} detail={detail} userId={userId} busy={busy} onInvite={createInvite} onUpgrade={() => openUpgrade("workspace")} run={run} confirm={what => { setError(""); setConfirm(what); }}
+            notice={<>{error && !confirm && <p role="alert" className={s.inlineError}>{error}</p>}{message && !confirm && <p role="status" className={s.okNote}>{message}</p>}</>} />}
+          {section === "room" && <div className={s.phoneCta}><button type="button" className="ds-btn ds-btn--ink-yellow" onClick={() => setSection("shopping")}>Who brings what{unclaimed ? ` · ${unclaimed} open` : ""}</button></div>}
+        </main>
+        {side === "comments" && <CommentsPanel open onClose={() => setSide(null)} comments={detail.comments} userId={userId} role={detail.role} allowed={commentAllowed} target={target} setTarget={setTarget} onLocate={locateComment} action={(action, payload) => session.action(action, payload)} ownerTag={ownerOf} targets={[
+          { id: "room", name: "The room" },
+          ...furniture.map(f => ({ id: `furniture:${f.id}`, name: f.label })),
+          ...products.map(p => ({ id: `product:${p.id}`, name: p.name })),
+          ...state.planning.alternatives.map(a => ({ id: `layout:${a.id}`, name: a.name })),
+        ]}/>}
+        {side === "voice" && <VoicePanel members={detail.members} userId={userId} roomName={state.planning.name} onClose={() => setSide(null)} following={following} onFollow={setFollowing} />}
+      </div>
+      <VoiceToast hidden={side === "voice"} />
+      {confirm && <Modal className={s.confirmLayer} aria-labelledby="confirm-title" onKeyDown={e => { if (e.key === "Escape" && !busy) setConfirm(null); }} onClick={() => { if (!busy) setConfirm(null); }}><div className={s.confirm} role="alertdialog" aria-labelledby="confirm-title" aria-describedby="confirm-body" onClick={e => e.stopPropagation()}>
+        <h2 id="confirm-title">{confirm === "reload" ? "Load the shared version?" : confirm.startsWith("restore:") ? "Restore this version?" : confirm.startsWith("remove:") ? "Remove this roommate?" : confirm === "personal" ? "Make this room personal?" : confirm === "delete" ? "Delete this workspace?" : "Leave this room?"}</h2>
+        <p id="confirm-body">{confirm === "reload" ? "This replaces your unsaved edits. Keep a personal copy first if you want to preserve them." : confirm === "personal" ? "Roommates will lose access and all invitation links will stop working. Your room and shopping list stay saved." : confirm === "delete" ? "The workspace, comments, and versions will be deleted. This cannot be undone. Original saved designs remain available." : confirm.startsWith("restore:") ? "The room and shopping list will return to this version for everyone. The current version is kept in history." : confirm === "leave" ? "You will lose access to this room. Your existing comments remain with its members." : "Their access ends immediately. Existing comments remain with the room."}</p>
+        <div className={s.confirmActions}><button type="button" className={confirm === "delete" || confirm === "leave" || confirm.startsWith("remove:") ? s.dangerBtn : s.inkBtn} disabled={busy} onClick={async () => {
+          if (confirm === "reload") { try { await session.refresh(true); session.discardRecovery(); setConfirm(null); } catch (e) { setError((e as Error).message); } return; }
+          const result = confirm.startsWith("restore:") ? await run("restore", { version_id: confirm.slice(8) }) : confirm.startsWith("remove:") ? await run("member", { user_id: confirm.slice(7), role: "remove" }) : confirm === "personal" ? await run("share", { enabled: false }) : await run(confirm);
+          if (result) { if (confirm === "delete" || confirm === "leave") router.push("/rooms"); setConfirm(null); }
+        }}>{busy ? "Working…" : "Confirm"}</button><button type="button" className={s.ghostBtn} disabled={busy} onClick={() => setConfirm(null)}>Cancel</button></div>
+        {error && <p role="alert" className={s.inlineError}>{error}</p>}
+      </div></Modal>}
+    </div>
+  </WorkspaceContext.Provider></VoiceProvider></CollaborationProvider>;
+}
+
+/** Tell the room which view and piece you're on (presence, and others' Follow). */
+function ActivitySync({ section }: { section: RoomTab }) {
+  const live = useCollaboration(), update = live?.updateActivity;
+  const view = usePlannerStore(st => st.plannerView), selected = usePlannerStore(st => st.selectedItemId);
+  useEffect(() => { update?.({ section, view, selected }); }, [update, section, view, selected]);
+  return null;
+}
+
+/** Following someone mirrors their view, 2D/3D and selected piece until you stop or they go. */
+function Follow({ id, members, setSection, stop }: { id: string | null; members: { user_id: string }[]; setSection: (s: RoomTab) => void; stop: () => void }) {
+  const live = useCollaboration(), peer = id ? live?.peers[id] : undefined;
+  const gone = !!id && (live?.status !== "live" || !peer?.active || !members.some(m => m.user_id === id));
+  useEffect(() => { if (gone) stop(); }, [gone, stop]);
+  useEffect(() => {
+    if (!peer || gone) return;
+    setSection(peer.section);
+    const st = usePlannerStore.getState();
+    if (st.plannerView !== peer.view) st.setPlannerView(peer.view);
+    if (peer.selected !== st.selectedItemId && (!peer.selected || st.furniture?.some(f => f.id === peer.selected))) usePlannerStore.setState({ selectedItemId: peer.selected });
+  }, [peer, gone, setSection]);
+  return null;
+}
+function FollowBanner({ id, members, stop }: { id: string; members: { user_id: string; display_name: string }[]; stop: () => void }) {
+  const m = members.find(x => x.user_id === id); if (!m) return null;
+  return <div className={s.followBanner} role="status"><span className={s.faceSm} aria-hidden="true">{initial(m.display_name)}</span>You&apos;re following {m.display_name}&apos;s view<button type="button" onClick={stop}>Stop</button></div>;
 }

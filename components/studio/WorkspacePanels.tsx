@@ -8,7 +8,8 @@ import { footprint } from "@/components/canvas/geometry";
 import { constrainedPosition, FLOOR_FINISHES, itemElevation, itemHeight, modelKind, roomOutline, studioSettings } from "@/lib/studio";
 import { OPENING_DRAG_TYPE, type OpeningControls } from "@/lib/room-editing";
 import { useWorkspacePeople } from "@/components/workspace/WorkspaceContext";
-import s from "./Studio.module.css";
+import { ArrowUpRight } from "@/components/ds/Icons";
+import s from "@/components/workspace/Panels.module.css";
 
 export function NumberField({label,value,min=0,max=60,step=.1,disabled=false,onCommit}:{label:string;value:number;min?:number;max?:number;step?:number;disabled?:boolean;onCommit:(n:number)=>void|boolean}){
   return <label className={s.field}>{label}<input key={value} aria-label={label} type="number" inputMode="decimal" step={step} min={min} max={max} defaultValue={Math.round(value*100)/100} disabled={disabled}
@@ -69,7 +70,7 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
       <option value="">Floor / free placement</option>{hosts.map(h=><option key={h.id} value={h.id}>{h.label}</option>)}</select><span className={s.muted}>Placed accessories follow their surface when it moves.</span></label>}
     <details className={s.disclosure}><summary>Preview color</summary><div className={s.section}><label className={s.field}>Preview color<input aria-label="Item preview color" type="color" value={item.material_color??"#b9c2d5"} onChange={e=>st.updateItem3D(item.id,{material_color:e.target.value})}/></label><p className={s.muted}>For visualization only. Product options and price stay the same.</p></div></details>
     {issues.length>0&&<div className={s.warning} role="status"><strong>Check placement</strong><ul>{issues.map((v,i)=><li key={i}>{v}</li>)}</ul></div>}
-    {product&&<div className={s.productPeek}>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={product.image_url} alt="" loading="lazy"/><div><strong>{product.name}</strong><span>${product.price.toFixed(2)}</span></div><button onClick={onShop}>Product details &amp; swaps ↗︎</button></div>}
+    {product&&<div className={s.productPeek}>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={product.image_url} alt="" loading="lazy"/><div><strong>{product.name}</strong><span>${product.price.toFixed(2)}</span></div><button onClick={onShop}>Product details &amp; swaps<ArrowUpRight size={13}/></button></div>}
   </>;
 }
 
@@ -90,7 +91,7 @@ export function RoomDetails({room,controls,onAdd,onRemove,onFlip}:{room:Selected
         {openings[controls.selected].kind==="door"&&<button onClick={()=>onFlip(controls.selected!)}>Flip door</button>}
         <button onClick={()=>onRemove(controls.selected!)}>Remove</button>
       </div>}
-      <p className={s.muted}>Keyboard: select an opening, then use ← / → to slide it or ↑ / ↓ to move to the next wall.</p>
+      <p className={s.muted}>Keyboard: select an opening, then use the left and right arrow keys to slide it, or up and down to move it to the next wall.</p>
     </details>}
   </>;
 }
