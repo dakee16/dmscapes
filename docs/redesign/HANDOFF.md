@@ -64,3 +64,13 @@ Local browser QA: open the dev server on `localhost`, not `127.0.0.1`. Next bloc
 - Structured data: Organization, WebSite and WebApplication (with the Free, Plus and Pro offers from `lib/plan`) on the homepage and pricing; hall pages list each published room type as a schema.org `Room` with its floor size; FAQPage, BreadcrumbList, Article and BlogPosting as before.
 - `/llms.txt` (`app/llms.txt/route.ts`) maps the site for AI crawlers from the school data and `lib/plan`.
 - Owner actions: once this is on production, resubmit `https://dormscape.us/sitemap.xml` in Google Search Console and request indexing for the homepage and `/colleges`. Backlinks (press, partner schools) are outreach, not code.
+
+## Security review (October 2026)
+
+Fixed in code: custom vibe generation (`/api/vibe/generate`) now requires a signed-in Pro account on the server; product lookups (`/api/product-lookup`) require sign-in; the login `next=` redirect only accepts same-origin paths as the browser parses them; the `X-Powered-By` header is off.
+
+Owner actions:
+1. Review and apply `docs/migrations/20261004_security_hardening.sql` in the Supabase SQL editor. The live database still lets the anon and signed-in roles call the credit and session functions (migrations 0012 and 0015 revoked EXECUTE from PUBLIC only), serves the `room_submissions_queue` view outside RLS, and allows any columns on a profile INSERT. Afterwards, Database > Advisors > Security should be clear of those.
+2. Turn on Auth > Email > "Prevent use of leaked passwords".
+
+Known and accepted: plan generation runs in the browser, so the credit check (`/api/plan/consume`) is enforced by the client and a determined user can skip it (fixing that means server-side generation, out of scope for the redesign); the rate limiter is per server instance; script-src allows 'unsafe-inline' (see next.config.ts) so React's escaping is the main XSS defence, and the only raw-HTML sinks are escaped JSON-LD and a constant script.
