@@ -3,6 +3,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { currentSnapshot, workspaceRequest } from "@/lib/workspace-client";
+import { ArrowRight } from "@/components/ds/Icons";
+
+/** "A room worth keeping": opens the current plan as a workspace. Styled by the
+ * list's hand-off block it sits in (components/studio-ui/Result.module.css). */
 export default function OpenWorkspaceButton() {
   const { user } = useAuth(), router = useRouter();
   const [busy, setBusy] = useState(false), [error, setError] = useState("");
@@ -15,5 +19,5 @@ export default function OpenWorkspaceButton() {
       router.push(`/rooms/${response.id}`);
     } catch (e) { setError((e as Error).message); setBusy(false); }
   }
-  return <div><button className="dm-button" onClick={() => void open()} disabled={busy}>{busy ? "Opening…" : "Open workspace ↗"}</button>{error && <p role="alert" className="mt-2 max-w-sm text-sm text-red-700">{error}</p>}</div>;
+  return <div><button type="button" onClick={() => void open()} disabled={busy} style={{ gap: 8 }}>{busy ? "Opening…" : <>Open workspace<ArrowRight size={15} /></>}</button>{error && <p role="alert">{error}</p>}</div>;
 }

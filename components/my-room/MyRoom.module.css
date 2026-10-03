@@ -223,7 +223,7 @@
   .setupNav ol button:not([aria-current="step"]) { font-size: 0; gap: 0; }
   .setupTape, .setupFine { display: none; }
   .setupBody { padding: 24px 20px 0; }
-  .setupClose.setupClose { right: 12px; top: 12px; }
+  .setupClose.setupClose { position: sticky; top: 0; float: right; z-index: 2; margin: -10px -6px 0 8px; }
   .splitGrid { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {

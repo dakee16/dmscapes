@@ -1,1 +1,35 @@
-.review{margin:40px 0;background:#f1f4fa;border:1px solid #d2dbea;padding:clamp(20px,4vw,36px);border-radius:5px;color:#192238}.heading p{font:500 11px var(--font-plex-mono),monospace;text-transform:uppercase;letter-spacing:.13em;color:#3052e9}.heading h2{font:600 clamp(26px,4vw,36px)/1.2 var(--font-syne),sans-serif;margin:10px 0}.heading span,.caption{font-size:13px;line-height:1.7;color:#66738b}.columns{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:24px}.field{display:flex;flex-direction:column;gap:8px;font-size:12px;margin:12px 0}.field input,.field select,.field textarea{width:100%;min-width:0;border:1px solid #c5cfe0;border-radius:3px;background:#fff;padding:10px;font-size:14px}.field textarea{resize:vertical}.review button{background:#2b4eff;color:white;padding:11px 16px;border-radius:3px;font-size:13px;font-weight:600;cursor:pointer}.review button:disabled{opacity:.5}.review :is(input,textarea,select,button,summary):focus-visible{outline:2px solid #2b4eff;outline-offset:3px}.metric{font:500 12px/1.7 var(--font-plex-mono),monospace}.review details{margin:16px 0}.review summary{font-size:14px;font-weight:600;cursor:pointer}.review ul{list-style:none;padding:0;margin-top:12px}.review ul li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #d6dfed;padding:10px 0;font-size:12px}.review ul span{color:#66738b}.costs>div{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #d6dfed;font-size:13px}.comments{padding:0;list-style:none;max-height:380px;overflow:auto}.comments li{padding:15px;border:1px solid #d9e1ee;background:#fff;margin:10px 0;border-radius:4px}.comments strong{font-size:13px}.comments small{display:block;font-size:11px;color:#69768d;margin-top:4px}.comments p{font-size:14px;line-height:1.65;margin-top:10px;white-space:pre-wrap;overflow-wrap:anywhere}.error{font-size:12px;line-height:1.7;color:#95521e;background:#fff3da;padding:12px;margin-top:12px}@media(max-width:680px){.columns{grid-template-columns:1fr;gap:25px}}
+/* Roommate review on the public share page (components/studio/RoomReview.tsx) */
+.review { margin: 40px 0 clamp(64px, 8vw, 110px); padding: clamp(22px, 4vw, 36px); border-radius: 26px; background: #e5e7f6; color: var(--ds-ink); }
+.heading p { margin: 0; font: 700 12px/1 var(--ds-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ds-blue); }
+.heading h2 { margin: 10px 0 6px; font-size: clamp(30px, 3.6vw, 44px); font-weight: 900; letter-spacing: -0.03em; line-height: 1; }
+.heading h2 em { font-family: var(--ds-serif); font-style: italic; font-weight: 400; color: var(--ds-blue); font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1; }
+.heading span, .caption { font-size: 14px; line-height: 1.6; color: var(--ds-muted); }
+.columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; margin-top: 24px; }
+.columns > div { min-width: 0; padding: 20px; border-radius: 20px; background: #fff; }
+.columns h3 { margin: 0 0 4px; font-size: 20px; font-weight: 900; }
+.field { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; font-size: 14px; font-weight: 800; }
+.field input, .field select, .field textarea { width: 100%; min-width: 0; min-height: 46px; padding: 10px 14px; border: 1.5px solid rgba(22, 22, 29, 0.2); border-radius: 12px; background: #fff; color: var(--ds-ink); font: 450 16px/1.4 var(--ds-sans); }
+.field textarea { resize: vertical; }
+.field :is(input, select, textarea):focus { outline: none; border-color: var(--ds-blue); box-shadow: 0 0 0 3px rgba(36, 73, 255, 0.18); }
+.review form button { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: var(--ds-ink); color: var(--ds-yellow); font: 850 15px/1 var(--ds-sans); cursor: pointer; }
+.review form button:disabled { opacity: 0.5; cursor: progress; }
+.review :is(input, textarea, select, button, summary):focus-visible { outline: 3px solid var(--ds-blue); outline-offset: 3px; }
+.metric { margin: 12px 0 0; font: 700 13px/1.6 var(--ds-sans); color: var(--ds-muted); }
+.review details { margin: 16px 0; }
+.review summary { font-size: 15px; font-weight: 850; cursor: pointer; }
+.review ul { list-style: none; padding: 0; margin: 12px 0 0; }
+.review ul li { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(22, 22, 29, 0.08); font-size: 13px; }
+.review ul span { color: var(--ds-caption); text-align: right; }
+.costs { margin: 0; }
+.costs > div { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(22, 22, 29, 0.08); font-size: 14px; }
+.costs dd { margin: 0; font-weight: 850; font-variant-numeric: tabular-nums; }
+.comments { padding: 0; margin: 12px 0; list-style: none; max-height: 380px; overflow: auto; }
+.comments li { padding: 14px 16px; margin: 10px 0; border-radius: 16px; background: var(--ds-paper); }
+.comments strong { font-size: 14px; font-weight: 850; }
+.comments small { display: block; margin-top: 2px; font: 600 10px/1.4 var(--ds-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ds-caption); }
+.comments p { margin: 8px 0 0; font-size: 15px; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; }
+.error { margin: 12px 0 0; padding: 12px 14px; border-radius: 12px; background: #fff3da; color: #6b4210; font-size: 13px; line-height: 1.6; }
+@media (max-width: 760px) {
+  .columns { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .columns > div { padding: 16px; }
+}

@@ -48,7 +48,7 @@
 .columnEmpty { margin: 6px 4px; color: var(--ds-caption); font-size: 13px; line-height: 1.5; }
 
 /* ---------- loading, signed out, errors ---------- */
-.state { min-height: calc(100dvh - var(--ds-nav-h)); display: grid; place-items: center; padding: 48px var(--ds-gutter); }
+:global(.ds) > main.state.state { min-height: calc(100dvh - var(--ds-nav-h)); display: grid; place-items: center; padding: 48px var(--ds-gutter); }
 .stateCard { max-width: 560px; text-align: center; }
 .stateEyebrow { margin: 0 0 14px; font: 700 12px/1 var(--ds-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ds-blue); }
 .stateCard h1 { margin: 0; font-size: clamp(40px, 6vw, 64px); font-weight: 850; font-stretch: 88%; letter-spacing: -0.04em; line-height: 0.98; }
