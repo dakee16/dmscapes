@@ -9,6 +9,7 @@ import Modal, { ModalClose } from "@/components/site/Modal";
 import { ArrowRight, Check } from "@/components/ds/Icons";
 import { SwapIcon } from "@/components/studio-ui/icons";
 import PlanSketch from "./PlanSketch";
+import { splitAxis } from "./split";
 import { applySplit, type SplitMode } from "./split";
 import s from "./MyRoom.module.css";
 
@@ -33,6 +34,8 @@ export default function SetupDialog({ userId, options, initial, onClose }: { use
   const design = options.find(o => o.key === pick);
   const seats = WORKSPACE_MEMBER_LIMIT - 1;
   const emails = rows.filter(r => r.email.trim());
+  const across = design ? splitAxis(design.furniture, design.lengthFt, design.widthFt) === "y" : false;
+  const [first, second] = across ? ["top", "bottom"] : ["left", "right"];
 
   async function finish() {
     if (!design) return;
@@ -95,9 +98,9 @@ export default function SetupDialog({ userId, options, initial, onClose }: { use
               <div className={s.splitPreview}><PlanSketch lengthFt={design.lengthFt} widthFt={design.widthFt} furniture={design.furniture} outline={design.outline} split={split} mineLeft={mineLeft} maxWidth={400} maxHeight={280}
                 label={split === "middle" ? "Preview: the room split down the middle" : split === "beds" ? "Preview: each bed side is private, the middle strip is shared" : "Preview: the whole room starts shared"} /></div>
               {split !== "none" && <div className={s.sides}>
-                <span data-side={mineLeft ? "me" : "them"}>{mineLeft ? <><i data-c="me" />You, left</> : <><i data-c="them" />Roommate, left</>}</span>
+                <span data-side={mineLeft ? "me" : "them"}>{mineLeft ? <><i data-c="me" />You, {first}</> : <><i data-c="them" />Roommate, {first}</>}</span>
                 <button type="button" aria-label="Swap sides" onClick={() => setMineLeft(v => !v)}><SwapIcon size={16} /></button>
-                <span data-side={mineLeft ? "them" : "me"}>{mineLeft ? <><i data-c="them" />Roommate, right</> : <><i data-c="me" />You, right</>}</span>
+                <span data-side={mineLeft ? "them" : "me"}>{mineLeft ? <><i data-c="them" />Roommate, {second}</> : <><i data-c="me" />You, {second}</>}</span>
               </div>}
             </div>
           </div>

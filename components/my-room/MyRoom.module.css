@@ -176,7 +176,7 @@
 .splits span { font-size: 14px; line-height: 1.45; color: var(--ds-muted); }
 .splitPreview { display: flex; justify-content: center; padding: 16px; border-radius: 16px; background-color: var(--ds-plan); background-image: linear-gradient(rgba(36, 73, 255, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(36, 73, 255, 0.07) 1px, transparent 1px); background-size: 14px 14px; }
 .sides { display: grid; grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr); gap: 8px; align-items: center; margin-top: 14px; }
-.sides > span { display: flex; align-items: center; gap: 8px; height: 46px; padding: 0 12px; border-radius: 12px; background: #ebeffe; font-size: 14px; font-weight: 800; }
+.sides > span { display: flex; align-items: center; gap: 6px; height: 46px; padding: 0 10px; border-radius: 12px; background: #ebeffe; font-size: 13px; font-weight: 800; white-space: nowrap; }
 .sides > span[data-side="them"] { background: #fceaf2; }
 .sides i { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--ds-blue); }
 .sides i[data-c="them"] { background: transparent; border: 2px dashed var(--ds-magenta); box-sizing: border-box; }
