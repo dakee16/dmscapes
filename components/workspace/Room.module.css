@@ -418,7 +418,7 @@
 .versionForm > div { display: flex; gap: 8px; }
 .versionForm input { flex: 1; min-width: 0; height: 44px; padding: 0 14px; border: 1.5px solid rgba(22, 22, 29, 0.2); border-radius: 12px; background: #fff; color: var(--ds-ink); font: 450 16px/1 var(--ds-sans); }
 .versionList { margin: 14px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
-.versionList button { width: 100%; display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 10px; align-items: center; min-height: 54px; padding: 6px 10px; border: 0; border-radius: 12px; background: transparent; text-align: left; cursor: pointer; }
+.versionList button, .versionRow { width: 100%; display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: 10px; align-items: center; min-height: 54px; padding: 6px 10px; border: 0; border-radius: 12px; background: transparent; text-align: left; cursor: pointer; }
 .versionList button:hover { background: #f4f3ee; }
 .versionList button[aria-pressed="true"] { background: #eef1fd; }
 .versionNum { font: 700 11px/1 var(--ds-mono); color: var(--ds-caption); }

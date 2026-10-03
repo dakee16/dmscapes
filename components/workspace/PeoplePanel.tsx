@@ -77,11 +77,11 @@ const PeoplePanel = forwardRef<HTMLInputElement, Props>(function PeoplePanel({ d
         <div><input id="room-version-name" required maxLength={80} value={versionName} onChange={e => setVersionName(e.target.value)} placeholder="The layout we both love" /><button type="submit" className={s.ghostBtn} disabled={busy || !versionName.trim()}>Save</button></div>
       </form>}
       <ol className={s.versionList}>
-        {detail.versions.map(v => <li key={v.id}><button type="button" aria-pressed={selected === v.id} onClick={() => setSelected(selected === v.id ? null : v.id)}>
+        {detail.versions.map(v => { const row = <>
           <span className={s.versionNum}>v{v.revision}</span>
           <span className={s.versionWhat}>{v.name}{isCurrent(v) && v === current && <span className={s.currentTag}>Current</span>}</span>
           <time dateTime={v.created_at} title={new Date(v.created_at).toLocaleString()}>{ago(v.created_at)}</time>
-        </button></li>)}
+        </>; return <li key={v.id}>{detail.canEdit ? <button type="button" aria-pressed={selected === v.id} onClick={() => setSelected(selected === v.id ? null : v.id)}>{row}</button> : <div className={s.versionRow}>{row}</div>}</li>; })}
         {!detail.versions.length && <li className={s.columnEmpty}>Versions appear here as the room changes.</li>}
       </ol>
       <div className={s.versionFoot}>
