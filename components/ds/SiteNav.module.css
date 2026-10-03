@@ -9,28 +9,18 @@
   height: var(--ds-nav-h);
   background: transparent;
   color: var(--ds-ink);
-  transition: background-color 0.3s var(--ds-ease), box-shadow 0.3s var(--ds-ease), backdrop-filter 0.3s;
+  transition: background-color 0.3s var(--ds-ease), box-shadow 0.3s var(--ds-ease);
 }
 .header[data-overlay="true"] {
   margin-bottom: calc(var(--ds-nav-h) * -1);
 }
-.header[data-overlay="false"] {
-  background: rgba(244, 243, 238, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-.header[data-scrolled="true"] {
-  background: rgba(244, 243, 238, 0.9);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(22, 22, 29, 0.1);
-}
-.header[data-tone="dark"] { color: var(--ds-paper); }
-.header[data-tone="dark"][data-overlay="false"],
-.header[data-tone="dark"][data-scrolled="true"] {
-  background: rgba(10, 16, 44, 0.88);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-}
+/* Solid, never see-through: the ground it sits on (--nav-bg, set by pages
+   whose hero carries on under it), paper otherwise, night on dark pages. */
+.header[data-overlay="false"],
+.header[data-scrolled="true"] { background: var(--nav-bg, var(--ds-paper)); }
+.header[data-scrolled="true"] { box-shadow: 0 1px 0 var(--ds-line); }
+.header[data-tone="dark"] { color: var(--ds-paper); --nav-bg: var(--ds-night); }
+.header[data-tone="dark"][data-scrolled="true"] { box-shadow: 0 1px 0 rgba(244, 243, 238, 0.14); }
 
 .bar {
   position: relative;
@@ -427,6 +417,10 @@
   .bar { gap: 8px; }
   .actions { gap: 6px; }
   .actions .cta { padding: 0 14px; }
+  /* The PRO tag makes the wordmark the widest it gets: compact it so the
+     avatar, CTA and menu still fit inside the gutter. */
+  .bar :global(.ds-wordmark:has(.ds-wordmark__pro) .ds-wordmark__type) { font-size: 21px; }
+  .bar :global(.ds-wordmark__pro) { padding: 2px 5px; font-size: 8.5px; }
 }
 @media (max-width: 380px) {
   .bar :global(.ds-wordmark__type) { font-size: 21px; }

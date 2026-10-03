@@ -92,10 +92,13 @@ function PlanSketch() {
 export default function Nav({
   overlay = false,
   tone = "light",
+  bg,
 }: {
   /** Float over the page's first section (homepage hero) until scrolled. */
   overlay?: boolean;
   tone?: "light" | "dark";
+  /** Solid background once scrolled; defaults to paper (night when dark). */
+  bg?: string;
 }) {
   const pathname = usePathname();
   const root = useRef<HTMLElement>(null);
@@ -203,6 +206,7 @@ export default function Nav({
       data-overlay={overlay}
       data-tone={tone}
       data-scrolled={scrolled || mobileOpen}
+      style={bg ? ({ "--nav-bg": bg } as CSSProperties) : undefined}
     >
       <nav className={s.bar} aria-label="Main navigation">
         <Wordmark tone={tone} />

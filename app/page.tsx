@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <div id="top" className="ds">
       <JsonLd data={[organizationJsonLd(), webSiteJsonLd(), softwareApplicationJsonLd()]} />
-      <Nav overlay />
+      <Nav overlay bg="var(--ds-sky)" />
       <main id="page-content" tabIndex={-1}>
         <HomeHero schoolCount={SCHOOL_COUNT} hallCount={HALL_COUNT} />
         <TapeBand layoutCount={LAYOUT_COUNT} />
