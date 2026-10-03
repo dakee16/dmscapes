@@ -36,6 +36,8 @@ Every page keeps its URL, metadata, canonical, OG image and JSON-LD. Legal text 
 
 Supabase auth (Google, email, sign-up consent, reset, `next=`), Stripe (Plus and Pro from /pricing and from the upgrade sheet, recharge, Flex), saving and generation through the new budget step, workspace create/share/invite/join/comments/versions/restore, LiveKit room call, Resend emails, PostHog funnel incl. `budget_step_viewed`, Amazon tag on every product link. None of these could run in the redesign sandbox (no env), so screens were checked with mocked APIs and test-time patches only.
 
+Local browser QA: open the dev server on `localhost`, not `127.0.0.1`. Next blocks its dev resources for other hosts, so on `127.0.0.1` pages never hydrate (the `scripts/check-*.cjs` defaults point there; pass their URL env var). Signed-in states can be faked in dev with `sessionStorage["dormscape-dev-auth"]` (see `lib/auth-context.tsx`).
+
 ## Follow-ups that need data or schema changes
 
 1. **Version author and summary** (approved decision): `workspace_versions` has neither. Proposed migration `docs/migrations/20261003_workspace_version_authors.sql` (NOT applied; show the owner first). It also needs the one-line RPC change and GET route change described in its comments.
