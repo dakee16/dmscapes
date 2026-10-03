@@ -4,6 +4,7 @@ import Modal from "@/components/site/Modal";
 
 import { useEffect, useRef, useState } from "react";
 import type { Product, ProductCategory } from "@/lib/types";
+import { getBrowserClient } from "@/lib/supabase-browser";
 import type { ProductLookupResponse } from "@/app/api/product-lookup/route";
 import { AlertIcon, CloseIcon } from "@/components/studio-ui/icons";
 import d from "./Dialog.module.css";
@@ -44,9 +45,10 @@ export default function AddOwnItemModal({
     setLoading(true);
     setError(null);
     try {
+      const token = (await getBrowserClient()?.auth.getSession())?.data.session?.access_token;
       const res = await fetch("/api/product-lookup", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
         body: JSON.stringify({ url: u }),
       });
       const data = (await res.json().catch(() => ({}))) as ProductLookupResponse;
