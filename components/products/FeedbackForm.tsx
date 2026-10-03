@@ -5,8 +5,18 @@ import { track, sessionId } from "@/lib/analytics";
 import { SURVEY_ID_KEY } from "@/lib/purchase-intent";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import type { FeedbackRequest } from "@/lib/api-types";
+import { Check } from "@/components/ds/Icons";
+import css from "@/components/site/Feedback.module.css";
 
 const STARS = [1, 2, 3, 4, 5] as const;
+
+function Star() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2.5l2.94 5.96 6.58.96-4.76 4.64 1.12 6.55L12 17.52l-5.88 3.09 1.12-6.55L2.48 9.42l6.58-.96z" />
+    </svg>
+  );
+}
 
 /**
  * The shared feedback UI, star rating (required) + optional write-up, used
@@ -80,42 +90,23 @@ export default function FeedbackForm({
 
   if (submitted) {
     return (
-      <div className="snap-in flex items-start gap-3" role="status">
-        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-cobalt/10 text-cobalt">
-          <svg
-            viewBox="0 0 24 24"
-            className="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            aria-hidden="true"
-          >
-            <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </span>
+      <div className={css.done} role="status">
+        <span className={css.doneMark} aria-hidden="true"><Check size={22} /></span>
         <div>
-          <p className="font-display text-lg font-bold tracking-tight">
-            Thanks for the feedback.
-          </p>
-          <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-            It goes straight into making the planner better.
-          </p>
+          <p className={css.doneTitle}>Thanks for the feedback.</p>
+          <p className={css.doneText}>It goes straight into making the planner better.</p>
         </div>
       </div>
     );
   }
 
   return (
-    <form className="dm-feedback-form" onSubmit={handleSubmit} noValidate>
+    <form className={css.form} onSubmit={handleSubmit} noValidate>
       {/* Headline is optional, the footer modal already titles itself "Feedback". */}
-      {headline && (
-        <p className="font-display text-lg font-bold tracking-tight">{headline}</p>
-      )}
-      <p className={`text-sm leading-relaxed text-ink-soft ${headline ? "mt-1" : ""}`}>
-        {subhead}
-      </p>
+      {headline && <p className={css.headline}>{headline}</p>}
+      <p className={css.subhead}>{subhead}</p>
       <div
-        className="mt-4 flex items-center gap-1"
+        className={css.stars}
         role="radiogroup"
         aria-label="Rate Dormscape from 1 to 5 stars"
         onMouseLeave={() => setHovered(0)}
@@ -143,16 +134,13 @@ export default function FeedbackForm({
               setRating(next);
               event.currentTarget.parentElement?.querySelector<HTMLButtonElement>(`button[aria-label="${next} star${next > 1 ? "s" : ""}"]`)?.focus();
             }}
-            className={`cursor-pointer p-0.5 text-3xl leading-none transition-colors ${
-              n <= shown ? "text-highlight" : "text-ink/15 hover:text-ink/30"
-            }`}
+            className={css.star}
+            data-on={n <= shown}
           >
-            ★
+            <Star />
           </button>
         ))}
-        {rating > 0 && (
-          <span className="ml-2 font-mono text-xs text-ink-soft">{rating}/5</span>
-        )}
+        {rating > 0 && <span className={css.score}>{rating}/5</span>}
       </div>
       <textarea
         aria-label="Your feedback (optional)"
@@ -160,17 +148,18 @@ export default function FeedbackForm({
         onChange={(e) => setText(e.target.value)}
         maxLength={2000}
         placeholder="What worked? What was clunky? (optional)"
-        className="mt-4 min-h-24 w-full resize-y rounded-xl border border-ink/15 bg-white px-4 py-3 text-sm leading-relaxed text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
+        className={`ds-input ${css.text}`}
       />
-      {error && <p className="mt-3 text-sm text-[#c2321e]" role="alert">{error}</p>}
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
-        <p className="text-xs text-ink-soft" aria-live="polite">
+      {error && <p className={css.error} role="alert">{error}</p>}
+      <div className={css.foot}>
+        <p className={css.hint} aria-live="polite">
           {rating < 1 ? "Pick a star rating to submit." : " "}
         </p>
         <button
           type="submit"
           disabled={rating < 1 || busy}
-          className="h-11 cursor-pointer rounded-xl bg-cobalt px-6 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:bg-ink/15 disabled:text-ink-soft"
+          aria-busy={busy || undefined}
+          className={`ds-btn ds-btn--ink-yellow ds-btn--sm ${css.submit}`}
         >
           {busy ? "Sending…" : "Submit feedback"}
         </button>

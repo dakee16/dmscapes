@@ -69,10 +69,20 @@
 /* 16px keeps iOS from zooming into fields */
 :where(.ds-dialog) :where(input, textarea, select) { min-width: 0; font-size: 16px; }
 
-/* Kit buttons stay pills inside any dialog (a legacy rule squares off every
-   button under [role="dialog"]). */
+/* Legacy app/experience.css still styles anything under [role="dialog"]: h2
+   in the old display face, 4px fields, 3px buttons. Answer those at the same
+   specificity (this file loads later), touching only what they touch, so a
+   dialog's own module classes keep working as before. */
+.ds-dialog h2 {
+  font-family: var(--ds-sans);
+  font-weight: 850;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
 .ds-dialog .ds-btn,
 [role="dialog"] .ds-btn { border-radius: 999px; }
+.ds-dialog .ds-input,
+[role="dialog"] .ds-input { border-radius: 14px; }
 
 /* Close button: <ModalClose /> */
 .ds-dialog-close,

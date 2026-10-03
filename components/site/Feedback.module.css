@@ -1,0 +1,196 @@
+/* Feedback: the footer/nav dialog (components/site/FeedbackLink) and the shared
+   rating form (components/products/FeedbackForm), which also sits in a card on
+   /thank-you. */
+
+/* ---------- Dialog ---------- */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  box-sizing: border-box;
+  padding: clamp(24px, 4vw, 36px);
+  background: var(--ds-paper);
+  isolation: isolate;
+}
+/* The plan-paper grid the site is drawn on, fading out under the title */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 190px;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(36, 73, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 73, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.4) 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.4) 55%, transparent 100%);
+  pointer-events: none;
+}
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.eyebrow {
+  margin: 0;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ds-blue);
+}
+.card .title {
+  margin: 12px 0 0;
+  font-size: clamp(32px, 4vw, 42px);
+  line-height: 1;
+}
+.card .title em { font-size: 1.06em; }
+.close { margin: -6px -8px 0 0; }
+.body { margin-top: 14px; }
+
+/* The footer trigger inherits the footer's link styles */
+.trigger { cursor: pointer; }
+
+/* ---------- Form ---------- */
+.form { font-family: var(--ds-sans); color: var(--ds-ink); }
+.headline {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 850;
+  font-stretch: 90%;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.subhead {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ds-muted);
+}
+.headline + .subhead { margin-top: 6px; }
+
+.stars {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  margin: 18px 0 0 -6px;
+}
+.form .star {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: rgba(22, 22, 29, 0.28);
+  cursor: pointer;
+  transition: transform 0.25s var(--ds-ease-back), color 0.15s;
+}
+.star svg { width: 34px; height: 34px; overflow: visible; }
+.star svg path {
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  transition: fill 0.15s;
+}
+.star:hover { transform: scale(1.08); color: var(--ds-ink); }
+.star[data-on="true"] { color: var(--ds-ink); }
+.star[data-on="true"] svg path { fill: var(--ds-yellow); }
+.form .star:focus-visible {
+  outline: 3px solid var(--ds-blue);
+  outline-offset: -2px;
+}
+.score {
+  margin-left: 10px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.form .text {
+  display: block;
+  margin-top: 14px;
+  min-height: 128px;
+  font-size: 16px;
+}
+.error {
+  margin: 12px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ds-red);
+}
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
+  margin-top: 16px;
+}
+.hint {
+  margin: 0;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+.form .submit:disabled {
+  background: rgba(22, 22, 29, 0.1);
+  color: var(--ds-caption);
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+.form .submit[aria-busy="true"] { cursor: wait; }
+
+.done {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: var(--ds-sans);
+  animation: doneIn 0.4s var(--ds-ease-back) both;
+}
+.doneMark {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ds-yellow);
+  color: var(--ds-ink);
+}
+.doneTitle {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 850;
+  font-stretch: 90%;
+  letter-spacing: -0.02em;
+}
+.doneText {
+  margin: 4px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ds-muted);
+}
+@keyframes doneIn { from { opacity: 0; transform: scale(0.96); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .done { animation: none; }
+  .star, .star:hover { transition: none; transform: none; }
+}
+:global(.dm-app[data-motion="paused"]) .done { animation: none; }

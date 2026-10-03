@@ -1,0 +1,72 @@
+/* First-visit cookie note (components/site/CookieConsent): a small paper card
+   with a strip of tape along its top edge. It is in the server HTML and an
+   inline script un-hides it before hydration, so it paints with the page
+   instead of arriving late (it was the phone LCP element when it mounted after
+   hydration). It only ever moves, never fades in. */
+
+.banner {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 70;
+  width: min(440px, calc(100vw - 32px));
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 18px 18px 16px;
+  border-radius: 18px;
+  background: var(--ds-paper);
+  color: var(--ds-ink);
+  font-family: var(--ds-sans);
+  box-shadow:
+    0 0 0 1px rgba(22, 22, 29, 0.1),
+    0 22px 50px -20px rgba(10, 16, 44, 0.45);
+  animation: rise 0.5s var(--ds-ease) both;
+}
+.banner[hidden] { display: none; }
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 6px;
+  background-color: var(--ds-tape);
+  background-image: repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.55) 0 1px, transparent 1px 8px);
+}
+@keyframes rise { from { transform: translate3d(0, 16px, 0); } }
+
+.text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ds-body);
+}
+.link {
+  font-weight: 700;
+  color: var(--ds-ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+.link:hover { color: var(--ds-blue); }
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+.banner .btn { min-height: 40px; padding: 0 18px; font-size: 14px; }
+.banner :focus-visible { outline: 3px solid var(--ds-blue); outline-offset: 3px; }
+
+@media (max-width: 560px) {
+  .banner {
+    left: 12px;
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: auto;
+    padding: 16px 14px 14px;
+  }
+  .text { font-size: 13px; }
+  .actions { margin-top: 10px; }
+  .banner .btn { flex: 1; min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) { .banner { animation: none; } }
+:global(.dm-app[data-motion="paused"]) .banner { animation: none; }

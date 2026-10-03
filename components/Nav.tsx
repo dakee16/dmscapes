@@ -255,6 +255,14 @@ export default function Nav({
         </div>
       </div>
     </header>
-    {feedback && <FeedbackDialog onClose={() => setFeedback(false)} />}
+    {feedback && <FeedbackDialog onClose={() => {
+      setFeedback(false);
+      // The Feedback item lived in a menu that has since closed: hand focus back
+      // to whichever menu trigger is on screen.
+      requestAnimationFrame(() => {
+        const triggers = root.current?.querySelectorAll<HTMLElement>('[data-more], [aria-controls="site-navigation"]');
+        Array.from(triggers ?? []).find((el) => el.getClientRects().length > 0)?.focus();
+      });
+    }} />}
   </>;
 }
