@@ -222,8 +222,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   // Konva draws to <canvas>, so it needs the *real* font family next/font
   // generated (a hashed name), not the human name, otherwise it silently
   // falls back to a system font and the labels look off. We read it from the
-  // CSS variable the layout sets (the same --font-plex-mono the static share
-  // view uses for furniture labels) and force a redraw once webfonts finish.
+  // CSS variables the layout sets (--font-martian / --font-archivo) and force a redraw once webfonts finish.
   const [labelFont, setLabelFont] = useState("ui-monospace, monospace");
   const [sansFont, setSansFont] = useState("Arial, sans-serif");
   const [itemMenu, setItemMenu] = useState(false);

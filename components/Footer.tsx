@@ -11,7 +11,8 @@ const COLUMNS: {
   {
     heading: "Product",
     links: [
-      { label: "My rooms", href: "/rooms" },
+      { label: "My designs", href: "/rooms" },
+      { label: "My Room (Pro)", href: "/my-room" },
       { label: "How it works", href: "/#how-it-works", anchor: true },
       { label: "Vibes & styles", href: "/#vibes", anchor: true },
       { label: "Colleges", href: "/colleges" },

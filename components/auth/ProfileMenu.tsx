@@ -187,7 +187,7 @@ export default function ProfileMenu({
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
                 <path d="M6 4h12a1 1 0 0 1 1 1v14l-7-4-7 4V5a1 1 0 0 1 1-1z" strokeLinejoin="round" />
               </svg>
-              My rooms
+              My designs
             </Link>
             <Link href="/account/billing" role="menuitem" onClick={() => setOpen(false)} className={css.item}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">

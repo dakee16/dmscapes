@@ -7,7 +7,7 @@ import PlannerSteps from "@/components/planner/PlannerSteps";
 import { useAuth } from "@/lib/auth-context";
 import css from "./Shell.module.css";
 
-/** The planner's own app bar: wordmark, the step tape, My rooms and the profile menu. */
+/** The planner's own app bar: wordmark, the step tape, My designs and the profile menu. */
 export default function PlannerHeader() {
   const { user } = useAuth();
   return (
@@ -17,7 +17,7 @@ export default function PlannerHeader() {
       <div className={css.actions}>
         {user && (
           <Link href="/rooms" className={css.rooms}>
-            My rooms
+            My designs
           </Link>
         )}
         <div className={css.profile}>

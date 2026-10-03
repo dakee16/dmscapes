@@ -37,43 +37,6 @@ const martian = localFont({
   display: "swap",
 });
 
-const bricolage = localFont({
-  src: "../public/experience/fonts/bricolage.woff2",
-  variable: "--font-bricolage",
-  weight: "200 800",
-  display: "swap",
-  preload: false,
-});
-const instrument = localFont({
-  src: "../public/experience/fonts/instrument-sans.woff2",
-  variable: "--font-instrument",
-  weight: "400 700",
-  display: "swap",
-  preload: false,
-});
-const plexMono = localFont({
-  src: "../public/experience/fonts/plex-mono.woff2",
-  variable: "--font-plex-mono",
-  weight: "400",
-  display: "swap",
-  preload: false,
-});
-const syne = localFont({
-  src: "../public/experience/fonts/syne.woff2",
-  variable: "--font-syne",
-  weight: "400 800",
-  display: "swap",
-  preload: false,
-});
-const serif = localFont({
-  src: "../public/experience/fonts/instrument-serif-italic.woff2",
-  variable: "--font-serif",
-  style: "italic",
-  weight: "400",
-  display: "swap",
-  preload: false,
-});
-
 const DESCRIPTION =
   "Plan and furnish your college room with a layout and shoppable Amazon list. Save your ideas in My rooms and coordinate move-in with roommates.";
 
@@ -116,7 +79,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${archivo.variable} ${fraunces.variable} ${martian.variable} ${bricolage.variable} ${instrument.variable} ${plexMono.variable} ${syne.variable} ${serif.variable}`}
+      className={`${archivo.variable} ${fraunces.variable} ${martian.variable}`}
     >
       <body className="min-h-screen antialiased">
         <MotionProvider>

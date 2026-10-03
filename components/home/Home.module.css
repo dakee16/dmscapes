@@ -28,6 +28,8 @@
 /* ---------- 01 · Hero ---------- */
 .heroTrack {
   position: relative;
+  /* clip (not hidden) keeps the sticky panel working while the art's zoom stays inside */
+  overflow-x: clip;
   background: #dce1f5;
 }
 .hero {

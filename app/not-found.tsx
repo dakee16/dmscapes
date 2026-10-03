@@ -45,7 +45,7 @@ export default function NotFound() {
             <p className={css.more} data-reveal="load" style={{ "--i": 5 } as React.CSSProperties}>
               <Link href="/colleges">Find your campus</Link>
               <span className={css.sep} aria-hidden="true">·</span>
-              <Link href="/rooms">My rooms</Link>
+              <Link href="/rooms">My designs</Link>
               <span className={css.sep} aria-hidden="true">·</span>
               <Link href="/blog">Blog</Link>
               <span className={css.sep} aria-hidden="true">·</span>
