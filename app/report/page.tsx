@@ -5,7 +5,7 @@ import ReportForm from "@/components/site/ReportForm";
 import { reportPath } from "@/lib/reports";
 import css from "@/components/report/Report.module.css";
 
-export const metadata: Metadata = { description: "Report a bug, shopping issue or safety concern to the Dormscape team.", robots: { index: false } };
+export const metadata: Metadata = { title: "Report a Problem", description: "Report a bug, shopping issue or safety concern to the Dormscape team.", robots: { index: false } };
 export default async function ReportPage({ searchParams }: { searchParams: Promise<{ from?: string }> }) {
   const params = await searchParams;
   return (

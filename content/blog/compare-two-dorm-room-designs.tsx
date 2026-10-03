@@ -139,7 +139,7 @@ const post: BlogPost = {
   title: "How to compare two dorm room designs side by side",
   metaTitle: "How to Compare Two Dorm Room Designs Side by Side",
   description:
-    "A practical method for choosing between two dorm room designs: compare cost, fit, anchor pieces, and daily use side by side, then use Dormscape's comparison view to decide.",
+    "How to choose between two dorm room designs: compare cost, fit, anchor pieces, and daily use side by side, then decide with Dormscape's comparison view.",
   excerpt:
     "Torn between two styles or budgets? A simple side-by-side method for comparing cost, fit, and daily use, and how to line two saved rooms up in one view.",
   date: "2026-07-28",

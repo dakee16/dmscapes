@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import PageShell from "@/components/ds/PageShell";
 import PageHero from "@/components/ds/PageHero";
@@ -6,10 +7,12 @@ import { ArrowRight } from "@/components/ds/Icons";
 import PostcardForm from "@/components/contact/PostcardForm";
 import css from "@/components/contact/Contact.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Us",
   description:
     "Questions, feedback, a school we should add, or a bug to report? Send the Dormscape team a message.",
-};
+  path: "/contact",
+});
 
 const QUICK = [
   { label: "Report a correction", href: "/methodology#corrections" },

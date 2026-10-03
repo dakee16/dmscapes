@@ -5,6 +5,7 @@ import type { SaveRoomRequest } from "@/lib/api-types";
 import { getServiceClient } from "@/lib/supabase-server";
 
 export const metadata: Metadata = {
+  title: "A Room Planned With Dormscape",
   description: "A dorm room designed with Dormscape, the free AI dorm room planner.",
   robots: { index: false }, // share pages shouldn't compete with the planner in search
 };

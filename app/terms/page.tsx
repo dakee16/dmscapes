@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import LegalLayout from "@/components/legal/LegalLayout";
 import LegalSection from "@/components/legal/LegalSection";
@@ -13,10 +14,12 @@ import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, PLUS_PRICE
 // are navigation/structure only. Credit terms reflect the current offer.
 // Section headings (and the contents list) live in components/legal/docs.ts.
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  title: "Terms of Service",
   description:
     "Dormscape's terms of service: what the free dorm planner does, what it doesn't guarantee, and how the Amazon affiliate links work.",
-};
+  path: "/terms",
+});
 
 // Plain-language recap. Accurate restatement of the sections below; it sits
 // alongside the full text and does not replace it.

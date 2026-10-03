@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import LegalLayout from "@/components/legal/LegalLayout";
 import LegalSection from "@/components/legal/LegalSection";
@@ -11,10 +12,12 @@ import LegalSection from "@/components/legal/LegalSection";
 //
 // Section headings (and the contents list) live in components/legal/docs.ts.
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  title: "Cookie Policy",
   description:
     "Dormscape's cookie policy: sign-in, room drafts, workspace recovery, live collaboration, voice connections, analytics, and browser storage choices.",
-};
+  path: "/cookies",
+});
 
 export default function CookiesPage() {
   return (

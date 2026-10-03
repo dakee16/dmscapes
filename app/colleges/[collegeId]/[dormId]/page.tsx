@@ -17,7 +17,7 @@ import { formatRoomType } from "@/lib/format";
 import { beddingAdvisory } from "@/lib/bedding";
 import { bedName, fitRoom, ft, hasDims, isPublished, roomName, sqFtOf, type FittedRoom } from "@/lib/room-preview";
 import { footprint } from "@/components/canvas/geometry";
-import { pageMetadata, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { pageMetadata, fitDescription, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 import type { RoomSummary } from "@/lib/types";
 import css from "@/components/hall/Hall.module.css";
 
@@ -46,11 +46,17 @@ export async function generateMetadata(props: {
     .filter(Boolean)
     .slice(0, 2)
     .join(", ");
+  const where = shortName(school);
+  const count = `${types} room type${types === 1 ? "" : "s"}${sizes ? ` (${sizes})` : ""}`;
+  const extras = dorm.rooms.some((r) => r.closet) ? "bed and closet sizes" : "bed sizes";
   return pageMetadata({
-    title: `${dorm.name} Room Dimensions`,
-    description: `${dorm.name} at ${school.name}: ${types} room type${
-      types === 1 ? "" : "s"
-    }${sizes ? ` (${sizes})` : ""}, bed sizes, closet sizes, and a to-scale layout you can plan for free.`,
+    title: `${dorm.name} Room Dimensions, ${where}`,
+    description: fitDescription(
+      `${dorm.name} at ${school.name}: ${count}, ${extras}, and a to-scale layout you can plan for free.`,
+      `${dorm.name} at ${where}: ${count}, ${extras}, and a to-scale layout you can plan for free.`,
+      `${dorm.name} at ${where}: ${count} and a to-scale layout you can plan for free.`,
+      `${dorm.name} at ${where}: ${types} room type${types === 1 ? "" : "s"}, drawn to scale. Plan your room for free.`,
+    ),
     path: `/colleges/${school.id}/${dorm.id}`,
     ogTitle: `${dorm.name} dorm room dimensions and layouts`,
     ...(measured === 0 ? { noIndex: true } : {}),

@@ -38,6 +38,7 @@ const DESCRIPTION =
   `Try Dormscape free. Plus includes ${PLUS_INITIAL_CREDITS} plan credits for $${PLUS_PRICE_USD.toFixed(2)}. Pro includes ${PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D tools for $${PRO_PRICE_USD.toFixed(2)}. One-time purchases.`;
 
 export const metadata: Metadata = {
+  title: "Pricing: Free, Plus and Pro",
   description: DESCRIPTION,
   alternates: { canonical: "/pricing" },
   openGraph: {

@@ -6,6 +6,7 @@ import ThankYouView from "./ThankYouView";
 import css from "@/components/report/ThankYou.module.css";
 
 export const metadata: Metadata = {
+  title: "Thank You",
   description: "Your dorm room is handled. Thanks for planning with Dormscape.",
   robots: { index: false }, // a post-purchase moment, not a landing page
 };

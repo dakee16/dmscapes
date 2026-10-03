@@ -29,15 +29,30 @@ const OG_IMAGE = {
 };
 
 /**
+ * The first description that fits a search snippet (about 155 characters), or
+ * the last one cut at a word. Templated pages pass a full version first and
+ * shorter fallbacks, so long school and hall names drop detail instead of
+ * being cut off mid-sentence in results.
+ */
+export function fitDescription(...options: string[]): string {
+  const fit = options.find((option) => option.length <= 155);
+  if (fit) return fit;
+  const last = options[options.length - 1];
+  return `${last.slice(0, last.lastIndexOf(" ", 154))}…`;
+}
+
+/**
  * Build a page's Metadata with a canonical URL and matching OG/Twitter cards.
- * `title` supplies the social card title; `ogTitle` can override that form.
- * The browser tab title is inherited from the root layout.
+ * `title` is the page's <title> (the root layout appends "| dormscape";
+ * `absoluteTitle` skips that, for a title that already carries the brand) and
+ * the social card title; `ogTitle` can override the card.
  */
 export function pageMetadata({
   title,
   description,
   path,
   ogTitle,
+  absoluteTitle = false,
   noIndex = false,
   type = "website",
 }: {
@@ -45,12 +60,14 @@ export function pageMetadata({
   description: string;
   path: string;
   ogTitle?: string;
+  absoluteTitle?: boolean;
   /** Utility pages (login, thank-you) that shouldn't compete in the index. */
   noIndex?: boolean;
   type?: "website" | "article";
 }): Metadata {
   const social = ogTitle ?? `${title} | ${SITE_NAME.toLowerCase()}`;
   return {
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
     ...(noIndex ? { robots: { index: false, follow: true } } : {}),

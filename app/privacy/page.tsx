@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import LegalLayout from "@/components/legal/LegalLayout";
 import LegalSection from "@/components/legal/LegalSection";
@@ -11,10 +12,12 @@ import LegalSection from "@/components/legal/LegalSection";
 //
 // Section headings (and the contents list) live in components/legal/docs.ts.
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  title: "Privacy Policy",
   description:
     "Dormscape's privacy policy: account data, room designs, private comments, live collaboration, optional voice chat, and your data choices.",
-};
+  path: "/privacy",
+});
 
 // Plain-language recap. Accurate restatement of the sections below; sits
 // alongside the full text and does not replace it.

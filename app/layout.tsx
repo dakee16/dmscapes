@@ -44,8 +44,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us",
   ),
-  // Every route inherits the same lowercase browser tab title.
-  title: "dormscape",
+  // Pages set their own title ("Elder Hall Room Dimensions, Northwestern");
+  // the lowercase brand rides along so tabs and results still read dormscape.
+  title: { default: "dormscape", template: "%s | dormscape" },
   description: DESCRIPTION,
   openGraph: {
     title: "dormscape: your dorm room, planned before move-in day",

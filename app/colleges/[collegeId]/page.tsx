@@ -15,7 +15,7 @@ import { SCHOOLS, formatDims, getSchool, publishedDimsCount } from "@/lib/school
 import { shortName } from "@/lib/school-names";
 import { isPublished, roomFamily, roomName, sqFtOf, ft } from "@/lib/room-preview";
 import { formatRoomType } from "@/lib/format";
-import { pageMetadata, breadcrumbJsonLd, itemListJsonLd, absoluteUrl } from "@/lib/seo";
+import { pageMetadata, fitDescription, breadcrumbJsonLd, itemListJsonLd, absoluteUrl } from "@/lib/seo";
 import type { RoomSummary, SchoolSummary } from "@/lib/types";
 import css from "@/components/college/College.module.css";
 
@@ -36,9 +36,14 @@ export async function generateMetadata(props: {
   // measurements it doesn't have.
   const dimsClause =
     publishedDimsCount(school) > 0 ? " with real room dimensions" : "";
+  const halls = `${school.dorms.length} residence hall${school.dorms.length === 1 ? "" : "s"}`;
   return pageMetadata({
-    title: `${school.name} Dorm Room Planner`,
-    description: `Plan your ${school.name} dorm room before move-in. ${school.dorms.length} residence halls${dimsClause}, room-by-room layouts, and a shoppable list. Free.`,
+    title: `${school.name} Dorm Room Dimensions`,
+    description: fitDescription(
+      `Plan your ${school.name} dorm room before move-in. ${halls}${dimsClause}, room-by-room layouts, and a shoppable list. Free.`,
+      `Plan your ${shortName(school)} dorm room before move-in. ${halls}${dimsClause}, room-by-room layouts, and a shoppable list. Free.`,
+      `${shortName(school)}: ${halls}${dimsClause}, drawn to scale. Plan your dorm room before move-in, free.`,
+    ),
     path: `/colleges/${school.id}`,
   });
 }

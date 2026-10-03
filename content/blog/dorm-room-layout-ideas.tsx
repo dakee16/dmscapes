@@ -111,7 +111,7 @@ const post: BlogPost = {
   title: "Dorm room layout ideas that actually fit",
   metaTitle: "Dorm Room Layout Ideas That Actually Fit",
   description:
-    "Four dorm room layouts that work (opposite walls, parallel beds, lofted, and the L), when to use each, and the clearances that decide whether one fits your room.",
+    "Four dorm room layouts that work (opposite walls, parallel beds, lofted, and the L), when to use each, and the clearances that decide whether one fits.",
   excerpt:
     "There are only a handful of dorm layouts that work. Here they are, what each one trades away, and how to tell which fits your room.",
   date: "2026-08-31",

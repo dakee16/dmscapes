@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import PageShell from "@/components/ds/PageShell";
 import PageHero from "@/components/ds/PageHero";
@@ -9,10 +10,12 @@ import QueuePromo from "@/components/add-school/QueuePromo";
 import measure from "@/content/blog/how-to-measure-your-dorm-room";
 import css from "@/components/add-school/AddSchool.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  title: "Add Your School",
   description:
     "Add your college to the Dormscape dorm room planner. Tell us the building and room size and we'll add it.",
-};
+  path: "/add-school",
+});
 
 export default function AddSchoolPage() {
   return (

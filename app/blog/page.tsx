@@ -12,6 +12,7 @@ const DESCRIPTION =
   "Practical, specific guides to planning a dorm room: how to measure it, what to pack, what it costs, small-room ideas, and how to pick a style.";
 
 export const metadata: Metadata = {
+  title: "Dorm Room Planning Guides",
   description: DESCRIPTION,
   alternates: { canonical: "/blog" },
   openGraph: {

@@ -30,7 +30,8 @@ import {
 
 export const metadata = pageMetadata({
   title: "Dormscape: Free Dorm Room Planner With Real Dorm Dimensions",
-  description: `Plan and furnish your college room with a 2D layout, live 3D, and a shoppable list. Find rooms across ${SCHOOLS.length} schools. Save your ideas and plan move-in together in My rooms.`,
+  absoluteTitle: true,
+  description: `Free dorm room planner with real room dimensions for ${SCHOOLS.length} schools. Lay out your room in 2D or 3D, set a budget and get a shoppable list.`,
   path: "/",
   ogTitle: "dormscape: your dorm room, planned before move-in day",
 });

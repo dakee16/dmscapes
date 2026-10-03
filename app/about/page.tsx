@@ -12,6 +12,7 @@ import { STYLES } from "@/lib/styles";
 import css from "@/components/about/About.module.css";
 
 export const metadata: Metadata = {
+  title: "About the Dorm Room Planner",
   description:
     "Dormscape is a free dorm room planner built on real dorm dimensions from official housing data. See your exact room, set a budget, shop a list that fits.",
   alternates: { canonical: "/about" },

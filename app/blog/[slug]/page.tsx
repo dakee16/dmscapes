@@ -30,6 +30,7 @@ export async function generateMetadata(props: {
   if (!post) return {};
   const url = `/blog/${post.slug}`;
   return {
+    title: post.metaTitle ?? post.title,
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
