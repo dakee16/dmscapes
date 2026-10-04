@@ -13,7 +13,8 @@ import css from "./Home.module.css";
  * 01 · Hero. On desktop the panel pins for one extra screen: the copy drifts
  * up at a third of scroll speed, the room lowers onto its own floor plan
  * (a rendered frame sequence), and the caption naming the real room fades in
- * as it lands (MOTION.md · Hero).
+ * as it lands (MOTION.md · Hero). Phones play the same landing, scrubbed by
+ * the art scrolling into view.
  */
 export default function HomeHero({
   schoolCount,
@@ -33,7 +34,10 @@ export default function HomeHero({
     count: 25,
     url: (i) => `/redesign/seq/hero-${String(i).padStart(2, "0")}.webp`,
     position: [0.5, 0.55],
+    minWidth: 0,
   });
+  const land = (k: number) => seq.draw(k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2);
+  const wide = () => window.innerWidth >= 1024;
 
   useScrub(
     track,
@@ -48,15 +52,25 @@ export default function HomeHero({
       if (art.current) {
         art.current.style.transform = still ? "" : `scale(${(1.03 - easeOutExpo(p) * 0.03).toFixed(4)})`;
       }
+      if (!wide()) return; // phones: the scrub below owns the caption and the frames
       if (caption.current) {
         caption.current.style.opacity = still ? "1" : String(span(p, 0.68, 0.9));
       }
-      if (!still) {
-        const k = span(p, 0.04, 0.72);
-        seq.draw(k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2);
-      }
+      if (!still) land(span(p, 0.04, 0.72));
     },
     { from: [0, 0], to: [1, 1], smooth: 0.5, minWidth: 1024, rest: -1 }
+  );
+
+  // Phones don't pin, so the room lands as the art itself scrolls up: from its
+  // top passing the middle of the screen to its own middle sitting above center.
+  useScrub(
+    art,
+    (p) => {
+      if (wide()) return;
+      if (caption.current) caption.current.style.opacity = String(span(p, 0.68, 0.9));
+      land(span(p, 0.04, 0.9));
+    },
+    { from: [0, 0.55], to: [0.5, 0.42], smooth: 0.5, rest: 1 }
   );
 
   return (
