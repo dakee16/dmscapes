@@ -5,9 +5,9 @@ import { useAuth } from "@/lib/auth-context";
 import { currentSnapshot, workspaceRequest } from "@/lib/workspace-client";
 import { ArrowRight } from "@/components/ds/Icons";
 
-/** "A room worth keeping": opens the current plan as a workspace. Styled by the
- * list's hand-off block it sits in (components/studio-ui/Result.module.css). */
-export default function OpenWorkspaceButton() {
+/** Opens the current plan as a workspace. Sits in the planner header beside
+ * the 2D/3D tabs; the host styles it through `className`. */
+export default function OpenWorkspaceButton({ className }: { className?: string }) {
   const { user } = useAuth(), router = useRouter();
   const [busy, setBusy] = useState(false), [error, setError] = useState("");
   async function open() {
@@ -19,5 +19,6 @@ export default function OpenWorkspaceButton() {
       router.push(`/rooms/${response.id}`);
     } catch (e) { setError((e as Error).message); setBusy(false); }
   }
-  return <div><button type="button" onClick={() => void open()} disabled={busy} style={{ gap: 8 }}>{busy ? "Opening…" : <>Open workspace<ArrowRight size={15} /></>}</button>{error && <p role="alert">{error}</p>}</div>;
+  return <div className={className}><button type="button" onClick={() => void open()} disabled={busy}
+    title="Save this layout and its shopping list in your own workspace. Invite your roommates with Pro.">{busy ? "Opening…" : <>Open workspace<ArrowRight size={15} /></>}</button>{error && <p role="alert">{error}</p>}</div>;
 }

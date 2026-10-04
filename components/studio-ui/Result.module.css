@@ -29,12 +29,3 @@
 }
 .unplaced button:hover { border-color: var(--ds-ink); }
 
-/* Workspace hand-off at the end of the list. */
-.handoff strong { display: block; font-size: 17px; font-weight: 850; letter-spacing: -0.01em; }
-.handoff p { margin: 6px 0 12px; font-size: 13px; line-height: 1.5; color: var(--ds-body); }
-.handoff button {
-  display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px;
-  background: var(--ds-ink); color: var(--ds-yellow); font: 800 14px/1 var(--ds-sans); cursor: pointer;
-}
-.handoff button:disabled { opacity: 0.6; }
-.handoff [role="alert"] { margin: 8px 0 0; font-size: 13px; color: var(--ds-red); }

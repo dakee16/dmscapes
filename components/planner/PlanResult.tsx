@@ -459,13 +459,13 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
         products={allCartProducts} total={total} budget={budget} history={layoutHistory} onReset={handleReset}
         subtitle={[college?.name,dorm?.name,roomTypeLabel(room),dims,room.dimsEstimated?"Estimated room size":null].filter(Boolean).join(" · ")}
         extras={null}
+        headerAction={!workspace?<OpenWorkspaceButton/>:undefined}
         unplaced={unplacedCustomItems.length>0?<div className={r.unplaced}><p>Not on the plan yet</p><div>{unplacedCustomItems.map(cp=><button key={cp.id} type="button" onClick={()=>placeCustomItem(cp.id)}><PlusIcon size={14}/>Place {cp.name}</button>)}</div></div>:null}
         shopping={<ShoppingList total={total} budget={budget} bedSize={room.bedSize}
           available={availableProducts} onAdd={handleAdd}
           buying={buyingProducts} buyingTotal={totalFor(buyingProducts)}
           unplacedIds={unplacedItemIds} onPlace={placeCustomItem}
           ownership={workspace?<ShoppingOwnership products={allCartProducts}/>:undefined}
-          handoff={!workspace?<div className={r.handoff}><strong>A room worth keeping.</strong><p>Save this layout and its shopping list in your own workspace. Invite your roommates with Pro.</p><OpenWorkspaceButton/></div>:undefined}
           extras={regen}/>}
       />
     </BuyGateProvider>

@@ -152,8 +152,6 @@
 .addBtn.addBtn { background: var(--ds-ink); color: var(--ds-yellow); }
 .addBtn.addBtn:hover { background: var(--ds-blue); color: #fff; }
 
-/* ---------- workspace hand-off card ---------- */
-.handoff { margin: 12px 8px 4px; padding: 16px; border-radius: 14px; background: var(--ds-sky); }
 
 /* ---------- footer ---------- */
 .foot {
@@ -273,7 +271,6 @@
   .list[data-sheet="peek"] .extras,
   .list[data-sheet="peek"] .groupHead,
   .list[data-sheet="peek"] .addMore,
-  .list[data-sheet="peek"] .handoff,
   .list[data-sheet="peek"] .foot,
   .list[data-sheet="peek"] .row:not([data-peek]),
   .list[data-sheet="peek"] .row .more,

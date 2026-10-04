@@ -38,7 +38,6 @@ export default function ShoppingList({
   onPlace,
   extras,
   ownership,
-  handoff,
 }: {
   total: number;
   budget: number;
@@ -53,7 +52,6 @@ export default function ShoppingList({
   onPlace: (id: string) => void;
   extras?: ReactNode;
   ownership?: ReactNode;
-  handoff?: ReactNode;
 }) {
   const ui = useStudioUI();
   const entries = useMemo(() => ui?.entries ?? [], [ui?.entries]);
@@ -264,7 +262,6 @@ export default function ShoppingList({
             )
           )}
         </div>
-        {handoff && <div className={s.handoff}>{handoff}</div>}
       </div>
 
       <footer className={s.foot}>

@@ -35,7 +35,9 @@ const CAMERAS:[CameraView,string][]=[["top","Top"],["room","Corner"],["inside","
  * Pro) beside the shopping list, as one object. With `shell` it renders the
  * planner's app bar and the page's <main>.
  */
-export default function PlannerStudio({canvas,get2DPng,shopping,products,total,budget,subtitle,history,onReset,unplaced,shell=false}:{focus2D?:(id:string)=>void;canvas:ReactNode;get2DPng:()=>string|null;shopping:ReactNode;products:Product[];total:number;budget:number;subtitle:string;history:{canUndo:boolean;canRedo:boolean;undo:()=>void;redo:()=>void};onReset:()=>void;extras?:ReactNode;unplaced?:ReactNode;shell?:boolean}){
+export default function PlannerStudio({canvas,get2DPng,shopping,products,total,budget,subtitle,history,onReset,unplaced,headerAction,shell=false}:{focus2D?:(id:string)=>void;canvas:ReactNode;get2DPng:()=>string|null;shopping:ReactNode;products:Product[];total:number;budget:number;subtitle:string;history:{canUndo:boolean;canRedo:boolean;undo:()=>void;redo:()=>void};onReset:()=>void;extras?:ReactNode;unplaced?:ReactNode;
+  /** Shown right after the 2D/3D tabs (the planner's Open workspace). */
+  headerAction?:ReactNode;shell?:boolean}){
   const room=usePlannerStore(st=>st.room)!,items=usePlannerStore(st=>st.furniture)??[];
   const style=usePlannerStore(st=>st.style)??"minimalist",hidden=usePlannerStore(st=>st.hiddenItemIds),excluded=usePlannerStore(st=>st.excluded)??[],locked=usePlannerStore(st=>st.lockedItemIds);
   const college=usePlannerStore(st=>st.college),dorm=usePlannerStore(st=>st.dorm),customVibe=usePlannerStore(st=>st.customVibe),planning=usePlannerStore(st=>st.planning);
@@ -201,6 +203,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         <p className={s.subline}>{subline}</p>
       </div>
       {viewSwitch(s.viewSwitch)}
+      {headerAction&&<div className={s.headerAction}>{headerAction}</div>}
       {view==="3d"&&<span className={s.noCredit}>Switching views uses no credits</span>}
       <div className={s.barEnd}>
         <div className={s.history}>
@@ -214,6 +217,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
     <Body id={shell?"page-content":undefined} tabIndex={shell?-1:undefined} className={s.body}>
       <div className={s.toolCol}>
         {viewSwitch(`${s.viewSwitch} ${s.phoneSwitch}`)}
+        {headerAction&&<div className={`${s.headerAction} ${s.phoneAction}`}>{headerAction}</div>}
         {view==="2d"?<div ref={setToolsHost} className={s.railHost} aria-label="Floor plan tools"/>:
           <nav className={s.phone3dTools} aria-label="3D panels" inert={preview}>
             {([["furnish","Arrange"],["style","Room"],["shop","List"]] as const).map(([key,label])=><button key={key} type="button" aria-pressed={mobileOpen&&activePanel===key} onClick={()=>open(key)}>{label}</button>)}
