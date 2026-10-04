@@ -130,7 +130,7 @@ export default function ShoppingList({
           <button type="button" className={s.name} aria-pressed={chosen}
             aria-label={`${pad2(e.number)}. ${p.name}, ${price(p.price)}${chosen ? ", selected" : ""}`}
             onClick={(ev) => { ev.stopPropagation(); select(e); }}>
-            {p.name}
+            <span>{p.name}</span>
           </button>
           <span className={s.detail}>{unplaced ? "Not on the plan yet" : productDetail(p)}</span>
         </span>
