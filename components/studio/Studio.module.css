@@ -84,6 +84,7 @@
   font-size: 13px; line-height: 1.4; color: var(--ds-red);
 }
 .phoneAction { display: none; }
+.headerAction [data-label="short"] { display: none; }
 .barEnd { margin-left: auto; flex: none; display: flex; align-items: center; gap: 8px; }
 .history { display: flex; gap: 2px; }
 .history button {
@@ -373,16 +374,18 @@
 
   .body { display: flex; flex-direction: column; }
   .toolCol {
-    flex: none; display: flex !important; align-items: center; justify-content: space-between; gap: 8px; height: 52px; padding: 0 8px 0 12px;
+    flex: none; display: flex !important; align-items: center; justify-content: space-between; gap: 10px; height: 52px; padding: 0 6px 0 10px;
     background: rgba(255, 255, 255, 0.92); border-right: 0; border-bottom: 1.5px solid rgba(22, 22, 29, 0.08);
   }
+  /* the More menu drops over the bottom sheet */
+  .toolCol:has([aria-expanded="true"]) { z-index: 55; }
   .phoneSwitch { display: flex; }
   .phoneAction { display: block; margin-right: auto; }
-  .phoneAction button { height: 32px; padding: 0 12px; font-size: 13px; }
+  .phoneAction button { height: 32px; padding: 0 10px; font-size: 13px; }
   .phoneAction svg { display: none; }
   .phoneAction [role="alert"] { left: auto; right: 0; }
-  .phoneSwitch button { height: 32px; padding: 0 12px; font-size: 13px; }
-  .phoneSwitch button:first-child { padding: 0 14px; }
+  .phoneSwitch button { height: 32px; padding: 0 10px; font-size: 13px; }
+  .phoneSwitch button:first-child { padding: 0 12px; }
   .phoneSwitch .proTag { padding: 0; background: none; color: var(--ds-blue); font-size: 8px; }
   .phoneSwitch button[aria-pressed="true"] .proTag { background: none; color: #fff; }
   .railHost { height: auto; min-width: 0; }
@@ -394,6 +397,7 @@
   .phone3dTools button[aria-pressed="true"] { background: var(--ds-ink); color: #fff; }
   .viewport { flex: 1; }
   .app[data-view="2d"] .viewport { margin-bottom: var(--peek); }
+  .app[data-sheet="min"] { --peek: 126px; } /* just the budget bar; the plan gets the room */
   .arrange { display: none; }
 
   .panel {
@@ -424,6 +428,12 @@
   .openingError { bottom: 16px; }
   .geometryModal { padding: 8px; }
   .geometryModal > div { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); }
+}
+
+/* small phones: the short label keeps the tool icons clear of the button */
+@media (max-width: 400px) {
+  .phoneAction [data-label="long"] { display: none; }
+  .phoneAction [data-label="short"] { display: inline; }
 }
 
 @media (prefers-reduced-motion: reduce) {

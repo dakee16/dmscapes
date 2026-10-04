@@ -63,7 +63,7 @@
   .desk, .zoom { display: none !important; }
   .phone { display: inline-flex !important; }
   .phoneFlex { display: flex !important; }
-  .tool { width: 44px; height: 44px; }
+  .tool { width: 40px; height: 44px; }
   .small { height: 44px; border-radius: 12px; }
   .menu { left: auto; right: 0; bottom: auto; top: calc(100% + 8px); width: min(300px, calc(100vw - 24px)); max-height: 60dvh; }
 }

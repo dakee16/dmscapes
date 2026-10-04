@@ -34,9 +34,9 @@ export interface StudioUIValue {
   remove: (entry: ListEntry) => void;
   addOwn: () => void;
   ownLocked: boolean;
-  /** Phone bottom sheet: peeking with the budget, or pulled up to the full list. */
-  sheet: "peek" | "full";
-  setSheet: (sheet: "peek" | "full") => void;
+  /** Phone bottom sheet: just the budget bar, peeking with the first pieces, or pulled up to the full list. */
+  sheet: "min" | "peek" | "full";
+  setSheet: (sheet: "min" | "peek" | "full") => void;
   /** The "Add more" section of the list (pieces not in the cart yet). */
   addMoreOpen: boolean;
   setAddMoreOpen: (open: boolean) => void;

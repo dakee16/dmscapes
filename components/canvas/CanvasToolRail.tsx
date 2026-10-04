@@ -16,7 +16,7 @@ export interface CanvasToolRailProps {
  * The plan's tool rail (Planner.dc.html): select, pan, measurements, add a
  * piece, doors and windows, zoom. On phones it's the row of icons under the
  * app bar. Less-used tools (grid, snap, focus mode, hidden pieces, help,
- * reset) live under More.
+ * reset, and on phones measurements) live under More.
  */
 export default function CanvasToolRail(p: CanvasToolRailProps) {
   const [more, setMore] = useState(false);
@@ -49,7 +49,7 @@ export default function CanvasToolRail(p: CanvasToolRailProps) {
       <div className={s.group}>
         {tool("Select and move", <SelectIcon />, () => p.setPan(false), { pressed: !p.pan, className: s.desk, title: "Select and move (V)" })}
         {tool("Pan the plan", <PanIcon />, () => p.setPan(true), { pressed: p.pan, className: s.desk, title: "Pan (H)" })}
-        {tool("Labels and measurements", <RulerIcon />, p.toggleLabels, { pressed: p.labels, toggle: true })}
+        {tool("Labels and measurements", <RulerIcon />, p.toggleLabels, { pressed: p.labels, toggle: true, className: s.desk })}
         {p.dock.addPiece && tool("Add a piece", <PlusIcon />, p.dock.addPiece)}
         {tool("Doors and windows", <RoomIcon />, p.dock.editOpenings, { className: s.desk, title: "Edit walls, doors and windows" })}
         {tool("Undo", <UndoIcon />, p.undo, { disabled: !p.canUndo, className: planner ? s.phone : "", title: "Undo (Ctrl/⌘ Z)" })}
@@ -72,6 +72,7 @@ export default function CanvasToolRail(p: CanvasToolRailProps) {
                 <button type="button" aria-pressed={!p.pan} onClick={() => p.setPan(false)}><SelectIcon size={16} />Select</button>
                 <button type="button" aria-pressed={p.pan} onClick={() => p.setPan(true)}><PanIcon size={16} />Pan</button>
               </div>
+              <button type="button" className={`${s.item} ${s.phoneFlex}`} aria-pressed={p.labels} onClick={p.toggleLabels}><RulerIcon size={16} />Measurements<span>{p.labels ? "On" : "Off"}</span></button>
               <button type="button" className={s.item} aria-pressed={p.grid} onClick={p.toggleGrid}><GridIcon size={16} />Grid<span>{p.grid ? "On" : "Off"}</span></button>
               <button type="button" className={s.item} aria-pressed={p.snap} onClick={p.toggleSnap} title="Snap to a 6-inch grid. Turn off for 1-inch positioning."><MagnetIcon size={16} />Snap to 6 inches<span>{p.snap ? "On" : "Off"}</span></button>
               <button type="button" className={`${s.item} ${s.phoneFlex}`} onClick={() => { setMore(false); p.dock.editOpenings(); }}><RoomIcon size={16} />Doors &amp; windows</button>

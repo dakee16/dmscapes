@@ -180,7 +180,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   </div>;
 
   const Body=shell?"main":"div";
-  return <div ref={root} className={s.app} data-view={view} data-expanded={expanded||undefined} data-studio-app="" data-testid="planner-studio" onKeyDownCapture={openingKey}
+  return <div ref={root} className={s.app} data-view={view} data-sheet={view==="2d"&&compact?ui?.sheet:undefined} data-expanded={expanded||undefined} data-studio-app="" data-testid="planner-studio" onKeyDownCapture={openingKey}
     onKeyDown={e=>{const target=e.target as HTMLElement;
       if(expanded&&e.key==="Tab"){
         const nodes=Array.from(root.current?.querySelectorAll<HTMLElement>('button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),textarea:not(:disabled),[tabindex="0"]')??[]).filter(n=>n.getClientRects().length>0&&!n.closest('[aria-hidden="true"],[inert]'));
@@ -264,11 +264,13 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
           if(e.key==="Escape"){e.stopPropagation();setMobileOpen(false);}
           if(e.key==="Tab"){const nodes=Array.from(shopPanel.current?.querySelectorAll<HTMLElement>('button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),[tabindex="0"]')??[]).filter(n=>n.getClientRects().length>0);const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
         }}>
-        {view==="2d"&&compact&&ui?.variant==="planner"&&!ui.swapTarget&&<button type="button" className={s.sheetHandle} aria-label={ui.sheet==="full"?"Collapse the shopping list":"Open the full shopping list"} aria-expanded={ui.sheet==="full"}
+        {view==="2d"&&compact&&ui?.variant==="planner"&&!ui.swapTarget&&<button type="button" className={s.sheetHandle} aria-label={ui.sheet==="full"?"Collapse the shopping list":ui.sheet==="min"?"Show the shopping list":"Open the full shopping list"} aria-expanded={ui.sheet==="full"}
           onPointerDown={e=>{dragStart.current=e.clientY;e.currentTarget.setPointerCapture(e.pointerId);}}
-          onPointerUp={e=>{const start=dragStart.current;dragStart.current=null;if(start===null)return;const dy=e.clientY-start;ui.setSheet(dy<-30?"full":dy>30?"peek":ui.sheet==="full"?"peek":"full");}}
+          onPointerUp={e=>{const start=dragStart.current;dragStart.current=null;if(start===null)return;const dy=e.clientY-start;ui.setSheet(Math.abs(dy)>30?stepSheet(ui.sheet,dy<0?1:-1):ui.sheet==="peek"?"full":"peek");}}
           onPointerCancel={()=>{dragStart.current=null;}}
-          onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();ui.setSheet(ui.sheet==="full"?"peek":"full");}}}><span aria-hidden="true"/></button>}
+          onKeyDown={e=>{
+            if(e.key==="Enter"||e.key===" "){e.preventDefault();ui.setSheet(ui.sheet==="peek"?"full":"peek");}
+            if(e.key==="ArrowUp"||e.key==="ArrowDown"){e.preventDefault();ui.setSheet(stepSheet(ui.sheet,e.key==="ArrowUp"?1:-1));}}}><span aria-hidden="true"/></button>}
         {view==="3d"&&<div className={s.panelTabs}>
           <nav aria-label="Room panels">{([...(compact?[["furnish","Arrange"]] as const:[]),["style","Room"],["room","Openings"],["shop","List"]] as const).map(([key,label])=><button key={key} type="button" aria-pressed={activePanel===key||(key==="style"&&(activePanel==="item"||activePanel==="help"))||(key==="room"&&activePanel==="checks")} onClick={()=>open(key)}>{label}</button>)}</nav>
           <button ref={closeRef} type="button" className={s.mobileClose} aria-label="Close panel" onClick={()=>setMobileOpen(false)}><CloseIcon size={18}/></button>
@@ -295,3 +297,6 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
 
 }
 function roomOutlineMissing(room:{outline?:{openings:unknown[]}|null}){return !room.outline?.openings.length;}
+/** One step up (1) or down (-1) between the phone sheet's heights. */
+const SHEETS=["min","peek","full"] as const;
+function stepSheet(sheet:(typeof SHEETS)[number],dir:1|-1){return SHEETS[Math.max(0,Math.min(2,SHEETS.indexOf(sheet)+dir))];}

@@ -78,7 +78,7 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
   // Swap sheet and its canvas ghost, the phone sheet, and the Add more section (UI only).
   const [swapTarget, setSwapTarget] = useState<Product | null>(null);
   const [ghostProduct, setGhostProduct] = useState<Product | null>(null);
-  const [sheet, setSheet] = useState<"peek" | "full">(workspace ? "full" : "peek");
+  const [sheet, setSheet] = useState<"min" | "peek" | "full">(workspace ? "full" : "peek");
   const [addMoreOpen, setAddMoreOpen] = useState(false);
   const closeSwap = useCallback(() => { setSwapTarget(null); setGhostProduct(null); }, []);
   const previewSwap = useCallback((product: Product | null) => setGhostProduct(product), []);
