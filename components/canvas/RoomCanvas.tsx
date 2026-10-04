@@ -6,11 +6,12 @@ import {
   forwardRef,
   useEffect,
   useImperativeHandle,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
 } from "react";
-import { Stage, Layer, Group, Rect, Line, Arc, Text, Circle } from "react-konva";
+import { Stage, Layer, Group, Rect, Line, Arc, Text, Circle, Ellipse } from "react-konva";
 import Konva from "konva";
 
 // Cap the canvas backing-store resolution. High-DPR phones (devicePixelRatio 2-3)
@@ -22,7 +23,7 @@ if (typeof window !== "undefined") {
 import type { KonvaEventObject } from "konva/lib/Node";
 import type { FurnitureItem, ProductCategory, RoomOutline, WallOpening, Point } from "@/lib/types";
 import { OPENING_DRAG_TYPE, openingCenter } from "@/lib/room-editing";
-import { styleById } from "@/lib/styles";
+import { mixHex, roomTheme, styleById, type RoomTheme } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import { bedLabel, isBunkBed } from "@/lib/bedding";
@@ -35,7 +36,7 @@ import { createPortal } from "react-dom";
 import { useCanvasDock } from "./CanvasControlsContext";
 import CanvasToolRail from "./CanvasToolRail";
 import { brandImage } from "@/lib/brand-image";
-import FurnitureGlyph from "./FurnitureGlyph";
+import FurnitureGlyph, { RoomGlyph, type BackSide } from "./FurnitureGlyph";
 import RotationHandle from "./RotationHandle";
 import { feetLabel, fitViewport, placedCoordinate, zoomAt } from "./viewport";
 import { nearestClearance } from "./clearance";
@@ -104,6 +105,65 @@ const RED = "#D7262E";
 const TAPE = "#F3C21A";
 const MAGENTA = "#C0186F";
 const PINK = "#FF4FA8";
+/** Room view walls: a warm near-black. */
+const WALL = "#2B2622";
+const VIEW_KEY = "dormscape-canvas-view";
+type CanvasView = "room" | "plan";
+const rgba = (hex: string, a: number) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
+const luma = (hex: string) => { const n = parseInt(hex.slice(1), 16); return (.299 * (n >> 16) + .587 * ((n >> 8) & 255) + .114 * (n & 255)) / 255; };
+/** Pieces whose art has a back: a bed's head, chairs face away from it, dressers and appliances open away from it. */
+const BACKED = new Set(["bed", "desk_chair", "chair", "lounge", "sofa", "dresser", "wardrobe", "fridge", "microwave"]);
+
+/** Unit inward normal of edge e of a room outline: the perpendicular that points into the room. */
+function inwardNormal(pts: Point[], e: number) {
+  const n = pts.length, a = pts[e], b = pts[(e + 1) % n];
+  const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+  const dx = (b.x - a.x) / len, dy = (b.y - a.y) / len;
+  const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+  const cands = [{ nx: -dy, ny: dx }, { nx: dy, ny: -dx }];
+  return cands.find((c) => pointInPolygon(mx + c.nx * 0.05, my + c.ny * 0.05, pts)) ?? cands[0];
+}
+
+const floorTiles = new Map<string, HTMLCanvasElement>();
+/**
+ * One repeat of the Room view floor, drawn once per vibe and resolution: 0.5 ft
+ * planks along x, each board a touch lighter or darker than its neighbours,
+ * board ends staggered every 3 or 4 ft, and faint grain. 12 ft × 4 ft, so the
+ * pattern repeats without visible seams.
+ */
+function floorTile(theme: RoomTheme, res: number): HTMLCanvasElement {
+  const key = `${theme.floor}|${theme.floorAlt}|${theme.woodDark}|${res}`;
+  const hit = floorTiles.get(key);
+  if (hit) return hit;
+  if (floorTiles.size > 16) floorTiles.clear();
+  const ROWS = 8, LEN = 12, plank = res / 2;
+  const c = document.createElement("canvas");
+  c.width = LEN * res; c.height = ROWS * plank;
+  const ctx = c.getContext("2d")!;
+  let seed = 11;
+  const rand = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const seam = rgba(mixHex(theme.floor, theme.woodDark, .6), .55), grain = rgba(theme.woodDark, .08);
+  for (let r = 0; r < ROWS; r++) {
+    const y = r * plank, board = (rand() < .5 ? 3 : 4) * res, count = c.width / board, phase = rand() * board;
+    const boards = Array.from({ length: count }, () => ({ tone: (rand() - .5) * .08, alt: rand() < .5, grain: [rand(), rand(), rand(), rand(), rand(), rand()] }));
+    for (let k = 0; k <= count; k++) {
+      const b = boards[k % count], x = k * board - phase;
+      ctx.fillStyle = mixHex(b.alt ? theme.floorAlt : theme.floor, b.tone < 0 ? "#000000" : "#FFFFFF", Math.abs(b.tone));
+      ctx.fillRect(x, y, board, plank);
+      ctx.strokeStyle = grain; ctx.lineWidth = Math.max(.6, res / 80);
+      for (let g = 0; g < 3; g++) {
+        const gy = y + plank * (.22 + g * .28 + b.grain[g] * .08), wob = plank * .22;
+        ctx.beginPath(); ctx.moveTo(x, gy);
+        ctx.bezierCurveTo(x + board * .33, gy + (b.grain[g + 3] - .5) * wob, x + board * .66, gy - (b.grain[g + 3] - .5) * wob, x + board, gy);
+        ctx.stroke();
+      }
+      ctx.fillStyle = seam; ctx.fillRect(x, y, Math.max(1, res / 55), plank);
+    }
+    ctx.fillStyle = seam; ctx.fillRect(0, y, c.width, Math.max(1, res / 60));
+  }
+  floorTiles.set(key, c);
+  return c;
+}
 
 /**
  * Bottom-right brand lockup baked into exported PNGs: the folded-room mark plus the
@@ -208,7 +268,14 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const labelRefs = useRef(new Map<string, Konva.Group>());
   const [viewport, setViewport] = useState({ width: 0, height: 420 });
   const [panMode, setPanMode] = useState(false);
-  const [showGrid, setShowGrid] = useState(true);
+  // Room view (illustrated) is the default; Plan view is the flat drawing. Each keeps its own grid setting.
+  const [view, setViewState] = useState<CanvasView>("room");
+  useEffect(() => { try { if (localStorage.getItem(VIEW_KEY) === "plan") setViewState("plan"); } catch {} }, []);
+  const setView = (next: CanvasView) => { setViewState(next); try { localStorage.setItem(VIEW_KEY, next); } catch {} };
+  const roomView = view === "room";
+  const [grids, setGrids] = useState({ room: false, plan: true });
+  const showGrid = grids[view];
+  const toggleGrid = () => setGrids(g => ({ ...g, [view]: !g[view] }));
   // Off by default: each piece is drawn as what it is (FurnitureGlyph). The
   // Labels toggle still adds names; owners in a shared room always show.
   const [showLabels, setShowLabels] = useState(false);
@@ -248,6 +315,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const clearSelectedCategory = usePlannerStore((s) => s.clearSelectedCategory);
   const hiddenItemIds = usePlannerStore((s) => s.hiddenItemIds);
   const selectedStyle = usePlannerStore(s => s.style);
+  const theme = roomTheme(selectedStyle);
   const palette = styleById(selectedStyle ?? "minimalist").palette;
   const lockedItemIds = usePlannerStore((s) => s.lockedItemIds);
   const toggleHiddenItem = usePlannerStore((s) => s.toggleHiddenItem);
@@ -314,10 +382,13 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
 
   const stageW = viewport.width;
   const stageH = viewport.height;
-  const fitted = fitViewport(stageW, stageH, roomL, roomW, stageW < 450 ? 36 : 48);
+  // Room view walls sit outside the floor, so leave room for them and the dimension lines.
+  const wallMax = stageW < 450 ? 10 : 16;
+  const fitted = fitViewport(stageW, stageH, roomL, roomW, (stageW < 450 ? 36 : 48) + (roomView ? wallMax : 0));
   const pxFt = fitted.scale;
   const roomWpx = roomL * pxFt;
   const roomHpx = roomW * pxFt;
+  const wallT = roomView ? clamp(pxFt * .5, 6, wallMax) : 0;
 
   // Resize and room changes always begin with the whole room in view.
   useEffect(() => { setZoom(1); setStagePos({ x: 0, y: 0 }); }, [stageW, stageH, roomL, roomW]);
@@ -470,16 +541,6 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     const px = (xFt: number, yFt: number): [number, number] => [PAD + xFt * pxFt, PAD + yFt * pxFt];
     const flat = pts.flatMap((p) => px(p.x, p.y));
 
-    // Unit inward normal of edge e: the perpendicular that points into the room.
-    const inwardNormal = (e: number) => {
-      const a = pts[e], b = pts[(e + 1) % n];
-      const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
-      const dx = (b.x - a.x) / len, dy = (b.y - a.y) / len;
-      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
-      const cands = [{ nx: -dy, ny: dx }, { nx: dy, ny: -dx }];
-      return cands.find((c) => pointInPolygon(mx + c.nx * 0.05, my + c.ny * 0.05, pts)) ?? cands[0];
-    };
-
     const openings = drawOutline.openings.map((op) => {
       const a = pts[op.edge], b = pts[(op.edge + 1) % n];
       const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
@@ -487,8 +548,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       const s = { x: a.x + dx * op.offset_ft, y: a.y + dy * op.offset_ft };
       const e = { x: a.x + dx * (op.offset_ft + op.width_ft), y: a.y + dy * (op.offset_ft + op.width_ft) };
       const gap = [...px(s.x, s.y), ...px(e.x, e.y)];
-      if (op.kind === "window") { const n = inwardNormal(op.edge); return { kind: "window" as const, gap, normal: { x: n.nx, y: n.ny } }; }
-      const nrm = inwardNormal(op.edge);
+      if (op.kind === "window") { const n = inwardNormal(pts, op.edge); return { kind: "window" as const, gap, normal: { x: n.nx, y: n.ny } }; }
+      const nrm = inwardNormal(pts, op.edge);
       // swing (0-3): bit0 = hinge at gap end, bit1 = open outward.
       const swing = op.swing ?? 0;
       const hinge = swing & 1 ? e : s;
@@ -506,6 +567,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         kind: "door" as const,
         swingBox,
         gap,
+        normal: { x: nrm.nx, y: nrm.ny },
         door: {
           x: hx,
           y: hy,
@@ -523,6 +585,70 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
 
     return { flat, openings, closets };
   }, [drawOutline, pxFt]);
+
+  // Room view shell: the outline in px, each wall's inward normal (for the soft
+  // shadow along it), and where daylight falls in from each window.
+  const shell = useMemo(() => {
+    if (!roomView || pxFt <= 0) return null;
+    const pts: Point[] = drawOutline?.points ?? [{ x: 0, y: 0 }, { x: roomL, y: 0 }, { x: roomL, y: roomW }, { x: 0, y: roomW }];
+    const px = (p: Point) => ({ x: PAD + p.x * pxFt, y: PAD + p.y * pxFt });
+    const edges = pts.map((p, i) => { const n = inwardNormal(pts, i); return { a: px(p), b: px(pts[(i + 1) % pts.length]), nx: n.nx, ny: n.ny }; });
+    const windows = drawOutline
+      ? drawOutline.openings.flatMap((op) => {
+          if (op.kind !== "window") return [];
+          const a = pts[op.edge], b = pts[(op.edge + 1) % pts.length], len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+          const t = (op.offset_ft + op.width_ft / 2) / len, n = inwardNormal(pts, op.edge);
+          return [{ ...px({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t }), angle: Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI, len: op.width_ft * pxFt, nx: n.nx, ny: n.ny }];
+        })
+      : [isCorridor ? { ...px({ x: roomL / 2, y: 0 }), angle: 0, len: 4 * pxFt, nx: 0, ny: 1 } : { ...px({ x: roomL, y: roomW / 2 }), angle: 90, len: 4 * pxFt, nx: -1, ny: 0 }];
+    return { flat: pts.flatMap((p) => { const q = px(p); return [q.x, q.y]; }), edges, windows };
+  }, [roomView, pxFt, drawOutline, roomL, roomW, isCorridor]);
+
+  // Which side each bed, chair, sofa, dresser or appliance has its back on:
+  // a bed's head is where its throw pillows sit (else the end nearest a wall),
+  // chairs face their desk, everything else backs onto the nearest wall.
+  const backs = useMemo(() => {
+    const out = new Map<string, BackSide>();
+    if (!roomView) return out;
+    const centre = (f: FurnitureItem) => { const b = footprint(f); return { x: b.x + b.w / 2, y: b.y + b.h / 2 }; };
+    const desks = displayFurniture.filter(f => f.type === "desk" || f.type === "table").map(centre);
+    const pillows = displayFurniture.filter(f => f.type === "throw_pillows").map(centre);
+    for (const f of displayFurniture) {
+      if (!BACKED.has(f.type)) continue;
+      const b = footprint(f), cx = b.x + b.w / 2, cy = b.y + b.h / 2;
+      const desk = f.type === "desk_chair" ? desks.sort((p, q) => Math.hypot(p.x - cx, p.y - cy) - Math.hypot(q.x - cx, q.y - cy))[0] : undefined;
+      let dir: [number, number];
+      const pillow = f.type === "bed" ? pillows.find(c => c.x >= b.x && c.x <= b.x + b.w && c.y >= b.y && c.y <= b.y + b.h) : undefined;
+      if (pillow) dir = [pillow.x - cx, pillow.y - cy];
+      else if (f.type === "bed") dir = b.w >= b.h ? [b.x <= roomL - b.x - b.w ? -1 : 1, 0] : [0, b.y <= roomW - b.y - b.h ? -1 : 1];
+      else if (desk && Math.hypot(desk.x - cx, desk.y - cy) < 5) dir = [cx - desk.x, cy - desk.y];
+      else {
+        const gaps = [b.y, roomL - b.x - b.w, roomW - b.y - b.h, b.x];
+        dir = ([[0, -1], [1, 0], [0, 1], [-1, 0]] as [number, number][])[gaps.indexOf(Math.min(...gaps))];
+      }
+      const local = Math.atan2(dir[1], dir[0]) * 180 / Math.PI - f.rotation_deg;
+      // A bed's head is one of its short ends: the top or bottom of its own frame.
+      out.set(f.id, f.type === "bed" ? (Math.sin(local * Math.PI / 180) < 0 ? 0 : 2) : ((((Math.round(local / 90) + 1) % 4) + 4) % 4) as BackSide);
+    }
+    return out;
+  }, [roomView, displayFurniture, roomL, roomW]);
+
+  // The floor: one cached tile per vibe and zoom bucket, planks along the room's long side.
+  const bucket = zoom <= 1 ? 1 : zoom <= 1.5 ? 1.5 : zoom <= 2 ? 2 : 3;
+  const tileRes = Math.max(8, Math.min(280, Math.round(pxFt * bucket * (Konva.pixelRatio || 1) / 4) * 4));
+  const tile = useMemo(() => roomView && pxFt > 0 && typeof document !== "undefined" ? floorTile(theme, tileRes) : null, [roomView, pxFt, theme, tileRes]);
+
+  // The floor (boards, daylight, grid, wall shadows) is static while you drag:
+  // cache it as one bitmap, capped near 8 megapixels, and redraw it only when it changes.
+  const floorRef = useRef<Konva.Group>(null);
+  useLayoutEffect(() => {
+    const node = floorRef.current;
+    if (!node) return;
+    node.clearCache();
+    const area = Math.max(1, (roomWpx + 2) * (roomHpx + 2));
+    node.cache({ pixelRatio: Math.min((Konva.pixelRatio || 1) * bucket, Math.sqrt(8e6 / area)) });
+  }, [shell, tile, showGrid, bucket, roomWpx, roomHpx, theme]);
+
 
   const toolbarItem = rotateTarget && visible.some(f => f.id === rotateTarget.id) ? rotateTarget : null;
   const toolbarHidden = toolbarItem ? hiddenItemIds.includes(toolbarItem.id) : false;
@@ -574,7 +700,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     if (key === "-") { event.preventDefault(); applyZoom(zoom - .25); }
     if (key === "v") setPanMode(false);
     if (key === "h") setPanMode(true);
-    if (key === "g") setShowGrid(value => !value);
+    if (key === "g") toggleGrid();
     if (key === "r" && canEditItem && toolbarItem) { event.preventDefault(); onRotate?.(toolbarItem.id, event.shiftKey ? -1 : 1); }
     const arrows: Record<string, [number, number]> = { arrowleft: [-1,0], arrowright: [1,0], arrowup: [0,-1], arrowdown: [0,1] };
     if (arrows[key] && canEditItem) { event.preventDefault(); nudge(...arrows[key], event.shiftKey); }
@@ -630,12 +756,73 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         ? { ok: false, text: `${invalid.size} ${invalid.size === 1 ? "piece needs" : "pieces need"} a fit check` }
         : { ok: true, text: readOnly ? `${activeFurniture.length} pieces in this room` : "Everything fits · no overlaps" };
   const scaleFt = pxFt * zoom * 2 > 130 ? 1 : 2;
+
+  // ---------- Room view: floor, walls, light, door, window, closets ----------
+  const darkFloor = luma(theme.floor) < .4;
+  const hatch = darkFloor ? "#FFFFFF" : WALL;
+  const swingStroke = roomView && darkFloor ? "rgba(255, 255, 255, 0.55)" : "rgba(22, 22, 29, 0.45)";
+  const leafStroke = darkFloor ? "#E9E4DC" : WALL;
+  const shadowDepth = clamp(pxFt * .2, 6, 10);
+  /** A wall gap from a to b, filled across the wall's thickness (outward = away from the floor). */
+  const wallGap = (key: string, a: Point, b: Point, out: Point, fill: string) =>
+    <Line key={key} points={[a.x, a.y, b.x, b.y, b.x + out.x * (wallT + 1), b.y + out.y * (wallT + 1), a.x + out.x * (wallT + 1), a.y + out.y * (wallT + 1)].map((v, i) => v - (i % 2 ? out.y : out.x) * .5)} closed fill={fill} listening={false} />;
+  /** A window in that gap: pale glass down the middle of the wall, a thin frame at both faces. */
+  const windowGlass = (key: string, a: Point, b: Point, out: Point) => <Group key={key} listening={false}>
+    {wallGap("sill", a, b, out, "#EEF4F8")}
+    {[0, 1].map(f => <Line key={f} points={[a.x + out.x * wallT * f, a.y + out.y * wallT * f, b.x + out.x * wallT * f, b.y + out.y * wallT * f]} stroke="#9A938A" strokeWidth={1} />)}
+    <Line points={[a.x + out.x * wallT / 2, a.y + out.y * wallT / 2, b.x + out.x * wallT / 2, b.y + out.y * wallT / 2]} stroke="#CFE3F2" strokeWidth={Math.max(2, wallT * .35)} />
+  </Group>;
+  const roomCloset = (key: string, x: number, y: number, cw: number, ch: number, rod: boolean) => <Group key={key} x={x} y={y} listening={false} clipFunc={(ctx) => { ctx.rect(0, 0, cw, ch); }}>
+    <Rect width={cw} height={ch} fill={rgba(WALL, darkFloor ? .25 : .09)} />
+    {Array.from({ length: Math.ceil((cw + ch) / 7) }, (_, k) => <Line key={k} points={[k * 7 - ch, 0, k * 7, ch]} stroke={hatch} opacity={.16} strokeWidth={1} />)}
+    {rod && (() => {
+      const across = cw >= ch, long = across ? cw : ch, short = across ? ch : cw, n = Math.max(2, Math.floor((long - 12) / 8));
+      const pt = (t: number, u: number) => across ? [t, u] : [u, t];
+      return <>
+        <Line points={[...pt(6, short / 2), ...pt(long - 6, short / 2)]} stroke={hatch} opacity={.6} strokeWidth={1.5} />
+        {Array.from({ length: n }, (_, k) => { const t = 10 + k * (long - 20) / (n - 1); return <Line key={k} points={[...pt(t, short * .2), ...pt(t, short * .8)]} stroke={hatch} opacity={.4} strokeWidth={1.2} />; })}
+      </>;
+    })()}
+    <Rect width={cw} height={ch} stroke={hatch} opacity={.55} strokeWidth={1.5} />
+    {showLabels && cw > 46 && ch > 16 && <Text width={cw} height={ch} align="center" verticalAlign="middle" text="CLOSET" fontFamily={labelFont} fontStyle="700" fontSize={9} letterSpacing={.7} fill={hatch} />}
+  </Group>;
+  const roomShell = roomView && shell ? <>
+    {/* Walls: twice as thick, centred on the outline; the floor covers the inner half, leaving square outer walls. */}
+    <Line points={shell.flat} closed stroke={WALL} strokeWidth={wallT * 2} lineJoin="miter" listening={false} />
+    <Group ref={floorRef} listening={false} clipFunc={(ctx) => { ctx.beginPath(); for (let i = 0; i < shell.flat.length; i += 2) { if (i === 0) ctx.moveTo(shell.flat[0], shell.flat[1]); else ctx.lineTo(shell.flat[i], shell.flat[i + 1]); } ctx.closePath(); }}>
+      <Rect x={PAD} y={PAD} width={roomWpx} height={roomHpx} fill={theme.floor} fillPriority={tile ? "pattern" : "color"}
+        fillPatternImage={(tile ?? undefined) as unknown as HTMLImageElement | undefined} fillPatternRepeat="repeat"
+        fillPatternScale={{ x: pxFt / tileRes, y: pxFt / tileRes }} fillPatternRotation={roomL >= roomW ? 0 : 90} />
+      {shell.windows.map((win, i) => {
+        const ry = Math.min(2.6 * pxFt, win.len * 1.1);
+        return <Ellipse key={`light-${i}`} x={win.x} y={win.y} radiusX={win.len * .8} radiusY={ry} rotation={win.angle}
+          fillRadialGradientStartPoint={{ x: 0, y: 0 }} fillRadialGradientEndPoint={{ x: 0, y: 0 }} fillRadialGradientStartRadius={0} fillRadialGradientEndRadius={win.len * .8}
+          fillRadialGradientColorStops={[0, "rgba(255, 255, 255, 0.17)", .6, "rgba(255, 255, 255, 0.07)", 1, "rgba(255, 255, 255, 0)"]} />;
+      })}
+      {showGrid && gridLines.map((l) => <Line key={l.key} points={l.points} stroke={darkFloor ? "rgba(255, 255, 255, 0.1)" : "rgba(43, 38, 34, 0.12)"} strokeWidth={1} />)}
+      {shell.edges.map((e, i) => <Line key={`shade-${i}`} closed
+        points={[e.a.x, e.a.y, e.b.x, e.b.y, e.b.x + e.nx * shadowDepth, e.b.y + e.ny * shadowDepth, e.a.x + e.nx * shadowDepth, e.a.y + e.ny * shadowDepth]}
+        fillLinearGradientStartPoint={e.a} fillLinearGradientEndPoint={{ x: e.a.x + e.nx * shadowDepth, y: e.a.y + e.ny * shadowDepth }}
+        fillLinearGradientColorStops={[0, "rgba(40, 26, 14, 0.11)", 1, "rgba(40, 26, 14, 0)"]} />)}
+    </Group>
+    {darkFloor && <Line points={shell.flat} closed stroke="rgba(255, 255, 255, 0.2)" strokeWidth={1} listening={false} />}
+    {drawn ? drawn.closets.map((c, i) => roomCloset(`closet-${i}`, c.x, c.y, c.w, c.h, true))
+      : closet && roomCloset("closet", PAD, PAD, closet.width_ft * pxFt, closet.depth_ft * pxFt, false)}
+    {!drawn && <>
+      {wallGap("door-gap", { x: PAD, y: doorHinge.y }, { x: PAD, y: doorHinge.y + doorR }, { x: -1, y: 0 }, theme.floor)}
+      <Arc x={doorHinge.x} y={doorHinge.y} innerRadius={doorR} outerRadius={doorR} angle={90} rotation={0} stroke={swingStroke} strokeWidth={1.5} dash={[5, 4]} listening={false} />
+      <Line points={[doorHinge.x, doorHinge.y, doorHinge.x + doorR, doorHinge.y]} stroke={leafStroke} strokeWidth={2} lineCap="round" listening={false} />
+      {isCorridor
+        ? windowGlass("window", { x: PAD + roomWpx / 2 - winHalf, y: PAD }, { x: PAD + roomWpx / 2 + winHalf, y: PAD }, { x: 0, y: -1 })
+        : windowGlass("window", { x: PAD + roomWpx, y: PAD + roomHpx / 2 - winHalf }, { x: PAD + roomWpx, y: PAD + roomHpx / 2 + winHalf }, { x: 1, y: 0 })}
+    </>}
+  </> : null;
   const gridPx = pxFt * zoom;
 
   return (
     <div className={`${styles.canvas} ${dock ? styles.docked : ""}`} onKeyDown={keyboard}>
       {dock?.host && dock.active && createPortal(<CanvasToolRail dock={dock} pan={panMode} setPan={setPanMode} grid={showGrid} labels={showLabels} snap={snapping} zoom={zoom}
-        roomLabel={feetLabel(roomL)+" × "+feetLabel(roomW)} toggleGrid={()=>setShowGrid(v=>!v)} toggleLabels={()=>setShowLabels(v=>!v)} toggleSnap={()=>setSnapping(v=>!v)} zoomTo={applyZoom} fit={fitRoom}
+        roomLabel={feetLabel(roomL)+" × "+feetLabel(roomW)} toggleGrid={toggleGrid} roomView={roomView} setRoomView={on=>setView(on?"room":"plan")} toggleLabels={()=>setShowLabels(v=>!v)} toggleSnap={()=>setSnapping(v=>!v)} zoomTo={applyZoom} fit={fitRoom}
         undo={()=>history?.undo()} redo={()=>history?.redo()} canUndo={!!history?.canUndo} canRedo={!!history?.canRedo}
         hiddenItems={visible.filter(f=>hiddenItemIds.includes(f.id))} showItem={toggleHiddenItem}/>,dock.host)}
       {!dock && <>
@@ -652,7 +839,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           <button type="button" onClick={() => history?.redo()} disabled={!history?.canRedo} aria-label="Redo layout edit" title="Redo (Ctrl/⌘ Shift Z)"><Icon path="M20 10H10a6 6 0 0 0 0 12m6-17 5 5-5 5" /></button>
         </div>}
         <div className={styles.group}>
-          <button type="button" onClick={() => setShowGrid(!showGrid)} aria-pressed={showGrid} title="Show grid (G)"><Icon path="M4 4h16v16H4zM4 12h16M12 4v16" />Grid</button>
+          <button type="button" onClick={() => setView(roomView ? "plan" : "room")} aria-pressed={!roomView} title="Flat plan drawing">Plan view</button>
+          <button type="button" onClick={toggleGrid} aria-pressed={showGrid} title="Show grid (G)"><Icon path="M4 4h16v16H4zM4 12h16M12 4v16" />Grid</button>
           <button type="button" onClick={() => setShowLabels(!showLabels)} aria-pressed={showLabels}>Labels</button>
           {!readOnly && <button type="button" onClick={() => setSnapping(!snapping)} aria-pressed={snapping} title="Snap to a 6-inch grid. Turn off for 1-inch positioning.">Snap</button>}
         </div>
@@ -666,6 +854,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       </>}
       <div ref={containerRef} className={styles.surface} data-rotating={rotationPreview ? true : undefined}
         style={{ ...(!dock && fullscreen ? { height: "clamp(320px, calc(100svh - 300px), 850px)" } : {}),
+          ...(roomView && !showGrid ? { backgroundImage: "none" } : {}),
           backgroundSize: `${gridPx}px ${gridPx}px`, backgroundPosition: `${stagePos.x + fitted.x * zoom}px ${stagePos.y + fitted.y * zoom}px` }}
         onDragOver={e=>{const kind=dropKind(e.dataTransfer.types);if(readOnly||!dock||!kind)return;e.preventDefault();const point=openingPoint(e),opening=point&&dock.openings.preview(kind,point);e.dataTransfer.dropEffect=opening?"copy":"none";setOpeningPreview(opening?{index:null,opening}:null);}}
         onDragLeave={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))setOpeningPreview(null);}}
@@ -708,7 +897,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
             {/* Plan paper for exported PNGs (on screen the paper grid is CSS behind the stage). */}
             <Rect name="export-only" visible={false} width={stageW} height={stageH} fill={PAPER} listening={false} />
             <Group x={fitted.x - PAD} y={fitted.y - PAD}>
-            {drawn ? (
+            {roomShell ?? (drawn ? (
               <>
                 {/* The room: white floor + a faint grid clipped to the walls. */}
                 <Group
@@ -775,18 +964,18 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               <Line points={[PAD + roomWpx, PAD + roomHpx / 2 - winHalf, PAD + roomWpx, PAD + roomHpx / 2 + winHalf]} stroke={COBALT} strokeWidth={4} listening={false} />
             )}
               </>
-            )}
+            ))}
 
             {/* Dimension lines: the room's real length and width. */}
             <Group listening={false}>
-              <Line points={[PAD, PAD-24, PAD+roomWpx, PAD-24]} stroke={INK} strokeWidth={1.5} />
-              <Line points={[PAD-24, PAD, PAD-24, PAD+roomHpx]} stroke={INK} strokeWidth={1.5} />
-              {[0, roomWpx].map(x => <Line key={`tick-x${x}`} points={[PAD+x, PAD-30.5, PAD+x, PAD-17.5]} stroke={INK} strokeWidth={1.5} />)}
-              {[0, roomHpx].map(y => <Line key={`tick-y${y}`} points={[PAD-30.5, PAD+y, PAD-17.5, PAD+y]} stroke={INK} strokeWidth={1.5} />)}
-              <Rect x={PAD+roomWpx/2-textW(ftLabel(roomL),15)/2-10} y={PAD-36} width={textW(ftLabel(roomL),15)+20} height={24} fill={PAPER} />
-              <Text x={PAD+roomWpx/2-60} y={PAD-36} width={120} height={24} text={ftLabel(roomL)} fontFamily={sansFont} fontStyle="800" fontSize={15} align="center" verticalAlign="middle" fill={INK} />
-              <Rect x={PAD-24-textW(ftLabel(roomW),14)/2-6} y={PAD+roomHpx/2-12} width={textW(ftLabel(roomW),14)+12} height={24} fill={PAPER} />
-              <Text x={PAD-24-40} y={PAD+roomHpx/2-12} width={80} height={24} text={ftLabel(roomW)} fontFamily={sansFont} fontStyle="800" fontSize={14} align="center" verticalAlign="middle" fill={INK} />
+              <Line points={[PAD, PAD-24-wallT, PAD+roomWpx, PAD-24-wallT]} stroke={INK} strokeWidth={1.5} />
+              <Line points={[PAD-24-wallT, PAD, PAD-24-wallT, PAD+roomHpx]} stroke={INK} strokeWidth={1.5} />
+              {[0, roomWpx].map(x => <Line key={`tick-x${x}`} points={[PAD+x, PAD-30.5-wallT, PAD+x, PAD-17.5-wallT]} stroke={INK} strokeWidth={1.5} />)}
+              {[0, roomHpx].map(y => <Line key={`tick-y${y}`} points={[PAD-30.5-wallT, PAD+y, PAD-17.5-wallT, PAD+y]} stroke={INK} strokeWidth={1.5} />)}
+              <Rect x={PAD+roomWpx/2-textW(ftLabel(roomL),15)/2-10} y={PAD-36-wallT} width={textW(ftLabel(roomL),15)+20} height={24} fill={PAPER} />
+              <Text x={PAD+roomWpx/2-60} y={PAD-36-wallT} width={120} height={24} text={ftLabel(roomL)} fontFamily={sansFont} fontStyle="800" fontSize={15} align="center" verticalAlign="middle" fill={INK} />
+              <Rect x={PAD-24-wallT-textW(ftLabel(roomW),14)/2-6} y={PAD+roomHpx/2-12} width={textW(ftLabel(roomW),14)+12} height={24} fill={PAPER} />
+              <Text x={PAD-24-wallT-40} y={PAD+roomHpx/2-12} width={80} height={24} text={ftLabel(roomW)} fontFamily={sansFont} fontStyle="800" fontSize={14} align="center" verticalAlign="middle" fill={INK} />
             </Group>
             {dragging && <Group name="editor-only" listening={false}>
               <Line points={[PAD + dragging.x*pxFt, PAD, PAD + dragging.x*pxFt, PAD+roomHpx]} stroke={COBALT} strokeWidth={1/z} dash={[4/z,4/z]} opacity={.6} />
@@ -847,7 +1036,10 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                   }}
                 >
                   <Group x={fp.w*pxFt/2} y={fp.h*pxFt/2} offsetX={w/2} offsetY={h/2} rotation={f.rotation_deg}>
-                  <Group opacity={isHidden ? .16 : 1} listening={false}><FurnitureGlyph item={f} scale={pxFt} palette={palette} dressed={f.type === "bed" && !!entry} /></Group>
+                  <Group opacity={isHidden ? .16 : 1} listening={false}>{roomView
+                    ? <RoomGlyph item={f} scale={pxFt} theme={theme} dressed={f.type === "bed" && !!entry} books={f.type === "shelf" && !!entry && /book/i.test(entry.product.name)}
+                        back={backs.get(f.id)} detail={Math.min(w, h) * zoom >= 28} bucket={bucket} />
+                    : <FurnitureGlyph item={f} scale={pxFt} palette={palette} dressed={f.type === "bed" && !!entry} />}</Group>
                   {/* Hit area (and the dashed outline of a hidden piece). */}
                   <Rect
                     width={w}
@@ -861,13 +1053,17 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                   />
                   {planning.showOwners&&!isHidden&&<Rect name="editor-only" width={w} height={h} stroke={people.find(r=>r.id===f.assigned_to)?.color??"#68748b"} strokeWidth={2.5} fillEnabled={false} listening={false}/>}
                   {isLocked && !bad && <Rect name="editor-only" x={-2} y={-2} width={w+4} height={h+4} stroke={TAPE} strokeWidth={2} dash={[6, 3]} fillEnabled={false} listening={false} />}
+                  {bad && !isHidden && roomView && <Rect name="editor-only" width={w} height={h} stroke="#FFFFFF" strokeWidth={5.5} opacity={.9} fillEnabled={false} listening={false} />}
                   {bad && !isHidden && <Rect name="editor-only" width={w} height={h} stroke={RED} strokeWidth={2.5} fillEnabled={false} listening={false} />}
+                  {highlighted && roomView && <Rect name="editor-only" x={-4/z} y={-4/z} width={w + 8/z} height={h + 8/z} cornerRadius={4/z}
+                      stroke="#FFFFFF" strokeWidth={4.5/z} opacity={.8} fillEnabled={false} listening={false} />}
                   {highlighted && (
                     <Rect name="editor-only" x={-4/z} y={-4/z} width={w + 8/z} height={h + 8/z} cornerRadius={4/z}
                       stroke={COBALT} strokeWidth={2/z} opacity={.6} fillEnabled={false} listening={false} />
                   )}
                   {selected && (
                     <Group name="editor-only" listening={false}>
+                      {roomView && <Rect x={-6/z} y={-6/z} width={w + 12/z} height={h + 12/z} stroke="#FFFFFF" strokeWidth={5/z} opacity={.85} fillEnabled={false} />}
                       <Rect x={-6/z} y={-6/z} width={w + 12/z} height={h + 12/z} stroke={COBALT} strokeWidth={2/z} fillEnabled={false} />
                       {[[-6, -6], [w * z + 6, -6], [-6, h * z + 6], [w * z + 6, h * z + 6]].map(([cx, cy], i) =>
                         <Rect key={i} x={cx/z - 5/z} y={cy/z - 5/z} width={10/z} height={10/z} fill="#FFFFFF" stroke={COBALT} strokeWidth={2/z} />)}
@@ -923,7 +1119,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 const r = 11 / z;
                 const inside = w >= 48 && h >= 40;
                 const pinX = inside ? w - 16 / z : w + 2 / z, pinY = inside ? 16 / z : -2 / z;
-                const sizeText = isSel ? `${feetInches(f.width_ft)} × ${feetInches(f.length_ft)}` : "";
+                // Room view names dorm-provided pieces too (the studio's wording), when the pill fits the piece.
+                const dims = `${feetInches(f.width_ft)} × ${feetInches(f.length_ft)}`, dormDims = `Dorm-provided · ${dims}`;
+                const sizeText = isSel ? (roomView && f.built_in && textW(dormDims, 13) + 20 <= w * z + 16 ? dormDims : dims) : "";
                 const sizeW = textW(sizeText, 13) / z + 20 / z;
                 return <Group
                   key={`label-${f.id}`}
@@ -932,7 +1130,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                   y={PAD + fp.y*pxFt}
                 >
                   {label && <Group listening={false}>
-                    {!label.mono && <Rect x={(w-labelW)/2} y={labelY-1} width={labelW} height={label.height+2} fill="#fffffff0" cornerRadius={3} />}
+                    {(!label.mono || roomView) && <Rect x={(w-labelW)/2} y={labelY-1} width={labelW} height={label.height+2} fill="#fffffff0" cornerRadius={3} />}
                     <Text x={(w-labelW)/2+2} y={labelY} width={labelW-4} height={label.height} text={label.text} align="center" verticalAlign="middle"
                       fontSize={size} fontFamily={label.mono ? labelFont : sansFont} fontStyle={label.mono ? "700" : "600"} letterSpacing={label.mono ? .7 : 0}
                       fill={label.mono ? COBALT : INK} wrap="none" ellipsis />
@@ -982,6 +1180,14 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                     onMouseLeave={e=>{e.target.getStage()!.container().style.cursor="default";}}
                     listening={!readOnly&&!panMode&&!!dock}>
                     <Line points={op.gap} stroke="transparent" strokeWidth={24/zoom} />
+                    {roomView ? (() => {
+                      const a = { x: op.gap[0], y: op.gap[1] }, b = { x: op.gap[2], y: op.gap[3] }, out = { x: -op.normal.x, y: -op.normal.y };
+                      return op.kind === "window" ? windowGlass("glass", a, b, out) : <>
+                        {wallGap("gap", a, b, out, theme.floor)}
+                        <Arc x={op.door.x} y={op.door.y} innerRadius={op.door.radius} outerRadius={op.door.radius} angle={90} rotation={op.door.rotation} stroke={swingStroke} strokeWidth={1.5} dash={[5, 4]} />
+                        <Line points={op.door.leaf} stroke={leafStroke} strokeWidth={2} lineCap="round" />
+                      </>;
+                    })() : <>
                     <Line points={op.gap} stroke="#FFFFFF" strokeWidth={wallW + 1} />
                     {op.kind === "window" ? (
                       <>
@@ -993,6 +1199,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                         <Line points={op.door.leaf} stroke={INK} strokeWidth={2.5} />
                       </>
                     )}
+                    </>}
                     {!readOnly&&dock&&<Circle name="editor-only" x={(op.gap[0]+op.gap[2])/2} y={(op.gap[1]+op.gap[3])/2} radius={(dock.openings.selected===i?6:4)/zoom} fill="white" stroke={COBALT} strokeWidth={2/zoom} hitStrokeWidth={18/zoom}/>}
                   </Group>
                 ))}

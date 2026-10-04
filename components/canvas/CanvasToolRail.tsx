@@ -2,7 +2,7 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import type { FurnitureItem } from "@/lib/types";
 import type { CanvasDock } from "./CanvasControlsContext";
-import { EyeIcon, FitIcon, GridIcon, HelpIcon, MagnetIcon, MinusIcon, MoreIcon, PanIcon, PlusIcon, RedoIcon, ResetIcon, RoomIcon, RulerIcon, SelectIcon, UndoIcon, ExpandIcon } from "@/components/studio-ui/icons";
+import { EyeIcon, FitIcon, GridIcon, HelpIcon, MagnetIcon, MinusIcon, MoreIcon, PanIcon, PlanIcon, PlusIcon, RedoIcon, ResetIcon, RoomIcon, RulerIcon, SelectIcon, UndoIcon, ExpandIcon } from "@/components/studio-ui/icons";
 import s from "./CanvasToolRail.module.css";
 
 export interface CanvasToolRailProps {
@@ -10,13 +10,16 @@ export interface CanvasToolRailProps {
   setPan: (v: boolean) => void; toggleGrid: () => void; toggleLabels: () => void; toggleSnap: () => void; zoomTo: (v: number) => void; fit: () => void;
   undo: () => void; redo: () => void; canUndo: boolean; canRedo: boolean;
   hiddenItems: FurnitureItem[]; showItem: (id: string) => void;
+  /** Room view (the illustrated room) or Plan view (the flat drawing). */
+  roomView: boolean; setRoomView: (on: boolean) => void;
 }
 
 /**
  * The plan's tool rail (Planner.dc.html): select, pan, measurements, add a
  * piece, doors and windows, zoom. On phones it's the row of icons under the
  * app bar. Less-used tools (grid, snap, focus mode, hidden pieces, help,
- * reset, and on phones measurements) live under More.
+ * reset, and on phones measurements) live under More, which also switches
+ * between Room view and Plan view.
  */
 export default function CanvasToolRail(p: CanvasToolRailProps) {
   const [more, setMore] = useState(false);
@@ -50,6 +53,7 @@ export default function CanvasToolRail(p: CanvasToolRailProps) {
         {tool("Select and move", <SelectIcon />, () => p.setPan(false), { pressed: !p.pan, className: s.desk, title: "Select and move (V)" })}
         {tool("Pan the plan", <PanIcon />, () => p.setPan(true), { pressed: p.pan, className: s.desk, title: "Pan (H)" })}
         {tool("Labels and measurements", <RulerIcon />, p.toggleLabels, { pressed: p.labels, toggle: true, className: s.desk })}
+        {tool("Plan view", <PlanIcon />, () => p.setRoomView(!p.roomView), { pressed: !p.roomView, toggle: true, className: s.desk, title: "Plan view: the flat drawing" })}
         {p.dock.addPiece && tool("Add a piece", <PlusIcon />, p.dock.addPiece)}
         {tool("Doors and windows", <RoomIcon />, p.dock.editOpenings, { className: s.desk, title: "Edit walls, doors and windows" })}
         {tool("Undo", <UndoIcon />, p.undo, { disabled: !p.canUndo, className: planner ? s.phone : "", title: "Undo (Ctrl/⌘ Z)" })}
@@ -68,6 +72,10 @@ export default function CanvasToolRail(p: CanvasToolRailProps) {
           {more && (
             <div id={menuId} className={s.menu} role="group" aria-label="More plan tools">
               <p className={s.menuHead}>Plan · {p.roomLabel}</p>
+              <div className={s.seg} role="group" aria-label="View">
+                <button type="button" aria-pressed={p.roomView} onClick={() => p.setRoomView(true)}>Room view</button>
+                <button type="button" aria-pressed={!p.roomView} onClick={() => p.setRoomView(false)}><PlanIcon size={16} />Plan view</button>
+              </div>
               <div className={`${s.seg} ${s.phoneFlex}`} role="group" aria-label="Pointer">
                 <button type="button" aria-pressed={!p.pan} onClick={() => p.setPan(false)}><SelectIcon size={16} />Select</button>
                 <button type="button" aria-pressed={p.pan} onClick={() => p.setPan(true)}><PanIcon size={16} />Pan</button>
