@@ -2,6 +2,7 @@ import Link from "next/link";
 import Wordmark from "@/components/site/Wordmark";
 import { MotionToggle } from "@/components/experience/MotionProvider";
 import FeedbackLink from "@/components/site/FeedbackLink";
+import { ArrowUpRight } from "@/components/ds/Icons";
 import s from "./ds/SiteFooter.module.css";
 
 const COLUMNS: {
@@ -74,7 +75,7 @@ export default function Footer() {
                       <FeedbackLink />
                     ) : link.external ? (
                       <a href={link.href} target="_blank" rel="noopener noreferrer">
-                        {link.label} <span aria-hidden="true">↗</span>
+                        {link.label}<ArrowUpRight size={13} className={s.ext} />
                       </a>
                     ) : link.anchor ? (
                       <a href={link.href}>{link.label}</a>

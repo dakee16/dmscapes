@@ -138,7 +138,7 @@ export default function RequestSchoolModal({
         {status === "success" ? (
           <div className={dlg.success}>
             <p>
-              <strong>Got it. {collegeName.trim()} is on the list. 🎉</strong>
+              <strong>Got it. {collegeName.trim()} is on the list.</strong>
             </p>
             <p>
               We add schools by request volume, and we&apos;ll email you when yours is

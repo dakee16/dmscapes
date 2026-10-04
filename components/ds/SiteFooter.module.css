@@ -71,6 +71,7 @@
   cursor: pointer;
   text-align: left;
 }
+.ext { display: inline-block; margin-left: 5px; vertical-align: -1px; }
 .col a:hover,
 .col button:hover { color: var(--ds-yellow); text-decoration: underline; text-underline-offset: 3px; }
 .bottom {
