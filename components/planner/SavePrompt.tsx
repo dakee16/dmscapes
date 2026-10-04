@@ -40,17 +40,18 @@ export default function SavePrompt() {
     <div
       role="complementary"
       aria-label="Save your design"
-      className="dm-save-nudge rise fixed inset-x-4 bottom-[5rem] z-40 rounded-2xl border border-ink/10 bg-white p-4 shadow-xl sm:inset-x-auto sm:right-6 sm:w-80 lg:bottom-6"
+      className="ds rise fixed inset-x-4 bottom-[5rem] z-40 rounded-[18px] bg-[var(--ds-ink)] p-4 text-[#f4f2ec] shadow-[0_18px_40px_rgba(22,22,29,0.3)] sm:inset-x-auto sm:right-6 sm:w-80 lg:bottom-6"
     >
       <div className="flex items-start justify-between gap-3">
-        <p className="font-display text-base font-bold tracking-tight">
-          Don&apos;t lose this room
+        <p className="m-0 text-[19px] leading-tight">
+          <span className="ds-display">Don&apos;t lose </span>
+          <span className="ds-serif" style={{ color: "var(--ds-yellow)" }}>this room.</span>
         </p>
         <button
           type="button"
           onClick={dismiss}
           aria-label="Dismiss"
-          className="grid h-7 w-7 shrink-0 cursor-pointer place-items-center rounded-full text-ink-soft transition-colors hover:bg-paper hover:text-ink"
+          className="grid h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-full border-0 bg-white/10 text-white transition-colors hover:bg-white/20"
         >
           <svg
             viewBox="0 0 24 24"
@@ -64,7 +65,7 @@ export default function SavePrompt() {
           </svg>
         </button>
       </div>
-      <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+      <p className="mt-1 text-sm leading-relaxed text-[#c9c6d4]">
         Save your design free and pick up where you left off on any device.
       </p>
       <button
@@ -73,7 +74,7 @@ export default function SavePrompt() {
           dismiss();
           openAuthModal("save-design");
         }}
-        className="mt-3 h-10 w-full cursor-pointer rounded-lg bg-cobalt text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep"
+        className="ds-btn ds-btn--yellow ds-btn--sm mt-3 w-full"
       >
         Save my design
       </button>

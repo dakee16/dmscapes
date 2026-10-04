@@ -1,6 +1,9 @@
 import Link from "next/link";
-import SiteHeader from "@/components/site/SiteHeader";
-import Footer from "@/components/Footer";
+import PageShell from "@/components/ds/PageShell";
+import Headline from "@/components/ds/Headline";
+import { ArrowRight } from "@/components/ds/Icons";
+import CorridorPlan from "@/components/not-found/CorridorPlan";
+import css from "@/components/not-found/NotFound.module.css";
 
 // Root not-found: Next.js renders this both for explicit notFound() calls
 // (invalid college slug, saved-room id, blog post) and as the catch-all for any
@@ -8,38 +11,53 @@ import Footer from "@/components/Footer";
 // and Next injects <meta name="robots" content="noindex"> automatically.
 export default function NotFound() {
   return (
-    <div>
-      <SiteHeader gridClassName="h-[28rem]" />
-      <main id="page-content" tabIndex={-1} className="dm-page min-h-[68vh]">
-        <div className="mx-auto max-w-xl px-5 py-20 sm:px-8 sm:py-28">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-            404: off the map
-          </p>
-          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
-            This page isn&rsquo;t on the{" "}
-            <span className="hl">floor plan.</span>
-          </h1>
-          <p className="mt-4 max-w-md text-lg leading-relaxed text-ink-soft">
-            The link is probably old, or the page moved. No harm done, everything
-            you came for is a click away.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/"
-              className="inline-flex h-13 items-center justify-center rounded-xl bg-cobalt px-7 text-base font-semibold text-white shadow-[0_14px_32px_-14px_rgba(43,78,255,0.6)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-cobalt-deep hover:shadow-[0_20px_40px_-16px_rgba(43,78,255,0.7)] active:translate-y-0"
-            >
-              Back to home
-            </Link>
-            <Link
-              href="/plan"
-              className="dm-editorial-card inline-flex h-13 items-center justify-center rounded-xl border border-ink/15 bg-white px-7 text-base font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-cobalt/40 active:translate-y-0"
-            >
-              Plan my room
-            </Link>
+    <PageShell>
+      <section className={css.stage} aria-labelledby="not-found-title">
+        <div className={`ds-wrap ${css.grid}`}>
+          <div className={css.copy}>
+            <p className={`ds-eyebrow ${css.eyebrow}`} data-reveal="load">
+              404: off the map
+            </p>
+            <Headline
+              as="h1"
+              id="not-found-title"
+              load
+              delayMs={60}
+              className={css.title}
+              lines={[
+                { text: "This page isn’t ", riso: true },
+                { text: "on the floor plan.", serif: true },
+              ]}
+            />
+            <p className={`ds-lede ${css.lede}`} data-reveal="load" style={{ "--i": 3 } as React.CSSProperties}>
+              The link is probably old, or the page moved. No harm done, everything
+              you came for is a click away.
+            </p>
+            <div className={css.actions} data-reveal="load" style={{ "--i": 4 } as React.CSSProperties}>
+              <Link href="/plan" className="ds-btn ds-btn--ink-yellow">
+                Plan my room
+                <ArrowRight />
+              </Link>
+              <Link href="/" className="ds-btn ds-btn--ghost-ink">
+                Back to home
+              </Link>
+            </div>
+            <p className={css.more} data-reveal="load" style={{ "--i": 5 } as React.CSSProperties}>
+              <Link href="/colleges">Find your campus</Link>
+              <span className={css.sep} aria-hidden="true">·</span>
+              <Link href="/rooms">My designs</Link>
+              <span className={css.sep} aria-hidden="true">·</span>
+              <Link href="/blog">Blog</Link>
+              <span className={css.sep} aria-hidden="true">·</span>
+              <Link href="/report">Report a broken link</Link>
+            </p>
           </div>
+          <CorridorPlan />
         </div>
-      </main>
-      <Footer />
-    </div>
+        <div className={css.tape} aria-hidden="true">
+          MEASURE · IMAGINE · MAKE ROOM
+        </div>
+      </section>
+    </PageShell>
   );
 }

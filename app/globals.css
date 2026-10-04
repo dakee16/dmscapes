@@ -1,12 +1,31 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Dormscape tokens, graph-paper direction */
-  --color-paper: #fafaf8;
-  --color-ink: #17172b;
-  --color-ink-soft: #4c4f63;
-  --color-cobalt: #2b4eff;
-  --color-cobalt-deep: #1e3ad6;
+  /* Dormscape tokens. Paper, ink and cobalt follow the redesign palette
+     (design-handoff/README.md); the rest are carried over until every page
+     is converted. */
+  --color-paper: #f4f3ee;
+  --color-ink: #16161d;
+  --color-ink-soft: #3a3a46;
+  --color-cobalt: #2449ff;
+  --color-cobalt-deep: #1b37c9;
+  /* Redesign palette */
+  --color-ds-blue: #2449ff;
+  --color-ds-blue-dark: #5b7cff;
+  --color-ds-yellow: #ffd83d;
+  --color-ds-tape: #f3c21a;
+  --color-ds-tape-shadow: #c99a06;
+  --color-ds-magenta: #c0186f;
+  --color-ds-pink: #ff4fa8;
+  --color-ds-red: #d7262e;
+  --color-ds-sky: #dce1f5;
+  --color-ds-warm: #f5ecde;
+  --color-ds-amber: #e8a622;
+  --color-ds-night: #0a102c;
+  --color-ds-plan: #fbfaf6;
+  --font-ds-sans: var(--font-archivo);
+  --font-ds-serif: var(--font-fraunces);
+  --font-ds-mono: var(--font-martian);
   --color-grid: #e4e9f4;
   /* Grid lines under the cursor halo; see .cursor-grid. Distinctly darker than
      the base grid, with a slight cobalt tint so the halo reads as a deliberate
@@ -17,9 +36,9 @@
   --color-amber: #f0b100;
   --color-card: #ffffff;
 
-  --font-display: var(--font-syne);
-  --font-sans: var(--font-instrument);
-  --font-mono: var(--font-plex-mono);
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-martian);
 }
 
 html {
@@ -315,4 +334,3 @@ p {
   outline: none;
 }
 
-.dm-planner-entry-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:25px}.dm-planner-entry-options>a,.dm-planner-entry-options>button{display:flex;flex-direction:column;align-items:flex-start;gap:7px;border:1px solid #ccd5e7;background:#fff;padding:18px;text-align:left;border-radius:4px;font:500 11px var(--font-plex-mono),monospace;color:#3154ed;cursor:pointer}.dm-planner-entry-options strong{font:600 15px var(--font-instrument),sans-serif;color:#192238}.dm-planner-entry-options span{font:400 12px/1.5 var(--font-instrument),sans-serif;color:#66748b}.dm-planner-entry-options>a:hover,.dm-planner-entry-options>button:hover{border-color:#3154ed;background:#f0f4ff}.dm-resume-draft{display:block;padding:15px;background:#eef4ff;border:1px solid #bccdf3;border-radius:4px;margin-top:14px;font-size:13px;color:#2b4eff;font-weight:600}.dm-planner-entry-options :focus-visible{outline:2px solid #3154ed;outline-offset:3px}

@@ -1,0 +1,263 @@
+/* /plan/create-vibe: the Pro "Create your own vibe" brief. Layout comes from
+   Vibe.module.css. */
+
+.hold {
+  min-height: 60vh;
+}
+
+.lede {
+  margin: 16px 0 0;
+  max-width: 620px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ds-body);
+}
+
+.textarea.textarea {
+  margin-top: 24px;
+  min-height: 160px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border-width: 2px;
+  border-color: var(--ds-ink);
+  box-shadow: 5px 5px 0 var(--ds-ink);
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.45;
+  resize: vertical;
+}
+.textarea.textarea:focus {
+  border-color: var(--ds-ink);
+  box-shadow: 5px 5px 0 var(--ds-blue);
+}
+.textarea.textarea:focus-visible {
+  outline: 3px solid var(--ds-blue);
+  outline-offset: 3px;
+}
+.textarea::placeholder {
+  color: #6b6b76;
+}
+
+.helper {
+  margin: 12px 0 0;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+
+.warn,
+.error {
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.warn {
+  background: rgba(255, 216, 61, 0.3);
+  border: 1.5px solid rgba(201, 154, 6, 0.5);
+}
+.error {
+  background: #fff;
+  border: 1.5px solid rgba(215, 38, 46, 0.4);
+  color: var(--ds-ink);
+}
+
+.budget {
+  margin-top: 28px;
+  max-width: 620px;
+  padding: 18px 20px 6px;
+  background: #fff;
+  border: 1.5px solid rgba(22, 22, 29, 0.12);
+  border-radius: 18px;
+}
+.budgetHead {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.budgetLabel {
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.tier {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--ds-yellow);
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.budgetFigure {
+  margin-left: auto;
+  font-size: 40px;
+  font-weight: 900;
+  font-stretch: 85%;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.goBar {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+.build.build {
+  min-width: 300px;
+  height: 68px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 26px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  font-family: var(--ds-sans);
+  font-size: 21px;
+  font-weight: 850;
+  box-shadow: 5px 5px 0 var(--ds-pink);
+  cursor: pointer;
+  transition: transform 180ms var(--ds-ease), box-shadow 180ms var(--ds-ease);
+}
+.build.build:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--ds-pink);
+}
+.build.build:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+.cost {
+  font-size: 13px;
+  color: var(--ds-muted);
+}
+
+/* ---------- Inspiration ---------- */
+.rail.rail {
+  min-height: 0;
+}
+.chips {
+  padding: 20px;
+  border: 1.5px dashed var(--ds-ink);
+  border-radius: 20px;
+}
+.chipsLabel {
+  margin: 0;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+.chipList {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chip.chip {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1.5px solid rgba(22, 22, 29, 0.12);
+  border-radius: 14px;
+  background: #fff;
+  font-family: var(--ds-sans);
+  text-align: left;
+  color: var(--ds-ink);
+  cursor: pointer;
+  transition: transform 180ms var(--ds-ease), border-color 180ms var(--ds-ease), box-shadow 180ms var(--ds-ease);
+}
+.chipList li:nth-child(odd) .chip {
+  transform: rotate(-0.8deg);
+}
+.chipList li:nth-child(even) .chip {
+  transform: rotate(0.6deg);
+}
+.chip.chip:hover {
+  transform: rotate(0deg) translateY(-2px);
+  border-color: var(--ds-blue);
+  box-shadow: 0 12px 24px -14px rgba(36, 73, 255, 0.45);
+}
+.chipTag {
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ds-blue);
+}
+.chipText {
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+@media (max-width: 900px) {
+  .lede {
+    font-size: 16px;
+  }
+  .textarea.textarea {
+    font-size: 19px;
+    box-shadow: 4px 4px 0 var(--ds-ink);
+  }
+  .budget {
+    padding: 14px 14px 4px;
+  }
+  .budgetFigure {
+    font-size: 32px;
+  }
+  .goBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 30;
+    margin: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 12px 20px max(22px, env(safe-area-inset-bottom));
+    background: var(--ds-paper);
+    border-top: 1.5px solid rgba(22, 22, 29, 0.1);
+  }
+  .build.build {
+    min-width: 0;
+    height: 60px;
+    font-size: 20px;
+    box-shadow: 4px 4px 0 var(--ds-pink);
+  }
+  .cost {
+    font-size: 12px;
+    text-align: center;
+  }
+  .chips {
+    margin-top: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip.chip,
+  .build.build {
+    transition: none;
+  }
+}

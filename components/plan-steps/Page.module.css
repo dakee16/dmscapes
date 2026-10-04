@@ -1,0 +1,81 @@
+/* Bits shared by the step pages. */
+
+.loading {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  min-height: 50svh;
+  padding: 0 20px;
+}
+
+/* ---------- "Your room" resume card on the school list ---------- */
+.resume {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px 20px;
+  padding: 16px 18px;
+  background: #fff;
+  border: 2px solid var(--ds-blue);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(36, 73, 255, 0.12);
+}
+.resumeText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.resumeLabel {
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-blue);
+}
+.resumeText strong {
+  font-size: 17px;
+  font-weight: 800;
+}
+.resumeText > span:not(.resumeLabel) {
+  font-size: 14px;
+  color: var(--ds-muted);
+}
+.resumeActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.resumeEdit.resumeEdit {
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  font-family: var(--ds-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ds-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.resumeUse.resumeUse {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  font-family: var(--ds-sans);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.resumeUse.resumeUse:hover {
+  box-shadow: 0 10px 24px rgba(22, 22, 29, 0.25);
+}

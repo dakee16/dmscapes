@@ -490,10 +490,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           aria-live="polite"
           className="fixed inset-x-0 bottom-0 z-[70] flex justify-center px-4 pb-[max(1rem,env(safe-area-inset-bottom))]"
         >
-          <div className="w-full max-w-md rounded-xl border border-ink/10 bg-white p-4 shadow-[0_20px_50px_-20px_rgba(23,23,43,0.45)]">
+          <div className="ds w-full max-w-md rounded-[18px] bg-white p-4 shadow-[0_18px_40px_rgba(22,22,29,0.22),0_0_0_1px_rgba(22,22,29,0.08)]">
             <div className="flex items-start gap-3">
               <span
-                className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-highlight/60 text-ink"
+                className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[var(--ds-yellow)] text-[var(--ds-ink)]"
                 aria-hidden="true"
               >
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
@@ -502,10 +502,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                 </svg>
               </span>
               <div className="min-w-0 flex-1">
-                <p className="text-sm font-semibold text-ink">
+                <p className="m-0 text-[15px] font-extrabold text-[var(--ds-ink)]">
                   You&rsquo;ve been logged out
                 </p>
-                <p className="mt-1 text-sm leading-relaxed text-ink-soft">
+                <p className="mt-1 text-sm leading-relaxed text-[var(--ds-muted)]">
                   Your account was signed in on another device. We keep up to two
                   devices signed in at once, so the oldest was signed out. You can
                   log back in anytime.
@@ -517,14 +517,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                       setSessionBumped(false);
                       openAuthModal("profile");
                     }}
-                    className="cursor-pointer rounded-lg bg-ink px-3.5 py-2 text-sm font-semibold text-white transition-colors hover:bg-cobalt"
+                    className="ds-btn ds-btn--ink ds-btn--sm"
                   >
                     Log back in
                   </button>
                   <button
                     type="button"
                     onClick={() => setSessionBumped(false)}
-                    className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+                    className="ds-btn ds-btn--ghost-ink ds-btn--sm"
                   >
                     Dismiss
                   </button>

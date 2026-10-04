@@ -43,7 +43,7 @@ export function createBuilderShell(draft) {
     }
     segment(cursor,len,0,height);wall.traverse(node=>{node.userData.kind="wall";node.userData.index=i;});
     // A low wall trace stays visible in cutaway and top views.
-    const trace=new T.Mesh(new T.BoxGeometry(len,.055,.18),mat("#2b4eff"));trace.position.set((a.x+b.x)/2,.04,(a.y+b.y)/2);trace.rotation.copy(wall.rotation);trace.userData={kind:"wall",index:i};root.add(trace);
+    const trace=new T.Mesh(new T.BoxGeometry(len,.055,.18),mat("#5b7cff"));trace.position.set((a.x+b.x)/2,.04,(a.y+b.y)/2);trace.rotation.copy(wall.rotation);trace.userData={kind:"wall",index:i};root.add(trace);
   }
   if(draft.closed)for(const [index,c] of (draft.closets??[]).entries()){
     const closet=new T.Group(),h=height*.87,w=c.width_ft,d=c.depth_ft;
@@ -56,13 +56,13 @@ export function createBuilderShell(draft) {
     }
     closet.traverse(node=>{node.userData={kind:"closet",index};});
   }
-  points.forEach((p,index)=>{const material=new T.MeshBasicMaterial({color:index===0&&!draft.closed?"#ffdc60":"#2b4eff",depthTest:false});
+  points.forEach((p,index)=>{const material=new T.MeshBasicMaterial({color:index===0&&!draft.closed?"#ffb866":"#5b7cff",depthTest:false});
     const node=new T.Mesh(new T.SphereGeometry(.16,14,10),material);node.position.set(p.x,.10,p.y);node.userData={kind:"corner",index};node.renderOrder=5;root.add(node);corners.push(node);});
   return {root,walls,openings,corners,closets,dispose(){const seen=new Set();root.traverse(o=>{o.geometry?.dispose();for(const m of Array.isArray(o.material)?o.material:[o.material])if(m&&!seen.has(m)){m.dispose();seen.add(m);}});}};
 }
 
 export function createBuilderScene(container,options){
-  const renderer=new T.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.7));renderer.setClearColor("#eceef3");
+  const renderer=new T.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio||1,1.7));renderer.setClearColor("#0a102c");
   renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.ACESFilmicToneMapping;renderer.toneMappingExposure=1.12;
   renderer.shadowMap.enabled=true;renderer.shadowMap.type=T.PCFSoftShadowMap;
   const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D construction grid. Use the tools to draw. Exact coordinates, opening controls, and closet measurements are available beside the canvas.");
@@ -70,12 +70,12 @@ export function createBuilderScene(container,options){
   const scene=new T.Scene(),camera=new T.PerspectiveCamera(42,1,.1,400),ray=new T.Raycaster(),ndc=new T.Vector2(),plane=new T.Plane(new T.Vector3(0,1,0),0);
   const hemi=new T.HemisphereLight("#f5f7ff","#9d8f7b",2.6);scene.add(hemi);
   const sun=new T.DirectionalLight("#fff5dd",3.0);sun.position.set(-10,25,10);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);Object.assign(sun.shadow.camera,{left:-35,right:35,top:35,bottom:-35,far:100});sun.shadow.bias=-.0002;sun.shadow.normalBias=.03;scene.add(sun,sun.target);
-  const grid=new T.GridHelper(60,120,"#9faaca","#cbd0df");grid.position.y=-.24;scene.add(grid);
-  const major=new T.GridHelper(60,12,"#8699d5","#b2bacf");major.position.y=-.23;scene.add(major);
-  const ground=new T.Mesh(new T.PlaneGeometry(60,60),new T.MeshStandardMaterial({color:"#eceef3",roughness:1}));ground.rotation.x=-Math.PI/2;ground.position.y=-.27;ground.receiveShadow=true;scene.add(ground);
-  const ghost=new T.Group();scene.add(ghost);const ghostMat=new T.MeshBasicMaterial({color:"#2b4eff",transparent:true,opacity:.36,depthTest:false});
-  const selectionBox=new T.Box3Helper(new T.Box3(),"#e1aa00");selectionBox.material.depthTest=false;selectionBox.material.toneMapped=false;selectionBox.renderOrder=10;selectionBox.visible=false;scene.add(selectionBox);
-  const label=document.createElement("div");label.style.cssText="position:absolute;pointer-events:none;z-index:3;padding:7px 10px;background:#17172b;color:#fff;font:12px/1.4 monospace;border-radius:3px;transform:translate(-50%,-100%);display:none;white-space:nowrap;max-width:90%;overflow:hidden;text-overflow:ellipsis";container.appendChild(label);
+  const grid=new T.GridHelper(60,120,"#2c3872","#1a2452");grid.position.y=-.24;scene.add(grid);
+  const major=new T.GridHelper(60,12,"#5b7cff","#34428c");major.position.y=-.23;scene.add(major);
+  const ground=new T.Mesh(new T.PlaneGeometry(60,60),new T.MeshStandardMaterial({color:"#0e1538",roughness:1}));ground.rotation.x=-Math.PI/2;ground.position.y=-.27;ground.receiveShadow=true;scene.add(ground);
+  const ghost=new T.Group();scene.add(ghost);const ghostMat=new T.MeshBasicMaterial({color:"#5b7cff",transparent:true,opacity:.36,depthTest:false});
+  const selectionBox=new T.Box3Helper(new T.Box3(),"#ffb866");selectionBox.material.depthTest=false;selectionBox.material.toneMapped=false;selectionBox.renderOrder=10;selectionBox.visible=false;scene.add(selectionBox);
+  const label=document.createElement("div");label.style.cssText="position:absolute;pointer-events:none;z-index:3;padding:7px 11px;background:#5b7cff;color:#fff;font:800 13px/1.3 var(--ds-sans,sans-serif);border-radius:8px;box-shadow:0 8px 18px rgba(36,73,255,.35);transform:translate(-50%,-100%);display:none;white-space:nowrap;max-width:90%;overflow:hidden;text-overflow:ellipsis";container.appendChild(label);
   let data=null,shell=null,shellKey="",disposed=false,raf=0,width=1,height=1,angle=.68,polar=.82,radius=36,view="room",drag=null,pinch=0,lastPoint=null;
   const target=new T.Vector3(0,1.5,0),pointers=new Map();
   const snap=p=>({x:Math.max(-30,Math.min(30,Math.round(p.x/data.snap)*data.snap)),y:Math.max(-30,Math.min(30,Math.round(p.z/data.snap)*data.snap))});
@@ -147,7 +147,7 @@ export function createBuilderScene(container,options){
   for(const [name,fn]of Object.entries(events))canvas.addEventListener(name,fn);canvas.addEventListener("wheel",wheel,{passive:false});
   const resize=new ResizeObserver(()=>{const r=container.getBoundingClientRect();width=Math.max(1,r.width);height=Math.max(1,r.height);renderer.setSize(width,height,false);camera.aspect=width/height;camera.updateProjectionMatrix();fit(view);});resize.observe(container);
   const visible=()=>request();document.addEventListener("visibilitychange",visible);
-  return {update(next){const first=!data;data=next;rebuild();for(const corner of shell.corners)corner.material.color.set(next.selection?.kind==="corner"&&next.selection.index===corner.userData.index||!next.draft.closed&&corner.userData.index===0?"#ffdc60":"#2b4eff");
+  return {update(next){const first=!data;data=next;rebuild();for(const corner of shell.corners)corner.material.color.set(next.selection?.kind==="corner"&&next.selection.index===corner.userData.index||!next.draft.closed&&corner.userData.index===0?"#ffb866":"#5b7cff");
     updateSelection();
     clearGhost();canvas.style.cursor=next.tool==="orbit"?"grab":next.tool==="select"?"default":"crosshair";if(first)fit();request();},fit,zoom(factor){radius=Math.max(5,Math.min(180,radius*factor));request();},destroy(){disposed=true;cancelAnimationFrame(raf);resize.disconnect();document.removeEventListener("visibilitychange",visible);for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);shell?.dispose();clearGhost();ghostMat.dispose();selectionBox.geometry.dispose();selectionBox.material.dispose();for(const o of [grid,major,ground]){o.geometry.dispose();o.material.dispose();}renderer.dispose();renderer.forceContextLoss();canvas.remove();label.remove();}};
 }

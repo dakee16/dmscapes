@@ -12,7 +12,7 @@ import {visibleFurniture,roomOutline} from "@/lib/studio";
 import {syncProductFurniture} from "@/lib/product-model";
 import StaticRoomView from "@/components/room/StaticRoomView";
 import RoomScene,{type RoomSceneHandle} from "./RoomScene";
-import s from "./Studio.module.css";
+import s from "@/components/workspace/Panels.module.css";
 const RoomCanvas=dynamic(()=>import("@/components/canvas/RoomCanvas"),{ssr:false});
 export default function SharedRoomStudio({room,items:savedItems,style,products,editor}:{room:SelectedRoom;items:FurnitureItem[];style:StyleId;products:Product[];editor?:SavedEditorState}){
  const items=useMemo(()=>syncProductFurniture(savedItems,products.filter(p=>!editor?.unplacedItemIds.includes(p.id)),room),[savedItems,products,editor,room]);

@@ -5,15 +5,19 @@ import { useAuth } from "@/lib/auth-context";
 import { isPlusTier, isPro } from "@/lib/plan";
 
 /**
- * The Dormscape wordmark. The tier marker (Plus "+" or "PRO") is rendered here,
- * inside the logo component itself, so it appears in every header the member
- * sees and is never editable as loose page text. Free users just see
- * "dormscape".
+ * The Dormscape wordmark: "dormscape" in Archivo plus a round dot, blue on
+ * light grounds and a lighter blue on dark. Never pink. The tier marker (Plus
+ * "+" or a "PRO" tag) is rendered here, inside the logo itself, so it appears
+ * in every header the member sees. Free users just see "dormscape".
  */
 export default function Wordmark({
-  textClassName = "text-lg",
+  textClassName = "",
+  tone = "light",
+  className = "",
 }: {
   textClassName?: string;
+  tone?: "light" | "dark";
+  className?: string;
 }) {
   const { profile } = useAuth();
   const plus = isPlusTier(profile);
@@ -22,32 +26,26 @@ export default function Wordmark({
   return (
     <Link
       href="/"
-      className="dm-wordmark flex shrink-0 items-center gap-2"
+      className={`ds-wordmark ${className}`}
+      data-tone={tone}
       aria-label={
         pro ? "Dormscape Pro home" : plus ? "Dormscape Plus home" : "Dormscape home"
       }
     >
-      <span className={`dm-brand-type font-bold tracking-tight ${textClassName}`}>
-        dorm<span className="text-cobalt">scape</span>
-        {plus && (
-          <span
-            className="ml-0.5 text-cobalt"
-            title="You're on Dormscape Plus"
-            aria-label="Plus"
-          >
-            +
-          </span>
-        )}
-        {pro && (
-          <span
-            className="ml-1 align-[0.15em] text-[0.5em] font-extrabold uppercase tracking-[0.08em] text-cobalt"
-            title="You're on Dormscape Pro"
-            aria-label="Pro"
-          >
-            Pro
-          </span>
-        )}
+      <span className={`ds-wordmark__type ${textClassName}`}>
+        dormscape
+        <span className="ds-wordmark__dot" aria-hidden="true" />
       </span>
+      {plus && (
+        <span className="ds-wordmark__plus" title="You're on Dormscape Plus" aria-label="Plus">
+          +
+        </span>
+      )}
+      {pro && (
+        <span className="ds-wordmark__pro" title="You're on Dormscape Pro" aria-label="Pro">
+          Pro
+        </span>
+      )}
     </Link>
   );
 }

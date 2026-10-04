@@ -16,16 +16,20 @@ export default function PlanCta({
   freeLabel = "Plan my room",
   paidLabel = "Plan my room",
   href = "/plan",
+  icon,
 }: {
   className?: string;
   freeLabel?: string;
   paidLabel?: string;
   href?: string;
+  /** trailing icon (the redesign's arrow) */
+  icon?: React.ReactNode;
 }) {
   const { profile } = useAuth();
   return (
     <Link href={href} className={className}>
       {isPaid(profile) ? paidLabel : freeLabel}
+      {icon}
     </Link>
   );
 }

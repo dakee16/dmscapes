@@ -1,22 +1,26 @@
 import s from "./BrandLoader.module.css";
-import BrandMark from "./BrandMark";
 
-/** Lightweight floor-plan animation shared by route and studio loading states. */
+/**
+ * The loading mark shared by route and studio loading states: a tape measure
+ * pulls out across a sheet of plan paper while the room draws itself (walls,
+ * then the door, then the furniture drops in), over the wordmark with its
+ * hopping dot. Static in reduced motion and when motion is paused.
+ */
 export default function BrandLoader({label="Loading…",className=""}:{label?:string;className?:string}) {
   return <div className={s.loader+" "+className} role="status" aria-live="polite" aria-label={label || "Loading Dormscape"}>
-    <div className={s.drawing} aria-hidden="true">
-      <svg viewBox="0 0 240 170" fill="none">
-        <path d="M20 30H220M20 60H220M20 90H220M20 120H220M30 20V150M60 20V150M90 20V150M120 20V150M150 20V150M180 20V150M210 20V150" stroke="currentColor" opacity=".08"/>
-        <path className={s.wall} pathLength="1" d="M107 140H42V30H198V140H141" stroke="currentColor" strokeWidth="3" strokeLinecap="square"/>
-        <g className={s.bed}><rect x="54" y="43" width="43" height="76" rx="2" fill="#dfe5ff" stroke="currentColor" strokeWidth="1.5"/><path d="M54 68H97M61 51H90V62H61Z" stroke="currentColor"/></g>
-        <g className={s.desk}><rect x="133" y="43" width="51" height="24" rx="2" fill="#ffd84d" stroke="currentColor" strokeWidth="1.5"/><rect x="149" y="75" width="20" height="17" rx="3" stroke="currentColor" strokeWidth="1.5"/></g>
-        <g className={s.rug}><rect x="113" y="103" width="68" height="25" rx="1" fill="#2b4eff" opacity=".1"/><path d="M118 106V125M125 106V125M132 106V125M139 106V125M146 106V125M153 106V125M160 106V125M167 106V125M174 106V125" stroke="currentColor" opacity=".3"/></g>
-        <path className={s.door} pathLength="1" d="M107 140V106C126 106 141 121 141 140" stroke="currentColor" strokeWidth="1.5"/>
-        <g className={s.cursor}><path d="M0 0L3 21L9 15L16 24L21 20L14 12L23 9Z" fill="#17172b" stroke="#fafaf8" strokeWidth="2"/></g>
+    <div className={s.sheet} aria-hidden="true">
+      <span className={s.tape}><i/></span>
+      <svg viewBox="0 0 240 150" fill="none">
+        <path className={s.wall} pathLength="1" d="M112 132H30V24h180v108h-62" stroke="var(--ds-ink, #16161d)" strokeWidth="5" strokeLinecap="square"/>
+        <path d="M86 24h44" stroke="#fbfaf6" strokeWidth="5"/>
+        <path className={s.window} d="M86 21.5h44M86 26.5h44" stroke="var(--ds-ink, #16161d)" strokeWidth="1.2"/>
+        <path className={s.door} pathLength="1" d="M112 132V96a36 36 0 0 1 36 36" stroke="var(--ds-blue, #2449ff)" strokeWidth="1.6" strokeDasharray="0.03 0.025"/>
+        <g className={s.bed}><rect x="40" y="34" width="44" height="74" rx="3" fill="#dce1f5" stroke="var(--ds-ink, #16161d)" strokeWidth="1.6"/><path d="M40 52h44M47 39h30v9H47z" stroke="var(--ds-ink, #16161d)" strokeWidth="1.3"/></g>
+        <g className={s.desk}><rect x="146" y="34" width="54" height="22" rx="2" fill="var(--ds-yellow, #ffd83d)" stroke="var(--ds-ink, #16161d)" strokeWidth="1.6"/><rect x="163" y="62" width="20" height="16" rx="4" fill="#fff" stroke="var(--ds-ink, #16161d)" strokeWidth="1.6"/></g>
+        <g className={s.rug}><rect x="110" y="70" width="58" height="34" rx="2" fill="rgba(255,79,168,0.2)"/><path d="M117 70v34M125 70v34M133 70v34M141 70v34M149 70v34M157 70v34M165 70v34" stroke="rgba(255,79,168,0.55)" strokeWidth="2.2"/></g>
       </svg>
     </div>
-    <span className={s.wordmark} aria-hidden="true"><BrandMark size={34}/>dormscape<span>.</span></span>
+    <span className={s.wordmark} aria-hidden="true">dormscape<i/></span>
     {label&&<span className={s.caption} aria-hidden="true">{label}</span>}
-    <div className={s.track} aria-hidden="true"><i/></div>
   </div>;
 }

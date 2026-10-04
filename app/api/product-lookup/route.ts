@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { rateLimit } from "@/lib/rate-limit";
+import { getUserId } from "@/lib/supabase-auth";
 import { getItems } from "@/lib/creators-api";
 import {
   extractAsin,
@@ -88,6 +89,12 @@ export async function POST(request: Request) {
       { ok: false, error: "Too many lookups. Give it a moment." },
       { status: 429, headers: { "Retry-After": String(rl.retryAfterSec) } }
     );
+  }
+
+  // Each lookup spends Creators API quota: signed-in accounts only. (The Plus
+  // gate stays in the planner, where guests of a Pro host's room may add items.)
+  if (!(await getUserId(request))) {
+    return NextResponse.json({ ok: false, error: "Sign in to add your own item." }, { status: 401 });
   }
 
   let body: { url?: unknown };

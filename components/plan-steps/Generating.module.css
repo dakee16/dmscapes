@@ -1,0 +1,425 @@
+/* "Planning your room" (designs/planner/Generating). */
+
+.screen {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background-color: var(--ds-paper);
+  background-image:
+    linear-gradient(rgba(36, 73, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 73, 255, 0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
+  color: var(--ds-ink);
+  font-family: var(--ds-sans);
+  outline: none;
+  animation: fadeIn 200ms var(--ds-ease) both;
+}
+
+.bar {
+  flex: none;
+  height: 64px;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--ds-paper);
+  border-bottom: 1.5px solid rgba(22, 22, 29, 0.1);
+}
+.wordmark {
+  pointer-events: none;
+}
+.summary {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+
+.body {
+  flex: 1 0 auto;
+  width: min(100% - 144px, 1296px);
+  margin: 0 auto;
+  padding: 56px 0 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 600px) minmax(0, 570px);
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+
+/* ---------- Stages ---------- */
+.eyebrow {
+  font-size: 13px;
+}
+.stageList {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.stage {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: opacity 250ms var(--ds-ease);
+}
+.stage[data-state="todo"] {
+  opacity: 0.35;
+}
+.word {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.sans {
+  font-size: clamp(56px, 6.4vw, 92px);
+  line-height: 0.95;
+  font-weight: 850;
+  font-stretch: 88%;
+  letter-spacing: -0.04em;
+}
+.serif {
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(64px, 7.2vw, 104px);
+  line-height: 0.95;
+  color: var(--ds-blue);
+  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
+}
+.done {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--ds-blue);
+  color: #fff;
+  animation: pop 240ms var(--ds-ease-back) both;
+}
+.dots {
+  display: flex;
+  gap: 6px;
+}
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ds-blue);
+  animation: blink 1.2s ease-in-out infinite;
+}
+.dots span:nth-child(2) {
+  animation-delay: 160ms;
+}
+.dots span:nth-child(3) {
+  animation-delay: 320ms;
+}
+.note {
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--ds-muted);
+}
+.stage[data-state="active"] .note {
+  color: var(--ds-ink);
+  font-weight: 600;
+}
+
+/* ---------- The plan being drawn ---------- */
+.drawing {
+  min-width: 0;
+}
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 58svh;
+  overflow: visible;
+}
+.floor {
+  filter: drop-shadow(0 24px 30px rgba(22, 22, 29, 0.1));
+}
+.walls {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.pickShape {
+  fill: transparent;
+  stroke: var(--ds-pink);
+  stroke-width: 2;
+  stroke-dasharray: 6 5;
+  transition: fill 250ms var(--ds-ease), stroke 250ms var(--ds-ease);
+}
+.pickShape[data-fill="true"] {
+  stroke: var(--c-dark);
+  stroke-dasharray: none;
+}
+.pickShape[data-fill="true"][data-kind="bedding"],
+.pickShape[data-fill="true"][data-kind="lamp"] {
+  fill: var(--c-main);
+}
+.pickShape[data-fill="true"][data-kind="rug"] {
+  fill: var(--c-light);
+}
+.pickLabel {
+  font-family: var(--ds-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  fill: var(--ds-magenta);
+  transition: opacity 200ms;
+}
+.screen[data-ready="true"] .pickLabel {
+  opacity: 0;
+}
+
+.progress {
+  margin-top: 40px;
+}
+.progressLabel {
+  display: block;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.track {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  height: 28px;
+  border: 1.5px dashed rgba(22, 22, 29, 0.35);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.tapeRun {
+  position: absolute;
+  top: -1.5px;
+  bottom: -1.5px;
+  left: 0;
+  width: 32%;
+  background-color: var(--ds-tape);
+  background-image: repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.55) 0 1.5px, transparent 1.5px 8px);
+  background-size: 100% 8px;
+  background-repeat: no-repeat;
+  border-right: 6px solid var(--ds-ink);
+  box-shadow: 0 2px 0 var(--ds-tape-shadow);
+  transform: translateX(105%);
+}
+
+/* ---------- Footer ---------- */
+.foot {
+  flex: none;
+  width: min(100% - 144px, 1296px);
+  margin: 0 auto;
+  padding: 0 0 40px;
+  min-height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+}
+.tip {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--ds-muted);
+}
+.tipTag {
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-ink);
+  background: var(--ds-yellow);
+  border-radius: 3px;
+  padding: 4px 8px;
+}
+.skip.skip {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 4px;
+  border: 0;
+  background: none;
+  font-family: var(--ds-sans);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ds-muted);
+  cursor: pointer;
+}
+.skip.skip:hover {
+  color: var(--ds-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Motion: the preset, then a calm loop ---------- */
+.screen[data-phase="intro"][data-still="false"] .walls {
+  animation: draw 450ms var(--ds-ease) both;
+}
+.screen[data-phase="intro"][data-still="false"] .dim {
+  animation: fadeIn 300ms 250ms var(--ds-ease) both;
+}
+.screen[data-phase="intro"][data-still="false"] .openings {
+  animation: fadeIn 250ms 380ms var(--ds-ease) both;
+}
+.screen[data-phase="intro"][data-still="false"] .piece {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: drop 300ms calc(450ms + var(--i) * 45ms) var(--ds-ease-back) both;
+}
+.screen[data-phase="intro"][data-still="false"] .pick {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: arrive 260ms calc(900ms + var(--i) * 70ms) var(--ds-ease) both;
+}
+.screen[data-phase="hold"][data-still="false"][data-ready="false"] .pick {
+  animation: breathe 1.6s ease-in-out infinite alternate;
+}
+.screen[data-still="false"] .tapeRun {
+  animation: run 1.8s ease-in-out infinite alternate;
+}
+.screen[data-still="true"] .dots span,
+.screen[data-still="true"] .done {
+  animation: none;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(-14px);
+  }
+}
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+@keyframes breathe {
+  to {
+    opacity: 0.45;
+  }
+}
+@keyframes run {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(212%);
+  }
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+@keyframes pop {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen,
+  .screen * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 900px) {
+  .bar {
+    height: 56px;
+    padding: 0 16px;
+    gap: 14px;
+  }
+  .summary {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+  }
+  .body {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 28px;
+    padding: 24px 20px 12px;
+  }
+  .stageList {
+    margin-top: 16px;
+    gap: 16px;
+  }
+  .sans {
+    font-size: 48px;
+  }
+  .serif {
+    font-size: 54px;
+  }
+  .word {
+    gap: 12px;
+  }
+  .done {
+    width: 30px;
+    height: 30px;
+  }
+  .done svg {
+    width: 16px;
+    height: 16px;
+  }
+  .note {
+    font-size: 14px;
+  }
+  .svg {
+    max-height: 40svh;
+  }
+  .progress {
+    margin-top: 20px;
+  }
+  .foot {
+    width: auto;
+    padding: 12px 20px max(24px, env(safe-area-inset-bottom));
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tip {
+    font-size: 14px;
+  }
+}

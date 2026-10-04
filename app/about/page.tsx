@@ -1,12 +1,18 @@
-import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site/SiteHeader";
+import PageShell from "@/components/ds/PageShell";
+import PageHero from "@/components/ds/PageHero";
+import Headline from "@/components/ds/Headline";
+import CtaBand from "@/components/ds/CtaBand";
+import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
+import BlindPlans from "@/components/about/BlindPlans";
 import { SCHOOLS } from "@/lib/schools";
 import { STYLES } from "@/lib/styles";
+import css from "@/components/about/About.module.css";
 
 export const metadata: Metadata = {
+  title: "About the Dorm Room Planner",
   description:
     "Dormscape is a free dorm room planner built on real dorm dimensions from official housing data. See your exact room, set a budget, shop a list that fits.",
   alternates: { canonical: "/about" },
@@ -28,275 +34,244 @@ export const metadata: Metadata = {
   },
 };
 
-// Inline text links reuse the highlight-underline treatment from /plan.
-const TEXT_LINK =
-  "font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-4 transition-colors hover:text-cobalt";
+// Real, shipped numbers only: every room type in the index is a mapped layout.
+const LAYOUTS = SCHOOLS.reduce((n, s) => n + s.dorms.reduce((m, d) => m + d.rooms.length, 0), 0);
+const fmt = (n: number) => n.toLocaleString("en-US");
 
-// Real, shipped numbers only (no invented claims): the floored dorm-layout
-// count mirrors the "1,600+" figure cited on the homepage and pricing page.
-const LAYOUTS =
-  Math.floor(
-    SCHOOLS.reduce((n, s) => n + s.dorms.reduce((m, d) => m + d.rooms.length, 0), 0) / 100
-  ) * 100;
-
-// Shared mono stat-line label treatment (uppercase, letter-spaced).
-const STAT_LABEL = "mt-1 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink-soft";
-
-// The "how it works" mini-section: three short steps with simple line icons,
-// echoing the homepage flow, to give the page rhythm instead of one text block.
-const STEPS: { title: string; body: string; icon: React.ReactNode }[] = [
+const STEPS = [
   {
     title: "Pick your school",
     body: "We already have your building and room, pulled from official housing data.",
-    icon: (
-      <path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-4h4v4M9.5 11h.01M14.5 11h.01" strokeLinecap="round" strokeLinejoin="round" />
-    ),
   },
   {
     title: "Choose a vibe and budget",
     body: "Set the look you want and the number you can spend. The plan stays inside it.",
-    icon: (
-      <path d="M4 7h16M4 12h10M4 17h7M17 14l3 3-3 3" strokeLinecap="round" strokeLinejoin="round" />
-    ),
   },
   {
     title: "Get a layout and list",
     body: "A room arranged to the inch, plus real products with live links you can shop.",
-    icon: (
-      <path d="M4 5h16v14H4zM4 10h16M9 5v14" strokeLinecap="round" strokeLinejoin="round" />
-    ),
   },
 ];
 
 export default function AboutPage() {
-  return (
-    <div>
-      <SiteHeader gridClassName="h-[28rem]" />
-      <main id="page-content" tabIndex={-1} className="dm-page relative">
-        <div className="mx-auto max-w-[50rem] px-5 py-14 sm:px-8 sm:py-20">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-            About dormscape
-          </p>
-          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
-            The dorm planner that knows <span className="hl">your dorm.</span>
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-            Dormscape is a free dorm room planner. Pick your school and building,
-            and you get your actual room: real dimensions, a layout you can
-            rearrange, and a shopping list that fits the space and the budget.
-          </p>
+  const stats = [
+    { label: "Schools supported", n: SCHOOLS.length },
+    { label: "Dorm layouts mapped", n: LAYOUTS },
+    { label: "Preset styles", n: STYLES.length },
+  ];
 
-          <figure className="dm-about-image">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/experience/cozy-room.webp" width={1536} height={1024} alt="A dorm style study with blue bedding, warm wood, and soft string lights" loading="lazy" />
-            <figcaption><span className="dm-eyebrow">A little room. A lot of possibility.</span><span className="dm-eyebrow">Style study</span></figcaption>
-          </figure>
-          {/* Real-number stat callouts, in the site's mono stat-line language. */}
-          <div className="mt-10 grid grid-cols-3 gap-4 rounded-2xl border border-ink/10 bg-card/70 px-4 py-6 sm:px-8">
-            <div>
-              <p className="dm-numeric text-3xl font-semibold tracking-tight sm:text-4xl">
-                {SCHOOLS.length}
+  return (
+    <PageShell navOverlay>
+      <PageHero
+        bg="var(--ds-warm)"
+        size="md"
+        className={css.hero}
+        eyebrow="About dormscape"
+        lines={[
+          { text: "The dorm planner that", riso: true },
+          { text: "knows your dorm.", serif: true },
+        ]}
+        lede={
+          <p>
+            Dormscape is a free dorm room planner. Pick your school and building, and you get your actual room: real
+            dimensions, a layout you can rearrange, and a shopping list that fits the space and the budget.
+          </p>
+        }
+        visual={
+          <dl className={css.stats}>
+            {stats.map((s) => (
+              <div key={s.label} className={css.stat}>
+                <dt>{s.label}</dt>
+                <dd className="ds-num" data-count={s.n} data-count-on="load">
+                  {fmt(s.n)}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        }
+      />
+
+      <section className="ds-section" aria-labelledby="problem-title">
+        <div className="ds-wrap">
+          <p className={`ds-eyebrow ${css.eyebrow}`} data-reveal="">
+            The problem
+          </p>
+          <div className={css.problemHead}>
+            <Headline
+              id="problem-title"
+              className="ds-h2 ds-h2--inline"
+              lines={[{ text: "Buying" }, { text: "blind.", serif: true }]}
+            />
+            <div className={css.problemCopy} data-reveal="">
+              <p className="ds-lede">
+                Every fall, freshmen furnish a room they&rsquo;ve never stood in. The results are predictable.
               </p>
-              <p className={STAT_LABEL}>Schools supported</p>
-            </div>
-            <div className="border-x border-ink/8 px-2 text-center sm:px-4">
-              <p className="dm-numeric text-3xl font-semibold tracking-tight sm:text-4xl">
-                {LAYOUTS.toLocaleString()}+
+              <p>
+                The usual fix is a dozen browser tabs: a generic packing list, a housing PDF, three store carts, and a
+                group chat poll. Hours of work to still end up guessing.
               </p>
-              <p className={STAT_LABEL}>Dorm layouts mapped</p>
-            </div>
-            <div className="text-right">
-              <p className="dm-numeric text-3xl font-semibold tracking-tight sm:text-4xl">
-                {STYLES.length}
-              </p>
-              <p className={STAT_LABEL}>Preset styles</p>
             </div>
           </div>
+          <BlindPlans />
+        </div>
+      </section>
 
-          {/* The problem */}
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              The problem: buying blind
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              Every fall, freshmen furnish a room they&rsquo;ve never stood in. The
-              results are predictable. Rugs that don&rsquo;t unroll all the way. Two
-              mini fridges. A storage cart with nowhere to stand.
-            </p>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              The usual fix is a dozen browser tabs: a generic packing list, a
-              housing PDF, three store carts, and a group chat poll. Hours of work
-              to still end up guessing.
-            </p>
-          </section>
-
-          {/* What it does */}
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              What Dormscape does
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              We do the tape-measure homework. Dormscape starts from your exact
-              room, with dimensions pulled from official university housing data
-              for{" "}
-              <Link href="/colleges" className={TEXT_LINK}>
+      <section className={`ds-section ${css.does}`} aria-labelledby="does-title">
+        <div className="ds-wrap">
+          <p className={`ds-eyebrow ${css.eyebrow}`} data-reveal="">
+            What Dormscape does
+          </p>
+          <Headline
+            id="does-title"
+            className="ds-h2 ds-h2--inline"
+            lines={[{ text: "We do the tape-measure" }, { text: "homework.", serif: true }]}
+          />
+          <div className={css.doesCopy} data-reveal="">
+            <p className="ds-lede">
+              Dormscape starts from your exact room, with dimensions pulled from official university housing data for{" "}
+              <Link href="/colleges" className="ds-link">
                 {SCHOOLS.length} schools
               </Link>{" "}
               and counting.
             </p>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              From there you pick a style that feels like you, set a budget, and
-              get a layout plus a list of real products that fit it. Drag the
-              furniture around, swap products, share the result. That&rsquo;s the
-              pitch. The proof is in{" "}
-              <Link href="/plan" className={TEXT_LINK}>
+            <p>
+              From there you pick a style that feels like you, set a budget, and get a layout plus a list of real
+              products that fit it. Drag the furniture around, swap products, share the result. That&rsquo;s the pitch.
+              The proof is in{" "}
+              <Link href="/plan" className="ds-link">
                 the planner
               </Link>
               .
             </p>
-          </section>
+          </div>
 
-          {/* Why it's different */}
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              Why it&rsquo;s not another checklist
-            </h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-3">
-              <div className="dm-editorial-card rounded-xl border border-ink/10 bg-card p-5">
-                <p className="font-mono text-[11px] uppercase tracking-wide text-cobalt">
-                  Real dimensions
-                </p>
-                <h3 className="mt-2 font-display text-base font-bold tracking-tight">
-                  Measured, not guessed.
-                </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                  Room sizes come from official housing data, school by school.
-                  When a college doesn&rsquo;t publish a number, we leave it blank
-                  instead of inventing one.{" "}
-                  <Link href="/methodology" className={TEXT_LINK}>
+          <h3 className={`ds-eyebrow ${css.diffLabel}`} data-reveal="">
+            Why it&rsquo;s not another checklist
+          </h3>
+          <ul className={css.diffs}>
+            <li data-reveal="">
+              <div className={css.diff}>
+                <div className={css.diffArt} aria-hidden="true">
+                  <span className={css.tapeArt} data-draw="" />
+                </div>
+                <h4 className={css.diffTitle}>Real dimensions</h4>
+                <p className={css.diffSub}>Measured, not guessed.</p>
+                <p className={css.diffBody}>
+                  Room sizes come from official housing data, school by school. When a college doesn&rsquo;t publish a
+                  number, we leave it blank instead of inventing one.{" "}
+                  <Link href="/methodology" className="ds-link">
                     How we measure
                   </Link>
                   .
                 </p>
               </div>
-              <div className="dm-editorial-card rounded-xl border border-ink/10 bg-card p-5">
-                <p className="font-mono text-[11px] uppercase tracking-wide text-cobalt">
-                  Visual layout
-                </p>
-                <h3 className="mt-2 font-display text-base font-bold tracking-tight">
-                  A room, not a list.
-                </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                  You see your stuff in your floor plan before you buy any of it.
-                  The rug that doesn&rsquo;t fit gets caught on screen, not on
-                  move-in day.
-                </p>
-              </div>
-              <div className="rounded-xl border border-ink/10 bg-card p-5">
-                <p className="font-mono text-[11px] uppercase tracking-wide text-cobalt">
-                  Budget first
-                </p>
-                <h3 className="mt-2 font-display text-base font-bold tracking-tight">
-                  Your number, respected.
-                </h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">
-                  Set a budget up front and the plan stays inside it. Every item
-                  is a real product with a live link, not stock-photo
-                  inspiration.
+            </li>
+            <li data-reveal="" style={{ "--i": 1 } as React.CSSProperties}>
+              <div className={css.diff}>
+                <div className={css.diffArt} aria-hidden="true">
+                  <span className={css.layoutArt} data-grow="" style={{ "--i": 2 } as React.CSSProperties}>
+                    <span />
+                    <span />
+                    <span />
+                  </span>
+                </div>
+                <h4 className={css.diffTitle}>Visual layout</h4>
+                <p className={css.diffSub}>A room, not a list.</p>
+                <p className={css.diffBody}>
+                  You see your stuff in your floor plan before you buy any of it. The rug that doesn&rsquo;t fit gets
+                  caught on screen, not on move-in day.
                 </p>
               </div>
-            </div>
-          </section>
+            </li>
+            <li data-reveal="" style={{ "--i": 2 } as React.CSSProperties}>
+              <div className={css.diff} data-tone="ink">
+                <div className={css.diffArt} aria-hidden="true">
+                  <span className={`ds-num ${css.budgetArt}`}>$650</span>
+                </div>
+                <h4 className={css.diffTitle}>Budget first</h4>
+                <p className={css.diffSub}>Your number, respected.</p>
+                <p className={css.diffBody}>
+                  Set a budget up front and the plan stays inside it. Every item is a real product with a live link, not
+                  stock-photo inspiration.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-          {/* Who it's for */}
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              Who it&rsquo;s for
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              Incoming freshmen, mostly. If you just committed and the roommate
-              group chat is already debating mini fridges, you&rsquo;re exactly who
-              we built this for. Students moving into first apartments are next on
-              the list. Same idea, more rooms.
-            </p>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
+      <section className={`ds-section ${css.who}`} aria-labelledby="who-title">
+        <div className="ds-wrap">
+          <p className={`ds-eyebrow ${css.eyebrow}`} data-reveal="">
+            Who it&rsquo;s for
+          </p>
+          <Headline id="who-title" className={`ds-h2 ${css.whoTitle}`} lines={[{ text: "Incoming freshmen, mostly." }]} />
+          <p className={css.whoQuote} data-reveal="">
+            If you just committed and the roommate group chat is already <mark>debating mini fridges</mark>,
+            you&rsquo;re exactly who we built this for.
+          </p>
+          <div className={css.whoMore} data-reveal="">
+            <p>Students moving into first apartments are next on the list. Same idea, more rooms.</p>
+            <p>
               School not on{" "}
-              <Link href="/colleges" className={TEXT_LINK}>
+              <Link href="/colleges" className="ds-link">
                 the list
               </Link>{" "}
               yet?{" "}
-              <Link href="/add-school" className={TEXT_LINK}>
+              <Link href="/add-school" className="ds-link">
                 Add it
               </Link>{" "}
               and we&rsquo;ll get measuring.
             </p>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* Free, honestly */}
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              Start free
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-ink-soft">
-              Explore in 2D for free. Create an account for your first room plan
-              and unlimited saving. Some shopping links are affiliate links,
-              which pay us a small commission at no extra cost to you.{" "}
-              <Link href="/pricing" className={TEXT_LINK}>
-                Plus and Pro
-              </Link>{" "}
-              are optional one-time upgrades for more plans and tools, including
-              exports, custom vibes, and 3D room building and planning.
-            </p>
-          </section>
-
-          {/* How it works: short, icon-led steps for structural rhythm. */}
-          <section className="mt-14">
-            <h2 className="font-display text-2xl font-bold tracking-tight">How it works</h2>
-            <ol className="mt-6 grid gap-4 sm:grid-cols-3">
+      <section className="ds-section" aria-label="How it works and pricing">
+        <div className={`ds-wrap ${css.howGrid}`}>
+          <div>
+            <Headline
+              id="how-title"
+              className="ds-h2 ds-h2--inline"
+              lines={[{ text: "How it" }, { text: "works.", serif: true }]}
+            />
+            <ol className={css.steps}>
               {STEPS.map((step, i) => (
-                <li key={step.title} className="dm-editorial-card rounded-xl border border-ink/10 bg-card p-5">
-                  <div className="flex items-center gap-3">
-                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cobalt/10 text-cobalt">
-                      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                        {step.icon}
-                      </svg>
-                    </span>
-                    <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-ink-soft">
-                      Step {i + 1}
-                    </span>
-                  </div>
-                  <h3 className="mt-3 font-display text-base font-bold tracking-tight">{step.title}</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{step.body}</p>
+                <li key={step.title} className={css.step} data-reveal="" style={{ "--i": i } as React.CSSProperties}>
+                  <span className={css.stepRule} data-draw="" style={{ "--i": i } as React.CSSProperties} aria-hidden="true" />
+                  <span className={css.stepNum}>Step {i + 1}</span>
+                  <h3 className={css.stepTitle}>{step.title}</h3>
+                  <p className={css.stepBody}>{step.body}</p>
                 </li>
               ))}
             </ol>
-          </section>
-
-          {/* Closing CTA card, matching the homepage's ink CTA treatment. */}
-          <section className="mt-14">
-            <div className="relative overflow-hidden rounded-2xl bg-ink px-6 py-12 text-center sm:px-12 sm:py-14">
-              <div
-                className="pointer-events-none absolute inset-0 opacity-[0.07]"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
-                  backgroundSize: "28px 28px",
-                }}
-                aria-hidden="true"
-              />
-              <p className="relative font-mono text-xs font-medium uppercase tracking-[0.18em] text-highlight">Enough reading</p>
-              <h2 className="relative mx-auto mt-3 max-w-xl font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-                Your next room starts here.
-              </h2>
-              <div className="relative mt-7">
-                <PlanCta className="inline-flex h-13 items-center rounded-xl bg-highlight px-8 text-base font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:bg-white active:translate-y-0" />
-              </div>
-              <p className="relative mt-4 font-mono text-[11px] uppercase tracking-wide text-white/60">One free plan · Make it yours</p>
-            </div>
-          </section>
+          </div>
+          <div className={css.free} data-reveal="">
+            <Headline
+              id="free-title"
+              className="ds-h3 ds-h2--inline"
+              lines={[{ text: "Start" }, { text: "free.", serif: true }]}
+            />
+            <p>
+              Explore in 2D for free. Create an account for your first room plan and unlimited saving. Some shopping
+              links are affiliate links, which pay us a small commission at no extra cost to you.{" "}
+              <Link href="/pricing" className="ds-link">
+                Plus and Pro
+              </Link>{" "}
+              are optional one-time upgrades for more plans and tools, including exports, custom vibes, and 3D room
+              building and planning.
+            </p>
+          </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </section>
+
+      <CtaBand tone="amber" lead="Your next room" tail="starts here." note="One free plan · Make it yours">
+        <PlanCta
+          className="ds-btn ds-btn--ink-yellow ds-btn--lg"
+          freeLabel="Plan my room for free"
+          icon={<ArrowRight size={20} />}
+        />
+      </CtaBand>
+    </PageShell>
   );
 }

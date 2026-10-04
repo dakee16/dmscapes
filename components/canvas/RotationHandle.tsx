@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { normalizeRotation } from "./geometry";
 import { pointerRotation } from "./viewport";
-import s from "./CanvasStudio.module.css";
+import s from "./PlanCanvas.module.css";
 
 type Point = { x: number; y: number };
 type Gesture = { center: Point; start: Point; initial: number; angle: number; moved: boolean; released: boolean; pointerId: number | null; touch: boolean };
@@ -108,6 +108,6 @@ export default function RotationHandle({ label, center, position, degrees, onPre
       if (gesture.current) { gesture.current.angle = angle; onPreview(angle); }
       else onCommit(angle);
     }}>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 4v6h-6m5-1a8 8 0 1 0 1 8"/></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>
   </button>;
 }

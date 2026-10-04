@@ -13,6 +13,7 @@ export default function RoomThumb({
   furniture,
   outline,
   className,
+  style,
 }: {
   lengthFt: number;
   widthFt: number;
@@ -20,6 +21,8 @@ export default function RoomThumb({
   /** Hand-drawn rooms: draw the real outline instead of a plain rectangle. */
   outline?: RoomOutline | null;
   className?: string;
+  /** Lets a caller draw several plans at one shared scale. */
+  style?: React.CSSProperties;
 }) {
   const PX = 10;
   const PAD = 1;
@@ -37,7 +40,7 @@ export default function RoomThumb({
   });
 
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} aria-hidden="true" className={className}>
+    <svg viewBox={`0 0 ${W} ${H}`} aria-hidden="true" className={className} style={style}>
       {shapePath ? (
         <path d={shapePath} fill="#ffffff" stroke="#17172b" strokeWidth={1.5} strokeLinejoin="round" />
       ) : (

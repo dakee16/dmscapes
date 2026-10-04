@@ -1,8 +1,9 @@
 "use client";
 
 import Modal from "@/components/site/Modal";
-import BrandMark from "@/components/site/BrandMark";
-import styles from "@/components/auth/Auth.module.css";
+import { ArrowRight } from "@/components/ds/Icons";
+import { CloseButton } from "@/components/account-ui/parts";
+import d from "@/components/account-ui/Dialog.module.css";
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
@@ -67,7 +68,8 @@ export default function SignupWelcome() {
     <AnimatePresence>
       {open && (
         <MotionModal
-          className="fixed inset-0 z-[65] flex items-center justify-center overflow-y-auto bg-ink/45 p-4 backdrop-blur-[3px] sm:p-6"
+          className={`${d.layer} ${d.quiet}`}
+          style={{ "--z": 65 } as React.CSSProperties}
           role="dialog"
           aria-modal="true"
           aria-labelledby="signup-welcome-title"
@@ -80,72 +82,54 @@ export default function SignupWelcome() {
           transition={{ duration: 0.25, ease: REVEAL_EASE }}
         >
           <motion.div
-            className={`${styles.welcomeDialog} relative my-auto w-full max-w-md overflow-hidden border border-ink/10 shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)]`}
+            className={`ds ${d.sheet} ${d.quiet}`}
+            style={{ "--w": "480px" } as React.CSSProperties}
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16, scale: 0.96 }}
             animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
             exit={reduce ? { opacity: 0 } : { opacity: 0, y: 12, scale: 0.97 }}
             transition={{ duration: 0.34, ease: REVEAL_EASE }}
           >
-        <div className="relative p-7 sm:p-9">
-          <div className="flex items-start justify-between gap-4">
-            <BrandMark size={48} />
-            <button
-              type="button"
-              onClick={dismiss}
-              aria-label="Close"
-              className="grid h-9 w-9 shrink-0 cursor-pointer place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-ink"
-            >
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
-
-          <h2
-            id="signup-welcome-title"
-            className="mt-6 font-display text-3xl font-extrabold leading-[1.1] tracking-tight text-ink sm:text-[2.1rem]"
-          >
-            Welcome to <em>dormscape.</em>
-          </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">
-            Here&rsquo;s your first design credit, on us. Pick your school, choose
-            a vibe, and start imagining your space with a room layout and
-            shoppable picks for your budget.
-          </p>
-
-          {/* The credit, front and center. */}
-          <div className={`${styles.welcomeCredit} mt-6 flex items-center gap-4 border border-cobalt/15 bg-cobalt/[0.05] p-4`}>
-            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-cobalt text-white">
-              <span className="font-display text-2xl font-extrabold leading-none">1</span>
-            </span>
-            <div className="min-w-0">
-              <p className="text-sm font-semibold text-ink">1 free design credit</p>
-              <p className="mt-0.5 text-[13px] leading-snug text-ink-soft">
-                Enough to plan a full room, start to finish. No card needed.
-              </p>
+            <div className={d.top}>
+              <span className={d.mark} aria-hidden="true">
+                dormscape<i />
+              </span>
+              <CloseButton onClick={dismiss} />
             </div>
-          </div>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Link
-              href="/plan"
-              onClick={() => {
-                track("signup_welcome_cta_clicked");
-                setOpen(false);
-              }}
-              className="flex h-12 flex-1 items-center justify-center rounded-xl bg-cobalt px-6 text-base font-semibold text-white transition-colors hover:bg-cobalt-deep"
-            >
-              Plan my room
-            </Link>
-            <button
-              type="button"
-              onClick={dismiss}
-              className="h-12 shrink-0 cursor-pointer rounded-xl px-4 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
-            >
-              Maybe later
-            </button>
-          </div>
-        </div>
+            <h2 id="signup-welcome-title" className={d.title}>
+              Welcome to <span className={d.serif}>dormscape.</span>
+            </h2>
+            <p className={d.body}>
+              Here&rsquo;s your first design credit, on us. Pick your school, choose a vibe, and start imagining your space
+              with a room layout and shoppable picks for your budget.
+            </p>
+
+            {/* The credit, front and center. */}
+            <div className={d.coinRow}>
+              <span className={d.coin} aria-hidden="true">
+                1
+              </span>
+              <div>
+                <b>1 free design credit</b>
+                <span>Enough to plan a full room, start to finish. No card needed.</span>
+              </div>
+            </div>
+
+            <div className={d.row}>
+              <Link
+                href="/plan"
+                onClick={() => {
+                  track("signup_welcome_cta_clicked");
+                  setOpen(false);
+                }}
+                className={`${d.btn} ${d.btnInk}`}
+              >
+                Plan my room <ArrowRight />
+              </Link>
+              <button type="button" onClick={dismiss} className={d.later} style={{ width: "auto", margin: 0 }}>
+                Maybe later
+              </button>
+            </div>
           </motion.div>
         </MotionModal>
       )}

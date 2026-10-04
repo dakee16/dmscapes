@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MotionToggle } from "@/components/experience/MotionProvider";
@@ -8,60 +8,191 @@ import ProfileMenu from "@/components/auth/ProfileMenu";
 import Wordmark from "@/components/site/Wordmark";
 import HeaderCredits from "@/components/site/HeaderCredits";
 import { FeedbackDialog } from "@/components/site/FeedbackLink";
-import s from "./Navigation.module.css";
+import { ArrowRight, ArrowUpRight, ChevronDown, CloseIcon, MenuIcon } from "@/components/ds/Icons";
+import s from "./ds/SiteNav.module.css";
 
-const GROUPS = [
-  { label: "Plan", caption: "Make room for your next chapter.", links: [
+/** The five links the redesign's nav shows (design-handoff/designs/site/SiteNav). */
+const PRIMARY = [
+  { key: "how", label: "How it works", href: "/#how-it-works" },
+  { key: "colleges", label: "Colleges", href: "/colleges" },
+  { key: "pricing", label: "Pricing", href: "/pricing" },
+  { key: "3d", label: "3D Studio", href: "/plan/draw/3d" },
+  { key: "blog", label: "Blog", href: "/blog" },
+] as const;
+
+type GroupLink = { label: string; href: string; detail?: string; tag?: string };
+type Group = { key: string; label: string; caption: string; links: GroupLink[] };
+
+/** Everything else lives one click away, under More (and in the phone menu). */
+const GROUPS: Group[] = [
+  { key: "plan", label: "Plan", caption: "Make room for your next chapter.", links: [
     { label: "Plan my room", href: "/plan", detail: "A layout and shopping list, together" },
     { label: "Draw in 2D", href: "/plan/draw", detail: "Start with your own dimensions" },
     { label: "Build in 3D", href: "/plan/draw/3d", detail: "Walls, doors and windows with Pro" },
   ] },
-  { label: "My rooms", caption: "A place for your plans and your people.", links: [
-    { label: "Open My rooms", href: "/rooms", detail: "Your workspaces and saved designs" },
+  { key: "rooms", label: "My rooms", caption: "A place for your plans and your people.", links: [
+    { label: "My designs", href: "/rooms", detail: "Your workspaces and saved designs" },
+    { label: "My Room", tag: "Pro", href: "/my-room", detail: "The room you share with your roommates" },
     { label: "Plan with roommates", href: "/#together", detail: "One Pro host. Friends join free." },
   ] },
-  { label: "Discover", caption: "Find your room. Find your style.", links: [
-    { label: "How it works", href: "/#how-it-works" },
-    { label: "Vibes & styles", href: "/#vibes" },
-    { label: "The 3D studio", href: "/#room-in-3d-end" },
-    { label: "Colleges", href: "/colleges" },
-  ] },
-  { label: "Help", caption: "A little help before move-in.", links: [
+  { key: "help", label: "Help", caption: "A little help before move-in.", links: [
     { label: "Room guides", href: "/blog" },
     { label: "Frequently asked", href: "/faq" },
     { label: "Contact", href: "/contact" },
     { label: "Feedback", href: "feedback" },
     { label: "Report a problem", href: "/report" },
   ] },
-  { label: "About", caption: "The people and policies behind the plan.", links: [
+  { key: "about", label: "About", caption: "The people and policies behind the plan.", links: [
     { label: "About Dormscape", href: "/about" },
     { label: "How we measure", href: "/methodology" },
     { label: "Privacy policy", href: "/privacy" },
     { label: "Cookie policy", href: "/cookies" },
     { label: "Terms of service", href: "/terms" },
   ] },
-] as const;
+];
 
-export default function Nav() {
+function activeKey(pathname: string): string | null {
+  if (pathname.startsWith("/colleges") || pathname.startsWith("/add-school")) return "colleges";
+  if (pathname.startsWith("/pricing")) return "pricing";
+  if (pathname.startsWith("/plan/draw/3d")) return "3d";
+  if (pathname.startsWith("/blog")) return "blog";
+  return null;
+}
+
+/** A little room drawn on plan paper under a measuring tape: the Plan card's
+ *  signature detail. Decorative only. */
+function PlanSketch() {
+  return (
+    <div className={s.sketch} aria-hidden="true">
+      <span className={s.sketchTape} />
+      <svg viewBox="0 0 220 108" className={s.sketchPlan}>
+        <g stroke="var(--ds-ink)" strokeWidth="1.2" fill="none" opacity="0.55">
+          <path d="M14 10h192M14 6v8M206 6v8" />
+          <path d="M214 22v74M210 22h8M210 96h8" />
+        </g>
+        <rect x="14" y="22" width="192" height="74" fill="#fff" />
+        <g className={s.sketchPieces}>
+          <rect x="22" y="30" width="40" height="58" rx="3" fill="#dce1f5" stroke="var(--ds-ink)" strokeWidth="1.5" />
+          <path d="M22 44h40M28 34h28v7H28z" stroke="var(--ds-ink)" strokeWidth="1.2" fill="none" />
+          <rect x="150" y="30" width="48" height="18" rx="2" fill="var(--ds-yellow)" stroke="var(--ds-ink)" strokeWidth="1.5" />
+          <rect x="164" y="52" width="16" height="13" rx="3" fill="#fff" stroke="var(--ds-ink)" strokeWidth="1.5" />
+          <rect x="86" y="50" width="52" height="32" rx="2" fill="rgba(255,79,168,0.22)" />
+          <path d="M92 50v32M100 50v32M108 50v32M116 50v32M124 50v32M132 50v32" stroke="rgba(255,79,168,0.6)" strokeWidth="2" />
+        </g>
+        <path d="M120 96H14V22h192v74h-46" stroke="var(--ds-ink)" strokeWidth="4" fill="none" strokeLinecap="square" />
+        <path d="M70 22h40" stroke="#fff" strokeWidth="4" />
+        <path d="M70 20.5h40M70 23.5h40" stroke="var(--ds-ink)" strokeWidth="1" />
+        <path d="M120 96V62a34 34 0 0 1 34 34" stroke="var(--ds-blue)" strokeWidth="1.5" fill="none" strokeDasharray="3 3" />
+        <circle cx="120" cy="96" r="2.5" fill="var(--ds-blue)" />
+      </svg>
+    </div>
+  );
+}
+
+/** An opaque computed background-color, or null for transparent/translucent. */
+function opaque(color: string): string | null {
+  const rgba = color.match(/^rgba?\(([^)]+)\)$/);
+  if (!rgba) return color && color !== "transparent" ? color : null;
+  const alpha = rgba[1].split(/[\s,/]+/).filter(Boolean)[3];
+  return alpha === undefined || parseFloat(alpha) >= 1 ? color : null;
+}
+
+/** Paper text reads better than ink on it (WCAG luminance below ~0.18). */
+function isDark(color: string): boolean {
+  const rgb = color.match(/^rgba?\(\s*([\d.]+)[\s,]+([\d.]+)[\s,]+([\d.]+)/);
+  if (!rgb) return false;
+  const [r, g, b] = rgb.slice(1, 4).map((v) => {
+    const c = Number(v) / 255;
+    return c <= 0.04045 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
+  });
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.18;
+}
+
+/** Fixed or sticky chrome (a post's reading bar, the pinned homepage hero
+ *  copy) isn't the section behind the header. */
+function pinned(el: Element): boolean {
+  for (let n: Element | null = el; n && n !== document.body; n = n.parentElement) {
+    const position = getComputedStyle(n).position;
+    if (position === "fixed" || position === "sticky") return true;
+  }
+  return false;
+}
+
+/** The colour of the page section directly behind the header: the topmost
+ *  opaque element 8px in from the left, just below it. */
+function groundBehind(header: HTMLElement): string | null {
+  const y = header.getBoundingClientRect().bottom + 1;
+  if (y >= window.innerHeight) return null;
+  for (const el of document.elementsFromPoint(8, y)) {
+    if (header.contains(el)) continue;
+    const color = opaque(getComputedStyle(el).backgroundColor);
+    if (color && !pinned(el)) return color;
+  }
+  return null;
+}
+
+/** Ruler numbers, one per 96px tick; the card never runs past 14. */
+const RULER_NUMBERS = Array.from({ length: 14 }, (_, i) => i + 1);
+
+export default function Nav({
+  overlay = false,
+  tone = "light",
+}: {
+  /** Float over the page's first section (homepage hero) until scrolled. */
+  overlay?: boolean;
+  /** "dark" forces the dark tone; otherwise a dark ground switches to it. */
+  tone?: "light" | "dark";
+}) {
   const pathname = usePathname();
   const root = useRef<HTMLElement>(null);
-  const [open, setOpen] = useState<string | null>(null);
+  const [more, setMore] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [feedback, setFeedback] = useState(false);
-  const close = () => { setOpen(null); setMobileOpen(false); };
+  const [scrolled, setScrolled] = useState(false);
+  const [groundDark, setGroundDark] = useState(tone === "dark");
+  const close = () => { setMore(false); setMobileOpen(false); };
+  const current = activeKey(pathname);
+  const dark = tone === "dark" || groundDark;
 
   useEffect(close, [pathname]);
+  // One passive, rAF-throttled listener: scrolled state, the ruler's progress
+  // strip and the card's ground colour (re-read on resize and route change).
   useEffect(() => {
-    if (!open && !mobileOpen) return;
+    const header = root.current;
+    if (!header) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      header.style.setProperty("--nav-progress", String(max > 0 ? Math.min(1, window.scrollY / max) : 0));
+      setScrolled(window.scrollY > 8);
+      const ground = groundBehind(header);
+      const darkGround = ground !== null && isDark(ground);
+      header.style.setProperty("--nav-ground",
+        tone === "dark" && !darkGround ? "var(--ds-night)" : ground ?? "var(--ds-paper)");
+      setGroundDark(darkGround);
+    };
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    schedule();
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+    };
+  }, [pathname, tone]);
+  useEffect(() => {
+    if (!more && !mobileOpen) return;
     const outside = (event: PointerEvent) => {
       if (!root.current?.contains(event.target as Node)) close();
     };
     const escape = (event: globalThis.KeyboardEvent) => {
       if (event.key !== "Escape" || document.querySelector('[aria-modal="true"]')) return;
       const trigger = root.current?.querySelector<HTMLButtonElement>(
-        open ? `[data-group="${open}"]` : '[aria-controls="site-navigation"]'
+        more ? "[data-more]" : '[aria-controls="site-navigation"]'
       );
-      if (open) setOpen(null); else setMobileOpen(false);
+      close();
       trigger?.focus();
     };
     const focus = (event: FocusEvent) => {
@@ -75,7 +206,11 @@ export default function Nav() {
       document.removeEventListener("keydown", escape);
       document.removeEventListener("focusin", focus);
     };
-  }, [open, mobileOpen]);
+  }, [more, mobileOpen]);
+  useEffect(() => {
+    document.documentElement.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.documentElement.style.overflow = ""; };
+  }, [mobileOpen]);
 
   function panelKeys(event: KeyboardEvent<HTMLDivElement>) {
     if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return;
@@ -86,47 +221,126 @@ export default function Nav() {
     event.preventDefault(); items[next]?.focus();
   }
 
+  const linkBody = (link: GroupLink) => (
+    <>
+      <span className={s.rowText}>
+        <span className={s.rowLabel}>
+          {link.label}
+          {link.tag && <span className={s.rowTag}><span className="ds-sr"> · </span>{link.tag}</span>}
+        </span>
+        {link.detail && <small className={s.rowDetail}>{link.detail}</small>}
+      </span>
+      <span className={s.rowArrow} aria-hidden="true"><ArrowUpRight size={14} strokeWidth={2.6} /></span>
+    </>
+  );
+
+  const groupCard = (where: "more" | "sheet") => (group: Group, index: number) => (
+    <section key={group.key} className={s.card} data-group={group.key} aria-labelledby={`${where}-group-${group.key}`}
+      style={{ "--i": index } as CSSProperties}>
+      <header className={s.cardHead}>
+        <p className={s.cardLabel} id={`${where}-group-${group.key}`}>
+          <span className={s.cardIndex} aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+          {group.label}
+        </p>
+        <p className={s.cardCaption}>{group.caption}</p>
+      </header>
+      <div className={s.cardBody}>
+      <ul className={s.rows}>
+        {group.links.map((link) => (
+          <li key={link.href}>
+            {link.href === "feedback"
+              ? <button type="button" className={s.row} onClick={() => { close(); setFeedback(true); }}>
+                  {linkBody(link)}
+                </button>
+              : <Link className={s.row}
+                  href={link.href === "/report" ? `/report?from=${encodeURIComponent(pathname)}` : link.href}
+                  aria-current={pathname === link.href ? "page" : undefined} onClick={close}>
+                  {linkBody(link)}
+                </Link>}
+          </li>
+        ))}
+      </ul>
+      {group.key === "plan" && <PlanSketch />}
+      </div>
+    </section>
+  );
+
   return <>
-    <header className="dm-header">
-      <nav ref={root} className={`dm-nav ${s.nav}`} aria-label="Main navigation">
-        <Wordmark />
-        <button type="button" className={s.mobileTrigger} aria-label="Navigation menu"
-          aria-expanded={mobileOpen} aria-controls="site-navigation"
-          onClick={() => { setMobileOpen(!mobileOpen); setOpen(null); }}>
-          {mobileOpen ? "Close" : "Menu"}<span aria-hidden="true">{mobileOpen ? "×" : "+"}</span>
-        </button>
-        <div id="site-navigation" className={s.groups} data-open={mobileOpen}>
-          {GROUPS.map(group => <div className={s.group} key={group.label}>
-            <button type="button" className={s.trigger} data-group={group.label}
-              aria-expanded={open === group.label} aria-controls={`nav-${group.label.replaceAll(" ", "-").toLowerCase()}`}
-              onClick={() => setOpen(open === group.label ? null : group.label)}
-              onKeyDown={event => {
+    <header
+      ref={root}
+      className={`ds ds-site-nav ${s.header}`}
+      data-overlay={overlay}
+      data-tone={dark ? "dark" : "light"}
+      data-scrolled={scrolled || mobileOpen}
+      data-open={mobileOpen}
+    >
+      <div className={s.plate}>
+      <span className={s.ruler} aria-hidden="true">
+        <span className={`${s.progress} ds-nav-progress`} />
+        <span className={s.ticks}>
+          {RULER_NUMBERS.map((n) => <span key={n} style={{ "--n": n } as CSSProperties}>{n}</span>)}
+        </span>
+      </span>
+      <nav className={s.bar} aria-label="Main navigation">
+        <Wordmark tone={dark ? "dark" : "light"} />
+        <div className={s.links}>
+          {PRIMARY.map((link) =>
+            link.href.startsWith("/#")
+              ? <a key={link.key} href={link.href} className={s.link}>{link.label}</a>
+              : <Link key={link.key} href={link.href} className={s.link}
+                  aria-current={current === link.key ? "page" : undefined}>{link.label}</Link>)}
+          <div className={s.moreWrap}>
+            <button type="button" className={s.link} data-more aria-expanded={more}
+              aria-controls="nav-more" onClick={() => setMore(!more)}
+              onKeyDown={(event) => {
                 if (event.key === "ArrowDown") {
-                  event.preventDefault(); setOpen(group.label);
-                  requestAnimationFrame(() => document.getElementById(`nav-${group.label.replaceAll(" ", "-").toLowerCase()}`)?.querySelector<HTMLElement>("a, button")?.focus());
+                  event.preventDefault(); setMore(true);
+                  requestAnimationFrame(() => document.getElementById("nav-more")?.querySelector<HTMLElement>("a, button")?.focus());
                 }
               }}>
-              {group.label}<svg viewBox="0 0 16 16" width="14" height="14" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" strokeWidth="1.5" /></svg>
+              More<span className={s.chev}><ChevronDown /></span>
             </button>
-            <div id={`nav-${group.label.replaceAll(" ", "-").toLowerCase()}`} className={s.panel} hidden={open !== group.label} onKeyDown={panelKeys}>
-              <p>{group.caption}</p>
-              {group.links.map(link => link.href === "feedback"
-                ? <button type="button" className={s.link} key={link.href} onClick={() => {
-                  root.current?.querySelector<HTMLButtonElement>(window.matchMedia("(max-width:1023px)").matches
-                    ? '[aria-controls="site-navigation"]' : '[data-group="Help"]')?.focus();
-                  close(); setFeedback(true);
-                }}><span>{link.label}</span><span aria-hidden="true">↗</span></button>
-                : <Link key={link.href} className={s.link}
-                    href={link.href === "/report" ? `/report?from=${encodeURIComponent(pathname)}` : link.href}
-                    aria-current={pathname === link.href ? "page" : undefined} onClick={close}>
-                    <span>{link.label}{"detail" in link && <small>{link.detail}</small>}</span><span aria-hidden="true">↗</span>
-                  </Link>)}
-            </div>
-          </div>)}
+          </div>
         </div>
-        <div className={s.actions}><HeaderCredits /><MotionToggle /><ProfileMenu /></div>
+        <div id="nav-more" className={s.morePanel} hidden={!more} onKeyDown={panelKeys}>
+          {GROUPS.map(groupCard("more"))}
+        </div>
+        <div className={s.actions}>
+          <HeaderCredits />
+          <div className={s.profile}><ProfileMenu /></div>
+          <Link href="/plan" className={`ds-btn ds-btn--sm ${dark ? "ds-btn--yellow" : "ds-btn--ink"} ${s.cta}`}>
+            <span className={s.ctaLong}>Plan my room free</span><span className={s.ctaShort}>Plan free</span><ArrowRight size={16} />
+          </Link>
+          <button type="button" className={s.menuBtn} aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen} aria-controls="site-navigation" onClick={() => { setMobileOpen(!mobileOpen); setMore(false); }}>
+            {mobileOpen ? <CloseIcon /> : <MenuIcon />}
+          </button>
+        </div>
       </nav>
+      </div>
+      <div id="site-navigation" className={s.sheet} data-open={mobileOpen} hidden={!mobileOpen}>
+        <div className={s.sheetInner}>
+          <div className={s.sheetPrimary}>
+            {PRIMARY.map((link, i) => (
+              <Link key={link.key} href={link.href} className={s.sheetBig} onClick={close}
+                aria-current={current === link.key ? "page" : undefined} style={{ "--i": i } as CSSProperties}>
+                {link.label}<ArrowRight size={22} />
+              </Link>
+            ))}
+          </div>
+          <div className={s.sheetGroups}>{GROUPS.map(groupCard("sheet"))}</div>
+          <div className={s.sheetFoot}><MotionToggle /></div>
+        </div>
+      </div>
     </header>
-    {feedback && <FeedbackDialog onClose={() => setFeedback(false)} />}
+    {feedback && <FeedbackDialog onClose={() => {
+      setFeedback(false);
+      // The Feedback item lived in a menu that has since closed: hand focus back
+      // to whichever menu trigger is on screen.
+      requestAnimationFrame(() => {
+        const triggers = root.current?.querySelectorAll<HTMLElement>('[data-more], [aria-controls="site-navigation"]');
+        Array.from(triggers ?? []).find((el) => el.getClientRects().length > 0)?.focus();
+      });
+    }} />}
   </>;
 }

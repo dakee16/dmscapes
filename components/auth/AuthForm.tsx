@@ -44,12 +44,25 @@ function isAlreadyRegistered(err: { code?: string | null; message?: string | nul
 
 function GoogleG() {
   return (
-    <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden="true">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
       <path fill="#4285F4" d="M23.5 12.27c0-.85-.08-1.66-.22-2.45H12v4.64h6.46a5.52 5.52 0 0 1-2.4 3.62v3h3.88c2.27-2.09 3.56-5.17 3.56-8.81Z" />
       <path fill="#34A853" d="M12 24c3.24 0 5.96-1.07 7.94-2.91l-3.88-3c-1.08.72-2.45 1.15-4.06 1.15-3.13 0-5.78-2.11-6.72-4.95H1.27v3.1A12 12 0 0 0 12 24Z" />
       <path fill="#FBBC05" d="M5.28 14.29a7.2 7.2 0 0 1 0-4.58v-3.1H1.27a12 12 0 0 0 0 10.78l4.01-3.1Z" />
       <path fill="#EA4335" d="M12 4.77c1.76 0 3.34.6 4.59 1.79l3.44-3.44A11.98 11.98 0 0 0 12 0 12 12 0 0 0 1.27 6.61l4.01 3.1C6.22 6.87 8.87 4.77 12 4.77Z" />
     </svg>
+  );
+}
+
+/** Two-voice title: the last word in Fraunces italic, blue (Login.dc.html). */
+function Title({ text }: { text: string }) {
+  const cut = text.lastIndexOf(" ");
+  const lead = cut > 0 ? text.slice(0, cut) : "";
+  const last = cut > 0 ? text.slice(cut + 1) : text;
+  return (
+    <h1 className={styles.title}>
+      {lead && <><span className={styles.titleLead}>{lead}</span> </>}
+      <span className={styles.titleSerif}>{last}.</span>
+    </h1>
   );
 }
 
@@ -251,69 +264,71 @@ export default function AuthForm({
 
   if (!configured) {
     return (
-      <div className={`${styles.form} space-y-4`}>
-        <h1>Sign-in is unavailable</h1>
-        <p className="rounded-xl border border-ink/10 bg-white px-4 py-3.5 text-sm leading-relaxed text-ink-soft">
-          Please try again later. You can still explore schools, room sizes, and styles.
-        </p>
-        <Link href="/plan" className="flex h-12 w-full items-center justify-center rounded-xl bg-cobalt text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep">
-          Start planning
-        </Link>
+      <div className={styles.form}>
+        <Title text="Sign-in is unavailable" />
+        <div className={styles.note}>
+          <p>Please try again later. You can still explore schools, room sizes, and styles.</p>
+          <Link href="/plan" className={`ds-btn ds-btn--ink-yellow ${styles.submit}`}>
+            Start planning
+          </Link>
+        </div>
       </div>
     );
   }
 
   return (
     <div className={styles.form}>
-      <h1>{title}</h1>
+      <Title text={title} />
 
       {confirmSent ? (
-        <div className="mt-4 rounded-xl border border-ink/10 bg-white px-4 py-4 text-sm leading-relaxed">
-          <p className="font-semibold">We sent a confirmation link to {email.trim()}.</p>
-          <p className="mt-1 text-ink-soft">Open the link, then log in.</p>
+        <div className={styles.note}>
+          <p><strong>We sent a confirmation link to {email.trim()}.</strong></p>
+          <p>Open the link, then log in.</p>
           <button
             type="button"
             onClick={() => {
               setConfirmSent(false);
               setMode("login");
             }}
-            className="mt-4 h-11 w-full cursor-pointer rounded-xl bg-ink text-sm font-semibold text-white transition-colors hover:bg-cobalt"
+            className={`ds-btn ds-btn--ink-yellow ${styles.submit}`}
           >
             Back to log in
           </button>
         </div>
       ) : resetMode ? (
         resetSent ? (
-          <div className="mt-4 rounded-xl border border-ink/10 bg-white px-4 py-4 text-sm leading-relaxed">
-            <p className="font-semibold">If {email.trim()} has an account, a reset link is on its way.</p>
-            <p className="mt-1 text-ink-soft">Open the link to choose a new password.</p>
+          <div className={styles.note}>
+            <p><strong>If {email.trim()} has an account, a reset link is on its way.</strong></p>
+            <p>Open the link to choose a new password.</p>
             <button
               type="button"
               onClick={() => { setResetMode(false); setResetSent(false); }}
-              className="mt-4 h-11 w-full cursor-pointer rounded-xl bg-ink text-sm font-semibold text-white transition-colors hover:bg-cobalt"
+              className={`ds-btn ds-btn--ink-yellow ${styles.submit}`}
             >
               Back to log in
             </button>
           </div>
         ) : (
-          <form onSubmit={handleReset} className="mt-4" noValidate>
-            <p className="text-sm leading-relaxed text-ink-soft">Enter your email and we&apos;ll send a link to set a new password.</p>
-            <div className="mt-4">
-              <label htmlFor="auth-reset-email" className="mb-1.5 block text-sm font-medium">Email</label>
-              <input id="auth-reset-email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@school.edu" className="h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt" />
+          <form onSubmit={handleReset} noValidate>
+            <p className={styles.intro}>Enter your email and we&apos;ll send a link to set a new password.</p>
+            <div className={`${styles.fields} ${styles.solo}`}>
+              <div className={styles.field}>
+                <label htmlFor="auth-reset-email" className={styles.label}>Email</label>
+                <input id="auth-reset-email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@school.edu" className={styles.input} />
+              </div>
+              {error && <p className={styles.error} role="alert">{error}</p>}
+              <button type="submit" disabled={busy} className={`ds-btn ds-btn--ink-yellow ${styles.submit}`}>
+                {busy ? "Sending…" : "Send reset link"}
+              </button>
+              <button type="button" onClick={() => { setResetMode(false); setError(""); }} className={styles.back}>
+                Back to log in
+              </button>
             </div>
-            {error && <p className="mt-3 text-sm text-[#c2321e]" role="alert">{error}</p>}
-            <button type="submit" disabled={busy} className="mt-4 h-12 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70">
-              {busy ? "Sending…" : "Send reset link"}
-            </button>
-            <button type="button" onClick={() => { setResetMode(false); setError(""); }} className="mt-3 block w-full cursor-pointer text-center text-sm text-ink-soft transition-colors hover:text-ink">
-              Back to log in
-            </button>
           </form>
         )
       ) : (
-        <div className="mt-3">
-          <p className={styles.formIntro}>
+        <div>
+          <p className={styles.intro}>
             {saveDesign
               ? "Create a free account to keep this room."
               : buyReason
@@ -322,64 +337,67 @@ export default function AuthForm({
                   ? "Create a free account to generate your room. Your choices are saved, so you can pick up right here."
                   : "Save your designs, revisit your favorites, and pick up where you left off."}
           </p>
-          <div className={styles.modeTabs} role="group" aria-label="Account access">
+          <div className={styles.tabs} role="group" aria-label="Account access">
             {(["signup", "login"] as const).map((m) => (
-              <button key={m} type="button" aria-pressed={mode === m} onClick={() => { setMode(m); setError(""); setExistingNotice(false); }} className={`cursor-pointer rounded-lg py-2 transition-colors ${mode === m ? "bg-ink text-white" : "text-ink-soft hover:text-ink"}`}>
+              <button key={m} type="button" aria-pressed={mode === m} onClick={() => { setMode(m); setError(""); setExistingNotice(false); }} className={styles.tab}>
                 {m === "signup" ? "Sign up" : "Log in"}
               </button>
             ))}
           </div>
           {mode === "login" && existingNotice && (
-            <div className="mt-4 flex items-start gap-2.5 rounded-xl border border-cobalt/30 bg-cobalt/[0.06] px-4 py-3" role="status">
-              <svg viewBox="0 0 24 24" className="mt-0.5 h-5 w-5 shrink-0 text-cobalt" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+            <div className={styles.notice} role="status">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <circle cx="12" cy="12" r="9" /><path d="M12 8h.01M11 12h1v4h1" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <p className="text-[13px] leading-snug text-ink">
-                <span className="font-semibold">An account with this email already exists.</span>{" "}
+              <p>
+                <strong>An account with this email already exists.</strong>{" "}
                 We switched you to log in{email.trim() ? ", " : "."}
-                {email.trim() && (<>just enter your password for <span className="font-medium">{email.trim()}</span>.</>)}
+                {email.trim() && (<>just enter your password for <strong>{email.trim()}</strong>.</>)}
               </p>
             </div>
           )}
-          <button type="button" onClick={handleGoogle} disabled={busy} className="mt-4 flex h-12 w-full cursor-pointer items-center justify-center gap-2.5 rounded-xl border border-ink/15 bg-white text-sm font-semibold text-ink transition-colors hover:border-ink/30 disabled:cursor-wait disabled:opacity-70">
+          <button type="button" onClick={handleGoogle} disabled={busy} className={styles.google}>
             <GoogleG /> Continue with Google
           </button>
-          <div className="my-4 flex items-center gap-3" aria-hidden="true">
-            <span className="h-px flex-1 bg-ink/10" />
-            <span className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">or</span>
-            <span className="h-px flex-1 bg-ink/10" />
-          </div>
-          <form onSubmit={handleCredentials} className="space-y-3" noValidate>
-            <div>
-              <label htmlFor="auth-email" className="mb-1.5 block text-sm font-medium">Email</label>
-              <input ref={emailRef} id="auth-email" type="email" autoComplete="email" value={email} onChange={(e) => { setEmail(e.target.value); if (existingNotice) setExistingNotice(false); }} placeholder="you@school.edu" className="h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt" />
+          <div className={styles.or} aria-hidden="true">OR</div>
+          <form onSubmit={handleCredentials} className={styles.fields} noValidate>
+            <div className={styles.field}>
+              <label htmlFor="auth-email" className={styles.label}>Email</label>
+              <input ref={emailRef} id="auth-email" type="email" autoComplete="email" value={email} onChange={(e) => { setEmail(e.target.value); if (existingNotice) setExistingNotice(false); }} placeholder="you@school.edu" className={styles.input} />
             </div>
-            <div>
-              <label htmlFor="auth-password" className="mb-1.5 block text-sm font-medium">Password</label>
-              <input id="auth-password" type="password" autoComplete={mode === "signup" ? "new-password" : "current-password"} value={password} onChange={(e) => setPassword(e.target.value)} placeholder={mode === "signup" ? "8 to 12 characters" : "Your password"} className="h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt" />
+            <div className={styles.field}>
+              <span className={styles.labelRow}>
+                <label htmlFor="auth-password" className={styles.label}>Password</label>
+                {mode === "login" && (
+                  <button type="button" onClick={() => { setResetMode(true); setError(""); }} className={styles.textBtn}>
+                    Forgot password?
+                  </button>
+                )}
+              </span>
+              <input id="auth-password" type="password" autoComplete={mode === "signup" ? "new-password" : "current-password"} value={password} onChange={(e) => setPassword(e.target.value)} placeholder={mode === "signup" ? "8 to 12 characters" : "Your password"} className={styles.input} />
               {mode === "signup" && <PasswordChecklist password={password} />}
             </div>
             {mode === "signup" && (
-              <div className="flex items-start gap-2.5 pt-0.5">
-                <input id="auth-terms" type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} aria-label="I agree to the Terms of Service and Privacy Policy" className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-cobalt" />
-                <p className="text-[13px] leading-snug text-ink-soft">
+              <div className={styles.consent}>
+                <input id="auth-terms" type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} aria-label="I agree to the Terms of Service and Privacy Policy" />
+                <p>
                   I agree to the{" "}
-                  <Link href="/terms" target="_blank" rel="noopener noreferrer" className="font-medium text-cobalt underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt-deep">Terms of Service</Link>{" "}
+                  <Link href="/terms" target="_blank" rel="noopener noreferrer">Terms of Service</Link>{" "}
                   and{" "}
-                  <Link href="/privacy" target="_blank" rel="noopener noreferrer" className="font-medium text-cobalt underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt-deep">Privacy Policy</Link>.
+                  <Link href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>.
                 </p>
               </div>
             )}
-            {error && <p className="text-sm text-[#c2321e]" role="alert">{error}</p>}
-            <button type="submit" disabled={busy || signupBlocked} aria-disabled={busy || signupBlocked} className={`h-12 w-full rounded-xl text-base font-semibold text-white transition-colors ${signupBlocked ? "cursor-not-allowed bg-cobalt/40" : "cursor-pointer bg-cobalt hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"}`}>
+            {error && <p className={styles.error} role="alert">{error}</p>}
+            <button type="submit" disabled={busy || signupBlocked} aria-disabled={busy || signupBlocked} data-blocked={signupBlocked} className={`ds-btn ds-btn--ink-yellow ${styles.submit}`}>
               {busy ? "One sec…" : mode === "signup" ? "Create free account" : "Log in"}
             </button>
-            {mode === "login" && (
-              <button type="button" onClick={() => { setResetMode(true); setError(""); }} className="block w-full cursor-pointer pt-1 text-center text-sm text-ink-soft transition-colors hover:text-ink">
-                Forgot password?
-              </button>
-            )}
           </form>
+          {reason === "profile" && (
+            <p className={styles.aside}>
+              No account needed to start planning. <Link href="/plan">Plan my room free</Link>
+            </p>
+          )}
         </div>
       )}
     </div>

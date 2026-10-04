@@ -1,16 +1,18 @@
-import WorkspaceStory from "@/components/experience/WorkspaceStory";
-import StudioShowcase from "@/components/experience/StudioShowcase";
-import HomeHero from "@/components/experience/HomeHero";
-import HomeJourney from "@/components/experience/HomeJourney";
-import Link from "next/link";
 import Nav from "@/components/Nav";
-import RoomPlans from "@/components/site/RoomPlans";
-import PlanCta from "@/components/site/PlanCta";
 import Footer from "@/components/Footer";
-import Reveal from "@/components/site/Reveal";
-import HomeFaq from "@/components/site/HomeFaq";
 import StickyMobileCta from "@/components/site/StickyMobileCta";
 import JsonLd from "@/components/site/JsonLd";
+import HomeHero from "@/components/home/HomeHero";
+import TapeBand from "@/components/home/TapeBand";
+import ProblemSection from "@/components/home/ProblemSection";
+import HowSection from "@/components/home/HowSection";
+import VibesSection from "@/components/home/VibesSection";
+import BudgetSection from "@/components/home/BudgetSection";
+import StudioSection from "@/components/home/StudioSection";
+import TogetherSection from "@/components/home/TogetherSection";
+import SchoolsSection from "@/components/home/SchoolsSection";
+import PricingSection from "@/components/home/PricingSection";
+import FinalCta from "@/components/home/FinalCta";
 import {
   pageMetadata,
   organizationJsonLd,
@@ -18,67 +20,39 @@ import {
   softwareApplicationJsonLd,
 } from "@/lib/seo";
 import { SCHOOLS } from "@/lib/schools";
-
-const LAYOUT_COUNT = SCHOOLS.reduce((n, s) => n + s.dorms.reduce((total, d) => total + d.rooms.length, 0), 0);
+import {
+  FEATURED_ROOMS,
+  HALL_COUNT,
+  HOME_VIBES,
+  LAYOUT_COUNT,
+  SCHOOL_COUNT,
+} from "@/lib/home-data";
 
 export const metadata = pageMetadata({
   title: "Dormscape: Free Dorm Room Planner With Real Dorm Dimensions",
-  description: `Plan and furnish your college room with a 2D layout, live 3D, and a shoppable list. Find rooms across ${SCHOOLS.length} schools. Save your ideas and plan move-in together in My rooms.`,
+  absoluteTitle: true,
+  description: `Free dorm room planner with real room dimensions for ${SCHOOLS.length} schools. Lay out your room in 2D or 3D, set a budget and get a shoppable list.`,
   path: "/",
   ogTitle: "dormscape: your dorm room, planned before move-in day",
 });
 
 export default function Home() {
   return (
-    <div id="top" className="dm-home">
-      <JsonLd
-        data={[
-          organizationJsonLd(),
-          webSiteJsonLd(),
-          softwareApplicationJsonLd(),
-        ]}
-      />
-      <Nav />
+    <div id="top" className="ds">
+      <JsonLd data={[organizationJsonLd(), webSiteJsonLd(), softwareApplicationJsonLd()]} />
+      <Nav overlay />
       <main id="page-content" tabIndex={-1}>
-        <HomeHero layoutCount={LAYOUT_COUNT} />
-        <HomeJourney schoolCount={SCHOOLS.length} />
-        <StudioShowcase />
-        <WorkspaceStory />
-        <RoomPlans />
-        <section className="dm-faq-section dm-section">
-          <Reveal className="dm-section-heading">
-            <p className="dm-eyebrow">A few things to know</p>
-            <h2>
-              Questions,
-              <br />
-              <em>answered.</em>
-            </h2>
-            <p>The short version of what people ask most.</p>
-          </Reveal>
-          <div>
-            <HomeFaq />
-            <p className="dm-faq-after">
-              Still curious? <Link href="/faq">Read the full FAQ</Link> or{" "}
-              <Link href="/contact">get in touch</Link>.
-            </p>
-          </div>
-        </section>
-        <section className="dm-final-cta dm-section">
-          <div className="dm-eyebrow">
-            <span>Your next chapter starts here.</span>
-            <span>Your room is waiting.</span>
-          </div>
-          <Link href="/plan">
-            <span>
-              Make <em>room.</em>
-            </span>
-            <span aria-hidden="true">↗︎</span>
-          </Link>
-          <div>
-            <PlanCta />
-            <span>No account needed to explore.</span>
-          </div>
-        </section>
+        <HomeHero schoolCount={SCHOOL_COUNT} hallCount={HALL_COUNT} />
+        <TapeBand layoutCount={LAYOUT_COUNT} />
+        <ProblemSection />
+        <HowSection />
+        <VibesSection vibes={HOME_VIBES} />
+        <BudgetSection />
+        <StudioSection />
+        <TogetherSection />
+        <SchoolsSection rooms={FEATURED_ROOMS} schoolCount={SCHOOL_COUNT} />
+        <PricingSection />
+        <FinalCta />
       </main>
       <Footer />
       <StickyMobileCta />

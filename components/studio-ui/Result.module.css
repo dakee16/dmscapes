@@ -1,0 +1,31 @@
+/* Small pieces of the plan result (components/planner/PlanResult.tsx). */
+
+.skeleton { display: grid; place-items: center; min-height: 70svh; padding: 20px; background: var(--ds-plan); }
+
+/* Custom vibe: one free regeneration, then a plan credit each. */
+.regen { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px 12px; }
+.regenVibe { margin: 0; font-family: var(--ds-serif); font-style: italic; font-size: 17px; line-height: 1.3; color: var(--ds-ink); font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1; }
+.regenLabel { display: block; margin-bottom: 3px; font-family: var(--ds-mono); font-style: normal; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-blue); }
+.regenButton {
+  display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 2px;
+  min-height: 44px; padding: 4px 14px; border: 1.5px solid rgba(22, 22, 29, 0.2); border-radius: 12px;
+  background: #fff; color: var(--ds-ink); cursor: pointer; font-family: var(--ds-sans);
+}
+.regenButton span { font-size: 14px; font-weight: 800; }
+.regenButton small { font-size: 11px; font-weight: 600; color: var(--ds-caption); }
+.regenButton:hover:not(:disabled) { border-color: var(--ds-ink); }
+.regenButton:disabled { opacity: 0.6; cursor: wait; }
+.regenError { grid-column: 1 / -1; margin: 0; font-size: 13px; color: var(--ds-red); }
+.regenNote { grid-column: 1 / -1; margin: 0; font-size: 12px; color: var(--ds-caption); }
+
+/* Your-own items that aren't on the plan yet (3D view). */
+.unplaced { display: flex; flex-direction: column; gap: 8px; }
+.unplaced p { margin: 0; font-family: var(--ds-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-caption); }
+.unplaced div { display: flex; flex-wrap: wrap; gap: 6px; }
+.unplaced button {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 12px;
+  border: 1.5px solid rgba(22, 22, 29, 0.2); border-radius: 999px; background: #fff;
+  font: 700 13px/1 var(--ds-sans); color: var(--ds-ink); cursor: pointer;
+}
+.unplaced button:hover { border-color: var(--ds-ink); }
+

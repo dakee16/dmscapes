@@ -1,10 +1,17 @@
-import Footer from "@/components/Footer";
-import BlueprintArtwork from "@/components/experience/BlueprintArtwork";
 import type { Metadata } from "next";
 import Link from "next/link";
-import SiteHeader from "@/components/site/SiteHeader";
+import PageShell from "@/components/ds/PageShell";
+import PageHero from "@/components/ds/PageHero";
+import Headline from "@/components/ds/Headline";
+import CtaBand from "@/components/ds/CtaBand";
+import { ArrowRight, Check } from "@/components/ds/Icons";
+import PlanCta from "@/components/site/PlanCta";
+import JsonLd from "@/components/site/JsonLd";
+import { softwareApplicationJsonLd } from "@/lib/seo";
 import UpgradeButton from "@/components/site/UpgradeButton";
 import { SCHOOLS } from "@/lib/schools";
+import { STYLES } from "@/lib/styles";
+import { POSTS } from "@/content/blog";
 import {
   PLUS_PRICE_USD,
   PLUS_INITIAL_CREDITS,
@@ -15,7 +22,9 @@ import {
   PRO_PRICE_WAS_USD,
   RECHARGE_PRICE_USD,
   FLEX_CREDIT_PRICE_USD,
+  FREE_PLAN_CAP,
 } from "@/lib/plan";
+import css from "@/components/pricing/Pricing.module.css";
 
 // Real, honest social proof: counts derived straight from the shipped data, so
 // they can never drift from what we actually support. No fabricated reviews or
@@ -31,6 +40,7 @@ const DESCRIPTION =
   `Try Dormscape free. Plus includes ${PLUS_INITIAL_CREDITS} plan credits for $${PLUS_PRICE_USD.toFixed(2)}. Pro includes ${PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D tools for $${PRO_PRICE_USD.toFixed(2)}. One-time purchases.`;
 
 export const metadata: Metadata = {
+  title: "Pricing: Free, Plus and Pro",
   description: DESCRIPTION,
   alternates: { canonical: "/pricing" },
   openGraph: {
@@ -56,14 +66,15 @@ export const metadata: Metadata = {
   },
 };
 
+const usd = (n: number) => `$${n.toFixed(2)}`;
+const FREE_VIBES = STYLES.filter((s) => !s.plus);
+const ALL_VIBES = STYLES.length;
+
 // Free-tier perks: only what genuinely ships today, and all of it is real.
 const FREE_PERKS: React.ReactNode[] = [
   <>
     Real room dimensions for{" "}
-    <Link
-      href="/colleges"
-      className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt"
-    >
+    <Link href="/colleges" className="ds-link">
       supported schools
     </Link>
   </>,
@@ -133,168 +144,76 @@ const PRO_PERKS: { title: string; body: string }[] = [
   },
 ];
 
-function CheckIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      className="mt-0.5 h-5 w-5 shrink-0 text-cobalt"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      aria-hidden="true"
-    >
-      <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
+const NEVER = [
+  "Editing furniture",
+  "Building or editing a room shell",
+  "Saving",
+  "Sharing",
+  "Exporting",
+  "Comparing",
+  "Switching between 2D and 3D",
+  "Invitations",
+];
+
+type Cell = string | boolean;
+const TABLE: { feature: string; free: Cell; plus: Cell; pro: Cell }[] = [
+  { feature: "Plan credits", free: String(FREE_PLAN_CAP), plus: String(PLUS_INITIAL_CREDITS), pro: String(PRO_INITIAL_CREDITS) },
+  { feature: "Preset vibes", free: String(FREE_VIBES.length), plus: String(ALL_VIBES), pro: String(ALL_VIBES) },
+  { feature: "Real room dimensions, 2D layout, live Amazon links", free: true, plus: true, pro: true },
+  { feature: "Save and share", free: true, plus: true, pro: true },
+  { feature: "Draw your own room", free: false, plus: true, pro: true },
+  { feature: "Add your own products", free: false, plus: true, pro: true },
+  { feature: "PDF and PNG export", free: false, plus: true, pro: true },
+  { feature: "Compare two designs side by side", free: false, plus: true, pro: true },
+  { feature: "Priority on add-my-school requests", free: false, plus: true, pro: true },
+  { feature: "A shared room for your people", free: false, plus: false, pro: true },
+  { feature: "3D Room Builder", free: false, plus: false, pro: true },
+  { feature: "Live 3D Room Studio", free: false, plus: false, pro: true },
+  { feature: "Create your own vibe", free: false, plus: false, pro: true },
+  {
+    feature: "More credits",
+    free: `Flex, ${usd(FLEX_CREDIT_PRICE_USD)} each`,
+    plus: `${RECHARGE_CREDITS} for ${usd(RECHARGE_PRICE_USD)}`,
+    pro: `${usd(FLEX_CREDIT_PRICE_USD)} each`,
+  },
+];
+
+const BEFORE_YOU_PAY = [
+  "Is the Dormscape planner still free?",
+  "What uses a Dormscape plan credit?",
+  "What is the difference between Plus and Pro?",
+  "What happens when Pro credits run out?",
+];
+const ALL_FAQS = POSTS.flatMap((p) => p.faqs ?? []);
+const FAQS = BEFORE_YOU_PAY.map((q) => ALL_FAQS.find((f) => f.q === q)).filter(
+  (f): f is { q: string; a: string } => Boolean(f)
+);
+
+function cell(v: Cell, label: string) {
+  if (v === true) return <><Check size={16} /><span className="ds-sr">Included</span></>;
+  if (v === false) return <><span aria-hidden="true">—</span><span className="ds-sr">Not in {label}</span></>;
+  return v;
 }
 
-// --- Trust-signal icons (small, on-brand line icons) ---
-type IconProps = { className?: string };
-const ICON_BASE = "h-[18px] w-[18px] shrink-0";
-
-function BuildingIcon({ className = ICON_BASE }: IconProps) {
+/** The hero ruler: each tier sits at its price along a strip of tape. */
+function PriceRuler() {
+  const max = PRO_PRICE_USD;
+  const at = (p: number) => `${(p / max) * 100}%`;
   return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-      <path d="M3 21h18M6 21V5l6-2 6 2v16M10 21v-4h4v4" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M10 9h.01M14 9h.01M10 13h.01M14 13h.01" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-function ShieldIcon({ className = ICON_BASE }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-      <path d="M12 3l7 3v5c0 4.6-3 7.8-7 9-4-1.2-7-4.4-7-9V6z" strokeLinejoin="round" />
-      <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-function ReceiptIcon({ className = ICON_BASE }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-      <path d="M6 3h12v18l-3-1.8-3 1.8-3-1.8L6 21z" strokeLinejoin="round" />
-      <path d="M9.5 8.5h5M9.5 12h5" strokeLinecap="round" />
-    </svg>
-  );
-}
-function CartIcon({ className = ICON_BASE }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-      <circle cx="9" cy="21" r="1" />
-      <circle cx="19" cy="21" r="1" />
-      <path d="M2 2h3l2.4 12.2a1.6 1.6 0 0 0 1.6 1.3h8.5a1.6 1.6 0 0 0 1.6-1.3L22 6H6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-function BoltIcon({ className = ICON_BASE }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
-      <path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9z" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-// The top social-proof / trust bar: real data counts plus honest guarantees
-// about how payment and products actually work. Nothing here is a fabricated
-// statistic, review, or refund promise.
-function TrustStrip() {
-  const items: { icon: React.ReactNode; label: React.ReactNode }[] = [
-    {
-      icon: <BuildingIcon />,
-      label: (
-        <>
-          <span className="font-semibold text-ink">
-            {ROOM_LAYOUTS_FLOOR.toLocaleString()}+
-          </span>{" "}
-          dorm room layouts
-        </>
-      ),
-    },
-    {
-      icon: (
-        <svg viewBox="0 0 24 24" className="h-[15px] w-[15px]" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-          <path d="M4 7l8-4 8 4v10l-8 4-8-4z" strokeLinejoin="round" />
-          <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ),
-      label: (
-        <>
-          <span className="font-semibold text-ink">{SCHOOLS.length}</span> colleges supported
-        </>
-      ),
-    },
-    { icon: <ShieldIcon />, label: "Secured by Stripe" },
-    { icon: <ReceiptIcon />, label: "One-time payment, no subscription" },
-    { icon: <CartIcon />, label: "Real products, live Amazon links" },
-  ];
-  return (
-    <div className="dm-editorial-card mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 rounded-2xl border border-ink/10 bg-card/70 px-5 py-4 sm:mt-10 sm:gap-x-7">
-      {items.map((it, i) => (
-        <div key={i} className="flex items-center gap-x-6 sm:gap-x-7">
-          {i > 0 && <span className="hidden h-4 w-px bg-ink/12 sm:block" aria-hidden="true" />}
-          <span className="inline-flex items-center gap-2 text-[13px] leading-none text-ink-soft">
-            <span className="text-cobalt">{it.icon}</span>
-            {it.label}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-// Badge-style reassurance under a checkout button. Only what is genuinely true:
-// Stripe secures the hosted checkout, and every tier is a single payment. No
-// refund/"cancel anytime" language, since we do not offer a subscription or a
-// stated refund policy.
-function PayBadges({ free = false }: { free?: boolean }) {
-  const badges: { icon: React.ReactNode; label: string }[] = free
-    ? [{ icon: <BoltIcon className="h-3.5 w-3.5 shrink-0" />, label: "No account needed" }]
-    : [
-        { icon: <ShieldIcon className="h-3.5 w-3.5 shrink-0" />, label: "Secured by Stripe" },
-        { icon: <ReceiptIcon className="h-3.5 w-3.5 shrink-0" />, label: "One-time payment" },
-      ];
-  return (
-    <div className="mt-3 flex flex-wrap items-center gap-x-3.5 gap-y-1.5">
-      {badges.map((b) => (
-        <span key={b.label} className="inline-flex items-center gap-1.5 text-[12px] font-medium text-ink-soft">
-          <span className="text-ink-soft/80">{b.icon}</span>
-          {b.label}
+    <div className={css.ruler} aria-hidden="true">
+      <div className={css.rulerTape}>
+        <span className={css.mark} data-pos="up" style={{ left: at(0) }}>
+          <b>$0</b>
+          <small>Free</small>
         </span>
-      ))}
-    </div>
-  );
-}
-
-function PerkList({ perks, dotted = false }: { perks: { title: string; body: string }[]; dotted?: boolean }) {
-  return (
-    <ul className="mt-4 space-y-4">
-      {perks.map((perk) => (
-        <li key={perk.title} className="flex gap-3">
-          {dotted ? (
-            <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-amber" aria-hidden="true" />
-          ) : (
-            <CheckIcon />
-          )}
-          <span>
-            <span className="block text-[15px] font-semibold leading-snug text-ink">
-              {perk.title}
-            </span>
-            <span className="mt-0.5 block text-[14px] leading-relaxed text-ink-soft">
-              {perk.body}
-            </span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function PriceDisplay({ amount, was, cadence }: { amount: string; was?: string; cadence: string }) {
-  return (
-    <div className="dm-price-block">
-      <div className="dm-price-was">{was && <s>${was}</s>}</div>
-      <div className="dm-price-row">
-        <span className="dm-price-amount">${amount}</span>
-        <span className="dm-price-cadence">{cadence}</span>
+        <span className={css.mark} data-pos="down" data-tone="ink" style={{ left: at(PLUS_PRICE_USD) }}>
+          <b>{usd(PLUS_PRICE_USD)}</b>
+          <small>Plus · once</small>
+        </span>
+        <span className={css.mark} data-pos="up" data-tone="blue" style={{ left: at(PRO_PRICE_USD) }}>
+          <b>{usd(PRO_PRICE_USD)}</b>
+          <small>Pro · once</small>
+        </span>
       </div>
     </div>
   );
@@ -302,168 +221,302 @@ function PriceDisplay({ amount, was, cadence }: { amount: string; was?: string; 
 
 export default function PricingPage() {
   return (
-    <div>
-      <SiteHeader gridClassName="h-[26rem]" />
-      <main id="page-content" tabIndex={-1} className="dm-page relative">
-        <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
-          <div className="dm-public-hero"><div>
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-              Pricing
-            </p>
-            <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
-              Free to plan. <span className="hl">Pay once to go further.</span>
-            </h1>
-            <p className="mt-4 text-lg leading-relaxed text-ink-soft">
-              Start with one free room plan. No trial timer, no card.
-              Upgrade when you&apos;re ready to explore more possibilities.
-            </p>
+    <PageShell navOverlay>
+      <JsonLd data={softwareApplicationJsonLd()} />
+      <PageHero
+        bg="var(--ds-sky)"
+        size="md"
+        className={css.hero}
+        eyebrow="Pricing · one-time, no subscription"
+        lines={[
+          { text: "Free to plan.", riso: true },
+          { text: "Pay once to go further.", serif: true },
+        ]}
+        lede={
+          <p>
+            Start with one free room plan. No trial timer, no card. Upgrade when you&apos;re ready to explore more
+            possibilities.
+          </p>
+        }
+        visual={<PriceRuler />}
+      />
+
+      <section className={css.plansSection} aria-label="Plans">
+        <div className="ds-wrap">
+          <div id="plans" className={css.plans} data-stagger="">
+            {/* FREE */}
+            <article className={`${css.plan} ${css.free}`} data-reveal="" aria-labelledby="plan-free">
+              <div className={css.planTop}>
+                <h2 id="plan-free">Free</h2>
+                <span className={css.tag}>No card</span>
+              </div>
+              <p className={css.priceRow}>
+                <span className={css.price}>$0</span>
+                <span className={css.cadence}>forever</span>
+              </p>
+              <p className={css.pitch}>Try the planner on the house: one room plan, with free unlimited saving.</p>
+              <PlanCta href="/plan" className="ds-btn ds-btn--ghost-ink" freeLabel="Plan my room" paidLabel="Plan my room" />
+              <ul className={css.perks}>
+                {FREE_PERKS.map((perk, i) => (
+                  <li key={i}>
+                    <Check size={16} color="var(--ds-blue)" />
+                    <span>{perk}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            {/* PLUS */}
+            <article className={`${css.plan} ${css.plus}`} data-reveal="" aria-labelledby="plan-plus">
+              <div className={css.planTop}>
+                <h2 id="plan-plus">
+                  Plus<span className={css.plusMark}>+</span>
+                </h2>
+                <span className={css.tag}>One time</span>
+              </div>
+              <p className={css.priceRow}>
+                <span className={css.price}>{usd(PLUS_PRICE_USD)}</span>
+                <span className={css.wasStack}>
+                  <s>
+                    <span className="ds-sr">was </span>
+                    {usd(PLUS_PRICE_WAS_USD)}
+                  </s>
+                  <span className={css.cadence}>once</span>
+                </span>
+              </p>
+              <p className={css.pitch}>
+                A one-time upgrade with {PLUS_INITIAL_CREDITS} plan credits. Recharge {RECHARGE_CREDITS} for{" "}
+                {usd(RECHARGE_PRICE_USD)}.
+              </p>
+              <UpgradeButton
+                type="plus"
+                className="ds-btn ds-btn--yellow"
+                ownedClassName={`ds-btn ${css.owned}`}
+                noteClassName={css.noteDark}
+              />
+              <ul className={css.perks}>
+                {PLUS_PERKS.map((perk) => (
+                  <li key={perk.title}>
+                    <Check size={16} color="var(--ds-yellow)" />
+                    <span>{perk.title}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className={css.planFoot}>
+                Out of credits? A {usd(RECHARGE_PRICE_USD)} recharge adds {RECHARGE_CREDITS === 3 ? "three" : RECHARGE_CREDITS} more.
+              </p>
+            </article>
+
+            {/* PRO */}
+            <article id="pro" className={`${css.plan} ${css.pro}`} data-reveal="" aria-labelledby="plan-pro">
+              <div className={css.planTop}>
+                <h2 id="plan-pro">Pro</h2>
+                <span className={css.tag}>{PRO_INITIAL_CREDITS} credits</span>
+              </div>
+              <p className={css.priceRow}>
+                <span className={css.price}>{usd(PRO_PRICE_USD)}</span>
+                <span className={css.wasStack}>
+                  <s>
+                    <span className="ds-sr">was </span>
+                    {usd(PRO_PRICE_WAS_USD)}
+                  </s>
+                  <span className={css.cadence}>once</span>
+                </span>
+              </p>
+              <p className={css.pitch}>
+                Build in 3D, find your own vibe, and bring your ideas to life. Includes {PRO_INITIAL_CREDITS} plan
+                credits and all Plus tools.
+              </p>
+              <UpgradeButton
+                type="pro"
+                className="ds-btn ds-btn--white"
+                ownedClassName={`ds-btn ${css.owned}`}
+                noteClassName={css.noteDark}
+              />
+              <ul className={css.perks}>
+                {PRO_PERKS.map((perk) => (
+                  <li key={perk.title}>
+                    <Check size={16} color="#fff" />
+                    <span>{perk.title}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className={css.planFoot}>At zero credits, top up at {usd(FLEX_CREDIT_PRICE_USD)} per credit.</p>
+            </article>
           </div>
 
-          <BlueprintArtwork variant="orbit" /></div>
-          <TrustStrip />
+          <div className={`ds-tape ${css.flex}`} data-reveal="">
+            <div className={css.flexName}>
+              <b>Flex</b>
+              <span>Pay as you go</span>
+            </div>
+            <p>
+              Just need another design? Buy extra generation credits for {usd(FLEX_CREDIT_PRICE_USD)} each. Plus
+              recharge adds {RECHARGE_CREDITS} for {usd(RECHARGE_PRICE_USD)}.
+            </p>
+            <span className={css.flexPrice}>
+              {usd(FLEX_CREDIT_PRICE_USD)}
+              <small>/credit</small>
+            </span>
+            <Link href="/account/billing" className="ds-btn ds-btn--ink ds-btn--sm">
+              Buy extra credits
+            </Link>
+          </div>
 
-          <div id="plans" className="mt-5 grid scroll-mt-28 items-start gap-5 lg:grid-cols-3">
-            {/* FREE TIER: the real, active product. Reads complete on its own. */}
-            <section className="flex h-full flex-col rounded-2xl border border-ink/12 bg-card p-6 sm:p-8">
-              <div className="flex items-center justify-between gap-3">
-                <h2 className="font-display text-2xl font-extrabold tracking-tight">Free</h2>
-                <span className="inline-flex items-center rounded-full bg-ink/5 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink-soft">
-                  No card
-                </span>
-              </div>
+          <ul className={css.trust} aria-label="Good to know">
+            <li>Secured by Stripe</li>
+            <li>One-time payment, no subscription</li>
+            <li>Real products, live Amazon links</li>
+            <li>{SCHOOLS.length} colleges supported</li>
+            <li>{ROOM_LAYOUTS_FLOOR.toLocaleString("en-US")}+ dorm room layouts</li>
+          </ul>
+        </div>
+      </section>
 
-              <PriceDisplay amount="0" cadence="forever" />
-              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                Try the planner on the house: one room plan, with free unlimited saving.
-              </p>
-
-              <Link
-                href="/plan"
-                className="mt-6 block rounded-xl bg-ink px-6 py-3 text-center text-base font-semibold text-white transition-all duration-200 hover:bg-cobalt active:translate-y-px"
-              >
-                Plan my room
-              </Link>
-              <PayBadges free />
-
-              <div className="mt-6 border-t border-ink/8 pt-6">
-                <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
-                  Everything included
-                </p>
-                <ul className="mt-4 space-y-3">
-                  {FREE_PERKS.map((perk, i) => (
-                    <li key={i} className="flex gap-3 text-[15px] leading-relaxed text-ink">
-                      <CheckIcon />
-                      <span>{perk}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-            </section>
-
-            {/* PLUS TIER: the recommended paid tier. One-time $4.99, cobalt
-                border + "Most popular" ribbon to stand out without diminishing
-                Free. */}
-            <section className="relative flex h-full flex-col rounded-2xl border-2 border-cobalt bg-card p-6 shadow-[0_24px_60px_-30px_rgba(43,78,255,0.55)] sm:p-8">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-cobalt px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm">
-                Most popular
+      <section className="ds-section" aria-labelledby="credits-title">
+        <div className="ds-wrap">
+          <p className="ds-eyebrow" style={{ marginBottom: 18 }} data-reveal="">
+            Plan credits, explained
+          </p>
+          <Headline
+            id="credits-title"
+            className="ds-h2"
+            lines={[{ text: "One thing costs a credit." }, { text: "Everything else is free.", serif: true }]}
+          />
+          <div className={css.credits}>
+            <div className={css.uses} data-reveal="">
+              <span className={css.one} aria-hidden="true">
+                1
               </span>
-              <div className="flex items-center justify-between gap-3">
-                <h2 className="font-display text-2xl font-extrabold tracking-tight">
-                  Plus<span className="text-cobalt">+</span>
-                </h2>
-                <span className="inline-flex items-center rounded-full bg-highlight px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
-                  One time
-                </span>
+              <div>
+                <p className={css.kicker}>Uses a credit</p>
+                <p className={css.usesTitle}>Generating a new room plan</p>
+                <p className={css.usesNote}>
+                  Pro custom vibes include one free regeneration; further regenerations use one credit each.
+                </p>
               </div>
-
-              <PriceDisplay amount={PLUS_PRICE_USD.toFixed(2)} was={PLUS_PRICE_WAS_USD.toFixed(2)} cadence="once" />
-              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                A one-time upgrade with {PLUS_INITIAL_CREDITS} plan credits. Recharge {RECHARGE_CREDITS} for $
-                {RECHARGE_PRICE_USD.toFixed(2)}.
+            </div>
+            <div className={css.never} data-reveal="">
+              <p className={css.kicker}>Never uses a credit</p>
+              <ul>
+                {NEVER.map((n) => (
+                  <li key={n} className="ds-chip">
+                    {n}
+                  </li>
+                ))}
+              </ul>
+              <p className={css.neverNote}>
+                Purchased credits don&apos;t expire. Your saved designs and paid tools stay available even when your
+                balance reaches zero. Guests never spend their host&apos;s credits.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div className="mt-6">
-                <UpgradeButton
-                  type="plus"
-                  className="rounded-xl bg-cobalt px-6 py-3 text-center text-base font-semibold text-white transition-all duration-200 hover:bg-cobalt-deep active:translate-y-px"
-                />
-                <PayBadges />
-              </div>
-
-              {/* How credits work: the one bit of this model worth spelling out. */}
-              <div className="mt-6 rounded-xl border border-cobalt/20 bg-cobalt/5 px-4 py-3">
-                <p className="text-[13px] leading-relaxed text-ink">
-                  <span className="font-semibold">How credits work:</span> generating a
-                  room plan with product matches uses one credit. Manual 2D planning,
-                  layout previews, saving, exports, and comparisons use no credits. Your saved designs and paid tools stay
-                  available even when your credit balance reaches zero.
-                </p>
-              </div>
-
-              <div className="mt-6 border-t border-ink/8 pt-6">
-                <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
-                  Everything in Free, plus
-                </p>
-                <PerkList perks={PLUS_PERKS} />
-              </div>
-            </section>
-
-            {/* Pro: all tools, with its own included generation allowance. */}
-            <section id="pro" className="scroll-mt-28 relative flex h-full flex-col rounded-2xl border border-amber/50 bg-card p-6 shadow-[0_24px_60px_-34px_rgba(240,177,0,0.55)] sm:p-8">
-              <div className="flex items-center justify-between gap-3">
-                <h2 className="font-display text-2xl font-extrabold tracking-tight">
-                  Pro
-                </h2>
-                <span className="inline-flex items-center rounded-full bg-amber/15 px-3 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-wide text-ink">
-                  {PRO_INITIAL_CREDITS} credits
-                </span>
-              </div>
-
-              <PriceDisplay amount={PRO_PRICE_USD.toFixed(2)} was={PRO_PRICE_WAS_USD.toFixed(2)} cadence="once" />
-              <p className="mt-2 text-[15px] leading-relaxed text-ink-soft lg:min-h-[4.25rem]">
-                Build in 3D, find your own vibe, and bring your ideas to life.
-                Includes {PRO_INITIAL_CREDITS} plan credits and all Plus tools.
-              </p>
-
-              <div className="mt-6">
-                <UpgradeButton
-                  type="pro"
-                  className="rounded-xl bg-ink px-6 py-3 text-center text-base font-semibold text-white transition-all duration-200 hover:bg-cobalt active:translate-y-px"
-                />
-                <PayBadges />
-              </div>
-
-              <div className="mt-6 border-t border-ink/8 pt-6">
-                <p className="font-mono text-[11px] uppercase tracking-wide text-ink-soft">
-                  Everything in Plus, plus
-                </p>
-                <PerkList perks={PRO_PERKS} />
-              </div>
-
-            </section>
+      <section className={`ds-section ${css.compare}`} aria-labelledby="compare-title">
+        <div className="ds-wrap">
+          <h2 id="compare-title" className={css.compareTitle} data-reveal="">
+            Side by side
+          </h2>
+          <div className={css.tableWrap} role="region" aria-labelledby="compare-title" tabIndex={0}>
+            <table className={css.table}>
+              <thead>
+                <tr>
+                  <th scope="col">Feature</th>
+                  <th scope="col">Free</th>
+                  <th scope="col" data-plus="">
+                    Plus
+                  </th>
+                  <th scope="col" data-pro="">
+                    Pro
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {TABLE.map((row) => (
+                  <tr key={row.feature}>
+                    <th scope="row">{row.feature}</th>
+                    <td>{cell(row.free, "Free")}</td>
+                    <td data-plus="">{cell(row.plus, "Plus")}</td>
+                    <td>{cell(row.pro, "Pro")}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
 
-          <section className="mt-7 flex flex-wrap items-center justify-between gap-5 border-y border-ink/15 py-6"><div><h2 className="text-xl font-semibold">Just need another design?</h2><p className="mt-2 max-w-2xl text-sm leading-relaxed text-ink-soft">Buy extra generation credits for ${FLEX_CREDIT_PRICE_USD.toFixed(2)} each. Plus recharge adds {RECHARGE_CREDITS} for ${RECHARGE_PRICE_USD.toFixed(2)}. Saving, manual edits, switching views, and invitations use no credits. Guests never spend their host&apos;s credits.</p></div><Link href="/account/billing" className="dm-button">Buy extra credits</Link></section>
+          <div className={css.details}>
+            {[
+              { name: "Everything in Free, plus", tier: "Plus", perks: PLUS_PERKS },
+              { name: "Everything in Plus, plus", tier: "Pro", perks: PRO_PERKS },
+            ].map((g) => (
+              <div key={g.tier} data-reveal="">
+                <p className={css.kicker}>
+                  {g.tier} · {g.name}
+                </p>
+                <dl>
+                  {g.perks.map((p) => (
+                    <div key={p.title}>
+                      <dt>{p.title}</dt>
+                      <dd>{p.body}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          {/* Trust strip: why the core stays free. */}
-          <div className="mt-6 rounded-xl border border-dashed border-ink/20 bg-card/60 p-6 text-center">
-            <p className="text-[15px] leading-relaxed text-ink-soft">
-              <span className="font-semibold text-ink">Why is the planner free?</span>{" "}
-              Some shopping links are affiliate links that pay us a small
-              commission at no extra cost to you. That helps keep the planner free to try.{" "}
-              <Link
-                href="/about"
-                className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt"
-              >
+      {FAQS.length > 0 && (
+        <section className={`ds-section ${css.faq}`} aria-labelledby="faq-title">
+          <div className="ds-wrap">
+            <div className={css.faqHead}>
+              <Headline
+                id="faq-title"
+                className="ds-h2 ds-h2--inline"
+                lines={[{ text: "Before you" }, { text: "pay.", serif: true }]}
+              />
+              <Link href="/faq" className={css.allQ}>
+                All questions <ArrowRight size={16} />
+              </Link>
+            </div>
+            <ul className={css.faqGrid}>
+              {FAQS.map((f, i) => (
+                <li key={f.q} className={css.faqCard} data-reveal="" style={{ "--i": i } as React.CSSProperties}>
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </li>
+              ))}
+            </ul>
+
+          </div>
+        </section>
+      )}
+
+      <section className={css.whySection} aria-label="Why the planner is free">
+        <div className="ds-wrap">
+          <p className={css.why} data-reveal="">
+              <b>Why is the planner free?</b> Some shopping links are affiliate links that pay us a small commission at
+              no extra cost to you. That helps keep the planner free to try.{" "}
+              <Link href="/about" className="ds-link">
                 More about how it works
               </Link>
               .
             </p>
-          </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </section>
+
+      <CtaBand lead="Your room" tail="is waiting." tone="blue">
+        <PlanCta
+          href="/plan"
+          className="ds-btn ds-btn--yellow ds-btn--lg"
+          freeLabel="Plan my room for free"
+          paidLabel="Plan my room"
+          icon={<ArrowRight size={20} />}
+        />
+      </CtaBand>
+    </PageShell>
   );
 }

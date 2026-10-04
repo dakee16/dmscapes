@@ -1,0 +1,525 @@
+/* Site navigation: the ruler card. A floating card inside the sticky header
+   takes the colour of the section behind it (--nav-ground, set by Nav.tsx)
+   and carries a ruler and the page's scroll progress along its bottom edge.
+   The More panel and the phone sheet are built from the kit's index cards
+   (white, red margin rule, blue ruled lines). */
+
+/* [data-overlay] outranks the .ds root class the header also carries (paper). */
+.header[data-overlay] {
+  --nav-ink: var(--ds-ink);
+  --nav-hover: rgba(22, 22, 29, 0.06);
+  --nav-ruler-h: 12px;
+  --nav-tick-l: 10px;
+  --nav-tick-m: 6px;
+  --nav-tick-s: 3px;
+  --nav-tick-x: 16px; /* a 96px tick under the wordmark's left edge */
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  height: var(--ds-nav-h);
+  box-sizing: border-box;
+  padding-top: 10px; /* padding, not the plate's margin, which would collapse through the page */
+  color: var(--nav-ink);
+  background: none;
+  /* the strip around the floating card lets clicks through to the page */
+  pointer-events: none;
+}
+.header[data-overlay="true"] { margin-bottom: calc(var(--ds-nav-h) * -1); }
+.header[data-tone="dark"] {
+  --nav-ink: var(--ds-paper);
+  --nav-hover: rgba(255, 255, 255, 0.1);
+}
+/* The phone sheet opens under the card: back the strip around it too. */
+.header[data-open="true"] { background: var(--ds-paper); }
+/* The card's strip replaces the old fixed scroll-progress line. */
+:global(.dm-app):has(.header) :global(.dm-progress) { display: none; }
+
+.plate {
+  position: relative;
+  box-sizing: border-box;
+  width: calc(min(100% - 2 * var(--ds-gutter), var(--ds-max)) + 32px);
+  height: 72px;
+  margin-inline: auto;
+  border-radius: 18px;
+  background: var(--nav-ground, var(--ds-paper));
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 10px 22px -12px rgba(22, 22, 29, 0.18);
+  pointer-events: auto;
+  transition: background-color 0.25s var(--ds-ease), box-shadow 0.25s var(--ds-ease);
+}
+.header[data-scrolled="true"] .plate {
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 18px 34px -16px rgba(10, 16, 44, 0.32);
+}
+
+/* The ruler is clipped to the plate's corners here rather than on the plate,
+   so the More panel and the account popovers can still drop out of it. */
+.ruler {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+.progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--ds-tape);
+  transform: scaleX(var(--nav-progress, 0));
+  transform-origin: left;
+}
+.ticks {
+  --tick: color-mix(in srgb, var(--nav-ink) 42%, transparent);
+  position: absolute;
+  inset: auto 0 0;
+  height: var(--nav-ruler-h);
+  background-image:
+    linear-gradient(90deg, var(--tick) 0 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--nav-ink) 30%, transparent) 0 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--nav-ink) 20%, transparent) 0 1px, transparent 1px);
+  background-size: 96px var(--nav-tick-l), 48px var(--nav-tick-m), 12px var(--nav-tick-s);
+  background-position: var(--nav-tick-x) 100%;
+  background-repeat: repeat-x;
+}
+.ticks > span {
+  position: absolute;
+  bottom: 4px;
+  left: calc(var(--nav-tick-x) + (var(--n) - 1) * 96px + 4px);
+  color: var(--tick);
+  font: 600 8px/1 var(--ds-mono);
+}
+
+.bar {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0 9px 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin: 0 auto;
+}
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: inherit;
+  font: 550 16px var(--ds-sans);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.18s;
+}
+.link:hover,
+.link[aria-expanded="true"] { background: var(--nav-hover); text-decoration: none; }
+.link[aria-current="page"] { font-weight: 800; }
+/* Current page: a red marker on the ruler right below the link. The link is
+   centred in the row's top 62px, so the card's bottom edge is
+   (62 - 40) / 2 + 10 = 21px below it. */
+.link[aria-current="page"]::before,
+.link[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  background: var(--ds-red);
+  pointer-events: none;
+}
+.link[aria-current="page"]::after { left: 12px; right: 12px; bottom: -21px; height: 3px; }
+.link[aria-current="page"]::before {
+  left: 50%;
+  bottom: -18px;
+  width: 10px;
+  height: 6px;
+  translate: -50% 0;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.chev { display: inline-flex; transition: transform 0.25s var(--ds-ease); }
+.link[aria-expanded="true"] .chev { transform: rotate(180deg); }
+
+.moreWrap { display: flex; }
+
+/* ---------- More panel: four index cards on a paper tray ---------- */
+.morePanel {
+  position: absolute;
+  top: calc(100% + 8px); /* just under the plate */
+  left: 50%;
+  translate: -50% 0;
+  width: min(1060px, 100%);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1.12fr 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  align-items: stretch;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 24px;
+  background: var(--ds-paper);
+  color: var(--ds-ink);
+  box-shadow:
+    0 0 0 1px rgba(22, 22, 29, 0.08),
+    0 34px 70px -24px rgba(10, 16, 44, 0.42);
+  animation: drop 0.32s var(--ds-ease) both;
+}
+.morePanel[hidden] { display: none; }
+.morePanel .card { animation: cardIn 0.45s var(--ds-ease) both; animation-delay: calc(var(--i, 0) * 45ms + 40ms); }
+@keyframes drop {
+  from { opacity: 0; transform: translate3d(0, -10px, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+/* An index card: label and caption above the red margin rule (a real border,
+   so a two-line caption pushes it down instead of running over it), then
+   ruled rows. */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(22, 22, 29, 0.05), 0 10px 22px -12px rgba(22, 22, 29, 0.18);
+  overflow: hidden;
+}
+/* In the More tray the cards share one header row, so every red rule lines
+   up however the captions wrap. */
+.morePanel .card {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+}
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+/* The card keeps its ruled lines below the last row (one row = 47px). */
+.cardBody::after {
+  content: "";
+  flex: 1 1 auto;
+  order: 1;
+  background: repeating-linear-gradient(180deg, transparent 0 46px, rgba(36, 73, 255, 0.14) 46px 47px);
+}
+.cardBody .sketch { order: 2; }
+.cardHead {
+  padding: 16px 16px 13px;
+  border-bottom: 2px solid #e85a6b;
+}
+.cardLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--ds-mono);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--ds-ink);
+}
+.cardIndex {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ds-blue);
+}
+.cardCaption {
+  margin: 7px 0 0;
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.22;
+  letter-spacing: -0.005em;
+  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
+  color: var(--ds-body);
+  text-wrap: pretty;
+}
+
+.rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.rows > li { border-bottom: 1px solid rgba(36, 73, 255, 0.14); }
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 46px;
+  box-sizing: border-box;
+  padding: 9px 12px 9px 16px;
+  border: 0;
+  background: none;
+  color: var(--ds-ink);
+  font-family: var(--ds-sans);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.18s;
+}
+.row:hover { text-decoration: none; background: #f2f4ff; }
+.rowText { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.rowLabel {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+.rowDetail {
+  font-size: 12.5px;
+  font-weight: 450;
+  line-height: 1.35;
+  color: var(--ds-caption);
+}
+.rowTag {
+  display: inline-flex;
+  align-items: center;
+  height: 19px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: var(--ds-blue);
+  color: #fff;
+  font-family: var(--ds-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.rowArrow {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.14);
+  color: var(--ds-ink);
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.rowArrow svg { transition: transform 0.3s var(--ds-ease); }
+.row:hover .rowArrow,
+.row:focus-visible .rowArrow {
+  background: var(--ds-blue);
+  box-shadow: none;
+  color: #fff;
+}
+.row:hover .rowArrow svg,
+.row:focus-visible .rowArrow svg { transform: translate(1.5px, -1.5px); }
+.card .row:focus-visible {
+  outline: 3px solid var(--ds-blue);
+  outline-offset: -3px;
+  border-radius: 10px;
+  background: #f2f4ff;
+}
+.row[aria-current="page"] { background: #f2f4ff; }
+.row[aria-current="page"] .rowLabel::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ds-blue);
+}
+
+/* The Plan card's sketch: a measuring tape over a small room on plan paper. */
+.sketch {
+  position: relative;
+  margin-top: auto;
+  padding: 0 12px 12px;
+  background-color: var(--ds-plan);
+  background-image:
+    linear-gradient(rgba(36, 73, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 73, 255, 0.07) 1px, transparent 1px);
+  background-size: 12px 12px;
+  border-top: 1px solid rgba(36, 73, 255, 0.14);
+}
+.sketchTape {
+  display: block;
+  height: 16px;
+  margin: 0 -12px 8px;
+  background-color: var(--ds-tape);
+  background-image:
+    repeating-linear-gradient(90deg, var(--ds-ink) 0 1.5px, transparent 1.5px 48px),
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.75) 0 1px, transparent 1px 12px);
+  background-size: 100% 11px, 100% 6px;
+  background-repeat: no-repeat;
+  box-shadow: 0 3px 0 var(--ds-tape-shadow);
+}
+.sketchPlan { display: block; width: 100%; height: auto; }
+
+/* ---------- Actions ---------- */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.profile { display: flex; align-items: center; min-width: 0; }
+.actions .cta { gap: 8px; white-space: nowrap; }
+.ctaShort { display: none; }
+.menuBtn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(22, 22, 29, 0.06);
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.menuBtn:hover { background: rgba(22, 22, 29, 0.12); }
+.menuBtn[aria-expanded="true"] { background: var(--ds-ink); color: var(--ds-paper); }
+.header[data-tone="dark"] .menuBtn { background: rgba(255, 255, 255, 0.12); }
+.header[data-tone="dark"] .menuBtn[aria-expanded="true"] { background: var(--ds-yellow); color: var(--ds-ink); }
+
+/* ---------- Phone sheet ---------- */
+.sheet {
+  position: fixed;
+  inset: var(--ds-nav-h) 0 0 0;
+  pointer-events: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--ds-paper);
+  color: var(--ds-ink);
+  animation: drop 0.3s var(--ds-ease);
+}
+.sheet[hidden] { display: none; }
+.sheetInner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: min(100% - 2 * var(--ds-gutter), 720px);
+  margin-inline: auto;
+  padding: 10px 0 max(40px, env(safe-area-inset-bottom));
+}
+.sheetPrimary {
+  display: flex;
+  flex-direction: column;
+  border-top: 1.5px solid var(--ds-line);
+}
+.sheetBig {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+  border-bottom: 1.5px solid var(--ds-line);
+  font: 850 30px/1 var(--ds-sans);
+  font-stretch: 88%;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  animation: cardIn 0.4s var(--ds-ease) both;
+  animation-delay: calc(var(--i, 0) * 35ms);
+}
+.sheetBig svg { color: var(--ds-blue); transition: transform 0.3s var(--ds-ease); }
+.sheetBig:hover { text-decoration: none; }
+.sheetBig:hover svg { transform: translateX(4px); }
+.sheetBig[aria-current="page"] { color: var(--ds-blue); }
+.sheetGroups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.sheetGroups .sketch { display: none; }
+.sheetFoot {
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+.sheetFoot :global(.dm-motion-toggle) {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.14);
+  color: var(--ds-ink);
+  font: 700 11px var(--ds-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sheetFoot :global(.dm-motion-label) { display: inline; }
+.sheetFoot :global(.dm-motion-toggle > span:first-child) { font-size: 14px; }
+
+@media (max-width: 1180px) {
+  .link { padding: 0 10px; font-size: 15px; }
+  .link[aria-current="page"]::after { left: 10px; right: 10px; }
+  .morePanel { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; padding: 10px; }
+  .cardHead { padding-inline: 14px; }
+  .row { padding-left: 14px; }
+}
+@media (max-width: 1360px) {
+  /* signed in: "Plan free", so the account controls fit beside the links */
+  .actions:has(:global([aria-label="Account menu"])) .ctaLong { display: none; }
+  .actions:has(:global([aria-label="Account menu"])) .ctaShort { display: inline; }
+  .actions:has(:global([aria-label="Account menu"])) .cta svg { display: none; }
+}
+@media (max-width: 1023px) {
+  .links, .morePanel { display: none; }
+  .menuBtn { display: inline-flex; }
+}
+/* Phones: a smaller plate inset 8px, a shorter ruler with no numbers. */
+@media (max-width: 767px) {
+  .header[data-overlay] {
+    padding-top: 8px;
+    --nav-ruler-h: 9px;
+    --nav-tick-l: 8px;
+    --nav-tick-m: 5px;
+    --nav-tick-s: 3px;
+    --nav-tick-x: 12px;
+  }
+  .plate { width: calc(100% - 16px); height: 58px; border-radius: 16px; }
+  .ticks > span { display: none; }
+  .bar { padding: 0 3px 8px 12px; gap: 8px; }
+  .bar :global(.ds-wordmark__type) { font-size: 22px; }
+  .actions { gap: 6px; }
+  .ctaLong { display: none; }
+  .ctaShort { display: inline; }
+  .actions .cta { min-height: 44px; padding: 0 14px; font-size: 14px; }
+  .cta svg { display: none; }
+  .bar :global(.ds-wordmark__pro) { padding: 2px 4px; font-size: 8px; letter-spacing: 0.06em; }
+}
+/* Pro at 360-374: the tagged wordmark is the widest it gets. */
+@media (max-width: 374px) {
+  .bar { gap: 6px; }
+  .actions { gap: 4px; }
+  .bar :global(.ds-wordmark:has(.ds-wordmark__pro) .ds-wordmark__type) { font-size: 20px; }
+}
+@media (max-width: 640px) {
+  .sheetGroups { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .morePanel, .morePanel .card, .sheet, .sheetBig { animation: none; }
+  .plate { transition: none; }
+}
+:global(.dm-app[data-motion="paused"]) .morePanel,
+:global(.dm-app[data-motion="paused"]) .card,
+:global(.dm-app[data-motion="paused"]) .sheet,
+:global(.dm-app[data-motion="paused"]) .sheetBig { animation: none; }
+:global(.dm-app[data-motion="paused"]) .plate { transition: none; }

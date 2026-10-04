@@ -3,65 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import SiteHeader from "@/components/site/SiteHeader";
+import PageShell from "@/components/ds/PageShell";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
-import { AccountHeader, MembershipCard, accountStyles as s } from "@/components/account/AccountUI";
-import { useAuth, type PlanTier } from "@/lib/auth-context";
+import DeleteAccountSection from "@/components/account/DeleteAccountSection";
+import { AccountShell, PlanCard, ProfileCard, ToolChips, fmtDate, accountStyles as s } from "@/components/account/AccountUI";
+import { ArrowRight, ArrowUpRight, Check } from "@/components/ds/Icons";
+import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
-import {
-  planLabel,
-  planOf,
-  PLUS_INITIAL_CREDITS,
-  PRO_INITIAL_CREDITS,
-  RECHARGE_CREDITS,
-  RECHARGE_PRICE_USD,
-  FLEX_CREDIT_PRICE_USD,
-} from "@/lib/plan";
+import { planOf, FLEX_CREDIT_PRICE_USD } from "@/lib/plan";
 import type { InvoiceItem, InvoicesResponse } from "@/lib/api-types";
-
-const PERKS: Record<PlanTier, string[]> = {
-  free: [
-    "Real room dimensions for supported schools",
-    "1 room plan to try it out",
-    "Save your design to your account, free",
-    "3 vibes: Minimalist, Cozy Aesthetic, Preppy",
-    "Budget-aware Amazon product picks",
-    "Drag-and-drop 2D layout that fits to the inch",
-  ],
-  flex: [
-    "Everything in Free",
-    `À la carte plan credits at $${FLEX_CREDIT_PRICE_USD.toFixed(2)} each`,
-    "Credits never expire; top up whenever you need one",
-    "3 vibes: Minimalist, Cozy Aesthetic, Preppy",
-  ],
-  plus: [
-    "Everything in Free",
-    "All 9 vibes unlocked",
-    "PDF and PNG export",
-    "Side-by-side design comparison",
-    "Priority on add-my-school requests",
-    `${PLUS_INITIAL_CREDITS} included plan credits`,
-    `Recharge ${RECHARGE_CREDITS} credits for $${RECHARGE_PRICE_USD.toFixed(2)}`,
-  ],
-  pro: [
-    "Everything in Plus",
-    "3D Room Builder: floors, walls, doors, and windows",
-    "Live 3D Room Studio",
-    "Host one shared room with up to four people",
-    "Create your own vibe",
-    `${PRO_INITIAL_CREDITS} included plan credits`,
-    "Unlimited saved designs",
-    `Top up plan credits at $${FLEX_CREDIT_PRICE_USD.toFixed(2)} each`,
-  ],
-};
-
-function Check() {
-  return (
-    <svg viewBox="0 0 24 24" className="mt-0.5 h-4 w-4 shrink-0 text-cobalt" fill="none" stroke="currentColor" strokeWidth="2.6" aria-hidden="true">
-      <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 function money(amount: number, currency: string): string {
   try {
@@ -71,14 +21,6 @@ function money(amount: number, currency: string): string {
     }).format(amount / 100);
   } catch {
     return `$${(amount / 100).toFixed(2)}`;
-  }
-}
-
-function fmtDate(iso: string, opts: Intl.DateTimeFormatOptions): string {
-  try {
-    return new Date(iso).toLocaleDateString(undefined, opts);
-  } catch {
-    return "";
   }
 }
 
@@ -144,84 +86,140 @@ export default function BillingPage() {
 
   const ready = !loading && Boolean(user);
   const tier = planOf(profile?.plan);
-  const memberSince = profile?.created_at ? fmtDate(profile.created_at, { year: "numeric", month: "long" }) : null;
-  const purchasedAt = profile?.plan_purchased_at
-    ? fmtDate(profile.plan_purchased_at, { year: "numeric", month: "short", day: "numeric" })
-    : null;
 
   return (
-    <div>
-      <SiteHeader />
-      <main id="page-content" tabIndex={-1} className={`dm-page ${s.page}`}>
-        <AccountHeader active="billing" title="More room to" accent="create."
-          description="Your membership, your credits, every purchase. All in one place."
-          action={<Link href="/plan" className={s.secondary}>Back to planning ↗︎</Link>} />
-        {!ready ? <div className={s.skeleton} aria-busy="true" aria-label="Loading billing" /> : (
+    <PageShell>
+      <AccountShell active="plan">
+        {!ready ? (
+          <div className={s.loading} aria-busy="true" aria-label="Loading billing">
+            <div className={`${s.skeleton} ${s.skeletonTall}`} />
+            <div className={s.skeleton} />
+          </div>
+        ) : (
           <>
-            {justBought !== null && <div role="status" className={s.notice}>
-              <strong>{justBought} credit{justBought === 1 ? "" : "s"} added.</strong> Your next room is ready when you are.
-            </div>}
-            <div className={s.billingGrid}>
-              <div className={s.stack}>
-                <MembershipCard profile={profile} billing />
-                <section className={s.panel} aria-label="Membership details">
-                  <dl className={s.facts}>
-                    <div><dt>Payment model</dt><dd>One-time purchases</dd></div>
-                    <div><dt>Renewal</dt><dd>No subscription</dd></div>
-                    {memberSince && <div><dt>Member since</dt><dd>{memberSince}</dd></div>}
-                    {purchasedAt && <div><dt>Plan purchased</dt><dd>{purchasedAt}</dd></div>}
-                  </dl>
-                </section>
-                {profile && (
-                  <section id="buy-credits" className={s.topup}>
-                    <p className={s.eyebrow}>Keep the ideas coming</p>
-                    <h2>Buy plan credits</h2>
-                    <p>Top up at ${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. One credit generates one room plan. Buy what you need, when you need it.</p>
-                    <div className={s.creditForm}><BuyCreditsForm source="billing" /></div>
-                  </section>
-                )}
+            {justBought !== null && (
+              <div role="status" className={s.notice}>
+                <Check size={20} />
+                <span>
+                  <strong>{justBought} credit{justBought === 1 ? "" : "s"} added.</strong> Your next room is ready when you are.
+                </span>
               </div>
-              <div className={s.stack}>
-                <section className={s.panel}>
-                  <p className={s.eyebrow}>Your creative toolkit</p>
-                  <h2>{profile ? "Included with " + planLabel(profile) : "Loading your plan…"}</h2>
-                  {profile && <ul className={s.perks}>{PERKS[tier].map(perk => <li key={perk}><Check />{perk}</li>)}</ul>}
-                </section>
-                <section className={s.history} aria-labelledby="purchase-history-heading">
-                  <div className={s.sectionHeading}><div><p className={s.eyebrow}>The paper trail</p><h2 id="purchase-history-heading">Purchase history</h2></div></div>
-                  {invoices === null ? <div className={s.skeleton} aria-busy="true" aria-label="Loading purchases" /> : invoicesFailed ? (
-                    <div className={s.error} role="status"><h3>History is taking a moment.</h3>
-                      <p>We couldn&apos;t load your purchases. Your plan and credits are unaffected.</p>
-                      <button type="button" className={s.secondary} onClick={() => window.location.reload()}>Try again</button>
-                    </div>
-                  ) : invoices.length > 0 ? (
-                    <ul className={s.ledger}>
-                      {invoices.map(inv => (
-                        <li key={inv.id} className={s.invoice}>
-                          <div><h3>{inv.description ?? "Dormscape purchase"}</h3>
-                            <p>{fmtDate(inv.created, { year: "numeric", month: "short", day: "numeric" })}
-                              <span className={s.status} data-state={inv.status}>{inv.status === "succeeded" ? "Paid" : inv.status}</span>
-                            </p>
-                          </div>
-                          <div className={s.invoiceAmount}>
-                            <strong>{money(inv.amount, inv.currency)}</strong>
-                            {inv.receipt_url && <a href={inv.receipt_url} target="_blank" rel="noopener noreferrer" aria-label={`Receipt for ${inv.description ?? "Dormscape purchase"}`}>Receipt ↗︎</a>}
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <div className={s.historyEmpty}><h3>A clean slate.</h3>
-                      <p>No purchases yet. When you make one, the details and available receipts will appear here.</p>
-                      {profile && tier !== "pro" && <Link href="/pricing" className={s.secondary}>Explore one-time plans ↗︎</Link>}
-                    </div>
+            )}
+
+            {profile ? (
+              <>
+                <PlanCard profile={profile} />
+                <ToolChips profile={profile} />
+              </>
+            ) : (
+              <div className={`${s.skeleton} ${s.skeletonTall}`} aria-busy="true" aria-label="Loading your plan" />
+            )}
+
+            {profile && <section id="buy-credits" className={`${s.card} ${s.buy}`} aria-labelledby="buy-credits-title">
+              <div>
+                <p className={s.buyKicker}>Keep the ideas coming</p>
+                <h2 id="buy-credits-title" className={s.cardTitle}>
+                  Buy plan credits
+                </h2>
+                <p className={s.cardLede}>
+                  Top up at ${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. One credit generates one room plan. Buy what you
+                  need, when you need it.
+                </p>
+                <p className={s.flexPrice} aria-hidden="true">
+                  ${FLEX_CREDIT_PRICE_USD.toFixed(2)}
+                  <small>/credit</small>
+                </p>
+              </div>
+              <BuyCreditsForm source="billing" />
+            </section>}
+
+            <section id="purchases" className={s.card} aria-labelledby="purchase-history-heading">
+              <h2 id="purchase-history-heading" className={s.cardTitle}>
+                Purchases
+              </h2>
+              {invoices === null ? (
+                <div className={s.skeleton} aria-busy="true" aria-label="Loading purchases" />
+              ) : invoicesFailed ? (
+                <div className={s.failed} role="status">
+                  <h3>History is taking a moment.</h3>
+                  <p>We couldn&apos;t load your purchases. Your plan and credits are unaffected.</p>
+                  <button type="button" className="ds-btn ds-btn--ghost-ink ds-btn--sm" onClick={() => window.location.reload()}>
+                    Try again
+                  </button>
+                </div>
+              ) : invoices.length > 0 ? (
+                <table className={s.table}>
+                  <thead>
+                    <tr>
+                      <th scope="col">Item</th>
+                      <th scope="col" className={s.colDate}>
+                        Date
+                      </th>
+                      <th scope="col">Amount</th>
+                      <th scope="col" className={s.colReceipt}>
+                        Receipt
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {invoices.map((inv) => {
+                      const name = inv.description ?? "Dormscape purchase";
+                      const date = fmtDate(inv.created, { year: "numeric", month: "short", day: "numeric" });
+                      const status = (
+                        <span className={s.status} data-state={inv.status}>
+                          {inv.status === "succeeded" ? "Paid" : inv.status}
+                        </span>
+                      );
+                      const receipt = inv.receipt_url ? (
+                        <a href={inv.receipt_url} target="_blank" rel="noopener noreferrer" className={s.receipt} aria-label={`Receipt for ${name}`}>
+                          Download <ArrowUpRight size={14} />
+                        </a>
+                      ) : (
+                        <span className={s.none}>None</span>
+                      );
+                      return (
+                        <tr key={inv.id}>
+                          <td>
+                            <span className={s.item}>{name}</span>
+                            <span className={s.mobileMeta}>
+                              {date}
+                              {status}
+                            </span>
+                          </td>
+                          <td className={s.colDate}>
+                            {date}
+                            {status}
+                          </td>
+                          <td>
+                            <span className={s.amount}>{money(inv.amount, inv.currency)}</span>
+                            {inv.receipt_url && <span className={s.mobileReceipt}>{receipt}</span>}
+                          </td>
+                          <td className={s.colReceipt}>{receipt}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              ) : (
+                <div className={s.empty}>
+                  <h3>A clean slate.</h3>
+                  <p>No purchases yet. When you make one, the details and available receipts will appear here.</p>
+                  {tier !== "pro" && (
+                    <Link href="/pricing" className="ds-btn ds-btn--ghost-ink ds-btn--sm">
+                      Explore one-time plans <ArrowRight size={16} />
+                    </Link>
                   )}
-                </section>
-              </div>
+                </div>
+              )}
+            </section>
+
+            <div className={s.pair}>
+              <ProfileCard profile={profile} email={user?.email} />
+              <DeleteAccountSection onLeave={() => { guardedRef.current = true; }} />
             </div>
           </>
         )}
-      </main>
-    </div>
+      </AccountShell>
+    </PageShell>
   );
 }

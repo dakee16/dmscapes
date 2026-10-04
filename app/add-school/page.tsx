@@ -1,35 +1,83 @@
-import Footer from "@/components/Footer";
 import type { Metadata } from "next";
-import SiteHeader from "@/components/site/SiteHeader";
-import AddSchoolForm from "@/components/site/AddSchoolForm";
+import { pageMetadata } from "@/lib/seo";
+import Link from "next/link";
+import PageShell from "@/components/ds/PageShell";
+import PageHero from "@/components/ds/PageHero";
+import Headline from "@/components/ds/Headline";
+import { ArrowRight } from "@/components/ds/Icons";
+import SchoolRequestForm from "@/components/add-school/SchoolRequestForm";
+import QueuePromo from "@/components/add-school/QueuePromo";
+import measure from "@/content/blog/how-to-measure-your-dorm-room";
+import css from "@/components/add-school/AddSchool.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
+  title: "Add Your School",
   description:
     "Add your college to the Dormscape dorm room planner. Tell us the building and room size and we'll add it.",
-};
+  path: "/add-school",
+});
 
 export default function AddSchoolPage() {
   return (
-    <div>
-      <SiteHeader gridClassName="h-[28rem]" />
-      <main id="page-content" tabIndex={-1} className="dm-page min-h-[80vh]">
-        <div className="dm-contact-layout">
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-cobalt">
-            Every campus, eventually
+    <PageShell navOverlay>
+      <PageHero
+        bg="var(--ds-paper)"
+        size="md"
+        className={css.hero}
+        eyebrow="Every campus, eventually"
+        lines={[
+          { text: "Add your", riso: true },
+          { text: "school.", serif: true },
+        ]}
+        lede={
+          <>
+            <p>Know your room&rsquo;s size? Even better. Measurements help us support your dorm faster.</p>
+            <p>Just the college name and your email are required.</p>
+          </>
+        }
+        visual={<SchoolRequestForm />}
+      >
+        <div className={css.aside}>
+          <QueuePromo />
+          <p className={css.cantWait}>
+            Can&rsquo;t wait?{" "}
+            <Link href="/plan/draw" className="ds-link">
+              Draw your room in 2D
+            </Link>{" "}
+            and plan it today.
           </p>
-          <h1 className="dm-page-title mt-3 font-display text-4xl font-extrabold tracking-tight">
-            Add <span className="hl">your school.</span>
-          </h1>
-          <p className="mt-4 text-lg text-ink-soft">
-            Know your room&rsquo;s size? Even better. Measurements help us support
-            your dorm faster. Just the college name and your email are required.
-          </p>
-          <div className="mt-8 rounded-xl border border-ink/10 bg-card p-6 shadow-sm">
-            <AddSchoolForm />
-          </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </PageHero>
+
+      <section className={`ds-section--tight ${css.wait}`} aria-labelledby="wait-title">
+        <div className="ds-wrap">
+          <Headline
+            id="wait-title"
+            className="ds-h2 ds-h2--inline"
+            lines={[{ text: "While you" }, { text: "wait.", serif: true }]}
+          />
+          <ul className={css.waitGrid}>
+            <li data-reveal="">
+              <Link href={`/blog/${measure.slug}`} className={css.waitCard}>
+                <span className={css.waitText}>
+                  <span className={css.waitTitle}>{measure.title}</span>
+                  <span className={css.waitMeta}>Blog · {measure.readingTimeMin} min read</span>
+                </span>
+                <ArrowRight size={24} />
+              </Link>
+            </li>
+            <li data-reveal="" style={{ "--i": 1 } as React.CSSProperties}>
+              <Link href="/plan/draw" className={css.waitCard} data-tone="ink">
+                <span className={css.waitText}>
+                  <span className={css.waitTitle}>Draw your exact room</span>
+                  <span className={css.waitMeta}>Trace your walls, add doors, windows and closets · Plus</span>
+                </span>
+                <ArrowRight size={24} />
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </PageShell>
   );
 }

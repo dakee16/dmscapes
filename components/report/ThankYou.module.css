@@ -1,0 +1,163 @@
+/* /thank-you: short hero with a check badge, then share + feedback cards */
+
+.hero :global(.ds-h1 .ds-display) { font-size: clamp(46px, 5.6vw, 84px); line-height: 0.96; }
+.hero :global(.ds-h1 .ds-serif) { font-size: clamp(50px, 6vw, 92px); line-height: 1.04; }
+
+.badgeWrap {
+  display: flex;
+  justify-content: center;
+}
+.badge {
+  display: grid;
+  place-items: center;
+  width: clamp(120px, 14vw, 200px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--ds-blue);
+  color: #fff;
+  box-shadow:
+    0 0 0 14px rgba(36, 73, 255, 0.16),
+    0 0 0 32px rgba(36, 73, 255, 0.07),
+    6px 5px 0 32px rgba(255, 79, 168, 0.12);
+}
+.badge svg { width: 42%; height: auto; }
+
+/* ---------- Cards ---------- */
+.view { min-width: 0; }
+.cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 24px;
+}
+
+.share {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 3vw, 40px);
+  border-radius: 18px;
+  background-color: var(--ds-blue);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: #fff;
+}
+.shareLabel {
+  margin: 0;
+  font-family: var(--ds-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ds-yellow);
+}
+.shareText {
+  margin: 12px 0 0;
+  max-width: 460px;
+  font-size: clamp(20px, 1.7vw, 24px);
+  line-height: 1.4;
+  font-weight: 650;
+}
+.shareBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  margin-top: 28px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ds-ink);
+  font: 800 16px var(--ds-sans);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.shareBtn:hover { background: var(--ds-yellow); }
+.copyRow {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 28px;
+}
+.shareBtn + .copyRow { margin-top: 10px; padding-top: 0; }
+.copyInput {
+  flex: 1;
+  min-width: 0;
+  min-height: 52px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font: 600 15px var(--ds-mono);
+}
+.copyInput:focus { outline: none; border-color: #fff; box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3); }
+.copyBtn {
+  flex: none;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ds-ink);
+  font: 800 16px var(--ds-sans);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.copyBtn:hover,
+.copyBtn[data-copied] { background: var(--ds-yellow); }
+.share :focus-visible { outline-color: var(--ds-yellow); }
+
+/* FeedbackForm (components/products) still carries legacy utility classes;
+   bring its type into the redesign's voice here. */
+.feedback {
+  padding: clamp(24px, 3vw, 40px);
+}
+.feedback :global(.font-display) {
+  font-family: var(--ds-sans);
+  font-size: 26px;
+  font-weight: 850;
+  letter-spacing: -0.015em;
+}
+.feedback :global(.text-ink-soft) { color: var(--ds-caption); }
+.feedback textarea {
+  border-radius: 14px;
+  font-family: var(--ds-sans);
+}
+.feedback button[type="submit"] {
+  border-radius: 999px;
+  font-family: var(--ds-sans);
+  font-weight: 800;
+}
+
+.back { margin: 32px 0 0; }
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+.backLink:hover { color: var(--ds-blue); }
+.backArrow { transform: rotate(180deg); transition: transform 0.3s var(--ds-ease); }
+.backLink:hover .backArrow { transform: rotate(180deg) translateX(3px); }
+
+@media (max-width: 1023px) {
+  .badgeWrap { justify-content: flex-start; padding-left: 32px; }
+}
+@media (max-width: 860px) {
+  .cards { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 767px) {
+  .badge { width: 104px; box-shadow: 0 0 0 10px rgba(36, 73, 255, 0.16), 0 0 0 22px rgba(36, 73, 255, 0.07); }
+  .badgeWrap { padding-left: 22px; }
+}

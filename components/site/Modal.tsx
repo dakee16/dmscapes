@@ -1,8 +1,13 @@
 "use client";
 
-import { forwardRef, useEffect, useImperativeHandle, useRef, type HTMLAttributes } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef, type ButtonHTMLAttributes, type HTMLAttributes } from "react";
 import { createPortal } from "react-dom";
 import { useExperienceMotion } from "@/components/experience/MotionProvider";
+import { CloseIcon } from "@/components/ds/Icons";
+
+// The dialog base: an ink scrim with the dialog's first child as a paper card
+// (22px radius) that drops in. Styles live in app/ds-dialog.css; a dialog's own
+// CSS module (on className or the card) always wins over those defaults.
 
 // One stack owns scroll locking and keyboard focus, even when dialogs overlap.
 const dialogs: HTMLElement[] = [];
@@ -79,10 +84,23 @@ const Modal = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(functio
   return createPortal(
     <div {...props} ref={root} role="dialog" aria-modal="true" tabIndex={-1}
       data-motion={paused ? "paused" : "on"}
-      className={`dm-dialog-layer ${className}`}>
+      className={`ds-dialog ${className}`}>
       {children}
     </div>, document.body
   );
 });
 
 export default Modal;
+
+/** The shared round close button for dialogs (styles in app/ds-dialog.css). */
+export function ModalClose({
+  label = "Close",
+  className = "",
+  ...props
+}: ButtonHTMLAttributes<HTMLButtonElement> & { label?: string }) {
+  return (
+    <button type="button" aria-label={label} {...props} className={`ds-dialog-close ${className}`}>
+      <CloseIcon size={18} />
+    </button>
+  );
+}

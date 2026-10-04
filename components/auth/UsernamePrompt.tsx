@@ -7,6 +7,8 @@ import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
 import type { UsernameCheckResponse } from "@/lib/api-types";
+import { CloseButton } from "@/components/account-ui/parts";
+import d from "@/components/account-ui/Dialog.module.css";
 
 type UsernameStatus = "idle" | "checking" | "available" | "taken" | "invalid" | "unknown";
 const USERNAME_RE = /^[A-Za-z0-9._]{3,20}$/;
@@ -133,22 +135,27 @@ export default function UsernamePrompt() {
 
   return (
     <Modal
-      className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
+      className={`${d.layer} ${d.bottom}`}
+      style={{ "--z": 60 } as React.CSSProperties}
       role="dialog"
       aria-modal="true"
       aria-labelledby="username-prompt-title"
       onMouseDown={(e) => { if (e.target === e.currentTarget) skip(); }}
     >
-      <div className="snap-in w-full max-w-md rounded-t-2xl border border-ink/10 bg-paper p-5 shadow-2xl sm:rounded-2xl sm:p-6">
-        <h2 id="username-prompt-title" className="font-display text-xl font-bold tracking-tight">
-          Claim your username
+      <div className={`ds ${d.sheet}`} style={{ "--w": "460px" } as React.CSSProperties}>
+        <div className={d.top}>
+          <p className={d.eyebrow}>Your profile</p>
+          <CloseButton onClick={skip} label="Skip for now" />
+        </div>
+        <h2 id="username-prompt-title" className={`${d.title} ${d.titleSm}`} style={{ marginTop: 10 }}>
+          Claim your <span className={d.serif}>username.</span>
         </h2>
-        <form onSubmit={handleClaim} className="mt-4 space-y-3" noValidate>
-          <p className="text-sm leading-relaxed text-ink-soft">One last thing: pick the name your designs live under.</p>
+        <form onSubmit={handleClaim} className={d.form} noValidate>
+          <p className={d.body} style={{ margin: 0 }}>One last thing: pick the name your designs live under.</p>
           <div>
-            <label htmlFor="username-claim" className="mb-1.5 block text-sm font-medium">Username</label>
-            <div className="flex h-12 items-center rounded-xl border border-ink/15 bg-white pl-4 transition-colors focus-within:border-cobalt">
-              <span className="font-mono text-sm text-ink-soft" aria-hidden="true">@</span>
+            <label htmlFor="username-claim" className={d.label}>Username</label>
+            <div className={d.at}>
+              <span aria-hidden="true">@</span>
               <input
                 ref={inputRef}
                 id="username-claim"
@@ -158,20 +165,19 @@ export default function UsernamePrompt() {
                 value={username}
                 onChange={(e) => { setUsername(e.target.value); setUError(""); }}
                 placeholder="dormdesigner"
-                className="focus-quiet h-full flex-1 rounded-r-xl bg-transparent px-1.5 text-base outline-none placeholder:text-ink-soft/60"
               />
             </div>
             {uHint && (
-              <p className={`mt-1.5 font-mono text-xs ${uHint.tone === "bad" ? "text-[#c2321e]" : uHint.tone === "good" ? "text-cobalt" : "text-ink-soft"}`} role="status">
+              <p className={d.hint} data-tone={uHint.tone} role="status">
                 {uHint.text}
               </p>
             )}
           </div>
-          {uError && <p className="text-sm text-[#c2321e]" role="alert">{uError}</p>}
-          <button type="submit" disabled={busy || uStatus === "taken" || uStatus === "invalid" || !username.trim()} className="h-12 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-not-allowed disabled:opacity-70">
+          {uError && <p className={d.error} role="alert">{uError}</p>}
+          <button type="submit" disabled={busy || uStatus === "taken" || uStatus === "invalid" || !username.trim()} className={`${d.btn} ${d.btnInk} ${d.wide}`}>
             {busy ? "Claiming…" : "Claim username"}
           </button>
-          <button type="button" onClick={skip} className="block w-full cursor-pointer text-center text-sm text-ink-soft transition-colors hover:text-ink">
+          <button type="button" onClick={skip} className={d.later} style={{ marginTop: -8 }}>
             Skip for now
           </button>
         </form>

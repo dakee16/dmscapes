@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AccountHeader, IdentityCard, accountStyles as s } from "@/components/account/AccountUI";
-import SiteHeader from "@/components/site/SiteHeader";
+import PageShell from "@/components/ds/PageShell";
+import { AccountShell, IdentityCard, oauthLabel, accountStyles as s } from "@/components/account/AccountUI";
+import { LinkIcon } from "@/components/account-ui/parts";
 import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { passwordMeetsPolicy } from "@/lib/password";
@@ -18,41 +19,14 @@ type Tone = "good" | "bad" | "soft";
 type Msg = { tone: Tone; text: string } | null;
 type UsernameStatus = "idle" | "checking" | "available" | "taken" | "invalid" | "unknown";
 
-/** Map the stored auth provider to a display name, or null for email/password. */
-function oauthLabel(provider: string | null | undefined): string | null {
-  switch ((provider ?? "").toLowerCase()) {
-    case "google":
-      return "Google";
-    case "azure":
-    case "microsoft":
-      return "Microsoft";
-    default:
-      return null;
-  }
-}
-
-const INPUT = s.input;
-const LABEL = s.label;
-const BTN_PRIMARY = s.primary;
-const CARD = s.settingsSection;
-
-function toneClass(tone: Tone): string {
-  return tone === "bad"
-    ? "text-[#c2321e]"
-    : tone === "good"
-      ? "text-cobalt"
-      : "text-ink-soft";
-}
-
-function FieldMsg({ msg }: { msg: Msg }) {
+function FieldMsg({ msg, className = "" }: { msg: Msg; className?: string }) {
   if (!msg) return null;
   return (
-    <p className={`mt-2 font-mono text-xs ${toneClass(msg.tone)}`} role="status">
+    <p className={`${s.msg} ${className}`} data-tone={msg.tone} role="status">
       {msg.text}
     </p>
   );
 }
-
 export default function AccountSettingsPage() {
   const router = useRouter();
   const { user, profile, loading, openAuthModal, refreshProfile } = useAuth();
@@ -314,107 +288,99 @@ export default function AccountSettingsPage() {
   const ready = !loading && Boolean(user);
 
   return (
-    <div>
-      <SiteHeader />
-      <main id="page-content" tabIndex={-1} className={`dm-page ${s.page}`}>
-        <AccountHeader active="settings" title="Make it" accent="yours."
-          description="The details behind your designs. Keep your profile and sign-in information up to date." />
+    <PageShell>
+      <AccountShell active="profile">
         {!ready ? (
-          <div aria-busy="true" aria-label="Loading your settings">
-            <div className="h-9 w-48 animate-pulse rounded-lg bg-ink/8" />
-            <div className="mt-2 h-4 w-64 animate-pulse rounded bg-ink/5" />
-            <div className="mt-8 grid gap-6 lg:grid-cols-2">
-              <div className="h-64 animate-pulse rounded-2xl bg-ink/8" />
-              <div className="h-64 animate-pulse rounded-2xl bg-ink/8" />
-            </div>
+          <div className={s.loading} aria-busy="true" aria-label="Loading your settings">
+            <div className={s.skeleton} />
+            <div className={`${s.skeleton} ${s.skeletonTall}`} />
           </div>
         ) : (
           <>
-            <div className={s.settingsLayout}>
-              <aside className={s.settingsAside}>
-                <IdentityCard name={profile?.full_name} username={profile?.username} email={user?.email} />
-                <p>Your profile keeps your room ideas connected to you, wherever you plan next.</p>
-                <nav className={s.settingsLinks} aria-label="Settings sections">
-                  <a href="#profile-details">Profile <span aria-hidden="true">↘︎</span></a>
-                  <a href="#email-details">Email <span aria-hidden="true">↘︎</span></a>
-                  <a href="#security-details">Security <span aria-hidden="true">↘︎</span></a>
-                  <a href="#delete-account">Delete account <span aria-hidden="true">↘︎</span></a>
-                </nav>
-              </aside>
-              <div className={s.stack}>
-              {/* Profile */}
-              <section id="profile-details" className={CARD}>
-              <p className={s.eyebrow}>01 / Your identity</p>
-              <h2>Profile details</h2>
-              <p>A name and handle that make every shared design yours.</p>
-              <form onSubmit={saveProfile} className="mt-4 space-y-4" noValidate>
-                <div>
-                  <label htmlFor="set-name" className={LABEL}>
-                    Full name
-                  </label>
-                  <input
-                    id="set-name"
-                    type="text"
-                    autoComplete="name"
-                    value={fullName}
-                    onChange={(e) => {
-                      setFullName(e.target.value);
-                      setProfileMsg(null);
-                    }}
-                    placeholder="Alex Rivera"
-                    className={INPUT}
-                  />
-                </div>
+            <header className={s.intro}>
+              <p className={s.introEyebrow}>Profile &amp; sign-in</p>
+              <h2 className={s.introTitle}>
+                <b>Make it</b>
+                <i>yours.</i>
+              </h2>
+              <p className={s.introLede}>
+                The details behind your designs. Keep your profile and sign-in information up to date.
+              </p>
+            </header>
 
-                <div>
-                  <label htmlFor="set-username" className={LABEL}>
-                    Username
-                  </label>
-                  <div className={s.usernameField}>
-                    <span className="font-mono text-sm text-ink-soft" aria-hidden="true">
-                      @
-                    </span>
+            <IdentityCard name={profile?.full_name} username={profile?.username} email={user?.email} />
+
+            {/* Profile */}
+            <section id="profile-details" className={`${s.card} ${s.section}`} aria-labelledby="profile-details-title">
+              <p className={s.sectionEyebrow}>01 / Your identity</p>
+              <h2 id="profile-details-title" className={s.cardTitle}>Profile details</h2>
+              <p className={s.cardLede}>A name and handle that make every shared design yours.</p>
+              <form onSubmit={saveProfile} className={s.form} noValidate>
+                <div className={s.fields}>
+                  <div>
+                    <label htmlFor="set-name" className="ds-label">
+                      Full name
+                    </label>
                     <input
-                      id="set-username"
+                      id="set-name"
                       type="text"
-                      autoComplete="username"
-                      maxLength={20}
-                      value={username}
+                      autoComplete="name"
+                      value={fullName}
                       onChange={(e) => {
-                        setUsername(e.target.value);
+                        setFullName(e.target.value);
                         setProfileMsg(null);
                       }}
-                      placeholder="dormdesigner"
-                      className="focus-quiet"
+                      placeholder="Alex Rivera"
+                      className="ds-input"
                     />
                   </div>
-                  <FieldMsg msg={uHint} />
+
+                  <div>
+                    <label htmlFor="set-phone" className="ds-label">
+                      Phone number <span className={s.optional}>(optional)</span>
+                    </label>
+                    <input
+                      id="set-phone"
+                      type="tel"
+                      autoComplete="tel"
+                      value={phone}
+                      onChange={(e) => {
+                        setPhone(e.target.value);
+                        setProfileMsg(null);
+                      }}
+                      placeholder="(555) 123-4567"
+                      className="ds-input"
+                    />
+                  </div>
+
+                  <div className={s.full}>
+                    <label htmlFor="set-username" className="ds-label">
+                      Username
+                    </label>
+                    <div className={s.at}>
+                      <span aria-hidden="true">@</span>
+                      <input
+                        id="set-username"
+                        type="text"
+                        autoComplete="username"
+                        maxLength={20}
+                        value={username}
+                        onChange={(e) => {
+                          setUsername(e.target.value);
+                          setProfileMsg(null);
+                        }}
+                        placeholder="dormdesigner"
+                      />
+                    </div>
+                    <FieldMsg msg={uHint} className={s.fieldMsg} />
+                  </div>
                 </div>
 
-                <div>
-                  <label htmlFor="set-phone" className={LABEL}>
-                    Phone number{" "}
-                    <span className="font-normal text-ink-soft">(optional)</span>
-                  </label>
-                  <input
-                    id="set-phone"
-                    type="tel"
-                    autoComplete="tel"
-                    value={phone}
-                    onChange={(e) => {
-                      setPhone(e.target.value);
-                      setProfileMsg(null);
-                    }}
-                    placeholder="(555) 123-4567"
-                    className={INPUT}
-                  />
-                </div>
-
-                <div className="flex items-center gap-4">
+                <div className={s.formActions}>
                   <button
                     type="submit"
                     disabled={savingProfile || uStatus === "taken" || uStatus === "invalid"}
-                    className={BTN_PRIMARY}
+                    className="ds-btn ds-btn--ink-yellow"
                   >
                     {savingProfile ? "Saving…" : "Save changes"}
                   </button>
@@ -423,18 +389,16 @@ export default function AccountSettingsPage() {
               </form>
             </section>
 
-              <div className={s.stack}>
-                {/* Email */}
-                <section id="email-details" className={CARD}>
-              <p className={s.eyebrow}>02 / Stay connected</p>
-              <h2>Email address</h2>
-              <p className="mt-1 text-sm text-ink-soft">
-                We&apos;ll send a confirmation link to the new address. Your email
-                only changes once you click it.
+            {/* Email */}
+            <section id="email-details" className={`${s.card} ${s.section}`} aria-labelledby="email-details-title">
+              <p className={s.sectionEyebrow}>02 / Stay connected</p>
+              <h2 id="email-details-title" className={s.cardTitle}>Email address</h2>
+              <p className={s.cardLede}>
+                We&apos;ll send a confirmation link to the new address. Your email only changes once you click it.
               </p>
-              <form onSubmit={saveEmail} className="mt-4 space-y-4" noValidate>
+              <form onSubmit={saveEmail} className={s.form} noValidate>
                 <div>
-                  <label htmlFor="set-email" className={LABEL}>
+                  <label htmlFor="set-email" className="ds-label">
                     Email address
                   </label>
                   <input
@@ -447,15 +411,11 @@ export default function AccountSettingsPage() {
                       setEmailMsg(null);
                     }}
                     placeholder="you@school.edu"
-                    className={INPUT}
+                    className="ds-input"
                   />
                 </div>
-                <div className="flex items-center gap-4">
-                  <button
-                    type="submit"
-                    disabled={savingEmail || !emailChanged}
-                    className={BTN_PRIMARY}
-                  >
+                <div className={s.formActions}>
+                  <button type="submit" disabled={savingEmail || !emailChanged} className="ds-btn ds-btn--ink-yellow">
                     {savingEmail ? "Sending…" : "Update email"}
                   </button>
                   <FieldMsg msg={emailMsg} />
@@ -463,106 +423,96 @@ export default function AccountSettingsPage() {
               </form>
             </section>
 
-                {/* Password / provider */}
-                <section id="security-details" className={CARD}>
-              <p className={s.eyebrow}>03 / Just for you</p>
-              <h2>Sign-in &amp; security</h2>
+            {/* Password / provider */}
+            <section id="security-details" className={`${s.card} ${s.section}`} aria-labelledby="security-details-title">
+              <p className={s.sectionEyebrow}>03 / Just for you</p>
+              <h2 id="security-details-title" className={s.cardTitle}>Sign-in &amp; security</h2>
               {isPasswordAccount ? (
-                <form onSubmit={changePassword} className="mt-4 space-y-4" noValidate>
-                  <p className="text-sm text-ink-soft">
+                <form onSubmit={changePassword} className={s.form} noValidate>
+                  <p className={s.cardLede} style={{ margin: 0 }}>
                     We verify your current password before changing it.
                   </p>
-                  <div>
-                    <label htmlFor="set-curpw" className={LABEL}>
-                      Current password
-                    </label>
-                    <input
-                      id="set-curpw"
-                      type="password"
-                      autoComplete="current-password"
-                      value={curPw}
-                      onChange={(e) => {
-                        setCurPw(e.target.value);
-                        setPwMsg(null);
-                      }}
-                      placeholder="Your current password"
-                      className={INPUT}
-                    />
+                  <div className={s.fields}>
+                    <div className={s.full}>
+                      <label htmlFor="set-curpw" className="ds-label">
+                        Current password
+                      </label>
+                      <input
+                        id="set-curpw"
+                        type="password"
+                        autoComplete="current-password"
+                        value={curPw}
+                        onChange={(e) => {
+                          setCurPw(e.target.value);
+                          setPwMsg(null);
+                        }}
+                        placeholder="Your current password"
+                        className="ds-input"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="set-newpw" className="ds-label">
+                        New password
+                      </label>
+                      <input
+                        id="set-newpw"
+                        type="password"
+                        autoComplete="new-password"
+                        value={newPw}
+                        onChange={(e) => {
+                          setNewPw(e.target.value);
+                          setPwMsg(null);
+                        }}
+                        placeholder="8 to 12 characters"
+                        className="ds-input"
+                      />
+                      <PasswordChecklist password={newPw} />
+                    </div>
+                    <div>
+                      <label htmlFor="set-confirmpw" className="ds-label">
+                        Confirm new password
+                      </label>
+                      <input
+                        id="set-confirmpw"
+                        type="password"
+                        autoComplete="new-password"
+                        value={confirmPw}
+                        onChange={(e) => {
+                          setConfirmPw(e.target.value);
+                          setPwMsg(null);
+                        }}
+                        placeholder="Re-enter the new password"
+                        className="ds-input"
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label htmlFor="set-newpw" className={LABEL}>
-                      New password
-                    </label>
-                    <input
-                      id="set-newpw"
-                      type="password"
-                      autoComplete="new-password"
-                      value={newPw}
-                      onChange={(e) => {
-                        setNewPw(e.target.value);
-                        setPwMsg(null);
-                      }}
-                      placeholder="8 to 12 characters"
-                      className={INPUT}
-                    />
-                    <PasswordChecklist password={newPw} />
-                  </div>
-                  <div>
-                    <label htmlFor="set-confirmpw" className={LABEL}>
-                      Confirm new password
-                    </label>
-                    <input
-                      id="set-confirmpw"
-                      type="password"
-                      autoComplete="new-password"
-                      value={confirmPw}
-                      onChange={(e) => {
-                        setConfirmPw(e.target.value);
-                        setPwMsg(null);
-                      }}
-                      placeholder="Re-enter the new password"
-                      className={INPUT}
-                    />
-                  </div>
-                  <div className="flex flex-wrap items-center gap-4">
-                    <button type="submit" disabled={savingPw} className={BTN_PRIMARY}>
+                  <div className={s.formActions}>
+                    <button type="submit" disabled={savingPw} className="ds-btn ds-btn--ink-yellow">
                       {savingPw ? "Updating…" : "Change password"}
                     </button>
-                    <button
-                      type="button"
-                      onClick={sendReset}
-                      disabled={sendingReset}
-                      className="cursor-pointer text-sm font-medium text-ink-soft underline-offset-4 transition-colors hover:text-ink hover:underline disabled:opacity-60"
-                    >
+                    <button type="button" onClick={sendReset} disabled={sendingReset} className={s.textBtn}>
                       {sendingReset ? "Sending…" : "Forgot your password?"}
                     </button>
                   </div>
                   <FieldMsg msg={pwMsg} />
                 </form>
               ) : (
-                <div className="mt-3 flex items-start gap-3 rounded-xl border border-ink/10 bg-paper px-4 py-3.5">
-                  <span
-                    className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white"
-                    aria-hidden="true"
-                  >
-                    🔗
+                <div className={s.oauth}>
+                  <span aria-hidden="true">
+                    <LinkIcon />
                   </span>
-                  <p className="text-sm leading-relaxed text-ink-soft">
-                    You&apos;re signed in with{" "}
-                    <strong className="font-semibold text-ink">{oauthProvider}</strong>.
-                    There&apos;s no Dormscape password to change. Manage your login
-                    from your {oauthProvider} account.
+                  <p>
+                    You&apos;re signed in with <strong>{oauthProvider}</strong>. There&apos;s no Dormscape password to
+                    change. Manage your login from your {oauthProvider} account.
                   </p>
                 </div>
               )}
-                </section>
-                <DeleteAccountSection onLeave={() => { guardedRef.current = true; }} />
-              </div>
-              </div>
-            </div>
+            </section>
+
+            <DeleteAccountSection onLeave={() => { guardedRef.current = true; }} />
           </>
         )}
-      </main>
-    </div>
+      </AccountShell>
+    </PageShell>
   );
 }

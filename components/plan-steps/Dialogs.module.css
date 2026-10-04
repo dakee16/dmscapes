@@ -1,0 +1,263 @@
+/* Dialog content for the planner steps. The layer itself comes from
+   components/site/Modal; these style the paper card inside it. Selectors are
+   doubled where legacy dialog rules would otherwise win. */
+
+.layer {
+  background: rgba(22, 22, 29, 0.55);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.card.card {
+  position: relative;
+  width: min(100%, 460px);
+  padding: 28px;
+  background: var(--ds-paper);
+  color: var(--ds-ink);
+  font-family: var(--ds-sans);
+  border-radius: 22px;
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06), 0 40px 90px -30px rgba(10, 16, 44, 0.6);
+  animation: drop 260ms var(--ds-ease) both;
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-blue);
+}
+
+.card .title.title {
+  margin: 6px 0 0;
+  font-family: var(--ds-sans);
+  font-size: clamp(26px, 3vw, 32px);
+  line-height: 1.05;
+  font-weight: 850;
+  font-stretch: 90%;
+  letter-spacing: -0.03em;
+}
+.title em {
+  font-family: var(--ds-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ds-blue);
+  font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
+}
+
+.card .close.close {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: -8px -8px 0 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--ds-muted);
+  cursor: pointer;
+}
+.card .close.close:hover {
+  background: rgba(22, 22, 29, 0.06);
+  color: var(--ds-ink);
+}
+
+.text {
+  margin: 12px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ds-muted);
+}
+.text strong {
+  color: var(--ds-ink);
+}
+
+.form {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.label {
+  margin-bottom: 6px;
+}
+.req {
+  color: var(--ds-blue);
+}
+.hint {
+  font-family: var(--ds-sans);
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+  color: var(--ds-caption);
+}
+
+.card .input.input {
+  min-height: 50px;
+  font-size: 16px;
+}
+
+.alert {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ds-red);
+}
+
+.priority {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+.priority span {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--ds-yellow);
+  color: var(--ds-ink);
+  font-weight: 700;
+}
+
+.actions {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.actions.stack {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.card .primary.primary,
+.card .secondary.secondary {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-family: var(--ds-sans);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 180ms var(--ds-ease), box-shadow 180ms var(--ds-ease);
+}
+.card .primary.primary {
+  border: 0;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+}
+.card .primary.primary:hover:not(:disabled) {
+  box-shadow: 0 10px 24px rgba(22, 22, 29, 0.25);
+}
+.card .primary.primary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.card .secondary.secondary {
+  border: 1.5px solid rgba(22, 22, 29, 0.2);
+  background: #fff;
+  color: var(--ds-ink);
+  font-weight: 700;
+}
+.card .secondary.secondary:hover {
+  border-color: rgba(22, 22, 29, 0.45);
+}
+.card .quiet.quiet {
+  min-height: 44px;
+  border: 0;
+  background: none;
+  font-family: var(--ds-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ds-muted);
+  cursor: pointer;
+}
+.card .quiet.quiet:hover {
+  color: var(--ds-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.success {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1.5px solid rgba(22, 22, 29, 0.1);
+}
+.success p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.success p + p {
+  margin-top: 6px;
+  color: var(--ds-muted);
+}
+
+.count {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--ds-tape);
+  box-shadow: 0 3px 0 var(--ds-tape-shadow);
+  font-size: 24px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@keyframes drop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+
+@media (max-width: 520px) {
+  .card.card {
+    padding: 22px 20px;
+  }
+  .actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .actions.stack {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card.card {
+    animation: none;
+  }
+}

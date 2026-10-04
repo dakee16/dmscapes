@@ -1,6 +1,7 @@
 "use client";
 
-import Modal from "@/components/site/Modal";
+import Modal, { ModalClose } from "@/components/site/Modal";
+import css from "./Feedback.module.css";
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import FeedbackForm from "@/components/products/FeedbackForm";
@@ -9,8 +10,8 @@ import { track } from "@/lib/analytics";
 /**
  * Footer "Feedback" entry point: a link-styled button that opens the same
  * rating UI used on the confirmation page, but standalone, usable any time,
- * with no purchase or saved design required. Modal chrome mirrors the
- * post-purchase prompt (PurchaseSurvey) for a consistent feel.
+ * with no purchase or saved design required. Chrome comes from the shared
+ * dialog base (Modal): a paper card over the ink scrim.
  */
 export default function FeedbackLink() {
   const [open, setOpen] = useState(false);
@@ -53,7 +54,7 @@ export default function FeedbackLink() {
       <button
         type="button"
         onClick={handleOpen}
-        className="cursor-pointer text-left text-sm font-medium text-ink-soft transition-colors hover:text-ink"
+        className={css.trigger}
       >
         Feedback
       </button>
@@ -71,70 +72,33 @@ export function FeedbackDialog({ onClose }: { onClose: () => void }) {
     return () => { document.removeEventListener("keydown", escape); if (closeTimer.current) window.clearTimeout(closeTimer.current); };
   }, [onClose]);
   return (
-        <Modal
-          className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="footer-feedback-title"
-          onMouseDown={(e) => {
-            if (e.target === e.currentTarget) onClose();
-          }}
-        >
-          <div className="dm-feedback-modal snap-in relative w-full border border-ink/15 bg-paper shadow-2xl">
-            {/* Graph-paper wash across the top, the same grid the site is built on. */}
-            <div
-              aria-hidden
-              className="grid-paper pointer-events-none absolute inset-x-0 top-0 h-1/2"
-              style={{
-                WebkitMaskImage:
-                  "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 48%, transparent 100%)",
-                maskImage:
-                  "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 48%, transparent 100%)",
-              }}
-            />
-            <div className="relative z-10">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-cobalt">
-                    Feedback
-                  </p>
-                  <h2
-                    id="footer-feedback-title"
-                    className="dm-dialog-title mt-3 font-display"
-                  >
-                    Tell us how it&apos;s <span className="hl">going</span>
-                  </h2>
-                </div>
-                <button
-                  type="button"
-                  onClick={onClose}
-                  aria-label="Close"
-                  className="grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-ink"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-5 w-5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-                  </svg>
-                </button>
-              </div>
-
-              <div className="mt-4">
-                <FeedbackForm
-                  source="footer"
-                  headline=""
-                  subhead="A star rating sends it. Words are welcome, never required."
-                  autoFocus
-                  onSubmitted={() => { closeTimer.current = window.setTimeout(onClose, 1600); }}
-                />
-              </div>
-            </div>
+    <Modal
+      aria-labelledby="footer-feedback-title"
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div className={css.card}>
+        <div className={css.top}>
+          <div>
+            <p className={css.eyebrow}>Feedback</p>
+            <h2 id="footer-feedback-title" className={css.title}>
+              Tell us how it&apos;s <em>going.</em>
+            </h2>
           </div>
-        </Modal>
+          <ModalClose onClick={onClose} className={css.close} />
+        </div>
+
+        <div className={css.body}>
+          <FeedbackForm
+            source="footer"
+            headline=""
+            subhead="A star rating sends it. Words are welcome, never required."
+            autoFocus
+            onSubmitted={() => { closeTimer.current = window.setTimeout(onClose, 1600); }}
+          />
+        </div>
+      </div>
+    </Modal>
   );
 }

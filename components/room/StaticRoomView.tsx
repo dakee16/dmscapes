@@ -138,7 +138,7 @@ export default function StaticRoomView({
                 dominantBaseline="central"
                 fontSize={Math.min(11, hPx * 0.4)}
                 fill="#17172b"
-                style={{ fontFamily: "var(--font-plex-mono), monospace" }}
+                style={{ fontFamily: "var(--font-martian), monospace" }}
               >
                 {bedLabel(f).length > 18 ? `${bedLabel(f).slice(0, 17)}…` : bedLabel(f)}
               </text>
@@ -209,7 +209,7 @@ export default function StaticRoomView({
         <line x1={0} y1={0} x2={PX} y2={0} stroke="#17172b" strokeWidth={2} />
         <line x1={0} y1={-3} x2={0} y2={3} stroke="#17172b" strokeWidth={2} />
         <line x1={PX} y1={-3} x2={PX} y2={3} stroke="#17172b" strokeWidth={2} />
-        <text x={PX + 6} y={3} fontSize={10} fill="#4c4f63" style={{ fontFamily: "var(--font-plex-mono), monospace" }}>
+        <text x={PX + 6} y={3} fontSize={10} fill="#4c4f63" style={{ fontFamily: "var(--font-martian), monospace" }}>
           1 ft
         </text>
       </g>

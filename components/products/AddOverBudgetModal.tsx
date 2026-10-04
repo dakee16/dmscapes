@@ -4,6 +4,7 @@ import Modal from "@/components/site/Modal";
 
 import { useEffect } from "react";
 import type { Product } from "@/lib/types";
+import d from "./Dialog.module.css";
 
 /**
  * Shown when adding a piece from "Things to add" would push the cart past the
@@ -35,48 +36,31 @@ export default function AddOverBudgetModal({
 
   return (
     <Modal
-      className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-4 sm:items-center"
+      className={d.layer}
       onClick={onCancel}
       role="dialog"
       aria-modal="true"
       aria-labelledby="over-budget-title"
     >
-      <div
-        className="snap-in w-full max-w-md rounded-2xl border border-ink/10 bg-white p-5 shadow-xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-amber">
-          Over budget
-        </p>
-        <h2
-          id="over-budget-title"
-          className="mt-1 font-display text-lg font-bold leading-snug text-ink"
-        >
-          This piece takes you over your budget
+      <div className={d.card} onClick={(e) => e.stopPropagation()}>
+        <p className={d.eyebrow} data-tone="warn">Over budget</p>
+        <h2 id="over-budget-title" className={d.title}>
+          This piece takes you <em>over your budget.</em>
         </h2>
-        <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-          Adding{" "}
-          <span className="font-semibold text-ink">{product.name}</span> (${product.price.toFixed(2)})
-          pushes your total to{" "}
-          <span className="font-mono font-semibold text-ink">${newTotal.toFixed(0)}</span>,{" "}
-          <span className="font-semibold text-ink">${over.toFixed(0)} over</span> your{" "}
-          <span className="font-mono font-semibold text-ink">${budget.toFixed(0)}</span>{" "}
-          budget. You can still add it if you want to.
+        <p className={d.body}>
+          Adding <strong>{product.name}</strong> (${product.price.toFixed(2)}) pushes your total to{" "}
+          <strong>${newTotal.toFixed(0)}</strong>, <strong>${over.toFixed(0)} over</strong> your{" "}
+          <strong>${budget.toFixed(0)}</strong> budget. You can still add it if you want to.
         </p>
-
-        <div className="mt-5 flex flex-col-reverse gap-2.5 sm:flex-row sm:justify-end">
-          <button
-            type="button"
-            onClick={onCancel}
-            className="h-11 cursor-pointer rounded-xl border border-ink/15 bg-white px-5 text-sm font-semibold text-ink transition-colors hover:border-ink/30"
-          >
+        <div className={d.figures}>
+          <span>${newTotal.toFixed(0)} of ${budget.toFixed(0)}</span>
+          <b>${over.toFixed(0)} over</b>
+        </div>
+        <div className={d.actions}>
+          <button type="button" onClick={onCancel} className={d.secondary}>
             No, take me back
           </button>
-          <button
-            type="button"
-            onClick={onConfirm}
-            className="h-11 cursor-pointer rounded-xl bg-cobalt px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep"
-          >
+          <button type="button" onClick={onConfirm} className={d.primary}>
             Add it anyway
           </button>
         </div>

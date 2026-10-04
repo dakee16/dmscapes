@@ -1,25 +1,29 @@
-import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import SiteHeader from "@/components/site/SiteHeader";
+import PageShell from "@/components/ds/PageShell";
+import PageHero from "@/components/ds/PageHero";
+import Headline from "@/components/ds/Headline";
+import Crumbs from "@/components/ds/Crumbs";
+import CtaBand from "@/components/ds/CtaBand";
 import PlanCta from "@/components/site/PlanCta";
-import Breadcrumbs from "@/components/site/Breadcrumbs";
 import JsonLd from "@/components/site/JsonLd";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
-import StaticRoomView from "@/components/room/StaticRoomView";
+import { ArrowRight } from "@/components/ds/Icons";
+import ScalePlan from "@/components/hall/ScalePlan";
 import { allDormPaths, getDorm, formatDims } from "@/lib/schools";
+import { shortName } from "@/lib/school-names";
 import { formatRoomType } from "@/lib/format";
 import { beddingAdvisory } from "@/lib/bedding";
-import { matchTemplate } from "@/templates/template-matcher";
-import { fitTemplateToRoom } from "@/lib/layout-fit";
-import { pageMetadata, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { bedName, fitRoom, ft, hasDims, isPublished, roomName, sqFtOf, type FittedRoom } from "@/lib/room-preview";
+import { footprint } from "@/components/canvas/geometry";
+import { pageMetadata, fitDescription, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
 import type { RoomSummary } from "@/lib/types";
+import css from "@/components/hall/Hall.module.css";
 
-// One page per residence hall (760 of them). Every page carries data that is
-// genuinely specific to the building: the room types it has, their measured
-// dimensions, bed size, closet footprint, and a real example layout rendered
-// from that room's actual dimensions. Nothing here is boilerplate-only.
+// One page per residence hall. Every page carries data that is genuinely
+// specific to the building: the room types it has, their measured dimensions,
+// bed size, closet footprint, and each room drawn from its actual dimensions.
 
 export function generateStaticParams() {
   return allDormPaths();
@@ -27,9 +31,6 @@ export function generateStaticParams() {
 
 const areaOf = (r: RoomSummary) =>
   r.length_ft && r.width_ft ? r.length_ft * r.width_ft : (r.sqft ?? 0);
-
-const sqFt = (r: RoomSummary) =>
-  r.sqft ?? (r.length_ft && r.width_ft ? Math.round(r.length_ft * r.width_ft) : null);
 
 export async function generateMetadata(props: {
   params: Promise<{ collegeId: string; dormId: string }>;
@@ -45,16 +46,27 @@ export async function generateMetadata(props: {
     .filter(Boolean)
     .slice(0, 2)
     .join(", ");
+  const where = shortName(school);
+  const count = `${types} room type${types === 1 ? "" : "s"}${sizes ? ` (${sizes})` : ""}`;
+  const extras = dorm.rooms.some((r) => r.closet) ? "bed and closet sizes" : "bed sizes";
   return pageMetadata({
-    title: `${dorm.name} Room Dimensions`,
-    description: `${dorm.name} at ${school.name}: ${types} room type${
-      types === 1 ? "" : "s"
-    }${sizes ? ` (${sizes})` : ""}, bed sizes, closet sizes, and a to-scale layout you can plan for free.`,
+    title: `${dorm.name} Room Dimensions, ${where}`,
+    description: fitDescription(
+      `${dorm.name} at ${school.name}: ${count}, ${extras}, and a to-scale layout you can plan for free.`,
+      `${dorm.name} at ${where}: ${count}, ${extras}, and a to-scale layout you can plan for free.`,
+      `${dorm.name} at ${where}: ${count} and a to-scale layout you can plan for free.`,
+      `${dorm.name} at ${where}: ${types} room type${types === 1 ? "" : "s"}, drawn to scale. Plan your room for free.`,
+    ),
     path: `/colleges/${school.id}/${dorm.id}`,
     ogTitle: `${dorm.name} dorm room dimensions and layouts`,
     ...(measured === 0 ? { noIndex: true } : {}),
   });
 }
+
+const WORDS = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+const word = (n: number) => WORDS[n] ?? String(n);
+const PIECE_NAMES: Record<string, string> = { bed: "Bed", desk: "Desk", desk_chair: "Desk chair", dresser: "Dresser" };
+const FOOT_PX = 20;
 
 export default async function DormPage(props: {
   params: Promise<{ collegeId: string; dormId: string }>;
@@ -65,54 +77,40 @@ export default async function DormPage(props: {
   const { school, dorm } = found;
 
   const place = [school.city, school.state].filter(Boolean).join(", ");
-  const measured = dorm.rooms.filter((r) => r.length_ft && r.width_ft);
-  const published = measured.filter((r) => !r.dims_estimated);
+  const short = shortName(school);
+  const published = dorm.rooms.filter(isPublished);
   const siblings = school.dorms.filter((d) => d.id !== dorm.id).slice(0, 12);
+  const planHref = `/plan?school=${school.id}&dorm=${dorm.id}`;
+  const n = dorm.rooms.length;
 
-  // Example layout: the biggest measured room in this building, laid out with
-  // the same template engine the planner uses, rendered as server-side SVG so
-  // it is real, crawlable content rather than a client-only canvas.
-  const primary = [...measured].sort((a, b) => areaOf(b) - areaOf(a))[0];
-  let preview: {
-    room: RoomSummary;
-    lengthFt: number;
-    widthFt: number;
-    furniture: ReturnType<typeof fitTemplateToRoom>;
-    isCorridor: boolean;
-  } | null = null;
-  if (primary?.length_ft && primary?.width_ft) {
-    const match = matchTemplate({
-      length_ft: primary.length_ft,
-      width_ft: primary.width_ft,
-      occupants: primary.occupants ?? 2,
-      room_type: primary.type,
-    });
-    preview = {
-      room: primary,
-      lengthFt: primary.length_ft,
-      widthFt: primary.width_ft,
-      furniture: fitTemplateToRoom(
-        match.template.furniture,
-        match.template_id,
-        primary.length_ft,
-        primary.width_ft
-      ),
-      isCorridor: match.template_id.startsWith("corridor-"),
-    };
-  }
+  const rooms = dorm.rooms.map((r) => ({ r, fit: fitRoom(r) }));
+  const fitted = rooms.filter((x): x is { r: RoomSummary; fit: FittedRoom } => x.fit !== null);
+  const maxL = Math.max(0, ...fitted.map((x) => x.fit.lengthFt));
+  // one scale for every plan on the page, sized so the longest room fits a card
+  const ppf = maxL ? Math.min(26, 500 / (maxL + 3)) : 20;
 
-  // Real furniture footprints for this room, taken from the fitted layout (the
-  // same measurements the planner uses), deduped by piece type.
-  const furnitureSpecs = (() => {
-    if (!preview) return [];
+  // Built-in footprints from the biggest measured room's starting layout.
+  const primary = [...fitted].sort((a, b) => areaOf(b.r) - areaOf(a.r))[0];
+  const pieces = (() => {
+    if (!primary) return [];
     const seen = new Set<string>();
-    return preview.furniture
-      .filter((f) => f.built_in && !seen.has(f.type) && seen.add(f.type))
-      .map((f) => ({
-        label: f.label.replace(/\s+[AB]$/, ""),
-        dims: `${f.width_ft}′ × ${f.length_ft}′`,
-      }));
+    return primary.fit.furniture
+      .filter((f) => !seen.has(f.type) && seen.add(f.type))
+      .map((f) => ({ type: f.type, w: f.width_ft, l: f.length_ft }));
   })();
+  const closet = dorm.rooms.find((r) => r.closet)?.closet ?? null;
+
+  const openFloor = fitted.map(({ r, fit }) => {
+    const area = sqFtOf(r) ?? Math.round(fit.lengthFt * fit.widthFt);
+    const furn = Math.round(
+      fit.furniture.reduce((s, f) => {
+        const fp = footprint(f);
+        return s + fp.w * fp.h;
+      }, 0)
+    );
+    return { name: roomName(r), area, furn: Math.min(furn, area), estimated: Boolean(r.dims_estimated) };
+  });
+  const maxArea = Math.max(1, ...openFloor.map((o) => o.area));
 
   const crumbs = [
     { name: "Home", path: "/" },
@@ -121,11 +119,17 @@ export default async function DormPage(props: {
     { name: dorm.name, path: `/colleges/${school.id}/${dorm.id}` },
   ];
 
-  const planHref = `/plan?school=${school.id}&dorm=${dorm.id}`;
+  const chips: string[] = [
+    ...dorm.rooms
+      .filter(hasDims)
+      .slice(0, 3)
+      .map((r) => `${roomName(r)} · ${ft(Math.max(r.length_ft!, r.width_ft!))} × ${ft(Math.min(r.length_ft!, r.width_ft!))} ft${r.dims_estimated ? " (est.)" : ""}`),
+    ...[...new Set(dorm.rooms.map((r) => `${bedName(r.bed_size)} beds`))],
+    ...(closet ? ["Closet as published"] : []),
+  ];
 
   return (
-    <div>
-      <SiteHeader gridClassName="h-[26rem]" />
+    <PageShell navOverlay>
       <JsonLd
         data={[
           breadcrumbJsonLd(crumbs),
@@ -140,209 +144,348 @@ export default async function DormPage(props: {
               url: absoluteUrl(`/colleges/${school.id}`),
               ...(place ? { address: place } : {}),
             },
+            // Room sizes as data for search and answer engines; published
+            // dimensions only, never our estimates.
+            containsPlace: dorm.rooms.filter(isPublished).map((r) => ({
+              "@type": "Room",
+              name: roomName(r),
+              description: `${ft(Math.max(r.length_ft!, r.width_ft!))} × ${ft(Math.min(r.length_ft!, r.width_ft!))} ft, ${bedName(r.bed_size)} beds`,
+              floorSize: { "@type": "QuantitativeValue", value: Math.round(r.length_ft! * r.width_ft!), unitCode: "FTK" },
+              ...(r.occupants ? { occupancy: { "@type": "QuantitativeValue", value: r.occupants } } : {}),
+            })),
           },
         ]}
       />
-      <main id="page-content" tabIndex={-1} className="dm-page dm-campus-detail">
-        <section className="mx-auto max-w-5xl px-5 pb-10 pt-10 sm:px-8 sm:pt-14">
-          <Breadcrumbs items={crumbs} />
-          <h1 className="dm-page-title mt-4 max-w-3xl font-display text-4xl font-extrabold leading-[1.06] tracking-tight sm:text-5xl">
-            {dorm.name} <span className="hl">room dimensions</span>
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
-            {dorm.rooms.length} room type{dorm.rooms.length === 1 ? "" : "s"} at{" "}
-            <Link
-              href={`/colleges/${school.id}`}
-              className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-4 transition-colors hover:text-cobalt"
-            >
-              {school.name}
-            </Link>
-            {place ? ` in ${place}` : ""}
-            {published.length > 0
-              ? `, ${published.length} with dimensions published by the university.`
-              : "."}{" "}
-            Use them to plan the room to scale before move-in.
-          </p>
-          <div className="mt-7 flex flex-wrap items-center gap-4">
-            <PlanCta
-              href={planHref}
-              className="inline-block rounded-lg bg-cobalt px-6 py-3 font-semibold text-white transition-colors hover:bg-cobalt-deep"
-              freeLabel={`Plan your ${dorm.name} room`}
-              paidLabel={`Plan a ${dorm.name} room`}
-            />
-            <Link
-              href="/methodology"
-              className="text-sm text-ink-soft underline-offset-4 transition-colors hover:text-cobalt hover:underline"
-            >
-              Where these measurements come from
-            </Link>
-          </div>
-        </section>
-
-        {/* Room types: the substance of the page. */}
-        <section className="mx-auto max-w-5xl px-5 py-8 sm:px-8">
-          <h2 className="font-display text-2xl font-bold tracking-tight">
-            Room types and sizes
-          </h2>
-          <div className="dm-room-table dm-editorial-card mt-5 overflow-x-auto rounded-xl border border-ink/10 bg-card" role="region" aria-label="Room types and sizes" tabIndex={0}>
-            <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
-              <thead>
-                <tr className="border-b border-ink/10 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
-                  <th scope="col" className="px-4 py-3 font-medium">Room type</th>
-                  <th scope="col" className="px-4 py-3 font-medium">Sleeps</th>
-                  <th scope="col" className="px-4 py-3 font-medium">Dimensions</th>
-                  <th scope="col" className="px-4 py-3 font-medium">Floor area</th>
-                  <th scope="col" className="px-4 py-3 font-medium">Bed</th>
-                </tr>
-              </thead>
-              <tbody>
-                {dorm.rooms.map((r, i) => {
-                  const area = sqFt(r);
-                  const bed = beddingAdvisory(r.bed_size);
-                  return (
-                    <tr key={`${r.type}-${i}`} className="border-b border-ink/8 align-top last:border-0">
-                      <th scope="row" className="px-4 py-3 font-semibold text-ink">
-                        {r.label || formatRoomType(r.type)}
-                      </th>
-                      <td className="px-4 py-3 text-ink-soft">{r.occupants ?? "Not listed"}</td>
-                      <td className="px-4 py-3">
-                        <span className="whitespace-nowrap font-mono text-ink">
-                          {formatDims(r.length_ft, r.width_ft) ?? "Not published"}
-                        </span>
-                        {r.dims_estimated && <div className="mt-2 max-w-xs"><EstimatedDimsNote /></div>}
-                      </td>
-                      <td className="px-4 py-3 font-mono text-ink-soft">
-                        {area ? `${area} sq ft` : "Not published"}
-                      </td>
-                      <td className="px-4 py-3 text-ink-soft">
-                        {r.bed_size === "twin_xl"
-                          ? "Twin XL"
-                          : r.bed_size === "full_xl"
-                            ? "Full XL"
-                            : r.bed_size === "full"
-                              ? "Full"
-                              : r.bed_size === "queen"
-                                ? "Queen"
-                                : "Twin"}
-                        {bed?.level === "warning" && (
-                          <span className="mt-1 block text-[11px] leading-snug text-ink-soft">
-                            {bed.message}
-                          </span>
-                        )}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-          {dorm.rooms.some((r) => r.closet) && (
-            <p className="mt-3 text-sm text-ink-soft">
-              Closet:{" "}
-              {(() => {
-                const c = dorm.rooms.find((r) => r.closet)?.closet;
-                return c ? `${c.width_ft}′ wide × ${c.depth_ft}′ deep` : "";
-              })()}
-              , as published for this building.
+      <PageHero
+        bg="#E5E7F7"
+        className={css.hero}
+        crumbs={
+          <Crumbs
+            items={[
+              { name: "Colleges", path: "/colleges" },
+              { name: short, path: `/colleges/${school.id}` },
+              { name: dorm.name, path: `/colleges/${school.id}/${dorm.id}` },
+            ]}
+          />
+        }
+        eyebrow={
+          <>
+            {short} · Residence hall · {n} room type{n === 1 ? "" : "s"}
+          </>
+        }
+        lines={[
+          { text: dorm.name, riso: true },
+          { text: "room dimensions.", serif: true },
+        ]}
+        lede={
+          <>
+            <p>
+              {n} room type{n === 1 ? "" : "s"} at{" "}
+              <Link href={`/colleges/${school.id}`} className="ds-link">
+                {school.name}
+              </Link>
+              {place ? ` in ${place}` : ""}
+              {published.length > 0 ? `, ${published.length} with dimensions published by the university.` : "."} Use
+              them to plan the room to scale before move-in.
             </p>
-          )}
-        </section>
-
-        {/* A real, to-scale example layout for the largest measured room. */}
-        {preview && (
-          <section className="mx-auto max-w-5xl px-5 py-8 sm:px-8">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              Example layout: {preview.room.label || formatRoomType(preview.room.type)}
-            </h2>
-            <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-ink-soft">
-              A starting layout drawn to this room&rsquo;s actual{" "}
-              {formatDims(preview.lengthFt, preview.widthFt)} footprint. In the
-              planner you can drag, rotate, and swap anything, and the pieces stay
-              measured against your walls.
-            </p>
-            <div className="mt-5 grid gap-6 lg:grid-cols-[1.3fr_1fr] lg:items-start">
-              <div className="rounded-xl border border-ink/10 bg-card p-4">
-                <StaticRoomView
-                  lengthFt={preview.lengthFt}
-                  widthFt={preview.widthFt}
-                  furniture={preview.furniture}
-                  isCorridor={preview.isCorridor}
-                />
-              </div>
-              {furnitureSpecs.length > 0 && (
-                <div className="rounded-xl border border-ink/10 bg-card p-5">
-                  <h3 className="font-display text-base font-bold tracking-tight">
-                    Standard furniture footprints
-                  </h3>
-                  <p className="mt-1 text-sm leading-relaxed text-ink-soft">
-                    The built-in pieces this layout plans around, at the sizes we
-                    use for fit checks.
-                  </p>
-                  <ul className="mt-3 space-y-1.5">
-                    {furnitureSpecs.map((f) => (
-                      <li
-                        key={f.label}
-                        className="flex items-baseline justify-between gap-3 text-sm"
-                      >
-                        <span className="text-ink-soft">{f.label}</span>
-                        <span className="shrink-0 whitespace-nowrap font-mono text-xs text-ink">
-                          {f.dims}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </section>
-        )}
-
-        {/* Internal linking: sibling buildings keep crawl depth shallow. */}
-        {siblings.length > 0 && (
-          <section className="mx-auto max-w-5xl px-5 py-8 sm:px-8">
-            <h2 className="font-display text-2xl font-bold tracking-tight">
-              Other {school.name} residence halls
-            </h2>
-            <ul className="mt-5 flex flex-wrap gap-2">
-              {siblings.map((d) => (
-                <li key={d.id}>
-                  <Link
-                    href={`/colleges/${school.id}/${d.id}`}
-                    className="inline-block rounded-lg border border-ink/12 bg-card px-3 py-1.5 text-sm text-ink transition-colors hover:border-cobalt hover:text-cobalt"
-                  >
-                    {d.name}
-                  </Link>
+            <ul className={css.chips}>
+              {chips.map((c) => (
+                <li key={c} className="ds-chip">
+                  {c}
                 </li>
               ))}
             </ul>
-            <Link
-              href={`/colleges/${school.id}`}
-              className="mt-4 inline-block text-sm font-semibold text-cobalt underline-offset-4 hover:underline"
-            >
-              All {school.dorms.length} {school.name} buildings
-            </Link>
-          </section>
-        )}
+          </>
+        }
+        art={{
+          src: "/redesign/site-hall-clay-room.jpg",
+          alt: "A white clay model of a furnished dorm room with two beds, two desks and dressers, its walls edged in blue.",
+          ratio: 1440 / 1280,
+          fit: "contain",
+          position: "50% 60%",
+        }}
+      >
+        <PlanCta
+          href={planHref}
+          className="ds-btn ds-btn--ink-yellow ds-btn--lg"
+          freeLabel={`Plan your ${dorm.name} room`}
+          paidLabel={`Plan a ${dorm.name} room`}
+          icon={<ArrowRight size={20} />}
+        />
+        <a href="#rooms" className="ds-btn ds-btn--ghost">
+          {n === 1 ? "See the room" : n === 2 ? "See both rooms" : `See all ${n} rooms`}
+        </a>
+      </PageHero>
 
-        <section className="mx-auto max-w-5xl px-5 py-12 sm:px-8">
-          <div className="rounded-xl bg-ink p-8 text-center sm:p-10">
-            <h2 className="font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-              Plan your {dorm.name} room to the inch.
-            </h2>
-            <p className="mx-auto mt-3 max-w-lg text-white/80">
-              Load this building&rsquo;s real dimensions, arrange a layout that
-              fits, set your style and budget, and get a shoppable list.
+      {/* Room types: the substance of the page. */}
+      <section
+        id="rooms"
+        className={`ds-section ${css.rooms}`}
+        aria-labelledby="rooms-title"
+        style={{ "--ppf-base": ppf.toFixed(2) } as React.CSSProperties}
+      >
+        <div className="ds-wrap">
+          <div className={css.roomsHead}>
+            <div>
+              <p className="ds-eyebrow" style={{ marginBottom: 18 }} data-reveal="">
+                {n === 1 ? "Drawn to scale" : n === 2 ? "Both rooms at the same scale" : `All ${n} rooms at the same scale`}
+              </p>
+              <Headline
+                id="rooms-title"
+                className="ds-h2 ds-h2--inline"
+                lines={[
+                  { text: n === 1 ? "One room type," : `${word(n)} room types,` },
+                  { text: "drawn to scale.", serif: true },
+                ]}
+              />
+            </div>
+            {fitted.length > 0 && (
+              <label className={css.toggle}>
+                <input type="checkbox" defaultChecked className={css.toggleInput} />
+                <span>Show standard furniture</span>
+              </label>
+            )}
+          </div>
+
+          <ul className={css.roomGrid}>
+            {rooms.map(({ r, fit }, i) => {
+              const area = sqFtOf(r);
+              const bed = beddingAdvisory(r.bed_size);
+              const featured = primary && r === primary.r && n > 1;
+              return (
+                <li key={`${r.type}-${i}`} className={css.roomCard} data-featured={featured || undefined} data-reveal="">
+                  <div className={css.roomTop}>
+                    <div>
+                      <p className={css.roomKicker}>
+                        {roomName(r)}
+                        {r.occupants ? ` · Sleeps ${r.occupants}` : ""}
+                      </p>
+                      <h3 className={css.roomDims}>
+                        {fit ? (
+                          <>
+                            {ft(fit.lengthFt)} × {ft(fit.widthFt)} ft
+                          </>
+                        ) : (
+                          "Size not published"
+                        )}
+                      </h3>
+                      <p className={css.roomMeta}>
+                        {area ? `${area} sq ft · ` : ""}
+                        {bedName(r.bed_size)}
+                        {r.dims_estimated && <span className={css.estTag}>Estimated</span>}
+                      </p>
+                    </div>
+                    <PlanCta
+                      href={planHref}
+                      className={`ds-btn ds-btn--sm ${featured ? "ds-btn--ink-yellow" : "ds-btn--ghost-ink"}`}
+                      freeLabel="Plan this room"
+                      paidLabel="Plan this room"
+                    />
+                  </div>
+                  {r.dims_estimated && (
+                    <div className={css.note}>
+                      <EstimatedDimsNote />
+                    </div>
+                  )}
+                  {bed?.level === "warning" && <p className={css.note}>{bed.message}</p>}
+                  <div className={css.planWrap}>
+                    {fit ? (
+                      <ScalePlan
+                        uid={`${i}`}
+                        room={fit}
+                        title={`${roomName(r)} at ${dorm.name}, ${ft(fit.lengthFt)} by ${ft(fit.widthFt)} feet, with a bed, desk and dresser placed where a typical layout puts them`}
+                        furnitureClassName={css.furn}
+                        className={css.plan}
+                      />
+                    ) : (
+                      <div className={css.noPlan}>
+                        <p>The school doesn&apos;t publish this room&apos;s size.</p>
+                        <Link href="/plan/draw" className="ds-link">
+                          Measure it and draw it in 2D
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                  {fit && (
+                    <div className={css.roomFoot}>
+                      <span>Pieces placed where a typical layout puts them</span>
+                      <span className="ds-mono">1 square = 1 ft</span>
+                    </div>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+          {closet && (
+            <p className={css.closetLine}>
+              Closet: {closet.width_ft}′ wide × {closet.depth_ft}′ deep, as published for this building.
             </p>
-            <PlanCta
-              href={planHref}
-              className="mt-6 inline-block rounded-lg bg-highlight px-6 py-3 font-semibold text-ink transition-colors hover:bg-white"
-              freeLabel="Start planning free"
-              paidLabel="Start planning"
+          )}
+        </div>
+      </section>
+
+      {pieces.length > 0 && (
+        <section className={`ds-section ${css.pieces}`} aria-labelledby="pieces-title">
+          <div className="ds-wrap">
+            <p className="ds-eyebrow" style={{ marginBottom: 18 }} data-reveal="">
+              Standard furniture footprints
+            </p>
+            <Headline
+              id="pieces-title"
+              className="ds-h2 ds-h2--inline"
+              lines={[{ text: "What's already" }, { text: "in the room.", serif: true }]}
             />
+            <ul className={css.pieceGrid} data-stagger="">
+              {pieces.map((p) => (
+                <li key={p.type} className={css.piece} data-reveal="">
+                  <span className={css.pieceDraw} aria-hidden="true">
+                    <span
+                      className={css.pieceRect}
+                      data-type={p.type}
+                      style={{ width: p.w * FOOT_PX, height: p.l * FOOT_PX }}
+                    />
+                  </span>
+                  <b>
+                    {PIECE_NAMES[p.type] ?? p.type}
+                    {p.type === "bed" ? ` · ${bedName(primary!.r.bed_size)}` : ""}
+                  </b>
+                  <span>
+                    {p.w}′ × {p.l}′
+                  </span>
+                </li>
+              ))}
+              {closet && (
+                <li className={css.piece} data-dark="" data-reveal="">
+                  <span className={css.pieceDraw} aria-hidden="true">
+                    <span
+                      className={css.pieceRect}
+                      data-type="closet"
+                      style={{ width: closet.width_ft * FOOT_PX, height: closet.depth_ft * FOOT_PX }}
+                    />
+                  </span>
+                  <b>Closet</b>
+                  <span>
+                    {closet.width_ft}′ × {closet.depth_ft}′ · as published for this building
+                  </span>
+                </li>
+              )}
+            </ul>
+            <p className={css.pieceNote}>
+              The built-in pieces the layouts plan around, at the sizes we use for fit checks. All drawn at the same
+              scale · {FOOT_PX} px per ft
+            </p>
           </div>
         </section>
-      </main>
-      <Footer />
-    </div>
+      )}
+
+      {openFloor.length > 0 && (
+        <section className="ds-section" aria-labelledby="open-title">
+          <div className={`ds-wrap ${css.open}`}>
+            <div>
+              <Headline
+                id="open-title"
+                className="ds-h2"
+                lines={[{ text: "Open floor," }, { text: "once it's all in.", serif: true }]}
+              />
+              <p className={css.openLede} data-reveal="">
+                Our estimate from the footprints above, one of each piece per person. For most furnished singles and
+                doubles, a 5 × 7 rug fits the open floor better than a larger size.
+              </p>
+            </div>
+            <div>
+              <ul className={css.legend} aria-hidden="true">
+                <li data-k="furn">Standard furniture</li>
+                <li data-k="open">Open floor</li>
+              </ul>
+              <ul className={css.openBars}>
+                {openFloor.map((o, i) => (
+                  <li key={i}>
+                    <b>
+                      {o.name} · {o.area} sq ft{o.estimated ? " (estimated size)" : ""}
+                    </b>
+                    <span className={css.openTrack} style={{ width: `${(o.area / maxArea) * 100}%` }}>
+                      <span className={css.openFurn} style={{ flexBasis: `${(o.furn / o.area) * 100}%` }}>
+                        {o.furn} sq ft<span className="ds-sr"> of standard furniture</span>
+                      </span>
+                      <span className={css.openFree} data-bar="">
+                        about {o.area - o.furn} sq ft open
+                      </span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Internal linking: sibling buildings keep crawl depth shallow. */}
+      {siblings.length > 0 && (
+        <section className={`ds-section ${css.more}`} aria-labelledby="more-title">
+          <div className="ds-wrap">
+            <div className={css.moreHead}>
+              <h2 id="more-title" className={css.moreTitle} data-reveal="">
+                More halls at {short}
+              </h2>
+              <Link href={`/colleges/${school.id}`} className={css.allLink}>
+                All {school.dorms.length} {short} buildings <ArrowRight size={16} />
+              </Link>
+            </div>
+            <ul className={css.sibGrid}>
+              {siblings.map((d, i) => {
+                const withDims = d.rooms.filter(hasDims);
+                const summary = withDims
+                  .slice(0, 2)
+                  .map((r) => `${formatRoomType(r.type)} ${formatDims(r.length_ft, r.width_ft)}`)
+                  .join(" · ");
+                return (
+                  <li key={d.id} data-reveal="" style={{ "--i": i % 4 } as React.CSSProperties}>
+                    <Link href={`/colleges/${school.id}/${d.id}`} className={`ds-card ${css.sib}`}>
+                      <b>{d.name}</b>
+                      <span className={css.sibThumbs} aria-hidden="true">
+                        {withDims.slice(0, 3).map((r, k) => (
+                          <span
+                            key={k}
+                            data-est={r.dims_estimated || undefined}
+                            style={{
+                              width: Math.min(60, Math.max(r.length_ft!, r.width_ft!) * 2.6),
+                              height: Math.min(40, Math.min(r.length_ft!, r.width_ft!) * 2.6),
+                            }}
+                          />
+                        ))}
+                      </span>
+                      <span className={css.sibMeta}>
+                        {summary || `${d.rooms.length} room type${d.rooms.length === 1 ? "" : "s"}`}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      <CtaBand
+        lead={`${dorm.name},`}
+        tail="furnished."
+        note={
+          <>
+            {published.length > 0
+              ? "Measurements as published for this building."
+              : "Sizes here are estimated from similar rooms."}{" "}
+            <Link href="/methodology">How we measure</Link>
+          </>
+        }
+      >
+        <PlanCta
+          href={planHref}
+          className="ds-btn ds-btn--yellow ds-btn--lg"
+          freeLabel={`Plan your ${dorm.name} room`}
+          paidLabel={`Plan a ${dorm.name} room`}
+          icon={<ArrowRight size={20} />}
+        />
+      </CtaBand>
+    </PageShell>
   );
 }

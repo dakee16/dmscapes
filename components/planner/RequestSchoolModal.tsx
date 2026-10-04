@@ -1,6 +1,8 @@
 "use client";
 
 import Modal from "@/components/site/Modal";
+import { CloseIcon } from "@/components/ds/Icons";
+import dlg from "@/components/plan-steps/Dialogs.module.css";
 
 import { useEffect, useRef, useState } from "react";
 import { track } from "@/lib/analytics";
@@ -112,7 +114,7 @@ export default function RequestSchoolModal({
 
   return (
     <Modal
-      className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
+      className={dlg.layer}
       role="dialog"
       aria-modal="true"
       aria-labelledby="request-school-title"
@@ -120,43 +122,39 @@ export default function RequestSchoolModal({
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="snap-in w-full max-w-md rounded-t-2xl bg-white p-5 shadow-2xl sm:rounded-2xl sm:p-6">
-        <div className="flex items-start justify-between gap-4">
-          <h2 id="request-school-title" className="font-display text-xl font-bold tracking-tight">
-            Add your school
-          </h2>
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Close"
-            className="grid h-8 w-8 shrink-0 place-items-center rounded-full text-ink-soft transition-colors hover:bg-paper hover:text-ink"
-          >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-            </svg>
+      <div className={dlg.card}>
+        <div className={dlg.head}>
+          <div>
+            <p className={dlg.eyebrow}>Not on the list?</p>
+            <h2 id="request-school-title" className={dlg.title}>
+              Add your school
+            </h2>
+          </div>
+          <button type="button" onClick={onClose} aria-label="Close" className={dlg.close}>
+            <CloseIcon size={20} />
           </button>
         </div>
 
         {status === "success" ? (
-          <div className="mt-4 rounded-xl border border-ink/10 bg-paper px-4 py-4 text-sm leading-relaxed">
-            <p className="font-semibold">Got it. {collegeName.trim()} is on the list. 🎉</p>
-            <p className="mt-1 text-ink-soft">
+          <div className={dlg.success}>
+            <p>
+              <strong>Got it. {collegeName.trim()} is on the list. 🎉</strong>
+            </p>
+            <p>
               We add schools by request volume, and we&apos;ll email you when yours is
               live. Meanwhile, you can still plan your room with manual measurements.
             </p>
-            <button
-              type="button"
-              onClick={onClose}
-              className="mt-4 h-11 w-full rounded-xl bg-ink text-sm font-semibold text-white transition-colors hover:bg-cobalt"
-            >
-              Back to planning
-            </button>
+            <div className={`${dlg.actions} ${dlg.stack}`}>
+              <button type="button" onClick={onClose} className={dlg.primary}>
+                Back to planning
+              </button>
+            </div>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="mt-4 space-y-3" noValidate>
+          <form onSubmit={handleSubmit} className={dlg.form} noValidate>
             {/* Honeypot: visually hidden and skipped by keyboard/screen
                 readers; bots that autofill every field reveal themselves. */}
-            <div aria-hidden="true" className="absolute left-[-9999px] h-px w-px overflow-hidden">
+            <div aria-hidden="true" className={dlg.honeypot}>
               <label htmlFor="req-website">Website</label>
               <input
                 ref={honeypotRef}
@@ -167,12 +165,12 @@ export default function RequestSchoolModal({
                 autoComplete="off"
               />
             </div>
-            <p className="text-sm leading-relaxed text-ink-soft">
+            <p className={dlg.text} style={{ marginTop: 0 }}>
               We&apos;ll collect the floor plans and dimensions. You plan the room.
             </p>
             <div>
-              <label htmlFor="req-college" className="mb-1.5 block text-sm font-medium">
-                College name <span className="text-cobalt">*</span>
+              <label htmlFor="req-college" className={`ds-label ${dlg.label}`}>
+                College name <span className={dlg.req}>*</span>
               </label>
               <input
                 ref={inputRef}
@@ -182,13 +180,13 @@ export default function RequestSchoolModal({
                 value={collegeName}
                 onChange={(e) => setCollegeName(e.target.value)}
                 placeholder="e.g. University of Washington"
-                className="h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
+                className={`ds-input ${dlg.input}`}
               />
             </div>
             <div>
-              <label htmlFor="req-email" className="mb-1.5 block text-sm font-medium">
-                Email <span className="text-cobalt">*</span>{" "}
-                <span className="font-normal text-ink-soft">(so we can tell you when it&apos;s live)</span>
+              <label htmlFor="req-email" className={`ds-label ${dlg.label}`}>
+                Email <span className={dlg.req}>*</span>{" "}
+                <span className={dlg.hint}>(so we can tell you when it&apos;s live)</span>
               </label>
               <input
                 id="req-email"
@@ -198,27 +196,21 @@ export default function RequestSchoolModal({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@school.edu"
-                className="h-12 w-full rounded-xl border border-ink/15 bg-white px-4 text-base outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
+                className={`ds-input ${dlg.input}`}
               />
             </div>
             {priority && (
-              <p className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wide text-ink-soft">
-                <span className="rounded-full bg-highlight px-1.5 py-0.5 font-semibold leading-none text-ink">
-                  Priority
-                </span>
+              <p className={dlg.priority}>
+                <span>Priority</span>
                 Your request skips to the front of the queue.
               </p>
             )}
             {status === "error" && (
-              <p className="text-sm text-[#c2321e]" role="alert">
+              <p className={dlg.alert} role="alert">
                 {message}
               </p>
             )}
-            <button
-              type="submit"
-              disabled={status === "loading"}
-              className="h-12 w-full cursor-pointer rounded-xl bg-cobalt text-base font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
-            >
+            <button type="submit" disabled={status === "loading"} className={dlg.primary}>
               {status === "loading" ? "Sending…" : "Add my school"}
             </button>
           </form>

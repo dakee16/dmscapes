@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useAuth } from "@/lib/auth-context";
-import { isPro, isPlusTier } from "@/lib/plan";
+import { isPro, isPlusTier, PLUS_PRICE_USD, PRO_PRICE_USD } from "@/lib/plan";
 import { startCheckout } from "@/lib/checkout";
 
 function CheckSvg() {
@@ -22,10 +22,16 @@ export default function UpgradeButton({
   type = "plus",
   className = "",
   label,
+  ownedClassName,
+  noteClassName = "text-ink-soft",
 }: {
   type?: "plus" | "pro";
   className?: string;
   label?: string;
+  /** styling for the "You're on Pro" state */
+  ownedClassName?: string;
+  /** color for the sign-in note under the button */
+  noteClassName?: string;
 }) {
   const { user, profile, loading, openAuthModal } = useAuth();
   const [busy, setBusy] = useState(false);
@@ -38,7 +44,7 @@ export default function UpgradeButton({
 
   if (owned) {
     return (
-      <div className="flex items-center justify-center gap-2 rounded-xl border border-cobalt/30 bg-cobalt/5 px-6 py-3 text-center text-base font-semibold text-cobalt">
+      <div className={ownedClassName ?? "flex items-center justify-center gap-2 rounded-xl border border-cobalt/30 bg-cobalt/5 px-6 py-3 text-center text-base font-semibold text-cobalt"}>
         <CheckSvg />
         {type === "pro" ? "You're on Pro" : pro ? "Pro covers this" : "You're on Plus"}
       </div>
@@ -63,7 +69,7 @@ export default function UpgradeButton({
     setError(res.error);
   }
 
-  const defaultLabel = type === "pro" ? "Go Pro for $14.99" : "Get Plus for $4.99";
+  const defaultLabel = type === "pro" ? `Go Pro for $${PRO_PRICE_USD.toFixed(2)}` : `Get Plus for $${PLUS_PRICE_USD.toFixed(2)}`;
 
   return (
     <div>
@@ -81,7 +87,7 @@ export default function UpgradeButton({
         </p>
       )}
       {!user && (
-        <p className="mt-2 text-center text-xs text-ink-soft">
+        <p className={`mt-2 text-center text-xs ${noteClassName}`}>
           You&apos;ll sign in first, then check out.
         </p>
       )}

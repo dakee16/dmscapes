@@ -9,6 +9,7 @@ export type AnalyticsEvent =
   | "college_selected"
   | "style_selected"
   | "style_locked_clicked"
+  | "budget_step_viewed"
   | "budget_set"
   | "design_completed"
   | "product_clicked"

@@ -1,44 +1,72 @@
 "use client";
 
-import CustomVibeBrief from "@/components/experience/CustomVibeBrief";
-import styles from "@/components/experience/CustomVibe.module.css";
+import { useId, useState } from "react";
+import { ArrowRight } from "@/components/ds/Icons";
+import css from "@/components/plan-steps/Vibe.module.css";
 
-// The caller owns Pro access and the existing custom-vibe navigation.
+const EXAMPLE = "Warm oak. Cobalt. A lot of plants.";
+
+/**
+ * "Create your own vibe", the Pro field under the vibe grid. Pro members type
+ * here and carry it to the vibe page; everyone else gets the upgrade sheet.
+ * The caller owns Pro access, tracking and navigation.
+ */
 export default function CreateVibeBanner({
   onSelect,
   unlocked = false,
 }: {
-  onSelect: () => void;
+  onSelect: (text?: string) => void;
   unlocked?: boolean;
 }) {
+  const [text, setText] = useState("");
+  const id = useId();
+
   return (
-    <button
-      type="button"
-      onClick={onSelect}
-      className={styles.banner}
-      aria-label={`Create your own vibe. ${unlocked ? "Unlocked with Pro." : "Available with Pro."}`}
+    <form
+      className={css.own}
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSelect(text);
+      }}
     >
-      <span className={styles.bannerCopy}>
-        <span className={styles.badge}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            {unlocked ? <path d="m5 12 4 4L19 6" /> : <><rect x="5" y="10" width="14" height="11" rx="1" /><path d="M8 10V7a4 4 0 0 1 8 0v3" /></>}
-          </svg>
-          {unlocked ? "Unlocked" : "Pro"}
+      <div className={css.ownCopy}>
+        <span className={css.ownHead}>
+          <span className={css.ownTitle} id={`${id}-t`}>
+            Create your own vibe
+          </span>
+          <span className={css.proTag}>Pro</span>
         </span>
-        <span className={styles.bannerTitle}>
-          Create your <span>own vibe.</span>
-        </span>
-        <span className={styles.bannerDescription}>
-          Describe your aesthetic. Find real products for your room.
-        </span>
-        <span className={styles.bannerAction} aria-hidden="true">
-          Make it yours
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M5 19 19 5M5 5h14v14" />
-          </svg>
-        </span>
-      </span>
-      <CustomVibeBrief />
-    </button>
+        <span className={css.ownText}>Describe it in your own words. We find real products for it.</span>
+      </div>
+      {unlocked ? (
+        <>
+          <label htmlFor={`${id}-q`} className="ds-sr">
+            Describe your vibe
+          </label>
+          <input
+            id={`${id}-q`}
+            type="text"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            placeholder={EXAMPLE}
+            className={css.ownInput}
+            autoComplete="off"
+          />
+          <button type="submit" className={css.ownBtn}>
+            Describe it
+            <ArrowRight size={18} />
+          </button>
+        </>
+      ) : (
+        <>
+          <span className={css.ownInput} data-fake="" aria-hidden="true">
+            {EXAMPLE}
+          </span>
+          <button type="submit" className={css.ownBtn} aria-describedby={`${id}-t`}>
+            Unlock with Pro
+          </button>
+        </>
+      )}
+    </form>
   );
 }

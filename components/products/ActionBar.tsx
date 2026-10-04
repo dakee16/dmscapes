@@ -18,6 +18,9 @@ import { CATEGORY_LABELS, totalFor } from "@/lib/catalog";
 import { designDisplayName } from "@/lib/styles";
 import { roomTypeLabel } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
+import { ArrowRight } from "@/components/ds/Icons";
+import { CheckIcon, CompareIcon, DownloadIcon, ShareIcon } from "@/components/studio-ui/icons";
+import a from "./ActionBar.module.css";
 
 type Busy = null | "link" | "save";
 
@@ -32,15 +35,17 @@ async function accessToken(): Promise<string | null> {
 export default function ActionBar({
   products,
   getPng,
-  onShop,
-  shopOpen,
   exportsOnly = false,
+  hideCompare = false,
 }: {
   products: Product[];
   getPng: () => string | null;
-  onShop: () => void;
-  shopOpen: boolean;
+  /** The phone bottom sheet replaced the old cart button; kept for callers. */
+  onShop?: () => void;
+  shopOpen?: boolean;
   exportsOnly?: boolean;
+  /** The 3D studio's bar keeps to Export, Share and Save. */
+  hideCompare?: boolean;
 }) {
   const planning=usePlannerStore(s=>s.planning);
   const buying=shoppingProducts(products,planning);
@@ -53,6 +58,7 @@ export default function ActionBar({
   const features = hasFeatures(profile) || !!workspace?.ownerPro;
   const actionRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
   const [savePanel, setSavePanel] = useState(false);
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
@@ -66,11 +72,12 @@ export default function ActionBar({
   useEffect(() => () => { if (toastTimer.current) clearTimeout(toastTimer.current); }, []);
 
   useEffect(() => {
-    if (!menuOpen && !savePanel) return;
+    if (!menuOpen && !savePanel && !shareOpen) return;
     const onOutside = (event: PointerEvent) => {
       if (!actionRef.current?.contains(event.target as Node)) {
         setMenuOpen(false);
         setSavePanel(false);
+        setShareOpen(false);
       }
     };
     const onKey = (event: KeyboardEvent) => {
@@ -78,6 +85,7 @@ export default function ActionBar({
         actionRef.current?.querySelector<HTMLButtonElement>('button[aria-expanded="true"]')?.focus();
         setMenuOpen(false);
         setSavePanel(false);
+        setShareOpen(false);
       }
     };
     document.addEventListener("pointerdown", onOutside);
@@ -86,7 +94,7 @@ export default function ActionBar({
       document.removeEventListener("pointerdown", onOutside);
       document.removeEventListener("keydown", onKey);
     };
-  }, [menuOpen, savePanel]);
+  }, [menuOpen, savePanel, shareOpen]);
 
   function showToast(msg: string) {
     setToast(msg);
@@ -222,7 +230,7 @@ export default function ActionBar({
           showToast("Link copied. Send it to your roommate.");
         } catch {
           setShareFallbackUrl(result.url);
-          setMenuOpen(true);
+          setShareOpen(true);
           showToast("Your share link is ready. Select and copy it below.");
         }
         track("share_clicked", { type: "link" });
@@ -237,6 +245,7 @@ export default function ActionBar({
   // "Save design": signed-out users sign in first; signed-in users name it.
   function handleSaveClick() {
     setMenuOpen(false);
+    setShareOpen(false);
     if (!user) {
       pendingSave.current=true;
       openAuthModal("save-design");
@@ -270,157 +279,114 @@ export default function ActionBar({
     }
   }
 
+  const tag = !features && <span className={a.tag}>Plus</span>;
   return (
     <>
-      <div ref={actionRef} className="dm-design-actions">
-        <div className="dm-design-actions-main" role="group" aria-label="Shopping cart, save and share">
-          {!exportsOnly && <div className="dm-cart-action">
-            <button type="button" aria-expanded={shopOpen} aria-controls="studio-panel"
-              onClick={()=>{setMenuOpen(false);setSavePanel(false);onShop();}}>
-              Cart ({buying.length})
+      <div ref={actionRef} className={a.bar} data-exports-only={exportsOnly || undefined}>
+        {!exportsOnly && !hideCompare && (
+          <Link href="/account/compare" className={`${a.btn} ${a.compare}`}>
+            <CompareIcon size={16} className={a.icon} />Compare{tag}
+          </Link>
+        )}
+        <div className={a.wrap}>
+          <button
+            type="button"
+            className={a.btn}
+            onClick={() => { setMenuOpen((v) => !v); setSavePanel(false); setShareOpen(false); }}
+            aria-expanded={menuOpen}
+            aria-controls="design-export-options"
+            aria-label={features ? "Export" : "Export, a Plus feature"}
+          >
+            <DownloadIcon size={16} className={a.icon} /><span className={a.label}>Export</span>{tag}
+          </button>
+          {menuOpen && (
+            <div id="design-export-options" className={a.menu} role="group" aria-label="Downloads">
+              <button type="button" onClick={handleDownload}>
+                <span>Download PNG</span>{tag}
+              </button>
+              <button type="button" onClick={handleDownloadPdf}>
+                <span>Download list PDF</span>{tag}
+              </button>
+            </div>
+          )}
+        </div>
+        {!exportsOnly && (
+          <div className={a.wrap}>
+            <button type="button" className={a.btn} onClick={handleCopyLink} disabled={busy === "link"}
+              aria-label={busy === "link" ? "Creating your share link" : "Share: copy a link to this room"}
+              aria-expanded={shareFallbackUrl ? shareOpen : undefined} aria-controls={shareFallbackUrl ? "design-share-options" : undefined}>
+              <ShareIcon size={16} /><span className={a.label}>{busy === "link" ? "Creating link…" : "Share"}</span>
             </button>
-          </div>
-          }<div className="relative">
-            <button
-              type="button"
-              onClick={() => { setMenuOpen((v) => !v); setSavePanel(false); }}
-              aria-expanded={menuOpen}
-              aria-controls="design-share-options"
-              className="dm-share-trigger inline-flex cursor-pointer items-center justify-center gap-2 border border-ink/20 bg-paper px-4 text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
-            >
-              {exportsOnly ? "Export" : "Share room"} <span aria-hidden="true">↗︎</span>
-            </button>
-            {menuOpen && (
-              <div id="design-share-options" className="dm-share-menu snap-in border border-ink/15 bg-white p-1.5" role="group" aria-label="Sharing and downloads">
-                <button
-                  type="button"
-                  onClick={handleDownload}
-                  className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper"
-                >
-                  <span>Download PNG</span>
-                  {!features && (
-                    <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wide text-ink">
-                      Plus
-                    </span>
-                  )}
-                </button>
-                {!exportsOnly && <button
-                  type="button"
-                  onClick={handleCopyLink}
-                  disabled={busy === "link"}
-                  className="block w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper disabled:opacity-60"
-                >
-                  {busy === "link" ? "Creating link…" : "Copy share link"}
-                </button>}
-                <button
-                  type="button"
-                  onClick={handleDownloadPdf}
-                  className="flex w-full cursor-pointer items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-sm font-medium text-ink transition-colors hover:bg-paper"
-                >
-                  <span>Download list PDF</span>
-                  {!features && (
-                    <span className="rounded-full bg-highlight px-1.5 py-0.5 font-mono text-[9px] font-semibold uppercase leading-none tracking-wide text-ink">
-                      Plus
-                    </span>
-                  )}
-                </button>
-                {shareFallbackUrl && (
-                  <div className="dm-share-fallback">
-                    <label htmlFor="room-share-link">Your room link</label>
-                    <input id="room-share-link" readOnly value={shareFallbackUrl}
-                      onFocus={(event) => event.currentTarget.select()} />
-                  </div>
-                )}
+            {shareOpen && shareFallbackUrl && (
+              <div id="design-share-options" className={a.menu} role="group" aria-label="Share link">
+                <div className={a.fallback}>
+                  <label htmlFor="room-share-link">Your room link</label>
+                  <input id="room-share-link" readOnly value={shareFallbackUrl}
+                    onFocus={(event) => event.currentTarget.select()} />
+                </div>
               </div>
             )}
           </div>
-
-          {!exportsOnly && <div className="dm-save-action">
+        )}
+        {!exportsOnly && (
+          <div className={a.wrap}>
             {/* Primary action: saving is free and unlimited, and it's the one
-                thing that keeps a design from being lost, so it leads the bar. */}
+                thing that keeps a design from being lost. */}
             <button
               type="button"
               onClick={handleSaveClick}
               aria-expanded={savePanel}
               aria-controls="design-save-panel"
-              className="dm-save-trigger inline-flex cursor-pointer items-center justify-center gap-2 border border-cobalt bg-cobalt px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep"
+              className={a.save}
             >
-              <svg
-                viewBox="0 0 24 24"
-                className="h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 3h12a1 1 0 0 1 1 1v16l-7-4-7 4V4a1 1 0 0 1 1-1z"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              Save design
+              Save
             </button>
-          </div>}
-        </div>
-
-        {savePanel && user && (
-          <div id="design-save-panel" className="dm-save-panel">
-            {savedUrl ? (
-              <div className="dm-save-success border border-ink/10 bg-paper px-4 py-3 text-sm text-ink" role="status">
-                <p>
-                  Saved!{" "}
-                  <a href={savedUrl} className="font-medium text-cobalt underline">
-                    {savedUrl.replace(/^https?:\/\//, "")}
-                  </a>
-                </p>
-                <Link
-                  href="/account"
-                  className="mt-1 inline-block font-medium text-cobalt underline decoration-highlight decoration-2 underline-offset-2"
-                >
-                  See it in your designs →
-                </Link>
-              </div>
-            ) : (
-              <>
-                <form onSubmit={handleSave} className="flex flex-col gap-2 sm:flex-row">
-                  <input
-                    type="text"
-                    value={name}
-                    autoFocus
-                    maxLength={60}
-                    onChange={(e) => {
-                      setName(e.target.value);
-                      setNameError("");
-                    }}
-                    aria-label="Design name"
-                    aria-invalid={Boolean(nameError)}
-                    placeholder="Name this design (e.g. Cozy corner)"
-                    className="h-11 min-w-0 flex-1 rounded-xl border border-ink/15 bg-white px-4 text-sm text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-cobalt"
-                  />
-                  <button
-                    type="submit"
-                    disabled={busy === "save"}
-                    className="h-11 shrink-0 cursor-pointer rounded-xl bg-cobalt px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep disabled:cursor-wait disabled:opacity-70"
-                  >
-                    {busy === "save" ? "Saving…" : "Save my design"}
-                  </button>
-                </form>
-                {nameError && (
-                  <p className="mt-1.5 text-sm text-[#c2321e]" role="alert">
-                    {nameError}
-                  </p>
+            {savePanel && user && (
+              <div id="design-save-panel" className={a.savePanel}>
+                {savedUrl ? (
+                  <div className={a.saved} role="status">
+                    <p className={a.savedTitle}><CheckIcon size={16} />Saved to your account</p>
+                    <a href={savedUrl} className={a.savedUrl}>{savedUrl.replace(/^https?:\/\//, "")}</a>
+                    <Link href="/account" className={a.savedLink}>See it in your designs<ArrowRight size={14} /></Link>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSave}>
+                    <label htmlFor="design-name" className={a.saveLabel}>Name this design</label>
+                    <div className={a.saveRow}>
+                      <input
+                        id="design-name"
+                        type="text"
+                        value={name}
+                        autoFocus
+                        maxLength={60}
+                        onChange={(e) => {
+                          setName(e.target.value);
+                          setNameError("");
+                        }}
+                        aria-invalid={Boolean(nameError)}
+                        aria-describedby={nameError ? "design-name-error" : undefined}
+                        placeholder="Cozy corner"
+                      />
+                      <button type="submit" disabled={busy === "save"}>
+                        {busy === "save" ? "Saving…" : "Save my design"}
+                      </button>
+                    </div>
+                    {nameError && (
+                      <p id="design-name-error" className={a.error} role="alert">
+                        {nameError}
+                      </p>
+                    )}
+                    <p className={a.saveNote}>Saving is free and doesn&apos;t use a credit.</p>
+                  </form>
                 )}
-              </>
+              </div>
             )}
           </div>
         )}
       </div>
 
       {toast && (
-        <div
-          role="status"
-          className="dm-action-toast snap-in fixed bottom-20 left-1/2 z-50 -translate-x-1/2 rounded-full bg-ink px-4 py-2 text-sm font-medium text-white shadow-lg lg:bottom-8"
-        >
+        <div role="status" className={a.toast}>
           {toast}
         </div>
       )}

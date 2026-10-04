@@ -4,40 +4,36 @@ import MotionProvider from "@/components/experience/MotionProvider";
 import { AuthProvider } from "@/lib/auth-context";
 import { UpgradeProvider } from "@/lib/upgrade-context";
 import CookieConsent from "@/components/site/CookieConsent";
+import RevealObserver from "@/components/ds/RevealObserver";
 import "./globals.css";
 import "./experience.css";
+import "./ds.css";
+import "./ds-dialog.css";
 
-const bricolage = localFont({
-  src: "../public/experience/fonts/bricolage.woff2",
-  variable: "--font-bricolage",
-  weight: "200 800",
+// Redesign type system: Archivo (UI and display, wght + wdth axes), Fraunces
+// italic (the second line of every headline), Martian Mono (labels and tags).
+// Self-hosted variable fonts, SIL OFL (licenses beside the files), trimmed to
+// the axis ranges the design uses (fontTools instancer): Archivo wght 400–900
+// and wdth 84–100%; Fraunces pinned at opsz 144 / SOFT 30 / WONK 1, wght
+// 300–700; Martian Mono at wdth 100, wght 400–800.
+const archivo = localFont({
+  src: "./fonts/archivo.woff2",
+  variable: "--font-archivo",
+  weight: "400 900",
   display: "swap",
-  preload: false,
+  declarations: [{ prop: "font-stretch", value: "84% 100%" }],
 });
-const instrument = localFont({
-  src: "../public/experience/fonts/instrument-sans.woff2",
-  variable: "--font-instrument",
-  weight: "400 700",
-  display: "swap",
-});
-const plexMono = localFont({
-  src: "../public/experience/fonts/plex-mono.woff2",
-  variable: "--font-plex-mono",
-  weight: "400",
-  display: "swap",
-  preload: false,
-});
-const syne = localFont({
-  src: "../public/experience/fonts/syne.woff2",
-  variable: "--font-syne",
-  weight: "400 800",
-  display: "swap",
-});
-const serif = localFont({
-  src: "../public/experience/fonts/instrument-serif-italic.woff2",
-  variable: "--font-serif",
+const fraunces = localFont({
+  src: "./fonts/fraunces-italic.woff2",
+  variable: "--font-fraunces",
+  weight: "300 700",
   style: "italic",
-  weight: "400",
+  display: "swap",
+});
+const martian = localFont({
+  src: "./fonts/martian-mono.woff2",
+  variable: "--font-martian",
+  weight: "400 800",
   display: "swap",
 });
 
@@ -48,8 +44,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us",
   ),
-  // Every route inherits the same lowercase browser tab title.
-  title: "dormscape",
+  // Pages set their own title ("Elder Hall Room Dimensions, Northwestern");
+  // the lowercase brand rides along so tabs and results still read dormscape.
+  title: { default: "dormscape", template: "%s | dormscape" },
   description: DESCRIPTION,
   openGraph: {
     title: "dormscape: your dorm room, planned before move-in day",
@@ -83,11 +80,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bricolage.variable} ${instrument.variable} ${plexMono.variable} ${syne.variable} ${serif.variable}`}
+      className={`${archivo.variable} ${fraunces.variable} ${martian.variable}`}
     >
       <body className="min-h-screen antialiased">
         <MotionProvider>
           <CookieConsent />
+          <RevealObserver />
           <AuthProvider>
             <UpgradeProvider>{children}</UpgradeProvider>
           </AuthProvider>

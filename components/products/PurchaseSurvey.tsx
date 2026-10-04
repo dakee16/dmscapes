@@ -8,7 +8,8 @@ import { track, sessionId } from "@/lib/analytics";
 import { BUY_INTENT_EVENT, SURVEY_ID_KEY } from "@/lib/purchase-intent";
 import { usePlannerStore } from "@/lib/store";
 import { getBrowserClient } from "@/lib/supabase-browser";
-import PanelGrid from "@/components/site/PanelGrid";
+import { CloseIcon } from "@/components/studio-ui/icons";
+import d from "./Dialog.module.css";
 import type {
   PurchaseSurveyRequest,
   PurchaseSurveyResponse,
@@ -179,7 +180,7 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
 
   return (
     <Modal
-      className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 p-0 backdrop-blur-[2px] sm:items-center sm:p-6"
+      className={d.layer}
       role="dialog"
       aria-modal="true"
       aria-labelledby="purchase-survey-title"
@@ -187,84 +188,28 @@ export default function PurchaseSurvey({ cartTotal }: { cartTotal: number }) {
         if (e.target === e.currentTarget) dismiss();
       }}
     >
-      <div className="snap-in relative w-full max-w-xl overflow-hidden rounded-t-2xl border border-ink/10 bg-paper p-6 shadow-2xl sm:rounded-2xl sm:p-8">
-        {/* Graph-paper wash across the top, fading toward the middle, the same
-            grid the rest of the site is built on. */}
-        <div
-          aria-hidden
-          className="grid-paper pointer-events-none absolute inset-x-0 top-0 h-1/2"
-          style={{
-            WebkitMaskImage:
-              "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 48%, transparent 100%)",
-            maskImage:
-              "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 48%, transparent 100%)",
-          }}
-        />
-        <div className="relative z-10">
-          <div className="flex items-start justify-between gap-4">
-            <h2
-              id="purchase-survey-title"
-              className="font-display text-xl font-bold tracking-tight sm:text-2xl"
-            >
-              Did you grab <span className="hl">everything?</span>
-            </h2>
-            <button
-              type="button"
-              onClick={dismiss}
-              aria-label="Close"
-              className="grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-full text-ink-soft transition-colors hover:bg-white hover:text-ink"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                aria-hidden="true"
-              >
-                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
-
-          <div className="mt-2">
-            <p className="text-sm leading-relaxed text-ink-soft">
-              You just headed to Amazon. Did everything you wanted make it into your cart?
-            </p>
-            {/* Cobalt action panel, a pocket-size echo of the home page CTA. */}
-            <div className="relative mt-6 overflow-hidden rounded-2xl bg-cobalt p-4 sm:p-5">
-              <PanelGrid />
-              <div className="relative">
-                <p className="font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-highlight">
-                  {Number.isFinite(cartTotal) ? `The $${cartTotal.toFixed(0)} plan` : "The plan"}
-                </p>
-                <button
-                  ref={yesBtnRef}
-                  type="button"
-                  onClick={handleYes}
-                  className="mt-3 h-12 w-full cursor-pointer rounded-xl bg-white text-base font-semibold text-ink transition-colors hover:bg-highlight"
-                >
-                  Yes, all set
-                </button>
-              </div>
-            </div>
-            <div className="mt-3 space-y-2">
-              <button
-                type="button"
-                onClick={handleStillDeciding}
-                className="h-12 w-full cursor-pointer rounded-xl border border-ink/15 bg-white text-sm font-semibold text-ink transition-colors hover:border-cobalt hover:text-cobalt"
-              >
-                Still deciding
-              </button>
-              <button
-                type="button"
-                onClick={handleNo}
-                className="block w-full cursor-pointer py-1 text-center text-sm text-ink-soft transition-colors hover:text-ink"
-              >
-                No, not yet
-              </button>
-            </div>
-          </div>
+      <div className={`${d.card} ${d.wide}`}>
+        <button type="button" onClick={dismiss} aria-label="Close" className={d.close}><CloseIcon size={20} /></button>
+        <p className={d.eyebrow}>Back from Amazon</p>
+        <h2 id="purchase-survey-title" className={d.title}>
+          Did you grab <em>everything?</em>
+        </h2>
+        <p className={d.body}>
+          You just headed to Amazon. Did everything you wanted make it into your cart?
+        </p>
+        <div className={d.panel}>
+          <p>{Number.isFinite(cartTotal) ? `The $${cartTotal.toFixed(0)} plan` : "The plan"}</p>
+          <button ref={yesBtnRef} type="button" onClick={handleYes} className={d.yes}>
+            Yes, all set
+          </button>
+        </div>
+        <div className={d.stack}>
+          <button type="button" onClick={handleStillDeciding} className={d.secondary}>
+            Still deciding
+          </button>
+          <button type="button" onClick={handleNo} className={d.quiet}>
+            No, not yet
+          </button>
         </div>
       </div>
     </Modal>

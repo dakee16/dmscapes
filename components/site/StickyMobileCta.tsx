@@ -32,7 +32,10 @@ export default function StickyMobileCta() {
       // Let those stay visible while this section fills the phone screen.
       const studio = document.getElementById("room-in-3d")?.getBoundingClientRect();
       const inStudio = !!studio && studio.top < innerHeight * .45 && studio.bottom > innerHeight * .7;
-      setShow(window.scrollY > 480 && consentResolved && !inStudio);
+      // The footer has its own links; don't sit on top of them.
+      const footer = document.querySelector("footer")?.getBoundingClientRect();
+      const atFooter = !!footer && footer.top < innerHeight - 40;
+      setShow(window.scrollY > 480 && consentResolved && !inStudio && !atFooter);
     }
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -49,13 +52,20 @@ export default function StickyMobileCta() {
   return (
     <div
       className={`fixed inset-x-0 bottom-0 z-40 lg:hidden ${
-        show ? "translate-y-0" : "pointer-events-none translate-y-full"
+        show ? "translate-y-0" : "pointer-events-none translate-y-[140%]"
       } transition-transform duration-300 ease-out`}
       aria-hidden={!show}
       inert={!show}
     >
-      <div className="border-t border-ink/10 bg-paper/95 px-4 pb-[max(0.6rem,env(safe-area-inset-bottom))] pt-2.5 backdrop-blur-md">
-        <PlanCta className="flex h-12 w-full items-center justify-center rounded-xl bg-cobalt text-base font-semibold text-white shadow-[0_10px_28px_-12px_rgba(43,78,255,0.65)] transition-colors hover:bg-cobalt-deep active:translate-y-px" />
+      <div className="px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <PlanCta
+          className="ds-btn ds-btn--blue w-full shadow-[0_14px_30px_-10px_rgba(36,73,255,0.6),0_0_0_3px_rgba(244,243,238,0.9)]"
+          icon={
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          }
+        />
       </div>
     </div>
   );

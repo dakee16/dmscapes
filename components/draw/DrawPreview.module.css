@@ -1,0 +1,75 @@
+/* The animated example drawing on the /plan/draw landing (RoomDrawingPreview). */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--ds-plan);
+  box-shadow: 0 0 0 1.5px rgba(22, 22, 29, 0.1), 0 24px 48px rgba(22, 22, 29, 0.12);
+}
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px 0 20px;
+}
+.eyebrow {
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+.replay {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ds-ink);
+  font: 700 14px var(--ds-sans);
+  cursor: pointer;
+}
+.replay:enabled:hover { background: rgba(22, 22, 29, 0.06); }
+.replay:disabled { color: #9c9aa8; cursor: not-allowed; }
+.scene { display: block; width: 100%; height: auto; }
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  height: 40px;
+  background-color: var(--ds-tape);
+  background-image: repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.55) 0 1.5px, transparent 1.5px 10px);
+  background-size: 100% 6px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+.steps li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-bottom: 5px;
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(22, 22, 29, 0.78);
+}
+.steps li + li { border-left: 1.5px solid rgba(22, 22, 29, 0.3); }
+.steps li > span { color: var(--ds-ink); }
+.progress { height: 4px; background: rgba(22, 22, 29, 0.08); }
+.progress > div { height: 100%; background: var(--ds-ink); transform-origin: left center; }
+
+@media (max-width: 480px) {
+  .steps li { font-size: 8.5px; letter-spacing: 0.04em; gap: 5px; }
+  .top { padding-left: 16px; }
+}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PRO_INITIAL_CREDITS, PRO_PRICE_USD } from "@/lib/plan";
 
 /**
  * Shared SEO infrastructure: one place for the canonical origin, page metadata
@@ -29,15 +30,30 @@ const OG_IMAGE = {
 };
 
 /**
+ * The first description that fits a search snippet (about 155 characters), or
+ * the last one cut at a word. Templated pages pass a full version first and
+ * shorter fallbacks, so long school and hall names drop detail instead of
+ * being cut off mid-sentence in results.
+ */
+export function fitDescription(...options: string[]): string {
+  const fit = options.find((option) => option.length <= 155);
+  if (fit) return fit;
+  const last = options[options.length - 1];
+  return `${last.slice(0, last.lastIndexOf(" ", 154))}…`;
+}
+
+/**
  * Build a page's Metadata with a canonical URL and matching OG/Twitter cards.
- * `title` supplies the social card title; `ogTitle` can override that form.
- * The browser tab title is inherited from the root layout.
+ * `title` is the page's <title> (the root layout appends "| dormscape";
+ * `absoluteTitle` skips that, for a title that already carries the brand) and
+ * the social card title; `ogTitle` can override the card.
  */
 export function pageMetadata({
   title,
   description,
   path,
   ogTitle,
+  absoluteTitle = false,
   noIndex = false,
   type = "website",
 }: {
@@ -45,12 +61,14 @@ export function pageMetadata({
   description: string;
   path: string;
   ogTitle?: string;
+  absoluteTitle?: boolean;
   /** Utility pages (login, thank-you) that shouldn't compete in the index. */
   noIndex?: boolean;
   type?: "website" | "article";
 }): Metadata {
   const social = ogTitle ?? `${title} | ${SITE_NAME.toLowerCase()}`;
   return {
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
     ...(noIndex ? { robots: { index: false, follow: true } } : {}),
@@ -122,12 +140,12 @@ export function softwareApplicationJsonLd() {
     description:
       "Plan a college dorm room to scale: use school dimensions or draw your own room, choose a style and budget, and get a shoppable layout. Pro adds the 3D Room Builder for floors, walls, doors and windows, plus live 3D furniture planning.",
     featureList: ["2D room planning", "School room dimensions", "Budget-aware shopping", "Pro: 3D Room Builder", "Pro: live 3D Room Studio"],
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      description: "Free to plan a room. Optional one-time Plus and Pro upgrades.",
-    },
+    // Prices and credits from lib/plan, so the schema never drifts from checkout.
+    offers: [
+      { name: "Free", price: "0", description: "Free to plan a room. Saving is always free." },
+      { name: "Plus", price: PLUS_PRICE_USD.toFixed(2), description: `One-time purchase. ${PLUS_INITIAL_CREDITS} plan credits.` },
+      { name: "Pro", price: PRO_PRICE_USD.toFixed(2), description: `One-time purchase. ${PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D tools.` },
+    ].map((offer) => ({ "@type": "Offer", priceCurrency: "USD", ...offer })),
     publisher: { "@id": `${SITE_URL}/#organization` },
     isAccessibleForFree: true,
   };

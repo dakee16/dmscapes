@@ -4,6 +4,7 @@
 // Shared by the Step 2 panel (first generation) and the result page (the one
 // free regeneration + paid re-rolls), so the fetch/normalize logic lives once.
 import type { BedSize, Product } from "./types";
+import { getBrowserClient } from "./supabase-browser";
 
 export interface GenerateVibeResult {
   ok: boolean;
@@ -22,9 +23,10 @@ export async function generateVibe(args: {
   seed?: number;
 }): Promise<GenerateVibeResult> {
   try {
+    const token = (await getBrowserClient()?.auth.getSession())?.data.session?.access_token;
     const res = await fetch("/api/vibe/generate", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ...(token ? { Authorization: `Bearer ${token}` } : {}) },
       body: JSON.stringify(args),
     });
     const data = (await res.json().catch(() => ({}))) as {

@@ -50,7 +50,7 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
       <option value="">Floor / free placement</option>{hosts.map(h=><option key={h.id} value={h.id}>{h.label}</option>)}</select><span className={s.muted}>Placed accessories follow their surface when it moves.</span></label>}
     <details className={s.disclosure}><summary>Preview color</summary><div className={s.section}><label className={s.field}>Preview color<input aria-label="Item preview color" type="color" value={item.material_color??"#b9c2d5"} onChange={e=>st.updateItem3D(item.id,{material_color:e.target.value})}/></label><p className={s.muted}>For visualization only. Product options and price stay the same.</p></div></details>
     {issues.length>0&&<div className={s.warning} role="status"><strong>Check placement</strong><ul>{issues.map((v,i)=><li key={i}>{v}</li>)}</ul></div>}
-    {product&&<div className={s.productPeek}>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={product.image_url} alt="" loading="lazy"/><div><strong>{product.name}</strong><span>${product.price.toFixed(2)}</span></div><button onClick={onShop}>Product details &amp; swaps ↗︎</button></div>}
+    {product&&<div className={s.productPeek}>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={product.image_url} alt="" loading="lazy"/><div><strong>{product.name}</strong><span>${product.price.toFixed(2)}</span></div><button onClick={onShop}>Product details &amp; swaps</button></div>}
   </>;
 }
 
@@ -71,15 +71,28 @@ export function RoomDetails({room,controls,onAdd,onRemove,onFlip}:{room:Selected
         {openings[controls.selected].kind==="door"&&<button onClick={()=>onFlip(controls.selected!)}>Flip door</button>}
         <button onClick={()=>onRemove(controls.selected!)}>Remove</button>
       </div>}
-      <p className={s.muted}>Keyboard: select an opening, then use ← / → to slide it or ↑ / ↓ to move to the next wall.</p>
+      <p className={s.muted}>Keyboard: select an opening, then use the Left and Right arrow keys to slide it, or Up and Down to move it to the next wall.</p>
     </details>}
   </>;
 }
 
+const WALLS: [string, string][] = [["Warm cream", "#f3eee4"], ["White", "#f7f6f2"], ["Sage", "#c9d3be"], ["Powder blue", "#cfd9ec"], ["Blush", "#ebcfcb"]];
+function finishSwatch(key: string, color: string) {
+  if (key === "oak" || key === "walnut") return `repeating-linear-gradient(90deg, ${color} 0 10px, rgba(0,0,0,.12) 10px 11px)`;
+  if (key === "carpet") return `radial-gradient(rgba(0,0,0,.08) 1px, transparent 1.5px) 0 0 / 5px 5px, ${color}`;
+  return `linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px) 0 0 / 13px 13px, linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px) 0 0 / 13px 13px, ${color}`;
+}
+
+/** Room finishes for the 3D view (Studio3D.dc.html). Preview only: the list never changes. */
 export function StyleDetails({room}:{room:SelectedRoom}){
  const settings=studioSettings(room.studio),update=usePlannerStore(st=>st.updateStudio);
- return <><p className={s.eyebrow}>Set the atmosphere</p><h2>A space that feels like you.</h2><p className={s.muted}>Try room finishes and lighting without changing your product selections or budget.</p>
- <div className={s.section}><h3>Floor finish</h3><div className={s.finishGrid}>{Object.entries(FLOOR_FINISHES).map(([key,color])=><button key={key} aria-pressed={settings.floor===key} onClick={()=>update({floor:key as typeof settings.floor})}><span style={{background:color}}/>{key}</button>)}</div></div>
- <div className={s.section}><label className={s.field}>Wall color<input aria-label="Wall preview color" type="color" value={settings.wallColor} onChange={e=>update({wallColor:e.target.value})}/></label><p className={s.note}>Preview only. Check your residence hall rules before changing finishes.</p></div>
- <div className={s.section}><h3>Lighting</h3><div className={s.buttonRow}><button aria-pressed={settings.lighting==="day"} onClick={()=>update({lighting:"day"})}>Daylight</button><button aria-pressed={settings.lighting==="evening"} onClick={()=>update({lighting:"evening"})}>Evening glow</button></div></div></>;
+ const custom=!WALLS.some(([,c])=>c===settings.wallColor.toLowerCase());
+ return <><h2 className={s.eyebrowInk}>Room</h2>
+ <fieldset className={s.swatchSet}><legend>Floor finish</legend><div className={s.floorSwatches}>{Object.entries(FLOOR_FINISHES).map(([key,color])=><button key={key} type="button" aria-label={key} title={key} aria-pressed={settings.floor===key} onClick={()=>update({floor:key as typeof settings.floor})} style={{background:finishSwatch(key,color)}}/>)}</div></fieldset>
+ <fieldset className={s.swatchSet}><legend>Wall color</legend><div className={s.wallSwatches}>
+   {WALLS.map(([name,color])=><button key={name} type="button" aria-label={name} title={name} aria-pressed={settings.wallColor.toLowerCase()===color} onClick={()=>update({wallColor:color})} style={{background:color}}/>)}
+   <label className={s.customWall} data-active={custom||undefined} title="Custom wall color"><span className={s.srOnly}>Custom wall color</span><input aria-label="Wall preview color" type="color" value={settings.wallColor} onChange={e=>update({wallColor:e.target.value})}/></label>
+ </div></fieldset>
+ <fieldset className={s.swatchSet}><legend>Lighting</legend><div className={s.seg}><button type="button" aria-pressed={settings.lighting==="day"} onClick={()=>update({lighting:"day"})}>Day</button><button type="button" aria-pressed={settings.lighting==="evening"} onClick={()=>update({lighting:"evening"})}>Evening</button></div></fieldset>
+ <p className={s.finishNote}>Finishes, preview colors and lighting are only for seeing the room. They never change your shopping list. Check your residence hall rules before changing finishes.</p></>;
 }

@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { REVEAL_EASE } from "@/components/site/Reveal";
 import type { HeaderCreditState } from "@/lib/plan";
+import dlg from "@/components/plan-steps/Dialogs.module.css";
 
 const MotionModal = motion.create(Modal);
 
@@ -50,7 +51,7 @@ export default function CreditConfirmModal({
 
   return (
     <MotionModal
-      className="fixed inset-0 z-[65] flex items-center justify-center overflow-y-auto bg-ink/45 p-4 backdrop-blur-[3px] sm:p-6"
+      className={dlg.layer}
       role="dialog"
       aria-modal="true"
       aria-labelledby="credit-confirm-title"
@@ -60,45 +61,28 @@ export default function CreditConfirmModal({
       transition={{ duration: 0.25, ease: REVEAL_EASE }}
     >
       <motion.div
-        className="relative my-auto w-full max-w-sm overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-[0_40px_120px_-30px_rgba(23,23,43,0.55)]"
+        className={dlg.card}
+        style={{ animation: "none" }}
         initial={panelHidden}
         animate={panelIn}
         exit={panelOut}
         transition={{ duration: 0.34, ease: REVEAL_EASE }}
       >
-        <div className="pointer-events-none absolute inset-0 grid-paper opacity-[0.5]" aria-hidden="true" />
-        <div className="pointer-events-none absolute -right-14 -top-16 h-48 w-48 rounded-full bg-cobalt/10 blur-3xl" aria-hidden="true" />
+        <span className={dlg.count} aria-hidden="true">
+          {designsLeft}
+        </span>
+        <h2 id="credit-confirm-title" className={dlg.title} style={{ marginTop: 18 }}>
+          You&rsquo;re in.
+        </h2>
+        <p className={dlg.text}>{body}</p>
 
-        <div className="relative p-7 sm:p-8">
-          <span className="grid h-12 w-12 place-items-center rounded-2xl bg-cobalt text-white shadow-sm">
-            <span className="font-display text-xl font-extrabold leading-none">
-              {designsLeft}
-            </span>
-          </span>
-          <h2
-            id="credit-confirm-title"
-            className="mt-5 font-display text-2xl font-extrabold leading-tight tracking-tight text-ink"
-          >
-            You&rsquo;re in.
-          </h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">{body}</p>
-
-          <div className="mt-6 flex flex-col gap-2.5">
-            <button
-              type="button"
-              onClick={onConfirm}
-              className="h-12 w-full cursor-pointer rounded-xl bg-cobalt px-6 text-base font-semibold text-white transition-colors hover:bg-cobalt-deep"
-            >
-              Yes, continue
-            </button>
-            <button
-              type="button"
-              onClick={onCancel}
-              className="h-11 w-full cursor-pointer rounded-xl px-4 text-sm font-medium text-ink-soft transition-colors hover:text-ink"
-            >
-              No, take me home
-            </button>
-          </div>
+        <div className={`${dlg.actions} ${dlg.stack}`}>
+          <button type="button" onClick={onConfirm} className={dlg.primary}>
+            Yes, continue
+          </button>
+          <button type="button" onClick={onCancel} className={dlg.quiet}>
+            No, take me home
+          </button>
         </div>
       </motion.div>
     </MotionModal>

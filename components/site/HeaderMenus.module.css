@@ -1,0 +1,339 @@
+/* Header account controls (components/auth/ProfileMenu, components/site/
+   HeaderCredits): pills that sit beside the nav CTA, and paper popovers that
+   match the nav's More tray. */
+
+.root { position: relative; flex: none; }
+.login { cursor: pointer; white-space: nowrap; }
+
+/* ---------- Triggers ---------- */
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 0 12px 0 6px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.16);
+  color: var(--ds-ink);
+  font: 700 15px/1 var(--ds-sans);
+  cursor: pointer;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+.trigger:hover { box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.4); }
+.trigger[aria-expanded="true"] { box-shadow: inset 0 0 0 2px var(--ds-ink); }
+.trigger:focus-visible,
+.credits:focus-visible,
+.item:focus-visible,
+.recharge:focus-visible {
+  outline: 3px solid var(--ds-blue);
+  outline-offset: 3px;
+}
+.avatar {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  font: 700 11px/1 var(--ds-mono);
+  letter-spacing: 0.04em;
+}
+.avatarLg { width: 42px; height: 42px; font-size: 13px; }
+.name {
+  max-width: 9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.chev { display: inline-flex; color: var(--ds-caption); transition: transform 0.25s var(--ds-ease); }
+.trigger[aria-expanded="true"] .chev { transform: rotate(180deg); }
+/* Phone-only: out of designs (the header credits pill is hidden there) */
+.alert {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--ds-red);
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* Credits (site nav only): the live count on a scrap of tape, then
+   "designs". No pill until hover, like the nav links. */
+.credits {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 0 10px 0 8px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: inherit;
+  font: 700 14px/1 var(--ds-sans);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.18s;
+}
+.credits:hover,
+.credits[aria-expanded="true"] { background: var(--nav-hover, rgba(22, 22, 29, 0.06)); }
+.count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 32px;
+  height: 26px;
+  box-sizing: border-box;
+  padding: 0 8px;
+  border-radius: 3px;
+  background-color: var(--ds-tape);
+  background-image: repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.55) 0 1px, transparent 1px 6px);
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  box-shadow: 0 2px 0 var(--ds-tape-shadow);
+  rotate: -3deg;
+  color: var(--ds-ink);
+  font: 850 15px/1 var(--ds-sans);
+  font-variant-numeric: tabular-nums;
+}
+.credits[data-empty="true"] {
+  padding: 0 18px;
+  background: var(--ds-ink);
+  box-shadow: none;
+  color: var(--ds-yellow);
+}
+.credits[data-empty="true"]:hover { box-shadow: 4px 4px 0 var(--ds-pink); }
+
+/* ---------- Popovers ---------- */
+.pop {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 50;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: var(--ds-paper);
+  color: var(--ds-ink);
+  font-family: var(--ds-sans);
+  box-shadow:
+    0 0 0 1px rgba(22, 22, 29, 0.08),
+    0 30px 60px -22px rgba(10, 16, 44, 0.42);
+  transform-origin: top right;
+  animation: popIn 0.28s var(--ds-ease) both;
+}
+@keyframes popIn {
+  from { opacity: 0; transform: translate3d(0, -8px, 0) scale(0.98); }
+}
+.menu { width: 292px; padding: 8px; }
+.buy { width: 360px; max-width: calc(100vw - 24px); padding: 20px; }
+
+/* Designs left: a strip of tape with the count */
+.tape {
+  position: relative;
+  margin-bottom: 6px;
+  padding: 18px 14px 12px;
+  border-radius: 14px;
+  background-color: var(--ds-tape);
+  background-image:
+    repeating-linear-gradient(90deg, var(--ds-ink) 0 1.5px, transparent 1.5px 40px),
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1px, transparent 1px 10px);
+  background-size: 100% 10px, 100% 5px;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 -3px 0 var(--ds-tape-shadow);
+}
+.tapeRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.tapeLabel {
+  font: 700 11px/1.2 var(--ds-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.tapeCount {
+  font: 850 34px/0.9 var(--ds-sans);
+  font-stretch: 88%;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.root .tapeAction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  font: 750 15px var(--ds-sans);
+  text-decoration: none;
+  cursor: pointer;
+}
+.root .tapeAction:hover { text-decoration: none; box-shadow: 3px 3px 0 var(--ds-pink); }
+
+.who {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 8px 12px;
+  border-bottom: 1px solid var(--ds-line);
+}
+.whoText { min-width: 0; }
+.whoName {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+}
+.whoName > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.whoEmail {
+  margin: 3px 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  color: var(--ds-caption);
+}
+.tier {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  height: 20px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(22, 22, 29, 0.08);
+  color: var(--ds-ink);
+  font: 700 9.5px/1 var(--ds-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.tier[data-tier="plus"] { background: var(--ds-ink); color: var(--ds-yellow); }
+.tier[data-tier="pro"] { background: var(--ds-blue); color: #fff; }
+.tier[data-tier="flex"] { background: var(--ds-yellow); color: var(--ds-ink); }
+
+.items { padding: 6px 0; }
+.items + .items { border-top: 1px solid var(--ds-line); }
+.root .item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 12px;
+  background: none;
+  color: var(--ds-ink);
+  font: 650 15px var(--ds-sans);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.root .item:hover { background: #fff; text-decoration: none; }
+.item svg { flex: none; width: 19px; height: 19px; color: var(--ds-caption); }
+.item:hover svg { color: var(--ds-blue); }
+.proTag {
+  margin-left: auto;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: var(--ds-blue);
+  color: #fff;
+  font: 700 9.5px/1 var(--ds-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.root .logout { color: var(--ds-red); }
+.root .logout svg { color: currentColor; }
+.root .logout:hover { background: rgba(215, 38, 46, 0.08); }
+.root .logout:hover svg { color: currentColor; }
+.root .logout:disabled { cursor: wait; opacity: 0.6; }
+
+/* Buy credits popover */
+.buyHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #e85a6b;
+}
+.buyTitle {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 850;
+  font-stretch: 90%;
+  letter-spacing: -0.02em;
+}
+.root .recharge {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px 0 0;
+  border: 0;
+  border-top: 1px solid var(--ds-line);
+  border-radius: 0;
+  background: none;
+  color: var(--ds-muted);
+  font: 650 14px var(--ds-sans);
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: rgba(22, 22, 29, 0.25);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.root .recharge:hover { color: var(--ds-blue); text-decoration-color: currentColor; }
+
+@media (max-width: 639px) {
+  .name, .chev { display: none; }
+  .trigger { padding: 0; width: 44px; justify-content: center; }
+  .avatar { width: 36px; height: 36px; }
+  /* Phones: the menu hangs from the header bar's right edge, not the avatar */
+  .root:not([data-credits]) { position: static; }
+  .menu { top: calc(100% + 4px); right: 0; width: min(320px, 100%); }
+}
+/* The site nav's account trigger: avatar, @username and chevron with no
+   pill until hover (the planner header keeps the white pill above). */
+:global(.ds-site-nav) .trigger { padding: 0 10px 0 6px; background: none; box-shadow: none; color: inherit; }
+:global(.ds-site-nav) .trigger:hover,
+:global(.ds-site-nav) .trigger[aria-expanded="true"] { background: var(--nav-hover); box-shadow: none; }
+:global(.ds-site-nav) .chev { color: inherit; opacity: 0.6; }
+:global(.ds-site-nav[data-tone="dark"]) .avatar { box-shadow: 0 0 0 1.5px rgba(244, 243, 238, 0.3); }
+/* A long @username truncates rather than pushing the row past the plate. */
+:global(.ds-site-nav) .root:not([data-credits]) { flex: 0 1 auto; min-width: 0; }
+:global(.ds-site-nav) .trigger { max-width: 100%; }
+/* Below 1360 the row is too tight for the full account controls beside the
+   links: the avatar alone, and the credits count with its word kept for
+   screen readers only. */
+@media (max-width: 1360px) {
+  :global(.ds-site-nav) :is(.name, .chev) { display: none; }
+  :global(.ds-site-nav) .trigger { width: 44px; padding: 0; justify-content: center; }
+  :global(.ds-site-nav) .credits { padding: 0 6px; }
+  :global(.ds-site-nav) .creditsLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+@media (min-width: 768px) { .alert { display: none; } }
+@media (max-width: 767px) { .root[data-credits] { display: none; } }
+@media (prefers-reduced-motion: reduce) { .pop { animation: none; } }
+:global(.dm-app[data-motion="paused"]) .pop { animation: none; }

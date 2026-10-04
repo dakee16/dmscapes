@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import css from "./CookieConsent.module.css";
 
 // Consent choice persists in localStorage so the banner shows once and never
 // reappears. "rejected" also suppresses analytics (see lib/analytics.ts
@@ -10,10 +11,15 @@ import Link from "next/link";
 export const COOKIE_CONSENT_KEY = "dormscape-cookie-consent";
 export type CookieConsent = "accepted" | "rejected";
 
+// The banner is in the server HTML (hidden) and this runs as the HTML parses,
+// so a first visit sees it with the first paint rather than after hydration.
+const BANNER_ID = "cookie-consent";
+const REVEAL = `try{if(!localStorage.getItem(${JSON.stringify(COOKIE_CONSENT_KEY)}))document.getElementById(${JSON.stringify(BANNER_ID)}).hidden=false}catch(e){}`;
+
 /**
  * First-visit cookie consent banner. Deliberately simple (US product): a brief
- * note, a link to the Cookie Policy, and Accept / Reject. Styled to match the
- * site (paper card, cobalt primary) rather than a bolted-on third-party widget.
+ * note, a link to the Cookie Policy, and Accept / Reject. A small paper card
+ * in the site's own voice rather than a bolted-on third-party widget.
  * Mounted once in the root layout.
  */
 export default function CookieConsent() {
@@ -39,44 +45,44 @@ export default function CookieConsent() {
     setVisible(false);
   }
 
-  if (!visible) return null;
-
   return (
-    <div
-      className="dm-cookie-banner fixed inset-x-0 bottom-0 z-[70] p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:p-4"
-      role="dialog"
-      aria-label="Cookie consent"
-      aria-live="polite"
-    >
-      <div className="mx-auto flex max-w-2xl flex-col gap-3 overflow-hidden rounded-2xl border border-ink/10 bg-paper/95 p-4 shadow-[0_24px_60px_-24px_rgba(23,23,43,0.5)] backdrop-blur-md sm:flex-row sm:items-center sm:gap-4">
-        <p className="flex-1 text-sm leading-relaxed text-ink-soft">
+    <>
+      <div
+        id={BANNER_ID}
+        className={css.banner}
+        role="dialog"
+        aria-label="Cookie consent"
+        aria-live="polite"
+        hidden={!visible}
+        // The inline script below may un-hide it before React hydrates.
+        suppressHydrationWarning
+      >
+        <p className={css.text}>
           We use a few cookies to keep you signed in and to understand how the
           planner gets used. Read our{" "}
-          <Link
-            href="/cookies"
-            className="font-semibold text-ink underline decoration-highlight decoration-2 underline-offset-2 transition-colors hover:text-cobalt"
-          >
+          <Link href="/cookies" className={css.link}>
             Cookie Policy
           </Link>
           .
         </p>
-        <div className="flex shrink-0 gap-2">
+        <div className={css.actions}>
           <button
             type="button"
             onClick={() => choose("rejected")}
-            className="h-10 flex-1 cursor-pointer rounded-lg border border-ink/15 bg-white px-4 text-sm font-semibold text-ink transition-colors hover:border-ink/30 sm:flex-none"
+            className={`ds-btn ds-btn--ghost-ink ds-btn--sm ${css.btn}`}
           >
             Reject
           </button>
           <button
             type="button"
             onClick={() => choose("accepted")}
-            className="h-10 flex-1 cursor-pointer rounded-lg bg-cobalt px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt-deep sm:flex-none"
+            className={`ds-btn ds-btn--ink ds-btn--sm ${css.btn}`}
           >
             Accept
           </button>
         </div>
       </div>
-    </div>
+      <script dangerouslySetInnerHTML={{ __html: REVEAL }} suppressHydrationWarning />
+    </>
   );
 }
