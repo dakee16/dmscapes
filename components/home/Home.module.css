@@ -313,13 +313,13 @@
   80% { translate: 2px; }
 }
 @media (max-width: 1023px) {
-  .problemGrid { grid-template-columns: 1fr; gap: 0; padding-top: 48px; }
+  .problemGrid { grid-template-columns: minmax(0, 1fr); gap: 0; padding-top: 48px; }
   .problemCopy { padding: 48px 0 0; display: contents; }
   .problemArt { margin: 20px 0 0; order: 3; }
   .qRows { order: 4; margin-bottom: 48px; }
 }
 @media (max-width: 640px) {
-  .qRow { grid-template-columns: 1fr; gap: 4px; padding: 14px 0; }
+  .qRow { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 14px 0; }
   .q { font-size: 21px; }
   .a { font-size: 15px; }
 }
@@ -422,7 +422,7 @@
 @media (max-width: 1023px) {
   .howHead { padding-top: 48px; }
   .howProgress { display: none; }
-  .steps { grid-template-columns: 1fr; gap: 0; width: 100%; margin: 28px 0 0; }
+  .steps { grid-template-columns: minmax(0, 1fr); gap: 0; width: 100%; margin: 28px 0 0; }
   .step + .step { margin-top: 40px; }
   .stepText { padding: 0 var(--ds-gutter); }
   .howCta { padding: 32px 0 56px; }
@@ -516,7 +516,7 @@
 }
 @keyframes blink { 50% { opacity: 0; } }
 @media (max-width: 1023px) {
-  .vibesGrid { grid-template-columns: 1fr; padding: 48px 0; gap: 20px; }
+  .vibesGrid { grid-template-columns: minmax(0, 1fr); padding: 48px 0; gap: 20px; }
   .vibesArt { order: 2; max-width: 520px; }
   .vibesCopy { display: contents; }
   .vibesCopyHead { order: 1; }
@@ -616,7 +616,7 @@
 .budgetArt { position: relative; aspect-ratio: 592 / 740; margin-top: 20px; }
 .budgetArt img { object-fit: cover; }
 @media (max-width: 1023px) {
-  .budgetGrid { grid-template-columns: 1fr; gap: 0; }
+  .budgetGrid { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .budgetCopy { padding: 48px 0 0; }
   .budgetArt { max-width: 520px; margin: 24px 0 48px; }
 }
@@ -703,14 +703,14 @@
   .studioPin { position: sticky; top: 0; min-height: 100vh; display: flex; align-items: center; }
 }
 @media (max-width: 1023px) {
-  .studioGrid { grid-template-columns: 1fr; gap: 0; }
+  .studioGrid { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .studioCopy { padding: 48px 0 56px; order: 1; }
   .wipe { order: 2; margin: 0 0 56px; max-width: 520px; }
   .studioCopy { display: contents; }
   .studioHead { order: 1; padding-top: 48px; }
   .feats { order: 3; }
   .studioCtas { order: 4; margin-bottom: 56px; }
-  .feat { grid-template-columns: 1fr; gap: 2px; padding: 12px 0; }
+  .feat { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 12px 0; }
 }
 
 /* ---------- 07 · Together (My Room) ---------- */
@@ -938,7 +938,7 @@
 .room[data-reveal="in"] .chipM { transition-delay: 1.22s; }
 .room[data-reveal="in"] .chipS { transition-delay: 1.29s; }
 @media (max-width: 1023px) {
-  .togetherGrid { grid-template-columns: 1fr; padding: 56px 0; }
+  .togetherGrid { grid-template-columns: minmax(0, 1fr); padding: 56px 0; }
 }
 @media (max-width: 640px) {
   .room { padding: 34px 14px 84px; border-radius: 20px; }
@@ -1028,7 +1028,7 @@
   .cards { margin-top: 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 }
 @media (max-width: 560px) {
-  .cards { grid-template-columns: 1fr; gap: 12px; }
+  .cards { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .cards > li:nth-child(n + 7) { display: none; }
   .card { min-height: 120px; padding: 16px 18px; }
   .cardText { max-width: 60%; gap: 1px; }
@@ -1071,7 +1071,7 @@
 .planPlus .planTag { padding: 4px 10px; border-radius: 999px; background: var(--ds-pink); color: var(--ds-ink); }
 .planPro .planTag { padding: 4px 10px; border-radius: 999px; background: var(--ds-yellow); color: var(--ds-ink); }
 .planFree .planTag { color: var(--ds-caption); }
-.priceRow { margin-top: 14px; display: flex; align-items: baseline; gap: 10px; }
+.priceRow { margin-top: 14px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
 .price { font-size: 60px; line-height: 1; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
 .was { position: relative; font-size: 18px; font-weight: 600; opacity: 0.7; }
 .strike {
@@ -1115,7 +1115,7 @@
 .faqLine { margin: 28px 0 0; font-size: 16px; color: var(--ds-muted); }
 @media (max-width: 1023px) {
   .pricing { padding: 56px 0; }
-  .priceGrid { grid-template-columns: 1fr; max-width: 560px; gap: 16px; margin-top: 32px; }
+  .priceGrid { grid-template-columns: minmax(0, 1fr); max-width: 560px; gap: 16px; margin-top: 32px; }
   .plan3 { min-height: 0; padding: 26px 22px; }
   .price { font-size: 52px; }
 }
@@ -1141,7 +1141,7 @@
 .nudge svg { animation: nudge 0.6s var(--ds-ease) 1.2s 2 alternate; }
 @keyframes nudge { to { transform: translate(4px, -4px); } }
 @media (max-width: 1023px) {
-  .finalGrid { grid-template-columns: 1fr; }
+  .finalGrid { grid-template-columns: minmax(0, 1fr); }
   .finalCopy { padding: 48px 0 0; }
   .finalArt { width: min(300px, 80%); margin: 16px auto 0; }
 }

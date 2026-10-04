@@ -1,6 +1,7 @@
 /* College page (design-handoff/designs/site/College.dc.html) */
 
-.hero :global(.ds-h1 .ds-display) { font-size: clamp(56px, 7vw, 104px); }
+/* 13vw floor: the longest one-word names (13 letters) still fit a 360px phone */
+.hero :global(.ds-h1 .ds-display) { font-size: clamp(min(56px, 13vw), 7vw, 104px); }
 .hero :global(.ds-h1 .ds-serif) { font-size: clamp(36px, 3.6vw, 52px); }
 
 /* ---------- One-scale wall (hero visual) ---------- */
@@ -212,7 +213,7 @@
   .wallRoom span { font-size: 10px; }
   .wallStage { gap: 8px; max-height: 340px; }
   .wallFoot { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .halls { grid-template-columns: 1fr; }
+  .halls { grid-template-columns: minmax(0, 1fr); }
   .hallCard { min-height: 0; }
   .scaleNote { margin-left: 0; }
   .bars th { width: 44%; padding-right: 10px; }

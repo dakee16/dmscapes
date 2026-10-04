@@ -318,7 +318,7 @@
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
   .shell { grid-template-columns: 200px minmax(0, 1fr); gap: 32px; }
-  .buy { grid-template-columns: 1fr; }
+  .buy { grid-template-columns: minmax(0, 1fr); }
   .planNote { margin-left: 0; }
 }
 @media (max-width: 860px) {
@@ -335,7 +335,7 @@
   .sideNav::-webkit-scrollbar { display: none; }
   .sideNav a { flex: none; min-height: 44px; padding: 0 16px; border-radius: 999px; background: #fff; font-size: 15px; }
   .sideNav a[data-danger] { background: #fff; }
-  .pair { grid-template-columns: 1fr; }
+  .pair { grid-template-columns: minmax(0, 1fr); }
   .planTop { flex-direction: column; gap: 22px; }
   .credits { align-items: flex-start; }
   .creditsLabel { text-align: left; }
@@ -351,7 +351,7 @@
   .plan :is(a, button).pbtn { width: 100%; white-space: normal; }
   .planNote { max-width: none; flex-basis: auto; }
   .card { padding: 20px; border-radius: 18px; }
-  .fields { grid-template-columns: 1fr; }
+  .fields { grid-template-columns: minmax(0, 1fr); }
   .mini { min-height: 0; }
   .tools li { font-size: 14px; min-height: 38px; padding: 6px 14px; }
   /* Purchases collapse to item + amount; date, status and receipt move inside */

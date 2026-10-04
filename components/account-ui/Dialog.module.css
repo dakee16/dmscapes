@@ -475,11 +475,11 @@
 
 /* ---------- Phone ---------- */
 @media (max-width: 639px) {
-  .plans { grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
+  .plans { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 20px; }
   .planPlus { box-shadow: 4px 4px 0 var(--ds-yellow); }
   .price { font-size: 40px; }
-  .perks2 { grid-template-columns: 1fr; }
-  .features { grid-template-columns: 1fr; gap: 14px; }
+  .perks2 { grid-template-columns: minmax(0, 1fr); }
+  .features { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .sheet.sheet.sheet button.option { min-height: 0; padding: 14px 16px; }
   .optionPrice { font-size: 22px; }
 }

@@ -193,8 +193,8 @@
   .sibGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 900px) {
-  .roomGrid { grid-template-columns: 1fr; }
-  .open { grid-template-columns: 1fr; }
+  .roomGrid { grid-template-columns: minmax(0, 1fr); }
+  .open { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 600px) {
   .rooms { --k: 0.62; }

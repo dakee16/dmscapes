@@ -34,7 +34,7 @@
 .manage:hover { color: #fff; }
 @media (max-width: 1000px) { .moments { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) {
-  .moments { grid-template-columns: 1fr; }
+  .moments { grid-template-columns: minmax(0, 1fr); }
   .card { box-shadow: 5px 5px 0 var(--ds-yellow); }
   .strip { flex-direction: column; }
 }
