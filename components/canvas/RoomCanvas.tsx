@@ -209,7 +209,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const [viewport, setViewport] = useState({ width: 0, height: 420 });
   const [panMode, setPanMode] = useState(false);
   const [showGrid, setShowGrid] = useState(true);
-  const [showLabels, setShowLabels] = useState(true);
+  // Off by default: each piece is drawn as what it is (FurnitureGlyph). The
+  // Labels toggle still adds names; owners in a shared room always show.
+  const [showLabels, setShowLabels] = useState(false);
   const [snapping, setSnapping] = useState(true);
   const [showHelp, setShowHelp] = useState(false);
   const [dragging, setDragging] = useState<{ id: string; x: number; y: number } | null>(null);
@@ -730,7 +732,16 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                   <Group key={`closet-${i}`} x={c.x} y={c.y} listening={false}
                     clipFunc={(ctx) => { ctx.rect(0, 0, c.w, c.h); }}>
                     <Rect width={c.w} height={c.h} fill="#FFFFFF" />
-                    {Array.from({ length: Math.ceil((c.w + c.h) / 9) }, (_, k) => <Line key={k} points={[k * 9, 0, k * 9 - c.h, c.h]} stroke="rgba(36, 73, 255, 0.16)" strokeWidth={3} />)}
+                    {(() => {
+                      // A hanging rod with hangers along the closet's long side.
+                      const across = c.w >= c.h, long = across ? c.w : c.h, short = across ? c.h : c.w;
+                      const n = Math.max(2, Math.floor((long - 12) / 8));
+                      const pt = (t: number, u: number) => across ? [t, u] : [u, t];
+                      return <>
+                        <Line points={[...pt(6, short / 2), ...pt(long - 6, short / 2)]} stroke={COBALT} strokeWidth={1.5} />
+                        {Array.from({ length: n }, (_, k) => { const t = 10 + k * (long - 20) / (n - 1); return <Line key={k} points={[...pt(t, short * .2), ...pt(t, short * .8)]} stroke="rgba(36, 73, 255, 0.45)" strokeWidth={1.2} />; })}
+                      </>;
+                    })()}
                     <Rect width={c.w} height={c.h} stroke={COBALT} strokeWidth={1.5} />
                     {showLabels && c.w > 46 && c.h > 16 && <Text width={c.w} height={c.h} align="center" verticalAlign="middle" text="CLOSET" fontFamily={labelFont} fontStyle="700" fontSize={9} letterSpacing={.7} fill={COBALT} />}
                   </Group>
@@ -897,8 +908,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 const dressedBed = f.type === "bed" && !!entry;
                 let label: { text: string; mono: boolean; height: number } | null = null;
                 const chair = /chair|lounge/.test(f.type);
-                if (showLabels && w >= 34 && h >= 18 && !chair) {
-                  if (owners) label = { text: `${bedLabel(f)}\n${ownerName(f.assigned_to,people)}`, mono: false, height: 30 };
+                if ((showLabels || owners) && w >= 34 && h >= 18 && !chair) {
+                  if (owners) label = showLabels ? { text: `${bedLabel(f)}\n${ownerName(f.assigned_to,people)}`, mono: false, height: 30 } : { text: ownerName(f.assigned_to,people), mono: false, height: 16 };
                   else if (builtIn && !dressedBed) label = { text: (isBunkBed(f) && w < 125 ? bedLabel(f).replace(" · ", "\n") : bedLabel(f)).toUpperCase(), mono: true, height: isBunkBed(f) && w < 125 ? 26 : 14 };
                   else if (!entry && !builtIn) label = { text: bedLabel(f), mono: false, height: 16 };
                 }
