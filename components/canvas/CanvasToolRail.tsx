@@ -2,11 +2,13 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import type { FurnitureItem } from "@/lib/types";
 import type { CanvasDock } from "./CanvasControlsContext";
-import { EyeIcon, FitIcon, GridIcon, HelpIcon, MagnetIcon, MinusIcon, MoreIcon, PanIcon, PlanIcon, PlusIcon, RedoIcon, ResetIcon, RoomIcon, RulerIcon, SelectIcon, UndoIcon, ExpandIcon } from "@/components/studio-ui/icons";
+import { BagIcon, EyeIcon, FitIcon, GridIcon, HelpIcon, MagnetIcon, MinusIcon, MoreIcon, PanIcon, PlanIcon, PlusIcon, RedoIcon, ResetIcon, RoomIcon, RulerIcon, SelectIcon, UndoIcon, ExpandIcon } from "@/components/studio-ui/icons";
 import s from "./CanvasToolRail.module.css";
 
 export interface CanvasToolRailProps {
   dock: CanvasDock; pan: boolean; grid: boolean; labels: boolean; snap: boolean; zoom: number; roomLabel: string;
+  /** Show every piece's shopping-list number (otherwise only the piece in focus shows one). */
+  numbers: boolean; toggleNumbers: () => void;
   setPan: (v: boolean) => void; toggleGrid: () => void; toggleLabels: () => void; toggleSnap: () => void; zoomTo: (v: number) => void; fit: () => void;
   undo: () => void; redo: () => void; canUndo: boolean; canRedo: boolean;
   hiddenItems: FurnitureItem[]; showItem: (id: string) => void;
@@ -81,6 +83,7 @@ export default function CanvasToolRail(p: CanvasToolRailProps) {
                 <button type="button" aria-pressed={p.pan} onClick={() => p.setPan(true)}><PanIcon size={16} />Pan</button>
               </div>
               <button type="button" className={`${s.item} ${s.phoneFlex}`} aria-pressed={p.labels} onClick={p.toggleLabels}><RulerIcon size={16} />Measurements<span>{p.labels ? "On" : "Off"}</span></button>
+              <button type="button" className={s.item} aria-pressed={p.numbers} onClick={p.toggleNumbers} title="Number every piece to match the shopping list (N)"><BagIcon size={16} />List numbers<span>{p.numbers ? "On" : "Off"}</span></button>
               <button type="button" className={s.item} aria-pressed={p.grid} onClick={p.toggleGrid}><GridIcon size={16} />Grid<span>{p.grid ? "On" : "Off"}</span></button>
               <button type="button" className={s.item} aria-pressed={p.snap} onClick={p.toggleSnap} title="Snap to a 6-inch grid. Turn off for 1-inch positioning."><MagnetIcon size={16} />Snap to 6 inches<span>{p.snap ? "On" : "Off"}</span></button>
               <button type="button" className={`${s.item} ${s.phoneFlex}`} onClick={() => { setMore(false); p.dock.editOpenings(); }}><RoomIcon size={16} />Doors &amp; windows</button>
@@ -100,7 +103,7 @@ export default function CanvasToolRail(p: CanvasToolRailProps) {
               {help && (
                 <div className={s.help}>
                   <p>Click a piece, then drag to move. Drag its round handle to rotate, or click the handle, move your cursor, then click to place.</p>
-                  <p>Esc: cancel rotation · R: rotate 90° · Shift + R: rotate −90° · Arrow keys: nudge · Ctrl / ⌘ Z: undo · 0: fit · Esc: deselect</p>
+                  <p>Esc: cancel rotation · R: rotate 90° · Shift + R: rotate −90° · Arrow keys: nudge · Ctrl / ⌘ Z: undo · 0: fit · N: list numbers · Esc: deselect</p>
                   <p>Pinch with two fingers to zoom and pan. With a mouse, use Ctrl/⌘ + scroll to zoom at the pointer.</p>
                 </div>
               )}

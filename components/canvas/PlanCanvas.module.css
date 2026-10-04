@@ -119,6 +119,7 @@
   .itemBar > button svg { display: none; }
   .itemMenu { top: auto; bottom: calc(100% + 10px); }
   .statusPill { left: 12px; top: 12px; bottom: auto; height: 30px; font-size: 12.5px; max-width: calc(100% - 24px); }
+  .statusPill[data-quiet] { display: none; } /* all fine: keep the room's top edge clear; warnings and drag positions still show */
   .scale { display: none; }
   .surface { height: clamp(320px, 53svh, 470px); }
 }

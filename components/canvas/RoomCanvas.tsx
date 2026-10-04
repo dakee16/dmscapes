@@ -108,6 +108,7 @@ const PINK = "#FF4FA8";
 /** Room view walls: a warm near-black. */
 const WALL = "#2B2622";
 const VIEW_KEY = "dormscape-canvas-view";
+const NUMBERS_KEY = "dormscape-canvas-numbers";
 type CanvasView = "room" | "plan";
 const rgba = (hex: string, a: number) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
 const luma = (hex: string) => { const n = parseInt(hex.slice(1), 16); return (.299 * (n >> 16) + .587 * ((n >> 8) & 255) + .114 * (n & 255)) / 255; };
@@ -270,7 +271,14 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const [panMode, setPanMode] = useState(false);
   // Room view (illustrated) is the default; Plan view is the flat drawing. Each keeps its own grid setting.
   const [view, setViewState] = useState<CanvasView>("room");
-  useEffect(() => { try { if (localStorage.getItem(VIEW_KEY) === "plan") setViewState("plan"); } catch {} }, []);
+  // List numbers on every piece crowd the plan, so by default only the piece in
+  // focus (selected, or its row hovered or tapped in the list) shows its number.
+  const [showNumbers, setShowNumbers] = useState(false);
+  useEffect(() => { try {
+    if (localStorage.getItem(VIEW_KEY) === "plan") setViewState("plan");
+    if (localStorage.getItem(NUMBERS_KEY) === "on") setShowNumbers(true);
+  } catch {} }, []);
+  const toggleNumbers = () => { const next = !showNumbers; setShowNumbers(next); try { localStorage.setItem(NUMBERS_KEY, next ? "on" : "off"); } catch {} };
   const setView = (next: CanvasView) => { setViewState(next); try { localStorage.setItem(VIEW_KEY, next); } catch {} };
   const roomView = view === "room";
   const [grids, setGrids] = useState({ room: false, plan: true });
@@ -701,6 +709,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     if (key === "v") setPanMode(false);
     if (key === "h") setPanMode(true);
     if (key === "g") toggleGrid();
+    if (key === "n") toggleNumbers();
     if (key === "r" && canEditItem && toolbarItem) { event.preventDefault(); onRotate?.(toolbarItem.id, event.shiftKey ? -1 : 1); }
     const arrows: Record<string, [number, number]> = { arrowleft: [-1,0], arrowright: [1,0], arrowup: [0,-1], arrowdown: [0,1] };
     if (arrows[key] && canEditItem) { event.preventDefault(); nudge(...arrows[key], event.shiftKey); }
@@ -822,7 +831,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   return (
     <div className={`${styles.canvas} ${dock ? styles.docked : ""}`} onKeyDown={keyboard}>
       {dock?.host && dock.active && createPortal(<CanvasToolRail dock={dock} pan={panMode} setPan={setPanMode} grid={showGrid} labels={showLabels} snap={snapping} zoom={zoom}
-        roomLabel={feetLabel(roomL)+" × "+feetLabel(roomW)} toggleGrid={toggleGrid} roomView={roomView} setRoomView={on=>setView(on?"room":"plan")} toggleLabels={()=>setShowLabels(v=>!v)} toggleSnap={()=>setSnapping(v=>!v)} zoomTo={applyZoom} fit={fitRoom}
+        roomLabel={feetLabel(roomL)+" × "+feetLabel(roomW)} toggleGrid={toggleGrid} numbers={showNumbers} toggleNumbers={toggleNumbers} roomView={roomView} setRoomView={on=>setView(on?"room":"plan")} toggleLabels={()=>setShowLabels(v=>!v)} toggleSnap={()=>setSnapping(v=>!v)} zoomTo={applyZoom} fit={fitRoom}
         undo={()=>history?.undo()} redo={()=>history?.redo()} canUndo={!!history?.canUndo} canRedo={!!history?.canRedo}
         hiddenItems={visible.filter(f=>hiddenItemIds.includes(f.id))} showItem={toggleHiddenItem}/>,dock.host)}
       {!dock && <>
@@ -1139,7 +1148,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                     <Rect width={sizeW} height={24/z} cornerRadius={12/z} fill={COBALT} />
                     <Text width={sizeW} height={24/z} align="center" verticalAlign="middle" text={sizeText} fontFamily={sansFont} fontStyle="800" fontSize={13/z} fill="#FFFFFF" />
                   </Group>}
-                  {entry && !readOnly && <Group name="editor-only" x={pinX} y={pinY}
+                  {entry && !readOnly && (showNumbers || pinActive) && <Group name="editor-only" x={pinX} y={pinY}
                     onClick={(e) => { e.cancelBubble = true; dock?.openings.select(null); handleItemClick(f); }}
                     onTap={(e) => { e.cancelBubble = true; dock?.openings.select(null); handleItemClick(f); }}
                     onMouseEnter={(e) => { if (crossHighlight) setHoveredCategory(furnitureCategory(f)); const st = e.target.getStage(); if (st) st.container().style.cursor = "pointer"; }}
@@ -1235,7 +1244,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           </>}
         </div>
       )}
-      {pxFt > 0 && dock && <p className={styles.statusPill} data-ok={status.ok || undefined} role="status">
+      {pxFt > 0 && dock && <p className={styles.statusPill} data-ok={status.ok || undefined} data-quiet={status.ok && !dragging && !ghost || undefined} role="status">
         <span aria-hidden="true">{status.ok ? <CheckIcon size={12} /> : <AlertIcon size={13} />}</span>{status.text}
       </p>}
       {pxFt > 0 && <div className={styles.scale} aria-hidden="true"><i style={{ width: pxFt * zoom * scaleFt }} /><span>{scaleFt} ft</span></div>}
