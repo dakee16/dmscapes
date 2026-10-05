@@ -56,6 +56,19 @@ Spec: `design-handoff/3d-studio/` (`scene.js` values, `renders/3d-hero.jpg`). Fi
 - **Light presets** (`lighting`): `day`, `evening` (stored name; shown as "Golden hour"), and `night`. Night is lit only by lamps, string lights, LED strips and candles in the plan (up to 6 point lights), else a dim room light; the window glass goes dark blue.
 - **Vibe dressing** (`studio.dressVibe`, missing means on): bedding, rug, throw, pillows, curtains and decor take the vibe's `room` theme; off uses each product's colour. Dorm-provided furniture stays plain wood. Nothing is drawn that isn't in the plan (no books, laptops or pillows on bare beds).
 - **Floors**: oak, walnut, concrete (labelled "Tile": speckled vinyl tiles) and carpet; textures are drawn once per floor change.
+- **Controls** (`PlannerStudio.tsx`):
+  - **Over the room:**
+    - Vibe chip and Open 2D plan at top-left.
+    - Snapshot and Full screen at top-right. Snapshot downloads a 2x PNG with no ring, card or controls, keeps the export watermark and fires `studio_snapshot`. Full screen uses the browser's full screen where offered, on top of the expanded studio.
+    - Light switch (Day / Golden hour / Night, stacked) at bottom-left; it moves up beside the camera pill on narrow desktops.
+    - The dark camera pill at bottom-center: Dollhouse / Top / Walk in, plus zoom.
+  - **Selection:** a dashed cobalt ring on the floor, drawn in the scene, plus a card the scene keeps above the piece (`RoomScene` `anchor`). The card shows the name, Dorm-provided / In your list / Not in your list, and Rotate, Swap and Remove (list remove). While dragging, the old position label shows instead.
+  - **Room tab** (`StyleDetails`):
+    - Light, Floor and Walls.
+    - The "Dress the room in my vibe" checkbox (`dressVibe`).
+    - The finish note, unchanged.
+    - `LightSwitch` and `FloorSwatches` are shared components.
+  - **Phones (≤780 px, the studio's existing breakpoint):** the room on top with the camera pill, then a sheet with the selected piece (Rotate, Swap), the light switch, floor swatches and the budget bar with List. Arrange / Room / List still open the full panel. My Room's camera buttons use the same Dollhouse / Top / Walk in names.
 
 ## Test end to end with real keys
 
