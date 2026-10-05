@@ -182,6 +182,23 @@ export function postalAddressJsonLd(city: string | null, state: string | null) {
   };
 }
 
+/**
+ * A page as part of the WebSite, optionally naming the image search results
+ * should prefer for it (primaryImageOfPage). The @id is the page URL + "#webpage".
+ */
+export function webPageJsonLd({ path, name, image }: { path: string; name: string; image?: { path: string; width: number; height: number } }) {
+  const url = absoluteUrl(path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name,
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    ...(image ? { primaryImageOfPage: { "@type": "ImageObject", url: absoluteUrl(image.path), width: image.width, height: image.height } } : {}),
+  };
+}
+
 /** Breadcrumb trail. Pass [{name, path}] from root to current page. */
 export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   return {

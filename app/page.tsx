@@ -18,6 +18,7 @@ import {
   organizationJsonLd,
   webSiteJsonLd,
   softwareApplicationJsonLd,
+  webPageJsonLd,
 } from "@/lib/seo";
 import { SCHOOLS } from "@/lib/schools";
 import {
@@ -28,8 +29,11 @@ import {
   SCHOOL_COUNT,
 } from "@/lib/home-data";
 
+// Short enough that Google shows it whole.
+const TITLE = "Dormscape: Free Dorm Room Planner";
+
 export const metadata = pageMetadata({
-  title: "Dormscape: Free Dorm Room Planner With Real Dorm Dimensions",
+  title: TITLE,
   absoluteTitle: true,
   description: `Free dorm room planner with real room dimensions for ${SCHOOLS.length} schools. Lay out your room in 2D or 3D, set a budget and get a shoppable list.`,
   path: "/",
@@ -39,7 +43,17 @@ export const metadata = pageMetadata({
 export default function Home() {
   return (
     <div id="top" className="ds">
-      <JsonLd data={[organizationJsonLd(), webSiteJsonLd(), softwareApplicationJsonLd()]} />
+      <JsonLd
+        data={[
+          organizationJsonLd(),
+          webSiteJsonLd(),
+          // The image search results should prefer for the homepage: the final
+          // section's room-with-its-door-open (clearer as a small thumbnail than
+          // the hero's room-over-plan). Social cards keep og.png.
+          webPageJsonLd({ path: "/", name: TITLE, image: { path: "/redesign/home-cta-room-door.jpg", width: 960, height: 1200 } }),
+          softwareApplicationJsonLd(),
+        ]}
+      />
       <Nav overlay />
       <main id="page-content" tabIndex={-1}>
         <HomeHero schoolCount={SCHOOL_COUNT} hallCount={HALL_COUNT} />
