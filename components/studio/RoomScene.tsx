@@ -17,12 +17,14 @@ import {usePlannerStore} from "@/lib/store";
 import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
 
 export type CameraView="room"|"top"|"inside";
-export interface RoomSceneHandle {exportPNG:()=>string|null;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;}
+export interface RoomSceneHandle {exportPNG:(ratio?:number)=>string|null;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;}
 type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;footW:number;footD:number;locked:boolean;bare:boolean;product?:ReturnType<typeof productVisual>};
 type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];theme:RoomTheme;selectedId:string|null;selectedOpening:number|null;editOpenings:boolean;interior:{x:number;y:number}};
-type View={readCursor:(x:number,y:number)=>{x:number;y:number}|null;projectCursor:(x:number,y:number)=>{x:number;y:number}|null;update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;exportPNG:()=>string;destroy:()=>void};
+type View={readCursor:(x:number,y:number)=>{x:number;y:number}|null;projectCursor:(x:number,y:number)=>{x:number;y:number}|null;update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;setAnchor:(node:HTMLElement|null)=>void;exportPNG:(ratio?:number)=>string;destroy:()=>void};
 type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;openingDragType:string;previewOpening:(target:number|WallOpening["kind"],x:number,y:number)=>WallOpening|null;onSelectOpening:(index:number|null)=>void;onOpeningChange:(index:number|null,opening:WallOpening)=>void;onReady:()=>void;onError:(message:string)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
-export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;openingControls?:OpeningControls;onSelect?:(id:string|null)=>void;onMove?:(id:string,x:number,y:number)=>void;onFallback?:()=>void;}
+export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;openingControls?:OpeningControls;
+  /** A card the scene keeps above the selected piece (it sets the card's transform and visibility). */
+  anchor?:HTMLElement|null;onSelect?:(id:string|null)=>void;onMove?:(id:string,x:number,y:number)=>void;onFallback?:()=>void;}
 /** Soft goods the vibe dresses when "Dress the room in my vibe" is on (a piece's own preview color still wins). */
 const DRESSED=new Set(["bed","bunk","rug","blanket","pillow","decor","curtains","macrame"]);
 const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(props,ref){
@@ -47,7 +49,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
       return {...f,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||(settings.dressVibe&&DRESSED.has(kind)?undefined:product?.color),kind,height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:!allowed||Boolean(props.readOnly)||props.locked.includes(f.id)};
     })};
   const latest=useRef(data);latest.current=data;
-  useImperativeHandle(ref,()=>({exportPNG:()=>access.current?view.current?.exportPNG()??null:null,preset:m=>view.current?.preset(m),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);
+  useImperativeHandle(ref,()=>({exportPNG:ratio=>access.current?view.current?.exportPNG(ratio)??null:null,preset:m=>view.current?.preset(m),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);
   useEffect(()=>{
     if(!enabled)return;
     let disposed=false;setError("");setReady(false);
@@ -62,7 +64,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
         onSelect:id=>{if(access.current&&!current.current.readOnly)current.current.onSelect?.(id);},
         onMove:(id,x,y)=>{if(access.current&&!current.current.readOnly)current.current.onMove?.(id,x,y);},
         constrain:(id,x,y)=>{const p=current.current,f=p.items.find(f=>f.id===id);return f?constrainedPosition(f,x,y,p.room,p.snap!==false):{x,y};}});
-      view.current=v;v.update(latest.current);v.setWalls(current.current.walls??"auto");v.setMoveMode(current.current.moveMode??false);
+      view.current=v;v.update(latest.current);v.setWalls(current.current.walls??"auto");v.setMoveMode(current.current.moveMode??false);v.setAnchor(current.current.anchor??null);
     }catch{if(!disposed)setError("3D is unavailable on this browser. Your room can still be edited in 2D.");}})();
     return()=>{disposed=true;view.current?.destroy();view.current=null;};
   },[retry,enabled]);
@@ -74,6 +76,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   useEffect(()=>{view.current?.setReduced(paused||!allowed);},[paused,allowed]);
   useEffect(()=>{view.current?.setWalls(props.walls??"auto");},[props.walls]);
   useEffect(()=>{view.current?.setMoveMode(props.moveMode??false);},[props.moveMode]);
+  useEffect(()=>{view.current?.setAnchor(props.anchor??null);},[props.anchor]);
   if(!enabled)return null;
   return <div className={s.scene} data-testid="room-3d"><div ref={node} className={s.sceneMount} inert={!allowed}/>
     {workspace&&plannerView==="3d"&&workspace.section!=="roommates"&&ready&&!error&&<CollaborationOverlay surface="scene" dynamic projection={{read:(x,y)=>view.current?.readCursor(x,y)??null,draw:(x,y)=>view.current?.projectCursor(x,y)??null}} pins={data.items.map(f=>{const b=footprint(f);return {id:f.id,label:f.label,x:(b.x+b.w/2)/props.room.lengthFt,y:(b.y+b.h/2)/props.room.widthFt};})}/>}

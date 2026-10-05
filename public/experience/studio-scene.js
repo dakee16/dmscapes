@@ -44,6 +44,9 @@ export function createStudioScene(container, options) {
   const ray=new T.Raycaster(),ndc=new T.Vector2(),plane=new T.Plane(new T.Vector3(0,1,0),0);
   const marker=new T.Box3Helper(new T.Box3(),0x2b4eff);marker.visible=false;scene.add(marker);
   const guides=new T.Group();scene.add(guides);
+  // The selected piece: a dashed cobalt ring on the floor around its footprint, and (when the page gives one) a card that follows it.
+  const ring=new T.Mesh(new T.BufferGeometry(),new T.MeshBasicMaterial({color:0x2b4eff,side:T.DoubleSide,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2}));
+  ring.visible=false;ring.renderOrder=3;scene.add(ring);let ringKey="",anchor=null;const pieceBox=new T.Box3();
   const openingGhost=new T.Mesh(new T.BoxGeometry(1,1,1),new T.MeshBasicMaterial({color:0x2b4eff,transparent:true,opacity:.45,depthTest:false}));
   openingGhost.visible=false;openingGhost.renderOrder=10;scene.add(openingGhost);
   const lineMat=new T.LineDashedMaterial({color:0x2b4eff,dashSize:.15,gapSize:.1,transparent:true,opacity:.65});
@@ -109,15 +112,46 @@ export function createStudioScene(container, options) {
     for(const opening of openingGroups)opening.visible=walls!=="hidden";
     ground.visible=mode!=="inside";
   }
+  /** A dashed rounded rectangle a little outside a w × d footprint, as flat quads on the floor. */
+  function ringGeometry(w,d){
+    const hw=w/2+.25,hd=d/2+.25,r=Math.min(.5,hw,hd),path=[];
+    for(const [cx,cz,a0] of [[hw-r,hd-r,0],[-hw+r,hd-r,Math.PI/2],[-hw+r,-hd+r,Math.PI],[hw-r,-hd+r,Math.PI*1.5]])
+      for(let k=0;k<=6;k++){const a=a0+k/6*Math.PI/2;path.push([cx+Math.cos(a)*r,cz+Math.sin(a)*r]);}
+    path.push(path[0]);
+    const pos=[],half=.04,dash=.34,gap=.2;let along=0;
+    for(let i=1;i<path.length;i++){
+      const [ax,az]=path[i-1],[bx,bz]=path[i],len=Math.hypot(bx-ax,bz-az);if(len<1e-6)continue;
+      const nx=-(bz-az)/len*half,nz=(bx-ax)/len*half;
+      for(let t=0;t<len;){
+        const phase=(along+t)%(dash+gap),on=phase<dash,step=Math.max(1e-4,Math.min(len-t,(on?dash:dash+gap)-phase));
+        if(on){const x0=ax+(bx-ax)*t/len,z0=az+(bz-az)*t/len,x1=ax+(bx-ax)*(t+step)/len,z1=az+(bz-az)*(t+step)/len;
+          pos.push(x0-nx,0,z0-nz,x1-nx,0,z1-nz,x1+nx,0,z1+nz,x0-nx,0,z0-nz,x1+nx,0,z1+nz,x0+nx,0,z0+nz);}
+        t+=step;
+      }
+      along+=len;
+    }
+    const g=new T.BufferGeometry();g.setAttribute("position",new T.Float32BufferAttribute(pos,3));return g;
+  }
   function showLabel(){
+    const hideAnchor=()=>{if(anchor)anchor.style.visibility="hidden";};
     const selectedOpening=data?.editOpenings&&openingNodes.get(data?.selectedOpening);
-    if(selectedOpening){marker.box.setFromObject(selectedOpening);marker.visible=true;label.style.display="none";return;}
-    const m=meshes.get(data?.selectedId);if(!m){marker.visible=false;label.style.display="none";return;}
-    marker.box.setFromObject(m.group);marker.visible=true;
-    const p=new T.Vector3();marker.box.getCenter(p);p.y=marker.box.max.y+.18;p.project(camera);
-    if(Math.abs(p.x)>1||Math.abs(p.y)>1||p.z>1){label.style.display="none";return;}
-    label.textContent=drag?.id===m.item.id?m.item.label+" · "+(m.group.position.x-m.item.footW/2).toFixed(1)+" × "+(m.group.position.z-m.item.footD/2).toFixed(1)+" ft":m.item.label;
-    label.style.display="block";label.style.left=((p.x+1)*width/2)+"px";label.style.top=((-p.y+1)*height/2)+"px";
+    if(selectedOpening){marker.box.setFromObject(selectedOpening);marker.visible=true;ring.visible=false;label.style.display="none";hideAnchor();return;}
+    marker.visible=false;
+    const m=meshes.get(data?.selectedId);if(!m){ring.visible=false;label.style.display="none";hideAnchor();return;}
+    const key=m.item.footW+"x"+m.item.footD;if(key!==ringKey){ringKey=key;ring.geometry.dispose();ring.geometry=ringGeometry(m.item.footW,m.item.footD);}
+    ring.position.set(m.group.position.x,.09,m.group.position.z);ring.visible=true;
+    pieceBox.setFromObject(m.group);
+    const p=new T.Vector3();pieceBox.getCenter(p);p.y=pieceBox.max.y+.18;p.project(camera);
+    if(Math.abs(p.x)>1||Math.abs(p.y)>1||p.z>1){label.style.display="none";hideAnchor();return;}
+    let x=(p.x+1)*width/2,y=(-p.y+1)*height/2;const dragging=drag?.id===m.item.id&&drag.moved;
+    // The page's card sits above the piece, kept inside the view and clear of the top controls; while dragging, the small label shows the position instead.
+    if(anchor&&!dragging){
+      const w=anchor.offsetWidth,h=anchor.offsetHeight;x=Math.max(8,Math.min(width-w-8,x-w/2));y=Math.max(68,Math.min(height-h-8,y-h-10));
+      anchor.style.transform="translate("+Math.round(x)+"px,"+Math.round(y)+"px)";anchor.style.visibility="visible";label.style.display="none";return;
+    }
+    hideAnchor();
+    label.textContent=dragging?m.item.label+" · "+(m.group.position.x-m.item.footW/2).toFixed(1)+" × "+(m.group.position.z-m.item.footD/2).toFixed(1)+" ft":m.item.label;
+    label.style.display="block";label.style.left=x+"px";label.style.top=y+"px";
   }
   let postFailed=false;
   function frame(time){
@@ -403,14 +437,17 @@ export function createStudioScene(container, options) {
       const p=new T.Vector3(x*data.room.lengthFt,.01,y*data.room.widthFt).project(camera);
       return p.z<-1||p.z>1?null:{x:(p.x+1)*width/2,y:(1-p.y)*height/2};
     },
-    setWalls:v=>{walls=v;request();},setMoveMode:v=>{dragMode=v;},
+    setWalls:v=>{walls=v;request();},setAnchor:el=>{if(anchor&&anchor!==el)anchor.style.visibility="hidden";anchor=el;request();},setMoveMode:v=>{dragMode=v;},
     setReduced:v=>{options.reduced=v;if(v){assemblyStart=0;tween=null;for(const m of meshes.values()){m.group.scale.setScalar(1);m.group.position.y=m.item.elevation;}shadowsDirty=true;request();}},
-    exportPNG(){
-      // A full-quality frame (ambient occlusion on) without the selection box or guides.
-      marker.visible=false;guides.visible=false;label.style.display="none";
+    exportPNG(ratio){
+      // A full-quality frame (ambient occlusion on) without the selection ring, box, card or guides; optionally at a set pixel ratio (2 = a 2x image).
+      marker.visible=false;guides.visible=false;ring.visible=false;label.style.display="none";
+      const before=renderer.getPixelRatio(),resize=ratio&&ratio!==before,setRatio=r=>{renderer.setPixelRatio(r);renderer.setSize(width,height,false);composer?.setPixelRatio(r);};
+      if(resize)setRatio(ratio);
       renderer.shadowMap.needsUpdate=true;
       if(composer&&!postFailed){try{composer.render();}catch{postFailed=true;renderer.render(scene,camera);}}else renderer.render(scene,camera);
       const out=document.createElement("canvas");out.width=canvas.width;out.height=canvas.height;const ctx=out.getContext("2d");ctx.drawImage(canvas,0,0);
+      if(resize)setRatio(before);
       const fs=Math.max(14,out.width*.016);ctx.font="600 "+fs+"px system-ui";const text="dormscape.us · Room concept",tw=ctx.measureText(text).width;
       ctx.fillStyle="#fafaf8";ctx.fillRect(out.width-tw-fs*4.3,out.height-fs*3,tw+fs*3.8,fs*2.2);
       if(brandMark.complete&&brandMark.naturalWidth)ctx.drawImage(brandMark,out.width-tw-fs*3.9,out.height-fs*2.8,fs*1.8,fs*1.8);
@@ -418,7 +455,7 @@ export function createStudioScene(container, options) {
     },
     destroy(){disposed=true;cancelAnimationFrame(raf);clearTimeout(settleTimer);resize.disconnect();document.removeEventListener("visibilitychange",visible);
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
-      clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();marker.material.dispose();clearRoom();shadowOnly.dispose();
+      clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();ring.geometry.dispose();ring.material.dispose();marker.material.dispose();clearRoom();shadowOnly.dispose();
       ground.geometry.dispose();ground.material.dispose();envMap.dispose();nightRoot.children.forEach(o=>o.dispose?.());composer?.dispose?.();gtao?.dispose?.();kit.dispose();renderer.dispose();renderer.forceContextLoss();label.remove();canvas.remove();}
   };
 }
