@@ -4,7 +4,7 @@
 
 The whole front end is being rebuilt from `design-handoff/`. Read `design-handoff/README.md` first, then `NOTES.md` and `MOTION.md`, then the `.dc.html` files for whatever you're building. Those files are the spec (desktop 1440, phone 390): match layout, type, colors, spacing and copy, rebuilt as responsive Next.js + TypeScript + Tailwind components.
 
-- All work goes on the `redesign` branch. Nothing merges to `main` until the owner says so. Make small, clearly named commits and push as you go so the Vercel preview stays current.
+- Work on a feature branch off `main`, push it, and open a PR into `main`; the owner checks the Vercel preview and merges it. Never commit or merge to `main` directly. Make small, clearly named commits.
 - Keep everything working: Supabase auth (Google and email), Stripe checkout and credits, saving, generation, Amazon affiliate links with our tag, PostHog events, Resend emails. Restyle around existing logic; change data flows only where a new feature needs it.
 - Prices, credits and plan features come from code (`lib/plan.ts`) and Stripe config, never from numbers in the designs. School, hall and room counts and dimensions come from the school data (`lib/schools.ts`), never hardcoded.
 - Keep live copy where it exists. Don't invent stats. Legal page text stays as it is.
