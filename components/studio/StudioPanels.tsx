@@ -4,6 +4,7 @@ import { usePlannerStore } from "@/lib/store";
 import { footprint } from "@/components/canvas/geometry";
 import { constrainedPosition, FLOOR_FINISHES, FLOOR_LABELS, itemElevation, itemHeight, LIGHT_LABELS, LIGHTING_PRESETS, modelKind, roomOutline, studioSettings } from "@/lib/studio";
 import { OPENING_DRAG_TYPE, type OpeningControls } from "@/lib/room-editing";
+import { MoonIcon, SunIcon, SunsetIcon } from "@/components/studio-ui/icons";
 import s from "./Studio.module.css";
 
 export function NumberField({label,value,min=0,max=60,step=.1,disabled=false,onCommit}:{label:string;value:number;min?:number;max?:number;step?:number;disabled?:boolean;onCommit:(n:number)=>void|boolean}){
@@ -83,16 +84,29 @@ function finishSwatch(key: string, color: string) {
   return `linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px) 0 0 / 13px 13px, linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px) 0 0 / 13px 13px, ${color}`;
 }
 
+const LIGHT_ICONS={day:SunIcon,evening:SunsetIcon,night:MoonIcon};
+/** Day / Golden hour / Night, with icons. Used in the Room tab, over the 3D room and in the phone sheet. */
+export function LightSwitch({room,className=s.seg}:{room:SelectedRoom;className?:string}){
+  const lighting=studioSettings(room.studio).lighting,update=usePlannerStore(st=>st.updateStudio);
+  return <div className={className} role="group" aria-label="Light">{LIGHTING_PRESETS.map(l=>{const Icon=LIGHT_ICONS[l];
+    return <button key={l} type="button" title={LIGHT_LABELS[l]} aria-pressed={lighting===l} onClick={()=>update({lighting:l})}><Icon size={16}/><span>{LIGHT_LABELS[l]}</span></button>;})}</div>;
+}
+export function FloorSwatches({room}:{room:SelectedRoom}){
+  const floor=studioSettings(room.studio).floor,update=usePlannerStore(st=>st.updateStudio);
+  return <div className={s.floorSwatches} role="group" aria-label="Floor">{Object.entries(FLOOR_FINISHES).map(([key,color])=><button key={key} type="button" aria-label={FLOOR_LABELS[key as keyof typeof FLOOR_LABELS]} title={FLOOR_LABELS[key as keyof typeof FLOOR_LABELS]} aria-pressed={floor===key} onClick={()=>update({floor:key as typeof floor})} style={{background:finishSwatch(key,color)}}/>)}</div>;
+}
+
 /** Room finishes for the 3D view (Studio3D.dc.html). Preview only: the list never changes. */
 export function StyleDetails({room}:{room:SelectedRoom}){
  const settings=studioSettings(room.studio),update=usePlannerStore(st=>st.updateStudio);
  const custom=!WALLS.some(([,c])=>c===settings.wallColor.toLowerCase());
  return <><h2 className={s.eyebrowInk}>Room</h2>
- <fieldset className={s.swatchSet}><legend>Floor finish</legend><div className={s.floorSwatches}>{Object.entries(FLOOR_FINISHES).map(([key,color])=><button key={key} type="button" aria-label={FLOOR_LABELS[key as keyof typeof FLOOR_LABELS]} title={FLOOR_LABELS[key as keyof typeof FLOOR_LABELS]} aria-pressed={settings.floor===key} onClick={()=>update({floor:key as typeof settings.floor})} style={{background:finishSwatch(key,color)}}/>)}</div></fieldset>
- <fieldset className={s.swatchSet}><legend>Wall color</legend><div className={s.wallSwatches}>
+ <fieldset className={s.swatchSet}><legend>Light</legend><LightSwitch room={room}/></fieldset>
+ <fieldset className={s.swatchSet}><legend>Floor</legend><FloorSwatches room={room}/></fieldset>
+ <fieldset className={s.swatchSet}><legend>Walls</legend><div className={s.wallSwatches}>
    {WALLS.map(([name,color])=><button key={name} type="button" aria-label={name} title={name} aria-pressed={settings.wallColor.toLowerCase()===color} onClick={()=>update({wallColor:color})} style={{background:color}}/>)}
    <label className={s.customWall} data-active={custom||undefined} title="Custom wall color"><span className={s.srOnly}>Custom wall color</span><input aria-label="Wall preview color" type="color" value={settings.wallColor} onChange={e=>update({wallColor:e.target.value})}/></label>
  </div></fieldset>
- <fieldset className={s.swatchSet}><legend>Lighting</legend><div className={s.seg}>{LIGHTING_PRESETS.map(l=><button key={l} type="button" aria-pressed={settings.lighting===l} onClick={()=>update({lighting:l})}>{LIGHT_LABELS[l]}</button>)}</div></fieldset>
+ <label className={s.dressVibe}><input type="checkbox" checked={settings.dressVibe} onChange={e=>update({dressVibe:e.target.checked})}/><span><strong>Dress the room in my vibe</strong><small>Bedding, rug and decor take your vibe&apos;s colors.</small></span></label>
  <p className={s.finishNote}>Finishes, preview colors and lighting are only for seeing the room. They never change your shopping list. Check your residence hall rules before changing finishes.</p></>;
 }
