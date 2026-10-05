@@ -68,6 +68,12 @@ Spec: `design-handoff/3d-studio/` (`scene.js` values, `renders/3d-hero.jpg`). Fi
     - The "Dress the room in my vibe" checkbox (`dressVibe`).
     - The finish note, unchanged.
     - `LightSwitch` and `FloorSwatches` are shared components.
+  - **Walk in** (`WalkIn.tsx`, used by the planner and My Room studios):
+    - **View:** eye level 5.3 ft, fov 52, with the wall colour (dimmed by the light preset) as the ceiling. It starts at the most open spot (nearest the door on a tie), facing the window.
+    - **Moving:** arrows and WASD work only while the canvas has focus (listeners on the canvas, released on blur). ↑/↓ or W/S walk, ←/→ turn, A/D step sideways. Drag looks around.
+    - **Collisions:** you stay 0.7 ft inside the walls, out of closets, and out of anything taller than a rug that sits below head height. You slide along obstacles instead of stopping.
+    - **Overlays:** Back to dollhouse (top-left) and a mini-map (top-right) showing the outline, door, window, piece blocks and a dot with a view cone, which the scene moves directly. On fine pointers, the hint "Walk with the arrow keys · drag to look around" sits at bottom-left; on touch screens, a hold-to-move pad sits at bottom-right. The camera pill hides while walking.
+    - **Sync:** the scene reports camera-mode changes (`onCamera`), so Focus on a piece leaves Walk in cleanly. Resizing no longer resets your walk position.
   - **Phones (≤780 px, the studio's existing breakpoint):** the room on top with the camera pill, then a sheet with the selected piece (Rotate, Swap), the light switch, floor swatches and the budget bar with List. Arrange / Room / List still open the full panel. My Room's camera buttons use the same Dollhouse / Top / Walk in names.
 
 ## Test end to end with real keys
