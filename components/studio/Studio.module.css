@@ -187,7 +187,7 @@
   display: inline-flex; align-items: center; justify-content: center; height: 40px; min-width: 40px; padding: 0 16px; border: 0; border-radius: 999px;
   background: transparent; color: #fff; font: 700 14px/1 var(--ds-sans); cursor: pointer; white-space: nowrap;
 }
-.cameraBar button:hover:not(:disabled) { background: rgba(255, 255, 255, 0.12); }
+.cameraBar button:hover:not(:disabled):not([aria-pressed="true"]) { background: rgba(255, 255, 255, 0.12); }
 .cameraBar button[aria-pressed="true"] { background: var(--ds-yellow); color: var(--ds-ink); font-weight: 800; }
 .cameraBar button:disabled { opacity: 0.4; cursor: default; }
 .cameraBar button[aria-label] { padding: 0; }
