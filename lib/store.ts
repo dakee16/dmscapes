@@ -228,7 +228,7 @@ export const usePlannerStore = create<PlannerState>()(
         return {furniture:items.map(f=>f.id===id?after:f.parent_id===id?
           {...f,elevation_ft:Math.max(0,itemElevation(f,items)+lift+(itemElevation(f,items)>0?surfaceChange:0))}:f)};
       }),
-      updateStudio: patch => set(s => ({room:s.room?{...s.room,studio:{ceilingFt:8,floor:"oak",wallColor:"#f3eee4",lighting:"day",...s.room.studio,...patch}}:null})),
+      updateStudio: patch => set(s => ({room:s.room?{...s.room,studio:{ceilingFt:8,floor:"oak",wallColor:"#f3eee4",lighting:"day",dressVibe:true,...s.room.studio,...patch}}:null})),
       updateRoomGeometry: (outline, origin = {x:0,y:0}) => set(s => {
         if(!s.room || roomEditError(outline) || !Number.isFinite(origin.x) || !Number.isFinite(origin.y))return {};
         const lengthFt=Math.max(...outline.points.map(p=>p.x)),widthFt=Math.max(...outline.points.map(p=>p.y));

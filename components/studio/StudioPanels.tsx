@@ -2,7 +2,7 @@
 import type { FurnitureItem, Product, SelectedRoom, WallOpening } from "@/lib/types";
 import { usePlannerStore } from "@/lib/store";
 import { footprint } from "@/components/canvas/geometry";
-import { constrainedPosition, FLOOR_FINISHES, itemElevation, itemHeight, modelKind, roomOutline, studioSettings } from "@/lib/studio";
+import { constrainedPosition, FLOOR_FINISHES, FLOOR_LABELS, itemElevation, itemHeight, LIGHT_LABELS, LIGHTING_PRESETS, modelKind, roomOutline, studioSettings } from "@/lib/studio";
 import { OPENING_DRAG_TYPE, type OpeningControls } from "@/lib/room-editing";
 import s from "./Studio.module.css";
 
@@ -88,11 +88,11 @@ export function StyleDetails({room}:{room:SelectedRoom}){
  const settings=studioSettings(room.studio),update=usePlannerStore(st=>st.updateStudio);
  const custom=!WALLS.some(([,c])=>c===settings.wallColor.toLowerCase());
  return <><h2 className={s.eyebrowInk}>Room</h2>
- <fieldset className={s.swatchSet}><legend>Floor finish</legend><div className={s.floorSwatches}>{Object.entries(FLOOR_FINISHES).map(([key,color])=><button key={key} type="button" aria-label={key} title={key} aria-pressed={settings.floor===key} onClick={()=>update({floor:key as typeof settings.floor})} style={{background:finishSwatch(key,color)}}/>)}</div></fieldset>
+ <fieldset className={s.swatchSet}><legend>Floor finish</legend><div className={s.floorSwatches}>{Object.entries(FLOOR_FINISHES).map(([key,color])=><button key={key} type="button" aria-label={FLOOR_LABELS[key as keyof typeof FLOOR_LABELS]} title={FLOOR_LABELS[key as keyof typeof FLOOR_LABELS]} aria-pressed={settings.floor===key} onClick={()=>update({floor:key as typeof settings.floor})} style={{background:finishSwatch(key,color)}}/>)}</div></fieldset>
  <fieldset className={s.swatchSet}><legend>Wall color</legend><div className={s.wallSwatches}>
    {WALLS.map(([name,color])=><button key={name} type="button" aria-label={name} title={name} aria-pressed={settings.wallColor.toLowerCase()===color} onClick={()=>update({wallColor:color})} style={{background:color}}/>)}
    <label className={s.customWall} data-active={custom||undefined} title="Custom wall color"><span className={s.srOnly}>Custom wall color</span><input aria-label="Wall preview color" type="color" value={settings.wallColor} onChange={e=>update({wallColor:e.target.value})}/></label>
  </div></fieldset>
- <fieldset className={s.swatchSet}><legend>Lighting</legend><div className={s.seg}><button type="button" aria-pressed={settings.lighting==="day"} onClick={()=>update({lighting:"day"})}>Day</button><button type="button" aria-pressed={settings.lighting==="evening"} onClick={()=>update({lighting:"evening"})}>Evening</button></div></fieldset>
+ <fieldset className={s.swatchSet}><legend>Lighting</legend><div className={s.seg}>{LIGHTING_PRESETS.map(l=><button key={l} type="button" aria-pressed={settings.lighting===l} onClick={()=>update({lighting:l})}>{LIGHT_LABELS[l]}</button>)}</div></fieldset>
  <p className={s.finishNote}>Finishes, preview colors and lighting are only for seeing the room. They never change your shopping list. Check your residence hall rules before changing finishes.</p></>;
 }

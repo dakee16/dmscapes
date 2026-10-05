@@ -6,7 +6,7 @@ import {canUse3D} from "@/lib/plan";
 import {useUpgrade} from "@/lib/upgrade-context";
 import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId, WallOpening } from "@/lib/types";
 import { useExperienceMotion } from "@/components/experience/MotionProvider";
-import { styleById } from "@/lib/styles";
+import { roomTheme, styleById, type RoomTheme } from "@/lib/styles";
 import { footprint, pointInPolygon } from "@/components/canvas/geometry";
 import { constrainedPosition, itemElevation, itemHeight, modelKind, roomOutline, studioSettings, visibleFurniture } from "@/lib/studio";
 import { productForFurniture, productVisual } from "@/lib/product-model";
@@ -19,10 +19,12 @@ import CollaborationOverlay from "@/components/workspace/CollaborationOverlay";
 export type CameraView="room"|"top"|"inside";
 export interface RoomSceneHandle {exportPNG:()=>string|null;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;}
 type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;footW:number;footD:number;locked:boolean;bare:boolean;product?:ReturnType<typeof productVisual>};
-type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];selectedId:string|null;selectedOpening:number|null;editOpenings:boolean;interior:{x:number;y:number}};
+type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];theme:RoomTheme;selectedId:string|null;selectedOpening:number|null;editOpenings:boolean;interior:{x:number;y:number}};
 type View={readCursor:(x:number,y:number)=>{x:number;y:number}|null;projectCursor:(x:number,y:number)=>{x:number;y:number}|null;update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;exportPNG:()=>string;destroy:()=>void};
 type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;openingDragType:string;previewOpening:(target:number|WallOpening["kind"],x:number,y:number)=>WallOpening|null;onSelectOpening:(index:number|null)=>void;onOpeningChange:(index:number|null,opening:WallOpening)=>void;onReady:()=>void;onError:(message:string)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
 export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;openingControls?:OpeningControls;onSelect?:(id:string|null)=>void;onMove?:(id:string,x:number,y:number)=>void;onFallback?:()=>void;}
+/** Soft goods the vibe dresses when "Dress the room in my vibe" is on (a piece's own preview color still wins). */
+const DRESSED=new Set(["bed","bunk","rug","blanket","pillow","decor","curtains","macrame"]);
 const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(props,ref){
   const workspace=useWorkspace();
   const plannerView=usePlannerStore(st=>st.plannerView);
@@ -37,12 +39,12 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   if(!pointInPolygon(interior.x,interior.y,outline.points)){
     outer:for(let y=.5;y<props.room.widthFt;y+=.5)for(let x=.5;x<props.room.lengthFt;x+=.5)if(pointInPolygon(x,y,outline.points)){interior={x,y};break outer;}
   }
-  const data:SceneData={room:props.room,outline,settings,interior,palette:styleById(props.style).palette,
+  const data:SceneData={room:props.room,outline,settings,interior,palette:styleById(props.style).palette,theme:roomTheme(props.style),
     selectedId:props.selectedId,selectedOpening:props.openingControls?.selected??null,editOpenings:allowed&&!props.readOnly&&!!props.openingControls,items:visibleFurniture(props.items,props.hidden,props.excluded).map(f=>{
       const b=footprint(f),choice=productForFurniture(f,props.products??[]);
       const product=choice && (!f.built_in || f.type==="bed") ? productVisual(choice) : undefined;
       const kind=f.built_in||f.inventory?modelKind(f):product?.kind??modelKind(f);
-      return {...f,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||product?.color,kind,height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:!allowed||Boolean(props.readOnly)||props.locked.includes(f.id)};
+      return {...f,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||(settings.dressVibe&&DRESSED.has(kind)?undefined:product?.color),kind,height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:!allowed||Boolean(props.readOnly)||props.locked.includes(f.id)};
     })};
   const latest=useRef(data);latest.current=data;
   useImperativeHandle(ref,()=>({exportPNG:()=>access.current?view.current?.exportPNG()??null:null,preset:m=>view.current?.preset(m),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);

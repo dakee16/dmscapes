@@ -48,7 +48,7 @@ function products(value:unknown):Product[]|null {
 export function sanitizeStudio(value:unknown):StudioSettings|null{
   if(!value||typeof value!=="object"||Array.isArray(value))return null;
   const v=value as Record<string,unknown>;
-  if(!finite(v.ceilingFt,6,16)||!["oak","walnut","concrete","carpet"].includes(String(v.floor))||typeof v.wallColor!=="string"||!/^#[0-9a-f]{6}$/i.test(v.wallColor)||!["day","evening"].includes(String(v.lighting)))return null;
+  if(!finite(v.ceilingFt,6,16)||!["oak","walnut","concrete","carpet"].includes(String(v.floor))||typeof v.wallColor!=="string"||!/^#[0-9a-f]{6}$/i.test(v.wallColor)||!["day","evening","night"].includes(String(v.lighting))||(v.dressVibe!==undefined&&typeof v.dressVibe!=="boolean"))return null;
   return studioSettings(v as unknown as StudioSettings);
 }
 export function sanitizeEditor(value:unknown):SavedEditorState|null {
