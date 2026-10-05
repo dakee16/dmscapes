@@ -8,6 +8,13 @@
   padding: 0 20px;
 }
 
+/* /plan renders the School step on the server. A visitor with a planner to
+   restore sees the loader instead until the restored view is ready. */
+.restore, .restoreStep { display: contents; }
+.restoreLoader { display: none; }
+.restore[data-restoring] > .restoreLoader { display: grid; }
+.restore[data-restoring] > .restoreStep { display: none; }
+
 /* ---------- "Your room" resume card on the school list ---------- */
 .resume {
   display: flex;
