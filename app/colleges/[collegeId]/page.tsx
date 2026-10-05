@@ -15,7 +15,7 @@ import { SCHOOLS, formatDims, getSchool, publishedDimsCount } from "@/lib/school
 import { shortName } from "@/lib/school-names";
 import { isPublished, roomFamily, roomName, sqFtOf, ft } from "@/lib/room-preview";
 import { formatRoomType } from "@/lib/format";
-import { pageMetadata, fitDescription, breadcrumbJsonLd, itemListJsonLd, absoluteUrl } from "@/lib/seo";
+import { pageMetadata, fitDescription, breadcrumbJsonLd, postalAddressJsonLd, itemListJsonLd, absoluteUrl } from "@/lib/seo";
 import type { RoomSummary, SchoolSummary } from "@/lib/types";
 import css from "@/components/college/College.module.css";
 
@@ -116,6 +116,7 @@ export default async function CollegePage(props: {
 
   const withDims = publishedDimsCount(school);
   const place = [school.city, school.state].filter(Boolean).join(", ");
+  const address = postalAddressJsonLd(school.city, school.state);
   const short = shortName(school);
   const roomTypes = school.dorms.reduce((n, d) => n + d.rooms.length, 0);
   const crumbs = [
@@ -174,7 +175,7 @@ export default async function CollegePage(props: {
             "@type": "CollegeOrUniversity",
             name: school.name,
             url: absoluteUrl(`/colleges/${school.id}`),
-            ...(place ? { address: place } : {}),
+            ...(address ? { address } : {}),
           },
         ]}
       />
