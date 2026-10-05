@@ -12,7 +12,7 @@ const LIGHT={
   evening:{sun:"#ffab5e",sunI:4.2,elev:13,az:214,env:.38,hemiSky:"#ffd9b3",hemiGround:"#9a7a5c",hemiI:.42,exposure:1.02,sky:"#f6c68f",glass:.45,fill:"#ffcf9e",fillI:5},
   night:  {sun:"#9bb3ff",sunI:0,elev:30,az:200,env:.07,hemiSky:"#29335a",hemiGround:"#1b1612",hemiI:.18,exposure:1.08,sky:"#1b2440",glass:.95,fill:"#7d9cff",fillI:1.5},
 };
-const PAPER="#f4f3ee",WALL_T=.42,PLINTH=.45,SETTLE_MS=150,NIGHT_LIGHTS=6;
+const PAPER="#f4f3ee",WALL_T=.42,PLINTH=.45,SETTLE_MS=150,NIGHT_LIGHTS=6,EYE=5.3,WALK_R=.7;
 // Phones and low-power devices: lower pixel ratio, smaller shadow map, half-resolution ambient occlusion.
 const LOW=(matchMedia("(pointer: coarse)").matches&&Math.min(screen.width,screen.height)<768)||(navigator.hardwareConcurrency||8)<=4||(navigator.deviceMemory||8)<=4;
 
@@ -41,6 +41,8 @@ export function createStudioScene(container, options) {
   const roomRoot=new T.Group(),itemRoot=new T.Group();scene.add(roomRoot,itemRoot);
   const meshes=new Map(),wallGroups=[],openingGroups=[],openingNodes=new Map();let roomKey="",nightKey="",data=null,disposed=false,raf=0,assemblyStart=0,ready=false;
   let shadowsDirty=true,lastShadow=0,lastMotion=0,settleTimer=0,light=LIGHT.day;
+  // Walk in: keys held on the canvas, the on-screen pad, the mini-map's marker, and the "ceiling" colour behind the open top.
+  const keys=new Set(),pad={move:0,turn:0},paper=new T.Color(PAPER),ceiling=new T.Color();let lastStep=0,walker=null,roomNormals=[];
   const ray=new T.Raycaster(),ndc=new T.Vector2(),plane=new T.Plane(new T.Vector3(0,1,0),0);
   const marker=new T.Box3Helper(new T.Box3(),0x2b4eff);marker.visible=false;scene.add(marker);
   const guides=new T.Group();scene.add(guides);
@@ -164,8 +166,22 @@ export function createStudioScene(container, options) {
         m.group.position.y=m.item.elevation+(options.reduced?0:(1-q)*(1-q)*1.3);m.group.scale.setScalar(.94+.06*q);if(q<1)assembling=true;}
       if(!assembling){assemblyStart=0;shadowsDirty=true;}else more=true;
     }
+    if(mode==="inside"&&data){
+      const w=walkInput(),dt=Math.min(.05,Math.max(0,(time-lastStep)/1000));
+      if(w.move||w.turn||w.strafe){
+        angle-=w.turn*1.8*dt;const fx=Math.sin(angle),fz=-Math.cos(angle),speed=4.5*dt;
+        const nx=eye.x+(fx*w.move+Math.cos(angle)*w.strafe)*speed,nz=eye.z+(fz*w.move+Math.sin(angle)*w.strafe)*speed,stuck=!walkable(eye.x,eye.z);
+        const ok=(x,z)=>walkable(x,z)||stuck&&insideRoom(x,z);
+        // Slide along walls and furniture instead of stopping dead.
+        if(ok(nx,nz)){eye.x=nx;eye.z=nz;}else if(ok(nx,eye.z))eye.x=nx;else if(ok(eye.x,nz))eye.z=nz;
+        more=true;
+      }
+    }
+    lastStep=time;
     if(more)moving();
+    renderer.setClearColor(mode==="inside"?ceiling:paper);
     cameraUpdate();camera.updateMatrixWorld();showLabel();
+    if(walker&&mode==="inside")walker.setAttribute("transform","translate("+eye.x.toFixed(2)+" "+eye.z.toFixed(2)+") rotate("+(angle*180/Math.PI).toFixed(1)+")");
     const now=performance.now(),settling=now-lastMotion<SETTLE_MS,pieceMoving=!!(drag?.id&&drag.moved)||assemblyStart>0;
     // Shadows: whenever the room changed, at most every 120 ms while a piece is being dragged.
     if(shadowsDirty&&(!pieceMoving||now-lastShadow>120)){renderer.shadowMap.needsUpdate=true;lastShadow=now;shadowsDirty=pieceMoving;}
@@ -215,7 +231,7 @@ export function createStudioScene(container, options) {
     let area=0;pts.forEach((p,i)=>{const b=pts[(i+1)%N];area+=p.x*b.y-b.x*p.y;});
     const out=area>0?-1:1;
     // Each edge's outward normal (in plan x/y); the plinth is the outline grown by the wall thickness.
-    const normals=pts.map((a,i)=>{const b=pts[(i+1)%N],len=Math.hypot(b.x-a.x,b.y-a.y)||1,dx=(b.x-a.x)/len,dz=(b.y-a.y)/len;return area>0?{x:dz,y:-dx}:{x:-dz,y:dx};});
+    const normals=roomNormals=pts.map((a,i)=>{const b=pts[(i+1)%N],len=Math.hypot(b.x-a.x,b.y-a.y)||1,dx=(b.x-a.x)/len,dz=(b.y-a.y)/len;return area>0?{x:dz,y:-dx}:{x:-dz,y:dx};});
     const grown=pts.map((p,i)=>{const n1=normals[(i-1+N)%N],n2=normals[i],k=1+n1.x*n2.x+n1.y*n2.y||1;return {x:p.x+WALL_T*(n1.x+n2.x)/k,y:p.y+WALL_T*(n1.y+n2.y)/k};});
     const shape=new T.Shape();grown.forEach((p,i)=>i?shape.lineTo(p.x,-p.y):shape.moveTo(p.x,-p.y));shape.closePath();
     const wallColor=settings.wallColor,wallMat=new T.MeshStandardMaterial({color:wallColor,roughness:.92}),capMat=new T.MeshStandardMaterial({color:shade(wallColor,.9),roughness:.95});
@@ -306,6 +322,7 @@ export function createStudioScene(container, options) {
     if(win)fill.position.set(win.x-win.n.x*1.2,Math.min(h-.6,5.6),win.y-win.n.y*1.2);else fill.position.set(l/2,Math.min(h-.6,5.6),w/2);
     if(gtao)gtao.blendIntensity=data.settings.lighting==="night"?.7:1;
     kit.setNight(data.settings.lighting==="night");nightKey="";
+    ceiling.set(data.settings.wallColor).multiplyScalar(data.settings.lighting==="night"?.2:data.settings.lighting==="evening"?.8:.92);
   }
   /** Night: light only from the lamps, string lights and strips in the plan (or a dim room light if there are none). */
   function updateNightLights(){
@@ -341,10 +358,48 @@ export function createStudioScene(container, options) {
     if(first){target.set(next.room.lengthFt/2,1,next.room.widthFt/2);preset("room",true);if(!options.reduced)assemblyStart=performance.now();}
     request();
   }
+  function walkInput(){
+    const k=n=>keys.has(n),clamp=v=>Math.max(-1,Math.min(1,v));
+    return {move:clamp((k("arrowup")||k("w")?1:0)-(k("arrowdown")||k("s")?1:0)+pad.move),turn:clamp((k("arrowleft")?1:0)-(k("arrowright")?1:0)+pad.turn),strafe:(k("d")?1:0)-(k("a")?1:0)};
+  }
+  function insideRoom(x,z){
+    const p=data.outline.points;let c=false;
+    for(let i=0,j=p.length-1;i<p.length;j=i++){const a=p[i],b=p[j];if((a.y>z)!==(b.y>z)&&x<(b.x-a.x)*(z-a.y)/(b.y-a.y)+a.x)c=!c;}
+    return c;
+  }
+  /** Where you can stand: inside the walls (with a body's width to spare), clear of closets and of anything taller than a rug that sits below head height. */
+  function walkable(x,z){
+    if(!insideRoom(x,z))return false;
+    const p=data.outline.points;
+    for(let i=0;i<p.length;i++){const a=p[i],b=p[(i+1)%p.length],dx=b.x-a.x,dz=b.y-a.y,t=Math.max(0,Math.min(1,((x-a.x)*dx+(z-a.y)*dz)/(dx*dx+dz*dz||1)));
+      if(Math.hypot(a.x+dx*t-x,a.y+dz*t-z)<WALK_R)return false;}
+    for(const c of data.outline.closets)if(x>c.x_ft-.35&&x<c.x_ft+c.width_ft+.35&&z>c.y_ft-.35&&z<c.y_ft+c.depth_ft+.35)return false;
+    for(const m of meshes.values()){const f=m.item;if(f.height<.6||f.elevation>4.5)continue;
+      if(Math.abs(x-m.group.position.x)<f.footW/2+.35&&Math.abs(z-m.group.position.z)<f.footD/2+.35)return false;}
+    return true;
+  }
+  /** Walk in at the most open spot (nearest the door when it's a tie), facing the window, or the middle of the room. */
+  function walkStart(){
+    const {outline,room}=data,step=.5,cols=Math.ceil(room.lengthFt/step),rows=Math.ceil(room.widthFt/step),free=[];
+    for(let j=0;j<rows;j++)for(let i=0;i<cols;i++)free.push(walkable((i+.5)*step,(j+.5)*step));
+    let door={x:data.interior.x,z:data.interior.y};const d=outline.openings.find(o=>o.kind==="door");
+    const centre=o=>{const a=outline.points[o.edge],b=outline.points[(o.edge+1)%outline.points.length],t=(o.offset_ft+o.width_ft/2)/(Math.hypot(b.x-a.x,b.y-a.y)||1);return {x:a.x+(b.x-a.x)*t,z:a.y+(b.y-a.y)*t};};
+    if(d)door=centre(d);
+    let best={x:data.interior.x,z:data.interior.y},score=-Infinity;
+    for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
+      if(!free[j*cols+i])continue;let open=0;
+      for(let dj=-3;dj<=3;dj++)for(let di=-3;di<=3;di++)if(di*di+dj*dj<=9&&free[(j+dj)*cols+i+di]&&i+di>=0&&i+di<cols)open++;
+      const x=(i+.5)*step,z=(j+.5)*step,sc=open-.15*Math.hypot(x-door.x,z-door.z);if(sc>score){score=sc;best={x,z};}
+    }
+    const win=outline.openings.find(o=>o.kind==="window");let look=win?centre(win):{x:room.lengthFt/2,z:room.widthFt/2};
+    if(Math.hypot(look.x-best.x,look.z-best.z)<2)look={x:room.lengthFt/2,z:room.widthFt/2};
+    return {...best,angle:Math.atan2(look.x-best.x,-(look.z-best.z))};
+  }
+  function setMode(value){if(value!==mode){mode=value;options.onMode?.(value);}if(value!=="inside"){keys.clear();pad.move=pad.turn=0;}}
   function preset(value,immediate=false){
-    if(!data)return;mode=value;cancelDrag();
+    if(!data)return;setMode(value);cancelDrag();
     camera.fov=value==="inside"?52:30;camera.updateProjectionMatrix();
-    if(value==="inside"){eye.set(data.interior.x,Math.min(data.settings.ceilingFt-.5,4.8),data.interior.y);angle=0;polar=Math.PI/2;tween=null;request();return;}
+    if(value==="inside"){const start=walkStart();eye.set(start.x,Math.min(data.settings.ceilingFt-.5,EYE),start.z);angle=start.angle;polar=1.9;tween=null;request();return;}
     const l=data.room.lengthFt,w=data.room.widthFt,h=data.settings.ceilingFt,aspect=width/height;
     const vfov=camera.fov*Math.PI/180,hfov=2*Math.atan(Math.tan(vfov/2)*aspect);
     const to=new T.Vector3(l/2,value==="top"?0:h*.38,w/2);
@@ -354,7 +409,7 @@ export function createStudioScene(container, options) {
     else tween={start:performance.now(),a:angle,p:polar,r:radius,from:target.clone(),to,toA,toP,toR:r};request();
   }
   function focus(id){
-    const m=meshes.get(id);if(!m)return;mode="room";camera.fov=30;camera.updateProjectionMatrix();const to=m.group.position.clone();to.y+=m.item.height/2;
+    const m=meshes.get(id);if(!m)return;setMode("room");camera.fov=30;camera.updateProjectionMatrix();const to=m.group.position.clone();to.y+=m.item.height/2;
     tween={start:performance.now(),a:angle,p:polar,r:radius,from:target.clone(),to,toA:angle,toP:.95,toR:Math.max(8,m.item.footW*3.5,m.item.footD*3.5)};
     if(options.reduced){target.copy(to);radius=tween.toR;polar=.95;tween=null;}request();
   }
@@ -407,8 +462,10 @@ export function createStudioScene(container, options) {
   function cancelDrag(){if(drag?.openingIndex!==undefined){const node=openingNodes.get(drag.openingIndex);if(node)positionOpening(node,drag.opening,drag.opening.offset_ft);}openingGhost.visible=false;if(drag?.id){for(const m of meshes.values())m.group.position.set(m.item.x_ft+m.item.footW/2,m.item.elevation,m.item.y_ft+m.item.footD/2);shadowsDirty=true;}drag=null;clearGuides();}
   function cancel(e){pointers.delete(e.pointerId);pinch=0;cancelDrag();request();}
   function wheel(e){e.preventDefault();tween=null;radius=Math.max(4,Math.min(180,radius*Math.exp(e.deltaY*.001)));moving();request();}
+  const walkKey=e=>{const k=e.key.toLowerCase();return mode==="inside"&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&["arrowup","arrowdown","arrowleft","arrowright","w","a","s","d"].includes(k)?k:null;};
   function key(e){
     if(e.key==="Escape"){cancelDrag();options.onSelectOpening?.(null);options.onSelect?.(null);request();return;}
+    const k=walkKey(e);if(k){e.preventDefault();if(!keys.has(k)){keys.add(k);request();}return;}
     if(["ArrowLeft","ArrowRight","ArrowUp","ArrowDown","+","=","-"].includes(e.key)){
       e.preventDefault();tween=null;if(e.key==="ArrowLeft")angle+=.1;if(e.key==="ArrowRight")angle-=.1;
       if(e.key==="ArrowUp")polar=Math.max(.08,polar-.1);if(e.key==="ArrowDown")polar=Math.min(1.45,polar+.1);
@@ -416,14 +473,14 @@ export function createStudioScene(container, options) {
   }
   const resize=new ResizeObserver(()=>{const r=container.getBoundingClientRect();width=Math.max(1,r.width);height=Math.max(1,r.height);
     renderer.setSize(width,height,false);composer?.setPixelRatio(renderer.getPixelRatio());composer?.setSize(width,height);
-    camera.aspect=width/height;camera.updateProjectionMatrix();if(data)preset(mode,true);request();});resize.observe(container);
+    camera.aspect=width/height;camera.updateProjectionMatrix();if(data&&mode!=="inside")preset(mode,true);request();});resize.observe(container);
   function droppedOpening(e){
     if(!data?.editOpenings)return null;
     const kind=["door","window"].find(kind=>e.dataTransfer.types.includes(options.openingDragType+"-"+kind));
     if(!kind)return null;e.preventDefault();const p=wallPoint(e,0);
     return p?options.previewOpening?.(kind,p.x,p.z):null;
   }
-  const events={dragover:e=>{const opening=droppedOpening(e);e.dataTransfer.dropEffect=opening?"copy":"none";ghostOpening(opening);},dragleave:()=>ghostOpening(null),drop:e=>{const opening=droppedOpening(e);ghostOpening(null);if(opening)options.onOpeningChange?.(null,opening);},pointerdown:down,pointermove:move,pointerup:up,pointercancel:cancel,keydown:key};
+  const events={dragover:e=>{const opening=droppedOpening(e);e.dataTransfer.dropEffect=opening?"copy":"none";ghostOpening(opening);},dragleave:()=>ghostOpening(null),drop:e=>{const opening=droppedOpening(e);ghostOpening(null);if(opening)options.onOpeningChange?.(null,opening);},pointerdown:down,pointermove:move,pointerup:up,pointercancel:cancel,keydown:key,keyup:e=>{keys.delete(e.key.toLowerCase());},blur:()=>keys.clear()};
   for(const [name,fn]of Object.entries(events))canvas.addEventListener(name,fn);canvas.addEventListener("wheel",wheel,{passive:false});
   const visible=()=>request();document.addEventListener("visibilitychange",visible);
   return {update:sync,preset:m=>preset(m),focus,zoom:f=>{radius=Math.max(4,Math.min(180,radius*f));moving();request();},
@@ -437,7 +494,7 @@ export function createStudioScene(container, options) {
       const p=new T.Vector3(x*data.room.lengthFt,.01,y*data.room.widthFt).project(camera);
       return p.z<-1||p.z>1?null:{x:(p.x+1)*width/2,y:(1-p.y)*height/2};
     },
-    setWalls:v=>{walls=v;request();},setAnchor:el=>{if(anchor&&anchor!==el)anchor.style.visibility="hidden";anchor=el;request();},setMoveMode:v=>{dragMode=v;},
+    setWalls:v=>{walls=v;request();},setWalker:el=>{walker=el;request();},setWalkInput:v=>{pad.move=v.move??0;pad.turn=v.turn??0;request();},setAnchor:el=>{if(anchor&&anchor!==el)anchor.style.visibility="hidden";anchor=el;request();},setMoveMode:v=>{dragMode=v;},
     setReduced:v=>{options.reduced=v;if(v){assemblyStart=0;tween=null;for(const m of meshes.values()){m.group.scale.setScalar(1);m.group.position.y=m.item.elevation;}shadowsDirty=true;request();}},
     exportPNG(ratio){
       // A full-quality frame (ambient occlusion on) without the selection ring, box, card or guides; optionally at a set pixel ratio (2 = a 2x image).
