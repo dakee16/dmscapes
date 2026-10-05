@@ -5,7 +5,7 @@ import JsonLd from "@/components/site/JsonLd";
 import BlogBrowser from "@/components/blog/BlogBrowser";
 import { TOPICS, summarize } from "@/components/blog/topics";
 import { POSTS } from "@/content/blog";
-import { BLOG_BASE } from "@/lib/blog";
+import { BLOG_BASE, isoDateTime } from "@/lib/blog";
 import css from "@/components/blog/Blog.module.css";
 
 const DESCRIPTION =
@@ -53,8 +53,8 @@ export default function BlogIndexPage() {
       headline: p.title,
       description: p.description,
       url: `${BLOG_BASE}/blog/${p.slug}`,
-      datePublished: p.date,
-      dateModified: p.updated ?? p.date,
+      datePublished: isoDateTime(p.date),
+      dateModified: isoDateTime(p.updated ?? p.date),
     })),
   };
 

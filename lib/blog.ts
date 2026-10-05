@@ -19,6 +19,16 @@ const MONTHS = [
   "December",
 ];
 
+/**
+ * Schema.org dates as full ISO 8601 with a timezone, which Google's Rich
+ * Results Test expects: a date-only "2026-09-15" becomes "2026-09-15T12:00:00Z"
+ * (noon UTC, the same calendar day across US time zones); a value that already
+ * has a time passes through unchanged. Sitemap lastmod stays date-only.
+ */
+export function isoDateTime(value: string): string {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value) ? `${value}T12:00:00Z` : value;
+}
+
 /** Format an ISO yyyy-mm-dd as "July 27, 2026". Parsed by parts, not `new
  *  Date()`, so the day never shifts by timezone. */
 export function formatBlogDate(iso: string) {
@@ -46,8 +56,8 @@ export function articleJsonLd(post: BlogPost) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
-    datePublished: post.date,
-    dateModified: post.updated ?? post.date,
+    datePublished: isoDateTime(post.date),
+    dateModified: isoDateTime(post.updated ?? post.date),
     author: org,
     publisher: {
       ...org,
