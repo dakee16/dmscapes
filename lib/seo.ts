@@ -92,11 +92,13 @@ export function pageMetadata({
 // ---- schema.org -----------------------------------------------------------
 
 /**
- * The brand's official social profiles, for Organization.sameAs. Add each
- * profile's full URL here (e.g. the TikTok and Instagram accounts the footer
- * links); sameAs is left out while this is empty.
+ * The brand's official social profiles, for Organization.sameAs (full URLs).
+ * sameAs is left out if this is ever empty.
  */
-export const SOCIAL_PROFILES: string[] = [];
+export const SOCIAL_PROFILES: string[] = [
+  "https://www.tiktok.com/@dorm.scape",
+  "https://www.instagram.com/dorm.scape",
+];
 
 const organization = {
   "@type": "Organization",
