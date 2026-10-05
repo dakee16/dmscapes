@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
 import BrandLoader from "@/components/site/BrandLoader";
 import SchoolStep from "@/components/plan-steps/SchoolStep";
@@ -12,10 +12,28 @@ import RequestSchoolModal from "@/components/planner/RequestSchoolModal";
 import { track } from "@/lib/analytics";
 import { getSchool } from "@/lib/schools";
 import { usePlannerStore } from "@/lib/store";
+import { RECOVERY_KEY } from "@/lib/planner-storage";
 import type { RoomSummary, SchoolSummary, SelectedRoom } from "@/lib/types";
 import css from "@/components/plan-steps/Page.module.css";
 
 let flowTracked = false;
+
+/**
+ * Before first paint on a full page load: does this visitor have a planner to
+ * restore (a stored school or room, or a ?school= link)? Then the School step
+ * the server sent isn't what they'll see, so show the loader until the store
+ * is applied, as before. Fresh visitors and crawlers get the School step as is.
+ * Mirrors plannerStorage: the tab's draft, else a recovery copy with a room.
+ */
+const RESTORE_GATE = `try{var d=document.currentScript.parentElement,t=JSON.parse(sessionStorage.getItem("dormscape-planner")||"null"),s=t&&t.state;if(!s){var r=JSON.parse(localStorage.getItem("${RECOVERY_KEY}")||"null");s=r&&r.state&&r.state.room&&Array.isArray(r.state.furniture)?r.state:null}if((s&&((s.college&&s.college.id)||s.room))||/[?&]school=/.test(location.search))d.setAttribute("data-restoring","")}catch(e){}`;
+
+/** The same check on a client-side visit, where the store is already in memory. */
+function hasPlannerToRestore() {
+  const s = usePlannerStore.getState();
+  return Boolean(s.college?.id || s.room || new URLSearchParams(window.location.search).get("school"));
+}
+
+const noSubscribe = () => () => {};
 
 /** Which catalog row (if any) the stored room came from, so a return visit shows it chosen. */
 function keyForStoredRoom(rooms: RoomSummary[], room: SelectedRoom | null): string | null {
@@ -38,14 +56,20 @@ export default function PlanSelectPage() {
   const setDorm = usePlannerStore((s) => s.setDorm);
   const setRoom = usePlannerStore((s) => s.setRoom);
 
-  const [mounted, setMounted] = useState(false);
+  // `ready` once the stored planner (and any ?school= link) is applied. Until
+  // then the page renders exactly what the server sent: the School step.
+  const [ready, setReady] = useState(false);
+  // False while rendering on the server and while hydrating; true on a client-side visit.
+  const hydrated = useSyncExternalStore(noSubscribe, () => true, () => false);
+  const restoring = hydrated && !ready && hasPlannerToRestore();
+  const root = useRef<HTMLDivElement>(null);
   const [requestOpen, setRequestOpen] = useState(false);
   const [showSchools, setShowSchools] = useState(false);
   const [pendingDimsRoom, setPendingDimsRoom] = useState<RoomSummary | null>(null);
   const [selectedRoomKey, setSelectedRoomKey] = useState<string | null>(null);
 
   useEffect(() => {
-    setMounted(true);
+    setReady(true);
     if (!flowTracked) {
       flowTracked = true;
       track("flow_started");
@@ -76,11 +100,20 @@ export default function PlanSelectPage() {
 
   const school = useMemo(() => (college?.id ? getSchool(college.id) : undefined), [college?.id]);
   const dormSummary = useMemo(() => school?.dorms.find((d) => d.id === dorm?.id), [school, dorm?.id]);
-  const view: "school" | "room" = school && !showSchools ? "room" : "school";
+  const view: "school" | "room" = ready && school && !showSchools ? "room" : "school";
 
+  // Back to the top when the step changes, or when a restored Room step replaces
+  // the loader; a visitor already reading the server-rendered School step stays put.
+  const shownView = useRef<"school" | "room" | null>(null);
   useEffect(() => {
-    if (mounted) window.scrollTo(0, 0);
-  }, [view, mounted]);
+    if (!ready) return;
+    if (shownView.current !== view && (shownView.current !== null || view !== "school")) window.scrollTo(0, 0);
+    shownView.current = view;
+  }, [view, ready]);
+  // The restored view is committed: lift the full-load gate before it paints.
+  useLayoutEffect(() => {
+    if (ready) root.current?.removeAttribute("data-restoring");
+  }, [ready]);
 
   function handleCollege(next: SchoolSummary) {
     setPendingDimsRoom(null);
@@ -141,14 +174,6 @@ export default function PlanSelectPage() {
     setPendingDimsRoom(null);
   }
 
-  if (!mounted) {
-    return (
-      <div className={css.loading}>
-        <BrandLoader label="Opening your planner…" />
-      </div>
-    );
-  }
-
   const catalogRoom = (() => {
     if (!dormSummary || !selectedRoomKey) return pendingDimsRoom;
     const i = dormSummary.rooms.findIndex((r, idx) => roomKey(r, idx) === selectedRoomKey);
@@ -156,46 +181,54 @@ export default function PlanSelectPage() {
   })();
 
   return (
-    <>
-      {view === "room" && school ? (
-        <RoomStep
-          school={school}
-          dormId={dorm?.id ?? null}
-          selectedKey={selectedRoomKey}
-          catalogRoom={catalogRoom}
-          room={room}
-          pendingDimsRoom={pendingDimsRoom}
-          onBack={() => setShowSchools(true)}
-          onDorm={(d) => {
-            if (d.id !== dorm?.id) {
-              setDorm(d);
-              setPendingDimsRoom(null);
-              setSelectedRoomKey(null);
+    // display: contents, so the wrapper never affects layout. The gate script
+    // marks it on a full load; React only sets data-restoring on client visits.
+    <div ref={root} className={css.restore} data-restoring={restoring || undefined} suppressHydrationWarning>
+      {!hydrated && <script dangerouslySetInnerHTML={{ __html: RESTORE_GATE }} suppressHydrationWarning />}
+      <div className={`${css.loading} ${css.restoreLoader}`}>
+        <BrandLoader label="Opening your planner…" />
+      </div>
+      <div className={css.restoreStep}>
+        {view === "room" && school ? (
+          <RoomStep
+            school={school}
+            dormId={dorm?.id ?? null}
+            selectedKey={selectedRoomKey}
+            catalogRoom={catalogRoom}
+            room={room}
+            pendingDimsRoom={pendingDimsRoom}
+            onBack={() => setShowSchools(true)}
+            onDorm={(d) => {
+              if (d.id !== dorm?.id) {
+                setDorm(d);
+                setPendingDimsRoom(null);
+                setSelectedRoomKey(null);
+              }
+            }}
+            onRoom={handleRoom}
+            onDimsOnly={handleDimsOnly}
+            onNext={() => router.push("/plan/style")}
+          />
+        ) : (
+          <SchoolStep
+            onSelect={handleCollege}
+            onRequest={() => setRequestOpen(true)}
+            onManual={handleManual}
+            resume={
+              ready && room ? (
+                <ResumeRoom
+                  college={college}
+                  dorm={dorm}
+                  room={room}
+                  onUse={() => router.push("/plan/style")}
+                  onEdit={school ? () => setShowSchools(false) : undefined}
+                />
+              ) : null
             }
-          }}
-          onRoom={handleRoom}
-          onDimsOnly={handleDimsOnly}
-          onNext={() => router.push("/plan/style")}
-        />
-      ) : (
-        <SchoolStep
-          onSelect={handleCollege}
-          onRequest={() => setRequestOpen(true)}
-          onManual={handleManual}
-          resume={
-            room ? (
-              <ResumeRoom
-                college={college}
-                dorm={dorm}
-                room={room}
-                onUse={() => router.push("/plan/style")}
-                onEdit={school ? () => setShowSchools(false) : undefined}
-              />
-            ) : null
-          }
-        />
-      )}
+          />
+        )}
+      </div>
       <RequestSchoolModal open={requestOpen} onClose={() => setRequestOpen(false)} />
-    </>
+    </div>
   );
 }
