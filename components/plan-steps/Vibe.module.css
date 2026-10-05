@@ -208,13 +208,13 @@
 .swatch[data-vibe="team_spirit"] {
   background: linear-gradient(
     180deg,
-    #b5122f 0 33%,
-    #f4c430 33% 46%,
-    #b5122f 46% 51%,
-    #15284b 51% 69%,
-    #b5122f 69% 74%,
-    #f4c430 74% 87%,
-    #b5122f 87%
+    var(--spirit-a, #b5122f) 0 33%,
+    var(--spirit-c, #f4c430) 33% 46%,
+    var(--spirit-a, #b5122f) 46% 51%,
+    var(--spirit-b, #15284b) 51% 69%,
+    var(--spirit-a, #b5122f) 69% 74%,
+    var(--spirit-c, #f4c430) 74% 87%,
+    var(--spirit-a, #b5122f) 87%
   );
 }
 .swatch[data-vibe="retro"] {

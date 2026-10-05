@@ -11,9 +11,8 @@ import { FeedbackDialog } from "@/components/site/FeedbackLink";
 import { ArrowRight, ArrowUpRight, ChevronDown, CloseIcon, MenuIcon } from "@/components/ds/Icons";
 import s from "./ds/SiteNav.module.css";
 
-/** The five links the redesign's nav shows (design-handoff/designs/site/SiteNav). */
+/** The links the nav shows (design-handoff/designs/site/SiteNav, minus How it works). */
 const PRIMARY = [
-  { key: "how", label: "How it works", href: "/#how-it-works" },
   { key: "colleges", label: "Colleges", href: "/colleges" },
   { key: "pricing", label: "Pricing", href: "/pricing" },
   { key: "3d", label: "3D Builder", href: "/plan/draw/3d" },
@@ -285,10 +284,8 @@ export default function Nav({
         <Wordmark tone={dark ? "dark" : "light"} />
         <div className={s.links}>
           {PRIMARY.map((link) =>
-            link.href.startsWith("/#")
-              ? <a key={link.key} href={link.href} className={s.link}>{link.label}</a>
-              : <Link key={link.key} href={link.href} className={s.link}
-                  aria-current={current === link.key ? "page" : undefined}>{link.label}</Link>)}
+            <Link key={link.key} href={link.href} className={s.link}
+              aria-current={current === link.key ? "page" : undefined}>{link.label}</Link>)}
           <div className={s.moreWrap}>
             <button type="button" className={s.link} data-more aria-expanded={more}
               aria-controls="nav-more" onClick={() => setMore(!more)}

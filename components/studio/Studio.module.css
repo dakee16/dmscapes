@@ -133,7 +133,67 @@
   flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 0; border-radius: 50%;
   background: rgba(255, 255, 255, 0.92); color: var(--ds-ink); cursor: pointer; box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06);
 }
-.roundBtn:hover { box-shadow: 0 0 0 1.5px var(--ds-ink); }
+.roundBtn:hover:not(:disabled) { box-shadow: 0 0 0 1.5px var(--ds-ink); }
+.roundBtn:disabled { opacity: 0.45; cursor: default; }
+.vibeChip {
+  flex: none; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 12px; border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92); box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06); color: var(--ds-ink); font: 700 14px/1 var(--ds-sans); white-space: nowrap;
+}
+.vibeChip span { display: flex; }
+.vibeChip i { width: 14px; height: 14px; margin-left: -4px; border-radius: 50%; box-shadow: 0 0 0 1.5px #fff; }
+.vibeChip i:first-child { margin-left: 0; }
+/* Light switch over the room, bottom-left; stacked so it clears the camera pill. */
+.lightDock { position: absolute; left: 20px; bottom: 24px; z-index: 4; }
+.lightSwitch {
+  display: flex; flex-direction: column; gap: 2px; padding: 4px; border-radius: 16px; background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06), 0 10px 24px rgba(22, 22, 29, 0.12);
+}
+.lightSwitch button {
+  display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px 0 10px; border: 0; border-radius: 12px;
+  background: transparent; color: var(--ds-ink); font: 700 13px/1 var(--ds-sans); cursor: pointer; white-space: nowrap;
+}
+.lightSwitch button:hover { background: #f1f0ea; }
+.lightSwitch button[aria-pressed="true"] { background: var(--ds-ink); color: #fff; }
+.lightSwitch button[aria-pressed="true"] svg { color: var(--ds-yellow); }
+@media (max-width: 1240px) and (min-width: 781px) { .lightDock { bottom: 84px; } }
+.snapBtn:first-child { margin-left: auto; }
+/* Walk in: back button, mini-map, keyboard hint, and a hold-to-move pad on touch screens. */
+.walkBack { position: absolute; top: 20px; left: 20px; z-index: 4; }
+.walkMap {
+  position: absolute; right: 20px; z-index: 4; width: 176px; height: auto; padding: 8px; border-radius: 14px; pointer-events: none;
+  background: rgba(255, 255, 255, 0.94); box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06), 0 10px 24px rgba(22, 22, 29, 0.12);
+}
+.walkHint {
+  position: absolute; left: 20px; bottom: 24px; z-index: 4; margin: 0; padding: 10px 14px; border-radius: 999px; pointer-events: none;
+  background: rgba(22, 22, 29, 0.78); color: #fff; font: 600 13px/1.2 var(--ds-sans);
+}
+.walkPad {
+  position: absolute; right: 20px; bottom: 24px; z-index: 4; display: none; gap: 4px;
+  grid-template-columns: repeat(3, 48px); grid-template-rows: repeat(3, 48px); grid-template-areas: ". f ." "l . r" ". b .";
+}
+.walkPad button {
+  display: flex; align-items: center; justify-content: center; border: 0; border-radius: 14px; background: rgba(255, 255, 255, 0.94); color: var(--ds-ink);
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 8px 18px rgba(22, 22, 29, 0.14); touch-action: none; user-select: none; -webkit-user-select: none; cursor: pointer;
+}
+.walkPad button:active { background: var(--ds-ink); color: var(--ds-yellow); }
+@media (pointer: coarse) { .walkPad { display: grid; } .walkHint { display: none; } }
+.viewport[data-walk] .cameraBar { display: none; } /* Back to dollhouse is the way out */
+/* The selected piece's card; the 3D scene moves it above the piece. */
+.pieceCard {
+  position: absolute; left: 0; top: 0; z-index: 5; visibility: hidden; width: 244px; padding: 12px; border-radius: 14px;
+  background: #fff; box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 16px 34px rgba(22, 22, 29, 0.18);
+}
+.pieceCard > strong { display: block; overflow: hidden; font-size: 15px; font-weight: 800; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
+.pieceCard > span { display: inline-block; margin-top: 6px; padding: 3px 8px; border-radius: 999px; background: #f1f0ea; color: var(--ds-muted); font-size: 11px; font-weight: 700; }
+.pieceCard > span[data-tone="list"] { background: #eef1fd; color: var(--ds-blue); }
+.pieceCardActions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 10px; }
+.pieceCardActions button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px; height: 34px; padding: 0 4px; border: 1.5px solid rgba(22, 22, 29, 0.16);
+  border-radius: 10px; background: #fff; color: var(--ds-ink); font: 700 12px/1 var(--ds-sans); cursor: pointer;
+}
+.pieceCardActions svg { flex: none; }
+.pieceCardActions button:hover:not(:disabled) { border-color: var(--ds-ink); }
+.pieceCardActions button:disabled { opacity: 0.4; cursor: default; }
 .openingsHint {
   position: absolute; top: 70px; left: 20px; z-index: 4; max-width: calc(100% - 40px); min-height: 36px; padding: 0 14px;
   border: 1.5px solid rgba(36, 73, 255, 0.3); border-radius: 999px; background: #fff; color: var(--ds-blue);
@@ -149,7 +209,7 @@
   display: inline-flex; align-items: center; justify-content: center; height: 40px; min-width: 40px; padding: 0 16px; border: 0; border-radius: 999px;
   background: transparent; color: #fff; font: 700 14px/1 var(--ds-sans); cursor: pointer; white-space: nowrap;
 }
-.cameraBar button:hover:not(:disabled) { background: rgba(255, 255, 255, 0.12); }
+.cameraBar button:hover:not(:disabled):not([aria-pressed="true"]) { background: rgba(255, 255, 255, 0.12); }
 .cameraBar button[aria-pressed="true"] { background: var(--ds-yellow); color: var(--ds-ink); font-weight: 800; }
 .cameraBar button:disabled { opacity: 0.4; cursor: default; }
 .cameraBar button[aria-label] { padding: 0; }
@@ -419,8 +479,34 @@
   .shopBackdrop { display: block; position: fixed; inset: 0; z-index: 45; border: 0; background: rgba(22, 22, 29, 0.35); }
   .arrangeInner { padding: 12px 20px 20px; }
   .pieces { max-height: 34dvh; }
-  .sceneTop { top: 12px; left: 12px; right: 12px; }
-  .sceneHint { display: none; }
+  .sceneTop { top: 12px; left: 12px; right: 12px; gap: 8px; }
+  .snapBtn { margin-left: auto; }
+  .sceneHint, .open2d { display: none; }
+  .walkBack { top: 12px; left: 12px; }
+  .walkMap { right: 12px; width: 124px; padding: 6px; }
+  .walkPad { right: 12px; bottom: 26px; grid-template-columns: repeat(3, 44px); grid-template-rows: repeat(3, 44px); }
+  /* Phone 3D: the room on top, then a sheet with the selected piece, light, floor and budget. */
+  .phoneSheet {
+    flex: none; position: relative; z-index: 10; display: flex; flex-direction: column; gap: 10px; margin-top: -14px;
+    padding: 14px 16px calc(12px + env(safe-area-inset-bottom)); border-radius: 18px 18px 0 0; background: #fff;
+    box-shadow: 0 -10px 30px rgba(22, 22, 29, 0.1);
+  }
+  .phoneSheet .seg, .phoneSheet .floorSwatches { margin-top: 0; }
+  .phoneSheet .seg button { height: 46px; }
+  .phoneSheet .floorSwatches button { height: 36px; }
+  .sheetPiece { display: flex; align-items: center; gap: 8px; min-height: 40px; }
+  .sheetPiece > span { flex: 1; min-width: 0; }
+  .sheetPiece strong { display: block; overflow: hidden; font-size: 15px; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+  .sheetPiece small { display: block; margin-top: 2px; font-size: 12px; color: var(--ds-caption); }
+  .sheetPiece button, .sheetBudget button {
+    flex: none; display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 12px; border: 1.5px solid rgba(22, 22, 29, 0.16);
+    border-radius: 12px; background: #fff; color: var(--ds-ink); font: 700 13px/1 var(--ds-sans); cursor: pointer;
+  }
+  .sheetPiece button:disabled { opacity: 0.4; }
+  .sheetHint { display: flex; align-items: center; min-height: 40px; margin: 0; font-size: 14px; color: var(--ds-caption); }
+  .sheetBudget { display: flex; align-items: center; gap: 12px; }
+  .sheetBudget > :first-child { flex: 1; min-width: 0; }
+  .sheetBudget button { border: 0; background: var(--ds-ink); color: #fff; }
   .cameraBar { bottom: 16px; }
   .cameraBar button { height: 40px; padding: 0 12px; font-size: 13px; }
   .openingActions span { display: none; }
@@ -579,8 +665,18 @@
 .customWall input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
 .customWall:focus-within { outline: 3px solid var(--ds-blue); outline-offset: 2px; }
 .seg { margin-top: 10px; display: flex; padding: 3px; border-radius: 12px; background: #eeede7; }
-.seg button { flex: 1 1 0; height: 40px; border: 0; border-radius: 10px; background: transparent; color: var(--ds-ink); font: 700 14px/1 var(--ds-sans); cursor: pointer; }
+.seg button {
+  flex: 1 1 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-width: 0; height: 52px;
+  border: 0; border-radius: 10px; background: transparent; color: var(--ds-ink); font: 700 12px/1 var(--ds-sans); cursor: pointer; white-space: nowrap;
+}
 .seg button[aria-pressed="true"] { background: var(--ds-ink); color: var(--ds-yellow); font-weight: 800; }
+.dressVibe {
+  display: flex; align-items: flex-start; gap: 10px; margin-top: 16px; padding: 12px 14px; border-radius: 12px;
+  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.12); cursor: pointer;
+}
+.dressVibe input { flex: none; width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--ds-blue); }
+.dressVibe strong { display: block; font-size: 14px; font-weight: 800; }
+.dressVibe small { display: block; margin-top: 3px; font-size: 13px; line-height: 1.4; color: var(--ds-muted); }
 .finishNote { margin: 16px 0; padding: 14px; border-radius: 12px; background: #f4f3ee; font-size: 13px; line-height: 1.45; color: var(--ds-muted); }
 
 /* Workspace 2D: the task chips get their own strip above the plan. */

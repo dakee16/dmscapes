@@ -55,7 +55,7 @@ export default function SharedRoomView({ id, room }: { id: string; room: SaveRoo
 
       <section className={`ds-wrap ${css.grid}`} aria-label="The room and its shopping list">
         <div className={css.room}>
-          <SharedRoomStudio room={roomInput} items={room.furniture_positions} style={room.style} products={products} editor={dims.editor}/>
+          <SharedRoomStudio college={room.college_id} room={roomInput} items={room.furniture_positions} style={room.style} products={products} editor={dims.editor}/>
           <OpenInPlanner
             seed={{
               college_id: room.college_id,

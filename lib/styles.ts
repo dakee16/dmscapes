@@ -1,4 +1,5 @@
 import type { StyleId } from "./types";
+import { schoolColors } from "./school-colors";
 
 export type RugPattern = "stripes" | "plaid" | "arcs" | "fuzzy" | "neon" | "plain";
 
@@ -195,6 +196,23 @@ export const roomTheme = (id: StyleId | null | undefined): RoomTheme => {
   const s = styleById(id ?? "minimalist");
   return s.room ?? DERIVED_ROOMS.get(s.id)!;
 };
+
+const luma = (hex: string) => { const n = parseInt(hex.slice(1), 16); return 0.299 * (n >> 16) + 0.587 * ((n >> 8) & 255) + 0.114 * (n & 255); };
+const SPIRIT = new Map<string, StyleMeta>();
+/** Team Spirit in the student's school colors when we know them (lib/school-colors.ts); any other vibe as it is. */
+export function styleFor(id: StyleId, collegeId?: string | null): StyleMeta {
+  const base = styleById(id), colors = id === "team_spirit" ? schoolColors(collegeId) : undefined;
+  if (!colors || !base.room) return base;
+  const key = colors.join();
+  if (!SPIRIT.has(key)) {
+    const [a, b] = colors, [dark, light] = luma(a) <= luma(b) ? [a, b] : [b, a];
+    SPIRIT.set(key, { ...base, palette: [base.palette[0], a, b, base.palette[3]],
+      room: { ...base.room, textile: a, textileAlt: b, accent: a, rug: { pattern: "stripes", base: dark, line: light } } });
+  }
+  return SPIRIT.get(key)!;
+}
+export const roomThemeFor = (id: StyleId | null | undefined, collegeId?: string | null): RoomTheme =>
+  (id ? styleFor(id, collegeId).room : undefined) ?? roomTheme(id);
 
 /** Canvas fill colors per catalog color_category (matches templates/README.md). */
 export const CATEGORY_COLORS: Record<string, string> = {

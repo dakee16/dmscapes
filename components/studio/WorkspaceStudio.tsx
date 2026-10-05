@@ -18,6 +18,7 @@ import { FurnitureLibrary, LayoutPanel, PlacementPanel } from "./PlanningPanels"
 import { useWorkspace } from "@/components/workspace/WorkspaceContext";
 import ActionBar from "@/components/products/ActionBar";
 import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
+import WalkIn from "./WalkIn";
 import { ItemInspector, RoomDetails, StyleDetails } from "./WorkspacePanels";
 import { ChevronLeft, CloseIcon, PlusIcon } from "@/components/studio-ui/icons";
 import s from "./Studio.module.css";
@@ -37,6 +38,7 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
   const view=usePlannerStore(st=>st.plannerView),setView=usePlannerStore(st=>st.setPlannerView);
   const planning=usePlannerStore(st=>st.planning);
   const [panel,setPanel]=useState<Panel>("shop"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
+  const [walker,setWalker]=useState<SVGGElement|null>(null);
   const [camera,setCamera]=useState<CameraView>("room"),[expanded,setExpanded]=useState(false),[mobileOpen,setMobileOpen]=useState(false),[query,setQuery]=useState(""),[resetConfirm,setResetConfirm]=useState(false);
   const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),closeRef=useRef<HTMLButtonElement>(null);
   const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade();
@@ -124,7 +126,7 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
         <nav className={s.workspaceTasks} aria-label="Planning tasks">{selectedId&&<button onClick={()=>open("item")}>Edit selected</button>}<button onClick={()=>open("furnish")}><PlusIcon size={14}/>Furniture</button><button onClick={()=>open("layouts")}>Layout ideas</button><button onClick={()=>open("checks")}>Checks <b>{issues.filter(i=>i.level==="warning").length}</b></button><button onClick={()=>open("shop")}>Shopping list</button></nav>
         {view==="2d"?<div ref={setToolsHost}/>:<nav className={s.spatialTools} aria-label="3D tools" inert={preview}>
           <strong>Room tools</strong><div className={s.toolPair}><button aria-pressed={!moveMode} onClick={()=>setMoveMode(false)}>Select</button><button aria-pressed={moveMode} onClick={()=>setMoveMode(v=>!v)}>Move</button><button disabled={!history.canUndo} onClick={history.undo}>Undo</button><button disabled={!history.canRedo} onClick={history.redo}>Redo</button></div>
-          <span>Camera</span><div className={s.toolPair}>{(["room","top","inside"] as const).map(mode=><button key={mode} aria-pressed={camera===mode} onClick={()=>preset(mode)}>{mode}</button>)}<button onClick={()=>preset("room")}>Fit</button></div><div className={s.toolPair}><button aria-label="Zoom out" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(1.15)}>− Zoom</button><button aria-label="Zoom in" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(.87)}>+ Zoom</button></div>
+          <span>Camera</span><div className={s.toolPair}>{([["room","Dollhouse"],["top","Top"],["inside","Walk in"]] as const).map(([mode,label])=><button key={mode} aria-pressed={camera===mode} onClick={()=>preset(mode)}>{label}</button>)}<button onClick={()=>preset("room")}>Fit</button></div><div className={s.toolPair}><button aria-label="Zoom out" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(1.15)}>− Zoom</button><button aria-label="Zoom in" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(.87)}>+ Zoom</button></div>
           <label><input type="checkbox" checked={snap} onChange={e=>setSnap(e.target.checked)}/>Snap to grid</label><button onClick={editOpenings}>Doors &amp; windows</button><button aria-label={expanded?"Exit expanded studio":"Expand studio"} onClick={()=>setExpanded(v=>!v)}>{expanded?"Exit fullscreen":"Expand"}</button><button onClick={()=>open("help")}>Help &amp; keys</button>
         </nav>}
 
@@ -133,14 +135,15 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
 
         <div className={s.renderArea}>
           <div className={s.sceneLayer} style={{visibility:view==="3d"?"visible":"hidden",pointerEvents:view==="3d"?"auto":"none"}} aria-hidden={view!=="3d"}>
-            {(allowed3D||view==="3d")&&<RoomScene ref={scene} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview} openingControls={openingControls}
+            {(allowed3D||view==="3d")&&<RoomScene ref={scene} walker={walker} onCamera={setCamera} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview} openingControls={openingControls}
               onSelect={select} onMove={(id,x,y)=>usePlannerStore.getState().moveItem(id,x,y)} onFallback={()=>setView("2d")}/>}
           </div>
           <div className={s.canvasLayer} style={{display:view==="2d"?"block":"none"}}><CanvasControlsContext.Provider value={{host:toolsHost,active:view==="2d",expanded,editOpenings,openings:openingControls,expand:()=>setExpanded(v=>!v),reset:()=>setResetConfirm(true),shop:()=>open("shop"),addPiece:()=>open("furnish"),variant:"workspace"}}>{canvas}</CanvasControlsContext.Provider></div>
         </div>
         {view==="3d"&&<>
+          {camera==="inside"?<WalkIn room={room} items={visibleFurniture(items,hidden,excluded)} mapTop={compact?12:20} onBack={()=>preset("room")} onWalker={setWalker} onWalk={input=>scene.current?.walk(input)}/>:<>
           {roomOutlineMissing(room)&&<button className={s.openingsHint} onClick={editOpenings}>Doors and windows not set. Add openings</button>}
-          <p className={s.gestureHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Select when done.":"Drag empty space to look around. Select a piece to arrange it."}</p>
+          <p className={s.gestureHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Select when done.":"Drag empty space to look around. Select a piece to arrange it."}</p></>}
         </>}
         {selectedOpening!==null&&outline.openings[selectedOpening]&&!preview&&<div className={s.openingActions} style={view==="2d"&&!compact&&openingCenter(outline.points,outline.openings[selectedOpening]).y<room.widthFt/2?{top:"auto",bottom:12}:undefined} role="group" aria-label="Selected opening">
           <strong>{outline.openings[selectedOpening].kind==="door"?"Door":"Window"}</strong><span>Drag to move</span>

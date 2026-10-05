@@ -14,7 +14,7 @@ import StaticRoomView from "@/components/room/StaticRoomView";
 import RoomScene,{type RoomSceneHandle} from "./RoomScene";
 import s from "@/components/workspace/Panels.module.css";
 const RoomCanvas=dynamic(()=>import("@/components/canvas/RoomCanvas"),{ssr:false});
-export default function SharedRoomStudio({room,items:savedItems,style,products,editor}:{room:SelectedRoom;items:FurnitureItem[];style:StyleId;products:Product[];editor?:SavedEditorState}){
+export default function SharedRoomStudio({room,items:savedItems,style,products,editor,college=null}:{room:SelectedRoom;items:FurnitureItem[];style:StyleId;products:Product[];editor?:SavedEditorState;college?:string|null}){
  const items=useMemo(()=>syncProductFurniture(savedItems,products.filter(p=>!editor?.unplacedItemIds.includes(p.id)),room),[savedItems,products,editor,room]);
  const [requestedView,setRequestedView]=useState<"2d"|"3d">("3d"),ref=useRef<RoomSceneHandle>(null);
  const workspace=useWorkspace();
@@ -25,7 +25,7 @@ export default function SharedRoomStudio({room,items:savedItems,style,products,e
  const visible=visibleFurniture(items,editor?.hiddenItemIds??[],editor?.excluded??[]);
  return <section className={s.sharedViewer} aria-label="Shared room preview">
    <div className={s.sharedTools} role="group" aria-label="Shared room view"><button aria-pressed={view==="3d"} onClick={()=>allowed?setView("3d"):openUpgrade("room-3d")}>3D room{!allowed&&" · Pro"}</button><button aria-pressed={view==="2d"} onClick={()=>setView("2d")}>2D plan</button>{view==="3d"&&<button onClick={()=>ref.current?.preset("room")}>Reset view</button>}</div>
-   <div className={s.sharedStage}>{view==="3d"?<RoomScene ref={ref} room={room} items={items} hidden={editor?.hiddenItemIds??[]} excluded={editor?.excluded??[]} locked={[]} selectedId={null} style={style} products={products} readOnly onFallback={()=>setView("2d")}/>:workspace?<RoomCanvas roomL={room.lengthFt} roomW={room.widthFt} templateId={null} furniture={visible} outline={roomOutline(room)} onMove={()=>{}} onReset={()=>{}} readOnly crossHighlight={false}/>:<div className={s.sharedPlan}><StaticRoomView lengthFt={room.lengthFt} widthFt={room.widthFt} furniture={visible} outline={roomOutline(room)}/></div>}</div>
+   <div className={s.sharedStage}>{view==="3d"?<RoomScene ref={ref} college={college} room={room} items={items} hidden={editor?.hiddenItemIds??[]} excluded={editor?.excluded??[]} locked={[]} selectedId={null} style={style} products={products} readOnly onFallback={()=>setView("2d")}/>:workspace?<RoomCanvas roomL={room.lengthFt} roomW={room.widthFt} templateId={null} furniture={visible} outline={roomOutline(room)} onMove={()=>{}} onReset={()=>{}} readOnly crossHighlight={false}/>:<div className={s.sharedPlan}><StaticRoomView lengthFt={room.lengthFt} widthFt={room.widthFt} furniture={visible} outline={roomOutline(room)}/></div>}</div>
    <p className={s.sharedNote}>{view==="3d"?"Drag to look around. Furniture models and unmeasured heights are approximate.":allowed?"Shared 2D plan. Switch to 3D above to look around.":"Shared 2D plan. Pro members can explore this room in 3D."}</p>
  </section>;
 }

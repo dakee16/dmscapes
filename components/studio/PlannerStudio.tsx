@@ -8,7 +8,8 @@ import { canUse3D, isPaid } from "@/lib/plan";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
-import { designDisplayName } from "@/lib/styles";
+import { designDisplayName, styleFor } from "@/lib/styles";
+import { track } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
 import { getSchool } from "@/lib/schools";
 import { alternativesOf } from "@/lib/catalog";
@@ -21,14 +22,15 @@ import Wordmark from "@/components/site/Wordmark";
 import Modal from "@/components/site/Modal";
 import BrandLoader from "@/components/site/BrandLoader";
 import { useStudioUI } from "@/components/studio-ui/StudioUI";
-import { ChevronLeft, CloseIcon, ExpandIcon, MinusIcon, MoveIcon, PencilIcon, PlanIcon, PlusIcon, RedoIcon, RotateIcon, SwapIcon, UndoIcon } from "@/components/studio-ui/icons";
+import { CameraIcon, ChevronLeft, CloseIcon, ExpandIcon, MinusIcon, MoveIcon, PencilIcon, PlanIcon, PlusIcon, RedoIcon, RotateIcon, SwapIcon, TrashIcon, UndoIcon } from "@/components/studio-ui/icons";
 import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
-import { ItemInspector, RoomDetails, StyleDetails } from "./StudioPanels";
+import WalkIn from "./WalkIn";
+import { FloorSwatches, ItemInspector, LightSwitch, RoomDetails, StyleDetails } from "./StudioPanels";
 import s from "./Studio.module.css";
 
 const RoomDrawCanvas=dynamic(()=>import("@/components/planner/RoomDrawCanvas"),{ssr:false,loading:()=> <BrandLoader label="Opening room measurements…"/>});
 type Panel="furnish"|"style"|"room"|"shop"|"item"|"checks"|"help";
-const CAMERAS:[CameraView,string][]=[["top","Top"],["room","Corner"],["inside","Eye level"]];
+const CAMERAS:[CameraView,string][]=[["room","Dollhouse"],["top","Top"],["inside","Walk in"]];
 
 /**
  * The planner studio on /plan/result: the plan (2D, Konva) or the room (3D,
@@ -50,7 +52,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const view=usePlannerStore(st=>st.plannerView),setView=usePlannerStore(st=>st.setPlannerView);
   const [panel,setPanel]=useState<Panel>(()=>usePlannerStore.getState().plannerView==="3d"?"style":"shop"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
   const [camera,setCamera]=useState<CameraView>("room"),[expanded,setExpanded]=useState(false),[mobileOpen,setMobileOpen]=useState(false),[query,setQuery]=useState(""),[resetConfirm,setResetConfirm]=useState(false);
-  const [renaming,setRenaming]=useState(false);
+  const [renaming,setRenaming]=useState(false),[card,setCard]=useState<HTMLDivElement|null>(null),[walker,setWalker]=useState<SVGGElement|null>(null);
   const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),closeRef=useRef<HTMLButtonElement>(null),dragStart=useRef<number|null>(null);
   const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade();
   const ui=useStudioUI();
@@ -62,13 +64,13 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   useEffect(()=>{if(!compact||!mobileOpen||view!=="3d")return;const focused=document.activeElement as HTMLElement|null,overflow=document.body.style.overflow;document.body.style.overflow="hidden";const frame=requestAnimationFrame(()=>closeRef.current?.focus({preventScroll:true}));return()=>{cancelAnimationFrame(frame);document.body.style.overflow=overflow;focused?.focus({preventScroll:true});};},[compact,mobileOpen,view]);
   function editOpenings(){open("room");}
   function enter3D(){setView("3d");setMoveMode(false);if(panel==="shop")setPanel("style");}
-  const selected=items.find(f=>f.id===selectedId);
+  const selected=items.find(f=>f.id===selectedId),walking=view==="3d"&&camera==="inside";
   const issues=placementIssues(visibleFurniture(items,hidden,excluded),room,studioSettings(room.studio));
   const selectedProduct=selected?(products.find(p=>p.id===selected.id)||products.find(p=>p.category===furnitureCategory(selected))):undefined;
   const selectedMovable=!!selected&&selected.movable&&!locked.includes(selected.id);
   useEffect(()=>{
     if(!expanded)return;const prev=document.body.style.overflow,focused=document.activeElement as HTMLElement|null;document.body.style.overflow="hidden";
-    root.current?.querySelector<HTMLButtonElement>('[aria-label="Exit expanded studio"],[aria-label="Exit fullscreen"]')?.focus();
+    root.current?.querySelector<HTMLButtonElement>('[aria-label="Exit expanded studio"],[aria-label="Exit fullscreen"],[aria-label="Exit full screen"]')?.focus();
     function key(e:KeyboardEvent){if(e.key==="Escape"){setExpanded(false);}}
     document.addEventListener("keydown",key);return()=>{document.body.style.overflow=prev;document.removeEventListener("keydown",key);focused?.focus();};
   },[expanded]);
@@ -116,6 +118,19 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
     if(next)commitOpening(selectedOpening!,next);
   }
   function preset(next:CameraView){setCamera(next);scene.current?.preset(next);}
+  // Full screen: the browser's own where it's offered (not on iPhone), always the expanded studio underneath.
+  useEffect(()=>{const sync=()=>{if(!document.fullscreenElement)setExpanded(false);};document.addEventListener("fullscreenchange",sync);return()=>document.removeEventListener("fullscreenchange",sync);},[]);
+  function fullScreen(){
+    if(document.fullscreenElement){void document.exitFullscreen();return;}
+    if(expanded){setExpanded(false);return;}
+    setExpanded(true);root.current?.requestFullscreen?.().catch(()=>{});
+  }
+  /** Downloads a 2x PNG of the room, without the selection or any controls. */
+  function snapshot(){
+    const url=scene.current?.exportPNG(2);if(!url)return;
+    const a=document.createElement("a");a.href=url;a.download=`${(named??dorm?.name??"dormscape-room").replace(/[^\w]+/g,"-").replace(/^-|-$/g,"").toLowerCase()||"dormscape-room"}-3d.png`;a.click();
+    track("studio_snapshot",{lighting:studioSettings(room.studio).lighting,camera});
+  }
   function toggleMove(){if(!allowed3D){openUpgrade("room-3d");return;}setView("3d");if(camera==="inside")preset("room");setMoveMode(v=>!v);setMobileOpen(false);}
 
   // Title: the plan's own name once renamed, else the hall and room type.
@@ -155,6 +170,8 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const swapSelected=()=>{if(selectedProduct){ui?.openSwap(selectedProduct);setPanel("shop");setMobileOpen(true);}};
   const shown=items.filter(f=>f.label.toLowerCase().includes(query.toLowerCase()));
   const canSwap=!!selectedProduct&&alternativesOf(selectedProduct).length>0;
+  const entry=selected?ui?.entryFor(selected):undefined,pieceStatus=selected?.built_in?"Dorm-provided":entry?"In your list":"Not in your list";
+  const rotateSelected=()=>{if(selected)usePlannerStore.getState().rotateItem(selected.id,1);};
   const arrangeContent=<div className={s.arrangeInner}>
     <h2 className={s.eyebrowInk}>Arrange</h2>
     <label className={s.srOnly} htmlFor="arrange-search">Find a piece</label>
@@ -224,27 +241,39 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
           </nav>}
       </div>
       {view==="3d"&&!compact&&<aside className={s.arrange} aria-label="Arrange" inert={preview}>{arrangeContent}</aside>}
-      <section className={s.viewport} aria-label={view==="3d"?"3D room":"Room plan"}>
+      <section className={s.viewport} aria-label={view==="3d"?"3D room":"Room plan"} data-walk={walking||undefined}>
         <div className={s.renderArea}>
           <div className={s.sceneLayer} style={{visibility:view==="3d"?"visible":"hidden",pointerEvents:view==="3d"?"auto":"none"}} aria-hidden={view!=="3d"}>
-            {(allowed3D||view==="3d")&&<RoomScene ref={scene} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview} openingControls={openingControls}
+            {(allowed3D||view==="3d")&&<RoomScene ref={scene} anchor={card} walker={walker} onCamera={setCamera} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview} openingControls={openingControls}
               onSelect={select} onMove={(id,x,y)=>usePlannerStore.getState().moveItem(id,x,y)} onFallback={()=>setView("2d")}/>}
           </div>
           <div className={s.canvasLayer} style={{display:view==="2d"?"block":"none"}}><CanvasControlsContext.Provider value={{host:toolsHost,active:view==="2d",expanded,editOpenings,openings:openingControls,expand:()=>setExpanded(v=>!v),reset:()=>setResetConfirm(true),shop:()=>open("shop"),addPiece:()=>ui?.showAddMore(),variant:"planner"}}>{canvas}</CanvasControlsContext.Provider></div>
         </div>
         {view==="3d"&&<>
           <div className={s.sceneTop}>
-            <button type="button" className={s.pill} onClick={()=>{setView("2d");setMoveMode(false);}}><PlanIcon size={15}/>Open 2D plan</button>
-            <p className={s.sceneHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Stop moving when done.":"Drag empty space to look around. Select a piece to arrange it."}</p>
-            <button type="button" className={s.roundBtn} aria-label={expanded?"Exit expanded studio":"Expand studio"} onClick={()=>setExpanded(v=>!v)}>{expanded?<CloseIcon size={16}/>:<ExpandIcon size={16}/>}</button>
+            {!walking&&<><div className={s.vibeChip} title="Your vibe"><span aria-hidden="true">{styleFor(style,college?.id).palette.slice(0,4).map((c,i)=><i key={i} style={{background:c}}/>)}</span>{designDisplayName(style,customVibe)}</div>
+            <button type="button" className={`${s.pill} ${s.open2d}`} onClick={()=>{setView("2d");setMoveMode(false);}}><PlanIcon size={15}/>Open 2D plan</button>
+            <p className={s.sceneHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Stop moving when done.":"Drag empty space to look around. Select a piece to arrange it."}</p></>}
+            <button type="button" className={`${s.roundBtn} ${s.snapBtn}`} aria-label="Snapshot" title="Download a snapshot (PNG)" disabled={preview} onClick={snapshot}><CameraIcon size={17}/></button>
+            <button type="button" className={s.roundBtn} aria-label={expanded?"Exit full screen":"Full screen"} title={expanded?"Exit full screen":"Full screen"} onClick={fullScreen}>{expanded?<CloseIcon size={16}/>:<ExpandIcon size={16}/>}</button>
           </div>
-          {roomOutlineMissing(room)&&<button className={s.openingsHint} onClick={editOpenings}>Doors and windows not set. Add openings</button>}
+          {walking&&<WalkIn room={room} items={visibleFurniture(items,hidden,excluded)} mapTop={compact?60:72} onBack={()=>preset("room")} onWalker={setWalker} onWalk={input=>scene.current?.walk(input)}/>}
+          {roomOutlineMissing(room)&&!walking&&<button className={s.openingsHint} onClick={editOpenings}>Doors and windows not set. Add openings</button>}
+          {!compact&&!walking&&<div className={s.lightDock} inert={preview}><LightSwitch room={room} className={s.lightSwitch}/></div>}
           <div className={s.cameraBar} role="group" aria-label="Camera controls" inert={preview}>
             {CAMERAS.map(([key,label])=><button key={key} type="button" aria-pressed={camera===key} onClick={()=>preset(key)}>{label}</button>)}
             <span className={s.separator} aria-hidden="true"/>
             <button type="button" aria-label="Zoom out" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(1.15)}><MinusIcon size={16}/></button>
             <button type="button" aria-label="Zoom in" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(.87)}><PlusIcon size={16}/></button>
           </div>
+          {selected&&!compact&&!preview&&<div ref={setCard} className={s.pieceCard} role="group" aria-label={`Selected: ${selected.label}`}>
+            <strong>{selected.label}</strong><span data-tone={selected.built_in?"dorm":entry?"list":undefined}>{pieceStatus}</span>
+            <div className={s.pieceCardActions}>
+              <button type="button" disabled={!selectedMovable} onClick={rotateSelected}><RotateIcon size={14}/>Rotate</button>
+              <button type="button" disabled={!canSwap} onClick={swapSelected}><SwapIcon size={14}/>Swap</button>
+              <button type="button" disabled={!entry||!!selected.built_in} onClick={()=>entry&&ui?.remove(entry)}><TrashIcon size={14}/>Remove</button>
+            </div>
+          </div>}
         </>}
         {selectedOpening!==null&&outline.openings[selectedOpening]&&!preview&&<div className={s.openingActions} style={view==="2d"&&!compact&&openingCenter(outline.points,outline.openings[selectedOpening]).y<room.widthFt/2?{top:"auto",bottom:64}:undefined} role="group" aria-label="Selected opening">
           <strong>{outline.openings[selectedOpening].kind==="door"?"Door":"Window"}</strong><span>Drag to move</span>
@@ -254,6 +283,15 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         {openingError&&<p className={s.openingError} role="status">{openingError}</p>}
         {resetConfirm&&<div className={s.resetConfirm} role="group" aria-label="Confirm layout reset"><p>Restore the original furniture arrangement? You can undo this.</p><div className={s.buttonRow}><button className={s.inkBtn} onClick={()=>{onReset();setResetConfirm(false);}}>Restore layout</button><button onClick={()=>setResetConfirm(false)}>Keep my changes</button></div></div>}
       </section>
+      {view==="3d"&&compact&&<section className={s.phoneSheet} aria-label="Room controls" inert={preview}>
+        {selected?<div className={s.sheetPiece}><span><strong>{selected.label}</strong><small>{pieceStatus}</small></span>
+          <button type="button" disabled={!selectedMovable} onClick={rotateSelected}><RotateIcon size={15}/>Rotate</button>
+          <button type="button" disabled={!canSwap} onClick={swapSelected}><SwapIcon size={15}/>Swap</button></div>
+          :<p className={s.sheetHint}>Select a piece to arrange it.</p>}
+        <LightSwitch room={room}/>
+        <FloorSwatches room={room}/>
+        <div className={s.sheetBudget}><BudgetTracker total={total} budget={budget} size="sm"/><button type="button" onClick={()=>open("shop")}>List</button></div>
+      </section>}
       {compact&&mobileOpen&&view==="3d"&&<button className={s.shopBackdrop} aria-label="Close studio panel" onClick={()=>setMobileOpen(false)}/>}
       <aside ref={shopPanel} id="studio-panel" className={s.panel} data-sheet={view==="2d"?(ui?.sheet??"full"):undefined} data-open={view==="3d"&&mobileOpen||undefined}
         aria-label={activePanel==="shop"?"Shopping list":activePanel==="style"?"Room settings":activePanel==="room"?"Room details":activePanel==="checks"?"Placement checks":activePanel==="help"?"Studio guide":"Selected item"}

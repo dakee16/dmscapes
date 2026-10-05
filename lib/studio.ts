@@ -8,15 +8,23 @@ export interface StudioSettings {
   ceilingFt: number;
   floor: "oak" | "walnut" | "concrete" | "carpet";
   wallColor: string;
-  lighting: "day" | "evening";
+  /** "evening" is golden hour (the stored value predates the name). */
+  lighting: "day" | "evening" | "night";
+  /** Bedding, rug, throw and decor take the vibe's colors. Missing means on. */
+  dressVibe?: boolean;
 }
-export const DEFAULT_STUDIO: StudioSettings = { ceilingFt: 8, floor: "oak", wallColor: "#f3eee4", lighting: "day" };
-export const FLOOR_FINISHES = { oak: "#c9a77b", walnut: "#805c43", concrete: "#a8aaa6", carpet: "#c4bcae" };
+export const LIGHTING_PRESETS = ["day", "evening", "night"] as const;
+export const DEFAULT_STUDIO: StudioSettings = { ceilingFt: 8, floor: "oak", wallColor: "#f3eee4", lighting: "day", dressVibe: true };
+export const FLOOR_FINISHES = { oak: "#c9a77b", walnut: "#805c43", concrete: "#c9c3bd", carpet: "#c4bcae" };
+/** What the studio calls each stored value. */
+export const LIGHT_LABELS: Record<StudioSettings["lighting"], string> = { day: "Day", evening: "Golden hour", night: "Night" };
+export const FLOOR_LABELS: Record<StudioSettings["floor"], string> = { oak: "Oak", walnut: "Walnut", concrete: "Tile", carpet: "Carpet" };
 export function studioSettings(value?: Partial<StudioSettings> | null): StudioSettings {
   return { ceilingFt: Number.isFinite(value?.ceilingFt) ? Math.max(6, Math.min(16, value!.ceilingFt!)) : 8,
     floor: value?.floor && Object.hasOwn(FLOOR_FINISHES,value.floor) ? value.floor : "oak",
     wallColor: /^#[0-9a-f]{6}$/i.test(value?.wallColor ?? "") ? value!.wallColor! : DEFAULT_STUDIO.wallColor,
-    lighting: value?.lighting === "evening" ? "evening" : "day" };
+    lighting: LIGHTING_PRESETS.includes(value?.lighting as StudioSettings["lighting"]) ? value!.lighting! : "day",
+    dressVibe: value?.dressVibe !== false };
 }
 export function roomOutline(room: SelectedRoom): RoomOutline {
   if (room.outline) return room.outline;

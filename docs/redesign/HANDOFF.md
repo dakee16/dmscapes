@@ -46,6 +46,36 @@ The 2D plan opens in **Room view**, an illustrated top-down room; **Plan view** 
 - Checked in all nine vibes plus custom, both views, hand-drawn L-room, bunk, owner outlines, selection and rotation, overlap, phone, PNG export.
 - Drag performance (production build, dragging a piece): with GPU canvas, the normal case on laptops and phones, both views hold ~9–10 ms a frame at 4× (desktop) and 6× (phone) CPU throttle. A browser painting canvas in software (no GPU) does more pixel work in Room view: about 40 ms vs 12 ms a frame on a full desktop canvas, 14 vs 10 ms on a phone. If that matters, the next step is drawing the still pieces and floor into one bitmap while a piece is dragged.
 
+## Pro 3D studio: look and light (October 2026)
+
+Spec: `design-handoff/3d-studio/` (`scene.js` values, `renders/3d-hero.jpg`). Files: `public/experience/studio-scene.js` (renderer, room shell, light), `studio-models.js` (pieces), r170 add-ons in `public/experience/vendor/addons/` (imports point at the vendored build; license in `vendor/LICENSE-three.txt`).
+
+- **Renderer**: Neutral tone mapping, RoomEnvironment through PMREM, hemisphere fill, one VSM sun (radius 7) aimed through the plan's first window (else the preset's azimuth), a fill light just inside that window, and a shadow-catcher ground on the paper background. GTAO runs through EffectComposer with the `scene.js` values. If WebGL2 float targets or the composer fail, it renders straight to the canvas without AO; with no WebGL2 at all, the existing "3D is unavailable" message shows.
+- **Performance**: still renders on demand. While the camera or a piece moves, frames skip AO; one full-quality frame draws ~150 ms after it settles. Shadows re-render only when the room or a piece changes (at most every 120 ms during a drag). Phones and low-power devices (coarse pointer on a small screen, ≤4 cores or ≤4 GB) get pixel ratio ≤1.5, a 2048 shadow map and half-resolution AO. Drag frame times matched the old renderer (desktop ~10 ms, 4× throttled phone ~10.5 ms).
+- **Room shell**: 0.42 ft walls sit outside the floor (pieces never clip), on a plinth, with a darker cap, dark baseboards, framed windows (mullions, sill, tinted glass) and doors (casing, leaf, knobs). Cut-away and opening editing are unchanged.
+- **Light presets** (`lighting`): `day`, `evening` (stored name; shown as "Golden hour"), and `night`. Night is lit only by lamps, string lights, LED strips and candles in the plan (up to 6 point lights), else a dim room light; the window glass goes dark blue.
+- **Vibe dressing** (`studio.dressVibe`, missing means on): bedding, rug, throw, pillows, curtains and decor take the vibe's `room` theme; off uses each product's colour. Dorm-provided furniture stays plain wood. Nothing is drawn that isn't in the plan (no books, laptops or pillows on bare beds).
+- **Floors**: oak, walnut, concrete (labelled "Tile": speckled vinyl tiles) and carpet; textures are drawn once per floor change.
+- **Controls** (`PlannerStudio.tsx`):
+  - **Over the room:**
+    - Vibe chip and Open 2D plan at top-left.
+    - Snapshot and Full screen at top-right. Snapshot downloads a 2x PNG with no ring, card or controls, keeps the export watermark and fires `studio_snapshot`. Full screen uses the browser's full screen where offered, on top of the expanded studio.
+    - Light switch (Day / Golden hour / Night, stacked) at bottom-left; it moves up beside the camera pill on narrow desktops.
+    - The dark camera pill at bottom-center: Dollhouse / Top / Walk in, plus zoom.
+  - **Selection:** a dashed cobalt ring on the floor, drawn in the scene, plus a card the scene keeps above the piece (`RoomScene` `anchor`). The card shows the name, Dorm-provided / In your list / Not in your list, and Rotate, Swap and Remove (list remove). While dragging, the old position label shows instead.
+  - **Room tab** (`StyleDetails`):
+    - Light, Floor and Walls.
+    - The "Dress the room in my vibe" checkbox (`dressVibe`).
+    - The finish note, unchanged.
+    - `LightSwitch` and `FloorSwatches` are shared components.
+  - **Walk in** (`WalkIn.tsx`, used by the planner and My Room studios):
+    - **View:** eye level 5.3 ft, fov 52, with the wall colour (dimmed by the light preset) as the ceiling. It starts at the most open spot (nearest the door on a tie), facing the window.
+    - **Moving:** arrows and WASD work only while the canvas has focus (listeners on the canvas, released on blur). ↑/↓ or W/S walk, ←/→ turn, A/D step sideways. Drag looks around.
+    - **Collisions:** you stay 0.7 ft inside the walls, out of closets, and out of anything taller than a rug that sits below head height. You slide along obstacles instead of stopping.
+    - **Overlays:** Back to dollhouse (top-left) and a mini-map (top-right) showing the outline, door, window, piece blocks and a dot with a view cone, which the scene moves directly. On fine pointers, the hint "Walk with the arrow keys · drag to look around" sits at bottom-left; on touch screens, a hold-to-move pad sits at bottom-right. The camera pill hides while walking.
+    - **Sync:** the scene reports camera-mode changes (`onCamera`), so Focus on a piece leaves Walk in cleanly. Resizing no longer resets your walk position.
+  - **Phones (≤780 px, the studio's existing breakpoint):** the room on top with the camera pill, then a sheet with the selected piece (Rotate, Swap), the light switch, floor swatches and the budget bar with List. Arrange / Room / List still open the full panel. My Room's camera buttons use the same Dollhouse / Top / Walk in names.
+
 ## Test end to end with real keys
 
 Supabase auth (Google, email, sign-up consent, reset, `next=`), Stripe (Plus and Pro from /pricing and from the upgrade sheet, recharge, Flex), saving and generation through the new budget step, workspace create/share/invite/join/comments/versions/restore, LiveKit room call, Resend emails, PostHog funnel incl. `budget_step_viewed`, Amazon tag on every product link. None of these could run in the redesign sandbox (no env), so screens were checked with mocked APIs and test-time patches only.

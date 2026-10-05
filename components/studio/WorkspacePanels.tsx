@@ -5,7 +5,7 @@ import { assignOwnership, purchaseForPiece, supplyFor } from "@/lib/planning";
 import type { FurnitureItem, Product, SelectedRoom, WallOpening } from "@/lib/types";
 import { usePlannerStore } from "@/lib/store";
 import { footprint } from "@/components/canvas/geometry";
-import { constrainedPosition, FLOOR_FINISHES, itemElevation, itemHeight, modelKind, roomOutline, studioSettings } from "@/lib/studio";
+import { constrainedPosition, FLOOR_FINISHES, itemElevation, itemHeight, modelKind, roomOutline, studioSettings, FLOOR_LABELS, LIGHT_LABELS, LIGHTING_PRESETS } from "@/lib/studio";
 import { OPENING_DRAG_TYPE, type OpeningControls } from "@/lib/room-editing";
 import { useWorkspacePeople } from "@/components/workspace/WorkspaceContext";
 import { ArrowUpRight } from "@/components/ds/Icons";
@@ -99,7 +99,7 @@ export function RoomDetails({room,controls,onAdd,onRemove,onFlip}:{room:Selected
 export function StyleDetails({room}:{room:SelectedRoom}){
  const settings=studioSettings(room.studio),update=usePlannerStore(st=>st.updateStudio);
  return <><p className={s.muted}>Swap products in your shopping panel. Finishes and lighting below change your room without using design credits.</p><p className={s.eyebrow}>Set the atmosphere</p><h2>A space that feels like you.</h2><p className={s.muted}>Try room finishes and lighting without changing your product selections or budget.</p>
- <div className={s.section}><h3>Floor finish</h3><div className={s.finishGrid}>{Object.entries(FLOOR_FINISHES).map(([key,color])=><button key={key} aria-pressed={settings.floor===key} onClick={()=>update({floor:key as typeof settings.floor})}><span style={{background:color}}/>{key}</button>)}</div></div>
+ <div className={s.section}><h3>Floor finish</h3><div className={s.finishGrid}>{Object.entries(FLOOR_FINISHES).map(([key,color])=><button key={key} aria-pressed={settings.floor===key} onClick={()=>update({floor:key as typeof settings.floor})}><span style={{background:color}}/>{FLOOR_LABELS[key as keyof typeof FLOOR_LABELS]}</button>)}</div></div>
  <div className={s.section}><label className={s.field}>Wall color<input aria-label="Wall preview color" type="color" value={settings.wallColor} onChange={e=>update({wallColor:e.target.value})}/></label><p className={s.note}>Preview only. Check your residence hall rules before changing finishes.</p></div>
- <div className={s.section}><h3>Lighting</h3><div className={s.buttonRow}><button aria-pressed={settings.lighting==="day"} onClick={()=>update({lighting:"day"})}>Daylight</button><button aria-pressed={settings.lighting==="evening"} onClick={()=>update({lighting:"evening"})}>Evening glow</button></div></div></>;
+ <div className={s.section}><h3>Lighting</h3><div className={s.buttonRow}>{LIGHTING_PRESETS.map(l=><button key={l} aria-pressed={settings.lighting===l} onClick={()=>update({lighting:l})}>{LIGHT_LABELS[l]}</button>)}</div></div></>;
 }

@@ -6,6 +6,7 @@ import { alternativesOf } from "@/lib/catalog";
 import { beddingAdvisory } from "@/lib/bedding";
 import { usePlannerStore } from "@/lib/store";
 import { useStudioUI } from "@/components/studio-ui/StudioUI";
+import { useExperienceMotion } from "@/components/experience/MotionProvider";
 import { LIST_GROUPS, OWN_GROUP, dollars, pad2, price, productDetail, type ListEntry, type ListGroupKey } from "@/components/studio-ui/list";
 import { ChevronDownIcon, ChevronRight, PlusIcon, SwapIcon, TrashIcon, UpRightIcon, AlertIcon } from "@/components/studio-ui/icons";
 import BudgetTracker from "./BudgetTracker";
@@ -58,25 +59,42 @@ export default function ShoppingList({
   const hoveredCategory = usePlannerStore((st) => st.hoveredCategory);
   const selectedCategory = usePlannerStore((st) => st.selectedCategory);
   const selectedItemId = usePlannerStore((st) => st.selectedItemId);
+  const furniture = usePlannerStore((st) => st.furniture);
+  const { paused } = useExperienceMotion();
   const setHoveredCategory = usePlannerStore((st) => st.setHoveredCategory);
   const toggleSelectedCategory = usePlannerStore((st) => st.toggleSelectedCategory);
   const toggleSelectedItem = usePlannerStore((st) => st.toggleSelectedItem);
   const [filter, setFilter] = useState<Filter>("all");
   const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
+  const [flash, setFlash] = useState<string | null>(null);
   const rows = useRef(new Map<string, HTMLDivElement | null>());
   const addMoreRef = useRef<HTMLDivElement>(null);
   const advisory = beddingAdvisory(bedSize);
   const sheet = ui?.variant === "planner" ? ui.sheet : "full";
 
-  const isSelected = (e: ListEntry) => (e.custom ? selectedItemId === e.product.id : selectedCategory === e.product.category && !selectedItemIdIsCustom(selectedItemId, entries));
+  // A piece picked on the plan pins its own row (the same match as its plan number), or none for a
+  // dorm-provided piece the list doesn't dress. A row picked here still pins by category.
+  const pickedItem = selectedItemId ? furniture?.find((f) => f.id === selectedItemId) : undefined;
+  const picked = pickedItem && ui ? ui.entryFor(pickedItem) ?? null : undefined;
+  const isSelected = (e: ListEntry) => picked !== undefined ? picked?.product.id === e.product.id
+    : e.custom ? selectedItemId === e.product.id : selectedCategory === e.product.category && !selectedItemIdIsCustom(selectedItemId, entries);
   const isActive = (e: ListEntry) => isSelected(e) || (!e.custom && hoveredCategory === e.product.category);
   const selected = entries.find(isSelected);
 
-  // Bring a row into view only when it's pinned (canvas click or a row), never on hover.
+  // Bring a row into view only when it's pinned (canvas click or a row), never on hover: open its
+  // group if it's collapsed or filtered out, scroll to it, and flash it once so it's easy to spot.
+  const selectedId = selected?.product.id, selectedGroup = selected?.group;
   useEffect(() => {
-    if (!selected) return;
-    rows.current.get(selected.product.id)?.scrollIntoView({ block: "nearest", inline: "nearest" });
-  }, [selected]);
+    if (!selectedId || !selectedGroup) return;
+    setCollapsed((prev) => prev.has(selectedGroup) ? new Set([...prev].filter((k) => k !== selectedGroup)) : prev);
+    setFilter((f) => (f === "all" || f === selectedGroup ? f : "all"));
+    if (pickedItem && ui?.variant === "planner" && ui.sheet === "min") ui.setSheet("peek");
+    setFlash(selectedId);
+    const frame = requestAnimationFrame(() => rows.current.get(selectedId)?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: paused ? "auto" : "smooth" }));
+    const done = setTimeout(() => setFlash(null), 1400);
+    return () => { cancelAnimationFrame(frame); clearTimeout(done); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- only when the pinned row changes
+  }, [selectedId, selectedGroup]);
 
   // "Add a piece" from the rail opens and reveals the Add more section.
   useEffect(() => {
@@ -119,6 +137,7 @@ export default function ShoppingList({
         className={s.row}
         data-active={active || undefined}
         data-selected={chosen || undefined}
+        data-flash={flash === p.id || undefined}
         data-peek={peekIds.has(p.id) || undefined}
         onPointerEnter={(ev) => { if (!e.custom && ev.pointerType === "mouse") setHoveredCategory(p.category); }}
         onPointerLeave={(ev) => { if (!e.custom && ev.pointerType === "mouse") setHoveredCategory(null); }}
