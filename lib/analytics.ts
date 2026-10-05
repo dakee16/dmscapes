@@ -66,7 +66,9 @@ export type AnalyticsEvent =
   | "draw_room_opened"
   | "draw_room_started"
   | "drawn_room_completed"
-  | "drawn_room_reused";
+  | "drawn_room_reused"
+  // Pro 3D studio
+  | "studio_snapshot";
 
 let initialized = false;
 
