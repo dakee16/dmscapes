@@ -1,5 +1,5 @@
 import rawIndex from "./schools-index.json";
-import type { SchoolSummary } from "./types";
+import type { DormSummary, SchoolSummary } from "./types";
 
 export const SCHOOLS = rawIndex as SchoolSummary[];
 
@@ -37,7 +37,16 @@ export function getDorm(schoolId: string, dormId: string) {
   return school && dorm ? { school, dorm } : undefined;
 }
 
-/** Every (school, dorm) pair, for generateStaticParams and the sitemap. */
+/**
+ * Whether a hall's page is worth indexing: at least one room with a measured
+ * length and width. The hall page noindexes otherwise, and the sitemap leaves
+ * it out, so the two always agree.
+ */
+export function hallIsIndexable(dorm: DormSummary): boolean {
+  return dorm.rooms.some((r) => r.length_ft && r.width_ft);
+}
+
+/** Every (school, dorm) pair, for generateStaticParams. */
 export function allDormPaths(): { collegeId: string; dormId: string }[] {
   return SCHOOLS.flatMap((s) =>
     s.dorms.map((d) => ({ collegeId: s.id, dormId: d.id }))
