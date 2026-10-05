@@ -18,6 +18,7 @@ import { FurnitureLibrary, LayoutPanel, PlacementPanel } from "./PlanningPanels"
 import { useWorkspace } from "@/components/workspace/WorkspaceContext";
 import ActionBar from "@/components/products/ActionBar";
 import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
+import WalkIn from "./WalkIn";
 import { ItemInspector, RoomDetails, StyleDetails } from "./WorkspacePanels";
 import { ChevronLeft, CloseIcon, PlusIcon } from "@/components/studio-ui/icons";
 import s from "./Studio.module.css";
@@ -37,6 +38,7 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
   const view=usePlannerStore(st=>st.plannerView),setView=usePlannerStore(st=>st.setPlannerView);
   const planning=usePlannerStore(st=>st.planning);
   const [panel,setPanel]=useState<Panel>("shop"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
+  const [walker,setWalker]=useState<SVGGElement|null>(null);
   const [camera,setCamera]=useState<CameraView>("room"),[expanded,setExpanded]=useState(false),[mobileOpen,setMobileOpen]=useState(false),[query,setQuery]=useState(""),[resetConfirm,setResetConfirm]=useState(false);
   const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),closeRef=useRef<HTMLButtonElement>(null);
   const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade();
@@ -133,14 +135,15 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
 
         <div className={s.renderArea}>
           <div className={s.sceneLayer} style={{visibility:view==="3d"?"visible":"hidden",pointerEvents:view==="3d"?"auto":"none"}} aria-hidden={view!=="3d"}>
-            {(allowed3D||view==="3d")&&<RoomScene ref={scene} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview} openingControls={openingControls}
+            {(allowed3D||view==="3d")&&<RoomScene ref={scene} walker={walker} onCamera={setCamera} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview} openingControls={openingControls}
               onSelect={select} onMove={(id,x,y)=>usePlannerStore.getState().moveItem(id,x,y)} onFallback={()=>setView("2d")}/>}
           </div>
           <div className={s.canvasLayer} style={{display:view==="2d"?"block":"none"}}><CanvasControlsContext.Provider value={{host:toolsHost,active:view==="2d",expanded,editOpenings,openings:openingControls,expand:()=>setExpanded(v=>!v),reset:()=>setResetConfirm(true),shop:()=>open("shop"),addPiece:()=>open("furnish"),variant:"workspace"}}>{canvas}</CanvasControlsContext.Provider></div>
         </div>
         {view==="3d"&&<>
+          {camera==="inside"?<WalkIn room={room} items={visibleFurniture(items,hidden,excluded)} mapTop={compact?12:20} onBack={()=>preset("room")} onWalker={setWalker} onWalk={input=>scene.current?.walk(input)}/>:<>
           {roomOutlineMissing(room)&&<button className={s.openingsHint} onClick={editOpenings}>Doors and windows not set. Add openings</button>}
-          <p className={s.gestureHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Select when done.":"Drag empty space to look around. Select a piece to arrange it."}</p>
+          <p className={s.gestureHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Select when done.":"Drag empty space to look around. Select a piece to arrange it."}</p></>}
         </>}
         {selectedOpening!==null&&outline.openings[selectedOpening]&&!preview&&<div className={s.openingActions} style={view==="2d"&&!compact&&openingCenter(outline.points,outline.openings[selectedOpening]).y<room.widthFt/2?{top:"auto",bottom:12}:undefined} role="group" aria-label="Selected opening">
           <strong>{outline.openings[selectedOpening].kind==="door"?"Door":"Window"}</strong><span>Drag to move</span>

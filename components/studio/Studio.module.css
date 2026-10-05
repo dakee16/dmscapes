@@ -156,6 +156,28 @@
 .lightSwitch button[aria-pressed="true"] { background: var(--ds-ink); color: #fff; }
 .lightSwitch button[aria-pressed="true"] svg { color: var(--ds-yellow); }
 @media (max-width: 1240px) and (min-width: 781px) { .lightDock { bottom: 84px; } }
+.snapBtn:first-child { margin-left: auto; }
+/* Walk in: back button, mini-map, keyboard hint, and a hold-to-move pad on touch screens. */
+.walkBack { position: absolute; top: 20px; left: 20px; z-index: 4; }
+.walkMap {
+  position: absolute; right: 20px; z-index: 4; width: 176px; height: auto; padding: 8px; border-radius: 14px; pointer-events: none;
+  background: rgba(255, 255, 255, 0.94); box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06), 0 10px 24px rgba(22, 22, 29, 0.12);
+}
+.walkHint {
+  position: absolute; left: 20px; bottom: 24px; z-index: 4; margin: 0; padding: 10px 14px; border-radius: 999px; pointer-events: none;
+  background: rgba(22, 22, 29, 0.78); color: #fff; font: 600 13px/1.2 var(--ds-sans);
+}
+.walkPad {
+  position: absolute; right: 20px; bottom: 24px; z-index: 4; display: none; gap: 4px;
+  grid-template-columns: repeat(3, 48px); grid-template-rows: repeat(3, 48px); grid-template-areas: ". f ." "l . r" ". b .";
+}
+.walkPad button {
+  display: flex; align-items: center; justify-content: center; border: 0; border-radius: 14px; background: rgba(255, 255, 255, 0.94); color: var(--ds-ink);
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 8px 18px rgba(22, 22, 29, 0.14); touch-action: none; user-select: none; -webkit-user-select: none; cursor: pointer;
+}
+.walkPad button:active { background: var(--ds-ink); color: var(--ds-yellow); }
+@media (pointer: coarse) { .walkPad { display: grid; } .walkHint { display: none; } }
+.viewport[data-walk] .cameraBar { display: none; } /* Back to dollhouse is the way out */
 /* The selected piece's card; the 3D scene moves it above the piece. */
 .pieceCard {
   position: absolute; left: 0; top: 0; z-index: 5; visibility: hidden; width: 244px; padding: 12px; border-radius: 14px;
@@ -460,6 +482,9 @@
   .sceneTop { top: 12px; left: 12px; right: 12px; gap: 8px; }
   .snapBtn { margin-left: auto; }
   .sceneHint, .open2d { display: none; }
+  .walkBack { top: 12px; left: 12px; }
+  .walkMap { right: 12px; width: 124px; padding: 6px; }
+  .walkPad { right: 12px; bottom: 26px; grid-template-columns: repeat(3, 44px); grid-template-rows: repeat(3, 44px); }
   /* Phone 3D: the room on top, then a sheet with the selected piece, light, floor and budget. */
   .phoneSheet {
     flex: none; position: relative; z-index: 10; display: flex; flex-direction: column; gap: 10px; margin-top: -14px;
