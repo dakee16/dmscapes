@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "dormscape: your dorm room, planned before move-in day",
     description:
       "Pick your school, choose a vibe, set a budget. Get a room layout that fits your exact dorm, with a shoppable list.",
-    siteName: "dormscape",
+    siteName: "Dormscape", // matches the WebSite structured data
     type: "website",
     url: "/",
     images: [
