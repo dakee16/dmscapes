@@ -16,7 +16,7 @@ const PRIMARY = [
   { key: "how", label: "How it works", href: "/#how-it-works" },
   { key: "colleges", label: "Colleges", href: "/colleges" },
   { key: "pricing", label: "Pricing", href: "/pricing" },
-  { key: "3d", label: "3D Studio", href: "/plan/draw/3d" },
+  { key: "3d", label: "3D Builder", href: "/plan/draw/3d" },
   { key: "blog", label: "Blog", href: "/blog" },
 ] as const;
 

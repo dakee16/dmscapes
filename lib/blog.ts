@@ -26,14 +26,16 @@ export function formatBlogDate(iso: string) {
   return `${MONTHS[m - 1]} ${d}, ${y}`;
 }
 
+// The same identity as the homepage's Organization node (lib/seo), linked by @id.
 const org = {
   "@type": "Organization",
+  "@id": `${BLOG_BASE}/#organization`,
   name: "Dormscape",
   url: BLOG_BASE,
 };
 
 /**
- * Article JSON-LD for a blog post. One publisher/author identity (Dormscape)
+ * BlogPosting JSON-LD for a blog post. One publisher/author identity (Dormscape)
  * and both dates, since AI systems weight source and freshness signals. FAQ
  * markup lives on the standalone /faq page now, not here.
  */
@@ -41,7 +43,7 @@ export function articleJsonLd(post: BlogPost) {
   const url = `${BLOG_BASE}/blog/${post.slug}`;
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
     datePublished: post.date,

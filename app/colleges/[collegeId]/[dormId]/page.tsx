@@ -11,7 +11,7 @@ import JsonLd from "@/components/site/JsonLd";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import { ArrowRight } from "@/components/ds/Icons";
 import ScalePlan from "@/components/hall/ScalePlan";
-import { allDormPaths, getDorm, formatDims } from "@/lib/schools";
+import { allDormPaths, getDorm, formatDims, hallIsIndexable } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { formatRoomType } from "@/lib/format";
 import { beddingAdvisory } from "@/lib/bedding";
@@ -39,7 +39,6 @@ export async function generateMetadata(props: {
   const found = getDorm(collegeId, dormId);
   if (!found) return {};
   const { school, dorm } = found;
-  const measured = dorm.rooms.filter((r) => r.length_ft && r.width_ft).length;
   const types = dorm.rooms.length;
   const sizes = dorm.rooms
     .map((r) => formatDims(r.length_ft, r.width_ft))
@@ -59,7 +58,7 @@ export async function generateMetadata(props: {
     ),
     path: `/colleges/${school.id}/${dorm.id}`,
     ogTitle: `${dorm.name} dorm room dimensions and layouts`,
-    ...(measured === 0 ? { noIndex: true } : {}),
+    ...(hallIsIndexable(dorm) ? {} : { noIndex: true }),
   });
 }
 
