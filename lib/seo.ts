@@ -91,11 +91,20 @@ export function pageMetadata({
 
 // ---- schema.org -----------------------------------------------------------
 
+/**
+ * The brand's official social profiles, for Organization.sameAs. Add each
+ * profile's full URL here (e.g. the TikTok and Instagram accounts the footer
+ * links); sameAs is left out while this is empty.
+ */
+export const SOCIAL_PROFILES: string[] = [];
+
 const organization = {
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: SITE_URL,
+  description: SITE_TAGLINE,
+  ...(SOCIAL_PROFILES.length ? { sameAs: SOCIAL_PROFILES } : {}),
   logo: {
     "@type": "ImageObject",
     url: `${SITE_URL}/icons/icon-512.png?v=folded-room`,
@@ -115,6 +124,7 @@ export function webSiteJsonLd() {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
+    alternateName: ["dormscape", "Dormscape.us"],
     url: SITE_URL,
     description: SITE_TAGLINE,
     publisher: { "@id": `${SITE_URL}/#organization` },
