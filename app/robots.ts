@@ -18,6 +18,5 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ["/account", "/rooms", "/api/", "/reset-password"],
     },
     sitemap: `${BASE}/sitemap.xml`,
-    host: BASE,
   };
 }
