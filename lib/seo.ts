@@ -163,6 +163,25 @@ export function softwareApplicationJsonLd() {
   };
 }
 
+// US states and DC by postal code: a school's country is known to be the US
+// only when its state is one of these (true of every school today).
+const US_STATES = new Set("AL AK AZ AR CA CO CT DC DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI WY".split(" "));
+
+/**
+ * A school's PostalAddress from its city and state. addressCountry only where
+ * the state shows it's the US. No streetAddress or postalCode: we have no
+ * verified values for those.
+ */
+export function postalAddressJsonLd(city: string | null, state: string | null) {
+  if (!city && !state) return undefined;
+  return {
+    "@type": "PostalAddress",
+    ...(city ? { addressLocality: city } : {}),
+    ...(state ? { addressRegion: state } : {}),
+    ...(state && US_STATES.has(state) ? { addressCountry: "US" } : {}),
+  };
+}
+
 /** Breadcrumb trail. Pass [{name, path}] from root to current page. */
 export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   return {

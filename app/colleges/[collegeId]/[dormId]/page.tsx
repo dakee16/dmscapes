@@ -17,7 +17,7 @@ import { formatRoomType } from "@/lib/format";
 import { beddingAdvisory } from "@/lib/bedding";
 import { bedName, fitRoom, ft, hasDims, isPublished, roomName, sqFtOf, type FittedRoom } from "@/lib/room-preview";
 import { footprint } from "@/components/canvas/geometry";
-import { pageMetadata, fitDescription, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { pageMetadata, fitDescription, breadcrumbJsonLd, postalAddressJsonLd, absoluteUrl } from "@/lib/seo";
 import type { RoomSummary } from "@/lib/types";
 import css from "@/components/hall/Hall.module.css";
 
@@ -76,6 +76,7 @@ export default async function DormPage(props: {
   const { school, dorm } = found;
 
   const place = [school.city, school.state].filter(Boolean).join(", ");
+  const address = postalAddressJsonLd(school.city, school.state);
   const short = shortName(school);
   const published = dorm.rooms.filter(isPublished);
   const siblings = school.dorms.filter((d) => d.id !== dorm.id).slice(0, 12);
@@ -141,7 +142,7 @@ export default async function DormPage(props: {
               "@type": "CollegeOrUniversity",
               name: school.name,
               url: absoluteUrl(`/colleges/${school.id}`),
-              ...(place ? { address: place } : {}),
+              ...(address ? { address } : {}),
             },
             // Room sizes as data for search and answer engines; published
             // dimensions only, never our estimates.
