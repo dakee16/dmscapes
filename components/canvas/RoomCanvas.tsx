@@ -23,7 +23,7 @@ if (typeof window !== "undefined") {
 import type { KonvaEventObject } from "konva/lib/Node";
 import type { FurnitureItem, ProductCategory, RoomOutline, WallOpening, Point } from "@/lib/types";
 import { OPENING_DRAG_TYPE, openingCenter } from "@/lib/room-editing";
-import { mixHex, roomTheme, styleById, type RoomTheme } from "@/lib/styles";
+import { mixHex, roomThemeFor, styleFor, type RoomTheme } from "@/lib/styles";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import { bedLabel, isBunkBed } from "@/lib/bedding";
@@ -323,8 +323,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const clearSelectedCategory = usePlannerStore((s) => s.clearSelectedCategory);
   const hiddenItemIds = usePlannerStore((s) => s.hiddenItemIds);
   const selectedStyle = usePlannerStore(s => s.style);
-  const theme = roomTheme(selectedStyle);
-  const palette = styleById(selectedStyle ?? "minimalist").palette;
+  const collegeId = usePlannerStore(s => s.college?.id);
+  const theme = roomThemeFor(selectedStyle, collegeId);
+  const palette = styleFor(selectedStyle ?? "minimalist", collegeId).palette;
   const lockedItemIds = usePlannerStore((s) => s.lockedItemIds);
   const toggleHiddenItem = usePlannerStore((s) => s.toggleHiddenItem);
   const toggleLockedItem = usePlannerStore((s) => s.toggleLockedItem);

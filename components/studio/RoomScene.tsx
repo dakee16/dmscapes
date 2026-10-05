@@ -6,7 +6,7 @@ import {canUse3D} from "@/lib/plan";
 import {useUpgrade} from "@/lib/upgrade-context";
 import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId, WallOpening } from "@/lib/types";
 import { useExperienceMotion } from "@/components/experience/MotionProvider";
-import { roomTheme, styleById, type RoomTheme } from "@/lib/styles";
+import { roomThemeFor, styleFor, type RoomTheme } from "@/lib/styles";
 import { footprint, pointInPolygon } from "@/components/canvas/geometry";
 import { constrainedPosition, itemElevation, itemHeight, modelKind, roomOutline, studioSettings, visibleFurniture } from "@/lib/studio";
 import { productForFurniture, productVisual } from "@/lib/product-model";
@@ -26,6 +26,8 @@ type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;o
 export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:string[];excluded:ProductCategory[];locked:string[];selectedId:string|null;style:StyleId;products?:Product[];snap?:boolean;walls?:string;moveMode?:boolean;readOnly?:boolean;preview?:boolean;openingControls?:OpeningControls;
   /** A card the scene keeps above the selected piece (it sets the card's transform and visibility). */
   anchor?:HTMLElement|null;
+  /** The school whose colors Team Spirit takes; defaults to the planner's school. */
+  college?:string|null;
   /** The mini-map marker the scene moves while walking in. */
   walker?:SVGGElement|null;
   /** Called when the scene changes camera mode itself (e.g. Focus leaves Walk in). */
@@ -34,7 +36,8 @@ export interface RoomSceneProps {room:SelectedRoom;items:FurnitureItem[];hidden:
 const DRESSED=new Set(["bed","bunk","rug","blanket","pillow","decor","curtains","macrame"]);
 const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(props,ref){
   const workspace=useWorkspace();
-  const plannerView=usePlannerStore(st=>st.plannerView);
+  const plannerView=usePlannerStore(st=>st.plannerView),plannerCollege=usePlannerStore(st=>st.college?.id);
+  const college=props.college!==undefined?props.college:plannerCollege;
   const {profile,loading}=useAuth(),allowed=!loading&&(canUse3D(profile)||workspace?.ownerPro===true);
   const {openUpgrade}=useUpgrade(),enabled=!loading&&(allowed||props.preview===true);
   const access=useRef(allowed);access.current=allowed;
@@ -46,7 +49,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   if(!pointInPolygon(interior.x,interior.y,outline.points)){
     outer:for(let y=.5;y<props.room.widthFt;y+=.5)for(let x=.5;x<props.room.lengthFt;x+=.5)if(pointInPolygon(x,y,outline.points)){interior={x,y};break outer;}
   }
-  const data:SceneData={room:props.room,outline,settings,interior,palette:styleById(props.style).palette,theme:roomTheme(props.style),
+  const data:SceneData={room:props.room,outline,settings,interior,palette:styleFor(props.style,college).palette,theme:roomThemeFor(props.style,college),
     selectedId:props.selectedId,selectedOpening:props.openingControls?.selected??null,editOpenings:allowed&&!props.readOnly&&!!props.openingControls,items:visibleFurniture(props.items,props.hidden,props.excluded).map(f=>{
       const b=footprint(f),choice=productForFurniture(f,props.products??[]);
       const product=choice && (!f.built_in || f.type==="bed") ? productVisual(choice) : undefined;

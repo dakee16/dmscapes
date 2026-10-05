@@ -8,7 +8,7 @@ import { canUse3D, isPaid } from "@/lib/plan";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
-import { designDisplayName, styleById } from "@/lib/styles";
+import { designDisplayName, styleFor } from "@/lib/styles";
 import { track } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
 import { getSchool } from "@/lib/schools";
@@ -251,7 +251,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         </div>
         {view==="3d"&&<>
           <div className={s.sceneTop}>
-            {!walking&&<><div className={s.vibeChip} title="Your vibe"><span aria-hidden="true">{styleById(style).palette.slice(0,4).map((c,i)=><i key={i} style={{background:c}}/>)}</span>{designDisplayName(style,customVibe)}</div>
+            {!walking&&<><div className={s.vibeChip} title="Your vibe"><span aria-hidden="true">{styleFor(style,college?.id).palette.slice(0,4).map((c,i)=><i key={i} style={{background:c}}/>)}</span>{designDisplayName(style,customVibe)}</div>
             <button type="button" className={`${s.pill} ${s.open2d}`} onClick={()=>{setView("2d");setMoveMode(false);}}><PlanIcon size={15}/>Open 2D plan</button>
             <p className={s.sceneHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Stop moving when done.":"Drag empty space to look around. Select a piece to arrange it."}</p></>}
             <button type="button" className={`${s.roundBtn} ${s.snapBtn}`} aria-label="Snapshot" title="Download a snapshot (PNG)" disabled={preview} onClick={snapshot}><CameraIcon size={17}/></button>

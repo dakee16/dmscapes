@@ -2,7 +2,10 @@
 
 import { Check } from "@/components/ds/Icons";
 import { LockIcon } from "@/components/plan-steps/icons";
-import { vibeMeta } from "@/components/plan-steps/room-model";
+import type { CSSProperties } from "react";
+import { schoolLabel, vibeMeta } from "@/components/plan-steps/room-model";
+import { usePlannerStore } from "@/lib/store";
+import { schoolColors } from "@/lib/school-colors";
 import type { StyleMeta } from "@/lib/styles";
 import css from "@/components/plan-steps/Vibe.module.css";
 
@@ -27,7 +30,11 @@ export default function StyleCard({
   unlocked?: boolean;
   onSelect: () => void;
 }) {
-  const line = vibeMeta(style.id)?.line ?? style.keywords.join(", ");
+  const college = usePlannerStore((st) => st.college);
+  // Team Spirit shows the student's school colors (when we know them) on its swatch and says so.
+  const spirit = style.id === "team_spirit" ? schoolColors(college?.id) : undefined;
+  const base = vibeMeta(style.id)?.line ?? style.keywords.join(", ");
+  const line = spirit ? `In ${schoolLabel(college)} colors. ${base}` : base;
   return (
     <button
       type="button"
@@ -38,7 +45,8 @@ export default function StyleCard({
       data-selected={selected}
       data-locked={locked}
     >
-      <span className={css.swatch} data-vibe={style.id} aria-hidden="true" />
+      <span className={css.swatch} data-vibe={style.id} aria-hidden="true"
+        style={spirit ? { "--spirit-a": spirit[0], "--spirit-b": spirit[1], "--spirit-c": "#fff" } as CSSProperties : undefined} />
       {selected && (
         <span className={css.tick} aria-hidden="true">
           <Check size={15} strokeWidth={3.2} />
