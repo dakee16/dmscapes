@@ -148,7 +148,13 @@ export function createStudioScene(container, options) {
     let x=(p.x+1)*width/2,y=(-p.y+1)*height/2;const dragging=drag?.id===m.item.id&&drag.moved;
     // The page's card sits above the piece, kept inside the view and clear of the top controls; while dragging, the small label shows the position instead.
     if(anchor&&!dragging){
-      const w=anchor.offsetWidth,h=anchor.offsetHeight;x=Math.max(8,Math.min(width-w-8,x-w/2));y=Math.max(68,Math.min(height-h-8,y-h-10));
+      // Above the piece's whole outline on screen (below it near the top edge), so the card never covers what you'd grab.
+      let top=Infinity,bottom=-Infinity,left=Infinity,right=-Infinity;const v=new T.Vector3();
+      for(const cx of [pieceBox.min.x,pieceBox.max.x])for(const cy of [pieceBox.min.y,pieceBox.max.y])for(const cz of [pieceBox.min.z,pieceBox.max.z]){
+        v.set(cx,cy,cz).project(camera);if(v.z>1)continue;const sx=(v.x+1)*width/2,sy=(1-v.y)*height/2;
+        top=Math.min(top,sy);bottom=Math.max(bottom,sy);left=Math.min(left,sx);right=Math.max(right,sx);}
+      const w=anchor.offsetWidth,h=anchor.offsetHeight;x=Math.max(8,Math.min(width-w-8,(left+right)/2-w/2));
+      y=top-h-12>=68?top-h-12:bottom+12+h<=height-8?bottom+12:Math.max(68,Math.min(height-h-8,top-h-12));
       anchor.style.transform="translate("+Math.round(x)+"px,"+Math.round(y)+"px)";anchor.style.visibility="visible";label.style.display="none";return;
     }
     hideAnchor();
@@ -427,13 +433,17 @@ export function createStudioScene(container, options) {
     if(opening){const index=opening.object.userData.openingIndex;options.onSelectOpening?.(index);
       drag={pointerId:e.pointerId,openingIndex:index,startX:e.clientX,startY:e.clientY,moved:false,height:opening.point.y,opening:data.outline.openings[index]};return;}
     options.onSelectOpening?.(null);
-    const id=hit(e),m=meshes.get(id),movable=m&&m.item.movable&&!m.item.locked&&mode!=="inside"&&(e.pointerType!=="touch"||dragMode);
+    const id=hit(e),m=meshes.get(id),movable=m&&m.item.movable&&!m.item.locked&&mode!=="inside"&&(e.pointerType!=="touch"||dragMode||id===data.selectedId);
     options.onSelect?.(id);const p=roomPoint(e,m?.item.elevation||0);
     drag={pointerId:e.pointerId,id:movable?id:null,startX:e.clientX,startY:e.clientY,lastX:e.clientX,lastY:e.clientY,moved:false,
       origin:m?m.group.position.clone():null,offset:p&&m?p.clone().sub(m.group.position):null,x:m?.item.x_ft,y:m?.item.y_ft};
   }
   function distance(){const a=[...pointers.values()];return a.length===2?Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y):0;}
+  let hoverAt=0;
   function move(e){
+    // A grab cursor over pieces you can move (mouse only, at most every 60 ms).
+    if(!pointers.size&&e.pointerType==="mouse"&&data&&e.timeStamp-hoverAt>60){hoverAt=e.timeStamp;
+      const m=mode==="inside"?null:meshes.get(hit(e));canvas.style.cursor=m&&m.item.movable&&!m.item.locked?"grab":"";}
     if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
     if(pointers.size===2){const d=distance();if(pinch&&d>0)radius=Math.max(4,Math.min(180,radius*pinch/d));pinch=d;moving();request();return;}
     if(!drag||e.pointerId!==drag.pointerId)return;
@@ -445,7 +455,7 @@ export function createStudioScene(container, options) {
     }
     const dx=e.clientX-drag.lastX,dy=e.clientY-drag.lastY;
     drag.moved ||= Math.hypot(e.clientX-drag.startX,e.clientY-drag.startY)>4;
-    if(drag.id&&drag.moved){
+    if(drag.id&&drag.moved){canvas.style.cursor="grabbing";
       const m=meshes.get(drag.id),p=roomPoint(e,m.item.elevation);
       if(p&&drag.offset){const x=p.x-drag.offset.x-m.item.footW/2,y=p.z-drag.offset.z-m.item.footD/2,q=options.constrain?.(drag.id,x,y)||{x,y};
         drag.x=q.x;drag.y=q.y;m.group.position.set(q.x+m.item.footW/2,m.item.elevation,q.y+m.item.footD/2);
@@ -456,6 +466,7 @@ export function createStudioScene(container, options) {
     drag.lastX=e.clientX;drag.lastY=e.clientY;request();
   }
   function up(e){
+    if(drag?.id)canvas.style.cursor="";
     pointers.delete(e.pointerId);pinch=0;if(drag?.pointerId===e.pointerId){const d=drag;drag=null;clearGuides();if(d.openingIndex!==undefined){const node=openingNodes.get(d.openingIndex);if(node)positionOpening(node,d.opening,d.opening.offset_ft);if(d.moved&&d.nextOpening)options.onOpeningChange?.(d.openingIndex,d.nextOpening);}else if(d.id&&d.moved){shadowsDirty=true;options.onMove?.(d.id,d.x,d.y);}}
     if(canvas.hasPointerCapture(e.pointerId))canvas.releasePointerCapture(e.pointerId);request();
   }
