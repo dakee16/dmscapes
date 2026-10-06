@@ -168,6 +168,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
+  // Whose profile has settled (loaded, or retries ran out). Until the signed-in user's has, the
+  // context reports loading, so plan gates never see a signed-in user with no plan for a moment
+  // (a Pro user reloading on a Plus vibe was bounced to the vibe picker with the upgrade prompt).
+  const [profileFor, setProfileFor] = useState<string | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalReason, setModalReason] = useState<AuthModalReason>("profile");
   // Shown when this device's session was revoked elsewhere (e.g. bumped by the
@@ -224,6 +228,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (fetchGenRef.current !== gen) return; // superseded by logout/newer fetch
         if (!error && data) {
           setProfile(data as Profile);
+          setProfileFor(uid);
           return;
         }
         // A clean "no row" (not an error): recreate once, then let the next
@@ -248,6 +253,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
       // Exhausted retries: leave any previously loaded profile untouched rather
       // than clobbering it to null over a transient failure.
+      setProfileFor(uid);
     },
     [supabase]
   );
@@ -257,6 +263,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (dev) {
       setUser({ id: dev.id, email: dev.email ?? undefined } as User);
       setProfile(dev);
+      setProfileFor(dev.id);
       setLoading(false);
       // Dev-only screenshot/QA hook for the welcome (see DEV_PLUS_WELCOME_KEY).
       if (
@@ -449,7 +456,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       configured: supabase !== null,
       user,
       profile,
-      loading,
+      loading: loading || (!!user && profileFor !== user.id),
       modalOpen,
       modalReason,
       openAuthModal,
@@ -463,6 +470,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       supabase,
       user,
       profile,
+      profileFor,
       loading,
       modalOpen,
       modalReason,
