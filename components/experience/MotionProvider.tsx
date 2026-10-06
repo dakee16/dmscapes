@@ -97,11 +97,14 @@ export default function MotionProvider({
           <a href="#page-content" className="dm-skip">
             Skip to content
           </a>
-          <motion.div
-            className="dm-progress"
-            style={{ scaleX: paused ? scrollYProgress : progress }}
-            aria-hidden="true"
-          />
+          {/* The planner is a tool, not a page you read through: no scroll-progress line there. */}
+          {!pathname.startsWith("/plan") && (
+            <motion.div
+              className="dm-progress"
+              style={{ scaleX: paused ? scrollYProgress : progress }}
+              aria-hidden="true"
+            />
+          )}
           {children}
         </div>
       </MotionConfig>

@@ -291,6 +291,10 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const [showHelp, setShowHelp] = useState(false);
   const [dragging, setDragging] = useState<{ id: string; x: number; y: number } | null>(null);
   const [rotationPreview, setRotationPreview] = useState<{ id: string; degrees: number } | null>(null);
+  // Phones get a lighter selection: no rotate handle (the toolbar has Rotate) and wall gaps only while dragging,
+  // so a small piece isn't buried under its own controls.
+  const [narrow, setNarrow] = useState(false);
+  useEffect(() => { const media = window.matchMedia("(max-width:780px)"); const update = () => setNarrow(media.matches); update(); media.addEventListener("change", update); return () => media.removeEventListener("change", update); }, []);
   const helpId = useId();
   const selectId = useId();
   const lastPinchCenter = useRef<{ x: number; y: number } | null>(null);
@@ -743,7 +747,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const doorBoxes = drawn ? drawn.openings.flatMap(o => o.kind === "door" && o.swingBox ? [o.swingBox] : []) : [];
   const live = (f: FurnitureItem) => dragging?.id === f.id ? { ...f, x_ft: dragging.x, y_ft: dragging.y } : f;
   const previewing = !!ghost && !!toolbarItem && ghostIds.has(toolbarItem.id);
-  const clearance = toolbarItem && dock && !readOnly && !rotationPreview && !previewing
+  const clearance = toolbarItem && dock && !readOnly && !rotationPreview && !previewing && (!narrow || !!dragging)
     ? nearestClearance(live(toolbarItem), activeFurniture.map(live), roomL, roomW, doorBoxes, f => bedLabel(f).slice(0, 18))
     : null;
   const wallW = Math.max(4, Math.min(9, pxFt * .17));
@@ -1006,7 +1010,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               const highlighted = !selected && !readOnly && (selectedItemId === f.id ||
                 (activeCategory !== null && furnitureCategory(f) === activeCategory));
               const entry = entryFor?.(f);
-              const handle = selected && canEditItem && !!onSetRotation && !panMode && !dragging;
+              const handle = selected && canEditItem && !!onSetRotation && !narrow && !panMode && !dragging;
               return (
                 <Group
                   key={f.id}
@@ -1222,7 +1226,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
         read:(x,y)=>({x:((x-stagePos.x)/zoom-fitted.x)/(pxFt*roomL),y:((y-stagePos.y)/zoom-fitted.y)/(pxFt*roomW)}),
         draw:(x,y)=>({x:stagePos.x+(fitted.x+x*pxFt*roomL)*zoom,y:stagePos.y+(fitted.y+y*pxFt*roomW)*zoom}),
       }} pins={activeFurniture.map(f=>{const b=footprint(f);return {id:f.id,label:f.label,x:(b.x+b.w/2)/roomL,y:(b.y+b.h/2)/roomW};})}/>}
-      {pxFt > 0 && toolbarItem && canEditItem && onSetRotation && !panMode && !dragging && !previewing && rotationCenter && rotationPosition &&
+      {pxFt > 0 && toolbarItem && canEditItem && onSetRotation && !narrow && !panMode && !dragging && !previewing && rotationCenter && rotationPosition &&
         <RotationHandle key={toolbarItem.id} label={toolbarItem.label} center={rotationCenter} position={rotationPosition} degrees={toolbarItem.rotation_deg}
           onPreview={degrees=>setRotationPreview({id:toolbarItem.id,degrees})} onCommit={finishRotation} onCancel={()=>finishRotation()}/>}
       {pxFt > 0 && dock && !readOnly && toolbarItem && toolbarPos && !dragging && !rotationPreview && !panMode && !previewing && (

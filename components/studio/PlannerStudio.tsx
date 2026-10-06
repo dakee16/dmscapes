@@ -53,7 +53,8 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const [panel,setPanel]=useState<Panel>(()=>usePlannerStore.getState().plannerView==="3d"?"style":"shop"),[snap,setSnap]=useState(true),[walls,setWalls]=useState("auto"),[moveMode,setMoveMode]=useState(false);
   const [camera,setCamera]=useState<CameraView>("room"),[expanded,setExpanded]=useState(false),[mobileOpen,setMobileOpen]=useState(false),[query,setQuery]=useState(""),[resetConfirm,setResetConfirm]=useState(false);
   const [renaming,setRenaming]=useState(false),[card,setCard]=useState<HTMLDivElement|null>(null),[walker,setWalker]=useState<SVGGElement|null>(null);
-  const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),closeRef=useRef<HTMLButtonElement>(null),dragStart=useRef<number|null>(null);
+  const scene=useRef<RoomSceneHandle>(null),root=useRef<HTMLDivElement>(null),closeRef=useRef<HTMLButtonElement>(null);
+  const sheetDrag=useRef<{y:number;h:number;moved:boolean;v:number;lastY:number;lastT:number}|null>(null),sheetCustom=useRef<{sheet:string;px:number}|null>(null);
   const {profile,loading}=useAuth(),{openUpgrade}=useUpgrade();
   const ui=useStudioUI();
   const allowed3D=!loading&&canUse3D(profile),preview=view==="3d"&&!allowed3D;
@@ -118,6 +119,10 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
     if(next)commitOpening(selectedOpening!,next);
   }
   function preset(next:CameraView){setCamera(next);scene.current?.preset(next);}
+  // Phone 2D sheet: a dragged height sticks until something else moves the sheet (Swap, Add a piece, a tap).
+  const clampSheet=(px:number)=>Math.round(Math.max(110,Math.min(window.innerHeight-56,px)));
+  function clearSheetHeight(){sheetCustom.current=null;shopPanel.current?.style.removeProperty("height");root.current?.style.removeProperty("--peek");}
+  useEffect(()=>{if(sheetCustom.current&&(sheetCustom.current.sheet!==ui?.sheet||view!=="2d"||!compact))clearSheetHeight();},[ui?.sheet,view,compact]);
   // Full screen: the browser's own where it's offered (not on iPhone), always the expanded studio underneath.
   useEffect(()=>{const sync=()=>{if(!document.fullscreenElement)setExpanded(false);};document.addEventListener("fullscreenchange",sync);return()=>document.removeEventListener("fullscreenchange",sync);},[]);
   function fullScreen(){
@@ -160,7 +165,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
     {issues.length? <ul className={s.issueList}>{issues.map((issue,i)=><li key={i}><button onClick={()=>{select(issue.id);scene.current?.focus(issue.id);}}><strong>{items.find(f=>f.id===issue.id)?.label}</strong><span>{issue.message}</span></button></li>)}</ul>:<p className={s.note}>No placement conflicts detected for the visible furniture.</p>}
     {roomOutlineMissing(room)&&<p className={s.warning}>No doors or windows are recorded. Choose Doors &amp; windows to add their real positions and check clearance.</p>}
   </>;
-  const helpPanel=<><p className={s.eyebrow}>Make yourself at home</p><h2 className={s.panelTitle}>Your studio guide.</h2><dl className={s.helpList}><dt>Look around</dt><dd>Drag empty space. Use the camera presets to return to a familiar view.</dd><dt>Arrange</dt><dd>Drag a piece on desktop. On a phone, select it and choose Move selected first.</dd><dt>Zoom</dt><dd>Scroll, pinch, or use the zoom buttons.</dd><dt>Be precise</dt><dd>Use the selected item&apos;s position fields. Snap rounds to half-foot increments.</dd><dt>Undo</dt><dd>Use Undo or Ctrl / Command + Z. A finished drag counts as one edit.</dd><dt>Doors &amp; windows</dt><dd>Choose Doors &amp; windows in either view. Drag a door or window onto a wall, or tap to add one and drag it into place. Select a door to flip it. Changes appear immediately in both views. Use Undo to reverse an edit.</dd><dt>Save &amp; share</dt><dd>Use Save design to keep a named copy in your account. Share creates a link or exports the current view.</dd></dl><p className={s.note}>3D objects are approximate models. Product photos show the actual selected items. Switching views does not generate a new plan or use a credit.</p></>;
+  const helpPanel=<><p className={s.eyebrow}>Make yourself at home</p><h2 className={s.panelTitle}>Your studio guide.</h2><dl className={s.helpList}><dt>Look around</dt><dd>Drag empty space. Use the camera presets to return to a familiar view.</dd><dt>Arrange</dt><dd>Drag a piece on desktop. On a phone, tap it, then drag it.</dd><dt>Zoom</dt><dd>Scroll, pinch, or use the zoom buttons.</dd><dt>Be precise</dt><dd>Use the selected item&apos;s position fields. Snap rounds to half-foot increments.</dd><dt>Undo</dt><dd>Use Undo or Ctrl / Command + Z. A finished drag counts as one edit.</dd><dt>Doors &amp; windows</dt><dd>Choose Doors &amp; windows in either view. Drag a door or window onto a wall, or tap to add one and drag it into place. Select a door to flip it. Changes appear immediately in both views. Use Undo to reverse an edit.</dd><dt>Save &amp; share</dt><dd>Use Save design to keep a named copy in your account. Share creates a link or exports the current view.</dd></dl><p className={s.note}>3D objects are approximate models. Product photos show the actual selected items. Switching views does not generate a new plan or use a credit.</p></>;
   const itemPanel=<>
     <button type="button" className={s.backButton} onClick={()=>setPanel("style")}><ChevronLeft size={16}/>Room</button>
     {selected?<ItemInspector key={selected.id} item={selected} items={items} room={room} product={selectedProduct} issues={issues.filter(i=>i.id===selected.id).map(i=>i.message)} moveMode={moveMode}
@@ -253,7 +258,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
           <div className={s.sceneTop}>
             {!walking&&<><div className={s.vibeChip} title="Your vibe"><span aria-hidden="true">{styleFor(style,college?.id).palette.slice(0,4).map((c,i)=><i key={i} style={{background:c}}/>)}</span>{designDisplayName(style,customVibe)}</div>
             <button type="button" className={`${s.pill} ${s.open2d}`} onClick={()=>{setView("2d");setMoveMode(false);}}><PlanIcon size={15}/>Open 2D plan</button>
-            <p className={s.sceneHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Stop moving when done.":"Drag empty space to look around. Select a piece to arrange it."}</p></>}
+            <p className={s.sceneHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Stop moving when done.":"Drag a piece to move it. Drag empty space to look around."}</p></>}
             <button type="button" className={`${s.roundBtn} ${s.snapBtn}`} aria-label="Snapshot" title="Download a snapshot (PNG)" disabled={preview} onClick={snapshot}><CameraIcon size={17}/></button>
             <button type="button" className={s.roundBtn} aria-label={expanded?"Exit full screen":"Full screen"} title={expanded?"Exit full screen":"Full screen"} onClick={fullScreen}>{expanded?<CloseIcon size={16}/>:<ExpandIcon size={16}/>}</button>
           </div>
@@ -267,7 +272,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
             <button type="button" aria-label="Zoom in" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(.87)}><PlusIcon size={16}/></button>
           </div>
           {selected&&!compact&&!preview&&<div ref={setCard} className={s.pieceCard} role="group" aria-label={`Selected: ${selected.label}`}>
-            <strong>{selected.label}</strong><span data-tone={selected.built_in?"dorm":entry?"list":undefined}>{pieceStatus}</span>
+            <strong>{selected.label}</strong><span data-tone={selected.built_in?"dorm":entry?"list":undefined}>{pieceStatus}</span>{selectedMovable&&<small>Drag it to move it around the room.</small>}
             <div className={s.pieceCardActions}>
               <button type="button" disabled={!selectedMovable} onClick={rotateSelected}><RotateIcon size={14}/>Rotate</button>
               <button type="button" disabled={!canSwap} onClick={swapSelected}><SwapIcon size={14}/>Swap</button>
@@ -284,10 +289,10 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         {resetConfirm&&<div className={s.resetConfirm} role="group" aria-label="Confirm layout reset"><p>Restore the original furniture arrangement? You can undo this.</p><div className={s.buttonRow}><button className={s.inkBtn} onClick={()=>{onReset();setResetConfirm(false);}}>Restore layout</button><button onClick={()=>setResetConfirm(false)}>Keep my changes</button></div></div>}
       </section>
       {view==="3d"&&compact&&<section className={s.phoneSheet} aria-label="Room controls" inert={preview}>
-        {selected?<div className={s.sheetPiece}><span><strong>{selected.label}</strong><small>{pieceStatus}</small></span>
+        {selected?<div className={s.sheetPiece}><span><strong>{selected.label}</strong><small>{selectedMovable?`${pieceStatus} · drag it to move`:pieceStatus}</small></span>
           <button type="button" disabled={!selectedMovable} onClick={rotateSelected}><RotateIcon size={15}/>Rotate</button>
           <button type="button" disabled={!canSwap} onClick={swapSelected}><SwapIcon size={15}/>Swap</button></div>
-          :<p className={s.sheetHint}>Select a piece to arrange it.</p>}
+          :<p className={s.sheetHint}>Tap a piece, then drag it to move it.</p>}
         <LightSwitch room={room}/>
         <FloorSwatches room={room}/>
         <div className={s.sheetBudget}><BudgetTracker total={total} budget={budget} size="sm"/><button type="button" onClick={()=>open("shop")}>List</button></div>
@@ -303,9 +308,20 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
           if(e.key==="Tab"){const nodes=Array.from(shopPanel.current?.querySelectorAll<HTMLElement>('button:not(:disabled),a[href],input:not(:disabled),select:not(:disabled),[tabindex="0"]')??[]).filter(n=>n.getClientRects().length>0);const first=nodes[0],last=nodes[nodes.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}
         }}>
         {view==="2d"&&compact&&ui?.variant==="planner"&&!ui.swapTarget&&<button type="button" className={s.sheetHandle} aria-label={ui.sheet==="full"?"Collapse the shopping list":ui.sheet==="min"?"Show the shopping list":"Open the full shopping list"} aria-expanded={ui.sheet==="full"}
-          onPointerDown={e=>{dragStart.current=e.clientY;e.currentTarget.setPointerCapture(e.pointerId);}}
-          onPointerUp={e=>{const start=dragStart.current;dragStart.current=null;if(start===null)return;const dy=e.clientY-start;ui.setSheet(Math.abs(dy)>30?stepSheet(ui.sheet,dy<0?1:-1):ui.sheet==="peek"?"full":"peek");}}
-          onPointerCancel={()=>{dragStart.current=null;}}
+          onPointerDown={e=>{const panel=shopPanel.current;if(!panel)return;e.currentTarget.setPointerCapture(e.pointerId);panel.dataset.dragging="";
+            sheetDrag.current={y:e.clientY,h:panel.getBoundingClientRect().height,moved:false,v:0,lastY:e.clientY,lastT:e.timeStamp};}}
+          onPointerMove={e=>{const d=sheetDrag.current,panel=shopPanel.current;if(!d||!panel)return;
+            if(Math.abs(e.clientY-d.y)>4)d.moved=true;if(!d.moved)return;
+            const dt=e.timeStamp-d.lastT;if(dt>0)d.v=(e.clientY-d.lastY)/dt;d.lastY=e.clientY;d.lastT=e.timeStamp;
+            panel.style.height=clampSheet(d.h-(e.clientY-d.y))+"px";}}
+          onPointerUp={e=>{const d=sheetDrag.current,panel=shopPanel.current;sheetDrag.current=null;if(!d||!panel)return;delete panel.dataset.dragging;
+            // A tap toggles, a flick goes all the way, and a drag stays wherever it's let go.
+            if(!d.moved||Math.abs(d.v)>.9){clearSheetHeight();ui.setSheet(!d.moved?(ui.sheet==="peek"?"full":"peek"):d.v<0?"full":"min");return;}
+            const px=clampSheet(d.h-(e.clientY-d.y)),sheet=px<170?"min":px<380?"peek":"full";
+            sheetCustom.current={sheet,px};panel.style.height=px+"px";
+            if(sheet==="full")root.current?.style.removeProperty("--peek");else root.current?.style.setProperty("--peek",px+"px");
+            ui.setSheet(sheet);}}
+          onPointerCancel={()=>{const d=sheetDrag.current;sheetDrag.current=null;if(d&&shopPanel.current){delete shopPanel.current.dataset.dragging;shopPanel.current.style.height=sheetCustom.current?sheetCustom.current.px+"px":"";}}}
           onKeyDown={e=>{
             if(e.key==="Enter"||e.key===" "){e.preventDefault();ui.setSheet(ui.sheet==="peek"?"full":"peek");}
             if(e.key==="ArrowUp"||e.key==="ArrowDown"){e.preventDefault();ui.setSheet(stepSheet(ui.sheet,e.key==="ArrowUp"?1:-1));}}}><span aria-hidden="true"/></button>}
