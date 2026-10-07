@@ -36,13 +36,14 @@ import { createPortal } from "react-dom";
 import { useCanvasDock } from "./CanvasControlsContext";
 import CanvasToolRail from "./CanvasToolRail";
 import { brandImage } from "@/lib/brand-image";
+import { backSides } from "@/lib/studio";
+import { throwIsBlanket } from "@/lib/product-model";
 import FurnitureGlyph, { RoomGlyph, type BackSide } from "./FurnitureGlyph";
 import RotationHandle from "./RotationHandle";
 import { feetLabel, fitViewport, placedCoordinate, zoomAt } from "./viewport";
-import { nearestClearance } from "./clearance";
 import { useStudioUI } from "@/components/studio-ui/StudioUI";
 import { feetInches } from "@/components/studio-ui/list";
-import { AlertIcon, CheckIcon, LockIcon, MoreIcon, RotateIcon, SwapIcon, TrashIcon, UnlockIcon, UpRightIcon, EyeIcon, EyeOffIcon } from "@/components/studio-ui/icons";
+import { AlertIcon, CheckIcon, LockIcon, RotateIcon, SwapIcon, TrashIcon, UnlockIcon, UpRightIcon, EyeIcon, EyeOffIcon } from "@/components/studio-ui/icons";
 import ProductLink from "@/components/products/ProductLink";
 import { alternativesOf } from "@/lib/catalog";
 import styles from "./PlanCanvas.module.css";
@@ -103,7 +104,6 @@ const GRID = "rgba(36, 73, 255, 0.07)";
 const COBALT = "#2449FF";
 const RED = "#D7262E";
 const TAPE = "#F3C21A";
-const MAGENTA = "#C0186F";
 const PINK = "#FF4FA8";
 /** Room view walls: a warm near-black. */
 const WALL = "#2B2622";
@@ -306,9 +306,6 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   // CSS variables the layout sets (--font-martian / --font-archivo) and force a redraw once webfonts finish.
   const [labelFont, setLabelFont] = useState("ui-monospace, monospace");
   const [sansFont, setSansFont] = useState("Arial, sans-serif");
-  const [itemMenu, setItemMenu] = useState(false);
-  const toolbarRef = useRef<HTMLDivElement>(null);
-  const [toolbarW, setToolbarW] = useState(300);
   const ui = useStudioUI();
   const lastPinch = useRef<number | null>(null);
   // Suppresses the click that Konva fires right after a drag/pan release.
@@ -519,14 +516,6 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     },
   }));
 
-  // The floating piece toolbar is centred over the piece; measure it to keep it on screen.
-  useEffect(() => {
-    const width = toolbarRef.current?.offsetWidth;
-    if (width && Math.abs(width - toolbarW) > 1) setToolbarW(width);
-  });
-  const toolbarTarget = rotateTarget?.id;
-  useEffect(() => { setItemMenu(false); }, [toolbarTarget]);
-
   // Door: bottom of the left wall, 2.5 ft leaf swinging into the room.
   const doorHinge = { x: PAD, y: PAD + (roomW - 3) * pxFt };
   const doorR = 2.5 * pxFt;
@@ -617,34 +606,12 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     return { flat: pts.flatMap((p) => { const q = px(p); return [q.x, q.y]; }), edges, windows };
   }, [roomView, pxFt, drawOutline, roomL, roomW, isCorridor]);
 
-  // Which side each bed, chair, sofa, dresser or appliance has its back on:
-  // a bed's head is where its throw pillows sit (else the end nearest a wall),
-  // chairs face their desk, everything else backs onto the nearest wall.
-  const backs = useMemo(() => {
-    const out = new Map<string, BackSide>();
-    if (!roomView) return out;
-    const centre = (f: FurnitureItem) => { const b = footprint(f); return { x: b.x + b.w / 2, y: b.y + b.h / 2 }; };
-    const desks = displayFurniture.filter(f => f.type === "desk" || f.type === "table").map(centre);
-    const pillows = displayFurniture.filter(f => f.type === "throw_pillows").map(centre);
-    for (const f of displayFurniture) {
-      if (!BACKED.has(f.type)) continue;
-      const b = footprint(f), cx = b.x + b.w / 2, cy = b.y + b.h / 2;
-      const desk = f.type === "desk_chair" ? desks.sort((p, q) => Math.hypot(p.x - cx, p.y - cy) - Math.hypot(q.x - cx, q.y - cy))[0] : undefined;
-      let dir: [number, number];
-      const pillow = f.type === "bed" ? pillows.find(c => c.x >= b.x && c.x <= b.x + b.w && c.y >= b.y && c.y <= b.y + b.h) : undefined;
-      if (pillow) dir = [pillow.x - cx, pillow.y - cy];
-      else if (f.type === "bed") dir = b.w >= b.h ? [b.x <= roomL - b.x - b.w ? -1 : 1, 0] : [0, b.y <= roomW - b.y - b.h ? -1 : 1];
-      else if (desk && Math.hypot(desk.x - cx, desk.y - cy) < 5) dir = [cx - desk.x, cy - desk.y];
-      else {
-        const gaps = [b.y, roomL - b.x - b.w, roomW - b.y - b.h, b.x];
-        dir = ([[0, -1], [1, 0], [0, 1], [-1, 0]] as [number, number][])[gaps.indexOf(Math.min(...gaps))];
-      }
-      const local = Math.atan2(dir[1], dir[0]) * 180 / Math.PI - f.rotation_deg;
-      // A bed's head is one of its short ends: the top or bottom of its own frame.
-      out.set(f.id, f.type === "bed" ? (Math.sin(local * Math.PI / 180) < 0 ? 0 : 2) : ((((Math.round(local / 90) + 1) % 4) + 4) % 4) as BackSide);
-    }
-    return out;
-  }, [roomView, displayFurniture, roomL, roomW]);
+  // Which side each bed, chair, sofa, dresser or appliance has its back on (lib/studio backSides, which the
+  // 3D room uses too): a bed's head is where its throw pillows sit (else the end by a wall), chairs face their
+  // desk, everything else backs onto the nearest wall.
+  const entryOf = ui?.entryFor;
+  const blanket = useMemo(() => (f: FurnitureItem) => throwIsBlanket(f, entryOf?.(f)?.product), [entryOf]);
+  const backs = useMemo(() => roomView ? backSides(displayFurniture, roomL, roomW, outline, blanket) : new Map<string, BackSide>(), [roomView, displayFurniture, roomL, roomW, outline, blanket]);
 
   // The floor: one cached tile per vibe and zoom bucket, planks along the room's long side.
   const bucket = zoom <= 1 ? 1 : zoom <= 1.5 ? 1.5 : zoom <= 2 ? 2 : 3;
@@ -744,24 +711,11 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const ghostIds = new Set(ghost?.replaces ?? []);
   const toolbarEntry = toolbarItem ? entryFor?.(toolbarItem) : undefined;
   const canSwap = !!ui && !!toolbarEntry && !toolbarEntry.custom && alternativesOf(toolbarEntry.product).length > 0;
-  const doorBoxes = drawn ? drawn.openings.flatMap(o => o.kind === "door" && o.swingBox ? [o.swingBox] : []) : [];
-  const live = (f: FurnitureItem) => dragging?.id === f.id ? { ...f, x_ft: dragging.x, y_ft: dragging.y } : f;
   const previewing = !!ghost && !!toolbarItem && ghostIds.has(toolbarItem.id);
-  const clearance = toolbarItem && dock && !readOnly && !rotationPreview && !previewing && (!narrow || !!dragging)
-    ? nearestClearance(live(toolbarItem), activeFurniture.map(live), roomL, roomW, doorBoxes, f => bedLabel(f).slice(0, 18))
-    : null;
   const wallW = Math.max(4, Math.min(9, pxFt * .17));
   const z = zoom || 1;
   const ftLabel = (n: number) => `${Number.isInteger(Math.round(n * 10) / 10) ? Math.round(n) : n.toFixed(1)} ft`;
   const textW = (text: string, size: number) => text.length * size * .56;
-  const toolbarPos = toolbarItem && selectedFootprint ? (() => {
-    const left = stagePos.x + (fitted.x + selectedFootprint.x * pxFt) * zoom, top = stagePos.y + (fitted.y + selectedFootprint.y * pxFt) * zoom;
-    const width = selectedFootprint.w * pxFt * zoom, height = selectedFootprint.h * pxFt * zoom;
-    const above = top - 98;
-    const y = above >= 8 ? above : Math.min(top + height + 18, stageH - 58);
-    const half = toolbarW / 2 + 8;
-    return { x: clamp(left + width / 2, half, Math.max(half, stageW - half)), y };
-  })() : null;
   const status = ghost
     ? { ok: ghost.fits, text: ghost.fits ? "Preview fits · nothing moves" : "Preview needs a fit check" }
     : dragging
@@ -1052,8 +1006,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                   <Group x={fp.w*pxFt/2} y={fp.h*pxFt/2} offsetX={w/2} offsetY={h/2} rotation={f.rotation_deg}>
                   <Group opacity={isHidden ? .16 : 1} listening={false}>{roomView
                     ? <RoomGlyph item={f} scale={pxFt} theme={theme} dressed={f.type === "bed" && !!entry} books={f.type === "shelf" && !!entry && /book/i.test(entry.product.name)}
-                        back={backs.get(f.id)} detail={Math.min(w, h) * zoom >= 28} bucket={bucket} />
-                    : <FurnitureGlyph item={f} scale={pxFt} palette={palette} dressed={f.type === "bed" && !!entry} />}</Group>
+                        blanket={blanket(f)} back={backs.get(f.id)} detail={Math.min(w, h) * zoom >= 28} bucket={bucket} />
+                    : <FurnitureGlyph item={f} scale={pxFt} palette={palette} dressed={f.type === "bed" && !!entry} blanket={blanket(f)} />}</Group>
                   {/* Hit area (and the dashed outline of a hidden piece). */}
                   <Rect
                     width={w}
@@ -1105,8 +1059,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 </Group>;
               })}
             </Group>}
-            {/* Labels, list pins and the selected piece's size sit above the
-                furniture, so small pieces never hide a name. */}
+            {/* Labels and list pins sit above the furniture, so small pieces never hide a name. */}
             <Group>
               {visible.map(f => {
                 if (hiddenItemIds.includes(f.id)) return null;
@@ -1131,12 +1084,9 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 const isSel = !readOnly && toolbarItem?.id === f.id && !ghostIds.has(f.id);
                 const pinActive = isSel || (!!entry && (entry.custom ? selectedItemId === f.id : activeCategory === entry.product.category));
                 const r = 11 / z;
-                const inside = w >= 48 && h >= 40;
-                const pinX = inside ? w - 16 / z : w + 2 / z, pinY = inside ? 16 / z : -2 / z;
-                // Room view names dorm-provided pieces too (the studio's wording), when the pill fits the piece.
-                const dims = `${feetInches(f.width_ft)} × ${feetInches(f.length_ft)}`, dormDims = `Dorm-provided · ${dims}`;
-                const sizeText = isSel ? (roomView && f.built_in && textW(dormDims, 13) + 20 <= w * z + 16 ? dormDims : dims) : "";
-                const sizeW = textW(sizeText, 13) / z + 20 / z;
+                // The selected piece's number sits just outside its corner, so nothing covers the piece itself.
+                const inside = w >= 48 && h >= 40 && !isSel;
+                const pinX = inside ? w - 16 / z : isSel ? w + r + 4 / z : w + 2 / z, pinY = inside ? 16 / z : isSel ? -r - 4 / z : -2 / z;
                 return <Group
                   key={`label-${f.id}`}
                   ref={node => { if (node) labelRefs.current.set(f.id, node); else labelRefs.current.delete(f.id); }}
@@ -1148,10 +1098,6 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                     <Text x={(w-labelW)/2+2} y={labelY} width={labelW-4} height={label.height} text={label.text} align="center" verticalAlign="middle"
                       fontSize={size} fontFamily={label.mono ? labelFont : sansFont} fontStyle={label.mono ? "700" : "600"} letterSpacing={label.mono ? .7 : 0}
                       fill={label.mono ? COBALT : INK} wrap="none" ellipsis />
-                  </Group>}
-                  {isSel && sizeText && w * z > 70 && h * z > 34 && <Group name="editor-only" listening={false} x={w/2 - sizeW/2} y={h/2 - 12/z}>
-                    <Rect width={sizeW} height={24/z} cornerRadius={12/z} fill={COBALT} />
-                    <Text width={sizeW} height={24/z} align="center" verticalAlign="middle" text={sizeText} fontFamily={sansFont} fontStyle="800" fontSize={13/z} fill="#FFFFFF" />
                   </Group>}
                   {entry && !readOnly && (showNumbers || pinActive) && <Group name="editor-only" x={pinX} y={pinY}
                     onClick={(e) => { e.cancelBubble = true; dock?.openings.select(null); handleItemClick(f); }}
@@ -1165,22 +1111,6 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                 </Group>;
               })}
             </Group>
-            {/* Clearance from the selected piece to its nearest neighbour, wall or door swing. */}
-            {clearance && <Group name="editor-only" listening={false}>
-              {(() => {
-                const x1 = PAD + clearance.x1 * pxFt, y1 = PAD + clearance.y1 * pxFt, x2 = PAD + clearance.x2 * pxFt, y2 = PAD + clearance.y2 * pxFt;
-                const vertical = Math.abs(x1 - x2) < .5, t = 6.5 / z;
-                const text = `${clearance.name} · ${feetInches(clearance.ft)}`, tw = textW(text, 12) / z + 18 / z, th = 22 / z;
-                const lx = vertical ? x1 - tw - 8 / z : (x1 + x2) / 2 - tw / 2, ly = vertical ? (y1 + y2) / 2 - th / 2 : y1 - th - 8 / z;
-                return <>
-                  <Line points={[x1, y1, x2, y2]} stroke={MAGENTA} strokeWidth={1.5/z} />
-                  <Line points={vertical ? [x1 - t, y1, x1 + t, y1] : [x1, y1 - t, x1, y1 + t]} stroke={MAGENTA} strokeWidth={1.5/z} />
-                  <Line points={vertical ? [x2 - t, y2, x2 + t, y2] : [x2, y2 - t, x2, y2 + t]} stroke={MAGENTA} strokeWidth={1.5/z} />
-                  <Rect x={lx} y={ly} width={tw} height={th} cornerRadius={4/z} fill="#FFFFFF" stroke={MAGENTA} strokeWidth={1.5/z} />
-                  <Text x={lx} y={ly} width={tw} height={th} align="center" verticalAlign="middle" text={text} fontFamily={sansFont} fontStyle="800" fontSize={12/z} fill={MAGENTA} />
-                </>;
-              })()}
-            </Group>}
             {checkHighlight&&!readOnly&&<Group name="editor-only" listening={false}><Line points={checkHighlight.points.flatMap(p=>[PAD+p.x*pxFt,PAD+p.y*pxFt])} closed fill="#F3C21A30" stroke="#C99A06" strokeWidth={2/zoom} dash={[6/zoom,4/zoom]}/></Group>}
             {drawn&&drawn.openings.map((op, i) => (
                   <Group key={`opening-${i}`} name="opening" draggable={!readOnly&&!panMode&&!!dock&&i<(outline?.openings.length??0)}
@@ -1229,38 +1159,28 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       {pxFt > 0 && toolbarItem && canEditItem && onSetRotation && !narrow && !panMode && !dragging && !previewing && rotationCenter && rotationPosition &&
         <RotationHandle key={toolbarItem.id} label={toolbarItem.label} center={rotationCenter} position={rotationPosition} degrees={toolbarItem.rotation_deg}
           onPreview={degrees=>setRotationPreview({id:toolbarItem.id,degrees})} onCommit={finishRotation} onCancel={()=>finishRotation()}/>}
-      {pxFt > 0 && dock && !readOnly && toolbarItem && toolbarPos && !dragging && !rotationPreview && !panMode && !previewing && (
-        <div ref={toolbarRef} className={styles.itemBar} role="toolbar" aria-label={`${bedLabel(toolbarItem)} actions`} style={{ left: toolbarPos.x, top: toolbarPos.y }}>
+      </div>
+      {/* Everything about the selection lives in this bar under the plan, never over it. */}
+      {dock && pxFt > 0 && <div className={styles.dockBar} data-piece={dock.notice || (toolbarItem && !readOnly && !previewing && !panMode) ? "" : undefined} data-dragging={dragging ? "" : undefined}>
+        <p className={styles.statusPill} data-ok={status.ok || undefined} role="status">
+          <span aria-hidden="true">{status.ok ? <CheckIcon size={12} /> : <AlertIcon size={13} />}</span>{status.text}
+        </p>
+        {dock.notice ? <div className={styles.notice}>{dock.notice}</div>
+          : !readOnly && toolbarItem && !previewing && !panMode && <div className={styles.itemBar} role="toolbar" aria-label={`${bedLabel(toolbarItem)} actions`}>
           {onRotate && <button type="button" disabled={!canEditItem} onClick={() => onRotate(toolbarItem.id, 1)} title="Rotate 90° (R)"><RotateIcon size={15} />Rotate</button>}
           {canSwap && <button type="button" className={styles.swap} onClick={() => ui?.openSwap(toolbarEntry!.product)}><SwapIcon size={15} />Swap</button>}
           {toolbarDeletable && <button type="button" onClick={() => { onDeleteItem?.(toolbarItem); clearSelectedCategory(); }}><TrashIcon size={15} />Remove</button>}
-          <div className={styles.itemMore}>
-            <button type="button" aria-label="More for this piece" title="Lock or hide" aria-expanded={itemMenu} onClick={() => setItemMenu(v => !v)}><MoreIcon size={16} /></button>
-            {itemMenu && <div className={styles.itemMenu} role="group" aria-label="Piece options">
-              <button type="button" aria-pressed={toolbarLocked} onClick={() => toggleLockedItem(toolbarItem.id)}>{toolbarLocked ? <UnlockIcon size={16} /> : <LockIcon size={16} />}{toolbarLocked ? "Unlock" : "Lock in place"}</button>
-              <button type="button" aria-pressed={toolbarHidden} onClick={() => toggleHiddenItem(toolbarItem.id)}>{toolbarHidden ? <EyeIcon size={16} /> : <EyeOffIcon size={16} />}{toolbarHidden ? "Show" : "Hide from view"}</button>
-            </div>}
-          </div>
+          <button type="button" className={styles.iconOnly} aria-pressed={toolbarLocked} aria-label={toolbarLocked ? "Unlock" : "Lock in place"} title={toolbarLocked ? "Unlock" : "Lock in place"} onClick={() => toggleLockedItem(toolbarItem.id)}>{toolbarLocked ? <UnlockIcon size={16} /> : <LockIcon size={16} />}</button>
+          <button type="button" className={styles.iconOnly} aria-pressed={toolbarHidden} aria-label={toolbarHidden ? "Show" : "Hide from view"} title={toolbarHidden ? "Show" : "Hide from view"} onClick={() => toggleHiddenItem(toolbarItem.id)}>{toolbarHidden ? <EyeIcon size={16} /> : <EyeOffIcon size={16} />}</button>
           {toolbarEntry && <>
             <span className={styles.sep} aria-hidden="true" />
             <ProductLink product={toolbarEntry.product} className={styles.priceLink} label={`View ${toolbarEntry.product.name} on Amazon, $${toolbarEntry.product.price.toFixed(2)}`}>
               ${toolbarEntry.product.price.toFixed(2)}<UpRightIcon size={13} />
             </ProductLink>
           </>}
-        </div>
-      )}
-      {pxFt > 0 && dock && <p className={styles.statusPill} data-ok={status.ok || undefined} data-quiet={status.ok && !dragging && !ghost || undefined} role="status">
-        <span aria-hidden="true">{status.ok ? <CheckIcon size={12} /> : <AlertIcon size={13} />}</span>{status.text}
-      </p>}
-      {pxFt > 0 && <div className={styles.scale} aria-hidden="true"><i style={{ width: pxFt * zoom * scaleFt }} /><span>{scaleFt} ft</span></div>}
-      {!dock&&<div className={styles.viewportControls} aria-label="View controls">
-        <button type="button" onClick={() => applyZoom(zoom - .25)} disabled={zoom <= MIN_ZOOM} aria-label="Zoom out">−</button>
-        <output aria-label="Zoom level">{Math.round(zoom * 100)}%</output>
-        <button type="button" onClick={() => applyZoom(zoom + .25)} disabled={zoom >= MAX_ZOOM} aria-label="Zoom in">+</button>
-        <span className={styles.divider} />
-        <button type="button" onClick={fitRoom} title="Fit the whole room (0)"><Icon path="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M8 8h8v8H8z" />Fit</button>
+        </div>}
+        <div className={styles.scale} aria-hidden="true"><i style={{ width: pxFt * zoom * scaleFt }} /><span>{scaleFt} ft</span></div>
       </div>}
-      </div>
       {!dock&&<>
       {!readOnly && <div className={styles.inspector}>
         <div className={styles.selection}>
@@ -1286,6 +1206,14 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
           <i />{invalid.size ? `${invalid.size} ${invalid.size === 1 ? "piece needs" : "pieces need"} a fit check. Look for red outlines.` : `${activeFurniture.length} pieces in your room.`}
           {dragging ? ` Position: ${feetLabel(dragging.x)} / ${feetLabel(dragging.y)}` : ""}
         </p>
+        {pxFt > 0 && <div className={styles.scale} aria-hidden="true"><i style={{ width: pxFt * zoom * scaleFt }} /><span>{scaleFt} ft</span></div>}
+        <div className={styles.viewportControls} aria-label="View controls">
+          <button type="button" onClick={() => applyZoom(zoom - .25)} disabled={zoom <= MIN_ZOOM} aria-label="Zoom out">−</button>
+          <output aria-label="Zoom level">{Math.round(zoom * 100)}%</output>
+          <button type="button" onClick={() => applyZoom(zoom + .25)} disabled={zoom >= MAX_ZOOM} aria-label="Zoom in">+</button>
+          <span className={styles.divider} />
+          <button type="button" onClick={fitRoom} title="Fit the whole room (0)"><Icon path="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5M8 8h8v8H8z" />Fit</button>
+        </div>
         {!readOnly && <button type="button" onClick={onReset} title="Restore the starting layout. You can undo this.">Reset layout</button>}
       </div>
       </>}
