@@ -2,7 +2,7 @@ import type { FurnitureItem, ProductCategory, RoomOutline, SelectedRoom } from "
 import { furnitureCategory } from "./highlight";
 import { isBunkBed } from "./bedding";
 import { bedMetrics, bedMode } from "./bed-config";
-import { footprint, furnitureContainsPoint, furnitureCorners, furnitureInsidePolygon, furnitureLocalPoint, polygonsOverlap, rectCorners } from "@/components/canvas/geometry";
+import { footprint, furnitureContainsPoint, furnitureCorners, furnitureInsidePolygon, furnitureLocalPoint, pointInPolygon, polygonsOverlap, rectCorners } from "@/components/canvas/geometry";
 
 export interface StudioSettings {
   ceilingFt: number;
@@ -71,6 +71,67 @@ export function itemElevation(f: FurnitureItem, items: FurnitureItem[]): number 
   const host = items.find(p => p.id!==f.id && ["desk","dresser","bed","bunk","shelf"].includes(modelKind(p)) &&
     p.width_ft*p.length_ft>f.width_ft*f.length_ft && furnitureContainsPoint(p,{x:cx,y:cy}));
   return host ? ["bed","bunk"].includes(modelKind(host)) ? bedSurfaceHeight(host) : itemHeight(host) : 0;
+}
+/** A side of a piece in its own unrotated frame: 0 top, 1 right, 2 bottom, 3 left (in 3D: -z, +x, +z, -x). */
+export type BackSide = 0 | 1 | 2 | 3;
+/** Pieces whose back goes against the nearest wall (fronts, drawers and doors face the room). */
+const BACK_TO_WALL = new Set(["desk","sofa","lounge","dresser","wardrobe","fridge","microwave","shelf","storage","trash","lamp"]);
+/** Flat pieces that hang on a wall: their back is always one of their long sides. */
+const HANGS = new Set(["art","mirror","lights","curtains","macrame","wall-shelf"]);
+/**
+ * Which side of each piece is its back, so the 2D Room view and the 3D room
+ * agree and nothing faces a wall: a bed's head is the end with its throw
+ * pillows, or away from a throw blanket folded at its foot (else the end
+ * nearest a wall), a chair turns its back on its desk, dressers, desks,
+ * shelves and appliances back onto the nearest wall, and wall pieces hang flat
+ * against it. Symmetric pieces aren't listed (back 0). `blanket` says which
+ * throws are blankets rather than pillows (the product decides).
+ */
+export function backSides(items: FurnitureItem[], roomL: number, roomW: number, outline?: RoomOutline | null, blanket: (f: FurnitureItem) => boolean = f => f.type === "throw"): Map<string, BackSide> {
+  const out = new Map<string, BackSide>();
+  const pts = outline?.points ?? [{x:0,y:0},{x:roomL,y:0},{x:roomL,y:roomW},{x:0,y:roomW}];
+  const centre = (f: FurnitureItem) => { const b = footprint(f); return { x: b.x + b.w / 2, y: b.y + b.h / 2 }; };
+  const desks = items.filter(f => modelKind(f) === "desk").map(centre);
+  const throws = items.filter(f => f.type === "throw_pillows" || f.type === "throw").map(f => ({ ...centre(f), foot: blanket(f) }));
+  // The walls: each edge with its inward normal.
+  const edges = pts.map((a, i) => {
+    const b = pts[(i + 1) % pts.length], len = Math.hypot(b.x - a.x, b.y - a.y) || 1, dx = (b.x - a.x) / len, dy = (b.y - a.y) / len;
+    const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, inward = pointInPolygon(mx - dy * .05, my + dx * .05, pts) ? { x: -dy, y: dx } : { x: dy, y: -dx };
+    return { a, len, dx, dy, n: inward };
+  });
+  /** The direction from a piece to the wall nearest its footprint (a wall it actually faces along its span). */
+  const nearestWall = (f: FurnitureItem): [number, number] => {
+    const b = footprint(f), c = { x: b.x + b.w / 2, y: b.y + b.h / 2 };
+    let best: [number, number] | null = null, gap = Infinity;
+    for (const e of edges) {
+      const along = (c.x - e.a.x) * e.dx + (c.y - e.a.y) * e.dy, reach = Math.abs(e.dx) * b.w / 2 + Math.abs(e.dy) * b.h / 2;
+      if (along < -reach || along > e.len + reach) continue;
+      const g = (c.x - e.a.x) * e.n.x + (c.y - e.a.y) * e.n.y - (Math.abs(e.n.x) * b.w / 2 + Math.abs(e.n.y) * b.h / 2);
+      if (g > -.5 && g < gap) { gap = g; best = [-e.n.x, -e.n.y]; }
+    }
+    if (best) return best;
+    const gaps = [b.y, roomL - b.x - b.w, roomW - b.y - b.h, b.x];
+    return ([[0, -1], [1, 0], [0, 1], [-1, 0]] as [number, number][])[gaps.indexOf(Math.min(...gaps))];
+  };
+  for (const f of items) {
+    const k = modelKind(f), b = footprint(f), c = centre(f);
+    const bed = k === "bed" || k === "bunk", chair = k === "chair", hangs = HANGS.has(k);
+    if (!bed && !chair && !hangs && !BACK_TO_WALL.has(k)) continue;
+    let dir: [number, number];
+    const on = bed ? throws.filter(p => p.x >= b.x && p.x <= b.x + b.w && p.y >= b.y && p.y <= b.y + b.h) : [];
+    const pillow = on.find(p => !p.foot) ?? on[0];
+    const desk = chair ? desks.slice().sort((p, q) => Math.hypot(p.x - c.x, p.y - c.y) - Math.hypot(q.x - c.x, q.y - c.y))[0] : undefined;
+    if (pillow) dir = pillow.foot ? [c.x - pillow.x, c.y - pillow.y] : [pillow.x - c.x, pillow.y - c.y];
+    else if (bed) dir = b.w >= b.h ? [b.x <= roomL - b.x - b.w ? -1 : 1, 0] : [0, b.y <= roomW - b.y - b.h ? -1 : 1];
+    else if (desk && Math.hypot(desk.x - c.x, desk.y - c.y) < 5) dir = [c.x - desk.x, c.y - desk.y];
+    else dir = nearestWall(f);
+    const local = (Math.atan2(dir[1], dir[0]) * 180 / Math.PI - f.rotation_deg) * Math.PI / 180;
+    // A bed's head is one of its short ends; a hanging piece hangs by a long side.
+    if (bed || (hangs && f.length_ft <= f.width_ft)) out.set(f.id, Math.sin(local) < 0 ? 0 : 2);
+    else if (hangs) out.set(f.id, Math.cos(local) > 0 ? 1 : 3);
+    else out.set(f.id, ((((Math.round(local * 2 / Math.PI) + 1) % 4) + 4) % 4) as BackSide);
+  }
+  return out;
 }
 export function visibleFurniture(items: FurnitureItem[], hidden: string[], excluded: ProductCategory[]): FurnitureItem[] {
   return items.filter(f=>!hidden.includes(f.id) && (f.inventory || f.built_in || f.type === "custom" || !furnitureCategory(f) || !excluded.includes(furnitureCategory(f)!)));

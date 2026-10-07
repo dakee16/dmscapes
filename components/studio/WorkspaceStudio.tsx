@@ -11,8 +11,9 @@ import { usePlannerStore } from "@/lib/store";
 import { furnitureCategory } from "@/lib/highlight";
 import { productForFurniture } from "@/lib/product-model";
 import type { Product, WallOpening } from "@/lib/types";
-import { placementIssues, roomOutline, studioSettings, visibleFurniture } from "@/lib/studio";
-import { openingAtPoint, openingCenter, type OpeningControls } from "@/lib/room-editing";
+import { itemElevation, itemHeight, roomOutline, studioSettings, visibleFurniture } from "@/lib/studio";
+import { feetInches } from "@/components/studio-ui/list";
+import { openingAtPoint, type OpeningControls } from "@/lib/room-editing";
 import { analyzeRoom, type PlanIssue } from "@/lib/planning";
 import { FurnitureLibrary, LayoutPanel, PlacementPanel } from "./PlanningPanels";
 import { useWorkspace } from "@/components/workspace/WorkspaceContext";
@@ -20,7 +21,7 @@ import ActionBar from "@/components/products/ActionBar";
 import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
 import WalkIn from "./WalkIn";
 import { ItemInspector, RoomDetails, StyleDetails } from "./WorkspacePanels";
-import { ChevronLeft, CloseIcon, PlusIcon } from "@/components/studio-ui/icons";
+import { ChevronLeft, CloseIcon, LowerIcon, PlusIcon, RaiseIcon } from "@/components/studio-ui/icons";
 import s from "./Studio.module.css";
 
 const RoomDrawCanvas=dynamic(()=>import("@/components/planner/RoomDrawCanvas"),{ssr:false,loading:()=> <BrandLoader label="Opening room measurements…"/>});
@@ -103,7 +104,24 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
     if(issue.region){usePlannerStore.setState({checkHighlight:{points:issue.region,label:issue.title}});setView("2d");}
     setPanel("checks");if(compact)setMobileOpen(false);
   }
+  /** Choose a view: it comes back where you left it; choosing the view you're in recentres it. */
   function preset(next:CameraView){setCamera(next);scene.current?.preset(next);}
+  // Up and down in 3D, 3 inches a step (Shift-drag in the room, or a wall piece along its wall, does the same).
+  const movable=!!selected&&selected.movable&&!locked.includes(selected.id),elevation=selected?itemElevation(selected,items):0;
+  const topOut=selected?Math.max(0,studioSettings(room.studio).ceilingFt-itemHeight(selected)):0;
+  const lift=(delta:number)=>{if(!selected||!movable)return;const next=Math.round(Math.max(0,Math.min(topOut,elevation+delta))*4)/4;
+    if(Math.abs(next-elevation)>.001)usePlannerStore.getState().moveItem(selected.id,selected.x_ft,selected.y_ft,next);};
+  // A selected door or window, a reset prompt or an error: in the bar under the room (or the plan), never over it.
+  const opening=selectedOpening!==null&&!preview?outline.openings[selectedOpening]:undefined;
+  const notice=resetConfirm?<div className={s.barNotice} role="group" aria-label="Confirm layout reset"><p>Restore starter positions for existing furniture? Added pieces and locked items stay. You can undo this.</p><button type="button" className={s.inkBtn} onClick={()=>{onReset();setResetConfirm(false);}}>Restore layout</button><button type="button" onClick={()=>setResetConfirm(false)}>Keep my changes</button></div>
+    :opening||openingError?<>
+      {openingError&&<p className={s.openingError} role="status">{openingError}</p>}
+      {opening&&<div className={s.openingActions} role="group" aria-label="Selected opening">
+        <strong>{opening.kind==="door"?"Door":"Window"}</strong><span>Drag to move</span>
+        {opening.kind==="door"&&<button type="button" onClick={()=>flipOpening(selectedOpening!)}>Flip door</button>}
+        <button type="button" onClick={()=>removeOpening(selectedOpening!)}>Remove</button><button type="button" aria-label="Deselect opening" onClick={()=>selectOpening(null)}><CloseIcon size={16}/></button>
+      </div>}
+    </>:null;
   const titles:Record<Panel,string>={furnish:"Furniture",style:"Style & light",room:"Room details",shop:"Shopping list",item:"Selected item",checks:"Placement checks",help:"Studio guide",layouts:"Layout ideas",roommates:"Roommates"};
   return <div ref={root} className={s.studio+" "+s.projectStudio+" "+(expanded?s.expanded:"")} data-testid="workspace-studio" data-section={workspace?.section} onKeyDownCapture={openingKey}
     onKeyDown={e=>{const target=e.target as HTMLElement;
@@ -126,33 +144,35 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
         <nav className={s.workspaceTasks} aria-label="Planning tasks">{selectedId&&<button onClick={()=>open("item")}>Edit selected</button>}<button onClick={()=>open("furnish")}><PlusIcon size={14}/>Furniture</button><button onClick={()=>open("layouts")}>Layout ideas</button><button onClick={()=>open("checks")}>Checks <b>{issues.filter(i=>i.level==="warning").length}</b></button><button onClick={()=>open("shop")}>Shopping list</button></nav>
         {view==="2d"?<div ref={setToolsHost}/>:<nav className={s.spatialTools} aria-label="3D tools" inert={preview}>
           <strong>Room tools</strong><div className={s.toolPair}><button aria-pressed={!moveMode} onClick={()=>setMoveMode(false)}>Select</button><button aria-pressed={moveMode} onClick={()=>setMoveMode(v=>!v)}>Move</button><button disabled={!history.canUndo} onClick={history.undo}>Undo</button><button disabled={!history.canRedo} onClick={history.redo}>Redo</button></div>
-          <span>Camera</span><div className={s.toolPair}>{([["room","Dollhouse"],["top","Top"],["inside","Walk in"]] as const).map(([mode,label])=><button key={mode} aria-pressed={camera===mode} onClick={()=>preset(mode)}>{label}</button>)}<button onClick={()=>preset("room")}>Fit</button></div><div className={s.toolPair}><button aria-label="Zoom out" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(1.15)}>− Zoom</button><button aria-label="Zoom in" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(.87)}>+ Zoom</button></div>
+          <span>Camera</span><div className={s.toolPair}>{([["room","Dollhouse"],["top","Top"],["inside","Walk in"]] as const).map(([mode,label])=><button key={mode} aria-pressed={camera===mode} onClick={()=>preset(mode)}>{label}</button>)}<button onClick={()=>{setCamera("room");scene.current?.fit();}}>Fit</button></div><div className={s.toolPair}><button aria-label="Zoom out" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(1.15)}>− Zoom</button><button aria-label="Zoom in" disabled={camera==="inside"} onClick={()=>scene.current?.zoom(.87)}>+ Zoom</button></div>
           <label><input type="checkbox" checked={snap} onChange={e=>setSnap(e.target.checked)}/>Snap to grid</label><button onClick={editOpenings}>Doors &amp; windows</button><button aria-label={expanded?"Exit expanded studio":"Expand studio"} onClick={()=>setExpanded(v=>!v)}>{expanded?"Exit fullscreen":"Expand"}</button><button onClick={()=>open("help")}>Help &amp; keys</button>
         </nav>}
 
       </div>
       <section className={s.viewport} aria-label="Room workspace">
-
         <div className={s.renderArea}>
           <div className={s.sceneLayer} style={{visibility:view==="3d"?"visible":"hidden",pointerEvents:view==="3d"?"auto":"none"}} aria-hidden={view!=="3d"}>
             {(allowed3D||view==="3d")&&<RoomScene ref={scene} walker={walker} onCamera={setCamera} room={room} items={items} hidden={hidden} excluded={excluded} locked={locked} selectedId={selectedId} style={style} products={products} snap={snap} walls={walls} moveMode={moveMode} preview={preview} openingControls={openingControls}
-              onSelect={select} onMove={(id,x,y)=>usePlannerStore.getState().moveItem(id,x,y)} onFallback={()=>setView("2d")}/>}
+              onSelect={select} onMove={(id,x,y,up)=>usePlannerStore.getState().moveItem(id,x,y,up)} onFallback={()=>setView("2d")}/>}
           </div>
-          <div className={s.canvasLayer} style={{display:view==="2d"?"block":"none"}}><CanvasControlsContext.Provider value={{host:toolsHost,active:view==="2d",expanded,editOpenings,openings:openingControls,expand:()=>setExpanded(v=>!v),reset:()=>setResetConfirm(true),shop:()=>open("shop"),addPiece:()=>open("furnish"),variant:"workspace"}}>{canvas}</CanvasControlsContext.Provider></div>
+          <div className={s.canvasLayer} style={{display:view==="2d"?"block":"none"}}><CanvasControlsContext.Provider value={{host:toolsHost,active:view==="2d",expanded,editOpenings,openings:openingControls,expand:()=>setExpanded(v=>!v),reset:()=>setResetConfirm(true),shop:()=>open("shop"),addPiece:()=>open("furnish"),variant:"workspace",notice}}>{canvas}</CanvasControlsContext.Provider></div>
         </div>
-        {view==="3d"&&<>
-          {camera==="inside"?<WalkIn room={room} items={visibleFurniture(items,hidden,excluded)} mapTop={compact?12:20} onBack={()=>preset("room")} onWalker={setWalker} onWalk={input=>scene.current?.walk(input)}/>:<>
-          {roomOutlineMissing(room)&&<button className={s.openingsHint} onClick={editOpenings}>Doors and windows not set. Add openings</button>}
-          <p className={s.gestureHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Select when done.":"Drag empty space to look around. Select a piece to arrange it."}</p></>}
-        </>}
-        {selectedOpening!==null&&outline.openings[selectedOpening]&&!preview&&<div className={s.openingActions} style={view==="2d"&&!compact&&openingCenter(outline.points,outline.openings[selectedOpening]).y<room.widthFt/2?{top:"auto",bottom:12}:undefined} role="group" aria-label="Selected opening">
-          <strong>{outline.openings[selectedOpening].kind==="door"?"Door":"Window"}</strong><span>Drag to move</span>
-          {outline.openings[selectedOpening].kind==="door"&&<button onClick={()=>flipOpening(selectedOpening)}>Flip door</button>}
-          <button onClick={()=>removeOpening(selectedOpening)}>Remove</button><button aria-label="Deselect opening" onClick={()=>selectOpening(null)}><CloseIcon size={16}/></button>
+        {/* 3D: hints, the selection's height and walking live in a bar under the room, never over it. */}
+        {view==="3d"&&<div className={s.sceneBar} data-edge="bottom">
+          {camera==="inside"?<WalkIn room={room} items={visibleFurniture(items,hidden,excluded)} onBack={()=>preset("room")} onWalker={setWalker} onWalk={input=>scene.current?.walk(input)}/>
+            :notice?<div className={s.barNoticeWrap}>{notice}</div>:<>
+            {unplaced&&<div className={s.unplaced} inert={preview}>{unplaced}</div>}
+            {selected&&!preview?<div className={s.pieceBar} role="group" aria-label={`Selected: ${selected.label}`}>
+              <span className={s.pieceName}><strong>{selected.label}</strong><small>{elevation>.01?`${feetInches(elevation)} above the floor`:"On the floor"}{movable?" · Shift-drag to lift it":""}</small></span>
+              <span className={s.liftPair} role="group" aria-label="Height">
+                <button type="button" aria-label="Lower" title="Lower 3 in" disabled={!movable||elevation<=.001} onClick={()=>lift(-.25)}><LowerIcon size={16}/></button>
+                <button type="button" aria-label="Raise" title="Raise 3 in" disabled={!movable||elevation>=topOut-.001} onClick={()=>lift(.25)}><RaiseIcon size={16}/></button>
+              </span>
+            </div>
+            :roomOutlineMissing(room)?<button type="button" className={s.openingsHint} onClick={editOpenings}>Doors and windows not set. Add openings</button>
+            :<p className={s.sceneHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Select when done.":"Drag empty space to look around · Select a piece to arrange it · Shift-drag to lift it"}</p>}
+          </>}
         </div>}
-        {openingError&&<p className={s.openingError} role="status">{openingError}</p>}
-        {resetConfirm&&<div className={s.resetConfirm} role="group" aria-label="Confirm layout reset"><p>Restore starter positions for existing furniture? Added pieces and locked items stay. You can undo this.</p><div className={s.buttonRow}><button onClick={()=>{onReset();setResetConfirm(false);}}>Restore layout</button><button onClick={()=>setResetConfirm(false)}>Keep my changes</button></div></div>}
-        {view==="3d"&&unplaced&&<div className={s.unplaced} inert={preview}>{unplaced}</div>}
       </section>
       {compact&&mobileOpen&&<button className={s.shopBackdrop} aria-label="Close studio panel" onClick={()=>setMobileOpen(false)}/>}
       {(activePanel!=="shop"||compact)&&<aside ref={shopPanel} id="studio-panel" className={s.panel+" "+(activePanel!=="shop"&&!compact?s.projectDrawer:"")+" "+(mobileOpen?s.mobileOpen:"")} aria-label={titles[activePanel]} inert={preview||(compact&&!mobileOpen)} role={compact&&mobileOpen?"dialog":undefined} aria-modal={compact&&mobileOpen?true:undefined}

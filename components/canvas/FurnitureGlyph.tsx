@@ -25,13 +25,15 @@ const bulbs = (n: number) => Array.from({ length: n }, (_, i) => (i + .5) / n);
  * any side, because templates put the wall behind different edges. Never
  * changes hit areas.
  */
-export default function FurnitureGlyph({ item, scale, palette, dressed = false }: {
+export default function FurnitureGlyph({ item, scale, palette, dressed = false, blanket = false }: {
   item: FurnitureItem;
   scale: number;
   /** The vibe's palette (lib/styles): light → dark. */
   palette: readonly string[];
   /** A dorm bed the list dresses (bedding in the cart). */
   dressed?: boolean;
+  /** A throw slot holding a throw blanket (not pillows): drawn as the blanket. */
+  blanket?: boolean;
 }) {
   const w = item.width_ft * scale, h = item.length_ft * scale;
   const s = Math.min(w, h), long = Math.max(w, h), across = w >= h;
@@ -44,7 +46,7 @@ export default function FurnitureGlyph({ item, scale, palette, dressed = false }
   /** A line across the short side at fraction `t` of the long side. */
   const rung = (t: number, from = 0, to = 1) => [...at(t, from), ...at(t, to)];
   let art;
-  switch (item.type) {
+  switch (blanket ? "throw" : item.type) {
     case "bed": {
       const bedFill = dressed ? "#F4E4CC" : "#FFFFFF", bedLine = dressed ? BROWN : BLUE;
       art = <>
@@ -208,14 +210,19 @@ export default function FurnitureGlyph({ item, scale, palette, dressed = false }
       })}</>;
       break;
     }
-    case "throw":
-      // A folded blanket: stripes, and the folded corner.
+    case "throw": {
+      // A folded throw: the turned-back fold along one long edge, a woven stripe near each end, tasselled short ends.
+      const f = Math.min(.12, Math.max(3, scale * .14) / long), fold = mixHex(p2, "#FFFFFF", .38), r = Math.min(4, s * .12);
+      const box = (t0: number, t1: number, u0: number, u1: number) => { const [x0, y0] = at(t0, u0), [x1, y1] = at(t1, u1); return { x: Math.min(x0, x1), y: Math.min(y0, y1), width: Math.abs(x1 - x0), height: Math.abs(y1 - y0) }; };
       art = <>
-        <Rect width={w} height={h} fill={p2} stroke={BROWN} strokeWidth={1} cornerRadius={2} />
-        {stripes(3).map(t => <Line key={t} points={rung(t)} stroke={p0} opacity={.6} strokeWidth={1.5} />)}
-        <Line points={[w * .62, h, w, h * .55, w, h]} closed fill={p1} stroke={BROWN} strokeWidth={1} />
+        <Rect {...box(f, 1 - f, 0, 1)} fill={p2} stroke={BROWN} strokeWidth={1} cornerRadius={r} />
+        {[f + .07, 1 - f - .07].map(t => <Line key={t} points={rung(t, .06, .94)} stroke={p3} opacity={.75} strokeWidth={Math.max(1.4, s * .06)} />)}
+        <Rect {...box(f, 1 - f, 0, .36)} fill={fold} stroke={BROWN} strokeWidth={1} cornerRadius={r} />
+        {[f + .07, 1 - f - .07].map(t => <Line key={`f${t}`} points={rung(t, .06, .3)} stroke={p3} opacity={.45} strokeWidth={Math.max(1.4, s * .06)} />)}
+        {[0, 1].flatMap(end => stripes(Math.max(4, Math.round(s / 4))).map(u => <Line key={`${end}${u}`} points={[...at(end ? 1 - f : f, u), ...at(end ? 1 - f * .12 : f * .12, u)]} stroke={BROWN} opacity={.7} strokeWidth={1} lineCap="round" />))}
       </>;
       break;
+    }
     case "laundry_hamper": {
       // A woven basket: a rim, and the weave inside it.
       const r = s * .45;
@@ -340,7 +347,7 @@ export type BackSide = 0 | 1 | 2 | 3; // top, right, bottom, left
  * so dragging redraws an image, not dozens of shapes. Re-caches only when its
  * props change (size, vibe, dressed state, detail level, zoom bucket).
  */
-export const RoomGlyph = memo(function RoomGlyph({ item, scale, theme, dressed = false, books = false, back = 0, detail = true, bucket = 1 }: {
+export const RoomGlyph = memo(function RoomGlyph({ item, scale, theme, dressed = false, books = false, blanket = false, back = 0, detail = true, bucket = 1 }: {
   item: FurnitureItem;
   scale: number;
   theme: RoomTheme;
@@ -348,6 +355,8 @@ export const RoomGlyph = memo(function RoomGlyph({ item, scale, theme, dressed =
   dressed?: boolean;
   /** The shelf is a bookshelf from the cart: show spines. */
   books?: boolean;
+  /** A throw slot holding a throw blanket (not pillows): drawn as the blanket. */
+  blanket?: boolean;
   /** Which side the piece's back is on (chairs face away from it, fronts face out). */
   back?: BackSide;
   /** False when the piece is under ~28px on screen: base shape and shadow only. */
@@ -405,7 +414,7 @@ export const RoomGlyph = memo(function RoomGlyph({ item, scale, theme, dressed =
     {detail && <Rect x={s * .12} y={s * .12} width={w - s * .24} height={h - s * .24} stroke="#FFFFFF" opacity={.3} strokeWidth={1} cornerRadius={Math.min(s * .2, 4)} />}
   </>;
   let art: ReactNode;
-  switch (item.type) {
+  switch (blanket ? "throw" : item.type) {
     case "bed": {
       const f = Math.max(1.5, Math.min(s * .05, 4)), mw = w - 2 * f;
       const head = back === 2 ? 2 : 0;
@@ -669,6 +678,36 @@ export const RoomGlyph = memo(function RoomGlyph({ item, scale, theme, dressed =
       } else {
         art = <><Rect width={w} height={h} fill={theme.woodDark} cornerRadius={1} /><Rect x={Math.min(1.5, s * .2)} y={Math.min(1.5, s * .2)} width={w - Math.min(3, s * .4)} height={h - Math.min(3, s * .4)} fill={theme.textileAlt} /></>;
       }
+      break;
+    }
+    case "throw": {
+      // A throw folded across the bed's foot: a soft knit body with rumpled long edges, the turned-back fold
+      // (lighter, with its crease), a woven stripe near each end, and tasselled short ends.
+      const base = theme.textileAlt, fold = shade(base, .2), edge = shade(base, -.24), knit = shade(base, -.3);
+      const f = Math.min(.12, Math.max(2.5, scale * .14) / long), crease = .36;
+      const edgeAt = (u: number, k: number) => Array.from({ length: 9 }, (_, i) => at(f + (1 - 2 * f) * i / 8, u + (u < .5 ? 1 : -1) * Math.abs(Math.sin(i * 1.7 + k)) * .035));
+      const body = [...edgeAt(.01, 0), ...edgeAt(.99, 2).reverse()].flat();
+      const foldShape = [...edgeAt(.01, 0), ...Array.from({ length: 9 }, (_, i) => at(1 - f - (1 - 2 * f) * i / 8, crease + Math.sin(i * 1.3) * .015))].flat();
+      const cols = Math.max(6, Math.round(long * (1 - 2 * f) / Math.max(4, scale * .13))), dt = (1 - 2 * f) / cols;
+      /** Chunky knit: rows of small V stitches between u0 and u1. */
+      const stitches = (u0: number, u1: number, rows: number) => Array.from({ length: rows }, (_, j) => {
+        const u = u0 + (u1 - u0) * (j + .5) / rows, du = (u1 - u0) / rows;
+        return Array.from({ length: cols }, (_, i) => { const t = f + dt * (i + .5);
+          return <Line key={`${j}-${i}`} points={[...at(t - dt * .32, u - du * .26), ...at(t, u + du * .26), ...at(t + dt * .32, u - du * .26)]} stroke={knit} opacity={.32} strokeWidth={.7} lineJoin="round" />; });
+      });
+      const stripeW = Math.max(1.4, s * .06), ends = [f + .075, 1 - f - .075];
+      art = <>
+        <Line name="caster" points={body} closed tension={.3} fill={base} shadowColor={SHADOW} shadowOpacity={.25} />
+        <Line points={body} closed tension={.3} stroke={edge} strokeWidth={.8} />
+        {detail && ends.map(t => <Line key={t} points={rung(t, crease, .95)} stroke={theme.accent} opacity={.85} strokeWidth={stripeW} />)}
+        {detail && stitches(crease + .06, .95, 4)}
+        <Line points={foldShape} closed tension={.3} fill={fold} stroke={edge} strokeWidth={.8} />
+        {detail && ends.map(t => <Line key={`f${t}`} points={rung(t, .05, crease - .02)} stroke={theme.accent} opacity={.6} strokeWidth={stripeW} />)}
+        {detail && stitches(.06, crease - .04, 2)}
+        {detail && <Line points={Array.from({ length: 9 }, (_, i) => at(f + (1 - 2 * f) * i / 8, crease - .035 + Math.sin(i * 1.3) * .015)).flat()} tension={.3} stroke="#FFFFFF" opacity={.4} strokeWidth={1} />}
+        {[0, 1].flatMap(end => stripes(Math.max(5, Math.round(s / Math.max(3, scale * .09)))).map((u, i) =>
+          <Line key={`${end}-${u}`} points={[...at(end ? 1 - f : f, u), ...at(end ? 1 - f * (.1 + (i % 3) * .12) : f * (.1 + (i % 3) * .12), u + (i % 2 ? .012 : -.012))]} stroke={edge} opacity={.85} strokeWidth={Math.max(1, s * .028)} lineCap="round" />))}
+      </>;
       break;
     }
     case "throw_pillows": {

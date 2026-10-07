@@ -15,6 +15,8 @@ export interface CanvasDock {
   addPiece?: () => void;
   /** The planner has undo/redo in its app bar; the workspace keeps them in the rail. */
   variant?: "planner" | "workspace";
+  /** Shown in the plan's bottom bar in place of the piece actions: a selected door or window, a reset prompt, an error. */
+  notice?: import("react").ReactNode;
 }
 export const CanvasControlsContext = createContext<CanvasDock | null>(null);
 export const useCanvasDock = () => useContext(CanvasControlsContext);

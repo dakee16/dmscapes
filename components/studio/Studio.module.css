@@ -109,106 +109,65 @@
 .app[data-view="3d"] .toolCol { display: none; }
 .railHost { height: 100%; }
 .phone3dTools { display: none; }
-.viewport { grid-area: stage; position: relative; min-width: 0; min-height: 0; overflow: hidden; background: var(--ds-plan); }
+/* The stage: an optional bar above, the plan or room, an optional bar below. Controls live in the bars, never over the canvas. */
+.viewport { grid-area: stage; position: relative; display: flex; flex-direction: column; min-width: 0; min-height: 0; overflow: hidden; background: var(--ds-plan); container-type: inline-size; }
 .app[data-view="3d"] .viewport { background: #f4f1f3; }
-.renderArea { position: absolute; inset: 0; }
+.renderArea { position: relative; flex: 1; min-height: 0; }
 .sceneLayer { position: absolute; inset: 0; }
 .scene, .sceneMount { position: absolute; inset: 0; overflow: hidden; }
 .canvasLayer { position: absolute; inset: 0; overflow: hidden; }
 
-/* ---------- 3D overlays ---------- */
-.sceneTop { position: absolute; top: 20px; left: 20px; right: 20px; z-index: 4; display: flex; align-items: flex-start; gap: 16px; pointer-events: none; }
-.sceneTop > * { pointer-events: auto; }
-.pill {
-  display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border: 0; border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92); color: var(--ds-ink); font: 700 14px/1 var(--ds-sans); cursor: pointer;
-  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06); white-space: nowrap;
+/* ---------- 3D bars: above and below the room ---------- */
+.sceneBar {
+  flex: none; position: relative; z-index: 4; display: flex; align-items: center; gap: 12px; min-width: 0; padding: 0 16px;
+  background: #fff; color: var(--ds-ink);
 }
-.pill:hover { background: #fff; box-shadow: 0 0 0 1.5px var(--ds-ink); }
+.sceneBar[data-edge="top"] { height: 60px; border-bottom: 1.5px solid var(--rule); }
+.sceneBar[data-edge="bottom"] { min-height: 66px; padding-block: 10px; border-top: 1.5px solid var(--rule); }
+.barSpacer { flex: 1; min-width: 0; }
+.pill {
+  flex: none; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px; border: 0; border-radius: 999px;
+  background: #f4f3ee; color: var(--ds-ink); font: 700 14px/1 var(--ds-sans); cursor: pointer; white-space: nowrap;
+}
+.pill:hover { box-shadow: 0 0 0 1.5px var(--ds-ink); }
 .sceneHint {
-  margin: 10px 0 0 auto; max-width: 360px; pointer-events: none !important; text-align: right;
+  flex: 1; min-width: 0; margin: 0; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   font-family: var(--ds-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; line-height: 1.5; text-transform: uppercase; color: var(--ds-caption);
 }
 .roundBtn {
   flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 0; border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92); color: var(--ds-ink); cursor: pointer; box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06);
+  background: #f4f3ee; color: var(--ds-ink); cursor: pointer;
 }
 .roundBtn:hover:not(:disabled) { box-shadow: 0 0 0 1.5px var(--ds-ink); }
 .roundBtn:disabled { opacity: 0.45; cursor: default; }
 .vibeChip {
   flex: none; display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 12px; border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92); box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06); color: var(--ds-ink); font: 700 14px/1 var(--ds-sans); white-space: nowrap;
+  background: #f4f3ee; color: var(--ds-ink); font: 700 14px/1 var(--ds-sans); white-space: nowrap; max-width: 220px; overflow: hidden;
 }
-.vibeChip span { display: flex; }
+.vibeChip span { display: flex; flex: none; }
 .vibeChip i { width: 14px; height: 14px; margin-left: -4px; border-radius: 50%; box-shadow: 0 0 0 1.5px #fff; }
 .vibeChip i:first-child { margin-left: 0; }
-/* Light switch over the room, bottom-left; stacked so it clears the camera pill. */
-.lightDock { position: absolute; left: 20px; bottom: 24px; z-index: 4; }
-.lightSwitch {
-  display: flex; flex-direction: column; gap: 2px; padding: 4px; border-radius: 16px; background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06), 0 10px 24px rgba(22, 22, 29, 0.12);
-}
+/* Light switch (Day / Golden hour / Night) in the top bar. */
+.lightSwitch { display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: #f1f0ea; }
 .lightSwitch button {
-  display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px 0 10px; border: 0; border-radius: 12px;
+  display: flex; align-items: center; gap: 7px; height: 34px; padding: 0 12px 0 10px; border: 0; border-radius: 999px;
   background: transparent; color: var(--ds-ink); font: 700 13px/1 var(--ds-sans); cursor: pointer; white-space: nowrap;
 }
-.lightSwitch button:hover { background: #f1f0ea; }
+.lightSwitch button:hover { background: #e6e4dc; }
 .lightSwitch button[aria-pressed="true"] { background: var(--ds-ink); color: #fff; }
 .lightSwitch button[aria-pressed="true"] svg { color: var(--ds-yellow); }
-@media (max-width: 1240px) and (min-width: 781px) { .lightDock { bottom: 84px; } }
-.snapBtn:first-child { margin-left: auto; }
-/* Walk in: back button, mini-map, keyboard hint, and a hold-to-move pad on touch screens. */
-.walkBack { position: absolute; top: 20px; left: 20px; z-index: 4; }
-.walkMap {
-  position: absolute; right: 20px; z-index: 4; width: 176px; height: auto; padding: 8px; border-radius: 14px; pointer-events: none;
-  background: rgba(255, 255, 255, 0.94); box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06), 0 10px 24px rgba(22, 22, 29, 0.12);
-}
-.walkHint {
-  position: absolute; left: 20px; bottom: 24px; z-index: 4; margin: 0; padding: 10px 14px; border-radius: 999px; pointer-events: none;
-  background: rgba(22, 22, 29, 0.78); color: #fff; font: 600 13px/1.2 var(--ds-sans);
-}
-.walkPad {
-  position: absolute; right: 20px; bottom: 24px; z-index: 4; display: none; gap: 4px;
-  grid-template-columns: repeat(3, 48px); grid-template-rows: repeat(3, 48px); grid-template-areas: ". f ." "l . r" ". b .";
-}
-.walkPad button {
-  display: flex; align-items: center; justify-content: center; border: 0; border-radius: 14px; background: rgba(255, 255, 255, 0.94); color: var(--ds-ink);
-  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 8px 18px rgba(22, 22, 29, 0.14); touch-action: none; user-select: none; -webkit-user-select: none; cursor: pointer;
-}
-.walkPad button:active { background: var(--ds-ink); color: var(--ds-yellow); }
-@media (pointer: coarse) { .walkPad { display: grid; } .walkHint { display: none; } }
-.viewport[data-walk] .cameraBar { display: none; } /* Back to dollhouse is the way out */
-/* The selected piece's card; the 3D scene moves it above the piece. */
-.pieceCard {
-  position: absolute; left: 0; top: 0; z-index: 5; visibility: hidden; width: 244px; padding: 12px; border-radius: 14px; pointer-events: none;
-  background: #fff; box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 16px 34px rgba(22, 22, 29, 0.18);
-}
-.pieceCard > strong { display: block; overflow: hidden; font-size: 15px; font-weight: 800; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
-.pieceCard > span { display: inline-block; margin-top: 6px; padding: 3px 8px; border-radius: 999px; background: #f1f0ea; color: var(--ds-muted); font-size: 11px; font-weight: 700; }
-.pieceCard > span[data-tone="list"] { background: #eef1fd; color: var(--ds-blue); }
-.pieceCard small { display: block; margin-top: 6px; font-size: 12px; color: var(--ds-caption); }
-.pieceCardActions button { pointer-events: auto; }
-.pieceCardActions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 10px; }
-.pieceCardActions button {
-  display: inline-flex; align-items: center; justify-content: center; gap: 5px; height: 34px; padding: 0 4px; border: 1.5px solid rgba(22, 22, 29, 0.16);
-  border-radius: 10px; background: #fff; color: var(--ds-ink); font: 700 12px/1 var(--ds-sans); cursor: pointer;
-}
-.pieceCardActions svg { flex: none; }
-.pieceCardActions button:hover:not(:disabled) { border-color: var(--ds-ink); }
-.pieceCardActions button:disabled { opacity: 0.4; cursor: default; }
 .openingsHint {
-  position: absolute; top: 70px; left: 20px; z-index: 4; max-width: calc(100% - 40px); min-height: 36px; padding: 0 14px;
+  flex: 0 1 auto; min-width: 0; min-height: 36px; max-width: 100%; padding: 0 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
   border: 1.5px solid rgba(36, 73, 255, 0.3); border-radius: 999px; background: #fff; color: var(--ds-blue);
   font: 700 13px/1 var(--ds-sans); cursor: pointer;
 }
 .openingsHint:hover { border-color: var(--ds-blue); }
+/* The dark camera pill: Dollhouse / Top / Walk in, plus zoom. Choosing the active view again recentres it. */
 .cameraBar {
-  position: absolute; left: 50%; bottom: 24px; z-index: 4; transform: translateX(-50%);
-  display: flex; align-items: center; padding: 4px; border-radius: 999px; background: var(--ds-ink);
-  box-shadow: 0 12px 28px rgba(22, 22, 29, 0.25); max-width: calc(100% - 24px);
+  flex: none; display: flex; align-items: center; padding: 4px; border-radius: 999px; background: var(--ds-ink); max-width: 100%;
 }
 .cameraBar button {
-  display: inline-flex; align-items: center; justify-content: center; height: 40px; min-width: 40px; padding: 0 16px; border: 0; border-radius: 999px;
+  display: inline-flex; align-items: center; justify-content: center; height: 38px; min-width: 38px; padding: 0 16px; border: 0; border-radius: 999px;
   background: transparent; color: #fff; font: 700 14px/1 var(--ds-sans); cursor: pointer; white-space: nowrap;
 }
 .cameraBar button:hover:not(:disabled):not([aria-pressed="true"]) { background: rgba(255, 255, 255, 0.12); }
@@ -216,6 +175,53 @@
 .cameraBar button:disabled { opacity: 0.4; cursor: default; }
 .cameraBar button[aria-label] { padding: 0; }
 .separator { width: 1px; height: 22px; margin: 0 4px; background: rgba(255, 255, 255, 0.25); }
+/* The selected piece, in the bar under the room. */
+.pieceBar { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: flex-end; gap: 6px; }
+.pieceName { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; padding-left: 4px; }
+.pieceName strong { overflow: hidden; font-size: 15px; font-weight: 800; line-height: 1.2; text-overflow: ellipsis; white-space: nowrap; }
+.pieceName small { overflow: hidden; font-size: 12px; font-weight: 600; color: var(--ds-caption); text-overflow: ellipsis; white-space: nowrap; }
+.pieceName small[data-tone="list"] { color: var(--ds-blue); }
+.pieceBar > button, .liftPair button {
+  flex: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 38px; min-width: 38px; padding: 0 12px;
+  border: 1.5px solid rgba(22, 22, 29, 0.16); border-radius: 10px; background: #fff; color: var(--ds-ink); font: 700 13px/1 var(--ds-sans); cursor: pointer;
+}
+.liftPair { flex: none; display: inline-flex; gap: 4px; padding-left: 6px; margin-left: 2px; border-left: 1.5px solid var(--rule); }
+.liftPair button { padding: 0; width: 38px; }
+.pieceBar > button:hover:not(:disabled), .liftPair button:hover:not(:disabled) { border-color: var(--ds-ink); }
+.pieceBar > button:disabled, .liftPair button:disabled { opacity: 0.4; cursor: default; }
+.barNoticeWrap { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+.sceneBar .unplaced { flex: none; margin: 0; }
+/* Narrower stages: icons only, so one row always fits. */
+@container (max-width: 860px) {
+  .pieceBar > button span { display: none; }
+  .pieceBar > button { padding: 0; width: 38px; }
+  .lightSwitch span { display: none; }
+  .lightSwitch button { padding: 0 10px; }
+}
+@container (max-width: 760px) { .vibeChip { display: none; } }
+@container (max-width: 680px) {
+  .cameraBar button { padding: 0 11px; }
+}
+/* Walk in: back, mini-map and the keyboard hint (a hold-to-move pad on touch screens), docked under the room. */
+.walkDock { display: flex; align-items: center; gap: 16px; width: 100%; min-width: 0; }
+.walkBack { flex: none; }
+.walkMap {
+  flex: none; width: 150px; height: 96px; padding: 6px; border-radius: 12px; background: #f4f3ee;
+}
+.walkHint {
+  margin: 0 0 0 auto; text-align: right;
+  font-family: var(--ds-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; line-height: 1.5; text-transform: uppercase; color: var(--ds-caption);
+}
+.walkPad {
+  flex: none; display: none; gap: 4px; margin-left: auto;
+  grid-template-columns: repeat(3, 44px); grid-template-rows: repeat(3, 32px); grid-template-areas: ". f ." "l . r" ". b .";
+}
+.walkPad button {
+  display: flex; align-items: center; justify-content: center; border: 0; border-radius: 10px; background: #f4f3ee; color: var(--ds-ink);
+  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.1); touch-action: none; user-select: none; -webkit-user-select: none; cursor: pointer;
+}
+.walkPad button:active { background: var(--ds-ink); color: var(--ds-yellow); }
+@media (pointer: coarse) { .walkPad { display: grid; } .walkHint { display: none; } }
 .sceneMessage {
   position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
   padding: 32px; text-align: center; background: var(--ds-plan);
@@ -380,12 +386,10 @@
 }
 .roomTrust button:disabled { opacity: 0.5; }
 
-/* ---------- canvas overlays shared by both studios ---------- */
+/* ---------- notices in the bar under the plan or room (both studios, 2D and 3D) ---------- */
 .openingActions {
-  position: absolute; left: 50%; top: 16px; z-index: 6; transform: translateX(-50%);
-  display: flex; align-items: center; gap: 4px; max-width: calc(100% - 24px); padding: 4px 4px 4px 14px;
-  border-radius: 12px; background: var(--ds-ink); color: #fff; box-shadow: 0 12px 28px rgba(22, 22, 29, 0.28);
-  font-size: 13px; white-space: nowrap;
+  flex: none; display: flex; align-items: center; gap: 4px; max-width: 100%; padding: 4px 4px 4px 14px;
+  border-radius: 12px; background: var(--ds-ink); color: #fff; font-size: 13px; white-space: nowrap;
 }
 .openingActions strong { font-weight: 800; margin-right: 6px; }
 .openingActions span { color: #cfccd9; margin-right: 6px; }
@@ -395,17 +399,16 @@
 }
 .openingActions button:hover { background: rgba(255, 255, 255, 0.12); }
 .openingError {
-  position: absolute; left: 50%; bottom: 64px; z-index: 6; transform: translateX(-50%); max-width: calc(100% - 32px); margin: 0;
-  padding: 10px 16px; border-radius: 12px; background: #fff4dc; color: #5c4210; font-size: 13px; font-weight: 600;
-  box-shadow: 0 0 0 1.5px #e8a622;
+  flex: 0 1 auto; min-width: 0; margin: 0; padding: 8px 14px; border-radius: 10px; background: #fff4dc; color: #5c4210; font-size: 13px; font-weight: 600;
+  box-shadow: inset 0 0 0 1.5px #e8a622; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
-.resetConfirm {
-  position: absolute; left: 50%; top: 20px; z-index: 8; transform: translateX(-50%); width: min(420px, calc(100% - 32px));
-  padding: 16px 18px; border-radius: 16px; background: #fff; font-size: 14px; line-height: 1.5;
-  box-shadow: 0 0 0 1.5px var(--ds-ink), 0 18px 40px rgba(22, 22, 29, 0.2);
+.barNotice { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: 14px; line-height: 1.35; }
+.barNotice p { flex: 0 1 auto; min-width: 0; margin: 0 6px 0 0; }
+.barNotice button {
+  flex: none; min-height: 38px; padding: 0 14px; border: 1.5px solid rgba(22, 22, 29, 0.2); border-radius: 999px; background: #fff;
+  color: var(--ds-ink); font: 700 13px/1 var(--ds-sans); white-space: nowrap; cursor: pointer;
 }
-.resetConfirm p { margin: 0; }
-.resetConfirm .buttonRow { margin: 12px 0 0; }
+.barNotice button.inkBtn { border-color: var(--ds-ink); background: var(--ds-ink); color: #fff; }
 
 .geometryModal { position: fixed; inset: 0; z-index: 95; display: grid; place-items: center; padding: 16px; background: rgba(22, 22, 29, 0.55); }
 .geometryModal.geometryModal > div { width: min(1120px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto; padding: 0; border-radius: 22px; background: var(--ds-paper); }
@@ -483,12 +486,17 @@
   .shopBackdrop { display: block; position: fixed; inset: 0; z-index: 45; border: 0; background: rgba(22, 22, 29, 0.35); }
   .arrangeInner { padding: 12px 20px 20px; }
   .pieces { max-height: 34dvh; }
-  .sceneTop { top: 12px; left: 12px; right: 12px; gap: 8px; }
-  .snapBtn { margin-left: auto; }
-  .sceneHint, .open2d { display: none; }
-  .walkBack { top: 12px; left: 12px; }
-  .walkMap { right: 12px; width: 124px; padding: 6px; }
-  .walkPad { right: 12px; bottom: 26px; grid-template-columns: repeat(3, 44px); grid-template-rows: repeat(3, 44px); }
+  /* Phone 3D: the room alone on top; the camera, the selection, light, floor and budget in the sheet under it. */
+  .sheetCamera { display: flex; align-items: center; gap: 8px; }
+  .sheetCamera .cameraBar { flex: 1; min-width: 0; }
+  .sheetCamera .cameraBar button { flex: 1; height: 40px; padding: 0 8px; font-size: 13px; }
+  .phoneSheet .walkDock { flex-wrap: wrap; gap: 10px 12px; }
+  .phoneSheet .walkBack { flex-basis: 100%; justify-content: center; }
+  .phoneSheet .walkMap { width: 132px; height: 104px; }
+  .phoneSheet .walkPad { grid-template-columns: repeat(3, 44px); grid-template-rows: repeat(3, 34px); margin: 0 auto; }
+  .phoneSheet .openingsHint { align-self: flex-start; }
+  .phoneSheet .barNoticeWrap { justify-content: flex-start; flex-wrap: wrap; }
+  .barNotice { flex-wrap: wrap; font-size: 13px; }
   /* Phone 3D: the room on top, then a sheet with the selected piece, light, floor and budget. */
   .phoneSheet {
     flex: none; position: relative; z-index: 10; display: flex; flex-direction: column; gap: 10px; margin-top: -14px;
@@ -507,15 +515,14 @@
     border-radius: 12px; background: #fff; color: var(--ds-ink); font: 700 13px/1 var(--ds-sans); cursor: pointer;
   }
   .sheetPiece button:disabled { opacity: 0.4; }
+  .sheetPiece .liftPair { padding-left: 4px; margin-left: 0; }
+  .sheetPiece .liftPair button { width: 40px; padding: 0; }
   .sheetHint { display: flex; align-items: center; min-height: 40px; margin: 0; font-size: 14px; color: var(--ds-caption); }
   .sheetBudget { display: flex; align-items: center; gap: 12px; }
   .sheetBudget > :first-child { flex: 1; min-width: 0; }
   .sheetBudget button { border: 0; background: var(--ds-ink); color: #fff; }
-  .cameraBar { bottom: 16px; }
-  .cameraBar button { height: 40px; padding: 0 12px; font-size: 13px; }
   .openingActions span { display: none; }
   .openingActions button { min-height: 40px; }
-  .openingError { bottom: 16px; }
   .geometryModal { padding: 8px; }
   .geometryModal > div { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); }
 }
@@ -583,10 +590,6 @@
 .spatialTools label { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 4px 0; }
 .spatialTools input { accent-color: var(--ds-blue); }
 .toolPair { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
-.gestureHint {
-  position: absolute; left: 50%; bottom: 14px; z-index: 4; transform: translateX(-50%); max-width: calc(100% - 24px); margin: 0; pointer-events: none;
-  padding: 6px 12px; border-radius: 999px; background: rgba(255, 255, 255, 0.92); font-size: 12px; font-weight: 600; color: var(--ds-muted); text-align: center;
-}
 .panelHeading { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 12px 20px; border-bottom: 1.5px solid rgba(22, 22, 29, 0.08); }
 .panelHeading strong { font-family: var(--ds-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
 .panelHeading .eyebrow { margin: 0; }
@@ -685,9 +688,9 @@
 
 /* Workspace 2D: the task chips get their own strip above the plan. */
 .workspace.workspacePlan > .viewport { background: var(--ds-plan); }
-.workspace.workspacePlan > .viewport > .renderArea { top: 56px; }
+.workspace.workspacePlan > .viewport > .renderArea { margin-top: 56px; }
 .workspace.workspacePlan .workspaceTasks { top: 10px; }
-@media (max-width: 780px) { .workspace.workspacePlan > .viewport > .renderArea { top: 0; } }
+@media (max-width: 780px) { .workspace.workspacePlan > .viewport > .renderArea { margin-top: 0; } }
 .workspace:not(.workspacePlan) > .planToolsHost { overflow-y: auto; overscroll-behavior: contain; }
 .workspace:not(.workspacePlan) .workspaceTasks button { justify-content: flex-start; }
 .workspace:not(.workspacePlan) .workspaceTasks b { margin-left: auto; }

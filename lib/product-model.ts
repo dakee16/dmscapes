@@ -51,6 +51,12 @@ export function productVisual(product: Product) {
   return { id:product.id, name:product.name, image:product.image_url, kind, variant, pattern, color:productColor(product) };
 }
 
+/** A throw slot holds either a throw blanket or throw pillows: true when it's a blanket (by its product, else by its type). */
+export function throwIsBlanket(item: FurnitureItem, product?: Product): boolean {
+  if (item.type !== "throw" && item.type !== "throw_pillows") return false;
+  return product ? productVisual(product).kind === "blanket" : item.type === "throw";
+}
+
 export function productForFurniture(item: FurnitureItem, products: Product[]): Product | undefined {
   if(item.inventory && !item.product_id && item.type!=="bed")return undefined;
   if(item.product_id){const exact=products.find(p=>p.id===item.product_id);if(exact)return exact;}
