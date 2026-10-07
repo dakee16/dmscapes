@@ -15,11 +15,12 @@ const PAD: [string, WalkInput, string, string][] = [
 ];
 
 /**
- * Walk in overlays: Back to dollhouse, a mini-map (the 3D scene moves its
- * marker), the keyboard hint, and a hold-to-move pad on touch screens.
+ * Walk in controls, docked in the bar under the room (never over it): Back to
+ * dollhouse, a mini-map (the 3D scene moves its marker), the keyboard hint, and
+ * a hold-to-move pad on touch screens.
  */
-export default function WalkIn({ room, items, mapTop, onBack, onWalker, onWalk }: {
-  room: SelectedRoom; items: FurnitureItem[]; mapTop: number; onBack: () => void;
+export default function WalkIn({ room, items, onBack, onWalker, onWalk }: {
+  room: SelectedRoom; items: FurnitureItem[]; onBack: () => void;
   onWalker: (node: SVGGElement | null) => void; onWalk: (input: WalkInput) => void;
 }) {
   const outline = roomOutline(room), pts = outline.points, margin = 0.8;
@@ -34,9 +35,9 @@ export default function WalkIn({ room, items, mapTop, onBack, onWalker, onWalk }
     onKeyUp: (e: KeyboardEvent) => { if (e.key === "Enter" || e.key === " ") onWalk({}); },
     onBlur: () => onWalk({}),
   });
-  return <>
+  return <div className={s.walkDock} role="group" aria-label="Walk in">
     <button type="button" className={`${s.pill} ${s.walkBack}`} onClick={onBack}><ChevronLeft size={16} />Back to dollhouse</button>
-    <svg className={s.walkMap} style={{ top: mapTop }} viewBox={`${-margin} ${-margin} ${room.lengthFt + margin * 2} ${room.widthFt + margin * 2}`} role="img" aria-label="Mini-map of the room with your position and view">
+    <svg className={s.walkMap} viewBox={`${-margin} ${-margin} ${room.lengthFt + margin * 2} ${room.widthFt + margin * 2}`} role="img" aria-label="Mini-map of the room with your position and view">
       <polygon points={pts.map((p) => `${p.x},${p.y}`).join(" ")} fill="#fff" stroke="#16161d" strokeWidth=".3" strokeLinejoin="round" />
       {outline.closets.map((c, i) => <rect key={`c${i}`} x={c.x_ft} y={c.y_ft} width={c.width_ft} height={c.depth_ft} fill="#e4e1d8" />)}
       {items.map((f) => { const b = footprint(f); return <rect key={f.id} x={b.x} y={b.y} width={b.w} height={b.h} rx=".15" fill={modelKind(f) === "rug" ? "rgba(22,22,29,.07)" : "rgba(22,22,29,.22)"} />; })}
@@ -51,5 +52,5 @@ export default function WalkIn({ room, items, mapTop, onBack, onWalker, onWalk }
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d={d} fill="currentColor" /></svg>
       </button>)}
     </div>
-  </>;
+  </div>;
 }

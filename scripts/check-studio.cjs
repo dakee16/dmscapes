@@ -8,7 +8,7 @@ const root = path.resolve(__dirname, ".."), cache = new Map();
 const memory = new Map();
 global.sessionStorage = {getItem:k=>memory.get(k)??null,setItem:(k,v)=>memory.set(k,v),removeItem:k=>memory.delete(k)};
 function load(file) {
-  if (!path.extname(file)) file += ".ts";
+  if (!path.extname(file)) file += fs.existsSync(file + ".ts") ? ".ts" : ".tsx";
   if (file.endsWith(".json")) return require(file);
   if (file.endsWith(".module.css")) return {};
   if (cache.has(file)) return cache.get(file).exports;
