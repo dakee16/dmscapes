@@ -50,6 +50,9 @@ export const CloseIcon = (p: P) => <I strokeWidth={2.4} {...p}><path d="M6 6l12 
 export const BagIcon = (p: P) => <I {...p}><path d="M5 8h14l-1 13H6Z" /><path d="M9 8V6a3 3 0 0 1 6 0v2" /></I>;
 export const PlanIcon = (p: P) => <I strokeWidth={2.4} {...p}><rect x="4" y="4" width="16" height="16" /><path d="M4 12h8V4" /></I>;
 export const MoveIcon = PanIcon;
+/** Lift a piece up / set it down (3D). */
+export const RaiseIcon = (p: P) => <I {...p}><path d="M12 20V8M7 12.5l5-5 5 5M5 4h14" /></I>;
+export const LowerIcon = (p: P) => <I {...p}><path d="M12 4v12M7 11.5l5 5 5-5M5 20h14" /></I>;
 export const DownloadIcon = (p: P) => <I strokeWidth={2.4} {...p}><path d="M12 4v11M7 10l5 5 5-5" /><path d="M5 20h14" /></I>;
 export const LinkIcon = (p: P) => <I {...p}><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1" /><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" /></I>;
 export const CompareIcon = (p: P) => <I {...p}><rect x="3" y="5" width="7" height="14" rx="1" /><rect x="14" y="5" width="7" height="14" rx="1" /></I>;
