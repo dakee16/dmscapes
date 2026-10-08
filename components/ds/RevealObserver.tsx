@@ -31,8 +31,12 @@ const KINDS = [
   "data-bar",
   "data-pop",
 ] as const;
+// "armed" elements are included on purpose: this effect re-runs on every route
+// change, and an element armed by the previous run (which can happen when the
+// new page's DOM lands just before the old run is torn down) must be adopted by
+// the new observer, or it stays invisible until a reload.
 const SELECTOR =
-  KINDS.map((k) => `[${k}]:not([${k}="in"]):not([${k}="armed"]):not([${k}="load"])`).join(",") +
+  KINDS.map((k) => `[${k}]:not([${k}="in"]):not([${k}="load"])`).join(",") +
   ",[data-count]:not([data-count-done])";
 
 function motionPaused(): boolean {
@@ -75,6 +79,8 @@ export default function RevealObserver() {
     // watched through their parent instead.
     const viaParent = new Map<Element, HTMLElement[]>();
     const self = new Set<Element>();
+    // Everything this run's observer is already watching.
+    const watched = new WeakSet<Element>();
     const flip = (el: HTMLElement) => {
       if (el.hasAttribute("data-count") && !el.hasAttribute("data-count-done")) countUp(el);
       const kind = kindOf(el);
@@ -98,6 +104,7 @@ export default function RevealObserver() {
       { threshold: [0, 0.2, 0.5] }
     );
     const watch = (el: HTMLElement, kind: string | null) => {
+      watched.add(el);
       const parent = el.parentElement;
       if (parent && (kind === "data-grow" || kind === "data-bar" || kind === "data-draw")) {
         const list = viaParent.get(parent) ?? [];
@@ -117,7 +124,14 @@ export default function RevealObserver() {
       const vh = window.innerHeight;
       const nodes = document.querySelectorAll<HTMLElement>(SELECTOR);
       nodes.forEach((el) => {
+        if (watched.has(el)) return;
         const kind = kindOf(el);
+        // Armed by an earlier run: keep its armed state and watch it here.
+        if (kind && el.getAttribute(kind) === "armed") {
+          if (paused) el.setAttribute(kind, "in");
+          else watch(el, kind);
+          return;
+        }
         const parent = el.parentElement;
         if (parent?.hasAttribute("data-stagger")) {
           const siblings = Array.from(parent.children).filter((c) => kindOf(c));
