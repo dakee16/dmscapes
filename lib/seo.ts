@@ -100,12 +100,26 @@ export const SOCIAL_PROFILES: string[] = [
   "https://www.instagram.com/dorm.scape",
 ];
 
+/** Where people (and agents) reach the team: the contact form and replies go here. */
+export const CONTACT_EMAIL = "info@dormscape.us";
+
 const organization = {
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
   name: SITE_NAME,
   url: SITE_URL,
   description: SITE_TAGLINE,
+  email: CONTACT_EMAIL,
+  // No postal address: Dormscape doesn't publish one, so none is claimed here.
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: CONTACT_EMAIL,
+      url: `${SITE_URL}/contact`,
+      availableLanguage: ["English"],
+    },
+  ],
   ...(SOCIAL_PROFILES.length ? { sameAs: SOCIAL_PROFILES } : {}),
   logo: {
     "@type": "ImageObject",
