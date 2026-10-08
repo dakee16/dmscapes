@@ -1,5 +1,35 @@
 import type { NextConfig } from "next";
 import { PHASE_DEVELOPMENT_SERVER } from "next/constants";
+import fs from "node:fs";
+import path from "node:path";
+
+/**
+ * The first path segments that can resolve to anything: app routes (route
+ * groups and parallel slots flattened) and public/ entries. proxy.ts answers
+ * Markdown-asking agents with a Markdown 404 only when a path's first segment
+ * isn't one of these, so it can never call a real page missing. null (no
+ * Markdown 404s at all) if a root-level dynamic segment means any path might
+ * exist. Built from the filesystem, so new routes are picked up automatically.
+ */
+function routeRoots(): string[] | null {
+  const roots = new Set<string>();
+  let anyPath = false;
+  const walk = (dir: string) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (!entry.isDirectory() || entry.name.startsWith("_")) continue;
+      if (entry.name.startsWith("(") || entry.name.startsWith("@")) walk(path.join(dir, entry.name));
+      else if (entry.name.startsWith("[")) anyPath = true;
+      else roots.add(entry.name);
+    }
+  };
+  try {
+    walk(path.join(process.cwd(), "app"));
+    for (const entry of fs.readdirSync(path.join(process.cwd(), "public"))) roots.add(entry);
+  } catch {
+    return null;
+  }
+  return anyPath ? null : [...roots].sort();
+}
 
 // ---------------------------------------------------------------------------
 // Content-Security-Policy
@@ -102,6 +132,8 @@ export default function nextConfig(phase: string): NextConfig {
     allowedDevOrigins: ["terminal.local"],
     // Don't advertise the framework (X-Powered-By) to scanners.
     poweredByHeader: false,
+    // Inlined into proxy.ts at build time (see routeRoots).
+    env: { DORMSCAPE_ROUTE_ROOTS: JSON.stringify(routeRoots()) },
     // Redesign renders ship as JPEG masters; next/image serves AVIF/WebP.
     images: {
       formats: ["image/avif", "image/webp"],
