@@ -23,7 +23,7 @@ import Wordmark from "@/components/site/Wordmark";
 import Modal from "@/components/site/Modal";
 import BrandLoader from "@/components/site/BrandLoader";
 import { useStudioUI } from "@/components/studio-ui/StudioUI";
-import { CameraIcon, ChevronLeft, CloseIcon, ExpandIcon, LowerIcon, MinusIcon, MoveIcon, PencilIcon, PlanIcon, PlusIcon, RaiseIcon, RedoIcon, RotateIcon, SwapIcon, TrashIcon, UndoIcon } from "@/components/studio-ui/icons";
+import { CameraIcon, ChevronLeft, CloseIcon, ExpandIcon, LowerIcon, MinusIcon, MoveIcon, PencilIcon, PlusIcon, RaiseIcon, RedoIcon, RotateIcon, SwapIcon, TrashIcon, UndoIcon } from "@/components/studio-ui/icons";
 import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
 import WalkIn from "./WalkIn";
 import { BeddingSize, FINISH_NOTE, FloorSwatches, ItemInspector, LightSwitch, OpeningTools, RoomDetails, RoomFinishes } from "./StudioPanels";
@@ -286,7 +286,6 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
         {/* 3D: a bar above the room and a bar below it; nothing is ever drawn over the room itself. */}
         {view==="3d"&&!compact&&<div className={s.sceneBar} data-edge="top">
           <div className={s.vibeChip} title="Your vibe"><span aria-hidden="true">{styleFor(style,college?.id).palette.slice(0,4).map((c,i)=><i key={i} style={{background:c}}/>)}</span>{designDisplayName(style,customVibe)}</div>
-          <button type="button" className={`${s.pill} ${s.open2d}`} onClick={()=>{setView("2d");setMoveMode(false);}}><PlanIcon size={15}/>Open 2D plan</button>
           <span className={s.barSpacer} aria-hidden="true"/>
           <div inert={preview}><LightSwitch room={room} className={s.lightSwitch}/></div>
           <button type="button" className={s.roundBtn} aria-label="Snapshot" title="Download a snapshot (PNG)" disabled={preview} onClick={snapshot}><CameraIcon size={17}/></button>

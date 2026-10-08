@@ -11,6 +11,10 @@ import { useExperienceMotion } from "@/components/experience/MotionProvider";
  * drawn. Nothing loads on narrow screens, with reduced motion, with the site's
  * pause toggle on, or when the browser asks to save data.
  *
+ * With `widths`, frames come in several sizes and the canvas loads the
+ * smallest set that covers it at device pixels (capped at 2×), so retina
+ * screens never draw an upscaled frame and phones don't fetch large ones.
+ *
  *   const seq = useFrameSequence(canvasRef, { count: 25, url: i => `/x-${i}.webp` });
  *   useScrub(track, p => seq.draw(p));
  */
@@ -19,11 +23,18 @@ export function useFrameSequence(
   {
     count,
     url,
+    widths,
+    aspect = 1,
     position = [0.5, 0.5],
     minWidth = 1024,
   }: {
     count: number;
-    url: (i: number) => string;
+    /** frame i at `width` (the largest of `widths`, or undefined without them) */
+    url: (i: number, width?: number) => string;
+    /** available frame widths in pixels, ascending */
+    widths?: number[];
+    /** frame width / height, used to pick a width that covers the canvas */
+    aspect?: number;
     /** like CSS object-position, as fractions */
     position?: [number, number];
     minWidth?: number;
@@ -35,6 +46,8 @@ export function useFrameSequence(
   const drawn = useRef(-1);
   const urlRef = useRef(url);
   urlRef.current = url;
+  const widthsRef = useRef(widths);
+  widthsRef.current = widths;
   const [enabled, setEnabled] = useState(false);
   const [showing, setShowing] = useState(false);
   const [px, py] = position;
@@ -52,6 +65,9 @@ export function useFrameSequence(
     const img = frames.current[k]!;
     const ctx = c.getContext("2d");
     if (!ctx) return;
+    // Browsers default to "low" (bilinear); "high" keeps edges crisp whenever a frame is scaled.
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
     const s = Math.max(c.width / img.naturalWidth, c.height / img.naturalHeight);
     const w = img.naturalWidth * s;
     const h = img.naturalHeight * s;
@@ -97,13 +113,22 @@ export function useFrameSequence(
     for (let i = 0; i < count; i++) push(i);
 
     const start = () => {
+      // The smallest frame set that covers the canvas (object-fit: cover) at device pixels.
+      const sizes = widthsRef.current;
+      let width = sizes?.[sizes.length - 1];
+      const c = canvas.current;
+      if (sizes && c) {
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        const need = Math.max(c.clientWidth, c.clientHeight * aspect) * dpr;
+        width = sizes.find((w) => w >= need * 0.95) ?? width;
+      }
       let next = 0;
       const worker = () => {
         if (cancelled || next >= order.length) return;
         const i = order[next++];
         const img = new Image();
         img.decoding = "async";
-        img.src = urlRef.current(i);
+        img.src = urlRef.current(i, width);
         img
           .decode()
           .then(() => {
@@ -133,7 +158,7 @@ export function useFrameSequence(
       cancelled = true;
       window.removeEventListener("load", idle);
     };
-  }, [paused, minWidth, count, paint]);
+  }, [paused, minWidth, count, paint, canvas, aspect]);
 
   // Keep the backing store at device pixels (capped at 2×).
   useEffect(() => {

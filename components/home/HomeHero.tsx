@@ -29,10 +29,14 @@ export default function HomeHero({
   const caption = useRef<HTMLParagraphElement>(null);
 
   const canvas = useRef<HTMLCanvasElement>(null);
-  // The room settles onto its own floor plan as you scroll: 25 rendered frames.
+  // The room settles onto its own floor plan as you scroll: 25 rendered frames,
+  // 1140 px wide for phones and standard screens and 1520 px (the still's own
+  // size) for retina laptops. Frame 0 is the still, so the hand-over is seamless.
   const seq = useFrameSequence(canvas, {
     count: 25,
-    url: (i) => `/redesign/seq/hero-${String(i).padStart(2, "0")}.webp`,
+    url: (i, w = 1520) => `/redesign/seq/${w}/hero-${String(i).padStart(2, "0")}.webp`,
+    widths: [1140, 1520],
+    aspect: 1520 / 1776,
     position: [0.5, 0.55],
     minWidth: 0,
   });
