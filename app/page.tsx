@@ -32,13 +32,15 @@ import {
 // Short enough that Google shows it whole.
 const TITLE = "Dormscape: Free Dorm Room Planner";
 
-export const metadata = pageMetadata({
+const pageMeta = pageMetadata({
   title: TITLE,
   absoluteTitle: true,
   description: `Free dorm room planner with real room dimensions for ${SCHOOLS.length} schools. Lay out your room in 2D or 3D, set a budget and get a shoppable list.`,
   path: "/",
   ogTitle: "dormscape: your dorm room, planned before move-in day",
 });
+// Point agents at the Markdown version (also served at / for Accept: text/markdown).
+export const metadata = { ...pageMeta, alternates: { ...pageMeta.alternates, types: { "text/markdown": "/index.md" } } };
 
 export default function Home() {
   return (
