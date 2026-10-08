@@ -206,14 +206,14 @@ export function createModelKit({onTexture=()=>{}}={}) {
       case "microwave":
         box(g,w,h,d,white,0,h/2,0,.06);box(g,w*.72,h*.7,.02,ink,-w*.08,h*.53,d/2-.005);box(g,.04,h*.48,.05,metal,w*.33,h*.53,d/2-.02);break;
       case "desk":{
-        // A top on legs, with a drawer cabinet on the right when there's room.
-        box(g,w,.14,d,wood,0,h-.07,0,.03);
+        // A top on legs, with a drawer cabinet on the right when there's room. Legs and cabinet stop just under the top so their faces never meet it.
+        box(g,w,.14,d,wood,0,h-.07,0,.03).name="desk-top";
         const cab=w>2.2,cw=cab?Math.min(1.6,w*.38):0;
-        for(const z of [-1,1])box(g,.12,h-.14,.12,wood,-w/2+.09,(h-.14)/2,z*(d/2-.09),.02);
-        if(cab){box(g,cw,h-.16,d*.92,wood,w/2-cw/2-.02,(h-.16)/2,0,.03);
+        for(const z of [-1,1])box(g,.12,h-.16,.12,wood,-w/2+.09,(h-.16)/2,z*(d/2-.09),.02).name="desk-leg";
+        if(cab){box(g,cw,h-.16,d*.92,wood,w/2-cw/2-.02,(h-.16)/2,0,.03).name="desk-leg";
           for(const y of [.34,.66])box(g,cw*.9,.025,.02,woodDark,w/2-cw/2-.02,(h-.16)*y,d*.46+.005);
           for(const y of [.17,.5,.83])cyl(g,.045,.045,.08,metal,w/2-cw/2-.02,(h-.16)*y,d*.46+.03,12).rotation.x=Math.PI/2;}
-        else for(const z of [-1,1])box(g,.12,h-.14,.12,wood,w/2-.09,(h-.14)/2,z*(d/2-.09),.02);
+        else for(const z of [-1,1])box(g,.12,h-.16,.12,wood,w/2-.09,(h-.16)/2,z*(d/2-.09),.02).name="desk-leg";
         box(g,w-(cab?cw:0)-.2,.6,.06,wood,-(cab?cw/2:0),h-.45,-d/2+.06,.02);
         break;
       }
