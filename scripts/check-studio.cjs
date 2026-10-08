@@ -30,7 +30,10 @@ store.getState().resetPlanner();
 assert.equal(store.getState().plannerView,"2d");
 const room={type:"double",occupants:2,lengthFt:15,widthFt:12,source:"manual"};
 const item={id:"desk",type:"desk",label:"Desk",x_ft:2,y_ft:2,width_ft:4,length_ft:2,rotation_deg:0,movable:true,built_in:true};
-assert.deepEqual(studio.roomOutline(room).openings,[],"Unknown doors must not be invented");
+// Every room has a door and a window: by default the door at the bottom of the left wall and the window centred on the right wall (where the layout templates expect them).
+assert.deepEqual(studio.roomOutline(room).openings,[{kind:"door",edge:3,offset_ft:.25,width_ft:3,swing:0},{kind:"window",edge:1,offset_ft:4,width_ft:4}],"Rooms without recorded openings get the default door and window");
+assert.equal(studio.roomOutline(room),studio.roomOutline(room),"The default openings are stable for the same room");
+assert.equal(studio.roomOutline({...room,outline:{points:studio.roomOutline(room).points,openings:[{kind:"window",edge:0,offset_ft:2,width_ft:4}],closets:[]}}).openings.length,1,"Placed openings are never replaced");
 assert.deepEqual(studio.constrainedPosition(item,100,-1,room,false),{x:11,y:0});
 assert.deepEqual(studio.constrainedPosition(item,2.2,3.8,room,true),{x:2,y:4});
 const irregular={...room,lengthFt:10,widthFt:10,outline:{points:[{x:0,y:0},{x:10,y:0},{x:10,y:4},{x:4,y:4},{x:4,y:10},{x:0,y:10}],openings:[],closets:[]}};
@@ -208,7 +211,8 @@ for(const original of [{...room,source:"catalog",dimsEstimated:true},{...irregul
     assert.equal(store.getState().room,validRoom,"Invalid edits leave the room untouched");
   }
   assert.equal(store.getState().updateOpenings([]),null);
-  assert.deepEqual(store.getState().room,{...original,outline},"Removing openings preserves the original room");
+  assert.deepEqual(store.getState().room,{...original,outline:{...outline,openings:[]}},"Removing openings preserves the original walls and closets");
+  assert.deepEqual(studio.roomOutline(store.getState().room).openings,studio.defaultOpenings(outline.points),"A room with every opening removed gets the default door and window back");
 }
 console.log("PASS: openings add, edit, remove, persist, and validate without changing walls, dimensions, closets, furniture, or view.");
 const {NumberField,RoomDetails}=load(path.join(root,"components/studio/StudioPanels.tsx"));

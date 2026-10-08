@@ -1,4 +1,4 @@
-import type { FurnitureItem, ProductCategory, RoomOutline, SelectedRoom } from "./types";
+import type { FurnitureItem, Point, ProductCategory, RoomOutline, SelectedRoom, WallOpening } from "./types";
 import { furnitureCategory } from "./highlight";
 import { isBunkBed } from "./bedding";
 import { bedMetrics, bedMode } from "./bed-config";
@@ -26,10 +26,37 @@ export function studioSettings(value?: Partial<StudioSettings> | null): StudioSe
     lighting: LIGHTING_PRESETS.includes(value?.lighting as StudioSettings["lighting"]) ? value!.lighting! : "day",
     dressVibe: value?.dressVibe !== false };
 }
+/**
+ * Where a room's door and window go when none have been placed: a 3 ft door near the bottom of the
+ * left wall, hinged at the corner end and swinging in, and a window centred on the right wall.
+ * That is where every layout template expects them, so furniture already keeps clear. They are
+ * ordinary openings: drag them to match the real room.
+ */
+export function defaultOpenings(points: Point[]): WallOpening[] {
+  const edges = points.map((a, edge) => { const b = points[(edge + 1) % points.length];
+    return { edge, a, b, len: Math.hypot(b.x - a.x, b.y - a.y), mx: (a.x + b.x) / 2, upright: Math.abs(b.x - a.x) < 1e-6 }; }).filter(e => e.len >= 1);
+  const upright = edges.filter(e => e.upright), pool = upright.length >= 2 ? upright : edges;
+  const left = pool.filter(e => e.len >= 3.5).sort((p, q) => p.mx - q.mx || Math.max(q.a.y, q.b.y) - Math.max(p.a.y, p.b.y))[0];
+  const right = pool.filter(e => e !== left && e.len >= 2).sort((p, q) => q.mx - p.mx)[0];
+  const out: WallOpening[] = [];
+  if (left) {
+    // .25 ft up from the bottom corner, hinged at the corner end, so its swing stays in the clear corner the templates leave.
+    const up = left.a.y > left.b.y;
+    out.push({ kind: "door", edge: left.edge, offset_ft: up ? .25 : left.len - 3.25, width_ft: 3, swing: up ? 0 : 1 });
+  }
+  if (right) { const width = Math.min(4, right.len - 1); out.push({ kind: "window", edge: right.edge, offset_ft: (right.len - width) / 2, width_ft: width }); }
+  return out;
+}
+const withDefaults = new WeakMap<object, RoomOutline>();
+/** The room's walls, doors, windows and closets. Every room has a door and a window: when none are stored, the defaults above. */
 export function roomOutline(room: SelectedRoom): RoomOutline {
-  if (room.outline) return room.outline;
-  return { points: [{x:0,y:0},{x:room.lengthFt,y:0},{x:room.lengthFt,y:room.widthFt},{x:0,y:room.widthFt}],
-    openings: [], closets: [] };
+  const base = room.outline ?? { points: [{x:0,y:0},{x:room.lengthFt,y:0},{x:room.lengthFt,y:room.widthFt},{x:0,y:room.widthFt}], openings: [], closets: [] };
+  if (base.openings.length) return base;
+  // Cached per stored outline (or per room when there is none), so the same room keeps the same object.
+  const key = room.outline ?? room;
+  let outline = withDefaults.get(key);
+  if (!outline) { outline = { ...base, openings: defaultOpenings(base.points) }; withDefaults.set(key, outline); }
+  return outline;
 }
 export function modelKind(item: FurnitureItem): string {
   const t = item.type.toLowerCase();

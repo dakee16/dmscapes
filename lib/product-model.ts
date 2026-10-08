@@ -155,9 +155,9 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
       // Surface placement records its parent, so movement and rotation stay linked.
     } else if (wall) {
       f.x_ft=Math.max(0,(room.lengthFt-f.width_ft)/2); f.y_ft=.12; f.elevation_ft=Math.max(0,6.7-f.height_ft!);
-      const opening=room.outline?.openings.find(o=>o.kind==="window");
-      if (visual.kind==="curtains" && opening && room.outline) {
-        const a=room.outline.points[opening.edge],b=room.outline.points[(opening.edge+1)%room.outline.points.length];
+      const outline=roomOutline(room),opening=outline.openings.find(o=>o.kind==="window");
+      if (visual.kind==="curtains" && opening) {
+        const a=outline.points[opening.edge],b=outline.points[(opening.edge+1)%outline.points.length];
         const length=Math.hypot(b.x-a.x,b.y-a.y),dx=(b.x-a.x)/length,dy=(b.y-a.y)/length;
         f.width_ft=opening.width_ft+.4; f.rotation_deg=Math.atan2(dy,dx)*180/Math.PI;
         const bounds=footprint(f),center=opening.offset_ft+opening.width_ft/2;

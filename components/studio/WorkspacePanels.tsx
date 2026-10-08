@@ -89,7 +89,7 @@ export function RoomDetails({room,controls,onAdd,onRemove,onFlip}:{room:Selected
       <div className={s.buttonRow}>{openings.map((o,i)=><button key={i} aria-pressed={controls.selected===i} onClick={()=>controls.select(i)}>{o.kind==="door"?"Door":"Window"} {i+1}</button>)}</div>
       {controls.selected!==null&&openings[controls.selected]&&<div className={s.buttonRow}>
         {openings[controls.selected].kind==="door"&&<button onClick={()=>onFlip(controls.selected!)}>Flip door</button>}
-        <button onClick={()=>onRemove(controls.selected!)}>Remove</button>
+        <button disabled={openings.length<=1} title={openings.length<=1?"A room keeps at least one door or window. Move it instead.":undefined} onClick={()=>onRemove(controls.selected!)}>Remove</button>
       </div>}
       <p className={s.muted}>Keyboard: select an opening, then use the left and right arrow keys to slide it, or up and down to move it to the next wall.</p>
     </details>}
