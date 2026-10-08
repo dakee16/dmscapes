@@ -8,7 +8,7 @@ export let recoveredDraft = false;
 // A private workspace uses account-scoped recovery, never the public planner draft.
 let suspended = false;
 export function suspendPlannerStorage(value: boolean) { suspended = value; }
-const fields=["plannerView","college","dorm","room","style","budget","customVibe","customProducts","customMock","customRegenUsed","templateId","furniture","swaps","excluded","hiddenItemIds","lockedItemIds","customItems","unplacedItemIds","planning","savedFingerprint","savedByUserId"];
+const fields=["plannerView","college","dorm","room","style","budget","customVibe","customProducts","customMock","customRegenUsed","templateId","furniture","swaps","excluded","hiddenItemIds","lockedItemIds","ignoredFitChecks","customItems","unplacedItemIds","planning","savedFingerprint","savedByUserId"];
 /** Ignore corrupt JSON or incompatible shapes instead of breaking the planner. */
 export function validDraft(value:string|null):string|null{
   if(!value)return null;
@@ -21,6 +21,7 @@ export function validDraft(value:string|null):string|null{
     if(s.furniture!=null){const furniture=sanitizeFurnitureList(s.furniture);if(!furniture)return null;s.furniture=furniture;}
     if(s.planning){const planning=sanitizePlanning(s.planning);if(!planning)return null;s.planning=planning;}
     for(const key of ["hiddenItemIds","lockedItemIds","unplacedItemIds","customItems","excluded"]){if(s[key]!=null&&!Array.isArray(s[key]))return null;}
+    if(s.ignoredFitChecks!=null&&(!Array.isArray(s.ignoredFitChecks)||s.ignoredFitChecks.some((k:unknown)=>typeof k!=="string")))s.ignoredFitChecks=[];
     return JSON.stringify({...parsed,state:Object.fromEntries(fields.filter(k=>Object.hasOwn(s,k)).map(k=>[k,s[k]]))});
   }catch{return null;}
 }
