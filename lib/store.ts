@@ -58,6 +58,8 @@ export interface PlannerState {
   hiddenItemIds: string[];
   /** Canvas items locked against dragging via the toolbar. */
   lockedItemIds: string[];
+  /** 2D fit checks the user chose to ignore: one key per piece and placement (see fitCheckKey), so moving the piece brings its check back. */
+  ignoredFitChecks: string[];
   /** User-pasted "Add your own item" products (Part 2). Rendered in the cart
    *  and counted toward the budget, separate from the category-based auto-list. */
   customItems: Product[];
@@ -97,6 +99,7 @@ export interface PlannerState {
   toggleHiddenItem: (id: string) => void;
   /** Toggle a canvas item's locked (undraggable) state. */
   toggleLockedItem: (id: string) => void;
+  setIgnoredFitChecks: (keys: string[]) => void;
   /** Update a furniture item's footprint (e.g. swapped rug with new dims). */
   resizeItem: (id: string, widthFt: number, lengthFt: number) => void;
   updateItem3D: (id: string, patch: Partial<Pick<FurnitureItem, "height_ft" | "elevation_ft" | "material_color" | "parent_id">>) => void;
@@ -144,6 +147,7 @@ const initial = {
   excluded: null,
   hiddenItemIds: [],
   lockedItemIds: [],
+  ignoredFitChecks: [],
   customItems: [],
   unplacedItemIds: [],
   hoveredCategory: null,
@@ -264,6 +268,7 @@ export const usePlannerStore = create<PlannerState>()(
             ? s.hiddenItemIds.filter((x) => x !== id)
             : [...s.hiddenItemIds, id],
         })),
+      setIgnoredFitChecks: (keys) => set({ ignoredFitChecks: [...new Set(keys)].slice(-200) }),
       toggleLockedItem: (id) =>
         set((s) => ({
           lockedItemIds: s.lockedItemIds.includes(id)
@@ -385,6 +390,7 @@ export const usePlannerStore = create<PlannerState>()(
         excluded: s.excluded,
         hiddenItemIds: s.hiddenItemIds,
         lockedItemIds: s.lockedItemIds,
+        ignoredFitChecks: s.ignoredFitChecks,
         customItems: s.customItems,
         unplacedItemIds: s.unplacedItemIds,
       }),

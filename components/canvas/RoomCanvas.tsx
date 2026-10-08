@@ -232,6 +232,8 @@ function buildBrandWatermark(stageW: number, stageH: number): Konva.Group {
 
   return group;
 }
+/** An ignored fit check: the piece and where it stands, so moving it brings its check back. */
+const fitCheckKey = (f: FurnitureItem) => `${f.id}@${f.x_ft},${f.y_ft},${f.width_ft},${f.length_ft},${f.rotation_deg}`;
 const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 3;
 
@@ -429,6 +431,17 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
     activeFurniture.map(f => dragging?.id === f.id ? { ...f, x_ft: dragging.x, y_ft: dragging.y } : f),
     roomL, roomW, outline ?? undefined
   ), [activeFurniture, dragging, roomL, roomW, outline]);
+  // Fit checks the user chose to ignore lose their warning and red outline until the piece moves.
+  const ignoredFitChecks = usePlannerStore((s) => s.ignoredFitChecks);
+  const flagged = useMemo(() => {
+    const ignored = new Set(ignoredFitChecks);
+    return new Set([...invalid].filter(id => { const f = activeFurniture.find(x => x.id === id); return dragging?.id === id || !f || !ignored.has(fitCheckKey(f)); }));
+  }, [invalid, ignoredFitChecks, activeFurniture, dragging]);
+  const ignoredCount = invalid.size - flagged.size;
+  function ignoreFitChecks() {
+    const placed = new Set(activeFurniture.map(fitCheckKey));
+    usePlannerStore.getState().setIgnoredFitChecks([...ignoredFitChecks.filter(k => placed.has(k)), ...activeFurniture.filter(f => flagged.has(f.id)).map(fitCheckKey)]);
+  }
 
   function fitRoom() { setZoom(1); setStagePos({ x: 0, y: 0 }); }
   function applyZoom(next: number, anchor = { x: stageW / 2, y: stageH / 2 }) {
@@ -716,13 +729,15 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
   const z = zoom || 1;
   const ftLabel = (n: number) => `${Number.isInteger(Math.round(n * 10) / 10) ? Math.round(n) : n.toFixed(1)} ft`;
   const textW = (text: string, size: number) => text.length * size * .56;
-  const status = ghost
+  const status: { ok: boolean; text: string; action?: "ignore" | "show" } = ghost
     ? { ok: ghost.fits, text: ghost.fits ? "Preview fits · nothing moves" : "Preview needs a fit check" }
     : dragging
       ? { ok: !invalid.has(dragging.id), text: `Position: ${feetLabel(dragging.x)} / ${feetLabel(dragging.y)}` }
-      : invalid.size
-        ? { ok: false, text: `${invalid.size} ${invalid.size === 1 ? "piece needs" : "pieces need"} a fit check` }
-        : { ok: true, text: readOnly ? `${activeFurniture.length} pieces in this room` : "Everything fits · no overlaps" };
+      : flagged.size
+        ? { ok: false, text: `${flagged.size} ${flagged.size === 1 ? "piece needs" : "pieces need"} a fit check`, action: readOnly ? undefined : "ignore" }
+        : ignoredCount && !readOnly
+          ? { ok: true, text: `${ignoredCount} fit ${ignoredCount === 1 ? "check" : "checks"} ignored`, action: "show" }
+          : { ok: true, text: readOnly ? `${activeFurniture.length} pieces in this room` : "Everything fits · no overlaps" };
   const scaleFt = pxFt * zoom * 2 > 130 ? 1 : 2;
 
   // ---------- Room view: floor, walls, light, door, window, closets ----------
@@ -954,7 +969,7 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               const fp = footprint(f);
               const w = f.width_ft * pxFt;
               const h = f.length_ft * pxFt;
-              const bad = invalid.has(f.id);
+              const bad = flagged.has(f.id);
               const isHidden = hiddenItemIds.includes(f.id);
               const isLocked = lockedItemIds.includes(f.id);
               const draggable = !readOnly && !panMode && f.movable && !isLocked && !isHidden;
@@ -1162,9 +1177,14 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
       </div>
       {/* Everything about the selection lives in this bar under the plan, never over it. */}
       {dock && pxFt > 0 && <div className={styles.dockBar} data-piece={dock.notice || (toolbarItem && !readOnly && !previewing && !panMode) ? "" : undefined} data-dragging={dragging ? "" : undefined}>
-        <p className={styles.statusPill} data-ok={status.ok || undefined} role="status">
-          <span aria-hidden="true">{status.ok ? <CheckIcon size={12} /> : <AlertIcon size={13} />}</span>{status.text}
-        </p>
+        <div className={styles.statusLine}>
+          <p className={styles.statusPill} data-ok={status.ok || undefined} role="status">
+            <span aria-hidden="true">{status.ok ? <CheckIcon size={12} /> : <AlertIcon size={13} />}</span>{status.text}
+          </p>
+          {status.action === "ignore" && <button type="button" className={styles.statusAction} onClick={ignoreFitChecks}
+            title="Hide these warnings and their red outlines. A check comes back if its piece moves into a new conflict.">Ignore</button>}
+          {status.action === "show" && <button type="button" className={styles.statusAction} onClick={() => usePlannerStore.getState().setIgnoredFitChecks([])}>Show</button>}
+        </div>
         {dock.notice ? <div className={styles.notice}>{dock.notice}</div>
           : !readOnly && toolbarItem && !previewing && !panMode && <div className={styles.itemBar} role="toolbar" aria-label={`${bedLabel(toolbarItem)} actions`}>
           {onRotate && <button type="button" disabled={!canEditItem} onClick={() => onRotate(toolbarItem.id, 1)} title="Rotate 90° (R)"><RotateIcon size={15} />Rotate</button>}

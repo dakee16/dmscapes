@@ -85,7 +85,11 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
     const opening=openingAtPoint(outline,kind);
     if(opening)commitOpening(null,opening);else setOpeningError("No clear wall space left for another "+kind+".");
   }
-  function removeOpening(index:number){usePlannerStore.getState().updateOpenings(outline.openings.filter((_,i)=>i!==index));selectOpening(null);}
+  /** Every room keeps at least one door or window (a room with none gets the defaults back), so the last one only moves. */
+  function removeOpening(index:number){
+    if(outline.openings.length<=1){setOpeningError("A room keeps at least one door or window. Move it instead.");return;}
+    usePlannerStore.getState().updateOpenings(outline.openings.filter((_,i)=>i!==index));selectOpening(null);
+  }
   function flipOpening(index:number){const opening=outline.openings[index];if(opening)commitOpening(index,{...opening,swing:((opening.swing??0)+1)%4});}
   function openingKey(e:ReactKeyboardEvent){
     const opening=selectedOpening===null?null:outline.openings[selectedOpening];
@@ -119,7 +123,7 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
       {opening&&<div className={s.openingActions} role="group" aria-label="Selected opening">
         <strong>{opening.kind==="door"?"Door":"Window"}</strong><span>Drag to move</span>
         {opening.kind==="door"&&<button type="button" onClick={()=>flipOpening(selectedOpening!)}>Flip door</button>}
-        <button type="button" onClick={()=>removeOpening(selectedOpening!)}>Remove</button><button type="button" aria-label="Deselect opening" onClick={()=>selectOpening(null)}><CloseIcon size={16}/></button>
+        <button type="button" disabled={outline.openings.length<=1} title={outline.openings.length<=1?"A room keeps at least one door or window. Move it instead.":undefined} onClick={()=>removeOpening(selectedOpening!)}>Remove</button><button type="button" aria-label="Deselect opening" onClick={()=>selectOpening(null)}><CloseIcon size={16}/></button>
       </div>}
     </>:null;
   const titles:Record<Panel,string>={furnish:"Furniture",style:"Style & light",room:"Room details",shop:"Shopping list",item:"Selected item",checks:"Placement checks",help:"Studio guide",layouts:"Layout ideas",roommates:"Roommates"};
@@ -169,7 +173,6 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
                 <button type="button" aria-label="Raise" title="Raise 3 in" disabled={!movable||elevation>=topOut-.001} onClick={()=>lift(.25)}><RaiseIcon size={16}/></button>
               </span>
             </div>
-            :roomOutlineMissing(room)?<button type="button" className={s.openingsHint} onClick={editOpenings}>Doors and windows not set. Add openings</button>
             :<p className={s.sceneHint}>{preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Select when done.":"Drag empty space to look around · Select a piece to arrange it · Shift-drag to lift it"}</p>}
           </>}
         </div>}
@@ -205,4 +208,3 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
     <footer className={s.statusBar}><span>Manual edits use no design credits.</span><button onClick={()=>open("shop")}><span>Shopping total</span> <strong>${total.toFixed(2)}</strong> / ${budget}{total>budget&&<b> Over budget</b>}</button></footer>
   </div>;
 }
-function roomOutlineMissing(room:{outline?:{openings:unknown[]}|null}){return !room.outline?.openings.length;}

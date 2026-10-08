@@ -511,6 +511,14 @@
   .actions { gap: 4px; }
   .bar :global(.ds-wordmark:has(.ds-wordmark__pro) .ds-wordmark__type) { font-size: 20px; }
 }
+/* Small phones (320-359): drop the Pro tag and tighten the bar so the header never scrolls sideways. */
+@media (max-width: 359px) {
+  .bar { padding-left: 10px; gap: 4px; }
+  .bar :global(.ds-wordmark__type),
+  .bar :global(.ds-wordmark:has(.ds-wordmark__pro) .ds-wordmark__type) { font-size: 19px; }
+  .bar :global(.ds-wordmark__pro) { display: none; }
+  .actions .cta { padding: 0 10px; }
+}
 @media (max-width: 640px) {
   .sheetGroups { grid-template-columns: minmax(0, 1fr); }
 }

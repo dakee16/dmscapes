@@ -13,10 +13,13 @@ try {
     assert(lid.min.y - body.max.y > .009, `Storage body/lid must not overlap at height ${height}`);
     assert(Math.abs(lid.max.y - height) < .00001, "The model must keep its requested height");
   }
-  for (const height of [1, 2.5, 3.5]) {
-    const desk = kit.build({ id:"desk", kind:"desk", width_ft:4, length_ft:2, height }, ["#ffffff"]);
-    const top = new T.Box3().setFromObject(desk.children[4]);
-    for (const leg of desk.children.slice(0,4)) {
+  for (const [width, height] of [[4, 1], [4, 2.5], [4, 3.5], [2, 2.5]]) {
+    const desk = kit.build({ id:"desk", kind:"desk", width_ft:width, length_ft:2, height }, ["#ffffff"]);
+    const top = new T.Box3().setFromObject(desk.getObjectByName("desk-top"));
+    const legs = desk.children.filter(part => part.name === "desk-leg");
+    assert.equal(legs.length, width > 2.2 ? 3 : 4, "A desk stands on its legs and drawer cabinet");
+    assert(Math.abs(top.max.y - height) < .00001, "The desk must keep its requested height");
+    for (const leg of legs) {
       assert(top.min.y - new T.Box3().setFromObject(leg).max.y > .015, "Table legs must end below the underside of the tabletop");
     }
   }

@@ -55,9 +55,15 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
   </>;
 }
 
-export function RoomDetails({room,controls,onAdd,onRemove,onFlip}:{room:SelectedRoom;controls:OpeningControls;onAdd:(kind:WallOpening["kind"])=>void;onRemove:(index:number)=>void;onFlip:(index:number)=>void}){
-  const openings=roomOutline(room).openings;
-  return <><label className={s.field}>Bedding size for product matches<select value={room.bedSize} onChange={e=>usePlannerStore.setState({room:{...room,bedSize:e.target.value as SelectedRoom["bedSize"]}})}><option value="twin_xl">Twin XL</option><option value="twin">Twin</option><option value="full">Full</option><option value="full_xl">Full XL</option><option value="queen">Queen</option></select></label><p className={s.note}>Check the actual mattress size. This setting does not resize your furniture.</p><p className={s.eyebrow}>Make room for real life</p><h2>Doors &amp; windows</h2>
+/** Bedding size for product matches (it never resizes furniture). */
+export function BeddingSize({room}:{room:SelectedRoom}){
+  return <><label className={s.field}>Bedding size for product matches<select value={room.bedSize} onChange={e=>usePlannerStore.setState({room:{...room,bedSize:e.target.value as SelectedRoom["bedSize"]}})}><option value="twin_xl">Twin XL</option><option value="twin">Twin</option><option value="full">Full</option><option value="full_xl">Full XL</option><option value="queen">Queen</option></select></label><p className={s.note}>Check the actual mattress size. This setting does not resize your furniture.</p></>;
+}
+
+/** Add, list, flip and remove doors and windows. Every room keeps at least one, so the last can't be removed. */
+export function OpeningTools({room,controls,onAdd,onRemove,onFlip}:{room:SelectedRoom;controls:OpeningControls;onAdd:(kind:WallOpening["kind"])=>void;onRemove:(index:number)=>void;onFlip:(index:number)=>void}){
+  const openings=roomOutline(room).openings,last=openings.length<=1;
+  return <>
     <p className={s.muted}>Drag one onto a wall. Or tap to add, then drag it into place.</p>
     <div className={s.openingTools}>
       {(["door","window"] as const).map(kind=><button key={kind} type="button" draggable onDragStart={e=>{e.dataTransfer.setData(OPENING_DRAG_TYPE+"-"+kind,kind);e.dataTransfer.effectAllowed="copy";}} onClick={()=>onAdd(kind)}>
@@ -65,19 +71,24 @@ export function RoomDetails({room,controls,onAdd,onRemove,onFlip}:{room:Selected
         <strong>+ {kind==="door"?"Door":"Window"}</strong><small>Drag or tap to add</small>
       </button>)}
     </div>
-    <p className={s.note}>They snap to walls automatically. Drag an existing door or window to move it.</p>
+    <p className={s.note}>Every room starts with a door and a window where most dorm rooms have them. Drag them on the plan or in 3D to match yours; they snap to walls.</p>
     {openings.length>0&&<details className={s.disclosure}><summary>Placed openings ({openings.length})</summary>
       <div className={s.buttonRow}>{openings.map((o,i)=><button key={i} aria-pressed={controls.selected===i} onClick={()=>controls.select(i)}>{o.kind==="door"?"Door":"Window"} {i+1}</button>)}</div>
       {controls.selected!==null&&openings[controls.selected]&&<div className={s.buttonRow}>
         {openings[controls.selected].kind==="door"&&<button onClick={()=>onFlip(controls.selected!)}>Flip door</button>}
-        <button onClick={()=>onRemove(controls.selected!)}>Remove</button>
+        <button disabled={last} title={last?"A room keeps at least one door or window. Move it instead.":undefined} onClick={()=>onRemove(controls.selected!)}>Remove</button>
       </div>}
       <p className={s.muted}>Keyboard: select an opening, then use the Left and Right arrow keys to slide it, or Up and Down to move it to the next wall.</p>
     </details>}
   </>;
 }
 
-const WALLS: [string, string][] = [["Warm cream", "#f3eee4"], ["White", "#f7f6f2"], ["Sage", "#c9d3be"], ["Powder blue", "#cfd9ec"], ["Blush", "#ebcfcb"]];
+export function RoomDetails({room,controls,onAdd,onRemove,onFlip}:{room:SelectedRoom;controls:OpeningControls;onAdd:(kind:WallOpening["kind"])=>void;onRemove:(index:number)=>void;onFlip:(index:number)=>void}){
+  return <><BeddingSize room={room}/><p className={s.eyebrow}>Make room for real life</p><h2>Doors &amp; windows</h2>
+    <OpeningTools room={room} controls={controls} onAdd={onAdd} onRemove={onRemove} onFlip={onFlip}/></>;
+}
+
+const WALLS: [string, string][] = [["Warm cream", "#f3eee4"], ["Sage", "#c9d3be"], ["Powder blue", "#cfd9ec"], ["Blush", "#ebcfcb"]];
 function finishSwatch(key: string, color: string) {
   if (key === "oak" || key === "walnut") return `repeating-linear-gradient(90deg, ${color} 0 10px, rgba(0,0,0,.12) 10px 11px)`;
   if (key === "carpet") return `radial-gradient(rgba(0,0,0,.08) 1px, transparent 1.5px) 0 0 / 5px 5px, ${color}`;
@@ -96,17 +107,19 @@ export function FloorSwatches({room}:{room:SelectedRoom}){
   return <div className={s.floorSwatches} role="group" aria-label="Floor">{Object.entries(FLOOR_FINISHES).map(([key,color])=><button key={key} type="button" aria-label={FLOOR_LABELS[key as keyof typeof FLOOR_LABELS]} title={FLOOR_LABELS[key as keyof typeof FLOOR_LABELS]} aria-pressed={floor===key} onClick={()=>update({floor:key as typeof floor})} style={{background:finishSwatch(key,color)}}/>)}</div>;
 }
 
-/** Room finishes for the 3D view (Studio3D.dc.html). Preview only: the list never changes. */
-export function StyleDetails({room}:{room:SelectedRoom}){
+/** The finish note: what the 3D finishes do and don't change. */
+export const FINISH_NOTE="Finishes, preview colors and lighting are only for seeing the room. They never change your shopping list. Check your residence hall rules before changing finishes.";
+
+/** Room finishes for the 3D view: floor, walls and the vibe dressing (light lives above the room). Preview only: the list never changes. */
+export function RoomFinishes({room}:{room:SelectedRoom}){
  const settings=studioSettings(room.studio),update=usePlannerStore(st=>st.updateStudio);
  const custom=!WALLS.some(([,c])=>c===settings.wallColor.toLowerCase());
- return <><h2 className={s.eyebrowInk}>Room</h2>
- <fieldset className={s.swatchSet}><legend>Light</legend><LightSwitch room={room}/></fieldset>
+ return <>
  <fieldset className={s.swatchSet}><legend>Floor</legend><FloorSwatches room={room}/></fieldset>
  <fieldset className={s.swatchSet}><legend>Walls</legend><div className={s.wallSwatches}>
    {WALLS.map(([name,color])=><button key={name} type="button" aria-label={name} title={name} aria-pressed={settings.wallColor.toLowerCase()===color} onClick={()=>update({wallColor:color})} style={{background:color}}/>)}
    <label className={s.customWall} data-active={custom||undefined} title="Custom wall color"><span className={s.srOnly}>Custom wall color</span><input aria-label="Wall preview color" type="color" value={settings.wallColor} onChange={e=>update({wallColor:e.target.value})}/></label>
  </div></fieldset>
  <label className={s.dressVibe}><input type="checkbox" checked={settings.dressVibe} onChange={e=>update({dressVibe:e.target.checked})}/><span><strong>Dress the room in my vibe</strong><small>Bedding, rug and decor take your vibe&apos;s colors.</small></span></label>
- <p className={s.finishNote}>Finishes, preview colors and lighting are only for seeing the room. They never change your shopping list. Check your residence hall rules before changing finishes.</p></>;
+ </>;
 }

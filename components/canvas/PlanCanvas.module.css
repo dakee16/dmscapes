@@ -24,6 +24,12 @@
   flex: none; position: relative; z-index: 4; display: flex; align-items: center; gap: 10px; height: 58px; min-width: 0; padding: 0 16px 0 12px;
   background: #fff; border-top: 1.5px solid rgba(22, 22, 29, 0.1);
 }
+.statusLine { flex: 0 1 auto; display: flex; align-items: center; gap: 4px; min-width: 0; }
+.statusAction {
+  flex: none; height: 30px; padding: 0 12px; border: 1.5px solid rgba(22, 22, 29, 0.18); border-radius: 999px;
+  background: #fff; color: var(--ds-ink); font: 700 13px/1 var(--ds-sans); cursor: pointer;
+}
+.statusAction:hover { border-color: var(--ds-ink); }
 .statusPill {
   flex: 0 1 auto; display: flex; align-items: center; gap: 8px; min-width: 0; height: 34px; margin: 0; padding: 0 12px 0 6px;
   font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
@@ -53,7 +59,7 @@
   font-family: var(--ds-mono); font-size: 10px; font-weight: 600; color: var(--ds-caption);
 }
 .notice + .scale, .itemBar + .scale { margin-left: 12px; }
-.statusPill + .scale { margin-left: auto; }
+.statusLine + .scale { margin-left: auto; }
 .scale i { display: block; height: 7px; border: 1.5px solid var(--ds-ink); border-top: 0; }
 
 /* ---------- rotation handle ---------- */
@@ -111,7 +117,7 @@
 @media (max-width: 780px) {
   .dockBar { height: 54px; gap: 6px; padding: 0 6px 0 8px; }
   /* One thing at a time on a phone: the piece's actions while it's selected (the status while you drag it). */
-  .dockBar[data-piece]:not([data-dragging]) .statusPill, .dockBar[data-dragging] .itemBar { display: none; }
+  .dockBar[data-piece]:not([data-dragging]) .statusLine, .dockBar[data-dragging] .itemBar { display: none; }
   .itemBar, .notice { margin: 0 auto; }
   .itemBar { height: 46px; padding: 0 3px; overflow-x: auto; scrollbar-width: none; }
   .itemBar button, .priceLink { height: 40px; padding: 0 10px; font-size: 14px; }
