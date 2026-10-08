@@ -271,7 +271,8 @@ function handler(file, name, scope) {
 }
 
 function controllerScope(overrides = {}) {
-  const state = { busy: false, errors: [], upgrades: [], paths: [], spends: 0, saves: 0, freeUsed: false, planning: {mode:"manual"}, excluded: ["bedding"] };
+  // planning is the store's plan mode; screen is the page's planning screen, which opens /plan/result once it's ready.
+  const state = { busy: false, errors: [], upgrades: [], paths: [], spends: 0, saves: 0, freeUsed: false, planning: {mode:"manual"}, screen: null, excluded: ["bedding"] };
   const scope = {
     user: { id: "member" }, profile: { plan: "pro", plan_credits_remaining: 10 },
     style: "minimalist", room: { bedSize: "twin-xl" }, budget: 500,
@@ -281,7 +282,7 @@ function controllerScope(overrides = {}) {
     canGeneratePlan: plan.canGeneratePlan, creditLimitReason: plan.creditLimitReason, isPro: plan.isPro,
     validateVibe: () => ({ ok: true }), track() {}, setShowDisclaimer() {}, setValidationMsg() {},
     setGenerationError: e => state.errors.push(e), setApiError: e => state.errors.push(e), setRegenError: e => state.errors.push(e),
-    setGenerating: v => { state.busy = v; }, setRegenerating: v => { state.busy = v; },
+    setGenerating: v => { state.busy = v; }, setRegenerating: v => { state.busy = v; }, setPlanning: v => { state.screen = v; },
     openUpgrade: r => state.upgrades.push(r), router: { push: p => state.paths.push(p) },
     consumePlanCredit: async () => { state.spends++; return { blocked: false, remaining: 9 }; },
     refreshProfile: async () => {}, generateVibe: async () => ({ ok: true, products: [{ id: "bed" }] }),
@@ -292,20 +293,21 @@ function controllerScope(overrides = {}) {
   return { state, scope };
 }
 
-test("Preset generation handles exhausted credits and network failures without navigation", async () => {
+test("Preset generation handles exhausted credits and network failures without opening the result", async () => {
   for (const overrides of [{ profile: { plan: "pro", plan_credits_remaining: 0 } }, { consumePlanCredit: async () => { throw Error("Network unavailable"); } }]) {
     const { state, scope } = controllerScope(overrides);
-    await handler("app/plan/style/page.tsx", "runGenerate", scope)();
+    await handler("app/plan/budget/page.tsx", "runGenerate", scope)();
     assert.deepEqual(state.paths, []);
+    assert.equal(state.screen, null);
     assert.equal(state.busy, false);
     assert.equal(state.planning.mode, "manual");
     assert.deepEqual(state.excluded, ["bedding"]);
     assert(state.upgrades.includes("pro-credits") || state.errors.includes("Network unavailable"));
   }
   const { state, scope } = controllerScope();
-  await handler("app/plan/style/page.tsx", "runGenerate", scope)();
+  await handler("app/plan/budget/page.tsx", "runGenerate", scope)();
   assert.equal(state.spends, 1);
-  assert.deepEqual(state.paths, ["/plan/result"]);
+  assert.deepEqual(state.screen, { ready: true });
   assert.equal(state.planning.mode, "generated");
   assert.equal(state.excluded, null);
 });
@@ -316,11 +318,13 @@ test("Custom-vibe search failure spends nothing; a successful design spends once
   assert.equal(failed.state.spends, 0);
   assert.equal(failed.state.busy, false);
   assert.equal(failed.state.saves, 0);
+  assert.equal(failed.state.screen, null);
   assert(failed.state.errors.includes("Search unavailable"));
   const success = controllerScope();
   await handler("app/plan/create-vibe/page.tsx", "handleGenerate", success.scope)();
   assert.equal(success.state.spends, 1);
   assert.equal(success.state.saves, 1);
+  assert.deepEqual(success.state.screen, { ready: true, vibe: "A cozy room with blue and warm wood" });
 });
 
 test("Custom regeneration keeps one free pass and charges subsequent successful passes", async () => {

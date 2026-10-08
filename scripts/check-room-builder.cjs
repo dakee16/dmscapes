@@ -93,7 +93,7 @@ console.log('PASS: touch closet dragging preserves grab offset, previews without
 
 (async()=>{
   const {usePlannerStore:store}=load(path.join(root,'lib/store.ts'));
-  const source={...storage,occupants:2,bedSize:'full',settings:{ceilingFt:9.25,floor:'walnut',wallColor:'#ece8df',lighting:'day'}};
+  const source={...storage,occupants:2,bedSize:'full',settings:{ceilingFt:9.25,floor:'walnut',wallColor:'#ece8df',lighting:'day',dressVibe:true}};
   const room=B.builderRoom(source);store.getState().setCollege({id:'old',name:'Old school'});store.getState().setCollege(null);store.getState().setRoom(room);store.getState().setPlannerView('3d');store.getState().setStyle('cozy');store.getState().setBudget(650);
   const saved=JSON.parse(memory.get('dormscape-planner')).state;assert.equal(saved.plannerView,'3d');assert.equal(saved.college,null);assert.deepEqual(saved.room,room);assert.equal(saved.room.studio.ceilingFt,9.25);assert.equal(saved.room.occupants,2);assert.equal(saved.room.bedSize,'full');assert.deepEqual(saved.room.outline.openings,source.openings);
   assert.deepEqual(saved.room.outline.closets,[{x_ft:8,y_ft:8,width_ft:4,depth_ft:2}]);

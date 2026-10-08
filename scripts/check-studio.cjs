@@ -279,10 +279,10 @@ assert.match(freshDrawing,/tabindex="0" role="region" aria-label="Room drawing c
 assert.match(freshDrawing,/aria-label="Drawing tools"/);
 assert.match(freshDrawing,/Start at any corner\./);
 assert.doesNotMatch(freshDrawing,/What shape is your room|Length \(ft\)|Width \(ft\)|Rectangle|L-shape|Choose a shape|Choose my vibe|Exact measurements/,"No shape questionnaire or premature detail controls");
-assert.match(freshDrawing,/<details><summary>More tools &amp; tips<\/summary>/,"Extra tools still start collapsed");
+assert.match(freshDrawing,/<details><summary>More tips<\/summary>/,"Extra tips still start collapsed");
 const existingDrawing=drawHTML({initialRoom:room,onCancel:()=>{}});
 assert.doesNotMatch(existingDrawing,/What shape is your room\?/,"Existing rooms open directly for editing");
 for(const label of ["Shape","Door","Window","Closet","Apply room changes","Cancel edits"])assert(existingDrawing.includes(label));
-assert.match(existingDrawing,/<details><summary>Exact measurements<\/summary>/,"Precision fields start collapsed");
-assert.match(existingDrawing,/<details><summary>More tools &amp; tips<\/summary>/,"Extra tools and keyboard tips start collapsed");
+assert.doesNotMatch(existingDrawing,/type="number"/,"Precision fields stay hidden until a wall or corner is chosen");
+assert.match(existingDrawing,/<details><summary>More tips<\/summary>/,"Keyboard tips start collapsed");
 console.log("PASS: drawing opens directly on the canvas; existing rooms keep editing tools, with precision and extra controls collapsed.");
