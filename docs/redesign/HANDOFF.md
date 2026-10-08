@@ -109,7 +109,9 @@ Local browser QA: open the dev server on `localhost`, not `127.0.0.1`. Next bloc
 - Templated descriptions go through `fitDescription()`, which picks the longest version within a search snippet.
 - Canonicals on every indexable page; login, the plan result screen and the planner steps stay out of the index (steps point their canonical at `/plan`). `/plan/draw` is in the sitemap.
 - Structured data: Organization, WebSite and WebApplication (with the Free, Plus and Pro offers from `lib/plan`) on the homepage and pricing; hall pages list each published room type as a schema.org `Room` with its floor size; FAQPage, BreadcrumbList, Article and BlogPosting as before.
-- `/llms.txt` (`app/llms.txt/route.ts`) maps the site for AI crawlers from the school data and `lib/plan`.
+- `/llms.txt` (`app/llms.txt/route.ts`) maps the site for AI crawlers from the school data and `lib/plan`. Its content and the homepage's Markdown version are built in `lib/agent-markdown.ts`.
+- Markdown for agents (acceptmarkdown.com, October 2026): `proxy.ts` runs only for requests whose `Accept` names `text/markdown` (its matcher), so browsers, client navigation and prefetches never reach it. When Markdown ranks at least as high as HTML, `/` is served from `app/index.md` (`text/markdown`, `Vary: Accept`, canonical to `/`, noindex), and a path whose first segment can't exist gets a 404 with a Markdown body. "Can't exist" comes from `routeRoots()` in `next.config.ts`, built from `app/` and `public/` at build time, so new routes are picked up without edits; every other path is left to Next. The homepage also links `/index.md` as `rel="alternate" type="text/markdown"`. `scripts/check-markdown-negotiation.cjs` covers the Accept parsing.
+- Organization JSON-LD carries `email` and a customer-support `contactPoint` (`CONTACT_EMAIL` in `lib/seo.ts`). No postal address: Dormscape doesn't publish one, so none is claimed.
 - Owner actions: once this is on production, resubmit `https://dormscape.us/sitemap.xml` in Google Search Console and request indexing for the homepage and `/colleges`. Backlinks (press, partner schools) are outreach, not code.
 
 ## Security review (October 2026)
