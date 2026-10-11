@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Headline from "@/components/ds/Headline";
 import { ArrowRight } from "@/components/ds/Icons";
+import SplitRoomArt from "@/components/my-room/SplitRoomArt";
 import css from "./Home.module.css";
 
 /**
- * 07 · My Room (Pro). A to-scale double drawn in CSS: tape runs down the
- * middle, the halves tint to their owners, the shared pieces fill with
- * yellow hatching and the owner chips pop on (MOTION.md · My Room).
+ * 07 · My Room (Pro). The /my-room render (SplitRoomArt) beside the copy: the
+ * section takes the render's lavender ground so the art has no edge, and the
+ * Room call chip and Maya's note pop in on scroll.
  */
 export default function TogetherSection() {
   return (
@@ -44,45 +45,7 @@ export default function TogetherSection() {
           </div>
         </div>
 
-        <figure className={`ds-plan-paper ${css.room}`} data-reveal="" style={{ margin: 0 }}>
-          <div className={css.roomLabels} aria-hidden="true">
-            <span>JORDAN&apos;S HALF</span>
-            <span>MAYA&apos;S HALF</span>
-          </div>
-          <div className={css.plan} role="img" aria-label="Floor plan of a shared double. Jordan's half on the left, Maya's on the right, a tape line down the middle. The mini fridge and the rug are marked shared.">
-            <span className={`${css.half} ${css.halfL}`} />
-            <span className={`${css.half} ${css.halfR}`} />
-            <span className={css.tapeLine} />
-            <span className={css.window} />
-            <span className={css.door} />
-            <span className={`${css.piece} ${css.bed} ${css.bedJ}`} />
-            <span className={`${css.piece} ${css.bed} ${css.bedM}`} />
-            <span className={`${css.piece} ${css.desk} ${css.deskJ}`} />
-            <span className={`${css.piece} ${css.desk} ${css.deskM}`} />
-            <span className={`${css.piece} ${css.hatch} ${css.rug}`} />
-            <span className={`${css.piece} ${css.hatch} ${css.fridge}`} />
-            <span className={`${css.ownerChip} ${css.chipJ}`}>JORDAN&apos;S</span>
-            <span className={`${css.ownerChip} ${css.chipS}`}>SHARED</span>
-            <span className={`${css.ownerChip} ${css.chipM}`}>MAYA&apos;S</span>
-            <span className={css.cursor}>
-              <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 3l15 7.5-6.5 1.8L10 19z" fill="#C0186F" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round" />
-              </svg>
-              <span className={css.cursorTag}>Maya</span>
-            </span>
-          </div>
-          <figcaption className={css.toast}>
-            <span className={css.avatar} style={{ background: "var(--ds-magenta)" }} aria-hidden="true">
-              M
-            </span>
-            <span>
-              <strong>Maya</strong> is bringing the <strong>mini fridge</strong> from home.
-              <span className="ds-mono" style={{ display: "block", marginTop: 3, fontSize: 10, color: "var(--ds-yellow)" }}>
-                Shared · $0 to buy
-              </span>
-            </span>
-          </figcaption>
-        </figure>
+        <SplitRoomArt className={css.togetherArt} pop sizes="(min-width: 1024px) 50vw, 100vw" />
       </div>
     </section>
   );
