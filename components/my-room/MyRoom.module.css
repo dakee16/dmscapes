@@ -22,18 +22,6 @@
 .joined { margin: 22px 0 0; font-size: 15px; color: var(--ds-body); }
 .joined a { font-weight: 800; color: var(--ds-blue); text-decoration: underline; text-underline-offset: 3px; }
 .heroArt { position: absolute; top: 0; bottom: 0; left: 47%; right: calc(-1 * var(--ds-gutter)); min-height: 600px; }
-.heroArt img { object-fit: cover; object-position: 40% 50%; }
-.callChip { position: absolute; right: 9%; top: 6%; display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 16px 0 10px; border-radius: 999px; background: var(--ds-ink); color: #fff; font-size: 14px; font-weight: 800; box-shadow: 0 12px 24px rgba(22, 22, 29, 0.22); }
-.callFaces { display: flex; }
-.callFaces i { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--ds-blue); font-style: normal; font-size: 12px; font-weight: 850; box-shadow: 0 0 0 2px var(--ds-ink); }
-.callFaces i + i { margin-left: -6px; background: var(--ds-magenta); }
-.callBars { display: flex; align-items: flex-end; gap: 2px; height: 16px; }
-.callBars b { width: 3px; border-radius: 2px; background: var(--ds-yellow); }
-.callBars b:nth-child(1) { height: 8px; } .callBars b:nth-child(2) { height: 15px; } .callBars b:nth-child(3) { height: 11px; } .callBars b:nth-child(4) { height: 6px; }
-.noteCard { position: absolute; left: 7%; bottom: 3%; display: flex; gap: 12px; align-items: flex-start; width: 330px; max-width: 80%; padding: 14px 16px; border-radius: 16px; background: #fff; box-shadow: 0 16px 30px rgba(22, 22, 29, 0.16); transform: rotate(-1.5deg); }
-.noteCard > i { flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--ds-magenta); color: #fff; font-style: normal; font-size: 14px; font-weight: 850; }
-.noteCard > span { display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.35; }
-.noteCard small { font: 700 10px/1.2 var(--ds-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-caption); }
 
 /* ---------- how it works ---------- */
 .h2, .h2Lg { margin: 0; font-weight: 900; letter-spacing: -0.025em; line-height: 1.05; }
@@ -229,9 +217,6 @@
 @media (max-width: 640px) {
   .heroActions :global(.ds-btn--lg) { flex: 1 1 100%; }
   .chips li { font-size: 10px; }
-  .callChip { right: 4%; top: 4%; transform: scale(0.85); transform-origin: top right; }
-  .noteCard { left: 4%; bottom: 4%; width: 270px; padding: 10px 12px; font-size: 13px; }
-  .noteCard > span { font-size: 13px; }
   .steps { grid-template-columns: minmax(0, 1fr); margin-top: -36px; }
   .featureGrid { grid-template-columns: minmax(0, 1fr); }
   .featureGrid article { grid-template-columns: 110px minmax(0, 1fr); gap: 14px; padding: 16px; min-height: 0; }

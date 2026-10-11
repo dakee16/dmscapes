@@ -1,0 +1,20 @@
+/* The My Room render, its room-call chip and Maya's note (moved from MyRoom.module.css).
+   The note's tilt and the phone chip's size use the rotate / scale properties rather than
+   transform, so the data-pop animation (which sets transform) never resets them. */
+.art img { object-fit: cover; object-position: 40% 50%; }
+.callChip { position: absolute; right: 9%; top: 6%; display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 16px 0 10px; border-radius: 999px; background: var(--ds-ink); color: #fff; font-size: 14px; font-weight: 800; box-shadow: 0 12px 24px rgba(22, 22, 29, 0.22); }
+.callFaces { display: flex; }
+.callFaces i { display: flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: var(--ds-blue); font-style: normal; font-size: 12px; font-weight: 850; box-shadow: 0 0 0 2px var(--ds-ink); }
+.callFaces i + i { margin-left: -6px; background: var(--ds-magenta); }
+.callBars { display: flex; align-items: flex-end; gap: 2px; height: 16px; }
+.callBars b { width: 3px; border-radius: 2px; background: var(--ds-yellow); }
+.callBars b:nth-child(1) { height: 8px; } .callBars b:nth-child(2) { height: 15px; } .callBars b:nth-child(3) { height: 11px; } .callBars b:nth-child(4) { height: 6px; }
+.noteCard { position: absolute; left: 7%; bottom: 3%; display: flex; gap: 12px; align-items: flex-start; width: 330px; max-width: 80%; padding: 14px 16px; border-radius: 16px; background: #fff; box-shadow: 0 16px 30px rgba(22, 22, 29, 0.16); rotate: -1.5deg; }
+.noteCard > i { flex: none; display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--ds-magenta); color: #fff; font-style: normal; font-size: 14px; font-weight: 850; }
+.noteCard > span { display: flex; flex-direction: column; gap: 4px; font-size: 15px; line-height: 1.35; }
+.noteCard small { font: 700 10px/1.2 var(--ds-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-caption); }
+@media (max-width: 640px) {
+  .callChip { right: 4%; top: 4%; scale: 0.85; transform-origin: top right; }
+  .noteCard { left: 4%; bottom: 4%; width: 270px; padding: 10px 12px; font-size: 13px; }
+  .noteCard > span { font-size: 13px; }
+}

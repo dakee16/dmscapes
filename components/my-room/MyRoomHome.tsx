@@ -18,6 +18,7 @@ import { ArrowRight, Check } from "@/components/ds/Icons";
 import BrandLoader from "@/components/site/BrandLoader";
 import Modal, { ModalClose } from "@/components/site/Modal";
 import PlanSketch from "./PlanSketch";
+import SplitRoomArt from "./SplitRoomArt";
 import SetupDialog, { type DesignOption } from "./SetupDialog";
 import s from "./MyRoom.module.css";
 
@@ -85,11 +86,7 @@ export default function MyRoomHome() {
           </ul>
           {joined && <p className={s.joined}>You&apos;re already in <Link href={`/rooms/${joined.id}`}>{joined.name}</Link>. Guests plan there for free.</p>}
         </div>
-        <div className={s.heroArt}>
-          <Image src="/redesign/myroom-split-room.jpg" alt="A dorm double split down the middle by a strip of blue painter's tape. One bed on the left, one on the right, and a shared mini fridge and round yellow rug in the middle, each tagged with its owner." fill preload quality={80} sizes="(min-width: 1024px) 52vw, 100vw" />
-          <div className={s.callChip} aria-hidden="true"><span className={s.callFaces}><i>J</i><i>M</i></span>Room call<span className={s.callBars}><b /><b /><b /><b /></span></div>
-          <div className={s.noteCard} aria-hidden="true"><i>M</i><span><span><strong>Maya</strong> is bringing the <strong>mini fridge</strong> from home.</span><small>Shared · $0 to buy</small></span></div>
-        </div>
+        <SplitRoomArt className={s.heroArt} preload sizes="(min-width: 1024px) 52vw, 100vw" />
       </div>
     </header>
 
