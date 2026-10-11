@@ -16,6 +16,7 @@ const PRIMARY = [
   { key: "colleges", label: "Colleges", href: "/colleges" },
   { key: "pricing", label: "Pricing", href: "/pricing" },
   { key: "3d", label: "3D Builder", href: "/plan/draw/3d" },
+  { key: "workspace", label: "Workspace", href: "/my-room" },
   { key: "blog", label: "Blog", href: "/blog" },
 ] as const;
 
@@ -55,6 +56,8 @@ function activeKey(pathname: string): string | null {
   if (pathname.startsWith("/pricing")) return "pricing";
   if (pathname.startsWith("/plan/draw/3d")) return "3d";
   if (pathname.startsWith("/blog")) return "blog";
+  // Shared rooms and joining live under /rooms/; plain /rooms is My designs.
+  if (pathname === "/my-room" || pathname.startsWith("/rooms/")) return "workspace";
   return null;
 }
 
