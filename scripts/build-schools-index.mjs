@@ -146,6 +146,16 @@ for (const s of sources) {
 
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, JSON.stringify(schools));
+
+// When each school's room data was collected (data_collected in the source),
+// for sitemap lastmod. A separate file so the client-side index stays lean.
+const DATES = path.join(process.cwd(), "lib", "school-dates.json");
+const dates = Object.fromEntries(
+  sources
+    .filter((s) => /^\d{4}-\d{2}-\d{2}$/.test(s.data_collected ?? ""))
+    .map((s) => [s.college_id, s.data_collected])
+);
+fs.writeFileSync(DATES, JSON.stringify(dates));
 const kb = (fs.statSync(OUT).size / 1024).toFixed(0);
 const allRooms = schools.flatMap((s) => s.dorms.flatMap((d) => d.rooms));
 const published = allRooms.filter((r) => r.length_ft && r.width_ft && !r.dims_estimated).length;
