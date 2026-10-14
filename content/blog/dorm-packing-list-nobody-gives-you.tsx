@@ -9,6 +9,28 @@ import {
   EndCTA,
   TextLink,
 } from "@/components/blog/Prose";
+import { SCHOOLS } from "@/lib/schools";
+import { dormSizeStats } from "@/lib/dorm-sizes";
+import { fitRoom, furnitureSqFt, ft } from "@/lib/room-preview";
+
+// Room numbers from the published sizes (lib/dorm-sizes), so the list is
+// sized for the room students actually get and never drifts from the data.
+const SIZES = dormSizeStats(SCHOOLS);
+const [SINGLE, DOUBLE] = SIZES.byType;
+const DOUBLE_FIT = fitRoom({
+  type: "double",
+  label: "Double",
+  occupants: 2,
+  length_ft: DOUBLE.lengthFt,
+  width_ft: DOUBLE.widthFt,
+  sqft: null,
+  bed_size: "twin_xl",
+  closet: null,
+})!;
+const DOUBLE_SQFT = Math.round(DOUBLE_FIT.lengthFt * DOUBLE_FIT.widthFt);
+const OPEN_FLOOR = DOUBLE_SQFT - furnitureSqFt(DOUBLE_FIT);
+const DOUBLE_DIMS = `${ft(DOUBLE_FIT.lengthFt)} × ${ft(DOUBLE_FIT.widthFt)} ft`;
+const TWIN_XL = Math.round(SIZES.twinXlShare * 100);
 
 function Body() {
   return (
@@ -19,9 +41,35 @@ function Body() {
         boring ones: command strips in every size, a UL-listed surge protector,
         a mattress topper because the dorm mattress is a vinyl slab, a sick-week
         kit for the October cold that always comes, and a drying rack because
-        the dryer will shrink your clothes. Below is the list organized by the
-        situation you’ll be in when you realize you needed it.
+        the dryer will shrink your clothes. Below is the dorm packing list,
+        organized by the situation you’ll be in when you realize you needed it.
       </Lead>
+
+      <H2>Pack for the room you’re actually getting</H2>
+      <P>
+        {`Every item below has to fit somewhere. The typical double that colleges publish is ${DOUBLE_DIMS}, about ${DOUBLE_SQFT} square feet. Once two beds, desks and dressers are in, roughly ${OPEN_FLOOR} square feet of open floor is left to share, about ${Math.round(OPEN_FLOOR / 2)} each. A typical single is about ${Math.round(SINGLE.median)} square feet.`}
+      </P>
+      <Ul>
+        <Li>
+          Look your room up before you shop. If your school is on{" "}
+          <TextLink href="/colleges">our list of colleges</TextLink>, your hall’s
+          published dimensions are already there; if not, here’s the{" "}
+          <TextLink href="/dorm-room-size">average dorm room size</TextLink> for
+          singles, doubles and triples.
+        </Li>
+        <Li>
+          Think flat and stackable. Floor runs out first, so under-bed bins, a
+          door hanger and wall hooks beat anything with legs.
+        </Li>
+        <Li>
+          Split the big items with your roommate before anyone buys: one mini
+          fridge, one rug, one microwave if your hall allows it. A{" "}
+          <TextLink href="/blog/shared-dorm-shopping-list">
+            shared dorm shopping list
+          </TextLink>{" "}
+          stops the two-fridge problem.
+        </Li>
+      </Ul>
 
       <H2>The first three hours: move-in day</H2>
       <P>
@@ -96,8 +144,7 @@ function Body() {
           lived there before you.
         </Li>
         <Li>
-          Twin XL sheets, not twin. Almost every dorm bed is extra long, and
-          regular twin sheets pop off the corners all night.
+          {`Twin XL sheets, not twin. ${TWIN_XL}% of the dorm rooms colleges publish come with extra-long Twin XL beds, and regular twin sheets pop off the corners all night.`}
         </Li>
         <Li>
           An eye mask and earplugs, or a small white-noise fan. Your roommate’s
@@ -203,8 +250,9 @@ function Body() {
       </P>
       <Ul>
         <Li>
-          A rug and a rug pad. The floor is hard and cold, and a pad keeps the
-          rug from sliding and the tile from bleeding through.
+          A 5 × 7 rug and a rug pad. The floor is hard and cold, a 5 × 7 fits
+          the open floor of most furnished singles and doubles better than a
+          bigger size, and a pad keeps it from sliding.
         </Li>
         <Li>
           A clip-on or floor lamp with warm bulbs. Overhead fluorescents are an
@@ -238,16 +286,19 @@ function Body() {
 const post: BlogPost = {
   slug: "dorm-packing-list-nobody-gives-you",
   title: "The dorm packing list nobody gives you",
-  metaTitle: "The Dorm Packing List Nobody Gives You",
-  description:
-    "Beyond bedding and towels: the overlooked dorm essentials freshmen forget, from surge protectors and mattress toppers to the sick-week kit, by category.",
+  metaTitle: "Dorm Packing List: What Freshmen Actually Forget",
+  description: `A dorm packing list for what freshmen actually forget, from surge protectors and mattress toppers to a sick-week kit, sized for a ${DOUBLE_SQFT} sq ft room.`,
   excerpt:
     "Beyond bedding and towels. The small, boring, easily-forgotten items that actually make a dorm livable, organized by the moment you’ll wish you had them.",
   date: "2026-07-24",
-  updated: "2026-07-27",
-  readingTimeMin: 8,
+  updated: "2026-10-14",
+  readingTimeMin: 9,
   faqTopic: "Packing",
   faqs: [
+    {
+      q: "How much space will I have in a dorm room?",
+      a: `Less than you think. The typical double is ${DOUBLE_DIMS}, about ${DOUBLE_SQFT} square feet, and once two beds, desks and dressers are in, about ${OPEN_FLOOR} square feet of open floor is left, roughly ${Math.round(OPEN_FLOOR / 2)} each. A typical single is about ${Math.round(SINGLE.median)} square feet. Pack for that, not for your bedroom at home.`,
+    },
     {
       q: "What do freshmen forget to pack for a dorm most often?",
       a: "The most commonly forgotten items are a UL-listed surge protector, a mattress topper, a mattress protector, command strips, a drying rack, a step stool for lofted beds, and a small sick-week kit with a thermometer and pain reliever. None are exciting, and all get used within the first month.",
