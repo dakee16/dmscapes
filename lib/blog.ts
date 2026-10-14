@@ -40,12 +40,12 @@ export function formatBlogDate(iso: string) {
 const org = {
   "@type": "Organization",
   "@id": `${BLOG_BASE}/#organization`,
-  name: "Dormscape",
+  name: "dormscape",
   url: BLOG_BASE,
 };
 
 /**
- * BlogPosting JSON-LD for a blog post. One publisher/author identity (Dormscape)
+ * BlogPosting JSON-LD for a blog post. One publisher/author identity (dormscape)
  * and both dates, since AI systems weight source and freshness signals. FAQ
  * markup lives on the standalone /faq page now, not here.
  */

@@ -12,7 +12,7 @@ const usd = (n: number) => `$${n.toFixed(2)}`;
 const link = (name: string, path: string, note?: string) => `- [${name}](${absoluteUrl(path)})${note ? `: ${note}` : ""}`;
 
 const coverage = () =>
-  `Dormscape covers ${SCHOOL_COUNT} schools, ${HALL_COUNT.toLocaleString("en-US")} residence halls and ${LAYOUT_COUNT.toLocaleString("en-US")} room types. Room dimensions come from what each school publishes, and anything estimated is labelled as an estimate.`;
+  `dormscape covers ${SCHOOL_COUNT} schools, ${HALL_COUNT.toLocaleString("en-US")} residence halls and ${LAYOUT_COUNT.toLocaleString("en-US")} room types. Room dimensions come from what each school publishes, and anything estimated is labelled as an estimate.`;
 
 const plans = () => [
   "## Plans",
@@ -46,7 +46,7 @@ const guidesAndColleges = () => [
 /** /llms.txt (llmstxt.org): a plain map of the site. */
 export function llmsTxt(): string {
   return [
-    "# Dormscape",
+    "# dormscape",
     "",
     `> ${SITE_TAGLINE} Pick your school, hall and room type, choose a style and a budget, and get a to-scale layout with a shoppable list.`,
     "",
@@ -64,7 +64,7 @@ export function llmsTxt(): string {
 /** The homepage as Markdown: the hero's own words, then the same map as /llms.txt. */
 export function homeMarkdown(): string {
   return [
-    "# Dormscape: your dorm, planned to the inch.",
+    "# dormscape: your dorm, planned to the inch.",
     "",
     `> ${SITE_TAGLINE}`,
     "",

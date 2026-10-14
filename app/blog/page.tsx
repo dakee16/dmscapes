@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The dormscape Blog",
     description: DESCRIPTION,
-    siteName: "Dormscape",
+    siteName: "dormscape",
     type: "website",
     url: "/blog",
     images: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
-        alt: "Dormscape, the free AI dorm room planner",
+        alt: "dormscape, the free AI dorm room planner",
       },
     ],
   },
@@ -47,7 +47,7 @@ export default function BlogIndexPage() {
     name: "The dormscape Blog",
     description: DESCRIPTION,
     url: `${BLOG_BASE}/blog`,
-    publisher: { "@type": "Organization", name: "Dormscape", url: BLOG_BASE },
+    publisher: { "@type": "Organization", name: "dormscape", url: BLOG_BASE },
     blogPost: POSTS.map((p) => ({
       "@type": "BlogPosting",
       headline: p.title,

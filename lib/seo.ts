@@ -11,7 +11,7 @@ import { PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PRO_INITIAL_CREDITS, PRO_PRICE_US
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us";
 
-export const SITE_NAME = "Dormscape";
+export const SITE_NAME = "dormscape";
 
 /** The one-line description of what this product is, reused across schema. */
 export const SITE_TAGLINE =
@@ -26,7 +26,7 @@ const OG_IMAGE = {
   url: "/og.png?v=folded-room",
   width: 1200,
   height: 630,
-  alt: "Dormscape, the free dorm room planner",
+  alt: "dormscape, the free dorm room planner",
 };
 
 /**
@@ -66,7 +66,7 @@ export function pageMetadata({
   noIndex?: boolean;
   type?: "website" | "article";
 }): Metadata {
-  const social = ogTitle ?? `${title} | ${SITE_NAME.toLowerCase()}`;
+  const social = ogTitle ?? `${title} | ${SITE_NAME}`;
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
@@ -140,7 +140,7 @@ export function webSiteJsonLd() {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
-    alternateName: ["dormscape", "Dormscape.us"],
+    alternateName: ["Dormscape", "dormscape.us"],
     url: SITE_URL,
     description: SITE_TAGLINE,
     publisher: { "@id": `${SITE_URL}/#organization` },
@@ -157,7 +157,7 @@ export function softwareApplicationJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "@id": `${SITE_URL}/#app`,
-    name: "Dormscape Dorm Room Planner",
+    name: "dormscape Dorm Room Planner",
     url: absoluteUrl("/plan"),
     applicationCategory: "DesignApplication",
     applicationSubCategory: "Dorm room planner",

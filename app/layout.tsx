@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: "dormscape: your dorm room, planned before move-in day",
     description:
       "Pick your school, choose a vibe, set a budget. Get a room layout that fits your exact dorm, with a shoppable list.",
-    siteName: "Dormscape", // matches the WebSite structured data
+    siteName: "dormscape", // matches the WebSite structured data
     type: "website",
     url: "/",
     images: [
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
-        alt: "Dormscape, the free AI dorm room planner",
+        alt: "dormscape, the free AI dorm room planner",
       },
     ],
   },

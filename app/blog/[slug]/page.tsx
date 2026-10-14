@@ -36,18 +36,18 @@ export async function generateMetadata(props: {
     openGraph: {
       title: post.metaTitle ?? post.title,
       description: post.description,
-      siteName: "Dormscape",
+      siteName: "dormscape",
       type: "article",
       url,
       publishedTime: post.date,
       modifiedTime: post.updated ?? post.date,
-      authors: ["Dormscape"],
+      authors: ["dormscape"],
       images: [
         {
           url: "/og.png?v=folded-room",
           width: 1200,
           height: 630,
-          alt: "Dormscape, the free AI dorm room planner",
+          alt: "dormscape, the free AI dorm room planner",
         },
       ],
     },
@@ -118,7 +118,7 @@ export default async function BlogPostPage(props: {
                   d<i />
                 </span>
                 <div className={css.authorText}>
-                  <p className={css.authorName}>By Dormscape</p>
+                  <p className={css.authorName}>By dormscape</p>
                   <p className={css.authorMeta}>
                     <time dateTime={post.date}>{shortDate(post.date)}</time> · {post.readingTimeMin} min read
                     {updated !== post.date && (

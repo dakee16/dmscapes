@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "About dormscape",
     description:
       "The free dorm room planner built on real dorm dimensions. Why it exists, how it works, and how it stays free.",
-    siteName: "Dormscape",
+    siteName: "dormscape",
     type: "website",
     url: "/about",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
-        alt: "Dormscape, the free AI dorm room planner",
+        alt: "dormscape, the free AI dorm room planner",
       },
     ],
   },

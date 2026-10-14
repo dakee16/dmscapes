@@ -30,7 +30,7 @@ import {
 } from "@/lib/home-data";
 
 // Short enough that Google shows it whole.
-const TITLE = "Dormscape: Free Dorm Room Planner";
+const TITLE = "dormscape: Free Dorm Room Planner";
 
 const pageMeta = pageMetadata({
   title: TITLE,

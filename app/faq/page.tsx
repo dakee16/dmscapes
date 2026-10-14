@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dorm FAQ",
     description: DESCRIPTION,
-    siteName: "Dormscape",
+    siteName: "dormscape",
     type: "website",
     url: "/faq",
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
         url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
-        alt: "Dormscape, the free AI dorm room planner",
+        alt: "dormscape, the free AI dorm room planner",
       },
     ],
   },
