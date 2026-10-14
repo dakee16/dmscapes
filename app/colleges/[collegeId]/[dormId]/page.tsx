@@ -15,8 +15,7 @@ import { allDormPaths, getDorm, formatDims, hallIsIndexable } from "@/lib/school
 import { shortName } from "@/lib/school-names";
 import { formatRoomType } from "@/lib/format";
 import { beddingAdvisory } from "@/lib/bedding";
-import { bedName, fitRoom, ft, hasDims, isPublished, roomName, sqFtOf, type FittedRoom } from "@/lib/room-preview";
-import { footprint } from "@/components/canvas/geometry";
+import { bedName, fitRoom, furnitureSqFt, ft, hasDims, isPublished, roomName, sqFtOf, type FittedRoom } from "@/lib/room-preview";
 import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, postalAddressJsonLd, absoluteUrl } from "@/lib/seo";
 import type { RoomSummary } from "@/lib/types";
 import css from "@/components/hall/Hall.module.css";
@@ -112,12 +111,7 @@ export default async function DormPage(props: {
 
   const openFloor = fitted.map(({ r, fit }) => {
     const area = sqFtOf(r) ?? Math.round(fit.lengthFt * fit.widthFt);
-    const furn = Math.round(
-      fit.furniture.reduce((s, f) => {
-        const fp = footprint(f);
-        return s + fp.w * fp.h;
-      }, 0)
-    );
+    const furn = furnitureSqFt(fit);
     return { name: roomName(r), area, furn: Math.min(furn, area), estimated: Boolean(r.dims_estimated) };
   });
   const maxArea = Math.max(1, ...openFloor.map((o) => o.area));
