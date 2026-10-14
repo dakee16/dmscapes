@@ -1,4 +1,4 @@
-/* The My Room render, its room-call chip and Maya's note (moved from MyRoom.module.css).
+/* The My Room render, its room-call chip and Cooper's note (moved from MyRoom.module.css).
    The note's tilt and the phone chip's size use the rotate / scale properties rather than
    transform, so the data-pop animation (which sets transform) never resets them. */
 .art img { object-fit: cover; object-position: 40% 50%; }

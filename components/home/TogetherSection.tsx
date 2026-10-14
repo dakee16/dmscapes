@@ -7,7 +7,7 @@ import css from "./Home.module.css";
 /**
  * 07 · My Room (Pro). The /my-room render (SplitRoomArt) beside the copy: the
  * section takes the render's lavender ground so the art has no edge, and the
- * Room call chip and Maya's note pop in on scroll.
+ * Room call chip and Cooper's note pop in on scroll.
  */
 export default function TogetherSection() {
   return (

@@ -138,7 +138,7 @@ export default function MyRoomHome() {
     {gate && <Modal className={s.gateLayer} aria-labelledby="gate-title" onKeyDown={e => { if (e.key === "Escape") setGate(false); }} onClick={() => setGate(false)}>
       <div className={s.gate} onClick={e => e.stopPropagation()}>
         <div className={s.gateArt}>
-          <Image src="/redesign/myroom-split-room.jpg" alt="" fill quality={75} sizes="(min-width: 900px) 460px, 100vw" />
+          <Image src="/redesign/myroom-split-room-luke-cooper.jpg" alt="" fill quality={75} sizes="(min-width: 900px) 460px, 100vw" />
           <span className={s.gateTag}>My Room · Pro</span>
         </div>
         <div className={s.gateBody}>
