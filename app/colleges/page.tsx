@@ -97,6 +97,12 @@ export default function CollegesPage() {
               draw your room in 2D
             </Link>
           </p>
+          <p className={css.heroNote}>
+            <span className="ds-mono">How big is a dorm room?</span>{" "}
+            <Link href="/dorm-room-size" className="ds-link">
+              See typical sizes
+            </Link>
+          </p>
         </div>
       </PageHero>
 

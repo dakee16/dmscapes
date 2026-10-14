@@ -23,6 +23,7 @@ export function sitemapEntries(group: string): MetadataRoute.Sitemap {
         { url: `${BASE}/plan/draw`, changeFrequency: "monthly", priority: 0.8 },
         { url: `${BASE}/plan/draw/3d`, changeFrequency: "monthly", priority: 0.8 },
         { url: `${BASE}/colleges`, changeFrequency: "weekly", priority: 0.8 },
+        { url: `${BASE}/dorm-room-size`, changeFrequency: "monthly", priority: 0.8 },
         { url: `${BASE}/pricing`, changeFrequency: "monthly", priority: 0.7 },
         { url: `${BASE}/blog`, lastModified: POSTS.map(postDate).sort().at(-1), changeFrequency: "weekly", priority: 0.7 },
         { url: `${BASE}/faq`, changeFrequency: "monthly", priority: 0.6 },

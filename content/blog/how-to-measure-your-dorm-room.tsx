@@ -40,6 +40,11 @@ function Body() {
         printed in the housing brochure. It’s the open floor and wall space left
         once the built-ins are where they’re going to stay.
       </P>
+      <P>
+        Curious what’s normal first? Here’s the{" "}
+        <TextLink href="/dorm-room-size">average dorm room size</TextLink> for
+        singles, doubles and triples, from the sizes colleges publish.
+      </P>
 
       <H2>What you need</H2>
       <Ul>
