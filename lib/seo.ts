@@ -22,6 +22,9 @@ export function absoluteUrl(path = "/"): string {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
+/** The blog's RSS feed (app/blog/rss.xml), advertised in every page head. */
+export const RSS_FEED = { "application/rss+xml": "/blog/rss.xml" };
+
 const OG_IMAGE = {
   url: "/og.png?v=folded-room",
   width: 1200,
@@ -70,7 +73,7 @@ export function pageMetadata({
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: path, types: RSS_FEED },
     ...(noIndex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: social,

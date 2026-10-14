@@ -19,6 +19,10 @@ const MONTHS = [
   "December",
 ];
 
+/** The blog's one-line description: the /blog page and the RSS feed. */
+export const BLOG_DESCRIPTION =
+  "Practical, specific guides to planning a dorm room: how to measure it, what to pack, what it costs, small-room ideas, and how to pick a style.";
+
 /**
  * Schema.org dates as full ISO 8601 with a timezone, which Google's Rich
  * Results Test expects: a date-only "2026-09-15" becomes "2026-09-15T12:00:00Z"

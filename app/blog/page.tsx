@@ -5,16 +5,14 @@ import JsonLd from "@/components/site/JsonLd";
 import BlogBrowser from "@/components/blog/BlogBrowser";
 import { TOPICS, summarize } from "@/components/blog/topics";
 import { POSTS } from "@/content/blog";
-import { BLOG_BASE, isoDateTime } from "@/lib/blog";
+import { BLOG_BASE, BLOG_DESCRIPTION as DESCRIPTION, isoDateTime } from "@/lib/blog";
+import { RSS_FEED } from "@/lib/seo";
 import css from "@/components/blog/Blog.module.css";
-
-const DESCRIPTION =
-  "Practical, specific guides to planning a dorm room: how to measure it, what to pack, what it costs, small-room ideas, and how to pick a style.";
 
 export const metadata: Metadata = {
   title: "Dorm Room Planning Guides",
   description: DESCRIPTION,
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: "/blog", types: RSS_FEED },
   openGraph: {
     title: "The dormscape Blog",
     description: DESCRIPTION,

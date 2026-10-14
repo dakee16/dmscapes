@@ -13,6 +13,7 @@ import { outlineOf } from "@/components/blog/outline";
 import { TOPIC_PHRASE, shortDate, splitTitle, summarize, topicOf } from "@/components/blog/topics";
 import { getPost, allPostSlugs, POSTS } from "@/content/blog";
 import { articleJsonLd } from "@/lib/blog";
+import { RSS_FEED } from "@/lib/seo";
 import css from "@/components/blog/Post.module.css";
 
 // Prebuild every post at build time; unknown slugs 404.
@@ -32,7 +33,7 @@ export async function generateMetadata(props: {
   return {
     title: post.metaTitle ?? post.title,
     description: post.description,
-    alternates: { canonical: url },
+    alternates: { canonical: url, types: RSS_FEED },
     openGraph: {
       title: post.metaTitle ?? post.title,
       description: post.description,
