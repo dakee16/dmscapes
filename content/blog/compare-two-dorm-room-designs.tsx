@@ -137,7 +137,7 @@ function Body() {
 const post: BlogPost = {
   slug: "compare-two-dorm-room-designs",
   title: "How to compare two dorm room designs side by side",
-  metaTitle: "How to Compare Two Dorm Room Designs Side by Side",
+  metaTitle: "Compare Two Dorm Room Designs Side by Side",
   description:
     "How to choose between two dorm room designs: compare cost, fit, anchor pieces, and daily use side by side, then decide with dormscape's comparison view.",
   excerpt:

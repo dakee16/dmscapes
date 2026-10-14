@@ -58,6 +58,7 @@ export async function generateMetadata(props: {
       `${baseName} Floor Plan & Room Sizes, ${where}`,
       `${baseName} Floor Plan, ${where}`,
       `${baseName} Floor Plan`,
+      baseName,
     ),
     description: fitDescription(
       `${dorm.name} at ${school.name}: ${count}, ${extras}, and a to-scale floor plan you can plan for free.`,

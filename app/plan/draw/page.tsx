@@ -147,7 +147,7 @@ export default function DrawRoomPage() {
           <DrawnRoomsReuse />
           <Link href="/plan/draw/3d" className={css.promo} data-reveal="">
             <span className={css.promoArt}>
-              <Image src="/redesign/site-builder-under-construction.jpg" alt="" fill sizes="(min-width: 900px) 40vw, 100vw" quality={75} style={{ objectFit: "cover" }} />
+              <Image src="/redesign/site-builder-under-construction.jpg" alt="A dorm room being built in the 3D Room Builder, its walls going up around a corner dragged to 16.4 feet" fill sizes="(min-width: 900px) 40vw, 100vw" quality={75} style={{ objectFit: "cover" }} />
             </span>
             <span className={css.promoCopy}>
               <span className={css.promoEyebrow}>New / Included with Pro</span>
