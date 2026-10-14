@@ -141,7 +141,8 @@
   flex-grow: 1;
   min-height: 288px;
   box-sizing: border-box;
-  padding: 6px 2px;
+  /* 10px puts each line's baseline on its rule (rules every 36px, at 35px). */
+  padding: 10px 2px 6px;
   border: none;
   border-radius: 4px;
   background: repeating-linear-gradient(180deg, transparent 0 35px, rgba(36, 73, 255, 0.25) 35px 36px);
