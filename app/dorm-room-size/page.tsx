@@ -12,8 +12,9 @@ import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import ScalePlan from "@/components/hall/ScalePlan";
 import { SCHOOLS } from "@/lib/schools";
+import { shortName } from "@/lib/school-names";
 import { dormSizeStats, MAX_SQFT_PER_PERSON, MIN_SCHOOL_ROOMS, type TypeStats } from "@/lib/dorm-sizes";
-import { fitRoom, ft, type FittedRoom } from "@/lib/room-preview";
+import { fitRoom, furnitureSqFt, ft, type FittedRoom } from "@/lib/room-preview";
 import { pageMetadata, fitDescription, breadcrumbJsonLd, absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/seo";
 import css from "@/components/dorm-size/DormSize.module.css";
 
@@ -24,7 +25,7 @@ const [single, double, triple] = S.byType;
 
 const fmt = (n: number) => Math.round(n).toLocaleString("en-US");
 const NAME: Record<number, string> = { 1: "Single", 2: "Double", 3: "Triple" };
-const dims = (t: TypeStats) => `${ft(t.lengthFt)} × ${ft(t.widthFt)} ft`;
+const dims = (t: TypeStats) => `${ft(t.lengthFt)} × ${ft(t.widthFt)}\u00a0ft`;
 const twinXl = Math.round(S.twinXlShare * 100);
 
 // The typical room for each type, fitted with the planner's starting furniture.
@@ -41,6 +42,14 @@ const typical = S.byType.map((t) => ({
     closet: null,
   }) as FittedRoom,
 }));
+// Open floor in the typical double once its built-in furniture is in.
+const doubleFit = typical[1].fit;
+const doubleArea = Math.round(doubleFit.lengthFt * doubleFit.widthFt);
+const doubleOpen = doubleArea - furnitureSqFt(doubleFit);
+const [biggest, second, third] = S.doublesBySchool;
+const [smallest, nextSmallest] = [...S.doublesBySchool].reverse();
+const nameOf = (s: { schoolId: string; schoolName: string }) => shortName({ id: s.schoolId, name: s.schoolName });
+
 // One scale for all three cards, sized so the longest fits a narrow card.
 const ppf = Math.min(18, 300 / (Math.max(...typical.map((x) => x.fit.lengthFt)) + 1.75));
 
@@ -77,6 +86,14 @@ const answers = [
   {
     q: "How big is a triple dorm room?",
     a: `A typical triple is ${dims(triple)}, about ${fmt(triple.median)} sq ft, or ${fmt(triple.perPerson)} sq ft per person, the least floor per person of any room type.`,
+  },
+  {
+    q: "Which college has the biggest dorm rooms?",
+    a: `Of the ${S.doublesBySchool.length} colleges here with at least ${MIN_SCHOOL_ROOMS} published doubles, ${nameOf(biggest)} has the largest typical double at ${fmt(biggest.median)} sq ft, then ${nameOf(second)} (${fmt(second.median)}) and ${nameOf(third)} (${fmt(third.median)}). The smallest typical doubles are at ${nameOf(smallest)} (${fmt(smallest.median)} sq ft) and ${nameOf(nextSmallest)} (${fmt(nextSmallest.median)}).`,
+  },
+  {
+    q: "How much floor space is left in a dorm room?",
+    a: `Less than the size suggests. In a typical ${ft(doubleFit.lengthFt)} × ${ft(doubleFit.widthFt)} ft double, two beds, desks and dressers cover about ${fmt(doubleArea - doubleOpen)} sq ft, leaving about ${fmt(doubleOpen)} sq ft of open floor, or ${fmt(doubleOpen / 2)} each. That open floor decides your rug size and storage.`,
   },
   {
     q: "What size bed comes in a dorm room?",
@@ -231,8 +248,7 @@ export default function DormRoomSizePage() {
             </table>
           </div>
           <p className={css.caption}>
-            Typical size is the median length and median width. &ldquo;Most rooms&rdquo; is the middle half: a quarter of rooms are
-            smaller, a quarter larger.
+            {`Typical size is a published room size whose floor area matches the median. "Most rooms" is the middle half: a quarter of rooms are smaller, a quarter larger.`}
           </p>
           <ul className={css.common} aria-label="The most common published dorm room sizes">
             {S.commonSizes.map((c) => (

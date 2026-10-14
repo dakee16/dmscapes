@@ -30,7 +30,11 @@ const [single, double, triple] = s.byType;
 assert.deepEqual(s.byType.slice(0, 3).map((t) => t.occupants), [1, 2, 3]);
 assert.ok(single.median < double.median && double.median < triple.median, "rooms grow with occupants");
 assert.equal(s.byType.length, 3, "singles, doubles and triples only");
-for (const t of s.byType) assert.ok(t.p25 <= t.median && t.median <= t.p75);
+for (const t of s.byType) {
+  assert.ok(t.p25 <= t.median && t.median <= t.p75);
+  assert.ok(Math.abs(t.lengthFt * t.widthFt - t.median) <= t.median * 0.03, "typical size matches the median area");
+}
 assert.ok(s.doublesBySchool.every((x, i, a) => x.rooms >= 3 && (i === 0 || a[i - 1].median >= x.median)), "schools with 3+ doubles, largest first");
 assert.ok(s.rooms > 1000 && s.twinXlShare > 0.9 && s.twinXlShare <= 1);
-console.log(`PASS: ${s.rooms} published rooms from ${s.schools} schools. Median single ${single.median}, double ${double.median}, triple ${triple.median} sq ft.`);
+const d = (t) => `${t.lengthFt} x ${t.widthFt} ft (${t.median} sq ft)`;
+console.log(`PASS: ${s.rooms} published rooms from ${s.schools} schools. Typical single ${d(single)}, double ${d(double)}, triple ${d(triple)}.`);

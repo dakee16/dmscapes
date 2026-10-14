@@ -15,9 +15,8 @@ import { allDormPaths, getDorm, formatDims, hallIsIndexable } from "@/lib/school
 import { shortName } from "@/lib/school-names";
 import { formatRoomType } from "@/lib/format";
 import { beddingAdvisory } from "@/lib/bedding";
-import { bedName, fitRoom, ft, hasDims, isPublished, roomName, sqFtOf, type FittedRoom } from "@/lib/room-preview";
-import { footprint } from "@/components/canvas/geometry";
-import { pageMetadata, fitDescription, breadcrumbJsonLd, postalAddressJsonLd, absoluteUrl } from "@/lib/seo";
+import { bedName, fitRoom, furnitureSqFt, ft, hasDims, isPublished, roomName, sqFtOf, type FittedRoom } from "@/lib/room-preview";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, postalAddressJsonLd, absoluteUrl } from "@/lib/seo";
 import type { RoomSummary } from "@/lib/types";
 import css from "@/components/hall/Hall.module.css";
 
@@ -40,24 +39,34 @@ export async function generateMetadata(props: {
   if (!found) return {};
   const { school, dorm } = found;
   const types = dorm.rooms.length;
-  const sizes = dorm.rooms
-    .map((r) => formatDims(r.length_ft, r.width_ft))
-    .filter(Boolean)
+  // Two different sizes at most; rooms that share a size would repeat it.
+  const sizes = [...new Set(dorm.rooms.map((r) => formatDims(r.length_ft, r.width_ft)).filter(Boolean))]
     .slice(0, 2)
     .join(", ");
   const where = shortName(school);
+  const baseName = dorm.name.replace(/\s*\(.*\)$/, "");
   const count = `${types} room type${types === 1 ? "" : "s"}${sizes ? ` (${sizes})` : ""}`;
   const extras = dorm.rooms.some((r) => r.closet) ? "bed and closet sizes" : "bed sizes";
   return pageMetadata({
-    title: `${dorm.name} Room Dimensions, ${where}`,
+    // Hall searches are the bare name plus "floor plan", "double room", "layout":
+    // lead with the name, then what the page shows, then the school.
+    title: fitTitle(
+      `${dorm.name} Floor Plan & Room Dimensions, ${where}`,
+      `${dorm.name} Floor Plan & Room Sizes, ${where}`,
+      `${dorm.name} Floor Plan, ${where}`,
+      // Long names lose a trailing "(…)" in the title only; the page keeps it.
+      `${baseName} Floor Plan & Room Sizes, ${where}`,
+      `${baseName} Floor Plan, ${where}`,
+      `${baseName} Floor Plan`,
+    ),
     description: fitDescription(
-      `${dorm.name} at ${school.name}: ${count}, ${extras}, and a to-scale layout you can plan for free.`,
-      `${dorm.name} at ${where}: ${count}, ${extras}, and a to-scale layout you can plan for free.`,
-      `${dorm.name} at ${where}: ${count} and a to-scale layout you can plan for free.`,
+      `${dorm.name} at ${school.name}: ${count}, ${extras}, and a to-scale floor plan you can plan for free.`,
+      `${dorm.name} at ${where}: ${count}, ${extras}, and a to-scale floor plan you can plan for free.`,
+      `${dorm.name} at ${where}: ${count} and a to-scale floor plan you can plan for free.`,
       `${dorm.name} at ${where}: ${types} room type${types === 1 ? "" : "s"}, drawn to scale. Plan your room for free.`,
     ),
     path: `/colleges/${school.id}/${dorm.id}`,
-    ogTitle: `${dorm.name} dorm room dimensions and layouts`,
+    ogTitle: `${dorm.name} floor plan and room dimensions`,
     ...(hallIsIndexable(dorm) ? {} : { noIndex: true }),
   });
 }
@@ -102,12 +111,7 @@ export default async function DormPage(props: {
 
   const openFloor = fitted.map(({ r, fit }) => {
     const area = sqFtOf(r) ?? Math.round(fit.lengthFt * fit.widthFt);
-    const furn = Math.round(
-      fit.furniture.reduce((s, f) => {
-        const fp = footprint(f);
-        return s + fp.w * fp.h;
-      }, 0)
-    );
+    const furn = furnitureSqFt(fit);
     return { name: roomName(r), area, furn: Math.min(furn, area), estimated: Boolean(r.dims_estimated) };
   });
   const maxArea = Math.max(1, ...openFloor.map((o) => o.area));
@@ -228,7 +232,7 @@ export default async function DormPage(props: {
           <div className={css.roomsHead}>
             <div>
               <p className="ds-eyebrow" style={{ marginBottom: 18 }} data-reveal="">
-                {n === 1 ? "Drawn to scale" : n === 2 ? "Both rooms at the same scale" : `All ${n} rooms at the same scale`}
+                Floor plans · {n === 1 ? "drawn to scale" : n === 2 ? "both rooms at the same scale" : `all ${n} rooms at the same scale`}
               </p>
               <Headline
                 id="rooms-title"

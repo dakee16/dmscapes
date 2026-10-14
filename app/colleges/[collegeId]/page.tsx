@@ -15,7 +15,8 @@ import { SCHOOLS, formatDims, getSchool, publishedDimsCount } from "@/lib/school
 import { shortName } from "@/lib/school-names";
 import { isPublished, roomFamily, roomName, sqFtOf, ft } from "@/lib/room-preview";
 import { formatRoomType } from "@/lib/format";
-import { pageMetadata, fitDescription, breadcrumbJsonLd, postalAddressJsonLd, itemListJsonLd, absoluteUrl } from "@/lib/seo";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, postalAddressJsonLd, itemListJsonLd, absoluteUrl } from "@/lib/seo";
+import { dormSizeStats, isDormRoom } from "@/lib/dorm-sizes";
 import type { RoomSummary, SchoolSummary } from "@/lib/types";
 import css from "@/components/college/College.module.css";
 
@@ -34,15 +35,22 @@ export async function generateMetadata(props: {
   // Estimated dims are populated too, so both the description and the on-page
   // copy count only *published* sizes; a fully-estimated school must not claim
   // measurements it doesn't have.
-  const dimsClause =
-    publishedDimsCount(school) > 0 ? " with real room dimensions" : "";
-  const halls = `${school.dorms.length} residence hall${school.dorms.length === 1 ? "" : "s"}`;
+  // Titles lead with "[school] dorms", what students search, in the name they use.
+  const short = shortName(school);
+  const n = school.dorms.length;
+  const sizes = publishedDimsCount(school) > 0 ? "room sizes" : "estimated room sizes";
+  const halls = `${n} residence hall${n === 1 ? "" : "s"}`;
+  const ranked = spread(school) ? ", ranked by room size" : "";
   return pageMetadata({
-    title: `${school.name} Dorm Room Dimensions`,
+    title: fitTitle(
+      `${short} Dorms: Room Sizes for ${n === 2 ? "Both" : `All ${n}`} Halls`,
+      `${short} Dorms: Room Sizes for ${n} Halls`,
+      `${short} Dorms: Room Sizes`,
+    ),
     description: fitDescription(
-      `Plan your ${school.name} dorm room before move-in. ${halls}${dimsClause}, room-by-room layouts, and a shoppable list. Free.`,
-      `Plan your ${shortName(school)} dorm room before move-in. ${halls}${dimsClause}, room-by-room layouts, and a shoppable list. Free.`,
-      `${shortName(school)}: ${halls}${dimsClause}, drawn to scale. Plan your dorm room before move-in, free.`,
+      `${school.name} dorms: ${sizes} and to-scale floor plans for all ${halls}${ranked}. Plan your dorm room free before move-in.`,
+      `${short} dorms: ${sizes} and to-scale floor plans for all ${halls}${ranked}. Plan your dorm room free before move-in.`,
+      `${short} dorms: ${sizes} and floor plans for ${halls}. Plan your dorm room free before move-in.`,
     ),
     path: `/colleges/${school.id}`,
   });
@@ -80,7 +88,8 @@ function spread(school: SchoolSummary) {
   const byFam = new Map<string, Map<string, { l: number; w: number; sqft: number; halls: string[]; type: string }>>();
   for (const d of school.dorms)
     for (const r of d.rooms as RoomSummary[]) {
-      if (!isPublished(r)) continue;
+      // Same rule as /dorm-room-size: published, and a room rather than a whole apartment.
+      if (!isDormRoom(r, d.name)) continue;
       const fam = roomFamily(r.type);
       if (!["Double", "Single", "Triple"].includes(fam)) continue;
       const l = Math.max(r.length_ft!, r.width_ft!);
@@ -103,6 +112,10 @@ function spread(school: SchoolSummary) {
   }
   return { family: familyLabel[fam], groups };
 }
+
+// The typical single, double and triple across every school, for comparison.
+const TYPICAL = dormSizeStats(SCHOOLS);
+const OCCUPANTS: Record<string, number> = { single: 1, double: 2, triple: 3 };
 
 const names = (halls: string[]) =>
   halls.length <= 2 ? halls.join(" or ") : `${halls.slice(0, 2).join(", ")} and ${halls.length - 2} more`;
@@ -137,6 +150,7 @@ export default async function CollegePage(props: {
 
   const bars = spread(school);
   const maxSq = bars ? bars.groups[0].sqft : 1;
+  const typical = bars ? TYPICAL.byType.find((t) => t.occupants === OCCUPANTS[bars.family]) : undefined;
 
   const halls: HallCard[] = [...school.dorms]
     .sort((a, b) => a.name.localeCompare(b.name))
@@ -291,7 +305,7 @@ export default async function CollegePage(props: {
         <section className={`ds-section ${css.barsSection}`} aria-labelledby="bars-title">
           <div className="ds-wrap">
             <p className="ds-eyebrow" style={{ marginBottom: 18 }} data-reveal="">
-              Floor area · {bars.family} rooms · published sizes
+              {short} dorms ranked by {bars.family} size · published sizes
             </p>
             <Headline
               id="bars-title"
@@ -299,8 +313,18 @@ export default async function CollegePage(props: {
               lines={[{ text: `Not all ${bars.family}s` }, { text: "are equal.", serif: true }]}
             />
             <p className={css.barsLede} data-reveal="">
-              A {bars.family} at {names(bars.groups[0].halls)} is {bars.groups[0].sqft} sq ft. At{" "}
-              {names(bars.groups[bars.groups.length - 1].halls)} it&apos;s {bars.groups[bars.groups.length - 1].sqft}.
+              The biggest {bars.family} at {short} is at {names(bars.groups[0].halls)}: {bars.groups[0].sqft} sq ft. The
+              smallest is at {names(bars.groups[bars.groups.length - 1].halls)}, {bars.groups[bars.groups.length - 1].sqft} sq ft.
+              {typical && (
+                <>
+                  {" "}
+                  For comparison, the typical {bars.family} across {typical.schools} colleges is {Math.round(typical.median)} sq ft (
+                  <Link href="/dorm-room-size" className="ds-link">
+                    average dorm room size
+                  </Link>
+                  ).
+                </>
+              )}{" "}
               Published dimensions describe room types, not individual rooms, so confirm anything tight on move-in day.
             </p>
             <table className={css.bars}>

@@ -101,7 +101,9 @@ function Body() {
 
       <Callout label="Skip the graph paper">
         <p>
-          dormscape does these four steps in about a minute:{" "}
+          dormscape, a free{" "}
+          <TextLink href="/">dorm room planner</TextLink>, does these four steps
+          in about a minute:{" "}
           <TextLink href="/plan">pick your building</TextLink> to load its real
           dimensions, get a layout that fits, set your style and budget, and leave
           with a shoppable list. Free, and no account needed to try it.

@@ -99,7 +99,7 @@ export default function HomeHero({
               ]}
             />
             <p className={`ds-lede ${css.heroLede}`} data-reveal="load" style={{ "--i": 4 } as React.CSSProperties}>
-              Find your exact room, choose a style and set a budget. Get a layout that fits and a shoppable
+              Find your exact room, choose a style and set a budget. Get a dorm room layout that fits and a shoppable
               list, before move-in day.
             </p>
             <div className={css.heroSearchWrap} data-reveal="load" style={{ "--i": 5 } as React.CSSProperties}>

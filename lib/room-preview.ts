@@ -2,6 +2,7 @@ import type { FurnitureItem, RoomSummary } from "./types";
 import { matchTemplate } from "@/templates/template-matcher";
 import { fitTemplateToRoom } from "./layout-fit";
 import { formatRoomType } from "./format";
+import { footprint } from "@/components/canvas/geometry";
 
 /** Size the school publishes (not an estimate, not blank). */
 export const isPublished = (r: RoomSummary) => Boolean(r.length_ft && r.width_ft && !r.dims_estimated);
@@ -37,6 +38,16 @@ export interface FittedRoom {
   /** built-in pieces only (bed, desk, chair, dresser), placed by the planner's template */
   furniture: FurnitureItem[];
   isCorridor: boolean;
+}
+
+/** Floor the built-in furniture covers, in whole square feet. */
+export function furnitureSqFt(fit: FittedRoom): number {
+  return Math.round(
+    fit.furniture.reduce((s, f) => {
+      const fp = footprint(f);
+      return s + fp.w * fp.h;
+    }, 0)
+  );
 }
 
 /**

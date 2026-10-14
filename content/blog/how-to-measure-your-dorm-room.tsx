@@ -164,7 +164,8 @@ function Body() {
         <TextLink href="/colleges">the list of colleges</TextLink>, from{" "}
         <TextLink href="/colleges/ut-austin">UT Austin</TextLink> to{" "}
         <TextLink href="/colleges/nyu">NYU</TextLink>, then{" "}
-        <TextLink href="/plan">plan your room</TextLink> around real numbers.
+        <TextLink href="/plan">plan your room</TextLink> around real numbers in
+        the free <TextLink href="/">dorm room planner</TextLink>.
       </P>
 
       <Callout label="dormscape shortcut">

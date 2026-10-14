@@ -32,6 +32,17 @@ const OG_IMAGE = {
   alt: "dormscape, the free dorm room planner",
 };
 
+/** Room left for a page title before the layout's " | dormscape" takes it past ~60 characters. */
+const TITLE_ROOM = 60 - ` | ${SITE_NAME}`.length;
+
+/**
+ * The first title that shows whole in a search result, or the last option.
+ * Templated pages pass the fullest version first and shorter fallbacks.
+ */
+export function fitTitle(...options: string[]): string {
+  return options.find((option) => option.length <= TITLE_ROOM) ?? options[options.length - 1];
+}
+
 /**
  * The first description that fits a search snippet (about 155 characters), or
  * the last one cut at a word. Templated pages pass a full version first and
