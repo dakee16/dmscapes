@@ -248,8 +248,7 @@ export default function DormRoomSizePage() {
             </table>
           </div>
           <p className={css.caption}>
-            Typical size is the median length and median width. &ldquo;Most rooms&rdquo; is the middle half: a quarter of rooms are
-            smaller, a quarter larger.
+            {`Typical size is a published room size whose floor area matches the median. "Most rooms" is the middle half: a quarter of rooms are smaller, a quarter larger.`}
           </p>
           <ul className={css.common} aria-label="The most common published dorm room sizes">
             {S.commonSizes.map((c) => (

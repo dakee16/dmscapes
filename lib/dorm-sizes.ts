@@ -27,7 +27,11 @@ export interface TypeStats {
   occupants: number;
   rooms: number;
   schools: number;
-  /** median length and width, each on its own */
+  /**
+   * A real published size whose area is closest to the median (within 3%,
+   * at two or more schools), so length x width matches the area shown.
+   * Falls back to the median length and width.
+   */
   lengthFt: number;
   widthFt: number;
   median: number;
@@ -92,12 +96,24 @@ export function dormSizeStats(schools: SchoolSummary[]) {
       if (!g.length) return null;
       const sq = sortNum(g.map((r) => r.sqft));
       const median = quantile(sq, 0.5);
+      const near = new Map<string, { lengthFt: number; widthFt: number; rooms: number; schools: Set<string> }>();
+      for (const r of g) {
+        if (Math.abs(r.lengthFt * r.widthFt - median) > median * 0.03) continue;
+        const key = `${r.lengthFt}x${r.widthFt}`;
+        const c = near.get(key) ?? { lengthFt: r.lengthFt, widthFt: r.widthFt, rooms: 0, schools: new Set<string>() };
+        c.rooms++;
+        c.schools.add(r.schoolId);
+        near.set(key, c);
+      }
+      const size = [...near.values()]
+        .filter((c) => c.schools.size >= 2)
+        .sort((a, b) => Math.abs(a.lengthFt * a.widthFt - median) - Math.abs(b.lengthFt * b.widthFt - median) || b.rooms - a.rooms)[0];
       return {
         occupants,
         rooms: g.length,
         schools: new Set(g.map((r) => r.schoolId)).size,
-        lengthFt: quantile(sortNum(g.map((r) => r.lengthFt)), 0.5),
-        widthFt: quantile(sortNum(g.map((r) => r.widthFt)), 0.5),
+        lengthFt: size?.lengthFt ?? quantile(sortNum(g.map((r) => r.lengthFt)), 0.5),
+        widthFt: size?.widthFt ?? quantile(sortNum(g.map((r) => r.widthFt)), 0.5),
         median,
         mean: sq.reduce((a, b) => a + b, 0) / sq.length,
         p25: quantile(sq, 0.25),
