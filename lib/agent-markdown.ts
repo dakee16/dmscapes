@@ -61,6 +61,22 @@ export function llmsTxt(): string {
   ].join("\n");
 }
 
+/** /llms-full.txt: the same map, then every FAQ answer in full, grouped by its guide. */
+export function llmsFullTxt(): string {
+  return [
+    llmsTxt(),
+    "## Dorm room questions, answered",
+    "",
+    ...POSTS.flatMap((post) => post.faqs?.length ? [
+      `### ${post.faqTopic ?? post.title}`,
+      "",
+      `From the guide: ${absoluteUrl(`/blog/${post.slug}`)}`,
+      "",
+      ...post.faqs.flatMap(({ q, a }) => [`**${q}**`, "", a, ""]),
+    ] : []),
+  ].join("\n");
+}
+
 /** The homepage as Markdown: the hero's own words, then the same map as /llms.txt. */
 export function homeMarkdown(): string {
   return [
