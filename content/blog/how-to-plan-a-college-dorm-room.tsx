@@ -106,7 +106,7 @@ function Body() {
           in about a minute:{" "}
           <TextLink href="/plan">pick your building</TextLink> to load its real
           dimensions, get a layout that fits, set your style and budget, and leave
-          with a shoppable list. Free, and no account needed to try it.
+          with a shoppable list. Free, and no account needed until you generate your plan.
         </p>
       </Callout>
 

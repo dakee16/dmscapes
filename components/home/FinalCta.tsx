@@ -26,7 +26,7 @@ export default function FinalCta() {
               Make room
               <ArrowUpRight size={22} />
             </Link>
-            <span className={`${css.note} ${css.finalNote}`}>Plan my room for free · No account needed</span>
+            <span className={`${css.note} ${css.finalNote}`}>Plan my room for free · No account needed to start</span>
           </div>
         </div>
         <div className={css.finalArt} data-reveal-img="">

@@ -158,7 +158,8 @@ export default function AboutPage() {
                 <p className={css.diffSub}>Measured, not guessed.</p>
                 <p className={css.diffBody}>
                   Room sizes come from official housing data, school by school. When a college doesn&rsquo;t publish a
-                  number, we leave it blank instead of inventing one.{" "}
+                  size, we estimate it from the same room type at schools that do and label it estimated. With nothing
+                  comparable, we leave it blank instead of inventing one.{" "}
                   <Link href="/methodology" className="ds-link">
                     How we measure
                   </Link>
@@ -253,7 +254,7 @@ export default function AboutPage() {
               lines={[{ text: "Start" }, { text: "free.", serif: true }]}
             />
             <p>
-              Explore in 2D for free. Create an account for your first room plan and unlimited saving. Some shopping
+              Start planning without an account. A free account gets you your first generated room plan and unlimited saving. Some shopping
               links are affiliate links, which pay us a small commission at no extra cost to you.{" "}
               <Link href="/pricing" className="ds-link">
                 Plus and Pro

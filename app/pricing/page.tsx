@@ -85,7 +85,7 @@ const FREE_PERKS: React.ReactNode[] = [
   <>Budget-aware product picks with live Amazon links</>,
   <>Drag-and-drop 2D layout with editable measurements</>,
   <>Share any room with a link</>,
-  <>No account needed to start planning</>,
+  <>No account needed to start; sign in free to generate and save your plan</>,
 ];
 
 // Plus perks: the one-time unlock. Plan generation is metered by plan credits;
