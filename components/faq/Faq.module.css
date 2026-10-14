@@ -19,11 +19,12 @@
   padding: 0 12px 0 20px;
   border: 2px solid var(--ds-ink);
   border-radius: 16px;
-  background: #fff;
+  background: var(--ds-search-ink-bg);
   box-shadow: 5px 5px 0 var(--ds-ink);
-  transition: box-shadow 0.2s var(--ds-ease), transform 0.2s var(--ds-ease);
+  transition: box-shadow 0.2s var(--ds-ease), transform 0.2s var(--ds-ease), background-color 0.2s var(--ds-ease);
 }
-.search:focus-within { box-shadow: 5px 5px 0 var(--ds-blue); border-color: var(--ds-blue); }
+/* Focus: brighter, lifted onto a deeper shadow (no blue ring). */
+.search:focus-within { background: #fff; box-shadow: 8px 8px 0 var(--ds-ink); transform: translate(-2px, -2px); }
 .search svg { flex: none; }
 .search input {
   flex: 1;
@@ -350,6 +351,7 @@
 }
 @media (max-width: 640px) {
   .search { height: 60px; padding: 0 8px 0 16px; box-shadow: 4px 4px 0 var(--ds-ink); }
+  .search:focus-within { box-shadow: 6px 6px 0 var(--ds-ink); }
   .search input { height: 48px; font-size: 16px; }
   .groups { gap: 32px; }
   .guide { margin-left: 0; width: 100%; }

@@ -43,6 +43,14 @@
   --ds-riso: 3px 2px 0 rgba(255, 79, 168, 0.85), -3px -2px 0 rgba(36, 73, 255, 0.4);
   --ds-riso-sm: 2px 1.5px 0 rgba(255, 79, 168, 0.85), -2px -1.5px 0 rgba(36, 73, 255, 0.4);
 
+  /* Search bars show focus without a ring: they brighten and sit on a deeper shadow. */
+  --ds-search-bg: rgba(255, 255, 255, 0.86);
+  --ds-search-bg-focus: #fff;
+  --ds-search-shadow: 0 10px 30px rgba(36, 73, 255, 0.12);
+  --ds-search-shadow-focus: 0 20px 48px rgba(36, 73, 255, 0.26), 0 4px 12px rgba(22, 22, 29, 0.08);
+  /* Bordered (ink-shadow) search bars rest a shade off white. */
+  --ds-search-ink-bg: #fbfaf6;
+
   --ds-gutter: clamp(20px, 5vw, 72px);
   --ds-max: 1296px;
   --ds-nav-h: 88px;
