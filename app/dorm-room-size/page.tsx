@@ -25,7 +25,7 @@ const [single, double, triple] = S.byType;
 
 const fmt = (n: number) => Math.round(n).toLocaleString("en-US");
 const NAME: Record<number, string> = { 1: "Single", 2: "Double", 3: "Triple" };
-const dims = (t: TypeStats) => `${ft(t.lengthFt)} × ${ft(t.widthFt)} ft`;
+const dims = (t: TypeStats) => `${ft(t.lengthFt)} × ${ft(t.widthFt)}\u00a0ft`;
 const twinXl = Math.round(S.twinXlShare * 100);
 
 // The typical room for each type, fitted with the planner's starting furniture.

@@ -318,7 +318,7 @@ export default async function CollegePage(props: {
               {typical && (
                 <>
                   {" "}
-                  For comparison, the typical {bars.family} across {TYPICAL.schools} colleges is {Math.round(typical.median)} sq ft (
+                  For comparison, the typical {bars.family} across {typical.schools} colleges is {Math.round(typical.median)} sq ft (
                   <Link href="/dorm-room-size" className="ds-link">
                     average dorm room size
                   </Link>

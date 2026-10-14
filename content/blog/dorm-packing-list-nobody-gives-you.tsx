@@ -29,7 +29,7 @@ const DOUBLE_FIT = fitRoom({
 })!;
 const DOUBLE_SQFT = Math.round(DOUBLE_FIT.lengthFt * DOUBLE_FIT.widthFt);
 const OPEN_FLOOR = DOUBLE_SQFT - furnitureSqFt(DOUBLE_FIT);
-const DOUBLE_DIMS = `${ft(DOUBLE_FIT.lengthFt)} × ${ft(DOUBLE_FIT.widthFt)} ft`;
+const DOUBLE_DIMS = `${ft(DOUBLE_FIT.lengthFt)} × ${ft(DOUBLE_FIT.widthFt)}\u00a0ft`;
 const TWIN_XL = Math.round(SIZES.twinXlShare * 100);
 
 function Body() {
