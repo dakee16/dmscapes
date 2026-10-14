@@ -22,7 +22,7 @@ export default function ReadOnlyRoom({ room, items, style, products, editor, can
         <header><p className={s.railLabel}>Your room, shoppable</p><h2>Shopping list</h2><p>{products.length} picks · {money(Math.round(products.reduce((sum,p)=>sum+p.price,0)*100)/100)}</p></header>
         <ul>{products.map(p=><li key={p.id}><a href={p.affiliate_url} target="_blank" rel="noopener noreferrer sponsored" className={s.readOnlyProduct}><ProductImage src={p.image_url}/><span><strong>{p.name}</strong><small>{money(p.price)} · View product<ArrowUpRight size={11}/></small></span></a></li>)}</ul>
         {!products.length&&<p className={s.columnEmpty}>The shopping list is waiting for its first pick.</p>}
-        <p className={s.readOnlyFine}>Prices can change at checkout. Dormscape may earn from qualifying purchases.</p>
+        <p className={s.readOnlyFine}>Prices can change at checkout. dormscape may earn from qualifying purchases.</p>
         {canComment&&<button type="button" className={s.ghostBtn} onClick={()=>workspace?.commentOn?.("room")}>Discuss the shopping list</button>}
       </aside>
     </div>

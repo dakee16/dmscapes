@@ -30,7 +30,7 @@ import {
 } from "@/lib/home-data";
 
 // Short enough that Google shows it whole.
-const TITLE = "Dormscape: Free Dorm Room Planner";
+const TITLE = "dormscape: Free Dorm Room Planner";
 
 const pageMeta = pageMetadata({
   title: TITLE,
@@ -40,7 +40,7 @@ const pageMeta = pageMetadata({
   ogTitle: "dormscape: your dorm room, planned before move-in day",
 });
 // Point agents at the Markdown version (also served at / for Accept: text/markdown).
-export const metadata = { ...pageMeta, alternates: { ...pageMeta.alternates, types: { "text/markdown": "/index.md" } } };
+export const metadata = { ...pageMeta, alternates: { ...pageMeta.alternates, types: { ...pageMeta.alternates?.types, "text/markdown": "/index.md" } } };
 
 export default function Home() {
   return (

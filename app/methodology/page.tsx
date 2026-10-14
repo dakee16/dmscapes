@@ -17,7 +17,7 @@ import css from "@/components/methodology/Methodology.module.css";
 export const metadata: Metadata = pageMetadata({
   title: "How We Measure Dorm Rooms",
   description:
-    "Where Dormscape's dorm room dimensions come from, how they are recorded and verified, what 'estimated' means, and how to report a correction.",
+    "Where dormscape's dorm room dimensions come from, how they are recorded and verified, what 'estimated' means, and how to report a correction.",
   path: "/methodology",
 });
 
@@ -101,7 +101,7 @@ const STATES = [
 const LIMITS = [
   "Published dimensions describe a room type, not your specific room.",
   "Radiators, angled walls, built-ins, door swings, and lofted or bunked furniture all change what actually fits.",
-  "Treat a Dormscape layout as a well-measured starting point.",
+  "Treat a dormscape layout as a well-measured starting point.",
   "Confirm anything tight with a tape measure on move-in day.",
 ];
 
@@ -120,7 +120,7 @@ export default function MethodologyPage() {
         ]}
         lede={
           <p>
-            Dormscape only works if the numbers are right. This page explains exactly where every dimension comes from,
+            dormscape only works if the numbers are right. This page explains exactly where every dimension comes from,
             how we label the ones we are less sure about, and what we refuse to do.
           </p>
         }

@@ -13,7 +13,7 @@ import css from "@/components/add-school/AddSchool.module.css";
 export const metadata: Metadata = pageMetadata({
   title: "Add Your School",
   description:
-    "Add your college to the Dormscape dorm room planner. Tell us the building and room size and we'll add it.",
+    "Add your college to the dormscape dorm room planner. Tell us the building and room size and we'll add it.",
   path: "/add-school",
 });
 

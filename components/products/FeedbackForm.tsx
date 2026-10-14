@@ -108,7 +108,7 @@ export default function FeedbackForm({
       <div
         className={css.stars}
         role="radiogroup"
-        aria-label="Rate Dormscape from 1 to 5 stars"
+        aria-label="Rate dormscape from 1 to 5 stars"
         onMouseLeave={() => setHovered(0)}
       >
         {STARS.map((n) => (

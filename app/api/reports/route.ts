@@ -11,7 +11,7 @@ export const runtime = "nodejs";
 const headers = { "Cache-Control": "no-store" };
 const reply = (body: object, status: number) => NextResponse.json(body, { status, headers });
 export async function POST(request: Request) {
-  if (!sameOrigin(request)) return reply({ error: "Submit your report from Dormscape." }, 403);
+  if (!sameOrigin(request)) return reply({ error: "Submit your report from dormscape." }, 403);
   const limit = rateLimit(request, "reports", 5, 10 * 60 * 1000);
   if (!limit.allowed) return NextResponse.json({ error: "Too many reports. Please wait a few minutes." }, {
     status: 429, headers: { ...headers, "Retry-After": String(limit.retryAfterSec) },
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
   const emailed = await sendEmail({
     to: process.env.CONTACT_TO_EMAIL ?? "info@dormscape.us",
     ...(email ? { replyTo: email } : {}),
-    subject: `Dormscape report: ${category.label} [${id.slice(0, 8)}]`,
+    subject: `dormscape report: ${category.label} [${id.slice(0, 8)}]`,
     text: `Report: ${id}\nCategory: ${category.label}\nPage: ${page ?? "Not supplied"}\nReply email: ${email || "Not supplied"}\n\n${description}`,
   });
   if (!stored && !emailed) return reply({ error: "Your report has not been sent. Please retry or email info@dormscape.us." }, 503);

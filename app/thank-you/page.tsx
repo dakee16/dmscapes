@@ -7,7 +7,7 @@ import css from "@/components/report/ThankYou.module.css";
 
 export const metadata: Metadata = {
   title: "Thank You",
-  description: "Your dorm room is handled. Thanks for planning with Dormscape.",
+  description: "Your dorm room is handled. Thanks for planning with dormscape.",
   robots: { index: false }, // a post-purchase moment, not a landing page
 };
 
@@ -20,7 +20,7 @@ export default function ThankYouPage() {
         className={css.hero}
         lines={[
           { text: "Thank you for using ", riso: true },
-          { text: "Dormscape.", serif: true },
+          { text: "dormscape.", serif: true },
         ]}
         lede={
           <p>

@@ -144,7 +144,7 @@
 }
 .planCap { font-size: 22px; font-weight: 850; line-height: 1.2; }
 
-/* ---------- What Dormscape does ---------- */
+/* ---------- What dormscape does ---------- */
 .does { background: var(--ds-sky); }
 .does :global(.ds-h2 .ds-display) { font-size: clamp(42px, 5.3vw, 76px); font-weight: 850; letter-spacing: -0.04em; }
 .does :global(.ds-h2 .ds-serif) { font-size: clamp(46px, 5.6vw, 80px); }

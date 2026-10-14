@@ -20,9 +20,9 @@ export function emailFrame({ eyebrow, title, intro, body = "", action, url, foot
 export function workspaceInvitationEmail({ owner, room, email, role, url }: { owner: string; room: string; email: string; role: "editor" | "commenter"; url: string }) {
   const access = role === "editor" ? "Edit the layout, update the shopping list, and leave comments." : "View the layout and shopping list, and leave comments.";
   return {
-    subject: `${owner} invited you to their room on Dormscape`,
-    text: `${owner} invited you to "${room}" on Dormscape.\n\n${access}\nJoining is free. Sign in with ${email}. This invitation expires in seven days.\n\nJoin the room: ${url}\n\nIf you weren't expecting this invitation, you can ignore it.`,
-    html: emailFrame({ eyebrow: "Your people / Your room", title: "You're invited. Make yourself at home.", intro: `${owner} invited you to "${room}" on Dormscape.`,
+    subject: `${owner} invited you to their room on dormscape`,
+    text: `${owner} invited you to "${room}" on dormscape.\n\n${access}\nJoining is free. Sign in with ${email}. This invitation expires in seven days.\n\nJoin the room: ${url}\n\nIf you weren't expecting this invitation, you can ignore it.`,
+    html: emailFrame({ eyebrow: "Your people / Your room", title: "You're invited. Make yourself at home.", intro: `${owner} invited you to "${room}" on dormscape.`,
       body: `<table role="presentation" width="100%" style="background:#eef1ff;border-left:3px solid #304bff"><tr><td style="padding:18px;font-size:14px;line-height:1.8;color:#343956"><strong>${role === "editor" ? "Editing access" : "Comment access"}</strong><br>${escapeEmail(access)}<br><span style="color:#62677a">Join free with ${escapeEmail(email)}.</span></td></tr></table>`,
       action: "Join the room", url, footnote: "This invitation expires in seven days and only works with the email address it was sent to. If you weren't expecting it, you can ignore this email." }),
   };
@@ -36,6 +36,6 @@ export function purchaseInvoiceEmail({ tier, credits, invoiceNumber, amount, dat
     text: `${intro}\n\nInvoice: ${invoiceNumber}\nDate: ${date}\nPaid: ${amount}\nOne-time payment. No subscription.\n\nYour invoice PDF is attached. View the invoice: ${url}\n\nOpen your account: https://dormscape.us/account/billing\nNeed help? https://dormscape.us/contact`,
     html: emailFrame({ eyebrow: "A little more room for your ideas", title: "Good things ahead.", intro,
       body: `<table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rows}</table><p style="font-size:12px;line-height:1.7;color:#62677a">One-time payment. No subscription.<br>Your paid invoice PDF is attached to this email.</p>`,
-      action: "View your invoice", url, footnote: "This is the payment confirmation for your Dormscape purchase. Keep the attached invoice for your records. Your plan and credits are shown in Account > Billing." }),
+      action: "View your invoice", url, footnote: "This is the payment confirmation for your dormscape purchase. Keep the attached invoice for your records. Your plan and credits are shown in Account > Billing." }),
   };
 }

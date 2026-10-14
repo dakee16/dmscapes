@@ -9,7 +9,7 @@ const headers = { "Cache-Control": "private, no-store" };
 const reply = (body: object, status: number) => NextResponse.json(body, { status, headers });
 
 export async function DELETE(request: Request) {
-  if (!sameOrigin(request)) return reply({ error: "Open account settings on Dormscape to continue." }, 403);
+  if (!sameOrigin(request)) return reply({ error: "Open account settings on dormscape to continue." }, 403);
   const token = request.headers.get("authorization")?.match(/^Bearer (.+)$/)?.[1];
   if (!token) return reply({ error: "Sign in to delete your account." }, 401);
   const limit = rateLimit(request, "account-deletion", 5, 10 * 60 * 1000);

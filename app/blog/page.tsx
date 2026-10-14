@@ -5,20 +5,18 @@ import JsonLd from "@/components/site/JsonLd";
 import BlogBrowser from "@/components/blog/BlogBrowser";
 import { TOPICS, summarize } from "@/components/blog/topics";
 import { POSTS } from "@/content/blog";
-import { BLOG_BASE, isoDateTime } from "@/lib/blog";
+import { BLOG_BASE, BLOG_DESCRIPTION as DESCRIPTION, isoDateTime } from "@/lib/blog";
+import { RSS_FEED } from "@/lib/seo";
 import css from "@/components/blog/Blog.module.css";
-
-const DESCRIPTION =
-  "Practical, specific guides to planning a dorm room: how to measure it, what to pack, what it costs, small-room ideas, and how to pick a style.";
 
 export const metadata: Metadata = {
   title: "Dorm Room Planning Guides",
   description: DESCRIPTION,
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: "/blog", types: RSS_FEED },
   openGraph: {
     title: "The dormscape Blog",
     description: DESCRIPTION,
-    siteName: "Dormscape",
+    siteName: "dormscape",
     type: "website",
     url: "/blog",
     images: [
@@ -26,7 +24,7 @@ export const metadata: Metadata = {
         url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
-        alt: "Dormscape, the free AI dorm room planner",
+        alt: "dormscape, the free AI dorm room planner",
       },
     ],
   },
@@ -47,7 +45,7 @@ export default function BlogIndexPage() {
     name: "The dormscape Blog",
     description: DESCRIPTION,
     url: `${BLOG_BASE}/blog`,
-    publisher: { "@type": "Organization", name: "Dormscape", url: BLOG_BASE },
+    publisher: { "@type": "Organization", name: "dormscape", url: BLOG_BASE },
     blogPost: POSTS.map((p) => ({
       "@type": "BlogPosting",
       headline: p.title,
@@ -69,7 +67,7 @@ export default function BlogIndexPage() {
         <div className={`ds-wrap ${css.heroGrid}`}>
           <div>
             <p className={`ds-eyebrow ${css.eyebrow}`} data-reveal="load">
-              The Dormscape blog · {POSTS.length} guides
+              The dormscape blog · {POSTS.length} guides
             </p>
             <Headline
               as="h1"

@@ -4,7 +4,7 @@ import { sendEmail, type SendArgs } from "./email";
 import { purchaseInvoiceEmail } from "./email-templates";
 import { PURCHASE_TYPES, type PurchaseType } from "./plan";
 
-const names: Record<PurchaseType, string> = { plus: "Dormscape Plus", pro: "Dormscape Pro", recharge: "Dormscape Plus recharge", flex_credits: "Dormscape Flex credits" };
+const names: Record<PurchaseType, string> = { plus: "dormscape Plus", pro: "dormscape Pro", recharge: "dormscape Plus recharge", flex_credits: "dormscape Flex credits" };
 
 /** Separate from credit fulfillment: invoice events may arrive before checkout events.
  * Freeze the first payload so every retry has an identical Resend idempotency body. */
@@ -26,9 +26,9 @@ export async function deliverPurchaseInvoice(db: NonNullable<ReturnType<typeof g
     const date = new Date((invoice.status_transitions.paid_at || invoice.created) * 1000).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
     payload = {
       to: invoice.customer_email,
-      from: process.env.CONTACT_FROM_EMAIL || "Dormscape <contact@dormscape.us>",
+      from: process.env.CONTACT_FROM_EMAIL || "dormscape <contact@dormscape.us>",
       ...purchaseInvoiceEmail({ tier: names[purchase], credits, invoiceNumber: invoice.number || invoice.id, amount, date, url: invoice.hosted_invoice_url }),
-      attachments: [{ filename: `Dormscape-invoice-${(invoice.number || invoice.id).replace(/[^a-zA-Z0-9_-]/g, "-")}.pdf`, path: invoice.invoice_pdf }],
+      attachments: [{ filename: `dormscape-invoice-${(invoice.number || invoice.id).replace(/[^a-zA-Z0-9_-]/g, "-")}.pdf`, path: invoice.invoice_pdf }],
       idempotencyKey: `purchase-invoice/${invoice.id}`,
     };
     const { error } = await db.from("purchase_email_deliveries").insert({ invoice_id: invoice.id, user_id: invoice.metadata?.user_id, payload });

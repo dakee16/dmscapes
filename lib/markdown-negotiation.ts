@@ -29,11 +29,11 @@ export function notFoundMarkdown(pathname: string, origin: string): string {
   return [
     "# Page not found",
     "",
-    `There is no page at \`${shown}\` on Dormscape (HTTP 404). The link is probably old, or the page moved.`,
+    `There is no page at \`${shown}\` on dormscape (HTTP 404). The link is probably old, or the page moved.`,
     "",
     "Everything you came for is a link away:",
     "",
-    `- [Dormscape home](${origin}/), also available as Markdown`,
+    `- [dormscape home](${origin}/), also available as Markdown`,
     `- [Plan your dorm room](${origin}/plan)`,
     `- [Dorm room dimensions by college](${origin}/colleges)`,
     `- [Site guide for AI agents (llms.txt)](${origin}/llms.txt)`,

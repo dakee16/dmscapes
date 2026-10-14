@@ -4,7 +4,7 @@ import Link from "next/link";
 import LegalLayout from "@/components/legal/LegalLayout";
 import LegalSection from "@/components/legal/LegalSection";
 
-// Structural draft reflecting Dormscape's actual data flows (Supabase,
+// Structural draft reflecting dormscape's actual data flows (Supabase,
 // PostHog, Amazon Associates, Google OAuth) as of this writing. Have a legal
 // professional (or a service like Termly/iubenda) review this before
 // treating it as final, binding legal text, especially before scaling to
@@ -15,17 +15,17 @@ import LegalSection from "@/components/legal/LegalSection";
 export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy",
   description:
-    "Dormscape's privacy policy: account data, room designs, private comments, live collaboration, optional voice chat, and your data choices.",
+    "dormscape's privacy policy: account data, room designs, private comments, live collaboration, optional voice chat, and your data choices.",
   path: "/privacy",
 });
 
 // Plain-language recap. Accurate restatement of the sections below; sits
 // alongside the full text and does not replace it.
 const SUMMARY = [
-  "We store account details, saved designs, shared-room content and comments, optional feedback, and usage records to operate and improve Dormscape.",
+  "We store account details, saved designs, shared-room content and comments, optional feedback, and usage records to operate and improve dormscape.",
   "We don't sell your data, and we don't build advertising profiles.",
   "Shared-room members can see your display name, comments and replies, online or away status, active room view, and live cursor. Public design links are a separate feature.",
-  "Voice is optional. Your microphone stays off until you choose to talk. Dormscape does not record or transcribe calls.",
+  "Voice is optional. Your microphone stays off until you choose to talk. dormscape does not record or transcribe calls.",
   "Supabase handles room data and live collaboration; LiveKit carries voice. Resend, Stripe, Google, PostHog and Amazon support the other features described below.",
   "Delete your account in Account settings, or contact info@dormscape.us for help. Owned rooms and designs are removed; some support and payment records may remain.",
 ];
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
       updated="September 30, 2026"
       intro={
         <p>
-          This page explains what information Dormscape collects, why, and what you
+          This page explains what information dormscape collects, why, and what you
           can do about it. The short version: we collect what we need to run the
           planner and understand what&rsquo;s working, we don&rsquo;t sell your data, and
           you can ask us to delete your account at any time.
@@ -101,7 +101,7 @@ export default function PrivacyPage() {
           </li>
           <li>
             <strong>Analytics.</strong>{" "}We use
-            PostHog to understand how people use Dormscape: which pages get
+            PostHog to understand how people use dormscape: which pages get
             visited, which buttons get clicked, and where people drop off in the
             planning flow. Analytics can include browser identifiers and device
             or network information; it is not necessarily anonymous. We do not
@@ -127,7 +127,7 @@ export default function PrivacyPage() {
 
       <LegalSection doc="privacy" id="where-your-data-lives">
         <p>
-          Dormscape&rsquo;s data is stored with Supabase, a hosted database and
+          dormscape&rsquo;s data is stored with Supabase, a hosted database and
           authentication provider. Workspace reads and writes go through our
           authenticated server API. The browser also connects directly to Supabase
           for sign-in, permitted account operations and authorized private realtime
@@ -148,14 +148,14 @@ export default function PrivacyPage() {
 
       <LegalSection doc="privacy" id="room-voice">
         <p>Voice is optional and available only when configured for a Pro host&apos;s shared room. Joining sends LiveKit your room identifier, account identifier and display name, along with connection information needed to deliver the call, such as network addresses and device capabilities. When your microphone is on, LiveKit transports your live audio to the other participants in that voice room. Participants can see who has joined and microphone or speaking indicators.</p>
-        <p>Join with mic off lets you listen without enabling your microphone. Join and talk or Unmute requests microphone access if your browser has not already granted it. You can mute, leave the call, or revoke microphone permission in your browser&apos;s site settings. Dormscape does not request camera access for room voice. Calls disconnect when you leave the workspace page.</p>
-        <p>Dormscape does not record, transcribe or save call audio, and does not send it to an AI model. Call state and short-lived join credentials are held in memory for the connection. The voice provider may retain operational connection and diagnostic records under its service terms. We cannot prevent another participant from making a recording outside Dormscape, so share only what you intend your roommates to hear.</p>
+        <p>Join with mic off lets you listen without enabling your microphone. Join and talk or Unmute requests microphone access if your browser has not already granted it. You can mute, leave the call, or revoke microphone permission in your browser&apos;s site settings. dormscape does not request camera access for room voice. Calls disconnect when you leave the workspace page.</p>
+        <p>dormscape does not record, transcribe or save call audio, and does not send it to an AI model. Call state and short-lived join credentials are held in memory for the connection. The voice provider may retain operational connection and diagnostic records under its service terms. We cannot prevent another participant from making a recording outside dormscape, so share only what you intend your roommates to hear.</p>
         <p>You can use comments and the room planner without joining voice. Cookie choices and microphone permissions are separate: accepting analytics does not enable your microphone, and rejecting analytics does not prevent you from using voice.</p>
       </LegalSection>
 
       <LegalSection doc="privacy" id="who-else-sees-it">
         <p>
-          A few outside services are part of how Dormscape works:
+          A few outside services are part of how dormscape works:
         </p>
         <ul>
           <li>
@@ -175,11 +175,11 @@ export default function PrivacyPage() {
           </li>
           <li><strong>LiveKit</strong> provides optional room voice, processing participant identifiers, live audio and connection data to deliver the call.</li>
           <li><strong>Resend</strong> delivers invitations, support messages and purchase confirmation emails, including recipient addresses and message content.</li>
-          <li><strong>Stripe</strong> processes payments and invoices. Dormscape receives purchase and invoice details, not your full card number.</li>
+          <li><strong>Stripe</strong> processes payments and invoices. dormscape receives purchase and invoice details, not your full card number.</li>
           <li>
             <strong>Amazon Associates</strong>{" "}is our
             affiliate partner. When you click a product link, Amazon&rsquo;s own
-            tracking, not Dormscape&rsquo;s, attributes the resulting purchase to us
+            tracking, not dormscape&rsquo;s, attributes the resulting purchase to us
             for the commission. What Amazon does with that click is governed by
             Amazon&rsquo;s own privacy policy.
           </li>
@@ -187,7 +187,7 @@ export default function PrivacyPage() {
         <p>
           We share information with service providers to deliver the relevant
           features. External sign-in, payment and retailer services also have
-          their own privacy policies. Dormscape does not sell your personal data.
+          their own privacy policies. dormscape does not sell your personal data.
         </p>
       </LegalSection>
 
@@ -215,14 +215,14 @@ export default function PrivacyPage() {
 
       <LegalSection doc="privacy" id="dont-sell">
         <p>
-          Dormscape does not sell your personal information to third parties, full
+          dormscape does not sell your personal information to third parties, full
           stop.
         </p>
       </LegalSection>
 
       <LegalSection doc="privacy" id="changes">
         <p>
-          We may update this policy as Dormscape changes. We&rsquo;ll update the date
+          We may update this policy as dormscape changes. We&rsquo;ll update the date
           at the top when we do.
         </p>
       </LegalSection>

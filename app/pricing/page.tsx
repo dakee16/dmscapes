@@ -37,7 +37,7 @@ const ROOM_LAYOUTS = SCHOOLS.reduce(
 const ROOM_LAYOUTS_FLOOR = Math.floor(ROOM_LAYOUTS / 100) * 100;
 
 const DESCRIPTION =
-  `Try Dormscape free. Plus includes ${PLUS_INITIAL_CREDITS} plan credits for $${PLUS_PRICE_USD.toFixed(2)}. Pro includes ${PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D tools for $${PRO_PRICE_USD.toFixed(2)}. One-time purchases.`;
+  `Try dormscape free. Plus includes ${PLUS_INITIAL_CREDITS} plan credits for $${PLUS_PRICE_USD.toFixed(2)}. Pro includes ${PRO_INITIAL_CREDITS} plan credits, custom vibes, and 3D tools for $${PRO_PRICE_USD.toFixed(2)}. One-time purchases.`;
 
 export const metadata: Metadata = {
   title: "Pricing: Free, Plus and Pro",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pricing",
     description: DESCRIPTION,
-    siteName: "Dormscape",
+    siteName: "dormscape",
     type: "website",
     url: "/pricing",
     images: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
-        alt: "Dormscape, the free AI dorm room planner",
+        alt: "dormscape, the free AI dorm room planner",
       },
     ],
   },
@@ -179,8 +179,8 @@ const TABLE: { feature: string; free: Cell; plus: Cell; pro: Cell }[] = [
 ];
 
 const BEFORE_YOU_PAY = [
-  "Is the Dormscape planner still free?",
-  "What uses a Dormscape plan credit?",
+  "Is the dormscape planner still free?",
+  "What uses a dormscape plan credit?",
   "What is the difference between Plus and Pro?",
   "What happens when Pro credits run out?",
 ];

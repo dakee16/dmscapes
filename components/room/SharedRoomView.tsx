@@ -33,7 +33,7 @@ export default function SharedRoomView({ id, room }: { id: string; room: SaveRoo
     <PageShell className={css.page}>
       <section className={`ds-wrap ${css.head}`}>
         <div>
-          <p className="ds-eyebrow">A room planned with Dormscape</p>
+          <p className="ds-eyebrow">A room planned with dormscape</p>
           <h1 className={css.title}>
             {dims.editor?.customVibe || style.name} <em>room.</em>
           </h1>
@@ -114,7 +114,7 @@ export default function SharedRoomView({ id, room }: { id: string; room: SaveRoo
               No purchases in this list. School-provided and already-owned products stay out of the total.
             </p>
           )}
-          <p className={css.fine}>Prices can change at checkout. Dormscape may earn from qualifying purchases.</p>
+          <p className={css.fine}>Prices can change at checkout. dormscape may earn from qualifying purchases.</p>
         </div>
       </section>
       <div className="ds-wrap">

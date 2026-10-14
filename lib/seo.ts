@@ -11,7 +11,7 @@ import { PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PRO_INITIAL_CREDITS, PRO_PRICE_US
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us";
 
-export const SITE_NAME = "Dormscape";
+export const SITE_NAME = "dormscape";
 
 /** The one-line description of what this product is, reused across schema. */
 export const SITE_TAGLINE =
@@ -22,11 +22,14 @@ export function absoluteUrl(path = "/"): string {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
+/** The blog's RSS feed (app/blog/rss.xml), advertised in every page head. */
+export const RSS_FEED = { "application/rss+xml": "/blog/rss.xml" };
+
 const OG_IMAGE = {
   url: "/og.png?v=folded-room",
   width: 1200,
   height: 630,
-  alt: "Dormscape, the free dorm room planner",
+  alt: "dormscape, the free dorm room planner",
 };
 
 /**
@@ -66,11 +69,11 @@ export function pageMetadata({
   noIndex?: boolean;
   type?: "website" | "article";
 }): Metadata {
-  const social = ogTitle ?? `${title} | ${SITE_NAME.toLowerCase()}`;
+  const social = ogTitle ?? `${title} | ${SITE_NAME}`;
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: path, types: RSS_FEED },
     ...(noIndex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {
       title: social,
@@ -110,7 +113,7 @@ const organization = {
   url: SITE_URL,
   description: SITE_TAGLINE,
   email: CONTACT_EMAIL,
-  // No postal address: Dormscape doesn't publish one, so none is claimed here.
+  // No postal address: dormscape doesn't publish one, so none is claimed here.
   contactPoint: [
     {
       "@type": "ContactPoint",
@@ -140,7 +143,7 @@ export function webSiteJsonLd() {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
-    alternateName: ["dormscape", "Dormscape.us"],
+    alternateName: ["dormscape", "dormscape.us"],
     url: SITE_URL,
     description: SITE_TAGLINE,
     publisher: { "@id": `${SITE_URL}/#organization` },
@@ -149,7 +152,7 @@ export function webSiteJsonLd() {
 
 /**
  * The planner itself, as a free web application. This is the node that tells
- * search and answer engines *what Dormscape is* ("dorm room planner"), rather
+ * search and answer engines *what dormscape is* ("dorm room planner"), rather
  * than leaving it to be inferred from marketing copy.
  */
 export function softwareApplicationJsonLd() {
@@ -157,7 +160,7 @@ export function softwareApplicationJsonLd() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "@id": `${SITE_URL}/#app`,
-    name: "Dormscape Dorm Room Planner",
+    name: "dormscape Dorm Room Planner",
     url: absoluteUrl("/plan"),
     applicationCategory: "DesignApplication",
     applicationSubCategory: "Dorm room planner",

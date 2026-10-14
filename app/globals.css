@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Dormscape tokens. Paper, ink and cobalt follow the redesign palette
+  /* dormscape tokens. Paper, ink and cobalt follow the redesign palette
      (design-handoff/README.md); the rest are carried over until every page
      is converted. */
   --color-paper: #f4f3ee;

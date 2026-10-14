@@ -4,7 +4,7 @@ import Link from "next/link";
 import LegalLayout from "@/components/legal/LegalLayout";
 import LegalSection from "@/components/legal/LegalSection";
 
-// Structural draft reflecting Dormscape's actual use of cookies and browser
+// Structural draft reflecting dormscape's actual use of cookies and browser
 // storage (sign-in, planner recovery, collaboration and analytics) as of this
 // writing. Have a legal professional (or a service like Termly/iubenda)
 // review this before treating it as final, binding legal text, especially
@@ -15,7 +15,7 @@ import LegalSection from "@/components/legal/LegalSection";
 export const metadata: Metadata = pageMetadata({
   title: "Cookie Policy",
   description:
-    "Dormscape's cookie policy: sign-in, room drafts, workspace recovery, live collaboration, voice connections, analytics, and browser storage choices.",
+    "dormscape's cookie policy: sign-in, room drafts, workspace recovery, live collaboration, voice connections, analytics, and browser storage choices.",
   path: "/cookies",
 });
 
@@ -27,10 +27,10 @@ export default function CookiesPage() {
       updated="September 30, 2026"
       intro={
         <p>
-          Cookies are small pieces of data a site stores in your browser. Dormscape
+          Cookies are small pieces of data a site stores in your browser. dormscape
           also uses local storage, session storage and temporary in-memory state.
           This page explains how these support planning, shared rooms and optional
-          voice, and how to manage them. Dormscape does not use advertising or
+          voice, and how to manage them. dormscape does not use advertising or
           retargeting cookies.
         </p>
       }
@@ -91,16 +91,16 @@ export default function CookiesPage() {
           Supabase uses your existing sign-in session to authorize private
           workspace connections. Current online or away status, active view,
           selected piece, cursor coordinates and a temporary connection identifier
-          are held in memory and shared with current room members. Dormscape
+          are held in memory and shared with current room members. dormscape
           does not store a cursor history. Comments and replies are server-side
           room data, not cookies; clearing browser storage does not delete them.
         </p>
         <p>
           When you choose to join Room voice, the app requests a short-lived
-          LiveKit join token and keeps the connection state in memory. Dormscape
+          LiveKit join token and keeps the connection state in memory. dormscape
           does not save this token or call audio in cookies or local storage.
           LiveKit processes the audio and connection information needed to deliver
-          the call. Dormscape does not record or transcribe calls. Leaving the
+          the call. dormscape does not record or transcribe calls. Leaving the
           call or workspace page disconnects the voice session.
         </p>
         <p>
@@ -115,7 +115,7 @@ export default function CookiesPage() {
 
       <LegalSection doc="cookies" id="analytics">
         <p>
-          Dormscape uses PostHog to see how the site is used: which pages get
+          dormscape uses PostHog to see how the site is used: which pages get
           visited and which buttons get clicked. When configured, PostHog can
           use cookies and local storage with browser identifiers to connect
           usage events across visits. These identifiers are not necessarily
@@ -128,7 +128,7 @@ export default function CookiesPage() {
           Our current analytics setup is opt-out: it may initialize before you
           answer the banner. Choose Reject and reload the page to apply that
           preference to an already-running analytics session. The preference
-          prevents subsequent PostHog initialization and Dormscape analytics
+          prevents subsequent PostHog initialization and dormscape analytics
           calls; it does not erase data already sent or existing stored entries.
           You can remove stored entries through your browser settings.
         </p>
@@ -143,10 +143,10 @@ export default function CookiesPage() {
 
       <LegalSection doc="cookies" id="what-we-dont-use">
         <p>
-          Dormscape does not use advertising or retargeting cookies or sell cookie
+          dormscape does not use advertising or retargeting cookies or sell cookie
           data. If you follow an Amazon product link, use Google sign-in or visit
           Stripe checkout, that provider may use its own cookies and storage under
-          its policies. Dormscape&rsquo;s banner does not control those other websites.
+          its policies. dormscape&rsquo;s banner does not control those other websites.
         </p>
       </LegalSection>
 
@@ -171,7 +171,7 @@ export default function CookiesPage() {
 
       <LegalSection doc="cookies" id="changes">
         <p>
-          We may update this policy as Dormscape changes. We&rsquo;ll update the date
+          We may update this policy as dormscape changes. We&rsquo;ll update the date
           at the top when we do.
         </p>
       </LegalSection>

@@ -141,7 +141,7 @@ export default function VibesSection({ vibes }: { vibes: Vibe[] }) {
                 <h3>Create your own vibe</h3>
                 <span className={`ds-tag ${css.proTag}`}>PRO</span>
               </div>
-              <p>Describe it in your own words. Dormscape finds real products and arranges them for your room and budget.</p>
+              <p>Describe it in your own words. dormscape finds real products and arranges them for your room and budget.</p>
             </div>
             <span className={css.typed}>
               <span className="ds-sr">Example: {TYPED}</span>

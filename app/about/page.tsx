@@ -14,13 +14,13 @@ import css from "@/components/about/About.module.css";
 export const metadata: Metadata = {
   title: "About the Dorm Room Planner",
   description:
-    "Dormscape is a free dorm room planner built on real dorm dimensions from official housing data. See your exact room, set a budget, shop a list that fits.",
+    "dormscape is a free dorm room planner built on real dorm dimensions from official housing data. See your exact room, set a budget, shop a list that fits.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About dormscape",
     description:
       "The free dorm room planner built on real dorm dimensions. Why it exists, how it works, and how it stays free.",
-    siteName: "Dormscape",
+    siteName: "dormscape",
     type: "website",
     url: "/about",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: "/og.png?v=folded-room",
         width: 1200,
         height: 630,
-        alt: "Dormscape, the free AI dorm room planner",
+        alt: "dormscape, the free AI dorm room planner",
       },
     ],
   },
@@ -73,7 +73,7 @@ export default function AboutPage() {
         ]}
         lede={
           <p>
-            Dormscape is a free dorm room planner. Pick your school and building, and you get your actual room: real
+            dormscape is a free dorm room planner. Pick your school and building, and you get your actual room: real
             dimensions, a layout you can rearrange, and a shopping list that fits the space and the budget.
           </p>
         }
@@ -119,7 +119,7 @@ export default function AboutPage() {
       <section className={`ds-section ${css.does}`} aria-labelledby="does-title">
         <div className="ds-wrap">
           <p className={`ds-eyebrow ${css.eyebrow}`} data-reveal="">
-            What Dormscape does
+            What dormscape does
           </p>
           <Headline
             id="does-title"
@@ -128,7 +128,7 @@ export default function AboutPage() {
           />
           <div className={css.doesCopy} data-reveal="">
             <p className="ds-lede">
-              Dormscape starts from your exact room, with dimensions pulled from official university housing data for{" "}
+              dormscape starts from your exact room, with dimensions pulled from official university housing data for{" "}
               <Link href="/colleges" className="ds-link">
                 {SCHOOLS.length} schools
               </Link>{" "}

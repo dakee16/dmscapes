@@ -10,14 +10,14 @@ export function CloseButton({ onClick, label = "Close" }: { onClick: () => void;
   );
 }
 
-/** "Dormscape Plus" / "Dormscape Pro" pill. */
+/** "dormscape Plus" / "dormscape Pro" pill. */
 export function TierBadge({ tier }: { tier: "plus" | "pro" }) {
   return tier === "pro" ? (
-    <span className={d.badge} data-tone="pro">Dormscape Pro</span>
+    <span className={d.badge} data-tone="pro">dormscape Pro</span>
   ) : (
     <span className={d.badge} data-tone="plus">
       <b aria-hidden="true">+</b>
-      Dormscape Plus
+      dormscape Plus
     </span>
   );
 }

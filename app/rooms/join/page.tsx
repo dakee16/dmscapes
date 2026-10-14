@@ -34,7 +34,7 @@ export default function JoinRoomPage() {
           </div>
           :<div className={s.actions}>
             <Link className={s.joinBtn} href={login}>Sign in to join<ArrowRight size={18}/></Link>
-            <p className={s.as}>New to Dormscape? Create a free account with Google or email on the next screen, using the address the invitation went to.</p>
+            <p className={s.as}>New to dormscape? Create a free account with Google or email on the next screen, using the address the invitation went to.</p>
           </div>}
         <p className={s.fine}>Joining is free. You won&apos;t need a plan, Pro or credits, and you&apos;ll never spend the host&apos;s.</p>
       </section>

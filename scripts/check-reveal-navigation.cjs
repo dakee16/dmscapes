@@ -17,7 +17,7 @@ const ARMED = ['data-reveal', 'data-reveal-img', 'data-headline', 'data-draw', '
       await (await ctx.newCDPSession(page)).send('Emulation.setCPUThrottlingRate', { rate: 6 });
       if (from) {
         await page.goto(base + from, { waitUntil: 'networkidle' });
-        await page.locator('a[aria-label="Dormscape home"]').first().click();
+        await page.locator('a[aria-label="dormscape home"]').first().click();
         await page.waitForURL(base + '/');
       } else await page.goto(base + '/', { waitUntil: 'networkidle' });
       // Below-the-fold content still waits to animate in (once the page has hydrated).

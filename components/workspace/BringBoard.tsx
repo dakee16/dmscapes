@@ -100,6 +100,6 @@ export default function BringBoard({ detail, userId, products, commentOn, showOn
       </section>)}
     </div>
     {!lines.length && <p className={s.columnEmpty}>Your shopping list is ready for its first pick. Browse the product panel in the room plan.</p>}
-    <p className={s.bringFoot}>Prices are estimates and can change at checkout. Dormscape may earn from qualifying purchases.</p>
+    <p className={s.bringFoot}>Prices are estimates and can change at checkout. dormscape may earn from qualifying purchases.</p>
   </section>;
 }

@@ -13,6 +13,7 @@ import { outlineOf } from "@/components/blog/outline";
 import { TOPIC_PHRASE, shortDate, splitTitle, summarize, topicOf } from "@/components/blog/topics";
 import { getPost, allPostSlugs, POSTS } from "@/content/blog";
 import { articleJsonLd } from "@/lib/blog";
+import { RSS_FEED } from "@/lib/seo";
 import css from "@/components/blog/Post.module.css";
 
 // Prebuild every post at build time; unknown slugs 404.
@@ -32,22 +33,22 @@ export async function generateMetadata(props: {
   return {
     title: post.metaTitle ?? post.title,
     description: post.description,
-    alternates: { canonical: url },
+    alternates: { canonical: url, types: RSS_FEED },
     openGraph: {
       title: post.metaTitle ?? post.title,
       description: post.description,
-      siteName: "Dormscape",
+      siteName: "dormscape",
       type: "article",
       url,
       publishedTime: post.date,
       modifiedTime: post.updated ?? post.date,
-      authors: ["Dormscape"],
+      authors: ["dormscape"],
       images: [
         {
           url: "/og.png?v=folded-room",
           width: 1200,
           height: 630,
-          alt: "Dormscape, the free AI dorm room planner",
+          alt: "dormscape, the free AI dorm room planner",
         },
       ],
     },
@@ -118,7 +119,7 @@ export default async function BlogPostPage(props: {
                   d<i />
                 </span>
                 <div className={css.authorText}>
-                  <p className={css.authorName}>By Dormscape</p>
+                  <p className={css.authorName}>By dormscape</p>
                   <p className={css.authorMeta}>
                     <time dateTime={post.date}>{shortDate(post.date)}</time> · {post.readingTimeMin} min read
                     {updated !== post.date && (
@@ -157,7 +158,7 @@ export default async function BlogPostPage(props: {
                   d
                 </span>
                 <span>
-                  <strong>Written by Dormscape.</strong>
+                  <strong>Written by dormscape.</strong>
                   {topic && <> Filed under {topic.label}.</>}
                 </span>
               </p>

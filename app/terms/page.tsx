@@ -5,7 +5,7 @@ import LegalLayout from "@/components/legal/LegalLayout";
 import LegalSection from "@/components/legal/LegalSection";
 import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, FLEX_CREDIT_PRICE_USD } from "@/lib/plan";
 
-// Structural draft reflecting Dormscape's actual data flows and business
+// Structural draft reflecting dormscape's actual data flows and business
 // model as of this writing. Have a legal professional (or a service like
 // Termly/iubenda) review this before treating it as final, binding legal
 // text, especially before scaling to meaningful user volume.
@@ -17,7 +17,7 @@ import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, PLUS_PRICE
 export const metadata: Metadata = pageMetadata({
   title: "Terms of Service",
   description:
-    "Dormscape's terms of service: what the free dorm planner does, what it doesn't guarantee, and how the Amazon affiliate links work.",
+    "dormscape's terms of service: what the free dorm planner does, what it doesn't guarantee, and how the Amazon affiliate links work.",
   path: "/terms",
 });
 
@@ -28,7 +28,7 @@ const SUMMARY = [
   "We can't guarantee prices, availability, or that a product fits. Measure and check before you buy.",
   "Some links are Amazon affiliate links; we may earn a small commission at no extra cost to you, which keeps the tool free.",
   "We don't sell or ship products. Returns, refunds, and faulty items are handled by Amazon, not us.",
-  "Paid Dormscape features (Plus, Flex credits, Pro) are final and non-refundable; we don't entertain refunds or payment disputes on them.",
+  "Paid dormscape features (Plus, Flex credits, Pro) are final and non-refundable; we don't entertain refunds or payment disputes on them.",
   "We're not affiliated with any college; dorm data comes from public sources, not an official record.",
   "An account is required to generate and save designs. You can delete yours in Account settings.",
   "Unsaved designs can be lost, so save before you leave the page.",
@@ -42,9 +42,9 @@ export default function TermsPage() {
       updated="September 28, 2026"
       intro={
         <p>
-          Dormscape is a free tool. These terms explain what that means: what you can
+          dormscape is a free tool. These terms explain what that means: what you can
           expect from us, what we can&rsquo;t promise, and the rules for using the site.
-          By using Dormscape, you agree to them.
+          By using dormscape, you agree to them.
         </p>
       }
       summary={{
@@ -56,7 +56,7 @@ export default function TermsPage() {
 
       <LegalSection doc="terms" id="what-dormscape-is">
         <p>
-          Dormscape helps you plan a dorm room before you move in. Pick your school
+          dormscape helps you plan a dorm room before you move in. Pick your school
           and building, get real room dimensions where they&rsquo;re published, choose a
           style, set a budget, and get a shoppable list of products that fit. The
           planner is free to try. You can browse rooms and styles without an account.
@@ -67,10 +67,10 @@ export default function TermsPage() {
       <LegalSection doc="terms" id="no-warranty">
         <p>
           Product prices, availability, and shipping are set by the retailer
-          (currently Amazon), not by Dormscape. Prices change, items go out of
+          (currently Amazon), not by dormscape. Prices change, items go out of
           stock, and listings get updated on their end without notice to us. We do
           our best to keep product data current, but we can&rsquo;t guarantee that a
-          price or listing you see on Dormscape matches what you&rsquo;ll see at
+          price or listing you see on dormscape matches what you&rsquo;ll see at
           checkout.
         </p>
         <p>
@@ -83,9 +83,9 @@ export default function TermsPage() {
 
       <LegalSection doc="terms" id="affiliate">
         <p>
-          Dormscape is a participant in the Amazon Associates program. Some links on
+          dormscape is a participant in the Amazon Associates program. Some links on
           this site are affiliate links. If you click through and buy something,
-          Dormscape earns a small commission, at no extra cost to you. This is how
+          dormscape earns a small commission, at no extra cost to you. This is how
           the tool stays free. It doesn&rsquo;t change the price you pay, and it
           doesn&rsquo;t influence which products we choose to feature beyond wanting
           them to actually fit the room and budget you set.
@@ -94,7 +94,7 @@ export default function TermsPage() {
 
       <LegalSection doc="terms" id="defective-products">
         <p>
-          Dormscape doesn&rsquo;t sell, ship, stock, or fulfill any of the products you
+          dormscape doesn&rsquo;t sell, ship, stock, or fulfill any of the products you
           see here. Every item is sold by the retailer (currently Amazon), and buying
           it happens entirely on their site, under their terms. We&rsquo;re not
           responsible for products that arrive defective, damaged, faulty, late, or
@@ -102,7 +102,7 @@ export default function TermsPage() {
           or warranty claims.
         </p>
         <p>
-          If something you bought through a link on Dormscape has a problem, resolve it
+          If something you bought through a link on dormscape has a problem, resolve it
           directly with Amazon (or the relevant retailer) through their own return and
           refund process, which is what governs that purchase. Reaching out to us about
           a damaged or faulty item won&rsquo;t be able to fix it, because the order was
@@ -133,7 +133,7 @@ export default function TermsPage() {
           checkout applies to that purchase.
         </p>
         <p>
-          Some Dormscape features are paid: the Plus one-time unlock,
+          Some dormscape features are paid: the Plus one-time unlock,
           &agrave;-la-carte Flex credits, and the Pro plan. All payments for these
           are final and non-refundable. When you buy, you&rsquo;re paying for access
           to the feature, not for any particular result or outcome.
@@ -151,7 +151,7 @@ export default function TermsPage() {
 
       <LegalSection doc="terms" id="college-data">
         <p>
-          Dormscape is not affiliated with, endorsed by, or operated on behalf of any
+          dormscape is not affiliated with, endorsed by, or operated on behalf of any
           college or university listed on this site. Room dimensions and hall
           information come from publicly available housing data and are provided to
           help you plan, not as an official record. Always confirm your actual
@@ -188,7 +188,7 @@ export default function TermsPage() {
 
       <LegalSection doc="terms" id="saving-your-design">
         <p>
-          Dormscape keeps a recovery draft on your device when browser storage
+          dormscape keeps a recovery draft on your device when browser storage
           is available. It can survive refreshing or closing the tab, but
           clearing browser data, replacing the draft, or using private browsing
           can remove it. This draft is not a cloud backup and does not transfer
@@ -208,7 +208,7 @@ export default function TermsPage() {
 
       <LegalSection doc="terms" id="changes">
         <p>
-          We may update these terms as Dormscape changes. If we do, we&rsquo;ll update
+          We may update these terms as dormscape changes. If we do, we&rsquo;ll update
           the date at the top of this page. Continuing to use the site after a
           change means you accept the update.
         </p>

@@ -502,7 +502,7 @@ export default function AccountSettingsPage() {
                     <LinkIcon />
                   </span>
                   <p>
-                    You&apos;re signed in with <strong>{oauthProvider}</strong>. There&apos;s no Dormscape password to
+                    You&apos;re signed in with <strong>{oauthProvider}</strong>. There&apos;s no dormscape password to
                     change. Manage your login from your {oauthProvider} account.
                   </p>
                 </div>

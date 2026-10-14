@@ -172,7 +172,7 @@ function Body() {
       <Callout label="Why room-specific planning wins">
         <p>
           A generic small-room list can’t tell you whether the loft clears your
-          window or the rug fits your walkway. Dormscape can, because it plans
+          window or the rug fits your walkway. dormscape can, because it plans
           against your real room’s dimensions and shape. You arrange the actual
           furniture on your actual floor plan and catch the piece that doesn’t
           fit on screen, not on move-in day.

@@ -111,7 +111,7 @@ export default function PlusWelcome({
         <div className={d.top}>
           <span className={d.badge} data-tone="yellow">
             <b aria-hidden="true">+</b>
-            Dormscape Plus
+            dormscape Plus
           </span>
           <CloseButton
             onClick={() => {

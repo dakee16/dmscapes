@@ -43,7 +43,7 @@ const GROUPS: Group[] = [
     { label: "Report a problem", href: "/report" },
   ] },
   { key: "about", label: "About", caption: "The people and policies behind the plan.", links: [
-    { label: "About Dormscape", href: "/about" },
+    { label: "About dormscape", href: "/about" },
     { label: "How we measure", href: "/methodology" },
     { label: "Privacy policy", href: "/privacy" },
     { label: "Cookie policy", href: "/cookies" },

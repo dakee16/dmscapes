@@ -72,7 +72,7 @@ export default function BudgetSection() {
             ]}
           />
           <p className={`ds-lede ${css.budgetLede}`} data-reveal="">
-            Set a budget from $200 to $1,500. Dormscape fills your room with picks priced to fit it, each with a live
+            Set a budget from $200 to $1,500. dormscape fills your room with picks priced to fit it, each with a live
             Amazon link.
           </p>
           <div ref={box} className={css.slider} data-reveal="">

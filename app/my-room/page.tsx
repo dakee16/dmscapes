@@ -4,7 +4,7 @@ import MyRoomHome from "@/components/my-room/MyRoomHome";
 
 export const metadata: Metadata = {
   title: "My Room",
-  description: "A shared dorm room for you and your roommates: split the room, settle who brings what, and plan it together on a call. Included with Dormscape Pro.",
+  description: "A shared dorm room for you and your roommates: split the room, settle who brings what, and plan it together on a call. Included with dormscape Pro.",
   alternates: { canonical: "/my-room" },
   robots: { index: false, follow: true },
 };

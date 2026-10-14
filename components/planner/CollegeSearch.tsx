@@ -76,6 +76,8 @@ export default function CollegeSearch({
         </svg>
         <input
           id="college-search"
+          name="college-search"
+          toolparamdescription="The college or university name, for example University of North Carolina at Chapel Hill"
           type="text"
           role="combobox"
           aria-expanded={open}

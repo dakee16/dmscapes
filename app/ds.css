@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Dormscape redesign: tokens, primitives and the motion system.
+   dormscape redesign: tokens, primitives and the motion system.
    Spec: design-handoff/README.md (brand) and design-handoff/MOTION.md.
    Pages opt in with the `.ds` class on their root; nothing here restyles a
    page that hasn't been converted.

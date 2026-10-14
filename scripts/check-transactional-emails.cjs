@@ -47,7 +47,7 @@ const request=()=>new Request('https://preview.example.test/api/stripe/webhook',
     assert.equal(response.status,200);const created=checkouts.at(-1);assert.equal(created.mode,'payment');assert.equal(created.invoice_creation.enabled,true);assert.equal(created.invoice_creation.invoice_data.metadata.purchase,type);assert.equal(created.invoice_creation.invoice_data.metadata.dormscape_email,'v1');assert.equal(created.customer_creation,'always');
   }
   await deliverPurchaseInvoice(db,stripe,invoice);
-  assert.equal(sends.length,1);assert.match(sends[0].body.subject,/Dormscape Pro/);assert.match(sends[0].body.text,/\$11.99/);assert.match(sends[0].body.text,/10 plan credits/);assert.equal(sends[0].body.attachments[0].path,invoice.invoice_pdf);assert.equal(sends[0].headers['Idempotency-Key'],'purchase-invoice/in_test_1');assert(rows.get(invoice.id).sent_at);
+  assert.equal(sends.length,1);assert.match(sends[0].body.subject,/dormscape Pro/);assert.match(sends[0].body.text,/\$11.99/);assert.match(sends[0].body.text,/10 plan credits/);assert.equal(sends[0].body.attachments[0].path,invoice.invoice_pdf);assert.equal(sends[0].headers['Idempotency-Key'],'purchase-invoice/in_test_1');assert(rows.get(invoice.id).sent_at);
   await deliverPurchaseInvoice(db,stripe,invoice);assert.equal(sends.length,1,'Duplicate event must not email again');
   await deliverPurchaseInvoice(db,stripe,{...invoice,id:'ignored',metadata:{}});assert.equal(sends.length,1,'Old and unrelated invoices are ignored');
   await deliverPurchaseInvoice(db,stripe,{...invoice,id:'unpaid',status:'open'});assert.equal(sends.length,1,'Unpaid invoices cannot email');
