@@ -26,6 +26,7 @@ const mainPages = () => [
   "## Main pages",
   link("Plan your dorm room", "/plan"),
   link("Dorm room dimensions by college", "/colleges"),
+  link("Average dorm room size", "/dorm-room-size", "typical single, double and triple sizes from the dimensions colleges publish"),
   link("Draw your dorm room floor plan", "/plan/draw"),
   link("3D Room Builder", "/plan/draw/3d"),
   link("Pricing", "/pricing"),

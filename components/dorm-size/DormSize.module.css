@@ -1,0 +1,100 @@
+/* /dorm-room-size: typical rooms drawn to scale, the numbers, and sizes by college. */
+
+.heroPlan {
+  margin: 0;
+  padding: 22px 24px 16px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 0 0 2.5px var(--ds-ink), 8px 8px 0 var(--ds-ink);
+  --ppf: 24;
+}
+.heroPlan figcaption,
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+  font-size: 13px;
+  color: var(--ds-muted);
+}
+.heroPlan figcaption :global(.ds-mono),
+.foot :global(.ds-mono) { font-size: 10.5px; font-weight: 700; color: var(--ds-ink); white-space: nowrap; }
+
+/* ---------- Typical rooms ---------- */
+.cards {
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 28px 20px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08);
+}
+.card[data-featured] { box-shadow: 0 0 0 2.5px var(--ds-blue), 8px 8px 0 var(--ds-blue); }
+.kicker {
+  margin: 0;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.dims { margin: 4px 0 0; font-size: clamp(32px, 3vw, 44px); line-height: 1; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.meta { margin: 8px 0 0; font-size: 15px; color: var(--ds-muted); }
+.meta strong { color: var(--ds-ink); }
+.planWrap { flex: 1; display: flex; align-items: center; justify-content: center; padding: 24px 0 8px; }
+.plan { overflow: visible; }
+
+/* ---------- The numbers ---------- */
+.numbers { background: var(--ds-paper); }
+.tableWrap { margin: 36px 0 0; overflow-x: auto; background: #fff; border-radius: 18px; box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08); }
+.tableWrap :global(.ds-table) { min-width: 640px; }
+.tableWrap td,
+.tableWrap tbody th { font-variant-numeric: tabular-nums; }
+.caption { margin: 14px 0 0; font-size: 14px; color: var(--ds-muted); }
+.common { margin: 32px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+.common li {
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 0 0 1.5px var(--ds-ink);
+  font-size: 15px;
+  font-weight: 650;
+}
+.common li span { font-family: var(--ds-mono); font-size: 11px; font-weight: 700; color: var(--ds-muted); margin-left: 8px; }
+
+/* ---------- Answers ---------- */
+.answers { margin: 40px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 56px; }
+.answers h3 { margin: 0; font-size: 22px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em; }
+.answers p { margin: 10px 0 0; font-size: 17px; line-height: 1.55; color: var(--ds-body); }
+.find { margin: 56px 0 0; padding: 32px; border-radius: 22px; background: var(--ds-sky); }
+.find h3 { margin: 0 0 18px; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+
+/* ---------- By college ---------- */
+.schoolLink { font-weight: 700; }
+
+/* ---------- Method ---------- */
+.method { margin: 28px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 40px; }
+.method li { padding-left: 22px; position: relative; font-size: 16px; line-height: 1.55; color: var(--ds-body); }
+.method li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 9px; height: 9px; background: var(--ds-blue); }
+
+@media (max-width: 1100px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .answers,
+  .method { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .cards { grid-template-columns: 1fr; }
+  .card { padding: 22px 20px 16px; }
+  .heroPlan { padding: 18px 16px 12px; box-shadow: 0 0 0 2px var(--ds-ink), 5px 5px 0 var(--ds-ink); }
+  .find { padding: 22px 18px; }
+}

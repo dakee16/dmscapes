@@ -112,6 +112,8 @@ export default function FAQPage() {
             <p>
               The short answers to what people ask most about setting up a dorm
               room. Each one links out to the full guide if you want the detail.
+              Wondering how big a dorm room is? See the{" "}
+              <Link href="/dorm-room-size" className="ds-link">average dorm room size</Link>.
             </p>
           }
         >
