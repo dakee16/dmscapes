@@ -198,7 +198,7 @@ function Body() {
 const post: BlogPost = {
   slug: "how-much-does-a-dorm-room-cost",
   title: "How much does it actually cost to set up a dorm room in 2026",
-  metaTitle: "How Much Does a Dorm Room Cost to Set Up in 2026?",
+  metaTitle: "How Much Does a Dorm Room Cost to Set Up?",
   description:
     "A realistic 2026 dorm budget by category, with budget, mid, and premium price ranges for bedding, storage, lighting, decor, bath, and essentials.",
   excerpt:

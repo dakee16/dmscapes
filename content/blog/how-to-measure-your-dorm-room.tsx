@@ -186,7 +186,7 @@ function Body() {
 const post: BlogPost = {
   slug: "how-to-measure-your-dorm-room",
   title: "How to measure your dorm room before you move in",
-  metaTitle: "How to Measure Your Dorm Room (Before You Buy Anything)",
+  metaTitle: "How to Measure Your Dorm Room Before You Buy",
   description:
     "A practical guide to measuring a dorm room: the six numbers that matter, the tools you need, and the mistakes that cost you a return trip on move-in day.",
   excerpt:
