@@ -80,7 +80,7 @@ export default function HowSection() {
               ]}
             />
             <p className={`ds-lede ${css.howLede}`} data-reveal="">
-              Three steps between you and a room that actually works.
+              Three steps between you and a room that actually works, with one free tool to plan, design and shop your dorm room.
             </p>
             <div className={css.howProgress} aria-hidden="true">
               <div ref={fill} className={css.howProgressFill} />

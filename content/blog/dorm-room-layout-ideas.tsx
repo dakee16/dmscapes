@@ -82,7 +82,9 @@ function Body() {
       <P>
         Every one of these looks fine on paper and only one or two will fit your
         specific room. The fastest way to know is to lay them out against your
-        actual dimensions, which you can usually get from your school. See{" "}
+        actual dimensions, which you can usually get from your school (or start
+        from the{" "}
+        <TextLink href="/dorm-room-size">average dorm room size</TextLink>). See{" "}
         <TextLink href="/blog/how-to-plan-a-college-dorm-room">
           how to plan a college dorm room
         </TextLink>{" "}
@@ -95,7 +97,8 @@ function Body() {
 
       <Callout label="See it in your room, not in theory">
         <p>
-          dormscape lays these out against your building&rsquo;s real dimensions.{" "}
+          dormscape, a free <TextLink href="/">dorm room planner</TextLink>, lays
+          these out against your building&rsquo;s real dimensions.{" "}
           <TextLink href="/colleges">Find your residence hall</TextLink>, get a
           layout that fits, then drag anything you want to move. Free.
         </p>
