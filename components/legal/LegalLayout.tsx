@@ -75,7 +75,7 @@ export default function LegalLayout({
               <div className={css.stamp}>
                 <span className={css.stampLabel}>LAST UPDATED</span>
                 <span className={css.stampDate}>{stampDate(updated)}</span>
-                <span className={css.stampDoc}>DORMSCAPE · {current.label.toUpperCase()}</span>
+                <span className={css.stampDoc}>dormscape · {current.label.toUpperCase()}</span>
               </div>
             </div>
             <nav aria-label="Policies" className={css.tabs}>

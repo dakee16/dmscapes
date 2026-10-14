@@ -40,7 +40,7 @@ function Body() {
         </Li>
       </Ul>
       <P>
-        Dormscape keeps this data for{" "}
+        dormscape keeps this data for{" "}
         <TextLink href="/colleges">hundreds of residence halls</TextLink>, so for
         many schools you can skip straight to a room that already has the right
         footprint.
@@ -101,7 +101,7 @@ function Body() {
 
       <Callout label="Skip the graph paper">
         <p>
-          Dormscape does these four steps in about a minute:{" "}
+          dormscape does these four steps in about a minute:{" "}
           <TextLink href="/plan">pick your building</TextLink> to load its real
           dimensions, get a layout that fits, set your style and budget, and leave
           with a shoppable list. Free, and no account needed to try it.

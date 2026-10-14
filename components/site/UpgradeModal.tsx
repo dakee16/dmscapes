@@ -84,7 +84,7 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     body: "Sketch your floor plan in 2D, including walls, doors, windows, and closets, then get a layout built around it. Plus and Pro both include 2D drawing, all preset vibes, and Plus tools. Building and planning directly in 3D require Pro.",
   },
   generic: {
-    title: "Do more with Dormscape Plus",
+    title: "Do more with dormscape Plus",
     body: "Unlock all nine preset vibes, more room plans, exports, and comparison. Pro adds the 3D Room Builder, live 3D planning, and custom vibes.",
   },
 };

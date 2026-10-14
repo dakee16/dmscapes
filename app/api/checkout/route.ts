@@ -30,14 +30,14 @@ const CFG: Record<
   plus: {
     cents: PLUS_PRICE_CENTS,
     credits: PLUS_INITIAL_CREDITS,
-    name: "Dormscape Plus",
+    name: "dormscape Plus",
     description: `One-time upgrade: ${PLUS_INITIAL_CREDITS} plan credits, free saving, all 9 vibes, and PDF/PNG export, comparison, and priority school requests unlocked for good.`,
     success: "upgraded=plus",
   },
   pro: {
     cents: PRO_PRICE_CENTS,
     credits: PRO_INITIAL_CREDITS,
-    name: "Dormscape Pro",
+    name: "dormscape Pro",
     description:
       `One-time upgrade: ${PRO_INITIAL_CREDITS} plan credits, free saving, 3D Room Builder, live 3D planning, custom vibes, and all Plus tools. Top up credits separately.`,
     success: "upgraded=pro",
@@ -45,7 +45,7 @@ const CFG: Record<
   recharge: {
     cents: RECHARGE_PRICE_CENTS,
     credits: RECHARGE_CREDITS,
-    name: "Dormscape Plus recharge",
+    name: "dormscape Plus recharge",
     description: `${RECHARGE_CREDITS} more plan credits added to your Plus account. Saving uses no credits.`,
     success: "recharged=1",
   },
@@ -167,7 +167,7 @@ export async function POST(request: Request) {
           currency: "usd",
           unit_amount: FLEX_CREDIT_PRICE_CENTS,
           product_data: {
-            name: "Dormscape Flex credits",
+            name: "dormscape Flex credits",
             description: `${quantity} room-plan credit${
               quantity === 1 ? "" : "s"
             } at $0.99 each. Each credit designs one room.`,
@@ -202,7 +202,7 @@ export async function POST(request: Request) {
       client_reference_id: userId,
       metadata,
       // Generate a real paid invoice for the branded thank-you email.
-      invoice_creation: { enabled: true, invoice_data: { metadata: { ...metadata, dormscape_email: "v1" }, footer: "Thank you for making room with Dormscape. dormscape.us/contact" } },
+      invoice_creation: { enabled: true, invoice_data: { metadata: { ...metadata, dormscape_email: "v1" }, footer: "Thank you for making room with dormscape. dormscape.us/contact" } },
       ...(!customerId ? { customer_creation: "always" as const } : {}),
       payment_intent_data: { metadata },
       ...(customerId

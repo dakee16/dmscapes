@@ -152,7 +152,7 @@ function Body() {
       </P>
       <P>
         The faster route, for schools we’ve already covered, is to skip the tape
-        measure entirely. Dormscape starts from your actual room using
+        measure entirely. dormscape starts from your actual room using
         dimensions pulled from official university housing data, so you can lay
         out furniture and build a shopping list that fits before you own a
         single box. Check whether your school is on{" "}
@@ -162,7 +162,7 @@ function Body() {
         <TextLink href="/plan">plan your room</TextLink> around real numbers.
       </P>
 
-      <Callout label="Dormscape shortcut">
+      <Callout label="dormscape shortcut">
         <p>
           If your school is in our database, the six measurements above are
           already done for your room type. You pick the building, we show the
@@ -200,7 +200,7 @@ const post: BlogPost = {
     },
     {
       q: "Can I measure my dorm before move-in day?",
-      a: "Often yes. Many housing portals publish floor plans with dimensions, and housing staff will usually confirm a specific hall by email. For supported schools, Dormscape already has official room dimensions, so you can plan without measuring at all.",
+      a: "Often yes. Many housing portals publish floor plans with dimensions, and housing staff will usually confirm a specific hall by email. For supported schools, dormscape already has official room dimensions, so you can plan without measuring at all.",
     },
     {
       q: "Do I need a laser measure for a dorm room?",

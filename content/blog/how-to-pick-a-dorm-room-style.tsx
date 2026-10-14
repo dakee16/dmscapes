@@ -92,7 +92,7 @@ function Body() {
 
       <H2>A framework: nine styles and how to pull each off</H2>
       <P>
-        These are the archetypes Dormscape uses as starting points. Treat them as
+        These are the archetypes dormscape uses as starting points. Treat them as
         a vocabulary, not a costume. Most good rooms land between two of them. Five
         are free; Gamer, Team Spirit, Retro, and Pastel are unlocked by any{" "}
         <TextLink href="/pricing">paid plan</TextLink> (Plus or Pro).
@@ -182,9 +182,9 @@ function Body() {
         mean a wrong call costs a swap, not a semester.
       </P>
 
-      <Callout label="How Dormscape uses these">
+      <Callout label="How dormscape uses these">
         <p>
-          On Dormscape, the style you pick isn’t just a mood board. You choose a
+          On dormscape, the style you pick isn’t just a mood board. You choose a
           vibe, and the plan is built around it with real products that fit your
           exact room and your budget, so the palette and the anchor pieces arrive
           already coordinated. Measure first if you can, using{" "}
@@ -220,7 +220,7 @@ const post: BlogPost = {
     },
     {
       q: "What are the most popular dorm room styles?",
-      a: "Dormscape offers nine style archetypes: Minimalist, Cozy Aesthetic, and Preppy are free, while Academia, Y2K Cyber, Gamer, Team Spirit, Retro, and Pastel are unlocked by any paid plan (Plus at $4.99 or Pro at $14.99). Each is best treated as a starting point defined by a palette and a few anchor pieces, and most well-designed rooms blend two of them rather than following one strictly.",
+      a: "dormscape offers nine style archetypes: Minimalist, Cozy Aesthetic, and Preppy are free, while Academia, Y2K Cyber, Gamer, Team Spirit, Retro, and Pastel are unlocked by any paid plan (Plus at $4.99 or Pro at $14.99). Each is best treated as a starting point defined by a palette and a few anchor pieces, and most well-designed rooms blend two of them rather than following one strictly.",
     },
     {
       q: "How do roommates coordinate dorm styles without matching?",

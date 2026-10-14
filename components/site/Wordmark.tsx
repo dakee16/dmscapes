@@ -5,7 +5,7 @@ import { useAuth } from "@/lib/auth-context";
 import { isPlusTier, isPro } from "@/lib/plan";
 
 /**
- * The Dormscape wordmark: "dormscape" in Archivo plus a round dot, blue on
+ * The dormscape wordmark: "dormscape" in Archivo plus a round dot, blue on
  * light grounds and a lighter blue on dark. Never pink. The tier marker (Plus
  * "+" or a "PRO" tag) is rendered here, inside the logo itself, so it appears
  * in every header the member sees. Free users just see "dormscape".
@@ -29,7 +29,7 @@ export default function Wordmark({
       className={`ds-wordmark ${className}`}
       data-tone={tone}
       aria-label={
-        pro ? "Dormscape Pro home" : plus ? "Dormscape Plus home" : "Dormscape home"
+        pro ? "dormscape Pro home" : plus ? "dormscape Plus home" : "dormscape home"
       }
     >
       <span className={`ds-wordmark__type ${textClassName}`}>
@@ -37,12 +37,12 @@ export default function Wordmark({
         <span className="ds-wordmark__dot" aria-hidden="true" />
       </span>
       {plus && (
-        <span className="ds-wordmark__plus" title="You're on Dormscape Plus" aria-label="Plus">
+        <span className="ds-wordmark__plus" title="You're on dormscape Plus" aria-label="Plus">
           +
         </span>
       )}
       {pro && (
-        <span className="ds-wordmark__pro" title="You're on Dormscape Pro" aria-label="Pro">
+        <span className="ds-wordmark__pro" title="You're on dormscape Pro" aria-label="Pro">
           Pro
         </span>
       )}

@@ -26,7 +26,7 @@ export interface StyleMeta {
   keywords: string[];
   /** Reference palette for the style (thumbnails now come from StyleScene). */
   palette: [string, string, string, string];
-  /** True when the style is gated behind Dormscape Plus. */
+  /** True when the style is gated behind dormscape Plus. */
   plus?: boolean;
   /** The Room view theme; styles without one derive it from `palette`. */
   room?: RoomTheme;
@@ -181,7 +181,7 @@ export const PLUS_STYLES: ReadonlySet<StyleId> = new Set<StyleId>(
   STYLES.filter((s) => s.plus).map((s) => s.id)
 );
 
-/** Whether a style is gated behind Dormscape Plus. */
+/** Whether a style is gated behind dormscape Plus. */
 export const isPlusStyle = (id: StyleId): boolean => PLUS_STYLES.has(id);
 
 /** Resolve any known style (selectable or retired) for display. */

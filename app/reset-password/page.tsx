@@ -262,7 +262,7 @@ export default function ResetPasswordPage() {
         <div className={css.art} data-reveal-img="load">
           <Image
             src="/redesign/site-login-door-hanger.jpg"
-            alt="A yellow Dormscape door hanger on a brass knob: Planning in progress, knock later."
+            alt="A yellow dormscape door hanger on a brass knob: Planning in progress, knock later."
             fill
             quality={75}
             sizes="(min-width: 900px) 512px, 1px"

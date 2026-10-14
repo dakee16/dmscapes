@@ -68,7 +68,7 @@ export default function BuilderEntry({children}:{children?:ReactNode}){
       tone="dark"
       className={s.hero}
       titleId="builder-title"
-      eyebrow={<span className={s.heroEyebrow}><span className={`ds-tag ${s.newTag}`}>New</span>Dormscape Pro · 3D Room Builder</span>}
+      eyebrow={<span className={s.heroEyebrow}><span className={`ds-tag ${s.newTag}`}>New</span>dormscape Pro · 3D Room Builder</span>}
       lines={[{text:"Your room."},{text:"From the ground up.",serif:true}]}
       lede={<p>Don’t just arrange a room. Build yours. Place a floor, shape the walls, and add doors, windows, and closets on a live 3D grid. Then make it home in the 3D planner.</p>}
       art={{src:"/redesign/site-builder-under-construction.jpg",alt:"A room under construction on a dark stage: the back wall built with a window, the left wall rising, the right wall a glowing blue outline, and a dragged corner labelled 16.4 feet",ratio:1,position:"50% 50%"}}

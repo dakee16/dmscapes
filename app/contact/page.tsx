@@ -11,7 +11,7 @@ import css from "@/components/contact/Contact.module.css";
 export const metadata: Metadata = pageMetadata({
   title: "Contact Us",
   description:
-    "Questions, feedback, a school we should add, or a bug to report? Send the Dormscape team a message.",
+    "Questions, feedback, a school we should add, or a bug to report? Send the dormscape team a message.",
   path: "/contact",
 });
 

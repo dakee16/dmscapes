@@ -70,7 +70,7 @@ export default function PostcardForm() {
           <span />
           <span />
           <span />
-          <span className={css.stampName}>DORMSCAPE</span>
+          <span className={css.stampName}>dormscape</span>
         </div>
       </div>
       <div className={css.postmark} aria-hidden="true">
@@ -87,7 +87,7 @@ export default function PostcardForm() {
     return (
       <div className={`${css.card} ${css.sent}`} role="status">
         {stamp}
-        <p className={css.dear}>Dear Dormscape,</p>
+        <p className={css.dear}>Dear dormscape,</p>
         <div className={css.sentBody}>
           <span className={css.sentCheck} aria-hidden="true">
             <Check size={30} strokeWidth={3} />
@@ -119,7 +119,7 @@ export default function PostcardForm() {
   return (
     <form onSubmit={handleSubmit} className={css.card} aria-label="Contact form" noValidate>
       {stamp}
-      <p className={css.dear}>Dear Dormscape,</p>
+      <p className={css.dear}>Dear dormscape,</p>
 
       <div className={css.body}>
         <div className={css.messageCol}>

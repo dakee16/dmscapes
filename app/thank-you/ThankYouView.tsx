@@ -11,7 +11,7 @@ const SHARE_URL = "https://dormscape.us";
 const SHARE_LABEL = "dormscape.us";
 
 /**
- * The cards under the /thank-you hero: share Dormscape with a roommate, rate
+ * The cards under the /thank-you hero: share dormscape with a roommate, rate
  * the experience, and head back to the design. The page's headline lives in
  * the server-rendered hero (app/thank-you/page.tsx).
  */
@@ -43,8 +43,8 @@ export default function ThankYouView() {
     if (typeof navigator === "undefined" || typeof navigator.share !== "function") return;
     try {
       await navigator.share({
-        title: "Dormscape",
-        text: "Plan your dorm room for free with Dormscape.",
+        title: "dormscape",
+        text: "Plan your dorm room for free with dormscape.",
         url: SHARE_URL,
       });
       track("share_link_shared");
@@ -58,7 +58,7 @@ export default function ThankYouView() {
       <div className={css.cards}>
         {/* Share panel */}
         <div className={css.share} data-reveal="">
-          <p className={css.shareLabel}>Share Dormscape</p>
+          <p className={css.shareLabel}>Share dormscape</p>
           <p className={css.shareText}>
             If this made your move-in easier, send it to a roommate. It&apos;s free for
             them too.
@@ -79,7 +79,7 @@ export default function ThankYouView() {
               type="text"
               readOnly
               value={SHARE_LABEL}
-              aria-label="Dormscape link"
+              aria-label="dormscape link"
               onFocus={(e) => e.currentTarget.select()}
               className={css.copyInput}
             />

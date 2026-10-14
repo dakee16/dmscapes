@@ -62,7 +62,7 @@ function Body() {
         Every number below is per student, in US dollars, for a standard
         furnished room where the bed, desk, and dresser are provided. Ranges
         reflect real product categories, the same kinds of items in the{" "}
-        <TextLink href="/plan">Dormscape catalog</TextLink>: twin XL bedding,
+        <TextLink href="/plan">dormscape catalog</TextLink>: twin XL bedding,
         under-bed storage, clip and floor lamps, rugs and wall decor, bath
         basics, and the small hardware that makes a room work.
       </P>
@@ -182,7 +182,7 @@ function Body() {
 
       <Callout label="Budget first, by design">
         <p>
-          Dormscape works backward from your number. Set a budget, and the plan
+          dormscape works backward from your number. Set a budget, and the plan
           stays inside it: real products that fit your exact room, with the total
           visible as you build. See whether your school is on{" "}
           <TextLink href="/colleges">our list of colleges</TextLink>, then{" "}

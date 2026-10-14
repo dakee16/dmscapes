@@ -12,7 +12,7 @@
 //      Resend's onboarding@resend.dev sandbox address.
 //   2. Set RESEND_API_KEY in the environment (Vercel + .env.local).
 //   3. Optional overrides: CONTACT_FROM_EMAIL (default
-//      "Dormscape <contact@dormscape.us>") and CONTACT_TO_EMAIL
+//      "dormscape <contact@dormscape.us>") and CONTACT_TO_EMAIL
 //      (default "info@dormscape.us").
 
 export interface SendArgs {
@@ -40,7 +40,7 @@ export function isEmailConfigured(): boolean {
 export async function sendEmail({ to, subject, text, html, attachments, idempotencyKey, replyTo, from }: SendArgs): Promise<boolean> {
   const key = process.env.RESEND_API_KEY;
   if (!key) return false;
-  const sender = from ?? process.env.CONTACT_FROM_EMAIL ?? "Dormscape <contact@dormscape.us>";
+  const sender = from ?? process.env.CONTACT_FROM_EMAIL ?? "dormscape <contact@dormscape.us>";
   try {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",

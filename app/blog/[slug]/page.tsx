@@ -158,7 +158,7 @@ export default async function BlogPostPage(props: {
                   d
                 </span>
                 <span>
-                  <strong>Written by Dormscape.</strong>
+                  <strong>Written by dormscape.</strong>
                   {topic && <> Filed under {topic.label}.</>}
                 </span>
               </p>

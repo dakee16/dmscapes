@@ -67,7 +67,7 @@ export default function BlogIndexPage() {
         <div className={`ds-wrap ${css.heroGrid}`}>
           <div>
             <p className={`ds-eyebrow ${css.eyebrow}`} data-reveal="load">
-              The Dormscape blog · {POSTS.length} guides
+              The dormscape blog · {POSTS.length} guides
             </p>
             <Headline
               as="h1"

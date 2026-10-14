@@ -70,7 +70,7 @@ export function TextLink({
   return <Link href={href}>{children}</Link>;
 }
 
-/** Index-card aside for tips and Dormscape tie-ins. Children are paragraphs. */
+/** Index-card aside for tips and dormscape tie-ins. Children are paragraphs. */
 export function Callout({
   label,
   children,

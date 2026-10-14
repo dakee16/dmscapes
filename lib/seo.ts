@@ -113,7 +113,7 @@ const organization = {
   url: SITE_URL,
   description: SITE_TAGLINE,
   email: CONTACT_EMAIL,
-  // No postal address: Dormscape doesn't publish one, so none is claimed here.
+  // No postal address: dormscape doesn't publish one, so none is claimed here.
   contactPoint: [
     {
       "@type": "ContactPoint",
@@ -143,7 +143,7 @@ export function webSiteJsonLd() {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
-    alternateName: ["Dormscape", "dormscape.us"],
+    alternateName: ["dormscape", "dormscape.us"],
     url: SITE_URL,
     description: SITE_TAGLINE,
     publisher: { "@id": `${SITE_URL}/#organization` },
@@ -152,7 +152,7 @@ export function webSiteJsonLd() {
 
 /**
  * The planner itself, as a free web application. This is the node that tells
- * search and answer engines *what Dormscape is* ("dorm room planner"), rather
+ * search and answer engines *what dormscape is* ("dorm room planner"), rather
  * than leaving it to be inferred from marketing copy.
  */
 export function softwareApplicationJsonLd() {

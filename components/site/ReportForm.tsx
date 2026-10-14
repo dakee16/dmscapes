@@ -20,7 +20,7 @@ export default function ReportForm({ from }: { from: string | null }) {
     if (pending.current) return;
     const website = new FormData(event.currentTarget).get("website");
     if (description.trim().length < 20) { setError("Add a little more detail, at least 20 characters, so we can investigate."); return; }
-    if (page.trim() && !reportPath(page.trim())) { setError("Use a Dormscape page path, such as /plan or /rooms. Do not include an invite link."); return; }
+    if (page.trim() && !reportPath(page.trim())) { setError("Use a dormscape page path, such as /plan or /rooms. Do not include an invite link."); return; }
     pending.current = true; setBusy(true); setError("");
     try {
       const session = await getBrowserClient()?.auth.getSession();
@@ -36,9 +36,9 @@ export default function ReportForm({ from }: { from: string | null }) {
     finally { pending.current = false; setBusy(false); }
   }
   if (reference) return <div className={s.success} role="status"><span aria-hidden="true"><Check size={26} /></span>
-    <h2>Report received.</h2><p>Thanks for helping us make Dormscape better. Your reference is <strong>{reference}</strong>.</p>
+    <h2>Report received.</h2><p>Thanks for helping us make dormscape better. Your reference is <strong>{reference}</strong>.</p>
     <p>{email ? "We can follow up using the email you provided." : "No reply email was provided. Keep this reference if you contact us later."}</p>
-    <Link href={from ?? "/"} className={s.primary}>Back to {from ? "your page" : "Dormscape"}<ArrowUpRight /></Link>
+    <Link href={from ?? "/"} className={s.primary}>Back to {from ? "your page" : "dormscape"}<ArrowUpRight /></Link>
   </div>;
   return <form onSubmit={submit} className={s.form} aria-label="Report a problem">
     <label className={s.field} htmlFor="report-category">What would you like to report?
@@ -57,7 +57,7 @@ export default function ReportForm({ from }: { from: string | null }) {
       <input id="report-email" type="email" maxLength={254} value={email} autoComplete="email"
         onChange={event => setEmail(event.target.value)} placeholder="you@school.edu" disabled={busy} /></label>
     <div className={s.trap} aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
-    <p className={s.hint}>Reports go privately to the Dormscape team, not to other room members. <Link href="/privacy" className={s.link}>Privacy policy</Link></p>
+    <p className={s.hint}>Reports go privately to the dormscape team, not to other room members. <Link href="/privacy" className={s.link}>Privacy policy</Link></p>
     {error && <p role="alert" className={s.error}>{error}</p>}
     <button type="submit" disabled={busy} className={s.primary}>{busy ? "Sending report…" : "Send report"}<ArrowRight /></button>
   </form>;

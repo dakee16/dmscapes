@@ -151,7 +151,7 @@ export function VoicePanel({ members, userId, roomName, onClose, following, onFo
       {v.live && <span className={s.voiceClock}>{clock}</span>}
       <button type="button" className={s.panelClose} aria-label="Close room call" onClick={() => { if (v.status === "joining") v.leave(); onClose(); }}><CloseIcon size={18} /></button>
     </header>
-    <p className={s.voiceSub}>Only people in {roomName} can join. Audio only, up to four of you. Dormscape doesn&apos;t record calls.</p>
+    <p className={s.voiceSub}>Only people in {roomName} can join. Audio only, up to four of you. dormscape doesn&apos;t record calls.</p>
     {v.live ? <>
       <div className={s.voiceTiles}>{inCall.map(p => <div key={p.id} className={s.voiceTile}>
         <span className={s.voiceFace} data-speaking={p.speaking && !p.muted} style={personStyle(p.id, members)}>{initial(p.member?.display_name ?? "?")}{p.muted && <i className={s.voiceMuted} aria-hidden="true"><MicIcon muted size={13} /></i>}</span>

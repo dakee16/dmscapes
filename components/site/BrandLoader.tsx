@@ -7,7 +7,7 @@ import s from "./BrandLoader.module.css";
  * hopping dot. Static in reduced motion and when motion is paused.
  */
 export default function BrandLoader({label="Loading…",className=""}:{label?:string;className?:string}) {
-  return <div className={s.loader+" "+className} role="status" aria-live="polite" aria-label={label || "Loading Dormscape"}>
+  return <div className={s.loader+" "+className} role="status" aria-live="polite" aria-label={label || "Loading dormscape"}>
     <div className={s.sheet} aria-hidden="true">
       <span className={s.tape}><i/></span>
       <svg viewBox="0 0 240 150" fill="none">

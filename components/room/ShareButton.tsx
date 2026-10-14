@@ -30,7 +30,7 @@ export default function ShareButton({
     if (typeof navigator !== "undefined" && typeof navigator.share === "function") {
       try {
         await navigator.share({
-          title: title ? `${title} · Dormscape` : "A Dormscape room",
+          title: title ? `${title} · dormscape` : "A dormscape room",
           url,
         });
         track("share_clicked", { type: "share", from });

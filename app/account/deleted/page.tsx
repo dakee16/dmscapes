@@ -16,10 +16,10 @@ export default function AccountDeletedPage() {
             You have been signed out. Your account and the rooms you owned have been removed.
           </p>
           <p data-reveal="load" style={{ "--i": 2 } as React.CSSProperties}>
-            Remember to clear Dormscape drafts on any other devices you use.
+            Remember to clear dormscape drafts on any other devices you use.
           </p>
           <Link href="/" className="ds-btn ds-btn--ink-yellow" data-reveal="load" style={{ "--i": 3 } as React.CSSProperties}>
-            Back to Dormscape <ArrowUpRight />
+            Back to dormscape <ArrowUpRight />
           </Link>
         </div>
       </div>

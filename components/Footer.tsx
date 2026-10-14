@@ -91,7 +91,7 @@ export default function Footer() {
         <div className={s.bottom}>
           <Wordmark tone="dark" />
           <p className={s.legal}>
-            © 2026 Dormscape · <Link href="/methodology">Built on official housing data</Link>
+            © 2026 dormscape · <Link href="/methodology">Built on official housing data</Link>
           </p>
           <div className={s.motion}>
             <MotionToggle />

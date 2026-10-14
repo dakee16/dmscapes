@@ -11,7 +11,7 @@ function Body() {
         against a fading memory of the other one. The fix is to put them next to
         each other and judge the things that actually matter: total cost, what
         fits your real room, and what you&rsquo;ll use every day. Here&rsquo;s a
-        simple method, and how Dormscape&rsquo;s side-by-side view turns it into a
+        simple method, and how dormscape&rsquo;s side-by-side view turns it into a
         two-minute job.
       </Lead>
 
@@ -83,20 +83,20 @@ function Body() {
         </Li>
       </Ol>
 
-      <H2>Doing it in Dormscape</H2>
+      <H2>Doing it in dormscape</H2>
       <P>
-        Dormscape has a comparison view built for exactly this: it lines up two
+        dormscape has a comparison view built for exactly this: it lines up two
         saved designs with their budgets, styles, school, room, and dimensions
         side by side, so you&rsquo;re reading the same rows for both rooms at
         once. It&rsquo;s one of the premium tools in{" "}
-        <TextLink href="/pricing">Dormscape Plus</TextLink> (a one-time $4.99
+        <TextLink href="/pricing">dormscape Plus</TextLink> (a one-time $4.99
         upgrade that also includes 3 plan credits) and Pro ($14.99
         with 10 plan credits). Saving designs is free on every tier. Generating a new
         room uses one plan credit; opening, editing, and comparing saved designs do not.
         If you&rsquo;re deciding whether that&rsquo;s worth it, we broke it down
         honestly in{" "}
         <TextLink href="/blog/is-dormscape-plus-worth-it">
-          is Dormscape Plus worth it
+          is dormscape Plus worth it
         </TextLink>
         . You can always eyeball it the free way too, by saving your one free
         design, sharing its link, and building the other alongside it, it&rsquo;s
@@ -139,7 +139,7 @@ const post: BlogPost = {
   title: "How to compare two dorm room designs side by side",
   metaTitle: "How to Compare Two Dorm Room Designs Side by Side",
   description:
-    "How to choose between two dorm room designs: compare cost, fit, anchor pieces, and daily use side by side, then decide with Dormscape's comparison view.",
+    "How to choose between two dorm room designs: compare cost, fit, anchor pieces, and daily use side by side, then decide with dormscape's comparison view.",
   excerpt:
     "Torn between two styles or budgets? A simple side-by-side method for comparing cost, fit, and daily use, and how to line two saved rooms up in one view.",
   date: "2026-07-28",
@@ -151,8 +151,8 @@ const post: BlogPost = {
       a: "Save both designs so neither is a memory, then read them across five points side by side: total cost against your budget, fit to your real room dimensions, the anchor pieces, daily use versus decoration, and roommate coordination. Rule out anything over budget or that does not fit, then let vibe break a genuine tie.",
     },
     {
-      q: "Can I compare two dorm rooms side by side in Dormscape?",
-      a: "Yes. Dormscape has a side-by-side comparison view that lines up two saved designs with their budgets, styles, school, room, and dimensions. The comparison view is a premium tool, part of Dormscape Plus (a one-time $4.99 upgrade with 3 plan credits) and Pro ($14.99 with 10 plan credits). Saving and comparing designs do not use plan credits.",
+      q: "Can I compare two dorm rooms side by side in dormscape?",
+      a: "Yes. dormscape has a side-by-side comparison view that lines up two saved designs with their budgets, styles, school, room, and dimensions. The comparison view is a premium tool, part of dormscape Plus (a one-time $4.99 upgrade with 3 plan credits) and Pro ($14.99 with 10 plan credits). Saving and comparing designs do not use plan credits.",
     },
     {
       q: "What should I compare first when choosing between two rooms?",

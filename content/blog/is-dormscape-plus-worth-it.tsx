@@ -4,7 +4,7 @@ import { Lead, H2, H3, P, Ul, Li, Callout, EndCTA, TextLink } from "@/components
 function Body() {
   return (
     <>
-      <Lead>Dormscape Plus is a one-time $4.99 upgrade with three room-plan credits, all nine preset vibes, 2D drawing, product imports, exports, comparison, and priority school requests. Saving designs is always free. Pro is $14.99 once and adds 10 plan credits, create your own vibe, 3D Room Builder, and live 3D Room Studio. Choose based on the tools you want and the number of plans you expect to generate.</Lead>
+      <Lead>dormscape Plus is a one-time $4.99 upgrade with three room-plan credits, all nine preset vibes, 2D drawing, product imports, exports, comparison, and priority school requests. Saving designs is always free. Pro is $14.99 once and adds 10 plan credits, create your own vibe, 3D Room Builder, and live 3D Room Studio. Choose based on the tools you want and the number of plans you expect to generate.</Lead>
 
       <H2>What&rsquo;s free, and what it covers</H2>
       <P>
@@ -120,10 +120,10 @@ function Body() {
 
 const post: BlogPost = {
   slug: "is-dormscape-plus-worth-it",
-  title: "Is Dormscape Plus worth it? Here's what you actually get",
-  metaTitle: "Is Dormscape Plus Worth It? An Honest Breakdown",
+  title: "Is dormscape Plus worth it? Here's what you actually get",
+  metaTitle: "Is dormscape Plus Worth It? An Honest Breakdown",
   description:
-    "Compare Dormscape Plus and Pro: plan credits, 2D tools, custom vibes, 3D Room Builder, and live 3D planning. Find the tools you need before upgrading.",
+    "Compare dormscape Plus and Pro: plan credits, 2D tools, custom vibes, 3D Room Builder, and live 3D planning. Find the tools you need before upgrading.",
   excerpt:
     "A specific, non-salesy breakdown of what Plus and Pro unlock, how plan credits and free saving work, and who each tier actually helps, including the people who should stay free.",
   date: "2026-07-28",
@@ -131,11 +131,11 @@ const post: BlogPost = {
   readingTimeMin: 6,
   faqTopic: "Plus",
   faqs: [
-    {q:"What uses a Dormscape plan credit?",a:"Generating a new room plan uses one credit. Pro custom vibes include one free regeneration; further regenerations use one credit each. Editing furniture, building or editing a room shell, saving, sharing, exporting, comparing, and switching between 2D and 3D do not use credits. Your purchased credits do not expire."},
+    {q:"What uses a dormscape plan credit?",a:"Generating a new room plan uses one credit. Pro custom vibes include one free regeneration; further regenerations use one credit each. Editing furniture, building or editing a room shell, saving, sharing, exporting, comparing, and switching between 2D and 3D do not use credits. Your purchased credits do not expire."},
     {q:"What happens when Pro credits run out?",a:"Pro includes 10 plan credits. At zero, generating another plan requires a top-up at $0.99 per credit. Your Pro tools and existing saved designs remain available. Credits are added to your balance without changing your tier."},
-    {q:"How much is Dormscape Plus?",a:"Plus is $4.99 once with three room-plan credits. A $2.99 recharge adds three more plan credits. Saving is always free and unlimited. Pro is $14.99 once for 10 plan credits, custom vibes, 3D Room Builder, and live 3D Room Studio."},
-    {q:"What does Dormscape Plus include?",a:"Plus includes all nine preset vibes, 2D room drawing, importing Amazon products, PDF and PNG export, comparison, priority school requests, and three plan credits. 3D room building, live 3D planning, and create your own vibe require Pro."},
-    {q:"Is the Dormscape planner still free?",a:"Yes. Free includes one room plan, three preset vibes, the 2D editor, shopping links, sharing, and unlimited saving with an account. Interactive 3D is included with Pro."},
+    {q:"How much is dormscape Plus?",a:"Plus is $4.99 once with three room-plan credits. A $2.99 recharge adds three more plan credits. Saving is always free and unlimited. Pro is $14.99 once for 10 plan credits, custom vibes, 3D Room Builder, and live 3D Room Studio."},
+    {q:"What does dormscape Plus include?",a:"Plus includes all nine preset vibes, 2D room drawing, importing Amazon products, PDF and PNG export, comparison, priority school requests, and three plan credits. 3D room building, live 3D planning, and create your own vibe require Pro."},
+    {q:"Is the dormscape planner still free?",a:"Yes. Free includes one room plan, three preset vibes, the 2D editor, shopping links, sharing, and unlimited saving with an account. Interactive 3D is included with Pro."},
     {q:"What is the difference between Plus and Pro?",a:"Plus has three initial plan credits and permanent Plus tools. Pro includes all Plus tools, 10 plan credits, 3D Room Builder, live 3D Room Studio, and create your own vibe. Saving is free for every account."}
   ],
   Body,

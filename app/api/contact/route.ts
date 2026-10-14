@@ -55,7 +55,7 @@ export async function POST(request: Request) {
   const emailed = await sendEmail({
     to: TO,
     replyTo: fromEmail,
-    subject: `New Dormscape message${name ? ` from ${name}` : ""}`,
+    subject: `New dormscape message${name ? ` from ${name}` : ""}`,
     text:
       `From: ${name ?? "(no name given)"} <${fromEmail}>\n` +
       `Phone: ${phone ?? "(none given)"}\n` +

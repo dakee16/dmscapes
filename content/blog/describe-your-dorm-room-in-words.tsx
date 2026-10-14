@@ -8,7 +8,7 @@ function Body() {
         The hard part of a good dorm room usually isn’t taste. It’s translation:
         turning a feeling in your head into choices specific enough to actually
         shop. “Cozy” and “aesthetic” don’t buy anything. Colors, textures, and a
-        mood do. Dormscape’s Create your own vibe reads a plain description and
+        mood do. dormscape’s Create your own vibe reads a plain description and
         matches real products to it, so the better you describe the room, the
         better the room you get back. Here’s how to put a vibe into words.
       </Lead>
@@ -50,7 +50,7 @@ function Body() {
       </Ul>
       <P>
         If a description reads like a room, it’ll match like one. If it reads like a
-        to-do list (“cheap, fast, good”), it won’t, and Dormscape will nudge you to
+        to-do list (“cheap, fast, good”), it won’t, and dormscape will nudge you to
         add colors, textures, or a mood before it builds.
       </P>
 
@@ -58,7 +58,7 @@ function Body() {
       <P>
         Create your own vibe is the Pro version of picking a style. Instead of
         choosing one of the nine presets, you describe any aesthetic in your own
-        words. Dormscape interprets it, matches real products across every category,
+        words. dormscape interprets it, matches real products across every category,
         keeps the total inside the budget you set, and lays the room out to your
         exact dimensions, the same way the preset vibes do. While you’re deciding,
         the nine preset styles make a good starting vocabulary; see{" "}
@@ -96,8 +96,8 @@ const post: BlogPost = {
   faqTopic: "Create your own vibe",
   faqs: [
     {
-      q: "What is Create your own vibe on Dormscape?",
-      a: "Create your own vibe is a Pro feature that lets you describe any room aesthetic in your own words instead of picking one of the nine preset styles. Dormscape reads your description, matches real products to it across every category, keeps the total inside your budget, and lays the room out to your exact dimensions.",
+      q: "What is Create your own vibe on dormscape?",
+      a: "Create your own vibe is a Pro feature that lets you describe any room aesthetic in your own words instead of picking one of the nine preset styles. dormscape reads your description, matches real products to it across every category, keeps the total inside your budget, and lays the room out to your exact dimensions.",
     },
     {
       q: "How do I describe a dorm room aesthetic so it matches well?",

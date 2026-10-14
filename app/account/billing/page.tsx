@@ -163,7 +163,7 @@ export default function BillingPage() {
                   </thead>
                   <tbody>
                     {invoices.map((inv) => {
-                      const name = inv.description ?? "Dormscape purchase";
+                      const name = inv.description ?? "dormscape purchase";
                       const date = fmtDate(inv.created, { year: "numeric", month: "short", day: "numeric" });
                       const status = (
                         <span className={s.status} data-state={inv.status}>

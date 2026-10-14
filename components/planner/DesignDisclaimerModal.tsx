@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 /**
  * Heads-up shown the moment someone taps "Plan my room", before the room is
- * generated. Dormscape doesn't auto-save a design, so this makes sure they know
+ * generated. dormscape doesn't auto-save a design, so this makes sure they know
  * to save it once it's ready, or it's gone when they leave. Confirming runs the
  * real generate; backing out returns them to the budget step.
  */

@@ -154,7 +154,7 @@ export async function buildShoppingListDoc(input: ShoppingListPdfInput) {
     month: "long",
     day: "numeric",
   });
-  doc.text(`Generated ${date} with Dormscape`, M, footerY);
+  doc.text(`Generated ${date} with dormscape`, M, footerY);
   doc.text(
     "Prices are estimates; some links are affiliate links. Check Amazon for current pricing.",
     M,

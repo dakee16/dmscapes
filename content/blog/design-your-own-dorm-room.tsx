@@ -5,7 +5,7 @@ function Body() {
   return (
     <>
       <Lead>
-        Most dorm rooms are already in Dormscape&rsquo;s data: pick your school and
+        Most dorm rooms are already in dormscape&rsquo;s data: pick your school and
         building and the exact dimensions, bed size, and window are filled in for
         you. But not every room is on the list, and not every room is a tidy
         rectangle. If your school isn&rsquo;t covered yet, or your room has an
@@ -53,7 +53,7 @@ function Body() {
         Once you hit <span className="font-semibold text-ink">Plan this room</span>,
         the flow is exactly the same as a listed room: pick a vibe, set a budget,
         and get a result. The difference is the layout. Instead of dropping a
-        rectangular template into your space, Dormscape reads your actual walls and
+        rectangular template into your space, dormscape reads your actual walls and
         places furniture against them: the bed on the longest wall, the desk under a
         window if you drew one, storage along a secondary wall, and the rug centered
         in the open floor. Then every piece is yours to drag, rotate, hide, or swap,
@@ -106,12 +106,12 @@ const post: BlogPost = {
   faqTopic: "Draw your own room",
   faqs: [
     {
-      q: "Can I plan a dorm room that isn't in Dormscape's database?",
+      q: "Can I plan a dorm room that isn't in dormscape's database?",
       a: "Yes. If your school or room isn't listed yet, use 2D drawing to trace your floor plan, add doors, windows, and closets, and then choose a vibe and budget. 2D drawing is included with Plus and Pro. Pro also includes the 3D Room Builder for constructing a room directly on a 3D grid.",
     },
     {
-      q: "Does Dormscape support L-shaped or irregular dorm rooms?",
-      a: "Yes. The drawing tool supports rectilinear outlines, so L-shapes, alcoves, notches, and other non-rectangular rooms are fine. When you draw an irregular room, Dormscape places furniture against your actual walls instead of dropping in a rectangular template, so the layout fits the real shape.",
+      q: "Does dormscape support L-shaped or irregular dorm rooms?",
+      a: "Yes. The drawing tool supports rectilinear outlines, so L-shapes, alcoves, notches, and other non-rectangular rooms are fine. When you draw an irregular room, dormscape places furniture against your actual walls instead of dropping in a rectangular template, so the layout fits the real shape.",
     },
     {
       q: "How does drawing a room work?",

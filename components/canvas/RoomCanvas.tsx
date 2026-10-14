@@ -54,7 +54,7 @@ function Icon({ path }: { path: string }) {
 
 export interface RoomCanvasHandle {
   focusItem: (id:string)=>void;
-  /** PNG data URL of the current layout with a Dormscape watermark. */
+  /** PNG data URL of the current layout with a dormscape watermark. */
   exportPNG: () => string | null;
 }
 

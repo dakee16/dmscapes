@@ -95,7 +95,7 @@ function Body() {
 
       <Callout label="See it in your room, not in theory">
         <p>
-          Dormscape lays these out against your building&rsquo;s real dimensions.{" "}
+          dormscape lays these out against your building&rsquo;s real dimensions.{" "}
           <TextLink href="/colleges">Find your residence hall</TextLink>, get a
           layout that fits, then drag anything you want to move. Free.
         </p>
