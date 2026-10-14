@@ -64,14 +64,17 @@
   gap: 14px;
   height: 72px;
   padding: 0 16px 0 22px;
-  background: #fff;
+  background: var(--ds-search-ink-bg);
   border: 2px solid var(--ds-ink);
   border-radius: 16px;
   box-shadow: 5px 5px 0 var(--ds-ink);
-  transition: box-shadow 150ms var(--ds-ease), transform 150ms var(--ds-ease);
+  transition: box-shadow 150ms var(--ds-ease), transform 150ms var(--ds-ease), background-color 150ms var(--ds-ease);
 }
+/* Focus: brighter, lifted onto a deeper shadow (no blue ring). */
 .search:focus-within {
-  box-shadow: 5px 5px 0 var(--ds-blue);
+  background: #fff;
+  box-shadow: 8px 8px 0 var(--ds-ink);
+  transform: translate(-2px, -2px);
 }
 .searchIcon {
   flex: none;
@@ -91,13 +94,9 @@
 .input::placeholder {
   color: #6b6b76;
 }
-/* The whole field carries the focus ring. */
+/* The whole field shows focus (see .search:focus-within). */
 .search .input:focus-visible {
   outline: none;
-}
-.search:has(.input:focus-visible) {
-  outline: 3px solid var(--ds-blue);
-  outline-offset: 3px;
 }
 .kbd {
   flex: none;
@@ -488,7 +487,7 @@
     box-shadow: 4px 4px 0 var(--ds-ink);
   }
   .search:focus-within {
-    box-shadow: 4px 4px 0 var(--ds-blue);
+    box-shadow: 6px 6px 0 var(--ds-ink);
   }
   .search .searchIcon {
     width: 20px;

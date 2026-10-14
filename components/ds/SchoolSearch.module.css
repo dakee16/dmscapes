@@ -8,11 +8,11 @@
   box-sizing: border-box;
   padding: 8px;
   border-radius: 999px;
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(36, 73, 255, 0.12);
-  transition: box-shadow 0.3s var(--ds-ease);
+  background: var(--ds-search-bg);
+  box-shadow: var(--ds-search-shadow);
+  transition: box-shadow 0.3s var(--ds-ease), background-color 0.3s var(--ds-ease);
 }
-.search:focus-within { box-shadow: 0 0 0 3px var(--ds-blue), 0 14px 34px rgba(36, 73, 255, 0.2); }
+.search:focus-within { background: var(--ds-search-bg-focus); box-shadow: var(--ds-search-shadow-focus); }
 .field { flex: 1; min-width: 0; }
 .field :global(input) {
   height: 48px !important;
@@ -24,6 +24,8 @@
   font: 400 18px var(--ds-sans) !important;
   color: var(--ds-ink) !important;
 }
+/* The pill shows focus, so the input drops the site-wide focus outline. */
+.field :global(input):focus-visible { outline: none; }
 .field :global(input::placeholder) { color: #6b6b76 !important; }
 .field :global(svg) { left: 14px !important; color: var(--ds-ink) !important; width: 20px; height: 20px; }
 .field :global(ul) {
@@ -38,26 +40,17 @@
 .field :global(li button) { font-family: var(--ds-sans); }
 .search > button { flex: none; min-height: 48px; }
 
+/* Phones keep one pill: the button sits beside the field, not under it. */
 @media (max-width: 767px) {
-  .search {
-    flex-direction: column;
-    align-items: stretch;
-    height: auto;
-    padding: 0;
-    gap: 10px;
-    background: none;
-    box-shadow: none;
-  }
-  .search:focus-within { box-shadow: none; }
-  .field {
-    height: 56px;
-    border-radius: 999px;
-    background: #fff;
-    box-shadow: 0 8px 24px rgba(36, 73, 255, 0.12);
-  }
-  .field:focus-within { box-shadow: 0 0 0 3px var(--ds-blue); }
-  .field :global(input) { height: 56px !important; font-size: 17px !important; }
-  .field :global(ul) { left: 0; right: 0; }
-  .search > button { min-height: 56px; }
+  .search { height: 60px; padding: 6px; gap: 8px; }
+  .field :global(input) { height: 48px !important; font-size: 17px !important; }
+  .field :global(ul) { left: -6px; right: -6px; }
+}
+/* Narrow phones: the button becomes a round arrow; its label stays for screen readers. */
+@media (max-width: 559px) {
+  .search > button { width: 48px; padding: 0; }
+  .label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  /* the results span the whole pill, under the button too */
+  .field :global(ul) { left: -6px; right: -62px; margin-top: 12px !important; }
 }
 

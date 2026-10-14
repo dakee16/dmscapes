@@ -44,7 +44,7 @@ export default function HomeSearch() {
         />
       </div>
       <button type="submit" className="ds-btn ds-btn--blue">
-        Plan my room free
+        <span className={css.searchLabel}>Plan my room free</span>
         <ArrowRight />
       </button>
     </form>

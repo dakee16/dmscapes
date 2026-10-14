@@ -90,13 +90,15 @@
   gap: 10px;
   height: 48px;
   padding: 0 14px;
-  background: #fff;
+  background: var(--ds-search-ink-bg);
   border: 1.5px solid rgba(22, 22, 29, 0.25);
   border-radius: 12px;
+  transition: box-shadow 150ms var(--ds-ease), background-color 150ms var(--ds-ease);
 }
+/* Focus: brighter on a deeper shadow (no blue ring). */
 .hallSearch:focus-within {
-  border-color: var(--ds-blue);
-  box-shadow: 0 0 0 3px rgba(36, 73, 255, 0.18);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(22, 22, 29, 0.14);
 }
 .hallInput {
   flex: 1;
@@ -109,7 +111,7 @@
   font-size: 16px;
   color: var(--ds-ink);
 }
-.hallInput:focus-visible {
+.hallSearch .hallInput:focus-visible {
   outline: none;
 }
 .hallInput::placeholder {

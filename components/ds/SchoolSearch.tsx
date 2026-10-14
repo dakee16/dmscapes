@@ -64,7 +64,7 @@ export default function SchoolSearch({
         />
       </div>
       <button type="submit" className={`ds-btn ${tone === "ink" ? "ds-btn--ink-yellow" : "ds-btn--blue"}`}>
-        {button}
+        <span className={css.label}>{button}</span>
         <ArrowRight />
       </button>
     </form>
