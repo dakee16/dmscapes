@@ -24,7 +24,7 @@ export default function CookiesPage() {
     <LegalLayout
       doc="cookies"
       title="Cookie Policy"
-      updated="September 30, 2026"
+      updated="October 15, 2026"
       intro={
         <p>
           Cookies are small pieces of data a site stores in your browser. dormscape
@@ -125,18 +125,40 @@ export default function CookiesPage() {
           comments and voice audio are not sent to PostHog.
         </p>
         <p>
+          dormscape also uses Google Analytics to measure site traffic: which
+          pages get visited, how people find the site and how long they stay.
+          It sets first-party cookies, <code>_ga</code> and
+          <code> _ga_DSRNH55V8B</code>, holding random identifiers that count
+          visits and returning browsers; Google&rsquo;s default lifetime for them
+          is two years. Google Analytics sends nothing from workspace, login,
+          account or report pages, and once one of those pages is opened it
+          stops sending until the next full page load. Google signals and ad
+          personalization are turned off, so this data is not used for
+          advertising. Read{" "}
+          <a href="https://policies.google.com/technologies/partner-sites">
+            how Google uses information from sites that use its services
+          </a>
+          , or install Google&rsquo;s{" "}
+          <a href="https://tools.google.com/dlpage/gaoptout">
+            Analytics opt-out browser add-on
+          </a>
+          .
+        </p>
+        <p>
           Our current analytics setup is opt-out: it may initialize before you
-          answer the banner. Choose Reject and reload the page to apply that
-          preference to an already-running analytics session. The preference
-          prevents subsequent PostHog initialization and dormscape analytics
-          calls; it does not erase data already sent or existing stored entries.
+          answer the banner. Choosing Reject stops Google Analytics from sending
+          further data right away and keeps it from loading on later visits. For
+          PostHog, reload the page to apply that preference to an already-running
+          session; the preference then prevents subsequent PostHog initialization
+          and dormscape analytics calls. Rejecting does not erase data already
+          sent or existing stored entries, including Google Analytics cookies.
           You can remove stored entries through your browser settings.
         </p>
         <p>
           Separately, <code>dormscape-session</code> is a random identifier in
           local storage used to associate our product-click records and optional
           purchase-survey or feedback submissions. It remains until cleared and
-          currently operates independently of the PostHog banner choice. It is
+          currently operates independently of the analytics banner choice. It is
           not a login credential and does not contain call audio or private comments.
         </p>
       </LegalSection>

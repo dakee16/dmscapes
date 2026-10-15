@@ -5,7 +5,7 @@ import LegalLayout from "@/components/legal/LegalLayout";
 import LegalSection from "@/components/legal/LegalSection";
 
 // Structural draft reflecting dormscape's actual data flows (Supabase,
-// PostHog, Amazon Associates, Google OAuth) as of this writing. Have a legal
+// PostHog, Google Analytics, Amazon Associates, Google OAuth) as of this writing. Have a legal
 // professional (or a service like Termly/iubenda) review this before
 // treating it as final, binding legal text, especially before scaling to
 // meaningful user volume.
@@ -35,7 +35,7 @@ export default function PrivacyPage() {
     <LegalLayout
       doc="privacy"
       title="Privacy Policy"
-      updated="September 30, 2026"
+      updated="October 15, 2026"
       intro={
         <p>
           This page explains what information dormscape collects, why, and what you
@@ -101,13 +101,15 @@ export default function PrivacyPage() {
           </li>
           <li>
             <strong>Analytics.</strong>{" "}We use
-            PostHog to understand how people use dormscape: which pages get
-            visited, which buttons get clicked, and where people drop off in the
-            planning flow. Analytics can include browser identifiers and device
-            or network information; it is not necessarily anonymous. We do not
-            send private workspace comments or call audio to PostHog. Session
-            recording is disabled, and events on workspace, login, account and
-            report pages are filtered out. Separate product-click and optional
+            PostHog and Google Analytics to understand how people use dormscape:
+            which pages get visited, how people find the site, which buttons get
+            clicked, and where people drop off in the planning flow. Analytics
+            can include browser identifiers and device or network information;
+            it is not necessarily anonymous. We do not send private workspace
+            comments or call audio to either service. PostHog session recording
+            is disabled, and analytics events on workspace, login, account and
+            report pages are filtered out. Google signals and ad personalization
+            are turned off in Google Analytics. Separate product-click and optional
             feedback records can use a random browser identifier. See our
             Cookie Policy for storage details and choices.
           </li>
@@ -172,6 +174,16 @@ export default function PrivacyPage() {
             <strong>PostHog</strong>{" "}processes the
             usage events and browser identifiers described above, subject to the
             analytics choice explained in our Cookie Policy.
+          </li>
+          <li>
+            <strong>Google Analytics</strong>{" "}measures
+            site traffic, processing page visits, traffic sources and browser
+            identifiers, subject to the same analytics choice. Its advertising
+            features are turned off. Read{" "}
+            <a href="https://policies.google.com/technologies/partner-sites">
+              how Google uses information from sites that use its services
+            </a>
+            .
           </li>
           <li><strong>LiveKit</strong> provides optional room voice, processing participant identifiers, live audio and connection data to deliver the call.</li>
           <li><strong>Resend</strong> delivers invitations, support messages and purchase confirmation emails, including recipient addresses and message content.</li>
