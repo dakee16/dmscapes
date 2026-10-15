@@ -4,6 +4,7 @@ import MotionProvider from "@/components/experience/MotionProvider";
 import { AuthProvider } from "@/lib/auth-context";
 import { UpgradeProvider } from "@/lib/upgrade-context";
 import CookieConsent from "@/components/site/CookieConsent";
+import GoogleAnalytics from "@/components/site/GoogleAnalytics";
 import RevealObserver from "@/components/ds/RevealObserver";
 import "./globals.css";
 import "./experience.css";
@@ -85,6 +86,7 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         <MotionProvider>
           <CookieConsent />
+          <GoogleAnalytics />
           <RevealObserver />
           <AuthProvider>
             <UpgradeProvider>{children}</UpgradeProvider>

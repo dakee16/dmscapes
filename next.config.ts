@@ -95,11 +95,13 @@ function buildCsp(isDev: boolean): string {
       "script-src 'self' 'unsafe-inline'",
       isDev ? "'unsafe-eval'" : null,
       posthogOrigins.assets,
+      "https://*.googletagmanager.com", // Google Analytics (components/site/GoogleAnalytics)
     ],
     // Tailwind custom properties, framer-motion, and Konva all set inline styles.
     "style-src 'self' 'unsafe-inline'",
-    // blob:/data: for canvas layout previews; Amazon CDN for product images.
-    "img-src 'self' blob: data: https://m.media-amazon.com",
+    // blob:/data: for canvas layout previews; Amazon CDN for product images;
+    // Google Analytics hits (Google's GA4 CSP list).
+    "img-src 'self' blob: data: https://m.media-amazon.com https://*.google-analytics.com https://*.googletagmanager.com",
     // next/font self-hosts every woff2 (verified: .next/static/media).
     "font-src 'self'",
     [
@@ -112,6 +114,9 @@ function buildCsp(isDev: boolean): string {
       voiceOrigin?.endsWith(".livekit.cloud") ? "wss://*.livekit.cloud https://*.livekit.cloud" : null,
       posthogOrigins.api,
       posthogOrigins.assets,
+      // Google Analytics hits; gtag also sends a cookieless copy (credentials
+      // omitted, ads consent denied) to www.google.com/g/collect.
+      "https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.google.com",
     ],
     "object-src 'none'",
     "media-src 'self' blob:",
