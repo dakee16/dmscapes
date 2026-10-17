@@ -55,13 +55,16 @@
 .wall, .door { stroke-dashoffset: 0; }
 .wall { stroke-dasharray: 1; animation: trace 3.6s cubic-bezier(0.22, 0.7, 0.2, 1) infinite; }
 .door { animation: fade 3.6s ease infinite; animation-delay: 0.5s; }
-.bed, .desk, .rug {
+.bed, .desk, .rug, .pumpkin {
   transform-box: fill-box;
   transform-origin: center;
   animation: place 3.6s var(--ds-ease-back, ease) infinite both;
 }
 .desk { animation-delay: 0.18s; }
+.pumpkin { animation-delay: 0.27s; }
 .rug { animation-delay: 0.36s; }
+:global(:root[data-season="halloween"]) .rugFill { fill: var(--ds-pumpkin); opacity: 0.85; }
+:global(:root[data-season="halloween"]) .rugStripes { stroke: #1c1622; stroke-width: 2.6; }
 
 .wordmark {
   display: inline-flex;
