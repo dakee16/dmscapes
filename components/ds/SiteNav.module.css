@@ -69,6 +69,7 @@
   transform: scaleX(var(--nav-progress, 0));
   transform-origin: left;
 }
+:global(:root[data-season="halloween"]) .progress { background: var(--ds-pumpkin); } /* the logo dot stays blue */
 .ticks {
   --tick: color-mix(in srgb, var(--nav-ink) 42%, transparent);
   position: absolute;

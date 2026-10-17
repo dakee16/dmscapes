@@ -33,6 +33,10 @@
   --ds-void: #04040f;
   --ds-plan: #fbfaf6;
   --ds-line: rgba(22, 22, 29, 0.14);
+  /* Halloween season (design-handoff/halloween/plan.md) */
+  --ds-pumpkin: #ff7a1a;
+  --ds-pumpkin-ink: #a8420a; /* small orange text, 5.8:1 on paper */
+  --ds-grape: #4b2a6b;
 
   --ds-sans: var(--font-archivo), "Arial Narrow", Arial, sans-serif;
   --ds-serif: var(--font-fraunces), Georgia, serif;
@@ -40,8 +44,10 @@
 
   --ds-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ds-ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --ds-riso: 3px 2px 0 rgba(255, 79, 168, 0.85), -3px -2px 0 rgba(36, 73, 255, 0.4);
-  --ds-riso-sm: 2px 1.5px 0 rgba(255, 79, 168, 0.85), -2px -1.5px 0 rgba(36, 73, 255, 0.4);
+  /* The riso headline shadow: a tint (pink, pumpkin in the Halloween season) plus blue. */
+  --ds-riso-tint: rgba(255, 79, 168, 0.85);
+  --ds-riso: 3px 2px 0 var(--ds-riso-tint), -3px -2px 0 rgba(36, 73, 255, 0.4);
+  --ds-riso-sm: 2px 1.5px 0 var(--ds-riso-tint), -2px -1.5px 0 rgba(36, 73, 255, 0.4);
 
   /* Search bars show focus without a ring: they brighten and sit on a deeper shadow. */
   --ds-search-bg: rgba(255, 255, 255, 0.86);
@@ -62,6 +68,14 @@
     --ds-riso: var(--ds-riso-sm);
   }
 }
+
+/* ---------- Halloween season ----------
+   lib/season.ts sets <html data-season="halloween"> before paint. Season
+   pieces carry data-season-show (hidden otherwise); anything they replace
+   carries data-season-hide. Without the attribute nothing here applies. */
+:root[data-season="halloween"] { --ds-riso-tint: rgba(255, 122, 26, 0.85); }
+:root:not([data-season="halloween"]) [data-season-show] { display: none !important; }
+:root[data-season="halloween"] [data-season-hide] { display: none !important; }
 
 /* ---------- Page root ---------- */
 .ds {
