@@ -6,6 +6,8 @@ import Link from "next/link";
 import Headline from "@/components/ds/Headline";
 import { useScrub, span, easeOutExpo } from "@/components/ds/useScrub";
 import { useFrameSequence } from "@/components/ds/useFrameSequence";
+import { ArrowRight } from "@/components/ds/Icons";
+import { BatMark, PumpkinMark, SeasonLights } from "@/components/season/SeasonMarks";
 import HomeSearch from "./HomeSearch";
 import css from "./Home.module.css";
 
@@ -82,6 +84,13 @@ export default function HomeHero({
       <section className={css.hero} aria-labelledby="hero-title">
         <div ref={copy} className={css.heroCopy}>
           <div className={css.heroCopyIn}>
+            <Link href="/plan?vibe=spooky" className={css.seasonChip} data-season-show="" data-reveal="load">
+              <PumpkinMark size={26} stem="green" />
+              <span>
+                Spooky Season vibe <span className={css.seasonFree}>· free till Oct 31</span>
+              </span>
+              <ArrowRight size={16} className={css.seasonArrow} />
+            </Link>
             <p className="ds-eyebrow" data-reveal="load">
               AI dorm room planner <span className={css.wide}>· {schoolCount} schools · {hallCount.toLocaleString("en-US")} halls</span>
               <span className={css.narrow}>· free to start</span>
@@ -125,6 +134,13 @@ export default function HomeHero({
           {seq.enabled && (
             <canvas ref={canvas} className={css.heroCanvas} data-show={seq.showing || undefined} aria-hidden="true" />
           )}
+          {/* Halloween: lights draped across the frame (not the room), so the scrub doesn't move them */}
+          <div className={css.seasonDecor} data-season-show="">
+            <SeasonLights drape="wide" className={css.lightsWide} />
+            <SeasonLights drape="narrow" className={css.lightsNarrow} />
+            <BatMark className={css.bat1} />
+            <BatMark className={css.bat2} />
+          </div>
         </div>
         <p ref={caption} className={css.heroCaption}>
           Real room ·{" "}
