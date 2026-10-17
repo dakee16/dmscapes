@@ -8768,5 +8768,750 @@
     "alternative_ids": [],
     "description": "A quiet clip fan with four speeds and a soft night light. Rotates a full turn from any bed rail.",
     "active": true
+  },
+  {
+    "id": "spk-budget-ambient-01",
+    "name": "Joomer Orange & Purple Halloween String Lights, 33 ft",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "budget",
+    "price": 7.99,
+    "amazon_asin": "B08XWZBKPZ",
+    "affiliate_url": "https://www.amazon.com/dp/B08XWZBKPZ?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71wkKMXRCvL._AC_SL1041_.jpg",
+    "width_ft": 33,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "orange purple",
+    "rating": 4.4,
+    "review_count": 3202,
+    "alternative_ids": [
+      "spk-mid-ambient-01",
+      "spk-prem-ambient-01",
+      "spk-mid-ambient-02",
+      "spk-budget-ambient-02"
+    ],
+    "description": "100 orange and purple LEDs on copper wire, battery powered. 33 ft to run along a wall.",
+    "active": true
+  },
+  {
+    "id": "spk-mid-ambient-01",
+    "name": "Joomer Orange & Purple Halloween String Lights, 66 ft",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "mid",
+    "price": 11.98,
+    "amazon_asin": "B08XWXHLVF",
+    "affiliate_url": "https://www.amazon.com/dp/B08XWXHLVF?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81fCylaEEfL._AC_SL1500_.jpg",
+    "width_ft": 66,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "orange purple",
+    "rating": 4.4,
+    "review_count": 5148,
+    "alternative_ids": [
+      "spk-budget-ambient-01",
+      "spk-prem-ambient-01",
+      "spk-mid-ambient-02",
+      "spk-budget-ambient-02"
+    ],
+    "description": "200 orange and purple LEDs on a battery pack, twice the run of the 33 ft string.",
+    "active": true
+  },
+  {
+    "id": "spk-prem-ambient-01",
+    "name": "JOYIN Ghost & Pumpkin String Lights, 19.7 ft",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "premium",
+    "price": 16.99,
+    "amazon_asin": "B0GWLNV2R2",
+    "affiliate_url": "https://www.amazon.com/dp/B0GWLNV2R2?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81ajc6kMh7L._AC_SL1500_.jpg",
+    "width_ft": 19.7,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "multicolor",
+    "rating": 4.5,
+    "review_count": 729,
+    "alternative_ids": [
+      "spk-budget-ambient-01",
+      "spk-mid-ambient-01",
+      "spk-mid-ambient-02",
+      "spk-budget-ambient-02"
+    ],
+    "description": "30 LED 3D ghosts and pumpkins with a timer and 8 lighting modes. Battery powered.",
+    "active": true
+  },
+  {
+    "id": "spk-budget-walldecor-01",
+    "name": "LUDILO 3D Bat Wall Stickers, 100 pcs",
+    "category": "wall_decor",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "budget",
+    "price": 6.99,
+    "amazon_asin": "B07TLWRZTT",
+    "affiliate_url": "https://www.amazon.com/dp/B07TLWRZTT?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71xc-Y3LdVL._AC_SL1500_.jpg",
+    "width_ft": 3,
+    "length_ft": 0.05,
+    "height_ft": 2,
+    "color": "black",
+    "rating": 4.5,
+    "review_count": 10150,
+    "alternative_ids": [
+      "spk-mid-walldecor-01",
+      "spk-prem-walldecor-01",
+      "spk-budget-walldecor-02",
+      "spk-budget-walldecor-03"
+    ],
+    "description": "Removable black PVC bats in assorted sizes. Layout size: arranged as a 3 × 2 ft cluster.",
+    "active": true,
+    "layout_size": true
+  },
+  {
+    "id": "spk-mid-walldecor-01",
+    "name": "Pumpkin LED Neon Sign",
+    "category": "wall_decor",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "mid",
+    "price": 9.99,
+    "amazon_asin": "B0CCY118D3",
+    "affiliate_url": "https://www.amazon.com/dp/B0CCY118D3?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/713gmzLwX5L._AC_SL1500_.jpg",
+    "width_ft": 0.78,
+    "length_ft": 0.08,
+    "height_ft": 0.69,
+    "color": "orange",
+    "rating": 4.5,
+    "review_count": 571,
+    "alternative_ids": [
+      "spk-budget-walldecor-01",
+      "spk-prem-walldecor-01",
+      "spk-budget-walldecor-02",
+      "spk-budget-walldecor-03"
+    ],
+    "description": "A glowing jack-o'-lantern neon sign, 9.3 × 8.3 in.",
+    "active": true
+  },
+  {
+    "id": "spk-prem-walldecor-01",
+    "name": "LUDILO 48 Bat Wall Stickers + 12 Rechargeable Spotlights",
+    "category": "wall_decor",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "premium",
+    "price": 28.49,
+    "amazon_asin": "B0H3F7Z4QW",
+    "affiliate_url": "https://www.amazon.com/dp/B0H3F7Z4QW?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81fCOsQaNPL._AC_SL1500_.jpg",
+    "width_ft": 3,
+    "length_ft": 0.05,
+    "height_ft": 2,
+    "color": "black",
+    "rating": 4.5,
+    "review_count": 10150,
+    "alternative_ids": [
+      "spk-budget-walldecor-01",
+      "spk-mid-walldecor-01",
+      "spk-budget-walldecor-02",
+      "spk-budget-walldecor-03"
+    ],
+    "description": "Removable bats lit by rechargeable LED spotlights with a remote. Layout size: arranged as a 3 × 2 ft cluster.",
+    "active": true,
+    "layout_size": true
+  },
+  {
+    "id": "spk-budget-throw-01",
+    "name": "Cute Halloween Throw Blanket, 40 × 60 in",
+    "category": "throw",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B0FF92P4G1",
+    "affiliate_url": "https://www.amazon.com/dp/B0FF92P4G1?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71D8j0lKuhL._AC_SL1500_.jpg",
+    "width_ft": 3.33,
+    "length_ft": 5,
+    "height_ft": null,
+    "color": "black orange",
+    "rating": 4.6,
+    "review_count": 2717,
+    "alternative_ids": [
+      "spk-mid-throw-01",
+      "spk-prem-throw-01",
+      "spk-mid-throw-02"
+    ],
+    "description": "A soft polyester throw with a cute Halloween print.",
+    "active": true
+  },
+  {
+    "id": "spk-mid-throw-01",
+    "name": "Halloween Fleece Throw: Witch Hats, Bats & Pumpkins, 50 × 60 in",
+    "category": "throw",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "mid",
+    "price": 19.99,
+    "amazon_asin": "B08FJJ6FZD",
+    "affiliate_url": "https://www.amazon.com/dp/B08FJJ6FZD?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81IxIJ9SiWL._AC_SL1500_.jpg",
+    "width_ft": 4.17,
+    "length_ft": 5,
+    "height_ft": null,
+    "color": "white orange black",
+    "rating": 4.8,
+    "review_count": 1337,
+    "alternative_ids": [
+      "spk-budget-throw-01",
+      "spk-prem-throw-01",
+      "spk-mid-throw-02"
+    ],
+    "description": "Polyester fleece printed with witch hats, bats, webs and pumpkins.",
+    "active": true
+  },
+  {
+    "id": "spk-prem-throw-01",
+    "name": "Touchat Halloween Sherpa Throw, 60 × 70 in",
+    "category": "throw",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "premium",
+    "price": 25.99,
+    "amazon_asin": "B0B2P291LX",
+    "affiliate_url": "https://www.amazon.com/dp/B0B2P291LX?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81KGRq5qFNL._AC_SL1500_.jpg",
+    "width_ft": 5,
+    "length_ft": 5.83,
+    "height_ft": null,
+    "color": "orange",
+    "rating": 4.8,
+    "review_count": 6492,
+    "alternative_ids": [
+      "spk-budget-throw-01",
+      "spk-mid-throw-01",
+      "spk-mid-throw-02"
+    ],
+    "description": "Fuzzy orange sherpa fleece, the biggest throw of the three.",
+    "active": true
+  },
+  {
+    "id": "spk-budget-rug-01",
+    "name": "Orange & Black Plaid Rug, 28 × 43 in",
+    "category": "rug",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B0C5CFL9R9",
+    "affiliate_url": "https://www.amazon.com/dp/B0C5CFL9R9?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/91EuWgNyixL._AC_SL1500_.jpg",
+    "width_ft": 2.33,
+    "length_ft": 3.58,
+    "height_ft": 0.03,
+    "color": "orange black",
+    "rating": 4.7,
+    "review_count": 1378,
+    "alternative_ids": [
+      "spk-mid-rug-01",
+      "spk-prem-rug-01",
+      "spk-mid-rug-02",
+      "spk-prem-rug-02"
+    ],
+    "description": "Hand-woven, washable orange and black plaid for the open floor.",
+    "active": true
+  },
+  {
+    "id": "spk-mid-rug-01",
+    "name": "Halloween Buffalo Plaid Rug, 3 × 5 ft",
+    "category": "rug",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "mid",
+    "price": 14.39,
+    "amazon_asin": "B0D3GJPN1C",
+    "affiliate_url": "https://www.amazon.com/dp/B0D3GJPN1C?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81CEnogwk9L._AC_SL1500_.jpg",
+    "width_ft": 3,
+    "length_ft": 5,
+    "height_ft": 0.03,
+    "color": "orange black",
+    "rating": 4.8,
+    "review_count": 816,
+    "alternative_ids": [
+      "spk-budget-rug-01",
+      "spk-prem-rug-01",
+      "spk-mid-rug-02",
+      "spk-prem-rug-02"
+    ],
+    "description": "Orange and black cotton buffalo plaid, low pile.",
+    "active": true
+  },
+  {
+    "id": "spk-prem-rug-01",
+    "name": "IOHOUZE Orange & Black Striped Rug, 4 × 6 ft",
+    "category": "rug",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "premium",
+    "price": 29.99,
+    "amazon_asin": "B0FCYC7GW7",
+    "affiliate_url": "https://www.amazon.com/dp/B0FCYC7GW7?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81BCTjHH-4L._AC_SL1500_.jpg",
+    "width_ft": 4,
+    "length_ft": 6,
+    "height_ft": 0.03,
+    "color": "orange black",
+    "rating": 4.6,
+    "review_count": 5271,
+    "alternative_ids": [
+      "spk-budget-rug-01",
+      "spk-mid-rug-01",
+      "spk-mid-rug-02",
+      "spk-prem-rug-02"
+    ],
+    "description": "Washable orange and black stripes, low pile.",
+    "active": true
+  },
+  {
+    "id": "spk-budget-deskacc-01",
+    "name": "Pumpkin Night Light",
+    "category": "desk_accessories",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B0D8TF2V93",
+    "affiliate_url": "https://www.amazon.com/dp/B0D8TF2V93?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61XYbRXc+gL._AC_SL1500_.jpg",
+    "width_ft": 0.34,
+    "length_ft": 0.32,
+    "height_ft": 0.27,
+    "color": "orange",
+    "rating": 4.8,
+    "review_count": 1255,
+    "alternative_ids": [
+      "spk-mid-deskacc-01",
+      "spk-prem-deskacc-01"
+    ],
+    "description": "A battery-powered jack-o'-lantern light for the desk, 4.1 in wide.",
+    "active": true
+  },
+  {
+    "id": "spk-mid-deskacc-01",
+    "name": "Halloween Pumpkin Night Light, Orange",
+    "category": "desk_accessories",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "mid",
+    "price": 11.36,
+    "amazon_asin": "B0H86PR5FN",
+    "affiliate_url": "https://www.amazon.com/dp/B0H86PR5FN?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61d6xOC59gL._AC_SL1500_.jpg",
+    "width_ft": 0.27,
+    "length_ft": 0.34,
+    "height_ft": 0.32,
+    "color": "orange",
+    "rating": 4.8,
+    "review_count": 6134,
+    "alternative_ids": [
+      "spk-budget-deskacc-01",
+      "spk-prem-deskacc-01"
+    ],
+    "description": "A battery-powered orange jack-o'-lantern, just under 4 in tall.",
+    "active": true
+  },
+  {
+    "id": "spk-prem-deskacc-01",
+    "name": "Mercury Glass Pumpkin Light",
+    "category": "desk_accessories",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "premium",
+    "price": 21.25,
+    "amazon_asin": "B07S83B19N",
+    "affiliate_url": "https://www.amazon.com/dp/B07S83B19N?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/8170fR2N2dL._AC_SL1500_.jpg",
+    "width_ft": 0.46,
+    "length_ft": 0.46,
+    "height_ft": 0.5,
+    "color": "amber gold",
+    "rating": 4.4,
+    "review_count": 648,
+    "alternative_ids": [
+      "spk-budget-deskacc-01",
+      "spk-mid-deskacc-01"
+    ],
+    "description": "A warm gold mercury glass pumpkin with an LED inside, two lighting modes and a 6-hour timer.",
+    "active": true
+  },
+  {
+    "id": "spk-budget-accent-01",
+    "name": "Amagic Halloween LED Tea Lights, 12 pack",
+    "category": "accent",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "budget",
+    "price": 6.39,
+    "amazon_asin": "B0H4V24JRG",
+    "affiliate_url": "https://www.amazon.com/dp/B0H4V24JRG?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71mVQkLGzML._AC_SL1500_.jpg",
+    "width_ft": 0.13,
+    "length_ft": 0.13,
+    "height_ft": 0.11,
+    "color": "multicolor",
+    "rating": 4.7,
+    "review_count": 3861,
+    "alternative_ids": [
+      "spk-mid-accent-01",
+      "spk-prem-accent-01",
+      "spk-mid-accent-02",
+      "spk-mid-accent-03"
+    ],
+    "description": "Flameless multicolor tea lights with DIY Halloween stickers. Battery powered.",
+    "active": true
+  },
+  {
+    "id": "spk-mid-accent-01",
+    "name": "Rytinazzz Ghost Night Light",
+    "category": "accent",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "mid",
+    "price": 16.99,
+    "amazon_asin": "B0FDWQ9M5J",
+    "affiliate_url": "https://www.amazon.com/dp/B0FDWQ9M5J?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61SJiAYECcL._AC_SL1500_.jpg",
+    "width_ft": 0.32,
+    "length_ft": 0.36,
+    "height_ft": 0.32,
+    "color": "white",
+    "rating": 4.7,
+    "review_count": 1019,
+    "alternative_ids": [
+      "spk-budget-accent-01",
+      "spk-prem-accent-01",
+      "spk-mid-accent-02",
+      "spk-mid-accent-03"
+    ],
+    "description": "A squishy ghost lamp with tap control and a timer, USB rechargeable.",
+    "active": true
+  },
+  {
+    "id": "spk-prem-accent-01",
+    "name": "EverBrite Collapsible Jack-O'-Lanterns, 6 pack",
+    "category": "accent",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "premium",
+    "price": 33.99,
+    "amazon_asin": "B0C7GDGFK8",
+    "affiliate_url": "https://www.amazon.com/dp/B0C7GDGFK8?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71A+lCVoe5L._AC_SL1500_.jpg",
+    "width_ft": 0.26,
+    "length_ft": 0.26,
+    "height_ft": 0.26,
+    "color": "orange",
+    "rating": 4.8,
+    "review_count": 897,
+    "alternative_ids": [
+      "spk-budget-accent-01",
+      "spk-mid-accent-01",
+      "spk-mid-accent-02",
+      "spk-mid-accent-03"
+    ],
+    "description": "Six battery LED jack-o'-lanterns that fold flat after Halloween.",
+    "active": true
+  },
+  {
+    "id": "spk-tapestry-01",
+    "name": "HVEST Haunted Woods Halloween Tapestry, 60 × 40 in",
+    "category": "tapestry",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "budget",
+    "price": 8.89,
+    "amazon_asin": "B07FZHBB69",
+    "affiliate_url": "https://www.amazon.com/dp/B07FZHBB69?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/8110wxNKPoL._AC_SL1500_.jpg",
+    "width_ft": 5,
+    "length_ft": 0.1,
+    "height_ft": 3.33,
+    "color": "blue",
+    "rating": 4.5,
+    "review_count": 559,
+    "alternative_ids": [],
+    "description": "A moonlit haunted-woods scene with graves and pumpkins. Lightweight polyester.",
+    "active": true
+  },
+  {
+    "id": "spk-mid-ambient-02",
+    "name": "Runleo Pumpkin String Lights, 10 ft",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "mid",
+    "price": 14.99,
+    "amazon_asin": "B09649HG8J",
+    "affiliate_url": "https://www.amazon.com/dp/B09649HG8J?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61+S9-o2JfL._AC_SL1500_.jpg",
+    "width_ft": 10,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "orange",
+    "rating": 4.3,
+    "review_count": 565,
+    "alternative_ids": [
+      "spk-budget-ambient-01",
+      "spk-mid-ambient-01",
+      "spk-prem-ambient-01",
+      "spk-budget-ambient-02"
+    ],
+    "description": "20 3D pumpkin LEDs, battery powered.",
+    "active": true
+  },
+  {
+    "id": "spk-budget-ambient-02",
+    "name": "JMEXSUSS Orange & Purple Globe Lights, 33 ft",
+    "category": "ambient_lighting",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B0D6B5X4R9",
+    "affiliate_url": "https://www.amazon.com/dp/B0D6B5X4R9?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81E6WzNuV1L._AC_SL1500_.jpg",
+    "width_ft": 33,
+    "length_ft": null,
+    "height_ft": null,
+    "color": "orange purple",
+    "rating": 4.4,
+    "review_count": 1264,
+    "alternative_ids": [
+      "spk-budget-ambient-01",
+      "spk-mid-ambient-01",
+      "spk-prem-ambient-01",
+      "spk-mid-ambient-02"
+    ],
+    "description": "100 LED globe bulbs in orange and purple with a remote. Plugs in.",
+    "active": true
+  },
+  {
+    "id": "spk-budget-walldecor-02",
+    "name": "TDHDIKE 3D Bat Wall Stickers, 140 pcs",
+    "category": "wall_decor",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "budget",
+    "price": 5.39,
+    "amazon_asin": "B0B1H2KZCC",
+    "affiliate_url": "https://www.amazon.com/dp/B0B1H2KZCC?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71ka1WYb0qL._AC_SL1500_.jpg",
+    "width_ft": 3,
+    "length_ft": 0.05,
+    "height_ft": 2,
+    "color": "black",
+    "rating": 4.5,
+    "review_count": 2109,
+    "alternative_ids": [
+      "spk-budget-walldecor-01",
+      "spk-mid-walldecor-01",
+      "spk-prem-walldecor-01",
+      "spk-budget-walldecor-03"
+    ],
+    "description": "Removable black PVC bats. Layout size: arranged as a 3 × 2 ft cluster.",
+    "active": true,
+    "layout_size": true
+  },
+  {
+    "id": "spk-budget-walldecor-03",
+    "name": "Coogam 3D Bat Wall Stickers, 60 pcs",
+    "category": "wall_decor",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "budget",
+    "price": 9.99,
+    "amazon_asin": "B07TRCJJS3",
+    "affiliate_url": "https://www.amazon.com/dp/B07TRCJJS3?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61QODKFNKOL._AC_SL1500_.jpg",
+    "width_ft": 3,
+    "length_ft": 0.05,
+    "height_ft": 2,
+    "color": "black",
+    "rating": 4.4,
+    "review_count": 8148,
+    "alternative_ids": [
+      "spk-budget-walldecor-01",
+      "spk-mid-walldecor-01",
+      "spk-prem-walldecor-01",
+      "spk-budget-walldecor-02"
+    ],
+    "description": "Removable black PVC bats in four sizes. Layout size: arranged as a 3 × 2 ft cluster.",
+    "active": true,
+    "layout_size": true
+  },
+  {
+    "id": "spk-mid-throw-02",
+    "name": "TEHALK Cute Halloween Throw Blanket, 40 × 60 in",
+    "category": "throw",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "mid",
+    "price": 13.99,
+    "amazon_asin": "B0H8TTGKS9",
+    "affiliate_url": "https://www.amazon.com/dp/B0H8TTGKS9?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/8142ZCjd6gL._AC_SL1500_.jpg",
+    "width_ft": 3.33,
+    "length_ft": 5,
+    "height_ft": null,
+    "color": "black orange",
+    "rating": 4.4,
+    "review_count": 6899,
+    "alternative_ids": [
+      "spk-budget-throw-01",
+      "spk-mid-throw-01",
+      "spk-prem-throw-01"
+    ],
+    "description": "A cute pumpkin-print Halloween throw.",
+    "active": true
+  },
+  {
+    "id": "spk-mid-rug-02",
+    "name": "KILOCOCO Orange & Black Striped Rug, 2.3 × 3.6 ft",
+    "category": "rug",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "mid",
+    "price": 15.99,
+    "amazon_asin": "B0FDWYJNFX",
+    "affiliate_url": "https://www.amazon.com/dp/B0FDWYJNFX?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/81nhzLLP6gL._AC_SL1500_.jpg",
+    "width_ft": 2.29,
+    "length_ft": 3.58,
+    "height_ft": 0.03,
+    "color": "orange black",
+    "rating": 4.7,
+    "review_count": 4558,
+    "alternative_ids": [
+      "spk-budget-rug-01",
+      "spk-mid-rug-01",
+      "spk-prem-rug-01",
+      "spk-prem-rug-02"
+    ],
+    "description": "Woven orange and black stripes, low pile.",
+    "active": true
+  },
+  {
+    "id": "spk-prem-rug-02",
+    "name": "MUBIN Orange & Black Buffalo Plaid Rug, 4 × 6 ft",
+    "category": "rug",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "premium",
+    "price": 31.99,
+    "amazon_asin": "B0B5Q7SDYL",
+    "affiliate_url": "https://www.amazon.com/dp/B0B5Q7SDYL?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/815FkrEUkYL._AC_SL1500_.jpg",
+    "width_ft": 4,
+    "length_ft": 6,
+    "height_ft": 0.03,
+    "color": "orange black",
+    "rating": 4.7,
+    "review_count": 13334,
+    "alternative_ids": [
+      "spk-budget-rug-01",
+      "spk-mid-rug-01",
+      "spk-prem-rug-01",
+      "spk-mid-rug-02"
+    ],
+    "description": "Washable cotton buffalo plaid in orange and black.",
+    "active": true
+  },
+  {
+    "id": "spk-mid-accent-02",
+    "name": "Eldnacele Ghost Projection Lantern",
+    "category": "accent",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "mid",
+    "price": 18.99,
+    "amazon_asin": "B09ZK3HJ3H",
+    "affiliate_url": "https://www.amazon.com/dp/B09ZK3HJ3H?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/71UWF9qFsOL._AC_SL1500_.jpg",
+    "width_ft": 0.36,
+    "length_ft": 0.36,
+    "height_ft": 0.89,
+    "color": "black",
+    "rating": 4.7,
+    "review_count": 3925,
+    "alternative_ids": [
+      "spk-budget-accent-01",
+      "spk-mid-accent-01",
+      "spk-prem-accent-01",
+      "spk-mid-accent-03"
+    ],
+    "description": "A lantern that swirls ghost projections, with a 6-hour timer. Flameless.",
+    "active": true
+  },
+  {
+    "id": "spk-mid-accent-03",
+    "name": "Eldnacele Ghost Snow Globe Lantern",
+    "category": "accent",
+    "style_tags": [
+      "spooky"
+    ],
+    "budget_tier": "mid",
+    "price": 16.99,
+    "amazon_asin": "B07CGB18NW",
+    "affiliate_url": "https://www.amazon.com/dp/B07CGB18NW?tag=dailyama09e85-20",
+    "image_url": "https://m.media-amazon.com/images/I/61o870uBNEL._AC_SL1500_.jpg",
+    "width_ft": 0.33,
+    "length_ft": 0.33,
+    "height_ft": 0.83,
+    "color": "black",
+    "rating": 4.4,
+    "review_count": 2362,
+    "alternative_ids": [
+      "spk-budget-accent-01",
+      "spk-mid-accent-01",
+      "spk-prem-accent-01",
+      "spk-mid-accent-02"
+    ],
+    "description": "A flameless snow globe lantern with floating ghosts. Battery powered.",
+    "active": true
   }
 ]

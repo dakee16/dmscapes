@@ -8,7 +8,7 @@ import { usePlannerStore } from "@/lib/store";
 import { syncProductFurniture } from "@/lib/product-model";
 import { placementIssues, studioSettings } from "@/lib/studio";
 import { useStudioUI } from "@/components/studio-ui/StudioUI";
-import { categoryNoun, dollars, price, sizeLabel } from "@/components/studio-ui/list";
+import { categoryNoun, dollars, price, productSize } from "@/components/studio-ui/list";
 import { CheckIcon, ChevronLeft, PlusIcon } from "@/components/studio-ui/icons";
 import ProductImage from "./ProductImage";
 import s from "./ShoppingList.module.css";
@@ -76,7 +76,7 @@ export default function SwapPanel({ product, total, budget }: { product: Product
   }
   const after = preview ? total + preview.price - product.price : total;
   const left = budget - after;
-  const size = sizeLabel(product.width_ft, product.length_ft);
+  const size = productSize(product);
 
   return (
     <section className={`${s.list} ${s.swap}`} data-sheet="full" aria-labelledby="swap-title">
@@ -131,7 +131,7 @@ export default function SwapPanel({ product, total, budget }: { product: Product
                   <span className={s.optionInfo}>
                     <button type="button" className={s.optionName} aria-pressed={chosen} onClick={() => show(alt)}
                       aria-label={`Preview ${alt.name} on the plan`}>{alt.name}</button>
-                    <span className={s.detail}>{sizeLabel(alt.width_ft, alt.length_ft) ?? "Size not listed"} · {fit}</span>
+                    <span className={s.detail}>{productSize(alt) ?? "Size not listed"} · {fit}</span>
                     <span className={s.delta} data-up={delta > 0 || undefined}>
                       {delta > 0 ? "+" : delta < 0 ? "−" : "±"}{dollars(Math.abs(delta))} · {spare < 0 ? `${dollars(-spare)} over` : `${dollars(spare)} to spare`}
                     </span>

@@ -62,10 +62,21 @@ export function sizeLabel(w: number | null | undefined, l: number | null | undef
 
 const BED_SIZES: Record<string, string> = { twin_xl: "Twin XL", twin: "Twin", full: "Full", full_xl: "Full XL", queen: "Queen" };
 
+/**
+ * A product's size as shoppers read it: wall pieces by width × height, floor
+ * and desk pieces by their footprint. Sticker sets have no fixed size, so the
+ * catalog gives the area they're laid out over, labelled as such.
+ */
+export function productSize(p: Product): string | null {
+  const wall = p.category === "wall_decor" || p.category === "tapestry";
+  const size = wall && p.height_ft ? sizeLabel(p.width_ft, p.height_ft) : sizeLabel(p.width_ft, p.length_ft);
+  return size && p.layout_size ? `Layout size ${size}` : size;
+}
+
 /** The short line under a product name: its size where the catalog has one. */
 export function productDetail(p: Product): string {
   if (p.category === "bedding") return `${CATEGORY_LABELS.bedding} · ${BED_SIZES[p.bed_size ?? "twin_xl"]}`;
-  const size = sizeLabel(p.width_ft, p.length_ft);
+  const size = productSize(p);
   if (size) return size;
   if (p.height_ft) return `${Math.round(p.height_ft * 12)}″ tall`;
   return CATEGORY_LABELS[p.category] ?? p.category;

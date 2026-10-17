@@ -30,6 +30,8 @@ export interface Product {
   active: boolean;
   /** Bedding only: which mattress size this set fits. Absent = twin_xl. */
   bed_size?: BedSize;
+  /** The size is the area a set (wall stickers) is laid out over, not the product itself. */
+  layout_size?: boolean;
 }
 
 export type StyleId =

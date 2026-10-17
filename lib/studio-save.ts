@@ -33,7 +33,8 @@ function products(value:unknown):Product[]|null {
     const p=raw as Record<string,unknown>;
     if(typeof p.id!=="string"||p.id.length>80||typeof p.name!=="string"||p.name.length>300||!categories.has(String(p.category))||!finite(p.price,0,100000)||!https(p.affiliate_url,true)||!https(p.image_url))return null;
     const dims:Record<string,number|null>={};
-    for(const key of ["width_ft","length_ft","height_ft"]){if(p[key]!=null&&!finite(p[key],0,60))return null;dims[key]=p[key] as number|null??null;}
+    // 100 ft: a light string's length is its real size (the catalog has a 66 ft one).
+    for(const key of ["width_ft","length_ft","height_ft"]){if(p[key]!=null&&!finite(p[key],0,100))return null;dims[key]=p[key] as number|null??null;}
     out.push({id:p.id,name:p.name,category:p.category as ProductCategory,price:p.price as number,
       affiliate_url:p.affiliate_url,image_url:p.image_url,amazon_asin:typeof p.amazon_asin==="string"?p.amazon_asin.slice(0,20):"",
       width_ft:dims.width_ft,length_ft:dims.length_ft,height_ft:dims.height_ft,
@@ -41,7 +42,8 @@ function products(value:unknown):Product[]|null {
       color:typeof p.color==="string"?p.color.slice(0,60):"",rating:finite(p.rating,0,5)?p.rating as number:0,
       review_count:finite(p.review_count,0,100000000)?p.review_count as number:0,alternative_ids:[],
       description:typeof p.description==="string"?p.description.slice(0,1000):"",active:true,
-      ...(["twin","twin_xl","full","full_xl"].includes(String(p.bed_size))?{bed_size:p.bed_size as Product["bed_size"]}:{})});
+      ...(["twin","twin_xl","full","full_xl"].includes(String(p.bed_size))?{bed_size:p.bed_size as Product["bed_size"]}:{}),
+      ...(p.layout_size===true?{layout_size:true}:{})});
   }
   return out;
 }
