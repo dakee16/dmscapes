@@ -37,7 +37,7 @@ import { useCanvasDock } from "./CanvasControlsContext";
 import CanvasToolRail from "./CanvasToolRail";
 import { brandImage } from "@/lib/brand-image";
 import { backSides } from "@/lib/studio";
-import { throwIsBlanket } from "@/lib/product-model";
+import { productVisual, throwIsBlanket } from "@/lib/product-model";
 import FurnitureGlyph, { RoomGlyph, type BackSide } from "./FurnitureGlyph";
 import RotationHandle from "./RotationHandle";
 import { feetLabel, fitViewport, placedCoordinate, zoomAt } from "./viewport";
@@ -979,6 +979,10 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
               const highlighted = !selected && !readOnly && (selectedItemId === f.id ||
                 (activeCategory !== null && furnitureCategory(f) === activeCategory));
               const entry = entryFor?.(f);
+              // Halloween pieces draw as what they are: jack-o'-lanterns, a ghost or ghost lantern, bats, coloured bulbs.
+              const visual = entry ? productVisual(entry.product) : undefined;
+              const seasonal = { shape: visual?.kind === "pumpkin" ? "pumpkin" : visual?.kind === "lantern" ? visual.variant : visual?.variant === "bats" ? "bats" : undefined,
+                count: visual?.count, tint: visual?.kind === "pumpkin" ? visual.color : undefined, bulbs: visual?.bulbs?.join(",") };
               const handle = selected && canEditItem && !!onSetRotation && !narrow && !panMode && !dragging;
               return (
                 <Group
@@ -1021,8 +1025,8 @@ const RoomCanvas = forwardRef<RoomCanvasHandle, RoomCanvasProps>(function RoomCa
                   <Group x={fp.w*pxFt/2} y={fp.h*pxFt/2} offsetX={w/2} offsetY={h/2} rotation={f.rotation_deg}>
                   <Group opacity={isHidden ? .16 : 1} listening={false}>{roomView
                     ? <RoomGlyph item={f} scale={pxFt} theme={theme} dressed={f.type === "bed" && !!entry} books={f.type === "shelf" && !!entry && /book/i.test(entry.product.name)}
-                        blanket={blanket(f)} back={backs.get(f.id)} detail={Math.min(w, h) * zoom >= 28} bucket={bucket} />
-                    : <FurnitureGlyph item={f} scale={pxFt} palette={palette} dressed={f.type === "bed" && !!entry} blanket={blanket(f)} />}</Group>
+                        blanket={blanket(f)} back={backs.get(f.id)} detail={Math.min(w, h) * zoom >= 28} bucket={bucket} {...seasonal} />
+                    : <FurnitureGlyph item={f} scale={pxFt} palette={palette} dressed={f.type === "bed" && !!entry} blanket={blanket(f)} {...seasonal} />}</Group>
                   {/* Hit area (and the dashed outline of a hidden piece). */}
                   <Rect
                     width={w}

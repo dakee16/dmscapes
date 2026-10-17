@@ -10,7 +10,17 @@ const COLORS: Record<string, string> = {
   pink:"#e5adc0", blush:"#deb3af", rose:"#bd8091", purple:"#ab96c0", lavender:"#c6b4d6",
   orange:"#c57543", brown:"#8c674b", walnut:"#75523d", yellow:"#e2bb62", mustard:"#c1a03d",
   red:"#ab5050", natural:"#bea27d", bamboo:"#c6ab7b", clear:"#cfdad8", houndstooth:"#c4c2b9",
+  amber:"#d39a45",
 };
+
+/** Bulb colours a light string names ("orange purple", "multicolor"). White and warm strings keep the room's lamplight. */
+const BULB: Record<string, string> = { orange:"#ff7a1a", purple:"#8e63c9", yellow:"#ffc24b", green:"#7bbf5a", red:"#e0483e", blue:"#5b7cff", pink:"#ff7fbf" };
+function bulbColors(product: Product): string[] | undefined {
+  const words = product.color.toLowerCase().split(/[^a-z]+/);
+  if (words.some(word => word.startsWith("multi"))) return [BULB.orange, BULB.purple, BULB.green, BULB.yellow];
+  const out = words.map(word => BULB[word]).filter(Boolean);
+  return out.length ? out : undefined;
+}
 
 export function productColor(product: Product): string | undefined {
   if (/^#[0-9a-f]{6}$/i.test(product.color)) return product.color;
@@ -21,17 +31,20 @@ export function productColor(product: Product): string | undefined {
 /** ponytail: catalog text gives approximate silhouettes; manufacturer meshes are needed for exact replicas. */
 export function productVisual(product: Product) {
   const text = `${product.name} ${product.description}`.toLowerCase();
+  // The Halloween kit's own pieces: a jack-o'-lantern, a ghost or ghost lantern, bats on the wall.
+  const pumpkin = /pumpkin|jack[- ]?o'?[- ]?lantern/.test(text), ghost = /ghost|lantern/.test(text);
+  const seasonal = (product.style_tags as string[]).includes("spooky");
   let kind: string;
   switch (product.category) {
     case "bedding": kind = "bed"; break;
     case "rug": kind = "rug"; break;
     case "desk_lamp": kind = "lamp"; break;
     case "ambient_lighting": kind = /lamp|projector/.test(text) ? "lamp" : /disco/.test(text) ? "disco" : "lights"; break;
-    case "wall_decor": case "tapestry": kind = /shel(f|ves)/.test(text) ? "wall-shelf" : /macrame/.test(text) ? "macrame" : /neon|light/.test(text) ? "lights" : "art"; break;
+    case "wall_decor": case "tapestry": kind = /\bbats?\b/.test(text) ? "art" : /shel(f|ves)/.test(text) ? "wall-shelf" : /macrame/.test(text) ? "macrame" : /neon|light/.test(text) ? "lights" : "art"; break;
     case "storage": kind = /ottoman/.test(text) ? "ottoman" : /drawer/.test(text) ? "dresser" : /basket|cube|seagrass|wicker/.test(text) ? "basket" : "storage"; break;
     case "throw": kind = /pillow/.test(text) ? "pillow" : "blanket"; break;
     case "curtains": kind = "curtains"; break;
-    case "desk_accessories": case "desk_organizer": kind = /mat|pad/.test(text) ? "desk-mat" : /stand|riser/.test(text) ? "riser" : "organizer"; break;
+    case "desk_accessories": case "desk_organizer": kind = pumpkin ? "pumpkin" : /mat|pad/.test(text) ? "desk-mat" : /stand|riser/.test(text) ? "riser" : "organizer"; break;
     case "mirror": kind = "mirror"; break;
     case "laundry_hamper": kind = "hamper"; break;
     case "power_strip": kind = "power-strip"; break;
@@ -39,16 +52,24 @@ export function productVisual(product: Product) {
     case "towel_caddy": kind = /towel set/.test(text) ? "towels" : "caddy"; break;
     case "plant": kind = "plant"; break;
     case "clip_fan": kind = "fan"; break;
-    default: kind = /plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor";
+    default: kind = pumpkin ? "pumpkin" : ghost ? "lantern" : /plant|tree|monstera|pothos|eucalyptus/.test(text) ? "plant" : /candle|tea ?light/.test(text) ? "candle" : /disco|mirror ball/.test(text) ? "disco" : /pillow/.test(text) ? "pillow" : /book/.test(text) ? "books" : /projector|lamp|diffuser/.test(text) ? "lamp" : "decor";
   }
   const variant = kind === "lamp"
     ? /mushroom/.test(text) ? "mushroom" : /banker/.test(text) ? "banker" : /lava/.test(text) ? "lava" : /salt/.test(text) ? "salt" : /projector/.test(text) ? "projector" : /light bar|under monitor/.test(text) ? "bar" : /swing|architect|gooseneck|clip|slim metal/.test(text) ? "task" : "shade"
     : kind === "plant" && /disco/.test(text) ? "disco"
     : kind === "mirror" ? /arch/.test(text) ? "arch" : /round/.test(text) ? "round" : "rect"
     : kind === "lights" ? /curtain|hang-down/.test(text) ? "curtain" : /strip|glide/.test(text) ? "strip" : /neon/.test(text) ? "neon" : "string"
+    : kind === "art" && /\bbats?\b/.test(text) ? "bats"
+    : kind === "lantern" ? /lantern|globe/.test(text) ? "lantern" : "ghost"
+    : kind === "pumpkin" ? /glass|mercury/.test(text) ? "glass" : "plain"
     : /woven|wicker|seagrass|rattan|jute|rope/.test(text) ? "woven" : /clear|acrylic/.test(text) ? "clear" : /fluffy|fur|shag|sherpa/.test(text) ? "plush" : /knit|chenille/.test(text) ? "knit" : "plain";
-  const pattern = /check|gingham|plaid|houndstooth/.test(text) ? "check" : /strip/.test(text) ? "stripe" : /floral|flower|botanical/.test(text) ? "floral" : /geometric|berber|tribal|medallion/.test(text) ? "diamond" : /abstract|wave|groovy/.test(text) ? "wave" : "solid";
-  return { id:product.id, name:product.name, image:product.image_url, kind, variant, pattern, color:productColor(product) };
+  const pattern = /check|gingham|plaid|houndstooth/.test(text) ? "check" : /strip/.test(text) ? "stripe" : /floral|flower|botanical/.test(text) ? "floral" : /geometric|berber|tribal|medallion/.test(text) ? "diamond" : /abstract|wave|groovy/.test(text) ? "wave"
+    : seasonal && kind === "blanket" ? "halloween" : "solid";
+  // Lit pieces glow from inside; a multi-pack of small pieces (six jack-o'-lanterns, tea lights) sits as a cluster.
+  const lit = /\b(led|light|lights|lantern|glow)\b/.test(text);
+  const count = ["pumpkin", "candle"].includes(kind) ? Number(/(\d+)\s*-?\s*(?:pack|pcs?|pieces?)\b/.exec(text)?.[1]) || 1 : 1;
+  const bulbs = kind === "lights" && variant === "string" ? bulbColors(product) : undefined;
+  return { id:product.id, name:product.name, image:product.image_url, kind, variant, pattern, color:productColor(product), lit, count, bulbs, seasonal };
 }
 
 /** A throw slot holds either a throw blanket or throw pillows: true when it's a blanket (by its product, else by its type). */
@@ -63,9 +84,37 @@ export function productForFurniture(item: FurnitureItem, products: Product[]): P
   return products.find(p => p.id === item.id) ?? products.find(p => p.category === furnitureCategory(item));
 }
 
+/** A cluster of up to six small pieces: three across, then a second row. */
+function clusterSize(visual: ReturnType<typeof productVisual>, w: number, l: number): [number, number] {
+  if (visual.count < 2) return [w, l];
+  const n = Math.min(visual.count, 6), cols = Math.min(3, n), rows = Math.ceil(n / cols);
+  return [Math.round(w * cols * 1.15 * 100) / 100, Math.round(l * rows * 1.15 * 100) / 100];
+}
+
+/**
+ * Where a seasonal wall piece hangs on the top wall: centred if it can be,
+ * otherwise in the widest stretch clear of a door or window (a quarter foot
+ * either side). Rooms without a straight top wall keep the centre.
+ */
+function clearWallX(room: SelectedRoom, w: number): number {
+  const outline = roomOutline(room), pts = outline.points, centre = Math.max(0, (room.lengthFt - w) / 2);
+  const edge = pts.findIndex((a, i) => a.y < .01 && pts[(i + 1) % pts.length].y < .01);
+  if (edge < 0) return centre;
+  const a = pts[edge], b = pts[(edge + 1) % pts.length], dir = b.x >= a.x ? 1 : -1;
+  const blocked = outline.openings.filter(o => o.edge === edge)
+    .map(o => [a.x + dir * o.offset_ft, a.x + dir * (o.offset_ft + o.width_ft)].sort((p, q) => p - q))
+    .map(([p, q]) => [p - .25, q + .25]).sort((p, q) => p[0] - q[0]);
+  let from = Math.min(a.x, b.x) + .25, best: [number, number] | null = null;
+  for (const [start, end] of [...blocked, [Math.max(a.x, b.x) - .25, Infinity]]) {
+    if (start - from >= w && (!best || start - from > best[1] - best[0])) best = [from, start];
+    from = Math.max(from, end);
+  }
+  return best ? Math.max(best[0], Math.min(best[1] - w, centre)) : centre;
+}
+
 const DEFAULT_SIZE: Record<string, [number, number, number]> = {
   curtains:[4,.18,5.25], organizer:[1.1,.65,.65], "desk-mat":[2.5,1.2,.02], riser:[1.5,.8,.4],
-  plant:[.7,.7,1.2], towels:[1.2,.9,.45], caddy:[.8,.65,.9], fan:[.6,.5,.8],
+  plant:[.7,.7,1.2], towels:[1.2,.9,.45], caddy:[.8,.65,.9], fan:[.6,.5,.8], pumpkin:[.45,.45,.4], lantern:[.4,.4,.8],
   candle:[.35,.35,.65], disco:[1,1,1], books:[.8,1,.5], decor:[.7,.7,.7],
   blanket:[1.5,1,.16], "power-strip":[1,.3,.15], hamper:[1.5,1.5,2.2], trash:[1,1,1.4],
   lamp:[.7,.7,1.4], basket:[1,1,1], storage:[1,1,1],
@@ -110,9 +159,10 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
     const size = (value: number | null, fallback: number) => value && Number.isFinite(value) && value > 0 && value <= 40 ? value : fallback;
     // Fabric drapes/folds into its existing footprint; unfolded dimensions aren't floor space.
     const fabric = ["blanket", "pillow", "lights", "art", "wall-shelf", "macrame"].includes(visual.kind);
+    const [cw, cl] = clusterSize(visual, size(p.width_ft, defaults?.[0] ?? f.width_ft), size(p.length_ft, defaults?.[1] ?? f.length_ft));
     const next = {...f, product_id:p.id, label:p.name, parent_id:f.parent_id ?? host?.id,
-      width_ft:fabric ? f.width_ft : size(p.width_ft, defaults?.[0] ?? f.width_ft),
-      length_ft:fabric ? f.length_ft : size(p.length_ft, defaults?.[1] ?? f.length_ft),
+      width_ft:fabric ? f.width_ft : cw,
+      length_ft:fabric ? f.length_ft : cl,
       height_ft:Math.max(.02, Math.min(16,size(p.height_ft, defaults?.[2] ?? itemHeight({...f, type:visual.kind}))))};
     if (visual.kind === "blanket") {
       next.height_ft = .16;
@@ -147,14 +197,17 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
     if (p.id.startsWith("custom-") || result.some(f => f.id === p.id || (!f.inventory && !f.built_in && furnitureCategory(f) === p.category)) || p.category === "bedding") continue;
     const visual = productVisual(p), size = DEFAULT_SIZE[visual.kind] ?? [.8,.8,1];
     const wall = ["curtains", "art", "lights", "wall-shelf", "macrame"].includes(visual.kind);
-    const surface = ["organizer", "desk-mat", "riser", "fan", "candle", "books", "towels", "caddy", "decor", "plant"].includes(visual.kind);
+    const surface = ["organizer", "desk-mat", "riser", "fan", "candle", "books", "towels", "caddy", "decor", "plant", "pumpkin", "lantern"].includes(visual.kind);
+    const [w, l] = clusterSize(visual, p.width_ft ?? size[0], p.length_ft ?? size[1]);
     const f: FurnitureItem = {id:`cart-${p.category}`, product_id:p.id, type:wall ? "wall_decor" : p.category,
-      label:p.name, owner:"shared", x_ft:0, y_ft:0, width_ft:p.width_ft ?? size[0], length_ft:p.length_ft ?? size[1], height_ft:p.height_ft ?? size[2],
+      label:p.name, owner:"shared", x_ft:0, y_ft:0, width_ft:w, length_ft:l, height_ft:p.height_ft ?? size[2],
       rotation_deg:0, movable:true, built_in:false, color_category:"decor", product_category:p.category};
-    if (surface && placeOnSurface(f,result,["organizer","desk-mat","riser","fan"].includes(visual.kind))) {
+    // A light string runs along the wall it hangs on, however long the strand.
+    if (visual.kind === "lights") f.width_ft = Math.min(f.width_ft, Math.max(1, room.lengthFt - .5));
+    if (surface && placeOnSurface(f,result,["organizer","desk-mat","riser","fan","pumpkin","lantern"].includes(visual.kind))) {
       // Surface placement records its parent, so movement and rotation stay linked.
     } else if (wall) {
-      f.x_ft=Math.max(0,(room.lengthFt-f.width_ft)/2); f.y_ft=.12; f.elevation_ft=Math.max(0,6.7-f.height_ft!);
+      f.x_ft=visual.seasonal && visual.kind !== "lights" ? clearWallX(room, f.width_ft) : Math.max(0,(room.lengthFt-f.width_ft)/2); f.y_ft=.12; f.elevation_ft=Math.max(0,6.7-f.height_ft!);
       const outline=roomOutline(room),opening=outline.openings.find(o=>o.kind==="window");
       if (visual.kind==="curtains" && opening) {
         const a=outline.points[opening.edge],b=outline.points[(opening.edge+1)%outline.points.length];
@@ -164,6 +217,15 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
         f.x_ft=Math.max(.05,Math.min(room.lengthFt-bounds.w-.05,a.x+dx*center-bounds.w/2));
         f.y_ft=Math.max(.05,Math.min(room.widthFt-bounds.h-.05,a.y+dy*center-bounds.h/2));
       }
+    } else if (visual.seasonal && visual.kind === "rug") {
+      // A seasonal rug goes in the open floor: the clear spot nearest the middle of the room.
+      const pts = roomOutline(room).points, spots: {x:number;y:number}[] = [];
+      for (let y=.25; y+f.length_ft<=room.widthFt; y+=.25) for (let x=.25; x+f.width_ft<=room.lengthFt; x+=.25) spots.push({x,y});
+      const mid = {x:(room.lengthFt-f.width_ft)/2, y:(room.widthFt-f.length_ft)/2};
+      spots.sort((a,b)=>Math.hypot(a.x-mid.x,a.y-mid.y)-Math.hypot(b.x-mid.x,b.y-mid.y));
+      const spot = spots.find(({x,y}) => rectInsidePolygon({x,y,w:f.width_ft,h:f.length_ft},pts) &&
+        !result.some(other=>other.type!=="rug" && !other.elevation_ft && (()=>{const a=footprint(other);return x<a.x+a.w&&x+f.width_ft>a.x&&y<a.y+a.h&&y+f.length_ft>a.y;})()));
+      f.x_ft = spot?.x ?? Math.max(0, mid.x); f.y_ft = spot?.y ?? Math.max(0, mid.y);
     } else {
       // Small extras take the first clear perimeter slot, with a half-foot gap.
       let placed = false;

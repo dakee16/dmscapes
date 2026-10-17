@@ -16,6 +16,57 @@ const METAL = "#E9EEF4";
 const stripes = (n: number) => Array.from({ length: n }, (_, i) => (i + 1) / (n + 1));
 const bulbs = (n: number) => Array.from({ length: n }, (_, i) => (i + .5) / n);
 
+/** The Halloween pieces lib/product-model picks out: what the glyphs need, as plain props so caching still works. */
+interface Seasonal {
+  /** "pumpkin", "ghost", "lantern" or "bats". */
+  shape?: string;
+  /** Pieces in a multi-pack (six jack-o'-lanterns), drawn as a cluster. */
+  count?: number;
+  /** A pumpkin's own colour. */
+  tint?: string;
+  /** A light string's bulb colours, comma-separated. */
+  bulbs?: string;
+}
+/** Bulb i's colour on a coloured string, else the fallback. */
+const bulbColor = (list: string | undefined, i: number, fallback: string) => { const c = list?.split(","); return c?.length ? c[i % c.length] : fallback; };
+
+/** Halloween pieces from above: jack-o'-lanterns (a cluster for a multi-pack), a ghost or ghost lantern in its glow, bats flat on a wall. */
+function seasonalArt({ shape, count = 1, tint }: Seasonal, w: number, h: number): ReactNode {
+  const s = Math.min(w, h);
+  if (shape === "pumpkin") {
+    const n = Math.min(Math.max(1, count), 6), cols = Math.min(3, n), rows = Math.ceil(n / cols), cw = w / cols, ch = h / rows;
+    const fill = tint ?? "#E8782A", rib = mixHex(fill, "#000000", .3);
+    return <>{Array.from({ length: n }, (_, i) => {
+      const cx = cw * (i % cols + .5), cy = ch * (Math.floor(i / cols) + .5), r = Math.min(cw, ch) / 2 * (n > 1 ? .87 : 1);
+      return <Group key={i}>
+        <Circle x={cx} y={cy} radius={r} fill={fill} stroke={rib} strokeWidth={.8} />
+        {[0, 45, 90, 135].map(d => { const a = d * Math.PI / 180, dx = Math.cos(a) * r * .85, dy = Math.sin(a) * r * .85;
+          return <Line key={d} points={[cx - dx, cy - dy, cx + dx, cy + dy]} stroke={rib} opacity={.45} strokeWidth={.7} />; })}
+        <Circle x={cx} y={cy} radius={Math.max(1, r * .2)} fill="#5D7A3A" />
+      </Group>;
+    })}</>;
+  }
+  if (shape === "ghost" || shape === "lantern") {
+    const r = s / 2, cx = w / 2, cy = h / 2;
+    return <>
+      <Circle x={cx} y={cy} radius={r * 1.5} fill="#FFE9C7" opacity={.45} />
+      {shape === "ghost" ? <>
+        <Circle x={cx} y={cy} radius={r * .9} fill="#FFFFFF" stroke="#B9B4AA" strokeWidth={.8} />
+        {[-1, 1].map(d => <Circle key={d} x={cx + d * r * .28} y={cy - r * .1} radius={Math.max(.8, r * .12)} fill={INK} />)}
+      </> : <>
+        <Circle x={cx} y={cy} radius={r * .9} fill="#2B2C3A" />
+        <Circle x={cx} y={cy} radius={r * .6} fill="#FFF1D6" />
+        <Circle x={cx} y={cy} radius={r * .3} stroke="#2B2C3A" strokeWidth={Math.max(1, r * .12)} />
+      </>}
+    </>;
+  }
+  if (shape === "bats") {
+    // Flat on the wall, so from above only their edge shows: a dark strip.
+    return <Rect width={w} height={h} fill="#1C1622" cornerRadius={1} />;
+  }
+  return null;
+}
+
 /**
  * Plan view: top-down symbols inside the real footprint, in the plan's flat style
  * (Planner.dc.html): dorm-provided pieces in pale blue with a blue outline,
@@ -25,7 +76,7 @@ const bulbs = (n: number) => Array.from({ length: n }, (_, i) => (i + .5) / n);
  * any side, because templates put the wall behind different edges. Never
  * changes hit areas.
  */
-export default function FurnitureGlyph({ item, scale, palette, dressed = false, blanket = false }: {
+export default function FurnitureGlyph({ item, scale, palette, dressed = false, blanket = false, ...seasonal }: Seasonal & {
   item: FurnitureItem;
   scale: number;
   /** The vibe's palette (lib/styles): light → dark. */
@@ -45,8 +96,8 @@ export default function FurnitureGlyph({ item, scale, palette, dressed = false, 
   const at = (t: number, u: number): [number, number] => across ? [w * t, h * u] : [w * u, h * t];
   /** A line across the short side at fraction `t` of the long side. */
   const rung = (t: number, from = 0, to = 1) => [...at(t, from), ...at(t, to)];
-  let art;
-  switch (blanket ? "throw" : item.type) {
+  let art = seasonalArt(seasonal, w, h);
+  if (!art) switch (blanket ? "throw" : item.type) {
     case "bed": {
       const bedFill = dressed ? "#F4E4CC" : "#FFFFFF", bedLine = dressed ? BROWN : BLUE;
       art = <>
@@ -195,7 +246,7 @@ export default function FurnitureGlyph({ item, scale, palette, dressed = false, 
     case "string_lights":
       art = <>
         <Line points={[0, h / 2, w, h / 2]} stroke="#7A6A4F" strokeWidth={.8} />
-        {bulbs(Math.max(3, Math.round(w / 12))).map((t, i) => <Circle key={i} x={t * w} y={h / 2} radius={Math.max(1.6, Math.min(2.6, h / 2))} fill="#F2A93B" />)}
+        {bulbs(Math.max(3, Math.round(w / 12))).map((t, i) => <Circle key={i} x={t * w} y={h / 2} radius={Math.max(1.6, Math.min(2.6, h / 2))} fill={bulbColor(seasonal.bulbs, i, "#F2A93B")} />)}
       </>;
       break;
     case "throw_pillows": {
@@ -269,7 +320,7 @@ export default function FurnitureGlyph({ item, scale, palette, dressed = false, 
       } else if (kind === "ambient_lighting") {
         art = <>
           <Line points={[...at(0, .5), ...at(1, .5)]} stroke="#7A6A4F" strokeWidth={.8} />
-          {bulbs(Math.max(3, Math.round(long / 12))).map(t => { const [x, y] = at(t, .5); return <Circle key={t} x={x} y={y} radius={Math.max(1.6, Math.min(2.6, s / 2))} fill="#F2A93B" />; })}
+          {bulbs(Math.max(3, Math.round(long / 12))).map((t, i) => { const [x, y] = at(t, .5); return <Circle key={t} x={x} y={y} radius={Math.max(1.6, Math.min(2.6, s / 2))} fill={bulbColor(seasonal.bulbs, i, "#F2A93B")} />; })}
         </>;
       } else if (kind === "tapestry") {
         art = <><Rect width={w} height={h} fill={p2} cornerRadius={1} />{stripes(Math.max(5, Math.floor(long / 4))).map(t => <Line key={t} points={rung(t, .55, 1)} stroke={p3} strokeWidth={1} />)}</>;
@@ -347,7 +398,7 @@ export type BackSide = 0 | 1 | 2 | 3; // top, right, bottom, left
  * so dragging redraws an image, not dozens of shapes. Re-caches only when its
  * props change (size, vibe, dressed state, detail level, zoom bucket).
  */
-export const RoomGlyph = memo(function RoomGlyph({ item, scale, theme, dressed = false, books = false, blanket = false, back = 0, detail = true, bucket = 1 }: {
+export const RoomGlyph = memo(function RoomGlyph({ item, scale, theme, dressed = false, books = false, blanket = false, back = 0, detail = true, bucket = 1, ...seasonal }: Seasonal & {
   item: FurnitureItem;
   scale: number;
   theme: RoomTheme;
@@ -413,8 +464,11 @@ export const RoomGlyph = memo(function RoomGlyph({ item, scale, theme, dressed =
     <Rect width={w} height={h} fill={fill} stroke={shade(fill, -.18)} strokeWidth={.8} cornerRadius={Math.min(s * .3, 6)} />
     {detail && <Rect x={s * .12} y={s * .12} width={w - s * .24} height={h - s * .24} stroke="#FFFFFF" opacity={.3} strokeWidth={1} cornerRadius={Math.min(s * .2, 4)} />}
   </>;
-  let art: ReactNode;
-  switch (blanket ? "throw" : item.type) {
+  let art: ReactNode = seasonalArt(seasonal, w, h);
+  // A single round piece casts the usual soft shadow, in its own colour (a cluster's pieces are too small to bother).
+  const castFill = seasonal.shape === "pumpkin" ? seasonal.tint ?? "#E8782A" : seasonal.shape === "ghost" ? "#FFFFFF" : seasonal.shape === "lantern" ? "#2B2C3A" : null;
+  if (art && castFill && (seasonal.count ?? 1) < 2) art = <>{casterRound(castFill, s / 2 * .9)}{art}</>;
+  if (!art) switch (blanket ? "throw" : item.type) {
     case "bed": {
       const f = Math.max(1.5, Math.min(s * .05, 4)), mw = w - 2 * f;
       const head = back === 2 ? 2 : 0;
@@ -588,7 +642,7 @@ export const RoomGlyph = memo(function RoomGlyph({ item, scale, theme, dressed =
       const n = Math.max(3, Math.round(long / Math.max(8, scale * .5))), br = Math.max(1.4, Math.min(2.6, s * .35));
       art = <>
         <Line points={[...at(0, .5), ...at(1, .5)]} stroke="#5C5246" opacity={.8} strokeWidth={.8} />
-        {bulbs(n).map(t => { const [x, y] = at(t, .5); return <Group key={t}><Circle x={x} y={y} radius={br * 2.4} fill={theme.glow} opacity={.28} /><Circle x={x} y={y} radius={br} fill={shade(theme.glow, .25)} /></Group>; })}
+        {bulbs(n).map((t, i) => { const [x, y] = at(t, .5), c = bulbColor(seasonal.bulbs, i, theme.glow); return <Group key={t}><Circle x={x} y={y} radius={br * 2.4} fill={c} opacity={.28} /><Circle x={x} y={y} radius={br} fill={seasonal.bulbs ? c : shade(theme.glow, .25)} /></Group>; })}
       </>;
       break;
     }
@@ -668,7 +722,7 @@ export const RoomGlyph = memo(function RoomGlyph({ item, scale, theme, dressed =
         const n = Math.max(3, Math.round(long / Math.max(8, scale * .5))), br = Math.max(1.4, Math.min(2.6, s / 2));
         art = <>
           <Line points={[...at(0, .5), ...at(1, .5)]} stroke="#5C5246" opacity={.8} strokeWidth={.8} />
-          {bulbs(n).map(t => { const [x, y] = at(t, .5); return <Group key={t}><Circle x={x} y={y} radius={br * 2.4} fill={theme.glow} opacity={.28} /><Circle x={x} y={y} radius={br} fill={shade(theme.glow, .25)} /></Group>; })}
+          {bulbs(n).map((t, i) => { const [x, y] = at(t, .5), c = bulbColor(seasonal.bulbs, i, theme.glow); return <Group key={t}><Circle x={x} y={y} radius={br * 2.4} fill={c} opacity={.28} /><Circle x={x} y={y} radius={br} fill={seasonal.bulbs ? c : shade(theme.glow, .25)} /></Group>; })}
         </>;
       } else if (kind === "tapestry") {
         art = <>
