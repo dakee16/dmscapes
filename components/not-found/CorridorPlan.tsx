@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { GhostMark } from "@/components/season/SeasonMarks";
+import SeasonLink from "@/components/season/SeasonLink";
 import css from "./NotFound.module.css";
 
 /** Room numbers along the corridor; 404 is the one that isn't there. */
@@ -84,9 +84,9 @@ export default function CorridorPlan() {
       {/* Halloween: a ghost moves in. The plan is aria-hidden, so the tag is a
           pointer-only link; the page's own buttons stay the keyboard route. */}
       <GhostMark className={css.ghost} />
-      <Link href="/plan?vibe=spooky" tabIndex={-1} className={css.haunted} style={box(226, 478, 156, 34)} data-season-show="">
+      <SeasonLink where="404" tabIndex={-1} className={css.haunted} style={box(226, 478, 156, 34)} data-season-show="">
         Probably haunted.
-      </Link>
+      </SeasonLink>
 
       {/* You are here */}
       <span className={css.here} style={box(294, 296, 24, 24)} />

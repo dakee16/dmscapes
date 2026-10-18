@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Link from "next/link";
 import { PumpkinMark } from "@/components/season/SeasonMarks";
+import SeasonLink from "@/components/season/SeasonLink";
 import { useExperienceMotion } from "@/components/experience/MotionProvider";
 import css from "./Home.module.css";
 
@@ -84,10 +84,10 @@ export default function TapeBand({ layoutCount }: { layoutCount: number }) {
   // is the keyboard route to the vibe.
   const season = (
     <span data-season-show="" style={{ display: "contents" }}>
-      <Link href="/plan?vibe=spooky" tabIndex={-1} className={css.tapeSeason}>
+      <SeasonLink where="tape" tabIndex={-1} className={css.tapeSeason}>
         <PumpkinMark size={22} />
         Spooky Season vibe · free till Oct 31
-      </Link>
+      </SeasonLink>
       <span className={css.diamond} aria-hidden="true" />
     </span>
   );
