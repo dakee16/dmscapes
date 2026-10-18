@@ -27,6 +27,7 @@ export function useFrameSequence(
     aspect = 1,
     position = [0.5, 0.5],
     minWidth = 1024,
+    onPaint,
   }: {
     count: number;
     /** frame i at `width` (the largest of `widths`, or undefined without them) */
@@ -38,6 +39,8 @@ export function useFrameSequence(
     /** like CSS object-position, as fractions */
     position?: [number, number];
     minWidth?: number;
+    /** Called with the painted frame's place in the move (0 to 1), for things that ride along with it. */
+    onPaint?: (progress: number) => void;
   }
 ) {
   const { paused } = useExperienceMotion();
@@ -48,6 +51,8 @@ export function useFrameSequence(
   urlRef.current = url;
   const widthsRef = useRef(widths);
   widthsRef.current = widths;
+  const onPaintRef = useRef(onPaint);
+  onPaintRef.current = onPaint;
   const [enabled, setEnabled] = useState(false);
   const [showing, setShowing] = useState(false);
   const [px, py] = position;
@@ -73,6 +78,7 @@ export function useFrameSequence(
     const h = img.naturalHeight * s;
     ctx.drawImage(img, (c.width - w) * px, (c.height - h) * py, w, h);
     drawn.current = k;
+    onPaintRef.current?.(k / (count - 1));
   }, [canvas, count, px, py]);
 
   const draw = useCallback(
