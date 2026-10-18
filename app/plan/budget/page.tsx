@@ -161,13 +161,16 @@ export default function PlanBudgetPage() {
   useEffect(() => {
     if (!pendingGenerateRef.current || !user || !profile || modalOpen) return;
     pendingGenerateRef.current = false;
-    if (canGeneratePlan(profile)) {
+    // A Spooky Season plan spends nothing, so there's no credit to confirm.
+    if (style && isSeasonalStyle(style) && seasonOn()) {
+      setShowDisclaimer(true);
+    } else if (canGeneratePlan(profile)) {
       setShowCreditConfirm(true);
     } else {
       track("plan_blocked_no_credits");
       openUpgrade(creditLimitReason(profile));
     }
-  }, [user, profile, modalOpen, openUpgrade]);
+  }, [user, profile, modalOpen, openUpgrade, style]);
 
   // The server spends one credit before a new plan opens, for every tier.
   // The planning screen runs alongside the request and never holds the
@@ -181,7 +184,9 @@ export default function PlanBudgetPage() {
       return;
     }
     const blockReason = creditLimitReason(profile);
-    if (!canGeneratePlan(profile)) {
+    // Spooky Season plans are free inside the window; the server has the final say.
+    const freeSeasonal = isSeasonalStyle(style) && seasonOn();
+    if (!freeSeasonal && !canGeneratePlan(profile)) {
       track("plan_blocked_no_credits");
       openUpgrade(blockReason);
       return;
@@ -190,7 +195,7 @@ export default function PlanBudgetPage() {
     setGenerating(true);
     setPlanning({ ready: false });
     try {
-      const { blocked } = await consumePlanCredit();
+      const { blocked, seasonalFree } = await consumePlanCredit(style);
       void refreshProfile();
       if (blocked) {
         setPlanning(null);
@@ -198,9 +203,10 @@ export default function PlanBudgetPage() {
         openUpgrade(blockReason);
         return;
       }
-      usePlannerStore.getState().updatePlanning({ mode: "generated" });
+      usePlannerStore.getState().updatePlanning({ mode: "generated", seasonalFree });
       usePlannerStore.setState({ excluded: null });
-      track("plan_credit_consumed");
+      if (seasonalFree) track("seasonal_plan_started", { style, budget });
+      else track("plan_credit_consumed");
       // The planning screen opens /plan/result (openPlan) as soon as it can.
       setPlanning({ ready: true });
     } catch (error) {

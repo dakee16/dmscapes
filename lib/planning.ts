@@ -15,6 +15,8 @@ export interface PlanningDetails {
   alternatives: LayoutAlternative[];
   lastPanel: string;
   productSupply: Record<string, { supply: "school" | "owned" | "buy"; assignedTo: string }>;
+  /** This plan opened free as a seasonal (Spooky Season) plan; any other vibe goes back through the credit gate. */
+  seasonalFree?: boolean;
 }
 export const DEFAULT_PLANNING: PlanningDetails = {mode:"generated",name:"My room",roommates:[],showOwners:false,walkwayFt:2,alternatives:[],lastPanel:"furnish",productSupply:{}};
 export const OWNER_COLORS = ["#3052ef","#b54b79","#168071","#a25c11","#7955ad","#447d9c","#876d41","#666779"];

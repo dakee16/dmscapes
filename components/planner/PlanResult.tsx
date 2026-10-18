@@ -148,7 +148,13 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
       openUpgrade("style");
       router.replace("/plan/style");
     }
-  }, [hydrated, room, style, authLoading, profile, router, openUpgrade, manual, workspace]);
+    // A free Spooky Season plan opens only that vibe: any other vibe goes back
+    // through the normal credit gate on the budget step.
+    else if (!workspace && !manual && planning.seasonalFree && !isSeasonalStyle(style)) {
+      usePlannerStore.getState().updatePlanning({ seasonalFree: false });
+      router.replace("/plan/budget");
+    }
+  }, [hydrated, room, style, authLoading, profile, router, openUpgrade, manual, workspace, planning.seasonalFree]);
 
   const match = useMemo(
     () =>
