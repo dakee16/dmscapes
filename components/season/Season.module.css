@@ -1,0 +1,10 @@
+/* Halloween season marks (components/season/SeasonMarks.tsx) */
+.mark { flex: none; display: block; }
+.lights { display: block; width: 100%; height: auto; overflow: visible; }
+
+/* The lights twinkle slowly; reduced motion and the site's pause toggle hold them still. */
+@keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+@media (prefers-reduced-motion: no-preference) {
+  .bulb { animation: twinkle 2.8s ease-in-out infinite; }
+}
+:global(.dm-app[data-motion="paused"]) .bulb { animation: none; }

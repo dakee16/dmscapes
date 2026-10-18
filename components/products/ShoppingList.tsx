@@ -39,6 +39,7 @@ export default function ShoppingList({
   onPlace,
   extras,
   ownership,
+  note,
 }: {
   total: number;
   budget: number;
@@ -53,6 +54,8 @@ export default function ShoppingList({
   onPlace: (id: string) => void;
   extras?: ReactNode;
   ownership?: ReactNode;
+  /** A short note above the list (the Spooky kit's delivery reminder). */
+  note?: ReactNode;
 }) {
   const ui = useStudioUI();
   const entries = useMemo(() => ui?.entries ?? [], [ui?.entries]);
@@ -214,6 +217,7 @@ export default function ShoppingList({
         </div>
       </header>
 
+      {note && <div className={s.note}>{note}</div>}
       {extras && <div className={s.extras}>{extras}</div>}
       {ownership && <div className={s.extras}>{ownership}</div>}
 

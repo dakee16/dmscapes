@@ -1,3 +1,5 @@
+import { GhostMark } from "@/components/season/SeasonMarks";
+import SeasonLink from "@/components/season/SeasonLink";
 import css from "./NotFound.module.css";
 
 /** Room numbers along the corridor; 404 is the one that isn't there. */
@@ -22,7 +24,8 @@ const at = (x: number, y: number) =>
 /**
  * Floor 4, east wing: rooms 401–407 drawn on plan paper, with a dashed pink
  * outline where 404 should be (design-handoff/designs/site/NotFound.dc.html).
- * Purely decorative.
+ * Purely decorative. In the Halloween season the outline turns pumpkin and
+ * the room is "Probably haunted." (design-handoff/halloween/LoaderAnd404.dc.html).
  */
 export default function CorridorPlan() {
   return (
@@ -75,9 +78,15 @@ export default function CorridorPlan() {
       <span className={css.missingNo} style={{ ...at(196, 394), width: `${(216 / 608) * 100}%` }}>
         404
       </span>
-      <span className={css.missingNote} style={{ ...at(196, 496), width: `${(216 / 608) * 100}%` }}>
+      <span className={css.missingNote} style={{ ...at(196, 496), width: `${(216 / 608) * 100}%` }} data-season-hide="">
         no such room
       </span>
+      {/* Halloween: a ghost moves in. The plan is aria-hidden, so the tag is a
+          pointer-only link; the page's own buttons stay the keyboard route. */}
+      <GhostMark className={css.ghost} />
+      <SeasonLink where="404" tabIndex={-1} className={css.haunted} style={box(226, 478, 156, 34)} data-season-show="">
+        Probably haunted.
+      </SeasonLink>
 
       {/* You are here */}
       <span className={css.here} style={box(294, 296, 24, 24)} />

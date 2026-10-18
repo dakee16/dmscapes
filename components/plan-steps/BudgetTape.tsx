@@ -1,32 +1,39 @@
 "use client";
 
 import { usd } from "./room-model";
+import { budgetRange } from "@/lib/styles";
 import css from "./Budget.module.css";
 
-const MIN = 200;
-const MAX = 1500;
-const MARKS = [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400];
+const ROOM = budgetRange(null);
 
 /**
  * The budget slider drawn as a tape measure. A real range input sits over the
  * tape (keyboard, touch and screen readers use it); the red marker follows it.
+ * The range and marks default to a room's ($200 to $1,500); a seasonal kit
+ * passes its own (lib/styles budgetRange).
  */
 export default function BudgetTape({
   id,
   value,
   onChange,
-  step = 50,
+  step = ROOM.step,
   size = "lg",
+  min: MIN = ROOM.min,
+  max: MAX = ROOM.max,
+  marks: MARKS = ROOM.marks,
 }: {
   id: string;
   value: number;
   onChange: (value: number) => void;
   step?: number;
   size?: "lg" | "sm";
+  min?: number;
+  max?: number;
+  marks?: number[];
 }) {
   const p = Math.min(1, Math.max(0, (value - MIN) / (MAX - MIN)));
   return (
-    <div className={css.tape} data-size={size} style={{ "--p": p } as React.CSSProperties}>
+    <div className={css.tape} data-size={size} data-few={MARKS.length <= 7 || undefined} style={{ "--p": p, "--major": Math.round((MAX - MIN) / (MARKS[1] - MARKS[0])) } as React.CSSProperties}>
       <label htmlFor={id} className="ds-sr">
         Budget in dollars, from {usd(MIN)} to {usd(MAX)}
       </label>

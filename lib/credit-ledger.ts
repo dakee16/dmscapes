@@ -25,11 +25,20 @@ async function write(supabase: SupabaseClient, row: CreditRow, values: Record<st
   return Boolean(data);
 }
 
+/** The plans a row can still generate: the free allowance, else the purchased balance. */
+const plansLeft = (row: CreditRow) =>
+  planOf(row.plan) === "free" ? Math.max(0, FREE_PLAN_CAP - (row.free_plans_used ?? 0)) : planCreditsRemaining(row) ?? 0;
+
+/** The balance read without spending (a free seasonal plan reports it unchanged). */
+export async function planCreditBalance(supabase: SupabaseClient, userId: string): Promise<number> {
+  return plansLeft(await read(supabase, userId));
+}
+
 export async function spendPlanCredit(supabase: SupabaseClient, userId: string): Promise<{ blocked: boolean; remaining: number }> {
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
     const row = await read(supabase, userId);
     const free = planOf(row.plan) === "free";
-    const remaining = free ? Math.max(0, FREE_PLAN_CAP - (row.free_plans_used ?? 0)) : planCreditsRemaining(row) ?? 0;
+    const remaining = plansLeft(row);
     if (remaining <= 0) return { blocked: true, remaining: 0 };
     const values = free ? { free_plans_used: (row.free_plans_used ?? 0) + 1 } : { plan_credits_remaining: remaining - 1 };
     if (await write(supabase, row, values)) return { blocked: false, remaining: remaining - 1 };

@@ -45,6 +45,8 @@ export type AnalyticsEvent =
   | "plus_welcome_cta_clicked"
   | "plus_welcome_dismissed"
   | "plan_credit_consumed"
+  | "seasonal_plan_started"
+  | "season_cta_clicked"
   | "plan_blocked_no_credits"
   | "save_blocked_no_credits"
   | "cart_item_added"

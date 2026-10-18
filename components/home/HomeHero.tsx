@@ -6,6 +6,9 @@ import Link from "next/link";
 import Headline from "@/components/ds/Headline";
 import { useScrub, span, easeOutExpo } from "@/components/ds/useScrub";
 import { useFrameSequence } from "@/components/ds/useFrameSequence";
+import { ArrowRight } from "@/components/ds/Icons";
+import { BatMark, PumpkinMark, SeasonLights } from "@/components/season/SeasonMarks";
+import SeasonLink from "@/components/season/SeasonLink";
 import HomeSearch from "./HomeSearch";
 import css from "./Home.module.css";
 
@@ -29,6 +32,7 @@ export default function HomeHero({
   const caption = useRef<HTMLParagraphElement>(null);
 
   const canvas = useRef<HTMLCanvasElement>(null);
+  const decor = useRef<HTMLDivElement>(null);
   // The room settles onto its own floor plan as you scroll: 25 rendered frames,
   // 1140 px wide for phones and standard screens and 1520 px (the still's own
   // size) for retina laptops. Frame 0 is the still, so the hand-over is seamless.
@@ -39,6 +43,15 @@ export default function HomeHero({
     aspect: 1520 / 1776,
     position: [0.5, 0.55],
     minWidth: 0,
+    // The Halloween lights and bats ride down with the room: its top edge drops
+    // about 470 px of the 1520 px frame between the first frame and the last
+    // (measured), scaled the way the frame covers the art.
+    onPaint: (k) => {
+      const box = art.current, el = decor.current;
+      if (!box || !el) return;
+      const s = Math.max(box.clientWidth / 1520, box.clientHeight / 1776);
+      el.style.transform = k ? `translate3d(0, ${(k * 470 * s).toFixed(1)}px, 0)` : "";
+    },
   });
   const land = (k: number) => seq.draw(k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2);
   const wide = () => window.innerWidth >= 1024;
@@ -82,6 +95,13 @@ export default function HomeHero({
       <section className={css.hero} aria-labelledby="hero-title">
         <div ref={copy} className={css.heroCopy}>
           <div className={css.heroCopyIn}>
+            <SeasonLink where="hero" className={css.seasonChip} data-season-show="" data-reveal="load">
+              <PumpkinMark size={26} stem="green" />
+              <span>
+                Spooky Season vibe <span className={css.seasonFree}>· free till Oct 31</span>
+              </span>
+              <ArrowRight size={16} className={css.seasonArrow} />
+            </SeasonLink>
             <p className="ds-eyebrow" data-reveal="load">
               AI dorm room planner <span className={css.wide}>· {schoolCount} schools · {hallCount.toLocaleString("en-US")} halls</span>
               <span className={css.narrow}>· free to start</span>
@@ -125,6 +145,13 @@ export default function HomeHero({
           {seq.enabled && (
             <canvas ref={canvas} className={css.heroCanvas} data-show={seq.showing || undefined} aria-hidden="true" />
           )}
+          {/* Halloween: lights and bats over the room; they move down with it as the frames play */}
+          <div ref={decor} className={css.seasonDecor} data-season-show="">
+            <SeasonLights drape="wide" className={css.lightsWide} />
+            <SeasonLights drape="narrow" className={css.lightsNarrow} />
+            <BatMark className={css.bat1} />
+            <BatMark className={css.bat2} />
+          </div>
         </div>
         <p ref={caption} className={css.heroCaption}>
           Real room ·{" "}

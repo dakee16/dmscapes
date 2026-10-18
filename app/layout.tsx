@@ -6,6 +6,7 @@ import { UpgradeProvider } from "@/lib/upgrade-context";
 import CookieConsent from "@/components/site/CookieConsent";
 import GoogleAnalytics from "@/components/site/GoogleAnalytics";
 import RevealObserver from "@/components/ds/RevealObserver";
+import { SEASON_ENABLED, SEASON_SCRIPT } from "@/lib/season";
 import "./globals.css";
 import "./experience.css";
 import "./ds.css";
@@ -82,7 +83,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${archivo.variable} ${fraunces.variable} ${martian.variable}`}
+      suppressHydrationWarning // the season script sets data-season before hydration
     >
+      {SEASON_ENABLED && (
+        <head>
+          <script dangerouslySetInnerHTML={{ __html: SEASON_SCRIPT }} />
+        </head>
+      )}
       <body className="min-h-screen antialiased">
         <MotionProvider>
           <CookieConsent />

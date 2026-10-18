@@ -88,6 +88,13 @@ export function createModelKit({onTexture=()=>{}}={}) {
       if(product.pattern==="floral"){for(let i=0;i<5;i++){const a=i*Math.PI*2/5;ctx.beginPath();ctx.ellipse(x+16+Math.cos(a)*7,y+16+Math.sin(a)*7,5,8,a,0,Math.PI*2);ctx.fill();}}
     }
     if(product.pattern==="wave")for(let x=-128;x<384;x+=48){ctx.beginPath();ctx.moveTo(x,0);ctx.bezierCurveTo(x+130,80,x-100,180,x+32,256);ctx.lineWidth=20;ctx.stroke();}
+    if(product.pattern==="halloween")for(let x=0;x<256;x+=64)for(let y=0;y<256;y+=64){
+      // A Halloween print: pumpkins, ghosts and bats in turn, a half-step apart each row.
+      const k=((x+y)/64)%3,cx0=x+(y%128?32:0)+16,cy0=y+20;
+      if(k===0){ctx.fillStyle="#ff7a1a";ctx.beginPath();ctx.ellipse(cx0,cy0,13,11,0,0,Math.PI*2);ctx.fill();ctx.fillStyle="#5d7a3a";ctx.fillRect(cx0-2,cy0-15,4,6);}
+      else if(k===1){ctx.fillStyle="#f8f0df";ctx.beginPath();ctx.arc(cx0,cy0-2,10,Math.PI,0);ctx.lineTo(cx0+10,cy0+12);for(let i=0;i<4;i++)ctx.lineTo(cx0+10-5*(i+1),cy0+(i%2?12:8));ctx.closePath();ctx.fill();ctx.fillStyle="#1c1622";ctx.fillRect(cx0-5,cy0-4,3,4);ctx.fillRect(cx0+2,cy0-4,3,4);}
+      else{ctx.fillStyle="#1c1622";ctx.beginPath();ctx.moveTo(cx0,cy0+6);ctx.lineTo(cx0-16,cy0-4);ctx.lineTo(cx0-6,cy0-2);ctx.lineTo(cx0-3,cy0-8);ctx.lineTo(cx0,cy0-4);ctx.lineTo(cx0+3,cy0-8);ctx.lineTo(cx0+6,cy0-2);ctx.lineTo(cx0+16,cy0-4);ctx.closePath();ctx.fill();}
+    }
     const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;textures.set(key,tex);
     const material=clay(new T.MeshStandardMaterial({map:tex,roughness:.98,bumpMap:fabric,bumpScale:.012}),.08);materials.set(key,material);return material;
   }
@@ -101,6 +108,23 @@ export function createModelKit({onTexture=()=>{}}={}) {
       texture.colorSpace=T.SRGBColorSpace;textures.set(key,texture);material.map=texture;material.needsUpdate=true;onTexture();
     },undefined,()=>{});
     return material;
+  }
+  /** A seasonal rug's weave: stripes or plaid in its two colours, about 3 in per band. */
+  function rugPrint(product,base,line,w,d){
+    const key=["rug",product.id,base,line,w,d].join(":");if(materials.has(key))return materials.get(key);
+    const canvas=document.createElement("canvas");canvas.width=canvas.height=256;const ctx=canvas.getContext("2d");
+    ctx.fillStyle=base;ctx.fillRect(0,0,256,256);ctx.fillStyle=line;
+    if(product.pattern==="check"){ctx.globalAlpha=.55;for(let i=0;i<256;i+=64){ctx.fillRect(i,0,32,256);ctx.fillRect(0,i,256,32);}ctx.globalAlpha=1;for(let i=0;i<256;i+=64)for(let j=0;j<256;j+=64)ctx.fillRect(i,j,32,32);}
+    else for(let i=0;i<256;i+=64)ctx.fillRect(0,i,256,32);
+    const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;tex.wrapS=tex.wrapT=T.RepeatWrapping;tex.repeat.set(w/2,d/2);textures.set(key,tex);
+    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:1,bumpMap:fabric,bumpScale:.012}),.08);materials.set(key,material);return material;
+  }
+  /** A bat seen flat on the wall (the brand mark's outline), one unit wide. */
+  function batGeometry(){
+    if(geometries.has("bat"))return geometries.get("bat");
+    const pts=[[20,15],[13.6,12.2],[7.8,9.8],[2,5.8],[8.5,5.2],[14.4,5.6],[17.6,4.8],[18.4,2.6],[19.4,4.4],[20.6,4.4],[21.6,2.6],[22.4,4.8],[25.6,5.6],[31.5,5.2],[38,5.8],[32.2,9.8],[26.4,12.2]];
+    const shape=new T.Shape(pts.map(([x,y])=>new T.Vector2((x-20)/40,(9-y)/40)));
+    const g=new T.ShapeGeometry(shape);geometries.set("bat",g);return g;
   }
   const add=(g,mesh,x,y,z)=>{mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;g.add(mesh);return mesh;};
   /** A rounded box (the studio's soft, real-world edges). */
@@ -142,6 +166,11 @@ export function createModelKit({onTexture=()=>{}}={}) {
         const s=Math.min(r*.42,.55)*(.7+rnd()*.5);
         dummy.position.set(Math.cos(a)*reach,y,Math.sin(a)*reach);dummy.rotation.set((rnd()-.5)*.6,-a,.5+rnd()*.7);dummy.scale.set(s,s*.12,s*.36);dummy.updateMatrix();inst.setMatrixAt(i,dummy.matrix);}
       g.add(inst);}
+  }
+  /** Up to six small pieces from a multi-pack, three across in the footprint; draw(x, z, cellW, cellD) places each. */
+  function cluster(f,w,d,draw){
+    const n=Math.min(Math.max(1,f.product?.count||1),6),cols=Math.min(3,n),rows=Math.ceil(n/cols),cw=w/cols,cd=d/rows,k=n>1?1/1.15:1;
+    for(let i=0;i<n;i++)draw(-w/2+cw*(i%cols+.5),-d/2+cd*(Math.floor(i/cols)+.5),cw*k,cd*k);
   }
   function build(f,palette,{theme,dress=true}={}){
     const g=new T.Group(),w=Math.max(.1,f.width_ft),d=Math.max(.1,f.length_ft),h=f.height,variant=f.product?.variant;
@@ -249,7 +278,8 @@ export function createModelKit({onTexture=()=>{}}={}) {
         const base=vibe&&!f.material_color?theme.rug.base:color,edge=vibe&&!f.material_color?theme.rug.line:mix(color,"#ffffff",.35);
         box(g,w,h,d,mat(base,1,true),0,h/2+.012,0,.012).castShadow=false;
         const band=box(g,w*.9,h+.006,d*.9,mat(edge,1,true),0,h/2+.015,0,.01);band.castShadow=false;
-        const inner=box(g,w*.86,h+.012,d*.86,mat(base,1,true),0,h/2+.018,0,.01);inner.castShadow=false;
+        const woven=f.product?.seasonal&&["stripe","check"].includes(f.product.pattern);
+        const inner=box(g,w*.86,h+.012,d*.86,woven?rugPrint(f.product,base,vibe&&!f.material_color?theme.rug.line:"#1c1622",w*.86,d*.86):mat(base,1,true),0,h/2+.018,0,.01);inner.castShadow=false;
         break;
       }
       case "lamp":{
@@ -288,6 +318,15 @@ export function createModelKit({onTexture=()=>{}}={}) {
           box(g,w*.91,h-w/2-.08,.025,mat("#bdcdd2",.1),0,(h-w/2)/2,d/2+.016);oval(g,0,h-w/2,d/2+.018,w*.455,w*.455,.018,mat("#bdcdd2",.1));
         }else{box(g,w,h,Math.max(.06,d),finish,0,h/2,0);box(g,w*.9,h*.92,.025,mat("#bdcdd2",.1),0,h/2,d/2+.015);}break;
       case "art":
+        if(variant==="bats"){
+          // A cluster of flat bats stuck straight onto the wall, across the layout area; lit sets get small spotlights.
+          let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647,bat=mat("#1c1622",.7);
+          const n=Math.max(5,Math.min(14,Math.round(w*h*1.6)));
+          for(let i=0;i<n;i++){const size=.22+rnd()*.42,x=(rnd()-.5)*(w-size),y=size*.25+rnd()*(h-size*.5);
+            const m=add(g,new T.Mesh(batGeometry(),bat),x,y,-d/2+.012);m.scale.set(size,size,1);m.rotation.z=(rnd()-.5)*.5;m.castShadow=false;}
+          if(f.product?.lit)for(let i=0;i<3;i++)oval(g,(i-1)*w*.32,.04,-d/2+.05,.06,.04,.04,glowMat("#fff1d6"));
+          break;
+        }
         box(g,w,h,Math.max(d,.04),wood,0,h/2,0);box(g,w*.9,h*.9,.025,white,0,h/2,d/2+.02);
         box(g,w*.88,h*.88,.012,productPrint(f.product,cloth),0,h/2,d/2+.04);break;
       case "wall-shelf":
@@ -308,10 +347,12 @@ export function createModelKit({onTexture=()=>{}}={}) {
           // Warm bulbs hanging on a sagging wire.
           const n=Math.max(4,Math.round(w/.55)),sag=Math.min(.2,w*.02);
           if(!geometries.has("bulb"))geometries.set("bulb",new T.SphereGeometry(.06,10,8));
-          const bulbs=new T.InstancedMesh(geometries.get("bulb"),glow,n+1),dummy=new T.Object3D(),pts=[];
-          for(let i=0;i<=n;i++){const x=-w/2+w*i/n,y=h/2-Math.sin(i/n*Math.PI*3)**2*sag;pts.push(new T.Vector3(x,y+.05,0));dummy.position.set(x,y-.04,0);dummy.updateMatrix();bulbs.setMatrixAt(i,dummy.matrix);}
+          // A coloured string (orange and purple, say) cycles its bulbs through the product's colours.
+          const colors=f.product?.bulbs?.length?f.product.bulbs:[null],dummy=new T.Object3D(),pts=[];
+          const bulbs=colors.map((c,k)=>new T.InstancedMesh(geometries.get("bulb"),c?glowMat(c):glow,Math.ceil((n+1-k)/colors.length)));
+          for(let i=0;i<=n;i++){const x=-w/2+w*i/n,y=h/2-Math.sin(i/n*Math.PI*3)**2*sag;pts.push(new T.Vector3(x,y+.05,0));dummy.position.set(x,y-.04,0);dummy.updateMatrix();bulbs[i%colors.length].setMatrixAt(Math.floor(i/colors.length),dummy.matrix);}
           const wireKey=["wire",w,h].join("|");if(!geometries.has(wireKey))geometries.set(wireKey,new T.TubeGeometry(new T.CatmullRomCurve3(pts),n*4,.012,4));
-          g.add(new T.Mesh(geometries.get(wireKey),mat("#5c5246",.6)),bulbs);
+          g.add(new T.Mesh(geometries.get(wireKey),mat(colors[0]?"#1c1622":"#5c5246",.6)),...bulbs);
           if(variant==="curtain")for(let i=0;i<=n;i++){const x=-w/2+w*i/n;box(g,.012,3.6,.012,ink,x,h/2-1.8,0,.004);for(let y=.25;y<3.6;y+=.5)oval(g,x,h/2-y,0,.032,.045,.032,glow);}
         }break;
       }
@@ -336,7 +377,34 @@ export function createModelKit({onTexture=()=>{}}={}) {
         box(g,w,h,d,finish,0,h/2,0);for(let i=0;i<4;i++)for(const z of [-1,1])box(g,.035,.012,.05,ink,(i/3-.5)*w*.72,h+.01,z*d*.15);break;
       case "towels":case "books":
         for(let i=0;i<3;i++)box(g,w*(1-i*.04),h*.29,d, f.kind==="books"?mat([color,"#e6d5b7","#626c79"][i]):cloth,0,h*(i+.5)/3,0,.025);break;
-      case "candle":cyl(g,w*.45,w*.45,h,finish,0,h/2,0);oval(g,0,h+.05,0,.025,.07,.025,glow);break;
+      case "candle":
+        // A multi-pack sits as a small cluster (count 1 is the single candle it always was).
+        cluster(f,w,d,(x,z,cw)=>{cyl(g,cw*.45,cw*.45,h,finish,x,h/2,z);oval(g,x,h+.05,z,.025,.07,.025,glow);});break;
+      case "pumpkin":{
+        // A ribbed pumpkin: eight lobes round a core and a stem. Lit ones glow through a carved face; glass ones are glossy.
+        const glass=variant==="glass",skin=glass?mat(f.material_color||"#d39a45",.25,false,.6):mat(f.material_color||"#e8782a",.7),stem=mat("#5d7a3a",.8),face=glowMat("#ffb066");
+        cluster(f,w,d,(x,z,cw,cd)=>{const r=Math.min(cw,cd)/2,ph=f.product?.count>1?Math.min(h,r*1.8):h;
+          for(let k=0;k<8;k++){const a=k*Math.PI/4;oval(g,x+Math.cos(a)*r*.5,ph*.47,z+Math.sin(a)*r*.5,r*.48,ph*.47,r*.42,skin).rotation.y=-a;}
+          oval(g,x,ph*.48,z,r*.62,ph*.47,r*.62,skin);cyl(g,r*.08,r*.12,ph*.22,stem,x,ph*.98,z,8);
+          if(f.product?.lit&&!glass){for(const sx of [-1,1])box(g,r*.22,ph*.13,.02,face,x+sx*r*.3,ph*.58,z+r*.97,.008);box(g,r*.64,ph*.11,.02,face,x,ph*.32,z+r*.98,.008);}});
+        break;
+      }
+      case "lantern":{
+        const r=Math.min(w,d)/2;
+        if(variant==="lantern"){
+          // A ghost lantern: a dark base and cap, a clear glass body with a glowing ghost inside, and a ring handle.
+          if(!materials.has("lantern-glass"))materials.set("lantern-glass",new T.MeshStandardMaterial({color:"#e9eef2",roughness:.1,metalness:.1,transparent:true,opacity:.3}));
+          if(!geometries.has("ring"))geometries.set("ring",new T.TorusGeometry(1,.12,6,18));
+          cyl(g,r*.95,r,h*.1,ink,0,h*.05,0,16);cyl(g,r*.78,r*.78,h*.6,materials.get("lantern-glass"),0,h*.4,0,16);
+          oval(g,0,h*.36,0,r*.3,h*.16,r*.3,glowMat("#fff1d6"));cyl(g,r*.86,r*.62,h*.12,ink,0,h*.76,0,16);
+          add(g,new T.Mesh(geometries.get("ring"),ink),0,h*.9,0).scale.setScalar(r*.32);
+        }else{
+          // A ghost night light: a soft sheet with a flared hem and two dark eyes, lit from inside.
+          const body=glowMat("#fff6ea");oval(g,0,h*.58,0,w*.42,h*.42,d*.42,body);cyl(g,w*.42,w*.48,h*.36,body,0,h*.18,0,16);
+          for(const sx of [-1,1])oval(g,sx*w*.13,h*.66,d*.4,w*.05,h*.07,.02,ink);
+        }
+        break;
+      }
       case "disco":oval(g,0,h/2,0,w/2,h/2,d/2,metal);break;
       case "fan":
         box(g,w*.65,.12,d*.7,finish,0,.06,0);box(g,.06,h*.55,.06,finish,0,h*.3,0);oval(g,0,h*.7,0,w*.48,h*.3,.05,ink);

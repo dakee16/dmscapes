@@ -3,7 +3,7 @@ import { formatRoomType } from "@/lib/format";
 import { getSchool } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { HOME_VIBES } from "@/lib/home-data";
-import { CUSTOM_STYLE, STYLES } from "@/lib/styles";
+import { CUSTOM_STYLE, SEASONAL_STYLES, STYLES } from "@/lib/styles";
 import type { RoomSummary, SchoolSummary, SelectedRoom, StyleId } from "@/lib/types";
 
 /** The planner's selected room in the catalog's shape, so it can be drawn with fitRoom. */
@@ -72,6 +72,12 @@ export function vibeMeta(id: StyleId | null, customVibe?: string | null): VibeMe
       plus: false,
       dots: [CUSTOM_STYLE.palette[2], CUSTOM_STYLE.palette[1], CUSTOM_STYLE.palette[3]],
     };
+  }
+  const seasonal = SEASONAL_STYLES.find((x) => x.id === id);
+  if (seasonal) {
+    // The kit's own colours, pumpkin first: [main, light, dark].
+    return { id, name: seasonal.name, line: "Orange glow, bats on the wall, a pumpkin on the desk.", plus: false,
+      dots: [seasonal.palette[1], seasonal.palette[2], seasonal.palette[3]] };
   }
   const v = HOME_VIBES.find((x) => x.id === id);
   if (v) return { id, name: v.name, line: v.line, plus: v.plus, dots: v.dots };

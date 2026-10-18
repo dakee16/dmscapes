@@ -20,6 +20,8 @@ import { useAuth } from "@/lib/auth-context";
 import { creditLimitReason, canGeneratePlan, headerCreditState } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
 import { useUpgrade } from "@/lib/upgrade-context";
+import { seasonOn } from "@/lib/season";
+import { budgetRange, isSeasonalStyle } from "@/lib/styles";
 import type { SelectedRoom } from "@/lib/types";
 import v from "@/components/plan-steps/Vibe.module.css";
 import css from "@/components/plan-steps/Budget.module.css";
@@ -30,12 +32,15 @@ const TIER_LABELS = {
   premium: "Premium",
 } as const;
 
-const QUICK = [300, 500, 650, 1000, 1500];
-
 const FACTS = [
   { h: "Priced to fit", p: "Your room fills with picks chosen to land under this number." },
   { h: "Live Amazon links", p: "Every piece links to a live listing, sizes included." },
   { h: "Change it later", p: "Swap pieces on the canvas and the total follows you." },
+];
+// A seasonal kit decorates the room the student already has.
+const SEASONAL_FACTS = [
+  { h: "Decor, not a whole new room", p: "Lights, wall decor, a throw, a rug and a pumpkin, all sized to your floor plan." },
+  { h: "Live Amazon links", p: "Every piece links to a live listing, sizes included." },
 ];
 
 const NOUNS: Record<string, [string, string]> = {
@@ -98,6 +103,19 @@ export default function PlanBudgetPage() {
     else if (!style) router.replace("/plan/style");
   }, [mounted, room, style, router]);
 
+  // Each vibe has its own budget range ($25 to $200 for a seasonal kit), so a
+  // budget left over from another vibe starts at this one's default instead.
+  // A seasonal vibe whose window has closed goes back to the vibe step.
+  useEffect(() => {
+    if (!mounted || !style) return;
+    if (isSeasonalStyle(style) && !seasonOn()) {
+      router.replace("/plan/style");
+      return;
+    }
+    const range = budgetRange(style);
+    if (budget < range.min || budget > range.max) setBudget(range.start);
+  }, [mounted, style, budget, setBudget, router]);
+
   // Funnel: the budget step was reached with a room and a vibe.
   useEffect(() => {
     if (!mounted || !room || !style || viewedRef.current) return;
@@ -143,13 +161,16 @@ export default function PlanBudgetPage() {
   useEffect(() => {
     if (!pendingGenerateRef.current || !user || !profile || modalOpen) return;
     pendingGenerateRef.current = false;
-    if (canGeneratePlan(profile)) {
+    // A Spooky Season plan spends nothing, so there's no credit to confirm.
+    if (style && isSeasonalStyle(style) && seasonOn()) {
+      setShowDisclaimer(true);
+    } else if (canGeneratePlan(profile)) {
       setShowCreditConfirm(true);
     } else {
       track("plan_blocked_no_credits");
       openUpgrade(creditLimitReason(profile));
     }
-  }, [user, profile, modalOpen, openUpgrade]);
+  }, [user, profile, modalOpen, openUpgrade, style]);
 
   // The server spends one credit before a new plan opens, for every tier.
   // The planning screen runs alongside the request and never holds the
@@ -163,7 +184,9 @@ export default function PlanBudgetPage() {
       return;
     }
     const blockReason = creditLimitReason(profile);
-    if (!canGeneratePlan(profile)) {
+    // Spooky Season plans are free inside the window; the server has the final say.
+    const freeSeasonal = isSeasonalStyle(style) && seasonOn();
+    if (!freeSeasonal && !canGeneratePlan(profile)) {
       track("plan_blocked_no_credits");
       openUpgrade(blockReason);
       return;
@@ -172,7 +195,7 @@ export default function PlanBudgetPage() {
     setGenerating(true);
     setPlanning({ ready: false });
     try {
-      const { blocked } = await consumePlanCredit();
+      const { blocked, seasonalFree } = await consumePlanCredit(style);
       void refreshProfile();
       if (blocked) {
         setPlanning(null);
@@ -180,9 +203,10 @@ export default function PlanBudgetPage() {
         openUpgrade(blockReason);
         return;
       }
-      usePlannerStore.getState().updatePlanning({ mode: "generated" });
+      usePlannerStore.getState().updatePlanning({ mode: "generated", seasonalFree });
       usePlannerStore.setState({ excluded: null });
-      track("plan_credit_consumed");
+      if (seasonalFree) track("seasonal_plan_started", { style, budget });
+      else track("plan_credit_consumed");
       // The planning screen opens /plan/result (openPlan) as soon as it can.
       setPlanning({ ready: true });
     } catch (error) {
@@ -213,13 +237,17 @@ export default function PlanBudgetPage() {
     );
   }
 
-  const tier = tierForBudget(budget);
+  const seasonal = isSeasonalStyle(style);
+  const range = budgetRange(style);
+  const tier = tierForBudget(budget, style);
   // "covers" applies to curated styles only; the custom flow has its own copy.
   const covered = style !== "custom" ? categoriesCovered(style, budget, room.bedSize) : null;
   const vibe = vibeMeta(style, customVibe);
-  const picks: GeneratingPicks = covered
-    ? { bedding: covered.includes("Bedding"), rug: covered.includes("Rug"), lamp: covered.includes("Desk Lamp") }
-    : { bedding: true, rug: true, lamp: true };
+  const picks: GeneratingPicks = seasonal && covered
+    ? { lights: covered.includes("Ambient Lighting"), rug: covered.includes("Rug"), pumpkin: covered.includes("Desk Accessories") }
+    : covered
+      ? { bedding: covered.includes("Bedding"), rug: covered.includes("Rug"), lamp: covered.includes("Desk Lamp") }
+      : { bedding: true, rug: true, lamp: true };
 
   return (
     <div className={v.layout}>
@@ -234,13 +262,13 @@ export default function PlanBudgetPage() {
           {usd(budget)}
         </output>
 
-        <BudgetTape id="budget-slider" value={budget} onChange={handleBudget} />
+        <BudgetTape id="budget-slider" value={budget} onChange={handleBudget} min={range.min} max={range.max} marks={range.marks} step={range.step} />
 
         <div className={css.quick} role="group" aria-label="Quick picks">
           <span className={css.quickLabel} aria-hidden="true">
             Quick picks
           </span>
-          {QUICK.map((q) => (
+          {range.quick.map((q) => (
             <button
               key={q}
               type="button"
@@ -254,7 +282,7 @@ export default function PlanBudgetPage() {
         </div>
 
         <p className={css.covers} aria-live="polite">
-          <span className={css.tier}>{TIER_LABELS[tier]}</span>
+          <span className={css.tier} data-seasonal={seasonal || undefined}>{TIER_LABELS[tier]}</span>
           {covered ? (
             covered.length ? (
               <span>
@@ -275,8 +303,8 @@ export default function PlanBudgetPage() {
           </div>
         </div>
 
-        <div className={css.facts}>
-          {FACTS.map((f) => (
+        <div className={css.facts} data-seasonal={seasonal || undefined}>
+          {(seasonal ? SEASONAL_FACTS : FACTS).map((f) => (
             <div key={f.h} className={css.fact}>
               <span className={css.factHead}>{f.h}</span>
               <span className={css.factBody}>{f.p}</span>
@@ -304,8 +332,8 @@ export default function PlanBudgetPage() {
               {generating ? "Planning…" : "Plan my room"}
               <ArrowUpRight size={24} strokeWidth={2.8} />
             </button>
-            <div className={css.costs}>
-              <span>Uses 1 plan credit</span>
+            <div className={css.costs} data-seasonal={seasonal || undefined}>
+              {seasonal ? <span className={css.free}>Free till Oct 31 · no credit used</span> : <span>Uses 1 plan credit</span>}
               <span>Saving is always free</span>
             </div>
           </div>

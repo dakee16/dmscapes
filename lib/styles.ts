@@ -142,6 +142,31 @@ export const RETIRED_STYLES: StyleMeta[] = [
   },
 ];
 
+// Limited seasonal kits: decor for the room the student already lives in, not
+// a whole new room. Kept out of STYLES so the picker grid, the homepage
+// showcase, the "All 9 vibes" count and Plus gating don't change; the vibe
+// step shows a wide card for one only inside its window (lib/season.ts).
+// Listed in ALL_STYLES, so saved designs keep opening after the season ends.
+export const SEASONAL_STYLES: StyleMeta[] = [
+  {
+    id: "spooky",
+    name: "Spooky Season",
+    keywords: ["orange glow", "bats", "pumpkins", "Halloween"],
+    palette: ["#fbe3cc", "#ff7a1a", "#4b2a6b", "#16161d"],
+    // The room's normal boards; grape and charcoal textiles, pumpkin accents, warm lamplight, a black and orange striped rug.
+    room: { floor: "#DDBF92", floorAlt: "#D2B282", wood: "#C9A16E", woodDark: "#8E6A43", textile: "#4B2A6B", textileAlt: "#2E2A33", accent: "#FF7A1A", glow: "#FFB066", rug: { pattern: "stripes", base: "#1C1622", line: "#FF7A1A" } },
+  },
+];
+
+export const isSeasonalStyle = (id: StyleId): boolean => SEASONAL_STYLES.some((s) => s.id === id);
+
+/** A style's budget tape: range, step, tape marks, quick picks and where it starts. */
+export interface BudgetRange { min: number; max: number; step: number; marks: number[]; quick: number[]; start: number }
+const ROOM_BUDGET: BudgetRange = { min: 200, max: 1500, step: 50, marks: [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400], quick: [300, 500, 650, 1000, 1500], start: 500 };
+// A seasonal kit is a handful of decor pieces, so its tape runs $25 to $200.
+const SEASONAL_BUDGET: BudgetRange = { min: 25, max: 200, step: 5, marks: [50, 75, 100, 125, 150, 175], quick: [40, 75, 120, 200], start: 75 };
+export const budgetRange = (id: StyleId | null | undefined): BudgetRange => (id && isSeasonalStyle(id) ? SEASONAL_BUDGET : ROOM_BUDGET);
+
 // "Create your own vibe" (Pro). A pseudo-style: resolvable for display, saves,
 // share links, and comparison, but deliberately NOT in STYLES so it never
 // appears in the picker grid (the page renders its own distinct tile) and the
@@ -171,7 +196,7 @@ export function designDisplayName(id: StyleId, vibe?: string | null): string {
 // Every style id the app recognizes: currently selectable, retired, plus the
 // custom pseudo-style. Server-side validation (saving a design) accepts this
 // full set so a saved legacy or custom design reopened in the planner re-saves.
-const ALL_STYLES: StyleMeta[] = [...STYLES, ...RETIRED_STYLES, CUSTOM_STYLE];
+const ALL_STYLES: StyleMeta[] = [...STYLES, ...RETIRED_STYLES, ...SEASONAL_STYLES, CUSTOM_STYLE];
 
 /** Every valid StyleId, including retired styles (for server-side validation). */
 export const ALL_STYLE_IDS: StyleId[] = ALL_STYLES.map((s) => s.id);

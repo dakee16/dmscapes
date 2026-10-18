@@ -134,6 +134,41 @@
   .heroArt { aspect-ratio: 760 / 640; }
 }
 
+/* Halloween season (design-handoff/halloween/HomeHero*.dc.html); hidden
+   unless <html data-season="halloween">. */
+.seasonChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-bottom: 22px;
+  padding: 0 16px 0 10px;
+  border-radius: 999px;
+  background: var(--ds-ink);
+  color: var(--ds-paper);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.seasonChip:hover { color: var(--ds-paper); text-decoration: none; }
+.seasonFree { color: #ffb066; }
+.seasonDecor { position: absolute; inset: 0; pointer-events: none; }
+.lightsWide { position: absolute; top: 96px; left: 2%; width: 96%; }
+.lightsNarrow { display: none; position: absolute; top: 6px; left: 3%; width: 94%; }
+.bat1, .bat2 { position: absolute; }
+.bat1 { right: 9%; top: 168px; width: 58px; height: 26px; transform: rotate(-8deg); }
+.bat2 { right: 19%; top: 206px; width: 36px; height: 16px; transform: rotate(10deg); opacity: 0.85; }
+@media (max-width: 1023px) {
+  .lightsWide, .bat2 { display: none; }
+  .lightsNarrow { display: block; }
+  .bat1 { right: 8%; top: 54px; width: 44px; height: 20px; }
+}
+@media (max-width: 560px) {
+  .seasonChip { gap: 8px; margin-bottom: 18px; padding: 0 14px 0 8px; font-size: 14px; }
+  .seasonChip > svg:first-child { width: 24px; height: 24px; }
+  .seasonArrow { display: none; }
+}
+
 /* Search */
 .search {
   position: relative;
@@ -231,11 +266,15 @@
   background: var(--ds-red);
   transform: rotate(45deg);
 }
+.tapeSeason { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+.tapeSeason:hover { color: inherit; text-decoration: none; }
 @media (max-width: 767px) {
   .tapeBand { height: 56px; background-size: 80px 24px, 40px 16px, 10px 9px; }
   .tapeTrack { bottom: 9px; }
   .tapeSet { font-size: 12px; gap: 28px; padding-right: 28px; }
   .diamond { width: 10px; height: 10px; }
+  .tapeSeason { gap: 8px; }
+  .tapeSeason svg { width: 18px; height: 18px; }
 }
 
 /* ---------- 02 · Problem ---------- */

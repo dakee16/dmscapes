@@ -14,7 +14,7 @@
   font-stretch: 85%;
   letter-spacing: -0.05em;
   font-variant-numeric: tabular-nums;
-  text-shadow: 5px 4px 0 rgba(255, 79, 168, 0.85), -5px -3px 0 rgba(36, 73, 255, 0.4);
+  text-shadow: 5px 4px 0 var(--ds-riso-tint), -5px -3px 0 rgba(36, 73, 255, 0.4);
   white-space: nowrap;
 }
 
@@ -59,9 +59,9 @@
   height: 64px;
   background-color: var(--ds-tape);
   background-image:
-    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1.5px, transparent 1.5px calc(100% / 130)),
-    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.75) 0 1.5px, transparent 1.5px calc(100% / 26)),
-    repeating-linear-gradient(90deg, var(--ds-ink) 0 2px, transparent 2px calc(100% / 13));
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1.5px, transparent 1.5px calc(100% / (var(--major, 13) * 10))),
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.75) 0 1.5px, transparent 1.5px calc(100% / (var(--major, 13) * 2))),
+    repeating-linear-gradient(90deg, var(--ds-ink) 0 2px, transparent 2px calc(100% / var(--major, 13)));
   background-size: 100% 10px, 100% 18px, 100% 28px;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -277,6 +277,23 @@
   font-size: 13px;
   color: var(--ds-muted);
 }
+/* A seasonal plan: free and uses no credit, in pumpkin ink, stacked over the saving line. */
+.costs[data-seasonal] {
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.free {
+  color: var(--ds-pumpkin-ink);
+  font-weight: 700;
+}
+.tier[data-seasonal] { background: var(--ds-pumpkin); }
+.facts[data-seasonal] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .meter {
   justify-content: center;
 }
@@ -316,7 +333,7 @@
   .figure {
     margin: 14px 0 0 -4px;
     font-size: clamp(88px, 28vw, 112px);
-    text-shadow: 4px 3px 0 rgba(255, 79, 168, 0.85), -3px -2px 0 rgba(36, 73, 255, 0.4);
+    text-shadow: 4px 3px 0 var(--ds-riso-tint), -3px -2px 0 rgba(36, 73, 255, 0.4);
   }
   .tape {
     margin-top: 18px;
@@ -333,8 +350,8 @@
     top: 30px;
     height: 48px;
     background-image:
-      repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1px, transparent 1px calc(100% / 130)),
-      repeating-linear-gradient(90deg, var(--ds-ink) 0 1.5px, transparent 1.5px calc(100% / 26));
+      repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1px, transparent 1px calc(100% / (var(--major, 13) * 10))),
+      repeating-linear-gradient(90deg, var(--ds-ink) 0 1.5px, transparent 1.5px calc(100% / (var(--major, 13) * 2)));
     background-size: 100% 9px, 100% 18px;
     box-shadow: 0 3px 0 var(--ds-tape-shadow);
   }
@@ -379,6 +396,25 @@
   }
   .facts {
     display: none;
+  }
+  /* A seasonal tape has only a few marks and two facts, so phones keep them: marks under the ticks, the ends below. */
+  .tape[data-few] .marks {
+    display: block;
+  }
+  .tape[data-few] .marks span {
+    top: 19px;
+    font-size: 10px;
+  }
+  .tape[data-few] .ends {
+    top: 32px;
+  }
+  .facts[data-seasonal] {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .costs[data-seasonal] {
+    font-size: 11px;
   }
   .backPhone {
     display: inline-block;
@@ -435,8 +471,8 @@
   top: 30px;
   height: 48px;
   background-image:
-    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1px, transparent 1px calc(100% / 130)),
-    repeating-linear-gradient(90deg, var(--ds-ink) 0 1.5px, transparent 1.5px calc(100% / 26));
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1px, transparent 1px calc(100% / (var(--major, 13) * 10))),
+    repeating-linear-gradient(90deg, var(--ds-ink) 0 1.5px, transparent 1.5px calc(100% / (var(--major, 13) * 2)));
   background-size: 100% 9px, 100% 18px;
   box-shadow: 0 3px 0 var(--ds-tape-shadow);
 }

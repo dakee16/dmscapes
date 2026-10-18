@@ -144,13 +144,15 @@ test("Paid upgrades add the allowance to existing credits and never downgrade Pr
 });
 
 const responseMock = { NextResponse: { json: (body, options) => Response.json(body, options) } };
-function routes(db, { user = "member", stripe = null } = {}) {
+function routes(db, { user = "member", stripe = null, season } = {}) {
   const mocks = {
     "next/server": responseMock,
     "@/lib/supabase-server": { getServiceClient: () => db },
     "@/lib/supabase-auth": { getUserId: async () => user },
     "@/lib/rate-limit": { rateLimit: () => ({ allowed: true }) },
     "@/lib/stripe": { getStripe: () => stripe },
+    // The Halloween window, pinned open or closed so the check doesn't depend on today's date.
+    ...(season === undefined ? {} : { "@/lib/season": { isSeason: () => season } }),
   };
   return { consume: load("app/api/plan/consume/route.ts", mocks).POST,
     checkout: load("app/api/checkout/route.ts", mocks).POST,
@@ -168,6 +170,26 @@ test("Consume API rejects unauthenticated, missing-profile, and unavailable-data
   assert.equal(offline.row.plan_credits_remaining, 10);
   const empty = await routes(database("pro", 0)).consume(request());
   assert.deepEqual(await empty.json(), { blocked: true, remaining: 0 });
+});
+
+test("A Spooky Season plan is free only inside the window; every other plan still spends", async () => {
+  // A free account whose one free plan is already used: no credits left, still gets a Spooky plan.
+  const open = database("free", 0, 1);
+  const free = await routes(open, { season: true }).consume(request({ style: "spooky" }));
+  assert.deepEqual(await free.json(), { blocked: false, remaining: 0, seasonalFree: true });
+  assert.equal(open.row.free_plans_used, 1, "A free seasonal plan writes nothing");
+  assert.equal(open.writes, 0);
+  const paid = database("pro", 10);
+  assert.deepEqual(await (await routes(paid, { season: true }).consume(request({ style: "spooky" }))).json(), { blocked: false, remaining: 10, seasonalFree: true });
+  assert.equal(paid.row.plan_credits_remaining, 10);
+  // Another vibe in season, or Spooky once the window has closed, goes through the normal ledger.
+  assert.deepEqual(await (await routes(paid, { season: true }).consume(request({ style: "cozy" }))).json(), { blocked: false, remaining: 9 });
+  assert.deepEqual(await (await routes(paid, { season: false }).consume(request({ style: "spooky" }))).json(), { blocked: false, remaining: 8 });
+  assert.deepEqual(await (await routes(database("pro", 0), { season: false }).consume(request({ style: "spooky" }))).json(), { blocked: true, remaining: 0 });
+  // A request without a body (older clients) still spends.
+  const legacy = database("pro", 2);
+  const bare = new Request("https://dormscape.test/api", { method: "POST" });
+  assert.deepEqual(await (await routes(legacy, { season: true }).consume(bare)).json(), { blocked: false, remaining: 1 });
 });
 
 test("Checkout advertises and pins the exact new grants, including Pro top-ups", async () => {
@@ -252,7 +274,13 @@ test("Client consumption fails closed for missing auth, network errors, and bad 
     assert.equal(args.headers.Authorization, "Bearer test-token");
     return Response.json({ blocked: false, remaining: 9 });
   };
-  assert.deepEqual(await client.consumePlanCredit(), { blocked: false, remaining: 9 });
+  assert.deepEqual(await client.consumePlanCredit(), { blocked: false, remaining: 9, seasonalFree: false });
+  // The style travels to the server, and a free seasonal plan comes back flagged.
+  global.fetch = async (_url, args) => {
+    assert.deepEqual(JSON.parse(args.body), { style: "spooky" });
+    return Response.json({ blocked: false, remaining: 0, seasonalFree: true });
+  };
+  assert.deepEqual(await client.consumePlanCredit("spooky"), { blocked: false, remaining: 0, seasonalFree: true });
 });
 
 // Run the actual page handlers with injected state and service boundaries. This
@@ -272,7 +300,7 @@ function handler(file, name, scope) {
 
 function controllerScope(overrides = {}) {
   // planning is the store's plan mode; screen is the page's planning screen, which opens /plan/result once it's ready.
-  const state = { busy: false, errors: [], upgrades: [], paths: [], spends: 0, saves: 0, freeUsed: false, planning: {mode:"manual"}, screen: null, excluded: ["bedding"] };
+  const state = { busy: false, errors: [], upgrades: [], paths: [], spends: 0, saves: 0, freeUsed: false, planning: {mode:"manual"}, screen: null, excluded: ["bedding"], events: [], styles: [] };
   const scope = {
     user: { id: "member" }, profile: { plan: "pro", plan_credits_remaining: 10 },
     style: "minimalist", room: { bedSize: "twin-xl" }, budget: 500,
@@ -280,11 +308,12 @@ function controllerScope(overrides = {}) {
     customRegenUsed: false, MIN_LOADING_MS: 0,
     generatingRef: { current: false }, regeneratingRef: { current: false },
     canGeneratePlan: plan.canGeneratePlan, creditLimitReason: plan.creditLimitReason, isPro: plan.isPro,
-    validateVibe: () => ({ ok: true }), track() {}, setShowDisclaimer() {}, setValidationMsg() {},
+    isSeasonalStyle: id => id === "spooky", seasonOn: () => true,
+    validateVibe: () => ({ ok: true }), track: e => state.events.push(e), setShowDisclaimer() {}, setValidationMsg() {},
     setGenerationError: e => state.errors.push(e), setApiError: e => state.errors.push(e), setRegenError: e => state.errors.push(e),
     setGenerating: v => { state.busy = v; }, setRegenerating: v => { state.busy = v; }, setPlanning: v => { state.screen = v; },
     openUpgrade: r => state.upgrades.push(r), router: { push: p => state.paths.push(p) },
-    consumePlanCredit: async () => { state.spends++; return { blocked: false, remaining: 9 }; },
+    consumePlanCredit: async style => { state.spends++; state.styles.push(style); return { blocked: false, remaining: 9, seasonalFree: false }; },
     refreshProfile: async () => {}, generateVibe: async () => ({ ok: true, products: [{ id: "bed" }] }),
     setCustomResult: () => { state.saves++; }, markCustomRegen: () => { state.freeUsed = true; },
     usePlannerStore: {getState:()=>({updatePlanning:patch=>{state.planning={...state.planning,...patch};}}),setState:patch=>Object.assign(state,patch)},
@@ -310,6 +339,22 @@ test("Preset generation handles exhausted credits and network failures without o
   assert.deepEqual(state.screen, { ready: true });
   assert.equal(state.planning.mode, "generated");
   assert.equal(state.excluded, null);
+});
+
+test("A free account with no credits still opens a Spooky Season plan, flagged as seasonal", async () => {
+  const { state, scope } = controllerScope({ style: "spooky", budget: 75, profile: { plan: "free", free_plans_used: 1 },
+    consumePlanCredit: async style => { state.styles.push(style); return { blocked: false, remaining: 0, seasonalFree: true }; } });
+  await handler("app/plan/budget/page.tsx", "runGenerate", scope)();
+  assert.deepEqual(state.upgrades, []);
+  assert.deepEqual(state.styles, ["spooky"]);
+  assert.deepEqual(state.screen, { ready: true });
+  assert.equal(state.planning.seasonalFree, true);
+  assert(state.events.includes("seasonal_plan_started") && !state.events.includes("plan_credit_consumed"));
+  // The same account on any other vibe is stopped at the credit gate.
+  const other = controllerScope({ style: "cozy", profile: { plan: "free", free_plans_used: 1 } });
+  await handler("app/plan/budget/page.tsx", "runGenerate", other.scope)();
+  assert.equal(other.state.spends, 0);
+  assert.equal(other.state.upgrades.length, 1);
 });
 
 test("Custom-vibe search failure spends nothing; a successful design spends once", async () => {

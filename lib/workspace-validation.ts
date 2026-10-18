@@ -1,6 +1,6 @@
 import { sanitizeEditor, sanitizeFurnitureList, sanitizeStudio } from "./studio-save";
 import { roomEditError } from "./room-editing";
-import { ALL_STYLE_IDS } from "./styles";
+import { ALL_STYLE_IDS, budgetRange } from "./styles";
 import type { SaveRoomRequest } from "./api-types";
 import type { RoomOutline, StyleId } from "./types";
 
@@ -11,7 +11,7 @@ export function cleanWorkspaceSnapshot(value: unknown): SaveRoomRequest | null {
   if (!value || typeof value !== "object" || Array.isArray(value)) return null;
   const s = value as SaveRoomRequest, d = s.room_dimensions;
   if (!d || !num(d.length_ft, 4, 60) || !num(d.width_ft, 4, 60) || !Number.isInteger(d.occupants) || !num(d.occupants, 1, 8) ||
-    !string(d.room_type, 60) || !ALL_STYLE_IDS.includes(s.style) || !num(s.budget, 200, 1500) || !string(s.template_id, 100) ||
+    !string(d.room_type, 60) || !ALL_STYLE_IDS.includes(s.style) || !num(s.budget, budgetRange(s.style).min, 1500) || !string(s.template_id, 100) ||
     id(s.college_id) === undefined || id(s.dorm_id) === undefined || (s.name != null && !string(s.name, 80))) return null;
   if (d.bed_size && !["twin", "twin_xl", "full", "full_xl", "queen"].includes(d.bed_size)) return null;
   const furniture = sanitizeFurnitureList(s.furniture_positions), editor = d.editor == null ? undefined : sanitizeEditor(d.editor), studio = d.studio == null ? undefined : sanitizeStudio(d.studio);

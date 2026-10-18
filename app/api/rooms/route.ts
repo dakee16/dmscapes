@@ -4,7 +4,7 @@ import { nanoid } from "nanoid";
 import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
-import { ALL_STYLE_IDS } from "@/lib/styles";
+import { ALL_STYLE_IDS, budgetRange } from "@/lib/styles";
 import type { SaveRoomRequest, SaveRoomResponse } from "@/lib/api-types";
 import type { ClosetRect, FurnitureItem, Point, RoomOutline, WallOpening } from "@/lib/types";
 
@@ -116,7 +116,8 @@ export async function POST(request: Request) {
 
   const style = STYLE_IDS.includes(body.style) ? body.style : null;
   const budget =
-    typeof body.budget === "number" && body.budget >= 200 && body.budget <= 1500
+    // Each style's own floor: $25 for a seasonal kit, $200 for a room.
+    typeof body.budget === "number" && body.budget >= budgetRange(style).min && body.budget <= 1500
       ? body.budget
       : null;
   const templateId = cleanId(body.template_id, 100);
