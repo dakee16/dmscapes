@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { matchTemplate } from "@/templates/template-matcher";
 import { productsFor, productById, tierForBudget, totalFor, extrasFor, isExtraCategory, unfilledSlots } from "@/lib/catalog";
 import { PumpkinMark } from "@/components/season/SeasonMarks";
+import { seasonOn } from "@/lib/season";
 import { isPlusStyle, isSeasonalStyle } from "@/lib/styles";
 import { useAuth } from "@/lib/auth-context";
 import { isPaid, isPro, canGeneratePlan } from "@/lib/plan";
@@ -474,7 +475,7 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
           buying={buyingProducts} buyingTotal={totalFor(buyingProducts)}
           unplacedIds={unplacedItemIds} onPlace={placeCustomItem}
           ownership={workspace?<ShoppingOwnership products={allCartProducts}/>:undefined}
-          note={isSeasonalStyle(style) ? <><PumpkinMark size={24} /><p><strong>Halloween is Saturday.</strong> Check delivery dates on Amazon before you order.</p></> : undefined}
+          note={isSeasonalStyle(style) && seasonOn() ? <><PumpkinMark size={24} /><p><strong>Halloween is Saturday.</strong> Check delivery dates on Amazon before you order.</p></> : undefined}
           extras={regen}/>}
       />
     </BuyGateProvider>
