@@ -323,3 +323,20 @@
 @media (min-width: 781px) {
   @container (max-width: 380px) { .row .actions > a { display: none; } }
 }
+
+/* A note above the list: the Spooky kit's delivery reminder. */
+.note {
+  flex: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 12px 24px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--ds-pumpkin);
+  border-radius: 14px;
+  background: #fff3e8;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ds-ink);
+}
+.note p { margin: 0; }

@@ -4,8 +4,9 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { matchTemplate } from "@/templates/template-matcher";
-import { productsFor, productById, tierForBudget, totalFor, extrasFor, isExtraCategory } from "@/lib/catalog";
-import { isPlusStyle } from "@/lib/styles";
+import { productsFor, productById, tierForBudget, totalFor, extrasFor, isExtraCategory, unfilledSlots } from "@/lib/catalog";
+import { PumpkinMark } from "@/components/season/SeasonMarks";
+import { isPlusStyle, isSeasonalStyle } from "@/lib/styles";
 import { useAuth } from "@/lib/auth-context";
 import { isPaid, isPro, canGeneratePlan } from "@/lib/plan";
 import { consumePlanCredit } from "@/lib/plan-credits";
@@ -209,7 +210,7 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
     // Custom vibe: the pipeline already produced the products (not the catalog),
     // so swaps/extras don't apply, render them straight through.
     if (style === "custom") return customProducts ?? [];
-    const core = productsFor(style, tierForBudget(budget), room?.bedSize).map((p) => {
+    const core = productsFor(style, tierForBudget(budget, style), room?.bedSize).map((p) => {
       const swapId = swaps[p.category];
       return (swapId && productById(swapId)) || p;
     });
@@ -238,8 +239,9 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
       if (p.price <= remaining) remaining -= p.price;
       else overflow.push(p.category);
     }
-    setExcluded(overflow);
-  }, [hydrated, excluded, products, budget, setExcluded, manual]);
+    // A seasonal kit has no storage, mirror, hamper, lamp or trash pieces: those template slots stay off the plan.
+    setExcluded([...overflow, ...(style ? unfilledSlots(style) : [])]);
+  }, [hydrated, excluded, products, budget, setExcluded, manual, style]);
 
   const cartProducts = useMemo(
     () => products.filter((p) => !(excluded ?? []).includes(p.category)),
@@ -466,6 +468,7 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
           buying={buyingProducts} buyingTotal={totalFor(buyingProducts)}
           unplacedIds={unplacedItemIds} onPlace={placeCustomItem}
           ownership={workspace?<ShoppingOwnership products={allCartProducts}/>:undefined}
+          note={isSeasonalStyle(style) ? <><PumpkinMark size={24} /><p><strong>Halloween is Saturday.</strong> Check delivery dates on Amazon before you order.</p></> : undefined}
           extras={regen}/>}
       />
     </BuyGateProvider>

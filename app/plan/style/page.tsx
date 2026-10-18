@@ -6,6 +6,8 @@ import StyleCard from "@/components/planner/StyleCard";
 import CreateVibeBanner from "@/components/planner/CreateVibeBanner";
 import RoomCard, { RoomLine } from "@/components/plan-steps/RoomCard";
 import PlusCard from "@/components/plan-steps/PlusCard";
+import SpookyCard from "@/components/plan-steps/SpookyCard";
+import spookyCss from "@/components/plan-steps/SpookyCard.module.css";
 import { ArrowRight } from "@/components/ds/Icons";
 import { ChevronLeft } from "@/components/plan-steps/icons";
 import { track } from "@/lib/analytics";
@@ -15,6 +17,7 @@ import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
 import { isPaid, isPro } from "@/lib/plan";
 import { useUpgrade } from "@/lib/upgrade-context";
+import { seasonOn } from "@/lib/season";
 import type { StyleId } from "@/lib/types";
 import css from "@/components/plan-steps/Vibe.module.css";
 
@@ -39,6 +42,13 @@ export default function PlanStylePage() {
   useEffect(() => {
     if (mounted && !room) router.replace("/plan");
   }, [mounted, room, router]);
+
+  // The Spooky Season vibe is offered only inside its window (lib/season.ts):
+  // after that a leftover selection is cleared, so no new Spooky plan starts.
+  const spooky = mounted && seasonOn();
+  useEffect(() => {
+    if (mounted && style === "spooky" && !seasonOn()) usePlannerStore.setState({ style: null });
+  }, [mounted, style]);
 
   function handleStyle(id: StyleId) {
     // Gated vibes stay visible for free users, but selecting one opens the
@@ -93,6 +103,13 @@ export default function PlanStylePage() {
         <div className={css.phoneOnly}>
           <RoomLine variant="pill" />
         </div>
+
+        {spooky && (
+          <>
+            <SpookyCard selected={style === "spooky"} onSelect={() => handleStyle("spooky")} />
+            <p className={spookyCss.after}>Or any time of year</p>
+          </>
+        )}
 
         <div role="group" aria-label="Vibes" className={css.grid}>
           {STYLES.map((s) => (

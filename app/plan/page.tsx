@@ -14,6 +14,7 @@ import { getSchool } from "@/lib/schools";
 import { usePlannerStore } from "@/lib/store";
 import { RECOVERY_KEY } from "@/lib/planner-storage";
 import type { RoomSummary, SchoolSummary, SelectedRoom } from "@/lib/types";
+import { seasonOn } from "@/lib/season";
 import css from "@/components/plan-steps/Page.module.css";
 
 let flowTracked = false;
@@ -80,6 +81,11 @@ export default function PlanSelectPage() {
     // Read from location rather than useSearchParams so this page keeps
     // rendering statically (same pattern as the Step 2 auth-gate resume).
     const params = new URLSearchParams(window.location.search);
+    // /plan?vibe=spooky (the hero chip, tape band and 404): preselect the seasonal vibe while it runs.
+    if (params.get("vibe") === "spooky" && seasonOn() && usePlannerStore.getState().style !== "spooky") {
+      usePlannerStore.getState().setStyle("spooky");
+      track("style_selected", { style: "spooky", source: "link" });
+    }
     const view = params.get("view");
     if (view === "2d" || view === "3d") usePlannerStore.getState().setPlannerView(view);
     const schoolId = params.get("school");

@@ -14,6 +14,11 @@ export function isSeason(now: number = Date.now()): boolean {
   return SEASON_ENABLED && now < END_MS;
 }
 
+/** In the browser: whether this visit has the season on (the head script's call, preview flag included). */
+export function seasonOn(): boolean {
+  return typeof document !== "undefined" && document.documentElement.dataset.season === SEASON.id;
+}
+
 /** sessionStorage key for the ?season=halloween (or ?season=off) preview flag. */
 const PREVIEW_KEY = "dormscape-season";
 

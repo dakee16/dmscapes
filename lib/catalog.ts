@@ -1,4 +1,5 @@
 import rawCatalog from "@/data/product-catalog.json";
+import { isSeasonalStyle } from "./styles";
 import type { BedSize, BudgetTier, Product, ProductCategory, StyleId } from "./types";
 
 export const CATALOG = rawCatalog as Product[];
@@ -89,7 +90,9 @@ export function productById(id: string): Product | undefined {
 }
 
 /** Budget slider value -> catalog tier. Tier room targets: 200-400 / 400-700 / 700-1500. */
-export function tierForBudget(budget: number): BudgetTier {
+export function tierForBudget(budget: number, style?: StyleId | null): BudgetTier {
+  // A seasonal kit ($25-$200): up to $60 Essentials, up to $110 Upgraded, above that Premium.
+  if (style && isSeasonalStyle(style)) return budget <= 60 ? "budget" : budget <= 110 ? "mid" : "premium";
   // Tuned so a budget lands a cart WITHIN ~\$50 of it, not hundreds under. The
   // auto-list is one product per category and the result-page seeder trims to
   // never exceed budget, so a higher tier fills a mid/high budget far closer
@@ -159,6 +162,16 @@ export function productsFor(style: StyleId, tier: BudgetTier, bedSize?: BedSize)
   return picks;
 }
 
+/**
+ * Template slots a style has no product for, kept off its plan. A seasonal kit
+ * is decor only, so a Spooky room shows no empty storage, mirror, hamper, lamp
+ * or trash slots. Room styles keep every slot, as before.
+ */
+export function unfilledSlots(style: StyleId): ProductCategory[] {
+  if (!isSeasonalStyle(style)) return [];
+  return CATEGORY_ORDER.filter((cat) => cat !== "bedding" && !CATALOG.some((p) => p.active && p.category === cat && p.style_tags.includes(style)));
+}
+
 /** Resolve alternative_ids to products (other tiers, same style family). */
 export function alternativesOf(p: Product): Product[] {
   return p.alternative_ids
@@ -176,7 +189,7 @@ export function totalFor(products: Product[]): number {
  * accumulating prices until the budget runs out.
  */
 export function categoriesCovered(style: StyleId, budget: number, bedSize?: BedSize): string[] {
-  const tier = tierForBudget(budget);
+  const tier = tierForBudget(budget, style);
   let remaining = budget;
   const covered: string[] = [];
   for (const p of productsFor(style, tier, bedSize)) {

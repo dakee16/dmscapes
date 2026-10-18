@@ -22,7 +22,7 @@ export async function workspaceRequest<T>(path: string, init: RequestInit = {}):
 export function currentProducts(state: PlannerState): Product[] {
   if (!state.style) return [];
   const core = state.style === "custom" ? state.customProducts ?? [] : [
-    ...productsFor(state.style, tierForBudget(state.budget), state.room?.bedSize).map(p => productById(state.swaps[p.category] ?? "") ?? p),
+    ...productsFor(state.style, tierForBudget(state.budget, state.style), state.room?.bedSize).map(p => productById(state.swaps[p.category] ?? "") ?? p),
     ...extrasFor(state.style),
   ];
   return [...core.filter(p => !(state.excluded ?? []).includes(p.category)), ...state.customItems];

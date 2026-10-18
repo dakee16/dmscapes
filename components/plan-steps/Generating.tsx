@@ -21,9 +21,12 @@ const STAGES = [
 ] as const;
 
 export interface GeneratingPicks {
-  bedding: boolean;
-  rug: boolean;
-  lamp: boolean;
+  bedding?: boolean;
+  rug?: boolean;
+  lamp?: boolean;
+  /** A seasonal kit's picks: string lights along the top wall, a pumpkin on the desk. */
+  lights?: boolean;
+  pumpkin?: boolean;
 }
 
 /**
@@ -299,6 +302,33 @@ export default function Generating({
                         BEDDING
                       </text>
                     )}
+                  </g>
+                );
+              })}
+            {picks.lights && (
+              <g className={css.pick} style={{ "--i": pickIndex++ } as React.CSSProperties}>
+                {(() => {
+                  const n = Math.max(3, Math.floor((L - 1.2) / 1.2));
+                  return Array.from({ length: n }, (_, i) => (
+                    <circle key={i} cx={X(0.6 + (i + 0.5) * (L - 1.2) / n)} cy={Y(0.45)} r={0.17 * U} className={css.pickShape} data-fill={fill} data-kind="lamp" />
+                  ));
+                })()}
+                <text x={X(L / 2)} y={Y(0.45) + 0.17 * U + 12} className={css.pickLabel} textAnchor="middle">
+                  LIGHTS
+                </text>
+              </g>
+            )}
+            {picks.pumpkin &&
+              desks.slice(0, 1).map((f) => {
+                const fp = footprint(f);
+                const cx = X(fp.x + fp.w / 2);
+                const cy = Y(fp.y + fp.h / 2);
+                return (
+                  <g key={`pumpkin-${f.id}`} className={css.pick} style={{ "--i": pickIndex++ } as React.CSSProperties}>
+                    <circle cx={cx} cy={cy} r={0.45 * U} className={css.pickShape} data-fill={fill} data-kind="lamp" />
+                    <text x={cx} y={cy - 0.45 * U - 6} className={css.pickLabel} textAnchor="middle">
+                      PUMPKIN
+                    </text>
                   </g>
                 );
               })}

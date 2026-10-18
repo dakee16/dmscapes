@@ -2,6 +2,7 @@ import type { FurnitureItem, Product, SelectedRoom } from "./types";
 import { furnitureCategory } from "./highlight";
 import { footprint, furnitureCorners, furnitureHost, furnitureInsidePolygon, invalidItems, layerOf, rectInsidePolygon } from "@/components/canvas/geometry";
 import { bedSurfaceHeight, itemHeight, modelKind, roomOutline } from "./studio";
+import { isSeasonalStyle } from "./styles";
 
 const COLORS: Record<string, string> = {
   white:"#f5f1e8", cream:"#eee2c9", ivory:"#eee4d0", beige:"#c9b595", black:"#252629",
@@ -33,7 +34,7 @@ export function productVisual(product: Product) {
   const text = `${product.name} ${product.description}`.toLowerCase();
   // The Halloween kit's own pieces: a jack-o'-lantern, a ghost or ghost lantern, bats on the wall.
   const pumpkin = /pumpkin|jack[- ]?o'?[- ]?lantern/.test(text), ghost = /ghost|lantern/.test(text);
-  const seasonal = (product.style_tags as string[]).includes("spooky");
+  const seasonal = product.style_tags.some(isSeasonalStyle);
   let kind: string;
   switch (product.category) {
     case "bedding": kind = "bed"; break;

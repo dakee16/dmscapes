@@ -1,0 +1,86 @@
+/* The Spooky Season card above the vibe grid (design-handoff/halloween/VibeStep*.dc.html) */
+.card {
+  position: relative;
+  margin-top: 26px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  border: 2.5px solid var(--ds-ink);
+  border-radius: 18px;
+  background: #fff;
+  overflow: hidden;
+  text-align: left;
+  font-family: var(--ds-sans);
+  color: var(--ds-ink);
+  cursor: pointer;
+  transition: box-shadow 0.2s var(--ds-ease);
+}
+.card:hover { box-shadow: 4px 4px 0 var(--ds-pumpkin); }
+.card[data-selected="true"] { box-shadow: 6px 6px 0 var(--ds-pumpkin); }
+.card:focus-visible { outline: 3px solid var(--ds-blue); outline-offset: 3px; }
+.art { position: relative; display: block; flex: 1 1 300px; min-height: 172px; background: #2a1f3a; }
+.art :global(svg) { position: absolute; inset: 0; width: 100%; height: 100%; }
+.body {
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 64px 20px 24px;
+}
+.eyebrow {
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-pumpkin-ink);
+}
+.name { font-size: 26px; font-weight: 850; font-stretch: 92%; letter-spacing: -0.02em; line-height: 1.1; }
+.line { font-size: 15px; line-height: 1.45; color: var(--ds-body); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--ds-paper);
+  font-family: var(--ds-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.tag[data-tone="pumpkin"] { background: var(--ds-pumpkin); }
+.tick {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  display: grid;
+  place-items: center;
+}
+/* The label between the card and the year-round grid. */
+.after {
+  margin: 30px 0 -12px;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+@media (max-width: 640px) {
+  .card { margin-top: 18px; }
+  .art { min-height: 150px; }
+  .body { padding: 18px 20px 20px; }
+  .range { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+}
