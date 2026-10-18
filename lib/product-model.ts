@@ -93,24 +93,25 @@ function clusterSize(visual: ReturnType<typeof productVisual>, w: number, l: num
 }
 
 /**
- * Where a seasonal wall piece hangs on the top wall: centred if it can be,
- * otherwise in the widest stretch clear of a door or window (a quarter foot
- * either side). Rooms without a straight top wall keep the centre.
+ * Slides a seasonal wall piece along the wall it hangs on until it is clear of
+ * that wall's doors and windows (a quarter foot either side), moving as little
+ * as possible. Left where it is when the wall has no clear stretch long enough.
  */
-function clearWallX(room: SelectedRoom, w: number): number {
-  const outline = roomOutline(room), pts = outline.points, centre = Math.max(0, (room.lengthFt - w) / 2);
-  const edge = pts.findIndex((a, i) => a.y < .01 && pts[(i + 1) % pts.length].y < .01);
-  if (edge < 0) return centre;
-  const a = pts[edge], b = pts[(edge + 1) % pts.length], dir = b.x >= a.x ? 1 : -1;
-  const blocked = outline.openings.filter(o => o.edge === edge)
-    .map(o => [a.x + dir * o.offset_ft, a.x + dir * (o.offset_ft + o.width_ft)].sort((p, q) => p - q))
-    .map(([p, q]) => [p - .25, q + .25]).sort((p, q) => p[0] - q[0]);
-  let from = Math.min(a.x, b.x) + .25, best: [number, number] | null = null;
-  for (const [start, end] of [...blocked, [Math.max(a.x, b.x) - .25, Infinity]]) {
-    if (start - from >= w && (!best || start - from > best[1] - best[0])) best = [from, start];
-    from = Math.max(from, end);
-  }
-  return best ? Math.max(best[0], Math.min(best[1] - w, centre)) : centre;
+function clearOfOpenings(f: FurnitureItem, room: SelectedRoom): void {
+  const outline = roomOutline(room), pts = outline.points, b = footprint(f), c = {x:b.x+b.w/2, y:b.y+b.h/2};
+  let edge = -1, gap = Infinity;
+  pts.forEach((a, i) => {
+    const z = pts[(i+1)%pts.length], len = Math.hypot(z.x-a.x, z.y-a.y) || 1, along = ((c.x-a.x)*(z.x-a.x)+(c.y-a.y)*(z.y-a.y))/len;
+    const away = Math.abs((c.x-a.x)*(z.y-a.y)-(c.y-a.y)*(z.x-a.x))/len;
+    if (along >= 0 && along <= len && away < gap) { gap = away; edge = i; }
+  });
+  if (edge < 0) return;
+  const a = pts[edge], z = pts[(edge+1)%pts.length], len = Math.hypot(z.x-a.x, z.y-a.y), ux = (z.x-a.x)/len, uy = (z.y-a.y)/len;
+  const half = f.width_ft/2, at = (c.x-a.x)*ux+(c.y-a.y)*uy;
+  const blocked = outline.openings.filter(o => o.edge === edge).map(o => [o.offset_ft-.25, o.offset_ft+o.width_ft+.25]);
+  const clear = (t: number) => t-half >= .25 && t+half <= len-.25 && blocked.every(([s, e]) => t+half <= s || t-half >= e);
+  if (clear(at)) return;
+  for (let d = .25; d < len; d += .25) for (const t of [at-d, at+d]) if (clear(t)) { f.x_ft += (t-at)*ux; f.y_ft += (t-at)*uy; return; }
 }
 
 const DEFAULT_SIZE: Record<string, [number, number, number]> = {
@@ -172,6 +173,10 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
     if (visual.kind === "lights" && visual.variant === "neon") {
       next.width_ft = p.width_ft ?? 2; next.length_ft = .08; next.height_ft = p.height_ft ?? 1.5; next.elevation_ft = 4;
     }
+    // A sticker set is laid out over its catalog layout size, whatever the slot held before.
+    if (visual.variant === "bats") {
+      next.width_ft = p.width_ft ?? 3; next.length_ft = p.length_ft ?? .05; next.height_ft = p.height_ft ?? 2;
+    }
     if (f.type === "string_lights" && visual.kind !== "lights") {
       next.type = p.category;
       next.elevation_ft = 0;
@@ -189,6 +194,7 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
       next.x_ft=bed.x+bed.w/2-Math.sin(a)*offset-b.w/2;
       next.y_ft=bed.y+bed.h/2+Math.cos(a)*offset-b.h/2;
     }
+    if (visual.seasonal && ["art", "wall-shelf", "macrame"].includes(visual.kind)) clearOfOpenings(next, room);
     return next;
   });
   for (let i=0;i<result.length;i++) if(result[i]!==items[i]) clearPosition(result[i],result,room);
@@ -208,7 +214,8 @@ export function syncProductFurniture(items: FurnitureItem[], products: Product[]
     if (surface && placeOnSurface(f,result,["organizer","desk-mat","riser","fan","pumpkin","lantern"].includes(visual.kind))) {
       // Surface placement records its parent, so movement and rotation stay linked.
     } else if (wall) {
-      f.x_ft=visual.seasonal && visual.kind !== "lights" ? clearWallX(room, f.width_ft) : Math.max(0,(room.lengthFt-f.width_ft)/2); f.y_ft=.12; f.elevation_ft=Math.max(0,6.7-f.height_ft!);
+      f.x_ft=Math.max(0,(room.lengthFt-f.width_ft)/2); f.y_ft=.12; f.elevation_ft=Math.max(0,6.7-f.height_ft!);
+      if (visual.seasonal && visual.kind !== "lights" && visual.kind !== "curtains") clearOfOpenings(f, room);
       const outline=roomOutline(room),opening=outline.openings.find(o=>o.kind==="window");
       if (visual.kind==="curtains" && opening) {
         const a=outline.points[opening.edge],b=outline.points[(opening.edge+1)%outline.points.length];
