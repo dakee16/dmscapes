@@ -64,3 +64,6 @@ brag-output/
 
 # Design handoff (local reference only; repo is public)
 /design-handoff/
+
+# Hall Finder raw OSM/registrar downloads (scripts/campus/fetch.mjs)
+/scripts/campus/cache/
