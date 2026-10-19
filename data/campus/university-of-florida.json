@@ -1,0 +1,3241 @@
+{
+ "collegeId": "university-of-florida",
+ "generatedAt": "2026-10-19T18:23:20.594Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-10-19"
+  },
+  {
+   "name": "UF Campus Map building data (campusmap.ufl.edu)",
+   "url": "https://campusmap.ufl.edu/library/api/searchBldg",
+   "use": "building codes",
+   "read": "2026-10-19"
+  },
+  {
+   "name": "UF Housing FAQ: \"our residence halls house first-year and upper-level students together\"",
+   "url": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "use": "first-year and upper-year tags (each hall's yearSource)"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "use": "year tag"
+  }
+ ],
+ "bounds": [
+  -82.3708,
+  29.62898,
+  -82.33302,
+  29.65298
+ ],
+ "halls": [
+  {
+   "dormId": "beaty-towers",
+   "name": "Beaty Towers",
+   "lng": -82.340193,
+   "lat": 29.644957,
+   "pin": "name",
+   "osm": "way/1015400666",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "broward-hall",
+   "name": "Broward Hall",
+   "lng": -82.342084,
+   "lat": 29.646547,
+   "pin": "name",
+   "osm": "way/150861257",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "buckman-hall",
+   "name": "Buckman Hall",
+   "lng": -82.345003,
+   "lat": 29.650885,
+   "pin": "name",
+   "osm": "way/294197709",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "cypress-hall",
+   "name": "Cypress Hall",
+   "lng": -82.339812,
+   "lat": 29.645909,
+   "pin": "name",
+   "osm": "way/276867721",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "east-hall",
+   "name": "East Hall",
+   "lng": -82.35022,
+   "lat": 29.647312,
+   "pin": "name",
+   "osm": "way/150803323",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "fletcher-hall",
+   "name": "Fletcher Hall",
+   "lng": -82.34531,
+   "lat": 29.651371,
+   "pin": "name",
+   "osm": "way/294197708",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "honors-village",
+   "name": "Honors Village",
+   "lng": -82.341759,
+   "lat": 29.645048,
+   "pin": "address",
+   "osm": "way/1133281285",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "hume-hall",
+   "name": "Hume Hall",
+   "lng": -82.352166,
+   "lat": 29.644975,
+   "pin": "name",
+   "osm": "way/427905273",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "infinity-hall",
+   "name": "Infinity Hall",
+   "lng": -82.334758,
+   "lat": 29.650776,
+   "pin": "name",
+   "osm": "way/363163143",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "jennings-hall",
+   "name": "Jennings Hall",
+   "lng": -82.342496,
+   "lat": 29.643747,
+   "pin": "address",
+   "osm": "way/865542768",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "keys-residential-complex",
+   "name": "Keys Residential Complex",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "lakeside-residential-complex",
+   "name": "Lakeside Residential Complex",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "mallory-hall",
+   "name": "Mallory Hall",
+   "lng": -82.340305,
+   "lat": 29.646788,
+   "pin": "name",
+   "osm": "way/150858517",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "murphree-hall",
+   "name": "Murphree Hall",
+   "lng": -82.346736,
+   "lat": 29.651217,
+   "pin": "name",
+   "osm": "way/150926629",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "north-hall",
+   "name": "North Hall",
+   "lng": -82.350732,
+   "lat": 29.647899,
+   "pin": "name",
+   "osm": "way/150800193",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "rawlings-hall",
+   "name": "Rawlings Hall",
+   "lng": -82.342936,
+   "lat": 29.646247,
+   "pin": "name",
+   "osm": "way/150823412",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "reid-hall",
+   "name": "Reid Hall",
+   "lng": -82.339842,
+   "lat": 29.646458,
+   "pin": "name",
+   "osm": "way/150858518",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "riker-hall",
+   "name": "Riker Hall",
+   "lng": -82.351175,
+   "lat": 29.647475,
+   "pin": "name",
+   "osm": "way/150800194",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "sledd-hall",
+   "name": "Sledd Hall",
+   "lng": -82.345537,
+   "lat": 29.650765,
+   "pin": "name",
+   "osm": "way/294197707",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "springs-residential-complex",
+   "name": "Springs Residential Complex",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "thomas-hall",
+   "name": "Thomas Hall",
+   "lng": -82.346002,
+   "lat": 29.651199,
+   "pin": "name",
+   "osm": "way/294197706",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "tolbert-hall",
+   "name": "Tolbert Hall",
+   "lng": -82.351406,
+   "lat": 29.647975,
+   "pin": "name",
+   "osm": "way/150800196",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "weaver-hall",
+   "name": "Weaver Hall",
+   "lng": -82.35075,
+   "lat": 29.647014,
+   "pin": "name",
+   "osm": "way/150800200",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  {
+   "dormId": "yulee-hall",
+   "name": "Yulee Hall",
+   "lng": -82.340361,
+   "lat": 29.646219,
+   "pin": "name",
+   "osm": "way/150858522",
+   "year": "any",
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  }
+ ],
+ "places": [
+  {
+   "id": "uf-health-shands-hospital-and-uf-health-shands-childrens-hospital",
+   "name": "UF Health Shands Hospital and UF Health Shands Children's Hospital",
+   "short": "UF Health Shands Hospital and UF Health Shands Children's Hospital",
+   "kind": "academic",
+   "codes": [
+    "ARB",
+    "PSB",
+    "GSA",
+    "DSB",
+    "MSB",
+    "THC"
+   ],
+   "aliases": [
+    "Academic Research Building",
+    "Shands Patient Services Bldg",
+    "General Services Building",
+    "Dental Science",
+    "Stetson Medical Sciences",
+    "North Tower"
+   ],
+   "lng": -82.344244,
+   "lat": 29.640097,
+   "osm": "way/154233185"
+  },
+  {
+   "id": "sanders-football-practice-fields",
+   "name": "Sanders Football Practice Fields",
+   "short": "Sanders Football Practice Fields",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.353112,
+   "lat": 29.650578,
+   "osm": "way/856556116"
+  },
+  {
+   "id": "southwest-recreation-center",
+   "name": "Southwest Recreation Center",
+   "short": "Southwest Recreation Center",
+   "kind": "gym",
+   "codes": [
+    "SWRC"
+   ],
+   "aliases": [
+    "SW Rec"
+   ],
+   "lng": -82.368337,
+   "lat": 29.638404,
+   "osm": "way/154233119"
+  },
+  {
+   "id": "j-wayne-reitz-union",
+   "name": "J. Wayne Reitz Union",
+   "short": "J. Wayne Reitz Union",
+   "kind": "academic",
+   "codes": [
+    "REI"
+   ],
+   "aliases": [
+    "Dr. Julius Wayne Reitz Student Union",
+    "Florida Union",
+    "Reitz Student Union"
+   ],
+   "lng": -82.347827,
+   "lat": 29.646333,
+   "osm": "way/863211313"
+  },
+  {
+   "id": "norman-hall",
+   "name": "Norman Hall",
+   "short": "Norman Hall",
+   "kind": "academic",
+   "codes": [
+    "NRN",
+    "NRNA"
+   ],
+   "aliases": [
+    "James W. Norman Hall",
+    "P.K. Yonge Laboratory School",
+    "Norman Hall Addition"
+   ],
+   "lng": -82.337767,
+   "lat": 29.646703,
+   "osm": "relation/11802663"
+  },
+  {
+   "id": "new-physics-building",
+   "name": "New Physics Building",
+   "short": "New Physics Building",
+   "kind": "academic",
+   "codes": [
+    "NPB"
+   ],
+   "aliases": [
+    "Physics Building"
+   ],
+   "lng": -82.34979,
+   "lat": 29.64389,
+   "osm": "relation/6325345"
+  },
+  {
+   "id": "university-of-florida-health-shands-cancer-hospital",
+   "name": "University of Florida Health Shands Cancer Hospital",
+   "short": "University of Florida Health Shands Cancer Hospital",
+   "kind": "academic",
+   "codes": [
+    "P04"
+   ],
+   "aliases": [
+    "Shands Cancer Center"
+   ],
+   "lng": -82.342407,
+   "lat": 29.638823,
+   "osm": "way/257707418"
+  },
+  {
+   "id": "microbiology-cell-science-building",
+   "name": "Microbiology/Cell Science Building",
+   "short": "Microbiology/Cell Science Building",
+   "kind": "academic",
+   "codes": [
+    "MCSB"
+   ],
+   "aliases": [
+    "Microbiology/Cell Science"
+   ],
+   "lng": -82.363009,
+   "lat": 29.639963,
+   "osm": "way/259946092"
+  },
+  {
+   "id": "holland-hall",
+   "name": "Holland Hall",
+   "short": "Holland Hall",
+   "kind": "academic",
+   "codes": [
+    "HOL"
+   ],
+   "aliases": [
+    "Spessard L. Holland Law Center",
+    "Holland Law Center"
+   ],
+   "lng": -82.359067,
+   "lat": 29.649747,
+   "osm": "way/154233115"
+  },
+  {
+   "id": "dickinson-hall",
+   "name": "Dickinson Hall",
+   "short": "Dickinson Hall",
+   "kind": "academic",
+   "codes": [
+    "MUS"
+   ],
+   "aliases": [
+    "Joshua C. Dickinson Hall",
+    "Florida Museum of Natural History",
+    "Florida Museum Research & Collections/Dickinson Hall"
+   ],
+   "lng": -82.344183,
+   "lat": 29.644379,
+   "osm": "way/154233082"
+  },
+  {
+   "id": "uf-health-heart-and-vascular-and-neuromedicine-hospitals",
+   "name": "UF Health Heart & Vascular and Neuromedicine Hospitals",
+   "short": "UF Health Heart & Vascular and Neuromedicine Hospitals",
+   "kind": "academic",
+   "codes": [
+    "P06"
+   ],
+   "aliases": [
+    "HVN"
+   ],
+   "lng": -82.340694,
+   "lat": 29.639331,
+   "osm": "way/1013349485"
+  },
+  {
+   "id": "florida-gym",
+   "name": "Florida Gym",
+   "short": "Florida Gym",
+   "kind": "gym",
+   "codes": [
+    "FLG"
+   ],
+   "aliases": [
+    "Florida Gymnasium",
+    "Alligator Alley"
+   ],
+   "lng": -82.347271,
+   "lat": 29.649386,
+   "osm": "way/45719891"
+  },
+  {
+   "id": "college-of-veterinary-medicine",
+   "name": "College of Veterinary Medicine",
+   "short": "College of Veterinary Medicine",
+   "kind": "academic",
+   "codes": [
+    "VMAB"
+   ],
+   "aliases": [
+    "Veterinary Academic Bldg"
+   ],
+   "lng": -82.348802,
+   "lat": 29.633715,
+   "osm": "way/479181002"
+  },
+  {
+   "id": "weimer-hall",
+   "name": "Weimer Hall",
+   "short": "Weimer Hall",
+   "kind": "academic",
+   "codes": [
+    "WEIM"
+   ],
+   "aliases": [],
+   "lng": -82.347391,
+   "lat": 29.647831,
+   "osm": "way/150858520"
+  },
+  {
+   "id": "fifield-hall",
+   "name": "Fifield Hall",
+   "short": "Fifield Hall",
+   "kind": "academic",
+   "codes": [
+    "FIF"
+   ],
+   "aliases": [
+    "Willard M. Fifield Hall"
+   ],
+   "lng": -82.361149,
+   "lat": 29.638396,
+   "osm": "way/259946081"
+  },
+  {
+   "id": "turlington-hall",
+   "name": "Turlington Hall",
+   "short": "Turlington Hall",
+   "kind": "academic",
+   "codes": [
+    "TUR"
+   ],
+   "aliases": [
+    "Ralph D. Turlington Hall"
+   ],
+   "lng": -82.344096,
+   "lat": 29.649188,
+   "osm": "way/150684197"
+  },
+  {
+   "id": "uf-cancer-and-genetics-research-complex",
+   "name": "UF Cancer & Genetics Research Complex",
+   "short": "UF Cancer & Genetics Research Complex",
+   "kind": "academic",
+   "codes": [
+    "CGRC"
+   ],
+   "aliases": [
+    "Cancer/Genetics Research"
+   ],
+   "lng": -82.35159,
+   "lat": 29.638016,
+   "osm": "way/421670144"
+  },
+  {
+   "id": "university-of-florida-health-davis-cancer-pavilion",
+   "name": "University of Florida Health Davis Cancer Pavilion",
+   "short": "University of Florida Health Davis Cancer Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Jerry W. and Judith S. Davis Cancer Pavilion at the University of Florida"
+   ],
+   "lng": -82.349628,
+   "lat": 29.637733,
+   "osm": "way/154233152"
+  },
+  {
+   "id": "mcknight-brain-institute",
+   "name": "McKnight Brain Institute",
+   "short": "McKnight Brain Institute",
+   "kind": "academic",
+   "codes": [
+    "MBI"
+   ],
+   "aliases": [
+    "The Evelyn F. and William L. McKnight Brain Institute of the University of Florida"
+   ],
+   "lng": -82.343231,
+   "lat": 29.641846,
+   "osm": "way/277110226"
+  },
+  {
+   "id": "mcguire-pavilion",
+   "name": "McGuire Pavilion",
+   "short": "McGuire Pavilion",
+   "kind": "academic",
+   "codes": [
+    "CON"
+   ],
+   "aliases": [
+    "Nadine McGuire Theatre & Dance Pavilion",
+    "Constans Theatre"
+   ],
+   "lng": -82.346617,
+   "lat": 29.646182,
+   "osm": "way/150821685"
+  },
+  {
+   "id": "library-west",
+   "name": "Library West",
+   "short": "Library West",
+   "kind": "library",
+   "codes": [
+    "LBW"
+   ],
+   "aliases": [
+    "Club West"
+   ],
+   "lng": -82.34291,
+   "lat": 29.651388,
+   "osm": "relation/12122775"
+  },
+  {
+   "id": "antevy-hall",
+   "name": "Antevy Hall",
+   "short": "Antevy Hall",
+   "kind": "academic",
+   "codes": [
+    "AH"
+   ],
+   "aliases": [
+    "Architecture Building"
+   ],
+   "lng": -82.341696,
+   "lat": 29.647745,
+   "osm": "relation/2805449"
+  },
+  {
+   "id": "the-hub",
+   "name": "The Hub",
+   "short": "The Hub",
+   "kind": "academic",
+   "codes": [
+    "HUB"
+   ],
+   "aliases": [
+    "UF Bookstore",
+    "Hub"
+   ],
+   "lng": -82.345572,
+   "lat": 29.648172,
+   "osm": "way/150926632"
+  },
+  {
+   "id": "communicore-building",
+   "name": "Communicore Building",
+   "short": "Communicore Building",
+   "kind": "academic",
+   "codes": [
+    "COMM"
+   ],
+   "aliases": [
+    "Communicore"
+   ],
+   "lng": -82.344928,
+   "lat": 29.640856,
+   "osm": "way/1027671966"
+  },
+  {
+   "id": "malachowsky-hall",
+   "name": "Malachowsky Hall",
+   "short": "Malachowsky Hall",
+   "kind": "academic",
+   "codes": [
+    "MALA"
+   ],
+   "aliases": [],
+   "lng": -82.347779,
+   "lat": 29.644048,
+   "osm": "way/1094502850"
+  },
+  {
+   "id": "hpnp-building",
+   "name": "HPNP Building",
+   "short": "HPNP Building",
+   "kind": "academic",
+   "codes": [
+    "HPNP"
+   ],
+   "aliases": [
+    "Health Prof, Nursing, Pharmacy"
+   ],
+   "lng": -82.345231,
+   "lat": 29.641665,
+   "osm": "way/154233177"
+  },
+  {
+   "id": "1329-building-uf-health",
+   "name": "1329 Building UF Health",
+   "short": "1329 Building UF Health",
+   "kind": "academic",
+   "codes": [
+    "HCAD"
+   ],
+   "aliases": [
+    "1329 Building"
+   ],
+   "lng": -82.342403,
+   "lat": 29.636508,
+   "osm": "way/257707673"
+  },
+  {
+   "id": "frazier-rogers-hall",
+   "name": "Frazier-Rogers Hall",
+   "short": "Frazier-Rogers Hall",
+   "kind": "academic",
+   "codes": [
+    "ROG"
+   ],
+   "aliases": [
+    "Rogers, Frazier Hall"
+   ],
+   "lng": -82.345462,
+   "lat": 29.644411,
+   "osm": "way/150859752"
+  },
+  {
+   "id": "uf-innovate-the-hub",
+   "name": "UF Innovate | The Hub",
+   "short": "UF Innovate | The Hub",
+   "kind": "academic",
+   "codes": [
+    "FLIH"
+   ],
+   "aliases": [
+    "UF Innovate"
+   ],
+   "lng": -82.333016,
+   "lat": 29.649941,
+   "osm": "way/468900220"
+  },
+  {
+   "id": "new-engineering-building",
+   "name": "New Engineering Building",
+   "short": "New Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "NEB"
+   ],
+   "aliases": [
+    "Engineering Building"
+   ],
+   "lng": -82.347149,
+   "lat": 29.642299,
+   "osm": "way/154233138"
+  },
+  {
+   "id": "university-of-florida-medical-plaza",
+   "name": "University of Florida Medical Plaza",
+   "short": "University of Florida Medical Plaza",
+   "kind": "academic",
+   "codes": [
+    "SMPB"
+   ],
+   "aliases": [
+    "Shands Medical Plaza B"
+   ],
+   "lng": -82.348985,
+   "lat": 29.637836,
+   "osm": "way/462870343"
+  },
+  {
+   "id": "weil-hall",
+   "name": "Weil Hall",
+   "short": "Weil Hall",
+   "kind": "academic",
+   "codes": [
+    "WEIL"
+   ],
+   "aliases": [
+    "Joseph Weil Hall",
+    "Weil",
+    "Engineering Industries Buildin"
+   ],
+   "lng": -82.348444,
+   "lat": 29.648349,
+   "osm": "way/445808709"
+  },
+  {
+   "id": "music-building",
+   "name": "Music Building",
+   "short": "Music Building",
+   "kind": "academic",
+   "codes": [
+    "MUB"
+   ],
+   "aliases": [],
+   "lng": -82.34289,
+   "lat": 29.648229,
+   "osm": "way/150860049"
+  },
+  {
+   "id": "biomedical-sciences-building",
+   "name": "Biomedical Sciences Building",
+   "short": "Biomedical Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "BSU",
+    "BMS"
+   ],
+   "aliases": [
+    "Basic Science",
+    "Biomedical Sciences"
+   ],
+   "lng": -82.345732,
+   "lat": 29.640448,
+   "osm": "way/154233102"
+  },
+  {
+   "id": "basketball-practice-complex",
+   "name": "Basketball Practice Complex",
+   "short": "Basketball Practice Complex",
+   "kind": "gym",
+   "codes": [
+    "BASK"
+   ],
+   "aliases": [
+    "Basketball Practice Facility"
+   ],
+   "lng": -82.356199,
+   "lat": 29.649615,
+   "osm": "way/284659326"
+  },
+  {
+   "id": "rhines-hall",
+   "name": "Rhines Hall",
+   "short": "Rhines Hall",
+   "kind": "academic",
+   "codes": [
+    "RHN"
+   ],
+   "aliases": [
+    "Frederick N. Rhines Hall"
+   ],
+   "lng": -82.349012,
+   "lat": 29.647486,
+   "osm": "way/150927288"
+  },
+  {
+   "id": "broward-dining-center",
+   "name": "Broward Dining Center",
+   "short": "Broward Dining Center",
+   "kind": "dining",
+   "codes": [
+    "DINE"
+   ],
+   "aliases": [],
+   "lng": -82.341215,
+   "lat": 29.646847,
+   "osm": "way/208630203"
+  },
+  {
+   "id": "uf-clinical-and-translational-research-building",
+   "name": "UF Clinical & Translational Research Building",
+   "short": "UF Clinical & Translational Research Building",
+   "kind": "academic",
+   "codes": [
+    "CTRB"
+   ],
+   "aliases": [
+    "Clinical & Translational Research Bldg"
+   ],
+   "lng": -82.349733,
+   "lat": 29.639856,
+   "osm": "way/425677205"
+  },
+  {
+   "id": "leigh-hall",
+   "name": "Leigh Hall",
+   "short": "Leigh Hall",
+   "kind": "academic",
+   "codes": [
+    "LEI"
+   ],
+   "aliases": [
+    "Townes R. Leigh Hall",
+    "Chemistry-Pharmacy Building"
+   ],
+   "lng": -82.344277,
+   "lat": 29.650424,
+   "osm": "relation/2075617"
+  },
+  {
+   "id": "bruton-geer-hall",
+   "name": "Bruton-Geer Hall",
+   "short": "Bruton-Geer Hall",
+   "kind": "academic",
+   "codes": [
+    "BGH"
+   ],
+   "aliases": [],
+   "lng": -82.359042,
+   "lat": 29.649232,
+   "osm": "way/860678063"
+  },
+  {
+   "id": "lacy-rabon-chilled-water-plant",
+   "name": "Lacy Rabon Chilled Water Plant",
+   "short": "Lacy Rabon Chilled Water Plant",
+   "kind": "academic",
+   "codes": [
+    "CWP2"
+   ],
+   "aliases": [
+    "Lacy Rabon Chilled Water Plant (CWP2)"
+   ],
+   "lng": -82.347602,
+   "lat": 29.640302,
+   "osm": "way/481256565"
+  },
+  {
+   "id": "smathers-library",
+   "name": "Smathers Library",
+   "short": "Smathers Library",
+   "kind": "library",
+   "codes": [
+    "SMA"
+   ],
+   "aliases": [
+    "George Armistead Smathers Library",
+    "Library East",
+    "University Library"
+   ],
+   "lng": -82.341809,
+   "lat": 29.650913,
+   "osm": "way/154223625"
+  },
+  {
+   "id": "farrior-hall",
+   "name": "Farrior Hall",
+   "short": "Farrior Hall",
+   "kind": "academic",
+   "codes": [
+    "AAF"
+   ],
+   "aliases": [
+    "J. Rex & Preston Farrior Hall",
+    "Academic Advising Center (AAC)"
+   ],
+   "lng": -82.345711,
+   "lat": 29.650063,
+   "osm": "way/154223782"
+  },
+  {
+   "id": "l-gale-lemerand-athletic-center",
+   "name": "L. Gale Lemerand Athletic Center",
+   "short": "L. Gale Lemerand Athletic Center",
+   "kind": "academic",
+   "codes": [
+    "ATHL"
+   ],
+   "aliases": [
+    "Lemerand Center"
+   ],
+   "lng": -82.353834,
+   "lat": 29.648774,
+   "osm": "way/474700649"
+  },
+  {
+   "id": "nanoscale-research-facility",
+   "name": "Nanoscale Research Facility",
+   "short": "Nanoscale Research Facility",
+   "kind": "academic",
+   "codes": [
+    "NANO"
+   ],
+   "aliases": [
+    "Nanoscale Research"
+   ],
+   "lng": -82.346137,
+   "lat": 29.642767,
+   "osm": "way/150821694"
+  },
+  {
+   "id": "marston-science-library",
+   "name": "Marston Science Library",
+   "short": "Marston Science Library",
+   "kind": "library",
+   "codes": [
+    "MSL"
+   ],
+   "aliases": [
+    "Robert Q. Marston Science Library"
+   ],
+   "lng": -82.343928,
+   "lat": 29.647934,
+   "osm": "way/150860048"
+  },
+  {
+   "id": "university-of-florida-facilities-services-central-stores",
+   "name": "University of Florida Facilities Services Central Stores",
+   "short": "University of Florida Facilities Services Central Stores",
+   "kind": "academic",
+   "codes": [
+    "FSCS"
+   ],
+   "aliases": [
+    "Central Stores Warehouse"
+   ],
+   "lng": -82.369252,
+   "lat": 29.642958,
+   "osm": "way/644534658"
+  },
+  {
+   "id": "harrell-medical-education-building",
+   "name": "Harrell Medical Education Building",
+   "short": "Harrell Medical Education Building",
+   "kind": "academic",
+   "codes": [
+    "HMEB"
+   ],
+   "aliases": [
+    "George T. Harrell, M.D. Medical Education Building"
+   ],
+   "lng": -82.344472,
+   "lat": 29.642003,
+   "osm": "way/481256551"
+  },
+  {
+   "id": "chemistry-laboratory",
+   "name": "Chemistry Laboratory",
+   "short": "Chemistry Laboratory",
+   "kind": "academic",
+   "codes": [
+    "CLB"
+   ],
+   "aliases": [
+    "[official_name]",
+    "[old_name]"
+   ],
+   "lng": -82.344126,
+   "lat": 29.650898,
+   "osm": "way/264182366"
+  },
+  {
+   "id": "mae-c",
+   "name": "MAE-C",
+   "short": "MAE-C",
+   "kind": "academic",
+   "codes": [
+    "MAEC"
+   ],
+   "aliases": [
+    "Mechanical & Aerospace Engineering Building C",
+    "TRED"
+   ],
+   "lng": -82.3495,
+   "lat": 29.64735,
+   "osm": "way/150927286"
+  },
+  {
+   "id": "scott-family-hall",
+   "name": "Scott Family Hall",
+   "short": "Scott Family Hall",
+   "kind": "academic",
+   "codes": [
+    "SFH"
+   ],
+   "aliases": [
+    "Joseph Hernandez Hall",
+    "The Scott Family Chemistry Building"
+   ],
+   "lng": -82.344426,
+   "lat": 29.65142,
+   "osm": "way/481243471"
+  },
+  {
+   "id": "little-hall",
+   "name": "Little Hall",
+   "short": "Little Hall",
+   "kind": "academic",
+   "codes": [
+    "LIT"
+   ],
+   "aliases": [
+    "Winston W. Little Hall"
+   ],
+   "lng": -82.340712,
+   "lat": 29.648854,
+   "osm": "way/154223803"
+  },
+  {
+   "id": "criser-hall",
+   "name": "Criser Hall",
+   "short": "Criser Hall",
+   "kind": "academic",
+   "codes": [
+    "SSB"
+   ],
+   "aliases": [
+    "Marshall McAllister Criser, Jr. Hall"
+   ],
+   "lng": -82.341635,
+   "lat": 29.650193,
+   "osm": "way/196848217"
+  },
+  {
+   "id": "uf-emerging-pathogens-institute",
+   "name": "UF Emerging Pathogens Institute",
+   "short": "UF Emerging Pathogens Institute",
+   "kind": "academic",
+   "codes": [
+    "EPI"
+   ],
+   "aliases": [
+    "Pathogens"
+   ],
+   "lng": -82.351978,
+   "lat": 29.637254,
+   "osm": "way/421670143"
+  },
+  {
+   "id": "fine-arts-c",
+   "name": "Fine Arts C",
+   "short": "Fine Arts C",
+   "kind": "academic",
+   "codes": [
+    "FAC"
+   ],
+   "aliases": [],
+   "lng": -82.340443,
+   "lat": 29.647742,
+   "osm": "way/150861258"
+  },
+  {
+   "id": "williamson-hall",
+   "name": "Williamson Hall",
+   "short": "Williamson Hall",
+   "kind": "academic",
+   "codes": [
+    "WM"
+   ],
+   "aliases": [
+    "Robert C. Williamson Hall"
+   ],
+   "lng": -82.346549,
+   "lat": 29.647914,
+   "osm": "way/150858521"
+  },
+  {
+   "id": "wertheim-laboratory-for-engineering-excellence",
+   "name": "Wertheim Laboratory for Engineering Excellence",
+   "short": "Wertheim Laboratory for Engineering Excellence",
+   "kind": "academic",
+   "codes": [
+    "WERT"
+   ],
+   "aliases": [
+    "Herbert Wertheim Laboratory for Engineering Excellence",
+    "Wertheim Lab for Eng. Excellence"
+   ],
+   "lng": -82.34798,
+   "lat": 29.647119,
+   "osm": "way/858923136"
+  },
+  {
+   "id": "stuzin-hall",
+   "name": "Stuzin Hall",
+   "short": "Stuzin Hall",
+   "kind": "academic",
+   "codes": [
+    "STZ"
+   ],
+   "aliases": [
+    "David Stuzin Hall"
+   ],
+   "lng": -82.341103,
+   "lat": 29.650902,
+   "osm": "relation/7173438"
+  },
+  {
+   "id": "mowry-chilled-water-plant",
+   "name": "Mowry Chilled Water Plant",
+   "short": "Mowry Chilled Water Plant",
+   "kind": "academic",
+   "codes": [
+    "CW10"
+   ],
+   "aliases": [
+    "Mowry Chilled Water Plant (CWP10)"
+   ],
+   "lng": -82.353112,
+   "lat": 29.638076,
+   "osm": "way/867942362"
+  },
+  {
+   "id": "perry-indoor-tennis-facility",
+   "name": "Perry Indoor Tennis Facility",
+   "short": "Perry Indoor Tennis Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Charles R. & Nancy V. Perry Indoor Tennis Facility"
+   ],
+   "lng": -82.356386,
+   "lat": 29.650046,
+   "osm": "way/150869223"
+  },
+  {
+   "id": "gator-corner-dining-center",
+   "name": "Gator Corner Dining Center",
+   "short": "Gator Corner Dining Center",
+   "kind": "dining",
+   "codes": [
+    "FSF"
+   ],
+   "aliases": [],
+   "lng": -82.350146,
+   "lat": 29.64804,
+   "osm": "way/150803324"
+  },
+  {
+   "id": "hough-hall",
+   "name": "Hough Hall",
+   "short": "Hough Hall",
+   "kind": "academic",
+   "codes": [
+    "HGS"
+   ],
+   "aliases": [
+    "William R. Hough Hall"
+   ],
+   "lng": -82.340748,
+   "lat": 29.65041,
+   "osm": "way/154223663"
+  },
+  {
+   "id": "newins-ziegler-hall",
+   "name": "Newins-Ziegler Hall",
+   "short": "Newins-Ziegler Hall",
+   "kind": "academic",
+   "codes": [
+    "NZH"
+   ],
+   "aliases": [
+    "H.S. Newins - E.A. Ziegler Hall",
+    "Newins-Ziegler Hall SFRC/WEC"
+   ],
+   "lng": -82.345724,
+   "lat": 29.645377,
+   "osm": "way/150821696"
+  },
+  {
+   "id": "emerson-alumni-hall",
+   "name": "Emerson Alumni Hall",
+   "short": "Emerson Alumni Hall",
+   "kind": "academic",
+   "codes": [
+    "EAH"
+   ],
+   "aliases": [],
+   "lng": -82.349069,
+   "lat": 29.652488,
+   "osm": "way/258926985"
+  },
+  {
+   "id": "tigert-hall",
+   "name": "Tigert Hall",
+   "short": "Tigert Hall",
+   "kind": "academic",
+   "codes": [
+    "TIG"
+   ],
+   "aliases": [
+    "John James Tigert IV Hall",
+    "Administration Building"
+   ],
+   "lng": -82.339898,
+   "lat": 29.649438,
+   "osm": "way/154223670"
+  },
+  {
+   "id": "bryan-hall",
+   "name": "Bryan Hall",
+   "short": "Bryan Hall",
+   "kind": "academic",
+   "codes": [
+    "BRY"
+   ],
+   "aliases": [
+    "Nathan Philemon Bryan Hall"
+   ],
+   "lng": -82.340331,
+   "lat": 29.651269,
+   "osm": "way/154223637"
+  },
+  {
+   "id": "student-recreation-and-fitness-center",
+   "name": "Student Recreation & Fitness Center",
+   "short": "Student Recreation & Fitness Center",
+   "kind": "gym",
+   "codes": [
+    "SRFC"
+   ],
+   "aliases": [],
+   "lng": -82.346775,
+   "lat": 29.650115,
+   "osm": "way/150926631"
+  },
+  {
+   "id": "psychology-building",
+   "name": "Psychology Building",
+   "short": "Psychology Building",
+   "kind": "academic",
+   "codes": [
+    "PSY"
+   ],
+   "aliases": [],
+   "lng": -82.346306,
+   "lat": 29.643405,
+   "osm": "way/150821697"
+  },
+  {
+   "id": "university-auditorium",
+   "name": "University Auditorium",
+   "short": "University Auditorium",
+   "kind": "academic",
+   "codes": [
+    "AUD"
+   ],
+   "aliases": [],
+   "lng": -82.342919,
+   "lat": 29.648969,
+   "osm": "way/154223635"
+  },
+  {
+   "id": "uf-housing-and-residence-education-office",
+   "name": "UF Housing & Residence Education Office",
+   "short": "UF Housing & Residence Education Office",
+   "kind": "academic",
+   "codes": [
+    "HOU"
+   ],
+   "aliases": [
+    "Housing Office"
+   ],
+   "lng": -82.339807,
+   "lat": 29.644162,
+   "osm": "way/151101676"
+  },
+  {
+   "id": "elmore-hall",
+   "name": "Elmore Hall",
+   "short": "Elmore Hall",
+   "kind": "academic",
+   "codes": [
+    "ASF"
+   ],
+   "aliases": [
+    "Elmore Hall for Admin Services"
+   ],
+   "lng": -82.366149,
+   "lat": 29.643467,
+   "osm": "way/652995347"
+  },
+  {
+   "id": "keene-flint-hall",
+   "name": "Keene-Flint Hall",
+   "short": "Keene-Flint Hall",
+   "kind": "academic",
+   "codes": [
+    "FLI"
+   ],
+   "aliases": [
+    "Dr. Edward R. Flint Hall",
+    "Science Hall"
+   ],
+   "lng": -82.34396,
+   "lat": 29.65142,
+   "osm": "way/154223698"
+  },
+  {
+   "id": "heavener-hall",
+   "name": "Heavener Hall",
+   "short": "Heavener Hall",
+   "kind": "academic",
+   "codes": [
+    "HVNR"
+   ],
+   "aliases": [
+    "James William \"Bill\" Heavener Hall"
+   ],
+   "lng": -82.339915,
+   "lat": 29.651583,
+   "osm": "way/481247880"
+  },
+  {
+   "id": "mccarty-hall-a",
+   "name": "McCarty Hall A",
+   "short": "McCarty Hall A",
+   "kind": "academic",
+   "codes": [
+    "MCCA"
+   ],
+   "aliases": [
+    "Dan McCarty Hall A"
+   ],
+   "lng": -82.345533,
+   "lat": 29.646964,
+   "osm": "way/118249564"
+  },
+  {
+   "id": "jennings-hall-office",
+   "name": "Jennings Hall Office",
+   "short": "Jennings Hall Office",
+   "kind": "academic",
+   "codes": [
+    "JEN"
+   ],
+   "aliases": [
+    "May Austin Elizabeth Mann Jennings Hall"
+   ],
+   "lng": -82.342215,
+   "lat": 29.64438,
+   "osm": "way/276732667"
+  },
+  {
+   "id": "particle-science-and-technology",
+   "name": "Particle Science & Technology",
+   "short": "Particle Science & Technology",
+   "kind": "academic",
+   "codes": [
+    "PST"
+   ],
+   "aliases": [],
+   "lng": -82.347842,
+   "lat": 29.641466,
+   "osm": "way/154233200"
+  },
+  {
+   "id": "rinker-hall",
+   "name": "Rinker Hall",
+   "short": "Rinker Hall",
+   "kind": "academic",
+   "codes": [
+    "RNK"
+   ],
+   "aliases": [
+    "M.E., Sr. Rinker Hall"
+   ],
+   "lng": -82.343202,
+   "lat": 29.646949,
+   "osm": "way/150823413"
+  },
+  {
+   "id": "pugh-hall",
+   "name": "Pugh Hall",
+   "short": "Pugh Hall",
+   "kind": "academic",
+   "codes": [
+    "PUGH"
+   ],
+   "aliases": [
+    "Jim & Alexis Pugh Hall"
+   ],
+   "lng": -82.345533,
+   "lat": 29.649416,
+   "osm": "way/154223630"
+  },
+  {
+   "id": "dauer-hall",
+   "name": "Dauer Hall",
+   "short": "Dauer Hall",
+   "kind": "academic",
+   "codes": [
+    "DAU"
+   ],
+   "aliases": [
+    "Manning J. Dauer Hall",
+    "Arts & Sciences Building"
+   ],
+   "lng": -82.345092,
+   "lat": 29.649943,
+   "osm": "way/264182363"
+  },
+  {
+   "id": "grinter-hall",
+   "name": "Grinter Hall",
+   "short": "Grinter Hall",
+   "kind": "academic",
+   "codes": [
+    "GRI"
+   ],
+   "aliases": [
+    "Linton E. Grinter Hall"
+   ],
+   "lng": -82.34209,
+   "lat": 29.649278,
+   "osm": "way/150860047"
+  },
+  {
+   "id": "sisler-hall",
+   "name": "Sisler Hall",
+   "short": "Sisler Hall",
+   "kind": "academic",
+   "codes": [
+    "SIS"
+   ],
+   "aliases": [
+    "Harry H. Sisler Hall"
+   ],
+   "lng": -82.344257,
+   "lat": 29.650042,
+   "osm": "way/154223693"
+  },
+  {
+   "id": "mccarty-hall-d",
+   "name": "McCarty Hall D",
+   "short": "McCarty Hall D",
+   "kind": "academic",
+   "codes": [
+    "MCCD"
+   ],
+   "aliases": [
+    "Dan McCarty Hall D"
+   ],
+   "lng": -82.344361,
+   "lat": 29.646489,
+   "osm": "way/150800195"
+  },
+  {
+   "id": "student-infirmary",
+   "name": "Student Infirmary",
+   "short": "Student Infirmary",
+   "kind": "academic",
+   "codes": [
+    "INF"
+   ],
+   "aliases": [
+    "Student Health Care Center",
+    "Infirmary"
+   ],
+   "lng": -82.346591,
+   "lat": 29.649531,
+   "osm": "way/154223652"
+  },
+  {
+   "id": "gerson-hall",
+   "name": "Gerson Hall",
+   "short": "Gerson Hall",
+   "kind": "academic",
+   "codes": [
+    "GER"
+   ],
+   "aliases": [
+    "Gary R. Gerson Hall"
+   ],
+   "lng": -82.34011,
+   "lat": 29.65074,
+   "osm": "way/154223646"
+  },
+  {
+   "id": "matherly-hall",
+   "name": "Matherly Hall",
+   "short": "Matherly Hall",
+   "kind": "academic",
+   "codes": [
+    "MAT"
+   ],
+   "aliases": [
+    "Walter Jeffries Matherly Hall"
+   ],
+   "lng": -82.341039,
+   "lat": 29.651628,
+   "osm": "way/154223613"
+  },
+  {
+   "id": "mae-b",
+   "name": "MAE-B",
+   "short": "MAE-B",
+   "kind": "academic",
+   "codes": [
+    "MAEB"
+   ],
+   "aliases": [
+    "Mechanical & Aerospace Engineering Building B",
+    "Mechanical & Aerospace Eng B"
+   ],
+   "lng": -82.349436,
+   "lat": 29.646363,
+   "osm": "way/150859395"
+  },
+  {
+   "id": "university-of-florida-mail-and-documents-services",
+   "name": "University of Florida Mail & Documents Services",
+   "short": "University of Florida Mail & Documents Services",
+   "kind": "academic",
+   "codes": [
+    "MAIL"
+   ],
+   "aliases": [
+    "Print & Mail Services"
+   ],
+   "lng": -82.367043,
+   "lat": 29.642839,
+   "osm": "way/404962878"
+  },
+  {
+   "id": "chemical-engineering-building",
+   "name": "Chemical Engineering Building",
+   "short": "Chemical Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "CHE"
+   ],
+   "aliases": [
+    "Chemical Engineering"
+   ],
+   "lng": -82.348,
+   "lat": 29.642706,
+   "osm": "way/154233100"
+  },
+  {
+   "id": "mae-a",
+   "name": "MAE-A",
+   "short": "MAE-A",
+   "kind": "academic",
+   "codes": [
+    "MAEA"
+   ],
+   "aliases": [
+    "Mechanical & Aerospace Engineering Building A",
+    "Mechanical & Aerospace Eng A"
+   ],
+   "lng": -82.348266,
+   "lat": 29.643294,
+   "osm": "way/150821690"
+  },
+  {
+   "id": "larsen-hall",
+   "name": "Larsen Hall",
+   "short": "Larsen Hall",
+   "kind": "academic",
+   "codes": [
+    "LAR"
+   ],
+   "aliases": [
+    "Merwin J. Larsen Hall"
+   ],
+   "lng": -82.34739,
+   "lat": 29.64313,
+   "osm": "way/150821689"
+  },
+  {
+   "id": "benton-hall",
+   "name": "Benton Hall",
+   "short": "Benton Hall",
+   "kind": "academic",
+   "codes": [
+    "BEN"
+   ],
+   "aliases": [
+    "John R. Benton Hall"
+   ],
+   "lng": -82.347609,
+   "lat": 29.643387,
+   "osm": "way/150821681"
+  },
+  {
+   "id": "racquet-club-dining-center",
+   "name": "Racquet Club Dining Center",
+   "short": "Racquet Club Dining Center",
+   "kind": "dining",
+   "codes": [
+    "RCD"
+   ],
+   "aliases": [],
+   "lng": -82.346348,
+   "lat": 29.650125,
+   "osm": "way/858697924"
+  },
+  {
+   "id": "shepard-broad",
+   "name": "Shepard Broad",
+   "short": "Shepard Broad",
+   "kind": "academic",
+   "codes": [
+    "SBB"
+   ],
+   "aliases": [
+    "Shepard Broad Bldg"
+   ],
+   "lng": -82.346507,
+   "lat": 29.640275,
+   "osm": "way/154233198"
+  },
+  {
+   "id": "shands-facilities-administration",
+   "name": "Shands Facilities Administration",
+   "short": "Shands Facilities Administration",
+   "kind": "academic",
+   "codes": [
+    "A15"
+   ],
+   "aliases": [],
+   "lng": -82.341288,
+   "lat": 29.641312,
+   "osm": "way/481256552"
+  },
+  {
+   "id": "bryant-space-science-center",
+   "name": "Bryant Space Science Center",
+   "short": "Bryant Space Science Center",
+   "kind": "academic",
+   "codes": [
+    "BRT"
+   ],
+   "aliases": [
+    "T.W. Bryant Space Science Center"
+   ],
+   "lng": -82.345739,
+   "lat": 29.648929,
+   "osm": "way/150926626"
+  },
+  {
+   "id": "university-of-florida-facilities-services-administration-office",
+   "name": "University of Florida Facilities Services Administration Office",
+   "short": "University of Florida Facilities Services Administration Office",
+   "kind": "academic",
+   "codes": [
+    "FSAD"
+   ],
+   "aliases": [
+    "Facilities Services"
+   ],
+   "lng": -82.370527,
+   "lat": 29.644309,
+   "osm": "way/866858625"
+  },
+  {
+   "id": "hume-commons",
+   "name": "Hume Commons",
+   "short": "Hume Commons",
+   "kind": "dining",
+   "codes": [
+    "HUME"
+   ],
+   "aliases": [
+    "Harold Hume Hall Commons Building",
+    "Hume Commons Bldg"
+   ],
+   "lng": -82.352483,
+   "lat": 29.644522,
+   "osm": "way/150869222"
+  },
+  {
+   "id": "uf-health-dialysis-center",
+   "name": "UF Health Dialysis Center",
+   "short": "UF Health Dialysis Center",
+   "kind": "academic",
+   "codes": [
+    "N01"
+   ],
+   "aliases": [
+    "Shands Dialysis Center",
+    "Shands Renal Dialysis"
+   ],
+   "lng": -82.360315,
+   "lat": 29.631868,
+   "osm": "way/479187232"
+  },
+  {
+   "id": "corry-village-commons",
+   "name": "Corry Village Commons",
+   "short": "Corry Village Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.360911,
+   "lat": 29.646393,
+   "osm": "way/289899832"
+  },
+  {
+   "id": "powell-hall",
+   "name": "Powell Hall",
+   "short": "Powell Hall",
+   "kind": "academic",
+   "codes": [
+    "ODAA"
+   ],
+   "aliases": [
+    "Earl & Christy Powell Hall",
+    "Office of Development & Alumni Affairs",
+    "Development & Alumni Affairs"
+   ],
+   "lng": -82.349594,
+   "lat": 29.652484,
+   "osm": "way/481413823"
+  },
+  {
+   "id": "uf-center-for-environmental-and-human-toxicology",
+   "name": "UF Center for Environmental & Human Toxicology",
+   "short": "UF Center for Environmental & Human Toxicology",
+   "kind": "academic",
+   "codes": [
+    "CEHT"
+   ],
+   "aliases": [
+    "Center Environmental & Human Tox. Annex",
+    "Center for Environmental & Human Tox"
+   ],
+   "lng": -82.353074,
+   "lat": 29.636773,
+   "osm": "way/421670147"
+  },
+  {
+   "id": "aquatic-food-pilot-plant",
+   "name": "Aquatic Food Pilot Plant",
+   "short": "Aquatic Food Pilot Plant",
+   "kind": "academic",
+   "codes": [
+    "AFPP"
+   ],
+   "aliases": [
+    "Aquatic Foods Pilot Plant"
+   ],
+   "lng": -82.34403,
+   "lat": 29.647354,
+   "osm": "way/294203177"
+  },
+  {
+   "id": "walker-hall",
+   "name": "Walker Hall",
+   "short": "Walker Hall",
+   "kind": "academic",
+   "codes": [
+    "WAL"
+   ],
+   "aliases": [
+    "Colonel Edgar S. Walker Hall",
+    "Mechanical Engineering Building"
+   ],
+   "lng": -82.341593,
+   "lat": 29.649459,
+   "osm": "way/154223641"
+  },
+  {
+   "id": "mccarty-hall-b",
+   "name": "McCarty Hall B",
+   "short": "McCarty Hall B",
+   "kind": "academic",
+   "codes": [
+    "MCCB"
+   ],
+   "aliases": [
+    "Dan McCarty Hall B"
+   ],
+   "lng": -82.344923,
+   "lat": 29.646745,
+   "osm": "way/150800198"
+  },
+  {
+   "id": "nuclear-sciences",
+   "name": "Nuclear Sciences",
+   "short": "Nuclear Sciences",
+   "kind": "academic",
+   "codes": [
+    "NSC"
+   ],
+   "aliases": [
+    "Nuclear Sciences Building"
+   ],
+   "lng": -82.348062,
+   "lat": 29.64738,
+   "osm": "way/150927287"
+  },
+  {
+   "id": "fine-arts-b",
+   "name": "Fine Arts B",
+   "short": "Fine Arts B",
+   "kind": "academic",
+   "codes": [
+    "FAB"
+   ],
+   "aliases": [],
+   "lng": -82.339794,
+   "lat": 29.648175,
+   "osm": "relation/11794357"
+  },
+  {
+   "id": "materials-engineering",
+   "name": "Materials Engineering",
+   "short": "Materials Engineering",
+   "kind": "academic",
+   "codes": [
+    "MAE"
+   ],
+   "aliases": [],
+   "lng": -82.349191,
+   "lat": 29.646682,
+   "osm": "way/150859391"
+  },
+  {
+   "id": "levin-advocacy-center",
+   "name": "Levin Advocacy Center",
+   "short": "Levin Advocacy Center",
+   "kind": "academic",
+   "codes": [
+    "MLAC"
+   ],
+   "aliases": [
+    "Martin H. Levin Advocacy Center",
+    "Levin Advocacy Ctr"
+   ],
+   "lng": -82.35935,
+   "lat": 29.648801,
+   "osm": "way/154233206"
+  },
+  {
+   "id": "anderson-hall",
+   "name": "Anderson Hall",
+   "short": "Anderson Hall",
+   "kind": "academic",
+   "codes": [
+    "AND"
+   ],
+   "aliases": [
+    "Dr. James Nesbitt Anderson Hall",
+    "Language Hall"
+   ],
+   "lng": -82.341906,
+   "lat": 29.651575,
+   "osm": "way/154223807"
+  },
+  {
+   "id": "food-science-and-human-nutrition",
+   "name": "Food Science & Human Nutrition",
+   "short": "Food Science & Human Nutrition",
+   "kind": "academic",
+   "codes": [
+    "FSN"
+   ],
+   "aliases": [],
+   "lng": -82.344393,
+   "lat": 29.64691,
+   "osm": "way/294203176"
+  },
+  {
+   "id": "baby-gator",
+   "name": "Baby Gator",
+   "short": "Baby Gator",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Baby Gator Child Development & Research Center at Lake Alice"
+   ],
+   "lng": -82.360519,
+   "lat": 29.645374,
+   "osm": "way/292712663"
+  },
+  {
+   "id": "peabody-hall",
+   "name": "Peabody Hall",
+   "short": "Peabody Hall",
+   "kind": "academic",
+   "codes": [
+    "PEA"
+   ],
+   "aliases": [
+    "George Peabody Hall"
+   ],
+   "lng": -82.342043,
+   "lat": 29.650091,
+   "osm": "way/196848214"
+  },
+  {
+   "id": "newell-hall",
+   "name": "Newell Hall",
+   "short": "Newell Hall",
+   "kind": "academic",
+   "codes": [
+    "NEW"
+   ],
+   "aliases": [
+    "Wilmon E. Newell Hall"
+   ],
+   "lng": -82.345183,
+   "lat": 29.649084,
+   "osm": "way/150926630"
+  },
+  {
+   "id": "university-of-florida-bookstore-warehouse",
+   "name": "University of Florida Bookstore Warehouse",
+   "short": "University of Florida Bookstore Warehouse",
+   "kind": "academic",
+   "codes": [
+    "BKW"
+   ],
+   "aliases": [
+    "Bookstore Warehouse"
+   ],
+   "lng": -82.368043,
+   "lat": 29.643433,
+   "osm": "way/654801618"
+  },
+  {
+   "id": "steinbrenner-band-hall",
+   "name": "Steinbrenner Band Hall",
+   "short": "Steinbrenner Band Hall",
+   "kind": "academic",
+   "codes": [
+    "SBH"
+   ],
+   "aliases": [
+    "George M. Steinbrenner III Band Hall",
+    "Steinbrenner"
+   ],
+   "lng": -82.342635,
+   "lat": 29.647648,
+   "osm": "way/220368156"
+  },
+  {
+   "id": "bartram-hall",
+   "name": "Bartram Hall",
+   "short": "Bartram Hall",
+   "kind": "academic",
+   "codes": [
+    "BAR"
+   ],
+   "aliases": [
+    "William Bartram Hall"
+   ],
+   "lng": -82.34451,
+   "lat": 29.643923,
+   "osm": "way/150859749"
+  },
+  {
+   "id": "upd-centrex-building",
+   "name": "UPD Centrex Building",
+   "short": "UPD Centrex Building",
+   "kind": "academic",
+   "codes": [
+    "CENX"
+   ],
+   "aliases": [
+    "Centrex (University Police)"
+   ],
+   "lng": -82.343086,
+   "lat": 29.643933,
+   "osm": "way/277001074"
+  },
+  {
+   "id": "paul-m-lyrene-blueberry-research-building",
+   "name": "Paul M. Lyrene Blueberry Research Building",
+   "short": "Paul M. Lyrene Blueberry Research Building",
+   "kind": "academic",
+   "codes": [
+    "BLRB"
+   ],
+   "aliases": [],
+   "lng": -82.361424,
+   "lat": 29.639027,
+   "osm": "way/1193654247"
+  },
+  {
+   "id": "carleton-auditorium",
+   "name": "Carleton Auditorium",
+   "short": "Carleton Auditorium",
+   "kind": "academic",
+   "codes": [
+    "CAR"
+   ],
+   "aliases": [
+    "William Graves \"Wild Bill\" Carleton Auditorium"
+   ],
+   "lng": -82.341718,
+   "lat": 29.649059,
+   "osm": "way/150860042"
+  },
+  {
+   "id": "fine-arts-d",
+   "name": "Fine Arts D",
+   "short": "Fine Arts D",
+   "kind": "academic",
+   "codes": [
+    "FAD"
+   ],
+   "aliases": [],
+   "lng": -82.340157,
+   "lat": 29.648383,
+   "osm": "way/150861261"
+  },
+  {
+   "id": "black-hall",
+   "name": "Black Hall",
+   "short": "Black Hall",
+   "kind": "academic",
+   "codes": [
+    "BLK"
+   ],
+   "aliases": [
+    "Dr. Alvin Percy Black Hall"
+   ],
+   "lng": -82.347866,
+   "lat": 29.641918,
+   "osm": "way/154233201"
+  },
+  {
+   "id": "lakeside-commons",
+   "name": "Lakeside Commons",
+   "short": "Lakeside Commons",
+   "kind": "dining",
+   "codes": [
+    "LSRC"
+   ],
+   "aliases": [],
+   "lng": -82.366203,
+   "lat": 29.641854,
+   "osm": "way/259968301"
+  },
+  {
+   "id": "105-classroom-building",
+   "name": "105 Classroom Building",
+   "short": "105 Classroom Building",
+   "kind": "academic",
+   "codes": [
+    "CBD"
+   ],
+   "aliases": [],
+   "lng": -82.342945,
+   "lat": 29.652976,
+   "osm": "way/258927229"
+  },
+  {
+   "id": "food-and-environmental-toxicology-lab",
+   "name": "Food & Environmental Toxicology Lab",
+   "short": "Food & Environmental Toxicology Lab",
+   "kind": "academic",
+   "codes": [
+    "PRL"
+   ],
+   "aliases": [
+    "Food/Environ Toxicology Lab"
+   ],
+   "lng": -82.359371,
+   "lat": 29.63715,
+   "osm": "way/654538305"
+  },
+  {
+   "id": "beaty-commons",
+   "name": "Beaty Commons",
+   "short": "Beaty Commons",
+   "kind": "dining",
+   "codes": [
+    "BEC"
+   ],
+   "aliases": [
+    "Robert Calder Beaty Commons",
+    "R. C. Beaty Commons"
+   ],
+   "lng": -82.340597,
+   "lat": 29.644375,
+   "osm": "way/276736808"
+  },
+  {
+   "id": "shands-facilities-administration-481256553",
+   "name": "Shands Facilities Administration",
+   "short": "Shands Facilities Administration",
+   "kind": "academic",
+   "codes": [
+    "A18"
+   ],
+   "aliases": [
+    "Shands Generator Plant"
+   ],
+   "lng": -82.340838,
+   "lat": 29.641474,
+   "osm": "way/481256553"
+  },
+  {
+   "id": "rolfs-hall",
+   "name": "Rolfs Hall",
+   "short": "Rolfs Hall",
+   "kind": "academic",
+   "codes": [
+    "ROL"
+   ],
+   "aliases": [
+    "Peter H. Rolfs Hall",
+    "Horticulture Sciences Building"
+   ],
+   "lng": -82.344488,
+   "lat": 29.649245,
+   "osm": "way/150858519"
+  },
+  {
+   "id": "swiming-and-diving-complex",
+   "name": "Swiming & Diving Complex",
+   "short": "Swiming & Diving Complex",
+   "kind": "academic",
+   "codes": [
+    "SWIM"
+   ],
+   "aliases": [
+    "Wayne & Jimmie Carse Swiming & Diving Complex",
+    "Swim/Dive Facility"
+   ],
+   "lng": -82.351555,
+   "lat": 29.648597,
+   "osm": "way/435952120"
+  },
+  {
+   "id": "griffin-floyd-hall",
+   "name": "Griffin-Floyd Hall",
+   "short": "Griffin-Floyd Hall",
+   "kind": "academic",
+   "codes": [
+    "FLO"
+   ],
+   "aliases": [
+    "Ben Hill Griffin Jr. - Wilbur Leonidas Floyd Hall",
+    "Floyd Hall"
+   ],
+   "lng": -82.343777,
+   "lat": 29.650116,
+   "osm": "way/154223690"
+  },
+  {
+   "id": "nuclear-training-reactor",
+   "name": "Nuclear Training Reactor",
+   "short": "Nuclear Training Reactor",
+   "kind": "academic",
+   "codes": [
+    "NRB"
+   ],
+   "aliases": [
+    "Reactor Building"
+   ],
+   "lng": -82.348091,
+   "lat": 29.647636,
+   "osm": "way/445810539"
+  },
+  {
+   "id": "earl-and-christy-powell-university-house",
+   "name": "Earl & Christy Powell University House",
+   "short": "Earl & Christy Powell University House",
+   "kind": "academic",
+   "codes": [
+    "UNVH"
+   ],
+   "aliases": [
+    "University House"
+   ],
+   "lng": -82.353981,
+   "lat": 29.651654,
+   "osm": "way/196848210"
+  },
+  {
+   "id": "fine-arts-a",
+   "name": "Fine Arts A",
+   "short": "Fine Arts A",
+   "kind": "academic",
+   "codes": [
+    "FAA"
+   ],
+   "aliases": [],
+   "lng": -82.340605,
+   "lat": 29.648182,
+   "osm": "way/150860045"
+  },
+  {
+   "id": "uf-aquatic-pathobiology-lab",
+   "name": "UF Aquatic Pathobiology Lab",
+   "short": "UF Aquatic Pathobiology Lab",
+   "kind": "academic",
+   "codes": [
+    "AQP"
+   ],
+   "aliases": [
+    "Aquatic Pathobiology"
+   ],
+   "lng": -82.352985,
+   "lat": 29.637261,
+   "osm": "way/421670146"
+  },
+  {
+   "id": "university-of-florida-counseling-and-wellness-center",
+   "name": "University of Florida Counseling & Wellness Center",
+   "short": "University of Florida Counseling & Wellness Center",
+   "kind": "academic",
+   "codes": [
+    "CWC"
+   ],
+   "aliases": [
+    "Counseling And Wellness"
+   ],
+   "lng": -82.369317,
+   "lat": 29.642479,
+   "osm": "way/644534657"
+  },
+  {
+   "id": "van-fleet-hall",
+   "name": "Van Fleet Hall",
+   "short": "Van Fleet Hall",
+   "kind": "academic",
+   "codes": [
+    "VAN"
+   ],
+   "aliases": [
+    "Genernal James A. Van Fleet Hall"
+   ],
+   "lng": -82.351132,
+   "lat": 29.648556,
+   "osm": "way/150859396"
+  },
+  {
+   "id": "carr-hall",
+   "name": "Carr Hall",
+   "short": "Carr Hall",
+   "kind": "academic",
+   "codes": [
+    "CRR"
+   ],
+   "aliases": [
+    "Archie F. Carr Hall"
+   ],
+   "lng": -82.344887,
+   "lat": 29.643851,
+   "osm": "way/150859750"
+  },
+  {
+   "id": "university-foundation-annex",
+   "name": "University Foundation Annex",
+   "short": "University Foundation Annex",
+   "kind": "academic",
+   "codes": [
+    "UFFX"
+   ],
+   "aliases": [],
+   "lng": -82.349608,
+   "lat": 29.652817,
+   "osm": "way/481413824"
+  },
+  {
+   "id": "murphree-area-commons-building",
+   "name": "Murphree Area Commons Building",
+   "short": "Murphree Area Commons Building",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.345707,
+   "lat": 29.65143,
+   "osm": "way/294197710"
+  },
+  {
+   "id": "mccarty-hall-c",
+   "name": "McCarty Hall C",
+   "short": "McCarty Hall C",
+   "kind": "academic",
+   "codes": [
+    "MCCC"
+   ],
+   "aliases": [
+    "Dan McCarty Hall C"
+   ],
+   "lng": -82.345354,
+   "lat": 29.646661,
+   "osm": "way/150800197"
+  },
+  {
+   "id": "chemical-engineering-student-center",
+   "name": "Chemical Engineering Student Center",
+   "short": "Chemical Engineering Student Center",
+   "kind": "academic",
+   "codes": [
+    "CESC"
+   ],
+   "aliases": [],
+   "lng": -82.34785,
+   "lat": 29.642418,
+   "osm": "way/867183332"
+  },
+  {
+   "id": "plant-science-facility",
+   "name": "Plant Science Facility",
+   "short": "Plant Science Facility",
+   "kind": "academic",
+   "codes": [
+    "PSF"
+   ],
+   "aliases": [],
+   "lng": -82.359602,
+   "lat": 29.639477,
+   "osm": "way/866486482"
+  },
+  {
+   "id": "gradhaus",
+   "name": "GRADhaus",
+   "short": "GRADhaus",
+   "kind": "academic",
+   "codes": [
+    "GRAD"
+   ],
+   "aliases": [],
+   "lng": -82.333521,
+   "lat": 29.652765,
+   "osm": "way/388814470"
+  },
+  {
+   "id": "ifas-information-technologies",
+   "name": "IFAS Information Technologies",
+   "short": "IFAS Information Technologies",
+   "kind": "academic",
+   "codes": [
+    "IIT"
+   ],
+   "aliases": [
+    "Center for Online Learning & Technology",
+    "COLT"
+   ],
+   "lng": -82.345666,
+   "lat": 29.64603,
+   "osm": "way/150859390"
+  },
+  {
+   "id": "gator-band-shell",
+   "name": "Gator Band Shell",
+   "short": "Gator Band Shell",
+   "kind": "academic",
+   "codes": [
+    "GBS"
+   ],
+   "aliases": [],
+   "lng": -82.353265,
+   "lat": 29.646685,
+   "osm": "way/45719880"
+  },
+  {
+   "id": "guy-bostick-golf-clubhouse",
+   "name": "Guy Bostick Golf Clubhouse",
+   "short": "Guy Bostick Golf Clubhouse",
+   "kind": "academic",
+   "codes": [
+    "GCH"
+   ],
+   "aliases": [
+    "Golf Course Clubhouse"
+   ],
+   "lng": -82.364946,
+   "lat": 29.649918,
+   "osm": "way/404962875"
+  },
+  {
+   "id": "se-chilled-water-plant",
+   "name": "SE Chilled Water Plant",
+   "short": "SE Chilled Water Plant",
+   "kind": "academic",
+   "codes": [
+    "CWP9"
+   ],
+   "aliases": [
+    "SE Chilled Water Plant (CWP9)"
+   ],
+   "lng": -82.346638,
+   "lat": 29.640883,
+   "osm": "way/481256568"
+  },
+  {
+   "id": "center-for-outdoor-recreation-and-education-core",
+   "name": "Center for Outdoor Recreation & Education (CORE)",
+   "short": "Center for Outdoor Recreation & Education (CORE)",
+   "kind": "gym",
+   "codes": [
+    "CORE"
+   ],
+   "aliases": [
+    "CORE"
+   ],
+   "lng": -82.368999,
+   "lat": 29.639161,
+   "osm": "way/862064669"
+  },
+  {
+   "id": "plant-pathology-diagnostics-lab",
+   "name": "Plant Pathology Diagnostics Lab",
+   "short": "Plant Pathology Diagnostics Lab",
+   "kind": "academic",
+   "codes": [
+    "PPDL"
+   ],
+   "aliases": [
+    "Plant Path Diagnostics Lab"
+   ],
+   "lng": -82.360744,
+   "lat": 29.639071,
+   "osm": "way/866486480"
+  },
+  {
+   "id": "ifas-research-laboratory-1",
+   "name": "IFAS Research Laboratory #1",
+   "short": "IFAS Research Laboratory #1",
+   "kind": "academic",
+   "codes": [
+    "RL1"
+   ],
+   "aliases": [
+    "Research Laboratory"
+   ],
+   "lng": -82.361151,
+   "lat": 29.633165,
+   "osm": "way/863605383"
+  },
+  {
+   "id": "facilities-services-building-services",
+   "name": "Facilities Services Building Services",
+   "short": "Facilities Services Building Services",
+   "kind": "academic",
+   "codes": [
+    "FSBS"
+   ],
+   "aliases": [],
+   "lng": -82.36991,
+   "lat": 29.643405,
+   "osm": "way/866858636"
+  },
+  {
+   "id": "ring-varsity-tennis-building",
+   "name": "Ring Varsity Tennis Building",
+   "short": "Ring Varsity Tennis Building",
+   "kind": "academic",
+   "codes": [
+    "RING"
+   ],
+   "aliases": [],
+   "lng": -82.357712,
+   "lat": 29.649691,
+   "osm": "way/284659330"
+  },
+  {
+   "id": "collier-hall",
+   "name": "ΚΦΕ Collier Hall",
+   "short": "ΚΦΕ Collier Hall",
+   "kind": "academic",
+   "codes": [
+    "TKE"
+   ],
+   "aliases": [
+    "Fraternity - Tau Kappa Epsilon"
+   ],
+   "lng": -82.335189,
+   "lat": 29.652386,
+   "osm": "way/1012220980"
+  },
+  {
+   "id": "norman-gym",
+   "name": "Norman Gym",
+   "short": "Norman Gym",
+   "kind": "gym",
+   "codes": [
+    "NRG"
+   ],
+   "aliases": [
+    "James W. Norman Gym"
+   ],
+   "lng": -82.337992,
+   "lat": 29.646232,
+   "osm": "way/864520974"
+  },
+  {
+   "id": "water-reclamation-administration-building",
+   "name": "Water Reclamation Administration Building",
+   "short": "Water Reclamation Administration Building",
+   "kind": "academic",
+   "codes": [
+    "WATR"
+   ],
+   "aliases": [
+    "Water Reclamation Admin. Bldg."
+   ],
+   "lng": -82.35021,
+   "lat": 29.642019,
+   "osm": "way/150821718"
+  },
+  {
+   "id": "ustler-hall",
+   "name": "Ustler Hall",
+   "short": "Ustler Hall",
+   "kind": "academic",
+   "codes": [
+    "UST"
+   ],
+   "aliases": [
+    "Kathryn Chicone Ustler Hall",
+    "Women’s Gymnasium"
+   ],
+   "lng": -82.346898,
+   "lat": 29.650448,
+   "osm": "way/150926633"
+  },
+  {
+   "id": "aquatic-food-products-lab",
+   "name": "Aquatic Food Products Lab",
+   "short": "Aquatic Food Products Lab",
+   "kind": "academic",
+   "codes": [
+    "APL"
+   ],
+   "aliases": [],
+   "lng": -82.343973,
+   "lat": 29.646904,
+   "osm": "way/150859388"
+  },
+  {
+   "id": "phelps-lab",
+   "name": "Phelps Lab",
+   "short": "Phelps Lab",
+   "kind": "academic",
+   "codes": [
+    "PHL"
+   ],
+   "aliases": [
+    "Earle B. Phelps Lab"
+   ],
+   "lng": -82.348843,
+   "lat": 29.644556,
+   "osm": "way/425677204"
+  },
+  {
+   "id": "weed-sciences-field-building",
+   "name": "Weed Sciences Field Building",
+   "short": "Weed Sciences Field Building",
+   "kind": "academic",
+   "codes": [
+    "WSFL"
+   ],
+   "aliases": [],
+   "lng": -82.363767,
+   "lat": 29.639184,
+   "osm": "way/259946102"
+  },
+  {
+   "id": "turfgrass-envirotron",
+   "name": "Turfgrass Envirotron",
+   "short": "Turfgrass Envirotron",
+   "kind": "academic",
+   "codes": [
+    "TGE"
+   ],
+   "aliases": [],
+   "lng": -82.360451,
+   "lat": 29.639632,
+   "osm": "way/866377524"
+  },
+  {
+   "id": "agricultural-engineering-shop",
+   "name": "Agricultural Engineering Shop",
+   "short": "Agricultural Engineering Shop",
+   "kind": "academic",
+   "codes": [
+    "AGES"
+   ],
+   "aliases": [],
+   "lng": -82.363288,
+   "lat": 29.638148,
+   "osm": "way/259946086"
+  },
+  {
+   "id": "diamond-commons",
+   "name": "Diamond Commons",
+   "short": "Diamond Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.340475,
+   "lat": 29.642403,
+   "osm": "way/150958003"
+  },
+  {
+   "id": "university-womens-club",
+   "name": "University Womens Club",
+   "short": "University Womens Club",
+   "kind": "academic",
+   "codes": [
+    "UWC"
+   ],
+   "aliases": [],
+   "lng": -82.356137,
+   "lat": 29.649244,
+   "osm": "way/284659325"
+  },
+  {
+   "id": "softball-batting-cage",
+   "name": "Softball Batting Cage",
+   "short": "Softball Batting Cage",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.36531,
+   "lat": 29.639063,
+   "osm": "way/293325245"
+  },
+  {
+   "id": "ifas-field-support",
+   "name": "IFAS Field Support",
+   "short": "IFAS Field Support",
+   "kind": "academic",
+   "codes": [
+    "FS1"
+   ],
+   "aliases": [
+    "Field Support"
+   ],
+   "lng": -82.361019,
+   "lat": 29.633493,
+   "osm": "way/863605386"
+  },
+  {
+   "id": "weil-chilled-water-plant",
+   "name": "Weil Chilled Water Plant",
+   "short": "Weil Chilled Water Plant",
+   "kind": "academic",
+   "codes": [
+    "CWP1"
+   ],
+   "aliases": [
+    "Weil Chilled Water Plant (CWP1)"
+   ],
+   "lng": -82.348506,
+   "lat": 29.648147,
+   "osm": "way/481256534"
+  },
+  {
+   "id": "bio-containment-facility",
+   "name": "Bio-Containment Facility",
+   "short": "Bio-Containment Facility",
+   "kind": "academic",
+   "codes": [
+    "BCF"
+   ],
+   "aliases": [],
+   "lng": -82.35996,
+   "lat": 29.639501,
+   "osm": "way/866486487"
+  },
+  {
+   "id": "surplus-property-warehouse",
+   "name": "Surplus Property Warehouse",
+   "short": "Surplus Property Warehouse",
+   "kind": "academic",
+   "codes": [
+    "SURP"
+   ],
+   "aliases": [],
+   "lng": -82.368087,
+   "lat": 29.643908,
+   "osm": "way/654801623"
+  },
+  {
+   "id": "la-casita-institute-of-hispanic-latina-culture",
+   "name": "La Casita (Institute of Hispanic/Latina Culture)",
+   "short": "La Casita (Institute of Hispanic/Latina Culture)",
+   "kind": "academic",
+   "codes": [
+    "IHLC"
+   ],
+   "aliases": [
+    "La Casita"
+   ],
+   "lng": -82.341995,
+   "lat": 29.652375,
+   "osm": "way/943079467"
+  },
+  {
+   "id": "uf-toxicology-research-facility",
+   "name": "UF Toxicology Research Facility",
+   "short": "UF Toxicology Research Facility",
+   "kind": "academic",
+   "codes": [
+    "TRF"
+   ],
+   "aliases": [
+    "Toxicology Research Facility"
+   ],
+   "lng": -82.353661,
+   "lat": 29.637225,
+   "osm": "way/867942377"
+  },
+  {
+   "id": "institute-of-black-culture",
+   "name": "Institute of Black Culture",
+   "short": "Institute of Black Culture",
+   "kind": "academic",
+   "codes": [
+    "IBC"
+   ],
+   "aliases": [
+    "Institute Of Black Culture (IBC)"
+   ],
+   "lng": -82.342183,
+   "lat": 29.65237,
+   "osm": "way/910750370"
+  },
+  {
+   "id": "reed-laboratory",
+   "name": "Reed Laboratory",
+   "short": "Reed Laboratory",
+   "kind": "academic",
+   "codes": [
+    "RLA"
+   ],
+   "aliases": [
+    "Percy L. Reed Laboratory"
+   ],
+   "lng": -82.348111,
+   "lat": 29.647948,
+   "osm": "way/445808710"
+  },
+  {
+   "id": "bio-tech-lab",
+   "name": "Bio-Tech Lab",
+   "short": "Bio-Tech Lab",
+   "kind": "academic",
+   "codes": [
+    "BTL"
+   ],
+   "aliases": [
+    "Bio-Tech Laboratory"
+   ],
+   "lng": -82.359622,
+   "lat": 29.638485,
+   "osm": "way/259946098"
+  },
+  {
+   "id": "agricultural-engineering-field-lab",
+   "name": "Agricultural Engineering Field Lab",
+   "short": "Agricultural Engineering Field Lab",
+   "kind": "academic",
+   "codes": [
+    "AGEL"
+   ],
+   "aliases": [
+    "Agric Engineering Field Lab"
+   ],
+   "lng": -82.363923,
+   "lat": 29.638279,
+   "osm": "way/259946088"
+  },
+  {
+   "id": "maguire-commons",
+   "name": "Maguire Commons",
+   "short": "Maguire Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.370803,
+   "lat": 29.641147,
+   "osm": "way/294234938"
+  },
+  {
+   "id": "network-services-field-station",
+   "name": "Network Services Field Station",
+   "short": "Network Services Field Station",
+   "kind": "academic",
+   "codes": [
+    "FDFK"
+   ],
+   "aliases": [
+    "Field and Fork Farm"
+   ],
+   "lng": -82.364065,
+   "lat": 29.64403,
+   "osm": "way/424512411"
+  },
+  {
+   "id": "ifas-crops-and-soils-field-lab",
+   "name": "IFAS Crops & Soils Field Lab",
+   "short": "IFAS Crops & Soils Field Lab",
+   "kind": "academic",
+   "codes": [
+    "CSFL"
+   ],
+   "aliases": [
+    "Chiller and Steam Shop"
+   ],
+   "lng": -82.361711,
+   "lat": 29.633659,
+   "osm": "way/863605378"
+  },
+  {
+   "id": "uf-information",
+   "name": "UF Information",
+   "short": "UF Information",
+   "kind": "academic",
+   "codes": [
+    "INFO"
+   ],
+   "aliases": [
+    "U. F. Information"
+   ],
+   "lng": -82.345565,
+   "lat": 29.649067,
+   "osm": "way/858697956"
+  },
+  {
+   "id": "fmnh-special-projects-lab",
+   "name": "FMNH Special Projects Lab",
+   "short": "FMNH Special Projects Lab",
+   "kind": "academic",
+   "codes": [
+    "MUSB"
+   ],
+   "aliases": [
+    "Special Projects Lab"
+   ],
+   "lng": -82.367946,
+   "lat": 29.641853,
+   "osm": "way/863385105"
+  },
+  {
+   "id": "ifas-research-laboratory-2",
+   "name": "IFAS Research Laboratory #2",
+   "short": "IFAS Research Laboratory #2",
+   "kind": "academic",
+   "codes": [
+    "RL2"
+   ],
+   "aliases": [
+    "Research Laboratory"
+   ],
+   "lng": -82.360915,
+   "lat": 29.633157,
+   "osm": "way/863605384"
+  },
+  {
+   "id": "little-hall-express",
+   "name": "Little Hall Express",
+   "short": "Little Hall Express",
+   "kind": "academic",
+   "codes": [
+    "LHEX"
+   ],
+   "aliases": [],
+   "lng": -82.341363,
+   "lat": 29.648718,
+   "osm": "way/220368157"
+  },
+  {
+   "id": "solar-energy-test-house",
+   "name": "Solar Energy Test House",
+   "short": "Solar Energy Test House",
+   "kind": "academic",
+   "codes": [
+    "SET3"
+   ],
+   "aliases": [
+    "Farber House",
+    "Dr. Erich A. Farber Archives"
+   ],
+   "lng": -82.361325,
+   "lat": 29.628976,
+   "osm": "way/785087362"
+  },
+  {
+   "id": "uf-physical-security-department",
+   "name": "UF Physical Security Department",
+   "short": "UF Physical Security Department",
+   "kind": "academic",
+   "codes": [
+    "PS"
+   ],
+   "aliases": [
+    "Physical Security"
+   ],
+   "lng": -82.370085,
+   "lat": 29.642657,
+   "osm": "way/404962876"
+  },
+  {
+   "id": "agricultural-engineering-building",
+   "name": "Agricultural Engineering Building",
+   "short": "Agricultural Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "AGE"
+   ],
+   "aliases": [
+    "Agricultural Engineering"
+   ],
+   "lng": -82.363651,
+   "lat": 29.638268,
+   "osm": "way/259946078"
+  },
+  {
+   "id": "field-and-fork-pantry",
+   "name": "Field & Fork Pantry",
+   "short": "Field & Fork Pantry",
+   "kind": "academic",
+   "codes": [
+    "FFP"
+   ],
+   "aliases": [
+    "Alan & Cathy Hitchcock Field & Fork Pantry",
+    "Field and Fork Food Pantry"
+   ],
+   "lng": -82.344752,
+   "lat": 29.647082,
+   "osm": "way/864249478"
+  },
+  {
+   "id": "baughman-center",
+   "name": "Baughman Center",
+   "short": "Baughman Center",
+   "kind": "academic",
+   "codes": [
+    "BAU2"
+   ],
+   "aliases": [
+    "Dr. George F. & Hazel Baughman Center"
+   ],
+   "lng": -82.363563,
+   "lat": 29.642231,
+   "osm": "way/425690658"
+  },
+  {
+   "id": "facilities-services-grounds-administration",
+   "name": "Facilities Services Grounds Administration",
+   "short": "Facilities Services Grounds Administration",
+   "kind": "academic",
+   "codes": [
+    "FSGR",
+    "GRND"
+   ],
+   "aliases": [
+    "Facilities Services Grounds"
+   ],
+   "lng": -82.369223,
+   "lat": 29.643504,
+   "osm": "way/654801620"
+  },
+  {
+   "id": "sanitary-lift-station-l1",
+   "name": "Sanitary Lift Station L1",
+   "short": "Sanitary Lift Station L1",
+   "kind": "academic",
+   "codes": [
+    "LSL1"
+   ],
+   "aliases": [],
+   "lng": -82.347019,
+   "lat": 29.640984,
+   "osm": "way/481256567"
+  },
+  {
+   "id": "facilities-services-human-resources",
+   "name": "Facilities Services Human Resources",
+   "short": "Facilities Services Human Resources",
+   "kind": "academic",
+   "codes": [
+    "FSHR"
+   ],
+   "aliases": [],
+   "lng": -82.370206,
+   "lat": 29.643636,
+   "osm": "way/404962880"
+  },
+  {
+   "id": "florida-pool-office-lockers",
+   "name": "Florida Pool Office/Lockers",
+   "short": "Florida Pool Office/Lockers",
+   "kind": "academic",
+   "codes": [
+    "FPOF"
+   ],
+   "aliases": [
+    "Florida Pool Offices/Lockers"
+   ],
+   "lng": -82.347406,
+   "lat": 29.650471,
+   "osm": "way/858697926"
+  },
+  {
+   "id": "tropical-ecology-and-conservation-lab",
+   "name": "Tropical Ecology & Conservation lab",
+   "short": "Tropical Ecology & Conservation lab",
+   "kind": "academic",
+   "codes": [
+    "IMPL"
+   ],
+   "aliases": [
+    "Office Building"
+   ],
+   "lng": -82.343215,
+   "lat": 29.645682,
+   "osm": "way/277082923"
+  },
+  {
+   "id": "microkelvin-laboratory",
+   "name": "Microkelvin Laboratory",
+   "short": "Microkelvin Laboratory",
+   "kind": "academic",
+   "codes": [
+    "MCKL"
+   ],
+   "aliases": [],
+   "lng": -82.34644,
+   "lat": 29.648053,
+   "osm": "way/150858526"
+  },
+  {
+   "id": "brain-institute-bridge",
+   "name": "Brain Institute Bridge",
+   "short": "Brain Institute Bridge",
+   "kind": "academic",
+   "codes": [
+    "WLKW"
+   ],
+   "aliases": [],
+   "lng": -82.343408,
+   "lat": 29.641452,
+   "osm": "way/503128997"
+  },
+  {
+   "id": "varsity-tennis-building",
+   "name": "Varsity Tennis Building",
+   "short": "Varsity Tennis Building",
+   "kind": "academic",
+   "codes": [
+    "VTB"
+   ],
+   "aliases": [],
+   "lng": -82.357739,
+   "lat": 29.650068,
+   "osm": "way/404962874"
+  },
+  {
+   "id": "baughman-center-administration",
+   "name": "Baughman Center Administration",
+   "short": "Baughman Center Administration",
+   "kind": "academic",
+   "codes": [
+    "BAU1"
+   ],
+   "aliases": [
+    "Baughman Support Building"
+   ],
+   "lng": -82.363618,
+   "lat": 29.642016,
+   "osm": "way/427713642"
+  },
+  {
+   "id": "uf-vet-science-surgery",
+   "name": "UF Vet Science Surgery",
+   "short": "UF Vet Science Surgery",
+   "kind": "academic",
+   "codes": [
+    "VETS"
+   ],
+   "aliases": [
+    "Vet Science Surgery"
+   ],
+   "lng": -82.35373,
+   "lat": 29.637059,
+   "osm": "way/867942375"
+  },
+  {
+   "id": "fmnh-behavior-lab-annex",
+   "name": "FMNH Behavior Lab Annex",
+   "short": "FMNH Behavior Lab Annex",
+   "kind": "academic",
+   "codes": [
+    "BLAX"
+   ],
+   "aliases": [
+    "Behavior Lab Annex (Museum)"
+   ],
+   "lng": -82.367911,
+   "lat": 29.641976,
+   "osm": "way/863385104"
+  },
+  {
+   "id": "recreation-sports-maintenance",
+   "name": "Recreation Sports Maintenance",
+   "short": "Recreation Sports Maintenance",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -82.368751,
+   "lat": 29.640871,
+   "osm": "way/862064703"
+  },
+  {
+   "id": "century-tower",
+   "name": "Century Tower",
+   "short": "Century Tower",
+   "kind": "academic",
+   "codes": [
+    "CENT"
+   ],
+   "aliases": [],
+   "lng": -82.343321,
+   "lat": 29.648814,
+   "osm": "way/150860043"
+  },
+  {
+   "id": "astronomy-teaching-observatory",
+   "name": "Astronomy Teaching Observatory",
+   "short": "Astronomy Teaching Observatory",
+   "kind": "academic",
+   "codes": [
+    "OBS"
+   ],
+   "aliases": [
+    "Observatory"
+   ],
+   "lng": -82.349047,
+   "lat": 29.643004,
+   "osm": "way/481256583"
+  },
+  {
+   "id": "shands-linen-utility",
+   "name": "Shands Linen Utility",
+   "short": "Shands Linen Utility",
+   "kind": "academic",
+   "codes": [
+    "A08"
+   ],
+   "aliases": [],
+   "lng": -82.345754,
+   "lat": 29.639366,
+   "osm": "way/481256570"
+  },
+  {
+   "id": "field-lab-forestry",
+   "name": "Field Lab, Forestry",
+   "short": "Field Lab, Forestry",
+   "kind": "academic",
+   "codes": [
+    "FF3"
+   ],
+   "aliases": [],
+   "lng": -82.346058,
+   "lat": 29.645957,
+   "osm": "way/481262060"
+  },
+  {
+   "id": "chemical-engineering-digester",
+   "name": "Chemical Engineering Digester",
+   "short": "Chemical Engineering Digester",
+   "kind": "academic",
+   "codes": [
+    "CEDG"
+   ],
+   "aliases": [],
+   "lng": -82.348569,
+   "lat": 29.642463,
+   "osm": "way/481256573"
+  }
+ ]
+}
