@@ -1,0 +1,212 @@
+{
+  "arizona-state": {
+    "halls": 8,
+    "places": [
+      {
+        "placeId": "social-sciences",
+        "days": 21
+      },
+      {
+        "placeId": "durham-hall",
+        "days": 10
+      },
+      {
+        "placeId": "life-sciences-center",
+        "days": 21
+      },
+      {
+        "placeId": "matthews-hall",
+        "days": 10
+      },
+      {
+        "placeId": "west-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "palo-verde-west",
+        "name": "Palo Verde West",
+        "weekly": 154.8
+      },
+      {
+        "dormId": "palo-verde-east",
+        "name": "Palo Verde East",
+        "weekly": 162.2
+      },
+      {
+        "dormId": "tooker-house",
+        "name": "Tooker House (Fulton Schools Residential Community)",
+        "weekly": 168
+      }
+    ]
+  },
+  "columbia": {
+    "halls": 11,
+    "places": [
+      {
+        "placeId": "uris-hall",
+        "days": 21
+      },
+      {
+        "placeId": "chandler-hall",
+        "days": 10
+      },
+      {
+        "placeId": "computer-science",
+        "days": 21
+      },
+      {
+        "placeId": "fayerweather-hall",
+        "days": 10
+      },
+      {
+        "placeId": "zankel",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "hartley-hall",
+        "name": "Hartley Hall",
+        "weekly": 135.4
+      },
+      {
+        "dormId": "furnald-hall",
+        "name": "Furnald Hall",
+        "weekly": 139
+      },
+      {
+        "dormId": "wien-hall",
+        "name": "Wien Hall",
+        "weekly": 140.2
+      }
+    ]
+  },
+  "penn-state": {
+    "halls": 59,
+    "places": [
+      {
+        "placeId": "willard-building",
+        "days": 21
+      },
+      {
+        "placeId": "hetzel-union-building",
+        "days": 10
+      },
+      {
+        "placeId": "forum-building",
+        "days": 21
+      },
+      {
+        "placeId": "osmond-laboratory",
+        "days": 10
+      },
+      {
+        "placeId": "joab-l-thomas-building",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "thompson-hall",
+        "name": "Thompson Hall",
+        "weekly": 116.4
+      },
+      {
+        "dormId": "hamilton-hall",
+        "name": "Hamilton Hall",
+        "weekly": 138.6
+      },
+      {
+        "dormId": "mcelwain-hall",
+        "name": "McElwain Hall",
+        "weekly": 141
+      }
+    ]
+  },
+  "ucla": {
+    "halls": 16,
+    "places": [
+      {
+        "placeId": "kaplan-hall",
+        "days": 21
+      },
+      {
+        "placeId": "moore-hall",
+        "days": 10
+      },
+      {
+        "placeId": "royce-hall",
+        "days": 21
+      },
+      {
+        "placeId": "franz-hall",
+        "days": 10
+      },
+      {
+        "placeId": "kaufman-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "sproul-hall",
+        "name": "Sproul Hall",
+        "weekly": 284
+      },
+      {
+        "dormId": "dykstra-hall",
+        "name": "Dykstra Hall",
+        "weekly": 288
+      },
+      {
+        "dormId": "sproul-landing",
+        "name": "Sproul Landing",
+        "weekly": 290.2
+      }
+    ]
+  },
+  "university-of-florida": {
+    "halls": 21,
+    "places": [
+      {
+        "placeId": "mccarty-hall-a",
+        "days": 21
+      },
+      {
+        "placeId": "the-hub",
+        "days": 10
+      },
+      {
+        "placeId": "mccarty-hall-d",
+        "days": 21
+      },
+      {
+        "placeId": "field-lab-forestry",
+        "days": 10
+      },
+      {
+        "placeId": "weimer-hall",
+        "days": 5
+      }
+    ],
+    "top": [
+      {
+        "dormId": "rawlings-hall",
+        "name": "Rawlings Hall",
+        "weekly": 95.2
+      },
+      {
+        "dormId": "broward-hall",
+        "name": "Broward Hall",
+        "weekly": 121.6
+      },
+      {
+        "dormId": "sledd-hall",
+        "name": "Sledd Hall",
+        "weekly": 145.4
+      }
+    ]
+  }
+}
