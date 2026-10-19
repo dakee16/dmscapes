@@ -8,9 +8,12 @@
 // client file is under 150 KB and the minutes file under 250 KB.
 import fs from "node:fs";
 
-const ids = process.argv.slice(2).length
-  ? process.argv.slice(2)
-  : fs.readdirSync("data/campus").filter((f) => /^[a-z0-9-]+\.json$/.test(f)).map((f) => f.slice(0, -5));
+// The pilot list (written by build.mjs) names exactly the campuses that have minutes.
+const pilots = JSON.parse(fs.readFileSync("data/campus/index.json", "utf8"));
+const built = fs.readdirSync("data/campus").filter((f) => f.endsWith(".minutes.json")).map((f) => f.slice(0, -".minutes.json".length));
+const listed = [...pilots].sort().join() === [...built].sort().join();
+console.log(`${listed ? "✓" : "✗"} data/campus/index.json lists every built campus (${pilots.join(", ")})`);
+const ids = process.argv.slice(2).length ? process.argv.slice(2) : pilots;
 
 const R = 6371008.8;
 const rad = (d) => (d * Math.PI) / 180;
@@ -39,7 +42,7 @@ function decode(str) {
 }
 const length = (pts) => pts.slice(1).reduce((s, p, i) => s + haversine(pts[i], p), 0);
 
-let failed = false;
+let failed = !listed;
 for (const id of ids) {
   const config = JSON.parse(fs.readFileSync(`scripts/campus/config/${id}.json`, "utf8"));
   const speed = config.walkingSpeed;

@@ -5,6 +5,7 @@
 //   data/campus/<id>.json                    client-safe: sources, bounds, hall pins, places
 //   data/campus/<id>.minutes.json            server only: { places: [ids], halls: { dormId: [minutes] } }
 //   data/campus/paths/<id>/<dormId>.json     server only: { placeId: encoded polyline }
+//   data/campus/index.json                   the pilot list: adds <id>
 // data/campus/overrides/<id>.json (pins, year tags, place codes/aliases/kind) wins over OSM.
 import fs from "node:fs";
 import path from "node:path";
@@ -647,6 +648,9 @@ const campus = {
 };
 fs.writeFileSync(`data/campus/${id}.json`, JSON.stringify(campus, null, 1) + "\n");
 fs.writeFileSync(`data/campus/${id}.minutes.json`, JSON.stringify(minutes));
+// The pilot list the app reads (lib/hall-finder.ts PILOT_SCHOOLS).
+const PILOTS = "data/campus/index.json";
+fs.writeFileSync(PILOTS, JSON.stringify([...new Set([...read(PILOTS, []), id])].sort()) + "\n");
 
 // ---- Report
 const kb = (f) => `${(fs.statSync(f).size / 1024).toFixed(1)} KB`;
