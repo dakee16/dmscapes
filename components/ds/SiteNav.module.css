@@ -532,3 +532,8 @@
 :global(.dm-app[data-motion="paused"]) .sheet,
 :global(.dm-app[data-motion="paused"]) .sheetBig { animation: none; }
 :global(.dm-app[data-motion="paused"]) .plate { transition: none; }
+
+/* Hall Finder entry points (design-handoff/hall-finder Nav): pink NEW tag, highlighted Plan row. */
+.newTag { display: inline-flex; align-items: center; height: 18px; margin-left: 6px; padding: 0 6px; border-radius: 5px; background: var(--ds-pink); color: var(--ds-ink); font: 700 9px var(--ds-mono); letter-spacing: 0.08em; text-transform: uppercase; vertical-align: middle; }
+.rowHot { background: #fff0a8; }
+.rowHot .rowLabel, .rowHot strong { font-weight: 800; }

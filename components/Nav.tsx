@@ -9,6 +9,8 @@ import Wordmark from "@/components/site/Wordmark";
 import HeaderCredits from "@/components/site/HeaderCredits";
 import { FeedbackDialog } from "@/components/site/FeedbackLink";
 import { ArrowRight, ArrowUpRight, ChevronDown, CloseIcon, MenuIcon } from "@/components/ds/Icons";
+import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
+import { track } from "@/lib/analytics";
 import s from "./ds/SiteNav.module.css";
 
 /** The links the nav shows (design-handoff/designs/site/SiteNav, minus How it works). */
@@ -20,7 +22,7 @@ const PRIMARY = [
   { key: "blog", label: "Blog", href: "/blog" },
 ] as const;
 
-type GroupLink = { label: string; href: string; detail?: string; tag?: string };
+type GroupLink = { label: string; href: string; detail?: string; tag?: string; isNew?: boolean; hot?: boolean };
 type Group = { key: string; label: string; caption: string; links: GroupLink[] };
 
 /** Everything else lives one click away, under More (and in the phone menu). */
@@ -51,7 +53,20 @@ const GROUPS: Group[] = [
   ] },
 ];
 
+/** Hall Finder's entry points (design-handoff/hall-finder Nav): only when live or previewed.
+ *  It joins the top bar between Colleges and Pricing, and Blog moves to More › Help. */
+const HALL_FINDER_LINK = { key: "hall-finder", label: "Hall Finder", href: "/hall-finder" } as const;
+function withHallFinder(groups: Group[]): Group[] {
+  return groups.map((g) => {
+    if (g.key === "plan") return { ...g, links: [g.links[0], { label: "Hall Finder", href: "/hall-finder", detail: "Rank halls by your class schedule", isNew: true, hot: true }, ...g.links.slice(1)] };
+    if (g.key === "rooms") return { ...g, links: [...g.links.slice(0, 2), { label: "My Hall Finder", href: "/rooms#hall-finder", detail: "Your saved places and rankings" }, ...g.links.slice(2)] };
+    if (g.key === "help") return { ...g, links: g.links.map((l) => (l.href === "/blog" ? { ...l, label: "Blog and room guides" } : l)) };
+    return g;
+  });
+}
+
 function activeKey(pathname: string): string | null {
+  if (/^\/colleges\/[^/]+\/hall-finder/.test(pathname) || pathname.startsWith("/hall-finder")) return "hall-finder";
   if (pathname.startsWith("/colleges") || pathname.startsWith("/add-school")) return "colleges";
   if (pathname.startsWith("/pricing")) return "pricing";
   if (pathname.startsWith("/plan/draw/3d")) return "3d";
@@ -154,6 +169,7 @@ export default function Nav({
   const [groundDark, setGroundDark] = useState(tone === "dark");
   const close = () => { setMore(false); setMobileOpen(false); };
   const current = activeKey(pathname);
+  const hallFinder = useHallFinderOn();
   const dark = tone === "dark" || groundDark;
 
   useEffect(close, [pathname]);
@@ -229,12 +245,16 @@ export default function Nav({
         <span className={s.rowLabel}>
           {link.label}
           {link.tag && <span className={s.rowTag}><span className="ds-sr"> · </span>{link.tag}</span>}
+          {link.isNew && <span className={s.newTag}><span className="ds-sr"> · </span>New</span>}
         </span>
         {link.detail && <small className={s.rowDetail}>{link.detail}</small>}
       </span>
       <span className={s.rowArrow} aria-hidden="true"><ArrowUpRight size={14} strokeWidth={2.6} /></span>
     </>
   );
+
+  const primary = hallFinder ? [PRIMARY[0], HALL_FINDER_LINK, ...PRIMARY.slice(1).filter((l) => l.key !== "blog")] : PRIMARY;
+  const groups = hallFinder ? withHallFinder(GROUPS) : GROUPS;
 
   const groupCard = (where: "more" | "sheet") => (group: Group, index: number) => (
     <section key={group.key} className={s.card} data-group={group.key} aria-labelledby={`${where}-group-${group.key}`}
@@ -254,9 +274,10 @@ export default function Nav({
               ? <button type="button" className={s.row} onClick={() => { close(); setFeedback(true); }}>
                   {linkBody(link)}
                 </button>
-              : <Link className={s.row}
+              : <Link className={`${s.row} ${link.hot ? s.rowHot : ""}`}
                   href={link.href === "/report" ? `/report?from=${encodeURIComponent(pathname)}` : link.href}
-                  aria-current={pathname === link.href ? "page" : undefined} onClick={close}>
+                  aria-current={pathname === link.href ? "page" : undefined}
+                  onClick={() => { if (link.href.includes("hall-finder")) track("hall_finder_entry_clicked", { where: "more" }); close(); }}>
                   {linkBody(link)}
                 </Link>}
           </li>
@@ -286,9 +307,12 @@ export default function Nav({
       <nav className={s.bar} aria-label="Main navigation">
         <Wordmark tone={dark ? "dark" : "light"} />
         <div className={s.links}>
-          {PRIMARY.map((link) =>
+          {primary.map((link) =>
             <Link key={link.key} href={link.href} className={s.link}
-              aria-current={current === link.key ? "page" : undefined}>{link.label}</Link>)}
+              aria-current={current === link.key ? "page" : undefined}
+              onClick={link.key === "hall-finder" ? () => track("hall_finder_entry_clicked", { where: "nav" }) : undefined}>
+              {link.label}{link.key === "hall-finder" && <span className={s.newTag}><span className="ds-sr"> · </span>New</span>}
+            </Link>)}
           <div className={s.moreWrap}>
             <button type="button" className={s.link} data-more aria-expanded={more}
               aria-controls="nav-more" onClick={() => setMore(!more)}
@@ -303,7 +327,7 @@ export default function Nav({
           </div>
         </div>
         <div id="nav-more" className={s.morePanel} hidden={!more} onKeyDown={panelKeys}>
-          {GROUPS.map(groupCard("more"))}
+          {groups.map(groupCard("more"))}
         </div>
         <div className={s.actions}>
           <HeaderCredits />
@@ -321,14 +345,15 @@ export default function Nav({
       <div id="site-navigation" className={s.sheet} data-open={mobileOpen} hidden={!mobileOpen}>
         <div className={s.sheetInner}>
           <div className={s.sheetPrimary}>
-            {PRIMARY.map((link, i) => (
-              <Link key={link.key} href={link.href} className={s.sheetBig} onClick={close}
+            {primary.map((link, i) => (
+              <Link key={link.key} href={link.href} className={s.sheetBig}
+                onClick={() => { if (link.key === "hall-finder") track("hall_finder_entry_clicked", { where: "nav" }); close(); }}
                 aria-current={current === link.key ? "page" : undefined} style={{ "--i": i } as CSSProperties}>
-                {link.label}<ArrowRight size={22} />
+                {link.label}{link.key === "hall-finder" && <span className={s.newTag}><span className="ds-sr"> · </span>New</span>}<ArrowRight size={22} />
               </Link>
             ))}
           </div>
-          <div className={s.sheetGroups}>{GROUPS.map(groupCard("sheet"))}</div>
+          <div className={s.sheetGroups}>{groups.map(groupCard("sheet"))}</div>
           <div className={s.sheetFoot}><MotionToggle /></div>
         </div>
       </div>
