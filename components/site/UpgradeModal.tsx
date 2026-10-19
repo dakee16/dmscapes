@@ -22,6 +22,10 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     title: "You're out of plan credits",
     body: "You've used your Plus plan credits. Recharge to generate more rooms. Your saved designs, exports, and comparisons stay right where they are.",
   },
+  "hall-finder": {
+    title: "See every hall ranked",
+    body: `Plus ranks every hall at your school by your weekly walk, shows every route and compares halls side by side. It also includes ${PLUS_INITIAL_CREDITS} plan credits and every vibe.`,
+  },
   "workspace": { title: "Make room for your roommates", body: "Pro hosts one shared room with up to four people, including you. Friends join free to edit or comment, with a shared shopping list and version history. Personal rooms stay available on every plan." },
   "pro-credits": {
     title: "You're out of plan credits",
