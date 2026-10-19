@@ -13,6 +13,10 @@ import TogetherSection from "@/components/home/TogetherSection";
 import SchoolsSection from "@/components/home/SchoolsSection";
 import PricingSection from "@/components/home/PricingSection";
 import FinalCta from "@/components/home/FinalCta";
+import { HomeSection } from "@/components/hall-finder/Entry";
+import { exampleFor } from "@/lib/hall-finder-example";
+import { PILOT_SCHOOLS } from "@/lib/hall-finder";
+import { shortName } from "@/lib/school-names";
 import {
   pageMetadata,
   organizationJsonLd,
@@ -20,7 +24,7 @@ import {
   softwareApplicationJsonLd,
   webPageJsonLd,
 } from "@/lib/seo";
-import { SCHOOLS } from "@/lib/schools";
+import { SCHOOLS, getSchool } from "@/lib/schools";
 import {
   FEATURED_ROOMS,
   HALL_COUNT,
@@ -42,6 +46,10 @@ const pageMeta = pageMetadata({
 // Point agents at the Markdown version (also served at / for Accept: text/markdown).
 export const metadata = { ...pageMeta, alternates: { ...pageMeta.alternates, types: { ...pageMeta.alternates?.types, "text/markdown": "/index.md" } } };
 
+// The Hall Finder section's map card is drawn from Penn State (design-handoff/hall-finder 12-Home).
+const HF_SCHOOL = getSchool("penn-state");
+const HF_EXAMPLE = HF_SCHOOL ? exampleFor(HF_SCHOOL.id, shortName(HF_SCHOOL)) : null;
+
 export default function Home() {
   return (
     <div id="top" className="ds">
@@ -62,6 +70,7 @@ export default function Home() {
         <TapeBand layoutCount={LAYOUT_COUNT} />
         <ProblemSection />
         <HowSection />
+        {HF_EXAMPLE && <HomeSection example={HF_EXAMPLE} others={PILOT_SCHOOLS.length - 1} />}
         <VibesSection vibes={HOME_VIBES} />
         <BudgetSection />
         <StudioSection />

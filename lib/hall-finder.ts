@@ -54,9 +54,10 @@ export function hallFinderOn(): boolean {
   }
 }
 
-/** The homepage hero chip: Jan 1 – Mar 31 Eastern, only when live, never during the Halloween season. */
-export function heroChipOn(now: number = Date.now()): boolean {
-  if (!hallFinderLive() || isSeason(now)) return false;
+/** The homepage hero chip: Jan 1 – Mar 31 Eastern, only when live (or `on`: the browser's
+ *  hallFinderOn(), preview included), never during the Halloween season. */
+export function heroChipOn(now: number = Date.now(), on: boolean = hallFinderLive()): boolean {
+  if (!on || isSeason(now)) return false;
   const month = Number(new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", month: "numeric" }).format(now));
   return month >= 1 && month <= 3;
 }

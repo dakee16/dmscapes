@@ -9,6 +9,7 @@ import { useFrameSequence } from "@/components/ds/useFrameSequence";
 import { ArrowRight } from "@/components/ds/Icons";
 import { BatMark, PumpkinMark, SeasonLights } from "@/components/season/SeasonMarks";
 import SeasonLink from "@/components/season/SeasonLink";
+import { HeroChip } from "@/components/hall-finder/Entry";
 import HomeSearch from "./HomeSearch";
 import css from "./Home.module.css";
 
@@ -102,6 +103,7 @@ export default function HomeHero({
               </span>
               <ArrowRight size={16} className={css.seasonArrow} />
             </SeasonLink>
+            <HeroChip className={css.seasonChip} arrowClassName={css.seasonArrow} />
             <p className="ds-eyebrow" data-reveal="load">
               AI dorm room planner <span className={css.wide}>· {schoolCount} schools · {hallCount.toLocaleString("en-US")} halls</span>
               <span className={css.narrow}>· free to start</span>
