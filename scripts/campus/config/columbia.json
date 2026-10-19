@@ -1,0 +1,74 @@
+{
+  "collegeId": "columbia",
+  "area": {
+    "osm": "way/732228095",
+    "bbox": [
+      40.80316,
+      -73.96761,
+      40.81249,
+      -73.95725
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/columbia.codes.json"
+  },
+  "housing": {
+    "title": "Columbia Housing hall pages and Housing for First-Year Students",
+    "url": "https://www.housing.columbia.edu/content/housing-first-year-students",
+    "note": "housing.columbia.edu blocks scripts; the pages were read once on 2026-10-19 from Wayback Machine copies (2025-05 to 2026-07)."
+  },
+  "years": {
+    "john-jay-hall": {
+      "year": "first",
+      "source": "https://www.housing.columbia.edu/content/housing-first-year-students"
+    },
+    "carman-hall": {
+      "year": "first",
+      "source": "https://www.housing.columbia.edu/carman"
+    },
+    "furnald-hall": {
+      "year": "first",
+      "source": "https://www.housing.columbia.edu/furnald"
+    },
+    "hartley-hall": {
+      "year": "upper",
+      "source": "https://www.housing.columbia.edu/hartley"
+    },
+    "broadway-hall": {
+      "year": "upper",
+      "source": "https://www.housing.columbia.edu/broadway"
+    },
+    "schapiro-hall": {
+      "year": "upper",
+      "source": "https://www.housing.columbia.edu/schapiro"
+    },
+    "mcbain-hall": {
+      "year": "upper",
+      "source": "https://www.housing.columbia.edu/mcbain"
+    },
+    "wien-hall": {
+      "year": "any",
+      "source": [
+        "https://www.housing.columbia.edu/content/wien-hall",
+        "https://www.housing.columbia.edu/content/housing-first-year-students"
+      ]
+    },
+    "river-hall": {
+      "year": "upper",
+      "source": "https://www.housing.columbia.edu/river"
+    },
+    "hogan-ruggles": {
+      "year": "upper",
+      "source": [
+        "https://www.housing.columbia.edu/hogan",
+        "https://www.housing.columbia.edu/ruggles"
+      ]
+    },
+    "watt-hall": {
+      "year": "upper",
+      "source": "https://www.housing.columbia.edu/watt"
+    }
+  }
+}

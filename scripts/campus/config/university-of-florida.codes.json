@@ -1,0 +1,5124 @@
+{
+ "name": "UF Campus Map building data (campusmap.ufl.edu)",
+ "url": "https://campusmap.ufl.edu/library/api/searchBldg",
+ "read": "2026-10-19",
+ "buildings": [
+  {
+   "code": "AUD",
+   "name": "University Auditorium",
+   "number": "0001",
+   "lng": -82.342913,
+   "lat": 29.648988
+  },
+  {
+   "code": "GRI",
+   "name": "Grinter Hall",
+   "number": "0002",
+   "lng": -82.342086,
+   "lat": 29.649278
+  },
+  {
+   "code": "WAL",
+   "name": "Walker Hall",
+   "number": "0003",
+   "lng": -82.3416,
+   "lat": 29.649463
+  },
+  {
+   "code": "PEA",
+   "name": "Peabody Hall",
+   "number": "0004",
+   "lng": -82.342048,
+   "lat": 29.650092
+  },
+  {
+   "code": "SMA",
+   "name": "Smathers Library",
+   "number": "0005",
+   "lng": -82.341806,
+   "lat": 29.650916
+  },
+  {
+   "code": "BRY",
+   "name": "Bryan Hall",
+   "number": "0006",
+   "lng": -82.34032,
+   "lat": 29.65127
+  },
+  {
+   "code": "AND",
+   "name": "Anderson Hall",
+   "number": "0007",
+   "lng": -82.34189,
+   "lat": 29.65158
+  },
+  {
+   "code": "FLI",
+   "name": "Keene-Flint Hall",
+   "number": "0008",
+   "lng": -82.34395,
+   "lat": 29.65143
+  },
+  {
+   "code": "LEI",
+   "name": "Leigh Hall",
+   "number": "0009",
+   "lng": -82.34428,
+   "lat": 29.65043
+  },
+  {
+   "code": "FLO",
+   "name": "Griffin-Floyd Hall",
+   "number": "0010",
+   "lng": -82.34378,
+   "lat": 29.65011
+  },
+  {
+   "code": "BRO",
+   "name": "Broward Hall",
+   "number": "0011",
+   "lng": -82.34208,
+   "lat": 29.64655
+  },
+  {
+   "code": "ROL",
+   "name": "Rolfs Hall",
+   "number": "0012",
+   "lng": -82.34448,
+   "lat": 29.64925
+  },
+  {
+   "code": "NEW",
+   "name": "Newell Hall",
+   "number": "0013",
+   "lng": -82.34508,
+   "lat": 29.64909
+  },
+  {
+   "code": "UST",
+   "name": "Ustler Hall",
+   "number": "0014",
+   "lng": -82.34689,
+   "lat": 29.65045
+  },
+  {
+   "code": "BUC",
+   "name": "Buckman Hall",
+   "number": "0015",
+   "lng": -82.345,
+   "lat": 29.65089
+  },
+  {
+   "code": "SLD",
+   "name": "Sledd Hall",
+   "number": "0016",
+   "lng": -82.34552,
+   "lat": 29.65076
+  },
+  {
+   "code": "THO",
+   "name": "Thomas Hall",
+   "number": "0017",
+   "lng": -82.346,
+   "lat": 29.65119
+  },
+  {
+   "code": "INF",
+   "name": "Infirmary",
+   "number": "0018",
+   "lng": -82.34659,
+   "lat": 29.64952
+  },
+  {
+   "code": "AAF",
+   "name": "Academic Advising Center (AAC)",
+   "number": "0019",
+   "lng": -82.3457,
+   "lat": 29.65025
+  },
+  {
+   "code": "REID",
+   "name": "Reid Hall",
+   "number": "0020",
+   "lng": -82.33985,
+   "lat": 29.64645
+  },
+  {
+   "code": "FLG",
+   "name": "Florida Gymnasium",
+   "number": "0021",
+   "lng": -82.34727,
+   "lat": 29.64938
+  },
+  {
+   "code": "CAR",
+   "name": "Carleton Auditorium",
+   "number": "0022",
+   "lng": -82.34167,
+   "lat": 29.64908
+  },
+  {
+   "code": "VAN",
+   "name": "Van Fleet Hall",
+   "number": "0023",
+   "lng": -82.35112,
+   "lat": 29.64856
+  },
+  {
+   "code": "WEIL",
+   "name": "Weil Hall",
+   "number": "0024",
+   "lng": -82.34843,
+   "lat": 29.64835
+  },
+  {
+   "code": "CWP1",
+   "name": "Weil Chilled Water Plant (CWP1)",
+   "number": "0025",
+   "lng": -82.3485,
+   "lat": 29.64815
+  },
+  {
+   "code": "TIG",
+   "name": "Tigert Hall",
+   "number": "0026",
+   "lng": -82.33989,
+   "lat": 29.64944
+  },
+  {
+   "code": "CLB",
+   "name": "Chemistry Laboratory",
+   "number": "0028",
+   "lng": -82.34412,
+   "lat": 29.65089
+  },
+  {
+   "code": "STZ",
+   "name": "Stuzin Hall",
+   "number": "0029",
+   "lng": -82.3411,
+   "lat": 29.65089
+  },
+  {
+   "code": "WEIM",
+   "name": "Weimer Hall",
+   "number": "0030",
+   "lng": -82.34738,
+   "lat": 29.64783
+  },
+  {
+   "code": "SSB",
+   "name": "Criser Hall",
+   "number": "0031",
+   "lng": -82.34163,
+   "lat": 29.65017
+  },
+  {
+   "code": "HUB",
+   "name": "Hub",
+   "number": "0032",
+   "lng": -82.34558,
+   "lat": 29.64818
+  },
+  {
+   "code": "NEB",
+   "name": "Engineering Building",
+   "number": "0033",
+   "lng": -82.34714,
+   "lat": 29.64229
+  },
+  {
+   "code": "INFO",
+   "name": "U. F. Information",
+   "number": "0034",
+   "lng": -82.34556,
+   "lat": 29.64908
+  },
+  {
+   "code": "BRT",
+   "name": "Bryant Space Science Center",
+   "number": "0038",
+   "lng": -82.34572,
+   "lat": 29.64893
+  },
+  {
+   "code": "YUL",
+   "name": "Yulee Hall",
+   "number": "0039",
+   "lng": -82.34035,
+   "lat": 29.64622
+  },
+  {
+   "code": "MAL",
+   "name": "Mallory Hall",
+   "number": "0041",
+   "lng": -82.34031,
+   "lat": 29.64677
+  },
+  {
+   "code": "CSE",
+   "name": "Computer Sciences/Engineering",
+   "number": "0042",
+   "lng": -82.34435,
+   "lat": 29.64831
+  },
+  {
+   "code": "MSL",
+   "name": "Marston Science Library",
+   "number": "0043",
+   "lng": -82.34394,
+   "lat": 29.64794
+  },
+  {
+   "code": "TOL",
+   "name": "Tolbert Hall",
+   "number": "0045",
+   "lng": -82.35139,
+   "lat": 29.64797
+  },
+  {
+   "code": "GP1",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0047",
+   "lng": -82.35604,
+   "lat": 29.63912
+  },
+  {
+   "code": "CWP3",
+   "name": "Walker Hall Chilled Water Plant (CWP3)",
+   "number": "0049",
+   "lng": -82.34115,
+   "lat": 29.64942
+  },
+  {
+   "code": "NOR",
+   "name": "North Hall",
+   "number": "0050",
+   "lng": -82.35075,
+   "lat": 29.64789
+  },
+  {
+   "code": "RIK",
+   "name": "Riker  Hall",
+   "number": "0052",
+   "lng": -82.35114,
+   "lat": 29.64747
+  },
+  {
+   "code": "WEA",
+   "name": "Weaver Hall",
+   "number": "0053",
+   "lng": -82.35073,
+   "lat": 29.64705
+  },
+  {
+   "code": "GER",
+   "name": "Gerson Hall",
+   "number": "0054",
+   "lng": -82.34011,
+   "lat": 29.65073
+  },
+  {
+   "code": "GP2",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0055",
+   "lng": -82.35597,
+   "lat": 29.63912
+  },
+  {
+   "code": "MBI",
+   "name": "Mcknight Brain Institute",
+   "number": "0059",
+   "lng": -82.34321,
+   "lat": 29.64186
+  },
+  {
+   "code": "HGS",
+   "name": "Hough Hall",
+   "number": "0064",
+   "lng": -82.3406,
+   "lat": 29.6504
+  },
+  {
+   "code": "HVNR",
+   "name": "Heavener Hall",
+   "number": "0065",
+   "lng": -82.34025,
+   "lat": 29.65172
+  },
+  {
+   "code": "OBS",
+   "name": "Observatory",
+   "number": "0067",
+   "lng": -82.34904,
+   "lat": 29.64303
+  },
+  {
+   "code": "RL1",
+   "name": "Research Laboratory",
+   "number": "0068",
+   "lng": -82.36115,
+   "lat": 29.63317
+  },
+  {
+   "code": "NANO",
+   "name": "Nanoscale Research",
+   "number": "0070",
+   "lng": -82.34617,
+   "lat": 29.64274
+  },
+  {
+   "code": "FS1",
+   "name": "Field Support",
+   "number": "0071",
+   "lng": -82.36101,
+   "lat": 29.63349
+  },
+  {
+   "code": "PUGH",
+   "name": "Pugh Hall",
+   "number": "0072",
+   "lng": -82.34553,
+   "lat": 29.64941
+  },
+  {
+   "code": "REE",
+   "name": "Rolfs Elevator Equipment Bldg",
+   "number": "0073",
+   "lng": -82.3444,
+   "lat": 29.64922
+  },
+  {
+   "code": "VSAH",
+   "name": "Small Animal Hospital",
+   "number": "0075",
+   "lng": -82.35054,
+   "lat": 29.63378
+  },
+  {
+   "code": "UWC",
+   "name": "University Womens Club",
+   "number": "0077",
+   "lng": -82.35615,
+   "lat": 29.64924
+  },
+  {
+   "code": "CWC",
+   "name": "Counseling And Wellness",
+   "number": "0081",
+   "lng": -82.36933,
+   "lat": 29.64253
+  },
+  {
+   "code": "CYP",
+   "name": "Cypress Hall",
+   "number": "0086",
+   "lng": -82.33976,
+   "lat": 29.6457
+  },
+  {
+   "code": "GP3",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0088",
+   "lng": -82.35597,
+   "lat": 29.63919
+  },
+  {
+   "code": "GP4",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0090",
+   "lng": -82.35604,
+   "lat": 29.63919
+  },
+  {
+   "code": "NPB",
+   "name": "Physics Building",
+   "number": "0092",
+   "lng": -82.34979,
+   "lat": 29.6439
+  },
+  {
+   "code": "POOL",
+   "name": "Florida Pool Plant",
+   "number": "0093",
+   "lng": -82.34726,
+   "lat": 29.64999
+  },
+  {
+   "code": "SOC",
+   "name": "O'Connell Center",
+   "number": "0094",
+   "lng": -82.35117,
+   "lat": 29.6494
+  },
+  {
+   "code": "SWIM",
+   "name": "Swim/Dive Facility",
+   "number": "0095",
+   "lng": -82.35157,
+   "lat": 29.64851
+  },
+  {
+   "code": "ST1",
+   "name": "Equipment Storage",
+   "number": "0097",
+   "lng": -82.35593,
+   "lat": 29.63927
+  },
+  {
+   "code": "MCKL",
+   "name": "Microkelvin Laboratory",
+   "number": "0099",
+   "lng": -82.34643,
+   "lat": 29.64804
+  },
+  {
+   "code": "WM",
+   "name": "Williamson Hall",
+   "number": "0100",
+   "lng": -82.34654,
+   "lat": 29.64791
+  },
+  {
+   "code": "NRN",
+   "name": "Norman Hall",
+   "number": "0101",
+   "lng": -82.33812,
+   "lat": 29.64685
+  },
+  {
+   "code": "NRG",
+   "name": "Norman Gym",
+   "number": "0102",
+   "lng": -82.33799,
+   "lat": 29.64625
+  },
+  {
+   "code": "NRNA",
+   "name": "Norman Hall Addition",
+   "number": "0103",
+   "lng": -82.33755,
+   "lat": 29.64658
+  },
+  {
+   "code": "CBD",
+   "name": "105 Classroom Building",
+   "number": "0105",
+   "lng": -82.34294,
+   "lat": 29.65297
+  },
+  {
+   "code": "FF1",
+   "name": "Forestry Resource and Conservation",
+   "number": "0107",
+   "lng": -82.35733,
+   "lat": 29.63845
+  },
+  {
+   "code": "SBH",
+   "name": "Steinbrenner",
+   "number": "0110",
+   "lng": -82.34262,
+   "lat": 29.64764
+  },
+  {
+   "code": "DAU",
+   "name": "Dauer Hall",
+   "number": "0111",
+   "lng": -82.34508,
+   "lat": 29.64995
+  },
+  {
+   "code": "MUB",
+   "name": "Music Building",
+   "number": "0117",
+   "lng": -82.34289,
+   "lat": 29.64823
+  },
+  {
+   "code": "TRF",
+   "name": "Toxicology Research Facility",
+   "number": "0118",
+   "lng": -82.35365,
+   "lat": 29.63722
+  },
+  {
+   "code": "AFPP",
+   "name": "Aquatic Foods Pilot Plant",
+   "number": "0120",
+   "lng": -82.34404,
+   "lat": 29.64734
+  },
+  {
+   "code": "VTS",
+   "name": "Linder Tennis Stadium",
+   "number": "0125",
+   "lng": -82.35707,
+   "lat": 29.64946
+  },
+  {
+   "code": "UNVH",
+   "name": "University House",
+   "number": "0127",
+   "lng": -82.35399,
+   "lat": 29.65165
+  },
+  {
+   "code": "ADF",
+   "name": "Agronomy Drying Facility",
+   "number": "0128",
+   "lng": -82.36337,
+   "lat": 29.63874
+  },
+  {
+   "code": "RLA",
+   "name": "Reed Laboratory",
+   "number": "0131",
+   "lng": -82.34811,
+   "lat": 29.64797
+  },
+  {
+   "code": "CENX",
+   "name": "Centrex (University Police)",
+   "number": "0132",
+   "lng": -82.34308,
+   "lat": 29.64393
+  },
+  {
+   "code": "FLE",
+   "name": "Fletcher Hall",
+   "number": "0134",
+   "lng": -82.34531,
+   "lat": 29.65137
+  },
+  {
+   "code": "ACLC",
+   "name": "Learning Center",
+   "number": "0138",
+   "lng": -82.2201,
+   "lat": 29.73326
+  },
+  {
+   "code": "VTB",
+   "name": "Varsity Tennis Building",
+   "number": "0151",
+   "lng": -82.35774,
+   "lat": 29.65006
+  },
+  {
+   "code": "CSFL",
+   "name": "Chiller and Steam Shop",
+   "number": "0152",
+   "lng": -82.36171,
+   "lat": 29.63366
+  },
+  {
+   "code": "ODAA",
+   "name": "Development & Alumni Affairs",
+   "number": "0153",
+   "lng": -82.34959,
+   "lat": 29.65247
+  },
+  {
+   "code": "SEZ",
+   "name": "Florida Field South End Zone",
+   "number": "0155",
+   "lng": -82.34863,
+   "lat": 29.64917
+  },
+  {
+   "code": "STA",
+   "name": "Stadium Addition",
+   "number": "0156",
+   "lng": -82.34968,
+   "lat": 29.65009
+  },
+  {
+   "code": "STA",
+   "name": "Ben Hill Griffin Stadium",
+   "number": "0157",
+   "lng": -82.3494,
+   "lat": 29.65003
+  },
+  {
+   "code": "YON",
+   "name": "Yon Hall",
+   "number": "0158",
+   "lng": -82.34804,
+   "lat": 29.65009
+  },
+  {
+   "code": "NEZ",
+   "name": "Florida Field North End Zone",
+   "number": "0159",
+   "lng": -82.34862,
+   "lat": 29.65083
+  },
+  {
+   "code": "HER",
+   "name": "Heritage Hall",
+   "number": "0160",
+   "lng": -82.34862,
+   "lat": 29.65109
+  },
+  {
+   "code": "IIT",
+   "name": "COLT",
+   "number": "0162",
+   "lng": -82.34567,
+   "lat": 29.64603
+  },
+  {
+   "code": "DER",
+   "name": "Deriso Hall",
+   "number": "0165",
+   "lng": -82.35144,
+   "lat": 29.63321
+  },
+  {
+   "code": "IMAG",
+   "name": "Agricultural Networks Laboratory",
+   "number": "0168",
+   "lng": -82.36288,
+   "lat": 29.63781
+  },
+  {
+   "code": "SMPB",
+   "name": "Shands Medical Plaza B",
+   "number": "0171",
+   "lng": -82.34902,
+   "lat": 29.63782
+  },
+  {
+   "code": "WRUF",
+   "name": "WRUF Transmitter Building",
+   "number": "0174",
+   "lng": -82.41913,
+   "lat": 29.64414
+  },
+  {
+   "code": "MUS",
+   "name": "Florida Museum Research & Collections/Dickinson Hall",
+   "number": "0181",
+   "lng": -82.34418,
+   "lat": 29.64439
+  },
+  {
+   "code": "MAEC",
+   "name": "TRED",
+   "number": "0183",
+   "lng": -82.3495,
+   "lat": 29.64735
+  },
+  {
+   "code": "RHN",
+   "name": "Rhines Hall",
+   "number": "0184",
+   "lng": -82.34901,
+   "lat": 29.64749
+  },
+  {
+   "code": "FF3",
+   "name": "Field Lab, Forestry",
+   "number": "0191",
+   "lng": -82.3564,
+   "lat": 29.6378
+  },
+  {
+   "code": "WBS",
+   "name": "Wilmot Gardens Bus Shelter",
+   "number": "0192",
+   "lng": -82.34959,
+   "lat": 29.63858
+  },
+  {
+   "code": "PPCL",
+   "name": "Plant Pathology Cytology Laboratory",
+   "number": "0193",
+   "lng": -82.35632,
+   "lat": 29.6394
+  },
+  {
+   "code": "AVS",
+   "name": "Restroom and Shower Facility",
+   "number": "0194",
+   "lng": -82.356,
+   "lat": 29.63942
+  },
+  {
+   "code": "BRU1",
+   "name": "Equipment Storage",
+   "number": "0196",
+   "lng": -82.26511,
+   "lat": 29.74356
+  },
+  {
+   "code": "FDRY",
+   "name": "Drying Facility, Forestry",
+   "number": "0200",
+   "lng": -82.35636,
+   "lat": 29.6377
+  },
+  {
+   "code": "ARB",
+   "name": "Academic Research Building",
+   "number": "0201",
+   "lng": -82.34384,
+   "lat": 29.64117
+  },
+  {
+   "code": "PSB",
+   "name": "Shands Patient Services Bldg",
+   "number": "0202",
+   "lng": -82.34303,
+   "lat": 29.64007
+  },
+  {
+   "code": "COMM",
+   "name": "Communicore",
+   "number": "0203",
+   "lng": -82.34491,
+   "lat": 29.64087
+  },
+  {
+   "code": "GSA",
+   "name": "General Services Building",
+   "number": "0204",
+   "lng": -82.34444,
+   "lat": 29.64009
+  },
+  {
+   "code": "DSB",
+   "name": "Dental Science",
+   "number": "0205",
+   "lng": -82.34503,
+   "lat": 29.6395
+  },
+  {
+   "code": "BSU",
+   "name": "Basic Science",
+   "number": "0206",
+   "lng": -82.3457,
+   "lat": 29.6402
+  },
+  {
+   "code": "LSL1",
+   "name": "Sanitary Lift Station L1",
+   "number": "0211",
+   "lng": -82.34701,
+   "lat": 29.64099
+  },
+  {
+   "code": "HPNP",
+   "name": "Health Prof, Nursing, Pharmacy",
+   "number": "0212",
+   "lng": -82.34526,
+   "lat": 29.64165
+  },
+  {
+   "code": "BMS",
+   "name": "Biomedical Sciences",
+   "number": "0213",
+   "lng": -82.3457,
+   "lat": 29.64061
+  },
+  {
+   "code": "HMEB",
+   "name": "Harrell Medical Education Building",
+   "number": "0214",
+   "lng": -82.34432,
+   "lat": 29.64211
+  },
+  {
+   "code": "VCS",
+   "name": "Veterinary Clinical Sciences",
+   "number": "0215",
+   "lng": -82.34994,
+   "lat": 29.63327
+  },
+  {
+   "code": "FACL",
+   "name": "Vet Med Food Animal Clinic",
+   "number": "0216",
+   "lng": -82.35006,
+   "lat": 29.63182
+  },
+  {
+   "code": "VMMB",
+   "name": "Vet Med Metabolic Building",
+   "number": "0217",
+   "lng": -82.349,
+   "lat": 29.63275
+  },
+  {
+   "code": "VAEB",
+   "name": "Va Education Building #14",
+   "number": "0220",
+   "lng": -82.34358,
+   "lat": 29.63708
+  },
+  {
+   "code": "VABA",
+   "name": "VAB Auditorium",
+   "number": "0221",
+   "lng": -82.34836,
+   "lat": 29.63368
+  },
+  {
+   "code": "SMME",
+   "name": "SMMRL East",
+   "number": "0226",
+   "lng": -82.36723,
+   "lat": 29.63079
+  },
+  {
+   "code": "AGES",
+   "name": "Agricultural Engineering Shop",
+   "number": "0227",
+   "lng": -82.36328,
+   "lat": 29.63814
+  },
+  {
+   "code": "CMS",
+   "name": "Schiebler CMS",
+   "number": "0228",
+   "lng": -82.34508,
+   "lat": 29.6347
+  },
+  {
+   "code": "DER",
+   "name": "DAS Equipment Room",
+   "number": "0232",
+   "lng": -82.34766,
+   "lat": 29.64891
+  },
+  {
+   "code": "BIOL",
+   "name": "Bioremediation Laboratory",
+   "number": "0245",
+   "lng": -82.36149,
+   "lat": 29.62749
+  },
+  {
+   "code": "EML",
+   "name": "Environmental Microbiology Lab",
+   "number": "0246",
+   "lng": -82.36148,
+   "lat": 29.62765
+  },
+  {
+   "code": "SEL",
+   "name": "Solar Engineering Laboratory",
+   "number": "0247",
+   "lng": -82.36066,
+   "lat": 29.62708
+  },
+  {
+   "code": "UFFX",
+   "name": "University Foundation Annex",
+   "number": "0253",
+   "lng": -82.3496,
+   "lat": 29.65282
+  },
+  {
+   "code": "GBS",
+   "name": "Gator Band Shell",
+   "number": "0255",
+   "lng": -82.35327,
+   "lat": 29.64668
+  },
+  {
+   "code": "WSFL",
+   "name": "Weed Sciences Field Building",
+   "number": "0258",
+   "lng": -82.36376,
+   "lat": 29.63918
+  },
+  {
+   "code": "TREC",
+   "name": "Treeo Center",
+   "number": "0259",
+   "lng": -82.41434,
+   "lat": 29.62
+  },
+  {
+   "code": "EAH",
+   "name": "Emerson Alumni Hall",
+   "number": "0261",
+   "lng": -82.34906,
+   "lat": 29.65249
+  },
+  {
+   "code": "DCA",
+   "name": "Design Center Annex",
+   "number": "0264",
+   "lng": -82.36139,
+   "lat": 29.62787
+  },
+  {
+   "code": "SRFC",
+   "name": "Student Recreation and Fitness Center",
+   "number": "0265",
+   "lng": -82.34676,
+   "lat": 29.65012
+  },
+  {
+   "code": "RCD",
+   "name": "Racquet Club Dining Center",
+   "number": "0266",
+   "lng": -82.34634,
+   "lat": 29.65012
+  },
+  {
+   "code": "TUR",
+   "name": "Turlington Hall",
+   "number": "0267",
+   "lng": -82.34407,
+   "lat": 29.64921
+  },
+  {
+   "code": "AH",
+   "name": "Architecture Building",
+   "number": "0268",
+   "lng": -82.3417,
+   "lat": 29.64775
+  },
+  {
+   "code": "FAD",
+   "name": "Fine Arts D",
+   "number": "0269",
+   "lng": -82.34017,
+   "lat": 29.6484
+  },
+  {
+   "code": "A15",
+   "name": "Shands Facilities Administration",
+   "number": "0271",
+   "lng": -82.34119,
+   "lat": 29.64138
+  },
+  {
+   "code": "RNK",
+   "name": "Rinker Hall",
+   "number": "0272",
+   "lng": -82.3432,
+   "lat": 29.64694
+  },
+  {
+   "code": "A18",
+   "name": "Shands Generator Plant",
+   "number": "0274",
+   "lng": -82.34087,
+   "lat": 29.64146
+  },
+  {
+   "code": "SFH",
+   "name": "The Scott Family Chemistry Building",
+   "number": "0275",
+   "lng": -82.34441,
+   "lat": 29.65144
+  },
+  {
+   "code": "CWP4",
+   "name": "SW Chilled Water Plant (CWP4)",
+   "number": "0295",
+   "lng": -82.36839,
+   "lat": 29.63558
+  },
+  {
+   "code": "POW",
+   "name": "Florida Museum of Natural History/Powell Hall",
+   "number": "0308",
+   "lng": -82.37025,
+   "lat": 29.63583
+  },
+  {
+   "code": "HARN",
+   "name": "Harn Museum Of Art",
+   "number": "0309",
+   "lng": -82.37024,
+   "lat": 29.63692
+  },
+  {
+   "code": "PCPA",
+   "name": "Phillips Center",
+   "number": "0315",
+   "lng": -82.36928,
+   "lat": 29.63528
+  },
+  {
+   "code": "SWRC",
+   "name": "SW Rec",
+   "number": "0316",
+   "lng": -82.36828,
+   "lat": 29.6385
+  },
+  {
+   "code": "CWP6",
+   "name": "West Chilled Water Plant (CWP6)",
+   "number": "0317",
+   "lng": -82.36594,
+   "lat": 29.63956
+  },
+  {
+   "code": "ARF2",
+   "name": "ACS Housing",
+   "number": "0336",
+   "lng": -82.37435,
+   "lat": 29.64062
+  },
+  {
+   "code": "FF4",
+   "name": "Agronomy Field Lab",
+   "number": "0338",
+   "lng": -82.355,
+   "lat": 29.6335
+  },
+  {
+   "code": "WEL1",
+   "name": "IFAS Agronomy Lab",
+   "number": "0339",
+   "lng": -82.35545,
+   "lat": 29.63381
+  },
+  {
+   "code": "WEL2",
+   "name": "IFAS Agronomy Lab",
+   "number": "0340",
+   "lng": -82.35542,
+   "lat": 29.63403
+  },
+  {
+   "code": "MCG",
+   "name": "McGuire Center for Lepidoptera & Biodiversity/Butterfly Rainforest",
+   "number": "0341",
+   "lng": -82.37061,
+   "lat": 29.63612
+  },
+  {
+   "code": "ISS3",
+   "name": "IFAS Storage (Agy)",
+   "number": "0342",
+   "lng": -82.35482,
+   "lat": 29.63344
+  },
+  {
+   "code": "FF5",
+   "name": "Agronomy Field Lab",
+   "number": "0343",
+   "lng": -82.35511,
+   "lat": 29.63349
+  },
+  {
+   "code": "AGYL",
+   "name": "IFAS Conference Center (Agy)",
+   "number": "0344",
+   "lng": -82.35524,
+   "lat": 29.6335
+  },
+  {
+   "code": "ENYS",
+   "name": "Entomology Shop",
+   "number": "0346",
+   "lng": -82.3667,
+   "lat": 29.63344
+  },
+  {
+   "code": "BCL",
+   "name": "IFAS Agronomy Lab",
+   "number": "0350",
+   "lng": -82.35567,
+   "lat": 29.6335
+  },
+  {
+   "code": "FSF",
+   "name": "Gator Corner Dining Center",
+   "number": "0359",
+   "lng": -82.35013,
+   "lat": 29.64804
+  },
+  {
+   "code": "KA",
+   "name": "Fraternity -Kappa Alpha",
+   "number": "0400",
+   "lng": -82.35666,
+   "lat": 29.64578
+  },
+  {
+   "code": "CORE",
+   "name": "CORE",
+   "number": "0401",
+   "lng": -82.36899,
+   "lat": 29.63917
+  },
+  {
+   "code": "MAT",
+   "name": "Matherly Hall",
+   "number": "0406",
+   "lng": -82.34104,
+   "lat": 29.65163
+  },
+  {
+   "code": "AOP",
+   "name": "Sorority -Alpha Omicron Pi",
+   "number": "0408",
+   "lng": -82.33804,
+   "lat": 29.64426
+  },
+  {
+   "code": "ACO",
+   "name": "Sorority -Alpha Chi Omega",
+   "number": "0413",
+   "lng": -82.33889,
+   "lat": 29.64429
+  },
+  {
+   "code": "CO",
+   "name": "Sorority -Chi Omega",
+   "number": "0414",
+   "lng": -82.33805,
+   "lat": 29.64466
+  },
+  {
+   "code": "KD",
+   "name": "Sorority -Kappa Delta",
+   "number": "0415",
+   "lng": -82.33652,
+   "lat": 29.64462
+  },
+  {
+   "code": "FM",
+   "name": "Sorority -Phi Mu",
+   "number": "0416",
+   "lng": -82.33761,
+   "lat": 29.6439
+  },
+  {
+   "code": "PBF",
+   "name": "Sorority -Pi Beta Phi",
+   "number": "0418",
+   "lng": -82.3595,
+   "lat": 29.64732
+  },
+  {
+   "code": "CP",
+   "name": "Fraternity - Chi Phi",
+   "number": "0419",
+   "lng": -82.35446,
+   "lat": 29.64524
+  },
+  {
+   "code": "SAE",
+   "name": "Fraternity-Sigma Alpha Epsilon",
+   "number": "0420",
+   "lng": -82.35506,
+   "lat": 29.64538
+  },
+  {
+   "code": "LCA",
+   "name": "Fraternity -Lambda Chi Alpha",
+   "number": "0421",
+   "lng": -82.35577,
+   "lat": 29.64543
+  },
+  {
+   "code": "SPE",
+   "name": "Fraternity -Sigma Phi Epsilon",
+   "number": "0422",
+   "lng": -82.35617,
+   "lat": 29.64554
+  },
+  {
+   "code": "SC",
+   "name": "Fraternity -Sigma Chi",
+   "number": "0425",
+   "lng": -82.35716,
+   "lat": 29.64672
+  },
+  {
+   "code": "TEP",
+   "name": "Fraternity - Tau Epsilon Phi",
+   "number": "0426",
+   "lng": -82.35724,
+   "lat": 29.64711
+  },
+  {
+   "code": "QC",
+   "name": "Fraternity -Theta Chi",
+   "number": "0427",
+   "lng": -82.35717,
+   "lat": 29.64747
+  },
+  {
+   "code": "PS",
+   "name": "Physical Security",
+   "number": "0429",
+   "lng": -82.37013,
+   "lat": 29.64266
+  },
+  {
+   "code": "BQP",
+   "name": "Fraternity -Beta Theta Pi",
+   "number": "0430",
+   "lng": -82.35635,
+   "lat": 29.64816
+  },
+  {
+   "code": "AEP",
+   "name": "Fraternity -Alpha Epsilon Pi",
+   "number": "0431",
+   "lng": -82.35597,
+   "lat": 29.64812
+  },
+  {
+   "code": "PLP",
+   "name": "Fraternity -Pi Lambda Phi",
+   "number": "0432",
+   "lng": -82.35556,
+   "lat": 29.64805
+  },
+  {
+   "code": "BLAX",
+   "name": "Behavior Lab Annex (Museum)",
+   "number": "0434",
+   "lng": -82.3679,
+   "lat": 29.64197
+  },
+  {
+   "code": "GVC1",
+   "name": "Greenhouse, Vegetable Crops",
+   "number": "0441",
+   "lng": -82.36187,
+   "lat": 29.63671
+  },
+  {
+   "code": "GP5",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0444",
+   "lng": -82.35611,
+   "lat": 29.63919
+  },
+  {
+   "code": "MSB",
+   "name": "Stetson Medical Sciences",
+   "number": "0445",
+   "lng": -82.34463,
+   "lat": 29.64048
+  },
+  {
+   "code": "THC",
+   "name": "North Tower",
+   "number": "0446",
+   "lng": -82.3439,
+   "lat": 29.64001
+  },
+  {
+   "code": "CENT",
+   "name": "Century Tower",
+   "number": "0448",
+   "lng": -82.34332,
+   "lat": 29.64881
+  },
+  {
+   "code": "HDC",
+   "name": "Human Development Center",
+   "number": "0454",
+   "lng": -82.34291,
+   "lat": 29.6406
+  },
+  {
+   "code": "A10",
+   "name": "Shands In-Patient MRI Building",
+   "number": "0457",
+   "lng": -82.34231,
+   "lat": 29.64015
+  },
+  {
+   "code": "ANS",
+   "name": "Animal Sciences Building",
+   "number": "0459",
+   "lng": -82.35179,
+   "lat": 29.63128
+  },
+  {
+   "code": "AQW1",
+   "name": "Aquatic Weeds Res Ctr (Mlhpr)",
+   "number": "0460",
+   "lng": -82.41759,
+   "lat": 29.72728
+  },
+  {
+   "code": "APL",
+   "name": "Aquatic Food Products Lab",
+   "number": "0461",
+   "lng": -82.34396,
+   "lat": 29.6469
+  },
+  {
+   "code": "SBB",
+   "name": "Shepard Broad Bldg",
+   "number": "0462",
+   "lng": -82.3465,
+   "lat": 29.64027
+  },
+  {
+   "code": "GVC2",
+   "name": "Greenhouse, Vegetable Crops",
+   "number": "0463",
+   "lng": -82.3619,
+   "lat": 29.63697
+  },
+  {
+   "code": "ASF",
+   "name": "Elmore Hall For Admin Services",
+   "number": "0465",
+   "lng": -82.36615,
+   "lat": 29.64347
+  },
+  {
+   "code": "GG1",
+   "name": "IFAS Greenhouse",
+   "number": "0468",
+   "lng": -82.36514,
+   "lat": 29.64262
+  },
+  {
+   "code": "CEHT",
+   "name": "Center Environmental & Human Tox. Annex",
+   "number": "0470",
+   "lng": -82.35286,
+   "lat": 29.63688
+  },
+  {
+   "code": "CEHT",
+   "name": "Center for Environmental & Human Tox",
+   "number": "0471",
+   "lng": -82.35307,
+   "lat": 29.63677
+  },
+  {
+   "code": "HEQ1",
+   "name": "Equipment Storage",
+   "number": "0472",
+   "lng": -82.41834,
+   "lat": 29.72152
+  },
+  {
+   "code": "CWP2",
+   "name": "Lacy Rabon Chilled Water Plant (CWP2)",
+   "number": "0473",
+   "lng": -82.34695,
+   "lat": 29.64059
+  },
+  {
+   "code": "ROG",
+   "name": "Rogers, Frazier Hall",
+   "number": "0474",
+   "lng": -82.34543,
+   "lat": 29.64443
+  },
+  {
+   "code": "FSN",
+   "name": "Food Science & Human Nutrition",
+   "number": "0475",
+   "lng": -82.34439,
+   "lat": 29.64691
+  },
+  {
+   "code": "FFP",
+   "name": "Field and Fork Food Pantry",
+   "number": "0476",
+   "lng": -82.34474,
+   "lat": 29.64706
+  },
+  {
+   "code": "ANB",
+   "name": "Animal Building",
+   "number": "0478",
+   "lng": -82.35197,
+   "lat": 29.63257
+  },
+  {
+   "code": "HEQ2",
+   "name": "Equipment Storage",
+   "number": "0479",
+   "lng": -82.41829,
+   "lat": 29.72125
+  },
+  {
+   "code": "MHR",
+   "name": "Residence (Millhopper)",
+   "number": "0481",
+   "lng": -82.41834,
+   "lat": 29.72018
+  },
+  {
+   "code": "ASP",
+   "name": "Animal Science Preparation Bld",
+   "number": "0483",
+   "lng": -82.35197,
+   "lat": 29.63237
+  },
+  {
+   "code": "GA1",
+   "name": "Greenhouse, CLAS",
+   "number": "0485",
+   "lng": -82.346161,
+   "lat": 29.644337
+  },
+  {
+   "code": "GP7",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0486",
+   "lng": -82.3556,
+   "lat": 29.63893
+  },
+  {
+   "code": "GP8",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0487",
+   "lng": -82.3559,
+   "lat": 29.63912
+  },
+  {
+   "code": "GP9",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0488",
+   "lng": -82.35611,
+   "lat": 29.63912
+  },
+  {
+   "code": "GP10",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0489",
+   "lng": -82.3559,
+   "lat": 29.63919
+  },
+  {
+   "code": "GN1",
+   "name": "Greenhouse, Nematology",
+   "number": "0490",
+   "lng": -82.35908,
+   "lat": 29.6391
+  },
+  {
+   "code": "GE1",
+   "name": "Greenhouse, Entomology",
+   "number": "0491",
+   "lng": -82.36654,
+   "lat": 29.63374
+  },
+  {
+   "code": "GE2",
+   "name": "Greenhouse, Entomology",
+   "number": "0492",
+   "lng": -82.36654,
+   "lat": 29.63369
+  },
+  {
+   "code": "FSS",
+   "name": "Food Science Storage",
+   "number": "0493",
+   "lng": -82.35965,
+   "lat": 29.63684
+  },
+  {
+   "code": "MCCA",
+   "name": "McCarty Hall A",
+   "number": "0495",
+   "lng": -82.34555,
+   "lat": 29.64697
+  },
+  {
+   "code": "MCCB",
+   "name": "McCarty Hall B",
+   "number": "0496",
+   "lng": -82.34492,
+   "lat": 29.64674
+  },
+  {
+   "code": "MCCC",
+   "name": "McCarty Hall C",
+   "number": "0497",
+   "lng": -82.34537,
+   "lat": 29.64666
+  },
+  {
+   "code": "MCCD",
+   "name": "McCarty Hall D",
+   "number": "0498",
+   "lng": -82.34437,
+   "lat": 29.64649
+  },
+  {
+   "code": "ANSC",
+   "name": "Dairy Science Building",
+   "number": "0499",
+   "lng": -82.35154,
+   "lat": 29.63071
+  },
+  {
+   "code": "PGB",
+   "name": "Plant Growth Building",
+   "number": "0501",
+   "lng": -82.36021,
+   "lat": 29.63696
+  },
+  {
+   "code": "GA2",
+   "name": "Greenhouse, Agronomy",
+   "number": "0505",
+   "lng": -82.3582,
+   "lat": 29.63898
+  },
+  {
+   "code": "GP11",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0507",
+   "lng": -82.35829,
+   "lat": 29.63898
+  },
+  {
+   "code": "FDFK",
+   "name": "Field and Fork Farm",
+   "number": "0508",
+   "lng": -82.36406,
+   "lat": 29.64403
+  },
+  {
+   "code": "PKYE",
+   "name": "PKY Develop.Research School E",
+   "number": "0512",
+   "lng": -82.335,
+   "lat": 29.63979
+  },
+  {
+   "code": "PKYN",
+   "name": "PKY Develop.Research School N",
+   "number": "0521",
+   "lng": -82.3349,
+   "lat": 29.63921
+  },
+  {
+   "code": "PKYP",
+   "name": "PKY Develop.Research School P",
+   "number": "0523",
+   "lng": -82.33432,
+   "lat": 29.63881
+  },
+  {
+   "code": "PKYA",
+   "name": "Pk Performing Arts Center",
+   "number": "0524",
+   "lng": -82.33526,
+   "lat": 29.64036
+  },
+  {
+   "code": "AGE",
+   "name": "Agricultural Engineering",
+   "number": "0543",
+   "lng": -82.36365,
+   "lat": 29.63826
+  },
+  {
+   "code": "AWAX",
+   "name": "Aquatic Weeds Annex (Mlhpr)",
+   "number": "0544",
+   "lng": -82.41702,
+   "lat": 29.72727
+  },
+  {
+   "code": "SOLS",
+   "name": "Animal Science Storage",
+   "number": "0547",
+   "lng": -82.35193,
+   "lat": 29.63103
+  },
+  {
+   "code": "CHEM",
+   "name": "Storage Building",
+   "number": "0548",
+   "lng": -82.36111,
+   "lat": 29.63333
+  },
+  {
+   "code": "RL2",
+   "name": "Research Laboratory",
+   "number": "0550",
+   "lng": -82.36091,
+   "lat": 29.63316
+  },
+  {
+   "code": "FPOF",
+   "name": "Florida Pool Offices/Lockers",
+   "number": "0552",
+   "lng": -82.34739,
+   "lat": 29.65047
+  },
+  {
+   "code": "RAW",
+   "name": "Rawlings Hall",
+   "number": "0553",
+   "lng": -82.34294,
+   "lat": 29.64625
+  },
+  {
+   "code": "NUCF",
+   "name": "EH&S Support",
+   "number": "0554",
+   "lng": -82.36719,
+   "lat": 29.6319
+  },
+  {
+   "code": "LHEX",
+   "name": "Little Hall Express",
+   "number": "0556",
+   "lng": -82.34134,
+   "lat": 29.64872
+  },
+  {
+   "code": "NRB",
+   "name": "Reactor Building",
+   "number": "0557",
+   "lng": -82.34809,
+   "lat": 29.64766
+  },
+  {
+   "code": "PRE",
+   "name": "James G. Pressly Stadium",
+   "number": "0562",
+   "lng": -82.35516,
+   "lat": 29.64926
+  },
+  {
+   "code": "WAVE",
+   "name": "Coastal Engineering Wave Tank",
+   "number": "0571",
+   "lng": -82.33078,
+   "lat": 29.63857
+  },
+  {
+   "code": "CETL",
+   "name": "Coastal Engineering Test Lab",
+   "number": "0572",
+   "lng": -82.33057,
+   "lat": 29.63893
+  },
+  {
+   "code": "HUME",
+   "name": "Hume Commons Bldg",
+   "number": "0576",
+   "lng": -82.35249,
+   "lat": 29.64452
+  },
+  {
+   "code": "CEL1",
+   "name": "Coastal Engineering Lab",
+   "number": "0580",
+   "lng": -82.33049,
+   "lat": 29.63926
+  },
+  {
+   "code": "GP13",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0585",
+   "lng": -82.35626,
+   "lat": 29.63916
+  },
+  {
+   "code": "GP14",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0586",
+   "lng": -82.35619,
+   "lat": 29.63916
+  },
+  {
+   "code": "SET3",
+   "name": "Dr. Erich A. Farber Archives",
+   "number": "0587",
+   "lng": -82.36132,
+   "lat": 29.62898
+  },
+  {
+   "code": "EAS",
+   "name": "East Hall",
+   "number": "0592",
+   "lng": -82.3502,
+   "lat": 29.64732
+  },
+  {
+   "code": "JENB",
+   "name": "(0594) Jennings Hall B (Center)",
+   "number": "0594",
+   "lng": -82.34202,
+   "lat": 29.644
+  },
+  {
+   "code": "JEN",
+   "name": "Jennings Hall Office",
+   "number": "0596",
+   "lng": -82.34222,
+   "lat": 29.64438
+  },
+  {
+   "code": "FAA",
+   "name": "Fine Arts A",
+   "number": "0597",
+   "lng": -82.3406,
+   "lat": 29.64818
+  },
+  {
+   "code": "FAB",
+   "name": "Fine Arts B",
+   "number": "0598",
+   "lng": -82.33979,
+   "lat": 29.64817
+  },
+  {
+   "code": "FAC",
+   "name": "Fine Arts C",
+   "number": "0599",
+   "lng": -82.34043,
+   "lat": 29.64775
+  },
+  {
+   "code": "PKYQ",
+   "name": "PKY Develop.Research School Q",
+   "number": "0606",
+   "lng": -82.33413,
+   "lat": 29.63918
+  },
+  {
+   "code": "CEL2",
+   "name": "Coastal Engineering Lab",
+   "number": "0607",
+   "lng": -82.33058,
+   "lat": 29.63819
+  },
+  {
+   "code": "SURP",
+   "name": "Surplus Property Warehouse",
+   "number": "0609",
+   "lng": -82.36809,
+   "lat": 29.6439
+  },
+  {
+   "code": "LSL2",
+   "name": "Sanitary Lift Station L2",
+   "number": "0610",
+   "lng": -82.35921,
+   "lat": 29.64511
+  },
+  {
+   "code": "WECS",
+   "name": "IFAS Wildlife Ecology Storage",
+   "number": "0615",
+   "lng": -82.36292,
+   "lat": 29.63844
+  },
+  {
+   "code": "AGEL",
+   "name": "Agric Engineering Field Lab",
+   "number": "0616",
+   "lng": -82.36392,
+   "lat": 29.63827
+  },
+  {
+   "code": "GE3",
+   "name": "Greenhouse, Entomology",
+   "number": "0618",
+   "lng": -82.35773,
+   "lat": 29.63918
+  },
+  {
+   "code": "ENYF",
+   "name": "Entomology Field Laboratory",
+   "number": "0619",
+   "lng": -82.35769,
+   "lat": 29.63902
+  },
+  {
+   "code": "GP15",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0621",
+   "lng": -82.35604,
+   "lat": 29.63904
+  },
+  {
+   "code": "GP16",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0622",
+   "lng": -82.35597,
+   "lat": 29.63904
+  },
+  {
+   "code": "GP18",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0623",
+   "lng": -82.35611,
+   "lat": 29.63904
+  },
+  {
+   "code": "WALC",
+   "name": "Wallace Building",
+   "number": "0631",
+   "lng": -82.35906,
+   "lat": 29.6384
+  },
+  {
+   "code": "NSC",
+   "name": "Nuclear Sciences Building",
+   "number": "0634",
+   "lng": -82.34803,
+   "lat": 29.64734
+  },
+  {
+   "code": "PRF",
+   "name": "ACS Housing",
+   "number": "0641",
+   "lng": -82.37425,
+   "lat": 29.64088
+  },
+  {
+   "code": "GE4",
+   "name": "Greenhouse, Entomology",
+   "number": "0642",
+   "lng": -82.35801,
+   "lat": 29.63918
+  },
+  {
+   "code": "NFL",
+   "name": "Nematology Field Lab",
+   "number": "0643",
+   "lng": -82.35784,
+   "lat": 29.63901
+  },
+  {
+   "code": "GE5",
+   "name": "Greenhouse, Entomology",
+   "number": "0644",
+   "lng": -82.35787,
+   "lat": 29.63916
+  },
+  {
+   "code": "GF1",
+   "name": "Greenhouse, Forestry",
+   "number": "0645",
+   "lng": -82.3566,
+   "lat": 29.63731
+  },
+  {
+   "code": "ST2",
+   "name": "Field Storage",
+   "number": "0648",
+   "lng": -82.36797,
+   "lat": 29.6333
+  },
+  {
+   "code": "GA4",
+   "name": "Greenhouse, Agronomy",
+   "number": "0649",
+   "lng": -82.35846,
+   "lat": 29.63917
+  },
+  {
+   "code": "GP17",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0650",
+   "lng": -82.3559,
+   "lat": 29.63904
+  },
+  {
+   "code": "LIT",
+   "name": "Little Hall",
+   "number": "0655",
+   "lng": -82.34073,
+   "lat": 29.64885
+  },
+  {
+   "code": "APLL",
+   "name": "Agronomy Plant Introduct. Lab",
+   "number": "0658",
+   "lng": -82.35382,
+   "lat": 29.6283
+  },
+  {
+   "code": "IFW2",
+   "name": "IFAS Warehouse",
+   "number": "0664",
+   "lng": -82.35674,
+   "lat": 29.63957
+  },
+  {
+   "code": "GP19",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0666",
+   "lng": -82.35611,
+   "lat": 29.63896
+  },
+  {
+   "code": "PPGR",
+   "name": "Plant Pathology Growth Room",
+   "number": "0667",
+   "lng": -82.35597,
+   "lat": 29.63935
+  },
+  {
+   "code": "ECL",
+   "name": "FLARE",
+   "number": "0668",
+   "lng": -82.36704,
+   "lat": 29.6311
+  },
+  {
+   "code": "GP20",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0669",
+   "lng": -82.35934,
+   "lat": 29.63912
+  },
+  {
+   "code": "GF2",
+   "name": "Greenhouse, Forestry",
+   "number": "0671",
+   "lng": -82.35685,
+   "lat": 29.63768
+  },
+  {
+   "code": "GCH",
+   "name": "Golf Course Clubhouse",
+   "number": "0674",
+   "lng": -82.364951,
+   "lat": 29.649923
+  },
+  {
+   "code": "GA6",
+   "name": "Greenhouse, Agronomy",
+   "number": "0676",
+   "lng": -82.35864,
+   "lat": 29.63898
+  },
+  {
+   "code": "GF7",
+   "name": "Greenhouse, Forestry",
+   "number": "0677",
+   "lng": -82.35642,
+   "lat": 29.63732
+  },
+  {
+   "code": "GCS",
+   "name": "Golf Cart Storage",
+   "number": "0678",
+   "lng": -82.36546,
+   "lat": 29.65016
+  },
+  {
+   "code": "GF8",
+   "name": "Greenhouse, Forestry",
+   "number": "0679",
+   "lng": -82.35668,
+   "lat": 29.63768
+  },
+  {
+   "code": "FW1",
+   "name": "Workshop/Storage, Forestry",
+   "number": "0681",
+   "lng": -82.35653,
+   "lat": 29.6378
+  },
+  {
+   "code": "GFC5",
+   "name": "Greenhouse, Fruit Crops",
+   "number": "0682",
+   "lng": -82.36463,
+   "lat": 29.63527
+  },
+  {
+   "code": "EHSP",
+   "name": "EH&S Program Support",
+   "number": "0683",
+   "lng": -82.36749,
+   "lat": 29.63113
+  },
+  {
+   "code": "PRL",
+   "name": "Food/Environ Toxicology Lab",
+   "number": "0685",
+   "lng": -82.35936,
+   "lat": 29.63715
+  },
+  {
+   "code": "REI",
+   "name": "Reitz Student Union",
+   "number": "0686",
+   "lng": -82.34788,
+   "lat": 29.64631
+  },
+  {
+   "code": "CON",
+   "name": "Constans Theatre",
+   "number": "0687",
+   "lng": -82.34661,
+   "lat": 29.64619
+  },
+  {
+   "code": "SIS",
+   "name": "Sisler Hall",
+   "number": "0688",
+   "lng": -82.34425,
+   "lat": 29.65003
+  },
+  {
+   "code": "LBW",
+   "name": "Library West",
+   "number": "0689",
+   "lng": -82.34289,
+   "lat": 29.65138
+  },
+  {
+   "code": "SPPL",
+   "name": "Soils Plant Preparation Lab",
+   "number": "0693",
+   "lng": -82.35801,
+   "lat": 29.63934
+  },
+  {
+   "code": "A07",
+   "name": "Shands Biohazard Waste Storage",
+   "number": "0694",
+   "lng": -82.34584,
+   "lat": 29.63934
+  },
+  {
+   "code": "GP27",
+   "name": "Shade House, Plant Pathology",
+   "number": "0696",
+   "lng": -82.35919,
+   "lat": 29.63917
+  },
+  {
+   "code": "HCS2",
+   "name": "Health Center Surge #2",
+   "number": "0698",
+   "lng": -82.36732,
+   "lat": 29.63112
+  },
+  {
+   "code": "VETS",
+   "name": "Vet Science Surgery",
+   "number": "0699",
+   "lng": -82.35376,
+   "lat": 29.63705
+  },
+  {
+   "code": "FSAD",
+   "name": "Facilities Services",
+   "number": "0700",
+   "lng": -82.37053,
+   "lat": 29.64431
+  },
+  {
+   "code": "FSHR",
+   "name": "Facilities Services Human Resources",
+   "number": "0701",
+   "lng": -82.37021,
+   "lat": 29.64364
+  },
+  {
+   "code": "FSBS",
+   "name": "Facilities Services Building Services",
+   "number": "0703",
+   "lng": -82.36991,
+   "lat": 29.6434
+  },
+  {
+   "code": "FSGR",
+   "name": "Facilities Services Grounds",
+   "number": "0704",
+   "lng": -82.36878,
+   "lat": 29.64339
+  },
+  {
+   "code": "FSCS",
+   "name": "Central Stores Warehouse",
+   "number": "0705",
+   "lng": -82.36925,
+   "lat": 29.64296
+  },
+  {
+   "code": "FSMP",
+   "name": "Fleet Services",
+   "number": "0706",
+   "lng": -82.36788,
+   "lat": 29.64285
+  },
+  {
+   "code": "BTL",
+   "name": "Bio-Tech Laboratory",
+   "number": "0710",
+   "lng": -82.35962,
+   "lat": 29.63849
+  },
+  {
+   "code": "IFVS",
+   "name": "Volatile Storage",
+   "number": "0712",
+   "lng": -82.36169,
+   "lat": 29.63844
+  },
+  {
+   "code": "BKW",
+   "name": "Bookstore Warehouse",
+   "number": "0713",
+   "lng": -82.36804,
+   "lat": 29.64343
+  },
+  {
+   "code": "MAIL",
+   "name": "Print & Mail Services",
+   "number": "0715",
+   "lng": -82.36704,
+   "lat": 29.64284
+  },
+  {
+   "code": "FIF",
+   "name": "Fifield Hall",
+   "number": "0717",
+   "lng": -82.36114,
+   "lat": 29.6384
+  },
+  {
+   "code": "MUSB",
+   "name": "Special Projects Lab",
+   "number": "0718",
+   "lng": -82.36794,
+   "lat": 29.64186
+  },
+  {
+   "code": "MAE",
+   "name": "Materials Engineering",
+   "number": "0719",
+   "lng": -82.34919,
+   "lat": 29.64668
+  },
+  {
+   "code": "MAEB",
+   "name": "Mechanical & Aerospace Eng B",
+   "number": "0720",
+   "lng": -82.34944,
+   "lat": 29.64636
+  },
+  {
+   "code": "BEN",
+   "name": "Benton Hall",
+   "number": "0721",
+   "lng": -82.34762,
+   "lat": 29.64341
+  },
+  {
+   "code": "LAR",
+   "name": "Larsen Hall",
+   "number": "0722",
+   "lng": -82.34738,
+   "lat": 29.64311
+  },
+  {
+   "code": "CHE",
+   "name": "Chemical Engineering",
+   "number": "0723",
+   "lng": -82.348,
+   "lat": 29.64271
+  },
+  {
+   "code": "BLK",
+   "name": "Black Hall",
+   "number": "0724",
+   "lng": -82.34786,
+   "lat": 29.64192
+  },
+  {
+   "code": "MAEA",
+   "name": "Mechanical & Aerospace Eng A",
+   "number": "0725",
+   "lng": -82.34827,
+   "lat": 29.64329
+  },
+  {
+   "code": "CESS",
+   "name": "Chemical Eng  Storage",
+   "number": "0726",
+   "lng": -82.34857,
+   "lat": 29.64263
+  },
+  {
+   "code": "GP21",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0728",
+   "lng": -82.35604,
+   "lat": 29.63896
+  },
+  {
+   "code": "GA7",
+   "name": "Greenhouse, Agronomy",
+   "number": "0731",
+   "lng": -82.358,
+   "lat": 29.63898
+  },
+  {
+   "code": "GS1",
+   "name": "Greenhouse, Soils",
+   "number": "0732",
+   "lng": -82.35808,
+   "lat": 29.63898
+  },
+  {
+   "code": "GS2",
+   "name": "Greenhouse, Soils",
+   "number": "0733",
+   "lng": -82.3581,
+   "lat": 29.63918
+  },
+  {
+   "code": "GA8",
+   "name": "Greenhouse, Agronomy",
+   "number": "0734",
+   "lng": -82.3582,
+   "lat": 29.63917
+  },
+  {
+   "code": "GA10",
+   "name": "Greenhouse, Agronomy",
+   "number": "0735",
+   "lng": -82.35855,
+   "lat": 29.63917
+  },
+  {
+   "code": "GA11",
+   "name": "Greenhouse, Agronomy",
+   "number": "0736",
+   "lng": -82.35864,
+   "lat": 29.63917
+  },
+  {
+   "code": "GF3",
+   "name": "Greenhouse, Forestry",
+   "number": "0738",
+   "lng": -82.35668,
+   "lat": 29.63776
+  },
+  {
+   "code": "GF4",
+   "name": "Greenhouse, Forestry",
+   "number": "0739",
+   "lng": -82.35676,
+   "lat": 29.63776
+  },
+  {
+   "code": "GF5",
+   "name": "Greenhouse, Forestry",
+   "number": "0740",
+   "lng": -82.35685,
+   "lat": 29.63776
+  },
+  {
+   "code": "SUFM",
+   "name": "Swine Unit Feed Mill",
+   "number": "0744",
+   "lng": -82.36066,
+   "lat": 29.63007
+  },
+  {
+   "code": "COSL",
+   "name": "DCP Shop",
+   "number": "0745",
+   "lng": -82.33085,
+   "lat": 29.63896
+  },
+  {
+   "code": "PST",
+   "name": "Particle Science & Technology",
+   "number": "0746",
+   "lng": -82.34785,
+   "lat": 29.64146
+  },
+  {
+   "code": "BAR",
+   "name": "Bartram Hall",
+   "number": "0747",
+   "lng": -82.34449,
+   "lat": 29.64392
+  },
+  {
+   "code": "CRR",
+   "name": "Carr Hall",
+   "number": "0748",
+   "lng": -82.34488,
+   "lat": 29.64385
+  },
+  {
+   "code": "PSY",
+   "name": "Psychology Building",
+   "number": "0749",
+   "lng": -82.3463,
+   "lat": 29.64341
+  },
+  {
+   "code": "BEA",
+   "name": "(0750) R. C. Beaty Towers A (West)",
+   "number": "0750",
+   "lng": -82.34076,
+   "lat": 29.6441
+  },
+  {
+   "code": "BEB",
+   "name": "R. C. Beaty Towers B (EAST)",
+   "number": "0751",
+   "lng": -82.34024,
+   "lat": 29.6442
+  },
+  {
+   "code": "BEC",
+   "name": "R. C. Beaty Commons",
+   "number": "0752",
+   "lng": -82.34058,
+   "lat": 29.64438
+  },
+  {
+   "code": "HOU",
+   "name": "Housing Office",
+   "number": "0753",
+   "lng": -82.3398,
+   "lat": 29.64416
+  },
+  {
+   "code": "BEF",
+   "name": "Beaty Service Bldg F",
+   "number": "0755",
+   "lng": -82.34042,
+   "lat": 29.64399
+  },
+  {
+   "code": "HOL",
+   "name": "Holland Law Center",
+   "number": "0757",
+   "lng": -82.35915,
+   "lat": 29.64981
+  },
+  {
+   "code": "CWP7",
+   "name": "Holland Law Chilled Water Plant (CWP7)",
+   "number": "0758",
+   "lng": -82.35809,
+   "lat": 29.6481
+  },
+  {
+   "code": "BGH",
+   "name": "Bruton-Geer  Hall",
+   "number": "0759",
+   "lng": -82.35905,
+   "lat": 29.64921
+  },
+  {
+   "code": "MLAC",
+   "name": "Levin Advocacy Ctr",
+   "number": "0764",
+   "lng": -82.35932,
+   "lat": 29.64883
+  },
+  {
+   "code": "CEGS",
+   "name": "Civil Engineering Storage",
+   "number": "0765",
+   "lng": -82.34837,
+   "lat": 29.64825
+  },
+  {
+   "code": "SUMS",
+   "name": "Swine Unit Methane Shed",
+   "number": "0766",
+   "lng": -82.35962,
+   "lat": 29.62937
+  },
+  {
+   "code": "SWUB",
+   "name": "Swine Unit Barn",
+   "number": "0770",
+   "lng": -82.36053,
+   "lat": 29.63045
+  },
+  {
+   "code": "SMMW",
+   "name": "SMMRL West",
+   "number": "0771",
+   "lng": -82.36749,
+   "lat": 29.63079
+  },
+  {
+   "code": "NEU6",
+   "name": "Neurobiological Surge #6",
+   "number": "0772",
+   "lng": -82.36773,
+   "lat": 29.63064
+  },
+  {
+   "code": "GHB2",
+   "name": "Greenhouse, Botany",
+   "number": "0774",
+   "lng": -82.34486,
+   "lat": 29.64363
+  },
+  {
+   "code": "WERT",
+   "name": "Wertheim Lab for Eng. Excellence",
+   "number": "0779",
+   "lng": -82.34794,
+   "lat": 29.64712
+  },
+  {
+   "code": "NATP",
+   "name": "Natural  Area Teaching Pavilion",
+   "number": "0796",
+   "lng": -82.36745,
+   "lat": 29.6335
+  },
+  {
+   "code": "GE6",
+   "name": "Greenhouse, Entomology",
+   "number": "0798",
+   "lng": -82.35625,
+   "lat": 29.62691
+  },
+  {
+   "code": "IFMS",
+   "name": "Mechanics Shop",
+   "number": "0805",
+   "lng": -82.35722,
+   "lat": 29.63998
+  },
+  {
+   "code": "GRND",
+   "name": "Facilities Services Grounds Administration",
+   "number": "0809",
+   "lng": -82.36923,
+   "lat": 29.6435
+  },
+  {
+   "code": "GTPF",
+   "name": "Golf Practice Facility",
+   "number": "0814",
+   "lng": -82.368818,
+   "lat": 29.647455
+  },
+  {
+   "code": "GA9",
+   "name": "Greenhouse, Agronomy",
+   "number": "0824",
+   "lng": -82.35385,
+   "lat": 29.62842
+  },
+  {
+   "code": "FDOF",
+   "name": "Agric Engineering Field Lab",
+   "number": "0825",
+   "lng": -82.35969,
+   "lat": 29.62946
+  },
+  {
+   "code": "WMF",
+   "name": "Waste Management Facility",
+   "number": "0831",
+   "lng": -82.36813,
+   "lat": 29.63172
+  },
+  {
+   "code": "NZH",
+   "name": "Newins-Ziegler Hall SFRC/WEC",
+   "number": "0832",
+   "lng": -82.34572,
+   "lat": 29.64538
+  },
+  {
+   "code": "PLAX",
+   "name": "Pesticide Lab Annex B",
+   "number": "0833",
+   "lng": -82.35986,
+   "lat": 29.63716
+  },
+  {
+   "code": "GP22",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0840",
+   "lng": -82.35597,
+   "lat": 29.63896
+  },
+  {
+   "code": "GP23",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0841",
+   "lng": -82.35589,
+   "lat": 29.63896
+  },
+  {
+   "code": "AGDB",
+   "name": "Agronomy Drying Building",
+   "number": "0842",
+   "lng": -82.35945,
+   "lat": 29.6387
+  },
+  {
+   "code": "FEE",
+   "name": "Forest Stewardship",
+   "number": "0844",
+   "lng": -82.34536,
+   "lat": 29.64558
+  },
+  {
+   "code": "GF6",
+   "name": "Greenhouse, Forestry",
+   "number": "0849",
+   "lng": -82.35676,
+   "lat": 29.63768
+  },
+  {
+   "code": "GP24",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0853",
+   "lng": -82.35626,
+   "lat": 29.63902
+  },
+  {
+   "code": "SHKL",
+   "name": "Seahorse Key Lighthouse",
+   "number": "0855",
+   "lng": -83.0653,
+   "lat": 29.09645
+  },
+  {
+   "code": "PHL",
+   "name": "Phelps Lab",
+   "number": "0856",
+   "lng": -82.34884,
+   "lat": 29.64456
+  },
+  {
+   "code": "GP25",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0858",
+   "lng": -82.35618,
+   "lat": 29.63902
+  },
+  {
+   "code": "GP26",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0861",
+   "lng": -82.35618,
+   "lat": 29.63891
+  },
+  {
+   "code": "IMPL",
+   "name": "Office Building",
+   "number": "0866",
+   "lng": -82.34321,
+   "lat": 29.64569
+  },
+  {
+   "code": "CEDG",
+   "name": "Chemical Engineering Digester",
+   "number": "0869",
+   "lng": -82.34861,
+   "lat": 29.64246
+  },
+  {
+   "code": "GP35",
+   "name": "Greenhouse, Plant Pathology",
+   "number": "0875",
+   "lng": -82.35568,
+   "lat": 29.63903
+  },
+  {
+   "code": "BTUN",
+   "name": "Beef Teaching Unit - North",
+   "number": "0884",
+   "lng": -82.352,
+   "lat": 29.62265
+  },
+  {
+   "code": "PCMB",
+   "name": "Plant Cell/Molecular Bio Lab",
+   "number": "0885",
+   "lng": -82.35953,
+   "lat": 29.63822
+  },
+  {
+   "code": "BWC",
+   "name": "Bookstore Welcome Center and Garage XII",
+   "number": "0886",
+   "lng": -82.34803,
+   "lat": 29.64537
+  },
+  {
+   "code": "BTUS",
+   "name": "Beef Teaching Unit - South",
+   "number": "0891",
+   "lng": -82.35433,
+   "lat": 29.61763
+  },
+  {
+   "code": "DZ",
+   "name": "Sorority - Delta Zeta",
+   "number": "0903",
+   "lng": -82.339,
+   "lat": 29.64339
+  },
+  {
+   "code": "DGB",
+   "name": "Drying & Grinding Bldg (Bru)",
+   "number": "0905",
+   "lng": -82.26818,
+   "lat": 29.73929
+  },
+  {
+   "code": "BLRB",
+   "name": "Paul M. Lyrene Blueberry Research Building",
+   "number": "0906",
+   "lng": -82.36145,
+   "lat": 29.63905
+  },
+  {
+   "code": "AFLB",
+   "name": "Agronomy Field Lab (Bru)",
+   "number": "0909",
+   "lng": -82.26851,
+   "lat": 29.7393
+  },
+  {
+   "code": "GE7",
+   "name": "Greenhouse, Entomology",
+   "number": "0929",
+   "lng": -82.35852,
+   "lat": 29.63937
+  },
+  {
+   "code": "GA13",
+   "name": "Greenhouse, Agronomy",
+   "number": "0930",
+   "lng": -82.35829,
+   "lat": 29.63918
+  },
+  {
+   "code": "GA14",
+   "name": "Greenhouse, Agronomy",
+   "number": "0931",
+   "lng": -82.35838,
+   "lat": 29.63918
+  },
+  {
+   "code": "GA15",
+   "name": "Greenhouse, Agronomy",
+   "number": "0932",
+   "lng": -82.35838,
+   "lat": 29.63898
+  },
+  {
+   "code": "GA16",
+   "name": "Greenhouse, Agronomy",
+   "number": "0933",
+   "lng": -82.35846,
+   "lat": 29.63898
+  },
+  {
+   "code": "GA17",
+   "name": "Greenhouse, Agronomy",
+   "number": "0934",
+   "lng": -82.35855,
+   "lat": 29.63898
+  },
+  {
+   "code": "PLSL",
+   "name": "Field Lab",
+   "number": "0935",
+   "lng": -82.35835,
+   "lat": 29.63908
+  },
+  {
+   "code": "GE8",
+   "name": "Greenhouse, Entomology",
+   "number": "0938",
+   "lng": -82.36654,
+   "lat": 29.63386
+  },
+  {
+   "code": "GE9",
+   "name": "Greenhouse, Entomology",
+   "number": "0939",
+   "lng": -82.36654,
+   "lat": 29.63381
+  },
+  {
+   "code": "HNY",
+   "name": "Entomology Honey Lab",
+   "number": "0940",
+   "lng": -82.35635,
+   "lat": 29.62718
+  },
+  {
+   "code": "EPS",
+   "name": "Editorial Publications Storage",
+   "number": "0941",
+   "lng": -82.35675,
+   "lat": 29.63988
+  },
+  {
+   "code": "GE10",
+   "name": "Greenhouse, Entomology",
+   "number": "0950",
+   "lng": -82.35895,
+   "lat": 29.63923
+  },
+  {
+   "code": "CESC",
+   "name": "Chemical Engineering Student Center",
+   "number": "0958",
+   "lng": -82.3478,
+   "lat": 29.64241
+  },
+  {
+   "code": "ODAS",
+   "name": "oDAS",
+   "number": "0967",
+   "lng": -82.35767,
+   "lat": 29.64036
+  },
+  {
+   "code": "EYN",
+   "name": "Steinmetz Hall",
+   "number": "0970",
+   "lng": -82.36647,
+   "lat": 29.63465
+  },
+  {
+   "code": "GA18",
+   "name": "Greenhouse, Pathology",
+   "number": "0971",
+   "lng": -82.35947,
+   "lat": 29.63913
+  },
+  {
+   "code": "GFC2",
+   "name": "Greenhouse, Fruit Crops",
+   "number": "0973",
+   "lng": -82.36389,
+   "lat": 29.63542
+  },
+  {
+   "code": "AFS",
+   "name": "Agronomy Storage Building",
+   "number": "0976",
+   "lng": -82.36309,
+   "lat": 29.63877
+  },
+  {
+   "code": "GHS2",
+   "name": "Greenhouse, Ornamental Hort",
+   "number": "0978",
+   "lng": -82.35963,
+   "lat": 29.6391
+  },
+  {
+   "code": "MCSB",
+   "name": "Microbiology/Cell Science",
+   "number": "0981",
+   "lng": -82.36295,
+   "lat": 29.63995
+  },
+  {
+   "code": "BAU1",
+   "name": "Baughman Support Building",
+   "number": "0982",
+   "lng": -82.3636,
+   "lat": 29.64203
+  },
+  {
+   "code": "BAU2",
+   "name": "Baughman Center",
+   "number": "0983",
+   "lng": -82.36355,
+   "lat": 29.64222
+  },
+  {
+   "code": "SHKP",
+   "name": "Seahorse Key Pump House",
+   "number": "0985",
+   "lng": -83.06544,
+   "lat": 29.09655
+  },
+  {
+   "code": "ROBS",
+   "name": "Radio Observatory - Old Town",
+   "number": "0988",
+   "lng": -83.03138,
+   "lat": 29.53104
+  },
+  {
+   "code": "HTUS",
+   "name": "Sam Wall Animal Sci South Barn",
+   "number": "0990",
+   "lng": -82.34636,
+   "lat": 29.59871
+  },
+  {
+   "code": "HTUN",
+   "name": "Sam Wall Animal Sci North Barn",
+   "number": "0991",
+   "lng": -82.3464,
+   "lat": 29.59893
+  },
+  {
+   "code": "DORM",
+   "name": "Optical Observatory Dorm",
+   "number": "0997",
+   "lng": -82.58697,
+   "lat": 29.40078
+  },
+  {
+   "code": "OBSB",
+   "name": "Optical Observatory - Bronson",
+   "number": "0998",
+   "lng": -82.58622,
+   "lat": 29.4001
+  },
+  {
+   "code": "OBSR",
+   "name": "Optical Obs - Rosemary Hill",
+   "number": "0999",
+   "lng": -82.5865,
+   "lat": 29.40112
+  },
+  {
+   "code": "ATHL",
+   "name": "Lemerand Center",
+   "number": "1000",
+   "lng": -82.35384,
+   "lat": 29.64877
+  },
+  {
+   "code": "KEY1",
+   "name": "Keys Commons Bldg",
+   "number": "1001",
+   "lng": -82.35334,
+   "lat": 29.64771
+  },
+  {
+   "code": "KEY2",
+   "name": "Keys Residence Hse 2",
+   "number": "1002",
+   "lng": -82.35346,
+   "lat": 29.64805
+  },
+  {
+   "code": "KEY3",
+   "name": "Keys Residence Hse 3",
+   "number": "1003",
+   "lng": -82.35392,
+   "lat": 29.64789
+  },
+  {
+   "code": "KEY4",
+   "name": "Keys Residence Hse 4",
+   "number": "1004",
+   "lng": -82.35431,
+   "lat": 29.64787
+  },
+  {
+   "code": "KEY5",
+   "name": "Keys Residence Hse 5",
+   "number": "1005",
+   "lng": -82.35465,
+   "lat": 29.64801
+  },
+  {
+   "code": "KEY6",
+   "name": "Keys Residence Hse 6",
+   "number": "1006",
+   "lng": -82.3549,
+   "lat": 29.64764
+  },
+  {
+   "code": "KEY7",
+   "name": "Keys Residence Hse 7",
+   "number": "1007",
+   "lng": -82.35451,
+   "lat": 29.64758
+  },
+  {
+   "code": "KEY8",
+   "name": "Keys Residence Hse 8",
+   "number": "1008",
+   "lng": -82.35412,
+   "lat": 29.64754
+  },
+  {
+   "code": "KEY9",
+   "name": "Keys Residence Hse 9",
+   "number": "1009",
+   "lng": -82.35375,
+   "lat": 29.64757
+  },
+  {
+   "code": "KE10",
+   "name": "Keys Residence Hse 10",
+   "number": "1010",
+   "lng": -82.35349,
+   "lat": 29.64735
+  },
+  {
+   "code": "DINE",
+   "name": "Broward Dining Center",
+   "number": "1011",
+   "lng": -82.34129,
+   "lat": 29.64698
+  },
+  {
+   "code": "WML",
+   "name": "Whitney Marine Lab",
+   "number": "1012",
+   "lng": -81.21444,
+   "lat": 29.67023
+  },
+  {
+   "code": "WMS",
+   "name": "Whitney Marine Shop",
+   "number": "1014",
+   "lng": -81.21486,
+   "lat": 29.6703
+  },
+  {
+   "code": "VMRP",
+   "name": "Vet Med Reproduction Barn",
+   "number": "1016",
+   "lng": -82.34927,
+   "lat": 29.63135
+  },
+  {
+   "code": "VMAB",
+   "name": "Veterinary Academic Bldg",
+   "number": "1017",
+   "lng": -82.34878,
+   "lat": 29.63371
+  },
+  {
+   "code": "VMEH",
+   "name": "UF Large Animal Hospital",
+   "number": "1018",
+   "lng": -82.34998,
+   "lat": 29.63237
+  },
+  {
+   "code": "VMRB",
+   "name": "Vet Med Reproduction Barn",
+   "number": "1019",
+   "lng": -82.34905,
+   "lat": 29.63141
+  },
+  {
+   "code": "MALA",
+   "name": "Malachowsky Hall",
+   "number": "1024",
+   "lng": -82.347768,
+   "lat": 29.644067
+  },
+  {
+   "code": "PPLA",
+   "name": "Progress Park Large Animal Facility",
+   "number": "1040",
+   "lng": -82.47954,
+   "lat": 29.78572
+  },
+  {
+   "code": "BIRF",
+   "name": "Sid Martin Biotechnology",
+   "number": "1041",
+   "lng": -82.4748,
+   "lat": 29.78279
+  },
+  {
+   "code": "PPSA",
+   "name": "Progress Park Small Animal Facility",
+   "number": "1042",
+   "lng": -82.47538,
+   "lat": 29.78266
+  },
+  {
+   "code": "CWP5",
+   "name": "McCarty Chilled Water Plant (CWP5)",
+   "number": "1053",
+   "lng": -82.34503,
+   "lat": 29.64604
+  },
+  {
+   "code": "CWP9",
+   "name": "SE Chilled Water Plant (CWP9)",
+   "number": "1056",
+   "lng": -82.34663,
+   "lat": 29.64088
+  },
+  {
+   "code": "WATR",
+   "name": "Water Reclamation Admin. Bldg.",
+   "number": "1070",
+   "lng": -82.3502,
+   "lat": 29.64201
+  },
+  {
+   "code": "SPRC",
+   "name": "Springs Commons Building",
+   "number": "1080",
+   "lng": -82.35713,
+   "lat": 29.64871
+  },
+  {
+   "code": "D05",
+   "name": "Shands Heliport Office Bldg",
+   "number": "1088",
+   "lng": -82.35069,
+   "lat": 29.63515
+  },
+  {
+   "code": "D03",
+   "name": "Shands Heliport Hangar",
+   "number": "1089",
+   "lng": -82.35041,
+   "lat": 29.63515
+  },
+  {
+   "code": "HCAD",
+   "name": "1329 Building",
+   "number": "1090",
+   "lng": -82.34239,
+   "lat": 29.63651
+  },
+  {
+   "code": "PKYW",
+   "name": "PKY  School Walkways",
+   "number": "1110",
+   "lng": -82.33475,
+   "lat": 29.64032
+  },
+  {
+   "code": "WLKW",
+   "name": "Brain Institute Bridge",
+   "number": "1128",
+   "lng": -82.34345,
+   "lat": 29.64144
+  },
+  {
+   "code": "FCBG",
+   "name": "Fuel Cell Garage",
+   "number": "1139",
+   "lng": -82.36049,
+   "lat": 29.62747
+  },
+  {
+   "code": "PKHA",
+   "name": "PKY  School H  Addition",
+   "number": "1154",
+   "lng": -82.3345,
+   "lat": 29.64126
+  },
+  {
+   "code": "PKLA",
+   "name": "PKY  School L  Addition",
+   "number": "1155",
+   "lng": -82.33515,
+   "lat": 29.63943
+  },
+  {
+   "code": "RING",
+   "name": "Ring Varsity Tennis Building",
+   "number": "1156",
+   "lng": -82.3577,
+   "lat": 29.64971
+  },
+  {
+   "code": "BASK",
+   "name": "Basketball Practice Facility",
+   "number": "1169",
+   "lng": -82.35619,
+   "lat": 29.64961
+  },
+  {
+   "code": "A08",
+   "name": "Shands Linen Utility",
+   "number": "1172",
+   "lng": -82.34575,
+   "lat": 29.63937
+  },
+  {
+   "code": "OSMI",
+   "name": "Orthopaedics & Sports Medicine Institute",
+   "number": "1178",
+   "lng": -82.37379,
+   "lat": 29.63839
+  },
+  {
+   "code": "LSRC",
+   "name": "Lakeside Commons",
+   "number": "1180",
+   "lng": -82.36621,
+   "lat": 29.64185
+  },
+  {
+   "code": "LRB1",
+   "name": "(1181) Lakeside Res Bldg 1",
+   "number": "1181",
+   "lng": -82.365,
+   "lat": 29.64152
+  },
+  {
+   "code": "LRB2",
+   "name": "(1182) Lakeside Res Bldg 2",
+   "number": "1182",
+   "lng": -82.36555,
+   "lat": 29.64181
+  },
+  {
+   "code": "LRB3",
+   "name": "(1183) Lakeside Res Bldg 3",
+   "number": "1183",
+   "lng": -82.36681,
+   "lat": 29.64181
+  },
+  {
+   "code": "LRB4",
+   "name": "(1184) Lakeside Res Bldg 4",
+   "number": "1184",
+   "lng": -82.36683,
+   "lat": 29.64113
+  },
+  {
+   "code": "LRB5",
+   "name": "(1185) Lakeside Res Bldg 5",
+   "number": "1185",
+   "lng": -82.36607,
+   "lat": 29.64134
+  },
+  {
+   "code": "LRB6",
+   "name": "Lakeside Staff Apts",
+   "number": "1186",
+   "lng": -82.36688,
+   "lat": 29.64152
+  },
+  {
+   "code": "CHST",
+   "name": "Animal Research Chemical Stor",
+   "number": "1196",
+   "lng": -82.37337,
+   "lat": 29.64117
+  },
+  {
+   "code": "H01",
+   "name": "UF Health Florida Surgical Center",
+   "number": "1197",
+   "lng": -82.37527,
+   "lat": 29.63896
+  },
+  {
+   "code": "PSF",
+   "name": "Plant Science Facility",
+   "number": "1200",
+   "lng": -82.3596,
+   "lat": 29.63947
+  },
+  {
+   "code": "GO1",
+   "name": "Greenhouse, Ornht",
+   "number": "1201",
+   "lng": -82.3593,
+   "lat": 29.6394
+  },
+  {
+   "code": "GO2",
+   "name": "Greenhouse, Ornht",
+   "number": "1202",
+   "lng": -82.3593,
+   "lat": 29.63957
+  },
+  {
+   "code": "GO3",
+   "name": "Greenhouse, Ornht",
+   "number": "1203",
+   "lng": -82.35893,
+   "lat": 29.6394
+  },
+  {
+   "code": "GO4",
+   "name": "Greenhouse, Ornht",
+   "number": "1204",
+   "lng": -82.35897,
+   "lat": 29.63958
+  },
+  {
+   "code": "OHL1",
+   "name": "Ornamental Hort Laboratory",
+   "number": "1205",
+   "lng": -82.35899,
+   "lat": 29.63975
+  },
+  {
+   "code": "GHS3",
+   "name": "Greenhouse, Hort. Science",
+   "number": "1206",
+   "lng": -82.35951,
+   "lat": 29.63976
+  },
+  {
+   "code": "GHS4",
+   "name": "Greenhouse, Hort. Science",
+   "number": "1207",
+   "lng": -82.35989,
+   "lat": 29.6399
+  },
+  {
+   "code": "GHS5",
+   "name": "Greenhouse, Hort. Science",
+   "number": "1208",
+   "lng": -82.35997,
+   "lat": 29.64006
+  },
+  {
+   "code": "HHO",
+   "name": "Headhouse, Ornht",
+   "number": "1209",
+   "lng": -82.35916,
+   "lat": 29.63995
+  },
+  {
+   "code": "OHC",
+   "name": "Ornamental Hort Carport",
+   "number": "1210",
+   "lng": -82.3591,
+   "lat": 29.64003
+  },
+  {
+   "code": "OHP",
+   "name": "Ornamental Hort Pot Washing",
+   "number": "1211",
+   "lng": -82.35923,
+   "lat": 29.64004
+  },
+  {
+   "code": "OHPB",
+   "name": "Ornamental Hort Pesticide Bldg",
+   "number": "1212",
+   "lng": -82.35914,
+   "lat": 29.64011
+  },
+  {
+   "code": "OHSB",
+   "name": "Ornamental Hort Soils Building",
+   "number": "1213",
+   "lng": -82.35872,
+   "lat": 29.64007
+  },
+  {
+   "code": "OHL2",
+   "name": "Ornamental Horticulture Lab",
+   "number": "1214",
+   "lng": -82.35857,
+   "lat": 29.63982
+  },
+  {
+   "code": "GO5",
+   "name": "Greenhouse, Ornamental Hort",
+   "number": "1215",
+   "lng": -82.35849,
+   "lat": 29.63957
+  },
+  {
+   "code": "GO6",
+   "name": "Greenhouse, Ornamental Hort",
+   "number": "1216",
+   "lng": -82.35853,
+   "lat": 29.63998
+  },
+  {
+   "code": "GO7",
+   "name": "Greenhouse, Ornamental Hort",
+   "number": "1217",
+   "lng": -82.35844,
+   "lat": 29.63998
+  },
+  {
+   "code": "GO8",
+   "name": "Greenhouse, Ornamental Hort",
+   "number": "1218",
+   "lng": -82.35836,
+   "lat": 29.63998
+  },
+  {
+   "code": "GO9",
+   "name": "Greenhouse, Ornamental Hort",
+   "number": "1219",
+   "lng": -82.35827,
+   "lat": 29.63998
+  },
+  {
+   "code": "GO10",
+   "name": "Greenhouse, Ornamental Hort",
+   "number": "1220",
+   "lng": -82.3581,
+   "lat": 29.64001
+  },
+  {
+   "code": "RLAB",
+   "name": "Residence / Laboratory Bldg.",
+   "number": "1221",
+   "lng": -82.35806,
+   "lat": 29.63983
+  },
+  {
+   "code": "BCF",
+   "name": "Bio-Containment Facility",
+   "number": "1222",
+   "lng": -82.35996,
+   "lat": 29.63946
+  },
+  {
+   "code": "OHP5",
+   "name": "Polyhouse #5-Ornamental Hort.",
+   "number": "1225",
+   "lng": -82.35866,
+   "lat": 29.64058
+  },
+  {
+   "code": "OH10",
+   "name": "Polyhouse #10-Ornamental Hort.",
+   "number": "1227",
+   "lng": -82.35865,
+   "lat": 29.64036
+  },
+  {
+   "code": "OHP9",
+   "name": "Polyhouse #9-Ornamental Hort.",
+   "number": "1228",
+   "lng": -82.35848,
+   "lat": 29.64037
+  },
+  {
+   "code": "ACMF",
+   "name": "Teaching Pavilion, Forestry-ACMF",
+   "number": "1229",
+   "lng": -82.221268,
+   "lat": 29.73266
+  },
+  {
+   "code": "ENSB",
+   "name": "Environmental Soil Bin",
+   "number": "1231",
+   "lng": -82.36023,
+   "lat": 29.63952
+  },
+  {
+   "code": "FS5",
+   "name": "Field Storage",
+   "number": "1239",
+   "lng": -82.41715,
+   "lat": 29.72753
+  },
+  {
+   "code": "FPK",
+   "name": "Fruit Packing",
+   "number": "1250",
+   "lng": -82.36464,
+   "lat": 29.63566
+  },
+  {
+   "code": "GE22",
+   "name": "Greenhouse, Entomology",
+   "number": "1257",
+   "lng": -82.3667,
+   "lat": 29.63364
+  },
+  {
+   "code": "ESL",
+   "name": "Environmental Stress Lab",
+   "number": "1265",
+   "lng": -82.36465,
+   "lat": 29.63545
+  },
+  {
+   "code": "GFC4",
+   "name": "Greenhouse, Fruit Crops",
+   "number": "1266",
+   "lng": -82.36461,
+   "lat": 29.63513
+  },
+  {
+   "code": "GE21",
+   "name": "Greenhouse, Entomology",
+   "number": "1268",
+   "lng": -82.36654,
+   "lat": 29.63363
+  },
+  {
+   "code": "GE20",
+   "name": "Grennhouse, Entomology",
+   "number": "1269",
+   "lng": -82.36654,
+   "lat": 29.63358
+  },
+  {
+   "code": "GE19",
+   "name": "Greenhouse, Entomology",
+   "number": "1270",
+   "lng": -82.36704,
+   "lat": 29.63385
+  },
+  {
+   "code": "GE18",
+   "name": "Greenhouse, Entomology",
+   "number": "1271",
+   "lng": -82.36699,
+   "lat": 29.63385
+  },
+  {
+   "code": "GE17",
+   "name": "Greenhouse, Entomology",
+   "number": "1272",
+   "lng": -82.36693,
+   "lat": 29.63385
+  },
+  {
+   "code": "GE16",
+   "name": "Greenhouse, Entomology",
+   "number": "1273",
+   "lng": -82.36688,
+   "lat": 29.63385
+  },
+  {
+   "code": "GE15",
+   "name": "Greenhouse, Entomology",
+   "number": "1274",
+   "lng": -82.36704,
+   "lat": 29.63373
+  },
+  {
+   "code": "GE14",
+   "name": "Greenhouse, Entomology",
+   "number": "1275",
+   "lng": -82.36699,
+   "lat": 29.63373
+  },
+  {
+   "code": "GE13",
+   "name": "Greenhouse, Entomology",
+   "number": "1276",
+   "lng": -82.36693,
+   "lat": 29.63373
+  },
+  {
+   "code": "GE12",
+   "name": "Greenhouse, Entomology",
+   "number": "1277",
+   "lng": -82.36688,
+   "lat": 29.63373
+  },
+  {
+   "code": "URBE",
+   "name": "Urban Entomology",
+   "number": "1278",
+   "lng": -82.36618,
+   "lat": 29.63379
+  },
+  {
+   "code": "GE11",
+   "name": "Greenhouse, Entomology",
+   "number": "1279",
+   "lng": -82.36669,
+   "lat": 29.63384
+  },
+  {
+   "code": "GH62",
+   "name": "Greenhouse",
+   "number": "1281",
+   "lng": -82.41734,
+   "lat": 29.7276
+  },
+  {
+   "code": "TGE",
+   "name": "Turfgrass Envirotron",
+   "number": "1282",
+   "lng": -82.36045,
+   "lat": 29.63962
+  },
+  {
+   "code": "GHT1",
+   "name": "Greenhouse, Turfgrass",
+   "number": "1283",
+   "lng": -82.36034,
+   "lat": 29.63937
+  },
+  {
+   "code": "GHT2",
+   "name": "Greenhouse, Turfgrass",
+   "number": "1284",
+   "lng": -82.36053,
+   "lat": 29.6394
+  },
+  {
+   "code": "GHT3",
+   "name": "Greenhouse, Turfgrass",
+   "number": "1285",
+   "lng": -82.3606,
+   "lat": 29.6394
+  },
+  {
+   "code": "GHT4",
+   "name": "Greenhouse, Turfgrass",
+   "number": "1286",
+   "lng": -82.36053,
+   "lat": 29.63933
+  },
+  {
+   "code": "GHT5",
+   "name": "Greenhouse, Turfgrass",
+   "number": "1287",
+   "lng": -82.3606,
+   "lat": 29.63933
+  },
+  {
+   "code": "FPS",
+   "name": "Potting Shed, Forestry",
+   "number": "1288",
+   "lng": -82.35655,
+   "lat": 29.63751
+  },
+  {
+   "code": "NPS",
+   "name": "Nematology Potting Shed",
+   "number": "1290",
+   "lng": -82.35791,
+   "lat": 29.63916
+  },
+  {
+   "code": "PPDL",
+   "name": "Plant Path Diagnostics Lab",
+   "number": "1291",
+   "lng": -82.36075,
+   "lat": 29.63908
+  },
+  {
+   "code": "ST4",
+   "name": "Nematology Storage Trailer",
+   "number": "1292",
+   "lng": -82.35876,
+   "lat": 29.63909
+  },
+  {
+   "code": "GH2",
+   "name": "Greenhouse",
+   "number": "1301",
+   "lng": -82.36698,
+   "lat": 29.63364
+  },
+  {
+   "code": "GH3",
+   "name": "Greenhouse",
+   "number": "1302",
+   "lng": -82.36692,
+   "lat": 29.63364
+  },
+  {
+   "code": "GH4",
+   "name": "Greenhouse",
+   "number": "1303",
+   "lng": -82.36687,
+   "lat": 29.63364
+  },
+  {
+   "code": "GH5",
+   "name": "Greenhouse",
+   "number": "1304",
+   "lng": -82.36692,
+   "lat": 29.63358
+  },
+  {
+   "code": "GH6",
+   "name": "Greenhouse",
+   "number": "1305",
+   "lng": -82.36687,
+   "lat": 29.63358
+  },
+  {
+   "code": "GH7",
+   "name": "Greenhouse",
+   "number": "1306",
+   "lng": -82.36687,
+   "lat": 29.63352
+  },
+  {
+   "code": "WALL",
+   "name": "Sam Wall Arena Support Bldg",
+   "number": "1337",
+   "lng": -82.34672,
+   "lat": 29.59652
+  },
+  {
+   "code": "GH8",
+   "name": "Greenhouse",
+   "number": "1354",
+   "lng": -82.35514,
+   "lat": 29.63316
+  },
+  {
+   "code": "POLY",
+   "name": "Polyhouse",
+   "number": "1355",
+   "lng": -82.35986,
+   "lat": 29.63972
+  },
+  {
+   "code": "HORT",
+   "name": "Env Hort Support",
+   "number": "1356",
+   "lng": -82.35383,
+   "lat": 29.62552
+  },
+  {
+   "code": "ST5",
+   "name": "Storage",
+   "number": "1357",
+   "lng": -82.36576,
+   "lat": 29.63372
+  },
+  {
+   "code": "GH9",
+   "name": "Greenhouse",
+   "number": "1360",
+   "lng": -82.36582,
+   "lat": 29.63369
+  },
+  {
+   "code": "GH10",
+   "name": "Greenhouse",
+   "number": "1361",
+   "lng": -82.36586,
+   "lat": 29.63357
+  },
+  {
+   "code": "GH11",
+   "name": "Greenhouse",
+   "number": "1362",
+   "lng": -82.36578,
+   "lat": 29.63357
+  },
+  {
+   "code": "GH12",
+   "name": "Greenhouse",
+   "number": "1363",
+   "lng": -82.35812,
+   "lat": 29.63955
+  },
+  {
+   "code": "GH13",
+   "name": "Greenhouse",
+   "number": "1364",
+   "lng": -82.35996,
+   "lat": 29.64039
+  },
+  {
+   "code": "BARC",
+   "name": "Bivens Arm Research Complex",
+   "number": "1371",
+   "lng": -82.35757,
+   "lat": 29.62989
+  },
+  {
+   "code": "CTRB",
+   "name": "Clinical & Translational Research Bldg",
+   "number": "1375",
+   "lng": -82.34983,
+   "lat": 29.63985
+  },
+  {
+   "code": "CGRC",
+   "name": "Cancer/Genetics Research",
+   "number": "1376",
+   "lng": -82.35159,
+   "lat": 29.63801
+  },
+  {
+   "code": "EPI",
+   "name": "Pathogens",
+   "number": "1377",
+   "lng": -82.35192,
+   "lat": 29.63734
+  },
+  {
+   "code": "CW10",
+   "name": "Mowry Chilled Water Plant (CWP10)",
+   "number": "1378",
+   "lng": -82.35309,
+   "lat": 29.63794
+  },
+  {
+   "code": "AQP",
+   "name": "Aquatic Pathobiology",
+   "number": "1379",
+   "lng": -82.3531,
+   "lat": 29.63726
+  },
+  {
+   "code": "FLBX",
+   "name": "Florida Biologix",
+   "number": "1380",
+   "lng": -82.47152,
+   "lat": 29.78066
+  },
+  {
+   "code": "CTEX",
+   "name": "Center Of Excellence",
+   "number": "1383",
+   "lng": -82.47181,
+   "lat": 29.78139
+  },
+  {
+   "code": "PKYT",
+   "name": "PKY School Temporary T 1428",
+   "number": "1428",
+   "lng": -82.33431,
+   "lat": 29.63846
+  },
+  {
+   "code": "PKYT",
+   "name": "PKY School Temporary T 1429",
+   "number": "1429",
+   "lng": -82.33417,
+   "lat": 29.63845
+  },
+  {
+   "code": "PKEL",
+   "name": "Pk Elementary Wing",
+   "number": "1430",
+   "lng": -82.33435,
+   "lat": 29.64098
+  },
+  {
+   "code": "HVR1",
+   "name": "Honors Village Res. Complex #1",
+   "number": "1511",
+   "lng": -82.341763,
+   "lat": 29.645056
+  },
+  {
+   "code": "HVR2",
+   "name": "Honors Village Residential Complex #2",
+   "number": "1512",
+   "lng": -82.341702,
+   "lat": 29.64577
+  },
+  {
+   "code": "HVR3",
+   "name": "Honors Village Residential Complex #3",
+   "number": "1513",
+   "lng": -82.341715,
+   "lat": 29.645001
+  },
+  {
+   "code": "HVR4",
+   "name": "Honors Village Residential Complex #4",
+   "number": "1514",
+   "lng": -82.341083,
+   "lat": 29.645441
+  },
+  {
+   "code": "HVRC",
+   "name": "Honors Village Residential Complex Commons Building #5",
+   "number": "1515",
+   "lng": -82.341721,
+   "lat": 29.645539
+  },
+  {
+   "code": "QUAL",
+   "name": "Qualification Lab",
+   "number": "1619",
+   "lng": -82.30018,
+   "lat": 29.67295
+  },
+  {
+   "code": "ECOB",
+   "name": "East Campus Office",
+   "number": "1628",
+   "lng": -82.29937,
+   "lat": 29.67204
+  },
+  {
+   "code": "ILF1",
+   "name": "Interim Library Facility 1",
+   "number": "1633",
+   "lng": -82.27371,
+   "lat": 29.69997
+  },
+  {
+   "code": "ILF2",
+   "name": "Interim Library Facility 2",
+   "number": "1634",
+   "lng": -82.27302,
+   "lat": 29.70004
+  },
+  {
+   "code": "UFDC",
+   "name": "UF Data Center",
+   "number": "1635",
+   "lng": -82.299939,
+   "lat": 29.672575
+  },
+  {
+   "code": "REEF",
+   "name": "Research Engineering Education Facility",
+   "number": "1700",
+   "lng": -86.57316,
+   "lat": 30.47535
+  },
+  {
+   "code": "WMLA",
+   "name": "Whitney Marine Administration",
+   "number": "1711",
+   "lng": -81.214,
+   "lat": 29.66959
+  },
+  {
+   "code": "WCMS",
+   "name": "Whitney Ctr For Marine Studies",
+   "number": "1712",
+   "lng": -81.21546,
+   "lat": 29.66994
+  },
+  {
+   "code": "T29",
+   "name": "UF Health Proton Therapy Institute",
+   "number": "1730",
+   "lng": -81.66293,
+   "lat": 30.34916
+  },
+  {
+   "code": "VAH",
+   "name": "V. A. Hospital",
+   "number": "2000",
+   "lng": -82.34483,
+   "lat": 29.63703
+  },
+  {
+   "code": "VAMC",
+   "name": "Veterans Administration Add",
+   "number": "2002",
+   "lng": -82.34373,
+   "lat": 29.63606
+  },
+  {
+   "code": "P04",
+   "name": "Shands Cancer Center",
+   "number": "2013",
+   "lng": -82.34231,
+   "lat": 29.63888
+  },
+  {
+   "code": "X82",
+   "name": "Shands Emergency Dept",
+   "number": "2025",
+   "lng": -82.42201,
+   "lat": 29.59757
+  },
+  {
+   "code": "HOWD",
+   "name": "Howard Building",
+   "number": "2210",
+   "lng": -81.66401,
+   "lat": 30.31568
+  },
+  {
+   "code": "T38",
+   "name": "LRC",
+   "number": "2213",
+   "lng": -81.66328,
+   "lat": 30.34718
+  },
+  {
+   "code": "T08",
+   "name": "UF Health C.B. McIntosh Center - Jacksonville",
+   "number": "2214",
+   "lng": -81.66181,
+   "lat": 30.35019
+  },
+  {
+   "code": "FCJ",
+   "name": "Faculty Clinic Building",
+   "number": "2215",
+   "lng": -81.6638,
+   "lat": 30.34724
+  },
+  {
+   "code": "T21",
+   "name": "Tower 2",
+   "number": "2218",
+   "lng": -81.66322,
+   "lat": 30.34638
+  },
+  {
+   "code": "T22",
+   "name": "Tower 1",
+   "number": "2219",
+   "lng": -81.66321,
+   "lat": 30.34582
+  },
+  {
+   "code": "FSDB",
+   "name": "Florida School For The Deaf And Blind",
+   "number": "2222",
+   "lng": -81.318894,
+   "lat": 29.912896
+  },
+  {
+   "code": "T02",
+   "name": "Alexander Clinic (Ambulatory Care Center)",
+   "number": "2224",
+   "lng": -81.66366,
+   "lat": 30.34709
+  },
+  {
+   "code": "N01",
+   "name": "Shands Renal Dialysis",
+   "number": "3007",
+   "lng": -82.36037,
+   "lat": 29.63186
+  },
+  {
+   "code": "F01",
+   "name": "Shands Endoscopy Center",
+   "number": "3008",
+   "lng": -82.33867,
+   "lat": 29.63331
+  },
+  {
+   "code": "T50",
+   "name": "UF Health Family Medicine Lem Turner - T50",
+   "number": "3016",
+   "lng": -81.67576,
+   "lat": 30.38773
+  },
+  {
+   "code": "T05",
+   "name": "Oncology Offices",
+   "number": "3017",
+   "lng": -81.66301,
+   "lat": 30.34805
+  },
+  {
+   "code": "RHDS",
+   "name": "Rhodes At Bethune-Cookman",
+   "number": "3065",
+   "lng": -81.031424,
+   "lat": 29.210954
+  },
+  {
+   "code": "UTAH",
+   "name": "Dept Of Medical Informatics",
+   "number": "3123",
+   "lng": -111.836619,
+   "lat": 40.771622
+  },
+  {
+   "code": "X84",
+   "name": "UF Health Family Medicine at Haile",
+   "number": "3252",
+   "lng": -82.43598,
+   "lat": 29.62732
+  },
+  {
+   "code": "AYER",
+   "name": "Ayers Medical Plaza",
+   "number": "3260",
+   "lng": -82.33278,
+   "lat": 29.65093
+  },
+  {
+   "code": "U02",
+   "name": "Shands At Vista",
+   "number": "3268",
+   "lng": -82.43643,
+   "lat": 29.69172
+  },
+  {
+   "code": "DBCL",
+   "name": "Daytona Beach Clinic",
+   "number": "3297",
+   "lng": -81.047609,
+   "lat": 29.193333
+  },
+  {
+   "code": "USS",
+   "name": "Union Street Station",
+   "number": "3304",
+   "lng": -82.32352,
+   "lat": 29.65014
+  },
+  {
+   "code": "X71",
+   "name": "Tower Hill Office Park",
+   "number": "3305",
+   "lng": -82.42384,
+   "lat": 29.65417
+  },
+  {
+   "code": "DTD",
+   "name": "Fraternity - Delta Tau Delta",
+   "number": "3317",
+   "lng": -82.34869,
+   "lat": 29.65251
+  },
+  {
+   "code": "GRAD",
+   "name": "GRADhaus",
+   "number": "3324",
+   "lng": -82.3335,
+   "lat": 29.65286
+  },
+  {
+   "code": "T20",
+   "name": "POB & TCC",
+   "number": "3347",
+   "lng": -81.66084,
+   "lat": 30.34706
+  },
+  {
+   "code": "HRB",
+   "name": "HR Building",
+   "number": "3381",
+   "lng": -82.33405,
+   "lat": 29.65176
+  },
+  {
+   "code": "T12",
+   "name": "Jacksonville Biomed Res Labs",
+   "number": "3382",
+   "lng": -81.66383,
+   "lat": 30.35075
+  },
+  {
+   "code": "DU",
+   "name": "Fraternity -Delta Upsilon",
+   "number": "3388",
+   "lng": -82.34688,
+   "lat": 29.65248
+  },
+  {
+   "code": "KKG",
+   "name": "Kappa Kappa Gamma -Sorority",
+   "number": "3390",
+   "lng": -82.3389,
+   "lat": 29.6481
+  },
+  {
+   "code": "ATO",
+   "name": "Fraternity -Alpha Tau Omega",
+   "number": "3393",
+   "lng": -82.33886,
+   "lat": 29.64989
+  },
+  {
+   "code": "PDT",
+   "name": "Fraternity -Phi Delta Theta",
+   "number": "3394",
+   "lng": -82.33885,
+   "lat": 29.65056
+  },
+  {
+   "code": "KAT",
+   "name": "Sorority -Kappa Alpha Theta",
+   "number": "3395",
+   "lng": -82.33468,
+   "lat": 29.64529
+  },
+  {
+   "code": "TKE",
+   "name": "Fraternity - Tau Kappa Epsilon",
+   "number": "3408",
+   "lng": -82.33515,
+   "lat": 29.65236
+  },
+  {
+   "code": "PKT",
+   "name": "Fraternity - Phi Kappa Tau",
+   "number": "3416",
+   "lng": -82.33838,
+   "lat": 29.64997
+  },
+  {
+   "code": "NONA",
+   "name": "Lake Nona Research and Academic Center",
+   "number": "3425",
+   "lng": -81.29002,
+   "lat": 28.36577
+  },
+  {
+   "code": "X80",
+   "name": "UF Health Rehab Center ??? Magnolia Parke",
+   "number": "3427",
+   "lng": -82.39349,
+   "lat": 29.69026
+  },
+  {
+   "code": "FLIH",
+   "name": "UF Innovate",
+   "number": "3440",
+   "lng": -82.33281,
+   "lat": 29.64995
+  },
+  {
+   "code": "X81",
+   "name": "UF Health Pediatrics - Tower Square",
+   "number": "3448",
+   "lng": -82.41926,
+   "lat": 29.60131
+  },
+  {
+   "code": "WARP",
+   "name": "WARPhaus",
+   "number": "3451",
+   "lng": -82.33072,
+   "lat": 29.64848
+  },
+  {
+   "code": "X85",
+   "name": "UF Health Family Medicine - Main",
+   "number": "3467",
+   "lng": -82.32421,
+   "lat": 29.6675
+  },
+  {
+   "code": "U10",
+   "name": "Shands at Springhill",
+   "number": "3476",
+   "lng": -82.4338,
+   "lat": 29.69026
+  },
+  {
+   "code": "FCG",
+   "name": "Florida Crossing Guard",
+   "number": "3481",
+   "lng": -84.27472,
+   "lat": 30.43708
+  },
+  {
+   "code": "IFH",
+   "name": "Infinity Hall",
+   "number": "3485",
+   "lng": -82.3349,
+   "lat": 29.65045
+  },
+  {
+   "code": "ENVT",
+   "name": "Environmental Testing",
+   "number": "4012",
+   "lng": -81.54842,
+   "lat": 28.6369
+  },
+  {
+   "code": "MA1",
+   "name": "Maintenance Building",
+   "number": "4014",
+   "lng": -81.54826,
+   "lat": 28.63661
+  },
+  {
+   "code": "GH40",
+   "name": "Greenhouse",
+   "number": "4015",
+   "lng": -81.54891,
+   "lat": 28.63705
+  },
+  {
+   "code": "GH42",
+   "name": "Greenhouse",
+   "number": "4016",
+   "lng": -81.5491,
+   "lat": 28.63705
+  },
+  {
+   "code": "OLB3",
+   "name": "Office/Lab",
+   "number": "4022",
+   "lng": -81.54883,
+   "lat": 28.63838
+  },
+  {
+   "code": "TBLD",
+   "name": "Teaching Building",
+   "number": "4023",
+   "lng": -81.54961,
+   "lat": 28.639
+  },
+  {
+   "code": "GH24",
+   "name": "Greenhouse",
+   "number": "4024",
+   "lng": -81.54885,
+   "lat": 28.6378
+  },
+  {
+   "code": "GH25",
+   "name": "Greenhouse",
+   "number": "4025",
+   "lng": -81.54886,
+   "lat": 28.63761
+  },
+  {
+   "code": "M/L",
+   "name": "Pesticide Mix/Load",
+   "number": "4026",
+   "lng": -81.54679,
+   "lat": 28.63659
+  },
+  {
+   "code": "GH26",
+   "name": "Greenhouse",
+   "number": "4028",
+   "lng": -81.54923,
+   "lat": 28.64178
+  },
+  {
+   "code": "FLDB",
+   "name": "Field Building",
+   "number": "4029",
+   "lng": -81.54942,
+   "lat": 28.64204
+  },
+  {
+   "code": "MTCE",
+   "name": "Maintenance Building",
+   "number": "4030",
+   "lng": -81.54783,
+   "lat": 28.63658
+  },
+  {
+   "code": "SHAD",
+   "name": "Shade House",
+   "number": "4033",
+   "lng": -81.54769,
+   "lat": 28.63778
+  },
+  {
+   "code": "ST6",
+   "name": "Equipment Storage",
+   "number": "4034",
+   "lng": -81.54738,
+   "lat": 28.63683
+  },
+  {
+   "code": "GH14",
+   "name": "Greenhouse",
+   "number": "4036",
+   "lng": -81.54736,
+   "lat": 28.63774
+  },
+  {
+   "code": "GH15",
+   "name": "Greenhouse",
+   "number": "4037",
+   "lng": -81.54722,
+   "lat": 28.63775
+  },
+  {
+   "code": "SH2",
+   "name": "Shade House",
+   "number": "4039",
+   "lng": -81.54819,
+   "lat": 28.63919
+  },
+  {
+   "code": "SH3",
+   "name": "Shade House",
+   "number": "4040",
+   "lng": -81.54826,
+   "lat": 28.63918
+  },
+  {
+   "code": "SH4",
+   "name": "Shade House",
+   "number": "4041",
+   "lng": -81.54833,
+   "lat": 28.63918
+  },
+  {
+   "code": "GH16",
+   "name": "Greenhouse",
+   "number": "4045",
+   "lng": -81.54795,
+   "lat": 28.63901
+  },
+  {
+   "code": "GH17",
+   "name": "Greenhouse",
+   "number": "4046",
+   "lng": -81.54755,
+   "lat": 28.63902
+  },
+  {
+   "code": "BCXO",
+   "name": "Broward County Ext Office",
+   "number": "4812",
+   "lng": -80.23769,
+   "lat": 26.08355
+  },
+  {
+   "code": "LCEO",
+   "name": "Lake County Extension Office",
+   "number": "4814",
+   "lng": -81.74819,
+   "lat": 28.78884
+  },
+  {
+   "code": "LCEO",
+   "name": "Lee County Ext Office",
+   "number": "4820",
+   "lng": -81.84366,
+   "lat": 26.6576
+  },
+  {
+   "code": "HMF",
+   "name": "Hamilton M. Forman Building",
+   "number": "5001",
+   "lng": -80.23832,
+   "lat": 26.08438
+  },
+  {
+   "code": "FORM",
+   "name": "Forman Annex",
+   "number": "5002",
+   "lng": -80.23832,
+   "lat": 26.0846
+  },
+  {
+   "code": "GH61",
+   "name": "Greenhouse",
+   "number": "5004",
+   "lng": -80.23896,
+   "lat": 26.08373
+  },
+  {
+   "code": "GH60",
+   "name": "Greenhouse",
+   "number": "5005",
+   "lng": -80.23904,
+   "lat": 26.08371
+  },
+  {
+   "code": "MPF",
+   "name": "Multipurpose Facility",
+   "number": "5006",
+   "lng": -80.2395,
+   "lat": 26.08365
+  },
+  {
+   "code": "ST7",
+   "name": "Storage",
+   "number": "5008",
+   "lng": -80.23864,
+   "lat": 26.08466
+  },
+  {
+   "code": "ST8",
+   "name": "Storage",
+   "number": "5009",
+   "lng": -80.24064,
+   "lat": 26.08316
+  },
+  {
+   "code": "FLB2",
+   "name": "Field Laboratory",
+   "number": "5011",
+   "lng": -80.24026,
+   "lat": 26.0832
+  },
+  {
+   "code": "TERM",
+   "name": "Termite Laboratory",
+   "number": "5031",
+   "lng": -80.24158,
+   "lat": 26.08234
+  },
+  {
+   "code": "EQL",
+   "name": "Environmental Quality Lab",
+   "number": "7107",
+   "lng": -81.71362,
+   "lat": 28.10213
+  },
+  {
+   "code": "CREC",
+   "name": "Ben Hill Griffin Citrus Hall",
+   "number": "7167",
+   "lng": -81.71171,
+   "lat": 28.10243
+  },
+  {
+   "code": "GH27",
+   "name": "Greenhouse",
+   "number": "7190",
+   "lng": -81.7131,
+   "lat": 28.10387
+  },
+  {
+   "code": "GH28",
+   "name": "Greenhouse",
+   "number": "7191",
+   "lng": -81.7133,
+   "lat": 28.10387
+  },
+  {
+   "code": "AEMF",
+   "name": "Ag Eng / Maint Facility",
+   "number": "7192",
+   "lng": -81.7142,
+   "lat": 28.10178
+  },
+  {
+   "code": "ST11",
+   "name": "Equipment Storage/Growth Room",
+   "number": "7193",
+   "lng": -81.7142,
+   "lat": 28.10116
+  },
+  {
+   "code": "ST12",
+   "name": "Equipment Storage",
+   "number": "7194",
+   "lng": -81.71389,
+   "lat": 28.10439
+  },
+  {
+   "code": "GH19",
+   "name": "Greenhouse",
+   "number": "7195",
+   "lng": -81.71333,
+   "lat": 28.10435
+  },
+  {
+   "code": "FSB",
+   "name": "Field Support Building",
+   "number": "7196",
+   "lng": -81.71453,
+   "lat": 28.10669
+  },
+  {
+   "code": "MECH",
+   "name": "Arc Fort Pierce Mechanical Bdg",
+   "number": "7305",
+   "lng": -80.40873,
+   "lat": 27.42628
+  },
+  {
+   "code": "FTPR",
+   "name": "Postharvest Lab",
+   "number": "7315",
+   "lng": -80.40999,
+   "lat": 27.42619
+  },
+  {
+   "code": "FTP",
+   "name": "Office/Lab Building",
+   "number": "7321",
+   "lng": -80.40805,
+   "lat": 27.42618
+  },
+  {
+   "code": "MA2",
+   "name": "Maintenance Building",
+   "number": "7331",
+   "lng": -80.40454,
+   "lat": 27.42632
+  },
+  {
+   "code": "QUAR",
+   "name": "Exotic/Aquatic Plant Quarantine",
+   "number": "7343",
+   "lng": -80.4056,
+   "lat": 27.42625
+  },
+  {
+   "code": "ST15",
+   "name": "Storage Building",
+   "number": "7344",
+   "lng": -80.40461,
+   "lat": 27.42676
+  },
+  {
+   "code": "ST16",
+   "name": "Equipment Storage Building",
+   "number": "7345",
+   "lng": -80.40439,
+   "lat": 27.42676
+  },
+  {
+   "code": "ST17",
+   "name": "Equipment Storage",
+   "number": "7346",
+   "lng": -80.40448,
+   "lat": 27.42695
+  },
+  {
+   "code": "ST25",
+   "name": "Field Storage",
+   "number": "7356",
+   "lng": -80.40566,
+   "lat": 27.42661
+  },
+  {
+   "code": "GH29",
+   "name": "Greenhouse",
+   "number": "7403",
+   "lng": -80.63338,
+   "lat": 26.66753
+  },
+  {
+   "code": "CONF",
+   "name": "Everglades Conference Center",
+   "number": "7404",
+   "lng": -80.63112,
+   "lat": 26.66723
+  },
+  {
+   "code": "ST26",
+   "name": "Storage",
+   "number": "7406",
+   "lng": -80.63425,
+   "lat": 26.66659
+  },
+  {
+   "code": "ST27",
+   "name": "Storage",
+   "number": "7407",
+   "lng": -80.63425,
+   "lat": 26.66658
+  },
+  {
+   "code": "EQSD",
+   "name": "Equipment Storage",
+   "number": "7477",
+   "lng": -80.63516,
+   "lat": 26.66842
+  },
+  {
+   "code": "WEDG",
+   "name": "Wedgworth Laboratory",
+   "number": "7499",
+   "lng": -80.63169,
+   "lat": 26.6671
+  },
+  {
+   "code": "MS1",
+   "name": "Maintenance Shop",
+   "number": "7502",
+   "lng": -82.17157,
+   "lat": 29.40847
+  },
+  {
+   "code": "ST30",
+   "name": "Equipment Storage",
+   "number": "7506",
+   "lng": -82.17194,
+   "lat": 29.40756
+  },
+  {
+   "code": "FELD",
+   "name": "Field Support",
+   "number": "7510",
+   "lng": -82.17138,
+   "lat": 29.40941
+  },
+  {
+   "code": "DRY",
+   "name": "Plant Drying Building",
+   "number": "7512",
+   "lng": -82.16936,
+   "lat": 29.40695
+  },
+  {
+   "code": "GH21",
+   "name": "Greenhouse",
+   "number": "7513",
+   "lng": -82.16833,
+   "lat": 29.40837
+  },
+  {
+   "code": "GH22",
+   "name": "Greenhouse",
+   "number": "7514",
+   "lng": -82.16787,
+   "lat": 29.40835
+  },
+  {
+   "code": "ST31",
+   "name": "Storage Building",
+   "number": "7516",
+   "lng": -82.17096,
+   "lat": 29.40712
+  },
+  {
+   "code": "PHEB",
+   "name": "Paul H. Everett Building",
+   "number": "7712",
+   "lng": -81.4355,
+   "lat": 26.46086
+  },
+  {
+   "code": "IMM",
+   "name": "Pump House",
+   "number": "7728",
+   "lng": -81.4351,
+   "lat": 26.46047
+  },
+  {
+   "code": "ST32",
+   "name": "Storage Building",
+   "number": "7729",
+   "lng": -81.43925,
+   "lat": 26.46156
+  },
+  {
+   "code": "ST33",
+   "name": "Storage Building",
+   "number": "7735",
+   "lng": -81.43761,
+   "lat": 26.46236
+  },
+  {
+   "code": "ST34",
+   "name": "Storage Building",
+   "number": "7739",
+   "lng": -81.4388,
+   "lat": 26.46231
+  },
+  {
+   "code": "CSB",
+   "name": "Canker Spray Booth",
+   "number": "7741",
+   "lng": -81.4445,
+   "lat": 26.46278
+  },
+  {
+   "code": "SCRN",
+   "name": "Screen House",
+   "number": "7743",
+   "lng": -81.44051,
+   "lat": 26.46328
+  },
+  {
+   "code": "PML2",
+   "name": "Pesticide Mix/Load",
+   "number": "7901",
+   "lng": -84.59839,
+   "lat": 30.54356
+  },
+  {
+   "code": "OFL1",
+   "name": "Office/Laboratory",
+   "number": "7904",
+   "lng": -84.59564,
+   "lat": 30.54311
+  },
+  {
+   "code": "RES5",
+   "name": "Graduate Residence",
+   "number": "7921",
+   "lng": -84.59615,
+   "lat": 30.54487
+  },
+  {
+   "code": "MILL",
+   "name": "Feed Mill",
+   "number": "8013",
+   "lng": -85.17839,
+   "lat": 30.85227
+  },
+  {
+   "code": "PML3",
+   "name": "Pesticide Mix/Load",
+   "number": "8022",
+   "lng": -85.16649,
+   "lat": 30.84976
+  },
+  {
+   "code": "OFL2",
+   "name": "Office/Laboratory",
+   "number": "8023",
+   "lng": -85.16513,
+   "lat": 30.85085
+  },
+  {
+   "code": "PENS",
+   "name": "Animal Working Pens",
+   "number": "8024",
+   "lng": -85.18743,
+   "lat": 30.8715
+  },
+  {
+   "code": "PAVL",
+   "name": "Arena",
+   "number": "8025",
+   "lng": -85.18448,
+   "lat": 30.86944
+  },
+  {
+   "code": "ANML",
+   "name": "Animal Working Pens",
+   "number": "8026",
+   "lng": -85.18449,
+   "lat": 30.8691
+  },
+  {
+   "code": "MS2",
+   "name": "Maintenance",
+   "number": "8027",
+   "lng": -85.18697,
+   "lat": 30.86213
+  },
+  {
+   "code": "HAY",
+   "name": "Hay Storage",
+   "number": "8028",
+   "lng": -85.18699,
+   "lat": 30.86176
+  },
+  {
+   "code": "ST36",
+   "name": "Equipment Storage",
+   "number": "8031",
+   "lng": -85.1784,
+   "lat": 30.85227
+  },
+  {
+   "code": "HOUS",
+   "name": "Residence",
+   "number": "8103",
+   "lng": -81.92877,
+   "lat": 27.38554
+  },
+  {
+   "code": "CFS1",
+   "name": "Cattle Feeding",
+   "number": "8129",
+   "lng": -81.939,
+   "lat": 27.39469
+  },
+  {
+   "code": "HB1",
+   "name": "Hay Barn-Arc Ona",
+   "number": "8133",
+   "lng": -81.94113,
+   "lat": 27.39606
+  },
+  {
+   "code": "HB2",
+   "name": "Hay Barn-Arc Ona",
+   "number": "8134",
+   "lng": -81.93215,
+   "lat": 27.39378
+  },
+  {
+   "code": "SHDE",
+   "name": "Shade House",
+   "number": "8211",
+   "lng": -80.4983,
+   "lat": 25.50833
+  },
+  {
+   "code": "TOB",
+   "name": "Conference Facility",
+   "number": "8329",
+   "lng": -82.89944,
+   "lat": 30.30213
+  },
+  {
+   "code": "CRPT",
+   "name": "Carport",
+   "number": "8330",
+   "lng": -82.90211,
+   "lat": 30.31243
+  },
+  {
+   "code": "OAK",
+   "name": "Pesticide Mix/Load",
+   "number": "8331",
+   "lng": -82.89883,
+   "lat": 30.30173
+  },
+  {
+   "code": "PML4",
+   "name": "Field Support",
+   "number": "8456",
+   "lng": -87.14364,
+   "lat": 30.77349
+  },
+  {
+   "code": "EQS1",
+   "name": "Farm Operations Bldg (farm)",
+   "number": "8704",
+   "lng": -81.44151,
+   "lat": 29.69259
+  },
+  {
+   "code": "PML1",
+   "name": "Pesticide Mix/Load (farm)",
+   "number": "8707",
+   "lng": -81.44163,
+   "lat": 29.69238
+  },
+  {
+   "code": "IBC",
+   "name": "Institute Of Black Culture (IBC)",
+   "number": "8740",
+   "lng": -82.34219,
+   "lat": 29.65233
+  },
+  {
+   "code": "IHLC",
+   "name": "La Casita",
+   "number": "8800",
+   "lng": -82.34197,
+   "lat": 29.65233
+  },
+  {
+   "code": "MARL",
+   "name": "Marine Lab",
+   "number": "9305",
+   "lng": -86.395,
+   "lat": 30.45464
+  },
+  {
+   "code": "RR",
+   "name": "Restrooms",
+   "number": "9339",
+   "lng": -86.39648,
+   "lat": 30.45456
+  },
+  {
+   "code": "TAQL",
+   "name": "Tropical Aquaculture Lab",
+   "number": "9401",
+   "lng": -82.401964,
+   "lat": 27.70524
+  },
+  {
+   "code": "HATC",
+   "name": "Hatchery",
+   "number": "9402",
+   "lng": -82.401845,
+   "lat": 27.704807
+  },
+  {
+   "code": "FB1",
+   "name": "Field Building",
+   "number": "9404",
+   "lng": -82.40192,
+   "lat": 27.70447
+  },
+  {
+   "code": "GH31",
+   "name": "Greenhouse",
+   "number": "9405",
+   "lng": -82.4012,
+   "lat": 27.70474
+  },
+  {
+   "code": "AHC",
+   "name": "CH2MHILL",
+   "number": "E10",
+   "lng": -82.36656,
+   "lat": 29.60602
+  },
+  {
+   "code": "LCEO",
+   "name": "Lee County Extension Office",
+   "number": "E361",
+   "lng": -81.88819,
+   "lat": 26.68841
+  },
+  {
+   "code": "AGR",
+   "name": "Fraternity - Alpha Gamma Rho",
+   "number": "G300",
+   "lng": -82.35523,
+   "lat": 29.64464
+  },
+  {
+   "code": "ZTA",
+   "name": "Sorority - Zeta Tau Alpha",
+   "number": "G931",
+   "lng": -82.33742,
+   "lat": 29.64437
+  },
+  {
+   "code": "SKS",
+   "name": "Sigma Kappa Sorority",
+   "number": "G950",
+   "lng": -82.3359,
+   "lat": 29.6446
+  },
+  {
+   "code": "TCV",
+   "name": "TCV Vascular Clinic",
+   "number": "L0011",
+   "lng": -81.054302,
+   "lat": 29.199183
+  },
+  {
+   "code": "PAT",
+   "name": "PEDs at Tioga",
+   "number": "L0014",
+   "lng": -82.48041,
+   "lat": 29.6558
+  },
+  {
+   "code": "X88",
+   "name": "Homecare and Al'z Place",
+   "number": "L0015",
+   "lng": -82.34254,
+   "lat": 29.67438
+  },
+  {
+   "code": "OSMO",
+   "name": "UF Ortho Ocala",
+   "number": "L0019",
+   "lng": -82.10687,
+   "lat": 29.17057
+  },
+  {
+   "code": "X69",
+   "name": "UF Health Wound Care and Hyperbaric Center Magnolia Park",
+   "number": "L0036",
+   "lng": -82.39437,
+   "lat": 29.69008
+  },
+  {
+   "code": "PUMP",
+   "name": "Pump at Whitney",
+   "number": "M101",
+   "lng": -81.21404,
+   "lat": 29.66938
+  },
+  {
+   "code": "PR01",
+   "name": "South Progress Park",
+   "number": "PR01",
+   "lng": -82.4733,
+   "lat": 29.78076
+  },
+  {
+   "code": "PR02",
+   "name": "Progress Park North",
+   "number": "PR02",
+   "lng": -82.47297,
+   "lat": 29.78148
+  },
+  {
+   "code": "M10",
+   "name": "UF Health Villages",
+   "number": "SM10",
+   "lng": -81.98005,
+   "lat": 28.97377
+  },
+  {
+   "code": "P06",
+   "name": "HVN",
+   "number": "SP06",
+   "lng": -82.34079,
+   "lat": 29.63955
+  },
+  {
+   "code": "P10",
+   "name": "Hospital Parking Garage",
+   "number": "SP10",
+   "lng": -82.33963,
+   "lat": 29.63904
+  },
+  {
+   "code": "P12",
+   "name": "Parking Garage",
+   "number": "SP12",
+   "lng": -82.33963,
+   "lat": 29.63837
+  },
+  {
+   "code": "T07",
+   "name": "Prisoner Holding & Clinic (Jail)",
+   "number": "ST07",
+   "lng": -81.66608,
+   "lat": 30.34991
+  },
+  {
+   "code": "T09",
+   "name": "Booher Bldg",
+   "number": "ST09",
+   "lng": -81.66122,
+   "lat": 30.35015
+  },
+  {
+   "code": "T16",
+   "name": "Pavilion Plant",
+   "number": "ST16",
+   "lng": -81.66242,
+   "lat": 30.34833
+  },
+  {
+   "code": "T17",
+   "name": "North Pavilion",
+   "number": "ST17",
+   "lng": -81.66152,
+   "lat": 30.34818
+  },
+  {
+   "code": "T18",
+   "name": "South Pavilion",
+   "number": "ST18",
+   "lng": -81.66168,
+   "lat": 30.34735
+  },
+  {
+   "code": "T19",
+   "name": "POB Garage",
+   "number": "ST19",
+   "lng": -81.66045,
+   "lat": 30.34679
+  },
+  {
+   "code": "T33",
+   "name": "Towers Skyway",
+   "number": "ST33",
+   "lng": -81.66315,
+   "lat": 30.34583
+  },
+  {
+   "code": "T35",
+   "name": "Pavilion Skyway",
+   "number": "ST35",
+   "lng": -81.66167,
+   "lat": 30.34777
+  },
+  {
+   "code": "PBS",
+   "name": "Pony Field Band Structure",
+   "number": "T113",
+   "lng": -82.35121,
+   "lat": 29.63995
+  },
+  {
+   "code": "URMO",
+   "name": "URMO",
+   "number": "URMO",
+   "lng": -82.16836,
+   "lat": 29.41666
+  }
+ ]
+}

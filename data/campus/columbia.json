@@ -1,0 +1,812 @@
+{
+ "collegeId": "columbia",
+ "generatedAt": "2026-10-19T18:32:39.687Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-10-19"
+  },
+  {
+   "name": "Columbia University Registrar, Building Codes",
+   "url": "https://registrar.columbia.edu/content/building-codes",
+   "use": "building codes",
+   "read": "2026-10-19 from the Wayback Machine copy of 2025-12-14 (https://web.archive.org/web/20251214002731/https://registrar.columbia.edu/content/building-codes); the live page blocks scripts"
+  },
+  {
+   "name": "Columbia Housing hall pages and Housing for First-Year Students",
+   "url": "https://www.housing.columbia.edu/content/housing-first-year-students",
+   "use": "first-year and upper-year tags (each hall's yearSource)",
+   "note": "housing.columbia.edu blocks scripts; the pages were read once on 2026-10-19 from Wayback Machine copies (2025-05 to 2026-07)."
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/content/housing-first-year-students",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/carman",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/furnald",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/hartley",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/broadway",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/schapiro",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/mcbain",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/content/wien-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/river",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/hogan",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/ruggles",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://www.housing.columbia.edu/watt",
+   "use": "year tag"
+  }
+ ],
+ "bounds": [
+  -73.96636,
+  40.80548,
+  -73.95817,
+  40.8138
+ ],
+ "halls": [
+  {
+   "dormId": "john-jay-hall",
+   "name": "John Jay Hall",
+   "lng": -73.962365,
+   "lat": 40.805888,
+   "pin": "name",
+   "osm": "way/274995753",
+   "year": "first",
+   "yearSource": "https://www.housing.columbia.edu/content/housing-first-year-students"
+  },
+  {
+   "dormId": "carman-hall",
+   "name": "Carman Hall",
+   "lng": -73.964083,
+   "lat": 40.806589,
+   "pin": "name",
+   "osm": "way/274995722",
+   "year": "first",
+   "yearSource": "https://www.housing.columbia.edu/carman"
+  },
+  {
+   "dormId": "furnald-hall",
+   "name": "Furnald Hall",
+   "lng": -73.963885,
+   "lat": 40.807419,
+   "pin": "name",
+   "osm": "way/274995731",
+   "year": "first",
+   "yearSource": "https://www.housing.columbia.edu/furnald"
+  },
+  {
+   "dormId": "hartley-hall",
+   "name": "Hartley Hall",
+   "lng": -73.961687,
+   "lat": 40.806414,
+   "pin": "name",
+   "osm": "way/274995733",
+   "year": "upper",
+   "yearSource": "https://www.housing.columbia.edu/hartley"
+  },
+  {
+   "dormId": "broadway-hall",
+   "name": "Broadway Hall",
+   "lng": -73.96467,
+   "lat": 40.806125,
+   "pin": "name",
+   "osm": "way/271585091",
+   "year": "upper",
+   "yearSource": "https://www.housing.columbia.edu/broadway"
+  },
+  {
+   "dormId": "schapiro-hall",
+   "name": "Schapiro Hall",
+   "lng": -73.965176,
+   "lat": 40.807908,
+   "pin": "name",
+   "osm": "way/274982907",
+   "year": "upper",
+   "yearSource": "https://www.housing.columbia.edu/schapiro"
+  },
+  {
+   "dormId": "mcbain-hall",
+   "name": "McBain Hall",
+   "lng": -73.965032,
+   "lat": 40.805719,
+   "pin": "name",
+   "osm": "relation/3625590",
+   "year": "upper",
+   "yearSource": "https://www.housing.columbia.edu/mcbain"
+  },
+  {
+   "dormId": "wien-hall",
+   "name": "Wien Hall",
+   "lng": -73.959681,
+   "lat": 40.806738,
+   "pin": "name",
+   "osm": "way/274995783",
+   "year": "any",
+   "yearSource": [
+    "https://www.housing.columbia.edu/content/wien-hall",
+    "https://www.housing.columbia.edu/content/housing-first-year-students"
+   ]
+  },
+  {
+   "dormId": "river-hall",
+   "name": "River Hall",
+   "lng": -73.966361,
+   "lat": 40.807113,
+   "pin": "name",
+   "osm": "way/274979073",
+   "year": "upper",
+   "yearSource": "https://www.housing.columbia.edu/river"
+  },
+  {
+   "dormId": "hogan-ruggles",
+   "name": "Hogan Hall & Ruggles Hall",
+   "lng": -73.964584,
+   "lat": 40.806348,
+   "pin": "name",
+   "osm": "way/271585144",
+   "year": "upper",
+   "yearSource": [
+    "https://www.housing.columbia.edu/hogan",
+    "https://www.housing.columbia.edu/ruggles"
+   ]
+  },
+  {
+   "dormId": "watt-hall",
+   "name": "Watt Hall",
+   "lng": -73.96439,
+   "lat": 40.805924,
+   "pin": "name",
+   "osm": "relation/3625586",
+   "year": "upper",
+   "yearSource": "https://www.housing.columbia.edu/watt"
+  }
+ ],
+ "places": [
+  {
+   "id": "columbia-school-of-international-and-public-affairs",
+   "name": "Columbia School of International and Public Affairs",
+   "short": "Columbia School of International and Public Affairs",
+   "kind": "academic",
+   "codes": [
+    "IAB"
+   ],
+   "aliases": [
+    "International Affairs Building"
+   ],
+   "lng": -73.959746,
+   "lat": 40.807503,
+   "osm": "relation/3660340"
+  },
+  {
+   "id": "jerome-greene-hall",
+   "name": "Jerome Greene Hall",
+   "short": "Jerome Greene Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Jerome L Greene Hall"
+   ],
+   "lng": -73.960296,
+   "lat": 40.807005,
+   "osm": "way/274995750"
+  },
+  {
+   "id": "butler-library",
+   "name": "Butler Library",
+   "short": "Butler Library",
+   "kind": "library",
+   "codes": [
+    "BUT"
+   ],
+   "aliases": [],
+   "lng": -73.963189,
+   "lat": 40.80637,
+   "osm": "way/274995721"
+  },
+  {
+   "id": "alfred-lerner-hall",
+   "name": "Alfred Lerner Hall",
+   "short": "Alfred Lerner Hall",
+   "kind": "academic",
+   "codes": [
+    "LER"
+   ],
+   "aliases": [],
+   "lng": -73.964027,
+   "lat": 40.806858,
+   "osm": "way/274995718"
+  },
+  {
+   "id": "uris-hall",
+   "name": "Uris Hall",
+   "short": "Uris Hall",
+   "kind": "academic",
+   "codes": [
+    "URI"
+   ],
+   "aliases": [],
+   "lng": -73.961291,
+   "lat": 40.808966,
+   "osm": "way/274995776"
+  },
+  {
+   "id": "low-memorial-library",
+   "name": "Low Memorial Library",
+   "short": "Low Memorial Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -73.961836,
+   "lat": 40.808223,
+   "osm": "way/274995757"
+  },
+  {
+   "id": "riverside-church",
+   "name": "Riverside Church",
+   "short": "Riverside Church",
+   "kind": "academic",
+   "codes": [
+    "RSC"
+   ],
+   "aliases": [],
+   "lng": -73.963026,
+   "lat": 40.811984,
+   "osm": "way/274986253"
+  },
+  {
+   "id": "havemeyer-hall",
+   "name": "Havemeyer Hall",
+   "short": "Havemeyer Hall",
+   "kind": "academic",
+   "codes": [
+    "HAV"
+   ],
+   "aliases": [],
+   "lng": -73.96215,
+   "lat": 40.809321,
+   "osm": "way/274995734"
+  },
+  {
+   "id": "international-house",
+   "name": "International House",
+   "short": "International House",
+   "kind": "academic",
+   "codes": [
+    "INTH"
+   ],
+   "aliases": [],
+   "lng": -73.961525,
+   "lat": 40.813797,
+   "osm": "way/271921825"
+  },
+  {
+   "id": "mudd-hall",
+   "name": "Mudd Hall",
+   "short": "Mudd Hall",
+   "kind": "academic",
+   "codes": [
+    "MUD"
+   ],
+   "aliases": [
+    "Seeley Wintersmith Mudd Hall",
+    "Seeley W. Mudd Building"
+   ],
+   "lng": -73.959966,
+   "lat": 40.809355,
+   "osm": "way/274995762"
+  },
+  {
+   "id": "zankel",
+   "name": "Zankel",
+   "short": "Zankel",
+   "kind": "academic",
+   "codes": [
+    "ZB"
+   ],
+   "aliases": [],
+   "lng": -73.960537,
+   "lat": 40.81025,
+   "osm": "way/271917090"
+  },
+  {
+   "id": "milbank-hall",
+   "name": "Milbank Hall",
+   "short": "Milbank Hall",
+   "kind": "academic",
+   "codes": [
+    "MIL"
+   ],
+   "aliases": [
+    "Milbank Hall, Barnard"
+   ],
+   "lng": -73.962821,
+   "lat": 40.810479,
+   "osm": "way/274985961"
+  },
+  {
+   "id": "schapiro-center-cepsr",
+   "name": "Schapiro Center (CEPSR)",
+   "short": "Schapiro Center (CEPSR)",
+   "kind": "academic",
+   "codes": [
+    "SCEP"
+   ],
+   "aliases": [
+    "Schapiro Center for Engineering and Physical Science Research"
+   ],
+   "lng": -73.960812,
+   "lat": 40.809624,
+   "osm": "way/274995769"
+  },
+  {
+   "id": "milstein-center-for-teaching-and-learning",
+   "name": "Milstein Center for Teaching and Learning",
+   "short": "Milstein Center for Teaching and Learning",
+   "kind": "library",
+   "codes": [
+    "MLC"
+   ],
+   "aliases": [
+    "Milstein Center, Barnard"
+   ],
+   "lng": -73.963643,
+   "lat": 40.809682,
+   "osm": "way/274985956"
+  },
+  {
+   "id": "horace-mann",
+   "name": "Horace Mann",
+   "short": "Horace Mann",
+   "kind": "academic",
+   "codes": [
+    "HM",
+    "HMB"
+   ],
+   "aliases": [
+    "Horace Mann Hall",
+    "Horace Mann Building"
+   ],
+   "lng": -73.961408,
+   "lat": 40.810723,
+   "osm": "way/271916920"
+  },
+  {
+   "id": "barnard-hall",
+   "name": "Barnard Hall",
+   "short": "Barnard Hall",
+   "kind": "academic",
+   "codes": [
+    "BAR"
+   ],
+   "aliases": [],
+   "lng": -73.963942,
+   "lat": 40.809135,
+   "osm": "way/274985932"
+  },
+  {
+   "id": "schermerhorn-hall",
+   "name": "Schermerhorn Hall",
+   "short": "Schermerhorn Hall",
+   "kind": "academic",
+   "codes": [
+    "SCH"
+   ],
+   "aliases": [],
+   "lng": -73.960417,
+   "lat": 40.808541,
+   "osm": "way/274995770"
+  },
+  {
+   "id": "fairchild-hall",
+   "name": "Fairchild Hall",
+   "short": "Fairchild Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Sherman Fairchild Center for the Life Sciences"
+   ],
+   "lng": -73.960367,
+   "lat": 40.809092,
+   "osm": "way/274995729"
+  },
+  {
+   "id": "computer-science",
+   "name": "Computer Science",
+   "short": "Computer Science",
+   "kind": "academic",
+   "codes": [
+    "CSC"
+   ],
+   "aliases": [
+    "Computer Science Building"
+   ],
+   "lng": -73.959911,
+   "lat": 40.80903,
+   "osm": "way/274995726"
+  },
+  {
+   "id": "grace-dodge",
+   "name": "Grace Dodge",
+   "short": "Grace Dodge",
+   "kind": "academic",
+   "codes": [
+    "GDH"
+   ],
+   "aliases": [
+    "Grace Dodge Hall (TC)"
+   ],
+   "lng": -73.959734,
+   "lat": 40.810243,
+   "osm": "way/271916914"
+  },
+  {
+   "id": "northwest-corner-building",
+   "name": "Northwest Corner Building",
+   "short": "Northwest Corner Building",
+   "kind": "academic",
+   "codes": [
+    "NWC"
+   ],
+   "aliases": [
+    "Northwest Corner"
+   ],
+   "lng": -73.961982,
+   "lat": 40.810026,
+   "osm": "way/274995764"
+  },
+  {
+   "id": "school-of-social-work",
+   "name": "School of Social Work",
+   "short": "School of Social Work",
+   "kind": "academic",
+   "codes": [
+    "SSW"
+   ],
+   "aliases": [],
+   "lng": -73.958166,
+   "lat": 40.810228,
+   "osm": "way/724049491"
+  },
+  {
+   "id": "dodge-hall",
+   "name": "Dodge Hall",
+   "short": "Dodge Hall",
+   "kind": "academic",
+   "codes": [
+    "DOD"
+   ],
+   "aliases": [
+    "Dodge Building"
+   ],
+   "lng": -73.963189,
+   "lat": 40.807973,
+   "osm": "way/274995789"
+  },
+  {
+   "id": "kent-hall",
+   "name": "Kent Hall",
+   "short": "Kent Hall",
+   "kind": "academic",
+   "codes": [
+    "KNT"
+   ],
+   "aliases": [
+    "James Kent Hall"
+   ],
+   "lng": -73.961396,
+   "lat": 40.807218,
+   "osm": "way/274995755"
+  },
+  {
+   "id": "hamilton-hall",
+   "name": "Hamilton Hall",
+   "short": "Hamilton Hall",
+   "kind": "academic",
+   "codes": [
+    "HAM"
+   ],
+   "aliases": [],
+   "lng": -73.961665,
+   "lat": 40.806824,
+   "osm": "relation/10036618"
+  },
+  {
+   "id": "pupin-hall",
+   "name": "Pupin Hall",
+   "short": "Pupin Hall",
+   "kind": "academic",
+   "codes": [
+    "PUP"
+   ],
+   "aliases": [
+    "Pupin Laboratories"
+   ],
+   "lng": -73.96139,
+   "lat": 40.809994,
+   "osm": "way/738973812"
+  },
+  {
+   "id": "the-diana-center",
+   "name": "The Diana Center",
+   "short": "The Diana Center",
+   "kind": "academic",
+   "codes": [
+    "DIA"
+   ],
+   "aliases": [
+    "Diana Center"
+   ],
+   "lng": -73.962975,
+   "lat": 40.809872,
+   "osm": "way/274985964"
+  },
+  {
+   "id": "avery-hall",
+   "name": "Avery Hall",
+   "short": "Avery Hall",
+   "kind": "academic",
+   "codes": [
+    "AVH"
+   ],
+   "aliases": [],
+   "lng": -73.960949,
+   "lat": 40.808269,
+   "osm": "way/738973811"
+  },
+  {
+   "id": "macy",
+   "name": "Macy",
+   "short": "Macy",
+   "kind": "academic",
+   "codes": [
+    "MCY"
+   ],
+   "aliases": [
+    "Macy Hall"
+   ],
+   "lng": -73.960436,
+   "lat": 40.81051,
+   "osm": "way/271917011"
+  },
+  {
+   "id": "william-and-june-warren-hall",
+   "name": "William and June Warren Hall",
+   "short": "William and June Warren Hall",
+   "kind": "academic",
+   "codes": [
+    "WJW"
+   ],
+   "aliases": [
+    "W & J Warren (Law & Business)"
+   ],
+   "lng": -73.961091,
+   "lat": 40.806201,
+   "osm": "way/274995785"
+  },
+  {
+   "id": "philosophy-hall",
+   "name": "Philosophy Hall",
+   "short": "Philosophy Hall",
+   "kind": "academic",
+   "codes": [
+    "PHI"
+   ],
+   "aliases": [],
+   "lng": -73.960937,
+   "lat": 40.807438,
+   "osm": "way/274995765"
+  },
+  {
+   "id": "armstrong-hall",
+   "name": "Armstrong Hall",
+   "short": "Armstrong Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The Ostend"
+   ],
+   "lng": -73.965245,
+   "lat": 40.805481,
+   "osm": "way/271585137"
+  },
+  {
+   "id": "thompson",
+   "name": "Thompson",
+   "short": "Thompson",
+   "kind": "academic",
+   "codes": [
+    "TH",
+    "THM"
+   ],
+   "aliases": [
+    "Thompson Hall (TC)"
+   ],
+   "lng": -73.961178,
+   "lat": 40.810435,
+   "osm": "way/271917076"
+  },
+  {
+   "id": "lewisohn-hall",
+   "name": "Lewisohn Hall",
+   "short": "Lewisohn Hall",
+   "kind": "academic",
+   "codes": [
+    "LEW"
+   ],
+   "aliases": [],
+   "lng": -73.963193,
+   "lat": 40.80839,
+   "osm": "way/274995737"
+  },
+  {
+   "id": "mathematics",
+   "name": "Mathematics",
+   "short": "Mathematics",
+   "kind": "academic",
+   "codes": [
+    "MAT"
+   ],
+   "aliases": [
+    "Mathematics Building"
+   ],
+   "lng": -73.962732,
+   "lat": 40.809017,
+   "osm": "way/274995760"
+  },
+  {
+   "id": "fayerweather-hall",
+   "name": "Fayerweather Hall",
+   "short": "Fayerweather Hall",
+   "kind": "academic",
+   "codes": [
+    "FAY"
+   ],
+   "aliases": [
+    "Fayerweather"
+   ],
+   "lng": -73.96047,
+   "lat": 40.808065,
+   "osm": "way/274995730"
+  },
+  {
+   "id": "altschul-hall",
+   "name": "Altschul Hall",
+   "short": "Altschul Hall",
+   "kind": "academic",
+   "codes": [
+    "ALT"
+   ],
+   "aliases": [],
+   "lng": -73.963339,
+   "lat": 40.810081,
+   "osm": "way/274985931"
+  },
+  {
+   "id": "sulzberger-hall",
+   "name": "Sulzberger Hall",
+   "short": "Sulzberger Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Iphigene Ochs Sulzberger Hall"
+   ],
+   "lng": -73.963919,
+   "lat": 40.808685,
+   "osm": "way/274985963"
+  },
+  {
+   "id": "chandler-hall",
+   "name": "Chandler Hall",
+   "short": "Chandler Hall",
+   "kind": "academic",
+   "codes": [
+    "CHA"
+   ],
+   "aliases": [
+    "Chandler"
+   ],
+   "lng": -73.962285,
+   "lat": 40.809624,
+   "osm": "way/274995724"
+  },
+  {
+   "id": "knox-hall",
+   "name": "Knox Hall",
+   "short": "Knox Hall",
+   "kind": "academic",
+   "codes": [
+    "KNX"
+   ],
+   "aliases": [],
+   "lng": -73.961836,
+   "lat": 40.811949,
+   "osm": "way/271917008"
+  },
+  {
+   "id": "buell-hall",
+   "name": "Buell Hall",
+   "short": "Buell Hall",
+   "kind": "academic",
+   "codes": [
+    "BUE"
+   ],
+   "aliases": [],
+   "lng": -73.961419,
+   "lat": 40.807704,
+   "osm": "way/274995720"
+  },
+  {
+   "id": "heyman-center-for-the-humanities",
+   "name": "Heyman Center for the Humanities",
+   "short": "Heyman Center for the Humanities",
+   "kind": "academic",
+   "codes": [
+    "HEY"
+   ],
+   "aliases": [
+    "Heyman Center for Humanities"
+   ],
+   "lng": -73.958911,
+   "lat": 40.807455,
+   "osm": "way/274995735"
+  },
+  {
+   "id": "casa-hispanica",
+   "name": "Casa Hispánica",
+   "short": "Casa Hispánica",
+   "kind": "academic",
+   "codes": [
+    "HIS"
+   ],
+   "aliases": [],
+   "lng": -73.965049,
+   "lat": 40.808207,
+   "osm": "way/274982896"
+  }
+ ]
+}

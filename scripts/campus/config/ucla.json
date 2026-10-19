@@ -1,0 +1,156 @@
+{
+  "collegeId": "ucla",
+  "area": {
+    "osm": "relation/7493269",
+    "bbox": [
+      34.05753,
+      -118.4554,
+      34.07808,
+      -118.43742
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/ucla.codes.json"
+  },
+  "housing": {
+    "title": "UCLA Housing: building types offered to new students, and returners may select from all on-campus options",
+    "url": "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+  },
+  "years": {
+    "dykstra-hall": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/classic-residence-hall",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "sproul-hall": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/classic-residence-hall",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "hedrick-hall": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/classic-residence-hall",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "rieber-hall": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/classic-residence-hall",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "de-neve-gardenia": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "de-neve-holly": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "sproul-cove": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "sproul-landing": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "olympic-hall": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "centennial-hall": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "de-neve-plaza": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/plaza-residences",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "canyon-point": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/plaza-residences",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "delta-terrace": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/plaza-residences",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "courtside": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/plaza-residences",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "rieber-terrace": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/plaza-residences",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "rieber-vista": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/plaza-residences",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "hedrick-summit": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/plaza-residences",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "saxon-suites": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/suites",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    },
+    "hitch-suites": {
+      "year": "any",
+      "source": [
+        "https://housing.ucla.edu/new-students/suites",
+        "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+      ]
+    }
+  }
+}

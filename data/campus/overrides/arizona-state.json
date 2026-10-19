@@ -1,0 +1,14 @@
+{
+  "codes": {
+    "MCENT": "way/28822889",
+    "GWC": "way/30407135",
+    "CSB": null,
+    "CAM": null
+  },
+  "notes": {
+    "MCENT": "A. J. Matthews Center is OSM's \"AJ Matthews Center\", not Matthews Hall.",
+    "GWC": "The ASU list gives GWC to both Goldwater Center and the H.B. Farmer Education Building; GWC is Goldwater Center.",
+    "CSB": "No OSM building is the Community Services Building; it is not University Services (which has its own code, USB).",
+    "CAM": "The ASU list gives CAM to both College Avenue Marketplace and Danforth Chapel, so it can't place it."
+  }
+}

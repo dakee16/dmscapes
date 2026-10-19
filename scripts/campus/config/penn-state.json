@@ -1,0 +1,279 @@
+{
+  "collegeId": "penn-state",
+  "area": {
+    "osm": "relation/14073946",
+    "bbox": [
+      40.7798241,
+      -77.8918409,
+      40.8253481,
+      -77.8293611
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "title": "Penn State Office of Physical Plant, UP Buildings (building inventory: names, abbreviations, aliases)",
+    "url": "https://www.arcgis.com/home/item.html?id=3ad96faf5e534658bb58301af22cb76f",
+    "arcgis": "https://services1.arcgis.com/fmL63zawJNFGptQt/arcgis/rest/services/UP_Buildings/FeatureServer/69",
+    "fields": {
+      "name": "BLDG_NAME",
+      "code": "BLDG_ABBR",
+      "aliases": [
+        "BLDG_NAME_ABBR",
+        "BLDG_NAME_GIS",
+        "ALIAS"
+      ]
+    }
+  },
+  "housing": {
+    "title": "Penn State LiveOn hall pages, \"living arrangements\" (First-Year Students / Upperclass Students)",
+    "url": "https://liveon.psu.edu/university-park/housing-areas",
+    "note": "liveon.psu.edu serves a bot challenge; the same public pages were read once from liveon.prod.fbweb.psu.edu on 2026-10-19."
+  },
+  "years": {
+    "atherton-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/atherton-hall"
+    },
+    "beam-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/beam-hall"
+    },
+    "beaver-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/beaver-hall"
+    },
+    "bigler-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/bigler-hall"
+    },
+    "brill-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/brill-hall"
+    },
+    "brumbaugh-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/brumbaugh-hall"
+    },
+    "chace-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/chace-hall"
+    },
+    "cooper-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/cooper-hall"
+    },
+    "cross-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/cross-hall"
+    },
+    "curry-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/curry-hall"
+    },
+    "curtin-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/curtin-hall"
+    },
+    "dunham-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/dunham-hall"
+    },
+    "earle-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/earle-hall"
+    },
+    "ewing-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/ewing-hall"
+    },
+    "garban": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/garban"
+    },
+    "geary-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/geary-hall"
+    },
+    "grubb": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/grubb"
+    },
+    "haller-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/haller-hall"
+    },
+    "hamilton-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/hamilton-hall"
+    },
+    "harris-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/harris-hall"
+    },
+    "hartranft-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/hartranft-hall"
+    },
+    "hastings-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/hastings-hall"
+    },
+    "hibbs-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/hibbs-hall"
+    },
+    "hiester-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/hiester-hall"
+    },
+    "holmes-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/holmes-hall"
+    },
+    "hoyt-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/hoyt-hall"
+    },
+    "irvin-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/irvin-hall"
+    },
+    "jordan-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/jordan-hall"
+    },
+    "leete-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/leete-hall"
+    },
+    "lyons-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/lyons-hall"
+    },
+    "martin-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/martin-hall"
+    },
+    "mcelwain-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/mcelwain-hall"
+    },
+    "mckean-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/mckean-hall"
+    },
+    "mckee-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/mckee-hall"
+    },
+    "mifflin-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/mifflin-hall"
+    },
+    "miller-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/miller-hall"
+    },
+    "nelson-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/nelson-hall"
+    },
+    "nittany-apt-garden": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/nittany-apt-garden"
+    },
+    "nittany-apt-townhouse": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/nittany-apt-townhouse"
+    },
+    "nittany-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/nittany-hall"
+    },
+    "packer-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/packer-hall"
+    },
+    "panofsky-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/panofsky-hall"
+    },
+    "pennypacker-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/pennypacker-hall"
+    },
+    "pinchot-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/pinchot-hall"
+    },
+    "porter-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/porter-hall"
+    },
+    "ritner-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/ritner-hall"
+    },
+    "robinson-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/robinson-hall"
+    },
+    "runkle-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/runkle-hall"
+    },
+    "shulze-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/shulze-hall"
+    },
+    "shunk-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/shunk-hall"
+    },
+    "simmons-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/simmons-hall"
+    },
+    "snyder-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/snyder-hall"
+    },
+    "sproul-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/sproul-hall"
+    },
+    "stephens-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/stephens-hall"
+    },
+    "stone-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/stone-hall"
+    },
+    "stuart-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/stuart-hall"
+    },
+    "tener-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/tener-hall"
+    },
+    "thompson-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/thompson-hall"
+    },
+    "watts-hall": {
+      "year": "any",
+      "source": "https://liveon.psu.edu/university-park/housing/watts-hall"
+    },
+    "wolf-hall": {
+      "year": "first",
+      "source": "https://liveon.psu.edu/university-park/housing/wolf-hall"
+    },
+    "young-hall": {
+      "year": "upper",
+      "source": "https://liveon.psu.edu/university-park/housing/young-hall"
+    }
+  }
+}

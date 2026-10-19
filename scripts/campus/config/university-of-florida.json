@@ -1,0 +1,119 @@
+{
+  "collegeId": "university-of-florida",
+  "area": {
+    "osm": "relation/18432136",
+    "bbox": [
+      29.61377,
+      -82.37456,
+      29.652,
+      -82.33717
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/university-of-florida.codes.json"
+  },
+  "housing": {
+    "title": "UF Housing FAQ: \"our residence halls house first-year and upper-level students together\"",
+    "url": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+  },
+  "years": {
+    "beaty-towers": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "broward-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "buckman-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "cypress-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "east-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "fletcher-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "honors-village": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "hume-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "infinity-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "jennings-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "keys-residential-complex": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "lakeside-residential-complex": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "mallory-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "murphree-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "north-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "rawlings-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "reid-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "riker-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "sledd-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "springs-residential-complex": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "thomas-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "tolbert-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "weaver-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    },
+    "yulee-hall": {
+      "year": "any",
+      "source": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+    }
+  }
+}

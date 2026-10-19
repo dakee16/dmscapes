@@ -1,0 +1,1517 @@
+{
+ "collegeId": "ucla",
+ "generatedAt": "2026-10-19T18:32:40.027Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-10-19"
+  },
+  {
+   "name": "UCLA Registrar, Building List (abbreviations used in the Schedule of Classes)",
+   "url": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+   "use": "building codes",
+   "read": "2026-10-19"
+  },
+  {
+   "name": "UCLA Housing: building types offered to new students, and returners may select from all on-campus options",
+   "url": "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736",
+   "use": "first-year and upper-year tags (each hall's yearSource)"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://housing.ucla.edu/new-students/classic-residence-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://housing.ucla.edu/new-students/plaza-residences",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://housing.ucla.edu/new-students/suites",
+   "use": "year tag"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/ucla.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -118.45511,
+  34.05816,
+  -118.43848,
+  34.0764
+ ],
+ "halls": [
+  {
+   "dormId": "dykstra-hall",
+   "name": "Dykstra Hall",
+   "lng": -118.450071,
+   "lat": 34.070031,
+   "pin": "name",
+   "osm": "way/422876544",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/classic-residence-hall",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "sproul-hall",
+   "name": "Sproul Hall",
+   "lng": -118.449982,
+   "lat": 34.072091,
+   "pin": "name",
+   "osm": "way/422876661",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/classic-residence-hall",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "hedrick-hall",
+   "name": "Hedrick Hall",
+   "lng": -118.452358,
+   "lat": 34.073301,
+   "pin": "name",
+   "osm": "way/422876571",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/classic-residence-hall",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "rieber-hall",
+   "name": "Rieber Hall",
+   "lng": -118.451536,
+   "lat": 34.071847,
+   "pin": "name",
+   "osm": "way/422876628",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/classic-residence-hall",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "de-neve-gardenia",
+   "name": "De Neve Gardenia",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "de-neve-holly",
+   "name": "De Neve Holly",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "sproul-cove",
+   "name": "Sproul Cove",
+   "lng": -118.450898,
+   "lat": 34.071704,
+   "pin": "name",
+   "osm": "way/422876642",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "sproul-landing",
+   "name": "Sproul Landing",
+   "lng": -118.450157,
+   "lat": 34.071529,
+   "pin": "name",
+   "osm": "way/422876643",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "olympic-hall",
+   "name": "Olympic Hall",
+   "lng": -118.453573,
+   "lat": 34.072371,
+   "pin": "name",
+   "osm": "way/964842615",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "centennial-hall",
+   "name": "Centennial Hall",
+   "lng": -118.453859,
+   "lat": 34.072925,
+   "pin": "name",
+   "osm": "way/964842613",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/deluxe-residence-hall",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "de-neve-plaza",
+   "name": "De Neve Plaza",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/plaza-residences",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "canyon-point",
+   "name": "Canyon Point (Sunset Village)",
+   "lng": -118.450786,
+   "lat": 34.073638,
+   "pin": "name",
+   "osm": "relation/6287583",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/plaza-residences",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "delta-terrace",
+   "name": "Delta Terrace (Sunset Village)",
+   "lng": -118.451165,
+   "lat": 34.072883,
+   "pin": "name",
+   "osm": "way/422876540",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/plaza-residences",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "courtside",
+   "name": "Courtside (Sunset Village)",
+   "lng": -118.449854,
+   "lat": 34.073664,
+   "pin": "name",
+   "osm": "relation/6287584",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/plaza-residences",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "rieber-terrace",
+   "name": "Rieber Terrace",
+   "lng": -118.45222,
+   "lat": 34.072568,
+   "pin": "name",
+   "osm": "way/422876629",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/plaza-residences",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "rieber-vista",
+   "name": "Rieber Vista",
+   "lng": -118.452216,
+   "lat": 34.072063,
+   "pin": "name",
+   "osm": "way/422876630",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/plaza-residences",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "hedrick-summit",
+   "name": "Hedrick Summit",
+   "lng": -118.452686,
+   "lat": 34.073972,
+   "pin": "name",
+   "osm": "way/422876572",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/plaza-residences",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "saxon-suites",
+   "name": "Saxon Suites",
+   "lng": -118.453002,
+   "lat": 34.071775,
+   "pin": "name",
+   "osm": "way/422876638",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/suites",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  },
+  {
+   "dormId": "hitch-suites",
+   "name": "Hitch Suites",
+   "lng": -118.454134,
+   "lat": 34.073325,
+   "pin": "name",
+   "osm": "way/422876637",
+   "year": "any",
+   "yearSource": [
+    "https://housing.ucla.edu/new-students/suites",
+    "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
+   ]
+  }
+ ],
+ "places": [
+  {
+   "id": "center-for-health-sciences",
+   "name": "Center for Health Sciences",
+   "short": "Center for Health Sciences",
+   "kind": "academic",
+   "codes": [
+    "HLTHSCI"
+   ],
+   "aliases": [
+    "David Geffen School of Medicine",
+    "Center for the Health Sciences"
+   ],
+   "lng": -118.443058,
+   "lat": 34.066231,
+   "osm": "relation/331542"
+  },
+  {
+   "id": "edwin-w-pauley-pavilion",
+   "name": "Edwin W. Pauley Pavilion",
+   "short": "Edwin W. Pauley Pavilion",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.446776,
+   "lat": 34.07038,
+   "osm": "way/422876622"
+  },
+  {
+   "id": "john-wooden-center",
+   "name": "John Wooden Center",
+   "short": "John Wooden Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.445402,
+   "lat": 34.071577,
+   "osm": "way/422876578"
+  },
+  {
+   "id": "school-of-law",
+   "name": "School of Law",
+   "short": "School of Law",
+   "kind": "academic",
+   "codes": [
+    "LAW"
+   ],
+   "aliases": [
+    "Law Building"
+   ],
+   "lng": -118.438478,
+   "lat": 34.073012,
+   "osm": "way/422876640"
+  },
+  {
+   "id": "southern-regional-library-facility",
+   "name": "Southern Regional Library Facility",
+   "short": "Southern Regional Library Facility",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "SRLF"
+   ],
+   "lng": -118.454177,
+   "lat": 34.070964,
+   "osm": "way/422876641"
+  },
+  {
+   "id": "boelter-hall",
+   "name": "Boelter Hall",
+   "short": "Boelter Hall",
+   "kind": "academic",
+   "codes": [
+    "BOELTER"
+   ],
+   "aliases": [],
+   "lng": -118.442997,
+   "lat": 34.068876,
+   "osm": "relation/6287582"
+  },
+  {
+   "id": "ackerman-union",
+   "name": "Ackerman Union",
+   "short": "Ackerman Union",
+   "kind": "academic",
+   "codes": [
+    "AU"
+   ],
+   "aliases": [
+    "Ackerman Student Union"
+   ],
+   "lng": -118.444284,
+   "lat": 34.070412,
+   "osm": "way/422876518"
+  },
+  {
+   "id": "royce-hall",
+   "name": "Royce Hall",
+   "short": "Royce Hall",
+   "kind": "academic",
+   "codes": [
+    "ROYCE"
+   ],
+   "aliases": [],
+   "lng": -118.442209,
+   "lat": 34.072853,
+   "osm": "way/422876632"
+  },
+  {
+   "id": "schoenberg-music-building",
+   "name": "Schoenberg Music Building",
+   "short": "Schoenberg Music Building",
+   "kind": "academic",
+   "codes": [
+    "SMB"
+   ],
+   "aliases": [],
+   "lng": -118.44014,
+   "lat": 34.070727,
+   "osm": "way/422876611"
+  },
+  {
+   "id": "young-hall",
+   "name": "Young Hall",
+   "short": "Young Hall",
+   "kind": "academic",
+   "codes": [
+    "WGYOUNG"
+   ],
+   "aliases": [],
+   "lng": -118.441325,
+   "lat": 34.068627,
+   "osm": "way/1423107802"
+  },
+  {
+   "id": "california-nanosystems-institute",
+   "name": "California Nanosystems Institute",
+   "short": "California Nanosystems Institute",
+   "kind": "academic",
+   "codes": [
+    "CNSI"
+   ],
+   "aliases": [],
+   "lng": -118.44296,
+   "lat": 34.068048,
+   "osm": "relation/13007994"
+  },
+  {
+   "id": "macgowan-hall",
+   "name": "MacGowan Hall",
+   "short": "MacGowan Hall",
+   "kind": "academic",
+   "codes": [
+    "MACGOWN"
+   ],
+   "aliases": [],
+   "lng": -118.439839,
+   "lat": 34.07585,
+   "osm": "relation/6287589"
+  },
+  {
+   "id": "broad-art-center",
+   "name": "Broad Art Center",
+   "short": "Broad Art Center",
+   "kind": "academic",
+   "codes": [
+    "BROAD"
+   ],
+   "aliases": [],
+   "lng": -118.4411,
+   "lat": 34.075743,
+   "osm": "relation/12967372"
+  },
+  {
+   "id": "murphy-hall",
+   "name": "Murphy Hall",
+   "short": "Murphy Hall",
+   "kind": "academic",
+   "codes": [
+    "MURPHY"
+   ],
+   "aliases": [
+    "Murphy Hall (Administration)"
+   ],
+   "lng": -118.438782,
+   "lat": 34.071609,
+   "osm": "way/422876600"
+  },
+  {
+   "id": "engineering-iv",
+   "name": "Engineering IV",
+   "short": "Eng IV",
+   "kind": "academic",
+   "codes": [
+    "ENGR IV"
+   ],
+   "aliases": [
+    "Eng IV"
+   ],
+   "lng": -118.443942,
+   "lat": 34.068801,
+   "osm": "way/422260003"
+  },
+  {
+   "id": "public-affairs-building",
+   "name": "Public Affairs Building",
+   "short": "Public Affairs Building",
+   "kind": "academic",
+   "codes": [
+    "PUB AFF"
+   ],
+   "aliases": [],
+   "lng": -118.439185,
+   "lat": 34.074381,
+   "osm": "way/422876627"
+  },
+  {
+   "id": "charles-e-young-research-library",
+   "name": "Charles E. Young Research Library",
+   "short": "Charles E. Young Research Library",
+   "kind": "library",
+   "codes": [
+    "YRL"
+   ],
+   "aliases": [
+    "Young Research Library"
+   ],
+   "lng": -118.441476,
+   "lat": 34.074954,
+   "osm": "way/422876535"
+  },
+  {
+   "id": "powell-library",
+   "name": "Powell Library",
+   "short": "Powell Library",
+   "kind": "library",
+   "codes": [
+    "POWELL"
+   ],
+   "aliases": [
+    "Powell Library Building"
+   ],
+   "lng": -118.442175,
+   "lat": 34.071606,
+   "osm": "way/422876626"
+  },
+  {
+   "id": "orthopaedic-hospital-research-center",
+   "name": "Orthopaedic Hospital Research Center",
+   "short": "Orthopaedic Hospital Research Center",
+   "kind": "academic",
+   "codes": [
+    "OHRC"
+   ],
+   "aliases": [
+    "OHRC",
+    "Orthopedic Hospital Research Center"
+   ],
+   "lng": -118.441297,
+   "lat": 34.067363,
+   "osm": "way/422876610"
+  },
+  {
+   "id": "peter-morton-medical-building",
+   "name": "Peter Morton Medical Building",
+   "short": "Peter Morton Medical Building",
+   "kind": "academic",
+   "codes": [
+    "MORTON"
+   ],
+   "aliases": [
+    "Medical Plaza 200",
+    "Morton Medical Building"
+   ],
+   "lng": -118.446558,
+   "lat": 34.065225,
+   "osm": "way/422876623"
+  },
+  {
+   "id": "bunche-hall",
+   "name": "Bunche Hall",
+   "short": "Bunche Hall",
+   "kind": "academic",
+   "codes": [
+    "BUNCHE"
+   ],
+   "aliases": [],
+   "lng": -118.440186,
+   "lat": 34.074337,
+   "osm": "relation/12967374"
+  },
+  {
+   "id": "kaplan-hall",
+   "name": "Kaplan Hall",
+   "short": "Kaplan Hall",
+   "kind": "academic",
+   "codes": [
+    "KAPLAN"
+   ],
+   "aliases": [
+    "Humanities Building",
+    "Kaplan Hall (formerly Humanities Building)"
+   ],
+   "lng": -118.441236,
+   "lat": 34.071481,
+   "osm": "way/422876575"
+  },
+  {
+   "id": "perloff-hall",
+   "name": "Perloff Hall",
+   "short": "Perloff Hall",
+   "kind": "academic",
+   "codes": [
+    "PERLOFF"
+   ],
+   "aliases": [],
+   "lng": -118.440219,
+   "lat": 34.073354,
+   "osm": "relation/6287590"
+  },
+  {
+   "id": "life-sciences-building",
+   "name": "Life Sciences Building",
+   "short": "Life Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "LS"
+   ],
+   "aliases": [
+    "Life Sciences"
+   ],
+   "lng": -118.442513,
+   "lat": 34.067215,
+   "osm": "way/422876590"
+  },
+  {
+   "id": "melnitz-hall",
+   "name": "Melnitz Hall",
+   "short": "Melnitz Hall",
+   "kind": "academic",
+   "codes": [
+    "MELNITZ"
+   ],
+   "aliases": [],
+   "lng": -118.440044,
+   "lat": 34.076393,
+   "osm": "way/422876598"
+  },
+  {
+   "id": "semel-institute-for-neuroscience-and-human-behavior",
+   "name": "Semel Institute for Neuroscience and Human Behavior",
+   "short": "Semel Institute for Neuroscience and Human Behavior",
+   "kind": "academic",
+   "codes": [
+    "SEMEL"
+   ],
+   "aliases": [
+    "Jane and Terry Semel Institute for Neuroscience and Human Behavior"
+   ],
+   "lng": -118.444563,
+   "lat": 34.065784,
+   "osm": "way/44669501"
+  },
+  {
+   "id": "terasaki-life-sciences-building",
+   "name": "Terasaki Life Sciences Building",
+   "short": "Terasaki Life Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "TERASKI"
+   ],
+   "aliases": [],
+   "lng": -118.440152,
+   "lat": 34.067246,
+   "osm": "way/422876647"
+  },
+  {
+   "id": "student-activities-center-sac",
+   "name": "Student Activities Center (SAC)",
+   "short": "Student Activities Center (SAC)",
+   "kind": "academic",
+   "codes": [
+    "SAC"
+   ],
+   "aliases": [
+    "Student Activities Center"
+   ],
+   "lng": -118.444135,
+   "lat": 34.071555,
+   "osm": "way/422876645"
+  },
+  {
+   "id": "covel-commons-sunset-village",
+   "name": "Covel Commons (Sunset Village)",
+   "short": "Covel Commons (Sunset Village)",
+   "kind": "dining",
+   "codes": [
+    "COVEL"
+   ],
+   "aliases": [
+    "Covel Commons"
+   ],
+   "lng": -118.449992,
+   "lat": 34.073007,
+   "osm": "way/422876537"
+  },
+  {
+   "id": "fowler-museum",
+   "name": "Fowler Museum",
+   "short": "Fowler Museum",
+   "kind": "academic",
+   "codes": [
+    "FOWLER"
+   ],
+   "aliases": [
+    "Fowler Museum at UCLA"
+   ],
+   "lng": -118.443193,
+   "lat": 34.072951,
+   "osm": "relation/6287586"
+  },
+  {
+   "id": "kaufman-hall",
+   "name": "Kaufman Hall",
+   "short": "Kaufman Hall",
+   "kind": "academic",
+   "codes": [
+    "KAUFMAN"
+   ],
+   "aliases": [],
+   "lng": -118.444097,
+   "lat": 34.072774,
+   "osm": "way/422876580"
+  },
+  {
+   "id": "jules-stein-eye-institute",
+   "name": "Jules Stein Eye Institute",
+   "short": "Jules Stein Eye Institute",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Jules Stein Building"
+   ],
+   "lng": -118.443859,
+   "lat": 34.065004,
+   "osm": "way/422876579"
+  },
+  {
+   "id": "haines-hall",
+   "name": "Haines Hall",
+   "short": "Haines Hall",
+   "kind": "academic",
+   "codes": [
+    "HAINES"
+   ],
+   "aliases": [],
+   "lng": -118.441239,
+   "lat": 34.072898,
+   "osm": "way/422876570"
+  },
+  {
+   "id": "geffen-hall",
+   "name": "Geffen Hall",
+   "short": "Geffen Hall",
+   "kind": "academic",
+   "codes": [
+    "GEFFENHL"
+   ],
+   "aliases": [],
+   "lng": -118.442084,
+   "lat": 34.064439,
+   "osm": "relation/12978307"
+  },
+  {
+   "id": "engineering-vi",
+   "name": "Engineering VI",
+   "short": "Eng VI",
+   "kind": "academic",
+   "codes": [
+    "ENGR VI"
+   ],
+   "aliases": [
+    "Eng VI"
+   ],
+   "lng": -118.444347,
+   "lat": 34.069462,
+   "osm": "way/184444681"
+  },
+  {
+   "id": "bradley-international-hall",
+   "name": "Bradley International Hall",
+   "short": "Bradley International Hall",
+   "kind": "academic",
+   "codes": [
+    "BRADLEY"
+   ],
+   "aliases": [
+    "Bradley Hall"
+   ],
+   "lng": -118.449298,
+   "lat": 34.06953,
+   "osm": "way/422876526"
+  },
+  {
+   "id": "rolfe-hall",
+   "name": "Rolfe Hall",
+   "short": "Rolfe Hall",
+   "kind": "academic",
+   "codes": [
+    "ROLFE"
+   ],
+   "aliases": [],
+   "lng": -118.4421,
+   "lat": 34.073824,
+   "osm": "way/422876631"
+  },
+  {
+   "id": "hershey-hall",
+   "name": "Hershey Hall",
+   "short": "Hershey Hall",
+   "kind": "academic",
+   "codes": [
+    "HERSHEY"
+   ],
+   "aliases": [],
+   "lng": -118.439917,
+   "lat": 34.066905,
+   "osm": "relation/6287587"
+  },
+  {
+   "id": "wendy-and-leonard-goldberg-medical-building",
+   "name": "Wendy and Leonard Goldberg Medical Building",
+   "short": "Wendy and Leonard Goldberg Medical Building",
+   "kind": "academic",
+   "codes": [
+    "GOLDBERG"
+   ],
+   "aliases": [
+    "Wendy and Leonard Goldberg Medical Building (formerly Medical Plaza 300)"
+   ],
+   "lng": -118.446114,
+   "lat": 34.064356,
+   "osm": "way/422876596"
+  },
+  {
+   "id": "mo-ostin-basketball-center",
+   "name": "Mo Ostin Basketball Center",
+   "short": "Mo Ostin Basketball Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.448206,
+   "lat": 34.069402,
+   "osm": "way/590011366"
+  },
+  {
+   "id": "neuroscience-research-building",
+   "name": "Neuroscience Research Building",
+   "short": "Neuroscience Research Building",
+   "kind": "academic",
+   "codes": [
+    "NEUROSC"
+   ],
+   "aliases": [],
+   "lng": -118.443445,
+   "lat": 34.067449,
+   "osm": "way/422876601"
+  },
+  {
+   "id": "franz-hall",
+   "name": "Franz Hall",
+   "short": "Franz Hall",
+   "kind": "academic",
+   "codes": [
+    "FRANZ"
+   ],
+   "aliases": [],
+   "lng": -118.441467,
+   "lat": 34.069643,
+   "osm": "way/422876566"
+  },
+  {
+   "id": "moore-hall",
+   "name": "Moore Hall",
+   "short": "Moore Hall",
+   "kind": "academic",
+   "codes": [
+    "MOORE"
+   ],
+   "aliases": [],
+   "lng": -118.442683,
+   "lat": 34.070422,
+   "osm": "way/422876599"
+  },
+  {
+   "id": "doris-stein-eye-research-center",
+   "name": "Doris Stein Eye Research Center",
+   "short": "Doris Stein Eye Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Doris Stein Building"
+   ],
+   "lng": -118.444572,
+   "lat": 34.064517,
+   "osm": "way/422876543"
+  },
+  {
+   "id": "knudsen-hall",
+   "name": "Knudsen Hall",
+   "short": "Knudsen Hall",
+   "kind": "academic",
+   "codes": [
+    "KNUDSEN"
+   ],
+   "aliases": [],
+   "lng": -118.441216,
+   "lat": 34.070496,
+   "osm": "way/422876583"
+  },
+  {
+   "id": "engineering-v",
+   "name": "Engineering V",
+   "short": "Eng V",
+   "kind": "academic",
+   "codes": [
+    "ENGR V"
+   ],
+   "aliases": [
+    "Eng V"
+   ],
+   "lng": -118.443769,
+   "lat": 34.069499,
+   "osm": "way/422876660"
+  },
+  {
+   "id": "physics-and-astronomy-building",
+   "name": "Physics & Astronomy Building",
+   "short": "Physics & Astronomy Building",
+   "kind": "academic",
+   "codes": [
+    "PAB"
+   ],
+   "aliases": [],
+   "lng": -118.441586,
+   "lat": 34.070697,
+   "osm": "way/422876625"
+  },
+  {
+   "id": "vatche-and-tamar-manoukian-medical-building",
+   "name": "Vatche and Tamar Manoukian Medical Building",
+   "short": "Vatche and Tamar Manoukian Medical Building",
+   "kind": "academic",
+   "codes": [
+    "MNOUKIAN"
+   ],
+   "aliases": [
+    "Vatche and Tamar Manoukian Medical Building (formerly Medical Plaza 100)"
+   ],
+   "lng": -118.445776,
+   "lat": 34.065546,
+   "osm": "way/422876595"
+  },
+  {
+   "id": "kerckhoff-hall",
+   "name": "Kerckhoff Hall",
+   "short": "Kerckhoff Hall",
+   "kind": "academic",
+   "codes": [
+    "KH"
+   ],
+   "aliases": [],
+   "lng": -118.44357,
+   "lat": 34.070435,
+   "osm": "way/422876581"
+  },
+  {
+   "id": "wilshire-center",
+   "name": "Wilshire Center",
+   "short": "Wilshire Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Unisys Building"
+   ],
+   "lng": -118.444655,
+   "lat": 34.058159,
+   "osm": "way/184717292"
+  },
+  {
+   "id": "ueberroth-building",
+   "name": "Ueberroth Building",
+   "short": "Ueberroth Building",
+   "kind": "academic",
+   "codes": [
+    "PVUB"
+   ],
+   "aliases": [
+    "PVUB",
+    "1984 Olympic Committee Building"
+   ],
+   "lng": -118.446976,
+   "lat": 34.064003,
+   "osm": "way/422876624"
+  },
+  {
+   "id": "dodd-hall",
+   "name": "Dodd Hall",
+   "short": "Dodd Hall",
+   "kind": "academic",
+   "codes": [
+    "DODD"
+   ],
+   "aliases": [],
+   "lng": -118.439283,
+   "lat": 34.072779,
+   "osm": "way/422876541"
+  },
+  {
+   "id": "west-alumni-center",
+   "name": "West Alumni Center",
+   "short": "West Alumni Center",
+   "kind": "academic",
+   "codes": [
+    "JWEST"
+   ],
+   "aliases": [
+    "James West Alumni Center"
+   ],
+   "lng": -118.445351,
+   "lat": 34.070214,
+   "osm": "way/422876655"
+  },
+  {
+   "id": "macdonald-medical-research-laboratory",
+   "name": "MacDonald Medical Research Laboratory",
+   "short": "MacDonald Medical Research Laboratory",
+   "kind": "academic",
+   "codes": [
+    "MACDNLD"
+   ],
+   "aliases": [
+    "MacDonald Medical Research Laboratories"
+   ],
+   "lng": -118.444118,
+   "lat": 34.06739,
+   "osm": "way/422876593"
+  },
+  {
+   "id": "wasserman-building",
+   "name": "Wasserman Building",
+   "short": "Wasserman Building",
+   "kind": "academic",
+   "codes": [
+    "WASSRMN"
+   ],
+   "aliases": [],
+   "lng": -118.444623,
+   "lat": 34.065254,
+   "osm": "way/422876545"
+  },
+  {
+   "id": "marion-davies-childrens-health-center",
+   "name": "Marion Davies Children's Health Center",
+   "short": "Marion Davies Children's Health Center",
+   "kind": "academic",
+   "codes": [
+    "MDCC"
+   ],
+   "aliases": [
+    "Marion Davies Children's Center"
+   ],
+   "lng": -118.442436,
+   "lat": 34.065173,
+   "osm": "way/44669492"
+  },
+  {
+   "id": "boyer-hall",
+   "name": "Boyer Hall",
+   "short": "Boyer Hall",
+   "kind": "academic",
+   "codes": [
+    "BOYER"
+   ],
+   "aliases": [],
+   "lng": -118.441765,
+   "lat": 34.068109,
+   "osm": "way/422876525"
+  },
+  {
+   "id": "campbell-hall",
+   "name": "Campbell Hall",
+   "short": "Campbell Hall",
+   "kind": "academic",
+   "codes": [
+    "CAMPBEL"
+   ],
+   "aliases": [],
+   "lng": -118.441315,
+   "lat": 34.073796,
+   "osm": "way/422876531"
+  },
+  {
+   "id": "entrepreneurs-hall",
+   "name": "Entrepreneurs Hall",
+   "short": "Entrepreneurs Hall",
+   "kind": "academic",
+   "codes": [
+    "ENTRPNR"
+   ],
+   "aliases": [],
+   "lng": -118.443349,
+   "lat": 34.073623,
+   "osm": "way/185081403"
+  },
+  {
+   "id": "institute-for-pure-and-applied-mathematics",
+   "name": "Institute for Pure and Applied Mathematics",
+   "short": "Institute for Pure and Applied Mathematics",
+   "kind": "academic",
+   "codes": [
+    "PORTOLA"
+   ],
+   "aliases": [
+    "Portola Plaza Building",
+    "IPAM"
+   ],
+   "lng": -118.441886,
+   "lat": 34.070249,
+   "osm": "way/422876576"
+  },
+  {
+   "id": "gonda-goldschmeid-center",
+   "name": "Gonda (Goldschmeid) Center",
+   "short": "Gonda (Goldschmeid) Center",
+   "kind": "academic",
+   "codes": [
+    "GONDA"
+   ],
+   "aliases": [
+    "Gonda Building",
+    "Gonda (Goldschmied) Neuroscience and Genetics Research Center"
+   ],
+   "lng": -118.444741,
+   "lat": 34.067362,
+   "osm": "way/422876569"
+  },
+  {
+   "id": "school-of-public-health",
+   "name": "School of Public Health",
+   "short": "School of Public Health",
+   "kind": "academic",
+   "codes": [
+    "PUB HLT"
+   ],
+   "aliases": [
+    "UCLA Fielding School of Public Health",
+    "Public Health, School of"
+   ],
+   "lng": -118.443635,
+   "lat": 34.06674,
+   "osm": "way/230758451"
+  },
+  {
+   "id": "ucla-school-of-dentistry",
+   "name": "UCLA School of Dentistry",
+   "short": "UCLA School of Dentistry",
+   "kind": "academic",
+   "codes": [
+    "DENT"
+   ],
+   "aliases": [
+    "Dentistry, School of"
+   ],
+   "lng": -118.442042,
+   "lat": 34.066402,
+   "osm": "way/230758455"
+  },
+  {
+   "id": "ucla-police-department",
+   "name": "UCLA Police Department",
+   "short": "UCLA Police Department",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "UCLA Police Building"
+   ],
+   "lng": -118.445433,
+   "lat": 34.067328,
+   "osm": "way/422876652"
+  },
+  {
+   "id": "factor-health-sciences-building",
+   "name": "Factor Health Sciences Building",
+   "short": "Factor Health Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "FACTOR"
+   ],
+   "aliases": [
+    "Doris and Louis Factor Health Sciences Building"
+   ],
+   "lng": -118.442011,
+   "lat": 34.066752,
+   "osm": "way/184480980"
+  },
+  {
+   "id": "kinross-recreation-center",
+   "name": "Kinross Recreation Center",
+   "short": "Kinross Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.448161,
+   "lat": 34.058902,
+   "osm": "way/546510989"
+  },
+  {
+   "id": "fernald-center",
+   "name": "Fernald Center",
+   "short": "Fernald Center",
+   "kind": "academic",
+   "codes": [
+    "FERNALD"
+   ],
+   "aliases": [],
+   "lng": -118.443793,
+   "lat": 34.076397,
+   "osm": "relation/12996854"
+  },
+  {
+   "id": "court-of-sciences-student-center",
+   "name": "Court of Sciences Student Center",
+   "short": "Court of Sciences Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Bombshelter"
+   ],
+   "lng": -118.44219,
+   "lat": 34.068228,
+   "osm": "way/185084330"
+  },
+  {
+   "id": "reed-neurological-research-center",
+   "name": "Reed Neurological Research Center",
+   "short": "Reed Neurological Research Center",
+   "kind": "academic",
+   "codes": [
+    "REED"
+   ],
+   "aliases": [],
+   "lng": -118.444805,
+   "lat": 34.066222,
+   "osm": "way/44669498"
+  },
+  {
+   "id": "cornell-hall",
+   "name": "Cornell Hall",
+   "short": "Cornell Hall",
+   "kind": "academic",
+   "codes": [
+    "CORNELL"
+   ],
+   "aliases": [],
+   "lng": -118.443403,
+   "lat": 34.074,
+   "osm": "way/184488678"
+  },
+  {
+   "id": "gold-hall",
+   "name": "Gold Hall",
+   "short": "Gold Hall",
+   "kind": "academic",
+   "codes": [
+    "GOLD"
+   ],
+   "aliases": [],
+   "lng": -118.443901,
+   "lat": 34.073631,
+   "osm": "way/184446757"
+  },
+  {
+   "id": "northwest-campus-auditorium",
+   "name": "Northwest Campus Auditorium",
+   "short": "Northwest Campus Auditorium",
+   "kind": "academic",
+   "codes": [
+    "NWAUD"
+   ],
+   "aliases": [],
+   "lng": -118.450445,
+   "lat": 34.071888,
+   "osm": "way/422876603"
+  },
+  {
+   "id": "brain-research-institute",
+   "name": "Brain Research Institute",
+   "short": "Brain Research Institute",
+   "kind": "academic",
+   "codes": [
+    "BRI"
+   ],
+   "aliases": [],
+   "lng": -118.444372,
+   "lat": 34.066342,
+   "osm": "way/179088301"
+  },
+  {
+   "id": "rosenfeld-library",
+   "name": "Rosenfeld Library",
+   "short": "Rosenfeld Library",
+   "kind": "library",
+   "codes": [
+    "ROSNFLD"
+   ],
+   "aliases": [
+    "Eugene and Maxine Rosenfeld Library"
+   ],
+   "lng": -118.443446,
+   "lat": 34.074365,
+   "osm": "way/854806689"
+  },
+  {
+   "id": "pritzker-hall",
+   "name": "Pritzker Hall",
+   "short": "Pritzker Hall",
+   "kind": "academic",
+   "codes": [
+    "PRITZKER"
+   ],
+   "aliases": [
+    "Pritzker Hall (formerly Psychology Tower)"
+   ],
+   "lng": -118.44076,
+   "lat": 34.069637,
+   "osm": "way/422876565"
+  },
+  {
+   "id": "luvalle-commons",
+   "name": "LuValle Commons",
+   "short": "LuValle Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.439252,
+   "lat": 34.073663,
+   "osm": "relation/6287588"
+  },
+  {
+   "id": "sunset-canyon-recreation-center",
+   "name": "Sunset Canyon Recreation Center",
+   "short": "Sunset Canyon Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.451752,
+   "lat": 34.074682,
+   "osm": "way/422876664"
+  },
+  {
+   "id": "kinsey-teaching-pavilion",
+   "name": "Kinsey Teaching Pavilion",
+   "short": "Kinsey Teaching Pavilion",
+   "kind": "academic",
+   "codes": [
+    "KNSY PV"
+   ],
+   "aliases": [
+    "Kinsey Science Teaching Pavilion"
+   ],
+   "lng": -118.441302,
+   "lat": 34.070153,
+   "osm": "way/422876582"
+  },
+  {
+   "id": "collins-executive-education-center",
+   "name": "Collins Executive Education Center",
+   "short": "Collins Executive Education Center",
+   "kind": "academic",
+   "codes": [
+    "COLLINS"
+   ],
+   "aliases": [
+    "Collins Center for Executive Education"
+   ],
+   "lng": -118.444448,
+   "lat": 34.073524,
+   "osm": "way/422876536"
+  },
+  {
+   "id": "mullin-management-commons",
+   "name": "Mullin Management Commons",
+   "short": "Mullin Management Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.443841,
+   "lat": 34.074025,
+   "osm": "way/184488681"
+  },
+  {
+   "id": "la-kretz-hall",
+   "name": "La Kretz Hall",
+   "short": "La Kretz Hall",
+   "kind": "academic",
+   "codes": [
+    "LAKRETZ"
+   ],
+   "aliases": [],
+   "lng": -118.442692,
+   "lat": 34.06757,
+   "osm": "way/422876588"
+  },
+  {
+   "id": "la-kretz-botany-building",
+   "name": "La Kretz Botany Building",
+   "short": "La Kretz Botany Building",
+   "kind": "academic",
+   "codes": [
+    "BOTANY"
+   ],
+   "aliases": [
+    "Botany Building"
+   ],
+   "lng": -118.441144,
+   "lat": 34.066808,
+   "osm": "way/422876524"
+  },
+  {
+   "id": "ahmanson-lovelace-brain-mapping-center",
+   "name": "Ahmanson-Lovelace Brain Mapping Center",
+   "short": "Ahmanson-Lovelace Brain Mapping Center",
+   "kind": "academic",
+   "codes": [
+    "BMC"
+   ],
+   "aliases": [
+    "Brain Mapping Center"
+   ],
+   "lng": -118.444382,
+   "lat": 34.066701,
+   "osm": "way/422876521"
+  },
+  {
+   "id": "weyburn-commons",
+   "name": "Weyburn Commons",
+   "short": "Weyburn Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.448908,
+   "lat": 34.061508,
+   "osm": "way/199954903"
+  },
+  {
+   "id": "krieger-c-krieger-b",
+   "name": "Krieger C;Krieger B",
+   "short": "Krieger C;Krieger B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Krieger B"
+   ],
+   "lng": -118.45511,
+   "lat": 34.075547,
+   "osm": "way/422876715"
+  },
+  {
+   "id": "saxon-commons",
+   "name": "Saxon Commons",
+   "short": "Saxon Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -118.452789,
+   "lat": 34.071427,
+   "osm": "way/590016591"
+  },
+  {
+   "id": "la-kretz-garden-pavillion",
+   "name": "La Kretz Garden Pavillion",
+   "short": "La Kretz Garden Pavillion",
+   "kind": "academic",
+   "codes": [
+    "LKGP"
+   ],
+   "aliases": [],
+   "lng": -118.441548,
+   "lat": 34.066759,
+   "osm": "way/1081958241"
+  },
+  {
+   "id": "macgowan-east",
+   "name": "Macgowan East",
+   "short": "Macgowan East",
+   "kind": "academic",
+   "codes": [
+    "MCGWN E"
+   ],
+   "aliases": [
+    "Macgowan Hall East"
+   ],
+   "lng": -118.439329,
+   "lat": 34.076118,
+   "osm": "way/422876727"
+  }
+ ]
+}
