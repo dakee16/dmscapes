@@ -420,11 +420,11 @@ for (const o of official) {
   const variants = [o.name, o.name.replace(/\s*\(.*?\)\s*/g, " "), o.name.split(",")[0], ...o.aliases];
   const names = new Set(variants.map(norm));
   const cores = new Set(variants.map(core).filter(Boolean));
-  // A hall's own entry ("Broadway Residence Hall") belongs to the hall, not to a place.
-  const hallList = [...hallBuildings];
-  const isHall =
-    hallList.some((b) => (o.center && inBuilding(o.center, b)) || o.rings.some((r) => inRing(b.center, r)) || osmNames(b.tags).some((n) => names.has(norm(n)) || cores.has(core(n)))) ||
-    byWords(variants, hallList, false);
+  // A hall's own entry ("Broadway Residence Hall") belongs to the hall, not to a place. Exact
+  // and core names only: the word rule would hand "Willard" to E. Willard Miller Hall.
+  const isHall = [...hallBuildings].some(
+    (b) => (o.center && inBuilding(o.center, b)) || o.rings.some((r) => inRing(b.center, r)) || osmNames(b.tags).some((n) => names.has(norm(n)) || cores.has(core(n))),
+  );
   if (isHall) continue;
   const host =
     candidates.find((b) => (o.center && inBuilding(o.center, b)) || o.rings.some((r) => inRing(b.center, r))) ??

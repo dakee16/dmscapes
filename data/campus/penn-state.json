@@ -1,6 +1,6 @@
 {
  "collegeId": "penn-state",
- "generatedAt": "2026-10-19T18:32:39.495Z",
+ "generatedAt": "2026-10-19T18:47:00.686Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -949,11 +949,15 @@
   {
    "id": "bryce-jordan-center",
    "name": "Bryce Jordan Center",
-   "short": "Bryce Jordan Center",
+   "short": "Bryce Jordan Ctr",
    "kind": "academic",
-   "codes": [],
-   "aliases": [
+   "codes": [
     "BJC"
+   ],
+   "aliases": [
+    "BJC",
+    "Bryce Jordan Ctr",
+    "Jordan Center (Bryce)"
    ],
    "lng": -77.855556,
    "lat": 40.808602,
@@ -1618,13 +1622,17 @@
   {
    "id": "willard-building",
    "name": "Willard Building",
-   "short": "Willard Building",
+   "short": "Willard Bldg",
    "kind": "academic",
-   "codes": [],
+   "codes": [
+    "WLD"
+   ],
    "aliases": [
     "Joseph M. Willard Building",
     "Willard",
-    "WLD"
+    "WLD",
+    "Willard Bldg",
+    "Willard (Joseph M)"
    ],
    "lng": -77.864389,
    "lat": 40.795756,
