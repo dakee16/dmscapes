@@ -28,7 +28,7 @@
 .crumbs a { color: var(--ds-muted); }
 .eyebrowRow { display: flex; align-items: center; gap: 14px; margin-top: 14px; }
 .eyebrow { margin: 0; font: 600 12px var(--ds-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-blue); }
-.linkBtn { font-size: 14px; font-weight: 700; color: var(--ds-blue); text-decoration: underline; background: none; border: 0; padding: 0; cursor: pointer; font-family: inherit; }
+.linkBtn { font-size: 14px; font-weight: 700; color: var(--ds-blue); text-decoration: underline; background: none; border: 0; padding: 0; cursor: pointer; font-family: inherit; white-space: nowrap; }
 .eyebrowRow .linkBtn:first-of-type { margin-left: auto; }
 .title { margin: 6px 0 0; font-weight: 400; line-height: 1; }
 .titleBig { display: block; font-size: 46px; font-weight: 850; font-stretch: 88%; letter-spacing: -0.04em; }
@@ -195,7 +195,9 @@
   .layout { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "map" "body"; padding: 12px 16px 24px; }
   .layout[data-view="results"] { grid-template-areas: "map" "head" "body"; }
   .mapWrap { position: relative; top: 0; height: 360px; min-height: 0; margin: 14px 0 4px; }
-  .layout[data-view="results"] .mapWrap { margin-top: 0; }
+  .layout[data-view="results"] .mapWrap { margin: -12px -16px 4px; border-radius: 0; box-shadow: none; }
+  /* The phone designs (06, 08, 09) show no key; the list beside the map says the same. */
+  .legend { display: none; }
   .titleBig { font-size: 40px; }
   .titleHall { font-size: 44px; }
   .titleSerif { font-size: 34px; }
@@ -203,8 +205,9 @@
   .place .days { order: 3; width: 100%; padding-left: 38px; }
   .day { min-width: 46px; height: 40px; }
   .go { position: sticky; bottom: 0; margin: 20px -16px 0; padding: 12px 16px; background: var(--ds-paper); border-top: 1.5px solid rgba(22, 22, 29, 0.08); }
-  .tiles { grid-template-columns: 1fr 1fr; }
-  .tileInk { grid-column: 1 / -1; }
+  .tiles { grid-template-columns: 1.15fr 1fr 1fr; }
+  .tile { padding: 10px 12px; font-size: 12px; }
+  .tile b { font-size: 21px; white-space: nowrap; }
   .ac { display: none; }
   .dialog { padding: 24px 18px; }
   .dialogTitle { font-size: 28px; }
