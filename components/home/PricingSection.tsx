@@ -1,8 +1,10 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import Headline from "@/components/ds/Headline";
 import PlanCta from "@/components/site/PlanCta";
 import { ArrowRight, Check } from "@/components/ds/Icons";
 import { PRICING } from "@/lib/home-data";
+import { PlusPerk } from "@/components/hall-finder/Entry";
 import css from "./Home.module.css";
 
 type Tier = (typeof PRICING)[keyof typeof PRICING];
@@ -59,11 +61,15 @@ export default function PricingSection() {
               <Price tier={tier} />
               <p className={css.planLine}>{tier.line}</p>
               <ul className={css.perks}>
-                {tier.perks.map((perk) => (
-                  <li key={perk}>
-                    <Check color={check} size={18} className="ds-check" />
-                    <span>{perk}</span>
-                  </li>
+                {tier.perks.map((perk, i) => (
+                  <Fragment key={perk}>
+                    <li>
+                      <Check color={check} size={18} className="ds-check" />
+                      <span>{perk}</span>
+                    </li>
+                    {/* Hall Finder goes after the vibes (design-handoff/hall-finder 17-Mentions). */}
+                    {tier.name === "Plus" && i === 2 && <PlusPerk link check={<Check color={check} size={18} className="ds-check" />} />}
+                  </Fragment>
                 ))}
               </ul>
               <div className={css.planCta}>

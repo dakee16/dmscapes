@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import PageShell from "@/components/ds/PageShell";
 import PageHero from "@/components/ds/PageHero";
@@ -9,6 +10,7 @@ import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import { softwareApplicationJsonLd } from "@/lib/seo";
 import UpgradeButton from "@/components/site/UpgradeButton";
+import { PlusPerk } from "@/components/hall-finder/Entry";
 import { SCHOOLS } from "@/lib/schools";
 import { STYLES } from "@/lib/styles";
 import { POSTS } from "@/content/blog";
@@ -295,11 +297,15 @@ export default function PricingPage() {
                 noteClassName={css.noteDark}
               />
               <ul className={css.perks}>
-                {PLUS_PERKS.map((perk) => (
-                  <li key={perk.title}>
-                    <Check size={16} color="var(--ds-yellow)" />
-                    <span>{perk.title}</span>
-                  </li>
+                {PLUS_PERKS.map((perk, i) => (
+                  <Fragment key={perk.title}>
+                    <li>
+                      <Check size={16} color="var(--ds-yellow)" />
+                      <span>{perk.title}</span>
+                    </li>
+                    {/* Hall Finder goes after the vibes (design-handoff/hall-finder 17-Mentions). */}
+                    {i === 1 && <PlusPerk link check={<Check size={16} color="var(--ds-yellow)" />} />}
+                  </Fragment>
                 ))}
               </ul>
               <p className={css.planFoot}>
