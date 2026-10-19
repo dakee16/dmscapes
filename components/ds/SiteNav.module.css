@@ -535,5 +535,6 @@
 
 /* Hall Finder entry points (design-handoff/hall-finder Nav): pink NEW tag, highlighted Plan row. */
 .newTag { display: inline-flex; align-items: center; height: 18px; margin-left: 6px; padding: 0 6px; border-radius: 5px; background: var(--ds-pink); color: var(--ds-ink); font: 700 9px var(--ds-mono); letter-spacing: 0.08em; text-transform: uppercase; vertical-align: middle; }
+.sheetBig .newTag { height: 22px; margin: 0 auto 0 14px; padding: 0 8px; font-size: 10px; }
 .rowHot { background: #fff0a8; }
 .rowHot .rowLabel, .rowHot strong { font-weight: 800; }

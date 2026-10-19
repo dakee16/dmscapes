@@ -253,7 +253,9 @@ export default function Nav({
     </>
   );
 
-  const primary = hallFinder ? [PRIMARY[0], HALL_FINDER_LINK, ...PRIMARY.slice(1).filter((l) => l.key !== "blog")] : PRIMARY;
+  // The phone sheet keeps Blog (design 11-NavPhone); only the top bar gives it up.
+  const sheetPrimary = hallFinder ? [PRIMARY[0], HALL_FINDER_LINK, ...PRIMARY.slice(1)] : PRIMARY;
+  const primary = sheetPrimary.filter((l) => !hallFinder || l.key !== "blog");
   const groups = hallFinder ? withHallFinder(GROUPS) : GROUPS;
 
   const groupCard = (where: "more" | "sheet") => (group: Group, index: number) => (
@@ -345,7 +347,7 @@ export default function Nav({
       <div id="site-navigation" className={s.sheet} data-open={mobileOpen} hidden={!mobileOpen}>
         <div className={s.sheetInner}>
           <div className={s.sheetPrimary}>
-            {primary.map((link, i) => (
+            {sheetPrimary.map((link, i) => (
               <Link key={link.key} href={link.href} className={s.sheetBig}
                 onClick={() => { if (link.key === "hall-finder") track("hall_finder_entry_clicked", { where: "nav" }); close(); }}
                 aria-current={current === link.key ? "page" : undefined} style={{ "--i": i } as CSSProperties}>
