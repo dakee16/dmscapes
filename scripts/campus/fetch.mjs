@@ -4,6 +4,7 @@
 //   node scripts/campus/fetch.mjs penn-state --refresh  fetch everything again
 // One request per dataset:
 //   buildings.json  OSM named (or addressed) buildings, their entrance=* nodes, and the campus outline
+//   unnamed.json    OSM unnamed buildings inside the outline, when the official list has locations
 //   walk.json       OSM walking network
 //   codes.json      the school's official building list, when config.codes.arcgis points at one
 //                   (other lists are read once by hand into config/<id>.codes.json)
@@ -54,6 +55,8 @@ const [osmType, osmId] = (config.area.osm ?? "").split("/");
 const outline = osmId ? `${osmType}(${osmId});\nout geom;` : "";
 
 const HIGHWAYS = "footway|path|pedestrian|steps|living_street|residential|service|unclassified|tertiary|secondary|primary";
+const listHasPoints = () =>
+  Boolean(config.codes?.file && JSON.parse(fs.readFileSync(config.codes.file, "utf8")).buildings.some((b) => Number.isFinite(b.lng)));
 
 const datasets = {
   buildings: () =>
@@ -69,6 +72,19 @@ way(r.b)->.m;
 (node(w.b)["entrance"]; node(w.m)["entrance"];);
 out;
 ${outline}`),
+
+  // Buildings OSM leaves unnamed, inside the campus outline only. build.mjs names them from the
+  // official list where a listed footprint or point lands on one, so it's only fetched when the
+  // list has locations (an ArcGIS layer, or points in config/<id>.codes.json).
+  unnamed: osmId && (config.codes?.arcgis || listHasPoints())
+    ? () =>
+        overpass(`[out:json][timeout:300];
+area(${(osmType === "relation" ? 3600000000 : 2400000000) + Number(osmId)})->.campus;
+way["building"][!"name"](area.campus)->.u;
+.u out body geom;
+node(w.u)["entrance"];
+out;`)
+    : null,
 
   // Sidewalks and crossings are highway=footway (footway=sidewalk|crossing), so the list covers them.
   walk: () =>
