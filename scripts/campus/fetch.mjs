@@ -3,9 +3,10 @@
 //   node scripts/campus/fetch.mjs penn-state            fetch whatever isn't cached yet
 //   node scripts/campus/fetch.mjs penn-state --refresh  fetch everything again
 // One request per dataset:
-//   buildings.json  OSM named (or addressed) buildings in the campus area, plus their entrance=* nodes
-//   walk.json       OSM walking network in the campus bbox plus walkMarginM
+//   buildings.json  OSM named (or addressed) buildings, their entrance=* nodes, and the campus outline
+//   walk.json       OSM walking network
 //   codes.json      the school's official building list, when config.codes.arcgis points at one
+//                   (other lists are read once by hand into config/<id>.codes.json)
 // OVERPASS_URL overrides the endpoint (default overpass-api.de).
 import fs from "node:fs";
 import path from "node:path";
@@ -41,39 +42,37 @@ const overpass = (query) =>
     body: new URLSearchParams({ data: query }),
   });
 
-// Campus area: an OSM way/relation (Overpass area id = 2400000000 + way, 3600000000 + relation) or the bbox.
+// Everything is fetched in the campus bbox plus walkMarginM, so halls just off campus and the
+// streets around its edge are included. The campus outline (config.area.osm, a way or relation)
+// comes with the buildings; build.mjs keeps places inside it.
 const [S, W, N, E] = config.area.bbox;
-const [osmType, osmId] = (config.area.osm ?? "").split("/");
-const areaId = osmType === "relation" ? 3600000000 + Number(osmId) : osmType === "way" ? 2400000000 + Number(osmId) : null;
-const inArea = areaId ? "(area.campus)" : `(${S},${W},${N},${E})`;
-const areaLine = areaId ? `area(${areaId})->.campus;` : "";
-
-// Margin so routes that leave the campus edge (a street just outside it) still resolve.
 const m = config.walkMarginM ?? 0;
 const dLat = m / 111320;
 const dLng = m / (111320 * Math.cos((((S + N) / 2) * Math.PI) / 180));
-const walkBox = [S - dLat, W - dLng, N + dLat, E + dLng].map((v) => v.toFixed(6)).join(",");
+const box = [S - dLat, W - dLng, N + dLat, E + dLng].map((v) => v.toFixed(6)).join(",");
+const [osmType, osmId] = (config.area.osm ?? "").split("/");
+const outline = osmId ? `${osmType}(${osmId});\nout geom;` : "";
 
 const HIGHWAYS = "footway|path|pedestrian|steps|living_street|residential|service|unclassified|tertiary|secondary|primary";
 
 const datasets = {
   buildings: () =>
-    overpass(`[out:json][timeout:300];
-${areaLine}
+    overpass(`[out:json][timeout:300][bbox:${box}];
 (
-  way["building"]["name"]${inArea};
-  relation["building"]["name"]${inArea};
-  way["building"]["addr:housenumber"]${inArea};
+  way["building"]["name"];
+  relation["building"]["name"];
+  way["building"]["addr:housenumber"];
 )->.b;
 .b out body geom;
 way(r.b)->.m;
 .m out skel;
 (node(w.b)["entrance"]; node(w.m)["entrance"];);
-out;`),
+out;
+${outline}`),
 
   // Sidewalks and crossings are highway=footway (footway=sidewalk|crossing), so the list covers them.
   walk: () =>
-    overpass(`[out:json][timeout:300][bbox:${walkBox}];
+    overpass(`[out:json][timeout:300][bbox:${box}];
 way["highway"~"^(${HIGHWAYS})$"]["access"!~"^(private|no)$"]["foot"!="no"]->.w;
 .w out body qt;
 node(w.w);
