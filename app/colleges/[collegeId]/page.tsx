@@ -11,6 +11,8 @@ import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import { ArrowRight } from "@/components/ds/Icons";
 import HallDirectory, { type HallCard } from "@/components/college/HallDirectory";
+import { CollegeBand, CollegeChip } from "@/components/hall-finder/Entry";
+import { exampleFor } from "@/lib/hall-finder-example";
 import { SCHOOLS, formatDims, getSchool, publishedDimsCount } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { isPublished, roomFamily, roomName, sqFtOf, ft } from "@/lib/room-preview";
@@ -131,6 +133,8 @@ export default async function CollegePage(props: {
   const place = [school.city, school.state].filter(Boolean).join(", ");
   const address = postalAddressJsonLd(school.city, school.state);
   const short = shortName(school);
+  // Pilot schools get the Hall Finder chip and band (they render only when live or previewed).
+  const hallFinder = exampleFor(school.id, short);
   const roomTypes = school.dorms.reduce((n, d) => n + d.rooms.length, 0);
   const crumbs = [
     { name: "Home", path: "/" },
@@ -195,7 +199,12 @@ export default async function CollegePage(props: {
       />
       <PageHero
         bg="var(--ds-sky)"
-        crumbs={<Crumbs items={[{ name: "Colleges", path: "/colleges" }, { name: short, path: `/colleges/${school.id}` }]} />}
+        crumbs={
+          <>
+            <Crumbs items={[{ name: "Colleges", path: "/colleges" }, { name: short, path: `/colleges/${school.id}` }]} />
+            {hallFinder && <CollegeChip collegeId={school.id} short={short} />}
+          </>
+        }
         eyebrow={
           <>
             {school.name}
@@ -273,6 +282,8 @@ export default async function CollegePage(props: {
           withDims > 0 ? <>{withDims} published sizes</> : <>Sizes estimated, clearly marked</>,
         ]}
       />
+
+      {hallFinder && <CollegeBand example={hallFinder} allHalls={hallFinder.halls === school.dorms.length} />}
 
       <section id="halls" className="ds-section" aria-labelledby="halls-title" style={{ scrollMarginTop: 80 }}>
         <div className="ds-wrap">
