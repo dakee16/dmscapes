@@ -45,7 +45,7 @@ export function sitemapEntries(group: string): MetadataRoute.Sitemap {
         { url: `${BASE}/cookies`, changeFrequency: "yearly", priority: 0.3 },
         // Hall Finder pages only once it's live (until then they're noindex and unlinked).
         ...(hallFinderLive()
-          ? PILOT_SCHOOLS.map((id) => ({ url: `${BASE}/colleges/${id}/hall-finder`, changeFrequency: "monthly" as const, priority: 0.7 }))
+          ? [`${BASE}/hall-finder`, ...PILOT_SCHOOLS.map((id) => `${BASE}/colleges/${id}/hall-finder`)].map((url) => ({ url, changeFrequency: "monthly" as const, priority: 0.7 }))
           : []),
       ];
     case "colleges":

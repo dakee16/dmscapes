@@ -11,7 +11,6 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight, CloseIcon, SearchIcon } from "@/components/ds/Icons";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { getBrowserClient } from "@/lib/supabase-browser";
 import { track } from "@/lib/analytics";
 import { parseIcs, type IcsClass } from "@/lib/ics";
 import {
@@ -32,8 +31,10 @@ import {
 import { EMPTY_DRAFT, useHallFinder } from "@/lib/hall-finder-store";
 import type { MapHall, MapPlace, MapRoute } from "./FinderMap";
 import ConfirmIcs from "./ConfirmIcs";
+import { LAST_SCHOOL_KEY } from "./LastSchool";
 import Results, { type ShownPlace } from "./Results";
 import { searchPlaces } from "./search";
+import { hallFinderHeaders, type SavedSetup } from "./api";
 import styles from "./HallFinder.module.css";
 
 const FinderMap = dynamic(() => import("./FinderMap"), { ssr: false, loading: () => <div className={styles.mapCanvas} aria-hidden="true" /> });
@@ -69,6 +70,7 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
     if (fromUrl) act().setDraft(collegeId, fromUrl);
     setReady(true);
     try {
+      localStorage.setItem(LAST_SCHOOL_KEY, collegeId);
       const key = `dormscape-hf-started-${collegeId}`;
       if (!sessionStorage.getItem(key)) {
         sessionStorage.setItem(key, "1");
@@ -203,14 +205,7 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
   const [routes, setRoutes] = useState<MapRoute[]>([]);
   const paywallSeen = useRef(false);
 
-  async function headers(): Promise<Record<string, string>> {
-    const h: Record<string, string> = { "Content-Type": "application/json" };
-    // Dev-only: the sessionStorage auth stub has no real token, so tell the dev server the plan.
-    if (process.env.NODE_ENV !== "production" && profile?.id === "dev-mock") h["x-dormscape-dev-plan"] = String(profile.plan ?? "free");
-    const token = (await getBrowserClient()?.auth.getSession())?.data.session?.access_token;
-    if (token) h.Authorization = `Bearer ${token}`;
-    return h;
-  }
+  const headers = () => hallFinderHeaders(profile);
 
   useEffect(() => {
     if (view !== "results" || !signedIn || !apiPlaces.length) return;
@@ -267,6 +262,59 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
     return () => ctrl.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [view, focusId, result]);
+
+  // ---- Saved setups (Plus and Pro): autosave this draft into one setup, share it by link.
+  const setupId = useHallFinder((s) => s.setupIds[collegeId]);
+  const [saving, setSaving] = useState<"probe" | "on" | "off">("probe");
+  const [saved, setSaved] = useState(false);
+  const [shareLabel, setShareLabel] = useState("Share");
+  const paid = result?.tier === "paid";
+  const setupPlaces = counted.map((x) => ({ ...(x.p.placeId ? { placeId: x.p.placeId } : { pin: x.p.pin }), days: x.p.days, ...(x.p.label ? { label: x.p.label } : {}) }));
+  useEffect(() => {
+    const fromRooms = params.get("setup");
+    if (fromRooms && /^[0-9a-f-]{36}$/.test(fromRooms)) act().setSetupId(collegeId, fromRooms);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    if (!paid || saving !== "probe") return;
+    (async () => {
+      const res = await fetch(`/api/hall-finder/setups?collegeId=${collegeId}`, { headers: await headers() }).catch(() => null);
+      // Until the table exists (or for any account that can't save), Save and Share stay hidden.
+      setSaving(res?.ok ? "on" : "off");
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [paid, saving]);
+  useEffect(() => {
+    if (!paid || saving !== "on" || !setupPlaces.length) return;
+    const t = setTimeout(async () => {
+      const body = { collegeId, places: setupPlaces, filters: draft.filters };
+      const res = setupId
+        ? await fetch("/api/hall-finder/setups", { method: "PATCH", headers: await headers(), body: JSON.stringify({ id: setupId, ...body }) })
+        : await fetch("/api/hall-finder/setups", { method: "POST", headers: await headers(), body: JSON.stringify({ ...body, name: `${schoolName} classes` }) });
+      if (res.status === 404 && setupId) return act().setSetupId(collegeId, null); // deleted elsewhere: the next change saves anew
+      const json = (await res.json().catch(() => null)) as { setup?: SavedSetup } | null;
+      if (res.ok && json?.setup) {
+        act().setSetupId(collegeId, json.setup.id);
+        setSaved(true);
+      }
+    }, 1500);
+    return () => clearTimeout(t);
+    // apiKey stands for the places and filters.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [paid, saving, apiKey, setupId]);
+  async function share() {
+    if (!setupId) return;
+    const res = await fetch("/api/hall-finder/setups", { method: "PATCH", headers: await headers(), body: JSON.stringify({ id: setupId, share: true }) });
+    const json = (await res.json().catch(() => null)) as { setup?: SavedSetup } | null;
+    if (!res.ok || !json?.setup?.shareToken) return setShareLabel("Couldn't share");
+    const url = `${window.location.origin}/hall-finder/s/${json.setup.shareToken}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setShareLabel("Link copied");
+    } catch {
+      window.prompt("Copy this link", url);
+    }
+  }
 
   function rankMyHalls() {
     if (!signedIn) {
@@ -520,6 +568,9 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
           onFilter={(k, on) => act().setFilter(collegeId, k, on)}
           onEdit={() => router.push(urlFor("input"))}
           onUpgrade={() => openUpgrade("hall-finder")}
+          saveNote={paid && saving === "on" && saved ? "Saved to your account." : undefined}
+          onShare={paid && saving === "on" && setupId ? share : undefined}
+          shareLabel={shareLabel}
         />
         {error && <p className={styles.error} role="alert">{error}</p>}
       </div>
