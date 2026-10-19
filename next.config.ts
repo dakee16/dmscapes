@@ -101,13 +101,13 @@ function buildCsp(isDev: boolean): string {
     "style-src 'self' 'unsafe-inline'",
     // blob:/data: for canvas layout previews; Amazon CDN for product images;
     // Google Analytics hits (Google's GA4 CSP list).
-    "img-src 'self' blob: data: https://m.media-amazon.com https://*.google-analytics.com https://*.googletagmanager.com",
+    "img-src 'self' blob: data: https://m.media-amazon.com https://*.google-analytics.com https://*.googletagmanager.com https://tiles.openfreemap.org",
     // next/font self-hosts every woff2 (verified: .next/static/media).
     "font-src 'self'",
     [
       "connect-src 'self'",
       isDev ? "ws:" : null, // HMR websocket
-      isDev ? "https://tiles.openfreemap.org" : null, // dev campus review map (app/dev/campus)
+      "https://tiles.openfreemap.org", // Hall Finder map: OpenFreeMap style, tiles, sprites and glyphs
       supabaseOrigin,
       supabaseOrigin?.replace(/^https:/,"wss:"),
       voiceOrigin,
@@ -121,6 +121,8 @@ function buildCsp(isDev: boolean): string {
     ],
     "object-src 'none'",
     "media-src 'self' blob:",
+    // MapLibre's worker: same-origin (/api/hall-finder/worker), blob: when it wraps one.
+    "worker-src 'self' blob:",
     "base-uri 'self'",
     "form-action 'self'",
     "frame-ancestors 'none'",
@@ -140,6 +142,12 @@ export default function nextConfig(phase: string): NextConfig {
     poweredByHeader: false,
     // Inlined into proxy.ts at build time (see routeRoots).
     env: { DORMSCAPE_ROUTE_ROOTS: JSON.stringify(routeRoots()) },
+    // Hall Finder's server-only data (minutes, paths) and the MapLibre worker ship with their routes.
+    outputFileTracingIncludes: {
+      "/api/hall-finder/rank": ["./data/campus/*.json", "./data/schools/*.json"],
+      "/api/hall-finder/path": ["./data/campus/*.json", "./data/campus/paths/**/*.json", "./data/schools/*.json"],
+      "/api/hall-finder/worker": ["./node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs"],
+    },
     // Redesign renders ship as JPEG masters; next/image serves AVIF/WebP.
     images: {
       formats: ["image/avif", "image/webp"],
