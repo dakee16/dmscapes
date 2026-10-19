@@ -342,3 +342,5 @@
 .gateCards span { display: block; margin-bottom: 6px; font: 600 10px var(--ds-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-muted); }
 .gateCards p + p span { color: var(--ds-magenta, #c2187a); }
 @media (max-width: 520px) { .gateCards { grid-template-columns: 1fr; } }
+.savedChip { display: inline-flex; align-items: center; gap: 8px; height: 30px; margin: 0 0 16px; padding: 0 12px; border-radius: 999px; background: var(--ds-ink); color: var(--ds-yellow); font: 600 10px var(--ds-mono); letter-spacing: 0.12em; text-transform: uppercase; }
+.gateBack { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--ds-blue); }

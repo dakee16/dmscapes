@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { PLUS_PRICE_USD } from "@/lib/plan";
+import { decodeDraft } from "@/lib/hall-finder";
 import { useRouter } from "next/navigation";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { useAuth, type AuthModalReason } from "@/lib/auth-context";
@@ -248,6 +249,17 @@ export default function AuthForm({
   const buyReason = reason === "buy";
   const generateReason = reason === "generate";
   const hallFinderReason = reason === "hall-finder";
+  // Hall Finder's gate (design-handoff/hall-finder 03-Gate): how many places the draft in
+  // `next` kept, and a way back to them without the results view.
+  const finderNext = (() => {
+    try {
+      return hallFinderReason ? new URL(next, "https://dormscape.us") : null;
+    } catch {
+      return null;
+    }
+  })();
+  const savedPlaces = decodeDraft(finderNext?.searchParams.get("s"))?.places.length ?? 0;
+  finderNext?.searchParams.delete("view");
   const signupBlocked = mode === "signup" && !agreed;
 
   const title = confirmSent
@@ -263,7 +275,7 @@ export default function AuthForm({
           : generateReason
             ? "Sign in to design"
             : hallFinderReason
-              ? "Your halls are ranked."
+              ? "Your halls are ranked"
               : mode === "signup" ? "Create your account" : "Welcome back";
 
   if (!configured) {
@@ -282,6 +294,11 @@ export default function AuthForm({
 
   return (
     <div className={styles.form}>
+      {hallFinderReason && savedPlaces > 0 && !confirmSent && (
+        <p className={styles.savedChip}>
+          <span aria-hidden="true">✓</span> {savedPlaces} {savedPlaces === 1 ? "place" : "places"} saved
+        </p>
+      )}
       <Title text={title} />
 
       {confirmSent ? (
@@ -404,6 +421,11 @@ export default function AuthForm({
               <p><span>Free account</span>Your #1 hall, its weekly walk and one route.</p>
               <p><span>Plus · ${PLUS_PRICE_USD} once</span>Every hall ranked, every route, compare halls.</p>
             </div>
+          )}
+          {finderNext && (
+            <Link href={finderNext.pathname + finderNext.search} className={styles.gateBack}>
+              Back to my places
+            </Link>
           )}
           {reason === "profile" && (
             <p className={styles.aside}>
