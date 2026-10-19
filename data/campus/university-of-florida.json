@@ -1,6 +1,6 @@
 {
  "collegeId": "university-of-florida",
- "generatedAt": "2026-10-19T18:47:03.059Z",
+ "generatedAt": "2026-10-19T18:47:42.681Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -24,11 +24,6 @@
    "name": "Housing page",
    "url": "https://housing.ufl.edu/apply/frequently-asked-questions/",
    "use": "year tag"
-  },
-  {
-   "name": "Manual fixes from the dev review page",
-   "url": "data/campus/overrides/university-of-florida.json",
-   "use": "manual pins, year tags, place codes and aliases"
   }
  ],
  "bounds": [
@@ -141,20 +136,20 @@
   {
    "dormId": "keys-residential-complex",
    "name": "Keys Residential Complex",
-   "lng": -82.342084,
-   "lat": 29.646547,
-   "pin": "manual",
-   "osm": "way/150861257",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
    "year": "any",
    "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
   },
   {
    "dormId": "lakeside-residential-complex",
    "name": "Lakeside Residential Complex",
-   "lng": -82.342084,
-   "lat": 29.646547,
-   "pin": "manual",
-   "osm": "way/150861257",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
    "year": "any",
    "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
   },
@@ -231,10 +226,10 @@
   {
    "dormId": "springs-residential-complex",
    "name": "Springs Residential Complex",
-   "lng": -82.342084,
-   "lat": 29.646547,
-   "pin": "manual",
-   "osm": "way/150861257",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
    "year": "any",
    "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
   },
