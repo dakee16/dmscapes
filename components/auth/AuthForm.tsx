@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { PLUS_PRICE_USD } from "@/lib/plan";
 import { useRouter } from "next/navigation";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { useAuth, type AuthModalReason } from "@/lib/auth-context";
@@ -246,6 +247,7 @@ export default function AuthForm({
   const saveDesign = reason === "save-design";
   const buyReason = reason === "buy";
   const generateReason = reason === "generate";
+  const hallFinderReason = reason === "hall-finder";
   const signupBlocked = mode === "signup" && !agreed;
 
   const title = confirmSent
@@ -260,7 +262,9 @@ export default function AuthForm({
           ? "Sign in to shop"
           : generateReason
             ? "Sign in to design"
-            : mode === "signup" ? "Create your account" : "Welcome back";
+            : hallFinderReason
+              ? "Your halls are ranked."
+              : mode === "signup" ? "Create your account" : "Welcome back";
 
   if (!configured) {
     return (
@@ -335,7 +339,9 @@ export default function AuthForm({
                 ? "Sign in and we'll send you to Amazon. Your room stays exactly as it is."
                 : generateReason
                   ? "Create a free account to generate your room. Your choices are saved, so you can pick up right here."
-                  : "Save your designs, revisit your favorites, and pick up where you left off."}
+                  : hallFinderReason
+                    ? "Sign in to see them. We kept your places, days and filters. You won't enter anything again."
+                    : "Save your designs, revisit your favorites, and pick up where you left off."}
           </p>
           <div className={styles.tabs} role="group" aria-label="Account access">
             {(["signup", "login"] as const).map((m) => (
@@ -393,6 +399,12 @@ export default function AuthForm({
               {busy ? "One sec…" : mode === "signup" ? "Create free account" : "Log in"}
             </button>
           </form>
+          {hallFinderReason && (
+            <div className={styles.gateCards}>
+              <p><span>Free account</span>Your #1 hall, its weekly walk and one route.</p>
+              <p><span>Plus · ${PLUS_PRICE_USD} once</span>Every hall ranked, every route, compare halls.</p>
+            </div>
+          )}
           {reason === "profile" && (
             <p className={styles.aside}>
               No account needed to start planning. <Link href="/plan">Plan my room free</Link>
