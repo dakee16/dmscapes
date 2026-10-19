@@ -107,6 +107,7 @@ function buildCsp(isDev: boolean): string {
     [
       "connect-src 'self'",
       isDev ? "ws:" : null, // HMR websocket
+      isDev ? "https://tiles.openfreemap.org" : null, // dev campus review map (app/dev/campus)
       supabaseOrigin,
       supabaseOrigin?.replace(/^https:/,"wss:"),
       voiceOrigin,

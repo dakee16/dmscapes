@@ -8,6 +8,7 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us";
  *   /account*       account, saved designs, settings, billing, compare
  *   /api/*          all API routes incl. the Stripe checkout/webhook endpoints
  *   /reset-password password-recovery landing (private, token in URL)
+ *   /dev            dev-only review tools (404 in production anyway)
  * The sitemap (app/sitemap.ts) is referenced so crawlers find every college page.
  */
 export default function robots(): MetadataRoute.Robots {
@@ -15,7 +16,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/account", "/rooms", "/api/", "/reset-password"],
+      disallow: ["/account", "/rooms", "/api/", "/reset-password", "/dev"],
     },
     sitemap: `${BASE}/sitemap.xml`,
   };
