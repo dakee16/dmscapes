@@ -9,15 +9,14 @@ import { MAX_PLACES, NO_FILTERS, type DayMask, type Draft, type DraftPlace, type
 
 export const EMPTY_DRAFT: Draft = { places: [], filters: NO_FILTERS };
 
-/** localStorage key for "send me back to the finder after I sign in": email verification lands elsewhere. */
-export const RESUME_KEY = "dormscape-hall-finder-resume";
-
 interface HallFinderState {
   drafts: Record<string, Draft>;
   setDraft: (collegeId: string, draft: Draft) => void;
   addPlaces: (collegeId: string, places: DraftPlace[]) => void;
   removePlace: (collegeId: string, index: number) => void;
   setDays: (collegeId: string, index: number, days: DayMask) => void;
+  /** Flip one weekday (bit) against the stored days, so quick taps don't undo each other. */
+  toggleDay: (collegeId: string, index: number, bit: number) => void;
   setFilter: (collegeId: string, key: keyof Filters, on: boolean) => void;
   setIcs: (collegeId: string, ics: Draft["ics"]) => void;
 }
@@ -46,6 +45,7 @@ export const useHallFinder = create<HallFinderState>()(
           }),
         removePlace: (collegeId, index) => edit(collegeId, (d) => ({ ...d, places: d.places.filter((_, i) => i !== index) })),
         setDays: (collegeId, index, days) => edit(collegeId, (d) => ({ ...d, places: d.places.map((p, i) => (i === index ? { ...p, days } : p)) })),
+        toggleDay: (collegeId, index, bit) => edit(collegeId, (d) => ({ ...d, places: d.places.map((p, i) => (i === index ? { ...p, days: p.days ^ (1 << bit) } : p)) })),
         setFilter: (collegeId, key, on) => edit(collegeId, (d) => ({ ...d, filters: { ...d.filters, [key]: on } })),
         setIcs: (collegeId, ics) => edit(collegeId, (d) => ({ ...d, ics })),
       };

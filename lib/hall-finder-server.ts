@@ -16,6 +16,7 @@ import {
   type DraftPlace,
   type Filters,
   type HallFacts,
+  type RankedHall,
 } from "@/lib/hall-finder";
 
 // Paths stay statically scoped so the production trace ships only data/campus and data/schools.
@@ -158,14 +159,6 @@ export function targetsFor(data: Loaded, places: DraftPlace[]): Target[] {
   return places.map((p) => (p.placeId ? { col: data.placeIndex.get(p.placeId)!, extra: 0, approx: false } : pinTarget(data, p.pin!)));
 }
 
-export interface RankedHall {
-  dormId: string;
-  /** Minutes walking a week: Σ days × one-way × 2. */
-  weekly: number;
-  /** The longest single one-way trip. */
-  farthest: number;
-  perPlace: { minutes: number; approx: boolean }[];
-}
 
 /** Whether the campus has any year tags, so the first-year filter means something. */
 export const hasYearData = (data: Loaded) => data.campus.halls.some((h) => h.year !== null);

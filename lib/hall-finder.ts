@@ -17,6 +17,26 @@ export function hasHallFinder(collegeId: string | null | undefined): boolean {
   return Boolean(collegeId) && PILOT_SCHOOLS.includes(collegeId!);
 }
 
+/** localStorage "send me back to the finder after I sign in", as "<ms>|<path>": email verification lands elsewhere. */
+export const RESUME_KEY = "dormscape-hall-finder-resume";
+const RESUME_TTL = 24 * 60 * 60 * 1000;
+export function setResume(path: string): void {
+  try { localStorage.setItem(RESUME_KEY, `${Date.now()}|${path}`); } catch {}
+}
+/** The finder path to resume after a sign-in landing, once (it's cleared either way). */
+export function takeResume(): string | null {
+  try {
+    const raw = localStorage.getItem(RESUME_KEY);
+    localStorage.removeItem(RESUME_KEY);
+    const cut = (raw ?? "").indexOf("|");
+    const at = (raw ?? "").slice(0, cut);
+    const path = cut > 0 ? (raw ?? "").slice(cut + 1) : "";
+    return path?.startsWith("/") && Date.now() - Number(at) < RESUME_TTL ? path : null;
+  } catch {
+    return null;
+  }
+}
+
 /** sessionStorage key for the ?hallfinder=preview flag (?hallfinder=off clears it). */
 export const PREVIEW_KEY = "dormscape-hall-finder";
 
@@ -182,3 +202,40 @@ export function formatMinutes(min: number): string {
   if (m < 60) return `${m} min`;
   return `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, "0")} m`;
 }
+
+/** Google encoded polyline (precision 5) -> [lng, lat] points, for the path API's answers. */
+export function decodePolyline(str: string): [number, number][] {
+  const pts: [number, number][] = [];
+  let i = 0, lat = 0, lng = 0;
+  const next = () => {
+    let shift = 0, result = 0, b: number;
+    do {
+      b = str.charCodeAt(i++) - 63;
+      result |= (b & 0x1f) << shift;
+      shift += 5;
+    } while (b >= 0x20);
+    return result & 1 ? ~(result >> 1) : result >> 1;
+  };
+  while (i < str.length) {
+    lat += next();
+    lng += next();
+    pts.push([lng / 1e5, lat / 1e5]);
+  }
+  return pts;
+}
+
+/** One hall's score as the rank API returns it (lib/hall-finder-server rank()). */
+export interface RankedHall {
+  dormId: string;
+  /** Minutes walking a week: Σ days × one-way × 2. */
+  weekly: number;
+  /** The longest single one-way trip. */
+  farthest: number;
+  perPlace: { minutes: number; approx: boolean }[];
+}
+
+/** POST /api/hall-finder/rank, by tier: the count, the #1 hall plus weekly gaps, or everything. */
+export type RankResult =
+  | { tier: "anon"; count: number }
+  | { tier: "free"; count: number; top: RankedHall | null; others: number[] }
+  | { tier: "paid"; count: number; ranked: RankedHall[] };
