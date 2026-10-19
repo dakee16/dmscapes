@@ -3,13 +3,14 @@ import type { StyleSpecification } from "maplibre-gl";
 // The finder's own MapLibre style over OpenFreeMap's OpenMapTiles vector tiles, drawn to
 // look like the hand-drawn maps in design-handoff/hall-finder: paper ground, white
 // buildings with thin ink outlines, soft green parks, small spaced caps street labels.
-// Street labels use OpenFreeMap's Noto Sans Bold glyphs (no Martian Mono glyph set yet).
+// Street labels are Martian Mono Bold from our own glyph set (public/map/glyphs: Latin-1,
+// Latin Extended-A and punctuation, drawn with the site's font by tiny-sdf at 24 px).
 const INK = "#16161D";
 const ROAD = "#FBFAF7";
 
 export const MAP_STYLE: StyleSpecification = {
   version: 8,
-  glyphs: "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
+  glyphs: "/map/glyphs/{fontstack}/{range}.pbf",
   sources: {
     omt: {
       type: "vector",
@@ -73,9 +74,9 @@ export const MAP_STYLE: StyleSpecification = {
       layout: {
         "symbol-placement": "line",
         "text-field": ["upcase", ["coalesce", ["get", "name"], ""]],
-        "text-font": ["Noto Sans Bold"],
-        "text-size": 10,
-        "text-letter-spacing": 0.2,
+        "text-font": ["Martian-Mono-Bold"],
+        "text-size": 9.5,
+        "text-letter-spacing": 0.12,
         "text-max-angle": 30,
       },
       paint: { "text-color": "#55555F", "text-halo-color": ROAD, "text-halo-width": 1.6 },
