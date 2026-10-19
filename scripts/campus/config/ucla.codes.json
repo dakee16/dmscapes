@@ -1,0 +1,403 @@
+{
+ "name": "UCLA Registrar, Building List (abbreviations used in the Schedule of Classes)",
+ "url": "https://registrar.ucla.edu/faculty-staff/classrooms-and-scheduling/building-list",
+ "read": "2026-10-19",
+ "buildings": [
+  {
+   "code": "700 WWP",
+   "name": "700 Westwood Plaza"
+  },
+  {
+   "code": "ANDERSON",
+   "name": "Marion Anderson Hall"
+  },
+  {
+   "code": "AU",
+   "name": "Ackerman Student Union"
+  },
+  {
+   "code": "BIO SCI",
+   "name": "Biomedical Sciences Research Building"
+  },
+  {
+   "code": "BMC",
+   "name": "Brain Mapping Center"
+  },
+  {
+   "code": "BOELTER",
+   "name": "Boelter Hall"
+  },
+  {
+   "code": "BOTANY",
+   "name": "Botany Building"
+  },
+  {
+   "code": "BOYER",
+   "name": "Boyer Hall"
+  },
+  {
+   "code": "BRADLEY",
+   "name": "Bradley Hall"
+  },
+  {
+   "code": "BRI",
+   "name": "Brain Research Institute"
+  },
+  {
+   "code": "BROAD",
+   "name": "Broad Art Center"
+  },
+  {
+   "code": "BUNCHE",
+   "name": "Bunche Hall"
+  },
+  {
+   "code": "CAMPBEL",
+   "name": "Campbell Hall"
+  },
+  {
+   "code": "CARNESL",
+   "name": "Carnesale Commons"
+  },
+  {
+   "code": "CLARK",
+   "name": "William Andrews Clark Memorial Library"
+  },
+  {
+   "code": "CNSI",
+   "name": "California NanoSystems Institute"
+  },
+  {
+   "code": "COLLINS",
+   "name": "Collins Center for Executive Education"
+  },
+  {
+   "code": "CORNELL",
+   "name": "Cornell Hall"
+  },
+  {
+   "code": "COVEL",
+   "name": "Covel Commons"
+  },
+  {
+   "code": "CNYN PT",
+   "name": "Canyon Point"
+  },
+  {
+   "code": "DE NEVE",
+   "name": "De Neve Plaza Commons Building"
+  },
+  {
+   "code": "DENT",
+   "name": "Dentistry, School of"
+  },
+  {
+   "code": "DODD",
+   "name": "Dodd Hall"
+  },
+  {
+   "code": "DYKSTRA",
+   "name": "Dykstra Hall"
+  },
+  {
+   "code": "ENGR IV",
+   "name": "Engineering IV"
+  },
+  {
+   "code": "ENGR V",
+   "name": "Engineering V"
+  },
+  {
+   "code": "ENGR VI",
+   "name": "Engineering VI"
+  },
+  {
+   "code": "ENTRPNR",
+   "name": "Entrepreneurs Hall"
+  },
+  {
+   "code": "FACTOR",
+   "name": "Factor Health Sciences Building"
+  },
+  {
+   "code": "FERNALD",
+   "name": "Fernald Center"
+  },
+  {
+   "code": "FIELD",
+   "name": "Field"
+  },
+  {
+   "code": "FOWLER",
+   "name": "Fowler Museum at UCLA"
+  },
+  {
+   "code": "FRANZ",
+   "name": "Franz Hall"
+  },
+  {
+   "code": "GEFFENHL",
+   "name": "Geffen Hall"
+  },
+  {
+   "code": "GEOLOGY",
+   "name": "Geology Building"
+  },
+  {
+   "code": "GOLD",
+   "name": "Gold Hall"
+  },
+  {
+   "code": "GOLDBERG",
+   "name": "Wendy and Leonard Goldberg Medical Building (formerly Medical Plaza 300)"
+  },
+  {
+   "code": "GONDA",
+   "name": "Gonda (Goldschmied) Neuroscience and Genetics Research Center"
+  },
+  {
+   "code": "GSEIS",
+   "name": "Graduate School of Education and Information Studies Building"
+  },
+  {
+   "code": "HAINES",
+   "name": "Haines Hall"
+  },
+  {
+   "code": "HEDRICK",
+   "name": "Hedrick Hall"
+  },
+  {
+   "code": "HERSHEY",
+   "name": "Hershey Hall"
+  },
+  {
+   "code": "HLTHSCI",
+   "name": "Center for the Health Sciences"
+  },
+  {
+   "code": "KAPLAN",
+   "name": "Kaplan Hall (formerly Humanities Building)"
+  },
+  {
+   "code": "KAUFMAN",
+   "name": "Kaufman Hall"
+  },
+  {
+   "code": "KH",
+   "name": "Kerckhoff Hall"
+  },
+  {
+   "code": "KNSY PV",
+   "name": "Kinsey Science Teaching Pavilion"
+  },
+  {
+   "code": "KNUDSEN",
+   "name": "Knudsen Hall"
+  },
+  {
+   "code": "KORN",
+   "name": "Korn Convocation Hall"
+  },
+  {
+   "code": "LABSCH1",
+   "name": "Lab School 1"
+  },
+  {
+   "code": "LAKRETZ",
+   "name": "La Kretz Hall"
+  },
+  {
+   "code": "LAW",
+   "name": "Law Building"
+  },
+  {
+   "code": "LKGP",
+   "name": "La Kretz Garden Pavillion"
+  },
+  {
+   "code": "LS",
+   "name": "Life Sciences"
+  },
+  {
+   "code": "LUVALLE",
+   "name": "Lu Valle Commons"
+  },
+  {
+   "code": "MACDNLD",
+   "name": "MacDonald Medical Research Laboratories"
+  },
+  {
+   "code": "MACGOWN",
+   "name": "Macgowan Hall"
+  },
+  {
+   "code": "MCGWN E",
+   "name": "Macgowan Hall East"
+  },
+  {
+   "code": "MNOUKIAN",
+   "name": "Vatche and Tamar Manoukian Medical Building (formerly Medical Plaza 100)"
+  },
+  {
+   "code": "MDCC",
+   "name": "Marion Davies Children's Center"
+  },
+  {
+   "code": "MELNITZ",
+   "name": "Melnitz Hall"
+  },
+  {
+   "code": "MOL SCI",
+   "name": "Molecular Sciences Building"
+  },
+  {
+   "code": "MOORE",
+   "name": "Moore Hall"
+  },
+  {
+   "code": "MORTON",
+   "name": "Morton Medical Building"
+  },
+  {
+   "code": "MS",
+   "name": "Mathematical Sciences"
+  },
+  {
+   "code": "MURPHY",
+   "name": "Murphy Hall (Administration)"
+  },
+  {
+   "code": "NEUROSC",
+   "name": "Neuroscience Research Building"
+  },
+  {
+   "code": "NO FAC",
+   "name": "No facility"
+  },
+  {
+   "code": "NWAUD",
+   "name": "Northwest Campus Auditorium"
+  },
+  {
+   "code": "OFF CAM",
+   "name": "Off campus"
+  },
+  {
+   "code": "OLYMPIC",
+   "name": "Olympic Hall"
+  },
+  {
+   "code": "OHRC",
+   "name": "Orthopedic Hospital Research Center"
+  },
+  {
+   "code": "OSTIN",
+   "name": "Ostin Music Center"
+  },
+  {
+   "code": "PAB",
+   "name": "Physics and Astronomy Building"
+  },
+  {
+   "code": "PERLOFF",
+   "name": "Perloff Hall"
+  },
+  {
+   "code": "PORTOLA",
+   "name": "Portola Plaza Building"
+  },
+  {
+   "code": "POWELL",
+   "name": "Powell Library Building"
+  },
+  {
+   "code": "PRITZKER",
+   "name": "Pritzker Hall (formerly Psychology Tower)"
+  },
+  {
+   "code": "PUB AFF",
+   "name": "Public Affairs Building"
+  },
+  {
+   "code": "PUB HLT",
+   "name": "Public Health, School of"
+  },
+  {
+   "code": "PVUB",
+   "name": "Ueberroth Building"
+  },
+  {
+   "code": "REED",
+   "name": "Reed Neurological Research Center"
+  },
+  {
+   "code": "RIEBER",
+   "name": "Rieber Hall"
+  },
+  {
+   "code": "ROSNFLD",
+   "name": "Eugene and Maxine Rosenfeld Library"
+  },
+  {
+   "code": "ROLFE",
+   "name": "Rolfe Hall"
+  },
+  {
+   "code": "ROYCE",
+   "name": "Royce Hall"
+  },
+  {
+   "code": "SAC",
+   "name": "Student Activities Center"
+  },
+  {
+   "code": "SCULPT",
+   "name": "Sculpture Garden"
+  },
+  {
+   "code": "SEMEL",
+   "name": "Semel Institute for Neuroscience and Human Behavior"
+  },
+  {
+   "code": "SLICHTR",
+   "name": "Slichter Hall"
+  },
+  {
+   "code": "SMB",
+   "name": "Schoenberg Music Building"
+  },
+  {
+   "code": "SPROUL",
+   "name": "Sproul Hall"
+  },
+  {
+   "code": "TERASKI",
+   "name": "Terasaki Life Sciences Building"
+  },
+  {
+   "code": "UES",
+   "name": "UCLA Lab School, Seeds Campus"
+  },
+  {
+   "code": "WASSRMN",
+   "name": "Wasserman Building"
+  },
+  {
+   "code": "JWEST",
+   "name": "James West Alumni Center"
+  },
+  {
+   "code": "WGYOUNG",
+   "name": "Young Hall"
+  },
+  {
+   "code": "WOODEN",
+   "name": "Wooden Recreation and Sports Center"
+  },
+  {
+   "code": "YRL",
+   "name": "Young Research Library"
+  }
+ ]
+}
