@@ -61,6 +61,10 @@ interface Props {
   onFilter: (key: keyof Filters, on: boolean) => void;
   onEdit: () => void;
   onUpgrade: () => void;
+  /** Plus/Pro: shown once a setup is saved ("Saved to your account."). */
+  saveNote?: string;
+  onShare?: () => void;
+  shareLabel?: string;
 }
 
 export default function Results(props: Props) {
@@ -175,7 +179,7 @@ function FreeResults({ collegeId, schoolName, result, halls, facts, places, rout
 
 const SHOW = 7;
 
-function PaidResults({ collegeId, schoolName, result, halls, facts, places, filters, hasYears, selected, onSelect, onFilter, onEdit }: Props & { result: Extract<RankResult, { tier: "paid" }> }) {
+function PaidResults({ collegeId, schoolName, result, halls, facts, places, filters, hasYears, selected, onSelect, onFilter, onEdit, saveNote, onShare, shareLabel }: Props & { result: Extract<RankResult, { tier: "paid" }> }) {
   const [all, setAll] = useState(false);
   const [compare, setCompare] = useState<string[]>([]);
   const [comparing, setComparing] = useState(false);
@@ -192,6 +196,7 @@ function PaidResults({ collegeId, schoolName, result, halls, facts, places, filt
       <div className={styles.eyebrowRow}>
         <p className={styles.eyebrow}>{schoolName} · {result.count} halls · {places.length} {places.length === 1 ? "place" : "places"}</p>
         <button type="button" className={styles.linkBtn} onClick={onEdit}>Edit places</button>
+        {onShare && <button type="button" className={styles.linkBtn} onClick={onShare} aria-live="polite">{shareLabel ?? "Share"}</button>}
       </div>
       <h1 className={styles.title}>
         <span className={`${styles.titleBig} ds-riso`}>Your halls,</span>
@@ -271,7 +276,7 @@ function PaidResults({ collegeId, schoolName, result, halls, facts, places, filt
           <button type="button" className="ds-btn ds-btn--yellow ds-btn--sm" onClick={() => setComparing(true)}>Compare</button>
         </div>
       )}
-      <p className={styles.goNote}>Times are walking estimates and don&apos;t include buses.</p>
+      <p className={styles.goNote} role="status">{saveNote ? `${saveNote} ` : ""}Times are walking estimates and don&apos;t include buses.</p>
       {comparing && pair.length === 2 && (
         <Modal role="dialog" aria-modal="true" aria-labelledby="hf-compare-title" onKeyDown={(e) => e.key === "Escape" && setComparing(false)}>
           <div className={styles.dialog}>

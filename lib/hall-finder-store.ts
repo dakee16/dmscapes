@@ -11,6 +11,9 @@ export const EMPTY_DRAFT: Draft = { places: [], filters: NO_FILTERS };
 
 interface HallFinderState {
   drafts: Record<string, Draft>;
+  /** The saved setup (Plus and Pro) this browser's draft autosaves into, per college. */
+  setupIds: Record<string, string>;
+  setSetupId: (collegeId: string, id: string | null) => void;
   setDraft: (collegeId: string, draft: Draft) => void;
   addPlaces: (collegeId: string, places: DraftPlace[]) => void;
   removePlace: (collegeId: string, index: number) => void;
@@ -31,6 +34,14 @@ export const useHallFinder = create<HallFinderState>()(
         set((s) => ({ drafts: { ...s.drafts, [collegeId]: fn(s.drafts[collegeId] ?? EMPTY_DRAFT) } }));
       return {
         drafts: {},
+        setupIds: {},
+        setSetupId: (collegeId, id) =>
+          set((s) => {
+            const next = { ...s.setupIds };
+            if (id) next[collegeId] = id;
+            else delete next[collegeId];
+            return { setupIds: next };
+          }),
         setDraft: (collegeId, draft) => edit(collegeId, () => draft),
         // The same building twice merges its days rather than listing it twice.
         addPlaces: (collegeId, places) =>
