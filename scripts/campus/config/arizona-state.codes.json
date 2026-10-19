@@ -1,0 +1,607 @@
+{
+ "name": "ASU, Tempe Building Names and Codes",
+ "url": "https://tours.asu.edu/buildings?field_campus_target_id=2",
+ "read": "2026-10-19",
+ "buildings": [
+  {
+   "code": "AMTN",
+   "name": "\"A\" Mountain"
+  },
+  {
+   "code": "MCENT",
+   "name": "A. J. Matthews Center"
+  },
+  {
+   "code": "ADELA",
+   "name": "Adelphi Commons and Adelphi Commons II"
+  },
+  {
+   "code": "ADELB",
+   "name": "Adelphi Commons and Adelphi Commons II"
+  },
+  {
+   "code": "ADELC",
+   "name": "Adelphi Commons and Adelphi Commons II"
+  },
+  {
+   "code": "ADELE",
+   "name": "Adelphi Commons and Adelphi Commons II"
+  },
+  {
+   "code": "ADEMF",
+   "name": "Adelphi Commons and Adelphi Commons II"
+  },
+  {
+   "code": "ADENE",
+   "name": "Adelphi Commons and Adelphi Commons II"
+  },
+  {
+   "code": "ADENW",
+   "name": "Adelphi Commons and Adelphi Commons II"
+  },
+  {
+   "code": "ADESW",
+   "name": "Adelphi Commons and Adelphi Commons II"
+  },
+  {
+   "code": "ARM",
+   "name": "Armstrong Hall"
+  },
+  {
+   "code": "ART",
+   "name": "Art Building"
+  },
+  {
+   "code": "ARWH",
+   "name": "Art Warehouse"
+  },
+  {
+   "code": "BYAC",
+   "name": "Artisan Court at the Brickyard"
+  },
+  {
+   "code": "STAD",
+   "name": "ASU 365 Community Union"
+  },
+  {
+   "code": "CRCNTR",
+   "name": "ASU Art Museum Brickyard"
+  },
+  {
+   "code": "GGMA",
+   "name": "ASU Gammage"
+  },
+  {
+   "code": "APMA",
+   "name": "ASU Performing and Media Arts"
+  },
+  {
+   "code": "ASUPD",
+   "name": "ASU Police Department"
+  },
+  {
+   "code": "AGVHAL",
+   "name": "Barrett, the Honors College Academic Complex"
+  },
+  {
+   "code": "CERHAL",
+   "name": "Barrett, the Honors College Academic Complex"
+  },
+  {
+   "code": "CWHAL",
+   "name": "Barrett, the Honors College Academic Complex"
+  },
+  {
+   "code": "JNHAL",
+   "name": "Barrett, the Honors College Academic Complex"
+  },
+  {
+   "code": "RWHAL",
+   "name": "Barrett, the Honors College Academic Complex"
+  },
+  {
+   "code": "SGHAL",
+   "name": "Barrett, the Honors College Academic Complex"
+  },
+  {
+   "code": "WILOHAL",
+   "name": "Barrett, the Honors College Academic Complex"
+  },
+  {
+   "code": "PSB",
+   "name": "Bateman Physical Sciences Center"
+  },
+  {
+   "code": "PSC",
+   "name": "Bateman Physical Sciences Center"
+  },
+  {
+   "code": "PSD",
+   "name": "Bateman Physical Sciences Center"
+  },
+  {
+   "code": "PSE",
+   "name": "Bateman Physical Sciences Center"
+  },
+  {
+   "code": "PSF",
+   "name": "Bateman Physical Sciences Center"
+  },
+  {
+   "code": "PSG",
+   "name": "Bateman Physical Sciences Center"
+  },
+  {
+   "code": "PSH",
+   "name": "Bateman Physical Sciences Center"
+  },
+  {
+   "code": "MB",
+   "name": "Best Hall"
+  },
+  {
+   "code": "BDC",
+   "name": "Biodesign Institute - Bldg C"
+  },
+  {
+   "code": "BYENG",
+   "name": "Brickyard"
+  },
+  {
+   "code": "BDH",
+   "name": "Bulldog Hall"
+  },
+  {
+   "code": "BA",
+   "name": "Business Administration"
+  },
+  {
+   "code": "BAC",
+   "name": "Business Administration C-Wing"
+  },
+  {
+   "code": "CFS",
+   "name": "Center for Family Studies"
+  },
+  {
+   "code": "CTRPT",
+   "name": "Centerpoint"
+  },
+  {
+   "code": "CWHAL",
+   "name": "Charles Wexler Hall"
+  },
+  {
+   "code": "CAM",
+   "name": "College Avenue Marketplace"
+  },
+  {
+   "code": "CSB",
+   "name": "Community Services Building"
+  },
+  {
+   "code": "COWDN",
+   "name": "Cowden Family Resources"
+  },
+  {
+   "code": "CRTVC",
+   "name": "Creativity Commons"
+  },
+  {
+   "code": "CAM",
+   "name": "Danforth Chapel"
+  },
+  {
+   "code": "NOBLE",
+   "name": "Daniel E. Noble Science and Engineering Library"
+  },
+  {
+   "code": "DAP",
+   "name": "Desert Arboretum Park"
+  },
+  {
+   "code": "DFA",
+   "name": "Desert Financial Arena"
+  },
+  {
+   "code": "CDN",
+   "name": "Design Buildings"
+  },
+  {
+   "code": "CDS",
+   "name": "Design Buildings"
+  },
+  {
+   "code": "DISCVRY",
+   "name": "Discovery Hall"
+  },
+  {
+   "code": "GHALL",
+   "name": "Dixie Gammage Hall"
+  },
+  {
+   "code": "DH",
+   "name": "Durham Hall"
+  },
+  {
+   "code": "EDC",
+   "name": "Education Lecture Hall"
+  },
+  {
+   "code": "ECA",
+   "name": "Engineering Center"
+  },
+  {
+   "code": "ECB",
+   "name": "Engineering Center"
+  },
+  {
+   "code": "ECC",
+   "name": "Engineering Center"
+  },
+  {
+   "code": "ECD",
+   "name": "Engineering Center"
+  },
+  {
+   "code": "ECE",
+   "name": "Engineering Center"
+  },
+  {
+   "code": "ECG",
+   "name": "Engineering Center"
+  },
+  {
+   "code": "ENGRC",
+   "name": "Engineering Research Center"
+  },
+  {
+   "code": "FULTN",
+   "name": "Fulton Center"
+  },
+  {
+   "code": "HLMK",
+   "name": "Future Sun Devil Welcome Center and Paul C. Helmick Center"
+  },
+  {
+   "code": "GWC",
+   "name": "Goldwater Center"
+  },
+  {
+   "code": "GLVA",
+   "name": "Greek Leadership Village"
+  },
+  {
+   "code": "GLVB",
+   "name": "Greek Leadership Village"
+  },
+  {
+   "code": "GLVC",
+   "name": "Greek Leadership Village"
+  },
+  {
+   "code": "GLVD",
+   "name": "Greek Leadership Village"
+  },
+  {
+   "code": "GWC",
+   "name": "H.B. Farmer Education Building"
+  },
+  {
+   "code": "ACACI",
+   "name": "Hassayampa Academic Village"
+  },
+  {
+   "code": "ACHAL",
+   "name": "Hassayampa Academic Village"
+  },
+  {
+   "code": "ARHAL",
+   "name": "Hassayampa Academic Village"
+  },
+  {
+   "code": "CHUPA",
+   "name": "Hassayampa Academic Village"
+  },
+  {
+   "code": "JOBA",
+   "name": "Hassayampa Academic Village"
+  },
+  {
+   "code": "MSHAL",
+   "name": "Hassayampa Academic Village"
+  },
+  {
+   "code": "MVHAL",
+   "name": "Hassayampa Academic Village"
+  },
+  {
+   "code": "VBHAL",
+   "name": "Hassayampa Academic Village"
+  },
+  {
+   "code": "HAYDN",
+   "name": "Hayden Hall"
+  },
+  {
+   "code": "LIB",
+   "name": "Hayden Library"
+  },
+  {
+   "code": "HSB",
+   "name": "Health Service Building"
+  },
+  {
+   "code": "INTDS",
+   "name": "Interdisciplinary A and B"
+  },
+  {
+   "code": "ISTB1",
+   "name": "Interdisciplinary Science and Technology I"
+  },
+  {
+   "code": "ISTB2",
+   "name": "Interdisciplinary Science and Technology II"
+  },
+  {
+   "code": "ISTB4",
+   "name": "Interdisciplinary Science and Technology IV"
+  },
+  {
+   "code": "ISTB5",
+   "name": "Interdisciplinary Science and Technology V"
+  },
+  {
+   "code": "EDB",
+   "name": "Ira D. Payne Educational Hall"
+  },
+  {
+   "code": "IRISH",
+   "name": "Irish Hall"
+  },
+  {
+   "code": "FAC",
+   "name": "J. Russell and Bonita Nelson Fine Arts Center | ASU Art Museum"
+  },
+  {
+   "code": "SCOB",
+   "name": "John W. Schwada Building"
+  },
+  {
+   "code": "NEEB",
+   "name": "L. S. Neeb Hall"
+  },
+  {
+   "code": "COOR",
+   "name": "Lattie F. Coor Hall"
+  },
+  {
+   "code": "LSB",
+   "name": "Life Sciences Center"
+  },
+  {
+   "code": "LSB",
+   "name": "Life Sciences Center"
+  },
+  {
+   "code": "LSC",
+   "name": "Life Sciences Center"
+  },
+  {
+   "code": "LSD",
+   "name": "Life Sciences Center"
+  },
+  {
+   "code": "LSE",
+   "name": "Life Sciences Center"
+  },
+  {
+   "code": "LYC",
+   "name": "Lyceum Theatre"
+  },
+  {
+   "code": "MANZH",
+   "name": "Manzanita Hall"
+  },
+  {
+   "code": "MHALL",
+   "name": "Matthews Hall"
+  },
+  {
+   "code": "MCL",
+   "name": "McClintock Hall"
+  },
+  {
+   "code": "MCRD",
+   "name": "McCord Hall"
+  },
+  {
+   "code": "MU",
+   "name": "Memorial Union"
+  },
+  {
+   "code": "MOEUR",
+   "name": "Moeur Building"
+  },
+  {
+   "code": "STAD",
+   "name": "Mountain America Stadium, Home of the ASU Sun Devils"
+  },
+  {
+   "code": "MUR",
+   "name": "Murdock Hall"
+  },
+  {
+   "code": "MUSIC",
+   "name": "Music Building"
+  },
+  {
+   "code": "MAIN",
+   "name": "Old Main"
+  },
+  {
+   "code": "BYOH",
+   "name": "Orchid House at the Brickyard"
+  },
+  {
+   "code": "PALM",
+   "name": "Palm Walk"
+  },
+  {
+   "code": "PVE",
+   "name": "Palo Verde East"
+  },
+  {
+   "code": "PVW",
+   "name": "Palo Verde West"
+  },
+  {
+   "code": "HLMK",
+   "name": "Paul C. Helmick Center"
+  },
+  {
+   "code": "PSY",
+   "name": "Psychology Building"
+  },
+  {
+   "code": "PSYN",
+   "name": "Psychology North"
+  },
+  {
+   "code": "WCPH",
+   "name": "Rob and Melani Walton Center for Planetary Health"
+  },
+  {
+   "code": "RBHL",
+   "name": "Ross-Blakley Hall"
+  },
+  {
+   "code": "PABLO",
+   "name": "San Pablo Residence Hall"
+  },
+  {
+   "code": "SHESC",
+   "name": "School of Human Evolution and Social Change"
+  },
+  {
+   "code": "SS",
+   "name": "Social Sciences Building"
+  },
+  {
+   "code": "SCD",
+   "name": "Sonora Center"
+  },
+  {
+   "code": "STAUF",
+   "name": "Stauffer Communication Arts"
+  },
+  {
+   "code": "STPV",
+   "name": "Student Pavilion"
+  },
+  {
+   "code": "SSV",
+   "name": "Student Services Building"
+  },
+  {
+   "code": "BKSTR",
+   "name": "Sun Devil Campus Stores"
+  },
+  {
+   "code": "SDFCT",
+   "name": "Sun Devil Fitness Complex Tempe"
+  },
+  {
+   "code": "SDH",
+   "name": "Sun Devil Hall"
+  },
+  {
+   "code": "MASH",
+   "name": "Tempe’s New Residence Hall"
+  },
+  {
+   "code": "BDA",
+   "name": "The Biodesign Institute - Bldg. A"
+  },
+  {
+   "code": "BDB",
+   "name": "The Biodesign Institute - Bldg. B"
+  },
+  {
+   "code": "TKRHA",
+   "name": "Tooker House"
+  },
+  {
+   "code": "TKRHB",
+   "name": "Tooker House"
+  },
+  {
+   "code": "TKRHC",
+   "name": "Tooker House"
+  },
+  {
+   "code": "TKRHD",
+   "name": "Tooker House"
+  },
+  {
+   "code": "PWOP",
+   "name": "University Bridge"
+  },
+  {
+   "code": "UCNTRA",
+   "name": "University Center"
+  },
+  {
+   "code": "UCNTRB",
+   "name": "University Center"
+  },
+  {
+   "code": "UCNTRC",
+   "name": "University Center"
+  },
+  {
+   "code": "UCLUB",
+   "name": "University Club"
+  },
+  {
+   "code": "UGB",
+   "name": "University Gateway Building"
+  },
+  {
+   "code": "USB",
+   "name": "University Services"
+  },
+  {
+   "code": "UNIVT",
+   "name": "University Towers"
+  },
+  {
+   "code": "USE",
+   "name": "Urban Systems Engineering"
+  },
+  {
+   "code": "VVDS",
+   "name": "Villas at Vista"
+  },
+  {
+   "code": "PWH",
+   "name": "Virginia G. Piper Writers House"
+  },
+  {
+   "code": "VDS",
+   "name": "Vista Del Sol"
+  },
+  {
+   "code": "WHALL",
+   "name": "West Hall"
+  },
+  {
+   "code": "WLSN",
+   "name": "Wilson Hall"
+  },
+  {
+   "code": "WGHL",
+   "name": "Wrigley Hall"
+  }
+ ]
+}

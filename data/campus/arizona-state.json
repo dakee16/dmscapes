@@ -1,0 +1,1150 @@
+{
+ "collegeId": "arizona-state",
+ "generatedAt": "2026-10-19T18:23:19.287Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-10-19"
+  },
+  {
+   "name": "ASU, Tempe Building Names and Codes",
+   "url": "https://tours.asu.edu/buildings?field_campus_target_id=2",
+   "use": "building codes",
+   "read": "2026-10-19"
+  },
+  {
+   "name": "ASU University Housing: First Year Housing and Continuing Student Housing (Tempe)",
+   "url": "https://housing.asu.edu/first-year-housing",
+   "use": "first-year and upper-year tags (each hall's yearSource)"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://housing.asu.edu/first-year-housing",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://housing.asu.edu/continuing-student-housing",
+   "use": "year tag"
+  },
+  {
+   "name": "Housing page",
+   "url": "https://housing.asu.edu/housing-communities/residential-colleges/barrett-residential-complex",
+   "use": "year tag"
+  }
+ ],
+ "bounds": [
+  -111.94196,
+  33.41166,
+  -111.92426,
+  33.42451
+ ],
+ "halls": [
+  {
+   "dormId": "adelphi-commons-i",
+   "name": "Adelphi Commons I",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
+   "year": "any",
+   "yearSource": [
+    "https://housing.asu.edu/first-year-housing",
+    "https://housing.asu.edu/continuing-student-housing"
+   ]
+  },
+  {
+   "dormId": "adelphi-commons-ii",
+   "name": "Adelphi Commons II",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
+   "year": "first",
+   "yearSource": "https://housing.asu.edu/first-year-housing"
+  },
+  {
+   "dormId": "barrett-residential-complex",
+   "name": "Barrett Residential Complex",
+   "lng": -111.927377,
+   "lat": 33.415768,
+   "pin": "address",
+   "osm": "relation/4799951",
+   "year": "any",
+   "yearSource": [
+    "https://housing.asu.edu/housing-communities/residential-colleges/barrett-residential-complex",
+    "https://housing.asu.edu/first-year-housing"
+   ]
+  },
+  {
+   "dormId": "hassayampa-academic-village",
+   "name": "Hassayampa Academic Village",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
+   "year": "first",
+   "yearSource": "https://housing.asu.edu/first-year-housing"
+  },
+  {
+   "dormId": "manzanita-hall",
+   "name": "Manzanita Hall",
+   "lng": -111.93009,
+   "lat": 33.422459,
+   "pin": "name",
+   "osm": "way/256984986",
+   "year": "first",
+   "yearSource": "https://housing.asu.edu/first-year-housing"
+  },
+  {
+   "dormId": "palo-verde-east",
+   "name": "Palo Verde East",
+   "lng": -111.932021,
+   "lat": 33.422416,
+   "pin": "name",
+   "osm": "relation/3444657",
+   "year": "first",
+   "yearSource": "https://housing.asu.edu/first-year-housing"
+  },
+  {
+   "dormId": "palo-verde-west",
+   "name": "Palo Verde West",
+   "lng": -111.933605,
+   "lat": 33.422397,
+   "pin": "name",
+   "osm": "relation/3444658",
+   "year": "first",
+   "yearSource": "https://housing.asu.edu/first-year-housing"
+  },
+  {
+   "dormId": "san-pablo",
+   "name": "San Pablo",
+   "lng": -111.931574,
+   "lat": 33.422992,
+   "pin": "address",
+   "osm": "relation/71887",
+   "year": "any",
+   "yearSource": [
+    "https://housing.asu.edu/first-year-housing",
+    "https://housing.asu.edu/continuing-student-housing"
+   ]
+  },
+  {
+   "dormId": "sonora-center",
+   "name": "Sonora Center",
+   "lng": -111.9275,
+   "lat": 33.41198,
+   "pin": "name",
+   "osm": "way/30408176",
+   "year": "any",
+   "yearSource": [
+    "https://housing.asu.edu/first-year-housing",
+    "https://housing.asu.edu/continuing-student-housing"
+   ]
+  },
+  {
+   "dormId": "tooker-house",
+   "name": "Tooker House (Fulton Schools Residential Community)",
+   "lng": -111.932826,
+   "lat": 33.423193,
+   "pin": "address",
+   "osm": "way/590166118",
+   "year": "first",
+   "yearSource": "https://housing.asu.edu/first-year-housing"
+  },
+  {
+   "dormId": "vista-del-sol",
+   "name": "Vista del Sol",
+   "lng": -111.931728,
+   "lat": 33.414379,
+   "pin": "name",
+   "osm": "way/712701946",
+   "year": "upper",
+   "yearSource": "https://housing.asu.edu/continuing-student-housing"
+  }
+ ],
+ "places": [
+  {
+   "id": "desert-financial-arena",
+   "name": "Desert Financial Arena",
+   "short": "Desert Financial Arena",
+   "kind": "academic",
+   "codes": [
+    "DFA"
+   ],
+   "aliases": [],
+   "lng": -111.93101,
+   "lat": 33.424509,
+   "osm": "way/28753079"
+  },
+  {
+   "id": "sun-devil-fitness-complex",
+   "name": "Sun Devil Fitness Complex",
+   "short": "Sun Devil Fitness Complex",
+   "kind": "gym",
+   "codes": [
+    "SDFCT"
+   ],
+   "aliases": [
+    "SRC",
+    "Sun Devil Fitness Complex Tempe"
+   ],
+   "lng": -111.932531,
+   "lat": 33.415554,
+   "osm": "way/30407778"
+  },
+  {
+   "id": "memorial-union",
+   "name": "Memorial Union",
+   "short": "Memorial Union",
+   "kind": "academic",
+   "codes": [
+    "MU"
+   ],
+   "aliases": [
+    "MU"
+   ],
+   "lng": -111.934367,
+   "lat": 33.41768,
+   "osm": "way/28822637"
+  },
+  {
+   "id": "university-services",
+   "name": "University Services",
+   "short": "University Services",
+   "kind": "academic",
+   "codes": [
+    "CSB",
+    "USB"
+   ],
+   "aliases": [
+    "Community Services Building"
+   ],
+   "lng": -111.92551,
+   "lat": 33.411664,
+   "osm": "way/30408132"
+  },
+  {
+   "id": "physical-education-east",
+   "name": "Physical Education East",
+   "short": "Physical Education East",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PEBE"
+   ],
+   "lng": -111.930783,
+   "lat": 33.417848,
+   "osm": "way/28878299"
+  },
+  {
+   "id": "sun-devil-fitness-complex-552634953",
+   "name": "Sun Devil Fitness Complex",
+   "short": "Sun Devil Fitness Complex",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -111.93123,
+   "lat": 33.415475,
+   "osm": "way/552634953"
+  },
+  {
+   "id": "mona-plummer-aquatic-center",
+   "name": "Mona Plummer Aquatic Center",
+   "short": "Mona Plummer Aquatic Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -111.934185,
+   "lat": 33.423824,
+   "osm": "way/30420661"
+  },
+  {
+   "id": "hayden-library",
+   "name": "Hayden Library",
+   "short": "Hayden Library",
+   "kind": "library",
+   "codes": [
+    "LIB"
+   ],
+   "aliases": [
+    "LIB"
+   ],
+   "lng": -111.934578,
+   "lat": 33.419023,
+   "osm": "way/28822655"
+  },
+  {
+   "id": "walton-center-for-planetary-health",
+   "name": "Walton Center for Planetary Health",
+   "short": "Walton Center for Planetary Health",
+   "kind": "academic",
+   "codes": [
+    "WCPH"
+   ],
+   "aliases": [
+    "Rob and Melani Walton Center for Planetary Health"
+   ],
+   "lng": -111.927106,
+   "lat": 33.421523,
+   "osm": "way/1123501296"
+  },
+  {
+   "id": "nelson-fine-arts-center",
+   "name": "Nelson Fine Arts Center",
+   "short": "Nelson Fine Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "FAC"
+   ],
+   "lng": -111.938379,
+   "lat": 33.418699,
+   "osm": "relation/12350154"
+  },
+  {
+   "id": "grady-gammage-memorial-auditorium",
+   "name": "Grady Gammage Memorial Auditorium",
+   "short": "Grady Gammage Memorial Auditorium",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "GGMA"
+   ],
+   "lng": -111.938021,
+   "lat": 33.416255,
+   "osm": "way/30407398"
+  },
+  {
+   "id": "music-building",
+   "name": "Music Building",
+   "short": "Music Building",
+   "kind": "academic",
+   "codes": [
+    "MUSIC"
+   ],
+   "aliases": [
+    "MUSIC"
+   ],
+   "lng": -111.939046,
+   "lat": 33.41805,
+   "osm": "way/28822215"
+  },
+  {
+   "id": "lattie-f-coor-hall",
+   "name": "Lattie F. Coor Hall",
+   "short": "Lattie F. Coor Hall",
+   "kind": "academic",
+   "codes": [
+    "COOR"
+   ],
+   "aliases": [],
+   "lng": -111.937358,
+   "lat": 33.419373,
+   "osm": "relation/12350155"
+  },
+  {
+   "id": "student-services-building",
+   "name": "Student Services Building",
+   "short": "Student Services Building",
+   "kind": "academic",
+   "codes": [
+    "SSV"
+   ],
+   "aliases": [
+    "SSV"
+   ],
+   "lng": -111.936282,
+   "lat": 33.41696,
+   "osm": "way/28822055"
+  },
+  {
+   "id": "centerpoint",
+   "name": "Centerpoint",
+   "short": "Centerpoint",
+   "kind": "academic",
+   "codes": [
+    "CTRPT"
+   ],
+   "aliases": [],
+   "lng": -111.941961,
+   "lat": 33.42302,
+   "osm": "way/157628483"
+  },
+  {
+   "id": "armstrong-hall",
+   "name": "Armstrong Hall",
+   "short": "Armstrong Hall",
+   "kind": "academic",
+   "codes": [
+    "ARM"
+   ],
+   "aliases": [],
+   "lng": -111.929444,
+   "lat": 33.41782,
+   "osm": "way/28878404"
+  },
+  {
+   "id": "university-gateway-building",
+   "name": "University Gateway Building",
+   "short": "University Gateway Building",
+   "kind": "academic",
+   "codes": [
+    "UGB"
+   ],
+   "aliases": [],
+   "lng": -111.939535,
+   "lat": 33.419799,
+   "osm": "way/1123220741"
+  },
+  {
+   "id": "physical-education-west",
+   "name": "Physical Education West",
+   "short": "Physical Education West",
+   "kind": "academic",
+   "codes": [
+    "SDH"
+   ],
+   "aliases": [
+    "Sun Devil Hall"
+   ],
+   "lng": -111.93307,
+   "lat": 33.417854,
+   "osm": "way/28878211"
+  },
+  {
+   "id": "sun-devil-campus-stores-tempe-campus",
+   "name": "Sun Devil Campus Stores - Tempe Campus",
+   "short": "Sun Devil Campus Stores - Tempe Campus",
+   "kind": "academic",
+   "codes": [
+    "BKSTR"
+   ],
+   "aliases": [
+    "Sun Devil Campus Stores"
+   ],
+   "lng": -111.931856,
+   "lat": 33.417805,
+   "osm": "way/28878276"
+  },
+  {
+   "id": "wilson-hall",
+   "name": "Wilson Hall",
+   "short": "Wilson Hall",
+   "kind": "academic",
+   "codes": [
+    "WLSN"
+   ],
+   "aliases": [],
+   "lng": -111.936051,
+   "lat": 33.418518,
+   "osm": "way/1484828002"
+  },
+  {
+   "id": "biodesign-institute-building-a",
+   "name": "Biodesign Institute Building A",
+   "short": "Biodesign Institute Building A",
+   "kind": "academic",
+   "codes": [
+    "BDA"
+   ],
+   "aliases": [
+    "The Biodesign Institute - Bldg. A"
+   ],
+   "lng": -111.928336,
+   "lat": 33.419029,
+   "osm": "way/30407331"
+  },
+  {
+   "id": "noble-science-and-engineering-library",
+   "name": "Noble Science and Engineering Library",
+   "short": "Noble Science and Engineering Library",
+   "kind": "library",
+   "codes": [
+    "NOBLE"
+   ],
+   "aliases": [
+    "Daniel E. Noble Science and Engineering Library"
+   ],
+   "lng": -111.930661,
+   "lat": 33.419952,
+   "osm": "way/157628503"
+  },
+  {
+   "id": "biodesign-institute-building-b",
+   "name": "Biodesign Institute Building B",
+   "short": "Biodesign Institute Building B",
+   "kind": "academic",
+   "codes": [
+    "BDB"
+   ],
+   "aliases": [
+    "The Biodesign Institute - Bldg. B"
+   ],
+   "lng": -111.928351,
+   "lat": 33.419746,
+   "osm": "way/30407279"
+  },
+  {
+   "id": "ross-blakley-hall",
+   "name": "Ross-Blakley Hall",
+   "short": "Ross-Blakley Hall",
+   "kind": "library",
+   "codes": [
+    "RBHL"
+   ],
+   "aliases": [],
+   "lng": -111.92969,
+   "lat": 33.417108,
+   "osm": "way/28878390"
+  },
+  {
+   "id": "urban-systems-engineering",
+   "name": "Urban Systems Engineering",
+   "short": "Urban Systems Engineering",
+   "kind": "academic",
+   "codes": [
+    "USE"
+   ],
+   "aliases": [],
+   "lng": -111.929569,
+   "lat": 33.421614,
+   "osm": "way/30407183"
+  },
+  {
+   "id": "fulton-center",
+   "name": "Fulton Center",
+   "short": "Fulton Center",
+   "kind": "academic",
+   "codes": [
+    "FULTN"
+   ],
+   "aliases": [],
+   "lng": -111.934466,
+   "lat": 33.422269,
+   "osm": "way/1319179372"
+  },
+  {
+   "id": "business-administration",
+   "name": "Business Administration",
+   "short": "Business Administration",
+   "kind": "academic",
+   "codes": [
+    "BA"
+   ],
+   "aliases": [
+    "BA"
+   ],
+   "lng": -111.934497,
+   "lat": 33.416564,
+   "osm": "way/28821988"
+  },
+  {
+   "id": "college-avenue-commons",
+   "name": "College Avenue Commons",
+   "short": "College Avenue Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -111.935572,
+   "lat": 33.423508,
+   "osm": "way/544817159"
+  },
+  {
+   "id": "biodesign-institute-building-c",
+   "name": "Biodesign Institute Building C",
+   "short": "Biodesign Institute Building C",
+   "kind": "academic",
+   "codes": [
+    "BDC"
+   ],
+   "aliases": [
+    "Biodesign Institute - Bldg C"
+   ],
+   "lng": -111.927356,
+   "lat": 33.41999,
+   "osm": "way/561567562"
+  },
+  {
+   "id": "orchidhouse",
+   "name": "Orchidhouse",
+   "short": "Orchidhouse",
+   "kind": "academic",
+   "codes": [
+    "BYENG"
+   ],
+   "aliases": [
+    "Brickyard"
+   ],
+   "lng": -111.938752,
+   "lat": 33.424045,
+   "osm": "way/157628508"
+  },
+  {
+   "id": "stauffer-communication-arts",
+   "name": "Stauffer Communication Arts",
+   "short": "Stauffer Communication Arts",
+   "kind": "academic",
+   "codes": [
+    "STAUF"
+   ],
+   "aliases": [
+    "STAUF"
+   ],
+   "lng": -111.937134,
+   "lat": 33.419853,
+   "osm": "way/28822362"
+  },
+  {
+   "id": "creativity-commons",
+   "name": "Creativity Commons",
+   "short": "Creativity Commons",
+   "kind": "dining",
+   "codes": [
+    "CRTVC"
+   ],
+   "aliases": [],
+   "lng": -111.932395,
+   "lat": 33.417835,
+   "osm": "way/28878239"
+  },
+  {
+   "id": "mccord-hall",
+   "name": "McCord Hall",
+   "short": "McCord Hall",
+   "kind": "academic",
+   "codes": [
+    "MCRD"
+   ],
+   "aliases": [],
+   "lng": -111.933154,
+   "lat": 33.416812,
+   "osm": "way/339043001"
+  },
+  {
+   "id": "h-b-farmer-education-building",
+   "name": "H B Farmer Education Building",
+   "short": "H B Farmer Education Building",
+   "kind": "academic",
+   "codes": [
+    "GWC"
+   ],
+   "aliases": [
+    "ED",
+    "H.B. Farmer Education Building"
+   ],
+   "lng": -111.937252,
+   "lat": 33.418059,
+   "osm": "relation/56412"
+  },
+  {
+   "id": "social-sciences",
+   "name": "Social Sciences",
+   "short": "Social Sciences",
+   "kind": "academic",
+   "codes": [
+    "SS"
+   ],
+   "aliases": [
+    "Social Sciences Building"
+   ],
+   "lng": -111.934491,
+   "lat": 33.41993,
+   "osm": "relation/56415"
+  },
+  {
+   "id": "institute-of-religion-the-church-of-jesus-christ-of-latter-day-saints",
+   "name": "Institute of Religion - The Church of Jesus Christ of Latter-day Saints",
+   "short": "Institute of Religion - The Church of Jesus Christ of Latter-day Saints",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Institute of Religion"
+   ],
+   "lng": -111.929522,
+   "lat": 33.418785,
+   "osm": "way/221569491"
+  },
+  {
+   "id": "durham-hall",
+   "name": "Durham Hall",
+   "short": "Durham Hall",
+   "kind": "academic",
+   "codes": [
+    "DH"
+   ],
+   "aliases": [],
+   "lng": -111.934572,
+   "lat": 33.420933,
+   "osm": "way/28930749"
+  },
+  {
+   "id": "goldwater-center",
+   "name": "Goldwater Center",
+   "short": "Goldwater Center",
+   "kind": "academic",
+   "codes": [
+    "GWC"
+   ],
+   "aliases": [],
+   "lng": -111.930471,
+   "lat": 33.420786,
+   "osm": "way/30407135"
+  },
+  {
+   "id": "ira-d-payne-educational-hall",
+   "name": "Ira D . Payne Educational Hall",
+   "short": "Ira D . Payne Educational Hall",
+   "kind": "academic",
+   "codes": [
+    "EDB"
+   ],
+   "aliases": [],
+   "lng": -111.937255,
+   "lat": 33.418883,
+   "osm": "way/28822195"
+  },
+  {
+   "id": "hayden-library-concourse",
+   "name": "Hayden Library Concourse",
+   "short": "Hayden Library Concourse",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "LIB"
+   ],
+   "lng": -111.935238,
+   "lat": 33.419071,
+   "osm": "way/28822657"
+  },
+  {
+   "id": "student-pavilion",
+   "name": "Student Pavilion",
+   "short": "Student Pavilion",
+   "kind": "academic",
+   "codes": [
+    "STPV"
+   ],
+   "aliases": [],
+   "lng": -111.933719,
+   "lat": 33.418644,
+   "osm": "way/554566584"
+  },
+  {
+   "id": "engineering-research-center",
+   "name": "Engineering Research Center",
+   "short": "Engineering Research Center",
+   "kind": "academic",
+   "codes": [
+    "ENGRC"
+   ],
+   "aliases": [],
+   "lng": -111.931383,
+   "lat": 33.419758,
+   "osm": "way/29216331"
+  },
+  {
+   "id": "psychology-building",
+   "name": "Psychology Building",
+   "short": "Psychology Building",
+   "kind": "academic",
+   "codes": [
+    "PSY"
+   ],
+   "aliases": [],
+   "lng": -111.929557,
+   "lat": 33.419893,
+   "osm": "way/29216715"
+  },
+  {
+   "id": "life-sciences-center",
+   "name": "Life Sciences Center",
+   "short": "Life Sciences Center",
+   "kind": "academic",
+   "codes": [
+    "LSB",
+    "LSC",
+    "LSD",
+    "LSE"
+   ],
+   "aliases": [
+    "Life Sciences A-Wing"
+   ],
+   "lng": -111.933116,
+   "lat": 33.419952,
+   "osm": "relation/60505"
+  },
+  {
+   "id": "performing-and-media-arts",
+   "name": "Performing & Media Arts",
+   "short": "Performing & Media Arts",
+   "kind": "academic",
+   "codes": [
+    "APMA"
+   ],
+   "aliases": [
+    "ASU Performing and Media Arts"
+   ],
+   "lng": -111.924262,
+   "lat": 33.423493,
+   "osm": "way/30421445"
+  },
+  {
+   "id": "psychology-north",
+   "name": "Psychology North",
+   "short": "Psychology North",
+   "kind": "academic",
+   "codes": [
+    "PSYN"
+   ],
+   "aliases": [],
+   "lng": -111.929564,
+   "lat": 33.420642,
+   "osm": "way/28866724"
+  },
+  {
+   "id": "interdisciplinary-b-wing",
+   "name": "Interdisciplinary B Wing",
+   "short": "Interdisciplinary B Wing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "INTDSB"
+   ],
+   "lng": -111.935632,
+   "lat": 33.417221,
+   "osm": "way/28822061"
+  },
+  {
+   "id": "moeur-building",
+   "name": "Moeur Building",
+   "short": "Moeur Building",
+   "kind": "academic",
+   "codes": [
+    "MOEUR"
+   ],
+   "aliases": [
+    "MOEUR"
+   ],
+   "lng": -111.936176,
+   "lat": 33.417943,
+   "osm": "way/28822110"
+  },
+  {
+   "id": "life-sciences-e-wing",
+   "name": "Life Sciences E-Wing",
+   "short": "Life Sciences E-Wing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Life Sciences Tower",
+    "LSE"
+   ],
+   "lng": -111.933823,
+   "lat": 33.419524,
+   "osm": "way/29215974"
+  },
+  {
+   "id": "interdisciplinary-a-wing",
+   "name": "Interdisciplinary A Wing",
+   "short": "Interdisciplinary A Wing",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "INTDSA"
+   ],
+   "lng": -111.935502,
+   "lat": 33.417625,
+   "osm": "way/28822089"
+  },
+  {
+   "id": "business-administration-c-wing",
+   "name": "Business Administration C Wing",
+   "short": "Business Administration C Wing",
+   "kind": "academic",
+   "codes": [
+    "BAC"
+   ],
+   "aliases": [
+    "BAC"
+   ],
+   "lng": -111.93385,
+   "lat": 33.416553,
+   "osm": "way/28821973"
+  },
+  {
+   "id": "cowden-family-resources",
+   "name": "Cowden Family Resources",
+   "short": "Cowden Family Resources",
+   "kind": "academic",
+   "codes": [
+    "COWDN"
+   ],
+   "aliases": [],
+   "lng": -111.935572,
+   "lat": 33.421059,
+   "osm": "way/30406539"
+  },
+  {
+   "id": "discovery-hall",
+   "name": "Discovery Hall",
+   "short": "Discovery Hall",
+   "kind": "academic",
+   "codes": [
+    "DISCVRY"
+   ],
+   "aliases": [
+    "DISCVRY"
+   ],
+   "lng": -111.935531,
+   "lat": 33.416493,
+   "osm": "way/28822011"
+  },
+  {
+   "id": "asu-police-department",
+   "name": "ASU Police Department",
+   "short": "ASU Police Department",
+   "kind": "academic",
+   "codes": [
+    "ASUPD"
+   ],
+   "aliases": [],
+   "lng": -111.934426,
+   "lat": 33.414385,
+   "osm": "way/909767574"
+  },
+  {
+   "id": "art-building",
+   "name": "Art Building",
+   "short": "Art Building",
+   "kind": "academic",
+   "codes": [
+    "ART"
+   ],
+   "aliases": [],
+   "lng": -111.937339,
+   "lat": 33.420505,
+   "osm": "way/28822379"
+  },
+  {
+   "id": "greek-leadership-village-community-center",
+   "name": "Greek Leadership Village Community Center",
+   "short": "Greek Leadership Village Community Center",
+   "kind": "academic",
+   "codes": [
+    "GLVA",
+    "GLVB",
+    "GLVC",
+    "GLVD"
+   ],
+   "aliases": [
+    "Greek Leadership Village"
+   ],
+   "lng": -111.925959,
+   "lat": 33.419504,
+   "osm": "way/909817872"
+  },
+  {
+   "id": "old-main",
+   "name": "Old Main",
+   "short": "Old Main",
+   "kind": "academic",
+   "codes": [
+    "MAIN"
+   ],
+   "aliases": [],
+   "lng": -111.933959,
+   "lat": 33.420566,
+   "osm": "way/30406665"
+  },
+  {
+   "id": "art-warehouse",
+   "name": "Art Warehouse",
+   "short": "Art Warehouse",
+   "kind": "academic",
+   "codes": [
+    "ARWH"
+   ],
+   "aliases": [],
+   "lng": -111.937846,
+   "lat": 33.420928,
+   "osm": "way/28822381"
+  },
+  {
+   "id": "dixie-gammage-hall",
+   "name": "Dixie Gammage Hall",
+   "short": "Dixie Gammage Hall",
+   "kind": "academic",
+   "codes": [
+    "GGMA",
+    "GHALL"
+   ],
+   "aliases": [
+    "GHALL",
+    "ASU Gammage"
+   ],
+   "lng": -111.936262,
+   "lat": 33.419122,
+   "osm": "way/28822719"
+  },
+  {
+   "id": "interdisciplinary-science-and-technology-building-istb-10",
+   "name": "Interdisciplinary Science and Technology Building (ISTB) 10",
+   "short": "Interdisciplinary Science and Technology Building (ISTB) 10",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Julie Ann Wrigley Hall"
+   ],
+   "lng": -111.935324,
+   "lat": 33.421514,
+   "osm": "way/30406522"
+  },
+  {
+   "id": "wexler-hall",
+   "name": "Wexler Hall",
+   "short": "Wexler Hall",
+   "kind": "academic",
+   "codes": [
+    "CWHAL"
+   ],
+   "aliases": [
+    "Charles Wexler Hall"
+   ],
+   "lng": -111.932367,
+   "lat": 33.420589,
+   "osm": "way/30407086"
+  },
+  {
+   "id": "murdock-lecture-hall",
+   "name": "Murdock Lecture Hall",
+   "short": "Murdock Lecture Hall",
+   "kind": "academic",
+   "codes": [
+    "MUR"
+   ],
+   "aliases": [
+    "Murdock Hall"
+   ],
+   "lng": -111.933155,
+   "lat": 33.418632,
+   "osm": "way/554566585"
+  },
+  {
+   "id": "matthews-hall",
+   "name": "Matthews Hall",
+   "short": "Matthews Hall",
+   "kind": "academic",
+   "codes": [
+    "MCENT",
+    "MHALL"
+   ],
+   "aliases": [
+    "A. J. Matthews Center"
+   ],
+   "lng": -111.936136,
+   "lat": 33.42012,
+   "osm": "way/28822867"
+  },
+  {
+   "id": "lyceum-theatre",
+   "name": "Lyceum Theatre",
+   "short": "Lyceum Theatre",
+   "kind": "academic",
+   "codes": [
+    "LYC"
+   ],
+   "aliases": [],
+   "lng": -111.936402,
+   "lat": 33.420543,
+   "osm": "way/28822944"
+  },
+  {
+   "id": "center-for-family-studies",
+   "name": "Center for Family Studies",
+   "short": "Center for Family Studies",
+   "kind": "academic",
+   "codes": [
+    "CFS"
+   ],
+   "aliases": [],
+   "lng": -111.936293,
+   "lat": 33.421007,
+   "osm": "way/28822952"
+  },
+  {
+   "id": "neeb-hall",
+   "name": "Neeb Hall",
+   "short": "Neeb Hall",
+   "kind": "academic",
+   "codes": [
+    "NEEB"
+   ],
+   "aliases": [
+    "L. S. Neeb Hall"
+   ],
+   "lng": -111.936902,
+   "lat": 33.420325,
+   "osm": "way/28822368"
+  },
+  {
+   "id": "education-lecture-hall",
+   "name": "Education Lecture Hall",
+   "short": "Education Lecture Hall",
+   "kind": "academic",
+   "codes": [
+    "EDC"
+   ],
+   "aliases": [
+    "EDC"
+   ],
+   "lng": -111.937856,
+   "lat": 33.417928,
+   "osm": "way/28822160"
+  },
+  {
+   "id": "university-club",
+   "name": "University Club",
+   "short": "University Club",
+   "kind": "academic",
+   "codes": [
+    "UCLUB"
+   ],
+   "aliases": [],
+   "lng": -111.933548,
+   "lat": 33.420965,
+   "osm": "way/30406689"
+  },
+  {
+   "id": "piper-writers-house",
+   "name": "Piper Writers House",
+   "short": "Piper Writers House",
+   "kind": "academic",
+   "codes": [
+    "PWH"
+   ],
+   "aliases": [
+    "Virginia G. Piper Writers House"
+   ],
+   "lng": -111.933039,
+   "lat": 33.420535,
+   "osm": "way/30406737"
+  },
+  {
+   "id": "danforth-chapel",
+   "name": "Danforth Chapel",
+   "short": "Danforth Chapel",
+   "kind": "academic",
+   "codes": [
+    "CAM"
+   ],
+   "aliases": [],
+   "lng": -111.935328,
+   "lat": 33.418512,
+   "osm": "way/28822660"
+  }
+ ]
+}

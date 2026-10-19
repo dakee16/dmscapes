@@ -1,0 +1,87 @@
+{
+  "collegeId": "arizona-state",
+  "area": {
+    "osm": "relation/3444656",
+    "bbox": [
+      33.41021,
+      -111.94117,
+      33.43298,
+      -111.90924
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/arizona-state.codes.json"
+  },
+  "housing": {
+    "title": "ASU University Housing: First Year Housing and Continuing Student Housing (Tempe)",
+    "url": "https://housing.asu.edu/first-year-housing"
+  },
+  "years": {
+    "adelphi-commons-i": {
+      "year": "any",
+      "source": [
+        "https://housing.asu.edu/first-year-housing",
+        "https://housing.asu.edu/continuing-student-housing"
+      ]
+    },
+    "adelphi-commons-ii": {
+      "year": "first",
+      "source": "https://housing.asu.edu/first-year-housing"
+    },
+    "barrett-residential-complex": {
+      "year": "any",
+      "source": [
+        "https://housing.asu.edu/housing-communities/residential-colleges/barrett-residential-complex",
+        "https://housing.asu.edu/first-year-housing"
+      ]
+    },
+    "hassayampa-academic-village": {
+      "year": "first",
+      "source": "https://housing.asu.edu/first-year-housing"
+    },
+    "manzanita-hall": {
+      "year": "first",
+      "source": "https://housing.asu.edu/first-year-housing"
+    },
+    "palo-verde-east": {
+      "year": "first",
+      "source": "https://housing.asu.edu/first-year-housing"
+    },
+    "palo-verde-west": {
+      "year": "first",
+      "source": "https://housing.asu.edu/first-year-housing"
+    },
+    "san-pablo": {
+      "year": "any",
+      "source": [
+        "https://housing.asu.edu/first-year-housing",
+        "https://housing.asu.edu/continuing-student-housing"
+      ]
+    },
+    "sonora-center": {
+      "year": "any",
+      "source": [
+        "https://housing.asu.edu/first-year-housing",
+        "https://housing.asu.edu/continuing-student-housing"
+      ]
+    },
+    "tooker-house": {
+      "year": "first",
+      "source": "https://housing.asu.edu/first-year-housing"
+    },
+    "vista-del-sol": {
+      "year": "upper",
+      "source": "https://housing.asu.edu/continuing-student-housing"
+    }
+  },
+  "excludeHalls": {
+    "broadway-palace": "ASU California Center (Los Angeles) campus, not Tempe (campus field in data/schools/arizona-state.json)",
+    "casa-de-oro": "West Valley campus, not Tempe (campus field in data/schools/arizona-state.json)",
+    "casa-del-valle": "West Valley campus, not Tempe (campus field in data/schools/arizona-state.json)",
+    "century-hall": "Polytechnic campus, not Tempe (campus field in data/schools/arizona-state.json)",
+    "gordon-commons": "Downtown Phoenix campus, not Tempe (campus field in data/schools/arizona-state.json)",
+    "lantana-hall": "Polytechnic campus, not Tempe (campus field in data/schools/arizona-state.json)"
+  }
+}
