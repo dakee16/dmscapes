@@ -65,6 +65,20 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
   const view = params.get("view") === "results" ? "results" : "input";
   const signedIn = Boolean(user);
 
+  // Switching views swaps the panel, so move focus to its heading (once it renders: results
+  // wait on the ranking) for keyboard and screen-reader users.
+  const layoutRef = useRef<HTMLDivElement>(null);
+  const shownView = useRef(view);
+  const focusHeading = useRef(false);
+  useEffect(() => {
+    if (shownView.current !== view) [shownView.current, focusHeading.current] = [view, true];
+    const h1 = focusHeading.current ? layoutRef.current?.querySelector<HTMLElement>("h1") : null;
+    if (!h1) return;
+    focusHeading.current = false;
+    h1.tabIndex = -1;
+    h1.focus({ preventScroll: true });
+  });
+
   useEffect(() => {
     const fromUrl = decodeDraft(params.get("s"));
     if (fromUrl) act().setDraft(collegeId, fromUrl);
@@ -596,7 +610,7 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
     );
 
   return (
-    <div className={styles.layout} data-view={view}>
+    <div ref={layoutRef} className={styles.layout} data-view={view}>
       <div className={styles.head}>{view === "input" ? inputHead : null}</div>
       <section className={styles.body} aria-label={view === "input" ? "Your places" : "Your results"}>
         {view === "input" ? inputBody : resultsBody}
