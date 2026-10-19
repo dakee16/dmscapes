@@ -40,6 +40,9 @@ export default function FinderMap({ bounds, places, halls, routes, focus, pickin
   const map = useRef<MapLibre | null>(null);
   const ml = useRef<typeof import("maplibre-gl") | null>(null);
   const [ready, setReady] = useState(false);
+  // The last frame asked for, re-applied when the box changes size (the layout settles
+  // after the map is made, e.g. while results load), so the fit matches the final size.
+  const lastFit = useRef<import("maplibre-gl").LngLatBounds | null>(null);
   const pickRef = useRef(onPick);
   const hallRef = useRef(onHallClick);
   pickRef.current = picking ? onPick : undefined;
@@ -47,6 +50,7 @@ export default function FinderMap({ bounds, places, halls, routes, focus, pickin
 
   useEffect(() => {
     let gone = false;
+    let resize: ResizeObserver | undefined;
     (async () => {
       const lib = await import("maplibre-gl");
       if (gone || !box.current) return;
@@ -100,9 +104,15 @@ export default function FinderMap({ bounds, places, halls, routes, focus, pickin
         setReady(true);
       });
       map.current = m;
+      resize = new ResizeObserver(() => {
+        m.resize();
+        if (lastFit.current) m.fitBounds(lastFit.current, { padding: 70, maxZoom: 17, duration: 0 });
+      });
+      resize.observe(box.current);
     })();
     return () => {
       gone = true;
+      resize?.disconnect();
       map.current?.remove();
       map.current = null;
     };
@@ -154,6 +164,7 @@ export default function FinderMap({ bounds, places, halls, routes, focus, pickin
     if (!pts.length) return;
     const b = new lib.LngLatBounds(pts[0], pts[0]);
     for (const p of pts) b.extend(p);
+    lastFit.current = b;
     m.fitBounds(b, { padding: 70, maxZoom: 17, duration: reduced() ? 0 : 600 });
   }, [ready, places, focus]);
 
