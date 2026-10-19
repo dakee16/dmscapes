@@ -7,6 +7,9 @@ import DormPicker from "@/components/planner/DormPicker";
 import RoomPicker from "@/components/planner/RoomPicker";
 import ManualEntry, { type ManualEntryValues } from "@/components/planner/ManualEntry";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
+import { PlannerCallout, PlannerCard } from "@/components/hall-finder/Entry";
+import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
+import { exampleFor } from "@/lib/hall-finder-example";
 import { ArrowRight, ChevronDown } from "@/components/ds/Icons";
 import { shortName } from "@/lib/school-names";
 import { bedName } from "@/lib/room-preview";
@@ -52,6 +55,8 @@ export default function RoomStep({
   const dorm = school.dorms.find((d) => d.id === dormId) ?? null;
   const counts = schoolCounts(school);
   const short = shortName(school);
+  // Pilot schools get the Hall Finder card and, while no hall is picked, its callout.
+  const hallFinder = useHallFinderOn() ? exampleFor(school.id, short) : null;
   const [hallsOpen, setHallsOpen] = useState(!dorm);
   useEffect(() => {
     if (!dorm) setHallsOpen(true);
@@ -83,6 +88,7 @@ export default function RoomStep({
         <p className={css.counts}>
           {plural(counts.buildings, "building")} · {plural(counts.roomTypes, "room type")}
         </p>
+        {hallFinder && <PlannerCard collegeId={school.id} />}
 
         <button
           type="button"
@@ -222,10 +228,11 @@ export default function RoomStep({
             </div>
           </>
         ) : (
-          <div className={css.pickHall}>
+          <div className={css.pickHall} data-hall-finder={hallFinder ? "" : undefined}>
             <p>
               {`Choose one of ${short}'s ${plural(counts.buildings, "building")} and we'll draw its rooms to scale.`}
             </p>
+            {hallFinder && <PlannerCallout example={hallFinder} allHalls={hallFinder.halls === counts.buildings} />}
             <Link href="/plan/draw" className={css.drawLink}>
               Draw my own room instead
             </Link>
