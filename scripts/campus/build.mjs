@@ -140,13 +140,14 @@ const uniqBy = (list, key) => {
 };
 
 // ---- OSM buildings
-const skeletons = new Map(osm.elements.filter((e) => e.type === "way" && !e.tags).map((e) => [e.id, e.nodes]));
-const entranceNodes = new Map(
-  osm.elements
-    .filter((e) => e.type === "node" && !["no", "emergency"].includes(e.tags?.entrance) && !["private", "no"].includes(e.tags?.access))
-    .map((e) => [e.id, xy(e.lon, e.lat)]),
-);
-const buildings = osm.elements
+function toBuildings(elements) {
+  const skeletons = new Map(elements.filter((e) => e.type === "way" && !e.tags).map((e) => [e.id, e.nodes]));
+  const entranceNodes = new Map(
+    elements
+      .filter((e) => e.type === "node" && !["no", "emergency"].includes(e.tags?.entrance) && !["private", "no"].includes(e.tags?.access))
+      .map((e) => [e.id, xy(e.lon, e.lat)]),
+  );
+  return elements
   .filter((e) => (e.type === "way" || e.type === "relation") && e.tags?.building)
   .map((e) => {
     const geoms = e.type === "way" ? [e.geometry] : e.members.filter((m) => m.type === "way" && m.role !== "inner" && m.geometry).map((m) => m.geometry);
@@ -163,6 +164,10 @@ const buildings = osm.elements
     };
   })
   .filter((b) => b.center);
+}
+const buildings = toBuildings(osm.elements);
+// Unnamed buildings inside the outline (fetched only when the official list has locations).
+const unnamed = toBuildings(cache("unnamed")?.elements ?? []);
 
 // Campus outline (fetched with the buildings). Places sit inside it or appear on the official list.
 const [areaType, areaId] = (config.area.osm ?? "").split("/");
@@ -366,7 +371,7 @@ const official = listed.concat((codeList?.features ?? [])
 
 // ---- Places: named OSM buildings in the campus area that aren't halls or outbuildings.
 const NOT_PLACES = new Set(["dormitory", "residential", "apartments", "house", "detached", "semidetached_house", "terrace", "garage", "garages", "carport", "parking", "shed", "hut", "roof", "service", "transformer_tower", "water_tower", "silo", "barn", "cowshed", "stable", "farm_auxiliary", "greenhouse", "storage_tank", "bunker", "kiosk", "toilets", "ruins", "construction", "stadium", "grandstand"]);
-const OUTBUILDING = /\b(bus|parking|garage|deck|substation|shed|shelter|barn|silo|kiosk|storage|greenhouse|pump ?house)\b/i;
+const OUTBUILDING = /\b(bus|parking|garage|deck|substation|shed|shelter|barn|silo|kiosk|storage|greenhouse|hangar|heliport|pump ?house)\b/i;
 function kindOf(t) {
   const name = t.name ?? "";
   if (t.amenity === "library" || t.building === "library" || /\blibrar(y|ies)\b/i.test(name)) return "library";
@@ -387,8 +392,28 @@ function wordMatch(o, variants) {
   if (b) report.wordMatched.push(`${o.code} "${o.name}" = "${b.tags.name}"`);
   return b;
 }
+// An unnamed OSM building that an official footprint or point lands on takes the official name.
+const fromList = new Map();
+function namedFromList(u, o) {
+  if (!fromList.has(u.osm)) {
+    const b = { ...u, tags: { ...u.tags, name: o.name.replace(/\s*\(.*?\)\s*/g, " ").trim() } };
+    fromList.set(u.osm, b);
+    candidates.push(b);
+    joined.set(b, []);
+  }
+  return fromList.get(u.osm);
+}
+const byOsm = new Map([...unnamed, ...candidates].map((b) => [b.osm, b]));
+const sameCode = (b, code) => [b.tags.short_name, b.tags.alt_name, b.tags.ref].some((v) => v?.split(";").some((x) => x.trim().toUpperCase() === code.toUpperCase()));
 const unjoined = [];
 for (const o of official) {
+  // Manual fix (overrides.codes): this code belongs to that OSM building, or to none.
+  const forced = o.code && overrides.codes && o.code in overrides.codes ? overrides.codes[o.code] : undefined;
+  if (forced !== undefined) {
+    const b = forced && byOsm.get(forced);
+    if (b) joined.get(b.tags.name ? b : namedFromList(b, o)).push(o);
+    continue;
+  }
   if (OUTBUILDING.test(o.name)) continue;
   // Either centroid inside the other footprint (a U-shaped building's centroid sits in its courtyard).
   // "Osmond Laboratory (I Thornton)", "Milbank Hall, Barnard"
@@ -403,12 +428,23 @@ for (const o of official) {
   if (isHall) continue;
   const host =
     candidates.find((b) => (o.center && inBuilding(o.center, b)) || o.rings.some((r) => inRing(b.center, r))) ??
+    // OSM's short or alt name is the code itself ("Grady Gammage Memorial Auditorium", alt_name GGMA).
+    (o.code && candidates.find((b) => sameCode(b, o.code))) ??
     candidates.find((b) => osmNames(b.tags).some((n) => names.has(norm(n)))) ??
     candidates.find((b) => osmNames(b.tags).some((n) => cores.has(core(n)))) ??
     wordMatch(o, variants);
   if (host) joined.get(host).push(o);
   else if (o.code) unjoined.push(o);
 }
+// Still unplaced: name the unnamed building its footprint or point lands on, unless it's a hall.
+const hallNameKeys = new Set(halls.flatMap((h) => h.names.flatMap((n) => [norm(n), core(n)])).filter(Boolean));
+const leftover = unjoined.filter((o) => {
+  const plain = o.name.replace(/\s*\(.*?\)\s*/g, " ");
+  if ([o.name, plain].some((n) => hallNameKeys.has(norm(n)) || hallNameKeys.has(core(n)))) return true;
+  const u = unnamed.find((b) => !NOT_PLACES.has(b.tags.building) && ((o.center && inBuilding(o.center, b)) || o.rings.some((r) => inRing(b.center, r))));
+  if (u) joined.get(namedFromList(u, o)).push(o);
+  return !u;
+});
 
 const placeIds = new Set();
 let places = [];
@@ -452,6 +488,7 @@ for (const b of candidates) {
       lat: round(lngLat(b.center)[1], 6),
       osm: b.osm,
     },
+    b,
     snap,
   });
 }
@@ -553,9 +590,25 @@ places = kept;
 const outDir = path.join("data/campus/paths", id);
 fs.rmSync(outDir, { recursive: true, force: true });
 fs.mkdirSync(outDir, { recursive: true });
-const minutes = { places: kept.map((p) => p.out.id), halls: {} };
+// Footprints touching or within 1.5 m (a commons built onto its hall). Those pairs may be under
+// half a minute apart; minutes.attached lists them so the check can tell them from snapping bugs.
+function gap(a, b) {
+  let best = Infinity;
+  for (const [r, s] of [[a, b], [b, a]]) {
+    for (const p of r) {
+      if (inRing(p, s)) return 0;
+      for (let i = 1; i < s.length; i++) best = Math.min(best, project(p, s[i - 1], s[i]).d);
+    }
+  }
+  return best;
+}
+const touching = (a, b) => a.rings.some((r) => b.rings.some((s) => gap(r, s) <= 1.5));
+const minutes = { places: kept.map((p) => p.out.id), halls: {}, attached: {} };
 for (const [dormId, { row, paths }] of routes) {
   minutes.halls[dormId] = row.filter((_, i) => !farIdx.has(i));
+  const hallBuilding = halls.find((h) => h.d.dorm_id === dormId).building;
+  const attached = kept.filter((p, i) => minutes.halls[dormId][i] < 0.5 && hallBuilding && touching(hallBuilding, p.b)).map((p) => p.out.id);
+  if (attached.length) minutes.attached[dormId] = attached;
   for (const i of farIdx) delete paths[routable[i].out.id];
   fs.writeFileSync(path.join(outDir, `${dormId}.json`), JSON.stringify(paths));
 }
@@ -600,6 +653,6 @@ const kb = (f) => `${(fs.statSync(f).size / 1024).toFixed(1)} KB`;
 console.log(`${id}: graph ${nNodes} nodes, ${eu.length} edges`);
 console.log(`halls ${halls.length}: pins`, count(halls, (h) => h.pin), "snapped via", count(halls, (h) => h.snap.via));
 console.log(`places ${places.length}:`, count(places, (p) => p.out.kind), "snapped via", count(places, (p) => p.snap.via));
-console.log(`official buildings ${official.length}: ${unjoined.length} coded ones sit on no place`);
+console.log(`official buildings ${official.length}: ${fromList.size} name unnamed OSM buildings, ${leftover.length} coded ones sit on no place`);
 for (const [k, list] of Object.entries(report)) if (list.length) console.log(`${k} (${list.length}): ${list.slice(0, 40).join(", ")}${list.length > 40 ? " …" : ""}`);
 console.log(`data/campus/${id}.json ${kb(`data/campus/${id}.json`)}, minutes ${kb(`data/campus/${id}.minutes.json`)}`);

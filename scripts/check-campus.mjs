@@ -2,7 +2,8 @@
 //   node scripts/check-campus.mjs              every campus in data/campus/
 //   node scripts/check-campus.mjs penn-state
 // Fails (exit 1) unless: every hall has a pin, every academic place has a code or alias,
-// every minute is finite and 0.5–45, walking ÷ door-to-door straight line is 1.0–2.5, every hall has a
+// every minute is finite and 0.5–45 (0 is fine for a place attached to the hall, per
+// minutes.attached), walking ÷ door-to-door straight line is 1.0–2.5, every hall has a
 // path to every place (and each decoded path is as long as its minutes say), and the
 // client file is under 150 KB and the minutes file under 250 KB.
 import fs from "node:fs";
@@ -52,7 +53,7 @@ for (const id of ids) {
   const issues = {
     "every hall has a pin": dorms.filter((d) => !pinned(hallById.get(d.dorm_id))).map((d) => d.dorm_id),
     "every academic place has a code or alias": campus.places.filter((p) => p.kind === "academic" && !p.codes.length && !p.aliases.length).map((p) => p.id),
-    "minutes are finite and 0.5–45": [],
+    "minutes are finite and 0.5–45 (0 if attached)": [],
     "walking ÷ straight-line is 1.0–2.5": [],
     "every hall has a path to every place": [],
     "size budgets (client < 150 KB, minutes < 250 KB)": [],
@@ -70,7 +71,8 @@ for (const id of ids) {
       const min = row[i];
       const place = placeById.get(pid);
       const pair = `${d.dorm_id} -> ${pid}`;
-      if (!Number.isFinite(min) || min < 0.5 || min > 45) issues["minutes are finite and 0.5–45"].push(`${pair} ${min}`);
+      const floor = minutes.attached?.[d.dorm_id]?.includes(pid) ? 0 : 0.5;
+      if (!Number.isFinite(min) || min < floor || min > 45) issues["minutes are finite and 0.5–45 (0 if attached)"].push(`${pair} ${min}`);
       if (!Number.isFinite(min) || !place) return;
       if (!paths[pid]) return issues["every hall has a path to every place"].push(`${pair}: missing`);
       const walked = min * 60 * speed;
