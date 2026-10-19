@@ -1,0 +1,243 @@
+{
+ "name": "Columbia University Registrar, Building Codes",
+ "url": "https://registrar.columbia.edu/content/building-codes",
+ "read": "2026-10-19 from the Wayback Machine copy of 2025-12-14 (https://web.archive.org/web/20251214002731/https://registrar.columbia.edu/content/building-codes); the live page blocks scripts",
+ "buildings": [
+  {
+   "code": "ALT",
+   "name": "Altschul Hall"
+  },
+  {
+   "code": "AVH",
+   "name": "Avery Hall"
+  },
+  {
+   "code": "BAR",
+   "name": "Barnard Hall"
+  },
+  {
+   "code": "BLK",
+   "name": "Black Building"
+  },
+  {
+   "code": "BUE",
+   "name": "Buell Hall"
+  },
+  {
+   "code": "BUT",
+   "name": "Butler Library"
+  },
+  {
+   "code": "BWY",
+   "name": "Broadway Residence Hall"
+  },
+  {
+   "code": "CAR",
+   "name": "Carman Hall"
+  },
+  {
+   "code": "CHA",
+   "name": "Chandler"
+  },
+  {
+   "code": "CLA",
+   "name": "80 Claremont"
+  },
+  {
+   "code": "CSC",
+   "name": "Computer Science Building"
+  },
+  {
+   "code": "DEU",
+   "name": "Deutsches Haus"
+  },
+  {
+   "code": "DIA",
+   "name": "Diana Center"
+  },
+  {
+   "code": "DOD",
+   "name": "Dodge Building"
+  },
+  {
+   "code": "ENG",
+   "name": "Engineering Terrace"
+  },
+  {
+   "code": "FAY",
+   "name": "Fayerweather"
+  },
+  {
+   "code": "FLS",
+   "name": "Fairchild Life Sciences Building"
+  },
+  {
+   "code": "GDH",
+   "name": "Grace Dodge Hall (TC)"
+  },
+  {
+   "code": "GRE",
+   "name": "Green Hall Law Building"
+  },
+  {
+   "code": "HAM",
+   "name": "Hamilton Hall"
+  },
+  {
+   "code": "HAV",
+   "name": "Havemeyer Hall"
+  },
+  {
+   "code": "HEY",
+   "name": "Heyman Center for Humanities"
+  },
+  {
+   "code": "HIS",
+   "name": "Casa Hispanica"
+  },
+  {
+   "code": "HM",
+   "name": "Horace Mann Hall"
+  },
+  {
+   "code": "HMB",
+   "name": "Horace Mann Building"
+  },
+  {
+   "code": "HSC",
+   "name": "Hammer Health Sciences Center"
+  },
+  {
+   "code": "HTL",
+   "name": "Hartley Hall"
+  },
+  {
+   "code": "IAB",
+   "name": "International Affairs Building"
+  },
+  {
+   "code": "INTH",
+   "name": "International House"
+  },
+  {
+   "code": "JRN",
+   "name": "Journalism Building"
+  },
+  {
+   "code": "KNT",
+   "name": "Kent Hall"
+  },
+  {
+   "code": "KNX",
+   "name": "Knox Hall"
+  },
+  {
+   "code": "KRAF",
+   "name": "Kraft Center"
+  },
+  {
+   "code": "LEH",
+   "name": "Lehman Hall"
+  },
+  {
+   "code": "LER",
+   "name": "Alfred Lerner Hall"
+  },
+  {
+   "code": "LEW",
+   "name": "Lewisohn Hall"
+  },
+  {
+   "code": "MAT",
+   "name": "Mathematics Building"
+  },
+  {
+   "code": "MCY",
+   "name": "Macy Hall"
+  },
+  {
+   "code": "MIL",
+   "name": "Milbank Hall, Barnard"
+  },
+  {
+   "code": "MLC",
+   "name": "Milstein Center, Barnard"
+  },
+  {
+   "code": "MLK",
+   "name": "Martin Luther King Building"
+  },
+  {
+   "code": "MUD",
+   "name": "Seeley W. Mudd Building"
+  },
+  {
+   "code": "NASH",
+   "name": "Nash Building"
+  },
+  {
+   "code": "NWC",
+   "name": "Northwest Corner"
+  },
+  {
+   "code": "PHI",
+   "name": "Philosophy Hall"
+  },
+  {
+   "code": "PRN",
+   "name": "Prentis Hall"
+  },
+  {
+   "code": "PUP",
+   "name": "Pupin Laboratories"
+  },
+  {
+   "code": "RSC",
+   "name": "Riverside Church"
+  },
+  {
+   "code": "SCEP",
+   "name": "Schapiro Center for Engineering & Physical Science Research"
+  },
+  {
+   "code": "SCH",
+   "name": "Schermerhorn Hall"
+  },
+  {
+   "code": "SCHP",
+   "name": "Schapiro (Residence Hall)"
+  },
+  {
+   "code": "SSW",
+   "name": "School of Social Work"
+  },
+  {
+   "code": "TH",
+   "name": "Thompson Hall (TC)"
+  },
+  {
+   "code": "THM",
+   "name": "Thompson Hall (TC)"
+  },
+  {
+   "code": "UTS",
+   "name": "Union Theological Seminary"
+  },
+  {
+   "code": "URI",
+   "name": "Uris Hall"
+  },
+  {
+   "code": "WAT",
+   "name": "Watson Hall"
+  },
+  {
+   "code": "WJW",
+   "name": "W & J Warren (Law & Business)"
+  },
+  {
+   "code": "ZB",
+   "name": "Zankel"
+  }
+ ]
+}
