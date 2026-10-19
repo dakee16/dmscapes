@@ -1,0 +1,4704 @@
+{
+ "collegeId": "penn-state",
+ "generatedAt": "2026-10-19T17:07:06.765Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-10-19"
+  },
+  {
+   "name": "Penn State Office of Physical Plant, UP Buildings (building inventory: names, abbreviations, aliases)",
+   "url": "https://www.arcgis.com/home/item.html?id=3ad96faf5e534658bb58301af22cb76f",
+   "use": "building codes and aliases",
+   "fetched": "2026-10-19"
+  },
+  {
+   "name": "Penn State LiveOn hall pages, \"living arrangements\" (First-Year Students / Upperclass Students)",
+   "url": "https://liveon.psu.edu/university-park/housing-areas",
+   "use": "first-year and upper-year tags (each hall's yearSource)",
+   "note": "liveon.psu.edu serves a bot challenge; the same public pages were read once from liveon.prod.fbweb.psu.edu on 2026-10-19."
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/atherton-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/beam-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/beaver-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/bigler-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/brill-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/brumbaugh-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/chace-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/cooper-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/cross-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/curry-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/curtin-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/dunham-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/earle-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/ewing-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/garban",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/geary-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/grubb",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/haller-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/hamilton-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/harris-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/hartranft-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/hastings-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/hibbs-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/hiester-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/holmes-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/hoyt-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/irvin-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/jordan-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/leete-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/lyons-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/martin-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/mcelwain-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/mckean-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/mckee-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/mifflin-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/miller-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/nelson-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/nittany-apt-garden",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/nittany-apt-townhouse",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/nittany-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/packer-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/panofsky-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/pennypacker-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/pinchot-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/porter-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/ritner-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/robinson-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/runkle-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/shulze-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/shunk-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/simmons-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/snyder-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/sproul-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/stephens-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/stone-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/stuart-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/tener-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/thompson-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/watts-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/wolf-hall",
+   "use": "year tag"
+  },
+  {
+   "name": "Hall page",
+   "url": "https://liveon.psu.edu/university-park/housing/young-hall",
+   "use": "year tag"
+  }
+ ],
+ "bounds": [
+  -77.87685,
+  40.78296,
+  -77.8455,
+  40.81518
+ ],
+ "halls": [
+  {
+   "dormId": "atherton-hall",
+   "name": "Atherton Hall",
+   "lng": -77.858404,
+   "lat": 40.797825,
+   "pin": "name",
+   "osm": "way/37094031",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/atherton-hall"
+  },
+  {
+   "dormId": "beam-hall",
+   "name": "Beam Hall",
+   "lng": -77.867705,
+   "lat": 40.801692,
+   "pin": "name",
+   "osm": "way/431071068",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/beam-hall"
+  },
+  {
+   "dormId": "beaver-hall",
+   "name": "Beaver Hall",
+   "lng": -77.85706,
+   "lat": 40.800237,
+   "pin": "name",
+   "osm": "way/430434713",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/beaver-hall"
+  },
+  {
+   "dormId": "bigler-hall",
+   "name": "Bigler Hall",
+   "lng": -77.861621,
+   "lat": 40.804853,
+   "pin": "name",
+   "osm": "way/37511281",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/bigler-hall"
+  },
+  {
+   "dormId": "brill-hall",
+   "name": "Brill Hall",
+   "lng": -77.854827,
+   "lat": 40.801282,
+   "pin": "name",
+   "osm": "way/430391736",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/brill-hall"
+  },
+  {
+   "dormId": "brumbaugh-hall",
+   "name": "Brumbaugh Hall",
+   "lng": -77.863237,
+   "lat": 40.806416,
+   "pin": "name",
+   "osm": "way/291674450",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/brumbaugh-hall"
+  },
+  {
+   "dormId": "chace-hall",
+   "name": "Chace Hall",
+   "lng": -77.857382,
+   "lat": 40.798758,
+   "pin": "name",
+   "osm": "way/344027786",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/chace-hall"
+  },
+  {
+   "dormId": "cooper-hall",
+   "name": "Cooper Hall",
+   "lng": -77.855002,
+   "lat": 40.800001,
+   "pin": "name",
+   "osm": "way/261002808",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/cooper-hall"
+  },
+  {
+   "dormId": "cross-hall",
+   "name": "Cross Hall",
+   "lng": -77.855582,
+   "lat": 40.8004,
+   "pin": "name",
+   "osm": "way/261002811",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/cross-hall"
+  },
+  {
+   "dormId": "curry-hall",
+   "name": "Curry Hall",
+   "lng": -77.854319,
+   "lat": 40.80174,
+   "pin": "name",
+   "osm": "way/264374197",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/curry-hall"
+  },
+  {
+   "dormId": "curtin-hall",
+   "name": "Curtin Hall",
+   "lng": -77.861164,
+   "lat": 40.805134,
+   "pin": "name",
+   "osm": "way/37511285",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/curtin-hall"
+  },
+  {
+   "dormId": "dunham-hall",
+   "name": "Dunham Hall",
+   "lng": -77.872109,
+   "lat": 40.790336,
+   "pin": "name",
+   "osm": "way/202051662",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/dunham-hall"
+  },
+  {
+   "dormId": "earle-hall",
+   "name": "Earle Hall",
+   "lng": -77.863329,
+   "lat": 40.806946,
+   "pin": "name",
+   "osm": "way/539316693",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/earle-hall"
+  },
+  {
+   "dormId": "ewing-hall",
+   "name": "Ewing Hall",
+   "lng": -77.855998,
+   "lat": 40.800067,
+   "pin": "name",
+   "osm": "way/261002813",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/ewing-hall"
+  },
+  {
+   "dormId": "garban",
+   "name": "Garban Hall",
+   "lng": -77.871803,
+   "lat": 40.790066,
+   "pin": "name",
+   "osm": "way/431978929",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/garban"
+  },
+  {
+   "dormId": "geary-hall",
+   "name": "Geary Hall",
+   "lng": -77.86223,
+   "lat": 40.805551,
+   "pin": "name",
+   "osm": "way/37511284",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/geary-hall"
+  },
+  {
+   "dormId": "grubb",
+   "name": "Grubb Hall",
+   "lng": -77.872217,
+   "lat": 40.78963,
+   "pin": "name",
+   "osm": "way/431978930",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/grubb"
+  },
+  {
+   "dormId": "haller-hall",
+   "name": "Haller Hall",
+   "lng": -77.856873,
+   "lat": 40.799118,
+   "pin": "name",
+   "osm": "way/261002815",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/haller-hall"
+  },
+  {
+   "dormId": "hamilton-hall",
+   "name": "Hamilton Hall",
+   "lng": -77.866851,
+   "lat": 40.795775,
+   "pin": "name",
+   "osm": "way/431780860",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hamilton-hall"
+  },
+  {
+   "dormId": "harris-hall",
+   "name": "Harris Hall",
+   "lng": -77.853614,
+   "lat": 40.802117,
+   "pin": "name",
+   "osm": "way/264374200",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/harris-hall"
+  },
+  {
+   "dormId": "hartranft-hall",
+   "name": "Hartranft Hall",
+   "lng": -77.857859,
+   "lat": 40.800164,
+   "pin": "name",
+   "osm": "way/264373968",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hartranft-hall"
+  },
+  {
+   "dormId": "hastings-hall",
+   "name": "Hastings Hall",
+   "lng": -77.862593,
+   "lat": 40.807587,
+   "pin": "name",
+   "osm": "way/37511282",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hastings-hall"
+  },
+  {
+   "dormId": "hibbs-hall",
+   "name": "Hibbs Hall",
+   "lng": -77.856985,
+   "lat": 40.798515,
+   "pin": "name",
+   "osm": "way/261002817",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hibbs-hall"
+  },
+  {
+   "dormId": "hiester-hall",
+   "name": "Hiester Hall",
+   "lng": -77.856983,
+   "lat": 40.801172,
+   "pin": "name",
+   "osm": "way/264373969",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hiester-hall"
+  },
+  {
+   "dormId": "holmes-hall",
+   "name": "Holmes Hall",
+   "lng": -77.8671,
+   "lat": 40.802149,
+   "pin": "name",
+   "osm": "way/65425677",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/holmes-hall"
+  },
+  {
+   "dormId": "hoyt-hall",
+   "name": "Hoyt Hall",
+   "lng": -77.854531,
+   "lat": 40.80029,
+   "pin": "name",
+   "osm": "way/264374201",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hoyt-hall"
+  },
+  {
+   "dormId": "irvin-hall",
+   "name": "Irvin Hall",
+   "lng": -77.867557,
+   "lat": 40.796998,
+   "pin": "name",
+   "osm": "way/46594566",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/irvin-hall"
+  },
+  {
+   "dormId": "jordan-hall",
+   "name": "Jordan Hall",
+   "lng": -77.866927,
+   "lat": 40.796829,
+   "pin": "name",
+   "osm": "way/431780861",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/jordan-hall"
+  },
+  {
+   "dormId": "leete-hall",
+   "name": "Leete Hall",
+   "lng": -77.866782,
+   "lat": 40.802752,
+   "pin": "name",
+   "osm": "way/65425665",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/leete-hall"
+  },
+  {
+   "dormId": "lyons-hall",
+   "name": "Lyons Hall",
+   "lng": -77.856557,
+   "lat": 40.79951,
+   "pin": "name",
+   "osm": "way/261002821",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/lyons-hall"
+  },
+  {
+   "dormId": "martin-hall",
+   "name": "Martin Hall",
+   "lng": -77.860742,
+   "lat": 40.805633,
+   "pin": "name",
+   "osm": "way/539094010",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/martin-hall"
+  },
+  {
+   "dormId": "mcelwain-hall",
+   "name": "McElwain Hall",
+   "lng": -77.859246,
+   "lat": 40.800055,
+   "pin": "name",
+   "osm": "way/46594789",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/mcelwain-hall"
+  },
+  {
+   "dormId": "mckean-hall",
+   "name": "McKean Hall",
+   "lng": -77.861006,
+   "lat": 40.806449,
+   "pin": "name",
+   "osm": "way/37125587",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/mckean-hall"
+  },
+  {
+   "dormId": "mckee-hall",
+   "name": "McKee Hall",
+   "lng": -77.867928,
+   "lat": 40.796384,
+   "pin": "name",
+   "osm": "way/431780862",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/mckee-hall"
+  },
+  {
+   "dormId": "mifflin-hall",
+   "name": "Mifflin Hall",
+   "lng": -77.858418,
+   "lat": 40.800489,
+   "pin": "name",
+   "osm": "way/430434714",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/mifflin-hall"
+  },
+  {
+   "dormId": "miller-hall",
+   "name": "Miller Hall",
+   "lng": -77.852852,
+   "lat": 40.802175,
+   "pin": "name",
+   "osm": "way/264374203",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/miller-hall"
+  },
+  {
+   "dormId": "nelson-hall",
+   "name": "Nelson Hall",
+   "lng": -77.85308,
+   "lat": 40.801595,
+   "pin": "name",
+   "osm": "way/264374204",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/nelson-hall"
+  },
+  {
+   "dormId": "nittany-apt-garden",
+   "name": "Nittany Apt Garden",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/nittany-apt-garden"
+  },
+  {
+   "dormId": "nittany-apt-townhouse",
+   "name": "Nittany Apt Townhouse",
+   "lng": null,
+   "lat": null,
+   "pin": null,
+   "osm": null,
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/nittany-apt-townhouse"
+  },
+  {
+   "dormId": "nittany-hall",
+   "name": "Nittany Hall",
+   "lng": -77.85605,
+   "lat": 40.803134,
+   "pin": "name",
+   "osm": "way/261326043",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/nittany-hall"
+  },
+  {
+   "dormId": "packer-hall",
+   "name": "Packer Hall",
+   "lng": -77.862296,
+   "lat": 40.8051,
+   "pin": "name",
+   "osm": "way/37511280",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/packer-hall"
+  },
+  {
+   "dormId": "panofsky-hall",
+   "name": "Panofsky Hall",
+   "lng": -77.853901,
+   "lat": 40.800968,
+   "pin": "name",
+   "osm": "way/264374206",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/panofsky-hall"
+  },
+  {
+   "dormId": "pennypacker-hall",
+   "name": "Pennypacker Hall",
+   "lng": -77.860485,
+   "lat": 40.806161,
+   "pin": "name",
+   "osm": "way/37125586",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/pennypacker-hall"
+  },
+  {
+   "dormId": "pinchot-hall",
+   "name": "Pinchot Hall",
+   "lng": -77.863325,
+   "lat": 40.805743,
+   "pin": "name",
+   "osm": "way/430202303",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/pinchot-hall"
+  },
+  {
+   "dormId": "porter-hall",
+   "name": "Porter Hall",
+   "lng": -77.856607,
+   "lat": 40.800835,
+   "pin": "name",
+   "osm": "way/264373974",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/porter-hall"
+  },
+  {
+   "dormId": "ritner-hall",
+   "name": "Ritner Hall",
+   "lng": -77.85746,
+   "lat": 40.802001,
+   "pin": "name",
+   "osm": "way/430434717",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/ritner-hall"
+  },
+  {
+   "dormId": "robinson-hall",
+   "name": "Robinson Hall",
+   "lng": -77.866578,
+   "lat": 40.801906,
+   "pin": "name",
+   "osm": "way/503897264",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/robinson-hall"
+  },
+  {
+   "dormId": "runkle-hall",
+   "name": "Runkle Hall",
+   "lng": -77.865938,
+   "lat": 40.802326,
+   "pin": "name",
+   "osm": "way/65425682",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/runkle-hall"
+  },
+  {
+   "dormId": "shulze-hall",
+   "name": "Shulze Hall",
+   "lng": -77.857663,
+   "lat": 40.801256,
+   "pin": "name",
+   "osm": "way/264373976",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/shulze-hall"
+  },
+  {
+   "dormId": "shunk-hall",
+   "name": "Shunk Hall",
+   "lng": -77.856194,
+   "lat": 40.801254,
+   "pin": "name",
+   "osm": "way/430434718",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/shunk-hall"
+  },
+  {
+   "dormId": "simmons-hall",
+   "name": "Simmons Hall",
+   "lng": -77.858108,
+   "lat": 40.799299,
+   "pin": "name",
+   "osm": "way/46594790",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/simmons-hall"
+  },
+  {
+   "dormId": "snyder-hall",
+   "name": "Snyder Hall",
+   "lng": -77.861635,
+   "lat": 40.807551,
+   "pin": "name",
+   "osm": "way/37511279",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/snyder-hall"
+  },
+  {
+   "dormId": "sproul-hall",
+   "name": "Sproul Hall",
+   "lng": -77.862811,
+   "lat": 40.805914,
+   "pin": "name",
+   "osm": "way/430202307",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/sproul-hall"
+  },
+  {
+   "dormId": "stephens-hall",
+   "name": "Stephens Hall",
+   "lng": -77.856514,
+   "lat": 40.798804,
+   "pin": "name",
+   "osm": "way/261002824",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/stephens-hall"
+  },
+  {
+   "dormId": "stone-hall",
+   "name": "Stone Hall",
+   "lng": -77.86167,
+   "lat": 40.807078,
+   "pin": "name",
+   "osm": "way/37511283",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/stone-hall"
+  },
+  {
+   "dormId": "stuart-hall",
+   "name": "Stuart Hall",
+   "lng": -77.862626,
+   "lat": 40.807113,
+   "pin": "name",
+   "osm": "way/37511278",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/stuart-hall"
+  },
+  {
+   "dormId": "tener-hall",
+   "name": "Tener Hall",
+   "lng": -77.863751,
+   "lat": 40.806244,
+   "pin": "name",
+   "osm": "way/430202308",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/tener-hall"
+  },
+  {
+   "dormId": "thompson-hall",
+   "name": "Thompson Hall",
+   "lng": -77.866122,
+   "lat": 40.796445,
+   "pin": "name",
+   "osm": "way/431780863",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/thompson-hall"
+  },
+  {
+   "dormId": "watts-hall",
+   "name": "Watts Hall",
+   "lng": -77.867345,
+   "lat": 40.796517,
+   "pin": "name",
+   "osm": "way/431780865",
+   "year": "any",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/watts-hall"
+  },
+  {
+   "dormId": "wolf-hall",
+   "name": "Wolf Hall",
+   "lng": -77.85781,
+   "lat": 40.801653,
+   "pin": "name",
+   "osm": "way/264373979",
+   "year": "first",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/wolf-hall"
+  },
+  {
+   "dormId": "young-hall",
+   "name": "Young Hall",
+   "lng": -77.854791,
+   "lat": 40.800797,
+   "pin": "name",
+   "osm": "way/430391738",
+   "year": "upper",
+   "yearSource": "https://liveon.psu.edu/university-park/housing/young-hall"
+  }
+ ],
+ "places": [
+  {
+   "id": "bryce-jordan-center",
+   "name": "Bryce Jordan Center",
+   "short": "Bryce Jordan Ctr",
+   "kind": "academic",
+   "codes": [
+    "BJC"
+   ],
+   "aliases": [
+    "BJC",
+    "Bryce Jordan Ctr",
+    "Jordan Center (Bryce)"
+   ],
+   "lng": -77.855556,
+   "lat": 40.808602,
+   "osm": "way/432216054"
+  },
+  {
+   "id": "intramural-building",
+   "name": "Intramural Building",
+   "short": "Intramural Bldg",
+   "kind": "gym",
+   "codes": [
+    "IM"
+   ],
+   "aliases": [
+    "Intramural Bldg",
+    "Intramural",
+    "IM Building"
+   ],
+   "lng": -77.859217,
+   "lat": 40.807703,
+   "osm": "way/552482881"
+  },
+  {
+   "id": "rec-hall",
+   "name": "Rec Hall",
+   "short": "Rec Hall",
+   "kind": "academic",
+   "codes": [
+    "REC"
+   ],
+   "aliases": [
+    "Recreation Building",
+    "Rec"
+   ],
+   "lng": -77.868956,
+   "lat": 40.795483,
+   "osm": "relation/362636"
+  },
+  {
+   "id": "pegula-ice-arena",
+   "name": "Pegula Ice Arena",
+   "short": "Pegula Ice Arena",
+   "kind": "gym",
+   "codes": [
+    "PIA"
+   ],
+   "aliases": [
+    "PEG"
+   ],
+   "lng": -77.857036,
+   "lat": 40.806607,
+   "osm": "way/242166985"
+  },
+  {
+   "id": "holuba-hall",
+   "name": "Holuba Hall",
+   "short": "Holuba Hall",
+   "kind": "gym",
+   "codes": [
+    "HLB"
+   ],
+   "aliases": [],
+   "lng": -77.855307,
+   "lat": 40.806107,
+   "osm": "way/433134975"
+  },
+  {
+   "id": "multi-sport-indoor-facility",
+   "name": "Multi-Sport Indoor Facility",
+   "short": "Indoor Multi-Sport Facility",
+   "kind": "gym",
+   "codes": [
+    "MIF"
+   ],
+   "aliases": [
+    "Horace Ashenfelter III Indoor Track",
+    "Indoor Multi-Sport Facility"
+   ],
+   "lng": -77.852636,
+   "lat": 40.807754,
+   "osm": "way/37121217"
+  },
+  {
+   "id": "millennium-science-complex",
+   "name": "Millennium Science Complex",
+   "short": "Millennium Science Complex",
+   "kind": "academic",
+   "codes": [
+    "MSC"
+   ],
+   "aliases": [
+    "Millennium Science",
+    "MSC"
+   ],
+   "lng": -77.859883,
+   "lat": 40.801509,
+   "osm": "relation/5760727"
+  },
+  {
+   "id": "office-of-physical-plant",
+   "name": "Office of Physical Plant",
+   "short": "Physical Plant Bldg",
+   "kind": "academic",
+   "codes": [
+    "OPP"
+   ],
+   "aliases": [
+    "Physical Plant Bldg",
+    "Physical Plant",
+    "Physical Plant Building"
+   ],
+   "lng": -77.859508,
+   "lat": 40.813608,
+   "osm": "way/289657142"
+  },
+  {
+   "id": "hetzel-union-building",
+   "name": "Hetzel Union Building",
+   "short": "HUB-Robeson Center",
+   "kind": "academic",
+   "codes": [
+    "HUB"
+   ],
+   "aliases": [
+    "Ralph Dorn Hetzel Union Building",
+    "The HUB",
+    "HUB",
+    "HUB-Robeson Center",
+    "HUB Robeson Cultural Center",
+    "Hetzel Union Building (Ralph Dorn)"
+   ],
+   "lng": -77.861179,
+   "lat": 40.79824,
+   "osm": "way/431712457"
+  },
+  {
+   "id": "housing-and-food-services",
+   "name": "Housing and Food Services",
+   "short": "Housing and Food Service Bldg",
+   "kind": "academic",
+   "codes": [
+    "HFS"
+   ],
+   "aliases": [
+    "HFS",
+    "Housing and Food Service Bldg",
+    "Housing and Food Service",
+    "Housing and Food Service Building"
+   ],
+   "lng": -77.868955,
+   "lat": 40.808007,
+   "osm": "way/433172109"
+  },
+  {
+   "id": "westgate-building",
+   "name": "Westgate Building",
+   "short": "Westgate Building",
+   "kind": "academic",
+   "codes": [
+    "WST"
+   ],
+   "aliases": [
+    "Information Sciences and Technology Building",
+    "IST",
+    "Westgate"
+   ],
+   "lng": -77.868337,
+   "lat": 40.793645,
+   "osm": "way/431220608"
+  },
+  {
+   "id": "nittany-lion-inn",
+   "name": "Nittany Lion Inn",
+   "short": "Nittany Lion Inn",
+   "kind": "academic",
+   "codes": [
+    "NLI"
+   ],
+   "aliases": [
+    "The Nittany Lion Inn"
+   ],
+   "lng": -77.870824,
+   "lat": 40.796948,
+   "osm": "relation/569479"
+  },
+  {
+   "id": "white-building",
+   "name": "White Building",
+   "short": "White Bldg",
+   "kind": "gym",
+   "codes": [
+    "WHT"
+   ],
+   "aliases": [
+    "Mary Beaver White Building",
+    "WHT",
+    "White Bldg",
+    "White",
+    "White Building (Mary Beaver)"
+   ],
+   "lng": -77.859205,
+   "lat": 40.798488,
+   "osm": "way/35837142"
+  },
+  {
+   "id": "research-west-building",
+   "name": "Research West Building",
+   "short": "Research Bldg West",
+   "kind": "academic",
+   "codes": [
+    "RSW"
+   ],
+   "aliases": [
+    "Research Building West",
+    "RSW",
+    "Research Bldg West",
+    "Foods Building"
+   ],
+   "lng": -77.86886,
+   "lat": 40.792557,
+   "osm": "way/65369098"
+  },
+  {
+   "id": "lasch-football-building",
+   "name": "Lasch Football Building",
+   "short": "Lasch Football Bldg",
+   "kind": "gym",
+   "codes": [
+    "LFB"
+   ],
+   "aliases": [
+    "Louis and Mildred Lasch Football Building",
+    "Lasch Football Bldg",
+    "Lasch Football",
+    "Louis E Lasch Football Building"
+   ],
+   "lng": -77.854727,
+   "lat": 40.804652,
+   "osm": "way/242167839"
+  },
+  {
+   "id": "pattee-library",
+   "name": "Pattee Library",
+   "short": "Pattee Library",
+   "kind": "library",
+   "codes": [
+    "PTL"
+   ],
+   "aliases": [
+    "Fred Lewis Pattee Library",
+    "Pattee",
+    "PSU Library",
+    "PTL",
+    "Pattee Library (Fred Lewis)"
+   ],
+   "lng": -77.866223,
+   "lat": 40.797797,
+   "osm": "relation/359265"
+  },
+  {
+   "id": "business-building",
+   "name": "Business Building",
+   "short": "Business Bldg",
+   "kind": "academic",
+   "codes": [
+    "BUS"
+   ],
+   "aliases": [
+    "Business",
+    "Smeal College of Business",
+    "BUS",
+    "Business Bldg"
+   ],
+   "lng": -77.865227,
+   "lat": 40.803799,
+   "osm": "way/44959172"
+  },
+  {
+   "id": "hostetter-business-services",
+   "name": "Hostetter Business Services",
+   "short": "Hostetter Business Services",
+   "kind": "academic",
+   "codes": [
+    "HBS"
+   ],
+   "aliases": [
+    "HBS",
+    "Hostetter Business Services Building (Samuel K)"
+   ],
+   "lng": -77.867826,
+   "lat": 40.808782,
+   "osm": "way/249794068"
+  },
+  {
+   "id": "engineering-collaborative-research-and-education-building",
+   "name": "Engineering Collaborative Research and Education Building",
+   "short": "ECoRE Bldg (West 1)",
+   "kind": "academic",
+   "codes": [
+    "WST1"
+   ],
+   "aliases": [
+    "ECoRE",
+    "ECoRE Bldg (West 1)",
+    "Engineering Collaborative Research and Education (ECoRE) Building"
+   ],
+   "lng": -77.870697,
+   "lat": 40.792863,
+   "osm": "way/1204345414"
+  },
+  {
+   "id": "chambers-building",
+   "name": "Chambers Building",
+   "short": "Chambers Bldg",
+   "kind": "academic",
+   "codes": [
+    "CHB"
+   ],
+   "aliases": [
+    "Will Grant Chambers Building",
+    "Chambers",
+    "CHB",
+    "Chambers Bldg",
+    "Chambers Building (Will Grant)"
+   ],
+   "lng": -77.867824,
+   "lat": 40.798367,
+   "osm": "relation/1021393"
+  },
+  {
+   "id": "greenberg-indoor-sports-complex",
+   "name": "Greenberg Indoor Sports Complex",
+   "short": "Greenberg Indoor Sports",
+   "kind": "academic",
+   "codes": [
+    "GIP"
+   ],
+   "aliases": [
+    "Philip and Barbara Greenberg Indoor Sports Complex",
+    "GIP",
+    "Greenberg Indoor Sports",
+    "Greenberg Indoor Sports Complex (Philip & Barbara)"
+   ],
+   "lng": -77.855029,
+   "lat": 40.804153,
+   "osm": "way/242167840"
+  },
+  {
+   "id": "erickson-food-science-building",
+   "name": "Erickson Food Science Building",
+   "short": "Erickson Food Science Bldg",
+   "kind": "academic",
+   "codes": [
+    "FDS"
+   ],
+   "aliases": [
+    "Rodney A. Erickson",
+    "Food Science",
+    "FDS",
+    "Erickson Food Science Bldg",
+    "Erickson Food Science",
+    "Berkey Creamery",
+    "Erickson Food Science Building (Rodney A.)"
+   ],
+   "lng": -77.862342,
+   "lat": 40.80397,
+   "osm": "way/65372430"
+  },
+  {
+   "id": "paterno-library",
+   "name": "Paterno Library",
+   "short": "Paterno Library",
+   "kind": "library",
+   "codes": [
+    "PNL"
+   ],
+   "aliases": [
+    "Suzanne P. Paterno Library",
+    "Paterno",
+    "PSU Library",
+    "Paterno Library (Suzanne P and Joseph V)"
+   ],
+   "lng": -77.865349,
+   "lat": 40.798503,
+   "osm": "way/431940744"
+  },
+  {
+   "id": "agricultural-engineering-building",
+   "name": "Agricultural Engineering Building",
+   "short": "Ag Engineering",
+   "kind": "academic",
+   "codes": [
+    "AGE"
+   ],
+   "aliases": [
+    "Ag Engineering",
+    "AGE"
+   ],
+   "lng": -77.86528,
+   "lat": 40.801993,
+   "osm": "way/65372069"
+  },
+  {
+   "id": "joab-l-thomas-building",
+   "name": "Joab L Thomas Building",
+   "short": "Thomas Bldg",
+   "kind": "academic",
+   "codes": [
+    "TMS"
+   ],
+   "aliases": [
+    "TMS",
+    "Thomas Bldg",
+    "Thomas"
+   ],
+   "lng": -77.860498,
+   "lat": 40.800719,
+   "osm": "way/292448313"
+  },
+  {
+   "id": "redifer-commons",
+   "name": "Redifer Commons",
+   "short": "Redifer Hall",
+   "kind": "dining",
+   "codes": [
+    "RED"
+   ],
+   "aliases": [
+    "Anna E. Redifer Commons",
+    "Redifer Hall",
+    "Redifer Hall (Anna E)"
+   ],
+   "lng": -77.855959,
+   "lat": 40.799555,
+   "osm": "way/430400186"
+  },
+  {
+   "id": "applied-research-laboratory",
+   "name": "Applied Research Laboratory",
+   "short": "ARL Bldg",
+   "kind": "academic",
+   "codes": [
+    "ARL"
+   ],
+   "aliases": [
+    "Applied Research lab",
+    "ARL",
+    "ARL Bldg",
+    "ARL Building"
+   ],
+   "lng": -77.865964,
+   "lat": 40.792612,
+   "osm": "way/46594936"
+  },
+  {
+   "id": "university-support-2",
+   "name": "University Support 2",
+   "short": "Univ Supp Bldg II",
+   "kind": "academic",
+   "codes": [
+    "USII"
+   ],
+   "aliases": [
+    "Univ Supp Bldg II",
+    "University Support II",
+    "University Support Building II"
+   ],
+   "lng": -77.868822,
+   "lat": 40.811422,
+   "osm": "way/249794082"
+  },
+  {
+   "id": "centralized-biological-laboratory",
+   "name": "Centralized Biological Laboratory",
+   "short": "CBL Central Bio Lab",
+   "kind": "academic",
+   "codes": [
+    "CBL"
+   ],
+   "aliases": [
+    "Centralized Biological Lab",
+    "CBL",
+    "CBL Central Bio Lab",
+    "Centralized Bio Lab",
+    "CBL Centralized Biological Laboratory"
+   ],
+   "lng": -77.847457,
+   "lat": 40.806254,
+   "osm": "relation/6395723"
+  },
+  {
+   "id": "findlay-commons",
+   "name": "Findlay Commons",
+   "short": "Findlay Hall",
+   "kind": "dining",
+   "codes": [
+    "FND"
+   ],
+   "aliases": [
+    "William Findlay Commons",
+    "Findlay Hall",
+    "Findlay Hall (William)"
+   ],
+   "lng": -77.862281,
+   "lat": 40.806439,
+   "osm": "way/292388548"
+  },
+  {
+   "id": "pollock-commons",
+   "name": "Pollock Commons",
+   "short": "Pollock Hall",
+   "kind": "dining",
+   "codes": [
+    "PKH"
+   ],
+   "aliases": [
+    "James Pollock Commons",
+    "Pollock Hall",
+    "Pollock Hall (James)"
+   ],
+   "lng": -77.856502,
+   "lat": 40.801947,
+   "osm": "way/430434716"
+  },
+  {
+   "id": "wagner-building",
+   "name": "Wagner Building",
+   "short": "Wagner Bldg",
+   "kind": "academic",
+   "codes": [
+    "WGR"
+   ],
+   "aliases": [
+    "Lt H Edward Wagner Building",
+    "Wagner Bldg",
+    "Wagner",
+    "Wagner Building (Lt H Edward) & WPSX Studio"
+   ],
+   "lng": -77.859294,
+   "lat": 40.805887,
+   "osm": "way/37121829"
+  },
+  {
+   "id": "hammond-building",
+   "name": "Hammond Building",
+   "short": "Hammond Bldg",
+   "kind": "academic",
+   "codes": [
+    "HMD"
+   ],
+   "aliases": [
+    "Harry Parker Hammond Building",
+    "Hammond",
+    "HMD",
+    "Hammond Bldg",
+    "Hammond Building (Harry Parker)"
+   ],
+   "lng": -77.863072,
+   "lat": 40.793692,
+   "osm": "way/431253547"
+  },
+  {
+   "id": "east-area-locker-room",
+   "name": "East Area Locker Room",
+   "short": "East Area Locker Room",
+   "kind": "academic",
+   "codes": [
+    "ELR"
+   ],
+   "aliases": [],
+   "lng": -77.856176,
+   "lat": 40.80491,
+   "osm": "way/242167838"
+  },
+  {
+   "id": "energy-and-the-environment-laboratory",
+   "name": "Energy and the Environment Laboratory",
+   "short": "Energy and the Environment Lab",
+   "kind": "academic",
+   "codes": [
+    "MRL"
+   ],
+   "aliases": [
+    "Energy and the Environment Lab",
+    "Material Research Lab",
+    "MRL"
+   ],
+   "lng": -77.848911,
+   "lat": 40.805861,
+   "osm": "way/261971692"
+  },
+  {
+   "id": "osmond-laboratory",
+   "name": "Osmond Laboratory",
+   "short": "Osmond Lab",
+   "kind": "academic",
+   "codes": [
+    "OSM"
+   ],
+   "aliases": [
+    "I. Thornton Osmond Laboratory",
+    "Osmond",
+    "OSM",
+    "Osmond Lab",
+    "New Physics Building",
+    "Chem. and Physics",
+    "Osmond Laboratory (I Thornton)"
+   ],
+   "lng": -77.862389,
+   "lat": 40.798654,
+   "osm": "way/431740625"
+  },
+  {
+   "id": "mccoy-natatorium",
+   "name": "McCoy Natatorium",
+   "short": "McCoy Natatorium",
+   "kind": "gym",
+   "codes": [
+    "NAT"
+   ],
+   "aliases": [
+    "Ernest B. McCoy Natatorium",
+    "Natatorium",
+    "NAT",
+    "McCoy Natatorium (Ernest B)"
+   ],
+   "lng": -77.860561,
+   "lat": 40.804435,
+   "osm": "way/37121830"
+  },
+  {
+   "id": "milton-s-eisenhower-auditorium",
+   "name": "Milton S Eisenhower Auditorium",
+   "short": "Eisenhower Auditorium",
+   "kind": "academic",
+   "codes": [
+    "EIS"
+   ],
+   "aliases": [
+    "Eisenhower Auditorium",
+    "Eisenhower Auditorium (Milton S)"
+   ],
+   "lng": -77.861712,
+   "lat": 40.801553,
+   "osm": "way/55880032"
+  },
+  {
+   "id": "stuckeman-family-building",
+   "name": "Stuckeman Family Building",
+   "short": "Stuckeman Family Building",
+   "kind": "academic",
+   "codes": [
+    "SFB"
+   ],
+   "aliases": [
+    "Stuckeman Family"
+   ],
+   "lng": -77.86671,
+   "lat": 40.801113,
+   "osm": "way/431071070"
+  },
+  {
+   "id": "willard-building",
+   "name": "Willard Building",
+   "short": "Willard Bldg",
+   "kind": "academic",
+   "codes": [
+    "WLD"
+   ],
+   "aliases": [
+    "Joseph M. Willard Building",
+    "Willard",
+    "WLD",
+    "Willard Bldg",
+    "Willard (Joseph M)"
+   ],
+   "lng": -77.864389,
+   "lat": 40.795756,
+   "osm": "way/431324439"
+  },
+  {
+   "id": "leonhard-building",
+   "name": "Leonhard Building",
+   "short": "Leonhard Bldg",
+   "kind": "academic",
+   "codes": [
+    "LND"
+   ],
+   "aliases": [
+    "Leonhard",
+    "LND",
+    "Leonhard Bldg"
+   ],
+   "lng": -77.869873,
+   "lat": 40.791325,
+   "osm": "way/52000911"
+  },
+  {
+   "id": "university-support-1",
+   "name": "University Support 1",
+   "short": "Univ Supp Bldg I",
+   "kind": "academic",
+   "codes": [
+    "USI"
+   ],
+   "aliases": [
+    "Univ Supp Bldg I",
+    "University Support I",
+    "University Support Building I"
+   ],
+   "lng": -77.86978,
+   "lat": 40.811859,
+   "osm": "way/431079361"
+  },
+  {
+   "id": "benkovic-building",
+   "name": "Benkovic Building",
+   "short": "Benkovic Bldg",
+   "kind": "academic",
+   "codes": [
+    "CHM"
+   ],
+   "aliases": [
+    "Chemistry",
+    "CHM",
+    "Benkovic Bldg",
+    "Benkovic"
+   ],
+   "lng": -77.861975,
+   "lat": 40.800353,
+   "osm": "way/55878831"
+  },
+  {
+   "id": "chemical-and-biomedical-engineering-building",
+   "name": "Chemical and Biomedical Engineering Building",
+   "short": "Chemical and Biomedical Engineering Bldg",
+   "kind": "academic",
+   "codes": [
+    "CBE"
+   ],
+   "aliases": [
+    "Chemical and Biomedical Engineering Bldg",
+    "Chemical and Biomedical Engineering"
+   ],
+   "lng": -77.862662,
+   "lat": 40.800649,
+   "osm": "way/580497180"
+  },
+  {
+   "id": "huck-life-sciences-building",
+   "name": "Huck Life Sciences Building",
+   "short": "Huck Life Sciences Bldg",
+   "kind": "academic",
+   "codes": [
+    "LFS"
+   ],
+   "aliases": [
+    "J. Lloyd and Dorothy Huck Life Sciences Building",
+    "Life Sciences",
+    "HLS",
+    "Huck Life Sciences Bldg",
+    "Huck Life Sciences",
+    "Huck Life Sciences Building (J. Lloyd and Dorothy)"
+   ],
+   "lng": -77.861283,
+   "lat": 40.801062,
+   "osm": "way/55878845"
+  },
+  {
+   "id": "palmer-museum-at-the-arboretum",
+   "name": "Palmer Museum at the Arboretum",
+   "short": "Palmer Museum of Art",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Palmer Museum of Art"
+   ],
+   "lng": -77.86805,
+   "lat": 40.80676,
+   "osm": "way/1269141793"
+  },
+  {
+   "id": "lewis-katz-building",
+   "name": "Lewis Katz Building",
+   "short": "Katz Bldg",
+   "kind": "academic",
+   "codes": [
+    "KTZ"
+   ],
+   "aliases": [
+    "Katz",
+    "KTZ",
+    "Katz Bldg"
+   ],
+   "lng": -77.866479,
+   "lat": 40.807393,
+   "osm": "way/128243237"
+  },
+  {
+   "id": "kern-graduate-building",
+   "name": "Kern Graduate Building",
+   "short": "Kern Grad Bldg",
+   "kind": "academic",
+   "codes": [
+    "KRN"
+   ],
+   "aliases": [
+    "Frank Dunn Kern Graduate Building",
+    "Kern",
+    "KRN",
+    "Kern Grad Bldg",
+    "Kern Graduate",
+    "Kern Graduate Building (Frank Dunn)"
+   ],
+   "lng": -77.868479,
+   "lat": 40.797257,
+   "osm": "way/55948915"
+  },
+  {
+   "id": "health-and-human-development-building",
+   "name": "Health and Human Development Building",
+   "short": "Health and Hum Dev",
+   "kind": "academic",
+   "codes": [
+    "HHD"
+   ],
+   "aliases": [
+    "Grace M. Henderson Building South",
+    "South Henderson Building",
+    "HHD",
+    "Health and Hum Dev",
+    "Health and Human Development",
+    "Henderson South Building",
+    "South Human Development Building"
+   ],
+   "lng": -77.86039,
+   "lat": 40.796274,
+   "osm": "way/260660800"
+  },
+  {
+   "id": "hosler-building",
+   "name": "Hosler Building",
+   "short": "Hosler Building",
+   "kind": "academic",
+   "codes": [
+    "HSL"
+   ],
+   "aliases": [
+    "Dr. Charles L Hosler Jr. Building",
+    "Hosler",
+    "HSL",
+    "Mineral Sciences Building",
+    "Hosler Building (Dr Charles L, Jr)"
+   ],
+   "lng": -77.865835,
+   "lat": 40.794676,
+   "osm": "relation/14753935"
+  },
+  {
+   "id": "water-treatment-facility-2",
+   "name": "Water Treatment Facility #2",
+   "short": "Water Treatment Facility #2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Water Treatment Facility II",
+    "Water Treatment Facility #2 - Farm 13"
+   ],
+   "lng": -77.872083,
+   "lat": 40.810772,
+   "osm": "way/539767975"
+  },
+  {
+   "id": "shields-building",
+   "name": "Shields Building",
+   "short": "Shields Bldg",
+   "kind": "academic",
+   "codes": [
+    "SHD"
+   ],
+   "aliases": [
+    "J Franklin Shields Building",
+    "Shields Bldg",
+    "Shields",
+    "Academic Services Building",
+    "University Registrar",
+    "Bursar Office",
+    "Shields (J Franklin)"
+   ],
+   "lng": -77.858288,
+   "lat": 40.8068,
+   "osm": "way/37121828"
+  },
+  {
+   "id": "university-park-data-center",
+   "name": "University Park Data Center",
+   "short": "Tower Road Data Center",
+   "kind": "academic",
+   "codes": [
+    "DTA"
+   ],
+   "aliases": [
+    "Tower Road Data Center",
+    "Data Center"
+   ],
+   "lng": -77.870746,
+   "lat": 40.812564,
+   "osm": "way/487530808"
+  },
+  {
+   "id": "steidle-building",
+   "name": "Steidle Building",
+   "short": "Steidle Building",
+   "kind": "academic",
+   "codes": [
+    "SDL"
+   ],
+   "aliases": [
+    "Edward Steidle Building",
+    "Steidle",
+    "SDL",
+    "Mineral Industries Building",
+    "Steidle Building (Edward)"
+   ],
+   "lng": -77.865295,
+   "lat": 40.795187,
+   "osm": "way/431324437"
+  },
+  {
+   "id": "animal-veterinary-and-biomedical-sciences-building-construction",
+   "name": "Animal, Veterinary and Biomedical Sciences Building Construction",
+   "short": "Animal",
+   "kind": "academic",
+   "codes": [
+    "AVB"
+   ],
+   "aliases": [
+    "AVBS Building",
+    "Animal",
+    "Veterinary",
+    "and Biomedical Sciences Bldg",
+    "and Biomedical Sciences",
+    "Animal, Veterinary, and Biomedical Sciences Building"
+   ],
+   "lng": -77.864467,
+   "lat": 40.803091,
+   "osm": "way/738623031"
+  },
+  {
+   "id": "music-building",
+   "name": "Music Building",
+   "short": "Music Bldg",
+   "kind": "academic",
+   "codes": [
+    "MUS"
+   ],
+   "aliases": [
+    "Music",
+    "MUS",
+    "Music Bldg"
+   ],
+   "lng": -77.867073,
+   "lat": 40.799443,
+   "osm": "way/65370738"
+  },
+  {
+   "id": "johnston-commons",
+   "name": "Johnston Commons",
+   "short": "Johnston Hall",
+   "kind": "dining",
+   "codes": [
+    "JNN"
+   ],
+   "aliases": [
+    "William F. Johnston Commons",
+    "Johnston",
+    "E8",
+    "Johnston Hall",
+    "Johnston Hall (William F)"
+   ],
+   "lng": -77.86174,
+   "lat": 40.80604,
+   "osm": "way/37917859"
+  },
+  {
+   "id": "theatre-building",
+   "name": "Theatre Building",
+   "short": "Theatre Bldg",
+   "kind": "academic",
+   "codes": [
+    "THR"
+   ],
+   "aliases": [
+    "Theatre",
+    "THR",
+    "Theatre Bldg",
+    "Arts Building"
+   ],
+   "lng": -77.867233,
+   "lat": 40.800092,
+   "osm": "way/65370766"
+  },
+  {
+   "id": "academic-activities",
+   "name": "Academic Activities",
+   "short": "Academic Activities",
+   "kind": "academic",
+   "codes": [
+    "ACA"
+   ],
+   "aliases": [],
+   "lng": -77.854452,
+   "lat": 40.803118,
+   "osm": "way/385197582"
+  },
+  {
+   "id": "moore-building",
+   "name": "Moore Building",
+   "short": "Moore Building",
+   "kind": "academic",
+   "codes": [
+    "MOR"
+   ],
+   "aliases": [
+    "Bruce V. Moore Building",
+    "Moore",
+    "MOR",
+    "Moore Building (Bruce V)"
+   ],
+   "lng": -77.869024,
+   "lat": 40.79885,
+   "osm": "way/65199007"
+  },
+  {
+   "id": "tennis-court-building",
+   "name": "Tennis Court Building",
+   "short": "Tennis Court Bldg",
+   "kind": "academic",
+   "codes": [
+    "TNS"
+   ],
+   "aliases": [
+    "Tennis Court Bldg"
+   ],
+   "lng": -77.856559,
+   "lat": 40.805881,
+   "osm": "way/37125431"
+  },
+  {
+   "id": "borland-building",
+   "name": "Borland Building",
+   "short": "Borland Bldg",
+   "kind": "academic",
+   "codes": [
+    "BRL"
+   ],
+   "aliases": [
+    "Borland",
+    "BRL",
+    "Borland Bldg",
+    "Dairy and Creamery Building"
+   ],
+   "lng": -77.86462,
+   "lat": 40.801646,
+   "osm": "way/431071069"
+  },
+  {
+   "id": "agricultural-science-and-industries-building",
+   "name": "Agricultural Science and Industries Building",
+   "short": "Ag Science & Industries",
+   "kind": "academic",
+   "codes": [
+    "ASI"
+   ],
+   "aliases": [
+    "Ag Science & Industries"
+   ],
+   "lng": -77.863876,
+   "lat": 40.803462,
+   "osm": "way/65372236"
+  },
+  {
+   "id": "computer-building",
+   "name": "Computer Building",
+   "short": "Computer Bldg",
+   "kind": "academic",
+   "codes": [
+    "CMP"
+   ],
+   "aliases": [
+    "Computer Bldg",
+    "Computer"
+   ],
+   "lng": -77.861179,
+   "lat": 40.803606,
+   "osm": "way/430820175"
+  },
+  {
+   "id": "forest-resources-building",
+   "name": "Forest Resources Building",
+   "short": "Forest Resources Building",
+   "kind": "academic",
+   "codes": [
+    "FRR"
+   ],
+   "aliases": [
+    "Forest Resources",
+    "FRR"
+   ],
+   "lng": -77.86402,
+   "lat": 40.804797,
+   "osm": "way/65372215"
+  },
+  {
+   "id": "sparks-building",
+   "name": "Sparks Building",
+   "short": "Sparks Bldg",
+   "kind": "academic",
+   "codes": [
+    "SPK"
+   ],
+   "aliases": [
+    "Edwin Erie Sparks Building",
+    "Sparks",
+    "SPK",
+    "Sparks Bldg",
+    "Liberal Arts Building",
+    "Sparks Building (Edwin Erie)"
+   ],
+   "lng": -77.865762,
+   "lat": 40.796977,
+   "osm": "way/431940755"
+  },
+  {
+   "id": "west-campus-steam-plant",
+   "name": "West Campus Steam Plant",
+   "short": "Power Plant",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Power Plant"
+   ],
+   "lng": -77.864749,
+   "lat": 40.79276,
+   "osm": "way/55878816"
+  },
+  {
+   "id": "engineering-design-and-innovation-building",
+   "name": "Engineering Design and Innovation Building",
+   "short": "Engineering Design and Innovation Building",
+   "kind": "academic",
+   "codes": [
+    "EDI"
+   ],
+   "aliases": [
+    "Engineering Design and Innovation",
+    "West 2"
+   ],
+   "lng": -77.870821,
+   "lat": 40.791458,
+   "osm": "way/1165518881"
+  },
+  {
+   "id": "pasquerilla-spiritual-center",
+   "name": "Pasquerilla Spiritual Center",
+   "short": "Eisenhower Chapel",
+   "kind": "academic",
+   "codes": [
+    "ECH"
+   ],
+   "aliases": [
+    "Eisenhower Chapel",
+    "Eisenhower Chapel (Helen Eakin)"
+   ],
+   "lng": -77.866703,
+   "lat": 40.798961,
+   "osm": "way/66643894"
+  },
+  {
+   "id": "davey-laboratory",
+   "name": "Davey Laboratory",
+   "short": "Davey Lab",
+   "kind": "academic",
+   "codes": [
+    "DVL"
+   ],
+   "aliases": [
+    "Wheeler P. Davey Laboratory",
+    "Davey",
+    "DVL",
+    "Davey Lab",
+    "Chemistry and Physics Building",
+    "Davey Laboratory (Wheeler P)"
+   ],
+   "lng": -77.862861,
+   "lat": 40.798173,
+   "osm": "way/431740622"
+  },
+  {
+   "id": "boucke-building",
+   "name": "Boucke Building",
+   "short": "Boucke Bldg",
+   "kind": "academic",
+   "codes": [
+    "BKE"
+   ],
+   "aliases": [
+    "Oswald Frederick Boucke Building",
+    "Boucke",
+    "BKE",
+    "Boucke Bldg",
+    "Boucke Building (Oswald Frederick)"
+   ],
+   "lng": -77.861849,
+   "lat": 40.799184,
+   "osm": "way/431740620"
+  },
+  {
+   "id": "sackett-building",
+   "name": "Sackett Building",
+   "short": "Sackett Bldg",
+   "kind": "academic",
+   "codes": [
+    "SKT"
+   ],
+   "aliases": [
+    "Robert Lemuel",
+    "Sackett",
+    "SKT",
+    "Sackett Bldg",
+    "Main Engineering Building",
+    "Sackett Building (Robert Lemuel)"
+   ],
+   "lng": -77.862637,
+   "lat": 40.794749,
+   "osm": "way/431253563"
+  },
+  {
+   "id": "waring-commons",
+   "name": "Waring Commons",
+   "short": "Waring Hall",
+   "kind": "dining",
+   "codes": [
+    "WRG"
+   ],
+   "aliases": [
+    "William G. Waring Commons",
+    "WRG",
+    "Waring Hall",
+    "Waring Hall (William G)"
+   ],
+   "lng": -77.867391,
+   "lat": 40.795776,
+   "osm": "way/431780864"
+  },
+  {
+   "id": "o-richard-bundy-blue-band-building",
+   "name": "O. Richard Bundy Blue Band Building",
+   "short": "Bundy Blue Band Bldg",
+   "kind": "academic",
+   "codes": [
+    "BLB"
+   ],
+   "aliases": [
+    "Bundy Blue Band Bldg",
+    "Blue Band",
+    "Bundy Blue Band Building (O. Richard)"
+   ],
+   "lng": -77.866687,
+   "lat": 40.810909,
+   "osm": "way/249794066"
+  },
+  {
+   "id": "forum-building",
+   "name": "Forum Building",
+   "short": "Forum Bldg",
+   "kind": "academic",
+   "codes": [
+    "FRM"
+   ],
+   "aliases": [
+    "Forum Bldg",
+    "Forum"
+   ],
+   "lng": -77.86632,
+   "lat": 40.800029,
+   "osm": "way/65185828"
+  },
+  {
+   "id": "susan-welch-liberal-arts-building",
+   "name": "Susan Welch Liberal Arts Building",
+   "short": "The Susan Welch Liberal Arts Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "The Susan Welch Liberal Arts Bldg",
+    "Welch Liberal Arts",
+    "The Susan Welch Liberal Arts Building"
+   ],
+   "lng": -77.869581,
+   "lat": 40.79929,
+   "osm": "way/1450120220"
+  },
+  {
+   "id": "whitmore-laboratory",
+   "name": "Whitmore Laboratory",
+   "short": "Whitmore Lab",
+   "kind": "academic",
+   "codes": [
+    "WML"
+   ],
+   "aliases": [
+    "Frank C. Whitmore",
+    "Whitmore",
+    "WML",
+    "Whitmore Lab",
+    "Whitmore Laboratory (Frank C)"
+   ],
+   "lng": -77.863536,
+   "lat": 40.798677,
+   "osm": "way/431943796"
+  },
+  {
+   "id": "reber-building",
+   "name": "Reber Building",
+   "short": "Reber Building",
+   "kind": "academic",
+   "codes": [
+    "RBR"
+   ],
+   "aliases": [
+    "Louis E. Reber Building",
+    "Reber",
+    "RBR",
+    "Mechanical Engineering Building",
+    "Mechanical Engineering Lab",
+    "Reber Building (Louis E)",
+    "Fuel Stor Bldg",
+    "Fuel Storage",
+    "Fuel Storage Building"
+   ],
+   "lng": -77.864441,
+   "lat": 40.793469,
+   "osm": "way/37861076"
+  },
+  {
+   "id": "electrical-engineering-west",
+   "name": "Electrical Engineering West",
+   "short": "Elec Eng West",
+   "kind": "academic",
+   "codes": [
+    "EEW"
+   ],
+   "aliases": [
+    "Elec Eng West",
+    "Electrical Engineering Building"
+   ],
+   "lng": -77.864547,
+   "lat": 40.794679,
+   "osm": "way/431324435"
+  },
+  {
+   "id": "old-main",
+   "name": "Old Main",
+   "short": "Old Main",
+   "kind": "academic",
+   "codes": [
+    "OMN"
+   ],
+   "aliases": [
+    "OMN"
+   ],
+   "lng": -77.86283,
+   "lat": 40.796474,
+   "osm": "way/35026793"
+  },
+  {
+   "id": "keller-building",
+   "name": "Keller Building",
+   "short": "Keller Bldg",
+   "kind": "academic",
+   "codes": [
+    "KLR"
+   ],
+   "aliases": [
+    "J. Orvis Keller Building",
+    "Keller",
+    "KLR",
+    "Keller Bldg",
+    "Keller Building (J Orvis)"
+   ],
+   "lng": -77.870708,
+   "lat": 40.798136,
+   "osm": "way/65198682"
+  },
+  {
+   "id": "earth-and-engineering-sciences-building",
+   "name": "Earth and Engineering Sciences Building",
+   "short": "Earth and Eng Sciences",
+   "kind": "academic",
+   "codes": [
+    "EES"
+   ],
+   "aliases": [
+    "Earth and Engineering Sciences",
+    "EES",
+    "Earth and Eng Sciences"
+   ],
+   "lng": -77.870895,
+   "lat": 40.792138,
+   "osm": "way/431973237"
+  },
+  {
+   "id": "palmer-building",
+   "name": "Palmer Building",
+   "short": "Palmer Bldg",
+   "kind": "academic",
+   "codes": [
+    "PMB"
+   ],
+   "aliases": [
+    "Palmer Bldg",
+    "Palmer"
+   ],
+   "lng": -77.86576,
+   "lat": 40.80051,
+   "osm": "way/65371812"
+  },
+  {
+   "id": "burrowes-building",
+   "name": "Burrowes Building",
+   "short": "Burrowes Bldg",
+   "kind": "academic",
+   "codes": [
+    "BUR"
+   ],
+   "aliases": [
+    "Thomas Henry Burrowes Building",
+    "Burrowes",
+    "BUR",
+    "Burrowes Bldg",
+    "Educational Building",
+    "Burrowes Building (Thomas Henry)"
+   ],
+   "lng": -77.864929,
+   "lat": 40.797628,
+   "osm": "way/431943794"
+  },
+  {
+   "id": "west-campus-chiller",
+   "name": "West Campus Chiller",
+   "short": "West Campus Chiller Bldg",
+   "kind": "academic",
+   "codes": [
+    "WCR"
+   ],
+   "aliases": [
+    "West Campus Chiller Building",
+    "WCR",
+    "West Campus Chiller Bldg"
+   ],
+   "lng": -77.870317,
+   "lat": 40.790431,
+   "osm": "way/431973239"
+  },
+  {
+   "id": "visual-arts-building",
+   "name": "Visual Arts Building",
+   "short": "Visual Arts Bldg",
+   "kind": "academic",
+   "codes": [
+    "VIS"
+   ],
+   "aliases": [
+    "Visual Arts",
+    "VIS",
+    "Visual Arts Bldg"
+   ],
+   "lng": -77.865402,
+   "lat": 40.800883,
+   "osm": "way/431071071"
+  },
+  {
+   "id": "warnock-commons",
+   "name": "Warnock Commons",
+   "short": "Warnock Hall",
+   "kind": "dining",
+   "codes": [
+    "WRN"
+   ],
+   "aliases": [
+    "Arthur R. Warnock Commons",
+    "North Commons",
+    "Warnock Hall",
+    "Warnock Hall (Arthur R)"
+   ],
+   "lng": -77.866107,
+   "lat": 40.802828,
+   "osm": "way/65425666"
+  },
+  {
+   "id": "agricultural-administration-building",
+   "name": "Agricultural Administration Building",
+   "short": "Ag Admin Bldg",
+   "kind": "academic",
+   "codes": [
+    "AAD"
+   ],
+   "aliases": [
+    "AAD",
+    "Ag Admin Bldg",
+    "Ag Administration"
+   ],
+   "lng": -77.863838,
+   "lat": 40.802517,
+   "osm": "way/44959174"
+  },
+  {
+   "id": "mateer-building",
+   "name": "Mateer Building",
+   "short": "Mateer Bldg",
+   "kind": "academic",
+   "codes": [
+    "MTR"
+   ],
+   "aliases": [
+    "A. Laura & MC Mateer Building",
+    "Mateer",
+    "MTR",
+    "Mateer Bldg",
+    "Mateer Building (A Laura & M C)"
+   ],
+   "lng": -77.870305,
+   "lat": 40.798641,
+   "osm": "way/65198791"
+  },
+  {
+   "id": "henderson-building",
+   "name": "Henderson Building",
+   "short": "Henderson Bldg",
+   "kind": "academic",
+   "codes": [
+    "HND"
+   ],
+   "aliases": [
+    "Grace M. Henderson Building",
+    "Henderson",
+    "HND",
+    "Henderson Bldg",
+    "North Human Development Building",
+    "Home Economics Building",
+    "Henderson Building (Grace M)"
+   ],
+   "lng": -77.861375,
+   "lat": 40.796992,
+   "osm": "way/431712456"
+  },
+  {
+   "id": "deike-building",
+   "name": "Deike Building",
+   "short": "Deike Building",
+   "kind": "academic",
+   "codes": [
+    "DKE"
+   ],
+   "aliases": [
+    "George H. Deike Sr. Building",
+    "Deike",
+    "DKE",
+    "Earth Sciences Building",
+    "Deike Building (George H, Sr)"
+   ],
+   "lng": -77.86543,
+   "lat": 40.794237,
+   "osm": "way/37861072"
+  },
+  {
+   "id": "applied-science-building",
+   "name": "Applied Science Building",
+   "short": "Applied Science Bldg",
+   "kind": "academic",
+   "codes": [
+    "ASB"
+   ],
+   "aliases": [
+    "Applied Science",
+    "ASB",
+    "Applied Science Bldg"
+   ],
+   "lng": -77.869575,
+   "lat": 40.792144,
+   "osm": "way/431973236"
+  },
+  {
+   "id": "bank-of-america-career-services-center",
+   "name": "Bank of America Career Services Center",
+   "short": "Bank of America Career Svcs",
+   "kind": "academic",
+   "codes": [
+    "BCS"
+   ],
+   "aliases": [
+    "BCS",
+    "Bank of America Career Svcs",
+    "Bank of America Career Services"
+   ],
+   "lng": -77.860432,
+   "lat": 40.803109,
+   "osm": "way/65200870"
+  },
+  {
+   "id": "research-unit-a-modular-lab-facility",
+   "name": "Research Unit A Modular Lab Facility",
+   "short": "Research Unit A Modular Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Research Unit A Modular Lab"
+   ],
+   "lng": -77.851336,
+   "lat": 40.805605,
+   "osm": "way/432234842"
+  },
+  {
+   "id": "golf-course-maintenance-building",
+   "name": "Golf Course Maintenance Building",
+   "short": "Kissell Motorsports Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Kissell Motorsports Bldg",
+    "Kissell Motorsports",
+    "Kissell Motorsports Building"
+   ],
+   "lng": -77.876851,
+   "lat": 40.782957,
+   "osm": "way/327352591"
+  },
+  {
+   "id": "cow-free-stall-housing",
+   "name": "Cow Free Stall Housing",
+   "short": "Cow Free Stall Housing (D-5)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Cow Free Stall Housing (D-5)"
+   ],
+   "lng": -77.8641,
+   "lat": 40.813778,
+   "osm": "way/289656853"
+  },
+  {
+   "id": "academic-projects-building",
+   "name": "Academic Projects Building",
+   "short": "Academic Projects Bldg",
+   "kind": "academic",
+   "codes": [
+    "ACP"
+   ],
+   "aliases": [
+    "Academic Projects Bldg",
+    "Academic Projects"
+   ],
+   "lng": -77.853056,
+   "lat": 40.803214,
+   "osm": "way/242527983"
+  },
+  {
+   "id": "garfield-water-tunnel",
+   "name": "Garfield Water Tunnel",
+   "short": "G Thomas Water Tunl",
+   "kind": "academic",
+   "codes": [
+    "WTN"
+   ],
+   "aliases": [
+    "Garfield Thomas Water Tunnel & Storage",
+    "WTN",
+    "G Thomas Water Tunl",
+    "Thomas Water Tunnel"
+   ],
+   "lng": -77.868251,
+   "lat": 40.793018,
+   "osm": "way/65370478"
+  },
+  {
+   "id": "breazeale-nuclear-reactor",
+   "name": "Breazeale Nuclear Reactor",
+   "short": "Breazeale Nuclear Reactor",
+   "kind": "academic",
+   "codes": [
+    "BNR"
+   ],
+   "aliases": [
+    "William M. Breazeale Nucear Reactor",
+    "Breazeale Nuclear Reactor (William M)"
+   ],
+   "lng": -77.853503,
+   "lat": 40.803975,
+   "osm": "way/242527985"
+  },
+  {
+   "id": "research-east",
+   "name": "Research East",
+   "short": "Research Bldg East",
+   "kind": "academic",
+   "codes": [
+    "RSE"
+   ],
+   "aliases": [
+    "Research Bldg East",
+    "Research Building East"
+   ],
+   "lng": -77.852352,
+   "lat": 40.803548,
+   "osm": "way/242527984"
+  },
+  {
+   "id": "chandlee-laboratory",
+   "name": "Chandlee Laboratory",
+   "short": "Chandlee Lab",
+   "kind": "academic",
+   "codes": [
+    "CHN"
+   ],
+   "aliases": [
+    "Grover Chandlee Laboratory",
+    "Chandlee",
+    "CHN",
+    "Chandlee Lab",
+    "Chandlee Laboratory (Grover)"
+   ],
+   "lng": -77.863564,
+   "lat": 40.797558,
+   "osm": "way/35837072"
+  },
+  {
+   "id": "hintz-family-alumni-center",
+   "name": "Hintz Family Alumni Center",
+   "short": "Hintz Family Alumni Ctr",
+   "kind": "academic",
+   "codes": [
+    "HNZ"
+   ],
+   "aliases": [
+    "Hintz",
+    "HNZ",
+    "Hintz Family Alumni Ctr",
+    "President's Residence",
+    "University House",
+    "The Hintz Family Alumni Center"
+   ],
+   "lng": -77.863727,
+   "lat": 40.79417,
+   "osm": "way/431253554"
+  },
+  {
+   "id": "frear-north-building",
+   "name": "Frear North Building",
+   "short": "Frear North Bldg",
+   "kind": "academic",
+   "codes": [
+    "FRN"
+   ],
+   "aliases": [
+    "Dr. William Frear North Building",
+    "Frear North",
+    "FRN",
+    "Frear North Bldg",
+    "Ag. Sci. Bldg",
+    "Frear North Building (Dr William)"
+   ],
+   "lng": -77.863854,
+   "lat": 40.799529,
+   "osm": "way/431740623"
+  },
+  {
+   "id": "biobehavioral-health-building",
+   "name": "Biobehavioral Health Building",
+   "short": "Biobehavioral Health Bldg",
+   "kind": "academic",
+   "codes": [
+    "BBH"
+   ],
+   "aliases": [
+    "Biobehavioral Health",
+    "BBH",
+    "Biobehavioral Health Bldg"
+   ],
+   "lng": -77.860743,
+   "lat": 40.796761,
+   "osm": "way/256087644"
+  },
+  {
+   "id": "east-classroom-building",
+   "name": "East Classroom Building",
+   "short": "East Classroom Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "East Classroom"
+   ],
+   "lng": -77.864303,
+   "lat": 40.805295,
+   "osm": "way/1565606962"
+  },
+  {
+   "id": "the-learning-factory",
+   "name": "The Learning Factory",
+   "short": "Engineering Services",
+   "kind": "academic",
+   "codes": [
+    "ENG"
+   ],
+   "aliases": [
+    "ENG",
+    "Engineering Services",
+    "Machine Shop"
+   ],
+   "lng": -77.868802,
+   "lat": 40.791443,
+   "osm": "way/431973238"
+  },
+  {
+   "id": "mcallister-building",
+   "name": "McAllister Building",
+   "short": "McAllister Bldg",
+   "kind": "academic",
+   "codes": [
+    "MCL"
+   ],
+   "aliases": [
+    "Hugh N. McAllister",
+    "McAllister",
+    "MCL",
+    "McAllister Bldg",
+    "McAllister Hall",
+    "McAllister (Hugh N)"
+   ],
+   "lng": -77.862224,
+   "lat": 40.797587,
+   "osm": "way/37094461"
+  },
+  {
+   "id": "ritenour-building",
+   "name": "Ritenour Building",
+   "short": "Ritenour Bldg",
+   "kind": "academic",
+   "codes": [
+    "RTR"
+   ],
+   "aliases": [
+    "Dr. Joseph P. Ritenour Building",
+    "Ritenour",
+    "RTR",
+    "Ritenour Bldg",
+    "Infirmary Building",
+    "Ritenour Building (Dr Joseph P)"
+   ],
+   "lng": -77.861164,
+   "lat": 40.799769,
+   "osm": "way/431727548"
+  },
+  {
+   "id": "frear-south-building",
+   "name": "Frear South Building",
+   "short": "South Frear Bldg",
+   "kind": "academic",
+   "codes": [
+    "FRS"
+   ],
+   "aliases": [
+    "Dr. William Frear South Building",
+    "Frear South",
+    "FRS",
+    "South Frear Bldg",
+    "South Frear",
+    "Life Science II",
+    "South Frear Building (William)"
+   ],
+   "lng": -77.863431,
+   "lat": 40.799302,
+   "osm": "way/431740624"
+  },
+  {
+   "id": "bennett-family-center",
+   "name": "Bennett Family Center",
+   "short": "Bennett Family Child Care",
+   "kind": "academic",
+   "codes": [
+    "BFC"
+   ],
+   "aliases": [
+    "Bennett Family Child Care",
+    "The Bennett Family Child Care Center"
+   ],
+   "lng": -77.85489,
+   "lat": 40.802147,
+   "osm": "way/242527981"
+  },
+  {
+   "id": "nursing-sciences-building",
+   "name": "Nursing Sciences Building",
+   "short": "Nursing Sciences Bldg",
+   "kind": "academic",
+   "codes": [
+    "NSB"
+   ],
+   "aliases": [
+    "Nursing Sciences",
+    "NSB",
+    "Nursing Sciences Bldg"
+   ],
+   "lng": -77.859877,
+   "lat": 40.796555,
+   "osm": "way/431712458"
+  },
+  {
+   "id": "walker-building",
+   "name": "Walker Building",
+   "short": "Walker Building",
+   "kind": "academic",
+   "codes": [
+    "WKR"
+   ],
+   "aliases": [
+    "Eric A. Walker Building",
+    "Walker",
+    "WKR",
+    "Environmental Science Building",
+    "Walker Building (Eric A)"
+   ],
+   "lng": -77.866873,
+   "lat": 40.793249,
+   "osm": "way/37861069"
+  },
+  {
+   "id": "pasture-research-lab",
+   "name": "Pasture Research Lab",
+   "short": "Pasture Res Lab",
+   "kind": "academic",
+   "codes": [
+    "PRL"
+   ],
+   "aliases": [
+    "Pasture Res Lab",
+    "U.S. Pasture Research Lab",
+    "Pasture Research Laboratory"
+   ],
+   "lng": -77.86183,
+   "lat": 40.803237,
+   "osm": "way/387153736"
+  },
+  {
+   "id": "swine-research",
+   "name": "Swine Research",
+   "short": "Swine Research Bldg",
+   "kind": "academic",
+   "codes": [
+    "SWI"
+   ],
+   "aliases": [
+    "Swine Research Bldg",
+    "Swine Research Building"
+   ],
+   "lng": -77.845498,
+   "lat": 40.808592,
+   "osm": "way/292617613"
+  },
+  {
+   "id": "noll-lab",
+   "name": "Noll Lab",
+   "short": "Noll Lab",
+   "kind": "academic",
+   "codes": [
+    "NLL"
+   ],
+   "aliases": [
+    "A. Robert Noll Laboratory for Human Performance Research",
+    "NLL",
+    "Noll Laboratory for Human Performance Research (A Robert)"
+   ],
+   "lng": -77.868159,
+   "lat": 40.794458,
+   "osm": "way/46196526"
+  },
+  {
+   "id": "research-unit-c",
+   "name": "Research Unit C",
+   "short": "Research Unit C",
+   "kind": "academic",
+   "codes": [
+    "RSCC"
+   ],
+   "aliases": [
+    "Research Unit C & Air Environment Greenhouse",
+    "RSCC",
+    "Research Unit 2"
+   ],
+   "lng": -77.850302,
+   "lat": 40.805445,
+   "osm": "way/432234850"
+  },
+  {
+   "id": "the-child-care-center-at-hort-woods",
+   "name": "The Child Care Center at Hort Woods",
+   "short": "The Child Care Center at Hort Woods",
+   "kind": "academic",
+   "codes": [
+    "CCC"
+   ],
+   "aliases": [],
+   "lng": -77.868693,
+   "lat": 40.800044,
+   "osm": "way/430891877"
+  },
+  {
+   "id": "eric-j-barron-innovation-hub",
+   "name": "Eric J. Barron Innovation Hub",
+   "short": "Barron Innovation Hub",
+   "kind": "academic",
+   "codes": [
+    "INN"
+   ],
+   "aliases": [
+    "James Building Replacement",
+    "Barron Innovation Hub",
+    "Eric J. Barron Innovation Hub Building"
+   ],
+   "lng": -77.862831,
+   "lat": 40.792345,
+   "osm": "way/746708375"
+  },
+  {
+   "id": "research-unit-b",
+   "name": "Research Unit B",
+   "short": "Research Unit B",
+   "kind": "academic",
+   "codes": [
+    "RSCB"
+   ],
+   "aliases": [
+    "RSCB",
+    "Research Unit 1"
+   ],
+   "lng": -77.850463,
+   "lat": 40.805737,
+   "osm": "way/432234847"
+  },
+  {
+   "id": "pond-laboratory",
+   "name": "Pond Laboratory",
+   "short": "Pond Lab",
+   "kind": "academic",
+   "codes": [
+    "PND"
+   ],
+   "aliases": [
+    "George Gilbert Pond Laboratories",
+    "Pond",
+    "PND",
+    "Pond Lab",
+    "Pond Laboratories (George Gilbert)"
+   ],
+   "lng": -77.864235,
+   "lat": 40.798183,
+   "osm": "way/35837071"
+  },
+  {
+   "id": "buckhout-laboratory",
+   "name": "Buckhout Laboratory",
+   "short": "Buckhout Lab",
+   "kind": "academic",
+   "codes": [
+    "BKH"
+   ],
+   "aliases": [
+    "William A. Buckhout Laboratory",
+    "Buckhout Lab",
+    "BKH",
+    "Buckhout Laboratory (William A)"
+   ],
+   "lng": -77.862924,
+   "lat": 40.799808,
+   "osm": "way/431740621"
+  },
+  {
+   "id": "land-and-water-research-building",
+   "name": "Land and Water Research Building",
+   "short": "Land and Water Research",
+   "kind": "academic",
+   "codes": [
+    "LWR"
+   ],
+   "aliases": [
+    "Land and Water Research",
+    "LWR"
+   ],
+   "lng": -77.848947,
+   "lat": 40.80696,
+   "osm": "way/261719991"
+  },
+  {
+   "id": "research-unit-a",
+   "name": "Research Unit A",
+   "short": "Research Unit A",
+   "kind": "academic",
+   "codes": [
+    "RSCA"
+   ],
+   "aliases": [
+    "RSCA"
+   ],
+   "lng": -77.850592,
+   "lat": 40.806047,
+   "osm": "way/432234844"
+  },
+  {
+   "id": "student-health-center",
+   "name": "Student Health Center",
+   "short": "Student Health Ctr",
+   "kind": "academic",
+   "codes": [
+    "STH"
+   ],
+   "aliases": [
+    "Student Health Ctr"
+   ],
+   "lng": -77.860005,
+   "lat": 40.802838,
+   "osm": "way/65200895"
+  },
+  {
+   "id": "coal-utilization-lab",
+   "name": "Coal Utilization Lab",
+   "short": "Coal Utilization Lab",
+   "kind": "academic",
+   "codes": [
+    "CUL"
+   ],
+   "aliases": [
+    "Coal Utilization Laboratory"
+   ],
+   "lng": -77.853899,
+   "lat": 40.802993,
+   "osm": "way/385198262"
+  },
+  {
+   "id": "centre-county-visitors-bureau",
+   "name": "Centre County Visitors Bureau",
+   "short": "Athletic Administration Bldg",
+   "kind": "academic",
+   "codes": [
+    "VTR"
+   ],
+   "aliases": [
+    "Athletic Administration Bldg",
+    "Athletic Administration",
+    "Athletic Administration Building"
+   ],
+   "lng": -77.854576,
+   "lat": 40.814724,
+   "osm": "way/239020112"
+  },
+  {
+   "id": "arl-warehouse",
+   "name": "ARL Warehouse",
+   "short": "ARL Warehouse Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ARL Warehouse Bldg",
+    "ARL Warehouse Building"
+   ],
+   "lng": -77.868185,
+   "lat": 40.809409,
+   "osm": "way/249794084"
+  },
+  {
+   "id": "headhouse-iii",
+   "name": "Headhouse III",
+   "short": "Headhouse III",
+   "kind": "academic",
+   "codes": [
+    "HIII"
+   ],
+   "aliases": [],
+   "lng": -77.862336,
+   "lat": 40.802939,
+   "osm": "way/430820182"
+  },
+  {
+   "id": "electrical-engineering-east",
+   "name": "Electrical Engineering East",
+   "short": "Elec Eng East",
+   "kind": "academic",
+   "codes": [
+    "EEE"
+   ],
+   "aliases": [
+    "Elec Eng East"
+   ],
+   "lng": -77.863962,
+   "lat": 40.795112,
+   "osm": "way/37861065"
+  },
+  {
+   "id": "armsby-building",
+   "name": "Armsby Building",
+   "short": "Armsby Bldg",
+   "kind": "academic",
+   "codes": [
+    "ARM"
+   ],
+   "aliases": [
+    "Henry Prentiss Armsby Building",
+    "Armsby",
+    "ARM",
+    "Armsby Bldg",
+    "Agriculture Building",
+    "Armsby (Henry Prentiss)"
+   ],
+   "lng": -77.8646,
+   "lat": 40.800069,
+   "osm": "way/431740618"
+  },
+  {
+   "id": "cedar-building",
+   "name": "CEDAR Building",
+   "short": "CEDAR Building",
+   "kind": "academic",
+   "codes": [
+    "CDR"
+   ],
+   "aliases": [
+    "Center for Educational Diagnosis and Remediation",
+    "Cedar",
+    "CDR"
+   ],
+   "lng": -77.868439,
+   "lat": 40.799132,
+   "osm": "way/65199076"
+  },
+  {
+   "id": "carnegie-building",
+   "name": "Carnegie Building",
+   "short": "Carnegie Bldg",
+   "kind": "academic",
+   "codes": [
+    "CRG"
+   ],
+   "aliases": [
+    "Andrew Carnegie Building",
+    "Carnegie",
+    "CRG",
+    "Carnegie Bldg",
+    "Carnegie (Andrew)"
+   ],
+   "lng": -77.864897,
+   "lat": 40.796471,
+   "osm": "way/431940741"
+  },
+  {
+   "id": "music-building-ii",
+   "name": "Music Building II",
+   "short": "Music Bldg II",
+   "kind": "academic",
+   "codes": [
+    "MII"
+   ],
+   "aliases": [
+    "Music Bldg II",
+    "MII",
+    "Music II"
+   ],
+   "lng": -77.867593,
+   "lat": 40.799662,
+   "osm": "way/430891876"
+  },
+  {
+   "id": "fisher-hall",
+   "name": "Fisher Hall",
+   "short": "Fisher Hall",
+   "kind": "academic",
+   "codes": [
+    "FSR"
+   ],
+   "aliases": [
+    "John S. Fisher",
+    "Fisher Hall (John S)"
+   ],
+   "lng": -77.863282,
+   "lat": 40.806079,
+   "osm": "way/37917857"
+  },
+  {
+   "id": "barnes-and-noble",
+   "name": "Barnes & Noble",
+   "short": "Bookstore Bldg (UP)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BKS",
+    "Bookstore Bldg (UP)",
+    "Bookstore",
+    "Bookstore Building"
+   ],
+   "lng": -77.860465,
+   "lat": 40.798531,
+   "osm": "way/431712455"
+  },
+  {
+   "id": "mueller-laboratory",
+   "name": "Mueller Laboratory",
+   "short": "Mueller Lab",
+   "kind": "academic",
+   "codes": [
+    "MLR"
+   ],
+   "aliases": [
+    "Erwin W. Mueller",
+    "Mueller",
+    "MLR",
+    "Mueller Lab",
+    "Life Science Building",
+    "Mueller Laboratory (Erwin W)"
+   ],
+   "lng": -77.864309,
+   "lat": 40.799031,
+   "osm": "way/35837055"
+  },
+  {
+   "id": "lion-surplus",
+   "name": "Lion Surplus",
+   "short": "Salvage Warehouse Facility",
+   "kind": "academic",
+   "codes": [
+    "SVG"
+   ],
+   "aliases": [
+    "Salvage Warehouse Facility",
+    "Penn State Salvage and Surplus"
+   ],
+   "lng": -77.867162,
+   "lat": 40.809435,
+   "osm": "way/260650241"
+  },
+  {
+   "id": "elliott-building",
+   "name": "Elliott Building",
+   "short": "James M Elliott Bldg",
+   "kind": "academic",
+   "codes": [
+    "ELT"
+   ],
+   "aliases": [
+    "James M. Elliott Building",
+    "Elliott",
+    "ELT",
+    "James M Elliott Bldg",
+    "James M Elliott"
+   ],
+   "lng": -77.86343,
+   "lat": 40.792022,
+   "osm": "way/66093711"
+  },
+  {
+   "id": "schwab-auditorium",
+   "name": "Schwab Auditorium",
+   "short": "Schwab Auditorium",
+   "kind": "academic",
+   "codes": [
+    "SCB"
+   ],
+   "aliases": [
+    "SCB",
+    "Schwab Auditorium (Charles M)"
+   ],
+   "lng": -77.863707,
+   "lat": 40.79657,
+   "osm": "way/431238086"
+  },
+  {
+   "id": "wartik-laboratory",
+   "name": "Wartik Laboratory",
+   "short": "Wartik Lab",
+   "kind": "academic",
+   "codes": [
+    "WTK"
+   ],
+   "aliases": [
+    "Dr. Thomas Wartik Laboratory",
+    "Wartik Lab",
+    "WTK",
+    "Wartik Laboratory (Dr Thomas)"
+   ],
+   "lng": -77.862521,
+   "lat": 40.799739,
+   "osm": "way/431740628"
+  },
+  {
+   "id": "laundry-building",
+   "name": "Laundry Building",
+   "short": "Laundry Building",
+   "kind": "academic",
+   "codes": [
+    "LDY"
+   ],
+   "aliases": [
+    "LDY",
+    "Laundry"
+   ],
+   "lng": -77.860703,
+   "lat": 40.812944,
+   "osm": "way/433302788"
+  },
+  {
+   "id": "university-press-distribution-center",
+   "name": "University Press Distribution Center",
+   "short": "Univ Press Dist Ctr",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "UPD",
+    "Univ Press Dist Ctr"
+   ],
+   "lng": -77.870344,
+   "lat": 40.811396,
+   "osm": "way/431079359"
+  },
+  {
+   "id": "transportation-research-building",
+   "name": "Transportation Research Building",
+   "short": "Transportation Research Bldg",
+   "kind": "academic",
+   "codes": [
+    "TRN"
+   ],
+   "aliases": [
+    "TRN",
+    "Transportation Research Bldg",
+    "Transportation Research"
+   ],
+   "lng": -77.849734,
+   "lat": 40.806648,
+   "osm": "way/119884458"
+  },
+  {
+   "id": "procurement-services-building",
+   "name": "Procurement Services Building",
+   "short": "Procurement Services",
+   "kind": "academic",
+   "codes": [
+    "PRO"
+   ],
+   "aliases": [
+    "Procurement Services",
+    "PRO"
+   ],
+   "lng": -77.86671,
+   "lat": 40.810292,
+   "osm": "way/249794064"
+  },
+  {
+   "id": "agricultural-analytical-services-laboratory",
+   "name": "Agricultural Analytical Services Laboratory",
+   "short": "Ag Analytical Services Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Ag Analytical Services Lab",
+    "Agriculture Analytical Services Laboratory (Fm 8)"
+   ],
+   "lng": -77.868891,
+   "lat": 40.813943,
+   "osm": "way/260659970"
+  },
+  {
+   "id": "weston-community-center",
+   "name": "Weston Community Center",
+   "short": "Weston Hall",
+   "kind": "academic",
+   "codes": [
+    "WTH"
+   ],
+   "aliases": [
+    "Pearl O. Weston Hall (Community Center)",
+    "WST",
+    "Weston Hall"
+   ],
+   "lng": -77.873204,
+   "lat": 40.789305,
+   "osm": "way/432119113"
+  },
+  {
+   "id": "smith-building-3",
+   "name": "Smith Building 3",
+   "short": "Smith Bldg 3",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Smith Bldg 3",
+    "Smith III"
+   ],
+   "lng": -77.866705,
+   "lat": 40.792124,
+   "osm": "way/239020003"
+  },
+  {
+   "id": "tyson-building",
+   "name": "Tyson Building",
+   "short": "Tyson Bldg",
+   "kind": "academic",
+   "codes": [
+    "TSN"
+   ],
+   "aliases": [
+    "Chester J. Tyson Building",
+    "TSN",
+    "Tyson Bldg",
+    "Tyson",
+    "Plant Industries Building",
+    "Botany",
+    "Tyson Building (Chester J)"
+   ],
+   "lng": -77.862949,
+   "lat": 40.801847,
+   "osm": "way/430644141"
+  },
+  {
+   "id": "united-rentals",
+   "name": "United Rentals",
+   "short": "Kissell Bldg I",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Kissell Bldg I",
+    "Kissell I",
+    "Kissell Building I"
+   ],
+   "lng": -77.872926,
+   "lat": 40.786302,
+   "osm": "way/55880586"
+  },
+  {
+   "id": "steam-services-building",
+   "name": "Steam Services Building",
+   "short": "Steam Services Bldg",
+   "kind": "academic",
+   "codes": [
+    "SSS"
+   ],
+   "aliases": [
+    "Steam Services Bldg",
+    "Steam Services"
+   ],
+   "lng": -77.865291,
+   "lat": 40.793234,
+   "osm": "way/771106158"
+  },
+  {
+   "id": "rider-building",
+   "name": "Rider Building",
+   "short": "Rider Bldg",
+   "kind": "academic",
+   "codes": [
+    "RDR"
+   ],
+   "aliases": [
+    "Rider",
+    "RDR",
+    "Rider Bldg"
+   ],
+   "lng": -77.862592,
+   "lat": 40.792038,
+   "osm": "way/66097500"
+  },
+  {
+   "id": "research-building-d",
+   "name": "Research Building D",
+   "short": "Research Bldg D",
+   "kind": "academic",
+   "codes": [
+    "RSCD"
+   ],
+   "aliases": [
+    "Research Bldg D"
+   ],
+   "lng": -77.851435,
+   "lat": 40.806257,
+   "osm": "way/268786188"
+  },
+  {
+   "id": "althouse-laboratory",
+   "name": "Althouse Laboratory",
+   "short": "Althouse Lab",
+   "kind": "academic",
+   "codes": [
+    "ALT"
+   ],
+   "aliases": [
+    "Paul M. Althouse Laboratory",
+    "ALT",
+    "Althouse Lab",
+    "Life Science II",
+    "Althouse Laboratory (Paul M)"
+   ],
+   "lng": -77.863304,
+   "lat": 40.800057,
+   "osm": "way/431740617"
+  },
+  {
+   "id": "cow-tie-stall",
+   "name": "Cow Tie Stall",
+   "short": "Cow Tie Stall (D-2)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Cow Tie Stall (D-2)"
+   ],
+   "lng": -77.863978,
+   "lat": 40.812782,
+   "osm": "way/260653302"
+  },
+  {
+   "id": "visual-arts-ceramics-studio",
+   "name": "Visual Arts Ceramics Studio",
+   "short": "VAB - Ceramics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "VAB–Ceramics",
+    "Visual Arts Building - Ceramics"
+   ],
+   "lng": -77.865378,
+   "lat": 40.801225,
+   "osm": "way/431071072"
+  },
+  {
+   "id": "ferguson-building",
+   "name": "Ferguson Building",
+   "short": "Ferguson Bldg",
+   "kind": "academic",
+   "codes": [
+    "FRG"
+   ],
+   "aliases": [
+    "John A. Ferguson Building",
+    "Ferguson",
+    "FRG",
+    "Ferguson Bldg",
+    "Forestry Building",
+    "Ferguson Building (John A)"
+   ],
+   "lng": -77.863652,
+   "lat": 40.801024,
+   "osm": "way/431727541"
+  },
+  {
+   "id": "headhouse-i",
+   "name": "Headhouse I",
+   "short": "Headhouse I",
+   "kind": "academic",
+   "codes": [
+    "HI"
+   ],
+   "aliases": [],
+   "lng": -77.863004,
+   "lat": 40.802285,
+   "osm": "way/430820184"
+  },
+  {
+   "id": "grange-building",
+   "name": "Grange Building",
+   "short": "Grange Bldg",
+   "kind": "academic",
+   "codes": [
+    "GRN"
+   ],
+   "aliases": [
+    "Grange",
+    "GRN",
+    "Grange Bldg",
+    "Grange Memorial Dormitory"
+   ],
+   "lng": -77.860438,
+   "lat": 40.799388,
+   "osm": "way/37094030"
+  },
+  {
+   "id": "eisenhower-chapel",
+   "name": "Eisenhower Chapel",
+   "short": "Eisenhower Chapel",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Helen Eakin Eisenhower Chapel"
+   ],
+   "lng": -77.866327,
+   "lat": 40.799367,
+   "osm": "way/65370733"
+  },
+  {
+   "id": "milking-center",
+   "name": "Milking Center",
+   "short": "Milking Ctr (D-4)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Milking Ctr (D-4)",
+    "Milking Center (D-4)"
+   ],
+   "lng": -77.863734,
+   "lat": 40.813348,
+   "osm": "way/289656860"
+  },
+  {
+   "id": "rackley-building",
+   "name": "Rackley Building",
+   "short": "Rackley Building",
+   "kind": "academic",
+   "codes": [
+    "RCK"
+   ],
+   "aliases": [
+    "J. Ralph Rackley Building",
+    "Rackley",
+    "RKL",
+    "Rackley Building (J Ralph)"
+   ],
+   "lng": -77.868643,
+   "lat": 40.798206,
+   "osm": "way/55949159"
+  },
+  {
+   "id": "pollock-building",
+   "name": "Pollock Building",
+   "short": "Pollock Bldg",
+   "kind": "academic",
+   "codes": [
+    "PLK"
+   ],
+   "aliases": [
+    "Pollock Bldg",
+    "Pollock"
+   ],
+   "lng": -77.858514,
+   "lat": 40.801048,
+   "osm": "way/430434715"
+  },
+  {
+   "id": "weaver-building",
+   "name": "Weaver Building",
+   "short": "Weaver Bldg",
+   "kind": "academic",
+   "codes": [
+    "WVR"
+   ],
+   "aliases": [
+    "Frederick Pattison Weaver Building",
+    "Weaver",
+    "WVR",
+    "Weaver Bldg",
+    "Horticulture Building",
+    "Weaver Building (Frederick Pattison)"
+   ],
+   "lng": -77.864778,
+   "lat": 40.799588,
+   "osm": "way/55878837"
+  },
+  {
+   "id": "patterson-building",
+   "name": "Patterson Building",
+   "short": "Patterson Bldg",
+   "kind": "academic",
+   "codes": [
+    "PTN"
+   ],
+   "aliases": [
+    "William Calvin Patterson",
+    "Patterson",
+    "PTN",
+    "Patterson Bldg",
+    "Patterson Building (William Calvin)"
+   ],
+   "lng": -77.864938,
+   "lat": 40.80032,
+   "osm": "way/431740626"
+  },
+  {
+   "id": "meats-lab",
+   "name": "Meats Lab",
+   "short": "Meats Lab",
+   "kind": "academic",
+   "codes": [
+    "MTL"
+   ],
+   "aliases": [
+    "Meats Laboratory"
+   ],
+   "lng": -77.85458,
+   "lat": 40.813833,
+   "osm": "way/259151787"
+  },
+  {
+   "id": "pavilion-theartre",
+   "name": "Pavilion Theartre",
+   "short": "Pavilion Theatre",
+   "kind": "academic",
+   "codes": [
+    "PVN"
+   ],
+   "aliases": [
+    "PVN",
+    "Pavilion Theatre",
+    "Stock Judging Pavilion"
+   ],
+   "lng": -77.864145,
+   "lat": 40.801225,
+   "osm": "way/431727542"
+  },
+  {
+   "id": "high-pressure-gas-laboratory",
+   "name": "High Pressure Gas Laboratory",
+   "short": "Kuo High-Pressure Gas Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "HPC",
+    "Kuo High-Pressure Gas Laboratory",
+    "High Pressure Gas Lab",
+    "Dr. Kenneth Kuo High-Pressure Gas Laboratory"
+   ],
+   "lng": -77.869312,
+   "lat": 40.809721,
+   "osm": "way/433172108"
+  },
+  {
+   "id": "hallowell-building",
+   "name": "Hallowell Building",
+   "short": "Hallowell Bldg",
+   "kind": "academic",
+   "codes": [
+    "HWL"
+   ],
+   "aliases": [
+    "H. Thomas Hallowell Jr. Building",
+    "Hallowell",
+    "HWL",
+    "Hallowell Bldg",
+    "Hallowell Building (H Thomas, Jr)"
+   ],
+   "lng": -77.868157,
+   "lat": 40.792327,
+   "osm": "way/431962069"
+  },
+  {
+   "id": "butler-building-farm-13",
+   "name": "Butler Building (Farm 13)",
+   "short": "Butler Bldg (Fm 13)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Butler Bldg (Fm 13)",
+    "Butler",
+    "Butler Building (Farm No 13)"
+   ],
+   "lng": -77.867951,
+   "lat": 40.810324,
+   "osm": "way/249794085"
+  },
+  {
+   "id": "fleet-operations-facilities",
+   "name": "Fleet Operations Facilities",
+   "short": "Fleet Operations Facility",
+   "kind": "academic",
+   "codes": [
+    "FLT"
+   ],
+   "aliases": [
+    "FLT",
+    "Fleet Operations Facility",
+    "Fleet Operations"
+   ],
+   "lng": -77.8614,
+   "lat": 40.814007,
+   "osm": "way/433302772"
+  },
+  {
+   "id": "ford-building",
+   "name": "Ford Building",
+   "short": "Ford Building",
+   "kind": "academic",
+   "codes": [
+    "FRD"
+   ],
+   "aliases": [
+    "Donald H. Ford Building",
+    "Ford",
+    "FRD",
+    "Business Administration Building",
+    "Ford Building (Donald H)"
+   ],
+   "lng": -77.869537,
+   "lat": 40.799702,
+   "osm": "way/430828133"
+  },
+  {
+   "id": "oak-building",
+   "name": "Oak Building",
+   "short": "Marriott Foundation Bldg",
+   "kind": "academic",
+   "codes": [
+    "MRT"
+   ],
+   "aliases": [
+    "OAK",
+    "Marriott Foundation Bldg",
+    "Marriott Foundation",
+    "J. Willard and Alice S. Marriott Foundation Building"
+   ],
+   "lng": -77.871657,
+   "lat": 40.797118,
+   "osm": "way/55948912"
+  },
+  {
+   "id": "telecommunications-building",
+   "name": "Telecommunications Building",
+   "short": "Telecommunications Bldg",
+   "kind": "academic",
+   "codes": [
+    "TCM"
+   ],
+   "aliases": [
+    "Telecommunications",
+    "TCM",
+    "Telecommunications Bldg"
+   ],
+   "lng": -77.862353,
+   "lat": 40.799458,
+   "osm": "way/431740627"
+  },
+  {
+   "id": "carpenter-buidling",
+   "name": "Carpenter Buidling",
+   "short": "Carpenter Bldg",
+   "kind": "academic",
+   "codes": [
+    "CRP"
+   ],
+   "aliases": [
+    "C. R. Carpenter Building",
+    "Carpenter",
+    "CRP",
+    "Carpenter Bldg",
+    "Carpenter Building (C R)"
+   ],
+   "lng": -77.869548,
+   "lat": 40.797192,
+   "osm": "way/55948917"
+  },
+  {
+   "id": "athletic-field-maintenance-building",
+   "name": "Athletic Field Maintenance Building",
+   "short": "Athletic Field Maintenance Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "AFM",
+    "Athletic Field Maintenance Bldg",
+    "Athletic Field Maintenance"
+   ],
+   "lng": -77.868372,
+   "lat": 40.810582,
+   "osm": "way/249794078"
+  },
+  {
+   "id": "maintenance-1-pollock",
+   "name": "Maintenance 1 (Pollock)",
+   "short": "Maintenance 1 Pollock",
+   "kind": "academic",
+   "codes": [
+    "MNT"
+   ],
+   "aliases": [
+    "Maintenance I Pollock"
+   ],
+   "lng": -77.855943,
+   "lat": 40.802351,
+   "osm": "way/264373970"
+  },
+  {
+   "id": "administration-a",
+   "name": "Administration A",
+   "short": "Dairy Administration",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Dairy Administration"
+   ],
+   "lng": -77.863218,
+   "lat": 40.813313,
+   "osm": "way/289657137"
+  },
+  {
+   "id": "arboretum-overlook-pavilion",
+   "name": "Arboretum Overlook Pavilion",
+   "short": "Arboretum Overlook Pav",
+   "kind": "academic",
+   "codes": [
+    "ARB"
+   ],
+   "aliases": [
+    "ARB",
+    "Arboretum Overlook Pav"
+   ],
+   "lng": -77.869146,
+   "lat": 40.806442,
+   "osm": "way/431092409"
+  },
+  {
+   "id": "supplemental-mail-room",
+   "name": "Supplemental Mail Room",
+   "short": "Supplemental Mail Room",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "SMR"
+   ],
+   "lng": -77.870546,
+   "lat": 40.810381,
+   "osm": "way/431079357"
+  },
+  {
+   "id": "nittany-community-center",
+   "name": "Nittany Community Center",
+   "short": "Nittany Community Ctr",
+   "kind": "academic",
+   "codes": [
+    "NCC"
+   ],
+   "aliases": [
+    "Nittany Community Ctr"
+   ],
+   "lng": -77.857204,
+   "lat": 40.802755,
+   "osm": "way/242364039"
+  },
+  {
+   "id": "utility-construction-and-electrical-services",
+   "name": "Utility Construction and Electrical Services",
+   "short": "Utility Construction and Electrical Services Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Utility Construction and Electrical Services Bldg",
+    "Utility Construction and Electrical Services Building"
+   ],
+   "lng": -77.846202,
+   "lat": 40.809061,
+   "osm": "way/1569715639"
+  },
+  {
+   "id": "300-building",
+   "name": "300 Building",
+   "short": "300 Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "300 Bldg",
+    "The",
+    "The 300 Building"
+   ],
+   "lng": -77.863929,
+   "lat": 40.792401,
+   "osm": "way/66093716"
+  },
+  {
+   "id": "hazmat-building",
+   "name": "HazMat Building",
+   "short": "Hazmat Bldg",
+   "kind": "academic",
+   "codes": [
+    "HAZ"
+   ],
+   "aliases": [
+    "Hazmat Bldg",
+    "Hazmat"
+   ],
+   "lng": -77.871021,
+   "lat": 40.810557,
+   "osm": "way/249794104"
+  },
+  {
+   "id": "headhouse-ii",
+   "name": "Headhouse II",
+   "short": "Headhouse II",
+   "kind": "academic",
+   "codes": [
+    "HII"
+   ],
+   "aliases": [],
+   "lng": -77.862698,
+   "lat": 40.802485,
+   "osm": "way/430820183"
+  },
+  {
+   "id": "south-chiller",
+   "name": "South Chiller",
+   "short": "South Chiller Bldg",
+   "kind": "academic",
+   "codes": [
+    "SOC"
+   ],
+   "aliases": [
+    "South Chiller Bldg",
+    "South Chiller Building"
+   ],
+   "lng": -77.855785,
+   "lat": 40.801587,
+   "osm": "way/430434719"
+  },
+  {
+   "id": "arts-cottage",
+   "name": "Arts Cottage",
+   "short": "Arts Cottage",
+   "kind": "academic",
+   "codes": [
+    "ACG"
+   ],
+   "aliases": [
+    "ACG",
+    "Agricultural Experiment Station"
+   ],
+   "lng": -77.863964,
+   "lat": 40.800449,
+   "osm": "way/66643896"
+  },
+  {
+   "id": "oswald-tower",
+   "name": "Oswald Tower",
+   "short": "Oswald Tower",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "John W. Oswald Tower",
+    "Oswald",
+    "OSW"
+   ],
+   "lng": -77.864514,
+   "lat": 40.797766,
+   "osm": "way/35837140"
+  },
+  {
+   "id": "wastewater-treatment-plant",
+   "name": "Wastewater Treatment Plant",
+   "short": "WRF - Administration Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "WRF - Administration Building"
+   ],
+   "lng": -77.848482,
+   "lat": 40.800561,
+   "osm": "way/326377931"
+  },
+  {
+   "id": "benedict-house",
+   "name": "Benedict House",
+   "short": "Benedict House",
+   "kind": "academic",
+   "codes": [
+    "BTH"
+   ],
+   "aliases": [
+    "Florence Benedict House",
+    "Benedict House (Florence)"
+   ],
+   "lng": -77.852511,
+   "lat": 40.801824,
+   "osm": "way/371253640"
+  },
+  {
+   "id": "rider-house-building",
+   "name": "Rider House Building",
+   "short": "Rider House",
+   "kind": "academic",
+   "codes": [
+    "RDH"
+   ],
+   "aliases": [
+    "Rider House"
+   ],
+   "lng": -77.863712,
+   "lat": 40.792306,
+   "osm": "way/66093717"
+  },
+  {
+   "id": "atherton-st-depot",
+   "name": "Atherton St Depot",
+   "short": "Depot (Atherton St)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Atherton Street Bus Depot",
+    "BST",
+    "State College Bellefonte Central Depot",
+    "Depot (Atherton St)",
+    "Atherton Street Transportation Depot"
+   ],
+   "lng": -77.867825,
+   "lat": 40.792136,
+   "osm": "way/431962073"
+  },
+  {
+   "id": "feed-center",
+   "name": "Feed Center",
+   "short": "Feed Ctr (D-1)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Feed Ctr (D-1)",
+    "Feed Center D 1"
+   ],
+   "lng": -77.864361,
+   "lat": 40.812659,
+   "osm": "way/289656858"
+  },
+  {
+   "id": "smith-building-1",
+   "name": "Smith Building 1",
+   "short": "Smith Bldg 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Smith Bldg 1",
+    "Smith I"
+   ],
+   "lng": -77.867109,
+   "lat": 40.792232,
+   "osm": "way/264451960"
+  },
+  {
+   "id": "tower-road-landscape-shop",
+   "name": "Tower Road Landscape Shop",
+   "short": "Tower Rd Landscape Shop",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "TRL",
+    "Tower Rd Landscape Shop"
+   ],
+   "lng": -77.871694,
+   "lat": 40.811368,
+   "osm": "way/288403159"
+  },
+  {
+   "id": "processing-p-6",
+   "name": "Processing (P-6)",
+   "short": "Processing (P-6)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Poultry Processing"
+   ],
+   "lng": -77.869776,
+   "lat": 40.814354,
+   "osm": "way/260656386"
+  },
+  {
+   "id": "police-command-post",
+   "name": "Police Command Post",
+   "short": "B Stdm/Field Level/Sec WA/Police",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "B Stdm/Field Level/Sec WA/Police",
+    "Beaver Stadium Police Command Post",
+    "Police"
+   ],
+   "lng": -77.856488,
+   "lat": 40.811165,
+   "osm": "way/435142183"
+  },
+  {
+   "id": "chiller-building",
+   "name": "Chiller Building",
+   "short": "Chiller Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Chiller Bldg",
+    "Chiller",
+    "Ag Hill Chiller",
+    "Chiller Building (Ag)"
+   ],
+   "lng": -77.864241,
+   "lat": 40.800588,
+   "osm": "relation/6422862"
+  },
+  {
+   "id": "morton-pole-building",
+   "name": "Morton Pole Building",
+   "short": "CBL Pole Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CBL Pole Bldg",
+    "CBL Pole Building"
+   ],
+   "lng": -77.846774,
+   "lat": 40.806431,
+   "osm": "way/292618152"
+  },
+  {
+   "id": "smith-building-2",
+   "name": "Smith Building 2",
+   "short": "Smith Bldg 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Smith Bldg 2",
+    "Smith II"
+   ],
+   "lng": -77.867581,
+   "lat": 40.791892,
+   "osm": "way/261434591"
+  },
+  {
+   "id": "biomechanics-teaching-lab",
+   "name": "Biomechanics Teaching Lab",
+   "short": "Biomechanics Lab",
+   "kind": "academic",
+   "codes": [
+    "BTL"
+   ],
+   "aliases": [
+    "Biomechanics Lab",
+    "Water Tower",
+    "Biomechanics Laboratory (Water Tower I)"
+   ],
+   "lng": -77.869949,
+   "lat": 40.797273,
+   "osm": "way/390927195"
+  },
+  {
+   "id": "calorimeter-building",
+   "name": "Calorimeter Building",
+   "short": "Calorimeter Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Calorimeter Bldg",
+    "Calorimeter"
+   ],
+   "lng": -77.864588,
+   "lat": 40.800373,
+   "osm": "way/55878825"
+  },
+  {
+   "id": "coal-slurry-preparation-facility",
+   "name": "Coal Slurry Preparation Facility",
+   "short": "Coal Slurry Prep Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Coal Slurry Prep Facility"
+   ],
+   "lng": -77.847426,
+   "lat": 40.808931,
+   "osm": "way/292617607"
+  },
+  {
+   "id": "sarni-tennis-facility",
+   "name": "Sarni Tennis Facility",
+   "short": "Sarni Tennis Facility",
+   "kind": "academic",
+   "codes": [
+    "STF"
+   ],
+   "aliases": [
+    "Sarni Tennis Facility - Former Poultry Headquarters"
+   ],
+   "lng": -77.859065,
+   "lat": 40.803974,
+   "osm": "way/261324231"
+  },
+  {
+   "id": "turfgrass-museum",
+   "name": "Turfgrass Museum",
+   "short": "Turfgrass Museum",
+   "kind": "academic",
+   "codes": [
+    "TSM"
+   ],
+   "aliases": [],
+   "lng": -77.867259,
+   "lat": 40.812145,
+   "osm": "way/260652085"
+  },
+  {
+   "id": "ihlseng-cottage",
+   "name": "Ihlseng Cottage",
+   "short": "Ihlseng Building",
+   "kind": "academic",
+   "codes": [
+    "IHL"
+   ],
+   "aliases": [
+    "Magnus C. Ihlseng Cottage",
+    "Ihlseng",
+    "IHL",
+    "Ihlseng Building",
+    "Ihlseng Building (Magnus C)"
+   ],
+   "lng": -77.867105,
+   "lat": 40.797316,
+   "osm": "way/46594575"
+  },
+  {
+   "id": "smith-building-4",
+   "name": "Smith Building 4",
+   "short": "Smith Bldg 4",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Smith Bldg 4",
+    "Smith IV"
+   ],
+   "lng": -77.866178,
+   "lat": 40.791991,
+   "osm": "way/260054890"
+  },
+  {
+   "id": "old-botany-building",
+   "name": "Old Botany Building",
+   "short": "Old Botany Bldg",
+   "kind": "academic",
+   "codes": [
+    "OBT"
+   ],
+   "aliases": [
+    "Old Botany",
+    "OBT",
+    "Old Botany Bldg",
+    "Zoology Building"
+   ],
+   "lng": -77.864227,
+   "lat": 40.796937,
+   "osm": "way/431943795"
+  },
+  {
+   "id": "farm-house-farm-3",
+   "name": "Farm House (Farm 3)",
+   "short": "Farm House (Farm No 3)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Farm House (Farm No 3)",
+    "Farm House",
+    "Farm House (FM 3)",
+    "Garage (Farm No 3)",
+    "Garage",
+    "Garage (FM 3)"
+   ],
+   "lng": -77.857196,
+   "lat": 40.815162,
+   "osm": "way/433302771"
+  },
+  {
+   "id": "usda-pasture-lab-nitrogen-research-laboratory",
+   "name": "USDA Pasture Lab Nitrogen Research Laboratory",
+   "short": "Metal Stor Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Metal Stor Bldg",
+    "Fm 8",
+    "Metal Storage",
+    "Metal Storage Building (Oats) (Farm No 8)",
+    "USDA North Shed II"
+   ],
+   "lng": -77.869372,
+   "lat": 40.81433,
+   "osm": "way/433302789"
+  },
+  {
+   "id": "ecsp-gas-compressor",
+   "name": "ECSP Gas Compressor",
+   "short": "E Campus Gas Compressor Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "E Campus Gas Compressor Bldg",
+    "East Campus Steam Plant Gas Compressor",
+    "East Campus Steam Plant Gas Compressor Building"
+   ],
+   "lng": -77.84717,
+   "lat": 40.809318,
+   "osm": "way/292617608"
+  },
+  {
+   "id": "nittany-lion-softball-park",
+   "name": "Nittany Lion Softball Park",
+   "short": "Nittany Lion Softball Park",
+   "kind": "academic",
+   "codes": [
+    "NLS"
+   ],
+   "aliases": [],
+   "lng": -77.861778,
+   "lat": 40.808259,
+   "osm": "way/435710944"
+  },
+  {
+   "id": "chemical-accumulation-facility-1",
+   "name": "Chemical Accumulation Facility 1",
+   "short": "Chemical Accumulation Facility 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CAI",
+    "Chemical Accumulation Facility I",
+    "Chemical Accumulation Facility 1 (FM 13)"
+   ],
+   "lng": -77.868839,
+   "lat": 40.810497,
+   "osm": "way/431079342"
+  },
+  {
+   "id": "pole-building-farm-8",
+   "name": "Pole Building (Farm 8)",
+   "short": "Pole Bldg (Farm No 8)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Pole Bldg (Farm No 8)",
+    "Farm 8 Pole Building",
+    "Pole Building (Farm No 8)"
+   ],
+   "lng": -77.869077,
+   "lat": 40.814433,
+   "osm": "way/433302790"
+  },
+  {
+   "id": "lions-pantry",
+   "name": "Lion's Pantry",
+   "short": "Lion’s Pantry",
+   "kind": "academic",
+   "codes": [
+    "LPY"
+   ],
+   "aliases": [],
+   "lng": -77.866989,
+   "lat": 40.810511,
+   "osm": "way/249794102"
+  },
+  {
+   "id": "pool-office-building",
+   "name": "Pool Office Building",
+   "short": "Pool Office Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Pool Office Bldg",
+    "Pool Office"
+   ],
+   "lng": -77.860069,
+   "lat": 40.80411,
+   "osm": "way/292444184"
+  },
+  {
+   "id": "birdhouse",
+   "name": "Birdhouse",
+   "short": "Bird House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Bird House"
+   ],
+   "lng": -77.869933,
+   "lat": 40.805064,
+   "osm": "way/1269257255"
+  },
+  {
+   "id": "center-for-sustainibility",
+   "name": "Center for Sustainibility",
+   "short": "Ctr For Sustainability Greenhouse",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Ctr For Sustainability Greenhouse",
+    "Center For Sustainability Greenhouse"
+   ],
+   "lng": -77.849076,
+   "lat": 40.810002,
+   "osm": "way/273386431"
+  },
+  {
+   "id": "chemical-accumulation-facility-2",
+   "name": "Chemical Accumulation Facility 2",
+   "short": "Chemical Accumulation Facility 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CAII",
+    "Chemical Accumulation Facility II",
+    "Chemical Accumulation Facility 2 (FM 13)"
+   ],
+   "lng": -77.869043,
+   "lat": 40.810467,
+   "osm": "way/431079343"
+  },
+  {
+   "id": "timing-stand",
+   "name": "Timing Stand",
+   "short": "Timing Stand Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Timing Stand Bldg",
+    "Timing Stand Building at Track"
+   ],
+   "lng": -77.850169,
+   "lat": 40.80791,
+   "osm": "way/442927265"
+  },
+  {
+   "id": "high-pressure-gas-lab-compressor-building",
+   "name": "High Pressure Gas Lab Compressor Building",
+   "short": "High Pressure Gas Lab Compressor Bldg (Fm 13)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "High Pressure Gas Lab Compressor Bldg (Fm 13)",
+    "High Pressure Gas Lab Compressor",
+    "High Pressure Gas Lab Compressor Bldg (Farm 13)"
+   ],
+   "lng": -77.869398,
+   "lat": 40.809929,
+   "osm": "way/431079348"
+  },
+  {
+   "id": "sewage-pumping-station",
+   "name": "Sewage Pumping Station",
+   "short": "WRF - Sewage Pumping Station",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "WRF - Sewage Pumping Station",
+    "WRF - Sewage Pumping Station (East Halls)"
+   ],
+   "lng": -77.860811,
+   "lat": 40.807467,
+   "osm": "way/292388550"
+  },
+  {
+   "id": "armco-steel-building",
+   "name": "Armco Steel Building",
+   "short": "RSEC Storage Bldg",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "RSEC Storage Bldg",
+    "Radiation Science Engineering Center Storage",
+    "Radiation Science Engineering Center Storage Building"
+   ],
+   "lng": -77.852931,
+   "lat": 40.804001,
+   "osm": "way/432583012"
+  },
+  {
+   "id": "grain-drying-bldg-farm-3",
+   "name": "Grain Drying Bldg (Farm 3)",
+   "short": "Grain Drying Bldg (Fm 3)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Grain Drying Bldg (Fm 3)",
+    "Grain Drying",
+    "Grain Drying Building (Farm No 3)"
+   ],
+   "lng": -77.85775,
+   "lat": 40.815178,
+   "osm": "way/433302781"
+  },
+  {
+   "id": "east-campus-pump-station",
+   "name": "East Campus Pump Station",
+   "short": "E Campus Pump Station",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "E Campus Pump Station"
+   ],
+   "lng": -77.847329,
+   "lat": 40.809466,
+   "osm": "way/292617610"
+  },
+  {
+   "id": "hub-lawn-gazebo",
+   "name": "HUB Lawn Gazebo",
+   "short": "Gazebo (HUB Lawn)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Gazebo (HUB Lawn)",
+    "Gazebo (Hetzel Union Building Lawn)"
+   ],
+   "lng": -77.859462,
+   "lat": 40.797661,
+   "osm": "way/429763056"
+  },
+  {
+   "id": "noise-lab",
+   "name": "Noise Lab",
+   "short": "Noise Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Noise Laboratory"
+   ],
+   "lng": -77.852726,
+   "lat": 40.803677,
+   "osm": "way/432583013"
+  },
+  {
+   "id": "north-atherton-street-at-walker-building",
+   "name": "North Atherton Street at Walker Building",
+   "short": "Bus Shelter Walker Bldg (Atherton Street)",
+   "kind": "academic",
+   "codes": [
+    "BUS"
+   ],
+   "aliases": [
+    "Bus Shelter Walker Bldg (Atherton Street)",
+    "Bus Shelter Walker"
+   ],
+   "lng": -77.866744,
+   "lat": 40.79269,
+   "osm": "way/1534742079"
+  }
+ ]
+}
