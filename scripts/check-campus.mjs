@@ -40,22 +40,24 @@ const length = (pts) => pts.slice(1).reduce((s, p, i) => s + haversine(pts[i], p
 
 let failed = false;
 for (const id of ids) {
-  const school = JSON.parse(fs.readFileSync(`data/schools/${id}.json`, "utf8"));
-  const speed = JSON.parse(fs.readFileSync(`scripts/campus/config/${id}.json`, "utf8")).walkingSpeed;
+  const config = JSON.parse(fs.readFileSync(`scripts/campus/config/${id}.json`, "utf8"));
+  const speed = config.walkingSpeed;
+  // Halls the config puts on another campus (with a reason) aren't on this map.
+  const dorms = JSON.parse(fs.readFileSync(`data/schools/${id}.json`, "utf8")).dorms.filter((d) => !config.excludeHalls?.[d.dorm_id]);
   const campus = JSON.parse(fs.readFileSync(`data/campus/${id}.json`, "utf8"));
   const minutes = JSON.parse(fs.readFileSync(`data/campus/${id}.minutes.json`, "utf8"));
   const hallById = new Map(campus.halls.map((h) => [h.dormId, h]));
   const placeById = new Map(campus.places.map((p) => [p.id, p]));
   const pinned = (h) => Number.isFinite(h?.lng) && Number.isFinite(h?.lat);
   const issues = {
-    "every hall has a pin": school.dorms.filter((d) => !pinned(hallById.get(d.dorm_id))).map((d) => d.dorm_id),
+    "every hall has a pin": dorms.filter((d) => !pinned(hallById.get(d.dorm_id))).map((d) => d.dorm_id),
     "every academic place has a code or alias": campus.places.filter((p) => p.kind === "academic" && !p.codes.length && !p.aliases.length).map((p) => p.id),
     "minutes are finite and 0.5–45": [],
     "walking ÷ straight-line is 1.0–2.5": [],
     "every hall has a path to every place": [],
     "size budgets (client < 150 KB, minutes < 250 KB)": [],
   };
-  for (const d of school.dorms) {
+  for (const d of dorms) {
     const hall = hallById.get(d.dorm_id);
     const row = minutes.halls[d.dorm_id];
     const file = `data/campus/paths/${id}/${d.dorm_id}.json`;

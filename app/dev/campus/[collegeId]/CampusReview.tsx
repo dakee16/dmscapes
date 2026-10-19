@@ -5,7 +5,7 @@ import type { GeoJSONSource, Map as MapLibre, Marker } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 
 type Year = "first" | "upper" | "any" | null;
-type Hall = { dormId: string; name: string; lng: number | null; lat: number | null; pin: "name" | "address" | "manual" | null; osm: string | null; year: Year; yearSource: string | null };
+type Hall = { dormId: string; name: string; lng: number | null; lat: number | null; pin: "name" | "address" | "manual" | null; osm: string | null; year: Year; yearSource: string | string[] | null };
 type Place = { id: string; name: string; short: string; kind: "academic" | "dining" | "gym" | "library"; codes: string[]; aliases: string[]; lng: number; lat: number; osm: string };
 export type Campus = { collegeId: string; generatedAt: string; bounds: [number, number, number, number]; halls: Hall[]; places: Place[] };
 type Routes = Record<string, { minutes: number | null; path: string | null }>;
@@ -185,7 +185,7 @@ export default function CampusReview({ campus }: { campus: Campus }) {
 
   function changeYear(h: Hall, value: string) {
     const year = (value || null) as Year;
-    const source = window.prompt(`Source URL for ${h.name}: ${value || "unknown"}`, h.yearSource?.startsWith("http") ? h.yearSource : "");
+    const source = window.prompt(`Source URL for ${h.name}: ${value || "unknown"}`, typeof h.yearSource === "string" && h.yearSource.startsWith("http") ? h.yearSource : "");
     if (source === null) return;
     save(h.dormId, { year, yearSource: source.trim() || undefined });
   }
