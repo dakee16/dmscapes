@@ -1,6 +1,6 @@
 {
  "collegeId": "arizona-state",
- "generatedAt": "2026-10-19T18:23:19.287Z",
+ "generatedAt": "2026-10-19T18:32:40.420Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -34,6 +34,11 @@
    "name": "Housing page",
    "url": "https://housing.asu.edu/housing-communities/residential-colleges/barrett-residential-complex",
    "use": "year tag"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/arizona-state.json",
+   "use": "manual pins, year tags, place codes and aliases"
   }
  ],
  "bounds": [
@@ -217,12 +222,9 @@
    "short": "University Services",
    "kind": "academic",
    "codes": [
-    "CSB",
     "USB"
    ],
-   "aliases": [
-    "Community Services Building"
-   ],
+   "aliases": [],
    "lng": -111.92551,
    "lat": 33.411664,
    "osm": "way/30408132"
@@ -297,9 +299,12 @@
    "name": "Nelson Fine Arts Center",
    "short": "Nelson Fine Arts Center",
    "kind": "academic",
-   "codes": [],
-   "aliases": [
+   "codes": [
     "FAC"
+   ],
+   "aliases": [
+    "FAC",
+    "J. Russell and Bonita Nelson Fine Arts Center | ASU Art Museum"
    ],
    "lng": -111.938379,
    "lat": 33.418699,
@@ -310,9 +315,12 @@
    "name": "Grady Gammage Memorial Auditorium",
    "short": "Grady Gammage Memorial Auditorium",
    "kind": "academic",
-   "codes": [],
-   "aliases": [
+   "codes": [
     "GGMA"
+   ],
+   "aliases": [
+    "GGMA",
+    "ASU Gammage"
    ],
    "lng": -111.938021,
    "lat": 33.416255,
@@ -373,6 +381,21 @@
    "lng": -111.941961,
    "lat": 33.42302,
    "osm": "way/157628483"
+  },
+  {
+   "id": "schwada-classroom-office-building",
+   "name": "Schwada Classroom Office Building",
+   "short": "Schwada Classroom Office Building",
+   "kind": "academic",
+   "codes": [
+    "SCOB"
+   ],
+   "aliases": [
+    "John W. Schwada Building"
+   ],
+   "lng": -111.930599,
+   "lat": 33.41905,
+   "osm": "way/28866501"
   },
   {
    "id": "armstrong-hall",
@@ -629,12 +652,9 @@
    "name": "H B Farmer Education Building",
    "short": "H B Farmer Education Building",
    "kind": "academic",
-   "codes": [
-    "GWC"
-   ],
+   "codes": [],
    "aliases": [
-    "ED",
-    "H.B. Farmer Education Building"
+    "ED"
    ],
    "lng": -111.937252,
    "lat": 33.418059,
@@ -689,7 +709,9 @@
    "codes": [
     "GWC"
    ],
-   "aliases": [],
+   "aliases": [
+    "H.B. Farmer Education Building"
+   ],
    "lng": -111.930471,
    "lat": 33.420786,
    "osm": "way/30407135"
@@ -767,8 +789,7 @@
    "codes": [
     "LSB",
     "LSC",
-    "LSD",
-    "LSE"
+    "LSD"
    ],
    "aliases": [
     "Life Sciences A-Wing"
@@ -791,6 +812,21 @@
    "lng": -111.924262,
    "lat": 33.423493,
    "osm": "way/30421445"
+  },
+  {
+   "id": "aj-matthews-center",
+   "name": "AJ Matthews Center",
+   "short": "AJ Matthews Center",
+   "kind": "academic",
+   "codes": [
+    "MCENT"
+   ],
+   "aliases": [
+    "A. J. Matthews Center"
+   ],
+   "lng": -111.935482,
+   "lat": 33.419953,
+   "osm": "way/28822889"
   },
   {
    "id": "psychology-north",
@@ -838,10 +874,13 @@
    "name": "Life Sciences E-Wing",
    "short": "Life Sciences E-Wing",
    "kind": "academic",
-   "codes": [],
+   "codes": [
+    "LSE"
+   ],
    "aliases": [
     "Life Sciences Tower",
-    "LSE"
+    "LSE",
+    "Life Sciences Center"
    ],
    "lng": -111.933823,
    "lat": 33.419524,
@@ -979,12 +1018,10 @@
    "short": "Dixie Gammage Hall",
    "kind": "academic",
    "codes": [
-    "GGMA",
     "GHALL"
    ],
    "aliases": [
-    "GHALL",
-    "ASU Gammage"
+    "GHALL"
    ],
    "lng": -111.936262,
    "lat": 33.419122,
@@ -1039,12 +1076,9 @@
    "short": "Matthews Hall",
    "kind": "academic",
    "codes": [
-    "MCENT",
     "MHALL"
    ],
-   "aliases": [
-    "A. J. Matthews Center"
-   ],
+   "aliases": [],
    "lng": -111.936136,
    "lat": 33.42012,
    "osm": "way/28822867"
@@ -1132,19 +1166,6 @@
    "lng": -111.933039,
    "lat": 33.420535,
    "osm": "way/30406737"
-  },
-  {
-   "id": "danforth-chapel",
-   "name": "Danforth Chapel",
-   "short": "Danforth Chapel",
-   "kind": "academic",
-   "codes": [
-    "CAM"
-   ],
-   "aliases": [],
-   "lng": -111.935328,
-   "lat": 33.418512,
-   "osm": "way/28822660"
   }
  ]
 }

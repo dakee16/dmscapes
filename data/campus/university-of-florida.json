@@ -1,6 +1,6 @@
 {
  "collegeId": "university-of-florida",
- "generatedAt": "2026-10-19T18:23:20.594Z",
+ "generatedAt": "2026-10-19T18:32:41.862Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -3236,6 +3236,440 @@
    "lng": -82.348569,
    "lat": 29.642463,
    "osm": "way/481256573"
+  },
+  {
+   "id": "computer-sciences-engineering",
+   "name": "Computer Sciences/Engineering",
+   "short": "Computer Sciences/Engineering",
+   "kind": "academic",
+   "codes": [
+    "CSE"
+   ],
+   "aliases": [],
+   "lng": -82.344369,
+   "lat": 29.648318,
+   "osm": "way/150860044"
+  },
+  {
+   "id": "small-animal-hospital",
+   "name": "Small Animal Hospital",
+   "short": "Small Animal Hospital",
+   "kind": "academic",
+   "codes": [
+    "VSAH"
+   ],
+   "aliases": [],
+   "lng": -82.350582,
+   "lat": 29.633752,
+   "osm": "way/479181463"
+  },
+  {
+   "id": "agronomy-drying-facility",
+   "name": "Agronomy Drying Facility",
+   "short": "Agronomy Drying Facility",
+   "kind": "academic",
+   "codes": [
+    "ADF"
+   ],
+   "aliases": [],
+   "lng": -82.363378,
+   "lat": 29.638744,
+   "osm": "way/1013856813"
+  },
+  {
+   "id": "deriso-hall",
+   "name": "Deriso Hall",
+   "short": "Deriso Hall",
+   "kind": "academic",
+   "codes": [
+    "DER"
+   ],
+   "aliases": [],
+   "lng": -82.351435,
+   "lat": 29.633243,
+   "osm": "way/479181978"
+  },
+  {
+   "id": "agricultural-networks-laboratory",
+   "name": "Agricultural Networks Laboratory",
+   "short": "Agricultural Networks Laboratory",
+   "kind": "academic",
+   "codes": [
+    "IMAG"
+   ],
+   "aliases": [],
+   "lng": -82.362885,
+   "lat": 29.637821,
+   "osm": "way/1013856847"
+  },
+  {
+   "id": "veterinary-clinical-sciences",
+   "name": "Veterinary Clinical Sciences",
+   "short": "Veterinary Clinical Sciences",
+   "kind": "academic",
+   "codes": [
+    "VCS"
+   ],
+   "aliases": [],
+   "lng": -82.349943,
+   "lat": 29.633284,
+   "osm": "way/479181252"
+  },
+  {
+   "id": "vet-med-food-animal-clinic",
+   "name": "Vet Med Food Animal Clinic",
+   "short": "Vet Med Food Animal Clinic",
+   "kind": "academic",
+   "codes": [
+    "FACL"
+   ],
+   "aliases": [],
+   "lng": -82.350064,
+   "lat": 29.631818,
+   "osm": "way/479181979"
+  },
+  {
+   "id": "vet-med-metabolic-building",
+   "name": "Vet Med Metabolic Building",
+   "short": "Vet Med Metabolic Building",
+   "kind": "academic",
+   "codes": [
+    "VMMB"
+   ],
+   "aliases": [],
+   "lng": -82.348999,
+   "lat": 29.632748,
+   "osm": "way/479181249"
+  },
+  {
+   "id": "va-education-building-14",
+   "name": "Va Education Building #14",
+   "short": "Va Education Building #14",
+   "kind": "academic",
+   "codes": [
+    "VAEB"
+   ],
+   "aliases": [],
+   "lng": -82.343595,
+   "lat": 29.637074,
+   "osm": "way/1013590729"
+  },
+  {
+   "id": "vab-auditorium",
+   "name": "VAB Auditorium",
+   "short": "VAB Auditorium",
+   "kind": "academic",
+   "codes": [
+    "VABA"
+   ],
+   "aliases": [],
+   "lng": -82.348409,
+   "lat": 29.633699,
+   "osm": "way/479181248"
+  },
+  {
+   "id": "schiebler-cms",
+   "name": "Schiebler CMS",
+   "short": "Schiebler CMS",
+   "kind": "academic",
+   "codes": [
+    "CMS"
+   ],
+   "aliases": [],
+   "lng": -82.345073,
+   "lat": 29.634691,
+   "osm": "way/479182301"
+  },
+  {
+   "id": "ifas-agronomy-lab",
+   "name": "IFAS Agronomy Lab",
+   "short": "IFAS Agronomy Lab",
+   "kind": "academic",
+   "codes": [
+    "WEL1"
+   ],
+   "aliases": [],
+   "lng": -82.355462,
+   "lat": 29.633742,
+   "osm": "way/1013590771"
+  },
+  {
+   "id": "ifas-conference-center",
+   "name": "IFAS Conference Center",
+   "short": "IFAS Conference Center",
+   "kind": "academic",
+   "codes": [
+    "AGYL"
+   ],
+   "aliases": [
+    "IFAS Conference Center (Agy)"
+   ],
+   "lng": -82.35525,
+   "lat": 29.6335,
+   "osm": "way/1013590768"
+  },
+  {
+   "id": "ifas-agronomy-lab-1013590766",
+   "name": "IFAS Agronomy Lab",
+   "short": "IFAS Agronomy Lab",
+   "kind": "academic",
+   "codes": [
+    "BCL"
+   ],
+   "aliases": [],
+   "lng": -82.355678,
+   "lat": 29.63351,
+   "osm": "way/1013590766"
+  },
+  {
+   "id": "shands-in-patient-mri-building",
+   "name": "Shands In-Patient MRI Building",
+   "short": "Shands In-Patient MRI Building",
+   "kind": "academic",
+   "codes": [
+    "A10"
+   ],
+   "aliases": [],
+   "lng": -82.342323,
+   "lat": 29.640169,
+   "osm": "way/475173280"
+  },
+  {
+   "id": "animal-sciences-building",
+   "name": "Animal Sciences Building",
+   "short": "Animal Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "ANS"
+   ],
+   "aliases": [],
+   "lng": -82.351792,
+   "lat": 29.631285,
+   "osm": "way/479185271"
+  },
+  {
+   "id": "animal-building",
+   "name": "Animal Building",
+   "short": "Animal Building",
+   "kind": "academic",
+   "codes": [
+    "ANB"
+   ],
+   "aliases": [],
+   "lng": -82.351976,
+   "lat": 29.632569,
+   "osm": "way/479185633"
+  },
+  {
+   "id": "animal-science-preparation-bld",
+   "name": "Animal Science Preparation Bld",
+   "short": "Animal Science Preparation Bld",
+   "kind": "academic",
+   "codes": [
+    "ASP"
+   ],
+   "aliases": [],
+   "lng": -82.351976,
+   "lat": 29.632366,
+   "osm": "way/479185632"
+  },
+  {
+   "id": "dairy-science-building",
+   "name": "Dairy Science Building",
+   "short": "Dairy Science Building",
+   "kind": "academic",
+   "codes": [
+    "ANSC"
+   ],
+   "aliases": [],
+   "lng": -82.351529,
+   "lat": 29.630699,
+   "osm": "way/479185273"
+  },
+  {
+   "id": "plant-growth-building",
+   "name": "Plant Growth Building",
+   "short": "Plant Growth Building",
+   "kind": "academic",
+   "codes": [
+    "PGB"
+   ],
+   "aliases": [],
+   "lng": -82.360213,
+   "lat": 29.636959,
+   "osm": "way/654538297"
+  },
+  {
+   "id": "pesticide-lab-annex-b",
+   "name": "Pesticide Lab Annex B",
+   "short": "Pesticide Lab Annex B",
+   "kind": "academic",
+   "codes": [
+    "PLAX"
+   ],
+   "aliases": [],
+   "lng": -82.35987,
+   "lat": 29.637164,
+   "osm": "way/654538289"
+  },
+  {
+   "id": "agronomy-drying-building",
+   "name": "Agronomy Drying Building",
+   "short": "Agronomy Drying Building",
+   "kind": "academic",
+   "codes": [
+    "AGDB"
+   ],
+   "aliases": [],
+   "lng": -82.359458,
+   "lat": 29.638708,
+   "osm": "way/1013856843"
+  },
+  {
+   "id": "plant-cell-molecular-bio-lab",
+   "name": "Plant Cell/Molecular Bio Lab",
+   "short": "Plant Cell/Molecular Bio Lab",
+   "kind": "academic",
+   "codes": [
+    "PCMB"
+   ],
+   "aliases": [],
+   "lng": -82.359528,
+   "lat": 29.638229,
+   "osm": "way/649785599"
+  },
+  {
+   "id": "uf-large-animal-hospital",
+   "name": "UF Large Animal Hospital",
+   "short": "UF Large Animal Hospital",
+   "kind": "academic",
+   "codes": [
+    "VMEH"
+   ],
+   "aliases": [],
+   "lng": -82.349985,
+   "lat": 29.632367,
+   "osm": "way/479181251"
+  },
+  {
+   "id": "ornamental-hort-laboratory",
+   "name": "Ornamental Hort Laboratory",
+   "short": "Ornamental Hort Laboratory",
+   "kind": "academic",
+   "codes": [
+    "OHL1"
+   ],
+   "aliases": [],
+   "lng": -82.358979,
+   "lat": 29.639761,
+   "osm": "way/1013856832"
+  },
+  {
+   "id": "headhouse-ornht",
+   "name": "Headhouse, Ornht",
+   "short": "Headhouse, Ornht",
+   "kind": "academic",
+   "codes": [
+    "HHO",
+    "OHC"
+   ],
+   "aliases": [
+    "Ornamental Hort Carport"
+   ],
+   "lng": -82.359163,
+   "lat": 29.639971,
+   "osm": "way/1013856836"
+  },
+  {
+   "id": "ornamental-hort-pesticide-bldg",
+   "name": "Ornamental Hort Pesticide Bldg",
+   "short": "Ornamental Hort Pesticide Bldg",
+   "kind": "academic",
+   "codes": [
+    "OHPB"
+   ],
+   "aliases": [],
+   "lng": -82.359134,
+   "lat": 29.640126,
+   "osm": "way/1013856837"
+  },
+  {
+   "id": "ornamental-hort-soils-building",
+   "name": "Ornamental Hort Soils Building",
+   "short": "Ornamental Hort Soils Building",
+   "kind": "academic",
+   "codes": [
+    "OHSB"
+   ],
+   "aliases": [],
+   "lng": -82.358704,
+   "lat": 29.640077,
+   "osm": "way/1013856831"
+  },
+  {
+   "id": "ornamental-horticulture-lab",
+   "name": "Ornamental Horticulture Lab",
+   "short": "Ornamental Horticulture Lab",
+   "kind": "academic",
+   "codes": [
+    "OHL2"
+   ],
+   "aliases": [],
+   "lng": -82.358574,
+   "lat": 29.639834,
+   "osm": "way/1013856828"
+  },
+  {
+   "id": "residence-laboratory-bldg",
+   "name": "Residence / Laboratory Bldg.",
+   "short": "Residence / Laboratory Bldg.",
+   "kind": "academic",
+   "codes": [
+    "RLAB"
+   ],
+   "aliases": [],
+   "lng": -82.358072,
+   "lat": 29.639834,
+   "osm": "way/1013856829"
+  },
+  {
+   "id": "environmental-soil-bin",
+   "name": "Environmental Soil Bin",
+   "short": "Environmental Soil Bin",
+   "kind": "academic",
+   "codes": [
+    "ENSB"
+   ],
+   "aliases": [],
+   "lng": -82.360218,
+   "lat": 29.639516,
+   "osm": "way/866464029"
+  },
+  {
+   "id": "v-a-hospital",
+   "name": "V. A. Hospital",
+   "short": "V. A. Hospital",
+   "kind": "academic",
+   "codes": [
+    "VAH"
+   ],
+   "aliases": [],
+   "lng": -82.344795,
+   "lat": 29.637149,
+   "osm": "way/462870945"
+  },
+  {
+   "id": "veterans-administration-add",
+   "name": "Veterans Administration Add",
+   "short": "Veterans Administration Add",
+   "kind": "academic",
+   "codes": [
+    "VAMC"
+   ],
+   "aliases": [],
+   "lng": -82.343787,
+   "lat": 29.636184,
+   "osm": "way/462870946"
   }
  ]
 }

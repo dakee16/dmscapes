@@ -1,6 +1,6 @@
 {
  "collegeId": "ucla",
- "generatedAt": "2026-10-19T18:23:18.877Z",
+ "generatedAt": "2026-10-19T18:32:40.027Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -44,6 +44,11 @@
    "name": "Housing page",
    "url": "https://housing.ucla.edu/new-students/suites",
    "use": "year tag"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/ucla.json",
+   "use": "manual pins, year tags, place codes and aliases"
   }
  ],
  "bounds": [
@@ -552,9 +557,12 @@
    "name": "Orthopaedic Hospital Research Center",
    "short": "Orthopaedic Hospital Research Center",
    "kind": "academic",
-   "codes": [],
-   "aliases": [
+   "codes": [
     "OHRC"
+   ],
+   "aliases": [
+    "OHRC",
+    "Orthopedic Hospital Research Center"
    ],
    "lng": -118.441297,
    "lat": 34.067363,
@@ -859,12 +867,9 @@
    "short": "Neuroscience Research Building",
    "kind": "academic",
    "codes": [
-    "GONDA",
     "NEUROSC"
    ],
-   "aliases": [
-    "Gonda (Goldschmied) Neuroscience and Genetics Research Center"
-   ],
+   "aliases": [],
    "lng": -118.443445,
    "lat": 34.067449,
    "osm": "way/422876601"
@@ -1137,9 +1142,12 @@
    "name": "Gonda (Goldschmeid) Center",
    "short": "Gonda (Goldschmeid) Center",
    "kind": "academic",
-   "codes": [],
+   "codes": [
+    "GONDA"
+   ],
    "aliases": [
-    "Gonda Building"
+    "Gonda Building",
+    "Gonda (Goldschmied) Neuroscience and Genetics Research Center"
    ],
    "lng": -118.444741,
    "lat": 34.067362,

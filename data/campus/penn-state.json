@@ -1,6 +1,6 @@
 {
  "collegeId": "penn-state",
- "generatedAt": "2026-10-19T18:23:18.363Z",
+ "generatedAt": "2026-10-19T18:32:39.495Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -4711,6 +4711,22 @@
    "lng": -77.852726,
    "lat": 40.803677,
    "osm": "way/432583013"
+  },
+  {
+   "id": "kissell-building-v",
+   "name": "Kissell Building V",
+   "short": "Kissell Bldg V",
+   "kind": "academic",
+   "codes": [
+    "KIS"
+   ],
+   "aliases": [
+    "Kissell Bldg V",
+    "Kissell V"
+   ],
+   "lng": -77.873244,
+   "lat": 40.786934,
+   "osm": "way/328096127"
   }
  ]
 }
