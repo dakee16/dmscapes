@@ -128,9 +128,9 @@ export function HomeSection({ example, others }: { example: Example; others: num
               <ArrowRight size={20} />
             </EntryLink>
             <p className={css.homeNote}>
-              {schools(example, others)}
+              <span>{schools(example, others)}</span>
               <span className={css.homeNoteBreak}> · </span>
-              Your top pick is free
+              <span>Your top pick is free</span>
             </p>
           </div>
         </div>
