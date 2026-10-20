@@ -168,7 +168,7 @@
     ]
   },
   "university-of-florida": {
-    "halls": 21,
+    "halls": 24,
     "places": [
       {
         "placeId": "mccarty-hall-a",
@@ -203,9 +203,9 @@
         "weekly": 121.6
       },
       {
-        "dormId": "sledd-hall",
-        "name": "Sledd Hall",
-        "weekly": 145.4
+        "dormId": "keys-residential-complex",
+        "name": "Keys Residential Complex",
+        "weekly": 121.6
       }
     ]
   }

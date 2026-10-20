@@ -1,0 +1,22 @@
+{
+  "halls": {
+    "keys-residential-complex": {
+      "pin": [
+        -82.342084,
+        29.646547
+      ]
+    },
+    "lakeside-residential-complex": {
+      "pin": [
+        -82.342084,
+        29.646547
+      ]
+    },
+    "springs-residential-complex": {
+      "pin": [
+        -82.342084,
+        29.646547
+      ]
+    }
+  }
+}

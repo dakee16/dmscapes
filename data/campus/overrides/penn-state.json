@@ -1,0 +1,12 @@
+{
+  "halls": {
+    "atherton-hall": {
+      "year": "first",
+      "yearSource": "https://liveon.psu.edu/university-park/housing/atherton-hall"
+    },
+    "beam-hall": {
+      "year": "upper",
+      "yearSource": "https://liveon.psu.edu/university-park/housing/beam-hall"
+    }
+  }
+}

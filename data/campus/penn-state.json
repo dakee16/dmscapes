@@ -1,6 +1,6 @@
 {
  "collegeId": "penn-state",
- "generatedAt": "2026-10-19T18:47:00.686Z",
+ "generatedAt": "2026-10-20T05:20:11.880Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -325,6 +325,11 @@
    "name": "Housing page",
    "url": "https://liveon.psu.edu/university-park/housing/young-hall",
    "use": "year tag"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/penn-state.json",
+   "use": "manual pins, year tags, place codes and aliases"
   }
  ],
  "bounds": [
@@ -341,7 +346,7 @@
    "lat": 40.797825,
    "pin": "name",
    "osm": "way/37094031",
-   "year": "any",
+   "year": "first",
    "yearSource": "https://liveon.psu.edu/university-park/housing/atherton-hall"
   },
   {
@@ -351,7 +356,7 @@
    "lat": 40.801692,
    "pin": "name",
    "osm": "way/431071068",
-   "year": "any",
+   "year": "upper",
    "yearSource": "https://liveon.psu.edu/university-park/housing/beam-hall"
   },
   {
