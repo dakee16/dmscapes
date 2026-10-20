@@ -55,6 +55,29 @@ function GoogleG() {
   );
 }
 
+/** Google sign-in that returns to `next` (also Hall Finder's gate). Resolves to an error
+ *  message, or null once the browser is on its way to Google. */
+export async function startGoogleSignIn(next: string): Promise<string | null> {
+  const supabase = getBrowserClient();
+  if (!supabase) return "Sign-in is unavailable right now.";
+  window.localStorage.setItem("dormscape-oauth-pending", "1");
+  try {
+    const { error: err } = await withTimeout(
+      supabase.auth.signInWithOAuth({
+        provider: "google",
+        // Return straight to where the user was headed after the round-trip.
+        options: { redirectTo: `${window.location.origin}${next}` },
+      })
+    );
+    if (!err) return null; // On success the browser navigates away.
+    window.localStorage.removeItem("dormscape-oauth-pending");
+    return err.message;
+  } catch {
+    window.localStorage.removeItem("dormscape-oauth-pending");
+    return SLOW_NETWORK_MSG;
+  }
+}
+
 /** Two-voice title: the last word in Fraunces italic, blue (Login.dc.html). */
 function Title({ text }: { text: string }) {
   const cut = text.lastIndexOf(" ");
@@ -120,28 +143,12 @@ export default function AuthForm({
   }
 
   async function handleGoogle() {
-    const supabase = getBrowserClient();
-    if (!supabase || busy) return;
+    if (!getBrowserClient() || busy) return;
     setBusy(true);
     setError("");
-    window.localStorage.setItem("dormscape-oauth-pending", "1");
-    try {
-      const { error: err } = await withTimeout(
-        supabase.auth.signInWithOAuth({
-          provider: "google",
-          // Return straight to where the user was headed after the round-trip.
-          options: { redirectTo: `${window.location.origin}${next}` },
-        })
-      );
-      if (err) {
-        window.localStorage.removeItem("dormscape-oauth-pending");
-        setError(err.message);
-        setBusy(false);
-      }
-      // On success the browser navigates away.
-    } catch {
-      window.localStorage.removeItem("dormscape-oauth-pending");
-      setError(SLOW_NETWORK_MSG);
+    const err = await startGoogleSignIn(next);
+    if (err) {
+      setError(err);
       setBusy(false);
     }
   }
