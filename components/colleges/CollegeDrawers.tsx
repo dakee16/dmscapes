@@ -42,16 +42,19 @@ function IndexCard({ c, i, hf }: { c: Campus; i: number; hf: boolean }) {
         <span className={css.cardTab} data-tone={TAB_TONES[i % 3]} aria-hidden="true">
           {c.sort[0].toUpperCase()}
         </span>
-        {hf && hasHallFinder(c.id) && <span className={css.hfTag}>Hall Finder</span>}
         <span className={css.cardName}>{c.name}</span>
         <span className={css.cardPlace}>{place(c)}</span>
         <span className={css.cardMeta}>
           <span>
             {c.buildings} building{c.buildings === 1 ? "" : "s"} · {c.rooms} room type{c.rooms === 1 ? "" : "s"}
           </span>
-          <span className={css.cardOpen} aria-hidden="true">
-            Open →
-          </span>
+          {hf && hasHallFinder(c.id) ? (
+            <span className={css.hfTag}>Hall Finder</span>
+          ) : (
+            <span className={css.cardOpen} aria-hidden="true">
+              Open →
+            </span>
+          )}
         </span>
       </Link>
     </li>
