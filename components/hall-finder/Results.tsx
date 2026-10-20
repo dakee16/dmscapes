@@ -112,8 +112,9 @@ function FreeResults({ collegeId, schoolName, result, halls, facts, places, rout
   return (
     <>
       <div className={styles.eyebrowRow}>
-        <p className={styles.eyebrow}>{schoolName} · Your #1 hall</p>
-        <button type="button" className={styles.linkBtn} onClick={onEdit}>Edit places</button>
+        <p className={styles.eyebrow}><span className={styles.wideOnly}>{schoolName} · </span>Your #1 hall</p>
+        {/* Phones edit from the finder's bar (design 08). */}
+        <button type="button" className={`${styles.linkBtn} ${styles.wideOnly}`} onClick={onEdit}>Edit places</button>
       </div>
       <h1 className={styles.title}>
         <span className={`${styles.titleBig} ${styles.titleHall} ds-riso`}>{hall.name}</span>
@@ -193,16 +194,24 @@ function PaidResults({ collegeId, schoolName, result, halls, facts, places, filt
 
   return (
     <>
-      <div className={styles.eyebrowRow}>
-        <p className={styles.eyebrow}>{schoolName} · {result.count} halls · {places.length} {places.length === 1 ? "place" : "places"}</p>
-        <button type="button" className={styles.linkBtn} onClick={onEdit}>Edit places</button>
-        {onShare && <button type="button" className={styles.linkBtn} onClick={onShare} aria-live="polite">{shareLabel ?? "Share"}</button>}
+      {/* On phones this heads the sheet over the map (design 09): "61 halls, ranked." and Edit places. */}
+      <div className={styles.rankHead}>
+        <div className={styles.eyebrowRow}>
+          <p className={`${styles.eyebrow} ${styles.wideOnly}`}>{schoolName} · {result.count} halls · {places.length} {places.length === 1 ? "place" : "places"}</p>
+          <button type="button" className={styles.linkBtn} onClick={onEdit}>Edit places</button>
+          {onShare && <button type="button" className={`${styles.linkBtn} ${styles.wideOnly}`} onClick={onShare} aria-live="polite">{shareLabel ?? "Share"}</button>}
+        </div>
+        <h1 className={styles.title}>
+          <span className={styles.wideOnly}>
+            <span className={`${styles.titleBig} ds-riso`}>Your halls,</span>
+            <span className={`${styles.titleSerif} ds-serif ds-serif--blue`}>ranked by walking.</span>
+          </span>
+          <span className={styles.phoneOnly}>
+            {result.count} halls, <span className="ds-serif ds-serif--blue">ranked.</span>
+          </span>
+        </h1>
       </div>
-      <h1 className={styles.title}>
-        <span className={`${styles.titleBig} ds-riso`}>Your halls,</span>
-        <span className={`${styles.titleSerif} ds-serif ds-serif--blue`}>ranked by walking.</span>
-      </h1>
-      <div className={styles.chips} role="group" aria-label="Only show">
+      <div className={`${styles.chips} ${styles.chipRow}`} role="group" aria-label="Only show">
         {chips.map(([k, label]) => (
           <button key={k} type="button" className={styles.chip} aria-pressed={filters[k]} onClick={() => onFilter(k, !filters[k])}>{label}</button>
         ))}

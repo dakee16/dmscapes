@@ -31,6 +31,8 @@ import {
 import { EMPTY_DRAFT, useHallFinder } from "@/lib/hall-finder-store";
 import type { MapHall, MapPlace, MapRoute } from "./FinderMap";
 import ConfirmIcs from "./ConfirmIcs";
+import Gate from "./Gate";
+import { ChevronLeft } from "@/components/plan-steps/icons";
 import { LAST_SCHOOL_KEY } from "./LastSchool";
 import Results, { type ShownPlace } from "./Results";
 import { searchPlaces } from "./search";
@@ -78,6 +80,14 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
     h1.tabIndex = -1;
     h1.focus({ preventScroll: true });
   });
+
+  // Phone results trade the site nav for the finder's own bar (designs 08 and 09).
+  useEffect(() => {
+    document.documentElement.dataset.hfView = view;
+    return () => {
+      delete document.documentElement.dataset.hfView;
+    };
+  }, [view]);
 
   useEffect(() => {
     const fromUrl = decodeDraft(params.get("s"));
@@ -181,6 +191,21 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
       setKind(null);
     }
   }
+
+  // ---- Full map (phones, design 06): the map takes the screen until Done or Escape.
+  const [fullMap, setFullMap] = useState(false);
+  useEffect(() => {
+    if (!fullMap) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setFullMap(false);
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = overflow;
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [fullMap]);
+  useEffect(() => setFullMap(false), [view]);
 
   // ---- Drop a pin
   const [picking, setPicking] = useState(false);
@@ -332,13 +357,13 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
 
   function rankMyHalls() {
     if (!signedIn) {
-      // Keep everything through sign-in: the return URL carries the draft and lands on results,
-      // and the resume marker brings an email-verification tab back here too.
+      // Keep everything through sign-in: the results URL carries the draft (Google returns to
+      // it, email's login page sends you back to it), and the resume marker brings an
+      // email-verification tab back here too. The gate opens over the blurred results.
       const url = urlFor("results");
-      window.history.replaceState(null, "", url);
       setResume(url);
       track("finder_signin_gate", { college: collegeId, places: apiPlaces.length });
-      openAuthModal("hall-finder");
+      router.push(url, { scroll: false });
       return;
     }
     router.push(urlFor("results"), { scroll: true });
@@ -355,7 +380,8 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
   const mapHalls: MapHall[] = useMemo(() => {
     const pinned = campus.halls.filter((h) => h.lng !== null && h.lat !== null);
     const base = (h: (typeof pinned)[number]) => ({ dormId: h.dormId, name: h.name, lng: h.lng!, lat: h.lat! });
-    if (view !== "results" || !result || result.tier === "anon") return pinned.map((h) => ({ ...base(h), tone: "plain" as const }));
+    if (view !== "results") return pinned.map((h) => ({ ...base(h), tone: "plain" as const }));
+    if (!result || result.tier === "anon") return pinned.map((h) => ({ ...base(h), tone: signedIn ? ("plain" as const) : ("locked" as const) }));
     if (result.tier === "free") return pinned.map((h) => ({ ...base(h), tone: h.dormId === result.top?.dormId ? ("top" as const) : ("locked" as const) }));
     const order = new Map(result.ranked.map((r, i) => [r.dormId, i]));
     const n = Math.max(result.ranked.length - 1, 1);
@@ -364,7 +390,7 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
       if (h.dormId === focusId) return { ...base(h), tone: "top" as const };
       return i === undefined ? { ...base(h), tone: "locked" as const } : { ...base(h), tone: "rank" as const, t: i / n };
     });
-  }, [view, result, focusId, campus.halls]);
+  }, [view, result, focusId, campus.halls, signedIn]);
   const focusHall = focusId ? hallById.get(focusId) : null;
   const focus =
     view === "results" && focusHall && focusHall.lng !== null && focusHall.lat !== null && result && result.tier !== "anon"
@@ -398,10 +424,11 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
         </span>
         <span className={styles.uploadText}>
           <strong>Upload your schedule</strong>
-          An .ics calendar file. We find your buildings and days.
+          <span className={styles.wideOnly}>An .ics calendar file. We find your buildings and days.</span>
+          <span className={styles.phoneOnly}>An .ics calendar file</span>
         </span>
         <button type="button" className="ds-btn ds-btn--ink-yellow ds-btn--sm" onClick={() => fileRef.current?.click()}>
-          Choose file
+          Choose<span className={styles.wideOnly}> file</span>
         </button>
         <input ref={fileRef} type="file" accept=".ics,text/calendar" hidden onChange={onFile} aria-label="Choose an .ics schedule file" />
       </div>
@@ -544,17 +571,22 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
   if (!ready || authLoading) resultsBody = <p className={styles.status} aria-busy="true">Loading your places…</p>;
   else if (!signedIn)
     resultsBody = (
-      <>
-        <div className={styles.eyebrowRow}><p className={styles.eyebrow}>{schoolName} · {apiPlaces.length} places</p></div>
-        <h1 className={styles.title}>
-          <span className={`${styles.titleBig} ds-riso`}>Your halls are ranked.</span>
-          <span className={`${styles.titleSerif} ds-serif ds-serif--blue`}>Sign in to see them.</span>
-        </h1>
-        <div className={styles.actions}>
-          <button type="button" className="ds-btn ds-btn--ink-yellow" onClick={rankMyHalls}>Continue <ArrowRight /></button>
-          <button type="button" className={styles.linkBtn} onClick={() => router.push(urlFor("input"))}>Back to my places</button>
+      <div aria-hidden="true">
+        <div className={styles.eyebrowRow}><p className={styles.eyebrow}>{schoolName} · {campus.halls.length} halls · {apiPlaces.length} places</p></div>
+        <p className={styles.title}>
+          <span className={styles.titleBig}>Your halls,</span>
+          <span className={`${styles.titleSerif} ds-serif ds-serif--blue`}>ranked by walking.</span>
+        </p>
+        <div className={styles.skeleton}>
+          {[60, 52, 58, 46, 56, 50].map((w, i) => (
+            <div key={i}>
+              <i />
+              <span><b style={{ width: `${w}%` }} /><b style={{ width: `${48 + i * 2}%`, opacity: 1 - i * 0.12 }} /></span>
+              <em />
+            </div>
+          ))}
         </div>
-      </>
+      </div>
     );
   else if (!apiPlaces.length)
     resultsBody = (
@@ -610,21 +642,45 @@ export default function HallFinder({ campus, facts, schoolName }: Props) {
     );
 
   return (
-    <div ref={layoutRef} className={styles.layout} data-view={view}>
+    <div ref={layoutRef} className={styles.layout} data-view={view} data-tier={view === "results" && result ? result.tier : undefined}>
+      {view === "results" && signedIn && (
+        <div className={styles.phoneBar}>
+          <button type="button" className={styles.barBack} aria-label="Back to my places" onClick={() => router.push(urlFor("input"))}>
+            <ChevronLeft size={22} />
+          </button>
+          <span className={styles.barTitle}>
+            <strong>Hall Finder</strong>
+            <span>{schoolName} · {counted.length} {counted.length === 1 ? "place" : "places"}</span>
+          </span>
+          {paid ? (
+            saving === "on" && setupId && <button type="button" className={styles.barShare} onClick={share} aria-live="polite">{shareLabel}</button>
+          ) : (
+            <button type="button" className={styles.barEdit} onClick={() => router.push(urlFor("input"))}>Edit</button>
+          )}
+        </div>
+      )}
       <div className={styles.head}>{view === "input" ? inputHead : null}</div>
       <section className={styles.body} aria-label={view === "input" ? "Your places" : "Your results"}>
         {view === "input" ? inputBody : resultsBody}
       </section>
-      <div className={styles.mapWrap}>
+      <div className={styles.mapWrap} data-full={fullMap || undefined}>
         <FinderMap bounds={campus.bounds} places={mapPlaces} halls={mapHalls} routes={routes} focus={focus} picking={picking} onPick={onPick} onHallClick={result?.tier === "paid" ? selectHall : undefined} />
         {view === "input" && (
           <div className={styles.mapChip} aria-hidden="true">
-            <span>{schoolName}</span>
+            <span className={styles.wideOnly}>{schoolName}</span>
             {counted.length > 0 && <span>{counted.length} {counted.length === 1 ? "place" : "places"}</span>}
           </div>
         )}
+        {view === "input" && (
+          <button type="button" className={styles.fullBtn} aria-pressed={fullMap} onClick={() => setFullMap((v) => !v)}>
+            {fullMap ? "Done" : "Full map"}
+          </button>
+        )}
         <div className={styles.legend} aria-hidden="true">{legend}</div>
       </div>
+      {view === "results" && ready && !authLoading && !signedIn && (
+        <Gate places={counted.length} halls={campus.halls.length} onEmail={() => openAuthModal("hall-finder")} onBack={() => router.push(urlFor("input"))} />
+      )}
       {confirm && (
         <ConfirmIcs
           fileName={confirm.name}

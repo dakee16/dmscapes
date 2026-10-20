@@ -25,6 +25,10 @@
   pointer-events: none;
 }
 .header[data-overlay="true"] { margin-bottom: calc(var(--ds-nav-h) * -1); }
+/* Hall Finder's phone results carry their own bar (design-handoff/hall-finder 08, 09). */
+@media (max-width: 899px) {
+  :global(html[data-hf-view="results"]) .header { display: none; }
+}
 .header[data-tone="dark"] {
   --nav-ink: var(--ds-paper);
   --nav-hover: rgba(255, 255, 255, 0.1);
