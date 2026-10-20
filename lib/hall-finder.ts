@@ -31,9 +31,22 @@ export function takeResume(): string | null {
     const cut = (raw ?? "").indexOf("|");
     const at = (raw ?? "").slice(0, cut);
     const path = cut > 0 ? (raw ?? "").slice(cut + 1) : "";
-    return path?.startsWith("/") && Date.now() - Number(at) < RESUME_TTL ? path : null;
+    const ok = path?.startsWith("/") && Date.now() - Number(at) < RESUME_TTL;
+    if (ok) sessionStorage.setItem(RESUMED_KEY, "1");
+    return ok ? path : null;
   } catch {
     return null;
+  }
+}
+
+/** sessionStorage: this tab signed in from the finder's gate (set by takeResume). */
+const RESUMED_KEY = "dormscape-hall-finder-resumed";
+/** On a finder page, or this tab came back to one after signing in: the signup welcome stays away. */
+export function cameFromHallFinder(): boolean {
+  try {
+    return sessionStorage.getItem(RESUMED_KEY) === "1" || /\/hall-finder(\/|$)/.test(window.location.pathname);
+  } catch {
+    return false;
   }
 }
 

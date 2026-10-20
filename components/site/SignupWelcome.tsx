@@ -12,6 +12,7 @@ import { useAuth } from "@/lib/auth-context";
 import { isPaid } from "@/lib/plan";
 import { track } from "@/lib/analytics";
 import { REVEAL_EASE } from "@/components/site/Reveal";
+import { cameFromHallFinder } from "@/lib/hall-finder";
 
 const MotionModal = motion.create(Modal);
 
@@ -46,6 +47,8 @@ export default function SignupWelcome() {
     if (typeof window === "undefined") return;
     if (window.localStorage.getItem(seenKey(user.id))) return;
     window.localStorage.setItem(seenKey(user.id), "1");
+    // Signing up from Hall Finder's gate lands back on the ranked halls: no design pitch over them.
+    if (cameFromHallFinder()) return;
     setOpen(true);
     track("signup_welcome_shown");
   }, [open, user, profile, modalOpen]);
