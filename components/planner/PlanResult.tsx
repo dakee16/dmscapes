@@ -19,6 +19,9 @@ import { furnitureCategory } from "@/lib/highlight";
 import { track } from "@/lib/analytics";
 import { roomTypeLabel } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
+import { shortName } from "@/lib/school-names";
+import { hasHallFinder } from "@/lib/hall-finder";
+import { ResultTip } from "@/components/hall-finder/Entry";
 import { fitTemplateToRoom } from "@/lib/layout-fit";
 import { placeInPolygon } from "@/lib/place-in-polygon";
 import { syncProductFurniture } from "@/lib/product-model";
@@ -475,6 +478,7 @@ export default function PlanResult({ shell = false }: { shell?: boolean }) {
           buying={buyingProducts} buyingTotal={totalFor(buyingProducts)}
           unplacedIds={unplacedItemIds} onPlace={placeCustomItem}
           ownership={workspace?<ShoppingOwnership products={allCartProducts}/>:undefined}
+          tip={college?.id && hasHallFinder(college.id) ? <ResultTip collegeId={college.id} short={shortName({ id: college.id, name: college.name })} /> : undefined}
           note={isSeasonalStyle(style) && seasonOn() ? <><PumpkinMark size={24} /><p><strong>Halloween is Saturday.</strong> Check delivery dates on Amazon before you order.</p></> : undefined}
           extras={regen}/>}
       />
