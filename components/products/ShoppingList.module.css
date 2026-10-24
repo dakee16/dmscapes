@@ -51,6 +51,8 @@
 
 /* ---------- extras (regenerate, who-brings-what) ---------- */
 .extras { flex: none; padding: 12px 24px; border-bottom: 1.5px solid var(--rule); font-size: 13px; }
+.tip { flex: none; padding: 12px 24px 0; }
+.tip:empty { display: none; }
 
 /* ---------- chips ---------- */
 .chips { flex: none; display: flex; flex-wrap: nowrap; gap: 6px; padding: 12px 24px; border-bottom: 1.5px solid var(--rule); overflow-x: auto; scrollbar-width: none; }

@@ -40,6 +40,7 @@ export default function ShoppingList({
   extras,
   ownership,
   note,
+  tip,
 }: {
   total: number;
   budget: number;
@@ -56,6 +57,8 @@ export default function ShoppingList({
   ownership?: ReactNode;
   /** A short note above the list (the Spooky kit's delivery reminder). */
   note?: ReactNode;
+  /** A dismissible tip above the list (Hall Finder's "Still choosing a hall?"). */
+  tip?: ReactNode;
 }) {
   const ui = useStudioUI();
   const entries = useMemo(() => ui?.entries ?? [], [ui?.entries]);
@@ -217,6 +220,7 @@ export default function ShoppingList({
         </div>
       </header>
 
+      {tip && <div className={s.tip}>{tip}</div>}
       {note && <div className={s.note}>{note}</div>}
       {extras && <div className={s.extras}>{extras}</div>}
       {ownership && <div className={s.extras}>{ownership}</div>}
