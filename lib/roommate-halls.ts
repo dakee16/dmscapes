@@ -2,6 +2,7 @@
 // "Least walking together" ranks by the total; "Fairest split" by the longest single week
 // (the best hall is where whoever walks most walks least), each breaking ties with the
 // other. No path aliases, so scripts/check-hall-finder-roommates.mjs imports it in Node.
+import type { Campus, HallFacts } from "./hall-finder";
 
 export type RoommateMode = "together" | "fair";
 
@@ -56,6 +57,8 @@ export interface RoomHalls {
   people: RoomPerson[];
   /** Unordered; orderHalls() sorts them for the chosen mode. */
   halls: RoommateHall[];
-  /** For ?hall=: each person's encoded walking paths, one per place (null for a roommate's pin). */
-  routes: Record<string, (string | null)[]> | null;
+  /** For ?hall=: each person's walk to each of their places, with its encoded path (null for a roommate's pin). */
+  routes: Record<string, { line: string | null; minutes: number }[]> | null;
+  /** With ?campus=1 (the first load): the school's map data, and whether screenshots can be read. */
+  start?: { campus: Campus; facts: Record<string, HallFacts>; imagesOn: boolean };
 }

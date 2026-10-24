@@ -40,7 +40,7 @@ const shared = (p: DraftPlace): RoomPlace => (p.placeId ? { placeId: p.placeId, 
 
 const FILTERS = ["firstYear", "ac", "singles", "doubles"] as const;
 
-/** GET ?filters=ac,singles&hall=<dormId> -> RoomHalls */
+/** GET ?filters=ac,singles&hall=<dormId>&campus=1 -> RoomHalls */
 export async function GET(request: Request, context: Context) {
   const r = await room(request, context);
   if ("response" in r) return r.response;
@@ -61,12 +61,11 @@ export async function GET(request: Request, context: Context) {
   };
   const placesOf = new Map<string, DraftPlace[]>(ids.map((uid) => [uid, usable(r.data, rows.data?.find((row) => row.user_id === uid)?.places ?? [])]));
   const collegeId = r.data.campus.collegeId;
-  const weeks = Object.fromEntries(
-    ids.map((uid) => {
-      const places = placesOf.get(uid)!;
-      return [uid, new Map(places.length ? rank(r.data, { collegeId, places, filters }).map((h) => [h.dormId, h.weekly]) : [])];
-    }),
-  );
+  const ranked = new Map(ids.map((uid) => {
+    const places = placesOf.get(uid)!;
+    return [uid, places.length ? rank(r.data, { collegeId, places, filters }) : []];
+  }));
+  const weeks = Object.fromEntries(ids.map((uid) => [uid, new Map(ranked.get(uid)!.map((h) => [h.dormId, h.weekly]))]));
 
   const hall = url.searchParams.get("hall");
   let routes: RoomHalls["routes"] = null;
@@ -76,8 +75,9 @@ export async function GET(request: Request, context: Context) {
         ids.map(async (uid) => {
           const places = placesOf.get(uid)!;
           const paths = places.length ? ((await pathsFor(r.data, hall, places)) ?? []) : [];
+          const minutes = ranked.get(uid)!.find((h) => h.dormId === hall)?.perPlace ?? [];
           // A roommate's pin route would show roughly where it was dropped.
-          return [uid, paths.map((p, i) => (uid === r.userId || !places[i].pin ? p : null))];
+          return [uid, paths.map((p, i) => ({ line: uid === r.userId || !places[i].pin ? p : null, minutes: minutes[i]?.minutes ?? 0 }))];
         }),
       ),
     );
@@ -88,6 +88,7 @@ export async function GET(request: Request, context: Context) {
     people: ids.map((uid) => ({ userId: uid, name: name(uid), places: placesOf.get(uid)!.map(uid === r.userId ? own : shared) })),
     halls: combineWeeks(weeks),
     routes,
+    ...(url.searchParams.get("campus") === "1" ? { start: { campus: r.data.campus, facts: r.data.facts, imagesOn: Boolean(process.env.ANTHROPIC_API_KEY) } } : {}),
   };
   return workspaceJson(body);
 }

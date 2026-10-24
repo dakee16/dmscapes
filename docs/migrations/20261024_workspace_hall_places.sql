@@ -8,6 +8,7 @@
 -- server routes with the service role (/api/workspaces/[id]/halls), which check
 -- membership and let each person change only their own row. No browser access.
 -- Until this runs, the room's Halls section says it isn't available yet; nothing else changes.
+-- Safe to run again. Checked in isolated Postgres by scripts/check-workspace-halls.cjs.
 --
 -- places: [{ "placeId": "willard-building", "days": 21, "label": "ECON 102" } | { "pin": [-77.86, 40.80], "days": 31 }]
 -- Roommates see each other's buildings and days only; course labels and pin locations
@@ -15,7 +16,7 @@
 
 begin;
 
-create table public.workspace_hall_places (
+create table if not exists public.workspace_hall_places (
   workspace_id uuid not null references public.room_workspaces (id) on delete cascade,
   user_id uuid not null references auth.users (id) on delete cascade,
   places jsonb not null default '[]'::jsonb check (jsonb_typeof(places) = 'array' and jsonb_array_length(places) <= 20),
@@ -34,6 +35,7 @@ begin
 end;
 $$;
 
+drop trigger if exists workspace_hall_places_touch on public.workspace_hall_places;
 create trigger workspace_hall_places_touch
 before update on public.workspace_hall_places
 for each row execute function public.workspace_hall_places_touch();
@@ -51,6 +53,7 @@ begin
 end;
 $$;
 
+drop trigger if exists workspace_hall_places_member_gone on public.workspace_members;
 create trigger workspace_hall_places_member_gone
 after delete on public.workspace_members
 for each row execute function public.workspace_hall_places_member_gone();
