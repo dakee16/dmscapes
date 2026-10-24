@@ -9,10 +9,11 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { MAP_STYLE } from "./map-style";
 import styles from "./HallFinder.module.css";
 
-export interface MapPlace { n: number; lng: number; lat: number; label: string }
+/** color / ink: a roommate's colour and the text that reads on it (a room's Halls section). */
+export interface MapPlace { n: number; lng: number; lat: number; label: string; color?: string; ink?: string }
 /** plain: not ranked yet; locked: ranked with Plus; rank: shaded by t (0 best … 1 worst); top: the #1 hall. */
 export interface MapHall { dormId: string; name: string; lng: number; lat: number; tone: "plain" | "locked" | "rank" | "top"; t?: number }
-export interface MapRoute { line: [number, number][]; minutes: number }
+export interface MapRoute { line: [number, number][]; minutes: number; color?: string }
 
 interface Props {
   bounds: [number, number, number, number];
@@ -71,7 +72,7 @@ export default function FinderMap({ bounds, places, halls, routes, focus, pickin
       m.on("load", () => {
         m.addSource("routes", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
         m.addLayer({ id: "routes-halo", type: "line", source: "routes", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": "#FFFFFF", "line-width": 8 } });
-        m.addLayer({ id: "routes", type: "line", source: "routes", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": "#2449FF", "line-width": 4 } });
+        m.addLayer({ id: "routes", type: "line", source: "routes", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": ["coalesce", ["get", "color"], "#2449FF"], "line-width": 4 } });
         m.addSource("halls", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
         m.addLayer({
           id: "halls",
@@ -132,7 +133,7 @@ export default function FinderMap({ bounds, places, halls, routes, focus, pickin
   useEffect(() => {
     const src = map.current?.getSource("routes") as GeoJSONSource | undefined;
     if (!ready || !src) return;
-    src.setData({ type: "FeatureCollection", features: routes.map((r) => ({ type: "Feature", geometry: { type: "LineString", coordinates: r.line }, properties: {} })) });
+    src.setData({ type: "FeatureCollection", features: routes.map((r) => ({ type: "Feature", geometry: { type: "LineString", coordinates: r.line }, properties: r.color ? { color: r.color } : {} })) });
   }, [ready, routes]);
 
   // Place pins, the focused hall's label and minute labels are HTML markers: crisp type, no glyphs.
@@ -143,6 +144,8 @@ export default function FinderMap({ bounds, places, halls, routes, focus, pickin
     const made: Marker[] = [];
     for (const p of places) {
       const node = el(styles.mapPlace);
+      if (p.color) node.style.setProperty("--hf-place", p.color);
+      if (p.ink) node.style.setProperty("--hf-place-ink", p.ink);
       node.append(el(styles.mapPlaceN, String(p.n)), el(styles.mapPlaceLabel, p.label));
       made.push(new lib.Marker({ element: node, anchor: "left", offset: [-13, 0] }).setLngLat([p.lng, p.lat]).addTo(m));
     }

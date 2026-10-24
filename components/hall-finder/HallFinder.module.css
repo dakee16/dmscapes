@@ -103,7 +103,7 @@
 .swRamp { width: 60px; border: 0; background: linear-gradient(90deg, #2449ff, #8fa4ff, #e3e8ff); }
 .swRoute { width: 22px; height: 4px; border: 0; border-radius: 2px; background: var(--ds-blue); }
 .mapPlace { display: flex; align-items: center; gap: 6px; pointer-events: none; }
-.mapPlaceN { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--ds-ink); color: #fff; font: 800 13px var(--ds-sans); box-shadow: 0 0 0 2px #fff; }
+.mapPlaceN { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--hf-place, var(--ds-ink)); color: var(--hf-place-ink, #fff); font: 800 13px var(--ds-sans); box-shadow: 0 0 0 2px #fff; }
 .mapPlaceLabel { padding: 3px 7px; border-radius: 6px; background: #fff; box-shadow: inset 0 0 0 1.5px var(--ds-ink); font: 700 12px var(--ds-sans); color: var(--ds-ink); white-space: nowrap; }
 .mapFocus { padding: 4px 12px; border-radius: 999px; background: var(--ds-ink); color: var(--ds-yellow); font: 800 13px var(--ds-sans); white-space: nowrap; pointer-events: none; }
 .mapMinutes { padding: 2px 7px; border-radius: 999px; background: var(--ds-ink); color: var(--ds-yellow); font: 800 12px var(--ds-sans); white-space: nowrap; pointer-events: none; box-shadow: 0 0 0 2px #fff; }
