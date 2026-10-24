@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Photo of a screen</title>
+<!-- Synthetic fixture: the psu-grid screenshot photographed off a laptop screen at an angle,
+     with glare, moiré and grain, to test a phone photo of a schedule. -->
+<style>
+body{margin:0;width:1400px;height:1000px;background:radial-gradient(circle at 30% 20%,#5b5148,#2a2622 70%);overflow:hidden;perspective:1600px}
+.laptop{position:absolute;left:110px;top:70px;width:1180px;height:760px;padding:26px;background:#1a1a1c;border-radius:22px;transform:rotateX(9deg) rotateY(-11deg) rotateZ(-2.5deg);box-shadow:0 40px 90px rgba(0,0,0,.6)}
+.screen{position:relative;width:100%;height:100%;overflow:hidden;background:#fff;filter:blur(0.7px) saturate(1.15) brightness(0.96)}
+.screen img{width:100%;display:block}
+.moire{position:absolute;inset:0;background:repeating-linear-gradient(81deg,rgba(0,0,0,.05) 0 2px,transparent 2px 5px),repeating-linear-gradient(-7deg,rgba(80,40,160,.04) 0 3px,transparent 3px 7px)}
+.glare{position:absolute;inset:-20% -10%;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.33) 48%,transparent 60%)}
+.grain{position:absolute;inset:0;width:100%;height:100%;opacity:.22;mix-blend-mode:multiply}
+</style></head><body>
+<div class="laptop"><div class="screen"><img src="psu-grid.png" alt=""><div class="moire"></div><div class="glare"></div>
+<svg class="grain"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg></div></div>
+</body></html>
