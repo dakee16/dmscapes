@@ -241,11 +241,13 @@
 
 /* ---------- Planner step 01 ---------- */
 .plannerCard {
-  margin-top: 16px;
+  margin: 20px 0 4px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
+  gap: 14px;
+  min-height: 68px;
+  box-sizing: border-box;
+  padding: 14px 16px 14px 18px;
   border-radius: 14px;
   background: #fff6cc;
   box-shadow: inset 0 0 0 1.5px var(--ds-ink);
@@ -253,32 +255,48 @@
   text-decoration: none;
 }
 .plannerCard:hover { background: #fff0a8; color: var(--ds-ink); }
-.plannerCardText { flex: 1; display: flex; flex-direction: column; gap: 2px; }
-.plannerCardText strong { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; }
-.plannerCardText > span { font-size: 13px; color: var(--ds-muted); }
+.plannerCardText { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.plannerCardText strong { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: 16px; line-height: 1.25; }
+.plannerCardText > span { font-size: 14px; line-height: 1.3; color: var(--ds-body); }
+.plannerCard > svg { flex: none; transition: transform 0.2s var(--ds-ease); }
+.plannerCard:hover > svg { transform: translateX(3px); }
 
+/* The pane the callout sits in is a container (Room.module.css .pickHall), so the callout lays
+   out by the room it is given, not the screen: map beside the copy when wide, above it when narrow.
+   The right and bottom margins leave room for the 8px offset shadow, which would otherwise
+   touch the page edge. */
 .callout {
-  margin-top: 26px;
-  display: flex;
-  flex-wrap: wrap;
+  margin: 26px 8px 8px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   align-items: stretch;
   border-radius: 22px;
   background: #fff;
   box-shadow: 0 0 0 2.5px var(--ds-ink), 8px 8px 0 var(--ds-blue);
   overflow: hidden;
 }
-.calloutMap { flex: 1 1 300px; min-height: 300px; position: relative; background: #edebe3; }
-.calloutCopy { flex: 1 1 320px; padding: 28px 30px; display: flex; flex-direction: column; justify-content: center; }
+.calloutMap { min-height: 300px; position: relative; background: #edebe3; }
+.calloutCopy { padding: 28px 30px; display: flex; flex-direction: column; justify-content: center; }
 .calloutCopy .eyebrow { font-size: 11px; color: var(--ds-blue); }
 .calloutH { margin: 12px 0 0; font-size: 36px; line-height: 1.02; font-weight: 850; font-stretch: 88%; letter-spacing: -0.03em; }
 .callout .calloutText { margin: 10px 0 0; font-size: 16px; line-height: 1.5; color: var(--ds-body); }
 .calloutCta { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
 .calloutNote { font-size: 14px; color: var(--ds-muted); }
 
-@media (max-width: 760px) {
-  .calloutMap { min-height: 200px; }
-  .calloutCopy { padding: 22px 20px; }
+@container (max-width: 680px) {
+  .calloutMap { min-height: 280px; }
+  .calloutCopy { padding: 24px 22px; }
   .calloutH { font-size: 30px; }
+}
+@container (max-width: 520px) {
+  .callout { grid-template-columns: minmax(0, 1fr); }
+  .calloutMap { min-height: 0; aspect-ratio: 16 / 9; }
+  .calloutCopy { padding: 24px 22px 26px; }
+}
+@container (max-width: 400px) {
+  .calloutMap { aspect-ratio: 3 / 2; }
+  .calloutH { font-size: 28px; }
+  .calloutCta .ds-btn { width: 100%; justify-content: center; }
 }
 
 /* ---------- Plus perk, footer, methodology ---------- */

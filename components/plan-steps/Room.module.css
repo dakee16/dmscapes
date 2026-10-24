@@ -534,6 +534,7 @@
 }
 /* With Hall Finder's callout (design-handoff/hall-finder 15-Planner) the box gives way to it. */
 .pickHall[data-hall-finder] {
+  container-type: inline-size;
   margin-top: 18px;
   max-width: none;
   min-height: 0;
