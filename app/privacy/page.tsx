@@ -121,7 +121,14 @@ export default function PrivacyPage() {
             filters and the setup&rsquo;s name. Sharing a setup creates a link
             that lets anyone with it see its buildings, days and course names; a
             dropped pin is listed without its location. You can delete a setup
-            from My designs, and deleting your account removes all of them.
+            from My designs, and deleting your account removes all of them. In
+            a shared room in My Room, members can also add places to compare
+            halls together: we store each member&rsquo;s places (buildings or
+            dropped pins) with their days and course names, with the room. Other
+            members see your buildings, days and weekly walk to each hall; course
+            names and where you dropped a pin are shown only to you. Your places
+            in a room are deleted when you leave it or are removed, when the room
+            is deleted, or when you delete your account.
           </li>
           <li>
             <strong>Analytics.</strong>{" "}We use

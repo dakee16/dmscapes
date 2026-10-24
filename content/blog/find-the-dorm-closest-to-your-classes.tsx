@@ -94,6 +94,10 @@ function Body() {
           you can save and share with a link. Plus also includes {PLUS_INITIAL_CREDITS} plan
           credits; see <TextLink href="/pricing">pricing</TextLink> for the rest.
         </Li>
+        <Li>
+          <strong>Pro:</strong>{" "}also compares halls with your roommates in My
+          Room (below).
+        </Li>
       </Ul>
 
       <H2>Already looking at a hall?</H2>
@@ -104,6 +108,32 @@ function Body() {
         is free and doesn&rsquo;t need an account. From there, &ldquo;Got your
         class schedule?&rdquo; opens Hall Finder with that hall ready to compare
         against your best match.
+      </P>
+
+      <H2>Choosing with roommates</H2>
+      <P>
+        Picking a hall with friends? Open a shared room in{" "}
+        <TextLink href="/my-room">My Room</TextLink>. Its Halls view lets each
+        of you add your own classes, the same way as in Hall Finder, and ranks
+        the halls for everyone two ways:
+      </P>
+      <Ul>
+        <Li>
+          <strong>Least walking together:</strong>{" "}the hall where your weeks
+          add up to the fewest minutes.
+        </Li>
+        <Li>
+          <strong>Fairest split:</strong>{" "}the hall where whoever walks the
+          most walks the least, so one person doesn&rsquo;t get the long walk
+          every day.
+        </Li>
+      </Ul>
+      <P>
+        Each hall shows everyone&rsquo;s week side by side, and picking one draws
+        each person&rsquo;s routes on the map in their colour. Roommates see each
+        other&rsquo;s buildings and days, not course names or where a pin was
+        dropped. It works in a room hosted on Pro; roommates don&rsquo;t need Pro
+        to join.
       </P>
 
       <H2>Use it to rank, then plan</H2>
@@ -123,7 +153,8 @@ function Body() {
         <p>
           Most schools assign rooms, so a ranking doesn&rsquo;t guarantee a hall.
           It helps you put your preferences in order with real numbers instead
-          of guesses. Your places stay in your browser unless you save a setup;
+          of guesses. Your places stay in your browser unless you save a setup
+          or add them to a shared room;
           the <TextLink href="/privacy">privacy policy</TextLink> has the details.
         </p>
       </Callout>
@@ -170,6 +201,10 @@ const post: BlogPost = {
     {
       q: "Is Hall Finder free?",
       a: `Adding places is free for everyone, and a free account shows your #1 hall, its weekly walk, the minutes to each place and one walking route. Plus (${usd(PLUS_PRICE_USD)} once) and Pro (${usd(PRO_PRICE_USD)} once) rank every hall, show every route, compare two halls side by side, and let you save and share setups.`,
+    },
+    {
+      q: "Can my roommates and I compare halls together?",
+      a: `Yes. In a shared My Room hosted on Pro (${usd(PRO_PRICE_USD)} once), the Halls view lets each roommate add their own classes, then ranks the halls by your combined walk or by the fairest split, where whoever walks the most walks the least. Roommates see each other's buildings and days, not course names, and don't need Pro to join.`,
     },
     {
       q: "Can I see walk times for a hall without signing in?",
