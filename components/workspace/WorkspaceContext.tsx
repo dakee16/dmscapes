@@ -1,13 +1,14 @@
 "use client";
 import { createContext, useContext } from "react";
 import type { WorkspaceComment } from "@/lib/workspace";
+import type { RoomSection } from "@/lib/workspace-collaboration";
 import { PERSON_COLORS } from "./people";
 export interface WorkspaceAccess {
   id: string;
   members: {user_id: string; display_name: string}[];
   ownerPro: boolean;
   canEdit: boolean;
-  section: "room" | "shopping" | "roommates";
+  section: RoomSection;
   comments?: WorkspaceComment[];
   commentOn?: (target:string) => void;
   /** Plan overlay switches from the room's left rail (comment pins, everyone's cursors). */

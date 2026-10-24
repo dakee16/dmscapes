@@ -124,6 +124,19 @@ export async function parseRankRequest(body: Record<string, unknown> | null): Pr
   return { req: { collegeId, places, filters }, data };
 }
 
+/** Places as stored (saved setups, room halls): the ranking's validated shape plus each place's label. */
+export async function storablePlaces(body: Record<string, unknown> | null) {
+  const parsed = await parseRankRequest(body);
+  if (!parsed) return null;
+  const raw = body!.places as Record<string, unknown>[];
+  const places = parsed.req.places.map((p, i) => ({
+    ...(p.placeId ? { placeId: p.placeId } : { pin: p.pin }),
+    days: p.days,
+    ...(typeof raw[i]?.label === "string" ? { label: String(raw[i].label).slice(0, 24) } : {}),
+  }));
+  return { collegeId: parsed.req.collegeId, places, filters: parsed.req.filters };
+}
+
 // ---- Scoring
 
 const SPEED = 1.35; // m/s, scripts/campus/config walkingSpeed

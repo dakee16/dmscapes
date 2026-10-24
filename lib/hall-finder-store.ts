@@ -27,6 +27,17 @@ interface HallFinderState {
 const sameSpot = (a: DraftPlace, b: DraftPlace) =>
   a.placeId ? a.placeId === b.placeId : Boolean(a.pin && b.pin && a.pin[0] === b.pin[0] && a.pin[1] === b.pin[1]);
 
+/** Add places to a list: the same building twice merges its days rather than listing it twice. */
+export function mergePlaces(list: DraftPlace[], places: DraftPlace[]): DraftPlace[] {
+  const next = [...list];
+  for (const p of places) {
+    const at = next.findIndex((q) => sameSpot(q, p));
+    if (at >= 0) next[at] = { ...next[at], days: next[at].days | p.days };
+    else if (next.length < MAX_PLACES) next.push(p);
+  }
+  return next;
+}
+
 export const useHallFinder = create<HallFinderState>()(
   persist(
     (set) => {
@@ -43,17 +54,7 @@ export const useHallFinder = create<HallFinderState>()(
             return { setupIds: next };
           }),
         setDraft: (collegeId, draft) => edit(collegeId, () => draft),
-        // The same building twice merges its days rather than listing it twice.
-        addPlaces: (collegeId, places) =>
-          edit(collegeId, (d) => {
-            const next = [...d.places];
-            for (const p of places) {
-              const at = next.findIndex((q) => sameSpot(q, p));
-              if (at >= 0) next[at] = { ...next[at], days: next[at].days | p.days };
-              else if (next.length < MAX_PLACES) next.push(p);
-            }
-            return { ...d, places: next };
-          }),
+        addPlaces: (collegeId, places) => edit(collegeId, (d) => ({ ...d, places: mergePlaces(d.places, places) })),
         removePlace: (collegeId, index) => edit(collegeId, (d) => ({ ...d, places: d.places.filter((_, i) => i !== index) })),
         setDays: (collegeId, index, days) => edit(collegeId, (d) => ({ ...d, places: d.places.map((p, i) => (i === index ? { ...p, days } : p)) })),
         toggleDay: (collegeId, index, bit) => edit(collegeId, (d) => ({ ...d, places: d.places.map((p, i) => (i === index ? { ...p, days: p.days ^ (1 << bit) } : p)) })),

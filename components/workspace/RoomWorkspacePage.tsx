@@ -23,6 +23,9 @@ import RoomBar from "./RoomBar";
 import RoomRail from "./RoomRail";
 import BringBoard from "./BringBoard";
 import PeoplePanel from "./PeoplePanel";
+import HallsPanel from "./HallsPanel";
+import { hasHallFinder } from "@/lib/hall-finder";
+import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import { VoicePanel, VoiceProvider, VoiceToast } from "./RoomVoice";
 import { initial, personStyle } from "./people";
 import s from "./Room.module.css";
@@ -37,7 +40,7 @@ export default function RoomWorkspacePage({ id }: { id: string }) {
 }
 
 function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
-  const session = useWorkspaceSession(id, userId), router = useRouter(), { openUpgrade } = useUpgrade();
+  const session = useWorkspaceSession(id, userId), router = useRouter(), { openUpgrade } = useUpgrade(), hallFinderOn = useHallFinderOn();
   const [section, setSection] = useState<RoomTab>("room");
   const [side, setSide] = useState<"comments" | "voice" | null>(null);
   const [busy, setBusy] = useState(false), [message, setMessage] = useState(""), [error, setError] = useState("");
@@ -87,6 +90,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   if (!detail || !state.room) return <div className="ds"><RoomAppHeader/><main id="page-content" className={s.state}>{session.error ? <section className={s.stateCard}><p className={s.stateEyebrow}>My Room</p><h1>Let&apos;s get you <em>back in.</em></h1><p role="alert">{session.error}</p><div className={s.stateActions}><button type="button" className="ds-btn ds-btn--ink-yellow" onClick={() => void session.refresh().catch(e => setError(e.message))}>Try again</button><Link className="ds-btn ds-btn--ghost-ink" href="/rooms">My designs</Link></div>{error && <p role="alert" className={s.inlineError}>{error}</p>}</section> : <BrandLoader label="Opening your room and shopping list…"/>}</main></div>;
 
   const enabled = detail.workspace.shared && detail.ownerPro;
+  const halls = hallFinderOn && hasHallFinder(detail.workspace.snapshot.college_id);
   const commentAllowed = isOwner || (detail.workspace.shared && detail.ownerPro);
   const access: WorkspaceAccess = { id, members: detail.members, ownerPro: detail.ownerPro, canEdit: detail.canEdit, section, comments: detail.comments, commentOn, overlay };
   const statusLabels = { loading: ["Opening", "Opening room"], saved: ["Saved", "All changes saved"], unsaved: ["Unsaved", "Unsaved changes"], saving: ["Saving…", "Saving your room…"], conflict: ["New changes", "New changes to review"], offline: ["Not saved", "Not saved. Retry when connected."] } as const;
@@ -105,7 +109,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
 
   return <CollaborationProvider id={id} epoch={detail.workspace.realtime_epoch} enabled={enabled} userId={userId} memberIds={detail.members.map(m => m.user_id)} onChange={() => session.refresh()}><VoiceProvider id={detail.workspace.id} epoch={detail.workspace.realtime_epoch} enabled={enabled}><WorkspaceContext.Provider value={access}>
     <div className={`ds ${s.room}`} data-section={section} data-side={side ?? undefined}>
-      <RoomBar detail={detail} userId={userId} name={state.planning.name} place={place} status={status} tab={section} setTab={t => { setSection(t); setFollowing(null); }} badges={{ shopping: unclaimed }}
+      <RoomBar detail={detail} userId={userId} name={state.planning.name} place={place} status={status} tab={section} setTab={t => { setSection(t); setFollowing(null); }} badges={{ shopping: unclaimed }} halls={halls}
         side={side} openSide={setSide} onInvite={invite} canRename={detail.canEdit} onRename={name => state.updatePlanning({ name })} />
       <ActivitySync section={section} />
       <Follow id={following} members={detail.members} setSection={setSection} stop={() => setFollowing(null)} />
@@ -124,6 +128,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
             {detail.canEdit ? <PlanResult/> : <ReadOnlyRoom room={state.room} items={furniture} style={state.style ?? "minimalist"} products={products} editor={detail.workspace.snapshot.room_dimensions.editor} canComment={commentAllowed}/>}
           </div>
           {section === "shopping" && <BringBoard detail={detail} userId={userId} products={products} commentOn={commentOn} showOnPlan={showOnPlan} />}
+          {section === "halls" && <HallsPanel id={id} detail={detail} userId={userId} onUpgrade={() => openUpgrade("workspace")} />}
           {section === "roommates" && <PeoplePanel ref={inviteField} detail={detail} userId={userId} busy={busy} onInvite={createInvite} onUpgrade={() => openUpgrade("workspace")} run={run} confirm={what => { setError(""); setConfirm(what); }}
             notice={<>{error && !confirm && <p role="alert" className={s.inlineError}>{error}</p>}{message && !confirm && <p role="status" className={s.okNote}>{message}</p>}</>} />}
           {section === "room" && <div className={s.phoneCta}><button type="button" className="ds-btn ds-btn--ink-yellow" onClick={() => setSection("shopping")}>Who brings what{unclaimed ? ` · ${unclaimed} open` : ""}</button></div>}

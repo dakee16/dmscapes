@@ -451,6 +451,49 @@
 .confirm :is(.inkBtn, .ghostBtn, .dangerBtn) { min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 15px; }
 
 /* ---------- responsive ---------- */
+/* ---------- halls (Hall Finder roommate mode) ---------- */
+.halls { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 560px); gap: 32px 56px; max-width: 1296px; margin: 0 auto; padding: 40px 0 24px; align-items: start; }
+@container (max-width: 1100px) { .halls { grid-template-columns: minmax(0, 1fr); } }
+.hallsEmpty { max-width: 640px; margin: 0 auto; padding: 56px 0 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.hallsEmpty .peopleLede { margin: 0; }
+.hallsLoading { margin: 56px auto; text-align: center; font-size: 15px; color: var(--ds-caption); }
+.hallsMain, .hallsSide { min-width: 0; display: flex; flex-direction: column; }
+.hallsSide { gap: 14px; }
+.hallsModes { display: inline-flex; align-self: flex-start; flex-wrap: wrap; gap: 4px; margin-top: 22px; padding: 4px; border-radius: 999px; background: #e9e8e2; }
+.hallsModes button { min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; font: 850 14px/1 var(--ds-sans); cursor: pointer; }
+.hallsModes button[aria-pressed="true"] { background: var(--ds-ink); color: var(--ds-yellow); }
+.hallsModeNote { margin: 10px 0 0; font-size: 14px; line-height: 1.5; color: var(--ds-muted); }
+.hallsNote { margin: 18px 0 0; font-size: 14px; line-height: 1.5; color: var(--ds-body); }
+.hallsKey { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 10px; font-size: 13px; font-weight: 800; }
+.hallsKey span { display: inline-flex; align-items: center; gap: 6px; }
+.hallsKey i { width: 12px; height: 12px; border-radius: 4px; background: var(--person); }
+.hallsList { list-style: none; margin: 12px 0 14px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.hallsList li { border-radius: 16px; background: #fff; }
+.hallsList li:hover { background: #fbfaf6; }
+.hallsList li[data-on] { box-shadow: 0 0 0 2px var(--ds-ink); }
+.hallsList button { display: flex; align-items: flex-start; gap: 12px; width: 100%; padding: 14px 16px; border: 0; border-radius: 16px; background: none; text-align: left; cursor: pointer; }
+.hallsName { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.hallsName strong { font-size: 16px; font-weight: 850; overflow-wrap: anywhere; }
+.hallsName small { font-size: 12.5px; line-height: 1.4; color: var(--ds-caption); }
+.hallsBar { display: flex; gap: 2px; min-width: 24px; height: 10px; margin: 4px 0 2px; border-radius: 99px; overflow: hidden; }
+.hallsBar i { flex-basis: 0; min-width: 3px; }
+.hallsMinutes { flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; text-align: right; }
+.hallsMinutes strong { font-size: 16px; font-weight: 900; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hallsMinutes small { font: 700 10px/1.2 var(--ds-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ds-caption); white-space: nowrap; }
+.hallsLink { display: inline-block; margin: -4px 0 12px 54px; font-size: 13px; font-weight: 800; color: var(--ds-blue); }
+.hallsFine { margin: 14px 0 0; font-size: 12.5px; line-height: 1.5; color: var(--ds-caption); }
+.hallsMap { position: relative; height: 380px; border-radius: 22px; overflow: hidden; background: #e9e8e2; }
+.hallsMine, .hallsTheirs { padding: 18px; border-radius: 20px; background: #fff; }
+.hallsMine { box-shadow: inset 4px 0 0 var(--person); }
+.hallsMineHead { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.hallsMine h3, .hallsTheirs h3 { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 17px; font-weight: 900; }
+.hallsSave { font: 700 11px/1.2 var(--ds-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ds-caption); }
+.hallsTheirs { box-shadow: inset 4px 0 0 var(--person); }
+.hallsTheirs ul { list-style: none; margin: 10px 0 0; padding: 0; }
+.hallsTheirs li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-top: 1.5px solid rgba(22, 22, 29, 0.08); font-size: 14px; }
+.hallsTheirs li span { flex: none; font-size: 12px; color: var(--ds-caption); }
+.hallsTheirs p { margin: 8px 0 0; font-size: 14px; color: var(--ds-caption); }
+
 @media (max-width: 1600px) {
   .barCommentsText { display: none; }
   .barComments { padding: 0 13px; }
@@ -515,6 +558,10 @@
   .dupe p { font-size: 14px; }
   .dupeShow, .dupeKeep { height: 42px; font-size: 14px; }
   .people { padding-top: 22px; gap: 28px; }
+  .halls { padding-top: 22px; gap: 24px; }
+  .hallsMap { height: 300px; margin: 0 -12px; border-radius: 0; }
+  .hallsList button { padding: 12px; gap: 10px; }
+  .hallsLink { margin-left: 48px; }
   .seats, .infoCards { grid-template-columns: minmax(0, 1fr); }
   .seat { min-height: 0; }
   .versions { padding: 18px 16px; border-radius: 20px; }
