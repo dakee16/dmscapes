@@ -1,7 +1,8 @@
 "use client";
 
-// The sign-in gate over the blurred results (design-handoff/hall-finder 03-Gate): Google
-// returns straight here, email goes through the login page; the draft rides in the URL.
+// The sign-in gate over the blurred results (design-handoff/hall-finder 03-Gate), and in
+// its `upload` form before reading a screenshot or PDF (each read is a paid model call).
+// Google returns straight here, email goes through the login page; the draft rides in the URL.
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Modal from "@/components/site/Modal";
@@ -9,7 +10,7 @@ import { startGoogleSignIn } from "@/components/auth/AuthForm";
 import { PLUS_PRICE_USD } from "@/lib/plan";
 import styles from "./HallFinder.module.css";
 
-export default function Gate({ places, halls, onEmail, onBack }: { places: number; halls: number; onEmail: () => void; onBack: () => void }) {
+export default function Gate({ places, halls, upload = false, onEmail, onBack }: { places: number; halls: number; upload?: boolean; onEmail: () => void; onBack: () => void }) {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
 
@@ -32,15 +33,19 @@ export default function Gate({ places, halls, onEmail, onBack }: { places: numbe
   return (
     <Modal aria-labelledby="hf-gate-title">
       <section className={styles.gate}>
-        <p className={styles.gateSaved}>
+        {places > 0 && <p className={styles.gateSaved}>
           <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10" /></svg>
           {places} {places === 1 ? "place" : "places"} saved
-        </p>
+        </p>}
         <h2 id="hf-gate-title" className={styles.gateTitle}>
-          <span className={`${styles.gateBig} ds-riso`}>Your halls are ranked.</span>
-          <span className="ds-serif ds-serif--blue">Sign in to see them.</span>
+          <span className={`${styles.gateBig} ds-riso`}>{upload ? "Read your schedule." : "Your halls are ranked."}</span>
+          <span className="ds-serif ds-serif--blue">{upload ? "Sign in first. It's free." : "Sign in to see them."}</span>
         </h2>
-        <p className={styles.gateText}>We kept your places, days and filters. You won&rsquo;t enter anything again.</p>
+        <p className={styles.gateText}>
+          {upload
+            ? "Reading a screenshot or PDF needs a free account. We kept your places, days and filters; choose the file again once you're in."
+            : "We kept your places, days and filters. You won’t enter anything again."}
+        </p>
         <div className={styles.gateButtons}>
           <button type="button" className={`ds-btn ${styles.gateGoogle}`} onClick={google} disabled={busy}>
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
@@ -62,7 +67,7 @@ export default function Gate({ places, halls, onEmail, onBack }: { places: numbe
           <p><span>Plus · ${PLUS_PRICE_USD} once</span>All {halls} halls ranked, every route, compare halls.</p>
         </div>
         <div className={styles.gateFoot}>
-          <button type="button" className={styles.linkBtn} onClick={onBack}>Back to my places</button>
+          <button type="button" className={styles.linkBtn} onClick={onBack}>{upload ? "Not now" : "Back to my places"}</button>
           <span>
             By continuing you agree to the <Link href="/terms">Terms</Link> and <Link href="/privacy">Privacy Policy</Link>.
           </span>

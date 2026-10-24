@@ -52,7 +52,9 @@ export default async function HallFinderPage(props: { params: Promise<{ collegeI
     <PageShell>
       <JsonLd data={[breadcrumbJsonLd(crumbs)]} />
       <Suspense fallback={null}>
-        <HallFinder campus={campus} facts={facts} schoolName={short} />
+        {/* Screenshot and PDF reading needs the server's Anthropic key (read at build;
+            adding the key on Vercel redeploys). Without it, uploads stay .ics only. */}
+        <HallFinder campus={campus} facts={facts} schoolName={short} imagesOn={Boolean(process.env.ANTHROPIC_API_KEY)} />
       </Suspense>
     </PageShell>
   );

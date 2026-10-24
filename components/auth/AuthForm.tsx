@@ -266,6 +266,8 @@ export default function AuthForm({
     }
   })();
   const savedPlaces = decodeDraft(finderNext?.searchParams.get("s"))?.places.length ?? 0;
+  // From the results gate the halls are waiting; from the upload box, the schedule reader.
+  const finderUpload = Boolean(finderNext) && finderNext!.searchParams.get("view") !== "results";
   finderNext?.searchParams.delete("view");
   const signupBlocked = mode === "signup" && !agreed;
 
@@ -282,7 +284,7 @@ export default function AuthForm({
           : generateReason
             ? "Sign in to design"
             : hallFinderReason
-              ? "Your halls are ranked"
+              ? finderUpload ? "Read your schedule" : "Your halls are ranked"
               : mode === "signup" ? "Create your account" : "Welcome back";
 
   if (!configured) {
@@ -364,7 +366,9 @@ export default function AuthForm({
                 : generateReason
                   ? "Create a free account to generate your room. Your choices are saved, so you can pick up right here."
                   : hallFinderReason
-                    ? "Sign in to see them. We kept your places, days and filters. You won't enter anything again."
+                    ? finderUpload
+                      ? "Reading a screenshot or PDF needs a free account. We kept your places, days and filters; choose the file again once you're in."
+                      : "Sign in to see them. We kept your places, days and filters. You won't enter anything again."
                     : "Save your designs, revisit your favorites, and pick up where you left off."}
           </p>
           <div className={styles.tabs} role="group" aria-label="Account access">

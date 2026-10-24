@@ -127,7 +127,7 @@ export type DayMask = number;
 export const ALL_WEEK: DayMask = 31;
 export const dayCount = (mask: DayMask): number => DAYS.reduce((n, _, i) => n + ((mask >> i) & 1), 0);
 
-export type PlaceSource = "manual" | "ics" | "quick" | "pin";
+export type PlaceSource = "manual" | "ics" | "quick" | "pin" | "image";
 
 export interface DraftPlace {
   /** A campus place id, or absent for a dropped pin. */
@@ -157,7 +157,8 @@ export interface Draft {
 }
 
 export const MAX_PLACES = 20;
-const SOURCES: PlaceSource[] = ["manual", "ics", "quick", "pin"];
+// Append only: ?s= links store each source's index here.
+const SOURCES: PlaceSource[] = ["manual", "ics", "quick", "pin", "image"];
 
 // Compact URL form for ?s=: base64url JSON of { p: [[placeId | [lng, lat], days, source, label?]], f, i }.
 type Packed = { p: [string | [number, number], number, number, string?][]; f: number; i?: [string, number] };
