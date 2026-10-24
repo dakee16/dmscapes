@@ -11,7 +11,7 @@ import { useAuth } from "@/lib/auth-context";
 import { workspaceRequest, WorkspaceError } from "@/lib/workspace-client";
 import type { WorkspaceDetail } from "@/lib/workspace";
 import { DAYS, NO_FILTERS, decodePolyline, formatMinutes, type Draft, type DraftPlace, type Filters } from "@/lib/hall-finder";
-import { mergePlaces } from "@/lib/hall-finder-store";
+import { appendPlaces, mergePlaces } from "@/lib/hall-finder-store";
 import { orderHalls, type RoomHalls, type RoommateMode, type RoomPlace } from "@/lib/roommate-halls";
 import PlacesEditor, { focusDays } from "@/components/hall-finder/PlacesEditor";
 import type { MapHall, MapPlace, MapRoute } from "@/components/hall-finder/FinderMap";
@@ -129,7 +129,7 @@ export default function HallsPanel({ id, detail, userId, onUpgrade }: { id: stri
 
   function onPick(pin: [number, number]) {
     if (!mine) return;
-    setMine(mergePlaces(mine, [{ pin, days: 0, source: "pin" }]));
+    setMine(appendPlaces(mine, [{ pin, days: 0, source: "pin" }]));
     track("finder_place_added", { source: "pin", where: "room" });
     setPicking(false);
     focusDays(mine.length);
@@ -274,7 +274,7 @@ export default function HallsPanel({ id, detail, userId, onUpgrade }: { id: stri
             imagesOn={Boolean(start?.imagesOn)}
             signedIn
             headers={headers}
-            onAdd={(p) => setMine((m) => mergePlaces(m ?? [], p))}
+            onAdd={(p, how) => setMine((m) => (how === "merge" ? mergePlaces : appendPlaces)(m ?? [], p))}
             onIcs={setIcs}
             onToggleDay={(i, bit) => setMine((m) => m!.map((p, k) => (k === i ? { ...p, days: p.days ^ (1 << bit) } : p)))}
             onRemove={(i) => setMine((m) => m!.filter((_, k) => k !== i))}

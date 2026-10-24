@@ -15,7 +15,8 @@ interface HallFinderState {
   setupIds: Record<string, string>;
   setSetupId: (collegeId: string, id: string | null) => void;
   setDraft: (collegeId: string, draft: Draft) => void;
-  addPlaces: (collegeId: string, places: DraftPlace[]) => void;
+  /** "append" (the default for the picker) always adds a new entry; "merge" (schedules) folds days into a building already listed. */
+  addPlaces: (collegeId: string, places: DraftPlace[], how?: "append" | "merge") => void;
   removePlace: (collegeId: string, index: number) => void;
   setDays: (collegeId: string, index: number, days: DayMask) => void;
   /** Flip one weekday (bit) against the stored days, so quick taps don't undo each other. */
@@ -27,7 +28,14 @@ interface HallFinderState {
 const sameSpot = (a: DraftPlace, b: DraftPlace) =>
   a.placeId ? a.placeId === b.placeId : Boolean(a.pin && b.pin && a.pin[0] === b.pin[0] && a.pin[1] === b.pin[1]);
 
-/** Add places to a list: the same building twice merges its days rather than listing it twice. */
+/** Add places as new entries, even for a building already listed (two classes in one building,
+ *  or going home between them, are two trips). */
+export function appendPlaces(list: DraftPlace[], places: DraftPlace[]): DraftPlace[] {
+  return [...list, ...places].slice(0, MAX_PLACES);
+}
+
+/** Add places from a schedule: a building already listed has its days merged in, so back-to-back
+ *  classes in one building count as one trip a day rather than several. */
 export function mergePlaces(list: DraftPlace[], places: DraftPlace[]): DraftPlace[] {
   const next = [...list];
   for (const p of places) {
@@ -54,7 +62,7 @@ export const useHallFinder = create<HallFinderState>()(
             return { setupIds: next };
           }),
         setDraft: (collegeId, draft) => edit(collegeId, () => draft),
-        addPlaces: (collegeId, places) => edit(collegeId, (d) => ({ ...d, places: mergePlaces(d.places, places) })),
+        addPlaces: (collegeId, places, how = "append") => edit(collegeId, (d) => ({ ...d, places: (how === "merge" ? mergePlaces : appendPlaces)(d.places, places) })),
         removePlace: (collegeId, index) => edit(collegeId, (d) => ({ ...d, places: d.places.filter((_, i) => i !== index) })),
         setDays: (collegeId, index, days) => edit(collegeId, (d) => ({ ...d, places: d.places.map((p, i) => (i === index ? { ...p, days } : p)) })),
         toggleDay: (collegeId, index, bit) => edit(collegeId, (d) => ({ ...d, places: d.places.map((p, i) => (i === index ? { ...p, days: p.days ^ (1 << bit) } : p)) })),

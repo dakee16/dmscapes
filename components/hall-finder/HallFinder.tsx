@@ -356,7 +356,7 @@ export default function HallFinder({ campus, facts, schoolName, imagesOn = false
         imagesOn={imagesOn}
         signedIn={signedIn}
         headers={headers}
-        onAdd={(places) => act().addPlaces(collegeId, places)}
+        onAdd={(places, how) => act().addPlaces(collegeId, places, how)}
         onIcs={(ics) => act().setIcs(collegeId, ics)}
         onToggleDay={(i, bit) => act().toggleDay(collegeId, i, bit)}
         onRemove={(i) => act().removePlace(collegeId, i)}

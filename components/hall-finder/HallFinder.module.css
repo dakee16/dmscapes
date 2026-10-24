@@ -80,6 +80,21 @@
 .chips { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 14px; border-radius: 999px; border: 1.5px solid rgba(22, 22, 29, 0.2); background: #fff; font: 700 14px var(--ds-sans); color: var(--ds-ink); cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--ds-ink); border-color: var(--ds-ink); color: var(--ds-yellow); }
+/* Quick adds (+ Library / + Gym / + Dining): a picker in the page under the chips, closed by Done, the chip or Escape. */
+.quick { margin-top: 12px; padding: 12px 6px 10px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1.5px rgba(22, 22, 29, 0.12), 0 10px 24px rgba(22, 22, 29, 0.06); }
+@media (max-width: 899px) { .quick { scroll-margin-bottom: 132px; } } /* the sticky "Rank my halls" bar */
+.quickHead { display: flex; align-items: baseline; gap: 8px; padding: 0 10px 10px; }
+.quickHead strong { font-size: 15px; color: var(--ds-ink); }
+.quickHead span { font: 700 11px var(--ds-mono); color: var(--ds-muted); }
+.quickHead .linkBtn { margin-left: auto; min-height: 32px; }
+.quickList { list-style: none; margin: 0; padding: 0; max-height: 244px; overflow-y: auto; border-top: 1.5px solid rgba(22, 22, 29, 0.08); }
+.quickList li + li { border-top: 1px solid rgba(22, 22, 29, 0.06); }
+.quickList button { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 46px; padding: 0 10px; border: 0; border-radius: 8px; background: none; font: 600 15px var(--ds-sans); color: var(--ds-ink); text-align: left; cursor: pointer; }
+.quickList button:hover:not(:disabled) { background: #eef1ff; }
+.quickList button:disabled { color: var(--ds-muted); cursor: default; }
+.quickList small { flex: none; font: 700 11px var(--ds-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ds-blue); }
+.quickList button:disabled small { color: var(--ds-muted); }
+.quickNote { margin: 8px 10px 0; font-size: 12px; line-height: 1.4; color: var(--ds-muted); }
 .label { margin: 18px 0 8px; font: 600 10px var(--ds-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-muted); }
 
 .go { margin-top: auto; padding-top: 24px; }

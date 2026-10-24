@@ -4,7 +4,7 @@
 // browser; a screenshot or PDF read on the server), search buildings, quick adds, a dropped
 // pin, and the days for each place. The Hall Finder and a room's Halls section both use it;
 // the caller owns the places and the map (a pin is dropped on the caller's map).
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { CloseIcon, SearchIcon } from "@/components/ds/Icons";
 import { track } from "@/lib/analytics";
 import { parseIcs } from "@/lib/ics";
@@ -16,6 +16,7 @@ import styles from "./HallFinder.module.css";
 
 export const KIND_LABEL: Record<PlaceKind, string> = { academic: "Building", dining: "Dining", gym: "Gym", library: "Library" };
 const QUICK: PlaceKind[] = ["library", "gym", "dining"];
+const KIND_PLURAL: Record<PlaceKind, string> = { academic: "Buildings", dining: "Dining halls", gym: "Gyms", library: "Libraries" };
 const MAX_ICS_BYTES = 1_000_000;
 
 /** The friendly states for an upload that couldn't be read (plan.md, Schedule upload). */
@@ -70,7 +71,8 @@ interface Props {
   imagesOn: boolean;
   signedIn: boolean;
   headers: () => Promise<Record<string, string>>;
-  onAdd: (places: DraftPlace[]) => void;
+  /** "append" adds new entries (search, quick adds, pins); "merge" folds a schedule's days into a building already listed. */
+  onAdd: (places: DraftPlace[], how: "append" | "merge") => void;
   onIcs: (ics: NonNullable<Draft["ics"]>) => void;
   onToggleDay: (index: number, bit: number) => void;
   onRemove: (index: number) => void;
@@ -89,23 +91,44 @@ export default function PlacesEditor({ campus, places, ics, imagesOn, signedIn, 
   const rows = places.map((p, i) => ({ p, i, r: placeAt(placeById, p) })).filter((x) => x.r);
 
   // ---- Search combobox
+  // The search always covers every building; the quick adds below have their own picker, so
+  // neither narrows the other.
   const [query, setQuery] = useState("");
-  const [kind, setKind] = useState<PlaceKind | null>(null);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const options = useMemo(() => (open ? searchPlaces(campus.places, query, kind ?? undefined).slice(0, 8) : []), [open, campus.places, query, kind]);
+  const options = useMemo(() => (open ? searchPlaces(campus.places, query).slice(0, 8) : []), [open, campus.places, query]);
 
+  // A building already listed can be added again (two classes there, or home in between): a new entry.
   function addPlace(place: CampusPlace) {
-    const quick = kind !== null;
-    const already = places.findIndex((p) => p.placeId === place.id);
-    onAdd([{ placeId: place.id, days: quick ? ALL_WEEK : 0, source: quick ? "quick" : "manual" }]);
-    track("finder_place_added", { source: quick ? "quick" : "manual", kind: place.kind, ...event });
+    onAdd([{ placeId: place.id, days: 0, source: "manual" }], "append");
+    track("finder_place_added", { source: "manual", kind: place.kind, ...event });
     setQuery("");
-    setKind(null);
     setOpen(false);
     setActive(0);
-    if (!quick) focusDays(already >= 0 ? already : places.length);
+    focusDays(places.length);
+  }
+
+  // ---- Quick adds: a picker that opens under the chips (in the page, never over them) and
+  // stays open for adding several, until Done, the chip again or Escape.
+  const [quick, setQuick] = useState<PlaceKind | null>(null);
+  const chipRefs = useRef<Partial<Record<PlaceKind, HTMLButtonElement | null>>>({});
+  const quickItems = useMemo(() => (quick ? campus.places.filter((p) => p.kind === quick).sort((a, b) => a.name.localeCompare(b.name)) : []), [campus.places, quick]);
+  function addQuick(place: CampusPlace) {
+    onAdd([{ placeId: place.id, days: ALL_WEEK, source: "quick" }], "append");
+    track("finder_place_added", { source: "quick", kind: place.kind, ...event });
+  }
+  // Opening the picker brings it into view (on a phone it opens below the fold), leaving room above the sticky bar.
+  const quickRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!quick) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    quickRef.current?.scrollIntoView({ block: "nearest", behavior: reduced ? "auto" : "smooth" });
+  }, [quick]);
+  function closeQuick() {
+    const k = quick;
+    setQuick(null);
+    if (k) chipRefs.current[k]?.focus();
   }
 
   function onSearchKey(e: React.KeyboardEvent<HTMLInputElement>) {
@@ -121,7 +144,6 @@ export default function PlacesEditor({ campus, places, ics, imagesOn, signedIn, 
       addPlace(options[active]);
     } else if (e.key === "Escape") {
       setOpen(false);
-      setKind(null);
     }
   }
 
@@ -240,7 +262,7 @@ export default function PlacesEditor({ campus, places, ics, imagesOn, signedIn, 
             aria-activedescendant={open && options[active] ? `hf-opt-${options[active].id}` : undefined}
             autoComplete="off"
             value={query}
-            placeholder={kind ? `Pick a ${KIND_LABEL[kind].toLowerCase()}` : "Search buildings: name or code"}
+            placeholder="Search buildings: name or code"
             onChange={(e) => {
               setQuery(e.target.value);
               setOpen(true);
@@ -251,7 +273,7 @@ export default function PlacesEditor({ campus, places, ics, imagesOn, signedIn, 
             onKeyDown={onSearchKey}
           />
         </div>
-        {open && (query.trim() || kind) && (
+        {open && query.trim() && (
           <ul id="hf-options" role="listbox" className={styles.options} aria-label="Buildings">
             {options.length ? (
               options.map((p, i) => (
@@ -280,12 +302,16 @@ export default function PlacesEditor({ campus, places, ics, imagesOn, signedIn, 
 
       {rows.length > 0 && (
         <ol className={styles.places} aria-label="Your places">
-          {rows.map(({ p, i, r }, k) => (
+          {rows.map(({ p, i, r }, k) => {
+            // The 2nd, 3rd… entry for one building says so, so two rows with one name read as intended.
+            const nth = p.placeId ? rows.filter((x) => x.p.placeId === p.placeId && x.i <= i).length : 1;
+            return (
             <li key={`${p.placeId ?? p.pin?.join(",")}-${i}`} className={styles.place}>
               <span className={styles.pin} aria-hidden="true">{k + 1}</span>
               <span className={styles.placeName}>
                 <strong>{r!.name}</strong>
                 {p.source === "ics" || p.source === "image" ? `${p.label ?? "Class"} · from schedule` : p.source === "pin" ? "Pin you dropped" : r!.kind && r!.kind !== "academic" ? `${KIND_LABEL[r!.kind]} · added by you` : "Added by you"}
+                {nth > 1 && ` · ${nth === 2 ? "2nd" : nth === 3 ? "3rd" : `${nth}th`} entry`}
                 {p.days === 0 && <span className={styles.needDays}>Pick the days you go</span>}
               </span>
               <span className={styles.days} role="group" aria-label={`Days at ${r!.name}`}>
@@ -306,22 +332,25 @@ export default function PlacesEditor({ campus, places, ics, imagesOn, signedIn, 
                 <CloseIcon />
               </button>
             </li>
-          ))}
+            );
+          })}
         </ol>
       )}
 
+      <div onKeyDown={(e) => quick && e.key === "Escape" && closeQuick()}>
       <div className={styles.chips}>
         {QUICK.filter((k) => kindsPresent.has(k)).map((k) => (
           <button
             key={k}
+            ref={(el) => {
+              chipRefs.current[k] = el;
+            }}
             type="button"
             className={styles.chip}
-            onClick={() => {
-              setKind(k);
-              setQuery("");
-              setOpen(true);
-              inputRef.current?.focus();
-            }}
+            aria-pressed={quick === k}
+            aria-expanded={quick === k}
+            aria-controls="hf-quick"
+            onClick={() => setQuick(quick === k ? null : k)}
           >
             + {KIND_LABEL[k]}
           </button>
@@ -329,6 +358,31 @@ export default function PlacesEditor({ campus, places, ics, imagesOn, signedIn, 
         <button type="button" className={styles.chip} aria-pressed={picking} onClick={() => onPicking(!picking)}>
           {picking ? "Click the map…" : "Drop a pin"}
         </button>
+      </div>
+
+      {quick && (
+        <div id="hf-quick" ref={quickRef} className={styles.quick} role="group" aria-label={KIND_PLURAL[quick]}>
+          <div className={styles.quickHead}>
+            <strong>{KIND_PLURAL[quick]}</strong>
+            <span>{quickItems.length}</span>
+            <button type="button" className={styles.linkBtn} onClick={closeQuick}>Done</button>
+          </div>
+          <ul className={styles.quickList}>
+            {quickItems.map((p) => {
+              const added = places.some((x) => x.placeId === p.id);
+              return (
+                <li key={p.id}>
+                  <button type="button" disabled={added} onClick={() => addQuick(p)} aria-label={added ? `${p.name}, added` : `Add ${p.name}, every weekday`}>
+                    <span>{p.name}</span>
+                    <small>{added ? "Added" : "+ Add"}</small>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+          <p className={styles.quickNote}>Added for every weekday. Change the days in the list above.</p>
+        </div>
+      )}
       </div>
 
       {confirm && (
@@ -344,7 +398,7 @@ export default function PlacesEditor({ campus, places, ics, imagesOn, signedIn, 
           }}
           onAdd={(added) => {
             const source = confirm.read === "server" ? ("image" as const) : ("ics" as const);
-            onAdd(added.map((a) => ({ placeId: a.placeId, days: a.days, label: a.label, source })));
+            onAdd(added.map((a) => ({ placeId: a.placeId, days: a.days, label: a.label, source })), "merge");
             onIcs({ name: confirm.name, count: added.length });
             track("finder_place_added", { source, count: added.length, ...event });
             setConfirm(null);
