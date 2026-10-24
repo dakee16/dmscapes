@@ -3,6 +3,32 @@
     "GONDA": "way/422876569"
   },
   "notes": {
-    "GONDA": "Gonda (Goldschmied) Neuroscience and Genetics Research Center is OSM's misspelled \"Gonda (Goldschmeid) Center\" (alt_name Gonda Building), not the Neuroscience Research Building next door."
+    "GONDA": "Gonda (Goldschmied) Neuroscience and Genetics Research Center is OSM's misspelled \"Gonda (Goldschmeid) Center\" (alt_name Gonda Building), not the Neuroscience Research Building next door.",
+    "edwin-w-pauley-pavilion": "Varsity arena, not a student gym.",
+    "southern-regional-library-facility": "Off-site storage library; students don't study there.",
+    "mullin-management-commons": "Part of the Anderson School of Management, not a dining hall.",
+    "weyburn-commons": "Graduate housing community building, not a dining hall.",
+    "saxon-commons": "Saxon Suites community building; OSM shows no dining there.",
+    "mo-ostin-basketball-center": "Varsity basketball practice centre, not a student gym."
+  },
+  "places": {
+    "edwin-w-pauley-pavilion": {
+      "kind": "academic"
+    },
+    "southern-regional-library-facility": {
+      "kind": "academic"
+    },
+    "mullin-management-commons": {
+      "kind": "academic"
+    },
+    "weyburn-commons": {
+      "kind": "academic"
+    },
+    "saxon-commons": {
+      "kind": "academic"
+    },
+    "mo-ostin-basketball-center": {
+      "kind": "academic"
+    }
   }
 }

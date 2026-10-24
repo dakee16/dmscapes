@@ -1,6 +1,6 @@
 {
  "collegeId": "ucla",
- "generatedAt": "2026-10-19T18:47:01.211Z",
+ "generatedAt": "2026-10-24T07:54:19.433Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -69,7 +69,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/classic-residence-hall",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "john-wooden-center",
+     "minutes": 9.7
+    },
+    "library": {
+     "placeId": "powell-library",
+     "minutes": 11.1
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 6.2
+    }
+   }
   },
   {
    "dormId": "sproul-hall",
@@ -82,7 +96,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/classic-residence-hall",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 7.9
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 11.1
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 3.4
+    }
+   }
   },
   {
    "dormId": "hedrick-hall",
@@ -95,7 +123,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/classic-residence-hall",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 9.3
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 15.5
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 6.3
+    }
+   }
   },
   {
    "dormId": "rieber-hall",
@@ -108,7 +150,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/classic-residence-hall",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 13.7
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 4.5
+    }
+   }
   },
   {
    "dormId": "de-neve-gardenia",
@@ -147,7 +203,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/deluxe-residence-hall",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 6.5
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 12.1
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 2.9
+    }
+   }
   },
   {
    "dormId": "sproul-landing",
@@ -160,7 +230,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/deluxe-residence-hall",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 7.1
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 11.3
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 3.3
+    }
+   }
   },
   {
    "dormId": "olympic-hall",
@@ -173,7 +257,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/deluxe-residence-hall",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 8.8
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 14.3
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 5.2
+    }
+   }
   },
   {
    "dormId": "centennial-hall",
@@ -186,7 +284,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/deluxe-residence-hall",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 9.8
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 15.8
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 6.6
+    }
+   }
   },
   {
    "dormId": "de-neve-plaza",
@@ -212,7 +324,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/plaza-residences",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 3.8
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 11
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 2.8
+    }
+   }
   },
   {
    "dormId": "delta-terrace",
@@ -225,7 +351,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/plaza-residences",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 5.4
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 12.1
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 2.9
+    }
+   }
   },
   {
    "dormId": "courtside",
@@ -238,7 +378,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/plaza-residences",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 11.2
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 2.7
+    }
+   }
   },
   {
    "dormId": "rieber-terrace",
@@ -251,7 +405,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/plaza-residences",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 7.2
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 12.7
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 3.6
+    }
+   }
   },
   {
    "dormId": "rieber-vista",
@@ -264,7 +432,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/plaza-residences",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 8.5
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 14.1
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 4.9
+    }
+   }
   },
   {
    "dormId": "hedrick-summit",
@@ -277,7 +459,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/plaza-residences",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 8.6
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 15.2
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 6
+    }
+   }
   },
   {
    "dormId": "saxon-suites",
@@ -290,7 +486,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/suites",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 10.1
+    },
+    "library": {
+     "placeId": "powell-library",
+     "minutes": 14.4
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 6.5
+    }
+   }
   },
   {
    "dormId": "hitch-suites",
@@ -303,7 +513,21 @@
    "yearSource": [
     "https://housing.ucla.edu/new-students/suites",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 9.2
+    },
+    "library": {
+     "placeId": "rosenfeld-library",
+     "minutes": 16.6
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 7.5
+    }
+   }
   }
  ],
  "places": [
@@ -322,17 +546,6 @@
    "lng": -118.443058,
    "lat": 34.066231,
    "osm": "relation/331542"
-  },
-  {
-   "id": "edwin-w-pauley-pavilion",
-   "name": "Edwin W. Pauley Pavilion",
-   "short": "Edwin W. Pauley Pavilion",
-   "kind": "gym",
-   "codes": [],
-   "aliases": [],
-   "lng": -118.446776,
-   "lat": 34.07038,
-   "osm": "way/422876622"
   },
   {
    "id": "john-wooden-center",
@@ -364,7 +577,7 @@
    "id": "southern-regional-library-facility",
    "name": "Southern Regional Library Facility",
    "short": "Southern Regional Library Facility",
-   "kind": "library",
+   "kind": "academic",
    "codes": [],
    "aliases": [
     "SRLF"
@@ -849,17 +1062,6 @@
    "lng": -118.446114,
    "lat": 34.064356,
    "osm": "way/422876596"
-  },
-  {
-   "id": "mo-ostin-basketball-center",
-   "name": "Mo Ostin Basketball Center",
-   "short": "Mo Ostin Basketball Center",
-   "kind": "gym",
-   "codes": [],
-   "aliases": [],
-   "lng": -118.448206,
-   "lat": 34.069402,
-   "osm": "way/590011366"
   },
   {
    "id": "neuroscience-research-building",
@@ -1397,17 +1599,6 @@
    "osm": "way/422876536"
   },
   {
-   "id": "mullin-management-commons",
-   "name": "Mullin Management Commons",
-   "short": "Mullin Management Commons",
-   "kind": "dining",
-   "codes": [],
-   "aliases": [],
-   "lng": -118.443841,
-   "lat": 34.074025,
-   "osm": "way/184488681"
-  },
-  {
    "id": "la-kretz-hall",
    "name": "La Kretz Hall",
    "short": "La Kretz Hall",
@@ -1451,17 +1642,6 @@
    "osm": "way/422876521"
   },
   {
-   "id": "weyburn-commons",
-   "name": "Weyburn Commons",
-   "short": "Weyburn Commons",
-   "kind": "dining",
-   "codes": [],
-   "aliases": [],
-   "lng": -118.448908,
-   "lat": 34.061508,
-   "osm": "way/199954903"
-  },
-  {
    "id": "krieger-c-krieger-b",
    "name": "Krieger C;Krieger B",
    "short": "Krieger C;Krieger B",
@@ -1473,17 +1653,6 @@
    "lng": -118.45511,
    "lat": 34.075547,
    "osm": "way/422876715"
-  },
-  {
-   "id": "saxon-commons",
-   "name": "Saxon Commons",
-   "short": "Saxon Commons",
-   "kind": "dining",
-   "codes": [],
-   "aliases": [],
-   "lng": -118.452789,
-   "lat": 34.071427,
-   "osm": "way/590016591"
   },
   {
    "id": "la-kretz-garden-pavillion",

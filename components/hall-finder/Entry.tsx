@@ -15,7 +15,7 @@ import { seasonOn } from "@/lib/season";
 import { track } from "@/lib/analytics";
 import css from "./Entry.module.css";
 
-type Where = "home" | "hero-chip" | "college-chip" | "college-band" | "planner" | "pricing" | "footer";
+type Where = "home" | "hero-chip" | "college-chip" | "college-band" | "planner" | "pricing" | "footer" | "hall-page";
 
 /** One school's sample week from data/campus/sketch.json, as the server page passes it. */
 export interface Example {
@@ -329,5 +329,83 @@ export function WalkTimes() {
         </div>
       </div>
     </section>
+  );
+}
+
+/** One of a hall's nearest places, as the hall page passes it. */
+export interface NearPlace {
+  name: string;
+  /** "Dining", "Library" or "Gym". */
+  kind: string;
+  minutes: number;
+}
+
+/** Hall page (16-Hall): "Walk times from your door" with the hall's own map, and the card
+ *  into the finder with this hall preselected for comparison. Free; no sign-in. */
+export function HallWalks({ collegeId, dormId, hall, area, short, halls, allHalls, near }: { collegeId: string; dormId: string; hall: string; area: string | null; short: string; halls: number; allHalls: boolean; near: NearPlace[] }) {
+  const on = useHallFinderOn();
+  if (!on || !near.length) return null;
+  return (
+    <section className={css.hall} aria-labelledby="hf-walk-title">
+      <div className={css.hallInner}>
+        <div className={css.hallCopy}>
+          <p className={`ds-eyebrow ${css.eyebrow}`}>Around {hall}{area ? ` · ${area}` : ""}</p>
+          <Headline id="hf-walk-title" className={css.hallH} lines={[{ text: "Walk times" }, { text: "from your door.", serif: true }]} />
+          <ol className={css.hallList}>
+            {near.map((p, i) => (
+              <li key={p.kind}>
+                <span className={css.hallPin} aria-hidden="true">{i + 1}</span>
+                <span className={css.hallPlace}>
+                  <strong>{p.name}</strong>
+                  <span>{p.kind}</span>
+                </span>
+                <b>{Math.max(1, Math.round(p.minutes))} min</b>
+              </li>
+            ))}
+          </ol>
+          <div className={css.hallCard}>
+            <p className={css.hallCardTitle}>
+              <New /> Got your class schedule?
+            </p>
+            <p className={css.hallCardText}>
+              {`See how ${hall} stacks up. Hall Finder ranks ${allHalls ? "all " : ""}${halls} ${short} halls by `}your classes, with the
+              real walking routes.
+            </p>
+            <div className={css.hallCardCta}>
+              <EntryLink where="hall-page" href={`${finderHref(collegeId)}?compare=${dormId}`} className="ds-btn ds-btn--yellow">
+                Open Hall Finder
+                <ArrowRight size={18} />
+              </EntryLink>
+              <span>Your top pick is free</span>
+            </div>
+          </div>
+        </div>
+        <div className={css.hallMap}>
+          <Image
+            src={`/hall-finder/${collegeId}/${dormId}.svg`}
+            alt={`A map of the walking routes from ${hall} to ${near.map((p) => p.name).join(", ")}.`}
+            fill
+            sizes="(min-width: 1024px) 660px, 100vw"
+            className={css.mapImg}
+          />
+          <p className={css.hallCredit}>© OpenStreetMap contributors · OpenFreeMap</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** Hall page hero, under the buttons: "Is it close to your classes? Check in Hall Finder". */
+export function HallHeroLink({ collegeId, dormId }: { collegeId: string; dormId: string }) {
+  const on = useHallFinderOn();
+  if (!on) return null;
+  return (
+    <EntryLink where="hall-page" href={`${finderHref(collegeId)}?compare=${dormId}`} className={css.heroLink}>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" />
+        <circle cx="12" cy="9.5" r="2.5" />
+      </svg>
+      <span>Is it close to your classes? Check in Hall Finder</span>
+    </EntryLink>
   );
 }

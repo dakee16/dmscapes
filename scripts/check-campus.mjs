@@ -60,7 +60,20 @@ for (const id of ids) {
     "walking ÷ straight-line is 1.0–2.5": [],
     "every hall has a path to every place": [],
     "size budgets (client < 150 KB, minutes < 250 KB)": [],
+    "each hall's nearest dining, library and gym match the minutes": [],
   };
+  // The hall page reads near from the client file; it must agree with the matrix it came from.
+  for (const h of campus.halls) {
+    const row = minutes.halls[h.dormId];
+    for (const k of ["dining", "library", "gym"]) {
+      let best = null;
+      minutes.places.forEach((pid, i) => {
+        if (placeById.get(pid)?.kind === k && row?.[i] != null && (!best || row[i] < best.minutes)) best = { placeId: pid, minutes: row[i] };
+      });
+      const got = h.near?.[k] ?? null;
+      if (JSON.stringify(got) !== JSON.stringify(best)) issues["each hall's nearest dining, library and gym match the minutes"].push(`${h.dormId} ${k}: ${JSON.stringify(got)} vs ${JSON.stringify(best)}`);
+    }
+  }
   for (const d of dorms) {
     const hall = hallById.get(d.dorm_id);
     const row = minutes.halls[d.dorm_id];
