@@ -485,7 +485,9 @@
   .actions:has(:global([aria-label="Account menu"])) .ctaShort { display: inline; }
   .actions:has(:global([aria-label="Account menu"])) .cta svg { display: none; }
 }
-@media (max-width: 1023px) {
+/* The full bar needs ~1000px inside its plate, so it gives way to the menu button below 1100
+   (iPad landscape, 1024, had the CTA hanging out of the plate once Hall Finder joined the links). */
+@media (max-width: 1099px) {
   .links, .morePanel { display: none; }
   .menuBtn { display: inline-flex; }
 }

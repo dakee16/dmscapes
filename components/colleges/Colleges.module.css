@@ -132,31 +132,32 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  /* A baseline grid: rules every 28px (y = 59, 87, 115 …), every text row is one
-     28px line, and the 39px top padding puts the name's baseline on the red rule.
-     Long names wrap onto the next rules; the card grows a whole rule at a time. */
-  min-height: 188px;
+  gap: 4px;
+  min-height: 176px;
   box-sizing: border-box;
-  padding: 39px 18px 9px;
-  border-radius: 6px;
-  background-color: #fff;
-  background-image:
-    linear-gradient(transparent 59px, #e85a6b 59px, #e85a6b 61px, transparent 61px),
-    repeating-linear-gradient(180deg, transparent 0 27px, rgba(36, 73, 255, 0.12) 27px 28px);
-  background-position: 0 0, 0 60px;
-  box-shadow: 0 8px 18px rgba(80, 55, 25, 0.12);
+  padding: 30px 22px 16px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(80, 55, 25, 0.08), 0 10px 22px rgba(80, 55, 25, 0.1);
   text-decoration: none;
   transition: transform 0.3s var(--ds-ease), box-shadow 0.3s var(--ds-ease);
 }
 .indexCard:hover {
-  transform: translateY(-8px) rotate(-1.2deg);
-  box-shadow: 0 18px 30px rgba(80, 55, 25, 0.2), 0 0 0 2px var(--ds-blue);
+  transform: translateY(-6px) rotate(-0.6deg);
+  box-shadow: 0 18px 30px rgba(80, 55, 25, 0.18), 0 0 0 2px var(--ds-blue);
   text-decoration: none;
 }
+/* "More schools soon": a placeholder, not a link, so it sits flat and dashed. */
+.indexCard[data-soon] {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px rgba(22, 22, 29, 0.16);
+  border-radius: 10px;
+}
+.indexCard[data-soon] .cardPlace { color: var(--ds-body); font-style: normal; font-family: var(--ds-sans); font-variation-settings: normal; font-size: 15px; line-height: 1.5; }
 .cardTab {
   position: absolute;
-  left: 18px;
-  top: -10px;
+  left: 22px;
+  top: -11px;
   min-width: 22px;
   height: 22px;
   padding: 0 6px;
@@ -171,36 +172,37 @@
 .cardTab[data-tone="blue"] { background: var(--ds-blue); color: #fff; }
 .cardTab[data-tone="yellow"] { background: var(--ds-yellow); color: var(--ds-ink); }
 .cardTab[data-tone="white"] { background: #fff; color: var(--ds-ink); }
-.cardName { font-size: 19px; line-height: 28px; font-weight: 800; letter-spacing: -0.01em; }
+.cardName { font-size: 19px; line-height: 1.25; font-weight: 800; letter-spacing: -0.01em; text-wrap: balance; }
 .cardPlace {
-  line-height: 28px;
+  margin-bottom: 18px;
+  line-height: 1.3;
   font-family: var(--ds-serif);
   font-style: italic;
   font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
   font-size: 17px;
   color: var(--ds-blue);
 }
+/* The counts row sits under one hairline; the tag or "Open" wraps below rather than crowding the counts. */
 .cardMeta {
-  /* The mono face sits 2px higher in its line than the sans and serif. */
-  position: relative;
-  top: 2px;
   margin-top: auto;
-  line-height: 28px;
+  padding-top: 13px;
+  min-height: 36px; /* the tag is taller than the counts; keeping the row this tall keeps dividers level across a row of cards */
+  border-top: 1px solid rgba(22, 22, 29, 0.1);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  font-family: var(--ds-mono);
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  gap: 8px 12px;
+  font: 600 13px/1.35 var(--ds-sans);
+  color: var(--ds-body);
 }
-.cardOpen { color: var(--ds-blue); opacity: 0; transform: translateX(-6px); transition: opacity 0.25s, transform 0.25s var(--ds-ease); }
+.cardOpen { color: var(--ds-blue); font-weight: 800; opacity: 0; transform: translateX(-6px); transition: opacity 0.25s, transform 0.25s var(--ds-ease); }
 .indexCard:hover .cardOpen,
 .indexCard:focus-visible .cardOpen { opacity: 1; transform: none; }
 /* Touch screens never hover, so the hidden "Open" label only crowds the counts onto two lines. */
 @media (hover: none) { .cardOpen { display: none; } }
+/* On /hall-finder every card is the way in, so its call to action is always showing. */
+.cardGo { color: var(--ds-blue); font-weight: 800; white-space: nowrap; }
 
 .list {
   margin: 0;

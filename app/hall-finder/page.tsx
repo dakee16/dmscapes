@@ -32,7 +32,7 @@ export default function HallFinderIndex() {
       <section className="ds-section">
         <div className="ds-wrap">
           <Crumbs items={crumbs} />
-          <p className="ds-eyebrow" style={{ marginTop: 18 }}>Hall Finder · {schools.length} schools</p>
+          <p className="ds-eyebrow" style={{ marginTop: 18 }}>Now at {schools.length} schools</p>
           <Headline className="ds-h1" lines={[{ text: "Pick the hall", riso: true }, { text: "closest to class.", serif: true }]} />
           <p className="ds-lede" style={{ maxWidth: 620 }}>
             Add the buildings you have classes in and we rank your school&apos;s halls by your weekly walk. Most schools
@@ -44,18 +44,17 @@ export default function HallFinderIndex() {
               <li key={s.id} className={css.cardItem}>
                 <Link href={`/colleges/${s.id}/hall-finder`} className={css.indexCard}>
                   <span className={css.cardTab} data-tone={TONES[i % 3]} aria-hidden="true">{shortName(s)[0]}</span>
-                  <span className={css.hfTag}>Hall Finder</span>
                   <span className={css.cardName}>{s.name}</span>
                   <span className={css.cardPlace}>{[s.city, s.state].filter(Boolean).join(", ")}</span>
                   <span className={css.cardMeta}>
                     <span>{s.dorms.length} halls</span>
-                    <span className={css.cardOpen} aria-hidden="true">Open →</span>
+                    <span className={css.cardGo} aria-hidden="true">Rank halls →</span>
                   </span>
                 </Link>
               </li>
             ))}
             <li className={css.cardItem}>
-              <div className={css.indexCard} style={{ cursor: "default" }}>
+              <div className={css.indexCard} data-soon="" style={{ cursor: "default" }}>
                 <span className={css.cardName}>More schools soon</span>
                 <span className={css.cardPlace}>
                   Hall Finder is at {schools.length} schools to start. <Link href="/colleges" className="ds-link">Every school</Link> still has room sizes and planning.
