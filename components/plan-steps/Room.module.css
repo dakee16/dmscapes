@@ -540,6 +540,20 @@
 .pickHall .drawLink {
   align-self: flex-start;
 }
+/* With Hall Finder's callout (design-handoff/hall-finder 15-Planner) the box gives way to it. */
+.pickHall[data-hall-finder] {
+  margin-top: 18px;
+  max-width: none;
+  min-height: 0;
+  gap: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+}
+.pickHall[data-hall-finder] > p { font-size: 17px; }
+.pickHall[data-hall-finder] > section { align-self: stretch; }
+.pickHall[data-hall-finder] .drawLink { margin-top: 20px; }
 
 @keyframes grow {
   from {

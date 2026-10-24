@@ -17,6 +17,7 @@ import type { FurnitureItem, RoomOutline } from "@/lib/types";
 import RoomThumb from "@/components/room/RoomThumb";
 import ShareButton from "@/components/room/ShareButton";
 import PageShell from "@/components/ds/PageShell";
+import SetupsSection from "@/components/hall-finder/SetupsSection";
 import BrandLoader from "@/components/site/BrandLoader";
 import Modal, { ModalClose } from "@/components/site/Modal";
 import PurchaseThankYou from "@/components/site/PurchaseThankYou";
@@ -159,6 +160,7 @@ export default function MyRooms() {
         {!shown.length && tab !== "rooms" && <p className={s.none}>{search ? <>No designs match &ldquo;{search}&rdquo;. <button type="button" onClick={() => setSearch("")}>Clear search</button></> : tab === "drawn" ? "Rooms you draw in 2D show up here." : "Your first design starts with your college room, a style and a budget."}</p>}
         {tab === "rooms" && !workspaces.length && <p className={s.none}>{search ? <>No rooms match &ldquo;{search}&rdquo;. <button type="button" onClick={() => setSearch("")}>Clear search</button></> : "Open a saved design as a workspace to keep it in step with your roommates, or join one through an invitation."}</p>}
 
+        <SetupsSection />
         <aside className={s.together}>
           <div><p className={s.togetherEyebrow}>My Room · Pro</p><h2>Planning with a roommate?</h2><p>Open one design as your shared room, split it down the middle, and settle who brings what. Friends join free.</p></div>
           <Link href={isPro(profile) ? "/my-room" : "/pricing#plans"} className="ds-btn ds-btn--ink-yellow ds-btn--sm">{isPro(profile) ? "Open My Room" : "See Pro"}<ArrowRight size={16}/></Link>

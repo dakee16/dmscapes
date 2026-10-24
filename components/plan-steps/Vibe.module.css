@@ -383,6 +383,7 @@
   line-height: 1.45;
   color: #cfccd9;
 }
+.plusHot { color: var(--ds-yellow); }
 .plusFoot {
   margin-top: 4px;
   display: flex;

@@ -41,18 +41,20 @@ export function clientIp(request: Request): string {
 }
 
 /**
- * Count a hit against `${bucket}:${ip}` and report whether it's allowed.
- * `limit` requests per `windowMs` rolling into fixed windows.
+ * Count a hit against `${bucket}:${who}` (the client IP unless a caller keys by
+ * user) and report whether it's allowed. `limit` requests per `windowMs` rolling
+ * into fixed windows.
  */
 export function rateLimit(
   request: Request,
   bucket: string,
   limit: number,
-  windowMs: number
+  windowMs: number,
+  who: string = clientIp(request)
 ): { allowed: boolean; retryAfterSec: number } {
   const now = Date.now();
   sweep(now);
-  const key = `${bucket}:${clientIp(request)}`;
+  const key = `${bucket}:${who}`;
   const w = windows.get(key);
   if (!w || w.resetAt <= now) {
     windows.set(key, { count: 1, resetAt: now + windowMs });

@@ -2,7 +2,7 @@
 
 import Modal from "@/components/site/Modal";
 
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useUpgrade, type UpgradeReason } from "@/lib/upgrade-context";
 import { useAuth } from "@/lib/auth-context";
@@ -11,6 +11,7 @@ import { track } from "@/lib/analytics";
 import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, RECHARGE_CREDITS, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS } from "@/lib/plan";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
 import { ArrowRight, Check } from "@/components/ds/Icons";
+import { PlusPerk } from "@/components/hall-finder/Entry";
 import { CloseButton, TierBadge } from "@/components/account-ui/parts";
 import d from "@/components/account-ui/Dialog.module.css";
 
@@ -21,6 +22,10 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
   "plan-credits": {
     title: "You're out of plan credits",
     body: "You've used your Plus plan credits. Recharge to generate more rooms. Your saved designs, exports, and comparisons stay right where they are.",
+  },
+  "hall-finder": {
+    title: "See every hall ranked",
+    body: `Plus ranks every hall at your school by your weekly walk, shows every route and compares halls side by side. It also includes ${PLUS_INITIAL_CREDITS} plan credits and every vibe.`,
   },
   "workspace": { title: "Make room for your roommates", body: "Pro hosts one shared room with up to four people, including you. Friends join free to edit or comment, with a shared shopping list and version history. Personal rooms stay available on every plan." },
   "pro-credits": {
@@ -296,11 +301,14 @@ export default function UpgradeModal() {
                   <span className={d.once}>once</span>
                 </p>
                 <ul className={d.perks}>
-                  {PERKS.map((perk) => (
-                    <li key={perk}>
-                      <Check size={16} color="var(--ds-yellow)" />
-                      <span>{perk}</span>
-                    </li>
+                  {PERKS.map((perk, i) => (
+                    <Fragment key={perk}>
+                      <li>
+                        <Check size={16} color="var(--ds-yellow)" />
+                        <span>{perk}</span>
+                      </li>
+                      {i === 1 && <PlusPerk check={<Check size={16} color="var(--ds-yellow)" />} />}
+                    </Fragment>
                   ))}
                 </ul>
                 <div className={d.planCta}>

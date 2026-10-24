@@ -70,7 +70,17 @@ export type AnalyticsEvent =
   | "drawn_room_completed"
   | "drawn_room_reused"
   // Pro 3D studio
-  | "studio_snapshot";
+  | "studio_snapshot"
+  // Hall Finder (design-handoff/hall-finder/plan.md Analytics)
+  | "hall_finder_started"
+  | "finder_place_added"
+  | "schedule_uploaded"
+  | "schedule_parse_failed"
+  | "finder_signin_gate"
+  | "finder_paywall_viewed"
+  | "finder_hall_selected"
+  | "plan_from_finder"
+  | "hall_finder_entry_clicked";
 
 let initialized = false;
 

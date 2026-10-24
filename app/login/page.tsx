@@ -9,7 +9,7 @@ import AuthForm from "@/components/auth/AuthForm";
 import styles from "@/components/auth/Auth.module.css";
 import type { AuthModalReason } from "@/lib/auth-context";
 
-const REASONS: AuthModalReason[] = ["profile", "save-design", "buy", "generate"];
+const REASONS: AuthModalReason[] = ["profile", "save-design", "buy", "generate", "hall-finder"];
 
 /** The post-auth destination, only when it stays on this site. Parsed the way
  *  the browser will parse it, so "/\host" or a tab after the slash can't

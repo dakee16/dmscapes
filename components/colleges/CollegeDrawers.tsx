@@ -3,6 +3,8 @@
 import { useId, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "@/components/ds/Icons";
+import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
+import { hasHallFinder } from "@/lib/hall-finder";
 import css from "./Colleges.module.css";
 
 export type Campus = {
@@ -33,7 +35,7 @@ function place(c: Campus) {
   return [c.city, c.state].filter(Boolean).join(", ");
 }
 
-function IndexCard({ c, i }: { c: Campus; i: number }) {
+function IndexCard({ c, i, hf }: { c: Campus; i: number; hf: boolean }) {
   return (
     <li className={css.cardItem}>
       <Link href={`/colleges/${c.id}`} className={css.indexCard}>
@@ -46,9 +48,13 @@ function IndexCard({ c, i }: { c: Campus; i: number }) {
           <span>
             {c.buildings} building{c.buildings === 1 ? "" : "s"} · {c.rooms} room type{c.rooms === 1 ? "" : "s"}
           </span>
-          <span className={css.cardOpen} aria-hidden="true">
-            Open →
-          </span>
+          {hf && hasHallFinder(c.id) ? (
+            <span className={css.hfTag}>Hall Finder</span>
+          ) : (
+            <span className={css.cardOpen} aria-hidden="true">
+              Open →
+            </span>
+          )}
         </span>
       </Link>
     </li>
@@ -94,9 +100,12 @@ export default function CollegeDrawers({ schools }: { schools: Campus[] }) {
     [schools]
   );
 
+  // Hall Finder (when live or previewed): a tag on pilot cards and a "Has Hall Finder" filter.
+  const hf = useHallFinderOn();
+  const [onlyHf, setOnlyHf] = useState(false);
   const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  const results = terms.length
-    ? schools.filter((s) => terms.every((t) => `${s.name} ${s.city ?? ""} ${s.state ?? ""}`.toLowerCase().includes(t)))
+  const results = terms.length || (hf && onlyHf)
+    ? schools.filter((s) => (!(hf && onlyHf) || hasHallFinder(s.id)) && terms.every((t) => `${s.name} ${s.city ?? ""} ${s.state ?? ""}`.toLowerCase().includes(t)))
     : null;
 
   function onTabKey(e: React.KeyboardEvent, i: number) {
@@ -115,7 +124,7 @@ export default function CollegeDrawers({ schools }: { schools: Campus[] }) {
     view === "cards" ? (
       <ul className={css.cards}>
         {list.map((c, i) => (
-          <IndexCard key={c.id} c={c} i={i} />
+          <IndexCard key={c.id} c={c} i={i} hf={hf} />
         ))}
       </ul>
     ) : (
@@ -158,6 +167,11 @@ export default function CollegeDrawers({ schools }: { schools: Campus[] }) {
             </button>
           )}
         </div>
+        {hf && (
+          <button type="button" className={css.hfChip} aria-pressed={onlyHf} onClick={() => setOnlyHf((v) => !v)}>
+            Has Hall Finder
+          </button>
+        )}
         <div className={css.toggle} role="group" aria-label="View">
           <button type="button" aria-pressed={view === "cards"} onClick={() => setView("cards")}>
             Cards
@@ -171,7 +185,7 @@ export default function CollegeDrawers({ schools }: { schools: Campus[] }) {
       {results ? (
         <div className={css.tray} data-mode="results">
           <p className={css.trayNote} role="status">
-            {results.length} of {schools.length} schools match “{query.trim()}”
+            {results.length} of {schools.length} schools{onlyHf && hf ? " have Hall Finder" : ""}{terms.length ? ` match “${query.trim()}”` : ""}
           </p>
           {results.length ? (
             render(results)

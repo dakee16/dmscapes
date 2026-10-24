@@ -363,3 +363,9 @@
 @media (prefers-reduced-motion: reduce) {
   .cardItem { animation: none; }
 }
+
+/* Hall Finder (design-handoff/hall-finder Mentions): pilot tag and filter chip. */
+/* The pilot-school tag takes Open →'s place on the counts row (17-Mentions). */
+.hfTag { flex: none; display: inline-flex; align-items: center; height: 22px; padding: 0 9px; border-radius: 999px; background: var(--ds-ink); color: var(--ds-yellow); font: 700 9.5px var(--ds-mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.hfChip { flex: none; min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1.5px solid rgba(22, 22, 29, 0.2); background: #fff; font: 700 14px var(--ds-sans); color: var(--ds-ink); cursor: pointer; }
+.hfChip[aria-pressed="true"] { background: var(--ds-ink); border-color: var(--ds-ink); color: var(--ds-yellow); }

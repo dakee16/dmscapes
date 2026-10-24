@@ -3,6 +3,7 @@
 import { STYLES } from "@/lib/styles";
 import { PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PLUS_PRICE_WAS_USD } from "@/lib/plan";
 import { useUpgrade } from "@/lib/upgrade-context";
+import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import css from "./Vibe.module.css";
 
 const usd = (n: number) => `$${n.toFixed(2)}`;
@@ -10,6 +11,7 @@ const usd = (n: number) => `$${n.toFixed(2)}`;
 /** The Plus pitch beside the vibes. Prices and credits come from lib/plan. */
 export default function PlusCard({ compact = false }: { compact?: boolean }) {
   const { openUpgrade } = useUpgrade();
+  const hallFinder = useHallFinderOn();
   const head = `All ${STYLES.length} vibes with Plus`;
   if (compact) {
     return (
@@ -28,7 +30,8 @@ export default function PlusCard({ compact = false }: { compact?: boolean }) {
     <div className={css.plus}>
       <p className={css.plusHead}>{head}</p>
       <p className={css.plusText}>
-        {PLUS_INITIAL_CREDITS} plan credits, PDF and PNG export, and compare two designs side by side.
+        {PLUS_INITIAL_CREDITS} plan credits, {hallFinder && <><strong className={css.plusHot}>Hall Finder</strong>, </>}PDF and PNG
+        export, and compare two designs side by side.
       </p>
       <div className={css.plusFoot}>
         <span className={css.plusPrice}>

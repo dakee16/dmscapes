@@ -12,6 +12,7 @@ import JsonLd from "@/components/site/JsonLd";
 import { RuleArt, SameScale } from "@/components/methodology/MethodologyArt";
 import { SCHOOLS } from "@/lib/schools";
 import { pageMetadata, breadcrumbJsonLd } from "@/lib/seo";
+import { WalkTimes } from "@/components/hall-finder/Entry";
 import css from "@/components/methodology/Methodology.module.css";
 
 export const metadata: Metadata = pageMetadata({
@@ -322,6 +323,8 @@ export default function MethodologyPage() {
           <SameScale />
         </div>
       </section>
+
+      <WalkTimes />
 
       <section className={`ds-section ${css.limits}`} aria-labelledby="limits-title">
         <div className="ds-wrap">

@@ -5,6 +5,7 @@
 //   data/campus/<id>.json                    client-safe: sources, bounds, hall pins, places
 //   data/campus/<id>.minutes.json            server only: { places: [ids], halls: { dormId: [minutes] } }
 //   data/campus/paths/<id>/<dormId>.json     server only: { placeId: encoded polyline }
+//   data/campus/index.json                   the pilot list: adds <id>
 // data/campus/overrides/<id>.json (pins, year tags, place codes/aliases/kind) wins over OSM.
 import fs from "node:fs";
 import path from "node:path";
@@ -420,11 +421,11 @@ for (const o of official) {
   const variants = [o.name, o.name.replace(/\s*\(.*?\)\s*/g, " "), o.name.split(",")[0], ...o.aliases];
   const names = new Set(variants.map(norm));
   const cores = new Set(variants.map(core).filter(Boolean));
-  // A hall's own entry ("Broadway Residence Hall") belongs to the hall, not to a place.
-  const hallList = [...hallBuildings];
-  const isHall =
-    hallList.some((b) => (o.center && inBuilding(o.center, b)) || o.rings.some((r) => inRing(b.center, r)) || osmNames(b.tags).some((n) => names.has(norm(n)) || cores.has(core(n)))) ||
-    byWords(variants, hallList, false);
+  // A hall's own entry ("Broadway Residence Hall") belongs to the hall, not to a place. Exact
+  // and core names only: the word rule would hand "Willard" to E. Willard Miller Hall.
+  const isHall = [...hallBuildings].some(
+    (b) => (o.center && inBuilding(o.center, b)) || o.rings.some((r) => inRing(b.center, r)) || osmNames(b.tags).some((n) => names.has(norm(n)) || cores.has(core(n))),
+  );
   if (isHall) continue;
   const host =
     candidates.find((b) => (o.center && inBuilding(o.center, b)) || o.rings.some((r) => inRing(b.center, r))) ??
@@ -647,6 +648,9 @@ const campus = {
 };
 fs.writeFileSync(`data/campus/${id}.json`, JSON.stringify(campus, null, 1) + "\n");
 fs.writeFileSync(`data/campus/${id}.minutes.json`, JSON.stringify(minutes));
+// The pilot list the app reads (lib/hall-finder.ts PILOT_SCHOOLS).
+const PILOTS = "data/campus/index.json";
+fs.writeFileSync(PILOTS, JSON.stringify([...new Set([...read(PILOTS, []), id])].sort()) + "\n");
 
 // ---- Report
 const kb = (f) => `${(fs.statSync(f).size / 1024).toFixed(1)} KB`;

@@ -3,6 +3,7 @@ import { SCHOOLS, hallIsIndexable } from "@/lib/schools";
 import { POSTS } from "@/content/blog";
 import { SITE_URL as BASE } from "@/lib/seo";
 import SCHOOL_DATES from "@/lib/school-dates.json";
+import { PILOT_SCHOOLS, hallFinderLive } from "@/lib/hall-finder";
 
 /**
  * The sitemap groups. Each is served at /sitemaps/sitemap/<group>.xml (app/sitemaps/sitemap.ts)
@@ -42,6 +43,10 @@ export function sitemapEntries(group: string): MetadataRoute.Sitemap {
         { url: `${BASE}/terms`, changeFrequency: "yearly", priority: 0.3 },
         { url: `${BASE}/privacy`, changeFrequency: "yearly", priority: 0.3 },
         { url: `${BASE}/cookies`, changeFrequency: "yearly", priority: 0.3 },
+        // Hall Finder pages only once it's live (until then they're noindex and unlinked).
+        ...(hallFinderLive()
+          ? [`${BASE}/hall-finder`, ...PILOT_SCHOOLS.map((id) => `${BASE}/colleges/${id}/hall-finder`)].map((url) => ({ url, changeFrequency: "monthly" as const, priority: 0.7 }))
+          : []),
       ];
     case "colleges":
       return SCHOOLS.map((s) => ({ url: `${BASE}/colleges/${s.id}`, lastModified: schoolDate(s.id), changeFrequency: "monthly", priority: 0.8 }));

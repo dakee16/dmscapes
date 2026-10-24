@@ -3,17 +3,19 @@ import Wordmark from "@/components/site/Wordmark";
 import { MotionToggle } from "@/components/experience/MotionProvider";
 import FeedbackLink from "@/components/site/FeedbackLink";
 import { ArrowUpRight } from "@/components/ds/Icons";
+import { FooterLink as HallFinderLink } from "@/components/hall-finder/Entry";
 import s from "./ds/SiteFooter.module.css";
 
 const COLUMNS: {
   heading: string;
-  links: { label: string; href?: string; anchor?: boolean; external?: boolean; feedback?: boolean }[];
+  links: { label: string; href?: string; anchor?: boolean; external?: boolean; feedback?: boolean; hallFinder?: boolean }[];
 }[] = [
   {
     heading: "Product",
     links: [
       { label: "My designs", href: "/rooms" },
       { label: "My Room (Pro)", href: "/my-room" },
+      { label: "Hall Finder", hallFinder: true },
       { label: "How it works", href: "/#how-it-works", anchor: true },
       { label: "Vibes & styles", href: "/#vibes", anchor: true },
       { label: "Colleges", href: "/colleges" },
@@ -69,7 +71,7 @@ export default function Footer() {
             <div key={col.heading} className={s.col}>
               <h2 className={s.colHead}>{col.heading}</h2>
               <ul>
-                {col.links.map((link) => (
+                {col.links.map((link) => link.hallFinder ? <HallFinderLink key={link.label} /> : (
                   <li key={link.label}>
                     {link.feedback ? (
                       <FeedbackLink />

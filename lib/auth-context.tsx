@@ -18,6 +18,7 @@ import { getBrowserClient } from "@/lib/supabase-browser";
 import { clearAuthParamsFromUrl } from "@/lib/auth-url";
 import { track } from "@/lib/analytics";
 import { isPaid } from "@/lib/plan";
+import { takeResume } from "@/lib/hall-finder";
 import UsernamePrompt from "@/components/auth/UsernamePrompt";
 import PlusWelcome from "@/components/site/PlusWelcome";
 import SignupWelcome from "@/components/site/SignupWelcome";
@@ -60,7 +61,7 @@ export interface Profile {
 export type PlanTier = "free" | "flex" | "plus" | "pro";
 
 /** What prompted the modal; copy inside adapts ("save your design" vs generic). */
-export type AuthModalReason = "profile" | "save-design" | "buy" | "generate";
+export type AuthModalReason = "profile" | "save-design" | "buy" | "generate" | "hall-finder";
 
 interface AuthContextValue {
   /** false when Supabase client env isn't configured. */
@@ -337,6 +338,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         // the hadUserRef guard (which stops focus/refresh SIGNED_IN re-fires).
         const landed = urlLandingRef.current;
         urlLandingRef.current = false;
+        // Hall Finder: an email-verification tab lands on the site root, not the finder the
+        // student left; send it back there with their draft (lib/hall-finder setResume).
+        if (landed) {
+          const resume = takeResume();
+          if (resume && resume !== window.location.pathname + window.location.search) router.push(resume);
+        }
         if (!hadUserRef.current || landed) {
           const reason = modalReasonRef.current;
           // Stay on whatever page they authenticated from: a general login no

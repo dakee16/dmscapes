@@ -25,6 +25,10 @@
   pointer-events: none;
 }
 .header[data-overlay="true"] { margin-bottom: calc(var(--ds-nav-h) * -1); }
+/* Hall Finder's phone results carry their own bar (design-handoff/hall-finder 08, 09). */
+@media (max-width: 899px) {
+  :global(html[data-hf-view="results"]) .header { display: none; }
+}
 .header[data-tone="dark"] {
   --nav-ink: var(--ds-paper);
   --nav-hover: rgba(255, 255, 255, 0.1);
@@ -532,3 +536,9 @@
 :global(.dm-app[data-motion="paused"]) .sheet,
 :global(.dm-app[data-motion="paused"]) .sheetBig { animation: none; }
 :global(.dm-app[data-motion="paused"]) .plate { transition: none; }
+
+/* Hall Finder entry points (design-handoff/hall-finder Nav): pink NEW tag, highlighted Plan row. */
+.newTag { display: inline-flex; align-items: center; height: 18px; margin-left: 6px; padding: 0 6px; border-radius: 5px; background: var(--ds-pink); color: var(--ds-ink); font: 700 9px var(--ds-mono); letter-spacing: 0.08em; text-transform: uppercase; vertical-align: middle; }
+.sheetBig .newTag { height: 22px; margin: 0 auto 0 14px; padding: 0 8px; font-size: 10px; }
+.rowHot { background: #fff0a8; }
+.rowHot .rowLabel, .rowHot strong { font-weight: 800; }

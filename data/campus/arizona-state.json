@@ -1,6 +1,6 @@
 {
  "collegeId": "arizona-state",
- "generatedAt": "2026-10-19T18:32:40.420Z",
+ "generatedAt": "2026-10-19T18:47:01.618Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -870,6 +870,21 @@
    "osm": "way/28822110"
   },
   {
+   "id": "vista-del-sol-community-center",
+   "name": "Vista del Sol Community Center",
+   "short": "Vista del Sol Community Center",
+   "kind": "academic",
+   "codes": [
+    "VDS"
+   ],
+   "aliases": [
+    "Vista Del Sol"
+   ],
+   "lng": -111.929098,
+   "lat": 33.413106,
+   "osm": "way/256986557"
+  },
+  {
    "id": "life-sciences-e-wing",
    "name": "Life Sciences E-Wing",
    "short": "Life Sciences E-Wing",
@@ -967,6 +982,19 @@
    "lng": -111.937339,
    "lat": 33.420505,
    "osm": "way/28822379"
+  },
+  {
+   "id": "west-hall",
+   "name": "West Hall",
+   "short": "West Hall",
+   "kind": "academic",
+   "codes": [
+    "WHALL"
+   ],
+   "aliases": [],
+   "lng": -111.935862,
+   "lat": 33.419103,
+   "osm": "way/28822716"
   },
   {
    "id": "greek-leadership-village-community-center",

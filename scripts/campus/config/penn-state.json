@@ -10,6 +10,7 @@
     ]
   },
   "walkMarginM": 400,
+  "sketch": ["willard-building", "hetzel-union-building", "forum-building", "osmond-laboratory", "joab-l-thomas-building"],
   "walkingSpeed": 1.35,
   "codes": {
     "title": "Penn State Office of Physical Plant, UP Buildings (building inventory: names, abbreviations, aliases)",

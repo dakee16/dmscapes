@@ -335,3 +335,12 @@
 @media (prefers-reduced-motion: reduce) {
   .form .google, .form .google:hover { transition: none; transform: none; }
 }
+
+/* Hall Finder gate (design-handoff/hall-finder Gate): what's free and what's Plus. */
+.gateCards { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.gateCards p { margin: 0; padding: 12px 14px; border-radius: 14px; background: #fff; box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.1); font-size: 14px; line-height: 1.4; }
+.gateCards span { display: block; margin-bottom: 6px; font: 600 10px var(--ds-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-muted); }
+.gateCards p + p span { color: var(--ds-magenta, #c2187a); }
+@media (max-width: 520px) { .gateCards { grid-template-columns: 1fr; } }
+.savedChip { display: inline-flex; align-items: center; gap: 8px; height: 30px; margin: 0 0 16px; padding: 0 12px; border-radius: 999px; background: var(--ds-ink); color: var(--ds-yellow); font: 600 10px var(--ds-mono); letter-spacing: 0.12em; text-transform: uppercase; }
+.gateBack { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--ds-blue); }
