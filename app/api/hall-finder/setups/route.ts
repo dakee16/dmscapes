@@ -5,7 +5,7 @@ import { rateLimit } from "@/lib/rate-limit";
 import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
 import { isPaid } from "@/lib/plan";
-import { parseRankRequest } from "@/lib/hall-finder-server";
+import { storablePlaces } from "@/lib/hall-finder-server";
 
 export const runtime = "nodejs";
 
@@ -31,18 +31,6 @@ async function member(request: Request) {
   return { db, userId };
 }
 
-/** Places as stored: the ranking's validated shape plus each place's label. */
-async function storable(body: Record<string, unknown> | null) {
-  const parsed = await parseRankRequest(body);
-  if (!parsed) return null;
-  const raw = body!.places as Record<string, unknown>[];
-  const places = parsed.req.places.map((p, i) => ({
-    ...(p.placeId ? { placeId: p.placeId } : { pin: p.pin }),
-    days: p.days,
-    ...(typeof raw[i]?.label === "string" ? { label: String(raw[i].label).slice(0, 24) } : {}),
-  }));
-  return { collegeId: parsed.req.collegeId, places, filters: parsed.req.filters };
-}
 const cleanName = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim().slice(0, 80) : null);
 
 export async function GET(request: Request) {
@@ -62,7 +50,7 @@ export async function POST(request: Request) {
   const m = await member(request);
   if ("error" in m) return m.error;
   const body = await boundedJson(request);
-  const setup = await storable(body);
+  const setup = await storablePlaces(body);
   if (!setup) return reply({ error: "Those places couldn't be read." }, 400);
   const { count } = await m.db.from("hall_finder_setups").select("id", { count: "exact", head: true }).eq("user_id", m.userId);
   if ((count ?? 0) >= MAX_SETUPS) return reply({ error: `You can keep up to ${MAX_SETUPS} setups. Delete one to save another.` }, 409);
@@ -86,7 +74,7 @@ export async function PATCH(request: Request) {
   if (!current) return reply({ error: "That setup isn't yours or doesn't exist." }, 404);
   const update: Record<string, unknown> = {};
   if (body?.places !== undefined) {
-    const setup = await storable({ ...body, collegeId: (current as Row).college_id });
+    const setup = await storablePlaces({ ...body, collegeId: (current as Row).college_id });
     if (!setup) return reply({ error: "Those places couldn't be read." }, 400);
     update.places = setup.places;
     update.filters = setup.filters;
