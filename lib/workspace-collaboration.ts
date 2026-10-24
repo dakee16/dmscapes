@@ -1,4 +1,4 @@
-export type RoomSection = "room" | "shopping" | "roommates";
+export type RoomSection = "room" | "shopping" | "halls" | "roommates";
 export type RoomActivity = { section: RoomSection; view: "2d" | "3d"; selected: string | null };
 export type RoomPresence = RoomActivity & { session: string; active: boolean; at: number };
 export type RoomCursor = { surface: string; x: number; y: number; session: string; at: number };
@@ -22,7 +22,7 @@ export function readCursor(value: unknown): RoomCursor | null {
 export function readPresence(value: unknown): RoomPresence | null {
   if (!value || typeof value !== "object") return null;
   const p = value as RoomPresence;
-  if (!["room","shopping","roommates"].includes(p.section) || !["2d","3d"].includes(p.view) || typeof p.active !== "boolean" ||
+  if (!["room","shopping","halls","roommates"].includes(p.section) || !["2d","3d"].includes(p.view) || typeof p.active !== "boolean" ||
     typeof p.session !== "string" || p.session.length > 64 || !Number.isFinite(p.at)) return null;
   return {section:p.section, view:p.view, active:p.active, session:p.session, at:p.at,
     selected: typeof p.selected === "string" && p.selected.length <= 100 ? p.selected : null};
@@ -32,6 +32,7 @@ export function presenceLabel(p: RoomPresence | undefined, connected: boolean) {
   if (!p) return "Offline";
   if (!p.active) return "Away";
   if (p.section === "shopping") return "Browsing shopping";
+  if (p.section === "halls") return "Comparing halls";
   if (p.section === "roommates") return "With the roommates";
   return p.view === "3d" ? "In the 3D room" : "In the 2D plan";
 }

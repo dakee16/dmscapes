@@ -80,7 +80,10 @@ export type AnalyticsEvent =
   | "finder_paywall_viewed"
   | "finder_hall_selected"
   | "plan_from_finder"
-  | "hall_finder_entry_clicked";
+  | "hall_finder_entry_clicked"
+  // Hall Finder roommate mode (My Room Halls section)
+  | "room_halls_viewed"
+  | "room_halls_mode";
 
 let initialized = false;
 

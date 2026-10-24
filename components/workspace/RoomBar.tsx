@@ -14,10 +14,12 @@ export function CommentIcon({ size = 16 }: { size?: number }) {
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /></svg>;
 }
 
-/** The room header: name, where it is, the three views, who's here, the call, invite. */
-export default function RoomBar({ detail, userId, name, place, status, tab, setTab, badges, side, openSide, onInvite, canRename, onRename }: {
+/** The room header: name, where it is, the views, who's here, the call, invite. */
+export default function RoomBar({ detail, userId, name, place, status, tab, setTab, badges, halls, side, openSide, onInvite, canRename, onRename }: {
   detail: WorkspaceDetail; userId: string; name: string; place: string; status: { label: string; full: string; state: string };
   tab: RoomTab; setTab: (t: RoomTab) => void; badges: Partial<Record<RoomTab, number>>;
+  /** The Halls view (Hall Finder roommate mode), for a Hall Finder school. */
+  halls: boolean;
   side: "comments" | "voice" | null; openSide: (p: "comments" | "voice" | null) => void;
   onInvite: () => void; canRename: boolean; onRename: (name: string) => void;
 }) {
@@ -25,7 +27,7 @@ export default function RoomBar({ detail, userId, name, place, status, tab, setT
   const enabled = detail.workspace.shared && detail.ownerPro;
   const openCount = detail.comments.filter(c => !c.parent_id && !c.resolved).length;
   const isOwner = detail.role === "owner";
-  const tabs: [RoomTab, string, string][] = [["room", "Room plan", "Plan"], ["shopping", "Who brings what", "Who brings"], ["roommates", "People", "People"]];
+  const tabs: [RoomTab, string, string][] = [["room", "Room plan", "Plan"], ["shopping", "Who brings what", "Who brings"], ...(halls ? [["halls", "Halls", "Halls"] as [RoomTab, string, string]] : []), ["roommates", "People", "People"]];
   return <header className={s.bar}>
     <Link href="/rooms" className={s.barBack} aria-label="Back to My designs"><ChevronLeft size={22} /></Link>
     <Wordmark className={s.barMark} />
