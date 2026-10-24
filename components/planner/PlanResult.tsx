@@ -21,7 +21,7 @@ import { roomTypeLabel } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { hasHallFinder } from "@/lib/hall-finder";
-import { ResultTip } from "@/components/hall-finder/Entry";
+import ResultTip from "@/components/hall-finder/ResultTip";
 import { fitTemplateToRoom } from "@/lib/layout-fit";
 import { placeInPolygon } from "@/lib/place-in-polygon";
 import { syncProductFurniture } from "@/lib/product-model";
