@@ -32,7 +32,9 @@ export default async function SharedSetup(props: { params: Promise<{ token: stri
   const names = new Map(campus.places.map((p) => [p.id, p.name]));
   const filters = { ...NO_FILTERS, ...setup.filters };
   const places = setup.places.map((p) => ({ ...p, source: p.pin ? ("pin" as const) : p.label ? ("ics" as const) : ("manual" as const) }));
-  const open = `/colleges/${setup.college_id}/hall-finder?s=${encodeDraft({ places, filters })}&view=results`;
+  // A dropped pin can be somewhere personal, so the share page lists it without a location
+  // and the link onward leaves pins out (their coordinates would ride in ?s=).
+  const open = `/colleges/${setup.college_id}/hall-finder?s=${encodeDraft({ places: places.filter((p) => !p.pin), filters })}&view=results`;
   const on = (Object.entries({ firstYear: "First-year halls", ac: "Has AC", singles: "Singles", doubles: "Doubles" }) as [keyof Filters, string][]).filter(([k]) => filters[k]).map(([, v]) => v);
   return (
     <PageShell>

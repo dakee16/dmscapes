@@ -15,7 +15,7 @@ export const TOPICS = [
   {
     id: "planning",
     label: "Planning & layouts",
-    faqTopics: ["Planning a dorm room", "Dorm room layouts", "Small and awkward rooms", "Draw your own room"],
+    faqTopics: ["Planning a dorm room", "Hall Finder", "Dorm room layouts", "Small and awkward rooms", "Draw your own room"],
   },
   { id: "measuring", label: "Measuring", faqTopics: ["Measuring your room"] },
   { id: "budget", label: "Budget & packing", faqTopics: ["Budget and cost", "Packing", "Shared shopping"] },

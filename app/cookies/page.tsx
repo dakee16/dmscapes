@@ -24,7 +24,7 @@ export default function CookiesPage() {
     <LegalLayout
       doc="cookies"
       title="Cookie Policy"
-      updated="October 15, 2026"
+      updated="October 24, 2026"
       intro={
         <p>
           Cookies are small pieces of data a site stores in your browser. dormscape
@@ -64,6 +64,17 @@ export default function CookiesPage() {
             browser session restoration can restore it. Saved rooms and comments
             are held on our server, not in this recovery entry.
           </li>
+          <li><strong>Hall Finder.</strong>{" "}
+            Your places, days and filters for each school are kept in local
+            storage under <code>dormscape-hall-finder-v1</code>, with the name of
+            the last schedule file you added and, on Plus or Pro, which saved
+            setup they belong to. <code>dormscape-hall-finder-last</code> remembers
+            the last school you used. When you sign in from Hall Finder,
+            <code> dormscape-hall-finder-resume</code> remembers the page to return
+            to for up to 24 hours, and session storage notes that the tab came
+            back from signing in. Schedule files themselves are never kept in
+            browser storage.
+          </li>
           <li><strong>3D drawing drafts.</strong>{" "}
             <code>dormscape-3d-draft-v1:…</code> stores the room builder draft in
             local storage, scoped to your account. It remains until replaced or
@@ -77,8 +88,9 @@ export default function CookiesPage() {
         <p>
           Local storage remembers your cookie choice
           (<code>dormscape-cookie-consent</code>), motion preference
-          (<code>dormscape-motion-paused</code>) and whether you have seen a
-          welcome message. These entries have no automatic expiry in our code.
+          (<code>dormscape-motion-paused</code>), whether you have seen a
+          welcome message, and whether the Hall Finder tip on your plan has been
+          shown or dismissed (<code>dormscape-hf-result-tip</code>). These entries have no automatic expiry in our code.
           Other short-lived entries support sign-in redirects, pending shopping
           actions and dismissed prompts. Session entries are cleared when their
           flow finishes or the browser tab session ends; local entries remain

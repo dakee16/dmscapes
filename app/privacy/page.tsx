@@ -26,7 +26,8 @@ const SUMMARY = [
   "We don't sell your data, and we don't build advertising profiles.",
   "Shared-room members can see your display name, comments and replies, online or away status, active room view, and live cursor. Public design links are a separate feature.",
   "Voice is optional. Your microphone stays off until you choose to talk. dormscape does not record or transcribe calls.",
-  "Supabase handles room data and live collaboration; LiveKit carries voice. Resend, Stripe, Google, PostHog and Amazon support the other features described below.",
+  "Supabase handles room data and live collaboration; LiveKit carries voice. Resend, Stripe, Google, PostHog, Amazon, Anthropic and OpenFreeMap support the other features described below.",
+  "Hall Finder reads a calendar file in your browser. A schedule screenshot or PDF is sent to Anthropic to be read and is never stored by dormscape; only the classes you confirm are kept.",
   "Delete your account in Account settings, or contact info@dormscape.us for help. Owned rooms and designs are removed; some support and payment records may remain.",
 ];
 
@@ -35,7 +36,7 @@ export default function PrivacyPage() {
     <LegalLayout
       doc="privacy"
       title="Privacy Policy"
-      updated="October 15, 2026"
+      updated="October 24, 2026"
       intro={
         <p>
           This page explains what information dormscape collects, why, and what you
@@ -100,6 +101,36 @@ export default function PrivacyPage() {
             using Resend. Do not include passwords or payment details.
           </li>
           <li>
+            <strong>Hall Finder.</strong>{" "}
+            To rank halls by walking time, you add the buildings you have classes
+            in, the days you go, optional filters and, if you choose, a pin you
+            drop on the map. These are kept in this browser and in the page
+            address, with the name of the last schedule file you added, so a Hall
+            Finder link you copy or share includes them. Each ranking request
+            sends them to our server to work out walking times; we don&rsquo;t
+            store them there. A calendar (.ics) file you upload is read in your
+            browser and never sent to us. A screenshot or PDF of your schedule,
+            which needs an account, is sent to Anthropic, our AI provider, to read
+            the class names, days, times and locations. We handle the file in
+            memory and don&rsquo;t store it or the text read from it; our logs
+            record only counts and errors, such as the file&rsquo;s size and how
+            many classes were found. You check what was read, and only the classes
+            you confirm are added to your places, with their course names. Plus
+            and Pro members can save setups: we store the school, your places
+            (buildings or dropped pins) with their days and course names, your
+            filters and the setup&rsquo;s name. Sharing a setup creates a link
+            that lets anyone with it see its buildings, days and course names; a
+            dropped pin is listed without its location. You can delete a setup
+            from My designs, and deleting your account removes all of them. In
+            a shared room in My Room, members can also add places to compare
+            halls together: we store each member&rsquo;s places (buildings or
+            dropped pins) with their days and course names, with the room. Other
+            members see your buildings, days and weekly walk to each hall; course
+            names and where you dropped a pin are shown only to you. Your places
+            in a room are deleted when you leave it or are removed, when the room
+            is deleted, or when you delete your account.
+          </li>
+          <li>
             <strong>Analytics.</strong>{" "}We use
             PostHog and Google Analytics to understand how people use dormscape:
             which pages get visited, how people find the site, which buttons get
@@ -120,7 +151,8 @@ export default function PrivacyPage() {
         <p>
           We use this information to run the planner (saving and reloading your
           designs), deliver invitations, synchronize shared rooms, display presence
-          and comments, connect optional voice calls, process purchases, understand
+          and comments, connect optional voice calls, rank halls by walking time
+          in Hall Finder, process purchases, understand
           which parts of the product work and which
           don&rsquo;t, and to respond if you send us feedback. We don&rsquo;t use your
           data to build advertising profiles, and we don&rsquo;t sell it.
@@ -185,6 +217,8 @@ export default function PrivacyPage() {
             </a>
             .
           </li>
+          <li><strong>Anthropic</strong> reads the schedule screenshots and PDFs you choose to upload to Hall Finder and returns the classes it finds. dormscape doesn&rsquo;t store the file.</li>
+          <li><strong>OpenFreeMap</strong> serves the map on Hall Finder pages. Your browser requests the map directly, so OpenFreeMap receives your network address and the area of the map you view. The map data is from OpenStreetMap.</li>
           <li><strong>LiveKit</strong> provides optional room voice, processing participant identifiers, live audio and connection data to deliver the call.</li>
           <li><strong>Resend</strong> delivers invitations, support messages and purchase confirmation emails, including recipient addresses and message content.</li>
           <li><strong>Stripe</strong> processes payments and invoices. dormscape receives purchase and invoice details, not your full card number.</li>

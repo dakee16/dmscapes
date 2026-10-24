@@ -55,6 +55,7 @@ const GROUPS = POSTS.filter((p) => p.faqs && p.faqs.length > 0).map((p) => ({
 // not listed keep their place at the end, so a new post's FAQs still show.
 const ORDER = [
   "Planning a dorm room",
+  "Hall Finder",
   "Measuring your room",
   "Budget and cost",
   "Dorm room layouts",
