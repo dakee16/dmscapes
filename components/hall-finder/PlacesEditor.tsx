@@ -228,7 +228,7 @@ export default function PlacesEditor({ campus, places, ics, imagesOn, signedIn, 
       <div className={styles.or}>Or add buildings</div>
       <div className={styles.search}>
         <label htmlFor="hf-search" className="ds-sr">Search buildings by name or code</label>
-        <div className={styles.searchBox}>
+        <div className={`${styles.searchBox} ds-searchbox`}>
           <SearchIcon />
           <input
             ref={inputRef}

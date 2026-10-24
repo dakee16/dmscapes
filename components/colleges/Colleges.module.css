@@ -27,7 +27,6 @@
   background: #fff;
   box-shadow: 0 0 0 1.5px rgba(22, 22, 29, 0.14);
 }
-.filter:focus-within { box-shadow: 0 0 0 2px var(--ds-blue); }
 .filter input {
   flex: 1;
   min-width: 0;

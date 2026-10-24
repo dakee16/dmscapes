@@ -51,7 +51,7 @@ export default function HallDirectory({ halls, families }: { halls: HallCard[]; 
   return (
     <div>
       <div className={css.dirTools}>
-        <div className={css.filter}>
+        <div className={`${css.filter} ds-searchbox`}>
           <label htmlFor={`${uid}-q`} className="ds-sr">
             Search buildings
           </label>

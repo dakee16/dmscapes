@@ -55,7 +55,6 @@
 /* Search combobox */
 .search { position: relative; margin-top: 12px; }
 .searchBox { display: flex; align-items: center; gap: 10px; height: 50px; padding: 0 16px; border-radius: 999px; background: #fff; box-shadow: 0 10px 30px rgba(36, 73, 255, 0.1), 0 0 0 1.5px rgba(22, 22, 29, 0.1); color: var(--ds-muted); }
-.searchBox:focus-within { box-shadow: 0 10px 30px rgba(36, 73, 255, 0.1), 0 0 0 2px var(--ds-blue); }
 .searchBox input { flex: 1; min-width: 0; height: 100%; border: 0; background: transparent; font: 500 16px var(--ds-sans); color: var(--ds-ink); outline: none; }
 .options { position: absolute; z-index: 5; left: 0; right: 0; top: calc(100% + 6px); max-height: 320px; overflow-y: auto; margin: 0; padding: 6px; list-style: none; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1.5px rgba(22, 22, 29, 0.12), 0 18px 40px rgba(22, 22, 29, 0.14); }
 .option { display: flex; align-items: baseline; gap: 8px; padding: 9px 12px; border-radius: 10px; cursor: pointer; font-size: 15px; }

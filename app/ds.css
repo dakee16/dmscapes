@@ -92,6 +92,12 @@
   outline-offset: 3px;
   border-radius: 6px;
 }
+/* A search pill (any wrapper with an input inside, class ds-searchbox) shows focus the way
+   the home hero search does: it lifts to white on a deeper blue glow. The input inside never
+   draws the ring above, which sat as a square box inside the pill. */
+.ds .ds-searchbox { transition: box-shadow 0.3s var(--ds-ease), background-color 0.3s var(--ds-ease); }
+.ds .ds-searchbox:focus-within { background: var(--ds-search-bg-focus); box-shadow: var(--ds-search-shadow-focus); }
+.ds .ds-searchbox :focus-visible { outline: none; }
 
 .ds-wrap {
   width: min(100% - 2 * var(--ds-gutter), var(--ds-max));

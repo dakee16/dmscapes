@@ -110,7 +110,7 @@ export default function MyRooms() {
           <div className={s.tabs} role="group" aria-label="Show">
             {([["designs", "Designs", designs.length], ["drawn", "Rooms you drew", drawn.length], ["rooms", "Workspaces", workspaces.length]] as const).map(([key, text, n]) => <button key={key} type="button" aria-pressed={tab === key} onClick={() => setTab(key)}>{text} · {n}</button>)}
           </div>
-          <label className={s.search}><SearchIcon size={18}/><span className="ds-sr">Search your rooms</span><input type="search" placeholder="Find a room…" value={search} onChange={e => setSearch(e.target.value)}/></label>
+          <label className={`${s.search} ds-searchbox`}><SearchIcon size={18}/><span className="ds-sr">Search your rooms</span><input type="search" placeholder="Find a room…" value={search} onChange={e => setSearch(e.target.value)}/></label>
           {tab !== "rooms" && saved.length >= 2 && <span className={s.tick}>Tick two to compare</span>}
         </div>
         {error && <div className={s.error} role="alert">{error} <button type="button" onClick={() => void load()}>Retry</button></div>}

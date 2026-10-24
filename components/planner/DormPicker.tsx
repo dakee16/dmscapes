@@ -39,7 +39,7 @@ export default function DormPicker({
       <label htmlFor={`${id}-q`} className="ds-sr">
         Search buildings
       </label>
-      <div className={css.hallSearch}>
+      <div className={`${css.hallSearch} ds-searchbox`}>
         <SearchIcon size={18} />
         <input
           id={`${id}-q`}
