@@ -89,6 +89,8 @@ export interface CampusHall {
   osm: string | null;
   year: Year;
   yearSource: string | string[] | null;
+  /** Nearest dining hall, library and gym by walking minutes (public; the hall page shows them). */
+  near?: Partial<Record<"dining" | "library" | "gym", { placeId: string; minutes: number }>>;
 }
 
 export interface CampusPlace {

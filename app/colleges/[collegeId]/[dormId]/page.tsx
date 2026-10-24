@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import fs from "node:fs/promises";
+import path from "node:path";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageShell from "@/components/ds/PageShell";
@@ -18,6 +20,10 @@ import { beddingAdvisory } from "@/lib/bedding";
 import { bedName, fitRoom, furnitureSqFt, ft, hasDims, isPublished, roomName, sqFtOf, type FittedRoom } from "@/lib/room-preview";
 import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, postalAddressJsonLd, absoluteUrl } from "@/lib/seo";
 import type { RoomSummary } from "@/lib/types";
+import { HallHeroLink, HallWalks, type NearPlace } from "@/components/hall-finder/Entry";
+import { hasHallFinder, type Campus } from "@/lib/hall-finder";
+import { hallFacts, readSchoolDorms } from "@/lib/hall-finder-server";
+import { exampleFor } from "@/lib/hall-finder-example";
 import css from "@/components/hall/Hall.module.css";
 
 // One page per residence hall. Every page carries data that is genuinely
@@ -92,6 +98,10 @@ export default async function DormPage(props: {
   const siblings = school.dorms.filter((d) => d.id !== dorm.id).slice(0, 12);
   const planHref = `/plan?school=${school.id}&dorm=${dorm.id}`;
   const n = dorm.rooms.length;
+
+  // Pilot schools: the hall's nearest dining hall, library and gym from the public campus
+  // file, read at build (the walking-minute matrix itself stays server-only).
+  const finder = hasHallFinder(school.id) ? await hallFinderBits(school.id, dorm.id, short) : null;
 
   const rooms = dorm.rooms.map((r) => ({ r, fit: fitRoom(r) }));
   const fitted = rooms.filter((x): x is { r: RoomSummary; fit: FittedRoom } => x.fit !== null);
@@ -220,6 +230,7 @@ export default async function DormPage(props: {
         <a href="#rooms" className="ds-btn ds-btn--ghost">
           {n === 1 ? "See the room" : n === 2 ? "See both rooms" : `See all ${n} rooms`}
         </a>
+        {finder && <HallHeroLink collegeId={school.id} dormId={dorm.id} />}
       </PageHero>
 
       {/* Room types: the substance of the page. */}
@@ -328,6 +339,10 @@ export default async function DormPage(props: {
           )}
         </div>
       </section>
+
+      {finder && finder.near.length > 0 && (
+        <HallWalks collegeId={school.id} dormId={dorm.id} hall={dorm.name} short={short} {...finder} allHalls={finder.halls === school.dorms.length} />
+      )}
 
       {pieces.length > 0 && (
         <section className={`ds-section ${css.pieces}`} aria-labelledby="pieces-title">
@@ -493,4 +508,22 @@ export default async function DormPage(props: {
       </CtaBand>
     </PageShell>
   );
+}
+
+const NEAR_LABEL = { dining: "Dining", library: "Library", gym: "Gym" } as const;
+
+async function hallFinderBits(collegeId: string, dormId: string, short: string): Promise<{ near: NearPlace[]; area: string | null; halls: number }> {
+  const campus = JSON.parse(await fs.readFile(path.join(process.cwd(), "data", "campus", `${collegeId}.json`), "utf8")) as Campus;
+  const hall = campus.halls.find((h) => h.dormId === dormId);
+  const placeOf = new Map(campus.places.map((p) => [p.id, p]));
+  const near = (["dining", "library", "gym"] as const).flatMap((k) => {
+    const n = hall?.near?.[k];
+    const p = n ? placeOf.get(n.placeId) : undefined;
+    return n && p ? [{ name: p.name, kind: NEAR_LABEL[k], minutes: n.minutes }] : [];
+  });
+  return {
+    near,
+    area: hallFacts(await readSchoolDorms(collegeId))[dormId]?.area ?? null,
+    halls: exampleFor(collegeId, short)?.halls ?? campus.halls.length,
+  };
 }
