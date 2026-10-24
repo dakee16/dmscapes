@@ -8,5 +8,25 @@
       "year": "upper",
       "yearSource": "https://liveon.psu.edu/university-park/housing/beam-hall"
     }
+  },
+  "places": {
+    "pegula-ice-arena": {
+      "kind": "academic"
+    },
+    "holuba-hall": {
+      "kind": "academic"
+    },
+    "multi-sport-indoor-facility": {
+      "kind": "academic"
+    },
+    "lasch-football-building": {
+      "kind": "academic"
+    }
+  },
+  "notes": {
+    "pegula-ice-arena": "Varsity hockey arena, not a student gym.",
+    "holuba-hall": "Football's indoor practice facility, not a student gym.",
+    "multi-sport-indoor-facility": "Varsity training facility, not a student gym.",
+    "lasch-football-building": "Football operations building, not a student gym."
   }
 }

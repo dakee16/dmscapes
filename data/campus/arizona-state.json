@@ -1,6 +1,6 @@
 {
  "collegeId": "arizona-state",
- "generatedAt": "2026-10-19T18:47:01.618Z",
+ "generatedAt": "2026-10-24T07:54:13.018Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -82,7 +82,17 @@
    "yearSource": [
     "https://housing.asu.edu/housing-communities/residential-colleges/barrett-residential-complex",
     "https://housing.asu.edu/first-year-housing"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sun-devil-fitness-complex-552634953",
+     "minutes": 5.6
+    },
+    "library": {
+     "placeId": "ross-blakley-hall",
+     "minutes": 9.1
+    }
+   }
   },
   {
    "dormId": "hassayampa-academic-village",
@@ -102,7 +112,17 @@
    "pin": "name",
    "osm": "way/256984986",
    "year": "first",
-   "yearSource": "https://housing.asu.edu/first-year-housing"
+   "yearSource": "https://housing.asu.edu/first-year-housing",
+   "near": {
+    "gym": {
+     "placeId": "mona-plummer-aquatic-center",
+     "minutes": 8.2
+    },
+    "library": {
+     "placeId": "noble-science-and-engineering-library",
+     "minutes": 6
+    }
+   }
   },
   {
    "dormId": "palo-verde-east",
@@ -112,7 +132,17 @@
    "pin": "name",
    "osm": "relation/3444657",
    "year": "first",
-   "yearSource": "https://housing.asu.edu/first-year-housing"
+   "yearSource": "https://housing.asu.edu/first-year-housing",
+   "near": {
+    "gym": {
+     "placeId": "mona-plummer-aquatic-center",
+     "minutes": 5.7
+    },
+    "library": {
+     "placeId": "hayden-library",
+     "minutes": 8.1
+    }
+   }
   },
   {
    "dormId": "palo-verde-west",
@@ -122,7 +152,17 @@
    "pin": "name",
    "osm": "relation/3444658",
    "year": "first",
-   "yearSource": "https://housing.asu.edu/first-year-housing"
+   "yearSource": "https://housing.asu.edu/first-year-housing",
+   "near": {
+    "gym": {
+     "placeId": "mona-plummer-aquatic-center",
+     "minutes": 5.6
+    },
+    "library": {
+     "placeId": "hayden-library",
+     "minutes": 7.6
+    }
+   }
   },
   {
    "dormId": "san-pablo",
@@ -135,7 +175,17 @@
    "yearSource": [
     "https://housing.asu.edu/first-year-housing",
     "https://housing.asu.edu/continuing-student-housing"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "mona-plummer-aquatic-center",
+     "minutes": 6.8
+    },
+    "library": {
+     "placeId": "noble-science-and-engineering-library",
+     "minutes": 11.4
+    }
+   }
   },
   {
    "dormId": "sonora-center",
@@ -148,7 +198,17 @@
    "yearSource": [
     "https://housing.asu.edu/first-year-housing",
     "https://housing.asu.edu/continuing-student-housing"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sun-devil-fitness-complex-552634953",
+     "minutes": 8.7
+    },
+    "library": {
+     "placeId": "ross-blakley-hall",
+     "minutes": 12.5
+    }
+   }
   },
   {
    "dormId": "tooker-house",
@@ -158,7 +218,17 @@
    "pin": "address",
    "osm": "way/590166118",
    "year": "first",
-   "yearSource": "https://housing.asu.edu/first-year-housing"
+   "yearSource": "https://housing.asu.edu/first-year-housing",
+   "near": {
+    "gym": {
+     "placeId": "mona-plummer-aquatic-center",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "hayden-library",
+     "minutes": 8.3
+    }
+   }
   },
   {
    "dormId": "vista-del-sol",
@@ -168,7 +238,17 @@
    "pin": "name",
    "osm": "way/712701946",
    "year": "upper",
-   "yearSource": "https://housing.asu.edu/continuing-student-housing"
+   "yearSource": "https://housing.asu.edu/continuing-student-housing",
+   "near": {
+    "gym": {
+     "placeId": "sun-devil-fitness-complex-552634953",
+     "minutes": 2.8
+    },
+    "library": {
+     "placeId": "ross-blakley-hall",
+     "minutes": 6.5
+    }
+   }
   }
  ],
  "places": [
@@ -566,17 +646,6 @@
    "osm": "way/28821988"
   },
   {
-   "id": "college-avenue-commons",
-   "name": "College Avenue Commons",
-   "short": "College Avenue Commons",
-   "kind": "dining",
-   "codes": [],
-   "aliases": [],
-   "lng": -111.935572,
-   "lat": 33.423508,
-   "osm": "way/544817159"
-  },
-  {
    "id": "biodesign-institute-building-c",
    "name": "Biodesign Institute Building C",
    "short": "Biodesign Institute Building C",
@@ -625,7 +694,7 @@
    "id": "creativity-commons",
    "name": "Creativity Commons",
    "short": "Creativity Commons",
-   "kind": "dining",
+   "kind": "academic",
    "codes": [
     "CRTVC"
    ],

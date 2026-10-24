@@ -1,6 +1,6 @@
 {
  "collegeId": "columbia",
- "generatedAt": "2026-10-19T18:47:00.868Z",
+ "generatedAt": "2026-10-24T07:54:13.179Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -80,6 +80,11 @@
    "name": "Housing page",
    "url": "https://www.housing.columbia.edu/watt",
    "use": "year tag"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/columbia.json",
+   "use": "manual pins, year tags, place codes and aliases"
   }
  ],
  "bounds": [
@@ -97,7 +102,13 @@
    "pin": "name",
    "osm": "way/274995753",
    "year": "first",
-   "yearSource": "https://www.housing.columbia.edu/content/housing-first-year-students"
+   "yearSource": "https://www.housing.columbia.edu/content/housing-first-year-students",
+   "near": {
+    "library": {
+     "placeId": "butler-library",
+     "minutes": 0.7
+    }
+   }
   },
   {
    "dormId": "carman-hall",
@@ -107,7 +118,13 @@
    "pin": "name",
    "osm": "way/274995722",
    "year": "first",
-   "yearSource": "https://www.housing.columbia.edu/carman"
+   "yearSource": "https://www.housing.columbia.edu/carman",
+   "near": {
+    "library": {
+     "placeId": "butler-library",
+     "minutes": 1.3
+    }
+   }
   },
   {
    "dormId": "furnald-hall",
@@ -117,7 +134,13 @@
    "pin": "name",
    "osm": "way/274995731",
    "year": "first",
-   "yearSource": "https://www.housing.columbia.edu/furnald"
+   "yearSource": "https://www.housing.columbia.edu/furnald",
+   "near": {
+    "library": {
+     "placeId": "butler-library",
+     "minutes": 1.8
+    }
+   }
   },
   {
    "dormId": "hartley-hall",
@@ -127,7 +150,13 @@
    "pin": "name",
    "osm": "way/274995733",
    "year": "upper",
-   "yearSource": "https://www.housing.columbia.edu/hartley"
+   "yearSource": "https://www.housing.columbia.edu/hartley",
+   "near": {
+    "library": {
+     "placeId": "butler-library",
+     "minutes": 1.5
+    }
+   }
   },
   {
    "dormId": "broadway-hall",
@@ -137,7 +166,13 @@
    "pin": "name",
    "osm": "way/271585091",
    "year": "upper",
-   "yearSource": "https://www.housing.columbia.edu/broadway"
+   "yearSource": "https://www.housing.columbia.edu/broadway",
+   "near": {
+    "library": {
+     "placeId": "butler-library",
+     "minutes": 3
+    }
+   }
   },
   {
    "dormId": "schapiro-hall",
@@ -147,7 +182,13 @@
    "pin": "name",
    "osm": "way/274982907",
    "year": "upper",
-   "yearSource": "https://www.housing.columbia.edu/schapiro"
+   "yearSource": "https://www.housing.columbia.edu/schapiro",
+   "near": {
+    "library": {
+     "placeId": "butler-library",
+     "minutes": 4.2
+    }
+   }
   },
   {
    "dormId": "mcbain-hall",
@@ -157,7 +198,13 @@
    "pin": "name",
    "osm": "relation/3625590",
    "year": "upper",
-   "yearSource": "https://www.housing.columbia.edu/mcbain"
+   "yearSource": "https://www.housing.columbia.edu/mcbain",
+   "near": {
+    "library": {
+     "placeId": "butler-library",
+     "minutes": 3.7
+    }
+   }
   },
   {
    "dormId": "wien-hall",
@@ -170,7 +217,13 @@
    "yearSource": [
     "https://www.housing.columbia.edu/content/wien-hall",
     "https://www.housing.columbia.edu/content/housing-first-year-students"
-   ]
+   ],
+   "near": {
+    "library": {
+     "placeId": "butler-library",
+     "minutes": 4.5
+    }
+   }
   },
   {
    "dormId": "river-hall",
@@ -180,7 +233,13 @@
    "pin": "name",
    "osm": "way/274979073",
    "year": "upper",
-   "yearSource": "https://www.housing.columbia.edu/river"
+   "yearSource": "https://www.housing.columbia.edu/river",
+   "near": {
+    "library": {
+     "placeId": "butler-library",
+     "minutes": 4.5
+    }
+   }
   },
   {
    "dormId": "hogan-ruggles",
@@ -193,7 +252,13 @@
    "yearSource": [
     "https://www.housing.columbia.edu/hogan",
     "https://www.housing.columbia.edu/ruggles"
-   ]
+   ],
+   "near": {
+    "library": {
+     "placeId": "butler-library",
+     "minutes": 2.9
+    }
+   }
   },
   {
    "dormId": "watt-hall",
@@ -203,7 +268,13 @@
    "pin": "name",
    "osm": "relation/3625586",
    "year": "upper",
-   "yearSource": "https://www.housing.columbia.edu/watt"
+   "yearSource": "https://www.housing.columbia.edu/watt",
+   "near": {
+    "library": {
+     "placeId": "butler-library",
+     "minutes": 4
+    }
+   }
   }
  ],
  "places": [
@@ -273,17 +344,6 @@
    "lng": -73.961291,
    "lat": 40.808966,
    "osm": "way/274995776"
-  },
-  {
-   "id": "low-memorial-library",
-   "name": "Low Memorial Library",
-   "short": "Low Memorial Library",
-   "kind": "library",
-   "codes": [],
-   "aliases": [],
-   "lng": -73.961836,
-   "lat": 40.808223,
-   "osm": "way/274995757"
   },
   {
    "id": "riverside-church",

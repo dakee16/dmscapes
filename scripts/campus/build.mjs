@@ -2,7 +2,8 @@
 // school file, the campus config and the manual overrides. No network.
 //   node scripts/campus/build.mjs penn-state
 // Writes:
-//   data/campus/<id>.json                    client-safe: sources, bounds, hall pins, places
+//   data/campus/<id>.json                    client-safe: sources, bounds, hall pins (with each
+//                                            hall's nearest dining, library and gym), places
 //   data/campus/<id>.minutes.json            server only: { places: [ids], halls: { dormId: [minutes] } }
 //   data/campus/paths/<id>/<dormId>.json     server only: { placeId: encoded polyline }
 //   data/campus/index.json                   the pilot list: adds <id>
@@ -376,8 +377,9 @@ const OUTBUILDING = /\b(bus|parking|garage|deck|substation|shed|shelter|barn|sil
 function kindOf(t) {
   const name = t.name ?? "";
   if (t.amenity === "library" || t.building === "library" || /\blibrar(y|ies)\b/i.test(name)) return "library";
-  // Dining halls, not every cafe or cart with a building outline.
-  if (t.amenity === "food_court" || /\b(dining|food district|commons)\b/i.test(name)) return "dining";
+  // Dining halls, not every cafe or cart with a building outline. A name-only "commons" match
+  // must not be tagged as something else (UF's commons are amenity=community_centre).
+  if (t.amenity === "food_court" || /\b(dining|food district)\b/i.test(name) || (/\bcommons\b/i.test(name) && !t.amenity)) return "dining";
   if (["sports_centre", "fitness_centre", "sports_hall"].includes(t.leisure) || ["sports_hall", "sports_centre"].includes(t.building) || /\b(gym|gymnasium|fitness|recreation|natatorium|intramural)\b/i.test(name)) return "gym";
   return "academic";
 }
@@ -614,6 +616,20 @@ for (const [dormId, { row, paths }] of routes) {
   fs.writeFileSync(path.join(outDir, `${dormId}.json`), JSON.stringify(paths));
 }
 
+// Each hall's nearest dining hall, library and gym. Public (the hall page shows them), so they
+// go in the client file; the full matrix stays in minutes.json.
+const NEAR_KINDS = ["dining", "library", "gym"];
+function nearOf(dormId) {
+  const row = minutes.halls[dormId];
+  if (!row) return undefined;
+  const near = {};
+  kept.forEach((p, i) => {
+    const k = p.out.kind;
+    if (NEAR_KINDS.includes(k) && row[i] !== null && (!near[k] || row[i] < near[k].minutes)) near[k] = { placeId: p.out.id, minutes: row[i] };
+  });
+  return Object.keys(near).length ? near : undefined;
+}
+
 // ---- Client-safe file
 const fetched = (c) => c?.fetchedAt?.slice(0, 10);
 const yearUrls = [...new Set(halls.flatMap((h) => [h.year.source].flat()).filter((u) => u?.startsWith("http")))];
@@ -643,6 +659,7 @@ const campus = {
     osm: h.building?.osm ?? null,
     year: h.year.year,
     yearSource: h.year.source,
+    near: nearOf(h.d.dorm_id),
   })),
   places: places.map((p) => p.out),
 };

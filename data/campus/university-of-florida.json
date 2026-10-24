@@ -1,6 +1,6 @@
 {
  "collegeId": "university-of-florida",
- "generatedAt": "2026-10-20T05:20:13.410Z",
+ "generatedAt": "2026-10-24T07:54:34.306Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -32,7 +32,7 @@
   }
  ],
  "bounds": [
-  -82.3708,
+  -82.37053,
   29.62898,
   -82.33302,
   29.65298
@@ -46,7 +46,21 @@
    "pin": "name",
    "osm": "way/1015400666",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 5.5
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 4
+    }
+   }
   },
   {
    "dormId": "broward-hall",
@@ -56,7 +70,21 @@
    "pin": "name",
    "osm": "way/150861257",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 7.6
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 1.7
+    }
+   }
   },
   {
    "dormId": "buckman-hall",
@@ -66,7 +94,21 @@
    "pin": "name",
    "osm": "way/294197709",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-and-fitness-center",
+     "minutes": 2.9
+    },
+    "library": {
+     "placeId": "library-west",
+     "minutes": 3.6
+    },
+    "dining": {
+     "placeId": "racquet-club-dining-center",
+     "minutes": 2.2
+    }
+   }
   },
   {
    "dormId": "cypress-hall",
@@ -76,7 +118,21 @@
    "pin": "name",
    "osm": "way/276867721",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 5.7
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 7.6
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 3.3
+    }
+   }
   },
   {
    "dormId": "east-hall",
@@ -86,7 +142,21 @@
    "pin": "name",
    "osm": "way/150803323",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "florida-gym",
+     "minutes": 5.2
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 9.5
+    },
+    "dining": {
+     "placeId": "gator-corner-dining-center",
+     "minutes": 1
+    }
+   }
   },
   {
    "dormId": "fletcher-hall",
@@ -96,7 +166,21 @@
    "pin": "name",
    "osm": "way/294197708",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-and-fitness-center",
+     "minutes": 2.4
+    },
+    "library": {
+     "placeId": "library-west",
+     "minutes": 3.2
+    },
+    "dining": {
+     "placeId": "racquet-club-dining-center",
+     "minutes": 1.7
+    }
+   }
   },
   {
    "dormId": "honors-village",
@@ -106,7 +190,21 @@
    "pin": "address",
    "osm": "way/1133281285",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 7.6
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 6.6
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 4.3
+    }
+   }
   },
   {
    "dormId": "hume-hall",
@@ -116,7 +214,21 @@
    "pin": "name",
    "osm": "way/427905273",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "florida-gym",
+     "minutes": 10.5
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 13
+    },
+    "dining": {
+     "placeId": "gator-corner-dining-center",
+     "minutes": 6.5
+    }
+   }
   },
   {
    "dormId": "infinity-hall",
@@ -126,7 +238,21 @@
    "pin": "name",
    "osm": "way/363163143",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 12.7
+    },
+    "library": {
+     "placeId": "smathers-library",
+     "minutes": 11.5
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 13.9
+    }
+   }
   },
   {
    "dormId": "jennings-hall",
@@ -136,7 +262,21 @@
    "pin": "address",
    "osm": "way/865542768",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 9.2
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 8.8
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 6.9
+    }
+   }
   },
   {
    "dormId": "keys-residential-complex",
@@ -146,7 +286,21 @@
    "pin": "manual",
    "osm": "way/150861257",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 7.6
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 1.7
+    }
+   }
   },
   {
    "dormId": "lakeside-residential-complex",
@@ -156,7 +310,21 @@
    "pin": "manual",
    "osm": "way/150861257",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 7.6
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 1.7
+    }
+   }
   },
   {
    "dormId": "mallory-hall",
@@ -166,7 +334,21 @@
    "pin": "name",
    "osm": "way/150858517",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 4.7
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 6.1
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 1.4
+    }
+   }
   },
   {
    "dormId": "murphree-hall",
@@ -176,7 +358,21 @@
    "pin": "name",
    "osm": "way/150926629",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-and-fitness-center",
+     "minutes": 1.5
+    },
+    "library": {
+     "placeId": "library-west",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "racquet-club-dining-center",
+     "minutes": 1
+    }
+   }
   },
   {
    "dormId": "north-hall",
@@ -186,7 +382,21 @@
    "pin": "name",
    "osm": "way/150800193",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "florida-gym",
+     "minutes": 5.6
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 10
+    },
+    "dining": {
+     "placeId": "gator-corner-dining-center",
+     "minutes": 1.6
+    }
+   }
   },
   {
    "dormId": "rawlings-hall",
@@ -196,7 +406,21 @@
    "pin": "name",
    "osm": "way/150823412",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "florida-gym",
+     "minutes": 7.9
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 3.6
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 2.3
+    }
+   }
   },
   {
    "dormId": "reid-hall",
@@ -206,7 +430,21 @@
    "pin": "name",
    "osm": "way/150858518",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 2.5
+    }
+   }
   },
   {
    "dormId": "riker-hall",
@@ -216,7 +454,21 @@
    "pin": "name",
    "osm": "way/150800194",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "florida-gym",
+     "minutes": 5.8
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 10
+    },
+    "dining": {
+     "placeId": "gator-corner-dining-center",
+     "minutes": 1.6
+    }
+   }
   },
   {
    "dormId": "sledd-hall",
@@ -226,7 +478,21 @@
    "pin": "name",
    "osm": "way/294197707",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-and-fitness-center",
+     "minutes": 1.6
+    },
+    "library": {
+     "placeId": "library-west",
+     "minutes": 3.6
+    },
+    "dining": {
+     "placeId": "racquet-club-dining-center",
+     "minutes": 0.9
+    }
+   }
   },
   {
    "dormId": "springs-residential-complex",
@@ -236,7 +502,21 @@
    "pin": "manual",
    "osm": "way/150861257",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 7.6
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 1.7
+    }
+   }
   },
   {
    "dormId": "thomas-hall",
@@ -246,7 +526,21 @@
    "pin": "name",
    "osm": "way/294197706",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-and-fitness-center",
+     "minutes": 1.6
+    },
+    "library": {
+     "placeId": "library-west",
+     "minutes": 4.5
+    },
+    "dining": {
+     "placeId": "racquet-club-dining-center",
+     "minutes": 1.1
+    }
+   }
   },
   {
    "dormId": "tolbert-hall",
@@ -256,7 +550,21 @@
    "pin": "name",
    "osm": "way/150800196",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "florida-gym",
+     "minutes": 5.1
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 9.6
+    },
+    "dining": {
+     "placeId": "gator-corner-dining-center",
+     "minutes": 1.5
+    }
+   }
   },
   {
    "dormId": "weaver-hall",
@@ -266,7 +574,21 @@
    "pin": "name",
    "osm": "way/150800200",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "florida-gym",
+     "minutes": 6.8
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 11
+    },
+    "dining": {
+     "placeId": "gator-corner-dining-center",
+     "minutes": 2.7
+    }
+   }
   },
   {
    "dormId": "yulee-hall",
@@ -276,7 +598,21 @@
    "pin": "name",
    "osm": "way/150858522",
    "year": "any",
-   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/"
+   "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+   "near": {
+    "gym": {
+     "placeId": "norman-gym",
+     "minutes": 5.4
+    },
+    "library": {
+     "placeId": "marston-science-library",
+     "minutes": 6.7
+    },
+    "dining": {
+     "placeId": "broward-dining-center",
+     "minutes": 2
+    }
+   }
   }
  ],
  "places": [
@@ -304,17 +640,6 @@
    "lng": -82.344244,
    "lat": 29.640097,
    "osm": "way/154233185"
-  },
-  {
-   "id": "sanders-football-practice-fields",
-   "name": "Sanders Football Practice Fields",
-   "short": "Sanders Football Practice Fields",
-   "kind": "gym",
-   "codes": [],
-   "aliases": [],
-   "lng": -82.353112,
-   "lat": 29.650578,
-   "osm": "way/856556116"
   },
   {
    "id": "southwest-recreation-center",
@@ -807,7 +1132,7 @@
    "id": "basketball-practice-complex",
    "name": "Basketball Practice Complex",
    "short": "Basketball Practice Complex",
-   "kind": "gym",
+   "kind": "academic",
    "codes": [
     "BASK"
    ],
@@ -1730,7 +2055,7 @@
    "id": "hume-commons",
    "name": "Hume Commons",
    "short": "Hume Commons",
-   "kind": "dining",
+   "kind": "academic",
    "codes": [
     "HUME"
    ],
@@ -1757,17 +2082,6 @@
    "lng": -82.360315,
    "lat": 29.631868,
    "osm": "way/479187232"
-  },
-  {
-   "id": "corry-village-commons",
-   "name": "Corry Village Commons",
-   "short": "Corry Village Commons",
-   "kind": "dining",
-   "codes": [],
-   "aliases": [],
-   "lng": -82.360911,
-   "lat": 29.646393,
-   "osm": "way/289899832"
   },
   {
    "id": "powell-hall",
@@ -2098,7 +2412,7 @@
    "id": "lakeside-commons",
    "name": "Lakeside Commons",
    "short": "Lakeside Commons",
-   "kind": "dining",
+   "kind": "academic",
    "codes": [
     "LSRC"
    ],
@@ -2139,7 +2453,7 @@
    "id": "beaty-commons",
    "name": "Beaty Commons",
    "short": "Beaty Commons",
-   "kind": "dining",
+   "kind": "academic",
    "codes": [
     "BEC"
    ],
@@ -2329,17 +2643,6 @@
    "lng": -82.349608,
    "lat": 29.652817,
    "osm": "way/481413824"
-  },
-  {
-   "id": "murphree-area-commons-building",
-   "name": "Murphree Area Commons Building",
-   "short": "Murphree Area Commons Building",
-   "kind": "dining",
-   "codes": [],
-   "aliases": [],
-   "lng": -82.345707,
-   "lat": 29.65143,
-   "osm": "way/294197710"
   },
   {
    "id": "mccarty-hall-c",
@@ -2654,17 +2957,6 @@
    "osm": "way/259946086"
   },
   {
-   "id": "diamond-commons",
-   "name": "Diamond Commons",
-   "short": "Diamond Commons",
-   "kind": "dining",
-   "codes": [],
-   "aliases": [],
-   "lng": -82.340475,
-   "lat": 29.642403,
-   "osm": "way/150958003"
-  },
-  {
    "id": "university-womens-club",
    "name": "University Womens Club",
    "short": "University Womens Club",
@@ -2676,17 +2968,6 @@
    "lng": -82.356137,
    "lat": 29.649244,
    "osm": "way/284659325"
-  },
-  {
-   "id": "softball-batting-cage",
-   "name": "Softball Batting Cage",
-   "short": "Softball Batting Cage",
-   "kind": "gym",
-   "codes": [],
-   "aliases": [],
-   "lng": -82.36531,
-   "lat": 29.639063,
-   "osm": "way/293325245"
   },
   {
    "id": "ifas-field-support",
@@ -2833,17 +3114,6 @@
    "lng": -82.363923,
    "lat": 29.638279,
    "osm": "way/259946088"
-  },
-  {
-   "id": "maguire-commons",
-   "name": "Maguire Commons",
-   "short": "Maguire Commons",
-   "kind": "dining",
-   "codes": [],
-   "aliases": [],
-   "lng": -82.370803,
-   "lat": 29.641147,
-   "osm": "way/294234938"
   },
   {
    "id": "network-services-field-station",
@@ -3165,17 +3435,6 @@
    "lng": -82.367911,
    "lat": 29.641976,
    "osm": "way/863385104"
-  },
-  {
-   "id": "recreation-sports-maintenance",
-   "name": "Recreation Sports Maintenance",
-   "short": "Recreation Sports Maintenance",
-   "kind": "gym",
-   "codes": [],
-   "aliases": [],
-   "lng": -82.368751,
-   "lat": 29.640871,
-   "osm": "way/862064703"
   },
   {
    "id": "century-tower",

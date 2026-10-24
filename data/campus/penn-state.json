@@ -1,6 +1,6 @@
 {
  "collegeId": "penn-state",
- "generatedAt": "2026-10-20T05:20:11.880Z",
+ "generatedAt": "2026-10-24T07:54:19.088Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
@@ -347,7 +347,21 @@
    "pin": "name",
    "osm": "way/37094031",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/atherton-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/atherton-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 0.6
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 3
+    }
+   }
   },
   {
    "dormId": "beam-hall",
@@ -357,7 +371,21 @@
    "pin": "name",
    "osm": "way/431071068",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/beam-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/beam-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 9.9
+    },
+    "library": {
+     "placeId": "pattee-library",
+     "minutes": 7.7
+    },
+    "dining": {
+     "placeId": "warnock-commons",
+     "minutes": 2.2
+    }
+   }
   },
   {
    "dormId": "beaver-hall",
@@ -367,7 +395,21 @@
    "pin": "name",
    "osm": "way/430434713",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/beaver-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/beaver-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 11.5
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 1.4
+    }
+   }
   },
   {
    "dormId": "bigler-hall",
@@ -377,7 +419,21 @@
    "pin": "name",
    "osm": "way/37511281",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/bigler-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/bigler-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 1.1
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 9.6
+    },
+    "dining": {
+     "placeId": "johnston-commons",
+     "minutes": 1.3
+    }
+   }
   },
   {
    "dormId": "brill-hall",
@@ -387,7 +443,21 @@
    "pin": "name",
    "osm": "way/430391736",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/brill-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/brill-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 6.2
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 15
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 2.4
+    }
+   }
   },
   {
    "dormId": "brumbaugh-hall",
@@ -397,7 +467,21 @@
    "pin": "name",
    "osm": "way/291674450",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/brumbaugh-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/brumbaugh-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 12.9
+    },
+    "dining": {
+     "placeId": "findlay-commons",
+     "minutes": 0.6
+    }
+   }
   },
   {
    "dormId": "chace-hall",
@@ -407,7 +491,21 @@
    "pin": "name",
    "osm": "way/344027786",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/chace-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/chace-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 1.9
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 11.1
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 1.6
+    }
+   }
   },
   {
    "dormId": "cooper-hall",
@@ -417,7 +515,21 @@
    "pin": "name",
    "osm": "way/261002808",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/cooper-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/cooper-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 5.5
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 14.1
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 0.4
+    }
+   }
   },
   {
    "dormId": "cross-hall",
@@ -427,7 +539,21 @@
    "pin": "name",
    "osm": "way/261002811",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/cross-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/cross-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 13.8
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 1
+    }
+   }
   },
   {
    "dormId": "curry-hall",
@@ -437,7 +563,21 @@
    "pin": "name",
    "osm": "way/264374197",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/curry-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/curry-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 7.2
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 16
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 3.3
+    }
+   }
   },
   {
    "dormId": "curtin-hall",
@@ -447,7 +587,21 @@
    "pin": "name",
    "osm": "way/37511285",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/curtin-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/curtin-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 1.2
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 10.3
+    },
+    "dining": {
+     "placeId": "johnston-commons",
+     "minutes": 1.1
+    }
+   }
   },
   {
    "dormId": "dunham-hall",
@@ -457,7 +611,21 @@
    "pin": "name",
    "osm": "way/202051662",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/dunham-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/dunham-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 19.5
+    },
+    "library": {
+     "placeId": "pattee-library",
+     "minutes": 13.4
+    },
+    "dining": {
+     "placeId": "waring-commons",
+     "minutes": 11
+    }
+   }
   },
   {
    "dormId": "earle-hall",
@@ -467,7 +635,21 @@
    "pin": "name",
    "osm": "way/539316693",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/earle-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/earle-hall",
+   "near": {
+    "gym": {
+     "placeId": "intramural-building",
+     "minutes": 4.9
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 14.5
+    },
+    "dining": {
+     "placeId": "findlay-commons",
+     "minutes": 2.3
+    }
+   }
   },
   {
    "dormId": "ewing-hall",
@@ -477,7 +659,21 @@
    "pin": "name",
    "osm": "way/261002813",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/ewing-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/ewing-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 4.2
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 13
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 0.3
+    }
+   }
   },
   {
    "dormId": "garban",
@@ -487,7 +683,21 @@
    "pin": "name",
    "osm": "way/431978929",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/garban"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/garban",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 19.4
+    },
+    "library": {
+     "placeId": "pattee-library",
+     "minutes": 13.8
+    },
+    "dining": {
+     "placeId": "waring-commons",
+     "minutes": 11.4
+    }
+   }
   },
   {
    "dormId": "geary-hall",
@@ -497,7 +707,21 @@
    "pin": "name",
    "osm": "way/37511284",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/geary-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/geary-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 2.4
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 11
+    },
+    "dining": {
+     "placeId": "johnston-commons",
+     "minutes": 0.5
+    }
+   }
   },
   {
    "dormId": "grubb",
@@ -507,7 +731,21 @@
    "pin": "name",
    "osm": "way/431978930",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/grubb"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/grubb",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 19.9
+    },
+    "library": {
+     "placeId": "pattee-library",
+     "minutes": 14.6
+    },
+    "dining": {
+     "placeId": "waring-commons",
+     "minutes": 12.2
+    }
+   }
   },
   {
    "dormId": "haller-hall",
@@ -517,7 +755,21 @@
    "pin": "name",
    "osm": "way/261002815",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/haller-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/haller-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 2.9
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 12.1
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 1.3
+    }
+   }
   },
   {
    "dormId": "hamilton-hall",
@@ -527,7 +779,21 @@
    "pin": "name",
    "osm": "way/431780860",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/hamilton-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hamilton-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 9.2
+    },
+    "library": {
+     "placeId": "pattee-library",
+     "minutes": 2.3
+    },
+    "dining": {
+     "placeId": "waring-commons",
+     "minutes": 0.5
+    }
+   }
   },
   {
    "dormId": "harris-hall",
@@ -537,7 +803,21 @@
    "pin": "name",
    "osm": "way/264374200",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/harris-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/harris-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 8.9
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 17.5
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 4.4
+    }
+   }
   },
   {
    "dormId": "hartranft-hall",
@@ -547,7 +827,21 @@
    "pin": "name",
    "osm": "way/264373968",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/hartranft-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hartranft-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 2.3
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 10.6
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 2.1
+    }
+   }
   },
   {
    "dormId": "hastings-hall",
@@ -557,7 +851,21 @@
    "pin": "name",
    "osm": "way/37511282",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/hastings-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hastings-hall",
+   "near": {
+    "gym": {
+     "placeId": "intramural-building",
+     "minutes": 3.3
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 14.3
+    },
+    "dining": {
+     "placeId": "findlay-commons",
+     "minutes": 1.2
+    }
+   }
   },
   {
    "dormId": "hibbs-hall",
@@ -567,7 +875,21 @@
    "pin": "name",
    "osm": "way/261002817",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/hibbs-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hibbs-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 2.3
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 11.3
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 1.5
+    }
+   }
   },
   {
    "dormId": "hiester-hall",
@@ -577,7 +899,21 @@
    "pin": "name",
    "osm": "way/264373969",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/hiester-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hiester-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 12.1
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 0.7
+    }
+   }
   },
   {
    "dormId": "holmes-hall",
@@ -587,7 +923,21 @@
    "pin": "name",
    "osm": "way/65425677",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/holmes-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/holmes-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 8.6
+    },
+    "library": {
+     "placeId": "pattee-library",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "warnock-commons",
+     "minutes": 0.9
+    }
+   }
   },
   {
    "dormId": "hoyt-hall",
@@ -597,7 +947,21 @@
    "pin": "name",
    "osm": "way/264374201",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/hoyt-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/hoyt-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 6.4
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 14.7
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 1.7
+    }
+   }
   },
   {
    "dormId": "irvin-hall",
@@ -607,7 +971,21 @@
    "pin": "name",
    "osm": "way/46594566",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/irvin-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/irvin-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 10.3
+    },
+    "library": {
+     "placeId": "pattee-library",
+     "minutes": 0.8
+    },
+    "dining": {
+     "placeId": "waring-commons",
+     "minutes": 1.4
+    }
+   }
   },
   {
    "dormId": "jordan-hall",
@@ -617,7 +995,21 @@
    "pin": "name",
    "osm": "way/431780861",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/jordan-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/jordan-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 10.3
+    },
+    "library": {
+     "placeId": "pattee-library",
+     "minutes": 0.9
+    },
+    "dining": {
+     "placeId": "waring-commons",
+     "minutes": 1.8
+    }
+   }
   },
   {
    "dormId": "leete-hall",
@@ -627,7 +1019,21 @@
    "pin": "name",
    "osm": "way/65425665",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/leete-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/leete-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 8
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 8.4
+    },
+    "dining": {
+     "placeId": "warnock-commons",
+     "minutes": 0.5
+    }
+   }
   },
   {
    "dormId": "lyons-hall",
@@ -637,7 +1043,21 @@
    "pin": "name",
    "osm": "way/261002821",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/lyons-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/lyons-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 4.2
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 13.4
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 1.1
+    }
+   }
   },
   {
    "dormId": "martin-hall",
@@ -647,7 +1067,21 @@
    "pin": "name",
    "osm": "way/539094010",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/martin-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/martin-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 1.6
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 11.3
+    },
+    "dining": {
+     "placeId": "johnston-commons",
+     "minutes": 2
+    }
+   }
   },
   {
    "dormId": "mcelwain-hall",
@@ -657,7 +1091,21 @@
    "pin": "name",
    "osm": "way/46594789",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/mcelwain-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/mcelwain-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 0.9
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 3.3
+    }
+   }
   },
   {
    "dormId": "mckean-hall",
@@ -667,7 +1115,21 @@
    "pin": "name",
    "osm": "way/37125587",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/mckean-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/mckean-hall",
+   "near": {
+    "gym": {
+     "placeId": "intramural-building",
+     "minutes": 2.3
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 12.5
+    },
+    "dining": {
+     "placeId": "johnston-commons",
+     "minutes": 0.5
+    }
+   }
   },
   {
    "dormId": "mckee-hall",
@@ -677,7 +1139,21 @@
    "pin": "name",
    "osm": "way/431780862",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/mckee-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/mckee-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 11.1
+    },
+    "library": {
+     "placeId": "pattee-library",
+     "minutes": 1.6
+    },
+    "dining": {
+     "placeId": "waring-commons",
+     "minutes": 0.2
+    }
+   }
   },
   {
    "dormId": "mifflin-hall",
@@ -687,7 +1163,21 @@
    "pin": "name",
    "osm": "way/430434714",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/mifflin-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/mifflin-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 2.3
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 10.2
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 2.6
+    }
+   }
   },
   {
    "dormId": "miller-hall",
@@ -697,7 +1187,21 @@
    "pin": "name",
    "osm": "way/264374203",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/miller-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/miller-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 9.4
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 17.9
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 4.7
+    }
+   }
   },
   {
    "dormId": "nelson-hall",
@@ -707,7 +1211,21 @@
    "pin": "name",
    "osm": "way/264374204",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/nelson-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/nelson-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 8.8
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 17.3
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 4.1
+    }
+   }
   },
   {
    "dormId": "nittany-apt-garden",
@@ -737,7 +1255,21 @@
    "pin": "name",
    "osm": "way/261326043",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/nittany-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/nittany-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 5.7
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 14
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 1.5
+    }
+   }
   },
   {
    "dormId": "packer-hall",
@@ -747,7 +1279,21 @@
    "pin": "name",
    "osm": "way/37511280",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/packer-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/packer-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 1.8
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 10.3
+    },
+    "dining": {
+     "placeId": "johnston-commons",
+     "minutes": 1
+    }
+   }
   },
   {
    "dormId": "panofsky-hall",
@@ -757,7 +1303,21 @@
    "pin": "name",
    "osm": "way/264374206",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/panofsky-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/panofsky-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 7.8
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 16.6
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 3.1
+    }
+   }
   },
   {
    "dormId": "pennypacker-hall",
@@ -767,7 +1327,21 @@
    "pin": "name",
    "osm": "way/37125586",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/pennypacker-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/pennypacker-hall",
+   "near": {
+    "gym": {
+     "placeId": "intramural-building",
+     "minutes": 2.2
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 12.2
+    },
+    "dining": {
+     "placeId": "johnston-commons",
+     "minutes": 0.9
+    }
+   }
   },
   {
    "dormId": "pinchot-hall",
@@ -777,7 +1351,21 @@
    "pin": "name",
    "osm": "way/430202303",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/pinchot-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/pinchot-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 12.1
+    },
+    "dining": {
+     "placeId": "findlay-commons",
+     "minutes": 1.6
+    }
+   }
   },
   {
    "dormId": "porter-hall",
@@ -787,7 +1375,21 @@
    "pin": "name",
    "osm": "way/264373974",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/porter-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/porter-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 3.9
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 12.2
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 1.3
+    }
+   }
   },
   {
    "dormId": "ritner-hall",
@@ -797,7 +1399,21 @@
    "pin": "name",
    "osm": "way/430434717",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/ritner-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/ritner-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 4.8
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 11.8
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 0.5
+    }
+   }
   },
   {
    "dormId": "robinson-hall",
@@ -807,7 +1423,21 @@
    "pin": "name",
    "osm": "way/503897264",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/robinson-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/robinson-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 8.6
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "warnock-commons",
+     "minutes": 2.3
+    }
+   }
   },
   {
    "dormId": "runkle-hall",
@@ -817,7 +1447,21 @@
    "pin": "name",
    "osm": "way/65425682",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/runkle-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/runkle-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 7.1
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 7.3
+    },
+    "dining": {
+     "placeId": "warnock-commons",
+     "minutes": 0.4
+    }
+   }
   },
   {
    "dormId": "shulze-hall",
@@ -827,7 +1471,21 @@
    "pin": "name",
    "osm": "way/264373976",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/shulze-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/shulze-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 3.8
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 11.2
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 1.3
+    }
+   }
   },
   {
    "dormId": "shunk-hall",
@@ -837,7 +1495,21 @@
    "pin": "name",
    "osm": "way/430434718",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/shunk-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/shunk-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 4.6
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 12.9
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 0.9
+    }
+   }
   },
   {
    "dormId": "simmons-hall",
@@ -847,7 +1519,21 @@
    "pin": "name",
    "osm": "way/46594790",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/simmons-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/simmons-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 0.9
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 9.2
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 1.7
+    }
+   }
   },
   {
    "dormId": "snyder-hall",
@@ -857,7 +1543,21 @@
    "pin": "name",
    "osm": "way/37511279",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/snyder-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/snyder-hall",
+   "near": {
+    "gym": {
+     "placeId": "intramural-building",
+     "minutes": 2
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 14.5
+    },
+    "dining": {
+     "placeId": "findlay-commons",
+     "minutes": 1.2
+    }
+   }
   },
   {
    "dormId": "sproul-hall",
@@ -867,7 +1567,21 @@
    "pin": "name",
    "osm": "way/430202307",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/sproul-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/sproul-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 11.8
+    },
+    "dining": {
+     "placeId": "findlay-commons",
+     "minutes": 0.4
+    }
+   }
   },
   {
    "dormId": "stephens-hall",
@@ -877,7 +1591,21 @@
    "pin": "name",
    "osm": "way/261002824",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/stephens-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/stephens-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 3.3
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 11.8
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 0.4
+    }
+   }
   },
   {
    "dormId": "stone-hall",
@@ -887,7 +1615,21 @@
    "pin": "name",
    "osm": "way/37511283",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/stone-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/stone-hall",
+   "near": {
+    "gym": {
+     "placeId": "intramural-building",
+     "minutes": 2.2
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 13.9
+    },
+    "dining": {
+     "placeId": "findlay-commons",
+     "minutes": 0.6
+    }
+   }
   },
   {
    "dormId": "stuart-hall",
@@ -897,7 +1639,21 @@
    "pin": "name",
    "osm": "way/37511278",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/stuart-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/stuart-hall",
+   "near": {
+    "gym": {
+     "placeId": "intramural-building",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 13.9
+    },
+    "dining": {
+     "placeId": "findlay-commons",
+     "minutes": 0.7
+    }
+   }
   },
   {
    "dormId": "tener-hall",
@@ -907,7 +1663,21 @@
    "pin": "name",
    "osm": "way/430202308",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/tener-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/tener-hall",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 12.5
+    },
+    "dining": {
+     "placeId": "findlay-commons",
+     "minutes": 1.1
+    }
+   }
   },
   {
    "dormId": "thompson-hall",
@@ -917,7 +1687,21 @@
    "pin": "name",
    "osm": "way/431780863",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/thompson-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/thompson-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 8.4
+    },
+    "library": {
+     "placeId": "pattee-library",
+     "minutes": 1
+    },
+    "dining": {
+     "placeId": "waring-commons",
+     "minutes": 1.3
+    }
+   }
   },
   {
    "dormId": "watts-hall",
@@ -927,7 +1711,21 @@
    "pin": "name",
    "osm": "way/431780865",
    "year": "any",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/watts-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/watts-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 10.3
+    },
+    "library": {
+     "placeId": "pattee-library",
+     "minutes": 1.3
+    },
+    "dining": {
+     "placeId": "waring-commons",
+     "minutes": 1.1
+    }
+   }
   },
   {
    "dormId": "wolf-hall",
@@ -937,7 +1735,21 @@
    "pin": "name",
    "osm": "way/264373979",
    "year": "first",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/wolf-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/wolf-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 4.2
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 11.2
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 1.2
+    }
+   }
   },
   {
    "dormId": "young-hall",
@@ -947,7 +1759,21 @@
    "pin": "name",
    "osm": "way/430391738",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/young-hall"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/young-hall",
+   "near": {
+    "gym": {
+     "placeId": "white-building",
+     "minutes": 6.1
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 14.9
+    },
+    "dining": {
+     "placeId": "redifer-commons",
+     "minutes": 1.9
+    }
+   }
   }
  ],
  "places": [
@@ -1005,7 +1831,7 @@
    "id": "pegula-ice-arena",
    "name": "Pegula Ice Arena",
    "short": "Pegula Ice Arena",
-   "kind": "gym",
+   "kind": "academic",
    "codes": [
     "PIA"
    ],
@@ -1020,7 +1846,7 @@
    "id": "holuba-hall",
    "name": "Holuba Hall",
    "short": "Holuba Hall",
-   "kind": "gym",
+   "kind": "academic",
    "codes": [
     "HLB"
    ],
@@ -1033,7 +1859,7 @@
    "id": "multi-sport-indoor-facility",
    "name": "Multi-Sport Indoor Facility",
    "short": "Indoor Multi-Sport Facility",
-   "kind": "gym",
+   "kind": "academic",
    "codes": [
     "MIF"
    ],
@@ -1189,7 +2015,7 @@
    "id": "lasch-football-building",
    "name": "Lasch Football Building",
    "short": "Lasch Football Bldg",
-   "kind": "gym",
+   "kind": "academic",
    "codes": [
     "LFB"
    ],

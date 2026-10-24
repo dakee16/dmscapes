@@ -18,5 +18,29 @@
         29.646547
       ]
     }
+  },
+  "places": {
+    "sanders-football-practice-fields": {
+      "kind": "academic"
+    },
+    "basketball-practice-complex": {
+      "kind": "academic"
+    },
+    "softball-batting-cage": {
+      "kind": "academic"
+    },
+    "recreation-sports-maintenance": {
+      "kind": "academic"
+    },
+    "murphree-area-commons-building": {
+      "kind": "academic"
+    }
+  },
+  "notes": {
+    "sanders-football-practice-fields": "Football practice fields, not a student gym.",
+    "basketball-practice-complex": "Varsity basketball practice complex, not a student gym.",
+    "softball-batting-cage": "Varsity softball batting cage, not a student gym.",
+    "recreation-sports-maintenance": "RecSports maintenance building, not a gym.",
+    "murphree-area-commons-building": "Murphree area community building, not a dining hall."
   }
 }
