@@ -37,6 +37,7 @@
 .titleHall { font-size: 54px; }
 .titleSerif { display: block; font-size: 42px; }
 .honest { margin: 12px 0 0; font-size: 14px; line-height: 1.45; color: var(--ds-body); }
+.compareNote { margin: 12px 0 0; padding: 10px 14px; border-radius: 12px; background: #fff6cc; box-shadow: inset 0 0 0 1.5px #e8c547; font-size: 14px; line-height: 1.45; color: var(--ds-ink); }
 
 /* Upload */
 .upload { margin-top: 20px; display: flex; align-items: center; gap: 14px; padding: 14px 14px 14px 16px; border-radius: 16px; border: 2px dashed rgba(22, 22, 29, 0.22); background: #fff; }

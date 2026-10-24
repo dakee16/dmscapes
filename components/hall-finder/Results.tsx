@@ -61,6 +61,8 @@ interface Props {
   onFilter: (key: keyof Filters, on: boolean) => void;
   onEdit: () => void;
   onUpgrade: () => void;
+  /** A hall to compare against the #1 (from its hall page). */
+  preselect?: string | null;
   /** Plus/Pro: shown once a setup is saved ("Saved to your account."). */
   saveNote?: string;
   onShare?: () => void;
@@ -93,7 +95,7 @@ function PlanLinks({ collegeId, hall, rank, compact }: { collegeId: string; hall
   );
 }
 
-function FreeResults({ collegeId, schoolName, result, halls, facts, places, routeShown, onEdit, onUpgrade }: Props & { result: Extract<RankResult, { tier: "free" }> }) {
+function FreeResults({ collegeId, schoolName, result, halls, facts, places, routeShown, onEdit, onUpgrade, preselect }: Props & { result: Extract<RankResult, { tier: "free" }> }) {
   const top = result.top;
   const hall = top ? halls.get(top.dormId) : undefined;
   if (!top || !hall) {
@@ -146,6 +148,13 @@ function FreeResults({ collegeId, schoolName, result, halls, facts, places, rout
       <div className={styles.actions}>
         <PlanLinks collegeId={collegeId} hall={hall} rank={1} />
       </div>
+      {preselect && halls.get(preselect) && (
+        <p className={styles.compareNote}>
+          {preselect === hall.dormId
+            ? `${hall.name} is the hall you came to compare, and it's your #1.`
+            : `Where does ${halls.get(preselect)!.name} rank? Plus shows every hall and compares it with ${hall.name}.`}
+        </p>
+      )}
       {result.count > 1 && (
         <div className={styles.plus}>
           <div className={styles.locks} aria-hidden="true">
@@ -180,9 +189,14 @@ function FreeResults({ collegeId, schoolName, result, halls, facts, places, rout
 
 const SHOW = 7;
 
-function PaidResults({ collegeId, schoolName, result, halls, facts, places, filters, hasYears, selected, onSelect, onFilter, onEdit, saveNote, onShare, shareLabel }: Props & { result: Extract<RankResult, { tier: "paid" }> }) {
-  const [all, setAll] = useState(false);
-  const [compare, setCompare] = useState<string[]>([]);
+function PaidResults({ collegeId, schoolName, result, halls, facts, places, filters, hasYears, selected, onSelect, onFilter, onEdit, saveNote, onShare, shareLabel, preselect }: Props & { result: Extract<RankResult, { tier: "paid" }> }) {
+  // A hall preselected from its page starts paired with the #1 in the compare bar, with the
+  // whole list open when it ranks below the first SHOW rows.
+  const [all, setAll] = useState(() => Boolean(preselect) && result.ranked.findIndex((r) => r.dormId === preselect) >= SHOW);
+  const [compare, setCompare] = useState<string[]>(() => {
+    const top = result.ranked[0]?.dormId;
+    return preselect && top && preselect !== top && result.ranked.some((r) => r.dormId === preselect) ? [top, preselect] : [];
+  });
   const [comparing, setComparing] = useState(false);
   const ranked = result.ranked;
   const worst = ranked.at(-1)?.weekly ?? 1;

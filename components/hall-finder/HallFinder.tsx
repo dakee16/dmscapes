@@ -163,6 +163,8 @@ export default function HallFinder({ campus, facts, schoolName, imagesOn = false
 
   const placeById = useMemo(() => new Map(campus.places.map((p) => [p.id, p])), [campus.places]);
   const hallById = useMemo(() => new Map(campus.halls.map((h) => [h.dormId, h])), [campus.halls]);
+  // From a hall page's "Got your class schedule?" card: that hall, preselected for comparison.
+  const compareHall = hallById.get(params.get("compare") ?? "") ?? null;
   const hasYears = campus.halls.some((h) => h.year !== null);
   const kindsPresent = useMemo(() => new Set(campus.places.map((p) => p.kind)), [campus.places]);
 
@@ -484,6 +486,7 @@ export default function HallFinder({ campus, facts, schoolName, imagesOn = false
         <span className={`${styles.titleSerif} ds-serif ds-serif--blue`}>by your classes.</span>
       </h1>
       <p className={styles.honest}>Most schools assign rooms. Use this to rank your housing preferences.</p>
+      {compareHall && <p className={styles.compareNote}>Add your classes and we&apos;ll show how {compareHall.name} compares.</p>}
     </>
   );
 
@@ -703,6 +706,7 @@ export default function HallFinder({ campus, facts, schoolName, imagesOn = false
           onFilter={(k, on) => act().setFilter(collegeId, k, on)}
           onEdit={() => router.push(urlFor("input"))}
           onUpgrade={() => openUpgrade("hall-finder")}
+          preselect={compareHall?.dormId ?? null}
           saveNote={paid && saving === "on" && saved ? "Saved to your account." : undefined}
           onShare={paid && saving === "on" && setupId ? share : undefined}
           shareLabel={shareLabel}
