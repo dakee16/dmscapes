@@ -10,6 +10,8 @@ shot psu-list.html 880,640 psu-list.png 2
 shot ucla-dark.html 390,700 ucla-dark.png 3
 cp psu-grid.png src/psu-grid.png
 shot photo.html 1400,1000 photo.png 2
+sed -e 's/filter:blur(0.7px)/filter:blur(2.6px)/' -e 's/rgba(255,255,255,.33)/rgba(255,255,255,.55)/' src/photo.html > src/blurry-photo.html
+shot blurry-photo.html 1400,1000 blurry.png 1
 shot not-a-schedule.html 900,640 not-a-schedule.png 1
 rm src/psu-grid.png
 "$CHROME" --headless=new --disable-gpu --no-pdf-header-footer --print-to-pdf="$PWD/psu-schedule.pdf" "file://$PWD/src/psu-print.html" 2>/dev/null
@@ -17,6 +19,7 @@ rm src/psu-grid.png
 # Phone-style JPEGs: the dark app screen, and the photo of a laptop screen (heavier compression).
 sips -s format jpeg -s formatOptions 85 ucla-dark.png --out ucla-dark.jpg >/dev/null && rm ucla-dark.png
 sips -s format jpeg -s formatOptions 62 photo.png --out photo-of-screen.jpg >/dev/null && rm photo.png
+sips -s format jpeg -s formatOptions 45 blurry.png --out blurry-photo.jpg >/dev/null && rm blurry.png src/blurry-photo.html
 # Rejection fixture: a text file wearing a .png name.
 printf 'BEGIN:VCALENDAR\nThis is not an image.\n' > fake-extension.png
 ls -la

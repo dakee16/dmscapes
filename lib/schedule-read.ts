@@ -72,21 +72,26 @@ const TOOL: Anthropic.Tool = {
   },
 };
 
-/** The tool's answer, trimmed and bounded; rows with no weekday or no location dropped. */
+/** The tool's answer, trimmed and bounded; rows with no weekday or no location dropped, and
+ *  meetings of one course in one place merged (a grid often comes back one row per day). */
 export function cleanClasses(input: unknown): ReadClass[] {
   const raw = (input as { classes?: unknown })?.classes;
   if (!Array.isArray(raw)) return [];
   const text = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
-  const out: ReadClass[] = [];
-  for (const r of raw.slice(0, 30) as Record<string, unknown>[]) {
+  const byClass = new Map<string, ReadClass>();
+  for (const r of raw.slice(0, 60) as Record<string, unknown>[]) {
     const days = weekdayMask(Array.isArray(r?.days) ? r.days.filter((d): d is string => typeof d === "string") : []);
     const location = text(r?.location_text, 80);
     const course = text(r?.course, 60);
     if (!course || !location || !days) continue;
-    const c = Number(r?.confidence);
-    out.push({ course, days, location, start: text(r?.start, 12) || null, end: text(r?.end, 12) || null, confidence: Number.isFinite(c) ? Math.min(1, Math.max(0, c)) : 0 });
+    const n = Number(r?.confidence);
+    const confidence = Number.isFinite(n) ? Math.min(1, Math.max(0, n)) : 0;
+    const key = `${course.toUpperCase()}|${location.toUpperCase().replace(/\s+/g, " ")}`;
+    const prev = byClass.get(key);
+    if (prev) byClass.set(key, { ...prev, days: prev.days | days, confidence: Math.min(prev.confidence, confidence) });
+    else if (byClass.size < 20) byClass.set(key, { course, days, location, start: text(r?.start, 12) || null, end: text(r?.end, 12) || null, confidence });
   }
-  return out;
+  return [...byClass.values()];
 }
 
 export type ReadResult =

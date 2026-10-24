@@ -10,8 +10,8 @@
 import fs from "node:fs";
 import Anthropic from "@anthropic-ai/sdk";
 import { matchBuilding } from "../lib/ics.ts";
-import { MAX_BYTES, MAX_PAGES, sniff } from "../lib/schedule-file.ts";
-import { DEFAULT_MODEL, pdfPages, readSchedule } from "../lib/schedule-read.ts";
+import { MAX_BYTES, MAX_PAGES, SURE, sniff } from "../lib/schedule-file.ts";
+import { DEFAULT_MODEL, cleanClasses, pdfPages, readSchedule } from "../lib/schedule-read.ts";
 import { rateLimit } from "../lib/rate-limit.ts";
 
 const DIR = "scripts/fixtures/schedules";
@@ -41,6 +41,9 @@ const CASES = {
   ]],
   "psu-schedule.pdf": ["penn-state", "pdf", [...GRID.slice(0, 4).map((c) => (c[0] === "MATH 140" ? [...c.slice(0, 3), "Thomas Bldg 102"] : c)), ["CAS 100A", M | W, "sackett-building", "Sackett 101"]]],
   "photo-of-screen.jpg": ["penn-state", "jpeg", GRID],
+  // Too blurry to trust: misreads are fine as long as they come back unsure, so the
+  // confirm screen asks instead of adding them.
+  "blurry-photo.jpg": ["penn-state", "jpeg", GRID, "blurry"],
 };
 
 let failed = 0;
@@ -59,10 +62,16 @@ const four = pdfPages(read("four-pages.pdf"));
 (four === 4 && four > MAX_PAGES ? ok : fail)(`four-pages.pdf has ${four} pages, over the ${MAX_PAGES}-page cap`);
 
 console.log("Matcher on each fixture's classes");
-for (const [file, [campus, , classes]] of Object.entries(CASES)) {
+for (const [file, [campus, , classes, blurry]] of Object.entries(CASES)) {
+  if (blurry) continue;
   const list = places(campus);
   for (const [course, , want, shown] of classes) (got(shown, list) === want ? ok : fail)(`${file} ${course} "${shown}" -> ${got(shown, list) ?? "no match (asks)"}`);
 }
+
+console.log("Cleaning the model's answer");
+const rows = [["M", "ECON 102", "WILLARD 062", 0.9], ["W", "ECON 102", "WILLARD  062", 0.95], ["F", "ECON 102", "WILLARD 062", 0.7], ["Sa", "LAB", "Thomas 102", 0.9], ["M", "SC 200", "", 0.9]];
+const cleaned = cleanClasses({ classes: rows.map(([d, course, location_text, confidence]) => ({ course, days: [d], start: "", end: "", location_text, confidence })) });
+(cleaned.length === 1 && cleaned[0].days === (M | W | F) && cleaned[0].confidence === 0.7 ? ok : fail)(`one row per day merges into one class (M W F, lowest confidence); weekend-only and room-less rows dropped -> ${JSON.stringify(cleaned.map((c) => [c.course, c.days, c.confidence]))}`);
 
 console.log("Rate limit (per user, in process)");
 const req = new Request("http://localhost/api/hall-finder/parse-schedule");
@@ -76,7 +85,7 @@ else {
   console.log(`\nModel reads (${model})`);
   const client = new Anthropic({ apiKey: key });
   let tokens = 0;
-  for (const [file, [campus, kind, classes]] of [...Object.entries(CASES), ["not-a-schedule.png", ["penn-state", "png", []]]]) {
+  for (const [file, [campus, kind, classes, blurry]] of [...Object.entries(CASES), ["not-a-schedule.png", ["penn-state", "png", []]]]) {
     const res = await readSchedule(client, model, kind, read(file));
     if (!res.ok) {
       (classes.length === 0 && res.reason === "not_schedule" ? ok : fail)(`${file}: ${res.reason}`);
@@ -87,10 +96,12 @@ else {
     const list = places(campus);
     for (const [course, days, want] of classes) {
       const c = res.classes.find((x) => x.course.toUpperCase().replace(/\s+/g, " ").startsWith(course));
-      if (!c) { fail(`${file} ${course}: not read (got ${res.classes.map((x) => x.course).join(" | ")})`); continue; }
+      if (!c) { (blurry ? ok : fail)(`${file} ${course}: not read (got ${res.classes.map((x) => x.course).join(" | ")})`); continue; }
       const where = got(c.location, list);
+      const right = where === want && c.days === days;
       const line = `${file} ${course} "${c.location}" ${c.days === days ? "" : `days ${c.days}≠${days} `}-> ${where ?? "no match (asks)"} · confidence ${c.confidence}`;
-      (where === want && c.days === days ? ok : fail)(line);
+      // Never confident and wrong: a misread must come back unsure so the confirm screen asks.
+      (right || (blurry && c.confidence < SURE) ? ok : fail)(blurry && !right ? `${line} (unsure, so it asks)` : line);
     }
     if (res.classes.length > classes.length) fail(`${file}: ${res.classes.length - classes.length} extra classes (${res.classes.map((x) => x.course).join(" | ")})`);
   }
