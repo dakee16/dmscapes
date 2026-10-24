@@ -16,6 +16,8 @@ import describeVibe from "./describe-your-dorm-room-in-words";
 import drawRoom from "./design-your-own-dorm-room";
 import planDorm from "./how-to-plan-a-college-dorm-room";
 import layoutIdeas from "./dorm-room-layout-ideas";
+import hallFinder from "./find-the-dorm-closest-to-your-classes";
+import { hallFinderLive } from "@/lib/hall-finder";
 
 // The blog registry. To publish a post: add its file above and to this array.
 // Everything else (index page, post pages, sitemap) reads from POSTS, so the
@@ -38,6 +40,8 @@ export const POSTS: BlogPost[] = [
   drawRoom,
   planDorm,
   layoutIdeas,
+  // Only while Hall Finder is live: with the flag off, nothing links to it.
+  ...(hallFinderLive() ? [hallFinder] : []),
 ].sort(
   // Newest first. ISO date strings sort correctly as plain strings.
   (a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)
