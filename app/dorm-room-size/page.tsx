@@ -15,7 +15,7 @@ import { SCHOOLS } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { dormSizeStats, MAX_SQFT_PER_PERSON, MIN_SCHOOL_ROOMS, type TypeStats } from "@/lib/dorm-sizes";
 import { fitRoom, furnitureSqFt, ft, type FittedRoom } from "@/lib/room-preview";
-import { pageMetadata, fitDescription, breadcrumbJsonLd, absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/seo";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/seo";
 import css from "@/components/dorm-size/DormSize.module.css";
 
 // Every number on this page comes from the published sizes in the school index
@@ -54,7 +54,13 @@ const nameOf = (s: { schoolId: string; schoolName: string }) => shortName({ id: 
 const ppf = Math.min(18, 300 / (Math.max(...typical.map((x) => x.fit.lengthFt)) + 1.75));
 
 const PATH = "/dorm-room-size";
-const TITLE = "How Big Is a Dorm Room? Average Dorm Room Size";
+// Searches here are "average dorm room size", "square footage", "dimensions": the title leads with
+// the answer (from the same data as the page), and the H1 keeps the question people ask.
+const TITLE = fitTitle(
+  `Average Dorm Room Size: ${fmt(double.median)} sq ft (${dims(double).replace(/\u00a0/g, " ")})`,
+  `Average Dorm Room Size: ${fmt(double.median)} sq ft`,
+  "Average Dorm Room Size",
+);
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,

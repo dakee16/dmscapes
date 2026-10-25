@@ -33,6 +33,7 @@ export function sitemapEntries(group: string): MetadataRoute.Sitemap {
         { url: `${BASE}/colleges`, lastModified: NEWEST_DATA, changeFrequency: "weekly", priority: 0.8 },
         { url: `${BASE}/dorm-room-size`, lastModified: NEWEST_DATA, changeFrequency: "monthly", priority: 0.8 },
         { url: `${BASE}/pricing`, changeFrequency: "monthly", priority: 0.7 },
+        { url: `${BASE}/my-room`, changeFrequency: "monthly", priority: 0.6 },
         { url: `${BASE}/blog`, lastModified: NEWEST_POST, changeFrequency: "weekly", priority: 0.7 },
         // FAQ answers are the guides' FAQs, rolled up.
         { url: `${BASE}/faq`, lastModified: NEWEST_POST, changeFrequency: "monthly", priority: 0.6 },

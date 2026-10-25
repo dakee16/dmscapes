@@ -13,7 +13,7 @@ import { outlineOf } from "@/components/blog/outline";
 import { TOPIC_PHRASE, shortDate, splitTitle, summarize, topicOf } from "@/components/blog/topics";
 import { getPost, allPostSlugs, POSTS } from "@/content/blog";
 import { articleJsonLd } from "@/lib/blog";
-import { RSS_FEED } from "@/lib/seo";
+import { RSS_FEED, breadcrumbJsonLd } from "@/lib/seo";
 import css from "@/components/blog/Post.module.css";
 
 // Prebuild every post at build time; unknown slugs 404.
@@ -84,7 +84,7 @@ export default async function BlogPostPage(props: {
 
   return (
     <PageShell>
-      <JsonLd data={jsonLd} />
+      <JsonLd data={[jsonLd, breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }, { name: post.title, path: `/blog/${post.slug}` }])]} />
       <ReadingBar targetId="post-body" />
 
       <header className={css.header} aria-labelledby="page-title">
