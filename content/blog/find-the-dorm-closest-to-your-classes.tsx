@@ -6,7 +6,8 @@ import { shortName } from "@/lib/school-names";
 import { PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PRO_PRICE_USD } from "@/lib/plan";
 
 // Hall Finder's schools and prices come from the data and lib/plan, never from this text.
-const SCHOOLS = PILOT_SCHOOLS.map((id) => getSchool(id)).filter((s) => s !== undefined).map((s) => shortName(s));
+const PILOTS = PILOT_SCHOOLS.map((id) => getSchool(id)).filter((s) => s !== undefined).map((s) => ({ id: s.id, short: shortName(s) }));
+const SCHOOLS = PILOTS.map((s) => s.short);
 const schoolList = SCHOOLS.length > 1 ? `${SCHOOLS.slice(0, -1).join(", ")} and ${SCHOOLS.at(-1)}` : (SCHOOLS[0] ?? "");
 const usd = (n: number) => `$${n.toFixed(2)}`;
 
@@ -31,9 +32,15 @@ function Body() {
         room in the hall you pick, straight from the results.
       </P>
       <P>
-        It works today at {schoolList}. Open{" "}
-        <TextLink href="/hall-finder">Hall Finder</TextLink> and choose your
-        school.
+        It works today at{" "}
+        {PILOTS.map((s, i) => (
+          <span key={s.id}>
+            {i > 0 && (i === PILOTS.length - 1 ? " and " : ", ")}
+            <TextLink href={`/colleges/${s.id}/hall-finder`}>{s.short}</TextLink>
+          </span>
+        ))}
+        . Open <TextLink href="/hall-finder">Hall Finder</TextLink> and choose
+        your school.
       </P>
 
       <H2>Add your classes</H2>
@@ -148,6 +155,17 @@ function Body() {
           picked.
         </Li>
       </Ol>
+
+      <H2>Where the data comes from</H2>
+      <P>
+        Walking routes use data from{" "}
+        <TextLink href="https://www.openstreetmap.org/copyright" external>OpenStreetMap contributors</TextLink>{" "}
+        (ODbL), and the map is served by{" "}
+        <TextLink href="https://openfreemap.org" external>OpenFreeMap</TextLink>.
+        Building names and codes come from each school&rsquo;s registrar or
+        housing office. Each school&rsquo;s Hall Finder page lists its sources
+        and the date its walking data was last built.
+      </P>
 
       <Callout label="Good to know">
         <p>

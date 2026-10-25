@@ -1,4 +1,5 @@
-import { SCHOOLS } from "@/lib/schools";
+import { SCHOOLS, getSchool } from "@/lib/schools";
+import { PILOT_SCHOOLS, hallFinderLive } from "@/lib/hall-finder";
 import { POSTS } from "@/content/blog";
 import { HALL_COUNT, LAYOUT_COUNT, SCHOOL_COUNT } from "@/lib/home-data";
 import { FLEX_CREDIT_PRICE_USD, FREE_PLAN_CAP, PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PRO_INITIAL_CREDITS, PRO_PRICE_USD } from "@/lib/plan";
@@ -36,6 +37,20 @@ const mainPages = () => [
   link("Contact", "/contact", CONTACT_EMAIL),
 ];
 
+/** Hall Finder and the schools it works at, once it is live (until then its pages are noindex and unlinked). */
+const hallFinder = () =>
+  hallFinderLive()
+    ? [
+        "## Hall Finder",
+        link("Hall Finder", "/hall-finder", "rank a school's residence halls by the weekly walk to your classes, with walking routes on a map"),
+        ...PILOT_SCHOOLS.flatMap((id) => {
+          const school = getSchool(id);
+          return school ? [link(`${school.name} Hall Finder`, `/colleges/${school.id}/hall-finder`, `ranks ${school.name} halls by walking time`)] : [];
+        }),
+        "",
+      ]
+    : [];
+
 const guidesAndColleges = () => [
   "## Guides",
   ...POSTS.map((post) => link(post.title, `/blog/${post.slug}`, post.description)),
@@ -57,6 +72,7 @@ export function llmsTxt(): string {
     "",
     ...mainPages(),
     "",
+    ...hallFinder(),
     ...guidesAndColleges(),
     "",
   ].join("\n");
@@ -97,6 +113,7 @@ export function homeMarkdown(): string {
     "",
     ...mainPages(),
     "",
+    ...hallFinder(),
     ...guidesAndColleges(),
     "",
   ].join("\n");
