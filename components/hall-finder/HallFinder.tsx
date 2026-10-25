@@ -5,7 +5,6 @@
 // the school's halls by weekly walk. The draft lives in lib/hall-finder-store and is mirrored
 // to ?s= so it survives sign-in; ranking and routes come from the tiered API routes.
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ArrowRight } from "@/components/ds/Icons";
@@ -16,6 +15,7 @@ import {
   decodeDraft,
   decodePolyline,
   encodeDraft,
+  rankedHalls,
   setResume,
   type Campus,
   type Filters,
@@ -24,6 +24,7 @@ import {
 } from "@/lib/hall-finder";
 import { EMPTY_DRAFT, useHallFinder } from "@/lib/hall-finder-store";
 import type { MapHall, MapPlace, MapRoute } from "./FinderMap";
+import FinderHead from "./FinderHead";
 import Gate from "./Gate";
 import { ChevronLeft } from "@/components/plan-steps/icons";
 import { LAST_SCHOOL_KEY } from "./LastSchool";
@@ -126,6 +127,8 @@ export default function HallFinder({ campus, facts, schoolName, imagesOn = false
   // From a hall page's "Got your class schedule?" card: that hall, preselected for comparison.
   const compareHall = hallById.get(params.get("compare") ?? "") ?? null;
   const hasYears = campus.halls.some((h) => h.year !== null);
+  // The halls it can rank, which can be fewer than the school lists (some have no spot on the map).
+  const ranked = rankedHalls(campus);
 
   // ---- Places in the draft, as shown and as sent
   const rows = draft.places.map((p, i) => ({ p, i, r: placeAt(placeById, p) })).filter((x) => x.r);
@@ -330,22 +333,7 @@ export default function HallFinder({ campus, facts, schoolName, imagesOn = false
   const filterChips: [keyof Filters, string][] = [...(hasYears ? [["firstYear", "First-year halls"] as [keyof Filters, string]] : []), ["ac", "Has AC"], ["singles", "Singles"], ["doubles", "Doubles"]];
 
   // ---- Render
-  const inputHead = (
-    <>
-      <p className={styles.crumbs}>
-        <Link href="/colleges">Colleges</Link> / <Link href={`/colleges/${collegeId}`}>{schoolName}</Link> / Hall Finder
-      </p>
-      <div className={styles.eyebrowRow}>
-        <p className={styles.eyebrow}>{schoolName} · Hall Finder</p>
-      </div>
-      <h1 className={styles.title}>
-        <span className={`${styles.titleBig} ds-riso`}>Find your hall</span>
-        <span className={`${styles.titleSerif} ds-serif ds-serif--blue`}>by your classes.</span>
-      </h1>
-      <p className={styles.honest}>Most schools assign rooms. Use this to rank your housing preferences.</p>
-      {compareHall && <p className={styles.compareNote}>Add your classes and we&apos;ll show how {compareHall.name} compares.</p>}
-    </>
-  );
+  const inputHead = <FinderHead collegeId={collegeId} schoolName={schoolName} />;
 
   const inputBody = (
     <>
@@ -390,7 +378,7 @@ export default function HallFinder({ campus, facts, schoolName, imagesOn = false
   else if (!signedIn)
     resultsBody = (
       <div aria-hidden="true">
-        <div className={styles.eyebrowRow}><p className={styles.eyebrow}>{schoolName} · {campus.halls.length} halls · {apiPlaces.length} places</p></div>
+        <div className={styles.eyebrowRow}><p className={styles.eyebrow}>{schoolName} · {ranked} halls · {apiPlaces.length} places</p></div>
         <p className={styles.title}>
           <span className={styles.titleBig}>Your halls,</span>
           <span className={`${styles.titleSerif} ds-serif ds-serif--blue`}>ranked by walking.</span>
@@ -413,7 +401,7 @@ export default function HallFinder({ campus, facts, schoolName, imagesOn = false
       </p>
     );
   else if (error && !result) resultsBody = <p className={styles.error} role="alert">{error}</p>;
-  else if (!result) resultsBody = <p className={styles.status} aria-busy="true">Ranking {campus.halls.length} halls…</p>;
+  else if (!result) resultsBody = <p className={styles.status} aria-busy="true">Ranking {ranked} halls…</p>;
   else
     resultsBody = (
       <div aria-busy={busy}>
@@ -498,10 +486,10 @@ export default function HallFinder({ campus, facts, schoolName, imagesOn = false
         <div className={styles.legend} aria-hidden="true">{legend}</div>
       </div>
       {view === "results" && ready && !authLoading && !signedIn && (
-        <Gate places={counted.length} halls={campus.halls.length} onEmail={() => openAuthModal("hall-finder")} onBack={() => router.push(urlFor("input"))} />
+        <Gate places={counted.length} halls={ranked} onEmail={() => openAuthModal("hall-finder")} onBack={() => router.push(urlFor("input"))} />
       )}
       {uploadGate && !signedIn && (
-        <Gate upload places={counted.length} halls={campus.halls.length} onEmail={() => openAuthModal("hall-finder")} onBack={() => setUploadGate(false)} />
+        <Gate upload places={counted.length} halls={ranked} onEmail={() => openAuthModal("hall-finder")} onBack={() => setUploadGate(false)} />
       )}
     </div>
   );

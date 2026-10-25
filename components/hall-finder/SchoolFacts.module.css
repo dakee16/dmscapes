@@ -1,0 +1,38 @@
+/* The written part of a school's Hall Finder page, under the finder. */
+.facts { padding: 56px 0 72px; border-top: 1.5px solid rgba(22, 22, 29, 0.08); }
+/* The finder's own results screen (and the phone sheet) stand alone, so the text steps aside. */
+:global(html[data-hf-view="results"]) .facts { display: none; }
+.wrap { width: min(100% - 48px, 860px); margin-inline: auto; }
+.h2 { margin: 44px 0 12px; font-size: clamp(24px, 3vw, 32px); line-height: 1.1; font-weight: 850; letter-spacing: -0.02em; color: var(--ds-ink); }
+.wrap > .h2:first-of-type { margin-top: 10px; }
+.h3 { margin: 22px 0 6px; font: 700 12px var(--ds-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-blue); }
+.p { margin: 0 0 14px; font-size: 17px; line-height: 1.6; color: var(--ds-body); }
+.p a, .steps a, .sources a, .halls a { color: var(--ds-ink); text-decoration: underline; text-decoration-color: rgba(22, 22, 29, 0.3); text-underline-offset: 3px; }
+.p a:hover, .sources a:hover, .halls a:hover { color: var(--ds-blue); text-decoration-color: currentColor; }
+.steps { margin: 8px 0 0; padding-left: 22px; font-size: 17px; line-height: 1.6; color: var(--ds-body); }
+.steps li { margin: 8px 0; padding-left: 4px; }
+.steps strong { color: var(--ds-ink); }
+.halls { list-style: none; margin: 0; padding: 0; columns: 3 200px; column-gap: 28px; font-size: 16px; line-height: 1.4; }
+.halls li { break-inside: avoid; padding: 5px 0; }
+.sources { margin: 0 0 8px; padding-left: 20px; font-size: 15.5px; line-height: 1.55; color: var(--ds-body); }
+.sources li { margin: 8px 0; overflow-wrap: anywhere; }
+.faq { margin: 0; }
+.faq > div { padding: 16px 0; border-top: 1.5px solid rgba(22, 22, 29, 0.08); }
+.faq dt { font-size: 18px; font-weight: 800; line-height: 1.3; color: var(--ds-ink); }
+.faq dd { margin: 6px 0 0; font-size: 16.5px; line-height: 1.6; color: var(--ds-body); }
+@media (max-width: 640px) {
+  .facts { padding: 40px 0 56px; }
+  .wrap { width: min(100% - 32px, 860px); }
+  .p, .steps { font-size: 16px; }
+  .halls { columns: 2 150px; column-gap: 18px; font-size: 15px; }
+}
+
+/* The all-schools table. */
+.tableWrap { overflow-x: auto; margin: 4px 0 14px; border-radius: 14px; background: #fff; box-shadow: 0 0 0 1.5px rgba(22, 22, 29, 0.1); }
+.table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 16px; }
+.table th, .table td { padding: 13px 18px; text-align: left; border-top: 1px solid rgba(22, 22, 29, 0.08); }
+.table thead th { border-top: 0; font: 700 11px var(--ds-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-muted); }
+.table tbody th { font-weight: 800; }
+.table td { font-variant-numeric: tabular-nums; color: var(--ds-body); }
+.table td:last-child { white-space: nowrap; }
+.table a { color: var(--ds-ink); text-underline-offset: 3px; }

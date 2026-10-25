@@ -114,6 +114,10 @@ export interface Campus {
   places: CampusPlace[];
 }
 
+/** Halls the finder can rank: the ones with a spot on the map, which are exactly the ones in the
+ *  minute matrix (scripts/check-campus.mjs checks it). A school can list more halls than this. */
+export const rankedHalls = (campus: Pick<Campus, "halls">): number => campus.halls.filter((h) => h.lng !== null && h.lat !== null).length;
+
 /** What the finder shows about each hall, from data/schools (server page reads it at build). */
 export interface HallFacts {
   area: string | null;

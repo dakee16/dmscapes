@@ -61,7 +61,12 @@ for (const id of ids) {
     "every hall has a path to every place": [],
     "size budgets (client < 150 KB, minutes < 250 KB)": [],
     "each hall's nearest dining, library and gym match the minutes": [],
+    "the halls with a map spot are exactly the halls ranked (rankedHalls in lib/hall-finder)": [],
   };
+  // Pages state "N halls ranked" from the campus file (rankedHalls); the finder ranks the minutes' halls.
+  const withSpot = campus.halls.filter((h) => h.lng !== null && h.lat !== null).map((h) => h.dormId).sort();
+  const inMatrix = Object.keys(minutes.halls).sort();
+  if (withSpot.join() !== inMatrix.join()) issues["the halls with a map spot are exactly the halls ranked (rankedHalls in lib/hall-finder)"].push(`${withSpot.length} with a spot vs ${inMatrix.length} in the minutes`);
   // The hall page reads near from the client file; it must agree with the matrix it came from.
   for (const h of campus.halls) {
     const row = minutes.halls[h.dormId];
