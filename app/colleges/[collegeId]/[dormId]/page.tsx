@@ -51,6 +51,11 @@ export async function generateMetadata(props: {
     .join(", ");
   const where = shortName(school);
   const baseName = dorm.name.replace(/\s*\(.*\)$/, "");
+  // A name another hall at the school shares once its "(…)" is dropped keeps the short qualifier
+  // ("Alderman Road (Hall-Style)"), or the two pages would have the same title.
+  const qualifier = dorm.name.match(/\(([^:,)]+)/)?.[1]?.trim();
+  const shared = school.dorms.some((d) => d.id !== dorm.id && d.name.replace(/\s*\(.*\)$/, "") === baseName);
+  const titleName = shared && qualifier ? `${baseName} (${qualifier})` : baseName;
   const count = `${types} room type${types === 1 ? "" : "s"}${sizes ? ` (${sizes})` : ""}`;
   const extras = dorm.rooms.some((r) => r.closet) ? "bed and closet sizes" : "bed sizes";
   return pageMetadata({
@@ -61,10 +66,12 @@ export async function generateMetadata(props: {
       `${dorm.name} Floor Plan & Room Sizes, ${where}`,
       `${dorm.name} Floor Plan, ${where}`,
       // Long names lose a trailing "(…)" in the title only; the page keeps it.
-      `${baseName} Floor Plan & Room Sizes, ${where}`,
-      `${baseName} Floor Plan, ${where}`,
-      `${baseName} Floor Plan`,
-      baseName,
+      `${titleName} Floor Plan & Room Sizes, ${where}`,
+      `${titleName} Floor Plan, ${where}`,
+      // Keep the school before dropping it: the same hall name at two schools must not share a title.
+      `${titleName}, ${where}`,
+      `${titleName} Floor Plan`,
+      titleName,
     ),
     description: fitDescription(
       `${dorm.name} at ${school.name}: ${count}, ${extras}, and a to-scale floor plan you can plan for free.`,
@@ -95,7 +102,10 @@ export default async function DormPage(props: {
   const address = postalAddressJsonLd(school.city, school.state);
   const short = shortName(school);
   const published = dorm.rooms.filter(isPublished);
-  const siblings = school.dorms.filter((d) => d.id !== dorm.id).slice(0, 12);
+  // The 12 halls after this one in the school's list, wrapping around: every hall then gets the same
+  // number of links in (the first 12 alphabetically used to get all of them, and the rest only one).
+  const at = school.dorms.findIndex((d) => d.id === dorm.id);
+  const siblings = Array.from({ length: Math.min(12, school.dorms.length - 1) }, (_, k) => school.dorms[(at + 1 + k) % school.dorms.length]);
   const planHref = `/plan?school=${school.id}&dorm=${dorm.id}`;
   const n = dorm.rooms.length;
 
