@@ -111,9 +111,13 @@ export function pageMetadata({
  */
 export const TIKTOK_URL = "https://www.tiktok.com/@dorm.scape";
 export const INSTAGRAM_URL = "https://www.instagram.com/dorm.scape";
+export const X_URL = "https://x.com/dormscapehq";
+export const PINTEREST_URL = "https://www.pinterest.com/07kzto0mnvc8tlnvzi1c7uhl6paua4/";
+export const LINKEDIN_URL = "https://www.linkedin.com/company/dormscape/";
+export const THREADS_URL = "https://www.threads.com/@dormscapehq";
 // The footer and contact page link these same constants, so what people can click and what the
 // schema says can't differ. TikTok's bio says "dormscape.us"; Instagram can't be read without a login.
-export const SOCIAL_PROFILES: string[] = [TIKTOK_URL, INSTAGRAM_URL];
+export const SOCIAL_PROFILES: string[] = [TIKTOK_URL, INSTAGRAM_URL, X_URL, PINTEREST_URL, LINKEDIN_URL, THREADS_URL];
 
 /** Where people (and agents) reach the team: the contact form and replies go here. */
 export const CONTACT_EMAIL = "info@dormscape.us";
