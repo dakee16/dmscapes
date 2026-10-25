@@ -17,6 +17,18 @@
         -82.342084,
         29.646547
       ]
+    },
+    "hume-hall": {
+      "pin": [
+        -82.352483,
+        29.644537
+      ]
+    },
+    "beaty-towers": {
+      "pin": [
+        -82.34049,
+        29.64416
+      ]
     }
   },
   "places": {
@@ -41,6 +53,8 @@
     "basketball-practice-complex": "Varsity basketball practice complex, not a student gym.",
     "softball-batting-cage": "Varsity softball batting cage, not a student gym.",
     "recreation-sports-maintenance": "RecSports maintenance building, not a gym.",
-    "murphree-area-commons-building": "Murphree area community building, not a dining hall."
+    "murphree-area-commons-building": "Murphree area community building, not a dining hall.",
+    "hume-hall": "Centre of Hume East and Hume West. OSM's only 'Hume Hall' is an RTS bus shelter on the road.",
+    "beaty-towers": "Centre of Beaty Tower A and Tower B. OSM's only 'Beaty Towers' is an RTS bus shelter across Museum Road."
   }
 }

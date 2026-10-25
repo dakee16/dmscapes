@@ -142,6 +142,9 @@ const uniqBy = (list, key) => {
 };
 
 // ---- OSM buildings
+// A bus stop is mapped as a small building named for its stop ("Hume Hall", "Beaty Towers" are RTS
+// shelters on the road beside the dorm), and an exact name match would pin the hall to it.
+const isBusShelter = (t) => t.amenity === "shelter" && (t.shelter_type === "public_transport" || t.highway === "bus_stop" || t.public_transport);
 function toBuildings(elements) {
   const skeletons = new Map(elements.filter((e) => e.type === "way" && !e.tags).map((e) => [e.id, e.nodes]));
   const entranceNodes = new Map(
@@ -150,7 +153,7 @@ function toBuildings(elements) {
       .map((e) => [e.id, xy(e.lon, e.lat)]),
   );
   return elements
-  .filter((e) => (e.type === "way" || e.type === "relation") && e.tags?.building)
+  .filter((e) => (e.type === "way" || e.type === "relation") && e.tags?.building && !isBusShelter(e.tags))
   .map((e) => {
     const geoms = e.type === "way" ? [e.geometry] : e.members.filter((m) => m.type === "way" && m.role !== "inner" && m.geometry).map((m) => m.geometry);
     const rings = geoms.filter((g) => g?.length > 2).map((g) => g.map((p) => xy(p.lon, p.lat)));
