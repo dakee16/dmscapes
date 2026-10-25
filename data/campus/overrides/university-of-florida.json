@@ -56,5 +56,39 @@
     "murphree-area-commons-building": "Murphree area community building, not a dining hall.",
     "hume-hall": "Centre of Hume East and Hume West. OSM's only 'Hume Hall' is an RTS bus shelter on the road.",
     "beaty-towers": "Centre of Beaty Tower A and Tower B. OSM's only 'Beaty Towers' is an RTS bus shelter across Museum Road."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "beaty-towers -> shands-facilities-administration",
+        "beaty-towers -> shands-facilities-administration-481256553",
+        "jennings-hall -> shands-facilities-administration",
+        "jennings-hall -> shands-facilities-administration-481256553",
+        "honors-village -> shands-facilities-administration-481256553"
+      ],
+      "maxRatio": 3.5,
+      "why": "The Shands generator plant is reached only by a dead-end drive on its south side; no path crosses the lawn between it and the Diamond Village loop road, so walks go round by the main road."
+    },
+    {
+      "pairs": [
+        "hume-hall -> odas",
+        "hume-hall -> mechanics-shop"
+      ],
+      "maxRatio": 3.5,
+      "why": "IFAS service buildings across open, unpathed fields from Hume; the mapped way is the long loop out to the main road and back in."
+    },
+    {
+      "pairs": [
+        "jennings-hall -> dickinson-hall"
+      ],
+      "maxRatio": 3,
+      "why": "Dickinson Hall is a 150 m building with its pin mid-footprint; the way in on the map is from the Museum Road side, across Newell Drive from Jennings."
+    }
+  ],
+  "longWalks": {
+    "infinity-hall": {
+      "maxMinutes": 55,
+      "why": "Infinity Hall is downtown (978 SW 2nd Ave). The places over 45 minutes are the far southwest and IFAS buildings, 2.5 to 3.6 km away in a straight line; each still faces the 2.5x rule."
+    }
   }
 }

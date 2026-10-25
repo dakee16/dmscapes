@@ -53,5 +53,42 @@
     "mo-ostin-basketball-center": {
       "kind": "academic"
     }
-  }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "hedrick-hall -> sunset-canyon-recreation-center",
+        "hedrick-summit -> sunset-canyon-recreation-center",
+        "centennial-hall -> sunset-canyon-recreation-center",
+        "hitch-suites -> sunset-canyon-recreation-center"
+      ],
+      "maxRatio": 6.5,
+      "why": "OSM has no path across the slope between the Hedrick/Hitch hill and the recreation centre, so walks loop round by the hill road. A real stair or trail there may be unmapped."
+    },
+    {
+      "pairs": [
+        "olympic-hall -> southern-regional-library-facility",
+        "centennial-hall -> southern-regional-library-facility",
+        "saxon-suites -> southern-regional-library-facility",
+        "hitch-suites -> southern-regional-library-facility"
+      ],
+      "maxRatio": 3.5,
+      "why": "A wide building whose only mapped way in is the road on its south side; no path crosses the slope between it and the halls."
+    },
+    {
+      "pairs": [
+        "rieber-hall -> northwest-campus-auditorium",
+        "delta-terrace -> northwest-campus-auditorium"
+      ],
+      "maxRatio": 4.5,
+      "why": "Sproul Cove and Sproul Hall stand between them, so walks go round the buildings; Rieber Hall is 150 m long and its pin is mid-footprint."
+    },
+    {
+      "pairs": [
+        "sproul-hall -> covel-commons-sunset-village"
+      ],
+      "maxRatio": 3,
+      "why": "Sproul Hall's way out on the map is on its east side, so the walk goes round the building to Covel Commons."
+    }
+  ]
 }

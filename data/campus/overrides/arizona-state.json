@@ -43,5 +43,29 @@
     "creativity-commons": {
       "kind": "academic"
     }
-  }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "adelphi-commons-i -> vista-del-sol-community-center",
+        "adelphi-commons-ii -> vista-del-sol-community-center"
+      ],
+      "maxRatio": 4.5,
+      "why": "Adelphi Commons isn't a building in OSM yet, so its pin is the address spot in a private lot with no mapped path to Vista del Sol, which is fenced; walks leave by the lot's drive aisles."
+    },
+    {
+      "pairs": [
+        "vista-del-sol -> sun-devil-fitness-complex"
+      ],
+      "maxRatio": 3.5,
+      "why": "Apache Boulevard and its light-rail tracks lie between them; the only mapped crossing is at the signal west of the complex."
+    },
+    {
+      "pairs": [
+        "sonora-center -> university-services"
+      ],
+      "maxRatio": 3.5,
+      "why": "A through road lies between them with no mapped crossing near; walks go north to the signal."
+    }
+  ]
 }

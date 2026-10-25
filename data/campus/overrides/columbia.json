@@ -6,5 +6,19 @@
   },
   "notes": {
     "low-memorial-library": "Columbia's administration building, not a working library."
-  }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "john-jay-hall -> william-and-june-warren-hall",
+        "furnald-hall -> sulzberger-hall",
+        "schapiro-hall -> sulzberger-hall",
+        "schapiro-hall -> dodge-hall",
+        "schapiro-hall -> lewisohn-hall",
+        "wien-hall -> heyman-center-for-the-humanities"
+      ],
+      "maxRatio": 3.5,
+      "why": "City blocks: buildings, campus gates and avenues sit on the straight line, so walks follow the mapped doors and crossings."
+    }
+  ]
 }

@@ -7,7 +7,8 @@
 //   data/campus/<id>.minutes.json            server only: { places: [ids], halls: { dormId: [minutes] } }
 //   data/campus/paths/<id>/<dormId>.json     server only: { placeId: encoded polyline }
 //   data/campus/index.json                   the pilot list: adds <id>
-// data/campus/overrides/<id>.json (pins, year tags, place codes/aliases/kind) wins over OSM.
+// data/campus/overrides/<id>.json (pins, year tags, place codes/aliases/kind) wins over OSM. Its
+// detours and longWalks lists are read only by scripts/check-campus.mjs.
 import fs from "node:fs";
 import path from "node:path";
 

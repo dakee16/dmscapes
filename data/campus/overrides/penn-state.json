@@ -42,5 +42,17 @@
     "lasch-football-building": "Football operations building, not a student gym.",
     "nittany-apt-garden": "Centre of OSM's Nittany Apartments (way/264374205, 600 Pollock Road, a landuse area); Garden and Townhouse share it.",
     "nittany-apt-townhouse": "Same pin as Nittany Apt Garden."
-  }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "packer-hall -> east-classroom-building",
+        "pinchot-hall -> east-classroom-building",
+        "sproul-hall -> east-classroom-building",
+        "tener-hall -> east-classroom-building"
+      ],
+      "maxRatio": 3.5,
+      "why": "A road lies between these halls and the building; walks follow it to the nearest mapped crossing."
+    }
+  ]
 }
