@@ -175,7 +175,7 @@
         "days": 21
       },
       {
-        "placeId": "the-hub",
+        "placeId": "field-lab-forestry",
         "days": 10
       },
       {
@@ -183,7 +183,7 @@
         "days": 21
       },
       {
-        "placeId": "field-lab-forestry",
+        "placeId": "the-hub",
         "days": 10
       },
       {
@@ -195,17 +195,17 @@
       {
         "dormId": "rawlings-hall",
         "name": "Rawlings Hall",
-        "weekly": 95.2
+        "weekly": 95.6
       },
       {
         "dormId": "broward-hall",
         "name": "Broward Hall",
-        "weekly": 121.6
+        "weekly": 122
       },
       {
         "dormId": "keys-residential-complex",
         "name": "Keys Residential Complex",
-        "weekly": 121.6
+        "weekly": 122
       }
     ]
   }
