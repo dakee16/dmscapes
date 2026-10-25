@@ -87,9 +87,15 @@ out;`)
     : null,
 
   // Sidewalks and crossings are highway=footway (footway=sidewalk|crossing), so the list covers them.
+  // A foot tag beats the general access tag (OSM access hierarchy): a path tagged access=private
+  // foot=yes, or a cycleway tagged foot=designated, is open to people on foot, so the second line
+  // takes those regardless of access. A cycleway with no foot tag stays out.
   walk: () =>
     overpass(`[out:json][timeout:300][bbox:${box}];
-way["highway"~"^(${HIGHWAYS})$"]["access"!~"^(private|no)$"]["foot"!="no"]->.w;
+(
+  way["highway"~"^(${HIGHWAYS})$"]["access"!~"^(private|no)$"]["foot"!="no"];
+  way["highway"~"^(${HIGHWAYS}|cycleway)$"]["foot"~"^(yes|designated|permissive)$"];
+)->.w;
 .w out body qt;
 node(w.w);
 out skel qt;`),
