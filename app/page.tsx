@@ -4,6 +4,7 @@ import StickyMobileCta from "@/components/site/StickyMobileCta";
 import JsonLd from "@/components/site/JsonLd";
 import HomeHero from "@/components/home/HomeHero";
 import TapeBand from "@/components/home/TapeBand";
+import CollegesBand from "@/components/home/CollegesBand";
 import ProblemSection from "@/components/home/ProblemSection";
 import HowSection from "@/components/home/HowSection";
 import VibesSection from "@/components/home/VibesSection";
@@ -12,6 +13,7 @@ import StudioSection from "@/components/home/StudioSection";
 import TogetherSection from "@/components/home/TogetherSection";
 import SchoolsSection from "@/components/home/SchoolsSection";
 import PricingSection from "@/components/home/PricingSection";
+import Testimonials from "@/components/home/Testimonials";
 import FinalCta from "@/components/home/FinalCta";
 import { HomeSection } from "@/components/hall-finder/Entry";
 import { exampleFor } from "@/lib/hall-finder-example";
@@ -68,6 +70,7 @@ export default function Home() {
       <main id="page-content" tabIndex={-1}>
         <HomeHero schoolCount={SCHOOL_COUNT} hallCount={HALL_COUNT} />
         <TapeBand layoutCount={LAYOUT_COUNT} />
+        <CollegesBand names={SCHOOLS.map(shortName)} />
         <ProblemSection />
         <HowSection />
         {HF_EXAMPLE && <HomeSection example={HF_EXAMPLE} others={PILOT_SCHOOLS.length - 1} />}
@@ -76,6 +79,7 @@ export default function Home() {
         <StudioSection />
         <TogetherSection />
         <SchoolsSection rooms={FEATURED_ROOMS} schoolCount={SCHOOL_COUNT} />
+        <Testimonials />
         <PricingSection />
         <FinalCta />
       </main>

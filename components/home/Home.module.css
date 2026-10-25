@@ -67,6 +67,20 @@
   gap: 10px 14px;
 }
 .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--ds-pink); }
+.heroProof {
+  margin: 18px 0 0 6px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ds-body);
+}
+.heroProof strong { color: var(--ds-ink); font-weight: 800; }
+.stars { position: relative; display: inline-flex; flex: none; }
+.starsFill { position: absolute; inset: 0 auto 0 0; overflow: hidden; }
+.heroProof + .heroSub { margin-top: 10px; }
 .heroArt {
   position: absolute;
   right: 0;
@@ -128,7 +142,8 @@
     font-size: 10px;
     text-align: center;
   }
-  .heroSub { margin-left: 2px; }
+  .heroSub,
+  .heroProof { margin-left: 2px; }
 }
 @media (min-width: 640px) and (max-width: 1023px) {
   .heroArt { aspect-ratio: 760 / 640; }
@@ -275,6 +290,105 @@
   .diamond { width: 10px; height: 10px; }
   .tapeSeason { gap: 8px; }
   .tapeSeason svg { width: 18px; height: 18px; }
+}
+
+/* ---------- Supported schools band ---------- */
+.colleges { padding: 34px 0 38px; background: var(--ds-paper); overflow: hidden; }
+.collegesTitle { margin: 0 0 18px; text-align: center; }
+.collegesView {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.collegesTrack {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  width: max-content;
+  animation: collegesDrift var(--dur, 300s) linear infinite;
+}
+.collegesTrack li {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding-right: 36px;
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 800;
+  font-stretch: 88%;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  color: var(--ds-ink);
+}
+.collegesTrack li::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  flex: none;
+  background: var(--ds-red);
+  transform: rotate(45deg);
+}
+@keyframes collegesDrift { to { transform: translate3d(-50%, 0, 0); } }
+:global(.dm-app[data-motion="paused"]) .collegesTrack { animation: none; }
+@media (prefers-reduced-motion: reduce) { .collegesTrack { animation: none; } }
+
+/* ---------- Testimonials ---------- */
+.quotes { padding: 104px 0; background: var(--ds-warm); }
+.quotesHead { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+.quotesNav { display: flex; gap: 10px; }
+.quotesBtn {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--ds-ink);
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ds-ink);
+  cursor: pointer;
+}
+.quotesBtn:hover { background: var(--ds-yellow); }
+.flip { transform: scaleX(-1); }
+.quotesTrack {
+  margin: 40px 0 0;
+  padding: 0 0 14px;
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(100%, 400px);
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.quotesTrack::-webkit-scrollbar { display: none; }
+.quote {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 28px;
+  border: 2px solid var(--ds-ink);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 6px 6px 0 var(--ds-blue);
+  margin: 0 6px 6px 0;
+}
+.quote blockquote {
+  margin: 0;
+  font-family: var(--ds-serif);
+  font-size: 22px;
+  line-height: 1.35;
+  color: var(--ds-ink);
+}
+.quoteBy { margin: 0; display: flex; flex-direction: column; gap: 2px; font-size: 14px; color: var(--ds-caption); }
+.quoteBy strong { font-size: 16px; color: var(--ds-ink); }
+@media (max-width: 767px) {
+  .colleges { padding: 26px 0 28px; }
+  .collegesTrack li { gap: 24px; padding-right: 24px; }
+  .quotes { padding: 72px 0; }
+  .quotesBtn { width: 44px; height: 44px; }
+  .quote blockquote { font-size: 19px; }
 }
 
 /* ---------- 02 · Problem ---------- */

@@ -10,6 +10,7 @@ import { ArrowRight } from "@/components/ds/Icons";
 import { BatMark, PumpkinMark, SeasonLights } from "@/components/season/SeasonMarks";
 import SeasonLink from "@/components/season/SeasonLink";
 import { HeroChip } from "@/components/hall-finder/Entry";
+import { HAPPY_CUSTOMERS, RATING } from "@/lib/home-data";
 import HomeSearch from "./HomeSearch";
 import css from "./Home.module.css";
 
@@ -127,7 +128,13 @@ export default function HomeHero({
             <div className={css.heroSearchWrap} data-reveal="load" style={{ "--i": 5 } as React.CSSProperties}>
               <HomeSearch />
             </div>
-            <p className={`ds-mono ${css.note} ${css.heroSub}`} data-reveal="load" style={{ "--i": 6 } as React.CSSProperties}>
+            <p className={css.heroProof} data-reveal="load" style={{ "--i": 6 } as React.CSSProperties}>
+              <Stars rating={RATING} />
+              <span>
+                <strong>{RATING}/5</strong> · {HAPPY_CUSTOMERS.toLocaleString("en-US")}+ happy customers
+              </span>
+            </p>
+            <p className={`ds-mono ${css.note} ${css.heroSub}`} data-reveal="load" style={{ "--i": 7 } as React.CSSProperties}>
               <span>No account needed to explore</span>
               <span className={css.dot} aria-hidden="true" />
               <span>Saving is always free</span>
@@ -161,5 +168,26 @@ export default function HomeHero({
         </p>
       </section>
     </div>
+  );
+}
+
+const STAR = "M10 1.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8L10 14.9l-5.2 2.7 1-5.8L1.6 7.7l5.8-.8z";
+
+/** Five stars, the top row clipped to the rating (4.5 → 90% wide). */
+function Stars({ rating }: { rating: number }) {
+  const row = (filled: boolean) => (
+    <svg width="100" height="20" viewBox="0 0 100 20" aria-hidden="true">
+      {[0, 1, 2, 3, 4].map((i) => (
+        <path key={i} d={STAR} transform={`translate(${i * 20} 0)`} fill={filled ? "var(--ds-tape)" : "none"} stroke="var(--ds-ink)" strokeWidth="1.4" strokeLinejoin="round" />
+      ))}
+    </svg>
+  );
+  return (
+    <span className={css.stars} role="img" aria-label={`Rated ${rating} out of 5`}>
+      {row(false)}
+      <span className={css.starsFill} style={{ width: `${(rating / 5) * 100}%` }}>
+        {row(true)}
+      </span>
+    </span>
   );
 }

@@ -21,6 +21,16 @@ export const LAYOUT_COUNT = SCHOOLS.reduce(
   0
 );
 
+/** The hero's rating and customer count. Real figures from the owner (2026-10-25); change them here only. */
+export const RATING = 4.5;
+export const HAPPY_CUSTOMERS = 1000;
+
+/**
+ * Homepage quotes. Real customers only, in their words, with their OK to show
+ * them (made-up reviews break FTC rules). The section stays hidden while empty.
+ */
+export const TESTIMONIALS: { quote: string; name: string; detail: string }[] = [];
+
 /** 16.42 → "16′5″" */
 export function feetInches(ft: number): string {
   let whole = Math.floor(ft);
