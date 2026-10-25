@@ -1,4 +1,24 @@
 {
+  "halls": {
+    "de-neve-gardenia": {
+      "pin": [
+        -118.452408,
+        34.070782
+      ]
+    },
+    "de-neve-holly": {
+      "pin": [
+        -118.451863,
+        34.070963
+      ]
+    },
+    "de-neve-plaza": {
+      "pin": [
+        -118.450386,
+        34.07076
+      ]
+    }
+  },
   "codes": {
     "GONDA": "way/422876569"
   },
@@ -9,7 +29,10 @@
     "mullin-management-commons": "Part of the Anderson School of Management, not a dining hall.",
     "weyburn-commons": "Graduate housing community building, not a dining hall.",
     "saxon-commons": "Saxon Suites community building; OSM shows no dining there.",
-    "mo-ostin-basketball-center": "Varsity basketball practice centre, not a student gym."
+    "mo-ostin-basketball-center": "Varsity basketball practice centre, not a student gym.",
+    "de-neve-gardenia": "OSM's Gardenia Residential Building.",
+    "de-neve-holly": "OSM's Holly Residential Building.",
+    "de-neve-plaza": "Centre of the Acacia, Birch, Cedar, Dogwood and Evergreen Residential Buildings (the Plaza's low-rises; OSM has no Fir)."
   },
   "places": {
     "edwin-w-pauley-pavilion": {
