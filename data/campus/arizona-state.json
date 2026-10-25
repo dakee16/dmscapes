@@ -1,13 +1,13 @@
 {
  "collegeId": "arizona-state",
- "generatedAt": "2026-10-24T07:54:13.018Z",
+ "generatedAt": "2026-10-25T15:45:44.504Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
    "url": "https://www.openstreetmap.org/copyright",
    "license": "ODbL-1.0",
    "use": "building names, footprints and entrances; the walking network",
-   "fetched": "2026-10-19"
+   "fetched": "2026-10-25"
   },
   {
    "name": "ASU, Tempe Building Names and Codes",
@@ -51,25 +51,45 @@
   {
    "dormId": "adelphi-commons-i",
    "name": "Adelphi Commons I",
-   "lng": null,
-   "lat": null,
-   "pin": null,
+   "lng": -111.92795,
+   "lat": 33.41374,
+   "pin": "manual",
    "osm": null,
    "year": "any",
    "yearSource": [
     "https://housing.asu.edu/first-year-housing",
     "https://housing.asu.edu/continuing-student-housing"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sun-devil-fitness-complex-552634953",
+     "minutes": 7.2
+    },
+    "library": {
+     "placeId": "ross-blakley-hall",
+     "minutes": 9.4
+    }
+   }
   },
   {
    "dormId": "adelphi-commons-ii",
    "name": "Adelphi Commons II",
-   "lng": null,
-   "lat": null,
-   "pin": null,
+   "lng": -111.92736,
+   "lat": 33.41324,
+   "pin": "manual",
    "osm": null,
    "year": "first",
-   "yearSource": "https://housing.asu.edu/first-year-housing"
+   "yearSource": "https://housing.asu.edu/first-year-housing",
+   "near": {
+    "gym": {
+     "placeId": "sun-devil-fitness-complex-552634953",
+     "minutes": 7.4
+    },
+    "library": {
+     "placeId": "ross-blakley-hall",
+     "minutes": 9.6
+    }
+   }
   },
   {
    "dormId": "barrett-residential-complex",
@@ -86,23 +106,33 @@
    "near": {
     "gym": {
      "placeId": "sun-devil-fitness-complex-552634953",
-     "minutes": 5.6
+     "minutes": 4.7
     },
     "library": {
      "placeId": "ross-blakley-hall",
-     "minutes": 9.1
+     "minutes": 4.7
     }
    }
   },
   {
    "dormId": "hassayampa-academic-village",
    "name": "Hassayampa Academic Village",
-   "lng": null,
-   "lat": null,
-   "pin": null,
+   "lng": -111.929467,
+   "lat": 33.415484,
+   "pin": "manual",
    "osm": null,
    "year": "first",
-   "yearSource": "https://housing.asu.edu/first-year-housing"
+   "yearSource": "https://housing.asu.edu/first-year-housing",
+   "near": {
+    "gym": {
+     "placeId": "sun-devil-fitness-complex-552634953",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "ross-blakley-hall",
+     "minutes": 4.8
+    }
+   }
   },
   {
    "dormId": "manzanita-hall",
@@ -116,11 +146,11 @@
    "near": {
     "gym": {
      "placeId": "mona-plummer-aquatic-center",
-     "minutes": 8.2
+     "minutes": 7.3
     },
     "library": {
      "placeId": "noble-science-and-engineering-library",
-     "minutes": 6
+     "minutes": 4
     }
    }
   },
@@ -139,8 +169,8 @@
      "minutes": 5.7
     },
     "library": {
-     "placeId": "hayden-library",
-     "minutes": 8.1
+     "placeId": "noble-science-and-engineering-library",
+     "minutes": 5.6
     }
    }
   },
@@ -156,11 +186,11 @@
    "near": {
     "gym": {
      "placeId": "mona-plummer-aquatic-center",
-     "minutes": 5.6
+     "minutes": 4
     },
     "library": {
-     "placeId": "hayden-library",
-     "minutes": 7.6
+     "placeId": "noble-science-and-engineering-library",
+     "minutes": 6.6
     }
    }
   },
@@ -179,11 +209,11 @@
    "near": {
     "gym": {
      "placeId": "mona-plummer-aquatic-center",
-     "minutes": 6.8
+     "minutes": 6.7
     },
     "library": {
      "placeId": "noble-science-and-engineering-library",
-     "minutes": 11.4
+     "minutes": 5.2
     }
    }
   },
@@ -202,11 +232,11 @@
    "near": {
     "gym": {
      "placeId": "sun-devil-fitness-complex-552634953",
-     "minutes": 8.7
+     "minutes": 7.8
     },
     "library": {
      "placeId": "ross-blakley-hall",
-     "minutes": 12.5
+     "minutes": 10.1
     }
    }
   },
@@ -225,8 +255,8 @@
      "minutes": 4
     },
     "library": {
-     "placeId": "hayden-library",
-     "minutes": 8.3
+     "placeId": "noble-science-and-engineering-library",
+     "minutes": 6.2
     }
    }
   },

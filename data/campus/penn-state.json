@@ -1,13 +1,13 @@
 {
  "collegeId": "penn-state",
- "generatedAt": "2026-10-24T07:54:19.088Z",
+ "generatedAt": "2026-10-25T15:45:51.032Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
    "url": "https://www.openstreetmap.org/copyright",
    "license": "ODbL-1.0",
    "use": "building names, footprints and entrances; the walking network",
-   "fetched": "2026-10-19"
+   "fetched": "2026-10-25"
   },
   {
    "name": "Penn State Office of Physical Plant, UP Buildings (building inventory: names, abbreviations, aliases)",
@@ -333,7 +333,7 @@
   }
  ],
  "bounds": [
-  -77.87685,
+  -77.88021,
   40.78296,
   -77.8455,
   40.81518
@@ -355,7 +355,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 8.5
+     "minutes": 7.9
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -378,8 +378,8 @@
      "minutes": 9.9
     },
     "library": {
-     "placeId": "pattee-library",
-     "minutes": 7.7
+     "placeId": "paterno-library",
+     "minutes": 4.6
     },
     "dining": {
      "placeId": "warnock-commons",
@@ -403,7 +403,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 11.5
+     "minutes": 10.8
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -451,7 +451,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 15
+     "minutes": 14.4
     },
     "dining": {
      "placeId": "pollock-commons",
@@ -495,11 +495,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 1.9
+     "minutes": 1.8
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 11.1
+     "minutes": 10.2
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -519,11 +519,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 5.5
+     "minutes": 5.4
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 14.1
+     "minutes": 13.7
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -543,11 +543,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 5
+     "minutes": 4.9
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 13.8
+     "minutes": 13.1
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -567,11 +567,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 7.2
+     "minutes": 7.1
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 16
+     "minutes": 15.4
     },
     "dining": {
      "placeId": "pollock-commons",
@@ -615,7 +615,7 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 19.5
+     "minutes": 18.5
     },
     "library": {
      "placeId": "pattee-library",
@@ -623,7 +623,7 @@
     },
     "dining": {
      "placeId": "waring-commons",
-     "minutes": 11
+     "minutes": 10.8
     }
    }
   },
@@ -643,7 +643,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 14.5
+     "minutes": 14.4
     },
     "dining": {
      "placeId": "findlay-commons",
@@ -663,11 +663,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 4.2
+     "minutes": 4.1
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 13
+     "minutes": 12.4
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -687,7 +687,7 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 19.4
+     "minutes": 18.4
     },
     "library": {
      "placeId": "pattee-library",
@@ -695,7 +695,7 @@
     },
     "dining": {
      "placeId": "waring-commons",
-     "minutes": 11.4
+     "minutes": 10.7
     }
    }
   },
@@ -735,15 +735,15 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 19.9
+     "minutes": 18.8
     },
     "library": {
      "placeId": "pattee-library",
-     "minutes": 14.6
+     "minutes": 14.3
     },
     "dining": {
      "placeId": "waring-commons",
-     "minutes": 12.2
+     "minutes": 11.2
     }
    }
   },
@@ -759,11 +759,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 2.9
+     "minutes": 2.8
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 12.1
+     "minutes": 11.2
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -807,11 +807,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 8.9
+     "minutes": 8.8
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 17.5
+     "minutes": 16.8
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -835,7 +835,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 10.6
+     "minutes": 10
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -879,11 +879,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 2.3
+     "minutes": 2.1
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 11.3
+     "minutes": 10.6
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -907,7 +907,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 12.1
+     "minutes": 11.5
     },
     "dining": {
      "placeId": "pollock-commons",
@@ -930,8 +930,8 @@
      "minutes": 8.6
     },
     "library": {
-     "placeId": "pattee-library",
-     "minutes": 8.5
+     "placeId": "paterno-library",
+     "minutes": 5.6
     },
     "dining": {
      "placeId": "warnock-commons",
@@ -951,11 +951,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 6.4
+     "minutes": 6.3
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 14.7
+     "minutes": 14.3
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -1027,7 +1027,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 8.4
+     "minutes": 6.3
     },
     "dining": {
      "placeId": "warnock-commons",
@@ -1047,11 +1047,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 4.2
+     "minutes": 4
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 13.4
+     "minutes": 12.4
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -1099,7 +1099,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 8.3
+     "minutes": 7.7
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -1171,7 +1171,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 10.2
+     "minutes": 9.6
     },
     "dining": {
      "placeId": "pollock-commons",
@@ -1191,11 +1191,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 9.4
+     "minutes": 9.3
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 17.9
+     "minutes": 17.1
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -1215,11 +1215,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 8.8
+     "minutes": 8.7
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 17.3
+     "minutes": 16.9
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -1230,22 +1230,50 @@
   {
    "dormId": "nittany-apt-garden",
    "name": "Nittany Apt Garden",
-   "lng": null,
-   "lat": null,
-   "pin": null,
-   "osm": null,
+   "lng": -77.8572,
+   "lat": 40.80369,
+   "pin": "manual",
+   "osm": "way/261326034",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/nittany-apt-garden"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/nittany-apt-garden",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 4.5
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 12.9
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 2.7
+    }
+   }
   },
   {
    "dormId": "nittany-apt-townhouse",
    "name": "Nittany Apt Townhouse",
-   "lng": null,
-   "lat": null,
-   "pin": null,
-   "osm": null,
+   "lng": -77.8572,
+   "lat": 40.80369,
+   "pin": "manual",
+   "osm": "way/261326034",
    "year": "upper",
-   "yearSource": "https://liveon.psu.edu/university-park/housing/nittany-apt-townhouse"
+   "yearSource": "https://liveon.psu.edu/university-park/housing/nittany-apt-townhouse",
+   "near": {
+    "gym": {
+     "placeId": "mccoy-natatorium",
+     "minutes": 4.5
+    },
+    "library": {
+     "placeId": "paterno-library",
+     "minutes": 12.9
+    },
+    "dining": {
+     "placeId": "pollock-commons",
+     "minutes": 2.7
+    }
+   }
   },
   {
    "dormId": "nittany-hall",
@@ -1263,7 +1291,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 14
+     "minutes": 13.3
     },
     "dining": {
      "placeId": "pollock-commons",
@@ -1307,11 +1335,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 7.8
+     "minutes": 7.7
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 16.6
+     "minutes": 16
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -1359,7 +1387,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 12.1
+     "minutes": 11.9
     },
     "dining": {
      "placeId": "findlay-commons",
@@ -1383,7 +1411,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 12.2
+     "minutes": 11.6
     },
     "dining": {
      "placeId": "pollock-commons",
@@ -1407,7 +1435,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 11.8
+     "minutes": 11.2
     },
     "dining": {
      "placeId": "pollock-commons",
@@ -1431,7 +1459,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 8.6
+     "minutes": 5.3
     },
     "dining": {
      "placeId": "warnock-commons",
@@ -1455,7 +1483,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 7.3
+     "minutes": 5.6
     },
     "dining": {
      "placeId": "warnock-commons",
@@ -1479,7 +1507,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 11.2
+     "minutes": 10.6
     },
     "dining": {
      "placeId": "pollock-commons",
@@ -1503,7 +1531,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 12.9
+     "minutes": 12.3
     },
     "dining": {
      "placeId": "pollock-commons",
@@ -1527,7 +1555,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 9.2
+     "minutes": 8.6
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -1575,7 +1603,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 11.8
+     "minutes": 11.7
     },
     "dining": {
      "placeId": "findlay-commons",
@@ -1595,11 +1623,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 3.3
+     "minutes": 3.2
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 11.8
+     "minutes": 11.4
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -1671,7 +1699,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 12.5
+     "minutes": 12.4
     },
     "dining": {
      "placeId": "findlay-commons",
@@ -1743,7 +1771,7 @@
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 11.2
+     "minutes": 10.6
     },
     "dining": {
      "placeId": "pollock-commons",
@@ -1763,11 +1791,11 @@
    "near": {
     "gym": {
      "placeId": "white-building",
-     "minutes": 6.1
+     "minutes": 6
     },
     "library": {
      "placeId": "paterno-library",
-     "minutes": 14.9
+     "minutes": 14.2
     },
     "dining": {
      "placeId": "redifer-commons",
@@ -4994,6 +5022,19 @@
    "lng": -77.848482,
    "lat": 40.800561,
    "osm": "way/326377931"
+  },
+  {
+   "id": "golf-course-maintenance",
+   "name": "Golf Course Maintenance",
+   "short": "Golf Course Maintenance Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Golf Course Maintenance Building"
+   ],
+   "lng": -77.88021,
+   "lat": 40.788942,
+   "osm": "way/292181534"
   },
   {
    "id": "gardner-house",

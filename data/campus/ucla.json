@@ -1,13 +1,13 @@
 {
  "collegeId": "ucla",
- "generatedAt": "2026-10-24T07:54:19.433Z",
+ "generatedAt": "2026-10-25T15:45:51.404Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
    "url": "https://www.openstreetmap.org/copyright",
    "license": "ODbL-1.0",
    "use": "building names, footprints and entrances; the walking network",
-   "fetched": "2026-10-19"
+   "fetched": "2026-10-25"
   },
   {
    "name": "UCLA Registrar, Building List (abbreviations used in the Schedule of Classes)",
@@ -73,7 +73,7 @@
    "near": {
     "gym": {
      "placeId": "john-wooden-center",
-     "minutes": 9.7
+     "minutes": 9.6
     },
     "library": {
      "placeId": "powell-library",
@@ -169,28 +169,56 @@
   {
    "dormId": "de-neve-gardenia",
    "name": "De Neve Gardenia",
-   "lng": null,
-   "lat": null,
-   "pin": null,
-   "osm": null,
+   "lng": -118.452408,
+   "lat": 34.070782,
+   "pin": "manual",
+   "osm": "way/422876568",
    "year": "any",
    "yearSource": [
     "https://housing.ucla.edu/new-students/deluxe-residence-hall",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 9.4
+    },
+    "library": {
+     "placeId": "powell-library",
+     "minutes": 13
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 5.7
+    }
+   }
   },
   {
    "dormId": "de-neve-holly",
    "name": "De Neve Holly",
-   "lng": null,
-   "lat": null,
-   "pin": null,
-   "osm": null,
+   "lng": -118.451863,
+   "lat": 34.070963,
+   "pin": "manual",
+   "osm": "way/422876574",
    "year": "any",
    "yearSource": [
     "https://housing.ucla.edu/new-students/deluxe-residence-hall",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 8.4
+    },
+    "library": {
+     "placeId": "powell-library",
+     "minutes": 12.4
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 4.8
+    }
+   }
   },
   {
    "dormId": "sproul-cove",
@@ -210,7 +238,7 @@
      "minutes": 6.5
     },
     "library": {
-     "placeId": "rosenfeld-library",
+     "placeId": "powell-library",
      "minutes": 12.1
     },
     "dining": {
@@ -303,15 +331,29 @@
   {
    "dormId": "de-neve-plaza",
    "name": "De Neve Plaza",
-   "lng": null,
-   "lat": null,
-   "pin": null,
+   "lng": -118.450386,
+   "lat": 34.07076,
+   "pin": "manual",
    "osm": null,
    "year": "any",
    "yearSource": [
     "https://housing.ucla.edu/new-students/plaza-residences",
     "https://ask.housing.ucla.edu/app/answers/detail/a_id/1736"
-   ]
+   ],
+   "near": {
+    "gym": {
+     "placeId": "sunset-canyon-recreation-center",
+     "minutes": 8.7
+    },
+    "library": {
+     "placeId": "powell-library",
+     "minutes": 10.3
+    },
+    "dining": {
+     "placeId": "covel-commons-sunset-village",
+     "minutes": 4.9
+    }
+   }
   },
   {
    "dormId": "canyon-point",

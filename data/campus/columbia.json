@@ -1,13 +1,13 @@
 {
  "collegeId": "columbia",
- "generatedAt": "2026-10-24T07:54:13.179Z",
+ "generatedAt": "2026-10-25T15:42:40.807Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
    "url": "https://www.openstreetmap.org/copyright",
    "license": "ODbL-1.0",
    "use": "building names, footprints and entrances; the walking network",
-   "fetched": "2026-10-19"
+   "fetched": "2026-10-25"
   },
   {
    "name": "Columbia University Registrar, Building Codes",

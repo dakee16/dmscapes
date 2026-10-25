@@ -1,6 +1,6 @@
 {
   "arizona-state": {
-    "halls": 8,
+    "halls": 11,
     "places": [
       {
         "placeId": "social-sciences",
@@ -27,17 +27,17 @@
       {
         "dormId": "palo-verde-west",
         "name": "Palo Verde West",
-        "weekly": 154.8
+        "weekly": 150.2
       },
       {
         "dormId": "palo-verde-east",
         "name": "Palo Verde East",
-        "weekly": 162.2
+        "weekly": 159.8
       },
       {
         "dormId": "tooker-house",
         "name": "Tooker House (Fulton Schools Residential Community)",
-        "weekly": 168
+        "weekly": 165.6
       }
     ]
   },
@@ -84,7 +84,7 @@
     ]
   },
   "penn-state": {
-    "halls": 59,
+    "halls": 61,
     "places": [
       {
         "placeId": "willard-building",
@@ -114,19 +114,19 @@
         "weekly": 116.4
       },
       {
-        "dormId": "hamilton-hall",
-        "name": "Hamilton Hall",
-        "weekly": 138.6
-      },
-      {
         "dormId": "mcelwain-hall",
         "name": "McElwain Hall",
-        "weekly": 141
+        "weekly": 128.8
+      },
+      {
+        "dormId": "hamilton-hall",
+        "name": "Hamilton Hall",
+        "weekly": 138.2
       }
     ]
   },
   "ucla": {
-    "halls": 16,
+    "halls": 19,
     "places": [
       {
         "placeId": "kaplan-hall",
@@ -151,19 +151,19 @@
     ],
     "top": [
       {
-        "dormId": "sproul-hall",
-        "name": "Sproul Hall",
-        "weekly": 284
+        "dormId": "de-neve-plaza",
+        "name": "De Neve Plaza",
+        "weekly": 264.6
       },
       {
-        "dormId": "dykstra-hall",
-        "name": "Dykstra Hall",
-        "weekly": 288
+        "dormId": "sproul-hall",
+        "name": "Sproul Hall",
+        "weekly": 276.8
       },
       {
         "dormId": "sproul-landing",
         "name": "Sproul Landing",
-        "weekly": 290.2
+        "weekly": 284
       }
     ]
   },
