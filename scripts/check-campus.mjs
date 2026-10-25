@@ -6,6 +6,14 @@
 // minutes.attached, or one whose door is under 40 m from the hall's), walking ÷ door-to-door straight line is 1.0–2.5, every hall has a
 // path to every place (and each decoded path is as long as its minutes say), and the
 // client file is under 150 KB and the minutes file under 250 KB.
+// Two short lists in data/campus/overrides/<id>.json, each entry with a reason checked against the
+// map, may except a pair from the two walking rules (the threshold itself never moves):
+//   detours    [{ pairs: ["hall -> place"], maxRatio, why }]  a walk over 2.5x straight that the map
+//              explains (a road, light rail or buildings in the way, no mapped path). It must still
+//              be over 2.5 and stays under its maxRatio.
+//   longWalks  { hall: { maxMinutes, why } }                  a hall far from much of its campus; its
+//              walks over 45 minutes stay under maxMinutes and still face the 2.5x rule.
+// An entry nothing needs any more fails, so the lists can't outlive the data.
 import fs from "node:fs";
 
 // The pilot list (written by build.mjs) names exactly the campuses that have minutes.
@@ -50,6 +58,11 @@ for (const id of ids) {
   const dorms = JSON.parse(fs.readFileSync(`data/schools/${id}.json`, "utf8")).dorms.filter((d) => !config.excludeHalls?.[d.dorm_id]);
   const campus = JSON.parse(fs.readFileSync(`data/campus/${id}.json`, "utf8"));
   const minutes = JSON.parse(fs.readFileSync(`data/campus/${id}.minutes.json`, "utf8"));
+  const overrides = fs.existsSync(`data/campus/overrides/${id}.json`) ? JSON.parse(fs.readFileSync(`data/campus/overrides/${id}.json`, "utf8")) : {};
+  const detours = new Map((overrides.detours ?? []).flatMap((d) => d.pairs.map((p) => [p, d])));
+  const longWalks = overrides.longWalks ?? {};
+  const usedDetours = new Set();
+  const usedLongWalks = new Set();
   const hallById = new Map(campus.halls.map((h) => [h.dormId, h]));
   const placeById = new Map(campus.places.map((p) => [p.id, p]));
   const pinned = (h) => Number.isFinite(h?.lng) && Number.isFinite(h?.lat);
@@ -98,7 +111,9 @@ for (const id of ids) {
       // 0 is fine for an attached place, and under 0.5 for one whose door is under 40 m
       // from the hall's (Penn State's commons beside their halls; approved 2026-10-20).
       const floor = minutes.attached?.[d.dorm_id]?.includes(pid) || straight < 40 ? 0 : 0.5;
-      if (!Number.isFinite(min) || min < floor || min > 45) issues["minutes are finite and 0.5–45 (0 if attached)"].push(`${pair} ${min}`);
+      const longWalk = min > 45 ? longWalks[d.dorm_id] : undefined;
+      if (longWalk) usedLongWalks.add(d.dorm_id);
+      if (!Number.isFinite(min) || min < floor || (min > 45 && !(longWalk && min <= longWalk.maxMinutes))) issues["minutes are finite and 0.5–45 (0 if attached)"].push(`${pair} ${min}${longWalk ? ` (over its allowed ${longWalk.maxMinutes})` : ""}`);
       if (!Number.isFinite(min) || !place) return;
       if (!pts) return issues["every hall has a path to every place"].push(`${pair}: missing`);
       const walked = min * 60 * speed;
@@ -107,14 +122,27 @@ for (const id of ids) {
       if (len > walked + 10 || len < walked / 1.5 - 10) issues["every hall has a path to every place"].push(`${pair}: path ${Math.round(len)} m vs ${Math.round(walked)} m walked`);
       // Under 100 m apart, one corner turned doubles the ratio, so those pairs aren't judged.
       const ratio = walked / straight;
-      if (straight >= 100 && !(ratio >= 1 && ratio <= 2.5)) issues["walking ÷ straight-line is 1.0–2.5"].push(`${pair} ${ratio.toFixed(2)} (${Math.round(walked)} m / ${Math.round(straight)} m)`);
+      if (straight >= 100 && !(ratio >= 1 && ratio <= 2.5)) {
+        const detour = ratio > 2.5 ? detours.get(pair) : undefined;
+        if (detour) usedDetours.add(pair);
+        if (!detour || ratio > detour.maxRatio) issues["walking ÷ straight-line is 1.0–2.5"].push(`${pair} ${ratio.toFixed(2)} (${Math.round(walked)} m / ${Math.round(straight)} m)${detour ? ` over its allowed ${detour.maxRatio}` : ""}`);
+      }
     });
+  }
+  for (const [pair, d] of detours) {
+    if (!d.why || !(d.maxRatio > 2.5)) issues["walking ÷ straight-line is 1.0–2.5"].push(`${pair}: a detour needs a why and a maxRatio over 2.5`);
+    if (!usedDetours.has(pair)) issues["walking ÷ straight-line is 1.0–2.5"].push(`${pair}: in overrides.detours but not over 2.5 (or not a pair 100 m apart) any more; remove it`);
+  }
+  for (const [hall, w] of Object.entries(longWalks)) {
+    if (!w.why || !(w.maxMinutes > 45)) issues["minutes are finite and 0.5–45 (0 if attached)"].push(`${hall}: a long walk needs a why and a maxMinutes over 45`);
+    if (!usedLongWalks.has(hall)) issues["minutes are finite and 0.5–45 (0 if attached)"].push(`${hall}: in overrides.longWalks but has no walk over 45 minutes; remove it`);
   }
   const kb = (f) => fs.statSync(f).size / 1024;
   if (kb(`data/campus/${id}.json`) >= 150) issues["size budgets (client < 150 KB, minutes < 250 KB)"].push(`client ${kb(`data/campus/${id}.json`).toFixed(1)} KB`);
   if (kb(`data/campus/${id}.minutes.json`) >= 250) issues["size budgets (client < 150 KB, minutes < 250 KB)"].push(`minutes ${kb(`data/campus/${id}.minutes.json`).toFixed(1)} KB`);
 
   console.log(`\n${id}: ${campus.halls.length} halls, ${campus.places.length} places`);
+  if (usedDetours.size || usedLongWalks.size) console.log(`  note: ${usedDetours.size} detours and ${usedLongWalks.size} long-walk halls excepted by overrides (reasons in data/campus/overrides/${id}.json)`);
   for (const [check, list] of Object.entries(issues)) {
     console.log(`  ${list.length ? "✗" : "✓"} ${check}${list.length ? ` (${list.length})` : ""}`);
     for (const item of list.slice(0, 25)) console.log(`      ${item}`);

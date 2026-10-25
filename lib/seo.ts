@@ -109,10 +109,11 @@ export function pageMetadata({
  * The brand's official social profiles, for Organization.sameAs (full URLs).
  * sameAs is left out if this is ever empty.
  */
-export const SOCIAL_PROFILES: string[] = [
-  "https://www.tiktok.com/@dorm.scape",
-  "https://www.instagram.com/dorm.scape",
-];
+export const TIKTOK_URL = "https://www.tiktok.com/@dorm.scape";
+export const INSTAGRAM_URL = "https://www.instagram.com/dorm.scape";
+// The footer and contact page link these same constants, so what people can click and what the
+// schema says can't differ. TikTok's bio says "dormscape.us"; Instagram can't be read without a login.
+export const SOCIAL_PROFILES: string[] = [TIKTOK_URL, INSTAGRAM_URL];
 
 /** Where people (and agents) reach the team: the contact form and replies go here. */
 export const CONTACT_EMAIL = "info@dormscape.us";
@@ -154,7 +155,9 @@ export function webSiteJsonLd() {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
-    alternateName: ["dormscape", "dormscape.us"],
+    // The brand is always written dormscape, so the only other name is the domain; listing the name
+    // as its own alternate adds nothing.
+    alternateName: ["dormscape.us"],
     url: SITE_URL,
     description: SITE_TAGLINE,
     publisher: { "@id": `${SITE_URL}/#organization` },

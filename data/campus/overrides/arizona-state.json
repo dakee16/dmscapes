@@ -1,4 +1,24 @@
 {
+  "halls": {
+    "adelphi-commons-i": {
+      "pin": [
+        -111.92795,
+        33.41374
+      ]
+    },
+    "adelphi-commons-ii": {
+      "pin": [
+        -111.92736,
+        33.41324
+      ]
+    },
+    "hassayampa-academic-village": {
+      "pin": [
+        -111.929467,
+        33.415484
+      ]
+    }
+  },
   "codes": {
     "MCENT": "way/28822889",
     "GWC": "way/30407135",
@@ -11,7 +31,10 @@
     "CSB": "No OSM building is the Community Services Building; it is not University Services (which has its own code, USB).",
     "CAM": "The ASU list gives CAM to both College Avenue Marketplace and Danforth Chapel, so it can't place it.",
     "college-avenue-commons": "Mixed-use academic and retail building, not a dining hall.",
-    "creativity-commons": "Herberger Institute building, not a dining hall."
+    "creativity-commons": "Herberger Institute building, not a dining hall.",
+    "adelphi-commons-i": "OSM's 'Adelphi Commons' (way/1422842133, no building tag); about 100 m from the geocoded 739 E Apache Blvd.",
+    "adelphi-commons-ii": "OSM's 'Adelphi II Commons' (way/1422842132, no building tag).",
+    "hassayampa-academic-village": "Arroyo Hall (HAV Building B), about 65 m from the geocoded 1201 S McAllister Ave; OSM has no Hassayampa building."
   },
   "places": {
     "college-avenue-commons": {
@@ -20,5 +43,29 @@
     "creativity-commons": {
       "kind": "academic"
     }
-  }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "adelphi-commons-i -> vista-del-sol-community-center",
+        "adelphi-commons-ii -> vista-del-sol-community-center"
+      ],
+      "maxRatio": 4.5,
+      "why": "Adelphi Commons isn't a building in OSM yet, so its pin is the address spot in a private lot with no mapped path to Vista del Sol, which is fenced; walks leave by the lot's drive aisles."
+    },
+    {
+      "pairs": [
+        "vista-del-sol -> sun-devil-fitness-complex"
+      ],
+      "maxRatio": 3.5,
+      "why": "Apache Boulevard and its light-rail tracks lie between them; the only mapped crossing is at the signal west of the complex."
+    },
+    {
+      "pairs": [
+        "sonora-center -> university-services"
+      ],
+      "maxRatio": 3.5,
+      "why": "A through road lies between them with no mapped crossing near; walks go north to the signal."
+    }
+  ]
 }

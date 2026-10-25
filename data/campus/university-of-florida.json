@@ -1,13 +1,13 @@
 {
  "collegeId": "university-of-florida",
- "generatedAt": "2026-10-24T07:54:34.306Z",
+ "generatedAt": "2026-10-25T15:29:44.882Z",
  "sources": [
   {
    "name": "© OpenStreetMap contributors",
    "url": "https://www.openstreetmap.org/copyright",
    "license": "ODbL-1.0",
    "use": "building names, footprints and entrances; the walking network",
-   "fetched": "2026-10-19"
+   "fetched": "2026-10-25"
   },
   {
    "name": "UF Campus Map building data (campusmap.ufl.edu)",
@@ -41,24 +41,24 @@
   {
    "dormId": "beaty-towers",
    "name": "Beaty Towers",
-   "lng": -82.340193,
-   "lat": 29.644957,
-   "pin": "name",
-   "osm": "way/1015400666",
+   "lng": -82.34049,
+   "lat": 29.64416,
+   "pin": "manual",
+   "osm": null,
    "year": "any",
    "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
    "near": {
     "gym": {
      "placeId": "norman-gym",
-     "minutes": 5.5
+     "minutes": 6.3
     },
     "library": {
      "placeId": "marston-science-library",
-     "minutes": 8.3
+     "minutes": 9
     },
     "dining": {
      "placeId": "broward-dining-center",
-     "minutes": 4
+     "minutes": 5.8
     }
    }
   },
@@ -74,7 +74,7 @@
    "near": {
     "gym": {
      "placeId": "norman-gym",
-     "minutes": 7.6
+     "minutes": 6.4
     },
     "library": {
      "placeId": "marston-science-library",
@@ -122,7 +122,7 @@
    "near": {
     "gym": {
      "placeId": "norman-gym",
-     "minutes": 5.7
+     "minutes": 3.3
     },
     "library": {
      "placeId": "marston-science-library",
@@ -146,15 +146,15 @@
    "near": {
     "gym": {
      "placeId": "florida-gym",
-     "minutes": 5.2
+     "minutes": 5.6
     },
     "library": {
      "placeId": "marston-science-library",
-     "minutes": 9.5
+     "minutes": 8.9
     },
     "dining": {
      "placeId": "gator-corner-dining-center",
-     "minutes": 1
+     "minutes": 1.6
     }
    }
   },
@@ -194,7 +194,7 @@
    "near": {
     "gym": {
      "placeId": "norman-gym",
-     "minutes": 7.6
+     "minutes": 7.5
     },
     "library": {
      "placeId": "marston-science-library",
@@ -209,24 +209,24 @@
   {
    "dormId": "hume-hall",
    "name": "Hume Hall",
-   "lng": -82.352166,
-   "lat": 29.644975,
-   "pin": "name",
-   "osm": "way/427905273",
+   "lng": -82.352483,
+   "lat": 29.644537,
+   "pin": "manual",
+   "osm": "way/150869222",
    "year": "any",
    "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
    "near": {
     "gym": {
      "placeId": "florida-gym",
-     "minutes": 10.5
+     "minutes": 11.1
     },
     "library": {
      "placeId": "marston-science-library",
-     "minutes": 13
+     "minutes": 12.8
     },
     "dining": {
      "placeId": "gator-corner-dining-center",
-     "minutes": 6.5
+     "minutes": 7.3
     }
    }
   },
@@ -290,7 +290,7 @@
    "near": {
     "gym": {
      "placeId": "norman-gym",
-     "minutes": 7.6
+     "minutes": 6.4
     },
     "library": {
      "placeId": "marston-science-library",
@@ -314,7 +314,7 @@
    "near": {
     "gym": {
      "placeId": "norman-gym",
-     "minutes": 7.6
+     "minutes": 6.4
     },
     "library": {
      "placeId": "marston-science-library",
@@ -338,7 +338,7 @@
    "near": {
     "gym": {
      "placeId": "norman-gym",
-     "minutes": 4.7
+     "minutes": 3.1
     },
     "library": {
      "placeId": "marston-science-library",
@@ -409,8 +409,8 @@
    "yearSource": "https://housing.ufl.edu/apply/frequently-asked-questions/",
    "near": {
     "gym": {
-     "placeId": "florida-gym",
-     "minutes": 7.9
+     "placeId": "norman-gym",
+     "minutes": 7.1
     },
     "library": {
      "placeId": "marston-science-library",
@@ -434,7 +434,7 @@
    "near": {
     "gym": {
      "placeId": "norman-gym",
-     "minutes": 5
+     "minutes": 2.6
     },
     "library": {
      "placeId": "marston-science-library",
@@ -506,7 +506,7 @@
    "near": {
     "gym": {
      "placeId": "norman-gym",
-     "minutes": 7.6
+     "minutes": 6.4
     },
     "library": {
      "placeId": "marston-science-library",
@@ -538,7 +538,7 @@
     },
     "dining": {
      "placeId": "racquet-club-dining-center",
-     "minutes": 1.1
+     "minutes": 1
     }
    }
   },
@@ -582,7 +582,7 @@
     },
     "library": {
      "placeId": "marston-science-library",
-     "minutes": 11
+     "minutes": 10
     },
     "dining": {
      "placeId": "gator-corner-dining-center",
@@ -602,11 +602,11 @@
    "near": {
     "gym": {
      "placeId": "norman-gym",
-     "minutes": 5.4
+     "minutes": 3.2
     },
     "library": {
      "placeId": "marston-science-library",
-     "minutes": 6.7
+     "minutes": 6.6
     },
     "dining": {
      "placeId": "broward-dining-center",
@@ -2052,22 +2052,6 @@
    "osm": "way/866858625"
   },
   {
-   "id": "hume-commons",
-   "name": "Hume Commons",
-   "short": "Hume Commons",
-   "kind": "academic",
-   "codes": [
-    "HUME"
-   ],
-   "aliases": [
-    "Harold Hume Hall Commons Building",
-    "Hume Commons Bldg"
-   ],
-   "lng": -82.352483,
-   "lat": 29.644522,
-   "osm": "way/150869222"
-  },
-  {
    "id": "uf-health-dialysis-center",
    "name": "UF Health Dialysis Center",
    "short": "UF Health Dialysis Center",
@@ -2409,6 +2393,19 @@
    "osm": "way/154233201"
   },
   {
+   "id": "wallace-building",
+   "name": "Wallace Building",
+   "short": "Wallace Building",
+   "kind": "academic",
+   "codes": [
+    "WALC"
+   ],
+   "aliases": [],
+   "lng": -82.35909,
+   "lat": 29.638439,
+   "osm": "way/649785598"
+  },
+  {
    "id": "lakeside-commons",
    "name": "Lakeside Commons",
    "short": "Lakeside Commons",
@@ -2728,21 +2725,6 @@
    "osm": "way/45719880"
   },
   {
-   "id": "guy-bostick-golf-clubhouse",
-   "name": "Guy Bostick Golf Clubhouse",
-   "short": "Guy Bostick Golf Clubhouse",
-   "kind": "academic",
-   "codes": [
-    "GCH"
-   ],
-   "aliases": [
-    "Golf Course Clubhouse"
-   ],
-   "lng": -82.364946,
-   "lat": 29.649918,
-   "osm": "way/404962875"
-  },
-  {
    "id": "se-chilled-water-plant",
    "name": "SE Chilled Water Plant",
    "short": "SE Chilled Water Plant",
@@ -2985,6 +2967,21 @@
    "osm": "way/863605386"
   },
   {
+   "id": "ifas-environmental-stress-lab",
+   "name": "IFAS Environmental Stress Lab",
+   "short": "IFAS Environmental Stress Lab",
+   "kind": "academic",
+   "codes": [
+    "ESL"
+   ],
+   "aliases": [
+    "Environmental Stress Lab"
+   ],
+   "lng": -82.364657,
+   "lat": 29.635451,
+   "osm": "way/296738967"
+  },
+  {
    "id": "weil-chilled-water-plant",
    "name": "Weil Chilled Water Plant",
    "short": "Weil Chilled Water Plant",
@@ -3204,6 +3201,21 @@
    "osm": "way/220368157"
   },
   {
+   "id": "ifas-fruit-packing-facility",
+   "name": "IFAS Fruit Packing Facility",
+   "short": "IFAS Fruit Packing Facility",
+   "kind": "academic",
+   "codes": [
+    "FPK"
+   ],
+   "aliases": [
+    "Fruit Packing"
+   ],
+   "lng": -82.364619,
+   "lat": 29.63566,
+   "osm": "way/296738968"
+  },
+  {
    "id": "solar-energy-test-house",
    "name": "Solar Energy Test House",
    "short": "Solar Energy Test House",
@@ -3321,6 +3333,21 @@
    "lng": -82.370206,
    "lat": 29.643636,
    "osm": "way/404962880"
+  },
+  {
+   "id": "forestry-resource-and-conservation-office",
+   "name": "Forestry Resource & Conservation Office",
+   "short": "Forestry Resource & Conservation Office",
+   "kind": "academic",
+   "codes": [
+    "FF1"
+   ],
+   "aliases": [
+    "Forestry Resource and Conservation"
+   ],
+   "lng": -82.357336,
+   "lat": 29.638453,
+   "osm": "way/866514696"
   },
   {
    "id": "florida-pool-office-lockers",
@@ -3569,6 +3596,19 @@
    "osm": "way/1013856847"
   },
   {
+   "id": "plant-pathology-cytology-laboratory",
+   "name": "Plant Pathology Cytology Laboratory",
+   "short": "Plant Pathology Cytology Laboratory",
+   "kind": "academic",
+   "codes": [
+    "PPCL"
+   ],
+   "aliases": [],
+   "lng": -82.356321,
+   "lat": 29.639397,
+   "osm": "way/1013858700"
+  },
+  {
    "id": "veterinary-clinical-sciences",
    "name": "Veterinary Clinical Sciences",
    "short": "Veterinary Clinical Sciences",
@@ -3766,6 +3806,84 @@
    "osm": "way/654538297"
   },
   {
+   "id": "entomology-field-laboratory",
+   "name": "Entomology Field Laboratory",
+   "short": "Entomology Field Laboratory",
+   "kind": "academic",
+   "codes": [
+    "ENYF"
+   ],
+   "aliases": [],
+   "lng": -82.357693,
+   "lat": 29.63903,
+   "osm": "way/1013856822"
+  },
+  {
+   "id": "nematology-field-lab",
+   "name": "Nematology Field Lab",
+   "short": "Nematology Field Lab",
+   "kind": "academic",
+   "codes": [
+    "NFL"
+   ],
+   "aliases": [],
+   "lng": -82.357849,
+   "lat": 29.639032,
+   "osm": "way/1013856821"
+  },
+  {
+   "id": "ifas-warehouse",
+   "name": "IFAS Warehouse",
+   "short": "IFAS Warehouse",
+   "kind": "academic",
+   "codes": [
+    "IFW2"
+   ],
+   "aliases": [],
+   "lng": -82.356743,
+   "lat": 29.639563,
+   "osm": "way/866514704"
+  },
+  {
+   "id": "plant-pathology-growth-room",
+   "name": "Plant Pathology Growth Room",
+   "short": "Plant Pathology Growth Room",
+   "kind": "academic",
+   "codes": [
+    "PPGR"
+   ],
+   "aliases": [],
+   "lng": -82.355971,
+   "lat": 29.639356,
+   "osm": "way/1013858697"
+  },
+  {
+   "id": "soils-plant-preparation-lab",
+   "name": "Soils Plant Preparation Lab",
+   "short": "Soils Plant Preparation Lab",
+   "kind": "academic",
+   "codes": [
+    "SPPL"
+   ],
+   "aliases": [],
+   "lng": -82.358018,
+   "lat": 29.639339,
+   "osm": "way/1013856825"
+  },
+  {
+   "id": "mechanics-shop",
+   "name": "Mechanics Shop",
+   "short": "Mechanics Shop",
+   "kind": "academic",
+   "codes": [
+    "IFMS"
+   ],
+   "aliases": [],
+   "lng": -82.357223,
+   "lat": 29.639977,
+   "osm": "way/259946085"
+  },
+  {
    "id": "pesticide-lab-annex-b",
    "name": "Pesticide Lab Annex B",
    "short": "Pesticide Lab Annex B",
@@ -3803,6 +3921,32 @@
    "lng": -82.359528,
    "lat": 29.638229,
    "osm": "way/649785599"
+  },
+  {
+   "id": "field-lab",
+   "name": "Field Lab",
+   "short": "Field Lab",
+   "kind": "academic",
+   "codes": [
+    "PLSL"
+   ],
+   "aliases": [],
+   "lng": -82.358352,
+   "lat": 29.639087,
+   "osm": "way/1013856819"
+  },
+  {
+   "id": "odas",
+   "name": "oDAS",
+   "short": "oDAS",
+   "kind": "academic",
+   "codes": [
+    "ODAS"
+   ],
+   "aliases": [],
+   "lng": -82.357696,
+   "lat": 29.640453,
+   "osm": "way/1013856842"
   },
   {
    "id": "uf-large-animal-hospital",

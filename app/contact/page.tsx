@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CONTACT_EMAIL, pageMetadata } from "@/lib/seo";
+import { CONTACT_EMAIL, INSTAGRAM_URL, TIKTOK_URL, pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import PageShell from "@/components/ds/PageShell";
 import PageHero from "@/components/ds/PageHero";
@@ -95,11 +95,11 @@ export default function ContactPage() {
           </ul>
           <p className={css.reach}>
             <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> ·{" "}
-            <a href="https://tiktok.com/@dorm.scape" target="_blank" rel="noopener noreferrer">
+            <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer">
               TikTok<span className="ds-sr"> (opens in a new tab)</span>
             </a>{" "}
             ·{" "}
-            <a href="https://www.instagram.com/dorm.scape" target="_blank" rel="noopener noreferrer">
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
               Instagram<span className="ds-sr"> (opens in a new tab)</span>
             </a>
           </p>
