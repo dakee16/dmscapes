@@ -57,12 +57,6 @@ function MapCard({ example, rows, chip, className }: { example: Example; rows: n
       </div>
       {chip && (
         <p className={css.mapChip}>
-          <span className={css.mapChipIcon} aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-              <rect x="4" y="5" width="16" height="15" rx="2" />
-              <path d="M4 10h16M9 3v4M15 3v4" />
-            </svg>
-          </span>
           schedule.ics <span className={css.mapChipNote}>· 5 places</span>
         </p>
       )}

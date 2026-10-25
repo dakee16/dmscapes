@@ -1,6 +1,5 @@
 /* Plan result tip (design-handoff/hall-finder 17-Mentions). */
-.tip { margin: 0; display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 10px 12px; padding: 14px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1.5px rgba(22, 22, 29, 0.12), 0 10px 24px rgba(22, 22, 29, 0.08); }
-.tipIcon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--ds-sky); color: var(--ds-blue); }
+.tip { margin: 0; display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 10px 12px; padding: 14px; border-radius: 16px; background: #fff; box-shadow: 0 0 0 1.5px rgba(22, 22, 29, 0.12), 0 10px 24px rgba(22, 22, 29, 0.08); }
 .tipText { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .tipText strong { font-size: 16px; }
 .tipText span { font-size: 13px; line-height: 1.4; color: var(--ds-body); }

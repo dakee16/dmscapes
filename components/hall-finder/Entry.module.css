@@ -37,21 +37,12 @@
   align-items: center;
   gap: 10px;
   height: 44px;
-  padding: 0 16px 0 10px;
+  padding: 0 16px;
   border-radius: 999px;
   background: #fff;
   box-shadow: 0 8px 20px rgba(22, 22, 29, 0.16);
   font-size: 15px;
   font-weight: 800;
-}
-.mapChipIcon {
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: var(--ds-sky);
-  color: var(--ds-blue);
 }
 .mapChipNote { color: var(--ds-caption); font-weight: 600; }
 .rank {

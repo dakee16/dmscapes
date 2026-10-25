@@ -41,7 +41,6 @@
 
 /* Upload */
 .upload { margin-top: 20px; display: flex; align-items: center; gap: 14px; padding: 14px 14px 14px 16px; border-radius: 16px; border: 2px dashed rgba(22, 22, 29, 0.22); background: #fff; }
-.uploadIcon { flex: none; width: 44px; height: 44px; border-radius: 12px; background: #dce1f5; display: grid; place-items: center; color: var(--ds-blue); }
 .uploadText { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; font-size: 13px; line-height: 1.35; color: var(--ds-body); }
 .uploadText strong { font-size: 16px; color: var(--ds-ink); }
 .fileLine { margin: 8px 2px 0; display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ds-body); }

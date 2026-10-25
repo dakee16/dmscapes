@@ -34,12 +34,6 @@ export default function ResultTip({ collegeId, short }: { collegeId: string; sho
   };
   return (
     <aside className={css.tip} aria-label="Hall Finder tip">
-      <span className={css.tipIcon} aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" />
-          <circle cx="12" cy="9.5" r="2.5" />
-        </svg>
-      </span>
       <span className={css.tipText}>
         <strong>Still choosing a hall?</strong>
         <span>Hall Finder ranks {short} halls by your classes.</span>
