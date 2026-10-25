@@ -215,7 +215,7 @@ for(const original of [{...room,source:"catalog",dimsEstimated:true},{...irregul
   assert.deepEqual(studio.roomOutline(store.getState().room).openings,studio.defaultOpenings(outline.points),"A room with every opening removed gets the default door and window back");
 }
 console.log("PASS: openings add, edit, remove, persist, and validate without changing walls, dimensions, closets, furniture, or view.");
-const {NumberField,RoomDetails}=load(path.join(root,"components/studio/StudioPanels.tsx"));
+const {NumberField,BeddingSize}=load(path.join(root,"components/studio/StudioPanels.tsx"));
 for(const [entered,accept,expected] of [[4,true,"4"],[4,false,"3"],[99,true,"3"],[NaN,true,"3"]]){
   let calls=0;
   const field=NumberField({label:"Opening width",value:3,min:.5,max:10,onCommit:()=>{calls++;return accept;}});
@@ -267,12 +267,11 @@ new Function("require","module","exports",drawCode)(id=>{
   return id.startsWith("@/")?load(path.join(root,id.slice(2))):require(id);
 },drawModule,drawModule.exports);
 const {createElement}=require("react"),{renderToStaticMarkup}=require("react-dom/server");
-const openingHTML=renderToStaticMarkup(createElement(RoomDetails,{room:{...room,outline:withDoor},controls:{selected:0,select:()=>{}},onAdd:()=>{},onRemove:()=>{},onFlip:()=>{}}));
-assert.equal((openingHTML.match(/draggable="true"/g)||[]).length,2,"Door and window cards support native drag and drop");
-assert.match(openingHTML,/Bedding size for product matches/,"Room details preserve the bedding choice separately from opening tools");
-const openingToolsHTML=openingHTML.slice(openingHTML.indexOf("<h2>Doors"));
-assert.doesNotMatch(openingToolsHTML,/<input|<select|offset|Ceiling height|Opening.*width/,"Opening tools have no measurement or wall selection form");
-assert.match(openingHTML,/Flip door/);assert.match(openingHTML,/Remove/);
+const roomPanelHTML=renderToStaticMarkup(createElement(BeddingSize,{room:{...room,outline:withDoor}}));
+assert.match(roomPanelHTML,/Bedding size for product matches/,"The planner's room panel keeps the bedding choice");
+const plannerSource=fs.readFileSync(path.join(root,"components/studio/PlannerStudio.tsx"),"utf8");
+assert.doesNotMatch(plannerSource,/OpeningTools|RoomDetails|Placed openings|\+ Door|\+ Window|addOpening/,"The planner's left panel has no add-door/window cards or placed-openings list");
+assert.match(plannerSource,/aria-label="Selected opening"/,"A selected door or window can still be flipped or removed from the bar under the room");
 const drawHTML=props=>renderToStaticMarkup(createElement(drawModule.exports.default,{onComplete:()=>{},...props}));
 const freshDrawing=drawHTML({});
 assert.match(freshDrawing,/tabindex="0" role="region" aria-label="Room drawing canvas"/,"A new room opens directly on the drawing canvas");

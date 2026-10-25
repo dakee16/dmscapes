@@ -26,7 +26,7 @@ import { useStudioUI } from "@/components/studio-ui/StudioUI";
 import { CameraIcon, ChevronLeft, CloseIcon, ExpandIcon, LowerIcon, MinusIcon, MoveIcon, PencilIcon, PlusIcon, RaiseIcon, RedoIcon, RotateIcon, SwapIcon, TrashIcon, UndoIcon } from "@/components/studio-ui/icons";
 import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
 import WalkIn from "./WalkIn";
-import { BeddingSize, FINISH_NOTE, FloorSwatches, ItemInspector, LightSwitch, OpeningTools, RoomDetails, RoomFinishes } from "./StudioPanels";
+import { BeddingSize, FINISH_NOTE, FloorSwatches, ItemInspector, LightSwitch, RoomFinishes } from "./StudioPanels";
 import s from "./Studio.module.css";
 
 const RoomDrawCanvas=dynamic(()=>import("@/components/planner/RoomDrawCanvas"),{ssr:false,loading:()=> <BrandLoader label="Opening room measurements…"/>});
@@ -60,7 +60,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const ui=useStudioUI();
   const allowed3D=!loading&&canUse3D(profile),preview=view==="3d"&&!allowed3D;
   // 2D keeps the shopping list beside the plan; room details and checks borrow its column. 3D puts the room
-  // (finishes, doors and windows, arranging) on the left and only the shopping list on the right; phones show
+  // (finishes and arranging) on the left and only the shopping list on the right; phones show
   // the two as tabs of one sheet. Item details, checks and the guide open in the room's place.
   const sidePanel:Panel=panel==="item"||panel==="checks"||panel==="help"?panel:"style";
   const activePanel:Panel=view==="2d"?(panel==="room"||panel==="checks"?panel:"shop"):compact&&panel!=="shop"?sidePanel:"shop";
@@ -93,7 +93,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   }
   function selectOpening(index:number|null){
     setSelectedOpening(index);setOpeningError("");
-    if(index!==null){usePlannerStore.setState({selectedItemId:null,selectedCategory:null,hoveredCategory:null});setPanel("room");setMoveMode(false);}
+    if(index!==null){usePlannerStore.setState({selectedItemId:null,selectedCategory:null,hoveredCategory:null});setMoveMode(false);}
   }
   function commitOpening(index:number|null,opening:WallOpening){
     const current=roomOutline(usePlannerStore.getState().room!);
@@ -104,10 +104,6 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   const openingControls:OpeningControls={selected:selectedOpening,select:selectOpening,
     preview:(target,point)=>{const current=roomOutline(usePlannerStore.getState().room!);const opening=typeof target==="number"?current.openings[target]:target;return opening?openingAtPoint(current,opening,point,typeof target==="number"?target:-1):null;},
     commit:commitOpening};
-  function addOpening(kind:WallOpening["kind"]){
-    const opening=openingAtPoint(outline,kind);
-    if(opening)commitOpening(null,opening);else setOpeningError("No clear wall space left for another "+kind+".");
-  }
   /** Every room keeps at least one door or window (a room with none gets the defaults back), so the last one only moves. */
   function removeOpening(index:number){
     if(outline.openings.length<=1){setOpeningError("A room keeps at least one door or window. Move it instead.");return;}
@@ -165,7 +161,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
     {view==="2d"&&<button type="button" className={s.backButton} onClick={()=>setPanel("shop")}><ChevronLeft size={16}/>Shopping list</button>}
     <h2 className={s.panelTitle}>Room details</h2>
     <button className={s.primary} disabled={loading} onClick={()=>{if(!isPaid(profile)){openUpgrade("draw-room");return;}setEditingRoom(true);setMobileOpen(false);}}>Edit walls &amp; room shape{!isPaid(profile)&&<span className={s.plusTag}>Plus</span>}</button>
-    <RoomDetails room={room} controls={openingControls} onAdd={addOpening} onRemove={removeOpening} onFlip={flipOpening}/>
+    <BeddingSize room={room}/>
     <details className={s.disclosure}><summary>View &amp; layout options</summary>{allowed3D&&<label className={s.field}>Wall visibility<select aria-label="Wall visibility" value={walls} onChange={e=>setWalls(e.target.value)}><option value="auto">Automatic cutaway</option><option value="all">All walls</option><option value="hidden">Hide walls</option></select></label>}<div className={s.buttonRow}><button onClick={()=>open("checks")}>Placement checks ({new Set(issues.map(i=>i.id)).size})</button><button onClick={()=>setResetConfirm(true)}>Reset layout</button></div></details>
   </>;
   const checksPanel=<>
@@ -173,7 +169,7 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
     <p className={s.eyebrow}>A second look</p><h2 className={s.panelTitle}>Placement checks</h2><p className={s.muted}>Checks flag overlap, wall boundaries, ceiling height, and proximity to inward door swings. They are a guide, not a guarantee of fit.</p>
     {issues.length? <ul className={s.issueList}>{issues.map((issue,i)=><li key={i}><button onClick={()=>{select(issue.id);scene.current?.focus(issue.id);}}><strong>{items.find(f=>f.id===issue.id)?.label}</strong><span>{issue.message}</span></button></li>)}</ul>:<p className={s.note}>No placement conflicts detected for the visible furniture.</p>}
   </>;
-  const helpPanel=<>{view==="3d"&&<button type="button" className={s.backButton} onClick={()=>setPanel("style")}><ChevronLeft size={16}/>Room</button>}<p className={s.eyebrow}>Make yourself at home</p><h2 className={s.panelTitle}>Your studio guide.</h2><dl className={s.helpList}><dt>Look around</dt><dd>Drag empty space. Use the camera presets to return to a familiar view.</dd><dt>Arrange</dt><dd>Drag a piece on desktop. On a phone, tap it, then drag it.</dd><dt>Zoom</dt><dd>Scroll, pinch, or use the zoom buttons.</dd><dt>Be precise</dt><dd>Use the selected item&apos;s position fields. Snap rounds to half-foot increments.</dd><dt>Undo</dt><dd>Use Undo or Ctrl / Command + Z. A finished drag counts as one edit.</dd><dt>Doors &amp; windows</dt><dd>Choose Doors &amp; windows in either view. Drag a door or window onto a wall, or tap to add one and drag it into place. Select a door to flip it. Changes appear immediately in both views. Use Undo to reverse an edit.</dd><dt>Save &amp; share</dt><dd>Use Save design to keep a named copy in your account. Share creates a link or exports the current view.</dd></dl><p className={s.note}>3D objects are approximate models. Product photos show the actual selected items. Switching views does not generate a new plan or use a credit.</p></>;
+  const helpPanel=<>{view==="3d"&&<button type="button" className={s.backButton} onClick={()=>setPanel("style")}><ChevronLeft size={16}/>Room</button>}<p className={s.eyebrow}>Make yourself at home</p><h2 className={s.panelTitle}>Your studio guide.</h2><dl className={s.helpList}><dt>Look around</dt><dd>Drag empty space. Use the camera presets to return to a familiar view.</dd><dt>Arrange</dt><dd>Drag a piece on desktop. On a phone, tap it, then drag it.</dd><dt>Zoom</dt><dd>Scroll, pinch, or use the zoom buttons.</dd><dt>Be precise</dt><dd>Use the selected item&apos;s position fields. Snap rounds to half-foot increments.</dd><dt>Undo</dt><dd>Use Undo or Ctrl / Command + Z. A finished drag counts as one edit.</dd><dt>Doors &amp; windows</dt><dd>Drag a door or window along the walls in either view to move it. Select one to flip a door or remove it. Changes appear immediately in both views. Use Undo to reverse an edit.</dd><dt>Save &amp; share</dt><dd>Use Save design to keep a named copy in your account. Share creates a link or exports the current view.</dd></dl><p className={s.note}>3D objects are approximate models. Product photos show the actual selected items. Switching views does not generate a new plan or use a credit.</p></>;
   const itemPanel=<>
     <button type="button" className={s.backButton} onClick={()=>setPanel("style")}><ChevronLeft size={16}/>Room</button>
     {selected?<ItemInspector key={selected.id} item={selected} items={items} room={room} product={selectedProduct} issues={issues.filter(i=>i.id===selected.id).map(i=>i.message)} moveMode={moveMode}
@@ -205,14 +201,11 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
       </div>}
     </>:null;
   const hint=preview?"Your room, previewed. Unlock Pro to explore and arrange it.":moveMode?"Move mode: drag the selected furniture. Choose Stop moving when done.":"Drag a piece to move it · Shift-drag to lift it · Drag empty space to look around";
-  // The 3D room panel (left on desktop, the Room tab on phones): finishes, doors and windows, then arranging.
+  // The 3D room panel (left on desktop, the Room tab on phones): finishes, then arranging.
   const roomSettings=<>
     <h2 className={s.eyebrowInk}>Room</h2>
     {unplaced&&<div className={s.unplaced}>{unplaced}</div>}
     <RoomFinishes room={room}/>
-    <fieldset className={s.swatchSet}><legend>Doors &amp; windows</legend>
-      <OpeningTools room={room} controls={openingControls} onAdd={addOpening} onRemove={removeOpening} onFlip={flipOpening}/>
-    </fieldset>
     <details className={s.disclosure}><summary>More room settings</summary>
       <button className={s.primary} disabled={loading} onClick={()=>{if(!isPaid(profile)){openUpgrade("draw-room");return;}setEditingRoom(true);setMobileOpen(false);}}>Edit walls &amp; room shape{!isPaid(profile)&&<span className={s.plusTag}>Plus</span>}</button>
       <BeddingSize room={room}/>

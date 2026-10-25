@@ -57,7 +57,7 @@ export default function CanvasToolRail(p: CanvasToolRailProps) {
         {tool("Labels and measurements", <RulerIcon />, p.toggleLabels, { pressed: p.labels, toggle: true, className: s.desk })}
         {tool("Plan view", <PlanIcon />, () => p.setRoomView(!p.roomView), { pressed: !p.roomView, toggle: true, className: s.desk, title: "Plan view: the flat drawing" })}
         {p.dock.addPiece && tool("Add a piece", <PlusIcon />, p.dock.addPiece)}
-        {tool("Doors and windows", <RoomIcon />, p.dock.editOpenings, { className: s.desk, title: "Edit walls, doors and windows" })}
+        {tool(planner ? "Room details" : "Doors and windows", <RoomIcon />, p.dock.editOpenings, { className: s.desk, title: planner ? "Edit walls and room details" : "Edit walls, doors and windows" })}
         {tool("Undo", <UndoIcon />, p.undo, { disabled: !p.canUndo, className: planner ? s.phone : "", title: "Undo (Ctrl/⌘ Z)" })}
         {!planner && tool("Redo", <RedoIcon />, p.redo, { disabled: !p.canRedo, className: s.desk, title: "Redo (Ctrl/⌘ Shift Z)" })}
       </div>
@@ -86,7 +86,7 @@ export default function CanvasToolRail(p: CanvasToolRailProps) {
               <button type="button" className={s.item} aria-pressed={p.numbers} onClick={p.toggleNumbers} title="Number every piece to match the shopping list (N)"><BagIcon size={16} />List numbers<span>{p.numbers ? "On" : "Off"}</span></button>
               <button type="button" className={s.item} aria-pressed={p.grid} onClick={p.toggleGrid}><GridIcon size={16} />Grid<span>{p.grid ? "On" : "Off"}</span></button>
               <button type="button" className={s.item} aria-pressed={p.snap} onClick={p.toggleSnap} title="Snap to a 6-inch grid. Turn off for 1-inch positioning."><MagnetIcon size={16} />Snap to 6 inches<span>{p.snap ? "On" : "Off"}</span></button>
-              <button type="button" className={`${s.item} ${s.phoneFlex}`} onClick={() => { setMore(false); p.dock.editOpenings(); }}><RoomIcon size={16} />Doors &amp; windows</button>
+              <button type="button" className={`${s.item} ${s.phoneFlex}`} onClick={() => { setMore(false); p.dock.editOpenings(); }}><RoomIcon size={16} />{planner ? "Room details" : "Doors & windows"}</button>
               {planner && <button type="button" className={`${s.item} ${s.phoneFlex}`} disabled={!p.canRedo} onClick={p.redo}><RedoIcon size={16} />Redo</button>}
               <button type="button" className={s.item} onClick={() => { setMore(false); p.dock.expand(); }}>
                 <ExpandIcon size={16} />{p.dock.expanded ? "Exit fullscreen" : planner ? "Focus on the plan" : "Expand"}

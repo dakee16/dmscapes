@@ -1,9 +1,8 @@
 "use client";
-import type { FurnitureItem, Product, SelectedRoom, WallOpening } from "@/lib/types";
+import type { FurnitureItem, Product, SelectedRoom } from "@/lib/types";
 import { usePlannerStore } from "@/lib/store";
 import { footprint } from "@/components/canvas/geometry";
-import { constrainedPosition, FLOOR_FINISHES, FLOOR_LABELS, itemElevation, itemHeight, LIGHT_LABELS, LIGHTING_PRESETS, modelKind, roomOutline, studioSettings } from "@/lib/studio";
-import { OPENING_DRAG_TYPE, type OpeningControls } from "@/lib/room-editing";
+import { constrainedPosition, FLOOR_FINISHES, FLOOR_LABELS, itemElevation, itemHeight, LIGHT_LABELS, LIGHTING_PRESETS, modelKind, studioSettings } from "@/lib/studio";
 import { MoonIcon, SunIcon, SunsetIcon } from "@/components/studio-ui/icons";
 import s from "./Studio.module.css";
 
@@ -58,34 +57,6 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
 /** Bedding size for product matches (it never resizes furniture). */
 export function BeddingSize({room}:{room:SelectedRoom}){
   return <><label className={s.field}>Bedding size for product matches<select value={room.bedSize} onChange={e=>usePlannerStore.setState({room:{...room,bedSize:e.target.value as SelectedRoom["bedSize"]}})}><option value="twin_xl">Twin XL</option><option value="twin">Twin</option><option value="full">Full</option><option value="full_xl">Full XL</option><option value="queen">Queen</option></select></label><p className={s.note}>Check the actual mattress size. This setting does not resize your furniture.</p></>;
-}
-
-/** Add, list, flip and remove doors and windows. Every room keeps at least one, so the last can't be removed. */
-export function OpeningTools({room,controls,onAdd,onRemove,onFlip}:{room:SelectedRoom;controls:OpeningControls;onAdd:(kind:WallOpening["kind"])=>void;onRemove:(index:number)=>void;onFlip:(index:number)=>void}){
-  const openings=roomOutline(room).openings,last=openings.length<=1;
-  return <>
-    <p className={s.muted}>Drag one onto a wall. Or tap to add, then drag it into place.</p>
-    <div className={s.openingTools}>
-      {(["door","window"] as const).map(kind=><button key={kind} type="button" draggable onDragStart={e=>{e.dataTransfer.setData(OPENING_DRAG_TYPE+"-"+kind,kind);e.dataTransfer.effectAllowed="copy";}} onClick={()=>onAdd(kind)}>
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">{kind==="door"?<><path d="M10 42V6h26v36M7 42h34M14 42V10l18 5v27Z"/><circle cx="27" cy="28" r="1"/></>:<><rect x="7" y="7" width="34" height="34" rx="1"/><path d="M24 7v34M7 24h34M5 43h38"/></>}</svg>
-        <strong>+ {kind==="door"?"Door":"Window"}</strong><small>Drag or tap to add</small>
-      </button>)}
-    </div>
-    <p className={s.note}>Every room starts with a door and a window where most dorm rooms have them. Drag them on the plan or in 3D to match yours; they snap to walls.</p>
-    {openings.length>0&&<details className={s.disclosure}><summary>Placed openings ({openings.length})</summary>
-      <div className={s.buttonRow}>{openings.map((o,i)=><button key={i} aria-pressed={controls.selected===i} onClick={()=>controls.select(i)}>{o.kind==="door"?"Door":"Window"} {i+1}</button>)}</div>
-      {controls.selected!==null&&openings[controls.selected]&&<div className={s.buttonRow}>
-        {openings[controls.selected].kind==="door"&&<button onClick={()=>onFlip(controls.selected!)}>Flip door</button>}
-        <button disabled={last} title={last?"A room keeps at least one door or window. Move it instead.":undefined} onClick={()=>onRemove(controls.selected!)}>Remove</button>
-      </div>}
-      <p className={s.muted}>Keyboard: select an opening, then use the Left and Right arrow keys to slide it, or Up and Down to move it to the next wall.</p>
-    </details>}
-  </>;
-}
-
-export function RoomDetails({room,controls,onAdd,onRemove,onFlip}:{room:SelectedRoom;controls:OpeningControls;onAdd:(kind:WallOpening["kind"])=>void;onRemove:(index:number)=>void;onFlip:(index:number)=>void}){
-  return <><BeddingSize room={room}/><p className={s.eyebrow}>Make room for real life</p><h2>Doors &amp; windows</h2>
-    <OpeningTools room={room} controls={controls} onAdd={onAdd} onRemove={onRemove} onFlip={onFlip}/></>;
 }
 
 const WALLS: [string, string][] = [["Warm cream", "#f3eee4"], ["Sage", "#c9d3be"], ["Powder blue", "#cfd9ec"], ["Blush", "#ebcfcb"]];
