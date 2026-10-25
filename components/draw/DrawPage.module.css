@@ -180,3 +180,11 @@
   .promo, .reuseCard { transition: none; }
   .promo:hover, .reuseCard:hover { transform: none; }
 }
+
+/* Questions under the steps (crawlable text for "draw a dorm room floor plan"). */
+.faqWrap { max-width: 860px; }
+.faqTitle { margin: 0 0 8px; font-size: clamp(26px, 3vw, 34px); line-height: 1.1; font-weight: 850; letter-spacing: -0.02em; color: var(--ds-ink); }
+.faqList { margin: 20px 0 0; }
+.faqList > div { padding: 18px 0; border-top: 1.5px solid rgba(22, 22, 29, 0.1); }
+.faqList dt { font-size: 19px; font-weight: 800; line-height: 1.3; color: var(--ds-ink); }
+.faqList dd { margin: 8px 0 0; font-size: 17px; line-height: 1.6; color: var(--ds-body); }

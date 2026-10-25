@@ -973,6 +973,8 @@
   gap: 32px;
 }
 .finalCopy { padding: 112px 0; align-self: start; }
+/* The site blue on this amber panel was 2.85:1; #1c3ee6 is 3.4:1, over the 3:1 large text needs. */
+.finalCopy :global(.ds-serif--blue) { color: #1c3ee6; }
 .finalEyebrow { color: var(--ds-ink); font-weight: 700; }
 .h2h { margin-top: 22px; }
 .h2h .s { font-size: clamp(64px, 8.2vw, 118px); line-height: 0.92; font-weight: 900; letter-spacing: -0.04em; }

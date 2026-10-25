@@ -9,9 +9,10 @@ import dynamic from "next/dynamic";
 import { usePlannerStore } from "@/lib/store";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { isPaid } from "@/lib/plan";
+import { PLUS_PRICE_USD, PRO_PRICE_USD, isPaid } from "@/lib/plan";
 import { track } from "@/lib/analytics";
 import PageShell from "@/components/ds/PageShell";
+import JsonLd from "@/components/site/JsonLd";
 import PageHero from "@/components/ds/PageHero";
 import Headline from "@/components/ds/Headline";
 import { ArrowRight, ArrowUpRight } from "@/components/ds/Icons";
@@ -27,6 +28,26 @@ const RoomDrawCanvas = dynamic(() => import("@/components/planner/RoomDrawCanvas
   ssr: false,
   loading: () => <div className={css.loading}><BrandLoader label="Opening your drawing studio…"/></div>,
 });
+
+// What people ask before drawing a room; shown under the steps and repeated as FAQPage schema.
+const FAQS = [
+  {
+    q: "How do I draw my dorm room floor plan?",
+    a: "Measure your room's walls, then tap to place the corners on the grid and trace the walls. Tap a wall to add your door and windows, tap inside the room to add a closet, and choose a vibe. dormscape then creates a furniture layout and shopping list that fit your room.",
+  },
+  {
+    q: "Does my room have to be a rectangle?",
+    a: "No. You place each corner yourself, so L-shaped rooms and rooms with angled corners or bays work. Walls snap to 15 degree steps to keep the angles precise.",
+  },
+  {
+    q: "Do I need to draw my room if my school is listed?",
+    a: "No. If your school is on dormscape, pick your hall and room type and its published size loads without any drawing. Draw your room when your school isn't listed or your room differs from the published size.",
+  },
+  {
+    q: "Is drawing free?",
+    a: `Drawing is included with Plus ($${PLUS_PRICE_USD.toFixed(2)} once) and Pro ($${PRO_PRICE_USD.toFixed(2)} once). Planning a room from your school's published sizes is free.`,
+  },
+];
 
 const OCC = [1, 2, 3, 4] as const;
 const TYPE_FOR_OCC: Record<number, string> = { 1: "single", 2: "double", 3: "triple", 4: "quad" };
@@ -141,6 +162,27 @@ export default function DrawRoomPage() {
           <DrawSteps />
         </div>
       </section>
+
+      <section className="ds-section" aria-labelledby="draw-faq">
+        <div className={`ds-wrap ${css.faqWrap}`}>
+          <h2 id="draw-faq" className={css.faqTitle}>Questions about drawing your room</h2>
+          <dl className={css.faqList}>
+            {FAQS.map((f) => (
+              <div key={f.q}>
+                <dt>{f.q}</dt>
+                <dd>{f.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+        }}
+      />
 
       <section className={`ds-section ${css.more}`} aria-label="More ways to start">
         <div className={`ds-wrap ${css.moreWrap}`}>
