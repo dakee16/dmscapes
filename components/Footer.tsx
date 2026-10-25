@@ -2,14 +2,13 @@ import Link from "next/link";
 import Wordmark from "@/components/site/Wordmark";
 import { MotionToggle } from "@/components/experience/MotionProvider";
 import FeedbackLink from "@/components/site/FeedbackLink";
-import { ArrowUpRight } from "@/components/ds/Icons";
 import { FooterLink as HallFinderLink } from "@/components/hall-finder/Entry";
-import { INSTAGRAM_URL, TIKTOK_URL } from "@/lib/seo";
+import SocialLinks from "@/components/ds/SocialLinks";
 import s from "./ds/SiteFooter.module.css";
 
 const COLUMNS: {
   heading: string;
-  links: { label: string; href?: string; anchor?: boolean; external?: boolean; feedback?: boolean; hallFinder?: boolean }[];
+  links: { label: string; href?: string; anchor?: boolean; feedback?: boolean; hallFinder?: boolean }[];
 }[] = [
   {
     heading: "Product",
@@ -45,13 +44,6 @@ const COLUMNS: {
       { label: "Cookie Policy", href: "/cookies" },
     ],
   },
-  {
-    heading: "Social",
-    links: [
-      { label: "TikTok", href: TIKTOK_URL, external: true },
-      { label: "Instagram", href: INSTAGRAM_URL, external: true },
-    ],
-  },
 ];
 
 export default function Footer() {
@@ -66,6 +58,7 @@ export default function Footer() {
             Make room.
           </p>
           <p className={s.tagline}>Your next chapter, planned.</p>
+          <SocialLinks />
         </div>
         <nav className={s.columns} aria-label="Footer">
           {COLUMNS.map((col) => (
@@ -76,10 +69,6 @@ export default function Footer() {
                   <li key={link.label}>
                     {link.feedback ? (
                       <FeedbackLink />
-                    ) : link.external ? (
-                      <a href={link.href} target="_blank" rel="noopener noreferrer">
-                        {link.label}<ArrowUpRight size={13} className={s.ext} />
-                      </a>
                     ) : link.anchor ? (
                       <a href={link.href}>{link.label}</a>
                     ) : (
