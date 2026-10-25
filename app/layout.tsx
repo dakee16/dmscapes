@@ -49,6 +49,7 @@ export const metadata: Metadata = {
   // Pages set their own title ("Elder Hall Room Dimensions, Northwestern");
   // the lowercase brand rides along so tabs and results still read dormscape.
   title: { default: "dormscape", template: "%s | dormscape" },
+  applicationName: "dormscape",
   description: DESCRIPTION,
   openGraph: {
     title: "dormscape: your dorm room, planned before move-in day",

@@ -4,6 +4,7 @@ import { MotionToggle } from "@/components/experience/MotionProvider";
 import FeedbackLink from "@/components/site/FeedbackLink";
 import { ArrowUpRight } from "@/components/ds/Icons";
 import { FooterLink as HallFinderLink } from "@/components/hall-finder/Entry";
+import { INSTAGRAM_URL, TIKTOK_URL } from "@/lib/seo";
 import s from "./ds/SiteFooter.module.css";
 
 const COLUMNS: {
@@ -47,8 +48,8 @@ const COLUMNS: {
   {
     heading: "Social",
     links: [
-      { label: "TikTok", href: "https://tiktok.com/@dorm.scape", external: true },
-      { label: "Instagram", href: "https://www.instagram.com/dorm.scape", external: true },
+      { label: "TikTok", href: TIKTOK_URL, external: true },
+      { label: "Instagram", href: INSTAGRAM_URL, external: true },
     ],
   },
 ];
