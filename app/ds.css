@@ -379,6 +379,16 @@
 }
 .dm-app[data-motion="paused"] [data-headline] .ds-riso { text-shadow: var(--ds-riso) !important; }
 
+/* Motion off (the footer toggle; MotionProvider adds .ds-still) and reduced motion
+   (MOTION.md): every loop and keyframe inside [data-anim] stops. Each component
+   styles its own finished state under the same two conditions; scroll scenes
+   check useStill() before they start. */
+@media (prefers-reduced-motion: reduce) {
+  [data-anim], [data-anim] *, [data-anim]::before, [data-anim]::after, [data-anim] *::before, [data-anim] *::after { animation: none !important; }
+}
+.ds-still [data-anim], .ds-still [data-anim] *, .ds-still [data-anim]::before, .ds-still [data-anim]::after,
+.ds-still [data-anim] *::before, .ds-still [data-anim] *::after { animation: none !important; }
+
 /* Visually hidden, still read aloud */
 .ds-sr {
   position: absolute !important;
