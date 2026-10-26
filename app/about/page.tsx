@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: "/about",
     images: [
       {
-        url: "/og.png?v=folded-room",
+        url: "/og.png?v=door-mark",
         width: 1200,
         height: 630,
         alt: "dormscape, the free AI dorm room planner",

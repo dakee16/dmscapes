@@ -67,12 +67,12 @@ export function articleJsonLd(post: BlogPost) {
       ...org,
       logo: {
         "@type": "ImageObject",
-        url: `${BLOG_BASE}/icons/icon-512.png?v=folded-room`,
+        url: `${BLOG_BASE}/icons/icon-512.png?v=door-mark`,
         width: 512,
         height: 512,
       },
     },
-    image: `${BLOG_BASE}/og.png?v=folded-room`,
+    image: `${BLOG_BASE}/og.png?v=door-mark`,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     url,
   };
