@@ -13,12 +13,15 @@ import css from "./PasswordChecklist.module.css";
 export default function PasswordChecklist({
   password,
   className = "",
+  meter = false,
 }: {
   password: string;
   className?: string;
+  /** Sign-up's look (Login.dc.html): a three-part strength meter above, met rules in green. */
+  meter?: boolean;
 }) {
-  return (
-    <ul className={`${css.list} ${className}`} aria-label="Password requirements">
+  const list = (
+    <ul className={`${css.list} ${className}`} aria-label="Password requirements" data-look={meter ? "meter" : undefined}>
       {PASSWORD_RULES.map((rule) => {
         const met = rule.test(password);
         return (
@@ -32,5 +35,16 @@ export default function PasswordChecklist({
         );
       })}
     </ul>
+  );
+  if (!meter) return list;
+  return (
+    <>
+      <div className={css.meter} data-met={PASSWORD_RULES.filter((r) => r.test(password)).length} aria-hidden="true">
+        <i />
+        <i />
+        <i />
+      </div>
+      {list}
+    </>
   );
 }

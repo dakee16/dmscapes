@@ -1,8 +1,9 @@
-/* Log in / create account (design-handoff/designs/site/Login.dc.html): the
-   form on paper, paired with the door hanger render. */
+/* Log in / create account (design-handoff/v2 Login.dc.html): the form on plan
+   paper beside the door hanger, swinging on its knob, with what an account keeps. */
 
 /* ---------- Page ---------- */
 .page {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   min-height: 100svh;
@@ -12,31 +13,42 @@
   flex-direction: column;
   min-width: 0;
   padding: 34px clamp(24px, 5vw, 72px) 30px;
+  background-color: var(--ds-plan);
+  background-image:
+    linear-gradient(rgba(36, 73, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 73, 255, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
-.top { display: flex; align-items: center; min-height: 44px; }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; }
 .top :global(.ds-wordmark__type) { font-size: 30px; }
+.backLink {
+  font: 600 11px/1 var(--ds-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+  text-decoration: none;
+}
+.backLink:hover { color: var(--ds-blue); }
 .main {
   flex: 1;
   display: flex;
   align-items: center;
-  padding: clamp(40px, 6vh, 72px) 0 clamp(36px, 5vh, 56px) clamp(0px, 2.8vw, 40px);
+  padding: 56px 0 40px clamp(0px, 2.8vw, 40px);
   outline: none;
 }
 .mainInner { width: 100%; max-width: 520px; }
 .fallback { min-height: 60vh; }
 .legal {
   margin: 0;
-  font-family: var(--ds-mono);
-  font-size: 11px;
-  font-weight: 600;
+  font: 600 11px/1.6 var(--ds-mono);
   letter-spacing: 0.08em;
-  line-height: 1.6;
   text-transform: uppercase;
   color: #6b6b76;
 }
 .legal a { text-decoration: underline; text-underline-offset: 3px; }
 .legal a:hover { color: var(--ds-blue); }
 
+/* ---------- Art: the hanger swings; saved designs take turns at the front ---------- */
 .art {
   position: sticky;
   top: 0;
@@ -44,67 +56,179 @@
   overflow: hidden;
   background: #efe9dc;
 }
-.art img { object-fit: cover; object-position: 50% 32%; }
+.art::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 46%;
+  background: linear-gradient(transparent, rgba(22, 22, 29, 0.28));
+  pointer-events: none;
+}
+.hanger {
+  position: absolute;
+  inset: -6%;
+  transform-origin: 50% 8%;
+  animation: swing 7s ease-in-out infinite;
+}
+.hanger img { object-fit: cover; object-position: 50% 30%; }
+
+.stack {
+  position: absolute;
+  left: clamp(24px, 5vw, 56px);
+  right: clamp(24px, 5vw, 56px);
+  bottom: 48px;
+  z-index: 2;
+  height: 208px;
+}
+.stackHead {
+  position: absolute;
+  left: 0;
+  top: -34px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--ds-ink);
+  color: #fff;
+  font: 600 11px/1 var(--ds-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.stackHead i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #7dffb3;
+  box-shadow: 0 0 0 0 rgba(125, 255, 179, 0.6);
+  animation: live 1.6s ease-out infinite;
+}
+/* At rest (and with motion off) the three cards sit stacked, the first in front. */
+.saved {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 76px;
+  padding: 0 18px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.06), 0 18px 40px rgba(22, 22, 29, 0.18);
+  animation: deck 9s var(--ds-ease) infinite;
+}
+.n1 { z-index: 3; }
+.n2 { z-index: 2; opacity: 0.9; transform: translateY(-28px) scale(0.94); animation-delay: -3s; }
+.n3 { z-index: 1; opacity: 0.7; transform: translateY(-56px) scale(0.88); animation-delay: -6s; }
+.thumbnail {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--ds-plan);
+  background-image:
+    linear-gradient(rgba(36, 73, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 73, 255, 0.14) 1px, transparent 1px);
+  background-size: 6px 6px;
+  box-shadow: inset 0 0 0 2px var(--ds-ink);
+}
+.thumbnail b { display: block; width: 44%; height: 36%; margin: 30% 0 0 28%; border-radius: 2px; background: var(--c); }
+.saved strong { display: block; font: 700 15px/1.2 var(--ds-sans); }
+.saved small {
+  display: block;
+  margin-top: 4px;
+  font: 600 11px/1.2 var(--ds-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+.noteTag {
+  margin-left: auto;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font: 700 10px/1 var(--ds-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.noteTag[data-tone="sv"] { background: rgba(23, 138, 82, 0.12); color: #178a52; }
+.noteTag[data-tone="sh"] { background: rgba(36, 73, 255, 0.1); color: var(--ds-blue); }
+.noteTag[data-tone="ed"] { background: rgba(255, 79, 168, 0.14); color: var(--ds-magenta); }
 
 /* ---------- Form ---------- */
 .form { color: var(--ds-ink); font-family: var(--ds-sans); }
-.title {
-  margin: 0;
-  font-weight: 400;
-  text-wrap: balance;
-}
+.title { margin: 0; font-weight: 400; text-wrap: balance; }
+.title > span { display: inline-block; animation: rise 0.6s var(--ds-ease) both; }
 .titleLead {
-  font-size: clamp(52px, 5.3vw, 76px);
+  font-size: clamp(50px, 5vw, 72px);
   line-height: 0.95;
   font-weight: 850;
   font-stretch: 86%;
   letter-spacing: -0.04em;
 }
-.titleSerif {
+.title > .titleSerif {
   font-family: var(--ds-serif);
   font-style: italic;
-  font-size: clamp(54px, 5.6vw, 80px);
+  font-size: clamp(52px, 5.3vw, 76px);
   line-height: 0.95;
   font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
   letter-spacing: -0.01em;
   color: var(--ds-blue);
   padding-left: 0.06em;
+  animation-delay: 0.06s;
 }
 .intro {
   margin: 14px 0 0;
-  max-width: 480px;
+  max-width: 470px;
   font-size: 18px;
   line-height: 1.5;
   color: var(--ds-body);
 }
 
+/* Segmented switch: the ink pill slides to the mode you pick. */
 .tabs {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin-top: 28px;
   padding: 4px;
-  border-radius: 14px;
-  background: #e6e4dc;
+  border-radius: 999px;
+  background: rgba(22, 22, 29, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(22, 22, 29, 0.06);
 }
+.thumb {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  bottom: 4px;
+  width: calc(50% - 4px);
+  border-radius: 999px;
+  background: var(--ds-ink);
+  box-shadow: 0 6px 16px rgba(22, 22, 29, 0.2);
+  transition: transform 0.45s var(--ds-ease-back);
+}
+.tabs[data-mode="login"] .thumb { transform: translateX(100%); }
 .form .tab {
-  flex: 1 1 0;
+  position: relative;
+  z-index: 1;
   height: 44px;
   border: 0;
-  border-radius: 11px;
-  background: transparent;
+  border-radius: 999px;
+  background: none;
+  font: 700 15px/1 var(--ds-sans);
   color: var(--ds-muted);
-  font: 700 15px var(--ds-sans);
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  transition: color 0.3s ease;
 }
 .form .tab:hover { color: var(--ds-ink); }
-.form .tab[aria-pressed="true"] {
-  background: #fff;
-  color: var(--ds-ink);
-  font-weight: 800;
-  box-shadow: 0 2px 6px rgba(22, 22, 29, 0.1);
-}
+.form .tab[aria-pressed="true"] { color: #fff; }
 
+/* Google, with a shiny sweep on hover. */
 .form .google {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,102 +236,123 @@
   width: 100%;
   height: 56px;
   margin-top: 20px;
-  border: 1.5px solid var(--ds-ink);
-  border-radius: 14px;
+  border: 0;
+  border-radius: 16px;
   background: #fff;
+  box-shadow: inset 0 0 0 1.5px var(--ds-ink);
+  font: 700 16px/1 var(--ds-sans);
   color: var(--ds-ink);
-  font: 800 17px var(--ds-sans);
   cursor: pointer;
-  transition: box-shadow 0.2s, transform 0.25s var(--ds-ease);
+  overflow: hidden;
+  transition: transform 0.25s var(--ds-ease), box-shadow 0.25s var(--ds-ease);
 }
-.form .google:hover { box-shadow: 4px 4px 0 var(--ds-ink); transform: translate(-2px, -2px); }
-.form .google:disabled { cursor: wait; opacity: 0.7; box-shadow: none; transform: none; }
+.form .google::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(36, 73, 255, 0.12) 50%, transparent 65%);
+  background-size: 250% 100%;
+  background-position: 150% 0;
+  transition: background-position 0.8s var(--ds-ease);
+}
+.form .google:hover { transform: translate(-2px, -2px); box-shadow: inset 0 0 0 1.5px var(--ds-ink), 4px 4px 0 var(--ds-ink); }
+.form .google:hover::after { background-position: -50% 0; }
+.form .google:disabled { cursor: wait; opacity: 0.7; transform: none; box-shadow: inset 0 0 0 1.5px var(--ds-ink); }
 .google svg { width: 20px; height: 20px; }
 
 .or {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   margin: 20px 0 0;
-  font-family: var(--ds-mono);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font: 600 11px/1 var(--ds-mono);
+  letter-spacing: 0.14em;
   color: #6b6b76;
 }
 .or::before,
-.or::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: rgba(22, 22, 29, 0.15);
-}
+.or::after { content: ""; flex: 1; height: 1px; background: var(--ds-line); }
 
-.fields {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-top: 18px;
-}
+.fields { display: grid; gap: 16px; margin-top: 20px; }
 .fields.solo { margin-top: 22px; }
-.field { display: flex; flex-direction: column; gap: 7px; }
+.field { display: grid; gap: 8px; }
 .labelRow { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-.label { font-size: 14px; font-weight: 800; }
-.form .input {
-  width: 100%;
-  height: 54px;
-  box-sizing: border-box;
-  padding: 0 16px;
-  border: 1.5px solid rgba(22, 22, 29, 0.3);
-  border-radius: 12px;
-  background: #fff;
+.label {
+  font: 700 11px/1 var(--ds-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--ds-ink);
-  font: 450 17px var(--ds-sans);
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.form .input::placeholder { color: #6b6b76; }
-.form .input:focus {
-  outline: none;
-  border-color: var(--ds-blue);
-  box-shadow: 0 0 0 3px rgba(36, 73, 255, 0.18);
 }
 .form .textBtn {
   padding: 0;
   border: 0;
   background: none;
+  font: 600 13px/1 var(--ds-sans);
   color: var(--ds-blue);
-  font: 700 14px var(--ds-sans);
+  text-decoration: underline;
+  text-underline-offset: 3px;
   cursor: pointer;
 }
-.form .textBtn:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Fields: an icon, the input and (for the password) a show/hide eye. */
+.box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.18);
+  transition: box-shadow 0.2s ease;
+}
+.box:focus-within { box-shadow: inset 0 0 0 2px var(--ds-blue), 0 0 0 5px rgba(36, 73, 255, 0.14); }
+.ico { flex: none; margin-left: 16px; color: var(--ds-caption); }
+.form .input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 16px 0 12px;
+  border: 0;
+  border-radius: 14px;
+  background: none;
+  font: 500 17px var(--ds-sans);
+  color: var(--ds-ink);
+  outline: none;
+}
+.form .input::placeholder { color: #7a7a84; }
+.form .input:focus-visible { outline: none; }
+.form .eye {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  margin-right: 6px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: var(--ds-caption);
+  cursor: pointer;
+}
+.form .eye:hover { background: rgba(22, 22, 29, 0.06); color: var(--ds-ink); }
 
 .consent {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding-top: 2px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ds-body);
 }
 .consent input {
   flex: none;
-  width: 20px;
-  height: 20px;
-  margin: 1px 0 0;
+  width: 22px;
+  height: 22px;
+  margin: 0;
   accent-color: var(--ds-ink);
   cursor: pointer;
 }
-.consent p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.45;
-  color: var(--ds-muted);
-}
-.consent a {
-  font-weight: 700;
-  color: var(--ds-ink);
-  text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 3px;
-}
+.consent a { font-weight: 700; color: var(--ds-ink); text-decoration: underline; text-underline-offset: 3px; }
 .consent a:hover { color: var(--ds-blue); }
 
 .error {
@@ -235,20 +380,44 @@
   font-weight: 900;
 }
 
+/* The submit: corner brackets that breathe, quiet until the terms box is ticked. */
+.corner { position: relative; margin: 12px 12px 0; }
+.corner > i {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 0 solid var(--ds-ink);
+  animation: corner 2.4s var(--ds-ease) infinite;
+}
+.corner > .tl { left: -12px; top: -12px; border-width: 2.5px 0 0 2.5px; --dx: -4px; --dy: -4px; }
+.corner > .tr { right: -12px; top: -12px; border-width: 2.5px 2.5px 0 0; --dx: 4px; --dy: -4px; }
+.corner > .bl { left: -12px; bottom: -12px; border-width: 0 0 2.5px 2.5px; --dx: -4px; --dy: 4px; }
+.corner > .br { right: -12px; bottom: -12px; border-width: 0 2.5px 2.5px 0; --dx: 4px; --dy: 4px; }
+.corner[data-blocked] > i { animation: none; opacity: 0.25; }
 .form .submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   width: 100%;
-  height: 58px;
-  margin-top: 6px;
-  font-size: 18px;
-  font-weight: 850;
+  height: 60px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  font: 800 18px/1 var(--ds-sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s var(--ds-ease), box-shadow 0.25s var(--ds-ease), opacity 0.25s ease;
 }
+.form .submit:hover { color: var(--ds-yellow); transform: translateY(-2px); box-shadow: 4px 4px 0 var(--ds-pink); }
+.form .submit svg { flex: none; transition: transform 0.3s var(--ds-ease); }
+.form .submit:hover svg { transform: translateX(3px); }
+.form .submit[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; box-shadow: none; transform: none; }
 .form .submit:disabled { cursor: wait; opacity: 0.75; transform: none; box-shadow: none; }
-.form .submit[data-blocked="true"] {
-  background: rgba(22, 22, 29, 0.12);
-  color: var(--ds-caption);
-  cursor: not-allowed;
-  opacity: 1;
-}
+.fields > .submit { margin-top: 6px; }
+
 .back {
   display: block;
   width: 100%;
@@ -265,16 +434,11 @@
 }
 .back:hover { color: var(--ds-ink); text-decoration-color: currentColor; }
 
-.aside {
-  margin: 26px 0 0;
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--ds-muted);
-}
-.aside a { font-weight: 800; color: var(--ds-ink); text-decoration: underline; text-underline-offset: 3px; }
+.aside { margin: 22px 0 0; font-size: 15px; line-height: 1.5; color: var(--ds-body); }
+.aside a { font-weight: 700; color: var(--ds-ink); text-decoration: underline; text-underline-offset: 3px; }
 .aside a:hover { color: var(--ds-blue); }
 
-/* Notes: "already have an account", sent links, sign-in unavailable */
+/* Notes: sent links, sign-in unavailable */
 .note {
   margin-top: 22px;
   padding: 18px 20px;
@@ -287,7 +451,7 @@
 .note p { margin: 0; }
 .note p + p { margin-top: 4px; color: var(--ds-muted); }
 .note strong { font-weight: 800; }
-.note .submit { margin-top: 16px; height: 52px; font-size: 16px; }
+.form .note .submit { margin-top: 16px; height: 52px; font-size: 16px; }
 .notice {
   display: flex;
   align-items: flex-start;
@@ -303,39 +467,6 @@
 .notice svg { flex: none; width: 20px; height: 20px; margin-top: 1px; color: var(--ds-blue); }
 .notice p { margin: 0; }
 
-.form :focus-visible { outline: 3px solid var(--ds-blue); outline-offset: 3px; }
-.form .input:focus-visible { outline: none; }
-
-/* ---------- Phone ---------- */
-@media (max-width: 899px) {
-  /* One column: wordmark, form, the door hanger, then the legal line */
-  .page { grid-template-columns: minmax(0, 1fr); align-content: start; }
-  .formSide { display: contents; }
-  .top { order: 0; min-height: 64px; padding: 0 var(--ds-gutter); }
-  .top :global(.ds-wordmark__type) { font-size: 24px; }
-  .main { order: 1; padding: 28px var(--ds-gutter) 36px; }
-  .mainInner { max-width: 560px; margin: 0 auto; }
-  .art {
-    position: relative;
-    order: 2;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    margin: 0 var(--ds-gutter) 24px;
-    border-radius: 22px;
-  }
-  .art img { object-position: 50% 42%; }
-  .legal { order: 3; padding: 0 var(--ds-gutter) max(28px, env(safe-area-inset-bottom)); }
-}
-@media (max-width: 560px) {
-  .titleLead { font-size: 48px; }
-  .titleSerif { font-size: 50px; }
-  .intro { font-size: 16px; }
-  .form .google { height: 54px; font-size: 16px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .form .google, .form .google:hover { transition: none; transform: none; }
-}
-
 /* Hall Finder gate (design-handoff/hall-finder Gate): what's free and what's Plus. */
 .gateCards { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .gateCards p { margin: 0; padding: 12px 14px; border-radius: 14px; background: #fff; box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.1); font-size: 14px; line-height: 1.4; }
@@ -344,3 +475,40 @@
 @media (max-width: 520px) { .gateCards { grid-template-columns: 1fr; } }
 .savedChip { display: inline-flex; align-items: center; gap: 8px; height: 30px; margin: 0 0 16px; padding: 0 12px; border-radius: 999px; background: var(--ds-ink); color: var(--ds-yellow); font: 600 10px var(--ds-mono); letter-spacing: 0.12em; text-transform: uppercase; }
 .gateBack { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--ds-blue); }
+
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+@keyframes corner { 0%, 100% { transform: none; } 50% { transform: translate(var(--dx), var(--dy)); } }
+@keyframes swing { 0%, 100% { transform: rotate(-1.4deg); } 50% { transform: rotate(1.4deg); } }
+@keyframes live { to { box-shadow: 0 0 0 8px rgba(125, 255, 179, 0); } }
+@keyframes deck {
+  0%, 28% { transform: translateY(0) scale(1); opacity: 1; z-index: 3; }
+  33.3% { transform: translateY(26px) scale(0.98); opacity: 0; z-index: 4; }
+  33.4% { transform: translateY(-56px) scale(0.88); opacity: 0; z-index: 1; }
+  40%, 61% { transform: translateY(-56px) scale(0.88); opacity: 0.7; z-index: 1; }
+  66.7%, 94% { transform: translateY(-28px) scale(0.94); opacity: 0.9; z-index: 2; }
+  100% { transform: translateY(0) scale(1); opacity: 1; z-index: 3; }
+}
+
+/* Reduced motion and Motion off: [data-anim] on the page stops every loop
+   (app/ds.css); the slides below settle instantly too. */
+@media (prefers-reduced-motion: reduce) {
+  .thumb, .form .tab, .form .google, .form .google::after, .form .submit, .box { transition: none; }
+  .form .google:hover, .form .submit:hover { transform: none; }
+}
+:global(.ds-still) .thumb,
+:global(.ds-still) .form .google::after { transition: none; }
+
+/* ---------- Phone: the art becomes a band on top ---------- */
+@media (max-width: 880px) {
+  .page { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .art { order: -1; position: relative; height: 260px; }
+  .hanger img { object-position: 50% 46%; }
+  .stack { display: none; }
+  .formSide { padding: 22px 20px 26px; }
+  .top { position: absolute; left: 20px; right: 20px; top: 18px; z-index: 3; }
+  .top :global(.ds-wordmark) { padding: 8px 12px; border-radius: 12px; background: rgba(251, 250, 246, 0.9); }
+  .top :global(.ds-wordmark__type) { font-size: 24px; }
+  .backLink { padding: 9px 12px; border-radius: 999px; background: rgba(251, 250, 246, 0.9); }
+  .main { padding: 30px 0; }
+  .intro { font-size: 16.5px; }
+}
