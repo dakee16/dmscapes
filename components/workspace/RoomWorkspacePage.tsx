@@ -22,7 +22,7 @@ import CommentsPanel from "./CommentsPanel";
 import RoomBar from "./RoomBar";
 import RoomRail from "./RoomRail";
 import BringBoard from "./BringBoard";
-import PeoplePanel from "./PeoplePanel";
+import PeoplePanel, { type PeopleHandle } from "./PeoplePanel";
 import HallsPanel from "./HallsPanel";
 import { hasHallFinder } from "@/lib/hall-finder";
 import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
@@ -48,7 +48,7 @@ function WorkspaceSession({ id, userId }: { id: string; userId: string }) {
   const [confirm, setConfirm] = useState<string | null>(null);
   const [overlay, setOverlay] = useState({ pins: true, cursors: true });
   const [following, setFollowing] = useState<string | null>(null);
-  const inviteField = useRef<HTMLInputElement>(null);
+  const inviteField = useRef<PeopleHandle>(null);
   function commentOn(next: string) { setTarget(next); setSide("comments"); }
   function locateComment(next: string) {
     if (next.startsWith("product:")) { setSection("shopping"); requestAnimationFrame(() => document.getElementById(`workspace-product-${next.slice(8)}`)?.scrollIntoView({ behavior: "smooth", block: "center" })); }
