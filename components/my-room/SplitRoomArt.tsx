@@ -19,7 +19,7 @@ export default function SplitRoomArt({ className, sizes, preload = false, pop = 
   const reveal = pop ? { "data-pop": "" } : {};
   return (
     <div className={className ? `${st.art} ${className}` : st.art}>
-      <Image src="/redesign/myroom-split-room-luke-cooper.jpg" alt="A dorm double split down the middle by a strip of blue painter's tape. One bed on the left, one on the right, and a shared mini fridge and round yellow rug in the middle, each tagged with its owner." fill preload={preload} quality={80} sizes={sizes} />
+      <Image src="/redesign/myroom-split-room-luke-cooper.webp" alt="A dorm double split down the middle by a strip of blue painter's tape. One bed on the left, one on the right, and a shared mini fridge and round yellow rug in the middle, each tagged with its owner." fill preload={preload} quality={80} sizes={sizes} />
       <div className={st.callChip} aria-hidden="true" {...reveal}><span className={st.callFaces}><i>L</i><i>C</i></span>Room call<span className={st.callBars}><b /><b /><b /><b /></span></div>
       <div className={st.noteCard} aria-hidden="true" {...reveal} style={pop ? ({ "--i": 2 } as CSSProperties) : undefined}><i>C</i><span><span><strong>Cooper</strong> is bringing the <strong>mini fridge</strong> from home.</span><small>Shared · $0 to buy</small></span></div>
     </div>
