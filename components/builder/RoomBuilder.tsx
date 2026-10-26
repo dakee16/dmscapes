@@ -93,7 +93,7 @@ export default function RoomBuilder({userId,onComplete}:{userId:string;onComplet
       </nav>
       <section className={s.viewport} aria-label="Live 3D construction grid"><div className={s.viewportHeading}><span><i/> LIVE / {d.closed?"ROOM ENCLOSED":"CONSTRUCTION"}</span><span>{d.closed?ft(roomArea(d.points))+" sq ft":"60 × 60 ft grid"}</span></div>
         <div className={s.mount} ref={mount}/>
-        {!ready&&!sceneError&&<div className={s.sceneMessage}><div className={s.loaderCard}><BrandLoader label="Opening the 3D grid…"/></div></div>}
+        {!ready&&!sceneError&&<div className={s.sceneMessage}><div className={s.loaderCard}><BrandLoader size="panel" label="Opening the 3D grid…"/></div></div>}
         {sceneError&&<div className={s.sceneMessage} role="status"><strong>Your room is still here.</strong><p>{sceneError}</p><button onClick={()=>setRetry(n=>n+1)}>Retry 3D</button><button onClick={()=>controls.current?.querySelector<HTMLElement>("button,input")?.focus()}>Use numeric controls</button></div>}
         <div className={s.hint}><span className={s.toolBadge}>{tool.toUpperCase()}</span><p>{hint}</p></div>
       </section>

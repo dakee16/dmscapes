@@ -95,7 +95,7 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   if(!enabled)return null;
   return <div className={s.scene} data-testid="room-3d"><div ref={node} className={s.sceneMount} inert={!allowed}/>
     {workspace&&plannerView==="3d"&&workspace.section!=="roommates"&&ready&&!error&&<CollaborationOverlay surface="scene" dynamic projection={{read:(x,y)=>view.current?.readCursor(x,y)??null,draw:(x,y)=>view.current?.projectCursor(x,y)??null}} pins={data.items.map(f=>{const b=footprint(f);return {id:f.id,label:f.label,x:(b.x+b.w/2)/props.room.lengthFt,y:(b.y+b.h/2)/props.room.widthFt};})}/>}
-    {!ready&&!error&&<div className={s.sceneMessage}><BrandLoader label="Opening your 3D studio…"/></div>}
+    {!ready&&!error&&<div className={s.sceneMessage}><BrandLoader size="panel" label="Opening your 3D studio…"/></div>}
     {error&&<div className={s.sceneMessage} role="status"><strong>Keep creating.</strong><p>{error}</p><div className={s.buttonRow}><button onClick={()=>setRetry(n=>n+1)}>Retry 3D</button>{props.onFallback&&<button onClick={props.onFallback}>Open 2D plan</button>}</div></div>}
   </div>;
 });

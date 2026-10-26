@@ -24,7 +24,7 @@ import { ItemInspector, RoomDetails, StyleDetails } from "./WorkspacePanels";
 import { ChevronLeft, CloseIcon, LowerIcon, PlusIcon, RaiseIcon } from "@/components/studio-ui/icons";
 import s from "./Studio.module.css";
 
-const RoomDrawCanvas=dynamic(()=>import("@/components/planner/RoomDrawCanvas"),{ssr:false,loading:()=> <BrandLoader label="Opening room measurements…"/>});
+const RoomDrawCanvas=dynamic(()=>import("@/components/planner/RoomDrawCanvas"),{ssr:false,loading:()=> <BrandLoader size="panel" label="Opening room measurements…"/>});
 type Panel="furnish"|"style"|"room"|"shop"|"item"|"checks"|"help"|"layouts"|"roommates";
 export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,products,total,budget,subtitle,history,onReset,extras,unplaced}:{canvas:ReactNode;get2DPng:()=>string|null;focus2D:(id:string)=>void;shopping:ReactNode;products:Product[];total:number;budget:number;subtitle:string;history:{canUndo:boolean;canRedo:boolean;undo:()=>void;redo:()=>void};onReset:()=>void;extras?:ReactNode;unplaced?:ReactNode;shell?:boolean}){
   const workspace=useWorkspace();
