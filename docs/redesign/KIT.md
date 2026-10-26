@@ -45,7 +45,7 @@ export default function Page() {
 | `CtaBand` | closing band: `lead`, `tail` (serif, yellow), `note`, children = button. `tone="ink" | "blue" | "amber"` |
 | `SchoolSearch` | white pill school search; `to="plan" | "college"` |
 | `Icons` | `ArrowRight`, `ArrowUpRight`, `Check`, `SearchIcon`, `MenuIcon`, `CloseIcon`, `ChevronDown` (fonts have no arrows; always use these) |
-| `useScrub` | scroll-linked progress for scrubbed scenes (client only) |
+| `useStill` | true while Motion off or reduced motion is on; JS animations check it and show their finished state (client only). CSS loops get the same from `data-anim=""` (app/ds.css) |
 
 ## Global classes (`app/ds.css`)
 
@@ -70,6 +70,11 @@ Put these attributes on server-rendered elements; `RevealObserver` handles them,
 - `data-draw=""` a rule draws left to right; `data-grow=""` a to-scale rectangle grows from its corner; `data-bar=""` a bar grows from the left; `data-pop=""` a badge pops
 - `data-count={n}` counts up once
 - `data-stagger=""` on a parent spaces children 80 ms apart
+
+## Homepage flow and loader (redesign v2)
+
+- Below the hero, `components/home/HomeFlow.tsx` paints one blended background from each section's `data-bg`, scrubs anything marked `data-rv` (`""` rise, `"h2"` two-line slide, `"img"` clip and parallax, `"row"` staggered by column, `"marker"` highlight) and runs the progress bar and section rail. Scenes use `useScene` and `scrub` from `components/home/flow.ts`, which load anime.js after hydration and only on the homepage.
+- `BrandLoader` is "the door swings": `size="route" | "panel" | "inline"` (88, 48, 18 px), `tone="light" | "dark"`; `label` is what screen readers hear.
 
 ## Rules
 

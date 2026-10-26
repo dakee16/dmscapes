@@ -349,3 +349,5 @@
   .free { padding: 24px 22px 26px; }
   .free p { font-size: 16px; }
 }
+
+.credits { margin-top: 48px; font-size: 14px; line-height: 1.5; color: var(--ds-caption); }
