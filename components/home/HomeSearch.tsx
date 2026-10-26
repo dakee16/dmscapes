@@ -7,7 +7,7 @@ import { searchSchools } from "@/lib/schools";
 import type { SchoolSummary } from "@/lib/types";
 import { ArrowRight } from "@/components/ds/Icons";
 import { replyToAgent } from "@/lib/webmcp";
-import css from "./Home.module.css";
+import css from "./Hero.module.css";
 
 /**
  * Hero search: pick a college and land on /plan with its dorm list open

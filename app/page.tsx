@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import StickyMobileCta from "@/components/site/StickyMobileCta";
 import JsonLd from "@/components/site/JsonLd";
 import HomeHero from "@/components/home/HomeHero";
-import TapeBand from "@/components/home/TapeBand";
+import HomeFlow from "@/components/home/HomeFlow";
 import CollegesBand from "@/components/home/CollegesBand";
 import ProblemSection from "@/components/home/ProblemSection";
 import HowSection from "@/components/home/HowSection";
@@ -31,7 +31,6 @@ import {
   FEATURED_ROOMS,
   HALL_COUNT,
   HOME_VIBES,
-  LAYOUT_COUNT,
   SCHOOL_COUNT,
 } from "@/lib/home-data";
 
@@ -52,6 +51,20 @@ export const metadata = { ...pageMeta, alternates: { ...pageMeta.alternates, typ
 const HF_SCHOOL = getSchool("penn-state");
 const HF_EXAMPLE = HF_SCHOOL ? exampleFor(HF_SCHOOL.id, shortName(HF_SCHOOL)) : null;
 
+// The section rail beside the flow (Kokonut Scroll Index).
+const RAIL = [
+  { id: "colleges", label: `${SCHOOL_COUNT} schools` },
+  { id: "why", label: "Why plan" },
+  { id: "how-it-works", label: "How it works" },
+  { id: "vibes", label: "Vibes" },
+  { id: "budget", label: "Budget" },
+  { id: "room-in-3d", label: "In 3D" },
+  { id: "together", label: "My Room" },
+  { id: "schools", label: "Real rooms" },
+  { id: "pricing", label: "Pricing" },
+  { id: "start", label: "Get started" },
+];
+
 export default function Home() {
   return (
     <div id="top" className="ds">
@@ -69,19 +82,20 @@ export default function Home() {
       <Nav overlay />
       <main id="page-content" tabIndex={-1}>
         <HomeHero schoolCount={SCHOOL_COUNT} hallCount={HALL_COUNT} />
-        <TapeBand layoutCount={LAYOUT_COUNT} />
-        <CollegesBand names={SCHOOLS.map(shortName)} />
-        <ProblemSection />
-        <HowSection />
-        {HF_EXAMPLE && <HomeSection example={HF_EXAMPLE} others={PILOT_SCHOOLS.length - 1} />}
-        <VibesSection vibes={HOME_VIBES} />
-        <BudgetSection />
-        <StudioSection />
-        <TogetherSection />
-        <SchoolsSection rooms={FEATURED_ROOMS} schoolCount={SCHOOL_COUNT} />
-        <Testimonials />
-        <PricingSection />
-        <FinalCta />
+        <HomeFlow rail={RAIL}>
+          <CollegesBand names={SCHOOLS.map(shortName)} />
+          <ProblemSection />
+          <HowSection />
+          {HF_EXAMPLE && <HomeSection example={HF_EXAMPLE} others={PILOT_SCHOOLS.length - 1} />}
+          <VibesSection vibes={HOME_VIBES} />
+          <BudgetSection />
+          <StudioSection />
+          <TogetherSection />
+          <SchoolsSection rooms={FEATURED_ROOMS} schoolCount={SCHOOL_COUNT} />
+          <Testimonials />
+          <PricingSection />
+          <FinalCta />
+        </HomeFlow>
       </main>
       <Footer />
       <StickyMobileCta />
