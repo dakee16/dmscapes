@@ -5,6 +5,7 @@
 // ResultsPlusPhone): every hall ranked, any hall's routes, compare two side by side.
 import Link from "next/link";
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Modal from "@/components/site/Modal";
 import { ArrowRight, CloseIcon } from "@/components/ds/Icons";
 import { formatDims } from "@/lib/schools";
@@ -189,6 +190,15 @@ function FreeResults({ collegeId, schoolName, result, halls, facts, places, rout
 
 const SHOW = 7;
 
+// Ranked halls slide to their new places when a filter changes; halls that drop out fade.
+const SLIDE = {
+  layout: "position",
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+  transition: { duration: 0.2, layout: { type: "spring", stiffness: 500, damping: 45 } },
+} as const;
+
 function PaidResults({ collegeId, schoolName, result, halls, facts, places, filters, hasYears, selected, onSelect, onFilter, onEdit, saveNote, onShare, shareLabel, preselect }: Props & { result: Extract<RankResult, { tier: "paid" }> }) {
   // A hall preselected from its page starts paired with the #1 in the compare bar, with the
   // whole list open when it ranks below the first SHOW rows.
@@ -232,56 +242,58 @@ function PaidResults({ collegeId, schoolName, result, halls, facts, places, filt
       </div>
       {!ranked.length && <p className={styles.status}>No halls match those filters.</p>}
       <ol className={styles.ranked} aria-label="Halls, shortest week first">
-        {shown.map((r, i) => {
-          const hall = halls.get(r.dormId);
-          if (!hall) return null;
-          const ac = facts[r.dormId]?.ac;
-          if (r.dormId === selected) {
+        <AnimatePresence initial={false} mode="popLayout">
+          {shown.map((r, i) => {
+            const hall = halls.get(r.dormId);
+            if (!hall) return null;
+            const ac = facts[r.dormId]?.ac;
+            if (r.dormId === selected) {
+              return (
+                <motion.li key={r.dormId} className={styles.card} {...SLIDE}>
+                  <div className={styles.cardTop}>
+                    <span className={styles.rank} style={{ background: "var(--ds-yellow)", color: "var(--ds-ink)", boxShadow: "inset 0 0 0 2px var(--ds-ink)" }}>{i + 1}</span>
+                    <span className={styles.nm}>
+                      <strong>{hall.name}<UpperTag hall={hall} /></strong>
+                      <span>{factsLine(facts[r.dormId])}</span>
+                    </span>
+                    <span className={styles.cardTime}><strong>{formatMinutes(r.weekly)}</strong>a week · farthest {Math.round(r.farthest)} min</span>
+                  </div>
+                  <div className={styles.minis}>
+                    {places.map((p, j) => (
+                      <span key={p.n} className={styles.mini}><i aria-hidden="true">{p.n}</i><span className="ds-sr">{p.name}: </span>{minutesText(r.perPlace[j])}</span>
+                    ))}
+                  </div>
+                  <div className={styles.cardActions}>
+                    <PlanLinks collegeId={collegeId} hall={hall} rank={i + 1} compact />
+                    <label className={styles.check}>
+                      <input type="checkbox" checked={compare.includes(r.dormId)} onChange={(e) => toggleCompare(r.dormId, e.target.checked)} />
+                      Compare
+                    </label>
+                    <Link href={`/colleges/${collegeId}/${hall.dormId}`}>Hall details</Link>
+                  </div>
+                </motion.li>
+              );
+            }
+            const share = worst > best ? (r.weekly - best) / (worst - best) : 0;
             return (
-              <li key={r.dormId} className={styles.card}>
-                <div className={styles.cardTop}>
-                  <span className={styles.rank} style={{ background: "var(--ds-yellow)", color: "var(--ds-ink)", boxShadow: "inset 0 0 0 2px var(--ds-ink)" }}>{i + 1}</span>
+              <motion.li key={r.dormId} {...SLIDE}>
+                <button type="button" className={styles.row} onClick={() => onSelect(r.dormId)} aria-label={`${i + 1}. ${hall.name}, ${formatMinutes(r.weekly)} a week. Show routes.`}>
+                  <span className={styles.rank}>{i + 1}</span>
                   <span className={styles.nm}>
-                    <strong>{hall.name}<UpperTag hall={hall} /></strong>
-                    <span>{factsLine(facts[r.dormId])}</span>
+                    <strong>
+                      {hall.name}
+                      <UpperTag hall={hall} />
+                      {compare.includes(r.dormId) && <span className={styles.tag}> · Comparing</span>}
+                    </strong>
+                    <span className={styles.track}><span className={styles.fill} style={{ width: `${Math.round(45 + share * 55)}%`, background: share < 0.5 ? "#2449FF" : "#5B7CFF" }} /></span>
                   </span>
-                  <span className={styles.cardTime}><strong>{formatMinutes(r.weekly)}</strong>a week · farthest {Math.round(r.farthest)} min</span>
-                </div>
-                <div className={styles.minis}>
-                  {places.map((p, j) => (
-                    <span key={p.n} className={styles.mini}><i aria-hidden="true">{p.n}</i><span className="ds-sr">{p.name}: </span>{minutesText(r.perPlace[j])}</span>
-                  ))}
-                </div>
-                <div className={styles.cardActions}>
-                  <PlanLinks collegeId={collegeId} hall={hall} rank={i + 1} compact />
-                  <label className={styles.check}>
-                    <input type="checkbox" checked={compare.includes(r.dormId)} onChange={(e) => toggleCompare(r.dormId, e.target.checked)} />
-                    Compare
-                  </label>
-                  <Link href={`/colleges/${collegeId}/${hall.dormId}`}>Hall details</Link>
-                </div>
-              </li>
+                  <span className={styles.ac}>{ac === true ? "AC" : ac === false ? "No AC" : ""}</span>
+                  <span className={styles.t}>{formatMinutes(r.weekly)}</span>
+                </button>
+              </motion.li>
             );
-          }
-          const share = worst > best ? (r.weekly - best) / (worst - best) : 0;
-          return (
-            <li key={r.dormId}>
-              <button type="button" className={styles.row} onClick={() => onSelect(r.dormId)} aria-label={`${i + 1}. ${hall.name}, ${formatMinutes(r.weekly)} a week. Show routes.`}>
-                <span className={styles.rank}>{i + 1}</span>
-                <span className={styles.nm}>
-                  <strong>
-                    {hall.name}
-                    <UpperTag hall={hall} />
-                    {compare.includes(r.dormId) && <span className={styles.tag}> · Comparing</span>}
-                  </strong>
-                  <span className={styles.track}><span className={styles.fill} style={{ width: `${Math.round(45 + share * 55)}%`, background: share < 0.5 ? "#2449FF" : "#5B7CFF" }} /></span>
-                </span>
-                <span className={styles.ac}>{ac === true ? "AC" : ac === false ? "No AC" : ""}</span>
-                <span className={styles.t}>{formatMinutes(r.weekly)}</span>
-              </button>
-            </li>
-          );
-        })}
+          })}
+        </AnimatePresence>
       </ol>
       {ranked.length > 1 && (
         <p className={styles.foot}>

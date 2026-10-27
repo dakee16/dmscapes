@@ -27,6 +27,7 @@ import { CameraIcon, ChevronLeft, CloseIcon, ExpandIcon, LowerIcon, MinusIcon, M
 import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
 import WalkIn from "./WalkIn";
 import { BeddingSize, FINISH_NOTE, FloorSwatches, ItemInspector, LightSwitch, RoomFinishes } from "./StudioPanels";
+import ActivePill from "@/components/ds/ActivePill";
 import s from "./Studio.module.css";
 
 const RoomDrawCanvas=dynamic(()=>import("@/components/planner/RoomDrawCanvas"),{ssr:false,loading:()=> <BrandLoader size="panel" label="Opening room measurements…"/>});
@@ -153,8 +154,8 @@ export default function PlannerStudio({canvas,get2DPng,shopping,products,total,b
   function rename(value:string){const name=value.trim().slice(0,60);usePlannerStore.getState().updatePlanning({name:name||"My room"});setRenaming(false);}
 
   const viewSwitch=(className:string)=><div className={className} role="group" aria-label="Planner view">
-    <button type="button" aria-pressed={view==="2d"} onClick={()=>{setView("2d");setMoveMode(false);}}>2D</button>
-    <button type="button" aria-pressed={view==="3d"} onClick={enter3D} aria-label={allowed3D?"3D":"3D, a Pro feature"}>3D<span className={s.proTag} aria-hidden="true">Pro</span></button>
+    <button type="button" aria-pressed={view==="2d"} onClick={()=>{setView("2d");setMoveMode(false);}}>{view==="2d"&&<ActivePill id={`plan-view-${className}`}/>}2D</button>
+    <button type="button" aria-pressed={view==="3d"} onClick={enter3D} aria-label={allowed3D?"3D":"3D, a Pro feature"}>{view==="3d"&&<ActivePill id={`plan-view-${className}`} className={s.pillBlue}/>}3D<span className={s.proTag} aria-hidden="true">Pro</span></button>
   </div>;
 
   const roomPanel=<>

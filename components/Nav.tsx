@@ -7,8 +7,9 @@ import { MotionToggle } from "@/components/experience/MotionProvider";
 import ProfileMenu from "@/components/auth/ProfileMenu";
 import Wordmark from "@/components/site/Wordmark";
 import HeaderCredits from "@/components/site/HeaderCredits";
+import SearchPalette from "@/components/site/SearchPalette";
 import { FeedbackDialog } from "@/components/site/FeedbackLink";
-import { ArrowRight, ArrowUpRight, ChevronDown, CloseIcon, MenuIcon } from "@/components/ds/Icons";
+import { ArrowRight, ArrowUpRight, ChevronDown, CloseIcon, MenuIcon, SearchIcon } from "@/components/ds/Icons";
 import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import { track } from "@/lib/analytics";
 import s from "./ds/SiteNav.module.css";
@@ -325,6 +326,7 @@ export default function Nav({
           {groups.map(groupCard("more"))}
         </div>
         <div className={s.actions}>
+          <SearchPalette hallFinder={hallFinder} />
           <HeaderCredits />
           <div className={s.profile}><ProfileMenu /></div>
           <Link href="/plan" className={`ds-btn ds-btn--sm ${dark ? "ds-btn--yellow" : "ds-btn--ink"} ${s.cta}`}>
@@ -339,6 +341,9 @@ export default function Nav({
       </div>
       <div id="site-navigation" className={s.sheet} data-open={mobileOpen} hidden={!mobileOpen}>
         <div className={s.sheetInner}>
+          <button type="button" className={s.sheetSearch} onClick={() => { close(); window.dispatchEvent(new Event("dormscape:search")); }}>
+            <SearchIcon size={18} />Search schools and halls
+          </button>
           <div className={s.sheetPrimary}>
             {sheetPrimary.map((link, i) => (
               <Link key={link.key} href={link.href} className={s.sheetBig}

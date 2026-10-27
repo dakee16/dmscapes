@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { EXAMPLE_ITEMS, ROOM_BUDGET, SHOWCASE_BUDGET, examplePlan } from "@/lib/home-data";
+import RollingNumber from "@/components/ds/RollingNumber";
 import H2 from "./H2";
 import css from "./Home.module.css";
 
@@ -100,23 +101,7 @@ export default function BudgetSection() {
             </svg>
             <div className={css.rgC} aria-hidden="true">
               <span className={css.rgK}>PLAN TOTAL</span>
-              <span className={css.num2}>
-                {usd(plan.total)
-                  .split("")
-                  .map((ch, i) =>
-                    /[0-9]/.test(ch) ? (
-                      <span key={i} className={css.dc}>
-                        <span style={{ transform: `translateY(${-Number(ch)}em)` }}>
-                          {"0123456789".split("").map((d) => (
-                            <b key={d}>{d}</b>
-                          ))}
-                        </span>
-                      </span>
-                    ) : (
-                      <span key={i}>{ch}</span>
-                    ),
-                  )}
-              </span>
+              <RollingNumber value={usd(plan.total)} className={css.num2} />
               <span className={css.rgOf}>of {usd(budget)}</span>
             </div>
           </div>

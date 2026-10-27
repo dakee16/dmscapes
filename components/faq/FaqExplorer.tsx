@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
+import ActivePill from "@/components/ds/ActivePill";
 import { ArrowRight, SearchIcon } from "@/components/ds/Icons";
 import css from "./Faq.module.css";
 
@@ -197,6 +198,7 @@ export function FaqBrowser({ groups, openFirst = 3 }: { groups: FaqGroup[]; open
                     if (!empty) open(g.slug);
                   }}
                 >
+                  {active === g.slug && <ActivePill id="faq-topic" />}
                   {g.topic}
                   <span className={css.indexCount}>
                     {count}

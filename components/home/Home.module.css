@@ -38,48 +38,6 @@
 /* clip, not hidden: the headline reveal slides lines sideways, and sticky pins still work */
 .flow { position: relative; overflow-x: clip; background: var(--ds-paper); }
 .flow[data-js] > section[data-bg] { background: none; }
-/* Kokonut Scroll Index: a rail of ticks; hover or focus shows the section's name. */
-.rail {
-  --ri: var(--ds-ink);
-  --rc: #6b6b76;
-  position: fixed;
-  right: 18px;
-  top: 50%;
-  z-index: 15;
-  display: none;
-  flex-direction: column;
-  align-items: flex-end;
-  transform: translateY(-50%);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s ease;
-}
-.flow[data-js] .rail { display: flex; }
-.rail[data-show] { opacity: 1; pointer-events: auto; }
-.rail[data-dark] { --ri: #f4f2ec; --rc: #a9a6b6; }
-.rail a { display: flex; align-items: center; justify-content: flex-end; gap: 10px; height: 28px; padding-left: 12px; color: var(--rc); text-decoration: none; }
-.rail a span {
-  padding: 5px 8px;
-  border-radius: 6px;
-  background: rgba(251, 250, 246, 0.92);
-  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08);
-  font: 600 10px/1 var(--ds-mono);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  color: var(--ds-ink);
-  opacity: 0;
-  transform: translateX(6px);
-  transition: opacity 0.3s ease, transform 0.35s var(--ds-ease);
-}
-.rail a i { display: block; width: 12px; height: 2px; border-radius: 1px; background: currentColor; opacity: 0.45; transition: width 0.4s var(--ds-ease), opacity 0.3s ease; }
-.rail a:hover, .rail a:focus-visible { color: var(--ri); }
-.rail a:hover span, .rail a:focus-visible span { opacity: 1; transform: none; }
-.rail a[data-done] i { opacity: 0.8; }
-.rail a[aria-current] { color: var(--ri); }
-.rail a[aria-current] i { width: 30px; opacity: 1; background: var(--ds-blue); }
-.rail[data-dark] a[aria-current] i { background: var(--ds-studio); }
-
 /* Scroll-scrubbed reveals (--p runs 0 → 1 as each element arrives). */
 .live [data-rv] { opacity: var(--p); transform: translate3d(0, calc((1 - var(--p)) * 48px), 0); }
 .live [data-rv="h2"] { opacity: 1; transform: none; }
@@ -467,9 +425,6 @@
 .rgC { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; }
 .rgK { font: 700 10px/1 var(--ds-mono); letter-spacing: 0.14em; color: var(--ds-caption); }
 .num2 { display: inline-flex; font-size: 54px; font-weight: 900; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
-.dc { display: inline-block; height: 1em; overflow: hidden; }
-.dc > span { display: flex; flex-direction: column; transition: transform 0.7s var(--ds-ease); }
-.dc b { height: 1em; font-weight: 900; }
 .rgOf { font-size: 14px; color: var(--ds-muted); }
 .strip { grid-area: strip; display: flex; gap: 3px; height: 18px; }
 .strip i { display: block; min-width: 3px; border-radius: 4px; transform-origin: 0 100%; transform: scaleY(calc(0.15 + 0.85 * var(--p, 1))); transition: flex-grow 0.6s var(--ds-ease); }
@@ -800,9 +755,6 @@
 :global(.ds-still) .hl { display: none; }
 
 /* ---------- Narrower screens ---------- */
-@media (max-width: 1199px) {
-  .rail { display: none !important; }
-}
 @media (max-width: 1023px) {
   .prGrid, .howGrid, .vbGrid, .bdGrid, .stGrid, .tgGrid, .fnGrid, .scHead { grid-template-columns: minmax(0, 1fr); }
   .prGrid { padding: 72px 0; gap: 40px; }

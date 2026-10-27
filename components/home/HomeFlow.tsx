@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import SectionRail from "@/components/ds/SectionRail";
 import { useStill } from "@/components/ds/useStill";
 import { loadAnime, scrub } from "./flow";
 import css from "./Home.module.css";
@@ -14,7 +15,6 @@ import css from "./Home.module.css";
  */
 export default function HomeFlow({ rail, children }: { rail: { id: string; label: string }[]; children: React.ReactNode }) {
   const flowRef = useRef<HTMLDivElement>(null);
-  const railRef = useRef<HTMLElement>(null);
   const still = useStill();
   const [live, setLive] = useState(false);
 
@@ -55,44 +55,6 @@ export default function HomeFlow({ rail, children }: { rail: { id: string; label
     return () => {
       ro.disconnect();
       cancelAnimationFrame(raf);
-    };
-  }, []);
-
-  // The section rail (Kokonut Scroll Index): shows while the flow is mid-screen, marks where you are.
-  useEffect(() => {
-    const flow = flowRef.current, nav = railRef.current;
-    if (!flow || !nav) return;
-    const links = Array.from(nav.querySelectorAll("a"));
-    const targets = links.map((a) => document.getElementById(a.hash.slice(1)));
-    let ticking = false;
-    const track = () => {
-      ticking = false;
-      const mid = window.innerHeight * 0.45;
-      let idx = -1;
-      targets.forEach((t, i) => {
-        if (t && t.getBoundingClientRect().top <= mid) idx = i;
-      });
-      const fr = flow.getBoundingClientRect();
-      nav.toggleAttribute("data-show", fr.top < mid && fr.bottom > mid);
-      nav.toggleAttribute("data-dark", idx >= 0 && targets[idx]?.dataset.dark !== undefined);
-      links.forEach((a, i) => {
-        if (i === idx) a.setAttribute("aria-current", "location");
-        else a.removeAttribute("aria-current");
-        a.toggleAttribute("data-done", i < idx);
-      });
-    };
-    const onScroll = () => {
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(track);
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    track();
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
     };
   }, []);
 
@@ -140,14 +102,7 @@ export default function HomeFlow({ rail, children }: { rail: { id: string; label
 
   return (
     <div ref={flowRef} className={live ? `${css.flow} ${css.live}` : css.flow}>
-      <nav ref={railRef} className={css.rail} aria-label="Sections on this page">
-        {rail.map((r) => (
-          <a key={r.id} href={`#${r.id}`}>
-            <span>{r.label}</span>
-            <i aria-hidden="true" />
-          </a>
-        ))}
-      </nav>
+      <SectionRail sections={rail} scope={flowRef} />
       {children}
     </div>
   );

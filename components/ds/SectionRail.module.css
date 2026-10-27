@@ -1,0 +1,46 @@
+/* SectionRail: the right-edge section index (Kokonut Scroll Index), moved here from the homepage so other long pages share it. */
+/* Kokonut Scroll Index: a rail of ticks; hover or focus shows the section's name. */
+.rail {
+  --ri: var(--ds-ink);
+  --rc: #6b6b76;
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  z-index: 15;
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.rail[data-js] { display: flex; }
+.rail[data-show] { opacity: 1; pointer-events: auto; }
+.rail[data-dark] { --ri: #f4f2ec; --rc: #a9a6b6; }
+.rail a { display: flex; align-items: center; justify-content: flex-end; gap: 10px; height: 28px; padding-left: 12px; color: var(--rc); text-decoration: none; }
+.rail a span {
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: rgba(251, 250, 246, 0.92);
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08);
+  font: 600 10px/1 var(--ds-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ds-ink);
+  opacity: 0;
+  transform: translateX(6px);
+  transition: opacity 0.3s ease, transform 0.35s var(--ds-ease);
+}
+.rail a i { display: block; width: 12px; height: 2px; border-radius: 1px; background: currentColor; opacity: 0.45; transition: width 0.4s var(--ds-ease), opacity 0.3s ease; }
+.rail a:hover, .rail a:focus-visible { color: var(--ri); }
+.rail a:hover span, .rail a:focus-visible span { opacity: 1; transform: none; }
+.rail a[data-done] i { opacity: 0.8; }
+.rail a[aria-current] { color: var(--ri); }
+.rail a[aria-current] i { width: 30px; opacity: 1; background: var(--ds-blue); }
+.rail[data-dark] a[aria-current] i { background: var(--ds-studio); }
+
+@media (max-width: 1199px) {
+  .rail { display: none !important; }
+}

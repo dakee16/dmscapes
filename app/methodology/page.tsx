@@ -13,6 +13,7 @@ import { RuleArt, SameScale } from "@/components/methodology/MethodologyArt";
 import { SCHOOLS } from "@/lib/schools";
 import { pageMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { WalkTimes } from "@/components/hall-finder/Entry";
+import SectionRail from "@/components/ds/SectionRail";
 import css from "@/components/methodology/Methodology.module.css";
 
 export const metadata: Metadata = pageMetadata({
@@ -109,6 +110,17 @@ const LIMITS = [
 export default function MethodologyPage() {
   return (
     <PageShell navOverlay>
+      <SectionRail
+        sections={[
+          { id: "sources-title", label: "Sources" },
+          { id: "record-title", label: "Recording" },
+          { id: "states-title", label: "Published or estimated" },
+          { id: "layouts-title", label: "Layouts" },
+          { id: "walk-times", label: "Walk times" },
+          { id: "limits-title", label: "Limits" },
+          { id: "corrections", label: "Corrections" },
+        ]}
+      />
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
       <PageHero
         bg="#F6EFE4"

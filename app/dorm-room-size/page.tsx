@@ -11,6 +11,7 @@ import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import ScalePlan from "@/components/hall/ScalePlan";
+import SectionRail from "@/components/ds/SectionRail";
 import { SCHOOLS } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { dormSizeStats, MAX_SQFT_PER_PERSON, MIN_SCHOOL_ROOMS, type TypeStats } from "@/lib/dorm-sizes";
@@ -114,6 +115,15 @@ const answers = [
 export default function DormRoomSizePage() {
   return (
     <PageShell navOverlay>
+      <SectionRail
+        sections={[
+          { id: "sizes", label: "Typical rooms" },
+          { id: "numbers-title", label: "The numbers" },
+          { id: "answers-title", label: "Short answers" },
+          { id: "by-college", label: "By school" },
+          { id: "method-title", label: "Method" },
+        ]}
+      />
       <JsonLd
         data={[
           breadcrumbJsonLd(crumbs),
@@ -141,13 +151,16 @@ export default function DormRoomSizePage() {
         ]}
         lede={
           <p>
-            {`A typical double dorm room is ${dims(double)}, about ${fmt(double.median)} square feet. A single is about ${fmt(single.median)} sq ft and a triple about ${fmt(triple.median)}. These are the middle values of ${fmt(S.rooms)} room sizes that ${S.schools} colleges publish, so you know what's normal before you find your own room.`}
+            {`A typical double dorm room is ${dims(double)}, `}
+            <mark className="ds-marker" data-mark="load">{`about ${fmt(double.median)} square feet`}</mark>
+            {`. A single is about ${fmt(single.median)} sq ft and a triple about ${fmt(triple.median)}. These are the middle values of ${fmt(S.rooms)} room sizes that ${S.schools} colleges publish, so you know what's normal before you find your own room.`}
           </p>
         }
         visual={
           <figure className={css.heroPlan}>
             <ScalePlan
               uid="hero"
+              draw="load"
               room={typical[1].fit}
               title={`A typical double dorm room, ${ft(double.lengthFt)} by ${ft(double.widthFt)} feet, with two beds, desks and dressers`}
               className={css.plan}
@@ -198,6 +211,7 @@ export default function DormRoomSizePage() {
                 <div className={css.planWrap}>
                   <ScalePlan
                     uid={`type-${t.occupants}`}
+                    draw=""
                     room={fit}
                     title={`A typical ${NAME[t.occupants].toLowerCase()} dorm room, ${ft(t.lengthFt)} by ${ft(t.widthFt)} feet, with its furniture placed where a typical layout puts it`}
                     className={css.plan}

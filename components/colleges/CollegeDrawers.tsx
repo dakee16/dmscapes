@@ -2,6 +2,7 @@
 
 import { useId, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import ActivePill from "@/components/ds/ActivePill";
 import { ArrowRight } from "@/components/ds/Icons";
 import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import { hasHallFinder } from "@/lib/hall-finder";
@@ -174,9 +175,11 @@ export default function CollegeDrawers({ schools }: { schools: Campus[] }) {
         )}
         <div className={css.toggle} role="group" aria-label="View">
           <button type="button" aria-pressed={view === "cards"} onClick={() => setView("cards")}>
+            {view === "cards" && <ActivePill id="colleges-view" />}
             Cards
           </button>
           <button type="button" aria-pressed={view === "list"} onClick={() => setView("list")}>
+            {view === "list" && <ActivePill id="colleges-view" />}
             List
           </button>
         </div>
