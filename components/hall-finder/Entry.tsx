@@ -85,7 +85,7 @@ export function HomeSection({ example, others }: { example: Example; others: num
   const on = useHallFinderOn();
   if (!on) return null;
   return (
-    <section id="hall-finder" className={css.home} aria-labelledby="hf-home-title">
+    <section id="hall-finder" className={css.home} data-bg="#fbfaf6" aria-labelledby="hf-home-title">
       <div className={css.homeInner}>
         <div className={css.homeCopy}>
           <p className={`ds-eyebrow ${css.eyebrow}`}>
