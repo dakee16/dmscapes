@@ -9,13 +9,11 @@ import css from "./Home.module.css";
  * Everything below the hero scrolls as one piece (MOTION.md · Homepage below
  * the hero). Sections sit on one background where each section's colour
  * (data-bg) blends into the next; headlines, copy and pictures marked data-rv
- * are scrubbed by scroll with anime.js; a thin bar and a section rail show
- * where you are. Nothing plays on a timer and nothing holds the scroll. Without
+ * are scrubbed by scroll with anime.js; a section rail shows where you are. Nothing plays on a timer and nothing holds the scroll. Without
  * JS, or with Motion off, the page is simply its finished self.
  */
 export default function HomeFlow({ rail, children }: { rail: { id: string; label: string }[]; children: React.ReactNode }) {
   const flowRef = useRef<HTMLDivElement>(null);
-  const barRef = useRef<HTMLDivElement>(null);
   const railRef = useRef<HTMLElement>(null);
   const still = useStill();
   const [live, setLive] = useState(false);
@@ -88,7 +86,7 @@ export default function HomeFlow({ rail, children }: { rail: { id: string; label
     };
   }, []);
 
-  // Scroll-scrubbed reveals and the progress bar, only while motion is on.
+  // Scroll-scrubbed reveals, only while motion is on.
   useEffect(() => {
     setLive(!still);
     if (still) return;
@@ -123,8 +121,6 @@ export default function HomeFlow({ rail, children }: { rail: { id: string; label
       });
       // Kokonut Marker Text, filled by scroll.
       all('[data-rv="marker"]').forEach((m) => offs.push(scrub(A, m, "--p", { target: m, enter: "88% start", leave: "50% start" })));
-      // Skiper Scroll Progress.
-      offs.push(scrub(A, barRef.current, "--p", { target: flow, enter: "start start", leave: "end end" }));
     });
     return () => {
       dead = true;
@@ -134,7 +130,6 @@ export default function HomeFlow({ rail, children }: { rail: { id: string; label
 
   return (
     <div ref={flowRef} className={live ? `${css.flow} ${css.live}` : css.flow}>
-      <div ref={barRef} className={css.sprog} aria-hidden="true" />
       <nav ref={railRef} className={css.rail} aria-label="Sections on this page">
         {rail.map((r) => (
           <a key={r.id} href={`#${r.id}`}>

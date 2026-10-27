@@ -148,9 +148,6 @@ function groundBehind(header: HTMLElement): string | null {
   return null;
 }
 
-/** Ruler numbers, one per 96px tick; the card never runs past 14. */
-const RULER_NUMBERS = Array.from({ length: 14 }, (_, i) => i + 1);
-
 export default function Nav({
   overlay = false,
   cardOnScroll = false,
@@ -176,16 +173,14 @@ export default function Nav({
   const dark = tone === "dark" || groundDark;
 
   useEffect(close, [pathname]);
-  // One passive, rAF-throttled listener: scrolled state, the ruler's progress
-  // strip and the card's ground colour (re-read on resize and route change).
+  // One passive, rAF-throttled listener: scrolled state and the card's ground
+  // colour (re-read on resize and route change).
   useEffect(() => {
     const header = root.current;
     if (!header) return;
     let frame = 0;
     const update = () => {
       frame = 0;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      header.style.setProperty("--nav-progress", String(max > 0 ? Math.min(1, window.scrollY / max) : 0));
       setScrolled(window.scrollY > 8);
       const ground = groundBehind(header);
       const darkGround = ground !== null && isDark(ground);
@@ -304,14 +299,8 @@ export default function Nav({
       data-open={mobileOpen}
     >
       <div className={s.plate}>
-      <span className={s.ruler} aria-hidden="true">
-        <span className={`${s.progress} ds-nav-progress`} />
-        <span className={s.ticks}>
-          {RULER_NUMBERS.map((n) => <span key={n} style={{ "--n": n } as CSSProperties}>{n}</span>)}
-        </span>
-      </span>
       <nav className={s.bar} aria-label="Main navigation">
-        <Wordmark tone={dark ? "dark" : "light"} />
+        <div className={s.brand}><Wordmark tone={dark ? "dark" : "light"} /></div>
         <div className={s.links}>
           {primary.map((link) =>
             <Link key={link.key} href={link.href} className={s.link}

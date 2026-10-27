@@ -38,20 +38,6 @@
 /* clip, not hidden: the headline reveal slides lines sideways, and sticky pins still work */
 .flow { position: relative; overflow-x: clip; background: var(--ds-paper); }
 .flow[data-js] > section[data-bg] { background: none; }
-.sprog {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 30;
-  display: none;
-  height: 3px;
-  background: var(--ds-blue);
-  transform-origin: 0 50%;
-  transform: scaleX(var(--p, 0));
-  pointer-events: none;
-}
-.live .sprog { display: block; }
 /* Kokonut Scroll Index: a rail of ticks; hover or focus shows the section's name. */
 .rail {
   --ri: var(--ds-ink);

@@ -59,12 +59,12 @@
 
   --ds-gutter: clamp(20px, 5vw, 72px);
   --ds-max: 1296px;
-  --ds-nav-h: 88px;
+  --ds-nav-h: 78px;
 }
 
 @media (max-width: 767px) {
   :root {
-    --ds-nav-h: 72px;
+    --ds-nav-h: 68px;
     --ds-riso: var(--ds-riso-sm);
   }
 }
