@@ -232,6 +232,16 @@
 .ds-active-pill--over { z-index: 1; }
 .ds-pill-label { position: relative; z-index: 2; }
 
+/* A yellow marker under one key fact; with data-mark it sweeps in left to right */
+.ds-marker {
+  padding: 0 0.12em;
+  margin: 0 -0.06em;
+  color: inherit;
+  background: linear-gradient(100deg, rgba(255, 216, 61, 0) 0.6%, rgba(255, 216, 61, 0.95) 2.4%, rgba(255, 216, 61, 0.85) 96%, rgba(255, 216, 61, 0)) 0 70% / 100% 78% no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 /* ---------- Brand details ---------- */
 .ds-tape {
   background-color: var(--ds-tape);
@@ -367,6 +377,10 @@
 }
 [data-plan="in"] .ds-plan-fill { transition: opacity 0.4s ease-out 0.55s; }
 
+/* Marker highlights sweep in left to right */
+[data-mark="armed"] { background-size: 0% 78%; }
+[data-mark="in"] { transition: background-size 0.8s var(--ds-ease) 0.15s; }
+
 /* First-paint ("load") reveals run on CSS alone, so heroes animate from
    the very first frame, nothing flashes when scripts hydrate, and the hero
    image (the LCP element) is never hidden. RevealObserver leaves these alone. */
@@ -389,14 +403,16 @@
 [data-pop="load"] { animation: ds-rise-in 0.3s var(--ds-ease-back) both; animation-delay: calc(var(--i, 0) * 70ms); }
 @keyframes ds-plan-draw { from { stroke-dashoffset: var(--len); } to { stroke-dashoffset: 0; } }
 @keyframes ds-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ds-mark-in { from { background-size: 0% 78%; } }
 [data-plan="load"] .ds-plan-line { stroke-dasharray: var(--len); animation: ds-plan-draw 1s var(--ds-ease) 0.3s both; }
 [data-plan="load"] .ds-plan-fill { animation: ds-fade-in 0.4s ease-out 0.9s both; }
+[data-mark="load"] { animation: ds-mark-in 0.8s var(--ds-ease) both; animation-delay: var(--d, 0.8s); }
 @media (prefers-reduced-motion: reduce) {
   [data-headline="load"] .ds-line > span,
-  [data-reveal="load"], [data-reveal-img="load"], [data-grow="load"], [data-pop="load"],
+  [data-reveal="load"], [data-reveal-img="load"], [data-grow="load"], [data-pop="load"], [data-mark="load"],
   [data-plan="load"] :is(.ds-plan-line, .ds-plan-fill) { animation: none !important; }
 }
-.dm-app[data-motion="paused"] :is([data-reveal="load"], [data-reveal-img="load"], [data-grow="load"], [data-pop="load"]),
+.dm-app[data-motion="paused"] :is([data-reveal="load"], [data-reveal-img="load"], [data-grow="load"], [data-pop="load"], [data-mark="load"]),
 .dm-app[data-motion="paused"] [data-plan="load"] :is(.ds-plan-line, .ds-plan-fill),
 .dm-app[data-motion="paused"] [data-headline="load"] .ds-line > span { animation: none !important; }
 @media (prefers-reduced-motion: reduce) {

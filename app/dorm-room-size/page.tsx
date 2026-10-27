@@ -151,7 +151,9 @@ export default function DormRoomSizePage() {
         ]}
         lede={
           <p>
-            {`A typical double dorm room is ${dims(double)}, about ${fmt(double.median)} square feet. A single is about ${fmt(single.median)} sq ft and a triple about ${fmt(triple.median)}. These are the middle values of ${fmt(S.rooms)} room sizes that ${S.schools} colleges publish, so you know what's normal before you find your own room.`}
+            {`A typical double dorm room is ${dims(double)}, `}
+            <mark className="ds-marker" data-mark="load">{`about ${fmt(double.median)} square feet`}</mark>
+            {`. A single is about ${fmt(single.median)} sq ft and a triple about ${fmt(triple.median)}. These are the middle values of ${fmt(S.rooms)} room sizes that ${S.schools} colleges publish, so you know what's normal before you find your own room.`}
           </p>
         }
         visual={

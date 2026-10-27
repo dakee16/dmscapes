@@ -150,7 +150,13 @@ export default async function CollegePage(props: {
   const doubles = wall.filter((p) => /double/i.test(p.type));
   const caption =
     doubles.length >= 2 && doubles[0].sqft !== doubles[doubles.length - 1].sqft
-      ? `The same “double” can be ${doubles[doubles.length - 1].sqft} or ${doubles[0].sqft} square feet here. Seeing them side by side is the whole point.`
+      ? <>
+          The same “double” can be{" "}
+          <mark className="ds-marker" data-mark="load" style={{ "--d": "1.4s" } as React.CSSProperties}>
+            {doubles[doubles.length - 1].sqft} or {doubles[0].sqft} square feet
+          </mark>{" "}
+          here. Seeing them side by side is the whole point.
+        </>
       : `Published sizes at ${short}, drawn side by side at one scale.`;
 
   const bars = spread(school);
