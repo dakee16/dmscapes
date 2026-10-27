@@ -12,6 +12,7 @@ import JsonLd from "@/components/site/JsonLd";
 import { ArrowRight } from "@/components/ds/Icons";
 import HallDirectory, { type HallCard } from "@/components/college/HallDirectory";
 import { CollegeBand, CollegeChip } from "@/components/hall-finder/Entry";
+import SectionRail from "@/components/ds/SectionRail";
 import { exampleFor } from "@/lib/hall-finder-example";
 import { SCHOOLS, formatDims, getSchool, publishedDimsCount } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
@@ -280,6 +281,14 @@ export default async function CollegePage(props: {
           <>{school.dorms.length} residence halls</>,
           <>{roomTypes} room types</>,
           withDims > 0 ? <>{withDims} published sizes</> : <>Sizes estimated, clearly marked</>,
+        ]}
+      />
+
+      <SectionRail
+        sections={[
+          ...(hallFinder ? [{ id: "hf-band-title", label: "Hall Finder" }] : []),
+          { id: "halls", label: "Buildings" },
+          ...(bars ? [{ id: "bars-title", label: "Sizes compared" }] : []),
         ]}
       />
 

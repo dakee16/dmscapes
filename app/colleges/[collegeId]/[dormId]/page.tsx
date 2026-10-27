@@ -13,6 +13,7 @@ import JsonLd from "@/components/site/JsonLd";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import { ArrowRight } from "@/components/ds/Icons";
 import ScalePlan from "@/components/hall/ScalePlan";
+import SectionRail from "@/components/ds/SectionRail";
 import { allDormPaths, getDorm, formatDims, hallIsIndexable } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { formatRoomType } from "@/lib/format";
@@ -242,6 +243,16 @@ export default async function DormPage(props: {
         </a>
         {finder && <HallHeroLink collegeId={school.id} dormId={dorm.id} />}
       </PageHero>
+
+      <SectionRail
+        sections={[
+          { id: "rooms", label: n === 1 ? "The room" : "Room types" },
+          ...(finder && finder.near.length > 0 ? [{ id: "hf-walk-title", label: "Walk times" }] : []),
+          ...(pieces.length > 0 ? [{ id: "pieces-title", label: "Furniture" }] : []),
+          ...(openFloor.length > 0 ? [{ id: "open-title", label: "Open floor" }] : []),
+          ...(siblings.length > 0 ? [{ id: "more-title", label: "More halls" }] : []),
+        ]}
+      />
 
       {/* Room types: the substance of the page. */}
       <section

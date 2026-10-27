@@ -11,6 +11,7 @@ import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import ScalePlan from "@/components/hall/ScalePlan";
+import SectionRail from "@/components/ds/SectionRail";
 import { SCHOOLS } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { dormSizeStats, MAX_SQFT_PER_PERSON, MIN_SCHOOL_ROOMS, type TypeStats } from "@/lib/dorm-sizes";
@@ -114,6 +115,15 @@ const answers = [
 export default function DormRoomSizePage() {
   return (
     <PageShell navOverlay>
+      <SectionRail
+        sections={[
+          { id: "sizes", label: "Typical rooms" },
+          { id: "numbers-title", label: "The numbers" },
+          { id: "answers-title", label: "Short answers" },
+          { id: "by-college", label: "By school" },
+          { id: "method-title", label: "Method" },
+        ]}
+      />
       <JsonLd
         data={[
           breadcrumbJsonLd(crumbs),
