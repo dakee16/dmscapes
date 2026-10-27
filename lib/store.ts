@@ -2,7 +2,7 @@
 
 import { roomEditError } from "./room-editing";
 import { footprint, normalizeRotation, rotateFurniture } from "@/components/canvas/geometry";
-import { bedSurfaceHeight, itemElevation, itemHeight, modelKind, roomOutline } from "./studio";
+import { bedSurfaceHeight, hangOnWall, itemElevation, itemHeight, modelKind, roomOutline } from "./studio";
 
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
@@ -219,9 +219,11 @@ export const usePlannerStore = create<PlannerState>()(
       moveItem: (id, xFt, yFt, elevationFt) => set(s => {
         const before=s.furniture?.find(f=>f.id===id);
         if(!before || !before.movable || s.lockedItemIds.includes(id))return {};
-        const items=s.furniture!,dx=xFt-before.x_ft,dy=yFt-before.y_ft;
+        // A poster, mirror or light string pushed end-first into another wall turns to hang on it.
+        const moved=s.room?hangOnWall({...before,x_ft:xFt,y_ft:yFt},roomOutline(s.room).points):{...before,x_ft:xFt,y_ft:yFt};
+        const items=s.furniture!,dx=moved.x_ft-before.x_ft,dy=moved.y_ft-before.y_ft;
         const lift=elevationFt===undefined||!Number.isFinite(elevationFt)?0:Math.max(0,elevationFt)-itemElevation(before,items),raised=Math.abs(lift)>1e-6;
-        return {furniture:items.map(f=>f.id===id?{...f,x_ft:xFt,y_ft:yFt,...(raised?{elevation_ft:Math.max(0,elevationFt!),parent_id:undefined}:{})}:
+        return {furniture:items.map(f=>f.id===id?{...moved,...(raised?{elevation_ft:Math.max(0,elevationFt!),parent_id:undefined}:{})}:
           f.parent_id===id?{...f,x_ft:f.x_ft+dx,y_ft:f.y_ft+dy,...(raised?{elevation_ft:Math.max(0,itemElevation(f,items)+lift)}:{})}:f)};
       }),
       updateItem3D: (id, patch) => set(s => {

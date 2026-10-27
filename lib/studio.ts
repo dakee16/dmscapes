@@ -89,14 +89,18 @@ export function itemHeight(f: FurnitureItem): number {
 export function bedSurfaceHeight(f: FurnitureItem): number {
   return bedMode(f)==="lofted" ? itemHeight(f)*.78+.195 : isBunkBed(f) ? itemHeight(f)*.3+.195 : itemHeight(f)-.085;
 }
+/** The larger desk, dresser, bed, bunk or shelf a small piece's centre sits on, if any. */
+export function restingHost(f: FurnitureItem, items: FurnitureItem[]): FurnitureItem | undefined {
+  const fp = footprint(f), cx=fp.x+fp.w/2, cy=fp.y+fp.h/2;
+  return items.find(p => p.id!==f.id && ["desk","dresser","bed","bunk","shelf"].includes(modelKind(p)) &&
+    p.width_ft*p.length_ft>f.width_ft*f.length_ft && furnitureContainsPoint(p,{x:cx,y:cy}));
+}
 export function itemElevation(f: FurnitureItem, items: FurnitureItem[]): number {
   if (typeof f.elevation_ft === "number") return f.elevation_ft;
   const k = modelKind(f);
   if (k === "art" || k === "lights") return k === "lights" ? 6.5 : 3.4;
   if (!["lamp","plant","pillow"].includes(k)) return 0;
-  const fp = footprint(f), cx=fp.x+fp.w/2, cy=fp.y+fp.h/2;
-  const host = items.find(p => p.id!==f.id && ["desk","dresser","bed","bunk","shelf"].includes(modelKind(p)) &&
-    p.width_ft*p.length_ft>f.width_ft*f.length_ft && furnitureContainsPoint(p,{x:cx,y:cy}));
+  const host = restingHost(f, items);
   return host ? ["bed","bunk"].includes(modelKind(host)) ? bedSurfaceHeight(host) : itemHeight(host) : 0;
 }
 /** A side of a piece in its own unrotated frame: 0 top, 1 right, 2 bottom, 3 left (in 3D: -z, +x, +z, -x). */
@@ -105,6 +109,42 @@ export type BackSide = 0 | 1 | 2 | 3;
 const BACK_TO_WALL = new Set(["desk","sofa","lounge","dresser","wardrobe","fridge","microwave","shelf","storage","trash","lamp"]);
 /** Flat pieces that hang on a wall: their back is always one of their long sides. */
 const HANGS = new Set(["art","mirror","lights","curtains","macrame","wall-shelf"]);
+/** The walls of an outline: each edge's start, length, direction and inward normal. */
+function wallEdges(pts: Point[]) {
+  return pts.map((a, i) => {
+    const b = pts[(i + 1) % pts.length], len = Math.hypot(b.x - a.x, b.y - a.y) || 1, dx = (b.x - a.x) / len, dy = (b.y - a.y) / len;
+    const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, inward = pointInPolygon(mx - dy * .05, my + dx * .05, pts) ? { x: -dy, y: dx } : { x: dy, y: -dx };
+    return { a, len, dx, dy, n: inward };
+  });
+}
+/**
+ * A hanging piece (a poster, mirror or light string) pushed end-first into a wall turns to hang on that wall: its long
+ * side along it, its back flat against it, centred where it met the wall. One still close to a wall its long side runs
+ * along is left where it was put, so sliding a poster into a corner doesn't flip it.
+ */
+export function hangOnWall(f: FurnitureItem, pts: Point[]): FurnitureItem {
+  if (!HANGS.has(modelKind(f))) return f;
+  const b = footprint(f), c = { x: b.x + b.w / 2, y: b.y + b.h / 2 }, r = f.rotation_deg * Math.PI / 180, wide = f.width_ft >= f.length_ft;
+  const axis = wide ? { x: Math.cos(r), y: Math.sin(r) } : { x: -Math.sin(r), y: Math.cos(r) };
+  let parallel = Infinity, endGap = Infinity, end: (ReturnType<typeof wallEdges>[number] & { t: number }) | null = null;
+  for (const e of wallEdges(pts)) {
+    const t = (c.x - e.a.x) * e.dx + (c.y - e.a.y) * e.dy, reach = Math.abs(e.dx) * b.w / 2 + Math.abs(e.dy) * b.h / 2;
+    const gap = (c.x - e.a.x) * e.n.x + (c.y - e.a.y) * e.n.y - (Math.abs(e.n.x) * b.w / 2 + Math.abs(e.n.y) * b.h / 2);
+    if (t < -reach || t > e.len + reach || gap < -.5) continue;
+    if (Math.abs(axis.x * e.dx + axis.y * e.dy) > .7) parallel = Math.min(parallel, gap);
+    else if (gap < endGap) { endGap = gap; end = { ...e, t }; }
+  }
+  if (!end || endGap > .25 || endGap + .5 >= parallel) return f;
+  // Turn the long side onto the wall (the shorter way round), then sit it flush within the wall's length.
+  const long = Math.max(f.width_ft, f.length_ft), thin = Math.min(f.width_ft, f.length_ft);
+  const onWall = Math.atan2(end.dy, end.dx) * 180 / Math.PI - (wide ? 0 : 90), turn = (d: number) => Math.abs(((d - f.rotation_deg) % 360 + 540) % 360 - 180);
+  const rotation = Math.round(((turn(onWall) <= turn(onWall + 180) ? onWall : onWall + 180) % 360 + 360) % 360 * 1e6) / 1e6;
+  const t = end.len < long ? end.len / 2 : Math.max(long / 2, Math.min(end.len - long / 2, end.t));
+  const cx = end.a.x + end.dx * t + end.n.x * thin / 2, cy = end.a.y + end.dy * t + end.n.y * thin / 2;
+  const turned = { ...f, rotation_deg: rotation }, fb = footprint(turned);
+  const hung = { ...turned, x_ft: Math.round((cx - fb.w / 2) * 100) / 100, y_ft: Math.round((cy - fb.h / 2) * 100) / 100 };
+  return furnitureInsidePolygon(hung, pts) ? hung : f;
+}
 /**
  * Which side of each piece is its back, so the 2D Room view and the 3D room
  * agree and nothing faces a wall: a bed's head is the end with its throw
@@ -120,12 +160,7 @@ export function backSides(items: FurnitureItem[], roomL: number, roomW: number, 
   const centre = (f: FurnitureItem) => { const b = footprint(f); return { x: b.x + b.w / 2, y: b.y + b.h / 2 }; };
   const desks = items.filter(f => modelKind(f) === "desk").map(centre);
   const throws = items.filter(f => f.type === "throw_pillows" || f.type === "throw").map(f => ({ ...centre(f), foot: blanket(f) }));
-  // The walls: each edge with its inward normal.
-  const edges = pts.map((a, i) => {
-    const b = pts[(i + 1) % pts.length], len = Math.hypot(b.x - a.x, b.y - a.y) || 1, dx = (b.x - a.x) / len, dy = (b.y - a.y) / len;
-    const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2, inward = pointInPolygon(mx - dy * .05, my + dx * .05, pts) ? { x: -dy, y: dx } : { x: dy, y: -dx };
-    return { a, len, dx, dy, n: inward };
-  });
+  const edges = wallEdges(pts);
   /** The direction from a piece to the wall nearest its footprint (a wall it actually faces along its span). */
   const nearestWall = (f: FurnitureItem): [number, number] => {
     const b = footprint(f), c = { x: b.x + b.w / 2, y: b.y + b.h / 2 };
