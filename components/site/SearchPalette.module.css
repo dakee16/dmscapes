@@ -1,0 +1,162 @@
+/* Site search (SearchPalette): a round header button and a paper panel with the brand's offset shadow. */
+.trigger {
+  display: inline-flex;
+  flex: none;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(22, 22, 29, 0.06);
+  color: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.25s var(--ds-ease);
+}
+.trigger:hover { background: rgba(22, 22, 29, 0.12); }
+.trigger:active { transform: scale(0.94); }
+:global(.ds-site-nav[data-tone="dark"]) .trigger { background: rgba(255, 255, 255, 0.12); }
+:global(.ds-site-nav[data-tone="dark"]) .trigger:hover { background: rgba(255, 255, 255, 0.2); }
+@media (max-width: 767px) { .trigger { width: 40px; height: 40px; } }
+/* Phones under 389px have no room for it in the header: search moves into the menu sheet there. */
+@media (max-width: 388px) { .trigger { display: none; } }
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: max(12vh, 72px) 16px 16px;
+  background: rgba(22, 22, 29, 0.34);
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  width: min(640px, 100%);
+  max-height: min(560px, 100%);
+  border: 2px solid var(--ds-ink);
+  border-radius: 20px;
+  background: var(--ds-paper);
+  box-shadow: 6px 6px 0 var(--ds-blue);
+  color: var(--ds-ink);
+  overflow: hidden;
+}
+.field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px 0 18px;
+  border-bottom: 1.5px solid var(--ds-line);
+  background: #fff;
+}
+.fieldIcon { flex: none; color: var(--ds-blue); }
+.field input {
+  flex: 1;
+  min-width: 0;
+  height: 62px;
+  border: 0;
+  outline: 0;
+  background: none;
+  color: var(--ds-ink);
+  font: 600 18px var(--ds-sans);
+}
+.field input::placeholder { color: #8a8996; font-weight: 500; }
+/* The panel's own border marks focus, like the homepage search box. */
+.field input:focus-visible { outline: none; }
+.close {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: var(--ds-caption);
+  cursor: pointer;
+}
+.close:hover { background: rgba(22, 22, 29, 0.06); color: var(--ds-ink); }
+.esc {
+  padding: 3px 6px;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(22, 22, 29, 0.18);
+  font: 700 10px var(--ds-mono);
+  letter-spacing: 0.08em;
+}
+.x { display: none; }
+
+.results { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 8px; }
+.group + .group { margin-top: 6px; }
+.groupLabel {
+  margin: 0;
+  padding: 10px 12px 6px;
+  font: 700 10px var(--ds-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.option[aria-selected="true"] { background: #fff; box-shadow: inset 0 0 0 1.5px var(--ds-ink); }
+.kind {
+  flex: none;
+  width: 54px;
+  padding: 4px 0;
+  border-radius: 6px;
+  background: rgba(22, 22, 29, 0.06);
+  font: 700 9px var(--ds-mono);
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+.option[data-kind="school"] .kind { background: var(--ds-sky); color: var(--ds-blue-deep); }
+.option[data-kind="hall"] .kind { background: var(--ds-yellow); color: var(--ds-ink); }
+.text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.title { font: 750 15px/1.25 var(--ds-sans); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.detail { font: 500 13px/1.3 var(--ds-sans); color: var(--ds-caption); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.arrow { flex: none; color: var(--ds-blue); opacity: 0; transform: translateX(-4px); transition: opacity 0.2s, transform 0.25s var(--ds-ease); }
+.option[aria-selected="true"] .arrow { opacity: 1; transform: none; }
+.status { margin: 0; padding: 22px 14px; font: 500 15px/1.5 var(--ds-sans); color: var(--ds-body); }
+.foot {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 10px 18px;
+  border-top: 1.5px solid var(--ds-line);
+  font: 600 10px var(--ds-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ds-caption);
+}
+.foot kbd {
+  padding: 2px 5px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(22, 22, 29, 0.16);
+  font: inherit;
+}
+.foot kbd + kbd { margin-left: -2px; }
+
+/* Phones: the panel fills the screen, under the keyboard's reach. */
+@media (max-width: 640px) {
+  .backdrop { padding: 0; }
+  .panel { width: 100%; height: 100%; max-height: none; border: 0; border-radius: 0; box-shadow: none; }
+  .field { padding-top: env(safe-area-inset-top); }
+  .esc { display: none; }
+  .x { display: inline-flex; }
+  .foot { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trigger, .arrow { transition: none; }
+}

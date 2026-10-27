@@ -379,6 +379,21 @@
   margin-inline: auto;
   padding: 10px 0 max(40px, env(safe-area-inset-bottom));
 }
+.sheetSearch {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 18px;
+  border: 1.5px solid var(--ds-line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ds-caption);
+  font: 600 16px var(--ds-sans);
+  text-align: left;
+  cursor: pointer;
+}
+.sheetSearch svg { color: var(--ds-blue); }
 .sheetPrimary {
   display: flex;
   flex-direction: column;

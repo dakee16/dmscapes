@@ -5,6 +5,8 @@ import posthog from "posthog-js";
 // PostHog event calls are wired everywhere; they no-op until
 // NEXT_PUBLIC_POSTHOG_KEY is set (owner adds their own key).
 export type AnalyticsEvent =
+  | "site_search_opened"
+  | "site_search_result"
   | "flow_started"
   | "college_selected"
   | "style_selected"
