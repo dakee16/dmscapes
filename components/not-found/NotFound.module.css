@@ -109,7 +109,7 @@
   font-weight: 900;
   letter-spacing: -0.04em;
   color: var(--ds-ink);
-  text-shadow: 0.66cqw 0.5cqw 0 var(--ds-riso-tint), -0.66cqw -0.5cqw 0 rgba(36, 73, 255, 0.4);
+  text-shadow: -0.66cqw -0.5cqw 0 rgba(36, 73, 255, 0.4);
 }
 /* Halloween season */
 :global(:root[data-season="halloween"]) .missing { border-color: var(--ds-pumpkin); background: rgba(255, 122, 26, 0.07); }
