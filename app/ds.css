@@ -201,13 +201,20 @@
 .ds-btn--ghost { background: transparent; color: inherit; box-shadow: inset 0 0 0 1.5px currentColor; }
 .ds-btn--ghost-ink { background: #fff; color: var(--ds-ink); box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.2); }
 
+/* The underline is a background line so hover can pull it off to the right
+   and draw it back in from the left. */
 .ds-link {
   font-weight: 700;
-  text-decoration: underline;
-  text-decoration-thickness: 1.5px;
-  text-underline-offset: 3px;
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) right bottom / 100% 1.5px no-repeat;
 }
-.ds-link:hover { color: var(--ds-blue); }
+.ds-link:hover { color: var(--ds-blue); animation: ds-link-draw 0.6s var(--ds-ease); }
+@keyframes ds-link-draw {
+  0% { background-size: 100% 1.5px; background-position: right bottom; }
+  45% { background-size: 0 1.5px; background-position: right bottom; }
+  46% { background-size: 0 1.5px; background-position: left bottom; }
+  100% { background-size: 100% 1.5px; background-position: left bottom; }
+}
 
 /* The sliding selected pill (components/ds/ActivePill.tsx) sits behind the
    control's label: the group needs isolation: isolate and the selected control
@@ -392,6 +399,10 @@
 .dm-app[data-motion="paused"] :is([data-reveal="load"], [data-reveal-img="load"], [data-grow="load"], [data-pop="load"]),
 .dm-app[data-motion="paused"] [data-plan="load"] :is(.ds-plan-line, .ds-plan-fill),
 .dm-app[data-motion="paused"] [data-headline="load"] .ds-line > span { animation: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .ds-link:hover { animation: none; }
+}
+.dm-app[data-motion="paused"] .ds-link:hover { animation: none; }
 
 /* Reduced motion: final states, short fades, nothing loops. The site-wide
    "pause motion" toggle (MotionProvider) maps onto the same rules. */
