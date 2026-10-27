@@ -31,7 +31,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "esbuild": "0.28.2",
     "tailwindcss": "^4",
+    "three": "0.170.0",
     "typescript": "^5"
   }
 }
