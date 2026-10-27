@@ -30,7 +30,7 @@ export default function FinalCta() {
         </div>
         <div className={css.fnArt} data-rv="img">
           <Image
-            src="/redesign/home-cta-room-door.webp"
+            src="/redesign/home-cta-room-door-cutout.webp"
             alt="A freestanding dorm room with its door open, a made bed visible inside, and warm light spilling across the doormat."
             fill
             quality={75}

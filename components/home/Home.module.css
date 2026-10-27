@@ -89,8 +89,8 @@
   opacity: calc(0.1 + 0.9 * var(--q));
   transform: translate3d(calc((1 - var(--q)) * 6%), 0, 0) skewX(calc((1 - var(--q)) * -9deg));
 }
-.live [data-rv="img"] { opacity: 1; transform: none; clip-path: inset(calc((1 - var(--p)) * 10%) calc((1 - var(--p)) * 8%) round 6px); }
-.live [data-rv="img"] > img { transform: translate3d(0, calc((var(--v, 0.5) - 0.5) * -48px), 0) scale(calc(1.08 + (1 - var(--p)) * 0.16)); }
+/* Pictures rise and fade in like the copy, then drift a little with scroll (no clip or zoom, which drew a box around them mid-scroll). */
+.live [data-rv="img"] > img { transform: translate3d(0, calc((var(--v, 0.5) - 0.5) * -32px), 0); }
 .live [data-rv="marker"] { opacity: 1; transform: none; animation: none; background-size: calc(var(--p) * 100%) 78%; }
 
 /* ---------- Colleges ---------- */
@@ -326,9 +326,16 @@
 /* ---------- Vibes: highlight grid ---------- */
 .vibes { background: #f6eada; }
 .vbGrid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 56px; padding: 88px 0; align-items: start; }
-.vbArt { position: sticky; top: 24px; aspect-ratio: 576 / 720; border-radius: 4px; overflow: hidden; }
+.vbArt { position: sticky; top: 24px; aspect-ratio: 576 / 720; }
 .vbIn { position: absolute; inset: 0; }
-.vbArt img { object-fit: cover; }
+/* The duvet render's own backdrop is a shade off the section's, so its edges fade out instead of showing a box. */
+.vbArt img {
+  object-fit: cover;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent), linear-gradient(transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent), linear-gradient(transparent, #000 8%, #000 92%, transparent);
+  mask-composite: intersect;
+}
 .hgrid { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 12px; margin-top: 34px; }
 .hl {
   position: absolute;
@@ -718,7 +725,7 @@
 .corner .tr { right: -12px; top: -12px; border-width: 2.5px 2.5px 0 0; --dx: 4px; --dy: -4px; }
 .corner .bl { left: -12px; bottom: -12px; border-width: 0 0 2.5px 2.5px; --dx: -4px; --dy: 4px; }
 .corner .br { right: -12px; bottom: -12px; border-width: 0 2.5px 2.5px 0; --dx: 4px; --dy: 4px; }
-.fnArt { position: relative; aspect-ratio: 960 / 1200; border-radius: 4px; overflow: hidden; }
+.fnArt { position: relative; aspect-ratio: 960 / 1200; }
 .fnArt img { object-fit: cover; }
 
 /* ---------- What students say (hidden until there are real quotes) ---------- */
@@ -802,7 +809,9 @@
   .live .problem::after { display: none; }
   .live .prGrid { position: relative; min-height: 0; padding: 72px 0; }
   .howGrid, .vbGrid, .stGrid, .tgGrid, .fnGrid { padding: 72px 0; gap: 40px; }
-  .vbArt { position: relative; top: 0; width: 100%; max-width: 560px; aspect-ratio: 4 / 3; }
+  /* Square on phones so the whole duvet stack fits; the render is 4:5 and the stack sits low in it. */
+  .vbArt { position: relative; top: 0; width: 100%; max-width: 560px; aspect-ratio: 1; }
+  .vbArt img { object-position: 50% 85%; }
   .live .howHead { position: relative; top: auto; }
   .live .studio::after { display: none; }
   .live .stGrid { position: relative; min-height: 0; padding: 72px 0; }
