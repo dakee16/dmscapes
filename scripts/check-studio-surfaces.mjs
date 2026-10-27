@@ -47,6 +47,26 @@ try {
     assert(!model.getObjectByName("storage-body"),`${kind} must not fall back to a generic storage box`);
   }
   console.log("PASS: bunk mattresses, ladder, rails, and distinct product geometry across lamp, textile, storage and accessory variants.");
+
+  // Baked corner shading: the desk's legs darken under its top, open faces stay fully lit, and only grounded pieces shade toward the floor.
+  const desk=kit.build({id:"desk",kind:"desk",width_ft:3.5,length_ft:2,height:2.5},["#ffffff"]),creases=kit.bake(desk);
+  assert(desk.children.every(m=>!m.geometry?.attributes.aAo||m.geometry.attributes.aAo.getX(0)===1),"Creases wait for their own step");
+  creases();
+  const shadedMeshes=desk.children.filter(m=>m.geometry.attributes.aAo);
+  assert(shadedMeshes.length&&shadedMeshes.every(m=>m.material.defines?.DM_AO!==undefined),"Clay parts carry their corner shading");
+  const tone=(lo,hi)=>{let s=0,n=0;for(const m of shadedMeshes){const P=m.geometry.attributes.position,A=m.geometry.attributes.aAo;for(let i=0;i<P.count;i++)if(P.getY(i)>lo&&P.getY(i)<hi){s+=A.getX(i);n++;}}return s/n;};
+  assert(tone(2.2,2.35)<tone(.9,1.4)-.05,"Legs darken under the desk top");
+  assert(Math.max(...shadedMeshes.flatMap(m=>[...m.geometry.attributes.aAo.array].filter((_,i)=>i%2===0)))>.999,"Open faces stay fully lit");
+  assert(shadedMeshes.every(m=>m.geometry.attributes.aAo.getY(0)===1),"A grounded piece shades toward the floor");
+  const hung=kit.build({id:"art",kind:"art",width_ft:2,length_ft:.1,height:2},["#ffffff"]);kit.bake(hung,{floor:false})?.();
+  assert(hung.children.filter(m=>m.geometry?.attributes.aAo).every(m=>m.geometry.attributes.aAo.getY(0)===0),"A piece on a wall has no floor to shade toward");
+  // Footprint shadow: dark under a leg, fainter under the raised top, clear at the margin.
+  const { footprint } = await import("../public/experience/studio-models.js");
+  const s=footprint(desk),cell=(s.x1-s.x0)/s.nx,at=(x,z)=>s.data[Math.floor((z-s.z0)/cell)*s.nx+Math.floor((x-s.x0)/cell)]/255;
+  assert(at(-1.66,-.91)>at(-.5,0)+.15,"A leg leaves a darker mark than the desk top above the floor");
+  assert(at(-.5,0)>.1,"The raised top still shades the floor under it");
+  assert(s.data[0]===0&&s.data[s.data.length-1]===0,"The shadow fades out inside its margin");
+  console.log("PASS: baked corner shading and footprint shadows.");
 } finally {
   kit.dispose();
   delete globalThis.document;

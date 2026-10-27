@@ -1,16 +1,19 @@
 import * as T from "./vendor/three.module.min.js";
-import { clay, createModelKit } from "./studio-models.js";
+import { clay, createModelKit, footprint } from "./studio-models.js";
 
 // Light presets (design-handoff/3d-studio/scene.js, retuned for the clay look). "evening" is golden hour.
-// Built to stay smooth on weak GPUs and phones: no shadow maps, no ambient-occlusion pass and no
-// environment map. A sky/ground fill, one sun and one window light do the work; soft contact shadows are
-// drawn under each piece and along the walls; night adds the plan's lamps. Changing the preset never
-// rebuilds the room, and the night shaders are compiled ahead of time, so the switch is instant.
+// Built to stay smooth on weak GPUs and phones: no shadow maps and no ambient-occlusion pass. A sky/ground
+// fill tinted by the room, one sun and one window light do the work; each piece's corner shading and
+// footprint shadow are baked once (the creases just after it appears); only glass, mirrors and metal see a
+// tiny reflection map; night adds the plan's lamps. Changing the preset never rebuilds the room, and the night shaders are
+// compiled ahead of time, so the switch is instant.
 const LIGHT={
-  day:    {sun:"#fff0dc",sunI:2.2,elev:36,az:200,hemiSky:"#f2f5ff",hemiGround:"#c2ad94",hemiI:1.5,exposure:.95,sky:"#cfe3f3",glass:.45,fill:"#e6efff",fillI:6,pool:"#fff4e2",poolA:.14,blob:.44},
-  evening:{sun:"#ffab5e",sunI:2.7,elev:13,az:214,hemiSky:"#ffd9b3",hemiGround:"#9a7a5c",hemiI:1.1,exposure:1.0,sky:"#f6c68f",glass:.45,fill:"#ffcf9e",fillI:5,pool:"#ffb066",poolA:.2,blob:.46},
-  night:  {sun:"#9bb3ff",sunI:.3,elev:30,az:200,hemiSky:"#3a4468",hemiGround:"#211b16",hemiI:.5,exposure:1.08,sky:"#1b2440",glass:.95,fill:"#7d9cff",fillI:1.5,pool:"#9bb3ff",poolA:0,blob:.3},
+  day:    {sun:"#fff0dc",sunI:2.2,elev:36,az:200,hemiSky:"#f2f5ff",hemiGround:"#c2ad94",hemiI:1.5,exposure:.95,sky:"#cfe3f3",glass:.45,fill:"#e6efff",fillI:6,pool:"#fff4e2",poolA:.14,blob:.44,env:1},
+  evening:{sun:"#ffab5e",sunI:2.7,elev:13,az:214,hemiSky:"#ffd9b3",hemiGround:"#9a7a5c",hemiI:1.1,exposure:1.0,sky:"#f6c68f",glass:.45,fill:"#ffcf9e",fillI:5,pool:"#ffb066",poolA:.2,blob:.46,env:.8},
+  night:  {sun:"#9bb3ff",sunI:.3,elev:30,az:200,hemiSky:"#3a4468",hemiGround:"#211b16",hemiI:.5,exposure:1.08,sky:"#1b2440",glass:.95,fill:"#7d9cff",fillI:1.5,pool:"#9bb3ff",poolA:0,blob:.3,env:.3},
 };
+/** Each floor finish's base colour (its texture, and the light it bounces up). "concrete" is Tile in the UI. */
+const FLOOR_TONE={oak:"#c99f6c",walnut:"#7a553a",concrete:"#d4cfcb",carpet:"#c4bcae"};
 const PAPER="#f4f3ee",WALL_T=.42,PLINTH=.45,EYE=5.3,WALK_R=.7;
 // Phones and low-power devices (coarse pointer on a small screen, ≤4 cores or ≤4 GB): a lower pixel ratio and fewer lamp lights at night.
 const LOW=(matchMedia("(pointer: coarse)").matches&&Math.min(screen.width,screen.height)<768)||(navigator.hardwareConcurrency||8)<=4||(navigator.deviceMemory||8)<=4;
@@ -38,37 +41,18 @@ function patch(hw,hd,m,material){
   const mesh=new T.Mesh(g,material);mesh.raycast=()=>{};mesh.renderOrder=1;mesh.userData.ownGeometry=true;return mesh;
 }
 
-/**
- * Fewer draw calls: a piece's plain meshes that share a material become one mesh (its parts baked in place). Instanced
- * meshes, multi-material meshes and mirrored parts stay as they are. The merged geometry is the piece's own to dispose.
- */
-function mergeByMaterial(root){
-  root.updateMatrixWorld(true);
-  const toRoot=new T.Matrix4().copy(root.matrixWorld).invert(),groups=new Map(),m=new T.Matrix4(),nm=new T.Matrix3(),v=new T.Vector3();
-  root.traverse(o=>{
-    if(!o.isMesh||o.isInstancedMesh||Array.isArray(o.material)||!o.geometry.attributes.normal)return;
-    m.multiplyMatrices(toRoot,o.matrixWorld);if(m.determinant()<=0)return;
-    if(!groups.has(o.material))groups.set(o.material,[]);groups.get(o.material).push(o);
-  });
-  for(const [material,parts] of groups){
-    if(parts.length<2)continue;
-    const pos=[],nor=[],uv=[],index=[];let base=0;
-    for(const o of parts){
-      m.multiplyMatrices(toRoot,o.matrixWorld);nm.getNormalMatrix(m);
-      const g=o.geometry,P=g.attributes.position,N=g.attributes.normal,U=g.attributes.uv;
-      for(let i=0;i<P.count;i++){
-        v.fromBufferAttribute(P,i).applyMatrix4(m);pos.push(v.x,v.y,v.z);
-        v.fromBufferAttribute(N,i).applyMatrix3(nm).normalize();nor.push(v.x,v.y,v.z);
-        uv.push(U?U.getX(i):0,U?U.getY(i):0);
-      }
-      if(g.index)for(let i=0;i<g.index.count;i++)index.push(g.index.getX(i)+base);else for(let i=0;i<P.count;i++)index.push(base+i);
-      base+=P.count;o.removeFromParent();
-    }
-    const g=new T.BufferGeometry();
-    g.setAttribute("position",new T.Float32BufferAttribute(pos,3));g.setAttribute("normal",new T.Float32BufferAttribute(nor,3));g.setAttribute("uv",new T.Float32BufferAttribute(uv,2));
-    g.setIndex(index);g.computeBoundingSphere();
-    const mesh=new T.Mesh(g,material);mesh.userData={...parts[0].userData,ownGeometry:true};root.add(mesh);
-  }
+/** A piece's contact shadow: its footprint seen from above (see footprint), with the shared colour and strength. */
+function shadowMesh(root,uniforms){
+  const s=footprint(root);if(!s)return null;
+  const tex=new T.DataTexture(s.data,s.nx,s.nz,T.RedFormat);tex.unpackAlignment=1;tex.magFilter=tex.minFilter=T.LinearFilter;tex.needsUpdate=true;
+  const g=new T.BufferGeometry();
+  g.setAttribute("position",new T.Float32BufferAttribute([s.x0,0,s.z0,s.x1,0,s.z0,s.x1,0,s.z1,s.x0,0,s.z1],3));
+  g.setAttribute("uv",new T.Float32BufferAttribute([0,0,1,0,1,1,0,1],2));g.setIndex([0,1,2,0,2,3]);
+  const material=new T.ShaderMaterial({transparent:true,depthWrite:false,side:T.DoubleSide,polygonOffset:true,polygonOffsetFactor:-1,polygonOffsetUnits:-4,
+    uniforms:{...uniforms,uMap:{value:tex}},
+    vertexShader:"varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}",
+    fragmentShader:"uniform vec3 uColor;uniform float uOpacity;uniform sampler2D uMap;varying vec2 vUv;void main(){gl_FragColor=vec4(uColor,texture2D(uMap,vUv).r*uOpacity);\n#include <colorspace_fragment>\n}"});
+  const mesh=new T.Mesh(g,material);mesh.raycast=()=>{};mesh.renderOrder=1;mesh.position.y=.012;mesh.userData={ownGeometry:true,shadow:true};return mesh;
 }
 
 export function createStudioScene(container, options) {
@@ -89,10 +73,13 @@ export function createStudioScene(container, options) {
   const fill=new T.PointLight(LIGHT.day.fill,LIGHT.day.fillI,14,1.3);scene.add(fill);
   // The plan's lamps at night: always LAMPS lights (unused ones at zero), shown only at night, so day pays for none of them.
   const lampRoot=new T.Group(),lamps=Array.from({length:LAMPS},()=>{const p=new T.PointLight("#ffffff",0,10,1.4);lampRoot.add(p);return p;});lampRoot.visible=false;scene.add(lampRoot);
-  const blobMat=patchMaterial("#2a1d12",LIGHT.day.blob),bandMat=patchMaterial("#2a1d12",.26),groundMat=patchMaterial("#2a1d12",.16),poolMat=patchMaterial(LIGHT.day.pool,LIGHT.day.poolA,true);
+  // Every piece's shadow shares these, so the light preset sets them all at once.
+  const shadowUniforms={uColor:{value:new T.Color("#2a1d12")},uOpacity:{value:LIGHT.day.blob}};
+  const bandMat=patchMaterial("#2a1d12",.26),groundMat=patchMaterial("#2a1d12",.16),poolMat=patchMaterial(LIGHT.day.pool,LIGHT.day.poolA,true);
   const roomRoot=new T.Group(),itemRoot=new T.Group(),groundRoot=new T.Group();scene.add(roomRoot,itemRoot);roomRoot.add(groundRoot);
   const meshes=new Map(),wallGroups=[],openingGroups=[],openingNodes=new Map(),floorTextures=new Map();
-  let roomKey="",lightKey="",nightKey="",data=null,disposed=false,raf=0,assemblyStart=0,ready=false,light=LIGHT.day,firstWindow=null,glassMat=null,pool=null;
+  let roomKey="",lightKey="",nightKey="",data=null,disposed=false,raf=0,assemblyStart=0,ready=false,light=LIGHT.day,firstWindow=null,glassMat=null,pool=null,envMap=null;
+  const tint=new T.Color();
   // Walk in: keys held on the canvas, the on-screen pad, the mini-map's marker, and the "ceiling" colour behind the open top.
   const keys=new Set(),pad={move:0,turn:0},paper=new T.Color(PAPER),ceiling=new T.Color();let lastStep=0,walker=null;
   const ray=new T.Raycaster(),ndc=new T.Vector2(),plane=new T.Plane(new T.Vector3(0,1,0),0);
@@ -110,7 +97,7 @@ export function createStudioScene(container, options) {
   // `orbit` holds the dollhouse angles while you walk (walking reuses angle and polar for where you look).
   const saved={room:null,top:null,inside:null},orbit={a:.7,p:.94};let custom=false;
   // Frame pacing for the adaptive pixel ratio.
-  let lastFrame=0,slow=0,chained=false;
+  let lastFrame=0,slow=0,chained=false,creaseTimer=0;
 
   const onContextLost=e=>{e.preventDefault();options.onError?.("The graphics context was interrupted. Open 2D or retry 3D.");};
   canvas.addEventListener("webglcontextlost",onContextLost);
@@ -232,6 +219,18 @@ export function createStudioScene(container, options) {
   function clearRoom(){
     for(const g of roomRoot.children)g.traverse(o=>{if(o.userData.ownGeometry)o.geometry?.dispose();if(o.userData.ownMaterial){for(const material of Array.isArray(o.material)?o.material:[o.material])material?.dispose();}});
     roomRoot.clear();groundRoot.clear();roomRoot.add(groundRoot);wallGroups.length=0;openingGroups.length=0;openingNodes.clear();pool=null;glassMat=null;firstWindow=null;
+    envMap?.dispose();envMap=null;
+  }
+  /**
+   * What glass, mirrors and metal reflect: the room squeezed into a 64 × 32 panorama (light ceiling, a bright window,
+   * the walls, the floor). Tiny on purpose; three blurs it once for rough surfaces.
+   */
+  function envTexture(wall,floor){
+    const c=document.createElement("canvas");c.width=64;c.height=32;const g=c.getContext("2d"),grad=g.createLinearGradient(0,0,0,32);
+    grad.addColorStop(0,mixHex(wall,"#ffffff",.8));grad.addColorStop(.45,mixHex(wall,"#ffffff",.3));grad.addColorStop(.52,shade(wall,.8));
+    grad.addColorStop(.56,shade(floor,.95));grad.addColorStop(1,shade(floor,.6));
+    g.fillStyle=grad;g.fillRect(0,0,64,32);g.fillStyle="rgba(255,255,255,.9)";g.fillRect(12,7,10,8);
+    const t=new T.CanvasTexture(c);t.mapping=T.EquirectangularReflectionMapping;t.colorSpace=T.SRGBColorSpace;return t;
   }
   // ---------- floors: oak and walnut planks, a speckled tile, soft carpet (drawn once per finish) ----------
   function floorTexture(finish){
@@ -239,7 +238,7 @@ export function createStudioScene(container, options) {
     const n=LOW?512:1024,c=document.createElement("canvas");c.width=c.height=n;const g=c.getContext("2d");
     let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
     if(finish==="oak"||finish==="walnut"){
-      const base=new T.Color(finish==="oak"?"#c99f6c":"#7a553a"),rows=8,ph=n/rows,ink=finish==="oak"?"70,40,15":"30,16,6";
+      const base=new T.Color(FLOOR_TONE[finish]),rows=8,ph=n/rows,ink=finish==="oak"?"70,40,15":"30,16,6";
       for(let r=0;r<rows;r++){let x=-rnd()*n*.5;
         while(x<n){const len=n*(.35+rnd()*.4),shade=.9+rnd()*.16;g.fillStyle="#"+base.clone().multiplyScalar(shade).getHexString();g.fillRect(x,r*ph,len,ph);
           g.strokeStyle=`rgba(${ink},.10)`;g.lineWidth=1;
@@ -248,12 +247,12 @@ export function createStudioScene(container, options) {
         g.fillStyle=`rgba(${ink},.30)`;g.fillRect(0,r*ph,n,2);}
     }else if(finish==="concrete"){
       // "Tile" in the UI: speckled vinyl tiles like the reference.
-      g.fillStyle="#d4cfcb";g.fillRect(0,0,n,n);
+      g.fillStyle=FLOOR_TONE.concrete;g.fillRect(0,0,n,n);
       for(let i=0;i<(LOW?15000:60000);i++){const v=rnd(),r=1+rnd()*1.6;g.fillStyle=v>.55?"rgba(255,255,255,.22)":"rgba(80,70,65,.16)";g.fillRect(rnd()*n,rnd()*n,r,r);}
       g.strokeStyle="rgba(110,100,95,.13)";g.lineWidth=2;for(let i=0;i<=4;i++){g.beginPath();g.moveTo(i*n/4,0);g.lineTo(i*n/4,n);g.stroke();g.beginPath();g.moveTo(0,i*n/4);g.lineTo(n,i*n/4);g.stroke();}
     }else{
       // Carpet: a soft, fine pile.
-      g.fillStyle="#c4bcae";g.fillRect(0,0,n,n);
+      g.fillStyle=FLOOR_TONE.carpet;g.fillRect(0,0,n,n);
       for(let i=0;i<(LOW?20000:80000);i++){const v=rnd();g.fillStyle=v>.5?"rgba(255,255,255,.07)":"rgba(70,60,50,.07)";g.fillRect(rnd()*n,rnd()*n,1.4,1.4);}
     }
     const tex=new T.CanvasTexture(c);tex.colorSpace=T.SRGBColorSpace;tex.wrapS=tex.wrapT=T.RepeatWrapping;tex.anisotropy=Math.min(LOW?4:8,renderer.capabilities.getMaxAnisotropy());
@@ -282,9 +281,10 @@ export function createStudioScene(container, options) {
     const slab=new T.Mesh(new T.ExtrudeGeometry(shape,{depth:PLINTH,bevelEnabled:false}),[floorMat,capMat]);
     slab.name="room-floor";slab.rotation.x=-Math.PI/2;slab.position.y=-PLINTH;slab.userData={ownGeometry:true};roomRoot.add(slab);
     const owned=new T.Group();owned.userData.ownMaterial=true;owned.material=[wallMat,capMat,trim,baseMat,floorMat];roomRoot.add(owned);
-    const doorMat=clay(new T.MeshStandardMaterial({color:mixHex(wallColor,"#d9a982",.35),roughness:.82}),.05),knobMat=new T.MeshStandardMaterial({color:"#c9c4bd",metalness:.35,roughness:.5});
+    // Door knobs are the kit's satin metal, so they reflect the room like every other metal.
+    const doorMat=clay(new T.MeshStandardMaterial({color:mixHex(wallColor,"#d9a982",.35),roughness:.82}),.05),knobMat=kit.mat("#c9c4bd",.35,false,.6);
     glassMat=new T.MeshBasicMaterial({color:light.sky,transparent:true,opacity:light.glass,side:T.DoubleSide,depthWrite:false});
-    owned.material.push(doorMat,knobMat,glassMat);
+    owned.material.push(doorMat,glassMat);envMap=envTexture(wallColor,FLOOR_TONE[settings.floor]||FLOOR_TONE.carpet);
     pts.forEach((a,i)=>{
       const b=pts[(i+1)%N],len=Math.hypot(b.x-a.x,b.y-a.y);if(len<.01)return;const dx=(b.x-a.x)/len,dz=(b.y-a.y)/len;
       const group=new T.Group();group.position.set(a.x,0,a.y);group.rotation.y=-Math.atan2(dz,dx);roomRoot.add(group);
@@ -351,7 +351,11 @@ export function createStudioScene(container, options) {
     const {room,settings}=data,l=room.lengthFt,w=room.widthFt,h=settings.ceilingFt,win=firstWindow,night=settings.lighting==="night";
     const L=light=LIGHT[settings.lighting]||LIGHT.day;
     renderer.toneMappingExposure=L.exposure;
-    hemi.color.set(L.hemiSky);hemi.groundColor.set(L.hemiGround);hemi.intensity=L.hemiI;
+    // The room colours its fill light: the floor finish tints the light bouncing up (oak warms it, tile cools it), the walls the light
+    // from around. Only the hue moves; each preset keeps its brightness.
+    const bounce=(color,tone,k)=>{tint.set(tone);const lum=c=>.2126*c.r+.7152*c.g+.0722*c.b;return color.lerp(tint.multiplyScalar(lum(color)/Math.max(1e-4,lum(tint))),k);};
+    bounce(hemi.color.set(L.hemiSky),settings.wallColor,.12);bounce(hemi.groundColor.set(L.hemiGround),FLOOR_TONE[settings.floor]||FLOOR_TONE.carpet,.5);hemi.intensity=L.hemiI;
+    kit.setEnv(envMap,L.env);
     const el=T.MathUtils.degToRad(L.elev),center=new T.Vector3(l/2,0,w/2);let dir;
     if(win){const a=Math.atan2(win.n.y,win.n.x)-T.MathUtils.degToRad(L.az-180);dir=new T.Vector3(Math.cos(el)*Math.cos(a),Math.sin(el),Math.cos(el)*Math.sin(a));}
     else{const az=T.MathUtils.degToRad(L.az);dir=new T.Vector3(Math.cos(el)*Math.cos(az),Math.sin(el),-Math.cos(el)*Math.sin(az));}
@@ -359,7 +363,7 @@ export function createStudioScene(container, options) {
     fill.color.set(L.fill);fill.intensity=L.fillI;lampRoot.visible=night;
     if(win)fill.position.set(win.x-win.n.x*1.2,Math.min(h-.6,5.6),win.y-win.n.y*1.2);else fill.position.set(l/2,Math.min(h-.6,5.6),w/2);
     if(glassMat){glassMat.color.set(L.sky);glassMat.opacity=L.glass;}
-    blobMat.uniforms.uOpacity.value=L.blob;bandMat.uniforms.uOpacity.value=night?.2:.26;
+    shadowUniforms.uOpacity.value=L.blob;bandMat.uniforms.uOpacity.value=night?.2:.26;
     poolMat.uniforms.uColor.value.set(L.pool);poolMat.uniforms.uOpacity.value=L.poolA;if(pool)pool.visible=L.poolA>0;
     kit.setNight(night);nightKey="";
     ceiling.set(settings.wallColor).multiplyScalar(night?.2:settings.lighting==="evening"?.8:.92);
@@ -383,19 +387,38 @@ export function createStudioScene(container, options) {
     if(!spots.length){const r=data.room;spots.push([r.lengthFt/2,data.settings.ceilingFt-.6,r.widthFt/2,5,Math.max(r.lengthFt,r.widthFt)*1.4,1.2,"#ffd9a8"]);}
     spots.slice(0,LAMPS).forEach(([x,y,z,intensity,distance,decay,color],k)=>{const p=lamps[k];p.position.set(x,y,z);p.intensity=intensity;p.distance=distance;p.decay=decay;p.color.set(color);});
   }
-  /** One piece: its model turned so its back faces the side the plan gives it, and a soft contact shadow under it. */
-  function buildPiece(f,next){
-    // Throws resting on a bed are modelled for that bed (seatRiders lines them up with it).
-    const back=f.back||0,bed=f.host&&next.items.find(i=>i.id===f.host);
-    const spec=bed?{...f,onBed:{w:bed.width_ft,d:bed.length_ft}}:back%2?{...f,width_ft:f.length_ft,length_ft:f.width_ft}:f;
-    const inner=kit.build(spec,next.palette,{theme:next.theme,dress:next.settings.dressVibe!==false});
-    inner.rotation.y=-back*Math.PI/2;mergeByMaterial(inner);
+  /**
+   * One piece: its model turned so its back faces the side the plan gives it, baked once (merged, corner-shaded) with its
+   * footprint shadow. `like`, an identical piece built in the same update, lends its bake (they share its geometry).
+   * `creases` is the bake's slow last step, left for bakeCreases (phones and low-power devices go without it).
+   */
+  function buildPiece(f,next,like){
+    let inner,creases=like?.creases??null;
+    if(like){inner=like.group.children[0].clone();inner.traverse(o=>{if(o.userData.shadow)o.raycast=()=>{};else o.userData.itemId=f.id;});}
+    else{
+      // Throws resting on a bed are modelled for that bed (seatRiders lines them up with it).
+      const back=f.back||0,bed=f.host&&next.items.find(i=>i.id===f.host);
+      const spec=bed?{...f,onBed:{w:bed.width_ft,d:bed.length_ft}}:back%2?{...f,width_ft:f.length_ft,length_ft:f.width_ft}:f;
+      inner=kit.build(spec,next.palette,{theme:next.theme,dress:next.settings.dressVibe!==false});
+      // The shadow is traced from the parts as built, then the bake. A piece on a wall or resting on a bed has no floor of its own to darken toward.
+      inner.rotation.y=-back*Math.PI/2;const shadow=!NO_BLOB.has(f.kind)&&!onWall(f)&&shadowMesh(inner,shadowUniforms);
+      creases=kit.bake(inner,{floor:!f.host&&!onWall(f)});if(LOW)creases=null;if(shadow)inner.add(shadow);
+    }
     const group=new T.Group();group.add(inner);group.userData.itemId=f.id;
-    let blob=null;
-    if(!NO_BLOB.has(f.kind)&&!onWall(f)){const w=f.width_ft,d=f.length_ft;blob=patch(w*.46,d*.46,Math.max(.15,Math.min(.6,.12+.18*Math.min(w,d))),blobMat);blob.position.y=.012;group.add(blob);}
-    itemRoot.add(group);return {group,blob,restZ:inner.userData.restZ??0};
+    itemRoot.add(group);return {group,restZ:inner.userData.restZ??0,creases};
   }
-  function removePiece(m){itemRoot.remove(m.group);m.group.traverse(o=>{if(o.userData.ownGeometry)o.geometry.dispose();});}
+  /**
+   * Crease shading, a piece at a time between frames once the room is still (not assembling, moving or being touched), so
+   * opening 3D or editing a piece never waits on it. Pieces sharing a bake share its job; it runs once.
+   */
+  function bakeCreases(){
+    creaseTimer=0;if(disposed)return;
+    const m=[...meshes.values()].find(m=>m.creases);if(!m)return;
+    if(assemblyStart||tween||pointers.size||keys.size){creaseTimer=setTimeout(bakeCreases,150);return;}
+    const job=m.creases;job();for(const other of meshes.values())if(other.creases===job)other.creases=null;
+    request();creaseTimer=setTimeout(bakeCreases,0);
+  }
+  function removePiece(m){itemRoot.remove(m.group);m.group.traverse(o=>{if(o.userData.ownGeometry)o.geometry.dispose();if(o.userData.shadow){o.material.uniforms.uMap.value.dispose();o.material.dispose();}});}
   /** Throw pillows and a throw blanket resting on a bed follow it: turned with its frame, at its head or across its foot. */
   const seat=new T.Vector3();
   function seatRiders(){
@@ -411,15 +434,16 @@ export function createStudioScene(container, options) {
     const {lighting,dressVibe,...shell}=next.settings;
     const key=JSON.stringify([next.room.lengthFt,next.room.widthFt,next.outline,shell]);
     if(key!==roomKey){roomKey=key;buildRoom();lightKey="";}
-    const ids=new Set(),dress=dressVibe!==false;
+    const ids=new Set(),dress=dressVibe!==false,built=new Map();
     for(const f of next.items){
       const bed=f.host&&next.items.find(i=>i.id===f.host);
       ids.add(f.id);const key=JSON.stringify([f.kind,f.width_ft,f.length_ft,f.height,f.material_color,f.product,f.bare,f.bed_mode,f.built_in,f.back,NO_BLOB.has(f.kind)||onWall(f),next.palette,dress,dress?next.theme:null,bed&&[bed.width_ft,bed.length_ft]]);let m=meshes.get(f.id);
-      if(!m||m.key!==key){if(m)removePiece(m);m={...buildPiece(f,next),key,item:f};meshes.set(f.id,m);}
+      if(!m||m.key!==key){if(m)removePiece(m);m={...buildPiece(f,next,built.get(key)),key,item:f};built.set(key,m);meshes.set(f.id,m);}
       m.item=f;
       if(drag?.id!==f.id){m.group.position.set(f.x_ft+f.footW/2,f.elevation,f.y_ft+f.footD/2);m.group.rotation.y=-f.rotation_deg*Math.PI/180;}
     }
     for(const [id,m]of meshes)if(!ids.has(id)){removePiece(m);meshes.delete(id);}
+    if(!creaseTimer)creaseTimer=setTimeout(bakeCreases,0);
     seatRiders();
     if(lighting!==lightKey){lightKey=lighting;applyLight();}else updateNightLights();
     if(first){target.set(next.room.lengthFt/2,1,next.room.widthFt/2);preset("room",true,true);if(!options.reduced)assemblyStart=performance.now();}
@@ -634,10 +658,10 @@ export function createStudioScene(container, options) {
       if(brandMark.complete&&brandMark.naturalWidth)ctx.drawImage(brandMark,out.width-tw-fs*3.9,out.height-fs*2.8,fs*1.8,fs*1.8);
       ctx.fillStyle="#2b4eff";ctx.fillText(text,out.width-tw-fs*1.3,out.height-fs*1.5);guides.visible=true;request();return out.toDataURL("image/png");
     },
-    destroy(){disposed=true;cancelAnimationFrame(raf);clearTimeout(sharpen);resize.disconnect();document.removeEventListener("visibilitychange",visible);
+    destroy(){disposed=true;cancelAnimationFrame(raf);clearTimeout(sharpen);clearTimeout(creaseTimer);resize.disconnect();document.removeEventListener("visibilitychange",visible);
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
       clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();ring.geometry.dispose();ring.material.dispose();marker.material.dispose();
       for(const m of meshes.values())removePiece(m);clearRoom();floorTextures.forEach(t=>t.dispose());
-      for(const material of [blobMat,bandMat,groundMat,poolMat])material.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
+      for(const material of [bandMat,groundMat,poolMat])material.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
   };
 }
