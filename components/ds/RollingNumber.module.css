@@ -1,0 +1,9 @@
+/* components/ds/RollingNumber.tsx: 1em digit columns that slide into place. */
+.roll { position: relative; display: inline-flex; align-items: center; justify-content: center; line-height: 1; font-variant-numeric: tabular-nums; }
+.dc { display: inline-block; height: 1em; overflow: hidden; }
+.dc > span { display: flex; flex-direction: column; transition: transform 0.7s var(--ds-ease); }
+.dc b { height: 1em; font-weight: inherit; }
+@media (prefers-reduced-motion: reduce) {
+  .dc > span { transition: none; }
+}
+:global(.dm-app[data-motion="paused"]) .dc > span { transition: none; }

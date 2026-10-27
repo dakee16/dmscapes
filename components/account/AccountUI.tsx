@@ -6,6 +6,7 @@ import { useAuth, type PlanTier, type Profile } from "@/lib/auth-context";
 import { startCheckout } from "@/lib/checkout";
 import UpgradeButton from "@/components/site/UpgradeButton";
 import { ArrowRight } from "@/components/ds/Icons";
+import RollingNumber from "@/components/ds/RollingNumber";
 import {
   headerCreditState,
   planLabel,
@@ -122,7 +123,8 @@ function Coins({ profile }: { profile: Profile }) {
         )}
       </div>
       <span className={s.creditsLabel} aria-hidden="true">
-        {label}
+        <RollingNumber value={String(left)} />
+        {label.slice(String(left).length)}
       </span>
     </div>
   );

@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { headerCreditState, planLabel, planOf, RECHARGE_PRICE_USD, RECHARGE_CREDITS } from "@/lib/plan";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
+import RollingNumber from "@/components/ds/RollingNumber";
 import css from "./HeaderMenus.module.css";
 
 // Compact design-credits pill that lives in the header, just left of the profile
@@ -60,7 +61,7 @@ export default function HeaderCredits() {
           "Buy credits"
         ) : (
           <>
-            <span className={css.count}>{c.designsLeft}</span>
+            <RollingNumber value={String(c.designsLeft)} className={css.count} />
             <span className={css.creditsLabel}>{c.designsLeft === 1 ? "design" : "designs"}</span>
           </>
         )}

@@ -425,9 +425,6 @@
 .rgC { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; }
 .rgK { font: 700 10px/1 var(--ds-mono); letter-spacing: 0.14em; color: var(--ds-caption); }
 .num2 { display: inline-flex; font-size: 54px; font-weight: 900; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; }
-.dc { display: inline-block; height: 1em; overflow: hidden; }
-.dc > span { display: flex; flex-direction: column; transition: transform 0.7s var(--ds-ease); }
-.dc b { height: 1em; font-weight: 900; }
 .rgOf { font-size: 14px; color: var(--ds-muted); }
 .strip { grid-area: strip; display: flex; gap: 3px; height: 18px; }
 .strip i { display: block; min-width: 3px; border-radius: 4px; transform-origin: 0 100%; transform: scaleY(calc(0.15 + 0.85 * var(--p, 1))); transition: flex-grow 0.6s var(--ds-ease); }
