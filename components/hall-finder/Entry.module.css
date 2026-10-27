@@ -86,13 +86,25 @@
 
 /* ---------- Homepage section ---------- */
 .home {
+  position: relative;
+  isolation: isolate;
   padding: 96px var(--ds-gutter, clamp(20px, 5vw, 72px));
   background-color: var(--ds-plan);
+  color: var(--ds-ink);
+}
+/* The plan grid fades out top and bottom, so on the homepage the section blends into its neighbours. */
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background-image:
     linear-gradient(rgba(36, 73, 255, 0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(36, 73, 255, 0.07) 1px, transparent 1px);
   background-size: 24px 24px;
-  color: var(--ds-ink);
+  -webkit-mask-image: linear-gradient(transparent, #000 160px, #000 calc(100% - 160px), transparent);
+  mask-image: linear-gradient(transparent, #000 160px, #000 calc(100% - 160px), transparent);
+  pointer-events: none;
 }
 .homeInner {
   max-width: 1296px;

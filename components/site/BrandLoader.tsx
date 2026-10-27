@@ -1,29 +1,73 @@
 import s from "./BrandLoader.module.css";
 
+// The mark's three pieces, each in its own box (design-handoff/v2/logo, Loader.dc.html).
+const ARCH = "M885 35.8A668.9 668.9 0 0 0 0 634.5L0 667L216.6 579A451.9 451.9 0 0 1 885 204.7Z";
+const TOP = "M216 0L0 87L0 407.8A696.6 696.6 0 0 1 216 442.5Z";
+const DOOR = "M0 -0.8L0 490L216 490L216 59A423.9 423.9 0 0 0 0 -0.8Z";
+
+const piece = (cls: string, box: string, d: string) => (
+  <span className={cls}>
+    <svg viewBox={box} preserveAspectRatio="none">
+      <path d={d} />
+    </svg>
+  </span>
+);
+
+/** The mark alone, its door swinging (MOTION.md · Loader). */
+function Mark() {
+  return (
+    <span className={s.mark} aria-hidden="true">
+      {piece(`${s.pc} ${s.ghost}`, "0 0 886 668", ARCH)}
+      {piece(`${s.pc} ${s.arch}`, "0 0 886 668", ARCH)}
+      {piece(`${s.pc} ${s.top}`, "0 0 217 444", TOP)}
+      {piece(`${s.pc} ${s.door}`, "0 0 217 491", DOOR)}
+    </span>
+  );
+}
+
 /**
- * The loading mark shared by route and studio loading states: a tape measure
- * pulls out across a sheet of plan paper while the room draws itself (walls,
- * then the door, then the furniture drops in), over the wordmark with its
- * hopping dot. Static in reduced motion and when motion is paused. In the
- * Halloween season the rug turns orange and black and a pumpkin joins the desk.
+ * The sitewide loader, "the door swings": the mark is a door seen from above,
+ * the way a floor plan draws it. The curve folds in toward its hinge at the
+ * upright and swings back out on a 2.6 s loop, over a faint ghost of its path,
+ * with a "Loading" caption whose dot brightens once per loop. Still in reduced
+ * motion and with Motion off.
+ *
+ * Sizes: "route" (88 px, full-screen loading), "panel" (48 px) and "inline"
+ * (18 px, inside a button beside its own text; decorative there). `label` is
+ * what screen readers hear; the caption always reads "Loading".
  */
-export default function BrandLoader({label="Loading…",className=""}:{label?:string;className?:string}) {
-  return <div className={s.loader+" "+className} role="status" aria-live="polite" aria-label={label || "Loading dormscape"}>
-    <div className={s.sheet} aria-hidden="true">
-      <span className={s.tape}><i/></span>
-      <svg viewBox="0 0 240 150" fill="none">
-        <path className={s.wall} pathLength="1" d="M112 132H30V24h180v108h-62" stroke="var(--ds-ink, #16161d)" strokeWidth="5" strokeLinecap="square"/>
-        <path d="M86 24h44" stroke="#fbfaf6" strokeWidth="5"/>
-        <path className={s.window} d="M86 21.5h44M86 26.5h44" stroke="var(--ds-ink, #16161d)" strokeWidth="1.2"/>
-        <path className={s.door} pathLength="1" d="M112 132V96a36 36 0 0 1 36 36" stroke="var(--ds-blue, #2449ff)" strokeWidth="1.6" strokeDasharray="0.03 0.025"/>
-        <g className={s.bed}><rect x="40" y="34" width="44" height="74" rx="3" fill="#dce1f5" stroke="var(--ds-ink, #16161d)" strokeWidth="1.6"/><path d="M40 52h44M47 39h30v9H47z" stroke="var(--ds-ink, #16161d)" strokeWidth="1.3"/></g>
-        <g className={s.desk}><rect x="146" y="34" width="54" height="22" rx="2" fill="var(--ds-yellow, #ffd83d)" stroke="var(--ds-ink, #16161d)" strokeWidth="1.6"/><rect x="163" y="62" width="20" height="16" rx="4" fill="#fff" stroke="var(--ds-ink, #16161d)" strokeWidth="1.6"/></g>
-        <g className={s.rug}><rect className={s.rugFill} x="110" y="70" width="58" height="34" rx="2" fill="rgba(255,79,168,0.2)"/><path className={s.rugStripes} d="M117 70v34M125 70v34M133 70v34M141 70v34M149 70v34M157 70v34M165 70v34" stroke="rgba(255,79,168,0.55)" strokeWidth="2.2"/></g>
-        {/* Halloween: a pumpkin drops onto the desk with the furniture */}
-        <g data-season-show="" transform="translate(183 22)"><g className={s.pumpkin}><ellipse cx="5" cy="10" rx="5.5" ry="6.5" fill="var(--ds-pumpkin, #ff7a1a)" stroke="var(--ds-ink, #16161d)" strokeWidth="1.3"/><ellipse cx="14" cy="10" rx="5.5" ry="6.5" fill="var(--ds-pumpkin, #ff7a1a)" stroke="var(--ds-ink, #16161d)" strokeWidth="1.3"/><ellipse cx="9.5" cy="10" rx="4" ry="7" fill="#ff8f3a" stroke="var(--ds-ink, #16161d)" strokeWidth="1.3"/><path d="M9.5 3.5c0-1.8.5-2.8 1.8-3.4" stroke="var(--ds-ink, #16161d)" strokeWidth="1.8" strokeLinecap="round"/></g></g>
-      </svg>
+export default function BrandLoader({
+  label = "Loading…",
+  className = "",
+  size = "route",
+  tone = "light",
+}: {
+  label?: string;
+  className?: string;
+  size?: "route" | "panel" | "inline";
+  tone?: "light" | "dark";
+}) {
+  if (size === "inline") {
+    return (
+      <span className={`${s.inline} ${className}`} data-anim="">
+        <Mark />
+      </span>
+    );
+  }
+  return (
+    <div
+      className={`${s.loader} ${className}`}
+      data-size={size}
+      data-tone={tone}
+      data-anim=""
+      role="status"
+      aria-label={label || "Loading"}
+    >
+      <Mark />
+      <span className={s.caption} aria-hidden="true">
+        <i />
+        Loading
+      </span>
     </div>
-    <span className={s.wordmark} aria-hidden="true">dormscape<i/></span>
-    {label&&<span className={s.caption} aria-hidden="true">{label}</span>}
-  </div>;
+  );
 }

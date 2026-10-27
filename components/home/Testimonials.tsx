@@ -1,10 +1,10 @@
 "use client";
 
 import { useRef } from "react";
-import Headline from "@/components/ds/Headline";
 import { ArrowRight } from "@/components/ds/Icons";
 import { useExperienceMotion } from "@/components/experience/MotionProvider";
 import { TESTIMONIALS } from "@/lib/home-data";
+import H2 from "./H2";
 import css from "./Home.module.css";
 
 /** What students say: a swipeable row of quotes. Hidden until TESTIMONIALS has real ones. */
@@ -21,21 +21,14 @@ export default function Testimonials() {
   };
 
   return (
-    <section className={`${css.section} ${css.quotes}`} aria-labelledby="quotes-title">
-      <div className={css.inner}>
+    <section className={css.quotes} data-bg="#f5ecde" aria-labelledby="quotes-title">
+      <div className="ds-wrap">
         <div className={css.quotesHead}>
           <div>
-            <p className={`ds-eyebrow ${css.eyebrowGap}`} data-reveal="">
+            <p className="ds-eyebrow" data-rv="">
               What students say
             </p>
-            <Headline
-              id="quotes-title"
-              className={css.h2a}
-              lines={[
-                { text: "Move-in day,", className: css.s },
-                { text: "sorted.", serif: true, className: css.f },
-              ]}
-            />
+            <H2 id="quotes-title" s="Move-in day," f="sorted." />
           </div>
           <div className={css.quotesNav}>
             <button type="button" className={css.quotesBtn} onClick={() => step(-1)} aria-label="Previous quotes">

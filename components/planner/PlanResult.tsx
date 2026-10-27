@@ -54,11 +54,11 @@ import type { Product, ProductCategory } from "@/lib/types";
 // react-konva can't render on the server, so load the canvas client-side only.
 const RoomCanvas = dynamic(() => import("@/components/canvas/RoomCanvas"), {
   ssr: false,
-  loading: () => <div className="grid min-h-[360px] place-items-center"><BrandLoader label="Opening your 2D plan…"/></div>,
+  loading: () => <div className="grid min-h-[360px] place-items-center"><BrandLoader size="panel" label="Opening your 2D plan…"/></div>,
 }) as unknown as typeof RoomCanvasType;
 
 function Skeleton({ shell }: { shell: boolean }) {
-  const loader = <BrandLoader label="Bringing your room together…"/>;
+  const loader = <BrandLoader size={shell ? "route" : "panel"} label="Bringing your room together…"/>;
   return shell ? <main id="page-content" tabIndex={-1} className={r.skeleton}>{loader}</main> : <div className={r.skeleton}>{loader}</div>;
 }
 

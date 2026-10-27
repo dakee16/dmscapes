@@ -2,7 +2,7 @@
 
 /* ---------- Reading bar: a tape that fills as you read ---------- */
 /* it replaces the site's scroll-progress line and the nav plate's strip on posts */
-:global(.dm-app):has(.readingBar) :is(:global(.dm-progress), :global(.ds-nav-progress)) { display: none; }
+:global(.dm-app):has(.readingBar) :global(.dm-progress) { display: none; }
 .readingBar {
   --p: 0;
   position: sticky;

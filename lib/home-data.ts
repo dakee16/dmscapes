@@ -1,4 +1,4 @@
-import { SCHOOLS } from "@/lib/schools";
+import { SCHOOLS, getDorm } from "@/lib/schools";
 import {
   FLEX_CREDIT_PRICE_USD,
   PLUS_INITIAL_CREDITS,
@@ -10,7 +10,7 @@ import {
   RECHARGE_CREDITS,
   RECHARGE_PRICE_USD,
 } from "@/lib/plan";
-import { STYLES } from "@/lib/styles";
+import { STYLES, budgetRange } from "@/lib/styles";
 import type { StyleId } from "@/lib/types";
 
 /** Counts straight from the shipped school data, so they never drift. */
@@ -90,6 +90,56 @@ export const FEATURED_ROOMS: FeaturedRoom[] = PICKS.flatMap(([schoolId, dormId, 
     href: `/colleges/${school.id}/${dorm.id}`,
   }];
 });
+
+/**
+ * The room the hero call and the fit check show: Penn State's Geary Hall
+ * double, sized from the school data. Null if it ever drops out of the data.
+ */
+export const HERO_ROOM = (() => {
+  const found = getDorm("penn-state", "geary-hall");
+  const room = found?.dorm.rooms.find((r) => r.type === "double" && r.length_ft && r.width_ft);
+  if (!found || !room?.length_ft || !room.width_ft) return null;
+  return {
+    school: "Penn State",
+    hall: found.dorm.name,
+    href: `/colleges/${found.school.id}/${found.dorm.id}`,
+    lengthFt: Math.max(room.length_ft, room.width_ft),
+    widthFt: Math.min(room.length_ft, room.width_ft),
+  };
+})();
+
+/** 14.92 → "14 feet 11 inches", for screen readers */
+export function spokenFeet(ft: number) {
+  const [f, i] = feetInches(ft).replace("″", "").split("′").map(Number);
+  return i ? `${f} feet ${i} inches` : `${f} feet`;
+}
+
+/** The room budget range (lib/styles), shared by the planner's budget step. */
+export const ROOM_BUDGET = budgetRange(null);
+/** The budget the homepage example starts on. */
+export const SHOWCASE_BUDGET = 650;
+
+/**
+ * An illustrative list for the homepage example plan, in the order a plan
+ * fills a room (sleep first, then storage and light, then the nice-to-haves).
+ * The example takes items in order until the next one won't fit. At $650 it
+ * lands on the design's example: 14 pieces, $612, $38 to spare.
+ */
+export const EXAMPLE_ITEMS = [
+  59, 32, 48, 24, 29, 36, 22, 18, 34, 79, 45, 21, 149, 16, // → $612 at 14 pieces
+  42, 38, 89, 19, 64, 27, 55, 35, 99, 25, 72, 31, 44, 23, 110, 48, 39,
+];
+
+export function examplePlan(budget: number) {
+  let total = 0;
+  let pieces = 0;
+  for (const price of EXAMPLE_ITEMS) {
+    if (total + price > budget) break;
+    total += price;
+    pieces += 1;
+  }
+  return { pieces, total, spare: budget - total };
+}
 
 /** Live copy for each vibe, plus the card colors from the design. */
 const VIBE_COPY: Record<string, { line: string; rule: string; dots: [string, string, string] }> = {

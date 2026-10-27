@@ -1,29 +1,13 @@
 import { Fragment } from "react";
 import Link from "next/link";
-import Headline from "@/components/ds/Headline";
 import PlanCta from "@/components/site/PlanCta";
 import { ArrowRight, Check } from "@/components/ds/Icons";
 import { PRICING } from "@/lib/home-data";
 import { PlusPerk } from "@/components/hall-finder/Entry";
+import H2 from "./H2";
 import css from "./Home.module.css";
 
 type Tier = (typeof PRICING)[keyof typeof PRICING];
-
-function Price({ tier }: { tier: Tier }) {
-  return (
-    <div className={css.priceRow}>
-      <span className={css.price}>{tier.price}</span>
-      {"was" in tier && (
-        <span className={css.was}>
-          <span className="ds-sr">was </span>
-          {tier.was}
-          <span className={css.strike} data-draw="" aria-hidden="true" />
-        </span>
-      )}
-      <span className={css.once}>{tier.note}</span>
-    </div>
-  );
-}
 
 /** 09 · Pricing. Every price and credit count comes from lib/plan.ts. */
 export default function PricingSection() {
@@ -33,33 +17,25 @@ export default function PricingSection() {
     { tier: PRICING.pro, cls: css.planPro, check: "var(--ds-yellow)" },
   ];
   return (
-    <section id="pricing" className={`${css.section} ${css.pricing}`} aria-labelledby="pricing-title">
-      <div className={css.inner}>
-        <p className={`ds-eyebrow ${css.eyebrowGap}`} data-reveal="">
+    <section id="pricing" className={css.pricing} data-bg="#dce1f5" aria-labelledby="pricing-title">
+      <div className="ds-wrap">
+        <p className="ds-eyebrow" data-rv="">
           Pricing · one-time, no subscription
         </p>
-        <Headline
-          id="pricing-title"
-          className={css.h2g}
-          lines={[
-            { text: "Start free.", className: css.s },
-            { text: "Upgrade once.", serif: true, className: css.f },
-          ]}
-        />
-        <p className="ds-lede" style={{ marginTop: 16 }} data-reveal="">
+        <H2 id="pricing-title" s="Start free." f="Upgrade once." />
+        <p className={`ds-lede ${css.pricingLede}`} data-rv="">
           Saving your designs is always free.
         </p>
-
-        <div className={css.priceGrid} data-stagger="">
+        <div className={css.priceGrid}>
           {cards.map(({ tier, cls, check }) => (
-            <article key={tier.name} className={`${css.plan3} ${cls}`} data-reveal="" aria-labelledby={`price-${tier.name}`}>
-              {tier.name === "Pro" && <span className={css.sheen} aria-hidden="true" />}
+            <article key={tier.name} className={`${css.plan} ${cls}`} data-rv="row" aria-labelledby={`price-${tier.name}`}>
+              {tier.name === "Pro" && <span className={css.sheen} aria-hidden="true" data-anim="" />}
               <div className={css.planTop}>
                 <h3 id={`price-${tier.name}`}>{tier.name}</h3>
-                <span className={css.planTag}>{tier.tag}</span>
+                <span className={css.ptag}>{tier.tag}</span>
               </div>
               <Price tier={tier} />
-              <p className={css.planLine}>{tier.line}</p>
+              <p className={css.pline}>{tier.line}</p>
               <ul className={css.perks}>
                 {tier.perks.map((perk, i) => (
                   <Fragment key={perk}>
@@ -74,11 +50,7 @@ export default function PricingSection() {
               </ul>
               <div className={css.planCta}>
                 {tier.name === "Free" ? (
-                  <PlanCta
-                    className="ds-btn ds-btn--ink"
-                    freeLabel="Plan my room free"
-                    icon={<ArrowRight />}
-                  />
+                  <PlanCta className="ds-btn ds-btn--ink" freeLabel="Plan my room free" icon={<ArrowRight />} />
                 ) : tier.name === "Plus" ? (
                   <Link href="/pricing" className="ds-btn ds-btn--pink">
                     Get Plus
@@ -94,7 +66,7 @@ export default function PricingSection() {
             </article>
           ))}
         </div>
-        <p className={css.faqLine} data-reveal="">
+        <p className={css.faq} data-rv="">
           Questions about credits or what&apos;s included?{" "}
           <Link href="/faq" className="ds-link">
             Read the FAQ
@@ -103,5 +75,20 @@ export default function PricingSection() {
         </p>
       </div>
     </section>
+  );
+}
+
+function Price({ tier }: { tier: Tier }) {
+  return (
+    <div className={css.priceRow}>
+      <span className={css.price}>{tier.price}</span>
+      {"was" in tier && (
+        <span className={css.was}>
+          <span className="ds-sr">was </span>
+          {tier.was}
+        </span>
+      )}
+      <span className={css.once}>{tier.note}</span>
+    </div>
   );
 }

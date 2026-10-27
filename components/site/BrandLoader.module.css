@@ -1,124 +1,81 @@
-/* components/site/BrandLoader: the shared loading mark */
+/* components/site/BrandLoader: "the door swings" (design-handoff/v2 Loader.dc.html, MOTION.md) */
 .loader {
+  --s: 88px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 360px;
+  gap: 22px;
   margin: auto;
-  padding: 24px;
-  box-sizing: border-box;
-  text-align: center;
   color: var(--ds-ink, #16161d);
-  font-family: var(--ds-sans, sans-serif);
 }
+.loader[data-size="panel"] { --s: 48px; gap: 16px; }
+.loader[data-tone="dark"] { color: var(--ds-paper, #f4f3ee); }
 
-/* A sheet of plan paper with a measuring tape pulling out along its top */
-.sheet {
-  position: relative;
-  width: 224px;
-  max-width: 100%;
-  padding: 26px 12px 10px;
-  box-sizing: border-box;
-  border-radius: 16px;
-  background-color: var(--ds-plan, #fbfaf6);
-  background-image:
-    linear-gradient(rgba(36, 73, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(36, 73, 255, 0.08) 1px, transparent 1px);
-  background-size: 12px 12px;
-  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 14px 30px -18px rgba(10, 16, 44, 0.35);
-}
-.sheet svg { display: block; width: 100%; height: auto; overflow: visible; }
-.tape {
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  top: 8px;
-  height: 11px;
-}
-.tape i {
-  display: block;
-  height: 100%;
-  border-radius: 1px 3px 3px 1px;
-  background-color: var(--ds-tape, #f3c21a);
-  background-image:
-    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.85) 0 1.5px, transparent 1.5px 40px),
-    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.6) 0 1px, transparent 1px 8px);
-  background-size: 100% 8px, 100% 4px;
-  background-repeat: no-repeat;
-  box-shadow: 0 2px 0 var(--ds-tape-shadow, #c99a06), inset -4px 0 0 var(--ds-red, #d7262e);
-  transform-origin: left center;
-  animation: pull 3.6s var(--ds-ease, ease) infinite;
-}
-
-.wall, .door { stroke-dashoffset: 0; }
-.wall { stroke-dasharray: 1; animation: trace 3.6s cubic-bezier(0.22, 0.7, 0.2, 1) infinite; }
-.door { animation: fade 3.6s ease infinite; animation-delay: 0.5s; }
-.bed, .desk, .rug, .pumpkin {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: place 3.6s var(--ds-ease-back, ease) infinite both;
-}
-.desk { animation-delay: 0.18s; }
-.pumpkin { animation-delay: 0.27s; }
-.rug { animation-delay: 0.36s; }
-:global(:root[data-season="halloween"]) .rugFill { fill: var(--ds-pumpkin); opacity: 0.85; }
-:global(:root[data-season="halloween"]) .rugStripes { stroke: #1c1622; stroke-width: 2.6; }
-
-.wordmark {
+.inline {
+  --s: 18px;
   display: inline-flex;
-  align-items: baseline;
-  margin-top: 20px;
-  font-size: 26px;
-  font-weight: 850;
-  font-stretch: 90%;
-  letter-spacing: -0.03em;
-  line-height: 1;
+  flex: none;
+  vertical-align: middle;
 }
-.wordmark i {
-  display: inline-block;
-  width: 0.24em;
-  height: 0.24em;
-  margin-left: 0.07em;
+
+.mark {
+  position: relative;
+  display: block;
+  flex: none;
+  width: var(--s);
+  aspect-ratio: 888 / 1106;
+}
+.pc { position: absolute; display: block; }
+.pc svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.pc path { fill: currentColor; }
+/* Placed in the mark's own 888 × 1106 box */
+.arch, .ghost { left: 0; top: 39.421%; width: 99.775%; height: 60.398%; }
+.ghost { opacity: 0.13; }
+.top { left: 75.338%; top: 0; width: 24.437%; height: 40.145%; }
+.door { left: 75.338%; top: 55.515%; width: 24.437%; height: 44.394%; }
+
+/* The right end of the curve stays on its hinge at the upright; the left end
+   folds in toward it and swings back out, like a door closing and opening in
+   plan view. The fold is a conic mask whose sweep (--sw) runs 150° → 66° → 150°. */
+@property --sw {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 150deg;
+}
+.arch {
+  --sw: 150deg;
+  -webkit-mask-image: conic-gradient(from calc(40deg - var(--sw)) at 70% 99.4%, #000 0deg var(--sw), transparent var(--sw));
+  mask-image: conic-gradient(from calc(40deg - var(--sw)) at 70% 99.4%, #000 0deg var(--sw), transparent var(--sw));
+  animation: fold 2.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+@keyframes fold {
+  0%, 14% { --sw: 150deg; }
+  46%, 58% { --sw: 66deg; }
+  88%, 100% { --sw: 150deg; }
+}
+
+.caption {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 11px/1 var(--ds-mono, ui-monospace, monospace);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ds-caption, #55555f);
+}
+.loader[data-tone="dark"] .caption { color: #a9a6b6; }
+.caption i {
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--ds-blue, #2449ff);
-  animation: hop 1.2s var(--ds-ease-back, ease) infinite;
+  animation: dot 2.6s ease-in-out infinite;
 }
-.caption {
-  max-width: 280px;
-  margin-top: 10px;
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--ds-muted, #3a3a46);
+.loader[data-tone="dark"] .caption i { background: var(--ds-blue-on-dark, #5b7cff); }
+@keyframes dot {
+  0%, 30%, 100% { opacity: 0.25; }
+  50% { opacity: 1; }
 }
-
-@keyframes pull {
-  0% { transform: scaleX(0.04); }
-  45%, 85% { transform: scaleX(1); }
-  100% { transform: scaleX(0.04); }
-}
-@keyframes trace {
-  0%, 6% { stroke-dashoffset: 1; }
-  45%, 88% { stroke-dashoffset: 0; opacity: 1; }
-  100% { stroke-dashoffset: 0; opacity: 0.2; }
-}
-@keyframes fade {
-  0%, 30% { opacity: 0; }
-  45%, 85% { opacity: 1; }
-  100% { opacity: 0; }
-}
-@keyframes place {
-  0%, 30% { opacity: 0; transform: translateY(-10px) scale(0.92); }
-  48%, 86% { opacity: 1; transform: none; }
-  100% { opacity: 0; transform: none; }
-}
-@keyframes hop {
-  0%, 55%, 100% { transform: none; }
-  25% { transform: translateY(-0.22em); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .loader * { animation: none !important; }
-}
-:global([data-motion="paused"]) .loader * { animation: none !important; }
+/* Reduced motion and Motion off: [data-anim] (app/ds.css) stops both loops,
+   leaving the full mark and a lit dot. */

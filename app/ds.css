@@ -44,10 +44,9 @@
 
   --ds-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ds-ease-back: cubic-bezier(0.34, 1.56, 0.64, 1);
-  /* The riso headline shadow: a tint (pink, pumpkin in the Halloween season) plus blue. */
-  --ds-riso-tint: rgba(255, 79, 168, 0.85);
-  --ds-riso: 3px 2px 0 var(--ds-riso-tint), -3px -2px 0 rgba(36, 73, 255, 0.4);
-  --ds-riso-sm: 2px 1.5px 0 var(--ds-riso-tint), -2px -1.5px 0 rgba(36, 73, 255, 0.4);
+  /* The riso headline shadow: one blue layer. */
+  --ds-riso: -3px -2px 0 rgba(36, 73, 255, 0.4);
+  --ds-riso-sm: -2px -1.5px 0 rgba(36, 73, 255, 0.4);
 
   /* Search bars show focus without a ring: they brighten and sit on a deeper shadow. */
   --ds-search-bg: rgba(255, 255, 255, 0.86);
@@ -59,12 +58,12 @@
 
   --ds-gutter: clamp(20px, 5vw, 72px);
   --ds-max: 1296px;
-  --ds-nav-h: 88px;
+  --ds-nav-h: 78px;
 }
 
 @media (max-width: 767px) {
   :root {
-    --ds-nav-h: 72px;
+    --ds-nav-h: 68px;
     --ds-riso: var(--ds-riso-sm);
   }
 }
@@ -73,7 +72,6 @@
    lib/season.ts sets <html data-season="halloween"> before paint. Season
    pieces carry data-season-show (hidden otherwise); anything they replace
    carries data-season-hide. Without the attribute nothing here applies. */
-:root[data-season="halloween"] { --ds-riso-tint: rgba(255, 122, 26, 0.85); }
 :root:not([data-season="halloween"]) [data-season-show] { display: none !important; }
 :root[data-season="halloween"] [data-season-hide] { display: none !important; }
 
@@ -293,7 +291,7 @@
 }
 [data-headline="armed"] .ds-riso,
 [data-headline="armed"] .ds-line > .ds-riso {
-  text-shadow: 0 0 0 rgba(255, 79, 168, 0), 0 0 0 rgba(36, 73, 255, 0);
+  text-shadow: 0 0 0 rgba(36, 73, 255, 0);
 }
 [data-headline="in"] .ds-line > span {
   transform: none;
@@ -339,7 +337,7 @@
    the very first frame, nothing flashes when scripts hydrate, and the hero
    image (the LCP element) is never hidden. RevealObserver leaves these alone. */
 @keyframes ds-line-in { from { transform: translate3d(0, 108%, 0); } to { transform: none; } }
-@keyframes ds-riso-in { from { text-shadow: 0 0 0 rgba(255, 79, 168, 0), 0 0 0 rgba(36, 73, 255, 0); } to { text-shadow: var(--ds-riso); } }
+@keyframes ds-riso-in { from { text-shadow: 0 0 0 rgba(36, 73, 255, 0); } to { text-shadow: var(--ds-riso); } }
 @keyframes ds-rise-in { from { opacity: 0; transform: translate3d(0, 24px, 0); } to { opacity: 1; transform: none; } }
 @keyframes ds-settle-in { from { transform: scale(1.02); } to { transform: none; } }
 @keyframes ds-grow-in { from { transform: scale(0); } to { transform: none; } }
@@ -378,6 +376,16 @@
   transition: opacity 0.2s linear !important;
 }
 .dm-app[data-motion="paused"] [data-headline] .ds-riso { text-shadow: var(--ds-riso) !important; }
+
+/* Motion off (the footer toggle; MotionProvider adds .ds-still) and reduced motion
+   (MOTION.md): every loop and keyframe inside [data-anim] stops. Each component
+   styles its own finished state under the same two conditions; scroll scenes
+   check useStill() before they start. */
+@media (prefers-reduced-motion: reduce) {
+  [data-anim], [data-anim] *, [data-anim]::before, [data-anim]::after, [data-anim] *::before, [data-anim] *::after { animation: none !important; }
+}
+.ds-still [data-anim], .ds-still [data-anim] *, .ds-still [data-anim]::before, .ds-still [data-anim]::after,
+.ds-still [data-anim] *::before, .ds-still [data-anim] *::after { animation: none !important; }
 
 /* Visually hidden, still read aloud */
 .ds-sr {

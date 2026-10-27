@@ -1,4 +1,4 @@
-export const BRAND_MARK_URL = "/brand/dormscape-mark.png?v=folded-room";
+export const BRAND_MARK_URL = "/brand/dormscape-mark.png?v=door-mark";
 
 let image: HTMLImageElement | null = null;
 /** Preload once for synchronous canvas exports. Never draw an old fallback mark. */

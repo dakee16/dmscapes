@@ -30,7 +30,7 @@
   font-weight: 850;
   font-stretch: 88%;
   letter-spacing: -0.04em;
-  text-shadow: 3px 2px 0 var(--ds-riso-tint), -3px -2px 0 rgba(36, 73, 255, 0.4);
+  text-shadow: -3px -2px 0 rgba(36, 73, 255, 0.4);
 }
 .titleSerif {
   margin-left: 6px;
@@ -576,7 +576,7 @@
     display: block;
     font-size: 52px;
     line-height: 0.95;
-    text-shadow: 2px 2px 0 var(--ds-riso-tint), -2px -1px 0 rgba(36, 73, 255, 0.4);
+    text-shadow: -2px -1px 0 rgba(36, 73, 255, 0.4);
   }
   .titleSerif {
     display: block;

@@ -18,7 +18,7 @@ import { ArrowRight, Check } from "@/components/ds/Icons";
 import BuilderIllustration from "./BuilderIllustration";
 import s from "./Builder.module.css";
 
-const RoomBuilder=dynamic(()=>import("./RoomBuilder"),{ssr:false,loading:()=> <div className={s.loading}><div className={s.loaderCard}><BrandLoader label="Preparing your construction grid…"/></div></div>});
+const RoomBuilder=dynamic(()=>import("./RoomBuilder"),{ssr:false,loading:()=> <div className={s.loading}><div className={s.loaderCard}><BrandLoader size="panel" label="Preparing your construction grid…"/></div></div>});
 
 const STEPS=[
   {n:"01 / SHAPE",title:"A floor that fits.",text:"Start with a rectangle or trace a custom outline. Move corners and enter exact measurements.",kind:"shape"},

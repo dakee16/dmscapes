@@ -1,6 +1,6 @@
-/* Site navigation: the ruler card. A floating card inside the sticky header
-   takes the colour of the section behind it (--nav-ground, set by Nav.tsx)
-   and carries a ruler and the page's scroll progress along its bottom edge.
+/* Site navigation: a floating pill inside the sticky header, white on light
+   ground and the dark ground's colour on dark sections (--nav-ground, set by
+   Nav.tsx), with the links centred between the wordmark and the actions.
    The More panel and the phone sheet are built from the kit's index cards
    (white, red margin rule, blue ruled lines). */
 
@@ -8,11 +8,7 @@
 .header[data-overlay] {
   --nav-ink: var(--ds-ink);
   --nav-hover: rgba(22, 22, 29, 0.06);
-  --nav-ruler-h: 12px;
-  --nav-tick-l: 10px;
-  --nav-tick-m: 6px;
-  --nav-tick-s: 3px;
-  --nav-tick-x: 16px; /* a 96px tick under the wordmark's left edge */
+  --nav-plate: #fff;
   position: sticky;
   top: 0;
   z-index: 60;
@@ -32,99 +28,62 @@
 .header[data-tone="dark"] {
   --nav-ink: var(--ds-paper);
   --nav-hover: rgba(255, 255, 255, 0.1);
+  --nav-plate: var(--nav-ground, var(--ds-night));
 }
 /* The phone sheet opens under the card: back the strip around it too. */
 .header[data-open="true"] { background: var(--ds-paper); }
-/* The card's strip replaces the old fixed scroll-progress line. */
+/* No scroll-progress line under the site header. */
 :global(.dm-app):has(.header) :global(.dm-progress) { display: none; }
 
 .plate {
   position: relative;
   box-sizing: border-box;
   width: calc(min(100% - 2 * var(--ds-gutter), var(--ds-max)) + 32px);
-  height: 72px;
+  height: 58px;
   margin-inline: auto;
-  border-radius: 18px;
-  background: var(--nav-ground, var(--ds-paper));
-  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 10px 22px -12px rgba(22, 22, 29, 0.18);
+  border-radius: 999px;
+  background: var(--nav-plate);
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 8px 24px -14px rgba(22, 22, 29, 0.22);
   pointer-events: auto;
   transition: background-color 0.25s var(--ds-ease), box-shadow 0.25s var(--ds-ease);
 }
-.header[data-scrolled="true"] .plate {
-  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 18px 34px -16px rgba(10, 16, 44, 0.32);
-}
-
-/* The ruler is clipped to the plate's corners here rather than on the plate,
-   so the More panel and the account popovers can still drop out of it. */
-.ruler {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  overflow: hidden;
-  pointer-events: none;
-}
-.progress {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--ds-tape);
-  transform: scaleX(var(--nav-progress, 0));
-  transform-origin: left;
-}
-:global(:root[data-season="halloween"]) .progress { background: var(--ds-pumpkin); } /* the logo dot stays blue */
-.ticks {
-  --tick: color-mix(in srgb, var(--nav-ink) 42%, transparent);
-  position: absolute;
-  inset: auto 0 0;
-  height: var(--nav-ruler-h);
-  background-image:
-    linear-gradient(90deg, var(--tick) 0 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--nav-ink) 30%, transparent) 0 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--nav-ink) 20%, transparent) 0 1px, transparent 1px);
-  background-size: 96px var(--nav-tick-l), 48px var(--nav-tick-m), 12px var(--nav-tick-s);
-  background-position: var(--nav-tick-x) 100%;
-  background-repeat: repeat-x;
-}
-.ticks > span {
-  position: absolute;
-  bottom: 4px;
-  left: calc(var(--nav-tick-x) + (var(--n) - 1) * 96px + 4px);
-  color: var(--tick);
-  font: 600 8px/1 var(--ds-mono);
-}
+.header[data-tone="dark"] .plate { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 8px 24px -14px rgba(0, 0, 0, 0.5); }
+/* Homepage: no pill at the top of the page; it fades in once the page scrolls. */
+.header[data-bare]:not([data-scrolled="true"]) .plate { background: transparent; box-shadow: none; }
 
 .bar {
   position: relative;
   z-index: 1;
   box-sizing: border-box;
   height: 100%;
-  padding: 0 9px 10px 16px;
+  padding: 0 7px 0 22px;
   display: flex;
   align-items: center;
   gap: 16px;
 }
+.bar :global(.ds-wordmark__type) { font-size: 24px; }
+/* The wordmark and the actions share the room either side equally, so the
+   links sit in the middle of the pill whenever both sides fit their share. */
+.brand { flex: 1 1 0; display: flex; }
 
 .links {
   display: flex;
   align-items: center;
   gap: 2px;
-  margin: 0 auto;
 }
 .link {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  height: 40px;
+  height: 38px;
   box-sizing: border-box;
-  padding: 0 12px;
+  padding: 0 11px;
   border: 0;
   border-radius: 999px;
   background: none;
   color: inherit;
-  font: 550 16px var(--ds-sans);
+  font: 550 15px var(--ds-sans);
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
@@ -133,24 +92,18 @@
 .link:hover,
 .link[aria-expanded="true"] { background: var(--nav-hover); text-decoration: none; }
 .link[aria-current="page"] { font-weight: 800; }
-/* Current page: a red marker on the ruler right below the link. The link is
-   centred in the row's top 62px, so the card's bottom edge is
-   (62 - 40) / 2 + 10 = 21px below it. */
-.link[aria-current="page"]::before,
+/* Current page: a short red rule under the link. */
 .link[aria-current="page"]::after {
   content: "";
   position: absolute;
+  left: 50%;
+  bottom: 4px;
+  width: 14px;
+  height: 2.5px;
+  border-radius: 2px;
+  translate: -50% 0;
   background: var(--ds-red);
   pointer-events: none;
-}
-.link[aria-current="page"]::after { left: 12px; right: 12px; bottom: -21px; height: 3px; }
-.link[aria-current="page"]::before {
-  left: 50%;
-  bottom: -18px;
-  width: 10px;
-  height: 6px;
-  translate: -50% 0;
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
 .chev { display: inline-flex; transition: transform 0.25s var(--ds-ease); }
 .link[aria-expanded="true"] .chev { transform: rotate(180deg); }
@@ -379,18 +332,19 @@
 
 /* ---------- Actions ---------- */
 .actions {
+  flex: 1 1 0;
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-left: auto;
+  justify-content: flex-end;
+  gap: 8px;
 }
 .profile { display: flex; align-items: center; min-width: 0; }
-.actions .cta { gap: 8px; white-space: nowrap; }
+.actions .cta { gap: 8px; min-height: 42px; padding: 0 18px; font-size: 15px; white-space: nowrap; }
 .ctaShort { display: none; }
 .menuBtn {
   display: none;
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   align-items: center;
   justify-content: center;
   border: 0;
@@ -479,36 +433,26 @@
   .cardHead { padding-inline: 14px; }
   .row { padding-left: 14px; }
 }
-@media (max-width: 1360px) {
-  /* signed in: "Plan free", so the account controls fit beside the links */
-  .actions:has(:global([aria-label="Account menu"])) .ctaLong { display: none; }
-  .actions:has(:global([aria-label="Account menu"])) .ctaShort { display: inline; }
-  .actions:has(:global([aria-label="Account menu"])) .cta svg { display: none; }
-}
+/* Signed in: "Plan free", so the account controls stay compact and the links stay centred. */
+.actions:has(:global([aria-label="Account menu"])) .ctaLong { display: none; }
+.actions:has(:global([aria-label="Account menu"])) .ctaShort { display: inline; }
+.actions:has(:global([aria-label="Account menu"])) .cta svg { display: none; }
 /* The full bar needs ~1000px inside its plate, so it gives way to the menu button below 1100
    (iPad landscape, 1024, had the CTA hanging out of the plate once Hall Finder joined the links). */
 @media (max-width: 1099px) {
   .links, .morePanel { display: none; }
   .menuBtn { display: inline-flex; }
 }
-/* Phones: a smaller plate inset 8px, a shorter ruler with no numbers. */
+/* Phones: a smaller pill inset 8px. */
 @media (max-width: 767px) {
-  .header[data-overlay] {
-    padding-top: 8px;
-    --nav-ruler-h: 9px;
-    --nav-tick-l: 8px;
-    --nav-tick-m: 5px;
-    --nav-tick-s: 3px;
-    --nav-tick-x: 12px;
-  }
-  .plate { width: calc(100% - 16px); height: 58px; border-radius: 16px; }
-  .ticks > span { display: none; }
-  .bar { padding: 0 3px 8px 12px; gap: 8px; }
-  .bar :global(.ds-wordmark__type) { font-size: 22px; }
+  .header[data-overlay] { padding-top: 8px; }
+  .plate { width: calc(100% - 16px); height: 52px; }
+  .bar { padding: 0 5px 0 16px; gap: 8px; }
+  .bar :global(.ds-wordmark__type) { font-size: 21px; }
   .actions { gap: 6px; }
   .ctaLong { display: none; }
   .ctaShort { display: inline; }
-  .actions .cta { min-height: 44px; padding: 0 14px; font-size: 14px; }
+  .actions .cta { min-height: 40px; padding: 0 14px; font-size: 14px; }
   .cta svg { display: none; }
   .bar :global(.ds-wordmark__pro) { padding: 2px 4px; font-size: 8px; letter-spacing: 0.06em; }
 }

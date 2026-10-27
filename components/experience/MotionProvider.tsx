@@ -90,7 +90,7 @@ export default function MotionProvider({
     <MotionContext.Provider value={{ paused, toggle }}>
       <MotionConfig reducedMotion={paused ? "always" : "user"}>
         <div
-          className="dm-app"
+          className={paused ? "dm-app ds-still" : "dm-app"}
           data-page={page}
           data-motion={paused ? "paused" : "on"}
         >

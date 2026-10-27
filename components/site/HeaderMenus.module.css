@@ -317,21 +317,19 @@
 /* A long @username truncates rather than pushing the row past the plate. */
 :global(.ds-site-nav) .root:not([data-credits]) { flex: 0 1 auto; min-width: 0; }
 :global(.ds-site-nav) .trigger { max-width: 100%; }
-/* Below 1360 the row is too tight for the full account controls beside the
-   links: the avatar alone, and the credits count with its word kept for
-   screen readers only. */
-@media (max-width: 1360px) {
-  :global(.ds-site-nav) :is(.name, .chev) { display: none; }
-  :global(.ds-site-nav) .trigger { width: 44px; padding: 0; justify-content: center; }
-  :global(.ds-site-nav) .credits { padding: 0 6px; }
-  :global(.ds-site-nav) .creditsLabel {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
+/* Compact account controls in the site header at every width, so the links
+   stay centred: the avatar alone, and the credits count with its word kept
+   for screen readers only. */
+:global(.ds-site-nav) :is(.name, .chev) { display: none; }
+:global(.ds-site-nav) .trigger { width: 42px; padding: 0; justify-content: center; }
+:global(.ds-site-nav) .credits { padding: 0 6px; }
+:global(.ds-site-nav) .creditsLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 @media (min-width: 768px) { .alert { display: none; } }
 @media (max-width: 767px) { .root[data-credits] { display: none; } }

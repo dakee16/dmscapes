@@ -167,7 +167,7 @@ function floorTile(theme: RoomTheme, res: number): HTMLCanvasElement {
 }
 
 /**
- * Bottom-right brand lockup baked into exported PNGs: the folded-room mark plus the
+ * Bottom-right brand lockup baked into exported PNGs: the gradient mark plus the
  * "dormscape" wordmark on a soft, mostly-transparent backing. Subtle
  * over the room, but crisp enough to read as intentional branding when shared.
  */

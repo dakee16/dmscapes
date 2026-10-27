@@ -10,6 +10,7 @@ import { useAuth, type AuthModalReason } from "@/lib/auth-context";
 import { track } from "@/lib/analytics";
 import { passwordMeetsPolicy } from "@/lib/password";
 import PasswordChecklist from "@/components/auth/PasswordChecklist";
+import BrandLoader from "@/components/site/BrandLoader";
 import styles from "./Auth.module.css";
 
 type Mode = "login" | "signup";
@@ -78,13 +79,31 @@ export async function startGoogleSignIn(next: string): Promise<string | null> {
   }
 }
 
+const MailIcon = () => (
+  <svg className={styles.ico} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="14" rx="2.5" />
+    <path d="M3.5 7l8.5 6 8.5-6" />
+  </svg>
+);
+const LockIcon = () => (
+  <svg className={styles.ico} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="4.5" y="10.5" width="15" height="10" rx="2.5" />
+    <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" />
+  </svg>
+);
+const ArrowIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M5 12h14M13 6l6 6-6 6" />
+  </svg>
+);
+
 /** Two-voice title: the last word in Fraunces italic, blue (Login.dc.html). */
 function Title({ text }: { text: string }) {
   const cut = text.lastIndexOf(" ");
   const lead = cut > 0 ? text.slice(0, cut) : "";
   const last = cut > 0 ? text.slice(cut + 1) : text;
   return (
-    <h1 className={styles.title}>
+    <h1 key={text} className={styles.title}>
       {lead && <><span className={styles.titleLead}>{lead}</span> </>}
       <span className={styles.titleSerif}>{last}.</span>
     </h1>
@@ -102,14 +121,18 @@ function Title({ text }: { text: string }) {
 export default function AuthForm({
   reason = "profile",
   next = "/plan",
+  initialMode = "signup",
 }: {
   reason?: AuthModalReason;
   next?: string;
+  /** From /login?mode=login|signup */
+  initialMode?: Mode;
 }) {
   const { configured, user, profile } = useAuth();
   const router = useRouter();
 
-  const [mode, setMode] = useState<Mode>("signup");
+  const [mode, setModeState] = useState<Mode>(initialMode);
+  const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
@@ -131,6 +154,14 @@ export default function AuthForm({
     const t = setTimeout(() => emailRef.current?.focus(), 60);
     return () => clearTimeout(t);
   }, []);
+
+  function setMode(m: Mode) {
+    setModeState(m);
+    const url = new URL(window.location.href);
+    if (url.searchParams.get("mode") === m) return;
+    url.searchParams.set("mode", m);
+    window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
+  }
 
   function switchToExistingAccount() {
     setMode("login");
@@ -293,7 +324,7 @@ export default function AuthForm({
         <Title text="Sign-in is unavailable" />
         <div className={styles.note}>
           <p>Please try again later. You can still explore schools, room sizes, and styles.</p>
-          <Link href="/plan" className={`ds-btn ds-btn--ink-yellow ${styles.submit}`}>
+          <Link href="/plan" className={styles.submit}>
             Start planning
           </Link>
         </div>
@@ -320,7 +351,7 @@ export default function AuthForm({
               setConfirmSent(false);
               setMode("login");
             }}
-            className={`ds-btn ds-btn--ink-yellow ${styles.submit}`}
+            className={styles.submit}
           >
             Back to log in
           </button>
@@ -333,7 +364,7 @@ export default function AuthForm({
             <button
               type="button"
               onClick={() => { setResetMode(false); setResetSent(false); }}
-              className={`ds-btn ds-btn--ink-yellow ${styles.submit}`}
+              className={styles.submit}
             >
               Back to log in
             </button>
@@ -344,11 +375,14 @@ export default function AuthForm({
             <div className={`${styles.fields} ${styles.solo}`}>
               <div className={styles.field}>
                 <label htmlFor="auth-reset-email" className={styles.label}>Email</label>
-                <input id="auth-reset-email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@school.edu" className={styles.input} />
+                <div className={styles.box}>
+                  <MailIcon />
+                  <input id="auth-reset-email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@school.edu" className={styles.input} />
+                </div>
               </div>
               {error && <p className={styles.error} role="alert">{error}</p>}
-              <button type="submit" disabled={busy} className={`ds-btn ds-btn--ink-yellow ${styles.submit}`}>
-                {busy ? "Sending…" : "Send reset link"}
+              <button type="submit" disabled={busy} className={styles.submit}>
+                {busy ? <><BrandLoader size="inline" />Sending…</> : <>Send reset link<ArrowIcon /></>}
               </button>
               <button type="button" onClick={() => { setResetMode(false); setError(""); }} className={styles.back}>
                 Back to log in
@@ -371,7 +405,8 @@ export default function AuthForm({
                       : "Sign in to see them. We kept your places, days and filters. You won't enter anything again."
                     : "Save your designs, revisit your favorites, and pick up where you left off."}
           </p>
-          <div className={styles.tabs} role="group" aria-label="Account access">
+          <div className={styles.tabs} data-mode={mode} role="group" aria-label="Account access">
+            <span className={styles.thumb} aria-hidden="true" />
             {(["signup", "login"] as const).map((m) => (
               <button key={m} type="button" aria-pressed={mode === m} onClick={() => { setMode(m); setError(""); setExistingNotice(false); }} className={styles.tab}>
                 {m === "signup" ? "Sign up" : "Log in"}
@@ -397,7 +432,10 @@ export default function AuthForm({
           <form onSubmit={handleCredentials} className={styles.fields} noValidate>
             <div className={styles.field}>
               <label htmlFor="auth-email" className={styles.label}>Email</label>
-              <input ref={emailRef} id="auth-email" type="email" autoComplete="email" value={email} onChange={(e) => { setEmail(e.target.value); if (existingNotice) setExistingNotice(false); }} placeholder="you@school.edu" className={styles.input} />
+              <div className={styles.box}>
+                <MailIcon />
+                <input ref={emailRef} id="auth-email" type="email" autoComplete="email" value={email} onChange={(e) => { setEmail(e.target.value); if (existingNotice) setExistingNotice(false); }} placeholder="you@school.edu" className={styles.input} />
+              </div>
             </div>
             <div className={styles.field}>
               <span className={styles.labelRow}>
@@ -408,24 +446,49 @@ export default function AuthForm({
                   </button>
                 )}
               </span>
-              <input id="auth-password" type="password" autoComplete={mode === "signup" ? "new-password" : "current-password"} value={password} onChange={(e) => setPassword(e.target.value)} placeholder={mode === "signup" ? "8 to 12 characters" : "Your password"} className={styles.input} />
-              {mode === "signup" && <PasswordChecklist password={password} />}
+              <div className={styles.box}>
+                <LockIcon />
+                <input id="auth-password" type={showPassword ? "text" : "password"} autoComplete={mode === "signup" ? "new-password" : "current-password"} value={password} onChange={(e) => setPassword(e.target.value)} placeholder={mode === "signup" ? "8 to 12 characters" : "Your password"} className={styles.input} />
+                <button type="button" className={styles.eye} aria-label={showPassword ? "Hide password" : "Show password"} aria-pressed={showPassword} onClick={() => setShowPassword((v) => !v)}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    {showPassword ? (
+                      <>
+                        <path d="M3 3l18 18" />
+                        <path d="M10.6 5.1A10.4 10.4 0 0 1 12 5c6 0 9.5 7 9.5 7a17 17 0 0 1-3.2 4.1M6.1 6.1C3.8 7.8 2.5 12 2.5 12s3.5 7 9.5 7a9.7 9.7 0 0 0 4.4-1" />
+                        <path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" />
+                      </>
+                    ) : (
+                      <>
+                        <path d="M2.5 12s3.5-7 9.5-7 9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7Z" />
+                        <circle cx="12" cy="12" r="3" />
+                      </>
+                    )}
+                  </svg>
+                </button>
+              </div>
+              {mode === "signup" && <PasswordChecklist password={password} meter />}
             </div>
             {mode === "signup" && (
               <div className={styles.consent}>
-                <input id="auth-terms" type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} aria-label="I agree to the Terms of Service and Privacy Policy" />
-                <p>
+                <input id="auth-terms" type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} />
+                <label htmlFor="auth-terms">
                   I agree to the{" "}
                   <Link href="/terms" target="_blank" rel="noopener noreferrer">Terms of Service</Link>{" "}
                   and{" "}
                   <Link href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>.
-                </p>
+                </label>
               </div>
             )}
             {error && <p className={styles.error} role="alert">{error}</p>}
-            <button type="submit" disabled={busy || signupBlocked} aria-disabled={busy || signupBlocked} data-blocked={signupBlocked} className={`ds-btn ds-btn--ink-yellow ${styles.submit}`}>
-              {busy ? "One sec…" : mode === "signup" ? "Create free account" : "Log in"}
-            </button>
+            <div className={styles.corner} data-blocked={signupBlocked || undefined}>
+              <button type="submit" disabled={busy} aria-disabled={busy || signupBlocked} className={styles.submit}>
+                {busy ? <><BrandLoader size="inline" />One sec…</> : <>{mode === "signup" ? "Create free account" : "Log in"}<ArrowIcon /></>}
+              </button>
+              <i className={styles.tl} aria-hidden="true" />
+              <i className={styles.tr} aria-hidden="true" />
+              <i className={styles.bl} aria-hidden="true" />
+              <i className={styles.br} aria-hidden="true" />
+            </div>
           </form>
           {hallFinderReason && (
             <div className={styles.gateCards}>

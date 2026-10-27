@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: "/about",
     images: [
       {
-        url: "/og.png?v=folded-room",
+        url: "/og.png?v=door-mark",
         width: 1200,
         height: 630,
         alt: "dormscape, the free AI dorm room planner",
@@ -264,6 +264,14 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
+        <p className={`ds-wrap ${css.credits}`}>
+          Credits: the homepage&rsquo;s live-call chip, scroll progress bar, headline and picture reveals, card stack and
+          feature stepper are adapted from free components by{" "}
+          <a href="https://skiper-ui.com" className="ds-link" target="_blank" rel="noopener noreferrer">
+            Skiper UI
+          </a>
+          .
+        </p>
       </section>
 
       <CtaBand tone="amber" lead="Your next room" tail="starts here." note="One free plan · Make it yours">

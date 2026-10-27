@@ -29,7 +29,7 @@ import WalkIn from "./WalkIn";
 import { BeddingSize, FINISH_NOTE, FloorSwatches, ItemInspector, LightSwitch, RoomFinishes } from "./StudioPanels";
 import s from "./Studio.module.css";
 
-const RoomDrawCanvas=dynamic(()=>import("@/components/planner/RoomDrawCanvas"),{ssr:false,loading:()=> <BrandLoader label="Opening room measurements…"/>});
+const RoomDrawCanvas=dynamic(()=>import("@/components/planner/RoomDrawCanvas"),{ssr:false,loading:()=> <BrandLoader size="panel" label="Opening room measurements…"/>});
 type Panel="style"|"room"|"shop"|"item"|"checks"|"help";
 const CAMERAS:[CameraView,string][]=[["room","Dollhouse"],["top","Top"],["inside","Walk in"]];
 

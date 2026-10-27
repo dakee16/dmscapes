@@ -14,7 +14,7 @@
   font-stretch: 85%;
   letter-spacing: -0.05em;
   font-variant-numeric: tabular-nums;
-  text-shadow: 5px 4px 0 var(--ds-riso-tint), -5px -3px 0 rgba(36, 73, 255, 0.4);
+  text-shadow: -5px -3px 0 rgba(36, 73, 255, 0.4);
   white-space: nowrap;
 }
 
@@ -333,7 +333,7 @@
   .figure {
     margin: 14px 0 0 -4px;
     font-size: clamp(88px, 28vw, 112px);
-    text-shadow: 4px 3px 0 var(--ds-riso-tint), -3px -2px 0 rgba(36, 73, 255, 0.4);
+    text-shadow: -3px -2px 0 rgba(36, 73, 255, 0.4);
   }
   .tape {
     margin-top: 18px;

@@ -1,128 +1,136 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
-import Image from "next/image";
-import Headline from "@/components/ds/Headline";
-import { useScrub, span } from "@/components/ds/useScrub";
+import { useRef, useState } from "react";
+import { EXAMPLE_ITEMS, ROOM_BUDGET, SHOWCASE_BUDGET, examplePlan } from "@/lib/home-data";
+import H2 from "./H2";
 import css from "./Home.module.css";
 
-const MIN = 200;
-const MAX = 1500;
-const SHOWCASE = 650;
-
-/**
- * An illustrative list for the example row, in the order a plan fills a room
- * (sleep first, then storage and light, then the nice-to-haves). The example
- * takes items in order until the next one won't fit. At $650 it lands on the
- * design's example: 14 pieces, $612, $38 to spare.
- */
-const EXAMPLE_ITEMS = [
-  59, 32, 48, 24, 29, 36, 22, 18, 34, 79, 45, 21, 149, 16, // → $612 at 14 pieces
-  42, 38, 89, 19, 64, 27, 55, 35, 99, 25, 72, 31, 44, 23, 110, 48, 39,
-];
-
-function examplePlan(budget: number) {
-  let total = 0;
-  let pieces = 0;
-  for (const price of EXAMPLE_ITEMS) {
-    if (total + price > budget) break;
-    total += price;
-    pieces += 1;
-  }
-  return { pieces, total, spare: budget - total };
-}
-
 const usd = (n: number) => `$${n.toLocaleString("en-US")}`;
+const STEPS = Array.from({ length: (ROOM_BUDGET.max - ROOM_BUDGET.min) / ROOM_BUDGET.step + 1 }, (_, i) => ROOM_BUDGET.min + i * ROOM_BUDGET.step);
+const SEG = ["#2449ff", "#ff4fa8", "#f3c21a", "#16161d", "#5b7cff", "#c0186f"];
 
 /**
- * 05 · Budget. The slider walks from $200 to $650 as the section scrolls in,
- * then it's yours: drag it and the example plan refits live.
+ * 05 · Budget. Pick a budget on the wheel (Kokonut Wheel Picker, same range
+ * and steps as the planner's budget step) and the example plan refits: the
+ * ring is the total against the budget (Kokonut Apple Activity Ring), the
+ * total rolls digit by digit (Vengeance Animated Number), and each pick is a
+ * segment of the strip, with what's left hatched.
  */
 export default function BudgetSection() {
-  const box = useRef<HTMLDivElement>(null);
-  const touched = useRef(false);
-  const [budget, setBudget] = useState(SHOWCASE);
-  const plan = useMemo(() => examplePlan(budget), [budget]);
-
-  useScrub(
-    box,
-    (p) => {
-      if (touched.current) return;
-      const v = MIN + Math.round((span(p, 0, 1) * (SHOWCASE - MIN)) / 10) * 10;
-      setBudget((b) => (b === v ? b : v));
-    },
-    { from: [0, 0.95], to: [0.5, 0.5], smooth: 0.5, rest: 1 }
-  );
-
-  const fillPct = ((budget - MIN) / (MAX - MIN)) * 100;
+  const [budget, setBudget] = useState(SHOWCASE_BUDGET);
+  const drag = useRef<{ y: number; from: number } | null>(null);
+  const plan = examplePlan(budget);
+  const at = Math.max(0, STEPS.indexOf(budget));
+  const step = ROOM_BUDGET.step;
+  const set = (v: number) => setBudget(Math.min(ROOM_BUDGET.max, Math.max(ROOM_BUDGET.min, Math.round(v / step) * step)));
 
   return (
-    <section className={`${css.section} ${css.budget}`} aria-labelledby="budget-title">
-      <div className={`${css.inner} ${css.budgetGrid}`}>
-        <div className={css.budgetCopy}>
-          <p className={`ds-eyebrow ${css.eyebrowGap}`} data-reveal="">
+    <section id="budget" className={css.budget} data-bg="#f6d0d4" aria-labelledby="budget-title">
+      <div className={`ds-wrap ${css.bdGrid}`}>
+        <div className={css.bdCopy}>
+          <p className="ds-eyebrow" data-rv="">
             For whoever&apos;s holding the card
           </p>
-          <Headline
-            id="budget-title"
-            className={css.h2c}
-            lines={[
-              { text: "See the total", className: css.s },
-              { text: "before anyone swipes.", serif: true, className: css.f },
-            ]}
-          />
-          <p className={`ds-lede ${css.budgetLede}`} data-reveal="">
-            Set a budget from $200 to $1,500. dormscape fills your room with picks priced to fit it, each with a live
-            Amazon link.
+          <H2 id="budget-title" s="See the total" f="before anyone swipes." />
+          <p className={`ds-lede ${css.lede}`} data-rv="">
+            Set a budget from {usd(ROOM_BUDGET.min)} to {usd(ROOM_BUDGET.max)}. dormscape fills your room with picks priced
+            to fit it, each with a live Amazon link.
           </p>
-          <div ref={box} className={css.slider} data-reveal="">
-            <div className={css.sliderTop}>
-              <label htmlFor="home-budget">YOUR BUDGET</label>
-              <output htmlFor="home-budget" className={css.figure} aria-live="off">
-                {usd(budget)}
-              </output>
-            </div>
-            <input
-              id="home-budget"
-              className={css.range}
-              type="range"
-              min={MIN}
-              max={MAX}
-              step={10}
-              value={budget}
-              aria-valuetext={usd(budget)}
-              style={{ "--fill": `${fillPct}%` } as React.CSSProperties}
-              onPointerDown={() => (touched.current = true)}
-              onKeyDown={() => (touched.current = true)}
-              onChange={(e) => {
-                touched.current = true;
-                setBudget(Number(e.target.value));
-              }}
-            />
-            <div className={css.rangeEnds} aria-hidden="true">
-              <span>$200</span>
-              <span>$1,500</span>
-            </div>
-            <div className={css.example} aria-live="polite">
-              <span>Example plan · {plan.pieces} pieces</span>
-              <span>
-                <strong>{usd(plan.total)}</strong>
-                <span className={css.spare}>{usd(plan.spare)} to spare</span>
-              </span>
-            </div>
-          </div>
-          <p className={css.budgetFoot} data-reveal="">
+          <p className={css.bdFoot} data-rv="">
             Plus exports the whole list as a PDF for whoever&apos;s paying.
           </p>
         </div>
-        <div className={css.budgetArt} data-reveal-img="">
-          <Image
-            src="/redesign/home-budget-balance-scale.jpg"
-            alt="A brass balance scale with a miniature furnished dorm room on one pan and stacks of gold coins on the other."
-            fill
-            quality={75}
-            sizes="(min-width: 1024px) 41vw, 100vw"
-          />
+        <div className={css.console} data-rv="" style={{ "--fill": (plan.total / budget).toFixed(4) } as React.CSSProperties}>
+          <div className={css.wheel}>
+            <p className={css.whL} id="budget-label">
+              YOUR BUDGET
+            </p>
+            <div
+              className={css.drum}
+              aria-hidden="true"
+              onPointerDown={(e) => {
+                drag.current = { y: e.clientY, from: budget };
+                e.currentTarget.setPointerCapture(e.pointerId);
+              }}
+              onPointerMove={(e) => {
+                if (drag.current) set(drag.current.from + Math.round((drag.current.y - e.clientY) / 38) * step);
+              }}
+              onPointerUp={() => (drag.current = null)}
+              onPointerCancel={() => (drag.current = null)}
+            >
+              <span className={css.band} />
+              {STEPS.map((v, j) => {
+                const o = j - at, a = Math.abs(o);
+                return (
+                  <button
+                    key={v}
+                    type="button"
+                    tabIndex={-1}
+                    className={css.wv}
+                    data-on={o === 0 || undefined}
+                    style={{ transform: `translateY(${o * 38}px) rotateX(${-o * 19}deg)`, opacity: a > 3 ? 0 : 1 - a * 0.27, pointerEvents: a > 3 ? "none" : "auto" }}
+                    onClick={() => set(v)}
+                  >
+                    {usd(v)}
+                  </button>
+                );
+              })}
+            </div>
+            <div className={css.whBtns} role="group" aria-labelledby="budget-label">
+              <button type="button" className={css.whB} aria-label={`Lower the budget by ${usd(step)}`} onClick={() => set(budget - step)} disabled={budget <= ROOM_BUDGET.min}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" aria-hidden="true">
+                  <path d="M5 12h14" />
+                </svg>
+              </button>
+              <button type="button" className={css.whB} aria-label={`Raise the budget by ${usd(step)}`} onClick={() => set(budget + step)} disabled={budget >= ROOM_BUDGET.max}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5v14" />
+                </svg>
+              </button>
+            </div>
+            <p className="ds-sr" aria-live="polite">
+              Budget {usd(budget)}. Example plan: {plan.pieces} pieces, {usd(plan.total)}, {usd(plan.spare)} to spare.
+            </p>
+          </div>
+          <div className={css.ring}>
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle className={css.rgT} cx="60" cy="60" r="52" />
+              <circle className={css.rgF} cx="60" cy="60" r="52" pathLength={1} />
+              <circle className={css.rgS} cx="60" cy="60" r="42" pathLength={1} />
+            </svg>
+            <div className={css.rgC} aria-hidden="true">
+              <span className={css.rgK}>PLAN TOTAL</span>
+              <span className={css.num2}>
+                {usd(plan.total)
+                  .split("")
+                  .map((ch, i) =>
+                    /[0-9]/.test(ch) ? (
+                      <span key={i} className={css.dc}>
+                        <span style={{ transform: `translateY(${-Number(ch)}em)` }}>
+                          {"0123456789".split("").map((d) => (
+                            <b key={d}>{d}</b>
+                          ))}
+                        </span>
+                      </span>
+                    ) : (
+                      <span key={i}>{ch}</span>
+                    ),
+                  )}
+              </span>
+              <span className={css.rgOf}>of {usd(budget)}</span>
+            </div>
+          </div>
+          <div className={css.strip} aria-hidden="true">
+            {EXAMPLE_ITEMS.slice(0, plan.pieces).map((w, i) => (
+              <i key={i} style={{ flexGrow: w, background: SEG[i % SEG.length] }} />
+            ))}
+            <b style={{ flexGrow: plan.spare }} />
+          </div>
+          <p className={css.ex2}>
+            <strong>{plan.pieces} pieces</strong>
+            <span className={css.spare}>{usd(plan.spare)} to spare</span>
+            <span className={css.note}>Example plan · live Amazon links</span>
+          </p>
         </div>
       </div>
     </section>
