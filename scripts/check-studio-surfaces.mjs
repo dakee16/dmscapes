@@ -53,7 +53,7 @@ try {
   assert(desk.children.every(m=>!m.geometry?.attributes.aAo||m.geometry.attributes.aAo.getX(0)===1),"Creases wait for their own step");
   creases();
   const shadedMeshes=desk.children.filter(m=>m.geometry.attributes.aAo);
-  assert(shadedMeshes.length&&shadedMeshes.every(m=>m.material.defines?.DM_AO!==undefined),"Clay parts carry their corner shading");
+  assert(shadedMeshes.length&&shadedMeshes.every(m=>m.material.customProgramCacheKey?.()==="dm-shaded"),"Clay parts carry their corner shading");
   const tone=(lo,hi)=>{let s=0,n=0;for(const m of shadedMeshes){const P=m.geometry.attributes.position,A=m.geometry.attributes.aAo;for(let i=0;i<P.count;i++)if(P.getY(i)>lo&&P.getY(i)<hi){s+=A.getX(i);n++;}}return s/n;};
   assert(tone(2.2,2.35)<tone(.9,1.4)-.05,"Legs darken under the desk top");
   assert(Math.max(...shadedMeshes.flatMap(m=>[...m.geometry.attributes.aAo.array].filter((_,i)=>i%2===0)))>.999,"Open faces stay fully lit");

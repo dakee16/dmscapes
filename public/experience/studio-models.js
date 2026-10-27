@@ -1,53 +1,19 @@
 import * as T from "./vendor/three.module.min.js";
 import { RoundedBoxGeometry } from "./vendor/RoundedBoxGeometry.js";
 
-// Clay: matte surfaces with a soft grain, added to the standard material in the shader: one lookup into a
-// small mipmapped noise tile, projected along each face, so it costs next to nothing, moves with its piece,
-// and fades smoothly with distance instead of shimmering.
-const GRAIN = (() => {
-  const n = 128, data = new Uint8Array(n * n); let seed = 5;
-  const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-  // Two octaves of smooth value noise that tile seamlessly (they sum to 0–255).
-  for (const [cells, amp] of [[32, 150], [64, 105]]) {
-    const g = Array.from({ length: cells * cells }, rnd), at = (i, j) => g[(j % cells) * cells + (i % cells)];
-    for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
-      const fx = x / n * cells, fy = y / n * cells, x0 = Math.floor(fx), y0 = Math.floor(fy), tx = fx - x0, ty = fy - y0, sx = tx * tx * (3 - 2 * tx), sy = ty * ty * (3 - 2 * ty);
-      const a = at(x0, y0) + (at(x0 + 1, y0) - at(x0, y0)) * sx, b = at(x0, y0 + 1) + (at(x0 + 1, y0 + 1) - at(x0, y0 + 1)) * sx;
-      data[y * n + x] += Math.round((a + (b - a) * sy) * amp);
-    }
-  }
-  const t = new T.DataTexture(data, n, n, T.RedFormat, T.UnsignedByteType);
-  t.wrapS = t.wrapT = T.RepeatWrapping; t.magFilter = T.LinearFilter; t.minFilter = T.LinearMipmapLinearFilter; t.generateMipmaps = true; t.needsUpdate = true;
-  return t;
-})();
-const CLAY_PARS = `varying vec3 vClay;
-uniform float uGrain;
-uniform sampler2D uClayGrain;`;
-// The grain tile spans 3 ft: soft mottling about an inch across, with finer speckle inside it.
-const CLAY_GRAIN = `{
-  vec3 clayN = abs( cross( dFdx( vClay ), dFdy( vClay ) ) );
-  vec2 clayUv = clayN.x > clayN.y && clayN.x > clayN.z ? vClay.zy : clayN.y > clayN.z ? vClay.xz : vClay.xy;
-  diffuseColor.rgb *= 1.0 + ( texture2D( uClayGrain, clayUv / 3.0 ).r - 0.5 ) * uGrain * 2.0;
-}`;
-// A baked piece's corner shading (bake): aAo.x is the shade baked where its parts meet; aAo.y turns on the shading toward
-// the floor, worked out per pixel from the height above the piece's base (vClay.y), strongest on faces turned down and
-// none on faces turned up.
-const CLAY_AO = "diffuseColor.rgb *= vAo.x * ( 1.0 - 0.45 * vAo.y * ( 1.0 - smoothstep( 0.0, 0.5, vClay.y ) ) * clamp( 0.6 - 0.6 * vUp, 0.0, 1.0 ) );";
-function clayCompile(shader) {
-  const ao = this.defines?.DM_AO !== undefined;
-  shader.uniforms.uGrain = { value: this.userData.grain ?? .1 };
-  shader.uniforms.uClayGrain = { value: GRAIN };
-  shader.vertexShader = shader.vertexShader.replace("#include <common>", "#include <common>\nvarying vec3 vClay;" + (ao ? "\nattribute vec2 aAo;\nvarying vec2 vAo;\nvarying float vUp;" : ""))
-    .replace("#include <worldpos_vertex>", "#include <worldpos_vertex>\nvec4 clayP = vec4( transformed, 1.0 );\n#ifdef USE_INSTANCING\nclayP = instanceMatrix * clayP;\n#endif\nvClay = ( modelMatrix * clayP ).xyz - modelMatrix[ 3 ].xyz;" + (ao ? "\nvAo = aAo;\nvUp = normalize( mat3( modelMatrix ) * objectNormal ).y;" : ""));
-  shader.fragmentShader = shader.fragmentShader.replace("#include <common>", "#include <common>\n" + CLAY_PARS + (ao ? "\nvarying vec2 vAo;\nvarying float vUp;" : ""))
-    .replace("#include <color_fragment>", "#include <color_fragment>\n" + CLAY_GRAIN + (ao ? "\n" + CLAY_AO : ""));
+// A baked piece's corner shading (bake), added to its materials in the shader: aAo.x is the shade baked where its parts
+// meet; aAo.y turns on the shading toward the floor, worked out per pixel from the height above the piece's base,
+// strongest on faces turned down and none on faces turned up. Every shaded material shares one program per variant.
+function shadeCompile(shader) {
+  shader.vertexShader = shader.vertexShader.replace("#include <common>", "#include <common>\nattribute vec2 aAo;\nvarying vec2 vAo;\nvarying float vUp;\nvarying float vHeight;")
+    .replace("#include <worldpos_vertex>", "#include <worldpos_vertex>\nvAo = aAo;\nvUp = normalize( mat3( modelMatrix ) * objectNormal ).y;\nvHeight = ( modelMatrix * vec4( transformed, 1.0 ) ).y - modelMatrix[ 3 ].y;");
+  shader.fragmentShader = shader.fragmentShader.replace("#include <common>", "#include <common>\nvarying vec2 vAo;\nvarying float vUp;\nvarying float vHeight;")
+    .replace("#include <color_fragment>", "#include <color_fragment>\ndiffuseColor.rgb *= vAo.x * ( 1.0 - 0.45 * vAo.y * ( 1.0 - smoothstep( 0.0, 0.5, vHeight ) ) * clamp( 0.6 - 0.6 * vUp, 0.0, 1.0 ) );");
 }
-const clayKey = () => "dm-clay";
-/** Give a standard material the clay grain (amount ≈ how strong the mottling is). Every clay material shares one program per variant. */
-export function clay(material, grain = .1) {
-  material.userData.grain = grain;
-  material.onBeforeCompile = clayCompile;
-  material.customProgramCacheKey = clayKey;
+const shadeKey = () => "dm-shaded";
+/** Mark a standard material as clay: matte, and able to take a baked piece's corner shading (the kit's `shaded`). */
+export function clay(material) {
+  material.userData.clay = true;
   return material;
 }
 
@@ -201,7 +167,7 @@ export function createModelKit({onTexture=()=>{}}={}) {
   const fabric=new T.CanvasTexture(c);fabric.wrapS=fabric.wrapT=T.RepeatWrapping;fabric.repeat.set(3,3);
   /** Glass, mirrors and metal reflect the room's small reflection map (setEnv); nothing else does. */
   const shine=m=>{m.envMap=env;m.envMapIntensity=envI;shiny.add(m);return m;};
-  // Clay-matte by default: glossy surfaces (glass, mirrors) stay smooth, metal goes satin, everything else is soft and grainy.
+  // Matte by default: glossy surfaces (glass, mirrors) stay smooth, metal goes satin, everything else is soft.
   const mat=(color,roughness=.65,cloth=false,metal=null)=>{
     const key=[color,roughness,cloth,metal].join("|");
     if(!materials.has(key)){
@@ -209,15 +175,15 @@ export function createModelKit({onTexture=()=>{}}={}) {
       const m=new T.MeshStandardMaterial({color,roughness:glossy?roughness:metal!==null?Math.max(roughness,.5):Math.max(roughness,.82),
         metalness:glossy?.3:metal!==null?Math.min(metal,.35):0,...(cloth?{bumpMap:fabric,bumpScale:.015}:{})});
       if(glossy||metal!==null)shine(m);
-      materials.set(key,glossy?m:clay(m,cloth?.08:metal!==null?.05:.1));
+      materials.set(key,glossy?m:clay(m));
     }
     return materials.get(key);
   };
-  /** A clay material's twin that also takes a baked piece's corner shading (see CLAY_AO); null for any other material. */
+  /** A clay material's twin that also takes a baked piece's corner shading (shadeCompile); null for any other material. */
   function shaded(m){
-    if(m.customProgramCacheKey!==clayKey)return null;
+    if(!m.userData.clay)return null;
     const key="shaded|"+m.uuid;
-    if(!materials.has(key)){const s=clay(m.clone(),m.userData.grain);s.defines={...s.defines,DM_AO:""};if(shiny.has(m))shine(s);materials.set(key,s);}
+    if(!materials.has(key)){const s=m.clone();s.onBeforeCompile=shadeCompile;s.customProgramCacheKey=shadeKey;if(shiny.has(m))shine(s);materials.set(key,s);}
     return materials.get(key);
   }
   /** A lit surface (lamp shade, bulb, LED): brighter at night. */
@@ -249,7 +215,7 @@ export function createModelKit({onTexture=()=>{}}={}) {
       else{ctx.fillStyle="#1c1622";ctx.beginPath();ctx.moveTo(cx0,cy0+6);ctx.lineTo(cx0-16,cy0-4);ctx.lineTo(cx0-6,cy0-2);ctx.lineTo(cx0-3,cy0-8);ctx.lineTo(cx0,cy0-4);ctx.lineTo(cx0+3,cy0-8);ctx.lineTo(cx0+6,cy0-2);ctx.lineTo(cx0+16,cy0-4);ctx.closePath();ctx.fill();}
     }
     const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;textures.set(key,tex);
-    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:.98,bumpMap:fabric,bumpScale:.012}),.08);materials.set(key,material);return material;
+    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:.98,bumpMap:fabric,bumpScale:.012}));materials.set(key,material);return material;
   }
   function productPrint(product,fallback){
     if(!product?.image || !/^https:\/\/m\.media-amazon\.com\//.test(product.image))return fallback;
@@ -270,7 +236,7 @@ export function createModelKit({onTexture=()=>{}}={}) {
     if(product.pattern==="check"){ctx.globalAlpha=.55;for(let i=0;i<256;i+=64){ctx.fillRect(i,0,32,256);ctx.fillRect(0,i,256,32);}ctx.globalAlpha=1;for(let i=0;i<256;i+=64)for(let j=0;j<256;j+=64)ctx.fillRect(i,j,32,32);}
     else for(let i=0;i<256;i+=64)ctx.fillRect(0,i,256,32);
     const tex=new T.CanvasTexture(canvas);tex.colorSpace=T.SRGBColorSpace;tex.wrapS=tex.wrapT=T.RepeatWrapping;tex.repeat.set(w/2,d/2);textures.set(key,tex);
-    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:1,bumpMap:fabric,bumpScale:.012}),.08);materials.set(key,material);return material;
+    const material=clay(new T.MeshStandardMaterial({map:tex,roughness:1,bumpMap:fabric,bumpScale:.012}));materials.set(key,material);return material;
   }
   /** A bat seen flat on the wall (the brand mark's outline), one unit wide. */
   function batGeometry(){
@@ -624,7 +590,7 @@ export function createModelKit({onTexture=()=>{}}={}) {
   }
   /**
    * Bake a built piece in place, once. Its plain meshes that share a material become one mesh (fewer draw calls), and
-   * its clay surfaces get soft corner shading (CLAY_AO): toward the floor when `floor`, and where its parts meet (under a
+   * its clay surfaces get soft corner shading (shadeCompile): toward the floor when `floor`, and where its parts meet (under a
    * frame, where a mattress meets the headboard). That last part is the slow one, so it's returned as a function to run
    * later (null if there is nothing to shade); it updates the baked geometry in place, once. Instanced, multi-material
    * and mirrored meshes stay as they are but still shade their neighbours. The baked geometry is the piece's own to dispose.

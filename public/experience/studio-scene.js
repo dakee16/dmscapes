@@ -1,5 +1,5 @@
 import * as T from "./vendor/three.module.min.js";
-import { clay, createModelKit, footprint } from "./studio-models.js";
+import { createModelKit, footprint } from "./studio-models.js";
 
 // Light presets (design-handoff/3d-studio/scene.js, retuned for the clay look). "evening" is golden hour.
 // Built to stay smooth on weak GPUs and phones: no shadow maps and no ambient-occlusion pass. A sky/ground
@@ -274,15 +274,15 @@ export function createStudioScene(container, options) {
     const normals=pts.map((a,i)=>{const b=pts[(i+1)%N],len=Math.hypot(b.x-a.x,b.y-a.y)||1,dx=(b.x-a.x)/len,dz=(b.y-a.y)/len;return area>0?{x:dz,y:-dx}:{x:-dz,y:dx};});
     const grown=pts.map((p,i)=>{const n1=normals[(i-1+N)%N],n2=normals[i],k=1+n1.x*n2.x+n1.y*n2.y||1;return {x:p.x+WALL_T*(n1.x+n2.x)/k,y:p.y+WALL_T*(n1.y+n2.y)/k};});
     const shape=new T.Shape();grown.forEach((p,i)=>i?shape.lineTo(p.x,-p.y):shape.moveTo(p.x,-p.y));shape.closePath();
-    const wallColor=settings.wallColor,wallMat=clay(new T.MeshStandardMaterial({color:wallColor,roughness:.95}),.035),capMat=clay(new T.MeshStandardMaterial({color:shade(wallColor,.9),roughness:.95}),.035);
-    const trim=clay(new T.MeshStandardMaterial({color:mixHex(wallColor,"#ffffff",.6),roughness:.82}),.05),baseMat=clay(new T.MeshStandardMaterial({color:mixHex(wallColor,"#1f2233",.8),roughness:.82}),.05);
-    const floorMat=clay(new T.MeshStandardMaterial({map:floorTexture(settings.floor),roughness:settings.floor==="carpet"?1:settings.floor==="concrete"?.86:.78}),.03);
+    const wallColor=settings.wallColor,wallMat=new T.MeshStandardMaterial({color:wallColor,roughness:.95}),capMat=new T.MeshStandardMaterial({color:shade(wallColor,.9),roughness:.95});
+    const trim=new T.MeshStandardMaterial({color:mixHex(wallColor,"#ffffff",.6),roughness:.82}),baseMat=new T.MeshStandardMaterial({color:mixHex(wallColor,"#1f2233",.8),roughness:.82});
+    const floorMat=new T.MeshStandardMaterial({map:floorTexture(settings.floor),roughness:settings.floor==="carpet"?1:settings.floor==="concrete"?.86:.78});
     // The dollhouse plinth: one slab whose top is the floor, its sides in the wall cap colour.
     const slab=new T.Mesh(new T.ExtrudeGeometry(shape,{depth:PLINTH,bevelEnabled:false}),[floorMat,capMat]);
     slab.name="room-floor";slab.rotation.x=-Math.PI/2;slab.position.y=-PLINTH;slab.userData={ownGeometry:true};roomRoot.add(slab);
     const owned=new T.Group();owned.userData.ownMaterial=true;owned.material=[wallMat,capMat,trim,baseMat,floorMat];roomRoot.add(owned);
     // Door knobs are the kit's satin metal, so they reflect the room like every other metal.
-    const doorMat=clay(new T.MeshStandardMaterial({color:mixHex(wallColor,"#d9a982",.35),roughness:.82}),.05),knobMat=kit.mat("#c9c4bd",.35,false,.6);
+    const doorMat=new T.MeshStandardMaterial({color:mixHex(wallColor,"#d9a982",.35),roughness:.82}),knobMat=kit.mat("#c9c4bd",.35,false,.6);
     glassMat=new T.MeshBasicMaterial({color:light.sky,transparent:true,opacity:light.glass,side:T.DoubleSide,depthWrite:false});
     owned.material.push(doorMat,glassMat);envMap=envTexture(wallColor,FLOOR_TONE[settings.floor]||FLOOR_TONE.carpet);
     pts.forEach((a,i)=>{
@@ -341,7 +341,7 @@ export function createStudioScene(container, options) {
       for(const o of openings.filter(o=>o.kind==="door")){board(sk,o.offset_ft);sk=o.offset_ft+o.width_ft;}
       board(sk,len);
     });
-    for(const c of outline.closets){const m=capBox(roomRoot,c.width_ft,h*.87,c.depth_ft,clay(new T.MeshStandardMaterial({color:mixHex(wallColor,"#cbb28e",.45),roughness:.88}),.05),capMat,c.x_ft+c.width_ft/2,h*.435,c.y_ft+c.depth_ft/2);m.userData.ownMaterial=true;}
+    for(const c of outline.closets){const m=capBox(roomRoot,c.width_ft,h*.87,c.depth_ft,new T.MeshStandardMaterial({color:mixHex(wallColor,"#cbb28e",.45),roughness:.88}),capMat,c.x_ft+c.width_ft/2,h*.435,c.y_ft+c.depth_ft/2);m.userData.ownMaterial=true;}
     // Daylight falling in through the first window: a soft, warm pool on the floor (none at night).
     if(firstWindow){const win=firstWindow,depth=Math.max(1.5,Math.min(4.5,Math.min(room.lengthFt,room.widthFt)*.4));
       pool=patch(win.width/2*.9,depth/2,.7,poolMat);pool.position.set(win.x-win.n.x*(depth/2+.15),.011,win.y-win.n.y*(depth/2+.15));pool.rotation.y=-Math.atan2(win.dz,win.dx);roomRoot.add(pool);}
