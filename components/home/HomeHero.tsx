@@ -202,9 +202,9 @@ function Stage({ dims }: { dims: React.ReactNode }) {
         <span className={css.share}>Share room</span>
       </div>
       <div className={css.view}>
-        {layer(css.lyRoom, "/redesign/hero-room-v2.webp", true)}
+        {layer(css.lyRoom, "/redesign/hero-room-v3.webp", true)}
         {layer(css.lyRug, "/redesign/hero-rug.webp")}
-        {layer(css.lyOcc, "/redesign/hero-occluder-v2.webp")}
+        {layer(css.lyOcc, "/redesign/hero-occluder-v3.webp")}
         {layer(css.lyBean, "/redesign/hero-bean.webp")}
         {layer(css.lyFront, "/redesign/hero-front.webp")}
         <svg className={css.dims} viewBox="0 0 1000 583.333" preserveAspectRatio="xMidYMid meet">
