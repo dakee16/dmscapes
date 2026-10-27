@@ -266,7 +266,7 @@ export default function AboutPage() {
         </div>
         <p className={`ds-wrap ${css.credits}`}>
           Credits: the homepage&rsquo;s live-call chip, scroll progress bar, headline and picture reveals, card stack and
-          feature stepper are adapted from free components by{" "}
+          feature stepper are inspired by free components from{" "}
           <a href="https://skiper-ui.com" className="ds-link" target="_blank" rel="noopener noreferrer">
             Skiper UI
           </a>
