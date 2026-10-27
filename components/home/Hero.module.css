@@ -127,7 +127,6 @@
   display: block;
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 14px 18px rgba(8, 6, 40, 0.45)) drop-shadow(0 0 14px rgba(150, 170, 255, 0.35));
   animation: gxBob 6s ease-in-out infinite alternate;
   animation-delay: calc(var(--d) * 0.37);
 }
