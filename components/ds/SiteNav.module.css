@@ -433,12 +433,10 @@
   .cardHead { padding-inline: 14px; }
   .row { padding-left: 14px; }
 }
-@media (max-width: 1360px) {
-  /* signed in: "Plan free", so the account controls fit beside the links */
-  .actions:has(:global([aria-label="Account menu"])) .ctaLong { display: none; }
-  .actions:has(:global([aria-label="Account menu"])) .ctaShort { display: inline; }
-  .actions:has(:global([aria-label="Account menu"])) .cta svg { display: none; }
-}
+/* Signed in: "Plan free", so the account controls stay compact and the links stay centred. */
+.actions:has(:global([aria-label="Account menu"])) .ctaLong { display: none; }
+.actions:has(:global([aria-label="Account menu"])) .ctaShort { display: inline; }
+.actions:has(:global([aria-label="Account menu"])) .cta svg { display: none; }
 /* The full bar needs ~1000px inside its plate, so it gives way to the menu button below 1100
    (iPad landscape, 1024, had the CTA hanging out of the plate once Hall Finder joined the links). */
 @media (max-width: 1099px) {
