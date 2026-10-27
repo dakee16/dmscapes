@@ -38,11 +38,46 @@ function patch(hw,hd,m,material){
   const mesh=new T.Mesh(g,material);mesh.raycast=()=>{};mesh.renderOrder=1;mesh.userData.ownGeometry=true;return mesh;
 }
 
+/**
+ * Fewer draw calls: a piece's plain meshes that share a material become one mesh (its parts baked in place). Instanced
+ * meshes, multi-material meshes and mirrored parts stay as they are. The merged geometry is the piece's own to dispose.
+ */
+function mergeByMaterial(root){
+  root.updateMatrixWorld(true);
+  const toRoot=new T.Matrix4().copy(root.matrixWorld).invert(),groups=new Map(),m=new T.Matrix4(),nm=new T.Matrix3(),v=new T.Vector3();
+  root.traverse(o=>{
+    if(!o.isMesh||o.isInstancedMesh||Array.isArray(o.material)||!o.geometry.attributes.normal)return;
+    m.multiplyMatrices(toRoot,o.matrixWorld);if(m.determinant()<=0)return;
+    if(!groups.has(o.material))groups.set(o.material,[]);groups.get(o.material).push(o);
+  });
+  for(const [material,parts] of groups){
+    if(parts.length<2)continue;
+    const pos=[],nor=[],uv=[],index=[];let base=0;
+    for(const o of parts){
+      m.multiplyMatrices(toRoot,o.matrixWorld);nm.getNormalMatrix(m);
+      const g=o.geometry,P=g.attributes.position,N=g.attributes.normal,U=g.attributes.uv;
+      for(let i=0;i<P.count;i++){
+        v.fromBufferAttribute(P,i).applyMatrix4(m);pos.push(v.x,v.y,v.z);
+        v.fromBufferAttribute(N,i).applyMatrix3(nm).normalize();nor.push(v.x,v.y,v.z);
+        uv.push(U?U.getX(i):0,U?U.getY(i):0);
+      }
+      if(g.index)for(let i=0;i<g.index.count;i++)index.push(g.index.getX(i)+base);else for(let i=0;i<P.count;i++)index.push(base+i);
+      base+=P.count;o.removeFromParent();
+    }
+    const g=new T.BufferGeometry();
+    g.setAttribute("position",new T.Float32BufferAttribute(pos,3));g.setAttribute("normal",new T.Float32BufferAttribute(nor,3));g.setAttribute("uv",new T.Float32BufferAttribute(uv,2));
+    g.setIndex(index);g.computeBoundingSphere();
+    const mesh=new T.Mesh(g,material);mesh.userData={...parts[0].userData,ownGeometry:true};root.add(mesh);
+  }
+}
+
 export function createStudioScene(container, options) {
   const brandMark=new Image();brandMark.src="/brand/dormscape-mark.png?v=folded-room";
   const renderer=new T.WebGLRenderer({antialias:true,powerPreference:"high-performance"});
-  // The pixel ratio starts at the screen's (capped) and steps down while moving the camera or a piece runs slow, so weak GPUs stay smooth.
-  let ratio=Math.min(devicePixelRatio||1,LOW?1.5:1.75);
+  // The pixel ratio starts at the screen's (capped). While the camera or a piece moves slowly it steps down, so weak GPUs stay
+  // smooth; when everything stops, the still frame goes back to the full ratio.
+  const full=Math.min(devicePixelRatio||1,LOW?1.5:1.75);let ratio=full,sharpen=0;
+  const useRatio=v=>{if(renderer.getPixelRatio()!==v){renderer.setPixelRatio(v);renderer.setSize(width,height,false);}};
   renderer.setPixelRatio(ratio);renderer.setClearColor(PAPER);
   renderer.outputColorSpace=T.SRGBColorSpace;renderer.toneMapping=T.NeutralToneMapping;renderer.toneMappingExposure=LIGHT.day.exposure;
   const canvas=renderer.domElement;canvas.tabIndex=0;canvas.setAttribute("aria-label","3D room. Drag empty space to orbit. Drag a piece to move it; hold Shift to lift it. Select an item in Arrange for keyboard editing.");
@@ -171,15 +206,19 @@ export function createStudioScene(container, options) {
       }
     }
     lastStep=time;
-    // Adaptive resolution: back-to-back frames slower than ~30 fps (orbiting, walking, dragging) step the pixel ratio down, never below 1.
+    // Adaptive resolution: back-to-back frames slower than ~30 fps (orbiting, walking, dragging) step the moving ratio down, never below 1.
     const dt=time-lastFrame;lastFrame=time;
     if(!assemblyStart&&(chained||pointers.size)&&dt>0&&dt<150){
-      if(dt>34){if(++slow>=10&&ratio>1){ratio=Math.max(1,ratio-.25);renderer.setPixelRatio(ratio);renderer.setSize(width,height,false);slow=0;}}
+      if(dt>34){if(++slow>=10&&ratio>1){ratio=Math.max(1,ratio-.25);slow=0;}}
       else slow=Math.max(0,slow-1);
     }
     chained=more;
+    // Moving draws at that ratio; once everything is still, one sharp frame at the full ratio.
+    clearTimeout(sharpen);
+    if(more||pointers.size)useRatio(ratio);
+    else if(renderer.getPixelRatio()<full)sharpen=setTimeout(()=>{if(!disposed&&!pointers.size){useRatio(full);request();}},180);
     renderer.setClearColor(mode==="inside"?ceiling:paper);
-    cameraUpdate();camera.updateMatrixWorld();showSelection();
+    seatRiders();cameraUpdate();camera.updateMatrixWorld();showSelection();
     if(walker&&mode==="inside")walker.setAttribute("transform","translate("+eye.x.toFixed(2)+" "+eye.z.toFixed(2)+") rotate("+(angle*180/Math.PI).toFixed(1)+")");
     renderer.render(scene,camera);
     if(!ready&&data&&width>1&&height>1){ready=true;options.onReady?.();setTimeout(prewarm,0);}
@@ -346,14 +385,26 @@ export function createStudioScene(container, options) {
   }
   /** One piece: its model turned so its back faces the side the plan gives it, and a soft contact shadow under it. */
   function buildPiece(f,next){
-    const back=f.back||0,inner=kit.build(back%2?{...f,width_ft:f.length_ft,length_ft:f.width_ft}:f,next.palette,{theme:next.theme,dress:next.settings.dressVibe!==false});
-    inner.rotation.y=-back*Math.PI/2;
+    // Throws resting on a bed are modelled for that bed (seatRiders lines them up with it).
+    const back=f.back||0,bed=f.host&&next.items.find(i=>i.id===f.host);
+    const spec=bed?{...f,onBed:{w:bed.width_ft,d:bed.length_ft}}:back%2?{...f,width_ft:f.length_ft,length_ft:f.width_ft}:f;
+    const inner=kit.build(spec,next.palette,{theme:next.theme,dress:next.settings.dressVibe!==false});
+    inner.rotation.y=-back*Math.PI/2;mergeByMaterial(inner);
     const group=new T.Group();group.add(inner);group.userData.itemId=f.id;
     let blob=null;
     if(!NO_BLOB.has(f.kind)&&!onWall(f)){const w=f.width_ft,d=f.length_ft;blob=patch(w*.46,d*.46,Math.max(.15,Math.min(.6,.12+.18*Math.min(w,d))),blobMat);blob.position.y=.012;group.add(blob);}
-    itemRoot.add(group);return {group,blob};
+    itemRoot.add(group);return {group,blob,restZ:inner.userData.restZ??0};
   }
-  function removePiece(m){itemRoot.remove(m.group);m.blob?.geometry.dispose();}
+  function removePiece(m){itemRoot.remove(m.group);m.group.traverse(o=>{if(o.userData.ownGeometry)o.geometry.dispose();});}
+  /** Throw pillows and a throw blanket resting on a bed follow it: turned with its frame, at its head or across its foot. */
+  const seat=new T.Vector3();
+  function seatRiders(){
+    for(const m of meshes.values()){
+      const host=m.item.host&&meshes.get(m.item.host);if(!host||drag?.id===m.item.id)continue;
+      const inner=host.group.children[0];host.group.updateMatrixWorld();inner.localToWorld(seat.set(0,0,m.restZ));
+      m.group.position.x=seat.x;m.group.position.z=seat.z;m.group.rotation.y=host.group.rotation.y+inner.rotation.y;
+    }
+  }
   function sync(next){
     const first=!data,before=data;if(drag?.openingIndex!==undefined&&data?.outline!==next.outline)cancelDrag();data=next;
     // The room shell rebuilds only when its shape or finishes change; the light preset is applied on its own.
@@ -362,12 +413,14 @@ export function createStudioScene(container, options) {
     if(key!==roomKey){roomKey=key;buildRoom();lightKey="";}
     const ids=new Set(),dress=dressVibe!==false;
     for(const f of next.items){
-      ids.add(f.id);const key=JSON.stringify([f.kind,f.width_ft,f.length_ft,f.height,f.material_color,f.product,f.bare,f.bed_mode,f.built_in,f.back,NO_BLOB.has(f.kind)||onWall(f),next.palette,dress,dress?next.theme:null]);let m=meshes.get(f.id);
+      const bed=f.host&&next.items.find(i=>i.id===f.host);
+      ids.add(f.id);const key=JSON.stringify([f.kind,f.width_ft,f.length_ft,f.height,f.material_color,f.product,f.bare,f.bed_mode,f.built_in,f.back,NO_BLOB.has(f.kind)||onWall(f),next.palette,dress,dress?next.theme:null,bed&&[bed.width_ft,bed.length_ft]]);let m=meshes.get(f.id);
       if(!m||m.key!==key){if(m)removePiece(m);m={...buildPiece(f,next),key,item:f};meshes.set(f.id,m);}
       m.item=f;
       if(drag?.id!==f.id){m.group.position.set(f.x_ft+f.footW/2,f.elevation,f.y_ft+f.footD/2);m.group.rotation.y=-f.rotation_deg*Math.PI/180;}
     }
     for(const [id,m]of meshes)if(!ids.has(id)){removePiece(m);meshes.delete(id);}
+    seatRiders();
     if(lighting!==lightKey){lightKey=lighting;applyLight();}else updateNightLights();
     if(first){target.set(next.room.lengthFt/2,1,next.room.widthFt/2);preset("room",true,true);if(!options.reduced)assemblyStart=performance.now();}
     else if((before.room.lengthFt!==next.room.lengthFt||before.room.widthFt!==next.room.widthFt)&&!custom&&mode!=="inside")preset(mode,true,true);
@@ -581,10 +634,10 @@ export function createStudioScene(container, options) {
       if(brandMark.complete&&brandMark.naturalWidth)ctx.drawImage(brandMark,out.width-tw-fs*3.9,out.height-fs*2.8,fs*1.8,fs*1.8);
       ctx.fillStyle="#2b4eff";ctx.fillText(text,out.width-tw-fs*1.3,out.height-fs*1.5);guides.visible=true;request();return out.toDataURL("image/png");
     },
-    destroy(){disposed=true;cancelAnimationFrame(raf);resize.disconnect();document.removeEventListener("visibilitychange",visible);
+    destroy(){disposed=true;cancelAnimationFrame(raf);clearTimeout(sharpen);resize.disconnect();document.removeEventListener("visibilitychange",visible);
       for(const [name,fn]of Object.entries(events))canvas.removeEventListener(name,fn);canvas.removeEventListener("wheel",wheel);canvas.removeEventListener("webglcontextlost",onContextLost);
       clearGuides();openingGhost.geometry.dispose();openingGhost.material.dispose();lineMat.dispose();marker.geometry.dispose();ring.geometry.dispose();ring.material.dispose();marker.material.dispose();
-      for(const m of meshes.values())m.blob?.geometry.dispose();clearRoom();floorTextures.forEach(t=>t.dispose());
+      for(const m of meshes.values())removePiece(m);clearRoom();floorTextures.forEach(t=>t.dispose());
       for(const material of [blobMat,bandMat,groundMat,poolMat])material.dispose();kit.dispose();renderer.dispose();renderer.forceContextLoss();canvas.remove();}
   };
 }

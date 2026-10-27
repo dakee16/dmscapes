@@ -89,14 +89,18 @@ export function itemHeight(f: FurnitureItem): number {
 export function bedSurfaceHeight(f: FurnitureItem): number {
   return bedMode(f)==="lofted" ? itemHeight(f)*.78+.195 : isBunkBed(f) ? itemHeight(f)*.3+.195 : itemHeight(f)-.085;
 }
+/** The larger desk, dresser, bed, bunk or shelf a small piece's centre sits on, if any. */
+export function restingHost(f: FurnitureItem, items: FurnitureItem[]): FurnitureItem | undefined {
+  const fp = footprint(f), cx=fp.x+fp.w/2, cy=fp.y+fp.h/2;
+  return items.find(p => p.id!==f.id && ["desk","dresser","bed","bunk","shelf"].includes(modelKind(p)) &&
+    p.width_ft*p.length_ft>f.width_ft*f.length_ft && furnitureContainsPoint(p,{x:cx,y:cy}));
+}
 export function itemElevation(f: FurnitureItem, items: FurnitureItem[]): number {
   if (typeof f.elevation_ft === "number") return f.elevation_ft;
   const k = modelKind(f);
   if (k === "art" || k === "lights") return k === "lights" ? 6.5 : 3.4;
   if (!["lamp","plant","pillow"].includes(k)) return 0;
-  const fp = footprint(f), cx=fp.x+fp.w/2, cy=fp.y+fp.h/2;
-  const host = items.find(p => p.id!==f.id && ["desk","dresser","bed","bunk","shelf"].includes(modelKind(p)) &&
-    p.width_ft*p.length_ft>f.width_ft*f.length_ft && furnitureContainsPoint(p,{x:cx,y:cy}));
+  const host = restingHost(f, items);
   return host ? ["bed","bunk"].includes(modelKind(host)) ? bedSurfaceHeight(host) : itemHeight(host) : 0;
 }
 /** A side of a piece in its own unrotated frame: 0 top, 1 right, 2 bottom, 3 left (in 3D: -z, +x, +z, -x). */

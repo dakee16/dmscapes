@@ -156,6 +156,37 @@ export function createModelKit({onTexture=()=>{}}={}) {
     for(let i=0;i<p.count;i++)p.setZ(i,Math.sin(p.getX(i)/w*Math.PI*2*Math.max(2,w*3))*Math.min(.09,w*.08));
     g.computeVertexNormals();geometries.set(key,g);return g;
   }
+  /** A plump pillow or cushion, w × h × d: a rounded box that swells toward the middle and thins at its edges. */
+  function pillowGeometry(w,h,d){
+    const key=["pillow",w,h,d].join("|");if(geometries.has(key))return geometries.get(key);
+    const g=new RoundedBoxGeometry(w,h,d,5,Math.min(h*.45,w/2-1e-3,d/2-1e-3)),p=g.attributes.position,n=g.attributes.normal,ax=4/(w*w),az=4/(d*d);
+    for(let i=0;i<p.count;i++){
+      // Height scales by s(x, z); the normals follow the same squash (inverse transpose of its Jacobian), so the edges stay seamless.
+      const x=p.getX(i),y=p.getY(i),z=p.getZ(i),k=1-.85*(x*x*ax+z*z*az),s=.6+.4*Math.max(0,k),sx=k>0?-.68*x*ax:0,sz=k>0?-.68*z*az:0;
+      const nx=n.getX(i)-y*sx/s*n.getY(i),ny=n.getY(i)/s,nz=n.getZ(i)-y*sz/s*n.getY(i),l=Math.hypot(nx,ny,nz);
+      p.setY(i,y*s);n.setXYZ(i,nx/l,ny/l,nz/l);
+    }
+    geometries.set(key,g);return g;
+  }
+  /**
+   * A soft sheet (duvet, folded throw), t thick, whose top tw × tl lies flat (centred on the origin, gently
+   * creased by `wrinkle`) and whose extra cloth rolls over a rounded edge and hangs: `side` on both long
+   * sides, `foot` at the +z end.
+   */
+  function drapeGeometry(tw,tl,t,side,foot,wrinkle){
+    const key=["drape",tw,tl,t,side,foot,wrinkle].join("|");if(geometries.has(key))return geometries.get(key);
+    const W=tw+side*2,L=tl+foot,a=tw/2,zf=tl/2,r=.07,arc=r*Math.PI/2;
+    const g=new T.BoxGeometry(W,t,L,Math.max(8,Math.round(W*10)),1,Math.max(8,Math.round(L*7))),p=g.attributes.position;
+    // Overhang o past an edge: [outward, down, bend angle] for the cloth's mid-surface.
+    const bend=o=>o<=0?[0,0,0]:o<arc?[r*Math.sin(o/r),r*(1-Math.cos(o/r)),o/r]:[r,r+o-arc,Math.PI/2];
+    for(let i=0;i<p.count;i++){
+      const x=p.getX(i),y=p.getY(i),z=p.getZ(i)+L/2-tl/2,ox=Math.abs(x)-a,oz=z-zf,[bx,dx,fx]=bend(ox),[bz,dz,fz]=bend(oz),sx=Math.sign(x);
+      const crease=wrinkle*(Math.sin(z*2.1+x*.8)*.65+Math.sin(z*5.3-x*1.7)*.35)*Math.max(0,1-(Math.max(0,ox)+Math.max(0,oz))/.12);
+      // The layer's offset from the mid-surface turns with the bend, so the cloth keeps its thickness as it hangs.
+      p.setXYZ(i,ox>0?sx*(a+bx+Math.sin(fx)*y):x,-dx-dz+crease+Math.cos(fx)*Math.cos(fz)*y,oz>0?zf+bz+Math.sin(fz)*y:z);
+    }
+    g.computeVertexNormals();geometries.set(key,g);return g;
+  }
   /** Leaves as one instanced mesh per green: a leafy cluster inside radius r between heights y0 and y1. */
   function leaves(g,r,y0,y1,count){
     if(!geometries.has("leaf"))geometries.set("leaf",new T.SphereGeometry(1,10,8));
@@ -190,14 +221,12 @@ export function createModelKit({onTexture=()=>{}}={}) {
           box(g,w,.18,d,wood,0,level-.36,0,.04);
           box(g,w*.96,.38,d*.96,mattress,0,level-.08,0,.14,3).name=`mattress-${index}`;
           if(!f.bare){
-            // The duvet covers the lower part and drapes over both long sides and the foot.
+            // The duvet covers the lower part, softly creased, and drapes over both long sides and the foot.
             const len=d*.72,zc=d*.12;
-            box(g,w*.98,.13,len,duvet,0,level+.16,zc,.06,3);
+            add(g,new T.Mesh(drapeGeometry(w*.98,len,.12,.5,.45,.022),duvet),0,level+.165,zc);
             box(g,w*.98,.06,d*.07,fold,0,level+.22,zc-len/2+d*.035,.03);
-            for(const side of [-1,1])box(g,.07,.46,len,duvet,side*(w/2-.05),level-.06,zc,.03).rotation.z=side*.04;
-            box(g,w*.98,.4,.07,duvet,0,level-.04,d/2-.05,.03).rotation.x=-.04;
             const n=w>=3.8?2:1,pw=n>1?w*.42:w*.62,pd=Math.min(d*.16,1.5);
-            for(let i=0;i<n;i++){const p=box(g,pw,.3,pd,pillow,(i-(n-1)/2)*w*.47,level+.27,-d/2+pd/2+.22,.13,3);p.rotation.x=-.32;p.rotation.z=(i-(n-1)/2)*.08;}
+            for(let i=0;i<n;i++){const p=add(g,new T.Mesh(pillowGeometry(pw,.3,pd),pillow),(i-(n-1)/2)*w*.47,level+.3,-d/2+pd/2+.22);p.rotation.x=.24;p.rotation.z=(i-(n-1)/2)*.08;}
           }
         }
         for(const x of [-1,1])for(const z of [-1,1])box(g,.16,h,.16,wood,x*(w/2-.08),h/2,z*(d/2-.08),.03);
@@ -357,6 +386,13 @@ export function createModelKit({onTexture=()=>{}}={}) {
         }break;
       }
       case "blanket":
+        if(f.onBed){
+          // Folded across the foot of the bed it rests on, over the duvet and down both sides, its fold toward the head.
+          const bw=f.onBed.w*.98+.1,fd=Math.max(.8,Math.min(1.3,Math.min(w,d)*.5)),t=.09;
+          add(g,new T.Mesh(drapeGeometry(bw,fd,t,.36,0,.01),cloth),0,t/2+.03,0);
+          box(g,bw,t*1.8,.17,cloth,0,t*.9+.03,-fd/2+.07,.08,3);
+          g.userData.restZ=f.onBed.d/2-fd/2-.3;break;
+        }
         box(g,w,h*.65,d,cloth,0,h*.4,0,.05);box(g,w*.98,h*.25,d*.3,cloth,0,h*.85,-d*.3,.025);
         for(let i=0;i<12;i++)box(g,.02,.025,d*.13,cloth,(i/11-.5)*w,.04,d*.43,.008);break;
       case "desk-mat":box(g,w,.02,d,cloth,0,.015,0,.01);break;
@@ -410,7 +446,19 @@ export function createModelKit({onTexture=()=>{}}={}) {
         box(g,w*.65,.12,d*.7,finish,0,.06,0);box(g,.06,h*.55,.06,finish,0,h*.3,0);oval(g,0,h*.7,0,w*.48,h*.3,.05,ink);
         for(let i=0;i<3;i++){const a=i*Math.PI*2/3;oval(g,Math.cos(a)*w*.18,h*.7+Math.sin(a)*h*.13,.05,w*.19,h*.07,.025,finish);}break;
       case "decor":oval(g,0,h/2,0,w*.4,h/2,d*.4,f.material_color?finish:accent);break;
-      case "pillow":box(g,w,h,d,f.material_color?cloth:accent,0,h/2,0,Math.min(h/2,.15),3);break;
+      case "pillow":{
+        // A pair of plump cushions in two colours, like the plan draws them.
+        const s=Math.max(.85,Math.min(1.35,Math.max(w,d)*.62)),t=Math.max(.28,Math.min(.45,h||.4)),geo=pillowGeometry(s,t,s),one=f.material_color?cloth:accent,two=one===cloth?accent:cloth;
+        if(f.onBed){
+          // On a bed: standing at its head, leaning back on its pillow and facing the foot.
+          for(const i of [0,1]){const c=add(g,new T.Mesh(geo,i?two:one),(i-.5)*s*.92,s*.44+t*.3,0);c.rotation.set(1.12,0,(i-.5)*-.05);}
+          g.userData.restZ=-f.onBed.d/2+.22+Math.min(f.onBed.d*.16,1.5)*.75+s*.2;
+        }else for(const i of [0,1]){
+          // Elsewhere: lying flat, one overlapping the other along the longer side.
+          const off=(i-.5)*s*.62,c=add(g,new T.Mesh(geo,i?two:one),w>=d?off:0,t/2+i*t*.35,w>=d?0:off);c.rotation.y=(i-.5)*.3;
+        }
+        break;
+      }
       default:{
         // Storage: a body under its lid, both soft-edged.
         const lid=Math.min(.08,h*.2),body=Math.max(.008,h-lid-.015);

@@ -8,7 +8,7 @@ import type { FurnitureItem, Product, ProductCategory, SelectedRoom, StyleId, Wa
 import { useExperienceMotion } from "@/components/experience/MotionProvider";
 import { roomThemeFor, styleFor, type RoomTheme } from "@/lib/styles";
 import { footprint, pointInPolygon } from "@/components/canvas/geometry";
-import { backSides, constrainedPosition, itemElevation, itemHeight, modelKind, roomOutline, studioSettings, visibleFurniture } from "@/lib/studio";
+import { backSides, bedSurfaceHeight, constrainedPosition, itemElevation, itemHeight, modelKind, restingHost, roomOutline, studioSettings, visibleFurniture } from "@/lib/studio";
 import { productForFurniture, productVisual } from "@/lib/product-model";
 import { OPENING_DRAG_TYPE, type OpeningControls } from "@/lib/room-editing";
 import s from "./Studio.module.css";
@@ -23,7 +23,7 @@ export interface RoomSceneHandle {exportPNG:(ratio?:number)=>string|null;walk:(i
   preset:(mode:CameraView)=>void;
   /** Back to the default dollhouse framing. */
   fit:()=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;}
-type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;footW:number;footD:number;locked:boolean;bare:boolean;back:number;product?:ReturnType<typeof productVisual>};
+type SceneItem=FurnitureItem&{kind:string;height:number;elevation:number;host?:string;footW:number;footD:number;locked:boolean;bare:boolean;back:number;product?:ReturnType<typeof productVisual>};
 type SceneData={room:SelectedRoom;settings:ReturnType<typeof studioSettings>;outline:ReturnType<typeof roomOutline>;items:SceneItem[];palette:string[];theme:RoomTheme;selectedId:string|null;selectedOpening:number|null;editOpenings:boolean;snap:boolean;interior:{x:number;y:number}};
 type View={readCursor:(x:number,y:number)=>{x:number;y:number}|null;projectCursor:(x:number,y:number)=>{x:number;y:number}|null;update:(data:SceneData)=>void;preset:(mode:CameraView)=>void;fit:()=>void;zoom:(factor:number)=>void;focus:(id:string)=>void;setWalls:(value:string)=>void;setMoveMode:(value:boolean)=>void;setReduced:(value:boolean)=>void;setWalker:(node:SVGGElement|null)=>void;setWalkInput:(input:WalkInput)=>void;exportPNG:(ratio?:number)=>string;destroy:()=>void};
 type SceneModule={createStudioScene:(node:HTMLElement,options:{reduced:boolean;openingDragType:string;previewOpening:(target:number|WallOpening["kind"],x:number,y:number)=>WallOpening|null;onSelectOpening:(index:number|null)=>void;onOpeningChange:(index:number|null,opening:WallOpening)=>void;onReady:()=>void;onError:(message:string)=>void;onMode:(mode:CameraView)=>void;onSelect:(id:string|null)=>void;onMove:(id:string,x:number,y:number,elevation?:number)=>void;constrain:(id:string,x:number,y:number)=>{x:number;y:number}})=>View};
@@ -61,7 +61,9 @@ const RoomScene=forwardRef<RoomSceneHandle,RoomSceneProps>(function RoomScene(pr
   const data:SceneData={room:props.room,outline,settings,interior,palette:styleFor(props.style,college).palette,theme:roomThemeFor(props.style,college),snap:props.snap!==false,
     selectedId:props.selectedId,selectedOpening:props.openingControls?.selected??null,editOpenings:allowed&&!props.readOnly&&!!props.openingControls,items:visible.map(f=>{
       const b=footprint(f),{choice,product,kind}=models.get(f.id)!;
-      return {...f,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||(settings.dressVibe&&DRESSED.has(kind)?undefined:product?.color),kind,back:backs.get(f.id)??0,height:itemHeight(f),elevation:itemElevation(f,props.items),footW:b.w,footD:b.h,locked:!allowed||Boolean(props.readOnly)||props.locked.includes(f.id)};
+      // Throw pillows and a throw blanket on a bed are drawn lined up with it: pillows at its head, the blanket across its foot.
+      const rest=kind==="pillow"||kind==="blanket"?restingHost(f,visible):undefined,bed=rest&&["bed","bunk"].includes(modelKind(rest))?rest:undefined;
+      return {...f,product,bare:f.type==="bed"&&!choice,material_color:f.material_color||(settings.dressVibe&&DRESSED.has(kind)?undefined:product?.color),kind,back:backs.get(f.id)??0,height:itemHeight(f),elevation:bed&&kind==="blanket"?bedSurfaceHeight(bed):itemElevation(f,props.items),host:bed?.id,footW:b.w,footD:b.h,locked:!allowed||Boolean(props.readOnly)||props.locked.includes(f.id)};
     })};
   const latest=useRef(data);latest.current=data;
   useImperativeHandle(ref,()=>({exportPNG:ratio=>access.current?view.current?.exportPNG(ratio)??null:null,walk:input=>view.current?.setWalkInput(input),preset:m=>view.current?.preset(m),fit:()=>view.current?.fit(),zoom:f=>view.current?.zoom(f),focus:id=>view.current?.focus(id)}),[]);
