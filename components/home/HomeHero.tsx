@@ -153,7 +153,7 @@ function Stage({ dims }: { dims: React.ReactNode }) {
         src={src}
         alt=""
         fill
-        sizes={lcp ? "(max-width: 1000px) 100vw, 1000px" : "(max-width: 1000px) 34vw, 330px"}
+        sizes={lcp ? "(max-width: 900px) 100vw, 900px" : "(max-width: 900px) 34vw, 300px"}
         loading="eager"
         fetchPriority={lcp ? "high" : undefined}
         quality={80}

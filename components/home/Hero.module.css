@@ -4,7 +4,7 @@
 
 .hero {
   position: relative;
-  padding: 136px 0 72px;
+  padding: 128px 0 64px;
   overflow: hidden;
 }
 .paper {
@@ -28,22 +28,22 @@
 }
 .chip { margin-bottom: 18px; }
 .narrow { display: none; }
-.h1 { margin: 20px 0 0; font-weight: 400; }
-.l1 { display: block; font-size: clamp(56px, 7.5vw, 108px); line-height: 0.94; }
-.l2 { display: block; font-size: clamp(52px, 7.2vw, 104px); line-height: 1.02; }
+.h1 { margin: 16px 0 0; font-weight: 400; }
+.l1 { display: block; font-size: clamp(48px, 6.3vw, 90px); line-height: 0.94; }
+.l2 { display: block; font-size: clamp(45px, 6.05vw, 86px); line-height: 1.02; }
 .blue { color: var(--ds-blue); }
-.lede { margin-top: 26px; max-width: 600px; font-size: clamp(17px, 1.4vw, 20px); font-weight: 450; }
+.lede { margin-top: 22px; max-width: 540px; font-size: clamp(16px, 1.25vw, 18px); font-weight: 450; }
 
 /* Search (the live HomeSearch: CollegeSearch inside one pill) */
-.searchWrap { position: relative; margin-top: 34px; width: min(588px, 100%); text-align: left; }
+.searchWrap { position: relative; margin-top: 28px; width: min(540px, 100%); text-align: left; }
 .search {
   position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
-  height: 68px;
+  height: 62px;
   box-sizing: border-box;
-  padding: 8px;
+  padding: 7px;
   border-radius: 999px;
   background: var(--ds-search-bg);
   box-shadow: var(--ds-search-shadow);
@@ -52,13 +52,13 @@
 .search:focus-within { background: var(--ds-search-bg-focus); box-shadow: var(--ds-search-shadow-focus); }
 .searchField { flex: 1; min-width: 0; }
 .searchField :global(input) {
-  height: 52px !important;
+  height: 48px !important;
   padding: 0 12px 0 46px !important;
   border: 0 !important;
   border-radius: 999px !important;
   background: transparent !important;
   box-shadow: none !important;
-  font: 500 17px var(--ds-sans) !important;
+  font: 500 16px var(--ds-sans) !important;
   color: var(--ds-ink) !important;
 }
 /* The pill shows focus, so the input drops the site-wide focus outline. */
@@ -75,7 +75,7 @@
   box-shadow: 0 24px 50px rgba(22, 22, 29, 0.2), 0 0 0 1px rgba(22, 22, 29, 0.06) !important;
 }
 .searchField :global(li button) { font-family: var(--ds-sans); }
-.search > button { flex: none; min-height: 52px; }
+.search > button { flex: none; min-height: 48px; font-size: 16px; }
 
 .proof {
   display: flex;
@@ -83,8 +83,8 @@
   justify-content: center;
   align-items: center;
   gap: 8px 14px;
-  margin: 16px 0 0;
-  font-size: 15px;
+  margin: 14px 0 0;
+  font-size: 14px;
   color: var(--ds-muted);
 }
 .proof strong { color: var(--ds-ink); font-weight: 800; }
@@ -95,7 +95,7 @@
 .note { font: 600 12px/1.4 var(--ds-mono); letter-spacing: 0.04em; color: var(--ds-caption); }
 
 /* ---------- Galaxy band: blue into yellow into purple, with our props drifting through ---------- */
-.stageZone { position: relative; margin-top: 70px; }
+.stageZone { position: relative; margin-top: 60px; }
 .gx {
   position: absolute;
   left: 0;
@@ -164,7 +164,7 @@
 }
 
 /* ---------- The stage: Jake and Cooper's room call ---------- */
-.stageWrap { position: relative; z-index: 2; width: min(1000px, 100% - 2 * var(--ds-gutter)); margin: 0 auto; }
+.stageWrap { position: relative; z-index: 2; width: min(900px, 100% - 2 * var(--ds-gutter)); margin: 0 auto; }
 .island {
   position: absolute;
   left: 50%;

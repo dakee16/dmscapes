@@ -53,6 +53,10 @@
 .header[data-scrolled="true"] .plate {
   box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08), 0 18px 34px -16px rgba(10, 16, 44, 0.32);
 }
+/* Homepage: no card at the top of the page; it fades in once the page scrolls. */
+.header[data-bare]:not([data-scrolled="true"]) .plate { background: transparent; box-shadow: none; }
+.header[data-bare] .ruler { transition: opacity 0.25s var(--ds-ease); }
+.header[data-bare]:not([data-scrolled="true"]) .ruler { opacity: 0; }
 
 /* The ruler is clipped to the plate's corners here rather than on the plate,
    so the More panel and the account popovers can still drop out of it. */

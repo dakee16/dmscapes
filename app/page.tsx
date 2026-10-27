@@ -79,7 +79,7 @@ export default function Home() {
           softwareApplicationJsonLd(),
         ]}
       />
-      <Nav overlay />
+      <Nav overlay cardOnScroll />
       <main id="page-content" tabIndex={-1}>
         <HomeHero schoolCount={SCHOOL_COUNT} hallCount={HALL_COUNT} />
         <HomeFlow rail={RAIL}>

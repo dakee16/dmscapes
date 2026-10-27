@@ -153,10 +153,13 @@ const RULER_NUMBERS = Array.from({ length: 14 }, (_, i) => i + 1);
 
 export default function Nav({
   overlay = false,
+  cardOnScroll = false,
   tone = "light",
 }: {
   /** Float over the page's first section (homepage hero) until scrolled. */
   overlay?: boolean;
+  /** No card or ruler at the top of the page; they appear once it scrolls (homepage). */
+  cardOnScroll?: boolean;
   /** "dark" forces the dark tone; otherwise a dark ground switches to it. */
   tone?: "light" | "dark";
 }) {
@@ -295,6 +298,7 @@ export default function Nav({
       ref={root}
       className={`ds ds-site-nav ${s.header}`}
       data-overlay={overlay}
+      data-bare={cardOnScroll || undefined}
       data-tone={dark ? "dark" : "light"}
       data-scrolled={scrolled || mobileOpen}
       data-open={mobileOpen}
