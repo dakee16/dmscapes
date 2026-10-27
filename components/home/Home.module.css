@@ -35,7 +35,8 @@
 .faces .av + .av { margin-left: -8px; }
 
 /* ---------- The flow ---------- */
-.flow { position: relative; background: var(--ds-paper); }
+/* clip, not hidden: the headline reveal slides lines sideways, and sticky pins still work */
+.flow { position: relative; overflow-x: clip; background: var(--ds-paper); }
 .flow[data-js] > section[data-bg] { background: none; }
 .sprog {
   position: fixed;

@@ -75,7 +75,7 @@ export default function StudioSection() {
               <li key={f.h} data-on={feat === i || undefined}>
                 <h3>
                   <button type="button" className={css.sfBtn} aria-expanded={feat === i} aria-controls={`studio-feat-${i}`} onClick={() => pick(i)}>
-                    <span className={css.sfN}>0{i + 1}</span>
+                    <span className={css.sfN} aria-hidden="true">0{i + 1}</span>
                     <span>{f.h}</span>
                     <span className={css.sfPm} aria-hidden="true" />
                   </button>

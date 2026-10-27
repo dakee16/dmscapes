@@ -81,7 +81,7 @@ export default function ProblemSection() {
             {QUESTIONS.map((r, i) => (
               <li key={r.q} data-on={step === i || undefined}>
                 <button type="button" className={css.qBtn} aria-pressed={step === i} onClick={() => pick(i)}>
-                  <span className={css.qn}>0{i + 1}</span>
+                  <span className={css.qn} aria-hidden="true">0{i + 1}</span>
                   <span className={css.qq}>{r.q}</span>
                   <span className={css.qa}>{r.a}</span>
                 </button>
