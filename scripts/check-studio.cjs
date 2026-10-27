@@ -84,6 +84,21 @@ store.setState({lockedItemIds:[],furniture:[{...item,movable:false}]});
 store.getState().setItemRotation("desk",23);
 assert.equal(store.getState().furniture[0].rotation_deg,0,"Fixed fixtures cannot rotate");
 
+// A poster pushed end-first into another wall turns to hang flat on it; one slid into a corner along its own wall stays put.
+const poster={id:"poster",type:"wall_decor",label:"Poster",x_ft:5,y_ft:11.85,width_ft:3,length_ft:.15,rotation_deg:0,movable:true,built_in:false};
+store.setState({room,furniture:[poster],lockedItemIds:[]});
+store.getState().moveItem("poster",12,11.85);
+assert.deepEqual(store.getState().furniture[0],{...poster,x_ft:12},"Sliding into the corner along its own wall doesn't turn it");
+store.getState().moveItem("poster",12,5);
+const hung=store.getState().furniture[0],hungBox=geometry.footprint(hung);
+assert.equal(hung.rotation_deg%180,90,"Pushed end-first into the right wall, it turns to run along it");
+assert.deepEqual([hungBox.x+hungBox.w,Math.round(hungBox.w*100)/100,Math.round((hungBox.y+hungBox.h/2)*100)/100],[15,.15,5.08],"It hangs flush on that wall, centred where it met it");
+const hungBack=studio.backSides([hung],15,12).get("poster"),hungR=hung.rotation_deg*Math.PI/180,hungY=hungBack===0?-1:1;
+assert(hungBack%2===0&&Math.round(-hungY*Math.sin(hungR))===1,"Its back is a long side, against the right wall");
+const lamp2={id:"lamp2",type:"floor_lamp",label:"Lamp",x_ft:13.5,y_ft:5,width_ft:1.5,length_ft:1,rotation_deg:0,movable:true,built_in:false};
+store.setState({furniture:[lamp2]});store.getState().moveItem("lamp2",13.5,6);
+assert.equal(store.getState().furniture[0].rotation_deg,0,"Only hanging pieces turn onto a wall");
+
 const diagonalRoom={...room,lengthFt:12,widthFt:12,outline:{points:[{x:0,y:0},{x:12,y:0},{x:12,y:12}],openings:[],closets:[]}};
 const diagonal={...item,width_ft:6,length_ft:1.5,rotation_deg:45};
 const bounds=geometry.footprint(diagonal);
