@@ -242,6 +242,18 @@
   box-decoration-break: clone;
 }
 
+/* Details open and close smoothly where the browser can animate to auto
+   height (Chrome, Edge); elsewhere they snap open as before. */
+@supports selector(::details-content) {
+  details { interpolate-size: allow-keywords; }
+  details::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition: block-size 0.3s var(--ds-ease), content-visibility 0.3s allow-discrete;
+  }
+  details[open]::details-content { block-size: auto; }
+}
+
 /* ---------- Brand details ---------- */
 .ds-tape {
   background-color: var(--ds-tape);
@@ -417,8 +429,10 @@
 .dm-app[data-motion="paused"] [data-headline="load"] .ds-line > span { animation: none !important; }
 @media (prefers-reduced-motion: reduce) {
   .ds-link:hover { animation: none; }
+  details::details-content { transition: none; }
 }
 .dm-app[data-motion="paused"] .ds-link:hover { animation: none; }
+.dm-app[data-motion="paused"] details::details-content { transition: none; }
 
 /* Reduced motion: final states, short fades, nothing loops. The site-wide
    "pause motion" toggle (MotionProvider) maps onto the same rules. */
