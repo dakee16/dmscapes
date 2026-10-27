@@ -209,6 +209,22 @@
 }
 .ds-link:hover { color: var(--ds-blue); }
 
+/* The sliding selected pill (components/ds/ActivePill.tsx) sits behind the
+   control's label: the group needs isolation: isolate and the selected control
+   no background of its own. Chips with their own backgrounds lift it over them
+   with .ds-active-pill--over and wrap their label in .ds-pill-label. */
+.ds-active-pill {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--ds-ink);
+  pointer-events: none;
+  transition: background-color 0.25s;
+}
+.ds-active-pill--over { z-index: 1; }
+.ds-pill-label { position: relative; z-index: 2; }
+
 /* ---------- Brand details ---------- */
 .ds-tape {
   background-color: var(--ds-tape);

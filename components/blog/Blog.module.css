@@ -36,8 +36,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  isolation: isolate;
 }
 .filter {
+  position: relative;
   min-height: 44px;
   padding: 0 16px;
   border: 1.5px solid rgba(22, 22, 29, 0.2);
@@ -52,7 +54,6 @@
 .filter[aria-pressed="true"] {
   padding: 0 18px;
   border-color: var(--ds-ink);
-  background: var(--ds-ink);
   color: #fff;
   font-weight: 800;
 }

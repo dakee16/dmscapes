@@ -97,8 +97,9 @@
   box-shadow: 0 0 0 1.5px rgba(22, 22, 29, 0.14);
 }
 .filter input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: 450 16px var(--ds-sans); color: var(--ds-ink); }
-.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; isolation: isolate; }
 .chips button {
+  position: relative;
   min-height: 38px;
   padding: 0 14px;
   border: 0;
@@ -109,7 +110,7 @@
   color: var(--ds-ink);
   cursor: pointer;
 }
-.chips button[aria-pressed="true"] { background: var(--ds-ink); color: #fff; box-shadow: none; }
+.chips button[aria-pressed="true"] { color: #fff; box-shadow: none; }
 .scaleNote {
   margin-left: auto;
   font-family: var(--ds-mono);

@@ -22,6 +22,7 @@ import RoomScene, {type RoomSceneHandle,type CameraView} from "./RoomScene";
 import WalkIn from "./WalkIn";
 import { ItemInspector, RoomDetails, StyleDetails } from "./WorkspacePanels";
 import { ChevronLeft, CloseIcon, LowerIcon, PlusIcon, RaiseIcon } from "@/components/studio-ui/icons";
+import ActivePill from "@/components/ds/ActivePill";
 import s from "./Studio.module.css";
 
 const RoomDrawCanvas=dynamic(()=>import("@/components/planner/RoomDrawCanvas"),{ssr:false,loading:()=> <BrandLoader size="panel" label="Opening room measurements…"/>});
@@ -139,7 +140,7 @@ export default function WorkspaceStudio({canvas,get2DPng,focus2D,shopping,produc
       if(e.key==="Escape"){setMobileOpen(false);setMoveMode(false);setPanel("shop");}}}>
     <header className={s.header}>
       <div className={s.titleBlock}><p className={s.eyebrow}>Your room / Make it yours</p><p>{subtitle}</p></div>
-      <div className={s.viewSwitch} role="group" aria-label="Planner view"><button type="button" aria-pressed={view==="2d"} onClick={()=>{setView("2d");setMoveMode(false);}}>2D</button><button type="button" aria-pressed={view==="3d"} onClick={enter3D} aria-label={allowed3D?"3D":"3D, a Pro feature"}>3D<span className={s.proTag} aria-hidden="true">Pro</span></button></div>
+      <div className={s.viewSwitch} role="group" aria-label="Planner view"><button type="button" aria-pressed={view==="2d"} onClick={()=>{setView("2d");setMoveMode(false);}}>{view==="2d"&&<ActivePill id={"workspace-view"}/>}2D</button><button type="button" aria-pressed={view==="3d"} onClick={enter3D} aria-label={allowed3D?"3D":"3D, a Pro feature"}>{view==="3d"&&<ActivePill id={"workspace-view"} className={s.pillBlue}/>}3D<span className={s.proTag} aria-hidden="true">Pro</span></button></div>
       <div className={s.actions}><button type="button" className={s.backButton} onClick={()=>open("shop")}>Shopping list · ${total.toFixed(2)}</button><ActionBar exportsOnly products={products} getPng={()=>view==="3d"?scene.current?.exportPNG()??null:get2DPng()} onShop={()=>open("shop")} shopOpen={mobileOpen&&activePanel==="shop"}/></div>
     </header>
     {extras&&<div className={s.extras}>{extras}</div>}

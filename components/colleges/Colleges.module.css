@@ -53,8 +53,10 @@
   border-radius: 999px;
   background: #fff;
   box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.1);
+  isolation: isolate;
 }
 .toggle button {
+  position: relative;
   min-height: 36px;
   padding: 0 16px;
   border: 0;
@@ -64,7 +66,7 @@
   color: var(--ds-ink);
   cursor: pointer;
 }
-.toggle button[aria-pressed="true"] { background: var(--ds-ink); color: #fff; }
+.toggle button[aria-pressed="true"] { color: #fff; }
 
 .tabs {
   display: grid;

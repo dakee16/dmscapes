@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import PlanCta from "@/components/site/PlanCta";
+import ActivePill from "@/components/ds/ActivePill";
 import { ArrowRight } from "@/components/ds/Icons";
 import PostCard from "./PostCard";
 import PostCover from "./PostCover";
@@ -55,7 +56,8 @@ export default function BlogBrowser({
               aria-pressed={topic === t.id}
               onClick={() => choose(t.id)}
             >
-              {t.label}
+              {topic === t.id && <ActivePill id="blog-topic" className="ds-active-pill--over" />}
+              <span className="ds-pill-label">{t.label}</span>
             </button>
           ))}
         </div>

@@ -78,6 +78,7 @@
   color: var(--ds-caption);
 }
 .index ul {
+  isolation: isolate;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -101,7 +102,7 @@
   transition: background-color 0.2s, color 0.2s;
 }
 .index a:hover { background: rgba(22, 22, 29, 0.06); }
-.index a[aria-current="true"] { background: var(--ds-ink); color: #fff; font-weight: 800; }
+.index a[aria-current="true"] { color: #fff; font-weight: 800; }
 .index a[data-empty] { color: #9c9aa8; cursor: default; }
 .index a[data-empty]:hover { background: none; }
 .indexCount { font-variant-numeric: tabular-nums; color: #6b6b76; }

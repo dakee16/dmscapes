@@ -2,6 +2,7 @@
 
 import { useId, useMemo, useState } from "react";
 import Link from "next/link";
+import ActivePill from "@/components/ds/ActivePill";
 import { ArrowRight } from "@/components/ds/Icons";
 import css from "./College.module.css";
 
@@ -72,7 +73,8 @@ export default function HallDirectory({ halls, families }: { halls: HallCard[]; 
           <div className={css.chips} role="group" aria-label="Room type">
             {["All", ...families].map((f) => (
               <button key={f} type="button" aria-pressed={family === f} onClick={() => setFamily(f)}>
-                {f === "Suite" ? "Suite & apt" : f}
+                {family === f && <ActivePill id="hall-room-type" className="ds-active-pill--over" />}
+                <span className="ds-pill-label">{f === "Suite" ? "Suite & apt" : f}</span>
               </button>
             ))}
           </div>
