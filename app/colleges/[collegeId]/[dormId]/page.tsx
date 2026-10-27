@@ -333,6 +333,7 @@ export default async function DormPage(props: {
                         title={`${roomName(r)} at ${dorm.name}, ${ft(fit.lengthFt)} by ${ft(fit.widthFt)} feet, with a bed, desk and dresser placed where a typical layout puts them`}
                         furnitureClassName={css.furn}
                         className={css.plan}
+                        draw=""
                       />
                     ) : (
                       <div className={css.noPlan}>

@@ -15,6 +15,7 @@ import { usePathname } from "next/navigation";
  *   data-grow         a to-scale rectangle grows from its top-left corner
  *   data-bar          a bar grows from its baseline
  *   data-pop          a badge pops in
+ *   data-plan         a floor plan's walls draw, then its furniture fades in
  *   data-count        the number counts up once (1.2s, tabular figures)
  *
  * Value "" animates when 20% of the element is in view; "load" animates on
@@ -30,6 +31,7 @@ const KINDS = [
   "data-grow",
   "data-bar",
   "data-pop",
+  "data-plan",
 ] as const;
 // "armed" elements are included on purpose: this effect re-runs on every route
 // change, and an element armed by the previous run (which can happen when the

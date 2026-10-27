@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { FittedRoom } from "@/lib/room-preview";
 import { ft } from "@/lib/room-preview";
 import { footprint } from "@/components/canvas/geometry";
@@ -9,7 +10,8 @@ const U = 24; // viewBox units per foot
  * A room drawn to scale on plan paper: walls, the door swing, the window and
  * the built-in furniture where the planner's starting layout puts it.
  * Rendered on the server. Its on-screen size is length × --ppf, so several
- * plans with the same --ppf share one scale.
+ * plans with the same --ppf share one scale. With `draw`, the walls draw in
+ * when the plan scrolls into view ("load": on first paint; RevealObserver).
  */
 export default function ScalePlan({
   room,
@@ -17,6 +19,7 @@ export default function ScalePlan({
   className = "",
   furnitureClassName = "",
   uid,
+  draw,
 }: {
   /** unique per page, for the grid pattern id */
   uid: string;
@@ -25,6 +28,7 @@ export default function ScalePlan({
   className?: string;
   /** hook for a "show standard furniture" toggle */
   furnitureClassName?: string;
+  draw?: "" | "load";
 }) {
   const { lengthFt: L, widthFt: W, furniture, isCorridor } = room;
   const padT = 34;
@@ -36,6 +40,7 @@ export default function ScalePlan({
   const Y = (f: number) => padT + f * U;
   const door = Math.min(3, W * 0.4) * U;
   const id = `plan-grid-${uid}`;
+  const len = (n: number) => ({ "--len": n }) as CSSProperties;
 
   return (
     <svg
@@ -43,6 +48,7 @@ export default function ScalePlan({
       role="img"
       aria-label={title}
       className={className}
+      data-plan={draw}
       style={{ width: `calc(${vw / U} * var(--ppf, 20) * 1px)`, maxWidth: "100%", height: "auto", display: "block" }}
     >
       <defs>
@@ -53,14 +59,16 @@ export default function ScalePlan({
 
       {/* dimension lines */}
       <g stroke="var(--ds-ink)" strokeWidth="1.5" fill="none">
-        <line x1={X(0)} y1={12} x2={X(L)} y2={12} />
-        <line x1={X(0)} y1={6} x2={X(0)} y2={18} />
-        <line x1={X(L)} y1={6} x2={X(L)} y2={18} />
-        <line x1={X(L) + 20} y1={Y(0)} x2={X(L) + 20} y2={Y(W)} />
-        <line x1={X(L) + 14} y1={Y(0)} x2={X(L) + 26} y2={Y(0)} />
-        <line x1={X(L) + 14} y1={Y(W)} x2={X(L) + 26} y2={Y(W)} />
+        <line x1={X(0)} y1={12} x2={X(L)} y2={12} className="ds-plan-line" style={len(L * U)} />
+        <line x1={X(L) + 20} y1={Y(0)} x2={X(L) + 20} y2={Y(W)} className="ds-plan-line" style={len(W * U)} />
+        <g className="ds-plan-fill">
+          <line x1={X(0)} y1={6} x2={X(0)} y2={18} />
+          <line x1={X(L)} y1={6} x2={X(L)} y2={18} />
+          <line x1={X(L) + 14} y1={Y(0)} x2={X(L) + 26} y2={Y(0)} />
+          <line x1={X(L) + 14} y1={Y(W)} x2={X(L) + 26} y2={Y(W)} />
+        </g>
       </g>
-      <g fontFamily="var(--ds-sans)" fontWeight="800" fontSize="15" fill="var(--ds-ink)" textAnchor="middle">
+      <g className="ds-plan-fill" fontFamily="var(--ds-sans)" fontWeight="800" fontSize="15" fill="var(--ds-ink)" textAnchor="middle">
         <rect x={X(L / 2) - 34} y={2} width={68} height={20} fill="var(--ds-card-bg, #fff)" />
         <text x={X(L / 2)} y={17}>{ft(L)} ft</text>
         <g transform={`translate(${X(L) + 20} ${Y(W / 2)}) rotate(90)`}>
@@ -73,82 +81,97 @@ export default function ScalePlan({
       <rect x={X(0)} y={Y(0)} width={L * U} height={W * U} fill="#fff" />
       <rect x={X(0)} y={Y(0)} width={L * U} height={W * U} fill={`url(#${id})`} />
 
-      {/* furniture */}
-      <g className={furnitureClassName}>
-        {furniture.map((f) => {
-          const fp = footprint(f);
-          const w = f.width_ft * U;
-          const h = f.length_ft * U;
-          const cx = X(fp.x + fp.w / 2);
-          const cy = Y(fp.y + fp.h / 2);
-          const label = LABELS[f.type];
-          const vertical = fp.h > fp.w;
-          return (
-            <g key={f.id}>
-              <rect
-                x={cx - w / 2}
-                y={cy - h / 2}
-                width={w}
-                height={h}
-                rx={f.type === "desk_chair" ? 6 : 2}
-                transform={`rotate(${f.rotation_deg} ${cx} ${cy})`}
-                fill="#EEF1FD"
-                stroke="var(--ds-blue)"
-                strokeWidth="1.6"
-              />
-              {f.type === "bed" && (
+      {/* furniture (the outer group fades in; the inner one is the toggle's) */}
+      <g className="ds-plan-fill">
+        <g className={furnitureClassName}>
+          {furniture.map((f) => {
+            const fp = footprint(f);
+            const w = f.width_ft * U;
+            const h = f.length_ft * U;
+            const cx = X(fp.x + fp.w / 2);
+            const cy = Y(fp.y + fp.h / 2);
+            const label = LABELS[f.type];
+            const vertical = fp.h > fp.w;
+            return (
+              <g key={f.id}>
                 <rect
-                  x={cx - w / 2 + w * 0.12}
-                  y={cy - h / 2 + 5}
-                  width={w * 0.76}
-                  height={Math.min(18, h * 0.16)}
-                  rx={4}
+                  x={cx - w / 2}
+                  y={cy - h / 2}
+                  width={w}
+                  height={h}
+                  rx={f.type === "desk_chair" ? 6 : 2}
                   transform={`rotate(${f.rotation_deg} ${cx} ${cy})`}
-                  fill="#fff"
+                  fill="#EEF1FD"
                   stroke="var(--ds-blue)"
-                  strokeWidth="1.2"
+                  strokeWidth="1.6"
                 />
-              )}
-              {label && Math.max(fp.w, fp.h) * U > 44 && (
-                <text
-                  x={cx}
-                  y={cy}
-                  transform={vertical ? `rotate(-90 ${cx} ${cy})` : undefined}
-                  textAnchor="middle"
-                  dominantBaseline="central"
-                  fontFamily="var(--ds-mono)"
-                  fontWeight="700"
-                  fontSize="9"
-                  letterSpacing="0.8"
-                  fill="var(--ds-blue)"
-                >
-                  {label.toUpperCase()}
-                </text>
-              )}
-            </g>
-          );
-        })}
+                {f.type === "bed" && (
+                  <rect
+                    x={cx - w / 2 + w * 0.12}
+                    y={cy - h / 2 + 5}
+                    width={w * 0.76}
+                    height={Math.min(18, h * 0.16)}
+                    rx={4}
+                    transform={`rotate(${f.rotation_deg} ${cx} ${cy})`}
+                    fill="#fff"
+                    stroke="var(--ds-blue)"
+                    strokeWidth="1.2"
+                  />
+                )}
+                {label && Math.max(fp.w, fp.h) * U > 44 && (
+                  <text
+                    x={cx}
+                    y={cy}
+                    transform={vertical ? `rotate(-90 ${cx} ${cy})` : undefined}
+                    textAnchor="middle"
+                    dominantBaseline="central"
+                    fontFamily="var(--ds-mono)"
+                    fontWeight="700"
+                    fontSize="9"
+                    letterSpacing="0.8"
+                    fill="var(--ds-blue)"
+                  >
+                    {label.toUpperCase()}
+                  </text>
+                )}
+              </g>
+            );
+          })}
+        </g>
       </g>
 
       {/* walls */}
-      <rect x={X(0)} y={Y(0)} width={L * U} height={W * U} fill="none" stroke="var(--ds-ink)" strokeWidth="5" />
-
-      {/* door: bottom of the left wall (corridor: left end), as the templates are authored */}
-      <line x1={X(0)} y1={Y(W) - door} x2={X(0)} y2={Y(W)} stroke="#fff" strokeWidth="7" />
-      <path
-        d={`M ${X(0)} ${Y(W) - door} A ${door} ${door} 0 0 1 ${X(0) + door} ${Y(W)}`}
+      <rect
+        x={X(0)}
+        y={Y(0)}
+        width={L * U}
+        height={W * U}
         fill="none"
-        stroke="#9AA3C7"
-        strokeWidth="1.4"
-        strokeDasharray="4 4"
+        stroke="var(--ds-ink)"
+        strokeWidth="5"
+        strokeLinecap="square"
+        className="ds-plan-line"
+        style={len(2 * (L + W) * U)}
       />
 
-      {/* window */}
-      {isCorridor ? (
-        <line x1={X(L * 0.35)} y1={Y(0)} x2={X(L * 0.65)} y2={Y(0)} stroke="var(--ds-blue)" strokeWidth="5" />
-      ) : (
-        <line x1={X(L)} y1={Y(W * 0.3)} x2={X(L)} y2={Y(W * 0.7)} stroke="var(--ds-blue)" strokeWidth="5" />
-      )}
+      <g className="ds-plan-fill">
+        {/* door: bottom of the left wall (corridor: left end), as the templates are authored */}
+        <line x1={X(0)} y1={Y(W) - door} x2={X(0)} y2={Y(W)} stroke="#fff" strokeWidth="7" />
+        <path
+          d={`M ${X(0)} ${Y(W) - door} A ${door} ${door} 0 0 1 ${X(0) + door} ${Y(W)}`}
+          fill="none"
+          stroke="#9AA3C7"
+          strokeWidth="1.4"
+          strokeDasharray="4 4"
+        />
+
+        {/* window */}
+        {isCorridor ? (
+          <line x1={X(L * 0.35)} y1={Y(0)} x2={X(L * 0.65)} y2={Y(0)} stroke="var(--ds-blue)" strokeWidth="5" />
+        ) : (
+          <line x1={X(L)} y1={Y(W * 0.3)} x2={X(L)} y2={Y(W * 0.7)} stroke="var(--ds-blue)" strokeWidth="5" />
+        )}
+      </g>
     </svg>
   );
 }

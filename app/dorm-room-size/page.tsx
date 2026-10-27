@@ -158,6 +158,7 @@ export default function DormRoomSizePage() {
           <figure className={css.heroPlan}>
             <ScalePlan
               uid="hero"
+              draw="load"
               room={typical[1].fit}
               title={`A typical double dorm room, ${ft(double.lengthFt)} by ${ft(double.widthFt)} feet, with two beds, desks and dressers`}
               className={css.plan}
@@ -208,6 +209,7 @@ export default function DormRoomSizePage() {
                 <div className={css.planWrap}>
                   <ScalePlan
                     uid={`type-${t.occupants}`}
+                    draw=""
                     room={fit}
                     title={`A typical ${NAME[t.occupants].toLowerCase()} dorm room, ${ft(t.lengthFt)} by ${ft(t.widthFt)} feet, with its furniture placed where a typical layout puts it`}
                     className={css.plan}
