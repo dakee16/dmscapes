@@ -7,6 +7,7 @@ import { analyticsAllowed, clearAnalyticsStorage, CONSENT_EVENT, resolveRegion }
 // NEXT_PUBLIC_POSTHOG_KEY is set (owner adds their own key).
 export type AnalyticsEvent =
   | "site_search_opened"
+  | "ai_ask_clicked"
   | "site_search_result"
   | "flow_started"
   | "college_selected"
