@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import PlanCta from "@/components/site/PlanCta";
-import { COOKIE_CONSENT_KEY } from "@/components/site/CookieConsent";
+import { CONSENT_EVENT, COOKIE_CONSENT_KEY } from "@/lib/consent";
 
 /**
  * Slim, understated sticky "Plan my room" bar for the homepage on smaller
@@ -41,11 +41,11 @@ export default function StickyMobileCta() {
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     // The cookie banner dispatches this the moment a choice is made.
-    window.addEventListener("dormscape:cookie-consent", update);
+    window.addEventListener(CONSENT_EVENT, update);
     return () => {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
-      window.removeEventListener("dormscape:cookie-consent", update);
+      window.removeEventListener(CONSENT_EVENT, update);
     };
   }, []);
 
