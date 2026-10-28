@@ -9,7 +9,11 @@ import { constrainedPosition, FLOOR_FINISHES, itemElevation, itemHeight, modelKi
 import { OPENING_DRAG_TYPE, type OpeningControls } from "@/lib/room-editing";
 import { useWorkspacePeople } from "@/components/workspace/WorkspaceContext";
 import { ArrowUpRight } from "@/components/ds/Icons";
+import BED_RULE_FLAGS from "@/lib/bed-rule-flags.json";
 import s from "@/components/workspace/Panels.module.css";
+
+// The school's published loft/bunk answer (lib/bed-rules, slimmed to lib/bed-rule-flags.json for the client).
+const RULE_WORD: Record<string, string> = { yes: "allowed", no: "not allowed", some: "in some halls", unknown: "not published" };
 
 export function NumberField({label,value,min=0,max=60,step=.1,disabled=false,onCommit}:{label:string;value:number;min?:number;max?:number;step?:number;disabled?:boolean;onCommit:(n:number)=>void|boolean}){
   return <label className={s.field}>{label}<input key={value} aria-label={label} type="number" inputMode="decimal" step={step} min={min} max={max} defaultValue={Math.round(value*100)/100} disabled={disabled}
@@ -20,6 +24,8 @@ export function NumberField({label,value,min=0,max=60,step=.1,disabled=false,onC
 export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode,moveMode,issues,view="3d"}:{item:FurnitureItem;items:FurnitureItem[];room:SelectedRoom;product?:Product;onFocus:()=>void;onShop:()=>void;onMoveMode:()=>void;moveMode:boolean;issues:string[];view?:"2d"|"3d"}){
   const [removeConfirm,setRemoveConfirm]=useState(false);
   const planning=usePlannerStore(s=>s.planning);
+  const college=usePlannerStore(s=>s.college);
+  const rule=college?.id?(BED_RULE_FLAGS as Record<string,string[]>)[college.id]:undefined;
   const bed=bedMetrics(item);
   const purchase=purchaseForPiece(item,product?[product]:[]),assignment=purchase?planning.productSupply[purchase.id]:undefined;
   function assign(patch:Partial<{supply:"school"|"owned"|"buy";assignedTo:string}>){usePlannerStore.setState(state=>assignOwnership(state.furniture??[],state.planning,product?[product]:[],{itemId:item.id},patch));}
@@ -40,7 +46,7 @@ export function ItemInspector({item,items,room,product,onFocus,onShop,onMoveMode
     <p className={s.eyebrow}>{item.built_in?"Dorm-provided furniture":"Your room / Selected item"}</p><h2>{item.label}</h2>
     <label className={s.field}>Piece name<input key={item.label} defaultValue={item.label} maxLength={80} onBlur={e=>{const label=e.target.value.trim();if(label)st.updateInventoryItem(item.id,{label});else e.target.value=item.label;}}/></label>
     <p className={s.muted}>{item.dimensions_source==="measured"?"Your measured dimensions":item.dimensions_source==="product"?"Product dimensions; confirm the selected variant":"Generic dimensions; measure your actual piece"} · {item.width_ft} × {item.length_ft} ft</p>
-    {bed&&<div className={s.bedModes}><h3>Bed configuration</h3><div className={s.finishGrid}>{Object.entries(BED_MODES).map(([mode,value])=><button key={mode} disabled={locked} aria-pressed={bedMode(item)===mode} onClick={()=>{st.updateInventoryItem(item.id,{height_ft:value.height,bed_mode:mode as BedMode,type:"bed"});}}>{value.label}<small>{value.capacity===2?"2 sleepers":"1 sleeper"}</small></button>)}</div><p className={s.muted}>Approx. {bed.underside.toFixed(1)} ft below the bed · {Math.max(0,studioSettings(room.studio).ceilingFt-bed.mattress-itemElevation(item,items)).toFixed(1)} ft above the top mattress</p>{bed.mode!=="standard"&&<label className={s.confirmLabel}><input type="checkbox" checked={!!item.loft_confirmed} onChange={e=>st.updateInventoryItem(item.id,{loft_confirmed:e.target.checked})}/>I have confirmed this bed setup and required equipment with housing.</label>}</div>}
+    {bed&&<div className={s.bedModes}><h3>Bed configuration</h3><div className={s.finishGrid}>{Object.entries(BED_MODES).map(([mode,value])=><button key={mode} disabled={locked} aria-pressed={bedMode(item)===mode} onClick={()=>{st.updateInventoryItem(item.id,{height_ft:value.height,bed_mode:mode as BedMode,type:"bed"});}}>{value.label}<small>{value.capacity===2?"2 sleepers":"1 sleeper"}</small></button>)}</div><p className={s.muted}>Approx. {bed.underside.toFixed(1)} ft below the bed · {Math.max(0,studioSettings(room.studio).ceilingFt-bed.mattress-itemElevation(item,items)).toFixed(1)} ft above the top mattress</p>{rule&&college&&<p className={s.muted}>{college.name} housing: lofting {RULE_WORD[rule[0]]}, bunking {RULE_WORD[rule[1]]}.{(bed.mode==="lofted"&&rule[0]==="no")||(bed.mode==="bunked"&&rule[1]==="no")?" This setup isn't allowed there.":""} <a href={`/colleges/${college.id}#bed-rules`} target="_blank" rel="noopener noreferrer">The rules<ArrowUpRight size={12}/></a></p>}{bed.mode!=="standard"&&<label className={s.confirmLabel}><input type="checkbox" checked={!!item.loft_confirmed} onChange={e=>st.updateInventoryItem(item.id,{loft_confirmed:e.target.checked})}/>I have confirmed this bed setup and required equipment with housing.</label>}</div>}
     <div className={s.fieldGrid}><label className={s.field}>Belongs to<select value={assignment?.assignedTo??item.assigned_to??"shared"} onChange={e=>assign({assignedTo:e.target.value})}><option value="shared">Shared</option>{people.map(r=><option key={r.id} value={r.id}>{r.name}</option>)}</select></label><label className={s.field}>Supply<select value={assignment?.supply??supplyFor(item)} onChange={e=>assign({supply:e.target.value as "school"|"owned"|"buy"})}><option value="school">School provided</option><option value="owned">Already owned</option><option value="buy">To buy</option></select></label></div>
     {item.inventory&&supplyFor(item)==="buy"&&<NumberField label="Estimated cost ($)" value={item.cost??0} max={100000} step={1} onCommit={cost=>st.updateInventoryItem(item.id,{cost})}/>}
 

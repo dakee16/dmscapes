@@ -1,0 +1,28 @@
+/* Loft and bunk rules (components/college/BedRules.tsx) */
+.card {
+  margin: 36px 0 0;
+  padding: 28px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08);
+  display: grid;
+  gap: 22px;
+}
+.facts { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+.facts > div { padding: 16px 18px; border-radius: 16px; background: var(--ds-paper); }
+.facts dt { font: 700 11px var(--ds-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-caption); }
+.facts dd { margin: 6px 0 0; font-size: 20px; font-weight: 800; letter-spacing: -0.01em; }
+.facts > div[data-v="yes"] dd { color: #1d6b34; }
+.facts > div[data-v="no"] dd { color: #9b1c1c; }
+.facts > div[data-v="unknown"] dd { color: var(--ds-caption); font-weight: 650; }
+.text p { margin: 0; font-size: 17px; line-height: 1.55; color: var(--ds-body); max-width: 860px; }
+.text p + p { margin-top: 8px; }
+.notes { color: var(--ds-muted) !important; font-size: 15px !important; }
+.sources { font-size: 14px; color: var(--ds-muted); }
+.sources ul { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.none { margin: 28px 0 0; max-width: 760px; font-size: 17px; line-height: 1.55; color: var(--ds-body); }
+.foot { margin: 18px 0 0; font-size: 14px; color: var(--ds-muted); }
+.note { margin: 18px 0 0; font-size: 15px; line-height: 1.5; color: var(--ds-body); }
+@media (max-width: 600px) {
+  .card { padding: 20px 18px; }
+}
