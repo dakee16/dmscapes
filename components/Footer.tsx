@@ -4,6 +4,7 @@ import { MotionToggle } from "@/components/experience/MotionProvider";
 import FeedbackLink from "@/components/site/FeedbackLink";
 import { FooterLink as HallFinderLink } from "@/components/hall-finder/Entry";
 import SocialLinks from "@/components/ds/SocialLinks";
+import AskAi from "@/components/site/AskAi";
 import s from "./ds/SiteFooter.module.css";
 
 const COLUMNS: {
@@ -22,6 +23,18 @@ const COLUMNS: {
       { label: "Pricing", href: "/pricing" },
       { label: "Room in 3D", href: "/#room-in-3d", anchor: true },
       { label: "3D Room Builder", href: "/plan/draw/3d" },
+    ],
+  },
+  {
+    heading: "Guides & tools",
+    links: [
+      { label: "Dorm room planner", href: "/dorm-room-planner" },
+      { label: "Dorm room sizes", href: "/dorm-room-size" },
+      { label: "Loft & bunk rules", href: "/dorm-bed-rules" },
+      { label: "Rug size calculator", href: "/dorm-rug-size" },
+      { label: "Under-loft clearance", href: "/loft-bed-clearance" },
+      { label: "Twin XL sheets", href: "/twin-xl-sheets" },
+      { label: "Compare planners", href: "/compare" },
     ],
   },
   {
@@ -59,6 +72,7 @@ export default function Footer() {
           </p>
           <p className={s.tagline}>Your next chapter, planned.</p>
           <SocialLinks />
+          <AskAi tone="dark" className={s.ask} />
         </div>
         <nav className={s.columns} aria-label="Footer">
           {COLUMNS.map((col) => (

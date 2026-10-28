@@ -3,6 +3,8 @@ import { SCHOOLS, hallIsIndexable } from "@/lib/schools";
 import { POSTS } from "@/content/blog";
 import { SITE_URL as BASE } from "@/lib/seo";
 import SCHOOL_DATES from "@/lib/school-dates.json";
+import { BED_RULES_CHECKED } from "@/lib/bed-rules";
+import { COMPETITORS } from "@/lib/compare";
 import { PILOT_SCHOOLS, hallFinderLive } from "@/lib/hall-finder";
 
 /**
@@ -32,6 +34,13 @@ export function sitemapEntries(group: string): MetadataRoute.Sitemap {
         { url: `${BASE}/plan/draw/3d`, changeFrequency: "monthly", priority: 0.8 },
         { url: `${BASE}/colleges`, lastModified: NEWEST_DATA, changeFrequency: "weekly", priority: 0.8 },
         { url: `${BASE}/dorm-room-size`, lastModified: NEWEST_DATA, changeFrequency: "monthly", priority: 0.8 },
+        { url: `${BASE}/dorm-room-planner`, lastModified: NEWEST_DATA, changeFrequency: "weekly", priority: 0.9 },
+        { url: `${BASE}/dorm-bed-rules`, lastModified: BED_RULES_CHECKED, changeFrequency: "monthly", priority: 0.7 },
+        { url: `${BASE}/dorm-rug-size`, lastModified: NEWEST_DATA, changeFrequency: "monthly", priority: 0.6 },
+        { url: `${BASE}/loft-bed-clearance`, lastModified: BED_RULES_CHECKED, changeFrequency: "monthly", priority: 0.6 },
+        { url: `${BASE}/twin-xl-sheets`, lastModified: NEWEST_DATA, changeFrequency: "monthly", priority: 0.6 },
+        { url: `${BASE}/compare`, changeFrequency: "monthly", priority: 0.5 },
+        ...COMPETITORS.map((c) => ({ url: `${BASE}/compare/${c.slug}`, lastModified: c.checked, changeFrequency: "monthly" as const, priority: 0.5 })),
         { url: `${BASE}/pricing`, changeFrequency: "monthly", priority: 0.7 },
         { url: `${BASE}/my-room`, changeFrequency: "monthly", priority: 0.6 },
         { url: `${BASE}/blog`, lastModified: NEWEST_POST, changeFrequency: "weekly", priority: 0.7 },
