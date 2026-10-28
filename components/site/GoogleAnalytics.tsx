@@ -3,29 +3,24 @@
 import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { COOKIE_CONSENT_KEY } from "./CookieConsent";
+import { analyticsAllowed, CONSENT_EVENT } from "@/lib/consent";
 
 const GA_ID = "G-DSRNH55V8B";
 // The pages lib/analytics keeps out of PostHog: workspace, invite and login
 // URLs can carry room ids and invite tokens.
 const PRIVATE_PATH = /^\/(rooms|login|account|report)(\/|$)/;
 
-const rejected = () => {
-  try {
-    return window.localStorage.getItem(COOKIE_CONSENT_KEY) === "rejected";
-  } catch {
-    return false; // localStorage blocked: same fall-through as lib/analytics
-  }
-};
-
 /**
- * Google Analytics (gtag.js) on every page, on the same opt-out model as
- * PostHog: it loads unless the visitor chose Reject, and sends nothing from
- * private pages. Ads consent is denied (the cookie policy promises no
- * advertising cookies), so only analytics hits go out.
+ * Google Analytics (gtag.js) on every page, on the same consent rules as
+ * PostHog (lib/consent): it loads once analytics is allowed (straight away
+ * outside the EU/UK, after Accept inside it) and sends nothing from private
+ * pages. Ads consent is denied (the cookie policy promises no advertising
+ * cookies), so only analytics hits go out.
  *
  * gtag reads window["ga-disable-<id>"] before each hit, so a getter keeps the
- * rules live through client-side navigation and a Reject made mid-visit. After
+ * rules live through client-side navigation and a Reject made mid-visit
+ * (lib/consent then deletes its cookies). Consent Mode's "denied" is not used
+ * for Reject: it keeps sending cookieless pings. After
  * a private page it stays off until the next full load: GA would report that
  * page's URL as the next page's referrer.
  */
@@ -41,9 +36,14 @@ export default function GoogleAnalytics() {
   useEffect(() => {
     Object.defineProperty(window, `ga-disable-${GA_ID}`, {
       configurable: true,
-      get: () => rejected() || sawPrivate.current || PRIVATE_PATH.test(window.location.pathname),
+      get: () => analyticsAllowed() !== true || sawPrivate.current || PRIVATE_PATH.test(window.location.pathname),
     });
-    setLoad(!rejected());
+    const sync = () => {
+      if (analyticsAllowed()) setLoad(true);
+    };
+    sync();
+    window.addEventListener(CONSENT_EVENT, sync);
+    return () => window.removeEventListener(CONSENT_EVENT, sync);
   }, []);
 
   if (!load) return null;

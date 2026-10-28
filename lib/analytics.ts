@@ -1,6 +1,7 @@
 "use client";
 
 import posthog from "posthog-js";
+import { analyticsAllowed, clearAnalyticsStorage, CONSENT_EVENT, resolveRegion } from "./consent";
 
 // PostHog event calls are wired everywhere; they no-op until
 // NEXT_PUBLIC_POSTHOG_KEY is set (owner adds their own key).
@@ -90,17 +91,9 @@ export type AnalyticsEvent =
 let initialized = false;
 
 function ensureInit(): boolean {
-  if (typeof window === "undefined") return false;
-  // Respect a cookie-consent rejection: PostHog is never initialized and no
-  // analytics cookies are set. Accepted or not-yet-answered (US opt-out) allow
-  // it. Kept in sync with components/site/CookieConsent.tsx (same storage key).
-  try {
-    if (window.localStorage.getItem("dormscape-cookie-consent") === "rejected") {
-      return false;
-    }
-  } catch {
-    // localStorage blocked: fall through and behave as before.
-  }
+  // Cookie consent (lib/consent): PostHog is only initialized, and only sets
+  // cookies or storage, once analytics is allowed for this visitor.
+  if (analyticsAllowed() !== true) return false;
   const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
   if (!key) return false;
   if (!initialized) {
@@ -122,18 +115,51 @@ function ensureInit(): boolean {
   return true;
 }
 
+// Events tracked while the visitor's consent region is still being looked up
+// (a few hundred ms on a first visit): sent if analytics turns out to be
+// allowed, dropped if not.
+const waiting: [AnalyticsEvent, Record<string, unknown> | undefined][] = [];
+
 export function track(event: AnalyticsEvent, props?: Record<string, unknown>): void {
+  if (typeof window !== "undefined" && analyticsAllowed() === null) {
+    if (waiting.length < 20) waiting.push([event, props]);
+    void resolveRegion();
+    return;
+  }
   if (!ensureInit()) return;
   posthog.capture(event, props);
 }
 
-/** Anonymous session id for server-side click logging (product_clicks table). */
+if (typeof window !== "undefined") {
+  window.addEventListener(CONSENT_EVENT, () => {
+    const allowed = analyticsAllowed();
+    if (allowed === null) return;
+    const queued = waiting.splice(0);
+    if (allowed) {
+      for (const [event, props] of queued) track(event, props);
+    } else if (initialized) {
+      // Reject mid-visit: stop now (autocapture included), not on the next load.
+      posthog.set_config({ disable_persistence: true });
+      posthog.opt_out_capturing();
+      clearAnalyticsStorage();
+    }
+  });
+}
+
+let pageSession: string | null = null;
+
+/**
+ * Anonymous session id for server-side click logging (product_clicks table).
+ * Kept in local storage only when analytics is allowed (lib/consent);
+ * otherwise it lasts for this page load.
+ */
 export function sessionId(): string {
   if (typeof window === "undefined") return "server";
   const KEY = "dormscape-session";
+  if (analyticsAllowed() !== true) return (pageSession ??= crypto.randomUUID());
   let id = window.localStorage.getItem(KEY);
   if (!id) {
-    id = crypto.randomUUID();
+    id = pageSession ?? crypto.randomUUID();
     window.localStorage.setItem(KEY, id);
   }
   return id;

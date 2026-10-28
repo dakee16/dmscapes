@@ -2,14 +2,21 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import {
+  analyticsAllowed,
+  clearAnalyticsStorage,
+  CONSENT_EVENT,
+  COOKIE_CONSENT_KEY,
+  resolveRegion,
+  type CookieConsent,
+} from "@/lib/consent";
 import css from "./CookieConsent.module.css";
 
 // Consent choice persists in localStorage so the banner shows once and never
-// reappears. "rejected" also suppresses analytics (see lib/analytics.ts
-// ensureInit, which reads this key); Supabase auth session cookies are strictly
-// functional (they keep you signed in) and are never gated.
-export const COOKIE_CONSENT_KEY = "dormscape-cookie-consent";
-export type CookieConsent = "accepted" | "rejected";
+// reappears. lib/consent decides what it means: Accept turns analytics on;
+// Reject turns it off and deletes what it stored; with no choice yet, EU/UK
+// visitors get none and everyone else gets it (opt-out). Supabase auth session
+// storage is strictly functional (it keeps you signed in) and is never gated.
 
 // The banner is in the server HTML (hidden) and this runs as the HTML parses,
 // so a first visit sees it with the first paint rather than after hydration.
@@ -31,6 +38,15 @@ export default function CookieConsent() {
     } catch {
       // localStorage blocked (private mode): just don't show the banner.
     }
+    // Whenever analytics isn't allowed (Reject, or an opt-in visitor who hasn't
+    // accepted), nothing it stored earlier is kept.
+    const sweep = () => {
+      if (analyticsAllowed() === false) clearAnalyticsStorage();
+    };
+    sweep();
+    void resolveRegion();
+    window.addEventListener(CONSENT_EVENT, sweep);
+    return () => window.removeEventListener(CONSENT_EVENT, sweep);
   }, []);
 
   function choose(choice: CookieConsent) {
@@ -41,7 +57,7 @@ export default function CookieConsent() {
     }
     // Let other fixed elements (e.g. the sticky mobile CTA) react immediately,
     // without waiting for a scroll or reload.
-    window.dispatchEvent(new Event("dormscape:cookie-consent"));
+    window.dispatchEvent(new Event(CONSENT_EVENT));
     setVisible(false);
   }
 
