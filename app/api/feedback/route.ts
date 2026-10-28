@@ -50,19 +50,29 @@ export async function POST(request: Request) {
       ? body.feedback_text.trim().slice(0, 2000)
       : null;
 
+  // An opt-in public review needs words and a name to show; it's published only
+  // after the owner sets approved_at (lib/reviews).
+  const displayName = typeof body.display_name === "string" ? body.display_name.trim().slice(0, 40) : "";
+  const schoolName = typeof body.school_name === "string" ? body.school_name.trim().slice(0, 80) : "";
+  const review =
+    body.public_ok === true && text && displayName
+      ? { public_ok: true, display_name: displayName, school_name: schoolName || null }
+      : null;
+
   const supabase = getServiceClient();
   if (!supabase) {
     // Unconfigured env: accept and no-op so the page still works locally.
     return NextResponse.json({ ok: true }, { status: 202 });
   }
 
-  const { error } = await supabase.from("purchase_feedback").insert({
-    session_id: sessionId,
-    user_id: userId,
-    purchase_survey_id: surveyId,
-    rating,
-    feedback_text: text,
-  });
+  const row = { session_id: sessionId, user_id: userId, purchase_survey_id: surveyId, rating, feedback_text: text };
+  let { error } = await supabase.from("purchase_feedback").insert(review ? { ...row, ...review } : row);
+  if (error && review) {
+    // The review columns arrive with docs/migrations/20261028_public_reviews.sql; until it's
+    // applied, keep the rating rather than lose it.
+    console.error("purchase_feedback review insert failed, retrying without review fields:", error.message);
+    ({ error } = await supabase.from("purchase_feedback").insert(row));
+  }
   if (error) {
     console.error("purchase_feedback insert failed:", error.message);
     // Foreign-key or table-missing failures shouldn't surface to the user;

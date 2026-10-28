@@ -42,13 +42,18 @@ export default function FeedbackForm({
   const [rating, setRating] = useState(0);
   const [hovered, setHovered] = useState(0);
   const [text, setText] = useState("");
+  // Opt-in public review: shown on dormscape only after the owner approves it (lib/reviews).
+  const [publish, setPublish] = useState(false);
+  const [name, setName] = useState("");
+  const [school, setSchool] = useState("");
+  const publishing = publish && text.trim() !== "";
   const [busy, setBusy] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (rating < 1 || busy) return;
+    if (rating < 1 || busy || (publishing && !name.trim())) return;
     setBusy(true);
     setError("");
     const body: FeedbackRequest = {
@@ -59,6 +64,7 @@ export default function FeedbackForm({
       // is standalone and leaves this null.
       purchase_survey_id:
         source === "thank_you" ? window.sessionStorage.getItem(SURVEY_ID_KEY) : null,
+      ...(publishing ? { public_ok: true, display_name: name.trim(), school_name: school.trim() || null } : {}),
     };
     try {
       // Attribution: the API reads the signed-in user from this bearer token
@@ -79,7 +85,7 @@ export default function FeedbackForm({
       setBusy(false);
       return;
     }
-    track("feedback_submitted", { rating, source });
+    track("feedback_submitted", { rating, source, public: publishing });
     setSubmitted(true);
     setBusy(false);
     onSubmitted?.();
@@ -94,7 +100,11 @@ export default function FeedbackForm({
         <span className={css.doneMark} aria-hidden="true"><Check size={22} /></span>
         <div>
           <p className={css.doneTitle}>Thanks for the feedback.</p>
-          <p className={css.doneText}>It goes straight into making the planner better.</p>
+          <p className={css.doneText}>
+            {publishing
+              ? "It goes straight into making the planner better. Your review shows on dormscape once we've read it."
+              : "It goes straight into making the planner better."}
+          </p>
         </div>
       </div>
     );
@@ -150,14 +160,48 @@ export default function FeedbackForm({
         placeholder="What worked? What was clunky? (optional)"
         className={`ds-input ${css.text}`}
       />
+      {text.trim() && (
+        <div className={css.publish}>
+          <label className={css.publishCheck}>
+            <input type="checkbox" checked={publish} onChange={(e) => setPublish(e.target.checked)} />
+            Show this as a review on dormscape
+          </label>
+          {publish && (
+            <>
+              <div className={css.publishFields}>
+                <input
+                  className="ds-input"
+                  aria-label="Name to show"
+                  placeholder="Name to show, e.g. Maya R."
+                  value={name}
+                  maxLength={40}
+                  required
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                  className="ds-input"
+                  aria-label="Your school (optional)"
+                  placeholder="Your school (optional)"
+                  value={school}
+                  maxLength={80}
+                  onChange={(e) => setSchool(e.target.value)}
+                />
+              </div>
+              <p className={css.publishNote}>
+                We read every review before it goes up. Only your stars, your words, this name and your school are shown.
+              </p>
+            </>
+          )}
+        </div>
+      )}
       {error && <p className={css.error} role="alert">{error}</p>}
       <div className={css.foot}>
         <p className={css.hint} aria-live="polite">
-          {rating < 1 ? "Pick a star rating to submit." : " "}
+          {rating < 1 ? "Pick a star rating to submit." : publishing && !name.trim() ? "Add the name to show with your review." : " "}
         </p>
         <button
           type="submit"
-          disabled={rating < 1 || busy}
+          disabled={rating < 1 || busy || (publishing && !name.trim())}
           aria-busy={busy || undefined}
           className={`ds-btn ds-btn--ink-yellow ds-btn--sm ${css.submit}`}
         >
