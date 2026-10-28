@@ -24,7 +24,7 @@ export default function CookiesPage() {
     <LegalLayout
       doc="cookies"
       title="Cookie Policy"
-      updated="October 24, 2026"
+      updated="October 28, 2026"
       intro={
         <p>
           Cookies are small pieces of data a site stores in your browser. dormscape
@@ -91,8 +91,10 @@ export default function CookiesPage() {
           (<code>dormscape-motion-paused</code>), whether you have seen a
           welcome message, and whether the Hall Finder tip on your plan has been
           shown or dismissed (<code>dormscape-hf-result-tip</code>). These entries have no automatic expiry in our code.
-          Other short-lived entries support sign-in redirects, pending shopping
-          actions and dismissed prompts. Session entries are cleared when their
+          Until you choose, session storage also notes whether analytics needs
+          your consent first (<code>dormscape-consent-region</code>; see
+          Analytics below). Other short-lived entries support sign-in redirects,
+          pending shopping actions and dismissed prompts. Session entries are cleared when their
           flow finishes or the browser tab session ends; local entries remain
           until removed by the relevant flow or cleared in your browser.
         </p>
@@ -157,21 +159,30 @@ export default function CookiesPage() {
           .
         </p>
         <p>
-          Our current analytics setup is opt-out: it may initialize before you
-          answer the banner. Choosing Reject stops Google Analytics from sending
-          further data right away and keeps it from loading on later visits. For
-          PostHog, reload the page to apply that preference to an already-running
-          session; the preference then prevents subsequent PostHog initialization
-          and dormscape analytics calls. Rejecting does not erase data already
-          sent or existing stored entries, including Google Analytics cookies.
-          You can remove stored entries through your browser settings.
+          If you visit from the European Union, the rest of the European Economic
+          Area, the United Kingdom or Switzerland, analytics stays off until you
+          choose Accept: PostHog and Google Analytics don&rsquo;t load or store
+          anything in your browser before then. We tell where you are from the
+          country our hosting provider, Vercel, matches to your IP address for
+          each request; we don&rsquo;t keep it. If the country can&rsquo;t be
+          determined, the same rule applies. Everywhere else, analytics is on by
+          default and may start before you answer the banner.
         </p>
         <p>
-          Separately, <code>dormscape-session</code> is a random identifier in
-          local storage used to associate our product-click records and optional
-          purchase-survey or feedback submissions. It remains until cleared and
-          currently operates independently of the analytics banner choice. It is
-          not a login credential and does not contain call audio or private comments.
+          Choosing Reject turns analytics off straight away and on later visits:
+          PostHog and Google Analytics stop sending data, and the cookies and
+          storage entries they set in your browser, including the Google
+          Analytics cookies, are deleted. Rejecting does not erase data
+          collected before you chose. Choosing Accept turns analytics on.
+        </p>
+        <p>
+          Separately, <code>dormscape-session</code>{" "}is a random identifier used
+          to associate our product-click records and optional purchase-survey or
+          feedback submissions. It is kept in local storage, until cleared, only
+          while analytics is on for you; otherwise a new one is made for each page
+          load and isn&rsquo;t stored, and choosing Reject deletes a stored one.
+          It is not a login credential and does not contain call audio or private
+          comments.
         </p>
       </LegalSection>
 
