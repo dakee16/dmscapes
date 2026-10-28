@@ -29,8 +29,8 @@ import {
 import { SCHOOLS, getSchool } from "@/lib/schools";
 import {
   FEATURED_ROOMS,
-  HALL_COUNT,
   HOME_VIBES,
+  LAYOUT_COUNT,
   SCHOOL_COUNT,
 } from "@/lib/home-data";
 
@@ -81,7 +81,7 @@ export default function Home() {
       />
       <Nav overlay cardOnScroll />
       <main id="page-content" tabIndex={-1}>
-        <HomeHero schoolCount={SCHOOL_COUNT} hallCount={HALL_COUNT} />
+        <HomeHero schoolCount={SCHOOL_COUNT} roomCount={LAYOUT_COUNT} />
         <HomeFlow rail={RAIL}>
           <CollegesBand names={SCHOOLS.map(shortName)} />
           <ProblemSection />

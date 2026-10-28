@@ -13,7 +13,10 @@ import css from "./Hero.module.css";
  * transform; the galaxy band and its props drift behind it. Everything rests
  * in its finished state with Motion off or reduced motion.
  */
-export default function HomeHero({ schoolCount, hallCount }: { schoolCount: number; hallCount: number }) {
+/** "100+": a count rounded down to a round figure, so it stays true as schools are added. */
+const atLeast = (n: number, step: number) => `${(Math.floor(n / step) * step).toLocaleString("en-US")}+`;
+
+export default function HomeHero({ schoolCount, roomCount }: { schoolCount: number; roomCount: number }) {
   const dims = HERO_ROOM ? (
     <span className={css.ft}>
       {feetInches(HERO_ROOM.lengthFt)} × {feetInches(HERO_ROOM.widthFt)}
@@ -27,7 +30,7 @@ export default function HomeHero({ schoolCount, hallCount }: { schoolCount: numb
         <p className="ds-eyebrow">
           AI dorm room planner{" "}
           <span className={css.wide}>
-            · {schoolCount} schools · {hallCount.toLocaleString("en-US")} halls
+            · {atLeast(schoolCount, 100)} schools · {atLeast(roomCount, 1000)} rooms
           </span>
           <span className={css.narrow}>· free to start</span>
         </p>
