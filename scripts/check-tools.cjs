@@ -49,3 +49,9 @@ for(const [id,r] of Object.entries(rules.schools)){
 }
 assert.equal(Object.keys(flags).length,Object.keys(rules.schools).length,'flags cover the same schools');
 console.log(`PASS: ${Object.keys(rules.schools).length} schools' loft and bunk rules each have official, quoted sources.`);
+
+// The footer's small comparison list (lib/compare-names) matches the quoted data.
+const {COMPARE_NAMES}=load(path.join(root,'lib/compare-names'));
+const compare=require(path.join(root,'data/compare.json'));
+assert.deepEqual(COMPARE_NAMES.map(c=>c.slug).sort(),compare.map(c=>c.slug).sort(),'footer comparisons match data/compare.json');
+console.log('PASS: footer comparison links match the comparison pages.');
