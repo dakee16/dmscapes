@@ -59,7 +59,6 @@
   transition: color 0.15s, border-color 0.15s;
 }
 .socials a:hover { color: var(--ds-yellow); border-color: var(--ds-yellow); }
-.ask { margin-top: 18px; }
 .columns {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

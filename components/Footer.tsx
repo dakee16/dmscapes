@@ -4,7 +4,6 @@ import { MotionToggle } from "@/components/experience/MotionProvider";
 import FeedbackLink from "@/components/site/FeedbackLink";
 import { FooterLink as HallFinderLink } from "@/components/hall-finder/Entry";
 import SocialLinks from "@/components/ds/SocialLinks";
-import AskAi from "@/components/site/AskAi";
 import s from "./ds/SiteFooter.module.css";
 
 const COLUMNS: {
@@ -72,7 +71,6 @@ export default function Footer() {
           </p>
           <p className={s.tagline}>Your next chapter, planned.</p>
           <SocialLinks />
-          <AskAi tone="dark" className={s.ask} />
         </div>
         <nav className={s.columns} aria-label="Footer">
           {COLUMNS.map((col) => (

@@ -18,15 +18,31 @@ const ENGINES = [
   { id: "grok", label: "Grok", href: `https://x.com/i/grok?text=${Q}` },
 ] as const;
 
-/** "Ask an AI about dormscape": each link opens an assistant with the question above. */
-export default function AskAi({ tone = "light", className = "" }: { tone?: "light" | "dark"; className?: string }) {
+/**
+ * "Ask an AI about dormscape": each link opens an assistant with the question above.
+ * Placed where people are deciding (homepage pricing, /pricing, /faq, the planner
+ * landing page); `placement` tells the click events apart.
+ */
+export default function AskAi({
+  label = "Ask an AI about dormscape",
+  placement,
+  align = "start",
+  tone = "light",
+  className = "",
+}: {
+  label?: string;
+  placement: string;
+  align?: "start" | "center";
+  tone?: "light" | "dark";
+  className?: string;
+}) {
   return (
-    <div className={`${css.ask} ${className}`} data-tone={tone}>
-      <p className={css.label}>Ask an AI about dormscape</p>
+    <div className={`${css.ask} ${className}`} data-tone={tone} data-align={align}>
+      <p className={css.label}>{label}</p>
       <ul className={css.list}>
         {ENGINES.map((e) => (
           <li key={e.id}>
-            <a href={e.href} target="_blank" rel="noopener noreferrer" onClick={() => track("ai_ask_clicked", { engine: e.id })}>
+            <a href={e.href} target="_blank" rel="noopener noreferrer" onClick={() => track("ai_ask_clicked", { engine: e.id, placement })}>
               {e.label}
               <span className="ds-sr"> (opens in a new tab)</span>
             </a>

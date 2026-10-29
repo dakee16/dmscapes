@@ -8,6 +8,7 @@
   .hero :global(.ds-h1) { width: max-content; white-space: nowrap; }
 }
 
+.ask { flex-basis: 100%; margin-top: 10px; }
 .search {
   position: relative;
   display: flex;

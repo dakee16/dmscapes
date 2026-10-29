@@ -27,6 +27,7 @@ import {
   FREE_PLAN_CAP,
 } from "@/lib/plan";
 import css from "@/components/pricing/Pricing.module.css";
+import AskAi from "@/components/site/AskAi";
 
 // Real, honest social proof: counts derived straight from the shipped data, so
 // they can never drift from what we actually support. No fabricated reviews or
@@ -376,6 +377,7 @@ export default function PricingPage() {
             <li>{SCHOOLS.length} colleges supported</li>
             <li>{ROOM_LAYOUTS_FLOOR.toLocaleString("en-US")}+ dorm room layouts</li>
           </ul>
+          <AskAi label="Still deciding? Ask an AI about dormscape" placement="pricing" align="center" className={css.ask} />
         </div>
       </section>
 

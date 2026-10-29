@@ -21,6 +21,8 @@
   transition: box-shadow 0.15s, color 0.15s;
 }
 .list a:hover { box-shadow: inset 0 0 0 1.5px var(--ds-ink); color: var(--ds-blue); }
+.ask[data-align="center"] { align-items: center; text-align: center; }
+.ask[data-align="center"] .list { justify-content: center; }
 .ask[data-tone="dark"] .label { color: #9a98a6; }
 .ask[data-tone="dark"] .list a { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25); color: #edebe4; }
 .ask[data-tone="dark"] .list a:hover { box-shadow: inset 0 0 0 1px var(--ds-yellow); color: var(--ds-yellow); }

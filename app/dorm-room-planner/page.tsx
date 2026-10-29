@@ -390,7 +390,7 @@ export default async function DormRoomPlannerPage() {
               </div>
             ))}
           </div>
-          <AskAi className={css.ask} />
+          <AskAi placement="planner-landing" className={css.ask} />
         </div>
       </section>
 
