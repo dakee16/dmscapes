@@ -103,6 +103,11 @@ export default async function DormPage(props: {
   const place = [school.city, school.state].filter(Boolean).join(", ");
   const address = postalAddressJsonLd(school.city, school.state);
   const short = shortName(school);
+  // Long hall names drop their bracketed part in button labels, then fall back to "your room".
+  const buttonHall = dorm.name.replace(/\s*\([^)]*\)/g, "").trim();
+  const fits = buttonHall.length <= 24;
+  const planLabel = fits ? `Plan your ${buttonHall} room` : "Plan your room";
+  const paidPlanLabel = fits ? `Plan a ${buttonHall} room` : "Plan a room here";
   const published = dorm.rooms.filter(isPublished);
   // The 12 halls after this one in the school's list, wrapping around: every hall then gets the same
   // number of links in (the first 12 alphabetically used to get all of them, and the rest only one).
@@ -235,8 +240,8 @@ export default async function DormPage(props: {
         <PlanCta
           href={planHref}
           className="ds-btn ds-btn--ink-yellow ds-btn--lg"
-          freeLabel={`Plan your ${dorm.name} room`}
-          paidLabel={`Plan a ${dorm.name} room`}
+          freeLabel={planLabel}
+          paidLabel={paidPlanLabel}
           icon={<ArrowRight size={20} />}
         />
         <a href="#rooms" className="ds-btn ds-btn--ghost">
@@ -533,8 +538,8 @@ export default async function DormPage(props: {
         <PlanCta
           href={planHref}
           className="ds-btn ds-btn--yellow ds-btn--lg"
-          freeLabel={`Plan your ${dorm.name} room`}
-          paidLabel={`Plan a ${dorm.name} room`}
+          freeLabel={planLabel}
+          paidLabel={paidPlanLabel}
           icon={<ArrowRight size={20} />}
         />
       </CtaBand>
