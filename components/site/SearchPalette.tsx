@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, CloseIcon, SearchIcon } from "@/components/ds/Icons";
 import { track } from "@/lib/analytics";
 import s from "./SearchPalette.module.css";
+import { POPULAR_SCHOOLS } from "@/lib/popular-schools";
 
 /** One school from /search-index.json: [id, name, "City, ST", aliases, [[hallId, hallName], …]]. */
 type Row = [id: string, name: string, place: string, aliases: string, halls: [string, string][]];
@@ -26,7 +27,7 @@ const PAGES: { title: string; detail: string; href: string; words: string; hallF
   { title: "Add your school", detail: "Tell us where you're headed", href: "/add-school", words: "add school missing request not listed" },
 ];
 /** Shown before you type: the planner's featured campuses (components/plan-steps/SchoolStep). */
-const POPULAR = ["penn-state", "university-of-michigan", "ohio-state", "nyu", "rutgers", "ut-austin", "purdue"];
+const POPULAR = POPULAR_SCHOOLS.map((s) => s.id);
 
 const norm = (t: string) => t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
 const short = (name: string) => name.replace(/^The\s+/, "").replace(/\s*\(.*\)$/, "");

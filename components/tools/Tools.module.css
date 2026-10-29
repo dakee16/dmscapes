@@ -1,0 +1,67 @@
+/* The free dorm calculators (RugCalculator, LoftClearance): inputs on the left, the answer on the right. */
+
+.tool {
+  display: grid;
+  grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+  gap: 28px;
+  margin: 36px 0 0;
+  padding: 28px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 0 0 2.5px var(--ds-ink), 8px 8px 0 var(--ds-ink);
+}
+.form { display: flex; flex-direction: column; gap: 18px; }
+.presets { display: flex; flex-wrap: wrap; gap: 8px; }
+.presets button {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ds-paper);
+  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.14);
+  color: var(--ds-ink);
+  font: 650 14px var(--ds-sans);
+  cursor: pointer;
+}
+.presets button[aria-pressed="true"] { background: var(--ds-ink); color: #fff; box-shadow: none; }
+.fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.fields2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.field :global(.ds-input) { min-height: 48px; padding: 0 14px; font-variant-numeric: tabular-nums; }
+.from { margin: 0; font-size: 14px; color: var(--ds-muted); }
+.from b { color: var(--ds-ink); }
+
+.result { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.answer { margin: 0; font-size: clamp(30px, 3.4vw, 48px); line-height: 1; font-weight: 900; letter-spacing: -0.03em; }
+.answer span { display: block; margin-bottom: 8px; font: 700 11px var(--ds-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-caption); }
+.also { margin: 0; font-size: 15px; color: var(--ds-body); }
+.plan { display: flex; justify-content: center; padding: 8px 0; --ppf: 22; }
+.planSvg { overflow: visible; }
+.note { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ds-muted); }
+
+/* Under-loft items */
+.items { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.items li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--ds-paper);
+  font-size: 15px;
+}
+.items b { font-weight: 700; }
+.items small { font: 600 12px var(--ds-mono); color: var(--ds-caption); white-space: nowrap; }
+.verdict { font: 700 11px var(--ds-mono); letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 9px; border-radius: 999px; white-space: nowrap; }
+.verdict[data-v="fits"] { background: #dff3e4; color: #1d6b34; }
+.verdict[data-v="tight"] { background: #fff1c2; color: #7a5a00; }
+.verdict[data-v="no"] { background: #fde2e2; color: #9b1c1c; }
+
+@media (max-width: 900px) {
+  .tool { grid-template-columns: minmax(0, 1fr); padding: 22px 18px; box-shadow: 0 0 0 2px var(--ds-ink), 5px 5px 0 var(--ds-ink); }
+}
+@media (max-width: 480px) {
+  .fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .items li { grid-template-columns: minmax(0, 1fr) auto; }
+  .items small { grid-column: 1; }
+}

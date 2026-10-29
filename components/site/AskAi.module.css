@@ -1,0 +1,14 @@
+/* "Ask AI about dormscape" logos (components/site/AskAi.tsx), styled like the footer's social icons. */
+.icons { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+.icons a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  color: #edebe4;
+  transition: color 0.15s, border-color 0.15s;
+}
+.icons a:hover,
+.icons a:focus-visible { color: var(--ds-yellow); border-color: var(--ds-yellow); }

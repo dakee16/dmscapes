@@ -13,6 +13,7 @@ import JsonLd from "@/components/site/JsonLd";
 import EstimatedDimsNote from "@/components/room/EstimatedDimsNote";
 import { ArrowRight } from "@/components/ds/Icons";
 import ScalePlan from "@/components/hall/ScalePlan";
+import { BedRulesNote } from "@/components/college/BedRules";
 import SectionRail from "@/components/ds/SectionRail";
 import { allDormPaths, getDorm, formatDims, hallIsIndexable } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
@@ -346,7 +347,15 @@ export default async function DormPage(props: {
                   </div>
                   {fit && (
                     <div className={css.roomFoot}>
-                      <span>Pieces placed where a typical layout puts them</span>
+                      <span>
+                        Pieces placed where a typical layout puts them ·{" "}
+                        <Link
+                          href={`/dorm-rug-size?l=${fit.lengthFt}&w=${fit.widthFt}&o=${r.occupants ?? 2}&room=${encodeURIComponent(`${roomName(r)}, ${dorm.name}`)}`}
+                          className="ds-link"
+                        >
+                          What rug fits?
+                        </Link>
+                      </span>
                       <span className="ds-mono">1 square = 1 ft</span>
                     </div>
                   )}
@@ -416,6 +425,7 @@ export default async function DormPage(props: {
               The built-in pieces the layouts plan around, at the sizes we use for fit checks. All drawn at the same
               scale · {FOOT_PX} px per ft
             </p>
+            <BedRulesNote schoolId={school.id} short={short} />
           </div>
         </section>
       )}

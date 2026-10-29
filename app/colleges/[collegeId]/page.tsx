@@ -13,6 +13,7 @@ import { ArrowRight } from "@/components/ds/Icons";
 import HallDirectory, { type HallCard } from "@/components/college/HallDirectory";
 import { CollegeBand, CollegeChip } from "@/components/hall-finder/Entry";
 import SectionRail from "@/components/ds/SectionRail";
+import BedRules from "@/components/college/BedRules";
 import { exampleFor } from "@/lib/hall-finder-example";
 import { SCHOOLS, formatDims, getSchool, publishedDimsCount } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
@@ -295,6 +296,7 @@ export default async function CollegePage(props: {
           ...(hallFinder ? [{ id: "hf-band-title", label: "Hall Finder" }] : []),
           { id: "halls", label: "Buildings" },
           ...(bars ? [{ id: "bars-title", label: "Sizes compared" }] : []),
+          { id: "bed-rules-title", label: "Loft & bunk" },
         ]}
       />
 
@@ -393,6 +395,8 @@ export default async function CollegePage(props: {
           </div>
         </section>
       )}
+
+      <BedRules schoolId={school.id} short={short} />
 
       <CtaBand
         lead={`Your room at ${short},`}

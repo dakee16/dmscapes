@@ -20,6 +20,7 @@ export default function ScalePlan({
   furnitureClassName = "",
   uid,
   draw,
+  rug,
 }: {
   /** unique per page, for the grid pattern id */
   uid: string;
@@ -29,6 +30,8 @@ export default function ScalePlan({
   /** hook for a "show standard furniture" toggle */
   furnitureClassName?: string;
   draw?: "" | "load";
+  /** a rug laid on the floor under the furniture (feet; w along the length) */
+  rug?: { x: number; y: number; w: number; l: number; label: string };
 }) {
   const { lengthFt: L, widthFt: W, furniture, isCorridor } = room;
   const padT = 34;
@@ -80,6 +83,22 @@ export default function ScalePlan({
       {/* floor */}
       <rect x={X(0)} y={Y(0)} width={L * U} height={W * U} fill="#fff" />
       <rect x={X(0)} y={Y(0)} width={L * U} height={W * U} fill={`url(#${id})`} />
+
+      {rug && (
+        <g>
+          <rect
+            x={X(rug.x)}
+            y={Y(rug.y)}
+            width={rug.w * U}
+            height={rug.l * U}
+            rx={4}
+            fill="rgba(255, 216, 61, 0.55)"
+            stroke="var(--ds-ink)"
+            strokeWidth="1.5"
+            strokeDasharray="6 4"
+          />
+        </g>
+      )}
 
       {/* furniture (the outer group fades in; the inner one is the toggle's) */}
       <g className="ds-plan-fill">
@@ -172,6 +191,21 @@ export default function ScalePlan({
           <line x1={X(L)} y1={Y(W * 0.3)} x2={X(L)} y2={Y(W * 0.7)} stroke="var(--ds-blue)" strokeWidth="5" />
         )}
       </g>
+
+      {/* the rug's label sits in its top-left corner, above the furniture, so a chair can't hide it */}
+      {rug && (
+        <text
+          x={X(rug.x) + 8}
+          y={Y(rug.y) + 16}
+          fontFamily="var(--ds-mono)"
+          fontWeight="700"
+          fontSize="12"
+          letterSpacing="0.8"
+          fill="var(--ds-ink)"
+        >
+          {rug.label.toUpperCase()}
+        </text>
+      )}
     </svg>
   );
 }

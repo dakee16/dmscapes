@@ -125,6 +125,12 @@
   min-height: 128px;
   font-size: 16px;
 }
+.publish { margin-top: 12px; }
+.publishCheck { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 650; cursor: pointer; }
+.publishCheck input { width: 18px; height: 18px; accent-color: var(--ds-ink); }
+.publishFields { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; margin-top: 10px; }
+.publishNote { margin: 8px 0 0; font-size: 13px; line-height: 1.5; color: var(--ds-muted); }
+@media (max-width: 520px) { .publishFields { grid-template-columns: 1fr; } }
 .error {
   margin: 12px 0 0;
   font-size: 14px;

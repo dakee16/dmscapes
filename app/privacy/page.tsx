@@ -36,7 +36,7 @@ export default function PrivacyPage() {
     <LegalLayout
       doc="privacy"
       title="Privacy Policy"
-      updated="October 24, 2026"
+      updated="October 28, 2026"
       intro={
         <p>
           This page explains what information dormscape collects, why, and what you
@@ -90,7 +90,10 @@ export default function PrivacyPage() {
             After you shop a design, we may ask whether you actually made a
             purchase and, if you&rsquo;re willing, a star rating and short written
             feedback. Beyond the initial yes, no, or still deciding response, these
-            are optional and not required to use the planner.
+            are optional and not required to use the planner. If you choose to show
+            your feedback as a review, we may publish your star rating, your words,
+            the name you give and the school you enter on dormscape, after we read
+            it, and nothing else about you. Contact us to take a published review down.
           </li>
           <li>
             <strong>Problem reports.</strong>{" "}

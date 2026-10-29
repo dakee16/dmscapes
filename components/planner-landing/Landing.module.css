@@ -1,0 +1,62 @@
+/* /dorm-room-planner: the parts the page doesn't share with /dorm-room-size (DormSize.module.css). */
+
+.start { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 560px; }
+.startLinks { margin: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; }
+
+/* ---------- How it works ---------- */
+.steps { margin: 40px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; counter-reset: step; }
+.steps li { position: relative; padding: 26px 24px 24px; border-radius: 20px; background: #fff; box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08); counter-increment: step; }
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  display: block;
+  margin-bottom: 14px;
+  font: 700 12px var(--ds-mono);
+  letter-spacing: 0.12em;
+  color: var(--ds-blue);
+}
+.steps h3 { margin: 0; font-size: 21px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em; }
+.steps p { margin: 8px 0 0; font-size: 16px; line-height: 1.55; color: var(--ds-body); }
+
+/* ---------- Bed setups ---------- */
+.setups { margin: 40px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.setups li { display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 20px; background: #fff; box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08); }
+.setups b { font: 700 11px var(--ds-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ds-caption); }
+.setups strong { font-size: clamp(26px, 2.4vw, 34px); line-height: 1; font-weight: 900; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.setups p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--ds-body); }
+.rules { margin: 28px 0 0; padding: 24px 28px; border-radius: 20px; background: var(--ds-sky); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 28px; }
+.rules p { margin: 0; max-width: 720px; font-size: 17px; line-height: 1.5; }
+
+/* ---------- Tools ---------- */
+.tools { margin: 36px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.tools a {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+  padding: 22px 24px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.08);
+  color: var(--ds-ink);
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.2s var(--ds-ease);
+}
+.tools a:hover { box-shadow: 0 0 0 2px var(--ds-ink), 5px 5px 0 var(--ds-ink); transform: translate(-2px, -2px); }
+.tools strong { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; }
+.tools span { font-size: 15px; line-height: 1.5; color: var(--ds-body); }
+
+@media (max-width: 1100px) {
+  .steps,
+  .setups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .steps,
+  .setups,
+  .tools { grid-template-columns: 1fr; }
+  .rules { padding: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tools a { transition: none; }
+  .tools a:hover { transform: none; }
+}

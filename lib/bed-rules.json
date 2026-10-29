@@ -1,0 +1,2166 @@
+{
+ "checked": "2026-10-28",
+ "schools": {
+  "arizona": {
+   "loft": "unknown",
+   "bunk": "some",
+   "how": "Beds in most halls can be bunked and/or height-adjusted; each hall page lists whether the hall is Bunkable.",
+   "own_loft_kits": "unknown",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Older FAQ lists halls where bunking is not allowed: Apache-Santa Cruz, Colonia de la Paz, Graham-Greenlee, Honors Village, Kaibab-Huachuca, Manzanita-Mohave. Check the hall page.",
+   "sources": [
+    {
+     "url": "https://housing.arizona.edu/getting-started/housing-faqs",
+     "title": "Frequently Asked Questions - Housing & Residential Life"
+    },
+    {
+     "url": "https://housing.arizona.edu/dorms/maricopa",
+     "title": "Maricopa - Housing & Residential Life"
+    },
+    {
+     "url": "https://housing.arizona.edu/dorms/yuma",
+     "title": "Yuma - Housing & Residential Life"
+    },
+    {
+     "url": "https://housing.arizona.edu/campus-life/policies-procedures/non-approved-items",
+     "title": "Prohibited Items - Housing & Residential Life"
+    }
+   ]
+  },
+  "arizona-state": {
+   "loft": "some",
+   "bunk": "unknown",
+   "how": "Residents can't loft beds themselves; lofting exists only where the residential community provides it, such as lofted beds in Hassayampa Building B.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Hassayampa Academic Village Building B (Arroyo Hall) floors 1-4 have lofted beds that cannot be lowered; other HAV buildings have non-lofting beds. Tooker House lists adjustable Twin XL beds.",
+   "sources": [
+    {
+     "url": "https://housing.asu.edu/housing-resources/housing-policies-and-procedures",
+     "title": "ASU Housing Policies and Procedures"
+    },
+    {
+     "url": "https://housing.asu.edu/housing-communities/residential-colleges/hassayampa-academic-village",
+     "title": "ASU Hassayampa Academic Village"
+    },
+    {
+     "url": "https://housing.asu.edu/housing-communities/residential-colleges/tooker-house",
+     "title": "ASU Tooker House"
+    }
+   ]
+  },
+  "auburn": {
+   "loft": "unknown",
+   "bunk": "yes",
+   "how": "Beds are adjustable (12-32 in) and can be bunked or raised with 5-8 in square risers.",
+   "own_loft_kits": "unknown",
+   "risers": "yes",
+   "riser_max_in": 8,
+   "bed_height_in": {
+    "min": 12,
+    "max": 32
+   },
+   "deadline": null,
+   "notes": "Rooms are furnished with an extra-long (80 in) bunkable twin bed. No official page on loft kits found.",
+   "sources": [
+    {
+     "url": "https://studentaffairs.auburn.edu/housing/communities/the-quad.php",
+     "title": "The Quad - Auburn Student Affairs"
+    },
+    {
+     "url": "https://studentaffairs.auburn.edu/housing/communities/the-hill.php",
+     "title": "The Hill - Auburn Student Affairs"
+    }
+   ]
+  },
+  "boston-college": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Standard beds can be lowered through a work order request; lofted beds are provided only in specific rooms, such as Chestnut Hill lofted triples.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Ladders are designed for traditional hall triple lofts only and are not available to students who bunk their beds. Standard beds have 32 in of space underneath at the tallest setting.",
+   "sources": [
+    {
+     "url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/bc-residence-halls/facilities-furnishings.html",
+     "title": "Facilities & Furnishings - Residential Life - Boston College"
+    },
+    {
+     "url": "https://www.bc.edu/bc-web/offices/studentaffairs/sites/residential-life/living-in-bc-housing/first-year-student-housing.html",
+     "title": "First-Year Student Housing - Residential Life - Boston College"
+    }
+   ]
+  },
+  "boston-university": {
+   "loft": "unknown",
+   "bunk": "no",
+   "how": "Students may not bring or build their own lofts or bunk beds; BU's student guide recommends bed risers for extra space under the bed.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Cinder blocks are not allowed to elevate beds. No page found on riser height limits or on university-provided lofting.",
+   "sources": [
+    {
+     "url": "https://www.bu.edu/dos/policies/lifebook/residential/",
+     "title": "Residential Policies - BU Lifebook"
+    },
+    {
+     "url": "https://www.bu.edu/articles/2022/dorm-design-tips-from-bu-and-professional-design-experts/",
+     "title": "Dorm Design Tips from BU and Professional Design Experts"
+    }
+   ]
+  },
+  "brown": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Residents adjust their own bed frame height; lofted bed frames are not permitted.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "At the lowest setting there are about 11 in between the floor and the bed frame. Risers must fit the bed's wide legs; the page cites risers adding about five or six inches.",
+   "sources": [
+    {
+     "url": "https://reslife.brown.edu/living-us/residential-life-policies-and-rules/restricted-items",
+     "title": "Restricted Items - Residential Life - Brown"
+    },
+    {
+     "url": "https://reslife.brown.edu/on-campus/your-room/furnishings",
+     "title": "Furnishings Provided by the University - Residential Life - Brown"
+    }
+   ]
+  },
+  "caltech": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Loft kits can be checked out in some undergraduate residences; lofts and bunk beds must be installed or provided by Caltech Housing.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Each loft kit includes a safety rail that must be used. Loft kits are checked out at the start of the undergraduate contract period and returned near the end.",
+   "sources": [
+    {
+     "url": "https://housing.caltech.edu/documents/20914/ResidentGuide.pdf",
+     "title": "Caltech Housing Resident Guide and Housing Policies (September 2025)"
+    }
+   ]
+  },
+  "calvin": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Rooms have stackable beds, dressers and desks that residents arrange with steel pins and no tools; beds can be set at two heights by flipping them.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "No lumber or homemade supports. Nested bunks (bottom bed legs unsupported) are not permitted; elevated bunks need pins on at least one side. Furniture guide is from 2021.",
+   "sources": [
+    {
+     "url": "https://calvin.edu/sites/default/files/migrated/offices-services-residence-life-files-resources-Furniture-arrangements-2021.pdf",
+     "title": "Calvin University Stackable Furniture Arrangements"
+    },
+    {
+     "url": "https://calvin.edu/sites/default/files/2024-08/residence-hall-housing-contract-2024-2025.pdf",
+     "title": "Calvin Residence Hall Housing Contract 2024-2025"
+    }
+   ]
+  },
+  "carnegie-mellon": {
+   "loft": "no",
+   "bunk": "no",
+   "how": "Beds can be raised within the adjustable bed frame, and students may buy bed risers to place under the frame.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "CMU says it is moving away from lofts and platform beds in residence halls and apartments due to safety regulations and limited stock.",
+   "sources": [
+    {
+     "url": "https://www.cmu.edu/housing/resident-services/amenities.html",
+     "title": "Amenities - Housing & Residential Education - Carnegie Mellon"
+    },
+    {
+     "url": "https://www.cmu.edu/housing/resident-services/policies.html",
+     "title": "Housing Policies - Housing & Residential Education - Carnegie Mellon"
+    },
+    {
+     "url": "https://www.cmu.edu/housing/about-us/frequently-asked-questions.html",
+     "title": "Frequently Asked Questions - Housing & Residential Education - Carnegie Mellon"
+    }
+   ]
+  },
+  "carroll-university": {
+   "loft": "unknown",
+   "bunk": "unknown",
+   "how": null,
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "No lofting, bunking or riser policy found. The handbook says university-provided furniture cannot be removed from the living unit or taken apart.",
+   "sources": [
+    {
+     "url": "https://www.carrollu.edu/media-library/university-policies/web-student-handbook-2025-2026.pdf",
+     "title": "Carroll University Student Handbook 2025-2026 (Residence Life and Housing)"
+    }
+   ]
+  },
+  "chapman": {
+   "loft": "no",
+   "bunk": "yes",
+   "how": "Bunking is arranged by submitting a Room Configuration Request to Residence Life; residents may not adjust bed heights or stack beds on their own.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Lofts are not permitted. Cinder blocks and other bed-raising mechanisms are not allowed; bed risers and bed extenders are on the prohibited list. Violations may carry a $100 per item fine.",
+   "sources": [
+    {
+     "url": "https://www.chapman.edu/housing/_files/resident-license-agreement-2025-2026.pdf",
+     "title": "Resident License Agreement 2025-2026 - Chapman University"
+    },
+    {
+     "url": "https://www.chapman.edu/students/policies-forms/student-conduct/appendices.aspx",
+     "title": "Student Conduct Code Appendices - Chapman University (Lofts/Lofting)"
+    },
+    {
+     "url": "https://www.chapman.edu/housing/moving-in.aspx",
+     "title": "Moving In - Chapman Housing"
+    }
+   ]
+  },
+  "clemson": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Residents loft or bunk the university's standard Twin XL beds themselves, without a loft kit, following the housing bed-lofting video.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Homemade lofts, DIY bed risers and raised platforms are not permitted. Beds in Douthit West cannot be lofted.",
+   "sources": [
+    {
+     "url": "https://www.clemson.edu/housing-dining/residential-resources/move-in.html",
+     "title": "Clemson University On-Campus Housing Move-In Guide"
+    },
+    {
+     "url": "https://www.clemson.edu/housing-dining/",
+     "title": "Clemson Housing and Dining"
+    }
+   ]
+  },
+  "columbia": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Lofted beds are prohibited in all residence halls and brownstones. The University bed frame adjusts from 9.5 to 33 in off the floor and must stay in the room.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": {
+    "min": 9.5,
+    "max": 33
+   },
+   "deadline": null,
+   "notes": "From archived copies of Columbia Housing's pages (Aug to Dec 2025). Bunking and bed risers aren't mentioned.",
+   "sources": [
+    {
+     "url": "https://www.housing.columbia.edu/dont-bring",
+     "title": "Prohibited Items and Behaviors (Columbia Housing, page footer 2025)"
+    },
+    {
+     "url": "https://www.housing.columbia.edu/content/furnishings-and-fixtures",
+     "title": "Furnishings and Fixtures (Columbia Housing, page footer 2025)"
+    }
+   ]
+  },
+  "cornell": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Student requests to loft or bunk beds are not approved; some triples and older-building rooms are set up with lofted or bunked beds before move-in.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": "Lowering requests: Sept 1-Oct 1 (fall), Feb 11-Mar 11 (spring)",
+   "notes": "Undergrad standards still describe a request process for lofting/bunking (not in 8 halls), but the bed-elevation page says none will be approved. Bolted frames: 20-28 in with mattress.",
+   "sources": [
+    {
+     "url": "https://scl.cornell.edu/residential-life/housing/contact-us/maintenance-requests/bed-elevation-furniture-configuration",
+     "title": "Bed Elevation & Furniture Configuration - Cornell Student & Campus Life"
+    },
+    {
+     "url": "https://scl.cornell.edu/residential-life/housing/housing-details/community-rules-standards/community-living-standards-undergrads",
+     "title": "Community Living Standards for Undergrads 2026-2027 - Cornell"
+    }
+   ]
+  },
+  "csu-la": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": null,
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Furniture may not be stacked or assembled atop bricks, bookcases or other structures not designed to support it; no bunk policy found.",
+   "sources": [
+    {
+     "url": "https://www.calstatela.edu/sites/default/files/Housing%20Handbook%202025-2026.pdf",
+     "title": "Cal State LA Housing Handbook 2025-2026"
+    }
+   ]
+  },
+  "cu-boulder": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Most hall beds adjust to three heights; bunked triples have fixed-height beds (one bunked set plus one lofted single). Students may not loft their own beds.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": 6,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Bunked triple rooms have fixed-height beds that are not adjustable. Risers are often unnecessary because most beds adjust.",
+   "sources": [
+    {
+     "url": "https://www.colorado.edu/living/housing/undergraduate-housing/move-and-move-out/prepping-move-in/what-not-to-bring",
+     "title": "What Not to Bring - CU Boulder Housing"
+    },
+    {
+     "url": "https://www.colorado.edu/living/housing/undergraduate-housing/contracts-and-rates/residence-hall-contracts-and-rates",
+     "title": "Residence Hall Contracts and Rates - CU Boulder Housing"
+    }
+   ]
+  },
+  "dartmouth": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Beds are adjustable up to 30 in high; lofts of any type are not permitted in residence hall rooms.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Triple bunking of beds is not allowed (safety); double bunking is not addressed. Cinder blocks are not permitted in any Dartmouth residence.",
+   "sources": [
+    {
+     "url": "https://students.dartmouth.edu/residential-life/policy/room-care-and-furnishings",
+     "title": "Room Care and Furnishings - Dartmouth Residential Life"
+    },
+    {
+     "url": "https://students.dartmouth.edu/residential-life/undergraduate-housing/first-year-housing/arriving-campus",
+     "title": "Arriving on Campus - Dartmouth First-Year Housing"
+    }
+   ]
+  },
+  "duke": {
+   "loft": "some",
+   "bunk": "unknown",
+   "how": "Students can't loft beds; Housing raises or lowers beds on a Maintenance Request. Some upperclass rooms (Blue Light) come with lofted beds.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "First-year packing list: bed risers permitted, bed lofts not allowed. Furniture lofting or bed modifications may be restricted for safety reasons. No bunk-bed policy found.",
+   "sources": [
+    {
+     "url": "https://students.duke.edu/living/housing/first-year-housing/what-to-bring-and-what-not-to/",
+     "title": "What to Bring and What Not To - Duke Student Affairs"
+    },
+    {
+     "url": "https://students.duke.edu/living/housing/first-year-housing/what-to-expect-in-residence-halls/",
+     "title": "What to Expect in Residence Halls - Duke Student Affairs"
+    },
+    {
+     "url": "https://students.duke.edu/living/housing/upperclass-housing/quad-descriptions/",
+     "title": "Quad Descriptions - Duke Student Affairs (Blue Light)"
+    }
+   ]
+  },
+  "emory": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Halls list a medium loft bed (60 in) as standard furniture; residents may not build or install their own lofts or raised beds.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Medium loft bed listed for Few, Evans, Turman and Dobbs; Hopkins and Longstreet-Means not confirmed.",
+   "sources": [
+    {
+     "url": "https://housing.emory.edu/housing-options/residence-halls/few-evans.html",
+     "title": "Few and Evans Halls"
+    },
+    {
+     "url": "https://housing.emory.edu/housing-options/residence-halls/turman.html",
+     "title": "Turman Hall"
+    },
+    {
+     "url": "https://housing.emory.edu/housing-options/residence-halls/dobbs.html",
+     "title": "Dobbs Hall"
+    },
+    {
+     "url": "https://housing.emory.edu/_includes/documents/policies/24-25-residential-policies.pdf",
+     "title": "Emory University Residential Policies 2024-2025"
+    },
+    {
+     "url": "https://housing.emory.edu/_includes/documents/policies/2026-27-residential-housing-agreement.pdf",
+     "title": "Residential Housing Agreement 2026-27"
+    }
+   ]
+  },
+  "fsu": {
+   "loft": "no",
+   "bunk": "yes",
+   "how": "Beds are adjustable (top setting leaves 30 in under the spring) and can be bunked; ask your Facilities Supervisor if the room has no bunking pins.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Lofts are not permitted, including concrete blocks under the bed.",
+   "sources": [
+    {
+     "url": "https://housing.fsu.edu/explore-housing/housing-faqs",
+     "title": "Housing FAQs | FSU Housing"
+    }
+   ]
+  },
+  "gcu": {
+   "loft": "unknown",
+   "bunk": "unknown",
+   "how": null,
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "A GCU blog says beds have adjustable notches to move them up and down; no official lofting or bunking policy page was found.",
+   "sources": [
+    {
+     "url": "https://students.gcu.edu/student-affairs/residence-life",
+     "title": "Residence Life | Grand Canyon University"
+    },
+    {
+     "url": "https://www.gcu.edu/blog/gcu-experience/13-things-you-dont-need-bring-college",
+     "title": "13 Things You Don’t Need to Bring to College | GCU Blogs"
+    }
+   ]
+  },
+  "georgetown": {
+   "loft": "no",
+   "bunk": "yes",
+   "how": "Beds can't be lofted but can be bunked with the pegs and ladders provided; submit a work request if beds don't fit.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Bunking is optional in Darnall, Copley, New South, Harbin, McCarthy, Kennedy, Reynolds, LXR and Village C. Some Nevils apartments have platform lofts.",
+   "sources": [
+    {
+     "url": "https://residentialliving.georgetown.edu/living-with-us/policies-and-procedures/general-conduct-and-facilities-regulations/appliances-furniture/",
+     "title": "Appliances & Furniture - Residential Living"
+    },
+    {
+     "url": "https://residentialliving.georgetown.edu/living-with-us/move-out/spring-semester-closing-move-out-guide/",
+     "title": "Spring Semester Closing & Move-Out Guide"
+    },
+    {
+     "url": "https://residentialliving.georgetown.edu/communities/upperclass-communities/nevils/",
+     "title": "Nevils"
+    }
+   ]
+  },
+  "georgia-tech": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Housing staff adjust beds (low, medium, high or bunked) after you submit a facilities request; students may not raise or lower beds themselves.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Configurations depend on the building. Bed rails are required above 36 in at the top of the frame. Low has 8 in clearance, medium is about 3 ft and high about 6 ft off the floor.",
+   "sources": [
+    {
+     "url": "https://housing.gatech.edu/housing-options/residence-halls/room-specifications",
+     "title": "Room & Furniture Info | GT Housing"
+    }
+   ]
+  },
+  "gmu": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Commonwealth and Dominion beds can be lofted and traditional-hall triples come bunked and lofted; non-university loft beds are not allowed.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "No request process or bed riser rule found on official pages.",
+   "sources": [
+    {
+     "url": "https://housing.gmu.edu/residence-halls/first-year-residence-halls/commonwealth-hall",
+     "title": "Commonwealth Hall | Housing and Residence Life"
+    },
+    {
+     "url": "https://housing.gmu.edu/residence-halls/first-year-residence-halls/taylor-hall",
+     "title": "Taylor Hall | Housing and Residence Life"
+    },
+    {
+     "url": "https://housing.gmu.edu/what-bring",
+     "title": "What to Bring | Housing and Residence Life"
+    }
+   ]
+  },
+  "indiana": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Request lofting through IU's third-party vendor Bedloft; availability depends on hall and room type. Residents may not reconfigure beds themselves.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Collins lists a bunked double room. Only IU-hired third-party vendors may reconfigure university beds.",
+   "sources": [
+    {
+     "url": "https://housing.indiana.edu/living-on-campus/move-in/move-in-packing.html",
+     "title": "Room essentials | IU Housing"
+    },
+    {
+     "url": "https://housing.indiana.edu/my-housing/your-building/policies.html",
+     "title": "Policies | IU Housing"
+    },
+    {
+     "url": "https://housing.indiana.edu/residence-centers/collins.html",
+     "title": "Collins Residence Center | IU Housing"
+    }
+   ]
+  },
+  "indiana-wesleyan": {
+   "loft": "some",
+   "bunk": "yes",
+   "how": "Beds are bunkable; students may rent a loft from the university (limited quantities) but may not build their own.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "University loft rentals are booked through the housing homepage and quantities are limited.",
+   "sources": [
+    {
+     "url": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
+     "title": "Residence Halls | Indiana Wesleyan University (Things Not to Bring list)"
+    }
+   ]
+  },
+  "iowa": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Submit a work order (or request it in your housing application) and Housing staff set your bed to high loft, high captain or bunked.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": {
+    "min": 45,
+    "max": 71
+   },
+   "deadline": "Housing application request through July 6, 2026; work orders through March 12",
+   "notes": "Mayflower Hall has no high loft or bunk option. Heights are mattress heights: high loft 71 in, high captain 45 in.",
+   "sources": [
+    {
+     "url": "https://housing.uiowa.edu/liveoncampus/room-furnishings",
+     "title": "Room Furnishings | University of Iowa Housing"
+    },
+    {
+     "url": "https://housing.uiowa.edu/hallpolicies",
+     "title": "Residence Hall Policies | University of Iowa Housing"
+    }
+   ]
+  },
+  "johns-hopkins": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Residents may not loft beds themselves; request lofting through the On-Campus Living Office.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": null,
+   "sources": [
+    {
+     "url": "https://studentaffairs.jhu.edu/community-living/wp-content/uploads/sites/20/2024/07/What-Not-to-Pack.pdf",
+     "title": "What Not to Pack | JHU Student Affairs"
+    }
+   ]
+  },
+  "marquette": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Twin XL beds can be lofted (lofting and ladders available). Apartment residents request lofting or bunking through WebTMA.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "No hall request process found; the WebTMA lofting or bunking request is stated for apartments only.",
+   "sources": [
+    {
+     "url": "https://www.marquette.edu/residence-life/residence-halls/amenities.php",
+     "title": "Residence Hall Amenities | Marquette Office of Residence Life"
+    },
+    {
+     "url": "https://www.marquette.edu/residence-life/university-apartments/information-and-amenities.php",
+     "title": "Apartment Information and Amenities | Marquette Office of Residence Life"
+    }
+   ]
+  },
+  "miami-ohio": {
+   "loft": "some",
+   "bunk": "yes",
+   "how": "Many rooms have bunkable beds (pins from hall staff) and halls supply a low-loft style bed; students may not build lofts or use bed risers.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Beds may be bunked or un-bunked only by or under the supervision of University staff. Taller lofts are not offered.",
+   "sources": [
+    {
+     "url": "https://miamioh.edu/life-at-miami/living-on-campus/office-of-residence-life/regulations/index.html",
+     "title": "Regulations | Miami University Residence Life"
+    },
+    {
+     "url": "https://miamioh.edu/policy-library/students/undergraduate/housing/student-room-regulations.html",
+     "title": "Student Room Regulations | Miami University"
+    },
+    {
+     "url": "https://miamioh.edu/profiles/campus-services-center/residence-halls/collins-hall.html",
+     "title": "Collins Hall | Miami University"
+    }
+   ]
+  },
+  "michigan-tech": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Standard rooms have loftable beds that can be raised or lowered; lofting is limited to two beds high with the rail above the mattress.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": null,
+   "sources": [
+    {
+     "url": "https://www.mtu.edu/residential-living/education/living-guide/room-information/",
+     "title": "Living Guide: Room Information | Michigan Tech Residential Living"
+    }
+   ]
+  },
+  "mit": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Lofting or bunking is sometimes permitted, depending on the building; ask your House Operations Manager first and restore the bed before move-out.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": null,
+   "sources": [
+    {
+     "url": "https://housing.mit.edu/housing-information/living-campus/decorating-your-space",
+     "title": "Decorating Your Space | MIT Housing"
+    }
+   ]
+  },
+  "msu": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Beds adjust to bunked, standard, trundle or lofted height; residents adjust them (Hubbard Hall: submit a maintenance request).",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Hubbard Hall residents may not adjust beds themselves. Trundle is about 3 ft and lofted 5 ft off the ground. Move-in adjustments usually wait until staff can start, mostly September.",
+   "sources": [
+    {
+     "url": "https://liveon.msu.edu/beds",
+     "title": "Beds and Adjustments | MSU Live On"
+    }
+   ]
+  },
+  "nazareth": {
+   "loft": "some",
+   "bunk": "unknown",
+   "how": "Beds raise to 26 in of under-bed space; facilities staff adjust them from a request form (QR code by your RA's door). Don't change the height yourself.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": "Submit bed height request no later than August 29",
+   "notes": "Bed height is not adjustable in remodeled triples. The FAQ says lofting beds is not allowed, but the policies page says new furniture in some areas includes loftable beds.",
+   "sources": [
+    {
+     "url": "https://www2.naz.edu/residential-life/new-students/housing-faqs",
+     "title": "New Student FAQs | Nazareth University"
+    },
+    {
+     "url": "https://www2.naz.edu/residential-life/policies-and-procedures/",
+     "title": "Policies and Procedures | Nazareth University"
+    }
+   ]
+  },
+  "nc-state": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Residence hall beds can be lofted; North Hall and some Avent Ferry rooms are exceptions. Apartment beds cannot be lofted.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Wolf Ridge beds can be raised for additional storage; Wolf Village beds are not adjustable. The FAQ gives no request process or deadline.",
+   "sources": [
+    {
+     "url": "https://housing.dasa.ncsu.edu/resident-resources/faqs/",
+     "title": "Frequently Asked Questions - NC State University Housing"
+    }
+   ]
+  },
+  "northeastern": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Submit a Facilities work request to have the bed raised on its legs. Residents may not build lofts, use risers or raise beds on cinder blocks.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "From the 2025-26 residence hall guide. Rails and ladders are standard on beds lofted over 5 feet; de-lofting is accommodated only if the room permits.",
+   "sources": [
+    {
+     "url": "https://housing.northeastern.edu/wp-content/uploads/2025/08/Guide-to-Residence-Hall-Living-AY25-26-Final.pdf",
+     "title": "2025-2026 Guide to Residence Hall Living (Northeastern University Housing)"
+    }
+   ]
+  },
+  "northwestern": {
+   "loft": "some",
+   "bunk": "yes",
+   "how": "Request lofting or bunking on the Housing Portal; staff set the bed. Loft fee $100 per student; bunk fee $50 per roommate, and both roommates must request.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": {
+    "min": 22,
+    "max": 54.25
+   },
+   "deadline": "Request by Aug 21 to aim for completion before move-in day",
+   "notes": "Beds set at two heights only: 22 in standard, 54.25 in lofted (floor to underside of frame). Bunked: 13 in lower, 51.5 in upper. Loftable beds are in listed buildings; no summer requests.",
+   "sources": [
+    {
+     "url": "https://www.northwestern.edu/living/residential-experience/housing-options/loft-rental-bunking-requests.html",
+     "title": "Loft Rental & Bunking Requests - Northwestern Residential Services"
+    }
+   ]
+  },
+  "notre-dame": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Modular furniture (all halls except St. Edward's) can be lofted, bunked or separated; hall staff can help with configurations.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "XXL beds (for students over 6'7\") cannot be lofted. St. Edward's Hall does not use the Modular Furniture System.",
+   "sources": [
+    {
+     "url": "https://residentiallife.nd.edu/undergraduate/room-information-and-policies/",
+     "title": "Room Information and Policies - Notre Dame Residential Life"
+    },
+    {
+     "url": "https://www.roos.nd.edu/what-to-bring",
+     "title": "What to Bring - Keough Hall (Notre Dame)"
+    }
+   ]
+  },
+  "nyu": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Lofts are prohibited. A residential college FAQ says beds stay at standard heights and staff cannot adjust them; medical exceptions go through the Moses Center.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Outside furniture over 80 in (length + width + height) is prohibited.",
+   "sources": [
+    {
+     "url": "https://www.nyu.edu/students/student-information-and-resources/housing-and-dining/on-campus-living/residence-halls/resource-centers-maintenance.html",
+     "title": "Resource Center & Maintenance - NYU Residential Life & Housing Services"
+    },
+    {
+     "url": "https://www.nyu.edu/students/student-information-and-resources/housing-and-dining/on-campus-living/residence-halls/what-to-bring.html",
+     "title": "What to Bring to Residence Halls - NYU"
+    },
+    {
+     "url": "https://sites.google.com/nyu.edu/residentialcollege/faqs",
+     "title": "What is included in my room? - NYU Residential College FAQs (Paulson Hall)"
+    },
+    {
+     "url": "https://www.nyu.edu/students/student-information-and-resources/housing-and-dining/on-campus-living/residence-hall-policies/outside-furniture.html",
+     "title": "Fire Safety & Outside Furniture - NYU"
+    }
+   ]
+  },
+  "ohio-state": {
+   "loft": "no",
+   "bunk": "some",
+   "how": "Residents may not loft their own beds or bring loft kits. Where bunking is offered, submit a service request; bunked beds get bed rails.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Bunking applies only 'if applicable'; some halls are set up bunked (e.g. Morrison Tower rate III, Barrett House). Space under an unbunked bed is listed as 28-32 in in most halls.",
+   "sources": [
+    {
+     "url": "https://housing.osu.edu/documents/2026-2027-residential-living-handbook.pdf",
+     "title": "2026-2027 Residential Living Handbook (Ohio State), 3.5 Apartment/Room Furnishings"
+    },
+    {
+     "url": "https://housing.osu.edu/documents/What%20to%20Bring-Columbus%20campus.pdf",
+     "title": "What to Bring - Columbus campus (Ohio State Housing)"
+    },
+    {
+     "url": "https://housing.osu.edu/documents/Residence%20Hall%20Room%20Furniture%20Dimensions.docx",
+     "title": "Residence Hall Room Furniture General Measurements (Ohio State Housing)"
+    },
+    {
+     "url": "https://housing.osu.edu/hms/roomsearch/morrison-tower",
+     "title": "Morrison Tower - Ohio State Housing"
+    }
+   ]
+  },
+  "ole-miss": {
+   "loft": "some",
+   "bunk": "unknown",
+   "how": "Optional lofts rented from Lofts LLC for most halls (not RH2/RH3); bed raised before move-in. Homemade lofts, cinder blocks and bed risers are not allowed.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "From Ole Miss Student Housing PDFs (July 2024 and May 2025). Only the Lofts LLC rental is described; no bunking rule is published.",
+   "sources": [
+    {
+     "url": "https://olemiss.box.com/v/room-furniture-guide",
+     "title": "Room & Furniture Guide (Ole Miss Student Housing PDF, July 2024)"
+    },
+    {
+     "url": "https://olemiss.box.com/s/472dg68se7bhs25wsrt9gm8lpqiv5oqc",
+     "title": "Move-in Checklist (Ole Miss Student Housing PDF, May 2025)"
+    }
+   ]
+  },
+  "penn-state": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Students build a loft or bunk from Penn State's plans on the university frame once Housing OKs the room. Not allowed in adjustable-bed halls.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Adjustable frames go up to about 30 in. The loft specification PDF dates from 2005. No riser limit is given.",
+   "sources": [
+    {
+     "url": "https://liveon.psu.edu/university-park/bed-loft-information",
+     "title": "Bed Loft Information (Penn State Housing, page footer 2026)"
+    },
+    {
+     "url": "https://liveon.psu.edu/sites/liveon/files/2021-11/loft-specifications.pdf",
+     "title": "Loft Specifications (Penn State Auxiliary and Business Services PDF; file posted 2021-11, PDF created 2005)"
+    }
+   ]
+  },
+  "pitt": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Loft beds and bed risers are listed as prohibited items in on-campus housing.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "From the 2025-26 Residential Handbook (Pittsburgh campus). The same list also bars homemade furniture. Bunking is not addressed.",
+   "sources": [
+    {
+     "url": "https://www.studentaffairs.pitt.edu/sites/default/files/2025-08/PittSA-ResidentialHandbook_25-26_Final.pdf",
+     "title": "2025-2026 Residential Handbook (Pitt Student Affairs)"
+    }
+   ]
+  },
+  "princeton": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Students may build a free-standing loft that passes inspection (max 4x8 ft). University bunks are adjusted by students or by a Facilities work order.",
+   "own_loft_kits": "yes",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": "Bunk requests only after arrival, not summer; lofts out at end of academic year",
+   "notes": "From archived copies of Princeton's pages (Sep and Oct 2025). The rules don't say whether a bought loft kit counts. No riser rule is given.",
+   "sources": [
+    {
+     "url": "https://hres.princeton.edu/policies/residential-living/dormitory-annex-regulations",
+     "title": "Dormitory and Annex Regulations (Princeton Housing and Real Estate, page footer 2025)"
+    },
+    {
+     "url": "https://hres.princeton.edu/undergraduate-housing/incoming-students/your-dorm-room",
+     "title": "Your Dorm Room (Princeton Housing and Real Estate, 2025)"
+    }
+   ]
+  },
+  "purdue": {
+   "loft": "yes",
+   "bunk": "some",
+   "how": "Rent a loft from Bedloft, the university's partner; Bedloft staff install it with a safety rail. No other loft product is permitted.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": "Order by July 27, 2026 (for 2026-27) to guarantee delivery before move-in",
+   "notes": "No lofts in Hawkins, Hilltop Apartments or UR Boiler Apartments; Cary South varies by room; Meredith has none in regular singles. Some unusually shaped rooms cannot be lofted.",
+   "sources": [
+    {
+     "url": "https://www.housing.purdue.edu/housing/lofts.html",
+     "title": "Renting a Loft, Refrigerator / Microwave Combo Unit, Rug or Futon - Purdue University Residences"
+    },
+    {
+     "url": "https://www.housing.purdue.edu/campus-living/resources/guidelines-policies/facilities-guidelines.html",
+     "title": "Facilities Guidelines - Purdue University Residences"
+    }
+   ]
+  },
+  "rice": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Contact your residential college's Student Maintenance Representative to loft or bunk your bed.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": null,
+   "sources": [
+    {
+     "url": "https://housing.rice.edu/undergraduate-housing/residential-colleges/room-faqs",
+     "title": "Dorm Living - Rice Housing & Dining (room FAQs)"
+    }
+   ]
+  },
+  "rowan": {
+   "loft": "no",
+   "bunk": "no",
+   "how": "Beds raise on their own frame to 36 in max (about 32 in under-bed); lofts and bunks aren't offered, but store-bought risers used as designed are allowed.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Cinder blocks and other makeshift materials are not allowed. The university only rarely installs a loft or bunk bed temporarily.",
+   "sources": [
+    {
+     "url": "https://sites.rowan.edu/housing/resources/Furniture%20Descriptions.html",
+     "title": "Furniture Details - Rowan Residential Learning and University Housing"
+    },
+    {
+     "url": "https://sites.rowan.edu/housing/_docs/2026-2027-student-housing-contract.pdf",
+     "title": "2026-2027 Student Housing Contract (Rowan University)"
+    }
+   ]
+  },
+  "rutgers": {
+   "loft": "unknown",
+   "bunk": "some",
+   "how": "Bed risers up to 12 in are allowed (taller ones are prohibited). Honors College beds can be bunked but not lofted.",
+   "own_loft_kits": "unknown",
+   "risers": "yes",
+   "riser_max_in": 12,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Cinder blocks are also prohibited. No general lofting rule is published.",
+   "sources": [
+    {
+     "url": "https://ruoncampus.rutgers.edu/policies",
+     "title": "Policies - Rutgers Residence Life (New Brunswick)"
+    },
+    {
+     "url": "https://ruoncampus.rutgers.edu/living-on-campus/college-ave/honors-college",
+     "title": "Honors College - Rutgers Residence Life"
+    }
+   ]
+  },
+  "saint-anselm": {
+   "loft": "some",
+   "bunk": "unknown",
+   "how": "Only College-provided lofts are allowed in residential areas, and only authorized College personnel may take them apart.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "From the 2022-23 student handbook; no current request process, fee or hall list was found.",
+   "sources": [
+    {
+     "url": "https://www.anselm.edu/sites/default/files/Dean%20of%20Students/Student%20Handbook%202022%20-%202023%208_18_2022.pdf",
+     "title": "Student Handbook 2022-2023 (Saint Anselm College)"
+    }
+   ]
+  },
+  "seattleu": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Submit a Work Order online; Resident Hall Facilities staff loft or bunk the bed. Bunking needs permission from all roommates.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Doubles can raise a bed only to about hip height (about 31 in clearance under the frame). In most triples the third bed comes lofted to 64 in. XL twin beds in all halls except Xavier.",
+   "sources": [
+    {
+     "url": "https://www.seattleu.edu/life-at-seattle-u/housing-dining/frequently-asked-questions/",
+     "title": "Frequently Asked Questions - Seattle University Housing & Residence Life"
+    },
+    {
+     "url": "https://www.seattleu.edu/life-at-seattle-u/housing-dining/transfer-student-application-process/",
+     "title": "Transfer Student Application Process - Seattle University Housing (packing list)"
+    },
+    {
+     "url": "https://www.seattleu.edu/media/seattle-university/life-at-seattle-u/housing--dining/files/housing-guide-2.pdf",
+     "title": "Guide to Residence Hall Living 2026-2027 (Seattle University)"
+    }
+   ]
+  },
+  "snhu": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Items used to raise the bed off the ground are not allowed in residential buildings; bed risers and bed extenders need an approved accessibility accommodation.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Bunk beds are not addressed on the current housing FAQ or handbook.",
+   "sources": [
+    {
+     "url": "https://campus.snhu.edu/student-life/housing",
+     "title": "Housing - SNHU Residence Life FAQ"
+    },
+    {
+     "url": "https://pages.snhu.edu/students/handbooks/Student_Handbook.pdf",
+     "title": "Student Handbook 2026-2027 (Southern New Hampshire University)"
+    }
+   ]
+  },
+  "stanford": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Where supplies are available, sign out rails, pins and tools from your Housing Building Manager and follow the posted lofting instructions.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Allowed only in some undergraduate residences. Each frame has about three height settings; the top ('captain's height') is about 36 in off the floor. Two guardrails are required on lofts.",
+   "sources": [
+    {
+     "url": "https://rde.stanford.edu/studenthousing/lofting-your-bed",
+     "title": "Lofting Your Bed - Stanford R&DE Student Housing"
+    }
+   ]
+  },
+  "syracuse": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Students may use elevated beds at their own risk; Syracuse recommends university-supplied furniture and does not endorse student-constructed bunks or lofts.",
+   "own_loft_kits": "yes",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Elevated beds: max 5 ft 6 in from floor, 3 ft from windows, 18 in from sprinkler heads, max 48 in wide. The University may order any elevated bed dismantled.",
+   "sources": [
+    {
+     "url": "https://housingmealplans.syr.edu/terms-and-conditions-2026-2027/",
+     "title": "Terms and Conditions 2026-2027 - Housing (8.7 Elevated Beds)"
+    }
+   ]
+  },
+  "tamucc": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Residence-hall beds cannot be lofted, and bed risers are on the housing do-not-bring list. Bunking is not addressed on the public pages.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Live FAQ, undated (current for Spring 2027 registration). Resident Handbook is login-only (StarRez portal), so bunking and bed height are unconfirmed. Own loft kits inferred from the blanket loft ban.",
+   "sources": [
+    {
+     "url": "https://www.tamucc.edu/finance-and-administration/auxiliary-services/housing/faq/index-move-in.php",
+     "title": "Frequently Asked Questions (Move-In) - Islander Housing, Texas A&M University-Corpus Christi (undated page, live Oct 2026)"
+    }
+   ]
+  },
+  "temple": {
+   "loft": "no",
+   "bunk": "some",
+   "how": "Lofting or raising beds is prohibited; beds can be bunked only if the university-provided furniture allows it.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Personal bed frames and mattresses are also prohibited. The ban covers any block, lift or other device that raises the bed platform above standard height.",
+   "sources": [
+    {
+     "url": "https://studentaffairs.temple.edu/sites/studentaffairs/files/media/document/Community%20Living%20Standards%20July%202024.pdf",
+     "title": "University Housing and Residential Life Community Living Standards (last updated July 2024)"
+    }
+   ]
+  },
+  "tennessee": {
+   "loft": "some",
+   "bunk": "unknown",
+   "how": "Some halls have height-adjustable bed frames or lofted beds; check your hall. Unapproved bunk beds or lofts are not allowed.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Adjustable frames vary by hall: Hess H-Wing up to 55 in; Torchbearer 32 in at highest. Cinder blocks, concrete blocks or bricks for lofting beds are not allowed.",
+   "sources": [
+    {
+     "url": "https://studentlife.utk.edu/housing/residents/move-in/what-to-bring/",
+     "title": "What to Bring - University Housing - Division of Student Life"
+    },
+    {
+     "url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/hess-hall/",
+     "title": "Hess Hall - University Housing - Division of Student Life"
+    },
+    {
+     "url": "https://studentlife.utk.edu/housing/housing-options/hall-styles/torchbearer-hall/",
+     "title": "Torchbearer Hall - University Housing - Division of Student Life"
+    }
+   ]
+  },
+  "texas-am": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "All beds in residence halls and apartments can be lofted; use the provided furniture, not your own or rented lofts.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Lofted beds must be at least 24 in from the sprinkler head (wall-mounted) or ceiling (ceiling-mounted sprinklers). The Residence Life lofts page does not mention bunking or risers.",
+   "sources": [
+    {
+     "url": "https://reslife.tamu.edu/rules/lofts/?seq_no=3",
+     "title": "Lofts - Residence Life - Texas A&M University"
+    }
+   ]
+  },
+  "tufts": {
+   "loft": "some",
+   "bunk": "unknown",
+   "how": "Bed frames are height-adjustable (11-32 in) and some rooms have lofting sets with storage beneath; bed risers are prohibited.",
+   "own_loft_kits": "unknown",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": {
+    "min": 11,
+    "max": 32
+   },
+   "deadline": null,
+   "notes": "Raised to the maximum height, up to 30 in of ground clearance is available for storage. Additional furniture items are not permitted.",
+   "sources": [
+    {
+     "url": "https://students.tufts.edu/residential-life-and-learning/campus-housing/move-information",
+     "title": "Move In and Move Out Information - Tufts University"
+    },
+    {
+     "url": "https://students.tufts.edu/residential-life-and-learning/housing-policies-and-guidelines",
+     "title": "Housing Policies and Guidelines (Prohibited Items - Furniture)"
+    }
+   ]
+  },
+  "ualbany": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Submit a repair request to the Quad Information Center; Facilities staff loft or bunk the bed and add a safety rail. Only University-supplied configurations.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Not all University beds can be lofted or bunked. Increased occupancy rooms may include bunk beds. Cinder blocks and bricks are prohibited; store-bought plastic bed riders are permitted.",
+   "sources": [
+    {
+     "url": "https://www.albany.edu/residential-life/policies-procedures/housing-license",
+     "title": "Housing License - Residential Life - University at Albany"
+    },
+    {
+     "url": "https://www.albany.edu/residential-life/policies-procedures/move-in",
+     "title": "Moving into Campus Housing - Residential Life - University at Albany"
+    }
+   ]
+  },
+  "uc-berkeley": {
+   "loft": "yes",
+   "bunk": "some",
+   "how": "Lofts are assembled only by University Facilities staff on request, for a fee; some rooms come with bunk beds, and triples have a bunk bed and a lofted bed.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Mattresses must stay on the provided frame; furniture may not be stacked on bricks, bookcases or other structures. Residence hall rooms have twin XL beds or bunk beds.",
+   "sources": [
+    {
+     "url": "https://reslife.berkeley.edu/conduct/residential-code-conduct/",
+     "title": "Residential Code of Conduct - Residential Life - UC Berkeley"
+    },
+    {
+     "url": "https://housing.berkeley.edu/living-on-campus/my-room/",
+     "title": "Furnishings in My Room - Housing - UC Berkeley"
+    }
+   ]
+  },
+  "uc-davis": {
+   "loft": "yes",
+   "bunk": "some",
+   "how": "Residents can't change beds themselves. Housing reconfigures a single bed to lofted on request via a Service Request; existing bunks must stay intact.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": {
+    "min": 10,
+    "max": 60
+   },
+   "deadline": "Request within the first two weeks of every quarter (new residents only)",
+   "notes": "Heights are bottom bed rail to floor (add 10 in for mattress top): 10, 19.5, 31.5 in single; 60 in lofted. Guardrails required on bunks and lofts. Page also carries a COVID 'unavailable' note.",
+   "sources": [
+    {
+     "url": "https://housing.ucdavis.edu/residence-halls/furniture/",
+     "title": "Residence Halls Furniture - Student Housing and Dining Services - UC Davis"
+    }
+   ]
+  },
+  "uc-irvine": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Some rooms (e.g. Mesa Court) come with university bunk or loft beds; residents may not adjust bunks or disassemble furniture and should file a Work Order.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Mesa Court triple rooms have a bunk bed and a loft bed with a desk beneath; reduced doubles have a bunk bed. Floor plans note that furniture size and style may vary.",
+   "sources": [
+    {
+     "url": "https://housing.uci.edu/movein/emails/",
+     "title": "Move In Emails 2026 - UCI Student Housing"
+    },
+    {
+     "url": "https://studentcenter.uci.edu/wp-content/uploads/2022/01/floor-plan_MC_triple.pdf",
+     "title": "Mesa Court Triple Room floor plan"
+    },
+    {
+     "url": "https://studentcenter.uci.edu/wp-content/uploads/2022/01/floor-plan_MC_reduceddouble.pdf",
+     "title": "Mesa Court Reduced Double Room floor plan"
+    }
+   ]
+  },
+  "uc-riverside": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Altering beds, such as lofting, is prohibited; residents with medical needs can request a bed-height change through an online service request.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Medical height adjustments need housing administration approval and are done by designated staff. Separate loft safety rules cover university-issued lofts: max two occupants, no furniture on them.",
+   "sources": [
+    {
+     "url": "https://auxiliarydocs.ucr.edu/housing/student-conduct-policies.pdf",
+     "title": "Housing Resident Conduct Policies 2026-2027 - UCR Housing Services"
+    }
+   ]
+  },
+  "ucf": {
+   "loft": "some",
+   "bunk": "unknown",
+   "how": "Beds in Apollo, Nike, Hercules, Neptune, Libra, Lake Claire and Rosen can be adjusted by work order; Northview and Towers beds are not adjustable.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Residents may not raise, loft or alter beds by any method. Mattresses are raised to their highest level before move-in. UCF can charge for labor to reassemble altered beds.",
+   "sources": [
+    {
+     "url": "https://www.housing.ucf.edu/wp-content/uploads/sites/97/2026/04/CLG-4_16_26.pdf",
+     "title": "UCF Housing and Residence Life Community Living Guide (April 2026)"
+    },
+    {
+     "url": "https://www.housing.ucf.edu/faq/before-you-arrive/",
+     "title": "Before You Arrive - Housing and Residence Life - UCF"
+    }
+   ]
+  },
+  "uchicago": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Beds can be raised by work order to about 36 in of clearance underneath; residents can't adjust them themselves, and lofting kits are prohibited.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Autumn Quarter move-in requests are taken at the residence hall front desk and completed based on staff availability. Bunking and risers are not addressed on the pages found.",
+   "sources": [
+    {
+     "url": "https://housing.uchicago.edu/frequently-asked-questions/",
+     "title": "Frequently Asked Questions - UChicago Housing & Residence Life"
+    },
+    {
+     "url": "https://housing.uchicago.edu/residence-life/care-and-community-standards/",
+     "title": "Care and Community Standards - UChicago Housing & Residence Life (Prohibited Items)"
+    }
+   ]
+  },
+  "ucla": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Singles and doubles can't loft or bunk but can request a raise to about 31 in; triples come with a bunk bed and a loft-style bed set up by certified staff.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": {
+    "min": 12,
+    "max": 31
+   },
+   "deadline": "Request in the first two weeks of Fall quarter via the housing portal; $35 fee",
+   "notes": "Elevated beds may not sit directly in front of a window; lofts must not be altered (earthquake anchoring). Another UCLA page says up to about 35 in. Raising depends on parts availability.",
+   "sources": [
+    {
+     "url": "https://ask.housing.ucla.edu/app/answers/detail/a_id/527/~/raising-beds---undergraduate-on-campus-housing",
+     "title": "Raising Beds - Undergraduate On-Campus Housing - Ask Housing - UCLA"
+    },
+    {
+     "url": "https://ask.housing.ucla.edu/app/answers/detail/a_id/526/~/bunk-beds",
+     "title": "Bunk Beds - Ask Housing - UCLA"
+    },
+    {
+     "url": "https://ask.housing.ucla.edu/app/answers/detail/a_id/60/~/furniture-in-an-on-campus-housing-triple-room",
+     "title": "Furniture In an On-Campus Housing Triple Room - Ask Housing - UCLA"
+    }
+   ]
+  },
+  "uconn": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Residents loft or bunk the university bed frames themselves (two people needed); contact Facilities for a work order if you need help. Options vary by building.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Northwest: bunk or floor, no loft beds. Hilltop 4BR/4-person: floor only. Hilltop double efficiencies: bunk or loft not recommended. Cinder blocks are prohibited. Beds XL twin (80 x 36 in).",
+   "sources": [
+    {
+     "url": "https://campushousing.uconn.edu/resident-resources/lofting-bunking-instructions/",
+     "title": "Lofting & Bunking Instructions - UConn Campus Housing"
+    },
+    {
+     "url": "https://campushousing.uconn.edu/items-to-bring/",
+     "title": "Items to Bring - UConn Campus Housing"
+    },
+    {
+     "url": "https://campushousing.uconn.edu/living-on-campus/housing-options/traditional-housing/northwest/",
+     "title": "Northwest - UConn Campus Housing"
+    },
+    {
+     "url": "https://campushousing.uconn.edu/housing-options/traditional-housing/towers-quadrangle/",
+     "title": "Towers Quadrangle - UConn Campus Housing"
+    },
+    {
+     "url": "https://campushousing.uconn.edu/living-on-campus/housing-options/apartments/hilltop-apartments-2/",
+     "title": "Hilltop Apartments - UConn Campus Housing"
+    }
+   ]
+  },
+  "ucsb": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Bunk beds and lofts are used in the residence halls (e.g. San Miguel doubles); they must stay where and at the height Housing staff approve.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Beds are Twin XL (39 x 80 in). Policy requires bunks and lofts to sit away from windows for safety and egress. The pages found don't say how to request a loft, or address risers.",
+   "sources": [
+    {
+     "url": "https://www.housing.ucsb.edu/current-residents/student-conduct/residence-hall-policies-and-expectations",
+     "title": "Residence Hall Policies and Expectations - UCSB Housing"
+    },
+    {
+     "url": "https://www.housing.ucsb.edu/housing-options/options-filter/san-miguel",
+     "title": "San Miguel - UCSB Housing"
+    },
+    {
+     "url": "https://www.housing.ucsb.edu/node/436",
+     "title": "What size are the beds in the residence halls? - UCSB Housing"
+    }
+   ]
+  },
+  "ucsd": {
+   "loft": "no",
+   "bunk": "no",
+   "how": "Residents can't loft or bunk double rooms; only triple rooms come with university-set bunk and loft beds (a = lower bunk, b = upper bunk, c = loft).",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Building platforms, lofts or shelving units in residential spaces is prohibited. Bunks and lofts are used by housing only to reach a room's occupancy.",
+   "sources": [
+    {
+     "url": "https://hdhfacilities.ucsd.edu/custodial/index.html",
+     "title": "Custodial FAQs (UC San Diego Housing, Dining & Hospitality)"
+    },
+    {
+     "url": "https://sage.ucsd.edu/procedures/Undergraduate-Residential-Life-Community-Standards-Clean-10-2.pdf",
+     "title": "UC San Diego Residential Life Community Standards, Undergraduate Housing"
+    },
+    {
+     "url": "https://hdhughousing.ucsd.edu/living-on-campus/neighborhoods/room-type.html",
+     "title": "Room Types and Layouts (UC San Diego Undergraduate Housing)"
+    }
+   ]
+  },
+  "udel": {
+   "loft": "no",
+   "bunk": "yes",
+   "how": "Lofting is prohibited. Residents can submit a FixIt request to have beds bunked or debunked.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Risers go under a single bed only, not under bunked beds; mattress top may not exceed 5 ft from the floor. In first-year triples two of the three beds come bunked.",
+   "sources": [
+    {
+     "url": "https://www.udel.edu/students/reslife/campus-living/housing-policies/guide-to-community-living/",
+     "title": "Guide to Community Living (University of Delaware Residence Life & Housing)"
+    },
+    {
+     "url": "https://www.udel.edu/students/reslife/campus-living/move-in/",
+     "title": "Move In (University of Delaware Residence Life & Housing)"
+    }
+   ]
+  },
+  "uga": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Beds are adjustable and start at their highest (lofted) height. Adjust your own bed after arrival or submit a work request for staff to do it.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": {
+    "min": 26,
+    "max": 62
+   },
+   "deadline": "Bed height change request before arrival by July 21 (fall 2026 notice)",
+   "notes": "Some rooms in Reed, Payne and Building 1516 may have bed height limitations due to ceiling height variations. Heights are mattress height from the floor; some frames reach 67 in.",
+   "sources": [
+    {
+     "url": "https://housing.uga.edu/move-in/",
+     "title": "Move In (UGA Housing)"
+    },
+    {
+     "url": "https://housing.uga.edu/2026/06/29/move-in-arrival-time-and-bed-height-request/",
+     "title": "Move-in arrival time and bed height request (UGA Housing, June 2026)"
+    },
+    {
+     "url": "https://housing.uga.edu/community-guide/",
+     "title": "Community Guide (UGA Housing)"
+    }
+   ]
+  },
+  "uiuc": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Most halls have bunkable and loftable beds. Both roommates submit a MyHousing request and building service workers make the change.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Sherman Hall beds are not loftable; Daniels Hall has no bunking. Unauthorized bed changes cost $30 per room plus damage. Installing lofts and bunks is prohibited.",
+   "sources": [
+    {
+     "url": "https://housing.illinois.edu/MyHousing/Hallmarks",
+     "title": "Housing Hallmarks (University Housing, Illinois)"
+    },
+    {
+     "url": "https://housing.illinois.edu/living-communities/halls/furniture-dimensions",
+     "title": "Residence Hall Furniture Dimensions (University Housing, Illinois)"
+    }
+   ]
+  },
+  "umass": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Beds can be lofted or bunked. Get a lofting kit and tools from your Residential Service Desk; kits are limited and two people are needed.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": {
+    "min": 5,
+    "max": 30
+   },
+   "deadline": null,
+   "notes": "Bed rails for lofted or bunked beds are available by request. Southwest Towers corner rooms come with beds bunked. Beds must be returned to original state at check-out.",
+   "sources": [
+    {
+     "url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/northeast-area",
+     "title": "Northeast Area Residence Directory (UMass Amherst Residential Life)"
+    },
+    {
+     "url": "https://www.umass.edu/living/housing-options/residence-directory/traditional-housing/southwest-area",
+     "title": "Southwest Area Residence Directory (UMass Amherst Residential Life)"
+    },
+    {
+     "url": "https://www.umass.edu/living/residential-services/rsd",
+     "title": "Residential Service Desks (UMass Amherst Residential Services)"
+    },
+    {
+     "url": "https://www.umass.edu/student-life/sites/default/files/2025-01/Res%20Life%20Lofting%20&%20Bunking%20Instructions.pdf",
+     "title": "Lofting & Bunking Instructions (UMass Amherst Residential Life)"
+    },
+    {
+     "url": "https://www.umass.edu/living/your-residential-experience/what-to-bring",
+     "title": "What to Bring (UMass Amherst Residential Life)"
+    }
+   ]
+  },
+  "umbc": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Lofting is allowed in residence halls using a rented BedLoft unit only; no other lofting structures are permitted.",
+   "own_loft_kits": "yes",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": "Order a BedLoft before August 1 to guarantee delivery by move-in day",
+   "notes": "Rented BedLoft kits only. Lofts can't be used in overflow rooms that already have bunked beds. Frames adjust to give 24\"-36\" of under-bed storage.",
+   "sources": [
+    {
+     "url": "https://reslife.umbc.edu/wp-content/uploads/sites/65/2022/08/Rights-and-Responsibilities-Guide-Fall-2023-Final.pdf",
+     "title": "Residential Life Rights and Responsibilities Guide (UMBC, Fall 2023)"
+    },
+    {
+     "url": "https://reslife.umbc.edu/communities/",
+     "title": "Our Communities (UMBC Residential Life)"
+    },
+    {
+     "url": "https://reslife.umbc.edu/apply/umbc-packing-list/",
+     "title": "UMBC Packing List (UMBC Residential Life)"
+    }
+   ]
+  },
+  "umd": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Triple rooms come with a bunk bed and metal loft. Other compatible rooms can rent a Bedloft; students may not build their own lofts.",
+   "own_loft_kits": "yes",
+   "risers": "yes",
+   "riser_max_in": 12,
+   "bed_height_in": null,
+   "deadline": "Order a bed loft before August 9 for install before move-in",
+   "notes": "Bedloft isn't compatible with every room (not Houses 3, 5, 7, 9, 10, Oakland, Prince Frederick). Some flex doubles with sloped ceilings can't be bunked. Risers with outlets are banned.",
+   "sources": [
+    {
+     "url": "https://drf.umd.edu/resident-resources/amenities",
+     "title": "Amenities (UMD Department of Residential Facilities)"
+    },
+    {
+     "url": "https://reslife.umd.edu/moving-breaks/before-move",
+     "title": "Before Move-In (UMD Resident Life)"
+    },
+    {
+     "url": "https://reslife.umd.edu/apply-housing/rates-terms",
+     "title": "Rates & Terms (UMD Resident Life)"
+    }
+   ]
+  },
+  "umn": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Beds can be set up standard, lofted or bunked. Residents can do it themselves (rubber mallet from the Information Desk) or ask building staff for help.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Some rooms can't be changed due to space limits. Staff can't adjust beds before move-in. Beds must be de-lofted before move-out ($100 charge if left lofted).",
+   "sources": [
+    {
+     "url": "https://housing.umn.edu/residents/moving-breaks/movein/beds",
+     "title": "Lofting & Beds (UMN Housing & Residential Life)"
+    },
+    {
+     "url": "https://housing.umn.edu/residents/moving-breaks/movein/bring",
+     "title": "What to Bring (UMN Housing & Residential Life)"
+    }
+   ]
+  },
+  "unc": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Residents have the option to loft or bunk their own beds. A safety rail comes with every bed; request one through Fix My Room if yours is missing.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Triple-room beds can be bunked but not stacked three high. Top-floor Spencer Hall rooms have gabled ceilings with sprinklers that can make lofting tricky. Loft frame is 60 in high.",
+   "sources": [
+    {
+     "url": "https://housing.unc.edu/explore/residence-hall/winston/",
+     "title": "Winston (Carolina Housing)"
+    },
+    {
+     "url": "https://housing.unc.edu/explore/room-types/corridor-style-triple/",
+     "title": "Corridor-Style Triple (Carolina Housing)"
+    },
+    {
+     "url": "https://housing.unc.edu/living-on-campus/arrival-departure/bed-setup-and-safety/",
+     "title": "Bed Setup and Safety (Carolina Housing)"
+    }
+   ]
+  },
+  "unc-pembroke": {
+   "loft": "unknown",
+   "bunk": "unknown",
+   "how": null,
+   "own_loft_kits": "unknown",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Source is the 2024-25 Resident Handbook; lofting and bunking were not addressed in the sources found.",
+   "sources": [
+    {
+     "url": "https://www.uncp.edu/_files/policy-files/UNCP%20Housing%20Manual%2024-25.pdf",
+     "title": "Resident Handbook 2024-25 (UNC Pembroke Housing & Residence Life)"
+    }
+   ]
+  },
+  "university-of-alabama": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Most halls have adjustable beds (work order). Bring your own commercial loft kit or risers where the hall allows them; housing doesn't supply either.",
+   "own_loft_kits": "yes",
+   "risers": "yes",
+   "riser_max_in": 7,
+   "bed_height_in": null,
+   "deadline": "Work order by July 6 to have your bed height set before move-in",
+   "notes": "Risers/lofts not permitted in Bryant, Paty, Presidential I and II, Ridgecrest South. Burke suite bedrooms can be bunked by work order. Bed height limits vary by hall.",
+   "sources": [
+    {
+     "url": "https://housing.sl.ua.edu/incoming-students/move-in/room-setup/",
+     "title": "Room Setup (UA Housing and Residential Communities)"
+    },
+    {
+     "url": "https://housing.sl.ua.edu/halls/burke/",
+     "title": "Burke (UA Housing and Residential Communities)"
+    }
+   ]
+  },
+  "university-of-florida": {
+   "loft": "some",
+   "bunk": "yes",
+   "how": "Submit a GatorWorks request after move-in to change your bed height or bunk it with your roommate. Some buildings' beds loft high enough for a desk underneath.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Beds may not be elevated by cinder blocks or any means other than bunk units provided by housing. Personally constructed lofts of any type are prohibited.",
+   "sources": [
+    {
+     "url": "https://housing.ufl.edu/apply/frequently-asked-questions/",
+     "title": "Frequently Asked Questions (UF Housing & Residence Life)"
+    },
+    {
+     "url": "https://housing.ufl.edu/resources/gatorworks-request/",
+     "title": "GatorWorks Request (UF Housing & Residence Life)"
+    },
+    {
+     "url": "https://housing.ufl.edu/community-standards/",
+     "title": "Community Standards (UF Housing & Residence Life)"
+    }
+   ]
+  },
+  "university-of-miami": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Lofting is no longer allowed. Bed risers are allowed as long as the bed stays no higher than 24 inches off the ground.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Total under-bed space is limited to 24 inches. The university ended its BedLoft partnership. Students may not build lofts.",
+   "sources": [
+    {
+     "url": "https://hrl.studentaffairs.miami.edu/living-on-campus/move-in/fall-move-in-new-students/index.html",
+     "title": "Fall Move-In for New Students (UM Housing & Residential Life)"
+    },
+    {
+     "url": "https://hrl.studentaffairs.miami.edu/living-on-campus/our-residential-communities/centennial-village/index.html",
+     "title": "Centennial Village (UM Housing & Residential Life)"
+    },
+    {
+     "url": "https://hrl.studentaffairs.miami.edu/living-on-campus/faq/index.html",
+     "title": "Guide to Living On Campus (UM Housing & Residential Life)"
+    }
+   ]
+  },
+  "university-of-michigan": {
+   "loft": "yes",
+   "bunk": "some",
+   "how": "Most halls have modular furniture that can only be set up in the manufacturer's approved configurations, e.g. an upper bunk or loft unit with its guardrail.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Which setups are possible depends on the hall's furniture system (Building Block or Lifespace II). Staff may require reconfiguration for safety. Custom-built lofts are not allowed.",
+   "sources": [
+    {
+     "url": "https://housing.umich.edu/wp-content/uploads/2025/01/Housing-Terms-and-Conditions-2025-2026.pdf",
+     "title": "Housing Terms and Conditions, Academic Year 2025-2026 (Michigan Housing)"
+    }
+   ]
+  },
+  "uno": {
+   "loft": "unknown",
+   "bunk": "unknown",
+   "how": null,
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Pontchartrain housing agreement requires written approval for alterations or extra furniture. Lofting, bunking and risers are not addressed in the sources found.",
+   "sources": [
+    {
+     "url": "https://cdn.prod.website-files.com/6a05cd47ac20481315e10a39/6a061c03ee87b395c103452b_6a061c008f5dc8872fe76cf2_4211.pdf",
+     "title": "Pontchartrain Halls Housing Agreement 2025/2026 (Office of Residential Life, linked from uno.edu/media/4211/download)"
+    }
+   ]
+  },
+  "upenn": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Residents may not loft or bunk beds. Staff may do it where room size requires; ask Facilities for a room assessment through a work order.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Installation of partitions or lofts is listed under endangering behavior.",
+   "sources": [
+    {
+     "url": "https://residential-services.business-services.upenn.edu/policies",
+     "title": "Policies (Penn Residential Services)"
+    }
+   ]
+  },
+  "usao": {
+   "loft": "unknown",
+   "bunk": "unknown",
+   "how": null,
+   "own_loft_kits": "unknown",
+   "risers": "yes",
+   "riser_max_in": 12,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Only commercial risers are allowed; cinder blocks, homemade devices and stacked risers are prohibited. Lofting and bunking were not mentioned in the 2025-26 guide.",
+   "sources": [
+    {
+     "url": "https://usao.edu/student-life/images-docs/housing-guide-2025-2026.pdf",
+     "title": "2025-2026 USAO Housing Guide"
+    }
+   ]
+  },
+  "usc": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Residents may not loft or bunk beds themselves. Ask your Customer Service Center whether it can be done in your room after you move in.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Move-in guide is 2023-24; living agreement is 2024-25.",
+   "sources": [
+    {
+     "url": "https://housing.usc.edu/wp-content/uploads/2023/08/2023-2024_Move_In_Guide-FNL-WebV2.pdf",
+     "title": "Resident Information Move-In Guide 2023-2024 (USC Housing)"
+    },
+    {
+     "url": "https://housing.usc.edu/wp-content/uploads/2024/01/2024-2025-Housing-Services-Contract-Living-Agreement-WEB.pdf",
+     "title": "2024-2025 Housing Services Contract and Living Agreement (USC Housing)"
+    }
+   ]
+  },
+  "ut-austin": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Beds come lofted and movable; in Jester, Brackenridge and other halls residents can loft or bunk them. Some halls limit it by floor.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Blanton floors 1-5 can't bunk (height adjustable). Andrews floors 1-3 and Carothers floors 1-4 can't loft but can bunk. Basement rooms in all three can bunk or loft.",
+   "sources": [
+    {
+     "url": "https://housing.utexas.edu/housing/virtual-tours/jester-west-virtual-tours",
+     "title": "Jester West - Virtual Tours"
+    },
+    {
+     "url": "https://housing.utexas.edu/housing/virtual-tours/brackenridge-hall-virtual-tours",
+     "title": "Brackenridge Hall - Virtual Tours"
+    },
+    {
+     "url": "https://housing.utexas.edu/housing/virtual-tours/blanton-hall-virtual-tours",
+     "title": "Blanton Hall - Virtual Tours"
+    },
+    {
+     "url": "https://housing.utexas.edu/housing/virtual-tours/andrews-hall-virtual-tours",
+     "title": "Andrews Hall - Virtual Tours"
+    },
+    {
+     "url": "https://housing.utexas.edu/housing/virtual-tours/carothers-hall-virtual-tours",
+     "title": "Carothers Hall - Virtual Tours"
+    }
+   ]
+  },
+  "ut-chattanooga": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Lofting is not permitted. Bed risers are on the housing packing list. West Campus suites have adjustable-height bed ends.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "West Campus: bed ends have nine adjustable heights; the highest is about 36 in off the floor, with the bottom of the mattress about 30 in up. No source found on bunking.",
+   "sources": [
+    {
+     "url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/incoming-student/move-fall",
+     "title": "Move In - Fall"
+    },
+    {
+     "url": "https://www.utc.edu/sites/default/files/2024-04/24-25%20Housing%20Contract.pdf",
+     "title": "UTC Housing and Residence Life Contract 2024-2025"
+    },
+    {
+     "url": "https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/west-campus",
+     "title": "West Campus"
+    }
+   ]
+  },
+  "uva": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Residence hall rooms come with a bed that can be lofted.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Riser and outside-loft rules aren't published on the pages we could read.",
+   "sources": [
+    {
+     "url": "https://news.virginia.edu/content/what-new-wahoo-parents-are-asking-most-facebook",
+     "title": "What New Wahoo Parents Are Asking the Most on Facebook (UVA Today)"
+    }
+   ]
+  },
+  "uw": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "In buildings with metal beds, residents can change the bed height to loft. Some double and triple rooms have bunk beds.",
+   "own_loft_kits": "unknown",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Lofting applies only to buildings with metal beds. At move-out, reset metal beds to the second rung from the bottom. Bunk beds are shown in McCarty Hall and Mercer Court rooms.",
+   "sources": [
+    {
+     "url": "https://hfs.uw.edu/live/your-community/set-up-your-space/",
+     "title": "Set Up Your Space - UW HFS"
+    },
+    {
+     "url": "https://hfs.uw.edu/live-on-campus/9-month-housing/",
+     "title": "About 9-month housing - UW HFS (image captions)"
+    },
+    {
+     "url": "https://hfs.uw.edu/live/undergraduates/undergraduate-communities/mccarty-hall/",
+     "title": "McCarty Hall double room - UW HFS"
+    }
+   ]
+  },
+  "uw-madison": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "All provided furniture can be lofted or bunked, with bed parts in each room. Staff don't loft at move-in; request help afterward by maintenance request.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Triples, quads and hextuples are bunked at normal heights with top-bunk side rails. Maintenance help after move-in takes about a week. Waters has building-block furniture; other halls use uprights.",
+   "sources": [
+    {
+     "url": "https://www.housing.wisc.edu/undergraduate/residence-halls/rooms/",
+     "title": "Inside Our Rooms"
+    },
+    {
+     "url": "https://www.housing.wisc.edu/undergraduate/experience/expectations/",
+     "title": "Rules & Expectations"
+    }
+   ]
+  },
+  "vanderbilt": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Beds in the first-year Ingram Commons houses are loftable; Vanderbilt posts a how-to video for lofting and unlofting.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Lofts and bunk beds not provided by the university are prohibited. Risers/lofts are listed under what not to bring in the 2016-17 first-year guide. No bunk-bed source found.",
+   "sources": [
+    {
+     "url": "https://cdn.vanderbilt.edu/vu-URL/wp-content/uploads/sites/279/2025/06/16105431/Residence-Life-Revealed-Webinar-QA-2025.pdf",
+     "title": "Residence Life Revealed: Webinar for the Class of 2029 Q&A"
+    },
+    {
+     "url": "https://studenthandbook.vanderbilt.edu/administrative-policies",
+     "title": "Administrative Policies - Vanderbilt Student Handbook"
+    },
+    {
+     "url": "https://www.vanderbilt.edu/ohare/wp-content/uploads/sites/141/Move-in-Guide.pdf",
+     "title": "2016-17 Move-In and Housing Guide for First-Year Students"
+    }
+   ]
+  },
+  "vcu": {
+   "loft": "some",
+   "bunk": "unknown",
+   "how": "Some halls come with low-loft beds; VCU posts unlofting guides for Rhoads, Brandt and Grace & Broad. Loft equipment and bed risers are not allowed.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Low-loft beds are listed in Gladding III and Brandt. Rhoads lists a standard extra-long twin. Riser rule is from the Honors and Grace & Broad move-in lists. No bunk-bed source found.",
+   "sources": [
+    {
+     "url": "https://housing.vcu.edu/move-in/honors/",
+     "title": "Honors - Move-in"
+    },
+    {
+     "url": "https://housing.vcu.edu/move-in/gbrc/",
+     "title": "Grace & Broad - Move-in"
+    },
+    {
+     "url": "https://housing.vcu.edu/media/housing/documents/resource-current-students/Guide%20to%20Residential%20Living.pdf",
+     "title": "2026-2027 Guide to Residential Living"
+    },
+    {
+     "url": "https://housing.vcu.edu/move-in/",
+     "title": "Move-in"
+    },
+    {
+     "url": "https://housing.vcu.edu/halls/brandt/",
+     "title": "Brandt"
+    },
+    {
+     "url": "https://housing.vcu.edu/halls/gladding-residence-center-iii/",
+     "title": "Gladding Residence Center III"
+    }
+   ]
+  },
+  "virginia-tech": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "All rooms have loftable furniture. Residents use a loft kit to raise the bed; most rooms have 2 kits, and extras come by work order while supplies last.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Slusher Wing rooms 201-231, 301-331 and 401-431 allow only one lofted bed. Corps of Cadets areas follow Corps regulations. No beds larger than Twin-XL without SSD and Housing approval.",
+   "sources": [
+    {
+     "url": "https://housing.vt.edu/content/dam/housing_vt_edu/contracts/apply/Housing%20Policies.pdf",
+     "title": "Housing Policies - Virginia Tech Housing Services (furnishings)"
+    },
+    {
+     "url": "https://housing.vt.edu/experience/movein.html",
+     "title": "Move-In - Virginia Tech Housing"
+    }
+   ]
+  },
+  "western-oregon": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "University beds can be lofted; building your own loft, stilts or platforms is not allowed unless the furniture is designed for it.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Storage under the bed is 12-31 in depending on loft height (2018 spec sheet). Beds listed as stackable 'with restrictions' (2018); contract bars bunked beds when leaving a room check-out ready.",
+   "sources": [
+    {
+     "url": "https://cdn.wou.edu/housing/files/2018/09/Master_Spec_Sheet.pdf",
+     "title": "WOU Spec Sheet for Residence Hall Furniture & Storage Space (2018)"
+    },
+    {
+     "url": "https://cdn.wou.edu/housing/files/2025/09/The-Guide-to-Residential-Living-25-26.pdf",
+     "title": "The Guide to Residential Living 2025-2026"
+    },
+    {
+     "url": "https://wou.edu/housing/files/2023/04/Suggested-Packing-List.pdf",
+     "title": "WOU Suggested Packing List"
+    },
+    {
+     "url": "https://cdn.wou.edu/dining/files/2025/06/2025-2026-Housing-Contract-.pdf",
+     "title": "2025-2026 Housing Contract"
+    }
+   ]
+  },
+  "western-washington": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Beds adjust from low single to high single (captain). Loft and bunk setups are typically for triple rooms and need university bed parts approved by facilities.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": 12,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "One set of store-bought risers, up to 12 in with a broad base, no stacking. Birnam Wood apartments keep bed parts for every setup in the closet. Safety rail and ladder required on high beds.",
+   "sources": [
+    {
+     "url": "https://housing.wwu.edu/life-on-campus/maintenance-requests",
+     "title": "Maintenance & Amenities"
+    },
+    {
+     "url": "https://housing.wwu.edu/life-on-campus/community-standards/prohibited-items",
+     "title": "Prohibited Items"
+    },
+    {
+     "url": "https://housing.wwu.edu/life-on-campus/mathes",
+     "title": "Mathes Community"
+    }
+   ]
+  },
+  "wustl": {
+   "loft": "yes",
+   "bunk": "unknown",
+   "how": "Students may use their own loft furniture if Residential Life's Facilities & Services Coordinator approves it. Unsafe lofts can be removed.",
+   "own_loft_kits": "yes",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "First-year bed frames list a highest height of 36 inches from the floor. The page does not list the loft safety guidelines; contact Residential Life. No bunk or riser source found.",
+   "sources": [
+    {
+     "url": "https://reslife.washu.edu/lofted-furniture/",
+     "title": "Lofted Furniture - Residential Life"
+    },
+    {
+     "url": "https://reslife.washu.edu/living-at-washu/for-students/first-year-housing/",
+     "title": "First-Year Housing - Residential Life"
+    }
+   ]
+  },
+  "yale": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Beds can be raised so a dresser fits under, and bunked if the room fits two beds. Students may not build their own lofts.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Regulations: 'No lofts or partitions of any kind may be constructed.' FAQ lists space under the bed as '12-36' (no unit given). No riser source found.",
+   "sources": [
+    {
+     "url": "https://college.yale.edu/first-year-and-new-student-resources/new-student-faqs",
+     "title": "New Student FAQs - Yale College"
+    },
+    {
+     "url": "https://catalog.yale.edu/undergraduate-regulations/regulations/housing/",
+     "title": "Housing - Undergraduate Regulations, Yale University"
+    }
+   ]
+  }
+ }
+}

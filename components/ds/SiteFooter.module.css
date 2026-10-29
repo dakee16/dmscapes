@@ -19,10 +19,21 @@
   margin-inline: auto;
   padding: 56px 0 36px;
   display: grid;
-  grid-template-columns: minmax(0, 520px) minmax(0, 728px);
-  justify-content: space-between;
-  gap: 48px 40px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 48px;
 }
+/* Motto on the left; follow and ask-AI on the right */
+.top { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 32px 40px; }
+.side { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.sideHead {
+  margin: 0;
+  font: 700 11px var(--ds-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a98a6;
+}
+.side .socials { margin: 0; }
+.side .sideHead:not(:first-child) { margin-top: 10px; }
 .brand { display: flex; flex-direction: column; gap: 12px; }
 .motto {
   margin: 0;
@@ -61,9 +72,11 @@
 .socials a:hover { color: var(--ds-yellow); border-color: var(--ds-yellow); }
 .columns {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 40px 24px;
 }
+/* A column can stack two short groups */
+.col { display: flex; flex-direction: column; gap: 36px; }
 .colHead {
   margin: 0 0 12px;
   font: 700 11px var(--ds-mono);
@@ -115,10 +128,11 @@
 }
 
 @media (max-width: 1023px) {
-  .inner { grid-template-columns: minmax(0, 1fr); }
+  .columns { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
   .columns { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 20px; }
+  .side { align-items: flex-start; }
   .bottom { flex-wrap: wrap; }
   .legal { margin-left: 0; order: 3; width: 100%; }
 }

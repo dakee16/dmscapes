@@ -1,0 +1,452 @@
+[
+ {
+  "slug": "meltflex",
+  "name": "MeltFlex",
+  "url": "https://www.meltflexai.com/dorm-room-planner",
+  "checked": "2026-10-28",
+  "summary": "AI interior design tool. Its dorm planner furnishes an uploaded photo of your dorm room as a single, double or triple in a chosen layout and look, with real retailer furniture available.",
+  "how_it_works": "Upload a photo of your dorm room (or use an example photo), pick single, double or triple, a layout and an optional decor look, then the AI renders the furnished room in under 30 seconds.",
+  "facts": {
+   "account_to_start": false,
+   "free_tier": "Free plan, no credit card required; includes the IKEA catalog; free renders carry a small MeltFlex watermark (pricing page data: 15 credits, 3 projects)",
+   "pricing": [
+    {
+     "plan": "Standard (monthly)",
+     "price": "€19/month",
+     "billing": "monthly"
+    },
+    {
+     "plan": "Standard (yearly)",
+     "price": "€12/month, billed yearly",
+     "billing": "yearly"
+    },
+    {
+     "plan": "Pro (monthly)",
+     "price": "€59/month",
+     "billing": "monthly"
+    },
+    {
+     "plan": "Pro (yearly)",
+     "price": "€24/month, billed yearly",
+     "billing": "yearly"
+    },
+    {
+     "plan": "Enterprise",
+     "price": "from €200/month",
+     "billing": "monthly"
+    }
+   ],
+   "dorm_dimensions_preloaded": false,
+   "to_scale_plan": null,
+   "three_d": true,
+   "ai_photo_render": true,
+   "shopping": "Real furniture from 9 retailers (IKEA, Wayfair, Amazon, Pottery Barn, Ashley Furniture, Walmart, West Elm, Costco, Rooms To Go) with prices and retailer links; free plan has the IKEA catalog only",
+   "roommate_collaboration": null,
+   "platforms": [
+    "web",
+    "ios",
+    "android",
+    "windows"
+   ]
+  },
+  "sources": [
+   {
+    "url": "https://www.meltflexai.com/dorm-room-planner",
+    "quote": "Upload a photo of your dorm room, then pick single, double or triple, a layout and a look"
+   },
+   {
+    "url": "https://www.meltflexai.com/dorm-room-planner",
+    "quote": "Upload a photo of the room and MeltFlex AI furnishes it as a single, double or triple, with lofted beds, bunks, mirrored halves or a divider, in the look you pick, in under 30 seconds."
+   },
+   {
+    "url": "https://www.meltflexai.com/dorm-room-planner",
+    "quote": "Don't have a photo right now? You can use one of our example photos"
+   },
+   {
+    "url": "https://www.meltflexai.com/dorm-room-planner",
+    "quote": "Is the dorm room planner free? Yes. You can upload a photo and generate a dorm room design for free, with no account needed to get started."
+   },
+   {
+    "url": "https://www.meltflexai.com/dorm-room-planner",
+    "quote": "Your first dorm render is free, no credit card needed."
+   },
+   {
+    "url": "https://www.meltflexai.com/dorm-room-planner",
+    "quote": "These are figures residence halls publish themselves, so each one names its school. Measure your own room or ask housing for the floor plan before buying anything that has to fit between the beds."
+   },
+   {
+    "url": "https://www.meltflexai.com/dorm-room-planner",
+    "quote": "the planner offers them, but it cannot know your hall’s rules."
+   },
+   {
+    "url": "https://www.meltflexai.com/faq",
+    "quote": "You can try one free AI generation without an account. To save projects, access your design history, and get monthly credits, create a free account with Google sign-in or email."
+   },
+   {
+    "url": "https://www.meltflexai.com/llms.txt",
+    "quote": "Free: start without a credit card, with the IKEA furniture catalog"
+   },
+   {
+    "url": "https://www.meltflexai.com/llms.txt",
+    "quote": "Standard: €19/month, or €12/month billed yearly (490 credits a month, all 9 furniture brands, no watermarks)"
+   },
+   {
+    "url": "https://www.meltflexai.com/llms.txt",
+    "quote": "Pro: €59/month, or €24/month billed yearly (2,250 credits a month, 4K images, commercial use)"
+   },
+   {
+    "url": "https://www.meltflexai.com/llms.txt",
+    "quote": "Enterprise: from €200/month (8,000+ credits a month, team access, MeltFlex on your website, API access)."
+   },
+   {
+    "url": "https://www.meltflexai.com/llms.txt",
+    "quote": "Prices are in EUR and may differ by country and currency."
+   },
+   {
+    "url": "https://www.meltflexai.com/subscription",
+    "quote": "Free renders carry a small MeltFlex watermark."
+   },
+   {
+    "url": "https://www.meltflexai.com/subscription",
+    "quote": "15 credits, 3 projects"
+   },
+   {
+    "url": "https://www.meltflexai.com/llms.txt",
+    "quote": "Upload a photo of any room and design it with real, buyable furniture. Pick products from the catalog of 9 retailers (IKEA, Wayfair, Amazon, Pottery Barn, Ashley Furniture, Walmart, West Elm, Costco, Rooms To Go) and see them in your own room. Every design comes with a shopping list: product names, prices, and links to the retailer."
+   },
+   {
+    "url": "https://www.meltflexai.com/llms.txt",
+    "quote": "Upload a 2D floor plan (architect drawing, hand sketch, or real estate listing image) and get an interactive 3D model of the home. Walk through it, place furniture at true scale, and turn any view into a photorealistic render."
+   },
+   {
+    "url": "https://www.meltflexai.com/llms.txt",
+    "quote": "Apps: web, [iOS](https://apps.apple.com/app/id6767158202), [Android](https://play.google.com/store/apps/details?id=com.meltflex.mobile), and [Windows](https://apps.microsoft.com/detail/9pg80rcxdqx1)"
+   }
+  ],
+  "observed": "When we tried it on Oct 28, 2026, choosing an example photo and pressing Design asked us to sign in before it made a design."
+ },
+ {
+  "slug": "planner-5d",
+  "name": "Planner 5D",
+  "url": "https://planner5d.com/use/dorm-room-planner",
+  "checked": "2026-10-28",
+  "summary": "Home and interior design software for 2D/3D floor plans and room layouts, plus an AI Studio that restyles an uploaded room photo. Its dorm page covers student rooms and student-housing planning.",
+  "how_it_works": "Create a room at scale (start from scratch, enter dimensions, or upload a floor plan), place beds, desks and storage, and compare layouts in 2D and 3D; or upload a dorm photo to AI Studio and describe changes.",
+  "facts": {
+   "account_to_start": true,
+   "free_tier": "Free plan: $0, unlimited projects, 50% of the furniture catalog, web and mobile; no time limit",
+   "pricing": [
+    {
+     "plan": "Premium (monthly)",
+     "price": "$19.99/month",
+     "billing": "monthly"
+    },
+    {
+     "plan": "Premium (yearly)",
+     "price": "$59.99/year",
+     "billing": "yearly"
+    },
+    {
+     "plan": "Professional (monthly)",
+     "price": "$49.99/month",
+     "billing": "monthly"
+    },
+    {
+     "plan": "Professional (yearly)",
+     "price": "$399.99/year",
+     "billing": "yearly"
+    },
+    {
+     "plan": "Enterprise",
+     "price": "Custom priced",
+     "billing": "other"
+    }
+   ],
+   "dorm_dimensions_preloaded": false,
+   "to_scale_plan": true,
+   "three_d": true,
+   "ai_photo_render": true,
+   "shopping": "In-app catalog of 10,000+ furniture items (half free); separate shop.planner5d.com lists third-party retailers' products, purchases completed on the retailer's site",
+   "roommate_collaboration": true,
+   "platforms": [
+    "web",
+    "ios",
+    "android",
+    "windows",
+    "macos"
+   ]
+  },
+  "sources": [
+   {
+    "url": "https://planner5d.com/use/dorm-room-planner",
+    "quote": "Make a small student room work better. Refresh the dorm you already live in with AI, or create practical student housing layouts in 2D and 3D."
+   },
+   {
+    "url": "https://planner5d.com/use/dorm-room-planner",
+    "quote": "Create a room at scale, arrange furniture, and view the result in 2D and 3D."
+   },
+   {
+    "url": "https://planner5d.com/use/dorm-room-planner",
+    "quote": "Start from scratch, add exact dimensions, or upload an existing floor plan for recognition."
+   },
+   {
+    "url": "https://planner5d.com/use/dorm-room-planner",
+    "quote": "Place the beds, desks, wardrobes, storage, and fixtures used in the actual room type."
+   },
+   {
+    "url": "https://planner5d.com/use/dorm-room-planner",
+    "quote": "Yes. Upload a clear photo to Planner 5D AI Studio and describe the changes you want to explore."
+   },
+   {
+    "url": "https://planner5d.com/use/dorm-room-planner",
+    "quote": "AI Studio can restyle an existing interior while keeping its room structure intact and can edit selected areas of an image."
+   },
+   {
+    "url": "https://planner5d.com/use/dorm-room-planner",
+    "quote": "Yes. Planner 5D lets you set dimensions for walls, doors, windows, rooms, and many furniture items."
+   },
+   {
+    "url": "https://planner5d.com/use/dorm-room-planner",
+    "quote": "Create your first dorm room layout for free"
+   },
+   {
+    "url": "https://planner5d.com/use/dorm-room-planner",
+    "quote": "Web, iOS, Android, Windows and macOS"
+   },
+   {
+    "url": "https://planner5d.com/use/dorm-room-planner",
+    "quote": "Yes. Create the room at its real size, add two or more beds, desks, wardrobes, and storage pieces, then compare arrangements in 2D and 3D. This can help roommates discuss zones, shared items, and clear walking paths."
+   },
+   {
+    "url": "https://support.planner5d.com/en/articles/5876686-registering-an-account-web",
+    "quote": "Before you can start designing your dream home, you will need to register an account."
+   },
+   {
+    "url": "https://planner5d.com/pricing",
+    "quote": "Yes. Planner 5D's Free plan costs $0 and covers the core online home-design workflow with no time limit."
+   },
+   {
+    "url": "https://planner5d.com/pricing",
+    "quote": "Access to 50% of the furniture catalog (unlock 10K+ items with Premium)"
+   },
+   {
+    "url": "https://planner5d.com/pricing",
+    "quote": "Premium costs $19.99 with monthly billing or $59.99 billed annually."
+   },
+   {
+    "url": "https://planner5d.com/pricing",
+    "quote": "Professional costs $49.99 with monthly billing or $399.99 billed annually. These are published US prices; local currency and taxes may vary."
+   },
+   {
+    "url": "https://planner5d.com/pricing",
+    "quote": "Custom Priced around your scope and scale"
+   },
+   {
+    "url": "https://planner5d.com/pricing",
+    "quote": "Every Planner 5D plan, including Free, supports project sharing and shared editing."
+   },
+   {
+    "url": "https://shop.planner5d.com",
+    "quote": "Planner 5D does not sell furniture directly but instead showcases on its platform various furniture options from third-party retailers. Any purchase must be completed directly with the selected retailer on its website"
+   }
+  ]
+ },
+ {
+  "slug": "spoak",
+  "name": "Spoak",
+  "url": "https://www.spoak.com/use-cases/dorm-room-layout-planner",
+  "checked": "2026-10-28",
+  "summary": "A subscription-based, ad-free web studio for interior design lovers: to-scale floor plans, room mockups and mood boards built with real products, plus a design community.",
+  "how_it_works": "Set a budget, sign up, draw a to-scale floor plan (from scratch, a template, or an uploaded plan), shop or import products into it, and add a roommate as a collaborator for feedback.",
+  "facts": {
+   "account_to_start": true,
+   "free_tier": "Free Guest pass: $0, no credit card, 1,000 starter tokens, one design in each mode; designs lock from editing after 24 hours",
+   "pricing": [
+    {
+     "plan": "Studio member (monthly)",
+     "price": "$7/month",
+     "billing": "monthly"
+    },
+    {
+     "plan": "Studio member (yearly)",
+     "price": "$70/year",
+     "billing": "yearly"
+    },
+    {
+     "plan": "Pro (monthly)",
+     "price": "$50/month",
+     "billing": "monthly"
+    },
+    {
+     "plan": "Pro (yearly)",
+     "price": "$480/year",
+     "billing": "yearly"
+    },
+    {
+     "plan": "Enterprise",
+     "price": "Flexible (custom)",
+     "billing": "other"
+    }
+   ],
+   "dorm_dimensions_preloaded": false,
+   "to_scale_plan": true,
+   "three_d": null,
+   "ai_photo_render": false,
+   "shopping": "Shop products inside Spoak; import products from any website via Chrome extension or auto-import; budget and shop-list tracking",
+   "roommate_collaboration": true,
+   "platforms": [
+    "web"
+   ]
+  },
+  "sources": [
+   {
+    "url": "https://www.spoak.com/use-cases/dorm-room-layout-planner",
+    "quote": "Create functional, to-scale floor plans of any space, add real-life products, and discover the coolest indie finds out there—all on Spoak."
+   },
+   {
+    "url": "https://www.spoak.com/use-cases/dorm-room-layout-planner",
+    "quote": "Start with setting a design budget."
+   },
+   {
+    "url": "https://www.spoak.com/use-cases/dorm-room-layout-planner",
+    "quote": "Sign up for Spoak and create a to-scale floor plan."
+   },
+   {
+    "url": "https://www.spoak.com/use-cases/dorm-room-layout-planner",
+    "quote": "Shop for new finds or decor inside Spoak."
+   },
+   {
+    "url": "https://www.spoak.com/use-cases/dorm-room-layout-planner",
+    "quote": "Add your roomie or partner as a collaborator to get their feedback."
+   },
+   {
+    "url": "https://www.spoak.com/use-cases/dorm-room-layout-planner",
+    "quote": "Easily add products to a project from anywhere on the World Wide Web via our Chrome extension or auto import tool."
+   },
+   {
+    "url": "https://www.spoak.com/use-cases/dorm-room-layout-planner",
+    "quote": "Limited Time Only! Extra 25% off annual plans with code SPOAK23*"
+   },
+   {
+    "url": "https://www.spoak.com/pricing",
+    "quote": "Yes. You start on a free Guest pass, with no credit card and no commitment. It comes with 1,000 tokens and the chance to try every design mode and join the conversation, so you get a real feel for the studio before deciding on anything."
+   },
+   {
+    "url": "https://www.spoak.com/pricing",
+    "quote": "A Guest pass is a taste of the studio: 1,000 starter tokens, one design in each mode, and a spot in the community."
+   },
+   {
+    "url": "https://www.spoak.com/pricing",
+    "quote": "Your designs will never disappear. They are locked from editing after the first 24 hours, but they remain visible always."
+   },
+   {
+    "url": "https://www.spoak.com/pricing",
+    "quote": "Studio member: $7/month or $70/year"
+   },
+   {
+    "url": "https://www.spoak.com/pricing",
+    "quote": "Pro: $50/month or $480/year"
+   },
+   {
+    "url": "https://www.spoak.com/pricing",
+    "quote": "Enterprise: Flexible"
+   },
+   {
+    "url": "https://www.spoak.com/llms.txt",
+    "quote": "Spoak is a subscription-based, ad-free digital studio for interior design lovers: tools to mock up rooms, draw floor plans and build swatch boards with real products, and a community to share designs and get feedback. Free Guest pass, full membership at $7 a month, and Pro plans for designers working with clients."
+   },
+   {
+    "url": "https://www.spoak.com/llms.txt",
+    "quote": "Web app at studio.spoak.com, made by Spoak Decor Inc."
+   },
+   {
+    "url": "https://www.spoak.com/design-tools/floor-plan",
+    "quote": "Build a room from scratch by adding walls or choose from one of our prebuilt room templates. Already have a plan? No problem. Upload an existing floor plan or elevation image to set your scale and start adding assets."
+   },
+   {
+    "url": "https://www.spoak.com/design-tools/room-viz",
+    "quote": "Choose from one of our pre-built templates or upload an image of your own space to get started."
+   },
+   {
+    "url": "https://www.spoak.com/design-tools/room-viz",
+    "quote": "Transform your designs into stunning, photorealistic 3D images – so you can experience your design vision as if you’re already standing in it."
+   },
+   {
+    "url": "https://www.spoak.com/info/ai",
+    "quote": "AI does not, has not, and will not, make any creative judgment calls inside the Spoak ecosystem."
+   },
+   {
+    "url": "https://www.spoak.com/info/ai",
+    "quote": "Magic Render takes the design that you created and makes it photorealistic."
+   }
+  ]
+ },
+ {
+  "slug": "101planners",
+  "name": "101 Planners Dorm Room Planner",
+  "url": "https://www.101planners.com/dorm-room-planner/",
+  "checked": "2026-10-28",
+  "summary": "A free, browser-based dorm layout tool on 101planners.com: drag dorm-sized furniture onto a to-scale floor plan, get layout warnings, tag items by owner, and export the plan.",
+  "how_it_works": "Pick a room size (presets or custom), drag dorm furniture onto the floor plan, fix the problems it flags, tag each piece as yours, your roommate's or shared, then save as an image or PDF to send.",
+  "facts": {
+   "account_to_start": false,
+   "free_tier": "Entirely free: no sign-up, no account, no email, no paid tier; plan saves in your browser",
+   "pricing": [],
+   "dorm_dimensions_preloaded": false,
+   "to_scale_plan": true,
+   "three_d": null,
+   "ai_photo_render": null,
+   "shopping": null,
+   "roommate_collaboration": null,
+   "platforms": [
+    "web"
+   ]
+  },
+  "sources": [
+   {
+    "url": "https://www.101planners.com/dorm-room-planner/",
+    "quote": "You pick your room size, drag furniture onto a to-scale floor plan, and move it around until it works."
+   },
+   {
+    "url": "https://www.101planners.com/dorm-room-planner/",
+    "quote": "As you go, it tells you what is broken: a dresser sitting in the swing of the door, a wardrobe blocking the only window, two things occupying the same square foot of floor, three people and two beds."
+   },
+   {
+    "url": "https://www.101planners.com/dorm-room-planner/",
+    "quote": "Then you save it as an image or a PDF and send it to the person you are going to be living with."
+   },
+   {
+    "url": "https://www.101planners.com/dorm-room-planner/",
+    "quote": "It is free, it does not ask for an email, and it saves your plan in your browser so you can come back to it."
+   },
+   {
+    "url": "https://www.101planners.com/dorm-room-planner/",
+    "quote": "Yes. There is no sign-up, no account, no email required, and no paid tier. Your plan saves automatically in your browser, so you can close the tab and come back to it."
+   },
+   {
+    "url": "https://www.101planners.com/dorm-room-planner/",
+    "quote": "A standard double runs about 12 by 15 feet, or roughly 180 square feet. A small double is closer to 10 by 12, about 120 square feet, and it is tight enough that lofting stops being a preference and becomes the plan."
+   },
+   {
+    "url": "https://www.101planners.com/dorm-room-planner/",
+    "quote": "If your school publishes room dimensions, start there. Many housing sites list square footage and floor plans by building, and residence life will usually tell you if you email and ask."
+   },
+   {
+    "url": "https://www.101planners.com/dorm-room-planner/",
+    "quote": "Once you have real numbers, enter them as a custom size and the whole layout rescales."
+   },
+   {
+    "url": "https://www.101planners.com/dorm-room-planner/",
+    "quote": "So the planner tags every piece of furniture as yours, your roommate’s, or shared, and colour-codes the floor plan accordingly. Then you export it and send it to them."
+   },
+   {
+    "url": "https://www.101planners.com/dorm-room-planner/",
+    "quote": "Yes. Dragging works with touch the same way it works with a mouse."
+   },
+   {
+    "url": "https://www.101planners.com/dorm-room-planner/",
+    "quote": "Yes. You can save it as an image, download it as a PDF, or print it directly."
+   }
+  ]
+ }
+]

@@ -134,6 +134,12 @@ export interface FeedbackRequest {
   feedback_text?: string | null;
   /** purchase_surveys.id from the "yes" that led here, when known. */
   purchase_survey_id?: string | null;
+  /** Opt-in: show this as a public review once approved (needs feedback_text and display_name). */
+  public_ok?: boolean;
+  /** The name shown with a public review, 1-40 characters. */
+  display_name?: string | null;
+  /** Optional school shown with a public review, up to 80 characters. */
+  school_name?: string | null;
 }
 export interface FeedbackResponseBody {
   ok: true;
