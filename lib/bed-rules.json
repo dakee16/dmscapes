@@ -268,6 +268,30 @@
     }
    ]
   },
+  "columbia": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Lofted beds are prohibited in all residence halls and brownstones. The University bed frame adjusts from 9.5 to 33 in off the floor and must stay in the room.",
+   "own_loft_kits": "no",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": {
+    "min": 9.5,
+    "max": 33
+   },
+   "deadline": null,
+   "notes": "From archived copies of Columbia Housing's pages (Aug to Dec 2025). Bunking and bed risers aren't mentioned.",
+   "sources": [
+    {
+     "url": "https://www.housing.columbia.edu/dont-bring",
+     "title": "Prohibited Items and Behaviors (Columbia Housing, page footer 2025)"
+    },
+    {
+     "url": "https://www.housing.columbia.edu/content/furnishings-and-fixtures",
+     "title": "Furnishings and Fixtures (Columbia Housing, page footer 2025)"
+    }
+   ]
+  },
   "cornell": {
    "loft": "some",
    "bunk": "some",
@@ -420,10 +444,6 @@
     {
      "url": "https://housing.fsu.edu/explore-housing/housing-faqs",
      "title": "Housing FAQs | FSU Housing"
-    },
-    {
-     "url": "https://housing.fsu.edu/explore-housing/housing-faqs",
-     "title": "Housing FAQs | FSU Housing"
     }
    ]
   },
@@ -487,34 +507,6 @@
     {
      "url": "https://housing.gatech.edu/housing-options/residence-halls/room-specifications",
      "title": "Room & Furniture Info | GT Housing"
-    },
-    {
-     "url": "https://housing.gatech.edu/housing-options/residence-halls/room-specifications",
-     "title": "Room & Furniture Info | GT Housing"
-    },
-    {
-     "url": "https://housing.gatech.edu/housing-options/residence-halls/room-specifications",
-     "title": "Room & Furniture Info | GT Housing"
-    },
-    {
-     "url": "https://housing.gatech.edu/housing-options/residence-halls/room-specifications",
-     "title": "Room & Furniture Info | GT Housing"
-    },
-    {
-     "url": "https://housing.gatech.edu/housing-options/residence-halls/room-specifications",
-     "title": "Room & Furniture Info | GT Housing"
-    },
-    {
-     "url": "https://housing.gatech.edu/housing-options/residence-halls/room-specifications",
-     "title": "Room & Furniture Info | GT Housing"
-    },
-    {
-     "url": "https://housing.gatech.edu/housing-options/residence-halls/room-specifications",
-     "title": "Room & Furniture Info | GT Housing"
-    },
-    {
-     "url": "https://housing.gatech.edu/housing-options/residence-halls/room-specifications",
-     "title": "Room & Furniture Info | GT Housing"
     }
    ]
   },
@@ -536,10 +528,6 @@
     {
      "url": "https://housing.gmu.edu/residence-halls/first-year-residence-halls/taylor-hall",
      "title": "Taylor Hall | Housing and Residence Life"
-    },
-    {
-     "url": "https://housing.gmu.edu/what-bring",
-     "title": "What to Bring | Housing and Residence Life"
     },
     {
      "url": "https://housing.gmu.edu/what-bring",
@@ -585,14 +573,6 @@
    "sources": [
     {
      "url": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
-     "title": "Residence Halls | Indiana Wesleyan University"
-    },
-    {
-     "url": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
-     "title": "Residence Halls | Indiana Wesleyan University"
-    },
-    {
-     "url": "https://www.indwes.edu/about/life-at-iwu/residence-halls/",
      "title": "Residence Halls | Indiana Wesleyan University (Things Not to Bring list)"
     }
    ]
@@ -611,38 +591,6 @@
    "deadline": "Housing application request through July 6, 2026; work orders through March 12",
    "notes": "Mayflower Hall has no high loft or bunk option. Heights are mattress heights: high loft 71 in, high captain 45 in.",
    "sources": [
-    {
-     "url": "https://housing.uiowa.edu/liveoncampus/room-furnishings",
-     "title": "Room Furnishings | University of Iowa Housing"
-    },
-    {
-     "url": "https://housing.uiowa.edu/liveoncampus/room-furnishings",
-     "title": "Room Furnishings | University of Iowa Housing"
-    },
-    {
-     "url": "https://housing.uiowa.edu/liveoncampus/room-furnishings",
-     "title": "Room Furnishings | University of Iowa Housing"
-    },
-    {
-     "url": "https://housing.uiowa.edu/liveoncampus/room-furnishings",
-     "title": "Room Furnishings | University of Iowa Housing"
-    },
-    {
-     "url": "https://housing.uiowa.edu/liveoncampus/room-furnishings",
-     "title": "Room Furnishings | University of Iowa Housing"
-    },
-    {
-     "url": "https://housing.uiowa.edu/liveoncampus/room-furnishings",
-     "title": "Room Furnishings | University of Iowa Housing"
-    },
-    {
-     "url": "https://housing.uiowa.edu/liveoncampus/room-furnishings",
-     "title": "Room Furnishings | University of Iowa Housing"
-    },
-    {
-     "url": "https://housing.uiowa.edu/liveoncampus/room-furnishings",
-     "title": "Room Furnishings | University of Iowa Housing"
-    },
     {
      "url": "https://housing.uiowa.edu/liveoncampus/room-furnishings",
      "title": "Room Furnishings | University of Iowa Housing"
@@ -707,14 +655,6 @@
      "title": "Regulations | Miami University Residence Life"
     },
     {
-     "url": "https://miamioh.edu/life-at-miami/living-on-campus/office-of-residence-life/regulations/index.html",
-     "title": "Regulations | Miami University Residence Life"
-    },
-    {
-     "url": "https://miamioh.edu/life-at-miami/living-on-campus/office-of-residence-life/regulations/index.html",
-     "title": "Regulations | Miami University Residence Life"
-    },
-    {
      "url": "https://miamioh.edu/policy-library/students/undergraduate/housing/student-room-regulations.html",
      "title": "Student Room Regulations | Miami University"
     },
@@ -735,10 +675,6 @@
    "deadline": null,
    "notes": null,
    "sources": [
-    {
-     "url": "https://www.mtu.edu/residential-living/education/living-guide/room-information/",
-     "title": "Living Guide: Room Information | Michigan Tech Residential Living"
-    },
     {
      "url": "https://www.mtu.edu/residential-living/education/living-guide/room-information/",
      "title": "Living Guide: Room Information | Michigan Tech Residential Living"
@@ -776,26 +712,6 @@
     {
      "url": "https://liveon.msu.edu/beds",
      "title": "Beds and Adjustments | MSU Live On"
-    },
-    {
-     "url": "https://liveon.msu.edu/beds",
-     "title": "Beds and Adjustments | MSU Live On"
-    },
-    {
-     "url": "https://liveon.msu.edu/beds",
-     "title": "Beds and Adjustments | MSU Live On"
-    },
-    {
-     "url": "https://liveon.msu.edu/beds",
-     "title": "Beds and Adjustments | MSU Live On"
-    },
-    {
-     "url": "https://liveon.msu.edu/beds",
-     "title": "Beds and Adjustments | MSU Live On"
-    },
-    {
-     "url": "https://liveon.msu.edu/beds",
-     "title": "Beds and Adjustments | MSU Live On"
     }
    ]
   },
@@ -813,30 +729,6 @@
     {
      "url": "https://www2.naz.edu/residential-life/new-students/housing-faqs",
      "title": "New Student FAQs | Nazareth University"
-    },
-    {
-     "url": "https://www2.naz.edu/residential-life/new-students/housing-faqs",
-     "title": "New Student FAQs | Nazareth University"
-    },
-    {
-     "url": "https://www2.naz.edu/residential-life/new-students/housing-faqs",
-     "title": "New Student FAQs | Nazareth University"
-    },
-    {
-     "url": "https://www2.naz.edu/residential-life/new-students/housing-faqs",
-     "title": "New Student FAQs | Nazareth University"
-    },
-    {
-     "url": "https://www2.naz.edu/residential-life/new-students/housing-faqs",
-     "title": "New Student FAQs | Nazareth University"
-    },
-    {
-     "url": "https://www2.naz.edu/residential-life/new-students/housing-faqs",
-     "title": "New Student FAQs | Nazareth University"
-    },
-    {
-     "url": "https://www2.naz.edu/residential-life/policies-and-procedures/",
-     "title": "Policies and Procedures | Nazareth University"
     },
     {
      "url": "https://www2.naz.edu/residential-life/policies-and-procedures/",
@@ -977,6 +869,48 @@
     }
    ]
   },
+  "ole-miss": {
+   "loft": "some",
+   "bunk": "unknown",
+   "how": "Optional lofts rented from Lofts LLC for most halls (not RH2/RH3); bed raised before move-in. Homemade lofts, cinder blocks and bed risers are not allowed.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "From Ole Miss Student Housing PDFs (July 2024 and May 2025). Only the Lofts LLC rental is described; no bunking rule is published.",
+   "sources": [
+    {
+     "url": "https://olemiss.box.com/v/room-furniture-guide",
+     "title": "Room & Furniture Guide (Ole Miss Student Housing PDF, July 2024)"
+    },
+    {
+     "url": "https://olemiss.box.com/s/472dg68se7bhs25wsrt9gm8lpqiv5oqc",
+     "title": "Move-in Checklist (Ole Miss Student Housing PDF, May 2025)"
+    }
+   ]
+  },
+  "penn-state": {
+   "loft": "some",
+   "bunk": "some",
+   "how": "Students build a loft or bunk from Penn State's plans on the university frame once Housing OKs the room. Not allowed in adjustable-bed halls.",
+   "own_loft_kits": "no",
+   "risers": "yes",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Adjustable frames go up to about 30 in. The loft specification PDF dates from 2005. No riser limit is given.",
+   "sources": [
+    {
+     "url": "https://liveon.psu.edu/university-park/bed-loft-information",
+     "title": "Bed Loft Information (Penn State Housing, page footer 2026)"
+    },
+    {
+     "url": "https://liveon.psu.edu/sites/liveon/files/2021-11/loft-specifications.pdf",
+     "title": "Loft Specifications (Penn State Auxiliary and Business Services PDF; file posted 2021-11, PDF created 2005)"
+    }
+   ]
+  },
   "pitt": {
    "loft": "no",
    "bunk": "unknown",
@@ -991,6 +925,27 @@
     {
      "url": "https://www.studentaffairs.pitt.edu/sites/default/files/2025-08/PittSA-ResidentialHandbook_25-26_Final.pdf",
      "title": "2025-2026 Residential Handbook (Pitt Student Affairs)"
+    }
+   ]
+  },
+  "princeton": {
+   "loft": "yes",
+   "bunk": "yes",
+   "how": "Students may build a free-standing loft that passes inspection (max 4x8 ft). University bunks are adjusted by students or by a Facilities work order.",
+   "own_loft_kits": "yes",
+   "risers": "unknown",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": "Bunk requests only after arrival, not summer; lofts out at end of academic year",
+   "notes": "From archived copies of Princeton's pages (Sep and Oct 2025). The rules don't say whether a bought loft kit counts. No riser rule is given.",
+   "sources": [
+    {
+     "url": "https://hres.princeton.edu/policies/residential-living/dormitory-annex-regulations",
+     "title": "Dormitory and Annex Regulations (Princeton Housing and Real Estate, page footer 2025)"
+    },
+    {
+     "url": "https://hres.princeton.edu/undergraduate-housing/incoming-students/your-dorm-room",
+     "title": "Your Dorm Room (Princeton Housing and Real Estate, 2025)"
     }
    ]
   },
@@ -1062,7 +1017,7 @@
    "riser_max_in": 12,
    "bed_height_in": null,
    "deadline": null,
-   "notes": "Use of cinder blocks is also prohibited. No general lofting rule was found on the fetchable official pages.",
+   "notes": "Cinder blocks are also prohibited. No general lofting rule is published.",
    "sources": [
     {
      "url": "https://ruoncampus.rutgers.edu/policies",
@@ -1168,6 +1123,23 @@
     {
      "url": "https://housingmealplans.syr.edu/terms-and-conditions-2026-2027/",
      "title": "Terms and Conditions 2026-2027 - Housing (8.7 Elevated Beds)"
+    }
+   ]
+  },
+  "tamucc": {
+   "loft": "no",
+   "bunk": "unknown",
+   "how": "Residence-hall beds cannot be lofted, and bed risers are on the housing do-not-bring list. Bunking is not addressed on the public pages.",
+   "own_loft_kits": "no",
+   "risers": "no",
+   "riser_max_in": null,
+   "bed_height_in": null,
+   "deadline": null,
+   "notes": "Live FAQ, undated (current for Spring 2027 registration). Resident Handbook is login-only (StarRez portal), so bunking and bed height are unconfirmed. Own loft kits inferred from the blanket loft ban.",
+   "sources": [
+    {
+     "url": "https://www.tamucc.edu/finance-and-administration/auxiliary-services/housing/faq/index-move-in.php",
+     "title": "Frequently Asked Questions (Move-In) - Islander Housing, Texas A&M University-Corpus Christi (undated page, live Oct 2026)"
     }
    ]
   },
@@ -1508,10 +1480,6 @@
     {
      "url": "https://hdhughousing.ucsd.edu/living-on-campus/neighborhoods/room-type.html",
      "title": "Room Types and Layouts (UC San Diego Undergraduate Housing)"
-    },
-    {
-     "url": "https://hdhughousing.ucsd.edu/living-on-campus/neighborhoods/room-type.html",
-     "title": "Room Types and Layouts (UC San Diego Undergraduate Housing)"
     }
    ]
   },
@@ -1529,22 +1497,6 @@
     {
      "url": "https://www.udel.edu/students/reslife/campus-living/housing-policies/guide-to-community-living/",
      "title": "Guide to Community Living (University of Delaware Residence Life & Housing)"
-    },
-    {
-     "url": "https://www.udel.edu/students/reslife/campus-living/housing-policies/guide-to-community-living/",
-     "title": "Guide to Community Living (University of Delaware Residence Life & Housing)"
-    },
-    {
-     "url": "https://www.udel.edu/students/reslife/campus-living/housing-policies/guide-to-community-living/",
-     "title": "Guide to Community Living (University of Delaware Residence Life & Housing)"
-    },
-    {
-     "url": "https://www.udel.edu/students/reslife/campus-living/housing-policies/guide-to-community-living/",
-     "title": "Guide to Community Living (University of Delaware Residence Life & Housing)"
-    },
-    {
-     "url": "https://www.udel.edu/students/reslife/campus-living/move-in/",
-     "title": "Move In (University of Delaware Residence Life & Housing)"
     },
     {
      "url": "https://www.udel.edu/students/reslife/campus-living/move-in/",
@@ -1571,28 +1523,8 @@
      "title": "Move In (UGA Housing)"
     },
     {
-     "url": "https://housing.uga.edu/move-in/",
-     "title": "Move In (UGA Housing)"
-    },
-    {
-     "url": "https://housing.uga.edu/move-in/",
-     "title": "Move In (UGA Housing)"
-    },
-    {
-     "url": "https://housing.uga.edu/move-in/",
-     "title": "Move In (UGA Housing)"
-    },
-    {
      "url": "https://housing.uga.edu/2026/06/29/move-in-arrival-time-and-bed-height-request/",
      "title": "Move-in arrival time and bed height request (UGA Housing, June 2026)"
-    },
-    {
-     "url": "https://housing.uga.edu/2026/06/29/move-in-arrival-time-and-bed-height-request/",
-     "title": "Move-in arrival time and bed height request (UGA Housing, June 2026)"
-    },
-    {
-     "url": "https://housing.uga.edu/community-guide/",
-     "title": "Community Guide (UGA Housing)"
     },
     {
      "url": "https://housing.uga.edu/community-guide/",
@@ -1614,18 +1546,6 @@
     {
      "url": "https://housing.illinois.edu/MyHousing/Hallmarks",
      "title": "Housing Hallmarks (University Housing, Illinois)"
-    },
-    {
-     "url": "https://housing.illinois.edu/MyHousing/Hallmarks",
-     "title": "Housing Hallmarks (University Housing, Illinois)"
-    },
-    {
-     "url": "https://housing.illinois.edu/MyHousing/Hallmarks",
-     "title": "Housing Hallmarks (University Housing, Illinois)"
-    },
-    {
-     "url": "https://housing.illinois.edu/living-communities/halls/furniture-dimensions",
-     "title": "Residence Hall Furniture Dimensions (University Housing, Illinois)"
     },
     {
      "url": "https://housing.illinois.edu/living-communities/halls/furniture-dimensions",
@@ -1660,10 +1580,6 @@
      "title": "Residential Service Desks (UMass Amherst Residential Services)"
     },
     {
-     "url": "https://www.umass.edu/living/residential-services/rsd",
-     "title": "Residential Service Desks (UMass Amherst Residential Services)"
-    },
-    {
      "url": "https://www.umass.edu/student-life/sites/default/files/2025-01/Res%20Life%20Lofting%20&%20Bunking%20Instructions.pdf",
      "title": "Lofting & Bunking Instructions (UMass Amherst Residential Life)"
     },
@@ -1684,14 +1600,6 @@
    "deadline": "Order a BedLoft before August 1 to guarantee delivery by move-in day",
    "notes": "Rented BedLoft kits only. Lofts can't be used in overflow rooms that already have bunked beds. Frames adjust to give 24\"-36\" of under-bed storage.",
    "sources": [
-    {
-     "url": "https://reslife.umbc.edu/wp-content/uploads/sites/65/2022/08/Rights-and-Responsibilities-Guide-Fall-2023-Final.pdf",
-     "title": "Residential Life Rights and Responsibilities Guide (UMBC, Fall 2023)"
-    },
-    {
-     "url": "https://reslife.umbc.edu/wp-content/uploads/sites/65/2022/08/Rights-and-Responsibilities-Guide-Fall-2023-Final.pdf",
-     "title": "Residential Life Rights and Responsibilities Guide (UMBC, Fall 2023)"
-    },
     {
      "url": "https://reslife.umbc.edu/wp-content/uploads/sites/65/2022/08/Rights-and-Responsibilities-Guide-Fall-2023-Final.pdf",
      "title": "Residential Life Rights and Responsibilities Guide (UMBC, Fall 2023)"
@@ -1722,26 +1630,6 @@
      "title": "Amenities (UMD Department of Residential Facilities)"
     },
     {
-     "url": "https://drf.umd.edu/resident-resources/amenities",
-     "title": "Amenities (UMD Department of Residential Facilities)"
-    },
-    {
-     "url": "https://drf.umd.edu/resident-resources/amenities",
-     "title": "Amenities (UMD Department of Residential Facilities)"
-    },
-    {
-     "url": "https://drf.umd.edu/resident-resources/amenities",
-     "title": "Amenities (UMD Department of Residential Facilities)"
-    },
-    {
-     "url": "https://reslife.umd.edu/moving-breaks/before-move",
-     "title": "Before Move-In (UMD Resident Life)"
-    },
-    {
-     "url": "https://reslife.umd.edu/moving-breaks/before-move",
-     "title": "Before Move-In (UMD Resident Life)"
-    },
-    {
      "url": "https://reslife.umd.edu/moving-breaks/before-move",
      "title": "Before Move-In (UMD Resident Life)"
     },
@@ -1762,18 +1650,6 @@
    "deadline": null,
    "notes": "Some rooms can't be changed due to space limits. Staff can't adjust beds before move-in. Beds must be de-lofted before move-out ($100 charge if left lofted).",
    "sources": [
-    {
-     "url": "https://housing.umn.edu/residents/moving-breaks/movein/beds",
-     "title": "Lofting & Beds (UMN Housing & Residential Life)"
-    },
-    {
-     "url": "https://housing.umn.edu/residents/moving-breaks/movein/beds",
-     "title": "Lofting & Beds (UMN Housing & Residential Life)"
-    },
-    {
-     "url": "https://housing.umn.edu/residents/moving-breaks/movein/beds",
-     "title": "Lofting & Beds (UMN Housing & Residential Life)"
-    },
     {
      "url": "https://housing.umn.edu/residents/moving-breaks/movein/beds",
      "title": "Lofting & Beds (UMN Housing & Residential Life)"
@@ -1802,10 +1678,6 @@
     {
      "url": "https://housing.unc.edu/explore/room-types/corridor-style-triple/",
      "title": "Corridor-Style Triple (Carolina Housing)"
-    },
-    {
-     "url": "https://housing.unc.edu/living-on-campus/arrival-departure/bed-setup-and-safety/",
-     "title": "Bed Setup and Safety (Carolina Housing)"
     },
     {
      "url": "https://housing.unc.edu/living-on-campus/arrival-departure/bed-setup-and-safety/",
@@ -1846,26 +1718,6 @@
      "title": "Room Setup (UA Housing and Residential Communities)"
     },
     {
-     "url": "https://housing.sl.ua.edu/incoming-students/move-in/room-setup/",
-     "title": "Room Setup (UA Housing and Residential Communities)"
-    },
-    {
-     "url": "https://housing.sl.ua.edu/incoming-students/move-in/room-setup/",
-     "title": "Room Setup (UA Housing and Residential Communities)"
-    },
-    {
-     "url": "https://housing.sl.ua.edu/incoming-students/move-in/room-setup/",
-     "title": "Room Setup (UA Housing and Residential Communities)"
-    },
-    {
-     "url": "https://housing.sl.ua.edu/incoming-students/move-in/room-setup/",
-     "title": "Room Setup (UA Housing and Residential Communities)"
-    },
-    {
-     "url": "https://housing.sl.ua.edu/incoming-students/move-in/room-setup/",
-     "title": "Room Setup (UA Housing and Residential Communities)"
-    },
-    {
      "url": "https://housing.sl.ua.edu/halls/burke/",
      "title": "Burke (UA Housing and Residential Communities)"
     }
@@ -1889,10 +1741,6 @@
     {
      "url": "https://housing.ufl.edu/resources/gatorworks-request/",
      "title": "GatorWorks Request (UF Housing & Residence Life)"
-    },
-    {
-     "url": "https://housing.ufl.edu/community-standards/",
-     "title": "Community Standards (UF Housing & Residence Life)"
     },
     {
      "url": "https://housing.ufl.edu/community-standards/",
@@ -1922,10 +1770,6 @@
     {
      "url": "https://hrl.studentaffairs.miami.edu/living-on-campus/faq/index.html",
      "title": "Guide to Living On Campus (UM Housing & Residential Life)"
-    },
-    {
-     "url": "https://hrl.studentaffairs.miami.edu/living-on-campus/faq/index.html",
-     "title": "Guide to Living On Campus (UM Housing & Residential Life)"
     }
    ]
   },
@@ -1940,22 +1784,6 @@
    "deadline": null,
    "notes": "Which setups are possible depends on the hall's furniture system (Building Block or Lifespace II). Staff may require reconfiguration for safety. Custom-built lofts are not allowed.",
    "sources": [
-    {
-     "url": "https://housing.umich.edu/wp-content/uploads/2025/01/Housing-Terms-and-Conditions-2025-2026.pdf",
-     "title": "Housing Terms and Conditions, Academic Year 2025-2026 (Michigan Housing)"
-    },
-    {
-     "url": "https://housing.umich.edu/wp-content/uploads/2025/01/Housing-Terms-and-Conditions-2025-2026.pdf",
-     "title": "Housing Terms and Conditions, Academic Year 2025-2026 (Michigan Housing)"
-    },
-    {
-     "url": "https://housing.umich.edu/wp-content/uploads/2025/01/Housing-Terms-and-Conditions-2025-2026.pdf",
-     "title": "Housing Terms and Conditions, Academic Year 2025-2026 (Michigan Housing)"
-    },
-    {
-     "url": "https://housing.umich.edu/wp-content/uploads/2025/01/Housing-Terms-and-Conditions-2025-2026.pdf",
-     "title": "Housing Terms and Conditions, Academic Year 2025-2026 (Michigan Housing)"
-    },
     {
      "url": "https://housing.umich.edu/wp-content/uploads/2025/01/Housing-Terms-and-Conditions-2025-2026.pdf",
      "title": "Housing Terms and Conditions, Academic Year 2025-2026 (Michigan Housing)"
@@ -1976,10 +1804,6 @@
     {
      "url": "https://cdn.prod.website-files.com/6a05cd47ac20481315e10a39/6a061c03ee87b395c103452b_6a061c008f5dc8872fe76cf2_4211.pdf",
      "title": "Pontchartrain Halls Housing Agreement 2025/2026 (Office of Residential Life, linked from uno.edu/media/4211/download)"
-    },
-    {
-     "url": "https://cdn.prod.website-files.com/6a05cd47ac20481315e10a39/6a061c03ee87b395c103452b_6a061c008f5dc8872fe76cf2_4211.pdf",
-     "title": "Pontchartrain Halls Housing Agreement 2025/2026 (Office of Residential Life, linked from uno.edu/media/4211/download)"
     }
    ]
   },
@@ -1994,10 +1818,6 @@
    "deadline": null,
    "notes": "Installation of partitions or lofts is listed under endangering behavior.",
    "sources": [
-    {
-     "url": "https://residential-services.business-services.upenn.edu/policies",
-     "title": "Policies (Penn Residential Services)"
-    },
     {
      "url": "https://residential-services.business-services.upenn.edu/policies",
      "title": "Policies (Penn Residential Services)"
@@ -2109,7 +1929,7 @@
    "riser_max_in": null,
    "bed_height_in": null,
    "deadline": null,
-   "notes": "Housing site pages (prohibited items, what to bring, first-year FAQ) returned 403 and could not be read, so riser and outside-loft rules are unknown.",
+   "notes": "Riser and outside-loft rules aren't published on the pages we could read.",
    "sources": [
     {
      "url": "https://news.virginia.edu/content/what-new-wahoo-parents-are-asking-most-facebook",
@@ -2236,10 +2056,6 @@
    "deadline": null,
    "notes": "Slusher Wing rooms 201-231, 301-331 and 401-431 allow only one lofted bed. Corps of Cadets areas follow Corps regulations. No beds larger than Twin-XL without SSD and Housing approval.",
    "sources": [
-    {
-     "url": "https://housing.vt.edu/content/dam/housing_vt_edu/contracts/apply/Housing%20Policies.pdf",
-     "title": "Housing Policies - Virginia Tech Housing Services"
-    },
     {
      "url": "https://housing.vt.edu/content/dam/housing_vt_edu/contracts/apply/Housing%20Policies.pdf",
      "title": "Housing Policies - Virginia Tech Housing Services (furnishings)"

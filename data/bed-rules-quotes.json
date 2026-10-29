@@ -160,6 +160,28 @@
     "quote": "Clemson's modular bed frames can be raised to create more floor space without a loft kit."
    }
   ],
+  "columbia": [
+   {
+    "url": "https://www.housing.columbia.edu/dont-bring",
+    "title": "Prohibited Items and Behaviors (Columbia Housing, page footer 2025)",
+    "quote": "The following items are prohibited in all Columbia owned and operated residence halls and brownstones. ... Lofted Beds ... Mattresses"
+   },
+   {
+    "url": "https://www.housing.columbia.edu/dont-bring",
+    "title": "Prohibited Items and Behaviors (Columbia Housing, page footer 2025)",
+    "quote": "Structural additions or modifications of any kind are not permitted to any part of a student room or residence hall ... Removing or altering University-owned and provided furniture, fixtures, appliances, or locks"
+   },
+   {
+    "url": "https://www.housing.columbia.edu/content/furnishings-and-fixtures",
+    "title": "Furnishings and Fixtures (Columbia Housing, page footer 2025)",
+    "quote": "The bed frame height is 36 inches and the frame is adjustable from 9.5 inches off the floor up to 33 inches"
+   },
+   {
+    "url": "https://www.housing.columbia.edu/content/furnishings-and-fixtures",
+    "title": "Furnishings and Fixtures (Columbia Housing, page footer 2025)",
+    "quote": "Housing prohibits the removal or alteration of any University-owned and provided furniture, fixtures, appliances, and locks. Residents must keep all furnishings in their room, including bed frames and mattresses."
+   }
+  ],
   "cornell": [
    {
     "url": "https://scl.cornell.edu/residential-life/housing/contact-us/maintenance-requests/bed-elevation-furniture-configuration",
@@ -654,11 +676,82 @@
     "quote": "Rate III 2 people per room with bunked beds, bath and air conditioning"
    }
   ],
+  "ole-miss": [
+   {
+    "url": "https://olemiss.box.com/v/room-furniture-guide",
+    "title": "Room & Furniture Guide (Ole Miss Student Housing PDF, July 2024)",
+    "quote": "Lofts, ladders, and safety rails can be rented from Lofts LLC for most residence halls (excluding RH2 & RH3). ... Students can enroll in this optional program and their bed will be raised to their requested height prior to move in."
+   },
+   {
+    "url": "https://olemiss.box.com/s/472dg68se7bhs25wsrt9gm8lpqiv5oqc",
+    "title": "Move-in Checklist (Ole Miss Student Housing PDF, May 2025)",
+    "quote": "Things to leave: ... Homemade lofts, cinder blocks, or bed risers"
+   },
+   {
+    "url": "https://olemiss.box.com/s/472dg68se7bhs25wsrt9gm8lpqiv5oqc",
+    "title": "Move-in Checklist (Ole Miss Student Housing PDF, May 2025)",
+    "quote": "Things to bring: ... Rubber mallet for adjusting bed height"
+   }
+  ],
+  "penn-state": [
+   {
+    "url": "https://liveon.psu.edu/university-park/bed-loft-information",
+    "title": "Bed Loft Information (Penn State Housing, page footer 2026)",
+    "quote": "While lofting can increase floor space in a room, University Housing staff do not recommend using a loft for a variety of reasons: Housing uses several different bed frame types, many rooms have built-in furniture, and ceiling heights can vary between buildings. ... Category: lofts permitted BUT strongly discouraged ... Due to ceiling heights under 7'6\", lofting in the following areas/buildings is strongly discouraged ... East Halls: all buildings, except Earle and Martin ... North Halls: all buildings, except Robinson"
+   },
+   {
+    "url": "https://liveon.psu.edu/university-park/bed-loft-information",
+    "title": "Bed Loft Information (Penn State Housing, page footer 2026)",
+    "quote": "Category: lofts not permitted ... Several buildings have bed frames that can be adjusted in height up to ~30\". The loft specifications linked above and below DO NOT WORK for these rooms and these types of bed and will not accommodate a loft. Buildings with these bed types are: ... East Halls: all buildings ... Eastview Terrace: all buildings ... Nittany Hall ... North Halls: all buildings"
+   },
+   {
+    "url": "https://liveon.psu.edu/university-park/bed-loft-information",
+    "title": "Bed Loft Information (Penn State Housing, page footer 2026)",
+    "quote": "The most effective way to add additional height and storage to other bed frames is to purchase bed risers found at many retailers. If you are interested in constructing a loft bed in your University Park residence hall room, contact the appropriate Housing Office to ensure that your room can accommodate a bed loft. If you are able to have a loft in the room, please review the loft specifications (pdf) for guidelines and construction information."
+   },
+   {
+    "url": "https://liveon.psu.edu/sites/liveon/files/2021-11/loft-specifications.pdf",
+    "title": "Loft Specifications (Penn State Auxiliary and Business Services PDF; file posted 2021-11, PDF created 2005)",
+    "quote": "When roommates mutually agree, they are permitted to arrange their single beds into a loft arrangement provided they adhere to the following regulations: 1. Residents must use the bed frame provided by the University. ... 3. Beds may be lofted by following the instructions on the diagram to the right. These are the only construction procedures which will be approved. ... 7. The Housing Supervisor will determine if loft beds meet specifications."
+   },
+   {
+    "url": "https://liveon.psu.edu/sites/liveon/files/2021-11/loft-specifications.pdf",
+    "title": "Loft Specifications (Penn State Auxiliary and Business Services PDF; file posted 2021-11, PDF created 2005)",
+    "quote": "Bunkbed Specifications: Since rooms vary in size and built-in furniture exists in many areas, it is recommended that you check with the area Housing Office where you will be living to confirm bed size before construction of a bunk bed is attempted. Because of the room configuration, some rooms do not accommodate loft beds."
+   }
+  ],
   "pitt": [
    {
     "url": "https://www.studentaffairs.pitt.edu/sites/default/files/2025-08/PittSA-ResidentialHandbook_25-26_Final.pdf",
     "title": "2025-2026 Residential Handbook (Pitt Student Affairs)",
     "quote": "PROHIBITED ITEMS The following items are prohibited within on-campus housing. This is not an all-inclusive list – if you are unsure if an item is permitted, please contact Panther Central prior to bringing the item to campus. ... Loft beds or bed risers ... Homemade furniture"
+   }
+  ],
+  "princeton": [
+   {
+    "url": "https://hres.princeton.edu/policies/residential-living/dormitory-annex-regulations",
+    "title": "Dormitory and Annex Regulations (Princeton Housing and Real Estate, page footer 2025)",
+    "quote": "Inspections are conducted to ensure compliance with University loft regulations; however, unsafe conditions may not be discovered by an inspection. ... The following loft regulations must be met: Lofts must be freestanding and not attached to the walls, floor, or ceiling. Lofts may not exceed the floor area of the beds they replace (maximum size 4 ft. x 8 ft.). A minimum of one third of the room area air space must be kept clear."
+   },
+   {
+    "url": "https://hres.princeton.edu/policies/residential-living/dormitory-annex-regulations",
+    "title": "Dormitory and Annex Regulations (Princeton Housing and Real Estate, page footer 2025)",
+    "quote": "When constructing a loft, you should use caution and discretion. You are liable for all damages to the room resulting from the loft. ... All lofts must be removed at the end of each academic year. Those lofts not removed are considered abandoned and are removed at your expense."
+   },
+   {
+    "url": "https://hres.princeton.edu/policies/residential-living/dormitory-annex-regulations",
+    "title": "Dormitory and Annex Regulations (Princeton Housing and Real Estate, page footer 2025)",
+    "quote": "If you have University bunk beds in your room or suite, a bed rail and ladder should have been provided. If not, you may request these items for the top bunk."
+   },
+   {
+    "url": "https://hres.princeton.edu/undergraduate-housing/incoming-students/your-dorm-room",
+    "title": "Your Dorm Room (Princeton Housing and Real Estate, 2025)",
+    "quote": "If you want to bunk or unbunk your beds, the procedure depends on your residential location. If you live in Butler College or in any of the unaffiliated upperclass dormitories, you can adjust the bunking and height of your bed yourself."
+   },
+   {
+    "url": "https://hres.princeton.edu/undergraduate-housing/incoming-students/your-dorm-room",
+    "title": "Your Dorm Room (Princeton Housing and Real Estate, 2025)",
+    "quote": "If you live in any of the other residential colleges, you should submit a Basic Work Order or call the Facilities Service Center by calling 609.258.8000 during regular business hours (Monday through Friday, 8:45am - 5:00pm). You must wait until you arrive on campus to make this request; bed bunk-related requests cannot be filed during the summer for a fall-term resident."
    }
   ],
   "purdue": [
@@ -752,6 +845,18 @@
     "url": "https://housingmealplans.syr.edu/terms-and-conditions-2026-2027/",
     "title": "Terms and Conditions 2026-2027 - Housing (8.7 Elevated Beds)",
     "quote": "The University recommends the use of University-supplied furniture and mattresses and does not endorse the use of student-constructed bunk beds or other elevated beds (lofts) in campus residences. In the event of the use of such beds, students do so at their own risk. Elevated beds must not exceed 5 feet, 6 inches from the floor, must be 3 feet from windows, be at least 18 inches from sprinkler heads, and may not be more than 48 inches wide. The University retains the right to order the dismantling or prohibit the use of any elevated bed."
+   }
+  ],
+  "tamucc": [
+   {
+    "url": "https://www.tamucc.edu/finance-and-administration/auxiliary-services/housing/faq/index-move-in.php",
+    "title": "Frequently Asked Questions (Move-In) - Islander Housing, Texas A&M University-Corpus Christi (undated page, live Oct 2026)",
+    "quote": "Can the beds be lofted? No, beds cannot be lofted."
+   },
+   {
+    "url": "https://www.tamucc.edu/finance-and-administration/auxiliary-services/housing/faq/index-move-in.php",
+    "title": "Frequently Asked Questions (Move-In) - Islander Housing, Texas A&M University-Corpus Christi (undated page, live Oct 2026)",
+    "quote": "What should I not bring with me on campus? [list] ... Loud stereo equipment; Bed risers; Wireless Router (Wi-Fi is provided in all units) ..."
    }
   ],
   "temple": [

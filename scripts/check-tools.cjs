@@ -41,7 +41,8 @@ for(const [id,r] of Object.entries(rules.schools)){
     const q=(quotes.schools[id]||[]).find(x=>x.url===s.url);
     assert(q&&q.quote.trim().length>10,`${id}: ${s.url} has its quote`);
     const host=new URL(s.url).hostname;
-    assert(host.endsWith('.edu')||host.endsWith('website-files.com')||(host==='sites.google.com'&&s.url.includes('/nyu.edu/')),`${id}: official source ${host}`);
+    // The university's own document hosts: its Google Workspace site (NYU), Box (Ole Miss) and a CDN (UNO).
+    assert(host.endsWith('.edu')||host.endsWith('website-files.com')||host==='olemiss.box.com'||(host==='sites.google.com'&&s.url.includes('/nyu.edu/')),`${id}: official source ${host}`);
   }
   assert.deepEqual(flags[id],[r.loft,r.bunk],`${id}: flags match`);
   if(r.bed_height_in)assert(r.bed_height_in.min<r.bed_height_in.max,`${id}: height range`);
