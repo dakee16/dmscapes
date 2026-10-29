@@ -214,10 +214,15 @@ export default async function CollegePage(props: {
           </>
         }
         eyebrow={
-          <>
-            {school.name}
-            {place && school.name.includes(school.city ?? "\u0000") ? "" : place ? ` · ${place}` : ""}
-          </>
+          // The crumb already shows the short name; when that is the full name, the eyebrow gives the place instead.
+          short === school.name && place ? (
+            <>{place}</>
+          ) : (
+            <>
+              {school.name}
+              {place && school.name.includes(school.city ?? "\u0000") ? "" : place ? ` · ${place}` : ""}
+            </>
+          )
         }
         lines={[
           { text: short, riso: true },

@@ -86,7 +86,7 @@ export default function DormBedRulesPage() {
         size="md"
         bg="var(--ds-sky)"
         crumbs={<Crumbs items={crumbs} />}
-        eyebrow={<>Loft &amp; bunk rules · {SCHOOLS.length} colleges</>}
+        eyebrow={<>{R.schools} of {SCHOOLS.length} colleges publish rules · checked {checkedLabel()}</>}
         lines={[
           { text: "Can you loft", riso: true },
           { text: "your dorm bed?", serif: true },

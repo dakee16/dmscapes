@@ -188,7 +188,7 @@ export default async function DormRoomPlannerPage() {
         crumbs={<Crumbs items={crumbs} />}
         eyebrow={
           <>
-            Dorm room planner · {SCHOOL_COUNT} schools · {fmt(HALL_COUNT)} halls
+            {SCHOOL_COUNT} schools · {fmt(HALL_COUNT)} halls · free to start
           </>
         }
         lines={[

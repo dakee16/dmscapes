@@ -105,7 +105,7 @@ export default function DormRugSizePage() {
         size="md"
         bg="var(--ds-sky)"
         crumbs={<Crumbs items={crumbs} />}
-        eyebrow="Dorm rug size calculator"
+        eyebrow="Free calculator · drawn to scale"
         lines={[
           { text: "What size rug", riso: true },
           { text: "fits your dorm?", serif: true },

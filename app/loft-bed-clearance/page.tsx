@@ -108,7 +108,7 @@ export default function LoftBedClearancePage() {
         size="md"
         bg="var(--ds-sky)"
         crumbs={<Crumbs items={crumbs} />}
-        eyebrow="Under-loft clearance calculator"
+        eyebrow="Free calculator · inch by inch"
         lines={[
           { text: "What fits under", riso: true },
           { text: "a lofted bed?", serif: true },
