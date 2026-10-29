@@ -11,7 +11,6 @@ import SectionRail from "@/components/ds/SectionRail";
 import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
-import AskAi from "@/components/site/AskAi";
 import Reviews from "@/components/site/Reviews";
 import ScalePlan from "@/components/hall/ScalePlan";
 import { SCHOOLS } from "@/lib/schools";
@@ -390,7 +389,6 @@ export default async function DormRoomPlannerPage() {
               </div>
             ))}
           </div>
-          <AskAi placement="planner-landing" className={css.ask} />
         </div>
       </section>
 

@@ -666,7 +666,6 @@
 .planCta :global(.ds-btn) { width: 100%; }
 .sheen { position: absolute; inset: 0; background: linear-gradient(105deg, transparent 40%, rgba(255, 255, 255, 0.18) 50%, transparent 60%); background-size: 250% 100%; animation: sheen 5s ease-in-out infinite; pointer-events: none; }
 .faq { margin: 28px 0 0; font-size: 16px; color: var(--ds-muted); }
-.askRow { margin-top: 18px; }
 
 /* ---------- Final CTA: corner button ---------- */
 .final { background: #e8a622; }

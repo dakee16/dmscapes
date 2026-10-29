@@ -4,7 +4,6 @@ import PlanCta from "@/components/site/PlanCta";
 import { ArrowRight, Check } from "@/components/ds/Icons";
 import { PRICING } from "@/lib/home-data";
 import { PlusPerk } from "@/components/hall-finder/Entry";
-import AskAi from "@/components/site/AskAi";
 import H2 from "./H2";
 import css from "./Home.module.css";
 
@@ -74,7 +73,6 @@ export default function PricingSection() {
           </Link>
           .
         </p>
-        <AskAi label="Still deciding? Ask an AI about dormscape" placement="home-pricing" className={css.askRow} />
       </div>
     </section>
   );

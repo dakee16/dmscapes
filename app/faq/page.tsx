@@ -7,7 +7,6 @@ import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import { FaqBrowser, FaqProvider, FaqSearch, type FaqGroup } from "@/components/faq/FaqExplorer";
-import AskAi from "@/components/site/AskAi";
 import { topicOf } from "@/components/blog/topics";
 import { POSTS } from "@/content/blog";
 import { faqPageJsonLd } from "@/lib/blog";
@@ -120,7 +119,6 @@ export default function FAQPage() {
           }
         >
           <FaqSearch total={total} />
-          <AskAi label="Didn't find it? Ask an AI about dormscape" placement="faq" className={css.ask} />
         </PageHero>
 
         <section className={css.section} aria-label="Questions">
