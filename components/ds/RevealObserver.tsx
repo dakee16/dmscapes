@@ -90,6 +90,12 @@ export default function RevealObserver() {
       const kind = kindOf(el);
       if (kind) el.setAttribute(kind, "in");
     };
+    const reveal = (target: HTMLElement) => {
+      const kids = viaParent.get(target) ?? [];
+      viaParent.delete(target);
+      if (self.delete(target)) flip(target);
+      kids.forEach(flip);
+    };
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -97,16 +103,26 @@ export default function RevealObserver() {
           const enough =
             entry.intersectionRatio >= 0.2 || entry.intersectionRect.height >= vh * 0.2;
           if (!entry.isIntersecting || !enough) continue;
-          const target = entry.target as HTMLElement;
-          io.unobserve(target);
-          const kids = viaParent.get(target) ?? [];
-          viaParent.delete(target);
-          if (self.delete(target)) flip(target);
-          kids.forEach(flip);
+          io.unobserve(entry.target);
+          reveal(entry.target as HTMLElement);
         }
       },
       { threshold: [0, 0.2, 0.5] }
     );
+    // Something taller than the window (a long table) can never be 20% on screen,
+    // so ratio thresholds only fire once, as its edge enters with a sliver showing.
+    // These reveal once their top is a fifth of the way up the window instead.
+    const tall = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          tall.unobserve(entry.target);
+          reveal(entry.target as HTMLElement);
+        }
+      },
+      { rootMargin: "0px 0px -20% 0px", threshold: 0 }
+    );
+    const observe = (el: Element) => (el.getBoundingClientRect().height > window.innerHeight ? tall : io).observe(el);
     const watch = (el: HTMLElement, kind: string | null) => {
       watched.add(el);
       const parent = el.parentElement;
@@ -114,10 +130,10 @@ export default function RevealObserver() {
         const list = viaParent.get(parent) ?? [];
         list.push(el);
         viaParent.set(parent, list);
-        io.observe(parent);
+        observe(parent);
       } else {
         self.add(el);
-        io.observe(el);
+        observe(el);
       }
     };
 
@@ -190,6 +206,7 @@ export default function RevealObserver() {
       cancelAnimationFrame(frame);
       mo.disconnect();
       io.disconnect();
+      tall.disconnect();
     };
   }, [pathname]);
 
