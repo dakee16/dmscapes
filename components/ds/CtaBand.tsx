@@ -26,9 +26,12 @@ export default function CtaBand({
               <span className="ds-display">{lead}</span>
             </span>
             {tail && (
-              <span className="ds-line">
-                <span className={`ds-serif ${css.tail}`}>{tail}</span>
-              </span>
+              <>
+                {" "}
+                <span className="ds-line">
+                  <span className={`ds-serif ${css.tail}`}>{tail}</span>
+                </span>
+              </>
             )}
           </h2>
           {note && <p className={css.note}>{note}</p>}

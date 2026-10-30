@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { Fragment, type ReactNode } from "react";
 
 export interface HeadlineLine {
   text: ReactNode;
@@ -38,16 +38,21 @@ export default function Headline({
       style={delayMs ? ({ "--d": `${delayMs}ms` } as React.CSSProperties) : undefined}
     >
       {lines.map((line, i) => (
-        <span key={i} className={`ds-line ${line.className ?? ""}`} style={{ "--l": i } as React.CSSProperties}>
-          <span
-            className={[
-              line.serif ? "ds-serif ds-serif--blue" : "ds-display",
-              line.riso ? "ds-riso" : "",
-            ].join(" ")}
-          >
-            {line.text}
+        // The space keeps the heading's text as separate words for search and answer
+        // engines ("Plan your dorm in…", not "dormin"); lines are blocks or flex items, so it never shows.
+        <Fragment key={i}>
+          {i > 0 && " "}
+          <span className={`ds-line ${line.className ?? ""}`} style={{ "--l": i } as React.CSSProperties}>
+            <span
+              className={[
+                line.serif ? "ds-serif ds-serif--blue" : "ds-display",
+                line.riso ? "ds-riso" : "",
+              ].join(" ")}
+            >
+              {line.text}
+            </span>
           </span>
-        </span>
+        </Fragment>
       ))}
     </Tag>
   );
