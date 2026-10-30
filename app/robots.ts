@@ -13,10 +13,11 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us";
  */
 const PRIVATE = ["/account", "/rooms", "/api/", "/reset-password", "/dev"];
 
-// Answer engines' search and citation crawlers, named so it's explicit they're
-// welcome. A crawler reads only the group that names it, so each repeats the
-// private paths.
+// Search and answer engines' crawlers, named so it's explicit they're welcome.
+// A crawler reads only the group that names it, so each repeats the private paths.
 const CITATION_BOTS = [
+  "Googlebot",
+  "Applebot",
   "OAI-SearchBot",
   "ChatGPT-User",
   "ClaudeBot",
