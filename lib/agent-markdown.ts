@@ -4,6 +4,7 @@ import { POSTS } from "@/content/blog";
 import { HALL_COUNT, LAYOUT_COUNT, SCHOOL_COUNT } from "@/lib/home-data";
 import { FLEX_CREDIT_PRICE_USD, FREE_PLAN_CAP, PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PRO_INITIAL_CREDITS, PRO_PRICE_USD } from "@/lib/plan";
 import { CONTACT_EMAIL, SITE_TAGLINE, absoluteUrl } from "@/lib/seo";
+import { COMPETITORS, shortCompetitorName } from "@/lib/compare";
 
 // Markdown views of the site for answer engines and AI agents: /llms.txt and the
 // homepage's text/markdown version. Every count and price comes from the school
@@ -34,6 +35,7 @@ const mainPages = () => [
   link("Loft bed clearance calculator", "/loft-bed-clearance", "what fits under a lofted or raised dorm bed"),
   link("Twin XL sheets for dorms", "/twin-xl-sheets", "dorm bed sizes and which schools use beds other than Twin XL"),
   link("Dorm room planners compared", "/compare", "dormscape next to other dorm room planners"),
+  ...COMPETITORS.map((c) => link(`dormscape vs ${shortCompetitorName(c)}`, `/compare/${c.slug}`, c.summary)),
   link("Draw your dorm room floor plan", "/plan/draw"),
   link("3D Room Builder", "/plan/draw/3d"),
   link("My Room", "/my-room", "a shared dorm room for roommates (Pro): split the room, settle who brings what"),
