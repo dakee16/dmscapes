@@ -11,7 +11,7 @@ import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import { SCHOOLS } from "@/lib/schools";
 import { ALLOWED_LABEL, YES_NO_LABEL, BED_RULES_CHECKED, bedRuleFor, bedRuleSummary, checkedLabel } from "@/lib/bed-rules";
-import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/seo";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl, guidePageJsonLd, SITE_NAME, SITE_URL } from "@/lib/seo";
 import dsz from "@/components/dorm-size/DormSize.module.css";
 
 // Every answer comes from lib/bed-rules: a school's own housing pages, quoted in
@@ -20,16 +20,18 @@ const PATH = "/dorm-bed-rules";
 const R = bedRuleSummary();
 const rows = [...SCHOOLS].map((s) => ({ id: s.id, name: s.name, rule: bedRuleFor(s.id) })).sort((a, b) => a.name.localeCompare(b.name));
 
+const DESCRIPTION = fitDescription(
+  `Whether ${SCHOOLS.length} colleges let you loft or bunk your dorm bed, use bed risers or bring a loft kit, from each school's own housing pages, with sources.`,
+  "Dorm loft and bunk bed rules by college, from each school's own housing pages, with sources."
+);
+
 export const metadata: Metadata = pageMetadata({
   title: fitTitle(
     `Can You Loft or Bunk Your Dorm Bed? Rules for ${SCHOOLS.length} Colleges`,
     "Dorm Loft and Bunk Bed Rules by College",
     "Dorm Loft and Bunk Rules"
   ),
-  description: fitDescription(
-    `Whether ${SCHOOLS.length} colleges let you loft or bunk your dorm bed, use bed risers or bring a loft kit, from each school's own housing pages, with sources.`,
-    "Dorm loft and bunk bed rules by college, from each school's own housing pages, with sources."
-  ),
+  description: DESCRIPTION,
   path: PATH,
 });
 
@@ -63,6 +65,7 @@ export default function DormBedRulesPage() {
       <JsonLd
         data={[
           breadcrumbJsonLd(crumbs),
+          guidePageJsonLd({ path: PATH, name: "Can you loft your dorm bed?", description: DESCRIPTION, datePublished: "2026-10-28", dateModified: BED_RULES_CHECKED }),
           {
             "@context": "https://schema.org",
             "@type": "Dataset",
@@ -86,7 +89,12 @@ export default function DormBedRulesPage() {
         size="md"
         bg="var(--ds-sky)"
         crumbs={<Crumbs items={crumbs} />}
-        eyebrow={<>{R.schools} of {SCHOOLS.length} colleges publish rules · checked {checkedLabel()}</>}
+        eyebrow={
+          <>
+            {R.schools} of {SCHOOLS.length} colleges publish rules · checked{" "}
+            <time dateTime={BED_RULES_CHECKED}>{checkedLabel()}</time>
+          </>
+        }
         lines={[
           { text: "Can you loft", riso: true },
           { text: "your dorm bed?", serif: true },

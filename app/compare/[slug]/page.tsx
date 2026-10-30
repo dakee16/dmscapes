@@ -10,7 +10,7 @@ import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import { COMPETITORS, DORMSCAPE_STRENGTHS, STRENGTHS, checkedOn, compareRows, competitor, shortCompetitorName } from "@/lib/compare";
-import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd } from "@/lib/seo";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, guidePageJsonLd, SITE_URL } from "@/lib/seo";
 import dsz from "@/components/dorm-size/DormSize.module.css";
 import css from "@/components/compare/Compare.module.css";
 
@@ -19,16 +19,19 @@ export function generateStaticParams() {
 }
 export const dynamicParams = false;
 
+const describe = (name: string) =>
+  fitDescription(
+    `dormscape and ${name} side by side for planning a dorm room: real room sizes, floor plans, 3D, shopping, roommates and price, from each product's own pages.`,
+    `dormscape vs ${name} for planning a dorm room, feature by feature.`
+  );
+
 export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const c = competitor((await props.params).slug);
   if (!c) return {};
   const name = shortCompetitorName(c);
   return pageMetadata({
     title: fitTitle(`dormscape vs ${name}: Dorm Room Planner Comparison`, `dormscape vs ${name}`),
-    description: fitDescription(
-      `dormscape and ${name} side by side for planning a dorm room: real room sizes, floor plans, 3D, shopping, roommates and price, from each product's own pages.`,
-      `dormscape vs ${name} for planning a dorm room, feature by feature.`
-    ),
+    description: describe(name),
     path: `/compare/${c.slug}`,
   });
 }
@@ -44,12 +47,28 @@ export default async function ComparePage(props: { params: Promise<{ slug: strin
   ];
   return (
     <PageShell navOverlay>
-      <JsonLd data={breadcrumbJsonLd(crumbs)} />
+      <JsonLd
+        data={[
+          breadcrumbJsonLd(crumbs),
+          guidePageJsonLd({
+            path: `/compare/${c.slug}`,
+            name: `dormscape vs ${name}`,
+            description: describe(name),
+            datePublished: "2026-10-28",
+            dateModified: c.checked,
+            about: [{ "@id": `${SITE_URL}/#organization` }, { "@type": "Thing", name: c.name, url: c.url }],
+          }),
+        ]}
+      />
       <PageHero
         size="md"
         bg="var(--ds-sky)"
         crumbs={<Crumbs items={crumbs} />}
-        eyebrow={<>Dorm room planner comparison · checked {checkedOn(c)}</>}
+        eyebrow={
+          <>
+            Dorm room planner comparison · checked <time dateTime={c.checked}>{checkedOn(c)}</time>
+          </>
+        }
         lines={[
           { text: "dormscape", riso: true },
           { text: `vs ${name}.`, serif: true },
@@ -134,7 +153,7 @@ export default async function ComparePage(props: { params: Promise<{ slug: strin
           <ol className={css.sources}>
             {c.sources.map((s, i) => (
               <li key={i}>
-                <q>{s.quote}</q>{" "}
+                <q cite={s.url}>{s.quote}</q>{" "}
                 <a href={s.url} target="_blank" rel="noopener noreferrer" className="ds-link">
                   Source
                 </a>

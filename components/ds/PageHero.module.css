@@ -25,6 +25,8 @@
 .hero[data-art="image"] .copy { max-width: min(640px, 46vw); }
 .crumbs { margin-bottom: 22px; }
 .eyebrow { margin-bottom: 18px; }
+/* A date in the eyebrow ("updated Oct 30, 2026") never splits across lines. */
+.eyebrow time { white-space: nowrap; }
 .title { margin: 0; }
 .lede { margin-top: 24px; max-width: 560px; }
 .lede > p { margin: 0; }

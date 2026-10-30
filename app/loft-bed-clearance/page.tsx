@@ -14,13 +14,15 @@ import { FURNITURE_LIBRARY } from "@/lib/furniture-library";
 import { allBedRules, checkedLabel } from "@/lib/bed-rules";
 import { getSchool } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
-import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl, guidePageJsonLd } from "@/lib/seo";
+import { shortDate } from "@/components/blog/topics";
 import dsz from "@/components/dorm-size/DormSize.module.css";
 
 // Bed heights are the planner's own settings (lib/bed-config) and item heights its
 // furniture library's typical sizes (lib/furniture-library); school ranges come
 // from the published rules (lib/bed-rules).
 const PATH = "/loft-bed-clearance";
+const UPDATED = "2026-10-30";
 const inches = (feet: number) => Math.round(feet * 12);
 
 const presets: ClearancePreset[] = (["standard", "raised", "lofted"] as const).map((m) => ({
@@ -48,12 +50,14 @@ const ranges = allBedRules()
   .filter((x): x is NonNullable<typeof x> => x !== null)
   .sort((a, b) => a.name.localeCompare(b.name));
 
+const DESCRIPTION = fitDescription(
+  `A lofted dorm bed leaves about ${lofted} inches underneath in the dormscape planner: room for a ${desk?.inches ?? 30}-inch desk or a mini fridge. Enter your bed's height to see what fits under it.`,
+  "Enter the space under your dorm bed to see whether a desk, mini fridge, dresser or storage fits under it."
+);
+
 export const metadata: Metadata = pageMetadata({
   title: fitTitle("What Fits Under a Lofted Dorm Bed? Clearance Calculator", "What Fits Under a Lofted Dorm Bed?", "What Fits Under a Lofted Bed?", "Loft Bed Clearance Calculator"),
-  description: fitDescription(
-    `A lofted dorm bed leaves about ${lofted} inches underneath in the dormscape planner: room for a ${desk?.inches ?? 30}-inch desk or a mini fridge. Enter your bed's height to see what fits under it.`,
-    "Enter the space under your dorm bed to see whether a desk, mini fridge, dresser or storage fits under it."
-  ),
+  description: DESCRIPTION,
   path: PATH,
 });
 
@@ -87,6 +91,7 @@ export default function LoftBedClearancePage() {
       <JsonLd
         data={[
           breadcrumbJsonLd(crumbs),
+          guidePageJsonLd({ path: PATH, name: "What fits under a lofted bed?", description: DESCRIPTION, datePublished: "2026-10-28", dateModified: UPDATED }),
           {
             "@context": "https://schema.org",
             "@type": "WebApplication",
@@ -108,7 +113,11 @@ export default function LoftBedClearancePage() {
         size="md"
         bg="var(--ds-sky)"
         crumbs={<Crumbs items={crumbs} />}
-        eyebrow="Free calculator · inch by inch"
+        eyebrow={
+          <>
+            Free calculator · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time>
+          </>
+        }
         lines={[
           { text: "What fits under", riso: true },
           { text: "a lofted bed?", serif: true },

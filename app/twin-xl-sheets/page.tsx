@@ -12,12 +12,14 @@ import { SCHOOLS } from "@/lib/schools";
 import { LAYOUT_COUNT } from "@/lib/home-data";
 import { bedName } from "@/lib/room-preview";
 import type { BedSize } from "@/lib/types";
-import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd } from "@/lib/seo";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, guidePageJsonLd } from "@/lib/seo";
+import { shortDate } from "@/components/blog/topics";
 import dsz from "@/components/dorm-size/DormSize.module.css";
 
 // Mattress sizes are the standard US sizes; which schools publish another bed
 // comes from the room data (Twin XL is the planner's default unless a school says otherwise).
 const PATH = "/twin-xl-sheets";
+const UPDATED = "2026-10-30";
 const SIZES: { size: BedSize; w: number; l: number }[] = [
   { size: "twin", w: 38, l: 75 },
   { size: "twin_xl", w: 38, l: 80 },
@@ -42,12 +44,14 @@ const exceptions = [...new Set(other.map((r) => r.school.id))]
   })
   .sort((a, b) => a.name.localeCompare(b.name));
 
+const DESCRIPTION = fitDescription(
+  `Almost every dorm bed is a Twin XL (${xl.w} × ${xl.l} in), ${shortBy} inches longer than a Twin. Of ${LAYOUT_COUNT.toLocaleString("en-US")} room types we track, schools list another size for ${other.length}. See which schools, and which sheets fit.`,
+  `Almost every dorm bed is a Twin XL (${xl.w} × ${xl.l} in). See which schools use other sizes, and which sheets fit.`
+);
+
 export const metadata: Metadata = pageMetadata({
   title: fitTitle("Twin XL Sheets for Dorms: Do Dorms Use Twin XL Beds?", "Twin XL Sheets for Dorm Beds", "Twin XL Dorm Sheets"),
-  description: fitDescription(
-    `Almost every dorm bed is a Twin XL (${xl.w} × ${xl.l} in), ${shortBy} inches longer than a Twin. Of ${LAYOUT_COUNT.toLocaleString("en-US")} room types we track, schools list another size for ${other.length}. See which schools, and which sheets fit.`,
-    `Almost every dorm bed is a Twin XL (${xl.w} × ${xl.l} in). See which schools use other sizes, and which sheets fit.`
-  ),
+  description: DESCRIPTION,
   path: PATH,
 });
 
@@ -81,6 +85,7 @@ export default function TwinXlSheetsPage() {
       <JsonLd
         data={[
           breadcrumbJsonLd(crumbs),
+          guidePageJsonLd({ path: PATH, name: "Twin XL sheets, not Twin.", description: DESCRIPTION, datePublished: "2026-10-28", dateModified: UPDATED }),
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
@@ -92,7 +97,11 @@ export default function TwinXlSheetsPage() {
         size="md"
         bg="var(--ds-sky)"
         crumbs={<Crumbs items={crumbs} />}
-        eyebrow="Dorm bed sizes"
+        eyebrow={
+          <>
+            Dorm bed sizes · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time>
+          </>
+        }
         lines={[
           { text: "Twin XL sheets,", riso: true },
           { text: "not Twin.", serif: true },

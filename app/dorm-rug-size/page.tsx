@@ -14,12 +14,14 @@ import { SCHOOLS } from "@/lib/schools";
 import { dormSizeStats } from "@/lib/dorm-sizes";
 import { fitRoom, ft, type FittedRoom } from "@/lib/room-preview";
 import { bestRug } from "@/lib/rug-fit";
-import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl } from "@/lib/seo";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl, guidePageJsonLd } from "@/lib/seo";
+import { shortDate } from "@/components/blog/topics";
 import dsz from "@/components/dorm-size/DormSize.module.css";
 
 // Rug sizes from the planner's own starting layouts (lib/rug-fit) for the room
 // sizes colleges publish (lib/dorm-sizes); nothing is typed in by hand.
 const PATH = "/dorm-rug-size";
+const UPDATED = "2026-10-30";
 const S = dormSizeStats(SCHOOLS);
 const NAME: Record<number, string> = { 1: "single", 2: "double", 3: "triple" };
 
@@ -45,12 +47,14 @@ const rows = [
   ...S.commonSizes.map((c) => ({ room: `${ft(c.lengthFt)} × ${ft(c.widthFt)} ft ${NAME[c.occupants]}`, l: c.lengthFt, w: c.widthFt, o: c.occupants, note: `${c.rooms} published rooms` })),
 ];
 
+const DESCRIPTION = fitDescription(
+  `A ${doubleRug} rug fits the open floor of a typical ${ft(double.lengthFt)} × ${ft(double.widthFt)} ft double once the beds, desks and dressers are in. Enter your room to find the biggest rug that fits yours.`,
+  `Find the biggest standard rug that fits your dorm room's open floor, around the beds, desks and dressers.`
+);
+
 export const metadata: Metadata = pageMetadata({
   title: fitTitle(`What Size Rug for a Dorm Room? ${doubleRug} in a Typical Double`, "What Size Rug for a Dorm Room? Rug Size Calculator", "What Size Rug for a Dorm Room?", "Dorm Rug Size Calculator"),
-  description: fitDescription(
-    `A ${doubleRug} rug fits the open floor of a typical ${ft(double.lengthFt)} × ${ft(double.widthFt)} ft double once the beds, desks and dressers are in. Enter your room to find the biggest rug that fits yours.`,
-    `Find the biggest standard rug that fits your dorm room's open floor, around the beds, desks and dressers.`
-  ),
+  description: DESCRIPTION,
   path: PATH,
 });
 
@@ -84,6 +88,7 @@ export default function DormRugSizePage() {
       <JsonLd
         data={[
           breadcrumbJsonLd(crumbs),
+          guidePageJsonLd({ path: PATH, name: "What size rug fits your dorm?", description: DESCRIPTION, datePublished: "2026-10-28", dateModified: UPDATED }),
           {
             "@context": "https://schema.org",
             "@type": "WebApplication",
@@ -105,7 +110,11 @@ export default function DormRugSizePage() {
         size="md"
         bg="var(--ds-sky)"
         crumbs={<Crumbs items={crumbs} />}
-        eyebrow="Free calculator · drawn to scale"
+        eyebrow={
+          <>
+            Free calculator · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time>
+          </>
+        }
         lines={[
           { text: "What size rug", riso: true },
           { text: "fits your dorm?", serif: true },

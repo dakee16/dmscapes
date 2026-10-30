@@ -152,19 +152,65 @@ export function organizationJsonLd() {
   return { "@context": "https://schema.org", ...organization };
 }
 
+const webSite = {
+  "@type": "WebSite",
+  "@id": `${SITE_URL}/#website`,
+  name: SITE_NAME,
+  // The brand is always written dormscape, so the only other name is the domain; listing the name
+  // as its own alternate adds nothing.
+  alternateName: ["dormscape.us"],
+  url: SITE_URL,
+  description: SITE_TAGLINE,
+  publisher: { "@id": `${SITE_URL}/#organization` },
+};
+
 /** WebSite node, tying the brand to the organization identity. */
 export function webSiteJsonLd() {
+  return { "@context": "https://schema.org", ...webSite };
+}
+
+/**
+ * A guide or tool page as a dated WebPage written by dormscape, in one @graph
+ * with the organization and site it belongs to, so the page read on its own
+ * still says who made it and when it last changed. `name` is the page's visible
+ * H1; dates are YYYY-MM-DD and must match the date shown on the page.
+ */
+export function guidePageJsonLd({
+  path,
+  name,
+  description,
+  datePublished,
+  dateModified,
+  about,
+}: {
+  path: string;
+  name: string;
+  description: string;
+  datePublished: string;
+  dateModified: string;
+  about?: object[];
+}) {
+  const url = absoluteUrl(path);
   return {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": `${SITE_URL}/#website`,
-    name: SITE_NAME,
-    // The brand is always written dormscape, so the only other name is the domain; listing the name
-    // as its own alternate adds nothing.
-    alternateName: ["dormscape.us"],
-    url: SITE_URL,
-    description: SITE_TAGLINE,
-    publisher: { "@id": `${SITE_URL}/#organization` },
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name,
+        description,
+        inLanguage: "en-US",
+        datePublished,
+        dateModified,
+        author: { "@type": "Organization", "@id": organization["@id"], name: SITE_NAME, url: SITE_URL },
+        publisher: { "@id": organization["@id"] },
+        isPartOf: { "@id": webSite["@id"] },
+        ...(about ? { about } : {}),
+      },
+      organization,
+      webSite,
+    ],
   };
 }
 

@@ -22,7 +22,8 @@ import { FURNITURE_LIBRARY } from "@/lib/furniture-library";
 import { bedRuleSummary } from "@/lib/bed-rules";
 import { MIN_REVIEWS_FOR_RATING, publicReviews } from "@/lib/reviews";
 import { FREE_PLAN_CAP, PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PRO_INITIAL_CREDITS, PRO_PRICE_USD } from "@/lib/plan";
-import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, softwareApplicationJsonLd, absoluteUrl } from "@/lib/seo";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, softwareApplicationJsonLd, absoluteUrl, guidePageJsonLd } from "@/lib/seo";
+import { shortDate } from "@/components/blog/topics";
 import dsz from "@/components/dorm-size/DormSize.module.css";
 import css from "@/components/planner-landing/Landing.module.css";
 
@@ -32,6 +33,7 @@ import css from "@/components/planner-landing/Landing.module.css";
 export const revalidate = 86400;
 
 const PATH = "/dorm-room-planner";
+const UPDATED = "2026-10-30";
 const fmt = (n: number) => Math.round(n).toLocaleString("en-US");
 const usd = (n: number) => `$${n.toFixed(2)}`;
 
@@ -166,6 +168,7 @@ export default async function DormRoomPlannerPage() {
       <JsonLd
         data={[
           breadcrumbJsonLd(crumbs),
+          guidePageJsonLd({ path: PATH, name: "Plan your dorm in your real room.", description: DESCRIPTION, datePublished: "2026-10-28", dateModified: UPDATED }),
           reviews.count >= MIN_REVIEWS_FOR_RATING
             ? { ...app, aggregateRating: { "@type": "AggregateRating", ratingValue: reviews.average, reviewCount: reviews.count, bestRating: 5, worstRating: 1 } }
             : app,
@@ -389,6 +392,10 @@ export default async function DormRoomPlannerPage() {
               </div>
             ))}
           </div>
+          <p className={dsz.caption} style={{ marginTop: 32 }}>
+            Updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time>. Room sizes come from what each school&apos;s housing
+            office publishes.
+          </p>
         </div>
       </section>
 
