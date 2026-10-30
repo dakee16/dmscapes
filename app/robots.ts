@@ -11,13 +11,28 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://dormscape.us";
  *   /dev            dev-only review tools (404 in production anyway)
  * The sitemap (app/sitemap.ts) is referenced so crawlers find every college page.
  */
+const PRIVATE = ["/account", "/rooms", "/api/", "/reset-password", "/dev"];
+
+// Answer engines' search and citation crawlers, named so it's explicit they're
+// welcome. A crawler reads only the group that names it, so each repeats the
+// private paths.
+const CITATION_BOTS = [
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "ClaudeBot",
+  "Claude-SearchBot",
+  "Claude-User",
+  "PerplexityBot",
+  "Perplexity-User",
+  "Google-Extended",
+];
+
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: ["/account", "/rooms", "/api/", "/reset-password", "/dev"],
-    },
+    rules: [
+      { userAgent: "*", allow: "/", disallow: PRIVATE },
+      { userAgent: CITATION_BOTS, allow: "/", disallow: PRIVATE },
+    ],
     sitemap: `${BASE}/sitemap.xml`,
   };
 }
