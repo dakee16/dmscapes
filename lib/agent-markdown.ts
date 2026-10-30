@@ -5,6 +5,11 @@ import { HALL_COUNT, LAYOUT_COUNT, SCHOOL_COUNT } from "@/lib/home-data";
 import { FLEX_CREDIT_PRICE_USD, FREE_PLAN_CAP, PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PRO_INITIAL_CREDITS, PRO_PRICE_USD } from "@/lib/plan";
 import { CONTACT_EMAIL, SITE_TAGLINE, absoluteUrl } from "@/lib/seo";
 import { COMPETITORS, shortCompetitorName } from "@/lib/compare";
+import { PLANNER_FAQS } from "@/lib/guide-planner";
+import { BED_RULE_FAQS } from "@/lib/guide-bed-rules";
+import { RUG_FAQS } from "@/lib/guide-rug-size";
+import { CLEARANCE_FAQS } from "@/lib/guide-loft-clearance";
+import { TWIN_XL_FAQS } from "@/lib/guide-twin-xl";
 
 // Markdown views of the site for answer engines and AI agents: /llms.txt and the
 // homepage's text/markdown version. Every count and price comes from the school
@@ -87,12 +92,28 @@ export function llmsTxt(): string {
   ].join("\n");
 }
 
+// The guide and tool pages' short answers, word for word as each page shows them.
+const TOOL_FAQS = [
+  { title: "Dorm room planner", path: "/dorm-room-planner", faqs: PLANNER_FAQS },
+  { title: "Dorm loft and bunk rules", path: "/dorm-bed-rules", faqs: BED_RULE_FAQS },
+  { title: "Dorm rug size", path: "/dorm-rug-size", faqs: RUG_FAQS },
+  { title: "Loft bed clearance", path: "/loft-bed-clearance", faqs: CLEARANCE_FAQS },
+  { title: "Twin XL sheets", path: "/twin-xl-sheets", faqs: TWIN_XL_FAQS },
+];
+
 /** /llms-full.txt: the same map, then every FAQ answer in full, grouped by its guide. */
 export function llmsFullTxt(): string {
   return [
     llmsTxt(),
     "## Dorm room questions, answered",
     "",
+    ...TOOL_FAQS.flatMap(({ title, path, faqs }) => [
+      `### ${title}`,
+      "",
+      `From the page: ${absoluteUrl(path)}`,
+      "",
+      ...faqs.flatMap(({ q, a }) => [`**${q}**`, "", a, ""]),
+    ]),
     ...POSTS.flatMap((post) => post.faqs?.length ? [
       `### ${post.faqTopic ?? post.title}`,
       "",

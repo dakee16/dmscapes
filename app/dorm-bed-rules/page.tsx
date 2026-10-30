@@ -10,14 +10,14 @@ import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import { SCHOOLS } from "@/lib/schools";
-import { ALLOWED_LABEL, YES_NO_LABEL, BED_RULES_CHECKED, bedRuleFor, bedRuleSummary, checkedLabel } from "@/lib/bed-rules";
+import { ALLOWED_LABEL, YES_NO_LABEL, BED_RULES_CHECKED, bedRuleFor, checkedLabel } from "@/lib/bed-rules";
 import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl, guidePageJsonLd, SITE_NAME, SITE_URL } from "@/lib/seo";
+import { BED_RULE_FAQS, R } from "@/lib/guide-bed-rules";
 import dsz from "@/components/dorm-size/DormSize.module.css";
 
 // Every answer comes from lib/bed-rules: a school's own housing pages, quoted in
 // data/bed-rules-quotes.json. Anything a school doesn't publish says so.
 const PATH = "/dorm-bed-rules";
-const R = bedRuleSummary();
 const rows = [...SCHOOLS].map((s) => ({ id: s.id, name: s.name, rule: bedRuleFor(s.id) })).sort((a, b) => a.name.localeCompare(b.name));
 
 const DESCRIPTION = fitDescription(
@@ -38,25 +38,6 @@ export const metadata: Metadata = pageMetadata({
 const crumbs = [
   { name: "Home", path: "/" },
   { name: "Loft & bunk rules", path: PATH },
-];
-
-const FAQS = [
-  {
-    q: "Can you loft your bed in a dorm?",
-    a: `Often, but not everywhere. Of the ${R.schools} colleges here whose housing pages say, ${R.loft.yes} allow lofting, ${R.loft.some} allow it only in some halls or by request, and ${R.loft.no} don't allow it.`,
-  },
-  {
-    q: "Can you bunk dorm beds?",
-    a: `Of the same ${R.schools} colleges, ${R.bunk.yes} allow bunking, ${R.bunk.some} allow it only in some halls or by request, and ${R.bunk.no} don't. Many don't say either way, so ask housing.`,
-  },
-  {
-    q: "Can I bring my own loft kit or bed risers?",
-    a: "Usually not your own loft: most schools that allow lofting use the university's beds or an approved rental. Risers are allowed at some schools and banned at others, sometimes with a height limit. Check your school below.",
-  },
-  {
-    q: "What if my school isn't clear?",
-    a: "Ask your housing office before you buy anything that only fits under a loft. Rules can differ by building and change from year to year.",
-  },
 ];
 
 export default function DormBedRulesPage() {
@@ -81,7 +62,7 @@ export default function DormBedRulesPage() {
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: FAQS.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+            mainEntity: BED_RULE_FAQS.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
           },
         ]}
       />
@@ -168,7 +149,7 @@ export default function DormBedRulesPage() {
         <div className="ds-wrap">
           <Headline id="answers-title" className="ds-h2 ds-h2--inline" lines={[{ text: "Short answers," }, { text: "with sources.", serif: true }]} />
           <div className={dsz.answers}>
-            {FAQS.map(({ q, a }) => (
+            {BED_RULE_FAQS.map(({ q, a }) => (
               <div key={q} data-reveal="">
                 <h3>{q}</h3>
                 <p>{a}</p>

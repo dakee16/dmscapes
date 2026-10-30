@@ -11,39 +11,14 @@ import JsonLd from "@/components/site/JsonLd";
 import { SCHOOLS } from "@/lib/schools";
 import { LAYOUT_COUNT } from "@/lib/home-data";
 import { bedName } from "@/lib/room-preview";
-import type { BedSize } from "@/lib/types";
+import { SIZES, TWIN_XL_FAQS, exceptions, other, shortBy, xl } from "@/lib/guide-twin-xl";
 import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, guidePageJsonLd } from "@/lib/seo";
 import { shortDate } from "@/components/blog/topics";
 import dsz from "@/components/dorm-size/DormSize.module.css";
 
-// Mattress sizes are the standard US sizes; which schools publish another bed
-// comes from the room data (Twin XL is the planner's default unless a school says otherwise).
+// Mattress sizes and the schools with other beds come from lib/guide-twin-xl.
 const PATH = "/twin-xl-sheets";
 const UPDATED = "2026-10-30";
-const SIZES: { size: BedSize; w: number; l: number }[] = [
-  { size: "twin", w: 38, l: 75 },
-  { size: "twin_xl", w: 38, l: 80 },
-  { size: "full", w: 54, l: 75 },
-  { size: "full_xl", w: 54, l: 80 },
-  { size: "queen", w: 60, l: 80 },
-];
-const dim = (b: BedSize) => SIZES.find((s) => s.size === b)!;
-const xl = dim("twin_xl");
-const twin = dim("twin");
-const shortBy = xl.l - twin.l;
-
-const rooms = SCHOOLS.flatMap((s) => s.dorms.flatMap((d) => d.rooms.map((r) => ({ school: s, bed: r.bed_size }))));
-const other = rooms.filter((r) => r.bed !== "twin_xl");
-// Schools that publish a bed other than Twin XL for some room types, with how many.
-const exceptions = [...new Set(other.map((r) => r.school.id))]
-  .map((id) => {
-    const mine = other.filter((r) => r.school.id === id);
-    const school = mine[0].school;
-    const beds = [...new Set(mine.map((r) => bedName(r.bed)))];
-    return { id, name: school.name, beds, count: mine.length };
-  })
-  .sort((a, b) => a.name.localeCompare(b.name));
-
 const DESCRIPTION = fitDescription(
   `Almost every dorm bed is a Twin XL (${xl.w} × ${xl.l} in), ${shortBy} inches longer than a Twin. Of ${LAYOUT_COUNT.toLocaleString("en-US")} room types we track, schools list another size for ${other.length}. See which schools, and which sheets fit.`,
   `Almost every dorm bed is a Twin XL (${xl.w} × ${xl.l} in). See which schools use other sizes, and which sheets fit.`
@@ -60,25 +35,6 @@ const crumbs = [
   { name: "Twin XL sheets", path: PATH },
 ];
 
-const FAQS = [
-  {
-    q: "Do dorms use Twin XL beds?",
-    a: `Almost all of them. Of the ${LAYOUT_COUNT.toLocaleString("en-US")} room types we track at ${SCHOOLS.length} colleges, schools list a different bed for ${other.length}, at ${exceptions.length} schools. Everywhere else it's a Twin XL.`,
-  },
-  {
-    q: "Will Twin sheets fit a Twin XL dorm bed?",
-    a: `Not well. A Twin XL mattress is ${xl.l} inches long and a Twin is ${twin.l}, so a Twin fitted sheet is ${shortBy} inches too short and will pop off the corners. Buy Twin XL fitted sheets.`,
-  },
-  {
-    q: "How big is a Twin XL mattress?",
-    a: `A standard Twin XL is ${xl.w} × ${xl.l} inches. Some schools list their dorm mattresses at slightly different widths, so check your housing office's furniture page if you're buying a topper.`,
-  },
-  {
-    q: "What if my dorm has a Full bed?",
-    a: "A few schools put Full or Full XL beds in some rooms. The school list below shows which ones, and your hall's page on dormscape shows the bed for each room type.",
-  },
-];
-
 export default function TwinXlSheetsPage() {
   return (
     <PageShell navOverlay>
@@ -89,7 +45,7 @@ export default function TwinXlSheetsPage() {
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: FAQS.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+            mainEntity: TWIN_XL_FAQS.map(({ q, a }) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
           },
         ]}
       />
@@ -199,7 +155,7 @@ export default function TwinXlSheetsPage() {
         <div className="ds-wrap">
           <Headline id="answers-title" className="ds-h2 ds-h2--inline" lines={[{ text: "Short answers," }, { text: "before you buy.", serif: true }]} />
           <div className={dsz.answers}>
-            {FAQS.map(({ q, a }) => (
+            {TWIN_XL_FAQS.map(({ q, a }) => (
               <div key={q} data-reveal="">
                 <h3>{q}</h3>
                 <p>{a}</p>
