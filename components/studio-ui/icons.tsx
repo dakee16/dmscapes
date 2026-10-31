@@ -55,6 +55,7 @@ export const RaiseIcon = (p: P) => <I {...p}><path d="M12 20V8M7 12.5l5-5 5 5M5 
 export const LowerIcon = (p: P) => <I {...p}><path d="M12 4v12M7 11.5l5 5 5-5M5 20h14" /></I>;
 export const DownloadIcon = (p: P) => <I strokeWidth={2.4} {...p}><path d="M12 4v11M7 10l5 5 5-5" /><path d="M5 20h14" /></I>;
 export const LinkIcon = (p: P) => <I {...p}><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1" /><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" /></I>;
+export const PhotoIcon = (p: P) => <I {...p}><rect x="3" y="4" width="18" height="16" rx="2" /><circle cx="9" cy="10" r="2" /><path d="M21 16l-5-5-9 9" /></I>;
 export const CompareIcon = (p: P) => <I {...p}><rect x="3" y="5" width="7" height="14" rx="1" /><rect x="14" y="5" width="7" height="14" rx="1" /></I>;
 export const SunIcon = (p: P) => <I {...p}><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></I>;
 export const SunsetIcon = (p: P) => <I {...p}><path d="M7 17a5 5 0 0 1 10 0M3 17h18M5 21h14M12 3v5M9 6l3 3 3-3M4.2 11.2l1.4 1.4M18.4 12.6l1.4-1.4" /></I>;

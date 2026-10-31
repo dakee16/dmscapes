@@ -55,3 +55,17 @@ const {COMPARE_NAMES}=load(path.join(root,'lib/compare-names'));
 const compare=require(path.join(root,'data/compare.json'));
 assert.deepEqual(COMPARE_NAMES.map(c=>c.slug).sort(),compare.map(c=>c.slug).sort(),'footer comparisons match data/compare.json');
 console.log('PASS: footer comparison links match the comparison pages.');
+
+// "See it in your room": the plan the browser sends is checked and trimmed before it reaches the model.
+const {parseDesign,photoPrompt}=load(path.join(root,'lib/photo-render'));
+const sent={roomType:'double',occupants:2,lengthFt:15,widthFt:12,style:'cozy',items:['Bedding: <b>sheets</b>\nset','x'.repeat(200)]};
+const design=parseDesign(sent);
+assert.ok(design&&design.style==='cozy'&&design.styleName==='Cozy Aesthetic','a known vibe is kept');
+assert.ok(!/[<>\n]/.test(design.items.join(''))&&design.items[1].length===90,'items lose markup and are capped');
+assert.equal(parseDesign({...sent,lengthFt:200}),null,'an impossible room is refused');
+assert.equal(parseDesign({...sent,occupants:0}),null,'a room for nobody is refused');
+assert.equal(parseDesign({...sent,style:'not-a-vibe'}).style,null,'an unknown vibe is dropped');
+assert.equal(parseDesign({...sent,items:Array(40).fill('Lamp')}).items.length,16,'at most 16 items');
+assert.match(photoPrompt(design),/Keep the room itself exactly as it is/);
+assert.match(photoPrompt(design),/Cozy Aesthetic/);
+console.log('PASS: photo renders send a checked, trimmed plan to the model.');

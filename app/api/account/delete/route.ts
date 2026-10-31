@@ -3,6 +3,7 @@ import { getServiceClient } from "@/lib/supabase-server";
 import { rateLimit } from "@/lib/rate-limit";
 import { boundedJson, sameOrigin } from "@/lib/request-body";
 import { hasRecentSignIn } from "@/lib/account-deletion";
+import { removeUserPhotos } from "@/lib/photo-render";
 
 export const runtime = "nodejs";
 const headers = { "Cache-Control": "private, no-store" };
@@ -30,6 +31,8 @@ export async function DELETE(request: Request) {
     // Never delete an auth account unless its transactional data cleanup exists.
     const ready = await db.rpc("dormscape_account_deletion_ready");
     if (ready.error || ready.data !== true) return reply({ error: "Account deletion is not set up in this environment yet. Contact info@dormscape.us for help." }, 503);
+    // Room photos are files, which the database cascade can't reach: remove them first.
+    await removeUserPhotos(db, data.user.id).catch((e) => console.error("room photo cleanup failed", e));
     // No user id is accepted from the body. Supabase deletes the auth identity,
     // sessions and app data in one transaction using the installed trigger.
     const deleted = await db.auth.admin.deleteUser(data.user.id, false);
