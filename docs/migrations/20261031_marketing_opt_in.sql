@@ -1,18 +1,21 @@
 -- Marketing email opt-in, 2026-10-31. NOT APPLIED. Review, then run once in the
--- Supabase SQL editor for project mvrogmmqglsrhoagfjvs.
+-- Supabase SQL editor for project mvrogmmqglsrhoagfjvs. Safe to re-run, and
+-- safe if the earlier version of this file was already applied.
 --
--- Email signup shows an optional, unticked box ("Email me dorm planning tips and
--- dormscape updates"). When ticked, the browser sends the time in signUp's
--- options.data as marketing_opt_in_at, same path as terms_accepted_at (0013).
--- handle_new_user copies it onto the profile. Null = not opted in. Google
--- signups never see the box, so they stay null (opt-in must be explicit).
+-- profiles.marketing_opt_in_at: when the user opted in; null = no marketing email.
 --
--- No client grant: 0011 limits browser UPDATEs to username/full_name/phone and
--- the security hardening limits INSERTs to id/email/auth_provider, so only this
--- SECURITY DEFINER trigger (or the service role) writes the column.
+-- * Accounts created before the signup checkbox went live (production deploy of
+--   cac0105, 2026-10-31 23:24:43 UTC) are opted in; the Privacy Policy says so
+--   and they can turn it off in Account settings.
+-- * Email signups after that are opted in only if they ticked the optional box:
+--   the browser sends marketing_opt_in_at in signUp's options.data (same path as
+--   terms_accepted_at, 0013) and handle_new_user copies it onto the profile.
+--   Google signups never see the box, so they start off.
+-- * Account settings has a toggle, so the browser may update this one column on
+--   its own row (RLS "profiles: update own" from 0002 limits it to the own row;
+--   0011 limits the browser to the granted columns).
 --
 -- Mailing list: select email from public.profiles where marketing_opt_in_at is not null;
--- Unsubscribe:  update public.profiles set marketing_opt_in_at = null where email = '...';
 
 begin;
 
@@ -48,7 +51,18 @@ $$;
 -- Keep it off the API (security hardening 2026-10-04).
 revoke execute on function public.handle_new_user() from public, anon, authenticated;
 
--- Backfill anyone who signed up with the box ticked before this ran.
+-- The Account settings toggle.
+grant update (marketing_opt_in_at) on public.profiles to authenticated;
+
+-- Existing accounts (created before the checkbox went live): opted in.
+update public.profiles p
+set marketing_opt_in_at = now()
+from auth.users u
+where u.id = p.id
+  and p.marketing_opt_in_at is null
+  and u.created_at < '2026-10-31 23:24:43+00';
+
+-- Signups since then that ticked the box, if they arrived before this ran.
 update public.profiles p
 set marketing_opt_in_at = nullif(u.raw_user_meta_data ->> 'marketing_opt_in_at', '')::timestamptz
 from auth.users u

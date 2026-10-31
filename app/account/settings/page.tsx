@@ -141,6 +141,32 @@ export default function AccountSettingsPage() {
     }
   }
 
+  // ----- Marketing email opt-in -----
+  const [savingOptIn, setSavingOptIn] = useState(false);
+  const [optInMsg, setOptInMsg] = useState<Msg>(null);
+  const optedIn = Boolean(profile?.marketing_opt_in_at);
+
+  async function toggleMarketing() {
+    const supabase = getBrowserClient();
+    if (!supabase || !user || savingOptIn) return;
+    setSavingOptIn(true);
+    setOptInMsg(null);
+    try {
+      const { error } = await supabase
+        .from("profiles")
+        .update({ marketing_opt_in_at: optedIn ? null : new Date().toISOString() })
+        .eq("id", user.id);
+      if (error) {
+        setOptInMsg({ tone: "bad", text: "Couldn't save. Try again in a minute." });
+        return;
+      }
+      await refreshProfile();
+      setOptInMsg({ tone: "good", text: optedIn ? "Unsubscribed." : "Subscribed." });
+    } finally {
+      setSavingOptIn(false);
+    }
+  }
+
   // ----- Email (verification-based change) -----
   const [email, setEmail] = useState("");
   const [emailInit, setEmailInit] = useState(false);
@@ -421,6 +447,24 @@ export default function AccountSettingsPage() {
                   <FieldMsg msg={emailMsg} />
                 </div>
               </form>
+              <div id="marketing-emails" className={s.optIn}>
+                <button
+                  type="button"
+                  role="switch"
+                  aria-checked={optedIn}
+                  aria-describedby="marketing-emails-hint"
+                  disabled={savingOptIn}
+                  onClick={toggleMarketing}
+                  className={s.optInSwitch}
+                >
+                  <span>Marketing emails</span>
+                  <span className={s.switch} data-on={optedIn} aria-hidden="true" />
+                </button>
+                <p id="marketing-emails-hint" className={s.cardLede}>
+                  Dorm planning tips and dormscape updates. Account, invitation and receipt emails still arrive.
+                </p>
+                <FieldMsg msg={optInMsg} />
+              </div>
             </section>
 
             {/* Password / provider */}

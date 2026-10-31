@@ -56,6 +56,9 @@ export interface Profile {
    *  (migration 0013): the email-signup timestamp from the consent checkbox, or
    *  now() for OAuth (implicit agreement). Null on accounts created before 0013. */
   terms_accepted_at?: string | null;
+  /** When the user opted in to marketing email; null = off. Signup checkbox or
+   *  the Account settings toggle (docs/migrations/20261031_marketing_opt_in.sql). */
+  marketing_opt_in_at?: string | null;
 }
 
 export type PlanTier = "free" | "flex" | "plus" | "pro";

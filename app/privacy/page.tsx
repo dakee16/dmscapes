@@ -62,6 +62,17 @@ export default function PrivacyPage() {
             see your Google password.
           </li>
           <li>
+            <strong>Marketing emails.</strong>{" "}By ticking &ldquo;Email me dorm
+            planning tips and dormscape updates&rdquo; when you sign up, you agree
+            to receive marketing emails from dormscape, and we store when you opted
+            in. Accounts created before we added this checkbox on October 31, 2026
+            receive these emails unless they turn them off. You can turn them off
+            at any time with the Marketing emails toggle in{" "}
+            <Link href="/account/settings#marketing-emails">Account settings</Link>.
+            Turning them off doesn&rsquo;t stop account, invitation or purchase
+            emails.
+          </li>
+          <li>
             <strong>Saved room designs.</strong>{" "}When
             you save a room, we store the school, dorm, and room type you picked,
             your chosen style and budget, your furniture layout, and any product

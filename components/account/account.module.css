@@ -296,6 +296,14 @@
 }
 .textBtn:hover { color: var(--ds-ink); }
 .textBtn:disabled { opacity: 0.6; cursor: wait; }
+.optIn { display: grid; gap: 4px; margin-top: 24px; padding-top: 20px; border-top: 1.5px solid rgba(22, 22, 29, 0.1); scroll-margin-top: calc(var(--ds-nav-h) + 20px); }
+.optIn .cardLede { margin: 0; }
+.optInSwitch { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; padding: 0; border: 0; background: none; color: var(--ds-ink); font: 800 16px/1.2 var(--ds-sans); text-align: left; cursor: pointer; }
+.optInSwitch:disabled { opacity: 0.6; cursor: progress; }
+.switch { position: relative; flex: none; width: 42px; height: 24px; border-radius: 999px; background: #d6d4cc; transition: background-color 0.2s; }
+.switch::after { content: ""; position: absolute; left: 3px; top: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: transform 0.2s var(--ds-ease); }
+.switch[data-on="true"] { background: var(--ds-ink); }
+.switch[data-on="true"]::after { transform: translateX(18px); }
 .msg { margin: 0; font-family: var(--ds-mono); font-size: 12px; font-weight: 600; line-height: 1.5; }
 .msg[data-tone="good"] { color: var(--ds-blue); }
 .msg[data-tone="bad"] { color: #b01d2a; }
