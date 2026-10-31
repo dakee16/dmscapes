@@ -1,0 +1,167 @@
+/* "See it in your room": the photo modal. The card, type and buttons come from
+   components/plan-steps/Dialogs.module.css. */
+
+.card.card {
+  width: min(100%, 620px);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+}
+
+.tips {
+  margin: 14px 0 0;
+  padding: 0 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ds-body);
+}
+
+.preview,
+.compare {
+  position: relative;
+  margin-top: 18px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(22, 22, 29, 0.06);
+}
+.preview {
+  aspect-ratio: 4 / 3;
+}
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.preview[data-working] .img {
+  filter: saturate(0.6) brightness(0.8);
+}
+.working {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--ds-ink);
+  color: var(--ds-yellow);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse {
+  50% { opacity: 0.65; }
+}
+
+.handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  margin-left: -1.5px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(22, 22, 29, 0.25);
+  pointer-events: none;
+}
+.handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34px;
+  height: 34px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(22, 22, 29, 0.3);
+}
+.tag {
+  position: absolute;
+  top: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(22, 22, 29, 0.72);
+  color: #fff;
+  font-family: var(--ds-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.tagBefore { left: 12px; }
+.tagAfter { right: 12px; }
+.range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+}
+.compare:has(.range:focus-visible) {
+  outline: 3px solid var(--ds-blue);
+  outline-offset: 2px;
+}
+
+.label {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ds-muted);
+}
+.note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ds-muted);
+}
+.error {
+  margin: 14px 0 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #fdecec;
+  color: #8f1d1d;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.recent {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(22, 22, 29, 0.1);
+}
+.recent ul {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+.recent button {
+  display: block;
+  width: 96px;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(22, 22, 29, 0.06);
+}
+.recent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .working { animation: none; }
+}

@@ -154,8 +154,8 @@ export default async function DormRoomPlannerPage() {
             <Link href="/plan/draw" className="ds-link">
               School not listed? Draw your room
             </Link>
-            <Link href="/dorm-room-size#sizes" className="ds-link">
-              No room yet? See typical rooms
+            <Link href="/plan?typical=2" className="ds-link">
+              No room yet? Start with a typical double
             </Link>
           </p>
         </div>

@@ -8,7 +8,7 @@ import { useUpgrade, type UpgradeReason } from "@/lib/upgrade-context";
 import { useAuth } from "@/lib/auth-context";
 import { startCheckout } from "@/lib/checkout";
 import { track } from "@/lib/analytics";
-import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, RECHARGE_CREDITS, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS } from "@/lib/plan";
+import { PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, RECHARGE_CREDITS, PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, PHOTO_RENDER_CREDITS } from "@/lib/plan";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
 import { ArrowRight, Check } from "@/components/ds/Icons";
 import { PlusPerk } from "@/components/hall-finder/Entry";
@@ -80,6 +80,10 @@ const COPY: Record<UpgradeReason, { title: string; body: string }> = {
     title: "Step inside your room with Pro",
     body: "Arrange furniture in live 3D, try finishes and lighting, and switch to the same layout in 2D. 3D Room Studio is included with Pro. Your 2D plan stays available.",
   },
+  "photo-render": {
+    title: "See it in your own room with Pro",
+    body: `Add a photo of your dorm room and see it dressed in your plan: your vibe and your shopping list. Each picture uses ${PHOTO_RENDER_CREDITS} plan ${PHOTO_RENDER_CREDITS === 1 ? "credit" : "credits"}. Seeing your plan in your room is a Pro feature.`,
+  },
   "draw-3d": {
     title: "Build your own room in 3D",
     body: "Place a floor, draw custom walls, and add doors and windows on a 3D grid. Then furnish that same room in the 3D planner. The 3D Room Builder is included with Pro. Plus keeps the 2D drawing tool.",
@@ -112,7 +116,7 @@ const PRO_PERKS = [
   "A shared room for your people",
 ];
 const PRO_LINE = `${PRO_INITIAL_CREDITS} plan credits, 3D tools, and custom vibes.`;
-const PRO_GATES: UpgradeReason[] = ["workspace", "room-3d", "draw-3d", "custom-vibe"];
+const PRO_GATES: UpgradeReason[] = ["workspace", "room-3d", "draw-3d", "custom-vibe", "photo-render"];
 const usd = (n: number) => `$${n.toFixed(2)}`;
 
 export default function UpgradeModal() {

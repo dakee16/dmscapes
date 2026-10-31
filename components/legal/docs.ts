@@ -33,6 +33,7 @@ export const LEGAL_DOCS = {
       { id: "where-your-data-lives", title: "Where your data lives" },
       { id: "private-workspaces", title: "Shared rooms and comments" },
       { id: "room-voice", title: "Optional room voice" },
+      { id: "room-photos", title: "Room photos" },
       { id: "who-else-sees-it", title: "Who else sees it" },
       { id: "your-rights", title: "Your rights" },
       { id: "dont-sell", title: "We don't sell your data" },

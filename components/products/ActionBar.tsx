@@ -19,7 +19,9 @@ import { designDisplayName } from "@/lib/styles";
 import { roomTypeLabel } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
 import { ArrowRight } from "@/components/ds/Icons";
-import { CheckIcon, CompareIcon, DownloadIcon, ShareIcon } from "@/components/studio-ui/icons";
+import { CheckIcon, CompareIcon, DownloadIcon, PhotoIcon, ShareIcon } from "@/components/studio-ui/icons";
+import RoomPhotoModal from "@/components/photo/RoomPhotoModal";
+import { isPro } from "@/lib/plan";
 import a from "./ActionBar.module.css";
 
 type Busy = null | "link" | "save";
@@ -66,6 +68,7 @@ export default function ActionBar({
   const [toast, setToast] = useState("");
   const [savedUrl, setSavedUrl] = useState("");
   const [shareFallbackUrl, setShareFallbackUrl] = useState("");
+  const [photoOpen, setPhotoOpen] = useState(false);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(()=>{if(user&&pendingSave.current){pendingSave.current=false;setName(usePlannerStore.getState().planning.name);setSavePanel(true);setSavedUrl("");}},[user]);
@@ -288,6 +291,21 @@ export default function ActionBar({
             <CompareIcon size={16} className={a.icon} />Compare{tag}
           </Link>
         )}
+        {!exportsOnly && (
+          <button
+            type="button"
+            className={a.btn}
+            onClick={() => {
+              setMenuOpen(false); setSavePanel(false); setShareOpen(false);
+              if (isPro(profile)) setPhotoOpen(true);
+              else openUpgrade("photo-render");
+            }}
+            aria-label={isPro(profile) ? "See it in your room photo" : "See it in your room photo, a Pro feature"}
+          >
+            <PhotoIcon size={16} className={a.icon} /><span className={a.label}>In your room</span>
+            {!isPro(profile) && <span className={a.tag}>Pro</span>}
+          </button>
+        )}
         <div className={a.wrap}>
           <button
             type="button"
@@ -390,6 +408,7 @@ export default function ActionBar({
           {toast}
         </div>
       )}
+      {photoOpen && <RoomPhotoModal products={buying} onClose={() => setPhotoOpen(false)} />}
     </>
   );
 }

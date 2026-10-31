@@ -37,6 +37,7 @@ export default function ResumeRoom({
           {dimsOf(room.lengthFt, room.widthFt)}
         </span>
         {room.dimsEstimated && <EstimatedDimsNote />}
+        {room.source === "typical" && <span>Search your school above to swap in your real room.</span>}
       </div>
       <div className={css.resumeActions}>
         {onEdit && (

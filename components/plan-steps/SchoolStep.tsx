@@ -7,7 +7,7 @@ import { shortName, sortKey } from "@/lib/school-names";
 import { ArrowRight, ArrowUpRight, CloseIcon, SearchIcon } from "@/components/ds/Icons";
 import ManualEntry, { type ManualEntryValues } from "@/components/planner/ManualEntry";
 import { PencilIcon, PlusIcon } from "./icons";
-import { plural, schoolCounts } from "./room-model";
+import { dimsOf, plural, schoolCounts, typicalRoom } from "./room-model";
 import type { SchoolSummary } from "@/lib/types";
 import css from "./School.module.css";
 
@@ -23,6 +23,10 @@ const FEATURED: { id: string; label: string }[] = [
 ];
 
 const SORTED = [...SCHOOLS].sort((a, b) => sortKey(a.name).localeCompare(sortKey(b.name)));
+const TYPICAL = [1, 2, 3].flatMap((n) => {
+  const room = typicalRoom(n);
+  return room ? [room] : [];
+});
 const HALLS = SCHOOLS.reduce((n, s) => n + s.dorms.length, 0);
 const letterOf = (s: SchoolSummary) => sortKey(s.name).charAt(0).toUpperCase();
 
@@ -50,11 +54,14 @@ export default function SchoolStep({
   onSelect,
   onRequest,
   onManual,
+  onTypical,
   resume,
 }: {
   onSelect: (school: SchoolSummary) => void;
   onRequest: () => void;
   onManual: (values: ManualEntryValues) => void;
+  /** "No room yet?": start from the typical single (1), double (2) or triple (3). */
+  onTypical: (occupants: number) => void;
   /** The room already chosen, if any (a return visit, typed or drawn room). */
   resume?: React.ReactNode;
 }) {
@@ -234,6 +241,24 @@ export default function SchoolStep({
                 }}
               >
                 {f.label}
+              </button>
+            ))}
+          </div>
+        )}
+
+        {TYPICAL.length > 0 && (
+          <div className={css.featured}>
+            <span className={css.smallLabel}>No room yet?</span>
+            {TYPICAL.map((room) => (
+              <button
+                key={room.occupants}
+                type="button"
+                className={css.chip}
+                aria-label={`Start with a typical ${room.type}, ${dimsOf(room.lengthFt, room.widthFt)}`}
+                onClick={() => onTypical(room.occupants)}
+              >
+                Typical {room.type}{" "}
+                <span className={css.chipDims}>{dimsOf(room.lengthFt, room.widthFt)}</span>
               </button>
             ))}
           </div>

@@ -36,7 +36,7 @@ export default function PrivacyPage() {
     <LegalLayout
       doc="privacy"
       title="Privacy Policy"
-      updated="October 28, 2026"
+      updated="October 31, 2026"
       intro={
         <p>
           This page explains what information dormscape collects, why, and what you
@@ -188,6 +188,10 @@ export default function PrivacyPage() {
         <p>Join with mic off lets you listen without enabling your microphone. Join and talk or Unmute requests microphone access if your browser has not already granted it. You can mute, leave the call, or revoke microphone permission in your browser&apos;s site settings. dormscape does not request camera access for room voice. Calls disconnect when you leave the workspace page.</p>
         <p>dormscape does not record, transcribe or save call audio, and does not send it to an AI model. Call state and short-lived join credentials are held in memory for the connection. The voice provider may retain operational connection and diagnostic records under its service terms. We cannot prevent another participant from making a recording outside dormscape, so share only what you intend your roommates to hear.</p>
         <p>You can use comments and the room planner without joining voice. Cookie choices and microphone permissions are separate: accepting analytics does not enable your microphone, and rejecting analytics does not prevent you from using voice.</p>
+      </LegalSection>
+
+      <LegalSection doc="privacy" id="room-photos">
+        <p>If you use See it in your room, your photo and a text description of your plan are sent to Google&rsquo;s Gemini image model through Vercel AI Gateway to make the picture. Photos are shrunk in your browser first, which removes location data. Both images are stored privately and deleted automatically after 14 days, or when you delete your account.</p>
       </LegalSection>
 
       <LegalSection doc="privacy" id="who-else-sees-it">

@@ -14,6 +14,9 @@ export const PRO_INITIAL_CREDITS = 10;
 export const RECHARGE_CREDITS = 3;
 export const FREE_PLAN_CAP = 1;
 export const CREDIT_PLAN_VERSION = "2026-09-24";
+/** Plan credits one "See it in your room" picture uses (Pro). The route spends one
+ * with spendPlanCredit, so change both together. */
+export const PHOTO_RENDER_CREDITS = 1;
 
 /** All tiers can top up. A Free buyer becomes Flex; paid tiers keep their tools. */
 export const FLEX_CREDIT_PRICE_USD = 0.99;
