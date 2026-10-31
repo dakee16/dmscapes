@@ -140,6 +140,7 @@ export default function AuthForm({
   const [confirmSent, setConfirmSent] = useState(false);
   const [existingNotice, setExistingNotice] = useState(false);
   const [agreed, setAgreed] = useState(false);
+  const [marketing, setMarketing] = useState(false);
   const [resetMode, setResetMode] = useState(false);
   const [resetSent, setResetSent] = useState(false);
   const emailRef = useRef<HTMLInputElement>(null);
@@ -214,7 +215,13 @@ export default function AuthForm({
           supabase.auth.signUp({
             email: mail,
             password,
-            options: { data: { terms_accepted_at: new Date().toISOString() } },
+            options: {
+              data: {
+                terms_accepted_at: new Date().toISOString(),
+                // Optional; handle_new_user copies it to profiles (docs/migrations/20261031_marketing_opt_in.sql).
+                ...(marketing && { marketing_opt_in_at: new Date().toISOString() }),
+              },
+            },
           })
         );
         if (err) {
@@ -476,6 +483,14 @@ export default function AuthForm({
                   <Link href="/terms" target="_blank" rel="noopener noreferrer">Terms of Service</Link>{" "}
                   and{" "}
                   <Link href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>.
+                </label>
+              </div>
+            )}
+            {mode === "signup" && (
+              <div className={styles.consent}>
+                <input id="auth-marketing" type="checkbox" checked={marketing} onChange={(e) => setMarketing(e.target.checked)} />
+                <label htmlFor="auth-marketing">
+                  Email me dorm planning tips and dormscape updates. Unsubscribe anytime.
                 </label>
               </div>
             )}
