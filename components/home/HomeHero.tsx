@@ -56,8 +56,6 @@ export default function HomeHero({ schoolCount, roomCount }: { schoolCount: numb
           <span className={css.note}>No account needed to explore</span>
           <span className={css.sep} aria-hidden="true" />
           <span className={css.note}>Saving is always free</span>
-          <span className={css.sep} aria-hidden="true" />
-          <span className={css.note}>Amazon Associate</span>
         </p>
       </div>
 
