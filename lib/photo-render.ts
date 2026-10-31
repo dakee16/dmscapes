@@ -13,7 +13,8 @@ export const PHOTO_DAILY_LIMIT = 20;
 /** The browser shrinks photos to 1600 px JPEG first, so real uploads are far smaller. */
 export const PHOTO_MAX_BYTES = 4 * 1024 * 1024;
 export const PHOTO_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
-const GATEWAY_EDITS = "https://ai-gateway.vercel.sh/v1/images/edits";
+/** Gemini image models are language models on AI Gateway: they edit through chat with image output. */
+const GATEWAY_CHAT = "https://ai-gateway.vercel.sh/v1/chat/completions";
 
 export interface PhotoDesign {
   roomType: string;
@@ -77,26 +78,28 @@ const imageType = (b: Buffer) =>
   b[0] === 0xff && b[1] === 0xd8 ? "image/jpeg" : b.subarray(8, 12).toString("latin1") === "WEBP" ? "image/webp" : "image/png";
 export const extensionOf = (type: string) => (type === "image/jpeg" ? "jpg" : type === "image/webp" ? "webp" : "png");
 
-/** Send the photo and instruction to AI Gateway's image edit endpoint. Throws on any failure. */
+/** Send the photo and instruction to the image model through AI Gateway. Throws on any failure. */
 export async function renderPhoto(photo: Blob, prompt: string): Promise<{ image: Buffer; type: string; usage: unknown }> {
   const key = process.env.AI_GATEWAY_API_KEY;
   if (!key) throw new Error("AI_GATEWAY_API_KEY is not set");
-  const form = new FormData();
-  form.set("model", PHOTO_MODEL);
-  form.set("prompt", prompt);
-  form.set("image", photo, "room.jpg");
-  const res = await fetch(GATEWAY_EDITS, {
+  const photoUrl = `data:${photo.type || "image/jpeg"};base64,${Buffer.from(await photo.arrayBuffer()).toString("base64")}`;
+  const res = await fetch(GATEWAY_CHAT, {
     method: "POST",
-    headers: { Authorization: `Bearer ${key}` },
-    body: form,
+    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: PHOTO_MODEL,
+      modalities: ["text", "image"],
+      stream: false,
+      messages: [{ role: "user", content: [{ type: "text", text: prompt }, { type: "image_url", image_url: { url: photoUrl } }] }],
+    }),
     signal: AbortSignal.timeout(110_000),
   });
   const body = (await res.json().catch(() => null)) as {
-    data?: { b64_json?: string }[];
+    choices?: { message?: { images?: { image_url?: { url?: string } }[] } }[];
     usage?: unknown;
     error?: { type?: string; message?: string };
   } | null;
-  const b64 = body?.data?.[0]?.b64_json;
+  const b64 = body?.choices?.[0]?.message?.images?.[0]?.image_url?.url?.split(";base64,")[1];
   if (!res.ok || typeof b64 !== "string") {
     throw new Error(`AI Gateway ${res.status} ${body?.error?.type ?? ""}: ${body?.error?.message ?? "no image returned"}`.slice(0, 400));
   }
