@@ -39,7 +39,7 @@ export default function TermsPage() {
     <LegalLayout
       doc="terms"
       title="Terms of Service"
-      updated="September 28, 2026"
+      updated="October 31, 2026"
       intro={
         <p>
           dormscape is a free tool. These terms explain what that means: what you can
@@ -78,6 +78,10 @@ export default function TermsPage() {
           planning aids, not guarantees. Measure your actual space and check a
           product&rsquo;s real dimensions before you buy, especially for anything large
           or hard to return.
+        </p>
+        <p>
+          AI pictures are illustrations, not to scale, and may not match real
+          products or your room exactly.
         </p>
       </LegalSection>
 
