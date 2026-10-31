@@ -1,36 +1,33 @@
 import s from "./BrandLoader.module.css";
 
-// The mark's three pieces, each in its own box (design-handoff/v2/logo, Loader.dc.html).
-const ARCH = "M885 35.8A668.9 668.9 0 0 0 0 634.5L0 667L216.6 579A451.9 451.9 0 0 1 885 204.7Z";
-const TOP = "M216 0L0 87L0 407.8A696.6 696.6 0 0 1 216 442.5Z";
-const DOOR = "M0 -0.8L0 490L216 490L216 59A423.9 423.9 0 0 0 0 -0.8Z";
+// The room mark (public/brand/dormscape-mark-ink.svg): the "d" with an L-shaped
+// room cut out of its bowl, and the room itself in its own box so it can fill.
+const SHELL =
+  "M241 39L337 0V211.4A252 237 0 0 0 241 193.5Z" +
+  "M337 223.2A241 226 0 0 0 0 430.5V485.5A88 88 0 0 0 88 573.5H337ZM147 288.5H241V497.5H67V388.5H147Z";
+const ROOM = "M159.5 301H228.5V485H79.5V401H159.5Z";
 
-const piece = (cls: string, box: string, d: string) => (
-  <span className={cls}>
-    <svg viewBox={box} preserveAspectRatio="none">
-      <path d={d} />
-    </svg>
-  </span>
-);
-
-/** The mark alone, its door swinging (MOTION.md · Loader). */
+/** The mark alone, its room filling. */
 function Mark() {
   return (
     <span className={s.mark} aria-hidden="true">
-      {piece(`${s.pc} ${s.ghost}`, "0 0 886 668", ARCH)}
-      {piece(`${s.pc} ${s.arch}`, "0 0 886 668", ARCH)}
-      {piece(`${s.pc} ${s.top}`, "0 0 217 444", TOP)}
-      {piece(`${s.pc} ${s.door}`, "0 0 217 491", DOOR)}
+      <svg viewBox="0 0 337 573.5">
+        <path d={SHELL} fillRule="evenodd" />
+      </svg>
+      <span className={s.room}>
+        <svg viewBox="79.5 301 149 184" preserveAspectRatio="none">
+          <path d={ROOM} />
+        </svg>
+      </span>
     </span>
   );
 }
 
 /**
- * The sitewide loader, "the door swings": the mark is a door seen from above,
- * the way a floor plan draws it. The curve folds in toward its hinge at the
- * upright and swings back out on a 2.6 s loop, over a faint ghost of its path,
- * with a "Loading" caption whose dot brightens once per loop. Still in reduced
- * motion and with Motion off.
+ * The sitewide loader, "the room fills": the blue room inside the mark fills
+ * from the floor up and clears on a 2.6 s loop, with a "Loading" caption whose
+ * dot brightens once per loop. Still (the full mark) in reduced motion and with
+ * Motion off.
  *
  * Sizes: "route" (88 px, full-screen loading), "panel" (48 px) and "inline"
  * (18 px, inside a button beside its own text; decorative there). `label` is

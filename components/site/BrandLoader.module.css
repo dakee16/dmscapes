@@ -1,4 +1,4 @@
-/* components/site/BrandLoader: "the door swings" (design-handoff/v2 Loader.dc.html, MOTION.md) */
+/* components/site/BrandLoader: "the room fills" (MOTION.md loop timing) */
 .loader {
   --s: 88px;
   display: flex;
@@ -19,40 +19,25 @@
   vertical-align: middle;
 }
 
+/* Same height as the old door mark (--s × 1.245), in the room mark's 337 × 573.5 box. */
 .mark {
   position: relative;
   display: block;
   flex: none;
-  width: var(--s);
-  aspect-ratio: 888 / 1106;
+  width: calc(var(--s) * 0.7316);
+  height: calc(var(--s) * 1.245);
 }
-.pc { position: absolute; display: block; }
-.pc svg { display: block; width: 100%; height: 100%; overflow: visible; }
-.pc path { fill: currentColor; }
-/* Placed in the mark's own 888 × 1106 box */
-.arch, .ghost { left: 0; top: 39.421%; width: 99.775%; height: 60.398%; }
-.ghost { opacity: 0.13; }
-.top { left: 75.338%; top: 0; width: 24.437%; height: 40.145%; }
-.door { left: 75.338%; top: 55.515%; width: 24.437%; height: 44.394%; }
+.mark svg { display: block; width: 100%; height: 100%; }
+.mark path { fill: currentColor; }
+.room { position: absolute; left: 23.591%; top: 52.485%; width: 44.214%; height: 32.084%; animation: fill 2.6s cubic-bezier(0.65, 0, 0.35, 1) infinite; }
+.mark .room path { fill: var(--ds-blue, #2449ff); }
+.loader[data-tone="dark"] .room path { fill: var(--ds-blue-on-dark, #5b7cff); }
 
-/* The right end of the curve stays on its hinge at the upright; the left end
-   folds in toward it and swings back out, like a door closing and opening in
-   plan view. The fold is a conic mask whose sweep (--sw) runs 150° → 66° → 150°. */
-@property --sw {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 150deg;
-}
-.arch {
-  --sw: 150deg;
-  -webkit-mask-image: conic-gradient(from calc(40deg - var(--sw)) at 70% 99.4%, #000 0deg var(--sw), transparent var(--sw));
-  mask-image: conic-gradient(from calc(40deg - var(--sw)) at 70% 99.4%, #000 0deg var(--sw), transparent var(--sw));
-  animation: fold 2.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-}
-@keyframes fold {
-  0%, 14% { --sw: 150deg; }
-  46%, 58% { --sw: 66deg; }
-  88%, 100% { --sw: 150deg; }
+/* The room fills from the floor up, holds, then clears upward; both ends are empty. */
+@keyframes fill {
+  0%, 14% { clip-path: inset(100% 0 0 0); }
+  46%, 72% { clip-path: inset(0); }
+  100% { clip-path: inset(0 0 100% 0); }
 }
 
 .caption {

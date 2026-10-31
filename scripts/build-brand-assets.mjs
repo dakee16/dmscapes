@@ -1,6 +1,6 @@
 // Rebuild deployment assets from the approved original, without redrawing it.
 // Run from the project root: node scripts/build-brand-assets.mjs
-// The original is the gradient tile from the redesign v2 handoff (design-handoff/v2/logo),
+// The original is the room mark (the "d" with a blue room; "Final icon", 2026-10-31),
 // archived at 1024 px: square and opaque, so platforms round its corners themselves.
 import sharp from "sharp";
 import { mkdir, writeFile, readFile } from "node:fs/promises";
