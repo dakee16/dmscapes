@@ -181,8 +181,11 @@ export interface SelectedRoom {
   widthFt: number;
   /** Provided mattress size; "twin_xl" unless the school documents otherwise. */
   bedSize: BedSize;
-  /** "catalog" = school data, "manual" = typed dims, "drawn" = hand-drawn outline. */
-  source: "catalog" | "manual" | "drawn";
+  /**
+   * "catalog" = school data, "manual" = typed dims, "drawn" = hand-drawn outline,
+   * "typical" = the median published single/double/triple, for "No room yet?".
+   */
+  source: "catalog" | "manual" | "drawn" | "typical";
   /**
    * True when lengthFt/widthFt are a same-type estimate rather than a published
    * or user-entered size, so the UI can label the dimensions honestly.

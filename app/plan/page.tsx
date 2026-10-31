@@ -7,6 +7,7 @@ import SchoolStep from "@/components/plan-steps/SchoolStep";
 import RoomStep from "@/components/plan-steps/RoomStep";
 import ResumeRoom from "@/components/plan-steps/ResumeRoom";
 import { roomKey } from "@/components/planner/RoomPicker";
+import { typicalRoom } from "@/components/plan-steps/room-model";
 import type { ManualEntryValues } from "@/components/planner/ManualEntry";
 import RequestSchoolModal from "@/components/planner/RequestSchoolModal";
 import { track } from "@/lib/analytics";
@@ -26,12 +27,24 @@ let flowTracked = false;
  * is applied, as before. Fresh visitors and crawlers get the School step as is.
  * Mirrors plannerStorage: the tab's draft, else a recovery copy with a room.
  */
-const RESTORE_GATE = `try{var d=document.currentScript.parentElement,t=JSON.parse(sessionStorage.getItem("dormscape-planner")||"null"),s=t&&t.state;if(!s){var r=JSON.parse(localStorage.getItem("${RECOVERY_KEY}")||"null");s=r&&r.state&&r.state.room&&Array.isArray(r.state.furniture)?r.state:null}if((s&&((s.college&&s.college.id)||s.room))||/[?&]school=/.test(location.search))d.setAttribute("data-restoring","")}catch(e){}`;
+const RESTORE_GATE = `try{var d=document.currentScript.parentElement,t=JSON.parse(sessionStorage.getItem("dormscape-planner")||"null"),s=t&&t.state;if(!s){var r=JSON.parse(localStorage.getItem("${RECOVERY_KEY}")||"null");s=r&&r.state&&r.state.room&&Array.isArray(r.state.furniture)?r.state:null}if((s&&((s.college&&s.college.id)||s.room))||/[?&](school|typical)=/.test(location.search))d.setAttribute("data-restoring","")}catch(e){}`;
 
 /** The same check on a client-side visit, where the store is already in memory. */
 function hasPlannerToRestore() {
   const s = usePlannerStore.getState();
-  return Boolean(s.college?.id || s.room || new URLSearchParams(window.location.search).get("school"));
+  const params = new URLSearchParams(window.location.search);
+  return Boolean(s.college?.id || s.room || params.get("school") || params.get("typical"));
+}
+
+/** "No room yet?": the typical single, double or triple in place of a school's room. */
+function applyTypicalRoom(occupants: number, via: "chip" | "link"): boolean {
+  const room = typicalRoom(occupants);
+  if (!room) return false;
+  const s = usePlannerStore.getState();
+  s.setCollege(null);
+  s.setRoom(room);
+  track("typical_room_selected", { occupants, via });
+  return true;
 }
 
 const noSubscribe = () => () => {};
@@ -70,7 +83,6 @@ export default function PlanSelectPage() {
   const [selectedRoomKey, setSelectedRoomKey] = useState<string | null>(null);
 
   useEffect(() => {
-    setReady(true);
     if (!flowTracked) {
       flowTracked = true;
       track("flow_started");
@@ -81,6 +93,14 @@ export default function PlanSelectPage() {
     // Read from location rather than useSearchParams so this page keeps
     // rendering statically (same pattern as the Step 2 auth-gate resume).
     const params = new URLSearchParams(window.location.search);
+    // /plan?typical=2 ("No room yet?" links): the typical double, then straight to the vibes.
+    // The loader stays up (ready stays false) so the School step never flashes.
+    const typical = Number(params.get("typical"));
+    if (typical && applyTypicalRoom(typical, "link")) {
+      router.replace("/plan/style");
+      return;
+    }
+    setReady(true);
     // /plan?vibe=spooky (the hero chip, tape band and 404): preselect the seasonal vibe while it runs.
     if (params.get("vibe") === "spooky" && seasonOn() && usePlannerStore.getState().style !== "spooky") {
       usePlannerStore.getState().setStyle("spooky");
@@ -102,7 +122,7 @@ export default function PlanSelectPage() {
     const dormId = params.get("dorm");
     const d = dormId ? s.dorms.find((x) => x.id === dormId) : undefined;
     if (d) setDorm({ id: d.id, name: d.name });
-  }, [setCollege, setDorm]);
+  }, [setCollege, setDorm, router]);
 
   const school = useMemo(() => (college?.id ? getSchool(college.id) : undefined), [college?.id]);
   const dormSummary = useMemo(() => school?.dorms.find((d) => d.id === dorm?.id), [school, dorm?.id]);
@@ -220,6 +240,12 @@ export default function PlanSelectPage() {
             onSelect={handleCollege}
             onRequest={() => setRequestOpen(true)}
             onManual={handleManual}
+            onTypical={(n) => {
+              if (!applyTypicalRoom(n, "chip")) return;
+              setPendingDimsRoom(null);
+              setSelectedRoomKey(null);
+              router.push("/plan/style");
+            }}
             resume={
               ready && room ? (
                 <ResumeRoom

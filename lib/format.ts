@@ -28,7 +28,8 @@ export function formatRoomType(slug: string): string {
     .replaceAll("w/ ", "w/");
 }
 
-/** Display name for the planner's selected room. */
-export function roomTypeLabel(room: Pick<SelectedRoom, "type">): string {
-  return formatRoomType(room.type);
+/** Display name for the planner's selected room ("Typical Double" for a "No room yet?" room). */
+export function roomTypeLabel(room: Pick<SelectedRoom, "type"> & { source?: SelectedRoom["source"] }): string {
+  const label = formatRoomType(room.type);
+  return room.source === "typical" ? `Typical ${label}` : label;
 }

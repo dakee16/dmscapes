@@ -11,6 +11,7 @@ export type AnalyticsEvent =
   | "site_search_result"
   | "flow_started"
   | "college_selected"
+  | "typical_room_selected"
   | "style_selected"
   | "style_locked_clicked"
   | "budget_step_viewed"

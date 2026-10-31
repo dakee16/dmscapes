@@ -163,6 +163,11 @@
   cursor: pointer;
   transition: background-color 150ms var(--ds-ease), color 150ms var(--ds-ease), border-color 150ms var(--ds-ease);
 }
+.chipDims {
+  margin-left: 8px;
+  opacity: 0.6;
+  font-variant-numeric: tabular-nums;
+}
 .chip.chip:hover {
   background: var(--ds-ink);
   border-color: var(--ds-ink);

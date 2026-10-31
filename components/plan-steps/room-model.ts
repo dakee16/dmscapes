@@ -1,7 +1,8 @@
 import { fitRoom, ft, sqFtOf, type FittedRoom } from "@/lib/room-preview";
 import { formatRoomType } from "@/lib/format";
-import { getSchool } from "@/lib/schools";
+import { SCHOOLS, getSchool } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
+import { dormSizeStats, type TypeStats } from "@/lib/dorm-sizes";
 import { HOME_VIBES } from "@/lib/home-data";
 import { CUSTOM_STYLE, SEASONAL_STYLES, STYLES } from "@/lib/styles";
 import type { RoomSummary, SchoolSummary, SelectedRoom, StyleId } from "@/lib/types";
@@ -28,6 +29,20 @@ export function fitSelected(room: SelectedRoom | null): FittedRoom | null {
 /** "16.4 × 12 ft" with the long side first, as the plans draw it. */
 export function dimsOf(lengthFt: number, widthFt: number): string {
   return `${ft(Math.max(lengthFt, widthFt))} × ${ft(Math.min(lengthFt, widthFt))} ft`;
+}
+
+const TYPICAL_TYPE: Record<number, string> = { 1: "single", 2: "double", 3: "triple" };
+let typicalSizes: TypeStats[] | null = null;
+
+/**
+ * "No room yet?": the typical published single, double or triple (the same
+ * numbers as /dorm-room-size) as a room the planner can start from.
+ */
+export function typicalRoom(occupants: number): SelectedRoom | null {
+  typicalSizes ??= dormSizeStats(SCHOOLS).byType;
+  const t = typicalSizes.find((x) => x.occupants === occupants);
+  const type = TYPICAL_TYPE[occupants];
+  return t && type ? { type, occupants, lengthFt: t.lengthFt, widthFt: t.widthFt, bedSize: "twin_xl", source: "typical" } : null;
 }
 
 export function sqftOfSelected(room: SelectedRoom): number {
