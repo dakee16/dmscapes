@@ -24,6 +24,11 @@ export type GalleryRoom = {
 };
 
 export const GALLERY_SIZE = 6;
+
+/** The budget a card shows: rounded to $50 so a layout can't be matched to one cart. */
+export const galleryBudget = (budget: number) => Math.max(50, Math.round(budget / 50) * 50);
+/** "Nov 2026": the only date a shared layout shows. */
+export const sharedMonth = (iso: string) => new Date(iso).toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
 const COLUMNS = "user_id, college_id, dorm_id, room_dimensions, furniture_positions, style, budget, gallery_at";
 
 type Row = {

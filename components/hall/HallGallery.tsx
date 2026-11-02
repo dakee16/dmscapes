@@ -7,10 +7,9 @@ import { formatRoomType } from "@/lib/format";
 import { formatDims } from "@/lib/schools";
 import { styleById } from "@/lib/styles";
 import { CREATOR_MIN_FOLLOWERS } from "@/lib/plan";
-import type { GalleryRoom } from "@/lib/gallery";
+import { galleryBudget, sharedMonth, type GalleryRoom } from "@/lib/gallery";
 import g from "@/components/growth/Growth.module.css";
 
-const shared = (iso: string) => new Date(iso).toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
 const vibe = (r: GalleryRoom) => (r.style === "custom" ? "Custom vibe" : styleById(r.style).name);
 
 /** One shared layout: the plan, its size and vibe, and (creators only) who made it.
@@ -28,7 +27,7 @@ export function GalleryCard({ room: r, place }: { room: GalleryRoom; place?: { l
       )}
       <p className={g.cardTitle}>{[formatRoomType(r.roomType), formatDims(r.lengthFt, r.widthFt)].filter(Boolean).join(" · ")}</p>
       <p className={g.cardNote}>
-        {vibe(r)} · about ${Math.max(50, Math.round(r.budget / 50) * 50)} budget · shared {shared(r.sharedAt)}
+        {vibe(r)} · about ${galleryBudget(r.budget)} budget · shared {sharedMonth(r.sharedAt)}
       </p>
       {r.byline && (
         <p className={g.byline}>

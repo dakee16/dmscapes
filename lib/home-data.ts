@@ -43,6 +43,8 @@ export function feetInches(ft: number): string {
 }
 
 export interface FeaturedRoom {
+  schoolId: string;
+  dormId: string;
   school: string;
   hall: string;
   type: string;
@@ -81,6 +83,8 @@ export const FEATURED_ROOMS: FeaturedRoom[] = PICKS.flatMap(([schoolId, dormId, 
   const lengthFt = Math.max(room.length_ft, room.width_ft);
   const widthFt = Math.min(room.length_ft, room.width_ft);
   return [{
+    schoolId: school.id,
+    dormId: dorm.id,
     school: label,
     hall: dorm.name,
     type: room.label || room.type,
