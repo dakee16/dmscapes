@@ -55,4 +55,10 @@
 .cardTitle { margin: 0; font: 650 16px/1.3 var(--ds-sans); color: var(--ds-ink); }
 .cardNote { margin: 0; font: 600 12px/1.45 var(--ds-mono); letter-spacing: 0.03em; color: var(--ds-caption); }
 .galleryLede { max-width: 620px; margin: 14px 0 0; color: var(--ds-body); font-size: 17px; line-height: 1.55; }
-.galleryCta { margin-top: 24px; }
+.galleryCta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.cardPlace { font: 700 12px/1.3 var(--ds-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ds-blue); text-decoration: none; }
+.cardPlace:hover { text-decoration: underline; text-underline-offset: 3px; }
+.byline { display: flex; align-items: center; gap: 8px; margin: 2px 0 0; padding-top: 10px; border-top: 1px solid var(--ds-line); font: 700 14px/1.2 var(--ds-sans); color: var(--ds-ink); }
+.bylineAvatar { display: grid; place-items: center; flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--ds-ink); color: var(--ds-yellow); font: 700 9px/1 var(--ds-mono); }
+.creatorTag { margin-left: auto; padding: 3px 7px; border-radius: 999px; background: var(--ds-pink); color: #fff; font: 700 9.5px/1 var(--ds-mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.galleryEmpty { max-width: 560px; margin: 28px 0 0; padding: 28px; border: 2px dashed var(--ds-line); border-radius: 20px; color: var(--ds-body); font-size: 17px; line-height: 1.55; }
