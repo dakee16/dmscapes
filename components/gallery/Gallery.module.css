@@ -33,7 +33,8 @@
   color: var(--ds-blue);
   animation-delay: 0.08s;
 }
-@keyframes rise { from { opacity: 0; transform: translateY(26px); } }
+/* 0.01, not 0: a fully transparent line isn't counted as painted, which would push LCP back to the end of the fade. */
+@keyframes rise { from { opacity: 0.01; transform: translateY(26px); } }
 .intro { margin: 24px 0 0; max-width: 540px; font-size: 19px; line-height: 1.5; color: var(--ds-body); }
 
 /* Stats (Vengeance Animated Number): each digit column rolls up into place on load. */
