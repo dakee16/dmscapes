@@ -50,6 +50,3 @@ export function useScene(setup: (A: Anime) => (() => void) | void, deps: unknown
   }, [still, ...deps]);
   return still;
 }
-
-/** Wide screens pin the stepped scenes (the design's 1024 px break). */
-export const isWide = () => window.innerWidth >= 1024;
