@@ -11,7 +11,7 @@ function load(file){
 }
 
 // Just enough of the supabase-js query builder for these helpers.
-const KEYS={profiles:'id',creator_redemptions:'user_id',creator_codes:'code',saved_rooms:'id'};
+const KEYS={profiles:'id',creator_redemptions:'user_id',creator_codes:'code',saved_rooms:'id',creators:'user_id'};
 function fakeDb(tables){
   return{from(name){
     const q={op:'select',filters:[],opts:{},one:false};
@@ -42,6 +42,8 @@ function fakeDb(tables){
 const {claimReferral,payReferral,referralCode}=load(path.join(root,'lib/referrals'));
 const {redeemCreatorCode}=load(path.join(root,'lib/creator-codes'));
 const {planCreditBalance}=load(path.join(root,'lib/credit-ledger'));
+const {applyAsCreator}=load(path.join(root,'lib/creators'));
+const {imageKind,ownAvatarPath}=load(path.join(root,'lib/avatars'));
 const {REFERRAL_MONTHLY_CAP,PLUS_INITIAL_CREDITS}=load(path.join(root,'lib/plan'));
 const now=new Date().toISOString(),old=new Date(Date.now()-72*3600e3).toISOString();
 const free=(id,extra={})=>({id,plan:'free',free_plans_used:0,plan_credits_remaining:null,created_at:now,...extra});
@@ -96,6 +98,33 @@ const free=(id,extra={})=>({id,plan:'free',free_plans_used:0,plan_credits_remain
   assert.equal((await redeemCreatorCode(kdb,'a','jane')).status,409,'once per account');
   assert.deepEqual(await redeemCreatorCode(kdb,'b','jane'),{ok:true});
   assert.equal((await redeemCreatorCode(kdb,'c','jane')).status,410,'the code is used up');
+  k.creator_codes.push({code:'jane-doe',active:true,max_redemptions:null,expires_at:null});
+  assert.deepEqual(await redeemCreatorCode(kdb,'c','@Jane.Doe'),{ok:true},'a username with dots finds its creator code');
 
-  console.log('PASS: invites pay out once, within the cap; creator codes unlock Plus once per account.');
+  // Creators: 10k+ followers, a username for the code, a bio code that stays put on re-apply.
+  const cr={profiles:[{id:'cz',username:'jane.doe'},{id:'nou',username:null}],creators:[],creator_codes:[],creator_redemptions:[]};
+  const crdb=fakeDb(cr);
+  assert.equal((await applyAsCreator(crdb,'cz',{platform:'tiktok',handle:'@jane',followers:9999})).status,400,'needs 10,000 followers');
+  assert.equal((await applyAsCreator(crdb,'cz',{platform:'myspace',handle:'jane',followers:20000})).status,400,'Instagram or TikTok only');
+  assert.equal((await applyAsCreator(crdb,'nou',{platform:'tiktok',handle:'jane',followers:20000})).status,400,'needs a username');
+  const app=await applyAsCreator(crdb,'cz',{platform:'tiktok',handle:'@jane',followers:20000});
+  assert.equal(app.ok,true);assert.equal(app.status.status,'pending');assert.equal(app.status.handle,'jane');
+  assert.match(app.status.verifyCode,/^DS-[A-Z2-9]{4}$/);
+  const again=await applyAsCreator(crdb,'cz',{platform:'instagram',handle:'jane_ig',followers:30000});
+  assert.equal(again.status.verifyCode,app.status.verifyCode,'re-applying keeps the bio code');
+  assert.equal(again.isNew,false,'no second email while still pending');
+  cr.creators[0].status='approved';
+  assert.equal((await applyAsCreator(crdb,'cz',{platform:'tiktok',handle:'jane',followers:20000})).status,409,'approved creators stay approved');
+
+  // Profile photos: only real images, only from your own folder.
+  assert.equal(imageKind(Buffer.from('RIFF\0\0\0\0WEBPVP8 ','latin1')),'webp');
+  assert.equal(imageKind(Buffer.from([0xff,0xd8,0xff,0xe0,0,0])),'jpeg');
+  assert.equal(imageKind(Buffer.from([0x89,0x50,0x4e,0x47,0x0d,0x0a,0x1a,0x0a,0])),'png');
+  assert.equal(imageKind(Buffer.from('<svg onload=alert(1)>')),null,'no SVG or HTML');
+  const pub='https://x.supabase.co/storage/v1/object/public/avatars/';
+  assert.equal(ownAvatarPath(pub+'u1/a.webp','u1'),'u1/a.webp');
+  assert.equal(ownAvatarPath(pub+'u2/a.webp','u1'),null,'never another user\'s photo');
+  assert.equal(ownAvatarPath(pub+'u1/../u2/a.webp','u1'),null);
+
+  console.log('PASS: invites pay out once, within the cap; creator codes unlock Plus once per account; creators need 10k and a bio code; photos are real images in your own folder.');
 })().catch(e=>{console.error(e);process.exit(1);});

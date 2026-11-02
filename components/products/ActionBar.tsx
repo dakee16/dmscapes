@@ -403,8 +403,9 @@ export default function ActionBar({
                       <label className={a.galleryOpt}>
                         <input type="checkbox" checked={gallery} onChange={(e) => setGallery(e.target.checked)} />
                         <span>
-                          Show this layout in the {hall} gallery. Only the layout, vibe and rough budget appear, never your
-                          name or list.
+                          {profile?.creator_at
+                            ? `Show this layout in the ${hall} gallery with your @username and Creator badge. Your list stays private.`
+                            : `Show this layout in the ${hall} gallery. Only the layout, vibe and rough budget appear, never your name or list.`}
                         </span>
                       </label>
                     )}

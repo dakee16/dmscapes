@@ -35,6 +35,14 @@ export async function referralStats(db: SupabaseClient, userId: string): Promise
   return { joined: joined.count ?? 0, designed: designed.count ?? 0 };
 }
 
+/** The @username of whoever invited this account, if anyone (and they still have one). */
+export async function invitedBy(db: SupabaseClient, userId: string): Promise<string | null> {
+  const { data: me } = await db.from("profiles").select("referred_by").eq("id", userId).maybeSingle();
+  if (!me?.referred_by) return null;
+  const { data: them } = await db.from("profiles").select("username").eq("id", me.referred_by).maybeSingle();
+  return them?.username ?? null;
+}
+
 export type ReferralSource = { code?: unknown; room?: unknown };
 
 /** Record who invited a brand-new account. Anything that doesn't qualify is skipped quietly. */

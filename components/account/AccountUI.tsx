@@ -1,5 +1,6 @@
 "use client";
 
+import Avatar from "@/components/site/Avatar";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { useAuth, type PlanTier, type Profile } from "@/lib/auth-context";
@@ -317,25 +318,29 @@ export function ProfileCard({ profile, email }: { profile: Profile | null; email
 }
 
 /** Initials avatar used at the top of settings. */
-export function IdentityCard({ name, username, email }: { name?: string | null; username?: string | null; email?: string | null }) {
+export function IdentityCard({ name, username, email, avatar, creator, children }: {
+  name?: string | null; username?: string | null; email?: string | null;
+  /** Profile photo (profiles.avatar_url), else initials. */
+  avatar?: string | null;
+  /** An approved creator: the Creator badge. */
+  creator?: boolean;
+  /** Below the name, e.g. the profile photo controls. */
+  children?: ReactNode;
+}) {
   const displayName = name?.trim() || (username ? "@" + username : "Your profile");
-  const initials = (name?.trim() || username || email || "D")
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join("")
-    .toUpperCase();
   return (
     <div className={`${s.card} ${s.identity}`}>
-      <span className={s.avatar} aria-hidden="true">
-        {initials}
-      </span>
+      <Avatar className={s.avatar} src={avatar} name={name?.trim() || username || email || "D"} />
       <div>
-        <h2>{displayName}</h2>
+        <h2>
+          {displayName}
+          {creator && <span className={s.creatorTag}>Creator</span>}
+        </h2>
         <p>
           {username && name?.trim() ? `@${username} · ` : ""}
           {email}
         </p>
+        {children}
       </div>
     </div>
   );

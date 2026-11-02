@@ -104,7 +104,9 @@ export type AnalyticsEvent =
   | "gallery_toggled"
   | "creator_code_opened"
   | "creator_code_redeemed"
-  | "creator_code_failed";
+  | "creator_code_failed"
+  | "creator_applied"
+  | "profile_photo_set";
 
 let initialized = false;
 

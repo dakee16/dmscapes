@@ -22,6 +22,8 @@ export const PHOTO_RENDER_CREDITS = 1;
  * per calendar month (UTC). */
 export const REFERRAL_BONUS_DESIGNS = 1;
 export const REFERRAL_MONTHLY_CAP = 10;
+/** Creators (lib/creators.ts): followers needed on Instagram or TikTok to apply. */
+export const CREATOR_MIN_FOLLOWERS = 10_000;
 
 /** All tiers can top up. A Free buyer becomes Flex; paid tiers keep their tools. */
 export const FLEX_CREDIT_PRICE_USD = 0.99;

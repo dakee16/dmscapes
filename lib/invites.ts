@@ -38,7 +38,7 @@ export function captureArrival(): void {
     if (ref && /^[a-z0-9]{6,16}$/.test(ref)) write(REF_KEY, { code: ref, at: Date.now() });
     else if (room) write(REF_KEY, { room, at: Date.now() });
   }
-  const code = params.get("creator")?.trim().toLowerCase();
+  const code = params.get("creator")?.trim().toLowerCase().replace(/\./g, "-");
   if (code && /^[a-z0-9_-]{2,32}$/.test(code)) write(CODE_KEY, { code, at: Date.now() });
 }
 

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { PLUS_PRICE_USD } from "@/lib/plan";
+import { PLUS_PRICE_USD, CREATOR_MIN_FOLLOWERS } from "@/lib/plan";
 import { decodeDraft } from "@/lib/hall-finder";
 import { useRouter } from "next/navigation";
 import { getBrowserClient } from "@/lib/supabase-browser";
@@ -118,15 +118,20 @@ function Title({ text }: { text: string }) {
  * post-auth username claim + welcome are handled globally (UsernamePrompt /
  * SignupWelcome), so they sequence correctly after landing on `next`.
  */
+const CREATOR_MIN = `${CREATOR_MIN_FOLLOWERS.toLocaleString("en-US")}+ followers`;
+
 export default function AuthForm({
   reason = "profile",
   next = "/plan",
   initialMode = "signup",
+  creator = false,
 }: {
   reason?: AuthModalReason;
   next?: string;
   /** From /login?mode=login|signup */
   initialMode?: Mode;
+  /** From /login?creator=1: signing up to apply as a creator. */
+  creator?: boolean;
 }) {
   const { configured, user, profile } = useAuth();
   const router = useRouter();
@@ -516,7 +521,21 @@ export default function AuthForm({
               Back to my places
             </Link>
           )}
-          {reason === "profile" && (
+          {mode === "signup" &&
+            (creator ? (
+              <p className={styles.aside}>
+                Signing up as a creator: once your account is set up, apply with your Instagram or TikTok ({CREATOR_MIN})
+                in Account settings.
+              </p>
+            ) : (
+              <p className={styles.aside}>
+                Creator with {CREATOR_MIN}?{" "}
+                <Link href="/login?mode=signup&creator=1" onClick={() => track("auth_modal_opened", { reason: "creator" })}>
+                  Sign up as a creator
+                </Link>
+              </p>
+            ))}
+          {reason === "profile" && !creator && (
             <p className={styles.aside}>
               No account needed to start planning. <Link href="/plan">Plan my room free</Link>
             </p>

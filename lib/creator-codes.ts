@@ -6,7 +6,9 @@ import { grantPurchasedPlan } from "./credit-ledger";
 import { planOf, PLUS_INITIAL_CREDITS } from "./plan";
 
 export const CREATOR_CODE = /^[a-z0-9_-]{2,32}$/;
-export const cleanCreatorCode = (raw: unknown): string => (typeof raw === "string" ? raw.trim().toLowerCase() : "");
+/** A creator's code is their username with dots as dashes, so "Jane.Doe" finds "jane-doe". */
+export const cleanCreatorCode = (raw: unknown): string =>
+  typeof raw === "string" ? raw.trim().toLowerCase().replace(/^@/, "").replace(/\./g, "-") : "";
 
 export type RedeemResult = { ok: true } | { ok: false; status: number; error: string };
 

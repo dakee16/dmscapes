@@ -10,6 +10,10 @@ import { getBrowserClient } from "@/lib/supabase-browser";
 import { passwordMeetsPolicy } from "@/lib/password";
 import PasswordChecklist from "@/components/auth/PasswordChecklist";
 import DeleteAccountSection from "@/components/account/DeleteAccountSection";
+import ProfilePhoto from "@/components/account/ProfilePhoto";
+import CreatorSection from "@/components/account/CreatorSection";
+import InviteLink from "@/components/growth/InviteLink";
+import { REFERRAL_BONUS_DESIGNS, REFERRAL_MONTHLY_CAP } from "@/lib/plan";
 import type { UsernameCheckResponse } from "@/lib/api-types";
 
 const USERNAME_RE = /^[A-Za-z0-9._]{3,20}$/;
@@ -334,7 +338,15 @@ export default function AccountSettingsPage() {
               </p>
             </header>
 
-            <IdentityCard name={profile?.full_name} username={profile?.username} email={user?.email} />
+            <IdentityCard
+              name={profile?.full_name}
+              username={profile?.username}
+              email={user?.email}
+              avatar={profile?.avatar_url}
+              creator={Boolean(profile?.creator_at)}
+            >
+              <ProfilePhoto />
+            </IdentityCard>
 
             {/* Profile */}
             <section id="profile-details" className={`${s.card} ${s.section}`} aria-labelledby="profile-details-title">
@@ -552,6 +564,18 @@ export default function AccountSettingsPage() {
                 </div>
               )}
             </section>
+
+            <section id="invites" className={`${s.card} ${s.section}`} aria-labelledby="invites-title">
+              <p className={s.sectionEyebrow}>04 / Invites</p>
+              <h2 id="invites-title" className={s.cardTitle}>Invite friends</h2>
+              <p className={s.cardLede}>
+                When a friend you invite makes their first design, you each get {REFERRAL_BONUS_DESIGNS} free design. Up to{" "}
+                {REFERRAL_MONTHLY_CAP} a month from your invites.
+              </p>
+              <InviteLink from="settings" showStats />
+            </section>
+
+            <CreatorSection eyebrow="05 / Creators" />
 
             <DeleteAccountSection onLeave={() => { guardedRef.current = true; }} />
           </>

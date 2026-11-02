@@ -261,6 +261,20 @@
 .identity p { margin: 2px 0 0; font-size: 15px; color: var(--ds-muted); overflow-wrap: anywhere; }
 
 .section { scroll-margin-top: calc(var(--ds-nav-h) + 20px); }
+.creatorTag { display: inline-flex; vertical-align: middle; margin-left: 10px; padding: 4px 8px; border-radius: 999px; background: var(--ds-pink); color: #fff; font: 700 10px/1 var(--ds-mono); letter-spacing: 0.1em; text-transform: uppercase; }
+.photoActions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 12px; }
+.photoHint { flex-basis: 100%; margin: 0; font-size: 13px; color: var(--ds-caption); }
+.linkBtn { padding: 0; border: 0; background: none; color: var(--ds-red); font: 650 14px var(--ds-sans); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.formError { flex-basis: 100%; margin: 0; font-size: 14px; line-height: 1.45; color: #b01d2a; }
+.platforms { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; border: 0; }
+.platforms label { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: #fff; box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.18); font: 700 15px var(--ds-sans); cursor: pointer; }
+.platforms label:has(input:checked) { box-shadow: inset 0 0 0 2px var(--ds-ink); }
+.platforms input { accent-color: var(--ds-ink); }
+.note { margin: 18px 0 0; padding: 16px 18px; border-radius: 14px; background: #fff; box-shadow: inset 0 0 0 1.5px var(--ds-line); font-size: 15px; line-height: 1.55; }
+.note code, .codeChip { padding: 2px 8px; border-radius: 6px; background: var(--ds-yellow); font: 700 15px var(--ds-mono); color: var(--ds-ink); }
+.statRow { display: flex; flex-wrap: wrap; gap: 10px 26px; margin: 18px 0 0; padding: 0; list-style: none; }
+.statRow b { display: block; font: 850 30px/1 var(--ds-sans); letter-spacing: -0.02em; }
+.statRow span { font: 600 12px/1.4 var(--ds-mono); letter-spacing: 0.04em; color: var(--ds-caption); }
 .sectionEyebrow { margin: 0 0 8px; font-family: var(--ds-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ds-caption); }
 .form { margin-top: 20px; display: grid; gap: 18px; }
 .fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
