@@ -68,6 +68,10 @@ function withHallFinder(groups: Group[]): Group[] {
   });
 }
 
+/** In More, these sit along the foot rather than in their groups. */
+const LEGAL: ReadonlySet<string> = new Set(["/privacy", "/cookies", "/terms"]);
+const FOOT_ACTIONS: ReadonlySet<string> = new Set(["feedback", "/report"]);
+
 function activeKey(pathname: string): string | null {
   if (/^\/colleges\/[^/]+\/hall-finder/.test(pathname) || pathname.startsWith("/hall-finder")) return "hall-finder";
   if (pathname.startsWith("/colleges") || pathname.startsWith("/add-school")) return "colleges";
@@ -261,6 +265,46 @@ export default function Nav({
   const primary = sheetPrimary.filter((l) => !hallFinder || l.key !== "blog");
   const groups = hallFinder ? withHallFinder(GROUPS) : GROUPS;
 
+  // More (design: Plan and My rooms with details, Help and About in a quiet column,
+  // legal links, Feedback and Report a problem along the foot).
+  const moreLink = (link: GroupLink) =>
+    link.href === "feedback" ? (
+      <button type="button" onClick={() => { close(); setFeedback(true); }}>{link.label}</button>
+    ) : (
+      <Link href={link.href === "/report" ? `/report?from=${encodeURIComponent(pathname)}` : link.href}
+        aria-current={pathname === link.href ? "page" : undefined}
+        onClick={() => { if (link.href.includes("hall-finder")) track("hall_finder_entry_clicked", { where: "more" }); close(); }}>
+        {link.label}
+      </Link>
+    );
+  const moreColumn = (keys: string[], className: string) => (
+    <div className={className}>
+      {groups.filter((g) => keys.includes(g.key)).map((group) => (
+        <section key={group.key} className={s.moreGroup} aria-labelledby={`more-group-${group.key}`}>
+          <p className={s.moreLabel} id={`more-group-${group.key}`}>{group.label}</p>
+          <ul className={s.moreList}>
+            {group.links.filter((l) => !LEGAL.has(l.href) && !FOOT_ACTIONS.has(l.href)).map((link) => (
+              <li key={link.href}>
+                <Link className={s.moreItem} href={link.href}
+                  aria-current={pathname === link.href ? "page" : undefined}
+                  onClick={() => { if (link.href.includes("hall-finder")) track("hall_finder_entry_clicked", { where: "more" }); close(); }}>
+                  <b>
+                    {link.label}
+                    {link.tag && <span className={s.rowTag}><span className="ds-sr"> · </span>{link.tag}</span>}
+                    {link.isNew && <span className={s.newTag}><span className="ds-sr"> · </span>New</span>}
+                  </b>
+                  {link.detail && <small>{link.detail}</small>}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  );
+  const footLinks = (hrefs: ReadonlySet<string>) =>
+    groups.flatMap((g) => g.links).filter((l) => hrefs.has(l.href)).map((l) => <span key={l.href}>{moreLink(l)}</span>);
+
   const groupCard = (where: "more" | "sheet") => (group: Group, index: number) => (
     <section key={group.key} className={s.card} data-group={group.key} aria-labelledby={`${where}-group-${group.key}`}
       style={{ "--i": index } as CSSProperties}>
@@ -327,7 +371,13 @@ export default function Nav({
           </div>
         </div>
         <div id="nav-more" className={s.morePanel} hidden={!more} onKeyDown={panelKeys}>
-          {groups.map(groupCard("more"))}
+          {moreColumn(["plan"], s.moreCol)}
+          {moreColumn(["rooms"], s.moreCol)}
+          {moreColumn(["help", "about"], `${s.moreCol} ${s.moreSide}`)}
+          <div className={s.moreFoot}>
+            <div>{footLinks(LEGAL)}</div>
+            <div>{footLinks(FOOT_ACTIONS)}</div>
+          </div>
         </div>
         <div className={s.actions}>
           <SearchPalette hallFinder={hallFinder} />
