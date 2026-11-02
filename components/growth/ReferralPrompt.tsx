@@ -1,19 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Modal from "@/components/site/Modal";
 import { ArrowRight } from "@/components/ds/Icons";
 import { CloseButton } from "@/components/account-ui/parts";
 import d from "@/components/account-ui/Dialog.module.css";
-import { REVEAL_EASE } from "@/components/site/Reveal";
 import { useAuth } from "@/lib/auth-context";
 import { track } from "@/lib/analytics";
 import { hasInvite } from "@/lib/invites";
 import { REFERRAL_BONUS_DESIGNS, REFERRAL_MONTHLY_CAP } from "@/lib/plan";
 import InviteLink from "./InviteLink";
-
-const MotionModal = motion.create(Modal);
 
 // "Give a friend a free design, get one too": shown once a visitor has been on the
 // site for 20 seconds, then at most once every 30 days per browser. It waits while
@@ -31,7 +27,6 @@ const each = `${REFERRAL_BONUS_DESIGNS} free design${REFERRAL_BONUS_DESIGNS === 
 export default function ReferralPrompt() {
   const { user, loading, openAuthModal } = useAuth();
   const [variant, setVariant] = useState<Variant | null>(null);
-  const reduce = useReducedMotion();
   const signedIn = Boolean(user);
   const signedInRef = useRef(signedIn);
   signedInRef.current = signedIn;
@@ -98,9 +93,9 @@ export default function ReferralPrompt() {
   }
 
   return (
-    <AnimatePresence>
+    <>
       {variant && (
-        <MotionModal
+        <Modal
           className={`${d.layer} ${d.quiet}`}
           style={{ "--z": 64 } as React.CSSProperties}
           role="dialog"
@@ -109,19 +104,8 @@ export default function ReferralPrompt() {
           onMouseDown={(e) => {
             if (e.target === e.currentTarget) dismiss();
           }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.25, ease: REVEAL_EASE }}
         >
-          <motion.div
-            className={`ds ${d.sheet} ${d.quiet}`}
-            style={{ "--w": "500px" } as React.CSSProperties}
-            initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16, scale: 0.96 }}
-            animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
-            exit={reduce ? { opacity: 0 } : { opacity: 0, y: 12, scale: 0.97 }}
-            transition={{ duration: 0.34, ease: REVEAL_EASE }}
-          >
+          <div className={`ds ${d.sheet} ${d.quiet}`} style={{ "--w": "500px" } as React.CSSProperties}>
             <div className={d.top}>
               <span className={d.mark} aria-hidden="true">
                 dormscape<i />
@@ -177,9 +161,9 @@ export default function ReferralPrompt() {
                 </button>
               </div>
             )}
-          </motion.div>
-        </MotionModal>
+          </div>
+        </Modal>
       )}
-    </AnimatePresence>
+    </>
   );
 }

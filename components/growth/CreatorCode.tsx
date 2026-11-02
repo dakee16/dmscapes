@@ -3,19 +3,15 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Modal from "@/components/site/Modal";
 import { ArrowRight } from "@/components/ds/Icons";
 import { CloseButton } from "@/components/account-ui/parts";
 import d from "@/components/account-ui/Dialog.module.css";
-import { REVEAL_EASE } from "@/components/site/Reveal";
 import { useAuth } from "@/lib/auth-context";
 import { track } from "@/lib/analytics";
 import { bearer, captureArrival, forgetCreatorCode, storedCreatorCode } from "@/lib/invites";
 import { isPaid, PLUS_INITIAL_CREDITS } from "@/lib/plan";
 import g from "./Growth.module.css";
-
-const MotionModal = motion.create(Modal);
 
 // Creator codes unlock Plus free (lib/creator-codes.ts). A creator's link (/c/CODE)
 // opens this dialog with the code filled in; "Have a creator code?" opens it empty.
@@ -125,7 +121,6 @@ export default function CreatorCode() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [code, setCode] = useState("");
-  const reduce = useReducedMotion();
 
   // Remember invites and creator codes from the address, on every page.
   useEffect(() => {
@@ -184,9 +179,9 @@ export default function CreatorCode() {
   }
 
   return (
-    <AnimatePresence>
+    <>
       {open && (
-        <MotionModal
+        <Modal
           className={`${d.layer} ${d.quiet}`}
           style={{ "--z": 66 } as React.CSSProperties}
           role="dialog"
@@ -195,19 +190,8 @@ export default function CreatorCode() {
           onMouseDown={(e) => {
             if (e.target === e.currentTarget) close();
           }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.25, ease: REVEAL_EASE }}
         >
-          <motion.div
-            className={`ds ${d.sheet} ${d.quiet}`}
-            style={{ "--w": "480px" } as React.CSSProperties}
-            initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16, scale: 0.96 }}
-            animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
-            exit={reduce ? { opacity: 0 } : { opacity: 0, y: 12, scale: 0.97 }}
-            transition={{ duration: 0.34, ease: REVEAL_EASE }}
-          >
+          <div className={`ds ${d.sheet} ${d.quiet}`} style={{ "--w": "480px" } as React.CSSProperties}>
             <div className={d.top}>
               <span className={d.mark} aria-hidden="true">
                 dormscape<i />
@@ -241,9 +225,9 @@ export default function CreatorCode() {
                 </div>
               </>
             )}
-          </motion.div>
-        </MotionModal>
+          </div>
+        </Modal>
       )}
-    </AnimatePresence>
+    </>
   );
 }

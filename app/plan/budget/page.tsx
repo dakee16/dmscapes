@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import RoomCard, { RoomLine } from "@/components/plan-steps/RoomCard";
@@ -350,8 +349,7 @@ export default function PlanBudgetPage() {
       {/* Design-gate confirmation, shown once a gated visitor has logged in.
           Yes spends a design and generates; No discards the in-progress
           selections and returns home. */}
-      <AnimatePresence>
-        {showCreditConfirm && (
+      {showCreditConfirm && (
           <CreditConfirmModal
             key="credit-confirm"
             credit={headerCreditState(profile)}
@@ -367,7 +365,6 @@ export default function PlanBudgetPage() {
             }}
           />
         )}
-      </AnimatePresence>
 
       {planning && (
         <Generating

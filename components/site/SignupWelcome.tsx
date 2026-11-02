@@ -6,15 +6,11 @@ import { CloseButton } from "@/components/account-ui/parts";
 import d from "@/components/account-ui/Dialog.module.css";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
 import { isPaid } from "@/lib/plan";
 import { track } from "@/lib/analytics";
-import { REVEAL_EASE } from "@/components/site/Reveal";
 import { cameFromHallFinder } from "@/lib/hall-finder";
-
-const MotionModal = motion.create(Modal);
 
 // The "start here" welcome for a brand-new account: a warm, once-ever hello that
 // hands the student their one free design credit. Deliberately NOT the Plus
@@ -27,7 +23,6 @@ const seenKey = (uid: string) => `dormscape-signup-welcome-${uid}`;
 export default function SignupWelcome() {
   const { user, profile, modalOpen, setSignupWelcomeOpen } = useAuth();
   const [open, setOpen] = useState(false);
-  const reduce = useReducedMotion();
 
   // Publish open state so the post-signup username prompt can wait until this
   // welcome is dismissed, sequencing the two instead of stacking them (Part 3).
@@ -68,9 +63,9 @@ export default function SignupWelcome() {
   }
 
   return (
-    <AnimatePresence>
+    <>
       {open && (
-        <MotionModal
+        <Modal
           className={`${d.layer} ${d.quiet}`}
           style={{ "--z": 65 } as React.CSSProperties}
           role="dialog"
@@ -79,19 +74,8 @@ export default function SignupWelcome() {
           onMouseDown={(e) => {
             if (e.target === e.currentTarget) dismiss();
           }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.25, ease: REVEAL_EASE }}
         >
-          <motion.div
-            className={`ds ${d.sheet} ${d.quiet}`}
-            style={{ "--w": "480px" } as React.CSSProperties}
-            initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16, scale: 0.96 }}
-            animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 }}
-            exit={reduce ? { opacity: 0 } : { opacity: 0, y: 12, scale: 0.97 }}
-            transition={{ duration: 0.34, ease: REVEAL_EASE }}
-          >
+          <div className={`ds ${d.sheet} ${d.quiet}`} style={{ "--w": "480px" } as React.CSSProperties}>
             <div className={d.top}>
               <span className={d.mark} aria-hidden="true">
                 dormscape<i />
@@ -133,9 +117,9 @@ export default function SignupWelcome() {
                 Maybe later
               </button>
             </div>
-          </motion.div>
-        </MotionModal>
+          </div>
+        </Modal>
       )}
-    </AnimatePresence>
+    </>
   );
 }

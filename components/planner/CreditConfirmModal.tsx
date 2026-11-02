@@ -3,12 +3,8 @@
 import Modal from "@/components/site/Modal";
 
 import { useEffect } from "react";
-import { motion, useReducedMotion } from "framer-motion";
-import { REVEAL_EASE } from "@/components/site/Reveal";
 import type { HeaderCreditState } from "@/lib/plan";
 import dlg from "@/components/plan-steps/Dialogs.module.css";
-
-const MotionModal = motion.create(Modal);
 
 /**
  * Shown only in the Step 3 "Design my room" login gate, right after a gated
@@ -16,8 +12,8 @@ const MotionModal = motion.create(Modal);
  * design on this room. Yes generates; No discards their selections and sends
  * them home (handled by the caller). Not used for normal logins.
  *
- * The caller renders this inside <AnimatePresence> so the exit plays too; the
- * motion is purely presentational and never touches the button logic.
+ * Plain Modal (CSS entrance, no exit animation): a framer exit that is still
+ * running when a button navigates can strand the backdrop over the next page.
  */
 export default function CreditConfirmModal({
   credit,
@@ -34,12 +30,6 @@ export default function CreditConfirmModal({
         designsLeft === 1 ? "it" : "one"
       } now to see this room?`;
 
-  const reduce = useReducedMotion();
-  // Backdrop fades; panel rises + scales in, and reverses on exit with the same
-  // curve so it reads as one continuous motion. Reduced motion: opacity only.
-  const panelIn = reduce ? { opacity: 1 } : { opacity: 1, y: 0, scale: 1 };
-  const panelHidden = reduce ? { opacity: 0 } : { opacity: 0, y: 16, scale: 0.96 };
-  const panelOut = reduce ? { opacity: 0 } : { opacity: 0, y: 12, scale: 0.97 };
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -50,24 +40,13 @@ export default function CreditConfirmModal({
   }, [onCancel]);
 
   return (
-    <MotionModal
+    <Modal
       className={dlg.layer}
       role="dialog"
       aria-modal="true"
       aria-labelledby="credit-confirm-title"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.25, ease: REVEAL_EASE }}
     >
-      <motion.div
-        className={dlg.card}
-        style={{ animation: "none" }}
-        initial={panelHidden}
-        animate={panelIn}
-        exit={panelOut}
-        transition={{ duration: 0.34, ease: REVEAL_EASE }}
-      >
+      <div className={dlg.card}>
         <span className={dlg.count} aria-hidden="true">
           {designsLeft}
         </span>
@@ -84,7 +63,7 @@ export default function CreditConfirmModal({
             No, take me home
           </button>
         </div>
-      </motion.div>
-    </MotionModal>
+      </div>
+    </Modal>
   );
 }
