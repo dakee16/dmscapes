@@ -108,7 +108,8 @@
   font-variant-numeric: tabular-nums;
 }
 .capsule[data-empty] .count { color: var(--ds-red); }
-.loginPill { white-space: nowrap; cursor: pointer; }
+/* [class]: outranks the phone rule in app/ds.css that lets long .ds-btn labels wrap; "Log in" never should. */
+.loginPill[class] { white-space: nowrap; cursor: pointer; }
 
 /* ---------- Popovers ---------- */
 .pop {
