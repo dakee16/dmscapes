@@ -235,3 +235,7 @@
   .table td { width: auto; }
   .table thead th { font-size: 10px; letter-spacing: 0.06em; }
 }
+
+/* "Have a creator code?" under Plus (components/growth/CreatorCode). */
+.planFoot.codeFoot { margin-top: 8px; padding-top: 0; border-top: 0; }
+.codeLink { padding: 0; border: 0; background: none; color: inherit; font: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }

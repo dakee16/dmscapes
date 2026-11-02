@@ -1,4 +1,5 @@
 import { getBrowserClient } from "@/lib/supabase-browser";
+import { track } from "@/lib/analytics";
 
 import type { StyleId } from "./types";
 
@@ -27,7 +28,8 @@ export async function consumePlanCredit(style?: StyleId | null): Promise<Consume
   } catch {
     throw new Error("Couldn't check your credits. Check your connection and try again.");
   }
-  const data = (await res.json().catch(() => ({}))) as Partial<ConsumeResult> & { error?: string };
+  const data = (await res.json().catch(() => ({}))) as Partial<ConsumeResult> & { error?: string; referralBonus?: boolean };
+  if (data.referralBonus) track("referral_bonus_received");
   if (!res.ok) throw new Error(data.error ?? "Couldn't check your credits. Please try again.");
   if (typeof data.blocked !== "boolean" || !Number.isSafeInteger(data.remaining) || data.remaining! < 0) {
     throw new Error("Couldn't confirm your balance. Refresh before trying again.");

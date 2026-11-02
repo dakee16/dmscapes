@@ -22,6 +22,9 @@ import { takeResume } from "@/lib/hall-finder";
 import UsernamePrompt from "@/components/auth/UsernamePrompt";
 import PlusWelcome from "@/components/site/PlusWelcome";
 import SignupWelcome from "@/components/site/SignupWelcome";
+import ReferralPrompt from "@/components/growth/ReferralPrompt";
+import CreatorCode from "@/components/growth/CreatorCode";
+import { claimInvite } from "@/lib/invites";
 
 /** Row shape of public.profiles (supabase/migrations/0002_profiles.sql, plus
  *  the contact fields added in 0007). full_name/phone are optional so the app
@@ -336,6 +339,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         // revoke this account's oldest sessions past the concurrent limit.
         setSessionBumped(false);
         if (session?.access_token) void enforceSessionLimit(session.access_token);
+        // Arrived through a friend's invite: record it (a brand-new account only; the server checks).
+        if (session?.access_token) void claimInvite(session.access_token);
         // Consume the one-shot URL-landing flag so later re-fires this page load
         // don't re-trigger. A URL landing is always a real login, so it bypasses
         // the hadUserRef guard (which stops focus/refresh SIGNED_IN re-fires).
@@ -502,6 +507,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         onClose={() => setPlusWelcomeOpen(false)}
       />
       <SignupWelcome />
+      <ReferralPrompt />
+      <CreatorCode />
       {sessionBumped && (
         <div
           role="status"

@@ -1,0 +1,58 @@
+/* Growth loops: the invite link, the creator-code form, and the hall gallery. */
+
+.invite { display: grid; gap: 10px; margin-top: 18px; }
+.row { display: flex; gap: 8px; align-items: stretch; }
+.row input { flex: 1; min-width: 0; }
+.row :global(.ds-btn) { flex: none; min-height: 52px; white-space: nowrap; }
+.link { font: 500 14px var(--ds-mono) !important; letter-spacing: 0.01em; }
+.textBtn {
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ds-blue);
+  font: 600 14px var(--ds-sans);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.textBtn:disabled { opacity: 0.5; cursor: default; }
+.stats { margin: 0; font: 600 12px/1.4 var(--ds-mono); letter-spacing: 0.04em; color: var(--ds-caption); }
+.error { margin: 10px 0 0; font-size: 14px; line-height: 1.45; color: #b01d2a; }
+.done { margin: 18px 0 0; font-size: 16px; line-height: 1.5; color: var(--ds-ink); }
+
+@media (max-width: 480px) {
+  .row { flex-direction: column; }
+}
+
+/* Hall gallery: real layouts students chose to share, on their hall's page. */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.card {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 16px;
+  border: 1.5px solid var(--ds-line);
+  border-radius: 18px;
+  background: #fff;
+}
+.plan {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--ds-paper);
+}
+.plan svg { max-width: 100%; max-height: 100%; width: auto; height: auto; }
+.cardTitle { margin: 0; font: 650 16px/1.3 var(--ds-sans); color: var(--ds-ink); }
+.cardNote { margin: 0; font: 600 12px/1.45 var(--ds-mono); letter-spacing: 0.03em; color: var(--ds-caption); }
+.galleryLede { max-width: 620px; margin: 14px 0 0; color: var(--ds-body); font-size: 17px; line-height: 1.55; }
+.galleryCta { margin-top: 24px; }
