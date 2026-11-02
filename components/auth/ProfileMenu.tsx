@@ -5,26 +5,22 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
-import { headerCreditState, planLabel, planOf } from "@/lib/plan";
+import { headerCreditState, isPro, planLabel, planOf } from "@/lib/plan";
 import { ChevronDown } from "@/components/ds/Icons";
 import RollingNumber from "@/components/ds/RollingNumber";
 import Avatar from "@/components/site/Avatar";
+import { FeedbackDialog } from "@/components/site/FeedbackLink";
+import { useExperienceMotion } from "@/components/experience/MotionProvider";
+import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import css from "@/components/site/HeaderMenus.module.css";
-
-function Crown() {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M2.8 7.4l4 3 4.4-6a1 1 0 0 1 1.6 0l4.4 6 4-3a1 1 0 0 1 1.57 1l-1.6 8.9a1 1 0 0 1-1 .82H4.83a1 1 0 0 1-1-.82L2.24 8.4a1 1 0 0 1 1.56-1z" />
-    </svg>
-  );
-}
 
 /**
  * The header account control. Logged out: "Log in". Logged in: in the site header,
  * the account capsule (designs left on a scrap of tape, then the avatar); in the
- * planner header, avatar + @username + chevron. Either opens the same menu: designs
- * left, who you are, Account / My designs / Billing, Log out. Closes on outside
- * click, Escape, and route change.
+ * planner header, avatar + @username + chevron. Either opens the same menu: who you
+ * are, designs left on a strip of tape (with Recharge), your rooms, account and billing,
+ * help, feedback and the Motion switch, then Log out with the legal links. Closes on
+ * outside click, Escape, and route change.
  */
 export default function ProfileMenu({
   onShowRoom3D,
@@ -40,6 +36,9 @@ export default function ProfileMenu({
   const { openUpgrade } = useUpgrade();
   const [open, setOpen] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
+  const [feedback, setFeedback] = useState(false);
+  const { paused, toggle: toggleMotion } = useExperienceMotion();
+  const hallFinder = useHallFinderOn();
   const rootRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
@@ -136,35 +135,6 @@ export default function ProfileMenu({
 
       {open && (
         <div role="menu" aria-label="Account" className={`${css.pop} ${css.menu}`}>
-          {/* Design credits: first and most prominent, on a strip of tape. At zero
-              it becomes the Recharge/Upgrade action. */}
-          {credit && (
-            <div className={css.tape}>
-              <div className={css.tapeRow}>
-                <span className={css.tapeLabel}>Designs left</span>
-                <span className={css.tapeCount}>{credit.designsLeft}</span>
-              </div>
-              {credit.empty &&
-                (credit.plus ? (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setOpen(false);
-                      openUpgrade("plan-credits");
-                    }}
-                    className={css.tapeAction}
-                  >
-                    Recharge designs
-                  </button>
-                ) : (
-                  // Free and Flex buy à-la-carte credits on the Billing page.
-                  <Link href="/account/billing" onClick={() => setOpen(false)} className={css.tapeAction}>
-                    Buy credits
-                  </Link>
-                ))}
-            </div>
-          )}
-
           {/* Identity header, with the current tier (and Creator) as badges. */}
           <div className={css.who}>
             <Avatar className={`${css.avatar} ${css.avatarLg}`} src={avatar} name={display} />
@@ -180,27 +150,49 @@ export default function ProfileMenu({
             </div>
           </div>
 
+          {/* Design credits on a strip of tape. Recharge: Plus buys a top-up in the
+              upgrade sheet; every other tier buys credits on the Billing page. */}
+          {credit && (
+            <div className={css.tape} data-empty={credit.empty || undefined}>
+              <div className={css.tapeRow}>
+                <span className={css.tapeLabel}>Designs left</span>
+                <span className={css.tapeCount}>{credit.designsLeft}</span>
+              </div>
+              <div className={css.tapeFoot}>
+                {isPro(profile) && <p className={css.tapeNote}>Switching between 2D and 3D uses no plan credits.</p>}
+                {credit.plus ? (
+                  <button
+                    type="button"
+                    role="menuitem"
+                    onClick={() => {
+                      setOpen(false);
+                      openUpgrade("plan-credits");
+                    }}
+                    className={css.tapeAction}
+                  >
+                    Recharge
+                  </button>
+                ) : (
+                  <Link href="/account/billing" role="menuitem" onClick={() => setOpen(false)} className={css.tapeAction}>
+                    Recharge
+                  </Link>
+                )}
+              </div>
+            </div>
+          )}
+
           <div className={css.items}>
-            <Link href="/account/settings" role="menuitem" onClick={() => setOpen(false)} className={css.item}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                <circle cx="12" cy="8" r="3.4" />
-                <path d="M4.6 19.4c1.6-3 4.2-4.6 7.4-4.6s5.8 1.6 7.4 4.6" strokeLinecap="round" />
-              </svg>
-              Account
-            </Link>
             <Link href="/rooms" role="menuitem" onClick={() => setOpen(false)} className={css.item}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                <path d="M6 4h12a1 1 0 0 1 1 1v14l-7-4-7 4V5a1 1 0 0 1 1-1z" strokeLinejoin="round" />
-              </svg>
               My designs
             </Link>
-            <Link href="/account/billing" role="menuitem" onClick={() => setOpen(false)} className={css.item}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                <rect x="3" y="6" width="18" height="12" rx="2" />
-                <path d="M3 10h18" strokeLinecap="round" />
-              </svg>
-              Billing
+            <Link href="/my-room" role="menuitem" onClick={() => setOpen(false)} className={css.item}>
+              My Room
             </Link>
+            {hallFinder && (
+              <Link href="/rooms#hall-finder" role="menuitem" onClick={() => setOpen(false)} className={css.item}>
+                My Hall Finder
+              </Link>
+            )}
             {onShowRoom3D && (
               <button
                 type="button"
@@ -211,7 +203,6 @@ export default function ProfileMenu({
                 }}
                 className={css.item}
               >
-                <Crown />
                 Room in 3D
                 <span className={css.proTag}>Pro</span>
               </button>
@@ -219,22 +210,53 @@ export default function ProfileMenu({
           </div>
 
           <div className={css.items}>
+            <Link href="/account/settings" role="menuitem" onClick={() => setOpen(false)} className={css.item}>
+              Account settings
+            </Link>
+            <Link href="/account/billing" role="menuitem" onClick={() => setOpen(false)} className={css.item}>
+              Billing
+              {profile && <span className={css.itemNote}>{planLabel(profile)} plan</span>}
+            </Link>
+          </div>
+
+          <div className={css.items}>
+            <Link href="/faq" role="menuitem" onClick={() => setOpen(false)} className={css.item}>
+              Help and FAQ
+            </Link>
             <button
               type="button"
               role="menuitem"
-              onClick={handleLogout}
-              disabled={loggingOut}
-              className={`${css.item} ${css.logout}`}
+              onClick={() => {
+                setOpen(false);
+                setFeedback(true);
+              }}
+              className={css.item}
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                <path d="M15 12H5m0 0l3.5-3.5M5 12l3.5 3.5" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M11 5.5V5a1.5 1.5 0 0 1 1.5-1.5h5A1.5 1.5 0 0 1 19 5v14a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 11 19v-.5" strokeLinecap="round" />
-              </svg>
+              Send feedback
+            </button>
+            <button type="button" role="menuitemcheckbox" aria-checked={!paused} onClick={toggleMotion} className={`${css.item} ${css.motionItem}`}>
+              <span className={css.motionText}>
+                Motion
+                <span>Animations across the site</span>
+              </span>
+              <span className={css.switch} aria-hidden="true" />
+            </button>
+          </div>
+
+          <div className={css.menuFoot}>
+            <button type="button" role="menuitem" onClick={handleLogout} disabled={loggingOut} className={css.logout}>
               {loggingOut ? "Logging out…" : "Log out"}
             </button>
+            <Link href="/privacy" role="menuitem" onClick={() => setOpen(false)} className={css.footLink}>
+              Privacy
+            </Link>
+            <Link href="/terms" role="menuitem" onClick={() => setOpen(false)} className={css.footLink}>
+              Terms
+            </Link>
           </div>
         </div>
       )}
+      {feedback && <FeedbackDialog onClose={() => setFeedback(false)} />}
     </div>
   );
 }
