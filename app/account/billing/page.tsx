@@ -10,7 +10,9 @@ import { AccountShell, PlanCard, ProfileCard, ToolChips, fmtDate, accountStyles 
 import { ArrowRight, ArrowUpRight, Check } from "@/components/ds/Icons";
 import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
-import { planOf, FLEX_CREDIT_PRICE_USD } from "@/lib/plan";
+import { planOf, isPaid, FLEX_CREDIT_PRICE_USD, PLUS_INITIAL_CREDITS, REFERRAL_MONTHLY_CAP } from "@/lib/plan";
+import InviteLink from "@/components/growth/InviteLink";
+import { CreatorCodeForm } from "@/components/growth/CreatorCode";
 import type { InvoiceItem, InvoicesResponse } from "@/lib/api-types";
 
 function money(amount: number, currency: string): string {
@@ -131,6 +133,27 @@ export default function BillingPage() {
                 </p>
               </div>
               <BuyCreditsForm source="billing" />
+            </section>}
+
+            {profile && <section id="invite" className={s.card} aria-labelledby="invite-title">
+              <h2 id="invite-title" className={s.cardTitle}>
+                Invite friends
+              </h2>
+              <p className={s.cardLede}>
+                When a friend you invite makes their first design, you each get a free design. Up to {REFERRAL_MONTHLY_CAP} a
+                month from your invites.
+              </p>
+              <InviteLink from="billing" showStats />
+            </section>}
+
+            {profile && !isPaid(profile) && <section id="creator-code" className={s.card} aria-labelledby="creator-code-title">
+              <h2 id="creator-code-title" className={s.cardTitle}>
+                Have a creator code?
+              </h2>
+              <p className={s.cardLede}>
+                A creator code unlocks Plus free: {PLUS_INITIAL_CREDITS} plan credits and every Plus tool. One per account.
+              </p>
+              <CreatorCodeForm from="billing" />
             </section>}
 
             <section id="purchases" className={s.card} aria-labelledby="purchase-history-heading">

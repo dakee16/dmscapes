@@ -101,7 +101,8 @@ function buildCsp(isDev: boolean): string {
     "style-src 'self' 'unsafe-inline'",
     // blob:/data: for canvas layout previews; Amazon CDN for product images;
     // Google Analytics hits (Google's GA4 CSP list).
-    "img-src 'self' blob: data: https://m.media-amazon.com https://*.google-analytics.com https://*.googletagmanager.com https://tiles.openfreemap.org",
+    // Supabase: profile photos in the public avatars bucket.
+    ["img-src 'self' blob: data: https://m.media-amazon.com https://*.google-analytics.com https://*.googletagmanager.com https://tiles.openfreemap.org", supabaseOrigin],
     // next/font self-hosts every woff2 (verified: .next/static/media).
     "font-src 'self'",
     [

@@ -45,6 +45,8 @@
 }
 .saveRow button:disabled { opacity: 0.7; cursor: wait; }
 .saveNote { margin: 10px 0 0; font-size: 12px; color: var(--ds-caption); }
+.galleryOpt { display: flex; gap: 10px; align-items: flex-start; margin: 12px 0 0; font-size: 13px; line-height: 1.45; color: var(--ds-body); cursor: pointer; }
+.galleryOpt input { flex: none; width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--ds-blue); }
 .error { margin: 8px 0 0; font-size: 13px; color: var(--ds-red); }
 .saved { display: flex; flex-direction: column; gap: 6px; }
 .savedTitle { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 16px; font-weight: 800; }

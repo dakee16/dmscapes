@@ -23,6 +23,7 @@ const COLUMNS: Group[][] = [
         { label: "Dorm room planner", href: "/dorm-room-planner" },
         { label: "Draw your room", href: "/plan/draw" },
         { label: "3D Room Builder", href: "/plan/draw/3d" },
+        { label: "Room gallery", href: "/gallery" },
         { label: "My designs", href: "/rooms" },
         { label: "My Room (Pro)", href: "/my-room" },
         { label: "Hall Finder", hallFinder: true },

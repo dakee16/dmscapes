@@ -17,6 +17,16 @@ export const CREDIT_PLAN_VERSION = "2026-09-24";
 /** Plan credits one "See it in your room" picture uses (Pro). The route spends one
  * with spendPlanCredit, so change both together. */
 export const PHOTO_RENDER_CREDITS = 1;
+/** Invites (lib/referrals.ts): a referred friend's first design gives them and
+ * the inviter this many free designs each; the inviter's share stops at the cap
+ * per calendar month (UTC). */
+export const REFERRAL_BONUS_DESIGNS = 1;
+export const REFERRAL_MONTHLY_CAP = 10;
+/** Creators (lib/creators.ts): followers needed on Instagram or TikTok to apply. */
+export const CREATOR_MIN_FOLLOWERS = 10_000;
+/** A creator's own code (named after their username, so public) unlocks Plus for at most this
+ * many accounts unless the owner sets creator_codes.max_redemptions (docs/owner-commands.sql). */
+export const CREATOR_CODE_DEFAULT_CAP = 200;
 
 /** All tiers can top up. A Free buyer becomes Flex; paid tiers keep their tools. */
 export const FLEX_CREDIT_PRICE_USD = 0.99;

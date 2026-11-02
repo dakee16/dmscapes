@@ -193,7 +193,7 @@ export async function POST(request: Request) {
   // no longer metered: we just persist the row. (Only plan generation is metered,
   // handled elsewhere.)
   const id = nanoid(10);
-  const { error } = await supabase.from("saved_rooms").insert({
+  const row = {
     id,
     user_id: userId,
     name,
@@ -215,7 +215,12 @@ export async function POST(request: Request) {
     template_id: templateId,
     furniture_positions: furniture,
     selected_products: products,
-  });
+  };
+  // A named save with a hall can go in that hall's gallery, anonymously (lib/gallery.ts).
+  const gallery = Boolean(name && row.dorm_id && body.gallery === true);
+  let { error } = await supabase.from("saved_rooms").insert({ ...row, ...(gallery ? { gallery_at: new Date().toISOString() } : {}) });
+  // Before the gallery migration that column is missing: keep the save, skip the gallery.
+  if (error && gallery) ({ error } = await supabase.from("saved_rooms").insert(row));
 
   if (error) {
     console.error("saved_rooms insert failed:", error.message);

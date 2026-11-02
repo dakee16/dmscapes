@@ -31,9 +31,11 @@ function LoginInner() {
   const reason: AuthModalReason = REASONS.includes(rawReason as AuthModalReason)
     ? (rawReason as AuthModalReason)
     : "profile";
-  const next = sameSitePath(params.get("next")) ?? "/plan";
+  // "Sign up as a creator": after the account is set up, land on Account settings › Creators.
+  const creator = params.get("creator") === "1";
+  const next = creator ? "/account/settings?creator=apply" : (sameSitePath(params.get("next")) ?? "/plan");
 
-  return <AuthForm reason={reason} next={next} initialMode={params.get("mode") === "login" ? "login" : "signup"} />;
+  return <AuthForm reason={reason} next={next} creator={creator} initialMode={params.get("mode") === "login" ? "login" : "signup"} />;
 }
 
 // What an account keeps (decorative): three saved designs that take turns at the front.

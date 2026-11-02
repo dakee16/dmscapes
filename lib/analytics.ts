@@ -92,7 +92,21 @@ export type AnalyticsEvent =
   | "hall_finder_entry_clicked"
   // Hall Finder roommate mode (My Room Halls section)
   | "room_halls_viewed"
-  | "room_halls_mode";
+  | "room_halls_mode"
+  // Growth loops: invites, the hall gallery, creator codes
+  | "referral_prompt_shown"
+  | "referral_prompt_cta"
+  | "referral_prompt_dismissed"
+  | "referral_link_copied"
+  | "referral_link_shared"
+  | "referral_claimed"
+  | "referral_bonus_received"
+  | "gallery_toggled"
+  | "creator_code_opened"
+  | "creator_code_redeemed"
+  | "creator_code_failed"
+  | "creator_applied"
+  | "profile_photo_set";
 
 let initialized = false;
 

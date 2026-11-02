@@ -36,7 +36,7 @@ export default function PrivacyPage() {
     <LegalLayout
       doc="privacy"
       title="Privacy Policy"
-      updated="October 31, 2026"
+      updated="November 3, 2026"
       intro={
         <p>
           This page explains what information dormscape collects, why, and what you
@@ -203,6 +203,17 @@ export default function PrivacyPage() {
 
       <LegalSection doc="privacy" id="room-photos">
         <p>If you use See it in your room, your photo and a text description of your plan are sent to Google&rsquo;s Gemini image model through Vercel AI Gateway to make the picture. Photos are shrunk in your browser first, which removes location data. Both images are stored privately and deleted automatically after 14 days, or when you delete your account.</p>
+      </LegalSection>
+
+      <LegalSection doc="privacy" id="profile-photos">
+        <p>If you add a profile photo, it&rsquo;s cropped and shrunk to 256 pixels in your browser, then stored where it can show next to your username. You can remove it in Account settings at any time, and it&rsquo;s deleted with your account.</p>
+      </LegalSection>
+
+      <LegalSection doc="privacy" id="invites-gallery-codes">
+        <p>If you sign up through an invite, we record which account invited you so you both get a free design. The person who invited you sees only how many friends joined and made a design, not who.</p>
+        <p>If you add a saved design to your hall&rsquo;s gallery, its layout, room size, vibe, a rounded budget and the month you shared it appear on that hall&rsquo;s public page. Its name, your name, your shopping list and comments never do. If you&rsquo;re an approved creator, your @username and profile photo also appear with it. You can remove it in My designs at any time.</p>
+        <p>If you use a creator code, we record which code and when.</p>
+        <p>If you apply as a creator, we store your Instagram or TikTok handle, the follower count you give us and a short verification code, and we look at your public profile to check them. We count how many people use your creator code.</p>
       </LegalSection>
 
       <LegalSection doc="privacy" id="who-else-sees-it">

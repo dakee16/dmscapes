@@ -36,7 +36,17 @@ export async function GET(request: Request) {
     );
   }
 
+  // Which are in their hall's gallery. Before that migration this query fails and none are.
+  const { data: shown } = await supabase
+    .from("saved_rooms")
+    .select("id")
+    .eq("user_id", userId)
+    .not("gallery_at", "is", null)
+    .is("gallery_hidden_at", null);
+  const inGallery = new Set((shown ?? []).map((r) => r.id as string));
+
   const rooms: AccountRoomSummary[] = (data ?? []).map((r) => ({
+    gallery: inGallery.has(r.id),
     id: r.id,
     name: r.name,
     college_id: r.college_id,

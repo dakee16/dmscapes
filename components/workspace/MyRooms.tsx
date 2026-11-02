@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth-context";
 import { workspaceRequest } from "@/lib/workspace-client";
+import { track } from "@/lib/analytics";
 import type { WorkspaceSummary } from "@/lib/workspace";
 import type { AccountRoomSummary, AccountRoomsResponse, SaveRoomRequest } from "@/lib/api-types";
 import { DEFAULT_PLANNING, shoppingProducts } from "@/lib/planning";
@@ -47,7 +48,7 @@ export default function MyRooms() {
   const [rooms, setRooms] = useState<WorkspaceSummary[]>([]), [saved, setSaved] = useState<AccountRoomSummary[]>([]);
   const [busy, setBusy] = useState(true), [error, setError] = useState(""), [actionError, setActionError] = useState("");
   const [tab, setTab] = useState<Tab>("designs"), [search, setSearch] = useState(""), [opening, setOpening] = useState("");
-  const [picked, setPicked] = useState<string[]>([]);
+  const [picked, setPicked] = useState<string[]>([]), [galleryBusy, setGalleryBusy] = useState("");
   const [create, setCreate] = useState(false), [name, setName] = useState("My college room"), [length, setLength] = useState(15), [width, setWidth] = useState(12), [occupants, setOccupants] = useState(2);
   const requestVersion = useRef(0);
   const load = useCallback(async () => {
@@ -66,6 +67,16 @@ export default function MyRooms() {
     setOpening(id); setActionError("");
     try { const value = await workspaceRequest<{ id: string }>("/api/workspaces", { method: "POST", body: JSON.stringify({ source_room_id: id }) }); router.push(`/rooms/${value.id}`); }
     catch (e) { setActionError((e as Error).message); setOpening(""); }
+  }
+  // The hall gallery (lib/gallery.ts): a design with a hall can be shown there anonymously, or taken out.
+  async function toggleGallery(r: AccountRoomSummary) {
+    setGalleryBusy(r.id); setActionError("");
+    try {
+      const v = await workspaceRequest<{ gallery: boolean }>(`/api/account/rooms/${r.id}`, { method: "PATCH", body: JSON.stringify({ gallery: !r.gallery }) });
+      setSaved(list => list.map(x => x.id === r.id ? { ...x, gallery: v.gallery } : x));
+      track("gallery_toggled", { on: v.gallery, from: "my-designs" });
+    } catch (e) { setActionError((e as Error).message); }
+    finally { setGalleryBusy(""); }
   }
   async function createBlank(e: React.FormEvent) {
     e.preventDefault(); setOpening("new"); setActionError("");
@@ -134,6 +145,7 @@ export default function MyRooms() {
                 <div className={s.actions}>
                   <Link href={`/room/${r.id}`} className={s.open}>Open</Link>
                   {ws ? <Link href={`/rooms/${ws.id}`}>Open its workspace</Link> : <button type="button" disabled={!!opening} onClick={() => void importRoom(r.id)}>{opening === r.id ? "Opening…" : "Open as workspace"}</button>}
+                  {r.dorm_id && <button type="button" disabled={galleryBusy === r.id} onClick={() => void toggleGallery(r)} title={r.gallery ? "Take it out of the hall gallery" : "Show the layout, vibe and rough budget on the hall's page, without your name"}>{r.gallery ? "Remove from gallery" : "Add to hall gallery"}</button>}
                   <ShareButton url={`${origin}/room/${r.id}`} title={r.name} from="my-designs" className={s.share}/>
                 </div>
               </div>

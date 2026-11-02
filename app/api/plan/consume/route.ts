@@ -4,6 +4,8 @@ import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
 import { planCreditBalance, spendPlanCredit } from "@/lib/credit-ledger";
 import { isSeason } from "@/lib/season";
+import { payReferral } from "@/lib/referrals";
+import { REFERRAL_BONUS_DESIGNS } from "@/lib/plan";
 
 // Credit updates use the server-only service client.
 export const runtime = "nodejs";
@@ -38,7 +40,12 @@ export async function POST(request: Request) {
     if (body?.style === "spooky" && isSeason()) {
       return NextResponse.json({ blocked: false, remaining: await planCreditBalance(supabase, userId), seasonalFree: true });
     }
-    return NextResponse.json(await spendPlanCredit(supabase, userId));
+    const spend = await spendPlanCredit(supabase, userId);
+    // A referred account's first design pays out a free design to it and its inviter.
+    const referralBonus = !spend.blocked && (await payReferral(supabase, userId));
+    return NextResponse.json(
+      referralBonus ? { ...spend, remaining: spend.remaining + REFERRAL_BONUS_DESIGNS, referralBonus } : spend
+    );
   } catch (error) {
     console.error("plan credit check failed:", error);
     return NextResponse.json({ error: "Could not check your credits. Please try again." }, { status: 503 });

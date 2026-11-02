@@ -69,6 +69,9 @@ export default function ActionBar({
   const [savedUrl, setSavedUrl] = useState("");
   const [shareFallbackUrl, setShareFallbackUrl] = useState("");
   const [photoOpen, setPhotoOpen] = useState(false);
+  // Hall gallery opt-in on a named save (lib/gallery.ts); only when the plan has a hall.
+  const [gallery, setGallery] = useState(false);
+  const hall = usePlannerStore((s) => s.dorm?.name ?? null);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(()=>{if(user&&pendingSave.current){pendingSave.current=false;setName(usePlannerStore.getState().planning.name);setSavePanel(true);setSavedUrl("");}},[user]);
@@ -142,6 +145,7 @@ export default function ActionBar({
     const body = buildSaveRequest();
     if (!body) return null;
     if (designName) body.name = designName;
+    if (designName && hall && gallery) body.gallery = true;
     const headers: Record<string, string> = { "Content-Type": "application/json" };
     const token = await accessToken();
     if (token) headers.Authorization = `Bearer ${token}`;
@@ -274,6 +278,7 @@ export default function ActionBar({
       if (result) {
         setSavedUrl(result.url);
         track("design_saved");
+        if (hall && gallery) track("gallery_toggled", { on: true, from: "save" });
       }
     } catch {
       showToast("Couldn't save your design. Check your connection and try again.");
@@ -393,6 +398,16 @@ export default function ActionBar({
                       <p id="design-name-error" className={a.error} role="alert">
                         {nameError}
                       </p>
+                    )}
+                    {hall && (
+                      <label className={a.galleryOpt}>
+                        <input type="checkbox" checked={gallery} onChange={(e) => setGallery(e.target.checked)} />
+                        <span>
+                          {profile?.creator_at
+                            ? `Show this layout in the ${hall} gallery with your @username and Creator badge. Your list stays private.`
+                            : `Show this layout in the ${hall} gallery. Only the layout, vibe and rough budget appear, never your name or list.`}
+                        </span>
+                      </label>
                     )}
                     <p className={a.saveNote}>Saving is free and doesn&apos;t use a credit.</p>
                   </form>

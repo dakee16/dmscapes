@@ -6,10 +6,11 @@ import { usePathname } from "next/navigation";
 import { MotionToggle } from "@/components/experience/MotionProvider";
 import ProfileMenu from "@/components/auth/ProfileMenu";
 import Wordmark from "@/components/site/Wordmark";
-import HeaderCredits from "@/components/site/HeaderCredits";
 import SearchPalette from "@/components/site/SearchPalette";
 import { FeedbackDialog } from "@/components/site/FeedbackLink";
 import { ArrowRight, ArrowUpRight, ChevronDown, CloseIcon, MenuIcon, SearchIcon } from "@/components/ds/Icons";
+import { PlusIcon } from "@/components/studio-ui/icons";
+import { useAuth } from "@/lib/auth-context";
 import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import { track } from "@/lib/analytics";
 import s from "./ds/SiteNav.module.css";
@@ -32,6 +33,7 @@ const GROUPS: Group[] = [
     { label: "Plan my room", href: "/plan", detail: "A layout and shopping list, together" },
     { label: "Draw in 2D", href: "/plan/draw", detail: "Start with your own dimensions" },
     { label: "Build in 3D", href: "/plan/draw/3d", detail: "Walls, doors and windows with Pro" },
+    { label: "Room gallery", href: "/gallery", detail: "Real layouts students shared" },
   ] },
   { key: "rooms", label: "My rooms", caption: "A place for your plans and your people.", links: [
     { label: "My designs", href: "/rooms", detail: "Your workspaces and saved designs" },
@@ -65,6 +67,10 @@ function withHallFinder(groups: Group[]): Group[] {
     return g;
   });
 }
+
+/** In More, these sit along the foot rather than in their groups. */
+const LEGAL: ReadonlySet<string> = new Set(["/privacy", "/cookies", "/terms"]);
+const FOOT_ACTIONS: ReadonlySet<string> = new Set(["feedback", "/report"]);
 
 function activeKey(pathname: string): string | null {
   if (/^\/colleges\/[^/]+\/hall-finder/.test(pathname) || pathname.startsWith("/hall-finder")) return "hall-finder";
@@ -171,6 +177,8 @@ export default function Nav({
   const close = () => { setMore(false); setMobileOpen(false); };
   const current = activeKey(pathname);
   const hallFinder = useHallFinderOn();
+  const { user, loading } = useAuth();
+  const signedIn = !loading && user !== null;
   const dark = tone === "dark" || groundDark;
 
   useEffect(close, [pathname]);
@@ -257,6 +265,46 @@ export default function Nav({
   const primary = sheetPrimary.filter((l) => !hallFinder || l.key !== "blog");
   const groups = hallFinder ? withHallFinder(GROUPS) : GROUPS;
 
+  // More (design: Plan and My rooms with details, Help and About in a quiet column,
+  // legal links, Feedback and Report a problem along the foot).
+  const moreLink = (link: GroupLink) =>
+    link.href === "feedback" ? (
+      <button type="button" onClick={() => { close(); setFeedback(true); }}>{link.label}</button>
+    ) : (
+      <Link href={link.href === "/report" ? `/report?from=${encodeURIComponent(pathname)}` : link.href}
+        aria-current={pathname === link.href ? "page" : undefined}
+        onClick={() => { if (link.href.includes("hall-finder")) track("hall_finder_entry_clicked", { where: "more" }); close(); }}>
+        {link.label}
+      </Link>
+    );
+  const moreColumn = (keys: string[], className: string) => (
+    <div className={className}>
+      {groups.filter((g) => keys.includes(g.key)).map((group) => (
+        <section key={group.key} className={s.moreGroup} aria-labelledby={`more-group-${group.key}`}>
+          <p className={s.moreLabel} id={`more-group-${group.key}`}>{group.label}</p>
+          <ul className={s.moreList}>
+            {group.links.filter((l) => !LEGAL.has(l.href) && !FOOT_ACTIONS.has(l.href)).map((link) => (
+              <li key={link.href}>
+                <Link className={s.moreItem} href={link.href}
+                  aria-current={pathname === link.href ? "page" : undefined}
+                  onClick={() => { if (link.href.includes("hall-finder")) track("hall_finder_entry_clicked", { where: "more" }); close(); }}>
+                  <b>
+                    {link.label}
+                    {link.tag && <span className={s.rowTag}><span className="ds-sr"> · </span>{link.tag}</span>}
+                    {link.isNew && <span className={s.newTag}><span className="ds-sr"> · </span>New</span>}
+                  </b>
+                  {link.detail && <small>{link.detail}</small>}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  );
+  const footLinks = (hrefs: ReadonlySet<string>) =>
+    groups.flatMap((g) => g.links).filter((l) => hrefs.has(l.href)).map((l) => <span key={l.href}>{moreLink(l)}</span>);
+
   const groupCard = (where: "more" | "sheet") => (group: Group, index: number) => (
     <section key={group.key} className={s.card} data-group={group.key} aria-labelledby={`${where}-group-${group.key}`}
       style={{ "--i": index } as CSSProperties}>
@@ -323,14 +371,24 @@ export default function Nav({
           </div>
         </div>
         <div id="nav-more" className={s.morePanel} hidden={!more} onKeyDown={panelKeys}>
-          {groups.map(groupCard("more"))}
+          {moreColumn(["plan"], s.moreCol)}
+          {moreColumn(["rooms"], s.moreCol)}
+          {moreColumn(["help", "about"], `${s.moreCol} ${s.moreSide}`)}
+          <div className={s.moreFoot}>
+            <div>{footLinks(LEGAL)}</div>
+            <div>{footLinks(FOOT_ACTIONS)}</div>
+          </div>
         </div>
         <div className={s.actions}>
           <SearchPalette hallFinder={hallFinder} />
-          <HeaderCredits />
-          <div className={s.profile}><ProfileMenu /></div>
-          <Link href="/plan" className={`ds-btn ds-btn--sm ${dark ? "ds-btn--yellow" : "ds-btn--ink"} ${s.cta}`}>
-            <span className={s.ctaLong}>Plan my room free</span><span className={s.ctaShort}>Plan free</span><ArrowRight size={16} />
+          <div className={s.profile}><ProfileMenu capsule /></div>
+          <Link href="/plan" className={`ds-btn ds-btn--sm ${dark ? "ds-btn--yellow" : "ds-btn--ink"} ${s.cta} ${signedIn ? s.ctaNew : ""}`}
+            aria-label={signedIn ? "New design" : undefined}>
+            {signedIn ? (
+              <><PlusIcon size={16} /><span className={s.ctaLong}>New design</span><span className={s.ctaShort}>New</span></>
+            ) : (
+              "Plan free"
+            )}
           </Link>
           <button type="button" className={s.menuBtn} aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen} aria-controls="site-navigation" onClick={() => { setMobileOpen(!mobileOpen); setMore(false); }}>

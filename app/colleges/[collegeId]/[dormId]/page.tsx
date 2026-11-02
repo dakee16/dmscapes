@@ -27,6 +27,8 @@ import { hasHallFinder, type Campus } from "@/lib/hall-finder";
 import { hallFacts, readSchoolDorms } from "@/lib/hall-finder-server";
 import { exampleFor } from "@/lib/hall-finder-example";
 import css from "@/components/hall/Hall.module.css";
+import HallGallery from "@/components/hall/HallGallery";
+import { hallGallery } from "@/lib/gallery";
 
 // One page per residence hall. Every page carries data that is genuinely
 // specific to the building: the room types it has, their measured dimensions,
@@ -35,6 +37,9 @@ import css from "@/components/hall/Hall.module.css";
 export function generateStaticParams() {
   return allDormPaths();
 }
+
+// Built ahead of time; re-rendered at most hourly so newly shared gallery layouts appear.
+export const revalidate = 3600;
 
 const areaOf = (r: RoomSummary) =>
   r.length_ft && r.width_ft ? r.length_ft * r.width_ft : (r.sqft ?? 0);
@@ -119,6 +124,7 @@ export default async function DormPage(props: {
   // Pilot schools: the hall's nearest dining hall, library and gym from the public campus
   // file, read at build (the walking-minute matrix itself stays server-only).
   const finder = hasHallFinder(school.id) ? await hallFinderBits(school.id, dorm.id, short) : null;
+  const gallery = await hallGallery(school.id, dorm.id);
 
   const rooms = dorm.rooms.map((r) => ({ r, fit: fitRoom(r) }));
   const fitted = rooms.filter((x): x is { r: RoomSummary; fit: FittedRoom } => x.fit !== null);
@@ -475,6 +481,20 @@ export default async function DormPage(props: {
           </div>
         </section>
       )}
+
+      <HallGallery
+        hall={buttonHall}
+        rooms={gallery}
+        cta={
+          <PlanCta
+            href={planHref}
+            className="ds-btn ds-btn--ink-yellow"
+            freeLabel={planLabel}
+            paidLabel={paidPlanLabel}
+            icon={<ArrowRight size={18} />}
+          />
+        }
+      />
 
       {/* Internal linking: sibling buildings keep crawl depth shallow. */}
       {siblings.length > 0 && (

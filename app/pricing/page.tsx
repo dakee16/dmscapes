@@ -10,6 +10,7 @@ import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import { softwareApplicationJsonLd } from "@/lib/seo";
 import UpgradeButton from "@/components/site/UpgradeButton";
+import { RedeemCodeButton } from "@/components/growth/CreatorCode";
 import { PlusPerk } from "@/components/hall-finder/Entry";
 import { SCHOOLS } from "@/lib/schools";
 import { STYLES } from "@/lib/styles";
@@ -310,6 +311,9 @@ export default function PricingPage() {
               </ul>
               <p className={css.planFoot}>
                 Out of credits? A {usd(RECHARGE_PRICE_USD)} recharge adds {RECHARGE_CREDITS === 3 ? "three" : RECHARGE_CREDITS} more.
+              </p>
+              <p className={`${css.planFoot} ${css.codeFoot}`}>
+                Have a creator code? <RedeemCodeButton className={css.codeLink}>Unlock Plus free</RedeemCodeButton>
               </p>
             </article>
 

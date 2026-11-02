@@ -24,7 +24,7 @@ export default function CookiesPage() {
     <LegalLayout
       doc="cookies"
       title="Cookie Policy"
-      updated="October 28, 2026"
+      updated="November 2, 2026"
       intro={
         <p>
           Cookies are small pieces of data a site stores in your browser. dormscape
@@ -80,6 +80,12 @@ export default function CookiesPage() {
             local storage, scoped to your account. It remains until replaced or
             removed through site-data clearing or the account-deletion cleanup
             in that browser.
+          </li>
+          <li><strong>Invites and creator codes.</strong>{" "}
+            If you arrive through an invite link, a shared room or a creator&rsquo;s link, local storage remembers
+            it under <code>dormscape-ref</code> or <code>dormscape-creator-code</code> for up to 30 days, until you
+            sign up. <code>dormscape-invite-prompt</code> remembers when the invite popup last appeared, so it
+            shows at most once every 30 days.
           </li>
         </ul>
       </LegalSection>
