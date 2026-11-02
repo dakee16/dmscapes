@@ -17,6 +17,11 @@ export const CREDIT_PLAN_VERSION = "2026-09-24";
 /** Plan credits one "See it in your room" picture uses (Pro). The route spends one
  * with spendPlanCredit, so change both together. */
 export const PHOTO_RENDER_CREDITS = 1;
+/** Invites (lib/referrals.ts): a referred friend's first design gives them and
+ * the inviter this many free designs each; the inviter's share stops at the cap
+ * per calendar month (UTC). */
+export const REFERRAL_BONUS_DESIGNS = 1;
+export const REFERRAL_MONTHLY_CAP = 10;
 
 /** All tiers can top up. A Free buyer becomes Flex; paid tiers keep their tools. */
 export const FLEX_CREDIT_PRICE_USD = 0.99;
