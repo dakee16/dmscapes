@@ -6,7 +6,7 @@ import { bearer } from "@/lib/invites";
 import CopyButton from "./CopyButton";
 import g from "./Growth.module.css";
 
-type Invite = { url: string; joined: number; designed: number; invitedBy?: string | null };
+type Invite = { url: string; joined: number; designed: number; invited?: boolean };
 
 /** The signed-in user's invite link with Copy (and the share sheet where the browser has one). */
 export default function InviteLink({ from, showStats = false }: { from: string; showStats?: boolean }) {
@@ -69,7 +69,7 @@ export default function InviteLink({ from, showStats = false }: { from: string; 
       {showStats && invite && (
         <p className={g.stats}>
           {invite.joined} {invite.joined === 1 ? "friend" : "friends"} joined · {invite.designed} made their first design
-          {invite.invitedBy && <><br />You joined through @{invite.invitedBy}&rsquo;s invite</>}
+          {invite.invited && <><br />You joined through a friend&rsquo;s invite</>}
         </p>
       )}
     </div>

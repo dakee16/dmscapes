@@ -3,7 +3,7 @@
 // (docs/migrations/20261102_growth_loops.sql). Codes live in creator_codes, added by SQL.
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { grantPurchasedPlan } from "./credit-ledger";
-import { planOf, PLUS_INITIAL_CREDITS } from "./plan";
+import { CREATOR_CODE_DEFAULT_CAP, planOf, PLUS_INITIAL_CREDITS } from "./plan";
 
 export const CREATOR_CODE = /^[a-z0-9_-]{2,32}$/;
 /** A creator's code is their username with dots as dashes, so "Jane.Doe" finds "jane-doe". */
@@ -17,22 +17,27 @@ export async function redeemCreatorCode(db: SupabaseClient, userId: string, raw:
   if (!CREATOR_CODE.test(code)) return { ok: false, status: 400, error: "That code doesn't look right. Check the spelling." };
   const { data: found, error } = await db
     .from("creator_codes")
-    .select("code, max_redemptions, expires_at, active")
+    .select("code, max_redemptions, expires_at, active, owner_id")
     .eq("code", code)
     .maybeSingle();
   if (error) return { ok: false, status: 503, error: "Creator codes aren't switched on yet. Check back soon." };
   if (!found || !found.active || (found.expires_at && Date.parse(found.expires_at) <= Date.now())) {
     return { ok: false, status: 404, error: "That code isn't valid, or it has ended." };
   }
+  if (found.owner_id && found.owner_id === userId) {
+    return { ok: false, status: 403, error: "That's your own creator code. Share it with your followers instead." };
+  }
   const { data: me } = await db.from("profiles").select("plan").eq("id", userId).maybeSingle();
   const tier = planOf(me?.plan);
   if (tier === "plus" || tier === "pro") {
     return { ok: false, status: 409, error: `You already have ${tier === "pro" ? "Pro" : "Plus"}, so there's nothing to unlock.` };
   }
-  if (found.max_redemptions != null) {
+  // A creator's code is their public username, so it always has a limit: theirs, or the default.
+  const cap = found.max_redemptions ?? (found.owner_id ? CREATOR_CODE_DEFAULT_CAP : null);
+  if (cap != null) {
     // ponytail: count, then insert. A burst can pass the limit by a few; a locking SQL function if that matters.
     const { count } = await db.from("creator_redemptions").select("user_id", { count: "exact", head: true }).eq("code", code);
-    if ((count ?? 0) >= found.max_redemptions) return { ok: false, status: 410, error: "That code has been used up." };
+    if ((count ?? 0) >= cap) return { ok: false, status: 410, error: "That code has been used up." };
   }
   const { error: taken } = await db.from("creator_redemptions").insert({ user_id: userId, code });
   if (taken) {

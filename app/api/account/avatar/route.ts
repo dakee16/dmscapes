@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
-import { AVATAR_BUCKET, AVATAR_MAX_BYTES, imageKind, ownAvatarPath } from "@/lib/avatars";
+import { AVATAR_BUCKET, AVATAR_MAX_BYTES, AVATAR_MAX_SIDE, imageKind, imageSize, removeUserAvatars } from "@/lib/avatars";
 
 export const runtime = "nodejs";
 
@@ -26,6 +26,10 @@ export async function POST(request: Request) {
   const bytes = Buffer.from(await file.arrayBuffer());
   const kind = imageKind(bytes);
   if (!kind) return NextResponse.json({ error: "Use a JPEG, PNG or WebP photo." }, { status: 415 });
+  const size = imageSize(bytes, kind);
+  if (!size || size.w < 1 || size.h < 1 || size.w > AVATAR_MAX_SIDE || size.h > AVATAR_MAX_SIDE) {
+    return NextResponse.json({ error: "Use a smaller photo. Pick it again in Account settings." }, { status: 415 });
+  }
 
   const path = `${userId}/${crypto.randomUUID()}.${kind === "jpeg" ? "jpg" : kind}`;
   const { error: uploadError } = await db.storage
@@ -34,14 +38,12 @@ export async function POST(request: Request) {
   if (uploadError) return NextResponse.json({ error: NOT_READY }, { status: 503 });
   const url = db.storage.from(AVATAR_BUCKET).getPublicUrl(path).data.publicUrl;
 
-  const { data: before } = await db.from("profiles").select("avatar_url").eq("id", userId).maybeSingle();
   const { error } = await db.from("profiles").update({ avatar_url: url }).eq("id", userId);
   if (error) {
     await db.storage.from(AVATAR_BUCKET).remove([path]);
     return NextResponse.json({ error: NOT_READY }, { status: 503 });
   }
-  const old = ownAvatarPath(before?.avatar_url, userId);
-  if (old) await db.storage.from(AVATAR_BUCKET).remove([old]);
+  await removeUserAvatars(db, userId, path).catch(() => {});
   return NextResponse.json({ avatar_url: url });
 }
 
@@ -51,10 +53,8 @@ export async function DELETE(request: Request) {
   if (!userId) return NextResponse.json({ error: "Not signed in." }, { status: 401 });
   const db = getServiceClient();
   if (!db) return NextResponse.json({ error: NOT_READY }, { status: 503 });
-  const { data: before } = await db.from("profiles").select("avatar_url").eq("id", userId).maybeSingle();
   const { error } = await db.from("profiles").update({ avatar_url: null }).eq("id", userId);
   if (error) return NextResponse.json({ error: NOT_READY }, { status: 503 });
-  const old = ownAvatarPath(before?.avatar_url, userId);
-  if (old) await db.storage.from(AVATAR_BUCKET).remove([old]);
+  await removeUserAvatars(db, userId).catch(() => {});
   return NextResponse.json({ avatar_url: null });
 }

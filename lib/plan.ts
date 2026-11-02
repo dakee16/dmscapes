@@ -24,6 +24,9 @@ export const REFERRAL_BONUS_DESIGNS = 1;
 export const REFERRAL_MONTHLY_CAP = 10;
 /** Creators (lib/creators.ts): followers needed on Instagram or TikTok to apply. */
 export const CREATOR_MIN_FOLLOWERS = 10_000;
+/** A creator's own code (named after their username, so public) unlocks Plus for at most this
+ * many accounts unless the owner sets creator_codes.max_redemptions (docs/owner-commands.sql). */
+export const CREATOR_CODE_DEFAULT_CAP = 200;
 
 /** All tiers can top up. A Free buyer becomes Flex; paid tiers keep their tools. */
 export const FLEX_CREDIT_PRICE_USD = 0.99;

@@ -43,7 +43,8 @@ const {claimReferral,payReferral,referralCode}=load(path.join(root,'lib/referral
 const {redeemCreatorCode}=load(path.join(root,'lib/creator-codes'));
 const {planCreditBalance}=load(path.join(root,'lib/credit-ledger'));
 const {applyAsCreator}=load(path.join(root,'lib/creators'));
-const {imageKind,ownAvatarPath}=load(path.join(root,'lib/avatars'));
+const {imageKind,imageSize,AVATAR_MAX_SIDE}=load(path.join(root,'lib/avatars'));
+const {layoutOnly,fairRows}=load(path.join(root,'lib/gallery'));
 const {REFERRAL_MONTHLY_CAP,PLUS_INITIAL_CREDITS}=load(path.join(root,'lib/plan'));
 const now=new Date().toISOString(),old=new Date(Date.now()-72*3600e3).toISOString();
 const free=(id,extra={})=>({id,plan:'free',free_plans_used:0,plan_credits_remaining:null,created_at:now,...extra});
@@ -121,10 +122,38 @@ const free=(id,extra={})=>({id,plan:'free',free_plans_used:0,plan_credits_remain
   assert.equal(imageKind(Buffer.from([0xff,0xd8,0xff,0xe0,0,0])),'jpeg');
   assert.equal(imageKind(Buffer.from([0x89,0x50,0x4e,0x47,0x0d,0x0a,0x1a,0x0a,0])),'png');
   assert.equal(imageKind(Buffer.from('<svg onload=alert(1)>')),null,'no SVG or HTML');
-  const pub='https://x.supabase.co/storage/v1/object/public/avatars/';
-  assert.equal(ownAvatarPath(pub+'u1/a.webp','u1'),'u1/a.webp');
-  assert.equal(ownAvatarPath(pub+'u2/a.webp','u1'),null,'never another user\'s photo');
-  assert.equal(ownAvatarPath(pub+'u1/../u2/a.webp','u1'),null);
+  // Real dimensions from the header, so a tiny file can't claim to be a 20,000 px bomb.
+  const file=(f)=>fs.readFileSync(path.join(root,f));
+  assert.deepEqual(imageSize(file('public/redesign/site-hall-clay-room.jpg'),'jpeg'),{w:1440,h:1280},'progressive JPEG');
+  assert.deepEqual(imageSize(file('public/redesign/hero-room-v5.webp'),'webp'),{w:2000,h:1167},'lossy WebP');
+  assert.deepEqual(imageSize(file('public/og.png'),'png'),{w:1200,h:630},'PNG');
+  const bomb=Buffer.concat([Buffer.from([0x89,0x50,0x4e,0x47,0x0d,0x0a,0x1a,0x0a,0,0,0,13]),Buffer.from('IHDR'),Buffer.from([0,0,0x4e,0x20,0,0,0x4e,0x20])]);
+  assert.ok(imageSize(bomb,'png').w>AVATAR_MAX_SIDE,'a 20,000 px PNG header is caught');
+  assert.equal(imageSize(Buffer.from([0xff,0xd8,0xff]),'jpeg'),null,'a truncated JPEG has no size');
 
-  console.log('PASS: invites pay out once, within the cap; creator codes unlock Plus once per account; creators need 10k and a bio code; photos are real images in your own folder.');
+  // Gallery layouts carry shapes only: no labels, owners, assignments, products, costs or ids.
+  const shared=layoutOnly([{id:'sofa-x9',type:'bed',label:'Jake bed',owner:'Jake',assigned_to:'Jake',product_id:'B0X',cost:99,x_ft:1,y_ft:2,width_ft:3,length_ft:6.5,rotation_deg:90,movable:true,built_in:false,color_category:'bed'}]);
+  assert.deepEqual(Object.keys(shared[0]).sort(),['built_in','color_category','id','label','length_ft','movable','owner','rotation_deg','type','width_ft','x_ft','y_ft']);
+  assert.equal(JSON.stringify(shared).match(/Jake|B0X|sofa-x9|99/),null,'nothing personal survives');
+
+  // One layout per person per hall, real halls only.
+  const fr=fairRows([
+    {user_id:'u1',college_id:'penn-state',dorm_id:'atherton-hall',n:1},{user_id:'u1',college_id:'penn-state',dorm_id:'atherton-hall',n:2},
+    {user_id:'u2',college_id:'penn-state',dorm_id:'atherton-hall',n:3},{user_id:'u3',college_id:'penn-state',dorm_id:'not-a-hall',n:4},
+  ]);
+  assert.deepEqual(fr.map((r)=>r.n),[1,3],'a second layout from the same person, and a made-up hall, are left out');
+
+  // A creator can't unlock Plus with their own code.
+  k.creator_codes.push({code:'mine',active:true,max_redemptions:null,expires_at:null,owner_id:'e'});
+  k.profiles.push(free('e'));
+  assert.equal((await redeemCreatorCode(kdb,'e','mine')).status,403,'no redeeming your own creator code');
+
+  // A creator's own code (a public username) always has a limit, even when none was set.
+  const {CREATOR_CODE_DEFAULT_CAP}=load(path.join(root,'lib/plan'));
+  k.creator_codes.push({code:'popular',active:true,max_redemptions:null,expires_at:null,owner_id:'someone'});
+  for(let i=0;i<CREATOR_CODE_DEFAULT_CAP;i++)k.creator_redemptions.push({user_id:'r'+i,code:'popular'});
+  k.profiles.push(free('late2'));
+  assert.equal((await redeemCreatorCode(kdb,'late2','popular')).status,410,'the default cap applies');
+
+  console.log('PASS: invites pay out once, within the cap; creator codes unlock Plus once per account; creators need 10k and a bio code; photos are real, small images; gallery layouts are shapes only, one per person per hall.');
 })().catch(e=>{console.error(e);process.exit(1);});

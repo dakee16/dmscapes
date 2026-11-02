@@ -35,12 +35,11 @@ export async function referralStats(db: SupabaseClient, userId: string): Promise
   return { joined: joined.count ?? 0, designed: designed.count ?? 0 };
 }
 
-/** The @username of whoever invited this account, if anyone (and they still have one). */
-export async function invitedBy(db: SupabaseClient, userId: string): Promise<string | null> {
+/** Whether this account joined through an invite. Never who: a claim made through a shared
+ *  room's link would otherwise hand a stranger that room owner's username. */
+export async function wasInvited(db: SupabaseClient, userId: string): Promise<boolean> {
   const { data: me } = await db.from("profiles").select("referred_by").eq("id", userId).maybeSingle();
-  if (!me?.referred_by) return null;
-  const { data: them } = await db.from("profiles").select("username").eq("id", me.referred_by).maybeSingle();
-  return them?.username ?? null;
+  return Boolean(me?.referred_by);
 }
 
 export type ReferralSource = { code?: unknown; room?: unknown };
@@ -68,6 +67,8 @@ export async function claimReferral(db: SupabaseClient, userId: string, src: Ref
     .update({ referred_by: referrer })
     .eq("id", userId)
     .is("referred_by", null)
+    .eq("plan", "free")
+    .eq("free_plans_used", 0)
     .select("id")
     .maybeSingle();
   return Boolean(done);

@@ -403,6 +403,8 @@ export default function AccountSettingsPage() {
                         autoComplete="username"
                         maxLength={20}
                         value={username}
+                        readOnly={Boolean(profile?.creator_at)}
+                        aria-describedby={profile?.creator_at ? "set-username-creator" : undefined}
                         onChange={(e) => {
                           setUsername(e.target.value);
                           setProfileMsg(null);
@@ -410,7 +412,13 @@ export default function AccountSettingsPage() {
                         placeholder="dormdesigner"
                       />
                     </div>
-                    <FieldMsg msg={uHint} className={s.fieldMsg} />
+                    {profile?.creator_at ? (
+                      <p id="set-username-creator" className={s.fieldMsg}>
+                        Creators keep their username: it&rsquo;s your creator code and your name on gallery layouts.
+                      </p>
+                    ) : (
+                      <FieldMsg msg={uHint} className={s.fieldMsg} />
+                    )}
                   </div>
                 </div>
 

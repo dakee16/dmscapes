@@ -5,6 +5,7 @@
 // unless they're an approved creator, who is shown by @username and photo.
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { getServiceClient } from "./supabase-server";
+import { getDorm } from "./schools";
 import type { FurnitureItem, RoomOutline, StyleId } from "./types";
 
 export type GalleryRoom = {
@@ -36,7 +37,41 @@ type Row = {
   gallery_at: string;
 };
 
-async function toRooms(db: SupabaseClient, rows: Row[]): Promise<GalleryRoom[]> {
+/** Only what the plan drawing needs: shape, place and colour. Labels, owners, assignments,
+ *  products, costs and the pieces' own ids never leave the server (an RSC payload would carry
+ *  anything passed through a client component). */
+export function layoutOnly(furniture: FurnitureItem[]): FurnitureItem[] {
+  return furniture.map((f, i) => ({
+    id: String(i),
+    type: f.type,
+    label: "",
+    owner: "",
+    x_ft: Number(f.x_ft),
+    y_ft: Number(f.y_ft),
+    width_ft: Number(f.width_ft),
+    length_ft: Number(f.length_ft),
+    rotation_deg: Number(f.rotation_deg) || 0,
+    movable: Boolean(f.movable),
+    built_in: Boolean(f.built_in),
+    color_category: f.color_category,
+  }));
+}
+
+/** Fair shares: one layout per person per hall (their newest), and only real halls, so nobody
+ *  can flood a hall's six spots or file layouts under a hall id we don't have. */
+export function fairRows<T extends { user_id: string | null; college_id: string | null; dorm_id: string | null }>(rows: T[]): T[] {
+  const seen = new Set<string>();
+  return rows.filter((r) => {
+    if (!r.college_id || !r.dorm_id || !getDorm(r.college_id, r.dorm_id)) return false;
+    const key = `${r.user_id ?? "?"}/${r.college_id}/${r.dorm_id}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+async function toRooms(db: SupabaseClient, all: Row[], limit: number): Promise<GalleryRoom[]> {
+  const rows = fairRows(all).slice(0, limit);
   const owners = [...new Set(rows.map((r) => r.user_id).filter((id): id is string => Boolean(id)))];
   // Before 20261103_creators_avatars.sql, creator_at doesn't exist: the query fails and nobody gets a byline.
   const { data: creators } = owners.length
@@ -49,14 +84,17 @@ async function toRooms(db: SupabaseClient, rows: Row[]): Promise<GalleryRoom[]> 
   );
   return rows.flatMap((r) => {
     const d = r.room_dimensions;
-    if (!r.college_id || !r.dorm_id || !d || !(Number(d.length_ft) > 0 && Number(d.width_ft) > 0) || !Array.isArray(r.furniture_positions)) return [];
+    const hall = r.college_id && r.dorm_id ? getDorm(r.college_id, r.dorm_id) : undefined;
+    if (!hall || !d || !(Number(d.length_ft) > 0 && Number(d.width_ft) > 0) || !Array.isArray(r.furniture_positions)) return [];
+    // room_type is free text on save: only print it when it's one of this hall's own room types.
+    const roomType = hall.dorm.rooms.some((x) => x.type === d.room_type) ? (d.room_type as string) : "";
     return [{
-      collegeId: r.college_id,
-      dormId: r.dorm_id,
-      roomType: d.room_type ?? "",
+      collegeId: r.college_id!,
+      dormId: r.dorm_id!,
+      roomType,
       lengthFt: Number(d.length_ft),
       widthFt: Number(d.width_ft),
-      furniture: r.furniture_positions,
+      furniture: layoutOnly(r.furniture_positions),
       outline: d.outline ?? null,
       style: r.style,
       budget: Number(r.budget),
@@ -78,9 +116,9 @@ export async function hallGallery(collegeId: string, dormId: string): Promise<Ga
     .not("gallery_at", "is", null)
     .is("gallery_hidden_at", null)
     .order("gallery_at", { ascending: false })
-    .limit(GALLERY_SIZE);
+    .limit(GALLERY_SIZE * 5);
   if (error) return []; // before the migration, or the database is unreachable: no section
-  return toRooms(db, (data ?? []) as Row[]);
+  return toRooms(db, (data ?? []) as Row[], GALLERY_SIZE);
 }
 
 /** The newest layouts shared across every hall (/gallery). */
@@ -94,7 +132,7 @@ export async function recentGallery(limit = 24): Promise<GalleryRoom[]> {
     .is("gallery_hidden_at", null)
     .not("dorm_id", "is", null)
     .order("gallery_at", { ascending: false })
-    .limit(limit);
+    .limit(limit * 4);
   if (error) return [];
-  return toRooms(db, (data ?? []) as Row[]);
+  return toRooms(db, (data ?? []) as Row[], limit);
 }

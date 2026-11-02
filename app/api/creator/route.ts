@@ -38,7 +38,11 @@ export async function POST(request: Request) {
     const result = await applyAsCreator(db, userId, body ?? {});
     if (!result.ok) return NextResponse.json({ error: result.error }, { status: result.status });
     const s = result.status;
-    if (result.isNew && s.platform && s.handle) {
+    const { count: today } = await db
+      .from("creators")
+      .select("user_id", { count: "exact", head: true })
+      .gte("applied_at", new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString());
+    if (result.isNew && s.platform && s.handle && (today ?? 0) <= 25) {
       await sendEmail({
         to: OWNER,
         subject: `Creator application: @${s.handle} on ${s.platform === "tiktok" ? "TikTok" : "Instagram"}`,
@@ -46,9 +50,10 @@ export async function POST(request: Request) {
           `@${s.handle} applied as a dormscape creator with ${s.followers?.toLocaleString("en-US")} followers.\n\n` +
           `1. Open ${profileLink(s.platform, s.handle)}\n` +
           `2. Check the follower count, and that the bio shows ${s.verifyCode}\n` +
-          `3. In the Supabase SQL editor, run one of:\n` +
-          `   update public.creators set status = 'approved' where handle = '${s.handle}';\n` +
-          `   update public.creators set status = 'rejected' where handle = '${s.handle}';\n`,
+          `3. In the Supabase SQL editor, run one of these. They match this account, not the handle: anyone\n` +
+          `   can apply with someone else's handle, so only approve the one whose bio shows the code.\n` +
+          `   update public.creators set status = 'approved' where user_id = '${userId}';\n` +
+          `   update public.creators set status = 'rejected' where user_id = '${userId}';\n`,
       }).catch((e) => console.error("creator application email failed", e));
     }
     return NextResponse.json(s);

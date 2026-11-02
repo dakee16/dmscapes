@@ -15,8 +15,9 @@
 --      where c.status = 'pending' order by c.applied_at;
 --    Open instagram.com/<handle> or tiktok.com/@<handle>, check the follower count
 --    and that the bio shows the verify code, then approve or reject:
---      update public.creators set status = 'approved' where handle = 'janedorms';
---      update public.creators set status = 'rejected' where handle = 'janedorms';
+--      update public.creators set status = 'approved' where user_id = '<user id>';
+--      update public.creators set status = 'rejected' where user_id = '<user id>';
+--    (By user_id, not handle: handles aren't unique. See docs/owner-commands.sql.)
 --    Approving gives them the Creator badge (profiles.creator_at) and a creator code
 --    named after their username (dots become dashes), which unlocks Plus free for
 --    their followers at dormscape.us/c/<code>. Setting an approved creator back to

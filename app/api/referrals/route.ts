@@ -2,11 +2,11 @@ import { NextResponse } from "next/server";
 import { getServiceClient } from "@/lib/supabase-server";
 import { getUserId } from "@/lib/supabase-auth";
 import { rateLimit } from "@/lib/rate-limit";
-import { invitedBy, referralCode, referralStats } from "@/lib/referrals";
+import { referralCode, referralStats, wasInvited } from "@/lib/referrals";
 
 export const runtime = "nodejs";
 
-/** The signed-in user's invite link, how many friends it has brought in, and who invited them. */
+/** The signed-in user's invite link, how many friends it has brought in, and whether they were invited. */
 export async function GET(request: Request) {
   const rl = rateLimit(request, "referrals", 60, 10 * 60 * 1000);
   if (!rl.allowed) {
@@ -17,9 +17,9 @@ export async function GET(request: Request) {
   const db = getServiceClient();
   if (!db) return NextResponse.json({ error: "Invites aren't available right now." }, { status: 503 });
   try {
-    const [code, stats, by] = await Promise.all([referralCode(db, userId), referralStats(db, userId), invitedBy(db, userId)]);
+    const [code, stats, invited] = await Promise.all([referralCode(db, userId), referralStats(db, userId), wasInvited(db, userId)]);
     const origin = process.env.NEXT_PUBLIC_SITE_URL ?? new URL(request.url).origin;
-    return NextResponse.json({ code, url: `${origin}/?ref=${code}`, ...stats, invitedBy: by });
+    return NextResponse.json({ code, url: `${origin}/?ref=${code}`, ...stats, invited });
   } catch (error) {
     console.error("referral link failed:", error);
     return NextResponse.json({ error: "Invites aren't switched on yet. Check back soon." }, { status: 503 });

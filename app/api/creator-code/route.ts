@@ -14,6 +14,11 @@ export async function POST(request: Request) {
   }
   const userId = await getUserId(request);
   if (!userId) return NextResponse.json({ error: "Sign in to use a creator code." }, { status: 401 });
+  // Per account too, not just per address: guessing codes from one account stays slow.
+  const mine = rateLimit(request, `creator-code:${userId}`, 5, 60 * 60 * 1000);
+  if (!mine.allowed) {
+    return NextResponse.json({ error: "Too many tries. Give it a while." }, { status: 429, headers: { "Retry-After": String(mine.retryAfterSec) } });
+  }
   const db = getServiceClient();
   if (!db) return NextResponse.json({ error: "Creator codes aren't available right now." }, { status: 503 });
   const body = (await request.json().catch(() => null)) as { code?: unknown } | null;
