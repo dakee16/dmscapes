@@ -46,6 +46,8 @@ export interface SaveRoomRequest {
   /** Required for a named "Save design" (needs an authed caller); absent for
    * the anonymous "copy share link" flow. */
   name?: string | null;
+  /** Named saves with a hall only: show the layout, anonymously, in that hall's gallery. */
+  gallery?: boolean;
 }
 export interface SaveRoomResponse {
   /** Short id used in the share URL: /room/[id] */
@@ -74,6 +76,8 @@ export interface AccountRoomSummary {
   furniture: FurnitureItem[] | null;
   /** Hand-drawn rooms only: the outline, so the tile draws the real shape. */
   outline?: RoomOutline | null;
+  /** Shown in its hall's gallery (lib/gallery.ts). */
+  gallery?: boolean;
   studio?: import("./studio").StudioSettings;
   editor?: import("./studio-save").SavedEditorState;
   occupants?: number;
