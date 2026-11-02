@@ -33,10 +33,10 @@
   flex: 1;
   display: flex;
   align-items: center;
-  padding: 56px 0 40px clamp(0px, 2.8vw, 40px);
+  padding: 40px 0 32px clamp(0px, 2.8vw, 40px);
   outline: none;
 }
-.mainInner { width: 100%; max-width: 520px; }
+.mainInner { width: 100%; max-width: 440px; }
 .fallback { min-height: 60vh; }
 .legal {
   margin: 0;
@@ -163,7 +163,7 @@
 .title { margin: 0; font-weight: 400; text-wrap: balance; }
 .title > span { display: inline-block; animation: rise 0.6s var(--ds-ease) both; }
 .titleLead {
-  font-size: clamp(50px, 5vw, 72px);
+  font-size: clamp(42px, 4vw, 58px);
   line-height: 0.95;
   font-weight: 850;
   font-stretch: 86%;
@@ -172,7 +172,7 @@
 .title > .titleSerif {
   font-family: var(--ds-serif);
   font-style: italic;
-  font-size: clamp(52px, 5.3vw, 76px);
+  font-size: clamp(44px, 4.2vw, 61px);
   line-height: 0.95;
   font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
   letter-spacing: -0.01em;
@@ -182,8 +182,8 @@
 }
 .intro {
   margin: 14px 0 0;
-  max-width: 470px;
-  font-size: 18px;
+  max-width: 420px;
+  font-size: 16px;
   line-height: 1.5;
   color: var(--ds-body);
 }
@@ -214,11 +214,11 @@
 .form .tab {
   position: relative;
   z-index: 1;
-  height: 44px;
+  height: 40px;
   border: 0;
   border-radius: 999px;
   background: none;
-  font: 700 15px/1 var(--ds-sans);
+  font: 700 14px/1 var(--ds-sans);
   color: var(--ds-muted);
   cursor: pointer;
   transition: color 0.3s ease;
@@ -234,13 +234,13 @@
   justify-content: center;
   gap: 12px;
   width: 100%;
-  height: 56px;
-  margin-top: 20px;
+  height: 48px;
+  margin-top: 16px;
   border: 0;
-  border-radius: 16px;
+  border-radius: 14px;
   background: #fff;
   box-shadow: inset 0 0 0 1.5px var(--ds-ink);
-  font: 700 16px/1 var(--ds-sans);
+  font: 700 15px/1 var(--ds-sans);
   color: var(--ds-ink);
   cursor: pointer;
   overflow: hidden;
@@ -272,7 +272,7 @@
 .or::before,
 .or::after { content: ""; flex: 1; height: 1px; background: var(--ds-line); }
 
-.fields { display: grid; gap: 16px; margin-top: 20px; }
+.fields { display: grid; gap: 14px; margin-top: 16px; }
 .fields.solo { margin-top: 22px; }
 .field { display: grid; gap: 8px; }
 .labelRow { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
@@ -298,8 +298,8 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 56px;
-  border-radius: 14px;
+  height: 48px;
+  border-radius: 12px;
   background: #fff;
   box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.18);
   transition: box-shadow 0.2s ease;
@@ -314,7 +314,7 @@
   border: 0;
   border-radius: 14px;
   background: none;
-  font: 500 17px var(--ds-sans);
+  font: 500 16px var(--ds-sans);
   color: var(--ds-ink);
   outline: none;
 }
@@ -401,12 +401,12 @@
   justify-content: center;
   gap: 10px;
   width: 100%;
-  height: 60px;
+  height: 52px;
   border: 0;
   border-radius: 999px;
   background: var(--ds-ink);
   color: var(--ds-yellow);
-  font: 800 18px/1 var(--ds-sans);
+  font: 800 16px/1 var(--ds-sans);
   text-decoration: none;
   cursor: pointer;
   transition: transform 0.25s var(--ds-ease), box-shadow 0.25s var(--ds-ease), opacity 0.25s ease;
