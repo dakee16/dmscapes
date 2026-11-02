@@ -369,7 +369,8 @@
   gap: 8px;
 }
 .profile { display: flex; align-items: center; min-width: 0; }
-.actions .cta { gap: 8px; min-height: 42px; padding: 0 18px; font-size: 15px; white-space: nowrap; }
+/* 38px and 600, like the nav links beside them. */
+.actions .cta { gap: 8px; min-height: 38px; padding: 0 16px; font-size: 15px; font-weight: 600; white-space: nowrap; }
 .ctaShort { display: none; }
 .menuBtn {
   display: none;
