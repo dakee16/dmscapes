@@ -92,22 +92,4 @@
 .creatorTag:hover::after, .creatorTag:focus-visible::after { opacity: 1; transform: none; }
 .creatorTag:focus-visible { outline: 2px solid var(--ds-blue); outline-offset: 2px; }
 
-/* The empty gallery: a card whose border light slowly circles it. */
-@property --glow { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
-.emptyGlow {
-  max-width: 620px;
-  padding: 2px;
-  border-radius: 24px;
-  background: conic-gradient(from var(--glow), rgba(22, 22, 29, 0.12) 0 60%, var(--ds-blue) 74%, var(--ds-pink) 84%, rgba(22, 22, 29, 0.12) 96%);
-  animation: glowSpin 6s linear infinite;
-}
-@keyframes glowSpin { to { --glow: 360deg; } }
-.emptyInner { padding: 30px 32px 32px; border-radius: 22px; background: #fff; }
-.emptyKicker { margin: 0 0 10px; font: 700 12px/1 var(--ds-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ds-blue); }
-.emptyTitle { margin: 0; font: 850 32px/1.08 var(--ds-sans); letter-spacing: -0.02em; color: var(--ds-ink); }
-.emptySteps { display: grid; gap: 12px; margin: 20px 0 24px; padding: 0; list-style: none; }
-.emptySteps li { display: flex; align-items: center; gap: 12px; font-size: 17px; line-height: 1.4; color: var(--ds-body); }
-.emptySteps b { display: grid; place-items: center; flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--ds-yellow); color: var(--ds-ink); font: 800 14px var(--ds-sans); }
-@media (max-width: 480px) { .emptyInner { padding: 24px 20px 26px; } .emptyTitle { font-size: 27px; } }
-@media (prefers-reduced-motion: reduce) { .emptyGlow { animation: none; } .cell > .card { transition: none; } }
-:global(.dm-app[data-motion="paused"]) .emptyGlow { animation: none; }
+@media (prefers-reduced-motion: reduce) { .cell > .card { transition: none; } }
