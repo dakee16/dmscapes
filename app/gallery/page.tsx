@@ -4,6 +4,7 @@ import Link from "next/link";
 import PageShell from "@/components/ds/PageShell";
 import PageHero from "@/components/ds/PageHero";
 import { GalleryCard } from "@/components/hall/HallGallery";
+import GalleryGrid from "@/components/growth/GalleryGrid";
 import { ArrowRight } from "@/components/ds/Icons";
 import { recentGallery } from "@/lib/gallery";
 import { getDorm } from "@/lib/schools";
@@ -32,8 +33,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function GalleryPage() {
   const rooms = await latest();
   return (
-    <PageShell>
+    <PageShell navOverlay>
       <PageHero
+        size="md"
         eyebrow="Room gallery"
         lines={[{ text: "Real rooms," }, { text: "shared by students.", serif: true }]}
         lede="Layouts students planned for their halls and chose to share. Their names and shopping lists stay private, except for creators."
@@ -41,26 +43,39 @@ export default async function GalleryPage() {
       <section className="ds-section" aria-label="Shared layouts">
         <div className="ds-wrap">
           {rooms.length ? (
-            <ul className={g.gallery}>
-              {rooms.map((r, i) => {
-                const found = getDorm(r.collegeId, r.dormId);
-                const place = found
-                  ? { label: `${shortName(found.school)} · ${found.dorm.name}`, href: `/colleges/${r.collegeId}/${r.dormId}` }
-                  : undefined;
-                return <GalleryCard key={i} room={r} place={place} />;
-              })}
-            </ul>
+            <>
+              <GalleryGrid label="Shared layouts">
+                {rooms.map((r, i) => {
+                  const found = getDorm(r.collegeId, r.dormId);
+                  const place = found
+                    ? { label: `${shortName(found.school)} · ${found.dorm.name}`, href: `/colleges/${r.collegeId}/${r.dormId}` }
+                    : undefined;
+                  return <GalleryCard key={i} room={r} place={place} />;
+                })}
+              </GalleryGrid>
+              <div className={g.galleryCta}>
+                <Link href="/plan" className="ds-btn ds-btn--ink-yellow">
+                  Plan your room <ArrowRight size={18} />
+                </Link>
+              </div>
+            </>
           ) : (
-            <p className={g.galleryEmpty}>
-              No layouts shared yet. Save a design for your hall and tick &ldquo;Show this layout in the gallery&rdquo; to be the
-              first.
-            </p>
+            // Glow border (Vengeance UI Glow Border Card): the empty gallery invites the first layout.
+            <div className={g.emptyGlow}>
+              <div className={g.emptyInner}>
+                <p className={g.emptyKicker}>Nothing shared yet</p>
+                <h2 className={g.emptyTitle}>Be the first in your hall.</h2>
+                <ol className={g.emptySteps}>
+                  <li><b>1</b>Plan a room for your hall.</li>
+                  <li><b>2</b>Save it to your account.</li>
+                  <li><b>3</b>Tick &ldquo;Show this layout in the gallery.&rdquo;</li>
+                </ol>
+                <Link href="/plan" className="ds-btn ds-btn--ink-yellow">
+                  Plan your room <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
           )}
-          <div className={g.galleryCta}>
-            <Link href="/plan" className="ds-btn ds-btn--ink-yellow">
-              Plan your room <ArrowRight size={18} />
-            </Link>
-          </div>
         </div>
       </section>
     </PageShell>

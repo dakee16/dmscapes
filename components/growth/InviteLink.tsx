@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { track } from "@/lib/analytics";
 import { bearer } from "@/lib/invites";
+import CopyButton from "./CopyButton";
 import g from "./Growth.module.css";
 
 type Invite = { url: string; joined: number; designed: number; invitedBy?: string | null };
@@ -11,7 +12,6 @@ type Invite = { url: string; joined: number; designed: number; invitedBy?: strin
 export default function InviteLink({ from, showStats = false }: { from: string; showStats?: boolean }) {
   const [invite, setInvite] = useState<Invite | null>(null);
   const [error, setError] = useState("");
-  const [copied, setCopied] = useState(false);
   const [canShare, setCanShare] = useState(false);
 
   useEffect(() => {
@@ -33,18 +33,6 @@ export default function InviteLink({ from, showStats = false }: { from: string; 
       live = false;
     };
   }, []);
-
-  async function copy() {
-    if (!invite) return;
-    try {
-      await navigator.clipboard.writeText(invite.url);
-      setCopied(true);
-      track("referral_link_copied", { from });
-      window.setTimeout(() => setCopied(false), 1800);
-    } catch {
-      // Clipboard blocked: the field selects on focus, so it can be copied by hand.
-    }
-  }
 
   async function share() {
     if (!invite) return;
@@ -71,9 +59,7 @@ export default function InviteLink({ from, showStats = false }: { from: string; 
           aria-label="Your invite link"
           onFocus={(e) => e.currentTarget.select()}
         />
-        <button type="button" className="ds-btn ds-btn--ink-yellow" onClick={copy} disabled={!invite}>
-          {copied ? "Copied" : "Copy link"}
-        </button>
+        <CopyButton text={invite?.url ?? ""} disabled={!invite} onCopied={() => track("referral_link_copied", { from })} />
       </div>
       {canShare && (
         <button type="button" className={g.textBtn} onClick={share} disabled={!invite}>

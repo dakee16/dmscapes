@@ -6,6 +6,7 @@ import { bearer } from "@/lib/invites";
 import { track } from "@/lib/analytics";
 import { CREATOR_MIN_FOLLOWERS, PLUS_INITIAL_CREDITS } from "@/lib/plan";
 import type { CreatorStatus, Platform } from "@/lib/creators";
+import CopyButton from "@/components/growth/CopyButton";
 import s from "./account.module.css";
 
 const NAMES: Record<Platform, string> = { instagram: "Instagram", tiktok: "TikTok" };
@@ -21,7 +22,6 @@ export default function CreatorSection({ eyebrow }: { eyebrow: string }) {
   const [followers, setFollowers] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const [copied, setCopied] = useState(false);
   const root = useRef<HTMLElement>(null);
 
   async function call(init?: RequestInit): Promise<CreatorStatus> {
@@ -91,21 +91,7 @@ export default function CreatorSection({ eyebrow }: { eyebrow: string }) {
               Your code is <code>{st.code.toUpperCase()}</code>. Share <b>{link}</b>, or tell followers to type the code on
               the Pricing page.
             </p>
-            <button
-              type="button"
-              className="ds-btn ds-btn--sm ds-btn--ink-yellow"
-              onClick={async () => {
-                try {
-                  await navigator.clipboard.writeText(`https://${link}`);
-                  setCopied(true);
-                  window.setTimeout(() => setCopied(false), 1800);
-                } catch {
-                  // Clipboard blocked: the link is on screen to copy by hand.
-                }
-              }}
-            >
-              {copied ? "Copied" : "Copy link"}
-            </button>
+            <CopyButton text={`https://${link}`} className="ds-btn ds-btn--sm ds-btn--ink-yellow" />
           </div>
           <ul className={s.statRow}>
             <li>
