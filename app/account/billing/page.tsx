@@ -4,26 +4,158 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import PageShell from "@/components/ds/PageShell";
+import AccountFrame, { Card, Row } from "@/components/account/AccountFrame";
+import { RechargeButton, fmtDate, usd } from "@/components/account/AccountUI";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
-import DeleteAccountSection from "@/components/account/DeleteAccountSection";
-import { AccountShell, PlanCard, ProfileCard, ToolChips, fmtDate, accountStyles as s } from "@/components/account/AccountUI";
-import { ArrowRight, ArrowUpRight, Check } from "@/components/ds/Icons";
-import { useAuth } from "@/lib/auth-context";
-import { getBrowserClient } from "@/lib/supabase-browser";
-import { planOf, isPaid, FLEX_CREDIT_PRICE_USD, PLUS_INITIAL_CREDITS, REFERRAL_MONTHLY_CAP } from "@/lib/plan";
+import UpgradeButton from "@/components/site/UpgradeButton";
 import InviteLink from "@/components/growth/InviteLink";
 import { CreatorCodeForm } from "@/components/growth/CreatorCode";
+import { Check } from "@/components/ds/Icons";
+import { useAuth, type PlanTier, type Profile } from "@/lib/auth-context";
+import { useUpgrade } from "@/lib/upgrade-context";
+import { getBrowserClient } from "@/lib/supabase-browser";
+import { STYLES } from "@/lib/styles";
+import {
+  headerCreditState,
+  isPaid,
+  planLabel,
+  planOf,
+  FLEX_CREDIT_PRICE_USD,
+  PLUS_INITIAL_CREDITS,
+  PLUS_PRICE_USD,
+  PRO_PRICE_USD,
+  REFERRAL_BONUS_DESIGNS,
+  REFERRAL_MONTHLY_CAP,
+} from "@/lib/plan";
 import type { InvoiceItem, InvoicesResponse } from "@/lib/api-types";
+import c from "@/components/account/AccountPage.module.css";
 
 function money(amount: number, currency: string): string {
   try {
-    return new Intl.NumberFormat("en-US", {
-      style: "currency",
-      currency: currency.toUpperCase(),
-    }).format(amount / 100);
+    return new Intl.NumberFormat("en-US", { style: "currency", currency: currency.toUpperCase() }).format(amount / 100);
   } catch {
     return `$${(amount / 100).toFixed(2)}`;
   }
+}
+
+// lib/plan.ts has prices but no feature lists, so the perks are the four that set tiers apart.
+const PERKS: { label: string; tiers: PlanTier[] }[] = [
+  { label: `All ${STYLES.length} vibes`, tiers: ["plus", "pro"] },
+  { label: "Full Hall Finder rankings", tiers: ["plus", "pro"] },
+  { label: "My Room with your roommates", tiers: ["pro"] },
+  { label: "3D Room Builder and Room Studio", tiers: ["pro"] },
+];
+
+/** The current plan on ink: name, what it cost (when bought), the perks it has, and the next step. */
+function PlanCard({ profile }: { profile: Profile }) {
+  const { openUpgrade } = useUpgrade();
+  const tier = planOf(profile.plan);
+  const purchasedAt = profile.plan_purchased_at ? fmtDate(profile.plan_purchased_at, { year: "numeric", month: "short", day: "numeric" }) : null;
+  const price = tier === "pro" ? PRO_PRICE_USD : tier === "plus" ? PLUS_PRICE_USD : null;
+  // Plans are one-time purchases: no renewal. A price only shows when the plan was bought (a creator code unlocks Plus free).
+  const meta =
+    tier === "flex"
+      ? [`${usd(FLEX_CREDIT_PRICE_USD)} per credit`, "Pay as you go", "No subscription"]
+      : tier === "free"
+        ? []
+        : [price && purchasedAt ? `${usd(price)} · paid once` : "One-time plan", purchasedAt ? `On ${purchasedAt}` : null, "No subscription"].filter(
+            (m): m is string => Boolean(m),
+          );
+  return (
+    <section className={c.plan} aria-labelledby="plan-title">
+      <div className={c.planTop}>
+        <div>
+          <p className={c.planEyebrow}>Current plan</p>
+          <h2 id="plan-title" className={c.planName}>
+            {planLabel(profile)}
+            <em>{tier === "free" ? "for now" : "plan"}</em>
+          </h2>
+          {tier === "free" && <p className={c.planSub}>No card, no subscription. Saving is always free.</p>}
+        </div>
+        {meta.length > 0 && (
+          <ul className={c.planMeta}>
+            {meta.map((m) => (
+              <li key={m}>{m}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <ul className={c.perks}>
+        {PERKS.map((p) => {
+          const has = p.tiers.includes(tier);
+          return (
+            <li key={p.label} data-off={has ? undefined : ""}>
+              {p.label}
+              {!has && <span className="ds-sr"> (not in your plan)</span>}
+            </li>
+          );
+        })}
+      </ul>
+      <div className={c.planActions}>
+        {tier === "free" && (
+          <button type="button" className={`${c.btn} ${c.yellow}`} onClick={() => openUpgrade()}>
+            Upgrade
+          </button>
+        )}
+        {(tier === "plus" || tier === "flex") && <UpgradeButton type="pro" className={`${c.btn} ${c.outlineWhite}`} />}
+        <Link href="/pricing" className={c.planLink}>
+          Compare every plan
+        </Link>
+      </div>
+    </section>
+  );
+}
+
+/** Design credits on a tape measure: the count, the way to get more, and the rules that are true for this plan. */
+function CreditsCard({ profile, justBought }: { profile: Profile; justBought: number | null }) {
+  const credit = headerCreditState(profile);
+  const tier = credit.tier;
+  const left = credit.designsLeft;
+  const action =
+    tier === "plus" ? (
+      <RechargeButton />
+    ) : tier === "flex" ? (
+      <a href="#buy-credits" className={`${c.btn} ${c.ink}`}>
+        Buy credits · {usd(FLEX_CREDIT_PRICE_USD)} each
+      </a>
+    ) : tier === "pro" ? (
+      <a href="#buy-credits" className={`${c.btn} ${c.ink}`}>
+        Top up · {usd(FLEX_CREDIT_PRICE_USD)} per credit
+      </a>
+    ) : (
+      <Link href="/pricing" className={`${c.btn} ${c.blue}`}>
+        See plans
+      </Link>
+    );
+  const notes = [
+    "Each new plan uses a credit.",
+    ...(tier === "pro" ? ["Switching between 2D and 3D uses none.", "Your Pro tools and saved designs remain available at zero credits."] : []),
+  ];
+  return (
+    <section className={c.tape} aria-labelledby="credits-title">
+      {justBought !== null && (
+        <p role="status" className={c.added}>
+          <Check size={14} />
+          {justBought} credit{justBought === 1 ? "" : "s"} added. Your next room is ready when you are.
+        </p>
+      )}
+      <h2 id="credits-title" className={c.tapeLabel}>
+        Design credits
+      </h2>
+      <div className={c.tapeMain}>
+        <p className={c.count}>
+          <b>{left}</b>
+          <em>{left === 1 ? "design left" : "designs left"}</em>
+        </p>
+        <div className={c.tapeAct}>{action}</div>
+      </div>
+      <div className={c.tapeNotes}>
+        {notes.map((n) => (
+          <p key={n}>{n}</p>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default function BillingPage() {
@@ -53,7 +185,7 @@ export default function BillingPage() {
       void refreshProfile();
       params.delete("credits");
       const qs = params.toString();
-      window.history.replaceState(null, "", window.location.pathname + (qs ? `?${qs}` : ""));
+      window.history.replaceState(null, "", window.location.pathname + (qs ? `?${qs}` : "") + window.location.hash);
     }
   }, [refreshProfile]);
 
@@ -64,13 +196,8 @@ export default function BillingPage() {
     (async () => {
       try {
         const supabase = getBrowserClient();
-        const token = supabase
-          ? (await supabase.auth.getSession()).data.session?.access_token
-          : null;
-        const res = await fetch("/api/account/invoices", {
-          method: "POST",
-          headers: token ? { Authorization: `Bearer ${token}` } : {},
-        });
+        const token = supabase ? (await supabase.auth.getSession()).data.session?.access_token : null;
+        const res = await fetch("/api/account/invoices", { method: "POST", headers: token ? { Authorization: `Bearer ${token}` } : {} });
         if (!res.ok) throw new Error(String(res.status));
         const data = (await res.json()) as InvoicesResponse;
         if (alive) setInvoices(data.invoices);
@@ -86,163 +213,104 @@ export default function BillingPage() {
     };
   }, [loading, user, justBought]);
 
-  const ready = !loading && Boolean(user);
+  const ready = !loading && Boolean(user) && Boolean(profile);
   const tier = planOf(profile?.plan);
 
   return (
-    <PageShell>
-      <AccountShell active="plan">
-        {!ready ? (
-          <div className={s.loading} aria-busy="true" aria-label="Loading billing">
-            <div className={`${s.skeleton} ${s.skeletonTall}`} />
-            <div className={s.skeleton} />
-          </div>
+    <PageShell navOverlay>
+      <AccountFrame page="billing" title={["Billing", "and plan."]} sub="Your plan, your design credits and your receipts." ready={ready}>
+        {!ready || !profile ? (
+          <>
+            <div className={c.skel} aria-busy="true" aria-label="Loading billing" />
+            <div className={`${c.skel} ${c.skelShort}`} />
+          </>
         ) : (
           <>
-            {justBought !== null && (
-              <div role="status" className={s.notice}>
-                <Check size={20} />
-                <span>
-                  <strong>{justBought} credit{justBought === 1 ? "" : "s"} added.</strong> Your next room is ready when you are.
-                </span>
-              </div>
-            )}
+            <div id="plan" className={c.group}>
+              <PlanCard profile={profile} />
+              {!isPaid(profile) && (
+                <section id="creator-code" className={`${c.card} ${c.slim}`} aria-labelledby="creator-code-title">
+                  <h3 id="creator-code-title">Have a creator code?</h3>
+                  <p>A creator code unlocks Plus free: {PLUS_INITIAL_CREDITS} plan credits and every Plus tool. One per account.</p>
+                  <CreatorCodeForm from="billing" />
+                </section>
+              )}
+            </div>
 
-            {profile ? (
-              <>
-                <PlanCard profile={profile} />
-                <ToolChips profile={profile} />
-              </>
-            ) : (
-              <div className={`${s.skeleton} ${s.skeletonTall}`} aria-busy="true" aria-label="Loading your plan" />
-            )}
-
-            {profile && <section id="buy-credits" className={`${s.card} ${s.buy}`} aria-labelledby="buy-credits-title">
-              <div>
-                <p className={s.buyKicker}>Keep the ideas coming</p>
-                <h2 id="buy-credits-title" className={s.cardTitle}>
-                  Buy plan credits
-                </h2>
-                <p className={s.cardLede}>
-                  Top up at ${FLEX_CREDIT_PRICE_USD.toFixed(2)} per credit. One credit generates one room plan. Buy what you
-                  need, when you need it.
+            <div id="credits" className={c.group}>
+              <CreditsCard profile={profile} justBought={justBought} />
+              <section id="buy-credits" className={`${c.card} ${c.slim}`} aria-labelledby="buy-credits-title">
+                <h3 id="buy-credits-title">Buy plan credits</h3>
+                <p>
+                  Top up at {usd(FLEX_CREDIT_PRICE_USD)} per credit. One credit generates one room plan. Buy what you need, when you need it.
                 </p>
-                <p className={s.flexPrice} aria-hidden="true">
-                  ${FLEX_CREDIT_PRICE_USD.toFixed(2)}
-                  <small>/credit</small>
+                <BuyCreditsForm source="billing" />
+              </section>
+              <section id="invite" className={`${c.card} ${c.slim}`} aria-labelledby="invite-title">
+                <h3 id="invite-title">Invite friends</h3>
+                <p>
+                  When a friend you invite makes their first design, you each get {REFERRAL_BONUS_DESIGNS} free design. Up to {REFERRAL_MONTHLY_CAP} a
+                  month from your invites.
                 </p>
-              </div>
-              <BuyCreditsForm source="billing" />
-            </section>}
+                <InviteLink from="billing" showStats />
+              </section>
+            </div>
 
-            {profile && <section id="invite" className={s.card} aria-labelledby="invite-title">
-              <h2 id="invite-title" className={s.cardTitle}>
-                Invite friends
-              </h2>
-              <p className={s.cardLede}>
-                When a friend you invite makes their first design, you each get a free design. Up to {REFERRAL_MONTHLY_CAP} a
-                month from your invites.
-              </p>
-              <InviteLink from="billing" showStats />
-            </section>}
-
-            {profile && !isPaid(profile) && <section id="creator-code" className={s.card} aria-labelledby="creator-code-title">
-              <h2 id="creator-code-title" className={s.cardTitle}>
-                Have a creator code?
-              </h2>
-              <p className={s.cardLede}>
-                A creator code unlocks Plus free: {PLUS_INITIAL_CREDITS} plan credits and every Plus tool. One per account.
-              </p>
-              <CreatorCodeForm from="billing" />
-            </section>}
-
-            <section id="purchases" className={s.card} aria-labelledby="purchase-history-heading">
-              <h2 id="purchase-history-heading" className={s.cardTitle}>
-                Purchases
-              </h2>
+            <Card id="payment" title="Payment and invoices" purpose="Payments are handled securely by Stripe.">
+              <Row id="purchases" label="Invoices" value="Receipts for every charge" helper="View and download past invoices." />
               {invoices === null ? (
-                <div className={s.skeleton} aria-busy="true" aria-label="Loading purchases" />
+                <div className={c.empty} aria-busy="true" aria-label="Loading purchases">
+                  <div className={`${c.skel} ${c.skelShort}`} />
+                </div>
               ) : invoicesFailed ? (
-                <div className={s.failed} role="status">
+                <div className={c.empty} role="status">
                   <h3>History is taking a moment.</h3>
                   <p>We couldn&apos;t load your purchases. Your plan and credits are unaffected.</p>
-                  <button type="button" className="ds-btn ds-btn--ghost-ink ds-btn--sm" onClick={() => window.location.reload()}>
+                  <button type="button" className={`${c.btn} ${c.line}`} onClick={() => window.location.reload()}>
                     Try again
                   </button>
                 </div>
               ) : invoices.length > 0 ? (
-                <table className={s.table}>
-                  <thead>
-                    <tr>
-                      <th scope="col">Item</th>
-                      <th scope="col" className={s.colDate}>
-                        Date
-                      </th>
-                      <th scope="col">Amount</th>
-                      <th scope="col" className={s.colReceipt}>
-                        Receipt
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {invoices.map((inv) => {
-                      const name = inv.description ?? "dormscape purchase";
-                      const date = fmtDate(inv.created, { year: "numeric", month: "short", day: "numeric" });
-                      const status = (
-                        <span className={s.status} data-state={inv.status}>
-                          {inv.status === "succeeded" ? "Paid" : inv.status}
-                        </span>
-                      );
-                      const receipt = inv.receipt_url ? (
-                        <a href={inv.receipt_url} target="_blank" rel="noopener noreferrer" className={s.receipt} aria-label={`Receipt for ${name}`}>
-                          Download <ArrowUpRight size={14} />
-                        </a>
-                      ) : (
-                        <span className={s.none}>None</span>
-                      );
-                      return (
-                        <tr key={inv.id}>
-                          <td>
-                            <span className={s.item}>{name}</span>
-                            <span className={s.mobileMeta}>
-                              {date}
-                              {status}
-                            </span>
-                          </td>
-                          <td className={s.colDate}>
-                            {date}
-                            {status}
-                          </td>
-                          <td>
-                            <span className={s.amount}>{money(inv.amount, inv.currency)}</span>
-                            {inv.receipt_url && <span className={s.mobileReceipt}>{receipt}</span>}
-                          </td>
-                          <td className={s.colReceipt}>{receipt}</td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
+                <ul className={c.purchases} aria-label="Purchases">
+                  {invoices.map((inv) => {
+                    const name = inv.description ?? "dormscape purchase";
+                    return (
+                      <li key={inv.id}>
+                        <div>
+                          <span className={c.pName}>{name}</span>
+                          <span className={c.pMeta}>
+                            {fmtDate(inv.created, { year: "numeric", month: "short", day: "numeric" })}
+                            <span className={`${c.chip} ${inv.status === "succeeded" ? c.green : ""}`}>{inv.status === "succeeded" ? "Paid" : inv.status}</span>
+                          </span>
+                        </div>
+                        <span className={c.pAmt}>{money(inv.amount, inv.currency)}</span>
+                        {inv.receipt_url ? (
+                          <a href={inv.receipt_url} target="_blank" rel="noopener noreferrer" className={c.pLink} aria-label={`Receipt for ${name}`}>
+                            Download
+                          </a>
+                        ) : (
+                          <span className={c.muted}>None</span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
               ) : (
-                <div className={s.empty}>
+                <div className={c.empty}>
                   <h3>A clean slate.</h3>
                   <p>No purchases yet. When you make one, the details and available receipts will appear here.</p>
                   {tier !== "pro" && (
-                    <Link href="/pricing" className="ds-btn ds-btn--ghost-ink ds-btn--sm">
-                      Explore one-time plans <ArrowRight size={16} />
+                    <Link href="/pricing" className={`${c.btn} ${c.line}`}>
+                      Explore one-time plans
                     </Link>
                   )}
                 </div>
               )}
-            </section>
-
-            <div className={s.pair}>
-              <ProfileCard profile={profile} email={user?.email} />
-              <DeleteAccountSection onLeave={() => { guardedRef.current = true; }} />
-            </div>
+              <Row label="Billing email" value={user?.email} />
+            </Card>
           </>
         )}
-      </AccountShell>
+      </AccountFrame>
     </PageShell>
   );
 }
