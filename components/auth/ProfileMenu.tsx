@@ -7,17 +7,9 @@ import { useAuth } from "@/lib/auth-context";
 import { useUpgrade } from "@/lib/upgrade-context";
 import { headerCreditState, planLabel, planOf } from "@/lib/plan";
 import { ChevronDown } from "@/components/ds/Icons";
+import RollingNumber from "@/components/ds/RollingNumber";
+import Avatar from "@/components/site/Avatar";
 import css from "@/components/site/HeaderMenus.module.css";
-
-function initialsOf(name: string): string {
-  const clean = name.trim();
-  if (!clean) return "?";
-  const at = clean.indexOf("@");
-  const base = at > 0 ? clean.slice(0, at) : clean;
-  const parts = base.split(/[\s._-]+/).filter(Boolean);
-  if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
-  return base.slice(0, 2).toUpperCase();
-}
 
 function Crown() {
   return (
@@ -28,20 +20,21 @@ function Crown() {
 }
 
 /**
- * Far-right header profile control, part of the shared site header (Nav), which
- * now renders on every page including the planner flow. Logged out: a highlighted
- * "Log in" pill that opens the shared auth modal. Logged in: an avatar +
- * @username + chevron that toggles a dropdown (Account / Saved designs /
- * Log out). Replaced the old AuthPill + ProfileButton controls. Closes on
- * outside click, Escape, and route change.
+ * The header account control. Logged out: "Log in". Logged in: in the site header,
+ * the account capsule (designs left on a scrap of tape, then the avatar); in the
+ * planner header, avatar + @username + chevron. Either opens the same menu: designs
+ * left, who you are, Account / My designs / Billing, Log out. Closes on outside
+ * click, Escape, and route change.
  */
 export default function ProfileMenu({
   onShowRoom3D,
+  capsule = false,
 }: {
   /** When provided, the dropdown gains a lower-priority "Room in 3D" item that
-   *  opens the live 3D introduction. The site header passes this; the planner
-   *  header omits it. */
+   *  opens the live 3D introduction. */
   onShowRoom3D?: () => void;
+  /** The site header's account capsule (credits + avatar). */
+  capsule?: boolean;
 } = {}) {
   const { user, profile, loading, openAuthModal, signOut } = useAuth();
   const { openUpgrade } = useUpgrade();
@@ -82,7 +75,7 @@ export default function ProfileMenu({
       <button
         type="button"
         onClick={() => openAuthModal("profile")}
-        className={`ds-login ${css.login}`}
+        className={capsule ? `ds-btn ds-btn--sm ds-btn--ghost-ink ${css.loginPill}` : `ds-login ${css.login}`}
       >
         Log in
       </button>
@@ -92,9 +85,10 @@ export default function ProfileMenu({
   const username = profile?.username ?? null;
   const display = username ?? user?.email ?? "account";
   const label = username ? `@${username}` : "Account";
-  // Tier-aware design credits (free + plus). Drives the mobile avatar badge and
-  // the prominent credits block at the top of the dropdown.
+  const avatar = profile?.avatar_url ?? null;
+  // Tier-aware design credits: the capsule's tape, and the strip at the top of the menu.
   const credit = profile ? headerCreditState(profile) : null;
+  const alert = credit?.show && credit.empty && <span className={css.alert} aria-label="Out of designs" role="img" />;
 
   async function handleLogout() {
     setLoggingOut(true);
@@ -104,32 +98,46 @@ export default function ProfileMenu({
   }
 
   return (
-    <div ref={rootRef} className={css.root}>
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-haspopup="menu"
-        aria-expanded={open}
-        aria-label="Account menu"
-        className={css.trigger}
-      >
-        <span className={css.avatar}>
-          {initialsOf(display)}
-          {/* Phone-only notification badge: something needs attention (out of
-              designs). Wider screens show the state via the header chip instead. */}
-          {credit?.show && credit.empty && (
-            <span className={css.alert} aria-label="Out of designs" role="img" />
-          )}
-        </span>
-        <span className={css.name}>{label}</span>
-        <span className={css.chev} aria-hidden="true"><ChevronDown size={14} /></span>
-      </button>
+    <div ref={rootRef} className={css.root} data-capsule={capsule || undefined}>
+      {capsule ? (
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-haspopup="menu"
+          aria-expanded={open}
+          aria-label={credit ? `Account menu, ${credit.designsLeft} design${credit.designsLeft === 1 ? "" : "s"} left` : "Account menu"}
+          className={css.capsule}
+          data-empty={credit?.empty || undefined}
+        >
+          {credit && <RollingNumber value={String(credit.designsLeft)} className={css.count} />}
+          <span className={css.capsuleAvatar}>
+            <Avatar className={css.avatar} src={avatar} name={display} />
+            {alert}
+          </span>
+        </button>
+      ) : (
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-haspopup="menu"
+          aria-expanded={open}
+          aria-label="Account menu"
+          className={css.trigger}
+        >
+          <span className={css.capsuleAvatar}>
+            <Avatar className={css.avatar} src={avatar} name={display} />
+            {/* Phone-only: out of designs (the planner header has no credits tape). */}
+            {alert}
+          </span>
+          <span className={css.name}>{label}</span>
+          <span className={css.chev} aria-hidden="true"><ChevronDown size={14} /></span>
+        </button>
+      )}
 
       {open && (
         <div role="menu" aria-label="Account" className={`${css.pop} ${css.menu}`}>
-          {/* Design credits: first and most prominent, on a strip of tape. Free
-              + Plus see a live count; at zero it becomes the Recharge/Upgrade
-              action. Saving is unlimited, so there is no saves counter. */}
+          {/* Design credits: first and most prominent, on a strip of tape. At zero
+              it becomes the Recharge/Upgrade action. */}
           {credit && (
             <div className={css.tape}>
               <div className={css.tapeRow}>
@@ -150,26 +158,23 @@ export default function ProfileMenu({
                   </button>
                 ) : (
                   // Free and Flex buy à-la-carte credits on the Billing page.
-                  <Link
-                    href="/account/billing"
-                    onClick={() => setOpen(false)}
-                    className={css.tapeAction}
-                  >
+                  <Link href="/account/billing" onClick={() => setOpen(false)} className={css.tapeAction}>
                     Buy credits
                   </Link>
                 ))}
             </div>
           )}
 
-          {/* Identity header, with the current tier shown as a distinct badge. */}
+          {/* Identity header, with the current tier (and Creator) as badges. */}
           <div className={css.who}>
-            <span className={`${css.avatar} ${css.avatarLg}`} aria-hidden="true">{initialsOf(display)}</span>
+            <Avatar className={`${css.avatar} ${css.avatarLg}`} src={avatar} name={display} />
             <div className={css.whoText}>
               <p className={css.whoName}>
                 <span>{label}</span>
                 {profile && (
                   <span className={css.tier} data-tier={planOf(profile.plan)}>{planLabel(profile)}</span>
                 )}
+                {profile?.creator_at && <span className={css.tier} data-tier="creator">Creator</span>}
               </p>
               {user?.email && <p className={css.whoEmail}>{user.email}</p>}
             </div>

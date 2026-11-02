@@ -448,10 +448,6 @@
   .cardHead { padding-inline: 14px; }
   .row { padding-left: 14px; }
 }
-/* Signed in: "Plan free", so the account controls stay compact and the links stay centred. */
-.actions:has(:global([aria-label="Account menu"])) .ctaLong { display: none; }
-.actions:has(:global([aria-label="Account menu"])) .ctaShort { display: inline; }
-.actions:has(:global([aria-label="Account menu"])) .cta svg { display: none; }
 /* The full bar needs ~1000px inside its plate, so it gives way to the menu button below 1100
    (iPad landscape, 1024, had the CTA hanging out of the plate once Hall Finder joined the links). */
 @media (max-width: 1099px) {
@@ -468,8 +464,20 @@
   .ctaLong { display: none; }
   .ctaShort { display: inline; }
   .actions .cta { min-height: 40px; padding: 0 14px; font-size: 14px; }
-  .cta svg { display: none; }
   .bar :global(.ds-wordmark__pro) { padding: 2px 4px; font-size: 8px; letter-spacing: 0.06em; }
+}
+/* Signed in, the capsule takes the room "design" had: "+ New" until the bar is wide. */
+@media (max-width: 1279px) {
+  .ctaNew .ctaLong { display: none; }
+  .ctaNew .ctaShort { display: inline; }
+  .actions .ctaNew { padding: 0 14px; }
+}
+/* Narrow phones: "+ New design" becomes the plus alone, so the logo and menu keep their room. */
+@media (max-width: 419px) {
+  .ctaNew .ctaShort { display: none; }
+  .actions .ctaNew { padding: 0 12px; }
+  /* Signed out, "Log in" is a pill: search moves to the menu sheet (it has its own button). */
+  .actions:has(:global(.ds-btn--ghost-ink)) > :first-child { display: none; }
 }
 /* Pro at 360-374: the tagged wordmark is the widest it gets. */
 @media (max-width: 374px) {

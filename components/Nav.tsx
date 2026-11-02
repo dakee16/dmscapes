@@ -6,10 +6,11 @@ import { usePathname } from "next/navigation";
 import { MotionToggle } from "@/components/experience/MotionProvider";
 import ProfileMenu from "@/components/auth/ProfileMenu";
 import Wordmark from "@/components/site/Wordmark";
-import HeaderCredits from "@/components/site/HeaderCredits";
 import SearchPalette from "@/components/site/SearchPalette";
 import { FeedbackDialog } from "@/components/site/FeedbackLink";
 import { ArrowRight, ArrowUpRight, ChevronDown, CloseIcon, MenuIcon, SearchIcon } from "@/components/ds/Icons";
+import { PlusIcon } from "@/components/studio-ui/icons";
+import { useAuth } from "@/lib/auth-context";
 import { useHallFinderOn } from "@/components/hall-finder/useHallFinderOn";
 import { track } from "@/lib/analytics";
 import s from "./ds/SiteNav.module.css";
@@ -32,6 +33,7 @@ const GROUPS: Group[] = [
     { label: "Plan my room", href: "/plan", detail: "A layout and shopping list, together" },
     { label: "Draw in 2D", href: "/plan/draw", detail: "Start with your own dimensions" },
     { label: "Build in 3D", href: "/plan/draw/3d", detail: "Walls, doors and windows with Pro" },
+    { label: "Room gallery", href: "/gallery", detail: "Real layouts students shared" },
   ] },
   { key: "rooms", label: "My rooms", caption: "A place for your plans and your people.", links: [
     { label: "My designs", href: "/rooms", detail: "Your workspaces and saved designs" },
@@ -171,6 +173,8 @@ export default function Nav({
   const close = () => { setMore(false); setMobileOpen(false); };
   const current = activeKey(pathname);
   const hallFinder = useHallFinderOn();
+  const { user, loading } = useAuth();
+  const signedIn = !loading && user !== null;
   const dark = tone === "dark" || groundDark;
 
   useEffect(close, [pathname]);
@@ -327,10 +331,14 @@ export default function Nav({
         </div>
         <div className={s.actions}>
           <SearchPalette hallFinder={hallFinder} />
-          <HeaderCredits />
-          <div className={s.profile}><ProfileMenu /></div>
-          <Link href="/plan" className={`ds-btn ds-btn--sm ${dark ? "ds-btn--yellow" : "ds-btn--ink"} ${s.cta}`}>
-            <span className={s.ctaLong}>Plan my room free</span><span className={s.ctaShort}>Plan free</span><ArrowRight size={16} />
+          <div className={s.profile}><ProfileMenu capsule /></div>
+          <Link href="/plan" className={`ds-btn ds-btn--sm ${dark ? "ds-btn--yellow" : "ds-btn--ink"} ${s.cta} ${signedIn ? s.ctaNew : ""}`}
+            aria-label={signedIn ? "New design" : undefined}>
+            {signedIn ? (
+              <><PlusIcon size={16} /><span className={s.ctaLong}>New design</span><span className={s.ctaShort}>New</span></>
+            ) : (
+              "Plan free"
+            )}
           </Link>
           <button type="button" className={s.menuBtn} aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen} aria-controls="site-navigation" onClick={() => { setMobileOpen(!mobileOpen); setMore(false); }}>

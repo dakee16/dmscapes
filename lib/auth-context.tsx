@@ -62,6 +62,10 @@ export interface Profile {
   /** When the user opted in to marketing email; null = off. Signup checkbox or
    *  the Account settings toggle (docs/migrations/20261031_marketing_opt_in.sql). */
   marketing_opt_in_at?: string | null;
+  /** Profile photo in the public avatars bucket (docs/migrations/20261103_creators_avatars.sql). */
+  avatar_url?: string | null;
+  /** Set while an approved creator (creators.status); shows the Creator badge. */
+  creator_at?: string | null;
 }
 
 export type PlanTier = "free" | "flex" | "plus" | "pro";

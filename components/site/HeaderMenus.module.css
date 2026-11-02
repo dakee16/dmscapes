@@ -1,6 +1,6 @@
-/* Header account controls (components/auth/ProfileMenu, components/site/
-   HeaderCredits): pills that sit beside the nav CTA, and paper popovers that
-   match the nav's More tray. */
+/* Header account controls (components/auth/ProfileMenu): the site header's
+   account capsule, the planner header's pill, and the paper menu that matches
+   the nav's More tray. */
 
 .root { position: relative; flex: none; }
 .login { cursor: pointer; white-space: nowrap; }
@@ -25,9 +25,8 @@
 .trigger:hover { box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.4); }
 .trigger[aria-expanded="true"] { box-shadow: inset 0 0 0 2px var(--ds-ink); }
 .trigger:focus-visible,
-.credits:focus-visible,
-.item:focus-visible,
-.recharge:focus-visible {
+.capsule:focus-visible,
+.item:focus-visible {
   outline: 3px solid var(--ds-blue);
   outline-offset: 3px;
 }
@@ -65,51 +64,48 @@
   box-shadow: 0 0 0 2px #fff;
 }
 
-/* Credits (site nav only): the live count on a scrap of tape, then
-   "designs". No pill until hover, like the nav links. */
-.credits {
+
+/* Site header: the account capsule, designs left on a scrap of tape, then the avatar. */
+.capsule {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   min-height: 44px;
   box-sizing: border-box;
-  padding: 0 10px 0 8px;
+  padding: 4px 4px 4px 8px;
   border: 0;
   border-radius: 999px;
-  background: none;
-  color: inherit;
-  font: 700 14px/1 var(--ds-sans);
-  white-space: nowrap;
+  background: #fff;
+  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.16);
+  color: var(--ds-ink);
   cursor: pointer;
-  transition: background-color 0.18s;
+  transition: box-shadow 0.2s;
 }
-.credits:hover,
-.credits[aria-expanded="true"] { background: var(--nav-hover, rgba(22, 22, 29, 0.06)); }
+.capsule:hover { box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.4); }
+.capsule[aria-expanded="true"] { box-shadow: inset 0 0 0 2px var(--ds-ink); }
+.capsuleAvatar { position: relative; display: inline-flex; flex: none; }
+.capsule .avatar { width: 34px; height: 34px; }
 .count {
-  display: inline-grid;
-  place-items: center;
-  min-width: 32px;
-  height: 26px;
+  /* A row: the rolling number puts each digit in its own box. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 28px;
   box-sizing: border-box;
   padding: 0 8px;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: var(--ds-tape);
   background-image: repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.55) 0 1px, transparent 1px 6px);
   background-size: 100% 5px;
   background-repeat: no-repeat;
   box-shadow: 0 2px 0 var(--ds-tape-shadow);
-  rotate: -3deg;
   color: var(--ds-ink);
   font: 850 15px/1 var(--ds-sans);
   font-variant-numeric: tabular-nums;
 }
-.credits[data-empty="true"] {
-  padding: 0 18px;
-  background: var(--ds-ink);
-  box-shadow: none;
-  color: var(--ds-yellow);
-}
-.credits[data-empty="true"]:hover { box-shadow: 4px 4px 0 var(--ds-pink); }
+.capsule[data-empty] .count { color: var(--ds-red); }
+.loginPill { white-space: nowrap; cursor: pointer; }
 
 /* ---------- Popovers ---------- */
 .pop {
@@ -132,7 +128,6 @@
   from { opacity: 0; transform: translate3d(0, -8px, 0) scale(0.98); }
 }
 .menu { width: 292px; padding: 8px; }
-.buy { width: 360px; max-width: calc(100vw - 24px); padding: 20px; }
 
 /* Designs left: a strip of tape with the count */
 .tape {
@@ -223,6 +218,7 @@
 .tier[data-tier="plus"] { background: var(--ds-ink); color: var(--ds-yellow); }
 .tier[data-tier="pro"] { background: var(--ds-blue); color: #fff; }
 .tier[data-tier="flex"] { background: var(--ds-yellow); color: var(--ds-ink); }
+.tier[data-tier="creator"] { background: var(--ds-pink); color: #fff; }
 
 .items { padding: 6px 0; }
 .items + .items { border-top: 1px solid var(--ds-line); }
@@ -263,75 +259,23 @@
 .root .logout:hover svg { color: currentColor; }
 .root .logout:disabled { cursor: wait; opacity: 0.6; }
 
-/* Buy credits popover */
-.buyHead {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 16px;
-  padding-bottom: 14px;
-  border-bottom: 2px solid #e85a6b;
-}
-.buyTitle {
-  margin: 0;
-  font-size: 21px;
-  font-weight: 850;
-  font-stretch: 90%;
-  letter-spacing: -0.02em;
-}
-.root .recharge {
-  display: block;
-  width: 100%;
-  margin-top: 14px;
-  padding: 14px 0 0;
-  border: 0;
-  border-top: 1px solid var(--ds-line);
-  border-radius: 0;
-  background: none;
-  color: var(--ds-muted);
-  font: 650 14px var(--ds-sans);
-  text-align: center;
-  text-decoration: underline;
-  text-decoration-color: rgba(22, 22, 29, 0.25);
-  text-underline-offset: 3px;
-  cursor: pointer;
-}
-.root .recharge:hover { color: var(--ds-blue); text-decoration-color: currentColor; }
 
 @media (max-width: 639px) {
   .name, .chev { display: none; }
   .trigger { padding: 0; width: 44px; justify-content: center; }
   .avatar { width: 36px; height: 36px; }
   /* Phones: the menu hangs from the header bar's right edge, not the avatar */
-  .root:not([data-credits]) { position: static; }
+  .root { position: static; }
   .menu { top: calc(100% + 4px); right: 0; width: min(320px, 100%); }
 }
-/* The site nav's account trigger: avatar, @username and chevron with no
-   pill until hover (the planner header keeps the white pill above). */
-:global(.ds-site-nav) .trigger { padding: 0 10px 0 6px; background: none; box-shadow: none; color: inherit; }
-:global(.ds-site-nav) .trigger:hover,
-:global(.ds-site-nav) .trigger[aria-expanded="true"] { background: var(--nav-hover); box-shadow: none; }
-:global(.ds-site-nav) .chev { color: inherit; opacity: 0.6; }
+@media (max-width: 479px) { .loginPill { min-height: 40px; padding: 0 12px; font-size: 14px; } }
+/* The smallest phones: "Log in" as plain text, as it was before the pill. */
+@media (max-width: 359px) { .loginPill { padding: 0 6px; background: none; box-shadow: none; } }
+/* The tape gives way to the avatar's dot on narrow phones. */
+@media (max-width: 479px) { .capsule .count { display: none; } .capsule { padding: 4px; } }
+@media (min-width: 480px) { .capsule .alert { display: none; } }
+@media (min-width: 768px) { .trigger .alert { display: none; } }
+:global(.ds-site-nav[data-tone="dark"]) .capsule { background: rgba(255, 255, 255, 0.08); box-shadow: inset 0 0 0 1.5px rgba(244, 243, 238, 0.3); color: #fff; }
 :global(.ds-site-nav[data-tone="dark"]) .avatar { box-shadow: 0 0 0 1.5px rgba(244, 243, 238, 0.3); }
-/* A long @username truncates rather than pushing the row past the plate. */
-:global(.ds-site-nav) .root:not([data-credits]) { flex: 0 1 auto; min-width: 0; }
-:global(.ds-site-nav) .trigger { max-width: 100%; }
-/* Compact account controls in the site header at every width, so the links
-   stay centred: the avatar alone, and the credits count with its word kept
-   for screen readers only. */
-:global(.ds-site-nav) :is(.name, .chev) { display: none; }
-:global(.ds-site-nav) .trigger { width: 42px; padding: 0; justify-content: center; }
-:global(.ds-site-nav) .credits { padding: 0 6px; }
-:global(.ds-site-nav) .creditsLabel {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-@media (min-width: 768px) { .alert { display: none; } }
-@media (max-width: 767px) { .root[data-credits] { display: none; } }
 @media (prefers-reduced-motion: reduce) { .pop { animation: none; } }
 :global(.dm-app[data-motion="paused"]) .pop { animation: none; }
