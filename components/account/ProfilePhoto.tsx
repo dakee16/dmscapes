@@ -4,11 +4,13 @@ import { useRef, useState } from "react";
 import { useAuth } from "@/lib/auth-context";
 import { bearer } from "@/lib/invites";
 import { track } from "@/lib/analytics";
-import s from "./account.module.css";
+import c from "./AccountPage.module.css";
 
 const TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_PICK = 10 * 1024 * 1024; // the original, before it's shrunk
 const SIZE = 256;
+/** Shown beside the photo buttons (the Picture row's helper on the settings page). */
+export const PHOTO_HINT = `JPEG, PNG or WebP, up to 10 MB. We crop it square and shrink it to ${SIZE} px.`;
 
 /** Centre-crop to a square and redraw at 256 px: only the pixels survive (no metadata,
  *  no location, nothing else hidden in the file). WebP where the browser can, else JPEG. */
@@ -80,7 +82,7 @@ export default function ProfilePhoto() {
   }
 
   return (
-    <div className={s.photoActions}>
+    <div>
       <input
         ref={input}
         type="file"
@@ -91,17 +93,18 @@ export default function ProfilePhoto() {
           if (file) void pick(file);
         }}
       />
-      <button type="button" className="ds-btn ds-btn--sm ds-btn--ghost-ink" disabled={busy} onClick={() => input.current?.click()}>
-        {busy ? "Saving…" : profile?.avatar_url ? "Change photo" : "Add a photo"}
-      </button>
-      {profile?.avatar_url && (
-        <button type="button" className={s.linkBtn} disabled={busy} onClick={() => void remove()}>
-          Remove
+      <div className={c.edit}>
+        <button type="button" className={`${c.btn} ${c.line}`} disabled={busy} onClick={() => input.current?.click()}>
+          {busy ? "Saving…" : profile?.avatar_url ? "Change photo" : "Add a photo"}
         </button>
-      )}
-      <p className={s.photoHint}>JPEG, PNG or WebP, up to 10 MB. We crop it square and shrink it to {SIZE} px.</p>
+        {profile?.avatar_url && (
+          <button type="button" className={`${c.btn} ${c.ghost}`} disabled={busy} onClick={() => void remove()}>
+            Remove
+          </button>
+        )}
+      </div>
       {error && (
-        <p className={s.formError} role="alert">
+        <p className={c.msg} data-tone="bad" role="alert">
           {error}
         </p>
       )}
