@@ -1,75 +1,41 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { EXAMPLE_ITEMS, HERO_ROOM, SHOWCASE_BUDGET, examplePlan, feetInches, spokenFeet } from "@/lib/home-data";
-import { isWide, scrub, useScene } from "./flow";
+import { useRef } from "react";
+import { HERO_ROOM, SHOWCASE_BUDGET, examplePlan, feetInches, spokenFeet } from "@/lib/home-data";
+import { scrub, useScene } from "./flow";
 import H2 from "./H2";
 import css from "./Home.module.css";
 
-const QUESTIONS = [
-  { q: "“How big is my room?”", a: "Real dimensions for your exact hall" },
-  { q: "“Will it fit?”", a: "Every piece placed on your floor plan" },
-  { q: "“Do I need all this?”", a: "A list for your room, not every room" },
-];
 const EXAMPLE = examplePlan(SHOWCASE_BUDGET);
+const BARS = 36;
 
 /**
- * 02 · Why plan. A fit check of the real Geary Hall double answers the three
- * questions in turn (an Apple Feature Block stepper): the exact size replaces
- * "approx.", the furniture and rug land and fit, and a generic list becomes
- * the example plan. On wide screens the section holds while scroll steps
- * through them; a click works too. Still, it shows the last step.
+ * 02 · Why plan. A Kokonut Widget Grid of the three questions, each answered by a
+ * drawing of the real Geary Hall double that plays out as the card scrolls up: the
+ * exact size replaces "approx.", the furniture and rug land and fit, and a generic
+ * list becomes the example plan. Nothing pins: each card's --q runs 0 → 1 with its
+ * own position (the card's <li>, which the row reveal never moves, top at 88% → 22% of the screen), and CSS draws everything from it.
+ * Still (no JS, reduced motion, Motion off), --q stays 1: every drawing finished.
  */
 export default function ProblemSection() {
-  const section = useRef<HTMLElement>(null);
-  const card = useRef<HTMLElement>(null);
-  const pinned = useRef(false);
-  const [step, setStep] = useState(2);
+  const grid = useRef<HTMLUListElement>(null);
 
   useScene((A) => {
-    const pr = section.current;
-    if (!pr) return;
-    const wide = isWide();
-    pinned.current = wide;
-    setStep(0);
-    // The dimension lines draw in as the card arrives.
-    const offCard = card.current ? scrub(A, card.current, "--p", { target: card.current, enter: "end start", leave: "58% start" }) : () => {};
-    const obs = A.onScroll({
-      target: pr,
-      enter: wide ? "start start" : "55% start",
-      leave: wide ? "end end" : "45% end",
-      onUpdate: (o) => {
-        const x = o.progress * 3;
-        const i = Math.min(2, Math.floor(x));
-        pr.style.setProperty("--qp", Math.min(1, x - i).toFixed(3));
-        setStep(i);
-      },
-    });
-    return () => {
-      offCard();
-      obs.revert();
-      pr.style.removeProperty("--qp");
-      pinned.current = false;
-      setStep(2);
-    };
+    const cards = Array.from(grid.current?.querySelectorAll<HTMLElement>("[data-q]") ?? []);
+    const offs = cards.map((c) => scrub(A, c, "--q", { target: c, enter: "88% start", leave: "22% start" }));
+    return () => offs.forEach((off) => off());
   });
 
-  // While the section holds, each question lives at its own stretch of the scroll.
-  const pick = (k: number) => {
-    const pr = section.current;
-    if (!pinned.current || !pr) return setStep(k);
-    const range = pr.offsetHeight - window.innerHeight;
-    window.scrollTo({ top: pr.getBoundingClientRect().top + window.scrollY + range * ((k + 0.5) / 3), behavior: "smooth" });
-  };
-
   return (
-    <section ref={section} id="why" className={css.problem} data-bg="#f5e9d8" aria-labelledby="problem-title">
-      <div className={`ds-wrap ${css.prGrid}`}>
-        <div className={css.prCopy}>
-          <p className="ds-eyebrow" data-rv="">
-            Why dorm shopping goes wrong
-          </p>
-          <H2 id="problem-title" s="Winging it gets returned." f="Planning fits." />
+    <section id="why" className={css.problem} data-bg="#f5e9d8" aria-labelledby="problem-title">
+      <div className="ds-wrap">
+        <div className={css.prHead}>
+          <div>
+            <p className="ds-eyebrow" data-rv="">
+              Why dorm shopping goes wrong
+            </p>
+            <H2 id="problem-title" s="Winging it gets returned." f="Planning fits." />
+          </div>
           <p className={`ds-lede ${css.lede}`} data-rv="">
             Housing pages list room sizes as approximate, if they list them at all. Generic packing lists run to dozens
             of items. So families buy blind, and{" "}
@@ -77,73 +43,103 @@ export default function ProblemSection() {
               the futon goes back.
             </mark>
           </p>
-          <ol className={css.qsteps} data-rv="">
-            {QUESTIONS.map((r, i) => (
-              <li key={r.q} data-on={step === i || undefined}>
-                <button type="button" className={css.qBtn} aria-pressed={step === i} onClick={() => pick(i)}>
-                  <span className={css.qn} aria-hidden="true">0{i + 1}</span>
-                  <span className={css.qq}>{r.q}</span>
-                  <span className={css.qa}>{r.a}</span>
-                </button>
-                <span className={css.qBar} aria-hidden="true">
-                  <i />
-                </span>
-              </li>
-            ))}
-          </ol>
         </div>
-        {HERO_ROOM && <FitCheck cardRef={card} step={step} />}
+        <ul ref={grid} className={css.wg}>
+          <Card k={0} n="01" q="“How big is my room?”" a="Real dimensions for your exact hall">
+            {HERO_ROOM && <SizeArt />}
+          </Card>
+          <Card k={1} n="02" q="“Will it fit?”" a="Every piece placed on your floor plan">
+            {HERO_ROOM && <FitArt />}
+          </Card>
+          <Card k={2} n="03" q="“Do I need all this?”" a="A list for your room, not every room">
+            <ListArt />
+          </Card>
+        </ul>
       </div>
     </section>
   );
 }
 
-function FitCheck({ cardRef, step }: { cardRef: React.RefObject<HTMLElement | null>; step: number }) {
+function Card({ k, n, q, a, children }: { k: number; n: string; q: string; a: string; children: React.ReactNode }) {
+  return (
+    <li data-q="" style={{ "--k": k } as React.CSSProperties}>
+      <div data-rv="row">
+        <div className={css.wc}>
+          <div className={css.wcText}>
+            <span className={css.wcN} aria-hidden="true">
+              {n}
+            </span>
+            <p className={css.wcQ}>{q}</p>
+            <p className={css.wcA}>{a}</p>
+          </div>
+          {children}
+        </div>
+      </div>
+    </li>
+  );
+}
+
+/** The real Geary Hall double, to scale: window on the top wall, door and swing on the bottom. */
+function Room({ children }: { children?: React.ReactNode }) {
+  const room = HERO_ROOM!;
+  return (
+    <div className={css.rm}>
+      <div className={css.rmBox} style={{ aspectRatio: `${room.lengthFt} / ${room.widthFt}` }}>
+        <span className={css.rmWin} />
+        <span className={css.rmDoor} />
+        <span className={css.rmSwing} />
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function SizeArt() {
   const room = HERO_ROOM!;
   const len = feetInches(room.lengthFt), wid = feetInches(room.widthFt);
   return (
-    <figure
-      ref={cardRef}
-      className={css.fc}
-      data-k={step}
-      data-rv="fc"
-      aria-label={`A fit check of the ${room.school} ${room.hall} double, ${spokenFeet(room.lengthFt)} by ${spokenFeet(room.widthFt)}: the exact room size replaces an approximate one, the furniture and a 6 by 4 foot rug are placed and fit, and a generic list of dozens of items becomes a ${EXAMPLE.pieces}-piece example plan.`}
+    <div
+      className={css.wcArt}
+      role="img"
+      aria-label={`The ${room.school} ${room.hall} double drawn to its real size, ${spokenFeet(room.lengthFt)} by ${spokenFeet(room.widthFt)}, in place of the bigger “approx.” outline from the housing page.`}
     >
-      <div className={css.fcTop}>
-        <span className={css.fcId}>
-          <strong>
-            {room.school} · {room.hall}
-          </strong>
-          <span>
-            DOUBLE · <span className={css.ft}>{len} × {wid}</span>
+      <span className={css.wcTag} aria-hidden="true">
+        {room.school} · {room.hall} · Double
+      </span>
+      <div aria-hidden="true" style={{ display: "contents" }}>
+        <Room>
+          <span className={css.ax}>
+            <i className={css.axLine} />
+            <em className={css.axTag}>“Approx.” on the housing page</em>
           </span>
-        </span>
-        <span className={css.fcStamp} aria-hidden="true">
-          <b className={css.sw}>WINGING IT</b>
-          <b className={css.sp}>PLANNED</b>
-        </span>
+          <span className={css.dw} />
+          <em className={`${css.dimL} ${css.dwL}`}>{len}</em>
+          <span className={css.dh} />
+          <em className={`${css.dimL} ${css.dhL}`}>{wid}</em>
+        </Room>
       </div>
-      <div className={css.fcStage} aria-hidden="true">
-        <span className={`${css.dim} ${css.dw}`}>
-          <i />
-          <em>{len}</em>
-        </span>
-        <span className={`${css.dim} ${css.dh}`}>
-          <i />
-          <em>{wid}</em>
-        </span>
-        <div className={css.fcRoom} style={{ aspectRatio: `${room.lengthFt} / ${room.widthFt}` }}>
-          <span className={css.ghost}>
-            <em>“Approx.” on the housing page</em>
-          </span>
-          <span className={css.win} />
-          <span className={css.door} />
-          <span className={css.swing} />
+    </div>
+  );
+}
+
+function FitArt() {
+  const room = HERO_ROOM!;
+  return (
+    <div
+      className={css.wcArt}
+      role="img"
+      aria-label={`The same ${room.hall} double with two beds, two desks and a 6 by 4 foot rug placed on the floor plan: everything fits.`}
+    >
+      <span className={css.wcTag} aria-hidden="true">
+        Fit check · 5 pieces
+      </span>
+      <div aria-hidden="true" style={{ display: "contents" }}>
+        <Room>
           <span className={`${css.fu} ${css.bed} ${css.bedA}`} />
           <span className={`${css.fu} ${css.bed} ${css.bedB}`} />
           <span className={`${css.fu} ${css.desk} ${css.deskA}`} />
           <span className={`${css.fu} ${css.desk} ${css.deskB}`} />
-          <span className={`${css.fu} ${css.rug}`}>
+          <span className={css.rug}>
             <em>6′0″ × 4′0″</em>
           </span>
           <span className={css.fits}>
@@ -152,21 +148,37 @@ function FitCheck({ cardRef, step }: { cardRef: React.RefObject<HTMLElement | nu
             </svg>
             Fits
           </span>
-        </div>
-        <div className={css.fcList}>
-          <p className={css.flH}>
-            <span className={css.flG}>Generic list · dozens of items</span>
-            <span className={css.flP}>
-              Example plan · {EXAMPLE.pieces} pieces · ${EXAMPLE.total}
-            </span>
-          </p>
-          <div className={css.flBars}>
-            {Array.from({ length: Math.max(36, EXAMPLE_ITEMS.length) }, (_, i) => (
-              <i key={i} data-keep={i < EXAMPLE.pieces || undefined} />
-            ))}
-          </div>
-        </div>
+        </Room>
       </div>
-    </figure>
+    </div>
+  );
+}
+
+function ListArt() {
+  const spare = SHOWCASE_BUDGET - EXAMPLE.total;
+  return (
+    <div
+      className={css.wcArt}
+      role="img"
+      aria-label={`A generic list of dozens of items shrinks to a ${EXAMPLE.pieces}-piece example plan: $${EXAMPLE.total} of a $${SHOWCASE_BUDGET} budget, $${spare} to spare.`}
+    >
+      <div className={css.ls} aria-hidden="true">
+        <p className={css.lsH}>
+          <span className={css.lsG}>Generic list · dozens of items</span>
+          <span className={css.lsP}>Example plan · {EXAMPLE.pieces} pieces</span>
+        </p>
+        <div className={css.lsBars}>
+          {Array.from({ length: BARS }, (_, i) => (
+            <i key={i} {...(i < EXAMPLE.pieces ? { "data-keep": "" } : { "data-drop": "" })} />
+          ))}
+        </div>
+        <p className={css.lsF}>
+          <span>
+            ${EXAMPLE.total} of ${SHOWCASE_BUDGET}
+          </span>
+          <b>${spare} to spare</b>
+        </p>
+      </div>
+    </div>
   );
 }

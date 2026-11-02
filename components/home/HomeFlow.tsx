@@ -76,10 +76,12 @@ export default function HomeFlow({ rail, children }: { rail: { id: string; label
       // A row of cards arrives left to right: each column starts a little later.
       const rows = new Map<Element | null, Map<number, HTMLElement[]>>();
       all('[data-rv="row"]').forEach((el) => {
-        const byTop = rows.get(el.parentElement) ?? new Map<number, HTMLElement[]>();
+        // A card may sit inside its own <li>: the row is then the list.
+        const list = el.closest("li")?.parentElement ?? el.parentElement;
+        const byTop = rows.get(list) ?? new Map<number, HTMLElement[]>();
         const top = Math.round(el.offsetTop / 8);
         byTop.set(top, [...(byTop.get(top) ?? []), el]);
-        rows.set(el.parentElement, byTop);
+        rows.set(list, byTop);
       });
       rows.forEach((byTop) =>
         byTop.forEach((row) =>
