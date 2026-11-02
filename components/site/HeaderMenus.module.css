@@ -65,43 +65,46 @@
 }
 
 
-/* Site header: the account capsule, designs left on a scrap of tape, then the avatar. */
+/* Site header: the account capsule. An ink-outlined pill: designs left on the end of a
+   tape measure (ticks along the top, a darker bottom edge), then the ink avatar. */
 .capsule {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 44px;
+  gap: 4px;
+  height: 44px;
   box-sizing: border-box;
-  padding: 4px 4px 4px 8px;
-  border: 0;
+  padding: 2.5px;
+  border: 2.5px solid var(--ds-ink);
   border-radius: 999px;
   background: #fff;
-  box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.16);
   color: var(--ds-ink);
   cursor: pointer;
   transition: box-shadow 0.2s;
 }
-.capsule:hover { box-shadow: inset 0 0 0 1.5px rgba(22, 22, 29, 0.4); }
-.capsule[aria-expanded="true"] { box-shadow: inset 0 0 0 2px var(--ds-ink); }
+.capsule:hover,
+.capsule[aria-expanded="true"] { box-shadow: 0 0 0 5px rgba(36, 73, 255, 0.18); }
 .capsuleAvatar { position: relative; display: inline-flex; flex: none; }
-.capsule .avatar { width: 34px; height: 34px; }
+.capsule .avatar { width: 34px; height: 34px; font: 600 13px/1 var(--ds-mono); }
 .count {
   /* A row: the rolling number puts each digit in its own box. */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 34px;
-  height: 28px;
+  min-width: 48px;
+  height: 32px;
   box-sizing: border-box;
-  padding: 0 8px;
-  border-radius: 4px;
+  padding: 6px 9px 0 12px;
+  border-radius: 16px 0 0 16px;
   background-color: var(--ds-tape);
-  background-image: repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.55) 0 1px, transparent 1px 6px);
-  background-size: 100% 5px;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.62) 0 1.5px, transparent 1.5px 13px),
+    repeating-linear-gradient(90deg, rgba(22, 22, 29, 0.5) 0 1.5px, transparent 1.5px 13px);
+  background-size: 100% 7px, 100% 4px;
+  background-position: 11px 0, 17.5px 0;
   background-repeat: no-repeat;
-  box-shadow: 0 2px 0 var(--ds-tape-shadow);
+  box-shadow: inset 0 -2.5px 0 var(--ds-tape-edge);
   color: var(--ds-ink);
-  font: 850 15px/1 var(--ds-sans);
+  font: 850 17px/1 var(--ds-sans);
   font-variant-numeric: tabular-nums;
 }
 .capsule[data-empty] .count { color: var(--ds-red); }
@@ -272,10 +275,10 @@
 /* The smallest phones: "Log in" as plain text, as it was before the pill. */
 @media (max-width: 359px) { .loginPill { padding: 0 6px; background: none; box-shadow: none; } }
 /* The tape gives way to the avatar's dot on narrow phones. */
-@media (max-width: 479px) { .capsule .count { display: none; } .capsule { padding: 4px; } }
+@media (max-width: 479px) { .capsule .count { display: none; } }
 @media (min-width: 480px) { .capsule .alert { display: none; } }
 @media (min-width: 768px) { .trigger .alert { display: none; } }
-:global(.ds-site-nav[data-tone="dark"]) .capsule { background: rgba(255, 255, 255, 0.08); box-shadow: inset 0 0 0 1.5px rgba(244, 243, 238, 0.3); color: #fff; }
+:global(.ds-site-nav[data-tone="dark"]) .capsule { background: rgba(255, 255, 255, 0.08); border-color: rgba(244, 243, 238, 0.5); color: #fff; }
 :global(.ds-site-nav[data-tone="dark"]) .avatar { box-shadow: 0 0 0 1.5px rgba(244, 243, 238, 0.3); }
 @media (prefers-reduced-motion: reduce) { .pop { animation: none; } }
 :global(.dm-app[data-motion="paused"]) .pop { animation: none; }
