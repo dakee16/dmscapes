@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import LegalLayout from "@/components/legal/LegalLayout";
 import LegalSection from "@/components/legal/LegalSection";
-import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, FLEX_CREDIT_PRICE_USD, REFERRAL_MONTHLY_CAP } from "@/lib/plan";
+import { PLUS_INITIAL_CREDITS, PRO_INITIAL_CREDITS, RECHARGE_CREDITS, PLUS_PRICE_USD, PRO_PRICE_USD, RECHARGE_PRICE_USD, FLEX_CREDIT_PRICE_USD, REFERRAL_MONTHLY_CAP, CREATOR_MIN_FOLLOWERS } from "@/lib/plan";
 
 // Structural draft reflecting dormscape's actual data flows and business
 // model as of this writing. Have a legal professional (or a service like
@@ -39,7 +39,7 @@ export default function TermsPage() {
     <LegalLayout
       doc="terms"
       title="Terms of Service"
-      updated="November 2, 2026"
+      updated="November 3, 2026"
       intro={
         <p>
           dormscape is a free tool. These terms explain what that means: what you can
@@ -161,6 +161,10 @@ export default function TermsPage() {
           codes can be limited in number or time. Free designs and codes have no cash value and can&rsquo;t be
           transferred. We may end these programs, or remove anything earned through abuse such as inviting your own
           accounts.
+        </p>
+        <p>
+          Creator status is for people with {CREATOR_MIN_FOLLOWERS.toLocaleString("en-US")}{" "}or more followers on Instagram or
+          TikTok, checked by us, and we may decline or remove it at any time.
         </p>
       </LegalSection>
 
