@@ -19,11 +19,11 @@ export default function PricingSection() {
   return (
     <section id="pricing" className={css.pricing} data-bg="#dce1f5" aria-labelledby="pricing-title">
       <div className="ds-wrap">
-        <p className="ds-eyebrow" data-rv="">
+        <p className="ds-eyebrow">
           Pricing · one-time, no subscription
         </p>
         <H2 id="pricing-title" s="Start free." f="Upgrade once." />
-        <p className={`ds-lede ${css.pricingLede}`} data-rv="">
+        <p className={`ds-lede ${css.pricingLede}`}>
           Saving your designs is always free.
         </p>
         <div className={css.priceGrid}>
@@ -66,7 +66,7 @@ export default function PricingSection() {
             </article>
           ))}
         </div>
-        <p className={css.faq} data-rv="">
+        <p className={css.faq}>
           Questions about credits or what&apos;s included?{" "}
           <Link href="/faq" className="ds-link">
             Read the FAQ

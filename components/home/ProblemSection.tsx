@@ -31,12 +31,12 @@ export default function ProblemSection() {
       <div className="ds-wrap">
         <div className={css.prHead}>
           <div>
-            <p className="ds-eyebrow" data-rv="">
+            <p className="ds-eyebrow">
               Why dorm shopping goes wrong
             </p>
             <H2 id="problem-title" s="Winging it gets returned." f="Planning fits." />
           </div>
-          <p className={`ds-lede ${css.lede}`} data-rv="">
+          <p className={`ds-lede ${css.lede}`}>
             Housing pages list room sizes as approximate, if they list them at all. Generic packing lists run to dozens
             of items. So families buy blind, and{" "}
             <mark className={css.marker} data-rv="marker" data-anim="">

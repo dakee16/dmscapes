@@ -54,11 +54,11 @@ export default function VibesSection({ vibes }: { vibes: Vibe[] }) {
           </div>
         </div>
         <div className={css.vbCopy}>
-          <p className="ds-eyebrow" data-rv="">
+          <p className="ds-eyebrow">
             Style showcase · {vibes.length} styles
           </p>
           <H2 id="vibes-title" s="Pick a vibe." f="We make it fit." />
-          <p className={`ds-lede ${css.lede}`} data-rv="">
+          <p className={`ds-lede ${css.lede}`}>
             Every vibe is a full plan: bedding, lighting, storage and decor, priced to your budget and arranged to your
             floor plan.
           </p>
@@ -81,7 +81,7 @@ export default function VibesSection({ vibes }: { vibes: Vibe[] }) {
               </div>
             ))}
           </div>
-          <div className={css.own} data-rv="">
+          <div className={css.own}>
             <div>
               <div className={css.ownH}>
                 <h3>Create your own vibe</h3>

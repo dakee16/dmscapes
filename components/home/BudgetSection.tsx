@@ -29,15 +29,15 @@ export default function BudgetSection() {
     <section id="budget" className={css.budget} data-bg="#f6d0d4" aria-labelledby="budget-title">
       <div className={`ds-wrap ${css.bdGrid}`}>
         <div className={css.bdCopy}>
-          <p className="ds-eyebrow" data-rv="">
+          <p className="ds-eyebrow">
             For whoever&apos;s holding the card
           </p>
           <H2 id="budget-title" s="See the total" f="before anyone swipes." />
-          <p className={`ds-lede ${css.lede}`} data-rv="">
+          <p className={`ds-lede ${css.lede}`}>
             Set a budget from {usd(ROOM_BUDGET.min)} to {usd(ROOM_BUDGET.max)}. dormscape fills your room with picks priced
             to fit it, each with a live Amazon link.
           </p>
-          <p className={css.bdFoot} data-rv="">
+          <p className={css.bdFoot}>
             Plus exports the whole list as a PDF for whoever&apos;s paying.
           </p>
         </div>

@@ -10,11 +10,11 @@ export default function FinalCta() {
     <section id="start" className={css.final} data-bg="#e8a622" aria-labelledby="final-title">
       <div className={`ds-wrap ${css.fnGrid}`}>
         <div>
-          <p className="ds-eyebrow" data-rv="">
+          <p className="ds-eyebrow">
             Your next chapter starts here
           </p>
           <H2 id="final-title" s="Your room" f="is waiting." riso />
-          <div className={css.ctaRow} data-rv="">
+          <div className={css.ctaRow}>
             <span className={css.corner} data-anim="">
               <Link href="/plan" className="ds-btn ds-btn--ink-yellow ds-btn--lg">
                 Make room
