@@ -31,12 +31,12 @@ export default function ProblemSection() {
       <div className="ds-wrap">
         <div className={css.prHead}>
           <div>
-            <p className="ds-eyebrow" data-rv="">
+            <p className="ds-eyebrow">
               Why dorm shopping goes wrong
             </p>
             <H2 id="problem-title" s="Winging it gets returned." f="Planning fits." />
           </div>
-          <p className={`ds-lede ${css.lede}`} data-rv="">
+          <p className={`ds-lede ${css.lede}`}>
             Housing pages list room sizes as approximate, if they list them at all. Generic packing lists run to dozens
             of items. So families buy blind, and{" "}
             <mark className={css.marker} data-rv="marker" data-anim="">
@@ -45,13 +45,13 @@ export default function ProblemSection() {
           </p>
         </div>
         <ul ref={grid} className={css.wg}>
-          <Card k={0} n="01" q="“How big is my room?”" a="Real dimensions for your exact hall">
+          <Card k={0} q="“How big is my room?”" a="Real dimensions for your exact hall">
             {HERO_ROOM && <SizeArt />}
           </Card>
-          <Card k={1} n="02" q="“Will it fit?”" a="Every piece placed on your floor plan">
+          <Card k={1} q="“Will it fit?”" a="Every piece placed on your floor plan">
             {HERO_ROOM && <FitArt />}
           </Card>
-          <Card k={2} n="03" q="“Do I need all this?”" a="A list for your room, not every room">
+          <Card k={2} q="“Do I need all this?”" a="A list for your room, not every room">
             <ListArt />
           </Card>
         </ul>
@@ -60,15 +60,12 @@ export default function ProblemSection() {
   );
 }
 
-function Card({ k, n, q, a, children }: { k: number; n: string; q: string; a: string; children: React.ReactNode }) {
+function Card({ k, q, a, children }: { k: number; q: string; a: string; children: React.ReactNode }) {
   return (
     <li data-q="" style={{ "--k": k } as React.CSSProperties}>
       <div data-rv="row">
         <div className={css.wc}>
           <div className={css.wcText}>
-            <span className={css.wcN} aria-hidden="true">
-              {n}
-            </span>
             <p className={css.wcQ}>{q}</p>
             <p className={css.wcA}>{a}</p>
           </div>

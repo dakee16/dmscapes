@@ -11,7 +11,6 @@ type Vibe = {
   name: string;
   plus: boolean;
   line: string;
-  rule: string;
   dots: [string, string, string];
 };
 
@@ -54,18 +53,18 @@ export default function VibesSection({ vibes }: { vibes: Vibe[] }) {
           </div>
         </div>
         <div className={css.vbCopy}>
-          <p className="ds-eyebrow" data-rv="">
+          <p className="ds-eyebrow">
             Style showcase · {vibes.length} styles
           </p>
           <H2 id="vibes-title" s="Pick a vibe." f="We make it fit." />
-          <p className={`ds-lede ${css.lede}`} data-rv="">
+          <p className={`ds-lede ${css.lede}`}>
             Every vibe is a full plan: bedding, lighting, storage and decor, priced to your budget and arranged to your
             floor plan.
           </p>
           <div ref={grid} className={css.hgrid} data-anim="">
             <span ref={hl} className={css.hl} aria-hidden="true" />
             {vibes.map((v) => (
-              <div key={v.id} className={css.vibe} data-rv="row" style={{ "--rule": v.rule } as React.CSSProperties}>
+              <div key={v.id} className={css.vibe} data-rv="row">
                 <div className={css.vh}>
                   <span className={css.dots} aria-hidden="true">
                     {v.dots.map((c, i) => (
@@ -81,7 +80,7 @@ export default function VibesSection({ vibes }: { vibes: Vibe[] }) {
               </div>
             ))}
           </div>
-          <div className={css.own} data-rv="">
+          <div className={css.own}>
             <div>
               <div className={css.ownH}>
                 <h3>Create your own vibe</h3>

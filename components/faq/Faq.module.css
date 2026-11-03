@@ -326,9 +326,7 @@
     overflow: visible;
     margin-inline: calc(var(--ds-gutter) * -1);
     padding: 10px var(--ds-gutter);
-    background: rgba(244, 243, 238, 0.94);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: var(--ds-paper);
     box-shadow: 0 1px 0 rgba(22, 22, 29, 0.08);
   }
   .indexLabel { display: none; }

@@ -71,26 +71,23 @@ export default function StudioSection() {
     >
       <div className={`ds-wrap ${css.stGrid}`}>
         <div className={css.stCopy}>
-          <p className="ds-eyebrow" data-rv="">
+          <p className="ds-eyebrow">
             The Room Studio · Included with Pro
           </p>
           <H2 id="studio-title" s="Your room." f="Now in 3D." />
-          <p className={`ds-lede ${css.lede}`} data-rv="">
+          <p className={`ds-lede ${css.lede}`}>
             Build your walls. Move the desk. Find your light. Pro takes your own room from a blank 3D grid to a furnished
             space.
           </p>
-          <ol className={css.sRows} data-rv="">
-            {FEATURES.map((f, i) => (
+          <ol className={css.sRows}>
+            {FEATURES.map((f) => (
               <li key={f.h}>
-                <span className={css.sN} aria-hidden="true">
-                  0{i + 1}
-                </span>
                 <h3>{f.h}</h3>
                 <p>{f.p}</p>
               </li>
             ))}
           </ol>
-          <div className={css.ctaRow} data-rv="">
+          <div className={css.ctaRow}>
             <Link href="/plan/draw/3d" className="ds-btn ds-btn--studio">
               Build your room in 3D
               <ArrowRight />

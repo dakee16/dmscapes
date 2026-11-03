@@ -8,7 +8,7 @@ import css from "./Home.module.css";
 export default function CollegesBand({ names }: { names: string[] }) {
   return (
     <section id="colleges" className={css.colleges} data-bg="#f4f3ee" aria-labelledby="colleges-title">
-      <h2 id="colleges-title" className={`ds-eyebrow ${css.collegesTitle}`} data-rv="">
+      <h2 id="colleges-title" className={`ds-eyebrow ${css.collegesTitle}`}>
         Supporting students at {names.length} schools
       </h2>
       <div className={css.cview} aria-hidden="true" data-rv="" data-anim="">

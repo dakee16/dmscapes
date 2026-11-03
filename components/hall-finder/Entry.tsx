@@ -37,7 +37,7 @@ function EntryLink({ where, href, className, children }: { where: Where; href: s
 
 const New = ({ className = "" }: { className?: string }) => (
   <span className={`${css.new} ${className}`}>
-    <span className="ds-sr"> · </span>New
+    <span className="ds-sr">, </span>New
   </span>
 );
 

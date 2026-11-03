@@ -16,15 +16,15 @@ export default function TogetherSection() {
     <section id="together" className={css.together} data-bg="#e5e7f6" aria-labelledby="together-title">
       <div className={`ds-wrap ${css.tgGrid}`}>
         <div className={css.tgCopy}>
-          <p className="ds-eyebrow" data-rv="">
+          <p className="ds-eyebrow">
             My Room · Included with Pro
           </p>
           <H2 id="together-title" s="Split the room," f="not the fridge." riso />
-          <p className={`ds-lede ${css.lede}`} data-rv="">
+          <p className={`ds-lede ${css.lede}`}>
             A shared room for your people. Bring your roommate into the same plan, mark what&apos;s yours, theirs and
             shared, settle who brings what, and talk it through on a call while you move things around.
           </p>
-          <ul className={css.chips} data-rv="">
+          <ul className={css.chips}>
             <li className={css.chip}>Up to {WORKSPACE_MEMBER_LIMIT} people</li>
             <li className={css.chip}>Friends join free</li>
             <li className={css.chip}>Invites use no credits</li>
@@ -44,7 +44,7 @@ export default function TogetherSection() {
             </div>
             <span className={css.peopleL}>One Pro host. Friends join free.</span>
           </div>
-          <div className={css.ctaRow} data-rv="">
+          <div className={css.ctaRow}>
             <Link href="/my-room" className="ds-btn ds-btn--ink">
               Open My Room
               <ArrowRight />

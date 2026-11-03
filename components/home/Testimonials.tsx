@@ -25,7 +25,7 @@ export default function Testimonials() {
       <div className="ds-wrap">
         <div className={css.quotesHead}>
           <div>
-            <p className="ds-eyebrow" data-rv="">
+            <p className="ds-eyebrow">
               What students say
             </p>
             <H2 id="quotes-title" s="Move-in day," f="sorted." />

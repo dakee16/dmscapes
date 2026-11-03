@@ -4,8 +4,8 @@
 
 /* ---------- Shared ---------- */
 .h2 { margin: 20px 0 0; font-weight: 400; text-wrap: balance; }
-.h2 .s { display: block; font-size: clamp(38px, 4.3vw, 62px); line-height: 1.02; }
-.h2 .f { display: block; font-size: clamp(46px, 5.3vw, 76px); line-height: 1.05; }
+/* Both lines in Archivo at one size; the italic second voice is kept for the hero. */
+.h2 .s, .h2 .f { display: block; font-size: clamp(38px, 4.3vw, 62px); line-height: 1.02; }
 .lede { margin-top: 20px; max-width: 560px; }
 .note { font: 600 12px/1.4 var(--ds-mono); letter-spacing: 0.04em; color: var(--ds-caption); }
 .ft { font-family: var(--ds-sans); font-weight: 700; letter-spacing: 0; }
@@ -101,8 +101,7 @@
 }
 .wc:hover { background: #fff; transform: translate(-2px, -2px); box-shadow: inset 0 0 0 1.5px var(--ds-ink), 5px 5px 0 var(--ds-ink); }
 .wcText { padding: 24px 24px 20px; }
-.wcN { display: block; font: 600 11px/1 var(--ds-mono); letter-spacing: 0.1em; color: #2449ff; }
-.wcQ { margin: 12px 0 0; font-family: var(--ds-serif); font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1; font-size: 28px; line-height: 1.1; color: var(--ds-ink); }
+.wcQ { margin: 0; font-family: var(--ds-serif); font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1; font-size: 28px; line-height: 1.1; color: var(--ds-ink); }
 .wcA { margin: 8px 0 0; font: 600 16px/1.4 var(--ds-sans); color: #3a3a46; }
 .wcArt {
   position: relative;
@@ -203,8 +202,7 @@
 /* ---------- How it works: card stack ---------- */
 .how { --pin: clamp(92px, 13vh, 132px); background: #dce1f5; }
 .howGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; padding: 104px 0; }
-.howHead .h2 .s { font-size: clamp(36px, 3.9vw, 56px); line-height: 1.04; }
-.howHead .h2 .f { font-size: clamp(44px, 4.6vw, 66px); line-height: 1.04; }
+.howHead .h2 .s, .howHead .h2 .f { font-size: clamp(36px, 3.9vw, 56px); line-height: 1.04; }
 .howHead .lede { max-width: 480px; }
 .prog { margin-top: 34px; max-width: 420px; }
 .progTrack { position: relative; height: 8px; border-radius: 4px; background: rgba(22, 22, 29, 0.08); overflow: hidden; }
@@ -239,9 +237,7 @@
 .scArt img { object-fit: cover; object-position: 50% 60%; }
 .badge { display: inline-block; padding: 5px 9px; border-radius: 4px; background: var(--ds-red); color: #fff; font: 700 13px/1 var(--ds-mono); letter-spacing: 0.06em; }
 .scText h3 { margin: 16px 0 0; font-weight: 400; line-height: 1.04; }
-.scText h3 > span { display: block; }
-.scText h3 > span:first-child { font-size: 36px; }
-.scText h3 > span:last-child { font-size: 42px; }
+.scText h3 > span { display: block; font-size: 36px; }
 .scText p { margin: 14px 0 0; font-size: 16px; line-height: 1.5; color: var(--ds-body); }
 .live .howGrid { align-items: start; }
 .live .howHead { position: sticky; top: var(--pin); }
@@ -279,7 +275,6 @@
 }
 .live .hl { animation: none; transform: translate(calc(var(--c, 0) * (100% + 12px)), calc(var(--r, 0) * (100% + 12px))); transition: transform 0.55s cubic-bezier(0.65, 0, 0.35, 1); }
 .vibe { position: relative; padding: 14px 14px 16px; border-radius: 14px; }
-.vibe::before { content: ""; position: absolute; left: 14px; right: 14px; top: 0; height: 3px; border-radius: 2px; background: var(--rule); }
 .vh { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
 .dots { display: flex; flex: none; }
 .dots i { width: 14px; height: 14px; border-radius: 50%; box-shadow: 0 0 0 1.5px #f6eada, inset 0 0 0 1px rgba(22, 22, 29, 0.15); }
@@ -412,13 +407,12 @@
 .studio[data-manual] { transition: --L 0.9s cubic-bezier(0.65, 0, 0.35, 1); }
 .stGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: 64px; align-items: center; padding: 96px 0; }
 .stCopy :global(.ds-eyebrow) { color: var(--ds-studio); }
-.stCopy .h2 .s { font-size: clamp(48px, 5vw, 72px); line-height: 1; }
-.stCopy .h2 .f { font-size: clamp(56px, 6.1vw, 88px); color: var(--ds-studio); }
+.stCopy .h2 .s, .stCopy .h2 .f { font-size: clamp(48px, 5vw, 72px); line-height: 1; }
+.stCopy .h2 .f { color: var(--ds-studio); }
 .stCopy .lede { margin-top: 18px; color: #cfccd9; max-width: 520px; }
 .stCopy .ctaRow { margin-top: 30px; }
 .sRows { margin: 30px 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(255, 255, 255, 0.12); }
-.sRows li { position: relative; display: grid; grid-template-columns: 34px minmax(0, 1fr); padding: 16px 0 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
-.sN { grid-row: span 2; padding-top: 5px; font: 600 11px/1 var(--ds-mono); letter-spacing: 0.1em; color: var(--ds-studio); }
+.sRows li { position: relative; padding: 16px 0 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
 .sRows h3 { margin: 0; font: 700 19px/1.25 var(--ds-sans); color: #f4f2ec; }
 .sRows p { margin: 4px 0 0; font-size: 15px; line-height: 1.5; color: #cfccd9; }
 .sRows li::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--ds-studio); transform-origin: 0 50%; transform: scaleX(var(--f)); }
@@ -473,7 +467,7 @@
 /* ---------- My Room: shared tooltip avatars ---------- */
 .together { background: #e5e7f6; overflow: hidden; }
 .tgGrid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 48px; align-items: center; padding: 96px 0; }
-.tgCopy .h2 .s { font-size: clamp(44px, 5vw, 76px); line-height: 0.98; font-stretch: 86%; letter-spacing: -0.04em; }
+.tgCopy .h2 .s, .tgCopy .h2 .f { font-size: clamp(44px, 5vw, 76px); line-height: 0.98; font-stretch: 86%; letter-spacing: -0.04em; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; padding: 0; list-style: none; }
 .chip { display: inline-flex; align-items: center; height: 26px; padding: 0 11px; border-radius: 999px; background: #fff; font: 700 11px/1 var(--ds-mono); letter-spacing: 0.1em; text-transform: uppercase; }
 .chip:first-child { background: var(--ds-yellow); transform: rotate(-1.5deg); }
@@ -647,8 +641,7 @@
 .final { background: #e8a622; }
 .fnGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.62fr); gap: 56px; align-items: center; padding: 88px 0; }
 .final :global(.ds-eyebrow) { color: var(--ds-ink); }
-.final .h2 .s { font-size: clamp(56px, 7vw, 104px); line-height: 0.95; }
-.final .h2 .f { font-size: clamp(58px, 7.4vw, 108px); line-height: 1.02; color: var(--ds-ink); }
+.final .h2 .s, .final .h2 .f { font-size: clamp(56px, 7vw, 104px); line-height: 0.95; }
 .final .note { color: var(--ds-ink); }
 .corner { position: relative; display: inline-flex; margin: 14px; }
 .corner i { position: absolute; width: 14px; height: 14px; border: 0 solid var(--ds-ink); animation: corner 2.4s var(--ds-ease) infinite; }
@@ -756,8 +749,7 @@
   .live .scard { margin-bottom: 30vh; }
   .scard { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 14px 14px 20px; }
   .scArt { aspect-ratio: 16 / 10; }
-  .scText h3 > span:first-child { font-size: 30px; }
-  .scText h3 > span:last-child { font-size: 34px; }
+  .scText h3 > span { font-size: 30px; }
   .hgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; }
   .hl { display: none; }
   .vibe { background: rgba(255, 255, 255, 0.55); }

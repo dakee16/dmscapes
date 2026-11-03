@@ -54,11 +54,11 @@ export default function HowSection() {
     <section id="how-it-works" className={css.how} data-bg="#dce1f5" aria-labelledby="how-title">
       <div ref={grid} className={`ds-wrap ${css.howGrid}`}>
         <div className={css.howHead}>
-          <p className="ds-eyebrow" data-rv="">
+          <p className="ds-eyebrow">
             How it works · 3 steps
           </p>
           <H2 id="how-title" s="From acceptance letter" f="to move-in cart." />
-          <p className={`ds-lede ${css.lede}`} data-rv="">
+          <p className={`ds-lede ${css.lede}`}>
             Three steps between you and a room that actually works, with one free tool to plan, design and shop your
             dorm room.
           </p>
@@ -72,7 +72,7 @@ export default function HowSection() {
               <span>03</span>
             </div>
           </div>
-          <div className={css.ctaRow} data-rv="">
+          <div className={css.ctaRow}>
             <PlanCta className="ds-btn ds-btn--ink ds-btn--lg" freeLabel="Plan my room for free" icon={<ArrowRight size={20} />} />
             <span className={css.note}>No account needed to explore</span>
           </div>
@@ -86,7 +86,7 @@ export default function HowSection() {
               <div className={css.scText}>
                 <span className={css.badge}>0{i + 1}</span>
                 <h3>
-                  <span className="ds-display">{s.a}</span> <span className="ds-serif ds-serif--blue">{s.b}</span>
+                  <span className="ds-display">{s.a}</span> <span className="ds-display">{s.b}</span>
                 </h3>
                 <p>{s.body}</p>
               </div>

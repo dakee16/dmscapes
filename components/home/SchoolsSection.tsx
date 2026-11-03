@@ -30,11 +30,11 @@ export default function SchoolsSection({ rooms, schoolCount }: { rooms: Featured
       <div className="ds-wrap">
         <div className={css.scHead}>
           <div>
-            <p className="ds-eyebrow" data-rv="">
+            <p className="ds-eyebrow">
               Supported schools · {schoolCount} and counting
             </p>
             <H2 id="schools-title" s="We already know" f="your room." />
-            <p className={`ds-lede ${css.lede}`} data-rv="">
+            <p className={`ds-lede ${css.lede}`}>
               Floor plans and dimensions from official housing documents. A few of them, drawn to the same scale:
             </p>
           </div>
@@ -79,7 +79,7 @@ export default function SchoolsSection({ rooms, schoolCount }: { rooms: Featured
             </div>
           )}
         </div>
-        <div className={css.scLinks} data-rv="">
+        <div className={css.scLinks}>
           <Link href="/colleges" className="ds-btn ds-btn--ink">
             See all supported schools
             <ArrowRight />
