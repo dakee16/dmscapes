@@ -237,9 +237,7 @@
 .scArt img { object-fit: cover; object-position: 50% 60%; }
 .badge { display: inline-block; padding: 5px 9px; border-radius: 4px; background: var(--ds-red); color: #fff; font: 700 13px/1 var(--ds-mono); letter-spacing: 0.06em; }
 .scText h3 { margin: 16px 0 0; font-weight: 400; line-height: 1.04; }
-.scText h3 > span { display: block; }
-.scText h3 > span:first-child { font-size: 36px; }
-.scText h3 > span:last-child { font-size: 42px; }
+.scText h3 > span { display: block; font-size: 36px; }
 .scText p { margin: 14px 0 0; font-size: 16px; line-height: 1.5; color: var(--ds-body); }
 .live .howGrid { align-items: start; }
 .live .howHead { position: sticky; top: var(--pin); }
@@ -751,8 +749,7 @@
   .live .scard { margin-bottom: 30vh; }
   .scard { grid-template-columns: minmax(0, 1fr); gap: 14px; padding: 14px 14px 20px; }
   .scArt { aspect-ratio: 16 / 10; }
-  .scText h3 > span:first-child { font-size: 30px; }
-  .scText h3 > span:last-child { font-size: 34px; }
+  .scText h3 > span { font-size: 30px; }
   .hgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; }
   .hl { display: none; }
   .vibe { background: rgba(255, 255, 255, 0.55); }

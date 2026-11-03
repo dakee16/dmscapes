@@ -86,7 +86,7 @@ export default function HowSection() {
               <div className={css.scText}>
                 <span className={css.badge}>0{i + 1}</span>
                 <h3>
-                  <span className="ds-display">{s.a}</span> <span className="ds-serif ds-serif--blue">{s.b}</span>
+                  <span className="ds-display">{s.a}</span> <span className="ds-display">{s.b}</span>
                 </h3>
                 <p>{s.body}</p>
               </div>
