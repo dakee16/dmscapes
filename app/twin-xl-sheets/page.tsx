@@ -8,6 +8,7 @@ import CtaBand from "@/components/ds/CtaBand";
 import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
+import FounderLink from "@/components/site/FounderLink";
 import { SCHOOLS } from "@/lib/schools";
 import { LAYOUT_COUNT } from "@/lib/home-data";
 import { bedName } from "@/lib/room-preview";
@@ -55,7 +56,7 @@ export default function TwinXlSheetsPage() {
         crumbs={<Crumbs items={crumbs} />}
         eyebrow={
           <>
-            Dorm bed sizes · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time>
+            Dorm bed sizes · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time> · by <FounderLink />
           </>
         }
         lines={[

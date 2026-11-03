@@ -9,6 +9,7 @@ import CtaBand from "@/components/ds/CtaBand";
 import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
+import FounderLink from "@/components/site/FounderLink";
 import { SCHOOLS } from "@/lib/schools";
 import { ALLOWED_LABEL, YES_NO_LABEL, BED_RULES_CHECKED, bedRuleFor, checkedLabel } from "@/lib/bed-rules";
 import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl, guidePageJsonLd, DATA_LICENSE, SITE_NAME, SITE_URL } from "@/lib/seo";
@@ -74,7 +75,7 @@ export default function DormBedRulesPage() {
         eyebrow={
           <>
             {R.schools} of {SCHOOLS.length} colleges publish rules · checked{" "}
-            <time dateTime={BED_RULES_CHECKED}>{checkedLabel()}</time>
+            <time dateTime={BED_RULES_CHECKED}>{checkedLabel()}</time> · by <FounderLink />
           </>
         }
         lines={[

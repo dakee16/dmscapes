@@ -125,6 +125,27 @@ export const DATA_LICENSE = "https://creativecommons.org/licenses/by/4.0/";
 /** Where people (and agents) reach the team: the contact form and replies go here. */
 export const CONTACT_EMAIL = "info@dormscape.us";
 
+/** The person behind dormscape: named on /about (#founder) and the author of the guides and blog. */
+export const FOUNDER = { name: "Daksh Mainee", path: "/about#founder" };
+
+/** The founder as an author reference, for a page's or post's `author`. */
+export const FOUNDER_AUTHOR = {
+  "@type": "Person",
+  "@id": `${SITE_URL}${FOUNDER.path}`,
+  name: FOUNDER.name,
+  url: `${SITE_URL}${FOUNDER.path}`,
+};
+
+/** The founder's own node, on /about. */
+export function founderJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    ...FOUNDER_AUTHOR,
+    jobTitle: "Founder",
+    worksFor: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 const organization = {
   "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
@@ -132,6 +153,7 @@ const organization = {
   url: SITE_URL,
   description: SITE_TAGLINE,
   email: CONTACT_EMAIL,
+  founder: FOUNDER_AUTHOR,
   // No postal address: dormscape doesn't publish one, so none is claimed here.
   contactPoint: [
     {
@@ -173,7 +195,7 @@ export function webSiteJsonLd() {
 }
 
 /**
- * A guide or tool page as a dated WebPage written by dormscape, in one @graph
+ * A guide or tool page as a dated WebPage written by the founder for dormscape, in one @graph
  * with the organization and site it belongs to, so the page read on its own
  * still says who made it and when it last changed. `name` is the page's visible
  * H1; dates are YYYY-MM-DD and must match the date shown on the page.
@@ -206,7 +228,7 @@ export function guidePageJsonLd({
         inLanguage: "en-US",
         datePublished,
         dateModified,
-        author: { "@type": "Organization", "@id": organization["@id"], name: SITE_NAME, url: SITE_URL },
+        author: FOUNDER_AUTHOR,
         publisher: { "@id": organization["@id"] },
         isPartOf: { "@id": webSite["@id"] },
         ...(about ? { about } : {}),

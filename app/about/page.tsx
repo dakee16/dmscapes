@@ -7,6 +7,8 @@ import CtaBand from "@/components/ds/CtaBand";
 import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import BlindPlans from "@/components/about/BlindPlans";
+import JsonLd from "@/components/site/JsonLd";
+import { FOUNDER, absoluteUrl, founderJsonLd, organizationJsonLd, SITE_URL } from "@/lib/seo";
 import { SCHOOLS } from "@/lib/schools";
 import { STYLES } from "@/lib/styles";
 import css from "@/components/about/About.module.css";
@@ -62,6 +64,23 @@ export default function AboutPage() {
 
   return (
     <PageShell navOverlay>
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "@id": `${absoluteUrl("/about")}#webpage`,
+            url: absoluteUrl("/about"),
+            name: "The dorm planner that knows your dorm.",
+            inLanguage: "en-US",
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            about: { "@id": `${SITE_URL}/#organization` },
+            mainEntity: { "@id": `${SITE_URL}/#organization` },
+          },
+          organizationJsonLd(),
+          founderJsonLd(),
+        ]}
+      />
       <PageHero
         bg="var(--ds-warm)"
         size="md"
@@ -225,6 +244,32 @@ export default function AboutPage() {
               and we&rsquo;ll get measuring.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section id="founder" className={`ds-section ${css.founder}`} aria-labelledby="founder-title">
+        <div className="ds-wrap">
+          <p className={`ds-eyebrow ${css.eyebrow}`} data-reveal="">
+            Who makes it
+          </p>
+          <Headline
+            id="founder-title"
+            className="ds-h2 ds-h2--inline"
+            lines={[{ text: "Made by" }, { text: `${FOUNDER.name}.`, serif: true }]}
+          />
+          <p className={css.founderBody} data-reveal="">
+            dormscape is built by its founder, {FOUNDER.name}. Room sizes come from each school&rsquo;s own housing
+            pages, estimates are labelled as estimates, and every college page links the source its sizes came from.
+            Spot something off?{" "}
+            <Link href="/methodology#corrections" className="ds-link">
+              Send a correction
+            </Link>{" "}
+            or{" "}
+            <Link href="/contact" className="ds-link">
+              get in touch
+            </Link>
+            .
+          </p>
         </div>
       </section>
 

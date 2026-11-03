@@ -1,4 +1,5 @@
 import type { BlogFaq, BlogPost } from "@/content/blog/types";
+import { FOUNDER_AUTHOR } from "@/lib/seo";
 
 // Absolute base for canonical URLs and schema. Mirrors app/sitemap.ts.
 export const BLOG_BASE =
@@ -49,8 +50,8 @@ const org = {
 };
 
 /**
- * BlogPosting JSON-LD for a blog post. One publisher/author identity (dormscape)
- * and both dates, since AI systems weight source and freshness signals. FAQ
+ * BlogPosting JSON-LD for a blog post: written by the founder, published by
+ * dormscape, with both dates, since AI systems weight source and freshness signals. FAQ
  * markup lives on the standalone /faq page now, not here.
  */
 export function articleJsonLd(post: BlogPost) {
@@ -62,7 +63,7 @@ export function articleJsonLd(post: BlogPost) {
     description: post.description,
     datePublished: isoDateTime(post.date),
     dateModified: isoDateTime(post.updated ?? post.date),
-    author: org,
+    author: FOUNDER_AUTHOR,
     publisher: {
       ...org,
       logo: {

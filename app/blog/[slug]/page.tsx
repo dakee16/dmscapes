@@ -5,6 +5,7 @@ import PageShell from "@/components/ds/PageShell";
 import Headline from "@/components/ds/Headline";
 import { ArrowRight } from "@/components/ds/Icons";
 import JsonLd from "@/components/site/JsonLd";
+import FounderLink from "@/components/site/FounderLink";
 import ReadingBar from "@/components/blog/ReadingBar";
 import PostToc from "@/components/blog/PostToc";
 import PostHeroArt from "@/components/blog/PostHeroArt";
@@ -13,7 +14,7 @@ import { outlineOf } from "@/components/blog/outline";
 import { TOPIC_PHRASE, shortDate, splitTitle, summarize, topicOf } from "@/components/blog/topics";
 import { getPost, allPostSlugs, POSTS } from "@/content/blog";
 import { articleJsonLd } from "@/lib/blog";
-import { RSS_FEED, breadcrumbJsonLd } from "@/lib/seo";
+import { FOUNDER, RSS_FEED, breadcrumbJsonLd } from "@/lib/seo";
 import css from "@/components/blog/Post.module.css";
 
 // Prebuild every post at build time; unknown slugs 404.
@@ -42,7 +43,7 @@ export async function generateMetadata(props: {
       url,
       publishedTime: post.date,
       modifiedTime: post.updated ?? post.date,
-      authors: ["dormscape"],
+      authors: [FOUNDER.name],
       images: [
         {
           url: "/og.png?v=room-mark",
@@ -119,7 +120,9 @@ export default async function BlogPostPage(props: {
                   d<i />
                 </span>
                 <div className={css.authorText}>
-                  <p className={css.authorName}>By dormscape</p>
+                  <p className={css.authorName}>
+                    By <FounderLink className={css.authorLink} />
+                  </p>
                   <p className={css.authorMeta}>
                     <time dateTime={post.date}>{shortDate(post.date)}</time> · {post.readingTimeMin} min read
                     {updated !== post.date && (

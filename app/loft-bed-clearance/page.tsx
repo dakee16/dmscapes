@@ -8,6 +8,7 @@ import CtaBand from "@/components/ds/CtaBand";
 import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
+import FounderLink from "@/components/site/FounderLink";
 import LoftClearance from "@/components/tools/LoftClearance";
 import { CLEARANCE_FAQS, desk, items, lofted, presets } from "@/lib/guide-loft-clearance";
 import { allBedRules, checkedLabel } from "@/lib/bed-rules";
@@ -77,7 +78,7 @@ export default function LoftBedClearancePage() {
         crumbs={<Crumbs items={crumbs} />}
         eyebrow={
           <>
-            Free calculator · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time>
+            Free calculator · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time> · by <FounderLink />
           </>
         }
         lines={[

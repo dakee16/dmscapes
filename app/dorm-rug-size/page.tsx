@@ -9,6 +9,7 @@ import CtaBand from "@/components/ds/CtaBand";
 import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
+import FounderLink from "@/components/site/FounderLink";
 import RugCalculator from "@/components/tools/RugCalculator";
 import { ft } from "@/lib/room-preview";
 import { RUG_FAQS, S, double, doubleRug, presets, rows, rugText } from "@/lib/guide-rug-size";
@@ -66,7 +67,7 @@ export default function DormRugSizePage() {
         crumbs={<Crumbs items={crumbs} />}
         eyebrow={
           <>
-            Free calculator · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time>
+            Free calculator · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time> · by <FounderLink />
           </>
         }
         lines={[
