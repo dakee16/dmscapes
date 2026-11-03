@@ -3,6 +3,7 @@
 // End-to-end (against a running server):
 //   curl -sS -i -H 'Accept: text/markdown' http://127.0.0.1:3000/            -> 200 text/markdown, Vary: Accept
 //   curl -sS -i -H 'Accept: text/html' http://127.0.0.1:3000/                -> 200 text/html
+//   curl -sS -i -H 'Accept: text/markdown' http://127.0.0.1:3000/colleges/ucla  -> 200 text/markdown (app/md)
 //   curl -sS -i -H 'Accept: text/markdown' http://127.0.0.1:3000/no-such-page -> 404 text/markdown
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
@@ -12,7 +13,7 @@ const ts = require("typescript");
 const file = path.join(__dirname, "../lib/markdown-negotiation.ts");
 const mod = { exports: {} };
 new Function("module", "exports", ts.transpileModule(fs.readFileSync(file, "utf8"), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 } }).outputText)(mod, mod.exports);
-const { prefersMarkdown, notFoundMarkdown, MARKDOWN_HEADERS } = mod.exports;
+const { prefersMarkdown, notFoundMarkdown, markdownTwin, MARKDOWN_HEADERS } = mod.exports;
 
 for (const accept of ["text/markdown", "text/markdown, text/html", "text/markdown;q=1, text/html;q=0.9", "text/markdown, */*;q=0.8", "TEXT/MARKDOWN"]) {
   assert.equal(prefersMarkdown(accept), true, accept);
@@ -33,4 +34,8 @@ assert.match(body, /`\/abc`/, "The path is shown without backticks or control ch
 assert.match(body, /\(https:\/\/dormscape\.us\/llms\.txt\)/);
 assert.match(body, /\(https:\/\/dormscape\.us\/sitemap\.xml\)/);
 assert(body.length > 20);
-console.log("PASS: agents asking for Markdown get it; every browser Accept header keeps HTML; the Markdown 404 links back in.");
+assert.equal(markdownTwin("/colleges/ucla"), "/md/colleges/ucla");
+assert.equal(markdownTwin("/colleges/ucla/"), "/md/colleges/ucla");
+assert.equal(markdownTwin("/colleges/ucla/dykstra-hall"), "/md/colleges/ucla/dykstra-hall");
+for (const p of ["/colleges", "/colleges/ucla/hall-finder", "/colleges/ucla/a/b", "/colleges/UCLA", "/plan", "/"]) assert.equal(markdownTwin(p), null, p);
+console.log("PASS: agents asking for Markdown get it (school and hall pages too); every browser Accept header keeps HTML; the Markdown 404 links back in.");

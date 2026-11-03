@@ -8,6 +8,7 @@ import CtaBand from "@/components/ds/CtaBand";
 import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
+import FounderLink from "@/components/site/FounderLink";
 import { COMPETITORS, checkedOn, compareRows, shortCompetitorName } from "@/lib/compare";
 import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, guidePageJsonLd, itemListJsonLd } from "@/lib/seo";
 import dsz from "@/components/dorm-size/DormSize.module.css";
@@ -57,7 +58,7 @@ export default function CompareIndexPage() {
         crumbs={<Crumbs items={crumbs} />}
         eyebrow={
           <>
-            Dorm room planners compared · checked <time dateTime={latest.checked}>{checkedOn(latest)}</time>
+            Dorm room planners compared · checked <time dateTime={latest.checked}>{checkedOn(latest)}</time> · by <FounderLink />
           </>
         }
         lines={[

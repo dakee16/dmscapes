@@ -41,3 +41,13 @@ export function notFoundMarkdown(pathname: string, origin: string): string {
     "",
   ].join("\n");
 }
+
+/**
+ * The Markdown twin of a school or hall page (/colleges/ucla, /colleges/ucla/dykstra-hall),
+ * served by app/md; null for every other path, including the Hall Finder app pages.
+ */
+export function markdownTwin(pathname: string): string | null {
+  const m = pathname.replace(/\/$/, "").match(/^\/colleges\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?$/);
+  if (!m || m[2] === "hall-finder") return null;
+  return `/md${m[0]}`;
+}

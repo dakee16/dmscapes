@@ -351,3 +351,7 @@
 }
 
 .credits { margin-top: 48px; font-size: 14px; line-height: 1.5; color: var(--ds-caption); }
+
+/* Who makes it: the founder, named (the author the guides and blog link to). */
+.founder { scroll-margin-top: 80px; }
+.founderBody { margin: 18px 0 0; max-width: 680px; font-size: 18px; line-height: 1.6; color: var(--ds-body); }

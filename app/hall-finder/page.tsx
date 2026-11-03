@@ -13,6 +13,7 @@ import { PILOT_SCHOOLS, hallFinderLive, rankedHalls } from "@/lib/hall-finder";
 import { loadCampus } from "@/lib/hall-finder-server";
 import { datedPageJsonLd, indexFaqs } from "@/lib/hall-finder-seo";
 import { faqPageJsonLd } from "@/lib/blog";
+import { shortDate } from "@/components/blog/topics";
 import css from "@/components/colleges/Colleges.module.css";
 
 // The nav's Hall Finder link (design-handoff/hall-finder plan.md "Nav target"): the pilot
@@ -52,7 +53,9 @@ export default async function HallFinderIndex() {
       <section className="ds-section">
         <div className="ds-wrap">
           <Crumbs items={crumbs} />
-          <p className="ds-eyebrow" style={{ marginTop: 18 }}>Now at {schools.length} schools</p>
+          <p className="ds-eyebrow" style={{ marginTop: 18 }}>
+            Now at {schools.length} schools · updated <time dateTime={built}>{shortDate(built.slice(0, 10))}</time>
+          </p>
           <Headline as="h1" load className="ds-h1" lines={[{ text: "Pick the hall", riso: true }, { text: "closest to class.", serif: true }]} />
           <p className="ds-lede" style={{ maxWidth: 620 }}>
             Add the buildings you have classes in and we rank your school&apos;s halls by your weekly walk. Most schools

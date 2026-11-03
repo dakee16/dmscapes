@@ -115,12 +115,38 @@ export const X_URL = "https://x.com/dormscapehq";
 export const PINTEREST_URL = "https://www.pinterest.com/07kzto0mnvc8tlnvzi1c7uhl6paua4/";
 export const LINKEDIN_URL = "https://www.linkedin.com/company/dormscape/";
 export const THREADS_URL = "https://www.threads.com/@dormscapehq";
+export const CRUNCHBASE_URL = "https://www.crunchbase.com/organization/dormscape";
 // The footer and contact page link these same constants, so what people can click and what the
 // schema says can't differ. TikTok's bio says "dormscape.us"; Instagram can't be read without a login.
-export const SOCIAL_PROFILES: string[] = [TIKTOK_URL, INSTAGRAM_URL, X_URL, PINTEREST_URL, LINKEDIN_URL, THREADS_URL];
+export const SOCIAL_PROFILES: string[] = [TIKTOK_URL, INSTAGRAM_URL, X_URL, PINTEREST_URL, LINKEDIN_URL, THREADS_URL, CRUNCHBASE_URL];
+
+/** The license dormscape's published datasets (room sizes, bed rules) carry: reuse with credit and a link. */
+export const DATA_LICENSE = "https://creativecommons.org/licenses/by/4.0/";
 
 /** Where people (and agents) reach the team: the contact form and replies go here. */
 export const CONTACT_EMAIL = "info@dormscape.us";
+
+/** The person behind dormscape: named on /about (#founder) and the author of the guides and blog. */
+export const FOUNDER = { name: "Daksh Mainee", path: "/about#founder", linkedin: "https://www.linkedin.com/in/daksh-mainee16/" };
+
+/** The founder as an author reference, for a page's or post's `author`. */
+export const FOUNDER_AUTHOR = {
+  "@type": "Person",
+  "@id": `${SITE_URL}${FOUNDER.path}`,
+  name: FOUNDER.name,
+  url: `${SITE_URL}${FOUNDER.path}`,
+  sameAs: [FOUNDER.linkedin],
+};
+
+/** The founder's own node, on /about. */
+export function founderJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    ...FOUNDER_AUTHOR,
+    jobTitle: "Founder",
+    worksFor: { "@id": `${SITE_URL}/#organization` },
+  };
+}
 
 const organization = {
   "@type": "Organization",
@@ -129,6 +155,7 @@ const organization = {
   url: SITE_URL,
   description: SITE_TAGLINE,
   email: CONTACT_EMAIL,
+  founder: FOUNDER_AUTHOR,
   // No postal address: dormscape doesn't publish one, so none is claimed here.
   contactPoint: [
     {
@@ -170,7 +197,7 @@ export function webSiteJsonLd() {
 }
 
 /**
- * A guide or tool page as a dated WebPage written by dormscape, in one @graph
+ * A guide or tool page as a dated WebPage written by the founder for dormscape, in one @graph
  * with the organization and site it belongs to, so the page read on its own
  * still says who made it and when it last changed. `name` is the page's visible
  * H1; dates are YYYY-MM-DD and must match the date shown on the page.
@@ -203,7 +230,7 @@ export function guidePageJsonLd({
         inLanguage: "en-US",
         datePublished,
         dateModified,
-        author: { "@type": "Organization", "@id": organization["@id"], name: SITE_NAME, url: SITE_URL },
+        author: FOUNDER_AUTHOR,
         publisher: { "@id": organization["@id"] },
         isPartOf: { "@id": webSite["@id"] },
         ...(about ? { about } : {}),
@@ -277,6 +304,35 @@ export function webPageJsonLd({ path, name, image }: { path: string; name: strin
     name,
     isPartOf: { "@id": `${SITE_URL}/#website` },
     ...(image ? { primaryImageOfPage: { "@type": "ImageObject", url: absoluteUrl(image.path), width: image.width, height: image.height } } : {}),
+  };
+}
+
+/**
+ * A data page (a school or hall) as a WebPage about its subject, compiled by
+ * dormscape from the source it names. `dateModified` is when that data was
+ * collected and must match the date shown on the page; `name` is the visible H1.
+ */
+export function dataPageJsonLd({
+  path,
+  name,
+  about,
+  dateModified,
+  isBasedOn,
+}: {
+  path: string;
+  name: string;
+  about: object;
+  dateModified?: string;
+  isBasedOn?: string;
+}) {
+  return {
+    ...webPageJsonLd({ path, name }),
+    inLanguage: "en-US",
+    about,
+    ...(dateModified ? { dateModified } : {}),
+    ...(isBasedOn ? { isBasedOn } : {}),
+    author: { "@type": "Organization", "@id": organization["@id"], name: SITE_NAME, url: SITE_URL },
+    publisher: { "@id": organization["@id"] },
   };
 }
 

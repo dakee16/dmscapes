@@ -11,6 +11,7 @@ import SectionRail from "@/components/ds/SectionRail";
 import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
+import FounderLink from "@/components/site/FounderLink";
 import Reviews from "@/components/site/Reviews";
 import ScalePlan from "@/components/hall/ScalePlan";
 import { HALL_COUNT, LAYOUT_COUNT, SCHOOL_COUNT } from "@/lib/home-data";
@@ -318,7 +319,7 @@ export default async function DormRoomPlannerPage() {
             ))}
           </div>
           <p className={dsz.caption} style={{ marginTop: 32 }}>
-            Updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time>. Room sizes come from what each school&apos;s housing
+            Updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time> by <FounderLink />. Room sizes come from what each school&apos;s housing
             office publishes.
           </p>
         </div>

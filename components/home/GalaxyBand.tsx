@@ -20,15 +20,16 @@ const MOB_TWINKLE: number[][] = [[261.1,121.4,1.2,0.83],[82.3,141.9,1,0.76],[27,
  * glow are baked into the WebPs (with even padding, so w includes it): a CSS filter on them inflated
  * their LCP size above the hero room's.
  */
+// alt: the band is aria-hidden, so these are never read aloud; they are there for crawlers (Bing reports alt="").
 const PROPS = [
-  { src: "/redesign/prop-pencil.webp", w: 233, d: 0, lane: "up", nw: 682, nh: 590 },
-  { src: "/redesign/prop-bed.webp", w: 233, d: -5, lane: "lo", nw: 682, nh: 598 },
-  { src: "/redesign/prop-tape.webp", w: 200, d: -12, lane: "up", nw: 746, nh: 529 },
-  { src: "/redesign/prop-desk.webp", w: 233, d: -17, lane: "lo", nw: 682, nh: 646 },
-  { src: "/redesign/prop-chair.webp", w: 195, d: -24, lane: "up", nw: 471, nh: 640 },
-  { src: "/redesign/prop-plant.webp", w: 186, d: -29, lane: "lo", nw: 534, nh: 676 },
-  { src: "/redesign/prop-lamp.webp", w: 186, d: -36, lane: "up", nw: 580, nh: 696 },
-  { src: "/redesign/prop-books.webp", w: 194, d: -41, lane: "lo", nw: 764, nh: 681 },
+  { src: "/redesign/prop-pencil.webp", alt: "A pencil", w: 233, d: 0, lane: "up", nw: 682, nh: 590 },
+  { src: "/redesign/prop-bed.webp", alt: "A dorm bed", w: 233, d: -5, lane: "lo", nw: 682, nh: 598 },
+  { src: "/redesign/prop-tape.webp", alt: "A tape measure", w: 200, d: -12, lane: "up", nw: 746, nh: 529 },
+  { src: "/redesign/prop-desk.webp", alt: "A desk", w: 233, d: -17, lane: "lo", nw: 682, nh: 646 },
+  { src: "/redesign/prop-chair.webp", alt: "A desk chair", w: 195, d: -24, lane: "up", nw: 471, nh: 640 },
+  { src: "/redesign/prop-plant.webp", alt: "A potted plant", w: 186, d: -29, lane: "lo", nw: 534, nh: 676 },
+  { src: "/redesign/prop-lamp.webp", alt: "A desk lamp", w: 186, d: -36, lane: "up", nw: 580, nh: 696 },
+  { src: "/redesign/prop-books.webp", alt: "A stack of books", w: 194, d: -41, lane: "lo", nw: 764, nh: 681 },
 ] as const;
 
 const stars = (list: number[][]) => list.map(([cx, cy, r, o], i) => <circle key={i} cx={cx} cy={cy} r={r} opacity={o} />);
@@ -88,7 +89,7 @@ export default function GalaxyBand() {
       <div className={css.gxLane}>
         {PROPS.map((p) => (
           <span key={p.src} className={css.gxIt} data-lane={p.lane} style={{ "--d": `${p.d}s`, "--w": `${p.w}px` } as React.CSSProperties}>
-            <Image src={p.src} alt="" width={p.nw} height={p.nh} style={{ width: "100%", height: "auto" }} sizes={`(max-width: 760px) ${Math.round(p.w * 0.36)}px, ${p.w}px`} loading="lazy" />
+            <Image src={p.src} alt={p.alt} width={p.nw} height={p.nh} style={{ width: "100%", height: "auto" }} sizes={`(max-width: 760px) ${Math.round(p.w * 0.36)}px, ${p.w}px`} loading="lazy" />
           </span>
         ))}
       </div>

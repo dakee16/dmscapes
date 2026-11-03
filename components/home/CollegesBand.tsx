@@ -13,8 +13,12 @@ export default function CollegesBand({ names }: { names: string[] }) {
       </h2>
       <div className={css.cview} aria-hidden="true" data-rv="" data-anim="">
         <ul className={css.ctrack}>
-          {[...names, ...names].map((n, i) => (
+          {names.map((n, i) => (
             <li key={i}>{n}</li>
+          ))}
+          {/* The loop's second pass draws each name from its attribute, so the page text lists them once. */}
+          {names.map((n, i) => (
+            <li key={`again-${i}`} data-n={n} />
           ))}
         </ul>
       </div>

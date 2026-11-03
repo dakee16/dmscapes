@@ -88,7 +88,7 @@ export default function SchoolFacts({ collegeId, short, schoolName, campus, fact
         </p>
 
         <h2 className={styles.h2}>Where the data comes from</h2>
-        <p className={styles.p}>Walking data for {short} was last built on {longDate(campus.generatedAt)} from these sources.</p>
+        <p className={styles.p}>Walking data for {short} was last built on <time dateTime={campus.generatedAt}>{longDate(campus.generatedAt)}</time> from these sources.</p>
         <ul className={styles.sources}>
           {cited.map((s) => (
             <li key={s.url}>

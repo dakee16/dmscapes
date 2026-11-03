@@ -225,3 +225,7 @@
 @media (prefers-reduced-motion: reduce) {
   .hallCard { animation: none; }
 }
+
+/* Where the sizes came from, under the hero lede (SourceLine). */
+.source { margin: 14px 0 0; font-size: 14px; line-height: 1.5; color: var(--ds-caption); }
+.source a { overflow-wrap: anywhere; }

@@ -150,11 +150,13 @@ const ARROW = "M3 2L3 19L7.6 14.9L10.6 21.2L13.4 20L10.5 13.8L16.6 13.7Z";
 /** The room call itself: a decorative demo, described once for screen readers. */
 function Stage({ dims }: { dims: React.ReactNode }) {
   const room = HERO_ROOM!;
-  const layer = (cls: string, src: string, lcp = false) => (
+  // Each layer names what it shows for crawlers (Bing reports alt=""); inside role="img" they are
+  // presentational, so screen readers still hear only the stage's one description.
+  const layer = (cls: string, src: string, alt: string, lcp = false) => (
     <span className={`${css.ly} ${cls}`}>
       <Image
         src={src}
-        alt=""
+        alt={alt}
         fill
         sizes={lcp ? "(max-width: 900px) 100vw, 900px" : "(max-width: 900px) 34vw, 300px"}
         loading="eager"
@@ -205,11 +207,11 @@ function Stage({ dims }: { dims: React.ReactNode }) {
         <span className={css.share}>Share room</span>
       </div>
       <div className={css.view}>
-        {layer(css.lyRoom, "/redesign/hero-room-v5.webp", true)}
-        {layer(css.lyRug, "/redesign/hero-rug-v2.webp")}
-        {layer(css.lyOcc, "/redesign/hero-occluder-v5.webp")}
-        {layer(css.lyBean, "/redesign/hero-bean-v2.webp")}
-        {layer(css.lyFront, "/redesign/hero-front-v4.webp")}
+        {layer(css.lyRoom, "/redesign/hero-room-v5.webp", "A dorm double in 3D: two beds, two desks and a window", true)}
+        {layer(css.lyRug, "/redesign/hero-rug-v2.webp", "An orange rug with a cream border")}
+        {layer(css.lyOcc, "/redesign/hero-occluder-v5.webp", "The near bed and desk, drawn over the rug")}
+        {layer(css.lyBean, "/redesign/hero-bean-v2.webp", "A magenta bean bag chair")}
+        {layer(css.lyFront, "/redesign/hero-front-v4.webp", "The desk chairs in the foreground")}
         <svg className={css.dims} viewBox="0 0 1000 583.333" preserveAspectRatio="xMidYMid meet">
           <line className={`${css.dl} ${css.dlF}`} pathLength={1} x1="368.78" y1="286.46" x2="516.28" y2="378.13" />
           <line className={`${css.dl} ${css.dlR}`} pathLength={1} x1="538.56" y1="376.14" x2="620.22" y2="302.39" />

@@ -1,10 +1,11 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { MARKDOWN_HEADERS, notFoundMarkdown, prefersMarkdown } from "@/lib/markdown-negotiation";
+import { MARKDOWN_HEADERS, markdownTwin, notFoundMarkdown, prefersMarkdown } from "@/lib/markdown-negotiation";
 
 // Markdown for AI agents (acceptmarkdown.com). Runs only for requests whose
 // Accept header mentions text/markdown (see the matcher), so browsers, client
 // navigation and prefetches never reach it.
 //   /                      -> the homepage as Markdown (app/index.md)
+//   a school or hall page  -> its Markdown twin (app/md/colleges/...)
 //   a path that can't exist -> 404 with a Markdown body
 //   anything else          -> unchanged (HTML)
 
@@ -21,6 +22,8 @@ export function proxy(request: NextRequest) {
   if (!prefersMarkdown(request.headers.get("accept"))) return NextResponse.next();
   const { pathname, origin } = request.nextUrl;
   if (pathname === "/") return NextResponse.rewrite(new URL("/index.md", request.url));
+  const twin = markdownTwin(pathname);
+  if (twin) return NextResponse.rewrite(new URL(twin, request.url));
   const first = pathname.split("/")[1] ?? "";
   // Files (anything with an extension) and known sections go to Next as usual.
   if (!ROUTE_ROOTS || pathname.slice(pathname.lastIndexOf("/")).includes(".") || ROUTE_ROOTS.includes(first)) {

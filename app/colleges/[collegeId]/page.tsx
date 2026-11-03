@@ -19,9 +19,11 @@ import { SCHOOLS, formatDims, getSchool, publishedDimsCount } from "@/lib/school
 import { shortName } from "@/lib/school-names";
 import { isPublished, roomFamily, roomName, sqFtOf, ft } from "@/lib/room-preview";
 import { formatRoomType } from "@/lib/format";
-import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, postalAddressJsonLd, itemListJsonLd, absoluteUrl } from "@/lib/seo";
-import { dormSizeStats, isDormRoom } from "@/lib/dorm-sizes";
-import type { RoomSummary, SchoolSummary } from "@/lib/types";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, postalAddressJsonLd, itemListJsonLd, dataPageJsonLd } from "@/lib/seo";
+import { dormSizeStats } from "@/lib/dorm-sizes";
+import { hallShort, names, schoolSource, schoolSummary, spread } from "@/lib/school-facts";
+import SourceLine from "@/components/college/SourceLine";
+import type { SchoolSummary } from "@/lib/types";
 import css from "@/components/college/College.module.css";
 
 // SEO pages targeting "[College Name] dorm room planner / dimensions" queries,
@@ -60,9 +62,6 @@ export async function generateMetadata(props: {
   });
 }
 
-const hallShort = (name: string) => name.replace(/\s+(Hall|House|Residence Hall|Residence)$/i, "");
-const familyLabel: Record<string, string> = { Single: "single", Double: "double", Triple: "triple", Quad: "quad", Suite: "suite" };
-
 type Placed = { key: string; hall: string; type: string; l: number; w: number; href: string; sqft: number };
 
 /** Up to a dozen distinct published sizes, from the biggest down, for the one-scale wall. */
@@ -87,42 +86,9 @@ function scaleWall(school: SchoolSummary): Placed[] {
   return [...new Map(pick.map((p) => [p.key, p])).values()];
 }
 
-/** The room type with the widest spread of published sizes, grouped by size. */
-function spread(school: SchoolSummary) {
-  const byFam = new Map<string, Map<string, { l: number; w: number; sqft: number; halls: string[]; type: string }>>();
-  for (const d of school.dorms)
-    for (const r of d.rooms as RoomSummary[]) {
-      // Same rule as /dorm-room-size: published, and a room rather than a whole apartment.
-      if (!isDormRoom(r, d.name)) continue;
-      const fam = roomFamily(r.type);
-      if (!["Double", "Single", "Triple"].includes(fam)) continue;
-      const l = Math.max(r.length_ft!, r.width_ft!);
-      const w = Math.min(r.length_ft!, r.width_ft!);
-      const key = `${l.toFixed(1)}x${w.toFixed(1)}`;
-      const m = byFam.get(fam) ?? new Map();
-      const g = m.get(key) ?? { l, w, sqft: sqFtOf(r) ?? Math.round(l * w), halls: [], type: formatRoomType(r.type) };
-      if (!g.halls.includes(hallShort(d.name))) g.halls.push(hallShort(d.name));
-      m.set(key, g);
-      byFam.set(fam, m);
-    }
-  const order = ["Double", "Single", "Triple"];
-  const fam = order.find((f) => (byFam.get(f)?.size ?? 0) >= 3);
-  if (!fam) return null;
-  let groups = [...byFam.get(fam)!.values()].sort((a, b) => b.sqft - a.sqft);
-  if (groups[0].sqft === groups[groups.length - 1].sqft) return null;
-  if (groups.length > 9) {
-    const g = groups;
-    groups = [...new Set(Array.from({ length: 9 }, (_, i) => g[Math.round((i * (g.length - 1)) / 8)]))];
-  }
-  return { family: familyLabel[fam], groups };
-}
-
 // The typical single, double and triple across every school, for comparison.
 const TYPICAL = dormSizeStats(SCHOOLS);
 const OCCUPANTS: Record<string, number> = { single: 1, double: 2, triple: 3 };
-
-const names = (halls: string[]) =>
-  halls.length <= 2 ? halls.join(" or ") : `${halls.slice(0, 2).join(", ")} and ${halls.length - 2} more`;
 
 export default async function CollegePage(props: {
   params: Promise<{ collegeId: string }>;
@@ -161,6 +127,8 @@ export default async function CollegePage(props: {
       : `Published sizes at ${short}, drawn side by side at one scale.`;
 
   const bars = spread(school);
+  const summary = schoolSummary(school, short, withDims);
+  const source = schoolSource(school.id);
   const maxSq = bars ? bars.groups[0].sqft : 1;
   const typical = bars ? TYPICAL.byType.find((t) => t.occupants === OCCUPANTS[bars.family]) : undefined;
 
@@ -196,13 +164,14 @@ export default async function CollegePage(props: {
               path: `/colleges/${school.id}/${d.id}`,
             }))
           ),
-          {
-            "@context": "https://schema.org",
-            "@type": "CollegeOrUniversity",
-            name: school.name,
-            url: absoluteUrl(`/colleges/${school.id}`),
-            ...(address ? { address } : {}),
-          },
+          // The page is about the school; the school's own URL isn't ours to claim, so it has none here.
+          dataPageJsonLd({
+            path: `/colleges/${school.id}`,
+            name: `${short} dorm room planner.`,
+            dateModified: source?.collected ?? undefined,
+            isBasedOn: source?.url,
+            about: { "@type": "CollegeOrUniversity", name: school.name, ...(address ? { address } : {}) },
+          }),
         ]}
       />
       <PageHero
@@ -230,11 +199,14 @@ export default async function CollegePage(props: {
         ]}
         className={css.hero}
         lede={
-          <p>
-            {school.dorms.length} residence halls
-            {withDims > 0 && <> · {withDims} room types with real measured dimensions</>}. Pick your building, get a
-            layout that fits to the inch, and a shoppable list that fits your budget.
-          </p>
+          <>
+            <p>
+              {school.dorms.length} residence halls
+              {withDims > 0 && <> · {withDims} room types with real measured dimensions</>}.{summary && ` ${summary}`} Pick
+              your building, get a layout that fits to the inch, and a shoppable list that fits your budget.
+            </p>
+            {source && <SourceLine source={source} what={withDims > 0 ? "Published room sizes" : "Room types"} />}
+          </>
         }
         visual={
           wall.length > 0 ? (

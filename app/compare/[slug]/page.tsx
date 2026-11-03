@@ -9,6 +9,7 @@ import CtaBand from "@/components/ds/CtaBand";
 import { ArrowRight } from "@/components/ds/Icons";
 import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
+import FounderLink from "@/components/site/FounderLink";
 import { COMPETITORS, DORMSCAPE_STRENGTHS, STRENGTHS, checkedOn, compareRows, competitor, shortCompetitorName } from "@/lib/compare";
 import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, guidePageJsonLd, SITE_URL } from "@/lib/seo";
 import dsz from "@/components/dorm-size/DormSize.module.css";
@@ -66,7 +67,7 @@ export default async function ComparePage(props: { params: Promise<{ slug: strin
         crumbs={<Crumbs items={crumbs} />}
         eyebrow={
           <>
-            Dorm room planner comparison · checked <time dateTime={c.checked}>{checkedOn(c)}</time>
+            Dorm room planner comparison · checked <time dateTime={c.checked}>{checkedOn(c)}</time> · by <FounderLink />
           </>
         }
         lines={[

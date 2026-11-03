@@ -11,15 +11,22 @@ import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import { RuleArt, SameScale } from "@/components/methodology/MethodologyArt";
 import { SCHOOLS } from "@/lib/schools";
-import { pageMetadata, breadcrumbJsonLd } from "@/lib/seo";
+import { pageMetadata, breadcrumbJsonLd, guidePageJsonLd, DATA_LICENSE } from "@/lib/seo";
+import FounderLink from "@/components/site/FounderLink";
+import { METHODOLOGY_UPDATED } from "@/lib/sitemaps";
+import { shortDate } from "@/components/blog/topics";
 import { WalkTimes } from "@/components/hall-finder/Entry";
 import SectionRail from "@/components/ds/SectionRail";
 import css from "@/components/methodology/Methodology.module.css";
 
+const DESCRIPTION =
+  "Where dormscape's dorm room dimensions come from, how they are recorded and verified, what 'estimated' means, and how to report a correction.";
+// When this page's substance last changed (eyebrow, structured data and sitemap lastmod).
+const UPDATED = METHODOLOGY_UPDATED;
+
 export const metadata: Metadata = pageMetadata({
   title: "How We Measure Dorm Rooms",
-  description:
-    "Where dormscape's dorm room dimensions come from, how they are recorded and verified, what 'estimated' means, and how to report a correction.",
+  description: DESCRIPTION,
   path: "/methodology",
 });
 
@@ -121,12 +128,21 @@ export default function MethodologyPage() {
           { id: "corrections", label: "Corrections" },
         ]}
       />
-      <JsonLd data={breadcrumbJsonLd(crumbs)} />
+      <JsonLd
+        data={[
+          breadcrumbJsonLd(crumbs),
+          guidePageJsonLd({ path: "/methodology", name: "How we measure dorm rooms.", description: DESCRIPTION, datePublished: "2026-09-06", dateModified: UPDATED }),
+        ]}
+      />
       <PageHero
         bg="#F6EFE4"
         className={css.hero}
         crumbs={<Crumbs items={crumbs} />}
-        eyebrow="Data and methodology"
+        eyebrow={
+          <>
+            Data and methodology · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time> · by <FounderLink />
+          </>
+        }
         lines={[
           { text: "How we measure", riso: true },
           { text: "dorm rooms.", serif: true },
@@ -182,6 +198,14 @@ export default function MethodologyPage() {
               Schools publish this very differently. Some list per-room-type dimensions on every hall page. Some
               publish one average room size for a whole building. Some publish nothing at all and only offer a virtual
               tour. We record what each school actually says, and we record how specific it was.
+            </p>
+            <p>
+              Every college and hall page names and links the housing page its sizes came from, with the date we
+              collected them. Our room-size and bed-rule tables are free to reuse under{" "}
+              <a href={DATA_LICENSE} className="ds-link" target="_blank" rel="noopener license">
+                CC BY 4.0
+              </a>
+              : credit dormscape and link back.
             </p>
           </div>
           <div className={css.sourceCards}>
