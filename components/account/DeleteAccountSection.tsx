@@ -5,7 +5,7 @@ import { getBrowserClient } from "@/lib/supabase-browser";
 import { useAuth } from "@/lib/auth-context";
 import { usePlannerStore } from "@/lib/store";
 import { CloseButton } from "@/components/account-ui/parts";
-import s from "./account.module.css";
+import c from "./AccountPage.module.css";
 import d from "@/components/account-ui/Dialog.module.css";
 
 export default function DeleteAccountSection({ onLeave }: { onLeave: () => void }) {
@@ -64,12 +64,22 @@ export default function DeleteAccountSection({ onLeave }: { onLeave: () => void 
     finally { pending.current = false; setBusy(false); }
   }
 
-  return <section id="delete-account" className={`${s.card} ${s.mini} ${s.danger}`} aria-labelledby="delete-account-heading">
-    <h2 id="delete-account-heading" className={s.cardTitle}>Delete account</h2>
-    <p className={s.meta}>Permanently remove your account, saved designs and rooms you own. Download anything you want to keep before continuing.</p>
-    <button type="button" className={s.dangerBtn} onClick={() => {
-      setConfirmation(""); setAcknowledged(false); setError(""); setReauth(false); setOpen(true);
-    }}>Delete my account</button>
+  // id="delete" for the account menu; #delete-account (the legal pages and the sign-in-again return) still lands here.
+  return <section id="delete" className={c.card} data-danger="" aria-labelledby="delete-account-heading">
+    <span id="delete-account" className={c.anchor} aria-hidden="true" />
+    <div className={c.cardHead}>
+      <h2 id="delete-account-heading">Delete account</h2>
+      <p>Permanently remove your account, saved designs and rooms you own. Download anything you want to keep before continuing.</p>
+    </div>
+    <div className={c.row}>
+      <div className={c.label}>Leaving?</div>
+      <div className={c.value}><p className={c.helper}>You&rsquo;ll be asked to confirm first.</p></div>
+      <div className={c.action}>
+        <button type="button" className={`${c.btn} ${c.red}`} onClick={() => {
+          setConfirmation(""); setAcknowledged(false); setError(""); setReauth(false); setOpen(true);
+        }}>Delete my account</button>
+      </div>
+    </div>
     {open && <Modal className={d.layer} style={{ "--z": 100 } as React.CSSProperties}
       aria-labelledby="delete-account-title" aria-describedby="delete-account-warning"
       onMouseDown={event => { if (event.target === event.currentTarget && !busy) setOpen(false); }}>

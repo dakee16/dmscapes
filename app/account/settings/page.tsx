@@ -3,38 +3,29 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import PageShell from "@/components/ds/PageShell";
-import { AccountShell, IdentityCard, oauthLabel, accountStyles as s } from "@/components/account/AccountUI";
-import { LinkIcon } from "@/components/account-ui/parts";
+import AccountFrame, { Card, FieldMsg, RingAvatar, Row, Switch, type Msg } from "@/components/account/AccountFrame";
+import { fmtDate, oauthLabel } from "@/components/account/AccountUI";
 import { useAuth } from "@/lib/auth-context";
 import { getBrowserClient } from "@/lib/supabase-browser";
 import { passwordMeetsPolicy } from "@/lib/password";
+import { useExperienceMotion } from "@/components/experience/MotionProvider";
 import PasswordChecklist from "@/components/auth/PasswordChecklist";
 import DeleteAccountSection from "@/components/account/DeleteAccountSection";
-import ProfilePhoto from "@/components/account/ProfilePhoto";
+import ProfilePhoto, { PHOTO_HINT } from "@/components/account/ProfilePhoto";
 import CreatorSection from "@/components/account/CreatorSection";
-import InviteLink from "@/components/growth/InviteLink";
-import { REFERRAL_BONUS_DESIGNS, REFERRAL_MONTHLY_CAP } from "@/lib/plan";
 import type { UsernameCheckResponse } from "@/lib/api-types";
+import c from "@/components/account/AccountPage.module.css";
 
 const USERNAME_RE = /^[A-Za-z0-9._]{3,20}$/;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-type Tone = "good" | "bad" | "soft";
-type Msg = { tone: Tone; text: string } | null;
 type UsernameStatus = "idle" | "checking" | "available" | "taken" | "invalid" | "unknown";
+type Field = "full_name" | "username" | "phone" | "email" | "password";
 
-function FieldMsg({ msg, className = "" }: { msg: Msg; className?: string }) {
-  if (!msg) return null;
-  return (
-    <p className={`${s.msg} ${className}`} data-tone={msg.tone} role="status">
-      {msg.text}
-    </p>
-  );
-}
 export default function AccountSettingsPage() {
   const router = useRouter();
-  const { user, profile, loading, openAuthModal, refreshProfile } = useAuth();
-
+  const { user, profile, loading, openAuthModal, refreshProfile, signOut } = useAuth();
+  const { paused, toggle: toggleMotion } = useExperienceMotion();
   const guardedRef = useRef(false);
 
   // Access control: logged-out visitors go home and get the login prompt.
@@ -45,26 +36,20 @@ export default function AccountSettingsPage() {
     openAuthModal("profile");
   }, [loading, user, router, openAuthModal]);
 
-  // ----- Profile (name / username / phone) -----
+  // One field edits in place at a time; the last one saved shows SAVED.
+  const [editing, setEditing] = useState<Field | null>(null);
+  const [saved, setSaved] = useState<Field | null>(null);
+
+  // ----- Profile fields (name, username, phone): the same profiles update as before -----
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [username, setUsername] = useState("");
-  const [profileInit, setProfileInit] = useState(false);
   const [savingProfile, setSavingProfile] = useState(false);
   const [profileMsg, setProfileMsg] = useState<Msg>(null);
   const [uStatus, setUStatus] = useState<UsernameStatus>("idle");
 
-  useEffect(() => {
-    if (profile && !profileInit) {
-      setFullName(profile.full_name ?? "");
-      setPhone(profile.phone ?? "");
-      setUsername(profile.username ?? "");
-      setProfileInit(true);
-    }
-  }, [profile, profileInit]);
-
   const currentUsername = profile?.username ?? "";
-  const usernameChanged = username.trim() !== currentUsername;
+  const usernameChanged = editing === "username" && username.trim() !== currentUsername;
 
   // Debounced availability check, only when the handle actually changed.
   useEffect(() => {
@@ -95,57 +80,72 @@ export default function AccountSettingsPage() {
     return () => clearTimeout(t);
   }, [username, usernameChanged]);
 
-  async function saveProfile(e: React.FormEvent) {
+  async function saveProfileField(e: React.FormEvent, field: "full_name" | "username" | "phone") {
     e.preventDefault();
     const supabase = getBrowserClient();
     if (!supabase || !user || savingProfile) return;
-    const uname = username.trim();
-    if (usernameChanged) {
+    const updates: Record<string, string | null> = {};
+    if (field === "username") {
+      const uname = username.trim();
+      if (!usernameChanged) {
+        setEditing(null);
+        return;
+      }
       if (!uname) {
         setProfileMsg({ tone: "bad", text: "Username can't be empty." });
         return;
       }
       if (!USERNAME_RE.test(uname)) {
-        setProfileMsg({
-          tone: "bad",
-          text: "Username must be 3-20 characters: letters, numbers, underscore, period.",
-        });
+        setProfileMsg({ tone: "bad", text: "Username must be 3-20 characters: letters, numbers, underscore, period." });
         return;
       }
+      updates.username = uname;
+    } else if (field === "full_name") {
+      updates.full_name = fullName.trim() || null;
+    } else {
+      updates.phone = phone.trim() || null;
     }
     setSavingProfile(true);
     setProfileMsg(null);
-    const updates: Record<string, string | null> = {
-      full_name: fullName.trim() || null,
-      phone: phone.trim() || null,
-    };
-    if (usernameChanged) updates.username = uname;
     try {
-      const { error } = await supabase
-        .from("profiles")
-        .update(updates)
-        .eq("id", user.id);
+      const { error } = await supabase.from("profiles").update(updates).eq("id", user.id);
       if (error) {
         if (error.code === "23505") {
           setProfileMsg({ tone: "bad", text: "That username is taken. Try another." });
         } else if (/column .* does not exist/i.test(error.message)) {
-          setProfileMsg({
-            tone: "bad",
-            text: "Name and phone need database migration 0007 applied first.",
-          });
+          setProfileMsg({ tone: "bad", text: "Name and phone need database migration 0007 applied first." });
         } else {
           setProfileMsg({ tone: "bad", text: "Couldn't save. Try again in a minute." });
         }
         return;
       }
       await refreshProfile();
-      setProfileMsg({ tone: "good", text: "Saved." });
+      setEditing(null);
+      setSaved(field);
     } finally {
       setSavingProfile(false);
     }
   }
 
-  // ----- Marketing email opt-in -----
+  const uHint: Msg = (() => {
+    if (!usernameChanged || !username.trim()) return null;
+    switch (uStatus) {
+      case "checking":
+        return { tone: "soft", text: "Checking…" };
+      case "available":
+        return { tone: "good", text: `@${username.trim()} is available` };
+      case "taken":
+        return { tone: "bad", text: "Taken. Try another." };
+      case "invalid":
+        return { tone: "bad", text: "3-20 characters; letters, numbers, underscore, period." };
+      case "unknown":
+        return { tone: "soft", text: "We'll double-check when you save." };
+      default:
+        return null;
+    }
+  })();
+
+  // ----- Marketing email opt-in (profiles.marketing_opt_in_at) -----
   const [savingOptIn, setSavingOptIn] = useState(false);
   const [optInMsg, setOptInMsg] = useState<Msg>(null);
   const optedIn = Boolean(profile?.marketing_opt_in_at);
@@ -173,19 +173,9 @@ export default function AccountSettingsPage() {
 
   // ----- Email (verification-based change) -----
   const [email, setEmail] = useState("");
-  const [emailInit, setEmailInit] = useState(false);
   const [savingEmail, setSavingEmail] = useState(false);
   const [emailMsg, setEmailMsg] = useState<Msg>(null);
-
-  useEffect(() => {
-    if (user?.email && !emailInit) {
-      setEmail(user.email);
-      setEmailInit(true);
-    }
-  }, [user, emailInit]);
-
-  const emailChanged =
-    email.trim().toLowerCase() !== (user?.email ?? "").toLowerCase();
+  const emailChanged = email.trim().toLowerCase() !== (user?.email ?? "").toLowerCase();
 
   async function saveEmail(e: React.FormEvent) {
     e.preventDefault();
@@ -203,18 +193,13 @@ export default function AccountSettingsPage() {
     setSavingEmail(true);
     setEmailMsg(null);
     try {
-      const { error } = await supabase.auth.updateUser(
-        { email: mail },
-        { emailRedirectTo: `${window.location.origin}/account/settings` }
-      );
+      const { error } = await supabase.auth.updateUser({ email: mail }, { emailRedirectTo: `${window.location.origin}/account/settings` });
       if (error) {
         setEmailMsg({ tone: "bad", text: error.message });
         return;
       }
-      setEmailMsg({
-        tone: "good",
-        text: `Check ${mail} for a confirmation link. Your email changes once you confirm it.`,
-      });
+      setEditing(null);
+      setEmailMsg({ tone: "good", text: `Check ${mail} for a confirmation link. Your email changes once you confirm it.` });
     } finally {
       setSavingEmail(false);
     }
@@ -223,7 +208,6 @@ export default function AccountSettingsPage() {
   // ----- Password (email/password accounts only) -----
   const oauthProvider = oauthLabel(profile?.auth_provider);
   const isPasswordAccount = oauthProvider === null;
-
   const [curPw, setCurPw] = useState("");
   const [newPw, setNewPw] = useState("");
   const [confirmPw, setConfirmPw] = useState("");
@@ -236,10 +220,7 @@ export default function AccountSettingsPage() {
     const supabase = getBrowserClient();
     if (!supabase || !user?.email || savingPw) return;
     if (!passwordMeetsPolicy(newPw)) {
-      setPwMsg({
-        tone: "bad",
-        text: "New password needs 8 to 12 characters, an uppercase letter, and a special character.",
-      });
+      setPwMsg({ tone: "bad", text: "New password needs 8 to 12 characters, an uppercase letter, and a special character." });
       return;
     }
     if (newPw !== confirmPw) {
@@ -250,10 +231,7 @@ export default function AccountSettingsPage() {
     setPwMsg(null);
     try {
       // Re-authenticate to confirm the current password before changing it.
-      const { error: reauthErr } = await supabase.auth.signInWithPassword({
-        email: user.email,
-        password: curPw,
-      });
+      const { error: reauthErr } = await supabase.auth.signInWithPassword({ email: user.email, password: curPw });
       if (reauthErr) {
         setPwMsg({ tone: "bad", text: "Current password is incorrect." });
         return;
@@ -266,6 +244,7 @@ export default function AccountSettingsPage() {
       setCurPw("");
       setNewPw("");
       setConfirmPw("");
+      setEditing(null);
       setPwMsg({ tone: "good", text: "Password updated." });
     } finally {
       setSavingPw(false);
@@ -278,124 +257,113 @@ export default function AccountSettingsPage() {
     setSendingReset(true);
     setPwMsg(null);
     try {
-      const { error } = await supabase.auth.resetPasswordForEmail(user.email, {
-        redirectTo: `${window.location.origin}/reset-password`,
-      });
+      const { error } = await supabase.auth.resetPasswordForEmail(user.email, { redirectTo: `${window.location.origin}/reset-password` });
       if (error) {
         setPwMsg({ tone: "bad", text: error.message });
         return;
       }
-      setPwMsg({
-        tone: "good",
-        text: `Sent a reset link to ${user.email}. Follow it to set a new password.`,
-      });
+      setPwMsg({ tone: "good", text: `Sent a reset link to ${user.email}. Follow it to set a new password.` });
     } finally {
       setSendingReset(false);
     }
   }
 
-  const uHint: Msg = (() => {
-    if (!usernameChanged || !username.trim()) return null;
-    switch (uStatus) {
-      case "checking":
-        return { tone: "soft", text: "Checking…" };
-      case "available":
-        return { tone: "good", text: `@${username.trim()} is available` };
-      case "taken":
-        return { tone: "bad", text: "Taken. Try another." };
-      case "invalid":
-        return {
-          tone: "bad",
-          text: "3-20 characters; letters, numbers, underscore, period.",
-        };
-      case "unknown":
-        return { tone: "soft", text: "We'll double-check when you save." };
-      default:
-        return null;
-    }
-  })();
+  // ----- This device -----
+  const [loggingOut, setLoggingOut] = useState(false);
+  async function logOut() {
+    setLoggingOut(true);
+    guardedRef.current = true;
+    await signOut();
+    router.replace("/");
+  }
 
   const ready = !loading && Boolean(user);
+  const creator = Boolean(profile?.creator_at);
+  const memberSince = profile?.created_at ? fmtDate(profile.created_at, { year: "numeric", month: "long" }) : null;
+  const savedTag = (f: Field) => saved === f && <span className={c.saved}>SAVED</span>;
+  const cancel = () => {
+    setEditing(null);
+    setProfileMsg(null);
+    setEmailMsg(null);
+    setPwMsg(null);
+  };
+  const editBtn = (f: Field, seed: () => void, label = "Change") => (
+    <button
+      type="button"
+      className={`${c.btn} ${c.line}`}
+      onClick={() => {
+        seed();
+        setEditing(f);
+        setSaved(null);
+        setProfileMsg(null);
+      }}
+    >
+      {label}
+    </button>
+  );
+  const formButtons = (busy: boolean, busyLabel: string, label: string, disabled = false) => (
+    <>
+      <button type="submit" className={`${c.btn} ${c.ink}`} disabled={busy || disabled}>
+        {busy ? busyLabel : label}
+      </button>
+      <button type="button" className={`${c.btn} ${c.ghost}`} onClick={cancel} disabled={busy}>
+        Cancel
+      </button>
+    </>
+  );
 
   return (
-    <PageShell>
-      <AccountShell active="profile">
+    <PageShell navOverlay>
+      <AccountFrame page="settings" title={["Account", "settings."]} sub="Your profile, sign-in, emails and preferences." ready={ready}>
         {!ready ? (
-          <div className={s.loading} aria-busy="true" aria-label="Loading your settings">
-            <div className={s.skeleton} />
-            <div className={`${s.skeleton} ${s.skeletonTall}`} />
-          </div>
+          <>
+            <div className={c.skel} aria-busy="true" aria-label="Loading your settings" />
+            <div className={`${c.skel} ${c.skelShort}`} />
+          </>
         ) : (
           <>
-            <header className={s.intro}>
-              <p className={s.introEyebrow}>Profile &amp; sign-in</p>
-              <h2 className={s.introTitle}>
-                <b>Make it</b>
-                <i>yours.</i>
-              </h2>
-              <p className={s.introLede}>
-                The details behind your designs. Keep your profile and sign-in information up to date.
-              </p>
-            </header>
+            <Card id="profile" title="Profile" purpose="How you appear to roommates in My Room and on room invites.">
+              <Row
+                label="Picture"
+                value={
+                  <span className={c.photo}>
+                    <RingAvatar size={64} />
+                    <span>
+                      {profile?.avatar_url ? "Your photo" : "Your initials, in your plan's colours."}
+                      <span className={c.helper} style={{ display: "block" }}>
+                        {PHOTO_HINT}
+                      </span>
+                    </span>
+                  </span>
+                }
+                action={<ProfilePhoto />}
+              />
 
-            <IdentityCard
-              name={profile?.full_name}
-              username={profile?.username}
-              email={user?.email}
-              avatar={profile?.avatar_url}
-              creator={Boolean(profile?.creator_at)}
-            >
-              <ProfilePhoto />
-            </IdentityCard>
+              {editing === "full_name" ? (
+                <Row label={<label htmlFor="set-name">Full name</label>} wide>
+                  <form className={c.edit} onSubmit={(e) => saveProfileField(e, "full_name")} noValidate>
+                    <input id="set-name" className={c.input} type="text" autoComplete="name" value={fullName} autoFocus placeholder="Alex Rivera" onChange={(e) => setFullName(e.target.value)} />
+                    {formButtons(savingProfile, "Saving…", "Save")}
+                  </form>
+                  <FieldMsg msg={profileMsg} />
+                </Row>
+              ) : (
+                <Row
+                  label="Full name"
+                  value={
+                    <>
+                      {profile?.full_name?.trim() || <span className={c.muted}>Not added</span>}
+                      {savedTag("full_name")}
+                    </>
+                  }
+                  action={editBtn("full_name", () => setFullName(profile?.full_name ?? ""), profile?.full_name ? "Change" : "Add")}
+                />
+              )}
 
-            {/* Profile */}
-            <section id="profile-details" className={`${s.card} ${s.section}`} aria-labelledby="profile-details-title">
-              <p className={s.sectionEyebrow}>01 / Your identity</p>
-              <h2 id="profile-details-title" className={s.cardTitle}>Profile details</h2>
-              <p className={s.cardLede}>A name and handle that make every shared design yours.</p>
-              <form onSubmit={saveProfile} className={s.form} noValidate>
-                <div className={s.fields}>
-                  <div>
-                    <label htmlFor="set-name" className="ds-label">
-                      Full name
-                    </label>
-                    <input
-                      id="set-name"
-                      type="text"
-                      autoComplete="name"
-                      value={fullName}
-                      onChange={(e) => {
-                        setFullName(e.target.value);
-                        setProfileMsg(null);
-                      }}
-                      placeholder="Alex Rivera"
-                      className="ds-input"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="set-phone" className="ds-label">
-                      Phone number <span className={s.optional}>(optional)</span>
-                    </label>
-                    <input
-                      id="set-phone"
-                      type="tel"
-                      autoComplete="tel"
-                      value={phone}
-                      onChange={(e) => {
-                        setPhone(e.target.value);
-                        setProfileMsg(null);
-                      }}
-                      placeholder="(555) 123-4567"
-                      className="ds-input"
-                    />
-                  </div>
-
-                  <div className={s.full}>
-                    <label htmlFor="set-username" className="ds-label">
-                      Username
-                    </label>
-                    <div className={s.at}>
+              {editing === "username" ? (
+                <Row label={<label htmlFor="set-username">Username</label>} wide>
+                  <form className={c.edit} onSubmit={(e) => saveProfileField(e, "username")} noValidate>
+                    <span className={c.at}>
                       <span aria-hidden="true">@</span>
                       <input
                         id="set-username"
@@ -403,192 +371,185 @@ export default function AccountSettingsPage() {
                         autoComplete="username"
                         maxLength={20}
                         value={username}
-                        readOnly={Boolean(profile?.creator_at)}
-                        aria-describedby={profile?.creator_at ? "set-username-creator" : undefined}
+                        autoFocus
+                        placeholder="dormdesigner"
+                        aria-describedby="set-username-hint"
                         onChange={(e) => {
                           setUsername(e.target.value);
                           setProfileMsg(null);
                         }}
-                        placeholder="dormdesigner"
                       />
-                    </div>
-                    {profile?.creator_at ? (
-                      <p id="set-username-creator" className={s.fieldMsg}>
-                        Creators keep their username: it&rsquo;s your creator code and your name on gallery layouts.
-                      </p>
-                    ) : (
-                      <FieldMsg msg={uHint} className={s.fieldMsg} />
-                    )}
+                    </span>
+                    {formButtons(savingProfile, "Saving…", "Save", uStatus === "taken" || uStatus === "invalid")}
+                  </form>
+                  <div id="set-username-hint">
+                    <FieldMsg msg={profileMsg ?? uHint} />
                   </div>
-                </div>
+                </Row>
+              ) : (
+                <Row
+                  label="Username"
+                  value={
+                    <>
+                      {currentUsername ? `@${currentUsername}` : <span className={c.muted}>Not set</span>}
+                      {savedTag("username")}
+                    </>
+                  }
+                  helper={creator ? "Creators keep their username: it’s your creator code and your name on gallery layouts." : undefined}
+                  action={!creator && editBtn("username", () => setUsername(currentUsername), currentUsername ? "Change" : "Add")}
+                />
+              )}
 
-                <div className={s.formActions}>
-                  <button
-                    type="submit"
-                    disabled={savingProfile || uStatus === "taken" || uStatus === "invalid"}
-                    className="ds-btn ds-btn--ink-yellow"
-                  >
-                    {savingProfile ? "Saving…" : "Save changes"}
-                  </button>
+              {editing === "phone" ? (
+                <Row label={<label htmlFor="set-phone">Phone number</label>} wide>
+                  <form className={c.edit} onSubmit={(e) => saveProfileField(e, "phone")} noValidate>
+                    <input id="set-phone" className={c.input} type="tel" autoComplete="tel" value={phone} autoFocus placeholder="(555) 123-4567" onChange={(e) => setPhone(e.target.value)} />
+                    {formButtons(savingProfile, "Saving…", "Save")}
+                  </form>
                   <FieldMsg msg={profileMsg} />
-                </div>
-              </form>
-            </section>
+                </Row>
+              ) : (
+                <Row
+                  label="Phone number"
+                  value={
+                    <>
+                      {profile?.phone?.trim() || <span className={c.muted}>Optional</span>}
+                      {savedTag("phone")}
+                    </>
+                  }
+                  action={editBtn("phone", () => setPhone(profile?.phone ?? ""), profile?.phone ? "Change" : "Add")}
+                />
+              )}
 
-            {/* Email */}
-            <section id="email-details" className={`${s.card} ${s.section}`} aria-labelledby="email-details-title">
-              <p className={s.sectionEyebrow}>02 / Stay connected</p>
-              <h2 id="email-details-title" className={s.cardTitle}>Email address</h2>
-              <p className={s.cardLede}>
-                We&apos;ll send a confirmation link to the new address. Your email only changes once you click it.
-              </p>
-              <form onSubmit={saveEmail} className={s.form} noValidate>
-                <div>
-                  <label htmlFor="set-email" className="ds-label">
-                    Email address
-                  </label>
-                  <input
-                    id="set-email"
-                    type="email"
-                    autoComplete="email"
-                    value={email}
-                    onChange={(e) => {
+              {editing === "email" ? (
+                <Row label={<label htmlFor="set-email">Email</label>} wide>
+                  <form className={c.edit} onSubmit={saveEmail} noValidate>
+                    <input id="set-email" className={c.input} type="email" autoComplete="email" value={email} autoFocus placeholder="you@school.edu" onChange={(e) => {
                       setEmail(e.target.value);
                       setEmailMsg(null);
-                    }}
-                    placeholder="you@school.edu"
-                    className="ds-input"
-                  />
-                </div>
-                <div className={s.formActions}>
-                  <button type="submit" disabled={savingEmail || !emailChanged} className="ds-btn ds-btn--ink-yellow">
-                    {savingEmail ? "Sending…" : "Update email"}
-                  </button>
+                    }} />
+                    {formButtons(savingEmail, "Sending…", "Update email", !emailChanged)}
+                  </form>
+                  <p className={c.helper}>We&apos;ll send a confirmation link to the new address. Your email only changes once you click it.</p>
                   <FieldMsg msg={emailMsg} />
-                </div>
-              </form>
-              <div id="marketing-emails" className={s.optIn}>
-                <button
-                  type="button"
-                  role="switch"
-                  aria-checked={optedIn}
-                  aria-describedby="marketing-emails-hint"
-                  disabled={savingOptIn}
-                  onClick={toggleMarketing}
-                  className={s.optInSwitch}
-                >
-                  <span>Marketing emails</span>
-                  <span className={s.switch} data-on={optedIn} aria-hidden="true" />
-                </button>
-                <p id="marketing-emails-hint" className={s.cardLede}>
-                  Dorm planning tips and dormscape updates. Account, invitation and receipt emails still arrive.
-                </p>
-                <FieldMsg msg={optInMsg} />
-              </div>
-            </section>
+                </Row>
+              ) : (
+                <Row label="Email" value={user?.email} helper="Used to sign in and for receipts and invites." action={editBtn("email", () => setEmail(user?.email ?? ""))}>
+                  <FieldMsg msg={emailMsg} />
+                </Row>
+              )}
 
-            {/* Password / provider */}
-            <section id="security-details" className={`${s.card} ${s.section}`} aria-labelledby="security-details-title">
-              <p className={s.sectionEyebrow}>03 / Just for you</p>
-              <h2 id="security-details-title" className={s.cardTitle}>Sign-in &amp; security</h2>
-              {isPasswordAccount ? (
-                <form onSubmit={changePassword} className={s.form} noValidate>
-                  <p className={s.cardLede} style={{ margin: 0 }}>
-                    We verify your current password before changing it.
-                  </p>
-                  <div className={s.fields}>
-                    <div className={s.full}>
-                      <label htmlFor="set-curpw" className="ds-label">
-                        Current password
-                      </label>
-                      <input
-                        id="set-curpw"
-                        type="password"
-                        autoComplete="current-password"
-                        value={curPw}
-                        onChange={(e) => {
+              {memberSince && <Row label="Member since" value={memberSince} />}
+            </Card>
+
+            <CreatorSection eyebrow="Creators" />
+
+            <Card id="security" title="Sign-in and security" purpose="Keep your account safe.">
+              {!isPasswordAccount ? (
+                <Row
+                  label="Password"
+                  value={`Signed in with ${oauthProvider}`}
+                  helper={`There’s no dormscape password to change. Manage your login from your ${oauthProvider} account.`}
+                />
+              ) : editing === "password" ? (
+                <Row label="Password" wide>
+                  <form onSubmit={changePassword} className={c.pwForm} noValidate>
+                    <p className={c.helper}>We verify your current password before changing it.</p>
+                    <div className={c.pwGrid}>
+                      <div className={c.full}>
+                        <label htmlFor="set-curpw">Current password</label>
+                        <input id="set-curpw" className={c.input} type="password" autoComplete="current-password" value={curPw} autoFocus placeholder="Your current password" onChange={(e) => {
                           setCurPw(e.target.value);
                           setPwMsg(null);
-                        }}
-                        placeholder="Your current password"
-                        className="ds-input"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="set-newpw" className="ds-label">
-                        New password
-                      </label>
-                      <input
-                        id="set-newpw"
-                        type="password"
-                        autoComplete="new-password"
-                        value={newPw}
-                        onChange={(e) => {
+                        }} />
+                      </div>
+                      <div>
+                        <label htmlFor="set-newpw">New password</label>
+                        <input id="set-newpw" className={c.input} type="password" autoComplete="new-password" value={newPw} placeholder="8 to 12 characters" onChange={(e) => {
                           setNewPw(e.target.value);
                           setPwMsg(null);
-                        }}
-                        placeholder="8 to 12 characters"
-                        className="ds-input"
-                      />
-                      <PasswordChecklist password={newPw} />
-                    </div>
-                    <div>
-                      <label htmlFor="set-confirmpw" className="ds-label">
-                        Confirm new password
-                      </label>
-                      <input
-                        id="set-confirmpw"
-                        type="password"
-                        autoComplete="new-password"
-                        value={confirmPw}
-                        onChange={(e) => {
+                        }} />
+                        <PasswordChecklist password={newPw} />
+                      </div>
+                      <div>
+                        <label htmlFor="set-confirmpw">Confirm new password</label>
+                        <input id="set-confirmpw" className={c.input} type="password" autoComplete="new-password" value={confirmPw} placeholder="Re-enter the new password" onChange={(e) => {
                           setConfirmPw(e.target.value);
                           setPwMsg(null);
-                        }}
-                        placeholder="Re-enter the new password"
-                        className="ds-input"
-                      />
+                        }} />
+                      </div>
                     </div>
-                  </div>
-                  <div className={s.formActions}>
-                    <button type="submit" disabled={savingPw} className="ds-btn ds-btn--ink-yellow">
-                      {savingPw ? "Updating…" : "Change password"}
-                    </button>
-                    <button type="button" onClick={sendReset} disabled={sendingReset} className={s.textBtn}>
-                      {sendingReset ? "Sending…" : "Forgot your password?"}
-                    </button>
-                  </div>
-                  <FieldMsg msg={pwMsg} />
-                </form>
+                    <div className={c.edit}>
+                      {formButtons(savingPw, "Updating…", "Change password")}
+                      <button type="button" onClick={sendReset} disabled={sendingReset} className={c.textBtn}>
+                        {sendingReset ? "Sending…" : "Forgot your password?"}
+                      </button>
+                    </div>
+                    <FieldMsg msg={pwMsg} />
+                  </form>
+                </Row>
               ) : (
-                <div className={s.oauth}>
-                  <span aria-hidden="true">
-                    <LinkIcon />
-                  </span>
-                  <p>
-                    You&apos;re signed in with <strong>{oauthProvider}</strong>. There&apos;s no dormscape password to
-                    change. Manage your login from your {oauthProvider} account.
-                  </p>
-                </div>
+                <Row
+                  label="Password"
+                  value={<span className={c.dots}>••••••••</span>}
+                  helper="We'll email you a link to set a new one."
+                  action={
+                    <>
+                      <button type="button" className={`${c.btn} ${c.line}`} onClick={sendReset} disabled={sendingReset}>
+                        {sendingReset ? "Sending…" : "Send reset link"}
+                      </button>
+                      {editBtn("password", () => setPwMsg(null))}
+                    </>
+                  }
+                >
+                  <FieldMsg msg={pwMsg} />
+                </Row>
               )}
-            </section>
+              <Row
+                label="This device"
+                value="Signed in"
+                helper="Log out here when you're on a shared computer."
+                action={
+                  <button type="button" className={`${c.btn} ${c.line}`} onClick={logOut} disabled={loggingOut}>
+                    {loggingOut ? "Logging out…" : "Log out"}
+                  </button>
+                }
+              />
+            </Card>
 
-            <section id="invites" className={`${s.card} ${s.section}`} aria-labelledby="invites-title">
-              <p className={s.sectionEyebrow}>04 / Invites</p>
-              <h2 id="invites-title" className={s.cardTitle}>Invite friends</h2>
-              <p className={s.cardLede}>
-                When a friend you invite makes their first design, you each get {REFERRAL_BONUS_DESIGNS} free design. Up to{" "}
-                {REFERRAL_MONTHLY_CAP} a month from your invites.
-              </p>
-              <InviteLink from="settings" showStats />
-            </section>
+            <Card id="emails" title="Emails" purpose="Choose what lands in your inbox.">
+              <Row
+                id="marketing-emails"
+                label="Tips and updates"
+                labelId="emails-tips-label"
+                value="Dorm planning tips and dormscape updates"
+                helper="Unsubscribe anytime."
+                action={<Switch on={optedIn} labelledBy="emails-tips-label" onToggle={toggleMarketing} disabled={savingOptIn} />}
+              >
+                <FieldMsg msg={optInMsg} />
+              </Row>
+              <Row
+                label="Account emails"
+                value="Receipts, room invites and password resets"
+                helper="Needed to run your account."
+                action={<span className={`${c.chip} ${c.green}`}>Always on</span>}
+              />
+            </Card>
 
-            <CreatorSection eyebrow="05 / Creators" />
+            <Card id="prefs" title="Preferences" purpose="How the site looks and moves for you.">
+              <Row
+                label="Motion"
+                labelId="prefs-motion-label"
+                value="Animations across the site"
+                helper="Turn off for a still page. Your device's reduce-motion setting is respected either way."
+                action={<Switch on={!paused} labelledBy="prefs-motion-label" onToggle={toggleMotion} />}
+              />
+            </Card>
 
             <DeleteAccountSection onLeave={() => { guardedRef.current = true; }} />
           </>
         )}
-      </AccountShell>
+      </AccountFrame>
     </PageShell>
   );
 }
