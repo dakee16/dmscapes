@@ -69,6 +69,7 @@
   white-space: nowrap;
 }
 .ctrack li::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--ds-blue); }
+.ctrack li[data-n]::before { content: attr(data-n); }
 
 /* ---------- Why plan: a widget grid of three drawings, scrubbed by scroll (no pinning) ---------- */
 .problem { position: relative; background: #f5e9d8; }
