@@ -1,10 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { useAuth } from "@/lib/auth-context";
-import { startCheckout } from "@/lib/checkout";
-import { RECHARGE_CREDITS, RECHARGE_PRICE_USD } from "@/lib/plan";
-import c from "./AccountPage.module.css";
 
 export const usd = (n: number) => `$${n.toFixed(2)}`;
 
@@ -27,32 +22,4 @@ export function oauthLabel(provider: string | null | undefined): string | null {
     default:
       return null;
   }
-}
-
-/** Plus: buy a recharge pack through Stripe checkout (the browser leaves for Stripe). */
-export function RechargeButton() {
-  const { openAuthModal } = useAuth();
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
-  async function recharge() {
-    if (busy) return;
-    setBusy(true);
-    setError("");
-    const res = await startCheckout("recharge");
-    if (res.ok) return; // browser navigates to Stripe
-    setBusy(false);
-    if (res.needsAuth) {
-      openAuthModal("profile");
-      return;
-    }
-    setError(res.error);
-  }
-  return (
-    <>
-      <button type="button" onClick={recharge} disabled={busy} className={`${c.btn} ${c.ink}`}>
-        {busy ? "Starting checkout…" : `Recharge · ${RECHARGE_CREDITS} credits for ${usd(RECHARGE_PRICE_USD)}`}
-      </button>
-      {error && <p role="alert">{error}</p>}
-    </>
-  );
 }

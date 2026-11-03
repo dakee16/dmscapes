@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import PageShell from "@/components/ds/PageShell";
 import AccountFrame, { Card, Row } from "@/components/account/AccountFrame";
-import { RechargeButton, fmtDate, usd } from "@/components/account/AccountUI";
+import { fmtDate, usd } from "@/components/account/AccountUI";
 import BuyCreditsForm from "@/components/site/BuyCreditsForm";
 import UpgradeButton from "@/components/site/UpgradeButton";
 import InviteLink from "@/components/growth/InviteLink";
@@ -45,6 +45,35 @@ const PERKS: { label: string; tiers: PlanTier[] }[] = [
   { label: "My Room with your roommates", tiers: ["pro"] },
   { label: "3D Room Builder and Room Studio", tiers: ["pro"] },
 ];
+
+// Everything each plan includes, under the perks (the list the billing page had before).
+const TOOLS: Record<PlanTier, string[]> = {
+  free: [
+    "Real room dimensions for supported schools",
+    "1 room plan to try it out",
+    "Save your design to your account, free",
+    "3 vibes: Minimalist, Cozy Aesthetic, Preppy",
+    "Budget-aware Amazon product picks",
+    "Drag-and-drop 2D layout that fits to the inch",
+  ],
+  flex: [
+    "Everything in Free",
+    `À la carte plan credits at ${usd(FLEX_CREDIT_PRICE_USD)} each`,
+    "Credits never expire; top up whenever you need one",
+    "3 vibes: Minimalist, Cozy Aesthetic, Preppy",
+  ],
+  plus: ["All 9 vibes", "Draw your own room", "Add your own products", "PDF and PNG export", "Compare two designs", "Priority school requests"],
+  pro: [
+    "Everything in Plus",
+    "3D Room Builder: floors, walls, doors, and windows",
+    "Live 3D Room Studio",
+    "Host one shared room with up to four people",
+    "Create your own vibe",
+    "Unlimited saved designs",
+  ],
+};
+const toolsTitle = (tier: PlanTier, name: string) =>
+  tier === "plus" || tier === "pro" ? `Your ${name} tools · kept permanently` : tier === "flex" ? "Included with Flex" : "Included free";
 
 /** The current plan on ink: name, what it cost (when bought), the perks it has, and the next step. */
 function PlanCard({ profile }: { profile: Profile }) {
@@ -91,6 +120,14 @@ function PlanCard({ profile }: { profile: Profile }) {
           );
         })}
       </ul>
+      <div className={c.tools}>
+        <h3 className={c.toolsTitle}>{toolsTitle(tier, planLabel(profile))}</h3>
+        <ul>
+          {TOOLS[tier].map((t) => (
+            <li key={t}>{t}</li>
+          ))}
+        </ul>
+      </div>
       <div className={c.planActions}>
         {tier === "free" && (
           <button type="button" className={`${c.btn} ${c.yellow}`} onClick={() => openUpgrade()}>
@@ -108,24 +145,33 @@ function PlanCard({ profile }: { profile: Profile }) {
 
 /** Design credits on a tape measure: the count, the way to get more, and the rules that are true for this plan. */
 function CreditsCard({ profile, justBought }: { profile: Profile; justBought: number | null }) {
+  const { openUpgrade } = useUpgrade();
   const credit = headerCreditState(profile);
   const tier = credit.tier;
   const left = credit.designsLeft;
+  // Free: Upgrade (the upgrade sheet) or Recharge (buy single credits below). Flex: Upgrade.
+  // Plus: Upgrade to Pro (the Pro checkout). Pro: Top up (buy single credits below).
+  const upgrade = (
+    <button type="button" className={`${c.btn} ${c.ink}`} onClick={() => openUpgrade()}>
+      Upgrade
+    </button>
+  );
   const action =
-    tier === "plus" ? (
-      <RechargeButton />
+    tier === "free" ? (
+      <div className={c.edit}>
+        {upgrade}
+        <a href="#buy-credits" className={`${c.btn} ${c.line}`}>
+          Recharge
+        </a>
+      </div>
     ) : tier === "flex" ? (
-      <a href="#buy-credits" className={`${c.btn} ${c.ink}`}>
-        Buy credits · {usd(FLEX_CREDIT_PRICE_USD)} each
-      </a>
-    ) : tier === "pro" ? (
+      upgrade
+    ) : tier === "plus" ? (
+      <UpgradeButton type="pro" label="Upgrade to Pro" className={`${c.btn} ${c.ink}`} />
+    ) : (
       <a href="#buy-credits" className={`${c.btn} ${c.ink}`}>
         Top up · {usd(FLEX_CREDIT_PRICE_USD)} per credit
       </a>
-    ) : (
-      <Link href="/pricing" className={`${c.btn} ${c.blue}`}>
-        See plans
-      </Link>
     );
   const notes = [
     "Each new plan uses a credit.",
