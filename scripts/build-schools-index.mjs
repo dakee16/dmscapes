@@ -156,6 +156,27 @@ const dates = Object.fromEntries(
     .map((s) => [s.college_id, s.data_collected])
 );
 fs.writeFileSync(DATES, JSON.stringify(dates));
+
+// Where each school's room data came from: its housing site, and the hall's own
+// page where the source names one. The school and hall pages link these so every
+// size can be traced back to the university.
+const SOURCES = path.join(process.cwd(), "lib", "school-sources.json");
+const isUrl = (u) => typeof u === "string" && /^https?:\/\//.test(u);
+const inIndex = new Map(schools.map((s) => [s.id, new Set(s.dorms.map((d) => d.id))]));
+const sourceMap = Object.fromEntries(
+  sources
+    .filter((s) => isUrl(s.housing_url) && inIndex.has(s.college_id))
+    .map((s) => [
+      s.college_id,
+      {
+        housing: s.housing_url,
+        halls: Object.fromEntries(
+          s.dorms.filter((d) => isUrl(d.hall_url) && inIndex.get(s.college_id).has(d.dorm_id)).map((d) => [d.dorm_id, d.hall_url])
+        ),
+      },
+    ])
+);
+fs.writeFileSync(SOURCES, JSON.stringify(sourceMap));
 const kb = (fs.statSync(OUT).size / 1024).toFixed(0);
 const allRooms = schools.flatMap((s) => s.dorms.flatMap((d) => d.rooms));
 const published = allRooms.filter((r) => r.length_ft && r.width_ft && !r.dims_estimated).length;
