@@ -280,6 +280,35 @@ export function webPageJsonLd({ path, name, image }: { path: string; name: strin
   };
 }
 
+/**
+ * A data page (a school or hall) as a WebPage about its subject, compiled by
+ * dormscape from the source it names. `dateModified` is when that data was
+ * collected and must match the date shown on the page; `name` is the visible H1.
+ */
+export function dataPageJsonLd({
+  path,
+  name,
+  about,
+  dateModified,
+  isBasedOn,
+}: {
+  path: string;
+  name: string;
+  about: object;
+  dateModified?: string;
+  isBasedOn?: string;
+}) {
+  return {
+    ...webPageJsonLd({ path, name }),
+    inLanguage: "en-US",
+    about,
+    ...(dateModified ? { dateModified } : {}),
+    ...(isBasedOn ? { isBasedOn } : {}),
+    author: { "@type": "Organization", "@id": organization["@id"], name: SITE_NAME, url: SITE_URL },
+    publisher: { "@id": organization["@id"] },
+  };
+}
+
 /** Breadcrumb trail. Pass [{name, path}] from root to current page. */
 export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   return {

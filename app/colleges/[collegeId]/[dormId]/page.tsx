@@ -20,7 +20,9 @@ import { shortName } from "@/lib/school-names";
 import { formatRoomType } from "@/lib/format";
 import { beddingAdvisory } from "@/lib/bedding";
 import { bedName, fitRoom, furnitureSqFt, ft, hasDims, isPublished, roomName, sqFtOf, type FittedRoom } from "@/lib/room-preview";
-import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, postalAddressJsonLd, absoluteUrl } from "@/lib/seo";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, postalAddressJsonLd, dataPageJsonLd } from "@/lib/seo";
+import { hallSource, officialHallUrl, roomRows } from "@/lib/school-facts";
+import SourceLine from "@/components/college/SourceLine";
 import type { RoomSummary } from "@/lib/types";
 import { HallHeroLink, HallWalks, type NearPlace } from "@/components/hall-finder/Entry";
 import { hasHallFinder, type Campus } from "@/lib/hall-finder";
@@ -120,6 +122,9 @@ export default async function DormPage(props: {
   const siblings = Array.from({ length: Math.min(12, school.dorms.length - 1) }, (_, k) => school.dorms[(at + 1 + k) % school.dorms.length]);
   const planHref = `/plan?school=${school.id}&dorm=${dorm.id}`;
   const n = dorm.rooms.length;
+  const source = hallSource(school.id, dorm.id);
+  const officialUrl = officialHallUrl(school.id, dorm.id);
+  const rows = roomRows(dorm);
 
   // Pilot schools: the hall's nearest dining hall, library and gym from the public campus
   // file, read at build (the walking-minute matrix itself stays server-only).
@@ -171,27 +176,32 @@ export default async function DormPage(props: {
       <JsonLd
         data={[
           breadcrumbJsonLd(crumbs),
-          {
-            "@context": "https://schema.org",
-            "@type": "Residence",
-            name: dorm.name,
-            url: absoluteUrl(`/colleges/${school.id}/${dorm.id}`),
-            containedInPlace: {
-              "@type": "CollegeOrUniversity",
-              name: school.name,
-              url: absoluteUrl(`/colleges/${school.id}`),
-              ...(address ? { address } : {}),
+          // The page is about the hall; the hall's own URL is the school's page for it, never ours.
+          dataPageJsonLd({
+            path: `/colleges/${school.id}/${dorm.id}`,
+            name: `${dorm.name} room dimensions.`,
+            dateModified: source?.collected ?? undefined,
+            isBasedOn: source?.url,
+            about: {
+              "@type": "Residence",
+              name: dorm.name,
+              ...(officialUrl ? { url: officialUrl } : {}),
+              containedInPlace: {
+                "@type": "CollegeOrUniversity",
+                name: school.name,
+                ...(address ? { address } : {}),
+              },
+              // Room sizes as data for search and answer engines; published
+              // dimensions only, never our estimates.
+              containsPlace: dorm.rooms.filter(isPublished).map((r) => ({
+                "@type": "Room",
+                name: roomName(r),
+                description: `${ft(Math.max(r.length_ft!, r.width_ft!))} × ${ft(Math.min(r.length_ft!, r.width_ft!))} ft, ${bedName(r.bed_size)} beds`,
+                floorSize: { "@type": "QuantitativeValue", value: Math.round(r.length_ft! * r.width_ft!), unitCode: "FTK" },
+                ...(r.occupants ? { occupancy: { "@type": "QuantitativeValue", value: r.occupants } } : {}),
+              })),
             },
-            // Room sizes as data for search and answer engines; published
-            // dimensions only, never our estimates.
-            containsPlace: dorm.rooms.filter(isPublished).map((r) => ({
-              "@type": "Room",
-              name: roomName(r),
-              description: `${ft(Math.max(r.length_ft!, r.width_ft!))} × ${ft(Math.min(r.length_ft!, r.width_ft!))} ft, ${bedName(r.bed_size)} beds`,
-              floorSize: { "@type": "QuantitativeValue", value: Math.round(r.length_ft! * r.width_ft!), unitCode: "FTK" },
-              ...(r.occupants ? { occupancy: { "@type": "QuantitativeValue", value: r.occupants } } : {}),
-            })),
-          },
+          }),
         ]}
       />
       <PageHero
@@ -233,6 +243,7 @@ export default async function DormPage(props: {
                 </li>
               ))}
             </ul>
+            {source && <SourceLine source={source} what={published.length > 0 ? "Room sizes" : "Room types"} />}
           </>
         }
         art={{
@@ -374,6 +385,34 @@ export default async function DormPage(props: {
               );
             })}
           </ul>
+          <div className={css.sizeTable}>
+            <table className="ds-table">
+              <caption className="ds-eyebrow">Every room type at {dorm.name}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Room type</th>
+                  <th scope="col">Size</th>
+                  <th scope="col">Floor area</th>
+                  <th scope="col">Beds</th>
+                  <th scope="col">Size is</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((row, i) => (
+                  <tr key={i}>
+                    <th scope="row">
+                      {row.name}
+                      {row.occupants ? ` · sleeps ${row.occupants}` : ""}
+                    </th>
+                    <td>{row.dims ?? "Not published"}</td>
+                    <td>{row.sqft ? `${row.sqft} sq ft` : "Not published"}</td>
+                    <td>{row.bed}</td>
+                    <td>{row.status === "Published" ? "Published by the school" : row.status === "Estimated" ? "Our estimate" : "Not published"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           {closet && (
             <p className={css.closetLine}>
               Closet: {closet.width_ft}′ wide × {closet.depth_ft}′ deep, as published for this building.
