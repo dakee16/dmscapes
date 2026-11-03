@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/ds/PageShell";
 import MyRoomHome from "@/components/my-room/MyRoomHome";
-import { pageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/site/JsonLd";
+import { pageMetadata, webPageJsonLd } from "@/lib/seo";
 
 // Signed out, this is the landing page for My Room (a shared room for roommates, with Pro); signed in,
 // the same page lists your designs. The HTML crawlers get is the landing page, so it is indexable.
@@ -14,6 +15,7 @@ export const metadata: Metadata = pageMetadata({
 export default function MyRoomPage() {
   return (
     <PageShell navOverlay>
+      <JsonLd data={{ ...webPageJsonLd({ path: "/my-room", name: "Split the room, not the fridge." }), inLanguage: "en-US" }} />
       <MyRoomHome />
     </PageShell>
   );

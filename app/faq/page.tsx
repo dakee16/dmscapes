@@ -10,6 +10,8 @@ import { FaqBrowser, FaqProvider, FaqSearch, type FaqGroup } from "@/components/
 import { topicOf } from "@/components/blog/topics";
 import { POSTS } from "@/content/blog";
 import { faqPageJsonLd } from "@/lib/blog";
+import { FOUNDER_AUTHOR, SITE_URL, absoluteUrl } from "@/lib/seo";
+import { shortDate } from "@/components/blog/topics";
 import css from "@/components/faq/Faq.module.css";
 
 const DESCRIPTION =
@@ -44,12 +46,15 @@ export const metadata: Metadata = {
 
 // Each post contributes a topic group. The /faq page is the single home for FAQ
 // content and the FAQPage structured data now that posts are FAQ-free.
-const GROUPS = POSTS.filter((p) => p.faqs && p.faqs.length > 0).map((p) => ({
+const WITH_FAQS = POSTS.filter((p) => p.faqs && p.faqs.length > 0);
+const GROUPS = WITH_FAQS.map((p) => ({
   topic: p.faqTopic ?? p.title,
   slug: p.slug,
   title: p.title,
   faqs: p.faqs ?? [],
 }));
+// The answers change when their posts do, so the page dates itself by the newest of them (as the sitemap does).
+const UPDATED = WITH_FAQS.map((p) => p.updated ?? p.date).sort().at(-1)!;
 
 // Display order: the everyday questions first, the paid tools after. Topics
 // not listed keep their place at the end, so a new post's FAQs still show.
@@ -79,7 +84,17 @@ const rank = (topic: string) => {
 };
 
 export default function FAQPage() {
-  const jsonLd = faqPageJsonLd(GROUPS.flatMap((g) => g.faqs));
+  const jsonLd = {
+    ...faqPageJsonLd(GROUPS.flatMap((g) => g.faqs)),
+    "@id": `${absoluteUrl("/faq")}#webpage`,
+    url: absoluteUrl("/faq"),
+    name: "Dorm questions, answered.",
+    inLanguage: "en-US",
+    dateModified: UPDATED,
+    author: FOUNDER_AUTHOR,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+  };
 
   // Array sort is stable, so unlisted topics keep their live order.
   const shown: FaqGroup[] = [...GROUPS]
@@ -102,7 +117,7 @@ export default function FAQPage() {
           className={css.hero}
           eyebrow={
             <>
-              FAQ · {total} questions · {GROUPS.length} topics
+              FAQ · {total} questions · {GROUPS.length} topics · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time>
             </>
           }
           lines={[

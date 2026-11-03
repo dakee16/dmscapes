@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { CONTACT_EMAIL, INSTAGRAM_URL, TIKTOK_URL, pageMetadata } from "@/lib/seo";
+import { CONTACT_EMAIL, INSTAGRAM_URL, TIKTOK_URL, SITE_URL, absoluteUrl, organizationJsonLd, pageMetadata } from "@/lib/seo";
+import JsonLd from "@/components/site/JsonLd";
 import Link from "next/link";
 import PageShell from "@/components/ds/PageShell";
 import PageHero from "@/components/ds/PageHero";
@@ -65,6 +66,22 @@ const QUICK = [
 export default function ContactPage() {
   return (
     <PageShell navOverlay>
+      <JsonLd
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "@id": `${absoluteUrl("/contact")}#webpage`,
+            url: absoluteUrl("/contact"),
+            name: "Contact us.",
+            inLanguage: "en-US",
+            isPartOf: { "@id": `${SITE_URL}/#website` },
+            about: { "@id": `${SITE_URL}/#organization` },
+            mainEntity: { "@id": `${SITE_URL}/#organization` },
+          },
+          organizationJsonLd(),
+        ]}
+      />
       <PageHero
         bg="var(--ds-warm)"
         size="md"
