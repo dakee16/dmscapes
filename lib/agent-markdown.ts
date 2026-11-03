@@ -7,7 +7,7 @@ import { PILOT_SCHOOLS, hallFinderLive } from "@/lib/hall-finder";
 import { POSTS } from "@/content/blog";
 import { HALL_COUNT, LAYOUT_COUNT, SCHOOL_COUNT } from "@/lib/home-data";
 import { FLEX_CREDIT_PRICE_USD, FREE_PLAN_CAP, PLUS_INITIAL_CREDITS, PLUS_PRICE_USD, PRO_INITIAL_CREDITS, PRO_PRICE_USD } from "@/lib/plan";
-import { CONTACT_EMAIL, SITE_TAGLINE, absoluteUrl } from "@/lib/seo";
+import { CONTACT_EMAIL, DATA_LICENSE, FOUNDER, SITE_TAGLINE, absoluteUrl } from "@/lib/seo";
 import { COMPETITORS, shortCompetitorName } from "@/lib/compare";
 import { PLANNER_FAQS } from "@/lib/guide-planner";
 import { BED_RULE_FAQS } from "@/lib/guide-bed-rules";
@@ -23,7 +23,11 @@ const usd = (n: number) => `$${n.toFixed(2)}`;
 const link = (name: string, path: string, note?: string) => `- [${name}](${absoluteUrl(path)})${note ? `: ${note}` : ""}`;
 
 const coverage = () =>
-  `dormscape covers ${SCHOOL_COUNT} schools, ${HALL_COUNT.toLocaleString("en-US")} residence halls and ${LAYOUT_COUNT.toLocaleString("en-US")} room types. Room dimensions come from what each school publishes, and anything estimated is labelled as an estimate.`;
+  `dormscape covers ${SCHOOL_COUNT} schools, ${HALL_COUNT.toLocaleString("en-US")} residence halls and ${LAYOUT_COUNT.toLocaleString("en-US")} room types. Room dimensions come from what each school publishes, and anything estimated is labelled as an estimate. Each college and hall page links the housing page its sizes came from, with the date they were collected.`;
+
+/** Who makes the site and how its data may be reused. */
+const provenance = () =>
+  `Made by ${FOUNDER.name}, dormscape's founder (${absoluteUrl(FOUNDER.path)}). The room-size and bed-rule tables are free to reuse under CC BY 4.0 (${DATA_LICENSE}): credit dormscape and link the page.`;
 
 const plans = () => [
   "## Plans",
@@ -85,6 +89,8 @@ export function llmsTxt(): string {
     `> ${SITE_TAGLINE} Pick your school, hall and room type, choose a style and a budget, and get a to-scale layout with a shoppable list.`,
     "",
     coverage(),
+    "",
+    provenance(),
     "",
     ...plans(),
     "",
