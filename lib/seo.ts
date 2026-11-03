@@ -115,9 +115,10 @@ export const X_URL = "https://x.com/dormscapehq";
 export const PINTEREST_URL = "https://www.pinterest.com/07kzto0mnvc8tlnvzi1c7uhl6paua4/";
 export const LINKEDIN_URL = "https://www.linkedin.com/company/dormscape/";
 export const THREADS_URL = "https://www.threads.com/@dormscapehq";
+export const CRUNCHBASE_URL = "https://www.crunchbase.com/organization/dormscape";
 // The footer and contact page link these same constants, so what people can click and what the
 // schema says can't differ. TikTok's bio says "dormscape.us"; Instagram can't be read without a login.
-export const SOCIAL_PROFILES: string[] = [TIKTOK_URL, INSTAGRAM_URL, X_URL, PINTEREST_URL, LINKEDIN_URL, THREADS_URL];
+export const SOCIAL_PROFILES: string[] = [TIKTOK_URL, INSTAGRAM_URL, X_URL, PINTEREST_URL, LINKEDIN_URL, THREADS_URL, CRUNCHBASE_URL];
 
 /** The license dormscape's published datasets (room sizes, bed rules) carry: reuse with credit and a link. */
 export const DATA_LICENSE = "https://creativecommons.org/licenses/by/4.0/";
@@ -126,7 +127,7 @@ export const DATA_LICENSE = "https://creativecommons.org/licenses/by/4.0/";
 export const CONTACT_EMAIL = "info@dormscape.us";
 
 /** The person behind dormscape: named on /about (#founder) and the author of the guides and blog. */
-export const FOUNDER = { name: "Daksh Mainee", path: "/about#founder" };
+export const FOUNDER = { name: "Daksh Mainee", path: "/about#founder", linkedin: "https://www.linkedin.com/in/daksh-mainee16/" };
 
 /** The founder as an author reference, for a page's or post's `author`. */
 export const FOUNDER_AUTHOR = {
@@ -134,6 +135,7 @@ export const FOUNDER_AUTHOR = {
   "@id": `${SITE_URL}${FOUNDER.path}`,
   name: FOUNDER.name,
   url: `${SITE_URL}${FOUNDER.path}`,
+  sameAs: [FOUNDER.linkedin],
 };
 
 /** The founder's own node, on /about. */

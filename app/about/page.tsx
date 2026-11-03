@@ -260,7 +260,11 @@ export default function AboutPage() {
           <p className={css.founderBody} data-reveal="">
             dormscape is built by its founder, {FOUNDER.name}. Room sizes come from each school&rsquo;s own housing
             pages, estimates are labelled as estimates, and every college page links the source its sizes came from.
-            Spot something off?{" "}
+            Find {FOUNDER.name.split(" ")[0]} on{" "}
+            <a href={FOUNDER.linkedin} className="ds-link" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+            . Spot something off?{" "}
             <Link href="/methodology#corrections" className="ds-link">
               Send a correction
             </Link>{" "}
