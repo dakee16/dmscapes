@@ -11,7 +11,6 @@ type Vibe = {
   name: string;
   plus: boolean;
   line: string;
-  rule: string;
   dots: [string, string, string];
 };
 
@@ -65,7 +64,7 @@ export default function VibesSection({ vibes }: { vibes: Vibe[] }) {
           <div ref={grid} className={css.hgrid} data-anim="">
             <span ref={hl} className={css.hl} aria-hidden="true" />
             {vibes.map((v) => (
-              <div key={v.id} className={css.vibe} data-rv="row" style={{ "--rule": v.rule } as React.CSSProperties}>
+              <div key={v.id} className={css.vibe} data-rv="row">
                 <div className={css.vh}>
                   <span className={css.dots} aria-hidden="true">
                     {v.dots.map((c, i) => (

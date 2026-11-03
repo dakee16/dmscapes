@@ -277,7 +277,6 @@
 }
 .live .hl { animation: none; transform: translate(calc(var(--c, 0) * (100% + 12px)), calc(var(--r, 0) * (100% + 12px))); transition: transform 0.55s cubic-bezier(0.65, 0, 0.35, 1); }
 .vibe { position: relative; padding: 14px 14px 16px; border-radius: 14px; }
-.vibe::before { content: ""; position: absolute; left: 14px; right: 14px; top: 0; height: 3px; border-radius: 2px; background: var(--rule); }
 .vh { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
 .dots { display: flex; flex: none; }
 .dots i { width: 14px; height: 14px; border-radius: 50%; box-shadow: 0 0 0 1.5px #f6eada, inset 0 0 0 1px rgba(22, 22, 29, 0.15); }
