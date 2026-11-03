@@ -2,7 +2,7 @@ import { Fragment, type ReactNode } from "react";
 
 export interface HeadlineLine {
   text: ReactNode;
-  /** Fraunces italic (the second voice of every headline) */
+  /** Fraunces italic, the second voice. Page titles (h1) only; on smaller headings the line is set in Archivo like the rest. */
   serif?: boolean;
   /** pink/blue riso shadow (display lines only) */
   riso?: boolean;
@@ -45,7 +45,7 @@ export default function Headline({
           <span className={`ds-line ${line.className ?? ""}`} style={{ "--l": i } as React.CSSProperties}>
             <span
               className={[
-                line.serif ? "ds-serif ds-serif--blue" : "ds-display",
+                line.serif && Tag === "h1" ? "ds-serif ds-serif--blue" : "ds-display",
                 line.riso ? "ds-riso" : "",
               ].join(" ")}
             >

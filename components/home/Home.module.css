@@ -4,8 +4,8 @@
 
 /* ---------- Shared ---------- */
 .h2 { margin: 20px 0 0; font-weight: 400; text-wrap: balance; }
-.h2 .s { display: block; font-size: clamp(38px, 4.3vw, 62px); line-height: 1.02; }
-.h2 .f { display: block; font-size: clamp(46px, 5.3vw, 76px); line-height: 1.05; }
+/* Both lines in Archivo at one size; the italic second voice is kept for the hero. */
+.h2 .s, .h2 .f { display: block; font-size: clamp(38px, 4.3vw, 62px); line-height: 1.02; }
 .lede { margin-top: 20px; max-width: 560px; }
 .note { font: 600 12px/1.4 var(--ds-mono); letter-spacing: 0.04em; color: var(--ds-caption); }
 .ft { font-family: var(--ds-sans); font-weight: 700; letter-spacing: 0; }
@@ -203,8 +203,7 @@
 /* ---------- How it works: card stack ---------- */
 .how { --pin: clamp(92px, 13vh, 132px); background: #dce1f5; }
 .howGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; padding: 104px 0; }
-.howHead .h2 .s { font-size: clamp(36px, 3.9vw, 56px); line-height: 1.04; }
-.howHead .h2 .f { font-size: clamp(44px, 4.6vw, 66px); line-height: 1.04; }
+.howHead .h2 .s, .howHead .h2 .f { font-size: clamp(36px, 3.9vw, 56px); line-height: 1.04; }
 .howHead .lede { max-width: 480px; }
 .prog { margin-top: 34px; max-width: 420px; }
 .progTrack { position: relative; height: 8px; border-radius: 4px; background: rgba(22, 22, 29, 0.08); overflow: hidden; }
@@ -412,8 +411,8 @@
 .studio[data-manual] { transition: --L 0.9s cubic-bezier(0.65, 0, 0.35, 1); }
 .stGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: 64px; align-items: center; padding: 96px 0; }
 .stCopy :global(.ds-eyebrow) { color: var(--ds-studio); }
-.stCopy .h2 .s { font-size: clamp(48px, 5vw, 72px); line-height: 1; }
-.stCopy .h2 .f { font-size: clamp(56px, 6.1vw, 88px); color: var(--ds-studio); }
+.stCopy .h2 .s, .stCopy .h2 .f { font-size: clamp(48px, 5vw, 72px); line-height: 1; }
+.stCopy .h2 .f { color: var(--ds-studio); }
 .stCopy .lede { margin-top: 18px; color: #cfccd9; max-width: 520px; }
 .stCopy .ctaRow { margin-top: 30px; }
 .sRows { margin: 30px 0 0; padding: 0; list-style: none; border-top: 1px solid rgba(255, 255, 255, 0.12); }
@@ -473,7 +472,7 @@
 /* ---------- My Room: shared tooltip avatars ---------- */
 .together { background: #e5e7f6; overflow: hidden; }
 .tgGrid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: 48px; align-items: center; padding: 96px 0; }
-.tgCopy .h2 .s { font-size: clamp(44px, 5vw, 76px); line-height: 0.98; font-stretch: 86%; letter-spacing: -0.04em; }
+.tgCopy .h2 .s, .tgCopy .h2 .f { font-size: clamp(44px, 5vw, 76px); line-height: 0.98; font-stretch: 86%; letter-spacing: -0.04em; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 0; padding: 0; list-style: none; }
 .chip { display: inline-flex; align-items: center; height: 26px; padding: 0 11px; border-radius: 999px; background: #fff; font: 700 11px/1 var(--ds-mono); letter-spacing: 0.1em; text-transform: uppercase; }
 .chip:first-child { background: var(--ds-yellow); transform: rotate(-1.5deg); }
@@ -647,8 +646,7 @@
 .final { background: #e8a622; }
 .fnGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.62fr); gap: 56px; align-items: center; padding: 88px 0; }
 .final :global(.ds-eyebrow) { color: var(--ds-ink); }
-.final .h2 .s { font-size: clamp(56px, 7vw, 104px); line-height: 0.95; }
-.final .h2 .f { font-size: clamp(58px, 7.4vw, 108px); line-height: 1.02; color: var(--ds-ink); }
+.final .h2 .s, .final .h2 .f { font-size: clamp(56px, 7vw, 104px); line-height: 0.95; }
 .final .note { color: var(--ds-ink); }
 .corner { position: relative; display: inline-flex; margin: 14px; }
 .corner i { position: absolute; width: 14px; height: 14px; border: 0 solid var(--ds-ink); animation: corner 2.4s var(--ds-ease) infinite; }
