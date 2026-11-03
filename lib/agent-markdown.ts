@@ -1,4 +1,8 @@
-import { SCHOOLS, getSchool } from "@/lib/schools";
+import { SCHOOLS, getSchool, publishedDimsCount } from "@/lib/schools";
+import { shortName } from "@/lib/school-names";
+import { hallSource, roomRows, schoolSource, schoolSummary, type Source } from "@/lib/school-facts";
+import { shortDate } from "@/components/blog/topics";
+import type { DormSummary, SchoolSummary } from "@/lib/types";
 import { PILOT_SCHOOLS, hallFinderLive } from "@/lib/hall-finder";
 import { POSTS } from "@/content/blog";
 import { HALL_COUNT, LAYOUT_COUNT, SCHOOL_COUNT } from "@/lib/home-data";
@@ -11,8 +15,8 @@ import { RUG_FAQS } from "@/lib/guide-rug-size";
 import { CLEARANCE_FAQS } from "@/lib/guide-loft-clearance";
 import { TWIN_XL_FAQS } from "@/lib/guide-twin-xl";
 
-// Markdown views of the site for answer engines and AI agents: /llms.txt and the
-// homepage's text/markdown version. Every count and price comes from the school
+// Markdown views of the site for answer engines and AI agents: /llms.txt, and the
+// text/markdown versions of the homepage and the school and hall pages. Every count and price comes from the school
 // data and lib/plan; the wording is the site's own.
 
 const usd = (n: number) => `$${n.toFixed(2)}`;
@@ -145,6 +149,65 @@ export function homeMarkdown(): string {
     "",
     ...hallFinder(),
     ...guidesAndColleges(),
+    "",
+  ].join("\n");
+}
+
+const sourceLine = (src: Source | null, what: string) =>
+  src ? `${what} from [${src.host}](${src.url})${src.collected ? `, collected ${shortDate(src.collected)}` : ""}.` : "";
+
+/** A school page (/colleges/[id]) as Markdown: the answer, the source, then every hall with its rooms. */
+export function schoolMarkdown(school: SchoolSummary): string {
+  const short = shortName(school);
+  const published = publishedDimsCount(school);
+  const place = [school.city, school.state].filter(Boolean).join(", ");
+  const summary = schoolSummary(school, short, published);
+  const room = (r: ReturnType<typeof roomRows>[number]) =>
+    `${r.name}${r.dims ? ` ${r.dims}` : ""}${r.sqft ? ` (${r.sqft} sq ft)` : ""}${r.status === "Estimated" ? ", estimated" : r.status === "Not published" ? ", size not published" : ""}`;
+  return [
+    `# ${short} dorm room sizes`,
+    "",
+    `> ${school.name}${place ? `, ${place}` : ""}: ${school.dorms.length} residence halls${published > 0 ? `, ${published} room types with dimensions the school publishes` : ""}.`,
+    "",
+    ...(summary ? [summary, ""] : []),
+    sourceLine(schoolSource(school.id), published > 0 ? "Published room sizes" : "Room types"),
+    "Sizes marked estimated are dormscape's estimates from similar rooms, not the school's.",
+    "",
+    "## Residence halls",
+    ...[...school.dorms]
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map((d) => `- [${d.name}](${absoluteUrl(`/colleges/${school.id}/${d.id}`)}): ${roomRows(d).map(room).join("; ")}`),
+    "",
+    `Plan a ${short} room to scale, free: ${absoluteUrl(`/plan?school=${school.id}`)}`,
+    `This page: ${absoluteUrl(`/colleges/${school.id}`)}`,
+    "",
+  ].join("\n");
+}
+
+/** A hall page (/colleges/[id]/[dorm]) as Markdown: every room type as one table, with its source. */
+export function hallMarkdown(school: SchoolSummary, dorm: DormSummary): string {
+  const short = shortName(school);
+  const rows = roomRows(dorm);
+  const published = rows.filter((r) => r.status === "Published").length;
+  const place = [school.city, school.state].filter(Boolean).join(", ");
+  const cell = (v: string | number | null) => (v === null ? "Not published" : String(v).replace(/\|/g, "/"));
+  return [
+    `# ${dorm.name} room dimensions (${short})`,
+    "",
+    `> ${rows.length} room type${rows.length === 1 ? "" : "s"} at ${school.name}${place ? ` in ${place}` : ""}${published > 0 ? `, ${published} with dimensions published by the university` : ""}.`,
+    "",
+    "| Room type | Size | Floor area | Beds | Size is |",
+    "| --- | --- | --- | --- | --- |",
+    ...rows.map(
+      (r) =>
+        `| ${cell(r.name)}${r.occupants ? `, sleeps ${r.occupants}` : ""} | ${cell(r.dims)} | ${r.sqft ? `${r.sqft} sq ft` : "Not published"} | ${r.bed} | ${r.status === "Published" ? "Published by the school" : r.status === "Estimated" ? "dormscape estimate" : "Not published"} |`
+    ),
+    "",
+    sourceLine(hallSource(school.id, dorm.id), published > 0 ? "Room sizes" : "Room types"),
+    "",
+    `More ${short} halls: ${absoluteUrl(`/colleges/${school.id}`)}`,
+    `Plan this room to scale, free: ${absoluteUrl(`/plan?school=${school.id}&dorm=${dorm.id}`)}`,
+    `This page: ${absoluteUrl(`/colleges/${school.id}/${dorm.id}`)}`,
     "",
   ].join("\n");
 }
