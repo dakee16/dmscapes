@@ -251,8 +251,8 @@ export default function Nav({
       <span className={s.rowText}>
         <span className={s.rowLabel}>
           {link.label}
-          {link.tag && <span className={s.rowTag}><span className="ds-sr"> · </span>{link.tag}</span>}
-          {link.isNew && <span className={s.newTag}><span className="ds-sr"> · </span>New</span>}
+          {link.tag && <span className={s.rowTag}><span className="ds-sr">, </span>{link.tag}</span>}
+          {link.isNew && <span className={s.newTag}><span className="ds-sr">, </span>New</span>}
         </span>
         {link.detail && <small className={s.rowDetail}>{link.detail}</small>}
       </span>
@@ -290,8 +290,8 @@ export default function Nav({
                   onClick={() => { if (link.href.includes("hall-finder")) track("hall_finder_entry_clicked", { where: "more" }); close(); }}>
                   <b>
                     {link.label}
-                    {link.tag && <span className={s.rowTag}><span className="ds-sr"> · </span>{link.tag}</span>}
-                    {link.isNew && <span className={s.newTag}><span className="ds-sr"> · </span>New</span>}
+                    {link.tag && <span className={s.rowTag}><span className="ds-sr">, </span>{link.tag}</span>}
+                    {link.isNew && <span className={s.newTag}><span className="ds-sr">, </span>New</span>}
                   </b>
                   {link.detail && <small>{link.detail}</small>}
                 </Link>
@@ -355,7 +355,7 @@ export default function Nav({
             <Link key={link.key} href={link.href} className={s.link}
               aria-current={current === link.key ? "page" : undefined}
               onClick={link.key === "hall-finder" ? () => track("hall_finder_entry_clicked", { where: "nav" }) : undefined}>
-              {link.label}{link.key === "hall-finder" && <span className={s.newTag}><span className="ds-sr"> · </span>New</span>}
+              {link.label}{link.key === "hall-finder" && <span className={s.newTag}><span className="ds-sr">, </span>New</span>}
             </Link>)}
           <div className={s.moreWrap}>
             <button type="button" className={s.link} data-more aria-expanded={more}
@@ -407,7 +407,7 @@ export default function Nav({
               <Link key={link.key} href={link.href} className={s.sheetBig}
                 onClick={() => { if (link.key === "hall-finder") track("hall_finder_entry_clicked", { where: "nav" }); close(); }}
                 aria-current={current === link.key ? "page" : undefined} style={{ "--i": i } as CSSProperties}>
-                {link.label}{link.key === "hall-finder" && <span className={s.newTag}><span className="ds-sr"> · </span>New</span>}<ArrowRight size={22} />
+                {link.label}{link.key === "hall-finder" && <span className={s.newTag}><span className="ds-sr">, </span>New</span>}<ArrowRight size={22} />
               </Link>
             ))}
           </div>
