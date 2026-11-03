@@ -101,8 +101,7 @@
 }
 .wc:hover { background: #fff; transform: translate(-2px, -2px); box-shadow: inset 0 0 0 1.5px var(--ds-ink), 5px 5px 0 var(--ds-ink); }
 .wcText { padding: 24px 24px 20px; }
-.wcN { display: block; font: 600 11px/1 var(--ds-mono); letter-spacing: 0.1em; color: #2449ff; }
-.wcQ { margin: 12px 0 0; font-family: var(--ds-serif); font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1; font-size: 28px; line-height: 1.1; color: var(--ds-ink); }
+.wcQ { margin: 0; font-family: var(--ds-serif); font-style: italic; font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1; font-size: 28px; line-height: 1.1; color: var(--ds-ink); }
 .wcA { margin: 8px 0 0; font: 600 16px/1.4 var(--ds-sans); color: #3a3a46; }
 .wcArt {
   position: relative;

@@ -45,13 +45,13 @@ export default function ProblemSection() {
           </p>
         </div>
         <ul ref={grid} className={css.wg}>
-          <Card k={0} n="01" q="“How big is my room?”" a="Real dimensions for your exact hall">
+          <Card k={0} q="“How big is my room?”" a="Real dimensions for your exact hall">
             {HERO_ROOM && <SizeArt />}
           </Card>
-          <Card k={1} n="02" q="“Will it fit?”" a="Every piece placed on your floor plan">
+          <Card k={1} q="“Will it fit?”" a="Every piece placed on your floor plan">
             {HERO_ROOM && <FitArt />}
           </Card>
-          <Card k={2} n="03" q="“Do I need all this?”" a="A list for your room, not every room">
+          <Card k={2} q="“Do I need all this?”" a="A list for your room, not every room">
             <ListArt />
           </Card>
         </ul>
@@ -60,15 +60,12 @@ export default function ProblemSection() {
   );
 }
 
-function Card({ k, n, q, a, children }: { k: number; n: string; q: string; a: string; children: React.ReactNode }) {
+function Card({ k, q, a, children }: { k: number; q: string; a: string; children: React.ReactNode }) {
   return (
     <li data-q="" style={{ "--k": k } as React.CSSProperties}>
       <div data-rv="row">
         <div className={css.wc}>
           <div className={css.wcText}>
-            <span className={css.wcN} aria-hidden="true">
-              {n}
-            </span>
             <p className={css.wcQ}>{q}</p>
             <p className={css.wcA}>{a}</p>
           </div>
