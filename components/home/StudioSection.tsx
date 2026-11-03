@@ -80,11 +80,8 @@ export default function StudioSection() {
             space.
           </p>
           <ol className={css.sRows}>
-            {FEATURES.map((f, i) => (
+            {FEATURES.map((f) => (
               <li key={f.h}>
-                <span className={css.sN} aria-hidden="true">
-                  0{i + 1}
-                </span>
                 <h3>{f.h}</h3>
                 <p>{f.p}</p>
               </li>
