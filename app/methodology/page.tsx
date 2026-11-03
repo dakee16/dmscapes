@@ -13,6 +13,7 @@ import { RuleArt, SameScale } from "@/components/methodology/MethodologyArt";
 import { SCHOOLS } from "@/lib/schools";
 import { pageMetadata, breadcrumbJsonLd, guidePageJsonLd, DATA_LICENSE } from "@/lib/seo";
 import FounderLink from "@/components/site/FounderLink";
+import { METHODOLOGY_UPDATED } from "@/lib/sitemaps";
 import { shortDate } from "@/components/blog/topics";
 import { WalkTimes } from "@/components/hall-finder/Entry";
 import SectionRail from "@/components/ds/SectionRail";
@@ -20,8 +21,8 @@ import css from "@/components/methodology/Methodology.module.css";
 
 const DESCRIPTION =
   "Where dormscape's dorm room dimensions come from, how they are recorded and verified, what 'estimated' means, and how to report a correction.";
-// When this page's substance last changed (shown in the eyebrow and in the structured data).
-const UPDATED = "2026-11-03";
+// When this page's substance last changed (eyebrow, structured data and sitemap lastmod).
+const UPDATED = METHODOLOGY_UPDATED;
 
 export const metadata: Metadata = pageMetadata({
   title: "How We Measure Dorm Rooms",

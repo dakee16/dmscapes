@@ -21,6 +21,10 @@ export const SITEMAP_GROUPS = ["pages", "colleges", "halls", "blog"] as const;
 
 const postDate = (p: (typeof POSTS)[number]) => p.updated ?? p.date;
 const NEWEST_POST = POSTS.map(postDate).sort().at(-1);
+// /faq dates itself by the newest post with FAQs (app/faq/page.tsx); same rule here.
+const NEWEST_FAQ = POSTS.filter((p) => p.faqs?.length).map(postDate).sort().at(-1);
+/** When /methodology last changed in substance: its eyebrow and structured data show this date. */
+export const METHODOLOGY_UPDATED = "2026-11-03";
 const schoolDate = (id: string): string | undefined => (SCHOOL_DATES as Record<string, string>)[id];
 const NEWEST_DATA = Object.values(SCHOOL_DATES as Record<string, string>).sort().at(-1);
 
@@ -45,9 +49,9 @@ export function sitemapEntries(group: string): MetadataRoute.Sitemap {
         { url: `${BASE}/my-room`, changeFrequency: "monthly", priority: 0.6 },
         { url: `${BASE}/blog`, lastModified: NEWEST_POST, changeFrequency: "weekly", priority: 0.7 },
         // FAQ answers are the guides' FAQs, rolled up.
-        { url: `${BASE}/faq`, lastModified: NEWEST_POST, changeFrequency: "monthly", priority: 0.6 },
+        { url: `${BASE}/faq`, lastModified: NEWEST_FAQ, changeFrequency: "monthly", priority: 0.6 },
         { url: `${BASE}/about`, changeFrequency: "monthly", priority: 0.5 },
-        { url: `${BASE}/methodology`, changeFrequency: "monthly", priority: 0.6 },
+        { url: `${BASE}/methodology`, lastModified: METHODOLOGY_UPDATED, changeFrequency: "monthly", priority: 0.6 },
         { url: `${BASE}/add-school`, changeFrequency: "monthly", priority: 0.5 },
         { url: `${BASE}/contact`, changeFrequency: "yearly", priority: 0.3 },
         { url: `${BASE}/terms`, changeFrequency: "yearly", priority: 0.3 },
