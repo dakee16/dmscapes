@@ -16,7 +16,10 @@ import { SCHOOLS } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { dormSizeStats, MAX_SQFT_PER_PERSON, MIN_SCHOOL_ROOMS, type TypeStats } from "@/lib/dorm-sizes";
 import { fitRoom, furnitureSqFt, ft, type FittedRoom } from "@/lib/room-preview";
-import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl, SITE_NAME, SITE_URL } from "@/lib/seo";
+import { pageMetadata, fitDescription, breadcrumbJsonLd, absoluteUrl, DATA_LICENSE, SITE_NAME, SITE_URL } from "@/lib/seo";
+import { faqPageJsonLd } from "@/lib/blog";
+import { shortDate } from "@/components/blog/topics";
+import SCHOOL_DATES from "@/lib/school-dates.json";
 import css from "@/components/dorm-size/DormSize.module.css";
 
 // Every number on this page comes from the published sizes in the school index
@@ -55,18 +58,22 @@ const nameOf = (s: { schoolId: string; schoolName: string }) => shortName({ id: 
 const ppf = Math.min(18, 300 / (Math.max(...typical.map((x) => x.fit.lengthFt)) + 1.75));
 
 const PATH = "/dorm-room-size";
-// Searches here are "average dorm room size", "square footage", "dimensions": the title leads with
-// the answer (from the same data as the page), and the H1 keeps the question people ask.
-const TITLE = fitTitle(
-  `Average Dorm Room Size: ${fmt(double.median)} sq ft (${dims(double).replace(/\u00a0/g, " ")})`,
-  `Average Dorm Room Size: ${fmt(double.median)} sq ft`,
-  "Average Dorm Room Size",
-);
+// Searches here are "average dorm room size", "dorm room dimensions", "square footage": the title
+// carries all three and leads with the answer (from the same data as the page), without the brand
+// suffix so the whole thing shows; the H1 keeps the question people ask.
+const TITLE = [
+  `Average Dorm Room Size & Dimensions: ${fmt(double.median)} sq ft (${dims(double).replace(/\u00a0/g, " ")})`,
+  `Average Dorm Room Size & Dimensions: ${fmt(double.median)} sq ft`,
+].find((t) => t.length <= 60) ?? "Average Dorm Room Size & Dimensions";
+// The newest room data behind the figures (the sitemap dates the page the same way).
+const UPDATED = Object.values(SCHOOL_DATES as Record<string, string>).sort().at(-1)!;
 
 export const metadata: Metadata = pageMetadata({
   title: TITLE,
+  absoluteTitle: true,
   description: fitDescription(
-    `The average dorm room is ${fmt(double.median)} sq ft for a double (${dims(double)}) and ${fmt(single.median)} sq ft for a single, from ${fmt(S.rooms)} room sizes published by ${S.schools} colleges.`,
+    `Average college dorm room size and square footage: a double is ${fmt(double.median)} sq ft (${dims(double)}), a single ${fmt(single.median)} and a triple ${fmt(triple.median)}, from ${fmt(S.rooms)} rooms at ${S.schools} colleges.`,
+    `Average dorm room size and square footage: a double is ${fmt(double.median)} sq ft (${dims(double)}), a single ${fmt(single.median)}, from ${fmt(S.rooms)} rooms at ${S.schools} colleges.`,
     `The average double dorm room is ${fmt(double.median)} sq ft (${dims(double)}), from ${fmt(S.rooms)} room sizes published by ${S.schools} colleges.`
   ),
   path: PATH,
@@ -133,18 +140,25 @@ export default function DormRoomSizePage() {
             name: "Dorm room sizes published by US colleges",
             description: `Length, width and floor area of ${fmt(S.rooms)} single, double and triple dorm room types, as published by the housing offices of ${S.schools} US colleges, with typical sizes by room type and by college.`,
             url: absoluteUrl(PATH),
-            creator: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+            creator: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: SITE_NAME, url: SITE_URL },
+            license: DATA_LICENSE,
+            dateModified: UPDATED,
             isAccessibleForFree: true,
             spatialCoverage: "United States",
             measurementTechnique: "Room dimensions as published by each college's housing office; estimated sizes excluded",
             variableMeasured: ["Room length (ft)", "Room width (ft)", "Floor area (sq ft)", "Occupants"],
           },
+          faqPageJsonLd(answers),
         ]}
       />
       <PageHero
         bg="var(--ds-sky)"
         crumbs={<Crumbs items={crumbs} />}
-        eyebrow={<>{fmt(S.rooms)} published rooms · {S.schools} colleges</>}
+        eyebrow={
+          <>
+            {fmt(S.rooms)} published rooms · {S.schools} colleges · updated <time dateTime={UPDATED}>{shortDate(UPDATED)}</time>
+          </>
+        }
         lines={[
           { text: "How big is a", riso: true },
           { text: "dorm room?", serif: true },
@@ -367,6 +381,14 @@ export default function DormRoomSizePage() {
               {MAX_SQFT_PER_PERSON} sq ft per person are left out: those describe a whole apartment, not a room.
             </li>
             <li>Typical means the median, the middle room, so a handful of big suites can&apos;t skew it. The average (mean) is shown too.</li>
+            <li>
+              Every college&apos;s page links the housing site its sizes come from, with the date we collected them.
+              The figures here are free to reuse under{" "}
+              <a href={DATA_LICENSE} className="ds-link" target="_blank" rel="noopener license">
+                CC BY 4.0
+              </a>
+              : credit dormscape and link to this page.
+            </li>
             <li>
               Sizes describe a room type as the school publishes it, not your exact room. See{" "}
               <Link href="/methodology" className="ds-link">

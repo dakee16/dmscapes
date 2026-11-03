@@ -11,7 +11,7 @@ import PlanCta from "@/components/site/PlanCta";
 import JsonLd from "@/components/site/JsonLd";
 import { SCHOOLS } from "@/lib/schools";
 import { ALLOWED_LABEL, YES_NO_LABEL, BED_RULES_CHECKED, bedRuleFor, checkedLabel } from "@/lib/bed-rules";
-import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl, guidePageJsonLd, SITE_NAME, SITE_URL } from "@/lib/seo";
+import { pageMetadata, fitDescription, fitTitle, breadcrumbJsonLd, absoluteUrl, guidePageJsonLd, DATA_LICENSE, SITE_NAME, SITE_URL } from "@/lib/seo";
 import { BED_RULE_FAQS, R } from "@/lib/guide-bed-rules";
 import dsz from "@/components/dorm-size/DormSize.module.css";
 
@@ -53,7 +53,8 @@ export default function DormBedRulesPage() {
             name: "Dorm bed lofting and bunking rules by US college",
             description: `Whether ${SCHOOLS.length} US colleges allow lofted beds, bunked beds, bed risers and personal loft kits in their residence halls, from each school's housing pages.`,
             url: absoluteUrl(PATH),
-            creator: { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
+            creator: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: SITE_NAME, url: SITE_URL },
+            license: DATA_LICENSE,
             dateModified: BED_RULES_CHECKED,
             isAccessibleForFree: true,
             spatialCoverage: "United States",
@@ -160,6 +161,13 @@ export default function DormBedRulesPage() {
             <li>Only what a college&apos;s own housing pages or documents say. Each rule links to its source.</li>
             <li>&ldquo;Not published&rdquo; means we couldn&apos;t find it on an official page, not that it&apos;s banned.</li>
             <li>Some sources are last year&apos;s guides or name dates for the 2026&ndash;27 year; the school page notes these.</li>
+            <li>
+              This table is free to reuse under{" "}
+              <a href={DATA_LICENSE} className="ds-link" target="_blank" rel="noopener license">
+                CC BY 4.0
+              </a>
+              : credit dormscape and link to this page.
+            </li>
             <li>
               See something out of date?{" "}
               <Link href="/report" className="ds-link">

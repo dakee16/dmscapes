@@ -119,6 +119,9 @@ export const THREADS_URL = "https://www.threads.com/@dormscapehq";
 // schema says can't differ. TikTok's bio says "dormscape.us"; Instagram can't be read without a login.
 export const SOCIAL_PROFILES: string[] = [TIKTOK_URL, INSTAGRAM_URL, X_URL, PINTEREST_URL, LINKEDIN_URL, THREADS_URL];
 
+/** The license dormscape's published datasets (room sizes, bed rules) carry: reuse with credit and a link. */
+export const DATA_LICENSE = "https://creativecommons.org/licenses/by/4.0/";
+
 /** Where people (and agents) reach the team: the contact form and replies go here. */
 export const CONTACT_EMAIL = "info@dormscape.us";
 
