@@ -14,9 +14,7 @@
   padding: clamp(12px, 3vw, 28px);
   overflow-y: auto;
   overscroll-behavior: contain;
-  background: rgba(22, 22, 29, 0.55);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  background: rgba(22, 22, 29, 0.6);
   animation: scrimIn 0.22s ease-out both;
 }
 /* Phone: the upgrade sheet and username claim rise from the bottom edge. */
