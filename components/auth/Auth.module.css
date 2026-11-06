@@ -40,7 +40,7 @@
 .fallback { min-height: 60vh; }
 .legal {
   margin: 0;
-  font: 600 11px/1.6 var(--ds-mono);
+  font: 600 8px/1.6 var(--ds-mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #6b6b76;
@@ -380,20 +380,6 @@
   font-weight: 900;
 }
 
-/* The submit: corner brackets that breathe, quiet until the terms box is ticked. */
-.corner { position: relative; margin: 12px 12px 0; }
-.corner > i {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border: 0 solid var(--ds-ink);
-  animation: corner 2.4s var(--ds-ease) infinite;
-}
-.corner > .tl { left: -12px; top: -12px; border-width: 2.5px 0 0 2.5px; --dx: -4px; --dy: -4px; }
-.corner > .tr { right: -12px; top: -12px; border-width: 2.5px 2.5px 0 0; --dx: 4px; --dy: -4px; }
-.corner > .bl { left: -12px; bottom: -12px; border-width: 0 0 2.5px 2.5px; --dx: -4px; --dy: 4px; }
-.corner > .br { right: -12px; bottom: -12px; border-width: 0 2.5px 2.5px 0; --dx: 4px; --dy: 4px; }
-.corner[data-blocked] > i { animation: none; opacity: 0.25; }
 .form .submit {
   position: relative;
   display: inline-flex;
@@ -477,7 +463,6 @@
 .gateBack { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 700; color: var(--ds-blue); }
 
 @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
-@keyframes corner { 0%, 100% { transform: none; } 50% { transform: translate(var(--dx), var(--dy)); } }
 @keyframes swing { 0%, 100% { transform: rotate(-1.4deg); } 50% { transform: rotate(1.4deg); } }
 @keyframes live { to { box-shadow: 0 0 0 8px rgba(125, 255, 179, 0); } }
 @keyframes deck {

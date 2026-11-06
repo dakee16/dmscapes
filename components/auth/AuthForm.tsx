@@ -495,20 +495,14 @@ export default function AuthForm({
               <div className={styles.consent}>
                 <input id="auth-marketing" type="checkbox" checked={marketing} onChange={(e) => setMarketing(e.target.checked)} />
                 <label htmlFor="auth-marketing">
-                  Email me dorm planning tips and dormscape updates. Unsubscribe anytime.
+                  Email me dorm planning tips and dormscape updates.
                 </label>
               </div>
             )}
             {error && <p className={styles.error} role="alert">{error}</p>}
-            <div className={styles.corner} data-blocked={signupBlocked || undefined}>
-              <button type="submit" disabled={busy} aria-disabled={busy || signupBlocked} className={styles.submit}>
-                {busy ? <><BrandLoader size="inline" />One sec…</> : <>{mode === "signup" ? "Create free account" : "Log in"}<ArrowIcon /></>}
-              </button>
-              <i className={styles.tl} aria-hidden="true" />
-              <i className={styles.tr} aria-hidden="true" />
-              <i className={styles.bl} aria-hidden="true" />
-              <i className={styles.br} aria-hidden="true" />
-            </div>
+            <button type="submit" disabled={busy} aria-disabled={busy || signupBlocked} className={styles.submit}>
+              {busy ? <><BrandLoader size="inline" />One sec…</> : <>{mode === "signup" ? "Create free account" : "Log in"}<ArrowIcon /></>}
+            </button>
           </form>
           {hallFinderReason && (
             <div className={styles.gateCards}>
@@ -535,11 +529,6 @@ export default function AuthForm({
                 </Link>
               </p>
             ))}
-          {reason === "profile" && !creator && (
-            <p className={styles.aside}>
-              No account needed to start planning. <Link href="/plan">Plan my room free</Link>
-            </p>
-          )}
         </div>
       )}
     </div>
