@@ -1,0 +1,23 @@
+{
+  "collegeId": "wvu",
+  "area": {
+    "osm": "relation/15630375",
+    "bbox": [
+      39.6295,
+      -79.96,
+      39.641,
+      -79.949
+    ],
+    "note": "Owner decision: walking distance only, so this map is the Downtown campus. OSM relation/15630375 'West Virginia University' outlines the university's land (Downtown, Evansdale and Health Sciences, linked by the PRT); the box limits it to Downtown, from the Woodburn Circle end north past Summit Hall (Grant Ave) and the Life Sciences Building."
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "WVU's building key (linked from wvu.edu/faq/where-are-my-classes-located and facilitiesplanning.wvu.edu Building Information) and campusmap.wvu.edu answer scripts with HTTP 403 (bot challenge); the readable health.wvu.edu/hub/morgantown-campus/building-codes covers Health Sciences buildings only.",
+  "excludeHalls": {
+    "brooke-hall": "One of the four Towers of the Evansdale Residential Complex (356 Evansdale Dr; housing.wvu.edu/housing-options/residence-halls), on the Evansdale campus about 2 km from Downtown and linked to it by the PRT; this map is the walkable Downtown campus (owner decision: walking distance only).",
+    "bennett-hall": "One of the four Towers of the Evansdale Residential Complex (356 Evansdale Dr; housing.wvu.edu/housing-options/residence-halls), on the Evansdale campus about 2 km from Downtown and linked to it by the PRT; this map is the walkable Downtown campus (owner decision: walking distance only).",
+    "lyon-hall": "One of the four Towers of the Evansdale Residential Complex (356 Evansdale Dr; housing.wvu.edu/housing-options/residence-halls), on the Evansdale campus about 2 km from Downtown and linked to it by the PRT; this map is the walkable Downtown campus (owner decision: walking distance only).",
+    "braxton-hall": "One of the four Towers of the Evansdale Residential Complex (356 Evansdale Dr; housing.wvu.edu/housing-options/residence-halls), on the Evansdale campus about 2 km from Downtown and linked to it by the PRT; this map is the walkable Downtown campus (owner decision: walking distance only)."
+  }
+}

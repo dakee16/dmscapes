@@ -1,0 +1,338 @@
+{
+ "collegeId": "wvu",
+ "generatedAt": "2026-11-08T22:26:18.261Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/wvu.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -79.957,
+  39.63261,
+  -79.95205,
+  39.63876
+ ],
+ "halls": [
+  {
+   "dormId": "boreman-hall",
+   "name": "Boreman Hall",
+   "lng": -79.952487,
+   "lat": 39.633716,
+   "pin": "manual",
+   "osm": "way/106856477",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "wise-library",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "dadisman-hall",
+   "name": "Dadisman Hall",
+   "lng": -79.952394,
+   "lat": 39.635684,
+   "pin": "name",
+   "osm": "way/154926916",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "wise-library",
+     "minutes": 5.9
+    }
+   }
+  },
+  {
+   "dormId": "summit-hall",
+   "name": "Summit Hall",
+   "lng": -79.956694,
+   "lat": 39.638756,
+   "pin": "name",
+   "osm": "way/106844512",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "wise-library",
+     "minutes": 11.1
+    }
+   }
+  },
+  {
+   "dormId": "stalnaker-hall",
+   "name": "Stalnaker Hall",
+   "lng": -79.952698,
+   "lat": 39.635335,
+   "pin": "name",
+   "osm": "way/154926887",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "wise-library",
+     "minutes": 5.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "mountainlair",
+   "name": "Mountainlair",
+   "short": "Mountainlair",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.953634,
+   "lat": 39.634782,
+   "osm": "way/154926873"
+  },
+  {
+   "id": "wise-library",
+   "name": "Wise Library",
+   "short": "Wise Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.954414,
+   "lat": 39.633174,
+   "osm": "way/118545858"
+  },
+  {
+   "id": "reynolds-hall",
+   "name": "Reynolds Hall",
+   "short": "Reynolds Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.956917,
+   "lat": 39.63486,
+   "osm": "way/1204559522"
+  },
+  {
+   "id": "life-sciences-building-wvu",
+   "name": "Life Sciences Building (WVU)",
+   "short": "Life Sciences Building (WVU)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.955634,
+   "lat": 39.637071,
+   "osm": "way/118536396"
+  },
+  {
+   "id": "field-hall",
+   "name": "Field Hall",
+   "short": "Field Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.954599,
+   "lat": 39.636615,
+   "osm": "way/118537377"
+  },
+  {
+   "id": "brooks-hall-wvu",
+   "name": "Brooks Hall (WVU)",
+   "short": "Brooks Hall (WVU)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Brooks Hall"
+   ],
+   "lng": -79.956218,
+   "lat": 39.635762,
+   "osm": "way/117906318"
+  },
+  {
+   "id": "clark-hall",
+   "name": "Clark Hall",
+   "short": "Clark Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.954379,
+   "lat": 39.633776,
+   "osm": "way/276916236"
+  },
+  {
+   "id": "white-hall-wvu",
+   "name": "White Hall (WVU)",
+   "short": "White Hall (WVU)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.954718,
+   "lat": 39.632937,
+   "osm": "way/154927057"
+  },
+  {
+   "id": "hodges-hall",
+   "name": "Hodges Hall",
+   "short": "Hodges Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.956077,
+   "lat": 39.634245,
+   "osm": "way/154927093"
+  },
+  {
+   "id": "chemistry-research-building",
+   "name": "Chemistry Research Building",
+   "short": "Chemistry Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.953523,
+   "lat": 39.633341,
+   "osm": "way/118545855"
+  },
+  {
+   "id": "armstrong-hall",
+   "name": "Armstrong Hall",
+   "short": "Armstrong Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.955724,
+   "lat": 39.635025,
+   "osm": "way/154927002"
+  },
+  {
+   "id": "eisland-hall-wvu",
+   "name": "Eisland Hall (WVU)",
+   "short": "Eisland Hall (WVU)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Eisland Hall"
+   ],
+   "lng": -79.956161,
+   "lat": 39.633648,
+   "osm": "way/117996253"
+  },
+  {
+   "id": "woodburn-hall-wvu",
+   "name": "Woodburn Hall (WVU)",
+   "short": "Woodburn Hall (WVU)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.955343,
+   "lat": 39.636007,
+   "osm": "way/154524440"
+  },
+  {
+   "id": "oglebay-hall-wvu",
+   "name": "Oglebay Hall (WVU)",
+   "short": "Oglebay Hall (WVU)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.953767,
+   "lat": 39.636124,
+   "osm": "way/117906331"
+  },
+  {
+   "id": "e-moore-hall",
+   "name": "E. Moore Hall",
+   "short": "E. Moore Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.955234,
+   "lat": 39.63496,
+   "osm": "way/154926931"
+  },
+  {
+   "id": "stewart-hall",
+   "name": "Stewart Hall",
+   "short": "Stewart Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.95439,
+   "lat": 39.634347,
+   "osm": "way/154926910"
+  },
+  {
+   "id": "colson-hall-wvu",
+   "name": "Colson Hall (WVU)",
+   "short": "Colson Hall (WVU)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.955336,
+   "lat": 39.633979,
+   "osm": "way/154524274"
+  },
+  {
+   "id": "knapp-hall",
+   "name": "Knapp Hall",
+   "short": "Knapp Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.957,
+   "lat": 39.632606,
+   "osm": "way/106856454"
+  },
+  {
+   "id": "chitwood-hall-wvu",
+   "name": "Chitwood Hall (WVU)",
+   "short": "Chitwood Hall (WVU)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.954676,
+   "lat": 39.636115,
+   "osm": "way/154524516"
+  },
+  {
+   "id": "purinton-house",
+   "name": "Purinton House",
+   "short": "Purinton House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.955098,
+   "lat": 39.634452,
+   "osm": "way/154926877"
+  },
+  {
+   "id": "morgan-house",
+   "name": "Morgan House",
+   "short": "Morgan House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.95205,
+   "lat": 39.634006,
+   "osm": "way/394498870"
+  },
+  {
+   "id": "martin-hall-wvu",
+   "name": "Martin Hall (WVU)",
+   "short": "Martin Hall (WVU)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -79.954922,
+   "lat": 39.63562,
+   "osm": "way/154927088"
+  }
+ ]
+}
