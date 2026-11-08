@@ -1,0 +1,17 @@
+{
+  "collegeId": "cornell",
+  "area": {
+    "osm": "way/108626313",
+    "bbox": [
+      42.44114,
+      -76.49298,
+      42.46463,
+      -76.44963
+    ]
+  },
+  "areaNote": "The main Ithaca campus polygon (way/108626313), the largest member of OSM's Cornell University relation/11625564; the relation's other members are farms and field stations 15-20 km east.",
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No downloadable code list: the Registrar shows one building's abbreviation per page (registrar.cornell.edu/academicbuildings/<code>, e.g. BKL) with no index or list page in its site map, and Facilities' inventory codes (fcs.cornell.edu/inventory) are internal facility numbers, not the class-roster abbreviations (checked 2026-11-08)."
+}
