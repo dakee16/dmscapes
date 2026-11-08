@@ -1,0 +1,143 @@
+{
+ "name": "University of Iowa Office of the Registrar, registrar-scheduled classrooms (classrooms.uiowa.edu room listings: building code and building name)",
+ "url": "https://classrooms.uiowa.edu/units/office-registrar",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "ABW",
+   "name": "Art Building West"
+  },
+  {
+   "code": "AJB",
+   "name": "Adler Journalism Building"
+  },
+  {
+   "code": "BB",
+   "name": "Biology Building"
+  },
+  {
+   "code": "BBE",
+   "name": "Biology Building East"
+  },
+  {
+   "code": "BCSB",
+   "name": "Becker Comm Studies Bldg"
+  },
+  {
+   "code": "BHC",
+   "name": "Blank Honors Center"
+  },
+  {
+   "code": "CB",
+   "name": "Chemistry Building"
+  },
+  {
+   "code": "CNB",
+   "name": "College of Nursing Building"
+  },
+  {
+   "code": "CPB",
+   "name": "College of Pharmacy Building"
+  },
+  {
+   "code": "CPHB",
+   "name": "College of Public Health Bldg"
+  },
+  {
+   "code": "DB",
+   "name": "Dance Building"
+  },
+  {
+   "code": "EPB",
+   "name": "English Philosophy Building"
+  },
+  {
+   "code": "FH",
+   "name": "Field House"
+  },
+  {
+   "code": "HSAB",
+   "name": "Health Sciences Academic Building"
+  },
+  {
+   "code": "IATL",
+   "name": "Iowa Advanced Technology Laboratories"
+  },
+  {
+   "code": "IBIF",
+   "name": "Iowa Bioscience Innovation Facility"
+  },
+  {
+   "code": "JH",
+   "name": "Jessup Hall"
+  },
+  {
+   "code": "LC",
+   "name": "Lindquist Center"
+  },
+  {
+   "code": "LIB",
+   "name": "Library"
+  },
+  {
+   "code": "MH",
+   "name": "Macbride Hall"
+  },
+  {
+   "code": "MLH",
+   "name": "Maclean Hall"
+  },
+  {
+   "code": "NH",
+   "name": "North Hall"
+  },
+  {
+   "code": "PBB",
+   "name": "Pappajohn Business Building"
+  },
+  {
+   "code": "PBSB",
+   "name": "Psychological and Brain Sciences Building"
+  },
+  {
+   "code": "PC",
+   "name": "Pomerantz Center"
+  },
+  {
+   "code": "PH",
+   "name": "Phillips Hall"
+  },
+  {
+   "code": "SC",
+   "name": "Seamans Center"
+  },
+  {
+   "code": "SH",
+   "name": "Schaeffer Hall"
+  },
+  {
+   "code": "SL",
+   "name": "Sciences Library"
+  },
+  {
+   "code": "TH",
+   "name": "Trowbridge Hall"
+  },
+  {
+   "code": "UCC",
+   "name": "University Capitol Centre"
+  },
+  {
+   "code": "VAB",
+   "name": "Visual Arts Building"
+  },
+  {
+   "code": "VAN",
+   "name": "Van Allen Hall"
+  },
+  {
+   "code": "VOX",
+   "name": "Voxman Music Building"
+  }
+ ]
+}
