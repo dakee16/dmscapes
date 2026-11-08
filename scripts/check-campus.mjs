@@ -21,6 +21,11 @@ const pilots = JSON.parse(fs.readFileSync("data/campus/index.json", "utf8"));
 const built = fs.readdirSync("data/campus").filter((f) => f.endsWith(".minutes.json")).map((f) => f.slice(0, -".minutes.json".length));
 const listed = [...pilots].sort().join() === [...built].sort().join();
 console.log(`${listed ? "✓" : "✗"} data/campus/index.json lists every built campus (${pilots.join(", ")})`);
+// built.json dates each campus for the sitemap and the guide; it must match the campus files.
+const builtDates = fs.existsSync("data/campus/built.json") ? JSON.parse(fs.readFileSync("data/campus/built.json", "utf8")) : {};
+const datedRight = [...pilots].sort().join() === Object.keys(builtDates).sort().join() &&
+  pilots.every((p) => builtDates[p] === JSON.parse(fs.readFileSync(`data/campus/${p}.json`, "utf8")).generatedAt);
+console.log(`${datedRight ? "✓" : "✗"} data/campus/built.json dates every campus as its file does`);
 const ids = process.argv.slice(2).length ? process.argv.slice(2) : pilots;
 
 const R = 6371008.8;
@@ -50,7 +55,7 @@ function decode(str) {
 }
 const length = (pts) => pts.slice(1).reduce((s, p, i) => s + haversine(pts[i], p), 0);
 
-let failed = !listed;
+let failed = !listed || !datedRight;
 for (const id of ids) {
   const config = JSON.parse(fs.readFileSync(`scripts/campus/config/${id}.json`, "utf8"));
   const speed = config.walkingSpeed;
@@ -68,7 +73,7 @@ for (const id of ids) {
   const pinned = (h) => Number.isFinite(h?.lng) && Number.isFinite(h?.lat);
   const coded = campus.sources.some((s) => /^building codes/.test(s.use ?? ""));
   // No official list is a research finding, so the config says where we looked.
-  const noCodesWhy = coded || (typeof config.noCodes === "string" && config.noCodes.trim().length > 20);
+  const noCodesWhy = coded || (typeof config.noCodes === "string" && config.noCodes.trim().length > 20 && !/^TODO/i.test(config.noCodes.trim()));
   const issues = {
     "every hall has a pin": dorms.filter((d) => !pinned(hallById.get(d.dorm_id))).map((d) => d.dorm_id),
     // A school with no public building-code list is matched by building name (config "codes": null).

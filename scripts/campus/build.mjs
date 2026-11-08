@@ -7,6 +7,9 @@
 //   data/campus/<id>.minutes.json            server only: { places: [ids], halls: { dormId: [minutes] } }
 //   data/campus/paths/<id>/<dormId>.json     server only: { placeId: encoded polyline }
 //   data/campus/index.json                   the pilot list: adds <id>
+//   data/campus/built.json                   { <id>: generatedAt }, so pages can date Hall Finder
+//                                            (sitemap lastmod, the guide's "updated") without
+//                                            reading every campus file
 // data/campus/overrides/<id>.json (pins, year tags, place codes/aliases/kind) wins over OSM. Its
 // detours and longWalks lists are read only by scripts/check-campus.mjs.
 // A school with no public building-code list (config "codes": null, with a "noCodes" reason) is
@@ -683,6 +686,9 @@ fs.writeFileSync(`data/campus/${id}.minutes.json`, JSON.stringify(minutes));
 // The pilot list the app reads (lib/hall-finder.ts PILOT_SCHOOLS).
 const PILOTS = "data/campus/index.json";
 fs.writeFileSync(PILOTS, JSON.stringify([...new Set([...read(PILOTS, []), id])].sort()) + "\n");
+const BUILT = "data/campus/built.json";
+const built = { ...read(BUILT, {}), [id]: campus.generatedAt };
+fs.writeFileSync(BUILT, JSON.stringify(Object.fromEntries(Object.entries(built).sort()), null, 2) + "\n");
 
 // ---- Report
 const kb = (f) => `${(fs.statSync(f).size / 1024).toFixed(1)} KB`;
