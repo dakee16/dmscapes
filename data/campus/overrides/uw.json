@@ -1,0 +1,20 @@
+{
+  "codes": {
+    "PSC": null
+  },
+  "places": {
+    "university-of-washington-plant-services-building": {
+      "hide": true
+    },
+    "gatehouse-3": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "PSC": "PSC is the Pacific Science Center, off campus (UW's list says so); the word rule had put it on the Pacific Building.",
+    "GA1": "Guthrie Annexes 1-3 have no named OSM building; they join Guthrie Hall, beside them, by name.",
+    "JHA": "Johnson Annex has no named OSM building; it joins Johnson Hall, beside it, by name.",
+    "university-of-washington-plant-services-building": "Facilities (Plant Services) building, not somewhere classes or meals happen.",
+    "gatehouse-3": "A parking gatehouse, not somewhere classes or meals happen."
+  }
+}

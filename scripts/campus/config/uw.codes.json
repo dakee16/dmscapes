@@ -1,0 +1,535 @@
+{
+ "name": "University of Washington Office of the Registrar, Time Schedule building codes (Seattle)",
+ "url": "https://www.washington.edu/students/reg/buildings.html",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "ACC",
+   "name": "John M. Wallace Hall (formerly Academic Computing Center)"
+  },
+  {
+   "code": "AER",
+   "name": "Aerospace & Engineering Research Building"
+  },
+  {
+   "code": "ALB",
+   "name": "Allen Library"
+  },
+  {
+   "code": "AND",
+   "name": "Anderson Hall"
+  },
+  {
+   "code": "ARC",
+   "name": "Architecture Hall"
+  },
+  {
+   "code": "ART",
+   "name": "Art Building"
+  },
+  {
+   "code": "ATG",
+   "name": "Atmos Sci/Geophysics"
+  },
+  {
+   "code": "BAG",
+   "name": "Bagley Hall"
+  },
+  {
+   "code": "BGH",
+   "name": "Botany Greenhouse"
+  },
+  {
+   "code": "BIOE",
+   "name": "W.H. Foege Bioengineering Building"
+  },
+  {
+   "code": "BLD",
+   "name": "Bloedel Hall"
+  },
+  {
+   "code": "BMM",
+   "name": "Burke Memorial Museum"
+  },
+  {
+   "code": "BNS",
+   "name": "Benson Hall"
+  },
+  {
+   "code": "BRY",
+   "name": "Bryant Building"
+  },
+  {
+   "code": "CDH",
+   "name": "Condon Hall"
+  },
+  {
+   "code": "CHB",
+   "name": "Chemistry Building"
+  },
+  {
+   "code": "CHCL",
+   "name": "Center on Human Development and Disability"
+  },
+  {
+   "code": "CHL",
+   "name": "Chemistry Library Building"
+  },
+  {
+   "code": "CLK",
+   "name": "Clark Hall"
+  },
+  {
+   "code": "CMA",
+   "name": "Ceramic and Metal Arts Building"
+  },
+  {
+   "code": "CMU",
+   "name": "Communications Building"
+  },
+  {
+   "code": "CNH",
+   "name": "Canoe House"
+  },
+  {
+   "code": "COH",
+   "name": "Children's Hospital (Off campus)"
+  },
+  {
+   "code": "CSE",
+   "name": "Paul G. Allen Center for Computer Science & Engineering"
+  },
+  {
+   "code": "CSH",
+   "name": "Conibear Shellhouse"
+  },
+  {
+   "code": "DEN",
+   "name": "Denny Hall"
+  },
+  {
+   "code": "DEM",
+   "name": "Dempsey Hall"
+  },
+  {
+   "code": "DRC",
+   "name": "Douglas Research Conservatory"
+  },
+  {
+   "code": "DSC",
+   "name": "3941 University Way N.E."
+  },
+  {
+   "code": "ECC",
+   "name": "Ethnic Cultural Center"
+  },
+  {
+   "code": "EDP",
+   "name": "Edmundson Pavilion"
+  },
+  {
+   "code": "EE1",
+   "name": "Electrical Engineering / Computer Science Building"
+  },
+  {
+   "code": "EEB",
+   "name": "Electrical Engineering Building"
+  },
+  {
+   "code": "EGA",
+   "name": "Engineering Annex"
+  },
+  {
+   "code": "EGL",
+   "name": "Eagleson Hall"
+  },
+  {
+   "code": "ELB",
+   "name": "Engineering Library"
+  },
+  {
+   "code": "EXED",
+   "name": "Bank of America Executive Education Center and Foster Library"
+  },
+  {
+   "code": "FIS",
+   "name": "Fisheries Center"
+  },
+  {
+   "code": "FLK",
+   "name": "Fluke Hall"
+  },
+  {
+   "code": "FRH",
+   "name": "Friday Harbor Laboratories (Off campus)"
+  },
+  {
+   "code": "FSH",
+   "name": "Fisheries Building"
+  },
+  {
+   "code": "FTR",
+   "name": "Fisheries Teaching Research Building"
+  },
+  {
+   "code": "GA1",
+   "name": "Guthrie Annex 1"
+  },
+  {
+   "code": "GA2",
+   "name": "Guthrie Annex 2"
+  },
+  {
+   "code": "GA3",
+   "name": "Guthrie Annex 3"
+  },
+  {
+   "code": "GDR",
+   "name": "Golf Driving Range"
+  },
+  {
+   "code": "GHH",
+   "name": "Group Health Hospital (Off campus)"
+  },
+  {
+   "code": "GLD",
+   "name": "Gould Hall"
+  },
+  {
+   "code": "GNOM",
+   "name": "W.H. Foege Genome Sciences Building"
+  },
+  {
+   "code": "GRB",
+   "name": "Gerberding Hall (Administration)"
+  },
+  {
+   "code": "GTH",
+   "name": "Guthrie Hall"
+  },
+  {
+   "code": "GUG",
+   "name": "Guggenheim Hall"
+  },
+  {
+   "code": "GWN",
+   "name": "Gowen Hall"
+  },
+  {
+   "code": "HAG",
+   "name": "Henry Art Gallery"
+  },
+  {
+   "code": "HCK",
+   "name": "Hitchcock Hall"
+  },
+  {
+   "code": "HGT",
+   "name": "Haggett Hall"
+  },
+  {
+   "code": "HHL",
+   "name": "Harris Hydraulics Lab"
+  },
+  {
+   "code": "HLL",
+   "name": "Hall Health Center"
+  },
+  {
+   "code": "HMC",
+   "name": "Harborview Medical Center (Off campus)"
+  },
+  {
+   "code": "HND",
+   "name": "Henderson Hall"
+  },
+  {
+   "code": "HPT",
+   "name": "Hughes Penthouse Theater"
+  },
+  {
+   "code": "HRC",
+   "name": "Fred Hutchinson Cancer Research Center (Off campus)"
+  },
+  {
+   "code": "HS4",
+   "name": "Health Sciences Annex 4"
+  },
+  {
+   "code": "HSA",
+   "name": "Health Sciences Building wings A, B, & C"
+  },
+  {
+   "code": "HSB",
+   "name": "Health Sciences Building wings AA and BB"
+  },
+  {
+   "code": "HSD",
+   "name": "Health Sciences Building wings D, F, G, & H"
+  },
+  {
+   "code": "HSE",
+   "name": "Health Sciences Building wing E"
+  },
+  {
+   "code": "HSI",
+   "name": "Health Sciences Building wing I"
+  },
+  {
+   "code": "HSJ",
+   "name": "Health Sciences Building wing J"
+  },
+  {
+   "code": "HSK",
+   "name": "Health Sciences Building wing K"
+  },
+  {
+   "code": "HSRR",
+   "name": "Health Sciences Building wing RR"
+  },
+  {
+   "code": "HST",
+   "name": "Health Sciences Building wing T"
+  },
+  {
+   "code": "HUB",
+   "name": "Student Union Building"
+  },
+  {
+   "code": "HUT",
+   "name": "Hutchinson Hall"
+  },
+  {
+   "code": "ICH",
+   "name": "Cunningham Hall"
+  },
+  {
+   "code": "ICT",
+   "name": "Samuel E. Kelly Ethnic Cultural Center"
+  },
+  {
+   "code": "IMA",
+   "name": "Intramural Activities Building"
+  },
+  {
+   "code": "JHA",
+   "name": "Johnson Annex"
+  },
+  {
+   "code": "JHN",
+   "name": "Johnson Hall"
+  },
+  {
+   "code": "KIN",
+   "name": "Kincaid Hall"
+  },
+  {
+   "code": "KNE",
+   "name": "Kane Hall"
+  },
+  {
+   "code": "LAW",
+   "name": "William H. Gates Hall"
+  },
+  {
+   "code": "LEW",
+   "name": "Lewis Hall"
+  },
+  {
+   "code": "LOW",
+   "name": "Loew Hall"
+  },
+  {
+   "code": "MAR",
+   "name": "Marine Studies Building"
+  },
+  {
+   "code": "MEB",
+   "name": "Mechanical Engineering Building"
+  },
+  {
+   "code": "MGH",
+   "name": "Mary Gates Hall"
+  },
+  {
+   "code": "MKZ",
+   "name": "Mackenzie Hall"
+  },
+  {
+   "code": "MLR",
+   "name": "Miller Hall"
+  },
+  {
+   "code": "MNY",
+   "name": "Meany Hall"
+  },
+  {
+   "code": "MOR",
+   "name": "More Hall"
+  },
+  {
+   "code": "MSB",
+   "name": "Marine Sciences Building"
+  },
+  {
+   "code": "MUE",
+   "name": "Mueller Hall"
+  },
+  {
+   "code": "MUS",
+   "name": "Music Building"
+  },
+  {
+   "code": "NOC",
+   "name": "Not On Campus"
+  },
+  {
+   "code": "NRB",
+   "name": "Nuclear Reactor Building"
+  },
+  {
+   "code": "OBS",
+   "name": "Observatory"
+  },
+  {
+   "code": "OCE",
+   "name": "Oceanography Building"
+  },
+  {
+   "code": "OCN",
+   "name": "Ocean Sciences Building"
+  },
+  {
+   "code": "OTB",
+   "name": "Oceanography Teaching Building"
+  },
+  {
+   "code": "OUG",
+   "name": "Odegaard Undergrad Library"
+  },
+  {
+   "code": "PAA",
+   "name": "Physics Astronomy Auditorium(13-K)"
+  },
+  {
+   "code": "PAB",
+   "name": "Physics Astronomy Bar"
+  },
+  {
+   "code": "PAT",
+   "name": "Physics Astronomy Tower(12-J)"
+  },
+  {
+   "code": "PAR",
+   "name": "Parrington Hall"
+  },
+  {
+   "code": "PCAR",
+   "name": "Paccar Hall"
+  },
+  {
+   "code": "PDL",
+   "name": "Padelford Hall"
+  },
+  {
+   "code": "PHT",
+   "name": "Playhouse Theater"
+  },
+  {
+   "code": "PLT",
+   "name": "Plant Laboratory"
+  },
+  {
+   "code": "PSC",
+   "name": "Pacific Science Center (Off campus)"
+  },
+  {
+   "code": "ATG",
+   "name": "Quaternary Research Center (Officially part of the Atmos Sci/Geophysics Building)"
+  },
+  {
+   "code": "RAI",
+   "name": "Raitt Hall"
+  },
+  {
+   "code": "ROB",
+   "name": "Roberts Hall"
+  },
+  {
+   "code": "RTB",
+   "name": "Benjamin Hall, Interdiciplinary Research & Technology Building"
+  },
+  {
+   "code": "RVC",
+   "name": "Roosevelt Commons"
+  },
+  {
+   "code": "SAV",
+   "name": "Savery Hall"
+  },
+  {
+   "code": "SGS",
+   "name": "Community Design Building-3947 Univ Way"
+  },
+  {
+   "code": "SIG",
+   "name": "Sieg Hall"
+  },
+  {
+   "code": "SMI",
+   "name": "Smith Hall"
+  },
+  {
+   "code": "SMZ",
+   "name": "Schmitz Hall"
+  },
+  {
+   "code": "SOCC",
+   "name": "South Campus Center"
+  },
+  {
+   "code": "SUZ",
+   "name": "Suzzallo Library"
+  },
+  {
+   "code": "SWS",
+   "name": "Social Work/Speech and Hearing Sciences Building"
+  },
+  {
+   "code": "TER",
+   "name": "Terry Hall (10-F)"
+  },
+  {
+   "code": "TGB",
+   "name": "Graves Building"
+  },
+  {
+   "code": "THO",
+   "name": "Thomson Hall"
+  },
+  {
+   "code": "UMCC",
+   "name": "University Medical Center wings CC, EE, NE, NN, NW, SE, SS, & SW"
+  },
+  {
+   "code": "UMSP",
+   "name": "University Medical Center, Surgery and Treatment Pavilion"
+  },
+  {
+   "code": "WBA",
+   "name": "Will be assigned"
+  },
+  {
+   "code": "WCL",
+   "name": "Wilson Ceramic Laboratory"
+  },
+  {
+   "code": "WFS",
+   "name": "Winkenwerder Forest Science Lab"
+  },
+  {
+   "code": "WIL",
+   "name": "Wilcox Hall"
+  }
+ ]
+}
