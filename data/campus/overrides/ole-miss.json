@@ -1,0 +1,252 @@
+{
+  "halls": {
+    "luckyday-residential-college": {
+      "pin": [
+        -89.530257,
+        34.368929
+      ]
+    },
+    "campus-walk-apartments": {
+      "pin": [
+        -89.547964,
+        34.364054
+      ]
+    },
+    "northgate-apartments": {
+      "pin": [
+        -89.533167,
+        34.369567
+      ]
+    }
+  },
+  "notes": {
+    "luckyday-residential-college": "OSM still calls it 'Residential College North' (way/318280244); Ole Miss Housing lists only two residential colleges, Residential College South and Luckyday (opened 2010), so the north one is Luckyday.",
+    "campus-walk-apartments": "OSM 'Campus Walk Building A' to 'J' (ways 271948926-271949166); pinned at Building E, the middle of the complex.",
+    "northgate-apartments": "OSM 'Northgate Apartments #A', '#B' and '#C' (ways 318284666, 318284667, 318284665); pinned at #B, the middle one (187 Northgate Drive).",
+    "sigma-nu-house": "Fraternity or sorority house, not a class or meal place.",
+    "delta-gamma-house": "Fraternity or sorority house, not a class or meal place.",
+    "phi-delta-theta-house": "Fraternity or sorority house, not a class or meal place.",
+    "kappa-alpha-house": "Fraternity or sorority house, not a class or meal place.",
+    "delta-delta-delta-house": "Fraternity or sorority house, not a class or meal place.",
+    "alpha-omicron-pi-house": "Fraternity or sorority house, not a class or meal place.",
+    "chi-omega-house": "Fraternity or sorority house, not a class or meal place.",
+    "pi-beta-phi-house": "Fraternity or sorority house, not a class or meal place.",
+    "alpha-phi-house": "Fraternity or sorority house, not a class or meal place.",
+    "kappa-delta-house": "Fraternity or sorority house, not a class or meal place.",
+    "kappa-kappa-gamma-house": "Fraternity or sorority house, not a class or meal place.",
+    "phi-mu-house": "Fraternity or sorority house, not a class or meal place.",
+    "alpha-chi-omega-house": "Fraternity or sorority house, not a class or meal place.",
+    "sigma-chi-house": "Fraternity or sorority house, not a class or meal place.",
+    "alpha-delta-pi-house": "Fraternity or sorority house, not a class or meal place.",
+    "alpha-tau-omega-house": "Fraternity or sorority house, not a class or meal place.",
+    "kappa-alpha-house-271952186": "Fraternity or sorority house, not a class or meal place.",
+    "sigma-alpha-epsilon-house": "Fraternity or sorority house, not a class or meal place.",
+    "beta-theta-pi-house": "Fraternity or sorority house, not a class or meal place.",
+    "kappa-sigma-house": "Fraternity or sorority house, not a class or meal place.",
+    "delta-psi-house": "Fraternity or sorority house, not a class or meal place.",
+    "pi-kappa-phi-house": "Fraternity or sorority house, not a class or meal place.",
+    "phi-kappa-psi-house": "Fraternity or sorority house, not a class or meal place.",
+    "delta-kappa-epsilon-house": "Fraternity or sorority house, not a class or meal place.",
+    "phi-kappa-tau-house": "Fraternity or sorority house, not a class or meal place.",
+    "sigma-pi-house": "Fraternity or sorority house, not a class or meal place.",
+    "delta-tau-delta-house": "Fraternity or sorority house, not a class or meal place.",
+    "northgate-apartments-a": "Northgate Apartments building (a hall), not a class place.",
+    "northgate-apartments-c": "Northgate Apartments building (a hall), not a class place.",
+    "campus-walk-building-a": "Campus Walk apartment building (a hall), not a class place.",
+    "married-student-housing": "Family student housing, not a class place.",
+    "married-student-housing-108": "Family student housing, not a class place.",
+    "married-student-housing-110": "Family student housing, not a class place.",
+    "married-student-housing-112": "Family student housing, not a class place.",
+    "married-student-housing-134": "Family student housing, not a class place.",
+    "the-inn-at-ole-miss": "Hotel, not a class or meal place.",
+    "oxford-fire-station-4": "Fire station, not a class or meal place.",
+    "service-station": "Service station, not a class or meal place.",
+    "game-day-tickets": "Ticket office, not a class or meal place.",
+    "intercollegiate-athletic-offices": "Athletics offices, not a class or meal place.",
+    "olivia-and-archie-manning-athletic-performance-center": "Varsity athletics building, not a class or meal place.",
+    "gillom-basketball-practice-facility": "Varsity practice facility, not a class or meal place.",
+    "ole-miss-track-and-field-facility": "Varsity track building, not a class or meal place.",
+    "jerry-hollingsworth-xc-facility": "Varsity cross-country building, not a class or meal place.",
+    "palmer-salloum-tennis-center": "Varsity tennis center, not a class or meal place.",
+    "grove-pavillion": "Open pavilion in the Grove, not a class or meal place.",
+    "data-center": "Data center, not a class or meal place.",
+    "procurement-services-building": "Procurement offices, not a class or meal place.",
+    "student-housing-service-building": "Housing service building, not a class or meal place."
+  },
+  "places": {
+    "sigma-nu-house": {
+      "hide": true
+    },
+    "delta-gamma-house": {
+      "hide": true
+    },
+    "phi-delta-theta-house": {
+      "hide": true
+    },
+    "kappa-alpha-house": {
+      "hide": true
+    },
+    "delta-delta-delta-house": {
+      "hide": true
+    },
+    "alpha-omicron-pi-house": {
+      "hide": true
+    },
+    "chi-omega-house": {
+      "hide": true
+    },
+    "pi-beta-phi-house": {
+      "hide": true
+    },
+    "alpha-phi-house": {
+      "hide": true
+    },
+    "kappa-delta-house": {
+      "hide": true
+    },
+    "kappa-kappa-gamma-house": {
+      "hide": true
+    },
+    "phi-mu-house": {
+      "hide": true
+    },
+    "alpha-chi-omega-house": {
+      "hide": true
+    },
+    "sigma-chi-house": {
+      "hide": true
+    },
+    "alpha-delta-pi-house": {
+      "hide": true
+    },
+    "alpha-tau-omega-house": {
+      "hide": true
+    },
+    "kappa-alpha-house-271952186": {
+      "hide": true
+    },
+    "sigma-alpha-epsilon-house": {
+      "hide": true
+    },
+    "beta-theta-pi-house": {
+      "hide": true
+    },
+    "kappa-sigma-house": {
+      "hide": true
+    },
+    "delta-psi-house": {
+      "hide": true
+    },
+    "pi-kappa-phi-house": {
+      "hide": true
+    },
+    "phi-kappa-psi-house": {
+      "hide": true
+    },
+    "delta-kappa-epsilon-house": {
+      "hide": true
+    },
+    "phi-kappa-tau-house": {
+      "hide": true
+    },
+    "sigma-pi-house": {
+      "hide": true
+    },
+    "delta-tau-delta-house": {
+      "hide": true
+    },
+    "northgate-apartments-a": {
+      "hide": true
+    },
+    "northgate-apartments-c": {
+      "hide": true
+    },
+    "campus-walk-building-a": {
+      "hide": true
+    },
+    "married-student-housing": {
+      "hide": true
+    },
+    "married-student-housing-108": {
+      "hide": true
+    },
+    "married-student-housing-110": {
+      "hide": true
+    },
+    "married-student-housing-112": {
+      "hide": true
+    },
+    "married-student-housing-134": {
+      "hide": true
+    },
+    "the-inn-at-ole-miss": {
+      "hide": true
+    },
+    "oxford-fire-station-4": {
+      "hide": true
+    },
+    "service-station": {
+      "hide": true
+    },
+    "game-day-tickets": {
+      "hide": true
+    },
+    "intercollegiate-athletic-offices": {
+      "hide": true
+    },
+    "olivia-and-archie-manning-athletic-performance-center": {
+      "hide": true
+    },
+    "gillom-basketball-practice-facility": {
+      "hide": true
+    },
+    "ole-miss-track-and-field-facility": {
+      "hide": true
+    },
+    "jerry-hollingsworth-xc-facility": {
+      "hide": true
+    },
+    "palmer-salloum-tennis-center": {
+      "hide": true
+    },
+    "grove-pavillion": {
+      "hide": true
+    },
+    "data-center": {
+      "hide": true
+    },
+    "procurement-services-building": {
+      "hide": true
+    },
+    "student-housing-service-building": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "burns-hall -> kinard-hall",
+        "minor-hall -> kinard-hall",
+        "residence-hall-2 -> kinard-hall",
+        "residence-hall-3 -> kinard-hall"
+      ],
+      "maxRatio": 5.5,
+      "why": "Kinard Hall's nearest mapped way is the drive on its north side by the North Parking Structure; no mapped path links it east to the residence halls, so walks go round by the garage loop."
+    },
+    {
+      "pairs": [
+        "burns-hall -> meek-hall"
+      ],
+      "maxRatio": 3.0,
+      "why": "No mapped path runs directly from Burns Hall south-east to Meek Hall; the walk goes round by the road on the east."
+    },
+    {
+      "pairs": [
+        "luckyday-residential-college -> sally-mcdonnell-barksdale-honors-college",
+        "residential-college-south -> sally-mcdonnell-barksdale-honors-college"
+      ],
+      "maxRatio": 3.5,
+      "why": "No mapped path runs south-west from the residential colleges across the lawn to the Honors College; walks go round by the roads to the north and west."
+    }
+  ]
+}
