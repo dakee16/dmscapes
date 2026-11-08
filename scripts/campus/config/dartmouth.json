@@ -1,0 +1,16 @@
+{
+  "collegeId": "dartmouth",
+  "area": {
+    "osm": "relation/15261101",
+    "bbox": [
+      43.67408,
+      -72.29892,
+      43.73845,
+      -72.25032
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class-location code list: the Registrar's glossary (https://registrar.dartmouth.edu/students/systems-tools-forms/glossary-dartmouth-terminology) has none, the campus map's Dartmouth Buildings layer (https://services1.arcgis.com/ajkPMiuiqxF9xEgP/arcgis/rest/services/Dartmouth_Buildings/FeatureServer/23) gives names and addresses only, and the Planon property layer (Planon_Identification_Map_WFL1) carries facilities property codes with cost centres, not a published class-location list; checked 2026-11-07."
+}
