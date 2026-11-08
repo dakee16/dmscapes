@@ -1,0 +1,17 @@
+{
+  "collegeId": "udel",
+  "area": {
+    "osm": "way/468467819",
+    "bbox": [
+      39.67438,
+      -75.76,
+      39.697,
+      -75.744
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No current public class building-code list: the Registrar's Schedule of Classes page (https://www.udel.edu/academics/registrar/faculty-staff/schedule-of-classes/) has no code key, and the only lists found are in retired registration books from 2002-2012 on www1.udel.edu/registrar.old, too old to trust; checked 2026-11-08.",
+  "areaNote": "bbox extended north from the OSM outline (way/468467819, central campus) to take in the Laird Campus halls; places still have to sit inside the outline."
+}

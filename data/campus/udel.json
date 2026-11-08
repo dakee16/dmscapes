@@ -1,0 +1,1149 @@
+{
+ "collegeId": "udel",
+ "generatedAt": "2026-11-08T17:14:21.632Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/udel.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -75.75807,
+  39.67463,
+  -75.7435,
+  39.69044
+ ],
+ "halls": [
+  {
+   "dormId": "caesar-rodney",
+   "name": "Caesar Rodney",
+   "lng": -75.750753,
+   "lat": 39.677369,
+   "pin": "manual",
+   "osm": "way/369722066",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 10.1
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 2.1
+    },
+    "dining": {
+     "placeId": "kent-dining-hall",
+     "minutes": 2.4
+    }
+   }
+  },
+  {
+   "dormId": "gilbert",
+   "name": "Eliphalet Gilbert",
+   "lng": -75.745871,
+   "lat": 39.676347,
+   "pin": "name",
+   "osm": "way/1096380529",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 16.9
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "russell-dining-hall",
+     "minutes": 3.2
+    }
+   }
+  },
+  {
+   "dormId": "harrington",
+   "name": "Harrington",
+   "lng": -75.748335,
+   "lat": 39.675487,
+   "pin": "manual",
+   "osm": "way/71219383",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 15.4
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 7.5
+    },
+    "dining": {
+     "placeId": "harrington-commons",
+     "minutes": 0.9
+    }
+   }
+  },
+  {
+   "dormId": "lanethomp",
+   "name": "Lane and Thompson",
+   "lng": -75.748999,
+   "lat": 39.677608,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 11.9
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 4.4
+    },
+    "dining": {
+     "placeId": "russell-dining-hall",
+     "minutes": 2
+    }
+   }
+  },
+  {
+   "dormId": "redding",
+   "name": "Louis L. Redding",
+   "lng": -75.746838,
+   "lat": 39.676439,
+   "pin": "name",
+   "osm": "way/1096380538",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 16.8
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "russell-dining-hall",
+     "minutes": 3.1
+    }
+   }
+  },
+  {
+   "dormId": "russell",
+   "name": "Russell",
+   "lng": -75.747544,
+   "lat": 39.677963,
+   "pin": "manual",
+   "osm": "way/71218971",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 12.9
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "russell-dining-hall",
+     "minutes": 1.6
+    }
+   }
+  },
+  {
+   "dormId": "smyth",
+   "name": "Smyth",
+   "lng": -75.750586,
+   "lat": 39.676256,
+   "pin": "name",
+   "osm": "way/71219347",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 12.8
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "kent-dining-hall",
+     "minutes": 2.8
+    }
+   }
+  },
+  {
+   "dormId": "southacademy",
+   "name": "South Academy",
+   "lng": -75.750833,
+   "lat": 39.675396,
+   "pin": "name",
+   "osm": "way/558628254",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 12.9
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 4.7
+    },
+    "dining": {
+     "placeId": "kent-dining-hall",
+     "minutes": 2
+    }
+   }
+  },
+  {
+   "dormId": "n-central",
+   "name": "North Central (Brown, Harter, Sharp, Sypherd)",
+   "lng": -75.752544,
+   "lat": 39.682418,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 3
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "kent-dining-hall",
+     "minutes": 9.4
+    }
+   }
+  },
+  {
+   "dormId": "s-central",
+   "name": "South Central (Cannon, Kent, New Castle, Squire, Sussex)",
+   "lng": -75.75148,
+   "lat": 39.676287,
+   "pin": "manual",
+   "osm": "way/71219305",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 11.7
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 3.4
+    },
+    "dining": {
+     "placeId": "kent-dining-hall",
+     "minutes": 0.7
+    }
+   }
+  },
+  {
+   "dormId": "georgeread",
+   "name": "George Read",
+   "lng": -75.758066,
+   "lat": 39.690437,
+   "pin": "name",
+   "osm": "way/71219200",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 12.2
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 19.8
+    },
+    "dining": {
+     "placeId": "kent-dining-hall",
+     "minutes": 22.8
+    }
+   }
+  },
+  {
+   "dormId": "indy",
+   "name": "Independence",
+   "lng": -75.757195,
+   "lat": 39.688432,
+   "pin": "name",
+   "osm": "way/71219251",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 10.2
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 17.8
+    },
+    "dining": {
+     "placeId": "kent-dining-hall",
+     "minutes": 20.8
+    }
+   }
+  },
+  {
+   "dormId": "tmk-js",
+   "name": "James Smith & Thomas McKean",
+   "lng": -75.756361,
+   "lat": 39.689517,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 10.2
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 17.8
+    },
+    "dining": {
+     "placeId": "kent-dining-hall",
+     "minutes": 20.8
+    }
+   }
+  },
+  {
+   "dormId": "ray",
+   "name": "Ray Street",
+   "lng": -75.755407,
+   "lat": 39.686787,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 6.5
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 14
+    },
+    "dining": {
+     "placeId": "kent-dining-hall",
+     "minutes": 17.1
+    }
+   }
+  },
+  {
+   "dormId": "university-courtyard",
+   "name": "University Courtyard Apartments",
+   "lng": -75.7435,
+   "lat": 39.6807,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "carpenter-sports-building-lil-bob",
+     "minutes": 14.4
+    },
+    "library": {
+     "placeId": "morris-library",
+     "minutes": 13.1
+    },
+    "dining": {
+     "placeId": "russell-dining-hall",
+     "minutes": 8.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "carpenter-sports-building-lil-bob",
+   "name": "Carpenter Sports Building - Lil Bob",
+   "short": "Carpenter Sports Building - Lil Bob",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Carpenter Sports Building",
+    "Lil Bob"
+   ],
+   "lng": -75.751556,
+   "lat": 39.684221,
+   "osm": "way/71219558"
+  },
+  {
+   "id": "morris-library",
+   "name": "Morris Library",
+   "short": "Morris Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.75298,
+   "lat": 39.678052,
+   "osm": "way/1157529779"
+  },
+  {
+   "id": "perkins-student-center",
+   "name": "Perkins Student Center",
+   "short": "Perkins Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.749382,
+   "lat": 39.676951,
+   "osm": "way/71219332"
+  },
+  {
+   "id": "center-for-the-arts",
+   "name": "Center for the Arts",
+   "short": "Center for the Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.757183,
+   "lat": 39.679099,
+   "osm": "way/71219041"
+  },
+  {
+   "id": "harker-ise-lab",
+   "name": "Harker ISE Lab",
+   "short": "Harker ISE Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Patrick T. Harker Interdisciplinary Science and Engineering Laboratory"
+   ],
+   "lng": -75.748745,
+   "lat": 39.679057,
+   "osm": "way/178314917"
+  },
+  {
+   "id": "trabant-student-center",
+   "name": "Trabant Student Center",
+   "short": "Trabant Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.754394,
+   "lat": 39.682411,
+   "osm": "way/369296514"
+  },
+  {
+   "id": "pearson-hall",
+   "name": "Pearson Hall",
+   "short": "Pearson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.748691,
+   "lat": 39.68015,
+   "osm": "way/71219261"
+  },
+  {
+   "id": "dupont-hall",
+   "name": "DuPont Hall",
+   "short": "DuPont Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Pierre S. du Pont Hall"
+   ],
+   "lng": -75.751251,
+   "lat": 39.680642,
+   "osm": "way/71219112"
+  },
+  {
+   "id": "graham-hall",
+   "name": "Graham Hall",
+   "short": "Graham Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.74892,
+   "lat": 39.680992,
+   "osm": "way/71219638"
+  },
+  {
+   "id": "russell-dining-hall",
+   "name": "Russell Dining Hall",
+   "short": "Russell Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Russell Complex"
+   ],
+   "lng": -75.747557,
+   "lat": 39.677597,
+   "osm": "way/71218970"
+  },
+  {
+   "id": "brown-lab",
+   "name": "Brown Lab",
+   "short": "Brown Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.751338,
+   "lat": 39.679692,
+   "osm": "way/71219183"
+  },
+  {
+   "id": "harrington-commons",
+   "name": "Harrington Commons",
+   "short": "Harrington Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Harrington Complex"
+   ],
+   "lng": -75.748248,
+   "lat": 39.675845,
+   "osm": "way/71219170"
+  },
+  {
+   "id": "smith-hall",
+   "name": "Smith Hall",
+   "short": "Smith Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.754292,
+   "lat": 39.68059,
+   "osm": "way/71219088"
+  },
+  {
+   "id": "colburn-lab",
+   "name": "Colburn Lab",
+   "short": "Colburn Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.749988,
+   "lat": 39.680058,
+   "osm": "way/71218969"
+  },
+  {
+   "id": "wolf-hall",
+   "name": "Wolf Hall",
+   "short": "Wolf Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.751693,
+   "lat": 39.681208,
+   "osm": "way/71219554"
+  },
+  {
+   "id": "sharp-lab",
+   "name": "Sharp Lab",
+   "short": "Sharp Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.753065,
+   "lat": 39.68111,
+   "osm": "way/71218960"
+  },
+  {
+   "id": "gore-hall",
+   "name": "Gore Hall",
+   "short": "Gore Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.753044,
+   "lat": 39.680573,
+   "osm": "way/71219070"
+  },
+  {
+   "id": "evans-hall",
+   "name": "Evans Hall",
+   "short": "Evans Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.751133,
+   "lat": 39.68021,
+   "osm": "way/71219745"
+  },
+  {
+   "id": "purnell-hall",
+   "name": "Purnell Hall",
+   "short": "Purnell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.755234,
+   "lat": 39.680567,
+   "osm": "way/71219002"
+  },
+  {
+   "id": "amy-du-pont-music-building",
+   "name": "Amy du Pont Music Building",
+   "short": "Amy du Pont Music Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.756672,
+   "lat": 39.680157,
+   "osm": "way/71219311"
+  },
+  {
+   "id": "spencer-lab",
+   "name": "Spencer Lab",
+   "short": "Spencer Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.750049,
+   "lat": 39.680899,
+   "osm": "way/71219258"
+  },
+  {
+   "id": "willard-hall-education-building",
+   "name": "Willard Hall Education Building",
+   "short": "Willard Hall Education Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.755167,
+   "lat": 39.683434,
+   "osm": "way/71219255"
+  },
+  {
+   "id": "memorial-hall",
+   "name": "Memorial Hall",
+   "short": "Memorial Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.752132,
+   "lat": 39.679131,
+   "osm": "way/71219352"
+  },
+  {
+   "id": "hullihen-hall",
+   "name": "Hullihen Hall",
+   "short": "Hullihen Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.752907,
+   "lat": 39.679579,
+   "osm": "relation/8143975"
+  },
+  {
+   "id": "200-academy-street",
+   "name": "200 Academy Street",
+   "short": "200 Academy Street",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.75054,
+   "lat": 39.679061,
+   "osm": "way/71219613"
+  },
+  {
+   "id": "center-for-biomedical-and-brain-imaging",
+   "name": "Center for Biomedical & Brain Imaging",
+   "short": "Center for Biomedical & Brain Imaging",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.750185,
+   "lat": 39.68161,
+   "osm": "way/178327248"
+  },
+  {
+   "id": "mcdowell-hall",
+   "name": "McDowell Hall",
+   "short": "McDowell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.754673,
+   "lat": 39.683989,
+   "osm": "way/71219089"
+  },
+  {
+   "id": "drake-hall",
+   "name": "Drake Hall",
+   "short": "Drake Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.750638,
+   "lat": 39.679758,
+   "osm": "way/71219670"
+  },
+  {
+   "id": "allison-hall",
+   "name": "Allison Hall",
+   "short": "Allison Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.75069,
+   "lat": 39.678435,
+   "osm": "way/71219039"
+  },
+  {
+   "id": "composites-manufacturing-science-lab",
+   "name": "Composites Manufacturing Science Lab",
+   "short": "Composites Manufacturing Science Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.749159,
+   "lat": 39.681686,
+   "osm": "way/71219058"
+  },
+  {
+   "id": "lammot-du-pont-lab",
+   "name": "Lammot du Pont Lab",
+   "short": "Lammot du Pont Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.751401,
+   "lat": 39.679203,
+   "osm": "way/71219252"
+  },
+  {
+   "id": "alfred-lerner-hall",
+   "name": "Alfred Lerner Hall",
+   "short": "Alfred Lerner Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.755899,
+   "lat": 39.680706,
+   "osm": "way/71219179"
+  },
+  {
+   "id": "kirkbride-lecture-hall",
+   "name": "Kirkbride Lecture Hall",
+   "short": "Kirkbride Lecture Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.754336,
+   "lat": 39.681226,
+   "osm": "way/71219009"
+  },
+  {
+   "id": "413-academy-street",
+   "name": "413 Academy Street",
+   "short": "413 Academy Street",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.750026,
+   "lat": 39.675712,
+   "osm": "way/71219714"
+  },
+  {
+   "id": "ocean-engineering-lab",
+   "name": "Ocean Engineering Lab",
+   "short": "Ocean Engineering Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.748419,
+   "lat": 39.678153,
+   "osm": "way/71219095"
+  },
+  {
+   "id": "ewing-hall",
+   "name": "Ewing Hall",
+   "short": "Ewing Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.755008,
+   "lat": 39.681305,
+   "osm": "way/71219752"
+  },
+  {
+   "id": "old-college-hall",
+   "name": "Old College Hall",
+   "short": "Old College Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.753704,
+   "lat": 39.683961,
+   "osm": "way/71218978"
+  },
+  {
+   "id": "hartshorn-hall",
+   "name": "Hartshorn Hall",
+   "short": "Hartshorn Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.751022,
+   "lat": 39.674632,
+   "osm": "way/1294785837"
+  },
+  {
+   "id": "student-services-building",
+   "name": "Student Services Building",
+   "short": "Student Services Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.748222,
+   "lat": 39.679581,
+   "osm": "way/71219096"
+  },
+  {
+   "id": "laurel-hall",
+   "name": "Laurel Hall",
+   "short": "Laurel Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.751954,
+   "lat": 39.675168,
+   "osm": "way/71219085"
+  },
+  {
+   "id": "mitchell-hall",
+   "name": "Mitchell Hall",
+   "short": "Mitchell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.753215,
+   "lat": 39.680066,
+   "osm": "way/71219520"
+  },
+  {
+   "id": "delaware-geological-survey-building",
+   "name": "Delaware Geological Survey Building",
+   "short": "Delaware Geological Survey Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.748805,
+   "lat": 39.67846,
+   "osm": "way/71219098"
+  },
+  {
+   "id": "penny-hall",
+   "name": "Penny Hall",
+   "short": "Penny Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.749216,
+   "lat": 39.678304,
+   "osm": "way/71218968"
+  },
+  {
+   "id": "taylor-hall",
+   "name": "Taylor Hall",
+   "short": "Taylor Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.753468,
+   "lat": 39.684401,
+   "osm": "way/71219461"
+  },
+  {
+   "id": "munroe-hall",
+   "name": "Munroe Hall",
+   "short": "Munroe Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.755729,
+   "lat": 39.681925,
+   "osm": "way/71219004"
+  },
+  {
+   "id": "jastak-burgess-hall",
+   "name": "Jastak-Burgess Hall",
+   "short": "Jastak-Burgess Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.752331,
+   "lat": 39.683646,
+   "osm": "way/71219018"
+  },
+  {
+   "id": "kent-dining-hall",
+   "name": "Kent Dining Hall",
+   "short": "Kent Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.751056,
+   "lat": 39.676249,
+   "osm": "way/71219094"
+  },
+  {
+   "id": "alison-hall-west",
+   "name": "Alison Hall West",
+   "short": "Alison Hall West",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.751233,
+   "lat": 39.678499,
+   "osm": "way/71218998"
+  },
+  {
+   "id": "314-wyoming-road",
+   "name": "314 Wyoming Road",
+   "short": "314 Wyoming Road",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.745444,
+   "lat": 39.676321,
+   "osm": "way/71219264"
+  },
+  {
+   "id": "ud-career-center",
+   "name": "UD Career Center",
+   "short": "UD Career Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.74995,
+   "lat": 39.676228,
+   "osm": "way/71219079"
+  },
+  {
+   "id": "robinson-hall",
+   "name": "Robinson Hall",
+   "short": "Robinson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.752462,
+   "lat": 39.676236,
+   "osm": "way/71218997"
+  },
+  {
+   "id": "mechanical-hall",
+   "name": "Mechanical Hall",
+   "short": "Mechanical Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.752956,
+   "lat": 39.684147,
+   "osm": "way/71219768"
+  },
+  {
+   "id": "east-hall",
+   "name": "East Hall",
+   "short": "East Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.749805,
+   "lat": 39.681658,
+   "osm": "way/71219068"
+  },
+  {
+   "id": "innovation-way",
+   "name": "Innovation Way",
+   "short": "Innovation Way",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.756356,
+   "lat": 39.68244,
+   "osm": "way/315509580"
+  },
+  {
+   "id": "recitation-hall",
+   "name": "Recitation Hall",
+   "short": "Recitation Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.753272,
+   "lat": 39.683557,
+   "osm": "way/71219001"
+  },
+  {
+   "id": "elliott-hall",
+   "name": "Elliott Hall",
+   "short": "Elliott Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.752553,
+   "lat": 39.683284,
+   "osm": "way/71219087"
+  },
+  {
+   "id": "raub-hall",
+   "name": "Raub Hall",
+   "short": "Raub Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.754305,
+   "lat": 39.68317,
+   "osm": "way/71219090"
+  },
+  {
+   "id": "daugherty-hall",
+   "name": "Daugherty Hall",
+   "short": "Daugherty Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Old First Presbyterian Church"
+   ],
+   "lng": -75.754611,
+   "lat": 39.682737,
+   "osm": "way/369296521"
+  },
+  {
+   "id": "george-evans-house",
+   "name": "George Evans House",
+   "short": "George Evans House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.75396,
+   "lat": 39.682778,
+   "osm": "way/71219022"
+  },
+  {
+   "id": "alumni-hall",
+   "name": "Alumni Hall",
+   "short": "Alumni Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.752923,
+   "lat": 39.683218,
+   "osm": "way/71218988"
+  },
+  {
+   "id": "bayard-sharp-hall",
+   "name": "Bayard Sharp Hall",
+   "short": "Bayard Sharp Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.756594,
+   "lat": 39.68209,
+   "osm": "way/71219262"
+  },
+  {
+   "id": "5-courtney-street",
+   "name": "5 Courtney Street",
+   "short": "5 Courtney Street",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.749915,
+   "lat": 39.675081,
+   "osm": "way/71219748"
+  },
+  {
+   "id": "center-for-black-culture",
+   "name": "Center for Black Culture",
+   "short": "Center for Black Culture",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.753871,
+   "lat": 39.678422,
+   "osm": "way/71219501"
+  },
+  {
+   "id": "american-philosophical-association",
+   "name": "American Philosophical Association",
+   "short": "American Philosophical Association",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.755283,
+   "lat": 39.679913,
+   "osm": "way/71219544"
+  },
+  {
+   "id": "frank-and-yetta-chaiken-center-for-jewish-studies",
+   "name": "Frank & Yetta Chaiken Center for Jewish Studies",
+   "short": "Frank & Yetta Chaiken Center for Jewish Studies",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.754942,
+   "lat": 39.681788,
+   "osm": "way/71219031"
+  },
+  {
+   "id": "recitation-hall-annex",
+   "name": "Recitation Hall Annex",
+   "short": "Recitation Hall Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.753209,
+   "lat": 39.68385,
+   "osm": "way/71219325"
+  },
+  {
+   "id": "academic-enrichment-center",
+   "name": "Academic Enrichment Center",
+   "short": "Academic Enrichment Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.753881,
+   "lat": 39.679898,
+   "osm": "way/71219604"
+  },
+  {
+   "id": "delaware-geological-survey-annex",
+   "name": "Delaware Geological Survey Annex",
+   "short": "Delaware Geological Survey Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -75.748581,
+   "lat": 39.677849,
+   "osm": "way/71219573"
+  }
+ ]
+}
