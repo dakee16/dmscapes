@@ -1,0 +1,16 @@
+{
+  "collegeId": "boston-college",
+  "area": {
+    "osm": "relation/17218279",
+    "bbox": [
+      42.32454,
+      -71.19629,
+      42.34885,
+      -71.15591
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public building-code list: BC's Chestnut Hill campus map (bc.edu/bc-web/about/maps-and-directions/chestnuthill-campus-map.html) and its ArcGIS Buildings_Categories layer give names and short labels but no codes, the registrar (Student Services) pages publish none, and the Institutional Research 'Instructional Facilities at Boston College' reports list classrooms by building name only."
+}

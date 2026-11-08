@@ -1,0 +1,106 @@
+{
+  "halls": {
+    "claver": {
+      "pin": [
+        -71.176148,
+        42.333102
+      ]
+    },
+    "loyola": {
+      "pin": [
+        -71.175994,
+        42.333407
+      ]
+    },
+    "gonzaga": {
+      "pin": [
+        -71.174085,
+        42.333684
+      ]
+    },
+    "66-commonwealth-avenue": {
+      "pin": [
+        -71.168502,
+        42.339027
+      ]
+    },
+    "greycliff": {
+      "pin": [
+        -71.161201,
+        42.340344
+      ]
+    },
+    "90-saint-thomas-more": {
+      "pin": [
+        -71.168056,
+        42.338699
+      ]
+    },
+    "modulars": {
+      "pin": [
+        -71.166512,
+        42.337762
+      ]
+    }
+  },
+  "notes": {
+    "claver": "OSM has no named Claver Hall; pin is the centroid of \"Claver Hall\" in BC's campus-map buildings layer (services2.arcgis.com/Fsh2f6TdGBX9G7ic/.../Buildings_Categories/FeatureServer/0).",
+    "loyola": "Centroid of \"Loyola Hall\" in BC's campus-map buildings layer (same layer as Claver); OSM has no named Loyola Hall.",
+    "gonzaga": "Centroid of \"Gonzaga Hall\" in BC's campus-map buildings layer; OSM has no named Gonzaga Hall.",
+    "66-commonwealth-avenue": "Centroid of \"66 Commonwealth Avenue\" (Residence Hall) in BC's campus-map buildings layer; OSM's 66 is unnamed.",
+    "greycliff": "Centroid of \"Greycliff Hall\" (Brighton Campus, Residence Hall) in BC's campus-map buildings layer; OSM has no named Greycliff Hall.",
+    "90-saint-thomas-more": "Centroid of \"90 St Thomas More Rd\" (Residence Hall) in BC's campus-map buildings layer.",
+    "modulars": "Centre of OSM's Mod 22 (way/1481241000), the Mod nearest the middle of the 38 \"Modular Housing Unit\" centroids in BC's campus-map buildings layer."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "welch -> 50",
+        "williams -> 36",
+        "williams -> flanagan"
+      ],
+      "maxRatio": 3,
+      "why": "The College Road houses (50 and 36 College Road, Flanagan House at 4 Quincy Road) have no mapped entrances and are reached from the College Road and Quincy Road sidewalks; Welch and Williams snap to the drive and Hammond Street side behind them, so walks go out to College Road and round."
+    },
+    {
+      "pairs": [
+        "ignacio -> burns-bapst-library",
+        "voute -> burns-bapst-library"
+      ],
+      "maxRatio": 3.5,
+      "why": "Burns-Bapst Library (way/29812427) has no mapped entrance; its centre snaps to the service drive on its west side, so walks from Lower Campus climb the steps and go round the building to it."
+    },
+    {
+      "pairs": [
+        "vanderslice -> southwell-hall-career-center"
+      ],
+      "maxRatio": 3,
+      "why": "St. Thomas More Road lies between them; the walk crosses at the mapped crossing to the east and comes back along the sidewalk, and Southwell Hall has no mapped entrance."
+    },
+    {
+      "pairs": [
+        "thomas-more-apartments -> 2125-comm-ave",
+        "thomas-more-apartments -> mcmullen-museum-of-art"
+      ],
+      "maxRatio": 5,
+      "why": "Commonwealth Avenue, a divided road, lies between Thomas More Apartments and the Brighton Campus; the walk goes west to the mapped crossing by St. Thomas More Road and back east along the Brighton side."
+    },
+    {
+      "pairs": [
+        "modulars -> connell-recreation-center",
+        "modulars -> corcoran-commons",
+        "modulars -> 2125-comm-ave",
+        "modulars -> southwell-hall-career-center"
+      ],
+      "maxRatio": 4,
+      "why": "The Mods have no mapped paths among them, so the pin (Mod 22) leaves by the service drive on the cluster's south side before turning north or west; Corcoran Commons and Southwell Hall have no mapped entrance, and 2125 Commonwealth Avenue is across Commonwealth Avenue, a divided road, reached by the crossing at St. Thomas More Road."
+    },
+    {
+      "pairs": [
+        "66-commonwealth-avenue -> corcoran-commons"
+      ],
+      "maxRatio": 3,
+      "why": "Corcoran Commons (way/29673727) has no mapped entrance; its centre snaps to the footway on its west side, so the walk from 66 Commonwealth Avenue goes round by the steps west of it."
+    }
+  ]
+}
