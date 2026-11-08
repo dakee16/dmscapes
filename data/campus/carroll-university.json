@@ -1,0 +1,637 @@
+{
+ "collegeId": "carroll-university",
+ "generatedAt": "2026-11-08T17:05:35.368Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/carroll-university.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -88.23314,
+  43.00143,
+  -88.22284,
+  43.0073
+ ],
+ "halls": [
+  {
+   "dormId": "steele-hall",
+   "name": "Steele Hall",
+   "lng": -88.226149,
+   "lat": 43.004331,
+   "pin": "name",
+   "osm": "way/618371358",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ganfield-gymnasium",
+     "minutes": 3.5
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 2.4
+    }
+   }
+  },
+  {
+   "dormId": "swarthout-hall",
+   "name": "Swarthout Hall",
+   "lng": -88.226161,
+   "lat": 43.004824,
+   "pin": "name",
+   "osm": "way/618371359",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "van-male-natatorium",
+     "minutes": 4.2
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 3.7
+    }
+   }
+  },
+  {
+   "dormId": "a-paul-jones-honors-hall",
+   "name": "A. Paul Jones Honors Hall",
+   "lng": -88.225616,
+   "lat": 43.00431,
+   "pin": "manual",
+   "osm": "way/618409324",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ganfield-gymnasium",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 2.9
+    }
+   }
+  },
+  {
+   "dormId": "kilgour-hall",
+   "name": "Kilgour Hall",
+   "lng": -88.225751,
+   "lat": 43.002644,
+   "pin": "name",
+   "osm": "way/618404781",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ganfield-gymnasium",
+     "minutes": 4.9
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "north-bergstrom-hall",
+   "name": "North Bergstrom Hall",
+   "lng": -88.226213,
+   "lat": 43.00173,
+   "pin": "name",
+   "osm": "way/618406248",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ganfield-gymnasium",
+     "minutes": 5.4
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "shirley-hilger-hall",
+   "name": "Shirley Hilger Hall",
+   "lng": -88.225282,
+   "lat": 43.00328,
+   "pin": "name",
+   "osm": "way/618371951",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ganfield-gymnasium",
+     "minutes": 4.7
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 4
+    }
+   }
+  },
+  {
+   "dormId": "frontier-hall",
+   "name": "Frontier Hall",
+   "lng": -88.232328,
+   "lat": 43.00422,
+   "pin": "name",
+   "osm": "way/618555018",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "van-male-fieldhouse",
+     "minutes": 6.8
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 7.8
+    }
+   }
+  },
+  {
+   "dormId": "pioneer-hall",
+   "name": "Pioneer Hall",
+   "lng": -88.233141,
+   "lat": 43.003454,
+   "pin": "name",
+   "osm": "way/618558216",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ganfield-gymnasium",
+     "minutes": 7.1
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 7.2
+    }
+   }
+  },
+  {
+   "dormId": "prairie-hall",
+   "name": "Prairie Hall",
+   "lng": -88.232362,
+   "lat": 43.00339,
+   "pin": "name",
+   "osm": "way/618553206",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ganfield-gymnasium",
+     "minutes": 7.2
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 7.3
+    }
+   }
+  },
+  {
+   "dormId": "carroll-street-apartments",
+   "name": "Carroll Street Apartments",
+   "lng": -88.230256,
+   "lat": 43.007301,
+   "pin": "name",
+   "osm": "way/447123556",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "van-male-natatorium",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 6.3
+    }
+   }
+  },
+  {
+   "dormId": "college-avenue-apartments",
+   "name": "College Avenue Apartments",
+   "lng": -88.231517,
+   "lat": 43.002683,
+   "pin": "name",
+   "osm": "way/618358568",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "ganfield-gymnasium",
+     "minutes": 5.6
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 5.7
+    }
+   }
+  },
+  {
+   "dormId": "hartwell-avenue-apartments",
+   "name": "Hartwell Avenue Apartments",
+   "lng": -88.222838,
+   "lat": 43.006722,
+   "pin": "manual",
+   "osm": "way/618548099",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "van-male-natatorium",
+     "minutes": 8.1
+    },
+    "library": {
+     "placeId": "todd-wehr-memorial-library",
+     "minutes": 7.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "van-male-fieldhouse",
+   "name": "Van Male Fieldhouse",
+   "short": "Van Male Fieldhouse",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Van Male Gymnasium"
+   ],
+   "lng": -88.22841,
+   "lat": 43.004919,
+   "osm": "way/447124996"
+  },
+  {
+   "id": "fine-arts-center",
+   "name": "Fine Arts Center",
+   "short": "Fine Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.227375,
+   "lat": 43.005413,
+   "osm": "way/447125569"
+  },
+  {
+   "id": "campus-center",
+   "name": "Campus Center",
+   "short": "Campus Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.226206,
+   "lat": 43.003331,
+   "osm": "way/618370025"
+  },
+  {
+   "id": "todd-wehr-memorial-library",
+   "name": "Todd Wehr Memorial Library",
+   "short": "Todd Wehr Memorial Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Carrier Memorial Library"
+   ],
+   "lng": -88.228016,
+   "lat": 43.004473,
+   "osm": "way/447125567"
+  },
+  {
+   "id": "shattuck-music-center",
+   "name": "Shattuck Music Center",
+   "short": "Shattuck Music Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.227169,
+   "lat": 43.004681,
+   "osm": "way/447124995"
+  },
+  {
+   "id": "michael-and-mary-jaharis-science-laboratories",
+   "name": "Michael and Mary Jaharis Science Laboratories",
+   "short": "Michael and Mary Jaharis Science Laboratories",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.228955,
+   "lat": 43.003355,
+   "osm": "way/618337668"
+  },
+  {
+   "id": "ganfield-gymnasium",
+   "name": "Ganfield Gymnasium",
+   "short": "Ganfield Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.228853,
+   "lat": 43.004402,
+   "osm": "way/447125566"
+  },
+  {
+   "id": "bergstrom-hall",
+   "name": "Bergstrom Hall",
+   "short": "Bergstrom Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.226376,
+   "lat": 43.001426,
+   "osm": "way/618406250"
+  },
+  {
+   "id": "van-male-natatorium",
+   "name": "Van Male Natatorium",
+   "short": "Van Male Natatorium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.22883,
+   "lat": 43.00523,
+   "osm": "way/618333382"
+  },
+  {
+   "id": "quad-graphics-team-center",
+   "name": "Quad/Graphics Team Center",
+   "short": "Quad/Graphics Team Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.229728,
+   "lat": 43.005519,
+   "osm": "way/447123837"
+  },
+  {
+   "id": "voorhees-hall",
+   "name": "Voorhees Hall",
+   "short": "Voorhees Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.227557,
+   "lat": 43.003379,
+   "osm": "way/447125000"
+  },
+  {
+   "id": "doug-and-nancy-halstad-hall",
+   "name": "Doug and Nancy Halstad Hall",
+   "short": "Doug and Nancy Halstad Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.229001,
+   "lat": 43.003785,
+   "osm": "way/447124998"
+  },
+  {
+   "id": "physical-therapy-building",
+   "name": "Physical Therapy Building",
+   "short": "Physical Therapy Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.228879,
+   "lat": 43.005541,
+   "osm": "way/447124997"
+  },
+  {
+   "id": "rankin-hall",
+   "name": "Rankin Hall",
+   "short": "Rankin Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.228417,
+   "lat": 43.003427,
+   "osm": "way/447125001"
+  },
+  {
+   "id": "main-hall",
+   "name": "Main Hall",
+   "short": "Main Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.227946,
+   "lat": 43.003924,
+   "osm": "way/447125568"
+  },
+  {
+   "id": "education-hall",
+   "name": "Education Hall",
+   "short": "Education Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.229464,
+   "lat": 43.006565,
+   "osm": "way/96028210"
+  },
+  {
+   "id": "charles-street-hall",
+   "name": "Charles Street Hall",
+   "short": "Charles Street Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.224145,
+   "lat": 43.004229,
+   "osm": "way/618372932"
+  },
+  {
+   "id": "macallister-hall",
+   "name": "MacAllister Hall",
+   "short": "MacAllister Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.226276,
+   "lat": 43.002741,
+   "osm": "way/618407684"
+  },
+  {
+   "id": "wright-house",
+   "name": "Wright House",
+   "short": "Wright House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.225577,
+   "lat": 43.003873,
+   "osm": "way/618408672"
+  },
+  {
+   "id": "sneeden-house",
+   "name": "Sneeden House",
+   "short": "Sneeden House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.226289,
+   "lat": 43.002134,
+   "osm": "way/618407685"
+  },
+  {
+   "id": "business-hall",
+   "name": "Business Hall",
+   "short": "Business Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.226385,
+   "lat": 43.005515,
+   "osm": "way/618371666"
+  },
+  {
+   "id": "student-health-services",
+   "name": "Student Health Services",
+   "short": "Student Health Services",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.224699,
+   "lat": 43.00391,
+   "osm": "way/618409729"
+  },
+  {
+   "id": "explorer-house",
+   "name": "Explorer House",
+   "short": "Explorer House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.22473,
+   "lat": 43.004464,
+   "osm": "way/618409323"
+  },
+  {
+   "id": "student-affairs",
+   "name": "Student Affairs",
+   "short": "Student Affairs",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.227135,
+   "lat": 43.002393,
+   "osm": "way/618362248"
+  },
+  {
+   "id": "betty-lou-tikalsky-house",
+   "name": "Betty Lou Tikalsky House",
+   "short": "Betty Lou Tikalsky House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.225429,
+   "lat": 43.004316,
+   "osm": "way/618409326"
+  },
+  {
+   "id": "mathematics-house",
+   "name": "Mathematics House",
+   "short": "Mathematics House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.229511,
+   "lat": 43.003234,
+   "osm": "way/447124247"
+  },
+  {
+   "id": "walter-young-center",
+   "name": "Walter Young Center",
+   "short": "Walter Young Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.225788,
+   "lat": 43.003892,
+   "osm": "way/618408673"
+  },
+  {
+   "id": "college-of-health-sciences",
+   "name": "College of Health Sciences",
+   "short": "College of Health Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.227021,
+   "lat": 43.006199,
+   "osm": "way/447126102"
+  },
+  {
+   "id": "voyager-house",
+   "name": "Voyager House",
+   "short": "Voyager House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.225403,
+   "lat": 43.003908,
+   "osm": "way/618408671"
+  },
+  {
+   "id": "human-resources",
+   "name": "Human Resources",
+   "short": "Human Resources",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.224726,
+   "lat": 43.004334,
+   "osm": "way/618408668"
+  },
+  {
+   "id": "enterprise-house",
+   "name": "Enterprise House",
+   "short": "Enterprise House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.225275,
+   "lat": 43.004285,
+   "osm": "way/618409327"
+  },
+  {
+   "id": "discovery-house",
+   "name": "Discovery House",
+   "short": "Discovery House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -88.22499,
+   "lat": 43.003909,
+   "osm": "way/618409728"
+  },
+  {
+   "id": "richard-smart-house",
+   "name": "Richard Smart House",
+   "short": "Richard Smart House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Office of Victim Services"
+   ],
+   "lng": -88.23123,
+   "lat": 43.002694,
+   "osm": "way/618359494"
+  }
+ ]
+}
