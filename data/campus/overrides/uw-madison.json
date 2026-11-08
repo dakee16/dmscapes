@@ -1,0 +1,63 @@
+{
+  "halls": {
+    "kronshage": {
+      "pin": [
+        -89.41466,
+        43.078107
+      ]
+    }
+  },
+  "notes": {
+    "kronshage": "Kronshage is the group of houses on Kronshage and Elm Drives (OSM: Chamberlin, Conover, Gilman, Jones, Mack, Showerman, Swenson, Turner); pinned to Allen D. Conover Hall (way/37902549, 1650 Kronshage Dr), mid-group.",
+    "0155": "Facility List row 0155 'Comp Sci' at 1210 W Dayton St = OSM way/153660099 'Computer Sciences Building' at the same address.",
+    "0450": "Facility List row 0450 'MSC' at 1300 University Ave = OSM relation/19566386 'Medical Sciences Center' at the same address.",
+    "0211": "Facility List row 0211 'MIR' at 330 N Orchard St = OSM relation/21721799 'Wisconsin Institute for Discovery' at the same address. The Discovery Building houses the Morgridge Institute for Research (MIR) and the Wisconsin Institute for Discovery.",
+    "1485": "Facility List row 1485 'WIMR' at 1111 Highland Ave = OSM way/175079855 'Wisconsin Institutes for Medical Research' at the same address.",
+    "0093": "Facility List row 0093 'Vet Med South' at 2015 Linden Dr = OSM way/38019751 'Veterinary Medicine South' at the same address.",
+    "0793": "Facility List row 0793 'Vet Med North' at 515 Easterday Ln = OSM relation/17899257 'Veterinary Medicine North' at the same address.",
+    "0033": "Facility List row 0033 'Bock Labs' at 1525 Linden Dr = OSM way/38856044 'Robert M. Bock Laboratories' at the same address.",
+    "0076": "Facility List row 0076 'Smith Hall, Hiram' at 1545 Observatory Dr = OSM way/38953056 'Hiram Smith Hall' at the same address.",
+    "0079": "Facility List row 0079 'Steenbock Memorial Lbry' at 550 Babcock Dr = OSM way/37550815 'Steenbock Memorial Library' at the same address.",
+    "0082": "Facility List row 0082 'Genetics-Biotech' at 425 Henry Mall = OSM way/39015620 'Genetics-Biotechnology Center Building' at the same address.",
+    "0084": "Facility List row 0084 'Biochemistry Bldg' at 420 Henry Mall = OSM way/412585896 'DeLuca Biochemistry Building' at the same address.",
+    "0205": "Facility List row 0205 'Biochemistry Labs' at 433 Babcock Dr = OSM way/37516023 'DeLuca Biochemistry Laboratories' at the same address.",
+    "0156": "Facility List row 0156 'AOSS' at 1225 W Dayton St = OSM way/153660089 'Atmospheric & Oceanic Sciences' at the same address.",
+    "0403": "Facility List row 0403 'Water Sci & Eng' at 660 N Park St = OSM way/37749299 'Water Science & Engineering Laboratory' at the same address.",
+    "0451A": "Facility List row 0451A 'Service Memorial Inst' at 470 N Charter St = OSM way/39015623 'Service Memorial Institute' at the same address.",
+    "0520": "Facility List row 0520 'Mat Sci & Eng Bldg' at 1509 University Ave = OSM way/60320800 'Materials Science and Engineering' at the same address.",
+    "0752": "Facility List row 0752 'WEI' at 1552 University Ave = OSM way/193490363 'Wisconsin Energy Institute' at the same address.",
+    "0136": "Facility List row 0136 'Humphrey Hall' at 640 Babcock Dr = OSM way/38060693 'Humphrey Hall' at the same address.",
+    "0149": "Facility List row 0149 'Meat Sci & Animal Bio' at 1933 Observatory Dr = OSM way/490171328 'Meat Science and Animal Biologics Discovery' at the same address.",
+    "0123": "Facility List row 0123 'Meat Sci & Muscle Bio' at 1805 Linden Dr = OSM way/38263351 'Muscle & Meat Science Research Laboratory' at the same address.",
+    "0512": "Facility List row 0512 'Observ Hill Office Bldg' at 1225 Observatory Dr = OSM way/38953095 'Robert M. Lafollette School of Public Affairs' at the same address.",
+    "uw-medical-foundation-centennial-building": "UW Health clinic building (1685 Highland Ave) at the far west end, past the hospitals; no classes."
+  },
+  "codes": {
+    "0155": "way/153660099",
+    "0450": "relation/19566386",
+    "0211": "relation/21721799",
+    "1485": "way/175079855",
+    "0093": "way/38019751",
+    "0793": "relation/17899257",
+    "0033": "way/38856044",
+    "0076": "way/38953056",
+    "0079": "way/37550815",
+    "0082": "way/39015620",
+    "0084": "way/412585896",
+    "0205": "way/37516023",
+    "0156": "way/153660089",
+    "0403": "way/37749299",
+    "0451A": "way/39015623",
+    "0520": "way/60320800",
+    "0752": "way/193490363",
+    "0136": "way/38060693",
+    "0149": "way/490171328",
+    "0123": "way/38263351",
+    "0512": "way/38953095"
+  },
+  "places": {
+    "uw-medical-foundation-centennial-building": {
+      "hide": true
+    }
+  }
+}

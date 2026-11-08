@@ -1,0 +1,17 @@
+{
+  "collegeId": "uw-madison",
+  "area": {
+    "osm": "relation/7144092",
+    "bbox": [
+      43.06781,
+      -89.44597,
+      43.09276,
+      -89.3941
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/uw-madison.codes.json"
+  }
+}
