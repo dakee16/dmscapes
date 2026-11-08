@@ -1,0 +1,1139 @@
+{
+ "collegeId": "tufts",
+ "generatedAt": "2026-11-08T11:13:26.421Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/tufts.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -71.12478,
+  42.40331,
+  -71.11352,
+  42.41135
+ ],
+ "halls": [
+  {
+   "dormId": "bush-hall",
+   "name": "Bush Hall",
+   "lng": -71.121724,
+   "lat": 42.404934,
+   "pin": "name",
+   "osm": "way/29686046",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "tisch-library",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "dewick-macphie-dining-center",
+     "minutes": 1.7
+    },
+    "gym": {
+     "placeId": "jackson-gymnasium",
+     "minutes": 3.5
+    }
+   }
+  },
+  {
+   "dormId": "carmichael-hall",
+   "name": "Carmichael Hall",
+   "lng": -71.122598,
+   "lat": 42.409171,
+   "pin": "name",
+   "osm": "way/29714678",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "tisch-library",
+     "minutes": 6.8
+    },
+    "dining": {
+     "placeId": "dewick-macphie-dining-center",
+     "minutes": 7.4
+    },
+    "gym": {
+     "placeId": "jackson-gymnasium",
+     "minutes": 9.2
+    }
+   }
+  },
+  {
+   "dormId": "court-at-professors-row",
+   "name": "Court at Professors Row",
+   "lng": -71.122411,
+   "lat": 42.407348,
+   "pin": "manual",
+   "osm": "way/1340180875",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "tisch-library",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "dewick-macphie-dining-center",
+     "minutes": 4.4
+    },
+    "gym": {
+     "placeId": "jackson-gymnasium",
+     "minutes": 6.2
+    }
+   }
+  },
+  {
+   "dormId": "hodgdon-hall",
+   "name": "Hodgdon Hall",
+   "lng": -71.122066,
+   "lat": 42.405466,
+   "pin": "name",
+   "osm": "way/29787508",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "tisch-library",
+     "minutes": 7.4
+    },
+    "dining": {
+     "placeId": "dewick-macphie-dining-center",
+     "minutes": 1.8
+    },
+    "gym": {
+     "placeId": "jackson-gymnasium",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "houston-hall",
+   "name": "Houston Hall",
+   "lng": -71.122073,
+   "lat": 42.40825,
+   "pin": "name",
+   "osm": "way/229588626",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "tisch-library",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "dewick-macphie-dining-center",
+     "minutes": 7.7
+    },
+    "gym": {
+     "placeId": "jackson-gymnasium",
+     "minutes": 9.6
+    }
+   }
+  },
+  {
+   "dormId": "metcalf-hall",
+   "name": "Metcalf Hall",
+   "lng": -71.120841,
+   "lat": 42.406043,
+   "pin": "name",
+   "osm": "way/29641979",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "tisch-library",
+     "minutes": 4.2
+    },
+    "dining": {
+     "placeId": "dewick-macphie-dining-center",
+     "minutes": 2.9
+    },
+    "gym": {
+     "placeId": "jackson-gymnasium",
+     "minutes": 3.5
+    }
+   }
+  },
+  {
+   "dormId": "miller-hall",
+   "name": "Miller Hall",
+   "lng": -71.121257,
+   "lat": 42.409003,
+   "pin": "name",
+   "osm": "way/29641802",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "tisch-library",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "dewick-macphie-dining-center",
+     "minutes": 6.8
+    },
+    "gym": {
+     "placeId": "jackson-gymnasium",
+     "minutes": 8.5
+    }
+   }
+  },
+  {
+   "dormId": "richardson-house",
+   "name": "Richardson House",
+   "lng": -71.11917,
+   "lat": 42.40548,
+   "pin": "name",
+   "osm": "way/29727558",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "tisch-library",
+     "minutes": 4.5
+    },
+    "dining": {
+     "placeId": "dewick-macphie-dining-center",
+     "minutes": 4
+    },
+    "gym": {
+     "placeId": "jackson-gymnasium",
+     "minutes": 3.5
+    }
+   }
+  },
+  {
+   "dormId": "tilton-hall",
+   "name": "Tilton Hall",
+   "lng": -71.122281,
+   "lat": 42.404618,
+   "pin": "name",
+   "osm": "way/29686068",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "tisch-library",
+     "minutes": 7.5
+    },
+    "dining": {
+     "placeId": "dewick-macphie-dining-center",
+     "minutes": 1.8
+    },
+    "gym": {
+     "placeId": "jackson-gymnasium",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "wilson-house",
+   "name": "Wilson House",
+   "lng": -71.124563,
+   "lat": 42.407912,
+   "pin": "name",
+   "osm": "way/29518910",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "library": {
+     "placeId": "tisch-library",
+     "minutes": 7.7
+    },
+    "dining": {
+     "placeId": "dewick-macphie-dining-center",
+     "minutes": 6.6
+    },
+    "gym": {
+     "placeId": "jackson-gymnasium",
+     "minutes": 8.4
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "tisch-library",
+   "name": "Tisch Library",
+   "short": "Tisch Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.118861,
+   "lat": 42.406226,
+   "osm": "way/29730354"
+  },
+  {
+   "id": "science-and-technology-center",
+   "name": "Science and Technology Center",
+   "short": "Science and Technology Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.113521,
+   "lat": 42.403937,
+   "osm": "way/29686078"
+  },
+  {
+   "id": "dowling-hall",
+   "name": "Dowling Hall",
+   "short": "Dowling Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.118326,
+   "lat": 42.408523,
+   "osm": "way/29787564"
+  },
+  {
+   "id": "mayer-campus-center",
+   "name": "Mayer Campus Center",
+   "short": "Mayer Campus Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120094,
+   "lat": 42.405554,
+   "osm": "way/29822970"
+  },
+  {
+   "id": "collaborative-learning-and-innovation-complex",
+   "name": "Collaborative Learning and Innovation Complex",
+   "short": "Collaborative Learning and Innovation Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.114024,
+   "lat": 42.403523,
+   "osm": "way/29684732"
+  },
+  {
+   "id": "dewick-macphie-dining-center",
+   "name": "Dewick-MacPhie Dining Center",
+   "short": "Dewick-MacPhie Dining Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.121422,
+   "lat": 42.405246,
+   "osm": "way/29727560"
+  },
+  {
+   "id": "joyce-cummings-center",
+   "name": "Joyce Cummings Center",
+   "short": "Joyce Cummings Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.116474,
+   "lat": 42.40798,
+   "osm": "way/978251442"
+  },
+  {
+   "id": "science-and-engineering-complex",
+   "name": "Science & Engineering Complex",
+   "short": "Science & Engineering Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.116625,
+   "lat": 42.405822,
+   "osm": "way/543805351"
+  },
+  {
+   "id": "harleston-hall",
+   "name": "Harleston Hall",
+   "short": "Harleston Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120397,
+   "lat": 42.403658,
+   "osm": "way/29789991"
+  },
+  {
+   "id": "mugar-hall",
+   "name": "Mugar Hall",
+   "short": "Mugar Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.122133,
+   "lat": 42.407823,
+   "osm": "relation/63555"
+  },
+  {
+   "id": "granoff-music-center",
+   "name": "Granoff Music Center",
+   "short": "Granoff Music Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.118331,
+   "lat": 42.404449,
+   "osm": "way/99972903"
+  },
+  {
+   "id": "shirley-and-alex-aidekman-arts-center",
+   "name": "Shirley and Alex Aidekman Arts Center",
+   "short": "Shirley and Alex Aidekman Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.119297,
+   "lat": 42.404218,
+   "osm": "way/29829468"
+  },
+  {
+   "id": "sophia-gordon-hall",
+   "name": "Sophia Gordon Hall",
+   "short": "Sophia Gordon Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.118565,
+   "lat": 42.405067,
+   "osm": "way/490385349"
+  },
+  {
+   "id": "eliot-pearson-childrens-school",
+   "name": "Eliot-Pearson Children's School",
+   "short": "Eliot-Pearson Children's School",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.11434,
+   "lat": 42.410254,
+   "osm": "way/29932030"
+  },
+  {
+   "id": "eaton-hall",
+   "name": "Eaton Hall",
+   "short": "Eaton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.118658,
+   "lat": 42.406824,
+   "osm": "way/29641929"
+  },
+  {
+   "id": "pearson-chemical-lab",
+   "name": "Pearson Chemical Lab",
+   "short": "Pearson Chemical Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120459,
+   "lat": 42.404845,
+   "osm": "way/229580717"
+  },
+  {
+   "id": "cohen-arts-center",
+   "name": "Cohen Arts Center",
+   "short": "Cohen Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.118861,
+   "lat": 42.404395,
+   "osm": "way/229620283"
+  },
+  {
+   "id": "bray-lab",
+   "name": "Bray Lab",
+   "short": "Bray Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.115632,
+   "lat": 42.405753,
+   "osm": "way/29790265"
+  },
+  {
+   "id": "anderson-hall",
+   "name": "Anderson Hall",
+   "short": "Anderson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.116779,
+   "lat": 42.406179,
+   "osm": "way/29537109"
+  },
+  {
+   "id": "wren-hall",
+   "name": "Wren Hall",
+   "short": "Wren Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.121863,
+   "lat": 42.409797,
+   "osm": "way/29518639"
+  },
+  {
+   "id": "haskell-hall",
+   "name": "Haskell Hall",
+   "short": "Haskell Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.121894,
+   "lat": 42.404355,
+   "osm": "way/29640179"
+  },
+  {
+   "id": "blakeley-hall",
+   "name": "Blakeley Hall",
+   "short": "Blakeley Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.122706,
+   "lat": 42.408145,
+   "osm": "way/29518877"
+  },
+  {
+   "id": "barnum-hall",
+   "name": "Barnum Hall",
+   "short": "Barnum Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120683,
+   "lat": 42.407599,
+   "osm": "way/229588816"
+  },
+  {
+   "id": "cabot-intercultural-center",
+   "name": "Cabot Intercultural Center",
+   "short": "Cabot Intercultural Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.12155,
+   "lat": 42.407905,
+   "osm": "way/229588621"
+  },
+  {
+   "id": "olin-center-for-language-and-culture-studies",
+   "name": "Olin Center for Language and Culture Studies",
+   "short": "Olin Center for Language and Culture Studies",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.121235,
+   "lat": 42.408295,
+   "osm": "way/29785382"
+  },
+  {
+   "id": "jackson-gymnasium",
+   "name": "Jackson Gymnasium",
+   "short": "Jackson Gymnasium",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.119651,
+   "lat": 42.404602,
+   "osm": "way/229619130"
+  },
+  {
+   "id": "alumnae-hall",
+   "name": "Alumnae Hall",
+   "short": "Alumnae Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.119187,
+   "lat": 42.404572,
+   "osm": "way/229620282"
+  },
+  {
+   "id": "stratton-hall",
+   "name": "Stratton Hall",
+   "short": "Stratton Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.119256,
+   "lat": 42.405128,
+   "osm": "way/29727588"
+  },
+  {
+   "id": "robinson-hall",
+   "name": "Robinson Hall",
+   "short": "Robinson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.117032,
+   "lat": 42.405817,
+   "osm": "way/745180417"
+  },
+  {
+   "id": "baronian-field-house",
+   "name": "Baronian Field House",
+   "short": "Baronian Field House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.119543,
+   "lat": 42.403311,
+   "osm": "way/29708907"
+  },
+  {
+   "id": "psychology-building",
+   "name": "Psychology Building",
+   "short": "Psychology Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.116068,
+   "lat": 42.406286,
+   "osm": "way/29641957"
+  },
+  {
+   "id": "tufts-support-services",
+   "name": "Tufts Support Services",
+   "short": "Tufts Support Services",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.1202,
+   "lat": 42.404436,
+   "osm": "way/589489347"
+  },
+  {
+   "id": "goddard-hall",
+   "name": "Goddard Hall",
+   "short": "Goddard Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Fletcher School of Law and Diplomacy"
+   ],
+   "lng": -71.121636,
+   "lat": 42.407667,
+   "osm": "way/229588627"
+  },
+  {
+   "id": "ballou-hall",
+   "name": "Ballou Hall",
+   "short": "Ballou Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120113,
+   "lat": 42.407419,
+   "osm": "way/29940199"
+  },
+  {
+   "id": "curtis-hall",
+   "name": "Curtis Hall",
+   "short": "Curtis Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.116498,
+   "lat": 42.406822,
+   "osm": "way/229587436"
+  },
+  {
+   "id": "dana-laboratory",
+   "name": "Dana Laboratory",
+   "short": "Dana Laboratory",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120876,
+   "lat": 42.407806,
+   "osm": "way/229588815"
+  },
+  {
+   "id": "west-hall",
+   "name": "West Hall",
+   "short": "West Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120342,
+   "lat": 42.408248,
+   "osm": "way/29730228"
+  },
+  {
+   "id": "bacon-hall",
+   "name": "Bacon Hall",
+   "short": "Bacon Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.115001,
+   "lat": 42.404914,
+   "osm": "way/229587324"
+  },
+  {
+   "id": "tufts-university-health-service",
+   "name": "Tufts University Health Service",
+   "short": "Tufts University Health Service",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.123741,
+   "lat": 42.40711,
+   "osm": "way/29744889"
+  },
+  {
+   "id": "breed-memorial-hall",
+   "name": "Breed Memorial Hall",
+   "short": "Breed Memorial Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.121648,
+   "lat": 42.411007,
+   "osm": "way/29822296"
+  },
+  {
+   "id": "eliot-pearson-children-development-center",
+   "name": "Eliot-Pearson Children Development Center",
+   "short": "Eliot-Pearson Children Development Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.114613,
+   "lat": 42.410444,
+   "osm": "way/29938420"
+  },
+  {
+   "id": "braker-hall",
+   "name": "Braker Hall",
+   "short": "Braker Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.118152,
+   "lat": 42.407381,
+   "osm": "way/29828107"
+  },
+  {
+   "id": "bromfield-pearson-hall",
+   "name": "Bromfield-Pearson Hall",
+   "short": "Bromfield-Pearson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.116424,
+   "lat": 42.405482,
+   "osm": "way/29640065"
+  },
+  {
+   "id": "lane-hall",
+   "name": "Lane Hall",
+   "short": "Lane Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.119908,
+   "lat": 42.409157,
+   "osm": "way/29740841"
+  },
+  {
+   "id": "east-hall",
+   "name": "East Hall",
+   "short": "East Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.118748,
+   "lat": 42.407646,
+   "osm": "way/29828350"
+  },
+  {
+   "id": "miner-hall",
+   "name": "Miner Hall",
+   "short": "Miner Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.117867,
+   "lat": 42.406527,
+   "osm": "way/29730332"
+  },
+  {
+   "id": "lincoln-filene-center",
+   "name": "Lincoln Filene Center",
+   "short": "Lincoln Filene Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.117849,
+   "lat": 42.407227,
+   "osm": "way/29518972"
+  },
+  {
+   "id": "paige-hall",
+   "name": "Paige Hall",
+   "short": "Paige Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.117667,
+   "lat": 42.406835,
+   "osm": "way/229581008"
+  },
+  {
+   "id": "bendetson-hall",
+   "name": "Bendetson Hall",
+   "short": "Bendetson Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.119718,
+   "lat": 42.408142,
+   "osm": "way/29828132"
+  },
+  {
+   "id": "gifford-house",
+   "name": "Gifford House",
+   "short": "Gifford House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.121321,
+   "lat": 42.407142,
+   "osm": "way/29824237"
+  },
+  {
+   "id": "granoff-family-hillel-center",
+   "name": "Granoff Family Hillel Center",
+   "short": "Granoff Family Hillel Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120878,
+   "lat": 42.409313,
+   "osm": "way/29536811"
+  },
+  {
+   "id": "packard-hall",
+   "name": "Packard Hall",
+   "short": "Packard Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.119379,
+   "lat": 42.407944,
+   "osm": "way/29939504"
+  },
+  {
+   "id": "tufts-university-interfaith-center",
+   "name": "Tufts University Interfaith Center",
+   "short": "Tufts University Interfaith Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.122181,
+   "lat": 42.411349,
+   "osm": "way/29641651"
+  },
+  {
+   "id": "michael-chemical-research-lab",
+   "name": "Michael Chemical Research Lab",
+   "short": "Michael Chemical Research Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120777,
+   "lat": 42.404697,
+   "osm": "way/229580719"
+  },
+  {
+   "id": "costume-shop",
+   "name": "Costume Shop",
+   "short": "Costume Shop",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120033,
+   "lat": 42.404696,
+   "osm": "way/29792542"
+  },
+  {
+   "id": "tufts-technology-services",
+   "name": "Tufts Technology Services",
+   "short": "Tufts Technology Services",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.12062,
+   "lat": 42.404425,
+   "osm": "way/29727684"
+  },
+  {
+   "id": "fine-arts-house",
+   "name": "Fine Arts House",
+   "short": "Fine Arts House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.117986,
+   "lat": 42.40503,
+   "osm": "way/29727612"
+  },
+  {
+   "id": "mccollester-house",
+   "name": "McCollester House",
+   "short": "McCollester House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.12395,
+   "lat": 42.411012,
+   "osm": "way/29641665"
+  },
+  {
+   "id": "capen-house",
+   "name": "Capen House",
+   "short": "Capen House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.118049,
+   "lat": 42.405367,
+   "osm": "way/29938976"
+  },
+  {
+   "id": "carpenter-house",
+   "name": "Carpenter House",
+   "short": "Carpenter House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.123498,
+   "lat": 42.409415,
+   "osm": "way/29715419"
+  },
+  {
+   "id": "tousey-house",
+   "name": "Tousey House",
+   "short": "Tousey House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.123829,
+   "lat": 42.410454,
+   "osm": "way/29518559"
+  },
+  {
+   "id": "fung-house",
+   "name": "Fung House",
+   "short": "Fung House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120212,
+   "lat": 42.405863,
+   "osm": "way/29641993"
+  },
+  {
+   "id": "anthony-house",
+   "name": "Anthony House",
+   "short": "Anthony House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.118382,
+   "lat": 42.405361,
+   "osm": "way/29727565"
+  },
+  {
+   "id": "experimental-college",
+   "name": "Experimental College",
+   "short": "Experimental College",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.121224,
+   "lat": 42.405799,
+   "osm": "way/29537136"
+  },
+  {
+   "id": "hillside-house",
+   "name": "Hillside House",
+   "short": "Hillside House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.117112,
+   "lat": 42.404992,
+   "osm": "way/29686047"
+  },
+  {
+   "id": "hall-house",
+   "name": "Hall House",
+   "short": "Hall House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.123073,
+   "lat": 42.405457,
+   "osm": "way/29727561"
+  },
+  {
+   "id": "sawyer-house",
+   "name": "Sawyer House",
+   "short": "Sawyer House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.124781,
+   "lat": 42.407346,
+   "osm": "way/29518968"
+  },
+  {
+   "id": "chandler-house",
+   "name": "Chandler House",
+   "short": "Chandler House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.123542,
+   "lat": 42.404745,
+   "osm": "way/29824805"
+  },
+  {
+   "id": "bromfield-house",
+   "name": "Bromfield House",
+   "short": "Bromfield House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.116318,
+   "lat": 42.404877,
+   "osm": "way/29516911"
+  },
+  {
+   "id": "start-house",
+   "name": "Start House",
+   "short": "Start House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.120939,
+   "lat": 42.405644,
+   "osm": "way/29828235"
+  },
+  {
+   "id": "japanese-language-house",
+   "name": "Japanese Language House",
+   "short": "Japanese Language House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.116156,
+   "lat": 42.404886,
+   "osm": "way/29940171"
+  },
+  {
+   "id": "wyeth-house",
+   "name": "Wyeth House",
+   "short": "Wyeth House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.123615,
+   "lat": 42.406069,
+   "osm": "way/29519096"
+  },
+  {
+   "id": "schmalz-house",
+   "name": "Schmalz House",
+   "short": "Schmalz House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.123255,
+   "lat": 42.405941,
+   "osm": "way/29641986"
+  },
+  {
+   "id": "milne-house",
+   "name": "Milne House",
+   "short": "Milne House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.123281,
+   "lat": 42.405621,
+   "osm": "way/29727552"
+  },
+  {
+   "id": "bartol-house",
+   "name": "Bartol House",
+   "short": "Bartol House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.123195,
+   "lat": 42.406542,
+   "osm": "way/29537096"
+  },
+  {
+   "id": "dearborn-house",
+   "name": "Dearborn House",
+   "short": "Dearborn House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.121379,
+   "lat": 42.406302,
+   "osm": "way/29730382"
+  },
+  {
+   "id": "fairmont-house",
+   "name": "Fairmont House",
+   "short": "Fairmont House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.121224,
+   "lat": 42.40994,
+   "osm": "way/29641744"
+  },
+  {
+   "id": "davies-house",
+   "name": "Davies House",
+   "short": "Davies House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.122971,
+   "lat": 42.406439,
+   "osm": "way/29537103"
+  },
+  {
+   "id": "blakeslee-house",
+   "name": "Blakeslee House",
+   "short": "Blakeslee House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.124537,
+   "lat": 42.40771,
+   "osm": "way/29932061"
+  }
+ ]
+}

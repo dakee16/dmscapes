@@ -1,0 +1,23 @@
+{
+  "halls": {
+    "court-at-professors-row": {
+      "pin": [-71.122411, 42.407348]
+    }
+  },
+  "places": {},
+  "notes": {
+    "court-at-professors-row": "Tufts housing says the Court is three halls at 91, 93 and 95 Professors Row (students.tufts.edu/residential-life-and-learning/campus-housing/first-year-undergraduate/court-professors-row); OSM has them as unnamed dormitories way/1340180874-6. Pinned on 93, the middle one."
+  },
+  "detours": [
+    {
+      "pairs": ["richardson-house -> granoff-music-center", "richardson-house -> shirley-and-alex-aidekman-arts-center", "richardson-house -> cohen-arts-center", "richardson-house -> jackson-gymnasium", "richardson-house -> alumnae-hall", "richardson-house -> costume-shop", "richardson-house -> fine-arts-house"],
+      "maxRatio": 3.5,
+      "why": "Richardson House's mapped door faces Professors Row at the top of the hill; the slope behind it down to the arts buildings on Talbot Avenue has no mapped path, so walks go round by the paths west of Mayer Campus Center."
+    },
+    {
+      "pairs": ["carmichael-hall -> fairmont-house", "hodgdon-hall -> bartol-house", "hodgdon-hall -> davies-house", "houston-hall -> barnum-hall", "houston-hall -> dana-laboratory", "houston-hall -> gifford-house", "miller-hall -> fairmont-house", "tilton-hall -> chandler-house"],
+      "maxRatio": 3.5,
+      "why": "Walnut Hill: these halls and buildings sit at different levels of the hill, joined only by a few mapped paths and stairs, so short straight-line hops become walks round by them."
+    }
+  ]
+}
