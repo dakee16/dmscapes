@@ -1,0 +1,1127 @@
+{
+ "name": "UGA Office of University Architects, Building Index by Number (August 2023)",
+ "url": "https://www.architects.uga.edu/sites/default/files/documents/field/maps/current/buildingindex-bynumber-2023.pdf",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "1040",
+   "name": "Forestry Resources 1"
+  },
+  {
+   "code": "2204",
+   "name": "Morris Hall"
+  },
+  {
+   "code": "0005",
+   "name": "Franklin House"
+  },
+  {
+   "code": "1041",
+   "name": "R. C. Wilson Pharmacy"
+  },
+  {
+   "code": "2208",
+   "name": "Lipscomb Hall"
+  },
+  {
+   "code": "0019",
+   "name": "Hodgson Oil Building"
+  },
+  {
+   "code": "1042",
+   "name": "Hoke Smith Annex"
+  },
+  {
+   "code": "2209",
+   "name": "Mell Hall"
+  },
+  {
+   "code": "0020",
+   "name": "Phi Kappa Hall"
+  },
+  {
+   "code": "1043",
+   "name": "Coop. Ext. Serv. - Hoke Smith"
+  },
+  {
+   "code": "2211",
+   "name": "Creswell Hall"
+  },
+  {
+   "code": "0021",
+   "name": "Demosthenian Hall"
+  },
+  {
+   "code": "1044",
+   "name": "Forestry Resources 3"
+  },
+  {
+   "code": "2212",
+   "name": "Russell Hall"
+  },
+  {
+   "code": "0022",
+   "name": "Chapel"
+  },
+  {
+   "code": "1046",
+   "name": "Forestry Resources 4"
+  },
+  {
+   "code": "2213",
+   "name": "Brumby Hall"
+  },
+  {
+   "code": "0023",
+   "name": "Terrell Hall"
+  },
+  {
+   "code": "0024",
+   "name": "Meigs Hall"
+  },
+  {
+   "code": "1050",
+   "name": "Environmental Health Sciences"
+  },
+  {
+   "code": "2214",
+   "name": "Hill Hall"
+  },
+  {
+   "code": "0025",
+   "name": "Moore Hall"
+  },
+  {
+   "code": "1057",
+   "name": "Davison Life Sciences Complex"
+  },
+  {
+   "code": "2215",
+   "name": "Church Hall"
+  },
+  {
+   "code": "0030",
+   "name": "New College"
+  },
+  {
+   "code": "1058",
+   "name": "Life Sciences Fermentation Lab"
+  },
+  {
+   "code": "2216",
+   "name": "Boggs Hall"
+  },
+  {
+   "code": "0031",
+   "name": "Candler Hall"
+  },
+  {
+   "code": "1060",
+   "name": "Aderhold"
+  },
+  {
+   "code": "2217",
+   "name": "Oglethorpe House"
+  },
+  {
+   "code": "0032",
+   "name": "Bishop House"
+  },
+  {
+   "code": "1061",
+   "name": "Miller Plant Science"
+  },
+  {
+   "code": "2218",
+   "name": "Alpha Chi Omega Sorority"
+  },
+  {
+   "code": "0033",
+   "name": "School of Social Work Building"
+  },
+  {
+   "code": "1064",
+   "name": "Vet. Med. Locomotive Diag. Ctr."
+  },
+  {
+   "code": "0040",
+   "name": "Jackson Street Building"
+  },
+  {
+   "code": "1065",
+   "name": "Vet. Medicine 9"
+  },
+  {
+   "code": "2220",
+   "name": "Sigma Delta Tau Sorority"
+  },
+  {
+   "code": "0041",
+   "name": "Waddel Hall"
+  },
+  {
+   "code": "1066",
+   "name": "Vet. Medicine 10"
+  },
+  {
+   "code": "2221",
+   "name": "University Village A"
+  },
+  {
+   "code": "0042",
+   "name": "Peabody Hall"
+  },
+  {
+   "code": "1067",
+   "name": "Vet. Medicine 11"
+  },
+  {
+   "code": "2222",
+   "name": "University Village B"
+  },
+  {
+   "code": "0043",
+   "name": "Hirsch Hall"
+  },
+  {
+   "code": "1068",
+   "name": "Vet. Medicine 12"
+  },
+  {
+   "code": "2223",
+   "name": "University Village C"
+  },
+  {
+   "code": "0043",
+   "name": "Law Library Annex"
+  },
+  {
+   "code": "1070",
+   "name": "College of Veterinary Medicine 1"
+  },
+  {
+   "code": "2224",
+   "name": "University Village D"
+  },
+  {
+   "code": "0043",
+   "name": "Law School Addition"
+  },
+  {
+   "code": "1072",
+   "name": "Vet. Medicine 2"
+  },
+  {
+   "code": "2225",
+   "name": "University Village E"
+  },
+  {
+   "code": "0044",
+   "name": "Denmark Hall"
+  },
+  {
+   "code": "1073",
+   "name": "Vet. Medicine 6"
+  },
+  {
+   "code": "2226",
+   "name": "University Village F"
+  },
+  {
+   "code": "0045",
+   "name": "Dean Rusk Hall"
+  },
+  {
+   "code": "1077",
+   "name": "Animal Health Research Center"
+  },
+  {
+   "code": "2227",
+   "name": "University Village G"
+  },
+  {
+   "code": "0046",
+   "name": "Caldwell Hall"
+  },
+  {
+   "code": "1079",
+   "name": "Vet Med Diagnostic Lab"
+  },
+  {
+   "code": "2228",
+   "name": "University Village H"
+  },
+  {
+   "code": "0050",
+   "name": "Baldwin Hall"
+  },
+  {
+   "code": "1082",
+   "name": "Wildlife Health"
+  },
+  {
+   "code": "2229",
+   "name": "University Village J"
+  },
+  {
+   "code": "0053",
+   "name": "LeConte Hall"
+  },
+  {
+   "code": "1084",
+   "name": "Vet Med BioResources"
+  },
+  {
+   "code": "2230",
+   "name": "University Village K"
+  },
+  {
+   "code": "0054",
+   "name": "Main Library"
+  },
+  {
+   "code": "1090",
+   "name": "Driftmier Engineering Center"
+  },
+  {
+   "code": "2231",
+   "name": "University Village L"
+  },
+  {
+   "code": "0055",
+   "name": "Brooks Hall"
+  },
+  {
+   "code": "1094",
+   "name": "Soil Tillage Laboratory"
+  },
+  {
+   "code": "2232",
+   "name": "Alpha Epsilon Pi Fraternity"
+  },
+  {
+   "code": "0056",
+   "name": "Park Hall"
+  },
+  {
+   "code": "1110",
+   "name": "Carlton Street Deck"
+  },
+  {
+   "code": "2233",
+   "name": "Kappa Sigma Fraternity"
+  },
+  {
+   "code": "0058",
+   "name": "Sanford Hall"
+  },
+  {
+   "code": "1111",
+   "name": "Paul D. Coverdell Center"
+  },
+  {
+   "code": "2238",
+   "name": "University Village Community Office"
+  },
+  {
+   "code": "0060",
+   "name": "Fine Arts Building"
+  },
+  {
+   "code": "1130",
+   "name": "Statistics & Computer Services"
+  },
+  {
+   "code": "2240",
+   "name": "Rogers Road Apts M"
+  },
+  {
+   "code": "0061",
+   "name": "Military Building Army ROTC"
+  },
+  {
+   "code": "1131",
+   "name": "Interdisciplinary STEM Research Bldg"
+  },
+  {
+   "code": "2241",
+   "name": "Rogers Road Apts N"
+  },
+  {
+   "code": "0062",
+   "name": "Journalism Building"
+  },
+  {
+   "code": "1139",
+   "name": "South Campus Deck"
+  },
+  {
+   "code": "2242",
+   "name": "Rogers Road Apts P"
+  },
+  {
+   "code": "0064",
+   "name": "Psychology Building"
+  },
+  {
+   "code": "1140",
+   "name": "Forestry Resources 2"
+  },
+  {
+   "code": "2243",
+   "name": "Rogers Road Apts Q"
+  },
+  {
+   "code": "0066",
+   "name": "Instructional Plaza"
+  },
+  {
+   "code": "1215",
+   "name": "Rutherford Hall"
+  },
+  {
+   "code": "2244",
+   "name": "Rogers Road Apts R"
+  },
+  {
+   "code": "0081",
+   "name": "Zell B. Miller Learning Center"
+  },
+  {
+   "code": "1220",
+   "name": "Soule Hall"
+  },
+  {
+   "code": "2245",
+   "name": "Rogers Road Apts S"
+  },
+  {
+   "code": "0082",
+   "name": "Hull Street Deck"
+  },
+  {
+   "code": "1221",
+   "name": "Mary Lyndon Hall"
+  },
+  {
+   "code": "2255",
+   "name": "Alpha Psi Vet. Fraternity"
+  },
+  {
+   "code": "0090",
+   "name": "Geology Hydrothermal Lab"
+  },
+  {
+   "code": "1222",
+   "name": "Myers Hall"
+  },
+  {
+   "code": "2256",
+   "name": "Omega Tau Sigma Fraternity"
+  },
+  {
+   "code": "0101",
+   "name": "Chicopee Main Building No.1"
+  },
+  {
+   "code": "1246",
+   "name": "Family Science Center 1"
+  },
+  {
+   "code": "2257",
+   "name": "Oglethorpe Dining Commons"
+  },
+  {
+   "code": "0103",
+   "name": "Central Office Supply"
+  },
+  {
+   "code": "1247",
+   "name": "Housing Research Center"
+  },
+  {
+   "code": "2260",
+   "name": "Brandon Oaks T"
+  },
+  {
+   "code": "0110",
+   "name": "Business Services"
+  },
+  {
+   "code": "1248",
+   "name": "Consumer Research Center"
+  },
+  {
+   "code": "2261",
+   "name": "Brandon Oaks U"
+  },
+  {
+   "code": "0113",
+   "name": "Small Business Development Center"
+  },
+  {
+   "code": "1249",
+   "name": "Family Science Center 2"
+  },
+  {
+   "code": "2262",
+   "name": "Brandon Oaks V"
+  },
+  {
+   "code": "0120",
+   "name": "Holmes/Hunter Academic Building"
+  },
+  {
+   "code": "1250",
+   "name": "Tucker Hall"
+  },
+  {
+   "code": "2264",
+   "name": "Black-Diallo-Miller Hall"
+  },
+  {
+   "code": "0121",
+   "name": "Business Services Annex"
+  },
+  {
+   "code": "1340",
+   "name": "Horticulture Greenhouse"
+  },
+  {
+   "code": "2265",
+   "name": "Bolton Dining Commons"
+  },
+  {
+   "code": "0122",
+   "name": "North Campus Deck"
+  },
+  {
+   "code": "2291",
+   "name": "Sigma Nu Fraternity"
+  },
+  {
+   "code": "0123",
+   "name": "Tanner Building"
+  },
+  {
+   "code": "2292",
+   "name": "Tau Epsilon Phi Fraternity"
+  },
+  {
+   "code": "0124",
+   "name": "Sculpture Canopy"
+  },
+  {
+   "code": "2293",
+   "name": "Phi Delta Theta Fraternity"
+  },
+  {
+   "code": "1501",
+   "name": "Rhodes Animal Science Center - A"
+  },
+  {
+   "code": "0130",
+   "name": "Old College"
+  },
+  {
+   "code": "2294",
+   "name": "Pi Kappa Alpha Fraternity"
+  },
+  {
+   "code": "1502",
+   "name": "Rhodes Animal Science Center - B"
+  },
+  {
+   "code": "0178",
+   "name": "Central Campus Mech. Building"
+  },
+  {
+   "code": "2352",
+   "name": "Vet. Medicine Pole Barn"
+  },
+  {
+   "code": "1503",
+   "name": "Rhodes Animal Science Center - C"
+  },
+  {
+   "code": "0250",
+   "name": "Joseph E. Brown Hall"
+  },
+  {
+   "code": "2362",
+   "name": "Storage Barn"
+  },
+  {
+   "code": "1510",
+   "name": "East Village Deck"
+  },
+  {
+   "code": "0270",
+   "name": "Payne Hall"
+  },
+  {
+   "code": "2368",
+   "name": "Vet. Medicine Shop"
+  },
+  {
+   "code": "1511",
+   "name": "Joe Frank Harris Commons"
+  },
+  {
+   "code": "0271",
+   "name": "Milledge Hall"
+  },
+  {
+   "code": "2369",
+   "name": "Vet. Medicine Storage"
+  },
+  {
+   "code": "1512",
+   "name": "George D. Busbee Hall"
+  },
+  {
+   "code": "0280",
+   "name": "Reed Hall"
+  },
+  {
+   "code": "2370",
+   "name": "Vet. Medicine Block Building"
+  },
+  {
+   "code": "1513",
+   "name": "Rooker Hall"
+  },
+  {
+   "code": "0290",
+   "name": "Clark Howell Hall"
+  },
+  {
+   "code": "2371",
+   "name": "Vet. Medicine Barn"
+  },
+  {
+   "code": "1514",
+   "name": "Vandiver Hall"
+  },
+  {
+   "code": "2373",
+   "name": "Shop Building"
+  },
+  {
+   "code": "1515",
+   "name": "McWhorter Hall"
+  },
+  {
+   "code": "0620",
+   "name": "Human Resources"
+  },
+  {
+   "code": "2383",
+   "name": "Vet. Medicine Fish Barn"
+  },
+  {
+   "code": "1516",
+   "name": "Building 1516"
+  },
+  {
+   "code": "0631",
+   "name": "Administration Building"
+  },
+  {
+   "code": "2395",
+   "name": "Center for Molecular Medicine"
+  },
+  {
+   "code": "1617",
+   "name": "District Energy Plant #2"
+  },
+  {
+   "code": "0632",
+   "name": "Lustrat House"
+  },
+  {
+   "code": "2408",
+   "name": "Agronomy Soil Building"
+  },
+  {
+   "code": "1618",
+   "name": "Central Heating Plant 2"
+  },
+  {
+   "code": "0640",
+   "name": "Gilbert Hall"
+  },
+  {
+   "code": "2409",
+   "name": "Soil Building 2"
+  },
+  {
+   "code": "1620",
+   "name": "Central Heating Plant 1"
+  },
+  {
+   "code": "0650",
+   "name": "Founders House"
+  },
+  {
+   "code": "2410",
+   "name": "Headhouse Horticulture"
+  },
+  {
+   "code": "1621",
+   "name": "Science Library"
+  },
+  {
+   "code": "0669",
+   "name": "Tate Parking Deck"
+  },
+  {
+   "code": "2411",
+   "name": "Headhouse Plants Agronomy"
+  },
+  {
+   "code": "1632",
+   "name": "Electronics Shop"
+  },
+  {
+   "code": "0670",
+   "name": "Memorial Hall"
+  },
+  {
+   "code": "2413",
+   "name": "Soil Storage Building"
+  },
+  {
+   "code": "1634",
+   "name": "Vehicle Transporation & Maintenance"
+  },
+  {
+   "code": "0671",
+   "name": "University Bookstore"
+  },
+  {
+   "code": "2414",
+   "name": "Lath Greenhouse 3 Botony"
+  },
+  {
+   "code": "1637",
+   "name": "Campus Transit Facility"
+  },
+  {
+   "code": "0672",
+   "name": "Tate Student Center"
+  },
+  {
+   "code": "2417",
+   "name": "Rhizotron Building"
+  },
+  {
+   "code": "1640",
+   "name": "Georgia Center for Cont Ed"
+  },
+  {
+   "code": "0678",
+   "name": "Sanford Stadium"
+  },
+  {
+   "code": "2418",
+   "name": "Riverbend Research Lab South"
+  },
+  {
+   "code": "1641",
+   "name": "Physical Plant Utility"
+  },
+  {
+   "code": "0734",
+   "name": "Ivester Hall"
+  },
+  {
+   "code": "2419",
+   "name": "CCRC"
+  },
+  {
+   "code": "1642",
+   "name": "Physical Plant Grounds"
+  },
+  {
+   "code": "0735",
+   "name": "Benson Hall"
+  },
+  {
+   "code": "2423",
+   "name": "Horticulture Greenhouse 1"
+  },
+  {
+   "code": "1643",
+   "name": "Snelling Dinning Hall"
+  },
+  {
+   "code": "0736",
+   "name": "Amos Hall"
+  },
+  {
+   "code": "2425",
+   "name": "Entomology Greenhouse/Headhouse"
+  },
+  {
+   "code": "1652",
+   "name": "Child Development Laboratory"
+  },
+  {
+   "code": "0737",
+   "name": "Orkin Hall"
+  },
+  {
+   "code": "2426",
+   "name": "Agronomy Seed Lab"
+  },
+  {
+   "code": "1654",
+   "name": "Stegeman Coliseum"
+  },
+  {
+   "code": "0738",
+   "name": "Moore - Rooker Hall"
+  },
+  {
+   "code": "2437",
+   "name": "Soil Chemical & Equipment Bldg"
+  },
+  {
+   "code": "1656",
+   "name": "Cobb House"
+  },
+  {
+   "code": "0739",
+   "name": "Correll Hall"
+  },
+  {
+   "code": "2438",
+   "name": "CAGTECH"
+  },
+  {
+   "code": "1657",
+   "name": "Treanor House"
+  },
+  {
+   "code": "0740",
+   "name": "Russell Special Collections Building"
+  },
+  {
+   "code": "2440",
+   "name": "Lake Herrick Pavilion"
+  },
+  {
+   "code": "1665",
+   "name": "Storage Shed"
+  },
+  {
+   "code": "0741",
+   "name": "District Energy Plant #1"
+  },
+  {
+   "code": "1670",
+   "name": "Tennis Hall of Fame"
+  },
+  {
+   "code": "0751",
+   "name": "Wray-Nicholson House"
+  },
+  {
+   "code": "1671",
+   "name": "Butts-Mehre Building"
+  },
+  {
+   "code": "2600",
+   "name": "Thomas Street South"
+  },
+  {
+   "code": "0752",
+   "name": "Wray-Nicholson Props 240"
+  },
+  {
+   "code": "1673",
+   "name": "Student Athlete Academic Center"
+  },
+  {
+   "code": "2604",
+   "name": "Legion Pool"
+  },
+  {
+   "code": "0753",
+   "name": "Wray-Nicholson Prop 290"
+  },
+  {
+   "code": "1675",
+   "name": "J.W. Fanning Building"
+  },
+  {
+   "code": "2606",
+   "name": "Thomas Street Art Studio"
+  },
+  {
+   "code": "0754",
+   "name": "Wray-Nicholson Prop 150"
+  },
+  {
+   "code": "1678",
+   "name": "Women's Tennis Clubhouse"
+  },
+  {
+   "code": "2614",
+   "name": "Learning Ally"
+  },
+  {
+   "code": "0755",
+   "name": "Wray-Nicholson Prop 154"
+  },
+  {
+   "code": "1679",
+   "name": "Men's Tennis Clubhouse"
+  },
+  {
+   "code": "2622",
+   "name": "Henry Feild Tennis Stadium"
+  },
+  {
+   "code": "0756",
+   "name": "Government Relations"
+  },
+  {
+   "code": "1680",
+   "name": "Vet. Medicine 5A"
+  },
+  {
+   "code": "2623",
+   "name": "Lindsey Hopkins Indoor Tennis Stad."
+  },
+  {
+   "code": "0758",
+   "name": "Facilities Management North"
+  },
+  {
+   "code": "1682",
+   "name": "Vet. Medicine 5C"
+  },
+  {
+   "code": "2627",
+   "name": "Office of Service-Learning"
+  },
+  {
+   "code": "0766",
+   "name": "Studio 225"
+  },
+  {
+   "code": "1683",
+   "name": "Vet. Medicine 5D"
+  },
+  {
+   "code": "2632",
+   "name": "Intramural Fields Restrooms"
+  },
+  {
+   "code": "0767",
+   "name": "Interior Design Studios"
+  },
+  {
+   "code": "1685",
+   "name": "Foley Baseball Stadium"
+  },
+  {
+   "code": "2634",
+   "name": "Intramural Field Equipment Shed"
+  },
+  {
+   "code": "0768",
+   "name": "The Athenaeum"
+  },
+  {
+   "code": "1686",
+   "name": "Baseball Maintenance & Storage"
+  },
+  {
+   "code": "1260",
+   "name": "S. Lumpkin St."
+  },
+  {
+   "code": "1687",
+   "name": "Coliseum Training Facility"
+  },
+  {
+   "code": "2636",
+   "name": "UGA Real Estate Foundation"
+  },
+  {
+   "code": "1000",
+   "name": "Biological Sciences Building"
+  },
+  {
+   "code": "1690",
+   "name": "Ramsey Center"
+  },
+  {
+   "code": "2680",
+   "name": "Jewelry and Metalwork"
+  },
+  {
+   "code": "1001",
+   "name": "Chemistry"
+  },
+  {
+   "code": "1691",
+   "name": "Hugh Hodgson School of Music"
+  },
+  {
+   "code": "2685",
+   "name": "Learning and Development Center"
+  },
+  {
+   "code": "1002",
+   "name": "Geography and Geology"
+  },
+  {
+   "code": "1692",
+   "name": "Performing Arts"
+  },
+  {
+   "code": "2691",
+   "name": "Thomas Street Sculpture"
+  },
+  {
+   "code": "1003",
+   "name": "Physics Building"
+  },
+  {
+   "code": "1693",
+   "name": "Georgia Museum of Art"
+  },
+  {
+   "code": "2835",
+   "name": "Four Towers"
+  },
+  {
+   "code": "1004",
+   "name": "Chemistry Annex"
+  },
+  {
+   "code": "1694",
+   "name": "Lamar Dodd School of Art"
+  },
+  {
+   "code": "2970",
+   "name": "Intramural Tennis Pavilion"
+  },
+  {
+   "code": "1010",
+   "name": "Dawson Hall"
+  },
+  {
+   "code": "1698",
+   "name": "East Campus Deck"
+  },
+  {
+   "code": "2972",
+   "name": "Intramural Fields Deck"
+  },
+  {
+   "code": "1010",
+   "name": "Speirs Hall"
+  },
+  {
+   "code": "1699",
+   "name": "Performing Arts Complex Deck"
+  },
+  {
+   "code": "1011",
+   "name": "Conner Hall"
+  },
+  {
+   "code": "1701",
+   "name": "UGA Health Center"
+  },
+  {
+   "code": "1012",
+   "name": "Lumpkin House"
+  },
+  {
+   "code": "1013",
+   "name": "Poultry Science"
+  },
+  {
+   "code": "2029",
+   "name": "529 Baxter St"
+  },
+  {
+   "code": "1020",
+   "name": "Food Science Building"
+  },
+  {
+   "code": "2118",
+   "name": "Campus Mail/Environmental Safety"
+  },
+  {
+   "code": "1021",
+   "name": "Barrow Hall"
+  },
+  {
+   "code": "2119",
+   "name": "Auxiliary Services"
+  },
+  {
+   "code": "1022",
+   "name": "Food Processing Lab"
+  },
+  {
+   "code": "2122",
+   "name": "Central Food Storage"
+  },
+  {
+   "code": "1023",
+   "name": "Boyd Research and Education Center"
+  },
+  {
+   "code": "2124",
+   "name": "Riverbend Solvent Storage Bldg"
+  },
+  {
+   "code": "1030",
+   "name": "Marine Science / Dance"
+  },
+  {
+   "code": "2125",
+   "name": "Riverbend Research Lab North"
+  },
+  {
+   "code": "1031",
+   "name": "Hardman Hall"
+  },
+  {
+   "code": "2127",
+   "name": "Center for Applied Isotope Study"
+  },
+  {
+   "code": "1033",
+   "name": "Ecology"
+  },
+  {
+   "code": "2130",
+   "name": "Building 2130"
+  },
+  {
+   "code": "1035",
+   "name": "Science Learning Center"
+  },
+  {
+   "code": "2131",
+   "name": "Ceramics"
+  },
+  {
+   "code": "1038",
+   "name": "Pharmacy South"
+  },
+  {
+   "code": "2136",
+   "name": "West Campus Deck"
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+{
+  "collegeId": "uga",
+  "area": {
+    "osm": "relation/21071510",
+    "bbox": [
+      33.92277,
+      -83.38444,
+      33.95809,
+      -83.36475
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/uga.codes.json"
+  },
+  "excludeHalls": {
+    "brandon-oaks": "Family housing for students with dependent children (housing.uga.edu/brandon-oaks) on Milledge Ave Extension (OSM Brandon Oaks Buildings T-V), about 3.5 km south of North Campus: 40-45 minute walks to much of campus, so it is left off this walking map (ranking it would drop North Campus buildings such as Holmes-Hunter from every hall's list).",
+    "rogers-road": "Graduate and partnered-student apartments (housing.uga.edu/rogers-road) at 101-111 Rogers Rd (OSM Rogers Road Buildings M-S), about 3.5 km south of North Campus: 40-45 minute walks to much of campus, so it is left off this walking map (ranking it would drop North Campus buildings such as Holmes-Hunter from every hall's list)."
+  }
+}
