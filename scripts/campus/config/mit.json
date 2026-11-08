@@ -1,0 +1,17 @@
+{
+  "collegeId": "mit",
+  "area": {
+    "osm": "relation/65066",
+    "bbox": [
+      42.35358,
+      -71.11006,
+      42.36526,
+      -71.08174
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/mit.codes.json"
+  }
+}

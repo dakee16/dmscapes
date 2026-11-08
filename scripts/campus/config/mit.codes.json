@@ -1,0 +1,973 @@
+{
+ "name": "MIT campus map (whereis.mit.edu) building list, from the MIT Mobile places API: building numbers, names and map points",
+ "url": "https://m.mit.edu/apis/maps/places",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "1",
+   "name": "Pierce Laboratory",
+   "lng": -71.092357,
+   "lat": 42.358092
+  },
+  {
+   "code": "10",
+   "name": "Maclaurin Buildings (10)",
+   "lng": -71.092014,
+   "lat": 42.359674
+  },
+  {
+   "code": "11",
+   "name": "Homberg Building",
+   "lng": -71.092772,
+   "lat": 42.359523
+  },
+  {
+   "code": "12",
+   "name": "MIT.nano",
+   "lng": -71.09143,
+   "lat": 42.3602
+  },
+  {
+   "code": "13",
+   "name": "Bush Building",
+   "lng": -71.092548,
+   "lat": 42.359944
+  },
+  {
+   "code": "14",
+   "name": "Hayden Memorial Library",
+   "lng": -71.089281,
+   "lat": 42.359182
+  },
+  {
+   "code": "16",
+   "name": "Dorrance Building",
+   "lng": -71.090591,
+   "lat": 42.360435
+  },
+  {
+   "code": "17",
+   "name": "Wright Brothers Wind Tunnel",
+   "lng": -71.093493,
+   "lat": 42.360114
+  },
+  {
+   "code": "18",
+   "name": "Dreyfus Building",
+   "lng": -71.089814,
+   "lat": 42.360062
+  },
+  {
+   "code": "2",
+   "name": "The Simons Building",
+   "lng": -71.090186,
+   "lat": 42.358814
+  },
+  {
+   "code": "24",
+   "name": "Building 24",
+   "lng": -71.092015,
+   "lat": 42.360665
+  },
+  {
+   "code": "26",
+   "name": "Compton Laboratories",
+   "lng": -71.091151,
+   "lat": 42.360859
+  },
+  {
+   "code": "3",
+   "name": "Maclaurin Buildings (3)",
+   "lng": -71.092399,
+   "lat": 42.359003
+  },
+  {
+   "code": "31",
+   "name": "Sloan Laboratories",
+   "lng": -71.093061,
+   "lat": 42.360374
+  },
+  {
+   "code": "32",
+   "name": "Ray and Maria Stata Center",
+   "lng": -71.090568,
+   "lat": 42.361613
+  },
+  {
+   "code": "33",
+   "name": "Guggenheim Laboratory",
+   "lng": -71.093742,
+   "lat": 42.36018
+  },
+  {
+   "code": "34",
+   "name": "EG&G Education Center",
+   "lng": -71.091955,
+   "lat": 42.361147
+  },
+  {
+   "code": "35",
+   "name": "Sloan Laboratory",
+   "lng": -71.094027,
+   "lat": 42.360382
+  },
+  {
+   "code": "36",
+   "name": "Fairchild Building (36)",
+   "lng": -71.091658,
+   "lat": 42.361438
+  },
+  {
+   "code": "37",
+   "name": "McNair Building",
+   "lng": -71.09324,
+   "lat": 42.360687
+  },
+  {
+   "code": "38",
+   "name": "Fairchild Building (38)",
+   "lng": -71.092348,
+   "lat": 42.361075
+  },
+  {
+   "code": "39",
+   "name": "Brown Building",
+   "lng": -71.092729,
+   "lat": 42.360857
+  },
+  {
+   "code": "4",
+   "name": "Maclaurin Buildings (4)",
+   "lng": -71.091085,
+   "lat": 42.359446
+  },
+  {
+   "code": "41",
+   "name": "Building 41",
+   "lng": -71.094159,
+   "lat": 42.360764
+  },
+  {
+   "code": "42",
+   "name": "Power Plant",
+   "lng": -71.093507,
+   "lat": 42.361111
+  },
+  {
+   "code": "43",
+   "name": "Power Plant Annex",
+   "lng": -71.093209,
+   "lat": 42.361147
+  },
+  {
+   "code": "44",
+   "name": "Cyclotron",
+   "lng": -71.092467,
+   "lat": 42.361608
+  },
+  {
+   "code": "46",
+   "name": "Brain and Cognitive Sciences",
+   "lng": -71.091643,
+   "lat": 42.362328
+  },
+  {
+   "code": "48",
+   "name": "Parsons Laboratory",
+   "lng": -71.090664,
+   "lat": 42.362433
+  },
+  {
+   "code": "5",
+   "name": "Pratt School",
+   "lng": -71.092923,
+   "lat": 42.358715
+  },
+  {
+   "code": "50",
+   "name": "Walker Memorial",
+   "lng": -71.08832,
+   "lat": 42.359362
+  },
+  {
+   "code": "51",
+   "name": "Wood Sailing Pavilion",
+   "lng": -71.08773,
+   "lat": 42.358517
+  },
+  {
+   "code": "54",
+   "name": "Green Building",
+   "lng": -71.089326,
+   "lat": 42.360324
+  },
+  {
+   "code": "56",
+   "name": "Whitaker Building",
+   "lng": -71.08986,
+   "lat": 42.360701
+  },
+  {
+   "code": "57",
+   "name": "Wang Fitness Center and Alumni Pool",
+   "lng": -71.090134,
+   "lat": 42.361146
+  },
+  {
+   "code": "6",
+   "name": "Eastman Laboratories",
+   "lng": -71.090451,
+   "lat": 42.35954
+  },
+  {
+   "code": "62",
+   "name": "East Campus",
+   "lng": -71.088683,
+   "lat": 42.360229
+  },
+  {
+   "code": "64",
+   "name": "East Campus",
+   "lng": -71.088141,
+   "lat": 42.360405
+  },
+  {
+   "code": "66",
+   "name": "Landau Building",
+   "lng": -71.089018,
+   "lat": 42.360922
+  },
+  {
+   "code": "68",
+   "name": "Koch Biology Building",
+   "lng": -71.088632,
+   "lat": 42.361634
+  },
+  {
+   "code": "6B",
+   "name": "Building 6B",
+   "lng": -71.090675,
+   "lat": 42.359411
+  },
+  {
+   "code": "6C",
+   "name": "PDSI (Physics, DMSE, Spectroscopy, Infrastructure)",
+   "lng": -71.090836,
+   "lat": 42.359673
+  },
+  {
+   "code": "7",
+   "name": "Rogers Building",
+   "lng": -71.093179,
+   "lat": 42.35929
+  },
+  {
+   "code": "76",
+   "name": "The David H. Koch Institute for Integrative Cancer Research at MIT",
+   "lng": -71.089227,
+   "lat": 42.362301
+  },
+  {
+   "code": "7A",
+   "name": "Building 7A",
+   "lng": -71.093193,
+   "lat": 42.359497
+  },
+  {
+   "code": "8",
+   "name": "Building 8",
+   "lng": -71.090862,
+   "lat": 42.359993
+  },
+  {
+   "code": "9",
+   "name": "Samuel Tak Lee Building",
+   "lng": -71.093568,
+   "lat": 42.359749
+  },
+  {
+   "code": "E1",
+   "name": "Gray House",
+   "lng": -71.086964,
+   "lat": 42.359602
+  },
+  {
+   "code": "E14",
+   "name": "E14",
+   "lng": -71.087332,
+   "lat": 42.360464
+  },
+  {
+   "code": "E15",
+   "name": "Wiesner Building",
+   "lng": -71.087635,
+   "lat": 42.360839
+  },
+  {
+   "code": "E17",
+   "name": "Mudd Building",
+   "lng": -71.087886,
+   "lat": 42.361484
+  },
+  {
+   "code": "E18",
+   "name": "Ford Building (E18)",
+   "lng": -71.087793,
+   "lat": 42.361767
+  },
+  {
+   "code": "E19",
+   "name": "Ford Building (E19)",
+   "lng": -71.087952,
+   "lat": 42.362129
+  },
+  {
+   "code": "E2",
+   "name": "Senior House",
+   "lng": -71.086867,
+   "lat": 42.359954
+  },
+  {
+   "code": "E23",
+   "name": "Health Services",
+   "lng": -71.086632,
+   "lat": 42.361022
+  },
+  {
+   "code": "E25",
+   "name": "Whitaker College",
+   "lng": -71.086938,
+   "lat": 42.361667
+  },
+  {
+   "code": "E33",
+   "name": "Rinaldi Tile",
+   "lng": -71.085984,
+   "lat": 42.36129
+  },
+  {
+   "code": "E34",
+   "name": "Building E34",
+   "lng": -71.085953,
+   "lat": 42.36145
+  },
+  {
+   "code": "E38",
+   "name": "Suffolk Building",
+   "lng": -71.085879,
+   "lat": 42.36215
+  },
+  {
+   "code": "E39",
+   "name": "Building E39",
+   "lng": -71.085477,
+   "lat": 42.362101
+  },
+  {
+   "code": "E40",
+   "name": "Muckley Building",
+   "lng": -71.084853,
+   "lat": 42.361163
+  },
+  {
+   "code": "E48",
+   "name": "Building E48",
+   "lng": -71.084348,
+   "lat": 42.361924
+  },
+  {
+   "code": "E51",
+   "name": "Tang Center",
+   "lng": -71.084498,
+   "lat": 42.360542
+  },
+  {
+   "code": "E52",
+   "name": "Morris and Sophie Chang Building",
+   "lng": -71.083677,
+   "lat": 42.360736
+  },
+  {
+   "code": "E53",
+   "name": "Hermann Building",
+   "lng": -71.083592,
+   "lat": 42.361188
+  },
+  {
+   "code": "E55",
+   "name": "Eastgate (Family Housing)",
+   "lng": -71.083909,
+   "lat": 42.361736
+  },
+  {
+   "code": "E60",
+   "name": "Arthur D Little Building",
+   "lng": -71.082176,
+   "lat": 42.361177
+  },
+  {
+   "code": "E62",
+   "name": "MIT Sloan",
+   "lng": -71.082648,
+   "lat": 42.361352
+  },
+  {
+   "code": "E70",
+   "name": "One Broadway",
+   "lng": -71.083463,
+   "lat": 42.362749
+  },
+  {
+   "code": "E90",
+   "name": "Building E90",
+   "lng": -71.080037,
+   "lat": 42.362223
+  },
+  {
+   "code": "E94",
+   "name": "Building E94",
+   "lng": -71.079273,
+   "lat": 42.363617
+  },
+  {
+   "code": "EE19",
+   "name": "Building EE19",
+   "lng": -71.077306,
+   "lat": 42.366257
+  },
+  {
+   "code": "EE20",
+   "name": "Building EE20",
+   "lng": -71.076791,
+   "lat": 42.366716
+  },
+  {
+   "code": "N10",
+   "name": "High Voltage Research Lab",
+   "lng": -71.095451,
+   "lat": 42.360863
+  },
+  {
+   "code": "N16",
+   "name": "Cooling Tower & Oil Reserve",
+   "lng": -71.094054,
+   "lat": 42.361287
+  },
+  {
+   "code": "N16A",
+   "name": "Building N16A",
+   "lng": -71.094367,
+   "lat": 42.361242
+  },
+  {
+   "code": "N16B",
+   "name": "Building N16B",
+   "lng": -71.094367,
+   "lat": 42.361242
+  },
+  {
+   "code": "N16C",
+   "name": "Building N16C",
+   "lng": -71.094496,
+   "lat": 42.361099
+  },
+  {
+   "code": "N4",
+   "name": "Albany Garage",
+   "lng": -71.09278,
+   "lat": 42.362034
+  },
+  {
+   "code": "N50",
+   "name": "Building N50",
+   "lng": -71.098204,
+   "lat": 42.362443
+  },
+  {
+   "code": "N51",
+   "name": "Building N51",
+   "lng": -71.097628,
+   "lat": 42.362284
+  },
+  {
+   "code": "N52",
+   "name": "N52",
+   "lng": -71.097188,
+   "lat": 42.362273
+  },
+  {
+   "code": "N57",
+   "name": "Building N57",
+   "lng": -71.09883,
+   "lat": 42.363011
+  },
+  {
+   "code": "N9",
+   "name": "Superconducting Test Facility",
+   "lng": -71.095194,
+   "lat": 42.360953
+  },
+  {
+   "code": "NE108",
+   "name": "Broad Institute",
+   "lng": -71.083765,
+   "lat": 42.367476
+  },
+  {
+   "code": "NE123A",
+   "name": "NE123A",
+   "lng": -71.086746,
+   "lat": 42.36736
+  },
+  {
+   "code": "NE125",
+   "name": "Building NE125",
+   "lng": -71.086911,
+   "lat": 42.3681
+  },
+  {
+   "code": "NE18",
+   "name": "1 Cambridge Center",
+   "lng": -71.085173,
+   "lat": 42.362647
+  },
+  {
+   "code": "NE25",
+   "name": "355 Main Street",
+   "lng": -71.087506,
+   "lat": 42.362807
+  },
+  {
+   "code": "NE30",
+   "name": "Broad Institute",
+   "lng": -71.088746,
+   "lat": 42.363028
+  },
+  {
+   "code": "NE35",
+   "name": "Building NE35",
+   "lng": -71.088779,
+   "lat": 42.364912
+  },
+  {
+   "code": "NE45",
+   "name": "300 Technology Square",
+   "lng": -71.091604,
+   "lat": 42.363352
+  },
+  {
+   "code": "NE46",
+   "name": "400 Technology Square",
+   "lng": -71.09192,
+   "lat": 42.363984
+  },
+  {
+   "code": "NE47",
+   "name": "500 Technology Square",
+   "lng": -71.092581,
+   "lat": 42.363465
+  },
+  {
+   "code": "NE48",
+   "name": "700 Technology Square",
+   "lng": -71.092724,
+   "lat": 42.364032
+  },
+  {
+   "code": "NE49",
+   "name": "600 Technology Square",
+   "lng": -71.093115,
+   "lat": 42.363391
+  },
+  {
+   "code": "NE55",
+   "name": "Building NE55",
+   "lng": -71.09263,
+   "lat": 42.365654
+  },
+  {
+   "code": "NE83",
+   "name": "Building NE83",
+   "lng": -71.09085,
+   "lat": 42.36607
+  },
+  {
+   "code": "NW10",
+   "name": "Edgerton House",
+   "lng": -71.098133,
+   "lat": 42.360319
+  },
+  {
+   "code": "NW12",
+   "name": "Building NW12",
+   "lng": -71.096858,
+   "lat": 42.360105
+  },
+  {
+   "code": "NW12A",
+   "name": "Building NW12A",
+   "lng": -71.096318,
+   "lat": 42.360181
+  },
+  {
+   "code": "NW13",
+   "name": "Building NW13",
+   "lng": -71.097362,
+   "lat": 42.359885
+  },
+  {
+   "code": "NW14",
+   "name": "Francis Bitter Magnet Lab (NW14)",
+   "lng": -71.097899,
+   "lat": 42.359632
+  },
+  {
+   "code": "NW15",
+   "name": "Francis Bitter Magnet Lab (NW15)",
+   "lng": -71.098257,
+   "lat": 42.359349
+  },
+  {
+   "code": "NW16",
+   "name": "Plasma Science & Fusion Center (NW16)",
+   "lng": -71.098728,
+   "lat": 42.360039
+  },
+  {
+   "code": "NW17",
+   "name": "Plasma Science & Fusion Center (NW17)",
+   "lng": -71.099142,
+   "lat": 42.359856
+  },
+  {
+   "code": "NW20",
+   "name": "Albany St Generator Shelter",
+   "lng": -71.098476,
+   "lat": 42.359296
+  },
+  {
+   "code": "NW21",
+   "name": "Plasma Science & Fusion Center (NW21)",
+   "lng": -71.099146,
+   "lat": 42.359064
+  },
+  {
+   "code": "NW22",
+   "name": "Plasma Science & Fusion Center (NW22)",
+   "lng": -71.099723,
+   "lat": 42.359639
+  },
+  {
+   "code": "NW23",
+   "name": "NW23",
+   "lng": -71.099829,
+   "lat": 42.35955
+  },
+  {
+   "code": "NW30",
+   "name": "The Warehouse",
+   "lng": -71.099973,
+   "lat": 42.358647
+  },
+  {
+   "code": "NW32",
+   "name": "NW32",
+   "lng": -71.100516,
+   "lat": 42.358573
+  },
+  {
+   "code": "NW35",
+   "name": "Ashdown House",
+   "lng": -71.101439,
+   "lat": 42.358798
+  },
+  {
+   "code": "NW61",
+   "name": "Random Hall",
+   "lng": -71.098286,
+   "lat": 42.361845
+  },
+  {
+   "code": "NW86",
+   "name": "Sidney Pacific",
+   "lng": -71.102219,
+   "lat": 42.35972
+  },
+  {
+   "code": "NW98",
+   "name": "Building NW98",
+   "lng": -71.104755,
+   "lat": 42.359593
+  },
+  {
+   "code": "W1",
+   "name": "Fariborz Maseeh Hall",
+   "lng": -71.093511,
+   "lat": 42.357618
+  },
+  {
+   "code": "W11",
+   "name": "Building W11",
+   "lng": -71.093536,
+   "lat": 42.358261
+  },
+  {
+   "code": "W15",
+   "name": "Chapel",
+   "lng": -71.094125,
+   "lat": 42.358327
+  },
+  {
+   "code": "W16",
+   "name": "Kresge Auditorium",
+   "lng": -71.095057,
+   "lat": 42.358134
+  },
+  {
+   "code": "W2",
+   "name": "Building W2",
+   "lng": -71.093839,
+   "lat": 42.357256
+  },
+  {
+   "code": "W20",
+   "name": "Stratton Student Center",
+   "lng": -71.094775,
+   "lat": 42.359043
+  },
+  {
+   "code": "W31",
+   "name": "Du Pont Athletic Gymnasium",
+   "lng": -71.095168,
+   "lat": 42.359638
+  },
+  {
+   "code": "W32",
+   "name": "Du Pont Athletic Center",
+   "lng": -71.095073,
+   "lat": 42.359389
+  },
+  {
+   "code": "W33",
+   "name": "Rockwell Cage",
+   "lng": -71.095972,
+   "lat": 42.359202
+  },
+  {
+   "code": "W34",
+   "name": "Johnson Athletics Center",
+   "lng": -71.09653,
+   "lat": 42.358596
+  },
+  {
+   "code": "W35",
+   "name": "Zesiger Sports and Fitness Center",
+   "lng": -71.095753,
+   "lat": 42.358711
+  },
+  {
+   "code": "W36",
+   "name": "Building W36",
+   "lng": -71.097518,
+   "lat": 42.358681
+  },
+  {
+   "code": "W4",
+   "name": "McCormick Hall",
+   "lng": -71.094422,
+   "lat": 42.357183
+  },
+  {
+   "code": "W41",
+   "name": "Building W41",
+   "lng": -71.096056,
+   "lat": 42.359825
+  },
+  {
+   "code": "W5",
+   "name": "Green Hall",
+   "lng": -71.095101,
+   "lat": 42.356919
+  },
+  {
+   "code": "W51",
+   "name": "Burton-Conner House",
+   "lng": -71.098124,
+   "lat": 42.355969
+  },
+  {
+   "code": "W53",
+   "name": "Carr Indoor Tennis Facility",
+   "lng": -71.097804,
+   "lat": 42.356923
+  },
+  {
+   "code": "W53A",
+   "name": "Carr Indoor Tennis Facility (Office)",
+   "lng": -71.097351,
+   "lat": 42.356978
+  },
+  {
+   "code": "W53B",
+   "name": "DuPont Tennis Courts (Office)",
+   "lng": -71.096947,
+   "lat": 42.356966
+  },
+  {
+   "code": "W53C",
+   "name": "W53C",
+   "lng": -71.098062,
+   "lat": 42.356549
+  },
+  {
+   "code": "W53D",
+   "name": "Carr Indoor Tennis Facility (SVC)",
+   "lng": -71.09827,
+   "lat": 42.356885
+  },
+  {
+   "code": "W55",
+   "name": "Building W55",
+   "lng": -71.098071,
+   "lat": 42.358438
+  },
+  {
+   "code": "W56",
+   "name": "W56",
+   "lng": -71.098403,
+   "lat": 42.358606
+  },
+  {
+   "code": "W57",
+   "name": "W57",
+   "lng": -71.098589,
+   "lat": 42.358517
+  },
+  {
+   "code": "W59",
+   "name": "Heinz Building",
+   "lng": -71.099551,
+   "lat": 42.358105
+  },
+  {
+   "code": "W61",
+   "name": "MacGregor House",
+   "lng": -71.099546,
+   "lat": 42.355462
+  },
+  {
+   "code": "W64",
+   "name": "The David H. Koch Childcare Center",
+   "lng": -71.100421,
+   "lat": 42.35771
+  },
+  {
+   "code": "W7",
+   "name": "Baker House",
+   "lng": -71.095792,
+   "lat": 42.356698
+  },
+  {
+   "code": "W70",
+   "name": "New House",
+   "lng": -71.100545,
+   "lat": 42.35516
+  },
+  {
+   "code": "W71",
+   "name": "Next House",
+   "lng": -71.101917,
+   "lat": 42.354717
+  },
+  {
+   "code": "W79",
+   "name": "Simmons Hall",
+   "lng": -71.101521,
+   "lat": 42.357109
+  },
+  {
+   "code": "W8",
+   "name": "Richard J. Resch Boathouse",
+   "lng": -71.096827,
+   "lat": 42.355312
+  },
+  {
+   "code": "W84",
+   "name": "Tang Hall",
+   "lng": -71.10348,
+   "lat": 42.354352
+  },
+  {
+   "code": "W85",
+   "name": "Westgate (Family Housing)",
+   "lng": -71.103258,
+   "lat": 42.354998
+  },
+  {
+   "code": "W85ABC",
+   "name": "Westgate (ABC)",
+   "lng": -71.103901,
+   "lat": 42.354982
+  },
+  {
+   "code": "W85DE",
+   "name": "Westgate (DE)",
+   "lng": -71.103948,
+   "lat": 42.355375
+  },
+  {
+   "code": "W85FG",
+   "name": "Westgate (FG)",
+   "lng": -71.1036,
+   "lat": 42.355623
+  },
+  {
+   "code": "W85HJK",
+   "name": "Westgate (HJK)",
+   "lng": -71.103153,
+   "lat": 42.35545
+  },
+  {
+   "code": "W89",
+   "name": "Campus Police",
+   "lng": -71.104673,
+   "lat": 42.355539
+  },
+  {
+   "code": "W91",
+   "name": "Information Systems & Technology Operations",
+   "lng": -71.104426,
+   "lat": 42.354324
+  },
+  {
+   "code": "W92",
+   "name": "Building W92",
+   "lng": -71.104617,
+   "lat": 42.35492
+  },
+  {
+   "code": "W97",
+   "name": "Building W97",
+   "lng": -71.106578,
+   "lat": 42.354641
+  },
+  {
+   "code": "W98",
+   "name": "Building W98",
+   "lng": -71.106645,
+   "lat": 42.353955
+  },
+  {
+   "code": "WW15",
+   "name": "Building WW15",
+   "lng": -71.10947,
+   "lat": 42.355361
+  },
+  {
+   "code": "WW25",
+   "name": "Building WW25",
+   "lng": -71.106327,
+   "lat": 42.355738
+  }
+ ]
+}

@@ -1,0 +1,117 @@
+{
+  "halls": {
+    "maseeh-hall": {
+      "pin": [
+        -71.093511,
+        42.357618
+      ]
+    },
+    "east-campus": {
+      "pin": [
+        -71.088583,
+        42.360163
+      ]
+    },
+    "grad-tower-site4": {
+      "pin": [
+        -71.085472,
+        42.361895
+      ]
+    },
+    "westgate-apartments": {
+      "pin": [
+        -71.103258,
+        42.354998
+      ]
+    }
+  },
+  "places": {
+    "w8-resch-boathouse": {
+      "hide": true
+    },
+    "w64-koch-childcare-center": {
+      "hide": true
+    },
+    "w53-carr-indoor-tennis": {
+      "hide": true
+    },
+    "boston-marriott-cambridge": {
+      "hide": true
+    },
+    "w91": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "maseeh-hall": "Building W1, Fariborz Maseeh Hall, at its point on MIT's campus map (m.mit.edu/apis/maps/places, the list in config/mit.codes.json); OSM doesn't name it.",
+    "east-campus": "East Campus is buildings 62 and 64 (MIT campus map); pinned on OSM's MIT Building 62 (way/29650662).",
+    "grad-tower-site4": "OSM's E37 at 45 Hayward Street (way/1264845022); MIT Graduate Housing's own map puts the Graduate Tower at Site 4 16 m from its centre (gradhousing.mit.edu/communities/graduate-tower-at-site-4).",
+    "westgate-apartments": "Building W85, Westgate (Family Housing), at its point on MIT's campus map; OSM doesn't name it.",
+    "w8-resch-boathouse": "Rowing boathouse, not somewhere classes happen.",
+    "w64-koch-childcare-center": "Childcare centre, not somewhere classes happen.",
+    "w53-carr-indoor-tennis": "Indoor tennis courts, not a class building.",
+    "boston-marriott-cambridge": "A hotel (the MIT list joins NE18, 1 Cambridge Center, to it by name), not somewhere classes happen.",
+    "w91": "IS&T Operations building (data centre and offices), not somewhere classes happen."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "new-vassar -> nw12-nuclear-reactor-lab",
+        "new-vassar -> nw13",
+        "new-vassar -> nw17",
+        "new-vassar -> nw16",
+        "macgregor-house -> nw21-plasma-science-and-fusion-center",
+        "macgregor-house -> nw32",
+        "macgregor-house -> francis-bitter-magnet-lab",
+        "burton-conner -> nw21-plasma-science-and-fusion-center",
+        "burton-conner -> nw14-bitter-magnet-lab",
+        "burton-conner -> nw32",
+        "burton-conner -> francis-bitter-magnet-lab",
+        "simmons-hall -> nw32",
+        "edgerton-house -> w34-johnson-athletic-center",
+        "edgerton-house -> n51"
+      ],
+      "maxRatio": 4.5,
+      "why": "The Grand Junction railroad runs between Vassar Street and Albany Street; these halls and buildings are on opposite sides of it, so walks go round to the mapped crossings (at Massachusetts Avenue and the ends of the line)."
+    },
+    {
+      "pairs": [
+        "macgregor-house -> w59-heinz-building",
+        "burton-conner -> w59-heinz-building"
+      ],
+      "maxRatio": 3.5,
+      "why": "Briggs Field and the athletic fields lie between the Memorial Drive halls and the Heinz Building with no mapped path across, so walks go round them."
+    },
+    {
+      "pairs": [
+        "maseeh-hall -> w16-kresge-auditorium",
+        "maseeh-hall -> w34-johnson-athletic-center"
+      ],
+      "maxRatio": 3.5,
+      "why": "No mapped path leads from Maseeh Hall straight to Kresge Oval; walks go out to Massachusetts Avenue and back in."
+    },
+    {
+      "pairs": [
+        "grad-tower-site4 -> e40-muckley-building",
+        "grad-tower-site4 -> e18-ford-building",
+        "grad-tower-site4 -> e17-mudd-building"
+      ],
+      "maxRatio": 3.5,
+      "why": "Kendall Square city blocks: buildings fill the blocks between E37 and these buildings with no mapped way through, so walks go round by the streets."
+    },
+    {
+      "pairs": [
+        "random-hall -> n52"
+      ],
+      "maxRatio": 3.5,
+      "why": "N52 is across Massachusetts Avenue from Random Hall; walks use the mapped crosswalk."
+    },
+    {
+      "pairs": [
+        "tang-hall -> ww25"
+      ],
+      "maxRatio": 3.5,
+      "why": "The Westgate buildings and lots lie between Tang Hall and WW25 with no mapped path through, so walks go round them."
+    }
+  ]
+}

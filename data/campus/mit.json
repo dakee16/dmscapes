@@ -1,0 +1,1995 @@
+{
+ "collegeId": "mit",
+ "generatedAt": "2026-11-08T17:01:24.296Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "MIT campus map (whereis.mit.edu) building list, from the MIT Mobile places API: building numbers, names and map points",
+   "url": "https://m.mit.edu/apis/maps/places",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/mit.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -71.10946,
+  42.35396,
+  -71.07926,
+  42.36809
+ ],
+ "halls": [
+  {
+   "dormId": "macgregor-house",
+   "name": "MacGregor House",
+   "lng": -71.099541,
+   "lat": 42.355473,
+   "pin": "name",
+   "osm": "way/1246607679",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 7.1
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 12
+    }
+   }
+  },
+  {
+   "dormId": "new-vassar",
+   "name": "New Vassar",
+   "lng": -71.098121,
+   "lat": 42.358838,
+   "pin": "name",
+   "osm": "way/765446749",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 2.6
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "next-house",
+   "name": "Next House",
+   "lng": -71.101924,
+   "lat": 42.35471,
+   "pin": "name",
+   "osm": "way/27366069",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 8.7
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 13.7
+    }
+   }
+  },
+  {
+   "dormId": "maseeh-hall",
+   "name": "Fariborz Maseeh Hall",
+   "lng": -71.093511,
+   "lat": 42.357618,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 4.9
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 6.3
+    }
+   }
+  },
+  {
+   "dormId": "burton-conner",
+   "name": "Burton-Conner House",
+   "lng": -71.098116,
+   "lat": 42.355984,
+   "pin": "name",
+   "osm": "way/980718777",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 6
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 10.9
+    }
+   }
+  },
+  {
+   "dormId": "baker-house",
+   "name": "Baker House",
+   "lng": -71.095847,
+   "lat": 42.356693,
+   "pin": "name",
+   "osm": "way/29602186",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 2.6
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 7.1
+    }
+   }
+  },
+  {
+   "dormId": "simmons-hall",
+   "name": "Simmons Hall",
+   "lng": -71.101519,
+   "lat": 42.357115,
+   "pin": "name",
+   "osm": "way/29585286",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 7.1
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 10.8
+    }
+   }
+  },
+  {
+   "dormId": "east-campus",
+   "name": "East Campus",
+   "lng": -71.088583,
+   "lat": 42.360163,
+   "pin": "manual",
+   "osm": "way/29650662",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "57-alumni-pool",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 7.4
+    }
+   }
+  },
+  {
+   "dormId": "mccormick-hall",
+   "name": "McCormick Hall",
+   "lng": -71.094408,
+   "lat": 42.357185,
+   "pin": "name",
+   "osm": "relation/65411",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 2.6
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 6.2
+    }
+   }
+  },
+  {
+   "dormId": "random-hall",
+   "name": "Random Hall",
+   "lng": -71.098277,
+   "lat": 42.361855,
+   "pin": "name",
+   "osm": "way/29809099",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w31-du-pont-athletic-gymnasium",
+     "minutes": 5.5
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 7.1
+    }
+   }
+  },
+  {
+   "dormId": "tang-hall",
+   "name": "Tang Hall (Graduate)",
+   "lng": -71.103478,
+   "lat": 42.354351,
+   "pin": "name",
+   "osm": "way/29127301",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 10.9
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 15.5
+    }
+   }
+  },
+  {
+   "dormId": "the-warehouse",
+   "name": "The Warehouse (Graduate)",
+   "lng": -71.099961,
+   "lat": 42.35865,
+   "pin": "name",
+   "osm": "way/29929971",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 5.5
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 9.2
+    }
+   }
+  },
+  {
+   "dormId": "grad-tower-site4",
+   "name": "Graduate Tower at Site 4",
+   "lng": -71.085472,
+   "lat": 42.361895,
+   "pin": "manual",
+   "osm": "way/1264845022",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "57-alumni-pool",
+     "minutes": 7.5
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 11.3
+    }
+   }
+  },
+  {
+   "dormId": "sidney-pacific",
+   "name": "Sidney-Pacific (Graduate)",
+   "lng": -71.102217,
+   "lat": 42.359743,
+   "pin": "name",
+   "osm": "way/25679668",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 8.2
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 11.4
+    }
+   }
+  },
+  {
+   "dormId": "edgerton-house",
+   "name": "Edgerton House (Graduate)",
+   "lng": -71.098129,
+   "lat": 42.360324,
+   "pin": "name",
+   "osm": "relation/17409127",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w31-du-pont-athletic-gymnasium",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 6.5
+    }
+   }
+  },
+  {
+   "dormId": "westgate-apartments",
+   "name": "Westgate Apartments (Graduate/Family)",
+   "lng": -71.103258,
+   "lat": 42.354998,
+   "pin": "manual",
+   "osm": "way/262724455",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "w35-zesiger-sports-and-fitness-center",
+     "minutes": 10.7
+    },
+    "library": {
+     "placeId": "7a-rotch-library",
+     "minutes": 14.7
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "32-stata-center",
+   "name": "32 Stata Center",
+   "short": "32 Stata Center",
+   "kind": "academic",
+   "codes": [
+    "32"
+   ],
+   "aliases": [
+    "Ray and Maria Stata Center",
+    "MIT Building 32"
+   ],
+   "lng": -71.090569,
+   "lat": 42.361621,
+   "osm": "way/27078002"
+  },
+  {
+   "id": "broad-institute",
+   "name": "Broad Institute",
+   "short": "Broad Institute",
+   "kind": "academic",
+   "codes": [
+    "NE108",
+    "NE125"
+   ],
+   "aliases": [
+    "Building NE125"
+   ],
+   "lng": -71.086896,
+   "lat": 42.368093,
+   "osm": "way/29747134"
+  },
+  {
+   "id": "46-brain-and-cognitive-sciences",
+   "name": "46 Brain and Cognitive Sciences",
+   "short": "46 Brain and Cognitive Sciences",
+   "kind": "academic",
+   "codes": [
+    "46"
+   ],
+   "aliases": [
+    "Building 46",
+    "BCS",
+    "Brain and Cognitive Sciences"
+   ],
+   "lng": -71.091666,
+   "lat": 42.362335,
+   "osm": "relation/17804937"
+  },
+  {
+   "id": "nw21-plasma-science-and-fusion-center",
+   "name": "NW21 Plasma Science & Fusion Center",
+   "short": "NW21 Plasma Science & Fusion Center",
+   "kind": "academic",
+   "codes": [
+    "NW21"
+   ],
+   "aliases": [
+    "Plasma Science & Fusion Center (NW21)"
+   ],
+   "lng": -71.099143,
+   "lat": 42.35907,
+   "osm": "way/29557595"
+  },
+  {
+   "id": "ww25",
+   "name": "WW25",
+   "short": "WW25",
+   "kind": "academic",
+   "codes": [
+    "WW25"
+   ],
+   "aliases": [
+    "Building WW25"
+   ],
+   "lng": -71.106329,
+   "lat": 42.35574,
+   "osm": "way/29924888"
+  },
+  {
+   "id": "w34-johnson-athletic-center",
+   "name": "W34 Johnson Athletic Center",
+   "short": "W34 Johnson Athletic Center",
+   "kind": "gym",
+   "codes": [
+    "W34"
+   ],
+   "aliases": [
+    "Howard W. Johnson Athletic Center",
+    "Johnson Athletics Center"
+   ],
+   "lng": -71.09654,
+   "lat": 42.358596,
+   "osm": "way/132601564"
+  },
+  {
+   "id": "cambridge-riverview-center",
+   "name": "Cambridge Riverview Center",
+   "short": "Cambridge Riverview Center",
+   "kind": "academic",
+   "codes": [
+    "E94"
+   ],
+   "aliases": [
+    "Building E94"
+   ],
+   "lng": -71.079264,
+   "lat": 42.363611,
+   "osm": "way/29945511"
+  },
+  {
+   "id": "one-broadway",
+   "name": "One Broadway",
+   "short": "One Broadway",
+   "kind": "academic",
+   "codes": [
+    "E70"
+   ],
+   "aliases": [
+    "Building E70"
+   ],
+   "lng": -71.083462,
+   "lat": 42.362754,
+   "osm": "way/141434940"
+  },
+  {
+   "id": "w35-zesiger-sports-and-fitness-center",
+   "name": "W35 Zesiger Sports & Fitness Center",
+   "short": "W35 Zesiger Sports & Fitness Center",
+   "kind": "gym",
+   "codes": [
+    "W35"
+   ],
+   "aliases": [
+    "Zesiger Sports and Fitness Center"
+   ],
+   "lng": -71.095755,
+   "lat": 42.35871,
+   "osm": "way/29127389"
+  },
+  {
+   "id": "76-koch-institute",
+   "name": "76 Koch Institute",
+   "short": "76 Koch Institute",
+   "kind": "academic",
+   "codes": [
+    "76"
+   ],
+   "aliases": [
+    "David H. Koch Institute for Integrative Cancer Research",
+    "MIT Building 76",
+    "The David H. Koch Institute for Integrative Cancer Research at MIT"
+   ],
+   "lng": -71.089265,
+   "lat": 42.362305,
+   "osm": "way/46846324"
+  },
+  {
+   "id": "14",
+   "name": "14",
+   "short": "14",
+   "kind": "academic",
+   "codes": [
+    "14"
+   ],
+   "aliases": [
+    "Hayden Memorial Library",
+    "MIT Building 14"
+   ],
+   "lng": -71.089307,
+   "lat": 42.359196,
+   "osm": "relation/5268202"
+  },
+  {
+   "id": "12-su-building",
+   "name": "12 Su Building",
+   "short": "12 Su Building",
+   "kind": "academic",
+   "codes": [
+    "12"
+   ],
+   "aliases": [
+    "Lisa T. Su Building",
+    "MIT Building 12",
+    "MIT.nano"
+   ],
+   "lng": -71.091469,
+   "lat": 42.36027,
+   "osm": "way/863570911"
+  },
+  {
+   "id": "richard-n-merkin-building",
+   "name": "Richard N. Merkin Building",
+   "short": "Richard N. Merkin Building",
+   "kind": "academic",
+   "codes": [
+    "NE30"
+   ],
+   "aliases": [
+    "Building NE30",
+    "Broad Institute"
+   ],
+   "lng": -71.088747,
+   "lat": 42.363039,
+   "osm": "way/823968922"
+  },
+  {
+   "id": "e62",
+   "name": "E62",
+   "short": "E62",
+   "kind": "academic",
+   "codes": [
+    "E62"
+   ],
+   "aliases": [
+    "MIT Sloan"
+   ],
+   "lng": -71.082677,
+   "lat": 42.361338,
+   "osm": "way/1047765109"
+  },
+  {
+   "id": "w20-stratton-student-center",
+   "name": "W20 Stratton Student Center",
+   "short": "W20 Stratton Student Center",
+   "kind": "academic",
+   "codes": [
+    "W20"
+   ],
+   "aliases": [
+    "The Julius Adams Stratton Building",
+    "Building W20",
+    "Stratton Student Center"
+   ],
+   "lng": -71.094768,
+   "lat": 42.359043,
+   "osm": "way/24494019"
+  },
+  {
+   "id": "nw14-bitter-magnet-lab",
+   "name": "NW14 Bitter Magnet Lab",
+   "short": "NW14 Bitter Magnet Lab",
+   "kind": "academic",
+   "codes": [
+    "NW14"
+   ],
+   "aliases": [
+    "Francis Bitter Magnet Lab (NW14)"
+   ],
+   "lng": -71.097894,
+   "lat": 42.359631,
+   "osm": "way/132600543"
+  },
+  {
+   "id": "13-bush-building",
+   "name": "13 Bush Building",
+   "short": "13 Bush Building",
+   "kind": "academic",
+   "codes": [
+    "13"
+   ],
+   "aliases": [
+    "Vannevar Bush Building",
+    "MIT Building 13",
+    "Bush Building"
+   ],
+   "lng": -71.092547,
+   "lat": 42.35995,
+   "osm": "way/32517105"
+  },
+  {
+   "id": "w33-rockwell-cage",
+   "name": "W33 Rockwell Cage",
+   "short": "W33 Rockwell Cage",
+   "kind": "academic",
+   "codes": [
+    "W33"
+   ],
+   "aliases": [
+    "W33",
+    "Rockwell Cage"
+   ],
+   "lng": -71.095967,
+   "lat": 42.359203,
+   "osm": "way/132601563"
+  },
+  {
+   "id": "3",
+   "name": "3",
+   "short": "3",
+   "kind": "academic",
+   "codes": [
+    "3"
+   ],
+   "aliases": [
+    "MIT Building 3",
+    "Maclaurin Buildings (3)"
+   ],
+   "lng": -71.092403,
+   "lat": 42.359029,
+   "osm": "way/32517406"
+  },
+  {
+   "id": "e28",
+   "name": "E28",
+   "short": "E28",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Site 5"
+   ],
+   "lng": -71.086665,
+   "lat": 42.362116,
+   "osm": "way/1254628669"
+  },
+  {
+   "id": "4",
+   "name": "4",
+   "short": "4",
+   "kind": "academic",
+   "codes": [
+    "4"
+   ],
+   "aliases": [
+    "MIT Building 4",
+    "Maclaurin Buildings (4)"
+   ],
+   "lng": -71.091104,
+   "lat": 42.359481,
+   "osm": "way/32517654"
+  },
+  {
+   "id": "1-pierce-lab",
+   "name": "1 Pierce Lab",
+   "short": "1 Pierce Lab",
+   "kind": "academic",
+   "codes": [
+    "1"
+   ],
+   "aliases": [
+    "Pierce Engineering Laboratory",
+    "MIT Building 1",
+    "Pierce Laboratory"
+   ],
+   "lng": -71.092343,
+   "lat": 42.358101,
+   "osm": "way/32517447"
+  },
+  {
+   "id": "26-compton-labs",
+   "name": "26 Compton Labs",
+   "short": "26 Compton Labs",
+   "kind": "academic",
+   "codes": [
+    "26"
+   ],
+   "aliases": [
+    "Karl Taylor Compton Laboratories",
+    "MIT Building 26",
+    "Compton Laboratories"
+   ],
+   "lng": -71.091145,
+   "lat": 42.360863,
+   "osm": "way/32525936"
+  },
+  {
+   "id": "w31-du-pont-athletic-gymnasium",
+   "name": "W31 du Pont Athletic Gymnasium",
+   "short": "W31 du Pont Athletic Gymnasium",
+   "kind": "gym",
+   "codes": [
+    "W31"
+   ],
+   "aliases": [
+    "Du Pont Athletic Gymnasium"
+   ],
+   "lng": -71.095179,
+   "lat": 42.359633,
+   "osm": "way/29127393"
+  },
+  {
+   "id": "riverfront-office-park",
+   "name": "Riverfront Office Park",
+   "short": "Riverfront Office Park",
+   "kind": "academic",
+   "codes": [
+    "E90"
+   ],
+   "aliases": [
+    "Building E90"
+   ],
+   "lng": -71.080035,
+   "lat": 42.362232,
+   "osm": "way/274265189"
+  },
+  {
+   "id": "2-simons-building",
+   "name": "2 Simons Building",
+   "short": "2 Simons Building",
+   "kind": "academic",
+   "codes": [
+    "2"
+   ],
+   "aliases": [
+    "Simons Building",
+    "MIT Building 2",
+    "The Simons Building"
+   ],
+   "lng": -71.090184,
+   "lat": 42.358835,
+   "osm": "way/32517707"
+  },
+  {
+   "id": "e14-media-lab",
+   "name": "E14 Media Lab",
+   "short": "E14 Media Lab",
+   "kind": "academic",
+   "codes": [
+    "E14"
+   ],
+   "aliases": [
+    "Building E14",
+    "E14"
+   ],
+   "lng": -71.087329,
+   "lat": 42.360469,
+   "osm": "way/177921761"
+  },
+  {
+   "id": "68-koch-biology-building",
+   "name": "68 Koch Biology Building",
+   "short": "68 Koch Biology Building",
+   "kind": "academic",
+   "codes": [
+    "68"
+   ],
+   "aliases": [
+    "MIT Building 68",
+    "Koch Biology Building"
+   ],
+   "lng": -71.088631,
+   "lat": 42.361631,
+   "osm": "way/1011548273"
+  },
+  {
+   "id": "nw98",
+   "name": "NW98",
+   "short": "NW98",
+   "kind": "academic",
+   "codes": [
+    "NW98"
+   ],
+   "aliases": [
+    "Building NW98"
+   ],
+   "lng": -71.104742,
+   "lat": 42.359588,
+   "osm": "way/29888553"
+  },
+  {
+   "id": "ne49",
+   "name": "NE49",
+   "short": "NE49",
+   "kind": "academic",
+   "codes": [
+    "NE49"
+   ],
+   "aliases": [
+    "Building NE49",
+    "600 Technology Square"
+   ],
+   "lng": -71.093115,
+   "lat": 42.363409,
+   "osm": "way/29740162"
+  },
+  {
+   "id": "w92-information-technology",
+   "name": "W92 Information Technology",
+   "short": "W92 Information Technology",
+   "kind": "academic",
+   "codes": [
+    "W92"
+   ],
+   "aliases": [
+    "Building W92"
+   ],
+   "lng": -71.104626,
+   "lat": 42.354925,
+   "osm": "way/29127327"
+  },
+  {
+   "id": "31-sloan-labs",
+   "name": "31 Sloan Labs",
+   "short": "31 Sloan Labs",
+   "kind": "academic",
+   "codes": [
+    "31"
+   ],
+   "aliases": [
+    "Sloan Laboratories for Aircraft and Auto Engineering",
+    "MIT Building 31",
+    "Sloan Laboratories"
+   ],
+   "lng": -71.093074,
+   "lat": 42.360382,
+   "osm": "way/32525033"
+  },
+  {
+   "id": "nw12-nuclear-reactor-lab",
+   "name": "NW12 Nuclear Reactor Lab",
+   "short": "NW12 Nuclear Reactor Lab",
+   "kind": "academic",
+   "codes": [
+    "NW12"
+   ],
+   "aliases": [
+    "Building NW12"
+   ],
+   "lng": -71.096864,
+   "lat": 42.360104,
+   "osm": "way/132600541"
+  },
+  {
+   "id": "e15-wiesner-building",
+   "name": "E15 Wiesner Building",
+   "short": "E15 Wiesner Building",
+   "kind": "academic",
+   "codes": [
+    "E15"
+   ],
+   "aliases": [
+    "Jerome A. Wiesner Wiesner Arts and Media Technology Building",
+    "Wiesner Building"
+   ],
+   "lng": -71.08763,
+   "lat": 42.360846,
+   "osm": "way/177921762"
+  },
+  {
+   "id": "24",
+   "name": "24",
+   "short": "24",
+   "kind": "academic",
+   "codes": [
+    "24"
+   ],
+   "aliases": [
+    "MIT Building 24",
+    "Building 24"
+   ],
+   "lng": -71.092003,
+   "lat": 42.360677,
+   "osm": "way/29127459"
+  },
+  {
+   "id": "300-technology-square",
+   "name": "300 Technology Square",
+   "short": "300 Technology Square",
+   "kind": "academic",
+   "codes": [
+    "NE45"
+   ],
+   "aliases": [],
+   "lng": -71.091604,
+   "lat": 42.363359,
+   "osm": "way/29842810"
+  },
+  {
+   "id": "42-dickson-cogeneration-plant",
+   "name": "42 Dickson Cogeneration Plant",
+   "short": "42 Dickson Cogeneration Plant",
+   "kind": "academic",
+   "codes": [
+    "42"
+   ],
+   "aliases": [
+    "William R. Dickson Cogeneration Plant",
+    "Power Plant"
+   ],
+   "lng": -71.093514,
+   "lat": 42.361115,
+   "osm": "way/132601297"
+  },
+  {
+   "id": "e25-whitaker-college",
+   "name": "E25 Whitaker College",
+   "short": "E25 Whitaker College",
+   "kind": "academic",
+   "codes": [
+    "E25"
+   ],
+   "aliases": [
+    "Whitaker College of Health Sciences Technology and Management",
+    "Whitaker College"
+   ],
+   "lng": -71.086928,
+   "lat": 42.361673,
+   "osm": "way/177921759"
+  },
+  {
+   "id": "500-technology-square",
+   "name": "500 Technology Square",
+   "short": "500 Technology Square",
+   "kind": "academic",
+   "codes": [
+    "NE47"
+   ],
+   "aliases": [
+    "Building NE47"
+   ],
+   "lng": -71.09259,
+   "lat": 42.363371,
+   "osm": "way/29609886"
+  },
+  {
+   "id": "e51-tang-center",
+   "name": "E51 Tang Center",
+   "short": "E51 Tang Center",
+   "kind": "academic",
+   "codes": [
+    "E51"
+   ],
+   "aliases": [
+    "Building E51",
+    "Tang Center"
+   ],
+   "lng": -71.084494,
+   "lat": 42.360553,
+   "osm": "way/24494135"
+  },
+  {
+   "id": "10",
+   "name": "10",
+   "short": "10",
+   "kind": "academic",
+   "codes": [
+    "10"
+   ],
+   "aliases": [
+    "MIT Building 10",
+    "Maclaurin Buildings (10)"
+   ],
+   "lng": -71.092015,
+   "lat": 42.359683,
+   "osm": "way/32517642"
+  },
+  {
+   "id": "w18-linde-music-building",
+   "name": "W18 Linde Music Building",
+   "short": "W18 Linde Music Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Edward and Joyce Linde Music Building"
+   ],
+   "lng": -71.095809,
+   "lat": 42.357719,
+   "osm": "way/1299334790"
+  },
+  {
+   "id": "e38",
+   "name": "E38",
+   "short": "E38",
+   "kind": "academic",
+   "codes": [
+    "E38"
+   ],
+   "aliases": [
+    "Suffolk Building"
+   ],
+   "lng": -71.085804,
+   "lat": 42.362038,
+   "osm": "way/1264845023"
+  },
+  {
+   "id": "7-rogers-building",
+   "name": "7 Rogers Building",
+   "short": "7 Rogers Building",
+   "kind": "academic",
+   "codes": [
+    "7"
+   ],
+   "aliases": [
+    "William Barton Rogers Building",
+    "MIT Building 7",
+    "Rogers Building"
+   ],
+   "lng": -71.093179,
+   "lat": 42.359294,
+   "osm": "way/32517230"
+  },
+  {
+   "id": "50-walker-memorial",
+   "name": "50 Walker Memorial",
+   "short": "50 Walker Memorial",
+   "kind": "academic",
+   "codes": [
+    "50"
+   ],
+   "aliases": [
+    "MIT Building 50",
+    "Walker Memorial"
+   ],
+   "lng": -71.088302,
+   "lat": 42.359366,
+   "osm": "way/24494050"
+  },
+  {
+   "id": "nw13",
+   "name": "NW13",
+   "short": "NW13",
+   "kind": "academic",
+   "codes": [
+    "NW13"
+   ],
+   "aliases": [
+    "Building NW13"
+   ],
+   "lng": -71.097359,
+   "lat": 42.359885,
+   "osm": "way/132600542"
+  },
+  {
+   "id": "n52",
+   "name": "N52",
+   "short": "N52",
+   "kind": "academic",
+   "codes": [
+    "N52"
+   ],
+   "aliases": [],
+   "lng": -71.097195,
+   "lat": 42.362288,
+   "osm": "relation/16848651"
+  },
+  {
+   "id": "400-technology-square",
+   "name": "400 Technology Square",
+   "short": "400 Technology Square",
+   "kind": "academic",
+   "codes": [
+    "NE46"
+   ],
+   "aliases": [],
+   "lng": -71.091944,
+   "lat": 42.363975,
+   "osm": "way/29575544"
+  },
+  {
+   "id": "w32-du-pont-athletic-center",
+   "name": "W32 du Pont Athletic Center",
+   "short": "W32 du Pont Athletic Center",
+   "kind": "gym",
+   "codes": [
+    "W32"
+   ],
+   "aliases": [
+    "Du Pont Athletic Center"
+   ],
+   "lng": -71.09511,
+   "lat": 42.359368,
+   "osm": "way/132601562"
+  },
+  {
+   "id": "e23",
+   "name": "E23",
+   "short": "E23",
+   "kind": "academic",
+   "codes": [
+    "E23"
+   ],
+   "aliases": [
+    "Building E23",
+    "Health Services"
+   ],
+   "lng": -71.086627,
+   "lat": 42.361034,
+   "osm": "way/177921760"
+  },
+  {
+   "id": "e40-muckley-building",
+   "name": "E40 Muckley Building",
+   "short": "E40 Muckley Building",
+   "kind": "academic",
+   "codes": [
+    "E40"
+   ],
+   "aliases": [
+    "Building E40",
+    "Muckley Building"
+   ],
+   "lng": -71.084854,
+   "lat": 42.361172,
+   "osm": "way/29618861"
+  },
+  {
+   "id": "45-schwarzman-building",
+   "name": "45 Schwarzman Building",
+   "short": "45 Schwarzman Building",
+   "kind": "academic",
+   "codes": [
+    "44"
+   ],
+   "aliases": [
+    "Cyclotron"
+   ],
+   "lng": -71.092373,
+   "lat": 42.361663,
+   "osm": "way/1089241940"
+  },
+  {
+   "id": "18-dreyfus-building",
+   "name": "18 Dreyfus Building",
+   "short": "18 Dreyfus Building",
+   "kind": "academic",
+   "codes": [
+    "18"
+   ],
+   "aliases": [
+    "Camille and Edouard Dreyfus Building",
+    "MIT Building 18",
+    "Dreyfus Building"
+   ],
+   "lng": -71.089817,
+   "lat": 42.360076,
+   "osm": "way/24493980"
+  },
+  {
+   "id": "e52-morris-and-sophie-chang-building",
+   "name": "E52 Morris & Sophie Chang Building",
+   "short": "E52 Morris & Sophie Chang Building",
+   "kind": "academic",
+   "codes": [
+    "E52"
+   ],
+   "aliases": [
+    "Building E52",
+    "Sloan Building",
+    "Morris and Sophie Chang Building"
+   ],
+   "lng": -71.083679,
+   "lat": 42.360742,
+   "osm": "way/24494137"
+  },
+  {
+   "id": "e19",
+   "name": "E19",
+   "short": "E19",
+   "kind": "academic",
+   "codes": [
+    "E19"
+   ],
+   "aliases": [
+    "Ford Building (E19)"
+   ],
+   "lng": -71.087953,
+   "lat": 42.362144,
+   "osm": "way/220076879"
+  },
+  {
+   "id": "66-landau-building",
+   "name": "66 Landau Building",
+   "short": "66 Landau Building",
+   "kind": "academic",
+   "codes": [
+    "66"
+   ],
+   "aliases": [
+    "MIT Building 66",
+    "Landau Building"
+   ],
+   "lng": -71.089027,
+   "lat": 42.360925,
+   "osm": "way/24808162"
+  },
+  {
+   "id": "w97",
+   "name": "W97",
+   "short": "W97",
+   "kind": "academic",
+   "codes": [
+    "W97"
+   ],
+   "aliases": [
+    "Building W97"
+   ],
+   "lng": -71.106567,
+   "lat": 42.354658,
+   "osm": "way/330071069"
+  },
+  {
+   "id": "e18-ford-building",
+   "name": "E18 Ford Building",
+   "short": "E18 Ford Building",
+   "kind": "academic",
+   "codes": [
+    "E18"
+   ],
+   "aliases": [
+    "Horace Sayford Ford Building",
+    "Ford Building (E18)"
+   ],
+   "lng": -71.0878,
+   "lat": 42.361774,
+   "osm": "way/220076812"
+  },
+  {
+   "id": "e48",
+   "name": "E48",
+   "short": "E48",
+   "kind": "academic",
+   "codes": [
+    "E48"
+   ],
+   "aliases": [
+    "Building E48"
+   ],
+   "lng": -71.084729,
+   "lat": 42.362063,
+   "osm": "way/29863317"
+  },
+  {
+   "id": "w16-kresge-auditorium",
+   "name": "W16 Kresge Auditorium",
+   "short": "W16 Kresge Auditorium",
+   "kind": "academic",
+   "codes": [
+    "W16"
+   ],
+   "aliases": [
+    "W16",
+    "Kresge Auditorium"
+   ],
+   "lng": -71.095055,
+   "lat": 42.358143,
+   "osm": "way/24494029"
+  },
+  {
+   "id": "5",
+   "name": "5",
+   "short": "5",
+   "kind": "academic",
+   "codes": [
+    "5"
+   ],
+   "aliases": [
+    "Pratt School of Naval Architecture and Marine Engineering",
+    "MIT Building 5",
+    "Pratt School"
+   ],
+   "lng": -71.092918,
+   "lat": 42.35871,
+   "osm": "way/32517556"
+  },
+  {
+   "id": "6-eastman-labs",
+   "name": "6 Eastman Labs",
+   "short": "6 Eastman Labs",
+   "kind": "academic",
+   "codes": [
+    "6"
+   ],
+   "aliases": [
+    "George Eastman Research Laboratories",
+    "MIT Building 6",
+    "Eastman Laboratories"
+   ],
+   "lng": -71.090453,
+   "lat": 42.359562,
+   "osm": "way/32517817"
+  },
+  {
+   "id": "nw23",
+   "name": "NW23",
+   "short": "NW23",
+   "kind": "academic",
+   "codes": [
+    "NW22",
+    "NW23"
+   ],
+   "aliases": [
+    "Plasma Science & Fusion Center (NW22)"
+   ],
+   "lng": -71.099884,
+   "lat": 42.359571,
+   "osm": "way/1007111503"
+  },
+  {
+   "id": "n16-cooling-tower",
+   "name": "N16 Cooling Tower",
+   "short": "N16 Cooling Tower",
+   "kind": "academic",
+   "codes": [
+    "N16"
+   ],
+   "aliases": [
+    "Cooling Tower & Oil Reserve"
+   ],
+   "lng": -71.094028,
+   "lat": 42.361271,
+   "osm": "way/29559726"
+  },
+  {
+   "id": "e53-hermann-building",
+   "name": "E53 Hermann Building",
+   "short": "E53 Hermann Building",
+   "kind": "academic",
+   "codes": [
+    "E53"
+   ],
+   "aliases": [
+    "Building E53",
+    "Hermann Building"
+   ],
+   "lng": -71.083576,
+   "lat": 42.361194,
+   "osm": "way/24494142"
+  },
+  {
+   "id": "nw17",
+   "name": "NW17",
+   "short": "NW17",
+   "kind": "academic",
+   "codes": [
+    "NW17"
+   ],
+   "aliases": [
+    "Plasma Science & Fusion Center (NW17)"
+   ],
+   "lng": -71.099139,
+   "lat": 42.359862,
+   "osm": "way/132600544"
+  },
+  {
+   "id": "nw16",
+   "name": "NW16",
+   "short": "NW16",
+   "kind": "academic",
+   "codes": [
+    "NW16"
+   ],
+   "aliases": [
+    "Plasma Science & Fusion Center (NW16)"
+   ],
+   "lng": -71.098727,
+   "lat": 42.360048,
+   "osm": "way/29566343"
+  },
+  {
+   "id": "w59-heinz-building",
+   "name": "W59 Heinz Building",
+   "short": "W59 Heinz Building",
+   "kind": "academic",
+   "codes": [
+    "W59"
+   ],
+   "aliases": [
+    "Heinz Building"
+   ],
+   "lng": -71.09954,
+   "lat": 42.358112,
+   "osm": "way/29681495"
+  },
+  {
+   "id": "37-mcnair-building",
+   "name": "37 McNair Building",
+   "short": "37 McNair Building",
+   "kind": "academic",
+   "codes": [
+    "37"
+   ],
+   "aliases": [
+    "Ronald E. McNair Building",
+    "MIT Building 37",
+    "McNair Building"
+   ],
+   "lng": -71.093245,
+   "lat": 42.360693,
+   "osm": "way/32525279"
+  },
+  {
+   "id": "36-fairchild-building",
+   "name": "36 Fairchild Building",
+   "short": "36 Fairchild Building",
+   "kind": "academic",
+   "codes": [
+    "36"
+   ],
+   "aliases": [
+    "Fairchild Building",
+    "MIT Building 36",
+    "Fairchild Building (36)"
+   ],
+   "lng": -71.091662,
+   "lat": 42.361445,
+   "osm": "way/29127425"
+  },
+  {
+   "id": "56-whitaker-building",
+   "name": "56 Whitaker Building",
+   "short": "56 Whitaker Building",
+   "kind": "academic",
+   "codes": [
+    "56"
+   ],
+   "aliases": [
+    "MIT Building 56",
+    "Whitaker Building"
+   ],
+   "lng": -71.089852,
+   "lat": 42.360705,
+   "osm": "way/32526121"
+  },
+  {
+   "id": "35-sloan-lab",
+   "name": "35 Sloan Lab",
+   "short": "35 Sloan Lab",
+   "kind": "academic",
+   "codes": [
+    "35"
+   ],
+   "aliases": [
+    "Sloan Laboratory",
+    "MIT Building 35"
+   ],
+   "lng": -71.094037,
+   "lat": 42.360387,
+   "osm": "way/32526807"
+  },
+  {
+   "id": "6c",
+   "name": "6C",
+   "short": "6C",
+   "kind": "academic",
+   "codes": [
+    "6C"
+   ],
+   "aliases": [
+    "PDSI",
+    "MIT Building 6C",
+    "PDSI (Physics, DMSE, Spectroscopy, Infrastructure)"
+   ],
+   "lng": -71.090829,
+   "lat": 42.359678,
+   "osm": "way/32524914"
+  },
+  {
+   "id": "57-alumni-pool",
+   "name": "57 Alumni Pool",
+   "short": "57 Alumni Pool",
+   "kind": "gym",
+   "codes": [
+    "57"
+   ],
+   "aliases": [
+    "Alumni Pool",
+    "MIT Building 57",
+    "Wang Fitness Center and Alumni Pool"
+   ],
+   "lng": -71.090136,
+   "lat": 42.361157,
+   "osm": "way/32526333"
+  },
+  {
+   "id": "n51",
+   "name": "N51",
+   "short": "N51",
+   "kind": "academic",
+   "codes": [
+    "N51"
+   ],
+   "aliases": [
+    "Building N51"
+   ],
+   "lng": -71.097596,
+   "lat": 42.362234,
+   "osm": "way/132600539"
+  },
+  {
+   "id": "16-dorrance-building",
+   "name": "16 Dorrance Building",
+   "short": "16 Dorrance Building",
+   "kind": "academic",
+   "codes": [
+    "16"
+   ],
+   "aliases": [
+    "John Thompson Dorrance Building",
+    "MIT Building 16",
+    "Dorrance Building"
+   ],
+   "lng": -71.090584,
+   "lat": 42.360443,
+   "osm": "way/32526070"
+  },
+  {
+   "id": "e17-mudd-building",
+   "name": "E17 Mudd Building",
+   "short": "E17 Mudd Building",
+   "kind": "academic",
+   "codes": [
+    "E17"
+   ],
+   "aliases": [
+    "Seeley G. Mudd Building",
+    "Mudd Building"
+   ],
+   "lng": -71.087891,
+   "lat": 42.361493,
+   "osm": "way/220082897"
+  },
+  {
+   "id": "8",
+   "name": "8",
+   "short": "8",
+   "kind": "academic",
+   "codes": [
+    "8"
+   ],
+   "aliases": [
+    "MIT Building 8",
+    "Building 8"
+   ],
+   "lng": -71.090864,
+   "lat": 42.360004,
+   "osm": "way/32517839"
+  },
+  {
+   "id": "w98",
+   "name": "W98",
+   "short": "W98",
+   "kind": "academic",
+   "codes": [
+    "W98"
+   ],
+   "aliases": [
+    "Building W98"
+   ],
+   "lng": -71.106635,
+   "lat": 42.353961,
+   "osm": "way/29127337"
+  },
+  {
+   "id": "39-brown-building",
+   "name": "39 Brown Building",
+   "short": "39 Brown Building",
+   "kind": "academic",
+   "codes": [
+    "39"
+   ],
+   "aliases": [
+    "Gordon Stanley Brown Building",
+    "MIT Building 39",
+    "Brown Building"
+   ],
+   "lng": -71.092723,
+   "lat": 42.360867,
+   "osm": "way/32525350"
+  },
+  {
+   "id": "300",
+   "name": "300",
+   "short": "300",
+   "kind": "academic",
+   "codes": [
+    "NE83"
+   ],
+   "aliases": [
+    "Building NE83"
+   ],
+   "lng": -71.090833,
+   "lat": 42.366092,
+   "osm": "way/29947888"
+  },
+  {
+   "id": "9-samuel-tak-lee-building",
+   "name": "9 Samuel Tak Lee Building",
+   "short": "9 Samuel Tak Lee Building",
+   "kind": "academic",
+   "codes": [
+    "9"
+   ],
+   "aliases": [
+    "Samuel Tak Lee Building",
+    "MIT Building 9"
+   ],
+   "lng": -71.093566,
+   "lat": 42.35976,
+   "osm": "way/32499809"
+  },
+  {
+   "id": "38",
+   "name": "38",
+   "short": "38",
+   "kind": "academic",
+   "codes": [
+    "38"
+   ],
+   "aliases": [
+    "Fairchild Building",
+    "MIT Building 38",
+    "Fairchild Building (38)"
+   ],
+   "lng": -71.092341,
+   "lat": 42.361095,
+   "osm": "way/32525380"
+  },
+  {
+   "id": "700-technology-square",
+   "name": "700 Technology Square",
+   "short": "700 Technology Square",
+   "kind": "academic",
+   "codes": [
+    "NE48"
+   ],
+   "aliases": [],
+   "lng": -71.092706,
+   "lat": 42.364033,
+   "osm": "way/29650626"
+  },
+  {
+   "id": "48-parsons-lab",
+   "name": "48 Parsons Lab",
+   "short": "48 Parsons Lab",
+   "kind": "academic",
+   "codes": [
+    "48"
+   ],
+   "aliases": [
+    "Ralph M. Parsons Laboratory for Water Resources and Hydrodynamics",
+    "Ralph M. Parsons Laboratory",
+    "Parsons Laboratory"
+   ],
+   "lng": -71.090673,
+   "lat": 42.362438,
+   "osm": "way/29803755"
+  },
+  {
+   "id": "17-wright-brothers-wind-tunnel",
+   "name": "17 Wright Brothers Wind Tunnel",
+   "short": "17 Wright Brothers Wind Tunnel",
+   "kind": "academic",
+   "codes": [
+    "17"
+   ],
+   "aliases": [
+    "MIT Building 17",
+    "Wright Brothers Wind Tunnel"
+   ],
+   "lng": -71.093558,
+   "lat": 42.360198,
+   "osm": "way/1249521123"
+  },
+  {
+   "id": "33-guggenheim-lab",
+   "name": "33 Guggenheim Lab",
+   "short": "33 Guggenheim Lab",
+   "kind": "academic",
+   "codes": [
+    "33"
+   ],
+   "aliases": [
+    "The Daniel Guggenheim Aeronautical Laboratory",
+    "MIT Building 33",
+    "Guggenheim Laboratory"
+   ],
+   "lng": -71.09378,
+   "lat": 42.360138,
+   "osm": "way/32526782"
+  },
+  {
+   "id": "nw32",
+   "name": "NW32",
+   "short": "NW32",
+   "kind": "academic",
+   "codes": [
+    "NW32"
+   ],
+   "aliases": [],
+   "lng": -71.100509,
+   "lat": 42.358584,
+   "osm": "way/29680531"
+  },
+  {
+   "id": "w11-religious-activities-center",
+   "name": "W11 Religious Activities Center",
+   "short": "W11 Religious Activities Center",
+   "kind": "academic",
+   "codes": [
+    "W11"
+   ],
+   "aliases": [
+    "Building W11"
+   ],
+   "lng": -71.093533,
+   "lat": 42.358268,
+   "osm": "way/29611119"
+  },
+  {
+   "id": "e60-arthur-d-little-building",
+   "name": "E60 Arthur D. Little Building",
+   "short": "E60 Arthur D. Little Building",
+   "kind": "academic",
+   "codes": [
+    "E60"
+   ],
+   "aliases": [
+    "Arthur D. Little Building"
+   ],
+   "lng": -71.082162,
+   "lat": 42.361174,
+   "osm": "way/24494174"
+  },
+  {
+   "id": "41",
+   "name": "41",
+   "short": "41",
+   "kind": "academic",
+   "codes": [
+    "41"
+   ],
+   "aliases": [
+    "Building 41"
+   ],
+   "lng": -71.094167,
+   "lat": 42.360767,
+   "osm": "way/29569108"
+  },
+  {
+   "id": "34-eg-and-g-education-center",
+   "name": "34 EG&G Education Center",
+   "short": "34 EG&G Education Center",
+   "kind": "academic",
+   "codes": [
+    "34"
+   ],
+   "aliases": [
+    "Edgerton Germeshausen and Grier Education Center",
+    "MIT Building 34",
+    "EG&G Education Center"
+   ],
+   "lng": -71.091944,
+   "lat": 42.36115,
+   "osm": "way/32525583"
+  },
+  {
+   "id": "54-green-building",
+   "name": "54 Green Building",
+   "short": "54 Green Building",
+   "kind": "academic",
+   "codes": [
+    "54"
+   ],
+   "aliases": [
+    "MIT Building 54",
+    "Green Building"
+   ],
+   "lng": -71.08934,
+   "lat": 42.360319,
+   "osm": "way/24493983"
+  },
+  {
+   "id": "n9-superconducting-test-facility",
+   "name": "N9 Superconducting Test Facility",
+   "short": "N9 Superconducting Test Facility",
+   "kind": "academic",
+   "codes": [
+    "N9"
+   ],
+   "aliases": [
+    "Superconducting Test Facility"
+   ],
+   "lng": -71.095201,
+   "lat": 42.360957,
+   "osm": "way/29739496"
+  },
+  {
+   "id": "51-wood-sailing-pavilion",
+   "name": "51 Wood Sailing Pavilion",
+   "short": "51 Wood Sailing Pavilion",
+   "kind": "gym",
+   "codes": [
+    "51"
+   ],
+   "aliases": [
+    "MIT Building 51",
+    "Wood Sailing Pavilion"
+   ],
+   "lng": -71.08773,
+   "lat": 42.358526,
+   "osm": "way/32534638"
+  },
+  {
+   "id": "n10-high-voltage-research-lab",
+   "name": "N10 High Voltage Research Lab",
+   "short": "N10 High Voltage Research Lab",
+   "kind": "academic",
+   "codes": [
+    "N10"
+   ],
+   "aliases": [
+    "High Voltage Research Lab"
+   ],
+   "lng": -71.095451,
+   "lat": 42.360864,
+   "osm": "way/29650658"
+  },
+  {
+   "id": "11-homberg-building",
+   "name": "11 Homberg Building",
+   "short": "11 Homberg Building",
+   "kind": "academic",
+   "codes": [
+    "11"
+   ],
+   "aliases": [
+    "Homberg Building",
+    "MIT Building 11"
+   ],
+   "lng": -71.09277,
+   "lat": 42.35953,
+   "osm": "way/32517290"
+  },
+  {
+   "id": "43-plant-annex",
+   "name": "43 Plant Annex",
+   "short": "43 Plant Annex",
+   "kind": "academic",
+   "codes": [
+    "43"
+   ],
+   "aliases": [
+    "Power Plant Annex"
+   ],
+   "lng": -71.09321,
+   "lat": 42.361158,
+   "osm": "way/132601298"
+  },
+  {
+   "id": "55",
+   "name": "55",
+   "short": "55",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MIT Building 55"
+   ],
+   "lng": -71.089394,
+   "lat": 42.360439,
+   "osm": "way/1322990414"
+  },
+  {
+   "id": "7a-rotch-library",
+   "name": "7A Rotch Library",
+   "short": "7A Rotch Library",
+   "kind": "library",
+   "codes": [
+    "7A"
+   ],
+   "aliases": [
+    "MIT Building 7A",
+    "Building 7A"
+   ],
+   "lng": -71.09319,
+   "lat": 42.359506,
+   "osm": "way/435078056"
+  },
+  {
+   "id": "w15-mit-chapel",
+   "name": "W15 MIT Chapel",
+   "short": "MIT Chapel",
+   "kind": "academic",
+   "codes": [
+    "W15"
+   ],
+   "aliases": [
+    "MIT Chapel",
+    "Chapel"
+   ],
+   "lng": -71.094128,
+   "lat": 42.358331,
+   "osm": "way/24562763"
+  },
+  {
+   "id": "francis-bitter-magnet-lab",
+   "name": "Francis Bitter Magnet Lab",
+   "short": "Francis Bitter Magnet Lab",
+   "kind": "academic",
+   "codes": [
+    "NW15"
+   ],
+   "aliases": [
+    "Francis Bitter Magnet Lab (NW15)"
+   ],
+   "lng": -71.09825,
+   "lat": 42.359353,
+   "osm": "way/29650675"
+  },
+  {
+   "id": "carr-indoor-tennis-facility",
+   "name": "Carr Indoor Tennis Facility",
+   "short": "Carr Indoor Tennis Facility",
+   "kind": "academic",
+   "codes": [
+    "W53A"
+   ],
+   "aliases": [
+    "Carr Indoor Tennis Facility (Office)"
+   ],
+   "lng": -71.097349,
+   "lat": 42.356977,
+   "osm": "way/29862811"
+  },
+  {
+   "id": "dupont-tennis-courts",
+   "name": "DuPont Tennis Courts",
+   "short": "DuPont Tennis Courts",
+   "kind": "academic",
+   "codes": [
+    "W53B"
+   ],
+   "aliases": [
+    "DuPont Tennis Courts (Office)"
+   ],
+   "lng": -71.096943,
+   "lat": 42.356971,
+   "osm": "way/132601567"
+  },
+  {
+   "id": "building-ww15",
+   "name": "Building WW15",
+   "short": "Building WW15",
+   "kind": "academic",
+   "codes": [
+    "WW15"
+   ],
+   "aliases": [],
+   "lng": -71.109463,
+   "lat": 42.355375,
+   "osm": "way/29127368"
+  }
+ ]
+}
