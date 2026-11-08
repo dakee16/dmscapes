@@ -1,0 +1,8 @@
+{
+  "halls": {
+    "presidents-park": {"pin": [-77.301487, 38.829528]}
+  },
+  "notes": {
+    "presidents-park": "Presidents Park is nine halls (Adams, Harrison, Jackson, Kennedy, Lincoln, Madison, Monroe, Truman, Wilson), each its own OSM building; pinned on Truman Hall (way/114956779), the one nearest their middle."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collegeId": "gmu",
+  "area": {
+    "osm": "way/337509448",
+    "bbox": [
+      38.82409,
+      -77.33018,
+      38.83856,
+      -77.29722
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/gmu.codes.json"
+  }
+}
