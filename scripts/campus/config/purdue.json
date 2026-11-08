@@ -1,0 +1,18 @@
+{
+  "collegeId": "purdue",
+  "area": {
+    "osm": "relation/12444296",
+    "bbox": [
+      40.413,
+      -86.936,
+      40.446,
+      -86.904
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/purdue.codes.json"
+  },
+  "areaNote": "bbox trimmed to the West Lafayette main campus (halls, classes, Discovery Park); the outline relation also covers the airport, farms and golf courses."
+}

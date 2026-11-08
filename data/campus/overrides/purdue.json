@@ -1,0 +1,82 @@
+{
+  "halls": {
+    "tarkington": {
+      "pin": [
+        -86.920676,
+        40.430588
+      ]
+    },
+    "honors-college": {
+      "pin": [
+        -86.919686,
+        40.426799
+      ]
+    },
+    "hilltop": {
+      "pin": [
+        -86.921936,
+        40.434225
+      ]
+    },
+    "south-hall": {
+      "pin": [
+        -86.92688,
+        40.425945
+      ]
+    }
+  },
+  "codes": {
+    "BRNG": "way/117147176",
+    "LWSN": "way/159752222",
+    "SCHM": "way/117147167",
+    "PRCE": "way/309492284",
+    "UNIV": "way/158307901",
+    "CONV": "way/803755067",
+    "BRES": "way/128488702",
+    "LILY": "way/117396614",
+    "WSLR": "way/117396619",
+    "MRRT": "way/159752224",
+    "HANS": "relation/12701379"
+  },
+  "notes": {
+    "tarkington": "OSM 'Tarkington (Newton Booth) Residence Hall (TARK)' (relation/12647702); the code in its OSM name kept the name rules from matching.",
+    "honors-college": "OSM 'Honors College and Residences North' (way/470285119, housenumber 1101), the school's address 1101 Third Street; South (HCRS) is its twin across the courtyard.",
+    "hilltop": "Purdue's buildings layer (https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/Purdue_Buildings/FeatureServer/0) has 'Hilltop Apartment 23' at 23 Hilltop Drive, the school's address (23-5 Hilltop Drive); the pin is its centre. OSM has no named Hilltop building.",
+    "BRNG": "OSM 'Beering Hall (BRNG)' carries the code in its name; the map list calls it Beering (Steven C.) Hall of Liberal Arts and Education.",
+    "LWSN": "OSM 'Lawson Hall (LWSN)'; the map list calls it Lawson (Richard and Patricia) Computer Science Building.",
+    "SCHM": "OSM 'Schleman Hall (SCHM)'.",
+    "PRCE": "OSM 'Pierce Hall (PRCE)' is the list's Peirce Hall.",
+    "UNIV": "OSM 'University Hall (UNIV)'.",
+    "CONV": "OSM 'Convergence Center for Innovation and Collaboration (CONV)'; the list says Convergence.",
+    "BRES": "OSM 'Drew and Brittany Brees Student-Athletic Academic Center (BRES)'.",
+    "LILY": "OSM 'Lilly Hall' is the list's Lilly Hall of Life Sciences.",
+    "WSLR": "OSM 'Whistler Hall' is the list's Whistler (Roy L.) Hall of Agricultural Research.",
+    "MRRT": "OSM 'Marriot Hall' (sic) is the list's Marriott Hall.",
+    "HANS": "OSM 'Hansen Hall' is the list's Hansen (Arthur G.) Life Sciences Research Building.",
+    "the-pete-dye-clubhouse": "Golf clubhouse at the Birck Boilermaker Golf Complex, not a class or meal place.",
+    "south-hall": "South Hall opens fall 2026; OSM maps its site as landuse=construction 'South Hall' at 300 McCutcheon Drive (way/1315532367, no building yet), and the pin is that site's middle. The word rule had picked Honors College and Residences South."
+  },
+  "places": {
+    "the-pete-dye-clubhouse": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "harrison -> convergence-center-for-innovation-and-collaboration-conv",
+        "mccutcheon -> convergence-center-for-innovation-and-collaboration-conv",
+        "south-hall -> convergence-center-for-innovation-and-collaboration-conv"
+      ],
+      "maxRatio": 4.0,
+      "why": "Convergence's only mapped way in is its service drive from the south; no mapped path leads to it from State Street on its north side, so walks from the halls across State Street go round by the road to its east."
+    },
+    {
+      "pairs": [
+        "shreve -> hull-all-american-marching-band-complex"
+      ],
+      "maxRatio": 3.0,
+      "why": "The fire station's yard lies between Shreve and the band complex with no mapped path across, so walks go round by the road on its east side."
+    }
+  ]
+}
