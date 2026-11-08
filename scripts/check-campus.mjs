@@ -133,8 +133,10 @@ for (const id of ids) {
       const len = length(pts);
       if (len > walked + 10 || len < walked / 1.5 - 10) issues["every hall has a path to every place"].push(`${pair}: path ${Math.round(len)} m vs ${Math.round(walked)} m walked`);
       // Under 100 m apart, one corner turned doubles the ratio, so those pairs aren't judged.
+      // The low end allows the same 8 m of minute rounding as the path check: a dead-straight
+      // 109 m walk stored as 1.3 minutes reads 105 m, which is rounding, not a shortcut.
       const ratio = walked / straight;
-      if (straight >= 100 && !(ratio >= 1 && ratio <= 2.5)) {
+      if (straight >= 100 && (walked + 8 < straight || ratio > 2.5)) {
         const detour = ratio > 2.5 ? detours.get(pair) : undefined;
         if (detour) usedDetours.add(pair);
         if (!detour || ratio > detour.maxRatio) issues["walking ÷ straight-line is 1.0–2.5"].push(`${pair} ${ratio.toFixed(2)} (${Math.round(walked)} m / ${Math.round(straight)} m)${detour ? ` over its allowed ${detour.maxRatio}` : ""}`);
