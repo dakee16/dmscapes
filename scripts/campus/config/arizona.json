@@ -1,0 +1,27 @@
+{
+  "collegeId": "arizona",
+  "area": {
+    "osm": "relation/6044244",
+    "bbox": [
+      32.21423,
+      -110.97776,
+      32.24365,
+      -110.93526
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "title": "University of Arizona Planning, Design & Construction campus map, BuildingLabels layer (names, SIS abbreviations, map labels and aliases)",
+    "url": "https://services.maps.arizona.edu/pdc/rest/services/campus_features/MapServer/29",
+    "arcgis": "https://services.maps.arizona.edu/pdc/rest/services/campus_features/MapServer/29",
+    "fields": {
+      "name": "Name",
+      "code": "SISAbbrev",
+      "aliases": [
+        "CartoName",
+        "AliasName"
+      ]
+    }
+  }
+}

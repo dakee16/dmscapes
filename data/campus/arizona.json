@@ -1,0 +1,2891 @@
+{
+ "collegeId": "arizona",
+ "generatedAt": "2026-11-08T16:57:54.691Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "University of Arizona Planning, Design & Construction campus map, BuildingLabels layer (names, SIS abbreviations, map labels and aliases)",
+   "url": "https://services.maps.arizona.edu/pdc/rest/services/campus_features/MapServer/29",
+   "use": "building codes and aliases",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/arizona.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -110.9731,
+  32.22305,
+  -110.94279,
+  32.24112
+ ],
+ "halls": [
+  {
+   "dormId": "apache-santa-cruz",
+   "name": "Apache-Santa Cruz",
+   "lng": -110.950543,
+   "lat": 32.228714,
+   "pin": "name",
+   "osm": "way/946319592",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center-expansion",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "albert-b-weaver-science-engineering-library",
+     "minutes": 3.8
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 4.4
+    }
+   }
+  },
+  {
+   "dormId": "arbol-de-la-vida",
+   "name": "Árbol de la Vida",
+   "lng": -110.958596,
+   "lat": 32.228335,
+   "pin": "name",
+   "osm": "relation/14675974",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center-expansion",
+     "minutes": 12.5
+    },
+    "library": {
+     "placeId": "udall-center-library-and-annex",
+     "minutes": 9.8
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 11.2
+    }
+   }
+  },
+  {
+   "dormId": "arizona-sonora",
+   "name": "Arizona-Sonora",
+   "lng": -110.95718,
+   "lat": 32.22859,
+   "pin": "name",
+   "osm": "way/946230291",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 11.1
+    },
+    "library": {
+     "placeId": "udall-center-library-and-annex",
+     "minutes": 9.8
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 9
+    }
+   }
+  },
+  {
+   "dormId": "cochise",
+   "name": "Cochise",
+   "lng": -110.955789,
+   "lat": 32.230434,
+   "pin": "name",
+   "osm": "way/32975324",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 7.6
+    },
+    "library": {
+     "placeId": "albert-b-weaver-science-engineering-library",
+     "minutes": 7.3
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 5.2
+    }
+   }
+  },
+  {
+   "dormId": "coconino",
+   "name": "Coconino",
+   "lng": -110.955473,
+   "lat": 32.234188,
+   "pin": "name",
+   "osm": "way/34156292",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "university-of-arizona-recreation-and-wellness-center",
+     "minutes": 7.7
+    },
+    "library": {
+     "placeId": "udall-center-library-and-annex",
+     "minutes": 5.5
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 7.7
+    }
+   }
+  },
+  {
+   "dormId": "colonia-de-la-paz",
+   "name": "Colonia de la Paz",
+   "lng": -110.950706,
+   "lat": 32.229414,
+   "pin": "name",
+   "osm": "relation/2908360",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 3.1
+    },
+    "library": {
+     "placeId": "albert-b-weaver-science-engineering-library",
+     "minutes": 2.8
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 3.4
+    }
+   }
+  },
+  {
+   "dormId": "coronado",
+   "name": "Coronado",
+   "lng": -110.958707,
+   "lat": 32.228752,
+   "pin": "name",
+   "osm": "way/33245127",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 12.8
+    },
+    "library": {
+     "placeId": "udall-center-library-and-annex",
+     "minutes": 9.3
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 10.7
+    }
+   }
+  },
+  {
+   "dormId": "gila",
+   "name": "Gila",
+   "lng": -110.95589,
+   "lat": 32.233446,
+   "pin": "name",
+   "osm": "way/34125273",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 9
+    },
+    "library": {
+     "placeId": "udall-center-library-and-annex",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 6.7
+    }
+   }
+  },
+  {
+   "dormId": "graham-greenlee",
+   "name": "Graham-Greenlee",
+   "lng": -110.950553,
+   "lat": 32.23004,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 3
+    },
+    "library": {
+     "placeId": "albert-b-weaver-science-engineering-library",
+     "minutes": 2.7
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 3.3
+    }
+   }
+  },
+  {
+   "dormId": "honors-village",
+   "name": "Honors Village",
+   "lng": -110.954568,
+   "lat": 32.239111,
+   "pin": "name",
+   "osm": "relation/20438270",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "university-of-arizona-recreation-and-wellness-center",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "udall-center-library-and-annex",
+     "minutes": 11.2
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 13.8
+    }
+   }
+  },
+  {
+   "dormId": "hopi",
+   "name": "Hopi",
+   "lng": -110.949888,
+   "lat": 32.230054,
+   "pin": "name",
+   "osm": "way/34124123",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "albert-b-weaver-science-engineering-library",
+     "minutes": 3.7
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 4.3
+    }
+   }
+  },
+  {
+   "dormId": "kaibab-huachuca",
+   "name": "Kaibab-Huachuca",
+   "lng": -110.957325,
+   "lat": 32.229958,
+   "pin": "name",
+   "osm": "way/33197588",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 9.7
+    },
+    "library": {
+     "placeId": "udall-center-library-and-annex",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 7.3
+    }
+   }
+  },
+  {
+   "dormId": "likins",
+   "name": "Likins",
+   "lng": -110.950461,
+   "lat": 32.228221,
+   "pin": "name",
+   "osm": "way/233461357",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center-expansion",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "albert-b-weaver-science-engineering-library",
+     "minutes": 4.8
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 5.4
+    }
+   }
+  },
+  {
+   "dormId": "manzanita-mohave",
+   "name": "Manzanita-Mohave",
+   "lng": -110.956407,
+   "lat": 32.234323,
+   "pin": "manual",
+   "osm": "way/34156275",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "university-of-arizona-recreation-and-wellness-center",
+     "minutes": 8.6
+    },
+    "library": {
+     "placeId": "udall-center-library-and-annex",
+     "minutes": 4.2
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 8.7
+    }
+   }
+  },
+  {
+   "dormId": "maricopa",
+   "name": "Maricopa",
+   "lng": -110.955145,
+   "lat": 32.233445,
+   "pin": "name",
+   "osm": "way/34125202",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 8.3
+    },
+    "library": {
+     "placeId": "udall-center-library-and-annex",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 6
+    }
+   }
+  },
+  {
+   "dormId": "navajo-pinal-stadium",
+   "name": "Navajo-Pinal (Stadium)",
+   "lng": -110.94884,
+   "lat": 32.228055,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center-expansion",
+     "minutes": 2.9
+    },
+    "library": {
+     "placeId": "albert-b-weaver-science-engineering-library",
+     "minutes": 7.1
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 7.7
+    }
+   }
+  },
+  {
+   "dormId": "pima",
+   "name": "Pima",
+   "lng": -110.95147,
+   "lat": 32.234559,
+   "pin": "name",
+   "osm": "way/34228231",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 6
+    },
+    "library": {
+     "placeId": "school-of-information-resources-and-library-science",
+     "minutes": 5.5
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 7.3
+    }
+   }
+  },
+  {
+   "dormId": "posada-san-pedro",
+   "name": "Posada San Pedro",
+   "lng": -110.951426,
+   "lat": 32.229226,
+   "pin": "name",
+   "osm": "relation/3924367",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 4.5
+    },
+    "library": {
+     "placeId": "albert-b-weaver-science-engineering-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "pueblo-de-la-cienega",
+   "name": "Pueblo de la Cienega",
+   "lng": -110.951423,
+   "lat": 32.229756,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 3.3
+    },
+    "library": {
+     "placeId": "albert-b-weaver-science-engineering-library",
+     "minutes": 3.1
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 3.5
+    }
+   }
+  },
+  {
+   "dormId": "villa-del-puente",
+   "name": "Villa del Puente",
+   "lng": -110.951421,
+   "lat": 32.228712,
+   "pin": "manual",
+   "osm": "relation/2908362",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "student-recreation-center-expansion",
+     "minutes": 4.3
+    },
+    "library": {
+     "placeId": "albert-b-weaver-science-engineering-library",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "yavapai",
+   "name": "Yavapai",
+   "lng": -110.953892,
+   "lat": 32.230398,
+   "pin": "name",
+   "osm": "way/32975401",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 5.2
+    },
+    "library": {
+     "placeId": "albert-b-weaver-science-engineering-library",
+     "minutes": 5
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 2.8
+    }
+   }
+  },
+  {
+   "dormId": "yuma",
+   "name": "Yuma",
+   "lng": -110.954385,
+   "lat": 32.233448,
+   "pin": "name",
+   "osm": "way/34125196",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "bear-down-gymnasium",
+     "minutes": 7.3
+    },
+    "library": {
+     "placeId": "udall-center-library-and-annex",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "the-commons",
+     "minutes": 5.3
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "banner-university-medical-center-tucson",
+   "name": "Banner University Medical Center Tucson",
+   "short": "Arizona Health Science Center",
+   "kind": "academic",
+   "codes": [
+    "AHSC",
+    "CAN C"
+   ],
+   "aliases": [
+    "Arizona Health Science Center",
+    "Medical Center",
+    "Arizona Health Sciences Center",
+    "Salmon Building",
+    "Sydney E. Salmon Building",
+    "Levy Cancer Center",
+    "Leon Levy Cancer Center",
+    "Steele",
+    "Steele Children's Research Center"
+   ],
+   "lng": -110.945894,
+   "lat": 32.241125,
+   "osm": "way/457429653"
+  },
+  {
+   "id": "mckale-memorial-center",
+   "name": "McKale Memorial Center",
+   "short": "McKale Center",
+   "kind": "academic",
+   "codes": [
+    "MCKAL"
+   ],
+   "aliases": [
+    "McKale Center",
+    "Basketball Arena",
+    "McKale Center at ALKEME Arena",
+    "Lynch Pavilion",
+    "Eddie Lynch Athletics Pavilion"
+   ],
+   "lng": -110.945992,
+   "lat": 32.230436,
+   "osm": "way/113835570"
+  },
+  {
+   "id": "student-union-memorial-center",
+   "name": "Student Union Memorial Center",
+   "short": "Student Union",
+   "kind": "academic",
+   "codes": [
+    "S U",
+    "SUBK"
+   ],
+   "aliases": [
+    "SUMC",
+    "Student Union",
+    "Campus Store",
+    "Student Union Memorial Center - Campus Store"
+   ],
+   "lng": -110.952145,
+   "lat": 32.232615,
+   "osm": "relation/13794753"
+  },
+  {
+   "id": "manuel-pacheco-integrated-learning-center",
+   "name": "Manuel Pacheco Integrated Learning Center",
+   "short": "Pacheco ILC",
+   "kind": "academic",
+   "codes": [
+    "ILC"
+   ],
+   "aliases": [
+    "Pacheco ILC"
+   ],
+   "lng": -110.949511,
+   "lat": 32.231834,
+   "osm": "way/32968977"
+  },
+  {
+   "id": "student-recreation-center",
+   "name": "Student Recreation Center",
+   "short": "Student Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -110.950109,
+   "lat": 32.227216,
+   "osm": "way/32921223"
+  },
+  {
+   "id": "main-library",
+   "name": "Main Library",
+   "short": "Main Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Main Library Expansion"
+   ],
+   "lng": -110.948966,
+   "lat": 32.231047,
+   "osm": "way/32968917"
+  },
+  {
+   "id": "cole-and-jeannie-davis-sports-center",
+   "name": "Cole and Jeannie Davis Sports Center",
+   "short": "Davis Indoor Sports Center",
+   "kind": "gym",
+   "codes": [
+    "ISC"
+   ],
+   "aliases": [
+    "Davis Indoor Sports Center",
+    "ISC"
+   ],
+   "lng": -110.946635,
+   "lat": 32.228609,
+   "osm": "way/1028536584"
+  },
+  {
+   "id": "mcclelland-hall",
+   "name": "McClelland Hall",
+   "short": "McClelland",
+   "kind": "academic",
+   "codes": [
+    "MCLND"
+   ],
+   "aliases": [
+    "McClelland",
+    "Eller"
+   ],
+   "lng": -110.954406,
+   "lat": 32.23684,
+   "osm": "relation/132433"
+  },
+  {
+   "id": "music",
+   "name": "Music",
+   "short": "Music",
+   "kind": "academic",
+   "codes": [
+    "MUS"
+   ],
+   "aliases": [
+    "Music Addition"
+   ],
+   "lng": -110.955665,
+   "lat": 32.234732,
+   "osm": "way/34156331"
+  },
+  {
+   "id": "law",
+   "name": "Law",
+   "short": "College of Law",
+   "kind": "academic",
+   "codes": [
+    "LAW"
+   ],
+   "aliases": [
+    "College of Law",
+    "College Of Law Building",
+    "James E. Rogers College of Law"
+   ],
+   "lng": -110.953132,
+   "lat": 32.236397,
+   "osm": "relation/132442"
+  },
+  {
+   "id": "student-recreation-center-expansion",
+   "name": "Student Recreation Center Expansion",
+   "short": "Student Rec Expansion",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Student Rec Expansion"
+   ],
+   "lng": -110.949182,
+   "lat": 32.227138,
+   "osm": "way/876252882"
+  },
+  {
+   "id": "michael-j-drake-building",
+   "name": "Michael J Drake Building",
+   "short": "Drake Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Drake Building"
+   ],
+   "lng": -110.969393,
+   "lat": 32.240058,
+   "osm": "way/452531920"
+  },
+  {
+   "id": "arizona-history-museum",
+   "name": "Arizona History Museum",
+   "short": "Arizona History Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Arizona Historical Society Building"
+   ],
+   "lng": -110.957412,
+   "lat": 32.233388,
+   "osm": "relation/143958"
+  },
+  {
+   "id": "electrical-and-computer-engineering",
+   "name": "Electrical and Computer Engineering",
+   "short": "ECE",
+   "kind": "academic",
+   "codes": [
+    "ECE"
+   ],
+   "aliases": [
+    "ECE"
+   ],
+   "lng": -110.953275,
+   "lat": 32.235308,
+   "osm": "way/34156999"
+  },
+  {
+   "id": "environmental-and-natural-resources-2",
+   "name": "Environmental and Natural Resources 2",
+   "short": "ENR2",
+   "kind": "academic",
+   "codes": [
+    "ENR2"
+   ],
+   "aliases": [
+    "ENR2",
+    "Environment and Natural Resources 2"
+   ],
+   "lng": -110.955339,
+   "lat": 32.228224,
+   "osm": "relation/5455737"
+  },
+  {
+   "id": "roy-p-drachman-hall",
+   "name": "Roy P. Drachman Hall",
+   "short": "Drachman Hall",
+   "kind": "academic",
+   "codes": [
+    "DRACH"
+   ],
+   "aliases": [
+    "Drachman Hall"
+   ],
+   "lng": -110.945941,
+   "lat": 32.23838,
+   "osm": "way/401059777"
+  },
+  {
+   "id": "gould-simpson",
+   "name": "Gould-Simpson",
+   "short": "Gould-Simpson",
+   "kind": "academic",
+   "codes": [
+    "GLD-S"
+   ],
+   "aliases": [],
+   "lng": -110.955237,
+   "lat": 32.229733,
+   "osm": "way/32928757"
+  },
+  {
+   "id": "biosciences-west",
+   "name": "Biosciences West",
+   "short": "Bio Sciences West",
+   "kind": "academic",
+   "codes": [
+    "BIO W"
+   ],
+   "aliases": [
+    "Bio Sciences West",
+    "Biological Sciences West"
+   ],
+   "lng": -110.955147,
+   "lat": 32.228963,
+   "osm": "relation/14675973"
+  },
+  {
+   "id": "old-pima-county-courthouse",
+   "name": "Old Pima County Courthouse",
+   "short": "Old Pima County Courthouse",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Alfie Norville Gem & Mineral Museum"
+   ],
+   "lng": -110.973101,
+   "lat": 32.223052,
+   "osm": "relation/139277"
+  },
+  {
+   "id": "arizona-state-museum",
+   "name": "Arizona State Museum",
+   "short": "Raymond H. Thompson",
+   "kind": "academic",
+   "codes": [
+    "AZSM"
+   ],
+   "aliases": [
+    "Raymond H. Thompson",
+    "AZSM",
+    "Raymond H. Thompson Building"
+   ],
+   "lng": -110.955767,
+   "lat": 32.23252,
+   "osm": "way/32974694"
+  },
+  {
+   "id": "aerospace-and-mechanical-engineering",
+   "name": "Aerospace and Mechanical Engineering",
+   "short": "AME",
+   "kind": "academic",
+   "codes": [
+    "AME"
+   ],
+   "aliases": [
+    "AME"
+   ],
+   "lng": -110.951943,
+   "lat": 32.236926,
+   "osm": "way/34288705"
+  },
+  {
+   "id": "modern-languages",
+   "name": "Modern Languages",
+   "short": "Modern Languages",
+   "kind": "academic",
+   "codes": [
+    "M LNG"
+   ],
+   "aliases": [],
+   "lng": -110.950168,
+   "lat": 32.232719,
+   "osm": "way/34124666"
+  },
+  {
+   "id": "gittings",
+   "name": "Gittings",
+   "short": "Gittings",
+   "kind": "academic",
+   "codes": [
+    "GITT"
+   ],
+   "aliases": [
+    "Ina E. Gittings Building"
+   ],
+   "lng": -110.946239,
+   "lat": 32.232623,
+   "osm": "way/34124495"
+  },
+  {
+   "id": "art-and-museum-of-art",
+   "name": "Art & Museum of Art",
+   "short": "Art",
+   "kind": "academic",
+   "codes": [
+    "ART"
+   ],
+   "aliases": [
+    "Art",
+    "Art Building & Art Museum",
+    "Art Building Addition"
+   ],
+   "lng": -110.955934,
+   "lat": 32.235682,
+   "osm": "way/34156470"
+  },
+  {
+   "id": "bioscience-research-laboratories",
+   "name": "Bioscience Research Laboratories",
+   "short": "BSRL",
+   "kind": "academic",
+   "codes": [
+    "BSRL"
+   ],
+   "aliases": [
+    "BSRL"
+   ],
+   "lng": -110.947985,
+   "lat": 32.237961,
+   "osm": "way/725309136"
+  },
+  {
+   "id": "health-sciences-innovation-building",
+   "name": "Health Sciences Innovation Building",
+   "short": "HSIB",
+   "kind": "academic",
+   "codes": [
+    "HSIB"
+   ],
+   "aliases": [
+    "HSIB"
+   ],
+   "lng": -110.947209,
+   "lat": 32.23912,
+   "osm": "way/810127813"
+  },
+  {
+   "id": "physics-atmospheric-sciences",
+   "name": "Physics-Atmospheric Sciences",
+   "short": "PAS",
+   "kind": "academic",
+   "codes": [
+    "PAS"
+   ],
+   "aliases": [
+    "PAS"
+   ],
+   "lng": -110.953969,
+   "lat": 32.22977,
+   "osm": "way/32928783"
+  },
+  {
+   "id": "thomas-w-keating-bioresearch",
+   "name": "Thomas W. Keating Bioresearch",
+   "short": "Keating Bioresearch",
+   "kind": "academic",
+   "codes": [
+    "KEAT"
+   ],
+   "aliases": [
+    "BIO5",
+    "Keating Bioresearch",
+    "Thomas W. Keating Bioresearch Building"
+   ],
+   "lng": -110.947296,
+   "lat": 32.237701,
+   "osm": "way/34287167"
+  },
+  {
+   "id": "medical-research-building",
+   "name": "Medical Research Building",
+   "short": "Medical Research",
+   "kind": "academic",
+   "codes": [
+    "MRB"
+   ],
+   "aliases": [
+    "Medical Research",
+    "MRB"
+   ],
+   "lng": -110.947431,
+   "lat": 32.238381,
+   "osm": "way/34287101"
+  },
+  {
+   "id": "steward-observatory",
+   "name": "Steward Observatory",
+   "short": "Steward Observatory",
+   "kind": "academic",
+   "codes": [
+    "SO"
+   ],
+   "aliases": [
+    "Steward Addition",
+    "Steward Observatory Addition",
+    "Steward Expansion",
+    "Steward Observatory Expansion",
+    "Steward Observatory Exp I"
+   ],
+   "lng": -110.948578,
+   "lat": 32.233069,
+   "osm": "way/33196719"
+  },
+  {
+   "id": "koffler",
+   "name": "Koffler",
+   "short": "Koffler",
+   "kind": "academic",
+   "codes": [
+    "KOFFL"
+   ],
+   "aliases": [
+    "Henry Koffler Building"
+   ],
+   "lng": -110.951366,
+   "lat": 32.231114,
+   "osm": "way/33196775"
+  },
+  {
+   "id": "computer-center",
+   "name": "Computer Center",
+   "short": "Computer Center",
+   "kind": "academic",
+   "codes": [
+    "C CTR"
+   ],
+   "aliases": [
+    "UITS",
+    "CC Addition",
+    "Computer Center Addition"
+   ],
+   "lng": -110.951683,
+   "lat": 32.235655,
+   "osm": "way/34157139"
+  },
+  {
+   "id": "engineering",
+   "name": "Engineering",
+   "short": "Engineering",
+   "kind": "academic",
+   "codes": [
+    "ENGR"
+   ],
+   "aliases": [
+    "Old Engineering"
+   ],
+   "lng": -110.953354,
+   "lat": 32.232786,
+   "osm": "relation/133609"
+  },
+  {
+   "id": "university-of-arizona-global-center",
+   "name": "University of Arizona Global Center",
+   "short": "UA Global Center Expansion",
+   "kind": "academic",
+   "codes": [
+    "GLOBAL"
+   ],
+   "aliases": [
+    "UA Global Center Expansion",
+    "PSU Expansion",
+    "UA Global",
+    "UA Global Center"
+   ],
+   "lng": -110.957379,
+   "lat": 32.229447,
+   "osm": "way/32975256"
+  },
+  {
+   "id": "bear-down-gymnasium",
+   "name": "Bear Down Gymnasium",
+   "short": "Bear Down",
+   "kind": "gym",
+   "codes": [
+    "BDWN"
+   ],
+   "aliases": [
+    "Bear Down",
+    "Bear Down Building"
+   ],
+   "lng": -110.950104,
+   "lat": 32.231146,
+   "osm": "way/32974139"
+  },
+  {
+   "id": "education",
+   "name": "Education",
+   "short": "Education",
+   "kind": "academic",
+   "codes": [
+    "EDUC"
+   ],
+   "aliases": [],
+   "lng": -110.94979,
+   "lat": 32.233439,
+   "osm": "way/34124814"
+  },
+  {
+   "id": "drama-addition",
+   "name": "Drama Addition",
+   "short": "Drama Addition",
+   "kind": "academic",
+   "codes": [
+    "DRAMA"
+   ],
+   "aliases": [],
+   "lng": -110.956419,
+   "lat": 32.235148,
+   "osm": "way/34156733"
+  },
+  {
+   "id": "university-of-arizona-recreation-and-wellness-center",
+   "name": "University of Arizona Recreation and Wellness Center",
+   "short": "NorthREC",
+   "kind": "gym",
+   "codes": [
+    "NREC"
+   ],
+   "aliases": [
+    "NorthREC"
+   ],
+   "lng": -110.955585,
+   "lat": 32.2391,
+   "osm": "way/887681325"
+  },
+  {
+   "id": "social-sciences",
+   "name": "Social Sciences",
+   "short": "Social Sciences",
+   "kind": "academic",
+   "codes": [
+    "S SCI"
+   ],
+   "aliases": [],
+   "lng": -110.954308,
+   "lat": 32.231141,
+   "osm": "way/32974549"
+  },
+  {
+   "id": "albert-b-weaver-science-engineering-library",
+   "name": "Albert B. Weaver Science Engineering Library",
+   "short": "Science - Eng. Library",
+   "kind": "library",
+   "codes": [
+    "WSEL"
+   ],
+   "aliases": [
+    "Science - Eng. Library"
+   ],
+   "lng": -110.950684,
+   "lat": 32.231121,
+   "osm": "way/32974246"
+  },
+  {
+   "id": "babcock-residence-hall",
+   "name": "Babcock Residence Hall",
+   "short": "Babcock Hall B",
+   "kind": "academic",
+   "codes": [
+    "BABC"
+   ],
+   "aliases": [
+    "Babcock Hall B",
+    "Babcock Residence Hall B",
+    "Babcock Hall E",
+    "Babcock Residence Hall E",
+    "Babcock Office C",
+    "Babcock Office Building C",
+    "Babcock Hall F",
+    "Babcock Residence Hall F",
+    "Babcock Office D",
+    "Babcock Office Building D"
+   ],
+   "lng": -110.945604,
+   "lat": 32.236932,
+   "osm": "relation/20438271"
+  },
+  {
+   "id": "harvill",
+   "name": "Harvill",
+   "short": "Harvill",
+   "kind": "academic",
+   "codes": [
+    "HARV"
+   ],
+   "aliases": [
+    "Richard A. Harvill Building"
+   ],
+   "lng": -110.954534,
+   "lat": 32.234394,
+   "osm": "way/34156881"
+  },
+  {
+   "id": "kuiper-space-sciences",
+   "name": "Kuiper Space Sciences",
+   "short": "Kuiper Addition",
+   "kind": "academic",
+   "codes": [
+    "SP SC"
+   ],
+   "aliases": [
+    "Kuiper Addition",
+    "Gerard P. Kuiper Space Sciences Addition",
+    "Kuiper",
+    "Gerard P. Kuiper Space Sciences"
+   ],
+   "lng": -110.947123,
+   "lat": 32.232488,
+   "osm": "way/34124532"
+  },
+  {
+   "id": "visual-arts-graduate-research-laboratory",
+   "name": "Visual Arts Graduate Research Laboratory",
+   "short": "Visual Arts Research Studios",
+   "kind": "academic",
+   "codes": [
+    "VARS"
+   ],
+   "aliases": [
+    "Visual Arts Research Studios"
+   ],
+   "lng": -110.955674,
+   "lat": 32.238271,
+   "osm": "way/34319012"
+  },
+  {
+   "id": "meinel-optical-sciences",
+   "name": "Meinel Optical Sciences",
+   "short": "Meinel Optical Sciences",
+   "kind": "academic",
+   "codes": [
+    "OPTI"
+   ],
+   "aliases": [
+    "Meinel Optical Sciences Addition",
+    "Meinel",
+    "Meinel Optical Sciences Addition I"
+   ],
+   "lng": -110.946952,
+   "lat": 32.231303,
+   "osm": "way/33076959"
+  },
+  {
+   "id": "bear-down-beach",
+   "name": "Bear Down Beach",
+   "short": "Bear Down Beach",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -110.944712,
+   "lat": 32.229212,
+   "osm": "way/1091731840"
+  },
+  {
+   "id": "schaefer-poetry-center",
+   "name": "Schaefer Poetry Center",
+   "short": "Helen S. Schaefer",
+   "kind": "academic",
+   "codes": [
+    "POET"
+   ],
+   "aliases": [
+    "Helen S. Schaefer",
+    "Poetry Center",
+    "Helen S. Schaefer Building"
+   ],
+   "lng": -110.9494,
+   "lat": 32.236988,
+   "osm": "way/376169707"
+  },
+  {
+   "id": "richard-jefferson-gymnasium",
+   "name": "Richard Jefferson Gymnasium",
+   "short": "Jefferson",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Jefferson"
+   ],
+   "lng": -110.944641,
+   "lat": 32.230978,
+   "osm": "way/946380318"
+  },
+  {
+   "id": "university-services-building",
+   "name": "University Services Building",
+   "short": "University Services",
+   "kind": "academic",
+   "codes": [
+    "USB"
+   ],
+   "aliases": [
+    "University Services",
+    "Main Gate-USB"
+   ],
+   "lng": -110.959051,
+   "lat": 32.232546,
+   "osm": "way/34552757"
+  },
+  {
+   "id": "old-main",
+   "name": "Old Main",
+   "short": "Old Main",
+   "kind": "academic",
+   "codes": [
+    "OLDMN"
+   ],
+   "aliases": [],
+   "lng": -110.953448,
+   "lat": 32.231878,
+   "osm": "way/32929671"
+  },
+  {
+   "id": "nursing",
+   "name": "Nursing",
+   "short": "Nursing",
+   "kind": "academic",
+   "codes": [
+    "NURS"
+   ],
+   "aliases": [],
+   "lng": -110.945639,
+   "lat": 32.239068,
+   "osm": "relation/131142"
+  },
+  {
+   "id": "biological-sciences-east",
+   "name": "Biological Sciences East",
+   "short": "Bio Sciences East",
+   "kind": "academic",
+   "codes": [
+    "BIO E"
+   ],
+   "aliases": [
+    "Bio Sciences East"
+   ],
+   "lng": -110.951475,
+   "lat": 32.230387,
+   "osm": "way/32974260"
+  },
+  {
+   "id": "john-p-schaefer-center-for-creative-photography",
+   "name": "John P. Schaefer Center for Creative Photography",
+   "short": "Schaefer Creative Photography",
+   "kind": "academic",
+   "codes": [
+    "CCP"
+   ],
+   "aliases": [
+    "CCP",
+    "Schaefer Creative Photography"
+   ],
+   "lng": -110.954628,
+   "lat": 32.23505,
+   "osm": "way/34156917"
+  },
+  {
+   "id": "forbes-building-college-of-agriculture-and-life-sciences",
+   "name": "Forbes Building - College of Agriculture and Life Sciences",
+   "short": "Forbes",
+   "kind": "academic",
+   "codes": [
+    "FORBS"
+   ],
+   "aliases": [
+    "Forbes",
+    "Agriculture"
+   ],
+   "lng": -110.953416,
+   "lat": 32.230974,
+   "osm": "way/32974487"
+  },
+  {
+   "id": "ahsc-library",
+   "name": "AHSC Library",
+   "short": "AHSC Library",
+   "kind": "library",
+   "codes": [
+    "AHSC"
+   ],
+   "aliases": [
+    "Health Sciences Library",
+    "Arizona Health Sciences Center Library"
+   ],
+   "lng": -110.946747,
+   "lat": 32.239977,
+   "osm": "way/401061317"
+  },
+  {
+   "id": "life-sciences-south",
+   "name": "Life Sciences South",
+   "short": "Life Sciences South",
+   "kind": "academic",
+   "codes": [
+    "LSS"
+   ],
+   "aliases": [],
+   "lng": -110.95616,
+   "lat": 32.228936,
+   "osm": "way/32928691"
+  },
+  {
+   "id": "life-sciences-north",
+   "name": "Life Sciences North",
+   "short": "Life Sciences North",
+   "kind": "academic",
+   "codes": [
+    "LSN"
+   ],
+   "aliases": [],
+   "lng": -110.945601,
+   "lat": 32.23962,
+   "osm": "way/401061323"
+  },
+  {
+   "id": "veterinary-sciences-and-microbiology",
+   "name": "Veterinary Sciences & Microbiology",
+   "short": "Animal & Comp Bio Sciences",
+   "kind": "academic",
+   "codes": [
+    "ACBS"
+   ],
+   "aliases": [
+    "Animal & Comp Bio Sciences",
+    "Animal and Comparative Biomedical Sciences"
+   ],
+   "lng": -110.9539,
+   "lat": 32.229027,
+   "osm": "way/32928852"
+  },
+  {
+   "id": "eller-theater",
+   "name": "Eller Theater",
+   "short": "Eller Theater",
+   "kind": "academic",
+   "codes": [
+    "DNC"
+   ],
+   "aliases": [
+    "Stevie Eller Dance Theatre"
+   ],
+   "lng": -110.945661,
+   "lat": 32.232768,
+   "osm": "way/34124449"
+  },
+  {
+   "id": "civil-engineering",
+   "name": "Civil Engineering",
+   "short": "Civil Eng.",
+   "kind": "academic",
+   "codes": [
+    "CE"
+   ],
+   "aliases": [
+    "Civil Eng.",
+    "Engineering College"
+   ],
+   "lng": -110.953163,
+   "lat": 32.234366,
+   "osm": "way/34157050"
+  },
+  {
+   "id": "marshall",
+   "name": "Marshall",
+   "short": "Marshall",
+   "kind": "academic",
+   "codes": [
+    "MRSHL"
+   ],
+   "aliases": [
+    "Louise Foucar Marshall Building"
+   ],
+   "lng": -110.957104,
+   "lat": 32.232618,
+   "osm": "way/34553765"
+  },
+  {
+   "id": "psychology",
+   "name": "Psychology",
+   "short": "Psychology",
+   "kind": "academic",
+   "codes": [
+    "PSYCH"
+   ],
+   "aliases": [],
+   "lng": -110.949232,
+   "lat": 32.232596,
+   "osm": "way/34124635"
+  },
+  {
+   "id": "sonett-space-sciences",
+   "name": "Sonett Space Sciences",
+   "short": "Sonett",
+   "kind": "academic",
+   "codes": [
+    "SONTT"
+   ],
+   "aliases": [
+    "Sonett",
+    "Charles P. Sonett Space Sciences Building"
+   ],
+   "lng": -110.948564,
+   "lat": 32.232449,
+   "osm": "way/33141483"
+  },
+  {
+   "id": "college-of-architecture-planning-and-landscape-architecture-west",
+   "name": "College of Architecture, Planning, And Landscape Architecture - West",
+   "short": "CAPLA West",
+   "kind": "academic",
+   "codes": [
+    "CAPLA"
+   ],
+   "aliases": [
+    "CAPLA West",
+    "CAPLA"
+   ],
+   "lng": -110.954676,
+   "lat": 32.235572,
+   "osm": "way/34156921"
+  },
+  {
+   "id": "john-w-harshbarger-building",
+   "name": "John W. Harshbarger Building",
+   "short": "Harshbarger",
+   "kind": "academic",
+   "codes": [
+    "HARSH"
+   ],
+   "aliases": [
+    "Harshbarger"
+   ],
+   "lng": -110.953616,
+   "lat": 32.233473,
+   "osm": "way/33196683"
+  },
+  {
+   "id": "chemistry",
+   "name": "Chemistry",
+   "short": "Chemistry",
+   "kind": "academic",
+   "codes": [
+    "CHEM"
+   ],
+   "aliases": [
+    "Old Chemistry"
+   ],
+   "lng": -110.952024,
+   "lat": 32.231262,
+   "osm": "way/33196800"
+  },
+  {
+   "id": "family-and-consumer-sciences",
+   "name": "Family & Consumer Sciences",
+   "short": "Saguaro",
+   "kind": "academic",
+   "codes": [
+    "SAGHA"
+   ],
+   "aliases": [
+    "Saguaro Hall",
+    "Saguaro",
+    "FCS"
+   ],
+   "lng": -110.954454,
+   "lat": 32.230393,
+   "osm": "relation/2908363"
+  },
+  {
+   "id": "university-of-arizona-police",
+   "name": "University of Arizona Police",
+   "short": "Police",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Police",
+    "UAPD",
+    "Police Department"
+   ],
+   "lng": -110.944442,
+   "lat": 32.23458,
+   "osm": "relation/3311334"
+  },
+  {
+   "id": "mcclelland-park",
+   "name": "McClelland Park",
+   "short": "McClelland Park",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Norton School"
+   ],
+   "lng": -110.956311,
+   "lat": 32.229812,
+   "osm": "way/33197518"
+  },
+  {
+   "id": "pharmacy",
+   "name": "Pharmacy",
+   "short": "Skaggs",
+   "kind": "academic",
+   "codes": [
+    "PHARM"
+   ],
+   "aliases": [
+    "Skaggs",
+    "Skaggs Pharmaceutical Sciences Center"
+   ],
+   "lng": -110.946426,
+   "lat": 32.238987,
+   "osm": "way/34197140"
+  },
+  {
+   "id": "shantz",
+   "name": "Shantz",
+   "short": "Shantz",
+   "kind": "academic",
+   "codes": [
+    "SHNTZ"
+   ],
+   "aliases": [],
+   "lng": -110.952705,
+   "lat": 32.230368,
+   "osm": "way/32974310"
+  },
+  {
+   "id": "marley",
+   "name": "Marley",
+   "short": "Marley",
+   "kind": "academic",
+   "codes": [
+    "MRLY"
+   ],
+   "aliases": [],
+   "lng": -110.953314,
+   "lat": 32.23041,
+   "osm": "way/32943653"
+  },
+  {
+   "id": "bartelett-academic-success-center",
+   "name": "Bartelett Academic Success Center",
+   "short": "Bartlett Academic Success Center",
+   "kind": "academic",
+   "codes": [
+    "BASC"
+   ],
+   "aliases": [
+    "Bartlett Academic Success Center",
+    "BASC"
+   ],
+   "lng": -110.949968,
+   "lat": 32.230626,
+   "osm": "way/1047701494"
+  },
+  {
+   "id": "marvin-d-swede-johnson",
+   "name": "Marvin D. Swede Johnson",
+   "short": "Swede Johnson",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Swede Johnson",
+    "Alumni",
+    "Marvin D. 'Swede' Johnson Building"
+   ],
+   "lng": -110.948678,
+   "lat": 32.236508,
+   "osm": "way/34238526"
+  },
+  {
+   "id": "drama",
+   "name": "Drama",
+   "short": "Drama",
+   "kind": "academic",
+   "codes": [
+    "DRAMA"
+   ],
+   "aliases": [
+    "Marroney Theatre"
+   ],
+   "lng": -110.955838,
+   "lat": 32.23527,
+   "osm": "way/34156379"
+  },
+  {
+   "id": "administration",
+   "name": "Administration",
+   "short": "Admin",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Admin"
+   ],
+   "lng": -110.950949,
+   "lat": 32.232734,
+   "osm": "way/32974858"
+  },
+  {
+   "id": "economics",
+   "name": "Economics",
+   "short": "Economics",
+   "kind": "academic",
+   "codes": [
+    "ECON"
+   ],
+   "aliases": [],
+   "lng": -110.954207,
+   "lat": 32.232622,
+   "osm": "way/32974753"
+  },
+  {
+   "id": "flandrau-planetarium",
+   "name": "Flandrau Planetarium",
+   "short": "Flandrau",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Flandrau",
+    "Flandrau Science Center & Planetarium"
+   ],
+   "lng": -110.947708,
+   "lat": 32.232432,
+   "osm": "way/33076861"
+  },
+  {
+   "id": "college-of-architecture-planning-and-landscape-architecture-west-34156941",
+   "name": "College of Architecture, Planning, And Landscape Architecture - West",
+   "short": "CAPLA East",
+   "kind": "academic",
+   "codes": [
+    "CAPLA"
+   ],
+   "aliases": [
+    "CAPLA East",
+    "Landscape Arch",
+    "College of Architecture, Planning, and Landscape Architecture - East"
+   ],
+   "lng": -110.954083,
+   "lat": 32.235659,
+   "osm": "way/34156941"
+  },
+  {
+   "id": "central-refrigeration-plant",
+   "name": "Central Refrigeration Plant",
+   "short": "CRP",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CRP"
+   ],
+   "lng": -110.951651,
+   "lat": 32.237701,
+   "osm": "way/34865411"
+  },
+  {
+   "id": "sarver-heart-center",
+   "name": "Sarver Heart Center",
+   "short": "Sarver",
+   "kind": "academic",
+   "codes": [
+    "SHC"
+   ],
+   "aliases": [
+    "Sarver"
+   ],
+   "lng": -110.946298,
+   "lat": 32.239717,
+   "osm": "way/401061320"
+  },
+  {
+   "id": "mary-roby-gymnastics-training-center",
+   "name": "Mary Roby Gymnastics Training Center",
+   "short": "Roby Gym",
+   "kind": "gym",
+   "codes": [
+    "MCKAL"
+   ],
+   "aliases": [
+    "Roby Gym"
+   ],
+   "lng": -110.944931,
+   "lat": 32.230612,
+   "osm": "way/946380319"
+  },
+  {
+   "id": "mines-and-metallurgy",
+   "name": "Mines and Metallurgy",
+   "short": "Mines  And Metallurgy",
+   "kind": "academic",
+   "codes": [
+    "MINES"
+   ],
+   "aliases": [],
+   "lng": -110.95316,
+   "lat": 32.233475,
+   "osm": "way/33196641"
+  },
+  {
+   "id": "learning-services-building",
+   "name": "Learning Services Building",
+   "short": "LSB",
+   "kind": "academic",
+   "codes": [
+    "LSB"
+   ],
+   "aliases": [
+    "LSB"
+   ],
+   "lng": -110.949149,
+   "lat": 32.234592,
+   "osm": "way/34228291"
+  },
+  {
+   "id": "fm-ahsc",
+   "name": "FM AHSC",
+   "short": "FM AHSC",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Facilities Management Plumbing/Paint/Mechanical Shops"
+   ],
+   "lng": -110.948773,
+   "lat": 32.240774,
+   "osm": "way/945468522"
+  },
+  {
+   "id": "the-commons",
+   "name": "The Commons",
+   "short": "The Commons",
+   "kind": "dining",
+   "codes": [
+    "CMNS"
+   ],
+   "aliases": [],
+   "lng": -110.952143,
+   "lat": 32.231037,
+   "osm": "way/1553129840"
+  },
+  {
+   "id": "esquire-building",
+   "name": "Esquire Building",
+   "short": "Esquire Apts.",
+   "kind": "academic",
+   "codes": [
+    "ESQ"
+   ],
+   "aliases": [
+    "Esquire Apts.",
+    "Esquire Apartments"
+   ],
+   "lng": -110.956338,
+   "lat": 32.237741,
+   "osm": "way/34318966"
+  },
+  {
+   "id": "speech-and-hearing",
+   "name": "Speech & Hearing",
+   "short": "Speech",
+   "kind": "academic",
+   "codes": [
+    "SPLH"
+   ],
+   "aliases": [
+    "SPH",
+    "Speech",
+    "Speech, Language, and Hearing Sciences"
+   ],
+   "lng": -110.95381,
+   "lat": 32.234141,
+   "osm": "way/34156856"
+  },
+  {
+   "id": "arizona-state-museum-south",
+   "name": "Arizona State Museum South",
+   "short": "Az. St. Museum South",
+   "kind": "academic",
+   "codes": [
+    "HAURY"
+   ],
+   "aliases": [
+    "Az. St. Museum South"
+   ],
+   "lng": -110.956103,
+   "lat": 32.231216,
+   "osm": "way/32942742"
+  },
+  {
+   "id": "womens-studies-sirow",
+   "name": "Womens Studies / Sirow",
+   "short": "Research on Women",
+   "kind": "academic",
+   "codes": [
+    "WOMST"
+   ],
+   "aliases": [
+    "SIROW",
+    "Research on Women",
+    "Southwest Institute for Research on Women"
+   ],
+   "lng": -110.958332,
+   "lat": 32.233593,
+   "osm": "relation/146450"
+  },
+  {
+   "id": "marvel",
+   "name": "Marvel",
+   "short": "Marvel",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Carl S. Marvel Laboratories of Chemistry"
+   ],
+   "lng": -110.952669,
+   "lat": 32.230955,
+   "osm": "way/32974426"
+  },
+  {
+   "id": "english-as-a-second-language-cesl",
+   "name": "English as a Second Language CESL",
+   "short": "CESL",
+   "kind": "academic",
+   "codes": [
+    "CESL"
+   ],
+   "aliases": [
+    "CESL",
+    "Center for English as a Second Language"
+   ],
+   "lng": -110.954753,
+   "lat": 32.232671,
+   "osm": "way/32974747"
+  },
+  {
+   "id": "water-resources-research-center",
+   "name": "Water Resources Research Center",
+   "short": "WRRC",
+   "kind": "academic",
+   "codes": [
+    "WRRC"
+   ],
+   "aliases": [
+    "WRRC"
+   ],
+   "lng": -110.943317,
+   "lat": 32.226358,
+   "osm": "way/67349184"
+  },
+  {
+   "id": "south-hall",
+   "name": "South Hall",
+   "short": "South",
+   "kind": "academic",
+   "codes": [
+    "S HAL"
+   ],
+   "aliases": [
+    "South"
+   ],
+   "lng": -110.955034,
+   "lat": 32.230439,
+   "osm": "way/32975383"
+  },
+  {
+   "id": "mathematics",
+   "name": "Mathematics",
+   "short": "Math",
+   "kind": "academic",
+   "codes": [
+    "MATH"
+   ],
+   "aliases": [
+    "Math"
+   ],
+   "lng": -110.953162,
+   "lat": 32.229228,
+   "osm": "way/32928795"
+  },
+  {
+   "id": "communication",
+   "name": "Communication",
+   "short": "Communication",
+   "kind": "academic",
+   "codes": [
+    "COMM"
+   ],
+   "aliases": [],
+   "lng": -110.954755,
+   "lat": 32.232343,
+   "osm": "way/32974727"
+  },
+  {
+   "id": "engineering-design-center",
+   "name": "Engineering Design Center",
+   "short": "Education North",
+   "kind": "academic",
+   "codes": [
+    "EDU N"
+   ],
+   "aliases": [
+    "Education North"
+   ],
+   "lng": -110.949457,
+   "lat": 32.236452,
+   "osm": "way/34238471"
+  },
+  {
+   "id": "rountree-hall",
+   "name": "Rountree Hall",
+   "short": "RRH",
+   "kind": "academic",
+   "codes": [
+    "R HALL"
+   ],
+   "aliases": [
+    "RRH"
+   ],
+   "lng": -110.95275,
+   "lat": 32.236882,
+   "osm": "way/34288621"
+  },
+  {
+   "id": "haury",
+   "name": "Haury",
+   "short": "Haury",
+   "kind": "academic",
+   "codes": [
+    "HAURY"
+   ],
+   "aliases": [
+    "Emil W. Haury Anthropology Building"
+   ],
+   "lng": -110.95609,
+   "lat": 32.230878,
+   "osm": "way/32942753"
+  },
+  {
+   "id": "geronimo-center-a",
+   "name": "Geronimo Center A",
+   "short": "Geronimo",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Geronimo"
+   ],
+   "lng": -110.95928,
+   "lat": 32.231316,
+   "osm": "way/34815801"
+  },
+  {
+   "id": "arizona-geological-survey",
+   "name": "Arizona Geological Survey",
+   "short": "Arid Lands",
+   "kind": "academic",
+   "codes": [
+    "OALS"
+   ],
+   "aliases": [
+    "Arid Lands",
+    "OALS",
+    "Arid Lands Studies"
+   ],
+   "lng": -110.942792,
+   "lat": 32.228121,
+   "osm": "way/67347975"
+  },
+  {
+   "id": "meinel-expansion",
+   "name": "Meinel Expansion",
+   "short": "Meinel West",
+   "kind": "academic",
+   "codes": [
+    "OPTI"
+   ],
+   "aliases": [
+    "Meinel West",
+    "Meinel Optical Sciences West Bldg Expansion"
+   ],
+   "lng": -110.947594,
+   "lat": 32.231378,
+   "osm": "way/34228395"
+  },
+  {
+   "id": "nugent",
+   "name": "Nugent",
+   "short": "Nugent",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Robert L. Nugent Building"
+   ],
+   "lng": -110.952699,
+   "lat": 32.231314,
+   "osm": "way/32974459"
+  },
+  {
+   "id": "salt-center",
+   "name": "SALT Center",
+   "short": "Bartlett",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Bartlett",
+    "Patricia A Bartlett Building"
+   ],
+   "lng": -110.95065,
+   "lat": 32.234113,
+   "osm": "way/34228243"
+  },
+  {
+   "id": "babcock-office-building",
+   "name": "Babcock Office Building",
+   "short": "Babcock Office A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Babcock Office A",
+    "Babcock Office Building A"
+   ],
+   "lng": -110.945606,
+   "lat": 32.23635,
+   "osm": "way/34992422"
+  },
+  {
+   "id": "steward-observatory-annex",
+   "name": "Steward Observatory Annex",
+   "short": "Steward Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Steward Annex"
+   ],
+   "lng": -110.948641,
+   "lat": 32.233556,
+   "osm": "way/34124848"
+  },
+  {
+   "id": "douglas",
+   "name": "Douglas",
+   "short": "Douglass",
+   "kind": "academic",
+   "codes": [
+    "DOUGL"
+   ],
+   "aliases": [
+    "Douglass"
+   ],
+   "lng": -110.954731,
+   "lat": 32.231346,
+   "osm": "way/32974559"
+  },
+  {
+   "id": "mlk-center",
+   "name": "MLK Center",
+   "short": "MLK",
+   "kind": "academic",
+   "codes": [
+    "MLK"
+   ],
+   "aliases": [
+    "Martin Luther King jr. Student Center",
+    "MLK",
+    "Martin Luther King Jr. Building"
+   ],
+   "lng": -110.951768,
+   "lat": 32.234477,
+   "osm": "way/34228218"
+  },
+  {
+   "id": "visitor-center",
+   "name": "Visitor Center",
+   "short": "Admissions",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Admissions"
+   ],
+   "lng": -110.959851,
+   "lat": 32.231934,
+   "osm": "way/643620780"
+  },
+  {
+   "id": "laplan-family-center",
+   "name": "Laplan Family Center",
+   "short": "Lapan",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Lapan",
+    "Lapan Family Center"
+   ],
+   "lng": -110.945553,
+   "lat": 32.233654,
+   "osm": "way/946224378"
+  },
+  {
+   "id": "slonaker-house",
+   "name": "Slonaker House",
+   "short": "Slonaker",
+   "kind": "academic",
+   "codes": [
+    "SLNKR"
+   ],
+   "aliases": [
+    "Slonaker"
+   ],
+   "lng": -110.955958,
+   "lat": 32.234141,
+   "osm": "way/34156309"
+  },
+  {
+   "id": "enrollment-management-systems-group",
+   "name": "Enrollment Management Systems Group",
+   "short": "Enrollment Management Systems Group",
+   "kind": "academic",
+   "codes": [
+    "UITSN"
+   ],
+   "aliases": [
+    "UITS North"
+   ],
+   "lng": -110.947714,
+   "lat": 32.236862,
+   "osm": "way/34865745"
+  },
+  {
+   "id": "arizona",
+   "name": "Arizona",
+   "short": "Az Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Az Hall",
+    "Arizona-Sonora Hall",
+    "Arizona Residence Hall"
+   ],
+   "lng": -110.957495,
+   "lat": 32.228757,
+   "osm": "way/1196692125"
+  },
+  {
+   "id": "mathematics-lab",
+   "name": "Mathematics Lab",
+   "short": "Math Lab",
+   "kind": "academic",
+   "codes": [
+    "MTL"
+   ],
+   "aliases": [
+    "Math Lab",
+    "Mathematics Teaching Laboratory"
+   ],
+   "lng": -110.953066,
+   "lat": 32.228819,
+   "osm": "way/32928863"
+  },
+  {
+   "id": "office-of-responsible-research-conduct",
+   "name": "Office of Responsible Research Conduct",
+   "short": "1618 E Helen St",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "1618 E Helen St",
+    "Research Development"
+   ],
+   "lng": -110.947839,
+   "lat": 32.237117,
+   "osm": "way/34865741"
+  },
+  {
+   "id": "little-chapel",
+   "name": "Little Chapel",
+   "short": "Little Chapel",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "McCormick",
+    "Little Chapel of All Nations"
+   ],
+   "lng": -110.950684,
+   "lat": 32.235145,
+   "osm": "way/34228253"
+  },
+  {
+   "id": "school-of-information-resources-and-library-science",
+   "name": "School of Information Resources and Library Science",
+   "short": "SBS 1st Street Annex",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "SBS 1st Street Annex",
+    "1st Street Annex"
+   ],
+   "lng": -110.948688,
+   "lat": 32.235192,
+   "osm": "way/34228294"
+  },
+  {
+   "id": "1702",
+   "name": "1702",
+   "short": "1702",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Leased Out"
+   ],
+   "lng": -110.946585,
+   "lat": 32.235684,
+   "osm": "way/399725111"
+  },
+  {
+   "id": "chili-con-sol",
+   "name": "Chili Con Sol",
+   "short": "Chili Con Sol",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Leased Out",
+    "1626 E 6 St",
+    "1628 E 6 St"
+   ],
+   "lng": -110.947416,
+   "lat": 32.227551,
+   "osm": "way/539135045"
+  },
+  {
+   "id": "herring-hall",
+   "name": "Herring Hall",
+   "short": "Herring",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Herring",
+    "Arboretum Offiice"
+   ],
+   "lng": -110.953487,
+   "lat": 32.23065,
+   "osm": "way/32943677"
+  },
+  {
+   "id": "fluid-dynamics-research-laboratory",
+   "name": "Fluid Dynamics Research Laboratory",
+   "short": "Fluid Dynamics",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Fluid Dynamics"
+   ],
+   "lng": -110.952633,
+   "lat": 32.234534,
+   "osm": "way/34157066"
+  },
+  {
+   "id": "robson-tennis-center",
+   "name": "Robson Tennis Center",
+   "short": "Tennis Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Tennis Center"
+   ],
+   "lng": -110.94528,
+   "lat": 32.232785,
+   "osm": "way/946224381"
+  },
+  {
+   "id": "native-american-research-and-training-center",
+   "name": "Native American Research & Training Center",
+   "short": "Native American Research & Training Center",
+   "kind": "academic",
+   "codes": [
+    "CNAH"
+   ],
+   "aliases": [
+    "Wassaja Carlos Montezuma Center for Native American Health"
+   ],
+   "lng": -110.947163,
+   "lat": 32.237063,
+   "osm": "way/34865754"
+  },
+  {
+   "id": "roy-p-drachman-inistitute-land-and-regional",
+   "name": "Roy P. Drachman Inistitute, Land & Regional",
+   "short": "Academic Administration West",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Academic Administration West"
+   ],
+   "lng": -110.958839,
+   "lat": 32.234584,
+   "osm": "way/67339176"
+  },
+  {
+   "id": "beal-center",
+   "name": "Beal Center",
+   "short": "Beal",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Beal"
+   ],
+   "lng": -110.952091,
+   "lat": 32.234658,
+   "osm": "way/33141528"
+  },
+  {
+   "id": "arthritis-and-disability-assessment-center",
+   "name": "Arthritis & Disability Assessment Center",
+   "short": "1333 N Cherry Ave",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "1333 N Cherry Ave",
+    "Arthritis Center Annex"
+   ],
+   "lng": -110.948447,
+   "lat": 32.239393,
+   "osm": "way/34990246"
+  },
+  {
+   "id": "coph-drachman-house",
+   "name": "Coph-Drachman House",
+   "short": "1540 E Drachman St",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "1540 E Drachman St"
+   ],
+   "lng": -110.948791,
+   "lat": 32.239382,
+   "osm": "way/34990265"
+  },
+  {
+   "id": "program-in-integrative-medicine",
+   "name": "Program in Integrative Medicine",
+   "short": "WEST",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "WEST",
+    "COPH - Mabel House"
+   ],
+   "lng": -110.952748,
+   "lat": 32.23844,
+   "osm": "way/34865275"
+  },
+  {
+   "id": "project-vote-smart",
+   "name": "Project Vote Smart",
+   "short": "Creative Inquiry",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Creative Inquiry",
+    "Confluencecenter for Creative Inquiry"
+   ],
+   "lng": -110.95428,
+   "lat": 32.237613,
+   "osm": "way/34319060"
+  },
+  {
+   "id": "middle-east-students-association",
+   "name": "Middle East Students Association",
+   "short": "Santa Rita House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Santa Rita House"
+   ],
+   "lng": -110.954031,
+   "lat": 32.237823,
+   "osm": "way/34319072"
+  },
+  {
+   "id": "enrollment-and-student-services",
+   "name": "Enrollment and Student Services",
+   "short": "1628 E Helen St",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "1628 E Helen St",
+    "Helen Street Annex"
+   ],
+   "lng": -110.947423,
+   "lat": 32.237094,
+   "osm": "way/34865759"
+  },
+  {
+   "id": "graduate-interdisciplinary-programs-north",
+   "name": "Graduate Interdisciplinary Programs North",
+   "short": "1548 E Drachman St",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "1548 E Drachman St"
+   ],
+   "lng": -110.948595,
+   "lat": 32.239409,
+   "osm": "way/34990259"
+  },
+  {
+   "id": "udall-center-for-studies-in-public-policy",
+   "name": "Udall Center for Studies in Public Policy",
+   "short": "Udall Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Udall Center",
+    "1235 N Mountain Ave",
+    "Facilities Management Electric Shop"
+   ],
+   "lng": -110.952965,
+   "lat": 32.238209,
+   "osm": "way/34865290"
+  },
+  {
+   "id": "undergraduate-law-program",
+   "name": "Undergraduate Law Program",
+   "short": "Law Annex II",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Law Annex II",
+    "Law Annex II - Programs"
+   ],
+   "lng": -110.952738,
+   "lat": 32.237523,
+   "osm": "way/34865232"
+  },
+  {
+   "id": "international-affairs",
+   "name": "International Affairs",
+   "short": "935 N Tyndall Ave",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "935 N Tyndall Ave",
+    "SBS Tyndall Annex"
+   ],
+   "lng": -110.958272,
+   "lat": 32.233845,
+   "osm": "way/34992545"
+  },
+  {
+   "id": "family-and-community-medicine",
+   "name": "Family & Community Medicine",
+   "short": "1533 E Mabel St",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "1533 E Mabel St",
+    "1533 E Mabel "
+   ],
+   "lng": -110.948776,
+   "lat": 32.238868,
+   "osm": "way/34990202"
+  },
+  {
+   "id": "udall-center-library-and-annex",
+   "name": "Udall Center Library and Annex",
+   "short": "Udall Annex",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Udall Annex",
+    "Udall Center Annex And Library"
+   ],
+   "lng": -110.958274,
+   "lat": 32.234076,
+   "osm": "way/34992549"
+  },
+  {
+   "id": "study-abroad-and-student-exchange",
+   "name": "Study Abroad and Student Exchange",
+   "short": "939 N Tyndall Ave",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "939 N Tyndall Ave",
+    "Global Initiatives"
+   ],
+   "lng": -110.958252,
+   "lat": 32.233962,
+   "osm": "way/34992547"
+  },
+  {
+   "id": "international-faculty-and-scholars",
+   "name": "International Faculty and Scholars",
+   "short": "1128 E Mabel St",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "1128 E Mabel St",
+    "Facilities Management Elevator Shop"
+   ],
+   "lng": -110.954478,
+   "lat": 32.238384,
+   "osm": "way/34319125"
+  },
+  {
+   "id": "economic-development",
+   "name": "Economic Development",
+   "short": "1228 N Santa Rita Ave",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "1228 N Santa Rita Ave",
+    "TBA - 1228"
+   ],
+   "lng": -110.953559,
+   "lat": 32.23808,
+   "osm": "way/34865257"
+  },
+  {
+   "id": "art-works-b",
+   "name": "Art Works B",
+   "short": "Art Works A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Art Works A"
+   ],
+   "lng": -110.949426,
+   "lat": 32.237587,
+   "osm": "way/34865639"
+  },
+  {
+   "id": "art-works-a",
+   "name": "Art Works A",
+   "short": "Art Works B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Art Works B"
+   ],
+   "lng": -110.949564,
+   "lat": 32.237562,
+   "osm": "way/34865636"
+  },
+  {
+   "id": "graduate-diversity-programs",
+   "name": "Graduate Diversity Programs",
+   "short": "Grad Diversity",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Grad Diversity"
+   ],
+   "lng": -110.952589,
+   "lat": 32.234682,
+   "osm": "way/34157070"
+  },
+  {
+   "id": "college-of-law-temporary-office",
+   "name": "College of Law Temporary Office",
+   "short": "1244 N Fremont Ave",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "1244 N Fremont Ave",
+    "TBA - 1244"
+   ],
+   "lng": -110.955037,
+   "lat": 32.238473,
+   "osm": "way/34319134"
+  },
+  {
+   "id": "human-animal-interaction-house",
+   "name": "Human Animal Interaction House",
+   "short": "915 N Tyndall Ave",
+   "kind": "academic",
+   "codes": [
+    "HAI HOUSE"
+   ],
+   "aliases": [
+    "915 N Tyndall Ave"
+   ],
+   "lng": -110.958287,
+   "lat": 32.233389,
+   "osm": "way/1530751822"
+  },
+  {
+   "id": "ramada-no-2",
+   "name": "Ramada No 2",
+   "short": "Ramada No 2",
+   "kind": "academic",
+   "codes": [
+    "BIO W"
+   ],
+   "aliases": [],
+   "lng": -110.954532,
+   "lat": 32.229169,
+   "osm": "way/34320789"
+  },
+  {
+   "id": "tree-ring-shop",
+   "name": "Tree Ring Shop",
+   "short": "Tree Ring Shop",
+   "kind": "academic",
+   "codes": [
+    "MATHE"
+   ],
+   "aliases": [],
+   "lng": -110.952814,
+   "lat": 32.229092,
+   "osm": "way/1196692051"
+  },
+  {
+   "id": "tree-ring-archives",
+   "name": "Tree Ring Archives",
+   "short": "Bannister",
+   "kind": "academic",
+   "codes": [
+    "BANNT",
+    "TREEA"
+   ],
+   "aliases": [
+    "Bannister",
+    "Bryant Bannister Tree Ring Building"
+   ],
+   "lng": -110.952534,
+   "lat": 32.229014,
+   "osm": "way/1147987289"
+  },
+  {
+   "id": "ginny-l-clements-academic-center",
+   "name": "Ginny L. Clements Academic Center",
+   "short": "Clements",
+   "kind": "academic",
+   "codes": [
+    "CATS"
+   ],
+   "aliases": [
+    "Clements",
+    "C.A.T.S."
+   ],
+   "lng": -110.945951,
+   "lat": 32.229304,
+   "osm": "way/1028536585"
+  },
+  {
+   "id": "row-house-1715",
+   "name": "Row House 1715",
+   "short": "Row House 1715",
+   "kind": "academic",
+   "codes": [
+    "RH1715"
+   ],
+   "aliases": [],
+   "lng": -110.946297,
+   "lat": 32.226709,
+   "osm": "way/1197499430"
+  },
+  {
+   "id": "row-house-1721",
+   "name": "Row House 1721",
+   "short": "Row House 1721",
+   "kind": "academic",
+   "codes": [
+    "RH1721"
+   ],
+   "aliases": [],
+   "lng": -110.946116,
+   "lat": 32.226711,
+   "osm": "way/1197499429"
+  },
+  {
+   "id": "university-facility-services",
+   "name": "University Facility Services",
+   "short": "UFS",
+   "kind": "academic",
+   "codes": [
+    "UFSB"
+   ],
+   "aliases": [
+    "UFS"
+   ],
+   "lng": -110.949406,
+   "lat": 32.240002,
+   "osm": "way/34990354"
+  },
+  {
+   "id": "el-portal",
+   "name": "El Portal",
+   "short": "El Portal",
+   "kind": "academic",
+   "codes": [
+    "PORT"
+   ],
+   "aliases": [],
+   "lng": -110.951212,
+   "lat": 32.228021,
+   "osm": "way/1196692135"
+  },
+  {
+   "id": "applied-research-building",
+   "name": "Applied Research Building",
+   "short": "ARB",
+   "kind": "academic",
+   "codes": [
+    "ARB"
+   ],
+   "aliases": [
+    "ARB"
+   ],
+   "lng": -110.950713,
+   "lat": 32.236912,
+   "osm": "way/1393679120"
+  },
+  {
+   "id": "row-house-1729",
+   "name": "Row House 1729",
+   "short": "Row House 1729",
+   "kind": "academic",
+   "codes": [
+    "RH1729"
+   ],
+   "aliases": [],
+   "lng": -110.945953,
+   "lat": 32.226714,
+   "osm": "way/1197499428"
+  },
+  {
+   "id": "grand-challenges-research-building",
+   "name": "Grand Challenges Research Building",
+   "short": "GCRB",
+   "kind": "academic",
+   "codes": [
+    "GCRB"
+   ],
+   "aliases": [
+    "GCRB"
+   ],
+   "lng": -110.947741,
+   "lat": 32.230992,
+   "osm": "way/1393679681"
+  },
+  {
+   "id": "andrew-weil-center-for-integrative-medicine",
+   "name": "Andrew Weil Center for Integrative Medicine",
+   "short": "AWCIM",
+   "kind": "academic",
+   "codes": [
+    "AWCIM"
+   ],
+   "aliases": [
+    "AWCIM"
+   ],
+   "lng": -110.949399,
+   "lat": 32.238234,
+   "osm": "way/887681305"
+  },
+  {
+   "id": "row-house-1733",
+   "name": "Row House 1733",
+   "short": "Row House 1733",
+   "kind": "academic",
+   "codes": [
+    "RH1733"
+   ],
+   "aliases": [],
+   "lng": -110.945742,
+   "lat": 32.226702,
+   "osm": "way/1197499427"
+  }
+ ]
+}

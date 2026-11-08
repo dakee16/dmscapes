@@ -1,0 +1,98 @@
+{
+  "halls": {
+    "graham-greenlee": {
+      "pin": [
+        -110.950553,
+        32.23004
+      ]
+    },
+    "manzanita-mohave": {
+      "pin": [
+        -110.956407,
+        32.234323
+      ]
+    },
+    "navajo-pinal-stadium": {
+      "pin": [
+        -110.94884,
+        32.228055
+      ]
+    },
+    "pueblo-de-la-cienega": {
+      "pin": [
+        -110.951423,
+        32.229756
+      ]
+    },
+    "villa-del-puente": {
+      "pin": [
+        -110.951421,
+        32.228712
+      ]
+    }
+  },
+  "places": {
+    "graham": {
+      "hide": true
+    },
+    "greenlee": {
+      "hide": true
+    },
+    "pueblo-la-cienega": {
+      "hide": true
+    },
+    "central-heating-and-refrigeration-plant": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "graham-greenlee": "Midpoint of OSM's Graham (way/33197031) and Greenlee (way/33197004), the two halls of Graham-Greenlee (alias \"Graham-Greenlee Hall\" for both in UA Planning, Design & Construction's Residence Life Housing layer (services.maps.arizona.edu/pdc/rest/services/campus_features/MapServer/38)).",
+    "manzanita-mohave": "Midpoint of OSM's Manzanita Hall (way/34156275) and Mohave Hall (way/34156278), alias \"Manzi-Mo\" for both in UA Planning, Design & Construction's Residence Life Housing layer (services.maps.arizona.edu/pdc/rest/services/campus_features/MapServer/38).",
+    "navajo-pinal-stadium": "OSM names neither building; midpoint of Navajo Residence Hall (1557 E 6 St) and Pinal Residence Hall (1511 E 6 St) in UA Planning, Design & Construction's Residence Life Housing layer (services.maps.arizona.edu/pdc/rest/services/campus_features/MapServer/38).",
+    "pueblo-de-la-cienega": "Centre of OSM's Pueblo La Cienega (way/34124088); Pueblo De La Cienega, 621 N Highland Ave, in UA Planning, Design & Construction's Residence Life Housing layer (services.maps.arizona.edu/pdc/rest/services/campus_features/MapServer/38).",
+    "villa-del-puente": "Centre of OSM's Villa Puente (relation/2908362); Villa Del Puente, 575 N Highland Ave, in UA Planning, Design & Construction's Residence Life Housing layer (services.maps.arizona.edu/pdc/rest/services/campus_features/MapServer/38).",
+    "graham": "Graham Residence Hall, part of the Graham-Greenlee hall, not a class building.",
+    "greenlee": "Greenlee Residence Hall, part of the Graham-Greenlee hall, not a class building.",
+    "pueblo-la-cienega": "OSM's Pueblo La Cienega is the Pueblo de la Cienega residence hall, not a class building; its centre falls outside its U-shaped footprint, so the hall's pin doesn't claim it.",
+    "central-heating-and-refrigeration-plant": "A utility plant, not somewhere classes or meals happen."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "hopi -> main-library",
+        "hopi -> bear-down-gymnasium",
+        "hopi -> albert-b-weaver-science-engineering-library"
+      ],
+      "maxRatio": 4,
+      "why": "Hopi Lodge (way/34124123) has no mapped entrance; its centre snaps to the service drive on its south side, so walks to the buildings north of it go out to Vine Avenue and back up."
+    },
+    {
+      "pairs": [
+        "pima -> civil-engineering",
+        "pima -> fluid-dynamics-research-laboratory",
+        "pima -> graduate-diversity-programs"
+      ],
+      "maxRatio": 3.5,
+      "why": "Pima Hall (way/34228231) has no mapped entrance; its centre snaps to the service drive on its south side, and the buildings west of it are across North Mountain Avenue, reached by the mapped crossing to the north."
+    },
+    {
+      "pairs": [
+        "manzanita-mohave -> drama"
+      ],
+      "maxRatio": 3.5,
+      "why": "The Manzanita-Mohave pin snaps to the service drive east to Olive Road, and Drama (way/34156379) has no mapped entrance and is reached by the footways on its north side, so the walk goes out to Olive Road and round."
+    },
+    {
+      "pairs": [
+        "gila -> music",
+        "maricopa -> slonaker-house",
+        "likins -> student-recreation-center",
+        "yuma -> harvill",
+        "yuma -> john-p-schaefer-center-for-creative-photography",
+        "posada-san-pedro -> biological-sciences-east"
+      ],
+      "maxRatio": 3,
+      "why": "Neither building has a mapped entrance in OSM, so each end joins the nearest mapped path from its centre, which here lies on the far side of the building; the walk goes round it (ratios 2.5 to 2.9)."
+    }
+  ]
+}
