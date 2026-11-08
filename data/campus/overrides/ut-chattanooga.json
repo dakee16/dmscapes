@@ -1,0 +1,89 @@
+{
+  "halls": {
+    "palmetto-place-apartments": {
+      "pin": [
+        -85.296572,
+        35.042921
+      ]
+    }
+  },
+  "places": {
+    "utc-mckenzie-arena": {
+      "hide": true
+    },
+    "utc-boling-apartments": {
+      "hide": true
+    },
+    "utc-boling-apartments-66969455": {
+      "hide": true
+    },
+    "utc-boling-apartments-66969453": {
+      "hide": true
+    },
+    "utc-boling-apartments-66969457": {
+      "hide": true
+    },
+    "utc-boling-apartments-66969454": {
+      "hide": true
+    },
+    "utc-lockmiller-apartments": {
+      "hide": true
+    },
+    "utc-lockmiller-apartments-46847032": {
+      "hide": true
+    },
+    "utc-energy-plant": {
+      "hide": true
+    },
+    "human-resources-center": {
+      "hide": true
+    },
+    "caretakers-house": {
+      "hide": true
+    },
+    "carriage-house": {
+      "hide": true
+    },
+    "utc-arc": {
+      "kind": "gym"
+    }
+  },
+  "notes": {
+    "utc-mckenzie-arena": "McKenzie Arena, the basketball and events arena; no classes.",
+    "utc-boling-apartments": "A Boling Apartments building (541 Vine St), housing, not a class building.",
+    "utc-boling-apartments-66969455": "A Boling Apartments building, housing.",
+    "utc-boling-apartments-66969453": "A Boling Apartments building, housing.",
+    "utc-boling-apartments-66969457": "A Boling Apartments building, housing.",
+    "utc-boling-apartments-66969454": "A Boling Apartments building, housing.",
+    "utc-lockmiller-apartments": "A Lockmiller Apartments building, housing.",
+    "utc-lockmiller-apartments-46847032": "A Lockmiller Apartments building, housing.",
+    "utc-energy-plant": "The campus energy plant.",
+    "human-resources-center": "Human Resources offices.",
+    "caretakers-house": "A caretaker's house.",
+    "carriage-house": "A small carriage house, no classes.",
+    "utc-arc": "The ARC is UTC's Aquatic & Recreation Center, a gym.",
+    "palmetto-place-apartments": "Not in OSM by name. UTC Housing gives 910 East 8th Street (https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/palmetto-place); pinned where Nominatim geocodes it (way/1156343818)."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "lockmiller-apartments -> utc-fine-arts-center",
+        "boling-apartments -> utc-maclellan-gym",
+        "walker-apartments -> utc-stacy-town-center",
+        "walker-apartments -> alternative-energy-lab",
+        "stagmaier-hall -> utc-lupton-hall",
+        "stagmaier-hall -> alternative-energy-lab",
+        "stophel-apartments -> multidisciplinary-research-building",
+        "stophel-apartments -> alternative-energy-lab",
+        "johnson-obear-apartments -> utc-davenport-hall",
+        "decosimo-apartments -> utc-fletcher-hall",
+        "decosimo-apartments -> utc-hooper-hall",
+        "decosimo-apartments -> utc-founders-hall",
+        "uc-foundation-apartments -> utc-stacy-town-center",
+        "uc-foundation-apartments -> alternative-energy-lab"
+      ],
+      "maxRatio": 4.5,
+      "why": "UTC's apartment halls are closed courtyard blocks on a downtown street grid: their mapped paths leave each block on one side, and service lots and buildings fill the blocks between, so walks go round by the streets."
+    }
+  ]
+}

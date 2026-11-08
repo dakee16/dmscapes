@@ -1,0 +1,20 @@
+{
+  "collegeId": "ut-chattanooga",
+  "area": {
+    "osm": "relation/2858853",
+    "bbox": [
+      35.04222,
+      -85.30535,
+      35.0517,
+      -85.29238
+    ],
+    "note": "Nominatim (amenity=university, Chattanooga): relation/2858853 'University of Tennessee Chattanooga', 615 McCallie Ave."
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "UTC's registrar Class Schedule Information pages (utc.edu/academic-affairs/registrar/registration-information/class-schedule) publish no building-code list; room codes live in the login-only CPI scheduling tool (cpi.utc.edu), and no facilities building list with codes is public.",
+  "excludeHalls": {
+    "oak-street-residence-hall": "Not built yet: UTC Housing says Oak Street Residence Hall (McCallie Ave at Oak St) opens in Fall 2027 (https://www.utc.edu/enrollment-management-and-student-affairs/housing/residence-halls/oak-street-residence-hall), and OSM has no building for it."
+  }
+}
