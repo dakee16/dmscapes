@@ -1,0 +1,75 @@
+{
+  "halls": {
+    "east-campus-apartments": {
+      "pin": [
+        -71.096326,
+        42.349811
+      ]
+    },
+    "central-campus-apartments": {
+      "pin": [
+        -71.105538,
+        42.349559
+      ]
+    },
+    "south-campus-apartments": {
+      "pin": [
+        -71.107383,
+        42.348337
+      ]
+    },
+    "10-buick-street": {
+      "pin": [
+        -71.115875,
+        42.352321
+      ]
+    },
+    "33-harry-agganis-way": {
+      "pin": [
+        -71.117688,
+        42.353171
+      ]
+    }
+  },
+  "notes": {
+    "east-campus-apartments": "BU Housing lists the East Campus apartments as 56-88 Bay State Road (https://www.bu.edu/housing/residence/east-campus-graduate-apartments/); pinned at 74 Bay State Rd, mid-row (OSM relation/9679567, as Nominatim gives it).",
+    "central-campus-apartments": "BU Housing lists the Central Campus apartments at 580, 710 and 714 Commonwealth Ave (https://www.bu.edu/housing/residence/central-campus-graduate-apartments/); pinned at 710 (OSM way/1189253164), beside 714.",
+    "south-campus-apartments": "BU Housing describes South Campus as the neighbourhood along St. Mary's Street; its apartments include 39-43 St. Mary's St (https://www.bu.edu/housing/residence/south-campus-graduate-apartments/). Pinned at OSM way/29637393, '43;45;47 Saint Mary's Street'.",
+    "10-buick-street": "OSM way/29927783 'Boston University Student Village' at 10 Buick Street (StuVi 1).",
+    "33-harry-agganis-way": "OSM way/155291470 'Student Village Phase Two' at 33 Harry Agganis Way (StuVi 2).",
+    "JSC": "The BU 25Live building codes list (https://www.bu.edu/reservations/25live/building-codes) puts the Judaic Studies Center at 147 Bay State Road: OSM way/697017063 'Elie Wiesel Center for Jewish Studies', same address.",
+    "Law": "The BU 25Live building codes list (https://www.bu.edu/reservations/25live/building-codes) puts the Law School at 765 Commonwealth Ave: OSM way/485223500 'Sumner M. Redstone Building', same address.",
+    "SAR": "The BU 25Live building codes list (https://www.bu.edu/reservations/25live/building-codes) puts Sargent College at 635 Commonwealth Ave: OSM way/29579939 'College of Health & Rehabilitation Sciences: Sargent College', same address."
+  },
+  "codes": {
+    "JSC": "way/697017063",
+    "Law": "way/485223500",
+    "SAR": "way/29579939"
+  },
+  "detours": [
+    {
+      "pairs": [
+        "warren-towers -> school-of-social-work",
+        "warren-towers -> marsh-chapel",
+        "central-campus-apartments -> school-of-social-work",
+        "central-campus-apartments -> marsh-chapel"
+      ],
+      "maxRatio": 4.5,
+      "why": "Commonwealth Avenue's fenced Green Line (B branch) reservation runs down the middle of the avenue, so walks across it go to the signalled crossings at the intersections."
+    },
+    {
+      "pairs": [
+        "south-campus-apartments -> boston-university-engineering-product-innovation-center"
+      ],
+      "maxRatio": 4.5,
+      "why": "The Massachusetts Turnpike and the rail line lie between South Campus and Commonwealth Avenue; the walk crosses on the St. Mary's Street bridge."
+    },
+    {
+      "pairs": [
+        "33-harry-agganis-way -> boston-university-fitness-and-recreation-center"
+      ],
+      "maxRatio": 3.5,
+      "why": "Agganis Arena (OSM way/102384832) stands between StuVi 2 and FitRec with no mapped way through, so the walk goes round it by Harry Agganis Way."
+    }
+  ]
+}

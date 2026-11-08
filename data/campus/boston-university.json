@@ -1,0 +1,799 @@
+{
+ "collegeId": "boston-university",
+ "generatedAt": "2026-11-08T17:10:49.129Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Boston University Event & Classroom Reservations (25Live), Building Codes",
+   "url": "https://www.bu.edu/reservations/25live/building-codes",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/boston-university.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -71.12355,
+  42.34143,
+  -71.09633,
+  42.35456
+ ],
+ "halls": [
+  {
+   "dormId": "warren-towers",
+   "name": "Warren Towers",
+   "lng": -71.104786,
+   "lat": 42.349425,
+   "pin": "name",
+   "osm": "relation/20512578",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "dewolfe-boathouse",
+     "minutes": 13.6
+    },
+    "library": {
+     "placeId": "mugar-memorial-library",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "claflin-hall",
+   "name": "Claflin Hall",
+   "lng": -71.119812,
+   "lat": 42.352523,
+   "pin": "name",
+   "osm": "way/29889456",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "boston-university-fitness-and-recreation-center",
+     "minutes": 6.5
+    },
+    "library": {
+     "placeId": "mugar-memorial-library",
+     "minutes": 14
+    }
+   }
+  },
+  {
+   "dormId": "sleeper-hall",
+   "name": "Sleeper Hall",
+   "lng": -71.120532,
+   "lat": 42.352918,
+   "pin": "name",
+   "osm": "way/813732836",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "boston-university-track-and-tennis-center",
+     "minutes": 5.6
+    },
+    "library": {
+     "placeId": "mugar-memorial-library",
+     "minutes": 14.9
+    }
+   }
+  },
+  {
+   "dormId": "rich-hall",
+   "name": "Rich Hall",
+   "lng": -71.120632,
+   "lat": 42.353481,
+   "pin": "name",
+   "osm": "way/29680668",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "boston-university-track-and-tennis-center",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "mugar-memorial-library",
+     "minutes": 15.6
+    }
+   }
+  },
+  {
+   "dormId": "riverway-house",
+   "name": "Riverway House",
+   "lng": -71.105817,
+   "lat": 42.342499,
+   "pin": "name",
+   "osm": "way/29934329",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "dewolfe-boathouse",
+     "minutes": 24.6
+    },
+    "library": {
+     "placeId": "wheelock-college-library",
+     "minutes": 2.7
+    }
+   }
+  },
+  {
+   "dormId": "pilgrim-house",
+   "name": "Pilgrim House",
+   "lng": -71.105386,
+   "lat": 42.34252,
+   "pin": "name",
+   "osm": "way/1320778061",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "dewolfe-boathouse",
+     "minutes": 24.2
+    },
+    "library": {
+     "placeId": "wheelock-college-library",
+     "minutes": 2.3
+    }
+   }
+  },
+  {
+   "dormId": "longwood-house",
+   "name": "Longwood House",
+   "lng": -71.105513,
+   "lat": 42.342784,
+   "pin": "name",
+   "osm": "way/1320778060",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "dewolfe-boathouse",
+     "minutes": 23.5
+    },
+    "library": {
+     "placeId": "wheelock-college-library",
+     "minutes": 1.6
+    }
+   }
+  },
+  {
+   "dormId": "campus-center-student-residence",
+   "name": "Campus Center & Student Residence",
+   "lng": -71.1052,
+   "lat": 42.342984,
+   "pin": "name",
+   "osm": "way/212128584",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "dewolfe-boathouse",
+     "minutes": 23.2
+    },
+    "library": {
+     "placeId": "wheelock-college-library",
+     "minutes": 1.4
+    }
+   }
+  },
+  {
+   "dormId": "peabody-hall",
+   "name": "Peabody Hall",
+   "lng": -71.106671,
+   "lat": 42.341434,
+   "pin": "name",
+   "osm": "relation/63803",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "boston-university-fitness-and-recreation-center",
+     "minutes": 24.7
+    },
+    "library": {
+     "placeId": "wheelock-college-library",
+     "minutes": 4.2
+    }
+   }
+  },
+  {
+   "dormId": "10-buick-street",
+   "name": "10 Buick Street (StuVi-1)",
+   "lng": -71.115875,
+   "lat": 42.352321,
+   "pin": "manual",
+   "osm": "way/29927783",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "boston-university-fitness-and-recreation-center",
+     "minutes": 2.4
+    },
+    "library": {
+     "placeId": "mugar-memorial-library",
+     "minutes": 10.9
+    }
+   }
+  },
+  {
+   "dormId": "33-harry-agganis-way",
+   "name": "33 Harry Agganis Way (StuVi-2)",
+   "lng": -71.117688,
+   "lat": 42.353171,
+   "pin": "manual",
+   "osm": "way/155291470",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "boston-university-fitness-and-recreation-center",
+     "minutes": 5.9
+    },
+    "library": {
+     "placeId": "mugar-memorial-library",
+     "minutes": 13.7
+    }
+   }
+  },
+  {
+   "dormId": "east-campus-apartments",
+   "name": "East Campus Apartments",
+   "lng": -71.096326,
+   "lat": 42.349811,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "dewolfe-boathouse",
+     "minutes": 22.6
+    },
+    "library": {
+     "placeId": "mugar-memorial-library",
+     "minutes": 13.9
+    }
+   }
+  },
+  {
+   "dormId": "central-campus-apartments",
+   "name": "Central Campus Apartments",
+   "lng": -71.105538,
+   "lat": 42.349559,
+   "pin": "manual",
+   "osm": "way/1189253163",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "dewolfe-boathouse",
+     "minutes": 13
+    },
+    "library": {
+     "placeId": "mugar-memorial-library",
+     "minutes": 4.3
+    }
+   }
+  },
+  {
+   "dormId": "south-campus-apartments",
+   "name": "South Campus Apartments",
+   "lng": -71.107383,
+   "lat": 42.348337,
+   "pin": "manual",
+   "osm": "way/29637393",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "dewolfe-boathouse",
+     "minutes": 13.7
+    },
+    "library": {
+     "placeId": "mugar-memorial-library",
+     "minutes": 5.6
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "agganis-arena",
+   "name": "Agganis Arena",
+   "short": "Agganis Arena",
+   "kind": "academic",
+   "codes": [
+    "AGG"
+   ],
+   "aliases": [
+    "Jack Parker Rink"
+   ],
+   "lng": -71.117731,
+   "lat": 42.352212,
+   "osm": "way/102384832"
+  },
+  {
+   "id": "boston-university-fitness-and-recreation-center",
+   "name": "Boston University Fitness & Recreation Center",
+   "short": "Boston University Fitness & Recreation Center",
+   "kind": "gym",
+   "codes": [
+    "FRC"
+   ],
+   "aliases": [
+    "FRC",
+    "Fitness & Recreation Center"
+   ],
+   "lng": -71.116531,
+   "lat": 42.351796,
+   "osm": "way/102385045"
+  },
+  {
+   "id": "boston-university-track-and-tennis-center",
+   "name": "Boston University Track & Tennis Center",
+   "short": "Boston University Track & Tennis Center",
+   "kind": "gym",
+   "codes": [
+    "TTC"
+   ],
+   "aliases": [
+    "Track & Tennis Center"
+   ],
+   "lng": -71.123549,
+   "lat": 42.354555,
+   "osm": "way/29930171"
+  },
+  {
+   "id": "metcalf-science-center",
+   "name": "Metcalf Science Center",
+   "short": "Metcalf Science Center",
+   "kind": "academic",
+   "codes": [
+    "SCI"
+   ],
+   "aliases": [],
+   "lng": -71.10023,
+   "lat": 42.348404,
+   "osm": "way/29638497"
+  },
+  {
+   "id": "case-physical-education-center",
+   "name": "Case Physical Education Center",
+   "short": "Case Physical Education Center",
+   "kind": "academic",
+   "codes": [
+    "CSE"
+   ],
+   "aliases": [],
+   "lng": -71.120309,
+   "lat": 42.354042,
+   "osm": "way/29904697"
+  },
+  {
+   "id": "george-sherman-union",
+   "name": "George Sherman Union",
+   "short": "George Sherman Union",
+   "kind": "academic",
+   "codes": [
+    "GSU"
+   ],
+   "aliases": [
+    "GSU",
+    "George Sherman Student Union"
+   ],
+   "lng": -71.108966,
+   "lat": 42.35092,
+   "osm": "way/130209090"
+  },
+  {
+   "id": "questrom-school-of-business",
+   "name": "Questrom School of Business",
+   "short": "Questrom School of Business",
+   "kind": "academic",
+   "codes": [
+    "HAR"
+   ],
+   "aliases": [
+    "Rafik B. Hariri Building",
+    "Rafik B. Hariri Building, Questrom School of Business"
+   ],
+   "lng": -71.099717,
+   "lat": 42.349614,
+   "osm": "way/256604722"
+  },
+  {
+   "id": "joan-and-edgar-booth-theatre",
+   "name": "Joan & Edgar Booth Theatre",
+   "short": "Joan & Edgar Booth Theatre",
+   "kind": "academic",
+   "codes": [
+    "THA"
+   ],
+   "aliases": [],
+   "lng": -71.112286,
+   "lat": 42.349962,
+   "osm": "way/825285416"
+  },
+  {
+   "id": "mugar-memorial-library",
+   "name": "Mugar Memorial Library",
+   "short": "Mugar Memorial Library",
+   "kind": "library",
+   "codes": [
+    "MUG"
+   ],
+   "aliases": [
+    "Stephen P. Mugar Memorial Library"
+   ],
+   "lng": -71.10801,
+   "lat": 42.35103,
+   "osm": "way/130209089"
+  },
+  {
+   "id": "center-for-computing-and-data-sciences-building",
+   "name": "Center for Computing & Data Sciences Building",
+   "short": "Center for Computing & Data Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "CDS"
+   ],
+   "aliases": [
+    "Dahn Family Center for Computing & Data Sciences"
+   ],
+   "lng": -71.102972,
+   "lat": 42.350004,
+   "osm": "way/277434241"
+  },
+  {
+   "id": "college-of-fine-arts",
+   "name": "College of Fine Arts",
+   "short": "College of Fine Arts",
+   "kind": "academic",
+   "codes": [
+    "CFA"
+   ],
+   "aliases": [
+    "CFA"
+   ],
+   "lng": -71.113874,
+   "lat": 42.351291,
+   "osm": "way/29680728"
+  },
+  {
+   "id": "photonics-center",
+   "name": "Photonics Center",
+   "short": "Photonics Center",
+   "kind": "academic",
+   "codes": [
+    "PHO"
+   ],
+   "aliases": [
+    "PHO",
+    "Photonics Building"
+   ],
+   "lng": -71.106093,
+   "lat": 42.349184,
+   "osm": "way/29581513"
+  },
+  {
+   "id": "sumner-m-redstone-building",
+   "name": "Sumner M. Redstone Building",
+   "short": "Sumner M. Redstone Building",
+   "kind": "academic",
+   "codes": [
+    "Law"
+   ],
+   "aliases": [
+    "Law School"
+   ],
+   "lng": -71.10748,
+   "lat": 42.350984,
+   "osm": "way/485223500"
+  },
+  {
+   "id": "yawkey-center-for-student-services",
+   "name": "Yawkey Center for Student Services",
+   "short": "Yawkey Center for Student Services",
+   "kind": "academic",
+   "codes": [
+    "YAW"
+   ],
+   "aliases": [],
+   "lng": -71.097946,
+   "lat": 42.349825,
+   "osm": "way/316156069"
+  },
+  {
+   "id": "boston-university-college-of-general-studies",
+   "name": "Boston University College of General Studies",
+   "short": "Boston University College of General Studies",
+   "kind": "academic",
+   "codes": [
+    "CGS"
+   ],
+   "aliases": [
+    "CGS",
+    "College of General Studies"
+   ],
+   "lng": -71.11457,
+   "lat": 42.351485,
+   "osm": "way/29939094"
+  },
+  {
+   "id": "physics-and-biology-research-building",
+   "name": "Physics and Biology Research Building",
+   "short": "Physics and Biology Research Building",
+   "kind": "academic",
+   "codes": [
+    "BRB",
+    "PRB"
+   ],
+   "aliases": [
+    "Biology Research Building",
+    "Physics Research Building"
+   ],
+   "lng": -71.101255,
+   "lat": 42.34864,
+   "osm": "way/29630569"
+  },
+  {
+   "id": "activities-building",
+   "name": "Activities Building",
+   "short": "Activities Building",
+   "kind": "academic",
+   "codes": [
+    "FAB",
+    "SAC"
+   ],
+   "aliases": [
+    "Fenway Activities Building",
+    "Sargent Activities Center"
+   ],
+   "lng": -71.106055,
+   "lat": 42.34198,
+   "osm": "way/29932348"
+  },
+  {
+   "id": "college-of-arts-and-sciences",
+   "name": "College of Arts and Sciences",
+   "short": "College of Arts and Sciences",
+   "kind": "academic",
+   "codes": [
+    "CAS"
+   ],
+   "aliases": [],
+   "lng": -71.105585,
+   "lat": 42.350286,
+   "osm": "way/1007090939"
+  },
+  {
+   "id": "boston-university-engineering-product-innovation-center",
+   "name": "Boston University Engineering Product Innovation Center",
+   "short": "Boston University Engineering Product Innovation Center",
+   "kind": "academic",
+   "codes": [
+    "EPC"
+   ],
+   "aliases": [
+    "Engineering Product Innovation Center"
+   ],
+   "lng": -71.108021,
+   "lat": 42.349699,
+   "osm": "way/29513001"
+  },
+  {
+   "id": "school-of-theology",
+   "name": "School of Theology",
+   "short": "School of Theology",
+   "kind": "academic",
+   "codes": [
+    "STH"
+   ],
+   "aliases": [],
+   "lng": -71.107386,
+   "lat": 42.350497,
+   "osm": "way/1007090933"
+  },
+  {
+   "id": "boston-university-wheelock-college-of-education-and-human-development",
+   "name": "Boston University Wheelock College of Education & Human Development",
+   "short": "Boston University Wheelock College of Education & Human Development",
+   "kind": "academic",
+   "codes": [
+    "WEA",
+    "WED"
+   ],
+   "aliases": [
+    "Boston University School of Education",
+    "Wheelock College of Education & Human Development Annex",
+    "Wheelock College of Education & Human Development"
+   ],
+   "lng": -71.100859,
+   "lat": 42.349755,
+   "osm": "way/277435862"
+  },
+  {
+   "id": "life-science-and-engineering-building",
+   "name": "Life Science and Engineering Building",
+   "short": "Life Science and Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "LSE"
+   ],
+   "aliases": [],
+   "lng": -71.101737,
+   "lat": 42.348334,
+   "osm": "way/697017104"
+  },
+  {
+   "id": "college-of-health-and-rehabilitation-sciences-sargent-college",
+   "name": "College of Health & Rehabilitation Sciences: Sargent College",
+   "short": "College of Health & Rehabilitation Sciences: Sargent College",
+   "kind": "academic",
+   "codes": [
+    "SAR"
+   ],
+   "aliases": [
+    "Sargent College"
+   ],
+   "lng": -71.101997,
+   "lat": 42.349865,
+   "osm": "way/29579939"
+  },
+  {
+   "id": "stone-science-building",
+   "name": "Stone Science Building",
+   "short": "Stone Science Building",
+   "kind": "academic",
+   "codes": [
+    "STO"
+   ],
+   "aliases": [],
+   "lng": -71.103872,
+   "lat": 42.350187,
+   "osm": "way/1007090941"
+  },
+  {
+   "id": "school-of-hospitality-administration-sha",
+   "name": "School of Hospitality Administration (SHA)",
+   "short": "School of Hospitality Administration (SHA)",
+   "kind": "academic",
+   "codes": [
+    "SHA"
+   ],
+   "aliases": [
+    "School of Hospitality Administration"
+   ],
+   "lng": -71.117508,
+   "lat": 42.35088,
+   "osm": "way/1189678822"
+  },
+  {
+   "id": "dewolfe-boathouse",
+   "name": "DeWolfe Boathouse",
+   "short": "DeWolfe Boathouse",
+   "kind": "gym",
+   "codes": [
+    "CRW"
+   ],
+   "aliases": [
+    "DeWolfe Crew Boathouse"
+   ],
+   "lng": -71.10777,
+   "lat": 42.353252,
+   "osm": "way/263551761"
+  },
+  {
+   "id": "morse-auditorium",
+   "name": "Morse Auditorium",
+   "short": "Morse Auditorium",
+   "kind": "academic",
+   "codes": [
+    "MOR"
+   ],
+   "aliases": [],
+   "lng": -71.100928,
+   "lat": 42.348917,
+   "osm": "way/337210330"
+  },
+  {
+   "id": "school-of-social-work",
+   "name": "School of Social Work",
+   "short": "School of Social Work",
+   "kind": "academic",
+   "codes": [
+    "SSW"
+   ],
+   "aliases": [],
+   "lng": -71.105254,
+   "lat": 42.350729,
+   "osm": "way/29631663"
+  },
+  {
+   "id": "marsh-chapel",
+   "name": "Marsh Chapel",
+   "short": "Marsh Chapel",
+   "kind": "academic",
+   "codes": [
+    "MCH"
+   ],
+   "aliases": [
+    "Daniel Lash Marsh Chapel"
+   ],
+   "lng": -71.106437,
+   "lat": 42.35067,
+   "osm": "way/1007090937"
+  },
+  {
+   "id": "classroom-building",
+   "name": "Classroom Building",
+   "short": "Classroom Building",
+   "kind": "academic",
+   "codes": [
+    "FCB",
+    "KCB"
+   ],
+   "aliases": [
+    "Fenway Classroom Building",
+    "Kenmore Classroom Building"
+   ],
+   "lng": -71.104896,
+   "lat": 42.342696,
+   "osm": "way/29788480"
+  },
+  {
+   "id": "wheelock-college-library",
+   "name": "Wheelock College Library",
+   "short": "Wheelock College Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -71.104691,
+   "lat": 42.343127,
+   "osm": "way/29513254"
+  },
+  {
+   "id": "alan-and-sherry-leventhal-center",
+   "name": "Alan & Sherry Leventhal Center",
+   "short": "Alan & Sherry Leventhal Center",
+   "kind": "academic",
+   "codes": [
+    "LEV"
+   ],
+   "aliases": [
+    "Leventhal Center"
+   ],
+   "lng": -71.103903,
+   "lat": 42.35092,
+   "osm": "way/822625894"
+  },
+  {
+   "id": "elie-wiesel-center-for-jewish-studies",
+   "name": "Elie Wiesel Center for Jewish Studies",
+   "short": "Elie Wiesel Center for Jewish Studies",
+   "kind": "academic",
+   "codes": [
+    "JSC"
+   ],
+   "aliases": [
+    "Judaic Studies Center"
+   ],
+   "lng": -71.100096,
+   "lat": 42.350522,
+   "osm": "way/697017063"
+  }
+ ]
+}
