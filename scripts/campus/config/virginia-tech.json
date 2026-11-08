@@ -1,0 +1,17 @@
+{
+  "collegeId": "virginia-tech",
+  "area": {
+    "osm": "relation/1214378",
+    "bbox": [
+      37.20925,
+      -80.44004,
+      37.23473,
+      -80.41187
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/virginia-tech.codes.json"
+  }
+}

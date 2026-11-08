@@ -1,0 +1,1187 @@
+{
+ "name": "Virginia Tech Timetable of Classes, View Building Abbreviations",
+ "url": "https://selfservice.banner.vt.edu/ssb/hzskvtsc.P_DispBldgList",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "AA",
+   "name": "Architecture Annex"
+  },
+  {
+   "code": "AB1",
+   "name": "Academic Building One"
+  },
+  {
+   "code": "ADRF",
+   "name": "Architecture Demo & Res Fac"
+  },
+  {
+   "code": "AGNEW",
+   "name": "Agnew Hall"
+  },
+  {
+   "code": "AIR",
+   "name": "Airport Hangar"
+  },
+  {
+   "code": "AIRCN",
+   "name": "Air Conditioning Plant"
+  },
+  {
+   "code": "AIRPT",
+   "name": "Airport Terminal"
+  },
+  {
+   "code": "AIRSH",
+   "name": "Airport Shop"
+  },
+  {
+   "code": "AJ E",
+   "name": "Ambler Johnston East"
+  },
+  {
+   "code": "AJ W",
+   "name": "Ambler Johnston West"
+  },
+  {
+   "code": "AJPAV",
+   "name": "Animal Judging Pavilion"
+  },
+  {
+   "code": "AQUAC",
+   "name": "Aquaculture Facility"
+  },
+  {
+   "code": "ARMRY",
+   "name": "Armory (Art)"
+  },
+  {
+   "code": "ART C",
+   "name": "Art & Design Learning Center"
+  },
+  {
+   "code": "ASAB",
+   "name": "Bldg 270G (A&S Admin)"
+  },
+  {
+   "code": "B270C",
+   "name": "Bldg 270C (Randolph Annex)"
+  },
+  {
+   "code": "B270D",
+   "name": "Bldg 270D (Elec Engr)"
+  },
+  {
+   "code": "B270E",
+   "name": "Bldg 270E (Vet Med Mod Lab)"
+  },
+  {
+   "code": "B270F",
+   "name": "Bldg 270F (Math)"
+  },
+  {
+   "code": "BAR",
+   "name": "Barringer"
+  },
+  {
+   "code": "BEEF",
+   "name": "Beef Barn"
+  },
+  {
+   "code": "BFH",
+   "name": "Bishop-Favrao Hall"
+  },
+  {
+   "code": "BFPC",
+   "name": "Wood Processing Lab"
+  },
+  {
+   "code": "BHAPT",
+   "name": "Bull House Apartments"
+  },
+  {
+   "code": "BIOMP",
+   "name": "Biobased Materials Proc Lab"
+  },
+  {
+   "code": "BOOK",
+   "name": "University Bookstore"
+  },
+  {
+   "code": "BRNCH",
+   "name": "Branch Building"
+  },
+  {
+   "code": "BRO",
+   "name": "Brodie"
+  },
+  {
+   "code": "BROOK",
+   "name": "Wood Engineering Lab"
+  },
+  {
+   "code": "BULL",
+   "name": "Bull House"
+  },
+  {
+   "code": "BUR",
+   "name": "Burruss Hall"
+  },
+  {
+   "code": "BURCH",
+   "name": "Burchard Hall"
+  },
+  {
+   "code": "BWL",
+   "name": "Blacksburg Wine Lab"
+  },
+  {
+   "code": "CAM E",
+   "name": "Campbell East"
+  },
+  {
+   "code": "CAM M",
+   "name": "Campbell Main"
+  },
+  {
+   "code": "CAM",
+   "name": "Campbell Arena"
+  },
+  {
+   "code": "CAPRI",
+   "name": "Capri Building"
+  },
+  {
+   "code": "CARNA",
+   "name": "Campbell Arena"
+  },
+  {
+   "code": "CEC",
+   "name": "Continuing Education Center"
+  },
+  {
+   "code": "CEN",
+   "name": "Central Stores"
+  },
+  {
+   "code": "CFA",
+   "name": "Center for the Arts"
+  },
+  {
+   "code": "CHAP",
+   "name": "War Memorial Chapel"
+  },
+  {
+   "code": "CHEDS",
+   "name": "Cheds (Library Annex)"
+  },
+  {
+   "code": "CHEMP",
+   "name": "Chemistry Physics Building"
+  },
+  {
+   "code": "CHRNE",
+   "name": "Cochrane"
+  },
+  {
+   "code": "CIC",
+   "name": "Cranwell Int'l Center"
+  },
+  {
+   "code": "CID",
+   "name": "Creativity & Innov. Dist LLC"
+  },
+  {
+   "code": "CLMS",
+   "name": "Corps Ldrship & Military Sci"
+  },
+  {
+   "code": "CMMID",
+   "name": "Center Molecular Med Infec Dis"
+  },
+  {
+   "code": "CO",
+   "name": "Cowgill Hall"
+  },
+  {
+   "code": "COLAV",
+   "name": "Architecture Studio"
+  },
+  {
+   "code": "COL",
+   "name": "Cassell Coliseum"
+  },
+  {
+   "code": "COLS2",
+   "name": "Collegiate Square Two"
+  },
+  {
+   "code": "COLSQ",
+   "name": "Collegiate Square"
+  },
+  {
+   "code": "COTA",
+   "name": "Skelton House II"
+  },
+  {
+   "code": "CPAP",
+   "name": "Thomas Conner House"
+  },
+  {
+   "code": "CRC10",
+   "name": "CRC Building 1750"
+  },
+  {
+   "code": "CRC36",
+   "name": "CRC Building 1311"
+  },
+  {
+   "code": "CRCIA",
+   "name": "ICTAS A"
+  },
+  {
+   "code": "CSB",
+   "name": "Career Services Building"
+  },
+  {
+   "code": "CSSER",
+   "name": "Center for Space Sci & Engr Re"
+  },
+  {
+   "code": "DAIRY",
+   "name": "Dairy Barn"
+  },
+  {
+   "code": "DAV",
+   "name": "Davidson Hall"
+  },
+  {
+   "code": "DB",
+   "name": "Donaldson-Brown Hall"
+  },
+  {
+   "code": "DBHCC",
+   "name": "Donaldson Brown Hotel & Conf"
+  },
+  {
+   "code": "DDS",
+   "name": "Data and Decision Sciences"
+  },
+  {
+   "code": "DEEMR",
+   "name": "Deemer House"
+  },
+  {
+   "code": "DER",
+   "name": "Derring Hall"
+  },
+  {
+   "code": "DF",
+   "name": "Drill Field"
+  },
+  {
+   "code": "DOGK",
+   "name": "Dog Kennel at Incinerator"
+  },
+  {
+   "code": "DPARK",
+   "name": "Drone Park"
+  },
+  {
+   "code": "DRAPA",
+   "name": "Draper Annex"
+  },
+  {
+   "code": "DTNA",
+   "name": "Downtown North"
+  },
+  {
+   "code": "DTRIK",
+   "name": "Dietrick Hall"
+  },
+  {
+   "code": "DURHM",
+   "name": "Durham Hall"
+  },
+  {
+   "code": "EGG E",
+   "name": "Eggleston East"
+  },
+  {
+   "code": "EGG M",
+   "name": "Eggleston Main"
+  },
+  {
+   "code": "EGG W",
+   "name": "Eggleston West"
+  },
+  {
+   "code": "ELECS",
+   "name": "Electric Service Bldg"
+  },
+  {
+   "code": "EMPOR",
+   "name": "Math Emporium"
+  },
+  {
+   "code": "ENGEL",
+   "name": "Engel Hall"
+  },
+  {
+   "code": "ENGLF",
+   "name": "English Bball Field & Pressbx"
+  },
+  {
+   "code": "ETGENC",
+   "name": "Etgen Learning Center"
+  },
+  {
+   "code": "FEM",
+   "name": "Femoyer Hall"
+  },
+  {
+   "code": "FRALN",
+   "name": "Fralin Biotechnology Center"
+  },
+  {
+   "code": "FSBRN",
+   "name": "Free Stall Barn"
+  },
+  {
+   "code": "FST",
+   "name": "Food Science & Technology Lab"
+  },
+  {
+   "code": "GALRY",
+   "name": "The Gallery"
+  },
+  {
+   "code": "GBJ",
+   "name": "G. Burke Johnston Student Ctr"
+  },
+  {
+   "code": "GBLDG",
+   "name": "Graves Building"
+  },
+  {
+   "code": "GH A2",
+   "name": "Greenhouse A2"
+  },
+  {
+   "code": "GH A3",
+   "name": "Greenhouse A3"
+  },
+  {
+   "code": "GH A4",
+   "name": "Greenhouse A4"
+  },
+  {
+   "code": "GH A5",
+   "name": "Greenhouse A5"
+  },
+  {
+   "code": "GH A6",
+   "name": "Greenhouse A6"
+  },
+  {
+   "code": "GH A7",
+   "name": "Greenhouse A7"
+  },
+  {
+   "code": "GH F1",
+   "name": "Greenhouse F1"
+  },
+  {
+   "code": "GH F2",
+   "name": "Greenhouse F2"
+  },
+  {
+   "code": "GH F3",
+   "name": "Greenhouse F3"
+  },
+  {
+   "code": "GH F4",
+   "name": "Greenhouse F4"
+  },
+  {
+   "code": "GH F5",
+   "name": "Greenhouse F5"
+  },
+  {
+   "code": "GH F6",
+   "name": "Greenhouse F6"
+  },
+  {
+   "code": "GH F7",
+   "name": "Greenhouse F7"
+  },
+  {
+   "code": "GH F8",
+   "name": "Greenhouse F8"
+  },
+  {
+   "code": "GH F9",
+   "name": "Greenhouse F9"
+  },
+  {
+   "code": "GH",
+   "name": "Greenhouse"
+  },
+  {
+   "code": "GLCDB",
+   "name": "Graduate Life Ctr Dnldsn Brown"
+  },
+  {
+   "code": "GOODW",
+   "name": "Goodwin Hall"
+  },
+  {
+   "code": "GRNDP",
+   "name": "Old Grand Piano Building"
+  },
+  {
+   "code": "GROVE",
+   "name": "The Grove (President's House)"
+  },
+  {
+   "code": "GYM",
+   "name": "War Memorial Gymnasium"
+  },
+  {
+   "code": "HABB1",
+   "name": "Human & Ag Biosciences Bldg 1"
+  },
+  {
+   "code": "HAHN N",
+   "name": "Hahn Hall North Wing"
+  },
+  {
+   "code": "HAHN S",
+   "name": "Hahn Hall South Wing"
+  },
+  {
+   "code": "HAHN",
+   "name": "T. Marshall Hahn, Jr. Hall"
+  },
+  {
+   "code": "HAN",
+   "name": "John W. Hancock Jr. Hall"
+  },
+  {
+   "code": "HARP",
+   "name": "Harper"
+  },
+  {
+   "code": "HEND",
+   "name": "Henderson Hall"
+  },
+  {
+   "code": "HILL",
+   "name": "Hillcrest"
+  },
+  {
+   "code": "HITT",
+   "name": "Hitt Hall"
+  },
+  {
+   "code": "HLDYN",
+   "name": "Holiday Inn Express"
+  },
+  {
+   "code": "HOGE",
+   "name": "Hoge Hall"
+  },
+  {
+   "code": "HOLD",
+   "name": "Holden Hall"
+  },
+  {
+   "code": "HOLTZ",
+   "name": "Holtzman Alumni Center"
+  },
+  {
+   "code": "HORSE",
+   "name": "Horse Barn"
+  },
+  {
+   "code": "HOSP",
+   "name": "Henderson Hall Hospital"
+  },
+  {
+   "code": "HUTCH",
+   "name": "Hutcheson Hall"
+  },
+  {
+   "code": "ICTAS",
+   "name": "Inst for Crit Tech & Appld Sci"
+  },
+  {
+   "code": "ICTS2",
+   "name": "ICTAS II"
+  },
+  {
+   "code": "ILOT",
+   "name": "I-Lot Shack"
+  },
+  {
+   "code": "ILSB",
+   "name": "Integrated Life Sciences Bldg"
+  },
+  {
+   "code": "INCIN",
+   "name": "Incinerator"
+  },
+  {
+   "code": "INS",
+   "name": "Insectary Bldg"
+  },
+  {
+   "code": "ISCE",
+   "name": "Inst for Soc, Culture & Envir"
+  },
+  {
+   "code": "JCH",
+   "name": "Julian Cheatham Hall"
+  },
+  {
+   "code": "JOHN",
+   "name": "Johnson"
+  },
+  {
+   "code": "KAMF",
+   "name": "Kroehling Adv Material Foundry"
+  },
+  {
+   "code": "KELLY",
+   "name": "Kelly Hall"
+  },
+  {
+   "code": "KENT",
+   "name": "Kent Square"
+  },
+  {
+   "code": "LANE",
+   "name": "Lane Hall"
+  },
+  {
+   "code": "LARNA",
+   "name": "Alphin-Stuart Arena"
+  },
+  {
+   "code": "LARTS",
+   "name": "Liberal Arts Building"
+  },
+  {
+   "code": "LATH",
+   "name": "Latham Hall"
+  },
+  {
+   "code": "LEE",
+   "name": "Lee"
+  },
+  {
+   "code": "LFSCI",
+   "name": "Life Sciences I"
+  },
+  {
+   "code": "LIBR",
+   "name": "Carol M. Newman Library"
+  },
+  {
+   "code": "LIBSF",
+   "name": "Library Storage Facility"
+  },
+  {
+   "code": "LITRV",
+   "name": "Litton-Reaves Hall"
+  },
+  {
+   "code": "LOMAS",
+   "name": "Lomascolo House"
+  },
+  {
+   "code": "LYRIC",
+   "name": "Lyric Theater"
+  },
+  {
+   "code": "MAINT",
+   "name": "Maintenance Building"
+  },
+  {
+   "code": "MAJWM",
+   "name": "Major Williams Hall"
+  },
+  {
+   "code": "MCB",
+   "name": "McBryde Hall"
+  },
+  {
+   "code": "MCCOM",
+   "name": "McComas Hall"
+  },
+  {
+   "code": "MEDIA",
+   "name": "Media Building"
+  },
+  {
+   "code": "MEQSD",
+   "name": "Metal Equipment Shed"
+  },
+  {
+   "code": "MILES",
+   "name": "Miles"
+  },
+  {
+   "code": "MIL",
+   "name": "Military Building/Laundry"
+  },
+  {
+   "code": "MMLAB",
+   "name": "Mining and Minerals Laboratory"
+  },
+  {
+   "code": "MON",
+   "name": "Monteith"
+  },
+  {
+   "code": "MPOOL",
+   "name": "Motor Pool"
+  },
+  {
+   "code": "MRYMN",
+   "name": "Merryman Athletic Facility"
+  },
+  {
+   "code": "MSPRT",
+   "name": "Metal Stor Bldg-Practice Flds"
+  },
+  {
+   "code": "NCB",
+   "name": "Classroom Building"
+  },
+  {
+   "code": "NCH",
+   "name": "New Cadet Hall"
+  },
+  {
+   "code": "NEB",
+   "name": "New Engineering Building"
+  },
+  {
+   "code": "NEW",
+   "name": "Newman"
+  },
+  {
+   "code": "NHW",
+   "name": "New Hall West"
+  },
+  {
+   "code": "NOR",
+   "name": "Norris Hall"
+  },
+  {
+   "code": "NOVAC",
+   "name": "VT/UVA Northern VA Ctr"
+  },
+  {
+   "code": "NRH E",
+   "name": "New Residence Hall East"
+  },
+  {
+   "code": "NRH W",
+   "name": "New Residence Hall West"
+  },
+  {
+   "code": "NVC",
+   "name": "VT/UVA Northern VA Ctr"
+  },
+  {
+   "code": "OBSRB",
+   "name": "Observatory"
+  },
+  {
+   "code": "OSHA",
+   "name": "O'Shaughnessy"
+  },
+  {
+   "code": "OSP",
+   "name": "Oil Storage Pump House"
+  },
+  {
+   "code": "OWENS",
+   "name": "Owens Hall"
+  },
+  {
+   "code": "P HSE",
+   "name": "Price House"
+  },
+  {
+   "code": "PAB",
+   "name": "Performing Arts Building"
+  },
+  {
+   "code": "PACKA",
+   "name": "Pack Associates"
+  },
+  {
+   "code": "PACK",
+   "name": "Pack Building"
+  },
+  {
+   "code": "PAM",
+   "name": "Pamplin Hall"
+  },
+  {
+   "code": "PARKP",
+   "name": "Perry Street Parking Garage"
+  },
+  {
+   "code": "PAT",
+   "name": "Patton Hall"
+  },
+  {
+   "code": "PAYNE",
+   "name": "Payne"
+  },
+  {
+   "code": "PH460",
+   "name": "Playhouse 460"
+  },
+  {
+   "code": "PHALLE",
+   "name": "Pearson Hall East"
+  },
+  {
+   "code": "PHALL",
+   "name": "Pearson Hall"
+  },
+  {
+   "code": "PHALLW",
+   "name": "Pearson Hall West"
+  },
+  {
+   "code": "PK",
+   "name": "PK"
+  },
+  {
+   "code": "POWER",
+   "name": "Power House"
+  },
+  {
+   "code": "PRC",
+   "name": "Brooder House"
+  },
+  {
+   "code": "PRICE",
+   "name": "Price Hall"
+  },
+  {
+   "code": "PRINT",
+   "name": "Print Shop"
+  },
+  {
+   "code": "PRT E",
+   "name": "Pritchard East"
+  },
+  {
+   "code": "PRT W",
+   "name": "Pritchard West"
+  },
+  {
+   "code": "PRT",
+   "name": "Pritchard"
+  },
+  {
+   "code": "PSCA",
+   "name": "Bldg 270 (Psyc Srv Ctr Annex)"
+  },
+  {
+   "code": "PSC",
+   "name": "Psychological Services Center"
+  },
+  {
+   "code": "PWCOM",
+   "name": "Pointe West Commons"
+  },
+  {
+   "code": "PY",
+   "name": "Peddrew-Yates"
+  },
+  {
+   "code": "RAND",
+   "name": "Randolph Hall"
+  },
+  {
+   "code": "RASCH",
+   "name": "Rasche"
+  },
+  {
+   "code": "RCTR1",
+   "name": "Riverside Center 1"
+  },
+  {
+   "code": "RCTR2",
+   "name": "Riverside Center 2"
+  },
+  {
+   "code": "RECRE",
+   "name": "Recreation Area Storage Bldg"
+  },
+  {
+   "code": "RFH",
+   "name": "Rector Field House"
+  },
+  {
+   "code": "ROB",
+   "name": "Robeson Hall"
+  },
+  {
+   "code": "SANDY",
+   "name": "Sandy Hall"
+  },
+  {
+   "code": "SARDO",
+   "name": "Sardo Laboratory"
+  },
+  {
+   "code": "SAT",
+   "name": "Satellite Tracking Station"
+  },
+  {
+   "code": "SAUND",
+   "name": "Saunders Hall"
+  },
+  {
+   "code": "SEB",
+   "name": "Signature Engineering Building"
+  },
+  {
+   "code": "SEC",
+   "name": "Old Security Building"
+  },
+  {
+   "code": "SEITZ",
+   "name": "Seitz Hall"
+  },
+  {
+   "code": "SGCTR",
+   "name": "Southgate Center"
+  },
+  {
+   "code": "SHANK",
+   "name": "Shanks Hall"
+  },
+  {
+   "code": "SHEEP",
+   "name": "Sheep Barn"
+  },
+  {
+   "code": "SHULT",
+   "name": "Shultz Hall"
+  },
+  {
+   "code": "SKEL",
+   "name": "Skelton House"
+  },
+  {
+   "code": "SL TW",
+   "name": "Slusher Tower"
+  },
+  {
+   "code": "SLUSH",
+   "name": "Slusher Wing"
+  },
+  {
+   "code": "SM CC",
+   "name": "Smith Career Center"
+  },
+  {
+   "code": "SMYTH",
+   "name": "Smyth Hall"
+  },
+  {
+   "code": "SOL",
+   "name": "Solitude"
+  },
+  {
+   "code": "SPC A",
+   "name": "Special Purpose Housing A"
+  },
+  {
+   "code": "SPC B",
+   "name": "Special Purpose Housing B"
+  },
+  {
+   "code": "SPC C",
+   "name": "Special Purpose Housing C"
+  },
+  {
+   "code": "SPC D",
+   "name": "Special Purpose Housing D"
+  },
+  {
+   "code": "SPC E",
+   "name": "Special Purpose Housing E"
+  },
+  {
+   "code": "SPC F",
+   "name": "Special Purpose Housing F"
+  },
+  {
+   "code": "SPC G",
+   "name": "Special Purpose Housing G"
+  },
+  {
+   "code": "SPC H",
+   "name": "Special Purpose Housing H"
+  },
+  {
+   "code": "SPC I",
+   "name": "Special Purpose Housing I"
+  },
+  {
+   "code": "SPC J",
+   "name": "Special Purpose Housing J"
+  },
+  {
+   "code": "SPC K",
+   "name": "Special Purpose Housing K"
+  },
+  {
+   "code": "SPC L",
+   "name": "Special Purpose Housing L"
+  },
+  {
+   "code": "SPC M",
+   "name": "Special Purpose Housing M"
+  },
+  {
+   "code": "SPC N",
+   "name": "Special Purpose Housing N"
+  },
+  {
+   "code": "SPC O",
+   "name": "Special Purpose Housing O"
+  },
+  {
+   "code": "SPC P",
+   "name": "Special Purpose Housing P"
+  },
+  {
+   "code": "SPC Q",
+   "name": "Special Purpose Housing Q"
+  },
+  {
+   "code": "SPC R",
+   "name": "Special Purpose Housing R"
+  },
+  {
+   "code": "SPCCS",
+   "name": "Central Services"
+  },
+  {
+   "code": "SPCFH",
+   "name": "SPH Fiber Hut"
+  },
+  {
+   "code": "SPCRM",
+   "name": "Resident Manager"
+  },
+  {
+   "code": "SPEH",
+   "name": "SPEH - Transfer"
+  },
+  {
+   "code": "SQUIR",
+   "name": "Squires Student Center"
+  },
+  {
+   "code": "SSB",
+   "name": "Student Services Building"
+  },
+  {
+   "code": "STAD",
+   "name": "Lane Stadium"
+  },
+  {
+   "code": "STCTR",
+   "name": "Sterrett"
+  },
+  {
+   "code": "STEG N",
+   "name": "Steger Hall North Wing"
+  },
+  {
+   "code": "STEG S",
+   "name": "Steger Hall South Wing"
+  },
+  {
+   "code": "SUBS2",
+   "name": "Metal Bldg at Substation 2"
+  },
+  {
+   "code": "SURGE",
+   "name": "Surge Space Building"
+  },
+  {
+   "code": "SWINE",
+   "name": "Swine Center"
+  },
+  {
+   "code": "SYSDEV",
+   "name": "VTCC Systems Development Ofcs"
+  },
+  {
+   "code": "T101",
+   "name": "Theatre 101"
+  },
+  {
+   "code": "TBA",
+   "name": "TBA HALL"
+  },
+  {
+   "code": "TC",
+   "name": "Indoor Tennis Courts"
+  },
+  {
+   "code": "TESKE",
+   "name": "Teske House"
+  },
+  {
+   "code": "THARV",
+   "name": "Timber Harvesting Lab"
+  },
+  {
+   "code": "THOM",
+   "name": "Thomas"
+  },
+  {
+   "code": "TORG",
+   "name": "Torgersen Hall"
+  },
+  {
+   "code": "TVFLM",
+   "name": "Media Annex"
+  },
+  {
+   "code": "UAIB",
+   "name": "Upper Air Inflation Bldg"
+  },
+  {
+   "code": "UCLUB",
+   "name": "University Club"
+  },
+  {
+   "code": "UPEST",
+   "name": "Urban Pest Control Facility"
+  },
+  {
+   "code": "UQHN",
+   "name": "Upper Quad Hall North"
+  },
+  {
+   "code": "USLB",
+   "name": "Undergraduate Science Lab Bldg"
+  },
+  {
+   "code": "VAW",
+   "name": "Vawter"
+  },
+  {
+   "code": "VCOM2",
+   "name": "VCOM II"
+  },
+  {
+   "code": "VM 1",
+   "name": "Vet Med Phase 1"
+  },
+  {
+   "code": "VM 2",
+   "name": "Vet Med Phase 2"
+  },
+  {
+   "code": "VM 3",
+   "name": "Vet Med Phase 3"
+  },
+  {
+   "code": "VM 4B",
+   "name": "Vet Med Phase 4B"
+  },
+  {
+   "code": "VM 4D",
+   "name": "Vet Med Phase 4D"
+  },
+  {
+   "code": "VM 4",
+   "name": "Vet Med Phase 4A (Lg Ani Iso)"
+  },
+  {
+   "code": "VM4C1",
+   "name": "Vet Med Phase 4C-Non-Client"
+  },
+  {
+   "code": "VM4C2",
+   "name": "Vet Med Phase 4C-Lg Animal"
+  },
+  {
+   "code": "VM4C3",
+   "name": "Vet Med Phase 4C-Infcts Dis"
+  },
+  {
+   "code": "VMED",
+   "name": "Vet Med Research Center"
+  },
+  {
+   "code": "VMIA",
+   "name": "Vet Med Instructional Addition"
+  },
+  {
+   "code": "VTC",
+   "name": "VT/Carilion Medicl Sch/Res Ins"
+  },
+  {
+   "code": "VTINN",
+   "name": "The Inn at Virginia Tech"
+  },
+  {
+   "code": "VTRCA",
+   "name": "VT Research Center - Arlington"
+  },
+  {
+   "code": "VUAC",
+   "name": "Visitors & Undergrad Adm Ctr"
+  },
+  {
+   "code": "VVIEW",
+   "name": "Virginia View (Coll of Educ)"
+  },
+  {
+   "code": "WAL",
+   "name": "Wallace Hall"
+  },
+  {
+   "code": "WHIT",
+   "name": "Whittemore Hall"
+  },
+  {
+   "code": "WHRST",
+   "name": "Whitehurst Hall"
+  },
+  {
+   "code": "WLH",
+   "name": "Lavery Hall"
+  },
+  {
+   "code": "WMS",
+   "name": "Williams Hall"
+  },
+  {
+   "code": "WRGHT",
+   "name": "Wright House"
+  },
+  {
+   "code": "WS A1",
+   "name": "Wood Storage Building A1"
+  }
+ ]
+}
