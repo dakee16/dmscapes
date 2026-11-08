@@ -1,0 +1,27 @@
+{
+  "collegeId": "msu",
+  "area": {
+    "osm": "relation/13708038",
+    "bbox": [
+      42.712,
+      -84.50939,
+      42.73541,
+      -84.46193
+    ]
+  },
+  "areaNote": "OSM relation/13708038 reaches 7 km south over the farms and research fields; the bbox stops at 42.712 (about Mount Hope Road), south of every hall and the main academic buildings.",
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "title": "Michigan State University GIS wayfinding, BuildingPolygon layer (building names and academic building codes)",
+    "url": "https://services.gis.msu.edu/ags-wayfinding/rest/services/WayfindingResources/MapServer/3",
+    "arcgis": "https://services.gis.msu.edu/ags-wayfinding/rest/services/WayfindingResources/MapServer/3",
+    "fields": {
+      "name": "LOCATIONNAME",
+      "code": "ACADEMICCODE",
+      "aliases": [
+        "LOCATIONNAMESHORT"
+      ]
+    }
+  }
+}

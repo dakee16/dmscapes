@@ -1,0 +1,1571 @@
+{
+ "collegeId": "msu",
+ "generatedAt": "2026-11-08T22:07:04.198Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Michigan State University GIS wayfinding, BuildingPolygon layer (building names and academic building codes)",
+   "url": "https://services.gis.msu.edu/ags-wayfinding/rest/services/WayfindingResources/MapServer/3",
+   "use": "building codes and aliases",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/msu.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -84.4968,
+  42.71043,
+  -84.46356,
+  42.7348
+ ],
+ "halls": [
+  {
+   "dormId": "wonders-hall",
+   "name": "Wonders Hall",
+   "lng": -84.490165,
+   "lat": 42.724324,
+   "pin": "name",
+   "osm": "way/26094585",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "im-sports-west",
+     "minutes": 10.5
+    },
+    "library": {
+     "placeId": "michigan-state-university-main-library",
+     "minutes": 17.5
+    }
+   }
+  },
+  {
+   "dormId": "wilson-hall",
+   "name": "Wilson Hall",
+   "lng": -84.489025,
+   "lat": 42.722801,
+   "pin": "name",
+   "osm": "way/26094587",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "im-sports-west",
+     "minutes": 9.4
+    },
+    "library": {
+     "placeId": "michigan-state-university-main-library",
+     "minutes": 15.9
+    }
+   }
+  },
+  {
+   "dormId": "case-hall",
+   "name": "Case Hall",
+   "lng": -84.488565,
+   "lat": 42.724502,
+   "pin": "name",
+   "osm": "way/26094586",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "im-sports-west",
+     "minutes": 8.9
+    },
+    "library": {
+     "placeId": "michigan-state-university-main-library",
+     "minutes": 16.5
+    }
+   }
+  },
+  {
+   "dormId": "holden-hall",
+   "name": "Holden Hall",
+   "lng": -84.488595,
+   "lat": 42.721102,
+   "pin": "name",
+   "osm": "way/26094588",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "im-sports-west",
+     "minutes": 11.9
+    },
+    "library": {
+     "placeId": "michigan-state-university-main-library",
+     "minutes": 18.5
+    }
+   }
+  },
+  {
+   "dormId": "snyder-hall",
+   "name": "Snyder Hall",
+   "lng": -84.472909,
+   "lat": 42.729985,
+   "pin": "name",
+   "osm": "relation/18117501",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "im-sports-east",
+     "minutes": 10.2
+    },
+    "library": {
+     "placeId": "michigan-state-university-main-library",
+     "minutes": 12.9
+    }
+   }
+  },
+  {
+   "dormId": "phillips-hall",
+   "name": "Phillips Hall",
+   "lng": -84.473984,
+   "lat": 42.729981,
+   "pin": "name",
+   "osm": "relation/18117500",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "im-sports-east",
+     "minutes": 11.4
+    },
+    "library": {
+     "placeId": "michigan-state-university-main-library",
+     "minutes": 10.9
+    }
+   }
+  },
+  {
+   "dormId": "mayo-hall",
+   "name": "Mayo Hall",
+   "lng": -84.486126,
+   "lat": 42.734804,
+   "pin": "name",
+   "osm": "way/26262318",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "im-sports-circle",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "michigan-state-university-main-library",
+     "minutes": 7.9
+    }
+   }
+  },
+  {
+   "dormId": "landon-hall",
+   "name": "Landon Hall",
+   "lng": -84.485177,
+   "lat": 42.733917,
+   "pin": "name",
+   "osm": "way/26262308",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "im-sports-circle",
+     "minutes": 4.3
+    },
+    "library": {
+     "placeId": "michigan-state-university-main-library",
+     "minutes": 7
+    }
+   }
+  },
+  {
+   "dormId": "hubbard-hall",
+   "name": "Hubbard Hall",
+   "lng": -84.463559,
+   "lat": 42.723421,
+   "pin": "name",
+   "osm": "way/26023448",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "im-sports-east",
+     "minutes": 6.2
+    },
+    "library": {
+     "placeId": "michigan-state-university-main-library",
+     "minutes": 25.1
+    }
+   }
+  },
+  {
+   "dormId": "akers-hall",
+   "name": "Akers Hall",
+   "lng": -84.464791,
+   "lat": 42.724411,
+   "pin": "name",
+   "osm": "way/26023447",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "im-sports-east",
+     "minutes": 3.1
+    },
+    "library": {
+     "placeId": "michigan-state-university-main-library",
+     "minutes": 22
+    }
+   }
+  },
+  {
+   "dormId": "mcdonel-hall",
+   "name": "McDonel Hall",
+   "lng": -84.467916,
+   "lat": 42.726525,
+   "pin": "name",
+   "osm": "way/26023444",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "im-sports-east",
+     "minutes": 2.1
+    },
+    "library": {
+     "placeId": "michigan-state-university-main-library",
+     "minutes": 19.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "facility-for-rare-isotope-beams",
+   "name": "Facility for Rare Isotope Beams",
+   "short": "FRIB",
+   "kind": "academic",
+   "codes": [
+    "CTN"
+   ],
+   "aliases": [
+    "FRIB",
+    "Construction Trailer",
+    "Facility for Rare Isotope Beams, Construction Trailer",
+    "Construction Trailer 6",
+    "Facility for Rare Isotope Beams, Construction Trailer 6",
+    "Construction Trailer 8",
+    "Facility for Rare Isotope Beams, Construction Trailer 8"
+   ],
+   "lng": -84.473504,
+   "lat": 42.724246,
+   "osm": "relation/14079413"
+  },
+  {
+   "id": "engineering-building",
+   "name": "Engineering Building",
+   "short": "Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "EB"
+   ],
+   "aliases": [],
+   "lng": -84.480995,
+   "lat": 42.724444,
+   "osm": "way/103094635"
+  },
+  {
+   "id": "im-sports-west",
+   "name": "IM Sports West",
+   "short": "IM Sports",
+   "kind": "gym",
+   "codes": [
+    "IW"
+   ],
+   "aliases": [
+    "IM Sports",
+    "West"
+   ],
+   "lng": -84.487158,
+   "lat": 42.728901,
+   "osm": "way/25886451"
+  },
+  {
+   "id": "munn-ice-arena",
+   "name": "Munn Ice Arena",
+   "short": "Munn Ice Arena",
+   "kind": "academic",
+   "codes": [
+    "MUN"
+   ],
+   "aliases": [],
+   "lng": -84.489385,
+   "lat": 42.728197,
+   "osm": "way/26262203"
+  },
+  {
+   "id": "communication-arts-and-sciences",
+   "name": "Communication Arts and Sciences",
+   "short": "Communication Arts and Sciences",
+   "kind": "academic",
+   "codes": [
+    "COM"
+   ],
+   "aliases": [],
+   "lng": -84.481347,
+   "lat": 42.722392,
+   "osm": "way/26271051"
+  },
+  {
+   "id": "wells-hall",
+   "name": "Wells Hall",
+   "short": "Wells Hall",
+   "kind": "academic",
+   "codes": [
+    "WH"
+   ],
+   "aliases": [],
+   "lng": -84.481958,
+   "lat": 42.727531,
+   "osm": "way/26094589"
+  },
+  {
+   "id": "plant-and-soil-sciences",
+   "name": "Plant and Soil Sciences",
+   "short": "Plant and Soil Sciences",
+   "kind": "academic",
+   "codes": [
+    "PSS"
+   ],
+   "aliases": [],
+   "lng": -84.473174,
+   "lat": 42.722042,
+   "osm": "relation/14091170"
+  },
+  {
+   "id": "frederick-cowles-jenison-gymnasium-and-field-house",
+   "name": "Frederick Cowles Jenison Gymnasium & Field House",
+   "short": "Jenison Field House",
+   "kind": "gym",
+   "codes": [
+    "JF"
+   ],
+   "aliases": [
+    "Jenison Field House"
+   ],
+   "lng": -84.490013,
+   "lat": 42.730842,
+   "osm": "way/26072751"
+  },
+  {
+   "id": "angell",
+   "name": "Angell",
+   "short": "Angell Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Angell Building"
+   ],
+   "lng": -84.490828,
+   "lat": 42.71774,
+   "osm": "way/26271331"
+  },
+  {
+   "id": "kellogg-hotel-and-conference-center",
+   "name": "Kellogg Hotel and Conference Center",
+   "short": "Kellogg Center",
+   "kind": "academic",
+   "codes": [
+    "KC"
+   ],
+   "aliases": [
+    "Kellogg Center"
+   ],
+   "lng": -84.493303,
+   "lat": 42.731809,
+   "osm": "relation/14062963"
+  },
+  {
+   "id": "biomedical-and-physical-sciences",
+   "name": "Biomedical and Physical Sciences",
+   "short": "Biomedical and Physical Sciences",
+   "kind": "academic",
+   "codes": [
+    "BPS"
+   ],
+   "aliases": [
+    "BPS"
+   ],
+   "lng": -84.476137,
+   "lat": 42.724021,
+   "osm": "way/26262396"
+  },
+  {
+   "id": "michigan-state-university-main-library",
+   "name": "Michigan State University Main Library",
+   "short": "Library",
+   "kind": "library",
+   "codes": [
+    "LIB"
+   ],
+   "aliases": [
+    "Library"
+   ],
+   "lng": -84.483208,
+   "lat": 42.730901,
+   "osm": "way/26072753"
+  },
+  {
+   "id": "harry-a-and-jessie-t-fee-hall",
+   "name": "Harry A. and Jessie T. Fee Hall",
+   "short": "Fee Hall",
+   "kind": "academic",
+   "codes": [
+    "FEE"
+   ],
+   "aliases": [
+    "Fee Hall"
+   ],
+   "lng": -84.464805,
+   "lat": 42.722439,
+   "osm": "way/26023451"
+  },
+  {
+   "id": "anthony-hall",
+   "name": "Anthony Hall",
+   "short": "Anthony Hall",
+   "kind": "academic",
+   "codes": [
+    "ANH"
+   ],
+   "aliases": [],
+   "lng": -84.479233,
+   "lat": 42.724644,
+   "osm": "way/103094516"
+  },
+  {
+   "id": "wharton-center-for-performing-arts",
+   "name": "Wharton Center for Performing Arts",
+   "short": "Wharton Center",
+   "kind": "academic",
+   "codes": [
+    "WPC"
+   ],
+   "aliases": [
+    "Wharton Center"
+   ],
+   "lng": -84.470699,
+   "lat": 42.723938,
+   "osm": "way/97790973"
+  },
+  {
+   "id": "msu-surplus-store-and-recycling-center",
+   "name": "MSU Surplus Store and Recycling Center",
+   "short": "Surplus Store and Recycling Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Surplus Store and Recycling Center"
+   ],
+   "lng": -84.480049,
+   "lat": 42.71615,
+   "osm": "way/255550323"
+  },
+  {
+   "id": "erickson-hall",
+   "name": "Erickson Hall",
+   "short": "Erickson Hall",
+   "kind": "academic",
+   "codes": [
+    "EH"
+   ],
+   "aliases": [],
+   "lng": -84.479418,
+   "lat": 42.727071,
+   "osm": "way/26094591"
+  },
+  {
+   "id": "clinical-center-a-wing",
+   "name": "Clinical Center A Wing",
+   "short": "Clinical Center",
+   "kind": "academic",
+   "codes": [
+    "CLC"
+   ],
+   "aliases": [
+    "Clinical Center"
+   ],
+   "lng": -84.468269,
+   "lat": 42.718138,
+   "osm": "way/264550929"
+  },
+  {
+   "id": "center-for-integrative-plant-systems-lab-building",
+   "name": "Center for Integrative Plant Systems- Lab Building",
+   "short": "Center for Integrated Plant Systems",
+   "kind": "academic",
+   "codes": [
+    "IPS"
+   ],
+   "aliases": [
+    "Center for Integrated Plant Systems"
+   ],
+   "lng": -84.475883,
+   "lat": 42.721587,
+   "osm": "relation/14091169"
+  },
+  {
+   "id": "life-science",
+   "name": "Life Science",
+   "short": "Life Science",
+   "kind": "academic",
+   "codes": [
+    "LS"
+   ],
+   "aliases": [],
+   "lng": -84.470241,
+   "lat": 42.717829,
+   "osm": "way/26271391"
+  },
+  {
+   "id": "natural-resources",
+   "name": "Natural Resources",
+   "short": "Natural Resources",
+   "kind": "academic",
+   "codes": [
+    "NR"
+   ],
+   "aliases": [],
+   "lng": -84.478923,
+   "lat": 42.722473,
+   "osm": "way/26271064"
+  },
+  {
+   "id": "im-sports-circle",
+   "name": "IM Sports Circle",
+   "short": "IM Sports",
+   "kind": "gym",
+   "codes": [
+    "IC"
+   ],
+   "aliases": [
+    "IM Sports",
+    "Circle"
+   ],
+   "lng": -84.485868,
+   "lat": 42.731697,
+   "osm": "way/26072752"
+  },
+  {
+   "id": "stem-teaching-and-learning-facility",
+   "name": "STEM Teaching and Learning Facility",
+   "short": "STEM",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "STEM"
+   ],
+   "lng": -84.483033,
+   "lat": 42.726558,
+   "osm": "way/1052682655"
+  },
+  {
+   "id": "giltner-hall",
+   "name": "Giltner Hall",
+   "short": "Giltner Hall",
+   "kind": "academic",
+   "codes": [
+    "GH"
+   ],
+   "aliases": [],
+   "lng": -84.47662,
+   "lat": 42.730114,
+   "osm": "way/34132973"
+  },
+  {
+   "id": "im-sports-east",
+   "name": "IM Sports East",
+   "short": "IM Sports",
+   "kind": "gym",
+   "codes": [
+    "IE"
+   ],
+   "aliases": [
+    "IM Sports",
+    "East"
+   ],
+   "lng": -84.468601,
+   "lat": 42.724799,
+   "osm": "way/26271144"
+  },
+  {
+   "id": "chemistry",
+   "name": "Chemistry",
+   "short": "Chemistry",
+   "kind": "academic",
+   "codes": [
+    "CEM"
+   ],
+   "aliases": [
+    "Chemistry Building"
+   ],
+   "lng": -84.475529,
+   "lat": 42.724802,
+   "osm": "way/26262388"
+  },
+  {
+   "id": "international-center",
+   "name": "International Center",
+   "short": "International Center",
+   "kind": "academic",
+   "codes": [
+    "CIP"
+   ],
+   "aliases": [],
+   "lng": -84.480749,
+   "lat": 42.726568,
+   "osm": "way/26094590"
+  },
+  {
+   "id": "demonstration-hall",
+   "name": "Demonstration Hall",
+   "short": "Demonstration Hall",
+   "kind": "academic",
+   "codes": [
+    "DH"
+   ],
+   "aliases": [],
+   "lng": -84.488766,
+   "lat": 42.729646,
+   "osm": "way/26072749"
+  },
+  {
+   "id": "bessey-hall",
+   "name": "Bessey Hall",
+   "short": "Bessey Hall",
+   "kind": "academic",
+   "codes": [
+    "EBH"
+   ],
+   "aliases": [],
+   "lng": -84.478477,
+   "lat": 42.728632,
+   "osm": "relation/14110768"
+  },
+  {
+   "id": "north-business-building",
+   "name": "North Business Building",
+   "short": "Business College Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Business College Complex"
+   ],
+   "lng": -84.472732,
+   "lat": 42.727125,
+   "osm": "relation/18117504"
+  },
+  {
+   "id": "plant-biology-laboratories",
+   "name": "Plant Biology Laboratories",
+   "short": "Plant Biology Laboratories",
+   "kind": "academic",
+   "codes": [
+    "PBL"
+   ],
+   "aliases": [],
+   "lng": -84.474338,
+   "lat": 42.722727,
+   "osm": "way/38698590"
+  },
+  {
+   "id": "auditorium-and-fairchild-theater",
+   "name": "Auditorium and Fairchild Theater",
+   "short": "Auditorium",
+   "kind": "academic",
+   "codes": [
+    "AUD"
+   ],
+   "aliases": [
+    "Auditorium"
+   ],
+   "lng": -84.476563,
+   "lat": 42.72876,
+   "osm": "way/26270851"
+  },
+  {
+   "id": "food-safety-and-toxicology",
+   "name": "Food Safety and Toxicology",
+   "short": "Food Safety and Toxicology",
+   "kind": "academic",
+   "codes": [
+    "FST"
+   ],
+   "aliases": [],
+   "lng": -84.474818,
+   "lat": 42.721257,
+   "osm": "way/282118689"
+  },
+  {
+   "id": "farrall-agricultural-engineering",
+   "name": "Farrall Agricultural Engineering",
+   "short": "Farrall Agricultural Engineering Hall",
+   "kind": "academic",
+   "codes": [
+    "FAE"
+   ],
+   "aliases": [
+    "Farrall Agricultural Engineering Hall"
+   ],
+   "lng": -84.477243,
+   "lat": 42.724722,
+   "osm": "way/26262393"
+  },
+  {
+   "id": "grand-river-avenue-ramp",
+   "name": "Grand River Avenue Ramp",
+   "short": "Ramp 6 (Lot 103)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Ramp 6",
+    "Ramp 6 (Lot 103)"
+   ],
+   "lng": -84.480298,
+   "lat": 42.733566,
+   "osm": "way/103086066"
+  },
+  {
+   "id": "msu-union",
+   "name": "MSU Union",
+   "short": "Union",
+   "kind": "academic",
+   "codes": [
+    "UB"
+   ],
+   "aliases": [
+    "Union"
+   ],
+   "lng": -84.482855,
+   "lat": 42.73421,
+   "osm": "way/26262298"
+  },
+  {
+   "id": "geagley-laboratory",
+   "name": "Geagley Laboratory",
+   "short": "Geagley Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Geagley Lab"
+   ],
+   "lng": -84.492547,
+   "lat": 42.71458,
+   "osm": "way/267434187"
+  },
+  {
+   "id": "engineering-research-complex-east",
+   "name": "Engineering Research Complex East",
+   "short": "Engineering Research Complex",
+   "kind": "academic",
+   "codes": [
+    "ER"
+   ],
+   "aliases": [
+    "Engineering Research Complex"
+   ],
+   "lng": -84.468175,
+   "lat": 42.715852,
+   "osm": "way/264550925"
+  },
+  {
+   "id": "kresge-arts-center",
+   "name": "Kresge Arts Center",
+   "short": "Kresge Art Center",
+   "kind": "academic",
+   "codes": [
+    "KAC"
+   ],
+   "aliases": [
+    "Kresge Art Center"
+   ],
+   "lng": -84.474962,
+   "lat": 42.728437,
+   "osm": "way/26363156"
+  },
+  {
+   "id": "music-building",
+   "name": "Music Building",
+   "short": "Music",
+   "kind": "academic",
+   "codes": [
+    "MB"
+   ],
+   "aliases": [
+    "Music"
+   ],
+   "lng": -84.484693,
+   "lat": 42.732316,
+   "osm": "relation/14106060"
+  },
+  {
+   "id": "law-college",
+   "name": "Law College",
+   "short": "MSU College of Law",
+   "kind": "academic",
+   "codes": [
+    "LAW"
+   ],
+   "aliases": [
+    "MSU College of Law"
+   ],
+   "lng": -84.473473,
+   "lat": 42.725726,
+   "osm": "way/26262467"
+  },
+  {
+   "id": "packaging",
+   "name": "Packaging",
+   "short": "Packaging",
+   "kind": "academic",
+   "codes": [
+    "PAC"
+   ],
+   "aliases": [],
+   "lng": -84.480083,
+   "lat": 42.722657,
+   "osm": "relation/14074024"
+  },
+  {
+   "id": "natural-sciences-building",
+   "name": "Natural Sciences Building",
+   "short": "Natural Science",
+   "kind": "academic",
+   "codes": [
+    "NS"
+   ],
+   "aliases": [
+    "Natural Science"
+   ],
+   "lng": -84.476882,
+   "lat": 42.731156,
+   "osm": "way/34132897"
+  },
+  {
+   "id": "mcphail-equine-performance",
+   "name": "McPhail Equine Performance",
+   "short": "Veterinary Medical Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Veterinary Medical Center",
+    "McPhail Equine Performance Center",
+    "Veterinary Medical Center, McPhail Equine Performance Center"
+   ],
+   "lng": -84.470157,
+   "lat": 42.720929,
+   "osm": "way/264550935"
+  },
+  {
+   "id": "techsmith",
+   "name": "TechSmith",
+   "short": "Techsmith Headquarters",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Techsmith Headquarters"
+   ],
+   "lng": -84.494795,
+   "lat": 42.71385,
+   "osm": "way/1255262260"
+  },
+  {
+   "id": "public-safety",
+   "name": "Public Safety",
+   "short": "MSU Police",
+   "kind": "academic",
+   "codes": [
+    "PS"
+   ],
+   "aliases": [
+    "MSU Police"
+   ],
+   "lng": -84.483158,
+   "lat": 42.721455,
+   "osm": "way/104220541"
+  },
+  {
+   "id": "john-a-hannah-administration-building",
+   "name": "John A. Hannah Administration Building",
+   "short": "Hannah Administration Building",
+   "kind": "academic",
+   "codes": [
+    "HAB"
+   ],
+   "aliases": [
+    "Hannah Administration Building"
+   ],
+   "lng": -84.481548,
+   "lat": 42.729667,
+   "osm": "way/26072755"
+  },
+  {
+   "id": "radiology",
+   "name": "Radiology",
+   "short": "Radiology",
+   "kind": "academic",
+   "codes": [
+    "RAD"
+   ],
+   "aliases": [],
+   "lng": -84.466997,
+   "lat": 42.717474,
+   "osm": "way/26271410"
+  },
+  {
+   "id": "justin-s-morrill-hall-of-agriculture",
+   "name": "Justin S. Morrill Hall of Agriculture",
+   "short": "Morrill Hall of Agriculture",
+   "kind": "academic",
+   "codes": [
+    "AGH"
+   ],
+   "aliases": [
+    "Morrill Hall of Agriculture"
+   ],
+   "lng": -84.47933,
+   "lat": 42.731038,
+   "osm": "way/26270890"
+  },
+  {
+   "id": "psychology",
+   "name": "Psychology",
+   "short": "Psychology",
+   "kind": "academic",
+   "codes": [
+    "PSY"
+   ],
+   "aliases": [],
+   "lng": -84.475272,
+   "lat": 42.730666,
+   "osm": "way/26270985"
+  },
+  {
+   "id": "student-services",
+   "name": "Student Services",
+   "short": "Student Services",
+   "kind": "academic",
+   "codes": [
+    "SSB"
+   ],
+   "aliases": [],
+   "lng": -84.476294,
+   "lat": 42.732019,
+   "osm": "way/26363115"
+  },
+  {
+   "id": "bio-engineering",
+   "name": "Bio Engineering",
+   "short": "Bio Engineering Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Bio Engineering Facility"
+   ],
+   "lng": -84.469419,
+   "lat": 42.717474,
+   "osm": "way/589008682"
+  },
+  {
+   "id": "trout-food-science",
+   "name": "Trout Food Science",
+   "short": "Trout Food Science",
+   "kind": "academic",
+   "codes": [
+    "TFS"
+   ],
+   "aliases": [],
+   "lng": -84.479182,
+   "lat": 42.723672,
+   "osm": "way/32944853"
+  },
+  {
+   "id": "ipf-landscape-services",
+   "name": "IPF Landscape services",
+   "short": "Landscape Services",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Landscape Services"
+   ],
+   "lng": -84.484572,
+   "lat": 42.722355,
+   "osm": "way/104220270"
+  },
+  {
+   "id": "interdisciplinary-science-and-technology-building",
+   "name": "Interdisciplinary Science and Technology Building",
+   "short": "Interdisciplinary Science and Technology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Interdisciplinary Science and Technology"
+   ],
+   "lng": -84.46932,
+   "lat": 42.718756,
+   "osm": "way/1055395129"
+  },
+  {
+   "id": "biochemistry",
+   "name": "Biochemistry",
+   "short": "Biochemistry Building",
+   "kind": "academic",
+   "codes": [
+    "BCH"
+   ],
+   "aliases": [
+    "Biochemistry Building"
+   ],
+   "lng": -84.47491,
+   "lat": 42.723707,
+   "osm": "way/26262399"
+  },
+  {
+   "id": "william-berkey-hall",
+   "name": "William Berkey Hall",
+   "short": "Berkey Hall",
+   "kind": "academic",
+   "codes": [
+    "BH"
+   ],
+   "aliases": [
+    "Berkey Hall"
+   ],
+   "lng": -84.477985,
+   "lat": 42.732954,
+   "osm": "way/26363092"
+  },
+  {
+   "id": "olin-memorial-health-center",
+   "name": "Olin Memorial Health Center",
+   "short": "Olin Health Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Olin Health Center"
+   ],
+   "lng": -84.479188,
+   "lat": 42.73335,
+   "osm": "way/26363073"
+  },
+  {
+   "id": "manly-miles",
+   "name": "Manly Miles",
+   "short": "Manly Miles Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Manly Miles Building"
+   ],
+   "lng": -84.492892,
+   "lat": 42.716735,
+   "osm": "way/267430575"
+  },
+  {
+   "id": "eli-and-edythe-broad-art-museum",
+   "name": "Eli and Edythe Broad Art Museum",
+   "short": "Broad Art Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Broad Art Museum"
+   ],
+   "lng": -84.476666,
+   "lat": 42.732769,
+   "osm": "way/224318338"
+  },
+  {
+   "id": "human-ecology",
+   "name": "Human Ecology",
+   "short": "Human Ecology",
+   "kind": "academic",
+   "codes": [
+    "HE"
+   ],
+   "aliases": [
+    "Human Ecology Building"
+   ],
+   "lng": -84.481625,
+   "lat": 42.733975,
+   "osm": "way/26363003"
+  },
+  {
+   "id": "r-e-olds-hall",
+   "name": "R. E. Olds Hall",
+   "short": "Olds Hall",
+   "kind": "academic",
+   "codes": [
+    "OH"
+   ],
+   "aliases": [
+    "Olds Hall"
+   ],
+   "lng": -84.48174,
+   "lat": 42.730441,
+   "osm": "way/26072756"
+  },
+  {
+   "id": "clinical-center-c-wing",
+   "name": "Clinical Center C Wing",
+   "short": "Clinical Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Clinical Center",
+    "Animal Wing",
+    "Clinical Center, Animal Wing"
+   ],
+   "lng": -84.468723,
+   "lat": 42.717496,
+   "osm": "way/26271395"
+  },
+  {
+   "id": "computer-center",
+   "name": "Computer Center",
+   "short": "Computer Center",
+   "kind": "academic",
+   "codes": [
+    "CC"
+   ],
+   "aliases": [],
+   "lng": -84.480375,
+   "lat": 42.729159,
+   "osm": "way/26270807"
+  },
+  {
+   "id": "hancock-turfgrass-research-center",
+   "name": "Hancock Turfgrass Research Center",
+   "short": "Hancock Turfgrass",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Hancock Turfgrass",
+    "Field Laboratory",
+    "Hancock Turfgrass, Field Laboratory"
+   ],
+   "lng": -84.477103,
+   "lat": 42.710426,
+   "osm": "way/1307769397"
+  },
+  {
+   "id": "1407-s-harrison",
+   "name": "1407 S. Harrison",
+   "short": "1407 S Harrison Rd",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "1407 S Harrison Rd"
+   ],
+   "lng": -84.493032,
+   "lat": 42.715762,
+   "osm": "way/267430576"
+  },
+  {
+   "id": "conrad-hall",
+   "name": "Conrad Hall",
+   "short": "Conrad Hall",
+   "kind": "academic",
+   "codes": [
+    "CRD"
+   ],
+   "aliases": [],
+   "lng": -84.465824,
+   "lat": 42.723415,
+   "osm": "way/26023449"
+  },
+  {
+   "id": "michigan-state-university-federal-credit-union",
+   "name": "Michigan State University Federal Credit Union",
+   "short": "MSUFCU",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MSUFCU",
+    "MSU Federal Credit Union",
+    "West Rd",
+    "Michigan State University Federal Credit Union, West Rd",
+    "Mt Hope Rd",
+    "Michigan State University Federal Credit Union, Mt Hope Rd"
+   ],
+   "lng": -84.477294,
+   "lat": 42.712476,
+   "osm": "way/550018762"
+  },
+  {
+   "id": "old-horticulture",
+   "name": "Old Horticulture",
+   "short": "Old Horticulture",
+   "kind": "academic",
+   "codes": [
+    "OHB"
+   ],
+   "aliases": [],
+   "lng": -84.478169,
+   "lat": 42.732276,
+   "osm": "way/26363134"
+  },
+  {
+   "id": "michigan-state-university-museum",
+   "name": "Michigan State University Museum",
+   "short": "MSU Museum",
+   "kind": "academic",
+   "codes": [
+    "MUS"
+   ],
+   "aliases": [
+    "MSU Museum"
+   ],
+   "lng": -84.48169,
+   "lat": 42.731553,
+   "osm": "way/26072757"
+  },
+  {
+   "id": "pegasus-critical-care",
+   "name": "Pegasus Critical Care",
+   "short": "Veterinary Medical Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Veterinary Medical Center",
+    "Pegasus Critical Care Center",
+    "Veterinary Medical Center, Pegasus Critical Care Center"
+   ],
+   "lng": -84.471217,
+   "lat": 42.720912,
+   "osm": "way/264550934"
+  },
+  {
+   "id": "geography",
+   "name": "Geography",
+   "short": "Geography Building",
+   "kind": "academic",
+   "codes": [
+    "GEO"
+   ],
+   "aliases": [
+    "Geography Building"
+   ],
+   "lng": -84.472916,
+   "lat": 42.729264,
+   "osm": "way/26270922"
+  },
+  {
+   "id": "clinical-center-b-wing",
+   "name": "Clinical Center B Wing",
+   "short": "Clinical Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Clinical Center",
+    "Office/Lab Wing",
+    "Clinical Center, Office/Lab Wing"
+   ],
+   "lng": -84.469001,
+   "lat": 42.71787,
+   "osm": "way/264550930"
+  },
+  {
+   "id": "william-a-demmer-engineering-center",
+   "name": "William A. Demmer Engineering Center",
+   "short": "Demmer Engineering Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Demmer Engineering Center"
+   ],
+   "lng": -84.475439,
+   "lat": 42.712956,
+   "osm": "way/1307769389"
+  },
+  {
+   "id": "msu-scene-shop",
+   "name": "MSU Scene Shop",
+   "short": "MSU Scene Shop Teaching Lab",
+   "kind": "academic",
+   "codes": [
+    "BDK"
+   ],
+   "aliases": [
+    "MSU Scene Shop Teaching Lab"
+   ],
+   "lng": -84.476977,
+   "lat": 42.713365,
+   "osm": "way/1069929421"
+  },
+  {
+   "id": "capital-area-multimodal-gateway",
+   "name": "Capital Area Multimodal Gateway",
+   "short": "Capital Area Multimodal Station",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Capital Area Multimodal Station"
+   ],
+   "lng": -84.495897,
+   "lat": 42.718937,
+   "osm": "way/26271256"
+  },
+  {
+   "id": "abrams-planetarium",
+   "name": "Abrams Planetarium",
+   "short": "Abrams Planetarium",
+   "kind": "academic",
+   "codes": [
+    "PTM"
+   ],
+   "aliases": [],
+   "lng": -84.476062,
+   "lat": 42.725616,
+   "osm": "way/25886456"
+  },
+  {
+   "id": "linton-hall",
+   "name": "Linton Hall",
+   "short": "Linton Hall",
+   "kind": "academic",
+   "codes": [
+    "LH"
+   ],
+   "aliases": [],
+   "lng": -84.480391,
+   "lat": 42.73208,
+   "osm": "way/26262261"
+  },
+  {
+   "id": "baker-hall",
+   "name": "Baker Hall",
+   "short": "Baker Hall",
+   "kind": "academic",
+   "codes": [
+    "BKR"
+   ],
+   "aliases": [],
+   "lng": -84.473576,
+   "lat": 42.729274,
+   "osm": "way/26270917"
+  },
+  {
+   "id": "oyer-speech-and-hearing",
+   "name": "Oyer Speech and Hearing",
+   "short": "Oyer",
+   "kind": "academic",
+   "codes": [
+    "ASB"
+   ],
+   "aliases": [
+    "Oyer",
+    "Oyer Speech and Hearing Clinic"
+   ],
+   "lng": -84.483397,
+   "lat": 42.722788,
+   "osm": "way/104221259"
+  },
+  {
+   "id": "marshall-adams-hall",
+   "name": "Marshall-Adams Hall",
+   "short": "Marshall-Adams Hall",
+   "kind": "academic",
+   "codes": [
+    "MAH"
+   ],
+   "aliases": [
+    "Bacteriology"
+   ],
+   "lng": -84.479082,
+   "lat": 42.732303,
+   "osm": "way/104086443"
+  },
+  {
+   "id": "spartan-village-laundry-and-shop",
+   "name": "Spartan Village Laundry and Shop",
+   "short": "Spartan Village",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Spartan Village",
+    "Laundry Shop",
+    "Spartan Village, Laundry Shop"
+   ],
+   "lng": -84.496799,
+   "lat": 42.715744,
+   "osm": "way/264540322"
+  },
+  {
+   "id": "music-practice",
+   "name": "Music Practice",
+   "short": "Music Practice",
+   "kind": "academic",
+   "codes": [
+    "MPB"
+   ],
+   "aliases": [],
+   "lng": -84.48405,
+   "lat": 42.732536,
+   "osm": "way/26262246"
+  },
+  {
+   "id": "farral-agricultural-engineering-hall-prototype-assembly-building",
+   "name": "Farral Agricultural Engineering Hall Prototype Assembly Building",
+   "short": "Farrall Agricultural Engineering Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Farrall Agricultural Engineering Hall",
+    "Prototype Assembly",
+    "Farrall Agricultural Engineering Hall, Prototype Assembly"
+   ],
+   "lng": -84.477194,
+   "lat": 42.724251,
+   "osm": "way/104221487"
+  },
+  {
+   "id": "chittenden-hall",
+   "name": "Chittenden Hall",
+   "short": "Chittenden Hall",
+   "kind": "academic",
+   "codes": [
+    "CHH"
+   ],
+   "aliases": [
+    "Forestry"
+   ],
+   "lng": -84.479385,
+   "lat": 42.731758,
+   "osm": "way/241731333"
+  },
+  {
+   "id": "old-botany",
+   "name": "Old Botany",
+   "short": "Old Botany",
+   "kind": "academic",
+   "codes": [
+    "OB"
+   ],
+   "aliases": [
+    "Botany"
+   ],
+   "lng": -84.479408,
+   "lat": 42.732041,
+   "osm": "way/267434209"
+  },
+  {
+   "id": "cook-hall",
+   "name": "Cook Hall",
+   "short": "Cook-Seevers Hall",
+   "kind": "academic",
+   "codes": [
+    "CH"
+   ],
+   "aliases": [
+    "Cook-Seevers Hall"
+   ],
+   "lng": -84.47953,
+   "lat": 42.731487,
+   "osm": "way/241731334"
+  },
+  {
+   "id": "eustace-cole-hall",
+   "name": "Eustace-Cole Hall",
+   "short": "Eustace-Cole Hall",
+   "kind": "academic",
+   "codes": [
+    "EUS"
+   ],
+   "aliases": [
+    "Harry J. Eustace Hall"
+   ],
+   "lng": -84.479612,
+   "lat": 42.732574,
+   "osm": "way/104086449"
+  },
+  {
+   "id": "h-merrill-wills-house",
+   "name": "H. Merrill Wills House",
+   "short": "Wills House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Wills House"
+   ],
+   "lng": -84.487056,
+   "lat": 42.734592,
+   "osm": "way/834018782"
+  },
+  {
+   "id": "mclane-baseball-stadium",
+   "name": "McLane Baseball Stadium",
+   "short": "Old College Field",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Old College Field",
+    "McLane Stadium",
+    "Old College Field, McLane Stadium"
+   ],
+   "lng": -84.488702,
+   "lat": 42.731558,
+   "osm": "way/267434207"
+  },
+  {
+   "id": "spartan-tennis",
+   "name": "Spartan Tennis",
+   "short": "Tennis Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Tennis Center"
+   ],
+   "lng": -84.485564,
+   "lat": 42.723744,
+   "osm": "way/1571072968"
+  },
+  {
+   "id": "john-w-beaumont-memorial-tower",
+   "name": "John W. Beaumont Memorial Tower",
+   "short": "Beaumont Tower",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Beaumont Tower"
+   ],
+   "lng": -84.482287,
+   "lat": 42.731957,
+   "osm": "way/26095337"
+  },
+  {
+   "id": "breslin-student-events-center",
+   "name": "Breslin Student Events Center",
+   "short": "Breslin Center",
+   "kind": "academic",
+   "codes": [
+    "BSEC"
+   ],
+   "aliases": [
+    "Breslin Center"
+   ],
+   "lng": -84.491493,
+   "lat": 42.728474,
+   "osm": "way/1472101548"
+  }
+ ]
+}
