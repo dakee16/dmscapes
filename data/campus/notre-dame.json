@@ -1,0 +1,1590 @@
+{
+ "collegeId": "notre-dame",
+ "generatedAt": "2026-11-08T02:26:41.289Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/notre-dame.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -86.24787,
+  41.69309,
+  -86.22643,
+  41.71333
+ ],
+ "halls": [
+  {
+   "dormId": "alumni-hall",
+   "name": "Alumni Hall",
+   "lng": -86.239501,
+   "lat": 41.699579,
+   "pin": "name",
+   "osm": "way/76245857",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 6.3
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 3.4
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 7.5
+    }
+   }
+  },
+  {
+   "dormId": "baumer-hall",
+   "name": "Baumer Hall",
+   "lng": -86.241247,
+   "lat": 41.69716,
+   "pin": "name",
+   "osm": "way/726163744",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 7
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 3.8
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 12.1
+    }
+   }
+  },
+  {
+   "dormId": "carroll-hall",
+   "name": "Carroll Hall",
+   "lng": -86.247868,
+   "lat": 41.701976,
+   "pin": "name",
+   "osm": "way/206874639",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 5.7
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 9.1
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 15.9
+    }
+   }
+  },
+  {
+   "dormId": "coyle-hall",
+   "name": "Coyle Hall",
+   "lng": -86.24264,
+   "lat": 41.699377,
+   "pin": "name",
+   "osm": "way/76245853",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 5.2
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 3.1
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 11.8
+    }
+   }
+  },
+  {
+   "dormId": "dillon-hall",
+   "name": "Dillon Hall",
+   "lng": -86.2404,
+   "lat": 41.699468,
+   "pin": "name",
+   "osm": "relation/16476186",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 3.9
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 0.5
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 8.3
+    }
+   }
+  },
+  {
+   "dormId": "duncan-hall",
+   "name": "Duncan Hall",
+   "lng": -86.243362,
+   "lat": 41.697962,
+   "pin": "name",
+   "osm": "relation/16217291",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 4.4
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 12.9
+    }
+   }
+  },
+  {
+   "dormId": "dunne-hall",
+   "name": "Dunne Hall",
+   "lng": -86.232936,
+   "lat": 41.704468,
+   "pin": "name",
+   "osm": "way/594247407",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "guglielmino-athletics-complex",
+     "minutes": 7.4
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 6.5
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 3.7
+    }
+   }
+  },
+  {
+   "dormId": "graham-family-hall",
+   "name": "Graham Family Hall",
+   "lng": -86.231909,
+   "lat": 41.704133,
+   "pin": "name",
+   "osm": "way/1152230781",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "guglielmino-athletics-complex",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 6.8
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "keenan-hall",
+   "name": "Keenan Hall",
+   "lng": -86.237457,
+   "lat": 41.704076,
+   "pin": "name",
+   "osm": "way/152170433",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "joyce-athletic-center",
+     "minutes": 9.8
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 1.7
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 5.6
+    }
+   }
+  },
+  {
+   "dormId": "keough-hall",
+   "name": "Keough Hall",
+   "lng": -86.241013,
+   "lat": 41.698031,
+   "pin": "name",
+   "osm": "way/76245802",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 3.3
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 11.8
+    }
+   }
+  },
+  {
+   "dormId": "knott-hall",
+   "name": "Knott Hall",
+   "lng": -86.233466,
+   "lat": 41.703197,
+   "pin": "name",
+   "osm": "relation/16075454",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "guglielmino-athletics-complex",
+     "minutes": 5.9
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 3.9
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 0.7
+    }
+   }
+  },
+  {
+   "dormId": "morrissey-hall",
+   "name": "Morrissey Hall",
+   "lng": -86.24258,
+   "lat": 41.701011,
+   "pin": "manual",
+   "osm": "way/152173977",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 2.4
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 3.1
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 10.4
+    }
+   }
+  },
+  {
+   "dormId": "oneill-family-hall",
+   "name": "O'Neill Family Hall",
+   "lng": -86.241807,
+   "lat": 41.698041,
+   "pin": "manual",
+   "osm": "way/76245842",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 11
+    }
+   }
+  },
+  {
+   "dormId": "siegfried-hall",
+   "name": "Siegfried Hall",
+   "lng": -86.234773,
+   "lat": 41.703359,
+   "pin": "name",
+   "osm": "relation/16435558",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "guglielmino-athletics-complex",
+     "minutes": 7.5
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 4.9
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 2.1
+    }
+   }
+  },
+  {
+   "dormId": "sorin-hall",
+   "name": "Sorin Hall",
+   "lng": -86.239998,
+   "lat": 41.701786,
+   "pin": "name",
+   "osm": "relation/16518932",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 5.9
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 4.6
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 7.5
+    }
+   }
+  },
+  {
+   "dormId": "stanford-hall",
+   "name": "Stanford Hall",
+   "lng": -86.237419,
+   "lat": 41.70457,
+   "pin": "name",
+   "osm": "way/152170427",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "joyce-athletic-center",
+     "minutes": 10.8
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 2
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 6.4
+    }
+   }
+  },
+  {
+   "dormId": "st-edwards-hall",
+   "name": "St. Edward's Hall",
+   "lng": -86.238116,
+   "lat": 41.703359,
+   "pin": "manual",
+   "osm": "relation/16214784",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 9.8
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 2.9
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 6.3
+    }
+   }
+  },
+  {
+   "dormId": "badin-hall",
+   "name": "Badin Hall",
+   "lng": -86.241228,
+   "lat": 41.700668,
+   "pin": "name",
+   "osm": "way/152174002",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 3.3
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 2.7
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 9.4
+    }
+   }
+  },
+  {
+   "dormId": "breen-phillips-hall",
+   "name": "Breen-Phillips Hall",
+   "lng": -86.236056,
+   "lat": 41.702831,
+   "pin": "name",
+   "osm": "way/152170417",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "joyce-athletic-center",
+     "minutes": 7.9
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 2.4
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 3.7
+    }
+   }
+  },
+  {
+   "dormId": "cavanaugh-hall",
+   "name": "Cavanaugh Hall",
+   "lng": -86.237389,
+   "lat": 41.702789,
+   "pin": "name",
+   "osm": "way/152170415",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "joyce-athletic-center",
+     "minutes": 8.8
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 4.6
+    }
+   }
+  },
+  {
+   "dormId": "farley-hall",
+   "name": "Farley Hall",
+   "lng": -86.236054,
+   "lat": 41.703528,
+   "pin": "name",
+   "osm": "way/152173979",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "joyce-athletic-center",
+     "minutes": 8.4
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 4
+    }
+   }
+  },
+  {
+   "dormId": "flaherty-hall",
+   "name": "Flaherty Hall",
+   "lng": -86.232912,
+   "lat": 41.703338,
+   "pin": "name",
+   "osm": "way/594247410",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "guglielmino-athletics-complex",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 6.7
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 2.2
+    }
+   }
+  },
+  {
+   "dormId": "grojean-hall",
+   "name": "Grojean Hall",
+   "lng": -86.243607,
+   "lat": 41.699326,
+   "pin": "name",
+   "osm": "way/76245789",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 2.1
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 11.9
+    }
+   }
+  },
+  {
+   "dormId": "lewis-hall",
+   "name": "Lewis Hall",
+   "lng": -86.239607,
+   "lat": 41.704389,
+   "pin": "name",
+   "osm": "relation/3184210",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 9.4
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 4.3
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 7.9
+    }
+   }
+  },
+  {
+   "dormId": "lyons-community-in-zahm-hall",
+   "name": "Lyons Community in Zahm Hall",
+   "lng": -86.237633,
+   "lat": 41.703373,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 10
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 6.6
+    }
+   }
+  },
+  {
+   "dormId": "mcglinn-hall",
+   "name": "McGlinn Hall",
+   "lng": -86.24247,
+   "lat": 41.697957,
+   "pin": "name",
+   "osm": "way/76245786",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 7
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 4.9
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 13.4
+    }
+   }
+  },
+  {
+   "dormId": "pasquerilla-east-hall",
+   "name": "Pasquerilla East Hall",
+   "lng": -86.233647,
+   "lat": 41.704138,
+   "pin": "name",
+   "osm": "way/152170426",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "guglielmino-athletics-complex",
+     "minutes": 8.4
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 4.9
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 3.1
+    }
+   }
+  },
+  {
+   "dormId": "pasquerilla-west-hall",
+   "name": "Pasquerilla West Hall",
+   "lng": -86.23478,
+   "lat": 41.703888,
+   "pin": "name",
+   "osm": "relation/16568209",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "guglielmino-athletics-complex",
+     "minutes": 8.1
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 4.2
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 2.7
+    }
+   }
+  },
+  {
+   "dormId": "ryan-hall",
+   "name": "Ryan Hall",
+   "lng": -86.240174,
+   "lat": 41.697283,
+   "pin": "name",
+   "osm": "way/152173957",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 4
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 11.1
+    }
+   }
+  },
+  {
+   "dormId": "walsh-hall",
+   "name": "Walsh Hall",
+   "lng": -86.240025,
+   "lat": 41.701007,
+   "pin": "name",
+   "osm": "relation/16460773",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 2.6
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 7
+    }
+   }
+  },
+  {
+   "dormId": "welsh-family-hall",
+   "name": "Welsh Family Hall",
+   "lng": -86.24036,
+   "lat": 41.698089,
+   "pin": "name",
+   "osm": "way/76245815",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "rockne-memorial",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "south-dining-hall",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 10
+    }
+   }
+  },
+  {
+   "dormId": "johnson-family-hall",
+   "name": "Johnson Family Hall",
+   "lng": -86.232167,
+   "lat": 41.705065,
+   "pin": "name",
+   "osm": "way/986070416",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "guglielmino-athletics-complex",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "north-dining-hall",
+     "minutes": 6.9
+    },
+    "library": {
+     "placeId": "hesburgh-library",
+     "minutes": 4.5
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "compton-family-ice-arena",
+   "name": "Compton Family Ice Arena",
+   "short": "Compton Family Ice Arena",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.231049,
+   "lat": 41.693814,
+   "osm": "way/198929102"
+  },
+  {
+   "id": "irish-athletic-center",
+   "name": "Irish Athletic Center",
+   "short": "Irish Athletic Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.229114,
+   "lat": 41.698778,
+   "osm": "relation/16058808"
+  },
+  {
+   "id": "guglielmino-athletics-complex",
+   "name": "Guglielmino Athletics Complex",
+   "short": "Guglielmino Athletics Complex",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.229306,
+   "lat": 41.700486,
+   "osm": "way/198929103"
+  },
+  {
+   "id": "debartolo-hall",
+   "name": "DeBartolo Hall",
+   "short": "DeBartolo Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.236243,
+   "lat": 41.698387,
+   "osm": "way/43656200"
+  },
+  {
+   "id": "nieuwland-science-hall",
+   "name": "Nieuwland Science Hall",
+   "short": "Nieuwland Science Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.236642,
+   "lat": 41.701534,
+   "osm": "way/152170423"
+  },
+  {
+   "id": "debartolo-performing-arts-center",
+   "name": "DeBartolo Performing Arts Center",
+   "short": "DeBartolo Performing Arts Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.236775,
+   "lat": 41.694759,
+   "osm": "way/76235097"
+  },
+  {
+   "id": "law-school",
+   "name": "Law School",
+   "short": "Law School",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237983,
+   "lat": 41.69916,
+   "osm": "way/76245805"
+  },
+  {
+   "id": "galvin-life-science-center",
+   "name": "Galvin Life Science Center",
+   "short": "Galvin Life Science Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.233113,
+   "lat": 41.700786,
+   "osm": "relation/16109842"
+  },
+  {
+   "id": "mendoza-college-of-business",
+   "name": "Mendoza College of Business",
+   "short": "Mendoza College of Business",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.236149,
+   "lat": 41.696954,
+   "osm": "way/43666502"
+  },
+  {
+   "id": "south-dining-hall",
+   "name": "South Dining Hall",
+   "short": "South Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.241431,
+   "lat": 41.699465,
+   "osm": "way/76245835"
+  },
+  {
+   "id": "north-dining-hall",
+   "name": "North Dining Hall",
+   "short": "North Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.236075,
+   "lat": 41.704375,
+   "osm": "way/152170412"
+  },
+  {
+   "id": "eck-tennis-pavilion",
+   "name": "Eck Tennis Pavilion",
+   "short": "Eck Tennis Pavilion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.226426,
+   "lat": 41.700058,
+   "osm": "way/177182281"
+  },
+  {
+   "id": "fitzpatrick-hall-of-engineering",
+   "name": "Fitzpatrick Hall of Engineering",
+   "short": "Fitzpatrick Hall of Engineering",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237143,
+   "lat": 41.699445,
+   "osm": "way/76245833"
+  },
+  {
+   "id": "rolfs-sports-recreation-center",
+   "name": "Rolfs Sports Recreation Center",
+   "short": "Rolfs Sports Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "RSRC"
+   ],
+   "lng": -86.230484,
+   "lat": 41.699978,
+   "osm": "relation/16461612"
+  },
+  {
+   "id": "jenkins-nanovic-hall",
+   "name": "Jenkins-Nanovic Hall",
+   "short": "Jenkins-Nanovic Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237682,
+   "lat": 41.695776,
+   "osm": "way/397174211"
+  },
+  {
+   "id": "mccourtney-hall-east",
+   "name": "McCourtney Hall East",
+   "short": "McCourtney Hall East",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.23067,
+   "lat": 41.703369,
+   "osm": "way/1210825305"
+  },
+  {
+   "id": "mccourtney-hall-west",
+   "name": "McCourtney Hall West",
+   "short": "McCourtney Hall West",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.231684,
+   "lat": 41.703092,
+   "osm": "way/448525478"
+  },
+  {
+   "id": "jordan-hall-of-science",
+   "name": "Jordan Hall of Science",
+   "short": "Jordan Hall of Science",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.232112,
+   "lat": 41.700746,
+   "osm": "relation/16379762"
+  },
+  {
+   "id": "hesburgh-library",
+   "name": "Hesburgh Library",
+   "short": "Hesburgh Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.23369,
+   "lat": 41.702198,
+   "osm": "relation/16109833"
+  },
+  {
+   "id": "stinson-remick-hall",
+   "name": "Stinson-Remick Hall",
+   "short": "Stinson-Remick Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237806,
+   "lat": 41.697336,
+   "osm": "way/76235096"
+  },
+  {
+   "id": "hesburgh-center-for-international-studies",
+   "name": "Hesburgh Center for International Studies",
+   "short": "Hesburgh Center for International Studies",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237767,
+   "lat": 41.696553,
+   "osm": "way/595094160"
+  },
+  {
+   "id": "joyce-athletic-center",
+   "name": "Joyce Athletic Center",
+   "short": "Joyce Athletic Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.231249,
+   "lat": 41.697339,
+   "osm": "relation/16075176"
+  },
+  {
+   "id": "oshaughnessy-hall",
+   "name": "O'Shaughnessy Hall",
+   "short": "O'Shaughnessy Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.23577,
+   "lat": 41.700214,
+   "osm": "way/198932577"
+  },
+  {
+   "id": "innovation-park",
+   "name": "Innovation Park",
+   "short": "Innovation Park",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.228638,
+   "lat": 41.693085,
+   "osm": "way/147380432"
+  },
+  {
+   "id": "walsh-family-hall-of-architecture",
+   "name": "Walsh Family Hall of Architecture",
+   "short": "Walsh Family Hall of Architecture",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.234828,
+   "lat": 41.694908,
+   "osm": "way/665964202"
+  },
+  {
+   "id": "rolfs-aquatic-center",
+   "name": "Rolfs Aquatic Center",
+   "short": "Rolfs Aquatic Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.230183,
+   "lat": 41.698561,
+   "osm": "way/76235099"
+  },
+  {
+   "id": "center-for-culinary-excellence",
+   "name": "Center for Culinary Excellence",
+   "short": "Center for Culinary Excellence",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.240638,
+   "lat": 41.711647,
+   "osm": "way/594698801"
+  },
+  {
+   "id": "rockne-memorial",
+   "name": "Rockne Memorial",
+   "short": "Rockne Memorial",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.244013,
+   "lat": 41.699991,
+   "osm": "way/76245829"
+  },
+  {
+   "id": "white-field-research-facility",
+   "name": "White Field Research Facility",
+   "short": "White Field Research Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.238182,
+   "lat": 41.712854,
+   "osm": "way/426401630"
+  },
+  {
+   "id": "cushing-hall-of-engineering",
+   "name": "Cushing Hall of Engineering",
+   "short": "Cushing Hall of Engineering",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237164,
+   "lat": 41.699795,
+   "osm": "way/76245813"
+  },
+  {
+   "id": "stepan-chemistry-hall",
+   "name": "Stepan Chemistry Hall",
+   "short": "Stepan Chemistry Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.235952,
+   "lat": 41.701451,
+   "osm": "way/198932583"
+  },
+  {
+   "id": "ricci-band-rehearsal-hall",
+   "name": "Ricci Band Rehearsal Hall",
+   "short": "Ricci Band Rehearsal Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.230694,
+   "lat": 41.701303,
+   "osm": "relation/16461610"
+  },
+  {
+   "id": "stepan-center",
+   "name": "Stepan Center",
+   "short": "Stepan Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.234417,
+   "lat": 41.706689,
+   "osm": "way/236663804"
+  },
+  {
+   "id": "main-building",
+   "name": "Main Building",
+   "short": "Main Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.239164,
+   "lat": 41.703035,
+   "osm": "relation/16131680"
+  },
+  {
+   "id": "raclin-murphy-museum-of-art",
+   "name": "Raclin Murphy Museum of Art",
+   "short": "Raclin Murphy Museum of Art",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.235084,
+   "lat": 41.693823,
+   "osm": "way/1144488451"
+  },
+  {
+   "id": "coleman-morse-center",
+   "name": "Coleman Morse Center",
+   "short": "Coleman Morse Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.240614,
+   "lat": 41.700675,
+   "osm": "way/152173981"
+  },
+  {
+   "id": "mckenna-hall",
+   "name": "McKenna Hall",
+   "short": "McKenna Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237904,
+   "lat": 41.698115,
+   "osm": "way/76235091"
+  },
+  {
+   "id": "bond-hall",
+   "name": "Bond Hall",
+   "short": "Bond Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.241953,
+   "lat": 41.701401,
+   "osm": "way/198930069"
+  },
+  {
+   "id": "decio-faculty-hall",
+   "name": "Decio Faculty Hall",
+   "short": "Decio Faculty Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.234701,
+   "lat": 41.700352,
+   "osm": "way/152173969"
+  },
+  {
+   "id": "hessert-laboratory-for-aerospace-research",
+   "name": "Hessert Laboratory for Aerospace Research",
+   "short": "Hessert Laboratory for Aerospace Research",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.236216,
+   "lat": 41.706917,
+   "osm": "way/236663808"
+  },
+  {
+   "id": "information-technology-center",
+   "name": "Information Technology Center",
+   "short": "Information Technology Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.233004,
+   "lat": 41.701533,
+   "osm": "way/152173983"
+  },
+  {
+   "id": "riley-hall-of-art-and-design",
+   "name": "Riley Hall of Art and Design",
+   "short": "Riley Hall of Art and Design",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.236638,
+   "lat": 41.700826,
+   "osm": "way/152170424"
+  },
+  {
+   "id": "haggar-hall",
+   "name": "Haggar Hall",
+   "short": "Haggar Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.236811,
+   "lat": 41.70492,
+   "osm": "way/235217115"
+  },
+  {
+   "id": "hammes-mowbray-hall",
+   "name": "Hammes Mowbray Hall",
+   "short": "Hammes Mowbray Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.235038,
+   "lat": 41.705822,
+   "osm": "relation/16356042"
+  },
+  {
+   "id": "stayer-center-for-executive-education",
+   "name": "Stayer Center for Executive Education",
+   "short": "Stayer Center for Executive Education",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.236087,
+   "lat": 41.696071,
+   "osm": "way/351695732"
+  },
+  {
+   "id": "malloy-hall",
+   "name": "Malloy Hall",
+   "short": "Malloy Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.235046,
+   "lat": 41.700797,
+   "osm": "way/198932575"
+  },
+  {
+   "id": "west-lake-hall",
+   "name": "West Lake Hall",
+   "short": "West Lake Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.244996,
+   "lat": 41.700447,
+   "osm": "way/594304555"
+  },
+  {
+   "id": "hurley-hall",
+   "name": "Hurley Hall",
+   "short": "Hurley Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237499,
+   "lat": 41.700687,
+   "osm": "way/152169657"
+  },
+  {
+   "id": "multidisciplinary-engineering-research-building",
+   "name": "Multidisciplinary Engineering Research Building",
+   "short": "Multidisciplinary Engineering Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.236309,
+   "lat": 41.707241,
+   "osm": "way/236663810"
+  },
+  {
+   "id": "remick-family-hall",
+   "name": "Remick Family Hall",
+   "short": "Remick Family Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.239436,
+   "lat": 41.703837,
+   "osm": "relation/16159493"
+  },
+  {
+   "id": "hayes-healy-center",
+   "name": "Hayes-Healy Center",
+   "short": "Hayes-Healy Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237513,
+   "lat": 41.700944,
+   "osm": "way/152169664"
+  },
+  {
+   "id": "carole-sandner-building",
+   "name": "Carole Sandner Building",
+   "short": "Carole Sandner Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.239871,
+   "lat": 41.703708,
+   "osm": "way/594678479"
+  },
+  {
+   "id": "snite-museum",
+   "name": "Snite Museum",
+   "short": "Snite Museum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.235701,
+   "lat": 41.699599,
+   "osm": "way/198932580"
+  },
+  {
+   "id": "grace-hall",
+   "name": "Grace Hall",
+   "short": "Grace Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.2339,
+   "lat": 41.704865,
+   "osm": "way/152170414"
+  },
+  {
+   "id": "flanner-hall",
+   "name": "Flanner Hall",
+   "short": "Flanner Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.234829,
+   "lat": 41.704794,
+   "osm": "way/152170418"
+  },
+  {
+   "id": "geddes-hall",
+   "name": "Geddes Hall",
+   "short": "Geddes Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.23532,
+   "lat": 41.702931,
+   "osm": "relation/16148836"
+  },
+  {
+   "id": "radiation-research-building",
+   "name": "Radiation Research Building",
+   "short": "Radiation Research Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.234909,
+   "lat": 41.701273,
+   "osm": "relation/16109829"
+  },
+  {
+   "id": "saint-liam-hall",
+   "name": "Saint Liam Hall",
+   "short": "Saint Liam Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.238008,
+   "lat": 41.704361,
+   "osm": "relation/16412015"
+  },
+  {
+   "id": "lafortune-student-center",
+   "name": "LaFortune Student Center",
+   "short": "LaFortune Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237435,
+   "lat": 41.701974,
+   "osm": "relation/16135449"
+  },
+  {
+   "id": "reyniers-life-building",
+   "name": "Reyniers Life Building",
+   "short": "Reyniers Life Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237358,
+   "lat": 41.709594,
+   "osm": "way/594715385"
+  },
+  {
+   "id": "pasquerilla-center",
+   "name": "Pasquerilla Center",
+   "short": "Pasquerilla Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.231264,
+   "lat": 41.701844,
+   "osm": "relation/16379759"
+  },
+  {
+   "id": "crowley-hall-of-music",
+   "name": "Crowley Hall of Music",
+   "short": "Crowley Hall of Music",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237741,
+   "lat": 41.701252,
+   "osm": "relation/16135456"
+  },
+  {
+   "id": "fischer-community-center",
+   "name": "Fischer Community Center",
+   "short": "Fischer Community Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.228989,
+   "lat": 41.705132,
+   "osm": "way/448533137"
+  },
+  {
+   "id": "sara-bea-learning-center",
+   "name": "Sara Bea Learning Center",
+   "short": "Sara Bea Learning Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.238686,
+   "lat": 41.704938,
+   "osm": "relation/16412013"
+  },
+  {
+   "id": "beichner-hall",
+   "name": "Beichner Hall",
+   "short": "Beichner Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.247001,
+   "lat": 41.713326,
+   "osm": "way/1202910341"
+  },
+  {
+   "id": "knights-of-columbus-council-hall",
+   "name": "Knights of Columbus Council Hall",
+   "short": "Knights of Columbus Council Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.240029,
+   "lat": 41.700568,
+   "osm": "way/595099291"
+  },
+  {
+   "id": "hank-family-center-for-environmental-sciences",
+   "name": "Hank Family Center for Environmental Sciences",
+   "short": "Hank Family Center for Environmental Sciences",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.233178,
+   "lat": 41.700031,
+   "osm": "way/235213522"
+  },
+  {
+   "id": "visitation-hall",
+   "name": "Visitation Hall",
+   "short": "Visitation Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.239673,
+   "lat": 41.703365,
+   "osm": "way/594678480"
+  },
+  {
+   "id": "washington-hall",
+   "name": "Washington Hall",
+   "short": "Washington Hall",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.2383,
+   "lat": 41.702449,
+   "osm": "relation/16137625"
+  },
+  {
+   "id": "reyniers-life-annex-north",
+   "name": "Reyniers Life Annex North",
+   "short": "Reyniers Life Annex North",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.237884,
+   "lat": 41.709811,
+   "osm": "way/594715383"
+  },
+  {
+   "id": "reyniers-life-annex-south",
+   "name": "Reyniers Life Annex South",
+   "short": "Reyniers Life Annex South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.23789,
+   "lat": 41.709669,
+   "osm": "way/594715384"
+  },
+  {
+   "id": "old-college",
+   "name": "Old College",
+   "short": "Old College",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [],
+   "lng": -86.242404,
+   "lat": 41.701741,
+   "osm": "way/594304561"
+  }
+ ]
+}

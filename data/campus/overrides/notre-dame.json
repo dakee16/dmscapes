@@ -1,0 +1,153 @@
+{
+  "halls": {
+    "morrissey-hall": {
+      "pin": [
+        -86.24258,
+        41.701011
+      ]
+    },
+    "oneill-family-hall": {
+      "pin": [
+        -86.241807,
+        41.698041
+      ]
+    },
+    "st-edwards-hall": {
+      "pin": [
+        -86.238116,
+        41.703359
+      ]
+    },
+    "lyons-community-in-zahm-hall": {
+      "pin": [
+        -86.237633,
+        41.703373
+      ]
+    }
+  },
+  "places": {
+    "wndu": {
+      "hide": true
+    },
+    "morris-inn": {
+      "hide": true
+    },
+    "moreau-seminary": {
+      "hide": true
+    },
+    "holy-cross-house": {
+      "hide": true
+    },
+    "sacred-heart-parish-center": {
+      "hide": true
+    },
+    "province-archives-center": {
+      "hide": true
+    },
+    "thomas-coleman-fire-station": {
+      "hide": true
+    },
+    "east-gate": {
+      "hide": true
+    },
+    "ave-maria-press": {
+      "hide": true
+    },
+    "boat-house": {
+      "hide": true
+    },
+    "mason-support-center": {
+      "hide": true
+    },
+    "st-michaels-laundry": {
+      "hide": true
+    },
+    "landscape-services-building": {
+      "hide": true
+    },
+    "notre-dame-federal-credit-union": {
+      "hide": true
+    },
+    "legends-of-notre-dame": {
+      "hide": true
+    },
+    "warren-golf-clubhouse": {
+      "hide": true
+    },
+    "rolfs-family-all-season-golf-facility": {
+      "hide": true
+    },
+    "eck-batting-cage-building": {
+      "hide": true
+    },
+    "columba-hall": {
+      "hide": true
+    },
+    "corby-hall": {
+      "hide": true
+    },
+    "presbytery": {
+      "hide": true
+    },
+    "early-childhood-development-center": {
+      "hide": true
+    },
+    "hammes-bookstore": {
+      "hide": true
+    },
+    "eck-visitors-center": {
+      "hide": true
+    },
+    "rockne-memorial": {
+      "kind": "gym"
+    }
+  },
+  "notes": {
+    "morrissey-hall": "OSM has no Morrissey building by name; pinned at the centre of the Morrissey Hall outline (also known as Morrissey Manor) on Notre Dame's own campus map (map.nd.edu/placemarks.json, placemark 88), between OSM's Lyons Hall and Howard Hall.",
+    "oneill-family-hall": "OSM's 'O'Neill Hall' dormitory (way/76245842), on West Quad between Keough and McGlinn; map.nd.edu's O'Neill Family Hall outline (placemark 109) covers the same spot. The other OSM 'O'Neill Hall' is the music building.",
+    "st-edwards-hall": "OSM's 'Saint Edward's Hall' (relation/16214784); map.nd.edu's St. Edward's Hall outline (placemark 67) is the same building.",
+    "lyons-community-in-zahm-hall": "The Lyons Hall community housed in Zahm Hall, so pinned on OSM's Zahm Hall (relation/16214779; map.nd.edu placemark 66).",
+    "wndu": "WNDU, a commercial TV station studio on campus land, not somewhere classes happen.",
+    "morris-inn": "The university hotel, not somewhere classes happen.",
+    "moreau-seminary": "Holy Cross seminary residence across St. Joseph Lake, not a class building for undergraduates.",
+    "holy-cross-house": "Retirement and care residence for Holy Cross priests and brothers, not somewhere classes happen.",
+    "sacred-heart-parish-center": "Parish offices, not somewhere classes happen.",
+    "province-archives-center": "Holy Cross province archives, not somewhere classes happen.",
+    "thomas-coleman-fire-station": "Campus fire station, not somewhere classes happen.",
+    "east-gate": "A campus gate, not a building with classes.",
+    "ave-maria-press": "A publishing house, not somewhere classes happen.",
+    "boat-house": "Rowing boathouse, not somewhere classes happen.",
+    "mason-support-center": "Service building, not somewhere classes happen.",
+    "st-michaels-laundry": "Service building, not somewhere classes happen.",
+    "landscape-services-building": "Service building, not somewhere classes happen.",
+    "notre-dame-federal-credit-union": "A credit union branch, not somewhere classes happen.",
+    "legends-of-notre-dame": "A restaurant and pub, not a dining hall or class building.",
+    "warren-golf-clubhouse": "Golf or varsity practice facility, not somewhere classes happen.",
+    "rolfs-family-all-season-golf-facility": "Golf or varsity practice facility, not somewhere classes happen.",
+    "eck-batting-cage-building": "Golf or varsity practice facility, not somewhere classes happen.",
+    "columba-hall": "Residence for Holy Cross priests or brothers, not somewhere classes happen.",
+    "corby-hall": "Residence for Holy Cross priests or brothers, not somewhere classes happen.",
+    "presbytery": "Residence for Holy Cross priests or brothers, not somewhere classes happen.",
+    "early-childhood-development-center": "Childcare centre, not somewhere classes happen.",
+    "hammes-bookstore": "Visitor centre or bookstore, not somewhere classes happen.",
+    "eck-visitors-center": "Visitor centre or bookstore, not somewhere classes happen.",
+    "rockne-memorial": "Rockne Memorial is a RecSports fitness building; its name doesn't say gym."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "coyle-hall -> rockne-memorial"
+      ],
+      "maxRatio": 3.5,
+      "why": "Coyle Hall is still mapped as a construction site (way/76245853, building=construction, check_date 2026-04-30) with no paths across it, so walks to Rockne Memorial next door go round by the mapped walks."
+    },
+    {
+      "pairs": [
+        "siegfried-hall -> north-dining-hall",
+        "pasquerilla-west-hall -> north-dining-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "No mapped path crosses the lawn between these Mod Quad halls and North Dining Hall's west door, so walks go round by the mapped walks."
+    }
+  ]
+}
