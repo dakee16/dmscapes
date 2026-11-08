@@ -6,6 +6,9 @@
 // maps come out slimmed) and svg-slim.mjs --check. A school with no config is skipped with the
 // command that starts one (area.mjs --write). Adding a school to data/campus/index.json makes it
 // public once merged (Hall Finder is live), so every ✗ in the report is fixed or explained first.
+// Several runs can go at once (one per person or agent): fetching is parallel, but building,
+// drawing and the shared lists (index.json, built.json, sketch.json) take a lock, and after each
+// run index.json and built.json are rewritten from the campus files themselves.
 import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
@@ -21,6 +24,36 @@ const read = (p) => (fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) :
 const kb = (p) => (fs.existsSync(p) ? fs.statSync(p).size / 1024 : 0);
 const dirMb = (d) => (fs.existsSync(d) ? fs.readdirSync(d).reduce((n, f) => n + fs.statSync(path.join(d, f)).size, 0) / 1e6 : 0);
 const say = (s) => process.stdout.write(`${s}\n`);
+
+// A directory lock (mkdir is atomic) around anything that writes the shared lists.
+const LOCK = "scripts/campus/cache/.lock";
+const sleep = (ms) => Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
+function locked(fn) {
+  fs.mkdirSync(path.dirname(LOCK), { recursive: true });
+  for (let waited = 0; ; waited += 2000) {
+    try {
+      fs.mkdirSync(LOCK);
+      break;
+    } catch {
+      // A lock older than 20 minutes is from a run that died.
+      if (Date.now() - fs.statSync(LOCK, { throwIfNoEntry: false })?.mtimeMs > 20 * 60 * 1000) fs.rmSync(LOCK, { recursive: true, force: true });
+      if (waited % 60000 === 0) say(`  waiting for another run's lock…`);
+      sleep(2000);
+    }
+  }
+  try {
+    return fn();
+  } finally {
+    fs.rmSync(LOCK, { recursive: true, force: true });
+  }
+}
+// The pilot list and build dates, from what is actually built (minutes files are the record).
+function reindex() {
+  const built = fs.readdirSync("data/campus").filter((f) => f.endsWith(".minutes.json")).map((f) => f.slice(0, -".minutes.json".length)).sort();
+  fs.writeFileSync("data/campus/index.json", `${JSON.stringify(built)}\n`);
+  const dates = Object.fromEntries(built.map((id) => [id, read(`data/campus/${id}.json`).generatedAt]));
+  fs.writeFileSync("data/campus/built.json", `${JSON.stringify(dates, null, 2)}\n`);
+}
 
 const ready = [];
 for (const id of ids) {
@@ -40,7 +73,7 @@ for (const id of ids) {
       continue;
     }
     say(`… ${id}: build`);
-    const b = node("scripts/campus/build.mjs", id);
+    const b = locked(() => node("scripts/campus/build.mjs", id));
     if (b.status) {
       say(`✗ ${id}: build failed\n${(b.stderr || b.stdout).trim().split("\n").slice(-5).join("\n")}`);
       continue;
@@ -58,9 +91,11 @@ for (const id of ids) {
 
 if (ready.length && !reportOnly) {
   say(`… maps: ${ready.join(", ")}`);
-  const s = node("scripts/campus/sketch.mjs", ...ready);
+  const s = locked(() => node("scripts/campus/sketch.mjs", ...ready));
   if (s.status) say(`✗ sketch failed\n${(s.stderr || s.stdout).trim().split("\n").slice(-5).join("\n")}`);
 }
+
+if (!reportOnly) locked(reindex);
 
 // ---- The report: one row per school, then the checks that failed.
 const rows = [];
