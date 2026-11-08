@@ -1,0 +1,311 @@
+{
+ "name": "Georgia Tech Office of the Registrar, Centrally Scheduled Classrooms (Atlanta campus) building codes; plus the building numbers on Georgia Tech's Audiovisual Services campus building list (https://avservices.gatech.edu/buildings/)",
+ "url": "https://registrar.gatech.edu/public/files/26-27%20Centrally%20Scheduled%20Room%20List.pdf",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "173",
+   "name": "760 Spring Street"
+  },
+  {
+   "code": "145",
+   "name": "Allen Sustainable Education Bldg"
+  },
+  {
+   "code": "103",
+   "name": "Boggs Building"
+  },
+  {
+   "code": "086",
+   "name": "Bunger-Henry Building"
+  },
+  {
+   "code": "126",
+   "name": "Callaway Manufacturing Research Center"
+  },
+  {
+   "code": "066A",
+   "name": "Cherry Emerson Building"
+  },
+  {
+   "code": "166",
+   "name": "Clough Undergraduate Learning Commons"
+  },
+  {
+   "code": "050",
+   "name": "College of Computing"
+  },
+  {
+   "code": "076",
+   "name": "College of Design East"
+  },
+  {
+   "code": "075",
+   "name": "College of Design West"
+  },
+  {
+   "code": "041",
+   "name": "Engineering Science & Mechanics Building"
+  },
+  {
+   "code": "147",
+   "name": "Ford Environmental Science & Technology Building"
+  },
+  {
+   "code": "040",
+   "name": "Guggenheim Aerospace Building"
+  },
+  {
+   "code": "081",
+   "name": "Howey Physics Building"
+  },
+  {
+   "code": "055",
+   "name": "Instructional Center"
+  },
+  {
+   "code": "210",
+   "name": "Kendeda Building for Innovative Sustainable Design"
+  },
+  {
+   "code": "153",
+   "name": "Klaus Advanced Computing Building"
+  },
+  {
+   "code": "144",
+   "name": "Love Manufacturing Bldg (MRDC II)"
+  },
+  {
+   "code": "135",
+   "name": "Manufacturing Related Disciplines Complex (MRDC)"
+  },
+  {
+   "code": "111",
+   "name": "Mason Bldg (Civil & Environmental Engineering)"
+  },
+  {
+   "code": "167",
+   "name": "Molecular Sciences & Engineering Building"
+  },
+  {
+   "code": "129",
+   "name": "Paper Tricentenial Building"
+  },
+  {
+   "code": "172",
+   "name": "Scheller College of Business"
+  },
+  {
+   "code": "002",
+   "name": "Skiles Classroom Building"
+  },
+  {
+   "code": "024",
+   "name": "Smith Building (Social Sciences)"
+  },
+  {
+   "code": "031",
+   "name": "Student Success Center"
+  },
+  {
+   "code": "039",
+   "name": "Swann Building"
+  },
+  {
+   "code": "220",
+   "name": "Tech Square Phase III"
+  },
+  {
+   "code": "175",
+   "name": "Tech Square Research Bldg"
+  },
+  {
+   "code": "085",
+   "name": "Van Leer Bldg (Electrical & Computer Engineering)"
+  },
+  {
+   "code": "098",
+   "name": "Weber Space Science & Technology Building III"
+  },
+  {
+   "code": "165",
+   "name": "Whitaker Bldg (Biomedical Engineering)"
+  },
+  {
+   "code": "850",
+   "name": "575 Fourteenth Street Engineering Ctr"
+  },
+  {
+   "code": "076",
+   "name": "Architecture (East)"
+  },
+  {
+   "code": "075",
+   "name": "Architecture (West)"
+  },
+  {
+   "code": "031",
+   "name": "Bill Moore Student Success Center"
+  },
+  {
+   "code": "085",
+   "name": "Blake R. Van Leer"
+  },
+  {
+   "code": "086",
+   "name": "Bunger-Henry"
+  },
+  {
+   "code": "176",
+   "name": "Centergy One"
+  },
+  {
+   "code": "153",
+   "name": "Christopher W. Klaus Advanced Computing"
+  },
+  {
+   "code": "058",
+   "name": "Civil Engineering (Old)"
+  },
+  {
+   "code": "056",
+   "name": "Colonel Frank F. Groseclose"
+  },
+  {
+   "code": "050",
+   "name": "Computing (COC)"
+  },
+  {
+   "code": "139",
+   "name": "Curran Street Parking Deck"
+  },
+  {
+   "code": "033",
+   "name": "Daniel C. O'Keefe"
+  },
+  {
+   "code": "040",
+   "name": "Daniel F. Guggenheim"
+  },
+  {
+   "code": "024",
+   "name": "David M. Smith"
+  },
+  {
+   "code": "038",
+   "name": "Domenico P. Savant"
+  },
+  {
+   "code": "066A",
+   "name": "Emerson Addition"
+  },
+  {
+   "code": "041",
+   "name": "Engineering Science and Mechanics"
+  },
+  {
+   "code": "147",
+   "name": "Ford Environmental Sciences and Technology"
+  },
+  {
+   "code": "126",
+   "name": "Fuller E. Callaway Jr. Manufacturing Research Center"
+  },
+  {
+   "code": "220",
+   "name": "George Tower Scheller Tower"
+  },
+  {
+   "code": "103",
+   "name": "Gilbert Hillhouse Boggs"
+  },
+  {
+   "code": "170",
+   "name": "Global Learning Center"
+  },
+  {
+   "code": "137",
+   "name": "Habersham"
+  },
+  {
+   "code": "057",
+   "name": "ISyE Main"
+  },
+  {
+   "code": "115",
+   "name": "J. Allen Couch"
+  },
+  {
+   "code": "039",
+   "name": "Janie Austell Swann"
+  },
+  {
+   "code": "144",
+   "name": "J. Erskine Love Jr. Manufacturing"
+  },
+  {
+   "code": "111",
+   "name": "Jesse Mason"
+  },
+  {
+   "code": "022",
+   "name": "J.L. Daniel Laboratory"
+  },
+  {
+   "code": "045",
+   "name": "John Saylor Coon"
+  },
+  {
+   "code": "081",
+   "name": "Joseph H. Howey"
+  },
+  {
+   "code": "095",
+   "name": "Joseph M. Pettit Microelectronics Research"
+  },
+  {
+   "code": "145",
+   "name": "Lamar Allen Sustainable Education"
+  },
+  {
+   "code": "135",
+   "name": "Manufacturing Related Disciplines Complex"
+  },
+  {
+   "code": "072",
+   "name": "Marion L. Brittain\"T\" Room Addition"
+  },
+  {
+   "code": "167",
+   "name": "Molecular Science and Engineering"
+  },
+  {
+   "code": "129",
+   "name": "Paper Tricentennial"
+  },
+  {
+   "code": "098",
+   "name": "Paul Weber Space Science & Technology (SST3)"
+  },
+  {
+   "code": "002",
+   "name": "Skiles"
+  },
+  {
+   "code": "059",
+   "name": "Stephen C. Hall"
+  },
+  {
+   "code": "175",
+   "name": "Technology Square Research"
+  },
+  {
+   "code": "165",
+   "name": "U.A. Whitaker"
+  },
+  {
+   "code": "209",
+   "name": "West Village Dining Commons"
+  }
+ ]
+}

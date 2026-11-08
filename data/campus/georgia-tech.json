@@ -1,0 +1,3088 @@
+{
+ "collegeId": "georgia-tech",
+ "generatedAt": "2026-11-08T02:08:01.885Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Georgia Tech Office of the Registrar, Centrally Scheduled Classrooms (Atlanta campus) building codes; plus the building numbers on Georgia Tech's Audiovisual Services campus building list (https://avservices.gatech.edu/buildings/)",
+   "url": "https://registrar.gatech.edu/public/files/26-27%20Centrally%20Scheduled%20Room%20List.pdf",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/georgia-tech.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -84.40682,
+  33.76939,
+  -84.38797,
+  33.78279
+ ],
+ "halls": [
+  {
+   "dormId": "armstrong",
+   "name": "Armstrong",
+   "lng": -84.403595,
+   "lat": 33.779158,
+   "pin": "name",
+   "osm": "way/178658173",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 2.6
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 14.3
+    }
+   }
+  },
+  {
+   "dormId": "brown",
+   "name": "Brown",
+   "lng": -84.391822,
+   "lat": 33.771676,
+   "pin": "name",
+   "osm": "way/42706740",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 11.4
+    },
+    "dining": {
+     "placeId": "north-avenue-dining-hall",
+     "minutes": 1.3
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 6.6
+    }
+   }
+  },
+  {
+   "dormId": "bud-val-peterson",
+   "name": "Bud & Val Peterson",
+   "lng": -84.406675,
+   "lat": 33.78006,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 11.6
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 2.7
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 17.8
+    }
+   }
+  },
+  {
+   "dormId": "caldwell",
+   "name": "Caldwell",
+   "lng": -84.40442,
+   "lat": 33.778912,
+   "pin": "name",
+   "osm": "way/42825580",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 8.7
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 2.2
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 15.1
+    }
+   }
+  },
+  {
+   "dormId": "center-street-north",
+   "name": "Center Street North",
+   "lng": -84.402494,
+   "lat": 33.780366,
+   "pin": "manual",
+   "osm": "way/43330545",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 9.1
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 4.3
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 13.3
+    }
+   }
+  },
+  {
+   "dormId": "center-street-south",
+   "name": "Center Street South",
+   "lng": -84.401854,
+   "lat": 33.779855,
+   "pin": "manual",
+   "osm": "way/43330596",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 9.2
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 4.3
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 13.4
+    }
+   }
+  },
+  {
+   "dormId": "cloudman",
+   "name": "Cloudman",
+   "lng": -84.391645,
+   "lat": 33.772781,
+   "pin": "name",
+   "osm": "way/42706752",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 10.1
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 1
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 5.3
+    }
+   }
+  },
+  {
+   "dormId": "crecine",
+   "name": "Crecine",
+   "lng": -84.403217,
+   "lat": 33.780178,
+   "pin": "manual",
+   "osm": "way/43330499",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 8.8
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 1.7
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 13.3
+    }
+   }
+  },
+  {
+   "dormId": "eighth-street-east",
+   "name": "Eighth Street East",
+   "lng": -84.404554,
+   "lat": 33.780239,
+   "pin": "name",
+   "osm": "way/42822497",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 9.4
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 1.2
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 14.7
+    }
+   }
+  },
+  {
+   "dormId": "eighth-street-south",
+   "name": "Eighth Street South",
+   "lng": -84.4051,
+   "lat": 33.779873,
+   "pin": "manual",
+   "osm": "way/42822878",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 9.8
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 0.4
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 15.1
+    }
+   }
+  },
+  {
+   "dormId": "eighth-street-west",
+   "name": "Eighth Street West",
+   "lng": -84.405662,
+   "lat": 33.780265,
+   "pin": "name",
+   "osm": "way/42822023",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 11
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 1.3
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 16.3
+    }
+   }
+  },
+  {
+   "dormId": "field",
+   "name": "Field",
+   "lng": -84.391649,
+   "lat": 33.774208,
+   "pin": "name",
+   "osm": "way/42706769",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 3.3
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "fitten",
+   "name": "Fitten",
+   "lng": -84.403719,
+   "lat": 33.778226,
+   "pin": "name",
+   "osm": "way/42872575",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 6.8
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 6
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 13.5
+    }
+   }
+  },
+  {
+   "dormId": "folk",
+   "name": "Folk",
+   "lng": -84.404849,
+   "lat": 33.778914,
+   "pin": "name",
+   "osm": "way/42825621",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 2.1
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 15.1
+    }
+   }
+  },
+  {
+   "dormId": "freeman",
+   "name": "Freeman",
+   "lng": -84.403921,
+   "lat": 33.777532,
+   "pin": "name",
+   "osm": "way/42872604",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 3.9
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 13.2
+    }
+   }
+  },
+  {
+   "dormId": "fulmer",
+   "name": "Fulmer",
+   "lng": -84.403883,
+   "lat": 33.778627,
+   "pin": "name",
+   "osm": "way/42872573",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 7.7
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 2.9
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 13.7
+    }
+   }
+  },
+  {
+   "dormId": "glc",
+   "name": "GLC",
+   "lng": -84.396684,
+   "lat": 33.781752,
+   "pin": "manual",
+   "osm": "way/42795626",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "zelnak-basketball-practice-facility",
+     "minutes": 10.7
+    },
+    "dining": {
+     "placeId": "g-wayne-clough-undergraduate-learning-commons",
+     "minutes": 13.9
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 16.2
+    }
+   }
+  },
+  {
+   "dormId": "glenn",
+   "name": "Glenn",
+   "lng": -84.391608,
+   "lat": 33.773425,
+   "pin": "name",
+   "osm": "way/42706760",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 9.9
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 1.9
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "goldin-house",
+   "name": "Goldin House",
+   "lng": -84.391395,
+   "lat": 33.775313,
+   "pin": "manual",
+   "osm": "relation/3249305",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 4.3
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 5.5
+    }
+   }
+  },
+  {
+   "dormId": "gray-house",
+   "name": "Gray House",
+   "lng": -84.391596,
+   "lat": 33.774861,
+   "pin": "manual",
+   "osm": "way/42706775",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 5.2
+    }
+   }
+  },
+  {
+   "dormId": "hanson",
+   "name": "Hanson",
+   "lng": -84.390934,
+   "lat": 33.7742,
+   "pin": "name",
+   "osm": "way/42706772",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 9.2
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 3
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "harris",
+   "name": "Harris",
+   "lng": -84.391691,
+   "lat": 33.772106,
+   "pin": "name",
+   "osm": "way/42706743",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 11.6
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 1
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 6.8
+    }
+   }
+  },
+  {
+   "dormId": "harrison",
+   "name": "Harrison",
+   "lng": -84.390961,
+   "lat": 33.77276,
+   "pin": "name",
+   "osm": "way/42706759",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 11.7
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 2.6
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 6.9
+    }
+   }
+  },
+  {
+   "dormId": "hayes-house",
+   "name": "Hayes House",
+   "lng": -84.391596,
+   "lat": 33.774861,
+   "pin": "manual",
+   "osm": "way/42706775",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 5.2
+    }
+   }
+  },
+  {
+   "dormId": "hefner",
+   "name": "Hefner",
+   "lng": -84.403946,
+   "lat": 33.779156,
+   "pin": "name",
+   "osm": "way/178658174",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 2.6
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 14.3
+    }
+   }
+  },
+  {
+   "dormId": "hopkins",
+   "name": "Hopkins",
+   "lng": -84.391288,
+   "lat": 33.774071,
+   "pin": "name",
+   "osm": "way/42706770",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 3.3
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "howell",
+   "name": "Howell",
+   "lng": -84.390937,
+   "lat": 33.772116,
+   "pin": "name",
+   "osm": "way/42706750",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 12.2
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 0.3
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 7.4
+    }
+   }
+  },
+  {
+   "dormId": "matheson",
+   "name": "Matheson",
+   "lng": -84.39153,
+   "lat": 33.774528,
+   "pin": "name",
+   "osm": "relation/3249306",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "maulding",
+   "name": "Maulding",
+   "lng": -84.405622,
+   "lat": 33.776952,
+   "pin": "name",
+   "osm": "way/42872533",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 6.2
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 5.2
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 13.9
+    }
+   }
+  },
+  {
+   "dormId": "montag",
+   "name": "Montag",
+   "lng": -84.403913,
+   "lat": 33.77786,
+   "pin": "name",
+   "osm": "way/42872589",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 6.1
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 12.9
+    }
+   }
+  },
+  {
+   "dormId": "nelson-shell",
+   "name": "Nelson Shell",
+   "lng": -84.405545,
+   "lat": 33.778206,
+   "pin": "name",
+   "osm": "way/42872564",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 7.4
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 3.5
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 14.8
+    }
+   }
+  },
+  {
+   "dormId": "north-avenue-east",
+   "name": "North Avenue East",
+   "lng": -84.39085,
+   "lat": 33.769421,
+   "pin": "manual",
+   "osm": "way/43891014",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 17.5
+    },
+    "dining": {
+     "placeId": "north-avenue-dining-hall",
+     "minutes": 6.2
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 12.1
+    }
+   }
+  },
+  {
+   "dormId": "north-avenue-north",
+   "name": "North Avenue North",
+   "lng": -84.390915,
+   "lat": 33.770548,
+   "pin": "manual",
+   "osm": "relation/4041025",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 13.9
+    },
+    "dining": {
+     "placeId": "north-avenue-dining-hall",
+     "minutes": 1
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 8.9
+    }
+   }
+  },
+  {
+   "dormId": "north-avenue-south",
+   "name": "North Avenue South",
+   "lng": -84.391828,
+   "lat": 33.769392,
+   "pin": "manual",
+   "osm": "way/43890968",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 16.1
+    },
+    "dining": {
+     "placeId": "north-avenue-dining-hall",
+     "minutes": 4.8
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 10.8
+    }
+   }
+  },
+  {
+   "dormId": "north-avenue-west",
+   "name": "North Avenue West",
+   "lng": -84.391821,
+   "lat": 33.770491,
+   "pin": "manual",
+   "osm": "way/43890894",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 13.5
+    },
+    "dining": {
+     "placeId": "north-avenue-dining-hall",
+     "minutes": 1.9
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 8.4
+    }
+   }
+  },
+  {
+   "dormId": "perry",
+   "name": "Perry",
+   "lng": -84.391065,
+   "lat": 33.77452,
+   "pin": "name",
+   "osm": "relation/3249307",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 9
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 3.4
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 5.3
+    }
+   }
+  },
+  {
+   "dormId": "stein-house",
+   "name": "Stein House",
+   "lng": -84.391395,
+   "lat": 33.775313,
+   "pin": "manual",
+   "osm": "relation/3249305",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 6.9
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 4.3
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 5.5
+    }
+   }
+  },
+  {
+   "dormId": "tenth-home-bldg-a",
+   "name": "Tenth & Home Bldg A",
+   "lng": -84.395568,
+   "lat": 33.781859,
+   "pin": "name",
+   "osm": "way/42727160",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "zelnak-basketball-practice-facility",
+     "minutes": 7.6
+    },
+    "dining": {
+     "placeId": "g-wayne-clough-undergraduate-learning-commons",
+     "minutes": 13.6
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 14.2
+    }
+   }
+  },
+  {
+   "dormId": "tenth-home-bldg-b",
+   "name": "Tenth & Home Bldg B",
+   "lng": -84.395212,
+   "lat": 33.782173,
+   "pin": "name",
+   "osm": "way/42726928",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "zelnak-basketball-practice-facility",
+     "minutes": 8.1
+    },
+    "dining": {
+     "placeId": "g-wayne-clough-undergraduate-learning-commons",
+     "minutes": 14.1
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 14.7
+    }
+   }
+  },
+  {
+   "dormId": "tenth-home-bldg-c",
+   "name": "Tenth & Home Bldg C",
+   "lng": -84.395301,
+   "lat": 33.782693,
+   "pin": "name",
+   "osm": "way/42726877",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "zelnak-basketball-practice-facility",
+     "minutes": 8.6
+    },
+    "dining": {
+     "placeId": "g-wayne-clough-undergraduate-learning-commons",
+     "minutes": 14.2
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 15.2
+    }
+   }
+  },
+  {
+   "dormId": "tenth-home-bldg-d",
+   "name": "Tenth & Home Bldg D",
+   "lng": -84.395784,
+   "lat": 33.782578,
+   "pin": "name",
+   "osm": "way/42727187",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "zelnak-basketball-practice-facility",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "g-wayne-clough-undergraduate-learning-commons",
+     "minutes": 14.3
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 15.5
+    }
+   }
+  },
+  {
+   "dormId": "tenth-home-bldg-e",
+   "name": "Tenth & Home Bldg E",
+   "lng": -84.39627,
+   "lat": 33.782718,
+   "pin": "name",
+   "osm": "way/42796148",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "zelnak-basketball-practice-facility",
+     "minutes": 9.4
+    },
+    "dining": {
+     "placeId": "g-wayne-clough-undergraduate-learning-commons",
+     "minutes": 13.1
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 15.3
+    }
+   }
+  },
+  {
+   "dormId": "tenth-home-bldg-f",
+   "name": "Tenth & Home Bldg F",
+   "lng": -84.396711,
+   "lat": 33.782786,
+   "pin": "name",
+   "osm": "way/42795946",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "zelnak-basketball-practice-facility",
+     "minutes": 9.9
+    },
+    "dining": {
+     "placeId": "g-wayne-clough-undergraduate-learning-commons",
+     "minutes": 13.6
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 15.9
+    }
+   }
+  },
+  {
+   "dormId": "tenth-home-bldg-g",
+   "name": "Tenth & Home Bldg G",
+   "lng": -84.396853,
+   "lat": 33.782179,
+   "pin": "name",
+   "osm": "way/42795190",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "zelnak-basketball-practice-facility",
+     "minutes": 10.3
+    },
+    "dining": {
+     "placeId": "g-wayne-clough-undergraduate-learning-commons",
+     "minutes": 13.6
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 15.8
+    }
+   }
+  },
+  {
+   "dormId": "towers",
+   "name": "Towers",
+   "lng": -84.391006,
+   "lat": 33.773433,
+   "pin": "name",
+   "osm": "way/42706762",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 10.7
+    },
+    "dining": {
+     "placeId": "marion-l-brittain-dining-hall",
+     "minutes": 1.7
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 5.9
+    }
+   }
+  },
+  {
+   "dormId": "woodruff-north",
+   "name": "Woodruff North",
+   "lng": -84.406525,
+   "lat": 33.779353,
+   "pin": "name",
+   "osm": "way/178717766",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 12.2
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 3.4
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 18.4
+    }
+   }
+  },
+  {
+   "dormId": "woodruff-south",
+   "name": "Woodruff South",
+   "lng": -84.406517,
+   "lat": 33.778864,
+   "pin": "name",
+   "osm": "way/178717765",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 10.5
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 2.8
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 17.5
+    }
+   }
+  },
+  {
+   "dormId": "zbar-apartments",
+   "name": "Zbar Apartments",
+   "lng": -84.404846,
+   "lat": 33.77756,
+   "pin": "manual",
+   "osm": "way/42825900",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "campus-recreation-center",
+     "minutes": 6.3
+    },
+    "dining": {
+     "placeId": "west-village-dining-commons",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "price-gilbert-memorial-library",
+     "minutes": 13.4
+    }
+   }
+  },
+  {
+   "dormId": "smith",
+   "name": "Smith",
+   "lng": -84.391245,
+   "lat": 33.771727,
+   "pin": "name",
+   "osm": "way/42706741",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "okeefe-gymnasium",
+     "minutes": 13
+    },
+    "dining": {
+     "placeId": "north-avenue-dining-hall",
+     "minutes": 2
+    },
+    "library": {
+     "placeId": "dorothy-murray-crosland-tower",
+     "minutes": 8.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "campus-recreation-center",
+   "name": "Campus Recreation Center",
+   "short": "Campus Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "CRC"
+   ],
+   "lng": -84.403921,
+   "lat": 33.7756,
+   "osm": "way/179224195"
+  },
+  {
+   "id": "alexander-memorial-coliseum-in-mccamish-pavilion",
+   "name": "Alexander Memorial Coliseum in McCamish Pavilion",
+   "short": "Alexander Coliseum",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Alexander Coliseum",
+    "Alexander Memorial Coliseum"
+   ],
+   "lng": -84.392757,
+   "lat": 33.780678,
+   "osm": "way/42726641"
+  },
+  {
+   "id": "george-tower-scheller-tower",
+   "name": "George Tower | Scheller Tower",
+   "short": "George Tower | Scheller Tower",
+   "kind": "academic",
+   "codes": [
+    "220"
+   ],
+   "aliases": [],
+   "lng": -84.388061,
+   "lat": 33.77724,
+   "osm": "way/1355836113"
+  },
+  {
+   "id": "christopher-w-klaus-advanced-computing-building",
+   "name": "Christopher W. Klaus Advanced Computing Building",
+   "short": "Klaus",
+   "kind": "academic",
+   "codes": [
+    "153"
+   ],
+   "aliases": [
+    "Klaus",
+    "Klaus Advanced Computing Building",
+    "Christopher W. Klaus Advanced Computing"
+   ],
+   "lng": -84.396146,
+   "lat": 33.777151,
+   "osm": "way/42706123"
+  },
+  {
+   "id": "bernie-marcus-nanotechnology-building",
+   "name": "Bernie Marcus Nanotechnology Building",
+   "short": "MiRC",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "MiRC",
+    "Marcus Nanotechnology Building"
+   ],
+   "lng": -84.398515,
+   "lat": 33.778814,
+   "osm": "way/42796835"
+  },
+  {
+   "id": "ford-motor-company-environmental-science-and-technology-building",
+   "name": "Ford Motor Company Environmental Science and Technology Building",
+   "short": "Ford ES&T",
+   "kind": "academic",
+   "codes": [
+    "147"
+   ],
+   "aliases": [
+    "Ford ES&T",
+    "Ford Environmental Science and Technology Building"
+   ],
+   "lng": -84.39599,
+   "lat": 33.778841,
+   "osm": "way/42796800"
+  },
+  {
+   "id": "john-lewis-student-center",
+   "name": "John Lewis Student Center",
+   "short": "Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Student Center",
+    "Wenn Student Center"
+   ],
+   "lng": -84.398664,
+   "lat": 33.774005,
+   "osm": "relation/3178621"
+  },
+  {
+   "id": "glen-p-robinson-jr-building",
+   "name": "Glen P. Robinson, Jr. Building",
+   "short": "Robinson (MS&E)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Robinson (MS&E)",
+    "Robinson Molecular Science & Engineering"
+   ],
+   "lng": -84.396692,
+   "lat": 33.779843,
+   "osm": "way/42796728"
+  },
+  {
+   "id": "william-vernon-skiles-building",
+   "name": "William Vernon Skiles Building",
+   "short": "Skiles",
+   "kind": "academic",
+   "codes": [
+    "002"
+   ],
+   "aliases": [
+    "Skiles",
+    "Skiles Classroom Building"
+   ],
+   "lng": -84.396253,
+   "lat": 33.773604,
+   "osm": "relation/302115"
+  },
+  {
+   "id": "g-wayne-clough-undergraduate-learning-commons",
+   "name": "G. Wayne Clough Undergraduate Learning Commons",
+   "short": "G. Wayne Clough Undergraduate Learning Commons",
+   "kind": "dining",
+   "codes": [
+    "166"
+   ],
+   "aliases": [
+    "CULC",
+    "Clough Undergraduate Learning Commons"
+   ],
+   "lng": -84.396386,
+   "lat": 33.774648,
+   "osm": "relation/3178622"
+  },
+  {
+   "id": "howey-building",
+   "name": "Howey Building",
+   "short": "Howey (Physics)",
+   "kind": "academic",
+   "codes": [
+    "081"
+   ],
+   "aliases": [
+    "Howey (Physics)",
+    "Howey Physics Building",
+    "Joseph H. Howey"
+   ],
+   "lng": -84.398665,
+   "lat": 33.777425,
+   "osm": "relation/3178624"
+  },
+  {
+   "id": "parker-h-petit-biotechnology-building",
+   "name": "Parker H. Petit Biotechnology Building",
+   "short": "Petit Biotech",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Petit Biotech",
+    "Petit Biotechnology Building"
+   ],
+   "lng": -84.397242,
+   "lat": 33.778962,
+   "osm": "way/42796745"
+  },
+  {
+   "id": "boggs-chemistry-building",
+   "name": "Boggs Chemistry Building",
+   "short": "Boggs (Chemistry)",
+   "kind": "academic",
+   "codes": [
+    "103"
+   ],
+   "aliases": [
+    "Boggs (Chemistry)",
+    "Boggs Building (Chemistry)",
+    "Boggs Building"
+   ],
+   "lng": -84.399758,
+   "lat": 33.775536,
+   "osm": "way/88636657"
+  },
+  {
+   "id": "j-erskine-love-manufacturing-building",
+   "name": "J. Erskine Love Manufacturing Building",
+   "short": "Love (MRDC II)",
+   "kind": "academic",
+   "codes": [
+    "144"
+   ],
+   "aliases": [
+    "Love (MRDC II)",
+    "Love Manufacturing Building (MRDC II)",
+    "Love Manufacturing Bldg (MRDC II)",
+    "J. Erskine Love Jr. Manufacturing"
+   ],
+   "lng": -84.401705,
+   "lat": 33.776566,
+   "osm": "way/42872649"
+  },
+  {
+   "id": "van-leer-building",
+   "name": "Van Leer Building",
+   "short": "Van Leer (EE+CE)",
+   "kind": "academic",
+   "codes": [
+    "085"
+   ],
+   "aliases": [
+    "Van Leer (EE+CE)",
+    "Van Leer Building (Electrical and Computer Engineering)",
+    "Van Leer Bldg (Electrical & Computer Engineering)",
+    "Blake R. Van Leer"
+   ],
+   "lng": -84.397182,
+   "lat": 33.775912,
+   "osm": "way/42706132"
+  },
+  {
+   "id": "fuller-e-callaway-jr-manufacturing-research-center",
+   "name": "Fuller E. Callaway Jr. Manufacturing Research Center",
+   "short": "Fuller E. Callaway Jr. Manufacturing Research Center",
+   "kind": "academic",
+   "codes": [
+    "126"
+   ],
+   "aliases": [
+    "MARC",
+    "Callaway Manufacturing Research Center"
+   ],
+   "lng": -84.401343,
+   "lat": 33.777599,
+   "osm": "way/42872682"
+  },
+  {
+   "id": "manufacturing-related-disciplines-complex",
+   "name": "Manufacturing Related Disciplines Complex",
+   "short": "Manufacturing Related Disciplines Complex",
+   "kind": "academic",
+   "codes": [
+    "135"
+   ],
+   "aliases": [
+    "MRDC",
+    "Manufacturing Related Disciplines Complex (MRDC)"
+   ],
+   "lng": -84.400521,
+   "lat": 33.77696,
+   "osm": "way/42872689"
+  },
+  {
+   "id": "scheller-college-of-business",
+   "name": "Scheller College of Business",
+   "short": "Coll. Management",
+   "kind": "academic",
+   "codes": [
+    "172"
+   ],
+   "aliases": [
+    "Coll. Management"
+   ],
+   "lng": -84.387973,
+   "lat": 33.776235,
+   "osm": "way/42706834"
+  },
+  {
+   "id": "joseph-m-pettit-microelectronics-research-center",
+   "name": "Joseph M. Pettit Microelectronics Research Center",
+   "short": "Joseph M. Pettit Microelectronics Research Center",
+   "kind": "academic",
+   "codes": [
+    "095"
+   ],
+   "aliases": [
+    "MIRC",
+    "Pettit Building (Microelectronics Research Center)",
+    "Joseph M. Pettit Microelectronics Research"
+   ],
+   "lng": -84.397356,
+   "lat": 33.776601,
+   "osm": "way/42706129"
+  },
+  {
+   "id": "technology-square-research-building-tsrb",
+   "name": "Technology Square Research Building (TSRB)",
+   "short": "Tech Square Research",
+   "kind": "academic",
+   "codes": [
+    "175"
+   ],
+   "aliases": [
+    "Tech Square Research",
+    "Tech Square Research Bldg",
+    "Technology Square Research"
+   ],
+   "lng": -84.390095,
+   "lat": 33.777374,
+   "osm": "way/42706824"
+  },
+  {
+   "id": "jesse-w-mason-building",
+   "name": "Jesse W. Mason Building",
+   "short": "Mason (CE+EE)",
+   "kind": "academic",
+   "codes": [
+    "111"
+   ],
+   "aliases": [
+    "Mason (CE+EE)",
+    "Mason Building (Civil and Environmental Engineering)",
+    "Mason Bldg (Civil & Environmental Engineering)",
+    "Jesse Mason"
+   ],
+   "lng": -84.3987,
+   "lat": 33.776633,
+   "osm": "way/179223077"
+  },
+  {
+   "id": "bunger-henry-building",
+   "name": "Bunger-Henry Building",
+   "short": "Bunger-Henry",
+   "kind": "academic",
+   "codes": [
+    "086"
+   ],
+   "aliases": [
+    "Bunger-Henry"
+   ],
+   "lng": -84.398264,
+   "lat": 33.775634,
+   "osm": "way/43332735"
+  },
+  {
+   "id": "global-learning-and-conference-center",
+   "name": "Global Learning & Conference Center",
+   "short": "Global Learning & Conference Center",
+   "kind": "academic",
+   "codes": [
+    "170"
+   ],
+   "aliases": [
+    "Global Learning Center"
+   ],
+   "lng": -84.389951,
+   "lat": 33.776338,
+   "osm": "relation/3321073"
+  },
+  {
+   "id": "institute-of-paper-science-and-technology",
+   "name": "Institute of Paper Science and Technology",
+   "short": "Institute of Paper Science and Technology",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "IPST"
+   ],
+   "lng": -84.404528,
+   "lat": 33.780974,
+   "osm": "way/43330481"
+  },
+  {
+   "id": "college-of-computing-building",
+   "name": "College of Computing Building",
+   "short": "Computing",
+   "kind": "academic",
+   "codes": [
+    "050"
+   ],
+   "aliases": [
+    "Computing",
+    "CCB",
+    "College of Computing",
+    "Computing (COC)"
+   ],
+   "lng": -84.397309,
+   "lat": 33.777435,
+   "osm": "way/42706125"
+  },
+  {
+   "id": "rich-computer-center-building",
+   "name": "Rich Computer Center Building",
+   "short": "Rich Computer",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Rich Computer",
+    "Rich Computer Center"
+   ],
+   "lng": -84.394982,
+   "lat": 33.775249,
+   "osm": "relation/4578449"
+  },
+  {
+   "id": "okeefe-main-building",
+   "name": "O'Keefe Main Building",
+   "short": "O'Keefe",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "O'Keefe"
+   ],
+   "lng": -84.392206,
+   "lat": 33.778771,
+   "osm": "way/42726100"
+  },
+  {
+   "id": "robert-h-ferst-center-for-the-arts",
+   "name": "Robert H. Ferst Center for the Arts",
+   "short": "Ferst Ctr.",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Ferst Ctr.",
+    "Ferst Center for the Arts"
+   ],
+   "lng": -84.399211,
+   "lat": 33.7751,
+   "osm": "way/43332730"
+  },
+  {
+   "id": "john-saylor-coon-building",
+   "name": "John Saylor Coon Building",
+   "short": "Coon",
+   "kind": "academic",
+   "codes": [
+    "045"
+   ],
+   "aliases": [
+    "Coon",
+    "Coon Building (Psychology)",
+    "John Saylor Coon"
+   ],
+   "lng": -84.395858,
+   "lat": 33.77278,
+   "osm": "way/42831047"
+  },
+  {
+   "id": "baker-building",
+   "name": "Baker Building",
+   "short": "Baker Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "GTRI",
+    "Baker Building (GTRI)"
+   ],
+   "lng": -84.399504,
+   "lat": 33.780014,
+   "osm": "way/43331465"
+  },
+  {
+   "id": "printing-and-copying-services",
+   "name": "Printing and Copying Services",
+   "short": "Printing and Copying",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Printing and Copying"
+   ],
+   "lng": -84.405475,
+   "lat": 33.774728,
+   "osm": "way/43335058"
+  },
+  {
+   "id": "georgia-tech-research-institute-north-building",
+   "name": "Georgia Tech Research Institute North Building",
+   "short": "GTRI North",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "GTRI North",
+    "GTRI, Research Building (North)"
+   ],
+   "lng": -84.401434,
+   "lat": 33.781073,
+   "osm": "way/43331393"
+  },
+  {
+   "id": "business-services-building",
+   "name": "Business Services Building",
+   "short": "Business Services",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Business Services"
+   ],
+   "lng": -84.40144,
+   "lat": 33.772857,
+   "osm": "way/43335057"
+  },
+  {
+   "id": "walter-h-hopkins-building",
+   "name": "Walter H. Hopkins Building",
+   "short": "Hopkins (Adv. Brain Imaging)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Hopkins (Adv. Brain Imaging)",
+    "Center for Advanced Brain Imaging"
+   ],
+   "lng": -84.405847,
+   "lat": 33.775303,
+   "osm": "way/43335093"
+  },
+  {
+   "id": "barnes-and-noble-bookstore-georgia-tech",
+   "name": "Barnes & Noble Bookstore @ Georgia Tech",
+   "short": "Bookstore",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Bookstore",
+    "Barnes & Noble Bookstore"
+   ],
+   "lng": -84.388479,
+   "lat": 33.776384,
+   "osm": "way/179047236"
+  },
+  {
+   "id": "flag-building-charles-a-smithgall-jr-building",
+   "name": "Flag Building (Charles A. Smithgall Jr. Building)",
+   "short": "Smithgall (Student Services)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Smithgall (Student Services)",
+    "Smithgall Student Services Building"
+   ],
+   "lng": -84.39957,
+   "lat": 33.77434,
+   "osm": "way/42831367"
+  },
+  {
+   "id": "instructional-center",
+   "name": "Instructional Center",
+   "short": "Instructional Center",
+   "kind": "academic",
+   "codes": [
+    "055"
+   ],
+   "aliases": [
+    "IC"
+   ],
+   "lng": -84.401248,
+   "lat": 33.775451,
+   "osm": "way/42872637"
+  },
+  {
+   "id": "architecture-west",
+   "name": "Architecture West",
+   "short": "Architecture West",
+   "kind": "academic",
+   "codes": [
+    "075"
+   ],
+   "aliases": [],
+   "lng": -84.396072,
+   "lat": 33.776102,
+   "osm": "way/179220688"
+  },
+  {
+   "id": "ua-whitaker-building",
+   "name": "U.A. Whitaker Building",
+   "short": "Whitaker",
+   "kind": "academic",
+   "codes": [
+    "165"
+   ],
+   "aliases": [
+    "Whitaker",
+    "Whitaker Building (Biomedical Engineering)",
+    "Whitaker Bldg (Biomedical Engineering)",
+    "U.A. Whitaker"
+   ],
+   "lng": -84.396806,
+   "lat": 33.778484,
+   "osm": "way/43332682"
+  },
+  {
+   "id": "wardlaw-center",
+   "name": "Wardlaw Center",
+   "short": "Wardlaw Ctr.",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Wardlaw Ctr."
+   ],
+   "lng": -84.392836,
+   "lat": 33.771669,
+   "osm": "way/42706714"
+  },
+  {
+   "id": "cherry-l-emerson-building",
+   "name": "Cherry L. Emerson Building",
+   "short": "Emerson",
+   "kind": "academic",
+   "codes": [
+    "066A"
+   ],
+   "aliases": [
+    "Emerson",
+    "Emerson Building",
+    "Cherry Emerson Building"
+   ],
+   "lng": -84.397207,
+   "lat": 33.777931,
+   "osm": "way/42706121"
+  },
+  {
+   "id": "zelnak-basketball-practice-facility",
+   "name": "Zelnak Basketball Practice Facility",
+   "short": "Basketball Facility",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Basketball Facility"
+   ],
+   "lng": -84.392295,
+   "lat": 33.779893,
+   "osm": "way/178716337"
+  },
+  {
+   "id": "architecture-east",
+   "name": "Architecture East",
+   "short": "Architecture East",
+   "kind": "academic",
+   "codes": [
+    "076"
+   ],
+   "aliases": [],
+   "lng": -84.395391,
+   "lat": 33.775992,
+   "osm": "way/42829998"
+  },
+  {
+   "id": "kendeda-building-for-innovative-sustainable-design",
+   "name": "Kendeda Building for Innovative Sustainable Design",
+   "short": "Kendeda Building for Innovative Sustainable Design",
+   "kind": "academic",
+   "codes": [
+    "210"
+   ],
+   "aliases": [],
+   "lng": -84.399506,
+   "lat": 33.778777,
+   "osm": "way/977377065"
+  },
+  {
+   "id": "west-village-dining-commons",
+   "name": "West Village Dining Commons",
+   "short": "West Village Dining Commons",
+   "kind": "dining",
+   "codes": [
+    "209"
+   ],
+   "aliases": [],
+   "lng": -84.404845,
+   "lat": 33.779341,
+   "osm": "way/516716115"
+  },
+  {
+   "id": "weber-space-science-and-technology-building-i",
+   "name": "Weber Space Science and Technology Building I",
+   "short": "Weber SS&T 1",
+   "kind": "academic",
+   "codes": [
+    "098"
+   ],
+   "aliases": [
+    "Weber SS&T 1",
+    "Weber Space Science & Technology Building",
+    "Paul Weber Space Science & Technology (SST3)"
+   ],
+   "lng": -84.396634,
+   "lat": 33.772912,
+   "osm": "relation/3178627"
+  },
+  {
+   "id": "joseph-b-whitehead-student-health-center",
+   "name": "Joseph B. Whitehead Student Health Center",
+   "short": "Health Services",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Health Services",
+    "Whitehead Building (Health Services)"
+   ],
+   "lng": -84.403108,
+   "lat": 33.774845,
+   "osm": "way/42872499"
+  },
+  {
+   "id": "james-k-luck-jr-facilities-building",
+   "name": "James K. Luck Jr. Facilities Building",
+   "short": "Luck",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Luck",
+    "Luck Building"
+   ],
+   "lng": -84.392748,
+   "lat": 33.779949,
+   "osm": "way/42726571"
+  },
+  {
+   "id": "georgia-tech-research-institute-south-building",
+   "name": "Georgia Tech Research Institute South Building",
+   "short": "GTRI South",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "GTRI South",
+    "GTRI, Research Building (South)"
+   ],
+   "lng": -84.401436,
+   "lat": 33.780347,
+   "osm": "way/43331406"
+  },
+  {
+   "id": "montgomery-knight-building",
+   "name": "Montgomery Knight Building",
+   "short": "Knight (AE)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Knight (AE)",
+    "Knight Aerospace Engineering Building"
+   ],
+   "lng": -84.396053,
+   "lat": 33.771906,
+   "osm": "way/42831079"
+  },
+  {
+   "id": "weber-space-science-and-technology-building-iii",
+   "name": "Weber Space Science & Technology Building III",
+   "short": "Weber SST III",
+   "kind": "academic",
+   "codes": [
+    "098"
+   ],
+   "aliases": [
+    "Weber SST III"
+   ],
+   "lng": -84.396326,
+   "lat": 33.77265,
+   "osm": "relation/3178625"
+  },
+  {
+   "id": "okeefe-gymnasium",
+   "name": "O'Keefe Gymnasium",
+   "short": "O'Keefe Gym",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "O'Keefe Gym"
+   ],
+   "lng": -84.39162,
+   "lat": 33.779349,
+   "osm": "way/42726177"
+  },
+  {
+   "id": "georgia-tech-school-of-music-couch-building",
+   "name": "Georgia Tech School of Music - Couch Building",
+   "short": "Couch (Music)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Couch (Music)",
+    "Couch Music Building"
+   ],
+   "lng": -84.404489,
+   "lat": 33.77824,
+   "osm": "way/42825797"
+  },
+  {
+   "id": "ivan-allen-college-of-liberal-arts",
+   "name": "Ivan Allen College of Liberal Arts",
+   "short": "Coll. Liberal Arts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Coll. Liberal Arts"
+   ],
+   "lng": -84.404243,
+   "lat": 33.774027,
+   "osm": "way/43335086"
+  },
+  {
+   "id": "colonel-frank-f-groseclose-building",
+   "name": "Colonel Frank F. Groseclose Building",
+   "short": "Groseclose (ISyE)",
+   "kind": "academic",
+   "codes": [
+    "056"
+   ],
+   "aliases": [
+    "Groseclose (ISyE)",
+    "Groseclose Industrial and Systems Engineering Building",
+    "Colonel Frank F. Groseclose"
+   ],
+   "lng": -84.401789,
+   "lat": 33.775746,
+   "osm": "way/42872633"
+  },
+  {
+   "id": "dorothy-murray-crosland-tower",
+   "name": "Dorothy Murray Crosland Tower",
+   "short": "Library East",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Library East Wing",
+    "Library East",
+    "Crosland Tower (Library)"
+   ],
+   "lng": -84.395166,
+   "lat": 33.774197,
+   "osm": "relation/3178620"
+  },
+  {
+   "id": "holland-building",
+   "name": "Holland Building",
+   "short": "Holland (Whistle)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Holland (Whistle)"
+   ],
+   "lng": -84.394543,
+   "lat": 33.773283,
+   "osm": "way/42706690"
+  },
+  {
+   "id": "north-avenue-dining-hall",
+   "name": "North Avenue Dining Hall",
+   "short": "North. Ave.",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "North Ave. Dining Hall",
+    "North. Ave."
+   ],
+   "lng": -84.39136,
+   "lat": 33.771056,
+   "osm": "relation/4041026"
+  },
+  {
+   "id": "marion-l-brittain-dining-hall",
+   "name": "Marion L. Brittain Dining Hall",
+   "short": "Brittain",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Brittain",
+    "Brittain Dining Hall"
+   ],
+   "lng": -84.39129,
+   "lat": 33.77246,
+   "osm": "way/42706747"
+  },
+  {
+   "id": "bill-moore-student-success-center",
+   "name": "Bill Moore Student Success Center",
+   "short": "Student Success Ctr.",
+   "kind": "academic",
+   "codes": [
+    "031"
+   ],
+   "aliases": [
+    "Student Success Ctr.",
+    "Moore Student Success Center (Admissions)",
+    "Student Success Center"
+   ],
+   "lng": -84.393948,
+   "lat": 33.772441,
+   "osm": "way/42706711"
+  },
+  {
+   "id": "aaron-s-french-building",
+   "name": "Aaron S. French Building",
+   "short": "French",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "French",
+    "French Building"
+   ],
+   "lng": -84.394568,
+   "lat": 33.772936,
+   "osm": "way/42706702"
+  },
+  {
+   "id": "thomas-hinman-highbay-research-building",
+   "name": "Thomas Hinman Highbay Research Building",
+   "short": "Hinman Highbay",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Hinman Highbay",
+    "Hinman Highbay Building"
+   ],
+   "lng": -84.395171,
+   "lat": 33.774652,
+   "osm": "relation/4578450"
+  },
+  {
+   "id": "engineering-science-and-mechanics-building",
+   "name": "Engineering Science and Mechanics Building",
+   "short": "ES&M",
+   "kind": "academic",
+   "codes": [
+    "041"
+   ],
+   "aliases": [
+    "ES&M",
+    "Engineering Science and Mechanics"
+   ],
+   "lng": -84.39579,
+   "lat": 33.772061,
+   "osm": "way/42831050"
+  },
+  {
+   "id": "lettie-pate-whithead-evans-administration-building",
+   "name": "Lettie Pate Whithead Evans Administration Building",
+   "short": "Tech Tower",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Tech Tower",
+    "Evans Administration Building (Tech Tower)"
+   ],
+   "lng": -84.394686,
+   "lat": 33.772472,
+   "osm": "way/42706709"
+  },
+  {
+   "id": "create-x",
+   "name": "CREATE-X",
+   "short": "Woody's",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Woodruff Dining Hall",
+    "Woody's"
+   ],
+   "lng": -84.406825,
+   "lat": 33.779117,
+   "osm": "way/178717767"
+  },
+  {
+   "id": "centergy-one",
+   "name": "Centergy One",
+   "short": "Centergy One",
+   "kind": "academic",
+   "codes": [
+    "176"
+   ],
+   "aliases": [],
+   "lng": -84.389555,
+   "lat": 33.777573,
+   "osm": "way/42706826"
+  },
+  {
+   "id": "lamar-allen-sustainable-education-building",
+   "name": "Lamar Allen Sustainable Education Building",
+   "short": "Sustainable Education",
+   "kind": "academic",
+   "codes": [
+    "145"
+   ],
+   "aliases": [
+    "Sustainable Education",
+    "Sustainable Education (Allen Building)",
+    "Allen Sustainable Education Bldg",
+    "Lamar Allen Sustainable Education"
+   ],
+   "lng": -84.398808,
+   "lat": 33.776178,
+   "osm": "way/42706134"
+  },
+  {
+   "id": "d-m-smith-building",
+   "name": "D. M. Smith Building",
+   "short": "Smith (Social Sciences)",
+   "kind": "academic",
+   "codes": [
+    "024"
+   ],
+   "aliases": [
+    "Smith (Social Sciences)",
+    "D. M. Smith Social Sciences Building",
+    "David M. Smith"
+   ],
+   "lng": -84.395151,
+   "lat": 33.773646,
+   "osm": "way/42830677"
+  },
+  {
+   "id": "old-civil-engineering-building",
+   "name": "Old Civil Engineering Building",
+   "short": "Old Civil Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "058"
+   ],
+   "aliases": [
+    "Civil Engineering (Old)"
+   ],
+   "lng": -84.394676,
+   "lat": 33.774196,
+   "osm": "way/42706678"
+  },
+  {
+   "id": "kappa-alpha",
+   "name": "Kappa Alpha",
+   "short": "ΚΑ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΚΑ"
+   ],
+   "lng": -84.391694,
+   "lat": 33.776503,
+   "osm": "way/42725860"
+  },
+  {
+   "id": "tau-kappa-epsilon",
+   "name": "Tau Kappa Epsilon",
+   "short": "Tau Kappa Epsilon",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "TKE"
+   ],
+   "lng": -84.392363,
+   "lat": 33.777193,
+   "osm": "way/42726021"
+  },
+  {
+   "id": "phi-gamma-delta",
+   "name": "Phi Gamma Delta",
+   "short": "ΦΓΔ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΦΓΔ"
+   ],
+   "lng": -84.393252,
+   "lat": 33.777632,
+   "osm": "way/42726143"
+  },
+  {
+   "id": "georgia-tech-human-resources-building",
+   "name": "Georgia Tech Human Resources Building",
+   "short": "Georgia Tech Human Resources Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "HR",
+    "Human Resources Building"
+   ],
+   "lng": -84.402646,
+   "lat": 33.773362,
+   "osm": "way/43335055"
+  },
+  {
+   "id": "swann-building",
+   "name": "Swann Building",
+   "short": "Swann",
+   "kind": "academic",
+   "codes": [
+    "039"
+   ],
+   "aliases": [
+    "Swann"
+   ],
+   "lng": -84.395289,
+   "lat": 33.771691,
+   "osm": "way/42830610"
+  },
+  {
+   "id": "l-w-robert-alumni-and-faculty-house",
+   "name": "L. W. Robert Alumni and Faculty House",
+   "short": "Alumni House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Alumni House",
+    "Robert Alumni/Faculty House"
+   ],
+   "lng": -84.393543,
+   "lat": 33.771026,
+   "osm": "way/42706716"
+  },
+  {
+   "id": "savant-building",
+   "name": "Savant Building",
+   "short": "Savant",
+   "kind": "academic",
+   "codes": [
+    "038"
+   ],
+   "aliases": [
+    "Savant",
+    "Domenico P. Savant"
+   ],
+   "lng": -84.395267,
+   "lat": 33.772087,
+   "osm": "way/42830543"
+  },
+  {
+   "id": "kappa-sigma",
+   "name": "Kappa Sigma",
+   "short": "ΚΣ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΚΣ"
+   ],
+   "lng": -84.393201,
+   "lat": 33.777923,
+   "osm": "way/42726152"
+  },
+  {
+   "id": "colonel-stephen-c-hall-building",
+   "name": "Colonel Stephen C. Hall Building",
+   "short": "Hall (Navy ROTC)",
+   "kind": "academic",
+   "codes": [
+    "059"
+   ],
+   "aliases": [
+    "Hall (Navy ROTC)",
+    "Navy ROTC Armory",
+    "Hall Building",
+    "Stephen C. Hall"
+   ],
+   "lng": -84.394072,
+   "lat": 33.774132,
+   "osm": "way/42706679"
+  },
+  {
+   "id": "sigma-nu",
+   "name": "Sigma Nu",
+   "short": "ΣΝ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΣΝ"
+   ],
+   "lng": -84.39434,
+   "lat": 33.775082,
+   "osm": "way/42706662"
+  },
+  {
+   "id": "price-gilbert-memorial-library",
+   "name": "Price Gilbert Memorial Library",
+   "short": "Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [
+    "Price Gilbert Library",
+    "Library"
+   ],
+   "lng": -84.395735,
+   "lat": 33.774456,
+   "osm": "relation/3178630"
+  },
+  {
+   "id": "delta-chi",
+   "name": "Delta Chi",
+   "short": "ΔΧ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΔΧ"
+   ],
+   "lng": -84.392897,
+   "lat": 33.776646,
+   "osm": "way/42725945"
+  },
+  {
+   "id": "shirley-clements-mewborn-field",
+   "name": "Shirley Clements Mewborn Field",
+   "short": "Women’s Softball",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Women’s Softball",
+    "Women's Softball Stadium (Mewborn Field)"
+   ],
+   "lng": -84.393239,
+   "lat": 33.779276,
+   "osm": "way/42726481"
+  },
+  {
+   "id": "christian-campus-fellowship",
+   "name": "Christian Campus Fellowship",
+   "short": "Christian Campus Fellowship",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CCF"
+   ],
+   "lng": -84.391615,
+   "lat": 33.775606,
+   "osm": "way/42706778"
+  },
+  {
+   "id": "lambda-chi-alpha",
+   "name": "Lambda Chi Alpha",
+   "short": "ΛΧΑ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΛΧΑ"
+   ],
+   "lng": -84.392393,
+   "lat": 33.776276,
+   "osm": "way/42706787"
+  },
+  {
+   "id": "zeta-beta-tau",
+   "name": "Zeta Beta Tau",
+   "short": "Zeta Beta Tau",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ZBT"
+   ],
+   "lng": -84.392463,
+   "lat": 33.777892,
+   "osm": "way/42726048"
+  },
+  {
+   "id": "theta-chi",
+   "name": "Theta Chi",
+   "short": "ΘΧ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΘΧ"
+   ],
+   "lng": -84.39235,
+   "lat": 33.77762,
+   "osm": "way/42726049"
+  },
+  {
+   "id": "daniel-environmental-engineering-laboratory-daniel-lab-addition",
+   "name": "Daniel Environmental Engineering Laboratory; Daniel Lab Addition",
+   "short": "Daniel Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Daniel Lab Addition",
+    "Daniel Lab",
+    "Daniel Laboratory"
+   ],
+   "lng": -84.394015,
+   "lat": 33.773695,
+   "osm": "way/179212361"
+  },
+  {
+   "id": "okeefe-custodial-services-building",
+   "name": "O'Keefe Custodial Services Building",
+   "short": "Custodial Services",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Custodial Services"
+   ],
+   "lng": -84.392417,
+   "lat": 33.779345,
+   "osm": "way/42726189"
+  },
+  {
+   "id": "daniel-guggenheim-school-of-aerospace-engineering",
+   "name": "Daniel Guggenheim School of Aerospace Engineering",
+   "short": "Guggenheim (AE)",
+   "kind": "academic",
+   "codes": [
+    "040"
+   ],
+   "aliases": [
+    "Guggenheim (AE)",
+    "Guggenheim Aeronautics Building",
+    "Guggenheim Aerospace Building",
+    "Daniel F. Guggenheim"
+   ],
+   "lng": -84.395783,
+   "lat": 33.771598,
+   "osm": "way/42831083"
+  },
+  {
+   "id": "lyman-hall-building",
+   "name": "Lyman Hall Building",
+   "short": "Lyman (Bursar)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Lyman (Bursar)",
+    "Bursar's Office at Lyman Hall Building"
+   ],
+   "lng": -84.394141,
+   "lat": 33.772969,
+   "osm": "way/42706703"
+  },
+  {
+   "id": "theta-xi",
+   "name": "Theta Xi",
+   "short": "ΘΞ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΘΞ"
+   ],
+   "lng": -84.391637,
+   "lat": 33.775875,
+   "osm": "way/42706780"
+  },
+  {
+   "id": "phi-kappa-tau",
+   "name": "Phi Kappa Tau",
+   "short": "ΦΚΤ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΦΚΤ"
+   ],
+   "lng": -84.393004,
+   "lat": 33.776076,
+   "osm": "way/42706786"
+  },
+  {
+   "id": "alpha-gamma-delta",
+   "name": "Alpha Gamma Delta",
+   "short": "ΑΓΔ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΑΓΔ"
+   ],
+   "lng": -84.393038,
+   "lat": 33.777177,
+   "osm": "way/42725969"
+  },
+  {
+   "id": "beta-theta-pi",
+   "name": "Beta Theta Pi",
+   "short": "ΒΘΠ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΒΘΠ"
+   ],
+   "lng": -84.394475,
+   "lat": 33.775511,
+   "osm": "way/42706636"
+  },
+  {
+   "id": "phi-sigma-kappa",
+   "name": "Phi Sigma Kappa",
+   "short": "ΦΣK",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΦΣK"
+   ],
+   "lng": -84.391862,
+   "lat": 33.777155,
+   "osm": "way/60980695"
+  },
+  {
+   "id": "sigma-phi-epsilon",
+   "name": "Sigma Phi Epsilon",
+   "short": "ΣΦΕ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΣΦΕ"
+   ],
+   "lng": -84.393346,
+   "lat": 33.776667,
+   "osm": "way/42725913"
+  },
+  {
+   "id": "john-and-joyce-caddell-building",
+   "name": "John and Joyce Caddell Building",
+   "short": "John and Joyce Caddell Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "School of Building Construction",
+    "Caddell Building"
+   ],
+   "lng": -84.396852,
+   "lat": 33.776703,
+   "osm": "way/42706130"
+  },
+  {
+   "id": "georgia-tech-grants-and-contracts",
+   "name": "Georgia Tech Grants and Contracts",
+   "short": "Grants & Contracts",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Grants & Contracts",
+    "Research Administration Building Additoin"
+   ],
+   "lng": -84.403618,
+   "lat": 33.781705,
+   "osm": "way/43330347"
+  },
+  {
+   "id": "alpha-xi-delta",
+   "name": "Alpha Xi Delta",
+   "short": "ΑΞΔ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΑΞΔ"
+   ],
+   "lng": -84.391824,
+   "lat": 33.777857,
+   "osm": "way/42726110"
+  },
+  {
+   "id": "delta-sigma-phi",
+   "name": "Delta Sigma Phi",
+   "short": "ΔΣΦ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΔΣΦ"
+   ],
+   "lng": -84.392522,
+   "lat": 33.775865,
+   "osm": "relation/302113"
+  },
+  {
+   "id": "alpha-epsilon-pi",
+   "name": "Alpha Epsilon Pi",
+   "short": "ΑΕΠ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΑΕΠ"
+   ],
+   "lng": -84.392278,
+   "lat": 33.774144,
+   "osm": "way/42706799"
+  },
+  {
+   "id": "sigma-chi",
+   "name": "Sigma Chi",
+   "short": "ΣΧ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΣΧ"
+   ],
+   "lng": -84.392284,
+   "lat": 33.775686,
+   "osm": "way/42706784"
+  },
+  {
+   "id": "alpha-phi",
+   "name": "Alpha Phi",
+   "short": "ΑΦ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΑΦ"
+   ],
+   "lng": -84.392699,
+   "lat": 33.774179,
+   "osm": "way/951519945"
+  },
+  {
+   "id": "phi-mu",
+   "name": "Phi Mu",
+   "short": "ΦΜ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΦΜ"
+   ],
+   "lng": -84.394822,
+   "lat": 33.776721,
+   "osm": "way/42830212"
+  },
+  {
+   "id": "delta-upsilon",
+   "name": "Delta Upsilon",
+   "short": "ΔΥ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΔΥ"
+   ],
+   "lng": -84.392355,
+   "lat": 33.776663,
+   "osm": "way/42725899"
+  },
+  {
+   "id": "pi-kappa-phi",
+   "name": "Pi Kappa Phi",
+   "short": "ΠΚΦ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΠΚΦ"
+   ],
+   "lng": -84.394296,
+   "lat": 33.776682,
+   "osm": "way/42706609"
+  },
+  {
+   "id": "carnegie-building",
+   "name": "Carnegie Building",
+   "short": "Carnegie",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Carnegie"
+   ],
+   "lng": -84.394279,
+   "lat": 33.772487,
+   "osm": "way/42706710"
+  },
+  {
+   "id": "alpha-delta-pi",
+   "name": "Alpha Delta Pi",
+   "short": "ΑΔΠ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΑΔΠ"
+   ],
+   "lng": -84.392815,
+   "lat": 33.774506,
+   "osm": "way/42706808"
+  },
+  {
+   "id": "william-emerson-building",
+   "name": "William Emerson Building",
+   "short": "Emerson",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Emerson",
+    "Emerson Building"
+   ],
+   "lng": -84.393929,
+   "lat": 33.773134,
+   "osm": "way/177021936"
+  },
+  {
+   "id": "phi-kappa-theta",
+   "name": "Phi Kappa Theta",
+   "short": "ΦΚΘ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΦΚΘ"
+   ],
+   "lng": -84.393926,
+   "lat": 33.776684,
+   "osm": "way/42706610"
+  },
+  {
+   "id": "chi-psi",
+   "name": "Chi Psi",
+   "short": "ΧΨ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΧΨ"
+   ],
+   "lng": -84.392518,
+   "lat": 33.77515,
+   "osm": "way/42706815"
+  },
+  {
+   "id": "wc-and-sarah-bradley-building",
+   "name": "W.C. & Sarah Bradley Building",
+   "short": "Bradley",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Bradley",
+    "Bradley Building"
+   ],
+   "lng": -84.394476,
+   "lat": 33.772614,
+   "osm": "way/42706705"
+  },
+  {
+   "id": "zeta-tau-alpha",
+   "name": "Zeta Tau Alpha",
+   "short": "Zeta Tau Alpha",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ZTA"
+   ],
+   "lng": -84.393351,
+   "lat": 33.777176,
+   "osm": "way/42725968"
+  },
+  {
+   "id": "commander-building",
+   "name": "Commander Building",
+   "short": "Commander",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Commander"
+   ],
+   "lng": -84.403923,
+   "lat": 33.778872,
+   "osm": "way/178658172"
+  },
+  {
+   "id": "sigma-alpha-epsilon",
+   "name": "Sigma Alpha Epsilon",
+   "short": "ΣΑΕ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΣΑΕ"
+   ],
+   "lng": -84.394539,
+   "lat": 33.776089,
+   "osm": "way/42830080"
+  },
+  {
+   "id": "chi-phi",
+   "name": "Chi Phi",
+   "short": "ΧΦ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΧΦ"
+   ],
+   "lng": -84.394135,
+   "lat": 33.774351,
+   "osm": "way/42706669"
+  },
+  {
+   "id": "phi-kappa-sigma",
+   "name": "Phi Kappa Sigma",
+   "short": "ΦΚΣ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΦΚΣ"
+   ],
+   "lng": -84.391696,
+   "lat": 33.776127,
+   "osm": "way/42706781"
+  },
+  {
+   "id": "alpha-tau-omega",
+   "name": "Alpha Tau Omega",
+   "short": "ΑΤΩ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΑΤΩ"
+   ],
+   "lng": -84.394118,
+   "lat": 33.776263,
+   "osm": "way/42706611"
+  },
+  {
+   "id": "georgia-tech-research-corporation",
+   "name": "Georgia Tech Research Corporation",
+   "short": "GT Research Co.",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Georgia Tech Office of Sponsored Programs",
+    "GT Research Co.",
+    "Research Administration Building"
+   ],
+   "lng": -84.403936,
+   "lat": 33.781677,
+   "osm": "way/42825379"
+  },
+  {
+   "id": "georgia-tech-landscaping-facilities-building",
+   "name": "Georgia Tech Landscaping/Facilities Building",
+   "short": "Facilities",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Facilities",
+    "Facilities Building"
+   ],
+   "lng": -84.393131,
+   "lat": 33.779917,
+   "osm": "way/179213909"
+  },
+  {
+   "id": "delta-tau-delta",
+   "name": "Delta Tau Delta",
+   "short": "ΔΤΔ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΔΤΔ"
+   ],
+   "lng": -84.39482,
+   "lat": 33.775991,
+   "osm": "way/42830020"
+  },
+  {
+   "id": "l-w-chapin-building",
+   "name": "L. W. Chapin Building",
+   "short": "Chapin (OMED)",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Chapin (OMED)",
+    "OMED (Chapin Building)"
+   ],
+   "lng": -84.395187,
+   "lat": 33.773323,
+   "osm": "way/42830641"
+  },
+  {
+   "id": "psi-upsilon",
+   "name": "Psi Upsilon",
+   "short": "ΨΥ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΨΥ"
+   ],
+   "lng": -84.391745,
+   "lat": 33.777545,
+   "osm": "way/42726125"
+  },
+  {
+   "id": "glenn-towers-connector",
+   "name": "Glenn-Towers Connector",
+   "short": "GT Connector",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "GT Connector"
+   ],
+   "lng": -84.391284,
+   "lat": 33.773732,
+   "osm": "way/454804208"
+  },
+  {
+   "id": "methodist-center-wesley-foundation",
+   "name": "Methodist Center (Wesley Foundation)",
+   "short": "Tech Wesley",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Tech Wesley"
+   ],
+   "lng": -84.39334,
+   "lat": 33.776108,
+   "osm": "way/42706791"
+  },
+  {
+   "id": "georgia-tech-office-of-information-technology-engineering-building",
+   "name": "Georgia Tech Office of Information Technology Engineering Building",
+   "short": "Georgia Tech Office of Information Technology Engineering Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "OIT Engineering"
+   ],
+   "lng": -84.394497,
+   "lat": 33.773781,
+   "osm": "way/42706681"
+  },
+  {
+   "id": "paul-h-heffernan-architecture-archive-house",
+   "name": "Paul H. Heffernan Architecture Archive House",
+   "short": "Architecture Archive",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Architecture Archive",
+    "Heffernan Architecture Archive"
+   ],
+   "lng": -84.392648,
+   "lat": 33.776678,
+   "osm": "way/42725962"
+  },
+  {
+   "id": "dunkin",
+   "name": "Dunkin'",
+   "short": "Dunkin'",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Dunkin' Donuts"
+   ],
+   "lng": -84.400622,
+   "lat": 33.775088,
+   "osm": "way/1258405684"
+  },
+  {
+   "id": "jimmy-johns",
+   "name": "Jimmy John's",
+   "short": "Jimmy John's",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Jimmy John's Gourmet Sandwiches"
+   ],
+   "lng": -84.400495,
+   "lat": 33.775082,
+   "osm": "way/974793135"
+  },
+  {
+   "id": "alpha-delta-chi",
+   "name": "Alpha Delta Chi",
+   "short": "ΑΔΧ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΑΔΧ"
+   ],
+   "lng": -84.392719,
+   "lat": 33.775361,
+   "osm": "way/42706814"
+  },
+  {
+   "id": "broadband-institute-residential-laboratory",
+   "name": "Broadband Institute Residential Laboratory",
+   "short": "Broadband Lab",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Aware Home",
+    "Broadband Lab",
+    "Broadband Institute Residential Lab"
+   ],
+   "lng": -84.402906,
+   "lat": 33.781725,
+   "osm": "way/42825522"
+  },
+  {
+   "id": "alpha-sigma-phi",
+   "name": "Alpha Sigma Phi",
+   "short": "ΑΓΔ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΑΓΔ"
+   ],
+   "lng": -84.392844,
+   "lat": 33.777126,
+   "osm": "way/42725972"
+  }
+ ]
+}

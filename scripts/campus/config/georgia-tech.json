@@ -1,0 +1,17 @@
+{
+  "collegeId": "georgia-tech",
+  "area": {
+    "osm": "relation/3341535",
+    "bbox": [
+      33.76846,
+      -84.40737,
+      33.78355,
+      -84.38581
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/georgia-tech.codes.json"
+  }
+}
