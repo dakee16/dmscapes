@@ -1,0 +1,927 @@
+{
+ "collegeId": "miami-ohio",
+ "generatedAt": "2026-11-08T22:05:51.544Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Miami University Orientation Guidebook, Building Abbreviations (the codes used in class schedules)",
+   "url": "https://miamioh.edu/life-at-miami/new-students-orientation/orientation/guidebook/buildings.html",
+   "use": "building codes",
+   "read": "2026-11-07"
+  }
+ ],
+ "bounds": [
+  -84.73884,
+  39.50086,
+  -84.72454,
+  39.52064
+ ],
+ "halls": [
+  {
+   "dormId": "collins-hall",
+   "name": "Collins Hall",
+   "lng": -84.727064,
+   "lat": 39.511679,
+   "pin": "name",
+   "osm": "way/184389080",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "millett-assembly-hall",
+     "minutes": 14.1
+    },
+    "library": {
+     "placeId": "king-library",
+     "minutes": 13.8
+    },
+    "dining": {
+     "placeId": "garden-commons",
+     "minutes": 3.6
+    }
+   }
+  },
+  {
+   "dormId": "hahne-hall",
+   "name": "Hahne Hall",
+   "lng": -84.732159,
+   "lat": 39.515308,
+   "pin": "name",
+   "osm": "way/184557935",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "millett-assembly-hall",
+     "minutes": 4.7
+    },
+    "library": {
+     "placeId": "king-library",
+     "minutes": 12.1
+    },
+    "dining": {
+     "placeId": "martin-dining-hall",
+     "minutes": 0.7
+    }
+   }
+  },
+  {
+   "dormId": "stonebridge-hall",
+   "name": "Stonebridge Hall",
+   "lng": -84.72838,
+   "lat": 39.505724,
+   "pin": "name",
+   "osm": "way/329363462",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sawyer-hall",
+     "minutes": 8.6
+    },
+    "library": {
+     "placeId": "king-library",
+     "minutes": 12.3
+    },
+    "dining": {
+     "placeId": "western-dining-commons",
+     "minutes": 1.5
+    }
+   }
+  },
+  {
+   "dormId": "maccracken-hall",
+   "name": "MacCracken Hall",
+   "lng": -84.73457,
+   "lat": 39.504079,
+   "pin": "name",
+   "osm": "way/182453446",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "goggin-ice-arena",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "king-library",
+     "minutes": 8.1
+    },
+    "dining": {
+     "placeId": "heritage-commons-center",
+     "minutes": 6.5
+    }
+   }
+  },
+  {
+   "dormId": "richard-hall",
+   "name": "Richard Hall",
+   "lng": -84.735527,
+   "lat": 39.504381,
+   "pin": "name",
+   "osm": "relation/9817006",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "goggin-ice-arena",
+     "minutes": 2.7
+    },
+    "library": {
+     "placeId": "king-library",
+     "minutes": 7.2
+    },
+    "dining": {
+     "placeId": "heritage-commons-center",
+     "minutes": 6.9
+    }
+   }
+  },
+  {
+   "dormId": "porter-hall",
+   "name": "Porter Hall",
+   "lng": -84.735558,
+   "lat": 39.503162,
+   "pin": "name",
+   "osm": "way/97866617",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "goggin-ice-arena",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "king-library",
+     "minutes": 9.1
+    },
+    "dining": {
+     "placeId": "heritage-commons-center",
+     "minutes": 4.3
+    }
+   }
+  },
+  {
+   "dormId": "symmes-hall",
+   "name": "Symmes Hall",
+   "lng": -84.729287,
+   "lat": 39.512071,
+   "pin": "name",
+   "osm": "way/184390037",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "millett-assembly-hall",
+     "minutes": 10.9
+    },
+    "library": {
+     "placeId": "king-library",
+     "minutes": 11.7
+    },
+    "dining": {
+     "placeId": "garden-commons",
+     "minutes": 1.2
+    }
+   }
+  },
+  {
+   "dormId": "dennison-hall",
+   "name": "Dennison Hall",
+   "lng": -84.725962,
+   "lat": 39.511163,
+   "pin": "name",
+   "osm": "way/184389101",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "millett-assembly-hall",
+     "minutes": 15.1
+    },
+    "library": {
+     "placeId": "king-library",
+     "minutes": 14.3
+    },
+    "dining": {
+     "placeId": "garden-commons",
+     "minutes": 4.5
+    }
+   }
+  },
+  {
+   "dormId": "dorsey-hall",
+   "name": "Dorsey Hall",
+   "lng": -84.728424,
+   "lat": 39.510712,
+   "pin": "name",
+   "osm": "way/184390054",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "millett-assembly-hall",
+     "minutes": 13.1
+    },
+    "library": {
+     "placeId": "king-library",
+     "minutes": 11.3
+    },
+    "dining": {
+     "placeId": "garden-commons",
+     "minutes": 2.5
+    }
+   }
+  },
+  {
+   "dormId": "hamilton-hall",
+   "name": "Hamilton Hall",
+   "lng": -84.735546,
+   "lat": 39.505705,
+   "pin": "name",
+   "osm": "way/182453461",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "goggin-ice-arena",
+     "minutes": 2.9
+    },
+    "library": {
+     "placeId": "king-library",
+     "minutes": 5.4
+    },
+    "dining": {
+     "placeId": "heritage-commons-center",
+     "minutes": 7.9
+    }
+   }
+  },
+  {
+   "dormId": "maplestreet-station",
+   "name": "Maplestreet Station",
+   "lng": -84.73252,
+   "lat": 39.504246,
+   "pin": "name",
+   "osm": "way/325445277",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "goggin-ice-arena",
+     "minutes": 6
+    },
+    "library": {
+     "placeId": "king-library",
+     "minutes": 9.6
+    },
+    "dining": {
+     "placeId": "western-dining-commons",
+     "minutes": 6.4
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "randy-gunlock-family-athletic-performance-center",
+   "name": "Randy Gunlock Family Athletic Performance Center",
+   "short": "Randy Gunlock Family Athletic Performance Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.733281,
+   "lat": 39.520638,
+   "osm": "way/613437913"
+  },
+  {
+   "id": "millett-assembly-hall",
+   "name": "Millett Assembly Hall",
+   "short": "Millett Assembly Hall",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.734553,
+   "lat": 39.517239,
+   "osm": "way/83701067"
+  },
+  {
+   "id": "recreational-sports-center",
+   "name": "Recreational Sports Center",
+   "short": "Recreational Sports Center",
+   "kind": "gym",
+   "codes": [
+    "RSC"
+   ],
+   "aliases": [
+    "Rec Center"
+   ],
+   "lng": -84.737853,
+   "lat": 39.502642,
+   "osm": "way/182453474"
+  },
+  {
+   "id": "goggin-ice-arena",
+   "name": "Goggin Ice Arena",
+   "short": "Goggin Ice Arena",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.737026,
+   "lat": 39.503867,
+   "osm": "way/182453477"
+  },
+  {
+   "id": "armstrong-student-center",
+   "name": "Armstrong Student Center",
+   "short": "Armstrong Student Center",
+   "kind": "academic",
+   "codes": [
+    "ASC"
+   ],
+   "aliases": [],
+   "lng": -84.732994,
+   "lat": 39.507787,
+   "osm": "way/724458869"
+  },
+  {
+   "id": "phillips-hall",
+   "name": "Phillips Hall",
+   "short": "Phillips Hall",
+   "kind": "academic",
+   "codes": [
+    "PHI"
+   ],
+   "aliases": [],
+   "lng": -84.737108,
+   "lat": 39.505303,
+   "osm": "way/182453432"
+  },
+  {
+   "id": "farmer-school-of-business",
+   "name": "Farmer School of Business",
+   "short": "Farmer School of Business",
+   "kind": "academic",
+   "codes": [
+    "FSB"
+   ],
+   "aliases": [
+    "FSB"
+   ],
+   "lng": -84.729675,
+   "lat": 39.511175,
+   "osm": "way/184390046"
+  },
+  {
+   "id": "hughes-laboratories",
+   "name": "Hughes Laboratories",
+   "short": "Hughes Laboratories",
+   "kind": "academic",
+   "codes": [
+    "HUG"
+   ],
+   "aliases": [
+    "Hughes Hall & Laboratories"
+   ],
+   "lng": -84.731754,
+   "lat": 39.50968,
+   "osm": "way/184390716"
+  },
+  {
+   "id": "pearson-hall",
+   "name": "Pearson Hall",
+   "short": "Pearson Hall",
+   "kind": "academic",
+   "codes": [
+    "PSN"
+   ],
+   "aliases": [],
+   "lng": -84.731327,
+   "lat": 39.511023,
+   "osm": "way/545759799"
+  },
+  {
+   "id": "king-library",
+   "name": "King Library",
+   "short": "King Library",
+   "kind": "library",
+   "codes": [
+    "KNG"
+   ],
+   "aliases": [
+    "Edgar W. King Library"
+   ],
+   "lng": -84.73798,
+   "lat": 39.508809,
+   "osm": "way/183831904"
+  },
+  {
+   "id": "clinical-health-sciences-and-wellness-building",
+   "name": "Clinical Health Sciences and Wellness Building",
+   "short": "Clinical Health Sciences and Wellness Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CHSW"
+   ],
+   "lng": -84.738678,
+   "lat": 39.504886,
+   "osm": "way/1088928898"
+  },
+  {
+   "id": "bachelor-hall",
+   "name": "Bachelor Hall",
+   "short": "Bachelor Hall",
+   "kind": "academic",
+   "codes": [
+    "BAC"
+   ],
+   "aliases": [],
+   "lng": -84.729584,
+   "lat": 39.507146,
+   "osm": "relation/2445913"
+  },
+  {
+   "id": "shriver-center",
+   "name": "Shriver Center",
+   "short": "Shriver Center",
+   "kind": "academic",
+   "codes": [
+    "SHC"
+   ],
+   "aliases": [],
+   "lng": -84.731761,
+   "lat": 39.506644,
+   "osm": "way/183700437"
+  },
+  {
+   "id": "upham-hall",
+   "name": "Upham Hall",
+   "short": "Upham Hall",
+   "kind": "academic",
+   "codes": [
+    "UPH"
+   ],
+   "aliases": [],
+   "lng": -84.733437,
+   "lat": 39.508724,
+   "osm": "way/184390509"
+  },
+  {
+   "id": "nellie-craig-walker-hall",
+   "name": "Nellie Craig Walker Hall",
+   "short": "Nellie Craig Walker Hall",
+   "kind": "academic",
+   "codes": [
+    "CAB"
+   ],
+   "aliases": [],
+   "lng": -84.738836,
+   "lat": 39.50651,
+   "osm": "way/182453473"
+  },
+  {
+   "id": "western-dining-commons",
+   "name": "Western Dining Commons",
+   "short": "Western Dining Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.728134,
+   "lat": 39.504615,
+   "osm": "way/329363463"
+  },
+  {
+   "id": "center-for-the-performing-arts",
+   "name": "Center for the Performing Arts",
+   "short": "Center for the Performing Arts",
+   "kind": "academic",
+   "codes": [
+    "CPA"
+   ],
+   "aliases": [
+    "Center for Performing Arts"
+   ],
+   "lng": -84.731888,
+   "lat": 39.504948,
+   "osm": "way/183700461"
+  },
+  {
+   "id": "mcguffey-hall",
+   "name": "McGuffey Hall",
+   "short": "McGuffey Hall",
+   "kind": "academic",
+   "codes": [
+    "MCG"
+   ],
+   "aliases": [],
+   "lng": -84.738301,
+   "lat": 39.507837,
+   "osm": "way/183831905"
+  },
+  {
+   "id": "harris-hall",
+   "name": "Harris Hall",
+   "short": "Harris Hall",
+   "kind": "academic",
+   "codes": [
+    "HAR"
+   ],
+   "aliases": [
+    "Health Services Center",
+    "Harris Dining Hall"
+   ],
+   "lng": -84.734682,
+   "lat": 39.502036,
+   "osm": "way/96007228"
+  },
+  {
+   "id": "richard-m-mcvey-data-science-building",
+   "name": "Richard M. McVey Data Science Building",
+   "short": "Richard M. McVey Data Science Building",
+   "kind": "academic",
+   "codes": [
+    "DSB"
+   ],
+   "aliases": [
+    "McVey Data Science Building"
+   ],
+   "lng": -84.734161,
+   "lat": 39.511453,
+   "osm": "way/1088928897"
+  },
+  {
+   "id": "alumni-hall",
+   "name": "Alumni Hall",
+   "short": "Alumni Hall",
+   "kind": "academic",
+   "codes": [
+    "ALU"
+   ],
+   "aliases": [],
+   "lng": -84.736411,
+   "lat": 39.507892,
+   "osm": "way/183831901"
+  },
+  {
+   "id": "psychology-building",
+   "name": "Psychology Building",
+   "short": "Psychology Building",
+   "kind": "academic",
+   "codes": [
+    "PSY"
+   ],
+   "aliases": [],
+   "lng": -84.731424,
+   "lat": 39.511871,
+   "osm": "way/184553436"
+  },
+  {
+   "id": "shideler-hall",
+   "name": "Shideler Hall",
+   "short": "Shideler Hall",
+   "kind": "academic",
+   "codes": [
+    "SHD"
+   ],
+   "aliases": [],
+   "lng": -84.731274,
+   "lat": 39.507706,
+   "osm": "way/183833250"
+  },
+  {
+   "id": "kreger-hall",
+   "name": "Kreger Hall",
+   "short": "Kreger Hall",
+   "kind": "academic",
+   "codes": [
+    "KRG"
+   ],
+   "aliases": [],
+   "lng": -84.734522,
+   "lat": 39.507898,
+   "osm": "way/183832438"
+  },
+  {
+   "id": "benton-hall",
+   "name": "Benton Hall",
+   "short": "Benton Hall",
+   "kind": "academic",
+   "codes": [
+    "BEN"
+   ],
+   "aliases": [],
+   "lng": -84.733599,
+   "lat": 39.510751,
+   "osm": "way/397382395"
+  },
+  {
+   "id": "north-chiller-plant",
+   "name": "North Chiller Plant",
+   "short": "North Chiller Plant",
+   "kind": "academic",
+   "codes": [
+    "NTH"
+   ],
+   "aliases": [
+    "North Hall"
+   ],
+   "lng": -84.734027,
+   "lat": 39.5134,
+   "osm": "way/184557950"
+  },
+  {
+   "id": "richard-and-carole-cocks-art-museum",
+   "name": "Richard and Carole Cocks Art Museum",
+   "short": "Richard and Carole Cocks Art Museum",
+   "kind": "academic",
+   "codes": [
+    "AMU"
+   ],
+   "aliases": [
+    "Art Museum"
+   ],
+   "lng": -84.729164,
+   "lat": 39.500858,
+   "osm": "way/183831911"
+  },
+  {
+   "id": "peabody-hall",
+   "name": "Peabody Hall",
+   "short": "Peabody Hall",
+   "kind": "academic",
+   "codes": [
+    "PBD"
+   ],
+   "aliases": [],
+   "lng": -84.725685,
+   "lat": 39.501265,
+   "osm": "way/183831936"
+  },
+  {
+   "id": "garden-commons",
+   "name": "Garden Commons",
+   "short": "Garden Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.730049,
+   "lat": 39.511987,
+   "osm": "way/397382670"
+  },
+  {
+   "id": "boyd-hall",
+   "name": "Boyd Hall",
+   "short": "Boyd Hall",
+   "kind": "academic",
+   "codes": [
+    "BOY"
+   ],
+   "aliases": [],
+   "lng": -84.725354,
+   "lat": 39.503333,
+   "osm": "way/183831918"
+  },
+  {
+   "id": "garland-hall",
+   "name": "Garland Hall",
+   "short": "Garland Hall",
+   "kind": "academic",
+   "codes": [
+    "GAR"
+   ],
+   "aliases": [],
+   "lng": -84.732837,
+   "lat": 39.510763,
+   "osm": "way/397382396"
+  },
+  {
+   "id": "hiestand-hall",
+   "name": "Hiestand Hall",
+   "short": "Hiestand Hall",
+   "kind": "academic",
+   "codes": [
+    "HIS"
+   ],
+   "aliases": [],
+   "lng": -84.732389,
+   "lat": 39.505609,
+   "osm": "way/183700445"
+  },
+  {
+   "id": "art-building",
+   "name": "Art Building",
+   "short": "Art Building",
+   "kind": "academic",
+   "codes": [
+    "ART"
+   ],
+   "aliases": [],
+   "lng": -84.731273,
+   "lat": 39.505663,
+   "osm": "way/183700455"
+  },
+  {
+   "id": "laws-hall",
+   "name": "Laws Hall",
+   "short": "Laws Hall",
+   "kind": "academic",
+   "codes": [
+    "LWS"
+   ],
+   "aliases": [],
+   "lng": -84.733099,
+   "lat": 39.509696,
+   "osm": "way/184390806"
+  },
+  {
+   "id": "presser-hall",
+   "name": "Presser Hall",
+   "short": "Presser Hall",
+   "kind": "academic",
+   "codes": [
+    "PRS"
+   ],
+   "aliases": [],
+   "lng": -84.729636,
+   "lat": 39.503778,
+   "osm": "way/183700436"
+  },
+  {
+   "id": "engineering-building",
+   "name": "Engineering Building",
+   "short": "Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "EGB"
+   ],
+   "aliases": [],
+   "lng": -84.732211,
+   "lat": 39.510761,
+   "osm": "way/985373576"
+  },
+  {
+   "id": "martin-dining-hall",
+   "name": "Martin Dining Hall",
+   "short": "Martin Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.733275,
+   "lat": 39.515278,
+   "osm": "way/184557874"
+  },
+  {
+   "id": "hoyt-hall",
+   "name": "Hoyt Hall",
+   "short": "Hoyt Hall",
+   "kind": "academic",
+   "codes": [
+    "HYT"
+   ],
+   "aliases": [],
+   "lng": -84.727764,
+   "lat": 39.503208,
+   "osm": "way/183701616"
+  },
+  {
+   "id": "irvin-hall",
+   "name": "Irvin Hall",
+   "short": "Irvin Hall",
+   "kind": "academic",
+   "codes": [
+    "IRV"
+   ],
+   "aliases": [],
+   "lng": -84.735603,
+   "lat": 39.507916,
+   "osm": "way/183831914"
+  },
+  {
+   "id": "hall-auditorium",
+   "name": "Hall Auditorium",
+   "short": "Hall Auditorium",
+   "kind": "academic",
+   "codes": [
+    "HAL",
+    "FNK"
+   ],
+   "aliases": [
+    "Finkelman Auditorium"
+   ],
+   "lng": -84.738508,
+   "lat": 39.508954,
+   "osm": "way/183831928"
+  },
+  {
+   "id": "roudebush-hall",
+   "name": "Roudebush Hall",
+   "short": "Roudebush Hall",
+   "kind": "academic",
+   "codes": [
+    "RDB"
+   ],
+   "aliases": [
+    "Administration Building"
+   ],
+   "lng": -84.73447,
+   "lat": 39.509453,
+   "osm": "way/184391391"
+  },
+  {
+   "id": "macmillan-hall",
+   "name": "MacMillan Hall",
+   "short": "MacMillan Hall",
+   "kind": "academic",
+   "codes": [
+    "MMH"
+   ],
+   "aliases": [],
+   "lng": -84.733916,
+   "lat": 39.506844,
+   "osm": "way/182453492"
+  },
+  {
+   "id": "harrison-hall",
+   "name": "Harrison Hall",
+   "short": "Harrison Hall",
+   "kind": "academic",
+   "codes": [
+    "HRN"
+   ],
+   "aliases": [],
+   "lng": -84.736376,
+   "lat": 39.509037,
+   "osm": "way/184391396"
+  },
+  {
+   "id": "warfield-hall",
+   "name": "Warfield Hall",
+   "short": "Warfield Hall",
+   "kind": "academic",
+   "codes": [
+    "WAR"
+   ],
+   "aliases": [],
+   "lng": -84.735165,
+   "lat": 39.506931,
+   "osm": "way/182453440"
+  },
+  {
+   "id": "heritage-commons-center",
+   "name": "Heritage Commons Center",
+   "short": "Heritage Commons Center",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -84.73796,
+   "lat": 39.501152,
+   "osm": "way/183697183"
+  },
+  {
+   "id": "sawyer-hall",
+   "name": "Sawyer Hall",
+   "short": "Sawyer Hall",
+   "kind": "gym",
+   "codes": [
+    "SAW"
+   ],
+   "aliases": [],
+   "lng": -84.724539,
+   "lat": 39.501177,
+   "osm": "way/183831920"
+  },
+  {
+   "id": "old-manse",
+   "name": "Old Manse",
+   "short": "Old Manse",
+   "kind": "academic",
+   "codes": [
+    "OMN"
+   ],
+   "aliases": [],
+   "lng": -84.73545,
+   "lat": 39.510732,
+   "osm": "way/397312389"
+  },
+  {
+   "id": "patterson-place",
+   "name": "Patterson Place",
+   "short": "Patterson Place",
+   "kind": "academic",
+   "codes": [
+    "PAT"
+   ],
+   "aliases": [],
+   "lng": -84.729451,
+   "lat": 39.505359,
+   "osm": "way/183700450"
+  }
+ ]
+}

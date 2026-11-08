@@ -1,0 +1,247 @@
+{
+ "name": "Miami University Orientation Guidebook, Building Abbreviations (the codes used in class schedules)",
+ "url": "https://miamioh.edu/life-at-miami/new-students-orientation/orientation/guidebook/buildings.html",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "ALU",
+   "name": "Alumni Hall"
+  },
+  {
+   "code": "AMU",
+   "name": "Art Museum"
+  },
+  {
+   "code": "ART",
+   "name": "Art Building"
+  },
+  {
+   "code": "ASC",
+   "name": "Armstrong Student Center"
+  },
+  {
+   "code": "BAC",
+   "name": "Bachelor Hall"
+  },
+  {
+   "code": "BEN",
+   "name": "Benton Hall"
+  },
+  {
+   "code": "BOY",
+   "name": "Boyd Hall"
+  },
+  {
+   "code": "CAB",
+   "name": "Nellie Craig Walker Hall"
+  },
+  {
+   "code": "CHS",
+   "name": "Clinical Health Science & Wellness"
+  },
+  {
+   "code": "CPA",
+   "name": "Center for Performing Arts"
+  },
+  {
+   "code": "DSB",
+   "name": "McVey Data Science Building"
+  },
+  {
+   "code": "EGB",
+   "name": "Engineering Building"
+  },
+  {
+   "code": "FSB",
+   "name": "Farmer School of Business"
+  },
+  {
+   "code": "GAR",
+   "name": "Garland Hall"
+  },
+  {
+   "code": "GGB",
+   "name": "Gloss Center"
+  },
+  {
+   "code": "HAL",
+   "name": "Hall Auditorium"
+  },
+  {
+   "code": "HAR",
+   "name": "Harris Hall"
+  },
+  {
+   "code": "HIS",
+   "name": "Hiestand Hall"
+  },
+  {
+   "code": "HRN",
+   "name": "Harrison Hall"
+  },
+  {
+   "code": "HUG",
+   "name": "Hughes Hall & Laboratories"
+  },
+  {
+   "code": "HYT",
+   "name": "Hoyt Hall"
+  },
+  {
+   "code": "IRV",
+   "name": "Irvin Hall"
+  },
+  {
+   "code": "KNG",
+   "name": "King Library"
+  },
+  {
+   "code": "KRG",
+   "name": "Kreger Hall"
+  },
+  {
+   "code": "LWS",
+   "name": "Laws Hall"
+  },
+  {
+   "code": "MCG",
+   "name": "McGuffey Hall"
+  },
+  {
+   "code": "MMH",
+   "name": "MacMillan Hall"
+  },
+  {
+   "code": "OMN",
+   "name": "Old Manse"
+  },
+  {
+   "code": "PAT",
+   "name": "Patterson Place"
+  },
+  {
+   "code": "PBD",
+   "name": "Peabody Hall"
+  },
+  {
+   "code": "PHI",
+   "name": "Phillips Hall"
+  },
+  {
+   "code": "PRS",
+   "name": "Presser Hall"
+  },
+  {
+   "code": "PSN",
+   "name": "Pearson Hall"
+  },
+  {
+   "code": "PSY",
+   "name": "Psychology Building"
+  },
+  {
+   "code": "RDB",
+   "name": "Roudebush Hall"
+  },
+  {
+   "code": "RSC",
+   "name": "Recreational Sports Center"
+  },
+  {
+   "code": "SAW",
+   "name": "Sawyer Hall"
+  },
+  {
+   "code": "SDC",
+   "name": "Student Athlete Development Center"
+  },
+  {
+   "code": "SHC",
+   "name": "Shriver Center"
+  },
+  {
+   "code": "SHD",
+   "name": "Shideler Hall"
+  },
+  {
+   "code": "UPH",
+   "name": "Upham Hall"
+  },
+  {
+   "code": "WAR",
+   "name": "Warfield Hall"
+  },
+  {
+   "code": "YWS",
+   "name": "Yager Stadium - West"
+  },
+  {
+   "code": "YES",
+   "name": "Yager Stadium - East"
+  },
+  {
+   "code": "GYM",
+   "name": "Gymnasium"
+  },
+  {
+   "code": "MOS",
+   "name": "Mosler Hall"
+  },
+  {
+   "code": "NTH",
+   "name": "North Hall"
+  },
+  {
+   "code": "PHE",
+   "name": "Phelps Hall"
+  },
+  {
+   "code": "REN",
+   "name": "Rentschler Hall"
+  },
+  {
+   "code": "SCH",
+   "name": "Schwarm Hall"
+  },
+  {
+   "code": "UHH",
+   "name": "University Hall"
+  },
+  {
+   "code": "WCC",
+   "name": "Wilks Conference Center"
+  },
+  {
+   "code": "BRC",
+   "name": "Bennett Recreation Center (GYM)"
+  },
+  {
+   "code": "FNK",
+   "name": "Finkelman Auditorium"
+  },
+  {
+   "code": "GRD",
+   "name": "Gardner-Harvey Library"
+  },
+  {
+   "code": "GTR",
+   "name": "Greentree Health Science Academy (G)"
+  },
+  {
+   "code": "JHN",
+   "name": "Johnston Hall"
+  },
+  {
+   "code": "LVH",
+   "name": "Levey Hall"
+  },
+  {
+   "code": "THH",
+   "name": "Thesken Hall"
+  },
+  {
+   "code": "VOA",
+   "name": "Voice of America Learning Center (V)"
+  }
+ ]
+}
