@@ -1,0 +1,1001 @@
+{
+ "collegeId": "rice",
+ "generatedAt": "2026-11-08T22:29:54.187Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Rice University Office of the Registrar, Buildings and Classrooms (building codes)",
+   "url": "https://registrar.rice.edu/facstaff/buildings-and-classrooms",
+   "use": "building codes",
+   "read": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/rice.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -95.41294,
+  29.71355,
+  -95.39554,
+  29.72213
+ ],
+ "halls": [
+  {
+   "dormId": "baker-college",
+   "name": "Baker College",
+   "lng": -95.398456,
+   "lat": 29.71676,
+   "pin": "name",
+   "osm": "relation/12253974",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gibbs-recreation-and-wellness-center",
+     "minutes": 8.7
+    },
+    "library": {
+     "placeId": "fondren-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "will-rice-college-commons",
+     "minutes": 0.8
+    }
+   }
+  },
+  {
+   "dormId": "will-rice-college",
+   "name": "Will Rice College",
+   "lng": -95.399234,
+   "lat": 29.716462,
+   "pin": "manual",
+   "osm": "way/51817591",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gibbs-recreation-and-wellness-center",
+     "minutes": 7.7
+    },
+    "library": {
+     "placeId": "fondren-library",
+     "minutes": 3.5
+    },
+    "dining": {
+     "placeId": "will-rice-college-commons",
+     "minutes": 1
+    }
+   }
+  },
+  {
+   "dormId": "hanszen-college",
+   "name": "Hanszen College",
+   "lng": -95.400469,
+   "lat": 29.715962,
+   "pin": "manual",
+   "osm": "way/1550459300",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gibbs-recreation-and-wellness-center",
+     "minutes": 8
+    },
+    "library": {
+     "placeId": "fondren-library",
+     "minutes": 4.9
+    },
+    "dining": {
+     "placeId": "south-servery",
+     "minutes": 0.5
+    }
+   }
+  },
+  {
+   "dormId": "wiess-college",
+   "name": "Wiess College",
+   "lng": -95.400656,
+   "lat": 29.714841,
+   "pin": "name",
+   "osm": "relation/3456757",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gibbs-recreation-and-wellness-center",
+     "minutes": 6.3
+    },
+    "library": {
+     "placeId": "fondren-library",
+     "minutes": 5.7
+    },
+    "dining": {
+     "placeId": "south-servery",
+     "minutes": 0.4
+    }
+   }
+  },
+  {
+   "dormId": "jones-college",
+   "name": "Jones College",
+   "lng": -95.397163,
+   "lat": 29.721814,
+   "pin": "name",
+   "osm": "way/255487613",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gibbs-recreation-and-wellness-center",
+     "minutes": 10.6
+    },
+    "library": {
+     "placeId": "fondren-library",
+     "minutes": 7.1
+    },
+    "dining": {
+     "placeId": "north-servery",
+     "minutes": 0.9
+    }
+   }
+  },
+  {
+   "dormId": "brown-college",
+   "name": "Brown College",
+   "lng": -95.395908,
+   "lat": 29.721442,
+   "pin": "name",
+   "osm": "way/255487610",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gibbs-recreation-and-wellness-center",
+     "minutes": 11.5
+    },
+    "library": {
+     "placeId": "fondren-library",
+     "minutes": 8.1
+    },
+    "dining": {
+     "placeId": "north-servery",
+     "minutes": 1.3
+    }
+   }
+  },
+  {
+   "dormId": "lovett-college",
+   "name": "Lovett College",
+   "lng": -95.398854,
+   "lat": 29.715044,
+   "pin": "name",
+   "osm": "way/1549692077",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gibbs-recreation-and-wellness-center",
+     "minutes": 10.4
+    },
+    "library": {
+     "placeId": "fondren-library",
+     "minutes": 6.3
+    },
+    "dining": {
+     "placeId": "south-main-servery",
+     "minutes": 1.7
+    }
+   }
+  },
+  {
+   "dormId": "sid-richardson-college",
+   "name": "Sid Richardson College",
+   "lng": -95.398657,
+   "lat": 29.715579,
+   "pin": "name",
+   "osm": "way/848110582",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gibbs-recreation-and-wellness-center",
+     "minutes": 9.5
+    },
+    "library": {
+     "placeId": "fondren-library",
+     "minutes": 5.3
+    },
+    "dining": {
+     "placeId": "south-main-servery",
+     "minutes": 2.3
+    }
+   }
+  },
+  {
+   "dormId": "martel-college",
+   "name": "Martel College",
+   "lng": -95.397742,
+   "lat": 29.722126,
+   "pin": "name",
+   "osm": "way/255487612",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gibbs-recreation-and-wellness-center",
+     "minutes": 10.2
+    },
+    "library": {
+     "placeId": "fondren-library",
+     "minutes": 6.8
+    },
+    "dining": {
+     "placeId": "north-servery",
+     "minutes": 1.4
+    }
+   }
+  },
+  {
+   "dormId": "mcmurtry-college",
+   "name": "McMurtry College",
+   "lng": -95.397825,
+   "lat": 29.720541,
+   "pin": "name",
+   "osm": "way/255462075",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gibbs-recreation-and-wellness-center",
+     "minutes": 9.4
+    },
+    "library": {
+     "placeId": "fondren-library",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "north-servery",
+     "minutes": 2.1
+    }
+   }
+  },
+  {
+   "dormId": "duncan-college",
+   "name": "Duncan College",
+   "lng": -95.398496,
+   "lat": 29.721881,
+   "pin": "name",
+   "osm": "relation/12253972",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gibbs-recreation-and-wellness-center",
+     "minutes": 9.8
+    },
+    "library": {
+     "placeId": "fondren-library",
+     "minutes": 6.6
+    },
+    "dining": {
+     "placeId": "west-servery",
+     "minutes": 1.1
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "tudor-fieldhouse-and-youngkin-center",
+   "name": "Tudor Fieldhouse and Youngkin Center",
+   "short": "Tudor Fieldhouse and Youngkin Center",
+   "kind": "academic",
+   "codes": [
+    "TUD"
+   ],
+   "aliases": [
+    "Tudor Fieldhouse"
+   ],
+   "lng": -95.403782,
+   "lat": 29.714973,
+   "osm": "way/44891230"
+  },
+  {
+   "id": "alice-pratt-brown-hall",
+   "name": "Alice Pratt Brown Hall",
+   "short": "Alice Pratt Brown Hall",
+   "kind": "academic",
+   "codes": [
+    "APB"
+   ],
+   "aliases": [],
+   "lng": -95.40498,
+   "lat": 29.716214,
+   "osm": "relation/8608127"
+  },
+  {
+   "id": "gibbs-recreation-and-wellness-center",
+   "name": "Gibbs Recreation and Wellness Center",
+   "short": "Gibbs Recreation and Wellness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Barbara and David Gibbs Recreation and Wellness Center"
+   ],
+   "lng": -95.403721,
+   "lat": 29.718199,
+   "osm": "way/255462067"
+  },
+  {
+   "id": "mcnair-hall",
+   "name": "McNair Hall",
+   "short": "McNair Hall",
+   "kind": "academic",
+   "codes": [
+    "MCN"
+   ],
+   "aliases": [
+    "Janice and Robert McNair Hall"
+   ],
+   "lng": -95.403493,
+   "lat": 29.717408,
+   "osm": "way/44891253"
+  },
+  {
+   "id": "fondren-library",
+   "name": "Fondren Library",
+   "short": "Fondren Library",
+   "kind": "library",
+   "codes": [
+    "FON"
+   ],
+   "aliases": [
+    "Fondy",
+    "Fonde"
+   ],
+   "lng": -95.400136,
+   "lat": 29.718139,
+   "osm": "way/45191237"
+  },
+  {
+   "id": "north-servery",
+   "name": "North Servery",
+   "short": "North Servery",
+   "kind": "dining",
+   "codes": [
+    "NSV"
+   ],
+   "aliases": [],
+   "lng": -95.396839,
+   "lat": 29.721719,
+   "osm": "way/255487611"
+  },
+  {
+   "id": "duncan-hall",
+   "name": "Duncan Hall",
+   "short": "Duncan Hall",
+   "kind": "academic",
+   "codes": [
+    "DCH"
+   ],
+   "aliases": [
+    "Anne and Charles Duncan Hall"
+   ],
+   "lng": -95.398741,
+   "lat": 29.720142,
+   "osm": "way/45186488"
+  },
+  {
+   "id": "brockman-hall-for-opera",
+   "name": "Brockman Hall for Opera",
+   "short": "Brockman Hall for Opera",
+   "kind": "academic",
+   "codes": [
+    "BHO"
+   ],
+   "aliases": [
+    "RUMPAC"
+   ],
+   "lng": -95.405906,
+   "lat": 29.715835,
+   "osm": "way/797599864"
+  },
+  {
+   "id": "sarofim-hall",
+   "name": "Sarofim Hall",
+   "short": "Sarofim Hall",
+   "kind": "academic",
+   "codes": [
+    "SRF"
+   ],
+   "aliases": [],
+   "lng": -95.40561,
+   "lat": 29.713549,
+   "osm": "way/1549703489"
+  },
+  {
+   "id": "george-r-brown-hall",
+   "name": "George R. Brown Hall",
+   "short": "George R. Brown Hall",
+   "kind": "academic",
+   "codes": [
+    "GRB"
+   ],
+   "aliases": [],
+   "lng": -95.401327,
+   "lat": 29.71921,
+   "osm": "way/45186487"
+  },
+  {
+   "id": "rice-memorial-center",
+   "name": "Rice Memorial Center",
+   "short": "Rice Memorial Center",
+   "kind": "academic",
+   "codes": [
+    "RMC"
+   ],
+   "aliases": [
+    "RMC"
+   ],
+   "lng": -95.401983,
+   "lat": 29.717976,
+   "osm": "relation/12230436"
+  },
+  {
+   "id": "moody-center-for-the-arts",
+   "name": "Moody Center for the Arts",
+   "short": "Moody Center for the Arts",
+   "kind": "academic",
+   "codes": [
+    "MCA"
+   ],
+   "aliases": [],
+   "lng": -95.405542,
+   "lat": 29.714058,
+   "osm": "way/426173280"
+  },
+  {
+   "id": "south-servery",
+   "name": "South Servery",
+   "short": "South Servery",
+   "kind": "dining",
+   "codes": [
+    "SSV"
+   ],
+   "aliases": [],
+   "lng": -95.400869,
+   "lat": 29.715448,
+   "osm": "way/207525185"
+  },
+  {
+   "id": "dell-butcher-hall",
+   "name": "Dell Butcher Hall",
+   "short": "Dell Butcher Hall",
+   "kind": "academic",
+   "codes": [
+    "DBH"
+   ],
+   "aliases": [],
+   "lng": -95.403156,
+   "lat": 29.719467,
+   "osm": "way/51818062"
+  },
+  {
+   "id": "howard-keck-hall",
+   "name": "Howard Keck Hall",
+   "short": "Howard Keck Hall",
+   "kind": "academic",
+   "codes": [
+    "KCK"
+   ],
+   "aliases": [],
+   "lng": -95.400105,
+   "lat": 29.719613,
+   "osm": "way/45821941"
+  },
+  {
+   "id": "anderson-clarke-center",
+   "name": "Anderson-Clarke Center",
+   "short": "Anderson-Clarke Center",
+   "kind": "academic",
+   "codes": [
+    "ACC"
+   ],
+   "aliases": [
+    "D. Kent and Linda C. Anderson and Robert L. and Jean T. Clarke Center"
+   ],
+   "lng": -95.406796,
+   "lat": 29.71433,
+   "osm": "way/294856630"
+  },
+  {
+   "id": "kraft-hall",
+   "name": "Kraft Hall",
+   "short": "Kraft Hall",
+   "kind": "academic",
+   "codes": [
+    "KRF"
+   ],
+   "aliases": [
+    "Kraft Hall for Social Sciences"
+   ],
+   "lng": -95.402422,
+   "lat": 29.715873,
+   "osm": "relation/15661103"
+  },
+  {
+   "id": "brockman-hall-for-physics",
+   "name": "Brockman Hall for Physics",
+   "short": "Brockman Hall for Physics",
+   "kind": "academic",
+   "codes": [
+    "BRK"
+   ],
+   "aliases": [
+    "Brockman Hall for Physics and Astronomy"
+   ],
+   "lng": -95.401657,
+   "lat": 29.719743,
+   "osm": "relation/8608126"
+  },
+  {
+   "id": "james-baker-hall",
+   "name": "James Baker Hall",
+   "short": "James Baker Hall",
+   "kind": "academic",
+   "codes": [
+    "BKH"
+   ],
+   "aliases": [
+    "James A. Baker III Hall"
+   ],
+   "lng": -95.402654,
+   "lat": 29.716604,
+   "osm": "way/44885328"
+  },
+  {
+   "id": "sewall-hall",
+   "name": "Sewall Hall",
+   "short": "Sewall Hall",
+   "kind": "academic",
+   "codes": [
+    "SEW"
+   ],
+   "aliases": [],
+   "lng": -95.39797,
+   "lat": 29.718347,
+   "osm": "way/51817601"
+  },
+  {
+   "id": "ryon-engineering-laboratory",
+   "name": "Ryon Engineering Laboratory",
+   "short": "Ryon Engineering Laboratory",
+   "kind": "academic",
+   "codes": [
+    "RYN"
+   ],
+   "aliases": [],
+   "lng": -95.400631,
+   "lat": 29.720673,
+   "osm": "way/44896169"
+  },
+  {
+   "id": "west-servery",
+   "name": "West Servery",
+   "short": "West Servery",
+   "kind": "dining",
+   "codes": [
+    "WSV"
+   ],
+   "aliases": [],
+   "lng": -95.398531,
+   "lat": 29.721054,
+   "osm": "relation/12253973"
+  },
+  {
+   "id": "herring-hall",
+   "name": "Herring Hall",
+   "short": "Herring Hall",
+   "kind": "academic",
+   "codes": [
+    "HRG"
+   ],
+   "aliases": [
+    "Robert R. Herring Hall"
+   ],
+   "lng": -95.401116,
+   "lat": 29.717022,
+   "osm": "way/44891249"
+  },
+  {
+   "id": "herzstein-hall",
+   "name": "Herzstein Hall",
+   "short": "Herzstein Hall",
+   "kind": "academic",
+   "codes": [
+    "HRZ"
+   ],
+   "aliases": [],
+   "lng": -95.398491,
+   "lat": 29.719382,
+   "osm": "relation/21261250"
+  },
+  {
+   "id": "brochstein-pavilion",
+   "name": "Brochstein Pavilion",
+   "short": "Brochstein Pavilion",
+   "kind": "academic",
+   "codes": [
+    "BPV"
+   ],
+   "aliases": [
+    "Raymond and Susan Brochstein Pavilion",
+    "Broch"
+   ],
+   "lng": -95.400833,
+   "lat": 29.71783,
+   "osm": "way/87556917"
+  },
+  {
+   "id": "humanities-building",
+   "name": "Humanities Building",
+   "short": "Humanities Building",
+   "kind": "academic",
+   "codes": [
+    "HUM"
+   ],
+   "aliases": [],
+   "lng": -95.399625,
+   "lat": 29.717619,
+   "osm": "way/51817590"
+  },
+  {
+   "id": "maxfield-hall",
+   "name": "Maxfield Hall",
+   "short": "Maxfield Hall",
+   "kind": "academic",
+   "codes": [
+    "MXF"
+   ],
+   "aliases": [],
+   "lng": -95.400331,
+   "lat": 29.720129,
+   "osm": "way/44885323"
+  },
+  {
+   "id": "cohen-house",
+   "name": "Cohen House",
+   "short": "Cohen House",
+   "kind": "academic",
+   "codes": [
+    "COH"
+   ],
+   "aliases": [
+    "Robert and Agnes Cohen House"
+   ],
+   "lng": -95.397226,
+   "lat": 29.717807,
+   "osm": "way/51817597"
+  },
+  {
+   "id": "mudd-computer-science-building",
+   "name": "Mudd Computer Science Building",
+   "short": "Mudd Computer Science Building",
+   "kind": "academic",
+   "codes": [
+    "MUD"
+   ],
+   "aliases": [
+    "Seeley G. Mudd Computer Science Laboratory",
+    "Mudd Lab",
+    "S G Mudd Computer Science Lab"
+   ],
+   "lng": -95.401127,
+   "lat": 29.720451,
+   "osm": "way/51818058"
+  },
+  {
+   "id": "keith-wiess-geological-laboratories",
+   "name": "Keith-Wiess Geological Laboratories",
+   "short": "Keith-Wiess Geological Laboratories",
+   "kind": "academic",
+   "codes": [
+    "KWG"
+   ],
+   "aliases": [
+    "Keith-Wiess Geological Lab"
+   ],
+   "lng": -95.402417,
+   "lat": 29.71931,
+   "osm": "way/51818059"
+  },
+  {
+   "id": "old-lovett-college-commons",
+   "name": "Old Lovett College Commons",
+   "short": "Old Lovett College Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -95.39811,
+   "lat": 29.716173,
+   "osm": "way/255462061"
+  },
+  {
+   "id": "oshman-engineering-design-kitchen",
+   "name": "Oshman Engineering Design Kitchen",
+   "short": "Oshman Engineering Design Kitchen",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "OEDK"
+   ],
+   "lng": -95.401294,
+   "lat": 29.721134,
+   "osm": "way/44885332"
+  },
+  {
+   "id": "allen-business-center",
+   "name": "Allen Business Center",
+   "short": "Allen Business Center",
+   "kind": "academic",
+   "codes": [
+    "ALN"
+   ],
+   "aliases": [
+    "Allen Center"
+   ],
+   "lng": -95.397849,
+   "lat": 29.71763,
+   "osm": "way/45191238"
+  },
+  {
+   "id": "lovett-hall",
+   "name": "Lovett Hall",
+   "short": "Lovett Hall",
+   "kind": "academic",
+   "codes": [
+    "LVH"
+   ],
+   "aliases": [],
+   "lng": -95.39783,
+   "lat": 29.719035,
+   "osm": "way/44896261"
+  },
+  {
+   "id": "rayzor-hall",
+   "name": "Rayzor Hall",
+   "short": "Rayzor Hall",
+   "kind": "academic",
+   "codes": [
+    "RZR"
+   ],
+   "aliases": [],
+   "lng": -95.399068,
+   "lat": 29.718022,
+   "osm": "way/51817587"
+  },
+  {
+   "id": "seibel-servery",
+   "name": "Seibel Servery",
+   "short": "Seibel Servery",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [
+    "Abe and Annie Seibel Servery"
+   ],
+   "lng": -95.398435,
+   "lat": 29.715998,
+   "osm": "way/158286525"
+  },
+  {
+   "id": "cambridge-office-building",
+   "name": "Cambridge Office Building",
+   "short": "Cambridge Office Building",
+   "kind": "academic",
+   "codes": [
+    "COB"
+   ],
+   "aliases": [],
+   "lng": -95.397697,
+   "lat": 29.716989,
+   "osm": "way/545042500"
+  },
+  {
+   "id": "greenbriar-building",
+   "name": "Greenbriar Building",
+   "short": "Greenbriar Building",
+   "kind": "academic",
+   "codes": [
+    "GBB"
+   ],
+   "aliases": [],
+   "lng": -95.412937,
+   "lat": 29.716112,
+   "osm": "way/899658011"
+  },
+  {
+   "id": "herman-brown-hall",
+   "name": "Herman Brown Hall",
+   "short": "Herman Brown Hall",
+   "kind": "academic",
+   "codes": [
+    "HBH"
+   ],
+   "aliases": [
+    "Herman Brown Hall for Mathematical Sciences",
+    "Herman Brown Hall for Math Sci"
+   ],
+   "lng": -95.400864,
+   "lat": 29.719935,
+   "osm": "way/44885325"
+  },
+  {
+   "id": "hamman-hall",
+   "name": "Hamman Hall",
+   "short": "Hamman Hall",
+   "kind": "academic",
+   "codes": [
+    "HAM"
+   ],
+   "aliases": [],
+   "lng": -95.401817,
+   "lat": 29.720143,
+   "osm": "way/44885324"
+  },
+  {
+   "id": "south-main-servery",
+   "name": "South Main Servery",
+   "short": "South Main Servery",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -95.399173,
+   "lat": 29.714843,
+   "osm": "way/1549692076"
+  },
+  {
+   "id": "will-rice-college-commons",
+   "name": "Will Rice College Commons",
+   "short": "Will Rice College Commons",
+   "kind": "dining",
+   "codes": [
+    "WRC"
+   ],
+   "aliases": [
+    "Will Rice College"
+   ],
+   "lng": -95.398716,
+   "lat": 29.716412,
+   "osm": "way/51817595"
+  },
+  {
+   "id": "john-l-cox-fitness-center",
+   "name": "John L. Cox Fitness Center",
+   "short": "John L. Cox Fitness Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -95.408891,
+   "lat": 29.715201,
+   "osm": "way/255462076"
+  },
+  {
+   "id": "rice-student-health-and-wellness-center",
+   "name": "Rice Student Health and Wellness Center",
+   "short": "Rice Student Health and Wellness Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Morton L. Rich Student Health and Wellness Center"
+   ],
+   "lng": -95.395538,
+   "lat": 29.721009,
+   "osm": "way/255487607"
+  },
+  {
+   "id": "baker-college-commons",
+   "name": "Baker College Commons",
+   "short": "Baker College Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -95.399125,
+   "lat": 29.717028,
+   "osm": "way/1551417621"
+  },
+  {
+   "id": "huff-house",
+   "name": "Huff House",
+   "short": "Huff House",
+   "kind": "academic",
+   "codes": [
+    "HUF"
+   ],
+   "aliases": [
+    "Peter and Nancy Huff House",
+    "Ralph S O'Connor House"
+   ],
+   "lng": -95.396313,
+   "lat": 29.720529,
+   "osm": "way/45821947"
+  },
+  {
+   "id": "pcf-2",
+   "name": "PCF 2",
+   "short": "PCF 2",
+   "kind": "academic",
+   "codes": [
+    "PCF"
+   ],
+   "aliases": [
+    "PCF",
+    "Provisional Campus Facility"
+   ],
+   "lng": -95.401217,
+   "lat": 29.716006,
+   "osm": "way/922153983"
+  },
+  {
+   "id": "pcf-1",
+   "name": "PCF 1",
+   "short": "PCF 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Graduate Commons",
+    "PCF"
+   ],
+   "lng": -95.401435,
+   "lat": 29.715956,
+   "osm": "way/922153981"
+  },
+  {
+   "id": "pcf-3",
+   "name": "PCF 3",
+   "short": "PCF 3",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PCF"
+   ],
+   "lng": -95.400975,
+   "lat": 29.716025,
+   "osm": "way/922153984"
+  },
+  {
+   "id": "pcf-4",
+   "name": "PCF 4",
+   "short": "PCF 4",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PCF"
+   ],
+   "lng": -95.400784,
+   "lat": 29.716132,
+   "osm": "way/922153985"
+  },
+  {
+   "id": "wilson-house",
+   "name": "Wilson House",
+   "short": "Wilson House",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Wiess College Magisters’ House"
+   ],
+   "lng": -95.400293,
+   "lat": 29.714542,
+   "osm": "way/255487600"
+  }
+ ]
+}

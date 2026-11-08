@@ -1,0 +1,295 @@
+{
+ "name": "Rice University Office of the Registrar, Buildings and Classrooms (building codes)",
+ "url": "https://registrar.rice.edu/facstaff/buildings-and-classrooms",
+ "read": "2026-11-08",
+ "buildings": [
+  {
+   "code": "ABL",
+   "name": "M D Anderson Biological Lab"
+  },
+  {
+   "code": "ACC",
+   "name": "Anderson-Clarke Center"
+  },
+  {
+   "code": "ALN",
+   "name": "Allen Center"
+  },
+  {
+   "code": "ANH",
+   "name": "M D Anderson Hall"
+  },
+  {
+   "code": "APB",
+   "name": "Alice Pratt Brown Hall"
+  },
+  {
+   "code": "BHO",
+   "name": "Brockman Hall for Opera"
+  },
+  {
+   "code": "BKC",
+   "name": "Baker College"
+  },
+  {
+   "code": "BKH",
+   "name": "James Baker Hall"
+  },
+  {
+   "code": "BNC",
+   "name": "Margaret Root Brown College"
+  },
+  {
+   "code": "BPV",
+   "name": "Brochstein Pavilion"
+  },
+  {
+   "code": "BRC",
+   "name": "BioScience Research Collab"
+  },
+  {
+   "code": "BRK",
+   "name": "Brockman Hall for Physics"
+  },
+  {
+   "code": "COB",
+   "name": "Cambridge Office Building"
+  },
+  {
+   "code": "COH",
+   "name": "Cohen House"
+  },
+  {
+   "code": "DBH",
+   "name": "Dell Butcher Hall"
+  },
+  {
+   "code": "DCC",
+   "name": "Duncan College"
+  },
+  {
+   "code": "DCH",
+   "name": "Anne and Charles Duncan Hall"
+  },
+  {
+   "code": "FEP",
+   "name": "Facilities Engr Planning Bldg"
+  },
+  {
+   "code": "FON",
+   "name": "Fondren Library"
+  },
+  {
+   "code": "GBB",
+   "name": "Greenbriar Building"
+  },
+  {
+   "code": "GHS",
+   "name": "Greenhouse"
+  },
+  {
+   "code": "GRB",
+   "name": "George R Brown Hall"
+  },
+  {
+   "code": "GRW",
+   "name": "Gibbs Rec and Wellness Center"
+  },
+  {
+   "code": "HAM",
+   "name": "Hamman Hall"
+  },
+  {
+   "code": "HBH",
+   "name": "Herman Brown Hall for Math Sci"
+  },
+  {
+   "code": "HFD",
+   "name": "Holloway Field and Ley Track"
+  },
+  {
+   "code": "HNZ",
+   "name": "Harry C Hanszen College"
+  },
+  {
+   "code": "HRG",
+   "name": "Robert R Herring Hall"
+  },
+  {
+   "code": "HRZ",
+   "name": "Herzstein Hall"
+  },
+  {
+   "code": "HUF",
+   "name": "Huff House"
+  },
+  {
+   "code": "HUM",
+   "name": "Humanities Building"
+  },
+  {
+   "code": "JOC",
+   "name": "Jones College"
+  },
+  {
+   "code": "KCK",
+   "name": "Howard Keck Hall"
+  },
+  {
+   "code": "KRF",
+   "name": "Kraft Hall for Social Sciences"
+  },
+  {
+   "code": "KWG",
+   "name": "Keith-Wiess Geological Lab"
+  },
+  {
+   "code": "LEY",
+   "name": "Ley Student Center"
+  },
+  {
+   "code": "LVH",
+   "name": "Lovett Hall"
+  },
+  {
+   "code": "MCM",
+   "name": "McMurtry College"
+  },
+  {
+   "code": "MCA",
+   "name": "Moody Center for the Arts"
+  },
+  {
+   "code": "MCN",
+   "name": "Janice and Robert McNair Hall"
+  },
+  {
+   "code": "MEB",
+   "name": "Mechanical Engineering Bldg"
+  },
+  {
+   "code": "MLC",
+   "name": "Martel College"
+  },
+  {
+   "code": "MSR",
+   "name": "Main Street Residence"
+  },
+  {
+   "code": "MUD",
+   "name": "S G Mudd Computer Science Lab"
+  },
+  {
+   "code": "MXF",
+   "name": "Maxfield Hall"
+  },
+  {
+   "code": "NSV",
+   "name": "North Servery"
+  },
+  {
+   "code": "OED",
+   "name": "Oshman Engineer Design Kitchen"
+  },
+  {
+   "code": "OES",
+   "name": "O'Connor Building for Engineering and Science"
+  },
+  {
+   "code": "PCF",
+   "name": "Provisional Campus Facility"
+  },
+  {
+   "code": "POL",
+   "name": "Police Department"
+  },
+  {
+   "code": "RCC",
+   "name": "Rice Children's Campus"
+  },
+  {
+   "code": "RCK",
+   "name": "Reckling Park at Cameron Field"
+  },
+  {
+   "code": "RGA",
+   "name": "Rice Graduate Apartments"
+  },
+  {
+   "code": "RHW",
+   "name": "Rice Health and Wellness Cntr"
+  },
+  {
+   "code": "RMC",
+   "name": "Rice Memorial Center"
+  },
+  {
+   "code": "RVA",
+   "name": "Rice Village Apartments"
+  },
+  {
+   "code": "RYN",
+   "name": "Ryon Engineering Laboratory"
+  },
+  {
+   "code": "RZR",
+   "name": "Rayzor Hall"
+  },
+  {
+   "code": "SEW",
+   "name": "Sewall Hall"
+  },
+  {
+   "code": "SPL",
+   "name": "South Plant"
+  },
+  {
+   "code": "SRC",
+   "name": "Sid Richardson College"
+  },
+  {
+   "code": "SRF",
+   "name": "Sarofim Hall"
+  },
+  {
+   "code": "SST",
+   "name": "Space Science and Tech Bldg"
+  },
+  {
+   "code": "SSV",
+   "name": "South Servery"
+  },
+  {
+   "code": "STA",
+   "name": "Rice Stadium"
+  },
+  {
+   "code": "TBA",
+   "name": "To Be Announced (Department Scheduled Room)"
+  },
+  {
+   "code": "TBD",
+   "name": "To Be Determined (OTR Scheduled Room)"
+  },
+  {
+   "code": "TUD",
+   "name": "Tudor Fieldhouse"
+  },
+  {
+   "code": "WPH",
+   "name": "Wiess President's House"
+  },
+  {
+   "code": "WRC",
+   "name": "Will Rice College"
+  },
+  {
+   "code": "WSC",
+   "name": "Harry C Wiess College"
+  },
+  {
+   "code": "WSV",
+   "name": "West Servery"
+  }
+ ]
+}
