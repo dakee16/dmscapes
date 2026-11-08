@@ -1,0 +1,17 @@
+{
+  "collegeId": "indiana",
+  "area": {
+    "osm": "way/74173036",
+    "bbox": [
+      39.1627,
+      -86.52844,
+      39.19655,
+      -86.48981
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/indiana.codes.json"
+  }
+}
