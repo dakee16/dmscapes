@@ -1,0 +1,189 @@
+{
+  "halls": {
+    "beacon-hall": {
+      "pin": [
+        -83.934882,
+        35.953384
+      ]
+    }
+  },
+  "notes": {
+    "beacon-hall": "Beacon Hall is two wings at 1901 Caledonia Ave, Beacon Hall East (BE2) and West (BE1) in the UTK Buildings layer and in OSM; pinned at the centre of Beacon Hall West in that layer.",
+    "ut-veterinary-medical-center": "Veterinary hospital on the Agricultural Campus across the river, not a main-campus class place.",
+    "ut-warehouse": "Warehouse, not a class or meal place.",
+    "university-printing-and-mail": "Printing and mail services, not a class or meal place.",
+    "joan-cronan-volleyball-practice-facility": "Varsity practice facility, not a class or meal place.",
+    "allan-jones-intercollegiate-aquatics-center": "Varsity aquatics center, not a class or meal place.",
+    "fleet-management": "Fleet management garage, not a class or meal place.",
+    "ut-drive-services-building": "Facilities services building, not a class or meal place.",
+    "kingston-pike-building": "Offices, not a class or meal place.",
+    "ut-visitors-center": "Visitors center, not a class or meal place.",
+    "student-health-center": "Student health center, not a class or meal place.",
+    "chick-fil-a": "Fast-food restaurant, not a dining hall.",
+    "university-of-tennessee-conference-center-building": "Conference center downtown, not a class or meal place.",
+    "william-m-bass-forensic-anthropology-building": "Forensic anthropology center by the UT Medical Center across the river, over 45 minutes' walk from the halls.",
+    "early-learning-center": "Child care center, not a class or meal place.",
+    "early-learning-center-962546904": "Child care center, not a class or meal place.",
+    "university-of-tennessee-early-learning-center": "Child care center, not a class or meal place.",
+    "business-incubator": "Business incubator offices, not a class or meal place.",
+    "tyson-alumni-center": "Alumni center, not a class or meal place.",
+    "hopecote": "Guest house, not a class or meal place.",
+    "equity-and-diversity": "Office building, not a class or meal place.",
+    "kappa-sigma-fraternity": "Fraternity or sorority house, not a class or meal place.",
+    "alpha-delta-pi": "Fraternity or sorority house, not a class or meal place.",
+    "alpha-omicron-pi": "Fraternity or sorority house, not a class or meal place.",
+    "sigma-phi-epsilon": "Fraternity or sorority house, not a class or meal place.",
+    "delta-zeta-house": "Fraternity or sorority house, not a class or meal place.",
+    "delta-delta-delta": "Fraternity or sorority house, not a class or meal place.",
+    "theta-mu": "Fraternity or sorority house, not a class or meal place.",
+    "chi-omega": "Fraternity or sorority house, not a class or meal place.",
+    "kappa-delta": "Fraternity or sorority house, not a class or meal place.",
+    "pi-beta-phi-sorority": "Fraternity or sorority house, not a class or meal place.",
+    "alpha-chi-omega": "Fraternity or sorority house, not a class or meal place.",
+    "delta-gamma": "Fraternity or sorority house, not a class or meal place.",
+    "kappa-kappa-gamma-house": "Fraternity or sorority house, not a class or meal place.",
+    "alpha-kappa-alpha": "Fraternity or sorority house, not a class or meal place."
+  },
+  "places": {
+    "ut-veterinary-medical-center": {
+      "hide": true
+    },
+    "ut-warehouse": {
+      "hide": true
+    },
+    "university-printing-and-mail": {
+      "hide": true
+    },
+    "joan-cronan-volleyball-practice-facility": {
+      "hide": true
+    },
+    "allan-jones-intercollegiate-aquatics-center": {
+      "hide": true
+    },
+    "fleet-management": {
+      "hide": true
+    },
+    "ut-drive-services-building": {
+      "hide": true
+    },
+    "kingston-pike-building": {
+      "hide": true
+    },
+    "ut-visitors-center": {
+      "hide": true
+    },
+    "student-health-center": {
+      "hide": true
+    },
+    "chick-fil-a": {
+      "hide": true
+    },
+    "university-of-tennessee-conference-center-building": {
+      "hide": true
+    },
+    "william-m-bass-forensic-anthropology-building": {
+      "hide": true
+    },
+    "early-learning-center": {
+      "hide": true
+    },
+    "early-learning-center-962546904": {
+      "hide": true
+    },
+    "university-of-tennessee-early-learning-center": {
+      "hide": true
+    },
+    "business-incubator": {
+      "hide": true
+    },
+    "tyson-alumni-center": {
+      "hide": true
+    },
+    "hopecote": {
+      "hide": true
+    },
+    "equity-and-diversity": {
+      "hide": true
+    },
+    "kappa-sigma-fraternity": {
+      "hide": true
+    },
+    "alpha-delta-pi": {
+      "hide": true
+    },
+    "alpha-omicron-pi": {
+      "hide": true
+    },
+    "sigma-phi-epsilon": {
+      "hide": true
+    },
+    "delta-zeta-house": {
+      "hide": true
+    },
+    "delta-delta-delta": {
+      "hide": true
+    },
+    "theta-mu": {
+      "hide": true
+    },
+    "chi-omega": {
+      "hide": true
+    },
+    "kappa-delta": {
+      "hide": true
+    },
+    "pi-beta-phi-sorority": {
+      "hide": true
+    },
+    "alpha-chi-omega": {
+      "hide": true
+    },
+    "delta-gamma": {
+      "hide": true
+    },
+    "kappa-kappa-gamma-house": {
+      "hide": true
+    },
+    "alpha-kappa-alpha": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "dogwood-hall -> ceramics-annex",
+        "dogwood-hall -> racheff-research-building",
+        "dogwood-hall -> university-commons",
+        "geier-hall -> university-commons"
+      ],
+      "maxRatio": 3.5,
+      "why": "Neyland Drive and the rail line between West Campus and the Agricultural Campus have one mapped crossing, by the aquatic center; walks go south-east to it and back west."
+    },
+    {
+      "pairs": [
+        "beacon-hall -> hper-physical-education",
+        "beacon-hall -> presidential-court-building",
+        "beacon-hall -> rocky-top-dining-hall",
+        "beacon-hall -> temple-hall"
+      ],
+      "maxRatio": 6.5,
+      "why": "Beacon Hall's mapped way out is north to the Lake Avenue side; no mapped path runs down the slope south to Presidential Court, Rocky Top, HPER and Temple, so walks go round by the streets."
+    },
+    {
+      "pairs": [
+        "brown-hall -> hper-physical-education",
+        "geier-hall -> presidential-court-building",
+        "hess-hall -> international-house",
+        "magnolia-hall -> student-aquatic-center",
+        "robinson-hall -> presidential-court-building",
+        "stokely-hall -> art-and-architecture",
+        "stokely-hall -> natalie-l-haslam-music-center",
+        "stokely-hall -> ut-ceramics",
+        "torchbearer-hall -> berry-hall-thompson-boling-assembly-center-and-arena",
+        "volunteer-hall -> blount-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "No doors are mapped on Stokely, Fred D. Brown, Geier, Robinson, Hess, Magnolia or Torchbearer, nor on most buildings they walk to (Volunteer Hall's only mapped door is its garage entrance), so each walk runs between the mapped paths nearest the buildings' middles or doors, which here lie on their far sides; the walk goes round the building to reach them."
+    }
+  ]
+}

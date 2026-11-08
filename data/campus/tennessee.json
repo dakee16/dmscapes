@@ -1,0 +1,1419 @@
+{
+ "collegeId": "tennessee",
+ "generatedAt": "2026-11-08T22:06:37.412Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "UT Knoxville GIS, UTK Buildings (building names, building codes and short names)",
+   "url": "https://services5.arcgis.com/BXVf0KVnxj1jGako/arcgis/rest/services/UTK_Buildings/FeatureServer/9",
+   "use": "building codes and aliases",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/tennessee.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -83.94299,
+  35.94499,
+  -83.92269,
+  35.95973
+ ],
+ "halls": [
+  {
+   "dormId": "geier-hall",
+   "name": "Geier Hall",
+   "lng": -83.936051,
+   "lat": 35.952155,
+   "pin": "name",
+   "osm": "way/515682142",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 4.4
+    },
+    "gym": {
+     "placeId": "goodfriend-tennis-center",
+     "minutes": 2.9
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 9.4
+    }
+   }
+  },
+  {
+   "dormId": "hess-hall",
+   "name": "Hess Hall",
+   "lng": -83.931376,
+   "lat": 35.95402,
+   "pin": "name",
+   "osm": "way/155024621",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 5.8
+    },
+    "gym": {
+     "placeId": "neyland-thompson-sports-center",
+     "minutes": 8.6
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 3.2
+    }
+   }
+  },
+  {
+   "dormId": "robinson-hall",
+   "name": "Robinson Hall",
+   "lng": -83.935574,
+   "lat": 35.951761,
+   "pin": "name",
+   "osm": "way/515682143",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 3.5
+    },
+    "gym": {
+     "placeId": "goodfriend-tennis-center",
+     "minutes": 2.1
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 9.9
+    }
+   }
+  },
+  {
+   "dormId": "magnolia-hall",
+   "name": "Magnolia Hall",
+   "lng": -83.936297,
+   "lat": 35.950278,
+   "pin": "name",
+   "osm": "way/833709129",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 4
+    },
+    "gym": {
+     "placeId": "goodfriend-tennis-center",
+     "minutes": 3.1
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 10.7
+    }
+   }
+  },
+  {
+   "dormId": "beacon-hall",
+   "name": "Beacon Hall",
+   "lng": -83.934882,
+   "lat": 35.953384,
+   "pin": "manual",
+   "osm": "way/1433410249",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 7.5
+    },
+    "gym": {
+     "placeId": "goodfriend-tennis-center",
+     "minutes": 5.4
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 7.7
+    }
+   }
+  },
+  {
+   "dormId": "brown-hall",
+   "name": "Brown Hall",
+   "lng": -83.932415,
+   "lat": 35.952945,
+   "pin": "name",
+   "osm": "way/393476057",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 3.9
+    },
+    "gym": {
+     "placeId": "goodfriend-tennis-center",
+     "minutes": 7.3
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 4.4
+    }
+   }
+  },
+  {
+   "dormId": "clement-hall",
+   "name": "Clement Hall",
+   "lng": -83.932182,
+   "lat": 35.957301,
+   "pin": "name",
+   "osm": "way/155024523",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 10.6
+    },
+    "gym": {
+     "placeId": "goodfriend-tennis-center",
+     "minutes": 13
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "dogwood-hall",
+   "name": "Dogwood Hall",
+   "lng": -83.936828,
+   "lat": 35.950696,
+   "pin": "name",
+   "osm": "way/833709128",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 4.7
+    },
+    "gym": {
+     "placeId": "goodfriend-tennis-center",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 11.4
+    }
+   }
+  },
+  {
+   "dormId": "poplar-hall",
+   "name": "Poplar Hall",
+   "lng": -83.935701,
+   "lat": 35.950935,
+   "pin": "name",
+   "osm": "way/1432368559",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 2.9
+    },
+    "gym": {
+     "placeId": "goodfriend-tennis-center",
+     "minutes": 2.1
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 9.7
+    }
+   }
+  },
+  {
+   "dormId": "stokely-hall",
+   "name": "Stokely Hall",
+   "lng": -83.928829,
+   "lat": 35.951697,
+   "pin": "name",
+   "osm": "way/515682140",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 10.8
+    },
+    "gym": {
+     "placeId": "neyland-thompson-sports-center",
+     "minutes": 4.4
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 8
+    }
+   }
+  },
+  {
+   "dormId": "torchbearer-hall",
+   "name": "Torchbearer Hall",
+   "lng": -83.928015,
+   "lat": 35.95237,
+   "pin": "name",
+   "osm": "way/1560047825",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 9
+    },
+    "gym": {
+     "placeId": "neyland-thompson-sports-center",
+     "minutes": 4.1
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 5.5
+    }
+   }
+  },
+  {
+   "dormId": "laurel-hall",
+   "name": "Laurel Hall",
+   "lng": -83.932358,
+   "lat": 35.959733,
+   "pin": "name",
+   "osm": "way/263693878",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 16.2
+    },
+    "gym": {
+     "placeId": "neyland-thompson-sports-center",
+     "minutes": 17.6
+    },
+    "library": {
+     "placeId": "john-c-hodges-library",
+     "minutes": 8.3
+    }
+   }
+  },
+  {
+   "dormId": "volunteer-hall",
+   "name": "Volunteer Hall",
+   "lng": -83.929975,
+   "lat": 35.959095,
+   "pin": "name",
+   "osm": "way/489415656",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "dining": {
+     "placeId": "rocky-top-dining-hall",
+     "minutes": 14.6
+    },
+    "gym": {
+     "placeId": "thompson-boling-arena",
+     "minutes": 15.2
+    },
+    "library": {
+     "placeId": "hoskins-library",
+     "minutes": 4.3
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "berry-hall-thompson-boling-assembly-center-and-arena",
+   "name": "Berry Hall;Thompson-Boling Assembly Center and Arena",
+   "short": "Thompson-Boling Arena at Food City Center",
+   "kind": "academic",
+   "codes": [
+    "TBA",
+    "PRT",
+    "BER"
+   ],
+   "aliases": [
+    "Thompson-Boling Assembly Center and Arena",
+    "Thompson-Boling Arena at Food City Center",
+    "Pratt Pavilion",
+    "Berry Hall"
+   ],
+   "lng": -83.924763,
+   "lat": 35.951827,
+   "osm": "way/155024518"
+  },
+  {
+   "id": "university-commons",
+   "name": "University Commons",
+   "short": "University Commons",
+   "kind": "dining",
+   "codes": [
+    "UCV"
+   ],
+   "aliases": [
+    "University Commons RecSports",
+    "Vol Shop",
+    "University Commons - VolShop"
+   ],
+   "lng": -83.940173,
+   "lat": 35.95063,
+   "osm": "way/833709117"
+  },
+  {
+   "id": "neyland-thompson-sports-center",
+   "name": "Neyland-Thompson Sports Center",
+   "short": "Neyland-Thompson Sports Center",
+   "kind": "gym",
+   "codes": [
+    "NEY",
+    "ATC",
+    "LAC"
+   ],
+   "aliases": [
+    "Anderson Training Center",
+    "Brenda Lawson",
+    "Brenda Lawson Athletic Center"
+   ],
+   "lng": -83.9276,
+   "lat": 35.950348,
+   "osm": "way/155024537"
+  },
+  {
+   "id": "thompson-boling-arena",
+   "name": "Thompson-Boling Arena",
+   "short": "Thompson-Boling Arena",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.925124,
+   "lat": 35.95109,
+   "osm": "way/310699001"
+  },
+  {
+   "id": "future-haslam-college-of-business-building-ii",
+   "name": "Future Haslam College of Business Building II",
+   "short": "Dunford Hall",
+   "kind": "academic",
+   "codes": [
+    "DUN",
+    "GRV",
+    "HNH"
+   ],
+   "aliases": [
+    "Dunford Hall",
+    "Greve Hall",
+    "Henson Hall"
+   ],
+   "lng": -83.930561,
+   "lat": 35.95631,
+   "osm": "way/1432368561"
+  },
+  {
+   "id": "student-union",
+   "name": "Student Union",
+   "short": "Student Union",
+   "kind": "academic",
+   "codes": [
+    "SU2",
+    "SU1"
+   ],
+   "aliases": [
+    "Student Union - Phase II",
+    "Student Union - Phase I"
+   ],
+   "lng": -83.928892,
+   "lat": 35.956804,
+   "osm": "way/681635821"
+  },
+  {
+   "id": "john-c-hodges-library",
+   "name": "John C. Hodges Library",
+   "short": "Hodges Library",
+   "kind": "library",
+   "codes": [
+    "LIB"
+   ],
+   "aliases": [
+    "Hodges Library"
+   ],
+   "lng": -83.929833,
+   "lat": 35.955089,
+   "osm": "way/155024530"
+  },
+  {
+   "id": "ce-brehm-animal-sciences-building",
+   "name": "C.E. Brehm Animal Sciences Building",
+   "short": "Brehm Animal Science",
+   "kind": "academic",
+   "codes": [
+    "BAS",
+    "FSB"
+   ],
+   "aliases": [
+    "Brehm Animal Science",
+    "Brehm Animal Science Building",
+    "McLeod Food Science Building",
+    "John H. McLeod Food Sciences Building"
+   ],
+   "lng": -83.941653,
+   "lat": 35.947432,
+   "osm": "way/155024555"
+  },
+  {
+   "id": "dabney-buehler-hall",
+   "name": "Dabney-Buehler Hall",
+   "short": "Buehler Hall",
+   "kind": "academic",
+   "codes": [
+    "BUE",
+    "DAB"
+   ],
+   "aliases": [
+    "Buehler Hall",
+    "Dabney Hall"
+   ],
+   "lng": -83.925041,
+   "lat": 35.958117,
+   "osm": "way/155024622"
+  },
+  {
+   "id": "recsports-trecs",
+   "name": "RecSports (TRECS)",
+   "short": "TRECS",
+   "kind": "gym",
+   "codes": [
+    "REC"
+   ],
+   "aliases": [
+    "TRECS",
+    "Student Recreational and Fitness Center"
+   ],
+   "lng": -83.934324,
+   "lat": 35.949046,
+   "osm": "way/155024570"
+  },
+  {
+   "id": "hper-physical-education",
+   "name": "HPER (Physical Education)",
+   "short": "HPER",
+   "kind": "academic",
+   "codes": [
+    "HPR"
+   ],
+   "aliases": [
+    "HPER",
+    "Health, Physical Education, and Recreation Building"
+   ],
+   "lng": -83.93276,
+   "lat": 35.951731,
+   "osm": "way/155024560"
+  },
+  {
+   "id": "student-aquatic-center",
+   "name": "Student Aquatic Center",
+   "short": "Student Aquatic Center",
+   "kind": "gym",
+   "codes": [
+    "SAC"
+   ],
+   "aliases": [],
+   "lng": -83.935168,
+   "lat": 35.949941,
+   "osm": "way/155024554"
+  },
+  {
+   "id": "art-and-architecture",
+   "name": "Art and Architecture",
+   "short": "Art & Architecture",
+   "kind": "academic",
+   "codes": [
+    "AAB"
+   ],
+   "aliases": [
+    "Art & Architecture Building"
+   ],
+   "lng": -83.929589,
+   "lat": 35.95254,
+   "osm": "way/155024552"
+  },
+  {
+   "id": "goodfriend-tennis-center",
+   "name": "Goodfriend Tennis Center",
+   "short": "Goodfriend Tennis Center",
+   "kind": "gym",
+   "codes": [
+    "GTC"
+   ],
+   "aliases": [],
+   "lng": -83.936623,
+   "lat": 35.951522,
+   "osm": "way/155024628"
+  },
+  {
+   "id": "natalie-l-haslam-music-center",
+   "name": "Natalie L. Haslam Music Center",
+   "short": "Natalie Haslam Music Center",
+   "kind": "academic",
+   "codes": [
+    "HMC"
+   ],
+   "aliases": [
+    "Natalie Haslam Music Center"
+   ],
+   "lng": -83.930724,
+   "lat": 35.951966,
+   "osm": "way/369292454"
+  },
+  {
+   "id": "sophronia-strong-hall",
+   "name": "Sophronia Strong Hall",
+   "short": "Strong Hall",
+   "kind": "academic",
+   "codes": [
+    "STR"
+   ],
+   "aliases": [
+    "Strong Hall"
+   ],
+   "lng": -83.931413,
+   "lat": 35.957532,
+   "osm": "way/515682138"
+  },
+  {
+   "id": "walters-academic-building",
+   "name": "Walters Academic Building",
+   "short": "Walters Academic Building",
+   "kind": "academic",
+   "codes": [
+    "WAB"
+   ],
+   "aliases": [],
+   "lng": -83.927699,
+   "lat": 35.957203,
+   "osm": "way/155024550"
+  },
+  {
+   "id": "agricultural-sciences-and-natural-resources",
+   "name": "Agricultural Sciences and Natural Resources",
+   "short": "Agriculture and Natural Resources",
+   "kind": "academic",
+   "codes": [
+    "ANR"
+   ],
+   "aliases": [
+    "Agriculture and Natural Resources",
+    "Agriculture and Natural Resources Building"
+   ],
+   "lng": -83.94062,
+   "lat": 35.94771,
+   "osm": "way/1329395659"
+  },
+  {
+   "id": "ken-and-blaire-mossman-building",
+   "name": "Ken and Blaire Mossman Building",
+   "short": "Mossman Building",
+   "kind": "academic",
+   "codes": [
+    "MOS"
+   ],
+   "aliases": [
+    "Mossman Building"
+   ],
+   "lng": -83.927193,
+   "lat": 35.959123,
+   "osm": "way/736301092"
+  },
+  {
+   "id": "communication-and-information-building",
+   "name": "Communication and Information Building",
+   "short": "Communication Building",
+   "kind": "academic",
+   "codes": [
+    "COM"
+   ],
+   "aliases": [
+    "Communication Building"
+   ],
+   "lng": -83.92588,
+   "lat": 35.953133,
+   "osm": "way/155024568"
+  },
+  {
+   "id": "taylor-law-center",
+   "name": "Taylor Law Center",
+   "short": "Law Library",
+   "kind": "academic",
+   "codes": [
+    "LAW",
+    "LWT"
+   ],
+   "aliases": [
+    "Law Library",
+    "Frank Winston Law Building - Law Library and Classroom Addition",
+    "Law Complex",
+    "Frank Winston Law Building - George C Taylor Center"
+   ],
+   "lng": -83.929588,
+   "lat": 35.958192,
+   "osm": "way/155024549"
+  },
+  {
+   "id": "zeanah-engineering-complex",
+   "name": "Zeanah Engineering Complex",
+   "short": "Zeanah Engineering Complex",
+   "kind": "academic",
+   "codes": [
+    "ZEC",
+    "EST",
+    "PSQ"
+   ],
+   "aliases": [
+    "Estabrook",
+    "Pasqua Nuclear Engineering Building"
+   ],
+   "lng": -83.923552,
+   "lat": 35.955777,
+   "osm": "way/916518112"
+  },
+  {
+   "id": "biosystems-engineering-and-soil-science-lab",
+   "name": "Biosystems Engineering & Soil Science Lab",
+   "short": "BESS Lab",
+   "kind": "academic",
+   "codes": [
+    "BEL"
+   ],
+   "aliases": [
+    "BESS Lab",
+    "Biosystems Engineering and Soil Science Labs Building"
+   ],
+   "lng": -83.940031,
+   "lat": 35.948175,
+   "osm": "way/155024542"
+  },
+  {
+   "id": "plant-biotechnology-building",
+   "name": "Plant Biotechnology Building",
+   "short": "Plant Biotechnology",
+   "kind": "academic",
+   "codes": [
+    "PBB"
+   ],
+   "aliases": [
+    "Plant Biotechnology"
+   ],
+   "lng": -83.941306,
+   "lat": 35.948201,
+   "osm": "way/155024632"
+  },
+  {
+   "id": "alumni-memorial-building",
+   "name": "Alumni Memorial Building",
+   "short": "Alumni Memorial Building",
+   "kind": "academic",
+   "codes": [
+    "AMB"
+   ],
+   "aliases": [],
+   "lng": -83.926313,
+   "lat": 35.95601,
+   "osm": "way/155024516"
+  },
+  {
+   "id": "james-a-haslam-ii-business-building",
+   "name": "James A. Haslam II Business Building",
+   "short": "Haslam Business Building",
+   "kind": "academic",
+   "codes": [
+    "HBB"
+   ],
+   "aliases": [
+    "Haslam Business Building"
+   ],
+   "lng": -83.92868,
+   "lat": 35.955717,
+   "osm": "way/155024528"
+  },
+  {
+   "id": "rocky-top-dining-hall",
+   "name": "Rocky Top Dining Hall",
+   "short": "Rocky Top Dining Hall",
+   "kind": "dining",
+   "codes": [
+    "RTD"
+   ],
+   "aliases": [],
+   "lng": -83.934116,
+   "lat": 35.951798,
+   "osm": "way/1076102659"
+  },
+  {
+   "id": "min-h-kao-electrical-engineering-and-computer-science-building",
+   "name": "Min H. Kao Electrical Engineering and Computer Science Building",
+   "short": "Min H.Kao",
+   "kind": "academic",
+   "codes": [
+    "MKB"
+   ],
+   "aliases": [
+    "Min H.Kao",
+    "Min H Kao Electrical Engineering & Computer Science"
+   ],
+   "lng": -83.924576,
+   "lat": 35.958569,
+   "osm": "way/264168213"
+  },
+  {
+   "id": "hoskins-library",
+   "name": "Hoskins Library",
+   "short": "Hoskins Library",
+   "kind": "library",
+   "codes": [
+    "HOS"
+   ],
+   "aliases": [
+    "James D Hoskins Library"
+   ],
+   "lng": -83.927983,
+   "lat": 35.958793,
+   "osm": "way/155024531"
+  },
+  {
+   "id": "dougherty-enginnering-building",
+   "name": "Dougherty Enginnering Building",
+   "short": "Dougherty",
+   "kind": "academic",
+   "codes": [
+    "DOU"
+   ],
+   "aliases": [
+    "Dougherty",
+    "Dougherty Engineering Building"
+   ],
+   "lng": -83.923997,
+   "lat": 35.957823,
+   "osm": "way/155024524"
+  },
+  {
+   "id": "presidential-court-building",
+   "name": "Presidential Court Building",
+   "short": "Presidential Court",
+   "kind": "academic",
+   "codes": [
+    "PRS"
+   ],
+   "aliases": [
+    "Presidential Court"
+   ],
+   "lng": -83.933992,
+   "lat": 35.952582,
+   "osm": "way/155024608"
+  },
+  {
+   "id": "hesler-hall",
+   "name": "Hesler Hall",
+   "short": "Hesler Hall",
+   "kind": "academic",
+   "codes": [
+    "HGC"
+   ],
+   "aliases": [
+    "Hesler Chiller Building"
+   ],
+   "lng": -83.926351,
+   "lat": 35.956535,
+   "osm": "way/155024573"
+  },
+  {
+   "id": "clarence-brown-theatre",
+   "name": "Clarence Brown Theatre",
+   "short": "Clarence Brown Theatre",
+   "kind": "academic",
+   "codes": [
+    "CBT"
+   ],
+   "aliases": [],
+   "lng": -83.930647,
+   "lat": 35.95324,
+   "osm": "way/155024575"
+  },
+  {
+   "id": "nursing-building",
+   "name": "Nursing Building",
+   "short": "UT Medical Nursing Building",
+   "kind": "academic",
+   "codes": [
+    "CON",
+    "NUR"
+   ],
+   "aliases": [
+    "UT Medical Nursing Building",
+    "College of Nursing"
+   ],
+   "lng": -83.927146,
+   "lat": 35.953998,
+   "osm": "way/155024576"
+  },
+  {
+   "id": "morgan-hall",
+   "name": "Morgan Hall",
+   "short": "Morgan Hall",
+   "kind": "academic",
+   "codes": [
+    "MGH"
+   ],
+   "aliases": [],
+   "lng": -83.941971,
+   "lat": 35.949068,
+   "osm": "way/155024561"
+  },
+  {
+   "id": "jd-tickle-engineering-building",
+   "name": "J.D. Tickle Engineering Building",
+   "short": "Tickle Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "TIC"
+   ],
+   "aliases": [
+    "Tickle Engineering Building",
+    "John D Tickle Engineering Building"
+   ],
+   "lng": -83.922692,
+   "lat": 35.9557,
+   "osm": "way/489602914"
+  },
+  {
+   "id": "ayres-hall",
+   "name": "Ayres Hall",
+   "short": "Ayres Hall",
+   "kind": "academic",
+   "codes": [
+    "AYR"
+   ],
+   "aliases": [],
+   "lng": -83.925978,
+   "lat": 35.957499,
+   "osm": "way/155024517"
+  },
+  {
+   "id": "senter-hall",
+   "name": "Senter Hall",
+   "short": "Senter Hall",
+   "kind": "academic",
+   "codes": [
+    "SEN"
+   ],
+   "aliases": [],
+   "lng": -83.92852,
+   "lat": 35.959365,
+   "osm": "way/263688357"
+  },
+  {
+   "id": "claxton-hall",
+   "name": "Claxton Hall",
+   "short": "Claxton",
+   "kind": "academic",
+   "codes": [
+    "CLX"
+   ],
+   "aliases": [
+    "Claxton",
+    "Philander P Claxton Education Building"
+   ],
+   "lng": -83.928072,
+   "lat": 35.954762,
+   "osm": "way/155024522"
+  },
+  {
+   "id": "jessie-harris-building",
+   "name": "Jessie Harris Building",
+   "short": "Jessie Harris",
+   "kind": "academic",
+   "codes": [
+    "JHB"
+   ],
+   "aliases": [
+    "Jessie Harris",
+    "Jessie W Harris Building"
+   ],
+   "lng": -83.926322,
+   "lat": 35.959298,
+   "osm": "way/155024567"
+  },
+  {
+   "id": "reese-hall",
+   "name": "Reese Hall",
+   "short": "Reese Hall",
+   "kind": "academic",
+   "codes": [
+    "REE",
+    "RHC"
+   ],
+   "aliases": [
+    "Reese Hall Chiller"
+   ],
+   "lng": -83.93486,
+   "lat": 35.952751,
+   "osm": "way/155024543"
+  },
+  {
+   "id": "howard-h-baker-jr-center-for-public-policy",
+   "name": "Howard H. Baker Jr. Center for Public Policy",
+   "short": "Baker Center",
+   "kind": "academic",
+   "codes": [
+    "HBS"
+   ],
+   "aliases": [
+    "Baker Center",
+    "Howard H Baker Jr School for Public Policy and Public Affairs"
+   ],
+   "lng": -83.931748,
+   "lat": 35.956398,
+   "osm": "way/155024630"
+  },
+  {
+   "id": "massey-hall",
+   "name": "Massey Hall",
+   "short": "Massey Hall",
+   "kind": "academic",
+   "codes": [
+    "MAS"
+   ],
+   "aliases": [],
+   "lng": -83.931369,
+   "lat": 35.955957,
+   "osm": "way/155024534"
+  },
+  {
+   "id": "nielsen-physics-building",
+   "name": "Nielsen Physics Building",
+   "short": "Nielsen",
+   "kind": "academic",
+   "codes": [
+    "PHY"
+   ],
+   "aliases": [
+    "Nielsen"
+   ],
+   "lng": -83.925519,
+   "lat": 35.956558,
+   "osm": "way/155024538"
+  },
+  {
+   "id": "austin-peay-hall",
+   "name": "Austin Peay Hall",
+   "short": "Austin Peay",
+   "kind": "academic",
+   "codes": [
+    "APB"
+   ],
+   "aliases": [
+    "Austin Peay",
+    "Austin Peay Building"
+   ],
+   "lng": -83.926999,
+   "lat": 35.957128,
+   "osm": "way/155024556"
+  },
+  {
+   "id": "perkins-hall",
+   "name": "Perkins Hall",
+   "short": "Perkins Hall",
+   "kind": "academic",
+   "codes": [
+    "PER"
+   ],
+   "aliases": [],
+   "lng": -83.92401,
+   "lat": 35.956467,
+   "osm": "way/155024541"
+  },
+  {
+   "id": "humanities-and-social-sciences",
+   "name": "Humanities and Social Sciences",
+   "short": "Humanities and Social Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "HSS"
+   ],
+   "aliases": [
+    "Humanities and Social Sciences Building"
+   ],
+   "lng": -83.929115,
+   "lat": 35.953806,
+   "osm": "relation/12930066"
+  },
+  {
+   "id": "jane-and-david-bailey-education-complex",
+   "name": "Jane and David Bailey Education Complex",
+   "short": "Bailey Education Complex",
+   "kind": "academic",
+   "codes": [
+    "BEC"
+   ],
+   "aliases": [
+    "Bailey Education Complex"
+   ],
+   "lng": -83.92759,
+   "lat": 35.954378,
+   "osm": "way/155024521"
+  },
+  {
+   "id": "stokely-management-center",
+   "name": "Stokely Management Center",
+   "short": "Stokely Management Center",
+   "kind": "academic",
+   "codes": [
+    "SMC"
+   ],
+   "aliases": [],
+   "lng": -83.929011,
+   "lat": 35.956208,
+   "osm": "way/155024634"
+  },
+  {
+   "id": "mcclung-museum",
+   "name": "McClung Museum",
+   "short": "McClung Museum",
+   "kind": "academic",
+   "codes": [
+    "MCM"
+   ],
+   "aliases": [
+    "Frank H McClung Museum of Natural History and Culture"
+   ],
+   "lng": -83.927219,
+   "lat": 35.952023,
+   "osm": "way/155024535"
+  },
+  {
+   "id": "jenny-boyd-theatre",
+   "name": "Jenny Boyd Theatre",
+   "short": "Jenny Boyd Theatre",
+   "kind": "academic",
+   "codes": [
+    "JBT",
+    "CTH"
+   ],
+   "aliases": [
+    "The Jenny Boyd Theatre",
+    "Carousel Theatre",
+    "Ula Love Doughty Caraousel Theatre"
+   ],
+   "lng": -83.930123,
+   "lat": 35.953089,
+   "osm": "way/1560212862"
+  },
+  {
+   "id": "ferris-hall",
+   "name": "Ferris Hall",
+   "short": "Ferris Hall",
+   "kind": "academic",
+   "codes": [
+    "FER"
+   ],
+   "aliases": [],
+   "lng": -83.923418,
+   "lat": 35.956723,
+   "osm": "way/155024571"
+  },
+  {
+   "id": "blount-hall",
+   "name": "Blount Hall",
+   "short": "Blount Hall",
+   "kind": "academic",
+   "codes": [
+    "BLH"
+   ],
+   "aliases": [],
+   "lng": -83.929334,
+   "lat": 35.958544,
+   "osm": "way/155024635"
+  },
+  {
+   "id": "andy-holt-tower",
+   "name": "Andy Holt Tower",
+   "short": "Andy Holt Tower",
+   "kind": "academic",
+   "codes": [
+    "AHT",
+    "CMC"
+   ],
+   "aliases": [
+    "Andy Holt Tower_Communications Chiller Building"
+   ],
+   "lng": -83.925856,
+   "lat": 35.952074,
+   "osm": "way/1472452250"
+  },
+  {
+   "id": "mccord-hall",
+   "name": "McCord Hall",
+   "short": "McCord Hall",
+   "kind": "academic",
+   "codes": [
+    "MCH"
+   ],
+   "aliases": [],
+   "lng": -83.942995,
+   "lat": 35.948662,
+   "osm": "way/155024536"
+  },
+  {
+   "id": "textiles-and-non-wovens-development-center",
+   "name": "Textiles and Non-Wovens Development Center",
+   "short": "Engineering Research Annex",
+   "kind": "academic",
+   "codes": [
+    "ERA"
+   ],
+   "aliases": [
+    "Engineering Research Annex"
+   ],
+   "lng": -83.92777,
+   "lat": 35.959655,
+   "osm": "way/263691678"
+  },
+  {
+   "id": "crc-mast-laboratory",
+   "name": "CRC/MAST Laboratory",
+   "short": "CRC-Material Science and Technology Unit",
+   "kind": "academic",
+   "codes": [
+    "CRM"
+   ],
+   "aliases": [
+    "CRC-Material Science and Technology Unit"
+   ],
+   "lng": -83.937604,
+   "lat": 35.945243,
+   "osm": "way/155024597"
+  },
+  {
+   "id": "crc-best-laboratory",
+   "name": "CRC/BEST Laboratory",
+   "short": "CRC-Bioenergy",
+   "kind": "academic",
+   "codes": [
+    "CRB"
+   ],
+   "aliases": [
+    "CRC-Bioenergy",
+    "CRC Bioenergy Science and Technology Unit"
+   ],
+   "lng": -83.937132,
+   "lat": 35.945358,
+   "osm": "way/155024592"
+  },
+  {
+   "id": "temple-hall",
+   "name": "Temple Hall",
+   "short": "Temple Hall",
+   "kind": "academic",
+   "codes": [
+    "TEM"
+   ],
+   "aliases": [],
+   "lng": -83.931844,
+   "lat": 35.952415,
+   "osm": "way/155024609"
+  },
+  {
+   "id": "burchfiel-geography-building",
+   "name": "Burchfiel Geography Building",
+   "short": "Burchfiel",
+   "kind": "academic",
+   "codes": [
+    "BGB"
+   ],
+   "aliases": [
+    "Burchfiel"
+   ],
+   "lng": -83.9275,
+   "lat": 35.956597,
+   "osm": "way/155024619"
+  },
+  {
+   "id": "environmental-and-landscape-lab",
+   "name": "Environmental & Landscape Lab",
+   "short": "Environment and Landscape Laboratory",
+   "kind": "academic",
+   "codes": [
+    "ELL"
+   ],
+   "aliases": [
+    "Environment and Landscape Laboratory"
+   ],
+   "lng": -83.937415,
+   "lat": 35.944988,
+   "osm": "way/155024585"
+  },
+  {
+   "id": "mcclung-tower",
+   "name": "McClung Tower",
+   "short": "McClung Tower",
+   "kind": "academic",
+   "codes": [
+    "MCT"
+   ],
+   "aliases": [
+    "McClung Tower and Plaza"
+   ],
+   "lng": -83.928966,
+   "lat": 35.954076,
+   "osm": "way/155024557"
+  },
+  {
+   "id": "ut-ceramics",
+   "name": "UT Ceramics",
+   "short": "Ceramics Building",
+   "kind": "academic",
+   "codes": [
+    "CER"
+   ],
+   "aliases": [
+    "Ceramics Building"
+   ],
+   "lng": -83.929971,
+   "lat": 35.952758,
+   "osm": "way/1187508627"
+  },
+  {
+   "id": "black-cultural-center",
+   "name": "Black Cultural Center",
+   "short": "Frieson Black Cultural Center",
+   "kind": "academic",
+   "codes": [
+    "FBC"
+   ],
+   "aliases": [
+    "Frieson Black Cultural Center"
+   ],
+   "lng": -83.9321,
+   "lat": 35.953632,
+   "osm": "way/155024623"
+  },
+  {
+   "id": "international-house",
+   "name": "International House",
+   "short": "International House",
+   "kind": "academic",
+   "codes": [
+    "INH"
+   ],
+   "aliases": [],
+   "lng": -83.931594,
+   "lat": 35.954946,
+   "osm": "way/155024625"
+  },
+  {
+   "id": "racheff-research-building",
+   "name": "Racheff Research Building",
+   "short": "Racheff Research",
+   "kind": "academic",
+   "codes": [
+    "RAC"
+   ],
+   "aliases": [
+    "Racheff Research"
+   ],
+   "lng": -83.939305,
+   "lat": 35.948534,
+   "osm": "way/155024612"
+  },
+  {
+   "id": "hearing-and-speech-center",
+   "name": "Hearing and Speech Center",
+   "short": "Silverstein Luper Building",
+   "kind": "academic",
+   "codes": [
+    "SLB"
+   ],
+   "aliases": [
+    "Silverstein Luper Building"
+   ],
+   "lng": -83.926083,
+   "lat": 35.954033,
+   "osm": "way/489415655"
+  },
+  {
+   "id": "south-college",
+   "name": "South College",
+   "short": "South College",
+   "kind": "academic",
+   "codes": [
+    "STH"
+   ],
+   "aliases": [],
+   "lng": -83.925255,
+   "lat": 35.957293,
+   "osm": "way/155024547"
+  },
+  {
+   "id": "ceramics-annex",
+   "name": "Ceramics Annex",
+   "short": "Ceramics Annex",
+   "kind": "academic",
+   "codes": [
+    "CRA"
+   ],
+   "aliases": [],
+   "lng": -83.941023,
+   "lat": 35.949691,
+   "osm": "way/962900055"
+  },
+  {
+   "id": "textiles-processing-laboratory",
+   "name": "Textiles Processing Laboratory",
+   "short": "Carriage House",
+   "kind": "academic",
+   "codes": [
+    "CAR"
+   ],
+   "aliases": [
+    "Carriage House"
+   ],
+   "lng": -83.928651,
+   "lat": 35.958887,
+   "osm": "way/263691680"
+  },
+  {
+   "id": "pediatric-language-clinic",
+   "name": "Pediatric Language Clinic",
+   "short": "2023 Lake Avenue",
+   "kind": "academic",
+   "codes": [
+    "202",
+    "PLC"
+   ],
+   "aliases": [
+    "2023 Lake Avenue"
+   ],
+   "lng": -83.937509,
+   "lat": 35.953782,
+   "osm": "way/962546906"
+  }
+ ]
+}

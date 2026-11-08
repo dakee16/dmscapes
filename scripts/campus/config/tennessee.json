@@ -1,0 +1,26 @@
+{
+  "collegeId": "tennessee",
+  "area": {
+    "osm": "way/376167113",
+    "bbox": [
+      35.94316,
+      -83.94356,
+      35.96032,
+      -83.92175
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "title": "UT Knoxville GIS, UTK Buildings (building names, building codes and short names)",
+    "url": "https://services5.arcgis.com/BXVf0KVnxj1jGako/arcgis/rest/services/UTK_Buildings/FeatureServer/9",
+    "arcgis": "https://services5.arcgis.com/BXVf0KVnxj1jGako/arcgis/rest/services/UTK_Buildings/FeatureServer/9",
+    "fields": {
+      "name": "NAME",
+      "code": "BuildingCode",
+      "aliases": [
+        "ShortName"
+      ]
+    }
+  }
+}
