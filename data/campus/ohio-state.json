@@ -1,0 +1,3130 @@
+{
+ "collegeId": "ohio-state",
+ "generatedAt": "2026-11-08T08:17:40.516Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Ohio State Facilities GIS, OSUMaps BaseMap Buildings layer (building names and scheduling abbreviations)",
+   "url": "https://gissvc.osu.edu/arcgis/rest/services/OSUMaps/BaseMap_RO/MapServer/28",
+   "use": "building codes and aliases",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/ohio-state.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -83.04382,
+  39.99106,
+  -83.00455,
+  40.019
+ ],
+ "halls": [
+  {
+   "dormId": "archer-house",
+   "name": "Archer House",
+   "lng": -83.014098,
+   "lat": 40.005271,
+   "pin": "name",
+   "osm": "way/154204796",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-north",
+     "minutes": 1
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 5.8
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 13.7
+    }
+   }
+  },
+  {
+   "dormId": "baker-hall-east",
+   "name": "Baker Hall East",
+   "lng": -83.010325,
+   "lat": 39.996402,
+   "pin": "manual",
+   "osm": "way/154204179",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 2.9
+    },
+    "library": {
+     "placeId": "william-oxley-thompson-memorial-library",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "baker-hall-west",
+   "name": "Baker Hall West",
+   "lng": -83.010325,
+   "lat": 39.996402,
+   "pin": "manual",
+   "osm": "way/154204179",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 2.9
+    },
+    "library": {
+     "placeId": "william-oxley-thompson-memorial-library",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "barrett-house",
+   "name": "Barrett House",
+   "lng": -83.011024,
+   "lat": 40.004722,
+   "pin": "name",
+   "osm": "way/154204814",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 2.1
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 6
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 13.3
+    }
+   }
+  },
+  {
+   "dormId": "blackburn-house",
+   "name": "Blackburn House",
+   "lng": -83.012479,
+   "lat": 40.004243,
+   "pin": "name",
+   "osm": "way/454962354",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 1.2
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 3.6
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 11.6
+    }
+   }
+  },
+  {
+   "dormId": "bowen-house",
+   "name": "Bowen House",
+   "lng": -83.009424,
+   "lat": 40.005364,
+   "pin": "name",
+   "osm": "way/375856188",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 3.7
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 8
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 15.1
+    }
+   }
+  },
+  {
+   "dormId": "bradley-hall",
+   "name": "Bradley Hall",
+   "lng": -83.013321,
+   "lat": 39.996574,
+   "pin": "name",
+   "osm": "way/445050067",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 3
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 6.4
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 4.1
+    }
+   }
+  },
+  {
+   "dormId": "busch-house",
+   "name": "Busch House",
+   "lng": -83.009546,
+   "lat": 40.004732,
+   "pin": "name",
+   "osm": "way/454962361",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 3.1
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 7.1
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 14.2
+    }
+   }
+  },
+  {
+   "dormId": "canfield-hall",
+   "name": "Canfield Hall",
+   "lng": -83.013588,
+   "lat": 39.995963,
+   "pin": "name",
+   "osm": "way/445050071",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 4.7
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "fechko-house",
+   "name": "Fechko House",
+   "lng": -83.01326,
+   "lat": 39.995836,
+   "pin": "name",
+   "osm": "way/433859940",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 2.2
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "german-house",
+   "name": "German House",
+   "lng": -83.011117,
+   "lat": 39.995231,
+   "pin": "name",
+   "osm": "way/448586218",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 1
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 6.8
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "halloran-house",
+   "name": "Halloran House",
+   "lng": -83.010381,
+   "lat": 40.004582,
+   "pin": "name",
+   "osm": "way/154204778",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 2.7
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 6.2
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 13.3
+    }
+   }
+  },
+  {
+   "dormId": "hanley-house",
+   "name": "Hanley House",
+   "lng": -83.013137,
+   "lat": 39.994106,
+   "pin": "name",
+   "osm": "way/511180186",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 2.2
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 4.6
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 6.2
+    }
+   }
+  },
+  {
+   "dormId": "haverfield-house",
+   "name": "Haverfield House",
+   "lng": -83.011654,
+   "lat": 40.004108,
+   "pin": "name",
+   "osm": "way/154204776",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 2.3
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 4.4
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 12.4
+    }
+   }
+  },
+  {
+   "dormId": "houck-house",
+   "name": "Houck House",
+   "lng": -83.011111,
+   "lat": 40.005222,
+   "pin": "name",
+   "osm": "way/154204821",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 1.8
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 6.5
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 14.2
+    }
+   }
+  },
+  {
+   "dormId": "houston-house",
+   "name": "Houston House",
+   "lng": -83.011722,
+   "lat": 40.005832,
+   "pin": "name",
+   "osm": "way/454962365",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 1.5
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 6.6
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 14.5
+    }
+   }
+  },
+  {
+   "dormId": "lincoln-tower",
+   "name": "Lincoln Tower",
+   "lng": -83.021973,
+   "lat": 39.998474,
+   "pin": "name",
+   "osm": "way/43397985",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "recreation-and-physical-activity-center",
+     "minutes": 4.5
+    },
+    "library": {
+     "placeId": "william-oxley-thompson-memorial-library",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 10.5
+    }
+   }
+  },
+  {
+   "dormId": "mack-hall",
+   "name": "Mack Hall",
+   "lng": -83.014272,
+   "lat": 39.996032,
+   "pin": "name",
+   "osm": "way/154204174",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 4.2
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 4.1
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 2.5
+    }
+   }
+  },
+  {
+   "dormId": "mendoza-house",
+   "name": "Mendoza House",
+   "lng": -83.014188,
+   "lat": 40.004303,
+   "pin": "name",
+   "osm": "way/160626242",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-north",
+     "minutes": 2.4
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 4.3
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 11.9
+    }
+   }
+  },
+  {
+   "dormId": "morrill-tower",
+   "name": "Morrill Tower",
+   "lng": -83.021885,
+   "lat": 40.000045,
+   "pin": "name",
+   "osm": "way/43397984",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "recreation-and-physical-activity-center",
+     "minutes": 4.5
+    },
+    "library": {
+     "placeId": "william-oxley-thompson-memorial-library",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 12.6
+    }
+   }
+  },
+  {
+   "dormId": "morrison-tower",
+   "name": "Morrison Tower",
+   "lng": -83.012781,
+   "lat": 39.995841,
+   "pin": "name",
+   "osm": "way/154204173",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 1.9
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 5.1
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 4.8
+    }
+   }
+  },
+  {
+   "dormId": "neil-building",
+   "name": "Neil Building",
+   "lng": -83.013987,
+   "lat": 39.993846,
+   "pin": "name",
+   "osm": "way/377400312",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 3.4
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 5
+    }
+   }
+  },
+  {
+   "dormId": "norton-house",
+   "name": "Norton House",
+   "lng": -83.013886,
+   "lat": 40.004831,
+   "pin": "name",
+   "osm": "way/154204812",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 1.7
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 5.3
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 13.2
+    }
+   }
+  },
+  {
+   "dormId": "nosker-house",
+   "name": "Nosker House",
+   "lng": -83.012134,
+   "lat": 40.004845,
+   "pin": "name",
+   "osm": "way/454962351",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 0.4
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 4.8
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 12.8
+    }
+   }
+  },
+  {
+   "dormId": "park-stradley-hall",
+   "name": "Park-Stradley Hall",
+   "lng": -83.010708,
+   "lat": 39.995831,
+   "pin": "name",
+   "osm": "way/231976895",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 1.9
+    },
+    "library": {
+     "placeId": "william-oxley-thompson-memorial-library",
+     "minutes": 7
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 4
+    }
+   }
+  },
+  {
+   "dormId": "paterson-hall",
+   "name": "Paterson Hall",
+   "lng": -83.012559,
+   "lat": 39.996401,
+   "pin": "name",
+   "osm": "way/445050068",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 2.9
+    },
+    "library": {
+     "placeId": "william-oxley-thompson-memorial-library",
+     "minutes": 5.7
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 2
+    }
+   }
+  },
+  {
+   "dormId": "pennsylvania-place",
+   "name": "Pennsylvania Place",
+   "lng": -83.014814,
+   "lat": 39.991465,
+   "pin": "name",
+   "osm": "way/827080898",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 7.5
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 6.6
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 9.5
+    }
+   }
+  },
+  {
+   "dormId": "pomerene-house",
+   "name": "Pomerene House",
+   "lng": -83.013281,
+   "lat": 39.9941,
+   "pin": "name",
+   "osm": "way/511180187",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 2.4
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 4.5
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 6.1
+    }
+   }
+  },
+  {
+   "dormId": "raney-house",
+   "name": "Raney House",
+   "lng": -83.010048,
+   "lat": 40.005473,
+   "pin": "name",
+   "osm": "way/375835942",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 7.5
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 14.6
+    }
+   }
+  },
+  {
+   "dormId": "scott-house",
+   "name": "Scott House",
+   "lng": -83.013395,
+   "lat": 40.004395,
+   "pin": "name",
+   "osm": "way/454962372",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "north-recreation-center",
+     "minutes": 1.1
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 3.7
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 11.6
+    }
+   }
+  },
+  {
+   "dormId": "siebert-hall",
+   "name": "Siebert Hall",
+   "lng": -83.012279,
+   "lat": 39.995876,
+   "pin": "name",
+   "osm": "way/154204789",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 1.1
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 6.1
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 3.2
+    }
+   }
+  },
+  {
+   "dormId": "smith-steeb-hall",
+   "name": "Smith-Steeb Hall",
+   "lng": -83.00951,
+   "lat": 39.995787,
+   "pin": "name",
+   "osm": "way/154204650",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 3.1
+    },
+    "library": {
+     "placeId": "william-oxley-thompson-memorial-library",
+     "minutes": 8.3
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 5.3
+    }
+   }
+  },
+  {
+   "dormId": "the-residence-on-tenth",
+   "name": "The Residence on Tenth",
+   "lng": -83.012925,
+   "lat": 39.99459,
+   "pin": "name",
+   "osm": "way/232071677",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-south",
+     "minutes": 1.2
+    },
+    "library": {
+     "placeId": "prior-health-sciences-library",
+     "minutes": 4.1
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 4.7
+    }
+   }
+  },
+  {
+   "dormId": "torres-house",
+   "name": "Torres House",
+   "lng": -83.013652,
+   "lat": 40.005941,
+   "pin": "name",
+   "osm": "way/375725690",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "jesse-owens-recreation-center-north",
+     "minutes": 1
+    },
+    "library": {
+     "placeId": "18th-avenue-library",
+     "minutes": 6.3
+    },
+    "dining": {
+     "placeId": "kennedy-commons",
+     "minutes": 14.2
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "schottenstein-center-and-value-city-arena",
+   "name": "Schottenstein Center & Value City Arena",
+   "short": "Value City Arena",
+   "kind": "gym",
+   "codes": [
+    "JSC"
+   ],
+   "aliases": [
+    "Value City Arena",
+    "Schottenstein Center"
+   ],
+   "lng": -83.025131,
+   "lat": 40.007609,
+   "osm": "way/30172563"
+  },
+  {
+   "id": "woody-hayes-athletic-center",
+   "name": "Woody Hayes Athletic Center",
+   "short": "Woody Hayes Athletic Center",
+   "kind": "academic",
+   "codes": [
+    "WD"
+   ],
+   "aliases": [],
+   "lng": -83.024159,
+   "lat": 40.012355,
+   "osm": "way/154204824"
+  },
+  {
+   "id": "osu-veterinary-medical-center",
+   "name": "OSU Veterinary Medical Center",
+   "short": "OSU Veterinary Medical Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Veterinary Medical Center",
+    "Galbreath Equine Center"
+   ],
+   "lng": -83.027858,
+   "lat": 40.00096,
+   "osm": "way/154204424"
+  },
+  {
+   "id": "university-hospital",
+   "name": "University Hospital",
+   "short": "Medical Center Tower",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Wexner Medical Center Inpatient Hospital",
+    "Medical Center Tower"
+   ],
+   "lng": -83.021088,
+   "lat": 39.995037,
+   "osm": "way/884705648"
+  },
+  {
+   "id": "research-center",
+   "name": "Research Center",
+   "short": "Research Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Animal House Kinnear Research Center"
+   ],
+   "lng": -83.043423,
+   "lat": 39.999095,
+   "osm": "way/493365002"
+  },
+  {
+   "id": "recreation-and-physical-activity-center",
+   "name": "Recreation & Physical Activity Center",
+   "short": "RPAC",
+   "kind": "gym",
+   "codes": [
+    "RP"
+   ],
+   "aliases": [
+    "RPAC"
+   ],
+   "lng": -83.018386,
+   "lat": 39.999515,
+   "osm": "way/48208477"
+  },
+  {
+   "id": "ohio-union",
+   "name": "Ohio Union",
+   "short": "Ohio Union",
+   "kind": "academic",
+   "codes": [
+    "OU"
+   ],
+   "aliases": [],
+   "lng": -83.008647,
+   "lat": 39.997675,
+   "osm": "way/154204619"
+  },
+  {
+   "id": "james-cancer-hospital-and-solove-research-institute",
+   "name": "James Cancer Hospital and Solove Research Institute",
+   "short": "The James",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Arthur G James Cancer Hospital and Richard J Solove Research Institute",
+    "The James",
+    "James Cancer Hospital"
+   ],
+   "lng": -83.019659,
+   "lat": 39.994978,
+   "osm": "way/369777537"
+  },
+  {
+   "id": "doan-hall",
+   "name": "Doan Hall",
+   "short": "Charles Austin Doan Hall",
+   "kind": "academic",
+   "codes": [
+    "DN"
+   ],
+   "aliases": [
+    "University Hospital",
+    "Charles Austin Doan Hall",
+    "University Hospital - Doan Hall"
+   ],
+   "lng": -83.017626,
+   "lat": 39.995631,
+   "osm": "way/370806797"
+  },
+  {
+   "id": "adventure-recreation-center",
+   "name": "Adventure Recreation Center",
+   "short": "ARC",
+   "kind": "gym",
+   "codes": [
+    "AR"
+   ],
+   "aliases": [
+    "ARC"
+   ],
+   "lng": -83.031764,
+   "lat": 40.002687,
+   "osm": "way/154204831"
+  },
+  {
+   "id": "agricultural-engineering-building",
+   "name": "Agricultural Engineering Building",
+   "short": "Agricultural Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "AE"
+   ],
+   "aliases": [],
+   "lng": -83.024984,
+   "lat": 40.00552,
+   "osm": "way/154204727"
+  },
+  {
+   "id": "covelli-center-and-jennings-wrestling-facility",
+   "name": "Covelli Center & Jennings Wrestling Facility",
+   "short": "Covelli Multisport Arena",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Covelli Multisport Arena",
+    "Covelli Center"
+   ],
+   "lng": -83.027737,
+   "lat": 40.013851,
+   "osm": "way/529488398"
+  },
+  {
+   "id": "wexner-medical-center-outpatient-care-west-campus",
+   "name": "Wexner Medical Center Outpatient Care West Campus",
+   "short": "West Campus Ambulatory Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "West Campus Ambulatory Facility",
+    "Outpatient Care West Campus",
+    "James Outpatient Care"
+   ],
+   "lng": -83.035271,
+   "lat": 40.002174,
+   "osm": "way/838647045"
+  },
+  {
+   "id": "university-hospital-154204638",
+   "name": "University Hospital",
+   "short": "James A Rhodes Hall",
+   "kind": "academic",
+   "codes": [
+    "RD"
+   ],
+   "aliases": [
+    "Rhodes Hall",
+    "James A Rhodes Hall",
+    "University Hospital - Rhodes Hall"
+   ],
+   "lng": -83.018054,
+   "lat": 39.995146,
+   "osm": "way/154204638"
+  },
+  {
+   "id": "physical-activity-and-education-services",
+   "name": "Physical Activity and Education Services",
+   "short": "Physical Activity and Education Services",
+   "kind": "academic",
+   "codes": [
+    "PE"
+   ],
+   "aliases": [
+    "PAES PE",
+    "Physical Activity and Education Services - PAES"
+   ],
+   "lng": -83.017233,
+   "lat": 39.999833,
+   "osm": "way/158711263"
+  },
+  {
+   "id": "martha-morehouse-outpatient-care",
+   "name": "Martha Morehouse Outpatient Care",
+   "short": "Martha Morehouse Outpatient Care",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Morehouse Medical Plaza - Pavilion"
+   ],
+   "lng": -83.032903,
+   "lat": 40.001332,
+   "osm": "way/469536656"
+  },
+  {
+   "id": "fawcett-center-for-tomorrow",
+   "name": "Fawcett Center for Tomorrow",
+   "short": "Fawcett Center for Tomorrow",
+   "kind": "academic",
+   "codes": [
+    "CT"
+   ],
+   "aliases": [],
+   "lng": -83.020874,
+   "lat": 40.010723,
+   "osm": "way/154204414"
+  },
+  {
+   "id": "postle-hall",
+   "name": "Postle Hall",
+   "short": "College of Dentistry",
+   "kind": "academic",
+   "codes": [
+    "PH"
+   ],
+   "aliases": [
+    "College of Dentistry"
+   ],
+   "lng": -83.015984,
+   "lat": 39.996,
+   "osm": "way/370807428"
+  },
+  {
+   "id": "saint-john-arena",
+   "name": "Saint John Arena",
+   "short": "Saint John Arena",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "St John Arena"
+   ],
+   "lng": -83.019141,
+   "lat": 40.005347,
+   "osm": "way/154204645"
+  },
+  {
+   "id": "schumaker-student-athlete-development-complex",
+   "name": "Schumaker Student Athlete Development Complex",
+   "short": "Schumaker Student-Athlete Development Complex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Schumaker Complex"
+   ],
+   "lng": -83.025699,
+   "lat": 40.012586,
+   "osm": "way/529488391"
+  },
+  {
+   "id": "drinko-hall",
+   "name": "Drinko Hall",
+   "short": "Law",
+   "kind": "academic",
+   "codes": [
+    "DI"
+   ],
+   "aliases": [
+    "Law"
+   ],
+   "lng": -83.00827,
+   "lat": 39.996113,
+   "osm": "way/154204472"
+  },
+  {
+   "id": "scott-laboratory",
+   "name": "Scott Laboratory",
+   "short": "Scott Laboratory",
+   "kind": "academic",
+   "codes": [
+    "SO"
+   ],
+   "aliases": [],
+   "lng": -83.014163,
+   "lat": 40.002336,
+   "osm": "relation/2075433"
+  },
+  {
+   "id": "hamilton-hall",
+   "name": "Hamilton Hall",
+   "short": "Hamilton Hall",
+   "kind": "academic",
+   "codes": [
+    "HM"
+   ],
+   "aliases": [],
+   "lng": -83.015394,
+   "lat": 39.994858,
+   "osm": "way/154204758"
+  },
+  {
+   "id": "ty-tucker-tennis-center",
+   "name": "Ty Tucker Tennis Center",
+   "short": "Ty Tucker Tennis Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.024948,
+   "lat": 40.013975,
+   "osm": "way/696751175"
+  },
+  {
+   "id": "kottman-hall",
+   "name": "Kottman Hall",
+   "short": "Agronomy",
+   "kind": "academic",
+   "codes": [
+    "KH"
+   ],
+   "aliases": [
+    "Agronomy"
+   ],
+   "lng": -83.026843,
+   "lat": 40.002659,
+   "osm": "way/60822820"
+  },
+  {
+   "id": "william-oxley-thompson-memorial-library",
+   "name": "William Oxley Thompson Memorial Library",
+   "short": "William Oxley Thompson Memorial Library",
+   "kind": "library",
+   "codes": [
+    "LI"
+   ],
+   "aliases": [
+    "Thompson Library"
+   ],
+   "lng": -83.014881,
+   "lat": 39.999258,
+   "osm": "way/30172308"
+  },
+  {
+   "id": "ross-heart-hospital",
+   "name": "Ross Heart Hospital",
+   "short": "Ross Heart Hospital",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Richard M Ross Heart Hospital"
+   ],
+   "lng": -83.018456,
+   "lat": 39.994498,
+   "osm": "way/154204721"
+  },
+  {
+   "id": "knowlton-hall",
+   "name": "Knowlton Hall",
+   "short": "Architecture",
+   "kind": "academic",
+   "codes": [
+    "KN"
+   ],
+   "aliases": [
+    "Architecture",
+    "Brown Hall",
+    "Ives"
+   ],
+   "lng": -83.016786,
+   "lat": 40.003606,
+   "osm": "relation/8663659"
+  },
+  {
+   "id": "physics-research-building",
+   "name": "Physics Research Building",
+   "short": "Physics Research Building",
+   "kind": "academic",
+   "codes": [
+    "PY"
+   ],
+   "aliases": [],
+   "lng": -83.014254,
+   "lat": 40.003342,
+   "osm": "way/154204714"
+  },
+  {
+   "id": "sullivant-hall",
+   "name": "Sullivant Hall",
+   "short": "Sullivant Hall",
+   "kind": "academic",
+   "codes": [
+    "SU"
+   ],
+   "aliases": [],
+   "lng": -83.008746,
+   "lat": 39.999458,
+   "osm": "way/154204675"
+  },
+  {
+   "id": "pelotonia-research-center",
+   "name": "Pelotonia Research Center",
+   "short": "IRF",
+   "kind": "academic",
+   "codes": [
+    "PRC"
+   ],
+   "aliases": [
+    "IRF",
+    "Interdisciplinary Research Facility"
+   ],
+   "lng": -83.035385,
+   "lat": 40.005239,
+   "osm": "way/839112214"
+  },
+  {
+   "id": "wiseman-hall",
+   "name": "Wiseman Hall",
+   "short": "Wiseman Hall",
+   "kind": "academic",
+   "codes": [
+    "WM"
+   ],
+   "aliases": [
+    "Comprehensive Cancer Center"
+   ],
+   "lng": -83.018211,
+   "lat": 39.996613,
+   "osm": "way/391047205"
+  },
+  {
+   "id": "wexner-center-for-the-arts",
+   "name": "Wexner Center for the Arts",
+   "short": "Eugene J. Weigel Hall",
+   "kind": "academic",
+   "codes": [
+    "WG",
+    "WX"
+   ],
+   "aliases": [
+    "Eugene J. Weigel Hall",
+    "Weigel Hall"
+   ],
+   "lng": -83.009463,
+   "lat": 40.000737,
+   "osm": "way/537538847"
+  },
+  {
+   "id": "ohio-supercomputer-center",
+   "name": "Ohio Supercomputer Center",
+   "short": "Ohio Supercomputer Center",
+   "kind": "academic",
+   "codes": [
+    "KR"
+   ],
+   "aliases": [
+    "Kinnear Rd, 1224"
+   ],
+   "lng": -83.040057,
+   "lat": 39.999916,
+   "osm": "way/50058227"
+  },
+  {
+   "id": "graves-hall",
+   "name": "Graves Hall",
+   "short": "Graves Hall",
+   "kind": "academic",
+   "codes": [
+    "GR"
+   ],
+   "aliases": [],
+   "lng": -83.015818,
+   "lat": 39.993906,
+   "osm": "way/154204429"
+  },
+  {
+   "id": "smith-laboratory",
+   "name": "Smith Laboratory",
+   "short": "Physics",
+   "kind": "academic",
+   "codes": [
+    "SM"
+   ],
+   "aliases": [
+    "Physics"
+   ],
+   "lng": -83.013283,
+   "lat": 40.002427,
+   "osm": "way/154204656"
+  },
+  {
+   "id": "campbell-hall",
+   "name": "Campbell Hall",
+   "short": "Campbell Hall",
+   "kind": "academic",
+   "codes": [
+    "CM"
+   ],
+   "aliases": [],
+   "lng": -83.015824,
+   "lat": 39.997766,
+   "osm": "relation/2075436"
+  },
+  {
+   "id": "pressey-hall",
+   "name": "Pressey Hall",
+   "short": "Pressey Hall",
+   "kind": "academic",
+   "codes": [
+    "PR"
+   ],
+   "aliases": [],
+   "lng": -83.037948,
+   "lat": 40.00396,
+   "osm": "way/154215408"
+  },
+  {
+   "id": "chemical-and-biomolecular-engineering-building",
+   "name": "Chemical & Biomolecular Engineering Building",
+   "short": "CBEC Building",
+   "kind": "academic",
+   "codes": [
+    "CB"
+   ],
+   "aliases": [
+    "Chemical and Biomolecular Engineering and Chemistry Building",
+    "CBEC Building",
+    "CBEC"
+   ],
+   "lng": -83.013384,
+   "lat": 40.00342,
+   "osm": "way/331932595"
+  },
+  {
+   "id": "gateway-d",
+   "name": "Gateway D",
+   "short": "Gateway D",
+   "kind": "academic",
+   "codes": [
+    "GW"
+   ],
+   "aliases": [],
+   "lng": -83.006223,
+   "lat": 39.993784,
+   "osm": "way/391445700"
+  },
+  {
+   "id": "hagerty-hall",
+   "name": "Hagerty Hall",
+   "short": "Hagerty Hall",
+   "kind": "academic",
+   "codes": [
+    "HH"
+   ],
+   "aliases": [],
+   "lng": -83.010292,
+   "lat": 39.998619,
+   "osm": "relation/2075434"
+  },
+  {
+   "id": "lawrence-tower",
+   "name": "Lawrence Tower",
+   "short": "Lane Avenue Residence Hall",
+   "kind": "academic",
+   "codes": [
+    "LARH"
+   ],
+   "aliases": [
+    "Lane Avenue Residence Hall"
+   ],
+   "lng": -83.018591,
+   "lat": 40.007256,
+   "osm": "way/396774024"
+  },
+  {
+   "id": "mershon-auditorium",
+   "name": "Mershon Auditorium",
+   "short": "Mershon Auditorium",
+   "kind": "academic",
+   "codes": [
+    "MM"
+   ],
+   "aliases": [],
+   "lng": -83.008954,
+   "lat": 40.000551,
+   "osm": "way/154204611"
+  },
+  {
+   "id": "bolz-hall",
+   "name": "Bolz Hall",
+   "short": "Civil and Aeronautical Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "BO"
+   ],
+   "aliases": [
+    "Civil and Aeronautical Engineering Building"
+   ],
+   "lng": -83.015042,
+   "lat": 40.003104,
+   "osm": "way/154204218"
+  },
+  {
+   "id": "veterinary-medicine-academic-building",
+   "name": "Veterinary Medicine Academic Building",
+   "short": "Veterinary Medicine Academic Building",
+   "kind": "academic",
+   "codes": [
+    "VM"
+   ],
+   "aliases": [
+    "Veterinary Medicine Academic"
+   ],
+   "lng": -83.026609,
+   "lat": 39.99956,
+   "osm": "way/503833670"
+  },
+  {
+   "id": "agricultural-administration-building",
+   "name": "Agricultural Administration Building",
+   "short": "Agricultural Administration Building",
+   "kind": "academic",
+   "codes": [
+    "AA"
+   ],
+   "aliases": [
+    "Agricultural Administration"
+   ],
+   "lng": -83.027222,
+   "lat": 40.005429,
+   "osm": "way/160500615"
+  },
+  {
+   "id": "davis-medical-center",
+   "name": "Davis Medical Center",
+   "short": "Davis Medical Center",
+   "kind": "academic",
+   "codes": [
+    "DV"
+   ],
+   "aliases": [
+    "Dodd Hall",
+    "Davis Medical Research Center"
+   ],
+   "lng": -83.020056,
+   "lat": 39.992609,
+   "osm": "way/470300828"
+  },
+  {
+   "id": "center-for-automotive-research",
+   "name": "Center for Automotive Research",
+   "short": "Center for Automotive Research",
+   "kind": "academic",
+   "codes": [
+    "CAR"
+   ],
+   "aliases": [],
+   "lng": -83.032784,
+   "lat": 39.998285,
+   "osm": "way/504843009"
+  },
+  {
+   "id": "theatre-film-and-media-arts-building",
+   "name": "Theatre, Film and Media Arts Building",
+   "short": "Theatre Building",
+   "kind": "academic",
+   "codes": [
+    "TFM"
+   ],
+   "aliases": [
+    "Theatre Building"
+   ],
+   "lng": -83.010143,
+   "lat": 40.001755,
+   "osm": "way/693909170"
+  },
+  {
+   "id": "jennings-hall",
+   "name": "Jennings Hall",
+   "short": "Botany and Zoology",
+   "kind": "academic",
+   "codes": [
+    "JE"
+   ],
+   "aliases": [
+    "Botany and Zoology"
+   ],
+   "lng": -83.015664,
+   "lat": 39.996744,
+   "osm": "way/373705613"
+  },
+  {
+   "id": "meiling-hall",
+   "name": "Meiling Hall",
+   "short": "Meiling Hall",
+   "kind": "academic",
+   "codes": [
+    "ME"
+   ],
+   "aliases": [],
+   "lng": -83.016888,
+   "lat": 39.994133,
+   "osm": "way/154204604"
+  },
+  {
+   "id": "timashev-family-music-building",
+   "name": "Timashev Family Music Building",
+   "short": "Timashev Family Music Building",
+   "kind": "academic",
+   "codes": [
+    "TMV"
+   ],
+   "aliases": [],
+   "lng": -83.010031,
+   "lat": 40.000922,
+   "osm": "way/693909171"
+  },
+  {
+   "id": "rightmire-hall",
+   "name": "Rightmire Hall",
+   "short": "Rightmire Hall",
+   "kind": "academic",
+   "codes": [
+    "RH"
+   ],
+   "aliases": [],
+   "lng": -83.037449,
+   "lat": 40.003174,
+   "osm": "way/154215415"
+  },
+  {
+   "id": "ohio-state-ice-rink",
+   "name": "Ohio State Ice Rink",
+   "short": "Ohio State Ice Rink",
+   "kind": "gym",
+   "codes": [
+    "IR"
+   ],
+   "aliases": [
+    "Ice Rink"
+   ],
+   "lng": -83.01827,
+   "lat": 40.00528,
+   "osm": "way/154204766"
+  },
+  {
+   "id": "hitchcock-hall",
+   "name": "Hitchcock Hall",
+   "short": "Hitchcock Hall",
+   "kind": "academic",
+   "codes": [
+    "HI"
+   ],
+   "aliases": [],
+   "lng": -83.015291,
+   "lat": 40.003592,
+   "osm": "way/154204443"
+  },
+  {
+   "id": "biomedical-research-tower",
+   "name": "Biomedical Research Tower",
+   "short": "BRT",
+   "kind": "academic",
+   "codes": [
+    "BT"
+   ],
+   "aliases": [
+    "BRT"
+   ],
+   "lng": -83.019393,
+   "lat": 39.99652,
+   "osm": "way/154204803"
+  },
+  {
+   "id": "dodd-rehabilitation-hospital",
+   "name": "Dodd Rehabilitation Hospital",
+   "short": "Rehabilitation Hospital",
+   "kind": "academic",
+   "codes": [
+    "DO"
+   ],
+   "aliases": [
+    "Dodd Hall",
+    "Rehabilitation Hospital"
+   ],
+   "lng": -83.019899,
+   "lat": 39.992895,
+   "osm": "way/470300829"
+  },
+  {
+   "id": "derby-hall",
+   "name": "Derby Hall",
+   "short": "Derby Hall",
+   "kind": "academic",
+   "codes": [
+    "DB"
+   ],
+   "aliases": [],
+   "lng": -83.012429,
+   "lat": 40.000761,
+   "osm": "relation/6618923"
+  },
+  {
+   "id": "dreese-laboratories",
+   "name": "Dreese Laboratories",
+   "short": "Dreese Laboratories",
+   "kind": "academic",
+   "codes": [
+    "DL"
+   ],
+   "aliases": [],
+   "lng": -83.016034,
+   "lat": 40.002225,
+   "osm": "way/300842706"
+  },
+  {
+   "id": "arps-hall",
+   "name": "Arps Hall",
+   "short": "Arps Hall",
+   "kind": "academic",
+   "codes": [
+    "AP"
+   ],
+   "aliases": [],
+   "lng": -83.009468,
+   "lat": 40.001928,
+   "osm": "way/156337669"
+  },
+  {
+   "id": "psychology-building",
+   "name": "Psychology Building",
+   "short": "Psychology Building",
+   "kind": "academic",
+   "codes": [
+    "PS"
+   ],
+   "aliases": [],
+   "lng": -83.01626,
+   "lat": 39.998532,
+   "osm": "way/154204633"
+  },
+  {
+   "id": "parks-hall",
+   "name": "Parks Hall",
+   "short": "Parks Hall",
+   "kind": "academic",
+   "codes": [
+    "PK"
+   ],
+   "aliases": [],
+   "lng": -83.020929,
+   "lat": 39.996396,
+   "osm": "way/393046070"
+  },
+  {
+   "id": "animal-science-building",
+   "name": "Animal Science Building",
+   "short": "Animal Science Building",
+   "kind": "academic",
+   "codes": [
+    "AS"
+   ],
+   "aliases": [],
+   "lng": -83.028648,
+   "lat": 40.003634,
+   "osm": "way/154204801"
+  },
+  {
+   "id": "mccampbell-hall",
+   "name": "McCampbell Hall",
+   "short": "McCampbell Hall",
+   "kind": "academic",
+   "codes": [
+    "MC"
+   ],
+   "aliases": [],
+   "lng": -83.020548,
+   "lat": 39.99358,
+   "osm": "way/154204562"
+  },
+  {
+   "id": "mendenhall-laboratory",
+   "name": "Mendenhall Laboratory",
+   "short": "Mendenhall Laboratory",
+   "kind": "academic",
+   "codes": [
+    "ML"
+   ],
+   "aliases": [],
+   "lng": -83.011115,
+   "lat": 39.998409,
+   "osm": "way/154204609"
+  },
+  {
+   "id": "sisson-hall",
+   "name": "Sisson Hall",
+   "short": "Sisson Hall",
+   "kind": "academic",
+   "codes": [
+    "SI"
+   ],
+   "aliases": [],
+   "lng": -83.025626,
+   "lat": 40.000038,
+   "osm": "way/503833669"
+  },
+  {
+   "id": "student-academic-services-building",
+   "name": "Student Academic Services Building",
+   "short": "SAS",
+   "kind": "academic",
+   "codes": [
+    "SAS"
+   ],
+   "aliases": [
+    "SAS",
+    "Student Academic Services"
+   ],
+   "lng": -83.016139,
+   "lat": 40.005997,
+   "osm": "way/158734273"
+  },
+  {
+   "id": "howlett-hall",
+   "name": "Howlett Hall",
+   "short": "Horticulture",
+   "kind": "academic",
+   "codes": [
+    "HG",
+    "HT"
+   ],
+   "aliases": [
+    "Horticulture",
+    "Howlett Greenhouses"
+   ],
+   "lng": -83.028092,
+   "lat": 40.002729,
+   "osm": "way/154204451"
+  },
+  {
+   "id": "mount-hall",
+   "name": "Mount Hall",
+   "short": "Mount Hall",
+   "kind": "academic",
+   "codes": [
+    "MO"
+   ],
+   "aliases": [],
+   "lng": -83.036766,
+   "lat": 40.004066,
+   "osm": "way/154215398"
+  },
+  {
+   "id": "jesse-owens-recreation-center-south",
+   "name": "Jesse Owens Recreation Center South",
+   "short": "Jesse Owens Recreation Center S",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Jesse Owens Recreation Center S"
+   ],
+   "lng": -83.011861,
+   "lat": 39.995013,
+   "osm": "way/154204466"
+  },
+  {
+   "id": "jesse-owens-recreation-center-north",
+   "name": "Jesse Owens Recreation Center North",
+   "short": "Jesse Owens Recreation Center N",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "Jesse Owens Recreation Center N"
+   ],
+   "lng": -83.015037,
+   "lat": 40.005935,
+   "osm": "way/154204458"
+  },
+  {
+   "id": "fontana-laboratories",
+   "name": "Fontana Laboratories",
+   "short": "Koffolt Laboratories & Advanced Materials Building",
+   "kind": "academic",
+   "codes": [
+    "FL"
+   ],
+   "aliases": [
+    "Koffolt Laboratories & Advanced Materials Building",
+    "Advanced Materials Building"
+   ],
+   "lng": -83.012261,
+   "lat": 40.003351,
+   "osm": "way/636732817"
+  },
+  {
+   "id": "university-hospital-pavilion",
+   "name": "University Hospital Pavilion",
+   "short": "Brain and Spine Hospital",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Brain and Spine Hospital",
+    "Old James",
+    "James Cancer Hospital",
+    "Tenth Ave",
+    "300 W",
+    "300 W (Previous James)"
+   ],
+   "lng": -83.016451,
+   "lat": 39.995623,
+   "osm": "way/370807427"
+  },
+  {
+   "id": "evans-laboratory",
+   "name": "Evans Laboratory",
+   "short": "Evans Laboratory",
+   "kind": "academic",
+   "codes": [
+    "EL"
+   ],
+   "aliases": [],
+   "lng": -83.011093,
+   "lat": 40.002695,
+   "osm": "way/154204745"
+  },
+  {
+   "id": "atwell-hall",
+   "name": "Atwell Hall",
+   "short": "Atwell Hall",
+   "kind": "academic",
+   "codes": [
+    "AH"
+   ],
+   "aliases": [],
+   "lng": -83.018774,
+   "lat": 39.993624,
+   "osm": "way/369946066"
+  },
+  {
+   "id": "goss-laboratory",
+   "name": "Goss Laboratory",
+   "short": "Veterinary",
+   "kind": "academic",
+   "codes": [
+    "GL"
+   ],
+   "aliases": [
+    "Veterinary"
+   ],
+   "lng": -83.02757,
+   "lat": 40.000021,
+   "osm": "way/154204426"
+  },
+  {
+   "id": "riffe-building",
+   "name": "Riffe Building",
+   "short": "Biological Sciences and Parks Hall",
+   "kind": "academic",
+   "codes": [
+    "RF"
+   ],
+   "aliases": [
+    "Biological Sciences and Parks Hall"
+   ],
+   "lng": -83.020432,
+   "lat": 39.996756,
+   "osm": "way/393046071"
+  },
+  {
+   "id": "mcpherson-chemical-laboratory",
+   "name": "McPherson Chemical Laboratory",
+   "short": "McPherson Chemical Lab",
+   "kind": "academic",
+   "codes": [
+    "MP"
+   ],
+   "aliases": [
+    "McPherson Chemical Lab"
+   ],
+   "lng": -83.012338,
+   "lat": 40.002517,
+   "osm": "way/154204575"
+  },
+  {
+   "id": "journalism-building",
+   "name": "Journalism Building",
+   "short": "Journalism Building",
+   "kind": "academic",
+   "codes": [
+    "JR"
+   ],
+   "aliases": [],
+   "lng": -83.015049,
+   "lat": 40.002004,
+   "osm": "way/158684152"
+  },
+  {
+   "id": "hopkins-hall",
+   "name": "Hopkins Hall",
+   "short": "Hopkins Hall",
+   "kind": "academic",
+   "codes": [
+    "HC"
+   ],
+   "aliases": [],
+   "lng": -83.011554,
+   "lat": 40.000873,
+   "osm": "way/154204447"
+  },
+  {
+   "id": "university-square-north",
+   "name": "University Square North",
+   "short": "Building A",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Building A"
+   ],
+   "lng": -83.007695,
+   "lat": 40.000585,
+   "osm": "way/770472407"
+  },
+  {
+   "id": "1900-kenny-road",
+   "name": "1900 Kenny Road",
+   "short": "1900 Kenny Road",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Kenny Rd, 1900"
+   ],
+   "lng": -83.034347,
+   "lat": 39.998411,
+   "osm": "way/504843006"
+  },
+  {
+   "id": "gerlach-hall",
+   "name": "Gerlach Hall",
+   "short": "COB",
+   "kind": "academic",
+   "codes": [
+    "GE"
+   ],
+   "aliases": [
+    "COB"
+   ],
+   "lng": -83.014898,
+   "lat": 40.004928,
+   "osm": "way/154204725"
+  },
+  {
+   "id": "university-square-south",
+   "name": "University Square South",
+   "short": "Building B",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Building B"
+   ],
+   "lng": -83.007532,
+   "lat": 39.999714,
+   "osm": "way/770472412"
+  },
+  {
+   "id": "caldwell-laboratory",
+   "name": "Caldwell Laboratory",
+   "short": "Caldwell Laboratory",
+   "kind": "academic",
+   "codes": [
+    "CL"
+   ],
+   "aliases": [],
+   "lng": -83.015039,
+   "lat": 40.002446,
+   "osm": "way/158681433"
+  },
+  {
+   "id": "4-h-center",
+   "name": "4-H Center",
+   "short": "4-H Center",
+   "kind": "academic",
+   "codes": [
+    "FO"
+   ],
+   "aliases": [],
+   "lng": -83.028508,
+   "lat": 40.007892,
+   "osm": "way/498955748"
+  },
+  {
+   "id": "sherman-studio-art-center",
+   "name": "Sherman Studio Art Center",
+   "short": "Foundry Metals and Glass Building",
+   "kind": "academic",
+   "codes": [
+    "SA"
+   ],
+   "aliases": [
+    "Foundry Metals and Glass Building"
+   ],
+   "lng": -83.037727,
+   "lat": 39.999714,
+   "osm": "way/374583496"
+  },
+  {
+   "id": "enarson-classroom-building",
+   "name": "Enarson Classroom Building",
+   "short": "Central Classroom Building",
+   "kind": "academic",
+   "codes": [
+    "EC"
+   ],
+   "aliases": [
+    "Central Classroom Building",
+    "Enarson Classroom"
+   ],
+   "lng": -83.016849,
+   "lat": 40.002193,
+   "osm": "way/154204363"
+  },
+  {
+   "id": "ramseyer-hall",
+   "name": "Ramseyer Hall",
+   "short": "Ramseyer Hall",
+   "kind": "academic",
+   "codes": [
+    "RA"
+   ],
+   "aliases": [],
+   "lng": -83.009636,
+   "lat": 40.003311,
+   "osm": "way/154204635"
+  },
+  {
+   "id": "graham-expeditionary-middle-school",
+   "name": "Graham Expeditionary Middle School",
+   "short": "Graham Expeditionary Middle School",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Graham Elementary & Middle School"
+   ],
+   "lng": -83.004554,
+   "lat": 40.001579,
+   "osm": "way/468149049"
+  },
+  {
+   "id": "parker-food-science-and-technology-building",
+   "name": "Parker Food Science and Technology Building",
+   "short": "Parker Food Science and Technology Building",
+   "kind": "academic",
+   "codes": [
+    "FS"
+   ],
+   "aliases": [
+    "Parker Food Science and Technology"
+   ],
+   "lng": -83.028699,
+   "lat": 40.002931,
+   "osm": "way/154204791"
+  },
+  {
+   "id": "community-center",
+   "name": "Community Center",
+   "short": "Community Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Buckeye Village Community Center"
+   ],
+   "lng": -83.025772,
+   "lat": 40.015193,
+   "osm": "way/503889165"
+  },
+  {
+   "id": "townshend-hall",
+   "name": "Townshend Hall",
+   "short": "Townshend Hall",
+   "kind": "academic",
+   "codes": [
+    "TO"
+   ],
+   "aliases": [],
+   "lng": -83.0158,
+   "lat": 39.999788,
+   "osm": "way/154204681"
+  },
+  {
+   "id": "davis-heart-and-lung-research-institute",
+   "name": "Davis Heart and Lung Research Institute",
+   "short": "Davis Heart and Lung Research Institute",
+   "kind": "academic",
+   "codes": [
+    "HR"
+   ],
+   "aliases": [],
+   "lng": -83.019277,
+   "lat": 39.995687,
+   "osm": "way/154204685"
+  },
+  {
+   "id": "plumb-hall",
+   "name": "Plumb Hall",
+   "short": "Plumb Hall",
+   "kind": "academic",
+   "codes": [
+    "PL"
+   ],
+   "aliases": [],
+   "lng": -83.026669,
+   "lat": 40.003567,
+   "osm": "way/60822819"
+  },
+  {
+   "id": "aronoff-laboratory",
+   "name": "Aronoff Laboratory",
+   "short": "Aronoff Laboratory",
+   "kind": "academic",
+   "codes": [
+    "AL"
+   ],
+   "aliases": [],
+   "lng": -83.016755,
+   "lat": 39.996784,
+   "osm": "way/154204734"
+  },
+  {
+   "id": "kennedy-commons",
+   "name": "Kennedy Commons",
+   "short": "Kennedy Commons",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.013962,
+   "lat": 39.9966,
+   "osm": "way/445050069"
+  },
+  {
+   "id": "saint-stephens-episcopal-church",
+   "name": "Saint Stephen's Episcopal Church",
+   "short": "Saint Stephen's Episcopal Church",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "St. Stephen's Episcopal Church"
+   ],
+   "lng": -83.009564,
+   "lat": 40.004094,
+   "osm": "relation/7809355"
+  },
+  {
+   "id": "lazenby-hall",
+   "name": "Lazenby Hall",
+   "short": "Lazenby Hall",
+   "kind": "academic",
+   "codes": [
+    "LZ"
+   ],
+   "aliases": [],
+   "lng": -83.015727,
+   "lat": 39.998582,
+   "osm": "way/154204534"
+  },
+  {
+   "id": "baker-systems-engineering-building",
+   "name": "Baker Systems Engineering Building",
+   "short": "Baker Systems Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "BE"
+   ],
+   "aliases": [
+    "Baker Systems Engineering"
+   ],
+   "lng": -83.015913,
+   "lat": 40.001596,
+   "osm": "way/154204210"
+  },
+  {
+   "id": "the-blackwell",
+   "name": "The Blackwell",
+   "short": "The Blackwell",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Blackwell Inn"
+   ],
+   "lng": -83.016617,
+   "lat": 40.004835,
+   "osm": "way/154204679"
+  },
+  {
+   "id": "engineering-research-and-education-laboratories",
+   "name": "Engineering Research and Education Laboratories",
+   "short": "MacQuigg Laboratory",
+   "kind": "academic",
+   "codes": [
+    "EREL"
+   ],
+   "aliases": [
+    "MacQuigg Laboratory"
+   ],
+   "lng": -83.01148,
+   "lat": 40.003507,
+   "osm": "way/154204554"
+  },
+  {
+   "id": "celeste-laboratory-of-chemistry",
+   "name": "Celeste Laboratory of Chemistry",
+   "short": "Celeste Laboratory of Chemistry",
+   "kind": "academic",
+   "codes": [
+    "CE"
+   ],
+   "aliases": [],
+   "lng": -83.011793,
+   "lat": 40.002702,
+   "osm": "way/154204357"
+  },
+  {
+   "id": "bevis-hall",
+   "name": "Bevis Hall",
+   "short": "Bevis Hall",
+   "kind": "academic",
+   "codes": [
+    "BH"
+   ],
+   "aliases": [],
+   "lng": -83.038117,
+   "lat": 40.002878,
+   "osm": "way/154215389"
+  },
+  {
+   "id": "mason-hall",
+   "name": "Mason Hall",
+   "short": "COB",
+   "kind": "academic",
+   "codes": [
+    "MH"
+   ],
+   "aliases": [
+    "COB"
+   ],
+   "lng": -83.01547,
+   "lat": 40.004408,
+   "osm": "way/154204764"
+  },
+  {
+   "id": "hughes-hall",
+   "name": "Hughes Hall",
+   "short": "Music",
+   "kind": "academic",
+   "codes": [
+    "HU"
+   ],
+   "aliases": [
+    "Music"
+   ],
+   "lng": -83.01079,
+   "lat": 40.000878,
+   "osm": "way/154204452"
+  },
+  {
+   "id": "18th-avenue-library",
+   "name": "18th Avenue Library",
+   "short": "Science and Engineering Library",
+   "kind": "library",
+   "codes": [
+    "SE"
+   ],
+   "aliases": [
+    "Science and Engineering Library",
+    "SEL",
+    "Eighteenth Avenue Library"
+   ],
+   "lng": -83.013342,
+   "lat": 40.00164,
+   "osm": "way/154204806"
+  },
+  {
+   "id": "maintenance-building",
+   "name": "Maintenance Building",
+   "short": "Service Building Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Service Building Annex",
+    "Maintenance Building - Lima"
+   ],
+   "lng": -83.017548,
+   "lat": 40.002217,
+   "osm": "way/154204784"
+  },
+  {
+   "id": "biological-science-building",
+   "name": "Biological Science Building",
+   "short": "Biological Science Building",
+   "kind": "academic",
+   "codes": [
+    "BI"
+   ],
+   "aliases": [
+    "Biological Sciences Building"
+   ],
+   "lng": -83.020088,
+   "lat": 39.996502,
+   "osm": "way/154204802"
+  },
+  {
+   "id": "schoenbaum-hall",
+   "name": "Schoenbaum Hall",
+   "short": "COB",
+   "kind": "academic",
+   "codes": [
+    "SB"
+   ],
+   "aliases": [
+    "COB"
+   ],
+   "lng": -83.014762,
+   "lat": 40.004331,
+   "osm": "way/154204737"
+  },
+  {
+   "id": "prior-health-sciences-library",
+   "name": "Prior Health Sciences Library",
+   "short": "Health Sciences Library",
+   "kind": "library",
+   "codes": [
+    "PI"
+   ],
+   "aliases": [
+    "Prior Hall",
+    "Health Sciences Library"
+   ],
+   "lng": -83.017086,
+   "lat": 39.994775,
+   "osm": "way/154204631"
+  },
+  {
+   "id": "frank-stanton-veterinary-spectrum-of-care-clinic",
+   "name": "Frank Stanton Veterinary Spectrum of Care Clinic",
+   "short": "Frank Stanton Veterinary Spectrum of Care Clinic",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Stanton Veterinary Clinic"
+   ],
+   "lng": -83.026168,
+   "lat": 40.001059,
+   "osm": "way/849834795"
+  },
+  {
+   "id": "converse-hall",
+   "name": "Converse Hall",
+   "short": "Armory",
+   "kind": "academic",
+   "codes": [
+    "CV"
+   ],
+   "aliases": [
+    "Armory",
+    "ROTC"
+   ],
+   "lng": -83.017494,
+   "lat": 40.005104,
+   "osm": "way/154204386"
+  },
+  {
+   "id": "bricker-hall",
+   "name": "Bricker Hall",
+   "short": "Bricker Hall",
+   "kind": "academic",
+   "codes": [
+    "BK"
+   ],
+   "aliases": [],
+   "lng": -83.013386,
+   "lat": 40.000635,
+   "osm": "way/140338939"
+  },
+  {
+   "id": "optometry-clinic-and-healh-sciences-office-building",
+   "name": "Optometry Clinic and Healh Sciences Office Building",
+   "short": "11th & Neil Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "11th & Neil Building",
+    "Optometry Clinic"
+   ],
+   "lng": -83.014093,
+   "lat": 39.995354,
+   "osm": "way/699283035"
+  },
+  {
+   "id": "fisher-hall",
+   "name": "Fisher Hall",
+   "short": "COB",
+   "kind": "academic",
+   "codes": [
+    "FI"
+   ],
+   "aliases": [
+    "COB"
+   ],
+   "lng": -83.016046,
+   "lat": 40.004918,
+   "osm": "way/158742503"
+  },
+  {
+   "id": "cunz-hall",
+   "name": "Cunz Hall",
+   "short": "Cunz Hall",
+   "kind": "academic",
+   "codes": [
+    "CZ"
+   ],
+   "aliases": [],
+   "lng": -83.017035,
+   "lat": 39.998665,
+   "osm": "way/154204387"
+  },
+  {
+   "id": "younkin-success-center",
+   "name": "Younkin Success Center",
+   "short": "Younkin Success Center",
+   "kind": "academic",
+   "codes": [
+    "YN"
+   ],
+   "aliases": [],
+   "lng": -83.014145,
+   "lat": 39.994859,
+   "osm": "way/376709746"
+  },
+  {
+   "id": "university-hall",
+   "name": "University Hall",
+   "short": "University Hall",
+   "kind": "academic",
+   "codes": [
+    "UH"
+   ],
+   "aliases": [],
+   "lng": -83.014416,
+   "lat": 40.000529,
+   "osm": "way/50058180"
+  },
+  {
+   "id": "franklin-county-coroners-office",
+   "name": "Franklin County Coroners Office",
+   "short": "Franklin County Coroners Office",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Evans Hall"
+   ],
+   "lng": -83.020053,
+   "lat": 39.991064,
+   "osm": "way/370270130"
+  },
+  {
+   "id": "newton-hall",
+   "name": "Newton Hall",
+   "short": "Newton Hall",
+   "kind": "academic",
+   "codes": [
+    "NH"
+   ],
+   "aliases": [],
+   "lng": -83.014829,
+   "lat": 39.994002,
+   "osm": "way/154204613"
+  },
+  {
+   "id": "denney-hall",
+   "name": "Denney Hall",
+   "short": "Denney Hall",
+   "kind": "academic",
+   "codes": [
+    "DE"
+   ],
+   "aliases": [],
+   "lng": -83.012537,
+   "lat": 40.00132,
+   "osm": "way/154204395"
+  },
+  {
+   "id": "institute-for-behavior-medicine-research",
+   "name": "Institute for Behavior Medicine Research",
+   "short": "Institute for Behavioral Medicine Research",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Institute for Behavioral Medicine Research",
+    "Institute of Brain, Behavior and Immunology"
+   ],
+   "lng": -83.01883,
+   "lat": 39.992883,
+   "osm": "way/369945605"
+  },
+  {
+   "id": "stillman-hall",
+   "name": "Stillman Hall",
+   "short": "Stillman Hall",
+   "kind": "academic",
+   "codes": [
+    "SH"
+   ],
+   "aliases": [],
+   "lng": -83.011002,
+   "lat": 40.001875,
+   "osm": "way/154204673"
+  },
+  {
+   "id": "page-hall",
+   "name": "Page Hall",
+   "short": "Page Hall",
+   "kind": "academic",
+   "codes": [
+    "PA"
+   ],
+   "aliases": [],
+   "lng": -83.009647,
+   "lat": 39.999162,
+   "osm": "way/154204623"
+  },
+  {
+   "id": "south-campus-central-chiller-plant",
+   "name": "South Campus Central Chiller Plant",
+   "short": "Chiller Plant",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Chiller Plant",
+    "S Campus",
+    "Chiller Plant, South Campus Central"
+   ],
+   "lng": -83.021407,
+   "lat": 39.996634,
+   "osm": "way/372894876"
+  },
+  {
+   "id": "independence-hall",
+   "name": "Independence Hall",
+   "short": "Independence Hall",
+   "kind": "academic",
+   "codes": [
+    "IH"
+   ],
+   "aliases": [],
+   "lng": -83.015756,
+   "lat": 40.000365,
+   "osm": "way/154204455"
+  },
+  {
+   "id": "hale-hall",
+   "name": "Hale Hall",
+   "short": "Old Enarson",
+   "kind": "academic",
+   "codes": [
+    "FWH"
+   ],
+   "aliases": [
+    "Old Enarson",
+    "Enarson Hall"
+   ],
+   "lng": -83.011748,
+   "lat": 39.997025,
+   "osm": "relation/7071345"
+  },
+  {
+   "id": "mershon-center",
+   "name": "Mershon Center",
+   "short": "Mershon Center",
+   "kind": "academic",
+   "codes": [
+    "MER"
+   ],
+   "aliases": [],
+   "lng": -83.014343,
+   "lat": 39.991831,
+   "osm": "way/717304464"
+  },
+  {
+   "id": "orton-hall",
+   "name": "Orton Hall",
+   "short": "Orton Hall",
+   "kind": "academic",
+   "codes": [
+    "OR"
+   ],
+   "aliases": [],
+   "lng": -83.011937,
+   "lat": 39.998335,
+   "osm": "way/140338936"
+  },
+  {
+   "id": "heminger-hall",
+   "name": "Heminger Hall",
+   "short": "Newton Hall Addition",
+   "kind": "academic",
+   "codes": [
+    "HMH"
+   ],
+   "aliases": [
+    "Newton Hall Addition"
+   ],
+   "lng": -83.014801,
+   "lat": 39.993573,
+   "osm": "way/1006746255"
+  },
+  {
+   "id": "pfahl-hall",
+   "name": "Pfahl Hall",
+   "short": "COB",
+   "kind": "academic",
+   "codes": [
+    "PF"
+   ],
+   "aliases": [
+    "COB"
+   ],
+   "lng": -83.016482,
+   "lat": 40.004334,
+   "osm": "way/154204809"
+  },
+  {
+   "id": "oxley-hall",
+   "name": "Oxley Hall",
+   "short": "Oxley Hall",
+   "kind": "academic",
+   "codes": [
+    "OX"
+   ],
+   "aliases": [],
+   "lng": -83.014369,
+   "lat": 39.996573,
+   "osm": "way/445050070"
+  },
+  {
+   "id": "energy-advancement-and-innovation-center",
+   "name": "Energy Advancement and Innovation Center",
+   "short": "EAIC",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "EAIC"
+   ],
+   "lng": -83.034852,
+   "lat": 40.005924,
+   "osm": "way/839112215"
+  },
+  {
+   "id": "hayes-hall",
+   "name": "Hayes Hall",
+   "short": "Hayes Hall",
+   "kind": "academic",
+   "codes": [
+    "HA"
+   ],
+   "aliases": [],
+   "lng": -83.011168,
+   "lat": 40.000545,
+   "osm": "way/154204440"
+  },
+  {
+   "id": "east-regional-chilled-water-plant",
+   "name": "East Regional Chilled Water Plant",
+   "short": "Chiller Plant",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Chiller Plant",
+    "East Regional; E Regional Chilled Water Plant; Chilled Water Plant",
+    "East",
+    "Chilled Water Plant, East Regional"
+   ],
+   "lng": -83.00928,
+   "lat": 40.002644,
+   "osm": "way/511180184"
+  },
+  {
+   "id": "starling-loving-hall",
+   "name": "Starling Loving Hall",
+   "short": "Starling Loving Hall",
+   "kind": "academic",
+   "codes": [
+    "SL"
+   ],
+   "aliases": [],
+   "lng": -83.016275,
+   "lat": 39.99503,
+   "osm": "way/371052459"
+  },
+  {
+   "id": "cockins-hall",
+   "name": "Cockins Hall",
+   "short": "Cockins Hall",
+   "kind": "academic",
+   "codes": [
+    "CH"
+   ],
+   "aliases": [],
+   "lng": -83.015025,
+   "lat": 40.001257,
+   "osm": "way/154204365"
+  },
+  {
+   "id": "newman-and-wolfrom-lab-of-chemistry",
+   "name": "Newman & Wolfrom Lab of Chemistry",
+   "short": "Newman and Wolfrom Lab of Chemistry",
+   "kind": "academic",
+   "codes": [
+    "NW"
+   ],
+   "aliases": [
+    "Newman and Wolfrom Laboratory of Chemistry"
+   ],
+   "lng": -83.011326,
+   "lat": 40.002373,
+   "osm": "way/154204411"
+  },
+  {
+   "id": "heffner-wetland-building",
+   "name": "Heffner Wetland Building",
+   "short": "Heffner Wetland Building",
+   "kind": "academic",
+   "codes": [
+    "HW"
+   ],
+   "aliases": [
+    "Heffner Wetland Research and Education"
+   ],
+   "lng": -83.019605,
+   "lat": 40.019,
+   "osm": "way/360939118"
+  },
+  {
+   "id": "worthington-building",
+   "name": "Worthington Building",
+   "short": "Worthington Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "William Hall Complex - Worthington Building"
+   ],
+   "lng": -83.012499,
+   "lat": 39.993996,
+   "osm": "way/232071678"
+  },
+  {
+   "id": "north-recreation-center",
+   "name": "North Recreation Center",
+   "short": "NRDT K",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [
+    "NRDT K",
+    "Building K - North Residential"
+   ],
+   "lng": -83.012784,
+   "lat": 40.005276,
+   "osm": "way/454962355"
+  },
+  {
+   "id": "research-administration",
+   "name": "Research Administration",
+   "short": "Research Administration Building; Research Foundation",
+   "kind": "academic",
+   "codes": [
+    "RAB"
+   ],
+   "aliases": [
+    "Research Administration Building; Research Foundation",
+    "Clinical Research and Innovation Facility"
+   ],
+   "lng": -83.033728,
+   "lat": 39.999459,
+   "osm": "way/504843002"
+  },
+  {
+   "id": "dulles-hall",
+   "name": "Dulles Hall",
+   "short": "Dulles Hall",
+   "kind": "academic",
+   "codes": [
+    "DU"
+   ],
+   "aliases": [],
+   "lng": -83.014408,
+   "lat": 40.00111,
+   "osm": "way/50058181"
+  },
+  {
+   "id": "curl-hall",
+   "name": "Curl Hall",
+   "short": "NRDT H",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "NRDT H",
+    "Building H - North Residential"
+   ],
+   "lng": -83.01096,
+   "lat": 40.004285,
+   "osm": "way/375728895"
+  },
+  {
+   "id": "bmi-credit-union",
+   "name": "BMI Credit Union",
+   "short": "BMI Credit Union",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Kinnear Rd, 760"
+   ],
+   "lng": -83.029172,
+   "lat": 39.998061,
+   "osm": "way/504843014"
+  },
+  {
+   "id": "panera-bread",
+   "name": "Panera Bread",
+   "short": "Panera",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Panera",
+    "Lane Ave, 300 W"
+   ],
+   "lng": -83.017705,
+   "lat": 40.006661,
+   "osm": "way/161308420"
+  },
+  {
+   "id": "math-tower",
+   "name": "Math Tower",
+   "short": "Math Tower",
+   "kind": "academic",
+   "codes": [
+    "MW"
+   ],
+   "aliases": [
+    "Mathematics Tower"
+   ],
+   "lng": -83.014416,
+   "lat": 40.00152,
+   "osm": "way/38917471"
+  },
+  {
+   "id": "209-w-18th-avenue",
+   "name": "209 W. 18th Avenue",
+   "short": "209 W. 18th Avenue",
+   "kind": "academic",
+   "codes": [
+    "EA"
+   ],
+   "aliases": [
+    "Eighteenth Ave, 209 W"
+   ],
+   "lng": -83.01416,
+   "lat": 40.001552,
+   "osm": "way/154204804"
+  },
+  {
+   "id": "fry-hall",
+   "name": "Fry Hall",
+   "short": "Fry Hall",
+   "kind": "academic",
+   "codes": [
+    "FR"
+   ],
+   "aliases": [],
+   "lng": -83.016581,
+   "lat": 39.994701,
+   "osm": "way/371052457"
+  },
+  {
+   "id": "scholars-house-east",
+   "name": "Scholars House East",
+   "short": "William Hall Complex - Scholars House E",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "William Hall Complex - Scholars House E",
+    "William Hall Complex - Scholars House East"
+   ],
+   "lng": -83.012895,
+   "lat": 39.994089,
+   "osm": "way/511180185"
+  },
+  {
+   "id": "scholars-house-west",
+   "name": "Scholars House West",
+   "short": "William Hall Complex - Scholars House W",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "William Hall Complex - Scholars House W",
+    "William Hall Complex - Scholars House West"
+   ],
+   "lng": -83.013528,
+   "lat": 39.994119,
+   "osm": "way/511180188"
+  },
+  {
+   "id": "mathematics-building",
+   "name": "Mathematics Building",
+   "short": "Mathematics Building",
+   "kind": "academic",
+   "codes": [
+    "MA"
+   ],
+   "aliases": [],
+   "lng": -83.014748,
+   "lat": 40.001485,
+   "osm": "way/158694852"
+  },
+  {
+   "id": "kuhn-honors-and-scholars-house",
+   "name": "Kuhn Honors and Scholars House",
+   "short": "Honors House",
+   "kind": "academic",
+   "codes": [
+    "HN"
+   ],
+   "aliases": [
+    "Honors House"
+   ],
+   "lng": -83.013369,
+   "lat": 39.997343,
+   "osm": "way/154204523"
+  },
+  {
+   "id": "womens-field-house",
+   "name": "Women's Field House",
+   "short": "Women's Field House",
+   "kind": "academic",
+   "codes": [
+    "WF"
+   ],
+   "aliases": [],
+   "lng": -83.021076,
+   "lat": 39.998113,
+   "osm": "way/162848152"
+  },
+  {
+   "id": "coffey-rd-recreation-complex",
+   "name": "Coffey Rd Recreation Complex",
+   "short": "Coffey Rd Recreation Complex",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -83.026019,
+   "lat": 40.001829,
+   "osm": "way/1133883295"
+  },
+  {
+   "id": "the-maynard",
+   "name": "The Maynard",
+   "short": "The Maynard",
+   "kind": "academic",
+   "codes": [
+    "MY"
+   ],
+   "aliases": [
+    "Maynard Hall"
+   ],
+   "lng": -83.010749,
+   "lat": 40.011338,
+   "osm": "way/617280314"
+  },
+  {
+   "id": "persons-building",
+   "name": "Persons Building",
+   "short": "Persons Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Highland St, 1619"
+   ],
+   "lng": -83.011124,
+   "lat": 39.994901,
+   "osm": "way/154204807"
+  },
+  {
+   "id": "panera-bread-369947416",
+   "name": "Panera Bread",
+   "short": "Panera",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Panera"
+   ],
+   "lng": -83.018245,
+   "lat": 39.993941,
+   "osm": "way/369947416"
+  },
+  {
+   "id": "biosci-annex",
+   "name": "Biosci annex",
+   "short": "Herrick Rd",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Herrick Rd",
+    "393",
+    "Herrick Dr, 393"
+   ],
+   "lng": -83.017704,
+   "lat": 39.997059,
+   "osm": "way/377922810"
+  },
+  {
+   "id": "tom-w-davis-tower",
+   "name": "Tom W. Davis Tower",
+   "short": "Tom W. Davis Tower",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Davis Tower"
+   ],
+   "lng": -83.01295,
+   "lat": 40.004961,
+   "osm": "way/538597078"
+  },
+  {
+   "id": "reactor",
+   "name": "Reactor",
+   "short": "Reactor",
+   "kind": "academic",
+   "codes": [
+    "NRLAB"
+   ],
+   "aliases": [],
+   "lng": -83.043817,
+   "lat": 40.00111,
+   "osm": "way/493365011"
+  },
+  {
+   "id": "mccorkle-aquatic-pavilion",
+   "name": "McCorkle Aquatic Pavilion",
+   "short": "McCorkle Aquatic Pavilion",
+   "kind": "academic",
+   "codes": [
+    "MK"
+   ],
+   "aliases": [],
+   "lng": -83.017756,
+   "lat": 39.998313,
+   "osm": "way/154204566"
+  }
+ ]
+}

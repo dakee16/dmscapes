@@ -1,0 +1,26 @@
+{
+  "collegeId": "ohio-state",
+  "area": {
+    "osm": "relation/306632",
+    "bbox": [
+      39.99065,
+      -83.08022,
+      40.07456,
+      -83.00725
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "title": "Ohio State Facilities GIS, OSUMaps BaseMap Buildings layer (building names and scheduling abbreviations)",
+    "url": "https://gissvc.osu.edu/arcgis/rest/services/OSUMaps/BaseMap_RO/MapServer/28",
+    "arcgis": "https://gissvc.osu.edu/arcgis/rest/services/OSUMaps/BaseMap_RO/MapServer/28",
+    "fields": {
+      "name": "BLDG_NAME",
+      "code": "SchedulingAbbreviation",
+      "aliases": [
+        "AlsoKnownAs"
+      ]
+    }
+  }
+}

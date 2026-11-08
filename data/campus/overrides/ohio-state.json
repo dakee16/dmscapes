@@ -1,0 +1,64 @@
+{
+  "halls": {
+    "baker-hall-east": {
+      "pin": [
+        -83.010325,
+        39.996402
+      ]
+    },
+    "baker-hall-west": {
+      "pin": [
+        -83.010325,
+        39.996402
+      ]
+    }
+  },
+  "places": {
+    "buckeye-village-administration": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "baker-hall-east": "Centre of OSM's Baker Hall (way/154204179, addr 93;113;129 West Twelfth Avenue). Ohio State's buildings layer also maps Baker Hall as one building (no. 95, \"93, 113, & 129 W 12th Ave\"), so East and West share its pin.",
+    "baker-hall-west": "Same pin as Baker Hall East.",
+    "buckeye-village-administration": "Its official alias is \"Athletics Outdoor Facility Support Building\": an athletics support building on the former Buckeye Village site, not somewhere classes or meals happen.",
+    "HG": "Howlett Greenhouses (680 Vernon Tharp St) are about 70 m south of Howlett Hall; OSM maps them as greenhouses, which aren't places, so HG joins Howlett Hall by name."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "fechko-house -> kennedy-commons",
+        "morrison-tower -> kennedy-commons"
+      ],
+      "maxRatio": 4.5,
+      "why": "Kennedy Commons' only mapped entrance (way/445050069) is on its north side, with Bradley, Canfield and Mack halls between it and Eleventh Avenue, so walks go round them by the footways east of Morrison Tower."
+    },
+    {
+      "pairs": [
+        "bradley-hall -> jennings-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "Neither building has a mapped entrance: Bradley Hall's centre snaps to the courtyard footway that leads south to Eleventh Avenue, and Jennings Hall (1735 Neil Avenue) is reached from Neil Avenue, so the walk goes down to Eleventh, along to Neil and back up."
+    },
+    {
+      "pairs": [
+        "canfield-hall -> kuhn-honors-and-scholars-house"
+      ],
+      "maxRatio": 3.5,
+      "why": "Canfield's mapped entrance is on its Eleventh Avenue side and Kuhn House's doors face Twelfth Avenue; no mapped path runs through the halls and Kennedy Commons between, so the walk goes round by the footways east of Morrison Tower."
+    },
+    {
+      "pairs": [
+        "haverfield-house -> evans-laboratory"
+      ],
+      "maxRatio": 3,
+      "why": "Evans Laboratory's one mapped entrance (way/154204745) is reached from the footways west of it off West 19th Avenue, so the walk from Haverfield crosses 19th and goes round the building's west end."
+    }
+  ],
+  "longWalks": {
+    "pennsylvania-place": {
+      "maxMinutes": 50,
+      "why": "Pennsylvania Place (way/827080898) is at the south edge of campus; the Heffner Wetland Building is at the Olentangy River Wetland Research Park, about 3.1 km north in a straight line. It still faces the 2.5x rule."
+    }
+  }
+}
