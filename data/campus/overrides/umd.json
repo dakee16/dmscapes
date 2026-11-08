@@ -1,0 +1,232 @@
+{
+  "halls": {
+    "prince-georges": {
+      "pin": [
+        -76.941812,
+        38.982602
+      ]
+    },
+    "la-plata": {
+      "pin": [
+        -76.945909,
+        38.992446
+      ]
+    },
+    "worcester": {
+      "pin": [
+        -76.944992,
+        38.98464
+      ]
+    },
+    "leonardtown": {
+      "pin": [
+        -76.933497,
+        38.983361
+      ]
+    }
+  },
+  "places": {
+    "track-soccer-ticket-booth": {
+      "hide": true
+    },
+    "animal-science-service-building": {
+      "hide": true
+    },
+    "leonardtown-housing4": {
+      "hide": true
+    },
+    "leonardtown-housing6": {
+      "hide": true
+    },
+    "leonardtown-housing1": {
+      "hide": true
+    },
+    "leonardtown-housing12": {
+      "hide": true
+    },
+    "leonardtown-housing5": {
+      "hide": true
+    },
+    "wicomico-hall": {
+      "hide": true
+    },
+    "alpha-chi-omega-sorority-house": {
+      "hide": true
+    },
+    "zeta-psi-fraternity-house": {
+      "hide": true
+    },
+    "zeta-beta-tau-fraternity-house": {
+      "hide": true
+    },
+    "alpha-phi-sorority-house": {
+      "hide": true
+    },
+    "kappa-alpha-fraternity-house": {
+      "hide": true
+    },
+    "delta-gamma-sorority-house": {
+      "hide": true
+    },
+    "lambda-chi-alpha-fraternity-house": {
+      "hide": true
+    },
+    "phi-sigma-sigma-sorority-house": {
+      "hide": true
+    },
+    "alpha-sigma-phi-fraternity-house": {
+      "hide": true
+    },
+    "beta-theta-pi-fraternity-house": {
+      "hide": true
+    },
+    "zeta-tau-alpha-sorority-house": {
+      "hide": true
+    },
+    "sigma-kappa-sorority-house": {
+      "hide": true
+    },
+    "alpha-epsilon-phi-sorority-house": {
+      "hide": true
+    },
+    "delta-phi-epsilon-sorority-house": {
+      "hide": true
+    },
+    "phi-kappa-tau-fraternity-house": {
+      "hide": true
+    },
+    "sigma-delta-tau-sorority-house": {
+      "hide": true
+    },
+    "tau-kappa-epsilon-fraternity-house": {
+      "hide": true
+    },
+    "sigma-phi-epsilon-fraternity-house": {
+      "hide": true
+    },
+    "phi-sigma-kappa-fraternity-house": {
+      "hide": true
+    },
+    "alpha-delta-pi-sorority-house": {
+      "hide": true
+    },
+    "gate-house": {
+      "hide": true
+    },
+    "north-gate": {
+      "hide": true
+    },
+    "west-gate": {
+      "hide": true
+    },
+    "paint-branch-gate": {
+      "hide": true
+    },
+    "south-gate": {
+      "hide": true
+    },
+    "umgc-marriott-hotel": {
+      "hide": true
+    },
+    "wework": {
+      "hide": true
+    },
+    "president-residence": {
+      "hide": true
+    },
+    "mfri-fire-extinguisher-training-facility": {
+      "hide": true
+    },
+    "mfri-structural-firefighting-building": {
+      "hide": true
+    },
+    "mfri-drill-tower": {
+      "hide": true
+    },
+    "mfri-fire-extinguisher-training-facility-428966627": {
+      "hide": true
+    },
+    "umcp-chp-plant": {
+      "hide": true
+    },
+    "environmental-services-facility": {
+      "hide": true
+    },
+    "service-building": {
+      "hide": true
+    },
+    "heavy-equipment": {
+      "hide": true
+    },
+    "mosquito-control-building": {
+      "hide": true
+    },
+    "hvac-building": {
+      "hide": true
+    },
+    "the-university-of-maryland-physics-vortex": {
+      "hide": true
+    },
+    "apiary": {
+      "hide": true
+    },
+    "the-diner": {
+      "kind": "dining"
+    }
+  },
+  "notes": {
+    "prince-georges": "The name rule picked The Mall at Prince Georges (way/161269417); pinned to OSM's Prince George's Hall (way/23987796) at the point UMD's campus map layer gives building 021 (services9.arcgis.com/1rOwFRpAwrxe0rBl/arcgis/rest/services/BuildingAllSearch/FeatureServer/0).",
+    "la-plata": "OSM has no La Plata Hall by name; pinned at UMD's campus map point for La Plata Hall, building 259 (BuildingAllSearch layer).",
+    "worcester": "OSM has no Worcester Hall by name; pinned at UMD's campus map point for Worcester Hall, building 051 (BuildingAllSearch layer).",
+    "leonardtown": "Leonardtown is a group of apartment buildings (OSM 'Leonardtown Housing1'-'12'); pinned at UMD's campus map point for the Leonardtown Community Center, building 250 (BuildingAllSearch layer), in the middle of the group.",
+    "track-soccer-ticket-booth": "A ticket booth at the track and soccer stadium, not somewhere classes or meals happen.",
+    "animal-science-service-building": "A service building beside the Animal Science building, not somewhere classes or meals happen.",
+    "leonardtown-housing4": "Part of the Leonardtown apartments (a hall), not a class building.",
+    "leonardtown-housing6": "Part of the Leonardtown apartments (a hall), not a class building.",
+    "leonardtown-housing1": "Part of the Leonardtown apartments (a hall), not a class building.",
+    "leonardtown-housing12": "Part of the Leonardtown apartments (a hall), not a class building.",
+    "leonardtown-housing5": "Part of the Leonardtown apartments (a hall), not a class building.",
+    "wicomico-hall": "The second OSM outline of Wicomico Hall (a hall), not a class building.",
+    "alpha-chi-omega-sorority-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "zeta-psi-fraternity-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "zeta-beta-tau-fraternity-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "alpha-phi-sorority-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "kappa-alpha-fraternity-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "delta-gamma-sorority-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "lambda-chi-alpha-fraternity-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "phi-sigma-sigma-sorority-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "alpha-sigma-phi-fraternity-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "beta-theta-pi-fraternity-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "zeta-tau-alpha-sorority-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "sigma-kappa-sorority-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "alpha-epsilon-phi-sorority-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "delta-phi-epsilon-sorority-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "phi-kappa-tau-fraternity-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "sigma-delta-tau-sorority-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "tau-kappa-epsilon-fraternity-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "sigma-phi-epsilon-fraternity-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "phi-sigma-kappa-fraternity-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "alpha-delta-pi-sorority-house": "Greek chapter house, not somewhere classes or meals happen.",
+    "gate-house": "A campus gate, not a building with classes.",
+    "north-gate": "A campus gate, not a building with classes.",
+    "west-gate": "A campus gate, not a building with classes.",
+    "paint-branch-gate": "A campus gate, not a building with classes.",
+    "south-gate": "A campus gate, not a building with classes.",
+    "umgc-marriott-hotel": "A hotel or rented office, not somewhere classes happen.",
+    "wework": "A hotel or rented office, not somewhere classes happen.",
+    "president-residence": "The president's house, not somewhere classes happen.",
+    "mfri-fire-extinguisher-training-facility": "Fire-training rig at the Maryland Fire and Rescue Institute yard, not a classroom building.",
+    "mfri-structural-firefighting-building": "Fire-training rig at the Maryland Fire and Rescue Institute yard, not a classroom building.",
+    "mfri-drill-tower": "Fire-training rig at the Maryland Fire and Rescue Institute yard, not a classroom building.",
+    "mfri-fire-extinguisher-training-facility-428966627": "Fire-training rig at the Maryland Fire and Rescue Institute yard, not a classroom building.",
+    "umcp-chp-plant": "Service or utility building, not somewhere classes happen.",
+    "environmental-services-facility": "Service or utility building, not somewhere classes happen.",
+    "service-building": "Service or utility building, not somewhere classes happen.",
+    "heavy-equipment": "Service or utility building, not somewhere classes happen.",
+    "mosquito-control-building": "Service or utility building, not somewhere classes happen.",
+    "hvac-building": "Service or utility building, not somewhere classes happen.",
+    "the-university-of-maryland-physics-vortex": "An outdoor physics exhibit, not a building with classes.",
+    "apiary": "Bee yard, not a building with classes.",
+    "the-diner": "UMD Dining's North Campus dining hall (OSM amenity=restaurant at 4028 Stadium Drive, way/23579583); its name doesn't say dining."
+  }
+}
