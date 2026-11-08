@@ -1,0 +1,152 @@
+{
+ "name": "Rutgers Digital Classroom Services, Building Identification Codes (College Avenue), with the older College Avenue codes from Rutgers University Planning and Development's New Brunswick campus map (2012–13, \"Building identification codes\", p. 15)",
+ "url": "https://dcs.rutgers.edu/learning-spaces/building-identification-codes/",
+ "also": "https://www.business.rutgers.edu/sites/default/files/documents/campus-map.pdf",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "AB",
+   "name": "Rutgers Academic Building"
+  },
+  {
+   "code": "ABE",
+   "name": "Rutgers Academic Building - East Wing"
+  },
+  {
+   "code": "ABW",
+   "name": "Rutgers Academic Building - West Wing"
+  },
+  {
+   "code": "AL",
+   "name": "Alexander Library, Archibald S."
+  },
+  {
+   "code": "ARM",
+   "name": "Army ROTC"
+  },
+  {
+   "code": "BH",
+   "name": "Bishop House"
+  },
+  {
+   "code": "BRT",
+   "name": "Brett Hall"
+  },
+  {
+   "code": "CA",
+   "name": "Campbell Hall"
+  },
+  {
+   "code": "CAG",
+   "name": "College Avenue Gym"
+  },
+  {
+   "code": "CCA",
+   "name": "Center for Cultural Analysis"
+  },
+  {
+   "code": "CHA",
+   "name": "Center for Historical Analysis"
+  },
+  {
+   "code": "CI",
+   "name": "School of Communication and Information"
+  },
+  {
+   "code": "CJS",
+   "name": "Bildner Center for the Study of Jewish Life, Allen and Joan"
+  },
+  {
+   "code": "CSB",
+   "name": "Civic Square Building"
+  },
+  {
+   "code": "EAS",
+   "name": "University Center at Easton Avenue (Easton Avenue Apartments)"
+  },
+  {
+   "code": "ED",
+   "name": "Graduation School of Education"
+  },
+  {
+   "code": "FH",
+   "name": "Frelinghuysen Hall"
+  },
+  {
+   "code": "GH",
+   "name": "Germanic, Russian, and East European Languages and Literatures – 172 College Avenue"
+  },
+  {
+   "code": "HC",
+   "name": "Honors College"
+  },
+  {
+   "code": "HH",
+   "name": "Hardenbergh Hall"
+  },
+  {
+   "code": "HU",
+   "name": "Huntington House"
+  },
+  {
+   "code": "KC",
+   "name": "Kirkpatrick Chapel"
+  },
+  {
+   "code": "LLB",
+   "name": "Language Lab"
+  },
+  {
+   "code": "MH",
+   "name": "Miller Hall"
+  },
+  {
+   "code": "MI",
+   "name": "Milledoler Hall"
+  },
+  {
+   "code": "MK",
+   "name": "McKinney Hall"
+  },
+  {
+   "code": "MU",
+   "name": "Murray Hall"
+  },
+  {
+   "code": "NJ",
+   "name": "New Jersey Hall"
+  },
+  {
+   "code": "NUR",
+   "name": "College of Nursing Building (110 Paterson Street)"
+  },
+  {
+   "code": "SC",
+   "name": "Scott Hall"
+  },
+  {
+   "code": "SEM",
+   "name": "1 Seminary Place"
+  },
+  {
+   "code": "SM3",
+   "name": "3 Seminary Place"
+  },
+  {
+   "code": "SW",
+   "name": "School of Social Work"
+  },
+  {
+   "code": "VD",
+   "name": "Van Dyck Hall"
+  },
+  {
+   "code": "VH",
+   "name": "Voorhees Hall"
+  },
+  {
+   "code": "ZAM",
+   "name": "Zimmerli Art Museum"
+  }
+ ]
+}
