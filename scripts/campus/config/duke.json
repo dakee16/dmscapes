@@ -1,0 +1,32 @@
+{
+  "collegeId": "duke",
+  "area": {
+    "osm": "relation/7407432",
+    "bbox": [
+      35.99158,
+      -78.95313,
+      36.00985,
+      -78.91224
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Duke publishes no building-code list for class schedules: the registrar's class-scheduling, 25Live classroom-management and reserve-classroom pages (registrar.duke.edu) list none, and Duke Finance's Building_Codes PDFs (resources.finance.duke.edu/accounting/yearend) are accounting numbers, not schedule codes (checked 2026-11-07).",
+  "excludeHalls": {
+    "alspaugh": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "bassett": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "bell-tower": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "blackwell": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "brown": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "east-house": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "gilbert-addoms": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "giles": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "pegram": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "randolph": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "southgate": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "trinity": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "west-house": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/).",
+    "wilson": "East Campus, Duke's first-year campus, about 2 km from West Campus and linked by the C1 bus; walks from it to West Campus's far teaching buildings (Gross Hall, Sanford, Fuqua, Law) run past 45 minutes, so it isn't ranked on this walking map (students.duke.edu/living/housing/first-year-housing/living-on-east-campus/)."
+  }
+}
