@@ -66,9 +66,16 @@ for (const id of ids) {
   const hallById = new Map(campus.halls.map((h) => [h.dormId, h]));
   const placeById = new Map(campus.places.map((p) => [p.id, p]));
   const pinned = (h) => Number.isFinite(h?.lng) && Number.isFinite(h?.lat);
+  const coded = campus.sources.some((s) => /^building codes/.test(s.use ?? ""));
+  // No official list is a research finding, so the config says where we looked.
+  const noCodesWhy = coded || (typeof config.noCodes === "string" && config.noCodes.trim().length > 20);
   const issues = {
     "every hall has a pin": dorms.filter((d) => !pinned(hallById.get(d.dorm_id))).map((d) => d.dorm_id),
-    "every academic place has a code or alias": campus.places.filter((p) => p.kind === "academic" && !p.codes.length && !p.aliases.length).map((p) => p.id),
+    // A school with no public building-code list is matched by building name (config "codes": null).
+    [coded ? "every academic place has a code or alias" : "every academic place has a name (no official code list)"]: campus.places
+      .filter((p) => p.kind === "academic" && (coded ? !p.codes.length && !p.aliases.length : !p.name?.trim()))
+      .map((p) => p.id),
+    "a school with no official code list says why (config.noCodes)": noCodesWhy ? [] : [id],
     "minutes are finite and 0.5–45 (0 if attached)": [],
     "walking ÷ straight-line is 1.0–2.5": [],
     "every hall has a path to every place": [],
