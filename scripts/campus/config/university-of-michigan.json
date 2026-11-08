@@ -1,0 +1,22 @@
+{
+  "collegeId": "university-of-michigan",
+  "area": {
+    "osm": "way/40976143",
+    "bbox": [
+      42.265,
+      -83.74418,
+      42.28591,
+      -83.72608
+    ]
+  },
+  "areaNote": "OSM landuse \"Central Campus\" (way/40976143); bbox extended south to 42.265 so Wolverine Village (Hill St, S Division St, E Hoover Ave) is inside the fetch.",
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "The Registrar's Location Abbreviations page (ro.umich.edu/calendars/schedule-of-classes/locations) and Campus Info's Acronym Decoder (campusinfo.umich.edu/acronyms) list the codes, but both serve a bot challenge to scripted downloads (checked 2026-11-07), so this campus is matched by building name until the list is read by hand.",
+  "excludeHalls": {
+    "baits": "North Campus, about 2.5 km north-east of Central Campus across the Huron River; reached by campus bus (neighborhood field in data/schools/university-of-michigan.json)",
+    "bursley-hall": "North Campus, about 2.5 km north-east of Central Campus across the Huron River; reached by campus bus (neighborhood field in data/schools/university-of-michigan.json)",
+    "florent-gillet": "Marygrove campus in Detroit (8701 W. McNichols Rd), not Ann Arbor (neighborhood and address in data/schools/university-of-michigan.json)"
+  }
+}
