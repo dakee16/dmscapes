@@ -1,0 +1,16 @@
+{
+  "collegeId": "clemson",
+  "area": {
+    "osm": "relation/145811",
+    "bbox": [
+      34.65471,
+      -82.85613,
+      34.68277,
+      -82.81636
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class building-code list: the Registrar's scheduling pages (https://www.clemson.edu/registrar/faculty-staff/scheduling/schedule-building/ and classroom-assignments.html) publish none, and Clemson's GIS building layers (ClemsonUniversityBuildings2024, CU_Building_Footprints on services1.arcgis.com/x5wCko8UnSi4h0CB) give names, facility numbers and short names, not schedule codes; checked 2026-11-08."
+}
