@@ -1,0 +1,21 @@
+{
+  "collegeId": "ut-austin",
+  "area": {
+    "osm": "relation/1701848",
+    "bbox": [
+      30.27499,
+      -97.74388,
+      30.29285,
+      -97.72197
+    ]
+  },
+  "areaNote": "OSM relation/1701848 also takes in the J. J. Pickle Research Campus and Brackenridge Field Lab; the bbox is the main-campus members only (ways 905896574-6 and the Guadalupe, MLK and San Antonio pieces).",
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/ut-austin.codes.json"
+  },
+  "excludeHalls": {
+    "whitis-avenue": "Whitis Court is closed for redevelopment (dorm_name in data/schools/ut-austin.json), so it isn't ranked."
+  }
+}

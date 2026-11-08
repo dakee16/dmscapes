@@ -1,0 +1,90 @@
+{
+  "halls": {
+    "brackenridge": {
+      "pin": [
+        -97.735997,
+        30.283123
+      ]
+    }
+  },
+  "codes": {
+    "BLD": null,
+    "JCD": null,
+    "LTD": null,
+    "MCA": null
+  },
+  "places": {
+    "south-end-zone": {
+      "hide": true
+    },
+    "caven-clark-field-support-building": {
+      "hide": true
+    },
+    "richard-mithoff-track-and-soccer-fieldhouse": {
+      "hide": true
+    },
+    "moncrief-neuhaus-athletic-center": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "brackenridge": "Centre of OSM's Brackenridge Hall Dormitory (way/126134747, ref BHD, 207 East 21st Street). The school data gives Brackenridge Roberts Hall's address (303 E 21st St), which pinned it to Roberts.",
+    "BLD": "BLD is Blanton Residence Hall in UT's list (the hall itself); the word rule had put it on the Blanton Museum of Art.",
+    "JCD": "JCD is Jester Residence Hall in UT's list (the hall itself); Jester Center keeps its academic code JES.",
+    "LTD": "LTD is Littlefield Residence Hall in UT's list (the hall itself), not the Littlefield Carriage House.",
+    "MCA": "MCA is the Moody Center arena in UT's list; the word rule had put it on the Moody Bank Tower downtown.",
+    "south-end-zone": "Darrell K Royal stadium's south end zone, varsity athletics, not a class building.",
+    "caven-clark-field-support-building": "Varsity field support building at Clark Field, not a class building.",
+    "richard-mithoff-track-and-soccer-fieldhouse": "Varsity track and soccer fieldhouse, not a class building.",
+    "moncrief-neuhaus-athletic-center": "Varsity athletics center at the stadium, not a student gym."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "andrews -> biomedical-engineering-building",
+        "blanton -> biomedical-engineering-building",
+        "carothers -> biomedical-engineering-building",
+        "littlefield -> biomedical-engineering-building"
+      ],
+      "maxRatio": 4,
+      "why": "The Biomedical Engineering Building (way/172047174) has no mapped entrance; its centre snaps to the service drives on its east side, so walks from the halls west of University Avenue cross the avenue and go round to them."
+    },
+    {
+      "pairs": [
+        "andrews -> burdine-hall",
+        "carothers -> burdine-hall"
+      ],
+      "maxRatio": 3,
+      "why": "Andrews and Carothers sit west of University Avenue and their mapped paths lead out by the steps and service drive on their far sides; Burdine Hall's doors face University Avenue, so walks go round the halls to the avenue first."
+    },
+    {
+      "pairs": [
+        "blanton -> anna-hiss-gymnasium",
+        "blanton -> larry-r-faulkner-nano-science-and-technology-building"
+      ],
+      "maxRatio": 3,
+      "why": "Blanton Hall (way/79457851) has no mapped entrance; its centre snaps to the service drive on its west side, so walks east start by going round the building."
+    },
+    {
+      "pairs": [
+        "dobie-twenty21 -> harry-ransom-center"
+      ],
+      "maxRatio": 3,
+      "why": "Dobie Twenty21 (way/42807636) has no mapped entrance; its centre snaps to the service drive south of it, so the walk goes south and round by the mapped crossing to the east."
+    },
+    {
+      "pairs": [
+        "jester-west -> blanton-museum-of-art"
+      ],
+      "maxRatio": 3,
+      "why": "Neither Jester West (relation/1715386) nor the Blanton Museum (relation/20972967) has a mapped entrance; their centres snap to paths on their far sides, so the walk goes round both by Speedway."
+    },
+    {
+      "pairs": [
+        "roberts -> patton-hall"
+      ],
+      "maxRatio": 3,
+      "why": "Patton Hall (relation/4464605) has no mapped entrance and is reached by the footways east of it; Roberts Hall's mapped doors lead out to Jester Circle, so the walk goes east round the block before turning north."
+    }
+  ]
+}

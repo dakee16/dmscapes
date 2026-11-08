@@ -1,0 +1,2386 @@
+{
+ "collegeId": "ut-austin",
+ "generatedAt": "2026-11-08T17:10:58.614Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "UT Austin Building Information (UT Direct): building abbreviations and names",
+   "url": "https://utdirect.utexas.edu/apps/campus/buildings/information/nlogon/maps/",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/ut-austin.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -97.74284,
+  30.27551,
+  -97.72259,
+  30.29258
+ ],
+ "halls": [
+  {
+   "dormId": "andrews",
+   "name": "Andrews Hall",
+   "lng": -97.73988,
+   "lat": 30.288177,
+   "pin": "address",
+   "osm": "way/130096286",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "anna-hiss-gymnasium",
+     "minutes": 4.4
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 10.5
+    }
+   }
+  },
+  {
+   "dormId": "blanton",
+   "name": "Blanton Hall",
+   "lng": -97.739425,
+   "lat": 30.288527,
+   "pin": "address",
+   "osm": "way/79457851",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "anna-hiss-gymnasium",
+     "minutes": 4.9
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 12.7
+    }
+   }
+  },
+  {
+   "dormId": "brackenridge",
+   "name": "Brackenridge Hall",
+   "lng": -97.735997,
+   "lat": 30.283123,
+   "pin": "manual",
+   "osm": "way/126134747",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gregory-gymnasium",
+     "minutes": 3
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "carothers",
+   "name": "Carothers Hall",
+   "lng": -97.740096,
+   "lat": 30.288697,
+   "pin": "address",
+   "osm": "way/79457846",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "anna-hiss-gymnasium",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 11.2
+    }
+   }
+  },
+  {
+   "dormId": "creekside",
+   "name": "Creekside Hall",
+   "lng": -97.733383,
+   "lat": 30.288532,
+   "pin": "name",
+   "osm": "way/79457844",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "anna-hiss-gymnasium",
+     "minutes": 7.2
+    },
+    "library": {
+     "placeId": "lyndon-baines-johnson-presidential-library-and-museum",
+     "minutes": 9.8
+    }
+   }
+  },
+  {
+   "dormId": "dobie-twenty21",
+   "name": "Dobie Twenty21",
+   "lng": -97.741353,
+   "lat": 30.283382,
+   "pin": "name",
+   "osm": "way/42807636",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gregory-gymnasium",
+     "minutes": 7.6
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 4.9
+    }
+   }
+  },
+  {
+   "dormId": "duren",
+   "name": "Duren Hall",
+   "lng": -97.740604,
+   "lat": 30.291497,
+   "pin": "address",
+   "osm": "way/126017770",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "anna-hiss-gymnasium",
+     "minutes": 6.8
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 15
+    }
+   }
+  },
+  {
+   "dormId": "jester-east",
+   "name": "Jester East Hall",
+   "lng": -97.735848,
+   "lat": 30.282341,
+   "pin": "name",
+   "osm": "way/124953720",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gregory-gymnasium",
+     "minutes": 3.8
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 3.8
+    }
+   }
+  },
+  {
+   "dormId": "jester-west",
+   "name": "Jester West Hall",
+   "lng": -97.736783,
+   "lat": 30.282001,
+   "pin": "name",
+   "osm": "relation/1715386",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gregory-gymnasium",
+     "minutes": 3.6
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 1.2
+    }
+   }
+  },
+  {
+   "dormId": "kinsolving",
+   "name": "Kinsolving Hall",
+   "lng": -97.739646,
+   "lat": 30.290372,
+   "pin": "address",
+   "osm": "relation/1736658",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "anna-hiss-gymnasium",
+     "minutes": 5.2
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 13.6
+    }
+   }
+  },
+  {
+   "dormId": "littlefield",
+   "name": "Littlefield Hall",
+   "lng": -97.739703,
+   "lat": 30.28931,
+   "pin": "address",
+   "osm": "way/79457847",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "anna-hiss-gymnasium",
+     "minutes": 4.5
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 12.3
+    }
+   }
+  },
+  {
+   "dormId": "moore-hill",
+   "name": "Moore-Hill Hall",
+   "lng": -97.740231,
+   "lat": 30.284474,
+   "pin": "address",
+   "osm": "way/150732420",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gregory-gymnasium",
+     "minutes": 5
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 4.3
+    }
+   }
+  },
+  {
+   "dormId": "prather",
+   "name": "Prather Hall",
+   "lng": -97.735066,
+   "lat": 30.282404,
+   "pin": "name",
+   "osm": "way/126134751",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gregory-gymnasium",
+     "minutes": 5.1
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 5.1
+    }
+   }
+  },
+  {
+   "dormId": "roberts",
+   "name": "Roberts Hall",
+   "lng": -97.735123,
+   "lat": 30.283044,
+   "pin": "name",
+   "osm": "way/126134752",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "gregory-gymnasium",
+     "minutes": 3.9
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 3.9
+    }
+   }
+  },
+  {
+   "dormId": "san-jacinto",
+   "name": "San Jacinto Hall",
+   "lng": -97.734359,
+   "lat": 30.282324,
+   "pin": "name",
+   "osm": "way/125100401",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "recreational-sports-center",
+     "minutes": 3.2
+    },
+    "library": {
+     "placeId": "perry-castaneda-library",
+     "minutes": 5.9
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "dell-seton-medical-center-at-the-university-of-texas",
+   "name": "Dell Seton Medical Center at the University of Texas",
+   "short": "Dell Seton Medical Center at the University of Texas",
+   "kind": "academic",
+   "codes": [
+    "SMC"
+   ],
+   "aliases": [
+    "SMC",
+    "DELL SETON MEDICAL CENTER AT UT"
+   ],
+   "lng": -97.734097,
+   "lat": 30.276319,
+   "osm": "way/516285446"
+  },
+  {
+   "id": "gregory-gymnasium",
+   "name": "Gregory Gymnasium",
+   "short": "Gregory Gymnasium",
+   "kind": "gym",
+   "codes": [
+    "GRE"
+   ],
+   "aliases": [
+    "GRE"
+   ],
+   "lng": -97.73638,
+   "lat": 30.284007,
+   "osm": "way/31962470"
+  },
+  {
+   "id": "sid-richardson-hall",
+   "name": "Sid Richardson Hall",
+   "short": "Sid Richardson Hall",
+   "kind": "academic",
+   "codes": [
+    "SRH"
+   ],
+   "aliases": [
+    "SRH"
+   ],
+   "lng": -97.728862,
+   "lat": 30.285019,
+   "osm": "way/172662518"
+  },
+  {
+   "id": "at-and-t-executive-education-and-conference-center",
+   "name": "AT&T Executive Education and Conference Center",
+   "short": "AT&T Executive Education and Conference Center",
+   "kind": "academic",
+   "codes": [
+    "ATT"
+   ],
+   "aliases": [
+    "ATT",
+    "AT&T EXECUTIVE EDUC & CONF CENTER"
+   ],
+   "lng": -97.74044,
+   "lat": 30.281981,
+   "osm": "relation/7478745"
+  },
+  {
+   "id": "college-of-fine-arts-performing-arts-center",
+   "name": "College of Fine Arts Performing Arts Center",
+   "short": "College of Fine Arts Performing Arts Center",
+   "kind": "academic",
+   "codes": [
+    "PAC"
+   ],
+   "aliases": [
+    "PAC",
+    "PERFORMING ARTS CENTER"
+   ],
+   "lng": -97.731148,
+   "lat": 30.286369,
+   "osm": "way/172204434"
+  },
+  {
+   "id": "robert-a-welch-hall",
+   "name": "Robert A. Welch Hall",
+   "short": "Robert A. Welch Hall",
+   "kind": "academic",
+   "codes": [
+    "WEL"
+   ],
+   "aliases": [
+    "WEL"
+   ],
+   "lng": -97.737868,
+   "lat": 30.286901,
+   "osm": "relation/227077"
+  },
+  {
+   "id": "perry-castaneda-library",
+   "name": "Perry-Castañeda Library",
+   "short": "Perry-Castañeda Library",
+   "kind": "library",
+   "codes": [
+    "PCL"
+   ],
+   "aliases": [
+    "PCL"
+   ],
+   "lng": -97.738219,
+   "lat": 30.28274,
+   "osm": "way/25795473"
+  },
+  {
+   "id": "l-theo-bellmont-hall",
+   "name": "L. Theo Bellmont Hall",
+   "short": "L. Theo Bellmont Hall",
+   "kind": "academic",
+   "codes": [
+    "BEL"
+   ],
+   "aliases": [
+    "BEL"
+   ],
+   "lng": -97.733563,
+   "lat": 30.28374,
+   "osm": "way/126030906"
+  },
+  {
+   "id": "indoor-practice-facility",
+   "name": "Indoor Practice Facility",
+   "short": "Indoor Practice Facility",
+   "kind": "academic",
+   "codes": [
+    "IPF"
+   ],
+   "aliases": [
+    "IPF"
+   ],
+   "lng": -97.726561,
+   "lat": 30.286292,
+   "osm": "way/30880226"
+  },
+  {
+   "id": "townes-hall",
+   "name": "Townes Hall",
+   "short": "Townes Hall",
+   "kind": "academic",
+   "codes": [
+    "TNH"
+   ],
+   "aliases": [
+    "TNH"
+   ],
+   "lng": -97.730756,
+   "lat": 30.288548,
+   "osm": "way/126033684"
+  },
+  {
+   "id": "engineering-education-and-research-center",
+   "name": "Engineering Education and Research Center",
+   "short": "Engineering Education and Research Center",
+   "kind": "academic",
+   "codes": [
+    "EER"
+   ],
+   "aliases": [
+    "EER",
+    "ENGR EDUCATION AND RESEARCH CENTER"
+   ],
+   "lng": -97.735373,
+   "lat": 30.288272,
+   "osm": "way/516282867"
+  },
+  {
+   "id": "art-building-and-museum",
+   "name": "Art Building and Museum",
+   "short": "Art Building and Museum",
+   "kind": "academic",
+   "codes": [
+    "ART"
+   ],
+   "aliases": [
+    "ART"
+   ],
+   "lng": -97.733009,
+   "lat": 30.286184,
+   "osm": "way/126033672"
+  },
+  {
+   "id": "recreational-sports-center",
+   "name": "Recreational Sports Center",
+   "short": "Recreational Sports Center",
+   "kind": "gym",
+   "codes": [
+    "RSC"
+   ],
+   "aliases": [
+    "RSC"
+   ],
+   "lng": -97.732397,
+   "lat": 30.281528,
+   "osm": "way/126029360"
+  },
+  {
+   "id": "george-i-sanchez-building",
+   "name": "George I. Sanchez Building",
+   "short": "George I. Sanchez Building",
+   "kind": "academic",
+   "codes": [
+    "SZB"
+   ],
+   "aliases": [
+    "SZB"
+   ],
+   "lng": -97.738766,
+   "lat": 30.281675,
+   "osm": "way/126134750"
+  },
+  {
+   "id": "health-discovery-building",
+   "name": "Health Discovery Building",
+   "short": "Health Discovery Building",
+   "kind": "academic",
+   "codes": [
+    "HDB"
+   ],
+   "aliases": [
+    "HDB"
+   ],
+   "lng": -97.734697,
+   "lat": 30.278097,
+   "osm": "way/1054507728"
+  },
+  {
+   "id": "health-transformation-building",
+   "name": "Health Transformation Building",
+   "short": "Health Transformation Building",
+   "kind": "academic",
+   "codes": [
+    "HTB"
+   ],
+   "aliases": [
+    "HTB"
+   ],
+   "lng": -97.735112,
+   "lat": 30.277129,
+   "osm": "way/516282874"
+  },
+  {
+   "id": "sarah-m-and-charles-e-seay-building",
+   "name": "Sarah M. and Charles E. Seay Building",
+   "short": "Sarah M. and Charles E. Seay Building",
+   "kind": "academic",
+   "codes": [
+    "SEA"
+   ],
+   "aliases": [
+    "SEA"
+   ],
+   "lng": -97.737328,
+   "lat": 30.290066,
+   "osm": "way/126017781"
+  },
+  {
+   "id": "jester-center",
+   "name": "Jester Center",
+   "short": "Jester Center",
+   "kind": "academic",
+   "codes": [
+    "JES"
+   ],
+   "aliases": [
+    "JES",
+    "BEAUFORD H. JESTER CENTER"
+   ],
+   "lng": -97.736849,
+   "lat": 30.282874,
+   "osm": "way/27397879"
+  },
+  {
+   "id": "union-building",
+   "name": "Union Building",
+   "short": "Union Building",
+   "kind": "academic",
+   "codes": [
+    "UNB"
+   ],
+   "aliases": [
+    "UNB"
+   ],
+   "lng": -97.741154,
+   "lat": 30.286567,
+   "osm": "way/38607786"
+  },
+  {
+   "id": "lee-and-joe-jamail-texas-swimming-center",
+   "name": "Lee and Joe Jamail Texas Swimming Center",
+   "short": "Lee and Joe Jamail Texas Swimming Center",
+   "kind": "academic",
+   "codes": [
+    "TSC"
+   ],
+   "aliases": [
+    "TSC",
+    "LEE & JOE JAMAIL TEXAS SWIMMING CTR"
+   ],
+   "lng": -97.733467,
+   "lat": 30.279869,
+   "osm": "way/172665673"
+  },
+  {
+   "id": "blanton-museum-of-art",
+   "name": "Blanton Museum of Art",
+   "short": "Blanton Museum of Art",
+   "kind": "academic",
+   "codes": [
+    "BMA"
+   ],
+   "aliases": [
+    "BMA",
+    "JACK S. BLANTON MUSEUM OF ART"
+   ],
+   "lng": -97.737312,
+   "lat": 30.281087,
+   "osm": "relation/20972967"
+  },
+  {
+   "id": "main-building",
+   "name": "Main Building",
+   "short": "Main Building",
+   "kind": "academic",
+   "codes": [
+    "MAI"
+   ],
+   "aliases": [
+    "MAI",
+    "The Tower"
+   ],
+   "lng": -97.739372,
+   "lat": 30.286025,
+   "osm": "way/27397894"
+  },
+  {
+   "id": "facilities-complex-building-3",
+   "name": "Facilities Complex Building 3",
+   "short": "Facilities Complex Building 3",
+   "kind": "academic",
+   "codes": [
+    "FC3"
+   ],
+   "aliases": [
+    "FC3",
+    "FACILITIES COMPLEX BLDG. 3"
+   ],
+   "lng": -97.723701,
+   "lat": 30.284733,
+   "osm": "way/126027982"
+  },
+  {
+   "id": "peter-t-flawn-academic-center",
+   "name": "Peter T. Flawn Academic Center",
+   "short": "Peter T. Flawn Academic Center",
+   "kind": "academic",
+   "codes": [
+    "FAC"
+   ],
+   "aliases": [
+    "FAC"
+   ],
+   "lng": -97.740364,
+   "lat": 30.286308,
+   "osm": "way/38607784"
+  },
+  {
+   "id": "mccombs-school-of-business",
+   "name": "McCombs School of Business",
+   "short": "McCombs School of Business",
+   "kind": "academic",
+   "codes": [
+    "CBA"
+   ],
+   "aliases": [
+    "CBA",
+    "COLLEGE OF BUSINESS ADMINISTRATION"
+   ],
+   "lng": -97.737861,
+   "lat": 30.284213,
+   "osm": "way/31962360"
+  },
+  {
+   "id": "facilities-complex-building-2",
+   "name": "Facilities Complex Building 2",
+   "short": "Facilities Complex Building 2",
+   "kind": "academic",
+   "codes": [
+    "FC2"
+   ],
+   "aliases": [
+    "FC2",
+    "FACILITIES COMPLEX BLDG. 2"
+   ],
+   "lng": -97.723108,
+   "lat": 30.283923,
+   "osm": "way/126027980"
+  },
+  {
+   "id": "f-loren-winship-drama-building",
+   "name": "F Loren Winship Drama Building",
+   "short": "F Loren Winship Drama Building",
+   "kind": "academic",
+   "codes": [
+    "WIN"
+   ],
+   "aliases": [
+    "WIN",
+    "F.L. WINSHIP DRAMA BLDG."
+   ],
+   "lng": -97.734471,
+   "lat": 30.285881,
+   "osm": "way/126149673"
+  },
+  {
+   "id": "william-c-powers-jr-student-activity-center",
+   "name": "William C. Powers, Jr. Student Activity Center",
+   "short": "William C. Powers, Jr. Student Activity Center",
+   "kind": "academic",
+   "codes": [
+    "WCP"
+   ],
+   "aliases": [
+    "WCP",
+    "WILLIAM C. POWERS, JR. SAC"
+   ],
+   "lng": -97.7363,
+   "lat": 30.284886,
+   "osm": "way/126149680"
+  },
+  {
+   "id": "norman-hackerman-building",
+   "name": "Norman Hackerman Building",
+   "short": "Norman Hackerman Building",
+   "kind": "academic",
+   "codes": [
+    "NHB"
+   ],
+   "aliases": [
+    "NHB"
+   ],
+   "lng": -97.738007,
+   "lat": 30.287627,
+   "osm": "way/126017780"
+  },
+  {
+   "id": "etter-harbin-alumni-center",
+   "name": "Etter-Harbin Alumni Center",
+   "short": "Etter-Harbin Alumni Center",
+   "kind": "academic",
+   "codes": [
+    "UTX"
+   ],
+   "aliases": [
+    "UTX"
+   ],
+   "lng": -97.734439,
+   "lat": 30.284334,
+   "osm": "way/126149672"
+  },
+  {
+   "id": "louise-and-james-robert-moffett-molecular-biology-building",
+   "name": "Louise and James Robert Moffett Molecular Biology Building",
+   "short": "Louise and James Robert Moffett Molecular Biology Building",
+   "kind": "academic",
+   "codes": [
+    "MBB"
+   ],
+   "aliases": [
+    "MBB",
+    "MOFFETT MOLECULAR BIOLOGY BLDG."
+   ],
+   "lng": -97.737273,
+   "lat": 30.288479,
+   "osm": "way/126017778"
+  },
+  {
+   "id": "chemical-and-petroleum-engineering-building",
+   "name": "Chemical and Petroleum Engineering Building",
+   "short": "Chemical and Petroleum Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "CPE"
+   ],
+   "aliases": [
+    "CPE",
+    "CHEMICAL AND PETROLEUM ENGINEERING"
+   ],
+   "lng": -97.736141,
+   "lat": 30.290234,
+   "osm": "way/79457845"
+  },
+  {
+   "id": "robert-b-rowling-hall",
+   "name": "Robert B. Rowling Hall",
+   "short": "Robert B. Rowling Hall",
+   "kind": "academic",
+   "codes": [
+    "RRH"
+   ],
+   "aliases": [
+    "RRH"
+   ],
+   "lng": -97.741514,
+   "lat": 30.282129,
+   "osm": "way/516283024"
+  },
+  {
+   "id": "music-recital-hall",
+   "name": "Music Recital Hall",
+   "short": "Music Recital Hall",
+   "kind": "academic",
+   "codes": [
+    "MRH"
+   ],
+   "aliases": [
+    "MRH",
+    "MUSIC BUILDING & RECITAL HALL"
+   ],
+   "lng": -97.730697,
+   "lat": 30.287276,
+   "osm": "way/31962674"
+  },
+  {
+   "id": "bill-and-melinda-gates-computer-science-complex",
+   "name": "Bill and Melinda Gates Computer Science Complex",
+   "short": "Bill and Melinda Gates Computer Science Complex",
+   "kind": "academic",
+   "codes": [
+    "GDC"
+   ],
+   "aliases": [
+    "GDC",
+    "GATES DELL COMPLEX"
+   ],
+   "lng": -97.736504,
+   "lat": 30.28627,
+   "osm": "way/126569521"
+  },
+  {
+   "id": "harry-ransom-center",
+   "name": "Harry Ransom Center",
+   "short": "Harry Ransom Center",
+   "kind": "academic",
+   "codes": [
+    "HRC"
+   ],
+   "aliases": [
+    "HRC"
+   ],
+   "lng": -97.741229,
+   "lat": 30.284335,
+   "osm": "way/172047175"
+  },
+  {
+   "id": "patton-hall",
+   "name": "Patton Hall",
+   "short": "Patton Hall",
+   "kind": "academic",
+   "codes": [
+    "RLP"
+   ],
+   "aliases": [
+    "RLP"
+   ],
+   "lng": -97.735399,
+   "lat": 30.284953,
+   "osm": "relation/4464605"
+  },
+  {
+   "id": "engineering-discovery-building",
+   "name": "Engineering Discovery Building",
+   "short": "Engineering Discovery Building",
+   "kind": "academic",
+   "codes": [
+    "ACS"
+   ],
+   "aliases": [
+    "ACS",
+    "AUTRY C. STEPHENS ENGR DISC BLDG"
+   ],
+   "lng": -97.734706,
+   "lat": 30.287549,
+   "osm": "way/1512154085"
+  },
+  {
+   "id": "student-services-building",
+   "name": "Student Services Building",
+   "short": "Student Services Building",
+   "kind": "academic",
+   "codes": [
+    "SSB"
+   ],
+   "aliases": [
+    "SSB"
+   ],
+   "lng": -97.738387,
+   "lat": 30.290057,
+   "osm": "way/38624860"
+  },
+  {
+   "id": "university-teaching-center",
+   "name": "University Teaching Center",
+   "short": "University Teaching Center",
+   "kind": "academic",
+   "codes": [
+    "UTC"
+   ],
+   "aliases": [
+    "UTC"
+   ],
+   "lng": -97.738802,
+   "lat": 30.2831,
+   "osm": "way/172047490"
+  },
+  {
+   "id": "jackson-geological-sciences-building",
+   "name": "Jackson Geological Sciences Building",
+   "short": "Jackson Geological Sciences Building",
+   "kind": "academic",
+   "codes": [
+    "JGB"
+   ],
+   "aliases": [
+    "JGB",
+    "JACKSON GEOLOGICAL SCIENCES BLDG."
+   ],
+   "lng": -97.735689,
+   "lat": 30.285849,
+   "osm": "way/126149677"
+  },
+  {
+   "id": "odonnell-building-for-applied-computational-engineering-and-sciences",
+   "name": "O’Donnell Building for Applied Computational Engineering and Sciences",
+   "short": "O’Donnell Building for Applied Computational Engineering and Sciences",
+   "kind": "academic",
+   "codes": [
+    "POB"
+   ],
+   "aliases": [
+    "POB",
+    "PETER O'DONNELL JR. BUILDING"
+   ],
+   "lng": -97.736568,
+   "lat": 30.286856,
+   "osm": "way/126149671"
+  },
+  {
+   "id": "animal-resource-center",
+   "name": "Animal Resource Center",
+   "short": "Animal Resource Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ARC"
+   ],
+   "lng": -97.73619,
+   "lat": 30.291572,
+   "osm": "way/126020358"
+  },
+  {
+   "id": "hal-c-weaver-power-plant",
+   "name": "Hal C. Weaver Power Plant",
+   "short": "Hal C. Weaver Power Plant",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PPL"
+   ],
+   "lng": -97.735211,
+   "lat": 30.286514,
+   "osm": "way/126149674"
+  },
+  {
+   "id": "jesse-h-jones-hall",
+   "name": "Jesse H. Jones Hall",
+   "short": "Jesse H. Jones Hall",
+   "kind": "academic",
+   "codes": [
+    "JON"
+   ],
+   "aliases": [
+    "JON"
+   ],
+   "lng": -97.731736,
+   "lat": 30.288603,
+   "osm": "way/126033680"
+  },
+  {
+   "id": "neural-molecular-science-building",
+   "name": "Neural Molecular Science Building",
+   "short": "Neural Molecular Science Building",
+   "kind": "academic",
+   "codes": [
+    "NMS"
+   ],
+   "aliases": [
+    "NMS",
+    "NEURAL AND MOLECULAR SCIENCE BLDG."
+   ],
+   "lng": -97.737614,
+   "lat": 30.289213,
+   "osm": "way/172047169"
+  },
+  {
+   "id": "graduate-school-of-business-building",
+   "name": "Graduate School of Business Building",
+   "short": "Graduate School of Business Building",
+   "kind": "academic",
+   "codes": [
+    "GSB"
+   ],
+   "aliases": [
+    "GSB",
+    "GRADUATE SCHOOL OF BUSINESS BLDG."
+   ],
+   "lng": -97.738338,
+   "lat": 30.284185,
+   "osm": "way/126148598"
+  },
+  {
+   "id": "biomedical-engineering-building",
+   "name": "Biomedical Engineering Building",
+   "short": "Biomedical Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "BME"
+   ],
+   "aliases": [
+    "BME"
+   ],
+   "lng": -97.738581,
+   "lat": 30.289185,
+   "osm": "way/172047174"
+  },
+  {
+   "id": "hal-c-weaver-power-plant-expansion",
+   "name": "Hal C. Weaver Power Plant Expansion",
+   "short": "Hal C. Weaver Power Plant Expansion",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PPE"
+   ],
+   "lng": -97.735884,
+   "lat": 30.286881,
+   "osm": "way/126149676"
+  },
+  {
+   "id": "nursing-school",
+   "name": "Nursing School",
+   "short": "Nursing School",
+   "kind": "academic",
+   "codes": [
+    "NUR"
+   ],
+   "aliases": [
+    "NUR"
+   ],
+   "lng": -97.733504,
+   "lat": 30.277731,
+   "osm": "relation/1710791"
+  },
+  {
+   "id": "ernest-cockrell-jr-hall",
+   "name": "Ernest Cockrell, Jr. Hall",
+   "short": "Ernest Cockrell, Jr. Hall",
+   "kind": "academic",
+   "codes": [
+    "ECJ"
+   ],
+   "aliases": [
+    "ECJ"
+   ],
+   "lng": -97.735516,
+   "lat": 30.288991,
+   "osm": "way/38625301"
+  },
+  {
+   "id": "ut-administration-building",
+   "name": "UT Administration Building",
+   "short": "UT Administration Building",
+   "kind": "academic",
+   "codes": [
+    "UTA"
+   ],
+   "aliases": [],
+   "lng": -97.742845,
+   "lat": 30.279308,
+   "osm": "way/124952572"
+  },
+  {
+   "id": "basketball-and-rowing-training-facility",
+   "name": "Basketball and Rowing Training Facility",
+   "short": "Basketball and Rowing Training Facility",
+   "kind": "academic",
+   "codes": [
+    "BBR"
+   ],
+   "aliases": [
+    "BASKETBALL & ROWING TRAINING FAC"
+   ],
+   "lng": -97.731731,
+   "lat": 30.280417,
+   "osm": "way/1054317156"
+  },
+  {
+   "id": "anna-hiss-gymnasium",
+   "name": "Anna Hiss Gymnasium",
+   "short": "Anna Hiss Gymnasium",
+   "kind": "gym",
+   "codes": [
+    "AHG"
+   ],
+   "aliases": [
+    "AHG"
+   ],
+   "lng": -97.737741,
+   "lat": 30.288537,
+   "osm": "way/126017771"
+  },
+  {
+   "id": "goldsmith-hall",
+   "name": "Goldsmith Hall",
+   "short": "Goldsmith Hall",
+   "kind": "academic",
+   "codes": [
+    "GOL"
+   ],
+   "aliases": [
+    "GOL"
+   ],
+   "lng": -97.741159,
+   "lat": 30.285428,
+   "osm": "relation/1711785"
+  },
+  {
+   "id": "pharmacy-building",
+   "name": "Pharmacy Building",
+   "short": "Pharmacy Building",
+   "kind": "academic",
+   "codes": [
+    "PHR"
+   ],
+   "aliases": [
+    "PHR"
+   ],
+   "lng": -97.738587,
+   "lat": 30.288154,
+   "osm": "way/52480996"
+  },
+  {
+   "id": "gary-l-thomas-energy-engineering-building",
+   "name": "Gary L. Thomas Energy Engineering Building",
+   "short": "Gary L. Thomas Energy Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "GLT"
+   ],
+   "aliases": [
+    "GLT",
+    "GARY L THOMAS ENERGY ENGR BLDG"
+   ],
+   "lng": -97.735822,
+   "lat": 30.287514,
+   "osm": "way/1164983004"
+  },
+  {
+   "id": "dealey-center-for-new-media",
+   "name": "Dealey Center for New Media",
+   "short": "Dealey Center for New Media",
+   "kind": "academic",
+   "codes": [
+    "DMC"
+   ],
+   "aliases": [
+    "DMC",
+    "G. B. DEALEY CENTER FOR NEW MEDIA"
+   ],
+   "lng": -97.740814,
+   "lat": 30.290208,
+   "osm": "way/126569520"
+  },
+  {
+   "id": "burdine-hall",
+   "name": "Burdine Hall",
+   "short": "Burdine Hall",
+   "kind": "academic",
+   "codes": [
+    "BUR"
+   ],
+   "aliases": [
+    "BUR"
+   ],
+   "lng": -97.73845,
+   "lat": 30.288842,
+   "osm": "way/126017772"
+  },
+  {
+   "id": "t-s-painter-hall",
+   "name": "T. S. Painter Hall",
+   "short": "T. S. Painter Hall",
+   "kind": "academic",
+   "codes": [
+    "PAI"
+   ],
+   "aliases": [
+    "PAI",
+    "T.S. PAINTER HALL"
+   ],
+   "lng": -97.738706,
+   "lat": 30.287021,
+   "osm": "way/38607989"
+  },
+  {
+   "id": "facilities-complex-building-4",
+   "name": "Facilities Complex Building 4",
+   "short": "Facilities Complex Building 4",
+   "kind": "academic",
+   "codes": [
+    "FC4"
+   ],
+   "aliases": [
+    "FC4",
+    "FACILITIES COMPLEX BLDG. 4"
+   ],
+   "lng": -97.723406,
+   "lat": 30.284318,
+   "osm": "way/126027983"
+  },
+  {
+   "id": "joe-c-thompson-conference-center",
+   "name": "Joe C. Thompson Conference Center",
+   "short": "Joe C. Thompson Conference Center",
+   "kind": "academic",
+   "codes": [
+    "TCC"
+   ],
+   "aliases": [
+    "TCC"
+   ],
+   "lng": -97.729071,
+   "lat": 30.287044,
+   "osm": "way/31962952"
+  },
+  {
+   "id": "physics-math-and-astronomy-building",
+   "name": "Physics, Math, and Astronomy Building",
+   "short": "Physics, Math, and Astronomy Building",
+   "kind": "academic",
+   "codes": [
+    "PMA"
+   ],
+   "aliases": [
+    "PMA",
+    "Robert Lee Moore Hall"
+   ],
+   "lng": -97.7363,
+   "lat": 30.288914,
+   "osm": "way/38625300"
+  },
+  {
+   "id": "university-police-building",
+   "name": "University Police Building",
+   "short": "University Police Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "UPB"
+   ],
+   "lng": -97.730437,
+   "lat": 30.284073,
+   "osm": "way/31963393"
+  },
+  {
+   "id": "computational-resource-building",
+   "name": "Computational Resource Building",
+   "short": "Computational Resource Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CRB"
+   ],
+   "lng": -97.726495,
+   "lat": 30.282107,
+   "osm": "way/126027975"
+  },
+  {
+   "id": "lyndon-baines-johnson-presidential-library-and-museum",
+   "name": "Lyndon Baines Johnson Presidential Library and Museum",
+   "short": "Lyndon Baines Johnson Presidential Library and Museum",
+   "kind": "library",
+   "codes": [
+    "LBJ"
+   ],
+   "aliases": [
+    "LBJ",
+    "LYNDON B JOHNSON LIBRARY"
+   ],
+   "lng": -97.729285,
+   "lat": 30.285895,
+   "osm": "way/172662523"
+  },
+  {
+   "id": "red-mccombs-red-zone",
+   "name": "Red McCombs Red Zone",
+   "short": "Red McCombs Red Zone",
+   "kind": "academic",
+   "codes": [
+    "NEZ"
+   ],
+   "aliases": [
+    "North End Zone",
+    "NEZ",
+    "NORTH END ZONE BUILDING"
+   ],
+   "lng": -97.73243,
+   "lat": 30.284885,
+   "osm": "way/126030913"
+  },
+  {
+   "id": "facilities-complex-building-8",
+   "name": "Facilities Complex Building 8",
+   "short": "Facilities Complex Building 8",
+   "kind": "academic",
+   "codes": [
+    "FC8"
+   ],
+   "aliases": [
+    "FC8",
+    "FACILITIES COMPLEX BLDG. 8"
+   ],
+   "lng": -97.723945,
+   "lat": 30.285389,
+   "osm": "way/126027991"
+  },
+  {
+   "id": "e-william-doty-fine-arts-building",
+   "name": "E. William Doty Fine Arts Building",
+   "short": "E. William Doty Fine Arts Building",
+   "kind": "academic",
+   "codes": [
+    "DFA"
+   ],
+   "aliases": [
+    "DFA"
+   ],
+   "lng": -97.731795,
+   "lat": 30.285859,
+   "osm": "way/30548773"
+  },
+  {
+   "id": "engineering-teaching-center-ii",
+   "name": "Engineering Teaching Center II",
+   "short": "Engineering Teaching Center II",
+   "kind": "academic",
+   "codes": [
+    "ETC"
+   ],
+   "aliases": [
+    "ETC"
+   ],
+   "lng": -97.735418,
+   "lat": 30.289898,
+   "osm": "way/126020360"
+  },
+  {
+   "id": "j-t-patterson-laboratories-building",
+   "name": "J. T. Patterson Laboratories Building",
+   "short": "J. T. Patterson Laboratories Building",
+   "kind": "academic",
+   "codes": [
+    "PAT"
+   ],
+   "aliases": [
+    "PAT",
+    "J.T. PATTERSON LABS.BLDG."
+   ],
+   "lng": -97.736424,
+   "lat": 30.288008,
+   "osm": "way/38625297"
+  },
+  {
+   "id": "mezes-hall",
+   "name": "Mezes Hall",
+   "short": "Mezes Hall",
+   "kind": "academic",
+   "codes": [
+    "MEZ"
+   ],
+   "aliases": [
+    "MEZ",
+    "Six Pack"
+   ],
+   "lng": -97.738897,
+   "lat": 30.284392,
+   "osm": "way/150732421"
+  },
+  {
+   "id": "edgar-a-smith-building",
+   "name": "Edgar A. Smith Building",
+   "short": "Edgar A. Smith Building",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "EAS"
+   ],
+   "lng": -97.73823,
+   "lat": 30.281135,
+   "osm": "way/126134749"
+  },
+  {
+   "id": "jesse-h-jones-communication-center-b",
+   "name": "Jesse H. Jones Communication Center - B",
+   "short": "Jesse H. Jones Communication Center - B",
+   "kind": "academic",
+   "codes": [
+    "CMB"
+   ],
+   "aliases": [
+    "CMB",
+    "JESSE H. JONES COMM. CTR. (BLDG. B)"
+   ],
+   "lng": -97.741166,
+   "lat": 30.289199,
+   "osm": "way/126017774"
+  },
+  {
+   "id": "leona-child-development-center",
+   "name": "Leona Child Development Center",
+   "short": "Leona Child Development Center",
+   "kind": "academic",
+   "codes": [
+    "LNA"
+   ],
+   "aliases": [
+    "LEONA ST. CHILD DEVELOPMENT CENTER"
+   ],
+   "lng": -97.724501,
+   "lat": 30.283039,
+   "osm": "way/1263309677"
+  },
+  {
+   "id": "j-dan-brown-family-player-development-center",
+   "name": "J. Dan Brown Family Player Development Center",
+   "short": "J. Dan Brown Family Player Development Center",
+   "kind": "academic",
+   "codes": [
+    "DFF"
+   ],
+   "aliases": [
+    "DFF",
+    "UFCU DISCH-FALK FIELD"
+   ],
+   "lng": -97.725649,
+   "lat": 30.279328,
+   "osm": "way/1168010524"
+  },
+  {
+   "id": "aerospace-engineering-building",
+   "name": "Aerospace Engineering Building",
+   "short": "Aerospace Engineering Building",
+   "kind": "academic",
+   "codes": [
+    "ASE"
+   ],
+   "aliases": [
+    "ASE"
+   ],
+   "lng": -97.737531,
+   "lat": 30.2911,
+   "osm": "way/38624864"
+  },
+  {
+   "id": "facilities-complex-building-6",
+   "name": "Facilities Complex Building 6",
+   "short": "Facilities Complex Building 6",
+   "kind": "academic",
+   "codes": [
+    "FC6"
+   ],
+   "aliases": [
+    "FC6",
+    "FACILITIES COMPLEX BLDG. 6"
+   ],
+   "lng": -97.725795,
+   "lat": 30.28344,
+   "osm": "way/126027987"
+  },
+  {
+   "id": "health-learning-building",
+   "name": "Health Learning Building",
+   "short": "Health Learning Building",
+   "kind": "academic",
+   "codes": [
+    "HLB"
+   ],
+   "aliases": [
+    "HLB"
+   ],
+   "lng": -97.733336,
+   "lat": 30.275506,
+   "osm": "way/516285436"
+  },
+  {
+   "id": "comal-child-development-center",
+   "name": "Comal Child Development Center",
+   "short": "Comal Child Development Center",
+   "kind": "academic",
+   "codes": [
+    "CML"
+   ],
+   "aliases": [
+    "COMAL ST. CHILD DEVELOPMENT CENTER"
+   ],
+   "lng": -97.725253,
+   "lat": 30.282923,
+   "osm": "way/126027972"
+  },
+  {
+   "id": "jesse-h-jones-communication-center-a",
+   "name": "Jesse H. Jones Communication Center - A",
+   "short": "Jesse H. Jones Communication Center - A",
+   "kind": "academic",
+   "codes": [
+    "CMA"
+   ],
+   "aliases": [
+    "CMA",
+    "JESSE H. JONES COMM. CTR. (BLDG. A)"
+   ],
+   "lng": -97.740737,
+   "lat": 30.289418,
+   "osm": "way/126017773"
+  },
+  {
+   "id": "facilities-complex-building-1",
+   "name": "Facilities Complex Building 1",
+   "short": "Facilities Complex Building 1",
+   "kind": "academic",
+   "codes": [
+    "FC1"
+   ],
+   "aliases": [
+    "FC1",
+    "FACILITIES COMPLEX BLDG. 1"
+   ],
+   "lng": -97.72259,
+   "lat": 30.284541,
+   "osm": "way/126027979"
+  },
+  {
+   "id": "sutton-hall",
+   "name": "Sutton Hall",
+   "short": "Sutton Hall",
+   "kind": "academic",
+   "codes": [
+    "SUT"
+   ],
+   "aliases": [
+    "SUT"
+   ],
+   "lng": -97.740832,
+   "lat": 30.284954,
+   "osm": "way/656119772"
+  },
+  {
+   "id": "walter-webb-hall",
+   "name": "Walter Webb Hall",
+   "short": "Walter Webb Hall",
+   "kind": "academic",
+   "codes": [
+    "WWH"
+   ],
+   "aliases": [
+    "WWH"
+   ],
+   "lng": -97.741857,
+   "lat": 30.28931,
+   "osm": "way/126017786"
+  },
+  {
+   "id": "biological-laboratories",
+   "name": "Biological Laboratories",
+   "short": "Biological Laboratories",
+   "kind": "academic",
+   "codes": [
+    "BIO"
+   ],
+   "aliases": [
+    "BIO"
+   ],
+   "lng": -97.739762,
+   "lat": 30.287218,
+   "osm": "way/38607779"
+  },
+  {
+   "id": "gordon-white-building",
+   "name": "Gordon-White Building",
+   "short": "Gordon-White Building",
+   "kind": "academic",
+   "codes": [
+    "GWB"
+   ],
+   "aliases": [
+    "GWB"
+   ],
+   "lng": -97.739912,
+   "lat": 30.287813,
+   "osm": "way/79457848"
+  },
+  {
+   "id": "computation-center",
+   "name": "Computation Center",
+   "short": "Computation Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "COM"
+   ],
+   "lng": -97.738543,
+   "lat": 30.285638,
+   "osm": "way/129435969"
+  },
+  {
+   "id": "university-interscholastic-league",
+   "name": "University Interscholastic League",
+   "short": "University Interscholastic League",
+   "kind": "academic",
+   "codes": [
+    "UIL"
+   ],
+   "aliases": [
+    "UIL",
+    "UNIV. INTERSCHOLASTIC LEAGUE BLDG."
+   ],
+   "lng": -97.723661,
+   "lat": 30.283318,
+   "osm": "way/126028000"
+  },
+  {
+   "id": "mary-e-gearing-hall",
+   "name": "Mary E. Gearing Hall",
+   "short": "Mary E. Gearing Hall",
+   "kind": "academic",
+   "codes": [
+    "GEA"
+   ],
+   "aliases": [
+    "GEA"
+   ],
+   "lng": -97.739215,
+   "lat": 30.287738,
+   "osm": "way/79457849"
+  },
+  {
+   "id": "waggener-hall",
+   "name": "Waggener Hall",
+   "short": "Waggener Hall",
+   "kind": "academic",
+   "codes": [
+    "WAG"
+   ],
+   "aliases": [
+    "WAG"
+   ],
+   "lng": -97.737604,
+   "lat": 30.285105,
+   "osm": "way/38607984"
+  },
+  {
+   "id": "garrison-hall",
+   "name": "Garrison Hall",
+   "short": "Garrison Hall",
+   "kind": "academic",
+   "codes": [
+    "GAR"
+   ],
+   "aliases": [
+    "GAR"
+   ],
+   "lng": -97.73852,
+   "lat": 30.285151,
+   "osm": "way/42561353"
+  },
+  {
+   "id": "battle-hall",
+   "name": "Battle Hall",
+   "short": "Battle Hall",
+   "kind": "academic",
+   "codes": [
+    "BTL"
+   ],
+   "aliases": [
+    "BTL"
+   ],
+   "lng": -97.740327,
+   "lat": 30.285415,
+   "osm": "way/126148593"
+  },
+  {
+   "id": "hogg-memorial-auditorium",
+   "name": "Hogg Memorial Auditorium",
+   "short": "Hogg Memorial Auditorium",
+   "kind": "academic",
+   "codes": [
+    "HMA"
+   ],
+   "aliases": [
+    "HMA"
+   ],
+   "lng": -97.740627,
+   "lat": 30.286881,
+   "osm": "way/38607785"
+  },
+  {
+   "id": "e-p-schoch-building",
+   "name": "E. P. Schoch Building",
+   "short": "E. P. Schoch Building",
+   "kind": "academic",
+   "codes": [
+    "EPS"
+   ],
+   "aliases": [
+    "EPS",
+    "E.P. SCHOCH BUILDING"
+   ],
+   "lng": -97.73667,
+   "lat": 30.28577,
+   "osm": "way/79457840"
+  },
+  {
+   "id": "chilling-station-no-6",
+   "name": "Chilling Station No. 6",
+   "short": "Chilling Station No. 6",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CS6"
+   ],
+   "lng": -97.735779,
+   "lat": 30.286426,
+   "osm": "way/126569514"
+  },
+  {
+   "id": "collections-deposit-library",
+   "name": "Collections Deposit Library",
+   "short": "Collections Deposit Library",
+   "kind": "library",
+   "codes": [
+    "CDL"
+   ],
+   "aliases": [
+    "CDL"
+   ],
+   "lng": -97.733045,
+   "lat": 30.278768,
+   "osm": "way/30905872"
+  },
+  {
+   "id": "chilling-station-no-5",
+   "name": "Chilling Station No. 5",
+   "short": "Chilling Station No. 5",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CS5"
+   ],
+   "lng": -97.735477,
+   "lat": 30.290663,
+   "osm": "way/79457819"
+  },
+  {
+   "id": "bernard-and-audre-rapoport-building",
+   "name": "Bernard and Audre Rapoport Building",
+   "short": "Bernard and Audre Rapoport Building",
+   "kind": "academic",
+   "codes": [
+    "BRB"
+   ],
+   "aliases": [
+    "BRB"
+   ],
+   "lng": -97.736733,
+   "lat": 30.285226,
+   "osm": "way/79457842"
+  },
+  {
+   "id": "will-c-hogg-building",
+   "name": "Will C. Hogg Building",
+   "short": "Will C. Hogg Building",
+   "kind": "academic",
+   "codes": [
+    "WCH"
+   ],
+   "aliases": [
+    "WCH",
+    "WILL C. HOGG BLDG."
+   ],
+   "lng": -97.738405,
+   "lat": 30.286087,
+   "osm": "way/38607983"
+  },
+  {
+   "id": "development-center",
+   "name": "Development Center",
+   "short": "Development Center",
+   "kind": "academic",
+   "codes": [
+    "DEV"
+   ],
+   "aliases": [
+    "DEV",
+    "DEVELOPMENT OFFICE BUILDING"
+   ],
+   "lng": -97.723595,
+   "lat": 30.287312,
+   "osm": "way/126027977"
+  },
+  {
+   "id": "chilling-station-no-4",
+   "name": "Chilling Station No. 4",
+   "short": "Chilling Station No. 4",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CS4"
+   ],
+   "lng": -97.732464,
+   "lat": 30.28867,
+   "osm": "way/126033673"
+  },
+  {
+   "id": "2609-university-avenue",
+   "name": "2609 University Avenue",
+   "short": "2609 University Avenue",
+   "kind": "academic",
+   "codes": [
+    "UA9"
+   ],
+   "aliases": [
+    "UA9"
+   ],
+   "lng": -97.738705,
+   "lat": 30.290314,
+   "osm": "way/38624861"
+  },
+  {
+   "id": "cooling-tower-1",
+   "name": "Cooling Tower 1",
+   "short": "Cooling Tower 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CT1"
+   ],
+   "lng": -97.734771,
+   "lat": 30.286609,
+   "osm": "way/130307825"
+  },
+  {
+   "id": "facilities-complex-building-5",
+   "name": "Facilities Complex Building 5",
+   "short": "Facilities Complex Building 5",
+   "kind": "academic",
+   "codes": [
+    "FC5"
+   ],
+   "aliases": [
+    "FC5",
+    "FACILITIES COMPLEX BLDG. 5"
+   ],
+   "lng": -97.724593,
+   "lat": 30.283636,
+   "osm": "way/126027986"
+  },
+  {
+   "id": "parlin-hall",
+   "name": "Parlin Hall",
+   "short": "Parlin Hall",
+   "kind": "academic",
+   "codes": [
+    "PAR"
+   ],
+   "aliases": [
+    "PAR",
+    "Six Pack"
+   ],
+   "lng": -97.740106,
+   "lat": 30.284902,
+   "osm": "way/150732422"
+  },
+  {
+   "id": "larry-r-faulkner-nano-science-and-technology-building",
+   "name": "Larry R. Faulkner Nano Science and Technology Building",
+   "short": "Larry R. Faulkner Nano Science and Technology Building",
+   "kind": "academic",
+   "codes": [
+    "FNT"
+   ],
+   "aliases": [
+    "FNT",
+    "LARRY R. FAULKNER NANO SCI AND TECH"
+   ],
+   "lng": -97.737993,
+   "lat": 30.287854,
+   "osm": "way/126017775"
+  },
+  {
+   "id": "john-w-hargis-hall",
+   "name": "John W. Hargis Hall",
+   "short": "John W. Hargis Hall",
+   "kind": "academic",
+   "codes": [
+    "JHH"
+   ],
+   "aliases": [
+    "Undergraduate Admissions Center"
+   ],
+   "lng": -97.732026,
+   "lat": 30.278373,
+   "osm": "way/92460267"
+  },
+  {
+   "id": "batts-hall",
+   "name": "Batts Hall",
+   "short": "Batts Hall",
+   "kind": "academic",
+   "codes": [
+    "BAT"
+   ],
+   "aliases": [
+    "BAT",
+    "Six Pack"
+   ],
+   "lng": -97.738921,
+   "lat": 30.284805,
+   "osm": "way/150732423"
+  },
+  {
+   "id": "benedict-hall",
+   "name": "Benedict Hall",
+   "short": "Benedict Hall",
+   "kind": "academic",
+   "codes": [
+    "BEN"
+   ],
+   "aliases": [
+    "BEN",
+    "Six Pack"
+   ],
+   "lng": -97.739019,
+   "lat": 30.283966,
+   "osm": "way/150732424"
+  },
+  {
+   "id": "homer-rainey-hall",
+   "name": "Homer Rainey Hall",
+   "short": "Homer Rainey Hall",
+   "kind": "academic",
+   "codes": [
+    "HRH"
+   ],
+   "aliases": [
+    "HRH",
+    "Six Pack",
+    "RAINEY HALL"
+   ],
+   "lng": -97.740193,
+   "lat": 30.284064,
+   "osm": "way/150732425"
+  },
+  {
+   "id": "john-b-connally-center-for-justice",
+   "name": "John B. Connally Center for Justice",
+   "short": "John B. Connally Center for Justice",
+   "kind": "academic",
+   "codes": [
+    "CCJ"
+   ],
+   "aliases": [
+    "CCJ",
+    "CONNALLY CENTER FOR JUSTICE"
+   ],
+   "lng": -97.730467,
+   "lat": 30.288052,
+   "osm": "way/126033681"
+  },
+  {
+   "id": "west-mall-office-building",
+   "name": "West Mall Office Building",
+   "short": "West Mall Office Building",
+   "kind": "academic",
+   "codes": [
+    "WMB"
+   ],
+   "aliases": [
+    "WMB",
+    "WEST MALL OFFICE BLDG."
+   ],
+   "lng": -97.740628,
+   "lat": 30.285435,
+   "osm": "way/38607780"
+  },
+  {
+   "id": "dorothy-gebauer-building",
+   "name": "Dorothy Gebauer Building",
+   "short": "Dorothy Gebauer Building",
+   "kind": "academic",
+   "codes": [
+    "GEB"
+   ],
+   "aliases": [
+    "GEB",
+    "DOROTHY L. GEBAUER BUILDING"
+   ],
+   "lng": -97.738625,
+   "lat": 30.286342,
+   "osm": "way/38607992"
+  },
+  {
+   "id": "hal-c-weaver-power-plant-annex",
+   "name": "Hal C. Weaver Power Plant Annex",
+   "short": "Hal C. Weaver Power Plant Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "PPA"
+   ],
+   "lng": -97.734403,
+   "lat": 30.286858,
+   "osm": "way/126149675"
+  },
+  {
+   "id": "texas-memorial-museum",
+   "name": "Texas Memorial Museum",
+   "short": "Texas Memorial Museum",
+   "kind": "academic",
+   "codes": [
+    "TMM"
+   ],
+   "aliases": [
+    "TMM",
+    "TX SCIENCE & NATURAL HISTORY MUSEUM"
+   ],
+   "lng": -97.732371,
+   "lat": 30.28698,
+   "osm": "way/126033682"
+  },
+  {
+   "id": "athletic-fields-pavilion",
+   "name": "Athletic Fields Pavilion",
+   "short": "Athletic Fields Pavilion",
+   "kind": "academic",
+   "codes": [
+    "AFP"
+   ],
+   "aliases": [
+    "AFP"
+   ],
+   "lng": -97.726283,
+   "lat": 30.2853,
+   "osm": "way/30880274"
+  },
+  {
+   "id": "william-randolph-hearst-building",
+   "name": "William Randolph Hearst Building",
+   "short": "William Randolph Hearst Building",
+   "kind": "academic",
+   "codes": [
+    "HSM"
+   ],
+   "aliases": [
+    "HSM",
+    "WILLIAM RANDOLPH HEARST BLDG"
+   ],
+   "lng": -97.740771,
+   "lat": 30.288913,
+   "osm": "way/126017782"
+  },
+  {
+   "id": "2617-speedway",
+   "name": "2617 Speedway",
+   "short": "2617 Speedway",
+   "kind": "academic",
+   "codes": [
+    "SW7"
+   ],
+   "aliases": [
+    "SW7",
+    "2617 SPEEDWAY (OFC.BLDG.)"
+   ],
+   "lng": -97.736348,
+   "lat": 30.290808,
+   "osm": "way/79457826"
+  },
+  {
+   "id": "custodial-services-training-fac",
+   "name": "Custodial Services Training Fac",
+   "short": "Custodial Services Training Fac",
+   "kind": "academic",
+   "codes": [
+    "FC9"
+   ],
+   "aliases": [
+    "FC9"
+   ],
+   "lng": -97.723976,
+   "lat": 30.283823,
+   "osm": "way/381797734"
+  },
+  {
+   "id": "bridgeway-building",
+   "name": "Bridgeway Building",
+   "short": "Bridgeway Building",
+   "kind": "academic",
+   "codes": [
+    "BWY"
+   ],
+   "aliases": [
+    "BWY",
+    "2616 WICHITA (BRIDGEWAY)"
+   ],
+   "lng": -97.738222,
+   "lat": 30.290792,
+   "osm": "way/38624859"
+  },
+  {
+   "id": "utm-cooling-tower-2",
+   "name": "UTM Cooling Tower 2",
+   "short": "UTM Cooling Tower 2",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "CT2"
+   ],
+   "lng": -97.734418,
+   "lat": 30.286421,
+   "osm": "way/130307824"
+  },
+  {
+   "id": "athletic-fields-pavilion-eastside",
+   "name": "Athletic Fields Pavilion (Eastside)",
+   "short": "Athletic Fields Pavilion (Eastside)",
+   "kind": "academic",
+   "codes": [
+    "AF2"
+   ],
+   "aliases": [
+    "AF2"
+   ],
+   "lng": -97.726541,
+   "lat": 30.284832,
+   "osm": "way/381808291"
+  },
+  {
+   "id": "arno-nowotny-building",
+   "name": "Arno Nowotny Building",
+   "short": "Arno Nowotny Building",
+   "kind": "academic",
+   "codes": [
+    "ANB"
+   ],
+   "aliases": [
+    "ANB"
+   ],
+   "lng": -97.731024,
+   "lat": 30.278245,
+   "osm": "way/92460208"
+  },
+  {
+   "id": "laboratory-theatre-building",
+   "name": "Laboratory Theatre Building",
+   "short": "Laboratory Theatre Building",
+   "kind": "academic",
+   "codes": [
+    "LTH"
+   ],
+   "aliases": [
+    "LTH",
+    "LABORATORY THEATER BLDG."
+   ],
+   "lng": -97.735225,
+   "lat": 30.285952,
+   "osm": "way/126149678"
+  },
+  {
+   "id": "mail-service-building",
+   "name": "Mail Service Building",
+   "short": "Mail Service Building",
+   "kind": "academic",
+   "codes": [
+    "MSB"
+   ],
+   "aliases": [
+    "2207 COMAL (MAIL SERVICE BUILDING)"
+   ],
+   "lng": -97.725699,
+   "lat": 30.282747,
+   "osm": "way/126027994"
+  },
+  {
+   "id": "texas-cowboys-pavillion",
+   "name": "Texas Cowboys Pavillion",
+   "short": "Texas Cowboys Pavillion",
+   "kind": "academic",
+   "codes": [
+    "TCP"
+   ],
+   "aliases": [
+    "TCP",
+    "TEXAS COWBOYS PAVILION"
+   ],
+   "lng": -97.734007,
+   "lat": 30.284972,
+   "osm": "way/382075786"
+  },
+  {
+   "id": "austin",
+   "name": "Austin",
+   "short": "Austin",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BKM"
+   ],
+   "lng": -97.737822,
+   "lat": 30.281686,
+   "osm": "way/575579280"
+  },
+  {
+   "id": "continuing-engineering-education",
+   "name": "Continuing Engineering Education",
+   "short": "Continuing Engineering Education",
+   "kind": "academic",
+   "codes": [
+    "KEY"
+   ],
+   "aliases": [
+    "KEY",
+    "UNIVERSITY KEY BUILDING"
+   ],
+   "lng": -97.73644,
+   "lat": 30.29064,
+   "osm": "way/79457822"
+  },
+  {
+   "id": "ofpc-field-staff-office",
+   "name": "OFPC Field Staff Office",
+   "short": "OFPC Field Staff Office",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "FPC"
+   ],
+   "lng": -97.725003,
+   "lat": 30.279345,
+   "osm": "way/126027995"
+  },
+  {
+   "id": "facilities-complex-building-7",
+   "name": "Facilities Complex Building 7",
+   "short": "Facilities Complex Building 7",
+   "kind": "academic",
+   "codes": [
+    "FC7"
+   ],
+   "aliases": [
+    "FC7",
+    "FACILITIES COMPLEX BLDG. 7"
+   ],
+   "lng": -97.726442,
+   "lat": 30.283335,
+   "osm": "way/126027990"
+  },
+  {
+   "id": "littlefield-carriage-house",
+   "name": "Littlefield Carriage House",
+   "short": "Littlefield Carriage House",
+   "kind": "academic",
+   "codes": [
+    "LCH"
+   ],
+   "aliases": [
+    "LCH"
+   ],
+   "lng": -97.740868,
+   "lat": 30.288561,
+   "osm": "way/126017776"
+  },
+  {
+   "id": "athletic-fields-pavilion-rehab",
+   "name": "Athletic Fields Pavilion (Rehab)",
+   "short": "Athletic Fields Pavilion (Rehab)",
+   "kind": "academic",
+   "codes": [
+    "AF1"
+   ],
+   "aliases": [
+    "AF1"
+   ],
+   "lng": -97.725981,
+   "lat": 30.286632,
+   "osm": "way/381808841"
+  },
+  {
+   "id": "university-sign-shop",
+   "name": "University Sign Shop",
+   "short": "University Sign Shop",
+   "kind": "academic",
+   "codes": [
+    "E26"
+   ],
+   "aliases": [
+    "E26",
+    "EQUIPMENT STOREHOUSE #26"
+   ],
+   "lng": -97.736294,
+   "lat": 30.292577,
+   "osm": "way/126020361"
+  },
+  {
+   "id": "comal-child-development-center-annex",
+   "name": "Comal Child Development Center Annex",
+   "short": "Comal Child Development Center Annex",
+   "kind": "academic",
+   "codes": [
+    "CDA"
+   ],
+   "aliases": [
+    "COMAL CHILD DEVELOPMENT CTR ANNEX"
+   ],
+   "lng": -97.72567,
+   "lat": 30.282975,
+   "osm": "way/126027974"
+  },
+  {
+   "id": "arthur-p-watson-house",
+   "name": "Arthur P. Watson House",
+   "short": "Arthur P. Watson House",
+   "kind": "academic",
+   "codes": [
+    "WAT"
+   ],
+   "aliases": [],
+   "lng": -97.733451,
+   "lat": 30.278495,
+   "osm": "way/381834275"
+  }
+ ]
+}
