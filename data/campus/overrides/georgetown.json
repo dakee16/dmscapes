@@ -90,7 +90,7 @@
         "darnall-hall -> hayden-hall"
       ],
       "maxRatio": 4,
-      "why": "Darnall Hall's mapped door faces north and Hayden Hall's faces south; the medical-centre buildings between them have no mapped way through, so walks go round by Reservoir Road's side paths."
+      "why": "Darnall Hall's mapped door faces north and Hayden Hall's faces south; the medical-centre buildings between them have no mapped way through, so walks go round them by the mapped paths to the west."
     },
     {
       "pairs": [
