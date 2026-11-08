@@ -1,0 +1,16 @@
+{
+  "collegeId": "johns-hopkins",
+  "area": {
+    "osm": "relation/8043868",
+    "bbox": [
+      39.32093,
+      -76.62603,
+      39.33635,
+      -76.61547
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "No public class-schedule building-code list: searches of jhu.edu find none, the Homewood campus map PDFs (jhu.edu/assets/uploads/2014/10/homewood_campus_map.pdf and the 2025 kiosk map update) give building names and grid squares only, and IT@JH's building designator table (jhfre.jhu.edu, Appendix E) is for network naming, not schedules (checked 2026-11-08)."
+}
