@@ -1,0 +1,19 @@
+{
+  "collegeId": "syracuse",
+  "area": {
+    "osm": "relation/3985046",
+    "bbox": [
+      43.00679,
+      -76.14205,
+      43.04697,
+      -76.1101
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "Syracuse publishes no building-code list: the registrar's Class and Classroom Scheduling pages (registrar.syr.edu/faculty-staff/class-and-room-scheduling/, time-blocks/, policy/) list none, and the official interactive campus map (maps.syracuse.edu, linked from syracuse.edu/map/) gives building names (checked 2026-11-07).",
+  "excludeHalls": {
+    "skyhalls": "South Campus (Skyhall I\u2013III on Lambreth Lane), about 2 km from Main Campus and linked by SU's South Campus buses; walks from it to Main Campus teaching buildings such as Whitman and Newhouse run past 45 minutes, and keeping it dropped those buildings for every hall (housingmealplans.syr.edu/residential-facilities/residence-halls/ lists it under South Campus)."
+  }
+}
