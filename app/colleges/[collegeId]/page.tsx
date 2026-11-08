@@ -15,6 +15,7 @@ import { CollegeBand, CollegeChip } from "@/components/hall-finder/Entry";
 import SectionRail from "@/components/ds/SectionRail";
 import BedRules from "@/components/college/BedRules";
 import { exampleFor } from "@/lib/hall-finder-example";
+import { readSchoolDorms } from "@/lib/hall-finder-server";
 import { SCHOOLS, formatDims, getSchool, publishedDimsCount } from "@/lib/schools";
 import { shortName } from "@/lib/school-names";
 import { isPublished, roomFamily, roomName, sqFtOf, ft } from "@/lib/room-preview";
@@ -103,6 +104,12 @@ export default async function CollegePage(props: {
   const short = shortName(school);
   // Pilot schools get the Hall Finder chip and band (they render only when live or previewed).
   const hallFinder = exampleFor(school.id, short);
+  // The Hall Finder band says "AC and room sizes for every hall" only where the data has them.
+  const rawDorms = hallFinder ? await readSchoolDorms(school.id) : [];
+  const bandCovers = [
+    ...(rawDorms.length && rawDorms.every((d) => typeof d.air_conditioning === "boolean") ? ["AC"] : []),
+    ...(rawDorms.length && rawDorms.every((d) => (d.rooms ?? []).some((r) => r.dimensions?.length_ft && r.dimensions?.width_ft)) ? ["room sizes"] : []),
+  ];
   const roomTypes = school.dorms.reduce((n, d) => n + d.rooms.length, 0);
   const crumbs = [
     { name: "Home", path: "/" },
@@ -277,7 +284,13 @@ export default async function CollegePage(props: {
         ]}
       />
 
-      {hallFinder && <CollegeBand example={hallFinder} allHalls={hallFinder.halls === school.dorms.length} />}
+      {hallFinder && (
+        <CollegeBand
+          example={hallFinder}
+          allHalls={hallFinder.halls === school.dorms.length}
+          covers={bandCovers}
+        />
+      )}
 
       <section id="halls" className="ds-section" aria-labelledby="halls-title" style={{ scrollMarginTop: 80 }}>
         <div className="ds-wrap">

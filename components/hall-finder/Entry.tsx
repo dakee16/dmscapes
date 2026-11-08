@@ -10,7 +10,7 @@ import Link from "next/link";
 import Headline from "@/components/ds/Headline";
 import { ArrowRight } from "@/components/ds/Icons";
 import { useHallFinderOn } from "./useHallFinderOn";
-import { formatMinutes, hallFinderOn, heroChipOn } from "@/lib/hall-finder";
+import { PILOT_SCHOOLS, formatMinutes, hallFinderOn, heroChipOn } from "@/lib/hall-finder";
 import { seasonOn } from "@/lib/season";
 import { track } from "@/lib/analytics";
 import css from "./Entry.module.css";
@@ -162,7 +162,8 @@ export function CollegeChip({ collegeId, short }: { collegeId: string; short: st
 }
 
 /** College page, the dark band after the tape stats. */
-export function CollegeBand({ example, allHalls }: { example: Example; allHalls: boolean }) {
+/** `covers`: what the school's data has for every hall besides walking routes (AC, room sizes). */
+export function CollegeBand({ example, allHalls, covers = ["AC", "room sizes"] }: { example: Example; allHalls: boolean; covers?: string[] }) {
   const on = useHallFinderOn();
   if (!on) return null;
   return (
@@ -187,7 +188,11 @@ export function CollegeBand({ example, allHalls }: { example: Example; allHalls:
               <b>01</b>Works with a calendar file (.ics) of your schedule, or add classes by hand
             </li>
             <li>
-              <b>02</b>Real walking routes, AC and room sizes for every hall
+              <b>02</b>
+              {(() => {
+                const items = ["Real walking routes", ...covers];
+                return `${items.length <= 2 ? items.join(" and ") : `${items.slice(0, -1).join(", ")} and ${items.at(-1)}`} for every hall`;
+              })()}
             </li>
             <li>
               <b>03</b>Plan the room in your top pick with one tap
@@ -273,7 +278,7 @@ export function PlusPerk({ check, className = "", link = false }: { check: React
         ) : (
           name
         )}{" "}
-        at select schools <New />
+        at {PILOT_SCHOOLS.length} schools <New />
       </span>
     </li>
   );

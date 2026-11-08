@@ -6,8 +6,9 @@ import Crumbs from "@/components/ds/Crumbs";
 import JsonLd from "@/components/site/JsonLd";
 import LastSchool from "@/components/hall-finder/LastSchool";
 import IndexFacts, { type IndexRow } from "@/components/hall-finder/IndexFacts";
-import { getSchool } from "@/lib/schools";
-import { shortName } from "@/lib/school-names";
+import { SCHOOLS, getSchool } from "@/lib/schools";
+import { shortName, sortKey } from "@/lib/school-names";
+import CollegeDrawers, { type Campus } from "@/components/colleges/CollegeDrawers";
 import { breadcrumbJsonLd, itemListJsonLd, pageMetadata } from "@/lib/seo";
 import { PILOT_SCHOOLS, hallFinderLive, rankedHalls } from "@/lib/hall-finder";
 import { loadCampus } from "@/lib/hall-finder-server";
@@ -16,8 +17,9 @@ import { faqPageJsonLd } from "@/lib/blog";
 import { shortDate } from "@/components/blog/topics";
 import css from "@/components/colleges/Colleges.module.css";
 
-// The nav's Hall Finder link (design-handoff/hall-finder plan.md "Nav target"): the pilot
-// schools, plus "More schools soon"; remembers the last school used.
+// The nav's Hall Finder link (design-handoff/hall-finder plan.md "Nav target"): every school
+// with Hall Finder (a card grid while the list is short, the colleges A–Z catalog with its
+// filter once it's long), "More schools soon" while some are missing, and the last school used.
 export const metadata: Metadata = pageMetadata({
   title: "Hall Finder: Rank Dorms by Your Walk to Class",
   description: "Add the buildings you have classes in and rank your school's residence halls by your weekly walk, with real walking routes.",
@@ -26,6 +28,8 @@ export const metadata: Metadata = pageMetadata({
 });
 
 const TONES = ["blue", "yellow", "white"] as const;
+/** Past this many schools the hub switches from a grid to the A–Z drawers with a filter. */
+const GRID_MAX = 12;
 
 export default async function HallFinderIndex() {
   const schools = PILOT_SCHOOLS.map((id) => getSchool(id)).filter((s) => s !== undefined);
@@ -39,7 +43,15 @@ export default async function HallFinderIndex() {
   });
   const rankedOf = Object.fromEntries(rows.map((r) => [r.id, r.ranked]));
   const built = loaded.flatMap((l) => (l ? [l.campus.generatedAt] : [])).sort().at(-1) ?? new Date().toISOString();
-  const faqs = indexFaqs({ schools: schools.map((s) => names[s.id]), ranked: rows.reduce((n, r) => n + r.ranked, 0) });
+  const moreComing = schools.length < SCHOOLS.length;
+  const campuses: Campus[] = schools
+    .map((s) => ({ id: s.id, name: s.name, sort: sortKey(s.name), city: s.city, state: s.state, buildings: s.dorms.length, rooms: s.dorms.reduce((n, d) => n + d.rooms.length, 0) }))
+    .sort((a, b) => a.sort.localeCompare(b.sort));
+  const faqs = indexFaqs({
+    schools: schools.map((s) => ({ short: names[s.id], state: s.state ?? null })),
+    ranked: rows.reduce((n, r) => n + r.ranked, 0),
+    total: SCHOOLS.length,
+  });
   return (
     <PageShell>
       <JsonLd
@@ -62,6 +74,16 @@ export default async function HallFinderIndex() {
             assign rooms, so use it to rank your housing preferences.
           </p>
           <LastSchool names={names} />
+          {schools.length > GRID_MAX ? (
+            <div style={{ marginTop: 32 }}>
+              <CollegeDrawers schools={campuses} finder={{ ranked: rankedOf }} />
+              {moreComing && (
+                <p className="ds-lede" style={{ marginTop: 24, fontSize: 16 }}>
+                  More schools soon. <Link href="/colleges" className="ds-link">Every school</Link> still has room sizes and planning.
+                </p>
+              )}
+            </div>
+          ) : (
           <ul className={css.cards} style={{ marginTop: 32 }}>
             {schools.map((s, i) => (
               <li key={s.id} className={css.cardItem}>
@@ -76,15 +98,18 @@ export default async function HallFinderIndex() {
                 </Link>
               </li>
             ))}
-            <li className={css.cardItem}>
-              <div className={css.indexCard} data-soon="" style={{ cursor: "default" }}>
-                <span className={css.cardName}>More schools soon</span>
-                <span className={css.cardPlace}>
-                  Hall Finder is at {schools.length} schools to start. <Link href="/colleges" className="ds-link">Every school</Link> still has room sizes and planning.
-                </span>
-              </div>
-            </li>
+            {moreComing && (
+              <li className={css.cardItem}>
+                <div className={css.indexCard} data-soon="" style={{ cursor: "default" }}>
+                  <span className={css.cardName}>More schools soon</span>
+                  <span className={css.cardPlace}>
+                    Hall Finder is at {schools.length} schools to start. <Link href="/colleges" className="ds-link">Every school</Link> still has room sizes and planning.
+                  </span>
+                </div>
+              </li>
+            )}
           </ul>
+          )}
         </div>
       </section>
       <IndexFacts rows={rows} faqs={faqs} />

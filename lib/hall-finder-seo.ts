@@ -3,9 +3,25 @@
 // and the WebApplication schema. Counts and dates come from the campus data, prices from lib/plan.
 import { PLUS_PRICE_USD, PRO_PRICE_USD } from "@/lib/plan";
 import { SITE_URL, absoluteUrl, postalAddressJsonLd, webPageJsonLd } from "@/lib/seo";
+import BUILT from "@/data/campus/built.json";
 
 const usd = (n: number) => `$${n.toFixed(2)}`;
 const list = (items: string[]) => (items.length <= 2 ? items.join(" and ") : `${items.slice(0, -1).join(", ")} and ${items.at(-1)}`);
+
+/** When each school's walking data was built (data/campus/built.json, written by build.mjs). */
+export const HALL_FINDER_BUILT: Readonly<Record<string, string>> = BUILT;
+/** The newest build, for pages about Hall Finder as a whole (sitemap lastmod, the guide's "updated"). */
+export const hallFinderUpdated = (): string | null => Object.values(HALL_FINDER_BUILT).sort().at(-1) ?? null;
+
+/** Up to this many schools, copy names each one; past it, a long list reads as filler, so it counts. */
+export const NAME_LIMIT = 8;
+export type SchoolNameState = { short: string; state: string | null };
+/** "Penn State, UCLA and Columbia", or "103 schools in 38 states" once the list is long. */
+export function schoolsPhrase(schools: SchoolNameState[]): string {
+  if (schools.length <= NAME_LIMIT) return list(schools.map((s) => s.short));
+  const states = new Set(schools.map((s) => s.state).filter(Boolean)).size;
+  return `${schools.length} schools in ${states} state${states === 1 ? "" : "s"}`;
+}
 
 /** "October 24, 2026" from an ISO timestamp, the same calendar day for every reader. */
 export const longDate = (iso: string) => new Date(iso).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
@@ -15,8 +31,11 @@ export interface SchoolFaq {
   a: string;
 }
 
-/** The questions one school's finder page answers. `areas` are its housing areas (may be empty). */
-export function schoolFaqs({ short, ranked, areas, imagesOn }: { short: string; ranked: number; areas: string[]; imagesOn: boolean }): SchoolFaq[] {
+/** The questions one school's finder page answers. `areas` are its housing areas (may be empty);
+ *  `codes` is whether the school publishes a building-code list schedules are matched to. */
+export function schoolFaqs({ short, ranked, areas, imagesOn, codes = true }: { short: string; ranked: number; areas: string[]; imagesOn: boolean; codes?: boolean }): SchoolFaq[] {
+  // Without an official code list, a schedule's "BLDG 101" is matched by building name instead.
+  const byName = codes ? "" : ` ${short} doesn't publish a list of building codes, so classes are matched by building name; check each match, or search for the building by name.`;
   return [
     {
       q: `How do I find the ${short} dorm closest to my classes?`,
@@ -28,9 +47,10 @@ export function schoolFaqs({ short, ranked, areas, imagesOn }: { short: string; 
     },
     {
       q: `Can I upload my ${short} class schedule?`,
-      a: imagesOn
-        ? "Yes. Upload an .ics calendar file, or a screenshot or PDF of your weekly schedule. An .ics file is read in your browser and never sent to us. A screenshot or PDF needs a free account; it is read to find class buildings and days, and the file is not stored. You check what was read before anything is added."
-        : "Yes. Upload an .ics calendar file exported from your school's schedule. It is read in your browser and never sent to us. You check what was found before anything is added.",
+      a:
+        (imagesOn
+          ? "Yes. Upload an .ics calendar file, or a screenshot or PDF of your weekly schedule. An .ics file is read in your browser and never sent to us. A screenshot or PDF needs a free account; it is read to find class buildings and days, and the file is not stored. You check what was read before anything is added."
+          : "Yes. Upload an .ics calendar file exported from your school's schedule. It is read in your browser and never sent to us. You check what was found before anything is added.") + byName,
     },
     {
       q: `How does Hall Finder count walking time at ${short}?`,
@@ -47,8 +67,10 @@ export function schoolFaqs({ short, ranked, areas, imagesOn }: { short: string; 
   ];
 }
 
-/** The questions the all-schools page answers. */
-export function indexFaqs({ schools, ranked }: { schools: string[]; ranked: number }): SchoolFaq[] {
+/** The questions the all-schools page answers. `total` is every school on dormscape. */
+export function indexFaqs({ schools, ranked, total }: { schools: SchoolNameState[]; ranked: number; total: number }): SchoolFaq[] {
+  const where = schoolsPhrase(schools);
+  const named = schools.length <= NAME_LIMIT;
   return [
     {
       q: "What is Hall Finder?",
@@ -56,7 +78,11 @@ export function indexFaqs({ schools, ranked }: { schools: string[]; ranked: numb
     },
     {
       q: "Which schools does Hall Finder work at?",
-      a: `${list(schools)}. Together that is ${ranked} ranked residence halls. More schools are being added, and every school on dormscape still has its room sizes and a room planner.`,
+      a: `${named ? `${where}.` : `Hall Finder works at ${where}; the full list, with the halls each one ranks, is on this page.`} Together that is ${ranked} ranked residence halls. ${
+        schools.length < total
+          ? "More schools are being added, and every school on dormscape still has its room sizes and a room planner."
+          : "That is every school on dormscape, and each one also has its room sizes and a room planner."
+      }`,
     },
     {
       q: "Is Hall Finder free?",
