@@ -1,0 +1,21 @@
+{
+  "collegeId": "nyu",
+  "area": {
+    "osm": "way/108156090",
+    "bbox": [
+      40.7165,
+      -74.0105,
+      40.7395,
+      -73.9825
+    ],
+    "note": "NYU has no enclosed campus. The outline is OSM way/108156090 'New York University' (Washington Square, W 4th St to W Houston St), which holds the teaching buildings; the box is widened to hold the Manhattan residence halls, from Lafayette Hall (87 White St) north to Gramercy Green (310 3rd Ave) and west to Greenwich Hall (636 Greenwich St)."
+  },
+  "walkMarginM": 250,
+  "walkingSpeed": 1.35,
+  "codes": null,
+  "noCodes": "NYU's Office of the University Registrar publishes no building-code key for the Albert class schedule, and NYU's campus maps (e.g. stern.nyu.edu nyu-downloadable-campus-map.pdf) list buildings by name and street address only.",
+  "excludeHalls": {
+    "clark-street": "55 Clark Street is in Brooklyn Heights, across the East River from Washington Square (about 4.5 km by the Brooklyn Bridge); this map is the Washington Square campus.",
+    "othmer-hall": "Othmer Hall (101 Johnson St) is the NYU Tandon residence hall in Downtown Brooklyn, across the East River from Washington Square; this map is the Washington Square campus."
+  }
+}

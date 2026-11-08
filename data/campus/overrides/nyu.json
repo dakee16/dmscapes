@@ -1,0 +1,96 @@
+{
+  "halls": {
+    "alumni-hall": {
+      "pin": [
+        -73.988983,
+        40.730299
+      ]
+    },
+    "washington-square-village": {
+      "pin": [
+        -73.997428,
+        40.728764
+      ]
+    },
+    "third-avenue-north": {
+      "pin": [
+        -73.988153,
+        40.731581
+      ]
+    },
+    "second-street": {
+      "pin": [
+        -73.991863,
+        40.725456
+      ]
+    },
+    "sixth-street": {
+      "pin": [
+        -73.990551,
+        40.728134
+      ]
+    }
+  },
+  "notes": {
+    "alumni-hall": "33 Third Ave: OSM has two footprints there, 'New York University Alumni Hall' (way/241844938) and 'NYU Alumni Hall' (way/405101628); pinned to the first.",
+    "washington-square-village": "OSM has Washington Square Village as four buildings, 1-4 Washington Square Village (way/248234598, 248234587, 248234597, 248234599) on the superblock between Bleecker and W Houston; pinned to 1 Washington Square Village.",
+    "third-avenue-north": "OSM way/247852541 'Third North' (75 3rd Ave, building=dormitory).",
+    "second-street": "1 East 2nd Street: OSM address node/10224157721 (Nominatim); the building has no name in OSM.",
+    "sixth-street": "200 East 6th Street: OSM address node/9659538023 (Nominatim); the building has no name in OSM.",
+    "washington-square-arch": "A monument in Washington Square Park, not a building with classes.",
+    "judson-memorial-church": "A church (not NYU), no classes or meals.",
+    "university-towers-apartments-i": "Silver Towers faculty apartments, not a class building.",
+    "university-towers-apartments-ii": "Silver Towers faculty apartments, not a class building.",
+    "university-towers-apartments-iii": "Silver Towers faculty apartments, not a class building.",
+    "nyu-admissions-office": "Admissions offices, not a class building.",
+    "bonomi-family-nyu-admissions-center": "Admissions visitor centre, not a class building.",
+    "nyu-abu-dhabi": "New York office of the Abu Dhabi campus, not a class building.",
+    "nyu-shanghai": "New York office of the Shanghai campus, not a class building.",
+    "global-inclusion-diversity-and-strategic-innovation-office": "An administrative office, not a class building.",
+    "nyu-health-center": "Student health centre, not a class or dining building."
+  },
+  "places": {
+    "washington-square-arch": {
+      "hide": true
+    },
+    "judson-memorial-church": {
+      "hide": true
+    },
+    "university-towers-apartments-i": {
+      "hide": true
+    },
+    "university-towers-apartments-ii": {
+      "hide": true
+    },
+    "university-towers-apartments-iii": {
+      "hide": true
+    },
+    "nyu-admissions-office": {
+      "hide": true
+    },
+    "bonomi-family-nyu-admissions-center": {
+      "hide": true
+    },
+    "nyu-abu-dhabi": {
+      "hide": true
+    },
+    "nyu-shanghai": {
+      "hide": true
+    },
+    "global-inclusion-diversity-and-strategic-innovation-office": {
+      "hide": true
+    },
+    "nyu-health-center": {
+      "hide": true
+    }
+  },
+  "detours": [
+    {
+      "pairs": [
+        "washington-square-village -> tisch-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "Washington Square Village's buildings and private central garden fill the superblock, so the walk leaves by the building's own path to the street and goes round."
+    }
+  ]
+}
