@@ -1,0 +1,103 @@
+{
+  "places": {
+    "village-a": {
+      "hide": true
+    },
+    "village-c-east": {
+      "hide": true
+    },
+    "village-c-east-67521435": {
+      "hide": true
+    },
+    "village-a-67521462": {
+      "hide": true
+    },
+    "village-a-67521392": {
+      "hide": true
+    },
+    "village-a-67521533": {
+      "hide": true
+    },
+    "village-a-67521524": {
+      "hide": true
+    },
+    "mccarthy-hall": {
+      "hide": true
+    },
+    "kennedy-hall": {
+      "hide": true
+    },
+    "pedro-arrupe-sj-residence-hall": {
+      "hide": true
+    },
+    "isaac-hawkins-hall": {
+      "hide": true
+    },
+    "little-henle": {
+      "hide": true
+    },
+    "anne-marie-becraft-hall": {
+      "hide": true
+    },
+    "wolfington-hall": {
+      "hide": true
+    },
+    "concentrated-care-center": {
+      "hide": true
+    },
+    "lombardi-comprehensive-cancer-center": {
+      "hide": true
+    },
+    "heating-and-cooling-plant": {
+      "hide": true
+    },
+    "cooper-field-locker-room": {
+      "hide": true
+    }
+  },
+  "notes": {
+    "village-a": "Another building of a hall (Village A or Village C East), not a class building.",
+    "village-c-east": "Another building of a hall (Village A or Village C East), not a class building.",
+    "village-c-east-67521435": "Another building of a hall (Village A or Village C East), not a class building.",
+    "village-a-67521462": "Another building of a hall (Village A or Village C East), not a class building.",
+    "village-a-67521392": "Another building of a hall (Village A or Village C East), not a class building.",
+    "village-a-67521533": "Another building of a hall (Village A or Village C East), not a class building.",
+    "village-a-67521524": "Another building of a hall (Village A or Village C East), not a class building.",
+    "mccarthy-hall": "A residence hall, not a class building.",
+    "kennedy-hall": "A residence hall, not a class building.",
+    "pedro-arrupe-sj-residence-hall": "A residence hall, not a class building.",
+    "isaac-hawkins-hall": "A residence hall, not a class building.",
+    "little-henle": "A residence hall, not a class building.",
+    "anne-marie-becraft-hall": "A residence hall, not a class building.",
+    "wolfington-hall": "Jesuit community residence, not somewhere classes happen.",
+    "concentrated-care-center": "MedStar Georgetown hospital building, not somewhere undergraduate classes happen.",
+    "lombardi-comprehensive-cancer-center": "MedStar Georgetown hospital building, not somewhere undergraduate classes happen.",
+    "heating-and-cooling-plant": "Utility plant, not somewhere classes happen.",
+    "cooper-field-locker-room": "Varsity locker room, not a class building or student gym."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "copley-hall -> healy-hall",
+        "village-a -> healy-hall",
+        "alumni-square -> healy-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "Healy Hall's mapped door is on its south side, and Old North, the Healy wings and the hilltop's retaining walls stand between it and these halls, so walks go round the building by the mapped paths."
+    },
+    {
+      "pairs": [
+        "darnall-hall -> hayden-hall"
+      ],
+      "maxRatio": 4,
+      "why": "Darnall Hall's mapped door faces north and Hayden Hall's faces south; the medical-centre buildings between them have no mapped way through, so walks go round by Reservoir Road's side paths."
+    },
+    {
+      "pairs": [
+        "village-c-east -> leo-odonovan-dining-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "Village C and Leo O'Donovan Dining Hall sit at different levels of the slope; the walk goes round by the mapped stairs and paths to the dining hall's south door."
+    }
+  ]
+}
