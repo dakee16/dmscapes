@@ -1,0 +1,17 @@
+{
+  "collegeId": "carnegie-mellon",
+  "area": {
+    "osm": "relation/2279034",
+    "bbox": [
+      40.44034,
+      -79.9519,
+      40.44875,
+      -79.93754
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/carnegie-mellon.codes.json"
+  }
+}

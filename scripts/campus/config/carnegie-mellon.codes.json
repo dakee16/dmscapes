@@ -1,0 +1,155 @@
+{
+ "name": "Carnegie Mellon University Registrar, Schedule of Classes Legend (building abbreviations)",
+ "url": "https://www.cmu.edu/hub/legend.html",
+ "read": "2026-11-07",
+ "buildings": [
+  {
+   "code": "2NB",
+   "name": "201 North Braddock"
+  },
+  {
+   "code": "3SC",
+   "name": "300 South Craig Street"
+  },
+  {
+   "code": "4SC",
+   "name": "407 South Craig Street"
+  },
+  {
+   "code": "ANS",
+   "name": "Ansys"
+  },
+  {
+   "code": "BH",
+   "name": "Baker Hall"
+  },
+  {
+   "code": "CA",
+   "name": "311 South Craig Street"
+  },
+  {
+   "code": "CFA",
+   "name": "College of Fine Arts"
+  },
+  {
+   "code": "CIC",
+   "name": "Collaborative Innovation Center"
+  },
+  {
+   "code": "CUC",
+   "name": "Cohon University Center"
+  },
+  {
+   "code": "CYH",
+   "name": "Cyert Hall"
+  },
+  {
+   "code": "DH",
+   "name": "Doherty Hall"
+  },
+  {
+   "code": "EDS",
+   "name": "Elliot Dunlap Smith Hall"
+  },
+  {
+   "code": "GES",
+   "name": "Gesling Stadium"
+  },
+  {
+   "code": "GHC",
+   "name": "Gates and Hillman Centers"
+  },
+  {
+   "code": "GYM",
+   "name": "Weigand Gymnasium"
+  },
+  {
+   "code": "HBH",
+   "name": "Hamburg Hall"
+  },
+  {
+   "code": "HH",
+   "name": "Hamerschlag Hall"
+  },
+  {
+   "code": "HL",
+   "name": "Hunt Library"
+  },
+  {
+   "code": "HOA",
+   "name": "Hall of the Arts*"
+  },
+  {
+   "code": "III",
+   "name": "4612 Forbes Avenue"
+  },
+  {
+   "code": "INI",
+   "name": "4616 Henry Street"
+  },
+  {
+   "code": "MI",
+   "name": "Mellon Institute"
+  },
+  {
+   "code": "MM",
+   "name": "Margaret Morrison Carnegie Hall"
+  },
+  {
+   "code": "NSH",
+   "name": "Newell-Simon Hall"
+  },
+  {
+   "code": "PCA",
+   "name": "Purnell Center for the Arts"
+  },
+  {
+   "code": "PH",
+   "name": "Porter Hall"
+  },
+  {
+   "code": "POS",
+   "name": "Posner Hall"
+  },
+  {
+   "code": "PTC",
+   "name": "Pittsburgh Technology Center - 2nd Avenue"
+  },
+  {
+   "code": "REH",
+   "name": "Roberts Engineering Hall"
+  },
+  {
+   "code": "SC",
+   "name": "Scott Hall"
+  },
+  {
+   "code": "SEI",
+   "name": "Software Engineering Institute"
+  },
+  {
+   "code": "SH",
+   "name": "Scaife Hall"
+  },
+  {
+   "code": "TCS",
+   "name": "Tata Consultancy Services"
+  },
+  {
+   "code": "TEP",
+   "name": "Tepper Quad"
+  },
+  {
+   "code": "WEH",
+   "name": "Wean Hall"
+  },
+  {
+   "code": "WH",
+   "name": "Warner Hall"
+  },
+  {
+   "code": "WW",
+   "name": "West Wing"
+  }
+ ]
+}
