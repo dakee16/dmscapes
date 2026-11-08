@@ -1,0 +1,1293 @@
+{
+ "collegeId": "university-of-alabama",
+ "generatedAt": "2026-11-08T11:14:07.179Z",
+ "sources": [
+  {
+   "name": "© OpenStreetMap contributors",
+   "url": "https://www.openstreetmap.org/copyright",
+   "license": "ODbL-1.0",
+   "use": "building names, footprints and entrances; the walking network",
+   "fetched": "2026-11-08"
+  },
+  {
+   "name": "The University of Alabama Office of the Registrar, Building Abbreviations",
+   "url": "https://registrar.ua.edu/academics-policies/building-abbreviations/",
+   "use": "building codes",
+   "read": "2026-11-07"
+  },
+  {
+   "name": "Manual fixes from the dev review page",
+   "url": "data/campus/overrides/university-of-alabama.json",
+   "use": "manual pins, year tags, place codes and aliases"
+  }
+ ],
+ "bounds": [
+  -87.55027,
+  33.20279,
+  -87.52657,
+  33.22123
+ ],
+ "halls": [
+  {
+   "dormId": "blount",
+   "name": "Blount Hall",
+   "lng": -87.548201,
+   "lat": 33.216621,
+   "pin": "name",
+   "osm": "way/616039730",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "robert-e-witt-student-activity-center",
+     "minutes": 9.2
+    },
+    "library": {
+     "placeId": "angelo-bruno-business-library",
+     "minutes": 8.7
+    },
+    "dining": {
+     "placeId": "lakeside-dining-hall",
+     "minutes": 4.1
+    }
+   }
+  },
+  {
+   "dormId": "bryant",
+   "name": "Bryant Hall",
+   "lng": -87.541221,
+   "lat": 33.210306,
+   "pin": "name",
+   "osm": "way/260953519",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sewell-thomas-batting-facility",
+     "minutes": 10.9
+    },
+    "library": {
+     "placeId": "rodgers-library",
+     "minutes": 7.1
+    },
+    "dining": {
+     "placeId": "bryant-dining-hall",
+     "minutes": 3
+    }
+   }
+  },
+  {
+   "dormId": "bryce-lawn",
+   "name": "Bryce Lawn",
+   "lng": -87.538355,
+   "lat": 33.21129,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "university-of-alabama-recreation-center",
+     "minutes": 9.7
+    },
+    "library": {
+     "placeId": "rodgers-library",
+     "minutes": 8.9
+    },
+    "dining": {
+     "placeId": "bryant-dining-hall",
+     "minutes": 7.7
+    }
+   }
+  },
+  {
+   "dormId": "burke",
+   "name": "Burke Hall",
+   "lng": -87.543803,
+   "lat": 33.206562,
+   "pin": "name",
+   "osm": "way/261127736",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sewell-thomas-batting-facility",
+     "minutes": 9.5
+    },
+    "library": {
+     "placeId": "amelia-gayle-gorgas-library",
+     "minutes": 9.2
+    },
+    "dining": {
+     "placeId": "bryant-dining-hall",
+     "minutes": 9.7
+    }
+   }
+  },
+  {
+   "dormId": "highlands",
+   "name": "The Highlands",
+   "lng": -87.541435,
+   "lat": 33.220028,
+   "pin": "manual",
+   "osm": "way/608691246",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "robert-e-witt-student-activity-center",
+     "minutes": 5.7
+    },
+    "library": {
+     "placeId": "rodgers-library",
+     "minutes": 12
+    },
+    "dining": {
+     "placeId": "lakeside-dining-hall",
+     "minutes": 8.7
+    }
+   }
+  },
+  {
+   "dormId": "john-england-jr",
+   "name": "John England Jr. Hall",
+   "lng": -87.546787,
+   "lat": 33.217017,
+   "pin": "name",
+   "osm": "way/608691252",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "robert-e-witt-student-activity-center",
+     "minutes": 8
+    },
+    "library": {
+     "placeId": "rodgers-library",
+     "minutes": 8.5
+    },
+    "dining": {
+     "placeId": "lakeside-dining-hall",
+     "minutes": 2.6
+    }
+   }
+  },
+  {
+   "dormId": "julia-tutwiler-hall",
+   "name": "Julia Tutwiler Hall",
+   "lng": -87.549459,
+   "lat": 33.204473,
+   "pin": "name",
+   "osm": "relation/13414917",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sewell-thomas-batting-facility",
+     "minutes": 15.1
+    },
+    "library": {
+     "placeId": "mclure-education-library",
+     "minutes": 9.2
+    },
+    "dining": {
+     "placeId": "bryant-dining-hall",
+     "minutes": 17.8
+    }
+   }
+  },
+  {
+   "dormId": "lakeside",
+   "name": "Lakeside",
+   "lng": -87.546277,
+   "lat": 33.218429,
+   "pin": "manual",
+   "osm": "way/561612677",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "robert-e-witt-student-activity-center",
+     "minutes": 5.3
+    },
+    "library": {
+     "placeId": "rodgers-library",
+     "minutes": 11.5
+    },
+    "dining": {
+     "placeId": "lakeside-dining-hall",
+     "minutes": 3.2
+    }
+   }
+  },
+  {
+   "dormId": "parham-east",
+   "name": "Parham East",
+   "lng": -87.545068,
+   "lat": 33.206511,
+   "pin": "manual",
+   "osm": "relation/8546719",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sewell-thomas-batting-facility",
+     "minutes": 9.1
+    },
+    "library": {
+     "placeId": "amelia-gayle-gorgas-library",
+     "minutes": 9.5
+    },
+    "dining": {
+     "placeId": "bryant-dining-hall",
+     "minutes": 11.7
+    }
+   }
+  },
+  {
+   "dormId": "parham-west",
+   "name": "Parham West",
+   "lng": -87.545068,
+   "lat": 33.206511,
+   "pin": "manual",
+   "osm": "relation/8546719",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "sewell-thomas-batting-facility",
+     "minutes": 9.1
+    },
+    "library": {
+     "placeId": "amelia-gayle-gorgas-library",
+     "minutes": 9.5
+    },
+    "dining": {
+     "placeId": "bryant-dining-hall",
+     "minutes": 11.7
+    }
+   }
+  },
+  {
+   "dormId": "paty",
+   "name": "Paty Hall",
+   "lng": -87.546673,
+   "lat": 33.216342,
+   "pin": "name",
+   "osm": "way/194168586",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "robert-e-witt-student-activity-center",
+     "minutes": 7.5
+    },
+    "library": {
+     "placeId": "rodgers-library",
+     "minutes": 7.4
+    },
+    "dining": {
+     "placeId": "lakeside-dining-hall",
+     "minutes": 2.2
+    }
+   }
+  },
+  {
+   "dormId": "presidential-village-1",
+   "name": "Presidential Village 1",
+   "lng": -87.543476,
+   "lat": 33.220498,
+   "pin": "manual",
+   "osm": "relation/8024836",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "robert-e-witt-student-activity-center",
+     "minutes": 2.5
+    },
+    "library": {
+     "placeId": "rodgers-library",
+     "minutes": 11.5
+    },
+    "dining": {
+     "placeId": "lakeside-dining-hall",
+     "minutes": 6.2
+    }
+   }
+  },
+  {
+   "dormId": "presidential-village-2",
+   "name": "Presidential Village 2",
+   "lng": -87.545175,
+   "lat": 33.220061,
+   "pin": "manual",
+   "osm": "relation/8024837",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "robert-e-witt-student-activity-center",
+     "minutes": 2.3
+    },
+    "library": {
+     "placeId": "rodgers-library",
+     "minutes": 11.8
+    },
+    "dining": {
+     "placeId": "lakeside-dining-hall",
+     "minutes": 5.5
+    }
+   }
+  },
+  {
+   "dormId": "ridgecrest-east-and-west",
+   "name": "Ridgecrest East and West",
+   "lng": -87.548164,
+   "lat": 33.217406,
+   "pin": "manual",
+   "osm": "way/616039720",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "robert-e-witt-student-activity-center",
+     "minutes": 10
+    },
+    "library": {
+     "placeId": "angelo-bruno-business-library",
+     "minutes": 12.3
+    },
+    "dining": {
+     "placeId": "lakeside-dining-hall",
+     "minutes": 5.7
+    }
+   }
+  },
+  {
+   "dormId": "ridgecrest-south",
+   "name": "Ridgecrest South",
+   "lng": -87.548567,
+   "lat": 33.217237,
+   "pin": "manual",
+   "osm": null,
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "robert-e-witt-student-activity-center",
+     "minutes": 9.4
+    },
+    "library": {
+     "placeId": "angelo-bruno-business-library",
+     "minutes": 10
+    },
+    "dining": {
+     "placeId": "lakeside-dining-hall",
+     "minutes": 4.4
+    }
+   }
+  },
+  {
+   "dormId": "riverside",
+   "name": "Riverside",
+   "lng": -87.544106,
+   "lat": 33.219057,
+   "pin": "manual",
+   "osm": "way/613976447",
+   "year": null,
+   "yearSource": null,
+   "near": {
+    "gym": {
+     "placeId": "robert-e-witt-student-activity-center",
+     "minutes": 3
+    },
+    "library": {
+     "placeId": "rodgers-library",
+     "minutes": 10.2
+    },
+    "dining": {
+     "placeId": "lakeside-dining-hall",
+     "minutes": 3.4
+    }
+   }
+  }
+ ],
+ "places": [
+  {
+   "id": "university-of-alabama-recreation-center",
+   "name": "University of Alabama Recreation Center",
+   "short": "University of Alabama Recreation Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.53178,
+   "lat": 33.212325,
+   "osm": "way/100746389"
+  },
+  {
+   "id": "coleman-coliseum",
+   "name": "Coleman Coliseum",
+   "short": "Coleman Coliseum",
+   "kind": "academic",
+   "codes": [
+    "MC"
+   ],
+   "aliases": [],
+   "lng": -87.539705,
+   "lat": 33.202785,
+   "osm": "way/130611387"
+  },
+  {
+   "id": "university-of-alabama-school-of-law",
+   "name": "University of Alabama School of Law",
+   "short": "University of Alabama School of Law",
+   "kind": "academic",
+   "codes": [
+    "LW"
+   ],
+   "aliases": [
+    "Law Center"
+   ],
+   "lng": -87.535451,
+   "lat": 33.20382,
+   "osm": "way/130611475"
+  },
+  {
+   "id": "university-of-alabama-student-center",
+   "name": "University of Alabama Student Center",
+   "short": "University of Alabama Student Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Ferguson Student Center",
+    "The Ferg"
+   ],
+   "lng": -87.54567,
+   "lat": 33.214406,
+   "osm": "way/200167122"
+  },
+  {
+   "id": "shelby-hall",
+   "name": "Shelby Hall",
+   "short": "Shelby Hall",
+   "kind": "academic",
+   "codes": [
+    "SHLB"
+   ],
+   "aliases": [],
+   "lng": -87.541981,
+   "lat": 33.215239,
+   "osm": "relation/8899821"
+  },
+  {
+   "id": "mary-starke-harper-geriatric-psychiatry-center",
+   "name": "Mary Starke Harper Geriatric Psychiatry Center",
+   "short": "Harper Center",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Harper Center"
+   ],
+   "lng": -87.534014,
+   "lat": 33.219143,
+   "osm": "way/263647088"
+  },
+  {
+   "id": "tom-bevill-building",
+   "name": "Tom Bevill Building",
+   "short": "Tom Bevill Building",
+   "kind": "academic",
+   "codes": [
+    "BE"
+   ],
+   "aliases": [
+    "Bevill"
+   ],
+   "lng": -87.543769,
+   "lat": 33.216524,
+   "osm": "way/213543526"
+  },
+  {
+   "id": "hydrologic-instrumentation-facility",
+   "name": "Hydrologic Instrumentation Facility",
+   "short": "Hydrologic Instrumentation Facility",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "HIF"
+   ],
+   "lng": -87.536894,
+   "lat": 33.221229,
+   "osm": "way/1328478112"
+  },
+  {
+   "id": "moody-music-building",
+   "name": "Moody Music Building",
+   "short": "Moody Music Building",
+   "kind": "academic",
+   "codes": [
+    "MM"
+   ],
+   "aliases": [],
+   "lng": -87.538391,
+   "lat": 33.207439,
+   "osm": "way/700246840"
+  },
+  {
+   "id": "south-engineering-research-center",
+   "name": "South Engineering Research Center",
+   "short": "South Engineering Research Center",
+   "kind": "academic",
+   "codes": [
+    "SERC"
+   ],
+   "aliases": [
+    "SERC"
+   ],
+   "lng": -87.543836,
+   "lat": 33.214354,
+   "osm": "way/259106039"
+  },
+  {
+   "id": "science-and-engineering-complex",
+   "name": "Science and Engineering Complex",
+   "short": "Science and Engineering Complex",
+   "kind": "academic",
+   "codes": [
+    "SEC"
+   ],
+   "aliases": [
+    "SEC"
+   ],
+   "lng": -87.541747,
+   "lat": 33.214203,
+   "osm": "way/235035357"
+  },
+  {
+   "id": "capital-hall",
+   "name": "Capital Hall",
+   "short": "Capital Hall",
+   "kind": "academic",
+   "codes": [
+    "CPH"
+   ],
+   "aliases": [],
+   "lng": -87.536253,
+   "lat": 33.216634,
+   "osm": "relation/3604050"
+  },
+  {
+   "id": "north-lawn-hall",
+   "name": "North Lawn Hall",
+   "short": "North Lawn Hall",
+   "kind": "academic",
+   "codes": [
+    "NL"
+   ],
+   "aliases": [],
+   "lng": -87.53999,
+   "lat": 33.216062,
+   "osm": "way/515716195"
+  },
+  {
+   "id": "north-engineering-research-center",
+   "name": "North Engineering Research Center",
+   "short": "North Engineering Research Center",
+   "kind": "academic",
+   "codes": [
+    "NERC"
+   ],
+   "aliases": [
+    "NERC"
+   ],
+   "lng": -87.543592,
+   "lat": 33.215563,
+   "osm": "way/614117708"
+  },
+  {
+   "id": "robert-e-witt-student-activity-center",
+   "name": "Robert E. Witt Student Activity Center",
+   "short": "Robert E. Witt Student Activity Center",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.544555,
+   "lat": 33.220731,
+   "osm": "way/561612678"
+  },
+  {
+   "id": "speech-and-hearing-center",
+   "name": "Speech and Hearing Center",
+   "short": "Speech and Hearing Center",
+   "kind": "academic",
+   "codes": [
+    "CM"
+   ],
+   "aliases": [
+    "Speech and Hearing Building"
+   ],
+   "lng": -87.527193,
+   "lat": 33.207829,
+   "osm": "relation/8518809"
+  },
+  {
+   "id": "gordon-palmer-hall",
+   "name": "Gordon Palmer Hall",
+   "short": "Gordon Palmer Hall",
+   "kind": "academic",
+   "codes": [
+    "GP"
+   ],
+   "aliases": [],
+   "lng": -87.542334,
+   "lat": 33.21084,
+   "osm": "way/260953309"
+  },
+  {
+   "id": "hardaway-hall",
+   "name": "Hardaway Hall",
+   "short": "Hardaway Hall",
+   "kind": "academic",
+   "codes": [
+    "HR"
+   ],
+   "aliases": [],
+   "lng": -87.544569,
+   "lat": 33.213251,
+   "osm": "way/643481715"
+  },
+  {
+   "id": "reese-phifer-hall",
+   "name": "Reese Phifer Hall",
+   "short": "Reese Phifer Hall",
+   "kind": "academic",
+   "codes": [
+    "PH"
+   ],
+   "aliases": [],
+   "lng": -87.549011,
+   "lat": 33.209565,
+   "osm": "relation/18943362"
+  },
+  {
+   "id": "bidgood-hall",
+   "name": "Bidgood Hall",
+   "short": "Bidgood Hall",
+   "kind": "academic",
+   "codes": [
+    "BD"
+   ],
+   "aliases": [],
+   "lng": -87.548369,
+   "lat": 33.211727,
+   "osm": "way/260949060"
+  },
+  {
+   "id": "smart-communities-and-innovation-building",
+   "name": "Smart Communities and Innovation Building",
+   "short": "Smart Communities and Innovation Building",
+   "kind": "academic",
+   "codes": [
+    "SCIB"
+   ],
+   "aliases": [
+    "SCIB"
+   ],
+   "lng": -87.537154,
+   "lat": 33.219482,
+   "osm": "way/527853125"
+  },
+  {
+   "id": "amelia-gayle-gorgas-library",
+   "name": "Amelia Gayle Gorgas Library",
+   "short": "Amelia Gayle Gorgas Library",
+   "kind": "library",
+   "codes": [
+    "LB"
+   ],
+   "aliases": [
+    "Gorgas Library"
+   ],
+   "lng": -87.546048,
+   "lat": 33.211769,
+   "osm": "way/130596789"
+  },
+  {
+   "id": "lloyd-hall",
+   "name": "Lloyd Hall",
+   "short": "Lloyd Hall",
+   "kind": "academic",
+   "codes": [
+    "LY"
+   ],
+   "aliases": [],
+   "lng": -87.543814,
+   "lat": 33.211015,
+   "osm": "way/233695042"
+  },
+  {
+   "id": "foster-auditorium",
+   "name": "Foster Auditorium",
+   "short": "Foster Auditorium",
+   "kind": "academic",
+   "codes": [
+    "FO"
+   ],
+   "aliases": [],
+   "lng": -87.544001,
+   "lat": 33.207749,
+   "osm": "way/260953070"
+  },
+  {
+   "id": "capstone-college-of-nursing",
+   "name": "Capstone College of Nursing",
+   "short": "Capstone College of Nursing",
+   "kind": "academic",
+   "codes": [
+    "CCN"
+   ],
+   "aliases": [
+    "Capstone College of Nursing Building"
+   ],
+   "lng": -87.526569,
+   "lat": 33.206782,
+   "osm": "way/615680975"
+  },
+  {
+   "id": "lakeside-dining-hall",
+   "name": "Lakeside Dining Hall",
+   "short": "Lakeside Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.546269,
+   "lat": 33.217627,
+   "osm": "way/260946096"
+  },
+  {
+   "id": "student-services-center",
+   "name": "Student Services Center",
+   "short": "Student Services Center",
+   "kind": "academic",
+   "codes": [
+    "SS"
+   ],
+   "aliases": [],
+   "lng": -87.54683,
+   "lat": 33.214504,
+   "osm": "way/200167121"
+  },
+  {
+   "id": "alabama-institute-for-manufacturing-excellence-building",
+   "name": "Alabama Institute for Manufacturing Excellence building",
+   "short": "Alabama Institute for Manufacturing Excellence building",
+   "kind": "academic",
+   "codes": [
+    "AIME"
+   ],
+   "aliases": [
+    "Alabama Institute Manufacturing Excellence"
+   ],
+   "lng": -87.545133,
+   "lat": 33.217293,
+   "osm": "way/265483354"
+  },
+  {
+   "id": "hewson-hall",
+   "name": "Hewson Hall",
+   "short": "Hewson Hall",
+   "kind": "academic",
+   "codes": [
+    "HW"
+   ],
+   "aliases": [],
+   "lng": -87.55027,
+   "lat": 33.211799,
+   "osm": "way/965287786"
+  },
+  {
+   "id": "russell-hall",
+   "name": "Russell Hall",
+   "short": "Russell Hall",
+   "kind": "academic",
+   "codes": [
+    "RH"
+   ],
+   "aliases": [],
+   "lng": -87.54242,
+   "lat": 33.209467,
+   "osm": "way/261127732"
+  },
+  {
+   "id": "math-and-science-building",
+   "name": "Math and Science Building",
+   "short": "Math and Science Building",
+   "kind": "academic",
+   "codes": [
+    "MSB"
+   ],
+   "aliases": [
+    "Math & Science Education Building"
+   ],
+   "lng": -87.542332,
+   "lat": 33.212245,
+   "osm": "way/260953300"
+  },
+  {
+   "id": "rose-administration-building",
+   "name": "Rose Administration Building",
+   "short": "Rose Administration Building",
+   "kind": "academic",
+   "codes": [
+    "RS"
+   ],
+   "aliases": [],
+   "lng": -87.547507,
+   "lat": 33.208965,
+   "osm": "way/618126655"
+  },
+  {
+   "id": "honors-hall",
+   "name": "Honors Hall",
+   "short": "Honors Hall",
+   "kind": "academic",
+   "codes": [
+    "HN"
+   ],
+   "aliases": [],
+   "lng": -87.543844,
+   "lat": 33.21028,
+   "osm": "way/206784859"
+  },
+  {
+   "id": "ten-hoor-hall",
+   "name": "ten Hoor Hall",
+   "short": "ten Hoor Hall",
+   "kind": "academic",
+   "codes": [
+    "TH"
+   ],
+   "aliases": [],
+   "lng": -87.549339,
+   "lat": 33.212885,
+   "osm": "way/260949056"
+  },
+  {
+   "id": "stallings-center",
+   "name": "Stallings Center",
+   "short": "Stallings Center",
+   "kind": "academic",
+   "codes": [
+    "SC"
+   ],
+   "aliases": [
+    "The Stallings Center"
+   ],
+   "lng": -87.529232,
+   "lat": 33.208157,
+   "osm": "way/615680993"
+  },
+  {
+   "id": "angelo-bruno-business-library",
+   "name": "Angelo Bruno Business Library",
+   "short": "Angelo Bruno Business Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.549294,
+   "lat": 33.211083,
+   "osm": "way/260949491"
+  },
+  {
+   "id": "rowand-johnson-hall",
+   "name": "Rowand Johnson Hall",
+   "short": "Rowand Johnson Hall",
+   "kind": "academic",
+   "codes": [
+    "RJ"
+   ],
+   "aliases": [
+    "Rowand-Johnson Building"
+   ],
+   "lng": -87.548365,
+   "lat": 33.213003,
+   "osm": "way/260949058"
+  },
+  {
+   "id": "rodgers-library",
+   "name": "Rodgers Library",
+   "short": "Rodgers Library",
+   "kind": "library",
+   "codes": [
+    "RL"
+   ],
+   "aliases": [
+    "Rodgers’ Library for Science and Engineering"
+   ],
+   "lng": -87.542786,
+   "lat": 33.213478,
+   "osm": "way/259106040"
+  },
+  {
+   "id": "english-building",
+   "name": "English Building",
+   "short": "English Building",
+   "kind": "academic",
+   "codes": [
+    "EB"
+   ],
+   "aliases": [],
+   "lng": -87.54816,
+   "lat": 33.212376,
+   "osm": "way/260949063"
+  },
+  {
+   "id": "alston-hall",
+   "name": "Alston Hall",
+   "short": "Alston Hall",
+   "kind": "academic",
+   "codes": [
+    "AB"
+   ],
+   "aliases": [],
+   "lng": -87.548962,
+   "lat": 33.211885,
+   "osm": "way/260949059"
+  },
+  {
+   "id": "autherine-lucy-hall",
+   "name": "Autherine Lucy Hall",
+   "short": "Autherine Lucy Hall",
+   "kind": "academic",
+   "codes": [
+    "ALH"
+   ],
+   "aliases": [],
+   "lng": -87.548607,
+   "lat": 33.210532,
+   "osm": "way/698820646"
+  },
+  {
+   "id": "gallalee-hall",
+   "name": "Gallalee Hall",
+   "short": "Gallalee Hall",
+   "kind": "academic",
+   "codes": [
+    "GL"
+   ],
+   "aliases": [],
+   "lng": -87.543887,
+   "lat": 33.20957,
+   "osm": "way/207114828"
+  },
+  {
+   "id": "barnwell-hall",
+   "name": "Barnwell Hall",
+   "short": "Barnwell Hall",
+   "kind": "academic",
+   "codes": [
+    "BW"
+   ],
+   "aliases": [],
+   "lng": -87.547501,
+   "lat": 33.20663,
+   "osm": "way/618143210"
+  },
+  {
+   "id": "houser-hall",
+   "name": "Houser Hall",
+   "short": "Houser Hall",
+   "kind": "academic",
+   "codes": [
+    "HO"
+   ],
+   "aliases": [],
+   "lng": -87.544568,
+   "lat": 33.214366,
+   "osm": "way/643481722"
+  },
+  {
+   "id": "smith-hall",
+   "name": "Smith Hall",
+   "short": "Smith Hall",
+   "kind": "academic",
+   "codes": [
+    "SM"
+   ],
+   "aliases": [],
+   "lng": -87.543899,
+   "lat": 33.21188,
+   "osm": "way/235762941"
+  },
+  {
+   "id": "farrah-hall",
+   "name": "Farrah Hall",
+   "short": "Farrah Hall",
+   "kind": "academic",
+   "codes": [
+    "FA"
+   ],
+   "aliases": [],
+   "lng": -87.543876,
+   "lat": 33.20877,
+   "osm": "way/206784860"
+  },
+  {
+   "id": "woods-hall",
+   "name": "Woods Hall",
+   "short": "Woods Hall",
+   "kind": "academic",
+   "codes": [
+    "WO"
+   ],
+   "aliases": [],
+   "lng": -87.545822,
+   "lat": 33.213258,
+   "osm": "way/614141791"
+  },
+  {
+   "id": "kappa-alpha-theta",
+   "name": "Kappa Alpha Theta",
+   "short": "ΚΑΘ",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "ΚΑΘ"
+   ],
+   "lng": -87.54904,
+   "lat": 33.208421,
+   "osm": "way/534387731"
+  },
+  {
+   "id": "little-hall",
+   "name": "Little Hall",
+   "short": "Little Hall",
+   "kind": "academic",
+   "codes": [
+    "LI"
+   ],
+   "aliases": [],
+   "lng": -87.54553,
+   "lat": 33.20858,
+   "osm": "way/618143272"
+  },
+  {
+   "id": "bureau-of-mines-building-5",
+   "name": "Bureau of Mines - Building 5",
+   "short": "BOM 5",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BOM 5"
+   ],
+   "lng": -87.5438,
+   "lat": 33.21287,
+   "osm": "way/265483352"
+  },
+  {
+   "id": "sewell-thomas-batting-facility",
+   "name": "Sewell-Thomas Batting Facility",
+   "short": "Sewell-Thomas Batting Facility",
+   "kind": "gym",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.537949,
+   "lat": 33.205454,
+   "osm": "way/768707177"
+  },
+  {
+   "id": "archie-wade-hall",
+   "name": "Archie Wade Hall",
+   "short": "Archie Wade Hall",
+   "kind": "academic",
+   "codes": [
+    "WD"
+   ],
+   "aliases": [
+    "Wade Hall"
+   ],
+   "lng": -87.544944,
+   "lat": 33.208469,
+   "osm": "way/618143275"
+  },
+  {
+   "id": "carmichael-hall",
+   "name": "Carmichael Hall",
+   "short": "Carmichael Hall",
+   "kind": "academic",
+   "codes": [
+    "CA"
+   ],
+   "aliases": [],
+   "lng": -87.548352,
+   "lat": 33.211176,
+   "osm": "way/260949785"
+  },
+  {
+   "id": "bryant-dining-hall",
+   "name": "Bryant Dining Hall",
+   "short": "Bryant Dining Hall",
+   "kind": "dining",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.541096,
+   "lat": 33.210746,
+   "osm": "way/260953518"
+  },
+  {
+   "id": "bureau-of-mines-building-1",
+   "name": "Bureau of Mines - Building 1",
+   "short": "BOM 1",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BOM 1"
+   ],
+   "lng": -87.544784,
+   "lat": 33.212348,
+   "osm": "way/643481709"
+  },
+  {
+   "id": "doster-hall",
+   "name": "Doster Hall",
+   "short": "Doster Hall",
+   "kind": "academic",
+   "codes": [
+    "DO"
+   ],
+   "aliases": [],
+   "lng": -87.548242,
+   "lat": 33.209054,
+   "osm": "way/618126654"
+  },
+  {
+   "id": "bureau-of-mines-building-4",
+   "name": "Bureau of Mines - Building 4",
+   "short": "BOM 4",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BOM 4"
+   ],
+   "lng": -87.544362,
+   "lat": 33.212483,
+   "osm": "way/265483350"
+  },
+  {
+   "id": "mclure-education-library",
+   "name": "McLure Education Library",
+   "short": "McLure Education Library",
+   "kind": "library",
+   "codes": [],
+   "aliases": [],
+   "lng": -87.549025,
+   "lat": 33.210473,
+   "osm": "way/260949784"
+  },
+  {
+   "id": "presidents-hall",
+   "name": "Presidents Hall",
+   "short": "Presidents Hall",
+   "kind": "academic",
+   "codes": [
+    "PRH"
+   ],
+   "aliases": [],
+   "lng": -87.546323,
+   "lat": 33.212649,
+   "osm": "way/614141813"
+  },
+  {
+   "id": "garland-hall",
+   "name": "Garland Hall",
+   "short": "Garland Hall",
+   "kind": "academic",
+   "codes": [
+    "GA"
+   ],
+   "aliases": [],
+   "lng": -87.545523,
+   "lat": 33.21256,
+   "osm": "way/261124951"
+  },
+  {
+   "id": "clark-hall",
+   "name": "Clark Hall",
+   "short": "Clark Hall",
+   "kind": "academic",
+   "codes": [
+    "CL"
+   ],
+   "aliases": [],
+   "lng": -87.545927,
+   "lat": 33.212537,
+   "osm": "way/614141814"
+  },
+  {
+   "id": "oliver-barnard-hall",
+   "name": "Oliver-Barnard Hall",
+   "short": "Oliver-Barnard Hall",
+   "kind": "academic",
+   "codes": [
+    "BR"
+   ],
+   "aliases": [],
+   "lng": -87.547169,
+   "lat": 33.211914,
+   "osm": "way/697822629"
+  },
+  {
+   "id": "east-annex",
+   "name": "East Annex",
+   "short": "East Annex",
+   "kind": "academic",
+   "codes": [
+    "EA"
+   ],
+   "aliases": [],
+   "lng": -87.547241,
+   "lat": 33.208476,
+   "osm": "way/618126657"
+  },
+  {
+   "id": "hardaway-hall-annex",
+   "name": "Hardaway Hall Annex",
+   "short": "Hardaway Hall Annex",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "Bureau of Mines - Building 2"
+   ],
+   "lng": -87.544783,
+   "lat": 33.212717,
+   "osm": "way/1328505348"
+  },
+  {
+   "id": "tuomey-hall",
+   "name": "Tuomey Hall",
+   "short": "Tuomey Hall",
+   "kind": "academic",
+   "codes": [
+    "TU"
+   ],
+   "aliases": [],
+   "lng": -87.544902,
+   "lat": 33.211643,
+   "osm": "way/697822623"
+  },
+  {
+   "id": "bureau-of-mines-building-3",
+   "name": "Bureau of Mines - Building 3",
+   "short": "BOM 3",
+   "kind": "academic",
+   "codes": [],
+   "aliases": [
+    "BOM 3"
+   ],
+   "lng": -87.544401,
+   "lat": 33.212676,
+   "osm": "way/643481716"
+  }
+ ]
+}

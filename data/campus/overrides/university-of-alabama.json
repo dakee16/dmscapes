@@ -1,0 +1,86 @@
+{
+  "halls": {
+    "lakeside": {
+      "pin": [
+        -87.546277,
+        33.218429
+      ]
+    },
+    "presidential-village-1": {
+      "pin": [
+        -87.543476,
+        33.220498
+      ]
+    },
+    "presidential-village-2": {
+      "pin": [
+        -87.545175,
+        33.220061
+      ]
+    },
+    "ridgecrest-east-and-west": {
+      "pin": [
+        -87.548164,
+        33.217406
+      ]
+    },
+    "ridgecrest-south": {
+      "pin": [
+        -87.548567,
+        33.217237
+      ]
+    },
+    "riverside": {
+      "pin": [
+        -87.544106,
+        33.219057
+      ]
+    },
+    "highlands": {
+      "pin": [
+        -87.541435,
+        33.220028
+      ]
+    },
+    "parham-east": {
+      "pin": [
+        -87.545068,
+        33.206511
+      ]
+    },
+    "parham-west": {
+      "pin": [
+        -87.545068,
+        33.206511
+      ]
+    },
+    "bryce-lawn": {
+      "pin": [
+        -87.538355,
+        33.21129
+      ]
+    }
+  },
+  "notes": {
+    "lakeside": "OSM has Lakeside as 'Lakeside East' and 'Lakeside West' (way/561612677, way/561562513) either side of Lakeside Dining; pinned to Lakeside East. UA Facilities lists Lakeside Residential East and West/North at 150-152 McCorvey Dr (https://uafacilities.ua.edu/wp-content/uploads/2026/02/2026-Building-Representatives-List-Feb.pdf).",
+    "presidential-village-1": "OSM relation/8024836 'Presidential Village I' (676 Abercrombie Ln).",
+    "presidential-village-2": "OSM relation/8024837 'Presidential Village II' (622 Abercrombie Ln).",
+    "ridgecrest-east-and-west": "OSM has 'Ridgecrest East' (way/616039720) and 'Ridgecrest West' (way/616039716), about 140 m apart; pinned to Ridgecrest East.",
+    "ridgecrest-south": "Not in OSM by name. UA Facilities lists 'Ridgecrest Residential Community East, South, & West' at 900 2nd Street (https://uafacilities.ua.edu/wp-content/uploads/2026/02/2026-Building-Representatives-List-Feb.pdf); pinned at that address as Nominatim geocodes it (on 2nd St, way/516928266), beside Ridgecrest East.",
+    "riverside": "OSM has Riverside as 'Riverside East', 'North' and 'West' around Riverside Commons (172-178 Hackberry Ln); pinned to Riverside North, way/613976447.",
+    "highlands": "OSM 'Highlands at Hackberry' (145 Old Hackberry Ln), several buildings; pinned to way/608691246, mid-complex.",
+    "parham-east": "UA Facilities lists 'Martha Parham Hall East' at 922 6th Ave (https://uafacilities.ua.edu/wp-content/uploads/2026/02/2026-Building-Representatives-List-Feb.pdf); OSM relation/8546719 'Martha Parham Hall' (both wings).",
+    "parham-west": "UA Facilities lists 'Martha Parham Hall West' at 922 6th Ave (https://uafacilities.ua.edu/wp-content/uploads/2026/02/2026-Building-Representatives-List-Feb.pdf); OSM relation/8546719 'Martha Parham Hall' (both wings).",
+    "bryce-lawn": "Not in OSM yet. UA Housing gives 500 Bryce Lawn Dr (housing.sl.ua.edu/halls/bryce-lawn); pinned where Nominatim geocodes that address (interpolated along Bryce Lawn Dr, way/8866936)."
+  },
+  "detours": [
+    {
+      "pairs": [
+        "lakeside -> alabama-institute-for-manufacturing-excellence-building",
+        "ridgecrest-east-and-west -> lakeside-dining-hall"
+      ],
+      "maxRatio": 3.5,
+      "why": "Residence-hall wings and their courtyards fill the straight line with no mapped path through, so walks leave by the hall's own paths and go round by the road."
+    }
+  ]
+}

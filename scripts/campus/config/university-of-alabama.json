@@ -1,0 +1,17 @@
+{
+  "collegeId": "university-of-alabama",
+  "area": {
+    "osm": "way/89748187",
+    "bbox": [
+      33.20161,
+      -87.55363,
+      33.2225,
+      -87.52367
+    ]
+  },
+  "walkMarginM": 400,
+  "walkingSpeed": 1.35,
+  "codes": {
+    "file": "scripts/campus/config/university-of-alabama.codes.json"
+  }
+}
